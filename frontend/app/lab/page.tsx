@@ -17,49 +17,9 @@ import { Parabola3D } from "@/components/lab/parabola-3d";
 import { VectorViewer } from "@/components/lab/vector-viewer";
 import { CoordinateAxes3D } from "@/components/lab/coordinate-axes-3d";
 import { InteractiveFunctionGraph } from "@/components/lab/interactive-function-graph";
-import { PhysicsMechanics3D } from "@/components/lab/physics-mechanics-3d";
-import { PhysicsOptics3D } from "@/components/lab/physics-optics-3d";
-import { PhysicsElectricity3D } from "@/components/lab/physics-electricity-3d";
-import { PhysicsModern3D } from "@/components/lab/physics-modern-3d";
-import { ChemistryMolecules3D } from "@/components/lab/chemistry-molecules-3d";
-import { ChemistryReactions3D } from "@/components/lab/chemistry-reactions-3d";
-import { ChemistryPeriodic3D } from "@/components/lab/chemistry-periodic-3d";
-import { ChemistryThermo3D } from "@/components/lab/chemistry-thermo-3d";
-import { BiologyCells3D } from "@/components/lab/biology-cells-3d";
-import { BiologyDNA3D } from "@/components/lab/biology-dna-3d";
-import { BiologyEcology3D } from "@/components/lab/biology-ecology-3d";
-import { BiologyHuman3D } from "@/components/lab/biology-human-3d";
+import { BiologyAdvanced3D, BiologyEvolution3D, BiologyPunnettCalculator, BiologyPopulationCalculator, BiologyPhotosynthesisCalculator } from "@/components/lab/biology-3d";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { PremiumLab } from "@/components/lab/premium-lab";
-
-// Additional imports from old reference (some may need to be created)
-import { PhysicsInteractive } from "@/components/lab/physics-interactive";
-import { PhysicsOptics } from "@/components/lab/physics-optics";
-import { PhysicsHeatLab } from "@/components/lab/physics-heat";
-import { Physics3D } from "@/components/lab/physics-3d";
-import { PhysicsDynamics3D } from "@/components/lab/physics-dynamics-3d";
-import { Physics3DAdvanced } from "@/components/lab/physics-advanced-3d";
-import { Quantum3D } from "@/components/lab/quantum-3d";
-import { Physics3DHeatDeterminations } from "@/components/lab/physics-3d-heat-determinations";
-import { PhysicsAdvancedMotionLab } from "@/components/lab/physics-advanced-motion";
-import { PhysicsMotionLab } from "@/components/lab/physics-motion-3d";
-import { ChemistryInteractive } from "@/components/lab/chemistry-interactive";
-import { ChemistryStoichiometry } from "@/components/lab/chemistry-stoichiometry";
-import { ChemistryAdvanced3D } from "@/components/lab/chemistry-advanced-3d";
-import { ChemistryModern3D } from "@/components/lab/chemistry-modern-3d";
-import { MathInteractive } from "@/components/lab/math-interactive";
-import { MathTrigonometry } from "@/components/lab/math-trigonometry";
-import { MathSeriesLab } from "@/components/lab/math-series-lab";
-import { MathModern3D } from "@/components/lab/math-modern-3d";
-import { MathAdvancedMotionLab } from "@/components/lab/math-motion-3d";
-import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
-import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
-import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
-import { BiologyAdvanced3D } from "@/components/lab/biology-advanced-3d";
-import { BiologyEvolution3D } from "@/components/lab/biology-evolution-3d";
-import { BiologyPunnettCalculator } from "@/components/lab/biology-punnett-calculator";
-import { BiologyPopulationCalculator } from "@/components/lab/biology-population-calculator";
-import { BiologyPhotosynthesisCalculator } from "@/components/lab/biology-photosynthesis-calculator";
 
 const CLASS_OPTIONS = [
   { value: "class-11-notes", label: "Class 11" },
@@ -194,18 +154,18 @@ const labs: LabItem[] = [
   // ============================================================
   // 3D LAB - PHYSICS
   // ============================================================
-  { id: "ph-3d-dynamics", title: "Dynamics 3D", description: "Inclined plane, friction, elastic collision, momentum conservation in 3D.", category: "physics", icon: <Rocket className="h-4 w-4" />, status: "active", component: () => <PhysicsDynamics3D /> },
-  { id: "ph-3d-advanced", title: "Physics 3D Advanced", description: "Electromagnetism, wave optics, relativity, quantum orbitals, nuclear decay.", category: "physics", icon: <Satellite className="h-4 w-4" />, status: "new", component: () => <Physics3DAdvanced /> },
-  { id: "ph-heat-determinations", title: "Heat Determination Labs (3D, labelled)", description: "Lee's disc, Searle's bar, Newton's law of cooling & linear expansion in labelled 3D.", category: "physics", icon: <Flame className="h-4 w-4" />, status: "new", component: () => <Physics3DHeatDeterminations /> },
-  { id: "ph-3d-quantum", title: "Quantum 3D", description: "Quantum mechanics visualizations including orbitals, probability distributions, and spin.", category: "physics", icon: <Stars className="h-4 w-4" />, status: "new", component: () => <Quantum3D /> },
-  { id: "ph-3d-wave", title: "Wave Simulator 3D", description: "Real-time 3D wave propagation with sine, cosine, and damped modes.", category: "physics", icon: <Waves className="h-4 w-4" />, status: "active", component: () => <PhysicsAdvancedMotionLab /> },
-  { id: "ph-3d-pendulum", title: "Pendulum 3D", description: "Pendulum with trail visualization and period calculations.", category: "physics", icon: <Timer className="h-4 w-4" />, status: "active", component: () => <PhysicsAdvancedMotionLab /> },
-  { id: "ph-3d-em", title: "EM Wave 3D", description: "Electromagnetic wave propagation with E and B field visualization.", category: "physics", icon: <Radio className="h-4 w-4" />, status: "active", component: () => <PhysicsMotionLab /> },
-  { id: "ph-3d-magnetic", title: "Magnetic Field 3D", description: "Bar magnet field lines and iron filings pattern.", category: "physics", icon: <Compass className="h-4 w-4" />, status: "active", component: () => <PhysicsMotionLab /> },
-  { id: "ph-3d-vectors", title: "Vector Addition 3D", description: "Interactive 3D vectors — components, dot product, cross product, parallelogram rule.", category: "physics", icon: <Move3d className="h-4 w-4" />, status: "new", component: () => <PhysicsInteractive /> },
-  { id: "ph-3d-optics", title: "Optics & Lens 3D", description: "Ray diagrams for convex/concave lenses and mirrors with live lens equation.", category: "physics", icon: <ScanEye className="h-4 w-4" />, status: "new", component: () => <PhysicsOptics /> },
-  { id: "ph-3d-refraction", title: "Refraction 3D", description: "Snell's law visualization with total internal reflection and critical angle.", category: "physics", icon: <Eye className="h-4 w-4" />, status: "new", component: () => <PhysicsHeatLab /> },
-  { id: "ph-3d-classic", title: "Physics 3D Classic", description: "Electric field, double pendulum, and gravitational field visualizers.", category: "physics", icon: <Cuboid className="h-4 w-4" />, status: "development", component: () => <Physics3D /> },
+  { id: "ph-3d-dynamics", title: "Dynamics 3D", description: "Inclined plane, friction, elastic collision, momentum conservation in 3D.", category: "physics", icon: <Rocket className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-3d-advanced", title: "Physics 3D Advanced", description: "Electromagnetism, wave optics, relativity, quantum orbitals, nuclear decay.", category: "physics", icon: <SatelliteIcon className="h-4 w-4" />, status: "new", component: () => <PhysicsLab /> },
+  { id: "ph-heat-determinations", title: "Heat Determination Labs (3D, labelled)", description: "Lee's disc, Searle's bar, Newton's law of cooling & linear expansion in labelled 3D.", category: "physics", icon: <Flame className="h-4 w-4" />, status: "new", component: () => <PhysicsLab /> },
+  { id: "ph-3d-quantum", title: "Quantum 3D", description: "Quantum mechanics visualizations including orbitals, probability distributions, and spin.", category: "physics", icon: <Stars className="h-4 w-4" />, status: "new", component: () => <PhysicsLab /> },
+  { id: "ph-3d-wave", title: "Wave Simulator 3D", description: "Real-time 3D wave propagation with sine, cosine, and damped modes.", category: "physics", icon: <Waves className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-3d-pendulum", title: "Pendulum 3D", description: "Pendulum with trail visualization and period calculations.", category: "physics", icon: <Timer className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-3d-em", title: "EM Wave 3D", description: "Electromagnetic wave propagation with E and B field visualization.", category: "physics", icon: <Radio className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-3d-magnetic", title: "Magnetic Field 3D", description: "Bar magnet field lines and iron filings pattern.", category: "physics", icon: <Compass className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-3d-vectors", title: "Vector Addition 3D", description: "Interactive 3D vectors — components, dot product, cross product, parallelogram rule.", category: "physics", icon: <Move3d className="h-4 w-4" />, status: "new", component: () => <PhysicsLab /> },
+  { id: "ph-3d-optics", title: "Optics & Lens 3D", description: "Ray diagrams for convex/concave lenses and mirrors with live lens equation.", category: "physics", icon: <ScanEye className="h-4 w-4" />, status: "new", component: () => <PhysicsLab /> },
+  { id: "ph-3d-refraction", title: "Refraction 3D", description: "Snell's law visualization with total internal reflection and critical angle.", category: "physics", icon: <Eye className="h-4 w-4" />, status: "new", component: () => <PhysicsLab /> },
+  { id: "ph-3d-classic", title: "Physics 3D Classic", description: "Electric field, double pendulum, and gravitational field visualizers.", category: "physics", icon: <Cuboid className="h-4 w-4" />, status: "development", component: () => <PhysicsLab /> },
 
   // ============================================================
   // THEORY LAB - PHYSICS
@@ -225,8 +185,8 @@ const labs: LabItem[] = [
   // 3D LAB - CHEMISTRY
   // ============================================================
   { id: "ch-3d-periodic", title: "Periodic Table 3D", description: "Interactive 3D periodic table with element details, categories, and search.", category: "chemistry", icon: <Globe className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
-  { id: "ch-3d-advanced", title: "Chemistry 3D Advanced", description: "Molecular dynamics, crystallography, spectroscopy, SN1/SN2, DNA, VSEPR.", category: "chemistry", icon: <Pyramid className="h-4 w-4" />, status: "new", component: () => <ChemistryModern3D /> },
-  { id: "ch-3d-micro", title: "Microscopy 3D", description: "Atomic structure, electron orbitals, crystal lattice visualization.", category: "chemistry", icon: <Microscope className="h-4 w-4" />, status: "active", component: () => <ChemistryAdvanced3D /> },
+  { id: "ch-3d-advanced", title: "Chemistry 3D Advanced", description: "Molecular dynamics, crystallography, spectroscopy, SN1/SN2, DNA, VSEPR.", category: "chemistry", icon: <PyramidIcon className="h-4 w-4" />, status: "new", component: () => <ChemistryLab /> },
+  { id: "ch-3d-micro", title: "Microscopy 3D", description: "Atomic structure, electron orbitals, crystal lattice visualization.", category: "chemistry", icon: <Microscope className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
 
   // ============================================================
   // THEORY LAB - CHEMISTRY
@@ -243,11 +203,11 @@ const labs: LabItem[] = [
   // ============================================================
   // 3D LAB - BIOLOGY
   // ============================================================
-  { id: "bio-3d-cell", title: "Cell Structure 3D", description: "Plant and animal cell ultrastructure — organelles, membranes, nucleus in 3D.", category: "biology", icon: <Microscope className="h-4 w-4" />, status: "active", component: () => <BiologyCells3D /> },
-  { id: "bio-3d-dna", title: "DNA & Genetics 3D", description: "Double-helix DNA structure, replication, transcription, translation.", category: "biology", icon: <Dna className="h-4 w-4" />, status: "active", component: () => <BiologyDNA3D /> },
+  { id: "bio-3d-cell", title: "Cell Structure 3D", description: "Plant and animal cell ultrastructure — organelles, membranes, nucleus in 3D.", category: "biology", icon: <Microscope className="h-4 w-4" />, status: "active", component: () => <BiologyAdvanced3D /> },
+  { id: "bio-3d-dna", title: "DNA & Genetics 3D", description: "Double-helix DNA structure, replication, transcription, translation.", category: "biology", icon: <Dna className="h-4 w-4" />, status: "active", component: () => <BiologyAdvanced3D /> },
   { id: "bio-3d-advanced", title: "Biology 3D Advanced", description: "Cell ultrastructure, molecular genetics, ecology networks, human systems, evolution trees in interactive 3D.", category: "biology", icon: <FlaskConical className="h-4 w-4" />, status: "new", component: () => <BiologyAdvanced3D /> },
-  { id: "bio-3d-ecology", title: "Ecology & Ecosystem 3D", description: "Food chains, food webs, biogeochemical cycles, population dynamics in 3D.", category: "biology", icon: <TreeDeciduous className="h-4 w-4" />, status: "new", component: () => <BiologyEcology3D /> },
-  { id: "bio-3d-human", title: "Human Body Systems 3D", description: "Circulatory, respiratory, nervous, and digestive systems with interactive organ labels.", category: "biology", icon: <Heart className="h-4 w-4" />, status: "new", component: () => <BiologyHuman3D /> },
+  { id: "bio-3d-ecology", title: "Ecology & Ecosystem 3D", description: "Food chains, food webs, biogeochemical cycles, population dynamics in 3D.", category: "biology", icon: <TreeDeciduous className="h-4 w-4" />, status: "new", component: () => <BiologyAdvanced3D /> },
+  { id: "bio-3d-human", title: "Human Body Systems 3D", description: "Circulatory, respiratory, nervous, and digestive systems with interactive organ labels.", category: "biology", icon: <Heart className="h-4 w-4" />, status: "new", component: () => <BiologyAdvanced3D /> },
   { id: "bio-3d-evolution", title: "Evolution & Classification 3D", description: "Phylogenetic trees, taxonomy hierarchy, fossil record timeline, adaptive radiation.", category: "biology", icon: <Users className="h-4 w-4" />, status: "new", component: () => <BiologyEvolution3D /> },
 
   // ============================================================
@@ -265,9 +225,9 @@ const labs: LabItem[] = [
   // ============================================================
   { id: "math-3d-geometry", title: "3D Geometry", description: "Points, lines, planes in 3D space with interactive visualization.", category: "mathematics", icon: <Box className="h-4 w-4" />, status: "active", component: () => <MathGeometry3D /> },
   { id: "math-3d-surfaces", title: "3D Mathematical Surfaces", description: "Explore saddle, wave, ripple, peak, plane, and cylinder surfaces.", category: "mathematics", icon: <Grid3x3 className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
-  { id: "math-3d-advanced", title: "Mathematics 3D Advanced", description: "Surfaces + contours, divergence/curl, Mandelbulb, parametric surfaces.", category: "mathematics", icon: <Binary className="h-4 w-4" />, status: "new", component: () => <MathModern3D /> },
-  { id: "math-3d-fourier", title: "Fourier Series 3D", description: "Build square, sawtooth, and triangle waves from sums of sines.", category: "mathematics", icon: <Sigma className="h-4 w-4" />, status: "active", component: () => <MathAdvancedMotionLab /> },
-  { id: "math-3d-decay", title: "Nuclear Decay Simulator", description: "Stochastic radioactive decay visualization with half-life controls.", category: "mathematics", icon: <AtomIcon className="h-4 w-4" />, status: "active", component: () => <MathAdvancedMotionLab /> },
+  { id: "math-3d-advanced", title: "Mathematics 3D Advanced", description: "Surfaces + contours, divergence/curl, Mandelbulb, parametric surfaces.", category: "mathematics", icon: <Binary className="h-4 w-4" />, status: "new", component: () => <MathLab /> },
+  { id: "math-3d-fourier", title: "Fourier Series 3D", description: "Build square, sawtooth, and triangle waves from sums of sines.", category: "mathematics", icon: <Sigma className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-3d-decay", title: "Nuclear Decay Simulator", description: "Stochastic radioactive decay visualization with half-life controls.", category: "mathematics", icon: <AtomIcon className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
 
   // ============================================================
   // THEORY LAB - MATHEMATICS
@@ -281,27 +241,27 @@ const labs: LabItem[] = [
   // ============================================================
   // CALCULATOR LAB (All Subjects)
   // ============================================================
-  { id: "ph-calc-ohms", title: "Ohm's Law Calc", description: "Calculate V, I, R with interactive controls.", category: "physics", icon: <Zap className="h-4 w-4" />, status: "active", component: () => <PhysicsInteractive defaultTab="ohms" /> },
-  { id: "ph-calc-heat", title: "Heat Calculator", description: "Calorimetry, latent heat, thermal expansion.", category: "physics", icon: <Thermometer className="h-4 w-4" />, status: "active", component: () => <PhysicsHeatLab /> },
-  { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: <Eye className="h-4 w-4" />, status: "active", component: () => <PhysicsOptics /> },
+  { id: "ph-calc-ohms", title: "Ohm's Law Calc", description: "Calculate V, I, R with interactive controls.", category: "physics", icon: <Zap className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-calc-heat", title: "Heat Calculator", description: "Calorimetry, latent heat, thermal expansion.", category: "physics", icon: <Thermometer className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
+  { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: <Eye className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
   { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <Rocket className="h-4 w-4" />, status: "active", component: () => <PhysicsLab /> },
-  { id: "ch-calc-ph", title: "pH Calculator", description: "Calculate pH from concentration for acids and bases.", category: "chemistry", icon: <TestTube className="h-4 w-4" />, status: "active", component: () => <ChemistryInteractive defaultTab="ph" /> },
-  { id: "ch-calc-titration", title: "Titration Simulator", description: "Simulate strong acid-strong base titration and track pH changes.", category: "chemistry", icon: <Beaker className="h-4 w-4" />, status: "active", component: () => <ChemistryInteractive defaultTab="titration" /> },
-  { id: "ch-calc-gas", title: "Gas Laws Calc", description: "Boyle's, Charles's, ideal gas law solver.", category: "chemistry", icon: <WindIcon className="h-4 w-4" />, status: "active", component: () => <ChemistryInteractive defaultTab="gaslaws" /> },
-  { id: "ch-calc-molarmass", title: "Molar Mass Calc", description: "Enter a chemical formula and get molar mass.", category: "chemistry", icon: <Microscope className="h-4 w-4" />, status: "active", component: () => <ChemistryInteractive defaultTab="molarmass" /> },
-  { id: "ch-calc-stoich", title: "Stoichiometry Lab", description: "Moles, percent composition, limiting reagent.", category: "chemistry", icon: <Dna className="h-4 w-4" />, status: "active", component: () => <ChemistryStoichiometry /> },
+  { id: "ch-calc-ph", title: "pH Calculator", description: "Calculate pH from concentration for acids and bases.", category: "chemistry", icon: <TestTube className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
+  { id: "ch-calc-titration", title: "Titration Simulator", description: "Simulate strong acid-strong base titration and track pH changes.", category: "chemistry", icon: <Beaker className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
+  { id: "ch-calc-gas", title: "Gas Laws Calc", description: "Boyle's, Charles's, ideal gas law solver.", category: "chemistry", icon: <WindIcon className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
+  { id: "ch-calc-molarmass", title: "Molar Mass Calc", description: "Enter a chemical formula and get molar mass.", category: "chemistry", icon: <Microscope className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
+  { id: "ch-calc-stoich", title: "Stoichiometry Lab", description: "Moles, percent composition, limiting reagent.", category: "chemistry", icon: <Dna className="h-4 w-4" />, status: "active", component: () => <ChemistryLab /> },
   { id: "bio-calc-punnett", title: "Punnett Square Solver", description: "Predict offspring genotypes and phenotypes from parental crosses.", category: "biology", icon: <Dna className="h-4 w-4" />, status: "active", component: () => <BiologyPunnettCalculator /> },
   { id: "bio-calc-population", title: "Population Growth Calc", description: "Exponential and logistic population growth models with carrying capacity.", category: "biology", icon: <Users className="h-4 w-4" />, status: "active", component: () => <BiologyPopulationCalculator /> },
   { id: "bio-calc-photosynthesis", title: "Photosynthesis Rate Calc", description: "Calculate rate of photosynthesis under varying light, CO₂, and temperature.", category: "biology", icon: <Leaf className="h-4 w-4" />, status: "active", component: () => <BiologyPhotosynthesisCalculator /> },
-  { id: "math-calc-deriv", title: "Derivative Calculator", description: "Compute derivatives and integrals numerically.", category: "mathematics", icon: <FunctionSquare className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="derivative" /> },
-  { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve ax^2 + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: <Sigma className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="quadratic" /> },
-  { id: "math-calc-stats", title: "Statistics Calculator", description: "Mean, median, mode, standard deviation.", category: "mathematics", icon: <BarChart3 className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="statistics" /> },
-  { id: "math-calc-matrix", title: "Matrix Calculator", description: "Add, multiply, and transpose matrices.", category: "mathematics", icon: <Grid3x3 className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="matrix" /> },
-  { id: "math-calc-trig", title: "Trigonometry Lab", description: "Unit circle visualization and sine/cosine/tangent graphing.", category: "mathematics", icon: <Target className="h-4 w-4" />, status: "active", component: () => <MathTrigonometry /> },
-  { id: "math-calc-series", title: "Sequences & Series", description: "Arithmetic and geometric progressions.", category: "mathematics", icon: <TrendingUp className="h-4 w-4" />, status: "active", component: () => <MathSeriesLab /> },
-  { id: "math-calc-vectors", title: "Vector Operations", description: "Add, dot product, cross product of 3D vectors.", category: "mathematics", icon: <Move3d className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="vectors" /> },
-  { id: "math-calc-limit", title: "Limit Calculator", description: "Estimate limits numerically.", category: "mathematics", icon: <InfinityIcon className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="limit" /> },
-  { id: "math-calc-system", title: "System Solver", description: "Solve 2x2 and 3x3 systems of linear equations.", category: "mathematics", icon: <Columns3 className="h-4 w-4" />, status: "active", component: () => <MathInteractive defaultTab="system" /> },
+  { id: "math-calc-deriv", title: "Derivative Calculator", description: "Compute derivatives and integrals numerically.", category: "mathematics", icon: <FunctionSquare className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve ax^2 + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: <Sigma className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-stats", title: "Statistics Calculator", description: "Mean, median, mode, standard deviation.", category: "mathematics", icon: <BarChart3 className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-matrix", title: "Matrix Calculator", description: "Add, multiply, and transpose matrices.", category: "mathematics", icon: <Grid3x3 className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-trig", title: "Trigonometry Lab", description: "Unit circle visualization and sine/cosine/tangent graphing.", category: "mathematics", icon: <Target className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-series", title: "Sequences & Series", description: "Arithmetic and geometric progressions.", category: "mathematics", icon: <TrendingUp className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-vectors", title: "Vector Operations", description: "Add, dot product, cross product of 3D vectors.", category: "mathematics", icon: <Move3d className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-limit", title: "Limit Calculator", description: "Estimate limits numerically.", category: "mathematics", icon: <InfinityIcon className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
+  { id: "math-calc-system", title: "System Solver", description: "Solve 2x2 and 3x3 systems of linear equations.", category: "mathematics", icon: <Columns3 className="h-4 w-4" />, status: "active", component: () => <MathLab /> },
 
   // ============================================================
   // CLASS 11 LABS
@@ -314,10 +274,10 @@ const labs: LabItem[] = [
   // ============================================================
   // PREMIUM LABS
   // ============================================================
-  { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4" />, status: "premium", creditCost: 5000, component: () => <PremiumPlaceholder title="AI Lab Tutor" icon={<Brain className="h-5 w-5 text-amber-500" />} description="Get instant help with lab concepts." /> },
-  { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4" />, status: "premium", creditCost: 7000, component: () => <PremiumAdvancedCircuitSimulator /> },
-  { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4" />, status: "premium", creditCost: 8000, component: () => <PremiumPlaceholder title="Molecular Builder 3D" icon={<AtomIcon className="h-5 w-5 text-amber-500" />} description="Build molecules from scratch." /> },
-  { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4" />, status: "premium", creditCost: 6000, component: () => <PremiumEquationSolver /> },
+  { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4" />, status: "premium", creditCost: 5000, component: () => <PremiumLab /> },
+  { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4" />, status: "premium", creditCost: 7000, component: () => <PremiumLab /> },
+  { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4" />, status: "premium", creditCost: 8000, component: () => <PremiumLab /> },
+  { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4" />, status: "premium", creditCost: 6000, component: () => <PremiumLab /> },
 ];
 
 function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSlug: string }) {
@@ -561,5 +521,28 @@ export default function LabPage() {
     }>
       <LabContent />
     </Suspense>
+  );
+}
+
+// Icon components for labs that don't have direct lucide equivalents
+function SatelliteIcon(props: any) {
+  return (
+    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13 7 9 3 5 7l4 4" />
+      <path d="m17 11 4 4-4 4-4-4" />
+      <path d="m8 12 4 4 6-6-4-4Z" />
+      <path d="m16 8 3-3" />
+      <path d="M9 14.5A2.5 2.5 0 0 0 6.5 12c0-1.38.5-2 1-3 .667-.917 1.333-1.333 2-1 .667.333 1 1.333 1 3Z" />
+    </svg>
+  );
+}
+
+function PyramidIcon(props: any) {
+  return (
+    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2 2 22h20L12 2Z" />
+      <path d="M12 2v20" />
+      <path d="M7 12h10" />
+    </svg>
   );
 }
