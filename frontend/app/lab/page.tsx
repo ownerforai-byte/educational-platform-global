@@ -19,7 +19,9 @@ import { CoordinateAxes3D } from "@/components/lab/coordinate-axes-3d";
 import { InteractiveFunctionGraph } from "@/components/lab/interactive-function-graph";
 import { BiologyAdvanced3D, BiologyEvolution3D, BiologyPunnettCalculator, BiologyPopulationCalculator, BiologyPhotosynthesisCalculator } from "@/components/lab/biology-3d";
 import { TheoryPanel } from "@/components/lab/theory-panel";
-import { PremiumLab } from "@/components/lab/premium-lab";
+import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
+import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
+import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 
 const CLASS_OPTIONS = [
   { value: "class-11-notes", label: "Class 11" },
@@ -274,10 +276,10 @@ const labs: LabItem[] = [
   // ============================================================
   // PREMIUM LABS
   // ============================================================
-  { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4" />, status: "premium", creditCost: 5000, component: () => <PremiumLab /> },
-  { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4" />, status: "premium", creditCost: 7000, component: () => <PremiumLab /> },
-  { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4" />, status: "premium", creditCost: 8000, component: () => <PremiumLab /> },
-  { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4" />, status: "premium", creditCost: 6000, component: () => <PremiumLab /> },
+  { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4" />, status: "premium", creditCost: 5000, component: () => <PremiumPlaceholder title="AI Lab Tutor" icon={<Brain className="h-5 w-5 text-amber-500" />} description="Get instant help with lab concepts." /> },
+  { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4" />, status: "premium", creditCost: 7000, component: () => <PremiumAdvancedCircuitSimulator /> },
+  { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4" />, status: "premium", creditCost: 8000, component: () => <PremiumPlaceholder title="Molecular Builder 3D" icon={<AtomIcon className="h-5 w-5 text-amber-500" />} description="Build molecules from scratch." /> },
+  { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4" />, status: "premium", creditCost: 6000, component: () => <PremiumEquationSolver /> },
 ];
 
 function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSlug: string }) {
