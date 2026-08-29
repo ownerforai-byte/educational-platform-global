@@ -450,7 +450,17 @@ function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSl
   );
 }
 
-function LabContent({ classSlug, subjectSlug }: { classSlug: string; subjectSlug: string }) {
+function LabContent({
+  classSlug,
+  subjectSlug,
+  onClassChange,
+  onSubjectChange,
+}: {
+  classSlug: string;
+  subjectSlug: string;
+  onClassChange: (value: string) => void;
+  onSubjectChange: (value: string) => void;
+}) {
   const subjects = SUBJECT_OPTIONS[classSlug] || [];
 
   return (
@@ -467,7 +477,7 @@ function LabContent({ classSlug, subjectSlug }: { classSlug: string; subjectSlug
           <label htmlFor="class-select" className="text-sm font-medium">
             Class
           </label>
-          <Select value={classSlug} onValueChange={setClassSlug}>
+          <Select value={classSlug} onValueChange={onClassChange}>
             <SelectTrigger id="class-select" className="w-full sm:w-48 touch-manipulation">
               <SelectValue placeholder="Select class" />
             </SelectTrigger>
@@ -485,7 +495,7 @@ function LabContent({ classSlug, subjectSlug }: { classSlug: string; subjectSlug
           <label htmlFor="subject-select" className="text-sm font-medium">
             Subject
           </label>
-          <Select value={subjectSlug} onValueChange={setSubjectSlug}>
+          <Select value={subjectSlug} onValueChange={onSubjectChange}>
             <SelectTrigger id="subject-select" className="w-full sm:w-48 touch-manipulation">
               <SelectValue placeholder="Select subject" />
             </SelectTrigger>
@@ -511,7 +521,12 @@ function LabPageInner() {
   const [subjectSlug, setSubjectSlug] = useState("mathematics");
 
   return (
-    <LabContent classSlug={classSlug} subjectSlug={subjectSlug} />
+    <LabContent
+      classSlug={classSlug}
+      subjectSlug={subjectSlug}
+      onClassChange={setClassSlug}
+      onSubjectChange={setSubjectSlug}
+    />
   );
 }
 
