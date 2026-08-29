@@ -1,4 +1,9 @@
-import { useQuery, type UseQueryResult } from "@tanstack/react-query";
+import {
+  useQuery,
+  useSuspenseQuery,
+  type UseQueryResult,
+  type UseSuspenseQueryResult,
+} from "@tanstack/react-query";
 import {
   getSyllabusByClass,
   getSubjectSyllabus,
@@ -17,7 +22,7 @@ const UNIT_KEY = (classSlug: string, subjectSlug: string, unitId: string) =>
 const TOPIC_KEY = (classSlug: string, subjectSlug: string, unitId: string, topicSlug: string) =>
   ["syllabus", "topic", classSlug, subjectSlug, unitId, topicSlug] as const;
 
-export function useSyllabusByClass(classSlug: string): UseQueryResult<typeof getSyllabusByClass(classSlug), Error> {
+export function useSyllabusByClass(classSlug: string): UseQueryResult<ClassSyllabus | undefined, Error> {
   return useQuery({
     queryKey: [...SYLLABUS_KEY, classSlug],
     queryFn: () => getSyllabusByClass(classSlug),
@@ -29,12 +34,12 @@ export function useSyllabusByClass(classSlug: string): UseQueryResult<typeof get
 export function useSubjectNav(
   classSlug: string,
   subjectSlug: string,
-): UseQueryResult<{ subject: SubjectNavVM | null; units: UnitVM[] }, Error> {
-  return useQuery({
+): UseSuspenseQueryResult<{ subject: SubjectNavVM; units: UnitVM[] }, Error> {
+  return useSuspenseQuery({
     queryKey: SUBJECT_NAV_KEY(classSlug, subjectSlug),
     queryFn: () => {
       const subject = getSubjectSyllabus(classSlug, subjectSlug);
-      if (!subject) return { subject: null, units: [] };
+      if (!subject) throw new Error(`Subject ${subjectSlug} not found`);
       const units: UnitVM[] = subject.units.map((u) => ({
         id: u.id,
         title: u.title,
@@ -61,14 +66,14 @@ export function useUnit(
   classSlug: string,
   subjectSlug: string,
   unitId: string,
-): UseQueryResult<UnitVM | null, Error> {
-  return useQuery({
+): UseSuspenseQueryResult<UnitVM, Error> {
+  return useSuspenseQuery({
     queryKey: UNIT_KEY(classSlug, subjectSlug, unitId),
     queryFn: () => {
       const subject = getSubjectSyllabus(classSlug, subjectSlug);
-      if (!subject) return null;
+      if (!subject) throw new Error(`Subject ${subjectSlug} not found`);
       const unit = getUnitSyllabus(subject, unitId);
-      if (!unit) return null;
+      if (!unit) throw new Error(`Unit ${unitId} not found`);
       return {
         id: unit.id,
         title: unit.title,
@@ -87,16 +92,16 @@ export function useUnitTopic(
   subjectSlug: string,
   unitId: string,
   topicSlug: string,
-): UseQueryResult<{ unit: UnitVM; topic: SyllabusTopicEntry } | null, Error> {
-  return useQuery({
+): UseSuspenseQueryResult<{ unit: UnitVM; topic: SyllabusTopicEntry }, Error> {
+  return useSuspenseQuery({
     queryKey: TOPIC_KEY(classSlug, subjectSlug, unitId, topicSlug),
     queryFn: () => {
       const subject = getSubjectSyllabus(classSlug, subjectSlug);
-      if (!subject) return null;
+      if (!subject) throw new Error(`Subject ${subjectSlug} not found`);
       const unit = getUnitSyllabus(subject, unitId);
-      if (!unit) return null;
+      if (!unit) throw new Error(`Unit ${unitId} not found`);
       const topic = getTopicEntryBySlug(unit, topicSlug);
-      if (!topic) return null;
+      if (!topic) throw new Error(`Topic ${topicSlug} not found`);
       return {
         unit: {
           id: unit.id,
