@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, Suspense } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -12,19 +12,19 @@ import { MathGeometry3D } from "@/components/lab/math-geometry-3d";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
-import { createThreeScene, disposeThreeScene, clearGroup } from "@/components/lab/three-scene";
+import { evaluate } from "mathjs";
 
 function MeaningPanel({ title, meaning, points }: { title: string; meaning: string; points: string[] }) {
   return (
-    <div className="rounded-md border border-primary/20 bg-primary/5 p-3 w-full">
+    <div className="rounded-md border border-primary/20 bg-primary/5 p-3 w-full" role="region" aria-label="Concept explanation">
       <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Concept & Why It Matters</p>
       <h4 className="mt-1 text-sm font-semibold">{title}</h4>
       <p className="mt-1 text-xs text-muted-foreground">{meaning}</p>
       {points.length > 0 && (
-        <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+        <ul className="mt-2 space-y-1 text-xs text-muted-foreground" role="list">
           {points.map((p, i) => (
             <li key={i} className="flex gap-1.5">
-              <span className="text-primary">•</span>
+              <span className="text-primary" aria-hidden="true">•</span>
               <span>{p}</span>
             </li>
           ))}
@@ -43,6 +43,7 @@ type FunctionGraphProps = {
 function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 400, height: 200 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -55,6 +56,8 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
+
+    setDimensions({ width: rect.width, height: rect.height });
 
     ctx.clearRect(0, 0, rect.width, rect.height);
 
@@ -111,14 +114,17 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
       }
     }
     ctx.stroke();
-  }, [fn, range, color]);
+  }, [fn, range, color, dimensions]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const observer = new ResizeObserver(() => {
-      canvas.dispatchEvent(new Event('resize'));
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        setDimensions({ width, height });
+      }
     });
     observer.observe(canvas);
     return () => observer.disconnect();
@@ -128,8 +134,9 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
     <div ref={containerRef} className="w-full">
       <canvas 
         ref={canvasRef} 
-        className="w-full h-auto min-h-[200px]" 
-        aria-label="Function graph"
+        className="w-full h-auto min-h-[200px] max-h-[400px]" 
+        aria-label="Function graph visualization"
+        role="img"
         style={{ height: 'auto' }}
       />
     </div>
@@ -139,20 +146,29 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
 function InteractiveFunctionGraph() {
   const [fnExpr, setFnExpr] = useState("x^2");
   const [graphFn, setGraphFn] = useState<(x: number) => number>((x) => x * x);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   function updateFunction(expr: string) {
     setFnExpr(expr);
+    setError(null);
+    setIsLoading(true);
     try {
-      const sanitized = expr.replace(/\^/g, "**");
-      const fn = new Function("x", `return ${sanitized};`) as (x: number) => number;
-      setGraphFn(() => (x: number) => Number(fn(x)));
+      const fn = (x: number) => {
+        const result = evaluate(expr, { x });
+        return Number(result);
+      };
+      setGraphFn(fn);
     } catch {
+      setError("Invalid expression. Try: x^2, sin(x), 2*x+3");
       setGraphFn(() => () => NaN);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full" role="region" aria-label="Interactive function grapher">
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
           <span>Interactive Function Grapher</span>
@@ -167,16 +183,37 @@ function InteractiveFunctionGraph() {
               <Input
                 id="function"
                 value={fnExpr}
-                onChange={(e) => updateFunction(e.target.value)}
+                onChange={(e) => setFnExpr(e.target.value)}
                 placeholder="e.g. x^2, sin(x), 2*x+3"
                 className="w-full"
+                aria-describedby="function-help"
               />
+              <p id="function-help" className="text-xs text-muted-foreground">
+                Supports: +, -, *, /, ^, sin, cos, tan, sqrt, abs, log, exp
+              </p>
             </div>
-            <Button onClick={() => updateFunction(fnExpr)} className="w-full sm:w-auto">Plot</Button>
+            <Button 
+              onClick={() => updateFunction(fnExpr)} 
+              className="w-full sm:w-auto"
+              disabled={isLoading}
+              aria-busy={isLoading}
+            >
+              {isLoading ? "Plotting..." : "Plot"}
+            </Button>
           </div>
-          <div className="flex flex-wrap gap-2 w-full">
+          {error && (
+            <p className="text-xs text-destructive" role="alert">{error}</p>
+          )}
+          <div className="flex flex-wrap gap-2 w-full" role="group" aria-label="Preset functions">
             {["x^2", "x^3", "sin(x)", "cos(x)", "2*x+3", "x^2-4", "abs(x)", "1/x"].map((preset) => (
-              <Button key={preset} variant="outline" size="sm" onClick={() => updateFunction(preset)} className="flex-1 min-w-[80px]">
+              <Button 
+                key={preset} 
+                variant="outline" 
+                size="sm" 
+                onClick={() => updateFunction(preset)} 
+                className="flex-1 min-w-[80px] touch-manipulation"
+                aria-label={`Plot ${preset}`}
+              >
                 {preset}
               </Button>
             ))}
@@ -203,6 +240,11 @@ function CoordinateGeometry3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState("points");
   const sceneRef = useRef<{ dispose: () => void } | null>(null);
+  const [isWebGL, setIsWebGL] = useState(true);
+
+  useEffect(() => {
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -219,7 +261,7 @@ function CoordinateGeometry3D() {
         const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
         camera.position.set(8, 6, 12);
 
-        if (!isWebGLAvailable()) return;
+        if (!isWebGL) return;
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -381,7 +423,7 @@ function CoordinateGeometry3D() {
       cancelled = true;
       cleanup.then((fn) => fn?.());
     };
-  }, [mode]);
+  }, [mode, isWebGL]);
 
   useEffect(() => {
     return () => {
@@ -389,19 +431,29 @@ function CoordinateGeometry3D() {
     };
   }, []);
 
+  if (!isWebGL) {
+    return (
+      <WebGLFallback 
+        title="Coordinate Geometry 3D"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
+
   return (
     <div className="space-y-3 w-full">
       <div 
         ref={containerRef} 
         className="lab-3d-container w-full rounded-md border border-border" 
         aria-label="Interactive 3D coordinate geometry"
+        role="img"
         style={{ height: 'clamp(300px, 50vh, 600px)' }}
       />
       <CollapsibleControls label="Mode Options">
         <div className="flex flex-wrap items-center gap-2 w-full">
           <Label>Mode:</Label>
           <Select value={mode} onValueChange={setMode}>
-            <SelectTrigger className="w-full sm:w-40">
+            <SelectTrigger className="w-full sm:w-40 touch-manipulation">
               <SelectValue placeholder="Select mode" />
             </SelectTrigger>
             <SelectContent>
@@ -423,6 +475,11 @@ function MathSurfaces3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [surfaceType, setSurfaceType] = useState("saddle");
   const sceneRef = useRef<{ dispose: () => void } | null>(null);
+  const [isWebGL, setIsWebGL] = useState(true);
+
+  useEffect(() => {
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
   const getSurfaceZ = (x: number, y: number, type: string): number => {
     switch (type) {
@@ -458,7 +515,7 @@ function MathSurfaces3D() {
         const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
         camera.position.set(8, 8, 12);
 
-        if (!isWebGLAvailable()) return;
+        if (!isWebGL) return;
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -592,13 +649,22 @@ function MathSurfaces3D() {
       cancelled = true;
       cleanup.then((fn) => fn?.());
     };
-  }, [surfaceType]);
+  }, [surfaceType, isWebGL]);
 
   useEffect(() => {
     return () => {
       sceneRef.current?.dispose();
     };
   }, []);
+
+  if (!isWebGL) {
+    return (
+      <WebGLFallback 
+        title="3D Mathematical Surfaces"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
 
   const surfaceLabels: Record<string, string> = {
     saddle: "Saddle (z = x² − y²)",
@@ -615,13 +681,14 @@ function MathSurfaces3D() {
         ref={containerRef} 
         className="lab-3d-container w-full rounded-md border border-border" 
         aria-label="3D mathematical surfaces"
+        role="img"
         style={{ height: 'clamp(300px, 50vh, 600px)' }}
       />
       <CollapsibleControls label="Surface Options">
         <div className="flex flex-wrap items-center gap-2 w-full">
           <Label>Surface:</Label>
           <Select value={surfaceType} onValueChange={setSurfaceType}>
-            <SelectTrigger className="w-full sm:w-52">
+            <SelectTrigger className="w-full sm:w-52 touch-manipulation">
               <SelectValue placeholder="Select surface" />
             </SelectTrigger>
             <SelectContent>
@@ -650,6 +717,11 @@ function MathSurfaces3D() {
 function Parabola3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<{ dispose: () => void } | null>(null);
+  const [isWebGL, setIsWebGL] = useState(true);
+
+  useEffect(() => {
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -666,7 +738,7 @@ function Parabola3D() {
         const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
         camera.position.set(8, 6, 12);
 
-        if (!isWebGLAvailable()) return;
+        if (!isWebGL) return;
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -786,7 +858,7 @@ function Parabola3D() {
       cancelled = true;
       cleanup.then((fn) => fn?.());
     };
-  }, []);
+  }, [isWebGL]);
 
   useEffect(() => {
     return () => {
@@ -794,11 +866,21 @@ function Parabola3D() {
     };
   }, []);
 
+  if (!isWebGL) {
+    return (
+      <WebGLFallback 
+        title="3D Parabola"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
+
   return (
     <div 
       ref={containerRef} 
       className="lab-3d-container w-full rounded-md border border-border" 
       aria-label="Interactive 3D parabola visualization"
+      role="img"
       style={{ height: 'clamp(300px, 50vh, 600px)' }}
     />
   );
@@ -808,7 +890,7 @@ export function MathLab() {
   const [tab, setTab] = useState("geometry");
 
   return (
-    <Card className="w-full">
+    <Card className="w-full" role="region" aria-label="Mathematics laboratory">
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
           <span>Mathematics Lab</span>
@@ -816,18 +898,26 @@ export function MathLab() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <Tabs value={tab} onValueChange={setTab} className="w-full">
-          <TabsList className="flex-wrap w-full">
-            <TabsTrigger value="geometry" className="flex-1 min-w-[120px]">Coordinate Geometry</TabsTrigger>
-            <TabsTrigger value="graph" className="flex-1 min-w-[120px]">Function Graphs</TabsTrigger>
-            <TabsTrigger value="surface" className="flex-1 min-w-[120px]">3D Surfaces</TabsTrigger>
+        <Tabs value={tab} onValueChange={setTab} className="w-full" role="tablist" aria-label="Lab sections">
+          <TabsList className="flex-wrap w-full" role="tablist">
+            <TabsTrigger value="geometry" className="flex-1 min-w-[120px] touch-manipulation" role="tab" aria-selected={tab === "geometry"}>
+              Coordinate Geometry
+            </TabsTrigger>
+            <TabsTrigger value="graph" className="flex-1 min-w-[120px] touch-manipulation" role="tab" aria-selected={tab === "graph"}>
+              Function Graphs
+            </TabsTrigger>
+            <TabsTrigger value="surface" className="flex-1 min-w-[120px] touch-manipulation" role="tab" aria-selected={tab === "surface"}>
+              3D Surfaces
+            </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="geometry" className="mt-4">
-            <MathGeometry3D />
+          <TabsContent value="geometry" className="mt-4" role="tabpanel" aria-labelledby="tab-geometry">
+            <Suspense fallback={<div className="h-[400px] flex items-center justify-center"><p className="text-muted-foreground">Loading 3D geometry...</p></div>}>
+              <MathGeometry3D />
+            </Suspense>
           </TabsContent>
 
-          <TabsContent value="graph" className="mt-4">
+          <TabsContent value="graph" className="mt-4" role="tabpanel" aria-labelledby="tab-graph">
             <div className="space-y-6 w-full">
               <InteractiveFunctionGraph />
               <Card className="w-full">
@@ -835,7 +925,9 @@ export function MathLab() {
                   <CardTitle>3D Parabola (y = x²)</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Parabola3D />
+                  <Suspense fallback={<div className="h-[300px] flex items-center justify-center"><p className="text-muted-foreground">Loading parabola...</p></div>}>
+                    <Parabola3D />
+                  </Suspense>
                 </CardContent>
               </Card>
               <Card className="w-full">
@@ -846,20 +938,24 @@ export function MathLab() {
                   <p className="mb-4 text-sm text-muted-foreground">
                     Interactive 3D coordinate geometry with points, lines, planes, and vectors.
                   </p>
-                  <CoordinateGeometry3D />
+                  <Suspense fallback={<div className="h-[300px] flex items-center justify-center"><p className="text-muted-foreground">Loading 3D scene...</p></div>}>
+                    <CoordinateGeometry3D />
+                  </Suspense>
                 </CardContent>
               </Card>
             </div>
           </TabsContent>
 
-          <TabsContent value="surface" className="mt-4">
+          <TabsContent value="surface" className="mt-4" role="tabpanel" aria-labelledby="tab-surface">
             <div className="space-y-6 w-full">
               <Card className="w-full">
                 <CardHeader>
                   <CardTitle>3D Mathematical Surfaces</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <MathSurfaces3D />
+                  <Suspense fallback={<div className="h-[300px] flex items-center justify-center"><p className="text-muted-foreground">Loading surfaces...</p></div>}>
+                    <MathSurfaces3D />
+                  </Suspense>
                 </CardContent>
               </Card>
             </div>
