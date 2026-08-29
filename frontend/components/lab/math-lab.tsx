@@ -45,6 +45,22 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 400, height: 200 });
 
+  // ResizeObserver effect - separate from drawing, empty deps, only updates dimensions on actual resize
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        setDimensions({ width, height });
+      }
+    });
+    observer.observe(canvas);
+    return () => observer.disconnect();
+  }, []);
+
+  // Drawing effect - depends on fn, range, color, dimensions but never calls setDimensions
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -56,8 +72,6 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
-
-    setDimensions({ width: rect.width, height: rect.height });
 
     ctx.clearRect(0, 0, rect.width, rect.height);
 
@@ -115,20 +129,6 @@ function FunctionGraph({ fn, range, color = "#2563eb" }: FunctionGraphProps) {
     }
     ctx.stroke();
   }, [fn, range, color, dimensions]);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        const { width, height } = entry.contentRect;
-        setDimensions({ width, height });
-      }
-    });
-    observer.observe(canvas);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div ref={containerRef} className="w-full">
