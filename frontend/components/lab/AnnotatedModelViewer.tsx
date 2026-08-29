@@ -1,348 +1,597 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls, Html, Line } from "@react-three/drei";
-import * as THREE from "three";
+import { Line, Html, OrbitControls } from "@react-three/drei";
 import gsap from "gsap";
-import { Info } from "lucide-react";
+import * as THREE from "three";
 
-// ─── Annotation type ───────────────────────────────────────────────
+// ─── Types ───────────────────────────────────────────────────────────────────
+
 interface Annotation {
   id: string;
+  position: [number, number, number];
   label: string;
-  description: string;
-  origin: [number, number, number];
-  target: [number, number, number];
+  description?: string;
   color?: string;
 }
 
-// ─── Camera ref setter ─────────────────────────────────────────────
+interface AnnotatedModelViewerProps {
+  annotations?: Annotation[];
+  className?: string;
+  autoRotate?: boolean;
+  autoFitOnLoad?: boolean;
+  autoAdjustAnnotations?: boolean;
+}
+
+// ─── Camera Ref Setter (exposes camera ref for external control) ─────────────
+
 function CameraRefSetter({
-  ref,
+  onCameraRef,
 }: {
-  ref: React.MutableRefObject<THREE.PerspectiveCamera | null>;
+  onCameraRef: (camera: THREE.PerspectiveCamera) => void;
 }) {
   const { camera } = useThree();
-  ref.current = camera;
+  useEffect(() => {
+    onCameraRef(camera);
+  }, [camera, onCameraRef]);
   return null;
 }
 
-// ─── Sample mesh component ─────────────────────────────────────────
+// ─── Auto-adjust annotation positions based on mesh bounds ──────────────────
+
+function getAutoAnnotationPositions(
+  meshSize: number,
+  count: number
+): [number, number, number][] {
+  const positions: [number, number, number][] = [];
+  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+
+  for (let i = 0; i < count; i++) {
+    const y = 1 - (i / (count - 1)) * 2; // -1 to 1
+    const radius = Math.sqrt(1 - y * y);
+    const theta = goldenAngle * i;
+
+    positions.push([
+      Math.cos(theta) * radius * meshSize * 1.5,
+      y * meshSize * 1.5,
+      Math.sin(theta) * radius * meshSize * 1.5,
+    ]);
+  }
+
+  return positions;
+}
+
+// ─── Sample Mesh with Annotations ────────────────────────────────────────────
+
 function SampleMesh({
   annotations,
-  selectedId,
-  onSelect,
+  onAnnotationClick,
+  autoAdjust = true,
 }: {
   annotations: Annotation[];
-  selectedId: string | null;
-  onSelect: (id: string | null) => void;
+  onAnnotationClick: (id: string) => void;
+  autoAdjust?: boolean;
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
-  const [hovered, setHovered] = useState<string | null>(null);
+  const groupRef = useRef<THREE.Group>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (meshRef.current) {
+      meshRef.current.rotation.x += delta * 0.1;
       meshRef.current.rotation.y += delta * 0.15;
     }
   });
 
+  // Auto-adjust annotation positions based on mesh size
+  const adjustedAnnotations = autoAdjust
+    ? annotations.map((ann, index) => ({
+        ...ann,
+        position: getAutoAnnotationPositions(1.5, annotations.length)[index] ||
+          ann.position,
+      }))
+    : annotations;
+
   return (
-    <group>
-      {/* Main body */}
-      <mesh
-        ref={meshRef}
-        position={[0, 0, 0]}
-        onClick={() => onSelect(null)}
-        onPointerOver={() => setHovered("mesh")}
-        onPointerOut={() => setHovered(null)}
-      >
-        <icosahedronGeometry args={[1.8, 1]} />
+    <group ref={groupRef}>
+      {/* Main icosahedron */}
+      <mesh ref={meshRef} position={[0, 0, 0]}>
+        <icosahedronGeometry args={[1.5, 1]} />
         <meshStandardMaterial
-          color={selectedId ? "#6366f1" : hovered ? "#818cf8" : "#4f46e5"}
+          color="#6366f1"
           metalness={0.3}
           roughness={0.2}
-          emissive={selectedId ? "#312e81" : "transparent"}
-          emissiveIntensity={selectedId ? 0.5 : 0}
+          emissive="#4f46e5"
+          emissiveIntensity={0.1}
         />
       </mesh>
 
-      {/* Inner wireframe for visual depth */}
-      <mesh scale={[0.95, 0.95, 0.95]}>
-        <icosahedronGeometry args={[1.8, 1]} />
-        <meshBasicMaterial color="#c7d2fe" wireframe transparent opacity={0.08} />
+      {/* Inner wireframe */}
+      <mesh position={[0, 0, 0]}>
+        <icosahedronGeometry args={[1.52, 1]} />
+        <meshBasicMaterial color="#818cf8" wireframe transparent opacity={0.3} />
       </mesh>
 
-      {/* Annotation arrows + labels */}
-      {annotations.map((ann) => {
-        const isSelected = selectedId === ann.id;
-        const isHovered = hovered === ann.id;
-        const scale = isSelected ? 1.15 : isHovered ? 1.08 : 1.0;
+      {/* Annotations */}
+      {adjustedAnnotations.map((annotation) => {
+        const isHovered = hoveredId === annotation.id;
+        const scale = isHovered ? 1.1 : 1.0;
 
         return (
-          <AnnotationRenderer
-            key={ann.id}
-            annotation={ann}
-            isSelected={isSelected}
-            scale={scale}
-            onSelect={() => onSelect(isSelected ? null : ann.id)}
-            onPointerOver={() => setHovered(ann.id)}
-            onPointerOut={() => setHovered(null)}
-          />
+          <group key={annotation.id} position={annotation.position}>
+            {/* Arrow line from mesh surface to label */}
+            <Line
+              points={[
+                [0, 0, 0],
+                [0, 1.2, 0],
+              ]}
+              color={annotation.color || "#f59e0b"}
+              lineWidth={isHovered ? 3 : 2}
+            />
+            {/* Dot at annotation point */}
+            <mesh position={[0, 0, 0]}>
+              <sphereGeometry args={[0.08, 16, 16]} />
+              <meshStandardMaterial
+                color={annotation.color || "#f59e0b"}
+                emissive={annotation.color || "#f59e0b"}
+                emissiveIntensity={0.5}
+              />
+            </mesh>
+            {/* HTML label */}
+            <Html
+              position={[0, 1.4, 0]}
+              center
+              distanceFactor={15}
+              style={{
+                pointerEvents: "auto",
+                cursor: "pointer",
+                transform: `translate(-50%, -50%) scale(${scale})`,
+                transition: "transform 0.2s ease",
+              }}
+              onClick={() => onAnnotationClick(annotation.id)}
+              onPointerOver={() => setHoveredId(annotation.id)}
+              onPointerOut={() => setHoveredId(null)}
+            >
+              <div
+                style={{
+                  background: isHovered
+                    ? "rgba(99, 102, 241, 0.95)"
+                    : "rgba(15, 23, 42, 0.9)",
+                  border: `1px solid ${annotation.color || "#f59e0b"}`,
+                  borderRadius: "8px",
+                  padding: "8px 12px",
+                  color: "#f8fafc",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  maxWidth: "200px",
+                  minWidth: "100px",
+                  boxShadow: isHovered
+                    ? "0 6px 20px rgba(99, 102, 241, 0.4)"
+                    : "0 4px 12px rgba(0,0,0,0.3)",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <div style={{ fontWeight: 600 }}>{annotation.label}</div>
+                {annotation.description && (
+                  <div
+                    style={{
+                      fontSize: "11px",
+                      color: "#94a3b8",
+                      marginTop: "4px",
+                    }}
+                  >
+                    {annotation.description}
+                  </div>
+                )}
+              </div>
+            </Html>
+          </group>
         );
       })}
     </group>
   );
 }
 
-// ─── Individual annotation renderer ────────────────────────────────
-function AnnotationRenderer({
-  annotation,
-  isSelected,
-  scale,
-  onSelect,
-  onPointerOver,
-  onPointerOut,
+// ─── Legend Overlay ──────────────────────────────────────────────────────────
+
+function LegendOverlay({
+  annotations,
+  onAnnotationClick,
+  activeAnnotation,
 }: {
-  annotation: Annotation;
-  isSelected: boolean;
-  scale: number;
-  onSelect: () => void;
-  onPointerOver: () => void;
-  onPointerOut: () => void;
+  annotations: Annotation[];
+  onAnnotationClick: (id: string) => void;
+  activeAnnotation: string | null;
 }) {
-  const lineRef = useRef<THREE.Line>(null);
-
-  useFrame((_, delta) => {
-    if (lineRef.current) {
-      const targetScale = isSelected ? 1.15 : 1.0;
-      lineRef.current.scale.setScalar(
-        THREE.MathUtils.lerp(lineRef.current.scale.x, targetScale, delta * 6)
-      );
-    }
-  });
-
-  const color = annotation.color ?? (isSelected ? "#f59e0b" : "#94a3b8");
-
-  return (
-    <group>
-      {/* 3D arrow line from mesh surface to label anchor */}
-      <Line
-        ref={lineRef}
-        points={[annotation.origin, annotation.target] as [THREE.Vector3, THREE.Vector3]}
-        color={color}
-        lineWidth={isSelected ? 3 : 2}
-        transparent
-        opacity={isSelected ? 1 : 0.7}
-      />
-
-      {/* Arrowhead cone at target */}
-      <mesh
-        position={new THREE.Vector3(...annotation.target)}
-        rotation={computeArrowRotation(annotation.origin, annotation.target)}
-      >
-        <coneGeometry args={[0.08, 0.2, 8]} />
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.4} />
-      </mesh>
-
-      {/* Screen-space HTML label anchored to arrow tip */}
-      <Html
-        position={annotation.target}
-        center
-        distanceFactor={18}
-        style={{
-          pointerEvents: "auto",
-          cursor: "pointer",
-          transform: `scale(${scale})`,
-          transition: "transform 0.2s ease",
-        }}
-        onClick={onSelect}
-        onPointerOver={onPointerOver}
-        onPointerOut={onPointerOut}
-      >
-        <div
-          style={{
-            background: isSelected
-              ? "rgba(245, 158, 11, 0.15)"
-              : "rgba(15, 23, 42, 0.85)",
-            border: `1px solid ${isSelected ? "#f59e0b" : "#334155"}`,
-            borderRadius: 8,
-            padding: "8px 12px",
-            color: "#f1f5f9",
-            fontSize: 13,
-            fontFamily: "inherit",
-            backdropFilter: "blur(8px)",
-            boxShadow: isSelected
-              ? "0 0 16px rgba(245, 158, 11, 0.3)"
-              : "0 4px 12px rgba(0,0,0,0.4)",
-            minWidth: 120,
-            maxWidth: 200,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
-            <Info size={14} color={color} />
-            <span style={{ fontWeight: 600, fontSize: 13 }}>{annotation.label}</span>
-          </div>
-          <p style={{ margin: 0, fontSize: 11, opacity: 0.75, lineHeight: 1.4 }}>
-            {annotation.description}
-          </p>
-        </div>
-      </Html>
-    </group>
-  );
-}
-
-// ─── Helpers ───────────────────────────────────────────────────────
-function computeArrowRotation(
-  from: [number, number, number],
-  to: [number, number, number]
-): [number, number, number] {
-  const dir = new THREE.Vector3(...to).sub(new THREE.Vector3(...from)).normalize();
-  const euler = new THREE.Euler().setFromVector3(dir);
-  return [euler.x, euler.y, euler.z];
-}
-
-// ─── Sample annotations ────────────────────────────────────────────
-const SAMPLE_ANNOTATIONS: Annotation[] = [
-  {
-    id: "core",
-    label: "Core Module",
-    description: "Central processing unit handling all computations.",
-    origin: [0.5, 0.3, 1.2],
-    target: [2.5, 2.0, 2.5],
-    color: "#6366f1",
-  },
-  {
-    id: "input",
-    label: "Input Layer",
-    description: "Receives and normalizes incoming data streams.",
-    origin: [-1.0, 0.8, 0.5],
-    target: [-3.0, 2.5, 1.0],
-    color: "#22d3ee",
-  },
-  {
-    id: "output",
-    label: "Output Layer",
-    description: "Produces final predictions and formatted results.",
-    origin: [0.8, -0.6, -1.0],
-    target: [3.0, -2.0, -2.0],
-    color: "#34d399",
-  },
-  {
-    id: "memory",
-    label: "Memory Buffer",
-    description: "Temporary storage for intermediate state.",
-    origin: [-0.3, -1.0, 0.8],
-    target: [-2.0, -2.5, 2.5],
-    color: "#f472b6",
-  },
-];
-
-// ─── Main viewer component ─────────────────────────────────────────
-export default function AnnotatedModelViewer() {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-
-  const handleSelect = useCallback((id: string | null) => {
-    setSelectedId((prev) => {
-      if (prev === id) return null;
-      if (id && cameraRef.current) {
-        const ann = SAMPLE_ANNOTATIONS.find((a) => a.id === id);
-        if (ann) {
-          gsap.to(cameraRef.current.position, {
-            x: ann.target[0] * 0.4,
-            y: ann.target[1] * 0.4 + 2,
-            z: ann.target[2] * 0.4 + 6,
-            duration: 0.8,
-            ease: "power2.inOut",
-          });
-        }
-      }
-      return id;
-    });
-  }, []);
-
   return (
     <div
       style={{
-        width: "100%",
-        height: "100%",
-        minHeight: 500,
-        background: "#0f172a",
-        borderRadius: 12,
-        overflow: "hidden",
-        position: "relative",
+        position: "absolute",
+        bottom: "20px",
+        left: "20px",
+        background: "rgba(15, 23, 42, 0.95)",
+        border: "1px solid rgba(99, 102, 241, 0.3)",
+        borderRadius: "12px",
+        padding: "16px",
+        color: "#f8fafc",
+        zIndex: 10,
+        minWidth: "180px",
+        maxWidth: "250px",
+        backdropFilter: "blur(8px)",
+        transition: "all 0.3s ease",
       }}
     >
-      <Canvas camera={{ position: [8, 6, 12], fov: 50 }} gl={{ antialias: true, alpha: false }}>
-        <CameraRefSetter ref={cameraRef} />
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[10, 15, 10]} intensity={1.2} castShadow />
-        <pointLight position={[-5, 5, -5]} color="#6366f1" intensity={0.5} />
-
-        <SampleMesh
-          annotations={SAMPLE_ANNOTATIONS}
-          selectedId={selectedId}
-          onSelect={handleSelect}
-        />
-
-        <OrbitControls
-          enablePan={true}
-          enableZoom={true}
-          enableRotate={true}
-          minDistance={5}
-          maxDistance={30}
-          autoRotate={false}
-        />
-
-        <fog attach="fog" args={["#0f172a", 30, 80]} />
-      </Canvas>
-
-      {/* Legend overlay */}
-      <div
+      <h3
         style={{
-          position: "absolute",
-          bottom: 16,
-          left: 16,
-          background: "rgba(15, 23, 42, 0.8)",
-          border: "1px solid #1e293b",
-          borderRadius: 8,
-          padding: "10px 14px",
-          color: "#94a3b8",
-          fontSize: 12,
-          backdropFilter: "blur(8px)",
+          margin: "0 0 12px 0",
+          fontSize: "14px",
+          fontWeight: 600,
+          color: "#818cf8",
         }}
       >
-        <div style={{ fontWeight: 600, color: "#e2e8f0", marginBottom: 6 }}>
-          Annotations
-        </div>
-        {SAMPLE_ANNOTATIONS.map((a) => (
-          <div
-            key={a.id}
-            onClick={() => handleSelect(selectedId === a.id ? null : a.id)}
+        Annotations
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+          maxHeight: "200px",
+          overflowY: "auto",
+        }}
+      >
+        {annotations.map((annotation) => (
+          <button
+            key={annotation.id}
+            onClick={() => onAnnotationClick(annotation.id)}
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
-              padding: "3px 0",
+              gap: "8px",
+              background:
+                activeAnnotation === annotation.id
+                  ? "rgba(99, 102, 241, 0.3)"
+                  : "transparent",
+              border: "none",
+              color: "#e2e8f0",
               cursor: "pointer",
-              color: selectedId === a.id ? a.color : "#94a3b8",
-              transition: "color 0.2s",
+              padding: "6px 8px",
+              borderRadius: "6px",
+              fontSize: "12px",
+              textAlign: "left",
+              width: "100%",
+              transition: "all 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background =
+                "rgba(99, 102, 241, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              if (activeAnnotation !== annotation.id) {
+                (e.currentTarget as HTMLButtonElement).style.background =
+                  "transparent";
+              }
             }}
           >
             <span
               style={{
-                width: 8,
-                height: 8,
+                width: "8px",
+                height: "8px",
                 borderRadius: "50%",
-                background: a.color,
+                background: annotation.color || "#f59e0b",
                 flexShrink: 0,
+                boxShadow:
+                  activeAnnotation === annotation.id
+                    ? `0 0 8px ${annotation.color || "#f59e0b"}`
+                    : "none",
+                transition: "all 0.2s",
               }}
             />
-            {a.label}
-          </div>
+            <span style={{ flex: 1 }}>{annotation.label}</span>
+          </button>
         ))}
       </div>
+    </div>
+  );
+}
+
+// ─── Main Component ──────────────────────────────────────────────────────────
+
+export function AnnotatedModelViewer({
+  annotations = [
+    {
+      id: "1",
+      position: [2, 1.5, 0] as [number, number, number],
+      label: "Vertex A",
+      description: "Top vertex of the icosahedron",
+      color: "#f59e0b",
+    },
+    {
+      id: "2",
+      position: [-1.5, -0.5, 1.2] as [number, number, number],
+      label: "Edge B",
+      description: "Connecting edge with golden ratio",
+      color: "#10b981",
+    },
+    {
+      id: "3",
+      position: [0, -1.8, -1] as [number, number, number],
+      label: "Face C",
+      description: "Triangular face with normal vector",
+      color: "#ef4444",
+    },
+    {
+      id: "4",
+      position: [1.2, 0, -1.8] as [number, number, number],
+      label: "Center D",
+      description: "Geometric center point",
+      color: "#8b5cf6",
+    },
+  ],
+  className = "",
+  autoRotate = true,
+  autoFitOnLoad = true,
+  autoAdjustAnnotations = true,
+}: AnnotatedModelViewerProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const [activeAnnotation, setActiveAnnotation] = useState<string | null>(null);
+  const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
+  const [isAutoRotating, setIsAutoRotating] = useState(autoRotate);
+
+  // Auto-adjust dimensions on resize
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateDimensions = () => {
+      const rect = container.getBoundingClientRect();
+      setDimensions({
+        width: rect.width || 800,
+        height: rect.height || 600,
+      });
+    };
+
+    updateDimensions();
+
+    const resizeObserver = new ResizeObserver(updateDimensions);
+    resizeObserver.observe(container);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  // Auto-fit camera on load
+  useEffect(() => {
+    if (!autoFitOnLoad || !cameraRef.current) return;
+
+    const camera = cameraRef.current;
+    gsap.to(camera.position, {
+      x: 8,
+      y: 6,
+      z: 12,
+      duration: 1.2,
+      ease: "power2.inOut",
+    });
+  }, [autoFitOnLoad]);
+
+  // Focus camera on annotation
+  const handleAnnotationClick = useCallback((id: string) => {
+    setActiveAnnotation((prev) => (prev === id ? null : id));
+
+    if (id && cameraRef.current) {
+      const annotation = annotations.find((a) => a.id === id);
+      if (annotation) {
+        gsap.to(cameraRef.current.position, {
+          x: annotation.position[0] * 0.8,
+          y: annotation.position[1] * 0.8 + 3,
+          z: annotation.position[2] * 0.8 + 8,
+          duration: 0.8,
+          ease: "power2.inOut",
+        });
+      }
+    }
+  }, [annotations]);
+
+  return (
+    <div
+      ref={containerRef}
+      className={className}
+      style={{
+        width: "100%",
+        height: "100%",
+        minHeight: "400px",
+        position: "relative",
+        borderRadius: "12px",
+        overflow: "hidden",
+        background: "#0f172a",
+      }}
+    >
+      <Canvas
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "block",
+        }}
+        camera={{
+          position: [8, 6, 12],
+          fov: 50,
+          near: 0.1,
+          far: 1000,
+        }}
+        dpr={[1, 2]}
+        gl={{
+          antialias: true,
+          alpha: false,
+          powerPreference: "high-performance",
+        }}
+        onCreated={({ gl, camera }) => {
+          cameraRef.current = camera as THREE.PerspectiveCamera;
+        }}
+      >
+        {/* Lighting */}
+        <ambientLight intensity={0.4} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1}
+          castShadow
+        />
+        <pointLight
+          position={[-10, -10, -10]}
+          intensity={0.5}
+          color="#6366f1"
+        />
+        <pointLight
+          position={[10, -5, 10]}
+          intensity={0.3}
+          color="#f59e0b"
+        />
+
+        {/* Scene */}
+        <SampleMesh
+          annotations={annotations}
+          onAnnotationClick={handleAnnotationClick}
+          autoAdjust={autoAdjustAnnotations}
+        />
+
+        {/* Grid helper (subtle) */}
+        <gridHelper
+          args={[20, 20, "#1e293b", "#0f172a"]}
+          position={[0, -3, 0]}
+        />
+
+        {/* Orbit controls */}
+        <OrbitControls
+          enableDamping
+          dampingFactor={0.05}
+          autoRotate={isAutoRotating}
+          autoRotateSpeed={1}
+          minDistance={5}
+          maxDistance={30}
+          enablePan={true}
+          panSpeed={0.5}
+        />
+      </Canvas>
+
+      {/* Legend overlay */}
+      <LegendOverlay
+        annotations={annotations}
+        onAnnotationClick={handleAnnotationClick}
+        activeAnnotation={activeAnnotation}
+      />
+
+      {/* Controls overlay */}
+      <div
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          display: "flex",
+          gap: "8px",
+          zIndex: 10,
+        }}
+      >
+        <button
+          onClick={() => setIsAutoRotating(!isAutoRotating)}
+          style={{
+            background: isAutoRotating
+              ? "rgba(99, 102, 241, 0.9)"
+              : "rgba(15, 23, 42, 0.9)",
+            border: "1px solid rgba(99, 102, 241, 0.5)",
+            borderRadius: "8px",
+            padding: "8px 12px",
+            color: "#f8fafc",
+            fontSize: "12px",
+            cursor: "pointer",
+            backdropFilter: "blur(8px)",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "0.9";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+          }}
+        >
+          {isAutoRotating ? "⏸ Pause" : "▶ Rotate"}
+        </button>
+        <button
+          onClick={() => {
+            if (cameraRef.current) {
+              gsap.to(cameraRef.current.position, {
+                x: 8,
+                y: 6,
+                z: 12,
+                duration: 1,
+                ease: "power2.inOut",
+              });
+            }
+            setActiveAnnotation(null);
+          }}
+          style={{
+            background: "rgba(15, 23, 42, 0.9)",
+            border: "1px solid rgba(99, 102, 241, 0.5)",
+            borderRadius: "8px",
+            padding: "8px 12px",
+            color: "#f8fafc",
+            fontSize: "12px",
+            cursor: "pointer",
+            backdropFilter: "blur(8px)",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "0.9";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+          }}
+        >
+          ↺ Reset
+        </button>
+      </div>
+
+      {/* Active annotation info */}
+      {activeAnnotation && (
+        <div
+          style={{
+            position: "absolute",
+            top: "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(15, 23, 42, 0.95)",
+            border: "1px solid rgba(99, 102, 241, 0.5)",
+            borderRadius: "12px",
+            padding: "12px 20px",
+            color: "#f8fafc",
+            zIndex: 10,
+            backdropFilter: "blur(8px)",
+            minWidth: "200px",
+            maxWidth: "300px",
+            textAlign: "center",
+            transition: "all 0.3s ease",
+          }}
+        >
+          <div style={{ fontWeight: 600, fontSize: "14px" }}>
+            {
+              annotations.find((a) => a.id === activeAnnotation)?.label
+            }
+          </div>
+          <div
+            style={{
+              fontSize: "12px",
+              color: "#94a3b8",
+              marginTop: "4px",
+            }}
+          >
+            {
+              annotations.find((a) => a.id === activeAnnotation)
+                ?.description
+            }
+          </div>
+        </div>
+      )}
     </div>
   );
 }
