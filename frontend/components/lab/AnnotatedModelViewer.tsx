@@ -62,16 +62,32 @@ function getAutoAnnotationPositions(
   return positions;
 }
 
+// ─── Distance calculation between two annotations ───────────────────────────
+
+function calculateDistance(
+  pos1: [number, number, number],
+  pos2: [number, number, number]
+): number {
+  const dx = pos2[0] - pos1[0];
+  const dy = pos2[1] - pos1[1];
+  const dz = pos2[2] - pos1[2];
+  return Math.sqrt(dx * dx + dy * dy + dz * dz);
+}
+
 // ─── Sample Mesh with Annotations ────────────────────────────────────────────
 
 function SampleMesh({
   annotations,
   onAnnotationClick,
   autoAdjust = true,
+  explodedView = false,
+  explodeFactor = 1.5,
 }: {
   annotations: Annotation[];
   onAnnotationClick: (id: string) => void;
   autoAdjust?: boolean;
+  explodedView?: boolean;
+  explodeFactor?: number;
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const groupRef = useRef<THREE.Group>(null);
@@ -92,6 +108,18 @@ function SampleMesh({
           ann.position,
       }))
     : annotations;
+
+  // Apply explosion offset
+  const getExplodedPosition = (pos: [number, number, number]): [number, number, number] => {
+    if (!explodedView) return pos;
+    const [x, y, z] = pos;
+    const len = Math.sqrt(x * x + y * y + z * z) || 1;
+    return [
+      (x / len) * len * explodeFactor,
+      (y / len) * len * explodeFactor,
+      (z / len) * len * explodeFactor,
+    ] as [number, number, number];
+  };
 
   return (
     <group ref={groupRef}>
@@ -117,9 +145,10 @@ function SampleMesh({
       {adjustedAnnotations.map((annotation) => {
         const isHovered = hoveredId === annotation.id;
         const scale = isHovered ? 1.1 : 1.0;
+        const explodedPos = getExplodedPosition(annotation.position);
 
         return (
-          <group key={annotation.id} position={annotation.position}>
+          <group key={annotation.id} position={explodedPos}>
             {/* Arrow line from mesh surface to label */}
             <Line
               points={[
@@ -199,22 +228,26 @@ function LegendOverlay({
   annotations,
   onAnnotationClick,
   activeAnnotation,
+  theme,
 }: {
   annotations: Annotation[];
   onAnnotationClick: (id: string) => void;
   activeAnnotation: string | null;
+  theme: "dark" | "light";
 }) {
+  const isDark = theme === "dark";
+
   return (
     <div
       style={{
         position: "absolute",
         bottom: "20px",
         left: "20px",
-        background: "rgba(15, 23, 42, 0.95)",
-        border: "1px solid rgba(99, 102, 241, 0.3)",
+        background: isDark ? "rgba(15, 23, 42, 0.95)" : "rgba(248, 250, 252, 0.95)",
+        border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.5)"}`,
         borderRadius: "12px",
         padding: "16px",
-        color: "#f8fafc",
+        color: isDark ? "#f8fafc" : "#1e293b",
         zIndex: 10,
         minWidth: "180px",
         maxWidth: "250px",
@@ -227,7 +260,7 @@ function LegendOverlay({
           margin: "0 0 12px 0",
           fontSize: "14px",
           fontWeight: 600,
-          color: "#818cf8",
+          color: isDark ? "#818cf8" : "#4f46e5",
         }}
       >
         Annotations
@@ -251,10 +284,12 @@ function LegendOverlay({
               gap: "8px",
               background:
                 activeAnnotation === annotation.id
-                  ? "rgba(99, 102, 241, 0.3)"
+                  ? isDark
+                    ? "rgba(99, 102, 241, 0.3)"
+                    : "rgba(99, 102, 241, 0.2)"
                   : "transparent",
               border: "none",
-              color: "#e2e8f0",
+              color: isDark ? "#e2e8f0" : "#334155",
               cursor: "pointer",
               padding: "6px 8px",
               borderRadius: "6px",
@@ -264,8 +299,9 @@ function LegendOverlay({
               transition: "all 0.2s",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "rgba(99, 102, 241, 0.2)";
+              (e.currentTarget as HTMLButtonElement).style.background = isDark
+                ? "rgba(99, 102, 241, 0.2)"
+                : "rgba(99, 102, 241, 0.15)";
             }}
             onMouseLeave={(e) => {
               if (activeAnnotation !== annotation.id) {
@@ -339,6 +375,10 @@ export function AnnotatedModelViewer({
   const [activeAnnotation, setActiveAnnotation] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
   const [isAutoRotating, setIsAutoRotating] = useState(autoRotate);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [explodedView, setExplodedView] = useState(false);
+  const [selectedForMeasurement, setSelectedForMeasurement] = useState<string | null>(null);
+  const [measurementResult, setMeasurementResult] = useState<string | null>(null);
 
   // Auto-adjust dimensions on resize
   useEffect(() => {
@@ -395,6 +435,52 @@ export function AnnotatedModelViewer({
     }
   }, [annotations]);
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const annotationIds = annotations.map((a) => a.id);
+      const currentIndex = annotationIds.indexOf(activeAnnotation || "");
+
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        const nextIndex = (currentIndex + 1) % annotationIds.length;
+        handleAnnotationClick(annotationIds[nextIndex]);
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        const prevIndex =
+          (currentIndex - 1 + annotationIds.length) % annotationIds.length;
+        handleAnnotationClick(annotationIds[prevIndex]);
+      } else if (e.key === "Enter" && activeAnnotation) {
+        e.preventDefault();
+        // Toggle measurement mode
+        if (selectedForMeasurement === null) {
+          setSelectedForMeasurement(activeAnnotation);
+          setMeasurementResult(null);
+        } else if (selectedForMeasurement !== activeAnnotation) {
+          const from = annotations.find((a) => a.id === selectedForMeasurement);
+          const to = annotations.find((a) => a.id === activeAnnotation);
+          if (from && to) {
+            const distance = calculateDistance(from.position, to.position);
+            setMeasurementResult(`Distance: ${distance.toFixed(2)} units`);
+          }
+          setSelectedForMeasurement(null);
+        } else {
+          setSelectedForMeasurement(null);
+          setMeasurementResult(null);
+        }
+      } else if (e.key === "Escape") {
+        setSelectedForMeasurement(null);
+        setMeasurementResult(null);
+        setActiveAnnotation(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeAnnotation, annotations, handleAnnotationClick, selectedForMeasurement]);
+
+  const isDark = theme === "dark";
+
   return (
     <div
       ref={containerRef}
@@ -406,7 +492,7 @@ export function AnnotatedModelViewer({
         position: "relative",
         borderRadius: "12px",
         overflow: "hidden",
-        background: "#0f172a",
+        background: isDark ? "#0f172a" : "#f1f5f9",
       }}
     >
       <Canvas
@@ -432,7 +518,7 @@ export function AnnotatedModelViewer({
         }}
       >
         {/* Lighting */}
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={isDark ? 0.4 : 0.6} />
         <directionalLight
           position={[10, 10, 5]}
           intensity={1}
@@ -454,11 +540,13 @@ export function AnnotatedModelViewer({
           annotations={annotations}
           onAnnotationClick={handleAnnotationClick}
           autoAdjust={autoAdjustAnnotations}
+          explodedView={explodedView}
+          explodeFactor={1.5}
         />
 
         {/* Grid helper (subtle) */}
         <gridHelper
-          args={[20, 20, "#1e293b", "#0f172a"]}
+          args={[20, 20, isDark ? "#1e293b" : "#cbd5e1", isDark ? "#0f172a" : "#f1f5f9"]}
           position={[0, -3, 0]}
         />
 
@@ -480,6 +568,7 @@ export function AnnotatedModelViewer({
         annotations={annotations}
         onAnnotationClick={handleAnnotationClick}
         activeAnnotation={activeAnnotation}
+        theme={theme}
       />
 
       {/* Controls overlay */}
@@ -498,7 +587,9 @@ export function AnnotatedModelViewer({
           style={{
             background: isAutoRotating
               ? "rgba(99, 102, 241, 0.9)"
-              : "rgba(15, 23, 42, 0.9)",
+              : isDark
+              ? "rgba(15, 23, 42, 0.9)"
+              : "rgba(248, 250, 252, 0.9)",
             border: "1px solid rgba(99, 102, 241, 0.5)",
             borderRadius: "8px",
             padding: "8px 12px",
@@ -529,9 +620,13 @@ export function AnnotatedModelViewer({
               });
             }
             setActiveAnnotation(null);
+            setSelectedForMeasurement(null);
+            setMeasurementResult(null);
           }}
           style={{
-            background: "rgba(15, 23, 42, 0.9)",
+            background: isDark
+              ? "rgba(15, 23, 42, 0.9)"
+              : "rgba(248, 250, 252, 0.9)",
             border: "1px solid rgba(99, 102, 241, 0.5)",
             borderRadius: "8px",
             padding: "8px 12px",
@@ -550,6 +645,56 @@ export function AnnotatedModelViewer({
         >
           ↺ Reset
         </button>
+        <button
+          onClick={() => setExplodedView(!explodedView)}
+          style={{
+            background: explodedView
+              ? "rgba(99, 102, 241, 0.9)"
+              : isDark
+              ? "rgba(15, 23, 42, 0.9)"
+              : "rgba(248, 250, 252, 0.9)",
+            border: "1px solid rgba(99, 102, 241, 0.5)",
+            borderRadius: "8px",
+            padding: "8px 12px",
+            color: "#f8fafc",
+            fontSize: "12px",
+            cursor: "pointer",
+            backdropFilter: "blur(8px)",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "0.9";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+          }}
+        >
+          {explodedView ? "🔧 Assemble" : "💥 Explode"}
+        </button>
+        <button
+          onClick={() => setTheme(isDark ? "light" : "dark")}
+          style={{
+            background: isDark
+              ? "rgba(15, 23, 42, 0.9)"
+              : "rgba(248, 250, 252, 0.9)",
+            border: "1px solid rgba(99, 102, 241, 0.5)",
+            borderRadius: "8px",
+            padding: "8px 12px",
+            color: "#f8fafc",
+            fontSize: "12px",
+            cursor: "pointer",
+            backdropFilter: "blur(8px)",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "0.9";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+          }}
+        >
+          {isDark ? "☀️ Light" : "🌙 Dark"}
+        </button>
       </div>
 
       {/* Active annotation info */}
@@ -560,11 +705,13 @@ export function AnnotatedModelViewer({
             top: "20px",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "rgba(15, 23, 42, 0.95)",
+            background: isDark
+              ? "rgba(15, 23, 42, 0.95)"
+              : "rgba(248, 250, 252, 0.95)",
             border: "1px solid rgba(99, 102, 241, 0.5)",
             borderRadius: "12px",
             padding: "12px 20px",
-            color: "#f8fafc",
+            color: isDark ? "#f8fafc" : "#1e293b",
             zIndex: 10,
             backdropFilter: "blur(8px)",
             minWidth: "200px",
@@ -581,7 +728,7 @@ export function AnnotatedModelViewer({
           <div
             style={{
               fontSize: "12px",
-              color: "#94a3b8",
+              color: isDark ? "#94a3b8" : "#64748b",
               marginTop: "4px",
             }}
           >
@@ -590,6 +737,70 @@ export function AnnotatedModelViewer({
                 ?.description
             }
           </div>
+          <div
+            style={{
+              fontSize: "11px",
+              color: isDark ? "#64748b" : "#94a3b8",
+              marginTop: "8px",
+            }}
+          >
+            Press <kbd style={{ background: "rgba(99,102,241,0.3)", padding: "2px 4px", borderRadius: "4px" }}>Enter</kbd> to measure distance
+          </div>
+        </div>
+      )}
+
+      {/* Measurement result */}
+      {measurementResult && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "100px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: isDark
+              ? "rgba(15, 23, 42, 0.95)"
+              : "rgba(248, 250, 252, 0.95)",
+            border: "1px solid rgba(99, 102, 241, 0.5)",
+            borderRadius: "12px",
+            padding: "12px 20px",
+            color: isDark ? "#f8fafc" : "#1e293b",
+            zIndex: 10,
+            backdropFilter: "blur(8px)",
+            textAlign: "center",
+            transition: "all 0.3s ease",
+          }}
+        >
+          <div style={{ fontWeight: 600, fontSize: "14px" }}>📏 Measurement</div>
+          <div
+            style={{
+              fontSize: "16px",
+              color: "#818cf8",
+              marginTop: "4px",
+              fontWeight: 600,
+            }}
+          >
+            {measurementResult}
+          </div>
+        </div>
+      )}
+
+      {/* Selected for measurement indicator */}
+      {selectedForMeasurement && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "60px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(99, 102, 241, 0.9)",
+            borderRadius: "8px",
+            padding: "8px 16px",
+            color: "#f8fafc",
+            zIndex: 10,
+            fontSize: "12px",
+          }}
+        >
+          Select another annotation to measure distance (press Enter)
         </div>
       )}
     </div>
