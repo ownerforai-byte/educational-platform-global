@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Bot, Loader2, ShieldCheck, Coins } from "lucide-react";
-import { chat, guestChat, getGuestCreditStatus } from "@/lib/api/ai";
+import { chat, guestChat } from "@/lib/api/ai";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
@@ -40,7 +40,7 @@ const PLATFORM_SYSTEM_PROMPT = `You are Ravikishan Study Assistant — a warm, w
 
 For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
 - First, link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → /class-11 or /class-12
+  - NEB Class 11/12 notes → /class-11 or /class-12
   - Labs (3D simulations/theory) → /lab
   - Subjects overview → /subjects
   - Loksewa prep → /loksewa
@@ -103,9 +103,6 @@ export function AIWidget() {
   useEffect(() => {
     if (!isLoggedIn) {
       setGuestCredits(getGuestCredits());
-      getGuestCreditStatus()
-        .then((data) => setGuestCredits(data.credits))
-        .catch(() => setGuestCredits(getGuestCredits()));
     }
   }, [isLoggedIn]);
 
@@ -138,7 +135,6 @@ export function AIWidget() {
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
         const newCredits = res.creditsRemaining ?? getGuestCredits() - 2;
-        setGuestCredits(newCredits);
         setGuestCredits(newCredits);
       }
       if (!isLoggedIn) incGuestCount();
