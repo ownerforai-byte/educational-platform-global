@@ -1,9 +1,0 @@
-{
-  "title": "Thermodynamics",
-  "notes": [
-    "**First law of thermodynamics:** ΔQ = ΔU + ΔW — heat supplied to a gas partly increases internal energy and partly does external work.",
-    "**Work in isothermal expansion:** W = nRT ln(V₂/V₁). In an isothermal process (constant T), ΔU = 0. In an adiabatic process (no heat exchange), ΔQ = 0.",
-    "**Second law / entropy:** entropy of the universe always increases in a spontaneous process; ΔS = ΔQ/T.",
-    "**Carnot engine:** efficiency η = 1 − T₂/T₁. Ideal efficiency depends only on the temperatures of source and sink."
-  ]
-}

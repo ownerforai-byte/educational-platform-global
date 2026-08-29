@@ -1,8 +1,0 @@
-{
-  "title": "Q: Derive the exponential form of temperature fall from Newton's Law of Cooling",
-  "notes": [
-    "Starting from −mc·(dθ/dt) = K(θ − θ₀), separate variables: dθ/(θ − θ₀) = −(K/mc) dt",
-    "Integrating from θ₁ at t = 0 to θ at time t: ln[(θ − θ₀)/(θ₁ − θ₀)] = −(K/mc)t",
-    "**Result:** θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc) — temperature approaches the surrounding temperature exponentially, never crossing it"
-  ]
-}

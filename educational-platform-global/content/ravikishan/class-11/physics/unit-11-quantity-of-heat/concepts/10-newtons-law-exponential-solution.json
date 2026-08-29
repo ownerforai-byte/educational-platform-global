@@ -1,8 +1,0 @@
-{
-  "title": "Newton's Law of Cooling — Exponential Solution & Graph",
-  "notes": [
-    "Rearranging Equation 3 isolates the rate of temperature fall: dθ/dt = −(K/mc)(θ − θ₀)",
-    "Solving this separable equation shows the temperature drops **exponentially** with time: θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc)",
-    "**Shape of the curve:** temperature falls quickly at first, then slows down as it approaches the surrounding (room) temperature — the curve gets closer and closer to θ₀ but never quite crosses it"
-  ]
-}

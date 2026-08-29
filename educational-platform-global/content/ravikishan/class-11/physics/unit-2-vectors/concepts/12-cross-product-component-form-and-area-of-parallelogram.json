@@ -1,8 +1,0 @@
-{
-  "title": "Cross Product — Component Form and Area of Parallelogram",
-  "notes": [
-    "**Component-form formula**: for $\\vec{A}=A_1\\hat{i}+A_2\\hat{j}+A_3\\hat{k}$ and $\\vec{B}=B_1\\hat{i}+B_2\\hat{j}+B_3\\hat{k}$, the cross product is the determinant $\\vec{A}\\times\\vec{B}=\\begin{vmatrix}\\hat{i}&\\hat{j}&\\hat{k}\\\\A_1&A_2&A_3\\\\B_1&B_2&B_3\\end{vmatrix} = \\hat{i}(A_2B_3-A_3B_2) - \\hat{j}(A_1B_3-A_3B_1) + \\hat{k}(A_1B_2-A_2B_1)$.",
-    "**Area of a parallelogram** whose adjacent sides are represented by $\\vec{A}$ and $\\vec{B}$ is Area $=|\\vec{A}\\times\\vec{B}|$.",
-    "**Worked example**: find the cross product and the area of the parallelogram whose adjacent sides are $\\vec{A}=\\hat{i}+2\\hat{j}+3\\hat{k}$ and $\\vec{B}=2\\hat{i}-3\\hat{j}+4\\hat{k}$. $\\vec{A}\\times\\vec{B} = \\hat{i}(2\\cdot4-3\\cdot(-3)) - \\hat{j}(1\\cdot4-3\\cdot2) + \\hat{k}(1\\cdot(-3)-2\\cdot2) = \\hat{i}(8+9)-\\hat{j}(4-6)+\\hat{k}(-3-4) = 17\\hat{i}+2\\hat{j}-7\\hat{k}$. Area $=|\\vec{A}\\times\\vec{B}|=\\sqrt{17^2+2^2+7^2}=\\sqrt{289+4+49}=\\sqrt{342}\\approx18.5$ square units."
-  ]
-}

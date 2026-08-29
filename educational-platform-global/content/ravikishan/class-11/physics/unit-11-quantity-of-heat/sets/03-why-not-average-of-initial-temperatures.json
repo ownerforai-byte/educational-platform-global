@@ -1,8 +1,0 @@
-{
-  "title": "Q: In calorimetry, why isn't the equilibrium temperature just the average of the two initial temperatures?",
-  "notes": [
-    "Because heat lost = heat gained depends on the m·c product of each body, not just its temperature",
-    "**General result:** θₘ = (m₁c₁θ₁ + m₂c₂θ₂)/(m₁c₁ + m₂c₂) — a weighted average, weighted by each body's heat capacity",
-    "It only reduces to a simple average of θ₁ and θ₂ in the special case where m₁c₁ = m₂c₂"
-  ]
-}

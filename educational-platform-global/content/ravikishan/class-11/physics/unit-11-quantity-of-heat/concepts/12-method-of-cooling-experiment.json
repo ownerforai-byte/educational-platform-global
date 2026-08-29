@@ -1,8 +1,0 @@
-{
-  "title": "Measuring Cooling Rate in the Lab (Time-Based 'Method of Cooling')",
-  "notes": [
-    "In practice, dθ/dt isn't measured directly — instead, measure the time (t) taken for the temperature to fall across a fixed, identical range for both liquids (e.g. 60°C → 50°C)",
-    "(dθ/dt)₁ = Δθ/t₁ and (dθ/dt)₂ = Δθ/t₂",
-    "Since Δθ is the same for both, substituting these into m₁c₁(dθ/dt)₁ = m₂c₂(dθ/dt)₂ cancels Δθ out, leaving the practical experimental formula: **m₁c₁/t₁ = m₂c₂/t₂**"
-  ]
-}
