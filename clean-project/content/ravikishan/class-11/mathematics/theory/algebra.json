@@ -1,0 +1,9 @@
+{
+  "title": "Algebra: Sequences, Series, Matrices & Complex Numbers",
+  "notes": [
+    "**Arithmetic progression (AP):** aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d].",
+    "**Geometric progression (GP):** aₙ = arⁿ⁻¹; Sₙ = a(rⁿ − 1)/(r − 1); S∞ = a/(1 − r) for |r| < 1. AM ≥ GM.",
+    "**Matrices:** order m × n, addition, scalar multiplication, matrix multiplication (row × column). Determinant of 2×2 and 3×3; singular if det = 0; inverse A⁻¹ = adj(A)/|A| for solving simultaneous equations (Cramer's rule).",
+    "**Complex numbers:** i² = −1; z = x + iy with modulus |z| = √(x² + y²) and conjugate z̄. Multiplication/division in polar form uses r(cos θ + i sin θ)."
+  ]
+}

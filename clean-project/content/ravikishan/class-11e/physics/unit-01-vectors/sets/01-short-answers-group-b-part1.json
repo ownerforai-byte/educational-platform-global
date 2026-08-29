@@ -1,0 +1,12 @@
+{
+  "title": "Vector Physics Short Answers — Group B (Q1–Q2)",
+  "notes": [
+    "**Q1(a). State parallelogram law of vector addition.**\n\n**Answer:** The Parallelogram Law of Vector Addition states that if two vectors acting simultaneously at a point are represented in magnitude and direction by the two adjacent sides of a parallelogram drawn from that point, then their resultant is completely represented in magnitude and direction by the diagonal of the parallelogram passing through that same point.",
+    "**Q1(b). Find a vector that points in the same direction as the vector $(i + j)$ and whose magnitude is 1.**\n\n**Answer:** To find a vector pointing in the same direction with a magnitude of 1, we calculate its unit vector. Let $V = i + j$. The magnitude $|V| = \\sqrt{1^2 + 1^2} = \\sqrt{2}$. The unit vector is $V / |V| = (i + j) / \\sqrt{2} = (1/\\sqrt{2})i + (1/\\sqrt{2})j$. In decimal notation, this equals approximately $0.707i + 0.707j$.",
+    "**Q2(a). What is a null vector?**\n\n**Answer:** A null vector (or zero vector) is defined as a vector that has zero magnitude and an arbitrary, unspecified direction. It is represented as $\\vec{0}$.",
+    "**Q2(b). Give the significance of a null vector.**\n\n**Answer:** A null vector is physically significant in maintaining mathematical consistency within vector algebra. For example, if an object is at rest, its velocity vector is a null vector. Similarly, when subtracting a vector from itself ($A - A$), or calculating the acceleration of an object moving at uniform velocity, the result must remain a vector quantity, which is uniquely satisfied by the null vector.",
+    "**Q2(c). A vector A is given as $A = 4i - 3j$. Find its unit vector.**\n\n**Answer:**\n1. Find the magnitude of A: $|A| = \\sqrt{4^2 + (-3)^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$.\n2. Divide the vector components by the magnitude to secure the unit vector: $\\hat{A} = (4i - 3j) / 5$."
+  ],
+  "type": "set",
+  "order": 1
+}

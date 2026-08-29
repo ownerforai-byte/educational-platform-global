@@ -1,0 +1,14 @@
+{
+  "title": "Moment, Torque & Conditions of Equilibrium",
+  "notes": [
+    "**Moment of a force (torque)** about a point is the turning effect of the force: τ = F × r = magnitude F·d, where d is the perpendicular distance of the line of action from the pivot. Unit is N·m.",
+    "**Torque is a vector:** its direction is given by the right-hand rule (outward for anticlockwise, inward for clockwise about the axis).",
+    "**Conditions of equilibrium:**",
+    "  - Translational (no net force): ΣF = 0 (a body at rest stays at rest; its centre of mass does not accelerate).",
+    "  - Rotational (no net torque): Στ = 0 about any point.",
+    "**Moment of a couple:** two equal, opposite, parallel forces separated by distance d produce a couple with moment τ = F·d; a couple produces rotation with no net translation, and its moment is the same about every point.",
+    "**Balancing seesaw / lever problems** use Σ(clockwise moments) = Σ(anticlockwise moments) taken about the pivot, together with the weight acting at the centre of gravity.",
+    "**Centre of gravity** is the point where the total weight may be taken to act; for a uniform rod it is its midpoint — this is why a uniform plank balances about its centre.",
+    "**Practical examples:** a spanner turning a nut experiences greatest torque when the applied force is at the farthest end perpendicular to the handle; a door opens most easily when pushed at its edge, not near the hinge."
+  ]
+}

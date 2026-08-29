@@ -1,0 +1,14 @@
+{
+  "title": "Vector Physics Theoretical Questions — Page 59 (Q1–Q2)",
+  "unitSlug": "vectors",
+  "topicSlug": "scalar-and-vector-products",
+  "topicTitle": "Scalar and vector products",
+  "relevance": 78,
+  "notes": [
+    "**Q1(b). A vector in x-y plane has a length of 4.5 m and y-component of -2.7 m. What angle does this vector make with the X-axis? Why does this problem have two answers?**\n\n**Answer:** $-37°$ or $-143°$\n\n**Explanation:** Given magnitude $R = 4.5$ and $R_y = -2.7$. Since $\\sin(\\theta) = R_y / R = -2.7 / 4.5 = -0.6$, $\\theta = \\sin^{-1}(-0.6)$. This yields $-37°$ (in the 4th quadrant) or $-143°$ (in the 3rd quadrant). Two angles exist because the x-component could be either positive or negative while maintaining the exact same negative y-component and length layout.",
+    "**Q1(c). Under what conditions the resultant of two vectors is zero?**\n\n**Answer:** Equal magnitude and opposite direction (180°)\n\n**Explanation:** The net resultant of two vectors becomes zero if and only if they possess exactly equal scalar magnitudes but point in completely opposite anti-parallel directions (separated by 180°), leading to absolute algebraic cancellation.",
+    "**Q2. Let $A = 5i + 2j$, $B = -3i - 5j$ and $E = 2A + 3B$.**\n\n(a) Express vector E in component form.\n(b) Show that the vectors A, B and E in the coordinate system.\n(c) What are the magnitude and direction of vector E?\n\n**Answer:**\n(a) $E = i - 11j$\n(b) Graph representation mapping vectors starting from origin\n(c) 11.05, 5.19° right of negative y-axis\n\n**Explanation:**\nFor (a): $E = 2(5i + 2j) + 3(-3i - 5j) = (10i + 4j) + (-9i - 15j) = i - 11j$.\nFor (c): Magnitude $= \\sqrt{1^2 + (-11)^2} = \\sqrt{122} \\approx 11.05$. Direction angle relative to negative y-axis: $\\tan(\\alpha) = E_x / |E_y| = 1 / 11 \\Rightarrow \\alpha = \\tan^{-1}(1/11) \\approx 5.19°$ to the right of the negative y-axis line."
+  ],
+  "type": "set",
+  "order": 4
+}

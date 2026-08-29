@@ -1,0 +1,12 @@
+{
+  "title": "Polygon Law of Vectors",
+  "unitSlug": "vectors",
+  "topicSlug": "resolution-of-vectors-unit-vectors",
+  "topicTitle": "Resolution of vectors; unit vectors",
+  "relevance": 88,
+  "notes": [
+    "**Statement**: If a number of vectors are represented in magnitude and direction by the sides of a polygon taken in the same order (head-to-tail), their resultant is represented in magnitude and direction by the closing side of the polygon taken in the opposite order.",
+    "**Derivation**: applying the triangle law repeatedly to vectors $\\vec{A_1},\\vec{A_2},\\dots,\\vec{A_n}$ placed head-to-tail: $\\vec{OB}=\\vec{A_1}+\\vec{A_2}$, then $\\vec{OC}=\\vec{OB}+\\vec{A_3}=\\vec{A_1}+\\vec{A_2}+\\vec{A_3}$, and so on, until the resultant is $\\vec{R}=\\vec{A_1}+\\vec{A_2}+\\vec{A_3}+\\cdots+\\vec{A_n}$, represented by the vector closing the polygon back to the starting point.",
+    "**Q. If two vectors $\\vec{A}$ and $\\vec{B}$ have equal magnitudes $P$ (i.e. $|\\vec{A}|=|\\vec{B}|=P$), find the magnitude and direction of their resultant.** This is the triangle/parallelogram law with $P=Q$: $R=\\sqrt{P^2+P^2+2P^2\\cos\\theta}=\\sqrt{2P^2(1+\\cos\\theta)}=2P\\cos(\\theta/2)$, and the resultant bisects the angle between them, $\\alpha=\\theta/2$."
+  ]
+}

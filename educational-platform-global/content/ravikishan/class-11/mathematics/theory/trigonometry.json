@@ -1,0 +1,10 @@
+{
+  "title": "Trigonometry",
+  "notes": [
+    "**Fundamental identities:** sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ.",
+    "**Compound angles:** sin(A ± B) = sin A cos B ± cos A sin B; cos(A ± B) = cos A cos B ∓ sin A sin B; tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B).",
+    "**Multiple angles:** sin 2A = 2 sin A cos A; cos 2A = cos²A − sin²A = 2cos²A − 1 = 1 − 2sin²A; tan 2A = 2tan A/(1 − tan²A).\n\n**Half angle:** sin²(A/2) = (1 − cos A)/2, cos²(A/2) = (1 + cos A)/2.",
+    "**Transformation formulas:** product ↔ sum — 2 sin A cos B = sin(A+B) + sin(A−B), etc. Conditional identities when A + B + C = π: sin 2A + sin 2B + sin 2C = 4 sin A sin B sin C.",
+    "**Solutions of trigonometric equations:** general solutions of sin x = a, cos x = a and tan x = a."
+  ]
+}

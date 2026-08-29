@@ -1,0 +1,9 @@
+{
+  "title": "Self-Practice Checkpoint — Numerical Verifications & Degeneracy Mappings (Page 114)",
+  "notes": [
+    "**Q1. How many orbitals are present in the subshell with l = 2? What is its maximum electron capacity?** Number of orbitals = 2l + 1 = 2(2) + 1 = 5. Maximum electron capacity = 2(2l + 1) = 10. So the d subshell has 5 orbitals and holds up to 10 electrons.",
+    "**Q2. Write the four quantum numbers that completely describe an electron in the 3p orbital.** Principal n = 3, azimuthal l = 1, magnetic m = −1, 0 or +1 (three possible values), spin s = +½ or −½. Any one of the six possible combinations (3 values of m × 2 spins) describes an electron in 3p.",
+    "**Q3. How many degenerate orbitals are there in a p subshell, and why are they called degenerate?** There are three (pₓ, pᵧ, p_z). They have the same energy (they are degenerate) in the absence of an applied magnetic field.",
+    "**Q4. For the d subshell, verify the degeneracy mapping.** With l = 2, m takes the values +2, +1, 0, −1, −2, giving 2l + 1 = 5 degenerate orbitals; each holds 2 electrons, so the d subshell accommodates 10 electrons in total."
+  ]
+}

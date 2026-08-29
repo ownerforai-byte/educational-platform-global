@@ -1,0 +1,10 @@
+{
+  "title": "Resolution of a Vector",
+  "notes": [
+    "**Definition**: splitting (breaking) a vector into its different constituent parts is known as resolution of a vector.",
+    "If a vector is resolved along two mutually perpendicular directions, it is called **rectangular (perpendicular) resolution**: $R_x=R\\cos\\theta$ and $R_y=R\\sin\\theta$.",
+    "**Derivation**: let $\\vec{R}$ act at a point making angle $\\theta$ with the x-axis. Complete parallelogram $OACB$ with $OA$ along the x-axis and $OC$ along the y-axis. By the law of triangle, $\\vec{OA}+\\vec{OC}=\\vec{OD}$, i.e. $\\vec{R_x}+\\vec{R_y}=\\vec{R}$, so $\\vec{R}=R_x\\hat{i}+R_y\\hat{j}$.",
+    "In right triangle $OAB$: $\\cos\\theta=OA/AB \\Rightarrow OA=AB\\cos\\theta \\Rightarrow R_x=R\\cos\\theta$. Also $\\sin\\theta=OC/OB \\Rightarrow R_y=R\\sin\\theta$.",
+    "Combining: **magnitude** $R=\\sqrt{R_x^2+R_y^2}$, **direction** $\\tan\\theta=R_y/R_x$."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Instantaneous Velocity & Instantaneous Acceleration",
+  "notes": [
+    "**Instantaneous velocity** is the velocity of a body at a particular instant of time: v = lim(Δt→0) Δx/Δt = dx/dt. Geometrically it is the **slope of the position–time graph** at that instant.",
+    "**Instantaneous acceleration** is the rate of change of velocity at an instant: a = lim(Δt→0) Δv/Δt = dv/dt = d²x/dt². Geometrically it is the **slope of the velocity–time graph**.",
+    "**Uniform motion:** when velocity is constant, acceleration is zero and the x–t graph is a straight line.",
+    "**Uniformly accelerated motion:** acceleration is constant; the v–t graph is a straight line whose slope equals the acceleration.",
+    "**Sign convention:** choose a positive direction once; quantities along it are positive, opposite to it are negative. A body thrown upward has positive velocity but negative acceleration (g acts downward) — so it slows, stops momentarily (v = 0 at top), then falls back.",
+    "**Slopes on graphs:**",
+    "  - x–t graph slope → velocity; straightening means uniform velocity, curving means acceleration.",
+    "  - v–t graph slope → acceleration; area under the graph → displacement (distance when speed is constant sign).",
+    "**From a v–t graph:** area between the curve and the time axis in intervals where v > 0 is positive displacement, where v < 0 is negative displacement; total path length needs the areas added with magnitude."
+  ]
+}

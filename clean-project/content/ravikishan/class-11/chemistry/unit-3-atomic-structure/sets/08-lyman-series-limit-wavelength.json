@@ -1,0 +1,10 @@
+{
+  "title": "Q (worked example): Calculate the wavelength of the series limit of the Lyman series for hydrogen",
+  "notes": [
+    "**Given:** R_H = 1.097 × 10⁷ m⁻¹",
+    "The series limit occurs as n₂ → ∞, so 1/λ = R_H(1/n₁² − 0) = R_H/n₁²",
+    "For the Lyman series, n₁ = 1: 1/λ = 1.097 × 10⁷ × 1 = 1.097 × 10⁷ m⁻¹",
+    "λ = 1/(1.097 × 10⁷) ≈ 9.115 × 10⁻⁸ m",
+    "**Answer: λ ≈ 91.15 nm** — deep ultraviolet, consistent with the Lyman series being a UV series"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Law of Triangle of Vectors — Statement and Derivation",
+  "unitSlug": "vectors",
+  "topicSlug": "resolution-of-vectors-unit-vectors",
+  "topicTitle": "Resolution of vectors; unit vectors",
+  "relevance": 88,
+  "notes": [
+    "**Statement**: When two non-zero vectors are represented by two sides of a triangle taken in the same order, their resultant is represented by the third side of the triangle taken in the opposite order.",
+    "**Setup**: Let $\\vec{P}$ and $\\vec{Q}$ act at a point, represented by sides $AB$ and $BC$ of triangle $ABC$ (i.e. $\\vec{AB}=\\vec{P}$, $\\vec{BC}=\\vec{Q}$), with resultant $\\vec{AC}=\\vec{R}$. Let $\\theta$ be the angle between $\\vec{P}$ and $\\vec{Q}$. Draw $CD$ perpendicular to line $AB$ extended.",
+    "In right triangle $BCD$: $CD = BC\\sin\\theta = Q\\sin\\theta$, and $BD = BC\\cos\\theta = Q\\cos\\theta$.",
+    "In right triangle $ACD$: $AC^2 = AD^2 + DC^2 = (AB+BD)^2 + DC^2$.",
+    "Expanding: $R^2 = P^2 + 2P(Q\\cos\\theta) + Q^2\\cos^2\\theta + Q^2\\sin^2\\theta = P^2 + Q^2 + 2PQ\\cos\\theta$ (using $\\sin^2\\theta+\\cos^2\\theta=1$).",
+    "**Magnitude of resultant**: $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$.",
+    "**Direction**: in right triangle $ADC$, $\\tan\\alpha = \\dfrac{DC}{AD} = \\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}$, so $\\alpha = \\tan^{-1}\\!\\left(\\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}\\right)$, where $\\alpha$ is the angle the resultant makes with $\\vec{P}$.",
+    "**Special cases**: (i) $\\theta=0°$ → $R=P+Q$ (maximum), $\\alpha=0$. (ii) $\\theta=90°$ → $R=\\sqrt{P^2+Q^2}$, $\\tan\\alpha=Q/P$. (iii) $\\theta=180°$ → $R=P-Q$ (minimum), resultant acts along the larger vector."
+  ]
+}

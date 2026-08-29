@@ -1,0 +1,23 @@
+{
+  "title": "Temperature Scales",
+  "unitSlug": "heat-and-temperature",
+  "topicSlug": "temperature-scales",
+  "topicTitle": "Temperature Scales",
+  "relevance": 45,
+  "notes": [
+    "<h2>Introduction</h2>",
+    "<p>A <b>temperature scale</b> is a calibration of a thermometer based on two fixed reference points. The three most common scales in physics are <b>Celsius (°C)</b>, <b>Fahrenheit (°F)</b> and <b>Kelvin (K)</b>.</p>",
+    "<h2>Fixed Points</h2>",
+    "<p>Every scale is defined using the freezing point and boiling point of water:</p>",
+    "<table style=\"border-collapse:collapse;width:100%;text-align:center;\"><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\"><b>Scale</b></td><td style=\"border:1px solid #cbd5e1;padding:8px;\"><b>Freezing point</b></td><td style=\"border:1px solid #cbd5e1;padding:8px;\"><b>Boiling point</b></td></tr><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\">Celsius</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">0°C</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">100°C</td></tr><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\">Fahrenheit</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">32°F</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">212°F</td></tr><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\">Kelvin</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">273.15 K</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">373.15 K</td></tr></table>",
+    "<h2>Kelvin — The SI Scale</h2>",
+    "<p>Kelvin is the SI unit of thermodynamic temperature. It is an <b>absolute scale</b> starting at <b>absolute zero (0 K)</b>, the lowest possible temperature where molecular motion theoretically stops. We write 273 K, never °K or degree Kelvin.</p>",
+    "<h2>Relation Between Scales</h2>",
+    "<p>The general relation between the three scales is:</p>",
+    "$$\\frac{C}{100} = \\frac{F - 32}{180} = \\frac{K - 273.15}{100}$$",
+    "<p>From this, the most useful conversion formulas are:</p>",
+    "$$F = \\frac{9}{5}C + 32$$",
+    "$$C = \\frac{5}{9}(F - 32)$$",
+    "$$K = C + 273.15$$"
+  ]
+}

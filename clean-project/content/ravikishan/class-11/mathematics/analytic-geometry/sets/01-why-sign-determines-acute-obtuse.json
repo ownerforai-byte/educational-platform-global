@@ -1,0 +1,8 @@
+{
+  "title": "Q: Why does the sign of a₁a₂ + b₁b₂ determine which bisector is acute vs obtuse?",
+  "notes": [
+    "a₁a₂ + b₁b₂ is proportional to the cosine of the angle between the two lines' normal vectors (a, b), since a·a' + b·b' = |n₁||n₂|cos θ for normal vectors n₁, n₂",
+    "When this dot product is negative, the normals point in 'opposing' directions relative to each other, which flips which bisector formula (+ or −) ends up bisecting the acute angle between the actual lines rather than the obtuse one",
+    "This is why the rule reverses depending on the sign — it's tracking the relative orientation of the two lines' normals, not just their raw coefficients"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Errors in Measurement, Scientific Notation & Order of Magnitude",
+  "notes": [
+    "**Error** is the difference between the measured value and the true value of a quantity. Errors are broadly classified as systematic (repeatable, due to instruments, procedural or personal — correctable) and random (unpredictable fluctuations — reduced by taking the mean).",
+    "**Absolute error:** Δa = |a_mean − a_i| for an individual observation a_i. It is the magnitude of the deviation from the mean value.",
+    "**Mean/mean absolute error:** Δa_mean = (|Δa₁| + |Δa₂| + … + |Δaₙ|)/n; the result is reported as (a_mean ± Δa_mean) in the appropriate unit.",
+    "**Relative error:** Δa_mean / a_mean — a dimensionless fraction comparing the error to the value.",
+    "**Percentage error:** (Δa_mean / a_mean) × 100%.",
+    "**Combined uncertainties (brief):** in addition/subtraction, absolute errors add; in multiplication/division/powers, the percentage errors (or relative errors) add.",
+    "**Scientific notation:** a number is written as a × 10ⁿ where 1 ≤ a < 10 and n (an integer) is the order of magnitude. It makes very large and very small numbers compact and states significant figures clearly.",
+    "**Order of magnitude:** the power of ten closest to the value, estimated by rounding the coefficient. E.g. radius of Earth ≈ 6.4 × 10⁶ m → order 10⁶ m. An atom's radius ≈ 10⁻¹⁰ m. Order of magnitude lets one compare vastly different scales without full precision.",
+    "**Why it matters for mechanics:** writing 0.0006 kg as 6 × 10⁻⁴ kg avoids counting leading zeros as significant and makes unit conversions simpler."
+  ]
+}

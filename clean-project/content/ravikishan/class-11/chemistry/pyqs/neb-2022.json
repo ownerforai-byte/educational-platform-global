@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Chemistry — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "What is a functional group? Write the general formula of alkanes, alkenes and alkynes.",
+      "marks": 3,
+      "solution": "A **functional group** is an atom or group of atoms that determines the characteristic chemical properties of an organic compound (e.g. –OH, –CHO, –COOH).\n\nAlkanes: CₙH₂ₙ₊₂; Alkenes: CₙH₂ₙ; Alkynes: CₙH₂ₙ₋₂."
+    },
+    {
+      "question": "Define isomerism. Draw the chain isomers of C₅H₁₂ and name them.",
+      "marks": 3,
+      "solution": "**Isomerism** is the phenomenon in which compounds have the same molecular formula but different structural arrangements (and hence different properties).\n\nChain isomers of C₅H₁₂ (pentane):\n1. **n-pentane** — CH₃–CH₂–CH₂–CH₂–CH₃\n2. **isopentane (2-methylbutane)** — (CH₃)₂CH–CH₂–CH₃\n3. **neopentane (2,2-dimethylpropane)** — C(CH₃)₄"
+    },
+    {
+      "question": "Explain why the bond angle in NH₃ is greater than that in H₂O.",
+      "marks": 2,
+      "solution": "NH₃ has one lone pair, H₂O has two. Lone pair–lone pair repulsion is stronger than lone pair–bond pair repulsion.\n\nIn H₂O the two lone pairs compress the angle more (104.5°) than the single lone pair does in NH₃ (107°). Hence **angle(NH₃) > angle(H₂O)**."
+    },
+    {
+      "question": "Balance the following redox equation by ion-electron method: Fe²⁺ + MnO₄⁻ → Fe³⁺ + Mn²⁺ (acidic medium).",
+      "marks": 3,
+      "solution": "Oxidation: Fe²⁺ → Fe³⁺ + e⁻ …(×5)\n\nReduction: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O\n\nAdding: **5Fe²⁺ + MnO₄⁻ + 8H⁺ → 5Fe³⁺ + Mn²⁺ + 4H₂O**"
+    }
+  ]
+}

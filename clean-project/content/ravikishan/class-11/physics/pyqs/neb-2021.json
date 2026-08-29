@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "What is meant by an elastic collision? Show that for two equal masses the velocities interchange after a head-on elastic collision.",
+      "marks": 3,
+      "solution": "An **elastic collision** conserves both linear momentum and kinetic energy.\n\nm₁u₁ + m₂u₂ = m₁v₁ + m₂v₂ and ½m₁u₁² + ½m₂u₂² = ½m₁v₁² + ½m₂v₂².\n\nSetting m₁ = m₂ = m and u₂ = 0: from momentum v₁ + v₂ = u₁, from energy v₁² + v₂² = u₁². Solving gives v₁ = 0 and v₂ = u₁ — the two bodies **interchange velocities**."
+    },
+    {
+      "question": "Define terminal velocity. What are the factors affecting it?",
+      "marks": 2,
+      "solution": "**Terminal velocity** is the constant maximum velocity attained by a body falling through a fluid when the upward viscous drag equals its weight.\n\nFrom Stokes' law v_t = 2r²(ρ − σ)g/(9η): it depends on the radius (r), densities of body and fluid (ρ, σ), and the viscosity of the fluid (η)."
+    },
+    {
+      "question": "A gas does 400 J of work while absorbing 600 J of heat. Find the change in its internal energy.",
+      "marks": 2,
+      "solution": "ΔQ = ΔU + ΔW ⇒ ΔU = ΔQ − ΔW = 600 − 400 = **+200 J**."
+    },
+    {
+      "question": "The critical angle of glass is 42°. Find the refractive index of glass.",
+      "marks": 2,
+      "solution": "n = 1/sin i_c = 1/sin 42° = 1/0.669 ≈ **1.49**."
+    }
+  ]
+}

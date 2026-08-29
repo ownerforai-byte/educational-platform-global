@@ -1,0 +1,15 @@
+{
+  "title": "Vector Physics Long Answer — Group C (Triangle Law Derivation)",
+  "unitSlug": "vectors",
+  "topicSlug": "scalar-and-vector-products",
+  "topicTitle": "Scalar and vector products",
+  "relevance": 78,
+  "notes": [
+    "**Q1(a). State triangle law of vector addition. Use this law to find out the resultant of two vectors A and B inclined at angle $\\theta$.**\n\n**Statement:** The Triangle Law of Vector Addition states that if two vectors are represented in magnitude and direction by the two sides of a triangle taken in the same order, then their resultant is completely represented in magnitude and direction by the third side of the triangle taken in the opposite order.",
+    "**Mathematical Derivation:**\n\nLet two vectors $\\vec{A}$ and $\\vec{B}$ be represented by sides OP and PQ of a triangle OPQ, inclined at an angle $\\theta$ to each other. Let $\\vec{R}$ be their resultant represented by the side OQ in the opposite order. To find the magnitude and direction analytically, extend line OP to a point N and draw a perpendicular QN from point Q onto OP extended.",
+    "**Magnitude Proof:**\n\nIn right-angled triangle QNP:\n\n$\\sin(\\theta) = QN / PQ \\Rightarrow QN = PQ \\cdot \\sin(\\theta) = B \\cdot \\sin(\\theta)$\n\n$\\cos(\\theta) = PN / PQ \\Rightarrow PN = PQ \\cdot \\cos(\\theta) = B \\cdot \\cos(\\theta)$\n\nNow consider the large right-angled triangle QNO:\n\n$OQ^2 = ON^2 + QN^2$\n\nSince $ON = OP + PN$:\n\n$OQ^2 = (OP + PN)^2 + QN^2$\n\nSubstitute components:\n\n$R^2 = (A + B \\cdot \\cos(\\theta))^2 + (B \\cdot \\sin(\\theta))^2$\n\nExpand the algebraic binomial term:\n\n$R^2 = A^2 + 2AB \\cdot \\cos(\\theta) + B^2 \\cdot \\cos^2(\\theta) + B^2 \\cdot \\sin^2(\\theta)$\n\nFactor out $B^2$ from the trigonometric identities:\n\n$R^2 = A^2 + 2AB \\cdot \\cos(\\theta) + B^2 \\cdot (\\cos^2(\\theta) + \\sin^2(\\theta))$\n\nSince $\\cos^2(\\theta) + \\sin^2(\\theta) = 1$, we secure the final magnitude formula:\n\n$R = \\sqrt{A^2 + B^2 + 2AB \\cdot \\cos(\\theta)}$",
+    "**Direction Proof:**\n\nLet $\\alpha$ be the angle made by the resultant vector $\\vec{R}$ with the direction of vector $\\vec{A}$ (along line ON).\n\nIn right-angled triangle QNO:\n\n$\\tan(\\alpha) = QN / ON$\n\nSince $ON = OP + PN$:\n\n$\\tan(\\alpha) = QN / (OP + PN)$\n\nSubstitute our previously resolved scalar values:\n\n$\\tan(\\alpha) = (B \\cdot \\sin(\\theta)) / (A + B \\cdot \\cos(\\theta))$\n\nTherefore, the directional orientation angle $\\alpha$ is given by:\n\n$\\alpha = \\tan^{-1}\\left( \\dfrac{B \\cdot \\sin(\\theta)}{A + B \\cdot \\cos(\\theta)} \\right)$"
+  ],
+  "type": "set",
+  "order": 3
+}

@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Chemistry — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "Define molarity. Calculate the molarity of a solution containing 4 g of NaOH in 500 mL of solution.",
+      "marks": 2,
+      "solution": "**Molarity (M)** is the number of moles of solute dissolved per litre of solution.\n\nMoles of NaOH = 4/40 = 0.1 mol. Volume = 500 mL = 0.5 L.\n\nM = 0.1 / 0.5 = **0.2 M**."
+    },
+    {
+      "question": "What is sp³ hybridisation? Explain the structure of methane using it.",
+      "marks": 3,
+      "solution": "In **sp³ hybridisation** one s orbital and three p orbitals of comparable energy mix to form four equivalent sp³ hybrid orbitals arranged tetrahedrally at 109°28′.\n\nIn CH₄, carbon's one 2s electron is promoted to 2p, giving four unpaired electrons which hybridise into four sp³ orbitals; each overlaps with a hydrogen 1s orbital forming four identical C–H bonds — hence CH₄ is **tetrahedral with bond angle 109.5°**."
+    },
+    {
+      "question": "State Pauli's exclusion principle and Hund's rule of maximum multiplicity.",
+      "marks": 3,
+      "solution": "**Pauli exclusion principle:** no two electrons in the same atom can have all four quantum numbers identical — an orbital holds at most two electrons with opposite spins.\n\n**Hund's rule:** electrons fill degenerate orbitals singly first with parallel spins before pairing begins, because this arrangement has maximum stability (maximum multiplicity)."
+    },
+    {
+      "question": "Why is BF₃ non-polar while NF₃ is polar?",
+      "marks": 2,
+      "solution": "BF₃ is trigonal planar and symmetrical: the three B–F bond dipoles cancel exactly ⇒ net dipole moment is zero ⇒ **non-polar**.\n\nNF₃ is pyramidal (lone pair on N): the N–F bond dipoles do not cancel ⇒ net dipole moment exists ⇒ **polar**."
+    }
+  ]
+}

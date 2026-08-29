@@ -1,0 +1,10 @@
+{
+  "title": "Water Equivalent (W) — Definition & Derivation",
+  "notes": [
+    "**Definition:** the mass of water that would absorb or release the same amount of heat (H) as a given object, for the same temperature change (Δθ)",
+    "**For the body:** H = m·c·Δθ",
+    "**For the equivalent mass of water:** H = W·c_w·Δθ",
+    "Since H and Δθ are identical in both cases: m·c·Δθ = W·c_w·Δθ → cancelling Δθ gives **W = (m·c)/c_w**",
+    "**Note:** in the CGS system, c_w = 1 cal/g°C, so W is numerically equal to m·c"
+  ]
+}

@@ -1,0 +1,95 @@
+
+## MATH LAB COMPONENTS
+
+### 1. Interactive Function Grapher
+- Canvas-based 2D graph with DPR scaling
+- Input field for function expression (e.g., "x^2", "sin(x)")
+- Preset buttons: x^2, x^3, sin(x), cos(x), 2*x+3, x^2-4, abs(x), 1/x
+- MeaningPanel with formulas and concepts
+- Responsive canvas with ResizeObserver
+
+### 2. 3D Parabola (y = x²)
+- TubeGeometry curve with CatmullRomCurve3
+- Red sphere markers along curve
+- Yellow focus point sphere
+- OrbitControls with auto-rotate
+- Responsive 3D container
+
+### 3. Coordinate Geometry 3D
+- Three modes: Points & Lines, Plane, Vectors
+- Colored spheres (red, blue, green, yellow, purple)
+- Lines connecting points
+- Transparent plane mesh
+- Select dropdown for mode switching
+
+### 4. 3D Mathematical Surfaces
+- Six surface types: Saddle, Wave, Ripple, Peak, Plane, Cylinder
+- Vertex-colored PlaneGeometry with 80x80 divisions
+- Color gradient based on height (z-value)
+- Select dropdown for surface type
+
+## CHEMISTRY LAB COMPONENTS
+
+### 1. Interactive Periodic Table 3D
+- All 118 elements as 3D boxes with category colors
+- Hover tooltip with: symbol, name, atomic mass, category, electron config, valency, ion, density, melting/boiling points, electronegativity
+- Click to select and view detailed info panel
+- Search by name, symbol, or atomic number
+- Filter by broad class (metals, non-metals, metalloids) or specific category
+- Auto-rotate option toggle
+- Group and period mnemonics
+- Color legend with clickable chips
+
+### 2. 3D Molecular Models
+- Three molecules: H₂O (bent), CO₂ (linear), CH₄ (tetrahedral)
+- Sphere-and-stick representation
+- Auto-rotating view
+- Select dropdown for molecule type
+
+### 3. 3D Periodic Table View
+- Simplified 2D grid of element boxes
+- Color-coded by category
+- Click for details
+
+## PHYSICS LAB COMPONENTS
+
+### 1. Projectile Motion 3D
+- Cannon with adjustable angle and velocity
+- Animated ball trajectory with path visualization
+- Peak marker (yellow) and landing marker (green)
+- Velocity component arrows (vx blue, vy red)
+- Results panel: time of flight, max height, range, velocities
+- Toggle path and vectors visibility
+- Launch button with animation
+
+### 2. Uniform Circular Motion 3D
+- Rotating ball on circular path
+- Tangential velocity arrow (green)
+- Centripetal acceleration arrow (red)
+- Adjustable radius and angular speed
+- Results: angular velocity, linear speed, centripetal acceleration
+
+### 3. Simple Harmonic Motion 3D
+- Oscillating ball with spring visualization
+- Real-time displacement-time graph trace
+- Adjustable amplitude and frequency
+- Results: period, angular frequency, displacement equation
+
+## BIOLOGY LAB COMPONENTS
+
+### 1. 3D Cell Visualization
+- Two modes: Animal Cell, Plant Cell
+- Animal: sphere membrane, nucleus, mitochondria, ER, Golgi
+- Plant: rectangular cell wall, large vacuole, chloroplasts
+- Auto-rotating view
+- Select dropdown for cell type
+
+### 2. 3D DNA Double Helix
+- Two intertwined strands with base pairs
+- Color-coded base pairs (A-T red-blue, G-C green-yellow)
+- Sugar-phosphate backbone spheres
+- Auto-rotating view
+
+## UI COMPONENTS
+
+### MeaningPanel

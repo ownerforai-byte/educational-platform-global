@@ -1,0 +1,12 @@
+{
+  "title": "Q: In the worked example, both methods agree — is checking both methods necessary, or is one sufficient?",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "coordinates-in-space-points-in-space-distance-between-two-points-direction-cosines-and-ratios-of-a-line",
+  "topicTitle": "Coordinates in space: points in space, distance between two points, direction cosines and ratios of a line",
+  "relevance": 74,
+  "notes": [
+    "The a₁a₂ + b₁b₂ method alone is sufficient and is the standard fast method for exams — it requires no slope calculation or angle formula",
+    "The tan θ method is more computationally heavy but is useful as an independent verification, or when the a₁a₂ + b₁b₂ method feels error-prone (e.g. after a sign mistake while normalizing the constant terms)",
+    "In practice: use a₁a₂ + b₁b₂ to solve quickly, and only fall back to tan θ if you want to double-check a specific answer"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Projectile Motion & Its Applications",
+  "notes": [
+    "**Projectile:** a body given an initial velocity and then allowed to move under gravity alone (air resistance neglected). Examples: a cricket ball, a javelin, water from a hose.",
+    "**Independent components:** resolve the initial velocity u at angle θ with the horizontal into uₓ = u cosθ (constant, because no horizontal force) and u_y = u sinθ (changes under g).",
+    "**Key results (derived from the two independent motions):**",
+    "  - Horizontal velocity is constant: vₓ = u cosθ.",
+    "  - Vertical motion is uniform acceleration: v_y = u sinθ − gt.",
+    "  - Time of flight: T = 2u sinθ / g.",
+    "  - Maximum height: H = u² sin²θ / (2g).",
+    "  - Horizontal range: R = u² sin2θ / g.",
+    "**Range is maximum at θ = 45°:** R_max = u²/g (since sin2θ = 1). For every other range value there are two complementary angles θ and (90° − θ) that give the same range.",
+    "**Trajectory is a parabola:** y = x tanθ − (g x²)/(2 u² cos²θ) — a quadratic in x.",
+    "**Applications:**",
+    "  - Sports (javelin/shot-put thrown at ~45°), ballistics, fire hoses, and understanding why a projectile fired horizontally and one dropped from the same height hit the ground at the same time.",
+    "  - For a body projected horizontally (θ = 0) from height h: time to fall t = √(2h/g), horizontal range x = u√(2h/g).",
+    "**Common exam trap:** at the top of the trajectory the vertical velocity is zero but the horizontal velocity u cosθ is not — the projectile never stops."
+  ]
+}

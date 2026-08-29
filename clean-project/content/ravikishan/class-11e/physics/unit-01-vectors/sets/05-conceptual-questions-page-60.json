@@ -1,0 +1,14 @@
+ {
+  "title": "Vector Physics Conceptual Questions — Page 60",
+  "notes": [
+    "**Q1. Can a vector have zero component along a line and still have nonzero magnitude?**\n\n**Answer:** Yes. If a vector is perpendicular to a given line, its projection or scalar component along that specific line is zero, while its absolute magnitude remains entirely unaffected and non-zero.",
+    "**Q2. Is a vector necessarily changed if it is rotated through an angle? Explain.**\n\n**Answer:** Yes, because a vector is defined by both magnitude and direction. Rotating a vector alters its spatial direction tracking, which inherently changes the vector even if its magnitude remains identical.",
+    "**Q3. Can you add two vectors representing physical quantities having different dimensions? Can you multiply two vectors representing physical quantities having different dimensions?**\n\n**Answer:** No to addition; Yes to multiplication. You can only add or subtract physical quantities possessing identical dimensions. However, you can multiply quantities with different dimensions to form a brand new physical entity (e.g., Force $\\times$ Displacement = Work).",
+    "**Q4. If $A \\times B = 0$, can you say that (a) $A = B$, (b) $A \\neq B$?**\n\n**Answer:** No to both conclusively. A cross product of zero ($A \\times B = 0$) simply indicates that the vectors are parallel or anti-parallel ($\\theta = 0°$ or 180°), or that at least one of them is a null vector. It does not dictate whether their unique lengths are equal or unequal.",
+    "**Q5. If $A + B = 0$, what can you say about the components of the two vectors?**\n\n**Answer:** The individual corresponding components must be equal in magnitude but opposite in sign (e.g., $A_x = -B_x$, $A_y = -B_y$, $A_z = -B_z$) so that they cancel cleanly across every dimension.",
+    "**Q6. Under what conditions can the components of a vector be equal to the magnitude of the vector?**\n\n**Answer:** This occurs if and only if the vector lies completely parallel to one of the principal coordinate axes, making that single component equal to the total magnitude while all other components are zero.",
+    "**Q7. Can the sum of two equal vectors be equal to either of the vectors? Explain.**\n\n**Answer:** Yes, if the angle between the two equal vectors is exactly 120°. In a regular vector triangle configuration, this creates an equilateral setup where the resultant magnitude equals the magnitude of the constituent components."
+  ],
+  "type": "set",
+  "order": 5
+}

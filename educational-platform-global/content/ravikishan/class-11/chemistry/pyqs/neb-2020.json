@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Chemistry — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "State Heisenberg's uncertainty principle and give its significance.",
+      "marks": 2,
+      "solution": "**Heisenberg's uncertainty principle:** it is impossible to determine simultaneously and exactly both the position and the momentum of a moving microscopic particle.\n\nΔx · Δp ≥ h/4π.\n\n**Significance:** it rules out fixed orbits for electrons (contradicting Bohr) and leads to the concept of orbitals — regions of probability of finding the electron."
+    },
+    {
+      "question": "What is the de Broglie equation? Calculate the wavelength of an electron moving at 10⁶ m s⁻¹ (m = 9.1 × 10⁻³¹ kg, h = 6.626 × 10⁻³⁴ J s).",
+      "marks": 3,
+      "solution": "The **de Broglie equation** λ = h/mv relates the wave nature to the particle nature of matter.\n\nλ = 6.626 × 10⁻³⁴ / (9.1 × 10⁻³¹ × 10⁶)\n\n= 6.626 × 10⁻³⁴ / 9.1 × 10⁻²⁵ ≈ **7.28 × 10⁻¹⁰ m = 0.728 nm**."
+    },
+    {
+      "question": "Why are noble gases chemically inert? Explain with reference to their electronic configuration.",
+      "marks": 2,
+      "solution": "Noble gases have completely filled outermost shells (ns² np⁶, except helium 1s²), giving maximum stability. They neither need to lose nor gain electrons, so they have high ionisation energy, almost zero electron affinity and very low reactivity."
+    },
+    {
+      "question": "Distinguish between sigma (σ) and pi (π) bonds.",
+      "marks": 2,
+      "solution": "**Sigma bond:** formed by head-on (axial) overlap of orbitals; stronger; free rotation possible; only one σ bond between two atoms.\n\n**Pi bond:** formed by sidewise (lateral) overlap of p-orbitals; weaker; rotation restricted; always present along with a σ bond (in double/triple bonds)."
+    }
+  ]
+}

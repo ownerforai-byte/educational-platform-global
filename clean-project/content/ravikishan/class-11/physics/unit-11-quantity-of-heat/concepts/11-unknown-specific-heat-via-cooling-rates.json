@@ -1,0 +1,8 @@
+{
+  "title": "Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates",
+  "notes": [
+    "Because K and (θ − θ₀) are identical for two bodies cooled under identical conditions, m₁c₁(dθ/dt)₁ = m₂c₂(dθ/dt)₂ lets you find an unknown specific heat capacity **without measuring heat energy in Joules at all**",
+    "**Requires knowing:** the mass and specific heat of a reference liquid — usually water (m₁, c₁); the mass of the unknown liquid (m₂); and both cooling rates (dθ/dt), measured with a stopwatch and thermometer",
+    "**Rearranged formula:** c₂ = [m₁c₁(dθ/dt)₁] / [m₂(dθ/dt)₂]"
+  ]
+}

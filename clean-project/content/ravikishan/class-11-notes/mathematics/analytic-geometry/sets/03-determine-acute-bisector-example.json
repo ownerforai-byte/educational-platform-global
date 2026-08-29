@@ -1,0 +1,13 @@
+{
+  "title": "Q (worked example): Determine which of the two angle bisectors is acute for 3x + 4y − 5 = 0 and 5x + 12y + 13 = 0",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines",
+  "topicTitle": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
+  "relevance": 79,
+  "notes": [
+    "Both constants (−5 and +13) — the second line already has a positive constant; for the first, multiply through by −1 so the constant is positive: −3x − 4y + 5 = 0, giving a₁ = −3, b₁ = −4",
+    "For the second line: a₂ = 5, b₂ = 12",
+    "a₁a₂ + b₁b₂ = (−3)(5) + (−4)(12) = −15 − 48 = **−63**",
+    "Since this is negative, the **(+) sign bisector is the acute angle bisector**, and the (−) sign bisector is the obtuse angle bisector"
+  ]
+}

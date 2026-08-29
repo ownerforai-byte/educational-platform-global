@@ -1,0 +1,15 @@
+{
+  "title": "Quantum Number Origins — Principal, Azimuthal & Subshell Metrics",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "quantum-numbers",
+  "topicTitle": "Quantum numbers",
+  "relevance": 85,
+  "notes": [
+    "**Schrödinger/Spin origins breakdown:** the principal (n), azimuthal (l) and magnetic (m) quantum numbers arise naturally as the three quantum conditions of Schrödinger's wave equation; the spin quantum number (s) was added later from the Stern–Gerlach and Goudsmit–Uhlenbeck experiments.",
+    "**Principal quantum number (n):** fixes the main energy level and size of the orbital (shell). n = 1, 2, 3, …; larger n means a larger, higher-energy orbital farther from the nucleus.",
+    "**Sommerfeld hyperfine line expansions:** Arnold Sommerfeld introduced the azimuthal (orbital) quantum number l to explain the hyperfine splitting of spectral lines observed under high resolution, which Bohr's model could not explain.",
+    "**Subsidiary (azimuthal) quantum number (l):** fixes the subshell and shape of the orbital; l takes integer values 0 to n − 1 and is labelled by letters — s: 0, p: 1, d: 2, f: 3.",
+    "**Subshell orbital count:** each subshell contains 2l + 1 orbitals — for s (l=0): 1, p (l=1): 3, d (l=2): 5, f (l=3): 7.",
+    "**Subshell electron count:** each subshell holds a maximum of 2(2l + 1) electrons — for s: 2, p: 6, d: 10, f: 14."
+  ]
+}

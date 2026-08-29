@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { AppShell } from "@/components/layout/app-shell";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+
+export const metadata: Metadata = {
+  title: "NEB Study Vault — Free NEB (+2) Learning Platform",
+  description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
+        <ThemeProvider defaultTheme="system" storageKey="neb-theme">
+          <AppShell>{children}</AppShell>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

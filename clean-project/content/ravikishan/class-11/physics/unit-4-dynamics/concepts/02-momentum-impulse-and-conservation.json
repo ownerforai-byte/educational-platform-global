@@ -1,0 +1,13 @@
+{
+  "title": "Linear Momentum, Impulse & Conservation of Linear Momentum",
+  "notes": [
+    "**Linear momentum** p of a body is the product of its mass and velocity: p = mv. It is a vector pointing in the direction of motion; SI unit kg·m/s (also written N·s).",
+    "**Newton's second law in momentum form:** the net force equals the rate of change of momentum: F_net = dp/dt. For constant mass this reduces to F = ma.",
+    "**Impulse** is the product of force and the time for which it acts: J = F·Δt = Δp (change in momentum). Impulse is a vector, unit N·s = kg·m/s.",
+    "**Impulse–momentum theorem:** the impulse delivered to a body equals the total change in its momentum: J = F̄·Δt = p_final − p_initial = mv − mu.",
+    "**Why padding/crumple zones save lives:** in a collision the change of momentum is fixed, so extending the time Δt (airbags, crumple zones, long catches) reduces the average force F = Δp/Δt — a gentler stop.",
+    "**Conservation of linear momentum:** if the net external force on a system is zero, the total linear momentum of the system is constant (p_initial = p_final). Collisions and explosions conserve momentum because the internal action–reaction forces cancel.",
+    "**Recoil of a gun:** before firing, total momentum = 0; after firing, m_gun·v_gun + m_bullet·v_bullet = 0, so the gun recoils backward with momentum equal and opposite to the bullet.",
+    "**Applications:** rocket propulsion, jet engines, firing a cannon, and explaining why a person recoils when throwing a heavy object while standing on frictionless ice."
+  ]
+}

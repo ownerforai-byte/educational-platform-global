@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Chemistry — 2019",
+  "year": 2019,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "State Le Chatelier's principle. Predict the effect of increasing pressure on N₂ + 3H₂ ⇌ 2NH₃.",
+      "marks": 3,
+      "solution": "**Le Chatelier's principle:** when a system at equilibrium is disturbed by a change in concentration, pressure or temperature, the equilibrium shifts in the direction that minimises the disturbance.\n\nFor N₂ + 3H₂ ⇌ 2NH₃ there are 4 moles of gas on the left and only 2 on the right. Increasing pressure shifts the equilibrium **towards the right (more ammonia)**, since fewer gas molecules means lower pressure."
+    },
+    {
+      "question": "Calculate the pH of a 0.001 M HCl solution.",
+      "marks": 2,
+      "solution": "HCl is a strong acid and dissociates completely: [H⁺] = 0.001 = 10⁻³ M.\n\npH = −log[H⁺] = −log(10⁻³) = **3**."
+    },
+    {
+      "question": "What is a coordinate (dative) bond? Give an example.",
+      "marks": 2,
+      "solution": "A **coordinate bond** is a covalent bond in which the shared pair of electrons is donated by only one of the two bonded atoms (the donor), the other being the acceptor.\n\nExample: NH₄⁺ — nitrogen donates its lone pair to H⁺; also H₃O⁺."
+    },
+    {
+      "question": "Define oxidation and reduction in terms of electron transfer.",
+      "marks": 2,
+      "solution": "**Oxidation** is the loss of electrons by an atom/ion (increase in oxidation number). **Reduction** is the gain of electrons (decrease in oxidation number).\n\nExample: Zn → Zn²⁺ + 2e⁻ (oxidation); Cu²⁺ + 2e⁻ → Cu (reduction)."
+    }
+  ]
+}

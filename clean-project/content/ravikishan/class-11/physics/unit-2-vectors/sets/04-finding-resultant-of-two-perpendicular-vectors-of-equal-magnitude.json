@@ -1,0 +1,7 @@
+{
+  "title": "Finding the Resultant of Two Perpendicular Vectors of Equal Magnitude",
+  "notes": [
+    "**If two vectors of equal magnitude act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=a$ and $\\theta=90°$. Using $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{a^2+a^2+2a^2\\cos90°}=\\sqrt{2a^2}=a\\sqrt2$. Direction: $\\tan\\alpha=\\dfrac{a\\sin90°}{a+a\\cos90°}=\\dfrac{a}{a}=1 \\Rightarrow \\alpha=45°$ — the resultant bisects the angle between the two equal perpendicular vectors.",
+    "**Q. If two equal vectors act perpendicular to each other and their resultant is 1.414 ($\\approx\\sqrt2$) units, find the magnitude of each vector.** Using $R=a\\sqrt2$ from above: $a=\\dfrac{R}{\\sqrt2}=\\dfrac{\\sqrt2}{\\sqrt2}=1$ unit — each vector has magnitude 1 unit."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Q: Why does Newton's Law of Cooling fail for large temperature differences?",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "newton-s-law-of-cooling",
+  "topicTitle": "Newton's law of cooling",
+  "relevance": 100,
+  "notes": [
+    "The law assumes (θ − θ₀) is small — typically within about 30°C of the surroundings — and that cooling happens mainly by natural convection and radiation, not forced convection",
+    "For large differences, radiative loss actually follows the Stefan–Boltzmann law, where the rate depends on (θ⁴ − θ₀⁴), not simply (θ − θ₀), so the linear approximation breaks down"
+  ]
+}

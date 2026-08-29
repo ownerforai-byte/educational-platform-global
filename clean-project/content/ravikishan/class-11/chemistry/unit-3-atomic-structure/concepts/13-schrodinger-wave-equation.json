@@ -1,0 +1,12 @@
+{
+  "title": "Schrödinger's Wave Equation & the Orbit→Orbital Shift",
+  "notes": [
+    "**3D wave equation (1926):** Schrödinger extended de Broglie's idea to three dimensions. For a particle of mass m moving with total energy E and potential energy V, the wave function ψ satisfies (∂²ψ/∂x²) + (∂²ψ/∂y²) + (∂²ψ/∂z²) + (8π²m/h²)(E − V)ψ = 0.",
+    "**Wave function interpretation:** ψ itself has no direct physical meaning, but ψ² gives the probability of finding the electron in a small volume around a point — the electron cloud picture replaces the fixed orbit.",
+    "**Orbit → orbital paradigm shift:** an orbit is a definite circular path (Bohr), while an orbital is a three-dimensional region of space where the probability of finding the electron is high (usually taken as ~90–95%).",
+    "**Quantum numbers emerge naturally:** solving the equation for the hydrogen atom yields three integer quantum numbers (n, l, m) that characterise each allowed orbital, with a fourth (s) added later for spin.",
+    "**Subshell subdivision (s, p, d, f):** orbitals of the same principal shell are grouped into subshells labelled s, p, d and f, which differ in shape, energy and orientation.",
+    "**Spherical vs directional geometry:** s-orbitals are spherical, while p-orbitals are dumb-bell shaped and directional along the x, y and z axes; d and f orbitals have more complex shapes.",
+    "**Electron cloud mapping:** plotting ψ² in three dimensions gives the spatial probability maps (clouds) that replace Bohr's planar circular orbits."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Two Vectors, North-of-East / South-of-East Example (Perpendicular Resultant)",
+  "unitSlug": "vectors",
+  "topicSlug": "resolution-of-vectors-unit-vectors",
+  "topicTitle": "Resolution of vectors; unit vectors",
+  "relevance": 88,
+  "notes": [
+    "**If two vectors of equal magnitude 2 m act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=2\\,\\text{m}$, $\\theta=90°$: $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{2^2+2^2+0}=\\sqrt8=2\\sqrt2\\,\\text{m}$.",
+    "Direction: $\\tan\\alpha=B/A=1 \\Rightarrow \\alpha=45°$, i.e. the resultant lies exactly midway between the two original vectors (e.g. if one points north-of-east and the other south-of-east, the resultant points due east)."
+  ]
+}

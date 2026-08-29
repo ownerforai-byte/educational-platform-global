@@ -1,0 +1,15 @@
+{
+  "title": "Motion, Frames of Reference & Branches of Mechanics",
+  "notes": [
+    "**Mechanics** is the branch of physics that deals with bodies at rest (statics), in motion (kinematics) and the forces causing that motion (dynamics). It is the foundation on which the whole of physics is built.",
+    "**What mechanics answers:** *If I know an object's position, velocity and acceleration, can I predict where it will be in the future?* For everyday speeds, classical mechanics (Newtonian) gives accurate answers; near the speed of light relativity replaces it, and at atomic scales quantum mechanics takes over.",
+    "**Branches of mechanics:**",
+    "  - **Statics** — bodies at rest; conditions of equilibrium (resultant force = 0, resultant torque = 0).",
+    "  - **Kinematics** — describes *how* things move (position, velocity, acceleration) without asking why; the geometry of motion.",
+    "  - **Dynamics** — relates *why* things move as they do: the study of forces (Newton's laws) and their effect on motion.",
+    "**Particle (point object):** a body whose size and shape are negligible compared to the distances involved (e.g. a cricket ball compared to a football field). Its whole mass is assumed concentrated at a point.",
+    "**Frame of reference:** a coordinate system (origin + axes + clock) fixed to an observer. A correct description of motion requires a stated frame — an apple 'at rest' in the train is moving at 120 km/h in the station frame.",
+    "**Distance vs displacement:** distance is the total path length travelled (scalar, ≥ 0); displacement is the change in position — the straight line from initial to final point (vector, depends only on endpoints).",
+    "**Speed vs velocity:** speed = distance/time (scalar); velocity = displacement/time (vector, includes direction). Average velocity over a round trip is zero even though average speed is not."
+  ]
+}

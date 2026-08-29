@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2014",
+  "year": 2014,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "Define significant figures. How many significant figures are there in 0.00320 m?",
+      "marks": 2,
+      "solution": "Significant figures are the meaningful digits of a measurement (all certain digits plus the first uncertain one).\n\n0.00320 m has **3 significant figures** — the leading zeros only locate the decimal point (not significant), while 3, 2 and the trailing 0 (after decimal point) are significant."
+    },
+    {
+      "question": "State the parallelogram law of vectors and find the resultant of two forces 6 N and 8 N acting at right angles to each other.",
+      "marks": 3,
+      "solution": "**Parallelogram law:** if two vectors acting at a point are represented in magnitude and direction by the adjacent sides of a parallelogram, the diagonal through that point represents their resultant in both magnitude and direction.\n\nFor perpendicular forces: R² = P² + Q² = 6² + 8² = 36 + 64 = 100 ⇒ R = **10 N**.\n\ntan θ = Q/P = 8/6 ⇒ θ = tan⁻¹(4/3) ≈ **53.13°** with the 6 N force."
+    },
+    {
+      "question": "A car accelerates uniformly from rest to 20 m s⁻¹ in 10 s. Find its acceleration and the distance covered.",
+      "marks": 3,
+      "solution": "Given u = 0, v = 20 m s⁻¹, t = 10 s.\n\na = (v − u)/t = 20/10 = **2 m s⁻²**.\n\ns = ut + ½at² = 0 + ½ × 2 × 10² = **100 m**."
+    },
+    {
+      "question": "State Newton's second law of motion and hence define the unit of force.",
+      "marks": 2,
+      "solution": "**Newton's second law:** the rate of change of momentum of a body is directly proportional to the applied force and takes place in the direction of the force.\n\nF = k·dp/dt = k·ma. Choosing k = 1 gives F = ma. **1 newton** is the force that gives an acceleration of 1 m s⁻² to a mass of 1 kg."
+    }
+  ]
+}
