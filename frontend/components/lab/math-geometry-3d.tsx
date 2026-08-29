@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,14 +15,14 @@ import * as THREE from "three";
 function MeaningPanel({ title, meaning, points }: { title: string; meaning: string; points: string[] }) {
   return (
     <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
-      <p className="text-xs font-semibold uppercase tracking-wide text-primary">ðŸ“˜ Concept & Why It Matters</p>
+      <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Concept & Why It Matters</p>
       <h4 className="mt-1 text-sm font-semibold">{title}</h4>
       <p className="mt-1 text-xs text-muted-foreground">{meaning}</p>
       {points.length > 0 && (
         <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
           {points.map((p, i) => (
             <li key={i} className="flex gap-1.5">
-              <span className="text-primary">â€¢</span>
+              <span className="text-primary" aria-hidden="true">•</span>
               <span>{p}</span>
             </li>
           ))}
@@ -212,7 +212,7 @@ function CoordinatePlane2D() {
     ctx.fillText(`|OP| = ${Math.hypot(point.x, point.y).toFixed(2)}`, 10, 20);
     if (showAngle) {
       const angle = (Math.atan2(point.y, point.x) * 180) / Math.PI;
-      ctx.fillText(`Î¸ = ${angle.toFixed(1)}Â°`, 10, 36);
+      ctx.fillText(`θ = ${angle.toFixed(1)}°`, 10, 36);
     }
   }, [point, showAngle, showComponents, showCircle, gridSize]);
 
@@ -251,7 +251,7 @@ function CoordinatePlane2D() {
             <Input type="number" value={point.y} onChange={(e) => setPoint({ ...point, y: Number(e.target.value) })} className="mt-1" />
           </div>
           <div className="w-28">
-            <Label className="text-xs text-muted-foreground">Grid (Â±):</Label>
+            <Label className="text-xs text-muted-foreground">Grid (±):</Label>
             <Select value={String(gridSize)} onValueChange={(v) => setGridSize(Number(v))}>
               <SelectTrigger className="mt-1">
                 <SelectValue />
@@ -280,8 +280,8 @@ function CoordinatePlane2D() {
             <p className="text-sm font-semibold">r = ({point.x}, {point.y}) &nbsp;|r| = {r.toFixed(2)}</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs text-muted-foreground">Angle Î¸</p>
-            <p className="text-sm font-semibold">{angleDeg.toFixed(1)}Â° ({ (angleDeg * Math.PI / 180).toFixed(3) } rad)</p>
+            <p className="text-xs text-muted-foreground">Angle θ</p>
+            <p className="text-sm font-semibold">{angleDeg.toFixed(1)}° ({ (angleDeg * Math.PI / 180).toFixed(3) } rad)</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
             <p className="text-xs text-muted-foreground">Quadrant</p>
@@ -293,11 +293,11 @@ function CoordinatePlane2D() {
           title="Coordinate Geometry Basics (Class 11)"
           meaning="The Cartesian plane has two perpendicular axes intersecting at origin O. Every point is (x, y), where x is the horizontal distance and y is the vertical distance from the origin. The plane is divided into 4 quadrants."
           points={[
-            "Quadrant I: (+, +) â€¢ II: (âˆ’, +) â€¢ III: (âˆ’, âˆ’) â€¢ IV: (+, âˆ’)",
-            "Distance from origin: |OP| = âˆš(xÂ² + yÂ²)",
-            "Angle from +x axis: Î¸ = tanâ»Â¹(y/x)",
-            "x = rÂ·cosÎ¸, y = rÂ·sinÎ¸ (polar â†” cartesian conversion)",
-            "Unit circle: points where xÂ² + yÂ² = 1, showing cosÎ¸ = x and sinÎ¸ = y",
+            "Quadrant I: (+, +) • II: (−, +) • III: (−, −) • IV: (+, −)",
+            "Distance from origin: |OP| = √(x² + y²)",
+            "Angle from +x axis: θ = tan⁻¹(y/x)",
+            "x = r·cosθ, y = r·sinθ (polar ↔ cartesian conversion)",
+            "Unit circle: points where x² + y² = 1, showing cosθ = x and sinθ = y",
           ]}
         />
       </CardContent>
@@ -315,10 +315,15 @@ function CoordinateAxes3D() {
   const [showPlanes, setShowPlanes] = useState(true);
   const [showProjections, setShowProjections] = useState(true);
   const [showBox, setShowBox] = useState(true);
+  const [isWebGL, setIsWebGL] = useState(true);
+
+  useEffect(() => {
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || !isWebGL) return;
 
     let scene: THREE.Scene;
     let camera: THREE.PerspectiveCamera;
@@ -336,9 +341,6 @@ function CoordinateAxes3D() {
       camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 100);
       camera.position.set(6, 5, 7);
 
-      if (!isWebGLAvailable()) {
-        return;
-      }
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -518,7 +520,16 @@ function CoordinateAxes3D() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [point, showPlanes, showProjections, showBox]);
+  }, [point, showPlanes, showProjections, showBox, isWebGL]);
+
+  if (!isWebGL) {
+    return (
+      <WebGLFallback 
+        title="3D Coordinate System"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
 
   const r = Math.sqrt(point.x ** 2 + point.y ** 2 + point.z ** 2);
   const thetaXY = (Math.atan2(point.y, point.x) * 180) / Math.PI;
@@ -529,7 +540,7 @@ function CoordinateAxes3D() {
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
           <span>3D Coordinate System (x, y, z)</span>
-          <span className="text-xs text-muted-foreground font-normal">Drag to rotate â€¢ Clear visible axes</span>
+          <span className="text-xs text-muted-foreground font-normal">Drag to rotate • Clear visible axes</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -559,12 +570,12 @@ function CoordinateAxes3D() {
             <p className="text-sm font-semibold">|r| = {r.toFixed(2)}</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs text-muted-foreground">Î¸ in xy-plane</p>
-            <p className="text-sm font-semibold">{thetaXY.toFixed(1)}Â°</p>
+            <p className="text-xs text-muted-foreground">θ in xy-plane</p>
+            <p className="text-sm font-semibold">{thetaXY.toFixed(1)}°</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs text-muted-foreground">Î¸ in xz-plane</p>
-            <p className="text-sm font-semibold">{thetaXZ.toFixed(1)}Â°</p>
+            <p className="text-xs text-muted-foreground">θ in xz-plane</p>
+            <p className="text-sm font-semibold">{thetaXZ.toFixed(1)}°</p>
           </div>
         </div>
 
@@ -572,10 +583,10 @@ function CoordinateAxes3D() {
           title="3D Coordinate Geometry (Class 11)"
           meaning="In 3D space, each point is (x, y, z). The three axes are mutually perpendicular. The coordinate planes are xy, yz, and xz planes. The distance formula extends to 3D."
           points={[
-            "Distance: AB = âˆš((xâ‚‚âˆ’xâ‚)Â² + (yâ‚‚âˆ’yâ‚)Â² + (zâ‚‚âˆ’zâ‚)Â²)",
-            "3D position vector: r = xi + yj + zk, |r| = âˆš(xÂ² + yÂ² + zÂ²)",
-            "Direction cosines: cosÎ± = x/r, cosÎ² = y/r, cosÎ³ = z/r (cosÂ²Î± + cosÂ²Î² + cosÂ²Î³ = 1)",
-            "Midpoint: ((xâ‚+xâ‚‚)/2, (yâ‚+yâ‚‚)/2, (zâ‚+zâ‚‚)/2)",
+            "Distance: AB = √((x₂−x₁)² + (y₂−y₁)² + (z₂−z₁)²)",
+            "3D position vector: r = xi + yj + zk, |r| = √(x² + y² + z²)",
+            "Direction cosines: cosα = x/r, cosβ = y/r, cosγ = z/r (cos²α + cos²β + cos²γ = 1)",
+            "Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2, (z₁+z₂)/2)",
             "Coordinate planes are the xy-plane, yz-plane, and xz-plane",
           ]}
         />
@@ -593,10 +604,15 @@ function VectorViewer() {
   const [v1, setV1] = useState({ x: 3, y: 1.5, z: 0 });
   const [v2, setV2] = useState({ x: 1, y: 3, z: 0.5 });
   const [showSum, setShowSum] = useState(true);
+  const [isWebGL, setIsWebGL] = useState(true);
+
+  useEffect(() => {
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || !isWebGL) return;
 
     let scene: THREE.Scene;
     let camera: THREE.PerspectiveCamera;
@@ -614,9 +630,6 @@ function VectorViewer() {
       camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 100);
       camera.position.set(5, 4, 6);
 
-      if (!isWebGLAvailable()) {
-        return;
-      }
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -707,7 +720,16 @@ function VectorViewer() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [v1, v2, showSum]);
+  }, [v1, v2, showSum, isWebGL]);
+
+  if (!isWebGL) {
+    return (
+      <WebGLFallback 
+        title="Vector Explorer"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
 
   const dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
   const mag1 = Math.sqrt(v1.x ** 2 + v1.y ** 2 + v1.z ** 2);
@@ -719,7 +741,7 @@ function VectorViewer() {
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
           <span>Vector & Angle Explorer</span>
-          <span className="text-xs text-muted-foreground font-normal">Drag to rotate â€¢ Adjust vector components</span>
+          <span className="text-xs text-muted-foreground font-normal">Drag to rotate • Adjust vector components</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -727,7 +749,7 @@ function VectorViewer() {
           <div className="grid gap-4 sm:grid-cols-2">
             {/* V1 inputs */}
             <div className="rounded-md border border-red-500/30 bg-red-500/5 p-3">
-              <p className="text-xs font-semibold text-red-400">Vector âƒ—A</p>
+              <p className="text-xs font-semibold text-red-400">Vector →A</p>
               <div className="mt-2 grid grid-cols-3 gap-2">
                 {(["x", "y", "z"] as const).map((k) => (
                   <div key={k}>
@@ -740,7 +762,7 @@ function VectorViewer() {
             </div>
             {/* V2 inputs */}
             <div className="rounded-md border border-green-500/30 bg-green-500/5 p-3">
-              <p className="text-xs font-semibold text-green-400">Vector âƒ—B</p>
+              <p className="text-xs font-semibold text-green-400">Vector →B</p>
               <div className="mt-2 grid grid-cols-3 gap-2">
                 {(["x", "y", "z"] as const).map((k) => (
                   <div key={k}>
@@ -765,11 +787,11 @@ function VectorViewer() {
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-md border border-border bg-muted/30 p-3">
             <p className="text-xs text-muted-foreground">Dot Product</p>
-            <p className="text-sm font-semibold">AÂ·B = {dot.toFixed(2)}</p>
+            <p className="text-sm font-semibold">A·B = {dot.toFixed(2)}</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
             <p className="text-xs text-muted-foreground">Angle Between</p>
-            <p className="text-sm font-semibold">{angle.toFixed(1)}Â°</p>
+            <p className="text-sm font-semibold">{angle.toFixed(1)}°</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
             <p className="text-xs text-muted-foreground">Sum Vector</p>
@@ -781,10 +803,10 @@ function VectorViewer() {
           title="Vector Algebra (Class 11)"
           meaning="Vectors have both magnitude and direction. The dot product gives a scalar that measures how parallel two vectors are; the cross product gives a vector perpendicular to both."
           points={[
-            "Dot product: AÂ·B = |A||B|cosÎ¸ â€” cosÎ¸ = (AÂ·B)/(|A||B|)",
-            "Perpendicular vectors: AÂ·B = 0",
-            "Angle formula: cos Î¸ = (Aâ‚“Bâ‚“ + Aáµ§Báµ§ + Aâ‚‚Bâ‚‚)/(|A||B|)",
-            "Parallelogram law: |A+B|Â² = |A|Â² + |B|Â² + 2|A||B|cosÎ¸",
+            "Dot product: A·B = |A||B|cosθ — cosθ = (A·B)/(|A||B|)",
+            "Perpendicular vectors: A·B = 0",
+            "Angle formula: cos θ = (AₓBₓ + AᵧBᵧ + A_zB_z)/(|A||B|)",
+            "Parallelogram law: |A+B|² = |A|² + |B|² + 2|A||B|cosθ",
             "Triangle law: A + B places the tail of B at the head of A",
           ]}
         />
@@ -794,7 +816,7 @@ function VectorViewer() {
 }
 
 /* ============================================================
-   Comprehensive Parabola Explorer (roots â†’ vertex â†’ all conditions)
+   Comprehensive Parabola Explorer (roots → vertex → all conditions)
    ============================================================ */
 
 function ParabolaExplorer() {
@@ -952,8 +974,8 @@ function ParabolaExplorer() {
 
     // Info text
     ctx.fillStyle = "#94a3b8"; ctx.font = "12px Inter, system-ui, sans-serif";
-    ctx.fillText(`y = ${a}xÂ² ${b >= 0 ? "+" : "âˆ’"} ${Math.abs(b)}x ${c >= 0 ? "+" : "âˆ’"} ${Math.abs(c)}`, 10, 20);
-    ctx.fillText(`D = bÂ²âˆ’4ac = ${discriminant.toFixed(1)}`, 10, 36);
+    ctx.fillText(`y = ${a}x² ${b >= 0 ? "+" : "−"} ${Math.abs(b)}x ${c >= 0 ? "+" : "−"} ${Math.abs(c)}`, 10, 20);
+    ctx.fillText(`D = b²−4ac = ${discriminant.toFixed(1)}`, 10, 36);
   }, [a, b, c, showRoots, showVertex, showAxis, showFocus, showDirectrix, discriminant, roots, vertexX, vertexY, focusX, focusY, directrixY, yIntercept]);
 
   const rootText = discriminant > 0
@@ -962,13 +984,13 @@ function ParabolaExplorer() {
       ? `One real root (double): x = ${roots[0].toFixed(2)}`
       : "No real roots (D < 0)";
 
-  const vertexForm = `y = ${a}(x ${vertexX >= 0 ? "âˆ’" : "+"} ${Math.abs(vertexX).toFixed(2)})Â² ${vertexY >= 0 ? "+" : "âˆ’"} ${Math.abs(vertexY).toFixed(2)}`;
+  const vertexForm = `y = ${a}(x ${vertexX >= 0 ? "−" : "+"} ${Math.abs(vertexX).toFixed(2)})² ${vertexY >= 0 ? "+" : "−"} ${Math.abs(vertexY).toFixed(2)}`;
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
-          <span>Parabola Explorer â€” Roots to Peak</span>
+          <span>Parabola Explorer — Roots to Peak</span>
           <span className="text-xs text-muted-foreground font-normal">Adjust a, b, c to see every feature</span>
         </CardTitle>
       </CardHeader>
@@ -1017,12 +1039,12 @@ function ParabolaExplorer() {
         <div className="rounded-md border border-border bg-muted/30 p-3 text-sm">
           <p className="font-semibold">Roots: {rootText}</p>
           <p className="mt-1 text-xs text-muted-foreground">Vertex form: {vertexForm}</p>
-          <p className="mt-1 text-xs text-muted-foreground">Focus: ({focusX.toFixed(2)}, {focusY.toFixed(2)}) â€¢ Directrix: y = {directrixY.toFixed(2)}</p>
+          <p className="mt-1 text-xs text-muted-foreground">Focus: ({focusX.toFixed(2)}, {focusY.toFixed(2)}) • Directrix: y = {directrixY.toFixed(2)}</p>
         </div>
 
         {showTable && (
           <div className="overflow-x-auto rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs font-semibold mb-2">Table of Values (x â†’ y)</p>
+            <p className="text-xs font-semibold mb-2">Table of Values (x → y)</p>
             <div className="flex gap-2 overflow-x-auto">
               {tablePoints.map((p) => (
                 <div key={p.x} className="flex flex-col items-center rounded border border-border bg-background px-2 py-1 text-xs">
@@ -1035,18 +1057,18 @@ function ParabolaExplorer() {
         )}
 
         <MeaningPanel
-          title="Parabola â€” Complete Guide (Class 11)"
-          meaning="A parabola is the graph of y = axÂ² + bx + c. It's a U-shaped curve with a vertex (peak or trough), an axis of symmetry, and either 0, 1, or 2 roots depending on the discriminant."
+          title="Parabola — Complete Guide (Class 11)"
+          meaning="A parabola is the graph of y = ax² + bx + c. It's a U-shaped curve with a vertex (peak or trough), an axis of symmetry, and either 0, 1, or 2 roots depending on the discriminant."
           points={[
-            "Vertex: x = âˆ’b/2a, y = f(âˆ’b/2a) â€” the turning point",
-            "Axis of symmetry: x = âˆ’b/2a â€” the parabola is symmetric about this line",
-            "Roots (x-intercepts): x = (âˆ’b Â± âˆš(bÂ²âˆ’4ac)) / 2a",
-            "Discriminant D = bÂ²âˆ’4ac: D>0 â†’ 2 real roots, D=0 â†’ 1 double root, D<0 â†’ no real roots",
-            "a > 0 â†’ opens up (minimum at vertex); a < 0 â†’ opens down (maximum at vertex)",
+            "Vertex: x = −b/2a, y = f(−b/2a) — the turning point",
+            "Axis of symmetry: x = −b/2a — the parabola is symmetric about this line",
+            "Roots (x-intercepts): x = (−b ± √(b²−4ac)) / 2a",
+            "Discriminant D = b²−4ac: D>0 → 2 real roots, D=0 → 1 double root, D<0 → no real roots",
+            "a > 0 → opens up (minimum at vertex); a < 0 → opens down (maximum at vertex)",
             "c = y-intercept (where the curve crosses the y-axis)",
-            "Focus: (h, k+1/4a) â€¢ Directrix: y = kâˆ’1/4a â€” every point on parabola is equidistant from both",
-            "Vertex form: y = a(xâˆ’h)Â² + k â€” h = âˆ’b/2a, k = vertex y",
-            "How to start: identify a, b, c â†’ find vertex â†’ find roots â†’ plot â†’ sketch",
+            "Focus: (h, k+1/4a) • Directrix: y = k−1/4a — every point on parabola is equidistant from both",
+            "Vertex form: y = a(x−h)² + k — h = −b/2a, k = vertex y",
+            "How to start: identify a, b, c → find vertex → find roots → plot → sketch",
           ]}
         />
       </CardContent>
@@ -1082,5 +1104,3 @@ export function MathGeometry3D() {
     </Tabs>
   );
 }
-
-
