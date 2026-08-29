@@ -299,7 +299,6 @@ function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSl
   }, [filter, typeFilter]);
 
   const activeLabData = activeLab ? labs.find((l) => l.id === activeLab) : null;
-  const ActiveComponent = activeLabData?.component;
 
   return (
     <div className="space-y-6">
@@ -383,38 +382,35 @@ function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSl
 
       {!activeLab ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredLabs.map((lab) => {
-            const Icon = lab.icon;
-            return (
-              <Card
-                key={lab.id}
-                className="cursor-pointer transition-all hover:shadow-lg hover:border-primary/50"
-                onClick={() => !lab.status.includes("premium") && setActiveLab(lab.id)}
-              >
-                <CardHeader className="flex flex-row items-center gap-3 space-y-0">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Icon className="h-5 w-5 text-primary" />
+          {filteredLabs.map((lab) => (
+            <Card
+              key={lab.id}
+              className="cursor-pointer transition-all hover:shadow-lg hover:border-primary/50"
+              onClick={() => !lab.status.includes("premium") && setActiveLab(lab.id)}
+            >
+              <CardHeader className="flex flex-row items-center gap-3 space-y-0">
+                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  {lab.icon}
+                </div>
+                <CardTitle className="text-sm font-medium">{lab.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs text-muted-foreground">{lab.description}</p>
+                {lab.status === "premium" && (
+                  <div className="mt-2 flex items-center gap-1 text-xs text-amber-600">
+                    <Star className="h-3 w-3 fill-current" />
+                    <span>Premium</span>
                   </div>
-                  <CardTitle className="text-sm font-medium">{lab.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-xs text-muted-foreground">{lab.description}</p>
-                  {lab.status === "premium" && (
-                    <div className="mt-2 flex items-center gap-1 text-xs text-amber-600">
-                      <Star className="h-3 w-3 fill-current" />
-                      <span>Premium</span>
-                    </div>
-                  )}
-                  {lab.status === "new" && (
-                    <div className="mt-2 flex items-center gap-1 text-xs text-blue-600">
-                      <Sparkles className="h-3 w-3" />
-                      <span>New</span>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            );
-          })}
+                )}
+                {lab.status === "new" && (
+                  <div className="mt-2 flex items-center gap-1 text-xs text-blue-600">
+                    <Sparkles className="h-3 w-3" />
+                    <span>New</span>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          ))}
         </div>
       ) : (
         <div className="space-y-4">
@@ -430,20 +426,20 @@ function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSl
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                {activeLabData && <activeLabData.icon className="h-5 w-5" />}
+                {activeLabData && activeLabData.icon}
                 {activeLabData?.title}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {ActiveComponent && (
+              {activeLabData?.component && (
                 <Suspense fallback={
                   <div className="flex items-center justify-center h-[400px]">
                     <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
                   </div>
                 }>
-                  {typeof ActiveComponent === 'function'
-                    ? React.createElement(ActiveComponent as React.ElementType)
-                    : ActiveComponent}
+                  {typeof activeLabData.component === 'function'
+                    ? React.createElement(activeLabData.component as React.ElementType)
+                    : activeLabData.component}
                 </Suspense>
               )}
             </CardContent>
