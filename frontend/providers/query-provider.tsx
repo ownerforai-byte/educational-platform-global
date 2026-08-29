@@ -2,7 +2,7 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { useState, type ReactNode, useEffect } from "react";
+import { useState, type ReactNode } from "react";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -30,15 +30,6 @@ function getQueryClient() {
 
 export function QueryProvider({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => getQueryClient());
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^5.62.0",
-    "@types/three": "^0.170.0"
+    "@types/three": "^0.170.0",
+    "typescript-eslint": "^8.68.0"
   }
 }

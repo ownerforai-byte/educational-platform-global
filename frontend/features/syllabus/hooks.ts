@@ -10,6 +10,7 @@ import {
   getUnitSyllabus,
   getUnitTopicEntries,
   getTopicEntryBySlug,
+  type ClassSyllabus,
   type SyllabusTopicEntry,
 } from "@/lib/syllabus";
 import type { UnitVM, SubjectNavVM } from "./types";
@@ -57,7 +58,6 @@ export function useSubjectNav(
         units,
       };
     },
-    enabled: !!classSlug && !!subjectSlug,
     staleTime: 1000 * 60 * 10,
   });
 }
@@ -82,7 +82,6 @@ export function useUnit(
         ...(typeof unit.hours === "number" ? { hours: unit.hours } : {}),
       } as UnitVM;
     },
-    enabled: !!classSlug && !!subjectSlug && !!unitId,
     staleTime: 1000 * 60 * 10,
   });
 }
@@ -113,7 +112,6 @@ export function useUnitTopic(
         topic,
       };
     },
-    enabled: !!classSlug && !!subjectSlug && !!unitId && !!topicSlug,
     staleTime: 1000 * 60 * 10,
   });
 }

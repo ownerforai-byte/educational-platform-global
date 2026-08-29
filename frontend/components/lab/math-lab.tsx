@@ -391,26 +391,26 @@ export function MathLab() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <Tabs value={tab} onValueChange={setTab} className="w-full" role="tablist" aria-label="Lab sections">
-          <TabsList className="flex-wrap w-full" role="tablist">
-            <TabsTrigger value="geometry" className="flex-1 min-w-[120px] touch-manipulation" role="tab" aria-selected={tab === "geometry"}>
+        <Tabs value={tab} onValueChange={setTab} className="w-full">
+          <TabsList className="flex-wrap w-full">
+            <TabsTrigger value="geometry" className="flex-1 min-w-[120px] touch-manipulation">
               Coordinate Geometry
             </TabsTrigger>
-            <TabsTrigger value="graph" className="flex-1 min-w-[120px] touch-manipulation" role="tab" aria-selected={tab === "graph"}>
+            <TabsTrigger value="graph" className="flex-1 min-w-[120px] touch-manipulation">
               Function Graphs
             </TabsTrigger>
-            <TabsTrigger value="surface" className="flex-1 min-w-[120px] touch-manipulation" role="tab" aria-selected={tab === "surface"}>
+            <TabsTrigger value="surface" className="flex-1 min-w-[120px] touch-manipulation">
               3D Surfaces
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="geometry" className="mt-4" role="tabpanel" aria-labelledby="tab-geometry">
+          <TabsContent value="geometry" className="mt-4">
             <Suspense fallback={<div className="h-[400px] flex items-center justify-center"><p className="text-muted-foreground">Loading 3D geometry...</p></div>}>
               <MathGeometry3D />
             </Suspense>
           </TabsContent>
 
-          <TabsContent value="graph" className="mt-4" role="tabpanel" aria-labelledby="tab-graph">
+          <TabsContent value="graph" className="mt-4">
             <div className="space-y-6 w-full">
               <InteractiveFunctionGraph />
               <Card className="w-full">
@@ -439,7 +439,7 @@ export function MathLab() {
             </div>
           </TabsContent>
 
-          <TabsContent value="surface" className="mt-4" role="tabpanel" aria-labelledby="tab-surface">
+          <TabsContent value="surface" className="mt-4">
             <div className="space-y-6 w-full">
               <Card className="w-full">
                 <CardHeader>

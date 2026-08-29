@@ -16,13 +16,21 @@ export function useWebGLCanvas(containerRef: React.RefObject<HTMLDivElement | nu
   return { error };
 }
 
-export function WebGLFallback({ message }: { message?: string }) {
+export function WebGLFallback({
+  title,
+  description,
+  message,
+}: {
+  title?: string;
+  description?: string;
+  message?: string;
+}) {
   return (
     <div className="flex h-full items-center justify-center rounded-lg border border-border bg-muted/20 p-8 text-center">
       <div>
-        <p className="text-lg font-semibold">WebGL Not Available</p>
+        <p className="text-lg font-semibold">{title ?? "WebGL Not Available"}</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          {message ?? "Your browser or device does not support WebGL, which is required for this simulation."}
+          {description ?? message ?? "Your browser or device does not support WebGL, which is required for this simulation."}
         </p>
       </div>
     </div>

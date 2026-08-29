@@ -2,21 +2,24 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import nextPlugin from "@next/eslint-plugin-next";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
     ignores: [
-      ".next/**",
-      "out/**",
-      ".vercel/**",
-      "node_modules/**",
-      "content/**",
-      "drizzle/**",
-      "supabase/.temp/**",
+      "**/.next/**",
+      "**/out/**",
+      "**/.vercel/**",
+      "**/node_modules/**",
+      "**/content/**",
+      "**/drizzle/**",
+      "**/dist/**",
+      "**/supabase/.temp/**",
       "**/*.log",
-      "next-env.d.ts",
+      "**/next-env.d.ts",
+      "**/eslint.config.mjs",
     ],
   },
   js.configs.recommended,
@@ -26,6 +29,7 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: {
       react: pluginReact,
+      "react-hooks": reactHooks,
     },
     languageOptions: {
       // This injects both Node.js and Browser global variables 
@@ -54,6 +58,9 @@ export default defineConfig([
       "react/no-unknown-property": "warn",
       "no-misleading-character-class": "warn",
       "no-useless-escape": "warn",
+      "no-empty": ["warn", { "allowEmptyCatch": true }],
+      "react-hooks/exhaustive-deps": "warn",
+      "@typescript-eslint/no-unused-expressions": "warn",
     },
   },
 ]);

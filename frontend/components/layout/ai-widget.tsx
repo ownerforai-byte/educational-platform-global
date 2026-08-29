@@ -134,7 +134,7 @@ export function AIWidget() {
         const res = await guestChat([...messages, userMsg], "agnes");
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
-        const newCredits = res.creditsRemaining ?? getGuestCredits() - 2;
+        const newCredits = res.remaining ?? getGuestCredits() - 2;
         setGuestCredits(newCredits);
       }
       if (!isLoggedIn) incGuestCount();

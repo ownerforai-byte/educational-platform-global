@@ -36,9 +36,11 @@ export function Select({
 export function SelectTrigger({
   children,
   className,
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 }) {
   useSelect();
   const [open, setOpen] = React.useState(false);
@@ -47,6 +49,7 @@ export function SelectTrigger({
     <div className="relative">
       <Button
         type="button"
+        id={id}
         variant="outline"
         role="combobox"
         aria-expanded={open}
