@@ -467,7 +467,7 @@ function LabContent({ classSlug, subjectSlug }: { classSlug: string; subjectSlug
           <label htmlFor="class-select" className="text-sm font-medium">
             Class
           </label>
-          <Select value={classSlug} onValueChange={() => {}}>
+          <Select value={classSlug} onValueChange={setClassSlug}>
             <SelectTrigger id="class-select" className="w-full sm:w-48 touch-manipulation">
               <SelectValue placeholder="Select class" />
             </SelectTrigger>
@@ -485,7 +485,7 @@ function LabContent({ classSlug, subjectSlug }: { classSlug: string; subjectSlug
           <label htmlFor="subject-select" className="text-sm font-medium">
             Subject
           </label>
-          <Select value={subjectSlug} onValueChange={() => {}}>
+          <Select value={subjectSlug} onValueChange={setSubjectSlug}>
             <SelectTrigger id="subject-select" className="w-full sm:w-48 touch-manipulation">
               <SelectValue placeholder="Select subject" />
             </SelectTrigger>
