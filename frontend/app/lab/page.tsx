@@ -450,10 +450,7 @@ function LabDashboard({ classSlug, subjectSlug }: { classSlug: string; subjectSl
   );
 }
 
-function LabContent() {
-  const [classSlug, setClassSlug] = useState("class-11-notes");
-  const [subjectSlug, setSubjectSlug] = useState("mathematics");
-
+function LabContent({ classSlug, subjectSlug }: { classSlug: string; subjectSlug: string }) {
   const subjects = SUBJECT_OPTIONS[classSlug] || [];
 
   return (
@@ -470,7 +467,7 @@ function LabContent() {
           <label htmlFor="class-select" className="text-sm font-medium">
             Class
           </label>
-          <Select value={classSlug} onValueChange={setClassSlug}>
+          <Select value={classSlug} onValueChange={() => {}}>
             <SelectTrigger id="class-select" className="w-full sm:w-48 touch-manipulation">
               <SelectValue placeholder="Select class" />
             </SelectTrigger>
@@ -488,7 +485,7 @@ function LabContent() {
           <label htmlFor="subject-select" className="text-sm font-medium">
             Subject
           </label>
-          <Select value={subjectSlug} onValueChange={setSubjectSlug}>
+          <Select value={subjectSlug} onValueChange={() => {}}>
             <SelectTrigger id="subject-select" className="w-full sm:w-48 touch-manipulation">
               <SelectValue placeholder="Select subject" />
             </SelectTrigger>
@@ -509,6 +506,15 @@ function LabContent() {
   );
 }
 
+function LabPageInner() {
+  const [classSlug, setClassSlug] = useState("class-11-notes");
+  const [subjectSlug, setSubjectSlug] = useState("mathematics");
+
+  return (
+    <LabContent classSlug={classSlug} subjectSlug={subjectSlug} />
+  );
+}
+
 export default function LabPage() {
   return (
     <Suspense fallback={
@@ -517,7 +523,7 @@ export default function LabPage() {
         <span className="ml-2 text-muted-foreground">Loading...</span>
       </div>
     }>
-      <LabContent />
+      <LabPageInner />
     </Suspense>
   );
 }
