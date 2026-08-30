@@ -75,6 +75,60 @@ import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 // Calculators
 import { PhysicsLab } from "@/components/lab/physics-lab";
 
+// Advanced 3D — migrated from legacy root
+import { Physics3DElectrostatics } from "@/components/lab/physics-3d-electrostatics";
+import { Physics3DGravitation } from "@/components/lab/physics-3d-gravitation";
+import { Physics3DLenses } from "@/components/lab/physics-3d-lenses";
+import { ConcaveMirror3D } from "@/components/lab/physics-3d-mirrors-concave";
+import { ConvexMirror3D } from "@/components/lab/physics-3d-mirrors-convex";
+import { Physics3DPrism } from "@/components/lab/physics-3d-prism";
+import { Physics3DMeasurement } from "@/components/lab/physics-3d-measurement";
+import { Physics3DVectorsComprehensive } from "@/components/lab/physics-3d-vectors-comprehensive";
+import { Physics3DThermodynamics } from "@/components/lab/physics-3d-thermodynamics";
+import { Chemistry3DMolecules } from "@/components/lab/chemistry-3d-molecules";
+import { Chemistry3DSyllabusSuite } from "@/components/lab/chemistry-3d-syllabus-suite";
+import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
+import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
+import { Math3DGeometryLabeled } from "@/components/lab/math-3d-geometry-labelledby";
+import { Math3DSyllabusSuite } from "@/components/lab/math-3d-syllabus-suite";
+import {
+  MotionGraphicsEMWaves,
+  MotionGraphicsSemiconductors,
+  MotionGraphicsOrganicChemistry,
+  MotionGraphicsCalculus,
+  MotionGraphicsThermodynamics,
+  MotionGraphicsOptics,
+  MotionGraphicsElectromagnetism,
+  MotionGraphicsQuantum,
+  MotionGraphicsRelativity,
+  MotionGraphicsFluidDynamics,
+  MotionClass11WaveInterference,
+} from "@/components/lab/motion-graphics";
+import Chapter3DComponent from "@/components/lab/chapters/[chapterId]/chapters-3d";
+import Topic3DComponent from "@/components/lab/topics/[topicId]/topics-3d";
+import {
+  Class11AtomicStructure,
+  Class11ChemicalBonding,
+  Class11Thermodynamics,
+  Class11SetsFunctions,
+  Class11Trigonometry,
+  Class11Statistics,
+  Class11ElectromagneticInduction,
+  Class11ElectrochemistryGalvanicCell,
+  Class11Probability3D,
+  Class11KinematicsMotion,
+  Class11LawsOfMotion,
+  Class11WorkEnergy,
+  Class11RotationalMotion,
+  Class11PhysicsTheoryKinematics,
+  Class11PhysicsTheoryLawsMotion,
+  Class11ChemistryTheory,
+  Class11MathTheory,
+  Class11PhysicsTheoryElectromagnetism,
+  Class11ChemistryTheoryElectrochemistry,
+  Class11MathTheoryProbability,
+} from "@/components/lab/class11";
+
 export type LabMeta = {
   id: string;
   title: string;
@@ -248,6 +302,59 @@ const labs: LabMeta[] = [
   { id: "bio-faunal-3d", title: "Faunal Diversity 3D", description: "NEB XI Unit 8 — Protista, protozoa, animal phyla, earthworm & frog organ systems.", category: "biology", icon: null, status: "active", component: () => wrap3D(<BiologyFaunalDiversity3D />) },
   { id: "bio-biota-3d", title: "Biota & Environment 3D", description: "NEB XI Unit 9 — Adaptations, behavior, pollution types & pesticide effects.", category: "biology", icon: null, status: "active", component: () => wrap3D(<BiologyBiotaConservation3D />) },
   { id: "bio-conservation-3d", title: "Conservation Biology 3D", description: "NEB XI Unit 10 — Biodiversity, Nepal parks, IUCN categories, hotspots.", category: "biology", icon: null, status: "active", component: () => wrap3D(<BiologyBiotaConservation3D />) },
+  // ── Advanced 3D — migrated from legacy root (Physics) ──
+  { id: "ph-3d-electrostatics", title: "Electrostatics 3D", description: "Coulomb's law, field lines, equipotentials, capacitors — fully labelled 3D.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DElectrostatics />) },
+  { id: "ph-3d-gravitation", title: "Gravitation 3D", description: "Gravity field lines, orbits, satellite motion, escape velocity — labelled 3D.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DGravitation />) },
+  { id: "ph-3d-lenses", title: "Lenses & Ray Diagrams 3D", description: "Convex/concave lens ray tracing with image formation and the lens equation.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DLenses />) },
+  { id: "ph-3d-mirrors-concave", title: "Concave Mirror 3D", description: "Ray diagrams, focal point, image types and magnification for concave mirrors.", category: "physics", icon: null, status: "new", component: () => wrap3D(<ConcaveMirror3D />) },
+  { id: "ph-3d-mirrors-convex", title: "Convex Mirror 3D", description: "Virtual-image ray diagrams, field of view and magnification for convex mirrors.", category: "physics", icon: null, status: "new", component: () => wrap3D(<ConvexMirror3D />) },
+  { id: "ph-3d-prism", title: "Prism 3D", description: "White-light dispersion, angle of deviation and refractive index through a prism.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DPrism />) },
+  { id: "ph-3d-measurement", title: "Measurements & Instruments 3D", description: "Vernier callipers, micrometer screw gauge, least count — labelled 3D instruments.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DMeasurement />) },
+  { id: "ph-3d-vectors-comprehensive", title: "Vector Addition 3D (Comprehensive)", description: "Components, dot & cross products, parallelogram rule, resultant — comprehensive suite.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DVectorsComprehensive />) },
+  { id: "ph-3d-thermodynamics", title: "Thermodynamics 3D Suite", description: "Ideal gas, P–V work, heat engines and cycle visualizations in labelled 3D.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Physics3DThermodynamics />) },
+  // ── Advanced 3D — migrated from legacy root (Chemistry / Math / Biology) ──
+  { id: "ch-3d-molecules", title: "Molecules 3D", description: "Interactive 3D atoms, bonds and labelled molecules with orbit camera.", category: "chemistry", icon: null, status: "new", component: () => wrap3D(<Chemistry3DMolecules />) },
+  { id: "ch-3d-syllabus-suite", title: "Chemistry Syllabus Suite 3D", description: "Syllabus-aligned 3D chemistry suite — periodic, bonding, equilibrium and more.", category: "chemistry", icon: null, status: "new", component: () => wrap3D(<Chemistry3DSyllabusSuite />) },
+  { id: "bio-3d-suite", title: "Biology 3D Suite", description: "Cell, DNA, structures and processes in one interactive 3D suite.", category: "biology", icon: null, status: "new", component: () => wrap3D(<Biology3DSuite />) },
+  { id: "bio-3d-diversity-suite", title: "Biodiversity 3D Suite", description: "Taxonomy, kingdoms, evolution and conservation in labelled 3D.", category: "biology", icon: null, status: "new", component: () => wrap3D(<Biology3DDiversitySuite />) },
+  { id: "math-3d-labelledby", title: "3D Geometry Labelled", description: "Cube, sphere, cone, cylinder with movable, exactly-placed labels.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<Math3DGeometryLabeled />) },
+  { id: "math-3d-syllabus-suite", title: "Math Syllabus Suite 3D", description: "Syllabus-aligned 3D math suite — geometry, functions and calculus surfaces.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<Math3DSyllabusSuite />) },
+  { id: "chapters-3d", title: "Chapters 3D Navigator", description: "Animated 3D exploration of chapters with WebGL.", category: "class11", icon: null, status: "active", component: () => wrap3D(<Chapter3DComponent />) },
+  { id: "topics-3d", title: "Topics 3D Navigator", description: "Animated 3D topic explorer with WebGL.", category: "class11", icon: null, status: "active", component: () => wrap3D(<Topic3DComponent />) },
+  // ── Motion Graphics — migrated from legacy root ──
+  { id: "mg-em-waves", title: "EM Waves — Motion Graphics", description: "Animated electromagnetic spectrum, propagation, and wave properties.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsEMWaves />) },
+  { id: "mg-semiconductors", title: "Semiconductors — Motion Graphics", description: "Animated band theory, p–n junction, and diode circuits.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsSemiconductors />) },
+  { id: "mg-organic-chemistry", title: "Organic Chemistry — Motion Graphics", description: "Animated reaction mechanisms, functional groups, and nomenclature.", category: "chemistry", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsOrganicChemistry />) },
+  { id: "mg-calculus", title: "Calculus — Motion Graphics", description: "Animated limits, derivatives, and integrals with live curves.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsCalculus />) },
+  { id: "mg-thermodynamics", title: "Thermodynamics — Motion Graphics", description: "Animated heat, work, entropy, and engine cycles.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsThermodynamics />) },
+  { id: "mg-optics", title: "Optics — Motion Graphics", description: "Animated reflection, refraction, and ray tracing.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsOptics />) },
+  { id: "mg-electromagnetism", title: "Electromagnetism — Motion Graphics", description: "Animated fields, flux, and electromagnetic induction.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsElectromagnetism />) },
+  { id: "mg-quantum", title: "Quantum — Motion Graphics", description: "Animated photoelectric effect, orbitals, and model atom.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsQuantum />) },
+  { id: "mg-relativity", title: "Relativity — Motion Graphics", description: "Animated time dilation, length contraction, and frames.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsRelativity />) },
+  { id: "mg-fluid-dynamics", title: "Fluid Dynamics — Motion Graphics", description: "Animated pressure, buoyancy, and Bernoulli flow.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionGraphicsFluidDynamics />) },
+  { id: "mg-wave-interference", title: "Wave Interference — Motion Graphics", description: "Animated superposition, interference and standing waves.", category: "physics", icon: null, status: "new", component: () => wrap3D(<MotionClass11WaveInterference />) },
+  // ── Class 11 experiments — migrated from legacy root ──
+  { id: "class11-galvanic-cell", title: "Galvanic Cell 3D", description: "Labelled Zn–Cu galvanic cell with electrodes, salt bridge, and ion flow.", category: "chemistry", icon: null, status: "new", component: () => wrap3D(<Class11ElectrochemistryGalvanicCell />) },
+  { id: "class11-emi", title: "Electromagnetic Induction 3D", description: "Labelled coil–magnet induction with flux, emf, and Lenz's law.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Class11ElectromagneticInduction />) },
+  { id: "class11-probability-3d", title: "Probability 3D", description: "Labelled probability spaces, events, and Bayes visualizations.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<Class11Probability3D />) },
+  { id: "class11-atomic-structure", title: "Atomic Structure 3D", description: "Bohr model, shells, and sub-levels with labelled energy transitions.", category: "chemistry", icon: null, status: "new", component: () => wrap3D(<Class11AtomicStructure />) },
+  { id: "class11-chemical-bonding", title: "Chemical Bonding 3D", description: "Ionic, covalent, and dative bonds with labelled electron sharing.", category: "chemistry", icon: null, status: "new", component: () => wrap3D(<Class11ChemicalBonding />) },
+  { id: "class11-sets-functions", title: "Sets & Functions 3D", description: "Venn diagrams, relations, and mapped functions in labelled 3D.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<Class11SetsFunctions />) },
+  { id: "class11-trigonometry", title: "Trigonometry 3D", description: "Unit circle, quadrant rules, and graphs with labelled angles.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<Class11Trigonometry />) },
+  { id: "class11-statistics-3d", title: "Statistics 3D", description: "Bar charts, histograms, and deviation with live labels.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<Class11Statistics />) },
+  { id: "class11-kinematics-motion", title: "Kinematics — Motion 3D", description: "Velocity and acceleration graphs with labelled motion models.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Class11KinematicsMotion />) },
+  { id: "class11-laws-motion", title: "Laws of Motion 3D", description: "Newton's laws, free-body diagrams, and friction in labelled 3D.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Class11LawsOfMotion />) },
+  { id: "class11-work-energy", title: "Work & Energy 3D", description: "Work done, kinetic/potential energy, and conservation with labels.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Class11WorkEnergy />) },
+  { id: "class11-rotational-motion", title: "Rotational Motion 3D", description: "Torque, angular momentum, and moment of inertia in labelled 3D.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Class11RotationalMotion />) },
+  { id: "class11-thermodynamics", title: "Thermodynamics 3D", description: "Heat engines, p–V cycles, and the first law in labelled 3D.", category: "physics", icon: null, status: "new", component: () => wrap3D(<Class11Thermodynamics />) },
+  // ── Class 11 theory panels — migrated from legacy root ──
+  { id: "class11-th-physics-kinematics", title: "Kinematics — Theory", description: "Equations of motion, graphs, and free fall — theory panel.", category: "physics", icon: null, status: "active", component: () => wrapTheory(<Class11PhysicsTheoryKinematics />) },
+  { id: "class11-th-physics-laws", title: "Laws of Motion — Theory", description: "Newton's laws, momentum, friction — theory panel.", category: "physics", icon: null, status: "active", component: () => wrapTheory(<Class11PhysicsTheoryLawsMotion />) },
+  { id: "class11-th-physics-em", title: "Electromagnetism — Theory", description: "Magnetic fields and electromagnetic induction — theory panel.", category: "physics", icon: null, status: "active", component: () => wrapTheory(<Class11PhysicsTheoryElectromagnetism />) },
+  { id: "class11-th-chemistry", title: "Chemistry — Theory", description: "Lab technique and core chemistry — theory panel.", category: "chemistry", icon: null, status: "active", component: () => wrapTheory(<Class11ChemistryTheory />) },
+  { id: "class11-th-chemistry-electro", title: "Electrochemistry — Theory", description: "Galvanic cells, Nernst equation, electrolysis — theory panel.", category: "chemistry", icon: null, status: "active", component: () => wrapTheory(<Class11ChemistryTheoryElectrochemistry />) },
+  { id: "class11-th-math", title: "Mathematics — Theory", description: "Algebra, sets, and functions — theory panel.", category: "mathematics", icon: null, status: "active", component: () => wrapTheory(<Class11MathTheory />) },
+  { id: "class11-th-math-probability", title: "Probability — Theory", description: "Probability, events, and Bayes' theorem — theory panel.", category: "mathematics", icon: null, status: "active", component: () => wrapTheory(<Class11MathTheoryProbability />) },
 ];
 
 export function getLab(id: string): LabMeta | undefined {

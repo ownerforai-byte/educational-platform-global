@@ -164,7 +164,19 @@ export function bindResize(ts: ThreeScene): () => void {
   return () => window.removeEventListener("resize", onResize);
 }
 
-export function standardMaterial(color: number, opts: { emissive?: number; emissiveIntensity?: number; wireframe?: boolean; transparent?: boolean; opacity?: number; metalness?: number; roughness?: number } = {}): THREE.MeshStandardMaterial {
+export function standardMaterial(
+  color: number,
+  opts: {
+    emissive?: number;
+    emissiveIntensity?: number;
+    wireframe?: boolean;
+    transparent?: boolean;
+    opacity?: number;
+    metalness?: number;
+    roughness?: number;
+    side?: THREE.Side;
+  } = {},
+): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({
     color,
     roughness: opts.roughness ?? 0.35,
@@ -174,5 +186,6 @@ export function standardMaterial(color: number, opts: { emissive?: number; emiss
     wireframe: opts.wireframe ?? false,
     transparent: opts.transparent ?? false,
     opacity: opts.opacity ?? 1,
+    ...(opts.side ? { side: opts.side } : {}),
   });
 }

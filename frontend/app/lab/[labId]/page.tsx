@@ -63,6 +63,39 @@ import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanc
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 import { BiologyCell3D, BiologyDNA3D, BiologyEcology3D, BiologyHuman3D, BiologyEvolution3D, BiologyPunnettCalculator, BiologyPopulationCalculator, BiologyPhotosynthesisCalculator, BiologyAdvanced3D } from "@/components/lab/biology-3d";
 import { Class11Biology3DPlus } from "@/components/lab/class11/class11-biology-3d-plus";
+import { Physics3DElectrostatics } from "@/components/lab/physics-3d-electrostatics";
+import { Physics3DGravitation } from "@/components/lab/physics-3d-gravitation";
+import { Physics3DLenses } from "@/components/lab/physics-3d-lenses";
+import { ConcaveMirror3D } from "@/components/lab/physics-3d-mirrors-concave";
+import { ConvexMirror3D } from "@/components/lab/physics-3d-mirrors-convex";
+import { Physics3DPrism } from "@/components/lab/physics-3d-prism";
+import { Physics3DMeasurement } from "@/components/lab/physics-3d-measurement";
+import { Physics3DVectorsComprehensive } from "@/components/lab/physics-3d-vectors-comprehensive";
+import { Physics3DThermodynamics } from "@/components/lab/physics-3d-thermodynamics";
+import { Chemistry3DMolecules } from "@/components/lab/chemistry-3d-molecules";
+import { Chemistry3DSyllabusSuite } from "@/components/lab/chemistry-3d-syllabus-suite";
+import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
+import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
+import { Math3DGeometryLabeled } from "@/components/lab/math-3d-geometry-labelledby";
+import { Math3DSyllabusSuite } from "@/components/lab/math-3d-syllabus-suite";
+import {
+  MotionGraphicsEMWaves, MotionGraphicsSemiconductors, MotionGraphicsOrganicChemistry,
+  MotionGraphicsCalculus, MotionGraphicsThermodynamics, MotionGraphicsOptics,
+  MotionGraphicsElectromagnetism, MotionGraphicsQuantum, MotionGraphicsRelativity,
+  MotionGraphicsFluidDynamics, MotionClass11WaveInterference,
+} from "@/components/lab/motion-graphics";
+import Chapter3DComponent from "@/components/lab/chapters/[chapterId]/chapters-3d";
+import Topic3DComponent from "@/components/lab/topics/[topicId]/topics-3d";
+import {
+  Class11AtomicStructure, Class11ChemicalBonding, Class11Thermodynamics,
+  Class11SetsFunctions, Class11Trigonometry, Class11Statistics,
+  Class11ElectromagneticInduction, Class11ElectrochemistryGalvanicCell,
+  Class11Probability3D, Class11KinematicsMotion, Class11LawsOfMotion,
+  Class11WorkEnergy, Class11RotationalMotion, Class11PhysicsTheoryKinematics,
+  Class11PhysicsTheoryLawsMotion, Class11ChemistryTheory, Class11MathTheory,
+  Class11PhysicsTheoryElectromagnetism, Class11ChemistryTheoryElectrochemistry,
+  Class11MathTheoryProbability,
+} from "@/components/lab/class11";
 
 const COMPONENT_MAP: Record<string, React.FC<any>> = {
   // Physics 3D
@@ -174,6 +207,58 @@ const COMPONENT_MAP: Record<string, React.FC<any>> = {
   "class11-chemistry": () => <Class11Chemistry3DPlus />,
   "class11-math": () => <Class11Math3DPlus />,
   "class11-biology": () => <Class11Biology3DPlus />,
+  // Advanced 3D — migrated from legacy root
+  "ph-3d-electrostatics": () => <Physics3DElectrostatics />,
+  "ph-3d-gravitation": () => <Physics3DGravitation />,
+  "ph-3d-lenses": () => <Physics3DLenses />,
+  "ph-3d-mirrors-concave": () => <ConcaveMirror3D />,
+  "ph-3d-mirrors-convex": () => <ConvexMirror3D />,
+  "ph-3d-prism": () => <Physics3DPrism />,
+  "ph-3d-measurement": () => <Physics3DMeasurement />,
+  "ph-3d-vectors-comprehensive": () => <Physics3DVectorsComprehensive />,
+  "ph-3d-thermodynamics": () => <Physics3DThermodynamics />,
+  "ch-3d-molecules": () => <Chemistry3DMolecules />,
+  "ch-3d-syllabus-suite": () => <Chemistry3DSyllabusSuite />,
+  "bio-3d-suite": () => <Biology3DSuite />,
+  "bio-3d-diversity-suite": () => <Biology3DDiversitySuite />,
+  "math-3d-labelledby": () => <Math3DGeometryLabeled />,
+  "math-3d-syllabus-suite": () => <Math3DSyllabusSuite />,
+  "chapters-3d": () => <Chapter3DComponent />,
+  "topics-3d": () => <Topic3DComponent />,
+  // Motion Graphics — migrated from legacy root
+  "mg-em-waves": () => <MotionGraphicsEMWaves />,
+  "mg-semiconductors": () => <MotionGraphicsSemiconductors />,
+  "mg-organic-chemistry": () => <MotionGraphicsOrganicChemistry />,
+  "mg-calculus": () => <MotionGraphicsCalculus />,
+  "mg-thermodynamics": () => <MotionGraphicsThermodynamics />,
+  "mg-optics": () => <MotionGraphicsOptics />,
+  "mg-electromagnetism": () => <MotionGraphicsElectromagnetism />,
+  "mg-quantum": () => <MotionGraphicsQuantum />,
+  "mg-relativity": () => <MotionGraphicsRelativity />,
+  "mg-fluid-dynamics": () => <MotionGraphicsFluidDynamics />,
+  "mg-wave-interference": () => <MotionClass11WaveInterference />,
+  // Class 11 experiments — migrated from legacy root
+  "class11-galvanic-cell": () => <Class11ElectrochemistryGalvanicCell />,
+  "class11-emi": () => <Class11ElectromagneticInduction />,
+  "class11-probability-3d": () => <Class11Probability3D />,
+  "class11-atomic-structure": () => <Class11AtomicStructure />,
+  "class11-chemical-bonding": () => <Class11ChemicalBonding />,
+  "class11-sets-functions": () => <Class11SetsFunctions />,
+  "class11-trigonometry": () => <Class11Trigonometry />,
+  "class11-statistics-3d": () => <Class11Statistics />,
+  "class11-kinematics-motion": () => <Class11KinematicsMotion />,
+  "class11-laws-motion": () => <Class11LawsOfMotion />,
+  "class11-work-energy": () => <Class11WorkEnergy />,
+  "class11-rotational-motion": () => <Class11RotationalMotion />,
+  "class11-thermodynamics": () => <Class11Thermodynamics />,
+  // Class 11 theory — migrated from legacy root
+  "class11-th-physics-kinematics": () => <Class11PhysicsTheoryKinematics />,
+  "class11-th-physics-laws": () => <Class11PhysicsTheoryLawsMotion />,
+  "class11-th-physics-em": () => <Class11PhysicsTheoryElectromagnetism />,
+  "class11-th-chemistry": () => <Class11ChemistryTheory />,
+  "class11-th-chemistry-electro": () => <Class11ChemistryTheoryElectrochemistry />,
+  "class11-th-math": () => <Class11MathTheory />,
+  "class11-th-math-probability": () => <Class11MathTheoryProbability />,
 };
 
 const SUBJECT_CONFIG: Record<string, { label: string; color: string }> = {

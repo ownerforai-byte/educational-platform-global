@@ -17,7 +17,7 @@ const subjects = [
   "nepali",
   "physics",
 ];
-const roots = ["app", "frontend/app"];
+const roots = ["frontend/app"];
 
 function write(file, content) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
