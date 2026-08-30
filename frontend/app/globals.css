@@ -59,18 +59,58 @@ body {
 .bg-mesh {
   background-color: hsl(var(--background));
   background-image:
-    radial-gradient(ellipse at 15% 20%, hsl(var(--primary) / 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 10%, hsl(var(--accent-cyan) / 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, hsl(var(--accent-violet) / 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 90%, hsl(var(--accent-emerald) / 0.06) 0%, transparent 40%);
+    radial-gradient(ellipse at 15% 20%, hsl(var(--primary) / 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 10%, hsl(var(--accent-cyan) / 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--accent-violet) / 0.05) 0%, transparent 60%);
 }
 
 .dark .bg-mesh {
   background-image:
-    radial-gradient(ellipse at 15% 20%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 10%, hsl(var(--accent-cyan) / 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, hsl(var(--accent-violet) / 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 90%, hsl(var(--accent-emerald) / 0.08) 0%, transparent 40%);
+    radial-gradient(ellipse at 15% 20%, hsl(var(--primary) / 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 10%, hsl(var(--accent-cyan) / 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--accent-violet) / 0.07) 0%, transparent 60%);
+}
+
+/* ─── RESPONSIVE UTILITIES ─── */
+
+/* Ensure no horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Make all containers responsive */
+.container, main, .mx-auto {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container, main, .mx-auto {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container, main, .mx-auto {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container, main, .mx-auto {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container, main, .mx-auto {
+    max-width: 1280px;
+  }
+}
+
+/* Fix sidebar overflow on small screens */
+@media (max-width: 640px) {
+  aside {
+    max-width: calc(100vw - 1rem);
+  }
 }
 
 /* ─── SCROLLBAR ─── */
@@ -103,6 +143,32 @@ body {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
   border-radius: 0.375rem;
+}
+
+/* ─── RESPONSIVE LAYOUT ─── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Responsive container widths */
+.responsive-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .responsive-wrap { padding-left: 1.5rem; padding-right: 1.5rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+}
+@media (min-width: 768px) {
+  .responsive-wrap { max-width: 768px; }
+}
+@media (min-width: 1024px) {
+  .responsive-wrap { max-width: 1024px; }
+}
+@media (min-width: 1280px) {
+  .responsive-wrap { max-width: 1280px; }
 }
 
 /* ─── SMOOTH SCROLL ─── */

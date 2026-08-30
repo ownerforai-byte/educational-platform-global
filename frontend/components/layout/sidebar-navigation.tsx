@@ -192,7 +192,8 @@ export function SidebarNavigation() {
         className={cn(
           "fixed left-0 top-0 z-40 h-screen border-r border-border/40 bg-background/95 backdrop-blur-2xl transition-all duration-300 flex flex-col",
           "lg:relative lg:top-auto lg:h-auto lg:z-auto",
-          isOpen ? "w-64" : "-translate-x-full lg:w-16 lg:translate-x-0"
+          isOpen ? "w-64" : "-translate-x-full lg:w-16 lg:translate-x-0",
+          "sm:max-w-[calc(100vw-2rem)] lg:max-w-none"
         )}
         onMouseEnter={() => !isMobile && setIsOpen(true)}
         onMouseLeave={() => !isMobile && setIsOpen(false)}
