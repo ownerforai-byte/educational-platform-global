@@ -43,3 +43,19 @@ frontend/.next/
 backend/dist/
 node_modules/
 .aider*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Manim media/output
+media/
+__pycache__/
+
+# Temporary test files
+test_*.py
+*_test.py
