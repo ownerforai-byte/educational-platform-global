@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { ARButton, useARSession, useHitTest } from "@react-three/xr";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { ARButton, XR, useXR } from "@react-three/xr";
 import * as THREE from "three";
 
 interface ARObject {
@@ -22,7 +22,7 @@ interface ARViewerProps {
 function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdded?: (obj: ARObject) => void }) {
   const [selectedObject, setSelectedObject] = useState<string | null>(null);
   const [isPlacing, setIsPlacing] = useState(false);
-  const { session } = useARSession();
+  const isPresenting = useXR((s) => s.isPresenting);
 
   useFrame((state, delta) => {
     if (selectedObject) {
@@ -104,6 +104,14 @@ function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdde
   );
 }
 
+function SessionTracker({ onActiveChange }: { onActiveChange: (active: boolean) => void }) {
+  const isPresenting = useXR((s) => s.isPresenting);
+  useEffect(() => {
+    onActiveChange(isPresenting);
+  }, [isPresenting, onActiveChange]);
+  return null;
+}
+
 export function ARViewer({ enabled = false, onClose, initialModel }: ARViewerProps) {
   const [arSupported, setArSupported] = useState(false);
   const [isARActive, setIsARActive] = useState(false);
@@ -157,7 +165,10 @@ export function ARViewer({ enabled = false, onClose, initialModel }: ARViewerPro
         camera={{ position: [0, 0, 0], fov: 75 }}
         gl={{ antialias: true }}
       >
-        <ARScene objects={objects} onObjectAdded={handleObjectAdded} />
+        <XR>
+          <SessionTracker onActiveChange={setIsARActive} />
+          <ARScene objects={objects} onObjectAdded={handleObjectAdded} />
+        </XR>
       </Canvas>
 
       {/* AR Button */}
@@ -172,11 +183,6 @@ export function ARViewer({ enabled = false, onClose, initialModel }: ARViewerPro
           <ARButton
             sessionInit={{
               optionalFeatures: ["local-floor", "bounded-floor", "hand-tracking", "hit-test"],
-            }}
-            onSessionStarted={() => setIsARActive(true)}
-            onSessionEnded={() => {
-              setIsARActive(false);
-              onClose?.();
             }}
             style={{
               padding: "16px 32px",
