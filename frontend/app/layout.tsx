@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AppShell } from "@/components/layout/app-shell";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
 
 export const metadata: Metadata = {
-  title: "Manim Educativo — Interactive NEB Learning",
-  description: "Interactive 3D math, physics, chemistry and biology visualizations for NEB +2 students in Nepal.",
+  title: "NEB Study Vault — Free NEB (+2) Learning Platform",
+  description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
 };
 
 export default function RootLayout({
@@ -15,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
         <QueryProvider>
-          <ThemeProvider defaultTheme="dark" storageKey="neb-theme">
-            {children}
+          <ThemeProvider defaultTheme="system" storageKey="neb-theme">
+            <AppShell>{children}</AppShell>
           </ThemeProvider>
         </QueryProvider>
       </body>
