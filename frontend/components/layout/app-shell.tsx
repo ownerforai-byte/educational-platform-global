@@ -8,6 +8,7 @@ import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { AIWidget } from "./ai-widget";
+import { ThemeToggle } from "./theme-toggle";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -68,8 +69,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           {/* Center: spacer (GlobalSearch is inside header via children) */}
           <div className="flex-1 min-w-0" />
 
-          {/* Right: auth links */}
+          {/* Right: theme toggle + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
+            <ThemeToggle />
+
             <a
               href="/chat"
               className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap"
