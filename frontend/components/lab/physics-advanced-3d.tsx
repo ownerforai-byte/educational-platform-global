@@ -151,7 +151,7 @@ function MagneticField3D() {
           <Input id="current" type="number" step="0.5" value={current} onChange={(e) => setCurrent(e.target.value)} />
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D magnetic field" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D magnetic field" />
       <p className="text-xs text-muted-foreground">
         Direction via the <b>right-hand rule</b> — thumb along current, fingers curl in field direction. Field strength B falls off as 1/r.
       </p>
@@ -295,7 +295,7 @@ function WaveOptics3D() {
           </div>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D diffraction" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D diffraction" />
       <p className="text-xs text-muted-foreground">
         Constructive interference gives bright fringes where d·sin θ = mλ. More slits sharpen the principal maxima making a diffraction grating.
       </p>
@@ -397,7 +397,7 @@ function SpacetimeCurvature() {
           <Input id="mass" type="number" step="0.5" value={mass} onChange={(e) => setMass(e.target.value)} />
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D spacetime" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D spacetime" />
       <p className="text-xs text-muted-foreground">
         Massive objects warp the spacetime fabric. A heavier mass creates a deeper well; orbiting bodies follow geodesics (the shortest curved paths).
       </p>
@@ -492,7 +492,7 @@ function QuantumOrbitals() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D orbital" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D orbital" />
       <p className="text-xs text-muted-foreground">
         Each cloud is a Monte-Carlo sampling of the probability density |ψ|². Denser regions are where the electron is more likely to be found (s-orbitals spherical, p-orbitals lobed).
       </p>
@@ -583,7 +583,7 @@ function NuclearDecay() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D nuclear decay" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D nuclear decay" />
       <p className="text-xs text-muted-foreground">
         Nuclei spontaneously emit α, β, or γ particles. Half-life describes how quickly a sample decays — decay is a random, quantum process best described statistically.
       </p>
@@ -695,7 +695,7 @@ function FluidFlow() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D fluid flow" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D fluid flow" />
       <p className="text-xs text-muted-foreground">
         Fluid speeds up and streamlines crowd together around an obstacle (continuity / Bernoulli effect), then relax back downstream.
       </p>
@@ -808,7 +808,7 @@ function NBodySystem() {
           <Input id="bodies" type="number" min="2" max="8" value={bodies} onChange={(e) => setBodies(e.target.value)} />
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D orbital system" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D orbital system" />
       <p className="text-xs text-muted-foreground">
         Keplers third law: T² ∝ r³. Inner planets orbit faster; the gravitational well deepens toward the star. Trails trace elliptical orbits.
       </p>
@@ -908,7 +908,7 @@ function PVTSurface() {
           <Input id="n" type="number" step="0.25" min="0.1" value={nMol} onChange={(e) => setN(e.target.value)} />
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D PVT surface" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D PVT surface" />
       <p className="text-xs text-muted-foreground">
         Pressure rises with T and falls with V. The surface P = nRT/V shows all thermodynamic states of an ideal gas. Increase n to raise the whole surface.
       </p>

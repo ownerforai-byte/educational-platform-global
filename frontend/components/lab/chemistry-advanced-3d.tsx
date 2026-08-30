@@ -152,7 +152,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             </Select>
           </div>
         </CollapsibleControls>
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D molecular orbitals" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D molecular orbitals" />}
         <p className="text-xs text-muted-foreground">Electron cloud probability distribution. Cyan dots = electron positions. Red sphere = nucleus. Drag to rotate.</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>
@@ -304,7 +304,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             </Select>
           </div>
         </CollapsibleControls>
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D crystal lattice" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D crystal lattice" />}
         <p className="text-xs text-muted-foreground">Green spheres = atoms. Simple Cubic: atoms at corners only. FCC: atoms at corners + face centers. BCC: atoms at corners + body center. Drag to rotate.</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>

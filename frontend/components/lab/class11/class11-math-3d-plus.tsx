@@ -113,7 +113,7 @@ function TrigWavesLab() {
 
   return (
     <SimCard title="📐 Trigonometry — Unit Circle to Sine/Cosine Waves">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">As the point sweeps the unit circle, its height traces sin θ and its depth traces cos θ — the waves are just the circle unrolled in time.</p>
     </SimCard>
   );
@@ -185,7 +185,7 @@ function ConicSectionsLab() {
       <CollapsibleControls label="Slice">
         <div className="space-y-1"><Label>Plane tilt (degrees) — horizontal = circle, steeper = parabola/hyperbola</Label><Input type="number" min="0" max="88" value={tilt} onChange={(e) => setTilt(e.target.value)} /></div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">All four conics come from one double cone: slice flat for a circle, slightly tilted for an ellipse, parallel to the side for a parabola, steeper still for a hyperbola.</p>
     </SimCard>
   );
@@ -249,7 +249,7 @@ function StatisticsLab() {
 
   return (
     <SimCard title="📊 Statistics — Histogram & Normal Curve">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Real exam-mark data clusters near the middle: mean, median and mode all sit in the tallest bin of a symmetric distribution.</p>
     </SimCard>
   );
@@ -324,7 +324,7 @@ function SequenceTowersLab() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">An AP climbs like a ramp; a GP explodes like a rocket — which is why exponential models dominate population and compound-interest problems.</p>
     </SimCard>
   );

@@ -91,10 +91,12 @@ function MolecularDynamics() {
         grp.add(axis);
 
         const vib = { t: 0 };
+        const glowPhase = { t: 0 };
         function animate() {
           if (cancelled) return;
           requestAnimationFrame(animate);
           vib.t += 0.02;
+          glowPhase.t += 0.04;
           const s = Math.sin(vib.t * 3) * 0.3; // bond stretch
           spring.scale.set(1 + s, 1, 1);
           atomB.position.x = (bondLen / 2) * (1 + s);
@@ -102,6 +104,11 @@ function MolecularDynamics() {
           if (mode === "vibration") grp.rotation.y = 0.15;
           else if (mode === "rotation") grp.rotation.y = vib.t * 0.7;
           else grp.rotation.z = 0;
+          // Pulse atom glow
+          const pulseA = 0.3 + Math.sin(glowPhase.t) * 0.15;
+          const pulseB = 0.3 + Math.sin(glowPhase.t + Math.PI) * 0.15;
+          (atomA.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseA;
+          (atomB.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseB;
           ts!.controls.update();
           ts!.renderer.render(ts!.scene, ts!.camera);
         }
@@ -132,7 +139,7 @@ function MolecularDynamics() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D molecular dynamics" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D molecular dynamics" />
       <p className="text-xs text-muted-foreground">
         Molecules stretch, vibrate, and twist at quantized frequencies. IR spectroscopy detects these bond vibrations; torsional rotation about single bonds is nearly free.
       </p>
@@ -261,7 +268,7 @@ function CrystalLattice() {
           </Pane>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D crystal lattice" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D crystal lattice" />
       <p className="text-xs text-muted-foreground">
         FCC/BCC/HCP are common packing arrangements (close-packed planes slide for ductility). Miller indices (hkl) describe crystal planes that scatter X-rays in diffraction.
       </p>
@@ -371,7 +378,7 @@ function Spectroscopy3D() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D spectrum" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D spectrum" />
       <p className="text-xs text-muted-foreground">
         IR peaks reveal functional groups via bond vibrations. NMR peaks reveal the chemical environment of nuclei — their position (chemical shift) maps to δ/ppm.
       </p>
@@ -489,7 +496,7 @@ function ReactionMechanism() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D reaction mechanism" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D reaction mechanism" />
       <p className="text-xs text-muted-foreground">
         SN2 proceeds in one concerted step with Walden inversion; SN1 proceeds stepwise through a planar carbocation intermediate (racemization, promotes 3° substrates).
       </p>
@@ -578,7 +585,7 @@ function BiomoleculeViewer() {
 
   return (
     <SimCard title="🧬 Biomolecule Viewer — DNA Double Helix">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D DNA" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D DNA" />
       <p className="text-xs text-muted-foreground">
         Two antiparallel sugar–phosphate backbones (orange/blue) twist around each other. Base pairs (A–T, G–C) rung the interior via hydrogen bonding, driving the genetic code.
       </p>
@@ -687,7 +694,7 @@ function VSEPRGeometry() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D VSEPR" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D VSEPR" />
       <p className="text-xs text-muted-foreground">
         VSEPR predicts shape from electron-domain count. Lone pairs occupy space and repel more, compressing bond angles (e.g. bent water ~104.5°, pyramidal NH3 ~107°).
       </p>
@@ -808,7 +815,7 @@ function GalvanicCell() {
 
   return (
     <SimCard title="🔋 Electrochemistry — 3D Galvanic Cell">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D galvanic cell" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D galvanic cell" />
       <p className="text-xs text-muted-foreground">
         Zinc oxidizes (anode, -) releasing electrons that flow through the wire to the copper cathode (reduction, +). The salt bridge completes the circuit with ion migration.
       </p>
@@ -912,7 +919,7 @@ function PhaseDiagram() {
 
   return (
     <SimCard title="🧊⚛️💨 Thermodynamics — 3D Phase Diagram">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D phase diagram" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D phase diagram" />
       <p className="text-xs text-muted-foreground">
         Phase boundaries (green = vaporization, orange = melting, cyan = sublimation) meet at the <b>triple point</b>. Above the <b>critical point</b> gas and liquid become indistinguishable (supercritical fluid).
       </p>

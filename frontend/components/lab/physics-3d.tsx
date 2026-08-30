@@ -143,9 +143,20 @@ function ElectricFieldVisualizer() {
 
         rebuild();
 
+        const chargeMeshes = chargeGroup.children as THREE.Mesh[];
+        const glowPhase = { t: 0 };
+
         function animate() {
           if (cancelled) return;
           requestAnimationFrame(animate);
+          glowPhase.t += 0.03;
+          const pulse = 0.4 + Math.sin(glowPhase.t) * 0.2;
+          chargeMeshes.forEach((mesh) => {
+            const mat = mesh.material as THREE.MeshStandardMaterial;
+            if (mat.emissiveIntensity !== undefined) {
+              mat.emissiveIntensity = pulse;
+            }
+          });
           controls.update();
           renderer.render(scene, camera);
         }
@@ -175,7 +186,7 @@ function ElectricFieldVisualizer() {
         <CardTitle>3D Electric Field Visualizer</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="h-[500px] w-full rounded-lg border border-border" aria-label="3D electric field" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D electric field" />}
 
         <div className="flex flex-wrap gap-2">
           <Button onClick={addCharge} size="sm">+ Add Charge</Button>
@@ -428,7 +439,7 @@ function DoublePendulum3D() {
         <CardTitle>3D Double Pendulum — Chaotic Motion</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="h-[500px] w-full rounded-lg border border-border" aria-label="3D double pendulum" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D double pendulum" />}
 
         <CollapsibleControls label="Pendulum Parameters">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
@@ -653,7 +664,7 @@ function GravitationalField3D() {
         <CardTitle>3D Gravitational Field</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="h-[500px] w-full rounded-lg border border-border" aria-label="3D gravitational field" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D gravitational field" />}
         <CollapsibleControls label="Field Options">
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1"><Label htmlFor="mass">Planet Mass (relative)</Label><Input id="mass" type="number" step="1" value={planetMass} onChange={(e) => setPlanetMass(Number(e.target.value))} /></div>

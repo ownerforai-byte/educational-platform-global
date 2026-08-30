@@ -104,7 +104,7 @@ export function SceneArea({
 }) {
   return (
     <div
-      className="relative w-full h-[340px] sm:h-[430px] rounded-lg border border-primary/30 overflow-hidden bg-slate-950"
+      className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-primary/30 overflow-hidden bg-slate-950"
       aria-label="3D scene with labelled symbols"
     >
       <div ref={mountRef} className="absolute inset-0" />

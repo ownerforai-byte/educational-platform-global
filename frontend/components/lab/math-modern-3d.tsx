@@ -131,9 +131,18 @@ function MultivariableSurface() {
         ts.group.add(base);
         titleText(ts, func === "wave" ? "z = sin x · cos y with contours" : "z = x² − y² (saddle) with contours", new THREE.Vector3(0, 3.4, 0));
 
+        const surfMesh = ts.group.children[ts.group.children.length - 2] as THREE.Mesh;
+        const wavePhase = { t: 0 };
+
         function animate() {
           if (cancelled) return;
           requestAnimationFrame(animate);
+          wavePhase.t += 0.015;
+          if (func === "wave" && surfMesh && surfMesh.material) {
+            const mat = surfMesh.material as THREE.MeshStandardMaterial;
+            // Subtle emissive pulse on wave surface
+            mat.emissiveIntensity = 0.05 + Math.sin(wavePhase.t * 2) * 0.03;
+          }
           ts!.controls.update();
           ts!.renderer.render(ts!.scene, ts!.camera);
         }
@@ -162,7 +171,7 @@ function MultivariableSurface() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D surface + contours" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D surface + contours" />
       <p className="text-xs text-muted-foreground">
         Contours are level curves of constant height projected below. The gradient points perpendicular to contours; extrema/saddles occur where both ∂f/∂x and ∂f/∂y = 0.
       </p>
@@ -252,7 +261,7 @@ function VectorFieldDivCurl() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D vector field" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D vector field" />
       <p className="text-xs text-muted-foreground">
         Divergence ∇·F measures outflow (positive = source, negative = sink); curl ∇×F measures rotation. Colored arrows show where the field spreads, converges, or swirls.
       </p>
@@ -352,7 +361,7 @@ function MandelbulbFractal() {
           <Input id="power" type="number" min="2" max="12" value={power} onChange={(e) => setPower(e.target.value)} />
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D Mandelbulb" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D Mandelbulb" />
       <p className="text-xs text-muted-foreground">
         The Mandelbulb is the 3D analogue of the Mandelbrot set. Drag to orbit and zoom into its infinitely self-similar surface. Higher powers thicken the fractal structure.
       </p>
@@ -453,7 +462,7 @@ function ParametricSurface() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D parametric surface" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D parametric surface" />
       <p className="text-xs text-muted-foreground">
         A surface is a map r(u,v) from a 2D domain into 3D. A torus is orientable; the Möbius strip and Klein bottle are non-orientable (one-sided) — the basis of classifying surfaces topologically.
       </p>
@@ -571,7 +580,7 @@ function MatrixTransforms() {
           <div className="space-y-1"><Label>Scale</Label><Input type="number" step="0.1" value={sx} onChange={(e) => setSx(e.target.value)} /></div>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D matrix transform" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D matrix transform" />
       <p className="text-xs text-muted-foreground">
         Red/green/blue bold arrows are what the unit basis vectors map to. The golden box is the transformed unit cube. Rotations keep length; scaling stretches it (det of matrix = volume scale).
       </p>
@@ -665,7 +674,7 @@ function RiemannSurface() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D Riemann surface" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D Riemann surface" />
       <p className="text-xs text-muted-foreground">
         Functions like √z are multi-valued; their domain is a many-layered surface. Each sheet is a branch, connected at branch points (origin) — the key to contour integrals and residues.
       </p>
@@ -730,14 +739,17 @@ function GameTheory3D() {
         ts.group.add(nb);
         titleText(ts, "Prisoner's Dilemma — payoff matrix", new THREE.Vector3(0, 4.6, 0));
 
+        const tokenPhase = { t: 0 };
+
         function animate() {
           if (cancelled) return;
           requestAnimationFrame(animate);
+          tokenPhase.t += 0.02;
           const t = performance.now() / 1000;
           // token cycles the four strategy outcomes
           const k = Math.floor(t) % 4;
           const i = k % 2, j = Math.floor(k / 2);
-          token.current!.position.set((i - 0.5) * 3, 3.4, (j - 0.5) * 3);
+          token.current!.position.set((i - 0.5) * 3, 3.4 + Math.sin(tokenPhase.t * 3) * 0.15, (j - 0.5) * 3);
           ts!.controls.update();
           ts!.renderer.render(ts!.scene, ts!.camera);
         }
@@ -754,7 +766,7 @@ function GameTheory3D() {
 
   return (
     <SimCard title="🎲 Game Theory — Payoff Matrix & Nash Equilibrium">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D game theory" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D game theory" />
       <p className="text-xs text-muted-foreground">
         Stacked bars show payoffs (P1 blue + P2 green). The golden cell (D,D) is the <b>Nash equilibrium</b>: no player can improve alone by switching. Yet (C,C) is socially better — the dilemma.
       </p>
@@ -873,7 +885,7 @@ function TopologyTwist() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" aria-label="3D topology" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D topology" />
       <p className="text-xs text-muted-foreground">
         An odd number of half-twists gives a non-orientable (one-sided) surface; the Möbius strip has a single continuous edge (pink). Cutting it along the midline yields a doubled, twisted band.
       </p>

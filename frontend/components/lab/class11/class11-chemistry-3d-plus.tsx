@@ -98,7 +98,7 @@ function BohrAtomLab() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Higher Z pulls orbits inward and deepens energy levels — exactly what the rₙ and Eₙ formulas predict.</p>
     </SimCard>
   );
@@ -187,7 +187,7 @@ function PeriodicTrendsLab() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Across a period nuclear charge rises while shells stay the same — atoms shrink and hold electrons more tightly.</p>
     </SimCard>
   );
@@ -244,7 +244,7 @@ function IonicLatticeLab() {
 
   return (
     <SimCard title="🧂 Chemical Bonding — NaCl Ionic Crystal">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Gold = Na⁺, cyan = Cl⁻. Electrostatic attraction in all directions gives ionic solids their high melting points and brittle cleavage.</p>
     </SimCard>
   );
@@ -329,7 +329,7 @@ function HybridisationLab() {
           </Select>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Mixing one s with p orbitals gives equivalent hybrids whose geometry minimises electron-pair repulsion.</p>
     </SimCard>
   );

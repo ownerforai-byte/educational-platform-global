@@ -226,7 +226,7 @@ function EMWave3D() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-[400px]" />
+        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-80 sm:h-96 md:h-[500px] lg:h-[600px]" />
 
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-md border border-border bg-muted/30 p-3">
@@ -504,7 +504,7 @@ function MagneticFieldLines3D() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-[400px]" />
+        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-80 sm:h-96 md:h-[500px] lg:h-[600px]" />
 
         <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
           <span className="flex items-center gap-1"><span className="h-3 w-3 rounded-sm bg-red-500" /> North pole</span>

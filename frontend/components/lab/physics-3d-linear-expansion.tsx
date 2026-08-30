@@ -329,7 +329,7 @@ export const LinearExpansionExperiment: React.FC = () => {
       <CardContent className="space-y-5">
 
         {/* ---------- labeled 3D scene area ---------- */}
-        <div className="relative w-full h-[340px] sm:h-[430px] rounded-lg border border-primary/30 overflow-hidden bg-slate-950" aria-label="3D linear expansion apparatus with labelled components">
+        <div className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-primary/30 overflow-hidden bg-slate-950" aria-label="3D linear expansion apparatus with labelled components">
           <div ref={mountRef} className="absolute inset-0" />
           {!webGL && (
             <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-muted-foreground">

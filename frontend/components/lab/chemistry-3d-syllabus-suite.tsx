@@ -113,9 +113,9 @@ function useLabScene(
 
 function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean }) {
   return webGL ? (
-    <div ref={mountRef} aria-label="3D scene" className="relative h-[320px] w-full overflow-hidden rounded-md sm:h-[440px]" />
+    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-md" />
   ) : (
-    <div className="flex h-[320px] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground sm:h-[440px]">
+    <div className="flex w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
       WebGL is not available in this browser.
     </div>
   );

@@ -113,7 +113,7 @@ function ProjectileLab() {
           <div className="space-y-1"><Label>Angle θ (degrees)</Label><Input type="number" value={angle} onChange={(e) => setAngle(e.target.value)} /></div>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Range R = u²sin2θ/g is maximum at θ = 45°; complementary angles give the same range.</p>
     </SimCard>
   );
@@ -193,7 +193,7 @@ function InclinedPlaneLab() {
           <div className="space-y-1"><Label>Coefficient of friction μ</Label><Input type="number" step="0.05" min="0" value={mu} onChange={(e) => setMu(e.target.value)} /></div>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Red = weight mg · Green = normal reaction N = mg cos θ · Blue = friction μN. The block slides when tan θ &gt; μ.</p>
     </SimCard>
   );
@@ -276,7 +276,7 @@ function EnergyCoaster() {
 
   return (
     <SimCard title="🎢 Work, Energy & Power — Conservation Track">
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Ignoring friction, KE + PE stays constant: at the top PE is maximum (big blue ball); in the dips KE takes over (big green ball).</p>
     </SimCard>
   );
@@ -342,7 +342,7 @@ function ThermalExpansionLab() {
       <CollapsibleControls label="Temperature">
         <div className="space-y-1"><Label>Temperature rise ΔT (°C)</Label><Input type="number" min="0" value={tempC} onChange={(e) => setTempC(e.target.value)} /></div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">ΔL = L₀αΔT. Real expansions are tiny (mm scale), so the animation exaggerates them — the glow shows the rod heating up.</p>
     </SimCard>
   );
@@ -450,7 +450,7 @@ function MirrorOpticsLab() {
           <div className="space-y-1"><Label>Focal length f</Label><Input type="number" min="1" value={focalLen} onChange={(e) => setFocalLen(e.target.value)} /></div>
         </div>
       </CollapsibleControls>
-      <div ref={containerRef} className="h-[450px] w-full rounded-lg border border-border" />
+      <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" />
       <p className="text-xs text-muted-foreground">Green arrow = object, red arrow = image, gold dot = focus F. Move the object toward F to see the image grow; beyond C it shrinks and inverts.</p>
     </SimCard>
   );
