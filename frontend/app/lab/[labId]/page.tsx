@@ -386,13 +386,13 @@ export default function LabDetailPage() {
             </span>
           </div>
           {ComponentFactory ? (
-            <div className={`${fullscreen ? "min-h-[60vh]" : "min-h-[70vh]"} max-h-[80vh] sm:max-h-[calc(100vh-280px)] overflow-auto sim-canvas-wrap`}>
+            <div className={`sim-canvas-wrap ${fullscreen ? "min-h-[calc(100vh-140px)]" : "min-h-[70vh]"}`}>
               <div className="w-full h-full min-h-[400px]">
                 <ComponentFactory />
               </div>
             </div>
           ) : (
-            <div className={`${fullscreen ? "min-h-[60vh]" : "min-h-[70vh]"} max-h-[80vh] sm:max-h-[calc(100vh-280px)] flex flex-col items-center justify-center gap-3 overflow-auto`}>
+            <div className={`${fullscreen ? "min-h-[calc(100vh-140px)]" : "min-h-[70vh]"} flex flex-col items-center justify-center gap-3`}>
               <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center">
                 <FlaskConical className="h-8 w-8 text-muted-foreground/40" />
               </div>
