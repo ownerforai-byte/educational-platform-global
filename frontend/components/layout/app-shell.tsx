@@ -8,7 +8,7 @@ import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { AIWidget } from "./ai-widget";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 interface AppShellProps {
   children: React.ReactNode;
