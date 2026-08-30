@@ -9,6 +9,7 @@ import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { AIWidget } from "./ai-widget";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Footer } from "./footer";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -148,12 +149,4 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-border/40 py-6 px-4 md:px-8">
-      <div className="text-center text-sm text-muted-foreground">
-        © 2025 Ravikisan&apos;s Platform · NEB Study Vault
-      </div>
-    </footer>
-  );
-}
+
