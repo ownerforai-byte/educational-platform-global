@@ -37,11 +37,9 @@ import { ChemistryStoichiometry } from "@/components/lab/chemistry-stoichiometry
 
 // Math
 import { MathGeometry3D } from "@/components/lab/math-geometry-3d";
-import { MathLab } from "@/components/lab/math-lab";
 import { MathModern3D } from "@/components/lab/math-modern-3d";
 import { MathAdvancedMotionLab } from "@/components/lab/math-motion-3d";
 import { MathInteractive } from "@/components/lab/math-interactive";
-import { MathTrigonometry } from "@/components/lab/math-trigonometry";
 import { MathSeriesLab } from "@/components/lab/math-series-lab";
 import MathSymbols from "@/components/lab/math-3d-symbols";
 
@@ -75,9 +73,6 @@ import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanc
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 
 // Calculators
-import { PhysicsInteractive } from "@/components/lab/physics-interactive";
-import { PhysicsOptics } from "@/components/lab/physics-optics";
-import { PhysicsHeatLab } from "@/components/lab/physics-heat";
 import { PhysicsLab } from "@/components/lab/physics-lab";
 
 export type LabMeta = {
@@ -93,7 +88,7 @@ export type LabMeta = {
 function wrap3D(comp: ReactNode) {
   return (
     <LabContainer title="" description="" status="active" type="3d">
-      <div className="h-[450px] w-full">{comp}</div>
+      <div className="h-[60vh] min-h-[400px] w-full">{comp}</div>
     </LabContainer>
   );
 }
@@ -151,7 +146,7 @@ const labs: LabMeta[] = [
   { id: "ch-3d-micro", title: "Microscopy 3D", description: "Atomic structure, electron orbitals, crystal lattice visualization.", category: "chemistry", icon: null, status: "active", component: () => wrap3D(<ChemistryAdvanced3D />) },
   // ── Mathematics 3D ──
   { id: "math-3d-geometry", title: "3D Geometry", description: "Points, lines, planes in 3D space with interactive visualization.", category: "mathematics", icon: null, status: "active", component: () => wrap3D(<MathGeometry3D />) },
-  { id: "math-3d-surfaces", title: "3D Mathematical Surfaces", description: "Explore saddle, wave, ripple, peak, plane, and cylinder surfaces.", category: "mathematics", icon: null, status: "active", component: () => wrap3D(<MathLab />) },
+  { id: "math-3d-surfaces", title: "3D Mathematical Surfaces", description: "Explore saddle, wave, ripple, peak, plane, and cylinder surfaces.", category: "mathematics", icon: null, status: "active", component: () => wrap3D(<MathModern3D />) },
   { id: "math-3d-advanced", title: "Mathematics 3D Advanced", description: "Surfaces + contours, divergence/curl, Mandelbulb, parametric surfaces.", category: "mathematics", icon: null, status: "new", component: () => wrap3D(<MathModern3D />) },
   { id: "math-3d-fourier", title: "Fourier Series 3D", description: "Build square, sawtooth, and triangle waves from sums of sines.", category: "mathematics", icon: null, status: "active", component: () => wrap3D(<MathAdvancedMotionLab />) },
   { id: "math-3d-decay", title: "Nuclear Decay Simulator", description: "Stochastic radioactive decay visualization with half-life controls.", category: "mathematics", icon: null, status: "active", component: () => wrap3D(<MathAdvancedMotionLab />) },
@@ -208,9 +203,9 @@ const labs: LabMeta[] = [
   { id: "math-th-stats", title: "Statistics Theory", description: "Probability, distributions, hypothesis testing.", category: "mathematics", icon: null, status: "active", component: () => wrapTheory(<TheoryPanel subject="mathematics" topic="statistics" />) },
   { id: "math-th-geo", title: "Coordinate Geometry Theory", description: "Lines, circles, conics in coordinate plane.", category: "mathematics", icon: null, status: "active", component: () => wrapTheory(<TheoryPanel subject="mathematics" topic="geometry" />) },
   // ── Calculators Physics ──
-  { id: "ph-calc-ohms", title: "Ohm's Law Calc", description: "Calculate V, I, R with interactive controls.", category: "physics", icon: null, status: "active", component: () => wrapCalc(<PhysicsInteractive defaultTab="ohms" />) },
-  { id: "ph-calc-heat", title: "Heat Calculator", description: "Calorimetry, latent heat, thermal expansion.", category: "physics", icon: null, status: "active", component: () => wrapCalc(<PhysicsHeatLab />) },
-  { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: null, status: "active", component: () => wrapCalc(<PhysicsOptics />) },
+  { id: "ph-calc-ohms", title: "Ohm's Law 3D Labelled", description: "Labelled Ohm's-law circuit — ε, V, I, R and ammeter/voltmeter at their exact positions.", category: "physics", icon: null, status: "active", component: () => wrap3D(<ElectricitySymbols />) },
+  { id: "ph-calc-heat", title: "Heat Determinations 3D", description: "Lee's disc, Searle's bar, Newton cooling & linear expansion — labelled 3D apparatus.", category: "physics", icon: null, status: "active", component: () => wrap3D(<Physics3DHeatDeterminations />) },
+  { id: "ph-calc-optics", title: "Optics 3D Lab", description: "Ray diagrams for convex/concave lenses and mirrors with live lens equation.", category: "physics", icon: null, status: "active", component: () => wrap3D(<Optics3D />) },
   { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: null, status: "active", component: () => wrapCalc(<PhysicsLab />) },
   // ── Calculators Chemistry ──
   { id: "ch-calc-ph", title: "pH Calculator", description: "Calculate pH from concentration for acids and bases.", category: "chemistry", icon: null, status: "active", component: () => wrapCalc(<ChemistryInteractive defaultTab="ph" />) },
@@ -227,7 +222,7 @@ const labs: LabMeta[] = [
   { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve ax² + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathInteractive defaultTab="quadratic" />) },
   { id: "math-calc-stats", title: "Statistics Calculator", description: "Mean, median, mode, standard deviation.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathInteractive defaultTab="statistics" />) },
   { id: "math-calc-matrix", title: "Matrix Calculator", description: "Add, multiply, and transpose matrices.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathInteractive defaultTab="matrix" />) },
-  { id: "math-calc-trig", title: "Trigonometry Lab", description: "Unit circle visualization and sine/cosine/tangent graphing.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathTrigonometry />) },
+  { id: "math-calc-trig", title: "Trigonometry 3D Labelled", description: "Unit circle with θ, r = 1, sinθ, cosθ and tanθ on their exact segments.", category: "mathematics", icon: null, status: "active", component: () => wrap3D(<MathSymbols />) },
   { id: "math-calc-series", title: "Sequences & Series", description: "Arithmetic and geometric progressions.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathSeriesLab />) },
   { id: "math-calc-vectors", title: "Vector Operations", description: "Add, dot product, cross product of 3D vectors.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathInteractive defaultTab="vectors" />) },
   { id: "math-calc-limit", title: "Limit Calculator", description: "Estimate limits numerically.", category: "mathematics", icon: null, status: "active", component: () => wrapCalc(<MathInteractive defaultTab="limit" />) },

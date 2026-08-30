@@ -19,6 +19,7 @@ export function ARViewer({ enabled = false, onClose }: { enabled?: boolean; onCl
 
   const startAR = async () => {
     if (!arSupported) return;
+    if (!navigator.xr) return;
     try {
       const session = await navigator.xr.requestSession('immersive-ar', {
         optionalFeatures: ['local-floor', 'bounded-floor', 'hand-tracking']

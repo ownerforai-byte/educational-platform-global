@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MathLab } from "@/components/lab/math-lab";
+import { MathModern3D } from "@/components/lab/math-modern-3d";
 import { ChemistryLab } from "@/components/lab/chemistry-lab";
 import { PhysicsLab } from "@/components/lab/physics-lab";
 import { BiologyLab } from "@/components/lab/biology-lab";
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
 
         <div className="w-full">
-          {activeLab === "math" && <MathLab />}
+          {activeLab === "math" && <MathModern3D />}
           {activeLab === "chemistry" && <ChemistryLab />}
           {activeLab === "physics" && <PhysicsLab />}
           {activeLab === "biology" && <BiologyLab />}

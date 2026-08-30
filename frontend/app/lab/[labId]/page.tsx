@@ -30,7 +30,6 @@ import { ChemistryLab } from "@/components/lab/chemistry-lab";
 import { ChemistryModern3D } from "@/components/lab/chemistry-modern-3d";
 import { ChemistryAdvanced3D } from "@/components/lab/chemistry-advanced-3d";
 import { MathGeometry3D } from "@/components/lab/math-geometry-3d";
-import { MathLab } from "@/components/lab/math-lab";
 import { MathModern3D } from "@/components/lab/math-modern-3d";
 import { Class11Physics3DPlus } from "@/components/lab/class11/class11-physics-3d-plus";
 import { Class11Chemistry3DPlus } from "@/components/lab/class11/class11-chemistry-3d-plus";
@@ -53,14 +52,10 @@ import WavesSymbols from "@/components/lab/physics-3d-waves-symbols";
 import AtomicSymbols from "@/components/lab/physics-3d-atomic-symbols";
 import MathSymbols from "@/components/lab/math-3d-symbols";
 import { TheoryPanel } from "@/components/lab/theory-panel";
-import { PhysicsInteractive } from "@/components/lab/physics-interactive";
-import { PhysicsOptics } from "@/components/lab/physics-optics";
-import { PhysicsHeatLab } from "@/components/lab/physics-heat";
 import { PhysicsLab } from "@/components/lab/physics-lab";
 import { ChemistryInteractive } from "@/components/lab/chemistry-interactive";
 import { ChemistryStoichiometry } from "@/components/lab/chemistry-stoichiometry";
 import { MathInteractive } from "@/components/lab/math-interactive";
-import { MathTrigonometry } from "@/components/lab/math-trigonometry";
 import { MathSeriesLab } from "@/components/lab/math-series-lab";
 import { MathAdvancedMotionLab } from "@/components/lab/math-motion-3d";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
@@ -106,7 +101,7 @@ const COMPONENT_MAP: Record<string, React.FC<any>> = {
   "ch-3d-micro": () => <ChemistryAdvanced3D />,
   // Math
   "math-3d-geometry": () => <MathGeometry3D />,
-  "math-3d-surfaces": () => <MathLab />,
+  "math-3d-surfaces": () => <MathModern3D />,
   "math-3d-advanced": () => <MathModern3D />,
   "math-3d-fourier": () => <MathAdvancedMotionLab />,
   "math-3d-decay": () => <MathAdvancedMotionLab />,
@@ -145,9 +140,9 @@ const COMPONENT_MAP: Record<string, React.FC<any>> = {
   "bio-th-evolution": () => <TheoryPanel subject="biology" topic="evolution" />,
   "bio-th-plant": () => <TheoryPanel subject="biology" topic="plant" />,
   // Calculators Physics
-  "ph-calc-ohms": () => <PhysicsInteractive defaultTab="ohms" />,
-  "ph-calc-heat": () => <PhysicsHeatLab />,
-  "ph-calc-optics": () => <PhysicsOptics />,
+  "ph-calc-ohms": () => <ElectricitySymbols />,
+  "ph-calc-heat": () => <Physics3DHeatDeterminations />,
+  "ph-calc-optics": () => <Optics3D />,
   "ph-calc-projectile": () => <PhysicsLab />,
   // Calculators Chemistry
   "ch-calc-ph": () => <ChemistryInteractive defaultTab="ph" />,
@@ -164,7 +159,7 @@ const COMPONENT_MAP: Record<string, React.FC<any>> = {
   "math-calc-quad": () => <MathInteractive defaultTab="quadratic" />,
   "math-calc-stats": () => <MathInteractive defaultTab="statistics" />,
   "math-calc-matrix": () => <MathInteractive defaultTab="matrix" />,
-  "math-calc-trig": () => <MathTrigonometry />,
+  "math-calc-trig": () => <MathSymbols />,
   "math-calc-series": () => <MathSeriesLab />,
   "math-calc-vectors": () => <MathInteractive defaultTab="vectors" />,
   "math-calc-limit": () => <MathInteractive defaultTab="limit" />,

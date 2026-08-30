@@ -122,7 +122,7 @@ function CameraRefSetter({
 }) {
   const { camera } = useThree();
   useEffect(() => {
-    onCameraRef(camera);
+    onCameraRef(camera as unknown as THREE.PerspectiveCamera);
   }, [camera, onCameraRef]);
   return null;
 }
@@ -244,13 +244,13 @@ function SampleMesh({
             </mesh>
             <line>
               <bufferGeometry>
-                <float32BufferAttribute attach="attributes-position" count={2} array={new Float32Array([0, 0, 0, -1, 0.7, 0])} />
+                <bufferAttribute attach="attributes-position" args={[new Float32Array([0, 0, 0, -1, 0.7, 0]), 3]} />
               </bufferGeometry>
               <lineBasicMaterial color="#94a3b8" />
             </line>
             <line>
               <bufferGeometry>
-                <float32BufferAttribute attach="attributes-position" count={2} array={new Float32Array([0, 0, 0, 1, 0.7, 0])} />
+                <bufferAttribute attach="attributes-position" args={[new Float32Array([0, 0, 0, 1, 0.7, 0]), 3]} />
               </bufferGeometry>
               <lineBasicMaterial color="#94a3b8" />
             </line>
@@ -852,7 +852,7 @@ export function AnnotatedModelViewer({
           dpr={[1, 2]}
           gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
           onCreated={({ gl, camera }) => {
-            cameraRef.current = camera as THREE.PerspectiveCamera;
+            cameraRef.current = camera as unknown as THREE.PerspectiveCamera;
           }}
         >
           <CameraRefSetter onCameraRef={(cam) => { cameraRef.current = cam; }} />

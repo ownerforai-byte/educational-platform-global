@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Cuboid } from "lucide-react";
-import { MathLab } from "@/components/lab/math-lab";
+import { MathModern3D } from "@/components/lab/math-modern-3d";
 
 export default function MathLabPage() {
   return (
@@ -46,7 +46,7 @@ export default function MathLabPage() {
             <span className={`shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-emerald-100 text-emerald-700 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800`}>Active</span>
           </div>
           <div className="p-5">
-            <MathLab />
+            <MathModern3D />
           </div>
         </div>
         <div className="mt-5">

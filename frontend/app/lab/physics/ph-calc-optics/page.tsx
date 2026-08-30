@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Cuboid } from "lucide-react";
-import { PhysicsOptics } from "@/components/lab/physics-optics";
+import { Optics3D } from "@/components/lab/physics-vectors-optics-3d";
 
 export default function PhysicsOpticsPage() {
   return (
@@ -46,7 +46,7 @@ export default function PhysicsOpticsPage() {
             <span className={`shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-emerald-100 text-emerald-700 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800`}>Active</span>
           </div>
           <div className="p-5">
-            <PhysicsOptics />
+            <Optics3D />
           </div>
         </div>
         <div className="mt-5">
