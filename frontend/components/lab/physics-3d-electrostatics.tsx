@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 // Electric Field Lines Component
 const ElectricField3D: React.FC = () => {
@@ -26,8 +27,8 @@ const ElectricField3D: React.FC = () => {
     let ts: any = null;
     let unbind: (() => void) | null = null;
     let cancelled = false;
-    let labelRenderer: any = null;
-    let labels: any[] = [];
+    let labelRenderer: CSS2DRenderer | null = null;
+    let labels: CSS2DObject[] = [];
     let fieldLines: THREE.Line[] = [];
     let equipotentialSurfaces: THREE.Mesh[] = [];
 
@@ -40,8 +41,38 @@ const ElectricField3D: React.FC = () => {
           autoRotate: false,
           background: 0x000000
         });
-        
+
         unbind = bindResize(ts);
+
+        // CSS2D label layer (kept entirely separate from the WebGL canvas)
+        const mount = mountRef.current!;
+        labelRenderer = new CSS2DRenderer();
+        labelRenderer.setSize(mount.clientWidth, mount.clientHeight);
+        labelRenderer.domElement.style.position = "absolute";
+        labelRenderer.domElement.style.top = "0";
+        labelRenderer.domElement.style.left = "0";
+        labelRenderer.domElement.style.pointerEvents = "none";
+        labelRenderer.domElement.style.zIndex = "10";
+        mount.appendChild(labelRenderer.domElement);
+
+        const makeLabel = (text: string, color: string, position: THREE.Vector3): CSS2DObject => {
+          const label = new CSS2DObject(document.createElement("div"));
+          label.element.className = "label";
+          label.element.innerHTML =
+            `<div style="background:rgba(0,0,0,0.75);padding:3px 8px;border-radius:4px;` +
+            `color:${color};font-weight:700;font-size:18px;pointer-events:none">${text}</div>`;
+          label.position.copy(position);
+          ts.group.add(label);
+          return label;
+        };
+
+        if (showLabels) {
+          const chargeLabelsCfg = [
+            { position: new THREE.Vector3(0, 3, 0), text: "+Q", color: "#ff4444" },
+            { position: new THREE.Vector3(12, 3, 0), text: "-Q", color: "#4444ff" }
+          ];
+          labels = chargeLabelsCfg.map((c) => makeLabel(c.text, c.color, c.position));
+        }
 
         // Create positive charge (red sphere)
         const chargeGeo = new THREE.SphereGeometry(2, 32, 32);
@@ -56,12 +87,6 @@ const ElectricField3D: React.FC = () => {
         const negativeCharge = new THREE.Mesh(negativeChargeGeo, negativeChargeMat);
         negativeCharge.position.set(12, 0, 0);
         ts.group.add(negativeCharge);
-
-        // Charge labels
-        const chargeLabels = [
-          { position: new THREE.Vector3(0, 3, 0), text: "+Q", color: 0xff4444 },
-          { position: new THREE.Vector3(12, 3, 0), text: "-Q", color: 0x4444ff }
-        ];
 
         // Ground plane
         const groundGeo = new THREE.PlaneGeometry(50, 50);
@@ -78,9 +103,15 @@ const ElectricField3D: React.FC = () => {
           
           // Update field lines based on charge value
           updateFieldLines();
-          
+
+          // Toggle the CSS2D label layer with the rest of the scene
+          if (labelRenderer && labels.length) {
+            labels.forEach((l) => { l.visible = showLabels; });
+          }
+
           ts.controls.update();
           ts.renderer.render(ts.scene, ts.camera);
+          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
           requestAnimationFrame(animate);
         }
 
@@ -171,7 +202,13 @@ const ElectricField3D: React.FC = () => {
       cancelled = true;
       if (unbind) unbind();
       if (ts) disposeThreeScene(ts);
-      if (labelRenderer) labelRenderer.dispose();
+      if (labelRenderer) {
+        labels.forEach((l) => {
+          l.element.remove?.();
+        });
+        labelRenderer.domElement?.remove();
+        labelRenderer = null;
+      }
     };
   }, [chargeValue, showFieldLines, showEquipotential, numFieldLines, showLabels]);
 

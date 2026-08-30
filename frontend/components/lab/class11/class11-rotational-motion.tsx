@@ -92,7 +92,7 @@ export const Class11RotationalMotion: React.FC = () => {
         let forceArrow: THREE.ArrowHelper | null = null;
         let radiusArrow: THREE.ArrowHelper | null = null;
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

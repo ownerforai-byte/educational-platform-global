@@ -26,7 +26,7 @@ const Prism3D: React.FC = () => {
     let unbind: (() => void) | null = null;
     let cancelled = false;
     let labelRenderer: any = null;
-    let labels: any[] = [];
+    const labels: any[] = [];
 
     async function init() {
       try {

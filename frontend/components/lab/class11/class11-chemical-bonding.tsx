@@ -223,7 +223,7 @@ export const Class11ChemicalBonding: React.FC = () => {
           });
         }
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

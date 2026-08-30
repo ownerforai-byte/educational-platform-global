@@ -65,7 +65,7 @@ export const Class11Probability3D: React.FC = () => {
     let camera: THREE.PerspectiveCamera;
     let renderer: THREE.WebGLRenderer;
     let labelRenderer: any;
-    let labelObjects: any[] = [];
+    const labelObjects: any[] = [];
 
     // Initialize scene
     scene = new THREE.Scene();

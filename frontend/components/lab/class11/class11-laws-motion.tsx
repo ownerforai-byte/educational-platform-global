@@ -102,7 +102,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         // Normal force arrows
         const normalArrows: THREE.ArrowHelper[] = [];
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;
@@ -112,7 +112,12 @@ export const Class11LawsOfMotion: React.FC = () => {
           if (forceArrow) ts.group.remove(forceArrow);
           if (frictionArrow) ts.group.remove(frictionArrow);
           if (tensionArrow) ts.group.remove(tensionArrow);
-          if (trajectoryLine) { ts.group.remove(trajectoryLine); trajectoryLine.geometry.dispose(); }
+          if (trajectoryLine) {
+            ts.group.remove(trajectoryLine);
+            trajectoryLine.geometry.dispose();
+            (trajectoryLine.material as THREE.Material).dispose();
+            trajectoryLine = null;
+          }
           normalArrows.forEach(arrow => ts.group.remove(arrow));
           normalArrows.length = 0;
 
@@ -126,7 +131,31 @@ export const Class11LawsOfMotion: React.FC = () => {
 
           // Update pulley and rope
           pulley.position.set(pos1, 10, 0);
-          
+
+          // Trajectory tracing for block 1: the path it sweeps over one full cycle
+          if (showTrajectory) {
+            const maxT = t === 0 ? 5 : t;
+            const points: THREE.Vector3[] = [];
+            const steps = 40;
+            for (let s = 0; s <= steps; s++) {
+              const tt = (s / steps) * maxT;
+              const x = Math.min(8, 0.5 * acceleration1 * tt * tt);
+              points.push(new THREE.Vector3(x, 0.5, 0));
+            }
+            const trajGeo = new THREE.BufferGeometry().setFromPoints(points);
+            const trajMat = new THREE.LineDashedMaterial({
+              color: 0x60a5fa,
+              dashSize: 0.4,
+              gapSize: 0.2,
+              transparent: true,
+              opacity: 0.7
+            });
+            trajectoryLine = new THREE.Line(trajGeo, trajMat);
+            trajectoryLine.computeLineDistances();
+            trajectoryLine.name = "trajectory";
+            ts.group.add(trajectoryLine);
+          }
+
           if (showTrajectory) {
             const ropePoints = [
               new THREE.Vector3(pos1, 10, 0),

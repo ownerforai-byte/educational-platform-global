@@ -130,7 +130,7 @@ export const Class11KinematicsMotion: React.FC = () => {
         distanceMarker.visible = false;
         ts.group.add(distanceMarker);
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

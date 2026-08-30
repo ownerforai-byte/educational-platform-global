@@ -630,7 +630,7 @@ function FluidFlow() {
           for (let i = 0; i < 60; i++) {
             const x = -8 + i * 0.28;
             let y = y0;
-            let z = 0;
+            const z = 0;
             const r = Math.hypot(x, y - y0 * 0);
             // deflection around central obstacle (origin)
             const R = Math.hypot(x, y);

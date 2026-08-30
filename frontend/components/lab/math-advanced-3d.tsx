@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { useWebGLCanvas, WebGLFallback } from "@/components/lab/webgl-fallback";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { evaluateMath, evaluateComplex } from "@/lib/math-expression";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
@@ -24,9 +25,7 @@ function ParametricCurvePlotter() {
   const parseExpr = useMemo(() => {
     return (expr: string, t: number): number => {
       try {
-        const sanitized = expr.replace(/\^/g, "**").replace(/sin/g, "Math.sin").replace(/cos/g, "Math.cos").replace(/tan/g, "Math.tan").replace(/sqrt/g, "Math.sqrt").replace(/abs/g, "Math.abs").replace(/exp/g, "Math.exp").replace(/log/g, "Math.log").replace(/pi/g, "Math.PI");
-        const fn = new Function("t", "Sin", `"use strict"; const Sin = Math.sin; return ${sanitized};`);
-        const result = fn(t, Math.sin);
+        const result = evaluateMath(expr, { t });
         return typeof result === "number" && Number.isFinite(result) ? result : NaN;
       } catch { return NaN; }
     };
@@ -351,9 +350,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 
         const computeComplex = (zReal: number, zImag: number, expr: string): { x: number; y: number } => {
           try {
-            const sanitized = expr.replace(/\^/g, "**").replace(/sin/g, "Math.sin").replace(/cos/g, "Math.cos").replace(/tan/g, "Math.tan").replace(/sqrt/g, "Math.sqrt").replace(/abs/g, "Math.abs").replace(/exp/g, "Math.exp").replace(/log/g, "Math.log").replace(/pi/g, "Math.PI").replace(/i/g, "*i");
-            const fn = new Function("z", "i", `"use strict"; const i = {x:0,y:1}; const z = {x:arguments[0],y:arguments[1]}; const re=z.x; const im=z.y; const result = ${sanitized}; if (typeof result === 'number') return {x:result,y:0}; return result;`);
-            return fn(zReal, zImag);
+            return evaluateComplex(expr, zReal, zImag);
           } catch { return { x: NaN, y: NaN }; }
         };
 

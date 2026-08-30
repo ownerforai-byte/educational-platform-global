@@ -37,7 +37,7 @@ export const Class11ElectromagneticInduction: React.FC = () => {
     let renderer: THREE.WebGLRenderer;
     let controls: any;
     let labelRenderer: any;
-    let labelObjects: any[] = [];
+    const labelObjects: any[] = [];
 
     // Initialize scene
     scene = new THREE.Scene();

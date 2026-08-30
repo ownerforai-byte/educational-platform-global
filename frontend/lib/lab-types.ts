@@ -73,7 +73,7 @@ export interface LabItem {
  * Convert LabMeta to LabItem for dashboard compatibility
  */
 export function labMetaToLabItem(lab: LabMeta): LabItem {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   const component: any =
     typeof lab.component === "function"
       ? lab.component

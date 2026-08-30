@@ -223,7 +223,7 @@ export const Class11SetsFunctions: React.FC = () => {
         labelB.position.set(10, 0, 0);
         ts.group.add(labelB);
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

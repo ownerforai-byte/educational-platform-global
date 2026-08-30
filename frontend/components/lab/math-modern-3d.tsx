@@ -610,7 +610,7 @@ function RiemannSurface() {
         const aSteps = 120;
         const verts: number[] = [];
         const colors: number[] = [];
-        let idx: number[] = [];
+        const idx: number[] = [];
         for (let s = 0; s < sheets; s++) {
           const offset = (s / sheets) * 2 * Math.PI;
           const base = verts.length / 3;

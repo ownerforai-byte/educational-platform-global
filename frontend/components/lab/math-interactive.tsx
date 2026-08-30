@@ -11,6 +11,7 @@ import { ControlPanel } from "@/components/lab/control-group";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { useWebGLCanvas, WebGLFallback } from "@/components/lab/webgl-fallback";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { evaluateMath } from "@/lib/math-expression";
 import { FunctionSquare, Sigma, Table2, Infinity as InfinityIcon, Grid3x3, Columns3, Move3d } from "lucide-react";
 import * as THREE from "three";
 
@@ -26,18 +27,7 @@ function Field({ id, label, hint, ...props }: { id: string; label: string; hint?
 
 function evaluateZ(expr: string, x: number, y: number): number {
   try {
-    const sanitized = expr
-      .replace(/\^/g, "**")
-      .replace(/sqrt/g, "Math.sqrt")
-      .replace(/sin/g, "Math.sin")
-      .replace(/cos/g, "Math.cos")
-      .replace(/tan/g, "Math.tan")
-      .replace(/abs/g, "Math.abs")
-      .replace(/exp/g, "Math.exp")
-      .replace(/log/g, "Math.log")
-      .replace(/pi/g, "Math.PI");
-    const fn = new Function("x", "y", `"use strict"; return ${sanitized};`);
-    const result = fn(x, y);
+    const result = evaluateMath(expr, { x, y });
     return typeof result === "number" && Number.isFinite(result) ? result : NaN;
   } catch {
     return NaN;
@@ -218,8 +208,7 @@ function DerivativeIntegralSolver() {
   const [graphFn, setGraphFn] = useState<(x: number) => number>((x) => x * x);
 
   const parseExpr = (expr: string) => {
-    const sanitized = expr.replace(/\^/g, "**");
-    return new Function("x", `return ${sanitized};`) as (x: number) => number;
+    return (x: number) => evaluateMath(expr, { x });
   };
 
   const compute = () => {
@@ -652,8 +641,7 @@ function LimitCalculator() {
 
   const compute = () => {
     try {
-      const sanitized = expr.replace(/\^/g, "**").replace(/sin/g, "Math.sin").replace(/cos/g, "Math.cos").replace(/tan/g, "Math.tan").replace(/sqrt/g, "Math.sqrt").replace(/abs/g, "Math.abs").replace(/exp/g, "Math.exp").replace(/log/g, "Math.log").replace(/pi/g, "Math.PI").replace(/e(?![a-z])/g, "Math.E");
-      const fn = new Function("x", `return ${sanitized};`);
+      const fn = (x: number) => evaluateMath(expr, { x });
       const a = parseFloat(approach);
       if (isNaN(a)) throw new Error("Enter a valid approach value");
       const hValues = [1e-1, 1e-2, 1e-3, 1e-4, 1e-5, 1e-6, 1e-7, 1e-8];

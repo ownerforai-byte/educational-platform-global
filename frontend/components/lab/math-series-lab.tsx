@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { evaluateMath } from "@/lib/math-expression";
 
 function ArithmeticSequence() {
   const [a, setA] = useState("2");
@@ -114,11 +115,8 @@ function SeriesSumTool() {
   const [to, setTo] = useState("10");
   const [result, setResult] = useState<string | null>(null);
 
-  const safeEval = (expr: string, n: number): number => {
-    const cleaned = expr.replace(/\^/g, "**").replace(/×/g, "*").replace(/÷/g, "/");
-    // eslint-disable-next-line no-new-func
-    return new Function(`"use strict"; return (${cleaned});`)(n);
-  };
+  // Throws on invalid input so `calculate` can surface a friendly message.
+  const safeEval = (expr: string, n: number): number => evaluateMath(expr, { n });
 
   const calculate = () => {
     const n0 = parseInt(from, 10);

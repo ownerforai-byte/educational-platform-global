@@ -30,9 +30,9 @@ export const Class11ElectrochemistryGalvanicCell: React.FC = () => {
     let camera: THREE.PerspectiveCamera;
     let renderer: THREE.WebGLRenderer;
     let labelRenderer: any;
-    let labelObjects: any[] = [];
-    let electronParticles: THREE.Mesh[] = [];
-    let ionParticles: THREE.Mesh[] = [];
+    const labelObjects: any[] = [];
+    const electronParticles: THREE.Mesh[] = [];
+    const ionParticles: THREE.Mesh[] = [];
 
     // Initialize scene
     scene = new THREE.Scene();
@@ -279,7 +279,7 @@ export const Class11ElectrochemistryGalvanicCell: React.FC = () => {
 
     // Animation variables
     let time = 0;
-    let electronTimeOffsets: number[] = [];
+    const electronTimeOffsets: number[] = [];
     electronParticles.forEach(() => electronTimeOffsets.push(Math.random() * 10));
 
     // Animation loop

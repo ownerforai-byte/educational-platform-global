@@ -114,13 +114,13 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
         let normalArrow2: THREE.ArrowHelper | null = null;
         let weightArrow1: THREE.ArrowHelper | null = null;
         let weightArrow2: THREE.ArrowHelper | null = null;
-        let trajectoryLine: THREE.Line | null = null;
+        const trajectoryLine: THREE.Line | null = null;
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         // LABELS for components
         let labelRenderer: any = null;
-        let labels: any[] = [];
+        const labels: any[] = [];
 
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");

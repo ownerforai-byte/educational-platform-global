@@ -55,7 +55,7 @@ export default function ControllerPage() {
     };
 
     loadData();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   if (isLoading) {
     return (

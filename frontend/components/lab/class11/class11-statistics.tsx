@@ -22,9 +22,9 @@ export const Class11Statistics: React.FC = () => {
     const points: number[] = [];
     for (let i = 0; i < numDataPoints; i++) {
       // Generate normally distributed random numbers
-      let u = 1 - Math.random();
-      let v = Math.random();
-      let z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+      const u = 1 - Math.random();
+      const v = Math.random();
+      const z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
       points.push(meanValue + z * stdDev);
     }
     return points;
@@ -223,7 +223,7 @@ export const Class11Statistics: React.FC = () => {
         meanLabel.position.set(meanX, meanY + 1, 0);
         ts.group.add(meanLabel);
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

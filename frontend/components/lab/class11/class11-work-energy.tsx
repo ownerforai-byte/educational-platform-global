@@ -29,6 +29,7 @@ export const Class11WorkEnergy: React.FC = () => {
     let ts: any = null;
     let unbind: (() => void) | null = null;
     let cancelled = false;
+    const labelMaterials: THREE.SpriteMaterial[] = [];
 
     async function init() {
       try {
@@ -117,15 +118,47 @@ export const Class11WorkEnergy: React.FC = () => {
         springBar.position.set(0, barHeightSpring / 2, 0);
         ts.group.add(springBar);
 
-        // Energy labels as sprites
-        let peLabel: THREE.Sprite | null = null;
-        let keLabel: THREE.Sprite | null = null;
-        let springLabel: THREE.Sprite | null = null;
+        // Energy labels as sprites above each bar. Materials/textures are tracked so
+        // they can be disposed on unmount (CanvasTexture isn't freed by disposeThreeScene).
+        const makeLabel = (text: string, color: string): THREE.Sprite => {
+          const canvas = document.createElement("canvas");
+          canvas.width = 256;
+          canvas.height = 64;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.font = "bold 36px system-ui, sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillStyle = "rgba(0,0,0,0.75)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = color;
+            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+          }
+          const texture = new THREE.CanvasTexture(canvas);
+          texture.minFilter = THREE.LinearFilter;
+          const spriteMat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false });
+          labelMaterials.push(spriteMat);
+          const sprite = new THREE.Sprite(spriteMat);
+          sprite.scale.set(3.2, 0.8, 1);
+          return sprite;
+        };
 
-        let startTime = performance.now();
+        const peLabel = makeLabel("PE", "#3b82f6");
+        peLabel.position.set(-6, barHeightPE + 1, 0);
+        ts.group.add(peLabel);
+
+        const keLabel = makeLabel("KE", "#22c55e");
+        keLabel.position.set(-3, barHeightKE + 1, 0);
+        ts.group.add(keLabel);
+
+        const springLabel = makeLabel("SE", "#fbbf24");
+        springLabel.position.set(0, barHeightSpring + 1, 0);
+        ts.group.add(springLabel);
+
+        const startTime = performance.now();
         let falling = false;
         let fallStartTime = 0;
-        let ballOriginalY = height + 0.5;
+        const ballOriginalY = height + 0.5;
 
         function updateScene() {
           if (!ts) return;
@@ -159,12 +192,17 @@ export const Class11WorkEnergy: React.FC = () => {
           // Update energy bars
           peBar.scale.y = gravitationalPE * 0.1;
           peBar.position.y = peBar.scale.y / 2;
-          
+
           keBar.scale.y = kineticEnergy * 0.1;
           keBar.position.y = keBar.scale.y / 2;
-          
+
           springBar.scale.y = springPE * 0.1;
           springBar.position.y = springBar.scale.y / 2;
+
+          // Keep labels riding on top of their bars
+          peLabel.position.y = peBar.position.y + peBar.scale.y / 2 + 0.8;
+          keLabel.position.y = keBar.position.y + keBar.scale.y / 2 + 0.8;
+          springLabel.position.y = springBar.position.y + springBar.scale.y / 2 + 0.8;
 
           ts.controls.update();
           ts.renderer.render(ts.scene, ts.camera);
@@ -187,6 +225,11 @@ export const Class11WorkEnergy: React.FC = () => {
     return () => {
       cancelled = true;
       if (unbind) unbind();
+      labelMaterials.forEach((m) => {
+        m.map?.dispose();
+        m.dispose();
+      });
+      labelMaterials.length = 0;
       if (ts) {
         try {
           disposeThreeScene(ts);

@@ -178,7 +178,7 @@ export const Class11AtomicStructure: React.FC = () => {
         symbolLabel.position.set(0, 4, 0);
         ts.group.add(symbolLabel);
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

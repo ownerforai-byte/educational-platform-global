@@ -176,7 +176,7 @@ export const ConcaveMirror3D: React.FC = () => {
 
         // LABELS
         let labelRenderer: any = null;
-        let labels: any[] = [];
+        const labels: any[] = [];
 
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");

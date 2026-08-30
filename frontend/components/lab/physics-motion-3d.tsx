@@ -393,7 +393,7 @@ function MagneticFieldLines3D() {
         const pts: THREE.Vector3[] = [];
         let x = 0.5 * Math.cos(startAngle);
         let z = 0.5 * Math.sin(startAngle);
-        let y = 0;
+        const y = 0;
         const dt = 0.03;
         for (let i = 0; i < 500; i++) {
           const r2 = x * x + z * z;

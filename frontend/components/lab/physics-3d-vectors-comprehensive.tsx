@@ -202,8 +202,7 @@ const VectorComprehensive3D: React.FC = () => {
         let vec1Arrow: THREE.ArrowHelper | null = null;
         let vec2Arrow: THREE.ArrowHelper | null = null;
         let resultantArrow: THREE.ArrowHelper | null = null;
-        let componentArrows: THREE.ArrowHelper[] = [];
-        let angleHelper: any = null;
+        const componentArrows: THREE.ArrowHelper[] = [];
 
         function updateScene() {
           // Clear previous vectors

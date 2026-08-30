@@ -273,7 +273,6 @@ function CollisionMomentum3D() {
     }
     const cleanup = init();
     return () => { cleanup.then((fn) => fn?.()); };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [m1, m2, v1, v2, running, resetTick]);
 return (
     <Card>
@@ -428,7 +427,6 @@ function ConicalPendulum3D() {
     }
     const cleanup = init();
     return () => { cleanup.then((fn) => fn?.()); };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [length, angleDeg, running]);
 return (
     <Card>

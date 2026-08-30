@@ -138,7 +138,7 @@ export const Class11Thermodynamics: React.FC = () => {
         deltaUBar.position.set(-1, deltaUBarGeo.parameters.height / 2, 0);
         ts.group.add(deltaUBar);
 
-        let startTime = performance.now();
+        const startTime = performance.now();
         let pistonHeight = 5;
 
         function updateScene() {

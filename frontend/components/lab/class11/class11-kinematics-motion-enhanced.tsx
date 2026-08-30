@@ -146,7 +146,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
 
         // LABEL OBJECTS (Using CSS2DRenderer for text labels)
         let labelRenderer: any = null;
-        let labels: any[] = [];
+        const labels: any[] = [];
 
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
@@ -232,7 +232,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
           console.log("CSS2DRenderer not available, using fallback labels");
         }
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

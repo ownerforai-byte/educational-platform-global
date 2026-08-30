@@ -6,7 +6,7 @@ import { OrbitControls, Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Floating background particles
-function FloatingParticles({ count = 80 }) {
+function FloatingParticles({ count = 80 }: { count?: number }) {
   const meshRef = useRef<THREE.Points>(null);
   const positions = useMemo(() => {
     const arr = new Float32Array(count * 3);

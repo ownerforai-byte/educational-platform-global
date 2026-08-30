@@ -106,7 +106,7 @@ export const Class11Trigonometry: React.FC = () => {
         dir.position.set(5, 8, 6);
         ts.scene.add(dir);
 
-        let startTime = performance.now();
+        const startTime = performance.now();
 
         function updateScene() {
           if (!ts) return;

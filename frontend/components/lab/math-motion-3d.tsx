@@ -36,7 +36,6 @@ function FourierSeries3D() {
     let controls: OrbitControls;
     let waveLine: THREE.Line | null = null;
     let fundamentalLine: THREE.Line | null = null;
-    let circleRef: THREE.Object3D | null = null;
     let cancelled = false;
 
     const init = async () => {
