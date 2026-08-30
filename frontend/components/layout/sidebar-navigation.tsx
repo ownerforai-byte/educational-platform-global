@@ -41,10 +41,10 @@ const aiItems: NavItem[] = [
 const browseItems: NavItem[] = [
   { href: "/", label: "Home", icon: Home },
   { href: "/subjects", label: "Subjects", icon: Layers },
+  { href: "/lab", label: "Science Lab", icon: FlaskConical },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/loksewa", label: "Loksewa", icon: Users },
   { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
-  { href: "/lab", label: "Lab", icon: FlaskConical },
 ];
 
 const accountItems: NavItem[] = [
