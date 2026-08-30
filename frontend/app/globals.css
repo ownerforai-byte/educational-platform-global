@@ -3,7 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── AGNESCODE DARK THEME OVERRIDES ─── */
+/* ─── SKY BLUE LIGHT THEME ─── */
+:root {
+  --background: 210 40% 92%;
+  --foreground: 222.2 84% 8%;
+  --card: 210 35% 96%;
+  --card-foreground: 222.2 84% 8%;
+  --primary: 211 100% 58%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 210 30% 88%;
+  --muted-foreground: 215 20% 40%;
+  --border: 210 30% 82%;
+  --ai-blue: 211 100% 58%;
+  --accent-cyan: 190 95% 55%;
+  --accent-violet: 262 83% 58%;
+  --accent-emerald: 160 84% 45%;
+  --accent-amber: 38 92% 50%;
+  --accent-rose: 350 89% 60%;
+}
+
+/* ─── AGNESCODE DARK THEME ─── */
 .dark {
   --background: 215 27% 18%;
   --foreground: 210 40% 98%;
@@ -36,152 +55,22 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ─── AGNESCODE INPUT COMPONENT ─── */
-.agnes-input-container {
-  position: relative;
-  border-radius: 1.5rem;
-  background: hsl(var(--muted));
-  border: 1px solid hsl(var(--border));
-  padding: 1rem 1.25rem;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
+/* ─── SKY BLUE MESH BACKGROUND ─── */
+.bg-mesh {
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(ellipse at 15% 20%, hsl(var(--primary) / 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 10%, hsl(var(--accent-cyan) / 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--accent-violet) / 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 90%, hsl(var(--accent-emerald) / 0.06) 0%, transparent 40%);
 }
 
-.dark .agnes-input-container {
-  background: hsl(var(--muted) / 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.agnes-input-container:focus-within {
-  border-color: hsl(var(--primary) / 0.5);
-  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1), var(--shadow-md);
-}
-
-.agnes-input-container textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  resize: none;
-  color: hsl(var(--foreground));
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  min-height: 3rem;
-  max-height: 12rem;
-}
-
-.agnes-input-container textarea::placeholder {
-  color: hsl(var(--muted-foreground));
-  opacity: 0.7;
-}
-
-/* ─── CHAT VIEW ─── */
-.agnes-chat-page {
-  min-height: 100vh;
-  background: hsl(var(--background));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.agnes-chat-page::before {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(ellipse, hsl(var(--primary) / 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ─── CHAT MESSAGE BUBBLES ─── */
-.agnes-msg {
-  max-width: 720px;
-  width: 100%;
-  padding: 0.75rem 1.25rem;
-  border-radius: 1rem;
-  line-height: 1.65;
-  font-size: 0.9375rem;
-}
-
-.agnes-msg-user {
-  background: hsl(var(--primary) / 0.15);
-  border: 1px solid hsl(var(--primary) / 0.25);
-  color: hsl(var(--foreground));
-  border-radius: 1rem 1rem 0.25rem 1rem;
-}
-
-.agnes-msg-ai {
-  background: hsl(var(--muted) / 0.6);
-  border: 1px solid hsl(var(--border));
-  color: hsl(var(--foreground));
-  border-radius: 1rem 1rem 1rem 0.25rem;
-}
-
-/* ─── WELCOME HERO TEXT ─── */
-.agnes-hero {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-.agnes-hero .gradient-word {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-cyan)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ─── BUTTONS ─── */
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius);
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  color: hsl(var(--foreground));
-}
-
-.btn-ghost:hover {
-  background: hsl(var(--muted));
-}
-
-.btn-send {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.625rem;
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-send:hover {
-  background: hsl(var(--primary) / 0.9);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+.dark .bg-mesh {
+  background-image:
+    radial-gradient(ellipse at 15% 20%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 10%, hsl(var(--accent-cyan) / 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--accent-violet) / 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 90%, hsl(var(--accent-emerald) / 0.08) 0%, transparent 40%);
 }
 
 /* ─── SCROLLBAR ─── */
