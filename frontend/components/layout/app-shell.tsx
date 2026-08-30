@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
+import { AIWidget } from "./ai-widget";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -18,7 +19,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const isHome = pathname === "/";
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-  // Persist sidebar collapse state
   useEffect(() => {
     const saved = localStorage.getItem("sidebar-collapsed");
     if (saved !== null) {
@@ -65,7 +65,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </a>
           </div>
 
-          {/* Center: spacer */}
+          {/* Center: spacer (GlobalSearch is inside header via children) */}
           <div className="flex-1 min-w-0" />
 
           {/* Right: auth links */}
@@ -99,6 +99,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
       <div className="flex flex-1 relative">
+        {/* Mobile overlay */}
         {/* Desktop sidebar */}
         <aside
           className={`
@@ -114,8 +115,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <SidebarNavigation collapsed={sidebarCollapsed} />
         </aside>
 
-        {/* Main content */}
-        <main className="flex-1 min-w-0 px-4 py-6 md:px-8 lg:px-8">
+        {/* Main content — auto-fits, no max-width constraint */}
+        <main className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8">
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav className="mb-4 text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (
@@ -133,16 +134,23 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       </div>
 
       {/* ── Footer ─────────────────────────────────────────────────── */}
-      {isHome && (
-        <footer className="border-t border-border/40 py-6 px-4 md:px-8">
-          <div className="text-center text-sm text-muted-foreground">
-            © 2025 Ravikisan&apos;s Platform · NEB Study Vault
-          </div>
-        </footer>
-      )}
+      {isHome && <Footer />}
 
-      {/* ── Floating back button ───────────────────────────────────── */}
+      {/* ── Floating buttons (different positions) ─────────────────── */}
+      {/* AI Widget — bottom-left */}
+      <AIWidget />
+      {/* Back Button — bottom-right (hidden on home) */}
       <BackButton />
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-border/40 py-6 px-4 md:px-8">
+      <div className="text-center text-sm text-muted-foreground">
+        © 2025 Ravikisan&apos;s Platform · NEB Study Vault
+      </div>
+    </footer>
   );
 }

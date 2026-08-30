@@ -126,12 +126,12 @@ export function AIWidget() {
 
   return (
     <>
-      {/* Floating toggle button */}
+      {/* Floating toggle button — bottom-left */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all ${
+        className={`fixed bottom-6 left-6 z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all ${
           open
-            ? "bg-red-500 hover:bg-red-600 rotate-0"
+            ? "bg-red-500 hover:bg-red-600"
             : "bg-gradient-to-br from-primary to-primary/70 hover:scale-105"
         }`}
         aria-label="Toggle AI chat"
@@ -139,9 +139,9 @@ export function AIWidget() {
         {open ? <X className="h-6 w-6 text-white" /> : <MessageCircle className="h-6 w-6 text-white" />}
       </button>
 
-      {/* Chat panel */}
+      {/* Chat panel — bottom-left, above the toggle */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 w-[calc(100vw-2rem)] max-w-sm rounded-2xl border border-border bg-card shadow-2xl overflow-hidden flex flex-col" style={{ height: "min(520px, calc(100vh - 8rem))" }}>
+        <div className="fixed bottom-24 left-6 z-50 w-[calc(100vw-3rem)] max-w-sm rounded-2xl border border-border bg-card shadow-2xl overflow-hidden flex flex-col" style={{ height: "min(520px, calc(100vh - 8rem))" }}>
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-muted/40 shrink-0">
             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">

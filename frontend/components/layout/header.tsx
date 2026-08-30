@@ -39,7 +39,7 @@ export function Header({ children }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/50">
       <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
-        {/* Left section: children (mobile toggle) + logo */}
+        {/* Left: children (mobile toggle) + logo */}
         <div className="flex items-center gap-2 min-w-0">
           {children}
           <Link
