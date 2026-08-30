@@ -44,54 +44,169 @@ function evaluateZ(expr: string, x: number, y: number): number {
   }
 }
 
-function FunctionGraph({ fn, range, color = "#2563eb" }: { fn: (x: number) => number; range: { min: number; max: number }; color?: string }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+function FunctionGraph3D({
+  fn,
+  range,
+  color = "#22c55e",
+  tangentAt,
+}: {
+  fn: (x: number) => number;
+  range: { min: number; max: number };
+  color?: string;
+  tangentAt?: number | null;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { error } = useWebGLCanvas(containerRef);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    if (typeof fn !== "function") return;
+    let cancelled = false;
+    async function load() {
+      try {
+        const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
+        if (cancelled || !containerRef.current) return;
+        if (!isWebGLAvailable()) return;
+        const container = containerRef.current;
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0f172a);
+        const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(11, 7, 13);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+        scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+        const dir = new THREE.DirectionalLight(0xffffff, 1.2);
+        dir.position.set(10, 20, 14);
+        scene.add(dir);
+        scene.add(new THREE.GridHelper(20, 20, 0x334155, 0x1e293b));
 
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.scale(dpr, dpr);
-    ctx.clearRect(0, 0, rect.width, rect.height);
+        const group = new THREE.Group();
+        scene.add(group);
+        const meshes: THREE.Object3D[] = [];
+        const addMesh = (m: THREE.Object3D) => {
+          group.add(m);
+          meshes.push(m);
+        };
 
-    const padding = 40;
-    const width = rect.width - padding * 2;
-    const height = rect.height - padding * 2;
+        const SAMPLE = 240;
+        const step = (range.max - range.min) / SAMPLE;
+        const toX = (x: number) => ((x - range.min) / (range.max - range.min) - 0.5) * 18;
+        let ymax = 1;
+        for (let i = 0; i <= SAMPLE; i++) {
+          const x = range.min + step * i;
+          const y = fn(x);
+          if (Number.isFinite(y)) ymax = Math.max(ymax, Math.abs(y));
+        }
+        const scaleY = 5 / Math.max(ymax, 12);
+        const toY = (y: number) => y * scaleY;
 
-    ctx.strokeStyle = "#e5e7eb"; ctx.lineWidth = 1;
-    for (let i = 0; i <= 10; i++) {
-      const x = padding + (i / 10) * width;
-      ctx.beginPath(); ctx.moveTo(x, padding); ctx.lineTo(x, rect.height - padding); ctx.stroke();
-      const y = padding + (i / 10) * height;
-      ctx.beginPath(); ctx.moveTo(padding, y); ctx.lineTo(rect.width - padding, y); ctx.stroke();
+        const runs: THREE.Vector3[][] = [];
+        let run: THREE.Vector3[] = [];
+        for (let i = 0; i <= SAMPLE; i++) {
+          const x = range.min + step * i;
+          const y = fn(x);
+          if (!Number.isFinite(y)) {
+            if (run.length) { runs.push(run); run = []; }
+            continue;
+          }
+          run.push(new THREE.Vector3(toX(x), toY(y), 0));
+        }
+        if (run.length) runs.push(run);
+        runs.forEach((pts) => {
+          if (pts.length < 2) return;
+          const curve = new THREE.CatmullRomCurve3(pts);
+          const geo = new THREE.TubeGeometry(curve, Math.min(200, Math.max(32, pts.length)), 0.09, 8, false);
+          const mat = new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.25, roughness: 0.3, metalness: 0.4 });
+          addMesh(new THREE.Mesh(geo, mat));
+        });
+
+        let dymax = 1;
+        const h = 1e-4;
+        for (let i = 0; i <= SAMPLE; i++) {
+          const x = range.min + step * i;
+          const d = (fn(x + h) - fn(x - h)) / (2 * h);
+          if (Number.isFinite(d)) dymax = Math.max(dymax, Math.abs(d));
+        }
+        const scaleDY = 5 / Math.max(dymax, 6);
+        const dPts: THREE.Vector3[] = [];
+        for (let i = 0; i <= SAMPLE; i++) {
+          const x = range.min + step * i;
+          const d = (fn(x + h) - fn(x - h)) / (2 * h);
+          if (!Number.isFinite(d)) continue;
+          dPts.push(new THREE.Vector3(toX(x), d * scaleDY, 0));
+        }
+        if (dPts.length > 1) {
+          const dGeo = new THREE.BufferGeometry().setFromPoints(dPts);
+          addMesh(new THREE.Line(dGeo, new THREE.LineBasicMaterial({ color: 0xf59e0b })));
+        }
+
+        if (tangentAt !== null && tangentAt !== undefined && Number.isFinite(tangentAt)) {
+          const x0 = tangentAt;
+          const y0 = fn(x0);
+          if (Number.isFinite(y0)) {
+            const m = (fn(x0 + h) - fn(x0 - h)) / (2 * h);
+            if (Number.isFinite(m)) {
+              const tPts: THREE.Vector3[] = [];
+              for (let k = 0; k <= 80; k++) {
+                const xx = x0 + (k / 80 - 0.5) * 3;
+                tPts.push(new THREE.Vector3(toX(xx), toY(y0 + m * (xx - x0)), 0));
+              }
+              const tGeo = new THREE.BufferGeometry().setFromPoints(tPts);
+              addMesh(new THREE.Line(tGeo, new THREE.LineBasicMaterial({ color: 0xfbbf24 })));
+              const dot = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 16), new THREE.MeshBasicMaterial({ color: 0xfbbf24 }));
+              dot.position.set(toX(x0), toY(y0), 0);
+              addMesh(dot);
+            }
+          }
+        }
+
+        function animate() {
+          if (cancelled) return;
+          requestAnimationFrame(animate);
+          controls.update();
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        const handleResize = () => {
+          if (!container || cancelled) return;
+          camera.aspect = container.clientWidth / container.clientHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(container.clientWidth, container.clientHeight);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+          meshes.forEach((m) => {
+            group.remove(m);
+            if (m instanceof THREE.Mesh) {
+              m.geometry?.dispose();
+              const mat = m.material;
+              if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
+              else mat.dispose();
+            } else if (m instanceof THREE.Line) {
+              m.geometry?.dispose();
+              (m.material as THREE.Material).dispose();
+            }
+          });
+          if (renderer.domElement.parentNode === container) container.removeChild(renderer.domElement);
+          renderer.dispose();
+        };
+      } catch { /* WebGL not available */ }
     }
+    load();
+    return () => { cancelled = true; };
+  }, [fn, range, color, tangentAt]);
 
-    ctx.strokeStyle = "#64748b"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(padding, rect.height - padding); ctx.lineTo(rect.width - padding, rect.height - padding); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(padding, padding); ctx.lineTo(padding, rect.height - padding); ctx.stroke();
+  if (error) {
+    return <WebGLFallback title="3D Function Graph" description="WebGL is required to render the function as a 3D curve." />;
+  }
 
-    ctx.strokeStyle = color; ctx.lineWidth = 2;
-    ctx.beginPath();
-    let started = false;
-    for (let px = 0; px <= width; px++) {
-      const x = range.min + (px / width) * (range.max - range.min);
-      const y = fn(x);
-      if (!Number.isFinite(y)) { started = false; continue; }
-      const canvasY = rect.height - padding - ((y - range.min) / (range.max - range.min)) * height;
-      if (!started) { ctx.moveTo(padding + px, canvasY); started = true; }
-      else ctx.lineTo(padding + px, canvasY);
-    }
-    ctx.stroke();
-  }, [fn, range, color]);
-
-  return <canvas ref={canvasRef} className="h-[300px] w-full" aria-label="Function graph" />;
+  return <div ref={containerRef} className="lab-3d-container rounded-md border border-border" aria-label="3D function graph" />;
 }
 
 function DerivativeIntegralSolver() {
@@ -155,7 +270,7 @@ function DerivativeIntegralSolver() {
         {error && <p className="rounded-md border border-red-400/40 bg-red-500/10 p-2 text-sm text-red-500">{error}</p>}
         {derivative && <p className="rounded-md border border-emerald-400/40 bg-emerald-500/10 p-2 text-sm font-medium text-emerald-600">{derivative}</p>}
         {integral && <p className="rounded-md border border-sky-400/40 bg-sky-500/10 p-2 text-sm font-medium text-sky-600">{integral}</p>}
-        <FunctionGraph fn={graphFn} range={{ min: -10, max: 10 }} color="#22c55e" />
+        <FunctionGraph3D fn={graphFn} range={{ min: -10, max: 10 }} color="#22c55e" tangentAt={xValue.trim() !== "" && !Number.isNaN(Number(xValue)) ? Number(xValue) : null} />
         <TheoryPanel
           title="Derivative & Integral — Theory & What to Notice"
           vocabulary="Derivative f′(x) = instantaneous rate of change (slope of the tangent line). Integral = net area between curve and x-axis (accumulation)."
@@ -238,7 +353,7 @@ function QuadraticSolver() {
           principle="D>0 two real roots, D=0 one repeated root, D<0 two complex conjugate roots. The axis of symmetry is always x = −b/2a — the vertex lies exactly halfway between the roots."
           why="Ballistics: the height of a thrown ball is h(t) = −½gt² + v₀t + h₀. Solving the quadratic gives when the ball hits the ground. Economists model profit of an item as a quadratic to find the price that maximizes profit."
         />
-        <FunctionGraph fn={graphFn} range={{ min: -10, max: 10 }} color="#a855f7" />
+        <FunctionGraph3D fn={graphFn} range={{ min: -10, max: 10 }} color="#a855f7" />
       </CardContent>
     </Card>
   );

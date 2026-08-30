@@ -33,222 +33,269 @@ function MeaningPanel({ title, meaning, points }: { title: string; meaning: stri
 }
 
 /* ============================================================
-   2D Coordinate Plane (interactive x,y with visible axes)
+   3D Coordinate Point & Plane (interactive x,y,z with axes)
    ============================================================ */
 
-function CoordinatePlane2D() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [point, setPoint] = useState({ x: 3, y: 2 });
+function CoordinatePlane3D() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [point, setPoint] = useState({ x: 3, y: 2, z: 1.5 });
   const [showAngle, setShowAngle] = useState(true);
   const [showComponents, setShowComponents] = useState(true);
   const [showCircle, setShowCircle] = useState(false);
   const [gridSize, setGridSize] = useState(5);
+  const [isWebGL, setIsWebGL] = useState(true);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, rect.width, rect.height);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || !isWebGL) return;
 
-    const w = rect.width;
-    const h = rect.height;
-    const cx = w / 2;
-    const cy = h / 2;
-    const scale = Math.min(w, h) / (gridSize * 2.4);
+    let scene: THREE.Scene;
+    let camera: THREE.PerspectiveCamera;
+    let renderer: THREE.WebGLRenderer;
+    let controls: any;
+    let frameId: number;
+    const meshes: THREE.Object3D[] = [];
 
-    // Grid lines
-    ctx.strokeStyle = "#1e293b";
-    ctx.lineWidth = 1;
-    for (let i = -gridSize; i <= gridSize; i++) {
-      const x = cx + i * scale;
-      const y = cy - i * scale;
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, h);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(w, y);
-      ctx.stroke();
-    }
+    const init = async () => {
+      const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
 
-    // Axes (thick, visible)
-    ctx.strokeStyle = "#3b82f6";
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(0, cy);
-    ctx.lineTo(w, cy);
-    ctx.stroke();
-    ctx.strokeStyle = "#ef4444";
-    ctx.beginPath();
-    ctx.moveTo(cx, 0);
-    ctx.lineTo(cx, h);
-    ctx.stroke();
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0f172a);
 
-    // Axis arrowheads
-    ctx.fillStyle = "#3b82f6";
-    ctx.beginPath();
-    ctx.moveTo(w - 8, cy - 6);
-    ctx.lineTo(w - 8, cy + 6);
-    ctx.lineTo(w, cy);
-    ctx.fill();
-    ctx.fillStyle = "#ef4444";
-    ctx.beginPath();
-    ctx.moveTo(cx - 6, 8);
-    ctx.lineTo(cx + 6, 8);
-    ctx.lineTo(cx, 0);
-    ctx.fill();
+      camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(7, 5.5, 8);
 
-    // Axis labels
-    ctx.fillStyle = "#94a3b8";
-    ctx.font = "13px Inter, system-ui, sans-serif";
-    ctx.fillText("x", w - 16, cy - 10);
-    ctx.fillText("y", cx + 10, 14);
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
 
-    // Tick labels
-    ctx.font = "10px Inter, system-ui, sans-serif";
-    ctx.fillStyle = "#64748b";
-    for (let i = -gridSize; i <= gridSize; i++) {
-      if (i === 0) continue;
-      ctx.fillText(String(i), cx + i * scale + 4, cy + 14);
-      ctx.fillText(String(i), cx + 6, cy - i * scale - 4);
-    }
-    ctx.fillStyle = "#fbbf24";
-    ctx.fillText("O", cx + 6, cy + 14);
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.5;
 
-    // Unit circle
-    if (showCircle) {
-      ctx.strokeStyle = "#a855f7";
-      ctx.lineWidth = 2;
-      ctx.setLineDash([5, 3]);
-      ctx.beginPath();
-      ctx.arc(cx, cy, scale, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.setLineDash([]);
-    }
+      const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambient);
+      const dir = new THREE.DirectionalLight(0xffffff, 1.2);
+      dir.position.set(5, 12, 8);
+      scene.add(dir);
 
-    // Point
-    const px = cx + point.x * scale;
-    const py = cy - point.y * scale;
+      // Axes with canvas label sprites (x=red, y=green, z=blue)
+      const mkAxis = (from: THREE.Vector3, to: THREE.Vector3, color: number) => {
+        const geo = new THREE.BufferGeometry().setFromPoints([from, to]);
+        const line = new THREE.Line(geo, new THREE.LineBasicMaterial({ color, linewidth: 3 }));
+        scene.add(line);
+        meshes.push(line);
 
-    // Components
-    if (showComponents) {
-      ctx.fillStyle = "#22c55e";
-      ctx.globalAlpha = 0.3;
-      ctx.fillRect(cx, py, px - cx, cy - py);
-      ctx.globalAlpha = 1;
-    }
+        const dirVec = to.clone().sub(from).normalize();
+        const cone = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.32, 8), new THREE.MeshBasicMaterial({ color }));
+        cone.position.copy(to);
+        cone.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dirVec);
+        scene.add(cone);
+        meshes.push(cone);
 
-    // Angle arc
-    if (showAngle && (point.x !== 0 || point.y !== 0)) {
-      const angle = Math.atan2(point.y, point.x);
-      ctx.strokeStyle = "#fbbf24";
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.arc(cx, cy, Math.max(12, scale * 0.4), 0, -angle, true);
-      ctx.stroke();
-    }
+        const canvas = document.createElement("canvas");
+        canvas.width = 128;
+        canvas.height = 64;
+        const ctx = canvas.getContext("2d")!;
+        ctx.font = "bold 48px Inter, system-ui, sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = `#${color.toString(16).padStart(6, "0")}`;
+        ctx.fillText(color === 0xef4444 ? "x" : color === 0x22c55e ? "y" : "z", 64, 32);
+        const texture = new THREE.CanvasTexture(canvas);
+        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false }));
+        sprite.position.copy(to.clone().multiplyScalar(1.12));
+        sprite.scale.set(0.9, 0.45, 1);
+        scene.add(sprite);
+        meshes.push(sprite);
+      };
 
-    // Lines to components (dashed)
-    ctx.strokeStyle = "#64748b";
-    ctx.setLineDash([4, 3]);
-    ctx.beginPath();
-    ctx.moveTo(px, cy);
-    ctx.lineTo(px, py);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(cx, py);
-    ctx.lineTo(px, py);
-    ctx.stroke();
-    ctx.setLineDash([]);
+      mkAxis(new THREE.Vector3(-gridSize - 1, 0, 0), new THREE.Vector3(gridSize + 1, 0, 0), 0xef4444);
+      mkAxis(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, gridSize + 1, 0), 0x22c55e);
+      mkAxis(new THREE.Vector3(0, 0, -gridSize - 1), new THREE.Vector3(0, 0, gridSize + 1), 0x3b82f6);
 
-    // Vector arrow
-    if (point.x !== 0 || point.y !== 0) {
-      const angle = Math.atan2(point.y, point.x);
-      const tipLen = 10;
-      ctx.strokeStyle = "#22d3ee";
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(cx, cy);
-      ctx.lineTo(px, py);
-      ctx.stroke();
-      // Arrowhead
-      const headAng = Math.PI / 6;
-      ctx.strokeStyle = "#22d3ee";
-      ctx.beginPath();
-      ctx.moveTo(px, py);
-      ctx.lineTo(px - tipLen * Math.cos(angle - headAng), py - tipLen * Math.sin(angle - headAng));
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(px, py);
-      ctx.lineTo(px - tipLen * Math.cos(angle + headAng), py - tipLen * Math.sin(angle + headAng));
-      ctx.stroke();
-    }
+      // Ground grid + translucent coordinate plane
+      const grid = new THREE.GridHelper(gridSize * 2, gridSize * 2, 0x334155, 0x1e293b);
+      scene.add(grid);
+      const floor = new THREE.Mesh(
+        new THREE.PlaneGeometry(gridSize * 2 + 0.2, gridSize * 2 + 0.2),
+        new THREE.MeshBasicMaterial({ color: 0x818cf8, transparent: true, opacity: 0.07, side: THREE.DoubleSide, depthWrite: false })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      scene.add(floor);
+      meshes.push(floor);
 
-    // Point dot
-    ctx.fillStyle = "#f43f5e";
-    ctx.beginPath();
-    ctx.arc(px, py, 7, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.strokeStyle = "#fff";
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
+      // Unit circle ring on the plane
+      if (showCircle) {
+        const rPts: THREE.Vector3[] = [];
+        for (let k = 0; k <= 64; k++) {
+          const a = (k / 64) * Math.PI * 2;
+          rPts.push(new THREE.Vector3(Math.cos(a), 0, Math.sin(a)));
+        }
+        const ring = new THREE.Line(new THREE.BufferGeometry().setFromPoints(rPts), new THREE.LineBasicMaterial({ color: 0xa855f7 }));
+        scene.add(ring);
+        meshes.push(ring);
+      }
 
-    // Labels
-    ctx.fillStyle = "#f43f5e";
-    ctx.font = "bold 12px Inter, system-ui, sans-serif";
-    ctx.fillText(`P(${point.x}, ${point.y})`, px + 10, py - 10);
+      // P in world space: x → world x, y → world z, z → world y (elevation)
+      const P = new THREE.Vector3(point.x, point.z, point.y);
 
-    // Info
-    ctx.font = "12px Inter, system-ui, sans-serif";
-    ctx.fillStyle = "#94a3b8";
-    ctx.fillText(`|OP| = ${Math.hypot(point.x, point.y).toFixed(2)}`, 10, 20);
-    if (showAngle) {
-      const angle = (Math.atan2(point.y, point.x) * 180) / Math.PI;
-      ctx.fillText(`θ = ${angle.toFixed(1)}°`, 10, 36);
-    }
-  }, [point, showAngle, showComponents, showCircle, gridSize]);
+      // Angle arc measured from +x axis on the plane
+      if (showAngle && (P.x !== 0 || P.z !== 0)) {
+        const angle = Math.atan2(P.z, P.x);
+        const r = Math.min(1.8, Math.hypot(P.x, P.z) * 0.6);
+        const aPts: THREE.Vector3[] = [];
+        const steps = 40;
+        for (let k = 0; k <= steps; k++) {
+          const a = (k / steps) * angle;
+          aPts.push(new THREE.Vector3(Math.cos(a) * r, 0, Math.sin(a) * r));
+        }
+        const arc = new THREE.Line(new THREE.BufferGeometry().setFromPoints(aPts), new THREE.LineBasicMaterial({ color: 0xfbbf24 }));
+        scene.add(arc);
+        meshes.push(arc);
+      }
 
-  const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const scale = Math.min(rect.width, rect.height) / (gridSize * 2.4);
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const x = Math.round((e.clientX - rect.left - cx) / scale);
-    const y = Math.round(-(e.clientY - rect.top - cy) / scale);
-    setPoint({ x: Math.max(-gridSize, Math.min(gridSize, x)), y: Math.max(-gridSize, Math.min(gridSize, y)) });
-  };
+      // Projected components (dashed lines + ground bounding box)
+      if (showComponents) {
+        const mkDash = (from: THREE.Vector3, to: THREE.Vector3, color: number) => {
+          const geo = new THREE.BufferGeometry().setFromPoints([from, to]);
+          const mat = new THREE.LineDashedMaterial({ color, dashSize: 0.18, gapSize: 0.12 });
+          const line = new THREE.Line(geo, mat);
+          line.computeLineDistances();
+          scene.add(line);
+          meshes.push(line);
+        };
+        mkDash(P, new THREE.Vector3(P.x, 0, P.z), 0x64748b);
+        mkDash(new THREE.Vector3(P.x, 0, P.z), new THREE.Vector3(P.x, 0, 0), 0x64748b);
+        mkDash(new THREE.Vector3(P.x, 0, P.z), new THREE.Vector3(0, 0, P.z), 0x64748b);
 
-  const angleDeg = (Math.atan2(point.y, point.x) * 180) / Math.PI;
-  const r = Math.hypot(point.x, point.y);
-  const quadrant = point.x > 0 ? (point.y > 0 ? "I" : "IV") : point.y > 0 ? "II" : "III";
+        const boxLine = new THREE.LineSegments(
+          new THREE.EdgesGeometry(new THREE.BoxGeometry(Math.abs(P.x), Math.abs(P.z), 0.02)),
+          new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.5 })
+        );
+        boxLine.position.set(P.x / 2, 0, P.z / 2);
+        scene.add(boxLine);
+        meshes.push(boxLine);
+      }
+
+      // Position vector arrow + point markers
+      const vecArrow = new THREE.ArrowHelper(P.clone().normalize(), new THREE.Vector3(0, 0, 0), P.length(), 0x22d3ee, 0.25, 0.18);
+      scene.add(vecArrow);
+      meshes.push(vecArrow as unknown as THREE.Mesh);
+
+      const mkPoint = (pos: THREE.Vector3, color: number, size = 0.08) => {
+        const m = new THREE.Mesh(new THREE.SphereGeometry(size, 12, 12), new THREE.MeshBasicMaterial({ color }));
+        m.position.copy(pos);
+        scene.add(m);
+        meshes.push(m);
+      };
+      mkPoint(new THREE.Vector3(0, 0, 0), 0xfbbf24, 0.09);
+      mkPoint(new THREE.Vector3(P.x, 0, P.z), 0x94a3b8, 0.06);
+      mkPoint(P, 0xf43f5e, 0.13);
+
+      // Click the plane to reposition (x, y)
+      const handlePlaneClick = (e: PointerEvent) => {
+        const rect = renderer.domElement.getBoundingClientRect();
+        const ndc = new THREE.Vector2(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1);
+        const raycaster = new THREE.Raycaster();
+        raycaster.setFromCamera(ndc, camera);
+        const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+        const hit = new THREE.Vector3();
+        if (raycaster.ray.intersectPlane(plane, hit)) {
+          const nx = Math.max(-gridSize, Math.min(gridSize, Math.round(hit.x)));
+          const ny = Math.max(-gridSize, Math.min(gridSize, Math.round(hit.z)));
+          setPoint((p) => ({ x: nx, y: ny, z: p.z }));
+        }
+      };
+      renderer.domElement.addEventListener("pointerdown", handlePlaneClick);
+
+      const animate = () => {
+        frameId = requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      };
+      animate();
+
+      const handleResize = () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      };
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        cancelAnimationFrame(frameId);
+        window.removeEventListener("resize", handleResize);
+        renderer.domElement.removeEventListener("pointerdown", handlePlaneClick);
+        if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+        meshes.forEach((m) => {
+          scene.remove(m);
+          if (m instanceof THREE.Mesh) {
+            m.geometry?.dispose();
+            const mat = m.material;
+            if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
+            else mat.dispose();
+          } else if (m instanceof THREE.Line) {
+            m.geometry?.dispose();
+            (m.material as THREE.Material).dispose();
+          } else if (m instanceof THREE.Sprite) {
+            const sm = m.material;
+            sm.map?.dispose?.();
+            sm.dispose();
+          }
+        });
+        renderer.dispose();
+        controls.dispose?.();
+      };
+    };
+
+    const cleanup = init();
+    return () => {
+      cleanup.then((dispose) => dispose?.());
+    };
+  }, [point, showAngle, showComponents, showCircle, gridSize, isWebGL]);
+
+  const r = Math.hypot(point.x, point.y, point.z);
+  const thetaDeg = (Math.atan2(point.y, point.x) * 180) / Math.PI;
+  const elevationDeg = (Math.atan2(point.z, Math.hypot(point.x, point.y)) * 180) / Math.PI;
+
+  if (!isWebGL) {
+    return (
+      <WebGLFallback
+        title="3D Coordinate Point & Plane"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
-          <span>2D Coordinate Plane (x-y)</span>
-          <span className="text-xs text-muted-foreground font-normal">Click anywhere to place a point</span>
+          <span>3D Coordinate Point & Plane (x, y, z)</span>
+          <span className="text-xs text-muted-foreground font-normal">Click the plane to place a point • Drag to rotate</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <CollapsibleControls label="Point & Display Options">
-          <div className="w-24">
+          <div className="w-20">
             <Label className="text-xs text-muted-foreground">x:</Label>
             <Input type="number" value={point.x} onChange={(e) => setPoint({ ...point, x: Number(e.target.value) })} className="mt-1" />
           </div>
-          <div className="w-24">
+          <div className="w-20">
             <Label className="text-xs text-muted-foreground">y:</Label>
             <Input type="number" value={point.y} onChange={(e) => setPoint({ ...point, y: Number(e.target.value) })} className="mt-1" />
+          </div>
+          <div className="w-20">
+            <Label className="text-xs text-muted-foreground">z ↑:</Label>
+            <Input type="number" value={point.z} onChange={(e) => setPoint({ ...point, z: Number(e.target.value) })} className="mt-1" />
           </div>
           <div className="w-28">
             <Label className="text-xs text-muted-foreground">Grid (±):</Label>
@@ -268,24 +315,20 @@ function CoordinatePlane2D() {
           <Button variant={showCircle ? "default" : "outline"} size="sm" onClick={() => setShowCircle(!showCircle)}>Unit Circle</Button>
         </CollapsibleControls>
 
-        <canvas
-          ref={canvasRef}
-          className="lab-3d-container cursor-crosshair rounded-md border border-border"
-          onClick={handleCanvasClick}
-        />
+        <div ref={containerRef} className="lab-3d-container cursor-crosshair rounded-md border border-border" aria-label="3D coordinate point placement" />
 
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs text-muted-foreground">Position Vector (r)</p>
-            <p className="text-sm font-semibold">r = ({point.x}, {point.y}) &nbsp;|r| = {r.toFixed(2)}</p>
+            <p className="text-xs text-muted-foreground">Position Vector (3D)</p>
+            <p className="text-sm font-semibold">r = ({point.x}, {point.y}, {point.z}) &nbsp;|r| = {r.toFixed(2)}</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs text-muted-foreground">Angle θ</p>
-            <p className="text-sm font-semibold">{angleDeg.toFixed(1)}° ({ (angleDeg * Math.PI / 180).toFixed(3) } rad)</p>
+            <p className="text-xs text-muted-foreground">Angle in xy-plane</p>
+            <p className="text-sm font-semibold">{thetaDeg.toFixed(1)}° ({ (thetaDeg * Math.PI / 180).toFixed(3) } rad)</p>
           </div>
           <div className="rounded-md border border-border bg-muted/30 p-3">
-            <p className="text-xs text-muted-foreground">Quadrant</p>
-            <p className="text-sm font-semibold">{point.x === 0 || point.y === 0 ? "On Axis" : `Quadrant ${quadrant}`}</p>
+            <p className="text-xs text-muted-foreground">Elevation angle</p>
+            <p className="text-sm font-semibold">{elevationDeg.toFixed(1)}°</p>
           </div>
         </div>
 
@@ -820,7 +863,8 @@ function VectorViewer() {
    ============================================================ */
 
 function ParabolaExplorer() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isWebGL, setIsWebGL] = useState(true);
   const [a, setA] = useState(1);
   const [b, setB] = useState(0);
   const [c, setC] = useState(-4);
@@ -854,129 +898,158 @@ function ParabolaExplorer() {
   }
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    setIsWebGL(isWebGLAvailable());
+  }, []);
 
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, rect.width, rect.height);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || !isWebGL) return;
 
-    const w = rect.width;
-    const h = rect.height;
-    const cx = w / 2;
-    const cy = h / 2;
-    const scale = Math.min(w, h) / 12;
+    let scene: THREE.Scene;
+    let camera: THREE.PerspectiveCamera;
+    let renderer: THREE.WebGLRenderer;
+    let controls: any;
+    let frameId: number;
+    const meshes: THREE.Object3D[] = [];
 
-    // Grid
-    ctx.strokeStyle = "#1e293b";
-    ctx.lineWidth = 1;
-    for (let i = -6; i <= 6; i++) {
-      const x = cx + i * scale;
-      const y = cy - i * scale;
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-    }
+    const init = async () => {
+      const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
 
-    // Axes
-    ctx.strokeStyle = "#3b82f6"; ctx.lineWidth = 2.5;
-    ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(w, cy); ctx.stroke();
-    ctx.strokeStyle = "#ef4444";
-    ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, h); ctx.stroke();
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0f172a);
 
-    // Axis labels
-    ctx.fillStyle = "#94a3b8"; ctx.font = "12px Inter, system-ui, sans-serif";
-    ctx.fillText("x", w - 14, cy - 8);
-    ctx.fillText("y", cx + 8, 14);
+      camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(8, 6, 9);
 
-    // Axis of symmetry (dashed vertical)
-    if (showAxis) {
-      ctx.strokeStyle = "#a855f7";
-      ctx.lineWidth = 1.5;
-      ctx.setLineDash([6, 4]);
-      ctx.beginPath();
-      ctx.moveTo(cx + axisOfSymmetry * scale, 0);
-      ctx.lineTo(cx + axisOfSymmetry * scale, h);
-      ctx.stroke();
-      ctx.setLineDash([]);
-    }
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
 
-    // Directrix (horizontal dashed)
-    if (showDirectrix) {
-      ctx.strokeStyle = "#f59e0b";
-      ctx.lineWidth = 1.5;
-      ctx.setLineDash([6, 4]);
-      ctx.beginPath();
-      ctx.moveTo(0, cy - directrixY * scale);
-      ctx.lineTo(w, cy - directrixY * scale);
-      ctx.stroke();
-      ctx.setLineDash([]);
-    }
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.5;
 
-    // Parabola curve
-    ctx.strokeStyle = "#22d3ee";
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    let started = false;
-    for (let px = 0; px <= w; px++) {
-      const x = (px - cx) / scale;
-      const y = a * x * x + b * x + c;
-      const py = cy - y * scale;
-      if (!started) { ctx.moveTo(px, py); started = true; }
-      else ctx.lineTo(px, py);
-    }
-    ctx.stroke();
+      scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+      const dir = new THREE.DirectionalLight(0xffffff, 1.2);
+      dir.position.set(6, 12, 8);
+      scene.add(dir);
 
-    // Roots (x-intercepts)
-    if (showRoots && discriminant >= 0) {
-      roots.forEach((root) => {
-        const rx = cx + root * scale;
-        ctx.fillStyle = "#22c55e";
-        ctx.beginPath(); ctx.arc(rx, cy, 6, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.stroke();
-        ctx.fillStyle = "#22c55e"; ctx.font = "bold 11px Inter, system-ui, sans-serif";
-        ctx.fillText(`(${root.toFixed(1)}, 0)`, rx + 8, cy + 16);
+      const grid = new THREE.GridHelper(12, 12, 0x334155, 0x1e293b);
+      scene.add(grid);
+      const axes = new THREE.AxesHelper(6.5);
+      scene.add(axes);
+
+      const SAMPLE = 220;
+      const span = 5;
+      let ymax = 6;
+      const ys: number[] = [];
+      for (let i = 0; i <= SAMPLE; i++) {
+        const x = -span + (2 * span * i) / SAMPLE;
+        const y = a * x * x + b * x + c;
+        ys.push(Number.isFinite(y) ? y : NaN);
+        if (Number.isFinite(y)) ymax = Math.max(ymax, Math.abs(y));
+      }
+      const scaleY = 5.5 / Math.max(ymax, 6.5);
+      const toY = (y: number) => y * scaleY;
+
+      const runs: THREE.Vector3[][] = [];
+      let run: THREE.Vector3[] = [];
+      for (let i = 0; i <= SAMPLE; i++) {
+        const x = -span + (2 * span * i) / SAMPLE;
+        const y = ys[i];
+        if (!Number.isFinite(y)) {
+          if (run.length) { runs.push(run); run = []; }
+          continue;
+        }
+        run.push(new THREE.Vector3(x, toY(y), 0));
+      }
+      if (run.length) runs.push(run);
+      runs.forEach((pts) => {
+        if (pts.length < 2) return;
+        const curve = new THREE.CatmullRomCurve3(pts);
+        const geo = new THREE.TubeGeometry(curve, Math.min(200, Math.max(32, pts.length)), 0.08, 8, false);
+        const mat = new THREE.MeshStandardMaterial({ color: 0x22d3ee, emissive: 0x0ea5e9, emissiveIntensity: 0.35, roughness: 0.3, metalness: 0.4 });
+        const mesh = new THREE.Mesh(geo, mat);
+        scene.add(mesh);
+        meshes.push(mesh);
       });
-    }
 
-    // Vertex
-    if (showVertex) {
-      const vx = cx + vertexX * scale;
-      const vy = cy - vertexY * scale;
-      ctx.fillStyle = "#f43f5e";
-      ctx.beginPath(); ctx.arc(vx, vy, 7, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.stroke();
-      ctx.fillStyle = "#f43f5e"; ctx.font = "bold 11px Inter, system-ui, sans-serif";
-      ctx.fillText(`V(${vertexX.toFixed(1)}, ${vertexY.toFixed(1)})`, vx + 10, vy - 10);
-    }
+      const mkDashLine = (pts: THREE.Vector3[], color: number) => {
+        const geo = new THREE.BufferGeometry().setFromPoints(pts);
+        const mat = new THREE.LineDashedMaterial({ color, dashSize: 0.18, gapSize: 0.12 });
+        const line = new THREE.Line(geo, mat);
+        line.computeLineDistances();
+        scene.add(line);
+        meshes.push(line);
+      };
 
-    // Focus
-    if (showFocus) {
-      const fx = cx + focusX * scale;
-      const fy = cy - focusY * scale;
-      ctx.fillStyle = "#fbbf24";
-      ctx.beginPath(); ctx.arc(fx, fy, 6, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.stroke();
-      ctx.fillStyle = "#fbbf24"; ctx.font = "bold 11px Inter, system-ui, sans-serif";
-      ctx.fillText("F", fx + 8, fy - 8);
-    }
+      if (showAxis) {
+        mkDashLine([new THREE.Vector3(vertexX, -0.2, 0), new THREE.Vector3(vertexX, 6.2, 0)], 0xa855f7);
+      }
+      if (showDirectrix && Number.isFinite(directrixY)) {
+        const dy = Math.max(-5.5, Math.min(6.2, directrixY * scaleY));
+        mkDashLine([new THREE.Vector3(-5.2, dy, 0), new THREE.Vector3(5.2, dy, 0)], 0xf59e0b);
+      }
 
-    // Y-intercept
-    ctx.fillStyle = "#8b5cf6";
-    const iy = cy - yIntercept * scale;
-    ctx.beginPath(); ctx.arc(cx, iy, 5, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = "#8b5cf6"; ctx.font = "bold 11px Inter, system-ui, sans-serif";
-    ctx.fillText("(0, " + yIntercept.toFixed(1) + ")", cx + 8, iy - 8);
+      const mkPoint = (pos: THREE.Vector3, color: number, size = 0.12) => {
+        const m = new THREE.Mesh(new THREE.SphereGeometry(size, 16, 16), new THREE.MeshBasicMaterial({ color }));
+        m.position.copy(pos);
+        scene.add(m);
+        meshes.push(m);
+      };
 
-    // Info text
-    ctx.fillStyle = "#94a3b8"; ctx.font = "12px Inter, system-ui, sans-serif";
-    ctx.fillText(`y = ${a}x² ${b >= 0 ? "+" : "−"} ${Math.abs(b)}x ${c >= 0 ? "+" : "−"} ${Math.abs(c)}`, 10, 20);
-    ctx.fillText(`D = b²−4ac = ${discriminant.toFixed(1)}`, 10, 36);
-  }, [a, b, c, showRoots, showVertex, showAxis, showFocus, showDirectrix, discriminant, roots, vertexX, vertexY, focusX, focusY, directrixY, yIntercept]);
+      if (showRoots && discriminant >= 0) {
+        roots.forEach((root) => {
+          if (Math.abs(root) <= 6) mkPoint(new THREE.Vector3(root, 0, 0), 0x22c55e, 0.14);
+        });
+      }
+      if (showVertex) mkPoint(new THREE.Vector3(vertexX, toY(vertexY), 0), 0xf43f5e, 0.16);
+      if (showFocus) mkPoint(new THREE.Vector3(focusX, toY(focusY), 0), 0xfbbf24, 0.13);
+      mkPoint(new THREE.Vector3(0, toY(yIntercept), 0), 0x8b5cf6, 0.1);
+
+      const animate = () => {
+        frameId = requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      };
+      animate();
+
+      const handleResize = () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      };
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        cancelAnimationFrame(frameId);
+        window.removeEventListener("resize", handleResize);
+        if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+        meshes.forEach((m) => {
+          scene.remove(m);
+          if (m instanceof THREE.Mesh) {
+            m.geometry?.dispose();
+            const mat = m.material;
+            if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
+            else mat.dispose();
+          } else if (m instanceof THREE.Line || m instanceof THREE.LineSegments) {
+            m.geometry?.dispose();
+            (m.material as THREE.Material).dispose();
+          }
+        });
+        renderer.dispose();
+        controls.dispose?.();
+      };
+    };
+
+    const cleanup = init();
+    return () => {
+      cleanup.then((dispose) => dispose?.());
+    };
+  }, [a, b, c, showRoots, showVertex, showAxis, showFocus, showDirectrix, isWebGL]);
 
   const rootText = discriminant > 0
     ? `Two real roots: x = ${roots[0].toFixed(2)}, ${roots[1].toFixed(2)}`
@@ -986,11 +1059,20 @@ function ParabolaExplorer() {
 
   const vertexForm = `y = ${a}(x ${vertexX >= 0 ? "−" : "+"} ${Math.abs(vertexX).toFixed(2)})² ${vertexY >= 0 ? "+" : "−"} ${Math.abs(vertexY).toFixed(2)}`;
 
+  if (!isWebGL) {
+    return (
+      <WebGLFallback
+        title="Parabola Explorer 3D"
+        description="3D visualization requires WebGL support. Try a modern browser or enable hardware acceleration."
+      />
+    );
+  }
+
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
-          <span>Parabola Explorer — Roots to Peak</span>
+          <span>Parabola Explorer — 3D Curve to Peak</span>
           <span className="text-xs text-muted-foreground font-normal">Adjust a, b, c to see every feature</span>
         </CardTitle>
       </CardHeader>
@@ -1015,7 +1097,7 @@ function ParabolaExplorer() {
           <Button variant={showDirectrix ? "default" : "outline"} size="sm" onClick={() => setShowDirectrix(!showDirectrix)}>Directrix</Button>
         </CollapsibleControls>
 
-        <canvas ref={canvasRef} className="lab-3d-container rounded-md border border-border" />
+        <div ref={containerRef} className="lab-3d-container rounded-md border border-border" />
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-md border border-border bg-muted/30 p-3">
@@ -1080,14 +1162,14 @@ export function MathGeometry3D() {
   return (
     <Tabs defaultValue="plane2d" className="w-full">
       <TabsList className="flex-wrap">
-        <TabsTrigger value="plane2d">2D Plane (x-y)</TabsTrigger>
+        <TabsTrigger value="plane2d">3D Point & Plane</TabsTrigger>
         <TabsTrigger value="axes3d">3D Axes</TabsTrigger>
         <TabsTrigger value="vectors">Vectors & Angles</TabsTrigger>
-        <TabsTrigger value="parabola">Parabola</TabsTrigger>
+        <TabsTrigger value="parabola">Parabola 3D</TabsTrigger>
       </TabsList>
 
       <TabsContent value="plane2d" className="mt-4">
-        <CoordinatePlane2D />
+        <CoordinatePlane3D />
       </TabsContent>
 
       <TabsContent value="axes3d" className="mt-4">
