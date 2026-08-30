@@ -1,34 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { GraduationCap, Sparkles, BookOpen, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import {
-  MathModern3D
-} from "@/components/lab/math-modern-3d";
-import { ChemistryLab } from "@/components/lab/chemistry-lab";
-import { PhysicsLab } from "@/components/lab/physics-lab";
-import { BiologyLab } from "@/components/lab/biology-lab";
-import {
-  FlaskConical,
-  Beaker,
-  Atom,
-  Microscope,
-  ArrowRight,
-  GraduationCap,
-  Sparkles,
-  BookOpen,
-} from "lucide-react";
+import { ScienceLabSection } from "@/components/lab/science-lab-section";
 
 export default function Home() {
-  const [activeLab, setActiveLab] = useState<string>("math");
-
-  const labCards = [
-    { key: "math", label: "Math", icon: Atom, desc: "3D geometry, calculus & vectors", color: "from-blue-500 to-cyan-500" },
-    { key: "chemistry", label: "Chemistry", icon: Beaker, desc: "Molecules, reactions & stoichiometry", color: "from-emerald-500 to-teal-500" },
-    { key: "physics", label: "Physics", icon: FlaskConical, desc: "Optics, gravitation & heat", color: "from-violet-500 to-purple-500" },
-    { key: "biology", label: "Biology", icon: Microscope, desc: "Cells, plants & human body", color: "from-amber-500 to-orange-500" },
-  ];
-
   return (
     <div className="w-full space-y-8">
       {/* Hero / Introduction */}
@@ -63,7 +39,7 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { href: "/subjects", label: "Subjects", icon: BookOpen, color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20" },
-            { href: "/lab", label: "Science Lab", icon: FlaskConical, color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20" },
+            { href: "/lab", label: "Science Lab", icon: Sparkles, color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20" },
             { href: "/chat", label: "AI Tutor", icon: Sparkles, color: "from-violet-500/10 to-purple-500/10 border-violet-500/20" },
             { href: "/levels", label: "Curriculum", icon: GraduationCap, color: "from-amber-500/10 to-orange-500/10 border-amber-500/20" },
           ].map((card) => {
@@ -82,44 +58,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Science Lab Section */}
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
-            <FlaskConical className="h-5 w-5 text-primary" />
-            Science Lab
-          </h2>
-          <Link
-            href="/lab"
-            className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
-          >
-            View all labs <ArrowRight className="h-3 w-3" />
-          </Link>
-        </div>
-
-        <div className="flex flex-wrap gap-2 mb-4">
-          {labCards.map((lab) => (
-            <button
-              key={lab.key}
-              onClick={() => setActiveLab(lab.key)}
-              className={`flex-1 min-w-[100px] px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
-                activeLab === lab.key
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
-              }`}
-            >
-              {lab.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="rounded-2xl border border-border bg-card overflow-hidden min-h-[400px]">
-          {activeLab === "math" && <MathModern3D />}
-          {activeLab === "chemistry" && <ChemistryLab />}
-          {activeLab === "physics" && <PhysicsLab />}
-          {activeLab === "biology" && <BiologyLab />}
-        </div>
-      </div>
+      {/* Science Lab */}
+      <ScienceLabSection />
     </div>
   );
 }
