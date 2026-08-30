@@ -40,6 +40,7 @@ const aiItems: NavItem[] = [
 const browseItems: NavItem[] = [
   { href: "/", label: "Home", icon: Home },
   { href: "/subjects", label: "Subjects", icon: Layers },
+  { href: "/syllabus", label: "Syllabus", icon: BookOpen },
   { href: "/lab", label: "Lab", icon: FlaskConical },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/loksewa", label: "Loksewa", icon: Users },
