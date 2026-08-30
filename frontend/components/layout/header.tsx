@@ -55,7 +55,7 @@ export function Header() {
               <GraduationCap className="h-5 w-5 text-white" />
             </div>
             <span className="hidden sm:block text-base font-bold tracking-tight text-foreground">
-              NEB Study Vault
+              Ravikisan's Platform
             </span>
           </Link>
         </div>

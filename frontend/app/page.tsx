@@ -16,7 +16,7 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-              Welcome to <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">Manim Educativo</span>
+              Welcome to <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">Ravikisan&apos;s Platform</span>
             </h1>
             <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
               Interactive 3D visualisations for NEB Class 11 &amp; 12 science. Explore concepts in Math, Chemistry, Physics and Biology with animated simulations.

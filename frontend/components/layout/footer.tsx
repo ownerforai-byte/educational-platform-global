@@ -12,7 +12,7 @@ export function Footer() {
                 <span className="text-sm font-extrabold text-white">R</span>
               </div>
               <span className="font-bold text-sm tracking-tight text-foreground">
-                NEB Study Vault
+                Ravikisan's Platform
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -84,7 +84,7 @@ export function Footer() {
 
         <div className="mt-6 border-t border-border/40 pt-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-muted-foreground/60">
-            © 2026 NEB Study Vault · Owner:{" "}
+            © 2026 Ravikisan's Platform · Owner:{" "}
             <Link
               href="https://www.instagram.com/___unxknown___player"
               target="_blank"

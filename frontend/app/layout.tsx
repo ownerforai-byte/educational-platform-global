@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
 
 export const metadata: Metadata = {
-  title: "NEB Study Vault — Free NEB (+2) Learning Platform",
+  title: "Ravikisan's Platform — NEB (+2) Learning Platform",
   description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
 };
 
