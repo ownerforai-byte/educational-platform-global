@@ -20,22 +20,17 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
 // Strip weird chars, normalise whitespace, and render inline markdown-ish links as clickable
-function renderMessageContent(raw: string): React.ReactNode {
-  // Remove stray noise characters
+// Clean AI reply: strip noise, render links as clickable
+function formatAiReply(raw: string): React.ReactNode {
+  // Strip stray markdown noise chars
   const cleaned = raw
-    .replace(/[*\/`~#>_\[\](){}|\\^%\$@!][*`~#>_\[\](){}|\\^%\$@!]{0,2}/g, (m) => {
-      // Keep single * or / or _ only if they look like markdown emphasis
-      if (/^\s*[/*_]\s*$/.test(m)) return m;
-      return "";
-    })
-    .replace(/[^\w\s.,!?;:'"()\n\r\-–—\/@#.]/g, "")
+    .replace(/[*`~#>_\[\](){}|\\^%$@!]{2,}/g, " ")
+    .replace(/[^\w\s.,!?;:'"()\n\r\-–—\/@#.]/g, " ")
     .replace(/\s{2,}/g, " ")
     .trim();
 
-  // Split by newlines and find inline links [text](url)
   const lines = cleaned.split(/\n/);
   const elements: React.ReactNode[] = [];
-
   const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
 
   for (let i = 0; i < lines.length; i++) {
@@ -54,23 +49,18 @@ function renderMessageContent(raw: string): React.ReactNode {
           href={match[2]}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-1 mb-1 px-2 py-0.5 rounded text-xs font-mono bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
+          className="inline-flex items-center gap-1 mt-1 mb-1 px-2 py-1 rounded-lg text-xs font-mono bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
         >
-          🔗 {match[1]}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          {match[1]}
         </a>
       );
       lastIndex = match.index + match[0].length;
     }
 
     if (parts.length > 0) {
-      if (lastIndex < line.length) {
-        parts.push(line.slice(lastIndex));
-      }
-      elements.push(
-        <div key={i} className="leading-relaxed">
-          {parts}
-        </div>
-      );
+      if (lastIndex < line.length) parts.push(line.slice(lastIndex));
+      elements.push(<div key={i} className="leading-relaxed">{parts}</div>);
     } else if (line.trim()) {
       elements.push(<div key={i} className="leading-relaxed">{line}</div>);
     } else {
@@ -248,7 +238,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
               >
                 {m.role === "user"
                   ? m.content
-                  : renderMessageContent(m.content)}
+                  : formatAiReply(m.content)}
               </div>
             </div>
           ))}

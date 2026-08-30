@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SidebarNavigation } from "./sidebar-navigation";
-import { AIWidget } from "./ai-widget";
-
 export function AppShell({ children, breadcrumbs }: { children: React.ReactNode; breadcrumbs?: { label: string; href?: string }[] }) {
   const pathname = usePathname();
   const showBack = pathname !== "/";
@@ -42,7 +40,6 @@ export function AppShell({ children, breadcrumbs }: { children: React.ReactNode;
         </main>
       </div>
       {isHome && <Footer />}
-      <AIWidget />
     </div>
   );
 }
