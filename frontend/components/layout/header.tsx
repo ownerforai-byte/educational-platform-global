@@ -8,6 +8,7 @@ import {
   LogOut,
   User,
   Search,
+  Sparkles,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -69,6 +70,15 @@ export function Header() {
           {isLoggedIn && <CreditBadge />}
 
           <ThemeToggle />
+
+          <Link
+            href="/chat"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 h-9 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-sm font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
+            title="Ask the AI study assistant"
+          >
+            <Sparkles className="h-4 w-4" />
+            <span>AI Tutor</span>
+          </Link>
 
           <div className="ml-1 h-4 w-px bg-border/60" />
 

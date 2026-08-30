@@ -21,6 +21,7 @@ import {
   Crown,
   ChevronsDown,
   ChevronsUp,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { logoutAction } from "@/features/auth/actions";
@@ -32,6 +33,10 @@ type NavItem = {
   icon: React.ComponentType<{ className?: string }>;
   badge?: string;
 };
+
+const aiItems: NavItem[] = [
+  { href: "/chat", label: "AI Assistant", icon: Sparkles, badge: "New" },
+];
 
 const browseItems: NavItem[] = [
   { href: "/", label: "Home", icon: Home },
@@ -62,13 +67,13 @@ function NavSection({
   onToggle,
 }: {
   label: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   items: NavItem[];
   pathname: string;
   collapsed: boolean;
   onToggle: () => void;
 }) {
-  const Icon = label === "Browse" ? Home : label === "Account" ? UserCheck : ShieldCheck;
+  const Icon = LabelIcon;
   const activeCount = items.filter(
     (item) => pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
   ).length;
@@ -123,7 +128,12 @@ function NavSection({
                     isActive && "text-primary"
                   )}
                 />
-                <span className="whitespace-nowrap">{item.label}</span>
+                <span className="flex-1 whitespace-nowrap">{item.label}</span>
+                {item.badge && (
+                  <span className="shrink-0 text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-primary/15 text-primary">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             );
           })}
@@ -141,6 +151,7 @@ export function SidebarNavigation() {
   const isLoggedIn = !!user;
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
+    ai: false,
     browse: false,
     account: false,
     admin: false,
@@ -212,6 +223,14 @@ export function SidebarNavigation() {
 
         {/* Nav sections */}
         <nav className="flex-1 overflow-y-auto px-3 py-3 space-y-1">
+          <NavSection
+            label="AI Tools"
+            icon={Sparkles}
+            items={aiItems}
+            pathname={pathname}
+            collapsed={collapsedSections.ai}
+            onToggle={() => toggleSection("ai")}
+          />
           <NavSection
             label="Browse"
             icon={Home}
