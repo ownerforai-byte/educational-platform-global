@@ -1,16 +1,14 @@
+/**
+ * Lab 3D Page — Main entry point for all 3D lab simulations
+ * Uses the LAB_REGISTRY to display and filter labs
+ */
 "use client";
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import {
-  Atom,
-  Dna,
-  FlaskConical,
-  Calculator,
-  Search,
-} from "lucide-react";
+import { Cuboid, BookOpen, Calculator, Search } from "lucide-react";
 import { LAB_REGISTRY } from "@/lib/lab-registry";
-import type { LabMeta } from "@/lib/lab-registry";
+import type { LabMeta } from "@/lib/types/lab";
 
 type LabCategory = "physics" | "chemistry" | "mathematics" | "biology" | "class11";
 
@@ -30,13 +28,17 @@ export default function Lab3DPage() {
     let labs = LAB_REGISTRY.filter((lab) => lab.category === activeSubject);
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      labs = LAB_REGISTRY.filter(l => l.title.toLowerCase().includes(q) || l.description.toLowerCase().includes(q));
+      labs = LAB_REGISTRY.filter(
+        (l) =>
+          l.title.toLowerCase().includes(q) ||
+          l.description.toLowerCase().includes(q)
+      );
     }
     return labs;
   }, [activeSubject, searchQuery]);
 
   const availableSubjects = (["physics", "chemistry", "mathematics", "biology", "class11"] as const).filter(
-    (s) => LAB_REGISTRY.some(l => l.category === s)
+    (s) => LAB_REGISTRY.some((l) => l.category === s)
   );
 
   return (
@@ -48,16 +50,17 @@ export default function Lab3DPage() {
         </p>
       </div>
 
+      {/* Subject Tabs */}
       <div className="flex gap-2 flex-wrap" role="tablist">
         {availableSubjects.map((subject) => {
           const cfg = SUBJECT_CONFIG[subject];
-          const count = LAB_REGISTRY.filter(l => l.category === subject).length;
+          const count = LAB_REGISTRY.filter((l) => l.category === subject).length;
           const isActive = activeSubject === subject;
           return (
             <button
               key={subject}
               onClick={() => setActiveSubject(subject)}
-              className={`inline-flex items-center px-4 py-2 rounded-xl text-sm font-medium transition-all duration-[200ms] ${
+              className={`inline-flex items-center px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                 isActive
                   ? "shadow-md elev-2 ring-2"
                   : "bg-muted text-muted-foreground hover:elev-1"
@@ -74,6 +77,7 @@ export default function Lab3DPage() {
         })}
       </div>
 
+      {/* Search */}
       <div className="relative max-w-sm">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <input
@@ -85,6 +89,7 @@ export default function Lab3DPage() {
         />
       </div>
 
+      {/* Lab Grid */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredLabs.map((lab) => (
           <LabCard key={lab.id} lab={lab} />
@@ -97,6 +102,7 @@ export default function Lab3DPage() {
         </div>
       )}
 
+      {/* Stats */}
       <div className="flex flex-wrap gap-2">
         <span className="stat-pill">
           <span className="text-muted-foreground">Total:</span>
@@ -104,7 +110,7 @@ export default function Lab3DPage() {
         </span>
         {availableSubjects.map((s) => {
           const c = SUBJECT_CONFIG[s];
-          const n = LAB_REGISTRY.filter(l => l.category === s).length;
+          const n = LAB_REGISTRY.filter((l) => l.category === s).length;
           if (n === 0) return null;
           return (
             <span key={s} className="stat-pill">
@@ -120,18 +126,26 @@ export default function Lab3DPage() {
 
 function LabCard({ lab }: { lab: LabMeta }) {
   const cfg = SUBJECT_CONFIG[lab.category] ?? { label: "Lab", color: "#64748b", emoji: "🔬" };
-  const statusColor = lab.status === "new" ? "text-blue-600 dark:text-blue-400" :
-    lab.status === "premium" ? "text-amber-600 dark:text-amber-400" :
-    lab.status === "development" ? "text-purple-600 dark:text-purple-400" :
-    "text-emerald-600 dark:text-emerald-400";
-  const statusBg = lab.status === "new" ? "bg-blue-500/10" :
-    lab.status === "premium" ? "bg-amber-500/10" :
-    lab.status === "development" ? "bg-purple-500/10" :
-    "bg-emerald-500/10";
+  const statusColor =
+    lab.status === "new"
+      ? "text-blue-600 dark:text-blue-400"
+      : lab.status === "premium"
+      ? "text-amber-600 dark:text-amber-400"
+      : lab.status === "development"
+      ? "text-purple-600 dark:text-purple-400"
+      : "text-emerald-600 dark:text-emerald-400";
+  const statusBg =
+    lab.status === "new"
+      ? "bg-blue-500/10"
+      : lab.status === "premium"
+      ? "bg-amber-500/10"
+      : lab.status === "development"
+      ? "bg-purple-500/10"
+      : "bg-emerald-500/10";
 
   return (
     <Link href={`/lab/${lab.id}`} className="block group">
-      <div className="elev-2 rounded-2xl border border-border overflow-hidden bg-card hover:border-primary/50 transition-all duration-[200ms] hover:elev-2 h-full flex flex-col">
+      <div className="elev-2 rounded-2xl border border-border overflow-hidden bg-card hover:border-primary/50 transition-all duration-200 hover:elev-2 h-full flex flex-col">
         <div className="p-4 flex items-start gap-3">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-lg"
@@ -140,8 +154,12 @@ function LabCard({ lab }: { lab: LabMeta }) {
             {cfg.emoji}
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="font-semibold text-sm truncate group-hover:text-primary transition-colors">{lab.title}</h3>
-            <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{lab.description}</p>
+            <h3 className="font-semibold text-sm truncate group-hover:text-primary transition-colors">
+              {lab.title}
+            </h3>
+            <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+              {lab.description}
+            </p>
           </div>
         </div>
         <div className="px-4 py-2.5 border-t border-border/50 flex items-center justify-between">

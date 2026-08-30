@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { LAB_REGISTRY } from "@/lib/lab-registry";
-import type { LabMeta } from "@/lib/lab-registry";
+import type { LabMeta } from "@/lib/types/lab";
 
 type LabCategory = "physics" | "chemistry" | "mathematics" | "biology";
 

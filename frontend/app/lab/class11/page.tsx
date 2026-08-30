@@ -90,7 +90,7 @@ export default function Class11LabPage() {
           <Link key={lab.id} href={`/lab/${lab.id}`} className="block group">
             <div className="elev-1 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-200 hover:elev-2 p-4 h-full flex flex-col">
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: "${lab.color}18" }}>
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${lab.color}18` }}>
                   {lab.type === "3d" && <Cuboid className="h-4 w-4" style={{ color: lab.color }} />}
                   {lab.type === "theory" && <BookOpen className="h-4 w-4" style={{ color: lab.color }} />}
                   {lab.type === "calculator" && <Calculator className="h-4 w-4" style={{ color: lab.color }} />}
@@ -101,7 +101,7 @@ export default function Class11LabPage() {
                 </div>
               </div>
               <div className="mt-3 flex items-center justify-between">
-                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ borderColor: "${lab.color}40", color: lab.color, backgroundColor: "${lab.color}10" }}>{lab.unit ?? lab.type}</span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ borderColor: `${lab.color}40`, color: lab.color, backgroundColor: `${lab.color}10` }}>{lab.unit ?? lab.type}</span>
                 <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${lab.status === "premium" ? "bg-amber-100 text-amber-700 dark:bg-amber-950/20 dark:text-amber-400" : lab.status === "new" ? "bg-blue-100 text-blue-700 dark:bg-blue-950/20 dark:text-blue-400" : "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/20 dark:text-emerald-400"}`}>
                   {lab.status === "premium" ? "Premium" : lab.status === "new" ? "New" : lab.status === "development" ? "Dev" : "Active"}
                 </span>
