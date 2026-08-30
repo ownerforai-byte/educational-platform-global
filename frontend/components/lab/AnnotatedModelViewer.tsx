@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Line, Html, OrbitControls } from "@react-three/drei";
 import gsap from "gsap";
 import * as THREE from "three";
+import { MathDisplay, MathInline } from "../content/MathRenderer";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -15,6 +16,7 @@ interface Annotation {
   description?: string;
   color?: string;
   quizQuestion?: QuizQuestion;
+  mathContent?: string;
 }
 
 interface QuizQuestion {
@@ -50,9 +52,9 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "icosahedron",
     color: "#6366f1",
     annotations: [
-      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "Vertex A", description: "Top vertex", color: "#f59e0b" },
-      { id: "2", position: [-1.5, -0.5, 1.2] as [number, number, number], label: "Edge B", description: "Golden ratio edge", color: "#10b981" },
-      { id: "3", position: [0, -1.8, -1] as [number, number, number], label: "Face C", description: "Triangular face", color: "#ef4444" },
+      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "Vertex A", description: "Top vertex", color: "#f59e0b", mathContent: "V = \\frac{5(3+\\sqrt{5})}{12}a^3" },
+      { id: "2", position: [-1.5, -0.5, 1.2] as [number, number, number], label: "Edge B", description: "Golden ratio edge", color: "#10b981", mathContent: "\\phi = \\frac{1+\\sqrt{5}}{2}" },
+      { id: "3", position: [0, -1.8, -1] as [number, number, number], label: "Face C", description: "Triangular face", color: "#ef4444", mathContent: "A = \\frac{\\sqrt{3}}{4}a^2" },
     ],
   },
   {
@@ -60,8 +62,8 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "torus",
     color: "#10b981",
     annotations: [
-      { id: "1", position: [2, 0, 0] as [number, number, number], label: "Outer Ring", description: "Major radius", color: "#f59e0b" },
-      { id: "2", position: [0, 0, 2] as [number, number, number], label: "Tube Cross-section", description: "Minor radius", color: "#6366f1" },
+      { id: "1", position: [2, 0, 0] as [number, number, number], label: "Outer Ring", description: "Major radius R", color: "#f59e0b", mathContent: "V = 2\\pi^2 Rr^2" },
+      { id: "2", position: [0, 0, 2] as [number, number, number], label: "Tube Cross-section", description: "Minor radius r", color: "#6366f1", mathContent: "A = 4\\pi^2 Rr" },
     ],
   },
   {
@@ -69,9 +71,9 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "cube",
     color: "#ef4444",
     annotations: [
-      { id: "1", position: [1, 1, 1] as [number, number, number], label: "Corner Vertex", description: "8 vertices total", color: "#f59e0b" },
-      { id: "2", position: [0, 1, 0] as [number, number, number], label: "Edge", description: "12 edges total", color: "#10b981" },
-      { id: "3", position: [0, 0, 1] as [number, number, number], label: "Face", description: "6 faces total", color: "#6366f1" },
+      { id: "1", position: [1, 1, 1] as [number, number, number], label: "Corner Vertex", description: "8 vertices total", color: "#f59e0b", mathContent: "V = s^3" },
+      { id: "2", position: [0, 1, 0] as [number, number, number], label: "Edge", description: "12 edges total", color: "#10b981", mathContent: "L = 12s" },
+      { id: "3", position: [0, 0, 1] as [number, number, number], label: "Face", description: "6 faces total", color: "#6366f1", mathContent: "A = 6s^2" },
     ],
   },
   {
@@ -79,8 +81,8 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "sphere",
     color: "#8b5cf6",
     annotations: [
-      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "North Pole", description: "Top of sphere", color: "#f59e0b" },
-      { id: "2", position: [1.5, 0, 0] as [number, number, number], label: "Equator", description: "Midline circle", color: "#10b981" },
+      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "North Pole", description: "Top of sphere", color: "#f59e0b", mathContent: "V = \\frac{4}{3}\\pi r^3" },
+      { id: "2", position: [1.5, 0, 0] as [number, number, number], label: "Equator", description: "Midline circle", color: "#10b981", mathContent: "C = 2\\pi r" },
     ],
   },
   {
@@ -88,9 +90,9 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "molecule",
     color: "#06b6d4",
     annotations: [
-      { id: "1", position: [0, 0, 0] as [number, number, number], label: "Oxygen", description: "Central atom", color: "#ef4444" },
-      { id: "2", position: [-1.2, 0.8, 0] as [number, number, number], label: "Hydrogen 1", description: "Bond angle 104.5°", color: "#f59e0b" },
-      { id: "3", position: [1.2, 0.8, 0] as [number, number, number], label: "Hydrogen 2", description: "Polar molecule", color: "#3b82f6" },
+      { id: "1", position: [0, 0, 0] as [number, number, number], label: "Oxygen", description: "Central atom", color: "#ef4444", mathContent: "\\angle HOH = 104.5°" },
+      { id: "2", position: [-1.2, 0.8, 0] as [number, number, number], label: "Hydrogen 1", description: "Bond angle 104.5°", color: "#f59e0b", mathContent: "d_{OH} = 0.96\\text{Å}" },
+      { id: "3", position: [1.2, 0.8, 0] as [number, number, number], label: "Hydrogen 2", description: "Polar molecule", color: "#3b82f6", mathContent: "\\mu = 1.85\\text{D}" },
     ],
   },
   {
@@ -98,8 +100,8 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "cylinder",
     color: "#f59e0b",
     annotations: [
-      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "Top Circle", description: "Base radius r", color: "#6366f1" },
-      { id: "2", position: [0, 0, 0] as [number, number, number], label: "Height", description: "Axis height h", color: "#10b981" },
+      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "Top Circle", description: "Base radius r", color: "#6366f1", mathContent: "A_{base} = \\pi r^2" },
+      { id: "2", position: [0, 0, 0] as [number, number, number], label: "Height", description: "Axis height h", color: "#10b981", mathContent: "V = \\pi r^2 h" },
     ],
   },
   {
@@ -107,8 +109,8 @@ const MODEL_PRESETS: ModelPreset[] = [
     type: "cone",
     color: "#ec4899",
     annotations: [
-      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "Apex", description: "Top point", color: "#f59e0b" },
-      { id: "2", position: [1, 0, 0] as [number, number, number], label: "Base Radius", description: "r", color: "#6366f1" },
+      { id: "1", position: [0, 1.5, 0] as [number, number, number], label: "Apex", description: "Top point", color: "#f59e0b", mathContent: "V = \\frac{1}{3}\\pi r^2 h" },
+      { id: "2", position: [1, 0, 0] as [number, number, number], label: "Base Radius", description: "r", color: "#6366f1", mathContent: "l = \\sqrt{r^2 + h^2}" },
     ],
   },
 ];
@@ -408,7 +410,9 @@ function QuizModal({
             ✕
           </button>
         </div>
-        <p style={{ fontSize: "14px", marginBottom: "16px", lineHeight: 1.5 }}>{question.question}</p>
+        <p style={{ fontSize: "14px", marginBottom: "16px", lineHeight: 1.5 }}>
+          <MathInline expression={question.question} />
+        </p>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {question.options.map((option, index) => (
             <button
@@ -426,14 +430,16 @@ function QuizModal({
                 transition: "all 0.2s",
               }}
             >
-              {option}
+              <MathInline expression={option} />
             </button>
           ))}
         </div>
         {showResult && (
           <div style={{ marginTop: "16px", padding: "12px", borderRadius: "8px", background: isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)", fontSize: "12px" }}>
             <strong>{selected === question.correctAnswer ? "✓ Correct!" : "✗ Incorrect"}</strong>
-            <p style={{ margin: "8px 0 0", opacity: 0.8 }}>{question.explanation}</p>
+            <p style={{ margin: "8px 0 0", opacity: 0.8 }}>
+              <MathInline expression={question.explanation} />
+            </p>
           </div>
         )}
       </div>
@@ -501,6 +507,11 @@ function WalkthroughOverlay({
       </div>
       <h3 style={{ margin: "0 0 8px", fontSize: "16px", fontWeight: 600 }}>{currentAnnotation?.label}</h3>
       <p style={{ margin: "0 0 16px", fontSize: "13px", opacity: 0.8, lineHeight: 1.5 }}>{currentAnnotation?.description}</p>
+      {currentAnnotation?.mathContent && (
+        <div style={{ marginBottom: "16px", padding: "12px", background: "rgba(99, 102, 241, 0.1)", borderRadius: "8px" }}>
+          <MathDisplay expression={currentAnnotation.mathContent} />
+        </div>
+      )}
       <div style={{ display: "flex", gap: "8px", justifyContent: "center" }}>
         <button
           onClick={onPrev}
@@ -825,6 +836,7 @@ export function AnnotatedModelViewer({
   }, [currentPreset, annotations, theme, explodedView]);
 
   const isDark = theme === "dark";
+  const activeAnnotationData = annotations.find((a) => a.id === activeAnnotation);
 
   return (
     <div
@@ -1059,11 +1071,16 @@ export function AnnotatedModelViewer({
           textAlign: "center",
         }}>
           <div style={{ fontWeight: 600, fontSize: "14px" }}>
-            {annotations.find((a) => a.id === activeAnnotation)?.label}
+            {activeAnnotationData?.label}
           </div>
           <div style={{ fontSize: "12px", color: isDark ? "#94a3b8" : "#64748b", marginTop: "4px" }}>
-            {annotations.find((a) => a.id === activeAnnotation)?.description}
+            {activeAnnotationData?.description}
           </div>
+          {activeAnnotationData?.mathContent && (
+            <div style={{ marginTop: "8px", padding: "8px", background: "rgba(99, 102, 241, 0.1)", borderRadius: "6px" }}>
+              <MathInline expression={activeAnnotationData.mathContent} />
+            </div>
+          )}
           <div style={{ fontSize: "11px", color: isDark ? "#64748b" : "#94a3b8", marginTop: "8px" }}>
             Press <kbd style={{ background: "rgba(99,102,241,0.3)", padding: "2px 4px", borderRadius: "4px" }}>Enter</kbd> to measure
           </div>

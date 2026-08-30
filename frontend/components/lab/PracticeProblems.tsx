@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MathDisplay, MathInline } from "../content/MathRenderer";
 
 interface Problem {
   id: string;
@@ -66,6 +67,24 @@ const PROBLEMS: Problem[] = [
     explanation: "2x² = 8 → x² = 4 → x = ±2",
     difficulty: "Medium",
     topic: "Algebra",
+  },
+  {
+    id: "7",
+    question: "Evaluate: lim(x→0) sin(x)/x",
+    options: ["0", "1", "∞", "undefined"],
+    correctAnswer: 1,
+    explanation: "This is a fundamental limit: lim(x→0) sin(x)/x = 1",
+    difficulty: "Medium",
+    topic: "Calculus",
+  },
+  {
+    id: "8",
+    question: "Find the determinant of [[2,3],[1,4]]",
+    options: ["5", "11", "-5", "8"],
+    correctAnswer: 0,
+    explanation: "det = (2)(4) - (3)(1) = 8 - 3 = 5",
+    difficulty: "Medium",
+    topic: "Linear Algebra",
   },
 ];
 
@@ -160,7 +179,9 @@ export function PracticeProblems({ theme = "dark" }: { theme?: "dark" | "light" 
         </span>
       </div>
 
-      <h3 style={{ margin: "0 0 16px", fontSize: "16px", lineHeight: 1.5 }}>{problem.question}</h3>
+      <h3 style={{ margin: "0 0 16px", fontSize: "16px", lineHeight: 1.5 }}>
+        <MathInline expression={problem.question} />
+      </h3>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "16px" }}>
         {problem.options.map((option, index) => (
@@ -180,7 +201,7 @@ export function PracticeProblems({ theme = "dark" }: { theme?: "dark" | "light" 
               transition: "all 0.2s",
             }}
           >
-            {option}
+            <MathInline expression={option} />
           </button>
         ))}
       </div>
@@ -193,7 +214,8 @@ export function PracticeProblems({ theme = "dark" }: { theme?: "dark" | "light" 
           fontSize: "13px",
           marginBottom: "16px",
         }}>
-          <strong>Explanation:</strong> {problem.explanation}
+          <strong>Explanation:</strong>{" "}
+          <MathInline expression={problem.explanation} />
         </div>
       )}
 
