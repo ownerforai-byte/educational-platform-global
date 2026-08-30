@@ -6,6 +6,7 @@ import { getTopicMindmap } from "@/features/mindmap/queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
+import { ContentTabs } from "@/components/content/content-tabs";
 import type { NotesTrack } from "@/lib/imported-notes";
 
 function isNotesTrack(value: string): value is NotesTrack {
@@ -104,29 +105,13 @@ export async function TopicDetailView({
         source={mindmap.source}
       />
 
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xl font-semibold tracking-tight">Notes for this syllabus topic</h3>
-          {isNotesTrack(classSlug) && (
-            <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-700 border border-green-200">
-              ✓ Available
-            </span>
-          )}
-        </div>
-        {isNotesTrack(classSlug) ? (
-          <ImportedNotesSection
-            subject={subjectSlug}
-            unitId={unitId}
-            topicTitle={topic.title}
-            target={classSlug}
-          />
-        ) : (
-          <EmptyState
-            title="No notes yet"
-            description="Notes for this topic will appear here once they are mapped to the official syllabus."
-          />
-        )}
-      </div>
+      <ContentTabs
+        classSlug={classSlug}
+        subjectSlug={subjectSlug}
+        unitId={unitId}
+        topicSlug={topic.slug}
+        unit={unit}
+      />
 
       <Link
         href={`${basePath}/chapters/${unit.id}`}

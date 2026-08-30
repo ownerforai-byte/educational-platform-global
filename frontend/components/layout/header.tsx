@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import {
-  Menu,
   GraduationCap,
   CircleUser,
   LogOut,
   User,
-  Search,
   Sparkles,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -25,7 +23,11 @@ import {
 import { CreditBadge } from "./credit-badge";
 import { GlobalSearch } from "./global-search";
 
-export function Header() {
+interface HeaderProps {
+  children?: React.ReactNode;
+}
+
+export function Header({ children }: HeaderProps) {
   const { user, refresh } = useSession();
   const isLoggedIn = !!user;
 
@@ -36,17 +38,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/50">
-      <div className="mx-auto flex h-12 md:h-14 max-w-[1440px] items-center gap-2 px-4 md:px-6">
-        {/* Logo area */}
+      <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
+        {/* Left section: children (mobile toggle) + logo */}
         <div className="flex items-center gap-2 min-w-0">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="shrink-0 h-8 w-8 rounded-xl md:hidden"
-            onClick={() => window.dispatchEvent(new CustomEvent("ravikisan:toggle-sidebar"))}
-          >
-            <Menu className="h-5 w-5" />
-          </Button>
+          {children}
           <Link
             href="/"
             className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
