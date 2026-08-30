@@ -19,6 +19,68 @@ import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
+// Strip weird chars, normalise whitespace, and render inline markdown-ish links as clickable
+function renderMessageContent(raw: string): React.ReactNode {
+  // Remove stray noise characters
+  const cleaned = raw
+    .replace(/[*\/`~#>_\[\](){}|\\^%\$@!][*`~#>_\[\](){}|\\^%\$@!]{0,2}/g, (m) => {
+      // Keep single * or / or _ only if they look like markdown emphasis
+      if (/^\s*[/*_]\s*$/.test(m)) return m;
+      return "";
+    })
+    .replace(/[^\w\s.,!?;:'"()\n\r\-–—\/@#.]/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  // Split by newlines and find inline links [text](url)
+  const lines = cleaned.split(/\n/);
+  const elements: React.ReactNode[] = [];
+
+  const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const parts: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = linkRegex.exec(line)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(line.slice(lastIndex, match.index));
+      }
+      parts.push(
+        <a
+          key={match.index}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-1 mb-1 px-2 py-0.5 rounded text-xs font-mono bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
+        >
+          🔗 {match[1]}
+        </a>
+      );
+      lastIndex = match.index + match[0].length;
+    }
+
+    if (parts.length > 0) {
+      if (lastIndex < line.length) {
+        parts.push(line.slice(lastIndex));
+      }
+      elements.push(
+        <div key={i} className="leading-relaxed">
+          {parts}
+        </div>
+      );
+    } else if (line.trim()) {
+      elements.push(<div key={i} className="leading-relaxed">{line}</div>);
+    } else {
+      elements.push(<div key={i} className="h-2" />);
+    }
+  }
+
+  return elements;
+}
+
 const MAX_GUEST_MESSAGES = 7;
 
 const SUGGESTIONS = [
@@ -180,11 +242,13 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           {visibleMessages.map((m, i) => (
             <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm whitespace-pre-wrap leading-relaxed ${
+                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                   m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
                 }`}
               >
-                {m.content}
+                {m.role === "user"
+                  ? m.content
+                  : renderMessageContent(m.content)}
               </div>
             </div>
           ))}
