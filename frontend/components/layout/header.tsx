@@ -36,32 +36,32 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/50">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-3 px-4 md:px-6">
+      <div className="mx-auto flex h-12 md:h-14 max-w-[1440px] items-center gap-2 px-4 md:px-6">
         {/* Logo area */}
-        <div className="flex items-center gap-2.5 min-w-0 shrink">
+        <div className="flex items-center gap-2 min-w-0">
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden shrink-0 h-9 w-9 rounded-xl"
+            className="shrink-0 h-8 w-8 rounded-xl md:hidden"
             onClick={() => window.dispatchEvent(new CustomEvent("ravikisan:toggle-sidebar"))}
           >
             <Menu className="h-5 w-5" />
           </Button>
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2.5 rounded-xl px-2 py-1.5 transition-all hover:bg-muted/60 group"
+            className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
-              <GraduationCap className="h-5 w-5 text-white" />
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
+              <GraduationCap className="h-4 w-4 text-white" />
             </div>
-            <span className="hidden sm:block text-base font-bold tracking-tight text-foreground">
-              Ravikisan's Platform
+            <span className="hidden sm:block text-sm font-bold tracking-tight text-foreground whitespace-nowrap">
+              Ravikisan&apos;s Platform
             </span>
           </Link>
         </div>
 
         {/* Center spacer with search */}
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center min-w-0 px-2">
           <GlobalSearch />
         </div>
 
@@ -73,11 +73,12 @@ export function Header() {
 
           <Link
             href="/chat"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 h-9 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-sm font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap"
             title="Ask the AI study assistant"
           >
-            <Sparkles className="h-4 w-4" />
-            <span>AI Tutor</span>
+            <Sparkles className="h-3.5 w-3.5" />
+            <span className="hidden xs:inline">AI Tutor</span>
+            <span className="xs:hidden">AI</span>
           </Link>
 
           <div className="ml-1 h-4 w-px bg-border/60" />
