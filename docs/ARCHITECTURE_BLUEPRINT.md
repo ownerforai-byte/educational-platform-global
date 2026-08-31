@@ -234,7 +234,6 @@ ravikishan/
 │   │   │   ├── credit-badge.tsx
 │   │   │   ├── footer.tsx
 │   │   │   ├── global-search.tsx
-│   │   │   ├── header.tsx
 │   │   │   ├── mobile-nav.tsx
 │   │   │   ├── sidebar-navigation.tsx
 │   │   │   └── subject-search.tsx
@@ -319,6 +318,8 @@ ravikishan/
 │   │   ├── lab-registry.tsx
 │   │   ├── lab-types.ts
 │   │   ├── math-expression.ts
+│   │   ├── misconception-questions-chemistry.ts
+│   │   ├── misconception-questions.ts
 │   │   ├── pyq-bank.ts
 │   │   ├── queries.ts
 │   │   ├── syllabus-history.ts

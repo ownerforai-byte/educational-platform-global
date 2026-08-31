@@ -135,8 +135,9 @@ Task: $task" --dangerously-skip-permissions
 Task: $task"
       ;;
     kilocode)
-      # kilo run takes the prompt as a positional message (no --task/--rules flags)
-      timeout 600 kilo run "$rules
+      # kilo run takes the prompt as a positional message (no --task/--rules flags).
+      # --auto auto-approves permissions so headless/CI runs can write files.
+      timeout 600 kilo run --auto "$rules
 
 Task: $task"
       ;;

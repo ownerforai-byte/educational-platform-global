@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
 import { ImportedNotesSection } from "@/components/content/imported-notes-section";
 import { BackButton } from "@/components/navigation/back-button";

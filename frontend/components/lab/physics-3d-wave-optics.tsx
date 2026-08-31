@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 /**
  * Wave Optics suite — labelled 3D simulations for NEB Physics XII:

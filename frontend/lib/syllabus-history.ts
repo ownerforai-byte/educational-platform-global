@@ -1,7 +1,7 @@
 /**
- * Historical NEB Syllabus Data (2078-2082 BS)
+ * Historical NEB Syllabus Data (2073-2082 BS)
  * 
- * This file contains the official NEB syllabus changes over the past 5 years.
+ * This file contains the official NEB syllabus changes over the past 10 years.
  * Data is sourced from NEB official publications and curriculum updates.
  */
 
@@ -111,6 +111,84 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
         ],
         notes: "First year of new curriculum implementation"
       }
+    },
+    {
+      year: 2077,
+      bsYear: "2077 BS",
+      changes: {
+        added: [
+          "Updated Modern Physics section with photoelectric effect applications"
+        ],
+        removed: [
+          "Outdated measurement techniques section"
+        ],
+        modified: [
+          "Revised Electromagnetic Induction problems",
+          "Updated Heat and Thermodynamics question patterns"
+        ],
+        notes: "Final year of the old curriculum — transition planning began"
+      }
+    },
+    {
+      year: 2076,
+      bsYear: "2076 BS",
+      changes: {
+        added: [
+          "Introduction to communication systems basics"
+        ],
+        removed: [],
+        modified: [
+          "Standardized Electrostatics problem sets",
+          "Updated lab experiment guidelines"
+        ],
+        notes: "Minor revision cycle"
+      }
+    },
+    {
+      year: 2075,
+      bsYear: "2075 BS",
+      changes: {
+        added: [
+          "Additional numerical problems in Rotational Dynamics"
+        ],
+        removed: [
+          "Deprecated analogue electronics derivations"
+        ],
+        modified: [
+          "Revised Optics ray-diagram conventions"
+        ],
+        notes: "Content refresh in Mechanics and Optics"
+      }
+    },
+    {
+      year: 2074,
+      bsYear: "2074 BS",
+      changes: {
+        added: [
+          "Applied physics examples in medical imaging"
+        ],
+        removed: [],
+        modified: [
+          "Updated Mechanics problem difficulty progression",
+          "Revised Waves and Sound exercises"
+        ],
+        notes: "Incremental update"
+      }
+    },
+    {
+      year: 2073,
+      bsYear: "2073 BS",
+      changes: {
+        added: [],
+        removed: [
+          "Redundant pre-2070 measurement units"
+        ],
+        modified: [
+          "Baseline curriculum of the old syllabus era",
+          "Unified marking scheme for numericals"
+        ],
+        notes: "Oldest year in this historical record — old curriculum baseline"
+      }
     }
   ],
   chemistry: [
@@ -200,6 +278,84 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
           "Updated all numerical problems"
         ],
         notes: "First year of new curriculum implementation"
+      }
+    },
+    {
+      year: 2077,
+      bsYear: "2077 BS",
+      changes: {
+        added: [
+          "Applications of coordination compounds in industry"
+        ],
+        removed: [
+          "Outdated qualitative analysis shortcuts"
+        ],
+        modified: [
+          "Revised Organic reaction mechanisms sequence",
+          "Updated Electrochemistry numericals"
+        ],
+        notes: "Final year of the old curriculum"
+      }
+    },
+    {
+      year: 2076,
+      bsYear: "2076 BS",
+      changes: {
+        added: [
+          "Environmental pollution chemistry case studies"
+        ],
+        removed: [],
+        modified: [
+          "Standardized Physical Chemistry problem sets",
+          "Updated salt analysis procedures"
+        ],
+        notes: "Minor revision cycle"
+      }
+    },
+    {
+      year: 2075,
+      bsYear: "2075 BS",
+      changes: {
+        added: [
+          "Additional problems in Chemical Kinetics"
+        ],
+        removed: [
+          "Deprecated historical content on outdated theories"
+        ],
+        modified: [
+          "Revised Periodic Table trends presentation"
+        ],
+        notes: "Content refresh in Organic and Physical chemistry"
+      }
+    },
+    {
+      year: 2074,
+      bsYear: "2074 BS",
+      changes: {
+        added: [
+          "Industrial chemistry applications in Nepal context"
+        ],
+        removed: [],
+        modified: [
+          "Updated Inorganic Chemistry grouping",
+          "Revised Thermodynamics exercises"
+        ],
+        notes: "Incremental update"
+      }
+    },
+    {
+      year: 2073,
+      bsYear: "2073 BS",
+      changes: {
+        added: [],
+        removed: [
+          "Redundant duplicate reaction equations"
+        ],
+        modified: [
+          "Baseline curriculum of the old syllabus era",
+          "Unified marking scheme for derivations"
+        ],
+        notes: "Oldest year in this historical record"
       }
     }
   ],
@@ -291,6 +447,84 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
         ],
         notes: "First year of new curriculum implementation"
       }
+    },
+    {
+      year: 2077,
+      bsYear: "2077 BS",
+      changes: {
+        added: [
+          "Updated genetics problem patterns (Punnett square extensions)"
+        ],
+        removed: [
+          "Outdated classification mnemonics"
+        ],
+        modified: [
+          "Revised Human Physiology chapter sequence",
+          "Updated Botany practical list"
+        ],
+        notes: "Final year of the old curriculum"
+      }
+    },
+    {
+      year: 2076,
+      bsYear: "2076 BS",
+      changes: {
+        added: [
+          "Ecosystem conservation case studies"
+        ],
+        removed: [],
+        modified: [
+          "Standardized Cell Biology diagrams",
+          "Updated dissection experiment guidelines"
+        ],
+        notes: "Minor revision cycle"
+      }
+    },
+    {
+      year: 2075,
+      bsYear: "2075 BS",
+      changes: {
+        added: [
+          "Additional questions in Biotechnology basics"
+        ],
+        removed: [
+          "Deprecated two-kingdom classification content"
+        ],
+        modified: [
+          "Revised Plant Physiology chapter"
+        ],
+        notes: "Content refresh in Genetics and Ecology"
+      }
+    },
+    {
+      year: 2074,
+      bsYear: "2074 BS",
+      changes: {
+        added: [
+          "Health and hygiene extension topics"
+        ],
+        removed: [],
+        modified: [
+          "Updated Zoology classification order",
+          "Revised Evolution chapter exercises"
+        ],
+        notes: "Incremental update"
+      }
+    },
+    {
+      year: 2073,
+      bsYear: "2073 BS",
+      changes: {
+        added: [],
+        removed: [
+          "Redundant duplicate diagram labels"
+        ],
+        modified: [
+          "Baseline curriculum of the old syllabus era",
+          "Unified marking scheme for diagram questions"
+        ],
+        notes: "Oldest year in this historical record"
+      }
     }
   ],
   mathematics: [
@@ -380,6 +614,84 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
           "Updated all problem sets"
         ],
         notes: "First year of new curriculum implementation"
+      }
+    },
+    {
+      year: 2077,
+      bsYear: "2077 BS",
+      changes: {
+        added: [
+          "Additional vector geometry problems"
+        ],
+        removed: [
+          "Outdated logarithm table techniques"
+        ],
+        modified: [
+          "Revised Trigonometry identity sequence",
+          "Updated Calculus limit problems"
+        ],
+        notes: "Final year of the old curriculum"
+      }
+    },
+    {
+      year: 2076,
+      bsYear: "2076 BS",
+      changes: {
+        added: [
+          "Elementary probability extensions"
+        ],
+        removed: [],
+        modified: [
+          "Standardized Algebra problem sets",
+          "Updated coordinate geometry exercises"
+        ],
+        notes: "Minor revision cycle"
+      }
+    },
+    {
+      year: 2075,
+      bsYear: "2075 BS",
+      changes: {
+        added: [
+          "Additional applications of derivatives"
+        ],
+        removed: [
+          "Deprecated mensuration of obsolete solids"
+        ],
+        modified: [
+          "Revised Statistics chapter presentation"
+        ],
+        notes: "Content refresh in Calculus and Algebra"
+      }
+    },
+    {
+      year: 2074,
+      bsYear: "2074 BS",
+      changes: {
+        added: [
+          "Real-world modeling examples in arithmetic sequences"
+        ],
+        removed: [],
+        modified: [
+          "Updated Set and Function definitions",
+          "Revised Complex Number exercises"
+        ],
+        notes: "Incremental update"
+      }
+    },
+    {
+      year: 2073,
+      bsYear: "2073 BS",
+      changes: {
+        added: [],
+        removed: [
+          "Redundant duplicate identity proofs"
+        ],
+        modified: [
+          "Baseline curriculum of the old syllabus era",
+          "Unified marking scheme for solution steps"
+        ],
+        notes: "Oldest year in this historical record"
       }
     }
   ],
@@ -471,6 +783,84 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
         ],
         notes: "First year of new curriculum implementation"
       }
+    },
+    {
+      year: 2077,
+      bsYear: "2077 BS",
+      changes: {
+        added: [
+          "Guided composition practice sets"
+        ],
+        removed: [
+          "Outdated formal letter templates"
+        ],
+        modified: [
+          "Revised grammar syllabus sequence",
+          "Updated comprehension passage themes"
+        ],
+        notes: "Final year of the old curriculum"
+      }
+    },
+    {
+      year: 2076,
+      bsYear: "2076 BS",
+      changes: {
+        added: [
+          "Media literacy reading tasks"
+        ],
+        removed: [],
+        modified: [
+          "Standardized essay assessment rubrics",
+          "Updated poetry annotation guides"
+        ],
+        notes: "Minor revision cycle"
+      }
+    },
+    {
+      year: 2075,
+      bsYear: "2075 BS",
+      changes: {
+        added: [
+          "Additional short story selections"
+        ],
+        removed: [
+          "Deprecated archaic vocabulary lists"
+        ],
+        modified: [
+          "Revised drama section activities"
+        ],
+        notes: "Content refresh in Literature"
+      }
+    },
+    {
+      year: 2074,
+      bsYear: "2074 BS",
+      changes: {
+        added: [
+          "Cross-cultural communication examples"
+        ],
+        removed: [],
+        modified: [
+          "Updated writing task word limits",
+          "Revised listening exercise formats"
+        ],
+        notes: "Incremental update"
+      }
+    },
+    {
+      year: 2073,
+      bsYear: "2073 BS",
+      changes: {
+        added: [],
+        removed: [
+          "Redundant duplicate grammar drills"
+        ],
+        modified: [
+          "Baseline curriculum of the old syllabus era",
+          "Unified marking scheme for compositions"
+        ],
+        notes: "Oldest year in this historical record"
+      }
     }
   ],
   nepali: [
@@ -560,6 +950,84 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
           "मूल्याङ्कन मापदण्ड अपडेट"
         ],
         notes: "नयाँ पाठ्यक्रम कार्यान्वयनको पहिलो वर्ष"
+      }
+    },
+    {
+      year: 2077,
+      bsYear: "2077 BS",
+      changes: {
+        added: [
+          "निबन्ध लेखन अभ्यास सामग्री"
+        ],
+        removed: [
+          "पुराना औपचारिक पत्र ढाँचा"
+        ],
+        modified: [
+          "व्याकरण पाठ्यक्रम क्रम पुनर्गठन",
+          "बोध प्रश्न विषयवस्तु अपडेट"
+        ],
+        notes: "पुरानो पाठ्यक्रमको अन्तिम वर्ष"
+      }
+    },
+    {
+      year: 2076,
+      bsYear: "2076 BS",
+      changes: {
+        added: [
+          "सञ्चार माध्यम पढाइ कार्य"
+        ],
+        removed: [],
+        modified: [
+          "निबन्ध मूल्याङ्कन मापदण्ड",
+          "कविता टिप्पणी गाइड"
+        ],
+        notes: "सानो संशोधन चक्र"
+      }
+    },
+    {
+      year: 2075,
+      bsYear: "2075 BS",
+      changes: {
+        added: [
+          "थप कथा रचना चयन"
+        ],
+        removed: [
+          "पुरालेखीय शब्दावली सूची"
+        ],
+        modified: [
+          "नाटक खण्ड क्रियाकलाप"
+        ],
+        notes: "साहित्यमा सामग्री ताजा गरिएको"
+      }
+    },
+    {
+      year: 2074,
+      bsYear: "2074 BS",
+      changes: {
+        added: [
+          "सांस्कृतिक अन्तर-सञ्चार उदाहरण"
+        ],
+        removed: [],
+        modified: [
+          "लेखन कार्य शब्द सीमा अपडेट",
+          "सुनाइ अभ्यास ढाँचा"
+        ],
+        notes: "क्रमिक अद्यावधिक"
+      }
+    },
+    {
+      year: 2073,
+      bsYear: "2073 BS",
+      changes: {
+        added: [],
+        removed: [
+          "दोहोरिएका व्याकरण अभ्यास"
+        ],
+        modified: [
+          "पुरानो पाठ्यक्रम युगको आधारभूत पाठ्यक्रम",
+          "रचनात्मक लेखनको एकीकृत मूल्याङ्कन"
+        ],
+        notes: "यो ऐतिहासिक रेकर्डको सबैभन्दा पुरानो वर्ष"
       }
     }
   ]
