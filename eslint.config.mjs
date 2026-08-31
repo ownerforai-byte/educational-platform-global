@@ -24,7 +24,7 @@ export default defineConfig([
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  nextPlugin.flatConfig.recommended,
+  nextPlugin.configs["core-web-vitals"],
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: {
@@ -46,6 +46,7 @@ export default defineConfig([
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
       "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
