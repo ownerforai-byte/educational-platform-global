@@ -566,6 +566,9 @@ ravikishan/
 │   │   ├── 20260831_213602_generator_mistral.log
 │   │   ├── 20260831_213945_generator_mistral.log
 │   │   ├── 20260831_214406_generator_mistral.log
+│   │   ├── 20260831_215522_planner_claude.log
+│   │   ├── 20260831_215522_verifier_agnes.log
+│   │   ├── 20260831_215729_generator_mistral.log
 │   │   └── router.log
 │   ├── rules/
 │   │   ├── generator.md

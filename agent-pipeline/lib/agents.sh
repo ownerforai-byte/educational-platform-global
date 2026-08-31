@@ -18,12 +18,17 @@
 #   - `bigpickle`, `codestral` remain placeholders (no real install)
 # OmnIRoute reliably serves the same model family for each role, so the
 # role semantics are preserved.
+#
+# Verifier: primary agent is Kilocode (kilo) — an agentic CLI that reads the
+# repo itself. Fallback is agnes (one-shot chat, no file tools), which gets
+# the contents of any task-referenced files inlined into its prompt by
+# collect_task_file_contents() so it verifies real content, not guesses.
 
 declare -A ROLE_CHAIN=(
   [planner]="claude:omniroute bigpickle:bigpickle"
   [implementer]="kilocode:kilo cline:cline"
   [generator]="mistral:omniroute codestral:codestral"
-  [verifier]="agnes:agnes"
+  [verifier]="kilocode:kilo agnes:agnes"
 )
 
 # Returns the name of the first available agent for a role, or "" if none.
@@ -77,6 +82,26 @@ Does this task fall inside these rules? Answer with exactly one word: YES or NO.
   else
     echo "NO"
   fi
+}
+
+# Inlines the contents of any files referenced in the task, so prompt-only
+# agents (agnes) verify against real content instead of fabricating findings.
+collect_task_file_contents() {
+  local task="$1" out="" repo
+  repo="$(cd "$DIR/.." && pwd)"
+  local rel f
+  for rel in $(printf '%s' "$task" | grep -oE '\b[A-Za-z0-9_./-]+\.(md|env\.example|env|json|ts|js|tsx|jsx|yml|yaml|sh|txt)\b' | sort -u); do
+    for f in "$repo/$rel" "$rel" "./$rel"; do
+      if [ -f "$f" ]; then
+        out="$out
+
+--- FILE: $rel ---
+$(head -n 250 "$f")"
+        break
+      fi
+    done
+  done
+  printf '%s' "$out"
 }
 
 # Actually runs the chosen agent on the task. Customize each case to match
@@ -138,10 +163,18 @@ Task: $task" --output text --auto-approve --max-turns 10 2>/dev/null || true
 Task: $task"
       ;;
     agnes)
-      # real agnes CLI: one-shot chat via `agnes text chat --prompt` (no `test` command)
-      timeout 120 agnes text chat --prompt "$rules
+      # agnes is a one-shot chat completion with NO file-access tools — if
+      # it only gets a task description it fabricates plausible findings.
+      # Inline the contents of any files named in the task so it verifies
+      # real content (actual line numbers will reference real text).
+      local filesctx
+      filesctx=$(collect_task_file_contents "$task")
+      timeout 200 agnes text chat --prompt "$rules
 
-Task: $task"
+Task: $task
+
+Relevant file contents to verify against:
+$filesctx" --model "${AGNES_MODEL:-agnes-2.5-flash}"
       ;;
     *)
       echo "Unknown agent: $agent" >&2

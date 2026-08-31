@@ -1,5 +1,7 @@
 # Role: Verifier
-Agent: Agnes (no fallback configured — add one in lib/agents.sh if desired)
+Agents: Kilocode (kilo) — agentic, reads the repo and runs checks directly.
+        Agnes (fallback) — one-shot chat; real file contents are inlined into
+        its prompt so it verifies actual text, never guesses.
 
 ## In scope
 - Running tests, linters, type checks
