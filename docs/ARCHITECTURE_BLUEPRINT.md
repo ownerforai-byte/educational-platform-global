@@ -318,6 +318,7 @@ ravikishan/
 │   │   ├── lab-registry.tsx
 │   │   ├── lab-types.ts
 │   │   ├── math-expression.ts
+│   │   ├── misconception-questions-biology.ts
 │   │   ├── misconception-questions-chemistry.ts
 │   │   ├── misconception-questions.ts
 │   │   ├── pyq-bank.ts
@@ -582,6 +583,8 @@ ravikishan/
 │   │   ├── 20260831_224941_verifier_agnes.log
 │   │   ├── 20260831_225023_planner_claude.log
 │   │   ├── 20260831_225023_verifier_agnes.log
+│   │   ├── 20260901_003742_generator_mistral.log
+│   │   ├── 20260901_003742_implementer_kilocode.log
 │   │   └── router.log
 │   ├── rules/
 │   │   ├── generator.md
