@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
-import { Search, Atom, FlaskConical, Calculator, GraduationCap, ChevronRight, Crown, Dna } from "lucide-react";
+import { Search, Atom, FlaskConical, Calculator, GraduationCap, ChevronRight, Dna } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface LabItem {
@@ -169,16 +169,7 @@ export function LabDashboard({ labs, onSelectLab, selectedLabId, className }: La
                 <CardContent className="pt-0">
                   <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{lab.description}</p>
                   <div className="mt-2.5 flex items-center gap-2">
-                    {lab.status === "premium" && (
-                      <>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-600 border border-amber-500/20">
-                          <Crown className="h-3 w-3 mr-1" />
-                          {lab.creditCost?.toLocaleString()} credits
-                        </span>
-                        <StatusBadge variant="premium" />
-                      </>
-                    )}
-                    {lab.status && lab.status !== "premium" && (
+                    {lab.status && (
                       <StatusBadge variant={lab.status === "new" ? "coming-soon" : lab.status} />
                     )}
                   </div>

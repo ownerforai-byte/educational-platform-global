@@ -64,9 +64,9 @@ export function proxy(request: NextRequest) {
   response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "content-security-policy",
-    // 'unsafe-inline' remains for Next.js inline hydration scripts; 'unsafe-eval' removed
-    // because the codebase no longer evaluates user-supplied strings.
-    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' http://localhost:3001 https://tsvbksfegvdjwczzfdcx.supabase.co https://ravikisan-backend.onrender.com; frame-src 'none';"
+    // 'unsafe-inline' and 'unsafe-eval' are needed for Next.js dev mode (Turbopack HMR).
+    // They are not required in production builds.
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' http://localhost:3001 https://tsvbksfegvdjwczzfdcx.supabase.co https://ravikisan-backend.onrender.com; frame-src 'none';"
   );
 
   return response;
