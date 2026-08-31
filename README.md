@@ -1,3 +1,8 @@
+<!--
+  README.md — Main documentation for the Educational Platform split architecture.
+  This file describes the project structure, quick-start commands, environment variables,
+  deployment notes, API endpoints, architecture decisions, and migration status.
+-->
 # Educational Platform — Split Architecture
 
 ## Overview

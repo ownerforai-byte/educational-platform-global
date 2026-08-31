@@ -62,3 +62,6 @@ test_*.py
 
 # Legacy/quarantined code backed up during the restructure (not part of the app)
 /scripts/_stale/
+
+# Agent pipeline logs
+agent-pipeline/logs/

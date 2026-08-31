@@ -1,0 +1,5 @@
+# Shell scripts must use LF line endings — bash on any platform breaks on CRLF
+*.sh text eol=lf
+
+# Windows default handling for everything else
+* text=auto

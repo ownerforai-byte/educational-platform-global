@@ -554,6 +554,23 @@ ravikishan/
 │   └── workflows/
 │       └── ci.yml
 ├── .cursor/
+├── agent-pipeline/
+│   ├── lib/
+│   │   ├── agents.sh
+│   │   └── lock.sh
+│   ├── logs/
+│   │   ├── .gitkeep
+│   │   ├── 20260831_212245_implementer_kilocode.log
+│   │   ├── 20260831_212400_implementer_kilocode.log
+│   │   ├── 20260831_212400_planner_claude.log
+│   │   └── router.log
+│   ├── rules/
+│   │   ├── generator.md
+│   │   ├── implementer.md
+│   │   ├── planner.md
+│   │   └── verifier.md
+│   ├── README.md
+│   └── router.sh
 ├── db/
 │   ├── schema.ts
 │   └── seed.ts
