@@ -2,26 +2,32 @@
 
 A locked, rule-gated, fallback-aware pipeline across your agents.
 
-## Roles and assignments
-| Role         | Primary  | Fallback  |
-|--------------|----------|-----------|
-| planner      | Claude Code | Bigpickle |
-| implementer  | Kilocode | Cline     |
-| generator    | Mistral  | Codestral |
-| verifier     | Agnes    | (none)    |
+## Roles and assignments (division of labor)
+| Role        | Agent   | Binary/route            | Does                                            | Commits/pushes |
+|-------------|---------|-------------------------|-------------------------------------------------|----------------|
+| **overseer**| **Cline (lead)** | —              | observes, interrupts, rewrites prompts, audits, commits, pushes | ✅ **only** |
+| planner     | claude  | omniroute               | decomposes task into steps, file triage          | ❌ |
+| implementer | kilocode (kilo) | `kilo run --auto` | writes/edits full files, mirrors sample shape    | ❌ |
+| generator   | mistral | omniroute codestral     | fast boilerplate / single snippets, raw blocks   | ❌ |
+| verifier    | agnes   | `agnes text chat`       | PASS/FAIL structure+content on FULL inlined file | ❌ |
+
+## Standing rules (user mandate — codified in `rules/overseer.md`)
+- The Overseer (Cline) watches every agent's terminal/logs in real time.
+- On any drift, the Overseer INTERRUPTS the agent, writes the corrected
+  prompt into its task, and restarts it — not the other way round.
+- Every artifact is audited against real repo code before it counts.
+- **Auto-approve is enabled at all times.** The Overseer commits + pushes
+  at the end of each clean unit without asking permission. No force-push,
+  one commit per concern, conventional messages.
 
 ## Setup
 ```bash
 chmod +x router.sh lib/*.sh
 ```
 
-Then edit `lib/agents.sh`:
-- The `ROLE_CHAIN` entries map `name:binary`. `claude`, `kilo`, `cline` are
-  real installed CLI commands. `bigpickle`, `mistral`, `codestral`, `agnes`
-  are placeholders — replace with the actual command that launches each on
-  your machine (write a thin wrapper script if they're API-only).
-- The `run_agent()` function has one `case` block per agent — edit the
-  actual command-line flags to match each tool's real syntax.
+Then edit `lib/agents.sh` — the `ROLE_CHAIN` entries map `name:binary`
+(`claude`, `kilo`, `cline`, `agnes`, `omniroute` are real). `bigpickle`,
+`codestral`, `vibe` are fallbacks. Edit `run_agent()` per tool's real syntax.
 
 ## Run it
 ```bash
@@ -29,18 +35,16 @@ Then edit `lib/agents.sh`:
 ```
 
 ## What it guarantees
-- **Only one agent runs at a time** — `lib/lock.sh` uses `flock`; every
-  role acquires the same lock before doing anything and releases it right
-  after. Others simply wait.
-- **Availability fallback** — if the primary agent's CLI isn't installed
-  or isn't on PATH, the fallback for that role is used automatically. If
-  neither is available, that role is skipped and logged, not blocked.
-- **Scope gating** — before any agent acts, its own `rules/<role>.md` is
-  checked against the task (YES/NO). Out-of-scope work is skipped, not
-  forced through.
-- **Full audit trail** — every decision (activated / skipped / failed /
-  done) is appended to `logs/router.log`, with each agent's raw output in
-  its own timestamped log file.
+- **Only one agent runs at a time** — `lib/lock.sh` uses `flock` (with a
+  Windows-safe mkdir fallback); every role acquires the same lock.
+- **Availability fallback** — if the primary agent's CLI isn't on PATH,
+  the role's fallback is used; if none, the role is skipped + logged.
+- **Scope gating** — before acting, each agent's `rules/<role>.md` is
+  checked against the task (YES/NO). Out-of-scope work is skipped.
+- **Full audit trail** — every decision is appended to `logs/router.log`,
+  with each agent's raw output in its own timestamped log file.
+- **Overseer final gate** — nothing reaches git until the Overseer
+  structurally audits it (typecheck/build/log) and drives the commit.
 
 ## Wiring it to auto-fire
 This script is manual-trigger by design (you call it with a task string).
