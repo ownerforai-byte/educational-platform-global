@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 import { ArrowLeft, Cuboid, Loader2 } from "lucide-react";
 import { LAB_REGISTRY, getLabById } from "@/lib/lab-registry";
 import type { LabMeta } from "@/lib/types/lab";
+import { LabLearningSection } from "@/components/lab/learning-section";
 
 export default function LabPage() {
   const params = useParams();
@@ -135,6 +136,9 @@ export default function LabPage() {
             {typeof lab.component === "function" ? lab.component() : lab.component}
           </div>
         </div>
+
+        {/* Learning structure below the animation — proof / theory / confusions / practice */}
+        <LabLearningSection labId={lab.id} />
 
         {/* Related Labs */}
         <div className="mt-5">

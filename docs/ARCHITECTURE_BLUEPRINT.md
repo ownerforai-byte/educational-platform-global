@@ -115,6 +115,8 @@ ravikishan/
 │   │   │   ├── under-development.tsx
 │   │   │   └── video-viewer.tsx
 │   │   ├── lab/
+│   │   │   ├── annotation/
+│   │   │   │   └── …
 │   │   │   ├── chapters/
 │   │   │   │   └── …
 │   │   │   ├── class11/
@@ -163,6 +165,7 @@ ravikishan/
 │   │   │   ├── lab-workspace.tsx
 │   │   │   ├── label3d.tsx
 │   │   │   ├── leader-lines.tsx
+│   │   │   ├── learning-section.tsx
 │   │   │   ├── math-3d-geometry-labelledby.tsx
 │   │   │   ├── math-3d-syllabus-suite.tsx
 │   │   │   ├── math-3d-symbols.tsx
@@ -308,6 +311,7 @@ ravikishan/
 │   │   ├── data-loader.ts
 │   │   ├── hast-util-from-html-isomorphic.js
 │   │   ├── imported-notes.ts
+│   │   ├── lab-learning.ts
 │   │   ├── lab-registry.tsx
 │   │   ├── lab-types.ts
 │   │   ├── math-expression.ts
