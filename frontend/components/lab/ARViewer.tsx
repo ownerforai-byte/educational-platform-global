@@ -22,9 +22,9 @@ interface ARViewerProps {
 function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdded?: (obj: ARObject) => void }) {
   const [selectedObject, setSelectedObject] = useState<string | null>(null);
   const [isPlacing, setIsPlacing] = useState(false);
-  const isPresenting = useXR((s) => s.isPresenting);
+  const _isPresenting = useXR((s) => s.isPresenting);
 
-  useFrame((state, delta) => {
+  useFrame((state, _delta) => {
     if (selectedObject) {
       const obj = objects.find((o) => o.id === selectedObject);
       if (obj) {
@@ -33,7 +33,7 @@ function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdde
     }
   });
 
-  const handleTap = useCallback((event: any) => {
+  const _handleTap = useCallback((event: any) => {
     if (!isPlacing) return;
     
     const point = event.point;
@@ -112,7 +112,7 @@ function SessionTracker({ onActiveChange }: { onActiveChange: (active: boolean) 
   return null;
 }
 
-export function ARViewer({ enabled = false, onClose, initialModel }: ARViewerProps) {
+export function ARViewer({ enabled = false, onClose, initialModel: _initialModel }: ARViewerProps) {
   const [arSupported, setArSupported] = useState(false);
   const [isARActive, setIsARActive] = useState(false);
   const [objects, setObjects] = useState<ARObject[]>([]);
@@ -136,7 +136,7 @@ export function ARViewer({ enabled = false, onClose, initialModel }: ARViewerPro
     setObjects((prev) => [...prev, obj]);
   }, []);
 
-  const handleRemoveObject = useCallback((id: string) => {
+  const _handleRemoveObject = useCallback((id: string) => {
     setObjects((prev) => prev.filter((o) => o.id !== id));
   }, []);
 

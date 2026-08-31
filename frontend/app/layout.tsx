@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AppShell } from "@/components/layout/app-shell";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
 
@@ -19,7 +18,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
-            <AppShell>{children}</AppShell>
+            {children}
           </ThemeProvider>
         </QueryProvider>
       </body>

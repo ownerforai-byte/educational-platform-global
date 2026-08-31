@@ -1,5 +1,4 @@
 import { apiFetch } from "../api-client";
-import type { SessionUser } from "../../types/api";
 
 export interface UserCreditInfo {
   id: string;

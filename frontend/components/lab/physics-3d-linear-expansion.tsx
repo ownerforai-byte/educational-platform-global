@@ -16,14 +16,7 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
-import {
-  createThreeScene,
-  disposeThreeScene,
-  bindResize,
-  standardMaterial,
-  titleText,
-  type ThreeScene,
-} from "@/components/lab/three-scene";
+import { disposeThreeScene, type ThreeScene } from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
 
@@ -58,7 +51,8 @@ export const LinearExpansionExperiment: React.FC = () => {
         const errIfMisread = (1e-5 / (rodLengthM * dT)) * 1e6; // Δα (in 10⁻⁶ K⁻¹) caused by a ±0.01 mm gauge miss-read
 
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
+    const container = mountRef.current!;
+    if (!container || !webGL) return;
 
     let ts: ThreeScene | null = null;
     let unbind: (() => void) | null = null;
@@ -69,10 +63,10 @@ export const LinearExpansionExperiment: React.FC = () => {
     async function init() {
       try {
         const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText, disposeThreeScene } = mod;
-        if (!mountRef.current || cancelled) return;
+        const { createThreeScene, bindResize, standardMaterial, titleText } = mod;
+        if (!container || cancelled) return;
 
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(0.5, 4.4, 13.8),
           autoRotate: false,
           background: 0x0b1220,
@@ -212,12 +206,12 @@ export const LinearExpansionExperiment: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const mkLabel = (color: string, title: string, sub?: string) => {
             const el = document.createElement("div");
@@ -230,7 +224,7 @@ export const LinearExpansionExperiment: React.FC = () => {
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { leaderLayer = createLeaderLayer(container); } catch { leaderLayer = null; }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -266,7 +260,6 @@ export const LinearExpansionExperiment: React.FC = () => {
 
             const exg = Math.max(0.03, Math.min(2.4, deltaLmm * 0.55)) * q;
             const newLen = rodLenU + exg;
-            s.rodLenU ? null : null;
             rod.scale.y = newLen / rodLenU;
             rod.position.x = rodEnd0 + newLen / 2;
             gaugeGrp.position.x = (rodEnd0 + newLen) + 0.08;
@@ -298,7 +291,7 @@ export const LinearExpansionExperiment: React.FC = () => {
             if (leaderLayer) leaderLayer.draw(ts.camera, connections);
           }
           animate();
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
       } catch (err) {
         console.error("LinearExpansion init:", err);
       }
@@ -309,13 +302,14 @@ export const LinearExpansionExperiment: React.FC = () => {
       cancelled = true;
       unbind?.();
       if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = mountRef.current;
+      const m = container;
       if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
         m.removeChild(labelRenderer.domElement);
       }
       try { leaderLayer?.dispose?.(); } catch {}
       if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);
 
   return (

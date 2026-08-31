@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { isWebGLAvailable } from "@/lib/webgl";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
@@ -241,6 +239,7 @@ export function Vectors3D() {
       renderer.dispose();
       controls.dispose();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [v1, v2, showComponents, showResultant, showAngles]);
 
   return (
@@ -364,11 +363,6 @@ export function Optics3D() {
 
       // Lens / mirror shape
       if (mode === "convex-lens" || mode === "concave-lens") {
-        const lensGeo = new THREE.CylinderGeometry(
-          mode === "convex-lens" ? 2.5 : 0.5,
-          mode === "convex-lens" ? 2.5 : 0.5,
-          0.3, 32
-        );
         // Actually for a proper lens shape use lathe
         const points: THREE.Vector2[] = [];
         if (mode === "convex-lens") {
@@ -520,7 +514,7 @@ export function Optics3D() {
         rays.push([new THREE.Vector3(objX, objH, 0), r2end]);
 
         // Ray 3: through near focal point → parallel
-        const nearF = mode === "convex-lens" ? lensX - f * scale : lensX + Math.abs(f) * scale;
+        const _nearF = mode === "convex-lens" ? lensX - f * scale : lensX + Math.abs(f) * scale;
         const r3dir = new THREE.Vector3(lensX - objX, f * scale, 0);
         if (r3dir.length() > 0.01) {
           rays.push([new THREE.Vector3(objX, objH, 0), new THREE.Vector3(lensX, r3dir.y * (lensX - objX) / r3dir.x, 0)]);
@@ -594,6 +588,7 @@ export function Optics3D() {
       renderer.dispose();
       controls.dispose();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, objectDist, focalLen, objectHeight]);
 
   return (
@@ -827,6 +822,7 @@ export function Refraction3D() {
       renderer.dispose();
       controls.dispose();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [n1, n2, incAngle, sinRef, refAngle, tir, criticalAngle]);
 
   return (

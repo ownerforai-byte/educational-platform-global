@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 export const Class11PhysicsTheoryLawsMotion: React.FC = () => {
   return (

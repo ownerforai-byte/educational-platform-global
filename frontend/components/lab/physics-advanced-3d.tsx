@@ -47,27 +47,6 @@ function titleText(ts: ThreeScene, text: string, pos: THREE.Vector3) {
   ts.group.add(sprite);
 }
 
-function disposeThreeObject(o: THREE.Object3D) {
-  o.traverse((obj) => {
-    const anyObj = obj as any;
-    if ((obj as THREE.Mesh).geometry) (obj as THREE.Mesh).geometry.dispose();
-    if (anyObj.line?.geometry) anyObj.line.geometry.dispose();
-    if (anyObj.cone?.geometry) anyObj.cone.geometry.dispose();
-    const m = (obj as THREE.Mesh).material as THREE.Material | THREE.Material[] | undefined;
-    if (m) {
-      if (Array.isArray(m)) m.forEach((mm) => mm.dispose());
-      else m.dispose();
-    }
-  });
-}
-function disposeGroup(group: THREE.Group) {
-  while (group.children.length > 0) {
-    const child = group.children[0];
-    group.remove(child);
-    disposeThreeObject(child);
-  }
-}
-
 // ---------------------------------------------------------------------------
 // 1. Electromagnetism - magnetic field around a straight current wire
 // ---------------------------------------------------------------------------
@@ -197,7 +176,6 @@ function WaveOptics3D() {
         }
         for (let i = 0; i <= rows; i++) {
           for (let j = 0; j <= res; j++) {
-            const y = -screenH / 2 + (i / rows) * screenH;
             const x = -screenW / 2 + (j / res) * screenW;
             const d = 2.2;
             const beta = (Math.PI * d * x) / (lam * 6);
@@ -629,10 +607,9 @@ function FluidFlow() {
           const pts: THREE.Vector3[] = [];
           for (let i = 0; i < 60; i++) {
             const x = -8 + i * 0.28;
-            let y = y0;
-            const z = 0;
-            const r = Math.hypot(x, y - y0 * 0);
-            // deflection around central obstacle (origin)
+let y = y0;
+const z = 0;
+// deflection around central obstacle (origin)
             const R = Math.hypot(x, y);
             if (R > 0.4) {
               const scale = 1 + 0.16 / R;
@@ -758,7 +735,6 @@ function NBodySystem() {
         const star = new THREE.Mesh(new THREE.SphereGeometry(1.1, 40, 40), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.9 }));
         ts.group.add(star);
 
-        const colorsArr = [0x38bdf8, 0x22c55e, 0xf472b6, 0xa78bfa, 0xf97316, 0x22d3ee, 0xfacc15, 0xfb7185];
         for (let i = 0; i < N; i++) {
           const r = 2.2 + i * 0.8;
           const pl = new THREE.Mesh(new THREE.SphereGeometry(0.26 + Math.random() * 0.15, 20, 20), new THREE.MeshStandardMaterial({ color: colors[i % colors.length], emissive: colors[i % colors.length], emissiveIntensity: 0.25 }));

@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Search, X } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { search } from "@/lib/api/ai";
 import type { SearchResultItem } from "@/types/api";

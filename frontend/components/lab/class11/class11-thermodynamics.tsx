@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 export const Class11Thermodynamics: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -26,7 +26,7 @@ export const Class11Thermodynamics: React.FC = () => {
     if (processType === "isothermal") return mass * 8.314 * initialTemp * Math.log(finalTemp / initialTemp) / 0.018;
     if (processType === "adiabatic") return -mass * specificHeat * deltaT / 4.186; // Approximate
     return 0;
-  }, [processType, mass, deltaT, initialTemp, finalTemp]);
+  }, [processType, mass, deltaT, initialTemp, finalTemp, specificHeat]);
   const deltaU = useMemo(() => heatAdded - workDone, [heatAdded, workDone]);
 
   // Gas constant R = 8.314 J/(mol·K)
@@ -220,7 +220,7 @@ export const Class11Thermodynamics: React.FC = () => {
       if (ts) {
         try {
           disposeThreeScene(ts);
-        } catch (e) {}
+        } catch {}
       }
     };
   }, [initialTemp, finalTemp, mass, specificHeat, processType, showEnergy, deltaT, heatAdded, workDone, deltaU]);

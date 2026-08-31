@@ -8,7 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 // Prism 3D Component showing refraction and dispersion
 const Prism3D: React.FC = () => {
@@ -20,7 +20,8 @@ const Prism3D: React.FC = () => {
   const [showDispersion, setShowDispersion] = useState(true);
 
   useEffect(() => {
-    if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current!;
+    if (!container || !isWebGLAvailable()) return;
 
     let ts: any = null;
     let unbind: (() => void) | null = null;
@@ -32,7 +33,7 @@ const Prism3D: React.FC = () => {
       try {
         const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
         
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(0, 10, 25),
           autoRotate: false,
           background: 0x0f172a
@@ -168,12 +169,12 @@ const Prism3D: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const prismLabel = new CSS2DObject(document.createElement("div"));
           prismLabel.element.className = "label";
@@ -218,7 +219,7 @@ const Prism3D: React.FC = () => {
           angleLabel.position.set(-base/2, apexHeight/2 + 1, -height/2);
           prismGroup.add(angleLabel);
           labels.push(angleLabel);
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
 
         function animate() {
           if (cancelled) return;
@@ -241,8 +242,8 @@ const Prism3D: React.FC = () => {
     return () => {
       cancelled = true; 
       if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch (e) {}
-      if (mountRef.current) { const el = mountRef.current!.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+      if (ts) try { disposeThreeScene(ts); } catch {}
+      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
     };
   }, [prismAngle, refractiveIndex, showRays, showLabels, showDispersion]);
 

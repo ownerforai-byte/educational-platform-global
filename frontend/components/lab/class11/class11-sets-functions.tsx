@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 export const Class11SetsFunctions: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -265,7 +265,7 @@ export const Class11SetsFunctions: React.FC = () => {
       if (ts) {
         try {
           disposeThreeScene(ts);
-        } catch (e) {}
+        } catch {}
       }
     };
   }, [numElementsA, numElementsB, overlap, functionType, showSets, showFunctions, setA, setB, unionAB, intersectionAB, differenceAB]);

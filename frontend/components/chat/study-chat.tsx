@@ -24,8 +24,9 @@ import { useSession } from "@/features/auth/hooks/use-session";
 function formatAiReply(raw: string): React.ReactNode {
   // Strip stray markdown noise chars
   const cleaned = raw
+    // eslint-disable-next-line no-useless-escape -- the [ and ] must stay escaped inside the character class (ESLint false positive)
     .replace(/[*`~#>_\[\](){}|\\^%$@!]{2,}/g, " ")
-    .replace(/[^\w\s.,!?;:'"()\n\r\-–—\/@#.]/g, " ")
+    .replace(/[^\w\s.,!?;:'"()\n\r\-–—/@#.]/g, " ")
     .replace(/\s{2,}/g, " ")
     .trim();
 

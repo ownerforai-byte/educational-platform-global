@@ -3,7 +3,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ConcaveMirror3D } from "./physics-3d-mirrors-concave";
 import { ConvexMirror3D } from "./physics-3d-mirrors-convex";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+
 
 export const Physics3DMirrors: React.FC = () => {
   return (

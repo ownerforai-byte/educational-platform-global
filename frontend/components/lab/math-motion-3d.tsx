@@ -23,7 +23,6 @@ function FourierSeries3D() {
   const [autoPlay, setAutoPlay] = useState(true);
   const frameRef = useRef<number>(0);
   const timeRef = useRef(0);
-  const cancelledRef = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -164,6 +163,7 @@ function FourierSeries3D() {
     };
     const cleanup = init();
     return () => { cleanup.then((fn) => fn?.()); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numHarmonics, waveType, showCircle]);
 
   return (
@@ -243,7 +243,6 @@ function NuclearDecay3D() {
   const timeRef = useRef(0);
   const decayedRef = useRef(0);
   const nucleiRef = useRef<THREE.Group | null>(null);
-  const cancelledRef = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -332,8 +331,6 @@ function NuclearDecay3D() {
           const dt = 0.016;
           timeRef.current += dt;
           const lambda = Math.LN2 / halfLife;
-          const N_remaining = initialNuclei * Math.exp(-lambda * timeRef.current);
-          const N_decayed = initialNuclei - N_remaining;
 
           remainingMeshes.forEach((mesh, i) => {
             if (mesh.userData.decayed) return;
@@ -374,6 +371,7 @@ function NuclearDecay3D() {
     };
     const cleanup = init();
     return () => { cleanup.then((fn) => fn?.()); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialNuclei, halfLife]);
 
   const lambda = Math.LN2 / halfLife;

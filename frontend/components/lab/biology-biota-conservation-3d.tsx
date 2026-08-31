@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Wind, Shield, Activity, Mountain } from "lucide-react";
+import { Wind, Shield, Activity } from "lucide-react";
 
 type Tab = "adaptation" | "behavior" | "conservation";
 

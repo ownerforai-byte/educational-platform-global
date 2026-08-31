@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 export const ConcaveMirror3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -23,7 +23,8 @@ export const ConcaveMirror3D: React.FC = () => {
   const magnification = -imagePosition / objectPosition;
 
   useEffect(() => {
-    if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current!;
+    if (!container || !isWebGLAvailable()) return;
 
     let ts: any = null;
     let unbind: (() => void) | null = null;
@@ -33,7 +34,7 @@ export const ConcaveMirror3D: React.FC = () => {
       try {
         const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
         
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(0, 5, 15),
           autoRotate: false,
           background: 0x0f172a
@@ -181,12 +182,12 @@ export const ConcaveMirror3D: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const mirrorLabel = new CSS2DObject(document.createElement("div"));
           mirrorLabel.element.className = "label";
@@ -219,7 +220,7 @@ export const ConcaveMirror3D: React.FC = () => {
             imageGroup.add(imageLabel);
             labels.push(imageLabel);
           }
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
 
         function animate() {
           if (cancelled) return;
@@ -241,9 +242,10 @@ export const ConcaveMirror3D: React.FC = () => {
 
     return () => {
       cancelled = true; if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch (e) {}
-      if (mountRef.current) { const el = mountRef.current!.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+      if (ts) try { disposeThreeScene(ts); } catch {}
+      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focalLength, objectPosition, showRays, showLabels, showFocus]);
 
   return (

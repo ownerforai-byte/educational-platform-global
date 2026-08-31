@@ -30,7 +30,6 @@ export function Analytics({ theme = "dark" }: { theme?: "dark" | "light" }) {
 
   const overallAccuracy = Math.round(ANALYTICS_DATA.reduce((acc, d) => acc + (d.correct / d.attempts), 0) / ANALYTICS_DATA.length * 100);
   const totalAttempts = ANALYTICS_DATA.reduce((acc, d) => acc + d.attempts, 0);
-  const totalCorrect = ANALYTICS_DATA.reduce((acc, d) => acc + d.correct, 0);
   const avgTime = Math.round(ANALYTICS_DATA.reduce((acc, d) => acc + d.avgTime, 0) / ANALYTICS_DATA.length);
 
   return (

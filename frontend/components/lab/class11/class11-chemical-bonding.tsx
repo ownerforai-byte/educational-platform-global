@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 export const Class11ChemicalBonding: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export const Class11ChemicalBonding: React.FC = () => {
   const [bondLength, setBondLength] = useState(1.5);
   const [bondAngle, setBondAngle] = useState(104.5);
   const [showElectrons, setShowElectrons] = useState(true);
-  const [showOrbitals, setShowOrbitals] = useState(true);
+  const [showOrbitals, _setShowOrbitals] = useState(true);
 
   // Get molecule info
   const moleculeInfo = useMemo(() => {
@@ -141,7 +141,7 @@ export const Class11ChemicalBonding: React.FC = () => {
         const atomGroups: THREE.Group[] = [];
         const bondLines: THREE.Line[] = [];
 
-        moleculeInfo.atoms.forEach((atom: any, index: number) => {
+        moleculeInfo.atoms.forEach((atom: any, _index: number) => {
           const atomGroup = new THREE.Group();
           const atomGeo = new THREE.SphereGeometry(atom.radius, 32, 32);
           const atomMat = standardMaterial(atom.color, { 
@@ -265,7 +265,7 @@ export const Class11ChemicalBonding: React.FC = () => {
       if (ts) {
         try {
           disposeThreeScene(ts);
-        } catch (e) {}
+        } catch {}
       }
     };
   }, [bondType, moleculeType, bondLength, bondAngle, showElectrons, showOrbitals, moleculeInfo]);

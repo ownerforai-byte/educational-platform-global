@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,6 @@ import {
   ChevronsUp,
   Sparkles,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
 

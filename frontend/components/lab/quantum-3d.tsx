@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { WebGLFallback } from "@/components/lab/webgl-fallback";
+
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
@@ -532,6 +532,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
     }
     load();
     return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seriesId, showPhoton]);
 
   return (

@@ -1,15 +1,12 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 function MeaningPanel({ title, meaning, points }: { title: string; meaning: string; points: string[] }) {
   return (
@@ -80,13 +77,6 @@ function Molecule3D() {
 
         const group = new THREE.Group();
         scene.add(group);
-
-        const atoms: Record<string, { color: number; radius: number; position: [number, number, number] }> = {
-          h: { color: 0xffffff, radius: 0.3, position: [0, 0, 0] },
-          o: { color: 0xef4444, radius: 0.5, position: [0, 0, 0] },
-          c: { color: 0x64748b, radius: 0.45, position: [0, 0, 0] },
-          n: { color: 0x3b82f6, radius: 0.45, position: [0, 0, 0] },
-        };
 
         const renderMolecule = (type: string) => {
           while (group.children.length > 0) {

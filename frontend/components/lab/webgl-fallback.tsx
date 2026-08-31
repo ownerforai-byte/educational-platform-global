@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { isWebGLAvailable } from "@/lib/webgl";
 
 export function useWebGLCanvas(containerRef: React.RefObject<HTMLDivElement | null>) {

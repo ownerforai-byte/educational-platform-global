@@ -198,6 +198,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, mode, springIdx, massN, wireIdx, forceN, lenM, diaMm]);
 return (
     <div className="space-y-3">
@@ -383,6 +384,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, molecules, tempK, volumeL]);
 
   return (

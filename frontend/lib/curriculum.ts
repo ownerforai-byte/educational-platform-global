@@ -178,12 +178,6 @@ function mapTopic(t: TopicRow): Topic {
   };
 }
 
-function curriculumError(message: string, code?: string): Error {
-  const err = new Error(message) as Error & { code?: string };
-  if (code) err.code = code;
-  return err;
-}
-
 export async function getEducationLevels() {
   return [LIBRARY_LEVEL];
 }
@@ -361,7 +355,7 @@ export async function getResourceById(resourceId: string) {
   }
 }
 
-export async function getLinkedResources(resourceId: string) {
+export async function getLinkedResources(_resourceId: string) {
   return [];
 }
 

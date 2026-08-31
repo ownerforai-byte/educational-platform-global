@@ -25,10 +25,8 @@ function Pendulum3D() {
   const frameRef = useRef<number>(0);
   const timeRef = useRef(0);
   const trailRef = useRef<THREE.Line | null>(null);
-  const trailPointsRef = useRef<THREE.Vector3[]>([]);
   const bobRef = useRef<THREE.Mesh | null>(null);
   const rodRef = useRef<THREE.Group | null>(null);
-  const cancelledRef = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -269,7 +267,6 @@ function WaveSimulator3D() {
   const frameRef = useRef<number>(0);
   const timeRef = useRef(0);
   const lineRef = useRef<THREE.Line | null>(null);
-  const cancelledRef = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -393,6 +390,7 @@ function WaveSimulator3D() {
     };
     const cleanup = init();
     return () => { cleanup.then((fn) => fn?.()); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amplitude, wavelength, waveType]);
 
   const speed = frequency * wavelength;

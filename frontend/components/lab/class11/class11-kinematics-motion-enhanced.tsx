@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const Class11KinematicsMotionEnhanced: React.FC = () => {
@@ -17,7 +17,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
   const [showPath, setShowPath] = useState(true);
   const [showVectors, setShowVectors] = useState(true);
   const [showLabels, setShowLabels] = useState(true);
-  const [showTheory, setShowTheory] = useState(false);
+  const [_showTheory, _setShowTheory] = useState(false);
 
   // Calculate derived quantities
   const displacement = useMemo(() => {
@@ -34,6 +34,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
 
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current;
 
     let ts: any = null;
     let unbind: (() => void) | null = null;
@@ -43,7 +44,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
       try {
         const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
         
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container!, {
           cameraPosition: new THREE.Vector3(25, 15, 25),
           autoRotate: true,
           autoRotateSpeed: 0.3,
@@ -152,12 +153,12 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container!.clientWidth, container!.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.color = "white";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container!.appendChild(labelRenderer.domElement);
 
           // Create labels for components
           const originLabel = new CSS2DObject(document.createElement("div"));
@@ -228,7 +229,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
           ts.group.add(accelerationLabel);
           labels.push(accelerationLabel);
 
-        } catch (e) {
+        } catch {
           console.log("CSS2DRenderer not available, using fallback labels");
         }
 
@@ -359,11 +360,11 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
       if (ts) {
         try {
           disposeThreeScene(ts);
-        } catch (e) {}
+        } catch {}
       }
       // Cleanup labels
-      if (mountRef.current) {
-        const labelElements = mountRef.current!.querySelectorAll(".label");
+      if (container) {
+        const labelElements = container!.querySelectorAll(".label");
         labelElements.forEach(el => el.remove());
       }
     };

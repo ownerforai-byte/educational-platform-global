@@ -174,6 +174,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, matIdx, separationMm, volts, inserted]);
 
   return (
@@ -341,6 +342,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, knownR, unknownS, batteryV]);
 
   return (

@@ -10,7 +10,6 @@ import { PhysicsDynamics3D } from "@/components/lab/physics-dynamics-3d";
 import { Physics3DAdvanced } from "@/components/lab/physics-advanced-3d";
 import { ChemistryLab } from "@/components/lab/chemistry-lab";
 import { PhysicsLab } from "@/components/lab/physics-lab";
-import { BiologyLab } from "@/components/lab/biology-lab";
 import {
   BiologyAdvanced3D,
   BiologyEvolution3D,

@@ -259,7 +259,7 @@ const StatsTab: React.FC = () => {
 const SURFACES = {
   wave: { name: "sin x · cos y", f: (x: number, y: number) => Math.sin(x) * Math.cos(y), fx: (x: number, y: number) => Math.cos(x) * Math.cos(y), fy: (x: number, y: number) => -Math.sin(x) * Math.sin(y) },
   saddle: { name: "x² − y²", f: (x: number, y: number) => (x * x - y * y) / 3, fx: (x: number) => (2 * x) / 3, fy: (y: number) => (-2 * y) / 3 },
-  mono: { name: "x·y (saddle)", f: (x: number, y: number) => x * y / 2.5, fx: (x: number, y: number) => y / 2.5, fy: (x: number, y: number) => x / 2.5 },
+  mono: { name: "x·y (saddle)", f: (x: number, y: number) => x * y / 2.5, fx: (x: number, y: number) => y / 2.5, fy: (x: number, _y: number) => x / 2.5 },
 } as const;
 
 const CalculusTab: React.FC = () => {

@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
@@ -40,6 +40,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
 
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current;
 
     let ts: any = null;
     let unbind: (() => void) | null = null;
@@ -49,7 +50,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
       try {
         const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
         
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container!, {
           cameraPosition: new THREE.Vector3(12, 15, 18),
           autoRotate: true,
           autoRotateSpeed: 0.2,
@@ -126,12 +127,12 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container!.clientWidth, container!.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.color = "white";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container!.appendChild(labelRenderer.domElement);
 
           // Block 1 label
           const block1Label = new CSS2DObject(document.createElement("div"));
@@ -169,7 +170,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
           pulley.add(pulleyLabel);
           labels.push(pulleyLabel);
 
-        } catch (e) {
+        } catch {
           console.log("CSS2DRenderer not available");
         }
 
@@ -303,14 +304,15 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
       if (ts) {
         try {
           disposeThreeScene(ts);
-        } catch (e) {}
+        } catch {}
       }
       // Cleanup labels
-      if (mountRef.current) {
-        const labelElements = mountRef.current!.querySelectorAll(".label");
+      if (container) {
+        const labelElements = container!.querySelectorAll(".label");
         labelElements.forEach(el => el.remove());
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mass1, mass2, force, friction, showForces, showTrajectory, showLabels]);
 
   return (

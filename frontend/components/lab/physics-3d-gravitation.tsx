@@ -8,7 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 // Gravitation 3D Component showing orbital motion
 const Gravitation3D: React.FC = () => {
@@ -21,7 +21,8 @@ const Gravitation3D: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current!;
+    if (!container || !isWebGLAvailable()) return;
 
     let ts: any = null;
     let unbind: (() => void) | null = null;
@@ -33,7 +34,7 @@ const Gravitation3D: React.FC = () => {
       try {
         const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
         
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(0, 15, 25),
           autoRotate: false,
           background: 0x000000
@@ -172,12 +173,12 @@ const Gravitation3D: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const sunLabel = new CSS2DObject(document.createElement("div"));
           sunLabel.element.className = "label";
@@ -206,7 +207,7 @@ const Gravitation3D: React.FC = () => {
           orbitLabel.position.set(orbitalRadius, 0, 3);
           orbitGroup.add(orbitLabel);
           labels.push(orbitLabel);
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
 
         let time = 0;
         function animate() {
@@ -253,8 +254,8 @@ const Gravitation3D: React.FC = () => {
     return () => {
       cancelled = true; 
       if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch (e) {}
-      if (mountRef.current) { const el = mountRef.current!.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+      if (ts) try { disposeThreeScene(ts); } catch {}
+      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
     };
   }, [orbitalRadius, planetSize, showOrbit, showVectors, showLabels, isAnimating]);
 
@@ -336,7 +337,8 @@ const GravitationalField: React.FC = () => {
   const [showLabels, setShowLabels] = useState(true);
 
   useEffect(() => {
-    if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current!;
+    if (!container || !isWebGLAvailable()) return;
 
     let ts: any = null;
     let unbind: (() => void) | null = null;
@@ -348,7 +350,7 @@ const GravitationalField: React.FC = () => {
       try {
         const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
         
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(0, 10, 20),
           autoRotate: true,
           autoRotateSpeed: 0.3,
@@ -438,12 +440,12 @@ const GravitationalField: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const centerLabel = new CSS2DObject(document.createElement("div"));
           centerLabel.element.className = "label";
@@ -465,7 +467,7 @@ const GravitationalField: React.FC = () => {
           fieldLabel.position.set(0, -2, 15);
           fieldGroup.add(fieldLabel);
           labels.push(fieldLabel);
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
 
         function animate() {
           if (cancelled) return;
@@ -482,8 +484,8 @@ const GravitationalField: React.FC = () => {
     return () => {
       cancelled = true; 
       if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch (e) {}
-      if (mountRef.current) { const el = mountRef.current!.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+      if (ts) try { disposeThreeScene(ts); } catch {}
+      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
     };
   }, [fieldLines, showField, showLabels]);
 

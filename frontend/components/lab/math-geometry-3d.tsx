@@ -925,7 +925,6 @@ function ParabolaExplorer() {
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       container.appendChild(renderer.domElement);
-
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.autoRotate = true;
@@ -1049,6 +1048,7 @@ function ParabolaExplorer() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [a, b, c, showRoots, showVertex, showAxis, showFocus, showDirectrix, isWebGL]);
 
   const rootText = discriminant > 0

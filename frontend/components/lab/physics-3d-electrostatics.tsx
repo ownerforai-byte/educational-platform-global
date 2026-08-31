@@ -9,13 +9,13 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 // Electric Field Lines Component
 const ElectricField3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const [chargeValue, setChargeValue] = useState(5);
+  const [chargeValue, _setChargeValue] = useState(5);
   const [showFieldLines, setShowFieldLines] = useState(true);
   const [showEquipotential, setShowEquipotential] = useState(false);
   const [showLabels, setShowLabels] = useState(true);
@@ -30,7 +30,6 @@ const ElectricField3D: React.FC = () => {
     let labelRenderer: CSS2DRenderer | null = null;
     let labels: CSS2DObject[] = [];
     let fieldLines: THREE.Line[] = [];
-    let equipotentialSurfaces: THREE.Mesh[] = [];
 
     async function init() {
       try {
@@ -159,38 +158,6 @@ const ElectricField3D: React.FC = () => {
             const line = new THREE.Line(lineGeo, lineMat);
             ts.group.add(line);
             fieldLines.push(line);
-          }
-        }
-
-        function updateEquipotential() {
-          // Dispose and remove existing equipotential surfaces
-          equipotentialSurfaces.forEach(surface => {
-            ts.group.remove(surface);
-            surface.geometry.dispose();
-            (surface.material as THREE.Material).dispose();
-          });
-          equipotentialSurfaces = [];
-
-          if (!showEquipotential) return;
-
-          // Create equipotential spheres around charges
-          for (let r = 3; r <= 8; r += 1.5) {
-            const sphereGeo = new THREE.SphereGeometry(r, 16, 16);
-            const sphereMat = new THREE.MeshBasicMaterial({ 
-              color: 0x00ff00, 
-              wireframe: true,
-              transparent: true,
-              opacity: 0.3
-            });
-            const sphere1 = new THREE.Mesh(sphereGeo, sphereMat);
-            sphere1.position.set(0, 0, 0);
-            ts.group.add(sphere1);
-            equipotentialSurfaces.push(sphere1);
-            
-            const sphere2 = new THREE.Mesh(sphereGeo, sphereMat);
-            sphere2.position.set(12, 0, 0);
-            ts.group.add(sphere2);
-            equipotentialSurfaces.push(sphere2);
           }
         }
 
@@ -407,6 +374,7 @@ const CoulombsLaw3D: React.FC = () => {
       if (unbind) unbind();
       if (ts) disposeThreeScene(ts);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charge1, charge2, distance, showForce, showVectors]);
 
   return (

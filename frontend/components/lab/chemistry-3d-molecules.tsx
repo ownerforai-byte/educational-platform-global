@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 type Molecule = {
   name: string;
@@ -174,7 +174,7 @@ export const Chemistry3DMolecules: React.FC = () => {
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
 
         function createMolecule() {
           // Clear previous atoms
@@ -206,7 +206,7 @@ export const Chemistry3DMolecules: React.FC = () => {
           atomLabels = [];
 
           // Create atoms
-          selectedMolecule.atoms.forEach((atom, index) => {
+          selectedMolecule.atoms.forEach((atom, _index) => {
             const geo = new THREE.SphereGeometry(atom.radius, 32, 32);
             const mat = standardMaterial(atom.color, { 
               emissive: atom.color, 
@@ -274,7 +274,7 @@ export const Chemistry3DMolecules: React.FC = () => {
 
     return () => {
       cancelled = true; if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch (e) {}
+      if (ts) try { disposeThreeScene(ts); } catch {}
     };
   }, [selectedMolecule, showLabels, showBonds, autoRotate]);
 

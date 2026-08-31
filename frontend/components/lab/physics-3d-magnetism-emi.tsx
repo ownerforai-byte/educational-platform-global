@@ -195,6 +195,7 @@ const turns = 14;
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, mode, current, chargeQ, fieldB]);
 
   const bReadout = mode === "wire" ? bWire * 1e6 : mode === "loop" ? bLoop * 1e6 : mode === "solenoid" ? bSolenoid * 1000 : NaN;
@@ -375,6 +376,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, speed, turnsN]);
 
   return (

@@ -149,8 +149,6 @@
  */
 
 import type {
-  SyllabusUnit,
-  SubjectSyllabus,
   ClassSyllabus,
 } from "@/lib/syllabus";
 
@@ -273,7 +271,7 @@ function slugifyTopic(topic: string): string {
     .slice(0, 60);
 }
 
-export function getClassSyllabus(classSlug: string): ClassSyllabus | undefined {
+export function getClassSyllabus(_classSlug: string): ClassSyllabus | undefined {
   // Re-exported from syllabus.ts at runtime; here for type safety
   throw new Error("Use getSyllabusByClass from syllabus.ts instead");
 }

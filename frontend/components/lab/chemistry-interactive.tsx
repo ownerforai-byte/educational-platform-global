@@ -8,10 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
-import { LabCard } from "@/components/lab/lab-card";
-import { LabInput } from "@/components/lab/lab-input";
-import { LabResult } from "@/components/lab/lab-result";
-import { LabControlGroup } from "@/components/lab/lab-control-group";
+
 
 function PhCalculator() {
   const [mode, setMode] = useState<"acid" | "base">("acid");

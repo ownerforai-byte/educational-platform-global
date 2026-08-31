@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Dna, Microscope, Leaf, Heart, TreeDeciduous, Users } from "lucide-react";
+import { Dna, Microscope, Heart, TreeDeciduous, Users } from "lucide-react";
 
 export function Class11Biology3DPlus() {
   const [activeTopic, setActiveTopic] = useState("cell");

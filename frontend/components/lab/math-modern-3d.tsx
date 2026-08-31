@@ -16,8 +16,6 @@ import {
   titleText,
   type ThreeScene,
 } from "@/components/lab/three-scene";
-import { cn } from "@/lib/utils";
-
 function makeCanvasText(text: string): THREE.CanvasTexture {
   const canvas = document.createElement("canvas");
   canvas.width = 512;
@@ -28,15 +26,6 @@ function makeCanvasText(text: string): THREE.CanvasTexture {
   ctx.textAlign = "center";
   ctx.fillText(text, 256, 78);
   return new THREE.CanvasTexture(canvas);
-}
-
-function Pane({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="space-y-2">
-      <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{title}</Label>
-      {children}
-    </div>
-  );
 }
 // ---------------------------------------------------------------------------
 // 1. Multivariable calculus - surface + contour projections
@@ -114,10 +103,10 @@ function MultivariableSurface() {
                   segs.push(px(t), baseY, py(t));
                 }
               }
-              edge(hA, hB, (t) => x0 + (x1 - x0) * t, (t) => y0);
-              edge(hB, hC, (t) => x1, (t) => y0 + (y1 - y0) * t);
-              edge(hC, hD, (t) => x1 + (x0 - x1) * t, (t) => y1);
-              edge(hD, hA, (t) => x0, (t) => y1 + (y0 - y1) * t);
+              edge(hA, hB, (t) => x0 + (x1 - x0) * t, (_t) => y0);
+              edge(hB, hC, (_t) => x1, (t) => y0 + (y1 - y0) * t);
+              edge(hC, hD, (t) => x1 + (x0 - x1) * t, (_t) => y1);
+              edge(hD, hA, (_t) => x0, (t) => y1 + (y0 - y1) * t);
             }
           }
           const lg = new THREE.BufferGeometry();
@@ -392,8 +381,6 @@ function ParametricSurface() {
             return [(R + r * Math.cos(v)) * Math.cos(u), (R + r * Math.cos(v)) * Math.sin(u), r * Math.sin(v)];
           }
           if (surface === "klein") {
-            const pu = Math.PI * u;
-            const x0 = 3 * Math.cos(u) * (1 + Math.sin(u)) + 6 * Math.cos(u) * Math.cos(u) / Math.abs(Math.cos(u / 2) + 0.001) * Math.cos(u) * (Math.cos(u) * (1 + Math.sin(u))) ;
             return kleinParam(u, v);
           }
           // Möbius strip: u in [0,2π], v in [-0.7,0.7]
@@ -709,7 +696,6 @@ function GameTheory3D() {
             const x = (i - 0.5) * 3;
             const z = (j - 0.5) * 3;
             const [p1, p2] = payoffs[i][j];
-            const total = p1 + p2;
             const isNash = i === nash[0] && j === nash[1];
             // stacked bars: P1 height then P2 on top
             const col1 = new THREE.Mesh(new THREE.BoxGeometry(1, p1, 1), new THREE.MeshStandardMaterial({ color: isNash ? 0xfbbf24 : 0x3b82f6 }));
@@ -800,7 +786,6 @@ function TopologyTwist() {
         for (let i = 0; i <= uSteps; i++) {
           const u = (i / uSteps) * Math.PI * 2;
           // local frame
-          const tx = -Math.sin(u), ty = Math.cos(u), tz = 0;
           const nx = Math.cos(u), ny = Math.sin(u), nz = 0;
           const bx = 0, by = 0, bz = 1;
           const ang = u * halfTurns * 0.5; // half-twist angle over full loop
@@ -811,9 +796,6 @@ function TopologyTwist() {
             const rx = nx * cn + bx * sn;
             const ry = ny * cn + by * sn;
             const rz = nz * cn + bz * sn;
-            const sx = nx * (-sn) + bx * cn;
-            const sy = ny * (-sn) + by * cn;
-            const sz = nz * (-sn) + bz * cn;
             const px = R * nx + v * 0.7 * rx;
             const py = R * ny + v * 0.7 * ry;
             const pz = v * 0.7 * rz;
@@ -842,8 +824,6 @@ function TopologyTwist() {
           const u = (i / uSteps) * Math.PI * 2;
           const ang = u * halfTurns * 0.5;
           const cn = Math.cos(ang), sn = Math.sin(ang);
-          const rx = Math.cos(u) * cn + sn;
-          const rz = cn;
           const edge = new THREE.Vector3(R * Math.cos(u) + 0.7 * (Math.cos(u) * cn + sn), R * Math.sin(u) + 0.7 * Math.sin(u) * cn, 0.7 * sn);
           edgePts.push(edge);
         }

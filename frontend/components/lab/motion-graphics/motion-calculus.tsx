@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, clearGroup, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
 
 type CalculusMode = "derivative" | "integral" | "limit" | "series";
 
@@ -79,7 +79,7 @@ export const MotionGraphicsCalculus: React.FC = () => {
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch (e) {
+        } catch {
           console.log("CSS2DRenderer not available");
         }
 
@@ -409,14 +409,17 @@ export const MotionGraphicsCalculus: React.FC = () => {
       }
       labels = [];
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, functionType, frequency, amplitude, showFunction, showDerivative, showIntegral, showTangent, pointX]);
 
   const currentSlope = useMemo(() => {
     return getDerivativeValue(pointX).toFixed(3);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pointX, functionType, frequency, amplitude]);
 
   const currentValue = useMemo(() => {
     return getFunctionValue(pointX).toFixed(3);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pointX, functionType, frequency, amplitude]);
 
   return (

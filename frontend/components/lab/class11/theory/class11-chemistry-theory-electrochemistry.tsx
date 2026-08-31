@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 // DEEP Grade 11 Chemistry Theory: Electrochemistry
 // NEB/CDC Class 11 Chapter 9 - Electrochemistry

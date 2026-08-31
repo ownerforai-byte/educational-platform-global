@@ -29,11 +29,6 @@ function getGuestCredits(): number {
   return v ? parseInt(v, 10) : 50;
 }
 
-function setGuestCredits(credits: number): void {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(CREDITS_STORAGE_KEY, String(credits));
-}
-
 export function AIWidget() {
   const { user } = useSession();
   const isLoggedIn = !!user;

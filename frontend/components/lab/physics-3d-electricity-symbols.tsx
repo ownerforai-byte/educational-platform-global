@@ -38,9 +38,6 @@ function OhmsCircuit3D() {
     { x: 0, y: -1.8, z: 0, symbol: "P = V·I", name: "Power dissipated", desc: "Energy rate as heat, live value " + P.toFixed(1) + " W.", color: "#fbbf24" },
   ];
 
-  const [ammeter, setAmmeter] = useState(4);
-  const [voltmeter, setVoltmeter] = useState(-4);
-
   useEffect(() => {
     const el = mount.current;
     if (!el || !webgl) return;

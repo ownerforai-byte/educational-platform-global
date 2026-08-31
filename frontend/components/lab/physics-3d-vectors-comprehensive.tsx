@@ -3,7 +3,6 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -11,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, clearGroup, ThreeScene } from "@/components/lab/three-scene";
+import { createThreeScene, disposeThreeScene, bindResize, ThreeScene } from "@/components/lab/three-scene";
 
 // Enhanced 3D Vector Visualization with all cases
 const VectorComprehensive3D: React.FC = () => {
@@ -314,6 +313,7 @@ const VectorComprehensive3D: React.FC = () => {
       if (unbind) unbind();
       if (ts) disposeThreeScene(ts);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vec1X, vec1Y, vec1Z, vec2X, vec2Y, vec2Z, showComponents, showResultant, showNegativeSigns, showAxesLabels, showAngle]);
 
   // Format vector for display

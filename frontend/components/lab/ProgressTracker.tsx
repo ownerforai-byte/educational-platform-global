@@ -30,7 +30,7 @@ export function ProgressTracker({ theme = "dark" }: { theme?: "dark" | "light" }
   const filteredTopics = filterSubject === "All" ? topics : topics.filter((t) => t.subject === filterSubject);
   const overallProgress = Math.round(topics.reduce((acc, t) => acc + t.progress, 0) / topics.length);
 
-  const updateProgress = (id: string, progress: number) => {
+  const _updateProgress = (id: string, progress: number) => {
     setTopics((prev) =>
       prev.map((t) => t.id === id ? { ...t, progress: Math.min(100, Math.max(0, progress)), completed: progress >= 100 } : t)
     );

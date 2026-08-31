@@ -1,11 +1,8 @@
 import { apiFetch } from "../api-client";
 import type {
   Chapter,
-  ClassWithSubjects,
-  Subject,
   SubjectWithChapters,
   Topic,
-  TopicWithResources,
 } from "../../types/api";
 
 /**

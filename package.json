@@ -18,15 +18,21 @@
     "test": "npm run test -w frontend && npm run test -w backend",
     "test:run": "npm run test:run -w frontend && npm run test:run -w backend",
     "start": "npm run start -w backend",
-    "content:build": "node scripts/build-content.mjs"
+    "content:build": "node scripts/build-content.mjs",
+    "blueprint": "node scripts/generate-blueprint.mjs"
   },
   "dependencies": {
+    "@react-spring/three": "^10.1.2",
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
+    "@react-three/postprocessing": "^3.1.1",
+    "@react-three/rapier": "^2.2.0",
     "@tanstack/react-query": "^5.70.0",
+    "@use-gesture/react": "^10.3.1",
     "gsap": "^3.13.0",
     "mathjs": "^13.2.3",
     "next": "^16.3.3",
+    "postprocessing": "^6.39.4",
     "three": "^0.185.1"
   },
   "devDependencies": {

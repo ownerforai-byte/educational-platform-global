@@ -158,6 +158,7 @@ const barMats = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.M
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, slitSepMm, lambdaNm, screenM]);
 
   return (
@@ -290,6 +291,7 @@ const barMats2 = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, slitWmm, lambdaNm]);
 
   return (
@@ -332,7 +334,6 @@ const PolarizationTab: React.FC = () => {
   const [thetaDeg, setThetaDeg] = useState(56.3); // near Brewster for glass n=1.5
   const [nGlass, setNG] = useState(1.5);
 
-  const th = (thetaDeg * Math.PI) / 180;
   const thetaB = Math.atan(nGlass);
   const brewDeg = (thetaB * 180) / Math.PI;
   const polarized = Math.abs(thetaDeg - brewDeg) < 1.5;
@@ -409,6 +410,7 @@ const PolarizationTab: React.FC = () => {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, thetaDeg, nGlass]);
 
   return (

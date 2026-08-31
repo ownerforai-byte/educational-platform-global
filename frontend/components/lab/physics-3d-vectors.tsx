@@ -9,7 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene } from "@/components/lab/three-scene";
 
 // Vector Basics 3D Component
 const VectorBasics3D: React.FC = () => {
@@ -20,7 +20,6 @@ const VectorBasics3D: React.FC = () => {
   const [vec2Mag, setVec2Mag] = useState(4);
   const [vec2AngleX, setVec2AngleX] = useState(90);
   const [vec2AngleY, setVec2AngleY] = useState(0);
-  const [showComponents, setShowComponents] = useState(true);
   const [showResultant, setShowResultant] = useState(true);
 
   // Calculate resultant
@@ -158,6 +157,7 @@ const VectorBasics3D: React.FC = () => {
       if (unbind) unbind();
       if (ts) disposeThreeScene(ts);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vec1Mag, vec1AngleX, vec1AngleY, vec2Mag, vec2AngleX, vec2AngleY, showResultant]);
 
   return (
@@ -579,6 +579,7 @@ const CrossProduct3D: React.FC = () => {
       if (unbind) unbind();
       if (ts) disposeThreeScene(ts);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [angleX, angleY, showNormal, showPlane]);
 
   return (

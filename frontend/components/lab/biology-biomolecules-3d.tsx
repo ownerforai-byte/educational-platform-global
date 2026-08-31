@@ -99,12 +99,6 @@ function CarbsView() {
     { name: "Maltose", formula: "Glc + Glc", bond: "α-1,4", source: "Germinating grain" },
     { name: "Lactose", formula: "Glc + Gal", bond: "β-1,4", source: "Mammalian milk" },
   ];
-  const polySacs = [
-    { name: "Starch", sub: "Amylose + Amylopectin", role: "Plant energy storage", bond: "α-1,4 (amylose), α-1,6 (branch)" },
-    { name: "Glycogen", sub: "Highly branched", role: "Animal energy storage (liver, muscle)", bond: "α-1,4 + α-1,6 (more branches than starch)" },
-    { name: "Cellulose", sub: "Linear chains", role: "Plant cell wall structure", bond: "β-1,4 ( Humans can't digest)" },
-    { name: "Chitin", sub: "N-acetylglucosamine", role: "Fungal cell wall, arthropod exoskeleton", bond: "β-1,4 with NHCOCH₃ group" },
-  ];
   return (
     <div className="space-y-4">
       <svg viewBox="0 0 600 280" className="w-full rounded-xl bg-slate-950 border border-border">
@@ -141,7 +135,7 @@ function CarbsView() {
         ))}
         {[
           { name: "Starch", y: 95 }, { name: "Glycogen", y: 143 }, { name: "Cellulose", y: 191 },
-        ].map((s, i) => (
+        ].map((s, _i) => (
           <text key={s.name} x="230" y={s.y + 14} fill="#d4a84b" fontSize="8" fontWeight="600">{s.name}</text>
         ))}
         {[
@@ -185,28 +179,6 @@ function CarbsView() {
 }
 
 function ProteinsView() {
-  const aminoAcids = [
-    { name: "Glycine", abbr: "Gly/G", r: "H (simplest)" },
-    { name: "Alanine", abbr: "Ala/A", r: "CH₃" },
-    { name: "Valine", abbr: "Val/V", r: "Isopropyl (hydrophobic)" },
-    { name: "Leucine", abbr: "Leu/L", r: "Isobutyl (hydrophobic)" },
-    { name: "Isoleucine", abbr: "Ile/I", r: "Sec-butyl (hydrophobic)" },
-    { name: "Serine", abbr: "Ser/S", r: "CH₂OH (polar)" },
-    { name: "Threonine", abbr: "Thr/T", r: "CH(OH)CH₃ (polar)" },
-    { name: "Cysteine", abbr: "Cys/C", r: "CH₂SH (disulfide bonds!)" },
-    { name: "Methionine", abbr: "Met/M", r: "CH₂CH₂SCH₃ (essential)" },
-    { name: "Lysine", abbr: "Lys/K", r: "(CH₂)₄NH₂ (basic, essential)" },
-    { name: "Arginine", abbr: "Arg/R", r: "Guanidino group (basic)" },
-    { name: "Histidine", abbr: "His/H", r: "Imidazole (basic, pH buffer)" },
-    { name: "Aspartic acid", abbr: "Asp/D", r: "COOH (acidic)" },
-    { name: "Glutamic acid", abbr: "Glu/E", r: "COOH (acidic)" },
-    { name: "Phenylalanine", abbr: "Phe/F", r: "Benzyl (aromatic, essential)" },
-    { name: "Tyrosine", abbr: "Tyr/Y", r: "HO-phenyl (polar)" },
-    { name: "Tryptophan", abbr: "Trp/W", r: "Indole (aromatic, essential)" },
-    { name: "Proline", abbr: "Pro/P", r: "Cyclic (kinks protein chain)" },
-    { name: "Asparagine", abbr: "Asn/N", r: "CONH₂ (polar)" },
-    { name: "Glutamine", abbr: "Gln/Q", r: "CONH₂ (polar)" },
-  ];
   return (
     <div className="space-y-4">
       <svg viewBox="0 0 600 360" className="w-full rounded-xl bg-slate-950 border border-border">

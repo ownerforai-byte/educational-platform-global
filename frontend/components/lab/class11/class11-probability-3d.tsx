@@ -2,12 +2,11 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { CSS2DObject, CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
+import { CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 
 // Probability 3D Visualization for Class 11 Mathematics
@@ -60,24 +59,22 @@ export const Class11Probability3D: React.FC = () => {
 
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current;
 
-    let scene: THREE.Scene;
-    let camera: THREE.PerspectiveCamera;
-    let renderer: THREE.WebGLRenderer;
     let labelRenderer: any;
     const labelObjects: any[] = [];
 
     // Initialize scene
-    scene = new THREE.Scene();
+    const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x0f172a);
 
-    camera = new THREE.PerspectiveCamera(75, mountRef.current.clientWidth / mountRef.current.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.set(0, 5, 10);
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    mountRef.current.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -91,13 +88,13 @@ export const Class11Probability3D: React.FC = () => {
     try {
       
       labelRenderer = new CSS2DRenderer();
-      labelRenderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+      labelRenderer.setSize(container.clientWidth, container.clientHeight);
       labelRenderer.domElement.style.position = "absolute";
       labelRenderer.domElement.style.top = "0";
       labelRenderer.domElement.style.pointerEvents = "none";
       labelRenderer.domElement.style.zIndex = "10";
-      mountRef.current.appendChild(labelRenderer.domElement);
-    } catch (e) {
+      container.appendChild(labelRenderer.domElement);
+    } catch {
       console.log("CSS2DRenderer not available");
     }
 
@@ -255,13 +252,13 @@ export const Class11Probability3D: React.FC = () => {
 
     // Handle resize
     const handleResize = () => {
-      if (!mountRef.current) return;
+      if (!container) return;
       
-      camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+      camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+      renderer.setSize(container.clientWidth, container.clientHeight);
       if (labelRenderer) {
-        labelRenderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+        labelRenderer.setSize(container.clientWidth, container.clientHeight);
       }
     };
 
@@ -271,10 +268,10 @@ export const Class11Probability3D: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (container) {
+        container.removeChild(renderer.domElement);
         if (labelRenderer && labelRenderer.domElement) {
-          mountRef.current.removeChild(labelRenderer.domElement);
+          container.removeChild(labelRenderer.domElement);
         }
       }
       // Dispose geometries and materials

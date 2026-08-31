@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import {
-  Coins, Crown, Users, TrendingUp, TrendingDown,
+  Coins, Crown, Users, TrendingUp,
   ShieldCheck, Plus, Minus, UserCheck, UserX, RefreshCw
 } from "lucide-react";
 import { Button } from "@/components/ui/button";

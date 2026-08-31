@@ -35,6 +35,20 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/r-notes",
+        destination: "/notes",
+        permanent: false,
+      },
+      {
+        source: "/ravikishan-notes",
+        destination: "/notes",
+        permanent: false,
+      },
+    ];
+  },
   turbopack: {
     root: path.resolve(__dirname, ".."),
   },

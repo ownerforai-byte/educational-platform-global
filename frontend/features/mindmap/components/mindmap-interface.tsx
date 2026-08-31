@@ -55,11 +55,6 @@ function buildLayoutTree(
   };
 }
 
-function countVisible(node: LayoutNode): number {
-  if (node.collapsed) return 1;
-  return 1 + node.children.reduce((s, c) => s + countVisible(c), 0);
-}
-
 function radialLayout(
   root: LayoutNode,
   cx: number,
@@ -68,9 +63,6 @@ function radialLayout(
 ): LayoutNode {
   const children = root.children;
   if (children.length === 0) return root;
-
-  const totalDesc = countVisibleChildren(root);
-  const angleStep = (Math.PI * 2) / Math.max(children.length, 1);
 
   const laidChildren = layoutRadialSubtree(children, 0, Math.PI * 2, radius, cx, cy);
   return { ...root, children: laidChildren };
@@ -146,7 +138,7 @@ export function MindmapInterface({
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [isPanning, setIsPanning] = useState(false);
   const [panStart, setPanStart] = useState({ x: 0, y: 0 });
-  const [layoutNodes, setLayoutNodes] = useState<LayoutNode[]>([]);
+  const [, setLayoutNodes] = useState<LayoutNode[]>([]);
   const [treeRoot, setTreeRoot] = useState<LayoutNode | null>(null);
 
   // Initial layout
@@ -204,13 +196,6 @@ export function MindmapInterface({
       return toggle(prev);
     });
   }, []);
-
-  const updateVisibility = useCallback(() => {
-    if (!treeRoot) return;
-    const flat: LayoutNode[] = [];
-    flattenLayout(treeRoot, flat);
-    setLayoutNodes(flat);
-  }, [treeRoot]);
 
   // Re-flatten when treeRoot changes (via toggle)
   const flatNodes = useMemo(() => {

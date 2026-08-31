@@ -3,34 +3,12 @@
 import { useState, createElement } from "react";
 import {
   Dna, Microscope, Leaf, Heart, TreeDeciduous, Users, Beaker,
-  Calculator, FlaskConical, Atom, TestTube, Bug, Globe,
-  Activity, Wind, Droplets, Mountain, Layers, Puzzle,
-  Binary, Hexagon, Octagon, Zap, Scan, Radio, Shield,
-  Stethoscope, Network, Waves, Sunrise, Sunset, CloudRain,
-  Thermometer, Timer, Scale, Target, Crosshair, Box,
-  ChevronRight, ChevronDown,
+  FlaskConical, Bug, Globe,
+  Activity, Wind, Droplets, Mountain,
+  Binary, Shield,
+  Network,
+  ChevronDown,
 } from "lucide-react";
-
-type TopicTab =
-  | "biomolecules"
-  | "cell-structure"
-  | "cell-division"
-  | "floral-diversity"
-  | "fungi"
-  | "algae"
-  | "bryophytes"
-  | "pteridophytes"
-  | "gymnosperms"
-  | "angiosperms"
-  | "microbiology"
-  | "ecology"
-  | "vegetation"
-  | "evolution"
-  | "faunal-diversity"
-  | "earthworm"
-  | "frog"
-  | "biota"
-  | "conservation";
 
 const BIOLOGY_3D_TITLES: Record<string, { title: string; subtitle: string; color: string }> = {
   biomolecules: { title: "Biomolecules", subtitle: "Carbohydrates, proteins, lipids, nucleic acids", color: "#3b82f6" },

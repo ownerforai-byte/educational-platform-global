@@ -9,7 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 // Piston-Cylinder System (First Law of Thermodynamics)
 const PistonCylinder3D: React.FC = () => {
@@ -17,7 +17,6 @@ const PistonCylinder3D: React.FC = () => {
   const [pistonHeight, setPistonHeight] = useState(5);
   const [gasTemperature, setGasTemperature] = useState(300);
   const [showProcess, setShowProcess] = useState<"isothermal" | "adiabatic" | "isobaric" | "isochoric">("isothermal");
-  const [showWork, setShowWork] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
 
   // Thermodynamic properties

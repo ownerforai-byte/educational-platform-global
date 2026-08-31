@@ -5,10 +5,9 @@ import * as THREE from "three";
 import { CSS2DObject, CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
 
 type Shape = {
   name: string;
@@ -221,7 +220,7 @@ export const Math3DGeometryLabeled: React.FC = () => {
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
 
         function createShape() {
           // Clear previous shape
@@ -278,7 +277,7 @@ export const Math3DGeometryLabeled: React.FC = () => {
 
     return () => {
       cancelled = true; if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch (e) {}
+      if (ts) try { disposeThreeScene(ts); } catch {}
     };
   }, [selectedShape, showLabels, autoRotate]);
 

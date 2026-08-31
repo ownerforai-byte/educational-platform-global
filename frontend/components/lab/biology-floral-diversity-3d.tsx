@@ -415,7 +415,7 @@ function AngiospermsView() {
   );
 }
 
-function LabelTag({ x, y, symbol, name, desc, color }: { x: number; y: number; symbol: string; name: string; desc: string; color: string }) {
+function LabelTag({ x, y, symbol, name, desc: _desc, color }: { x: number; y: number; symbol: string; name: string; desc: string; color: string }) {
   return (
     <g>
       <rect x={x - 50} y={y - 10} width="100" height="20" rx="4" fill="rgba(15,23,42,0.9)" stroke={color} strokeWidth="0.5" />

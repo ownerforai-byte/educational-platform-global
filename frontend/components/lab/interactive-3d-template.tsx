@@ -15,14 +15,11 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LabInput } from "@/components/lab/lab-input";
 import { LabResult } from "@/components/lab/lab-result";
 import { LabControlGroup } from "@/components/lab/lab-control-group";
 import { LabCard } from "@/components/lab/lab-card";
-import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 
 /**
  * EXAMPLE: How to structure an interactive 3D component

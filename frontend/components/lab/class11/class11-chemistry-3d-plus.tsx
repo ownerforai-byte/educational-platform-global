@@ -171,6 +171,7 @@ function PeriodicTrendsLab() {
       unbind?.();
       if (ts) disposeThreeScene(ts);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trend]);
 
   return (

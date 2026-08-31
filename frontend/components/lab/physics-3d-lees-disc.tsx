@@ -18,14 +18,7 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
-import {
-  createThreeScene,
-  disposeThreeScene,
-  bindResize,
-  standardMaterial,
-  titleText,
-  type ThreeScene,
-} from "@/components/lab/three-scene";
+import { disposeThreeScene, type ThreeScene } from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
 
@@ -63,7 +56,8 @@ export const LeesDiscExperiment: React.FC = () => {
   const deviation = Number.isFinite(K) ? ((K - mat.k) / mat.k) * 100 : NaN;
 
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
+    const container = mountRef.current!;
+    if (!container || !webGL) return;
 
     let ts: ThreeScene | null = null;
     let unbind: (() => void) | null = null;
@@ -74,7 +68,7 @@ export const LeesDiscExperiment: React.FC = () => {
     async function init() {
       try {
         const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText, disposeThreeScene } = mod;
+        const { createThreeScene, bindResize, standardMaterial, titleText } = mod;
         if (!mountRef.current || cancelled) return;
 
         ts = createThreeScene(mountRef.current!, {
@@ -245,7 +239,7 @@ export const LeesDiscExperiment: React.FC = () => {
             requestAnimationFrame(animate);
             const t = performance.now() / 1000;
             glowMats.forEach((m) => { m.emissiveIntensity = 0.65 + Math.sin(t * 3.2) * 0.3; });
-            puffs.forEach((pf, i) => {
+            puffs.forEach((pf) => {
               const u = (t * 0.45 + pf.seed) % 1;
               pf.mesh.position.set(
                 outletTip.x + Math.sin((u + pf.seed) * 6) * 0.2,
@@ -261,7 +255,7 @@ export const LeesDiscExperiment: React.FC = () => {
             if (leaderLayer) leaderLayer.draw(ts.camera, connections);
           }
           animate();
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
       } catch (err) {
         console.error("LeesDisc init:", err);
       }
@@ -272,13 +266,14 @@ export const LeesDiscExperiment: React.FC = () => {
       cancelled = true;
       unbind?.();
       if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = mountRef.current;
+      const m = container;
       if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
         m.removeChild(labelRenderer.domElement);
       }
       try { leaderLayer?.dispose?.(); } catch {}
       if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);
 
   return (

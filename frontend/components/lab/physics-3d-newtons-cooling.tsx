@@ -18,11 +18,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
 import {
-  createThreeScene,
   disposeThreeScene,
-  bindResize,
-  standardMaterial,
-  titleText,
   type ThreeScene,
 } from "@/components/lab/three-scene";
 
@@ -33,9 +29,6 @@ const LIQUIDS = [
   { name: "Olive oil", c: 1970, color: "#84cc16", scene: 0x65a30d, note: "Half of water's c — reaches measurable temperatures faster." },
   { name: "Glycerin", c: 2430, color: "#fbbf24", scene: 0xd97706, note: "Viscous, good wetting — smooth convection currents, easy readings." },
 ] as const;
-
-const TEMP_MIN_SCALE = 0; // °C axis low
-const TEMP_MAX_AXIS = 110; // °C axis high
 
 export const NewtonCoolingExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -54,7 +47,8 @@ export const NewtonCoolingExperiment: React.FC = () => {
   const table = [2, 4, 6, 8].map((t) => ({ t, T: Tat(Math.min(t, duration)) }));
 
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
+    const container = mountRef.current!;
+    if (!container || !webGL) return;
 
     let ts: ThreeScene | null = null;
     let unbind: (() => void) | null = null;
@@ -65,10 +59,10 @@ export const NewtonCoolingExperiment: React.FC = () => {
     async function init() {
       try {
         const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText, disposeThreeScene } = mod;
-        if (!mountRef.current || cancelled) return;
+        const { createThreeScene, bindResize, standardMaterial, titleText } = mod;
+        if (!container || cancelled) return;
 
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(1.5, 4.6, 13.5),
           autoRotate: false,
           background: 0x0b1220,
@@ -188,12 +182,12 @@ export const NewtonCoolingExperiment: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const mkLabel = (color: string, title: string, sub?: string) => {
             const el = document.createElement("div");
@@ -206,7 +200,7 @@ export const NewtonCoolingExperiment: React.FC = () => {
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { leaderLayer = createLeaderLayer(container); } catch { leaderLayer = null; }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -265,7 +259,7 @@ export const NewtonCoolingExperiment: React.FC = () => {
             if (leaderLayer) leaderLayer.draw(ts.camera, connections);
           }
           animate();
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
       } catch (err) {
         console.error("NewtonCooling init:", err);
       }
@@ -276,13 +270,14 @@ export const NewtonCoolingExperiment: React.FC = () => {
       cancelled = true;
       unbind?.();
       if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = mountRef.current;
+      const m = container;
       if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
         m.removeChild(labelRenderer.domElement);
       }
       try { leaderLayer?.dispose?.(); } catch {}
       if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, liqIdx, T0, Ts, kPerMin, duration, running]);
 
   return (

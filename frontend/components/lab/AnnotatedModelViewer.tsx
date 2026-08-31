@@ -644,7 +644,7 @@ export function AnnotatedModelViewer({
   autoAdjustAnnotations = true,
   modelPreset,
   onQuizComplete,
-  onProgressUpdate,
+  onProgressUpdate: _onProgressUpdate,
 }: AnnotatedModelViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
@@ -660,9 +660,9 @@ export function AnnotatedModelViewer({
   const [quizScore, setQuizScore] = useState(0);
   const [walkthroughActive, setWalkthroughActive] = useState(false);
   const [walkthroughStep, setWalkthroughStep] = useState(0);
-  const [uploadedModel, setUploadedModel] = useState<THREE.Group | null>(null);
+  const [_uploadedModel, _setUploadedModel] = useState<THREE.Group | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [progress, setProgress] = useState<Record<string, number>>({});
+  const [_progress, _setProgress] = useState<Record<string, number>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Auto-fit dimensions on resize
@@ -815,8 +815,7 @@ export function AnnotatedModelViewer({
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = (event) => {
-        const arrayBuffer = event.target?.result as ArrayBuffer;
+      reader.onload = (_event) => {
         // In a real app, you'd use GLTFLoader here
         console.log("Model uploaded:", file.name);
       };
@@ -863,7 +862,7 @@ export function AnnotatedModelViewer({
           }}
           dpr={[1, 2]}
           gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
-          onCreated={({ gl, camera }) => {
+          onCreated={({ gl: _gl, camera }) => {
             cameraRef.current = camera as unknown as THREE.PerspectiveCamera;
           }}
         >

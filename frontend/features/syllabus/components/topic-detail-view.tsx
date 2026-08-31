@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
-import { ImportedNotesSection } from "@/components/content/imported-notes-section";
 import { MindmapInterface } from "@/features/mindmap/components/mindmap-interface";
 import { getTopicMindmap } from "@/features/mindmap/queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";

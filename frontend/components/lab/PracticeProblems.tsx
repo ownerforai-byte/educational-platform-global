@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MathDisplay, MathInline } from "../content/MathRenderer";
+import { MathInline } from "../content/MathRenderer";
 
 interface Problem {
   id: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export function useCanvasSize(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
   const [size, setSize] = useState({ width: 0, height: 0 });

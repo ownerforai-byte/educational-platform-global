@@ -189,6 +189,7 @@ function EMWave3D() {
     };
     const cleanup = init();
     return () => { cleanup.then((fn) => fn?.()); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amplitude, wavelength, showE, showB, showAxes]);
 
   return (
@@ -343,50 +344,6 @@ function MagneticFieldLines3D() {
       // Field lines
       const lineGroup = new THREE.Group();
       scene.add(lineGroup);
-
-      function rebuildField() {
-        while (lineGroup.children.length > 0) {
-          const c = lineGroup.children[0];
-          lineGroup.remove(c);
-          if (c instanceof THREE.Line) { c.geometry.dispose(); (c.material as THREE.Material).dispose(); }
-        }
-        const m = dipoleMoment;
-        const n = fieldDensity;
-        for (let i = 0; i < n; i++) {
-          const angle = (i / n) * Math.PI * 2;
-          const startDist = 0.4;
-          let x = startDist * Math.cos(angle);
-          let y = startDist * Math.sin(angle);
-          let z = 0;
-          const points: THREE.Vector3[] = [new THREE.Vector3(x, y, z)];
-          const dt = 0.05;
-          const maxSteps = 200;
-          for (let s = 0; s < maxSteps; s++) {
-            const r2 = x * x + y * y + z * z;
-            const r = Math.sqrt(r2);
-            if (r < 0.35 || r > 12) break;
-            // Dipole field (simplified, in x-y plane with z=0)
-            const Bx = (m / r2) * (3 * x * z / r2);
-            const By = (m / r2) * (3 * x * z / r2);
-            const Bz = (m / r2) * (2 * Math.cos(theta_from_xz(x, z)) - Math.sin(theta_from_xz(x, z)));
-            // Simpler 2D approximation for visualization
-            const Bx2 = (m / r2) * (3 * x * y / r2) * 0.1;
-            const By2 = (m / r2) * (2 * y * y / r2 - 1);
-            const Bz2 = (m / r2) * (3 * x * y / r2) * 0.1;
-            x += Bx2 * dt; y += By2 * dt; z += Bz2 * dt;
-            points.push(new THREE.Vector3(x, y, z));
-          }
-          if (points.length > 2) {
-            const geo = new THREE.BufferGeometry().setFromPoints(points);
-            const mat = new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.5 });
-            lineGroup.add(new THREE.Line(geo, mat));
-          }
-        }
-      }
-
-      function theta_from_xz(x: number, z: number) {
-        return Math.atan2(z, x);
-      }
 
       // Better dipole field line tracing in x-y plane
       function traceFieldLine(startAngle: number, mVal: number): THREE.Vector3[] {

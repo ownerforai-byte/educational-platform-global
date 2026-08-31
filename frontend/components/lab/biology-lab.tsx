@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Dna, Microscope, Leaf, Activity } from "lucide-react";
+import { Dna, Microscope, Leaf, Activity } from "lucide-react";
 
 export function BiologyLab() {
   return (

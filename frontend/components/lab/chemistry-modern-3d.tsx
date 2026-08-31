@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
@@ -167,7 +166,7 @@ function CrystalLattice() {
 
         const a = 2; // cell parameter
         const atomPos: [number, number, number][] = [];
-        const faceColor = 0xef4444, bodyColor = 0x3b82f6, cornerColor = 0xfbbf24;
+        const cornerColor = 0xfbbf24;
 
         if (lattice === "hcp") {
           // two hexagonal layers + interstitials  = simple hexagonal lattice
@@ -182,8 +181,6 @@ function CrystalLattice() {
             }
           }
         } else {
-          const dims = lattice === "sc" ? 2 : 2;
-          const off = lattice === "sc" ? 0 : 0;
           for (let x = -1; x <= 1; x++) {
             for (let y = -1; y <= 1; y++) {
               for (let z = -1; z <= 1; z++) {
@@ -304,9 +301,8 @@ function Spectroscopy3D() {
         const nmrPeaks: [number, number][] = [[-4.4, 2.0], [-2.0, 1.0], [0.6, 1.5], [2.8, 3.0], [4.0, 1.2]];
         const pk = spec === "ir" ? irPeaks : nmrPeaks;
         const peakColor = spec === "ir" ? 0x22c55e : 0xa78bfa;
-        const base = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.2, 0.35), new THREE.MeshStandardMaterial({ color: peakColor }));
-        for (const [x, h] of pk) {
-          const bar = new THREE.Mesh(new THREE.BoxGeometry(0.35, h, 0.35), new THREE.MeshStandardMaterial({ color: peakColor, emissive: peakColor, emissiveIntensity: 0.2 }));
+        const _base = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.2, 0.35), new THREE.MeshStandardMaterial({ color: peakColor }));
+        for (const [x, h] of pk) {          const bar = new THREE.Mesh(new THREE.BoxGeometry(0.35, h, 0.35), new THREE.MeshStandardMaterial({ color: peakColor, emissive: peakColor, emissiveIntensity: 0.2 }));
           bar.position.set(x, h / 2, 0);
           ts.group.add(bar);
           // Lorentzian spread lines
@@ -524,8 +520,6 @@ function BiomoleculeViewer() {
         const height = 6;
         const radius = 1.2;
         const baseColors = [0xf43f5e, 0x38bdf8, 0xf59e0b, 0x22c55e];
-        const backboneA: THREE.Mesh[] = [];
-        const backboneB: THREE.Mesh[] = [];
         const segments = 180;
 
         function addBackbone(pts: THREE.Vector3[], color: number) {

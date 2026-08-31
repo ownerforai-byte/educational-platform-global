@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 // DEEP Grade 11 Mathematics Theory: Probability and Statistics
 // NEB/CDC Class 11 - Statistics and Probability

@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
 
 /* ============================================================

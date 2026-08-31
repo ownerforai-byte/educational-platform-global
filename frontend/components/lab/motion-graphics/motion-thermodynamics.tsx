@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, clearGroup, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
 
 type ProcessType = "isothermal" | "adiabatic" | "isobaric" | "isochoric";
 
@@ -64,7 +64,7 @@ export const MotionGraphicsThermodynamics: React.FC = () => {
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch (e) {
+        } catch {
           console.log("CSS2DRenderer not available");
         }
 
@@ -405,6 +405,7 @@ export const MotionGraphicsThermodynamics: React.FC = () => {
       }
       labels = [];
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pistonPosition, temperature, showPiston, showGas, showPVDiagram]);
 
   // Calculate work done (W = PΔV)

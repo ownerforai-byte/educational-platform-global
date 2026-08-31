@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, clearGroup, standardMaterial } from "@/components/lab/three-scene";
+import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
 
 export const MotionGraphicsEMWaves: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -66,7 +66,7 @@ export const MotionGraphicsEMWaves: React.FC = () => {
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch (e) {
+        } catch {
           console.log("CSS2DRenderer not available");
         }
 

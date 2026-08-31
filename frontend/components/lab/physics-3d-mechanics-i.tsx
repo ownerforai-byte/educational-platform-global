@@ -152,6 +152,7 @@ const ProjectilesTab: React.FC = () => {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, v0, theta, g]);
 
   return (
@@ -331,6 +332,7 @@ const CircularMotionTab: React.FC = () => {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, mode, lenM, angleDeg]);
 
   const readouts: [string, string, string][] = mode === "conical"
@@ -484,6 +486,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, m1, m2, u1, u2, e]);
 
   return (
@@ -638,6 +641,7 @@ function animate() {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, heightM, massKg, frictionless]);
 
   return (

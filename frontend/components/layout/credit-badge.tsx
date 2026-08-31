@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { Coins, ArrowUpRight, Sparkles } from "lucide-react";
 import { getUserCredits } from "@/lib/api/credits";
 import Link from "next/link";
@@ -15,7 +15,7 @@ export function CreditBadge({ className = "" }: { className?: string }) {
   const [error, setError] = useState<string | null>(null);
   const prevCreditsRef = useRef<number | null>(null);
 
-  const fetchCredits = async () => {
+  const fetchCredits = useCallback(async () => {
     try {
       setError(null);
       const data = await getUserCredits();
@@ -34,13 +34,13 @@ export function CreditBadge({ className = "" }: { className?: string }) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [credits]);
 
   useEffect(() => {
     fetchCredits();
     const interval = setInterval(fetchCredits, POLL_INTERVAL);
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchCredits]);
 
   if (isLoading) {
     return (

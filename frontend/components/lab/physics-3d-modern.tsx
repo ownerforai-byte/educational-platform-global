@@ -144,6 +144,7 @@ const electronMats = electrons.map((e) => e.material as THREE.MeshStandardMateri
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, lambdaNm, metal, intensity]);
 
   return (
@@ -288,6 +289,7 @@ const BohrTab: React.FC = () => {
       if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
       leaderLayer?.dispose?.();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, fromN, toN]);
 return (
     <div className="space-y-3">

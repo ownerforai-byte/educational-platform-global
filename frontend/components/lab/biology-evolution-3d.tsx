@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, Users, Mountain, Sunset } from "lucide-react";
+import { Activity, Users, Mountain } from "lucide-react";
 
 type Tab = "origin" | "evidence" | "theories" | "human";
 

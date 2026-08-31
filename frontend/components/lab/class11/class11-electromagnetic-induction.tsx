@@ -2,9 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { CSS2DObject, CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
+import { CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
@@ -27,32 +26,28 @@ export const Class11ElectromagneticInduction: React.FC = () => {
   const magnetRef = useRef<THREE.Group | null>(null);
   const coilRef = useRef<THREE.Group | null>(null);
   const fieldLinesRef = useRef<THREE.LineSegments[]>([]);
-  const currentArrowsRef = useRef<THREE.ArrowHelper[]>([]);
 
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
+    const container = mountRef.current;
 
-    let scene: THREE.Scene;
-    let camera: THREE.PerspectiveCamera;
-    let renderer: THREE.WebGLRenderer;
-    let controls: any;
     let labelRenderer: any;
     const labelObjects: any[] = [];
 
     // Initialize scene
-    scene = new THREE.Scene();
+    const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x0f172a);
 
-    camera = new THREE.PerspectiveCamera(75, mountRef.current.clientWidth / mountRef.current.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.set(0, 3, 8);
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    mountRef.current.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     // Orbit controls simulation
-    controls = {
+    const controls = {
       autoRotate: autoRotate,
       autoRotateSpeed: 0.3,
       update: () => {},
@@ -191,13 +186,13 @@ export const Class11ElectromagneticInduction: React.FC = () => {
       
       
       labelRenderer = new CSS2DRenderer();
-      labelRenderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+      labelRenderer.setSize(container.clientWidth, container.clientHeight);
       labelRenderer.domElement.style.position = "absolute";
       labelRenderer.domElement.style.top = "0";
       labelRenderer.domElement.style.pointerEvents = "none";
       labelRenderer.domElement.style.zIndex = "10";
-      mountRef.current.appendChild(labelRenderer.domElement);
-    } catch (e) {
+      container.appendChild(labelRenderer.domElement);
+    } catch {
       console.log("CSS2DRenderer not available");
     }
 
@@ -306,13 +301,13 @@ export const Class11ElectromagneticInduction: React.FC = () => {
 
     // Handle resize
     const handleResize = () => {
-      if (!mountRef.current) return;
+      if (!container) return;
       
-      camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+      camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+      renderer.setSize(container.clientWidth, container.clientHeight);
       if (labelRenderer) {
-        labelRenderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+        labelRenderer.setSize(container.clientWidth, container.clientHeight);
       }
     };
 
@@ -322,10 +317,10 @@ export const Class11ElectromagneticInduction: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (container) {
+        container.removeChild(renderer.domElement);
         if (labelRenderer && labelRenderer.domElement) {
-          mountRef.current.removeChild(labelRenderer.domElement);
+          container.removeChild(labelRenderer.domElement);
         }
       }
       // Dispose geometries and materials

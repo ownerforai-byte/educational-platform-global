@@ -18,13 +18,7 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
-import {
-  createThreeScene,
-  disposeThreeScene,
-  bindResize,
-  standardMaterial,
-  type ThreeScene,
-} from "@/components/lab/three-scene";
+import { disposeThreeScene, type ThreeScene } from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
 
@@ -61,7 +55,8 @@ export const SearlesBarExperiment: React.FC = () => {
   const deviation = Number.isFinite(K) ? ((K - rod.k) / rod.k) * 100 : NaN;
 
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
+    const container = mountRef.current!;
+    if (!container || !webGL) return;
 
     let ts: ThreeScene | null = null;
     let unbind: (() => void) | null = null;
@@ -72,10 +67,10 @@ export const SearlesBarExperiment: React.FC = () => {
     async function init() {
       try {
         const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText, disposeThreeScene } = mod;
-        if (!mountRef.current || cancelled) return;
+        const { createThreeScene, bindResize, standardMaterial } = mod;
+        if (!container || cancelled) return;
 
-        ts = createThreeScene(mountRef.current!, {
+        ts = createThreeScene(container, {
           cameraPosition: new THREE.Vector3(2, 4.4, 14.5),
           autoRotate: false,
           background: 0x0b1220,
@@ -219,12 +214,12 @@ export const SearlesBarExperiment: React.FC = () => {
         try {
           const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
           labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          labelRenderer.setSize(container.clientWidth, container.clientHeight);
           labelRenderer.domElement.style.position = "absolute";
           labelRenderer.domElement.style.top = "0";
           labelRenderer.domElement.style.pointerEvents = "none";
           labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
+          container.appendChild(labelRenderer.domElement);
 
           const mkLabel = (color: string, title: string, sub?: string) => {
             const el = document.createElement("div");
@@ -237,7 +232,7 @@ export const SearlesBarExperiment: React.FC = () => {
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { leaderLayer = createLeaderLayer(container); } catch { leaderLayer = null; }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -289,7 +284,7 @@ export const SearlesBarExperiment: React.FC = () => {
             if (leaderLayer) leaderLayer.draw(ts.camera, connections);
           }
           animate();
-        } catch (e) { console.log("CSS2DRenderer not available"); }
+        } catch { console.log("CSS2DRenderer not available"); }
       } catch (err) {
         console.error("SearlesBar init:", err);
       }
@@ -300,13 +295,14 @@ export const SearlesBarExperiment: React.FC = () => {
       cancelled = true;
       unbind?.();
       if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = mountRef.current;
+      const m = container;
       if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
         m.removeChild(labelRenderer.domElement);
       }
       try { leaderLayer?.dispose?.(); } catch {}
       if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, matIdx, barLengthCm, rodRadiusMm, flowGramPerMin, deltaThetaW, T1, T2]);
 
   return (
