@@ -6,14 +6,23 @@
 # whose CLI binary is actually installed (`command -v` check).
 #
 # >>> EDIT THE RIGHT-HAND "binary" NAMES to match your real installs. <<<
-# claude, kilo, cline, vibe (Mistral Vibe) are real installed CLI names.
-# codestral remains a placeholder — swap in whatever command actually
-# launches it on your machine (or a wrapper script you write around its API).
+# claude, kilo, cline, agnes are real installed CLI names.
+#
+# NOTE (2026-08-31): the judge/planner/generator roles all execute through
+# `omniroute chat` (binary: omniroute) rather than their native CLIs because
+# the native CLIs are unreliable programmatically on this Windows setup:
+#   - `claude -p` truncates prompts to their first word with the custom
+#     rider77 combo model (verified in omniroute's upstream call logs)
+#   - `vibe -p` hangs in non-TTY mode (never writes output) — it's a
+#     vibe-on-Windows limitation
+#   - `bigpickle`, `codestral` remain placeholders (no real install)
+# OmnIRoute reliably serves the same model family for each role, so the
+# role semantics are preserved.
 
 declare -A ROLE_CHAIN=(
-  [planner]="claude:claude bigpickle:bigpickle"
+  [planner]="claude:omniroute bigpickle:bigpickle"
   [implementer]="kilocode:kilo cline:cline"
-  [generator]="mistral:vibe codestral:codestral"
+  [generator]="mistral:omniroute codestral:codestral"
   [verifier]="agnes:agnes"
 )
 
@@ -100,20 +109,28 @@ Task: $task"
       ;;
     kilocode)
       # kilo run takes the prompt as a positional message (no --task/--rules flags)
-      kilo run "$rules
+      timeout 600 kilo run "$rules
 
 Task: $task"
       ;;
     cline)
-      cline --headless --prompt "$rules
+      timeout 600 cline --headless --prompt "$rules
 
 Task: $task"
       ;;
     mistral)
-      # real binary is `vibe` (Mistral Vibe CLI); -p = programmatic one-shot mode
-      vibe -p "$rules
+      # native `vibe` CLI hangs in non-TTY mode on Windows — route through
+      # omniroute's codestral (mistral family) instead. Tries vibe first
+      # only if omniroute is absent.
+      if command -v omniroute >/dev/null 2>&1; then
+        timeout 300 omniroute chat -q --timeout 280000 --model "${GENERATOR_MODEL:-mistral/codestral-latest}" "$rules
 
-Task: $task" --output text --auto-approve
+Task: $task"
+      else
+        timeout 120 vibe -p "$rules
+
+Task: $task" --output text --auto-approve --max-turns 10 2>/dev/null || true
+      fi
       ;;
     codestral)
       codestral complete --prompt "$rules
@@ -122,7 +139,7 @@ Task: $task"
       ;;
     agnes)
       # real agnes CLI: one-shot chat via `agnes text chat --prompt` (no `test` command)
-      agnes text chat --prompt "$rules
+      timeout 120 agnes text chat --prompt "$rules
 
 Task: $task"
       ;;

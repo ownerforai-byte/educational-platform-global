@@ -563,6 +563,9 @@ ravikishan/
 │   │   ├── 20260831_212245_implementer_kilocode.log
 │   │   ├── 20260831_212400_implementer_kilocode.log
 │   │   ├── 20260831_212400_planner_claude.log
+│   │   ├── 20260831_213602_generator_mistral.log
+│   │   ├── 20260831_213945_generator_mistral.log
+│   │   ├── 20260831_214406_generator_mistral.log
 │   │   └── router.log
 │   ├── rules/
 │   │   ├── generator.md
