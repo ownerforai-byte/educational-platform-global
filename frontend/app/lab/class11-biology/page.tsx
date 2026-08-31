@@ -9,8 +9,7 @@ import { Suspense } from "react";
 import { BiologyLab } from "@/components/lab/biology-lab";
 
 export default function LabPage() {
-  const params = useParams();
-  const labId = params?.labId as string;
+  const labId = "class11-biology";
 
   return (
     <div className="container mx-auto py-6 px-4 space-y-6">

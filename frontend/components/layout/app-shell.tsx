@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
@@ -54,7 +55,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               }
             </Button>
 
-            <a
+            <Link
               href="/"
               className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
             >
@@ -64,7 +65,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <span className="hidden sm:block text-sm font-bold tracking-tight text-foreground whitespace-nowrap">
                 Ravikisan&apos;s Platform
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Center: spacer (GlobalSearch is inside header via children) */}
@@ -74,29 +75,29 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <div className="flex items-center gap-1.5 shrink-0">
             <ThemeToggle />
 
-            <a
+            <Link
               href="/chat"
               className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap"
               title="Ask the AI study assistant"
             >
               <span className="hidden xs:inline">AI Tutor</span>
               <span className="xs:hidden">AI</span>
-            </a>
+            </Link>
 
             <div className="ml-1 h-4 w-px bg-border/60" />
 
-            <a
+            <Link
               href="/login"
               className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl text-xs font-semibold hover:bg-muted transition-colors whitespace-nowrap"
             >
               Log in
-            </a>
-            <a
+            </Link>
+            <Link
               href="/signup"
               className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity whitespace-nowrap"
             >
               Sign up
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -126,9 +127,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               {breadcrumbs.map((crumb, i) => (
                 <span key={i}>
                   {i > 0 && <span className="mx-2">/</span>}
-                  <a href={crumb.href ?? "#"} className="hover:text-foreground">
-                    {crumb.label}
-                  </a>
+                  {crumb.href && crumb.href !== "#" ? (
+                    <Link href={crumb.href} className="hover:text-foreground">
+                      {crumb.label}
+                    </Link>
+                  ) : (
+                    <span className="hover:text-foreground">{crumb.label}</span>
+                  )}
                 </span>
               ))}
             </nav>

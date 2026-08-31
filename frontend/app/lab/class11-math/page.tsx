@@ -1,6 +1,5 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Loader2 } from "lucide-react";
@@ -8,9 +7,9 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { Class11Math3DPlus } from "@/components/lab/class11/class11-math-3d-plus";
 
+const LAB_ID = "class11-math";
+
 export default function LabPage() {
-  const params = useParams();
-  const labId = params?.labId as string;
 
   return (
     <div className="container mx-auto py-6 px-4 space-y-6">
@@ -26,7 +25,7 @@ export default function LabPage() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <span>{labId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+            <span>{LAB_ID.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
           </CardTitle>
         </CardHeader>
         <CardContent>
