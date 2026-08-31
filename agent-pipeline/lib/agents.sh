@@ -19,16 +19,18 @@
 # OmnIRoute reliably serves the same model family for each role, so the
 # role semantics are preserved.
 #
-# Verifier: primary agent is Kilocode (kilo) — an agentic CLI that reads the
-# repo itself. Fallback is agnes (one-shot chat, no file tools), which gets
-# the contents of any task-referenced files inlined into its prompt by
-# collect_task_file_contents() so it verifies real content, not guesses.
+# NOTE: The verifier rule file (rules/verifier.md) designates agnes as the
+# verifier agent with no fallback. To preserve that single-agent design
+# while fixing agnes's lack of file tools, the agnes run_agent case below
+# inlines the contents of any files named in the task (via
+# collect_task_file_contents()) so agnes verifies real content with real
+# line numbers instead of fabricating findings.
 
 declare -A ROLE_CHAIN=(
   [planner]="claude:omniroute bigpickle:bigpickle"
   [implementer]="kilocode:kilo cline:cline"
   [generator]="mistral:omniroute codestral:codestral"
-  [verifier]="kilocode:kilo agnes:agnes"
+    [verifier]="agnes:agnes"
 )
 
 # Returns the name of the first available agent for a role, or "" if none.
@@ -169,12 +171,12 @@ Task: $task"
       # real content (actual line numbers will reference real text).
       local filesctx
       filesctx=$(collect_task_file_contents "$task")
-      timeout 200 agnes text chat --prompt "$rules
+             timeout 200 agnes text chat --prompt "$rules
 
 Task: $task
 
 Relevant file contents to verify against:
-$filesctx" --model "${AGNES_MODEL:-agnes-2.5-flash}"
+$filesctx"
       ;;
     *)
       echo "Unknown agent: $agent" >&2
