@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,8 +17,6 @@ interface AppShellProps {
 }
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   useEffect(() => {
@@ -143,7 +140,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       </div>
 
       {/* ── Footer ─────────────────────────────────────────────────── */}
-      {isHome && <Footer />}
+      <Footer />
 
       {/* ── Floating buttons (different positions) ─────────────────── */}
       {/* AI Widget — bottom-left */}

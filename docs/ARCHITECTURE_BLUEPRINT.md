@@ -554,6 +554,8 @@ ravikishan/
 │   └── workflows/
 │       └── ci.yml
 ├── .cursor/
+├── .vscode/
+│   └── settings.json
 ├── agent-pipeline/
 │   ├── lib/
 │   │   ├── agents.sh

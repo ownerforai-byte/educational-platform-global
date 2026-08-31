@@ -8,7 +8,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20">
+              <div
+                className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20"
+                aria-label="Ravikisan's Platform home"
+              >
                 <span className="text-sm font-extrabold text-white">R</span>
               </div>
               <span className="font-bold text-sm tracking-tight text-foreground">
