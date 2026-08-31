@@ -558,6 +558,11 @@ ravikishan/
 ├── .vscode/
 │   └── settings.json
 ├── agent-pipeline/
+│   ├── bin/
+│   │   ├── agnes
+│   │   ├── claude
+│   │   ├── entry.sh
+│   │   └── kilo
 │   ├── lib/
 │   │   ├── agents.sh
 │   │   └── lock.sh
@@ -585,7 +590,8 @@ ravikishan/
 │   │   ├── planner.md
 │   │   └── verifier.md
 │   ├── README.md
-│   └── router.sh
+│   ├── router.sh
+│   └── TASKS.md
 ├── db/
 │   ├── schema.ts
 │   └── seed.ts

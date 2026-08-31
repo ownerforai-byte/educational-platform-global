@@ -29,10 +29,18 @@ Then edit `lib/agents.sh` — the `ROLE_CHAIN` entries map `name:binary`
 (`claude`, `kilo`, `cline`, `agnes`, `omniroute` are real). `bigpickle`,
 `codestral`, `vibe` are fallbacks. Edit `run_agent()` per tool's real syntax.
 
-## Run it
+## Run it — including via ANY agent binary
 ```bash
 ./router.sh "Add a dark mode toggle to the settings page"
+
+# OR the same, prompted into any agent — the FULL pipeline still activates:
+agent-pipeline/bin/kilo   "generate the biology question set"
+agent-pipeline/bin/agnes  "verify the chemistry set against the spec"
+agent-pipeline/bin/claude "plan the Lab build-out"
 ```
+
+Whichever front-door you type the prompt into, `bin/entry.sh` routes it to
+`router.sh` and ALL roles run per their rules (see `TASKS.md` for the map).
 
 ## What it guarantees
 - **Only one agent runs at a time** — `lib/lock.sh` uses `flock` (with a
