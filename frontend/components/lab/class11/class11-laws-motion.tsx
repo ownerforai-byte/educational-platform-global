@@ -108,17 +108,20 @@ export const Class11LawsOfMotion: React.FC = () => {
           if (!ts) return;
 
           // Clear previous objects
-          if (rope) { ts.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); }
-          if (forceArrow) ts.group.remove(forceArrow);
-          if (frictionArrow) ts.group.remove(frictionArrow);
-          if (tensionArrow) ts.group.remove(tensionArrow);
+          if (rope) { ts.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); rope = null; }
+          if (forceArrow) { ts.group.remove(forceArrow); forceArrow.dispose(); forceArrow = null; }
+          if (frictionArrow) { ts.group.remove(frictionArrow); frictionArrow.dispose(); frictionArrow = null; }
+          if (tensionArrow) { ts.group.remove(tensionArrow); tensionArrow.dispose(); tensionArrow = null; }
           if (trajectoryLine) {
             ts.group.remove(trajectoryLine);
             trajectoryLine.geometry.dispose();
             (trajectoryLine.material as THREE.Material).dispose();
             trajectoryLine = null;
           }
-          normalArrows.forEach(arrow => ts.group.remove(arrow));
+          normalArrows.forEach(arrow => {
+            ts.group.remove(arrow);
+            arrow.dispose();
+          });
           normalArrows.length = 0;
 
           const elapsed = (performance.now() - startTime) / 1000;
@@ -257,7 +260,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div ref={mountRef} className="w-full h-96 bg-gray-100 rounded-lg" />
+        <div ref={mountRef} className="w-full h-96 bg-black rounded-lg" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-4">

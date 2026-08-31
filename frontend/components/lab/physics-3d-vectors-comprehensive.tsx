@@ -6,56 +6,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene } from "@/components/lab/three-scene";
-
-// Helper to create a three scene
-const createThreeScene = (container: HTMLElement, config: any) => {
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  container.appendChild(renderer.domElement);
-
-  // Controls
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
-  scene.add(ambientLight);
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-  directionalLight.position.set(10, 10, 10);
-  scene.add(directionalLight);
-
-  // Group for all objects
-  const group = new THREE.Group();
-  scene.add(group);
-
-  // Camera position
-  camera.position.copy(config.cameraPosition || new THREE.Vector3(0, 15, 25));
-  camera.lookAt(0, 0, 0);
-
-  return { scene, camera, renderer, controls, group };
-};
-
-const bindResize = (ts: any, container: HTMLElement) => {
-  const handleResize = () => {
-    ts.camera.aspect = container.clientWidth / container.clientHeight;
-    ts.camera.updateProjectionMatrix();
-    ts.renderer.setSize(container.clientWidth, container.clientHeight);
-  };
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-};
+import { createThreeScene, disposeThreeScene, bindResize, clearGroup, ThreeScene } from "@/components/lab/three-scene";
 
 // Enhanced 3D Vector Visualization with all cases
 const VectorComprehensive3D: React.FC = () => {
@@ -136,7 +92,7 @@ const VectorComprehensive3D: React.FC = () => {
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
 
-    let ts: any = null;
+    let ts: ThreeScene | null = null;
     let unbind: (() => void) | null = null;
     let cancelled = false;
 
@@ -147,16 +103,16 @@ const VectorComprehensive3D: React.FC = () => {
           autoRotate: false,
           background: 0x0a0a1a
         });
-        
-        unbind = bindResize(ts, mountRef.current!);
+
+        unbind = bindResize(ts);
 
         // Grid helper
         const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-        ts.group.add(gridHelper);
+        ts!.group.add(gridHelper);
 
         // Main axes (X, Y, Z) - thicker
         const mainAxes = new THREE.AxesHelper(10);
-        ts.group.add(mainAxes);
+        ts!.group.add(mainAxes);
 
         // Create custom axis helpers with labels
         const createLabeledAxis = (direction: THREE.Vector3, color: number, label: string, length: number = 8) => {
@@ -174,44 +130,47 @@ const VectorComprehensive3D: React.FC = () => {
         // X and X' axes (positive and negative)
         const xPosArrow = createLabeledAxis(new THREE.Vector3(1, 0, 0), 0xff3333, "X", 8);
         xPosArrow.name = "x-axis";
-        ts.group.add(xPosArrow);
+        ts!.group.add(xPosArrow);
 
         const xNegArrow = createLabeledAxis(new THREE.Vector3(-1, 0, 0), 0xff3333, "X'", 8);
         xNegArrow.name = "x'-axis";
-        ts.group.add(xNegArrow);
+        ts!.group.add(xNegArrow);
 
         // Y and Y' axes
         const yPosArrow = createLabeledAxis(new THREE.Vector3(0, 1, 0), 0x33ff33, "Y", 8);
         yPosArrow.name = "y-axis";
-        ts.group.add(yPosArrow);
+        ts!.group.add(yPosArrow);
 
         const yNegArrow = createLabeledAxis(new THREE.Vector3(0, -1, 0), 0x33ff33, "Y'", 8);
         yNegArrow.name = "y'-axis";
-        ts.group.add(yNegArrow);
+        ts!.group.add(yNegArrow);
 
         // Z and Z' axes
         const zPosArrow = createLabeledAxis(new THREE.Vector3(0, 0, 1), 0x3333ff, "Z", 8);
         zPosArrow.name = "z-axis";
-        ts.group.add(zPosArrow);
+        ts!.group.add(zPosArrow);
 
         const zNegArrow = createLabeledAxis(new THREE.Vector3(0, 0, -1), 0x3333ff, "Z'", 8);
         zNegArrow.name = "z'-axis";
-        ts.group.add(zNegArrow);
+        ts!.group.add(zNegArrow);
 
         // Vector arrows
         let vec1Arrow: THREE.ArrowHelper | null = null;
         let vec2Arrow: THREE.ArrowHelper | null = null;
         let resultantArrow: THREE.ArrowHelper | null = null;
         const componentArrows: THREE.ArrowHelper[] = [];
+        const angleLines: THREE.Line[] = [];
 
         function updateScene() {
-          // Clear previous vectors
-          ts.group.children = ts.group.children.filter((child: any) => 
-            !child.name?.startsWith('vec-') && 
-            !child.name?.startsWith('comp-') &&
-            !child.name?.startsWith('resultant-') &&
-            !child.name?.startsWith('angle-')
-          );
+          const scene = ts!;
+          // Dispose and remove previous vectors (proper cleanup)
+          if (vec1Arrow) { scene.group.remove(vec1Arrow); vec1Arrow.dispose(); vec1Arrow = null; }
+          if (vec2Arrow) { scene.group.remove(vec2Arrow); vec2Arrow.dispose(); vec2Arrow = null; }
+          if (resultantArrow) { scene.group.remove(resultantArrow); resultantArrow.dispose(); resultantArrow = null; }
+          componentArrows.forEach(arrow => { scene.group.remove(arrow); arrow.dispose(); });
+          componentArrows.length = 0;
+          angleLines.forEach(line => { scene.group.remove(line); line.geometry.dispose(); (line.material as THREE.Material).dispose(); });
+          angleLines.length = 0;
 
           // Vector 1 (Red) - with proper negative sign handling
           const vec1Dir = new THREE.Vector3(vec1X, vec1Y, vec1Z);
@@ -228,7 +187,7 @@ const VectorComprehensive3D: React.FC = () => {
             0.25
           );
           vec1Arrow.name = "vec-1";
-          ts.group.add(vec1Arrow);
+          ts!.group.add(vec1Arrow);
 
           // Vector 2 (Blue) - with proper negative sign handling
           const vec2Dir = new THREE.Vector3(vec2X, vec2Y, vec2Z);
@@ -245,7 +204,7 @@ const VectorComprehensive3D: React.FC = () => {
             0.25
           );
           vec2Arrow.name = "vec-2";
-          ts.group.add(vec2Arrow);
+          ts!.group.add(vec2Arrow);
 
           // Resultant (Green)
           if (showResultant) {
@@ -259,7 +218,7 @@ const VectorComprehensive3D: React.FC = () => {
               0.3
             );
             resultantArrow.name = "resultant-main";
-            ts.group.add(resultantArrow);
+            ts!.group.add(resultantArrow);
           }
 
           // Component arrows (from head of first vector)
@@ -278,7 +237,7 @@ const VectorComprehensive3D: React.FC = () => {
               0.15
             );
             compArrow.name = "comp-projection";
-            ts.group.add(compArrow);
+            ts!.group.add(compArrow);
             componentArrows.push(compArrow);
 
             // Perpendicular component
@@ -293,7 +252,7 @@ const VectorComprehensive3D: React.FC = () => {
                 0.15
               );
               perpArrow.name = "comp-perpendicular";
-              ts.group.add(perpArrow);
+              ts!.group.add(perpArrow);
               componentArrows.push(perpArrow);
             }
           }
@@ -306,7 +265,7 @@ const VectorComprehensive3D: React.FC = () => {
             const endAngle = Math.atan2(vec2Y, vec2X);
             const arcPoints: THREE.Vector3[] = [];
             const numSegments = 30;
-            
+
             for (let i = 0; i <= numSegments; i++) {
               const t = i / numSegments;
               const currentAngle = startAngle + (endAngle - startAngle) * t;
@@ -316,12 +275,13 @@ const VectorComprehensive3D: React.FC = () => {
                 0
               ));
             }
-            
+
             const arcGeometry = new THREE.BufferGeometry().setFromPoints(arcPoints);
             const arcMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.7 });
             const arc = new THREE.Line(arcGeometry, arcMaterial);
             arc.name = "angle-arc";
-            ts.group.add(arc);
+            angleLines.push(arc);
+            ts!.group.add(arc);
           }
 
           // Add text labels for axes (simplified - using sprite text would be better but more complex)
@@ -335,8 +295,8 @@ const VectorComprehensive3D: React.FC = () => {
 
         function animate() {
           if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
+          ts!.controls.update();
+          ts!.renderer.render(ts!.scene, ts!.camera);
           requestAnimationFrame(animate);
         }
 

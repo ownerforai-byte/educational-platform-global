@@ -116,8 +116,12 @@ const ElectricField3D: React.FC = () => {
         }
 
         function updateFieldLines() {
-          // Clear existing field lines
-          fieldLines.forEach(line => ts.group.remove(line));
+          // Dispose and remove existing field lines
+          fieldLines.forEach(line => {
+            ts.group.remove(line);
+            line.geometry.dispose();
+            (line.material as THREE.Material).dispose();
+          });
           fieldLines = [];
 
           if (!showFieldLines) return;
@@ -159,8 +163,12 @@ const ElectricField3D: React.FC = () => {
         }
 
         function updateEquipotential() {
-          // Clear existing equipotential surfaces
-          equipotentialSurfaces.forEach(surface => ts.group.remove(surface));
+          // Dispose and remove existing equipotential surfaces
+          equipotentialSurfaces.forEach(surface => {
+            ts.group.remove(surface);
+            surface.geometry.dispose();
+            (surface.material as THREE.Material).dispose();
+          });
           equipotentialSurfaces = [];
 
           if (!showEquipotential) return;
@@ -525,13 +533,17 @@ const ElectricDipole3D: React.FC = () => {
         ts.group.add(rod);
 
         // Field lines
+        const dipoleFieldLines: THREE.Line[] = [];
         function createFieldLines() {
           if (!showField) return;
-          
-          // Clear previous lines
-          ts.group.children = ts.group.children.filter((child: any) => 
-            !(child instanceof THREE.Line) && !(child instanceof THREE.ArrowHelper)
-          );
+
+          // Dispose and remove previous lines
+          dipoleFieldLines.forEach(line => {
+            ts.group.remove(line);
+            line.geometry.dispose();
+            (line.material as THREE.Material).dispose();
+          });
+          dipoleFieldLines.length = 0;
 
           const numLines = 30;
           for (let i = 0; i < numLines; i++) {
@@ -556,6 +568,7 @@ const ElectricDipole3D: React.FC = () => {
             lineGeo.setFromPoints(points);
             const lineMat = new THREE.LineBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.4 });
             const line = new THREE.Line(lineGeo, lineMat);
+            dipoleFieldLines.push(line);
             ts.group.add(line);
           }
         }
