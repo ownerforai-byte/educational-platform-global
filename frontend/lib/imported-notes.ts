@@ -1,12 +1,6 @@
 import { loadData } from "@/lib/data-loader";
 
-export type NotesTrack =
-  | "class-11-notes"
-  | "class-11e"
-  | "class-11-more"
-  | "class-12-notes"
-  | "class-12e"
-  | "class-12-more";
+export type NotesTrack = "class-11-notes" | "class-12-notes";
 
 export type ImportedNote = {
   title: string;
@@ -111,16 +105,10 @@ function buildImportedNotes(
     const unit = unitPath ? mapRavUnitToSyllabus(subject, unitPath) : undefined;
     
     let target: ImportedNote["target"];
-    if (cls === "class-11e") {
-      target = "class-11e";
-    } else if (cls === "class-12e") {
-      target = "class-12e";
-    } else if (cls === "class-12" || cls === "class-12-notes") {
-      target = unit ? "class-12-notes" : "class-12-more";
-    } else if (unit) {
-      target = "class-11-notes";
+    if (cls === "class-12" || cls === "class-12-notes") {
+      target = "class-12-notes";
     } else {
-      target = "class-11-more";
+      target = "class-11-notes";
     }
     
     if (!result[subject]) {
@@ -144,7 +132,7 @@ function buildImportedNotes(
     }
     
     const unit = mapRavUnitToSyllabus(subject, item.chapter);
-    const target = unit ? "class-11-notes" : "class-11-more";
+    const target: ImportedNote["target"] = "class-11-notes";
     
     result[subject].push({
       title: item.title,

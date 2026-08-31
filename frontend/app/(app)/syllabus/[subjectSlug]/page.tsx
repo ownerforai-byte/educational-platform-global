@@ -3,6 +3,7 @@ import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllab
 import { SYLLABUS_HISTORY } from "@/lib/syllabus-history";
 import Link from "next/link";
 import { Calendar, TrendingUp, TrendingDown, Minus, Info, ChevronDown, ChevronUp } from "lucide-react";
+import { DateBadge } from "@/components/content/date-badge";
 import { useState, use } from "react";
 
 const SUBJECT_EMOJI: Record<string, string> = {
@@ -25,11 +26,7 @@ const SUBJECT_COLORS: Record<string, string> = {
 
 const CLASS_TRACK_ORDER = [
   "class-11-notes",
-  "class-11e",
-  "class-11-more",
   "class-12-notes",
-  "class-12e",
-  "class-12-more",
 ] as const;
 
 function getSubjectAcrossTracks(subjectSlug: string): {
@@ -46,7 +43,7 @@ function getSubjectAcrossTracks(subjectSlug: string): {
   return results;
 }
 
-function YearAccordion({ yearData, colorClass }: { yearData: { year: number; bsYear: string; changes: { added: string[]; removed: string[]; modified: string[]; notes?: string } }; colorClass: string }) {
+function YearAccordion({ yearData, colorClass, subjectSlug }: { yearData: { year: number; bsYear: string; changes: { added: string[]; removed: string[]; modified: string[]; notes?: string } }; colorClass: string; subjectSlug: string }) {
   const [expanded, setExpanded] = useState(false);
   const changes = yearData.changes;
 
@@ -147,6 +144,10 @@ function YearAccordion({ yearData, colorClass }: { yearData: { year: number; bsY
               </ul>
             </div>
           )}
+
+          <Link href={`/syllabus/${subjectSlug}/year/${yearData.year}`} className="inline-flex text-sm text-primary hover:underline">
+            Open full view →
+          </Link>
         </div>
       )}
     </div>
@@ -206,6 +207,9 @@ export default function SubjectSyllabusPage({
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               {firstSubject.description}
             </p>
+            <div className="mt-2">
+              <DateBadge label="Syllabus last updated" date="2082 BS" tone="blue" />
+            </div>
             <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1 bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
                 {subjectAcrossTracks.length} tracks
@@ -245,7 +249,7 @@ export default function SubjectSyllabusPage({
 
           <div className="space-y-3">
             {history.map((yearData) => (
-              <YearAccordion key={yearData.year} yearData={yearData} colorClass={colorClass} />
+              <YearAccordion key={yearData.year} yearData={yearData} colorClass={colorClass} subjectSlug={subjectSlug} />
             ))}
           </div>
         </div>

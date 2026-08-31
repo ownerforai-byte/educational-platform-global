@@ -8,18 +8,6 @@ export default function Class11Page() {
       href: "/class-11-notes",
       emoji: "📝",
     },
-    {
-      title: "Class 11E",
-      description: "Extra materials and practice for Class 11E.",
-      href: "/class-11e",
-      emoji: "💡",
-    },
-    {
-      title: "Class 11 More",
-      description: "Additional resources and supplementary content for Class 11.",
-      href: "/class-11-more",
-      emoji: "📦",
-    },
   ];
 
   return (

@@ -8,14 +8,7 @@ import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 
 function isNotesTrack(value: string): value is NotesTrack {
-  return (
-    value === "class-11-notes" ||
-    value === "class-11e" ||
-    value === "class-11-more" ||
-    value === "class-12-notes" ||
-    value === "class-12e" ||
-    value === "class-12-more"
-  );
+  return value === "class-11-notes" || value === "class-12-notes";
 }
 
 export async function SubjectHubView({

@@ -47,6 +47,46 @@ const nextConfig = {
         destination: "/notes",
         permanent: false,
       },
+      {
+        source: "/class-11e/:path*",
+        destination: "/class-11-notes/:path*",
+        permanent: false,
+      },
+      {
+        source: "/class-11-more/:path*",
+        destination: "/class-11-notes/:path*",
+        permanent: false,
+      },
+      {
+        source: "/class-12e/:path*",
+        destination: "/class-12-notes/:path*",
+        permanent: false,
+      },
+      {
+        source: "/class-12-more/:path*",
+        destination: "/class-12-notes/:path*",
+        permanent: false,
+      },
+      {
+        source: "/class-11e",
+        destination: "/class-11-notes",
+        permanent: false,
+      },
+      {
+        source: "/class-11-more",
+        destination: "/class-11-notes",
+        permanent: false,
+      },
+      {
+        source: "/class-12e",
+        destination: "/class-12-notes",
+        permanent: false,
+      },
+      {
+        source: "/class-12-more",
+        destination: "/class-12-notes",
+        permanent: false,
+      },
     ];
   },
   turbopack: {

@@ -190,9 +190,5 @@ export const CORE_SUBJECTS = [
 
 export const CLASS_TRACKS = [
   { slug: "class-11-notes", name: "Class 11 Notes" },
-  { slug: "class-11e", name: "Class 11E" },
-  { slug: "class-11-more", name: "Class 11 More" },
   { slug: "class-12-notes", name: "Class 12 Notes" },
-  { slug: "class-12e", name: "Class 12E" },
-  { slug: "class-12-more", name: "Class 12 More" },
 ] as const;

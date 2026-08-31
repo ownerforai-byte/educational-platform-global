@@ -9,14 +9,7 @@ import { ContentTabs } from "@/components/content/content-tabs";
 import type { NotesTrack } from "@/lib/imported-notes";
 
 function isNotesTrack(value: string): value is NotesTrack {
-  return (
-    value === "class-11-notes" ||
-    value === "class-11e" ||
-    value === "class-11-more" ||
-    value === "class-12-notes" ||
-    value === "class-12e" ||
-    value === "class-12-more"
-  );
+  return value === "class-11-notes" || value === "class-12-notes";
 }
 
 export async function TopicDetailView({
