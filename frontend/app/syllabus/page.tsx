@@ -1,5 +1,7 @@
 import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS_HISTORY, getAllSubjects, getYearChanges } from "@/lib/syllabus-history";
 import Link from "next/link";
+import { Calendar, TrendingUp, TrendingDown, Minus, Info } from "lucide-react";
 
 const SUBJECT_EMOJI: Record<string, string> = {
   Biology: "🌿",
@@ -26,6 +28,8 @@ type SubjectInfo = {
   totalUnits: number;
   notesUrl?: string;
 };
+
+const YEARS = [2082, 2081, 2080, 2079, 2078];
 
 export default function SyllabusLandingPage() {
   // Collect all unique subjects across tracks
@@ -61,8 +65,128 @@ export default function SyllabusLandingPage() {
           </h1>
           <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
             Official NEB (+2) curriculum for all six subjects across every class track. 
-            Click any subject to view the complete syllabus breakdown.
+            Click any subject to view the complete syllabus breakdown and historical changes.
           </p>
+        </div>
+      </div>
+
+      {/* Historical Syllabus Overview */}
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          <Calendar className="h-5 w-5 text-primary" />
+          <h2 className="text-lg font-semibold">Syllabus History (Past 5 Years)</h2>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          Track changes in the NEB curriculum from 2078 BS to 2082 BS. See what topics were added, removed, or modified each year.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {getAllSubjects().map((subject) => {
+            const emoji = SUBJECT_EMOJI[subject] ?? "📘";
+            const history = SYLLABUS_HISTORY[subject];
+            if (!history || history.length === 0) return null;
+
+            const latestChanges = history[0]?.changes;
+            const addedCount = latestChanges?.added.length || 0;
+            const removedCount = latestChanges?.removed.length || 0;
+            const modifiedCount = latestChanges?.modified.length || 0;
+
+            return (
+              <Link
+                key={subject}
+                href={`/syllabus/${subject}`}
+                className="group rounded-xl border border-border/60 bg-card p-4 transition-all hover:border-primary/30 hover:shadow-md"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">{emoji}</span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-foreground text-sm">{subject}</h3>
+                    <p className="text-xs text-muted-foreground mt-1">5 years of changes tracked</p>
+                    
+                    {latestChanges && (
+                      <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                        {addedCount > 0 && (
+                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                            <TrendingUp className="h-3 w-3" />
+                            +{addedCount} added
+                          </span>
+                        )}
+                        {removedCount > 0 && (
+                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-red-500/10 text-red-600 dark:text-red-400">
+                            <TrendingDown className="h-3 w-3" />
+                            -{removedCount} removed
+                          </span>
+                        )}
+                        {modifiedCount > 0 && (
+                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                            <Minus className="h-3 w-3" />
+                            {modifiedCount} modified
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Year comparison table */}
+        <div className="mt-6 rounded-xl border border-border bg-card p-4">
+          <div className="flex items-center gap-2 mb-4">
+            <Info className="h-5 w-5 text-primary" />
+            <h3 className="font-semibold">Quick Year Overview</h3>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left py-2 px-3 font-medium text-muted-foreground">Year</th>
+                  <th className="text-left py-2 px-3 font-medium text-muted-foreground">Key Changes</th>
+                  <th className="text-left py-2 px-3 font-medium text-muted-foreground">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {YEARS.map((year) => {
+                  const physics = getYearChanges("physics", year);
+                  const chemistry = getYearChanges("chemistry", year);
+                  const biology = getYearChanges("biology", year);
+                  const math = getYearChanges("mathematics", year);
+                  const english = getYearChanges("english", year);
+                  const nepali = getYearChanges("nepali", year);
+
+                  const totalAdded = [physics, chemistry, biology, math, english, nepali]
+                    .filter(Boolean)
+                    .reduce((sum, c) => sum + (c?.added.length || 0), 0);
+                  const totalRemoved = [physics, chemistry, biology, math, english, nepali]
+                    .filter(Boolean)
+                    .reduce((sum, c) => sum + (c?.removed.length || 0), 0);
+
+                  return (
+                    <tr key={year} className="border-b border-border/50 last:border-0">
+                      <td className="py-3 px-3 font-medium">
+                        {year} BS
+                      </td>
+                      <td className="py-3 px-3 text-muted-foreground">
+                        <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
+                          +{totalAdded} added
+                        </span>
+                        {totalRemoved > 0 && (
+                          <span className="ml-2 inline-flex items-center gap-1 text-red-600 dark:text-red-400">
+                            -{totalRemoved} removed
+                          </span>
+                        )}
+                      </td>
+                      <td className="py-3 px-3 text-muted-foreground text-xs">
+                        {physics?.notes || chemistry?.notes || biology?.notes || math?.notes || english?.notes || nepali?.notes || "-"}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 

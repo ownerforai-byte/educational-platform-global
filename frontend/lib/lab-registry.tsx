@@ -25,6 +25,9 @@ import {
   MathGeometry3D,
 } from "@/components/lab";
 import { Class11Math3DPlus } from "@/components/lab/class11/class11-math-3d-plus";
+import { Class11Physics3DPlus } from "@/components/lab/class11/class11-physics-3d-plus";
+import { Class11Chemistry3DPlus } from "@/components/lab/class11/class11-chemistry-3d-plus";
+import { Class11Biology3DPlus } from "@/components/lab/class11/class11-biology-3d-plus";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
@@ -938,7 +941,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#3b82f6",
     unit: "Unit: Class 11 Physics",
-    component: PhysicsLab,
+    component: Class11Physics3DPlus,
   },
   {
     id: "class11-chemistry",
@@ -949,7 +952,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#10b981",
     unit: "Unit: Class 11 Chemistry",
-    component: ChemistryLab,
+    component: Class11Chemistry3DPlus,
   },
   {
     id: "class11-math",
@@ -971,7 +974,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#22c55e",
     unit: "Unit: Class 11 Biology",
-    component: BiologyLab,
+    component: Class11Biology3DPlus,
   },
 ];
 

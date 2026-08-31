@@ -1,5 +1,8 @@
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS_HISTORY, getYearChanges } from "@/lib/syllabus-history";
 import Link from "next/link";
+import { Calendar, TrendingUp, TrendingDown, Minus, Info, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 const SUBJECT_EMOJI: Record<string, string> = {
   Biology: "🌿",
@@ -27,6 +30,8 @@ const CLASS_TRACK_ORDER = [
   "class-12e",
   "class-12-more",
 ] as const;
+
+const YEARS = [2082, 2081, 2080, 2079, 2078];
 
 function getSubjectAcrossTracks(subjectSlug: string): {
   classTrack: ClassSyllabus;
@@ -76,6 +81,9 @@ export default async function SubjectSyllabusPage({
     return acc + subject.units.reduce((sum, u) => sum + (u.hours ?? 0), 0);
   }, 0);
 
+  // Get history for this subject
+  const history = SYLLABUS_HISTORY[subjectSlug];
+
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-8 md:py-14 px-4">
       {/* Header */}
@@ -101,6 +109,12 @@ export default async function SubjectSyllabusPage({
                   {totalHours}+ total teaching hours
                 </span>
               )}
+              {history && (
+                <span className="inline-flex items-center gap-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full">
+                  <Calendar className="h-3 w-3" />
+                  5 years tracked
+                </span>
+              )}
             </div>
           </div>
           <Link
@@ -112,10 +126,132 @@ export default async function SubjectSyllabusPage({
         </div>
       </div>
 
+      {/* Historical Changes Section */}
+      {history && history.length > 0 && (
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <Calendar className="h-5 w-5 text-primary" />
+            <h2 className="text-lg font-semibold">Syllabus Changes (2078-2082 BS)</h2>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Track how the {firstSubject.name} syllabus has evolved over the past 5 years.
+          </p>
+
+          <div className="space-y-3">
+            {history.map((yearData) => {
+              const changes = yearData.changes;
+              const [expanded, setExpanded] = useState(false);
+
+              return (
+                <div key={yearData.year} className="rounded-xl border border-border bg-card overflow-hidden">
+                  <button
+                    onClick={() => setExpanded(!expanded)}
+                    className="w-full px-5 py-4 flex items-center justify-between hover:bg-muted/50 transition-colors text-left"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className={`inline-flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br ${colorClass} text-white text-xs font-bold`}>
+                        {yearData.year}
+                      </span>
+                      <div>
+                        <p className="font-semibold text-foreground text-sm">{yearData.bsYear}</p>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {changes.added.length > 0 && (
+                            <span className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400">
+                              <TrendingUp className="h-3 w-3" />
+                              +{changes.added.length} added
+                            </span>
+                          )}
+                          {changes.removed.length > 0 && (
+                            <span className="inline-flex items-center gap-1 text-xs text-red-600 dark:text-red-400">
+                              <TrendingDown className="h-3 w-3" />
+                              -{changes.removed.length} removed
+                            </span>
+                          )}
+                          {changes.modified.length > 0 && (
+                            <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400">
+                              <Minus className="h-3 w-3" />
+                              {changes.modified.length} modified
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    {expanded ? (
+                      <ChevronUp className="h-5 w-5 text-muted-foreground" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-muted-foreground" />
+                    )}
+                  </button>
+
+                  {expanded && (
+                    <div className="px-5 pb-4 space-y-3 border-t border-border/50 pt-3">
+                      {changes.notes && (
+                        <div className="flex items-start gap-2 text-sm text-muted-foreground bg-muted/50 rounded-lg p-3">
+                          <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                          <span>{changes.notes}</span>
+                        </div>
+                      )}
+
+                      {changes.added.length > 0 && (
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">
+                            Added Topics
+                          </p>
+                          <ul className="space-y-1">
+                            {changes.added.map((topic, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                                <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                                <span>{topic}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {changes.removed.length > 0 && (
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wider text-red-600 dark:text-red-400 mb-2">
+                            Removed Topics
+                          </p>
+                          <ul className="space-y-1">
+                            {changes.removed.map((topic, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-red-500" />
+                                <span className="line-through">{topic}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {changes.modified.length > 0 && (
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2">
+                            Modified Topics
+                          </p>
+                          <ul className="space-y-1">
+                            {changes.modified.map((topic, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                                <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-500" />
+                                <span>{topic}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Class track sections */}
       <div className="space-y-6">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          Syllabus by Class Track
+          Current Syllabus by Class Track
         </h2>
 
         {subjectAcrossTracks.map(({ classTrack, subject }) => {
