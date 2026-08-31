@@ -1,3 +1,4 @@
+"use client";
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
 import { SYLLABUS_HISTORY, getYearChanges } from "@/lib/syllabus-history";
 import Link from "next/link";

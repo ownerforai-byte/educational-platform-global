@@ -183,9 +183,9 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-calc-heat", title: "Heat Calculator", description: "Calorimetry, latent heat, thermal expansion.", category: "physics", icon: <Thermometer className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: <Eye className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <span className="text-blue-500">🚀</span>, status: "active", component: () => <PhysicsLab /> },
-    // Premium
-    { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "premium", creditCost: 5000, component: () => <PremiumPlaceholder title="AI Lab Tutor" icon={<Brain className="h-5 w-5 text-amber-500" />} description="Get instant help with lab concepts." /> },
-    { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "premium", creditCost: 7000, component: () => <PremiumAdvancedCircuitSimulator /> },
+    // General
+    { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumPlaceholder title="AI Lab Tutor" icon={<Brain className="h-5 w-5 text-amber-500" />} description="Get instant help with lab concepts." /> },
+    { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumAdvancedCircuitSimulator /> },
   ],
 
   chemistry: [
@@ -208,8 +208,8 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ch-calc-gas", title: "Gas Laws Calculator", description: "Boyle's, Charles's, ideal gas law solver.", category: "chemistry", icon: <WindIcon className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
     { id: "ch-calc-molarmass", title: "Molar Mass Calculator", description: "Enter a chemical formula and get molar mass.", category: "chemistry", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
     { id: "ch-calc-stoich", title: "Stoichiometry Lab", description: "Moles, percent composition, limiting reagent.", category: "chemistry", icon: <Dna className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
-    // Premium
-    { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-amber-500" />, status: "premium", creditCost: 8000, component: () => <PremiumPlaceholder title="Molecular Builder 3D" icon={<AtomIcon className="h-5 w-5 text-amber-500" />} description="Build molecules from scratch." /> },
+    // General
+    { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumPlaceholder title="Molecular Builder 3D" icon={<AtomIcon className="h-5 w-5 text-amber-500" />} description="Build molecules from scratch." /> },
   ],
 
   biology: [
@@ -256,8 +256,8 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "math-calc-vectors", title: "Vector Operations", description: "Add, dot product, cross product of 3D vectors.", category: "mathematics", icon: <Move3d className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="vectors" /> },
     { id: "math-calc-limit", title: "Limit Calculator", description: "Estimate limits numerically.", category: "mathematics", icon: <InfinityIcon className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="limit" /> },
     { id: "math-calc-system", title: "System Solver", description: "Solve 2×2 and 3×3 systems of linear equations.", category: "mathematics", icon: <Columns3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="system" /> },
-    // Premium
-    { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4 text-amber-500" />, status: "premium", creditCost: 6000, component: () => <PremiumEquationSolver /> },
+    // General
+    { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumEquationSolver /> },
   ],
 
   class11: [

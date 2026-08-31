@@ -320,10 +320,8 @@ export const LAB_REGISTRY: LabMeta[] = [
     description: "Get instant help with lab concepts. AI explains, solves, and visualizes.",
     category: "physics",
     type: "calculator" as const,
-    status: "premium" as const,
+    status: "active" as const,
     color: "#f59e0b",
-    unit: "Premium",
-    creditCost: 5000,
     component: () => (
       <PremiumPlaceholder
         title="AI Lab Tutor"
@@ -338,10 +336,8 @@ export const LAB_REGISTRY: LabMeta[] = [
     description: "Build and test complex circuits with 50+ components.",
     category: "physics",
     type: "calculator" as const,
-    status: "premium" as const,
+    status: "active" as const,
     color: "#f59e0b",
-    unit: "Premium",
-    creditCost: 7000,
     component: PremiumAdvancedCircuitSimulator,
   },
 
@@ -528,10 +524,8 @@ export const LAB_REGISTRY: LabMeta[] = [
     description: "Build any molecule from scratch. Simulate reactions.",
     category: "chemistry",
     type: "3d" as const,
-    status: "premium" as const,
+    status: "active" as const,
     color: "#f59e0b",
-    unit: "Premium",
-    creditCost: 8000,
     component: () => (
       <PremiumPlaceholder
         title="Molecular Builder 3D"
@@ -924,10 +918,8 @@ export const LAB_REGISTRY: LabMeta[] = [
     description: "Solve any physics, chemistry, or math equation.",
     category: "mathematics",
     type: "calculator" as const,
-    status: "premium" as const,
+    status: "active" as const,
     color: "#f59e0b",
-    unit: "Premium",
-    creditCost: 6000,
     component: () => <PremiumEquationSolver />,
   },
 
