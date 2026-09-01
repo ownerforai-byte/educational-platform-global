@@ -50,12 +50,12 @@ export function MobileNav() {
         <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/80"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
           {/* Panel */}
-          <div className="absolute left-0 top-0 h-full w-72 border-r border-border/40 bg-background/95 backdrop-blur-2xl p-5 flex flex-col">
+          <div className="absolute left-0 top-0 h-full w-72 border-r border-border bg-card p-5 flex flex-col">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70">

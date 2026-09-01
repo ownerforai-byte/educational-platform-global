@@ -39,9 +39,9 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { href: "/subjects", label: "Subjects", icon: BookOpen, color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20" },
-            { href: "/lab", label: "Science Lab", icon: Sparkles, color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20" },
             { href: "/chat", label: "AI Tutor", icon: Sparkles, color: "from-violet-500/10 to-purple-500/10 border-violet-500/20" },
             { href: "/levels", label: "Curriculum", icon: GraduationCap, color: "from-amber-500/10 to-orange-500/10 border-amber-500/20" },
+            { href: "/syllabus", label: "Syllabus", icon: BookOpen, color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20" },
           ].map((card) => {
             const Icon = card.icon;
             return (

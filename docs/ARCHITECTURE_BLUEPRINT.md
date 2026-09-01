@@ -225,7 +225,6 @@ ravikishan/
 │   │   │   ├── theory-panel.tsx
 │   │   │   ├── three-scene.ts
 │   │   │   ├── use-canvas-size.ts
-│   │   │   ├── vectors-all-conditions-3d.tsx
 │   │   │   └── webgl-fallback.tsx
 │   │   ├── layout/
 │   │   │   ├── ai-widget.tsx

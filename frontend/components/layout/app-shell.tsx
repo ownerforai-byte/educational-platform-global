@@ -9,7 +9,7 @@ import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { AIWidget } from "./ai-widget";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { Footer } from "./footer";
+import { GlobalSearch } from "./global-search";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -33,7 +33,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       {/* ── Header ─────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/50">
+      <header className="sticky top-0 z-40 border-b border-border/40 bg-background">
         <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
           {/* Left: mobile hamburger + desktop collapse toggle + logo */}
           <div className="flex items-center gap-2 min-w-0">
@@ -65,8 +65,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-          {/* Center: spacer (GlobalSearch is inside header via children) */}
-          <div className="flex-1 min-w-0" />
+        {/* Center: Global Search */}
+        <div className="flex-1 min-w-0 flex items-center justify-center px-4">
+          <GlobalSearch />
+        </div>
 
           {/* Right: theme toggle + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
@@ -139,8 +141,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </main>
       </div>
 
-      {/* ── Footer ─────────────────────────────────────────────────── */}
-      <Footer />
+      {/* ── Footer removed — only shows on home page via marketing layout ── */}
 
       {/* ── Floating buttons (different positions) ─────────────────── */}
       {/* AI Widget — bottom-left */}
