@@ -219,7 +219,7 @@ export function TopicLifecycleCard({ lifecycle }: { lifecycle: TopicLifecycle })
           </div>
         </div>
         {/* Meaning badge */}
-        <span className="hidden sm:inline text-[11px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground shrink-0">
+        <span className="hidden sm:inline text-[11px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground shrink-0 max-w-[200px] truncate">
           {lifecycle.meaning}
         </span>
         <ChevronRight className={`h-4 w-4 text-muted-foreground transition-transform ${open ? "rotate-90" : ""}`} />
