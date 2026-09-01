@@ -2,7 +2,7 @@
 
 import React, { useMemo } from "react";
 import {
-  TrendingUp, TrendingDown, Minus, CheckCircle2, XCircle,
+  TrendingUp, TrendingDown, CheckCircle2,
   Pencil, Calendar, Eye, ChevronRight,
 } from "lucide-react";
 import { DateBadge } from "@/components/content/date-badge";
@@ -19,6 +19,7 @@ function slugify(title: string) {
   return title.toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
+    // eslint-disable-next-line no-misleading-character-class -- class intentionally covers Devanagari incl. combining marks (Mn)
     .replace(/[^a-z0-9\u0900-\u097f]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
@@ -330,7 +331,7 @@ export function SyllabusVersionSelector({
 
 export function SyllabusUnitView({
   unit,
-  versionYear,
+  versionYear: _versionYear,
   diffs,
 }: {
   unit: { id: string; title: string; hours: number; topics: { slug: string; title: string; hours?: number }[] };

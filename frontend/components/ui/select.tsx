@@ -65,7 +65,7 @@ export function SelectTrigger({
   className?: string;
   id?: string;
 }) {
-  const { value, open, setOpen } = useSelect();
+  const { open, setOpen } = useSelect();
 
   return (
     <Button

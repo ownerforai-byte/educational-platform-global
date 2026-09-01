@@ -38,6 +38,15 @@ type ManifestItem = {
   };
 };
 
+/** r-export manifest item — chapter-level theory notes (used as fallback). */
+type RExportItem = {
+  subject: string;
+  chapter: string;
+  id: string;
+  title: string;
+  notes: string[];
+};
+
 function normPath(p: string) {
   return p.replace(/\\/g, "/");
 }
@@ -53,14 +62,22 @@ export async function getSubjectPyqBank(
   subjectSlug: string,
   maxYears = 10,
 ): Promise<SubjectPyqBank> {
-  const manifest = await loadData<ManifestItem[]>("ravikishan/manifest.json");
+  const [manifest, rexpManifest] = await Promise.all([
+    loadData<ManifestItem[]>("ravikishan/manifest.json"),
+    loadData<RExportItem[]>("r-export/manifest.json").catch(() => [] as RExportItem[]),
+  ]);
   const theory: TheoryBlock[] = [];
   const pyqs: PyqYear[] = [];
 
+  // The manifest stores content under the short class folder ("class-11/…",
+  // "class-12/…") while routes use the track slug ("class-11-notes"). Accept
+  // both so theory/PYQ tabs are never empty due to a class-name mismatch.
+  const classFolder = classSlug.replace(/-notes$/, "");
+  const subjectPrefixes = [`${classSlug}/${subjectSlug}/`, `${classFolder}/${subjectSlug}/`];
+
   for (const item of manifest) {
     const path = normPath(item.path);
-    const isSubject =
-      path.startsWith(`${classSlug}/${subjectSlug}/`);
+    const isSubject = subjectPrefixes.some((p) => path.startsWith(p));
     if (!isSubject) continue;
 
     if (path.includes("/theory/")) {
@@ -94,6 +111,20 @@ export async function getSubjectPyqBank(
           questions,
         });
       }
+    }
+  }
+
+  // Fallback: subjects without ravikishan theory files (biology, english,
+  // nepali) still have chapter-level theory notes in the r-export manifest.
+  if (theory.length === 0) {
+    for (const item of rexpManifest) {
+      if (item.subject !== subjectSlug) continue;
+      const notes = Array.isArray(item.notes) ? item.notes : [];
+      if (notes.length === 0) continue;
+      theory.push({
+        title: item.title ?? "Theory",
+        notes,
+      });
     }
   }
 

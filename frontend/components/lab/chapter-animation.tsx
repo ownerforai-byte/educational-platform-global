@@ -222,7 +222,7 @@ const NuclearScene: SceneRender = (h) => {
   return () => clearInterval(id);
 };
 
-const SolarScene: SceneRender = (h) => {
+export const SolarScene: SceneRender = (h) => {
   const sun = new THREE.Mesh(SPHERE, mat(0xfbbf24, 0xfbbf24));
   sun.scale.setScalar(1.2); h.group.add(sun);
   const orbits: { mesh: THREE.Mesh; radius: number; speed: number; phase: number }[] = [];
@@ -374,7 +374,7 @@ const ElectrolysisScene: SceneRender = (h) => {
   return () => {};
 };
 
-const WaveFunctionScene: SceneRender = (h) => {
+export const WaveFunctionScene: SceneRender = (h) => {
   const N = 40;
   const colors = [0xef4444, 0x3b82f6, 0x10b981, 0xfbbf24];
   for (let layer = 0; layer < 4; layer++) {

@@ -1,11 +1,11 @@
 "use client";
 import { use } from "react";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   Calendar, TrendingUp, TrendingDown, Minus, Info,
-  ChevronDown, ChevronUp, BookOpen, Beaker, Dna, Atom,
-  Calculator, Globe, Search, Filter,
+  ChevronDown, ChevronUp, BookOpen, Dna,
+  Search, Filter,
 } from "lucide-react";
 import { DateBadge } from "@/components/content/date-badge";
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
@@ -22,8 +22,6 @@ import {
   SyllabusVersionComparison,
   SyllabusVersionSelector,
   SyllabusUnitView,
-  diffVersions,
-  type DiffResult,
 } from "@/features/syllabus-history/components/version-comparison";
 import type { SyllabusSubjectData, SubjectKey } from "@/features/syllabus-history/data";
 
@@ -187,11 +185,6 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
   const subjectKey = SUBJECT_KEY_MAP[subjectSlug];
   const sourceData = subjectKey ? SUBJECT_DATA_MAP[subjectKey]?.[activeClass] : null;
   const activeSourceVersion = sourceData?.versions.find((v) => v.isLatest) ?? sourceData?.versions[sourceData.versions.length - 1];
-
-  const totalHours = subjectAcrossTracks.reduce(
-    (acc, { subject }) => acc + subject.units.reduce((s, u) => s + (u.hours ?? 0), 0),
-    0,
-  );
 
   const hasSourceData = !!sourceData;
 

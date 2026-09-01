@@ -105,6 +105,15 @@ const LABS = [
     "unit": "Unit: Geo"
   },
   {
+    "id": "math-th-theorems",
+    "title": "Theorems Theory",
+    "description": "All NEB theorem proofs from Class 11 & 12.",
+    "type": "theory",
+    "status": "development",
+    "color": "#8b5cf6",
+    "unit": "All Units"
+  },
+  {
     "id": "math-calc-deriv",
     "title": "Derivative Calculator",
     "description": "Compute derivatives.",

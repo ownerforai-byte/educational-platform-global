@@ -6,7 +6,10 @@ import { ChapterAnimation } from "@/components/lab/chapter-animation";
 type LabComponentMap = Record<string, () => React.ReactNode>;
 
 const make = (slug: string, title: string, unit?: string, subject?: string) => {
-  return () => React.createElement(ChapterAnimation, { topicSlug: slug, topicTitle: title, unitSlug: unit, subjectSlug: subject });
+  const TopicLab = () =>
+    React.createElement(ChapterAnimation, { topicSlug: slug, topicTitle: title, unitSlug: unit, subjectSlug: subject });
+  TopicLab.displayName = `TopicLab(${slug})`;
+  return TopicLab;
 };
 
 const PHYSICS_11: LabComponentMap = {

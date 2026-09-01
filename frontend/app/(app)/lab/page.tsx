@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, Suspense, useEffect } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -538,6 +538,13 @@ function LabContent({
   );
 }
 
+const LAB_CATEGORY_MAP: Record<string, LabCategory> = {
+  physics: "physics",
+  chemistry: "chemistry",
+  biology: "biology",
+  mathematics: "mathematics",
+};
+
 function LabPageInner() {
   const searchParams = useSearchParams();
   const topicParam = searchParams.get("topic");
@@ -546,26 +553,19 @@ function LabPageInner() {
   const [classSlug, setClassSlug] = useState("class-11-notes");
   const [subjectSlug, setSubjectSlug] = useState("mathematics");
 
-  const categoryMap: Record<string, LabCategory> = {
-    physics: "physics",
-    chemistry: "chemistry",
-    biology: "biology",
-    mathematics: "mathematics",
-  };
-
   const initialLabId = useMemo(() => {
     if (topicParam) {
-      const categoryKeys = Object.keys(categoryMap);
+      const categoryKeys = Object.keys(LAB_CATEGORY_MAP);
       for (const cat of categoryKeys) {
-        const labs = LABS_BY_SUBJECT[categoryMap[cat]] ?? [];
+        const labs = LABS_BY_SUBJECT[LAB_CATEGORY_MAP[cat]] ?? [];
         const match = labs.find((l) => l.id.includes(topicParam) || topicParam.includes(l.id));
         if (match) return match.id;
       }
     }
     if (motionParam) {
-      const categoryKeys = Object.keys(categoryMap);
+      const categoryKeys = Object.keys(LAB_CATEGORY_MAP);
       for (const cat of categoryKeys) {
-        const labs = LABS_BY_SUBJECT[categoryMap[cat]] ?? [];
+        const labs = LABS_BY_SUBJECT[LAB_CATEGORY_MAP[cat]] ?? [];
         const match = labs.find((l) => l.id.includes(motionParam) || motionParam.includes(l.id));
         if (match) return match.id;
       }

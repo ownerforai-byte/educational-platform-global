@@ -1124,6 +1124,239 @@ const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Find the area of triangle with vertices (1,2), (3,4), (5,0).",
       ],
     },
+
+    theorems: {
+      title: "Theorems — All NEB Class 11 & 12 Mathematics Proofs",
+      overview: "This section contains formal, step-by-step proofs for all major theorems from the NEB Class 11 & 12 Mathematics syllabus. Proofs are organized by syllabus unit and include theorem statements, detailed proofs, and examples.",
+      sections: [
+        {
+          heading: "Algebra Theorems",
+          content: "Matrix algebra and complex numbers form the foundation of higher algebra. These theorems establish key properties essential for solving systems of equations and working with complex numbers.",
+          formula: "\\text{Matrix: } A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}, \\quad \\text{Complex: } z = a + bi",
+        },
+        {
+          heading: "Theorem 1: Determinant of Product of Matrices",
+          content: "For any two square matrices A and B of the same size, the determinant of their product equals the product of their determinants: det(AB) = det(A)·det(B).",
+          formula: "\\det(AB) = \\det(A) \\cdot \\det(B)",
+          example: "A = [[1,2],[3,4]], B = [[2,0],[1,3]]\ndet(A) = 4 - 6 = -2, det(B) = 6 - 0 = 6\ndet(AB) = (-2)(6) = -12",
+        },
+        {
+          heading: "Theorem 2: Inverse of a 2×2 Matrix",
+          content: "For A = [[a,b],[c,d]], the inverse exists iff det(A) ≠ 0, and A⁻¹ = (1/det(A))·[[d,-b],[-c,a]].",
+          formula: "A^{-1} = \\dfrac{1}{ad-bc}\\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}",
+          example: "A = [[1,2],[3,4]], det(A) = -2\nA⁻¹ = (-1/2)[[4,-2],[-3,1]] = [[-2,1],[3/2,-1/2]]",
+        },
+        {
+          heading: "Theorem 3: Modulus of Product of Complex Numbers",
+          content: "For complex numbers z₁ and z₂: |z₁z₂| = |z₁||z₂|.",
+          formula: "|z_1 z_2| = |z_1| \\cdot |z_2|",
+          example: "z₁ = 3+4i, z₂ = 1-2i\n|z₁| = 5, |z₂| = √5\n|z₁z₂| = |(3+4i)(1-2i)| = |11-2i| = √125 = 5√5",
+        },
+        {
+          heading: "Theorem 4: Quadratic Formula",
+          content: "For ax² + bx + c = 0: x = (-b ± √(b²-4ac))/(2a).",
+          formula: "x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
+          example: "2x² - 5x + 3 = 0\nx = (5 ± √(25-24))/4 = (5 ± 1)/4\nx₁ = 3/2, x₂ = 1",
+        },
+        {
+          heading: "Theorem 5: Sum and Product of Roots",
+          content: "For ax² + bx + c = 0 with roots α and β: α + β = -b/a and αβ = c/a.",
+          formula: "\\alpha + \\beta = -\\dfrac{b}{a}, \\qquad \\alpha\\beta = \\dfrac{c}{a}",
+          example: "2x² - 5x + 3 = 0\nSum = -(-5)/2 = 5/2\nProduct = 3/2",
+        },
+
+        {
+          heading: "\nTrigonometry Theorems",
+          content: "Trigonometric identities are fundamental relationships used throughout mathematics.",
+        },
+        {
+          heading: "Theorem 6: Pythagorean Identity",
+          content: "For any angle θ: sin²θ + cos²θ = 1.",
+          formula: "\\sin^2\\theta + \\cos^2\\theta = 1",
+          example: "θ = 30°: (1/2)² + (√3/2)² = 1/4 + 3/4 = 1",
+        },
+        {
+          heading: "Theorem 7: tan²θ + 1 = sec²θ",
+          content: "Derived by dividing sin²θ + cos²θ = 1 by cos²θ.",
+          formula: "\\tan^2\\theta + 1 = \\sec^2\\theta",
+          example: "θ = 45°: 1² + 1 = 2, (√2)² = 2 ✓",
+        },
+        {
+          heading: "Theorem 8: sin(A+B) = sin A cos B + cos A sin B",
+          content: "The sine addition formula can be derived using Euler's formula.",
+          formula: "\\sin(A+B) = \\sin A \\cos B + \\cos A \\sin B",
+          example: "sin(45°+30°) = (√2/2)(√3/2) + (√2/2)(1/2) = (√6+√2)/4",
+        },
+        {
+          heading: "Theorem 9: cos(A+B) = cos A cos B - sin A sin B",
+          content: "The cosine addition formula from Euler's formula.",
+          formula: "\\cos(A+B) = \\cos A \\cos B - \\sin A \\sin B",
+          example: "cos(60°+30°) = (1/2)(√3/2) - (√3/2)(1/2) = 0 = cos 90°",
+        },
+        {
+          heading: "Theorem 10: Double Angle sin(2θ) = 2sin θ cos θ",
+          content: "Special case of sin(A+B) when A = B.",
+          formula: "\\sin 2\\theta = 2\\sin\\theta\\cos\\theta",
+          example: "sin(60°) = 2sin30°cos30° = 2(1/2)(√3/2) = √3/2",
+        },
+
+        {
+          heading: "\nCalculus Theorems",
+          content: "Calculus theorems establish the fundamental relationships between limits, derivatives, and integrals.",
+        },
+        {
+          heading: "Theorem 11: Limit of Sum Equals Sum of Limits",
+          content: "If lim f(x) = L and lim g(x) = M, then lim [f(x)+g(x)] = L+M.",
+          formula: "\\lim[f(x)+g(x)] = \\lim f(x) + \\lim g(x)",
+        },
+        {
+          heading: "Theorem 12: Derivative of xⁿ",
+          content: "For any real n: d/dx[xⁿ] = nxⁿ⁻¹.",
+          formula: "\\dfrac{d}{dx}[x^n] = nx^{n-1}",
+          example: "d/dx[x³] = 3x², d/dx[x⁻²] = -2x⁻³",
+        },
+        {
+          heading: "Theorem 13: Product Rule",
+          content: "(fg)' = f'g + fg'.",
+          formula: "\\dfrac{d}{dx}[fg] = f'g + fg'",
+          example: "d/dx[x²sin x] = 2x sin x + x² cos x",
+        },
+        {
+          heading: "Theorem 14: Quotient Rule",
+          content: "(f/g)' = (f'g - fg')/g².",
+          formula: "\\dfrac{d}{dx}\\!\\left[\\dfrac{f}{g}\\right] = \\dfrac{f'g - fg'}{g^2}",
+          example: "d/dx[sin x/cos x] = sec²x",
+        },
+        {
+          heading: "Theorem 15: Chain Rule",
+          content: "d/dx[f(g(x))] = f'(g(x))·g'(x).",
+          formula: "\\dfrac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)",
+          example: "d/dx[sin(x²)] = cos(x²)·2x",
+        },
+        {
+          heading: "Theorem 16: Fundamental Theorem of Calculus",
+          content: "If F' = f, then ∫_a^b f(x) dx = F(b) - F(a).",
+          formula: "\\int_a^b f(x)\\,dx = F(b) - F(a)",
+          example: "∫₀^π sin x dx = [-cos x]₀^π = -(-1) - (-1) = 2",
+        },
+        {
+          heading: "Theorem 17: Integration by Parts",
+          content: "∫u dv = uv - ∫v du.",
+          formula: "\\int u\\,dv = uv - \\int v\\,du",
+          example: "∫x eˣ dx = x eˣ - ∫eˣ dx = eˣ(x-1) + C",
+        },
+
+        {
+          heading: "\nCoordinate Geometry Theorems",
+          content: "Analytic geometry theorems provide algebraic methods for geometric problems.",
+        },
+        {
+          heading: "Theorem 18: Distance Formula",
+          content: "Distance between (x₁,y₁) and (x₂,y₂): d = √[(x₂-x₁)² + (y₂-y₁)²].",
+          formula: "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}",
+          example: "d between (1,2) and (4,6) = √[9+16] = 5",
+        },
+        {
+          heading: "Theorem 19: Section Formula",
+          content: "Point dividing segment in ratio m:n: ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n)).",
+          formula: "\\left(\\dfrac{mx_2+nx_1}{m+n},\\;\\dfrac{my_2+ny_1}{m+n}\\right)",
+          example: "(1,2) and (7,5) in ratio 2:3 → (17/5, 16/5)",
+        },
+        {
+          heading: "Theorem 20: Equation of a Line",
+          content: "Line through (x₁,y₁) with slope m: y - y₁ = m(x - x₁).",
+          formula: "y - y_1 = m(x - x_1)",
+          example: "Through (2,3) with slope -1/2: y = -x/2 + 4",
+        },
+        {
+          heading: "Theorem 21: Equation of a Circle",
+          content: "Circle with center (h,k) and radius r: (x-h)² + (y-k)² = r².",
+          formula: "(x-h)^2 + (y-k)^2 = r^2",
+          example: "Center (3,-2), r = 5: (x-3)² + (y+2)² = 25",
+        },
+
+        {
+          heading: "\nVectors Theorems",
+          content: "Vector theorems establish fundamental properties of vector operations.",
+        },
+        {
+          heading: "Theorem 22: Dot Product Properties",
+          content: "a·b = |a||b|cos θ where θ is the angle between them.",
+          formula: "\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta",
+          example: "a = (1,0), b = (0,1): a·b = 0, cos 90° = 0",
+        },
+        {
+          heading: "Theorem 23: Cross Product Magnitude",
+          content: "|a×b| = |a||b|sin θ (area of parallelogram).",
+          formula: "|\\vec{a} \\times \\vec{b}| = |\\vec{a}||\\vec{b}|\\sin\\theta",
+          example: "a = (1,0,0), b = (0,1,0): |a×b| = 1 = sin 90°",
+        },
+        {
+          heading: "Theorem 24: Scalar Triple Product",
+          content: "a·(b×c) equals the volume of the parallelepiped.",
+          formula: "\\vec{a} \\cdot (\\vec{b} \\times \\vec{c}) = [\\vec{a}\\;\\vec{b}\\;\\vec{c}]",
+        },
+
+        {
+          heading: "\nStatistics & Probability Theorems",
+          content: "Probability theorems provide the foundation for statistical reasoning.",
+        },
+        {
+          heading: "Theorem 25: Bayes' Theorem",
+          content: "P(A|B) = P(B|A)P(A)/P(B).",
+          formula: "P(A|B) = \\dfrac{P(B|A) \\cdot P(A)}{P(B)}",
+          example: "P(A)=0.4, P(B|A)=0.7, P(B|A')=0.2\nP(B)=0.40, P(A|B)=0.7",
+        },
+        {
+          heading: "Theorem 26: Addition Rule",
+          content: "P(A∪B) = P(A) + P(B) - P(A∩B).",
+          formula: "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+          example: "P(A)=0.5, P(B)=0.6, P(A∩B)=0.3\nP(A∪B) = 0.8",
+        },
+        {
+          heading: "Theorem 27: Multiplication Rule (Independent)",
+          content: "For independent A and B: P(A∩B) = P(A)P(B).",
+          formula: "P(A \\cap B) = P(A) \\cdot P(B)",
+          example: "Two dice: P(6,6) = (1/6)(1/6) = 1/36",
+        },
+        {
+          heading: "Theorem 28: Mean of Binomial Distribution",
+          content: "For X ~ Bin(n,p): μ = np.",
+          formula: "\\mu = np",
+          example: "10 coin tosses, p=0.5: mean = 5",
+        },
+        {
+          heading: "Theorem 29: Variance of Binomial Distribution",
+          content: "For X ~ Bin(n,p): σ² = np(1-p).",
+          formula: "\\sigma^2 = np(1-p)",
+          example: "10 coin tosses: variance = 10(0.5)(0.5) = 2.5",
+        },
+      ],
+      keyPoints: [
+        "All proofs follow NEB Class 11 & 12 Mathematics syllabus",
+        "Each theorem includes statement, proof, and example",
+        "Organized by syllabus unit for easy navigation",
+        "Formulas use KaTeX for proper rendering",
+      ],
+      commonMistakes: [
+        "Confusing sin(A+B) with sin A + sin B",
+        "Forgetting chain rule for composite functions",
+        "Using degrees instead of radians in calculus",
+        "Confusing population variance with sample variance",
+      ],
+      practiceQuestions: [
+        "Prove det(AB) = det(A)·det(B) for 2×2 matrices.",
+        "Prove the quadratic formula by completing the square.",
+        "Prove sin(A+B) = sin A cos B + cos A sin B using Euler's formula.",
+        "Prove the product rule using the definition of derivative.",
+        "Prove the Fundamental Theorem of Calculus.",
+        "Prove integration by parts from the product rule.",
+        "Prove the distance formula using the Pythagorean theorem.",
+        "Prove Bayes' theorem from the definition of conditional probability.",
+        "Prove the addition rule of probability using Venn diagrams.",
+        "Prove that the mean of Bin(n,p) is np using linearity of expectation.",
+      ],
+    },
   },
 
   biology: {

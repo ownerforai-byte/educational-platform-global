@@ -641,7 +641,9 @@ ravikishan/
 ├── backend.log
 ├── components.json
 ├── drizzle.config.ts
+├── eslint-final.txt
 ├── eslint-out.txt
+├── eslint-out2.txt
 ├── eslint.config.mjs
 ├── opencode.json
 ├── package.json
@@ -649,6 +651,8 @@ ravikishan/
 ├── PROJECT_STATUS.md
 ├── README.md
 ├── tailwind.config.ts
+├── tsc-final.txt
+├── tsc-out4.txt
 └── vitest.config.ts
 ```
 

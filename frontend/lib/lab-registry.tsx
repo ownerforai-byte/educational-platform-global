@@ -24,6 +24,9 @@ import {
   MathGeometry3D,
 } from "@/components/lab";
 import { Class11Math3DPlus } from "@/components/lab/class11/class11-math-3d-plus";
+import {
+  MathPerpendicular3D,
+} from "@/components/lab/math-perpendicular-3d";
 import { Class11Physics3DPlus } from "@/components/lab/class11/class11-physics-3d-plus";
 import { Class11Chemistry3DPlus } from "@/components/lab/class11/class11-chemistry-3d-plus";
 import { Class11Biology3DPlus } from "@/components/lab/class11/class11-biology-3d-plus";
@@ -712,6 +715,18 @@ export const LAB_REGISTRY: LabMeta[] = [
     color: "#8b5cf6",
     unit: "Unit: 3D Geometry",
     component: MathGeometry3D,
+  },
+  {
+    id: "math-3d-perpendicular",
+    title: "Perpendicular Distance 3D",
+    description:
+      "Distance of the perpendicular from a point to a line/plane — labelled 3D graph with foot, normal, right-angle marker + the theorems above it.",
+    category: "mathematics",
+    type: "3d" as const,
+    status: "active",
+    color: "#8b5cf6",
+    unit: "Unit: Straight Line & Coordinates in Space",
+    component: MathPerpendicular3D,
   },
   {
     id: "math-3d-surfaces",

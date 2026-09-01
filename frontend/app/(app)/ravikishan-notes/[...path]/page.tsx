@@ -3,9 +3,7 @@ import { BackButton } from "@/components/navigation/back-button";
 import { notFound } from "next/navigation";
 import { loadData } from "@/lib/data-loader";
 import { UnderDevelopment } from "@/components/content/under-development";
-import { Badge } from "@/components/ui/badge";
 import { Lightbulb, AlertTriangle, PenTool, Sparkles, ExternalLink } from "lucide-react";
-import { get3DComponentForTopic } from "@/lib/topic-3d-map";
 import Link from "next/link";
 import { MotionGraphics } from "@/components/lab/motion-graphics";
 

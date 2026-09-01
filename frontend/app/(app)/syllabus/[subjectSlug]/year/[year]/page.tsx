@@ -1,8 +1,8 @@
 "use client";
-import { getSyllabusHistory, type SyllabusYear } from "@/lib/syllabus-history";
+import { getSyllabusHistory } from "@/lib/syllabus-history";
 import { DateBadge } from "@/components/content/date-badge";
 import Link from "next/link";
-import { Calendar, TrendingUp, TrendingDown, Minus, Info, ChevronLeft, ChevronRight } from "lucide-react";
+import { TrendingUp, TrendingDown, Minus, Info, ChevronLeft, ChevronRight } from "lucide-react";
 import { use } from "react";
 
 const SUBJECT_EMOJI: Record<string, string> = {
