@@ -23,6 +23,8 @@ import {
   BiologyPhotosynthesisCalculator,
 } from "@/components/lab/biology-3d";
 import { TheoryPanel } from "@/components/lab/theory-panel";
+import { ChapterAnimation } from "@/components/lab/chapter-animation";
+import { TOPIC_3D_MAP } from "@/lib/topic-3d-map";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
@@ -154,18 +156,18 @@ function UnitCard({
 const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
   physics: [
     // 3D Labs
-    { id: "ph-3d-dynamics", title: "Dynamics 3D", description: "Inclined plane, friction, elastic collision, momentum conservation in 3D.", category: "physics", icon: <span className="text-blue-500">🚀</span>, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-3d-advanced", title: "Physics 3D Advanced", description: "Electromagnetism, wave optics, relativity, quantum orbitals, nuclear decay.", category: "physics", icon: <span className="text-blue-500">🛰️</span>, status: "new", component: () => <PhysicsLab /> },
-    { id: "ph-heat-determinations", title: "Heat Determination Labs", description: "Lee's disc, Searle's bar, Newton's law of cooling & linear expansion in 3D.", category: "physics", icon: <span className="text-blue-500">🔥</span>, status: "new", component: () => <PhysicsLab /> },
-    { id: "ph-3d-quantum", title: "Quantum 3D", description: "Quantum mechanics visualizations including orbitals, probability distributions, and spin.", category: "physics", icon: <span className="text-blue-500">⭐</span>, status: "new", component: () => <PhysicsLab /> },
-    { id: "ph-3d-wave", title: "Wave Simulator 3D", description: "Real-time 3D wave propagation with sine, cosine, and damped modes.", category: "physics", icon: <span className="text-blue-500">🌊</span>, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-3d-pendulum", title: "Pendulum 3D", description: "Pendulum with trail visualization and period calculations.", category: "physics", icon: <span className="text-blue-500">⏱️</span>, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-3d-em", title: "EM Wave 3D", description: "Electromagnetic wave propagation with E and B field visualization.", category: "physics", icon: <span className="text-blue-500">📻</span>, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-3d-magnetic", title: "Magnetic Field 3D", description: "Bar magnet field lines and iron filings pattern.", category: "physics", icon: <span className="text-blue-500">🧭</span>, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-3d-vectors", title: "Vector Addition 3D", description: "Interactive 3D vectors — components, dot product, cross product, parallelogram rule.", category: "physics", icon: <span className="text-blue-500">↗️</span>, status: "new", component: () => <PhysicsLab /> },
-    { id: "ph-3d-optics", title: "Optics & Lens 3D", description: "Ray diagrams for convex/concave lenses and mirrors with live lens equation.", category: "physics", icon: <span className="text-blue-500">👁️</span>, status: "new", component: () => <PhysicsLab /> },
-    { id: "ph-3d-refraction", title: "Refraction 3D", description: "Snell's law visualization with total internal reflection and critical angle.", category: "physics", icon: <span className="text-blue-500">🔬</span>, status: "new", component: () => <PhysicsLab /> },
-    { id: "ph-3d-classic", title: "Physics 3D Classic", description: "Electric field, double pendulum, and gravitational field visualizers.", category: "physics", icon: <span className="text-blue-500">📦</span>, status: "development", component: () => <PhysicsLab /> },
+    { id: "ph-3d-dynamics", title: "Dynamics 3D", description: "Inclined plane, friction, elastic collision, momentum conservation in 3D.", category: "physics", icon: <span className="text-blue-500">ðŸš€</span>, status: "active", component: () => <PhysicsLab /> },
+    { id: "ph-3d-advanced", title: "Physics 3D Advanced", description: "Electromagnetism, wave optics, relativity, quantum orbitals, nuclear decay.", category: "physics", icon: <span className="text-blue-500">ðŸ›°ï¸</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-heat-determinations", title: "Heat Determination Labs", description: "Lee's disc, Searle's bar, Newton's law of cooling & linear expansion in 3D.", category: "physics", icon: <span className="text-blue-500">ðŸ”¥</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-3d-quantum", title: "Quantum 3D", description: "Quantum mechanics visualizations including orbitals, probability distributions, and spin.", category: "physics", icon: <span className="text-blue-500">â­</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-3d-wave", title: "Wave Simulator 3D", description: "Real-time 3D wave propagation with sine, cosine, and damped modes.", category: "physics", icon: <span className="text-blue-500">ðŸŒŠ</span>, status: "active", component: () => <PhysicsLab /> },
+    { id: "ph-3d-pendulum", title: "Pendulum 3D", description: "Pendulum with trail visualization and period calculations.", category: "physics", icon: <span className="text-blue-500">â±ï¸</span>, status: "active", component: () => <PhysicsLab /> },
+    { id: "ph-3d-em", title: "EM Wave 3D", description: "Electromagnetic wave propagation with E and B field visualization.", category: "physics", icon: <span className="text-blue-500">ðŸ“»</span>, status: "active", component: () => <PhysicsLab /> },
+    { id: "ph-3d-magnetic", title: "Magnetic Field 3D", description: "Bar magnet field lines and iron filings pattern.", category: "physics", icon: <span className="text-blue-500">ðŸ§­</span>, status: "active", component: () => <PhysicsLab /> },
+    { id: "ph-3d-vectors", title: "Vector Addition 3D", description: "Interactive 3D vectors â€” components, dot product, cross product, parallelogram rule.", category: "physics", icon: <span className="text-blue-500">â†—ï¸</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-3d-optics", title: "Optics & Lens 3D", description: "Ray diagrams for convex/concave lenses and mirrors with live lens equation.", category: "physics", icon: <span className="text-blue-500">ðŸ‘ï¸</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-3d-refraction", title: "Refraction 3D", description: "Snell's law visualization with total internal reflection and critical angle.", category: "physics", icon: <span className="text-blue-500">ðŸ”¬</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-3d-classic", title: "Physics 3D Classic", description: "Electric field, double pendulum, and gravitational field visualizers.", category: "physics", icon: <span className="text-blue-500">ðŸ“¦</span>, status: "development", component: () => <PhysicsLab /> },
     // Theory Labs
     { id: "ph-th-kinematics", title: "Kinematics Theory", description: "Equations of motion, projectile motion, relative velocity theory and examples.", category: "physics", icon: <BookOpen className="h-4 w-4 text-blue-500" />, status: "active", component: () => <TheoryPanel subject="physics" topic="kinematics" /> },
     { id: "ph-th-laws", title: "Laws of Motion Theory", description: "Newton's laws, friction, circular motion theory and examples.", category: "physics", icon: <Activity className="h-4 w-4 text-blue-500" />, status: "active", component: () => <TheoryPanel subject="physics" topic="laws-motion" /> },
@@ -181,7 +183,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-calc-ohms", title: "Ohm's Law Calculator", description: "Calculate V, I, R with interactive controls.", category: "physics", icon: <Zap className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-calc-heat", title: "Heat Calculator", description: "Calorimetry, latent heat, thermal expansion.", category: "physics", icon: <Thermometer className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: <Eye className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <span className="text-blue-500">🚀</span>, status: "active", component: () => <PhysicsLab /> },
+    { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <span className="text-blue-500">ðŸš€</span>, status: "active", component: () => <PhysicsLab /> },
     // General
     { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumPlaceholder title="AI Lab Tutor" icon={<Brain className="h-5 w-5 text-amber-500" />} description="Get instant help with lab concepts." /> },
     { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumAdvancedCircuitSimulator /> },
@@ -190,7 +192,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
   chemistry: [
     // 3D Labs
     { id: "ch-3d-periodic", title: "Periodic Table 3D", description: "Interactive 3D periodic table with element details, categories, and search.", category: "chemistry", icon: <Globe className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
-    { id: "ch-3d-advanced", title: "Chemistry 3D Advanced", description: "Molecular dynamics, crystallography, spectroscopy, SN1/SN2, DNA, VSEPR.", category: "chemistry", icon: <span className="text-emerald-500">🔺</span>, status: "new", component: () => <ChemistryLab /> },
+    { id: "ch-3d-advanced", title: "Chemistry 3D Advanced", description: "Molecular dynamics, crystallography, spectroscopy, SN1/SN2, DNA, VSEPR.", category: "chemistry", icon: <span className="text-emerald-500">ðŸ”º</span>, status: "new", component: () => <ChemistryLab /> },
     { id: "ch-3d-micro", title: "Microscopy 3D", description: "Atomic structure, electron orbitals, crystal lattice visualization.", category: "chemistry", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
     // Theory Labs
     { id: "ch-th-atomic", title: "Atomic Structure Theory", description: "Bohr model, quantum numbers, electronic configuration.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <TheoryPanel subject="chemistry" topic="atomic" /> },
@@ -213,7 +215,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
 
   biology: [
     // 3D Labs
-    { id: "bio-3d-cell", title: "Cell Structure 3D", description: "Plant and animal cell ultrastructure — organelles, membranes, nucleus in 3D.", category: "biology", icon: <Microscope className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyAdvanced3D /> },
+    { id: "bio-3d-cell", title: "Cell Structure 3D", description: "Plant and animal cell ultrastructure â€” organelles, membranes, nucleus in 3D.", category: "biology", icon: <Microscope className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyAdvanced3D /> },
     { id: "bio-3d-dna", title: "DNA & Genetics 3D", description: "Double-helix DNA structure, replication, transcription, translation.", category: "biology", icon: <Dna className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyAdvanced3D /> },
     { id: "bio-3d-advanced", title: "Biology 3D Advanced", description: "Cell ultrastructure, molecular genetics, ecology networks, human systems, evolution trees.", category: "biology", icon: <FlaskConical className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyAdvanced3D /> },
     { id: "bio-3d-ecology", title: "Ecology & Ecosystem 3D", description: "Food chains, food webs, biogeochemical cycles, population dynamics in 3D.", category: "biology", icon: <TreeDeciduous className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyAdvanced3D /> },
@@ -229,7 +231,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     // Calculator Labs
     { id: "bio-calc-punnett", title: "Punnett Square Solver", description: "Predict offspring genotypes and phenotypes from parental crosses.", category: "biology", icon: <Dna className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyPunnettCalculator /> },
     { id: "bio-calc-population", title: "Population Growth Calculator", description: "Exponential and logistic population growth models with carrying capacity.", category: "biology", icon: <UsersIcon className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyPopulationCalculator /> },
-    { id: "bio-calc-photosynthesis", title: "Photosynthesis Rate Calculator", description: "Calculate rate of photosynthesis under varying light, CO₂, and temperature.", category: "biology", icon: <LeafIcon className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyPhotosynthesisCalculator /> },
+    { id: "bio-calc-photosynthesis", title: "Photosynthesis Rate Calculator", description: "Calculate rate of photosynthesis under varying light, COâ‚‚, and temperature.", category: "biology", icon: <LeafIcon className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyPhotosynthesisCalculator /> },
   ],
 
   mathematics: [
@@ -247,23 +249,23 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "math-th-geo", title: "Coordinate Geometry Theory", description: "Lines, circles, conics in coordinate plane.", category: "mathematics", icon: <Crosshair className="h-4 w-4 text-violet-500" />, status: "active", component: () => <TheoryPanel subject="mathematics" topic="geometry" /> },
     // Calculator Labs
     { id: "math-calc-deriv", title: "Derivative Calculator", description: "Compute derivatives and integrals numerically.", category: "mathematics", icon: <FunctionSquare className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="derivative" /> },
-    { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve ax² + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: <Sigma className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="quadratic" /> },
+    { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve axÂ² + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: <Sigma className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="quadratic" /> },
     { id: "math-calc-stats", title: "Statistics Calculator", description: "Mean, median, mode, standard deviation.", category: "mathematics", icon: <BarChart3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="statistics" /> },
     { id: "math-calc-matrix", title: "Matrix Calculator", description: "Add, multiply, and transpose matrices.", category: "mathematics", icon: <Grid3x3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="matrix" /> },
     { id: "math-calc-trig", title: "Trigonometry Lab", description: "Unit circle visualization and sine/cosine/tangent graphing.", category: "mathematics", icon: <Target className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathSymbols /> },
     { id: "math-calc-series", title: "Sequences & Series", description: "Arithmetic and geometric progressions.", category: "mathematics", icon: <TrendingUp className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathSeriesLab /> },
     { id: "math-calc-vectors", title: "Vector Operations", description: "Add, dot product, cross product of 3D vectors.", category: "mathematics", icon: <Move3d className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="vectors" /> },
     { id: "math-calc-limit", title: "Limit Calculator", description: "Estimate limits numerically.", category: "mathematics", icon: <InfinityIcon className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="limit" /> },
-    { id: "math-calc-system", title: "System Solver", description: "Solve 2×2 and 3×3 systems of linear equations.", category: "mathematics", icon: <Columns3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="system" /> },
+    { id: "math-calc-system", title: "System Solver", description: "Solve 2Ã—2 and 3Ã—3 systems of linear equations.", category: "mathematics", icon: <Columns3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="system" /> },
     // General
     { id: "equation-solver", title: "Universal Equation Solver", description: "Solve any physics, chemistry, or math equation.", category: "mathematics", icon: <Sparkles className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumEquationSolver /> },
   ],
 
   class11: [
-    { id: "class11-physics", title: "Class 11 Physics 3D Plus", description: "Extended 3D physics visualizations for Class 11.", category: "class11", icon: <span className="text-blue-500">🚀</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "class11-physics", title: "Class 11 Physics 3D Plus", description: "Extended 3D physics visualizations for Class 11.", category: "class11", icon: <span className="text-blue-500">ðŸš€</span>, status: "new", component: () => <PhysicsLab /> },
     { id: "class11-chemistry", title: "Class 11 Chemistry 3D Plus", description: "Extended 3D chemistry visualizations for Class 11.", category: "class11", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "new", component: () => <ChemistryLab /> },
     { id: "class11-math", title: "Class 11 Math 3D Plus", description: "Extended 3D math visualizations for Class 11.", category: "class11", icon: <Binary className="h-4 w-4 text-violet-500" />, status: "new", component: () => <Class11Math3DPlus /> },
-    { id: "class11-biology", title: "Class 11 Biology 3D Plus", description: "Extended 3D biology visualizations — cells, genetics, ecology for Class 11.", category: "class11", icon: <Dna className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyLab /> },
+    { id: "class11-biology", title: "Class 11 Biology 3D Plus", description: "Extended 3D biology visualizations â€” cells, genetics, ecology for Class 11.", category: "class11", icon: <Dna className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyLab /> },
   ],
 };
 
@@ -271,10 +273,14 @@ function LabDashboard({
   _classSlug,
   subjectSlug,
   initialLabId,
+  topicSlug,
+  topicTitle,
 }: {
   _classSlug: string;
   subjectSlug: string;
   initialLabId?: string | null;
+  topicSlug?: string | null;
+  topicTitle?: string | null;
 }) {
   const [activeLab, setActiveLab] = useState<string | null>(initialLabId ?? null);
   const [typeFilter, setTypeFilter] = useState<"3d" | "theory" | "calculator">("3d");
@@ -290,15 +296,39 @@ function LabDashboard({
     return LABS_BY_SUBJECT[categoryMap[subjectSlug] ?? "physics"] ?? [];
   }, [subjectSlug]);
 
+  // Inject a synthetic chapter lab for any topic that has a 3D animation entry
+  // in TOPIC_3D_MAP but no matching card in LABS_BY_SUBJECT. This guarantees every
+  // chapter / topic across Physics, Chemistry, Biology, Mathematics has a 3D lab.
+  const allLabs = useMemo<LabItem[]>(() => {
+    if (!topicSlug || !topicTitle) return subjectLabs;
+    const alreadyPresent = subjectLabs.some((l) =>
+      l.id.includes(topicSlug) || topicSlug.includes(l.id),
+    );
+    if (alreadyPresent) return subjectLabs;
+    if (!TOPIC_3D_MAP[topicSlug]) return subjectLabs;
+    const fallbackLab: LabItem = {
+      id: `chapter-${topicSlug}`,
+      title: topicTitle,
+      description: "Chapter-specific 3D animation â€” drag with the mouse to rotate the camera.",
+      category: (subjectSlug as LabCategory) || "physics",
+      icon: <Cuboid className="h-4 w-4 text-violet-500" />,
+      status: "new",
+      component: () => (
+        <ChapterAnimation topicSlug={topicSlug} topicTitle={topicTitle} subjectSlug={subjectSlug} />
+      ),
+    };
+    return [...subjectLabs, fallbackLab];
+  }, [subjectLabs, topicSlug, topicTitle, subjectSlug]);
+
   const filteredLabs = useMemo(() => {
-    return subjectLabs.filter((lab) => {
+    return allLabs.filter((lab) => {
       if (typeFilter === "3d") return !lab.id.includes("th-") && !lab.id.includes("calc");
       if (typeFilter === "theory") return lab.id.includes("th-");
       return lab.id.includes("calc");
     });
-  }, [subjectLabs, typeFilter]);
+  }, [allLabs, typeFilter]);
 
-  const activeLabData = activeLab ? subjectLabs.find((l) => l.id === activeLab) : null;
+  const activeLabData = activeLab ? allLabs.find((l) => l.id === activeLab) : null;
 
   return (
     <div className="space-y-6">
@@ -334,7 +364,7 @@ function LabDashboard({
             {type === "calculator" && <Calculator className="h-3.5 w-3.5" />}
             <span className="hidden sm:inline">{type.charAt(0).toUpperCase() + type.slice(1)}</span>
             <span className="text-xs opacity-70">
-              ({subjectLabs.filter((l) =>
+              ({allLabs.filter((l) =>
                 type === "3d" ? !l.id.includes("th-") && !l.id.includes("calc") :
                 type === "theory" ? l.id.includes("th-") :
                 l.id.includes("calc")
@@ -378,7 +408,7 @@ function LabDashboard({
                 )}
                 {lab.status === "development" && (
                   <div className="mt-2 flex items-center gap-1 text-xs text-amber-600">
-                    <span>⚙️ In Development</span>
+                    <span>âš™ï¸ In Development</span>
                   </div>
                 )}
               </CardContent>
@@ -436,12 +466,16 @@ function LabContent({
   onClassChange,
   onSubjectChange,
   initialLabId,
+  topicSlug,
+  topicTitle,
 }: {
   classSlug: string;
   subjectSlug: string;
   onClassChange: (value: string) => void;
   onSubjectChange: (value: string) => void;
   initialLabId?: string | null;
+  topicSlug?: string | null;
+  topicTitle?: string | null;
 }) {
   const subjects = SUBJECT_OPTIONS[classSlug] || [];
 
@@ -459,7 +493,9 @@ function LabContent({
           <label htmlFor="class-select" className="text-sm font-medium">Class</label>
           <Select value={classSlug} onValueChange={onClassChange}>
             <SelectTrigger id="class-select" className="w-full sm:w-48 touch-manipulation">
-              <SelectValue placeholder="Select class" />
+              <SelectValue placeholder="Select class">
+                {CLASS_OPTIONS.find((o) => o.value === classSlug)?.label ?? "Select class"}
+              </SelectValue>
             </SelectTrigger>
             <SelectContent>
               {CLASS_OPTIONS.map((opt) => (
@@ -475,12 +511,20 @@ function LabContent({
           <label htmlFor="subject-select" className="text-sm font-medium">Subject</label>
           <Select value={subjectSlug} onValueChange={onSubjectChange}>
             <SelectTrigger id="subject-select" className="w-full sm:w-48 touch-manipulation">
-              <SelectValue placeholder="Select subject" />
+              <SelectValue placeholder="Select subject">
+                <span className="flex items-center gap-2 truncate">
+                  {subjects.find((o) => o.value === subjectSlug)?.icon}
+                  {subjects.find((o) => o.value === subjectSlug)?.label ?? "Select subject"}
+                </span>
+              </SelectValue>
             </SelectTrigger>
             <SelectContent>
               {subjects.map((opt) => (
                 <SelectItem key={opt.value} value={opt.value}>
-                  {opt.label}
+                  <span className="flex items-center gap-2 truncate">
+                    {opt.icon}
+                    {opt.label}
+                  </span>
                 </SelectItem>
               ))}
             </SelectContent>
@@ -488,7 +532,7 @@ function LabContent({
         </div>
       </div>
 
-      <LabDashboard _classSlug={classSlug} subjectSlug={subjectSlug} initialLabId={initialLabId} />
+      <LabDashboard _classSlug={classSlug} subjectSlug={subjectSlug} initialLabId={initialLabId} topicSlug={topicSlug} topicTitle={topicTitle} />
       <SyllabusViewer classSlug={classSlug} subjectSlug={subjectSlug} />
     </div>
   );
@@ -497,6 +541,7 @@ function LabContent({
 function LabPageInner() {
   const searchParams = useSearchParams();
   const topicParam = searchParams.get("topic");
+  const topicTitle = searchParams.get("title");
   const motionParam = searchParams.get("motion");
   const [classSlug, setClassSlug] = useState("class-11-notes");
   const [subjectSlug, setSubjectSlug] = useState("mathematics");
@@ -535,6 +580,8 @@ function LabPageInner() {
       onClassChange={setClassSlug}
       onSubjectChange={setSubjectSlug}
       initialLabId={initialLabId}
+      topicSlug={topicParam}
+      topicTitle={topicTitle ?? topicParam}
     />
   );
 }
