@@ -70,33 +70,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <GlobalSearch />
         </div>
 
-          {/* Right: theme toggle + auth links */}
+          {/* Right: theme toggle only */}
           <div className="flex items-center gap-1.5 shrink-0">
             <ThemeToggle />
-
-            <Link
-              href="/chat"
-              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap"
-              title="Ask the AI study assistant"
-            >
-              <span className="hidden xs:inline">AI Tutor</span>
-              <span className="xs:hidden">AI</span>
-            </Link>
-
-            <div className="ml-1 h-4 w-px bg-border/60" />
-
-            <Link
-              href="/login"
-              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl text-xs font-semibold hover:bg-muted transition-colors whitespace-nowrap"
-            >
-              Log in
-            </Link>
-            <Link
-              href="/signup"
-              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity whitespace-nowrap"
-            >
-              Sign up
-            </Link>
           </div>
         </div>
       </header>

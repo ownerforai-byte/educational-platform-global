@@ -95,6 +95,9 @@ ravikishan/
 │   │   ├── chat/
 │   │   │   └── study-chat.tsx
 │   │   ├── content/
+│   │   │   ├── topic-resources/
+│   │   │   │   └── …
+│   │   │   ├── analytical-geometry-resource-panel.tsx
 │   │   │   ├── content-tabs.tsx
 │   │   │   ├── date-badge.tsx
 │   │   │   ├── empty-state.tsx
@@ -371,6 +374,8 @@ ravikishan/
 │   ├── postcss.config.mjs
 │   ├── PROMPT_FOR_COMPETITOR.md
 │   ├── proxy.ts
+│   ├── scan-invisible.js
+│   ├── scan-invisible.ps1
 │   ├── tailwind.config.ts
 │   ├── tsconfig.json
 │   ├── vercel.json
@@ -497,6 +502,7 @@ ravikishan/
 │   │   ├── manim_3d_math_animations.py
 │   │   ├── manim_motion_graphics.py
 │   │   └── run_manim.py
+│   ├── add-analytical-geometry-resource.ts
 │   ├── add-meanings.py
 │   ├── build-content.mjs
 │   ├── build-import-mapping.ts
@@ -639,6 +645,7 @@ ravikishan/
 │   └── config.toml
 ├── add_patterns.js
 ├── AGENT_RULES.md
+├── analytical_geometry.pdf
 ├── backend.log
 ├── components.json
 ├── drizzle.config.ts

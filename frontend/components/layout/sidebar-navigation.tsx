@@ -21,6 +21,7 @@ import {
   ChevronsDown,
   ChevronsUp,
   Sparkles,
+  UserPlus,
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -222,7 +223,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       </div>
 
       {/* Bottom action */}
-      <div className="border-t border-border/40 p-3 shrink-0">
+      <div className="border-t border-border/40 p-3 shrink-0 space-y-1">
         {isLoggedIn ? (
           <button
             onClick={handleLogout}
@@ -235,16 +236,28 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             {!collapsed && <span className="whitespace-nowrap">Log out</span>}
           </button>
         ) : (
-          <Link
-            href="/login"
-            className={cn(
-              "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted/60 hover:text-foreground transition-all",
-              collapsed && "justify-center"
-            )}
-          >
-            <LogIn className="h-5 w-5 shrink-0" />
-            {!collapsed && <span className="whitespace-nowrap">Login</span>}
-          </Link>
+          <>
+            <Link
+              href="/login"
+              className={cn(
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted/60 hover:text-foreground transition-all",
+                collapsed && "justify-center"
+              )}
+            >
+              <LogIn className="h-5 w-5 shrink-0" />
+              {!collapsed && <span className="whitespace-nowrap">Login</span>}
+            </Link>
+            <Link
+              href="/signup"
+              className={cn(
+                "flex w-full items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity",
+                collapsed && "px-0"
+              )}
+            >
+              <UserPlus className="h-4 w-4 shrink-0" />
+              {!collapsed && <span>Sign up free</span>}
+            </Link>
+          </>
         )}
       </div>
     </nav>
