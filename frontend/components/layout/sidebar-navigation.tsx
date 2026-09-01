@@ -38,7 +38,7 @@ const aiItems: NavItem[] = [
 ];
 
 const browseItems: NavItem[] = [
-  { href: "/", label: "Home", icon: Home },
+  { href: "/home", label: "Home", icon: Home },
   { href: "/subjects", label: "Subjects", icon: Layers },
   { href: "/syllabus", label: "Syllabus", icon: BookOpen },
   { href: "/lab", label: "Lab", icon: FlaskConical },

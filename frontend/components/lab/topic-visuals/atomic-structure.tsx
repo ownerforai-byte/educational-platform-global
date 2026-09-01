@@ -102,7 +102,6 @@ export function AtomicStructureVisual() {
           if (m instanceof THREE.Mesh) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
-          else if (m instanceof THREE.Mesh && m.geometry.type === "RingGeometry") { (m.geometry as THREE.RingGeometry).dispose(); const mat = m.material; if (mat && !Array.isArray(mat)) mat.dispose(); }
         }
 
         // Clear old electron groups
