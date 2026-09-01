@@ -3,16 +3,12 @@
 import {
   FlaskConical,
   Atom,
-  Beaker,
-  Microscope,
 } from "lucide-react";
 import Link from "next/link";
 
 const labs = [
-  { key: "math", label: "Math", icon: Atom, desc: "3D geometry, calculus & vectors", href: "/lab/math" },
-  { key: "chemistry", label: "Chemistry", icon: Beaker, desc: "Molecules, reactions & stoichiometry", href: "/lab/chemistry" },
-  { key: "physics", label: "Physics", icon: FlaskConical, desc: "Optics, gravitation & heat", href: "/lab/physics" },
-  { key: "biology", label: "Biology", icon: Microscope, desc: "Cells, plants & human body", href: "/lab/biology" },
+  { key: "physics", label: "Physics", icon: FlaskConical, desc: "Optics, gravitation, mechanics & waves", href: "/lab/physics" },
+  { key: "chemistry", label: "Chemistry", icon: Atom, desc: "Molecules, reactions & stoichiometry", href: "/lab/chemistry" },
 ];
 
 export function ScienceLabSection() {
