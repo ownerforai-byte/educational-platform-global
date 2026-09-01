@@ -1,0 +1,27 @@
+{
+  "title": "Limit of a Function",
+  "unitSlug": "calculus",
+  "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+  "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+  "relevance": 95,
+  "notes": [
+    "**Definition of limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ approaches $a$ (but $x \\neq a$), the value of $f(x)$ approaches $L$.",
+    "**One-sided limits:** The left-hand limit $\\lim_{x \\to a^-} f(x)$ considers values of $x$ less than $a$; the right-hand limit $\\lim_{x \\to a^+} f(x)$ considers values greater than $a$. For the limit to exist, both one-sided limits must be equal.",
+    "**Existence of a limit:** $\\lim_{x \\to a} f(x) = L$ exists if and only if $\\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$.",
+    "**Geometric interpretation:** On the graph of $y = f(x)$, the limit $\\lim_{x \\to a} f(x) = L$ means the $y$-value approaches $L$ as the curve is traced toward $x = a$ from both sides. The function need not be defined at $x = a$ itself.",
+    "**Physical interpretation:** If $f(t)$ represents position at time $t$, then $\\lim_{t \\to a} f(t)$ gives the position approached at time $a$, regardless of whether the object is actually at that position."
+  ],
+  "confusion": [
+    "The limit $\\lim_{x \\to a} f(x)$ does NOT require $f(a)$ to exist. The limit is about the behaviour of $f(x)$ near $a$, not at $a$.",
+    "Do not substitute $x = a$ directly as a first step — many limits yield $0/0$ which requires algebraic simplification before substitution."
+  ],
+  "practice": [
+    "Evaluate $\\lim_{x \\to 2} (x^2 - 4)/(x - 2)$ by factoring and simplifying.",
+    "Find the left-hand and right-hand limits of $f(x) = |x|/x$ as $x \\to 0$ and determine whether the limit exists.",
+    "Sketch a function where the left-hand and right-hand limits exist but are not equal."
+  ],
+  "universalFacts": [
+    "Limits are the foundation of all calculus — derivatives and integrals are both defined via limits.",
+    "The concept of a limit extends naturally to sequences: $\\lim_{n \\to \\infty} a_n = L$ means the sequence values approach $L$."
+  ]
+}

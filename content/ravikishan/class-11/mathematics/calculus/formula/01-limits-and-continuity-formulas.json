@@ -1,0 +1,26 @@
+{
+  "title": "Limits and Continuity — Formula Sheet",
+  "unitSlug": "calculus",
+  "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+  "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+  "relevance": 100,
+  "notes": [
+    "**Existence of limit:** $\\lim_{x \\to a} f(x) = L \\iff \\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$",
+    "**Sum rule:** $\\lim_{x \\to a}[f(x) \\pm g(x)] = \\lim_{x \\to a} f(x) \\pm \\lim_{x \\to a} g(x)$",
+    "**Product rule:** $\\lim_{x \\to a}[f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$",
+    "**Quotient rule:** $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$, when $\\lim_{x \\to a} g(x) \\neq 0$",
+    "**Power rule:** $\\lim_{x \\to a} [f(x)]^n = [\\lim_{x \\to a} f(x)]^n$",
+    "**Fundamental trig limit:** $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ (x in radians)",
+    "**Derived trig limits:** $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$, $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$",
+    "**Generalised trig:** $\\lim_{x \\to 0} \\frac{\\sin ax}{bx} = \\frac{a}{b}$, $\\lim_{x \\to 0} \\frac{\\tan ax}{bx} = \\frac{a}{b}$",
+    "**Fundamental exp limit:** $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$",
+    "**Generalised exp:** $\\lim_{x \\to 0} \\frac{e^{ax} - 1}{bx} = \\frac{a}{b}$",
+    "**Fundamental log limit:** $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$",
+    "**Generalised log:** $\\lim_{x \\to 0} \\frac{\\ln(1 + ax)}{bx} = \\frac{a}{b}$",
+    "**Definition of $e$:** $e = \\lim_{n \\to \\infty}\\left(1 + \\frac{1}{n}\\right)^n = \\lim_{x \\to 0}(1 + x)^{1/x}$",
+    "**Polynomial limit:** $\\lim_{x \\to a} p(x) = p(a)$ for any polynomial $p(x)$",
+    "**Rational function at infinity:** If deg(num) < deg(den), limit = 0. If equal, limit = ratio of leading coefficients.",
+    "**Continuity condition:** $f$ is continuous at $x = a \\iff \\lim_{x \\to a} f(x) = f(a)$",
+    "**Sandwich theorem:** $g(x) \\leq f(x) \\leq h(x)$ and $\\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L \\implies \\lim_{x \\to a} f(x) = L$"
+  ]
+}
