@@ -105,8 +105,10 @@ ravikishan/
 │   │   │   ├── flashcard-viewer.tsx
 │   │   │   ├── imported-notes-section.tsx
 │   │   │   ├── katex.tsx
+│   │   │   ├── limits-continuity-resources.tsx
 │   │   │   ├── math-markdown.tsx
 │   │   │   ├── MathRenderer.tsx
+│   │   │   ├── matrices-determinants-resources.tsx
 │   │   │   ├── notes-viewer.tsx
 │   │   │   ├── numerical-viewer.tsx
 │   │   │   ├── pyq-card.tsx
@@ -126,6 +128,8 @@ ravikishan/
 │   │   │   ├── class11/
 │   │   │   │   └── …
 │   │   │   ├── motion-graphics/
+│   │   │   │   └── …
+│   │   │   ├── topic-visuals/
 │   │   │   │   └── …
 │   │   │   ├── topics/
 │   │   │   │   └── …
@@ -572,6 +576,8 @@ ravikishan/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml
+├── .claude/
+│   └── settings.local.json
 ├── .cursor/
 ├── .vscode/
 │   └── settings.json
@@ -615,6 +621,17 @@ ravikishan/
 ├── db/
 │   ├── schema.ts
 │   └── seed.ts
+├── deploy/
+│   └── nginx/
+│       ├── conf.d/
+│       │   └── gzip.conf
+│       ├── sites-available/
+│       │   └── educational-platform
+│       ├── snippets/
+│       │   ├── proxy-params.conf
+│       │   └── security-headers.conf
+│       ├── nginx.conf
+│       └── README.md
 ├── media/
 │   ├── images/
 │   │   └── manim_3d_math_animations/
@@ -658,6 +675,7 @@ ravikishan/
 ├── eslint-out.txt
 ├── eslint-out2.txt
 ├── eslint.config.mjs
+├── limits_and_continuity_content.json
 ├── opencode.json
 ├── package.json
 ├── postcss.config.mjs

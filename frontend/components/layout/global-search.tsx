@@ -100,7 +100,7 @@ export function GlobalSearch() {
   };
 
   const hasResults = results.length > 0;
-  const showPopular = !open || (!query && !searched);
+  const showPopular = open && !query && !searched;
   const showResults = open && (query.length >= 2 || searched);
 
   return (

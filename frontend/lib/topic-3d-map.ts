@@ -2,6 +2,13 @@
 
 import React from "react";
 import { ChapterAnimation } from "@/components/lab/chapter-animation";
+import { StraightLineVisual } from "@/components/lab/topic-visuals/straight-line";
+import { CoordinatesSpaceVisual } from "@/components/lab/topic-visuals/coordinates-space";
+import { VectorOperationsVisual } from "@/components/lab/topic-visuals/vector-operations";
+import { LimitsContinuityVisual } from "@/components/lab/topic-visuals/limits-continuity";
+import { DerivativeVisual } from "@/components/lab/topic-visuals/derivative-visual";
+import { IntegralAreaVisual } from "@/components/lab/topic-visuals/integral-area";
+import { ComplexQuadraticVisual } from "@/components/lab/topic-visuals/complex-quadratic";
 
 type LabComponentMap = Record<string, () => React.ReactNode>;
 
@@ -9,6 +16,13 @@ const make = (slug: string, title: string, unit?: string, subject?: string) => {
   const TopicLab = () =>
     React.createElement(ChapterAnimation, { topicSlug: slug, topicTitle: title, unitSlug: unit, subjectSlug: subject });
   TopicLab.displayName = `TopicLab(${slug})`;
+  return TopicLab;
+};
+
+/** Create a topic-specific 3D visual component. */
+const makeTopic = (Component: React.FC, title: string) => {
+  const TopicLab = () => React.createElement(Component);
+  TopicLab.displayName = `TopicLab(${title})`;
   return TopicLab;
 };
 
@@ -424,29 +438,29 @@ const MATH_11: LabComponentMap = {
   "curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonicity-graphs-of-quadratic-cubic-and-rational-functions-trigonometric-asinbx-and-acosbx-exponential-ex-lnx": make("curve sketching", "Curve Sketching", "algebra", "mathematics"),
   "sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-am-gm-hm-and-their-relations-sum-of-infinite-geometric-series": make("sequence", "Sequences & Series", "algebra", "mathematics"),
   "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-inverse-matrix-determinant-properties-of-determinants-without-proof": make("matrix", "Matrices & Determinants", "algebra", "mathematics"),
-  "quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficient-formation-of-a-quadratic-equation-symmetric-roots-one-or-both-roots-common": make("quadratic equation", "Quadratic Equations", "algebra", "mathematics"),
-  "complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modulus-value-and-conjugate-of-complex-numbers-and-their-properties-square-root-of-a-complex-number": make("complex number", "Complex Numbers", "algebra", "mathematics"),
+  "quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficient-formation-of-a-quadratic-equation-symmetric-roots-one-or-both-roots-common": makeTopic(ComplexQuadraticVisual, "Quadratic & Complex"),
+  "complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modulus-value-and-conjugate-of-complex-numbers-and-their-properties-square-root-of-a-complex-number": makeTopic(ComplexQuadraticVisual, "Complex Numbers"),
   "trigonometry": make("trigonometric function", "Trigonometry", "trigonometry", "mathematics"),
   "inverse-circular-functions": make("inverse circular", "Inverse Circular Functions", "trigonometry", "mathematics"),
   "trigonometric-equations-and-general-values": make("trigonometric equation", "Trigonometric Equations", "trigonometry", "mathematics"),
   "analytic-geometry": make("straight line", "Analytic Geometry", "analytic-geometry", "mathematics"),
-  "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines": make("straight line", "Straight Line", "analytic-geometry", "mathematics"),
-  "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines": make("homogenous", "Pair of Straight Lines", "analytic-geometry", "mathematics"),
-  "coordinates-in-space-points-in-space-distance-between-two-points-direction-cosines-and-ratios-of-a-line": make("direction cosine", "Coordinates in Space", "analytic-geometry", "mathematics"),
-  "vectors": make("vector", "Vectors", "vectors", "mathematics"),
-  "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors": make("collinear", "Collinear Vectors", "vectors", "mathematics"),
-  "linear-combination-of-vectors-linearly-dependent-and-independent-vectors": make("linear combination", "Linear Combination", "vectors", "mathematics"),
+  "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines": makeTopic(StraightLineVisual, "Straight Line"),
+  "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines": makeTopic(StraightLineVisual, "Pair of Straight Lines"),
+  "coordinates-in-space-points-in-space-distance-between-two-points-direction-cosines-and-ratios-of-a-line": makeTopic(CoordinatesSpaceVisual, "Coordinates in Space"),
+  "vectors": makeTopic(VectorOperationsVisual, "Vectors"),
+  "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors": makeTopic(VectorOperationsVisual, "Collinear & Coplanar Vectors"),
+  "linear-combination-of-vectors-linearly-dependent-and-independent-vectors": makeTopic(VectorOperationsVisual, "Linear Combination"),
   "statistics-and-probability": make("measure of dispersion", "Statistics & Probability", "statistics-and-probability", "mathematics"),
   "measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearsons-coefficient-of-skewness": make("standard deviation", "Measure of Dispersion", "statistics-and-probability", "mathematics"),
   "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability-without-proof": make("probability", "Probability", "statistics-and-probability", "mathematics"),
   "calculus": make("calculus", "Calculus", "calculus", "mathematics"),
-  "limits-and-continuity-limits-of-a-function-indeterminate-forms-alal-form-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithal-functions": make("limit", "Limits", "calculus", "mathematics"),
-  "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function": make("continuity", "Continuity", "calculus", "mathematics"),
-  "derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithal-functions-by-definition-simple-forms": make("derivative", "Derivatives", "calculus", "mathematics"),
-  "rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivatives": make("differentiation", "Differentiation Rules", "calculus", "mathematics"),
-  "geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extreme-values-of-a-function-concavity-points-of-inflexion": make("monotonicity", "Geometric Interpretation", "calculus", "mathematics"),
-  "anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-methods": make("integral", "Anti-derivatives", "calculus", "mathematics"),
-  "the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-curves": make("definite integral", "Definite Integrals", "calculus", "mathematics"),
+  "limits-and-continuity-limits-of-a-function-indeterminate-forms-alal-form-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithal-functions": makeTopic(LimitsContinuityVisual, "Limits"),
+  "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function": makeTopic(LimitsContinuityVisual, "Continuity"),
+  "derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithal-functions-by-definition-simple-forms": makeTopic(DerivativeVisual, "Derivatives"),
+  "rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivatives": makeTopic(DerivativeVisual, "Differentiation Rules"),
+  "geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extreme-values-of-a-function-concavity-points-of-inflexion": makeTopic(DerivativeVisual, "Geometric Interpretation"),
+  "anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-methods": makeTopic(IntegralAreaVisual, "Anti-derivatives"),
+  "the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-curves": makeTopic(IntegralAreaVisual, "Definite Integrals"),
   "computational-methods-or-mechanics": make("numerical computation", "Computational Methods", "computational-methods-or-mechanics", "mathematics"),
   "numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphson-method": make("bisection", "Roots of Equations", "computational-methods-or-mechanics", "mathematics"),
   "numerical-integration-trapezoidal-rule-and-simpsons-rule": make("trapezoidal", "Numerical Integration", "computational-methods-or-mechanics", "mathematics"),
@@ -580,45 +594,45 @@ const CHEMISTRY_12: LabComponentMap = {
 };
 
 const MATH_12: LabComponentMap = {
-  "limits-and-continuity": make("limit", "Limits & Continuity", "limits-and-continuity", "mathematics"),
-  "concept-of-limit-geometric-and-physical-interpretation": make("limit", "Concept of Limit", "limits-and-continuity", "mathematics"),
-  "standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic": make("limit", "Standard Limits", "limits-and-continuity", "mathematics"),
-  "indeterminate-forms": make("indeterminate", "Indeterminate Forms", "limits-and-continuity", "mathematics"),
-  "continuity-of-algebraic-trigonometric-exponential-logarithmic-functions": make("continuity", "Continuity", "limits-and-continuity", "mathematics"),
-  "differentiability-and-its-relation-with-continuity": make("differentiability", "Differentiability", "limits-and-continuity", "mathematics"),
-  "differentiation": make("derivative", "Differentiation", "differentiation", "mathematics"),
-  "derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functions": make("derivative", "Derivatives", "differentiation", "mathematics"),
-  "rules-of-differentiation-product-rule-quotient-rule-chain-rule": make("chain rule", "Rules of Differentiation", "differentiation", "mathematics"),
-  "derivatives-of-parametric-and-implicit-functions": make("implicit function", "Parametric & Implicit", "differentiation", "mathematics"),
-  "higher-order-derivatives": make("higher order", "Higher Order Derivatives", "differentiation", "mathematics"),
-  "logarithmic-differentiation": make("logarithmic differentiation", "Logarithmic Differentiation", "differentiation", "mathematics"),
-  "leibnizs-theorem-for-nth-derivative": make("leibniz", "Leibniz's Theorem", "differentiation", "mathematics"),
-  "geometric-interpretation-tangent-and-normal": make("tangent", "Tangent & Normal", "differentiation", "mathematics"),
-  "monotonicity-maxima-and-minima-first-and-second-derivative-tests": make("maxima", "Maxima & Minima", "differentiation", "mathematics"),
-  "applications-rate-of-change-approximation-error-estimation": make("approximation", "Approximation", "differentiation", "mathematics"),
-  "integration": make("integral", "Integration", "integration", "mathematics"),
-  "integration-as-inverse-of-differentiation": make("integral", "Integration Basics", "integration", "mathematics"),
-  "standard-integrals-and-methods-substitution-parts-partial-fractions": make("by parts", "Integration Methods", "integration", "mathematics"),
-  "definite-integrals-and-properties": make("definite integral", "Definite Integrals", "integration", "mathematics"),
-  "integration-of-trigonometric-functions": make("trigonometric function", "Trigonometric Integration", "integration", "mathematics"),
-  "applications-area-under-curve-area-between-two-curves": make("area under", "Area Applications", "integration", "mathematics"),
+  "limits-and-continuity": makeTopic(LimitsContinuityVisual, "Limits & Continuity"),
+  "concept-of-limit-geometric-and-physical-interpretation": makeTopic(LimitsContinuityVisual, "Concept of Limit"),
+  "standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic": makeTopic(LimitsContinuityVisual, "Standard Limits"),
+  "indeterminate-forms": makeTopic(LimitsContinuityVisual, "Indeterminate Forms"),
+  "continuity-of-algebraic-trigonometric-exponential-logarithmic-functions": makeTopic(LimitsContinuityVisual, "Continuity"),
+  "differentiability-and-its-relation-with-continuity": makeTopic(LimitsContinuityVisual, "Differentiability"),
+  "differentiation": makeTopic(DerivativeVisual, "Differentiation"),
+  "derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functions": makeTopic(DerivativeVisual, "Derivatives"),
+  "rules-of-differentiation-product-rule-quotient-rule-chain-rule": makeTopic(DerivativeVisual, "Differentiation Rules"),
+  "derivatives-of-parametric-and-implicit-functions": makeTopic(DerivativeVisual, "Parametric & Implicit"),
+  "higher-order-derivatives": makeTopic(DerivativeVisual, "Higher Order Derivatives"),
+  "logarithmic-differentiation": makeTopic(DerivativeVisual, "Logarithmic Differentiation"),
+  "leibnizs-theorem-for-nth-derivative": makeTopic(DerivativeVisual, "Leibniz's Theorem"),
+  "geometric-interpretation-tangent-and-normal": makeTopic(DerivativeVisual, "Tangent & Normal"),
+  "monotonicity-maxima-and-minima-first-and-second-derivative-tests": makeTopic(DerivativeVisual, "Maxima & Minima"),
+  "applications-rate-of-change-approximation-error-estimation": makeTopic(DerivativeVisual, "Applications"),
+  "integration": makeTopic(IntegralAreaVisual, "Integration"),
+  "integration-as-inverse-of-differentiation": makeTopic(IntegralAreaVisual, "Integration Basics"),
+  "standard-integrals-and-methods-substitution-parts-partial-fractions": makeTopic(IntegralAreaVisual, "Integration Methods"),
+  "definite-integrals-and-properties": makeTopic(IntegralAreaVisual, "Definite Integrals"),
+  "integration-of-trigonometric-functions": makeTopic(IntegralAreaVisual, "Trigonometric Integration"),
+  "applications-area-under-curve-area-between-two-curves": makeTopic(IntegralAreaVisual, "Area Applications"),
   "differential-equations": make("differential equation", "Differential Equations", "differential-equations", "mathematics"),
   "formation-of-differential-equations": make("differential equation", "Formation", "differential-equations", "mathematics"),
   "solving-first-order-first-degree-equations-variable-separable-homogeneous-linear": make("variable separable", "Solving DE", "differential-equations", "mathematics"),
   "applications-growth-and-decay-population-dynamics": make("growth", "Growth & Decay", "differential-equations", "mathematics"),
-  "vector-algebra": make("scalar", " vector", "vector-algebra", "mathematics"),
-  "scalar-and-vector-quantities-types-of-vectors": make("scalar", "Scalar & Vector", "vector-algebra", "mathematics"),
-  "addition-subtraction-and-scalar-multiplication-of-vectors": make("addition", "Vector Operations", "vector-algebra", "mathematics"),
-  "dot-product-scalar-product-and-its-applications": make("dot product", "Dot Product", "vector-algebra", "mathematics"),
-  "cross-product-vector-product-and-its-applications": make("cross product", "Cross Product", "vector-algebra", "mathematics"),
-  "scalar-and-vector-triple-products": make("triple product", "Triple Products", "vector-algebra", "mathematics"),
-  "applications-work-torque-angular-momentum": make("work", "Applications", "vector-algebra", "mathematics"),
-  "three-dimensional-geometry": make("direction cosine", "3D Geometry", "three-dimensional-geometry", "mathematics"),
-  "direction-cosines-and-direction-ratios-of-a-line": make("direction cosine", "Direction Cosines", "three-dimensional-geometry", "mathematics"),
-  "equation-of-a-line-in-space-standard-and-general-form": make("equation of a line", "Line in Space", "three-dimensional-geometry", "mathematics"),
-  "equation-of-a-plane-normal-form-general-form": make("equation of a plane", "Plane Equation", "three-dimensional-geometry", "mathematics"),
-  "angle-between-two-lines-two-planes-and-a-line-and-a-plane": make("angle between", "Angles", "three-dimensional-geometry", "mathematics"),
-  "distance-of-a-point-from-a-plane-and-line": make("distance of a point", "Distance", "three-dimensional-geometry", "mathematics"),
+  "vector-algebra": makeTopic(VectorOperationsVisual, "Vector Algebra"),
+  "scalar-and-vector-quantities-types-of-vectors": makeTopic(VectorOperationsVisual, "Scalar & Vector"),
+  "addition-subtraction-and-scalar-multiplication-of-vectors": makeTopic(VectorOperationsVisual, "Vector Operations"),
+  "dot-product-scalar-product-and-its-applications": makeTopic(VectorOperationsVisual, "Dot Product"),
+  "cross-product-vector-product-and-its-applications": makeTopic(VectorOperationsVisual, "Cross Product"),
+  "scalar-and-vector-triple-products": makeTopic(VectorOperationsVisual, "Triple Products"),
+  "applications-work-torque-angular-momentum": makeTopic(VectorOperationsVisual, "Applications"),
+  "three-dimensional-geometry": makeTopic(CoordinatesSpaceVisual, "3D Geometry"),
+  "direction-cosines-and-direction-ratios-of-a-line": makeTopic(CoordinatesSpaceVisual, "Direction Cosines"),
+  "equation-of-a-line-in-space-standard-and-general-form": makeTopic(CoordinatesSpaceVisual, "Line in Space"),
+  "equation-of-a-plane-normal-form-general-form": makeTopic(CoordinatesSpaceVisual, "Plane Equation"),
+  "angle-between-two-lines-two-planes-and-a-line-and-a-plane": makeTopic(CoordinatesSpaceVisual, "Angles"),
+  "distance-of-a-point-from-a-plane-and-line": makeTopic(CoordinatesSpaceVisual, "Distance"),
   "linear-programming": make("linear programming", "Linear Programming", "linear-programming", "mathematics"),
   "linear-programming-formulation-of-lpp": make("linear programming", "Formulation of LPP", "linear-programming", "mathematics"),
   "graphical-method-for-solving-lpp-with-two-variables": make("graphical method", "Graphical Method", "linear-programming", "mathematics"),
