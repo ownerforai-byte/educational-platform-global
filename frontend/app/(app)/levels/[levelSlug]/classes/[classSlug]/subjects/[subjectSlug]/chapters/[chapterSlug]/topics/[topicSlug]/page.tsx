@@ -5,8 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { UnderDevelopment } from "@/components/content/under-development";
 import Link from "next/link";
 
-
-
 const RESOURCE_TYPE_LABELS: Record<string, string> = {
   SYLLABUS: "Syllabus",
   MINDMAP: "Mind Map",
@@ -29,13 +27,7 @@ export default async function TopicPage({
   }>;
 }) {
   const { levelSlug, classSlug, subjectSlug, chapterSlug, topicSlug } = await params;
-  const detail = await getTopicDetail(
-    levelSlug,
-    classSlug,
-    subjectSlug,
-    chapterSlug,
-    topicSlug
-  );
+  const detail = await getTopicDetail(levelSlug, classSlug, subjectSlug, chapterSlug, topicSlug);
 
   if (!detail) {
     return (
@@ -59,9 +51,26 @@ export default async function TopicPage({
 
   const resourceTypes = Object.keys(grouped).sort();
 
+  // Fetch subject + chapter names for full breadcrumb chain
+  let subjectName = subjectSlug;
+  let chapterName = chapterSlug;
+  try {
+    const [subResp, chapResp] = await Promise.all([
+      fetch(`/api/subjects/${encodeURIComponent(subjectSlug)}`),
+      fetch(`/api/chapters/${encodeURIComponent(chapterSlug)}`),
+    ]);
+    const subJson = await subResp.json();
+    const chapJson = await chapResp.json();
+    subjectName = subJson.subject?.name ?? subjectSlug;
+    chapterName = chapJson.chapter?.name ?? chapterSlug;
+  } catch {}
+
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Levels", href: "/levels" },
+    { label: "Class 11 Notes", href: "/levels/library/classes/class-11-notes" },
+    { label: subjectName, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}` },
+    { label: chapterName, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapterSlug}` },
     { label: topic.title },
   ];
 

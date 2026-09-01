@@ -98,6 +98,7 @@ ravikishan/
 │   │   │   ├── topic-resources/
 │   │   │   │   └── …
 │   │   │   ├── analytical-geometry-resource-panel.tsx
+│   │   │   ├── analytical-geometry-resources.tsx
 │   │   │   ├── content-tabs.tsx
 │   │   │   ├── date-badge.tsx
 │   │   │   ├── empty-state.tsx
@@ -368,6 +369,7 @@ ravikishan/
 │   ├── AGENTS.md
 │   ├── CLAUDE.md
 │   ├── components.json
+│   ├── invisible-utils.ps1
 │   ├── MIGRATION_FILE_MAP.md
 │   ├── next.config.mjs
 │   ├── package.json

@@ -5,8 +5,6 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { UnderDevelopment } from "@/components/content/under-development";
 import Link from "next/link";
 
-
-
 export default async function ChapterPage({
   params,
 }: {
@@ -18,12 +16,7 @@ export default async function ChapterPage({
   }>;
 }) {
   const { levelSlug, classSlug, subjectSlug, chapterSlug } = await params;
-  const detail = await getChapterDetail(
-    levelSlug,
-    classSlug,
-    subjectSlug,
-    chapterSlug
-  );
+  const detail = await getChapterDetail(levelSlug, classSlug, subjectSlug, chapterSlug);
 
   if (!detail) {
     return (
@@ -36,9 +29,19 @@ export default async function ChapterPage({
   const { chapter, topics, progress } = detail;
   const pct = progress.total > 0 ? Math.round((progress.completed / progress.total) * 100) : 0;
 
+  // Fetch subject name for breadcrumbs
+  let subjectName = chapter.title;
+  try {
+    const resp = await fetch(`/api/subjects/${encodeURIComponent(subjectSlug)}`);
+    const json = await resp.json();
+    subjectName = json.subject?.name ?? subjectSlug;
+  } catch {}
+
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Levels", href: "/levels" },
+    { label: "Class 11 Notes", href: "/levels/library/classes/class-11-notes" },
+    { label: subjectName, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}` },
     { label: chapter.title },
   ];
 

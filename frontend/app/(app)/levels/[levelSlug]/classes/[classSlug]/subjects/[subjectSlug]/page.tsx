@@ -5,19 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { UnderDevelopment } from "@/components/content/under-development";
 import Link from "next/link";
 
-
-
 export default async function SubjectPage({
   params,
 }: {
   params: Promise<{ levelSlug: string; classSlug: string; subjectSlug: string }>;
 }) {
   const { levelSlug, classSlug, subjectSlug } = await params;
-  const detail = await getSubjectDetail(
-    levelSlug,
-    classSlug,
-    subjectSlug
-  );
+  const detail = await getSubjectDetail(levelSlug, classSlug, subjectSlug);
 
   if (!detail) {
     return (
@@ -29,13 +23,12 @@ export default async function SubjectPage({
 
   const { subject, chapters, chapterProgress } = detail;
 
-  const progressMap = new Map(
-    chapterProgress.map((p) => [p.chapterId, p])
-  );
+  const progressMap = new Map(chapterProgress.map((p) => [p.chapterId, p]));
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Levels", href: "/levels" },
+    { label: "Class 11 Notes", href: "/levels/library/classes/class-11-notes" },
     { label: subject.name },
   ];
 

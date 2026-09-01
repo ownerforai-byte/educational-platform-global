@@ -22,7 +22,7 @@ export default function SubjectsPage() {
       <div className="space-y-1">
         <h1 className="text-3xl font-bold tracking-tight">📚 Subjects</h1>
         <p className="text-muted-foreground">
-          All six NEB subjects. Browse by class track — each page starts with the official syllabus in order.
+          All six NEB subjects. Select a class track and subject to explore.
         </p>
       </div>
 
@@ -37,7 +37,7 @@ export default function SubjectsPage() {
                 key={subject.slug}
                 className="rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-primary/30 hover:shadow-lg card-shimmer"
               >
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-xl">
                     {SUBJECT_EMOJI[subject.name] ?? "📘"}
                   </div>
@@ -53,22 +53,15 @@ export default function SubjectsPage() {
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  {subject.units.map((unit) => (
-                    <Link
-                      key={unit.id}
-                      href={`/levels/library/classes/${track.slug}/subjects/${subject.slug}`}
-                      className="block rounded-lg border border-border/60 px-3 py-2 text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span>{unit.title}</span>
-                        {unit.hours != null && (
-                          <span className="text-[10px] text-muted-foreground/60">
-                            {unit.hours}h
-                          </span>
-                        )}
-                      </div>
-                    </Link>
-                  ))}
+                  <Link
+                    href={`/levels/library/classes/${track.slug}/subjects/${subject.slug}`}
+                    className="block rounded-lg border border-border/60 px-3 py-2 text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span>View units & topics</span>
+                      <span className="text-[10px] text-muted-foreground/60">{subject.units.length} units</span>
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}
