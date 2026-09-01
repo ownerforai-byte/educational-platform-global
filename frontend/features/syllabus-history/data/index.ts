@@ -11,6 +11,7 @@ export type SyllabusTopicChange = {
   addedInYear?: number;
   removedInYear?: number;
   modifiedInYear?: number;
+  meaning?: string;
 };
 
 export type SyllabusUnit = {
