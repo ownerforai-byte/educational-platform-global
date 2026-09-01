@@ -1,0 +1,31 @@
+{
+  "title": "Cross Product and Its Applications",
+  "unitSlug": "vectors",
+  "topicSlug": "cross-product-and-its-applications",
+  "topicTitle": "Cross product (vector product) and its applications",
+  "relevance": 100,
+  "notes": [
+    "**Definition:** $\\vec{a} \\times \\vec{b} = |\\vec{a}||\\vec{b}|\\sin\\theta \\, \\hat{n}$, where $\\hat{n}$ is perpendicular to both $\\vec{a}$ and $\\vec{b}$, given by right-hand rule.",
+    "**Component form:** $\\vec{a} \\times \\vec{b} = (a_yb_z - a_zb_y)\\hat{i} + (a_zb_x - a_xb_z)\\hat{j} + (a_xb_y - a_yb_x)\\hat{k}$.",
+    "**Magnitude:** $|\\vec{a} \\times \\vec{b}|$ equals the area of the parallelogram spanned by $\\vec{a}$ and $\\vec{b}$.",
+    "**Zero condition:** $\\vec{a} \\times \\vec{b} = \\vec{0}$ if $\\vec{a}$ and $\\vec{b}$ are parallel or antiparallel ($\\theta = 0$ or $\\pi$).",
+    "**Torque:** $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Angular momentum: $\\vec{L} = \\vec{r} \\times \\vec{p}$. Magnetic force: $\\vec{F} = q(\\vec{v} \\times \\vec{B})$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
+}

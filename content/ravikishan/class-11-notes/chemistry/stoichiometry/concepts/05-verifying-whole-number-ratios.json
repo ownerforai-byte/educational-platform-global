@@ -1,12 +1,29 @@
 {
-  "title": "Law of Multiple Proportions — Verifying a Simple Whole-Number Ratio",
+  "title": "Law of Multiple Proportions â€” Verifying a Simple Whole-Number Ratio",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
   "relevance": 80,
   "notes": [
-    "**Step 1 — divide by the smallest value:** take the calculated list of masses (or mass ratios), pick the smallest one, and divide every value in the list by it — this forces the smallest value to become exactly 1",
-    "**Step 2 — clear any remaining decimals:** if a result still ends in .5, .33/.66, or .25/.75, multiply every value in the list by a common factor to clear it — ×2 for .5, ×3 for .33/.66, ×4 for .25/.75 — until all values are whole numbers",
-    "**Alternative for already-whole numbers:** find the Highest Common Factor (HCF) of the numbers and divide each by it — e.g. 12:16 → HCF = 4 → 3:4"
-  ]
+    "**Step 1 â€” divide by the smallest value:** take the calculated list of masses (or mass ratios), pick the smallest one, and divide every value in the list by it â€” this forces the smallest value to become exactly 1",
+    "**Step 2 â€” clear any remaining decimals:** if a result still ends in .5, .33/.66, or .25/.75, multiply every value in the list by a common factor to clear it â€” Ã—2 for .5, Ã—3 for .33/.66, Ã—4 for .25/.75 â€” until all values are whole numbers",
+    "**Alternative for already-whole numbers:** find the Highest Common Factor (HCF) of the numbers and divide each by it â€” e.g. 12:16 â†’ HCF = 4 â†’ 3:4"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "stoichiometry",
+  "motionGraphics": "stoichiometry"
 }

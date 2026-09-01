@@ -1,0 +1,30 @@
+{
+  "title": "Poisson's Ratio",
+  "unitSlug": "elasticity",
+  "topicSlug": "poisson-s-ratio",
+  "topicTitle": "Poisson's ratio",
+  "relevance": 100,
+  "notes": [
+    "**Definition:** Poisson's ratio $\\sigma$ is the negative ratio of lateral strain to longitudinal strain: $\\sigma = -\\frac{\\text{lateral strain}}{\\text{longitudinal strain}} = -\\frac{\\Delta d/d}{\\Delta L/L}$.",
+    "**Physical meaning:** when you stretch a wire, it not only gets longer but also thinner. Poisson's ratio quantifies how much thinner it gets for a given stretch.",
+    "**Range:** for most materials, $0 < \\sigma < 0.5$. Rubber is close to 0.5 (volume stays nearly constant when stretched). Cork has $\\sigma \\approx 0$ (it does not get thinner when compressed).",
+    "**Theoretical limits:** $\\sigma$ cannot be less than $-1$ or greater than $0.5$ for stable isotropic materials. $\\sigma = 0.5$ means volume is conserved during deformation."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "elasticity",
+  "motionGraphics": "elasticity"
+}

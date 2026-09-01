@@ -1,14 +1,31 @@
 {
-  "title": "Angle Bisector — Verifying with the tan θ Method",
+  "title": "Angle Bisector â€” Verifying with the tan Î¸ Method",
   "unitSlug": "analytic-geometry",
   "topicSlug": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines",
   "topicTitle": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
   "relevance": 71,
   "notes": [
-    "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope",
-    "**If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector",
-    "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector",
-    "**Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3",
-    "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method"
-  ]
+    "As a cross-check, find the angle Î¸ between one of the original lines and one candidate bisector using: tan Î¸ = |(mâ‚ âˆ’ m_b)/(1 + mâ‚Â·m_b)|, where mâ‚ is the original line's slope and m_b is the bisector's slope",
+    "**If tan Î¸ < 1** (Î¸ < 45Â°): since Î¸ is half the angle between the two original lines, the total angle is less than 90Â°, so this bisector is the **acute** angle bisector",
+    "**If tan Î¸ > 1** (Î¸ > 45Â°): this bisector is the **obtuse** angle bisector",
+    "**Worked check:** slope of Bisector 1 (6x + 6y âˆ’ 1 = 0) is m_b = âˆ’6/6 = âˆ’1; with the original line's slope mâ‚ = âˆ’1/2: tan Î¸ = |(âˆ’1/2 âˆ’ (âˆ’1))/(1 + (âˆ’1/2)(âˆ’1))| = |(1/2)/(3/2)| = 1/3",
+    "Since tan Î¸ = 1/3 < 1, this confirms 6x + 6y âˆ’ 1 = 0 is definitively the **acute angle bisector** â€” matching the aâ‚aâ‚‚ + bâ‚bâ‚‚ method"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry"
 }

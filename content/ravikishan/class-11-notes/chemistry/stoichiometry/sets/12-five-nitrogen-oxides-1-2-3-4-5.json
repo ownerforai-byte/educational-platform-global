@@ -1,13 +1,30 @@
 {
-  "title": "Q: Nitrogen forms five oxides with oxygen (0.572 g, 1.14 g, 1.73 g, 2.28 g, 2.85 g of O per 1.09 g of N) — show how these illustrate the law of multiple proportions",
+  "title": "Q: Nitrogen forms five oxides with oxygen (0.572 g, 1.14 g, 1.73 g, 2.28 g, 2.85 g of O per 1.09 g of N) â€” show how these illustrate the law of multiple proportions",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
   "relevance": 80,
   "notes": [
     "Fixed mass of nitrogen = 1.09 g in all five oxides",
-    "Divide each oxygen mass by the smallest value (0.572 g): 0.572/0.572 = 1, 1.14/0.572 ≈ 2, 1.73/0.572 ≈ 3, 2.28/0.572 ≈ 4, 2.85/0.572 ≈ 5",
+    "Divide each oxygen mass by the smallest value (0.572 g): 0.572/0.572 = 1, 1.14/0.572 â‰ˆ 2, 1.73/0.572 â‰ˆ 3, 2.28/0.572 â‰ˆ 4, 2.85/0.572 â‰ˆ 5",
     "**Ratio of oxygen masses = 1 : 2 : 3 : 4 : 5**",
     "This simple whole-number ratio illustrates the **Law of Multiple Proportions**"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "stoichiometry",
+  "motionGraphics": "stoichiometry"
 }

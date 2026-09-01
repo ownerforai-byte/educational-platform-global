@@ -1,0 +1,31 @@
+{
+  "title": "Electric Charges and Charging by Induction",
+  "unitSlug": "electric-charges",
+  "topicSlug": "electric-charges-and-charging-by-induction",
+  "topicTitle": "Electric charges; charging by induction",
+  "relevance": 100,
+  "notes": [
+    "**Charge:** a fundamental property of matter. Two types: positive and negative. Like charges repel; opposite charges attract.",
+    "**Quantization:** charge exists in discrete units. $q = \\pm ne$, where $n$ is an integer and $e = 1.602 \\times 10^{-19}\\,\\text{C}$ is the elementary charge.",
+    "**Conservation:** electric charge is conserved in any process. It can be transferred but not created or destroyed.",
+    " **Charging by induction:** bring a charged object near a neutral conductor, connect the conductor to earth, then remove the earth connection and the charged object. The conductor acquires opposite charge without touching.",
+    "**Coulomb's law:** $F = k\\frac{q_1 q_2}{r^2}$, where $k = 8.99 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$ in vacuum."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "electric-charges",
+  "motionGraphics": "electric-charges"
+}

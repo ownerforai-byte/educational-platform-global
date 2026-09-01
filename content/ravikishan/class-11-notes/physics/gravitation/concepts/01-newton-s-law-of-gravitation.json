@@ -1,0 +1,31 @@
+{
+  "title": "Newton's Law of Gravitation",
+  "unitSlug": "gravitation",
+  "topicSlug": "newton-s-law-of-gravitation",
+  "topicTitle": "Newton's law of gravitation",
+  "relevance": 100,
+  "notes": [
+    "**Law statement:** every particle in the universe attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+    "**Formula:** $F = G\\frac{m_1 m_2}{r^2}$, where $G = 6.674 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2$.",
+    "**Vector form:** $\\vec{F}_{12} = -G\\frac{m_1 m_2}{r^2}\\hat{r}_{12}$. The negative sign indicates attraction; the force on 1 due to 2 points toward 2.",
+    "**Shell theorem:** a uniform spherical shell attracts an external particle as if all its mass were concentrated at its centre. Inside a uniform shell, the net gravitational force is zero.",
+    "**Why $G$ is so small:** gravitational force is much weaker than electromagnetic force. Between two protons, gravity is about $10^{-36}$ times weaker than the electric force."
+  ],
+  "confusion": [
+    "Gravity is always attractive â€” there are no negative masses to repel. Unlike electric charge, which can be positive or negative.",
+    "The inverse-square law applies at all distances, but at very small distances other forces dominate.",
+    "Shell theorem only applies to uniform spherical shells or solid spheres."
+  ],
+  "practice": [
+    "Calculate the gravitational force between two 1 kg masses separated by 1 m. Compare this with the weight of a 1 g mass on Earth.",
+    "A satellite orbits at height $h = 300\\,\\text{km}$ above Earth ($R = 6400\\,\\text{km}$). Find the orbital speed.",
+    "At what height above Earth's surface does gravity reduce to 25% of its surface value?"
+  ],
+  "universalFacts": [
+    "Gravity is universal â€” it acts between any two masses anywhere in the universe.",
+    "The gravitational constant $G$ is the same everywhere in the universe.",
+    "Inside a uniform spherical shell, gravitational force is exactly zero at every point."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation"
+}

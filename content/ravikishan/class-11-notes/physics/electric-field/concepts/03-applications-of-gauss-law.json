@@ -1,0 +1,31 @@
+{
+  "title": "Applications of Gauss Law",
+  "unitSlug": "electric-field",
+  "topicSlug": "applications-of-gauss-law",
+  "topicTitle": "Application of Gauss law: field of a charge sphere, line charge, charged plane conductor",
+  "relevance": 100,
+  "notes": [
+    "**Infinite line charge:** choose a cylindrical Gaussian surface of radius $r$ and length $L$. $E(2\\pi r L) = \\lambda L/\\epsilon_0$, giving $E = \\frac{\\lambda}{2\\pi\\epsilon_0 r}$.",
+    "**Infinite plane sheet:** choose a pillbox straddling the sheet. $E(2A) = \\sigma A/\\epsilon_0$, giving $E = \\frac{\\sigma}{2\\epsilon_0}$ on each side.",
+    "**Charged conducting plane:** all charge resides on the surface. Field just outside is $E = \\sigma/\\epsilon_0$, twice the value for a non-conducting sheet because the field inside the conductor is zero.",
+    "**Uniformly charged sphere (outside):** treat as point charge at centre: $E = kQ/r^2$ for $r > R$.",
+    "**Uniformly charged sphere (inside):** only charge within radius $r$ contributes: $E = kQr/R^3$ for $r < R$. Field increases linearly from centre to surface."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "electric-field",
+  "motionGraphics": "electric-field"
+}

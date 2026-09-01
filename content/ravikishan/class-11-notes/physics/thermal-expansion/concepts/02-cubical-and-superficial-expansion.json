@@ -1,0 +1,31 @@
+{
+  "title": "Cubical and Superficial Expansion",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "cubical-and-superficial-expansion",
+  "topicTitle": "Cubical expansion, superficial expansion and their relation with linear expansion",
+  "relevance": 100,
+  "notes": [
+    "**Superficial expansion:** area increase when heated. $\\Delta A = A_0 \\beta \\Delta T$, where $\\beta \\approx 2\\alpha$.",
+    "**Cubical expansion:** volume increase when heated. $\\Delta V = V_0 \\gamma \\Delta T$, where $\\gamma \\approx 3\\alpha$.",
+    "**Relation:** for isotropic solids, $\\alpha : \\beta : \\gamma = 1 : 2 : 3$.",
+    "**Why the ratios:** volume depends on three dimensions, area on two, length on one. Each dimension expands by $\\alpha$, so the combined effect multiplies the exponent.",
+    "**Liquids:** only cubical expansion is meaningful. $\\gamma_{liquid} = \\gamma_{solid} - \\gamma_{container}$ for apparent expansion."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "thermal-expansion",
+  "motionGraphics": "thermal-expansion"
+}

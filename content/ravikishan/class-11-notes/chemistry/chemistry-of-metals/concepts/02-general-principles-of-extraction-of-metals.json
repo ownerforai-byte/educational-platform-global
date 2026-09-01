@@ -1,0 +1,33 @@
+{
+  "title": "General Principles of Extraction of Metals",
+  "unitSlug": "chemistry-of-metals",
+  "topicSlug": "general-principles-of-extraction-of-metals",
+  "topicTitle": "General principles of extraction of metals: concentration, calcination, roasting, smelting, carbon reduction, thermite and electrochemical reduction",
+  "relevance": 100,
+  "notes": [
+    "**Concentration:** removing gangue to increase metal content. Methods: gravity separation, magnetic separation, froth flotation, leaching.",
+    "**Calcination:** heating ore in absence of air to remove volatile impurities and moisture. Carbonate ores decompose: $CaCO_3 \\rightarrow CaO + CO_2$.",
+    "**Roasting:** heating ore in excess air to convert sulphide ores to oxides: $2ZnS + 3O_2 \\rightarrow 2ZnO + 2SO_2$.",
+    "**Smelting:** reducing the oxide ore with carbon at high temperature: $ZnO + C \\rightarrow Zn + CO$.",
+    "**Carbon reduction:** used for metals less reactive than carbon. Carbon acts as reducing agent because it has higher affinity for oxygen.",
+    "**Thermite:** highly exothermic reaction of metal oxide with aluminium powder: $Fe_2O_3 + 2Al \\rightarrow 2Fe + Al_2O_3 + \\text{heat}$. Used for welding railway tracks.",
+    "**Electrochemical reduction:** used for very reactive metals like Na, K, Al. Electrolysis of molten salts: $2NaCl \\rightarrow 2Na + Cl_2$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "chemistry-of-metals",
+  "motionGraphics": "chemistry-of-metals"
+}

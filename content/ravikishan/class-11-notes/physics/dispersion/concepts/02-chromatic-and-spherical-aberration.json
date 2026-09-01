@@ -1,0 +1,31 @@
+{
+  "title": "Chromatic and Spherical Aberration",
+  "unitSlug": "dispersion",
+  "topicSlug": "chromatic-and-spherical-aberration",
+  "topicTitle": "Chromatic and spherical aberration",
+  "relevance": 100,
+  "notes": [
+    "**Chromatic aberration:** a lens fails to focus all colours at the same point because $n$ varies with wavelength. Violet focuses closer to the lens than red, producing coloured fringes around images.",
+    "**Spherical aberration:** rays passing through the edge of a spherical lens focus at a different point from rays passing through the centre. Edge rays focus closer to the lens.",
+    "**Why spherical aberration occurs:** the lens surface is part of a sphere, but the ideal focusing surface for parallel rays is a paraboloid, not a sphere.",
+    "**Reducing spherical aberration:** use a diaphragm to block marginal rays, or use a compound lens with surfaces chosen to cancel the effect.",
+    "**Relation:** chromatic aberration is a colour-dependent focal shift; spherical aberration is an aperture-dependent focal shift. Both degrade image quality in simple lenses."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion"
+}

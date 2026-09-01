@@ -1,11 +1,28 @@
 {
-  "title": "The Hydrogen Spectrum — Rydberg Equation",
+  "title": "The Hydrogen Spectrum â€” Rydberg Equation",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "1/λ = R_H·(1/n₁² − 1/n₂²), where λ = wavelength of emitted light, R_H = Rydberg constant, n₁ = lower (final) orbit, n₂ = higher (initial) orbit",
-    "The **series limit** (shortest wavelength, highest-energy line in a series) occurs as n₂ → ∞, giving the simplified form 1/λ = R_H/n₁²"
-  ]
+    "1/Î» = R_HÂ·(1/nâ‚Â² âˆ’ 1/nâ‚‚Â²), where Î» = wavelength of emitted light, R_H = Rydberg constant, nâ‚ = lower (final) orbit, nâ‚‚ = higher (initial) orbit",
+    "The **series limit** (shortest wavelength, highest-energy line in a series) occurs as nâ‚‚ â†’ âˆž, giving the simplified form 1/Î» = R_H/nâ‚Â²"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

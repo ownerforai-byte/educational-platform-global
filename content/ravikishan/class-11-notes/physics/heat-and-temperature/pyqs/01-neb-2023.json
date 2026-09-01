@@ -1,5 +1,5 @@
 {
-  "title": "NEB 2023 — Thermodynamics",
+  "title": "NEB 2023 â€” Thermodynamics",
   "unitSlug": "heat-and-temperature",
   "topicSlug": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
   "topicTitle": "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
@@ -11,5 +11,22 @@
     "Q4. A Carnot engine works between 600 K and 300 K. Find its efficiency. [2]"
   ],
   "year": 2023,
-  "examSource": "NEB"
+  "examSource": "NEB",
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature"
 }

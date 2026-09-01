@@ -1,12 +1,29 @@
 {
-  "title": "Newton's Law of Cooling — Exponential Solution & Graph",
+  "title": "Newton's Law of Cooling â€” Exponential Solution & Graph",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
   "relevance": 100,
   "notes": [
-    "Rearranging Equation 3 isolates the rate of temperature fall: dθ/dt = −(K/mc)(θ − θ₀)",
-    "Solving this separable equation shows the temperature drops **exponentially** with time: θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc)",
-    "**Shape of the curve:** temperature falls quickly at first, then slows down as it approaches the surrounding (room) temperature — the curve gets closer and closer to θ₀ but never quite crosses it"
-  ]
+    "Rearranging Equation 3 isolates the rate of temperature fall: dÎ¸/dt = âˆ’(K/mc)(Î¸ âˆ’ Î¸â‚€)",
+    "Solving this separable equation shows the temperature drops **exponentially** with time: Î¸ âˆ’ Î¸â‚€ = (Î¸â‚ âˆ’ Î¸â‚€)Â·e^(âˆ’Kt/mc)",
+    "**Shape of the curve:** temperature falls quickly at first, then slows down as it approaches the surrounding (room) temperature â€” the curve gets closer and closer to Î¸â‚€ but never quite crosses it"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

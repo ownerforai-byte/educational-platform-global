@@ -1,0 +1,31 @@
+{
+  "title": "Conservation of Energy",
+  "unitSlug": "work-energy-and-power",
+  "topicSlug": "conservation-of-energy",
+  "topicTitle": "Conservation of energy",
+  "relevance": 100,
+  "notes": [
+    "**Law:** energy can neither be created nor destroyed; it can only be transformed from one form to another or transferred between bodies.",
+    "**Mechanical energy:** $E = K + U$, the sum of kinetic and potential energy.",
+    "**Conservative forces:** when only conservative forces act, mechanical energy is conserved: $\\Delta K + \\Delta U = 0$, so $K_i + U_i = K_f + U_f$.",
+    "**Non-conservative forces:** friction and air resistance convert mechanical energy into heat. In their presence, $E_{mech}$ decreases, but total energy (including thermal) is still conserved.",
+    "**Pendulum example:** at the highest point, all energy is potential; at the lowest point, all is kinetic. In between, energy continuously interconverts, but the total remains constant if air resistance is negligible."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "work-energy-and-power",
+  "motionGraphics": "work-energy-and-power"
+}

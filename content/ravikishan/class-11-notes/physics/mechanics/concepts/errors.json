@@ -57,5 +57,22 @@
     "<p>Systematic errors are errors that are constant and always of the same sign, such as calibrated instruments. distance measurements by an inaccurately marked meter stick, faulty graduations of a Vernier Calipers and micrometer screw, the end error in a meter bridge, measuring scale etc.</p>",
     "<h3>Minimization of Systematic Error</h3>",
     "<p>Errors in the calibration of the measuring instruments. For example, one might make an incorrect scale reading because of an instrument incorrectly. Errors due to known causes are called systematic errors. The known causes are sources of errors. Systematic errors are not due to random causes but do not affect the precision of a measurement.</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "mechanics",
+  "motionGraphics": "mechanics"
 }

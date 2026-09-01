@@ -1,0 +1,31 @@
+{
+  "title": "Intrinsic and Extrinsic Semiconductors",
+  "unitSlug": "solids",
+  "topicSlug": "intrinsic-and-extrinsic-semiconductors",
+  "topicTitle": "Intrinsic and extrinsic semiconductors",
+  "relevance": 100,
+  "notes": [
+    "**Intrinsic semiconductor:** pure semiconductor material with no significant impurities. Electron-hole pairs are created thermally in equal numbers.",
+    "**Extrinsic semiconductor:** doped with impurity atoms to increase conductivity. Doping introduces either extra electrons (n-type) or extra holes (p-type).",
+    "**n-type doping:** pentavalent atoms (Group V: P, As, Sb) have five valence electrons. Four bond with silicon, leaving one extra free electron. Electrons are majority carriers.",
+    "**p-type doping:** trivalent atoms (Group III: B, Al, Ga) have three valence electrons. They create a hole in the silicon lattice because only three bonds form. Holes are majority carriers.",
+    "**Conductivity control:** by controlling the type and amount of doping, semiconductors can be engineered with precise electrical properties, forming the basis of diodes, transistors, and integrated circuits."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "solids",
+  "motionGraphics": "solids"
+}

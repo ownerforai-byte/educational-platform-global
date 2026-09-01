@@ -1,15 +1,32 @@
 {
-  "title": "Quick Revision — Thermodynamics",
+  "title": "Quick Revision â€” Thermodynamics",
   "unitSlug": "heat-and-temperature",
   "topicSlug": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
   "topicTitle": "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
   "relevance": 73,
   "notes": [
-    "- Isothermal process: constant temperature (ΔU = 0, all heat becomes work)",
+    "- Isothermal process: constant temperature (Î”U = 0, all heat becomes work)",
     "- Adiabatic process: no heat exchange (Q = 0)",
     "- Isochoric process: constant volume (W = 0)",
     "- Isobaric process: constant pressure",
-    "- Work done = area under the P–V curve",
-    "- Efficiency of a Carnot engine: η = 1 − Tc/Th"
-  ]
+    "- Work done = area under the Pâ€“V curve",
+    "- Efficiency of a Carnot engine: Î· = 1 âˆ’ Tc/Th"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature"
 }

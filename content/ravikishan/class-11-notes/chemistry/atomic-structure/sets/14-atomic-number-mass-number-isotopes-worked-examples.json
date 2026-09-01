@@ -5,11 +5,28 @@
   "topicTitle": "Rutherford's atomic model and its limitations",
   "relevance": 74,
   "notes": [
-    "**Q1. For the atom ₁₂Mg²⁴, find the number of protons, electrons and neutrons.** Atomic number Z = 12, so protons = 12 and electrons = 12 (neutral atom). Mass number A = 24, so neutrons = A − Z = 24 − 12 = 12.",
-    "**Q2. The magnesium ion Mg²⁺ has atomic number 12. How many protons and electrons does it contain?** Protons = Z = 12 (unchanged). Since the ion has lost 2 electrons, electrons = 12 − 2 = 10. Its atomic number remains 12.",
-    "**Q3. Protium (₁H¹), deuterium (₁H²) and tritium (₁H³) are isotopes. How do they differ?** All three have the same atomic number Z = 1 (one proton and one electron) but different mass numbers. Protium has 0 neutrons, deuterium has 1 neutron, and tritium has 2 neutrons. Protium is most abundant (99.98%), deuterium about 0.015%, and tritium only 10⁻¹⁵ % (radioactive).",
-    "**Q4. Show that ₁₈Ar⁴⁰, ₁₉K⁴⁰ and ₂₀Ca⁴⁰ are isobars.** All three atoms have the same mass number A = 40 but different atomic numbers (18, 19, 20). Hence they are isobars — atoms of different elements with the same mass number.",
-    "**Q5. Show that ₆C¹⁴, ₇N¹⁵ and ₈O¹⁶ are isotones.** For ₆C¹⁴: neutrons = 14 − 6 = 8. For ₇N¹⁵: neutrons = 15 − 7 = 8. For ₈O¹⁶: neutrons = 16 − 8 = 8. All have the same number of neutrons (8) but different atomic and mass numbers, hence they are isotones.",
-    "**Q6. Verify that ₁₉K³⁹ and ₉F¹⁹ are isodiaphers.** For ₁₉K³⁹: neutrons − protons = (39 − 19) − 19 = 20 − 19 = 1. For ₉F¹⁹: neutrons − protons = (19 − 9) − 9 = 10 − 9 = 1. Both have the same isotopic excess (1), hence they are isodiaphers."
-  ]
+    "**Q1. For the atom â‚â‚‚MgÂ²â´, find the number of protons, electrons and neutrons.** Atomic number Z = 12, so protons = 12 and electrons = 12 (neutral atom). Mass number A = 24, so neutrons = A âˆ’ Z = 24 âˆ’ 12 = 12.",
+    "**Q2. The magnesium ion MgÂ²âº has atomic number 12. How many protons and electrons does it contain?** Protons = Z = 12 (unchanged). Since the ion has lost 2 electrons, electrons = 12 âˆ’ 2 = 10. Its atomic number remains 12.",
+    "**Q3. Protium (â‚HÂ¹), deuterium (â‚HÂ²) and tritium (â‚HÂ³) are isotopes. How do they differ?** All three have the same atomic number Z = 1 (one proton and one electron) but different mass numbers. Protium has 0 neutrons, deuterium has 1 neutron, and tritium has 2 neutrons. Protium is most abundant (99.98%), deuterium about 0.015%, and tritium only 10â»Â¹âµ % (radioactive).",
+    "**Q4. Show that â‚â‚ˆArâ´â°, â‚â‚‰Kâ´â° and â‚‚â‚€Caâ´â° are isobars.** All three atoms have the same mass number A = 40 but different atomic numbers (18, 19, 20). Hence they are isobars â€” atoms of different elements with the same mass number.",
+    "**Q5. Show that â‚†CÂ¹â´, â‚‡NÂ¹âµ and â‚ˆOÂ¹â¶ are isotones.** For â‚†CÂ¹â´: neutrons = 14 âˆ’ 6 = 8. For â‚‡NÂ¹âµ: neutrons = 15 âˆ’ 7 = 8. For â‚ˆOÂ¹â¶: neutrons = 16 âˆ’ 8 = 8. All have the same number of neutrons (8) but different atomic and mass numbers, hence they are isotones.",
+    "**Q6. Verify that â‚â‚‰KÂ³â¹ and â‚‰FÂ¹â¹ are isodiaphers.** For â‚â‚‰KÂ³â¹: neutrons âˆ’ protons = (39 âˆ’ 19) âˆ’ 19 = 20 âˆ’ 19 = 1. For â‚‰FÂ¹â¹: neutrons âˆ’ protons = (19 âˆ’ 9) âˆ’ 9 = 10 âˆ’ 9 = 1. Both have the same isotopic excess (1), hence they are isodiaphers."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

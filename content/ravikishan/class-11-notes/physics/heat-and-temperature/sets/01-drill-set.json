@@ -1,5 +1,5 @@
 {
-  "title": "Practice Set 1 — MCQ Drill",
+  "title": "Practice Set 1 â€” MCQ Drill",
   "unitSlug": "heat-and-temperature",
   "topicSlug": "molecular-concept-of-thermal-energy-heat-and-temperature-cause-and-direction-of-heat-flow",
   "topicTitle": "Molecular concept of thermal energy, heat and temperature; cause and direction of heat flow",
@@ -11,5 +11,22 @@
     "Q4. A Carnot engine operating between two fixed temperatures has maximum efficiency when the process is:\nAnswer: Reversible",
     "Q5. The first law of thermodynamics is a statement of:\nAnswer: Conservation of energy"
   ],
-  "order": 1
+  "order": 1,
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature"
 }

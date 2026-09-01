@@ -5,9 +5,26 @@
   "topicTitle": "Newton's law of cooling",
   "relevance": 82,
   "notes": [
-    "Start from the identical-conditions result: m₁c₁(dθ/dt)₁ = m₂c₂(dθ/dt)₂",
-    "Replace each cooling rate with its time-based form: (dθ/dt)₁ = Δθ/t₁ and (dθ/dt)₂ = Δθ/t₂, where Δθ is the same fixed temperature range for both liquids",
-    "Substituting and cancelling Δθ from both sides: m₁c₁/t₁ = m₂c₂/t₂",
-    "**Solving for the unknown:** c₂ = (m₁c₁·t₂)/(m₂·t₁) — only masses, water's known c₁, and the two cooling times are needed"
-  ]
+    "Start from the identical-conditions result: mâ‚câ‚(dÎ¸/dt)â‚ = mâ‚‚câ‚‚(dÎ¸/dt)â‚‚",
+    "Replace each cooling rate with its time-based form: (dÎ¸/dt)â‚ = Î”Î¸/tâ‚ and (dÎ¸/dt)â‚‚ = Î”Î¸/tâ‚‚, where Î”Î¸ is the same fixed temperature range for both liquids",
+    "Substituting and cancelling Î”Î¸ from both sides: mâ‚câ‚/tâ‚ = mâ‚‚câ‚‚/tâ‚‚",
+    "**Solving for the unknown:** câ‚‚ = (mâ‚câ‚Â·tâ‚‚)/(mâ‚‚Â·tâ‚) â€” only masses, water's known câ‚, and the two cooling times are needed"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

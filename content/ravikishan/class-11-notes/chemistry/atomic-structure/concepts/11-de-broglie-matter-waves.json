@@ -1,15 +1,32 @@
 {
-  "title": "de Broglie Matter Waves & the Einstein–Planck Synthesis",
+  "title": "de Broglie Matter Waves & the Einsteinâ€“Planck Synthesis",
   "unitSlug": "atomic-structure",
   "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
   "topicTitle": "Elementary idea of quantum mechanical model: de Broglie's wave equation",
   "relevance": 75,
   "notes": [
-    "**Einstein–Planck synthesis:** combining Einstein's mass–energy equivalence E = mc² with Planck's quantum relation E = hν gives mc² = hν, linking a particle's mass to a wave frequency.",
-    "**de Broglie wavelength:** since ν = c/λ, the relation becomes mc = h/λ, so the wavelength of a moving particle is λ = h/(mv) = h/p, where p = mv is the momentum.",
-    "**Inverse mass dependence:** λ ∝ 1/m — heavier objects have extremely short wavelengths, which is why macroscopic objects show no observable wave behaviour.",
+    "**Einsteinâ€“Planck synthesis:** combining Einstein's massâ€“energy equivalence E = mcÂ² with Planck's quantum relation E = hÎ½ gives mcÂ² = hÎ½, linking a particle's mass to a wave frequency.",
+    "**de Broglie wavelength:** since Î½ = c/Î», the relation becomes mc = h/Î», so the wavelength of a moving particle is Î» = h/(mv) = h/p, where p = mv is the momentum.",
+    "**Inverse mass dependence:** Î» âˆ 1/m â€” heavier objects have extremely short wavelengths, which is why macroscopic objects show no observable wave behaviour.",
     "**Macro-object wave negligibility:** for everyday objects the de Broglie wavelength is far smaller than any measurable scale, so wave effects are undetectable and classical mechanics applies.",
-    "**Bohr quantization deduced via waves:** if an electron is a standing wave, only orbits whose circumference is an integer multiple of the wavelength (2πr = nλ) are stable — this naturally reproduces Bohr's quantization of angular momentum.",
+    "**Bohr quantization deduced via waves:** if an electron is a standing wave, only orbits whose circumference is an integer multiple of the wavelength (2Ï€r = nÎ») are stable â€” this naturally reproduces Bohr's quantization of angular momentum.",
     "**Heisenberg (1927) introduction:** the wave picture of the electron led Heisenberg to the uncertainty principle, which states that position and momentum cannot both be known precisely at the same time."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

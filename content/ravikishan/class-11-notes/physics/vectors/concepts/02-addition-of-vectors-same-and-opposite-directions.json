@@ -1,11 +1,28 @@
 {
-  "title": "Addition of Vectors — Same and Opposite Directions",
+  "title": "Addition of Vectors â€” Same and Opposite Directions",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
-    "**Case 1 — same direction**: let $\\vec{P}$ and $\\vec{Q}$ act in the same direction. Their sum (resultant) is $\\vec{R} = \\vec{P} + \\vec{Q}$; $\\vec{R}$ is also called the resultant vector, drawn head-to-tail.",
-    "**Case 2 — opposite direction**: let $\\vec{P}$ and $\\vec{Q}$ act in opposite directions. The resultant is $\\vec{R} = \\vec{P} + (-\\vec{Q}) = \\vec{P} - \\vec{Q}$, acting along the larger vector."
-  ]
+    "**Case 1 â€” same direction**: let $\\vec{P}$ and $\\vec{Q}$ act in the same direction. Their sum (resultant) is $\\vec{R} = \\vec{P} + \\vec{Q}$; $\\vec{R}$ is also called the resultant vector, drawn head-to-tail.",
+    "**Case 2 â€” opposite direction**: let $\\vec{P}$ and $\\vec{Q}$ act in opposite directions. The resultant is $\\vec{R} = \\vec{P} + (-\\vec{Q}) = \\vec{P} - \\vec{Q}$, acting along the larger vector."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

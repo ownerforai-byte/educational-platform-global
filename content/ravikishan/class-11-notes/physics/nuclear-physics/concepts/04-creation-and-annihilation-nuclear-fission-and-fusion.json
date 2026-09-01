@@ -1,0 +1,31 @@
+{
+  "title": "Creation, Annihilation, Fission and Fusion",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "creation-and-annihilation-nuclear-fission-and-fusion",
+  "topicTitle": "Creation and annihilation; nuclear fission and fusion",
+  "relevance": 100,
+  "notes": [
+    "**Particle creation:** high-energy photons can create particle-antiparticle pairs: $\\gamma \\rightarrow e^+ + e^-$. Energy is converted to mass.",
+    "**Annihilation:** matter-antimatter pairs can annihilate into pure energy: $e^+ + e^- \\rightarrow \\gamma + \\gamma$. Mass is converted back to energy.",
+    "**Nuclear fission:** a heavy nucleus splits into lighter fragments, releasing energy. Example: $^{235}_{92}\\text{U} + n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3n + \\text{energy}$.",
+    "**Chain reaction:** neutrons from one fission can trigger further fissions. Critical mass is the minimum amount needed to sustain a chain reaction.",
+    "**Nuclear fusion:** light nuclei combine to form heavier nuclei, releasing energy. Example: $^2_1\\text{H} + ^3_1\\text{H} \\rightarrow ^4_2\\text{He} + n + 17.6\\,\\text{MeV}$. Powers the Sun."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "nuclear-physics",
+  "motionGraphics": "nuclear-physics"
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Conical Pendulum",
+  "unitSlug": "circular-motion",
+  "topicSlug": "conical-pendulum",
+  "topicTitle": "Conical pendulum",
+  "relevance": 100,
+  "notes": [
+    "**Setup:** a mass $m$ attached to a string of length $l$ rotates in a horizontal circle, making a constant angle $\\theta$ with the vertical.",
+    "**Forces:** tension $T$ has components $T\\cos\\theta$ upward balancing weight $mg$, and $T\\sin\\theta$ inward providing centripetal force.",
+    "**Period:** $T_{period} = 2\\pi\\sqrt{\\frac{l\\cos\\theta}{g}}$. The period depends on the string length, the angle, and gravity.",
+    "**Special case â€” small angles:** when $\\theta$ is small, $\\cos\\theta \\approx 1$, so $T_{period} \\approx 2\\pi\\sqrt{l/g}$, the same as a simple pendulum.",
+    "**Speed:** $v = \\sqrt{gr\\tan\\theta}$, where $r = l\\sin\\theta$ is the radius of the horizontal circle. Faster spin means a larger angle $\\theta$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "circular-motion",
+  "motionGraphics": "circular-motion"
+}

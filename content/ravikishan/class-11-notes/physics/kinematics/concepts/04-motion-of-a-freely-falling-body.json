@@ -1,0 +1,32 @@
+{
+  "title": "Motion of a Freely Falling Body",
+  "unitSlug": "kinematics",
+  "topicSlug": "motion-of-a-freely-falling-body",
+  "topicTitle": "Motion of a freely falling body",
+  "relevance": 100,
+  "notes": [
+    "**Freely falling body:** an object dropped from rest with no air resistance, falling solely under gravity.",
+    "**Acceleration is $g$ downward:** the equations of motion simplify because $a = g$ and initial velocity $u = 0$.",
+    "**Downward motion:** $v = gt$, $h = \\frac{1}{2}gt^2$, $v^2 = 2gh$.",
+    "**Upward motion:** when a body is thrown upward, gravity acts downward. The equations become $v = u - gt$, $h = ut - \\frac{1}{2}gt^2$, $v^2 = u^2 - 2gh$.",
+    "**Time to reach maximum height:** at the top, $v = 0$, so $t_{up} = u/g$. The total time of flight for a body thrown up and caught at the same level is $T = 2u/g$.",
+    "**Maximum height:** $H = u^2/(2g)$. A larger $u$ gives a much larger $H$ because height scales with the square of the initial speed."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "kinematics",
+  "motionGraphics": "kinematics"
+}

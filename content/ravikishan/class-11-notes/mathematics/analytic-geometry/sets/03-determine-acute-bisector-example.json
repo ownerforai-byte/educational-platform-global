@@ -1,13 +1,30 @@
 {
-  "title": "Q (worked example): Determine which of the two angle bisectors is acute for 3x + 4y − 5 = 0 and 5x + 12y + 13 = 0",
+  "title": "Q (worked example): Determine which of the two angle bisectors is acute for 3x + 4y âˆ’ 5 = 0 and 5x + 12y + 13 = 0",
   "unitSlug": "analytic-geometry",
   "topicSlug": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines",
   "topicTitle": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
   "relevance": 79,
   "notes": [
-    "Both constants (−5 and +13) — the second line already has a positive constant; for the first, multiply through by −1 so the constant is positive: −3x − 4y + 5 = 0, giving a₁ = −3, b₁ = −4",
-    "For the second line: a₂ = 5, b₂ = 12",
-    "a₁a₂ + b₁b₂ = (−3)(5) + (−4)(12) = −15 − 48 = **−63**",
-    "Since this is negative, the **(+) sign bisector is the acute angle bisector**, and the (−) sign bisector is the obtuse angle bisector"
-  ]
+    "Both constants (âˆ’5 and +13) â€” the second line already has a positive constant; for the first, multiply through by âˆ’1 so the constant is positive: âˆ’3x âˆ’ 4y + 5 = 0, giving aâ‚ = âˆ’3, bâ‚ = âˆ’4",
+    "For the second line: aâ‚‚ = 5, bâ‚‚ = 12",
+    "aâ‚aâ‚‚ + bâ‚bâ‚‚ = (âˆ’3)(5) + (âˆ’4)(12) = âˆ’15 âˆ’ 48 = **âˆ’63**",
+    "Since this is negative, the **(+) sign bisector is the acute angle bisector**, and the (âˆ’) sign bisector is the obtuse angle bisector"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry"
 }

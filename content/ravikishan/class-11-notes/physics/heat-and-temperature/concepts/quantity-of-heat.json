@@ -8,10 +8,10 @@
     "<h2>Heat and Temperature</h2>",
     "<p><b>Heat</b> is the energy transferred between two bodies due to a temperature difference. It flows from a hotter body to a colder body. <b>Temperature</b> is a measure of the average kinetic energy of the molecules of a body; it decides the direction of heat flow. The SI unit of heat is the <b>joule (J)</b>; the practical unit is the <b>calorie (cal)</b>, where $1\\,cal = 4.186\\,J$.</p>",
     "<h2>Heat Capacity and Specific Heat Capacity</h2>",
-    "<p>The <b>heat capacity (C)</b> of a body is the quantity of heat required to raise its temperature by 1°C (or 1 K): $C = \\frac{Q}{\\Delta\\theta}$, unit J/K.</p>",
-    "<p>The <b>specific heat capacity (s or c)</b> is the heat required to raise the temperature of unit mass of a substance by 1°C:</p>",
+    "<p>The <b>heat capacity (C)</b> of a body is the quantity of heat required to raise its temperature by 1Â°C (or 1 K): $C = \\frac{Q}{\\Delta\\theta}$, unit J/K.</p>",
+    "<p>The <b>specific heat capacity (s or c)</b> is the heat required to raise the temperature of unit mass of a substance by 1Â°C:</p>",
     "$$Q = ms\\Delta\\theta$$",
-    "<p>where $m$ is the mass, $s$ is the specific heat capacity, and $\\Delta\\theta$ is the rise in temperature. The SI unit is $J\\,kg^{-1}\\,K^{-1}$. For water, $s = 4200\\,J\\,kg^{-1}\\,K^{-1} = 1\\,cal\\,g^{-1}\\,°C^{-1}$.</p>",
+    "<p>where $m$ is the mass, $s$ is the specific heat capacity, and $\\Delta\\theta$ is the rise in temperature. The SI unit is $J\\,kg^{-1}\\,K^{-1}$. For water, $s = 4200\\,J\\,kg^{-1}\\,K^{-1} = 1\\,cal\\,g^{-1}\\,Â°C^{-1}$.</p>",
     "<h2>Molar Heat Capacity</h2>",
     "<p>The heat required to raise the temperature of 1 mole of a substance by 1 K: $C = \\frac{1}{n}\\frac{Q}{\\Delta\\theta}$. For gases there are two values: $C_p$ (at constant pressure) and $C_v$ (at constant volume), with $C_p - C_v = R$ (Mayer's relation).</p>",
     "<h2>Water Equivalent</h2>",
@@ -20,9 +20,26 @@
     "<p>During a change of state (melting, boiling), temperature remains constant while heat is absorbed. The <b>latent heat (L)</b> is the heat required to change the state of unit mass of a substance without changing its temperature:</p>",
     "$$Q = mL$$",
     "<p>For water: latent heat of fusion $L_f = 3.36 \\times 10^5\\,J\\,kg^{-1}$ and latent heat of vaporisation $L_v = 2.26 \\times 10^6\\,J\\,kg^{-1}$.</p>",
-    "<h2>Calorimetry — Principle of Heat Exchange</h2>",
+    "<h2>Calorimetry â€” Principle of Heat Exchange</h2>",
     "<p>When hot and cold bodies are mixed, the heat lost by the hot body equals the heat gained by the cold body (if no heat is lost to the surroundings):</p>",
     "$$\\text{Heat lost} = \\text{Heat gained}$$",
     "<p>This principle is used in a <b>calorimeter</b> to measure specific heat capacities.</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature"
 }

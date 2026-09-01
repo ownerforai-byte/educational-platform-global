@@ -1,0 +1,31 @@
+{
+  "title": "Atomic Mass, Isotopes and Mass Defect",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "atomic-mass-isotopes",
+  "topicTitle": "Atomic mass; isotopes",
+  "relevance": 100,
+  "notes": [
+    "**Atomic mass unit (u):** $1\\,\\text{u} = 1.6605 \\times 10^{-27}\\,\\text{kg}$. Defined as 1/12 the mass of a carbon-12 atom.",
+    "**Isotopes:** atoms of the same element ($Z$) with different mass numbers ($A$). Same chemical properties, different nuclear properties.",
+    "**Mass defect:** $\\Delta m = Zm_p + Nm_n - M_{nucleus}$. The nucleus weighs less than the sum of its parts because energy is released when the nucleus forms.",
+    "**Packing fraction:** $f = (M - A)/A$, where $M$ is the actual mass in u. It measures the deviation from the mass number and indicates nuclear binding stability.",
+    "**Binding energy per nucleon:** $BE/A$. It peaks around iron ($A \\approx 56$) at about 8.8 MeV, explaining why both fusion of light nuclei and fission of heavy nuclei release energy."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "nuclear-physics",
+  "motionGraphics": "nuclear-physics"
+}

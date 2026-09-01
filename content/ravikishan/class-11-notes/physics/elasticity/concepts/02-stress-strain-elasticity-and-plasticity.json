@@ -1,0 +1,31 @@
+{
+  "title": "Stress, Strain, Elasticity and Plasticity",
+  "unitSlug": "elasticity",
+  "topicSlug": "stress-strain-elasticity-and-plasticity",
+  "topicTitle": "Stress; strain; elasticity and plasticity",
+  "relevance": 100,
+  "notes": [
+    "**Stress $\\sigma$:** force per unit area. $\\sigma = F/A$. Units: N/m$^2$ or Pa.",
+    "**Strain $\\epsilon$:** fractional deformation. $\\epsilon = \\Delta L/L$. Strain is dimensionless.",
+    "**Elasticity:** the property of a material to return to its original shape and size after the deforming force is removed.",
+    "**Plasticity:** the property of a material to undergo permanent deformation without breaking. Beyond the elastic limit, materials become plastic.",
+    "**Types of stress:** tensile stress (stretching), compressive stress (squashing), and shear stress (sliding layers)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "elasticity",
+  "motionGraphics": "elasticity"
+}

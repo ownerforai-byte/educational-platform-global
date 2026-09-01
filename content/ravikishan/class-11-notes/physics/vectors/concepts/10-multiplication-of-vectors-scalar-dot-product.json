@@ -1,15 +1,32 @@
 {
-  "title": "Multiplication of Vectors — Scalar (Dot) Product",
+  "title": "Multiplication of Vectors â€” Scalar (Dot) Product",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
     "**Definition**: if $\\vec{a}$ and $\\vec{b}$ are two vectors, their scalar product (dot product) is $\\vec{a}\\cdot\\vec{b}=ab\\cos\\theta$, where $\\theta$ is the angle between them. The result is a scalar, e.g. $c=\\vec{a}\\cdot\\vec{b}=ab\\cos\\theta$.",
-    "**Case 1 — perpendicular vectors**: if $\\theta=90°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos90°=0$. This is the condition for two vectors to be perpendicular.",
-    "**Case 2 — parallel vectors**: if $\\theta=0°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos0°=ab$. This is the condition for two vectors to be parallel.",
-    "**Case 3 — anti-parallel vectors**: if $\\theta=180°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos180°=-ab$. This is the condition for two vectors to be anti-parallel.",
-    "**Dot products of unit vectors**: since the angle between a unit vector and itself is 0°: $\\hat{i}\\cdot\\hat{i}=\\hat{j}\\cdot\\hat{j}=\\hat{k}\\cdot\\hat{k}=1$. Since $\\hat{i},\\hat{j},\\hat{k}$ are mutually perpendicular (90°): $\\hat{i}\\cdot\\hat{j}=\\hat{j}\\cdot\\hat{k}=\\hat{k}\\cdot\\hat{i}=0$.",
+    "**Case 1 â€” perpendicular vectors**: if $\\theta=90Â°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos90Â°=0$. This is the condition for two vectors to be perpendicular.",
+    "**Case 2 â€” parallel vectors**: if $\\theta=0Â°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos0Â°=ab$. This is the condition for two vectors to be parallel.",
+    "**Case 3 â€” anti-parallel vectors**: if $\\theta=180Â°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos180Â°=-ab$. This is the condition for two vectors to be anti-parallel.",
+    "**Dot products of unit vectors**: since the angle between a unit vector and itself is 0Â°: $\\hat{i}\\cdot\\hat{i}=\\hat{j}\\cdot\\hat{j}=\\hat{k}\\cdot\\hat{k}=1$. Since $\\hat{i},\\hat{j},\\hat{k}$ are mutually perpendicular (90Â°): $\\hat{i}\\cdot\\hat{j}=\\hat{j}\\cdot\\hat{k}=\\hat{k}\\cdot\\hat{i}=0$.",
     "**Component-form derivation**: for $\\vec{A}=A_1\\hat{i}+A_2\\hat{j}+A_3\\hat{k}$ and $\\vec{B}=B_1\\hat{i}+B_2\\hat{j}+B_3\\hat{k}$, expanding $\\vec{A}\\cdot\\vec{B}$ term by term and using the unit-vector dot products above gives $\\vec{A}\\cdot\\vec{B}=A_1B_1+A_2B_2+A_3B_3$."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

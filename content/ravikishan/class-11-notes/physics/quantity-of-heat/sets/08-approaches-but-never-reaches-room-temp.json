@@ -5,7 +5,24 @@
   "topicTitle": "Newton's law of cooling",
   "relevance": 70,
   "notes": [
-    "The solution θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc) is an exponential decay — it approaches zero asymptotically as t → ∞, but never equals exactly zero for any finite time",
-    "Physically, as θ gets very close to θ₀, the driving temperature difference (θ − θ₀) shrinks toward zero, so the rate of heat loss also shrinks toward zero — cooling effectively stalls near room temperature well before the math says it's 'finished'"
-  ]
+    "The solution Î¸ âˆ’ Î¸â‚€ = (Î¸â‚ âˆ’ Î¸â‚€)Â·e^(âˆ’Kt/mc) is an exponential decay â€” it approaches zero asymptotically as t â†’ âˆž, but never equals exactly zero for any finite time",
+    "Physically, as Î¸ gets very close to Î¸â‚€, the driving temperature difference (Î¸ âˆ’ Î¸â‚€) shrinks toward zero, so the rate of heat loss also shrinks toward zero â€” cooling effectively stalls near room temperature well before the math says it's 'finished'"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

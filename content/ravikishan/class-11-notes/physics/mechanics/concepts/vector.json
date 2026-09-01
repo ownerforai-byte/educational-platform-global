@@ -21,5 +21,22 @@
     "<p>$\\vec{a} \\cdot \\vec{b} = ab\\cos\\theta$. The result is a scalar. $\\vec{a} \\cdot \\vec{b} = 0$ when the vectors are perpendicular. For unit vectors: $\\hat{i}\\cdot\\hat{i} = \\hat{j}\\cdot\\hat{j} = \\hat{k}\\cdot\\hat{k} = 1$ and $\\hat{i}\\cdot\\hat{j} = 0$.</p>",
     "<h2>Vector (Cross) Product</h2>",
     "<p>$|\\vec{a} \\times \\vec{b}| = ab\\sin\\theta$, directed perpendicular to the plane of the two vectors (right-hand rule). $\\vec{a} \\times \\vec{b} = 0$ when the vectors are parallel. The cross product is used for torque ($\\vec{\\tau} = \\vec{r} \\times \\vec{F}$) and angular momentum ($\\vec{L} = \\vec{r} \\times \\vec{p}$).</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "mechanics",
+  "motionGraphics": "mechanics"
 }

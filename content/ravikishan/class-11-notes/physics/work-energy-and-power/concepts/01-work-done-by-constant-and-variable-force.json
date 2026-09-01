@@ -1,0 +1,31 @@
+{
+  "title": "Work Done by a Constant Force and a Variable Force",
+  "unitSlug": "work-energy-and-power",
+  "topicSlug": "work-done-by-constant-and-variable-force",
+  "topicTitle": "Work done by a constant force and a variable force",
+  "relevance": 100,
+  "notes": [
+    "**Work definition:** $W = Fs\\cos\\theta$, where $F$ is the force, $s$ is the displacement, and $\\theta$ is the angle between them.",
+    "**Constant force:** if $F$ and $\\theta$ are constant, work is simply the product. Work is positive if $0Â° < \\theta < 90Â°$, zero if $\\theta = 90Â°$, and negative if $90Â° < \\theta < 180Â°$.",
+    "**Variable force:** when force changes with position, work is the area under the force-displacement graph: $W = \\int F \\, dx$.",
+    "**Spring example:** for a spring, $F = kx$, so work done in stretching from $x=0$ to $x=x$ is $W = \\int_0^x kx \\, dx = \\frac{1}{2}kx^2$.",
+    "**Why area matters:** the integral sums up infinitesimal contributions $F \\, dx$ over the entire displacement, which is exactly what the area under the curve represents."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "work-energy-and-power",
+  "motionGraphics": "work-energy-and-power"
+}

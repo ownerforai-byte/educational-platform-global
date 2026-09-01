@@ -1,14 +1,31 @@
 {
-  "title": "Multiplication of Vectors — Vector (Cross) Product",
+  "title": "Multiplication of Vectors â€” Vector (Cross) Product",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
     "**Definition**: if $\\vec{A}$ and $\\vec{B}$ are two vectors inclined at angle $\\theta$, their vector product (cross product) is $\\vec{A}\\times\\vec{B}=AB\\sin\\theta\\,\\hat{n}$, where $\\hat{n}$ is a unit vector perpendicular to the plane containing $\\vec{A}$ and $\\vec{B}$, with direction given by the right-hand rule. The result is a vector: $\\vec{C}=\\vec{A}\\times\\vec{B}$.",
-    "**Case 1 — parallel vectors**: if $\\theta=0°$, $\\vec{A}\\times\\vec{B}=0$. This is the condition for two vectors to be parallel.",
-    "**Case 2 — perpendicular vectors**: if $\\theta=90°$, $|\\vec{A}\\times\\vec{B}|=AB$ (maximum). This is the condition for two vectors to be perpendicular.",
+    "**Case 1 â€” parallel vectors**: if $\\theta=0Â°$, $\\vec{A}\\times\\vec{B}=0$. This is the condition for two vectors to be parallel.",
+    "**Case 2 â€” perpendicular vectors**: if $\\theta=90Â°$, $|\\vec{A}\\times\\vec{B}|=AB$ (maximum). This is the condition for two vectors to be perpendicular.",
     "**Non-commutative property**: $\\vec{A}\\times\\vec{B} = -(\\vec{B}\\times\\vec{A})$, i.e. reversing the order reverses the direction of the resultant vector (cross product does NOT commute, unlike the dot product).",
     "**Cross products of unit vectors**: $\\hat{i}\\times\\hat{i}=\\hat{j}\\times\\hat{j}=\\hat{k}\\times\\hat{k}=0$ (parallel to themselves). For the mutually perpendicular set (right-hand rule, cyclic order $i\\to j\\to k\\to i$): $\\hat{i}\\times\\hat{j}=\\hat{k}$, $\\hat{j}\\times\\hat{k}=\\hat{i}$, $\\hat{k}\\times\\hat{i}=\\hat{j}$; and reversing order flips sign: $\\hat{j}\\times\\hat{i}=-\\hat{k}$, $\\hat{k}\\times\\hat{j}=-\\hat{i}$, $\\hat{i}\\times\\hat{k}=-\\hat{j}$."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

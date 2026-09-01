@@ -1,0 +1,31 @@
+{
+  "title": "Spherical Lenses and Angular Magnification",
+  "unitSlug": "lenses",
+  "topicSlug": "spherical-lenses-and-angular-magnification",
+  "topicTitle": "Spherical lenses, angular magnification",
+  "relevance": 100,
+  "notes": [
+    "**Convex lens:** thicker at the centre, converges parallel rays to the focal point. Positive focal length.",
+    "**Concave lens:** thinner at the centre, diverges parallel rays as if from the focal point. Negative focal length.",
+    "**Lens formula:** $\\frac{1}{f} = \\frac{1}{v} - \\frac{1}{u}$. Note the minus sign compared to the mirror formula, because distances are measured from the lens and sign conventions differ.",
+    "**Angular magnification of a magnifier:** $M = 1 + D/f$, where $D = 25\\,\\text{cm}$ is the near point of a normal eye. A lens with $f = 5\\,\\text{cm}$ gives $M = 6\\times$.",
+    "**Why a magnifier works:** the lens allows the object to be placed closer than the near point, so the eye sees a larger angular size. The lens itself does not enlarge the object; it allows the eye to view it from a closer distance."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "lenses",
+  "motionGraphics": "lenses"
+}

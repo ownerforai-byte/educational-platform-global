@@ -1,0 +1,30 @@
+{
+  "title": "Equilibrium Constant Expression and Its Importance",
+  "unitSlug": "chemical-equilibrium",
+  "topicSlug": "expression-for-equilibrium-constant-and-its-importance",
+  "topicTitle": "Expression for equilibrium constant and its importance",
+  "relevance": 100,
+  "notes": [
+    "**Writing $K_c$:** product concentrations raised to stoichiometric powers divided by reactant concentrations raised to stoichiometric powers. Pure solids and liquids are omitted.",
+    "**Predicting direction:** reaction quotient $Q_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$ using initial concentrations. If $Q_c < K_c$, reaction proceeds forward. If $Q_c > K_c$, reaction proceeds backward. If equal, system is at equilibrium.",
+    "**Importance:** $K_c$ tells you the extent of reaction at equilibrium, whether a reaction is feasible, and how conditions affect the equilibrium position.",
+    "**Relationship to $\\Delta G$:** $\\Delta G = -RT\\ln K$. A large positive $K$ corresponds to large negative $\\Delta G$, meaning the reaction is spontaneous."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "chemical-equilibrium",
+  "motionGraphics": "chemical-equilibrium"
+}

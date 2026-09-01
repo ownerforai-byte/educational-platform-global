@@ -1,0 +1,31 @@
+{
+  "title": "Laws of Refraction and Refractive Index",
+  "unitSlug": "refraction-at-plane-surfaces",
+  "topicSlug": "laws-of-refraction-and-refractive-index",
+  "topicTitle": "Laws of refraction: refractive index",
+  "relevance": 100,
+  "notes": [
+    "**Snell's law:** $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$, where $\\theta_1$ and $\\theta_2$ are measured from the normal.",
+    "**Refractive index:** $n = c/v$, where $c = 3.00 \\times 10^8\\,\\text{m/s}$ is the speed of light in vacuum and $v$ is the speed in the medium. Since $v < c$, $n > 1$ for all real media.",
+    "**Relative refractive index:** $n_{21} = n_2/n_1 = v_1/v_2$. Light bends toward the normal when entering a denser medium ($n_2 > n_1$) and away from the normal when entering a rarer medium.",
+    "**Critical angle:** when light goes from denser to rarer, the refracted angle reaches $90Â°$ at the critical angle $\\theta_c$ where $\\sin\\theta_c = n_2/n_1$ (with $n_1 > n_2$). For glass to air, $\\theta_c \\approx 41Â°$.",
+    "**Total internal reflection:** occurs when the angle of incidence exceeds $\\theta_c$. All light is reflected back into the denser medium. This is the principle behind optical fibres and prisms in binoculars."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "refraction-at-plane-surfaces",
+  "motionGraphics": "refraction-at-plane-surfaces"
+}

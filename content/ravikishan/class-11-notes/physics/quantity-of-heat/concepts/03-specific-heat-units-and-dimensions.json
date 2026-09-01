@@ -1,13 +1,30 @@
 {
-  "title": "Specific Heat Capacity — Units & Dimensional Formula",
+  "title": "Specific Heat Capacity â€” Units & Dimensional Formula",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
   "topicTitle": "Measurement of specific heat capacity of solids and liquids",
   "relevance": 83,
   "notes": [
-    "**CGS unit:** cal·g⁻¹·°C⁻¹",
-    "**SI unit:** J·kg⁻¹·K⁻¹ (equivalently J·kg⁻¹·°C⁻¹ since it's a temperature *difference*)",
-    "**Dimensional formula:** c = H/(m·Δθ) = [ML²T⁻²]/([M][K]) = **[M⁰L²T⁻²K⁻¹]**",
-    "Being independent of mass in the dimensional formula reflects that c is an *intensive* property — a property of the material, not the amount of it"
-  ]
+    "**CGS unit:** calÂ·gâ»Â¹Â·Â°Câ»Â¹",
+    "**SI unit:** JÂ·kgâ»Â¹Â·Kâ»Â¹ (equivalently JÂ·kgâ»Â¹Â·Â°Câ»Â¹ since it's a temperature *difference*)",
+    "**Dimensional formula:** c = H/(mÂ·Î”Î¸) = [MLÂ²Tâ»Â²]/([M][K]) = **[Mâ°LÂ²Tâ»Â²Kâ»Â¹]**",
+    "Being independent of mass in the dimensional formula reflects that c is an *intensive* property â€” a property of the material, not the amount of it"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

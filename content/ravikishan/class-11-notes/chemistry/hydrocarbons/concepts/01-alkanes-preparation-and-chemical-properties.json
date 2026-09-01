@@ -1,0 +1,32 @@
+{
+  "title": "Alkanes â€” Preparation and Chemical Properties",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "alkanes-preparation-and-chemical-properties",
+  "topicTitle": "Saturated hydrocarbons (Alkanes): preparation from haloalkanes (reduction and Wurtz reaction), decarboxylation, catalytic hydrogenation of alkene and alkyne; chemical properties: substitution reactions (halogenation, nitration and sulphonation only), oxidation of ethane",
+  "relevance": 100,
+  "notes": [
+    "**Preparation from haloalkanes:** reduction with Zn + HCl or HI: $R-X + 2[H] \\rightarrow R-H + HX$. Wurtz reaction: $2RX + 2Na \\rightarrow R-R + 2NaX$ (works best for same halide).",
+    "**Decarboxylation:** heating sodium salt of carboxylic acid with soda lime: $RCOONa + NaOH \\rightarrow RH + Na_2CO_3$.",
+    "**Catalytic hydrogenation:** $C_nH_{2n} + H_2 \\xrightarrow{Ni, \\Delta} C_nH_{2n+2}$ for alkenes; $C_nH_{2n-2} + 2H_2 \\xrightarrow{Ni, \\Delta} C_nH_{2n+2}$ for alkynes.",
+    "**Free radical substitution:** requires UV light or heat. Initiation: $Cl_2 \\xrightarrow{h\\nu} 2Cl\\cdot$. Propagation: $CH_4 + Cl\\cdot \\rightarrow CH_3\\cdot + HCl$, then $CH_3\\cdot + Cl_2 \\rightarrow CH_3Cl + Cl\\cdot$.",
+    "**Nitration:** $CH_4 + HNO_3 \\xrightarrow{\\Delta} CH_3NO_2 + H_2O$.",
+    "**Sulphonation:** $C_2H_6 + SO_3 \\xrightarrow{light} C_2H_5SO_3H$ (ethyl hydrogen sulphate)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "hydrocarbons",
+  "motionGraphics": "hydrocarbons"
+}

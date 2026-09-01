@@ -1,0 +1,33 @@
+{
+  "title": "Alkynes â€” Preparation and Chemical Properties",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "alkynes-preparation-and-chemical-properties",
+  "topicTitle": "Alkynes: preparation from carbon and hydrogen, 1,2-dibromoethane, chloroform/iodoform only; chemical properties: addition reaction with H2, HX, H2O; acidic nature",
+  "relevance": 100,
+  "notes": [
+    "**Preparation from C and H:** electric arc between carbon electrodes in hydrogen atmosphere gives acetylene: $2C + H_2 \\rightarrow C_2H_2$.",
+    "**From 1,2-dibromoethane:** double dehydrohalogenation: $BrCH_2CH_2Br + 2KOH \\xrightarrow{alc.} HC \\equiv CH + 2KBr + 2H_2O$.",
+    "**From chloroform:** $CHCl_3 + 6NaOH \\xrightarrow{carbide} NaC \\equiv CNa + 3NaCl + 3H_2O$, then acidify to get acetylene.",
+    "**Acidic nature:** terminal alkynes have acidic hydrogen because sp-hybridised carbon holds the lone pair tightly, stabilising the acetylide ion: $HC \\equiv CH + Na \\rightarrow HC \\equiv CNa^+ + \\frac{1}{2}H_2$.",
+    "**Reaction with Na:** $HC \\equiv CH + 2Na \\rightarrow NaC \\equiv CNa + H_2$.",
+    "**Reaction with ammoniacal $AgNO_3$:** $HC \\equiv CH + 2[Ag(NH_3)_2]^+ + 2OH^- \\rightarrow AgC \\equiv CAg \\downarrow + 4NH_3 + 2H_2O$ (white precipitate).",
+    "**Addition of $H_2$:** $RC \\equiv CR' + 2H_2 \\xrightarrow{Pd/BaSO_4} R-CH=CH-R'$ (cis) $\\xrightarrow{Ni} R-CH_2-CH_2-R'$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "hydrocarbons",
+  "motionGraphics": "hydrocarbons"
+}

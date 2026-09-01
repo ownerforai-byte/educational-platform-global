@@ -1,11 +1,28 @@
 {
-  "title": "Resolution of Vectors — Worked Examples",
+  "title": "Resolution of Vectors â€” Worked Examples",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 94,
   "notes": [
-    "**Q1. Two forces, 10 N acting at 30° above the +x-axis and 5 N acting at 45° below the +x-axis, act at a point. Find the resultant.** $F_x = 10\\cos30° + 5\\cos45° = 8.66+3.54=12.20\\,\\text{N}$. $F_y = 10\\sin30° - 5\\sin45° = 5-3.54=1.46\\,\\text{N}$ (the second force's y-component is negative since it is below the axis). $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.20^2+1.46^2}\\approx12.28\\,\\text{N}$, at $\\theta=\\tan^{-1}(1.46/12.20)\\approx6.8°$ above the x-axis.",
-    "**Q2. Two forces, 10 N and 5 N, each act at 30° from a common reference line, one above it and one below it. Find the resultant.** $F_x = 10\\cos30°+5\\cos30° = (10+5)\\times(\\sqrt3/2)=7.5\\sqrt3\\approx12.99\\,\\text{N}$. $F_y = 10\\sin30° - 5\\sin30° = 5-2.5=2.5\\,\\text{N}$. $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.99^2+2.5^2}\\approx13.23\\,\\text{N}$, at $\\theta=\\tan^{-1}(2.5/12.99)\\approx10.9°$ from the reference line, on the side of the larger (10 N) force."
-  ]
+    "**Q1. Two forces, 10 N acting at 30Â° above the +x-axis and 5 N acting at 45Â° below the +x-axis, act at a point. Find the resultant.** $F_x = 10\\cos30Â° + 5\\cos45Â° = 8.66+3.54=12.20\\,\\text{N}$. $F_y = 10\\sin30Â° - 5\\sin45Â° = 5-3.54=1.46\\,\\text{N}$ (the second force's y-component is negative since it is below the axis). $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.20^2+1.46^2}\\approx12.28\\,\\text{N}$, at $\\theta=\\tan^{-1}(1.46/12.20)\\approx6.8Â°$ above the x-axis.",
+    "**Q2. Two forces, 10 N and 5 N, each act at 30Â° from a common reference line, one above it and one below it. Find the resultant.** $F_x = 10\\cos30Â°+5\\cos30Â° = (10+5)\\times(\\sqrt3/2)=7.5\\sqrt3\\approx12.99\\,\\text{N}$. $F_y = 10\\sin30Â° - 5\\sin30Â° = 5-2.5=2.5\\,\\text{N}$. $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.99^2+2.5^2}\\approx13.23\\,\\text{N}$, at $\\theta=\\tan^{-1}(2.5/12.99)\\approx10.9Â°$ from the reference line, on the side of the larger (10 N) force."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

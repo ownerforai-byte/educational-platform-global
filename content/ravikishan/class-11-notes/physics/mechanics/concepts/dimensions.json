@@ -54,5 +54,22 @@
     "<tr><td>43</td><td>Coefficient of thermal conductivity</td><td>k = Qx / A(θ₂−θ₁)t</td><td>[M¹L¹T⁻³θ⁻¹]</td><td>Wm⁻¹K⁻¹</td></tr></table>",
     "<h3>Stop to Think 1.4</h3>",
     "<p><b>Q:</b> Is the following relation dimensionally correct? S<sub>nth</sub> = u + a(2n−1)/2</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "mechanics",
+  "motionGraphics": "mechanics"
 }

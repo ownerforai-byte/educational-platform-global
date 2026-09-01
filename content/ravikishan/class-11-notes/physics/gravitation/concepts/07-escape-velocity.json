@@ -1,0 +1,31 @@
+{
+  "title": "Escape Velocity",
+  "unitSlug": "gravitation",
+  "topicSlug": "escape-velocity",
+  "topicTitle": "Escape velocity",
+  "relevance": 100,
+  "notes": [
+    "**Definition:** the minimum speed needed for a body to escape Earth's gravitational field completely, reaching infinity with zero kinetic energy.",
+    "**Derivation:** at infinity, total energy $E = K + U = 0 + 0 = 0$. By conservation of energy, $E$ at launch must also be zero: $\\frac{1}{2}mv_e^2 - \\frac{GMm}{R} = 0$.",
+    "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2\\,\\text{km/s}$ for Earth.",
+    "**Relation to orbital velocity:** $v_e = \\sqrt{2} \\times v_{orbital} \\approx 1.414 \\times 7.9 \\approx 11.2\\,\\text{km/s}$.",
+    "**Independence of direction:** escape velocity does not depend on the angle of projection, only on the launch speed."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation"
+}

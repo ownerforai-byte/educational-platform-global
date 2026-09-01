@@ -1,12 +1,29 @@
 {
-  "title": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
+  "title": "Angle Bisector Between Two Lines â€” The aâ‚aâ‚‚ + bâ‚bâ‚‚ Rule",
   "unitSlug": "analytic-geometry",
   "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
   "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
   "relevance": 79,
   "notes": [
-    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of a₁a₂ + b₁b₂",
-    "**If a₁a₂ + b₁b₂ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (−) sign gives the **obtuse** bisector",
-    "**If a₁a₂ + b₁b₂ > 0:** the (+) sign gives the **obtuse** bisector, and the (−) sign gives the **acute** bisector"
-  ]
+    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of aâ‚aâ‚‚ + bâ‚bâ‚‚",
+    "**If aâ‚aâ‚‚ + bâ‚bâ‚‚ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (âˆ’) sign gives the **obtuse** bisector",
+    "**If aâ‚aâ‚‚ + bâ‚bâ‚‚ > 0:** the (+) sign gives the **obtuse** bisector, and the (âˆ’) sign gives the **acute** bisector"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry"
 }

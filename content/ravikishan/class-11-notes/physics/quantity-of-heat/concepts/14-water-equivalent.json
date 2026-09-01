@@ -1,14 +1,31 @@
 {
-  "title": "Water Equivalent (W) — Definition & Derivation",
+  "title": "Water Equivalent (W) â€” Definition & Derivation",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
   "relevance": 70,
   "notes": [
-    "**Definition:** the mass of water that would absorb or release the same amount of heat (H) as a given object, for the same temperature change (Δθ)",
-    "**For the body:** H = m·c·Δθ",
-    "**For the equivalent mass of water:** H = W·c_w·Δθ",
-    "Since H and Δθ are identical in both cases: m·c·Δθ = W·c_w·Δθ → cancelling Δθ gives **W = (m·c)/c_w**",
-    "**Note:** in the CGS system, c_w = 1 cal/g°C, so W is numerically equal to m·c"
-  ]
+    "**Definition:** the mass of water that would absorb or release the same amount of heat (H) as a given object, for the same temperature change (Î”Î¸)",
+    "**For the body:** H = mÂ·cÂ·Î”Î¸",
+    "**For the equivalent mass of water:** H = WÂ·c_wÂ·Î”Î¸",
+    "Since H and Î”Î¸ are identical in both cases: mÂ·cÂ·Î”Î¸ = WÂ·c_wÂ·Î”Î¸ â†’ cancelling Î”Î¸ gives **W = (mÂ·c)/c_w**",
+    "**Note:** in the CGS system, c_w = 1 cal/gÂ°C, so W is numerically equal to mÂ·c"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

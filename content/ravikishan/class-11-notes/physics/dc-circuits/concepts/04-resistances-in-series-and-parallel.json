@@ -1,0 +1,31 @@
+{
+  "title": "Resistances in Series and Parallel",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "resistances-in-series-and-parallel",
+  "topicTitle": "Resistances in series and parallel",
+  "relevance": 100,
+  "notes": [
+    "**Series:** same current through all resistors. $R_{eq} = R_1 + R_2 + \\ldots$. Voltage divides: $V_i = I R_i$.",
+    "**Parallel:** same voltage across all resistors. $1/R_{eq} = 1/R_1 + 1/R_2 + \\ldots$. Current divides: $I_i = V/R_i$.",
+    "**Why series increases resistance:** the current must pass through each resistor sequentially, so each adds its opposition to the total.",
+    "**Why parallel decreases resistance:** multiple paths allow more current for the same voltage, equivalent to increasing the cross-sectional area of a single conductor.",
+    "**Special case â€” two parallel resistors:** $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. This is always less than the smaller resistor."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dc-circuits",
+  "motionGraphics": "dc-circuits"
+}

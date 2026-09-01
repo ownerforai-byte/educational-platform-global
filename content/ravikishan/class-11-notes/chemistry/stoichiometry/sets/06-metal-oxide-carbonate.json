@@ -6,10 +6,27 @@
   "relevance": 80,
   "notes": [
     "**Data:** 0.36 g of a metal burnt in oxygen yields 0.60 g of oxide; the carbonate of that metal contains 28.57% of the metal",
-    "From the oxide experiment: mass of metal = 0.36 g, mass of oxide = 0.60 g → ratio (mass of metal)/(mass of oxide) = 0.36/0.60 = **0.6**",
-    "From the carbonate experiment: 1 g of carbonate contains 28.57% metal → mass of metal in 1 g carbonate = 0.2857 g",
+    "From the oxide experiment: mass of metal = 0.36 g, mass of oxide = 0.60 g â†’ ratio (mass of metal)/(mass of oxide) = 0.36/0.60 = **0.6**",
+    "From the carbonate experiment: 1 g of carbonate contains 28.57% metal â†’ mass of metal in 1 g carbonate = 0.2857 g",
     "By the Law of Definite Proportions, the metal-to-oxide ratio stays fixed at 0.6, so: 0.2857 / (mass of oxide) = 0.6",
     "Mass of oxide = 0.2857 / 0.6",
     "**Answer: mass of oxide = 0.4762 g**"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "stoichiometry",
+  "motionGraphics": "stoichiometry"
 }

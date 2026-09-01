@@ -5,7 +5,24 @@
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
-    "**If two vectors of equal magnitude act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=a$ and $\\theta=90°$. Using $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{a^2+a^2+2a^2\\cos90°}=\\sqrt{2a^2}=a\\sqrt2$. Direction: $\\tan\\alpha=\\dfrac{a\\sin90°}{a+a\\cos90°}=\\dfrac{a}{a}=1 \\Rightarrow \\alpha=45°$ — the resultant bisects the angle between the two equal perpendicular vectors.",
-    "**Q. If two equal vectors act perpendicular to each other and their resultant is 1.414 ($\\approx\\sqrt2$) units, find the magnitude of each vector.** Using $R=a\\sqrt2$ from above: $a=\\dfrac{R}{\\sqrt2}=\\dfrac{\\sqrt2}{\\sqrt2}=1$ unit — each vector has magnitude 1 unit."
-  ]
+    "**If two vectors of equal magnitude act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=a$ and $\\theta=90Â°$. Using $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{a^2+a^2+2a^2\\cos90Â°}=\\sqrt{2a^2}=a\\sqrt2$. Direction: $\\tan\\alpha=\\dfrac{a\\sin90Â°}{a+a\\cos90Â°}=\\dfrac{a}{a}=1 \\Rightarrow \\alpha=45Â°$ â€” the resultant bisects the angle between the two equal perpendicular vectors.",
+    "**Q. If two equal vectors act perpendicular to each other and their resultant is 1.414 ($\\approx\\sqrt2$) units, find the magnitude of each vector.** Using $R=a\\sqrt2$ from above: $a=\\dfrac{R}{\\sqrt2}=\\dfrac{\\sqrt2}{\\sqrt2}=1$ unit â€” each vector has magnitude 1 unit."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

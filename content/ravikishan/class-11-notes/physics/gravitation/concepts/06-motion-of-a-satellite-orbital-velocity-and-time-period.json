@@ -1,0 +1,31 @@
+{
+  "title": "Motion of a Satellite â€” Orbital Velocity and Time Period",
+  "unitSlug": "gravitation",
+  "topicSlug": "motion-of-a-satellite-orbital-velocity-and-time-period",
+  "topicTitle": "Motion of a satellite: orbital velocity and time period of the satellite",
+  "relevance": 100,
+  "notes": [
+    "**Orbital velocity:** equating gravitational force to centripetal force gives $v = \\sqrt{\\frac{GM}{r}}$, where $r$ is the orbital radius.",
+    "**Near Earth's surface:** $v = \\sqrt{gR} \\approx 7.9\\,\\text{km/s}$. This is the minimum speed to maintain a circular orbit just above the atmosphere.",
+    "**Time period:** $T = \\frac{2\\pi r}{v} = 2\\pi\\sqrt{\\frac{r^3}{GM}}$. This is Kepler's third law in Newtonian form.",
+    "**Kepler's third law:** $T^2 \\propto r^3$. The square of the period is proportional to the cube of the orbital radius.",
+    "**Why higher orbits are slower:** as $r$ increases, $v$ decreases and $T$ increases. The Moon orbits more slowly than a low Earth satellite because it is much farther away."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation"
+}

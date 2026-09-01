@@ -1,0 +1,31 @@
+{
+  "title": "Parallel Plate Capacitor",
+  "unitSlug": "capacitor",
+  "topicSlug": "parallel-plate-capacitor",
+  "topicTitle": "Parallel plate capacitor",
+  "relevance": 100,
+  "notes": [
+    "**Structure:** two parallel conducting plates separated by a small distance, with air or dielectric between them.",
+    "**Capacitance:** $C = \\epsilon_0 A/d$ for air; with dielectric, $C = \\kappa \\epsilon_0 A/d$, where $\\kappa$ is the dielectric constant.",
+    "**Effect of dielectric:** inserting a dielectric increases capacitance by factor $\\kappa$ because the material polarizes, reducing the effective field and allowing more charge for the same voltage.",
+    "**Effect of separation:** increasing $d$ decreases $C$ because the field weakens and less charge can be stored for the same voltage.",
+    "**Effect of area:** increasing $A$ increases $C$ because more charge can be distributed over the larger plates at the same surface charge density."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "capacitor",
+  "motionGraphics": "capacitor"
+}

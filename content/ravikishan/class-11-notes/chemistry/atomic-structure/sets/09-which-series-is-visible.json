@@ -5,8 +5,25 @@
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "The **Balmer series** (n₁ = 2) is the only series entirely visible to the human eye",
-    "Its emitted wavelengths (transitions from n₂ = 3, 4, 5... down to n₁ = 2) happen to fall in the roughly 400–700 nm range that human eyes detect",
-    "The Lyman series (n₁ = 1) is higher-energy and shorter-wavelength (ultraviolet), while Paschen, Brackett, and Pfund (n₁ = 3, 4, 5) are lower-energy and longer-wavelength (infrared) — both fall outside the visible window"
-  ]
+    "The **Balmer series** (nâ‚ = 2) is the only series entirely visible to the human eye",
+    "Its emitted wavelengths (transitions from nâ‚‚ = 3, 4, 5... down to nâ‚ = 2) happen to fall in the roughly 400â€“700 nm range that human eyes detect",
+    "The Lyman series (nâ‚ = 1) is higher-energy and shorter-wavelength (ultraviolet), while Paschen, Brackett, and Pfund (nâ‚ = 3, 4, 5) are lower-energy and longer-wavelength (infrared) â€” both fall outside the visible window"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

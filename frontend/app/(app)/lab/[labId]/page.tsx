@@ -11,6 +11,8 @@ import { ArrowLeft, Cuboid, Loader2 } from "lucide-react";
 import { LAB_REGISTRY, getLabById } from "@/lib/lab-registry";
 import type { LabMeta } from "@/lib/types/lab";
 import { LabLearningSection } from "@/components/lab/learning-section";
+import { AnimationFrame, ArrowLabel } from "@/components/lab/annotation/arrow-label";
+import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
 
 export default function LabPage() {
   const params = useParams();
@@ -131,9 +133,14 @@ export default function LabPage() {
             </span>
           </div>
 
-          {/* Lab Component */}
+          {/* Lab Component + long-arrow annotations */}
           <div className="p-5">
-            {typeof lab.component === "function" ? lab.component() : lab.component}
+            <AnimationFrame heightClass="min-h-[340px]">
+              {typeof lab.component === "function" ? lab.component() : lab.component}
+              {LAB_ANNOTATIONS[lab.id]?.map((ann, i) => (
+                <ArrowLabel key={`${lab.id}-${i}`} {...ann} delay={0.3 + i * 0.25} />
+              ))}
+            </AnimationFrame>
           </div>
         </div>
 

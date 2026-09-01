@@ -1,0 +1,31 @@
+{
+  "title": "Balancing Redox Reactions",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "balancing-redox-reactions",
+  "topicTitle": "Balancing redox reactions by oxidation number and ion-electron (half reaction) method",
+  "relevance": 100,
+  "notes": [
+    "**Oxidation number method:** (1) write unbalanced equation, (2) assign oxidation numbers, (3) identify atoms oxidized and reduced, (4) equalize electron loss and gain by multiplying half-reactions, (5) combine and balance O and H using $H_2O$ and $H^+$ (acidic) or $OH^-$ (basic).",
+    "**Ion-electron (half-reaction) method:** split into oxidation half-reaction and reduction half-reaction. Balance each for atoms and charge, then combine so electrons cancel.",
+    "**Acidic medium:** balance O with $H_2O$, balance H with $H^+$, balance charge with electrons.",
+    "**Basic medium:** balance as in acid, then add $OH^-$ to both sides to neutralize $H^+$, forming $H_2O$.",
+    "**Example:** $MnO_4^- + Fe^{2+} \\rightarrow Mn^{2+} + Fe^{3+}$ in acid: $MnO_4^- + 5e^- + 8H^+ \\rightarrow Mn^{2+} + 4H_2O$ and $Fe^{2+} \\rightarrow Fe^{3+} + e^-$. Combined: $MnO_4^- + 5Fe^{2+} + 8H^+ \\rightarrow Mn^{2+} + 5Fe^{3+} + 4H_2O$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "oxidation-and-reduction",
+  "motionGraphics": "oxidation-and-reduction"
+}

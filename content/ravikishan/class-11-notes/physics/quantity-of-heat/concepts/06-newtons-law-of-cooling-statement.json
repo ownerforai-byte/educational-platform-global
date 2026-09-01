@@ -1,13 +1,30 @@
 {
-  "title": "Newton's Law of Cooling — Statement",
+  "title": "Newton's Law of Cooling â€” Statement",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
   "relevance": 100,
   "notes": [
-    "**Statement:** the rate of loss of heat of a body is directly proportional to the difference between the body's temperature (θ) and the surrounding temperature (θ₀), for small differences",
-    "**Proportionality:** −dH/dt ∝ (θ − θ₀)",
-    "**With constant K:** −dH/dt = K(θ − θ₀) --- (Equation 1)",
-    "**K (proportionality constant)** depends on: (i) nature of the body — material and surface texture, and (ii) exposed surface area — a larger surface area increases the cooling rate"
-  ]
+    "**Statement:** the rate of loss of heat of a body is directly proportional to the difference between the body's temperature (Î¸) and the surrounding temperature (Î¸â‚€), for small differences",
+    "**Proportionality:** âˆ’dH/dt âˆ (Î¸ âˆ’ Î¸â‚€)",
+    "**With constant K:** âˆ’dH/dt = K(Î¸ âˆ’ Î¸â‚€) --- (Equation 1)",
+    "**K (proportionality constant)** depends on: (i) nature of the body â€” material and surface texture, and (ii) exposed surface area â€” a larger surface area increases the cooling rate"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

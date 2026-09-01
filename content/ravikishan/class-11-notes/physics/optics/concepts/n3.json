@@ -64,5 +64,22 @@
     "<p><b>The Trick:</b> An object is at 30 cm, then it is \"shifted by 10 cm towards the mirror.\"</p>",
     "<p><b>The Trap:</b> Students miscalculate the new object distance.</p>",
     "<p><b>The Defeat:</b> Old distance: u₁ = −30 cm. New distance: shifted towards means it is closer, so u₂ = −(30−10) = −20 cm. Tip: always find the focal length (f) from the first scenario first, as it stays constant for the second scenario.</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics"
 }

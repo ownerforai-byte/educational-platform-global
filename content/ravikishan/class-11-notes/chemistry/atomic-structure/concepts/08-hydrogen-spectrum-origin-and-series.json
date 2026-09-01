@@ -1,5 +1,5 @@
 {
-  "title": "The Hydrogen Spectrum — Origin & Spectral Series",
+  "title": "The Hydrogen Spectrum â€” Origin & Spectral Series",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
@@ -7,6 +7,23 @@
   "notes": [
     "When hydrogen gas is excited (e.g. electrically), electrons absorb energy and jump to higher tracks; when they fall back down to lower tracks, they release that exact energy as light of a specific wavelength",
     "Because transitions happen only between specific fixed tracks, the emitted light forms discrete, sharp spectral lines rather than a continuous rainbow",
-    "Each spectral series corresponds to electrons landing on one specific base track (n₁): **Lyman** → n₁ = 1 (ultraviolet, invisible); **Balmer** → n₁ = 2 (the only series visible to the human eye, as coloured lines); **Paschen** → n₁ = 3 (infrared); **Brackett** → n₁ = 4 (infrared); **Pfund** → n₁ = 5 (far-infrared)"
-  ]
+    "Each spectral series corresponds to electrons landing on one specific base track (nâ‚): **Lyman** â†’ nâ‚ = 1 (ultraviolet, invisible); **Balmer** â†’ nâ‚ = 2 (the only series visible to the human eye, as coloured lines); **Paschen** â†’ nâ‚ = 3 (infrared); **Brackett** â†’ nâ‚ = 4 (infrared); **Pfund** â†’ nâ‚ = 5 (far-infrared)"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

@@ -1,0 +1,31 @@
+{
+  "title": "Relative Velocity",
+  "unitSlug": "kinematics",
+  "topicSlug": "relative-velocity",
+  "topicTitle": "Relative velocity",
+  "relevance": 100,
+  "notes": [
+    "**Relative velocity:** the velocity of one object measured with respect to another moving object.",
+    "**Same direction:** if car A moves at $v_A$ and car B at $v_B$ in the same direction, A sees B moving at $v_{B/A} = v_B - v_A$.",
+    "**Opposite direction:** if they move toward each other, the relative speed is the sum: $v_{rel} = v_A + v_B$.",
+    "**Vector form:** $\\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A$. The velocity of B relative to A equals B's velocity in the ground frame minus A's velocity in the ground frame.",
+    "**Rain example:** if rain falls vertically at $v_r$ and you run horizontally at $v_p$, the rain appears to come at you at an angle $\\theta$ where $\\tan\\theta = v_p / v_r$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "kinematics",
+  "motionGraphics": "kinematics"
+}

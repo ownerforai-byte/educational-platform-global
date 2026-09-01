@@ -1,0 +1,30 @@
+{
+  "title": "Gauss Law and Electric Flux",
+  "unitSlug": "electric-field",
+  "topicSlug": "gauss-law-and-electric-flux",
+  "topicTitle": "Gauss law: electric flux",
+  "relevance": 100,
+  "notes": [
+    "**Electric flux $\\Phi_E$:** $\\Phi_E = \\oint \\vec{E} \\cdot d\\vec{A}$. It measures the total number of field lines passing through a closed surface.",
+    "**Gauss law:** $\\oint \\vec{E} \\cdot d\\vec{A} = Q_{enclosed}/\\epsilon_0$. The total flux through a closed surface depends only on the charge inside, not on the shape of the surface.",
+    "**Why useful:** for symmetric charge distributions (spherical, cylindrical, planar), Gauss law lets you find $E$ without integration.",
+    "**Flux through closed surface:** if no charge is inside, net flux is zero because as many lines enter as leave."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "electric-field",
+  "motionGraphics": "electric-field"
+}

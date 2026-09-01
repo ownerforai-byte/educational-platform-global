@@ -1,0 +1,31 @@
+{
+  "title": "Coulomb's Law and Force Between Multiple Charges",
+  "unitSlug": "electric-charges",
+  "topicSlug": "coulomb-s-law-and-force-between-multiple-charges",
+  "topicTitle": "Coulomb's law: force between two point charges; force between multiple electric charges",
+  "relevance": 100,
+  "notes": [
+    "**Coulomb's law:** $\\vec{F}_{12} = k\\frac{q_1 q_2}{r^2}\\hat{r}_{12}$. The force is along the line joining the charges.",
+    "**Vector form:** for multiple charges, the net force on any charge is the vector sum of forces from all other charges: $\\vec{F}_{net} = \\sum \\vec{F}_i$.",
+    "**Superposition principle:** electric forces add vectorially. This is because electric fields from different sources do not interact with each other.",
+    "**Relative strength:** electric force between electron and proton in hydrogen is about $10^{39}$ times stronger than gravitational force between them.",
+    "**Medium effect:** in a medium with permittivity $\\epsilon$, $F = \\frac{1}{4\\pi\\epsilon} \\frac{q_1 q_2}{r^2}$. Water reduces the force by about 80 times compared to air."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "electric-charges",
+  "motionGraphics": "electric-charges"
+}

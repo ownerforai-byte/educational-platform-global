@@ -1,12 +1,29 @@
 {
-  "title": "Q: Why does the sign of a₁a₂ + b₁b₂ determine which bisector is acute vs obtuse?",
+  "title": "Q: Why does the sign of aâ‚aâ‚‚ + bâ‚bâ‚‚ determine which bisector is acute vs obtuse?",
   "unitSlug": "analytic-geometry",
   "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
   "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
   "relevance": 77,
   "notes": [
-    "a₁a₂ + b₁b₂ is proportional to the cosine of the angle between the two lines' normal vectors (a, b), since a·a' + b·b' = |n₁||n₂|cos θ for normal vectors n₁, n₂",
-    "When this dot product is negative, the normals point in 'opposing' directions relative to each other, which flips which bisector formula (+ or −) ends up bisecting the acute angle between the actual lines rather than the obtuse one",
-    "This is why the rule reverses depending on the sign — it's tracking the relative orientation of the two lines' normals, not just their raw coefficients"
-  ]
+    "aâ‚aâ‚‚ + bâ‚bâ‚‚ is proportional to the cosine of the angle between the two lines' normal vectors (a, b), since aÂ·a' + bÂ·b' = |nâ‚||nâ‚‚|cos Î¸ for normal vectors nâ‚, nâ‚‚",
+    "When this dot product is negative, the normals point in 'opposing' directions relative to each other, which flips which bisector formula (+ or âˆ’) ends up bisecting the acute angle between the actual lines rather than the obtuse one",
+    "This is why the rule reverses depending on the sign â€” it's tracking the relative orientation of the two lines' normals, not just their raw coefficients"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry"
 }

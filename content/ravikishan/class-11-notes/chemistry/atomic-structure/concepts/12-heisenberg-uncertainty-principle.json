@@ -6,11 +6,28 @@
   "relevance": 85,
   "notes": [
     "**Statement:** it is impossible to determine simultaneously and with unlimited precision both the exact position (x) and the exact momentum (p) of a sub-atomic particle such as an electron.",
-    "**Mathematical form:** Δx · Δp ≥ h / 4π, where Δx is the uncertainty in position, Δp is the uncertainty in momentum and h = 6.62 × 10⁻³⁴ J·s is Planck's constant.",
-    "**Momentum form:** since Δp = m · Δv, the principle can be written as Δx · Δv ≥ h / (4πm) — for a heavy particle (large m) the product of uncertainties is tiny, so classical certainty is recovered.",
-    "**Wavelength measurement intrusion paradox:** observing an electron requires hitting it with photons; a shorter-wavelength photon gives better position information but delivers a larger kick that disturbs the electron's momentum, and vice versa — the act of measurement inevitably perturbs the system.",
+    "**Mathematical form:** Î”x Â· Î”p â‰¥ h / 4Ï€, where Î”x is the uncertainty in position, Î”p is the uncertainty in momentum and h = 6.62 Ã— 10â»Â³â´ JÂ·s is Planck's constant.",
+    "**Momentum form:** since Î”p = m Â· Î”v, the principle can be written as Î”x Â· Î”v â‰¥ h / (4Ï€m) â€” for a heavy particle (large m) the product of uncertainties is tiny, so classical certainty is recovered.",
+    "**Wavelength measurement intrusion paradox:** observing an electron requires hitting it with photons; a shorter-wavelength photon gives better position information but delivers a larger kick that disturbs the electron's momentum, and vice versa â€” the act of measurement inevitably perturbs the system.",
     "**Certainty / uncertainty complementarity:** precise knowledge of position destroys knowledge of momentum; the two are complementary and cannot be measured sharply at the same time.",
     "**Probability space concept:** because the electron cannot be pinned to a definite point, its location is described by a probability distribution rather than a fixed path.",
-    "**Bohr definite-orbit fallacy:** a precise orbit would require exactly known position and momentum simultaneously, which the uncertainty principle forbids — so Bohr's definite circular orbits are physically impossible."
-  ]
+    "**Bohr definite-orbit fallacy:** a precise orbit would require exactly known position and momentum simultaneously, which the uncertainty principle forbids â€” so Bohr's definite circular orbits are physically impossible."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

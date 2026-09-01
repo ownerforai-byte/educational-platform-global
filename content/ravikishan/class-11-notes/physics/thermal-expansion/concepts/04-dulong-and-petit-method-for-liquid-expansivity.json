@@ -1,0 +1,31 @@
+{
+  "title": "Dulong and Petit Method for Liquid Expansivity",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "dulong-and-petit-method-for-liquid-expansivity",
+  "topicTitle": "Dulong and Petit method of determining expansivity of liquid",
+  "relevance": 100,
+  "notes": [
+    "**Apparatus:** a long graduated glass tube with a reservoir bulb at the bottom, containing the liquid whose expansivity is to be measured.",
+    "**Method:** the liquid level is noted at a known temperature $T_1$. The apparatus is heated to $T_2$ and the new level is read. The apparent expansion is measured directly from the scale.",
+    "**Correction:** the absolute expansivity is found by adding the expansivity of the glass: $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass}$.",
+    "**Why Dulong-Petit:** the method is simple and gives reasonable accuracy for liquids with moderate expansion. It directly measures volume change without needing the liquid's mass.",
+    "**Limitations:** the glass expansivity must be known accurately, and the liquid must wet the glass uniformly to avoid meniscus errors."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "thermal-expansion",
+  "motionGraphics": "thermal-expansion"
+}

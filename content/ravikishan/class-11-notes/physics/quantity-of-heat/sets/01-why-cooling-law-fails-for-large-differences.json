@@ -5,7 +5,24 @@
   "topicTitle": "Newton's law of cooling",
   "relevance": 100,
   "notes": [
-    "The law assumes (θ − θ₀) is small — typically within about 30°C of the surroundings — and that cooling happens mainly by natural convection and radiation, not forced convection",
-    "For large differences, radiative loss actually follows the Stefan–Boltzmann law, where the rate depends on (θ⁴ − θ₀⁴), not simply (θ − θ₀), so the linear approximation breaks down"
-  ]
+    "The law assumes (Î¸ âˆ’ Î¸â‚€) is small â€” typically within about 30Â°C of the surroundings â€” and that cooling happens mainly by natural convection and radiation, not forced convection",
+    "For large differences, radiative loss actually follows the Stefanâ€“Boltzmann law, where the rate depends on (Î¸â´ âˆ’ Î¸â‚€â´), not simply (Î¸ âˆ’ Î¸â‚€), so the linear approximation breaks down"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

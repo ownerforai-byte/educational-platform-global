@@ -5,11 +5,28 @@
   "topicTitle": "Measurement of specific heat capacity of solids and liquids",
   "relevance": 87,
   "notes": [
-    "**Setup:** a calorimeter with 100 g of water (c₁ = 1.0 cal/g°C) cools from 60°C to 50°C in 200 s. The same calorimeter with 80 g of an unknown oil cools over the same range in 140 s under identical conditions.",
-    "Known values: m₁ = 100 g, c₁ = 1.0 cal/g°C, t₁ = 200 s, m₂ = 80 g, t₂ = 140 s",
-    "Using m₁c₁/t₁ = m₂c₂/t₂: (100 × 1.0)/200 = (80 × c₂)/140",
-    "Simplify the water side: 0.5 = (80 × c₂)/140",
-    "Isolate c₂: c₂ = (0.5 × 140)/80 = 70/80",
-    "**Answer: c₂ = 0.875 cal/g°C**"
-  ]
+    "**Setup:** a calorimeter with 100 g of water (câ‚ = 1.0 cal/gÂ°C) cools from 60Â°C to 50Â°C in 200 s. The same calorimeter with 80 g of an unknown oil cools over the same range in 140 s under identical conditions.",
+    "Known values: mâ‚ = 100 g, câ‚ = 1.0 cal/gÂ°C, tâ‚ = 200 s, mâ‚‚ = 80 g, tâ‚‚ = 140 s",
+    "Using mâ‚câ‚/tâ‚ = mâ‚‚câ‚‚/tâ‚‚: (100 Ã— 1.0)/200 = (80 Ã— câ‚‚)/140",
+    "Simplify the water side: 0.5 = (80 Ã— câ‚‚)/140",
+    "Isolate câ‚‚: câ‚‚ = (0.5 Ã— 140)/80 = 70/80",
+    "**Answer: câ‚‚ = 0.875 cal/gÂ°C**"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

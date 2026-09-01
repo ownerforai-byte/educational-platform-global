@@ -8,7 +8,24 @@
     "**Statement**: If two vectors acting at a point are represented in magnitude and direction by the two adjacent sides of a parallelogram drawn from that point, their resultant is represented in magnitude and direction by the diagonal of the parallelogram passing through the same point.",
     "**Derivation**: consider $\\vec{P}$ and $\\vec{Q}$ inclined at angle $\\theta$, forming adjacent sides $AB$ and $AD$ of parallelogram $ABCD$. Draw $CE$ perpendicular to $AB$ extended. In right triangle $BCE$: $CE=Q\\sin\\theta$, $BE=Q\\cos\\theta$, so $AE = AB+BE = P+Q\\cos\\theta$.",
     "In right triangle $ACE$: $AC^2=AE^2+CE^2 \\Rightarrow R^2=(P+Q\\cos\\theta)^2+(Q\\sin\\theta)^2 = P^2+Q^2+2PQ\\cos\\theta$.",
-    "**Magnitude**: $R=\\sqrt{P^2+Q^2+2PQ\\cos\\theta}$. **Direction**: $\\tan\\alpha=\\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}$ — identical results to the triangle law, since the diagonal of the parallelogram is exactly the third side of the triangle formed by $\\vec P$ and $\\vec Q$.",
-    "**Special cases**: (i) $\\theta=0°$: $R=P+Q$. (ii) $\\theta=90°$: $R=\\sqrt{P^2+Q^2}$. (iii) $\\theta=180°$: $R=P-Q$."
-  ]
+    "**Magnitude**: $R=\\sqrt{P^2+Q^2+2PQ\\cos\\theta}$. **Direction**: $\\tan\\alpha=\\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}$ â€” identical results to the triangle law, since the diagonal of the parallelogram is exactly the third side of the triangle formed by $\\vec P$ and $\\vec Q$.",
+    "**Special cases**: (i) $\\theta=0Â°$: $R=P+Q$. (ii) $\\theta=90Â°$: $R=\\sqrt{P^2+Q^2}$. (iii) $\\theta=180Â°$: $R=P-Q$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

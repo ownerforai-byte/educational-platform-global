@@ -1,0 +1,31 @@
+{
+  "title": "Instantaneous Velocity and Acceleration",
+  "unitSlug": "kinematics",
+  "topicSlug": "instantaneous-velocity-and-acceleration",
+  "topicTitle": "Instantaneous velocity and acceleration",
+  "relevance": 100,
+  "notes": [
+    "**Average velocity** tells you the overall displacement over a time interval; **instantaneous velocity** tells you the velocity at one exact instant.",
+    "**Mathematical definition:** $v = \\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t} = \\frac{ds}{dt}$. As the time interval shrinks to zero, the average velocity approaches the instantaneous velocity.",
+    "**Graphical meaning:** on a displacement-time graph, the slope of the tangent at any point is the instantaneous velocity at that instant.",
+    "**Instantaneous acceleration:** $a = \\lim_{\\Delta t \\to 0} \\frac{\\Delta v}{\\Delta t} = \\frac{dv}{dt}$. On a velocity-time graph, the slope of the tangent is the instantaneous acceleration.",
+    "**Why the limit matters:** without taking the limit, $\\Delta s / \\Delta t$ is only an average over a finite interval and misses what happens in between."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "kinematics",
+  "motionGraphics": "kinematics"
+}

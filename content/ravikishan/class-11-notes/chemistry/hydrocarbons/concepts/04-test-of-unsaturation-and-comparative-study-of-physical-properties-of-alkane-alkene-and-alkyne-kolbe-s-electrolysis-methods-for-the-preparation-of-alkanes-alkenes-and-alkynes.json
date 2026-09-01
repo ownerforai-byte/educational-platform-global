@@ -1,0 +1,31 @@
+{
+  "title": "Tests of Unsaturation and Comparative Properties",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "test-of-unsaturation-and-comparative-study-of-physical-properties-of-alkane-alkene-and-alkyne",
+  "topicTitle": "Test of unsaturation (ethene and ethyne): bromine water test and Baeyer's test; comparative studies of physical properties of alkane, alkene and alkyne; Kolbe's electrolysis methods",
+  "relevance": 100,
+  "notes": [
+    "**Bromine water test:** unsaturation decolourises orange-brown bromine water: $CH_2=CH_2 + Br_2 \\rightarrow CH_2Br-CH_2Br$ (colourless). Alkanes do not react.",
+    " **Baeyer's test (alkaline $KMnO_4$):** unsaturation decolourises purple permanganate, forming brown $MnO_2$ precipitate and diol: $RCH=CHR' + KMnO_4 + H_2O \\rightarrow RCH(OH)-CH(OH)R' + MnO_2 + KOH$.",
+    "**Physical properties trend:** boiling points: alkynes > alkenes > alkanes (same C number) because of increased polarizability. Solubility: all non-polar, insoluble in water, soluble in organic solvents.",
+    "**Kolbe's electrolysis:** electrolysis of sodium or potassium salt of carboxylic acid gives alkane at cathode and alkene/alkyne at anode depending on conditions: $2RCOONa \\xrightarrow{electrolysis} R-R + 2CO_2 + 2NaOH$.",
+    "**Density:** increases with unsaturation. Acetylene (1.17 g/L) > ethylene (1.25? actually 1.178) > ethane (1.26? at STP, but trend is not simple due to molecular weight differences)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "hydrocarbons",
+  "motionGraphics": "hydrocarbons"
+}

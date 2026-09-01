@@ -1,14 +1,31 @@
 {
-  "title": "Newton's Law of Cooling — Derivation of Rate of Fall of Temperature",
+  "title": "Newton's Law of Cooling â€” Derivation of Rate of Fall of Temperature",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
   "relevance": 100,
   "notes": [
     "Let m = mass, c = specific heat capacity of the body",
-    "If the body loses heat −dH in a small time dt, its temperature falls by −dθ, so: −dH = mc(−dθ)",
-    "Dividing by dt: −dH/dt = −mc·(dθ/dt) --- (Equation 2)",
-    "Substituting Equation 2 into −dH/dt = K(θ − θ₀) gives: **−mc·(dθ/dt) = K(θ − θ₀)** --- (Equation 3)",
-    "The negative sign shows the temperature is falling — a downward trend over time"
-  ]
+    "If the body loses heat âˆ’dH in a small time dt, its temperature falls by âˆ’dÎ¸, so: âˆ’dH = mc(âˆ’dÎ¸)",
+    "Dividing by dt: âˆ’dH/dt = âˆ’mcÂ·(dÎ¸/dt) --- (Equation 2)",
+    "Substituting Equation 2 into âˆ’dH/dt = K(Î¸ âˆ’ Î¸â‚€) gives: **âˆ’mcÂ·(dÎ¸/dt) = K(Î¸ âˆ’ Î¸â‚€)** --- (Equation 3)",
+    "The negative sign shows the temperature is falling â€” a downward trend over time"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

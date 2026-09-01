@@ -1,0 +1,32 @@
+{
+  "title": "Mechanics â€” Statics and Dynamics",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "mechanics-statics-and-dynamics",
+  "topicTitle": "Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
+  "relevance": 100,
+  "notes": [
+    "**Parallelogram law:** if two forces $P$ and $Q$ act at a point with angle $\\theta$ between them, the resultant $R = \\sqrt{P^2 + Q^2 + 2PQ\\cos\\theta}$.",
+    "**Resolution:** any force can be resolved into two perpendicular components. $F_x = F\\cos\\theta$, $F_y = F\\sin\\theta$.",
+    "**Equilibrium:** for a particle, $\\sum F_x = 0$ and $\\sum F_y = 0$. Lami's theorem for three coplanar forces in equilibrium: $\\frac{P}{\\sin\\alpha} = \\frac{Q}{\\sin\\beta} = \\frac{R}{\\sin\\gamma}$.",
+    "**Uniform acceleration equations:** $v = u + at$, $s = ut + \\frac{1}{2}at^2$, $v^2 = u^2 + 2as$.",
+    "**Motion under gravity:** downward: $v = gt$, $h = \\frac{1}{2}gt^2$, $v^2 = 2gh$. Upward: $v = u - gt$, $h = ut - \\frac{1}{2}gt^2$.",
+    "**Inclined plane:** acceleration down smooth incline: $a = g\\sin\\theta$. Time to reach bottom from rest: $t = \\sqrt{\\frac{2l}{g\\sin\\theta}}$, where $l$ is length of plane."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "computational-methods-or-mechanics",
+  "motionGraphics": "computational-methods-or-mechanics"
+}

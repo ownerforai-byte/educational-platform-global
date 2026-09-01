@@ -59,5 +59,22 @@
     "3. THE 'DISTANCE BETWEEN OBJECT AND IMAGE' TRICK - The Trick: the question says 'The distance between the object and its image is 10 cm.' The Trap: students write down v - u = 10 or v = 10. The Defeat: this means the absolute gap |v - u| = 10. The mirror type must be used to figure out which one is further away: For a convex mirror, the image is always closer to the mirror than the object, so (-u) - v = 10. For a concave mirror forming a real image, if the object is beyond C, the object is further away (u > v), so (-u) - (-v) = 10.",
     "4. THE 'LIQUID IMMERSION' TRICK - The Trick: 'A concave mirror of focal length 20 cm is completely immersed in a tank of water. Find its new focal length.' The Trap: students use the refractive index of water (μ = 4/3) to change the focal length. The Defeat: mirrors do not change focal length in liquids. The focal length depends purely on the radius of curvature (f = R/2). This only applies to lenses. The focal length remains exactly 20 cm.",
     "5. THE 'OBJECT SHIFT' TRICK - The Trick: an object is at 30 cm, then it is 'shifted by 10 cm towards the mirror.' The Trap: students miscalculate the new object distance. The Defeat: Old distance: u1 = -30 cm. New distance: shifted towards means it is closer, so u2 = -(30-10) = -20 cm. Tip: always find the focal length (f) from the first scenario first, as it stays constant for the second scenario."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics"
 }

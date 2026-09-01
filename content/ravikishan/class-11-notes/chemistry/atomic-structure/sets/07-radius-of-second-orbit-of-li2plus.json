@@ -1,13 +1,30 @@
 {
-  "title": "Q (worked example): Calculate the radius of the electron in the 2nd orbit of a Li²⁺ ion",
+  "title": "Q (worked example): Calculate the radius of the electron in the 2nd orbit of a LiÂ²âº ion",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 78,
   "notes": [
-    "Bohr radius formula: r_n = (0.529 Å)·n²/Z, where n = orbit number and Z = atomic number",
-    "For Li²⁺: Z = 3, n = 2",
-    "r₂ = 0.529 × (2²)/3 = 0.529 × 4/3 = 2.116/3",
-    "**Answer: r₂ ≈ 0.705 Å**"
-  ]
+    "Bohr radius formula: r_n = (0.529 Ã…)Â·nÂ²/Z, where n = orbit number and Z = atomic number",
+    "For LiÂ²âº: Z = 3, n = 2",
+    "râ‚‚ = 0.529 Ã— (2Â²)/3 = 0.529 Ã— 4/3 = 2.116/3",
+    "**Answer: râ‚‚ â‰ˆ 0.705 Ã…**"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

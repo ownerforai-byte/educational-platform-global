@@ -1,0 +1,32 @@
+{
+  "title": "Derivation of Pressure Exerted by Gas",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "derivation-of-pressure-exerted-by-gas",
+  "topicTitle": "Derivation of pressure exerted by gas",
+  "relevance": 100,
+  "notes": [
+    "**Setup:** consider a cubical container of side $L$ containing $N$ molecules of mass $m$.",
+    "**Momentum change per collision:** a molecule with $x$-component of velocity $v_x$ rebounds with $-v_x$, so momentum change is $2mv_x$.",
+    "**Time between collisions:** the molecule travels distance $2L$ between successive wall collisions, taking time $\\Delta t = 2L/v_x$.",
+    "**Force from one molecule:** $F = \\frac{\\Delta p}{\\Delta t} = \\frac{2mv_x}{2L/v_x} = \\frac{mv_x^2}{L}$.",
+    "**Pressure:** $P = \\frac{F}{A} = \\frac{mv_x^2}{L^3} = \\frac{mv_x^2}{V}$. Averaging over all molecules gives $P = \\frac{Nm\\langle v_x^2 \\rangle}{V}$.",
+    "**Final result:** using $\\langle v_x^2 \\rangle = \\frac{1}{3}\\langle v^2 \\rangle$, we get $PV = \\frac{1}{3}Nm\\langle v^2 \\rangle = \\frac{2}{3}N\\langle K \\rangle$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "ideal-gas",
+  "motionGraphics": "ideal-gas"
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Trigonometric Equations and General Values",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometric-equations-and-general-values",
+  "topicTitle": "Trigonometric equations and general values",
+  "relevance": 100,
+  "notes": [
+    "**General solution:** because trigonometric functions are periodic, equations have infinitely many solutions. The general solution gives all possible solutions using an integer parameter $n$.",
+    "**Basic forms:** $\\sin\\theta = 0 \\Rightarrow \\theta = n\\pi$; $\\cos\\theta = 0 \\Rightarrow \\theta = (2n+1)\\pi/2$; $\\tan\\theta = 0 \\Rightarrow \\theta = n\\pi$.",
+    "**Squared forms:** $\\sin^2\\theta = \\sin^2\\alpha \\Rightarrow \\theta = n\\pi \\pm \\alpha$; $\\cos^2\\theta = \\cos^2\\alpha \\Rightarrow \\theta = 2n\\pi \\pm \\alpha$; $\\tan^2\\theta = \\tan^2\\alpha \\Rightarrow \\theta = n\\pi \\pm \\alpha$.",
+    "**Why squared forms differ for cos:** cosine is even, so both $\\theta$ and $-\\theta$ give the same cosine value. This halves the period in the general solution.",
+    "**Solving strategy:** isolate the trig function, find the reference angle $\\alpha$, then apply the appropriate general solution form. Always verify with the original equation."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "trigonometry",
+  "motionGraphics": "trigonometry"
+}

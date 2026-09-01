@@ -1,0 +1,31 @@
+{
+  "title": "Achromatism and Its Applications",
+  "unitSlug": "dispersion",
+  "topicSlug": "achromatism-and-its-applications",
+  "topicTitle": "Achromatism and its applications",
+  "relevance": 100,
+  "notes": [
+    "**Achromatic combination:** a convex crown-glass lens paired with a concave flint-glass lens. The crown lens converges all colours; the flint lens diverges more for violet than for red, canceling chromatic spread.",
+    "**Condition for achromatism:** $\\omega_1/f_1 + \\omega_2/f_2 = 0$. Since $\\omega_1$ and $\\omega_2$ are both positive, $f_1$ and $f_2$ must have opposite signs: one converging, one diverging.",
+    "**Result:** two colours (usually red and blue) are brought to the same focus. Intermediate colours are close enough that the image appears colour-free to the eye.",
+    "**Applications:** camera lenses, telescope objectives, microscope objectives all use achromatic doublets or more complex multi-element designs to eliminate chromatic aberration.",
+    "**Apochromatic lenses:** advanced designs that bring three colours to the same focus using special glasses with anomalous dispersion."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion"
+}

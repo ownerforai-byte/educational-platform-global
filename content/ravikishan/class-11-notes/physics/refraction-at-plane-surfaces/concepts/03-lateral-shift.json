@@ -1,0 +1,31 @@
+{
+  "title": "Lateral Shift",
+  "unitSlug": "refraction-at-plane-surfaces",
+  "topicSlug": "lateral-shift",
+  "topicTitle": "Lateral shift",
+  "relevance": 100,
+  "notes": [
+    "**Definition:** when light passes through a parallel-sided glass slab, it emerges parallel to the original direction but displaced sideways. This displacement is the lateral shift.",
+    "**Formula:** $d = t\\frac{\\sin(\\theta_1 - \\theta_2)}{\\cos\\theta_2}$, where $t$ is the slab thickness, $\\theta_1$ is the angle of incidence, and $\\theta_2$ is the angle of refraction.",
+    "**Why the shift:** the ray bends toward the normal on entry and away from the normal on exit. Because the slab faces are parallel, the exit angle equals the entry angle, but the ray inside is displaced sideways.",
+    "**Dependence:** lateral shift increases with slab thickness $t$ and with angle of incidence $\\theta_1$. At normal incidence ($\\theta_1 = 0$), there is no lateral shift.",
+    "**Practical observation:** objects viewed through a thick glass window appear slightly displaced because of this effect."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "refraction-at-plane-surfaces",
+  "motionGraphics": "refraction-at-plane-surfaces"
+}

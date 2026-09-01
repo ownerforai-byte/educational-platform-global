@@ -1,0 +1,32 @@
+{
+  "title": "Solid Friction â€” Laws and Verification",
+  "unitSlug": "dynamics",
+  "topicSlug": "solid-friction-laws-and-verifications",
+  "topicTitle": "Solid friction: laws of solid friction and their verifications",
+  "relevance": 100,
+  "notes": [
+    "**Friction:** the force that opposes relative motion between two surfaces in contact.",
+    "**Coefficient of friction $\\mu$:** $\\mu = F/R$, where $F$ is the limiting frictional force and $R$ is the normal reaction. $\\mu$ has no units.",
+    "**Laws of friction:** (1) friction acts opposite to the direction of impending motion, (2) magnitude of friction equals $\\mu R$, (3) friction is independent of the area of contact, (4) friction depends on the nature of the surfaces.",
+    "**Static vs kinetic friction:** static friction adjusts up to a maximum $\\mu_s R$; kinetic friction is constant at $\\mu_k R$, where typically $\\mu_s > \\mu_k$.",
+    "**Verification of area independence:** for a given normal force, doubling the contact area halves the pressure but leaves the frictional force unchanged because the increased molecular interactions compensate.",
+    "**Rolling friction:** much smaller than sliding friction because rolling deforms surfaces less and the contact time per point is shorter."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dynamics",
+  "motionGraphics": "dynamics"
+}

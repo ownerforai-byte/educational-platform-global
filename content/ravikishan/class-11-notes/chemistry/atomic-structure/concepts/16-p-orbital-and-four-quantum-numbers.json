@@ -5,11 +5,28 @@
   "topicTitle": "Quantum numbers",
   "relevance": 100,
   "notes": [
-    "**p-orbital dumb-bell axes:** each p-orbital is dumb-bell (figure-of-eight) shaped with two lobes on opposite sides of the nucleus, oriented along one of the three cartesian axes — pₓ, pᵧ and p_z — which are mutually perpendicular.",
-    "**Nodal plane zero points:** every p-orbital has a nodal plane through the nucleus where the probability of finding the electron is zero; for pₓ the nodal plane is the yz-plane, and so on.",
+    "**p-orbital dumb-bell axes:** each p-orbital is dumb-bell (figure-of-eight) shaped with two lobes on opposite sides of the nucleus, oriented along one of the three cartesian axes â€” pâ‚“, páµ§ and p_z â€” which are mutually perpendicular.",
+    "**Nodal plane zero points:** every p-orbital has a nodal plane through the nucleus where the probability of finding the electron is zero; for pâ‚“ the nodal plane is the yz-plane, and so on.",
     "**Degenerate energy states:** in a given shell all three p-orbitals have the same energy (they are degenerate); in the absence of a magnetic field they are indistinguishable energetically.",
-    "**Complex d/f shapes:** d-orbitals (l = 2) mostly have four-lobed cloverleaf shapes (with one two-lobed d_z² orbital plus a torus), while f-orbitals (l = 3) have even more complex multi-lobed geometries.",
-    "**Four quantum numbers categorical taxonomy:** every electron is uniquely specified by (1) the principal quantum number n (main energy level/shell), (2) the azimuthal quantum number l (subshell/shape), (3) the magnetic quantum number m (orbital orientation), and (4) the spin quantum number s (+½ or −½, direction of spin).",
+    "**Complex d/f shapes:** d-orbitals (l = 2) mostly have four-lobed cloverleaf shapes (with one two-lobed d_zÂ² orbital plus a torus), while f-orbitals (l = 3) have even more complex multi-lobed geometries.",
+    "**Four quantum numbers categorical taxonomy:** every electron is uniquely specified by (1) the principal quantum number n (main energy level/shell), (2) the azimuthal quantum number l (subshell/shape), (3) the magnetic quantum number m (orbital orientation), and (4) the spin quantum number s (+Â½ or âˆ’Â½, direction of spin).",
     "**Subshell maximum capacities:** s holds 2 electrons, p holds 6, d holds 10, f holds 14."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

@@ -1,0 +1,31 @@
+{
+  "title": "Average Translational Kinetic Energy of Gas Molecule",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "average-translational-kinetic-energy-of-gas-molecule",
+  "topicTitle": "Average translational kinetic energy of gas molecule",
+  "relevance": 100,
+  "notes": [
+    "**Result:** $\\langle K \\rangle = \\frac{3}{2}k_BT = \\frac{3}{2}\\frac{R}{N_A}T$.",
+    "**Per mole:** multiply by Avogadro's number: $K_{mol} = \\frac{3}{2}RT$.",
+    "**Independence of gas type:** the average kinetic energy depends only on temperature, not on the mass or identity of the gas molecules. All gases at the same temperature have the same average translational KE.",
+    "**Root-mean-square speed:** $v_{rms} = \\sqrt{\\langle v^2 \\rangle} = \\sqrt{\\frac{3k_BT}{m}} = \\sqrt{\\frac{3RT}{M}}$. Lighter molecules move faster on average.",
+    "**Why hydrogen escapes Earth:** at room temperature, $v_{rms}$ for H$_2$ is about 1838 m/s, which is above Earth's escape velocity (~1100 m/s at the exobase), so light gases can leak into space."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "ideal-gas",
+  "motionGraphics": "ideal-gas"
+}

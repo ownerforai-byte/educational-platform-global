@@ -1,16 +1,33 @@
 {
-  "title": "Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules",
+  "title": "Bohrâ€“Bury Scheme (1921) â€” Subshell & Shell Capacity Rules",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
   "relevance": 76,
   "notes": [
-    "**Bohr–Bury scheme (1921):** a set of rules for filling electrons into shells and subshells; electrons occupy the lowest available energy levels first (aufbau principle), so the order of filling runs 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p.",
-    "**Maximum shell capacity:** the maximum number of electrons in a shell is 2n² — K: 2, L: 8, M: 18, N: 32.",
+    "**Bohrâ€“Bury scheme (1921):** a set of rules for filling electrons into shells and subshells; electrons occupy the lowest available energy levels first (aufbau principle), so the order of filling runs 1s â†’ 2s â†’ 2p â†’ 3s â†’ 3p â†’ 4s â†’ 3d â†’ 4p â†’ 5s â†’ 4d â†’ 5p â†’ 6s â†’ 4f â†’ 5d â†’ 6p â†’ 7s â†’ 5f â†’ 6d â†’ 7p.",
+    "**Maximum shell capacity:** the maximum number of electrons in a shell is 2nÂ² â€” K: 2, L: 8, M: 18, N: 32.",
     "**Subshell electron capacity:** s holds 2, p holds 6, d holds 10, f holds 14 electrons.",
-    "**Spatial configurations:** each subshell contains a fixed set of orbitals — s: 1, p: 3, d: 5, f: 7 — so a shell of principal quantum number n contains a total of n² orbitals.",
+    "**Spatial configurations:** each subshell contains a fixed set of orbitals â€” s: 1, p: 3, d: 5, f: 7 â€” so a shell of principal quantum number n contains a total of nÂ² orbitals.",
     "**Valence shell limit:** the outermost (valence) shell can hold at most 8 electrons.",
     "**Penultimate shell limit:** the second-outermost (penultimate) shell can hold at most 18 electrons; the third-outermost (antepenultimate) shell at most 32.",
-    "**Concentric capacity rings:** the electrons are distributed in concentric shells (K, L, M, N, …) around the nucleus, each ring accommodating its characteristic maximum."
-  ]
+    "**Concentric capacity rings:** the electrons are distributed in concentric shells (K, L, M, N, â€¦) around the nucleus, each ring accommodating its characteristic maximum."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

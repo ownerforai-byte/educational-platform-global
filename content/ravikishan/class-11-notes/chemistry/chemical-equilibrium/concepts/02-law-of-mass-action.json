@@ -1,0 +1,31 @@
+{
+  "title": "Law of Mass Action and Equilibrium Constant",
+  "unitSlug": "chemical-equilibrium",
+  "topicSlug": "law-of-mass-action",
+  "topicTitle": "Law of mass action",
+  "relevance": 100,
+  "notes": [
+    "**Law of mass action (Guldberg and Waage):** at a constant temperature, the rate of a reaction is proportional to the product of the active masses of the reactants raised to their stoichiometric coefficients.",
+    "**Equilibrium constant $K_c$:** for $aA + bB \\rightleftharpoons cC + dD$, $K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$. Concentrations are equilibrium concentrations in mol/L.",
+    "**Magnitude of $K_c$:** $K_c \\gg 1$ means products dominate (reaction nearly complete). $K_c \\ll 1$ means reactants dominate (reaction barely proceeds).",
+    "**Temperature dependence:** $K_c$ changes only with temperature. A catalyst changes the rate but not $K_c$ because it speeds up both forward and reverse reactions equally.",
+    "**Units:** $K_c$ has units depending on the change in the number of moles of gas: $\\Delta n = (c+d) - (a+b)$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "chemical-equilibrium",
+  "motionGraphics": "chemical-equilibrium"
+}

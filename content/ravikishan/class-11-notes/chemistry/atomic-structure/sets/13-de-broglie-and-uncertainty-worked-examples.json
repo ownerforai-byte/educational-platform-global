@@ -5,9 +5,26 @@
   "topicTitle": "Heisenberg's Uncertainty Principle and concept of probability",
   "relevance": 81,
   "notes": [
-    "**Q1. Calculate the de Broglie wavelength of an electron moving with a velocity of 6.6 × 10⁶ m/s.** Using λ = h/(mv) with h = 6.62 × 10⁻³⁴ J·s, m = 9.1 × 10⁻³¹ kg and v = 6.6 × 10⁶ m/s: λ = 6.62 × 10⁻³⁴ / (9.1 × 10⁻³¹ × 6.6 × 10⁶) = 6.62 × 10⁻³⁴ / 6.006 × 10⁻²⁴ ≈ 1.1 × 10⁻¹⁰ m.",
-    "**Q2. Why is the wave nature of a moving cricket ball (mass ≈ 0.15 kg) not observable?** Using λ = h/(mv), for even a small ball travelling at 30 m/s the wavelength is λ = 6.62 × 10⁻³⁴ / (0.15 × 30) ≈ 1.5 × 10⁻³⁴ m — far smaller than the size of a nucleus and completely unobservable; the wavelength is negligible for macroscopic objects (λ ∝ 1/m).",
-    "**Q3. If the uncertainty in the position of an electron is 10⁻¹⁰ m, what is the minimum uncertainty in its velocity?** Using Δx · Δv ≥ h/(4πm): Δv = 6.62 × 10⁻³⁴ / (4 × 3.14 × 9.1 × 10⁻³¹ × 10⁻¹⁰) = 6.62 × 10⁻³⁴ / 1.143 × 10⁻³⁹ ≈ 5.8 × 10⁵ m/s.",
-    "**Q4. Explain why Bohr's definite orbits contradict the uncertainty principle.** A definite orbit requires both position and momentum to be exactly known at every instant, but Δx · Δp ≥ h/4π forbids simultaneous exact knowledge — so the electron cannot follow a sharply defined circular path."
-  ]
+    "**Q1. Calculate the de Broglie wavelength of an electron moving with a velocity of 6.6 Ã— 10â¶ m/s.** Using Î» = h/(mv) with h = 6.62 Ã— 10â»Â³â´ JÂ·s, m = 9.1 Ã— 10â»Â³Â¹ kg and v = 6.6 Ã— 10â¶ m/s: Î» = 6.62 Ã— 10â»Â³â´ / (9.1 Ã— 10â»Â³Â¹ Ã— 6.6 Ã— 10â¶) = 6.62 Ã— 10â»Â³â´ / 6.006 Ã— 10â»Â²â´ â‰ˆ 1.1 Ã— 10â»Â¹â° m.",
+    "**Q2. Why is the wave nature of a moving cricket ball (mass â‰ˆ 0.15 kg) not observable?** Using Î» = h/(mv), for even a small ball travelling at 30 m/s the wavelength is Î» = 6.62 Ã— 10â»Â³â´ / (0.15 Ã— 30) â‰ˆ 1.5 Ã— 10â»Â³â´ m â€” far smaller than the size of a nucleus and completely unobservable; the wavelength is negligible for macroscopic objects (Î» âˆ 1/m).",
+    "**Q3. If the uncertainty in the position of an electron is 10â»Â¹â° m, what is the minimum uncertainty in its velocity?** Using Î”x Â· Î”v â‰¥ h/(4Ï€m): Î”v = 6.62 Ã— 10â»Â³â´ / (4 Ã— 3.14 Ã— 9.1 Ã— 10â»Â³Â¹ Ã— 10â»Â¹â°) = 6.62 Ã— 10â»Â³â´ / 1.143 Ã— 10â»Â³â¹ â‰ˆ 5.8 Ã— 10âµ m/s.",
+    "**Q4. Explain why Bohr's definite orbits contradict the uncertainty principle.** A definite orbit requires both position and momentum to be exactly known at every instant, but Î”x Â· Î”p â‰¥ h/4Ï€ forbids simultaneous exact knowledge â€” so the electron cannot follow a sharply defined circular path."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

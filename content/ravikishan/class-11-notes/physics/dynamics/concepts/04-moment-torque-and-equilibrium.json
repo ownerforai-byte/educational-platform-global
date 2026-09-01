@@ -1,0 +1,31 @@
+{
+  "title": "Moment, Torque and Equilibrium",
+  "unitSlug": "dynamics",
+  "topicSlug": "moment-torque-and-equilibrium",
+  "topicTitle": "Moment, torque and equilibrium",
+  "relevance": 100,
+  "notes": [
+    "**Moment of a force (torque):** $\\tau = rF\\sin\\theta$, where $r$ is the perpendicular distance from the pivot to the line of action of the force.",
+    "**Vector form:** $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Torque is a vector perpendicular to the plane containing $\\vec{r}$ and $\\vec{F}$.",
+    "**Couple:** two equal and opposite forces whose lines of action do not coincide. A couple produces pure rotation with zero net force.",
+    "**Moment of a couple:** $\\tau = F \\cdot d$, where $d$ is the perpendicular distance between the lines of action. The moment of a couple is the same about any point.",
+    "**Equilibrium conditions:** for a body to be in equilibrium, (1) the vector sum of all forces must be zero, and (2) the vector sum of all torques about any point must be zero."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dynamics",
+  "motionGraphics": "dynamics"
+}

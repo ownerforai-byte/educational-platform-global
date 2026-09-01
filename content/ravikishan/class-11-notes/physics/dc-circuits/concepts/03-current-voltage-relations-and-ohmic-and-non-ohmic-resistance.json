@@ -1,0 +1,31 @@
+{
+  "title": "Current-Voltage Relations and Ohmic/Non-Ohmic Resistance",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "current-voltage-relations-and-ohmic-and-non-ohmic-resistance",
+  "topicTitle": "Current-voltage relations; ohmic and non-ohmic resistance",
+  "relevance": 100,
+  "notes": [
+    "**Ohmic conductor:** obeys Ohm's law. The $I$-$V$ graph is a straight line through the origin. Resistance is constant.",
+    "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.",
+    "**Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature).",
+    "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity. The $I$-$V$ curve bends because $R$ is not constant.",
+    "**Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dc-circuits",
+  "motionGraphics": "dc-circuits"
+}

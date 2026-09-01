@@ -1,0 +1,31 @@
+{
+  "title": "Gravitational Potential and Potential Energy",
+  "unitSlug": "gravitation",
+  "topicSlug": "gravitational-potential-and-potential-energy",
+  "topicTitle": "Gravitational potential; gravitational potential energy",
+  "relevance": 100,
+  "notes": [
+    "**Gravitational potential $V$:** work done per unit mass to bring a test mass from infinity to that point. $V = -G\\frac{M}{r}$.",
+    "**Why negative:** by convention, potential at infinity is zero. Since gravity is attractive, work must be done *against* gravity to move a mass outward, so potential is negative everywhere near a mass.",
+    "**Gravitational potential energy $U$:** $U = mV = -G\\frac{Mm}{r}$. For two masses, this is the energy of the gravitational system.",
+    "**Near Earth's surface approximation:** when $r \\approx R$ (Earth's radius), $U \\approx mgh$, where $h$ is height above the surface. This is valid only for small $h$ compared to $R$.",
+    "**Potential difference:** $\\Delta V = V_b - V_a = -G\\frac{M}{r_b} + G\\frac{M}{r_a}$. Moving from higher $r$ to lower $r$ decreases potential."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation"
+}

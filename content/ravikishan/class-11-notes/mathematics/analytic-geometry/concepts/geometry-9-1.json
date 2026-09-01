@@ -50,7 +50,7 @@
     "$$5(x-y) = \\pm(7x-y+4)$$",
     "<p>Taking (+):</p>",
     "$$5x-5y = 7x-y+4 \\implies 2x+4y+4=0 \\implies x+2y+2=0$$",
-    "<p>Taking (−):</p>",
+    "<p>Taking (âˆ’):</p>",
     "$$5x-5y = -7x+y-4 \\implies 12x-6y+4=0 \\implies 6x-3y+2=0$$",
     "<h3>Solution for ii):</h3>",
     "<p>Rewrite the first equation to make the constant positive: $-x-2y+5=0$. Second equation: $4x+2y+9=0$.</p>",
@@ -59,11 +59,11 @@
     "$$2(-x-2y+5) = \\pm(4x+2y+9)$$",
     "<p>Taking (+):</p>",
     "$$-2x-4y+10 = 4x+2y+9 \\implies 6x+6y-1=0$$",
-    "<p>Taking (−):</p>",
+    "<p>Taking (âˆ’):</p>",
     "$$-2x-4y+10 = -4x-2y-9 \\implies 2x-2y+19=0$$",
     "<p>Check the angle between line 1 (slope $m_1=-\\frac{1}{2}$) and bisector 1 (slope $m=-1$):</p>",
     "$$\\tan\\theta = \\left|\\frac{-1/2-(-1)}{1+(-1/2)(-1)}\\right| = \\left|\\frac{1/2}{3/2}\\right| = \\frac{1}{3} < 1$$",
-    "<p>Since $\\tan\\theta < 1$, $\\theta < 45°$. Thus, $6x+6y-1=0$ is the <b>acute angle bisector</b>.</p>",
+    "<p>Since $\\tan\\theta < 1$, $\\theta < 45Â°$. Thus, $6x+6y-1=0$ is the <b>acute angle bisector</b>.</p>",
     "<h2>Question 6</h2>",
     "<h3>a) Problem</h3>",
     "<p>Are the points $(1, 2)$ and $(-5, 6)$ on the same side or opposite side of the line $3x+5y-8=0$?</p>",
@@ -162,5 +162,22 @@
     "<p>The distance between the new two sides must also be $\\frac{3}{\\sqrt{5}}$:</p>",
     "$$\\frac{|k-0|}{\\sqrt{2^2+(-1)^2}} = \\frac{3}{\\sqrt{5}} \\implies \\frac{|k|}{\\sqrt{5}} = \\frac{3}{\\sqrt{5}} \\implies |k| = 3 \\implies k = \\pm 3$$",
     "<p>The remaining side equations are $2x-y=3$ or $2x-y=-3$.</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry"
 }

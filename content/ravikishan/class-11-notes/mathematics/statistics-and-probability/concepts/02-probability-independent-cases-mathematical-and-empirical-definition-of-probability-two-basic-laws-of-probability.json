@@ -1,0 +1,31 @@
+{
+  "title": "Probability â€” Definitions and Basic Laws",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability",
+  "topicTitle": "Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
+  "relevance": 100,
+  "notes": [
+    "**Mathematical (classical) probability:** $P(E) = \\frac{\\text{number of favourable outcomes}}{\\text{total number of equally likely outcomes}}$. Assumes all outcomes are equally likely.",
+    "**Empirical (statistical) probability:** $P(E) = \\frac{\\text{number of times event occurs}}{\\text{total number of trials}}$. Based on observed frequency.",
+    "**Independent cases:** two events are independent if occurrence of one does not affect probability of the other. $P(A \\cap B) = P(A) \\times P(B)$ for independent events.",
+    "**Addition law:** $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. For mutually exclusive events ($A \\cap B = \\emptyset$): $P(A \\cup B) = P(A) + P(B)$.",
+    "**Multiplication law:** $P(A \\cap B) = P(A) \\times P(B|A)$. For independent events: $P(B|A) = P(B)$, so $P(A \\cap B) = P(A)P(B)$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "statistics-and-probability",
+  "motionGraphics": "statistics-and-probability"
+}

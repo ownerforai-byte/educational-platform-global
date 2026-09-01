@@ -1,12 +1,27 @@
 {
-  "title": "Rutherford's Atomic Model — The Alpha-Particle Scattering Experiment",
+  "title": "Rutherford's Atomic Model â€” The Alpha-Particle Scattering Experiment",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
   "relevance": 87,
   "notes": [
-    "**Experiment:** positively charged helium ions (α-particles) were fired at an ultra-thin gold foil",
-    "**Observation:** most α-particles passed straight through, undeflected",
+    "**Experiment:** positively charged helium ions (Î±-particles) were fired at an ultra-thin gold foil",
+    "**Observation:** most Î±-particles passed straight through, undeflected",
     "**Conclusion:** atoms are mostly empty space, with a tiny, dense, positively charged core called the **nucleus**"
-  ]
+  ],
+  "confusion": [
+    "Rutherford's model placed electrons in orbits like planets, which would cause them to radiate energy and spiral into the nucleus â€” this is why the model was unstable.",
+    "The experiment used gold foil because gold is malleable and can be made extremely thin, increasing the chance of Î±-particle penetration."
+  ],
+  "practice": [
+    "If an Î±-particle of charge $+2e$ approaches a gold nucleus ($Z = 79$) head-on, find the distance of closest approach for kinetic energy $5\\,\\text{MeV}$.",
+    "Why was a thin foil used in Rutherford's experiment? What would happen with a thick foil?"
+  ],
+  "universalFacts": [
+    "Rutherford's experiment proved that the atom has a dense, positively charged nucleus.",
+    "The size of the nucleus is about $10^{-15}\\,\\text{m}$ while the atom is about $10^{-10}\\,\\text{m}$ â€” the atom is 100,000 times larger than its nucleus.",
+    "Most of the atom is empty space."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

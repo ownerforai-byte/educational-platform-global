@@ -10,5 +10,22 @@
     "**Co-planar vectors**: vectors that lie in the same plane.",
     "**Null (zero) vector**: a vector with zero magnitude, $\\vec{R}=0$. Its direction is indeterminate.",
     "**Unit vector**: a vector having unit magnitude (1) but retaining a direction; used to denote direction only. Denoted with a cap/hat overhead, e.g. $\\hat{A}$. Along the x, y, z axes the standard unit vectors are $\\hat{i}, \\hat{j}, \\hat{k}$."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

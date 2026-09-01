@@ -1,5 +1,5 @@
 {
-  "title": "Law of Triangle of Vectors — Statement and Derivation",
+  "title": "Law of Triangle of Vectors â€” Statement and Derivation",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
@@ -12,6 +12,23 @@
     "Expanding: $R^2 = P^2 + 2P(Q\\cos\\theta) + Q^2\\cos^2\\theta + Q^2\\sin^2\\theta = P^2 + Q^2 + 2PQ\\cos\\theta$ (using $\\sin^2\\theta+\\cos^2\\theta=1$).",
     "**Magnitude of resultant**: $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$.",
     "**Direction**: in right triangle $ADC$, $\\tan\\alpha = \\dfrac{DC}{AD} = \\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}$, so $\\alpha = \\tan^{-1}\\!\\left(\\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}\\right)$, where $\\alpha$ is the angle the resultant makes with $\\vec{P}$.",
-    "**Special cases**: (i) $\\theta=0°$ → $R=P+Q$ (maximum), $\\alpha=0$. (ii) $\\theta=90°$ → $R=\\sqrt{P^2+Q^2}$, $\\tan\\alpha=Q/P$. (iii) $\\theta=180°$ → $R=P-Q$ (minimum), resultant acts along the larger vector."
-  ]
+    "**Special cases**: (i) $\\theta=0Â°$ â†’ $R=P+Q$ (maximum), $\\alpha=0$. (ii) $\\theta=90Â°$ â†’ $R=\\sqrt{P^2+Q^2}$, $\\tan\\alpha=Q/P$. (iii) $\\theta=180Â°$ â†’ $R=P-Q$ (minimum), resultant acts along the larger vector."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

@@ -385,5 +385,22 @@
     "<p><b>Applying the Expelled-Percentage Formula</b> $\\left(1-\\dfrac{T_1}{T_2}\\right)\\times100\\%$:</p>",
     "$$0.3975 = 1 - \\frac{300}{T_2} \\implies T_2 = \\frac{300}{0.6025} \\approx 497.9 \\text{ K} \\ (224.9^\\circ C)$$",
     "<p><b>Result:</b> Percentage of air expelled = 39.75%.</p>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "stoichiometry",
+  "motionGraphics": "stoichiometry"
 }

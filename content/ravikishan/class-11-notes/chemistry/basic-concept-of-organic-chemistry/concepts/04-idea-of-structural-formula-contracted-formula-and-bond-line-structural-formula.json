@@ -1,0 +1,31 @@
+{
+  "title": "Structural Formula, Contracted Formula and Bond Line Notation",
+  "unitSlug": "basic-concept-of-organic-chemistry",
+  "topicSlug": "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
+  "topicTitle": "Idea of structural formula, contracted formula and bond line structural formula",
+  "relevance": 100,
+  "notes": [
+    "**Structural formula:** shows all atoms and all bonds. Complete but verbose: $CH_3-CH_2-CH_2-CH_3$ for butane.",
+    "**Condensed formula:** groups atoms bonded to the same carbon together. $CH_3CH_2CH_2CH_3$.",
+    "**Bond line notation:** carbon atoms are implied at line ends and vertices; hydrogens are omitted except where needed for functional groups. Each vertex represents a carbon with enough hydrogens to make four bonds.",
+    "**Example:** bond line for butane is a simple zigzag of four vertices. For isobutane, a three-carbon chain with a methyl branch at the middle carbon.",
+    "**Functional group priority:** when drawing bond lines, functional groups must be explicit. OH, COOH, $NH_2$ are always shown."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "basic-concept-of-organic-chemistry",
+  "motionGraphics": "basic-concept-of-organic-chemistry"
+}

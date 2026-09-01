@@ -1,0 +1,31 @@
+{
+  "title": "Ohm's Law, Resistance, Resistivity and Conductivity",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "ohm-s-law-electrical-resistance-resistivity-conductivity",
+  "topicTitle": "Ohm's law; electrical resistance; resistivity; conductivity",
+  "relevance": 100,
+  "notes": [
+    "**Ohm's law:** $V = IR$. The current through a conductor is directly proportional to the potential difference across it, provided temperature and other physical conditions are constant.",
+    "**Resistance $R$:** opposition to current flow. $R = V/I$. Units: ohm ($\\Omega$).",
+    "**Resistivity $\\rho$:** intrinsic property of the material. $R = \\rho L/A$, where $L$ is length and $A$ is cross-sectional area.",
+    "**Conductivity $\\sigma$:** reciprocal of resistivity. $\\sigma = 1/\\rho$. Units: S/m.",
+    "**Temperature dependence:** for metals, $\\rho = \\rho_0[1 + \\alpha(T - T_0)]$, where $\\alpha$ is the temperature coefficient of resistance. Resistance increases with temperature because lattice vibrations scatter electrons more."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dc-circuits",
+  "motionGraphics": "dc-circuits"
+}

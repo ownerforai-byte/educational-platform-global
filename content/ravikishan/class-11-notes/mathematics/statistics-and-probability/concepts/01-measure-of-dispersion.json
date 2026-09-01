@@ -1,0 +1,31 @@
+{
+  "title": "Measures of Dispersion",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "measure-of-dispersion",
+  "topicTitle": "Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness",
+  "relevance": 100,
+  "notes": [
+    "**Range:** maximum minus minimum. Simple but ignores all data between extremes.",
+    "**Variance $\\sigma^2$:** average of squared deviations from mean. $\\sigma^2 = \\frac{\\sum (x_i - \\bar{x})^2}{N}$ for population; $s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n-1}$ for sample.",
+    "**Standard deviation $\\sigma$:** square root of variance. Has same units as original data, making it interpretable.",
+    "**Coefficient of variation (CV):** $CV = \\frac{\\sigma}{\\bar{x}} \\times 100\\%$. Dimensionless measure of relative dispersion. Useful for comparing variability of datasets with different means or units.",
+    "**Skewness:** measures asymmetry of distribution. Karl Pearson's coefficient: $Sk_p = \\frac{3(\\bar{x} - \\text{median})}{\\sigma}$. Positive skew means tail to right; negative skew means tail to left."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "statistics-and-probability",
+  "motionGraphics": "statistics-and-probability"
+}

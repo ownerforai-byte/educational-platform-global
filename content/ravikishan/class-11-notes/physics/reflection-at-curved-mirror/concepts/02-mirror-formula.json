@@ -1,0 +1,31 @@
+{
+  "title": "Mirror Formula",
+  "unitSlug": "reflection-at-curved-mirror",
+  "topicSlug": "mirror-formula",
+  "topicTitle": "Mirror formula",
+  "relevance": 100,
+  "notes": [
+    "**Formula:** $\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}$, where $f$ is focal length, $u$ is object distance, $v$ is image distance.",
+    "**Sign convention (New Cartesian):** all distances measured from the pole. Distances in the direction of incident light are positive. For concave mirrors, $f$ and $R$ are positive; for convex mirrors, $f$ and $R$ are negative.",
+    "**Magnification:** $m = -\\frac{v}{u} = \\frac{h_i}{h_o}$. Positive $m$ means upright image; negative $m$ means inverted. $|m| > 1$ means magnified; $|m| < 1$ means diminished.",
+    "**Relation $f = R/2$:** for spherical mirrors, the focal length is exactly half the radius of curvature. This follows from geometry of reflection at a spherical surface.",
+    "**Power of mirror:** $P = -1/f$ (in metres). Concave mirrors have negative power; convex mirrors have positive power. Units: dioptres."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "reflection-at-curved-mirror",
+  "motionGraphics": "reflection-at-curved-mirror"
+}

@@ -5,7 +5,7 @@
   "topicTitle": "Limits5.2",
   "relevance": 55,
   "notes": [
-    "<h2>Limits and Continuity — Exercise 15.2</h2>",
+    "<h2>Limits and Continuity â€” Exercise 15.2</h2>",
     "<h3>Evaluate the following</h3>",
     "<h4>1) Proof</h4>",
     "$$\\lim_{x \\to 0} \\frac{\\sin ax}{x}$$",
@@ -256,5 +256,22 @@
     "$$= \\lim_{x \\to \\pi/2} \\frac{(x-\\pi/2)}{\\log(x-\\pi/2+1)} \\times \\lim_{x \\to \\pi/2} \\frac{-\\sin(x-\\pi/2)}{(x-\\pi/2)}$$",
     "$$= 1 \\times (-1)$$",
     "$$= -1$$"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "calculus",
+  "motionGraphics": "calculus"
 }

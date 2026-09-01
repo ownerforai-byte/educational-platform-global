@@ -1,0 +1,31 @@
+{
+  "title": "Linear Momentum and Impulse",
+  "unitSlug": "dynamics",
+  "topicSlug": "linear-momentum-impulse",
+  "topicTitle": "Linear momentum, impulse",
+  "relevance": 100,
+  "notes": [
+    "**Linear momentum:** $\\vec{p} = m\\vec{v}$. It is a vector quantity pointing in the same direction as velocity.",
+    "**Impulse:** $\\vec{J} = \\vec{F}\\Delta t$. Impulse equals the product of force and the time over which it acts.",
+    "**Impulse-Momentum Theorem:** $\\vec{J} = \\Delta\\vec{p} = \\vec{p}_f - \\vec{p}_i$. The impulse delivered to an object equals the change in its momentum.",
+    "**Why impulse matters:** a large force acting for a short time can produce the same momentum change as a smaller force acting for a longer time. This is why airbags and crumple zones work â€” they increase the impact time, reducing the average force on passengers.",
+    "**Units:** momentum and impulse both have units of $\\text{kg}\\cdot\\text{m/s}$ or $\\text{N}\\cdot\\text{s}$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dynamics",
+  "motionGraphics": "dynamics"
+}

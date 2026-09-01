@@ -5,8 +5,25 @@
   "topicTitle": "Newton's law of cooling",
   "relevance": 100,
   "notes": [
-    "Starting from −mc·(dθ/dt) = K(θ − θ₀), separate variables: dθ/(θ − θ₀) = −(K/mc) dt",
-    "Integrating from θ₁ at t = 0 to θ at time t: ln[(θ − θ₀)/(θ₁ − θ₀)] = −(K/mc)t",
-    "**Result:** θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc) — temperature approaches the surrounding temperature exponentially, never crossing it"
-  ]
+    "Starting from âˆ’mcÂ·(dÎ¸/dt) = K(Î¸ âˆ’ Î¸â‚€), separate variables: dÎ¸/(Î¸ âˆ’ Î¸â‚€) = âˆ’(K/mc) dt",
+    "Integrating from Î¸â‚ at t = 0 to Î¸ at time t: ln[(Î¸ âˆ’ Î¸â‚€)/(Î¸â‚ âˆ’ Î¸â‚€)] = âˆ’(K/mc)t",
+    "**Result:** Î¸ âˆ’ Î¸â‚€ = (Î¸â‚ âˆ’ Î¸â‚€)Â·e^(âˆ’Kt/mc) â€” temperature approaches the surrounding temperature exponentially, never crossing it"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

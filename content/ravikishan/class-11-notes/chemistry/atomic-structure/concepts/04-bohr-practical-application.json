@@ -1,10 +1,27 @@
 {
-  "title": "Bohr's Atomic Model — Practical Application",
+  "title": "Bohr's Atomic Model â€” Practical Application",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
   "relevance": 87,
   "notes": [
-    "Successfully calculates the exact radius of orbits, the velocity of electrons, and the energy of an electron for hydrogen-like (single-electron) species: H, He⁺, Li²⁺"
-  ]
+    "Successfully calculates the exact radius of orbits, the velocity of electrons, and the energy of an electron for hydrogen-like (single-electron) species: H, Heâº, LiÂ²âº"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

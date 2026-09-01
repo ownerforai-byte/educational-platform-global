@@ -1,11 +1,28 @@
 {
-  "title": "Q: Bohr's model works well for hydrogen but fails for helium — why does adding one more electron break the model?",
+  "title": "Q: Bohr's model works well for hydrogen but fails for helium â€” why does adding one more electron break the model?",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
   "relevance": 82,
   "notes": [
-    "Bohr's postulates and resulting equations were derived by balancing the electrostatic attraction between a single electron and the nucleus against the centripetal force needed for circular motion — a clean two-body problem",
-    "With two or more electrons, electron–electron repulsion enters the picture, making it a multi-body problem that Bohr's simple circular-orbit model has no mechanism to account for — this is why it accurately predicts the spectra of H, He⁺, and Li²⁺ (all single-electron species) but not neutral He or heavier atoms"
-  ]
+    "Bohr's postulates and resulting equations were derived by balancing the electrostatic attraction between a single electron and the nucleus against the centripetal force needed for circular motion â€” a clean two-body problem",
+    "With two or more electrons, electronâ€“electron repulsion enters the picture, making it a multi-body problem that Bohr's simple circular-orbit model has no mechanism to account for â€” this is why it accurately predicts the spectra of H, Heâº, and LiÂ²âº (all single-electron species) but not neutral He or heavier atoms"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

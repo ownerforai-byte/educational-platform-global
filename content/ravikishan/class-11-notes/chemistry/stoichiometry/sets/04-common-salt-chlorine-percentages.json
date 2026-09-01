@@ -1,13 +1,30 @@
 {
-  "title": "Q: Two samples of common salt contain different masses of chlorine — show these results agree with the law of constant proportion",
+  "title": "Q: Two samples of common salt contain different masses of chlorine â€” show these results agree with the law of constant proportion",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
   "relevance": 80,
   "notes": [
     "**Data:** 0.25 g of sample 1 contains 0.1518 g of chlorine; 0.24 g of sample 2 contains 0.1458 g of chlorine",
-    "Sample 1: % of chlorine = (0.1518/0.25) × 100 = **60.72%**",
-    "Sample 2: % of chlorine = (0.1458/0.24) × 100 = **60.75%**",
-    "Since the percentage of chlorine is nearly identical in both samples (≈ 60.7%), regardless of sample size, this confirms the **Law of Constant (Definite) Proportion**"
-  ]
+    "Sample 1: % of chlorine = (0.1518/0.25) Ã— 100 = **60.72%**",
+    "Sample 2: % of chlorine = (0.1458/0.24) Ã— 100 = **60.75%**",
+    "Since the percentage of chlorine is nearly identical in both samples (â‰ˆ 60.7%), regardless of sample size, this confirms the **Law of Constant (Definite) Proportion**"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "stoichiometry",
+  "motionGraphics": "stoichiometry"
 }

@@ -5,7 +5,7 @@
   "topicTitle": "Limits5.3",
   "relevance": 55,
   "notes": [
-    "<h2>Limits and Continuity — Theory</h2>",
+    "<h2>Limits and Continuity â€” Theory</h2>",
     "<h3>Right Hand Limit</h3>",
     "<p>A function $f(x)$ is said to have right hand limit $l_1$ at $x=a$ as $x$ approaches $a$ through values greater than $a$ (i.e. $x$ approaches $a$ from right). It is written as:</p>",
     "$$\\lim_{x \\to a^+} f(x) = l_1$$",
@@ -163,5 +163,22 @@
     "<p>We know, $\\lim_{x \\to 3} f(x) = f(3)$:</p>",
     "$$12 = k$$",
     "$$\\therefore k = 12$$"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "calculus",
+  "motionGraphics": "calculus"
 }

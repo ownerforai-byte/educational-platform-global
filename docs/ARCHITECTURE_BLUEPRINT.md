@@ -1,7 +1,7 @@
 # 🧭 Architecture Blueprint — ravikishan (educational-platform-global)
 
 > **Auto-generated** — do not edit by hand. Regenerate with `npm run blueprint` (runs automatically on every commit via the pre-commit hook).
-> Generated: 2026-08-31
+> Generated: 2026-09-01
 
 <!-- BLUEPRINT:START -->
 ```text
@@ -176,6 +176,7 @@ ravikishan/
 │   │   │   ├── math-motion-3d.tsx
 │   │   │   ├── math-series-lab.tsx
 │   │   │   ├── MindMap.tsx
+│   │   │   ├── motion-graphics.tsx
 │   │   │   ├── physics-3d-atomic-symbols.tsx
 │   │   │   ├── physics-3d-elasticity-gas.tsx
 │   │   │   ├── physics-3d-electricity-i.tsx
@@ -311,6 +312,7 @@ ravikishan/
 │   │   ├── data-loader.ts
 │   │   ├── hast-util-from-html-isomorphic.js
 │   │   ├── imported-notes.ts
+│   │   ├── lab-annotations.ts
 │   │   ├── lab-learning-class11.ts
 │   │   ├── lab-learning.ts
 │   │   ├── lab-registry.tsx
@@ -323,6 +325,7 @@ ravikishan/
 │   │   ├── queries.ts
 │   │   ├── syllabus-history.ts
 │   │   ├── syllabus.ts
+│   │   ├── topic-3d-map.ts
 │   │   ├── utils.ts
 │   │   └── webgl.ts
 │   ├── providers/

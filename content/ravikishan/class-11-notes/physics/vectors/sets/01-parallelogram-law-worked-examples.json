@@ -1,11 +1,28 @@
 {
-  "title": "Parallelogram Law — Worked Examples",
+  "title": "Parallelogram Law â€” Worked Examples",
   "unitSlug": "vectors",
   "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
   "topicTitle": "Triangle, parallelogram and polygon laws of vectors",
   "relevance": 74,
   "notes": [
-    "**Q1. Two equal vectors have a resultant equal in magnitude to either vector. Find the angle between them.** Let $P=Q=x$ and $R=x$. Then $x^2=x^2+x^2+2x^2\\cos\\theta \\Rightarrow \\cos\\theta=-\\tfrac12 \\Rightarrow \\theta=120°$.",
+    "**Q1. Two equal vectors have a resultant equal in magnitude to either vector. Find the angle between them.** Let $P=Q=x$ and $R=x$. Then $x^2=x^2+x^2+2x^2\\cos\\theta \\Rightarrow \\cos\\theta=-\\tfrac12 \\Rightarrow \\theta=120Â°$.",
     "**Q2. Two equal vectors are inclined at angle $\\theta$ to each other. Show that the angle $\\alpha$ between the resultant and each vector is $\\theta/2$.** With $P=Q$: $\\tan\\alpha=\\dfrac{Q\\sin\\theta}{Q+Q\\cos\\theta}=\\dfrac{\\sin\\theta}{1+\\cos\\theta}$. Using half-angle identities $\\sin\\theta=2\\sin(\\theta/2)\\cos(\\theta/2)$ and $1+\\cos\\theta=2\\cos^2(\\theta/2)$, this simplifies to $\\tan\\alpha=\\tan(\\theta/2)$, so $\\alpha=\\theta/2$."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

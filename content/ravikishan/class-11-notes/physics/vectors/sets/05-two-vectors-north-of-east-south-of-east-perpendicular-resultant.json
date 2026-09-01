@@ -5,7 +5,24 @@
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
-    "**If two vectors of equal magnitude 2 m act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=2\\,\\text{m}$, $\\theta=90°$: $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{2^2+2^2+0}=\\sqrt8=2\\sqrt2\\,\\text{m}$.",
-    "Direction: $\\tan\\alpha=B/A=1 \\Rightarrow \\alpha=45°$, i.e. the resultant lies exactly midway between the two original vectors (e.g. if one points north-of-east and the other south-of-east, the resultant points due east)."
-  ]
+    "**If two vectors of equal magnitude 2 m act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=2\\,\\text{m}$, $\\theta=90Â°$: $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{2^2+2^2+0}=\\sqrt8=2\\sqrt2\\,\\text{m}$.",
+    "Direction: $\\tan\\alpha=B/A=1 \\Rightarrow \\alpha=45Â°$, i.e. the resultant lies exactly midway between the two original vectors (e.g. if one points north-of-east and the other south-of-east, the resultant points due east)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

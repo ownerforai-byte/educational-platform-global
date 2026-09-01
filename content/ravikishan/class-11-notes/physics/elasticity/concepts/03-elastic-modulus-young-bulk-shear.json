@@ -1,0 +1,31 @@
+{
+  "title": "Elastic Moduli â€” Young, Bulk, Shear",
+  "unitSlug": "elasticity",
+  "topicSlug": "elastic-modulus-young-bulk-shear",
+  "topicTitle": "Elastic modulus: Young modulus, bulk modulus, shear modulus",
+  "relevance": 100,
+  "notes": [
+    "**Young modulus $Y$:** ratio of tensile stress to tensile strain. $Y = \\frac{\\sigma}{\\epsilon} = \\frac{F/A}{\\Delta L/L} = \\frac{FL}{A\\Delta L}$. Measures stiffness in stretching/compressing.",
+    "**Bulk modulus $K$:** ratio of volumetric stress to volumetric strain. $K = -\\frac{\\Delta P}{\\Delta V/V}$. The negative sign ensures $K$ is positive because volume decreases under pressure.",
+    "**Shear modulus $\\eta$:** ratio of shear stress to shear strain. $\\eta = \\frac{F/A}{\\theta}$ where $\\theta$ is the angular deformation in radians.",
+    "**Relative magnitudes:** for most solids, $Y$ is largest because volume is harder to change than shape, and shape is harder to change than length.",
+    "**Practical values:** steel has $Y \\approx 2 \\times 10^{11}\\,\\text{Pa}$, rubber has $Y \\approx 10^6\\,\\text{Pa}$. Steel is about 100,000 times stiffer in tension than rubber."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "elasticity",
+  "motionGraphics": "elasticity"
+}

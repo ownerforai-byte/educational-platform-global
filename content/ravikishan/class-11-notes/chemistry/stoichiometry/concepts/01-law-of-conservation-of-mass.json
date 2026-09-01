@@ -1,11 +1,28 @@
 {
-  "title": "Law of Conservation of Mass — Statement",
+  "title": "Law of Conservation of Mass â€” Statement",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
   "relevance": 80,
   "notes": [
-    "**Statement:** matter (mass) can neither be created nor destroyed in a chemical reaction — the total mass of the reactants equals the total mass of the products",
+    "**Statement:** matter (mass) can neither be created nor destroyed in a chemical reaction â€” the total mass of the reactants equals the total mass of the products",
     "This is why chemical equations must be balanced: the same total mass, and the same number of each type of atom, must appear on both sides"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "stoichiometry",
+  "motionGraphics": "stoichiometry"
 }

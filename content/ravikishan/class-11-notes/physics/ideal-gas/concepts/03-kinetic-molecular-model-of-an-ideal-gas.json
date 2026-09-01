@@ -1,0 +1,30 @@
+{
+  "title": "Kinetic-Molecular Model of an Ideal Gas",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "kinetic-molecular-model-of-an-ideal-gas",
+  "topicTitle": "Kinetic-molecular model of an ideal gas",
+  "relevance": 100,
+  "notes": [
+    "**Postulates:** (1) gas consists of a large number of identical molecules in random motion, (2) molecular volume is negligible compared to container volume, (3) no intermolecular forces except during collisions, (4) collisions are perfectly elastic, (5) collision duration is negligible compared to time between collisions.",
+    "**Pressure origin:** pressure arises from molecules colliding with the container walls. Each collision delivers a tiny impulse; the average over many molecules gives measurable pressure.",
+    "**Temperature and kinetic energy:** the average translational kinetic energy per molecule is $\\langle K \\rangle = \\frac{3}{2}k_BT$. Temperature is a direct measure of average molecular kinetic energy.",
+    "**Why temperature cannot be negative:** kinetic energy is always positive, so absolute temperature $T$ must be $\\geq 0$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "ideal-gas",
+  "motionGraphics": "ideal-gas"
+}

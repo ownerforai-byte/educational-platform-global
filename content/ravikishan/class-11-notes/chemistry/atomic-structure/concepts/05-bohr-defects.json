@@ -1,5 +1,5 @@
 {
-  "title": "Bohr's Atomic Model — Defects",
+  "title": "Bohr's Atomic Model â€” Defects",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
@@ -7,5 +7,22 @@
   "notes": [
     "Failed to predict the spectra of multi-electron atoms, such as Helium or Carbon",
     "Could not explain the splitting of spectral lines under a magnetic field (**Zeeman Effect**) or an electric field (**Stark Effect**)"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

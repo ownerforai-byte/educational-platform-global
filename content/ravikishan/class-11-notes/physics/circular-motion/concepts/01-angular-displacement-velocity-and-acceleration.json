@@ -1,0 +1,31 @@
+{
+  "title": "Angular Displacement, Velocity and Acceleration",
+  "unitSlug": "circular-motion",
+  "topicSlug": "angular-displacement-velocity-and-acceleration",
+  "topicTitle": "Angular displacement, velocity and acceleration",
+  "relevance": 100,
+  "notes": [
+    "**Angular displacement $\\theta$:** the angle through which a point on a rotating body moves, measured in radians. $\\theta = s/r$, where $s$ is arc length and $r$ is radius.",
+    "**Angular velocity $\\omega$:** rate of change of angular displacement. $\\omega = d\\theta/dt$. Units: rad/s.",
+    "**Angular acceleration $\\alpha$:** rate of change of angular velocity. $\\alpha = d\\omega/dt$. Units: rad/s$^2$.",
+    "**Connection to linear motion:** $v = r\\omega$ and $a_t = r\\alpha$, where $v$ is tangential speed and $a_t$ is tangential acceleration.",
+    "**Direction:** angular velocity and acceleration are vectors along the axis of rotation, given by the right-hand rule."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "circular-motion",
+  "motionGraphics": "circular-motion"
+}

@@ -1,13 +1,30 @@
 {
-  "title": "Specific Heat Capacity (c) — Definition & Key Values",
+  "title": "Specific Heat Capacity (c) â€” Definition & Key Values",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
   "topicTitle": "Measurement of specific heat capacity of solids and liquids",
   "relevance": 80,
   "notes": [
-    "**Formula:** H = m·c·Δθ",
-    "**Definition:** Setting m = 1 and Δθ = 1 gives c = H, so specific heat capacity is the heat energy required to raise the temperature of a unit mass of a substance by 1°C (or 1 K)",
-    "**Water:** c = 1 cal/g°C (CGS) = 4200 J/kg·K (SI) — unusually high, which is why water resists temperature change and is used as a coolant",
-    "**Ice:** c = 0.5 cal/g°C (CGS) = 2100 J/kg·K (SI)"
-  ]
+    "**Formula:** H = mÂ·cÂ·Î”Î¸",
+    "**Definition:** Setting m = 1 and Î”Î¸ = 1 gives c = H, so specific heat capacity is the heat energy required to raise the temperature of a unit mass of a substance by 1Â°C (or 1 K)",
+    "**Water:** c = 1 cal/gÂ°C (CGS) = 4200 J/kgÂ·K (SI) â€” unusually high, which is why water resists temperature change and is used as a coolant",
+    "**Ice:** c = 0.5 cal/gÂ°C (CGS) = 2100 J/kgÂ·K (SI)"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

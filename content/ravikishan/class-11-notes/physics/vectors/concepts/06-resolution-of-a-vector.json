@@ -10,5 +10,22 @@
     "**Derivation**: let $\\vec{R}$ act at a point making angle $\\theta$ with the x-axis. Complete parallelogram $OACB$ with $OA$ along the x-axis and $OC$ along the y-axis. By the law of triangle, $\\vec{OA}+\\vec{OC}=\\vec{OD}$, i.e. $\\vec{R_x}+\\vec{R_y}=\\vec{R}$, so $\\vec{R}=R_x\\hat{i}+R_y\\hat{j}$.",
     "In right triangle $OAB$: $\\cos\\theta=OA/AB \\Rightarrow OA=AB\\cos\\theta \\Rightarrow R_x=R\\cos\\theta$. Also $\\sin\\theta=OC/OB \\Rightarrow R_y=R\\sin\\theta$.",
     "Combining: **magnitude** $R=\\sqrt{R_x^2+R_y^2}$, **direction** $\\tan\\theta=R_y/R_x$."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

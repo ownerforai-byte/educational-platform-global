@@ -1,12 +1,29 @@
 {
-  "title": "Newton's Law of Cooling — Identical Cooling Conditions",
+  "title": "Newton's Law of Cooling â€” Identical Cooling Conditions",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
   "relevance": 100,
   "notes": [
-    "If two different bodies (masses m₁, m₂; specific heat capacities c₁, c₂) are cooled under identical conditions — same surface area, material texture, and temperature difference from the surroundings — their **rate of heat loss** is equal:",
-    "(m₁c₁·dθ/dt)₁ = (m₂c₂·dθ/dt)₂ --- (Equation 4)",
-    "Equal rate of heat loss does NOT mean equal rate of temperature fall — the body with the lower m·c value shows a faster dθ/dt"
-  ]
+    "If two different bodies (masses mâ‚, mâ‚‚; specific heat capacities câ‚, câ‚‚) are cooled under identical conditions â€” same surface area, material texture, and temperature difference from the surroundings â€” their **rate of heat loss** is equal:",
+    "(mâ‚câ‚Â·dÎ¸/dt)â‚ = (mâ‚‚câ‚‚Â·dÎ¸/dt)â‚‚ --- (Equation 4)",
+    "Equal rate of heat loss does NOT mean equal rate of temperature fall â€” the body with the lower mÂ·c value shows a faster dÎ¸/dt"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

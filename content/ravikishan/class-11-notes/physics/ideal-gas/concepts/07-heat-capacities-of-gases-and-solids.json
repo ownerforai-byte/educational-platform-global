@@ -1,0 +1,31 @@
+{
+  "title": "Heat Capacities of Gases and Solids",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "heat-capacities-of-gases-and-solids",
+  "topicTitle": "Heat capacities of gases and solids",
+  "relevance": 100,
+  "notes": [
+    "**Molar heat capacity at constant volume $C_V$:** heat required to raise 1 mole of gas by 1 K at fixed volume. For monatomic gases: $C_V = \\frac{3}{2}R$.",
+    "**Molar heat capacity at constant pressure $C_P$:** heat required at fixed pressure. $C_P = C_V + R$ because the gas must do expansion work against the external pressure.",
+    "**Diatomic gases:** at ordinary temperatures, $C_V = \\frac{5}{2}R$ and $C_P = \\frac{7}{2}R$ because rotational modes are also active. At high temperatures, vibrational modes contribute further.",
+    "**Dulong-Petit law:** the molar heat capacity of most solid elements at room temperature is about $3R \\approx 25\\,\\text{J/mol}\\cdot\\text{K}$. This comes from 3 quadratic degrees of freedom per atom (one for each axis), each contributing $k_B$ per atom or $R$ per mole.",
+    "**Why solids have similar $C$:** despite different atomic masses and stiffness, all solids have the same number of atoms per mole, and each atom contributes equally to heat capacity at high temperature."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "ideal-gas",
+  "motionGraphics": "ideal-gas"
+}

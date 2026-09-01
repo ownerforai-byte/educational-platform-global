@@ -1,13 +1,30 @@
 {
-  "title": "Q: Equal-mass aluminium and copper spheres — which cools faster?",
+  "title": "Q: Equal-mass aluminium and copper spheres â€” which cools faster?",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "specific-latent-heat-of-fusion-and-vaporization",
   "topicTitle": "Specific latent heat of fusion and vaporization",
   "relevance": 74,
   "notes": [
-    "**Setup:** aluminium (c = 900 J/kg·K) and copper (c = 390 J/kg·K) spheres of equal mass are heated to the same temperature and cooled under identical conditions",
-    "Identical conditions ⇒ same rate of heat loss (dH/dt) for both spheres at a given instant, by Newton's Law of Cooling",
-    "But −dH/dt = mc·(dθ/dt), so dθ/dt = (dH/dt)/(mc) — for the same dH/dt, a smaller c gives a larger dθ/dt",
-    "**Answer: Copper (lower c) cools faster** — its temperature falls more quickly even though it isn't losing heat energy any faster than the aluminium sphere"
-  ]
+    "**Setup:** aluminium (c = 900 J/kgÂ·K) and copper (c = 390 J/kgÂ·K) spheres of equal mass are heated to the same temperature and cooled under identical conditions",
+    "Identical conditions â‡’ same rate of heat loss (dH/dt) for both spheres at a given instant, by Newton's Law of Cooling",
+    "But âˆ’dH/dt = mcÂ·(dÎ¸/dt), so dÎ¸/dt = (dH/dt)/(mc) â€” for the same dH/dt, a smaller c gives a larger dÎ¸/dt",
+    "**Answer: Copper (lower c) cools faster** â€” its temperature falls more quickly even though it isn't losing heat energy any faster than the aluminium sphere"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

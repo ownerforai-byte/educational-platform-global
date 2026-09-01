@@ -1,0 +1,31 @@
+{
+  "title": "Work and Power in Electrical Circuits",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "work-and-power-in-electrical-circuits",
+  "topicTitle": "Work and power in electrical circuits",
+  "relevance": 100,
+  "notes": [
+    "**Electrical work:** $W = VIt = I^2Rt = V^2t/R$. Work done by a current is the energy transferred.",
+    "**Electrical power:** $P = VI = I^2R = V^2/R$. Power is the rate of energy transfer.",
+    "**Joule heating:** $P = I^2R$ is the power dissipated as heat in a resistor. This is also called $I^2R$ loss.",
+    "**Kilowatt-hour:** unit of electrical energy. $1\\,\\text{kWh} = 3.6 \\times 10^6\\,\\text{J}$. This is what electricity meters measure.",
+    "**Efficiency:** useful power output divided by total power input. Transmission lines use high voltage to reduce $I^2R$ losses because $P_{loss} \\propto I^2$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "dc-circuits",
+  "motionGraphics": "dc-circuits"
+}

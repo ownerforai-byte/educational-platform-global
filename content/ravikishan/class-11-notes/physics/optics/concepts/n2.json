@@ -49,5 +49,22 @@
     "<table><tr><th>When the question says...</th><th>Physical Concept</th><th>Mathematical Value / Sign Hint</th></tr><tr><td>\"Magnified\" / \"Enlarged\"</td><td>Image is bigger than object</td><td>Size</td></tr><tr><td>\"Diminished\"</td><td>Image is smaller than object</td><td>Size</td></tr><tr><td>\"Same size\"</td><td>Image equals object size</td><td>Size</td></tr><tr><td>\"Magnified and Erect\"</td><td>Big and upright</td><td>Concave mirror only. m = +n (Standard) or m = −n (RIP)</td></tr><tr><td>\"Magnified and Inverted\"</td><td>Big and upside down</td><td>Concave mirror only. m = −n (Standard) or m = +n (RIP)</td></tr><tr><td>\"Diminished and Erect\"</td><td>Small and upright</td><td>Convex mirror only. m = +n (Standard) or m = −n (RIP)</td></tr><tr><td>\"n times\"</td><td>Scale factor of size</td><td>Provides the value of magnification (m)</td></tr></table>",
     "<h3>5. Advanced Relative Distance Phrases</h3>",
     "<table><tr><th>When the question says...</th><th>Physical Concept</th><th>Mathematical Value / Sign Hint</th></tr><tr><td>\"Distance between object and image\"</td><td>Space separating the two</td><td>|v − u| = given distance</td></tr><tr><td>\"Distance between object and focus\"</td><td>Space between object and F</td><td>|u − f| = given distance</td></tr><tr><td>\"Distance between image and focus\"</td><td>Space between image and F</td><td>|v − f| = given distance</td></tr><tr><td>\"Image coincides with object\"</td><td>Image forms exactly where object is</td><td>Only at Center of Curvature (v = u = 2f)</td></tr></table>"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics"
 }

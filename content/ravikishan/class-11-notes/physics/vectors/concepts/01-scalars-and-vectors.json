@@ -9,5 +9,22 @@
     "**Scalar quantity**: a physical quantity having only magnitude, no direction. Examples: distance, speed, mass, density. Scalars obey the ordinary rules of algebra and are denoted by any ordinary letter.",
     "**Vector quantity**: a physical quantity defined by both magnitude and direction, which must obey the law of vector addition (triangle law) / vector algebra. Examples: displacement, velocity, force, acceleration.",
     "Vectors obey vector rules and are represented by a letter with an arrow overhead, e.g. $\\vec{A}$."
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
 }

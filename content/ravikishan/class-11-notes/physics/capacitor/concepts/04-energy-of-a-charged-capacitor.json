@@ -1,0 +1,31 @@
+{
+  "title": "Energy of a Charged Capacitor",
+  "unitSlug": "capacitor",
+  "topicSlug": "energy-of-a-charged-capacitor",
+  "topicTitle": "Energy of charged capacitor",
+  "relevance": 100,
+  "notes": [
+    "**Energy stored:** $U = \\frac{1}{2}CV^2 = \\frac{Q^2}{2C} = \\frac{1}{2}QV$.",
+    "**Source of energy:** the energy comes from the work done by the battery in moving charge from one plate to the other against the increasing potential difference.",
+    "**Derivation:** $dW = V\\,dQ = (Q/C)\\,dQ$. Integrating from $Q=0$ to $Q$ gives $W = \\int_0^Q \\frac{Q}{C}\\,dQ = \\frac{Q^2}{2C}$.",
+    "**Energy density:** $u = \\frac{U}{Ad} = \\frac{1}{2}\\epsilon_0 E^2$. Energy is stored in the electric field throughout the volume between the plates.",
+    "**Why factor 1/2:** because the potential difference is not constant while charging; it starts at zero and rises to $V$, so the average voltage during charging is $V/2$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "capacitor",
+  "motionGraphics": "capacitor"
+}

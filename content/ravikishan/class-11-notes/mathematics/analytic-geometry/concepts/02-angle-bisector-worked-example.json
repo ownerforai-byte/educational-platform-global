@@ -1,14 +1,31 @@
 {
-  "title": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
+  "title": "Angle Bisector â€” Worked Example (aâ‚aâ‚‚ + bâ‚bâ‚‚ method)",
   "unitSlug": "analytic-geometry",
   "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
   "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
   "relevance": 73,
   "notes": [
-    "**Coefficients:** a₁ = −1, b₁ = −2, a₂ = 4, b₂ = 2 (constant terms already made positive)",
-    "**Step:** a₁a₂ + b₁b₂ = (−1)(4) + (−2)(2) = −4 − 4 = **−8**",
-    "Since the result is negative, the (+) sign bisector is acute and the (−) sign bisector is obtuse",
-    "**Acute Bisector (+ sign):** 6x + 6y − 1 = 0",
-    "**Obtuse Bisector (− sign):** 2x − 2y + 19 = 0"
-  ]
+    "**Coefficients:** aâ‚ = âˆ’1, bâ‚ = âˆ’2, aâ‚‚ = 4, bâ‚‚ = 2 (constant terms already made positive)",
+    "**Step:** aâ‚aâ‚‚ + bâ‚bâ‚‚ = (âˆ’1)(4) + (âˆ’2)(2) = âˆ’4 âˆ’ 4 = **âˆ’8**",
+    "Since the result is negative, the (+) sign bisector is acute and the (âˆ’) sign bisector is obtuse",
+    "**Acute Bisector (+ sign):** 6x + 6y âˆ’ 1 = 0",
+    "**Obtuse Bisector (âˆ’ sign):** 2x âˆ’ 2y + 19 = 0"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry"
 }

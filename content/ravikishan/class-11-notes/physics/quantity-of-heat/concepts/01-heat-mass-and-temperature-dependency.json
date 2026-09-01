@@ -1,12 +1,29 @@
 {
-  "title": "Heat (H) — Mass and Temperature Dependency",
+  "title": "Heat (H) â€” Mass and Temperature Dependency",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "specific-latent-heat-of-fusion-and-vaporization",
   "topicTitle": "Specific latent heat of fusion and vaporization",
   "relevance": 79,
   "notes": [
-    "**Mass Dependency:** Heat absorbed/released (H) is directly proportional to mass (m): H ∝ m",
-    "**Temperature Dependency:** H is directly proportional to the change in temperature (Δθ): H ∝ Δθ, where Δθ = θ₂ − θ₁ (final − initial)",
-    "**Combined relation:** H ∝ m·Δθ → introducing specific heat capacity (s or c) as the constant of proportionality gives **H = m·c·Δθ**"
-  ]
+    "**Mass Dependency:** Heat absorbed/released (H) is directly proportional to mass (m): H âˆ m",
+    "**Temperature Dependency:** H is directly proportional to the change in temperature (Î”Î¸): H âˆ Î”Î¸, where Î”Î¸ = Î¸â‚‚ âˆ’ Î¸â‚ (final âˆ’ initial)",
+    "**Combined relation:** H âˆ mÂ·Î”Î¸ â†’ introducing specific heat capacity (s or c) as the constant of proportionality gives **H = mÂ·cÂ·Î”Î¸**"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

@@ -5,8 +5,25 @@
   "topicTitle": "Measurement of specific heat capacity of solids and liquids",
   "relevance": 77,
   "notes": [
-    "Because heat lost = heat gained depends on the m·c product of each body, not just its temperature",
-    "**General result:** θₘ = (m₁c₁θ₁ + m₂c₂θ₂)/(m₁c₁ + m₂c₂) — a weighted average, weighted by each body's heat capacity",
-    "It only reduces to a simple average of θ₁ and θ₂ in the special case where m₁c₁ = m₂c₂"
-  ]
+    "Because heat lost = heat gained depends on the mÂ·c product of each body, not just its temperature",
+    "**General result:** Î¸â‚˜ = (mâ‚câ‚Î¸â‚ + mâ‚‚câ‚‚Î¸â‚‚)/(mâ‚câ‚ + mâ‚‚câ‚‚) â€” a weighted average, weighted by each body's heat capacity",
+    "It only reduces to a simple average of Î¸â‚ and Î¸â‚‚ in the special case where mâ‚câ‚ = mâ‚‚câ‚‚"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

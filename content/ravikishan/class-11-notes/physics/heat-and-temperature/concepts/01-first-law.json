@@ -6,8 +6,25 @@
   "relevance": 83,
   "notes": [
     "The first law of thermodynamics states that energy can neither be created nor destroyed; it can only be transformed from one form to another.",
-    "For a system undergoing a change: ΔU = Q − W, where ΔU is the change in internal energy, Q is the heat supplied to the system and W is the work done by the system.",
+    "For a system undergoing a change: Î”U = Q âˆ’ W, where Î”U is the change in internal energy, Q is the heat supplied to the system and W is the work done by the system.",
     "This law is essentially the law of conservation of energy applied to thermodynamic systems.",
-    "ADDED LINE: A cyclic process returns the system to its initial state, so ΔU = 0 and Q = W."
-  ]
+    "ADDED LINE: A cyclic process returns the system to its initial state, so Î”U = 0 and Q = W."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature"
 }

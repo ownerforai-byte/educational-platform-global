@@ -1,0 +1,31 @@
+{
+  "title": "Ideal Gas Equation",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "ideal-gas-equation",
+  "topicTitle": "Ideal gas equation",
+  "relevance": 100,
+  "notes": [
+    "**Ideal gas:** a theoretical gas whose molecules have negligible volume and no intermolecular forces.",
+    "**Combining laws:** Boyle's law ($PV = \\text{const}$ at constant $T$), Charles's law ($V/T = \\text{const}$ at constant $P$), and Avogadro's law ($V/n = \\text{const}$ at constant $P,T$) combine into $PV = nRT$.",
+    "**Universal gas constant:** $R = 8.314\\,\\text{J/mol}\\cdot\\text{K}$. It is the same for all ideal gases.",
+    "**Alternative forms:** $PV = Nk_BT$, where $N$ is the number of molecules and $k_B = R/N_A = 1.38 \\times 10^{-23}\\,\\text{J/K}$ is the Boltzmann constant.",
+    "**Real gases:** deviate from ideal behaviour at high pressure and low temperature, where molecular volume and intermolecular forces become significant."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "ideal-gas",
+  "motionGraphics": "ideal-gas"
+}

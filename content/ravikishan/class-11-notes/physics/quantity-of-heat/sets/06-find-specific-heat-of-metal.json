@@ -5,11 +5,28 @@
   "topicTitle": "Measurement of specific heat capacity of solids and liquids",
   "relevance": 87,
   "notes": [
-    "**Setup:** a 200 g metal piece at 100°C is dropped into 500 g of water at 25°C (calorimeter heat capacity negligible). Final temperature is 30°C. (c_water = 4200 J/kg·K)",
+    "**Setup:** a 200 g metal piece at 100Â°C is dropped into 500 g of water at 25Â°C (calorimeter heat capacity negligible). Final temperature is 30Â°C. (c_water = 4200 J/kgÂ·K)",
     "By the principle of calorimetry: Heat lost by metal = Heat gained by water",
-    "m_metal·c_metal·(100 − 30) = m_water·c_water·(30 − 25)",
-    "0.2 × c × 70 = 0.5 × 4200 × 5",
+    "m_metalÂ·c_metalÂ·(100 âˆ’ 30) = m_waterÂ·c_waterÂ·(30 âˆ’ 25)",
+    "0.2 Ã— c Ã— 70 = 0.5 Ã— 4200 Ã— 5",
     "14c = 10500",
-    "**Answer: c = 750 J/kg·K**"
-  ]
+    "**Answer: c = 750 J/kgÂ·K**"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

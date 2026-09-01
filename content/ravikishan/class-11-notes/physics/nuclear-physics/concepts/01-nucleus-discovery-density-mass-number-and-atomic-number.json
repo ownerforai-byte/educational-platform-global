@@ -1,0 +1,31 @@
+{
+  "title": "Nucleus â€” Discovery, Density and Composition",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nucleus-discovery-density-mass-number-and-atomic-number",
+  "topicTitle": "Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+  "relevance": 100,
+  "notes": [
+    "**Rutherford's discovery (1911):** $\\alpha$-particle scattering experiment showed that atoms have a tiny, dense, positively charged nucleus.",
+    "**Nuclear density:** nearly constant for all nuclei, about $2.3 \\times 10^{17}\\,\\text{kg/m}^3$. This is because the radius scales as $R = R_0 A^{1/3}$, so volume scales as $A$, keeping density constant.",
+    "**Mass number $A$:** total number of protons and neutrons. Symbol: $^A_ZX$.",
+    "**Atomic number $Z$:** number of protons. Determines the element and its chemical properties.",
+    "**Neutron number $N$:** $N = A - Z$. Neutrons add mass and nuclear strong force without adding Coulomb repulsion."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "nuclear-physics",
+  "motionGraphics": "nuclear-physics"
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, Suspense } from "react";
+import React, { useState, useMemo, Suspense, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -27,6 +27,7 @@ import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver"
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 import { getSubjectSyllabus } from "@/lib/syllabus";
+import { useSearchParams } from "next/navigation";
 
 const CLASS_OPTIONS = [
   { value: "class-11-notes", label: "Class 11" },
@@ -269,11 +270,13 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
 function LabDashboard({
   _classSlug,
   subjectSlug,
+  initialLabId,
 }: {
   _classSlug: string;
   subjectSlug: string;
+  initialLabId?: string | null;
 }) {
-  const [activeLab, setActiveLab] = useState<string | null>(null);
+  const [activeLab, setActiveLab] = useState<string | null>(initialLabId ?? null);
   const [typeFilter, setTypeFilter] = useState<"3d" | "theory" | "calculator">("3d");
 
   // Get labs for the selected subject only
@@ -432,11 +435,13 @@ function LabContent({
   subjectSlug,
   onClassChange,
   onSubjectChange,
+  initialLabId,
 }: {
   classSlug: string;
   subjectSlug: string;
   onClassChange: (value: string) => void;
   onSubjectChange: (value: string) => void;
+  initialLabId?: string | null;
 }) {
   const subjects = SUBJECT_OPTIONS[classSlug] || [];
 
@@ -483,15 +488,45 @@ function LabContent({
         </div>
       </div>
 
-      <LabDashboard _classSlug={classSlug} subjectSlug={subjectSlug} />
+      <LabDashboard _classSlug={classSlug} subjectSlug={subjectSlug} initialLabId={initialLabId} />
       <SyllabusViewer classSlug={classSlug} subjectSlug={subjectSlug} />
     </div>
   );
 }
 
 function LabPageInner() {
+  const searchParams = useSearchParams();
+  const topicParam = searchParams.get("topic");
+  const motionParam = searchParams.get("motion");
   const [classSlug, setClassSlug] = useState("class-11-notes");
   const [subjectSlug, setSubjectSlug] = useState("mathematics");
+
+  const categoryMap: Record<string, LabCategory> = {
+    physics: "physics",
+    chemistry: "chemistry",
+    biology: "biology",
+    mathematics: "mathematics",
+  };
+
+  const initialLabId = useMemo(() => {
+    if (topicParam) {
+      const categoryKeys = Object.keys(categoryMap);
+      for (const cat of categoryKeys) {
+        const labs = LABS_BY_SUBJECT[categoryMap[cat]] ?? [];
+        const match = labs.find((l) => l.id.includes(topicParam) || topicParam.includes(l.id));
+        if (match) return match.id;
+      }
+    }
+    if (motionParam) {
+      const categoryKeys = Object.keys(categoryMap);
+      for (const cat of categoryKeys) {
+        const labs = LABS_BY_SUBJECT[categoryMap[cat]] ?? [];
+        const match = labs.find((l) => l.id.includes(motionParam) || motionParam.includes(l.id));
+        if (match) return match.id;
+      }
+    }
+    return null;
+  }, [topicParam, motionParam]);
 
   return (
     <LabContent
@@ -499,6 +534,7 @@ function LabPageInner() {
       subjectSlug={subjectSlug}
       onClassChange={setClassSlug}
       onSubjectChange={setSubjectSlug}
+      initialLabId={initialLabId}
     />
   );
 }
@@ -515,3 +551,4 @@ export default function LabPage() {
     </Suspense>
   );
 }
+

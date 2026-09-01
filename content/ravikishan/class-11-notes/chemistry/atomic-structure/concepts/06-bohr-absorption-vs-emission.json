@@ -1,5 +1,5 @@
 {
-  "title": "Bohr's Atomic Model — Absorption vs Emission",
+  "title": "Bohr's Atomic Model â€” Absorption vs Emission",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
@@ -8,5 +8,22 @@
     "While an electron stays within a single stationary orbit, it neither gains nor loses energy",
     "**Jumping up** to an outer (higher-energy) track = absorbing energy",
     "**Dropping down** to an inner (lower-energy) track = releasing energy as a flash of light (a photon)"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure"
 }

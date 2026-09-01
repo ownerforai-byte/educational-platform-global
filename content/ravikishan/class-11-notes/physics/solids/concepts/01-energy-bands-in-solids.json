@@ -1,0 +1,31 @@
+{
+  "title": "Energy Bands in Solids",
+  "unitSlug": "solids",
+  "topicSlug": "energy-bands-in-solids",
+  "topicTitle": "Energy bands in solids (qualitative ideas)",
+  "relevance": 100,
+  "notes": [
+    "**Band formation:** in isolated atoms, electrons occupy discrete energy levels. When atoms form a solid, the large number of atoms causes levels to split into closely spaced bands.",
+    "**Valence band:** the highest energy band that contains electrons at absolute zero. It is formed from the valence shell orbitals of the constituent atoms.",
+    "**Conduction band:** the next higher band, empty at absolute zero. Electrons in this band are free to move and conduct electricity.",
+    "**Band gap $E_g$:** the energy difference between the top of the valence band and the bottom of the conduction band. It determines whether a solid is a metal, insulator, or semiconductor.",
+    "**Forbidden gap:** no electron can have an energy within the band gap. It is a range of forbidden energies."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "solids",
+  "motionGraphics": "solids"
+}

@@ -1,5 +1,5 @@
 {
-  "title": "Newton's Law of Cooling — Purpose & Real-World Applications",
+  "title": "Newton's Law of Cooling â€” Purpose & Real-World Applications",
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
@@ -10,5 +10,22 @@
     "**Engineering:** designs safe cooling systems for car engines, computers, and nuclear reactors",
     "**Food industry:** determines how quickly cooked food or pasteurized milk must be chilled",
     "**Everyday life:** predicts how long a cup of coffee stays warm in a cold room"
-  ]
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }

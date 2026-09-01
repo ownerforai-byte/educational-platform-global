@@ -1,0 +1,31 @@
+{
+  "title": "Geostationary Satellite",
+  "unitSlug": "gravitation",
+  "topicSlug": "geostationary-satellite",
+  "topicTitle": "Geostationary satellite",
+  "relevance": 100,
+  "notes": [
+    "**Definition:** a satellite that appears fixed over one point on the equator, orbiting Earth in the equatorial plane from west to east with period exactly 24 hours.",
+    "**Three conditions:** (1) orbit in the equatorial plane, (2) period $T = 24$ hours, (3) direction west to east (same as Earth's rotation).",
+    "**Orbital radius:** $r = \\sqrt[3]{\\frac{GM T^2}{4\\pi^2}} \\approx 42,400\\,\\text{km}$ from Earth's centre, or altitude $\\approx 35,800\\,\\text{km}$ above the surface.",
+    "**Why geostationary is useful:** a single satellite at this altitude can monitor weather, relay communications, or broadcast TV over one-third of Earth's surface.",
+    "**Limitation:** only satellites directly above the equator can be geostationary. Satellites at other inclinations cannot remain fixed over one point."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation"
+}

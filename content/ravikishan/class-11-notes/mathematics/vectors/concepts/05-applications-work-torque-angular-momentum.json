@@ -1,0 +1,31 @@
+{
+  "title": "Applications of Vectors â€” Work, Torque and Angular Momentum",
+  "unitSlug": "vectors",
+  "topicSlug": "applications-of-vectors-work-torque-angular-momentum",
+  "topicTitle": "Applications: work, torque, angular momentum",
+  "relevance": 100,
+  "notes": [
+    "**Work:** $W = \\vec{F} \\cdot \\vec{d}$. Dot product gives a scalar measuring energy transfer. Zero work when force is perpendicular to displacement.",
+    "**Torque:** $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Cross product gives a vector representing rotational effect. Magnitude is $rF\\sin\\theta$.",
+    "**Angular momentum:** $\\vec{L} = \\vec{r} \\times \\vec{p} = \\vec{r} \\times m\\vec{v}$. For a particle in circular motion, $L = mvr$ (when $\\vec{r} \\perp \\vec{v}$).",
+    "**Conservation of angular momentum:** when net external torque is zero, $\\vec{L}$ is constant. A skater pulling in arms reduces $r$, so $\\omega$ increases to keep $L$ constant.",
+    "**Why cross product fits rotation:** torque and angular momentum are inherently rotational quantities. The cross product automatically produces a vector perpendicular to the plane of rotation, matching the axis direction given by the right-hand rule."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
+}

@@ -5,8 +5,25 @@
   "topicTitle": "Measurement of specific heat capacity of solids and liquids",
   "relevance": 80,
   "notes": [
-    "Because K and (θ − θ₀) are identical for two bodies cooled under identical conditions, m₁c₁(dθ/dt)₁ = m₂c₂(dθ/dt)₂ lets you find an unknown specific heat capacity **without measuring heat energy in Joules at all**",
-    "**Requires knowing:** the mass and specific heat of a reference liquid — usually water (m₁, c₁); the mass of the unknown liquid (m₂); and both cooling rates (dθ/dt), measured with a stopwatch and thermometer",
-    "**Rearranged formula:** c₂ = [m₁c₁(dθ/dt)₁] / [m₂(dθ/dt)₂]"
-  ]
+    "Because K and (Î¸ âˆ’ Î¸â‚€) are identical for two bodies cooled under identical conditions, mâ‚câ‚(dÎ¸/dt)â‚ = mâ‚‚câ‚‚(dÎ¸/dt)â‚‚ lets you find an unknown specific heat capacity **without measuring heat energy in Joules at all**",
+    "**Requires knowing:** the mass and specific heat of a reference liquid â€” usually water (mâ‚, câ‚); the mass of the unknown liquid (mâ‚‚); and both cooling rates (dÎ¸/dt), measured with a stopwatch and thermometer",
+    "**Rearranged formula:** câ‚‚ = [mâ‚câ‚(dÎ¸/dt)â‚] / [mâ‚‚(dÎ¸/dt)â‚‚]"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat"
 }
