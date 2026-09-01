@@ -9,6 +9,91 @@ import { LimitsContinuityVisual } from "@/components/lab/topic-visuals/limits-co
 import { DerivativeVisual } from "@/components/lab/topic-visuals/derivative-visual";
 import { IntegralAreaVisual } from "@/components/lab/topic-visuals/integral-area";
 import { ComplexQuadraticVisual } from "@/components/lab/topic-visuals/complex-quadratic";
+import { ProjectileMotionVisual } from "@/components/lab/topic-visuals/projectile-motion-3d";
+import { SHMVisual } from "@/components/lab/topic-visuals/shm-spring-3d";
+import { CircularMotionVisual } from "@/components/lab/topic-visuals/circular-motion-3d";
+import { GravitationVisual } from "@/components/lab/topic-visuals/gravitation-orbit-3d";
+import { CapacitorVisual } from "@/components/lab/topic-visuals/capacitor-3d";
+import { DCCircuitsVisual } from "@/components/lab/topic-visuals/dc-circuits-3d";
+import { NuclearPhysicsVisual } from "@/components/lab/topic-visuals/nuclear-physics-3d";
+import { ElectricFieldVisual } from "@/components/lab/topic-visuals/electric-field-3d";
+import { OpticsVisual } from "@/components/lab/topic-visuals/optics-ray-3d";
+import { WaveOpticsVisual } from "@/components/lab/topic-visuals/wave-optics-3d";
+import { EMIInductionVisual } from "@/components/lab/topic-visuals/emi-induction-3d";
+import { ACcircuitsVisual } from "@/components/lab/topic-visuals/ac-circuits-3d";
+import { SemiconductorsVisual } from "@/components/lab/topic-visuals/semiconductors-3d";
+import { CoulombsLawVisual } from "@/components/lab/topic-visuals/coulombs-law-3d";
+import { GaussLawVisual } from "@/components/lab/topic-visuals/gauss-law-3d";
+import { OhmsLawVisual } from "@/components/lab/topic-visuals/ohms-law-3d";
+import { KirchhoffsLawsVisual } from "@/components/lab/topic-visuals/kirchhoffs-laws-3d";
+import { BiotSavartVisual } from "@/components/lab/topic-visuals/biot-savart-3d";
+import { CellBiologyVisual } from "@/components/lab/topic-visuals/cell-biology";
+import { CellDivisionVisual } from "@/components/lab/topic-visuals/cell-division";
+import { FiveKingdomVisual } from "@/components/lab/topic-visuals/five-kingdom";
+import { FungiVisual } from "@/components/lab/topic-visuals/fungi";
+import { AlgaeVisual } from "@/components/lab/topic-visuals/algae";
+import { BryophytaVisual } from "@/components/lab/topic-visuals/bryophyta";
+import { PteridophytaVisual } from "@/components/lab/topic-visuals/pteridophyta";
+import { GymnospermVisual } from "@/components/lab/topic-visuals/gymnosperm";
+import { AngiospermVisual } from "@/components/lab/topic-visuals/angiosperm";
+import { ProtozoaVisual } from "@/components/lab/topic-visuals/protozoa";
+import { EarthwormVisual } from "@/components/lab/topic-visuals/earthworm";
+import { FrogVisual } from "@/components/lab/topic-visuals/frog";
+import { EcosystemVisual } from "@/components/lab/topic-visuals/ecosystem";
+import { BiogeochemicalCyclesVisual } from "@/components/lab/topic-visuals/biogeochemical-cycles";
+import { EvolutionVisual } from "@/components/lab/topic-visuals/evolution";
+import { HumanEvolutionVisual } from "@/components/lab/topic-visuals/human-evolution";
+import { DNAStructureVisual } from "@/components/lab/topic-visuals/dnastucture";
+import { MendelsLawsVisual } from "@/components/lab/topic-visuals/mendels-laws";
+import { ImmuneSystemVisual } from "@/components/lab/topic-visuals/immune-system";
+import { PCRVisual } from "@/components/lab/topic-visuals/pcr";
+import { RestrictionEnzymeVisual } from "@/components/lab/topic-visuals/restriction-enzyme";
+import { LenzLawVisual } from "@/components/lab/topic-visuals/lenz-law-3d";
+import { PhotoelectricEffectVisual } from "@/components/lab/topic-visuals/photoelectric-effect-3d";
+import { BohrModelVisual } from "@/components/lab/topic-visuals/bohr-model-3d";
+import { NuclearFissionVisual } from "@/components/lab/topic-visuals/nuclear-fission-3d";
+import { WaveMotionVisual } from "@/components/lab/topic-visuals/wave-motion-3d";
+import { AtomicStructureVisual } from "@/components/lab/topic-visuals/atomic-structure";
+import { PeriodicTableVisual } from "@/components/lab/topic-visuals/periodic-trends";
+import { ChemicalBondingVisual } from "@/components/lab/topic-visuals/chemical-bonding";
+import { GasLawsVisual } from "@/components/lab/topic-visuals/gas-laws";
+import { EquilibriumVisual } from "@/components/lab/topic-visuals/equilibrium";
+import { CrystalLatticeVisual } from "@/components/lab/topic-visuals/crystal-lattice";
+import { ElectrolysisVisual } from "@/components/lab/topic-visuals/electrolysis";
+import { OrganicMoleculesVisual } from "@/components/lab/topic-visuals/organic-molecules";
+import { BenzeneRingVisual } from "@/components/lab/topic-visuals/benzene-ring";
+import { RaoultLawVisual } from "@/components/lab/topic-visuals/raoult-law";
+import { GalvanicCellVisual } from "@/components/lab/topic-visuals/galvanic-cell";
+import { ReactionKineticsVisual } from "@/components/lab/topic-visuals/reaction-kinetics";
+import { ArrheniusEquationVisual } from "@/components/lab/topic-visuals/arrhenius-equation";
+import { ProteinStructureVisual } from "@/components/lab/topic-visuals/protein-structure";
+import { CoordinationCompoundsVisual } from "@/components/lab/topic-visuals/coordination-compounds";
+import { LogicSetVisual } from "@/components/lab/topic-visuals/logic-set";
+import { RealNumbersVisual } from "@/components/lab/topic-visuals/real-numbers";
+import { FunctionVisual } from "@/components/lab/topic-visuals/function-graphs";
+import { CurveSketchingVisual } from "@/components/lab/topic-visuals/curve-sketching";
+import { SequenceSeriesVisual } from "@/components/lab/topic-visuals/sequence-series";
+import { MatricesDeterminantsVisual } from "@/components/lab/topic-visuals/matrices-determinants";
+import { InverseTrigVisual } from "@/components/lab/topic-visuals/inverse-trig";
+import { TrigEquationsVisual } from "@/components/lab/topic-visuals/trigonometric-eq";
+import { MeasureDispersionVisual } from "@/components/lab/topic-visuals/measure-dispersion";
+import { ProbabilityBasicVisual } from "@/components/lab/topic-visuals/probability-basic";
+import { NumericalComputationVisual } from "@/components/lab/topic-visuals/numerical-computation";
+import { NumericalIntegrationVisual } from "@/components/lab/topic-visuals/numerical-integration";
+import { StaticsVisual } from "@/components/lab/topic-visuals/statics";
+import { DynamicsVisual } from "@/components/lab/topic-visuals/dynamics";
+import { FormationDEVisual } from "@/components/lab/topic-visuals/formation-de";
+import { VariableSeparableDEVisual } from "@/components/lab/topic-visuals/variable-separable-de";
+import { GrowthDecayDEVisual } from "@/components/lab/topic-visuals/growth-decay";
+import { LPPFormulationVisual } from "@/components/lab/topic-visuals/lpp-formulation";
+import { LPPGraphicalVisual } from "@/components/lab/topic-visuals/lpp-graphical";
+import { ConditionalProbabilityVisual } from "@/components/lab/topic-visuals/conditional-prob";
+import { IndependentEventsVisual } from "@/components/lab/topic-visuals/independent-events";
+import { BayesTheoremVisual } from "@/components/lab/topic-visuals/bayes-theorem";
+import { RandomVariableVisual } from "@/components/lab/topic-visuals/random-variable";
+import { MeanVarianceVisual } from "@/components/lab/topic-visuals/mean-variance";
+import { BinomialDistVisual } from "@/components/lab/topic-visuals/binomial-dist";
+import { PoissonDistVisual } from "@/components/lab/topic-visuals/poisson-dist";
 
 type LabComponentMap = Record<string, () => React.ReactNode>;
 
@@ -39,7 +124,7 @@ const PHYSICS_11: LabComponentMap = {
   "relative-velocity": make("relative velocity", "Relative Velocity", "kinematics", "physics"),
   "equation-of-motion-graphical-treatment": make("equation of motion", "Equation of Motion", "kinematics", "physics"),
   "motion-of-a-freely-falling-body": make("freely falling", "Freely Falling Body", "kinematics", "physics"),
-  "projectile-motion-and-its-applications": make("projectile", "Projectile Motion", "kinematics", "physics"),
+  "projectile-motion-and-its-applications": makeTopic(ProjectileMotionVisual, "Projectile Motion"),
   "dynamics": make("dynamics", "Dynamics", "dynamics", "physics"),
   "linear-momentum-impulse": make("momentum", "Linear Momentum and Impulse", "dynamics", "physics"),
   "conservation-of-linear-momentum": make("momentum", "Conservation of Linear Momentum", "dynamics", "physics"),
@@ -53,26 +138,27 @@ const PHYSICS_11: LabComponentMap = {
   "conservation-of-energy": make("conservation of energy", "Conservation of Energy", "work-energy-and-power", "physics"),
   "conservative-and-non-conservative-forces": make("conservative", "Conservative Forces", "work-energy-and-power", "physics"),
   "elastic-and-inelastic-collisions": make("elastic collision", "Elastic and Inelastic Collisions", "work-energy-and-power", "physics"),
-  "circular-motion": make("circular", "Circular Motion", "circular-motion", "physics"),
-  "angular-displacement-velocity-and-acceleration": make("angular", "Angular Motion", "circular-motion", "physics"),
-  "relation-between-angular-and-linear-velocity-and-acceleration": make("angular", "Angular vs Linear", "circular-motion", "physics"),
-  "centripetal-acceleration-and-centripetal-force": make("centripetal", "Centripetal Force", "circular-motion", "physics"),
+  "circular-motion": makeTopic(CircularMotionVisual, "Circular Motion"),
+  "angular-displacement-velocity-and-acceleration": makeTopic(CircularMotionVisual, "Angular Motion"),
+  "relation-between-angular-and-linear-velocity-and-acceleration": makeTopic(CircularMotionVisual, "Angular vs Linear"),
+  "centripetal-acceleration-and-centripetal-force": makeTopic(CircularMotionVisual, "Centripetal Force"),
   "conical-pendulum": make("conical pendulum", "Conical Pendulum", "circular-motion", "physics"),
   "motion-in-a-vertical-circle": make("vertical circle", "Motion in Vertical Circle", "circular-motion", "physics"),
   "applications-of-banking": make("banking", "Banking of Roads", "circular-motion", "physics"),
-  "gravitation": make("gravitation", "Gravitation", "gravitation", "physics"),
-  "newtons-law-of-gravitation": make("newton", "Newton's Law of Gravitation", "gravitation", "physics"),
-  "gravitational-field-strength": make("gravitational", "Gravitational Field", "gravitation", "physics"),
-  "gravitational-potential-gravitational-potential-energy": make("potential", "Gravitational Potential", "gravitation", "physics"),
+  "gravitation": makeTopic(GravitationVisual, "Gravitation"),
+  "newtons-law-of-gravitation": makeTopic(GravitationVisual, "Newton's Law of Gravitation"),
+  "gravitational-field-strength": makeTopic(GravitationVisual, "Gravitational Field"),
+  "gravitational-potential-gravitational-potential-energy": makeTopic(GravitationVisual, "Gravitational Potential"),
   "variation-in-value-of-g-due-to-altitude-and-depth": make("altitude", "Variation of g", "gravitation", "physics"),
   "centre-of-mass-and-centre-of-gravity": make("centre of mass", "Centre of Mass", "gravitation", "physics"),
-  "motion-of-a-satellite-orbital-velocity-and-time-period-of-the-satellite": make("satellite", "Satellite Motion", "gravitation", "physics"),
+  "motion-of-a-satellite-orbital-velocity-and-time-period-of-the-satellite": makeTopic(GravitationVisual, "Satellite Motion"),
   "escape-velocity": make("escape velocity", "Escape Velocity", "gravitation", "physics"),
   "potential-and-kinetic-energy-of-the-satellite": make("satellite", "Satellite Energy", "gravitation", "physics"),
   "geostationary-satellite": make("geostationary", "Geostationary Satellite", "gravitation", "physics"),
   "gps": make("satellite", "GPS", "gravitation", "physics"),
   "elasticity": make("elastic", "Elasticity", "elasticity", "physics"),
-  "hookes-law-force-constant": make("hooke", "Hooke's Law", "elasticity", "physics"),
+  "hookes-law-force-constant": makeTopic(SHMVisual, "Hooke's Law & SHM"),
+  "shm-and-elastic-potential-energy": makeTopic(SHMVisual, "Simple Harmonic Motion"),
   "stress-strain-elasticity-and-plasticity": make("stress", "Stress & Strain", "elasticity", "physics"),
   "elastic-modulus-young-modulus-bulk-modulus-shear-modulus": make("young", "Elastic Modulus", "elasticity", "physics"),
   "poissons-ratio": make("poisson", "Poisson's Ratio", "elasticity", "physics"),
@@ -107,64 +193,63 @@ const PHYSICS_11: LabComponentMap = {
   "average-translational-kinetic-energy-of-gas-molecule": make("kinetic energy", "Translational KE", "ideal-gas", "physics"),
   "boltzmann-constant-root-mean-square-speed": make("boltzmann", "Boltzmann Constant", "ideal-gas", "physics"),
   "heat-capacities-of-gases-and-solids": make("heat capacity", "Heat Capacities", "ideal-gas", "physics"),
-  "reflection-at-curved-mirror": make("mirror", "Reflection at Curved Mirror", "reflection-at-curved-mirror", "physics"),
-  "real-and-virtual-images": make("real", "Real & Virtual Images", "reflection-at-curved-mirror", "physics"),
-  "mirror-formula": make("mirror", "Mirror Formula", "reflection-at-curved-mirror", "physics"),
-  "refraction-at-plane-surfaces": make("refraction", "Refraction at Plane Surfaces", "refraction-at-plane-surfaces", "physics"),
-  "laws-of-refraction-refractive-index": make("refraction", "Laws of Refraction", "refraction-at-plane-surfaces", "physics"),
+  "reflection-at-curved-mirror": makeTopic(OpticsVisual, "Reflection at Curved Mirror"),
+  "real-and-virtual-images": makeTopic(OpticsVisual, "Real & Virtual Images"),
+  "mirror-formula": makeTopic(OpticsVisual, "Mirror Formula"),
+  "refraction-at-plane-surfaces": makeTopic(OpticsVisual, "Refraction at Plane Surfaces"),
+  "laws-of-refraction-refractive-index": makeTopic(OpticsVisual, "Laws of Refraction"),
   "relation-between-refractive-indices": make("refraction", "Refractive Indices", "refraction-at-plane-surfaces", "physics"),
   "lateral-shift": make("lateral shift", "Lateral Shift", "refraction-at-plane-surfaces", "physics"),
-  "total-internal-reflection": make("total internal", "Total Internal Reflection", "refraction-at-plane-surfaces", "physics"),
-  "refraction-through-prisms": make("prism", "Refraction through Prisms", "refraction-through-prisms", "physics"),
-  "minimum-deviation-condition": make("minimum deviation", "Minimum Deviation", "refraction-through-prisms", "physics"),
+  "total-internal-reflection": makeTopic(OpticsVisual, "Total Internal Reflection"),
+  "refraction-through-prisms": makeTopic(OpticsVisual, "Refraction through Prisms"),
+  "minimum-deviation-condition": makeTopic(OpticsVisual, "Minimum Deviation"),
   "relation-between-the-angle-of-prism-minimum-deviation-and-refractive-index": make("prism", "Prism Formula", "refraction-through-prisms", "physics"),
   "deviation-in-small-angle-prism": make("small-angle prism", "Small-Angle Prism", "refraction-through-prisms", "physics"),
-  "lenses": make("lens", "Lenses", "lenses", "physics"),
-  "spherical-lenses-angular-magnification": make("angular magnification", "Spherical Lenses", "lenses", "physics"),
-  "lens-makers-formula": make("lens maker", "Lens Maker's Formula", "lenses", "physics"),
-  "power-of-a-lens": make("power of a lens", "Power of a Lens", "lenses", "physics"),
-  "dispersion": make("dispersive", "Dispersion", "dispersion", "physics"),
+  "lenses": makeTopic(OpticsVisual, "Lenses"),
+  "spherical-lenses-angular-magnification": makeTopic(OpticsVisual, "Spherical Lenses"),
+  "lens-makers-formula": makeTopic(OpticsVisual, "Lens Maker's Formula"),
+  "power-of-a-lens": makeTopic(OpticsVisual, "Power of a Lens"),
+  "dispersion": makeTopic(WaveOpticsVisual, "Dispersion"),
   "pure-spectrum-and-dispersive-power": make("pure spectrum", "Pure Spectrum", "dispersion", "physics"),
   "chromatic-and-spherical-aberration": make("chromatic", "Aberration", "dispersion", "physics"),
   "achromatism-and-its-applications": make("achromatism", "Achromatism", "dispersion", "physics"),
   "electric-charges": make("electric charge", "Electric Charges", "electric-charges", "physics"),
-  "coulombs-law-force-between-two-point-charges": make("coulomb", "Coulomb's Law", "electric-charges", "physics"),
+  "coulombs-law-force-between-two-point-charges": makeTopic(CoulombsLawVisual, "Coulomb's Law"),
   "force-between-multiple-electric-charges": make("coulomb", "Force Between Charges", "electric-charges", "physics"),
   "charging-by-induction": make("induction", "Charging by Induction", "electric-charges", "physics"),
-  "electric-field": make("electric field", "Electric Field", "electric-field", "physics"),
-  "electric-field-due-to-point-charges-field-lines": make("field lines", "Field Lines", "electric-field", "physics"),
-  "gauss-law-electric-flux": make("gauss", "Gauss Law", "electric-field", "physics"),
+  "electric-field": makeTopic(ElectricFieldVisual, "Electric Field"),
+  "electric-field-due-to-point-charges-field-lines": makeTopic(ElectricFieldVisual, "Electric Field Lines"),
+  "gauss-law-electric-flux": makeTopic(GaussLawVisual, "Gauss's Law"),
   "application-of-gauss-law-field-of-a-charge-sphere-and-line-charge-and-charged-plane-conductor": make("gauss", "Gauss Applications", "electric-field", "physics"),
   "potential-potential-difference-and-potential-energy": make("potential", "Potential & Potential Energy", "potential-potential-difference-and-potential-energy", "physics"),
   "potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt": make("potential", "Potential Difference", "potential-potential-difference-and-potential-energy", "physics"),
   "equipotential-lines-and-surfaces": make("equipotential", "Equipotential Surfaces", "potential-potential-difference-and-potential-energy", "physics"),
   "potential-gradient": make("potential gradient", "Potential Gradient", "potential-potential-difference-and-potential-energy", "physics"),
-  "capacitor": make("capacit", "Capacitor", "capacitor", "physics"),
-  "capacitance-and-capacitor": make("capacit", "Capacitance & Capacitor", "capacitor", "physics"),
-  "parallel-plate-capacitor": make("parallel plate", "Parallel Plate Capacitor", "capacitor", "physics"),
+  "capacitor": makeTopic(CapacitorVisual, "Capacitor"),
+  "capacitance-and-capacitor": makeTopic(CapacitorVisual, "Capacitance & Capacitor"),
+  "parallel-plate-capacitor": makeTopic(CapacitorVisual, "Parallel Plate Capacitor"),
   "combination-of-capacitors": make("capacit", "Combination of Capacitors", "capacitor", "physics"),
   "energy-of-a-charged-capacitor": make("capacit", "Energy of a Capacitor", "capacitor", "physics"),
   "effect-of-a-dielectric-polarization-and-displacement": make("dielectric", "Dielectric", "capacitor", "physics"),
-  "dc-circuits": make("circuit", "DC Circuits", "dc-circuits", "physics"),
-  "electric-currents-drift-velocity-and-its-relation-with-current": make("drift velocity", "Drift Velocity", "dc-circuits", "physics"),
-  "ohms-law-electrical-resistance-resistivity-conductivity": make("ohm", "Ohm's Law", "dc-circuits", "physics"),
+  "dc-circuits": makeTopic(DCCircuitsVisual, "DC Circuits"),
+  "electric-currents-drift-velocity-and-its-relation-with-current": makeTopic(DCCircuitsVisual, "Drift Velocity"),
+  "ohms-law-electrical-resistance-resistivity-conductivity": makeTopic(DCCircuitsVisual, "Ohm's Law"),
   "current-voltage-relations-ohmic-and-non-ohmic-resistance": make("ohmic", "Ohmic and Non-ohmic", "dc-circuits", "physics"),
   "resistances-in-series-and-parallel": make("series and parallel", "Series & Parallel", "dc-circuits", "physics"),
   "potential-divider": make("potential divider", "Potential Divider", "dc-circuits", "physics"),
   "electromotive-force-of-a-source-internal-resistance": make("emf", "EMF & Internal Resistance", "dc-circuits", "physics"),
   "work-and-power-in-electrical-circuits": make("power", "Work & Power in Circuits", "dc-circuits", "physics"),
-  "nuclear-physics": make("nuclear", "Nuclear Physics", "nuclear-physics", "physics"),
-  "nucleus-discovery-of-nucleus": make("nucleus", "Discovery of Nucleus", "nuclear-physics", "physics"),
+  "nuclear-physics": makeTopic(NuclearPhysicsVisual, "Nuclear Physics"),
+  "nucleus-discovery-of-nucleus": makeTopic(NuclearPhysicsVisual, "Discovery of Nucleus"),
   "nuclear-density-mass-number-atomic-number": make("nuclear", "Nuclear Density", "nuclear-physics", "physics"),
   "atomic-mass-isotopes": make("isotope", "Atomic Mass & Isotopes", "nuclear-physics", "physics"),
   "einsteins-mass-energy-relation": make("einstein", "Einstein's Mass-Energy Relation", "nuclear-physics", "physics"),
   "mass-defect-packing-factor-binding-energy-per-nucleon": make("binding energy", "Mass Defect", "nuclear-physics", "physics"),
   "creation-and-annihilation": make("creation", "Creation & Annihilation", "nuclear-physics", "physics"),
-  "nuclear-fission-and-fusion": make("fission", "Nuclear Fission & Fusion", "nuclear-physics", "physics"),
-  "solids": make("semiconductor", "Solids", "solids", "physics"),
-  "energy-bands-in-solids-qualitative-ideas": make("energy band", "Energy Bands", "solids", "physics"),
-  "difference-between-metals-insulators-and-semiconductors-using-band-theory": make("semiconductor", "Metals vs Insulators", "solids", "physics"),
-  "intrinsic-and-extrinsic-semiconductors": make("intrinsic", "Intrinsic & Extrinsic Semiconductors", "solids", "physics"),
+  "nuclear-fission-and-fusion": makeTopic(NuclearFissionVisual, "Nuclear Fission & Fusion"),
+  "solids": makeTopic(SemiconductorsVisual, "Solids"),
+  "energy-bands-in-solids-qualitative-ideas": makeTopic(SemiconductorsVisual, "Energy Bands"),
+  "intrinsic-and-extrinsic-semiconductors": makeTopic(SemiconductorsVisual, "Semiconductors"),
   "recent-trends-in-physics": make("particle", "Recent Trends in Physics", "recent-trends-in-physics", "physics"),
   "particle-physics-particles-and-antiparticles-quarks-baryons-and-mesons-and-leptons-neutrinos": make("quark", "Particle Physics", "recent-trends-in-physics", "physics"),
   "universe-big-bang-and-hubble-law-expansion-of-the-universe": make("big bang", "Big Bang & Hubble", "recent-trends-in-physics", "physics"),
@@ -187,56 +272,56 @@ const CHEMISTRY_11: LabComponentMap = {
   "limiting-reactant-and-excess-reactant": make("limiting reactant", "Limiting Reactant", "stoichiometry", "chemistry"),
   "theoretical-yield-experimental-yield-and-yield": make("yield", "Yields", "stoichiometry", "chemistry"),
   "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-problems": make("empirical formula", "Empirical & Molecular Formula", "stoichiometry", "chemistry"),
-  "atomic-structure": make("atom", "Atomic Structure", "atomic-structure", "chemistry"),
-  "rutherfords-atomic-model-and-its-limitations": make("rutherford", "Rutherford's Model", "atomic-structure", "chemistry"),
-  "postulates-of-bohrs-atomic-model-and-its-application": make("bohr", "Bohr's Model", "atomic-structure", "chemistry"),
-  "spectrum-of-hydrogen-atom": make("hydrogen spectrum", "Hydrogen Spectrum", "atomic-structure", "chemistry"),
-  "defects-of-bohrs-theory": make("bohr", "Defects of Bohr's Theory", "atomic-structure", "chemistry"),
-  "elementary-idea-of-quantum-mechanical-model-de-broglies-wave-equation": make("de broglie", "Quantum Mechanical Model", "atomic-structure", "chemistry"),
-  "heisenbergs-uncertainty-principle-and-concept-of-probability": make("uncertainty", "Uncertainty Principle", "atomic-structure", "chemistry"),
-  "quantum-numbers": make("quantum number", "Quantum Numbers", "atomic-structure", "chemistry"),
-  "orbitals-and-shape-of-s-and-p-orbitals-only": make("orbital", "Orbitals", "atomic-structure", "chemistry"),
-  "aufbau-principle-paulis-exclusion-principle-hunds-rule-and-electronic-configurations-of-atoms-and-ions-up-to-atomic-no-30": make("aufbau", "Aufbau Principle", "atomic-structure", "chemistry"),
-  "classification-of-elements-and-periodic-table": make("periodic", "Periodic Table", "classification-of-elements-and-periodic-table", "chemistry"),
-  "modern-periodic-law-and-modern-periodic-table": make("periodic", "Modern Periodic Law", "classification-of-elements-and-periodic-table", "chemistry"),
-  "classification-of-elements-into-different-groups-periods-and-blocks": make("periodic", "Groups Periods Blocks", "classification-of-elements-and-periodic-table", "chemistry"),
-  "iupac-classification-of-elements": make("periodic", "IUPAC Classification", "classification-of-elements-and-periodic-table", "chemistry"),
-  "nuclear-charge-and-effective-nuclear-charge": make("effective nuclear", "Nuclear Charge", "classification-of-elements-and-periodic-table", "chemistry"),
-  "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-electronegativity-metallic-characters-general-trend-and-explanation-only": make("ionization", "Periodic Trends", "classification-of-elements-and-periodic-table", "chemistry"),
-  "chemical-bonding-and-shapes-of-molecules": make("bond", "Chemical Bonding", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "valence-shell-valence-electron-and-octet-theory": make("octet", "Octet Theory", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "ionic-bond-and-its-properties": make("ionic", "Ionic Bond", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": make("covalent", "Covalent Bond", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements": make("lewis", "Lewis Dot Structures", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "resonance": make("resonance", "Resonance", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3": make("vsepr", "VSEPR Theory", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "elementary-idea-of-valence-bond-theory": make("valence bond", "Valence Bond Theory", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "hybridization-involving-s-and-p-orbitals-only": make("hybrid", "Hybridization", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "bond-characteristics-bond-length-ionic-character-dipole-moment": make("dipole", "Bond Characteristics", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "vander-waals-force-and-molecular-solids-hydrogen-bonding-and-its-application": make("hydrogen bond", "Vander Waals & H-bond", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
-  "metallic-bonding-and-properties-of-metallic-solids": make("metallic bond", "Metallic Bonding", "chemical-bonding-and-shapes-of-molecules", "chemistry"),
+  "atomic-structure": makeTopic(AtomicStructureVisual, "Atomic Structure"),
+  "rutherfords-atomic-model-and-its-limitations": makeTopic(AtomicStructureVisual, "Rutherford's Model"),
+  "postulates-of-bohrs-atomic-model-and-its-application": makeTopic(AtomicStructureVisual, "Bohr's Model"),
+  "spectrum-of-hydrogen-atom": makeTopic(AtomicStructureVisual, "Hydrogen Spectrum"),
+  "defects-of-bohrs-theory": makeTopic(AtomicStructureVisual, "Defects of Bohr's Theory"),
+  "elementary-idea-of-quantum-mechanical-model-de-broglies-wave-equation": makeTopic(AtomicStructureVisual, "Quantum Mechanical Model"),
+  "heisenbergs-uncertainty-principle-and-concept-of-probability": makeTopic(AtomicStructureVisual, "Uncertainty Principle"),
+  "quantum-numbers": makeTopic(AtomicStructureVisual, "Quantum Numbers"),
+  "orbitals-and-shape-of-s-and-p-orbitals-only": makeTopic(AtomicStructureVisual, "Orbitals"),
+  "aufbau-principle-paulis-exclusion-principle-hunds-rule-and-electronic-configurations-of-atoms-and-ions-up-to-atomic-no-30": makeTopic(AtomicStructureVisual, "Aufbau Principle"),
+  "classification-of-elements-and-periodic-table": makeTopic(PeriodicTableVisual, "Periodic Table"),
+  "modern-periodic-law-and-modern-periodic-table": makeTopic(PeriodicTableVisual, "Modern Periodic Law"),
+  "classification-of-elements-into-different-groups-periods-and-blocks": makeTopic(PeriodicTableVisual, "Groups Periods Blocks"),
+  "iupac-classification-of-elements": makeTopic(PeriodicTableVisual, "IUPAC Classification"),
+  "nuclear-charge-and-effective-nuclear-charge": makeTopic(PeriodicTableVisual, "Nuclear Charge"),
+  "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-electronegativity-metallic-characters-general-trend-and-explanation-only": makeTopic(PeriodicTableVisual, "Periodic Trends"),
+  "chemical-bonding-and-shapes-of-molecules": makeTopic(ChemicalBondingVisual, "Chemical Bonding"),
+  "valence-shell-valence-electron-and-octet-theory": makeTopic(ChemicalBondingVisual, "Octet Theory"),
+  "ionic-bond-and-its-properties": makeTopic(ChemicalBondingVisual, "Ionic Bond"),
+  "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": makeTopic(ChemicalBondingVisual, "Covalent Bond"),
+  "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements": makeTopic(ChemicalBondingVisual, "Lewis Dot Structures"),
+  "resonance": makeTopic(ChemicalBondingVisual, "Resonance"),
+  "vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3": makeTopic(ChemicalBondingVisual, "VSEPR Theory"),
+  "elementary-idea-of-valence-bond-theory": makeTopic(ChemicalBondingVisual, "Valence Bond Theory"),
+  "hybridization-involving-s-and-p-orbitals-only": makeTopic(ChemicalBondingVisual, "Hybridization"),
+  "bond-characteristics-bond-length-ionic-character-dipole-moment": makeTopic(ChemicalBondingVisual, "Bond Characteristics"),
+  "vander-waals-force-and-molecular-solids-hydrogen-bonding-and-its-application": makeTopic(ChemicalBondingVisual, "Vander Waals & H-bond"),
+  "metallic-bonding-and-properties-of-metallic-solids": makeTopic(ChemicalBondingVisual, "Metallic Bonding"),
   "oxidation-and-reduction": make("oxidation", "Oxidation & Reduction", "oxidation-and-reduction", "chemistry"),
   "general-and-electronic-concept-of-oxidation-and-reduction": make("oxidation", "Concepts of Redox", "oxidation-and-reduction", "chemistry"),
   "oxidation-number-and-rules-for-assigning-oxidation-number": make("oxidation number", "Oxidation Number", "oxidation-and-reduction", "chemistry"),
   "balancing-redox-reactions-by-oxidation-number-and-ion-electron-half-reaction-method": make("redox", "Balancing Redox", "oxidation-and-reduction", "chemistry"),
-  "electrolysis-qualitative-aspect": make("electrolysis", "Electrolysis Qualitative", "oxidation-and-reduction", "chemistry"),
-  "electrolysis-quantitative-aspect-faradays-laws-of-electrolysis": make("faraday", "Faraday's Laws", "oxidation-and-reduction", "chemistry"),
-  "states-of-matter": make("state", "States of Matter", "states-of-matter", "chemistry"),
-  "gaseous-state-kinetic-theory-of-gas-and-its-postulates": make("kinetic theory", "Kinetic Theory", "states-of-matter", "chemistry"),
-  "gas-laws-boyles-law-charles-law-avogadros-law-combined-gas-equation-daltons-law-of-partial-pressure-grahams-law-of-diffusion": make("boyle", "Gas Laws", "states-of-matter", "chemistry"),
-  "ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance": make("ideal gas", "Ideal Gas Equation", "states-of-matter", "chemistry"),
-  "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws": make("ideal gas", "Real Gas Deviation", "states-of-matter", "chemistry"),
-  "liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boiling-point-surface-tension-and-viscosity-qualitative-idea-only": make("vapour pressure", "Liquid Properties", "states-of-matter", "chemistry"),
-  "liquid-crystals-and-their-applications": make("liquid crystal", "Liquid Crystals", "states-of-matter", "chemistry"),
-  "solid-state-types-of-solids-amorphous-and-crystalline-solids": make("amorphous", "Amorphous & Crystalline", "states-of-matter", "chemistry"),
-  "efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-crystallization": make("crystallization", "Crystallization", "states-of-matter", "chemistry"),
-  "introduction-to-unit-crystal-lattice-and-unit-cell": make("unit cell", "Crystal Lattice", "states-of-matter", "chemistry"),
-  "chemical-equilibrium": make("equilibrium", "Chemical Equilibrium", "chemical-equilibrium", "chemistry"),
-  "physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium": make("dynamic", "Dynamic Equilibrium", "chemical-equilibrium", "chemistry"),
-  "law-of-mass-action": make("mass action", "Law of Mass Action", "chemical-equilibrium", "chemistry"),
-  "expression-for-equilibrium-constant-and-its-importance": make("equilibrium", "Equilibrium Constant", "chemical-equilibrium", "chemistry"),
-  "relationship-between-kp-and-kc": make("kp", "Kp and Kc", "chemical-equilibrium", "chemistry"),
-  "le-chateliers-principle-numericals-not-required": make("le chatelier", "Le Chatelier's Principle", "chemical-equilibrium", "chemistry"),
+  "electrolysis-qualitative-aspect": makeTopic(ElectrolysisVisual, "Electrolysis Qualitative"),
+  "electrolysis-quantitative-aspect-faradays-laws-of-electrolysis": makeTopic(ElectrolysisVisual, "Faraday's Laws"),
+  "states-of-matter": makeTopic(GasLawsVisual, "States of Matter"),
+  "gaseous-state-kinetic-theory-of-gas-and-its-postulates": makeTopic(GasLawsVisual, "Kinetic Theory"),
+  "gas-laws-boyles-law-charles-law-avogadros-law-combined-gas-equation-daltons-law-of-partial-pressure-grahams-law-of-diffusion": makeTopic(GasLawsVisual, "Gas Laws"),
+  "ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance": makeTopic(GasLawsVisual, "Ideal Gas Equation"),
+  "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws": makeTopic(GasLawsVisual, "Real Gas Deviation"),
+  "liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boiling-point-surface-tension-and-viscosity-qualitative-idea-only": makeTopic(GasLawsVisual, "Liquid Properties"),
+  "liquid-crystals-and-their-applications": makeTopic(GasLawsVisual, "Liquid Crystals"),
+  "solid-state-types-of-solids-amorphous-and-crystalline-solids": makeTopic(CrystalLatticeVisual, "Amorphous & Crystalline"),
+  "efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-crystallization": makeTopic(CrystalLatticeVisual, "Crystallization"),
+  "introduction-to-unit-crystal-lattice-and-unit-cell": makeTopic(CrystalLatticeVisual, "Crystal Lattice"),
+  "chemical-equilibrium": makeTopic(EquilibriumVisual, "Chemical Equilibrium"),
+  "physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium": makeTopic(EquilibriumVisual, "Dynamic Equilibrium"),
+  "law-of-mass-action": makeTopic(EquilibriumVisual, "Law of Mass Action"),
+  "expression-for-equilibrium-constant-and-its-importance": makeTopic(EquilibriumVisual, "Equilibrium Constant"),
+  "relationship-between-kp-and-kc": makeTopic(EquilibriumVisual, "Kp and Kc"),
+  "le-chateliers-principle-numericals-not-required": makeTopic(EquilibriumVisual, "Le Chatelier's Principle"),
 };
 
 const CHEMISTRY_11_NONMETALS = [
@@ -340,42 +425,42 @@ CHEMISTRY_11_METALS.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "
 CHEMISTRY_11_BIO.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "bio-inorganic" : "metal ion", i === 0 ? "Bio-inorganic Chemistry" : "Bio-inorganic Topic", "bio-inorganic-chemistry", "chemistry"); });
 CHEMISTRY_11_ORGANIC.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "organic" : "tetra-covalency", i === 0 ? "Basic Concept of Organic Chemistry" : "Organic Topic", "basic-concept-of-organic-chemistry", "chemistry"); });
 CHEMISTRY_11_PRINCIPLES.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "iupac" : "isomerism", i === 0 ? "Fundamental Principles of Organic Chemistry" : "Organic Principles Topic", "fundamental-principles-of-organic-chemistry", "chemistry"); });
-CHEMISTRY_11_HYDRO.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "alkane" : "alkene", i === 0 ? "Hydrocarbons" : "Hydrocarbons Topic", "hydrocarbons", "chemistry"); });
-CHEMISTRY_11_AROMATIC.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "aromatic" : "benzene", i === 0 ? "Aromatic Hydrocarbons" : "Aromatic Topic", "aromatic-hydrocarbons", "chemistry"); });
+CHEMISTRY_11_HYDRO.forEach((slug, i) => { CHEMISTRY_11[slug] = makeTopic(OrganicMoleculesVisual, i === 0 ? "Hydrocarbons" : "Hydrocarbons Topic"); });
+CHEMISTRY_11_AROMATIC.forEach((slug, i) => { CHEMISTRY_11[slug] = makeTopic(BenzeneRingVisual, i === 0 ? "Aromatic Hydrocarbons" : "Aromatic Topic"); });
 CHEMISTRY_11_APPLIED.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "applied chemistry" : "continuous processing", i === 0 ? "Applied Chemistry" : "Applied Chemistry Topic", "fundamentals-of-applied-chemistry", "chemistry"); });
 CHEMISTRY_11_MANUFACTURE.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "haber" : "contact process", i === 0 ? "Modern Chemical Manufactures" : "Manufacture Topic", "modern-chemical-manufactures", "chemistry"); });
 
 export { CHEMISTRY_11 };
 
 const BIOLOGY_11: LabComponentMap = {
-  "biomolecules-and-cell-biology": make("biomolecule", "Biomolecules and Cell Biology", "biomolecules-and-cell-biology", "biology"),
-  "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water": make("biomolecule", "Biomolecules", "biomolecules-and-cell-biology", "biology"),
-  "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells": make("cell", "Cell Introduction", "biomolecules-and-cell-biology", "biology"),
-  "detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-reticulum-golgi-bodies-lysosomes-ribosomes-nucleus-chromosomes-cilia-flagella-and-cell-inclusions": make("cell", "Eukaryotic Cell", "biomolecules-and-cell-biology", "biology"),
-  "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-significances": make("mitosis", "Cell Division", "biomolecules-and-cell-biology", "biology"),
-  "floral-diversity": make("floral diversity", "Floral Diversity", "floral-diversity", "biology"),
-  "introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system-monera-protista-fungi-plae-and-animalia": make("five kingdom", "Five Kingdom Classification", "floral-diversity", "biology"),
+  "biomolecules-and-cell-biology": makeTopic(CellBiologyVisual, "Biomolecules & Cell Biology"),
+  "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water": makeTopic(CellBiologyVisual, "Biomolecules"),
+  "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells": makeTopic(CellBiologyVisual, "Cell Introduction"),
+  "detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-reticulum-golgi-bodies-lysosomes-ribosomes-nucleus-chromosomes-cilia-flagella-and-cell-inclusions": makeTopic(CellBiologyVisual, "Eukaryotic Cell"),
+  "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-significances": makeTopic(CellDivisionVisual, "Cell Division"),
+  "floral-diversity": makeTopic(FiveKingdomVisual, "Floral Diversity"),
+  "introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system-monera-protista-fungi-plae-and-animalia": makeTopic(FiveKingdomVisual, "Five Kingdom Classification"),
   "status-of-flora-in-nepal-and-world-representation": make("floral diversity", "Flora in Nepal", "floral-diversity", "biology"),
-  "fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycetes-and-deuteromycetes": make("fungi", "Fungi", "floral-diversity", "biology"),
-  "structure-and-reproduction-of-mucor-and-yeast": make("fungi", "Mucor & Yeast", "floral-diversity", "biology"),
+  "fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycetes-and-deuteromycetes": makeTopic(FungiVisual, "Fungi"),
+  "structure-and-reproduction-of-mucor-and-yeast": makeTopic(FungiVisual, "Mucor & Yeast"),
   "introduction-of-mushrooms-poisonous-and-non-poisonous-mushrooms-economic-importance-of-fungi": make("mushroom", "Mushrooms", "floral-diversity", "biology"),
   "lichen-general-introduction-characteristic-features-and-economic-importance-of-lichen": make("lichen", "Lichen", "floral-diversity", "biology"),
-  "algae-general-introduction-and-characteristic-features-of-green-brown-and-red-algae-structure-and-reproduction-of-spirogyra-economic-importance-of-algae": make("algae", "Algae", "floral-diversity", "biology"),
-  "bryophyta-general-introduction-characteristic-features-of-liverworts-hornworts-and-moss-morphological-structure-and-reproduction-of-marchantia-economic-importance-of-bryophytes": make("bryophyt", "Bryophyta", "floral-diversity", "biology"),
-  "pteridophyta-general-introduction-characteristic-features-of-pteridophytes-morphological-structure-and-reproduction-of-dryopteris-economic-importance-of-pteridophytes": make("pteridophyt", "Pteridophyta", "floral-diversity", "biology"),
-  "gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm": make("gymnosperm", "Gymnosperm", "floral-diversity", "biology"),
-  "angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit": make("angiosperm", "Angiosperm Morphology", "floral-diversity", "biology"),
+  "algae-general-introduction-and-characteristic-features-of-green-brown-and-red-algae-structure-and-reproduction-of-spirogyra-economic-importance-of-algae": makeTopic(AlgaeVisual, "Algae"),
+  "bryophyta-general-introduction-characteristic-features-of-liverworts-hornworts-and-moss-morphological-structure-and-reproduction-of-marchantia-economic-importance-of-bryophytes": makeTopic(BryophytaVisual, "Bryophyta"),
+  "pteridophyta-general-introduction-characteristic-features-of-pteridophytes-morphological-structure-and-reproduction-of-dryopteris-economic-importance-of-pteridophytes": makeTopic(PteridophytaVisual, "Pteridophyta"),
+  "gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm": makeTopic(GymnospermVisual, "Gymnosperm"),
+  "angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit": makeTopic(AngiospermVisual, "Angiosperm Morphology"),
   "taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phylogenetic-of-angiosperms": make("taxonomic", "Taxonomic Study", "floral-diversity", "biology"),
   "angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae": make("angiosperm families", "Angiosperm Families", "floral-diversity", "biology"),
   "introductory-microbiology": make("microbiology", "Introductory Microbiology", "introductory-microbiology", "biology"),
   "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-blue-green-algae": make("monera", "Monera", "introductory-microbiology", "biology"),
   "virus-general-introduction-structure-and-importance-of-virus-bacteriophage": make("virus", "Virus & Bacteriophage", "introductory-microbiology", "biology"),
   "impacts-of-biotechnology-in-the-field-of-microbiology": make("biotechnology", "Biotechnology in Microbiology", "introductory-microbiology", "biology"),
-  "ecology": make("ecosystem", "ecology", "ecology", "biology"),
-  "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions": make("ecosystem", "Ecosystem Ecology", "ecology", "biology"),
-  "concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem": make("pond", "Pond & Forest Ecosystem", "ecology", "biology"),
-  "food-chain-food-web-trophic-level-ecological-pyramids-productivity": make("food chain", "Food Chain & Web", "ecology", "biology"),
-  "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession": make("biogeochemical", "Biogeochemical Cycles", "ecology", "biology"),
+  "ecology": makeTopic(EcosystemVisual, "Ecology"),
+  "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions": makeTopic(EcosystemVisual, "Ecosystem Ecology"),
+  "concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem": makeTopic(EcosystemVisual, "Pond & Forest Ecosystem"),
+  "food-chain-food-web-trophic-level-ecological-pyramids-productivity": makeTopic(EcosystemVisual, "Food Chain & Web"),
+  "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession": makeTopic(BiogeochemicalCyclesVisual, "Biogeochemical Cycles"),
   "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes": make("hydrophyte", "Ecological Adaptation", "ecology", "biology"),
   "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion": make("greenhouse", "Ecological Imbalances", "ecology", "biology"),
   "vegetation": make("vegetation", "Vegetation", "vegetation", "biology"),
@@ -385,11 +470,11 @@ const BIOLOGY_11: LabComponentMap = {
   "introduction-to-biology": make("cell", "Introduction to Biology", "introduction-to-biology", "biology"),
   "introduction-to-biology-scope-and-fields-of-biology": make("cell", "Scope of Biology", "introduction-to-biology", "biology"),
   "relation-of-biology-with-other-sciences": make("cell", "Biology and Other Sciences", "introduction-to-biology", "biology"),
-  "evolutionary-biology": make("evolution", "Evolutionary Biology", "evolutionary-biology", "biology"),
+  "evolutionary-biology": makeTopic(EvolutionVisual, "Evolutionary Biology"),
   "life-and-its-origin-oparin-haldane-theory-miller-and-ureys-experiment": make("oparin", "Origin of Life", "evolutionary-biology", "biology"),
   "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical": make("morphological", "Evidences of Evolution", "evolutionary-biology", "biology"),
   "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism": make("darwinism", "Theories of Evolution", "evolutionary-biology", "biology"),
-  "human-evolution-position-of-man-in-animal-kingdom": make("human evolution", "Human Evolution", "evolutionary-biology", "biology"),
+  "human-evolution-position-of-man-in-animal-kingdom": makeTopic(HumanEvolutionVisual, "Human Evolution"),
   "differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man": make("apes", "Monkeys & Apes", "evolutionary-biology", "biology"),
   "evolution-of-modern-man-starting-from-anthropoid-ancestor": make("anthropoid", "Modern Man", "evolutionary-biology", "biology"),
 };
@@ -424,7 +509,13 @@ const BIOLOGY_11_CONSERVATION = [
   "iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threatened-species",
   "endangered-species-in-nepal",
 ];
-BIOLOGY_11_FAUNAL.forEach((slug, i) => { BIOLOGY_11[slug] = make(i === 0 ? "faunal" : "frog", i === 0 ? "Faunal Diversity" : "Faunal Topic", "faunal-diversity", "biology"); });
+BIOLOGY_11_FAUNAL.forEach((slug, i) => {
+  if (i === 0) BIOLOGY_11[slug] = makeTopic(FiveKingdomVisual, "Faunal Diversity");
+  else if (i === 1 || i === 2) BIOLOGY_11[slug] = makeTopic(ProtozoaVisual, "Protozoa");
+  else if (i >= 6 && i <= 8) BIOLOGY_11[slug] = makeTopic(EarthwormVisual, "Earthworm");
+  else if (i >= 9 && i <= 11) BIOLOGY_11[slug] = makeTopic(FrogVisual, "Frog");
+  else BIOLOGY_11[slug] = make("faunal", "Faunal Topic", "faunal-diversity", "biology");
+});
 BIOLOGY_11_BIOTA.forEach((slug, i) => { BIOLOGY_11[slug] = make(i === 0 ? "biota" : "pollution", i === 0 ? "Biota & Environment" : "Biota Topic", "biota-and-environment", "biology"); });
 BIOLOGY_11_CONSERVATION.forEach((slug, i) => { BIOLOGY_11[slug] = make(i === 0 ? "conservation" : "iucn", i === 0 ? "Conservation Biology" : "Conservation Topic", "conservation-biology", "biology"); });
 
@@ -432,17 +523,17 @@ export { BIOLOGY_11 };
 
 const MATH_11: LabComponentMap = {
   "algebra": make("function", "Algebra", "algebra", "mathematics"),
-  "logic-and-set-statements-logical-connectives-truth-tables-theorems-based-on-set-operations": make("set", "Logic & Sets", "algebra", "mathematics"),
-  "real-numbers-geometric-representation-of-real-numbers-interval-absolute-value": make("real number", "Real Numbers", "algebra", "mathematics"),
-  "function-domain-and-range-of-a-function-inverse-function-composite-function-algebraic-linear-quadratic-and-cubic-and-transcendental-trigonometric-exponential-logarithmic-functions": make("function", "Functions", "algebra", "mathematics"),
-  "curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonicity-graphs-of-quadratic-cubic-and-rational-functions-trigonometric-asinbx-and-acosbx-exponential-ex-lnx": make("curve sketching", "Curve Sketching", "algebra", "mathematics"),
-  "sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-am-gm-hm-and-their-relations-sum-of-infinite-geometric-series": make("sequence", "Sequences & Series", "algebra", "mathematics"),
-  "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-inverse-matrix-determinant-properties-of-determinants-without-proof": make("matrix", "Matrices & Determinants", "algebra", "mathematics"),
+  "logic-and-set-statements-logical-connectives-truth-tables-theorems-based-on-set-operations": makeTopic(LogicSetVisual, "Logic & Sets"),
+  "real-numbers-geometric-representation-of-real-numbers-interval-absolute-value": makeTopic(RealNumbersVisual, "Real Numbers"),
+  "function-domain-and-range-of-a-function-inverse-function-composite-function-algebraic-linear-quadratic-and-cubic-and-transcendental-trigonometric-exponential-logarithmic-functions": makeTopic(FunctionVisual, "Functions"),
+  "curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonicity-graphs-of-quadratic-cubic-and-rational-functions-trigonometric-asinbx-and-acosbx-exponential-ex-lnx": makeTopic(CurveSketchingVisual, "Curve Sketching"),
+  "sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-am-gm-hm-and-their-relations-sum-of-infinite-geometric-series": makeTopic(SequenceSeriesVisual, "Sequences & Series"),
+  "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-inverse-matrix-determinant-properties-of-determinants-without-proof": makeTopic(MatricesDeterminantsVisual, "Matrices & Determinants"),
   "quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficient-formation-of-a-quadratic-equation-symmetric-roots-one-or-both-roots-common": makeTopic(ComplexQuadraticVisual, "Quadratic & Complex"),
   "complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modulus-value-and-conjugate-of-complex-numbers-and-their-properties-square-root-of-a-complex-number": makeTopic(ComplexQuadraticVisual, "Complex Numbers"),
   "trigonometry": make("trigonometric function", "Trigonometry", "trigonometry", "mathematics"),
-  "inverse-circular-functions": make("inverse circular", "Inverse Circular Functions", "trigonometry", "mathematics"),
-  "trigonometric-equations-and-general-values": make("trigonometric equation", "Trigonometric Equations", "trigonometry", "mathematics"),
+  "inverse-circular-functions": makeTopic(InverseTrigVisual, "Inverse Circular Functions"),
+  "trigonometric-equations-and-general-values": makeTopic(TrigEquationsVisual, "Trigonometric Equations"),
   "analytic-geometry": make("straight line", "Analytic Geometry", "analytic-geometry", "mathematics"),
   "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines": makeTopic(StraightLineVisual, "Straight Line"),
   "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines": makeTopic(StraightLineVisual, "Pair of Straight Lines"),
@@ -451,8 +542,8 @@ const MATH_11: LabComponentMap = {
   "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors": makeTopic(VectorOperationsVisual, "Collinear & Coplanar Vectors"),
   "linear-combination-of-vectors-linearly-dependent-and-independent-vectors": makeTopic(VectorOperationsVisual, "Linear Combination"),
   "statistics-and-probability": make("measure of dispersion", "Statistics & Probability", "statistics-and-probability", "mathematics"),
-  "measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearsons-coefficient-of-skewness": make("standard deviation", "Measure of Dispersion", "statistics-and-probability", "mathematics"),
-  "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability-without-proof": make("probability", "Probability", "statistics-and-probability", "mathematics"),
+  "measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearsons-coefficient-of-skewness": makeTopic(MeasureDispersionVisual, "Measure of Dispersion"),
+  "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability-without-proof": makeTopic(ProbabilityBasicVisual, "Probability"),
   "calculus": make("calculus", "Calculus", "calculus", "mathematics"),
   "limits-and-continuity-limits-of-a-function-indeterminate-forms-alal-form-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithal-functions": makeTopic(LimitsContinuityVisual, "Limits"),
   "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function": makeTopic(LimitsContinuityVisual, "Continuity"),
@@ -461,11 +552,11 @@ const MATH_11: LabComponentMap = {
   "geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extreme-values-of-a-function-concavity-points-of-inflexion": makeTopic(DerivativeVisual, "Geometric Interpretation"),
   "anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-methods": makeTopic(IntegralAreaVisual, "Anti-derivatives"),
   "the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-curves": makeTopic(IntegralAreaVisual, "Definite Integrals"),
-  "computational-methods-or-mechanics": make("numerical computation", "Computational Methods", "computational-methods-or-mechanics", "mathematics"),
-  "numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphson-method": make("bisection", "Roots of Equations", "computational-methods-or-mechanics", "mathematics"),
-  "numerical-integration-trapezoidal-rule-and-simpsons-rule": make("trapezoidal", "Numerical Integration", "computational-methods-or-mechanics", "mathematics"),
-  "mechanics-optional-statics-forces-and-resultant-forces-parallelogram-law-of-forces-composition-and-resolution-of-forces-resultant-of-coplanar-forces-acting-on-a-point": make("parallelogram law", "Statics", "computational-methods-or-mechanics", "mathematics"),
-  "mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-acceleration-motion-under-gravity-motion-down-a-smooth-inclined-plane": make("uniform acceleration", "Dynamics", "computational-methods-or-mechanics", "mathematics"),
+  "computational-methods-or-mechanics": makeTopic(NumericalComputationVisual, "Computational Methods"),
+  "numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphson-method": makeTopic(NumericalComputationVisual, "Roots of Equations"),
+  "numerical-integration-trapezoidal-rule-and-simpsons-rule": makeTopic(NumericalIntegrationVisual, "Numerical Integration"),
+  "mechanics-optional-statics-forces-and-resultant-forces-parallelogram-law-of-forces-composition-and-resolution-of-forces-resultant-of-coplanar-forces-acting-on-a-point": makeTopic(StaticsVisual, "Statics"),
+  "mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-acceleration-motion-under-gravity-motion-down-a-smooth-inclined-plane": makeTopic(DynamicsVisual, "Dynamics"),
 };
 
 export { MATH_11 };
@@ -490,37 +581,37 @@ const PHYSICS_12: LabComponentMap = {
   "magnetism-and-magnetic-effect-of-current": make("magnetic", "Magnetism", "magnetism-and-magnetic-effect", "physics"),
   "magnetic-field-and-magnetic-force-on-moving-charges": make("magnetic field", "Magnetic Force", "magnetism-and-magnetic-effect", "physics"),
   "lorentz-force-and-motion-of-charged-particles-in-magnetic-fields": make("lorentz", "Lorentz Force", "magnetism-and-magnetic-effect", "physics"),
-  "biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid": make("biot", "Biot-Savart Law", "magnetism-and-magnetic-effect", "physics"),
+  "biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid": makeTopic(BiotSavartVisual, "Biot-Savart Law"),
   "amperes-circuital-law-and-its-applications": make("ampere", "Ampere's Law", "magnetism-and-magnetic-effect", "physics"),
   "force-between-two-parallel-current-carrying-conductors": make("parallel current", "Force Between Conductors", "magnetism-and-magnetic-effect", "physics"),
   "moving-coil-galvanometer-ammeter-and-voltmeter": make("galvanometer", "Galvanometer", "magnetism-and-magnetic-effect", "physics"),
-  "electromagnetic-induction": make("electromagnetic induction", "Electromagnetic Induction", "electromagnetic-induction", "physics"),
-  "faradays-laws-of-electromagnetic-induction": make("faraday", "Faraday's Laws", "electromagnetic-induction", "physics"),
-  "lenzs-law-and-conservation-of-energy": make("lenz", "Lenz's Law", "electromagnetic-induction", "physics"),
+  "electromagnetic-induction": makeTopic(EMIInductionVisual, "Electromagnetic Induction"),
+  "faradays-laws-of-electromagnetic-induction": makeTopic(EMIInductionVisual, "Faraday's Laws"),
+  "lenzs-law-and-conservation-of-energy": makeTopic(LenzLawVisual, "Lenz's Law"),
   "self-induction-and-self-inductance": make("self-inductance", "Self Induction", "electromagnetic-induction", "physics"),
   "mutual-induction-and-mutual-inductance": make("mutual", "Mutual Induction", "electromagnetic-induction", "physics"),
   "growing-and-decaying-current-in-lr-circuits": make("lr circuit", "LR Circuits", "electromagnetic-induction", "physics"),
-  "alternating-current": make("alternating", "Alternating Current", "alternating-current", "physics"),
-  "ac-voltage-applied-to-resistor-inductor-and-capacitor": make("ac voltage", "AC Voltage", "alternating-current", "physics"),
+  "alternating-current": makeTopic(ACcircuitsVisual, "Alternating Current"),
+  "ac-voltage-applied-to-resistor-inductor-and-capacitor": makeTopic(ACcircuitsVisual, "AC Voltage"),
   "lc-oscillations-and-resonance": make("lc oscillation", "LC Oscillations", "alternating-current", "physics"),
   "lcr-series-circuit-and-power-factor": make("lcr", "LCR Circuit", "alternating-current", "physics"),
   "transformer-principle-types-and-losses": make("transformer", "Transformer", "alternating-current", "physics"),
-  "ray-optics": make("mirror", "Ray Optics", "ray-optics", "physics"),
-  "reflection-at-plane-and-curved-surfaces-mirrors": make("mirror", "Reflection at Mirrors", "ray-optics", "physics"),
-  "refraction-at-plane-surfaces-total-internal-reflection": make("total internal", "TIR", "ray-optics", "physics"),
-  "refraction-through-prisms-angle-of-deviation-and-minimum-deviation": make("minimum deviation", "Prism Deviation", "ray-optics", "physics"),
-  "thin-lenses-lens-maker-s-formula-and-power-of-lens": make("lens maker", "Thin Lenses", "ray-optics", "physics"),
-  "combination-of-lenses-and-mirrors": make("lens", "Lens & Mirror Combinations", "ray-optics", "physics"),
+  "ray-optics": makeTopic(OpticsVisual, "Ray Optics"),
+  "reflection-at-plane-and-curved-surfaces-mirrors": makeTopic(OpticsVisual, "Reflection at Mirrors"),
+  "refraction-at-plane-surfaces-total-internal-reflection": makeTopic(OpticsVisual, "TIR"),
+  "refraction-through-prisms-angle-of-deviation-and-minimum-deviation": makeTopic(OpticsVisual, "Prism Deviation"),
+  "thin-lenses-lens-maker-s-formula-and-power-of-lens": makeTopic(OpticsVisual, "Thin Lenses"),
+  "combination-of-lenses-and-mirrors": makeTopic(OpticsVisual, "Lens & Mirror Combinations"),
   "optical-instruments-microscope-and-telescope": make("microscope", "Optical Instruments", "ray-optics", "physics"),
-  "wave-optics": make("interference", "Wave Optics", "wave-optics", "physics"),
-  "wavefront-and-huygens-principle": make("huygens", "Huygens' Principle", "wave-optics", "physics"),
-  "interference-of-light-youngs-double-slit-experiment": make("interference", "Young's Double Slit", "wave-optics", "physics"),
-  "diffraction-of-light-single-slit-diffraction": make("diffraction", "Diffraction", "wave-optics", "physics"),
+  "wave-optics": makeTopic(WaveOpticsVisual, "Wave Optics"),
+  "wavefront-and-huygens-principle": makeTopic(WaveMotionVisual, "Huygens' Principle"),
+  "interference-of-light-youngs-double-slit-experiment": makeTopic(WaveOpticsVisual, "Young's Double Slit"),
+  "diffraction-of-light-single-slit-diffraction": makeTopic(WaveOpticsVisual, "Diffraction"),
   "polarization-brewsters-law-and-polaroids": make("polarization", "Polarization", "wave-optics", "physics"),
   "modern-physics": make("photoelectric", "Modern Physics", "modern-physics", "physics"),
-  "photoelectric-effect-and-einsteins-photoelectric-equation": make("photoelectric", "Photoelectric Effect", "modern-physics", "physics"),
-  "de-broglie-wavelength-and-matter-waves": make("de broglie", "De Broglie Wavelength", "modern-physics", "physics"),
-  "atom-bohrs-model-and-hydrogen-spectrum": make("bohr", "Bohr's Atom", "modern-physics", "physics"),
+  "photoelectric-effect-and-einsteins-photoelectric-equation": makeTopic(PhotoelectricEffectVisual, "Photoelectric Effect"),
+  "de-broglie-wavelength-and-matter-waves": makeTopic(WaveMotionVisual, "De Broglie Wavelength"),
+  "atom-bohrs-model-and-hydrogen-spectrum": makeTopic(BohrModelVisual, "Bohr's Model"),
   "nucleus-binding-energy-nuclear-fission-and-fusion": make("binding energy", "Binding Energy", "modern-physics", "physics"),
   "semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor": make("semiconductor", "Semiconductors", "modern-physics", "physics"),
   "logic-gates-and-or-not-nand-nor": make("logic gate", "Logic Gates", "modern-physics", "physics"),
@@ -535,34 +626,34 @@ const CHEMISTRY_12: LabComponentMap = {
   "solutions": make("solution", "Solutions", "solutions", "chemistry"),
   "types-of-solutions-and-expression-of-concentration": make("concentration", "Types of Solutions", "solutions", "chemistry"),
   "solubility-of-gases-and-solids-in-liquids": make("solubility", "Solubility", "solutions", "chemistry"),
-  "vapour-pressure-of-solutions-raoults-law": make("raoult", "Raoult's Law", "solutions", "chemistry"),
-  "colligative-properties-relative-lowering-of-vapour-pressure-elevation-of-boiling-point-depression-of-freezing-point-osmosis-and-osmotic-pressure": make("colligative", "Colligative Properties", "solutions", "chemistry"),
-  "vant-hoff-factor-and-abnormal-molar-masses": make("vant hoff", "Van't Hoff Factor", "solutions", "chemistry"),
-  "electro-chemistry": make("electro-chem", "Electrochemistry", "electro-chemistry", "chemistry"),
+  "vapour-pressure-of-solutions-raoults-law": makeTopic(RaoultLawVisual, "Raoult's Law"),
+  "colligative-properties-relative-lowering-of-vapour-pressure-elevation-of-boiling-point-depression-of-freezing-point-osmosis-and-osmotic-pressure": makeTopic(RaoultLawVisual, "Colligative Properties"),
+  "vant-hoff-factor-and-abnormal-molar-masses": makeTopic(RaoultLawVisual, "Van't Hoff Factor"),
+  "electro-chemistry": makeTopic(GalvanicCellVisual, "Electrochemistry"),
   "oxidation-and-reduction-electrode-reactions": make("oxidation", "Electrode Reactions", "electro-chemistry", "chemistry"),
-  "electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential": make("galvanic", "Galvanic Cell", "electro-chemistry", "chemistry"),
-  "nernst-equation-and-its-applications": make("nernst", "Nernst Equation", "electro-chemistry", "chemistry"),
-  "conductance-of-electrolytic-solutions": make("conductance", "Conductance", "electro-chemistry", "chemistry"),
-  "electrolysis-and-faradays-laws": make("electrolysis", "Electrolysis", "electro-chemistry", "chemistry"),
-  "batteries-primary-and-secondary-cells": make("battery", "Batteries", "electro-chemistry", "chemistry"),
-  "fuel-cells": make("fuel cell", "Fuel Cells", "electro-chemistry", "chemistry"),
+  "electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential": makeTopic(GalvanicCellVisual, "Galvanic Cell"),
+  "nernst-equation-and-its-applications": makeTopic(GalvanicCellVisual, "Nernst Equation"),
+  "conductance-of-electrolytic-solutions": makeTopic(GalvanicCellVisual, "Conductance"),
+  "electrolysis-and-faradays-laws": makeTopic(GalvanicCellVisual, "Electrolysis"),
+  "batteries-primary-and-secondary-cells": makeTopic(GalvanicCellVisual, "Batteries"),
+  "fuel-cells": makeTopic(GalvanicCellVisual, "Fuel Cells"),
   "chemical-kinetics": make("kinetics", "Chemical Kinetics", "chemical-kinetics", "chemistry"),
-  "rate-of-reaction-average-and-instantaneous-rate": make("rate of reaction", "Rate of Reaction", "chemical-kinetics", "chemistry"),
-  "factors-affecting-rate-of-reaction": make("rate of reaction", "Factors Affecting Rate", "chemical-kinetics", "chemistry"),
-  "rate-law-and-order-of-reaction": make("rate law", "Rate Law", "chemical-kinetics", "chemistry"),
-  "integrated-rate-equations-zero-order-and-first-order-reactions": make("integrated rate", "Integrated Rate", "chemical-kinetics", "chemistry"),
-  "arrhenius-equation-and-activation-energy": make("arrhenius", "Arrhenius Equation", "chemical-kinetics", "chemistry"),
+  "rate-of-reaction-average-and-instantaneous-rate": makeTopic(ReactionKineticsVisual, "Rate of Reaction"),
+  "factors-affecting-rate-of-reaction": makeTopic(ReactionKineticsVisual, "Factors Affecting Rate"),
+  "rate-law-and-order-of-reaction": makeTopic(ReactionKineticsVisual, "Rate Law"),
+  "integrated-rate-equations-zero-order-and-first-order-reactions": makeTopic(ReactionKineticsVisual, "Integrated Rate"),
+  "arrhenius-equation-and-activation-energy": makeTopic(ArrheniusEquationVisual, "Arrhenius Equation"),
   "general-and-organic-fundamentals": make("organic", "General & Organic Fundamentals", "general-and-organic-fundamentals", "chemistry"),
   "purification-and-qualitative-quantitative-analysis-of-organic-compounds": make("qualitative analysis", "Organic Analysis", "general-and-organic-fundamentals", "chemistry"),
   "inductive-effect-resonance-hyperconjugation": make("hyperconjugation", "Inductive & Resonance", "general-and-organic-fundamentals", "chemistry"),
   "electrophilic-and-nucleophilic-substitution-reactions": make("electrophilic substitution", "Substitution Reactions", "general-and-organic-fundamentals", "chemistry"),
   "free-radical-reactions": make("free radical", "Free Radical Reactions", "general-and-organic-fundamentals", "chemistry"),
   "important-organic-reactions-oxidation-reduction-addition-elimination": make("oxidation", "Important Organic Reactions", "general-and-organic-fundamentals", "chemistry"),
-  "hydrocarbons": make("alkane", "Hydrocarbons", "hydrocarbons", "chemistry"),
-  "alkanes-conformations-combustion-free-radical-halogenation": make("alkane", "Alkanes", "hydrocarbons", "chemistry"),
-  "alkenes-preparation-geometrical-isomerism-electrophilic-addition-markovnikov-anti-markovnikov-ozonolysis-polymerisation": make("alkene", "Alkenes", "hydrocarbons", "chemistry"),
-  "alkynes-preparation-acidic-character-addition-reactions": make("alkyne", "Alkynes", "hydrocarbons", "chemistry"),
-  "aromatic-hydrocarbons-benzene-resonance-aromaticity-electrophilic-substitution-halogenation-nitration-sulphonation-friedel-crafts": make("aromatic", "Aromatic Hydrocarbons", "hydrocarbons", "chemistry"),
+  "hydrocarbons": makeTopic(OrganicMoleculesVisual, "Hydrocarbons"),
+  "alkanes-conformations-combustion-free-radical-halogenation": makeTopic(OrganicMoleculesVisual, "Alkanes"),
+  "alkenes-preparation-geometrical-isomerism-electrophilic-addition-markovnikov-anti-markovnikov-ozonolysis-polymerisation": makeTopic(OrganicMoleculesVisual, "Alkenes"),
+  "alkynes-preparation-acidic-character-addition-reactions": makeTopic(OrganicMoleculesVisual, "Alkynes"),
+  "aromatic-hydrocarbons-benzene-resonance-aromaticity-electrophilic-substitution-halogenation-nitration-sulphonation-friedel-crafts": makeTopic(BenzeneRingVisual, "Aromatic Hydrocarbons"),
   "alcohols-phenols-ethers": make("alcohol", "Alcohols, Phenols, Ethers", "alcohols-phenols-ethers", "chemistry"),
   "alcohols-classification-preparation-physical-and-chemical-properties": make("alcohol", "Alcohols", "alcohols-phenols-ethers", "chemistry"),
   "phenols-acidity-electrophilic-substitution-kolbes-reaction-reimer-tiemann-reaction": make("phenol", "Phenols", "alcohols-phenols-ethers", "chemistry"),
@@ -578,7 +669,7 @@ const CHEMISTRY_12: LabComponentMap = {
   "reactions-diazotisation-coupling-reactions-hinsberg-test": make("diazotisation", "Diazotisation", "amines", "chemistry"),
   "biomolecules": make("biomolecule", "Biomolecules", "biomolecules", "chemistry"),
   "carbohydrates-monosaccharides-glucose-fructose-disaccharides-polysaccharides": make("carbohydrate", "Carbohydrates", "biomolecules", "chemistry"),
-  "proteins-amino-acids-peptide-bond-primary-to-quaternary-structure-denaturation": make("protein", "Proteins", "biomolecules", "chemistry"),
+  "proteins-amino-acids-peptide-bond-primary-to-quaternary-structure-denaturation": makeTopic(ProteinStructureVisual, "Proteins"),
   "enzymes-definition-classification-enzyme-action": make("enzyme", "Enzymes", "biomolecules", "chemistry"),
   "vitamins-classification-and-functions": make("vitamin", "Vitamins", "biomolecules", "chemistry"),
   "hormones-definition-types-functions": make("hormone", "Hormones", "biomolecules", "chemistry"),
@@ -590,7 +681,7 @@ const CHEMISTRY_12: LabComponentMap = {
   "p-block-elements-group-15-18-important-compounds-trends-in-properties": make("p-block", "p-block Elements", "chemistry-of-element", "chemistry"),
   "d-block-elements-general-characteristics-important-compounds-kmno4-k2cr2o7": make("d-block", "d-block Elements", "chemistry-of-element", "chemistry"),
   "f-block-elements-lanthanoids-and-actinoids": make("f-block", "f-block Elements", "chemistry-of-element", "chemistry"),
-  "coordination-compounds-werners-theory-iupac-nomenclature-vbt-cft-qualitative-isomerism": make("coordination", "Coordination Compounds", "chemistry-of-element", "chemistry"),
+  "coordination-compounds-werners-theory-iupac-nomenclature-vbt-cft-qualitative-isomerism": makeTopic(CoordinationCompoundsVisual, "Coordination Compounds"),
 };
 
 const MATH_12: LabComponentMap = {
@@ -616,10 +707,10 @@ const MATH_12: LabComponentMap = {
   "definite-integrals-and-properties": makeTopic(IntegralAreaVisual, "Definite Integrals"),
   "integration-of-trigonometric-functions": makeTopic(IntegralAreaVisual, "Trigonometric Integration"),
   "applications-area-under-curve-area-between-two-curves": makeTopic(IntegralAreaVisual, "Area Applications"),
-  "differential-equations": make("differential equation", "Differential Equations", "differential-equations", "mathematics"),
-  "formation-of-differential-equations": make("differential equation", "Formation", "differential-equations", "mathematics"),
-  "solving-first-order-first-degree-equations-variable-separable-homogeneous-linear": make("variable separable", "Solving DE", "differential-equations", "mathematics"),
-  "applications-growth-and-decay-population-dynamics": make("growth", "Growth & Decay", "differential-equations", "mathematics"),
+  "differential-equations": makeTopic(FormationDEVisual, "Differential Equations"),
+  "formation-of-differential-equations": makeTopic(FormationDEVisual, "Formation"),
+  "solving-first-order-first-degree-equations-variable-separable-homogeneous-linear": makeTopic(VariableSeparableDEVisual, "Solving DE"),
+  "applications-growth-and-decay-population-dynamics": makeTopic(GrowthDecayDEVisual, "Growth & Decay"),
   "vector-algebra": makeTopic(VectorOperationsVisual, "Vector Algebra"),
   "scalar-and-vector-quantities-types-of-vectors": makeTopic(VectorOperationsVisual, "Scalar & Vector"),
   "addition-subtraction-and-scalar-multiplication-of-vectors": makeTopic(VectorOperationsVisual, "Vector Operations"),
@@ -633,36 +724,36 @@ const MATH_12: LabComponentMap = {
   "equation-of-a-plane-normal-form-general-form": makeTopic(CoordinatesSpaceVisual, "Plane Equation"),
   "angle-between-two-lines-two-planes-and-a-line-and-a-plane": makeTopic(CoordinatesSpaceVisual, "Angles"),
   "distance-of-a-point-from-a-plane-and-line": makeTopic(CoordinatesSpaceVisual, "Distance"),
-  "linear-programming": make("linear programming", "Linear Programming", "linear-programming", "mathematics"),
-  "linear-programming-formulation-of-lpp": make("linear programming", "Formulation of LPP", "linear-programming", "mathematics"),
-  "graphical-method-for-solving-lpp-with-two-variables": make("graphical method", "Graphical Method", "linear-programming", "mathematics"),
-  "maximization-and-minimization-problems": make("maximization", "Max/Min Problems", "linear-programming", "mathematics"),
-  "probability": make("probability", "Probability", "probability", "mathematics"),
-  "conditional-probability-and-multiplication-theorem": make("conditional probability", "Conditional Probability", "probability", "mathematics"),
-  "independent-events": make("independent", "Independent Events", "probability", "mathematics"),
-  "bayes-theorem-and-its-applications": make("bayes", "Bayes' Theorem", "probability", "mathematics"),
-  "random-variable-and-its-probability-distribution": make("random variable", "Random Variable", "probability", "mathematics"),
-  "mean-variance-and-standard-deviation-of-a-random-variable": make("variance", "Mean & Variance", "probability", "mathematics"),
-  "binomial-distribution-definition-mean-variance": make("binomial", "Binomial Distribution", "probability", "mathematics"),
-  "poisson-distribution-definition-mean-variance": make("poisson", "Poisson Distribution", "probability", "mathematics"),
+  "linear-programming": makeTopic(LPPFormulationVisual, "Linear Programming"),
+  "linear-programming-formulation-of-lpp": makeTopic(LPPFormulationVisual, "Formulation of LPP"),
+  "graphical-method-for-solving-lpp-with-two-variables": makeTopic(LPPGraphicalVisual, "Graphical Method"),
+  "maximization-and-minimization-problems": makeTopic(LPPGraphicalVisual, "Max/Min Problems"),
+  "probability": makeTopic(RandomVariableVisual, "Probability"),
+  "conditional-probability-and-multiplication-theorem": makeTopic(ConditionalProbabilityVisual, "Conditional Probability"),
+  "independent-events": makeTopic(IndependentEventsVisual, "Independent Events"),
+  "bayes-theorem-and-its-applications": makeTopic(BayesTheoremVisual, "Bayes' Theorem"),
+  "random-variable-and-its-probability-distribution": makeTopic(RandomVariableVisual, "Random Variable"),
+  "mean-variance-and-standard-deviation-of-a-random-variable": makeTopic(MeanVarianceVisual, "Mean & Variance"),
+  "binomial-distribution-definition-mean-variance": makeTopic(BinomialDistVisual, "Binomial Distribution"),
+  "poisson-distribution-definition-mean-variance": makeTopic(PoissonDistVisual, "Poisson Distribution"),
 };
 
 export { CHEMISTRY_12, MATH_12 };
 
 const BIOLOGY_12: LabComponentMap = {
-  "heredity-and-evolution": make("mendel", "Heredity & Evolution", "heredity-and-evolution", "biology"),
-  "mendels-laws-of-inheritance-monochromo-and-dihybrid-cross": make("mendel", "Mendel's Laws", "heredity-and-evolution", "biology"),
+  "heredity-and-evolution": makeTopic(DNAStructureVisual, "Heredity & Evolution"),
+  "mendels-laws-of-inheritance-monochromo-and-dihybrid-cross": makeTopic(MendelsLawsVisual, "Mendel's Laws"),
   "incomplete-dominance-and-codominance": make("incomplete dominance", "Incomplete Dominance", "heredity-and-evolution", "biology"),
   "linkage-and-crossing-over": make("linkage", "Linkage", "heredity-and-evolution", "biology"),
   "sex-determination-and-sex-linked-disorders": make("sex determination", "Sex Determination", "heredity-and-evolution", "biology"),
   "chromosome-theory-of-inheritance": make("chromosome theory", "Chromosome Theory", "heredity-and-evolution", "biology"),
-  "molecular-basis-of-inheritance-dna-structure-replication-transcription-translation-gene-regulation": make("molecular basis", "Molecular Basis", "heredity-and-evolution", "biology"),
+  "molecular-basis-of-inheritance-dna-structure-replication-transcription-translation-gene-regulation": makeTopic(DNAStructureVisual, "Molecular Basis"),
   "human-genome-project-objectives-and-significance": make("human genome", "Human Genome Project", "heredity-and-evolution", "biology"),
-  "evolution-evidences-adaptive-radiation-hardy-weinberg-equilibrium-human-evolution": make("evolution", "Evolution", "heredity-and-evolution", "biology"),
-  "human-health-and-diseases": make("pathogen", "Health & Diseases", "human-health-and-diseases", "biology"),
+  "evolution-evidences-adaptive-radiation-hardy-weinberg-equilibrium-human-evolution": makeTopic(EvolutionVisual, "Evolution"),
+  "human-health-and-diseases": makeTopic(ImmuneSystemVisual, "Health & Diseases"),
   "pathogens-and-diseases-malaria-dengue-filariasis-ascariasis-pneumonia-typhoid-tuberculosis-common-cold-aids-ringworm": make("pathogen", "Pathogens", "human-health-and-diseases", "biology"),
-  "immune-system-innate-and-adaptive-immunity": make("immune system", "Immune System", "human-health-and-diseases", "biology"),
-  "antigens-and-antibodies-immune-response": make("antigen", "Antigens & Antibodies", "human-health-and-diseases", "biology"),
+  "immune-system-innate-and-adaptive-immunity": makeTopic(ImmuneSystemVisual, "Immune System"),
+  "antigens-and-antibodies-immune-response": makeTopic(ImmuneSystemVisual, "Antigens & Antibodies"),
   "vaccination-and-immunization": make("vaccination", "Vaccination", "human-health-and-diseases", "biology"),
   "allergy-and-autoimmune-diseases": make("allergy", "Allergy", "human-health-and-diseases", "biology"),
   "strategies-for-food-production": make("plant breeding", "Food Production", "strategies-for-food-production", "biology"),
@@ -675,23 +766,23 @@ const BIOLOGY_12: LabComponentMap = {
   "industrial-production-of-antibiotics-alcoholic-beverages-citric-acid": make("antibiotics", "Industrial Production", "microbes-in-human-welfare", "biology"),
   "microbes-as-biocontrol-agents-and-biofertilizers": make("biocontrol", "Biocontrol", "microbes-in-human-welfare", "biology"),
   "bioremediation-biogas": make("bioremediation", "Bioremediation", "microbes-in-human-welfare", "biology"),
-  "biotechnology-principles": make("recombinant", "Biotechnology Principles", "biotechnology-principles", "biology"),
-  "principles-of-biotechnology-recombinant-dna-technology": make("recombinant", "Principles", "biotechnology-principles", "biology"),
-  "tools-restriction-enzymes-vectors-competent-host": make("restriction enzyme", "Tools", "biotechnology-principles", "biology"),
-  "processes-dna-isolation-pcr-gel-electrophoresis-gene-transfer": make("pcr", "Processes", "biotechnology-principles", "biology"),
+  "biotechnology-principles": makeTopic(RestrictionEnzymeVisual, "Biotechnology Principles"),
+  "principles-of-biotechnology-recombinant-dna-technology": makeTopic(RestrictionEnzymeVisual, "Principles of Biotech"),
+  "tools-restriction-enzymes-vectors-competent-host": makeTopic(RestrictionEnzymeVisual, "Restriction Enzymes & Vectors"),
+  "processes-dna-isolation-pcr-gel-electrophoresis-gene-transfer": makeTopic(PCRVisual, "PCR & Gene Transfer"),
   "applications-of-recombinant-dna-technology": make("recombinant", "Applications", "biotechnology-principles", "biology"),
   "biotechnology-applications": make("biotechnology applications", "Biotechnology Applications", "biotechnology-applications", "biology"),
   "biotechnological-applications-in-agriculture-bt-cotton-nematode-resistant-tobacco": make("bt cotton", "Agriculture Applications", "biotechnology-applications", "biology"),
   "biotechnological-applications-in-medicine-insulin-gene-therapy-therapeutic-proteins": make("insulin", "Medicine Applications", "biotechnology-applications", "biology"),
   "transgenic-animals": make("transgenic", "Transgenic Animals", "biotechnology-applications", "biology"),
   "biopiracy-and-patent-issues": make("biopiracy", "Biopiracy", "biotechnology-applications", "biology"),
-  "organisms-and-environment": make("organisms and environment", "Organisms & Environment", "organisms-and-environment", "biology"),
+  "organisms-and-environment": makeTopic(BiogeochemicalCyclesVisual, "Organisms & Environment"),
   "adaptations-of-organisms-to-environmental-conditions": make("adaptation", "Adaptations", "organisms-and-environment", "biology"),
   "population-ecology-growth-regulation-interactions": make("population ecology", "Population Ecology", "organisms-and-environment", "biology"),
-  "ecosystem-structure-and-function-productivity-decomposition": make("ecosystem", "Ecosystem Structure", "organisms-and-environment", "biology"),
+  "ecosystem-structure-and-function-productivity-decomposition": makeTopic(EcosystemVisual, "Ecosystem Structure"),
   "ecological-succession": make("succession", "Ecological Succession", "organisms-and-environment", "biology"),
-  "nutrient-cycling-carbon-nitrogen-phosphorus": make("nutrient cycling", "Nutrient Cycling", "organisms-and-environment", "biology"),
-  "ecological-pyramids-and-energy-flow": make("ecological pyramid", "Ecological Pyramids", "organisms-and-environment", "biology"),
+  "nutrient-cycling-carbon-nitrogen-phosphorus": makeTopic(BiogeochemicalCyclesVisual, "Nutrient Cycling"),
+  "ecological-pyramids-and-energy-flow": makeTopic(EcosystemVisual, "Ecological Pyramids"),
   "biodiversity-and-conservation": make("biodiversity", "Biodiversity & Conservation", "biodiversity-and-conservation", "biology"),
   "biodiversity-genetic-species-and-ecosystem-levels": make("biodiversity", "Levels of Biodiversity", "biodiversity-and-conservation", "biology"),
   "patterns-of-biodiversity-global-and-nepal": make("patterns of biodiversity", "Biodiversity Patterns", "biodiversity-and-conservation", "biology"),

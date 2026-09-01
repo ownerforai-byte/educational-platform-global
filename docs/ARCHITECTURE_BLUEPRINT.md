@@ -99,26 +99,39 @@ ravikishan/
 │   │   │   │   └── …
 │   │   │   ├── analytical-geometry-resource-panel.tsx
 │   │   │   ├── analytical-geometry-resources.tsx
+│   │   │   ├── antiderivatives-resources.tsx
+│   │   │   ├── application-derivatives-resources.tsx
+│   │   │   ├── complex-number-resources.tsx
 │   │   │   ├── content-tabs.tsx
+│   │   │   ├── curve-sketching-resources.tsx
 │   │   │   ├── date-badge.tsx
+│   │   │   ├── differentiation-resources.tsx
 │   │   │   ├── empty-state.tsx
 │   │   │   ├── flashcard-viewer.tsx
+│   │   │   ├── functions-resources.tsx
 │   │   │   ├── imported-notes-section.tsx
 │   │   │   ├── katex.tsx
 │   │   │   ├── limits-continuity-resources.tsx
+│   │   │   ├── logic-sets-resources.tsx
 │   │   │   ├── math-markdown.tsx
 │   │   │   ├── MathRenderer.tsx
 │   │   │   ├── matrices-determinants-resources.tsx
 │   │   │   ├── notes-viewer.tsx
+│   │   │   ├── numerical-integration-resources.tsx
 │   │   │   ├── numerical-viewer.tsx
 │   │   │   ├── pyq-card.tsx
+│   │   │   ├── quadratic-equation-resources.tsx
 │   │   │   ├── quiz-viewer.tsx
 │   │   │   ├── rendered-imported-note.tsx
 │   │   │   ├── resource-form.tsx
 │   │   │   ├── resource-link-form.tsx
+│   │   │   ├── sequence-series-resources.tsx
+│   │   │   ├── statistics-probability-resources.tsx
 │   │   │   ├── status-badge.tsx
 │   │   │   ├── syllabus-section.tsx
+│   │   │   ├── trigonometry-resources.tsx
 │   │   │   ├── under-development.tsx
+│   │   │   ├── vectors-resources.tsx
 │   │   │   └── video-viewer.tsx
 │   │   ├── lab/
 │   │   │   ├── annotation/
@@ -277,6 +290,8 @@ ravikishan/
 │   │   │   └── types.ts
 │   │   ├── knowledge/   # grammar (EN), byakaran (NE), numerical-*, biology-diagrams
 │   │   │   ├── components/
+│   │   │   │   └── …
+│   │   │   ├── writing/
 │   │   │   │   └── …
 │   │   │   └── data.ts
 │   │   ├── mindmap/
@@ -667,6 +682,7 @@ ravikishan/
 ├── analytical_geometry.pdf
 ├── backend.log
 ├── components.json
+├── CUsersASUSdesktoprntemp_matrices_page.html
 ├── drizzle.config.ts
 ├── eslint-check.txt
 ├── eslint-final.txt

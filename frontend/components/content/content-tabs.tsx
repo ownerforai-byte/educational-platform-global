@@ -3,6 +3,22 @@
 import { useState } from "react";
 import { ImportedNotesSection } from "./imported-notes-section";
 import { EmptyState } from "./empty-state";
+import { AnalyticalGeometryResources } from "./analytical-geometry-resources";
+import { LimitsContinuityResources } from "./limits-continuity-resources";
+import { LogicSetsResources } from "./logic-sets-resources";
+import { FunctionsResources } from "./functions-resources";
+import { CurveSketchingResources } from "./curve-sketching-resources";
+import { SequenceSeriesResources } from "./sequence-series-resources";
+import { MatricesDeterminantsResources } from "./matrices-determinants-resources";
+import { QuadraticEquationResources } from "./quadratic-equation-resources";
+import { ComplexNumberResources } from "./complex-number-resources";
+import { DifferentiationResources } from "./differentiation-resources";
+import { ApplicationDerivativesResources } from "./application-derivatives-resources";
+import { AntiderivativesResources } from "./antiderivatives-resources";
+import { NumericalIntegrationResources } from "./numerical-integration-resources";
+import { TrigonometryResources } from "./trigonometry-resources";
+import { VectorsResources } from "./vectors-resources";
+import { StatisticsProbabilityResources } from "./statistics-probability-resources";
 import { getTopicPath, getUnitPath } from "@/features/syllabus/content-router";
 import { getTopicEntryBySlug, getUnitSyllabus } from "@/lib/syllabus";
 import type { SyllabusUnit } from "@/lib/syllabus";
@@ -22,7 +38,47 @@ export function ContentTabs({
   topicSlug,
   unit,
 }: ContentTabsProps) {
-  const [activeTab, setActiveTab] = useState<"notes" | "formulas" | "numericals">("notes");
+  const [activeTab, setActiveTab] = useState<"notes" | "formulas" | "numericals" | "resources">("notes");
+
+  // --- Class 11 Mathematics unit-level conditions ---
+  const isAnalyticGeometry =
+    unitId === "analytic-geometry" && subjectSlug === "mathematics";
+  const isLimitsContinuity =
+    unitId === "limits-and-continuity" && subjectSlug === "mathematics";
+  const isDifferentiation =
+    unitId === "differentiation" && subjectSlug === "mathematics";
+
+  // --- Class 11 Algebra topic-level conditions ---
+  const isLogicSets =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("logic");
+  const isFunctions =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("function");
+  const isCurveSketching =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("curve");
+  const isSequenceSeries =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("sequence");
+  const isMatricesDeterminants =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("matrice");
+  const isQuadratic =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("quadratic");
+  const isComplex =
+    unitId === "algebra" && subjectSlug === "mathematics" && topicSlug?.includes("complex");
+
+  // --- Class 11 other unit-level conditions ---
+  const isTrigonometry =
+    unitId === "trigonometry" && subjectSlug === "mathematics";
+  const isVectors =
+    unitId === "vectors" && subjectSlug === "mathematics";
+  const isStatsProb =
+    unitId === "statistics-and-probability" && subjectSlug === "mathematics";
+
+  // --- Class 12 Calculus unit-level conditions ---
+  const isAppDerivatives =
+    unitId === "application-of-derivatives" && subjectSlug === "mathematics";
+  const isAntiderivatives =
+    unitId === "antiderivatives" && subjectSlug === "mathematics";
+  const isNumericalIntegration =
+    unitId === "numerical-integration" && subjectSlug === "mathematics";
 
   const topicTitle = unit
     ? getTopicEntryBySlug(unit, topicSlug)?.title ?? topicSlug
@@ -35,7 +91,7 @@ export function ContentTabs({
     <div className="space-y-4">
       {/* Tab Navigation */}
       <div className="flex gap-1 border-b border-border">
-        {(["notes", "formulas", "numericals"] as const).map((tab) => (
+        {(["notes", "formulas", "numericals", "resources"] as const).map((tab) => (
           <button
             key={tab}
             type="button"
@@ -82,6 +138,59 @@ export function ContentTabs({
               title="Coming soon"
               description={`Practice problems for ${topicTitle} will be available here.`}
             />
+          </div>
+        )}
+
+        {activeTab === "resources" && (
+          <div className="space-y-3">
+            {/* Class 11 Algebra topics — checked first (most specific) */}
+            {isLogicSets ? (
+              <LogicSetsResources />
+            ) : isFunctions ? (
+              <FunctionsResources />
+            ) : isCurveSketching ? (
+              <CurveSketchingResources />
+            ) : isSequenceSeries ? (
+              <SequenceSeriesResources />
+            ) : isMatricesDeterminants ? (
+              <MatricesDeterminantsResources />
+            ) : isQuadratic ? (
+              <QuadraticEquationResources />
+            ) : isComplex ? (
+              <ComplexNumberResources />
+            ) : /* Class 11 Trigonometry */
+            isTrigonometry ? (
+              <TrigonometryResources />
+            ) : /* Class 11 Vectors */
+            isVectors ? (
+              <VectorsResources />
+            ) : /* Class 11 Statistics & Probability */
+            isStatsProb ? (
+              <StatisticsProbabilityResources />
+            ) : /* Class 11 Analytic Geometry */
+            isAnalyticGeometry ? (
+              <AnalyticalGeometryResources />
+            ) : /* Class 12 Limits & Continuity */
+            isLimitsContinuity ? (
+              <LimitsContinuityResources />
+            ) : /* Class 12 Differentiation */
+            isDifferentiation ? (
+              <DifferentiationResources />
+            ) : /* Class 12 Application of Derivatives */
+            isAppDerivatives ? (
+              <ApplicationDerivativesResources />
+            ) : /* Class 12 Antiderivatives */
+            isAntiderivatives ? (
+              <AntiderivativesResources />
+            ) : /* Class 12 Numerical Integration */
+            isNumericalIntegration ? (
+              <NumericalIntegrationResources />
+            ) : (
+              <EmptyState
+                title="Coming soon"
+                description={`Resources for ${topicTitle} will be available here.`}
+              />
+            )}
           </div>
         )}
       </div>
