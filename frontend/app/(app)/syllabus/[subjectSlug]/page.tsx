@@ -1,11 +1,10 @@
 "use client";
 import { use } from "react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   Calendar, TrendingUp, TrendingDown, Minus, Info,
-  ChevronDown, ChevronUp, BookOpen, Dna,
-  Search, Filter,
+  ChevronDown, ChevronUp, BookOpen, Search,
 } from "lucide-react";
 import { DateBadge } from "@/components/content/date-badge";
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
@@ -19,21 +18,16 @@ import {
   NEPALI_DATA_MAP,
 } from "@/features/syllabus-history/data";
 import {
-  SyllabusVersionComparison,
-  SyllabusVersionSelector,
+  SyllabusTimeline,
   SyllabusUnitView,
+  diffTimeline,
 } from "@/features/syllabus-history/components/version-comparison";
 import type { SyllabusSubjectData, SubjectKey } from "@/features/syllabus-history/data";
 
 const SUBJECT_EMOJI: Record<string, string> = {
-  Biology: "🌿",
-  Chemistry: "🧪",
-  English: "📖",
-  Mathematics: "🔢",
-  Nepali: "🇳🇵",
-  Physics: "⚡",
+  Biology: "🌿", Chemistry: "🧪", English: "📖",
+  Mathematics: "🔢", Nepali: "🇳🇵", Physics: "⚡",
 };
-
 const SUBJECT_COLORS: Record<string, string> = {
   Biology: "from-emerald-500 to-teal-500",
   Chemistry: "from-amber-500 to-orange-500",
@@ -42,38 +36,23 @@ const SUBJECT_COLORS: Record<string, string> = {
   Nepali: "from-red-500 to-rose-500",
   Physics: "from-sky-500 to-blue-500",
 };
-
 const CLASS_TRACK_ORDER = ["class-11-notes", "class-12-notes"] as const;
-
 const SUBJECT_KEY_MAP: Record<string, SubjectKey> = {
-  biology: "biology",
-  physics: "physics",
-  chemistry: "chemistry",
-  mathematics: "mathematics",
-  english: "english",
-  nepali: "nepali",
+  biology: "biology", physics: "physics", chemistry: "chemistry",
+  mathematics: "mathematics", english: "english", nepali: "nepali",
 };
-
 const SUBJECT_DATA_MAP: Partial<Record<SubjectKey, Record<string, SyllabusSubjectData>>> = {
-  biology: BIOLOGY_DATA_MAP,
-  physics: PHYSICS_DATA_MAP,
-  chemistry: CHEMISTRY_DATA_MAP,
-  mathematics: MATH_DATA_MAP,
-  english: ENGLISH_DATA_MAP,
-  nepali: NEPALI_DATA_MAP,
+  biology: BIOLOGY_DATA_MAP, physics: PHYSICS_DATA_MAP, chemistry: CHEMISTRY_DATA_MAP,
+  mathematics: MATH_DATA_MAP, english: ENGLISH_DATA_MAP, nepali: NEPALI_DATA_MAP,
 };
 
 function getSubjectAcrossTracks(subjectSlug: string) {
   const results: { classTrack: ClassSyllabus; subject: SubjectSyllabus }[] = [];
   for (const cls of SYLLABUS) {
-    const subject = cls.subjects.find((s) => s.slug === subjectSlug);
-    if (subject) results.push({ classTrack: cls, subject });
+    const s = cls.subjects.find((x) => x.slug === subjectSlug);
+    if (s) results.push({ classTrack: cls, subject: s });
   }
   return results;
-}
-
-function capitalize(slug: string) {
-  return slug.charAt(0).toUpperCase() + slug.slice(1);
 }
 
 function YearAccordion({ yearData, colorClass, subjectSlug }: {
@@ -82,33 +61,19 @@ function YearAccordion({ yearData, colorClass, subjectSlug }: {
   subjectSlug: string;
 }) {
   const [expanded, setExpanded] = useState(false);
-  const changes = yearData.changes;
+  const c = yearData.changes;
   return (
     <div className="rounded-xl border border-border bg-card overflow-hidden">
       <button onClick={() => setExpanded(!expanded)}
         className="w-full px-5 py-4 flex items-center justify-between hover:bg-muted/50 transition-colors text-left">
         <div className="flex items-center gap-3">
-          <span className={`inline-flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br ${colorClass} text-white text-xs font-bold`}>
-            {yearData.year}
-          </span>
+          <span className={`inline-flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br ${colorClass} text-white text-xs font-bold`}>{yearData.year}</span>
           <div>
             <p className="font-semibold text-foreground text-sm">{yearData.bsYear}</p>
             <div className="flex items-center gap-2 mt-0.5">
-              {changes.added.length > 0 && (
-                <span className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400">
-                  <TrendingUp className="h-3 w-3" /> +{changes.added.length} added
-                </span>
-              )}
-              {changes.removed.length > 0 && (
-                <span className="inline-flex items-center gap-1 text-xs text-red-600 dark:text-red-400">
-                  <TrendingDown className="h-3 w-3" /> -{changes.removed.length} removed
-                </span>
-              )}
-              {changes.modified.length > 0 && (
-                <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400">
-                  <Minus className="h-3 w-3" /> {changes.modified.length} modified
-                </span>
-              )}
+              {c.added.length > 0 && <span className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400"><TrendingUp className="h-3 w-3" /> +{c.added.length} added</span>}
+              {c.removed.length > 0 && <span className="inline-flex items-center gap-1 text-xs text-red-600 dark:text-red-400"><TrendingDown className="h-3 w-3" /> -{c.removed.length} removed</span>}
+              {c.modified.length > 0 && <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400"><Minus className="h-3 w-3" /> {c.modified.length} modified</span>}
             </div>
           </div>
         </div>
@@ -116,52 +81,30 @@ function YearAccordion({ yearData, colorClass, subjectSlug }: {
       </button>
       {expanded && (
         <div className="px-5 pb-4 space-y-3 border-t border-border/50 pt-3">
-          {changes.notes && (
+          {c.notes && (
             <div className="flex items-start gap-2 text-sm text-muted-foreground bg-muted/50 rounded-lg p-3">
-              <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-              <span>{changes.notes}</span>
+              <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" /><span>{c.notes}</span>
             </div>
           )}
-          {changes.added.length > 0 && (
+          {c.added.length > 0 && (
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">Added Topics</p>
-              <ul className="space-y-1">
-                {changes.added.map((t, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                    <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500" />{t}
-                  </li>
-                ))}
-              </ul>
+              <ul className="space-y-1">{c.added.map((t, i) => <li key={i} className="flex items-start gap-2 text-sm text-foreground"><span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500" />{t}</li>)}</ul>
             </div>
           )}
-          {changes.removed.length > 0 && (
+          {c.removed.length > 0 && (
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-red-600 dark:text-red-400 mb-2">Removed Topics</p>
-              <ul className="space-y-1">
-                {changes.removed.map((t, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-red-500" />
-                    <span className="line-through">{t}</span>
-                  </li>
-                ))}
-              </ul>
+              <ul className="space-y-1">{c.removed.map((t, i) => <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground"><span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-red-500" /><span className="line-through">{t}</span></li>)}</ul>
             </div>
           )}
-          {changes.modified.length > 0 && (
+          {c.modified.length > 0 && (
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2">Modified Topics</p>
-              <ul className="space-y-1">
-                {changes.modified.map((t, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                    <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-500" />{t}
-                  </li>
-                ))}
-              </ul>
+              <ul className="space-y-1">{c.modified.map((t, i) => <li key={i} className="flex items-start gap-2 text-sm text-foreground"><span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-500" />{t}</li>)}</ul>
             </div>
           )}
-          <Link href={`/syllabus/${subjectSlug}/year/${yearData.year}`} className="inline-flex text-sm text-primary hover:underline">
-            Open full view →
-          </Link>
+          <Link href={`/syllabus/${subjectSlug}/year/${yearData.year}`} className="inline-flex text-sm text-primary hover:underline">Open full view →</Link>
         </div>
       )}
     </div>
@@ -170,33 +113,49 @@ function YearAccordion({ yearData, colorClass, subjectSlug }: {
 
 export default function SubjectSyllabusPage({ params }: { params: Promise<{ subjectSlug: string }> }) {
   const { subjectSlug } = use(params);
-  const subjectName = capitalize(subjectSlug);
+  const subjectName = subjectSlug.charAt(0).toUpperCase() + subjectSlug.slice(1);
   const emoji = SUBJECT_EMOJI[subjectName] ?? "📘";
   const colorClass = SUBJECT_COLORS[subjectName] ?? "from-primary to-primary/70";
 
   const subjectAcrossTracks = getSubjectAcrossTracks(subjectSlug);
   const firstSubject = subjectAcrossTracks[0]?.subject;
   const history = SYLLABUS_HISTORY[subjectSlug];
-
-  const [activeClass, setActiveClass] = useState<string>("class-11-notes");
-  const [compareYear, setCompareYear] = useState<number | null>(null);
-
-  // Get source-extracted data for this subject + class
   const subjectKey = SUBJECT_KEY_MAP[subjectSlug];
-  const sourceData = subjectKey ? SUBJECT_DATA_MAP[subjectKey]?.[activeClass] : null;
-  const activeSourceVersion = sourceData?.versions.find((v) => v.isLatest) ?? sourceData?.versions[sourceData.versions.length - 1];
 
-  const hasSourceData = !!sourceData;
+  const [activeClass, setActiveClass] = useState("class-11-notes");
+  const [showTimeline, setShowTimeline] = useState(true);
+
+  const bioData = subjectKey ? SUBJECT_DATA_MAP[subjectKey]?.[activeClass] : null;
+  const activeVersion = bioData?.versions.find((v) => v.isLatest) ?? bioData?.versions[bioData.versions.length - 1];
+
+  const totalHours = subjectAcrossTracks.reduce(
+    (acc, { subject }) => acc + subject.units.reduce((s, u) => s + (u.hours ?? 0), 0), 0
+  );
+
+  const timeline = useMemo(() => {
+    if (!bioData || bioData.versions.length < 2) return null;
+    return diffTimeline(bioData);
+  }, [bioData]);
+
+  const totalChanges = useMemo(() => {
+    if (!timeline) return { added: 0, removed: 0, modified: 0 };
+    return timeline.reduce(
+      (acc, t) => ({
+        added: acc.added + t.diffs.filter((d) => d.status === "added").length,
+        removed: acc.removed + t.diffs.filter((d) => d.status === "removed").length,
+        modified: acc.modified + t.diffs.filter((d) => d.status === "modified").length,
+      }),
+      { added: 0, removed: 0, modified: 0 }
+    );
+  }, [timeline]);
 
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-8 md:py-14 px-4">
-      {/* ── Header ── */}
+      {/* Header */}
       <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8">
         <div className={`absolute inset-0 bg-gradient-to-br ${colorClass}/5 pointer-events-none`} />
         <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${colorClass} text-2xl shadow-lg`}>
-            {emoji}
-          </div>
+          <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${colorClass} text-2xl shadow-lg`}>{emoji}</div>
           <div className="flex-1 min-w-0">
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
               {firstSubject?.name ?? subjectName}
@@ -208,113 +167,111 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
               <DateBadge label="NCF 2076 aligned" date="2082 BS" tone="green" />
               {history && (
                 <span className="inline-flex items-center gap-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full">
-                  <Calendar className="h-3 w-3" />
-                  {history.length} years tracked
+                  <Calendar className="h-3 w-3" />{history.length} years tracked
                 </span>
               )}
-              {hasSourceData && (
+              {bioData && (
                 <span className="inline-flex items-center gap-1 bg-violet-500/10 text-violet-600 dark:text-violet-400 px-2.5 py-1 rounded-full">
                   <BookOpen className="h-3 w-3" />
-                  Source-extracted · {sourceData.versions.length} versions
+                  {bioData.versions.length} versions · {totalChanges.added + totalChanges.removed + totalChanges.modified} topic changes
                 </span>
               )}
             </div>
           </div>
-          <Link href="/syllabus" className="shrink-0 text-sm text-muted-foreground hover:text-primary transition-colors">
-            ← All subjects
-          </Link>
+          <Link href="/syllabus" className="shrink-0 text-sm text-muted-foreground hover:text-primary transition-colors">← All subjects</Link>
         </div>
       </div>
 
-      {/* ── Class track selector ── */}
+      {/* Class track selector */}
       <div className="flex flex-wrap gap-2">
         {subjectAcrossTracks.map(({ classTrack }) => (
-          <button
-            key={classTrack.slug}
-            onClick={() => { setActiveClass(classTrack.slug); setCompareYear(null); }}
+          <button key={classTrack.slug} onClick={() => setActiveClass(classTrack.slug)}
             className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
               activeClass === classTrack.slug
                 ? "bg-primary text-primary-foreground border-primary"
                 : "bg-card text-muted-foreground border-border hover:border-primary/40"
-            }`}
-          >
+            }`}>
             {classTrack.name}
           </button>
         ))}
       </div>
 
-      {/* ── Source-extracted comparison view ── */}
-      {hasSourceData && activeSourceVersion && (
+      {/* Source-extracted topic changes */}
+      {bioData && (
         <div className="space-y-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Search className="h-5 w-5 text-violet-500" />
-              <h2 className="text-lg font-semibold">Extracted Syllabus · {activeSourceVersion.year} BS</h2>
-              {activeSourceVersion.isLatest && (
-                <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-medium">
-                  Latest
-                </span>
-              )}
+              <h2 className="text-lg font-semibold">Topic-Level Changes (Source-Extracted)</h2>
             </div>
-            <SyllabusVersionSelector data={sourceData} activeVersionYear={compareYear ?? activeSourceVersion.year} onSelect={setCompareYear} />
+            {timeline && timeline.length > 0 && (
+              <button onClick={() => setShowTimeline(!showTimeline)}
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                {showTimeline ? "Show current version" : "Show full timeline"}
+              </button>
+            )}
           </div>
 
-          {compareYear ? (
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <SyllabusVersionComparison data={sourceData} />
+          {showTimeline && timeline && timeline.length > 0 ? (
+            <SyllabusTimeline data={bioData} />
+          ) : !showTimeline && timeline && timeline.length === 0 ? (
+            <div className="rounded-xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
+              No topic-level differences found between versions.
             </div>
           ) : (
-            <div className="space-y-4">
-              {/* Summary stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {[
-                  { label: "Total hours", value: activeSourceVersion.units.reduce((s, u) => s + u.hours, 0), icon: BookOpen, color: "text-primary" },
-                  { label: "Units", value: activeSourceVersion.units.length, icon: Filter, color: "text-violet-500" },
-                  { label: "Topics", value: activeSourceVersion.units.reduce((s, u) => s + u.topics.length, 0), icon: Dna, color: "text-emerald-500" },
-                  { label: "Versions", value: sourceData.versions.length, icon: Calendar, color: "text-amber-500" },
-                ].map(({ label, value, icon: Icon, color }) => (
-                  <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
-                    <Icon className={`h-5 w-5 ${color} mx-auto mb-1`} />
-                    <p className="text-2xl font-bold text-foreground">{value}</p>
-                    <p className="text-xs text-muted-foreground">{label}</p>
-                  </div>
-                ))}
-              </div>
+            activeVersion && (
+              <div className="space-y-4">
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { label: "Added", value: totalChanges.added, color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950/20", border: "border-emerald-200 dark:border-emerald-800" },
+                    { label: "Removed", value: totalChanges.removed, color: "text-red-600 dark:text-red-400", bg: "bg-red-50 dark:bg-red-950/20", border: "border-red-200 dark:border-red-800" },
+                    { label: "Modified", value: totalChanges.modified, color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-950/20", border: "border-amber-200 dark:border-amber-800" },
+                  ].map(({ label, value, color, bg, border }) => (
+                    <div key={label} className={`rounded-xl border ${border} ${bg} p-4 text-center`}>
+                      <p className={`text-2xl font-bold ${color}`}>{value}</p>
+                      <p className="text-xs text-muted-foreground">{label}</p>
+                    </div>
+                  ))}
+                </div>
 
-              {/* Units list */}
-              <div className="space-y-3">
-                {activeSourceVersion.units.map((unit) => (
-                  <SyllabusUnitView
-                    key={unit.id}
-                    unit={unit}
-                    versionYear={activeSourceVersion.year}
-                  />
-                ))}
-              </div>
+                {/* Units */}
+                <div className="space-y-3">
+                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                    {activeVersion.year} BS — {bioData.grade === "11" ? "Botany & Zoology" : "Advanced Botany & Zoology"}
+                  </h3>
+                  {timeline && timeline.length > 0 && activeVersion.units.map((unit) => (
+                    <SyllabusUnitView
+                      key={unit.id}
+                      unit={unit}
+                      versionYear={activeVersion.year}
+                      diffs={timeline[timeline.length - 1]?.diffs}
+                    />
+                  ))}
+                </div>
 
-              {sourceData.versions.length >= 2 && (
-                <button
-                  onClick={() => setCompareYear(activeSourceVersion.year)}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-500/10 text-violet-700 dark:text-violet-300 text-sm font-medium hover:bg-violet-500/20 transition-colors"
-                >
-                  <TrendingUp className="h-4 w-4" />
-                  Compare with previous version
-                </button>
-              )}
-            </div>
+                {timeline && timeline.length >= 2 && (
+                  <button onClick={() => setShowTimeline(true)}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-500/10 text-violet-700 dark:text-violet-300 text-sm font-medium hover:bg-violet-500/20 transition-colors">
+                    <TrendingUp className="h-4 w-4" />
+                    View year-by-year change timeline
+                  </button>
+                )}
+              </div>
+            )
           )}
         </div>
       )}
 
-      {/* ── Historical changes (SYLLABUS_HISTORY) ── */}
+      {/* SYLLABUS_HISTORY timeline */}
       {history && history.length > 0 && (
         <div className="space-y-4">
           <div className="flex items-center gap-2">
             <Calendar className="h-5 w-5 text-primary" />
-            <h2 className="text-lg font-semibold">Syllabus Changes Timeline</h2>
+            <h2 className="text-lg font-semibold">NEB Syllabus Changes Timeline</h2>
           </div>
           <p className="text-sm text-muted-foreground">
-            Track how this subject has evolved across past years.
+            Official NEB curriculum change records across {history.length} years.
           </p>
           <div className="space-y-3">
             {history.map((yearData) => (
@@ -324,7 +281,7 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
         </div>
       )}
 
-      {/* ── Standard NEB syllabus (from syllabus.ts) ── */}
+      {/* NEB Current Syllabus */}
       {subjectAcrossTracks.length > 0 && (
         <div className="space-y-6">
           <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
@@ -337,15 +294,9 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
                 <div className={`px-5 py-3 border-b border-border/60 bg-gradient-to-r ${colorClass}/5`}>
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <div className="flex items-center gap-2">
-                      <span className={`inline-flex items-center justify-center h-6 w-6 rounded-md bg-gradient-to-br ${colorClass} text-xs font-bold text-white`}>
-                        {trackOrder + 1}
-                      </span>
+                      <span className={`inline-flex items-center justify-center h-6 w-6 rounded-md bg-gradient-to-br ${colorClass} text-xs font-bold text-white`}>{trackOrder + 1}</span>
                       <h3 className="font-semibold text-foreground">{classTrack.name}</h3>
-                      {subject.notesUrl && (
-                        <Link href={subject.notesUrl} className="text-xs text-primary hover:underline">
-                          Notes →
-                        </Link>
-                      )}
+                      {subject.notesUrl && <Link href={subject.notesUrl} className="text-xs text-primary hover:underline">Notes →</Link>}
                     </div>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span>{subject.units.length} units</span>
@@ -359,15 +310,11 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
                     <div key={unit.id} className="px-5 py-4">
                       <div className="flex items-start justify-between gap-3 flex-wrap">
                         <div className="flex items-center gap-2 min-w-0">
-                          <span className="shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary">
-                            {i + 1}
-                          </span>
+                          <span className="shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary">{i + 1}</span>
                           <h4 className="font-semibold text-foreground text-sm truncate">{unit.title}</h4>
                         </div>
                         {unit.hours !== undefined && (
-                          <span className="shrink-0 text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-                            {unit.hours} hrs
-                          </span>
+                          <span className="shrink-0 text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">{unit.hours} hrs</span>
                         )}
                       </div>
                       {unit.topics.length > 0 && (

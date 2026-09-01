@@ -637,11 +637,15 @@ ravikishan/
 │   │   └── setup_all.sql
 │   ├── .gitignore
 │   └── config.toml
+├── add_patterns.js
 ├── AGENT_RULES.md
 ├── backend.log
 ├── components.json
 ├── drizzle.config.ts
+├── eslint-check.txt
 ├── eslint-final.txt
+├── eslint-full.txt
+├── eslint-global.txt
 ├── eslint-out.txt
 ├── eslint-out2.txt
 ├── eslint.config.mjs
@@ -651,7 +655,10 @@ ravikishan/
 ├── PROJECT_STATUS.md
 ├── README.md
 ├── tailwind.config.ts
+├── tsc-check.txt
 ├── tsc-final.txt
+├── tsc-full.txt
+├── tsc-global.txt
 ├── tsc-out4.txt
 └── vitest.config.ts
 ```

@@ -1,25 +1,18 @@
 "use client";
 
 import React, { useMemo } from "react";
-import {
-  TrendingUp, TrendingDown, CheckCircle2,
-  Pencil, Calendar, Eye, ChevronRight,
-} from "lucide-react";
+import { TrendingUp, TrendingDown, Pencil, ChevronRight } from "lucide-react";
 import { DateBadge } from "@/components/content/date-badge";
-import type {
-  SyllabusVersion,
-  SubjectBiologyData,
-} from "../data/biology";
+import type { SyllabusSubjectData, SyllabusVersion } from "../data";
 
 /* ────────────────────────────────────────────────────────────
-   Diff engine
+   Diff engine — generic over any SyllabusSubjectData
    ──────────────────────────────────────────────────────────── */
 
 function slugify(title: string) {
   return title.toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
-    // eslint-disable-next-line no-misleading-character-class -- class intentionally covers Devanagari incl. combining marks (Mn)
     .replace(/[^a-z0-9\u0900-\u097f]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
@@ -29,255 +22,175 @@ export interface DiffResult {
   topicTitle: string;
   unitSlug: string;
   unitTitle: string;
-  status: "added" | "removed" | "modified" | "unchanged";
-  /** Original text (for removed/modified) */
+  status: "added" | "removed" | "modified";
   original?: string;
-  /** New text (for added/modified) */
   revised?: string;
-  /** Year when change occurred (BS) */
   year?: number;
 }
 
-export function diffVersions(
-  older: SyllabusVersion,
-  newer: SyllabusVersion,
-): DiffResult[] {
-  const olderBySlug = new Map<string, { title: string; unitSlug: string; unitTitle: string }>();
-  for (const u of older.units) {
-    for (const t of u.topics) {
-      olderBySlug.set(slugify(t.title), {
-        title: t.title,
-        unitSlug: u.id,
-        unitTitle: u.title,
-      });
-    }
-  }
-  const newerBySlug = new Map<string, { title: string; unitSlug: string; unitTitle: string }>();
-  for (const u of newer.units) {
-    for (const t of u.topics) {
-      newerBySlug.set(slugify(t.title), {
-        title: t.title,
-        unitSlug: u.id,
-        unitTitle: u.title,
-      });
-    }
-  }
+export function diffVersions(older: SyllabusVersion, newer: SyllabusVersion): DiffResult[] {
+  const buildIndex = (v: SyllabusVersion) =>
+    new Map<string, { title: string; unitSlug: string; unitTitle: string }>(
+      v.units.flatMap((u) =>
+        u.topics.map((t) => [slugify(t.title), { title: t.title, unitSlug: u.id, unitTitle: u.title }] as const),
+      ),
+    );
 
+  const olderIdx = buildIndex(older);
+  const newerIdx = buildIndex(newer);
   const results: DiffResult[] = [];
-  const allSlugs = new Set([...olderBySlug.keys(), ...newerBySlug.keys()]);
-  for (const s of allSlugs) {
-    const olderEntry = olderBySlug.get(s);
-    const newerEntry = newerBySlug.get(s);
-    if (!olderEntry && newerEntry) {
-      results.push({
-        topicTitle: newerEntry.title,
-        unitSlug: newerEntry.unitSlug,
-        unitTitle: newerEntry.unitTitle,
-        status: "added",
-        revised: newerEntry.title,
-        year: newer.year,
-      });
-    } else if (olderEntry && !newerEntry) {
-      results.push({
-        topicTitle: olderEntry.title,
-        unitSlug: olderEntry.unitSlug,
-        unitTitle: olderEntry.unitTitle,
-        status: "removed",
-        original: olderEntry.title,
-      });
-    } else if (olderEntry && newerEntry && olderEntry.title !== newerEntry.title) {
-      results.push({
-        topicTitle: newerEntry.title,
-        unitSlug: newerEntry.unitSlug,
-        unitTitle: newerEntry.unitTitle,
-        status: "modified",
-        original: olderEntry.title,
-        revised: newerEntry.title,
-        year: newer.year,
-      });
+
+  for (const s of new Set([...olderIdx.keys(), ...newerIdx.keys()])) {
+    const o = olderIdx.get(s);
+    const n = newerIdx.get(s);
+    if (!o && n) {
+      results.push({ topicTitle: n.title, unitSlug: n.unitSlug, unitTitle: n.unitTitle, status: "added", revised: n.title, year: newer.year });
+    } else if (o && !n) {
+      results.push({ topicTitle: o.title, unitSlug: o.unitSlug, unitTitle: o.unitTitle, status: "removed", original: o.title });
+    } else if (o && n && o.title !== n.title) {
+      results.push({ topicTitle: n.title, unitSlug: n.unitSlug, unitTitle: n.unitTitle, status: "modified", original: o.title, revised: n.title, year: newer.year });
     }
   }
   return results;
 }
 
+/**
+ * Multi-year timeline diffs: for every consecutive pair of versions,
+ * produces a list of { year, diffs } entries sorted chronologically.
+ */
+export function diffTimeline(data: SyllabusSubjectData): Array<{ year: number; bsYear: string; diffs: DiffResult[]; notes?: string }> {
+  const sorted = [...data.versions].sort((a, b) => a.year - b.year);
+  const timeline: Array<{ year: number; bsYear: string; diffs: DiffResult[]; notes?: string }> = [];
+  for (let i = 1; i < sorted.length; i++) {
+    const older = sorted[i - 1];
+    const newer = sorted[i];
+    const changes = diffVersions(older, newer);
+    if (changes.length > 0) {
+      timeline.push({ year: newer.year, bsYear: newer.bsYear, diffs: changes, notes: newer.notes });
+    }
+  }
+  return timeline;
+}
+
 /* ────────────────────────────────────────────────────────────
-   UI components
+   Topic-level badge renderer
    ──────────────────────────────────────────────────────────── */
 
-const STATUS_CONFIG = {
-  added: {
-    label: "New",
-    icon: TrendingUp,
-    color: "text-emerald-600 dark:text-emerald-400",
-    bg: "bg-emerald-50 dark:bg-emerald-950/30",
-    border: "border-emerald-200 dark:border-emerald-800",
-    badge: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
-  },
-  removed: {
-    label: "Removed",
-    icon: TrendingDown,
-    color: "text-red-600 dark:text-red-400",
-    bg: "bg-red-50 dark:bg-red-950/30",
-    border: "border-red-200 dark:border-red-800",
-    badge: "bg-red-500/10 text-red-700 dark:text-red-300",
-  },
-  modified: {
-    label: "Modified",
-    icon: Pencil,
-    color: "text-amber-600 dark:text-amber-400",
-    bg: "bg-amber-50 dark:bg-amber-950/30",
-    border: "border-amber-200 dark:border-amber-800",
-    badge: "bg-amber-500/10 text-amber-700 dark:text-amber-300",
-  },
-  unchanged: {
-    label: "Unchanged",
-    icon: CheckCircle2,
-    color: "text-slate-400 dark:text-slate-500",
-    bg: "bg-slate-50 dark:bg-slate-900/30",
-    border: "border-slate-200 dark:border-slate-800",
-    badge: "bg-slate-500/10 text-slate-600 dark:text-slate-400",
-  },
-} as const;
+const STYLE: Record<DiffResult["status"], { icon: React.ElementType; color: string; bg: string; border: string; badge: string }> = {
+  added:    { icon: TrendingUp, color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950/30", border: "border-emerald-200 dark:border-emerald-800", badge: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300" },
+  removed:  { icon: TrendingDown, color: "text-red-600 dark:text-red-400", bg: "bg-red-50 dark:bg-red-950/30", border: "border-red-200 dark:border-red-800", badge: "bg-red-500/10 text-red-700 dark:text-red-300" },
+  modified: { icon: Pencil, color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-950/30", border: "border-amber-200 dark:border-amber-800", badge: "bg-amber-500/10 text-amber-700 dark:text-amber-300" },
+};
 
-function TopicDiffItem({ diff }: { diff: DiffResult }) {
-  const cfg = STATUS_CONFIG[diff.status];
-  const Icon = cfg.icon;
+function TopicBadge({ diff }: { diff: DiffResult }) {
+  const s = STYLE[diff.status];
+  const IconMap = { added: TrendingUp, removed: TrendingDown, modified: Pencil } as const;
+  const IconComp = IconMap[diff.status];
   return (
-    <div className={`rounded-lg border ${cfg.border} ${cfg.bg} p-3 space-y-1.5`}>
+    <div className={`rounded-lg border ${s.border} ${s.bg} p-3 space-y-1`}>
       <div className="flex items-start gap-2">
-        <Icon className={`h-4 w-4 shrink-0 mt-0.5 ${cfg.color}`} />
+        <div className={`h-4 w-4 shrink-0 mt-0.5 ${s.color}`}>
+          <IconComp className="h-4 w-4" />
+        </div>
         <div className="min-w-0 flex-1">
-          <p className={`text-sm font-medium ${cfg.color}`}>{cfg.label}</p>
+          <p className={`text-sm font-medium ${s.color}`}>{diff.status === "added" ? "Added" : diff.status === "removed" ? "Removed" : "Modified"}</p>
           <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{diff.topicTitle}</p>
         </div>
-        <span className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded-full font-medium ${cfg.badge}`}>
-          {diff.year ? `${diff.year} BS` : ""}
-        </span>
+        {diff.year && (
+          <span className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded-full font-medium ${s.badge}`}>
+            {diff.year} BS
+          </span>
+        )}
       </div>
       {diff.status === "modified" && (
         <div className="pl-6 space-y-1 text-xs">
           {diff.original && (
             <p className="text-muted-foreground/70 line-clamp-1">
               <span className="text-red-500 font-semibold mr-1">−</span>
-              {diff.original.slice(0, 100)}{diff.original.length > 100 ? "…" : ""}
+              {diff.original.slice(0, 120)}{diff.original.length > 120 ? "…" : ""}
             </p>
           )}
           {diff.revised && (
             <p className="text-foreground line-clamp-1">
               <span className="text-emerald-500 font-semibold mr-1">+</span>
-              {diff.revised.slice(0, 100)}{diff.revised.length > 100 ? "…" : ""}
+              {diff.revised.slice(0, 120)}{diff.revised.length > 120 ? "…" : ""}
             </p>
           )}
         </div>
       )}
-      {diff.status === "added" && diff.revised && (
-        <p className="pl-6 text-xs text-muted-foreground/80 line-clamp-1">
-          <span className="text-emerald-500 font-semibold mr-1">+</span>
-          {diff.revised.slice(0, 120)}
-        </p>
-      )}
-      <div className="pl-6 flex items-center gap-2 text-[11px] text-muted-foreground">
-        <span className="font-medium">{diff.unitTitle}</span>
-        <span>·</span>
-        <span className="font-mono">{diff.unitSlug}</span>
-      </div>
+      <div className="pl-6 text-[11px] text-muted-foreground font-mono">{diff.unitSlug}</div>
     </div>
   );
 }
 
 /* ────────────────────────────────────────────────────────────
-   Comparison view
+   Multi-year timeline viewer
    ──────────────────────────────────────────────────────────── */
 
-export function SyllabusVersionComparison({ data }: { data: SubjectBiologyData }) {
-  const { versions } = data;
-  const diffs = useMemo(() => {
-    if (versions.length < 2) return null;
-    const sorted = [...versions].sort((a, b) => a.year - b.year);
-    const oldest = sorted[0];
-    const newest = sorted[sorted.length - 1];
-    return {
-      older: oldest,
-      newer: newest,
-      changes: diffVersions(oldest, newest),
-    };
-  }, [versions]);
-
-  if (!diffs || !diffs.changes) return null;
-
-  const stats = {
-    added: diffs.changes.filter((d) => d.status === "added").length,
-    removed: diffs.changes.filter((d) => d.status === "removed").length,
-    modified: diffs.changes.filter((d) => d.status === "modified").length,
-  };
+export function SyllabusTimeline({ data }: { data: SyllabusSubjectData }) {
+  const timeline = useMemo(() => diffTimeline(data), [data]);
+  if (timeline.length === 0) return null;
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Calendar className="h-4 w-4" />
-          <span className="font-medium text-foreground">{diffs.older.year} BS</span>
-          <ChevronRight className="h-4 w-4" />
-          <span className="font-medium text-foreground">{diffs.newer.year} BS</span>
-          <span className="text-muted-foreground mx-1">→</span>
-          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">
-            {diffs.newer.isLatest ? "Latest" : ""}
-          </span>
-        </div>
+      <div className="flex items-center gap-2">
+        <ChevronRight className="h-5 w-5 text-violet-500 rotate-90" />
+        <h2 className="text-lg font-semibold">Year-by-Year Topic Changes</h2>
       </div>
 
       {/* Stats row */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/20 p-4 text-center">
-          <TrendingUp className="h-5 w-5 text-emerald-600 dark:text-emerald-400 mx-auto mb-1" />
-          <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-300">{stats.added}</p>
-          <p className="text-xs text-emerald-600/80 dark:text-emerald-400/70">Added</p>
-        </div>
-        <div className="rounded-xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950/20 p-4 text-center">
-          <TrendingDown className="h-5 w-5 text-red-600 dark:text-red-400 mx-auto mb-1" />
-          <p className="text-2xl font-bold text-red-700 dark:text-red-300">{stats.removed}</p>
-          <p className="text-xs text-red-600/80 dark:text-red-400/70">Removed</p>
-        </div>
-        <div className="rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/20 p-4 text-center">
-          <Pencil className="h-5 w-5 text-amber-600 dark:text-amber-400 mx-auto mb-1" />
-          <p className="text-2xl font-bold text-amber-700 dark:text-amber-300">{stats.modified}</p>
-          <p className="text-xs text-amber-600/80 dark:text-amber-400/70">Modified</p>
-        </div>
+        {(["added", "removed", "modified"] as const).map((status) => {
+          const count = timeline.reduce((sum, t) => sum + t.diffs.filter((d) => d.status === status).length, 0);
+          const colors = { added: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-800", removed: "text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-800", modified: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800" };
+          const icons = { added: TrendingUp, removed: TrendingDown, modified: Pencil };
+          const Icon = icons[status];
+          return (
+            <div key={status} className={`rounded-xl border ${colors[status]} p-4 text-center`}>
+              <Icon className={`h-5 w-5 ${colors[status].split(" ")[1]} mx-auto mb-1`} />
+              <p className="text-2xl font-bold text-foreground">{count}</p>
+              <p className="text-xs text-muted-foreground capitalize">{status}</p>
+            </div>
+          );
+        })}
       </div>
 
-      {/* Notes */}
-      {diffs.newer.notes && (
-        <div className="rounded-xl border border-border bg-muted/40 p-4 flex items-start gap-3">
-          <Eye className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-          <div>
-            <p className="text-sm font-medium text-foreground">Source Note</p>
-            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{diffs.newer.notes}</p>
-            <DateBadge label="Extracted from esikhcha.com" date={`${diffs.newer.year} BS`} tone="blue" />
-          </div>
-        </div>
-      )}
-
-      {/* Topic-level diffs */}
+      {/* Timeline */}
       <div className="space-y-4">
-        {["added", "modified", "removed"].map((status) => {
-          const items = diffs.changes.filter((d) => d.status === status);
-          if (items.length === 0) return null;
-          const cfg = STATUS_CONFIG[status as keyof typeof STATUS_CONFIG];
-          const Icon = cfg.icon;
+        {timeline.map((entry, idx) => {
+          const stats = {
+            added: entry.diffs.filter((d) => d.status === "added").length,
+            removed: entry.diffs.filter((d) => d.status === "removed").length,
+            modified: entry.diffs.filter((d) => d.status === "modified").length,
+          };
           return (
-            <div key={status}>
-              <div className="flex items-center gap-2 mb-3">
-                <Icon className={`h-4 w-4 ${cfg.color}`} />
-                <h3 className="text-sm font-semibold text-foreground">{cfg.label} Topics</h3>
-                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${cfg.badge}`}>
-                  {items.length}
-                </span>
+            <div key={`${entry.year}-${idx}`} className="rounded-xl border border-border bg-card overflow-hidden">
+              {/* Year header */}
+              <div className="px-4 py-3 border-b border-border/60 bg-muted/30 flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 text-white text-xs font-bold">
+                    {entry.year}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-sm text-foreground">{entry.bsYear}</p>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      {stats.added > 0 && <span className="text-xs text-emerald-600 dark:text-emerald-400">+{stats.added} added</span>}
+                      {stats.removed > 0 && <span className="text-xs text-red-600 dark:text-red-400">-{stats.removed} removed</span>}
+                      {stats.modified > 0 && <span className="text-xs text-amber-600 dark:text-amber-400">{stats.modified} modified</span>}
+                    </div>
+                  </div>
+                </div>
+                {entry.notes && <DateBadge label="Source" date={`${entry.year} BS`} tone="gray" />}
               </div>
-              <div className="grid gap-2">
-                {items.map((diff, i) => (
-                  <TopicDiffItem key={`${diff.unitSlug}-${i}`} diff={diff} />
+
+              {/* Diffs */}
+              <div className="p-4 space-y-2">
+                {entry.diffs.map((diff, i) => (
+                  <TopicBadge key={`${diff.unitSlug}-${i}`} diff={diff} />
                 ))}
+                {entry.diffs.length === 0 && (
+                  <p className="text-sm text-muted-foreground text-center py-4">No topic-level changes detected</p>
+                )}
               </div>
             </div>
           );
@@ -288,90 +201,116 @@ export function SyllabusVersionComparison({ data }: { data: SubjectBiologyData }
 }
 
 /* ────────────────────────────────────────────────────────────
-   Version list (click to compare)
+   Pairwise comparison view (for "compare with previous" button)
    ──────────────────────────────────────────────────────────── */
 
-export function SyllabusVersionSelector({
-  data,
-  activeVersionYear,
-  onSelect,
-}: {
-  data: SubjectBiologyData;
-  activeVersionYear: number;
-  onSelect: (year: number) => void;
-}) {
-  const sorted = [...data.versions].sort((a, b) => b.year - a.year);
+export function SyllabusPairCompare({ data }: { data: SyllabusSubjectData }) {
+  const sorted = [...data.versions].sort((a, b) => a.year - b.year);
+  if (sorted.length < 2) return null;
+  const older = sorted[sorted.length - 2];
+  const newer = sorted[sorted.length - 1];
+  const changes = diffVersions(older, newer);
+
+  const stats = {
+    added: changes.filter((d) => d.status === "added").length,
+    removed: changes.filter((d) => d.status === "removed").length,
+    modified: changes.filter((d) => d.status === "modified").length,
+  };
+
   return (
-    <div className="flex flex-wrap gap-2">
-      {sorted.map((v) => (
-        <button
-          key={v.year}
-          onClick={() => onSelect(v.year)}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-            v.year === activeVersionYear
-              ? "bg-primary text-primary-foreground border-primary"
-              : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
-          }`}
-        >
-          {v.year} BS
-          {v.isLatest && (
-            <span className="text-[10px] px-1 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-bold">
-              NEW
-            </span>
-          )}
-        </button>
-      ))}
+    <div className="space-y-4">
+      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <span className="font-medium text-foreground">{older.year} BS</span>
+        <ChevronRight className="h-4 w-4" />
+        <span className="font-medium text-foreground">{newer.year} BS</span>
+        {newer.isLatest && (
+          <span className="ml-auto text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-medium">
+            Latest
+          </span>
+        )}
+      </div>
+
+      <div className="grid grid-cols-3 gap-3">
+        {[
+          { label: "Added", value: stats.added, color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950/20", border: "border-emerald-200 dark:border-emerald-800" },
+          { label: "Removed", value: stats.removed, color: "text-red-600 dark:text-red-400", bg: "bg-red-50 dark:bg-red-950/20", border: "border-red-200 dark:border-red-800" },
+          { label: "Modified", value: stats.modified, color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-950/20", border: "border-amber-200 dark:border-amber-800" },
+        ].map(({ label, value, color, bg, border }) => (
+          <div key={label} className={`rounded-xl border ${border} ${bg} p-4 text-center`}>
+            <p className={`text-2xl font-bold ${color}`}>{value}</p>
+            <p className="text-xs text-muted-foreground">{label}</p>
+          </div>
+        ))}
+      </div>
+
+      {newer.notes && (
+        <div className="flex items-start gap-2 text-sm text-muted-foreground bg-muted/50 rounded-lg p-3">
+          <span className="shrink-0 mt-0.5">ℹ</span>
+          <span>{newer.notes}</span>
+        </div>
+      )}
+
+      <div className="space-y-2">
+        {(["added", "modified", "removed"] as const).map((status) => {
+          const items = changes.filter((d) => d.status === status);
+          if (items.length === 0) return null;
+          const labels = { added: "Added", modified: "Modified", removed: "Removed" };
+          const colors = { added: "text-emerald-600 dark:text-emerald-400", modified: "text-amber-600 dark:text-amber-400", removed: "text-red-600 dark:text-red-400" };
+          return (
+            <div key={status}>
+              <p className={`text-xs font-semibold uppercase tracking-wider ${colors[status]} mb-2`}>{labels[status]}</p>
+              <div className="space-y-2">
+                {items.map((diff, i) => <TopicBadge key={`${diff.unitSlug}-${i}`} diff={diff} />)}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
 
 /* ────────────────────────────────────────────────────────────
-   Unit/topic renderer
+   Current-version unit/topic view (with change badges on topics)
    ──────────────────────────────────────────────────────────── */
 
 export function SyllabusUnitView({
   unit,
-  versionYear: _versionYear,
+  versionYear,
   diffs,
 }: {
   unit: { id: string; title: string; hours: number; topics: { slug: string; title: string; hours?: number }[] };
   versionYear: number;
   diffs?: DiffResult[];
 }) {
-  const diffBySlug = new Map<string, DiffResult>();
+  const diffByUnit = new Map<string, DiffResult[]>();
   if (diffs) {
     for (const d of diffs) {
-      if (d.unitSlug === unit.id) diffBySlug.set(d.topicTitle, d);
+      if (!diffByUnit.has(d.unitSlug)) diffByUnit.set(d.unitSlug, []);
+      diffByUnit.get(d.unitSlug)!.push(d);
     }
   }
+  const unitDiffs = diffByUnit.get(unit.id) ?? [];
+  const hasChanges = unitDiffs.length > 0;
 
   return (
-    <div className="rounded-xl border border-border bg-card overflow-hidden">
+    <div className={`rounded-xl border overflow-hidden ${hasChanges ? "border-violet-200 dark:border-violet-800" : "border-border"}`}>
       <div className="px-4 py-3 border-b border-border/60 bg-muted/30 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-sm font-semibold text-foreground">{unit.title}</span>
           {unit.hours !== undefined && (
-            <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-              {unit.hours} hrs
-            </span>
+            <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">{unit.hours} hrs</span>
           )}
         </div>
         <span className="text-[11px] font-mono text-muted-foreground/60">{unit.id}</span>
       </div>
       <div className="divide-y divide-border/40">
         {unit.topics.map((topic, i) => {
-          const diff = diffBySlug.get(topic.title);
-          const diffCfg = diff ? STATUS_CONFIG[diff.status] : null;
-          const DiffIcon = diffCfg?.icon;
+          const diff = unitDiffs.find((d) => d.topicTitle === topic.title);
           return (
-            <div
-              key={i}
-              className={`px-4 py-2.5 flex items-start gap-3 text-sm transition-colors ${
-                diffCfg ? diffCfg.bg : ""
-              }`}
-            >
-              {diffCfg && DiffIcon && (
-                <DiffIcon className={`h-3.5 w-3.5 shrink-0 mt-0.5 ${diffCfg.color}`} />
+            <div key={i} className={`px-4 py-2.5 flex items-start gap-3 text-sm ${diff ? (diff.status === "added" ? "bg-emerald-50 dark:bg-emerald-950/20" : diff.status === "removed" ? "bg-red-50 dark:bg-red-950/20" : diff.status === "modified" ? "bg-amber-50 dark:bg-amber-950/20" : "") : ""}`}>
+              {diff && (
+                <span className={`shrink-0 mt-0.5 h-2 w-2 rounded-full ${diff.status === "added" ? "bg-emerald-500" : diff.status === "removed" ? "bg-red-500" : "bg-amber-500"}`} />
               )}
               <div className="min-w-0 flex-1">
                 <p className={`leading-relaxed ${diff?.status === "removed" ? "line-through opacity-50" : ""}`}>
@@ -381,9 +320,9 @@ export function SyllabusUnitView({
                   <p className="text-xs text-muted-foreground mt-0.5">{topic.hours} hrs</p>
                 )}
               </div>
-              {diffCfg && (
-                <span className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded-full font-medium ${diffCfg.badge}`}>
-                  {diffCfg.label}
+              {diff && diff.status !== "removed" && (
+                <span className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded-full font-medium ${diff.status === "added" ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300" : "bg-amber-500/10 text-amber-700 dark:text-amber-300"}`}>
+                  {diff.status === "added" ? "NEW" : "CHANGED"}
                 </span>
               )}
             </div>
