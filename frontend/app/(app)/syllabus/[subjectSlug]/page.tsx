@@ -20,6 +20,7 @@ import {
 import {
   SyllabusTimeline,
   SyllabusUnitView,
+  TopicLifecycleViewer,
   diffTimeline,
 } from "@/features/syllabus-history/components/version-comparison";
 import type { SyllabusSubjectData, SubjectKey } from "@/features/syllabus-history/data";
@@ -278,6 +279,21 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
               <YearAccordion key={yearData.year} yearData={yearData} colorClass={colorClass} subjectSlug={subjectSlug} />
             ))}
           </div>
+        </div>
+      )}
+
+      {/* Topic lifecycle — every topic's full history from first appearance to latest */}
+      {bioData && bioData.versions.length >= 2 && (
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <Search className="h-5 w-5 text-violet-500" />
+            <h2 className="text-lg font-semibold">Every Topic's Full Lifecycle</h2>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            See how each topic grew from scratch — when it first appeared, what changed, and its scope.
+            Click any topic to expand its complete timeline.
+          </p>
+          <TopicLifecycleViewer data={bioData} />
         </div>
       )}
 
