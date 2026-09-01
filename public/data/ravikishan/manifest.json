@@ -8785,6 +8785,96 @@
     "dupType": 1
   },
   {
+    "path": "class-11-notes\\mathematics\\calculus\\concepts\\continuity.json",
+    "data": {
+      "title": "Continuity of a Function",
+      "unitSlug": "calculus",
+      "topicSlug": "continuity",
+      "topicTitle": "Continuity of a Function",
+      "relevance": 90,
+      "notes": [
+        "A function f is continuous at x = a if three conditions are met: (1) f(a) is defined, (2) lim(x→a) f(x) exists, (3) lim(x→a) f(x) = f(a).",
+        "Intuitive idea: the graph can be drawn without lifting the pencil — no breaks, holes, or jumps.",
+        "A function is continuous on an interval if it is continuous at every point in that interval.",
+        "Types of discontinuity:",
+        "  • Removable (hole): limit exists but f(a) is undefined or different — can be 'fixed' by redefining f(a).",
+        "  • Jump discontinuity: left-hand limit ≠ right-hand limit — graph has a sudden jump.",
+        "  • Infinite discontinuity: function approaches ±∞ — vertical asymptote.",
+        "  • Non/removable: limit does not exist and cannot be fixed.",
+        "Algebraic functions are continuous everywhere in their domain.",
+        "Trigonometric functions (sin, cos) are continuous everywhere; tan, sec have discontinuities at odd multiples of π/2.",
+        "Exponential (e^x) and logarithmic (ln x) functions are continuous on their domains.",
+        "Sum, difference, product, and quotient (where denominator ≠ 0) of continuous functions are continuous.",
+        "Composite of continuous functions is continuous."
+      ],
+      "confusion": [
+        "Continuity at a point requires the limit to exist — check both LHL and RHS separately.",
+        "A function can be continuous on an interval but discontinuous at a single point.",
+        "Differentiability implies continuity, but continuity does NOT imply differentiability (e.g., |x| at x=0)."
+      ],
+      "practice": [
+        "Determine where f(x) = 1/(x−2) is continuous.",
+        "Check continuity of f(x) = |x−1| at x = 1.",
+        "Find the value of k that makes f(x) continuous at x = 2, where f(x) = (x²−4)/(x−2) for x≠2 and f(2) = k."
+      ],
+      "universalFacts": [
+        "Continuity is a prerequisite for differentiability — you cannot differentiate a function at a point where it is discontinuous.",
+        "The Intermediate Value Theorem guarantees that a continuous function on [a,b] takes every value between f(a) and f(b).",
+        "Physical quantities that change continuously (position, temperature) can be modeled with continuous functions."
+      ],
+      "animation3D": "calculus",
+      "motionGraphics": "calculus"
+    },
+    "hash": "8a9920941efeaa2b7125702e4ea878d5b675f1e2",
+    "dupType": 1
+  },
+  {
+    "path": "class-11-notes\\mathematics\\calculus\\concepts\\indeterminate-forms.json",
+    "data": {
+      "title": "Indeterminate Forms and Evaluation Techniques",
+      "unitSlug": "calculus",
+      "topicSlug": "indeterminate-forms",
+      "topicTitle": "Indeterminate Forms and Evaluation Techniques",
+      "relevance": 88,
+      "notes": [
+        "Indeterminate forms arise when direct substitution yields an ambiguous result. The seven forms are: 0/0, ∞/∞, 0·∞, ∞−∞, 0⁰, 1^∞, ∞⁰.",
+        "For 0/0 and ∞/∞ forms, factorization, rationalization, or L'Hôpital's Rule may apply.",
+        "Factorization: factor numerator and denominator to cancel the zero-producing term. Example: lim(x→3) (x²−9)/(x−3) = lim(x→3) (x+3) = 6.",
+        "Rationalization: multiply by conjugate to eliminate radicals. Example: lim(x→0) (√(x+1)−1)/x = lim(x→0) x/[x(√(x+1)+1)] = 1/2.",
+        "Standard limits for trigonometric forms:",
+        "  • lim(x→0) sin(x)/x = 1",
+        "  • lim(x→0) tan(x)/x = 1",
+        "  • lim(x→0) (1−cos x)/x = 0",
+        "  • lim(x→0) sin(ax)/sin(bx) = a/b",
+        "Standard limits for exponential/logarithmic forms:",
+        "  • lim(x→0) (e^x − 1)/x = 1",
+        "  • lim(x→0) ln(1+x)/x = 1",
+        "  • lim(x→∞) (1 + 1/x)^x = e",
+        "For 1^∞, 0⁰, ∞⁰ forms: take natural log, evaluate the resulting limit, then exponentiate.",
+        "L'Hôpital's Rule: if lim f/g gives 0/0 or ∞/∞, then lim f/g = lim f'/g' (provided the latter exists)."
+      ],
+      "confusion": [
+        "L'Hôpital's Rule ONLY applies to 0/0 and ∞/∞ forms — not to 0·∞ or ∞−∞ directly.",
+        "Converting 0·∞ to 0/0 or ∞/∞ requires rearranging the expression.",
+        "1^∞ is NOT 1 — it requires logarithmic transformation."
+      ],
+      "practice": [
+        "Evaluate lim(x→0) (sin 5x)/x.",
+        "Find lim(x→∞) (1 + 2/x)^x.",
+        "Evaluate lim(x→0) (e^x − 1 − x)/x²."
+      ],
+      "universalFacts": [
+        "All indeterminate forms represent competition between two processes (e.g., numerator → 0 vs denominator → 0).",
+        "The value of a limit depends on the relative rates of approach, not just the endpoints.",
+        "These techniques form the basis for defining the derivative: f'(a) = lim(x→a) [f(x)−f(a)]/(x−a)."
+      ],
+      "animation3D": "calculus",
+      "motionGraphics": "calculus"
+    },
+    "hash": "c00c568a25eee323ff4536f0354c54d97580038a",
+    "dupType": 1
+  },
+  {
     "path": "class-11-notes\\mathematics\\calculus\\concepts\\limit5-01.json",
     "data": {
       "title": "LIMITS â€” Infinite Limits, Indeterminate Forms & Evaluation of Limits (Step-by-Step)",
@@ -9043,6 +9133,69 @@
       "motionGraphics": "calculus"
     },
     "hash": "77da1080793b47010c2c6ae5c97ed5f5e5e6a131",
+    "dupType": 1
+  },
+  {
+    "path": "class-11-notes\\mathematics\\calculus\\concepts\\limits-intro.json",
+    "data": {
+      "title": "Limits — Concept and Introduction",
+      "unitSlug": "calculus",
+      "topicSlug": "limits",
+      "topicTitle": "Limits — Concept and Introduction",
+      "relevance": 92,
+      "notes": [
+        "A function f assigns a unique element of Y to each element of X. If f(a) is a finite number, f(x) exists at x = a; otherwise it is undefined.",
+        "Example: f(x) = 3x + 5 exists at x = 2 since f(2) = 11 (finite). But f(x) = 1/(x−1) is undefined at x = 1 (1/0).",
+        "The limit describes the value a function approaches as x gets arbitrarily close to a point — even if the function is undefined there.",
+        "Geometric interpretation: the y-value the graph is heading toward as x approaches a from either side.",
+        "Physical interpretation: instantaneous velocity is the limit of average velocity as the time interval approaches zero.",
+        "Indeterminate forms (0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0^0) require special techniques — direct substitution alone is insufficient.",
+        "Key standard limits: lim(x→0) sin(x)/x = 1, lim(x→0) (1−cos x)/x = 0, lim(x→0) tan(x)/x = 1, lim(x→0) (e^x − 1)/x = 1, lim(x→0) ln(1+x)/x = 1.",
+        "Algebraic properties of limits: lim[f±g] = lim f ± lim g, lim[c·f] = c·lim f, lim[f·g] = lim f · lim g, lim[f/g] = lim f / lim g (denominator ≠ 0)."
+      ],
+      "confusion": [
+        "Do not confuse limit with function value — f(a) may not exist while lim(x→a) f(x) does.",
+        "0/0 is NOT zero — it is indeterminate and requires further analysis.",
+        "Left-hand limit and right-hand limit must both exist and be equal for the limit to exist."
+      ],
+      "practice": [
+        "Find lim(x→2) (x² − 4)/(x − 2) by factoring.",
+        "Evaluate lim(x→0) sin(3x)/x using the standard limit.",
+        "Determine whether lim(x→0) |x|/x exists."
+      ],
+      "universalFacts": [
+        "Limits are the foundation of all calculus — derivatives and integrals are defined as limits.",
+        "Every polynomial, rational, trigonometric, exponential, and logarithmic function has a well-defined limit at every point in its domain.",
+        "The concept of limit bridges algebra and geometry — it allows us to talk about instantaneous rates of change."
+      ],
+      "animation3D": "calculus",
+      "motionGraphics": "calculus"
+    },
+    "hash": "cf65ca7b016d0e8cba9b79c7cff576e396e8f5d3",
+    "dupType": 1
+  },
+  {
+    "path": "class-11-notes\\mathematics\\calculus\\concepts\\limits-resources.json",
+    "data": {
+      "title": "Limits and Continuity — Resources",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity",
+      "topicTitle": "Limits and Continuity — Resources",
+      "relevance": 95,
+      "notes": [
+        "📚 Exercise 15.1 PDF: Review of Equations of Straight Lines, function definition, value of function.",
+        "📚 Exercise 15.2 PDF: Trigonometric limits — standard limits, limit formulas for sin, cos, tan.",
+        "📚 Exercise 15.3 PDF: Right-hand limit, left-hand limit, continuity of functions.",
+        "🔗 Source: WebNotee.com — limits-and-continuity-class-11-mathematics",
+        "Interactive visuals below show limit behavior and continuity types."
+      ],
+      "confusion": [],
+      "practice": [],
+      "universalFacts": [],
+      "animation3D": "calculus",
+      "motionGraphics": "calculus"
+    },
+    "hash": "6051d571fd5b6354f35cd2c4312f60eef5ead7aa",
     "dupType": 1
   },
   {
@@ -19889,6 +20042,348 @@
       ]
     },
     "hash": "697dbbdc8d21bb78ea3f3b13c0ca18fde5573e50",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\01-limit-of-a-function.json",
+    "data": {
+      "title": "Limit of a Function",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 95,
+      "notes": [
+        "**Definition of limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ approaches $a$ (but $x \\neq a$), the value of $f(x)$ approaches $L$.",
+        "**One-sided limits:** The left-hand limit $\\lim_{x \\to a^-} f(x)$ considers values of $x$ less than $a$; the right-hand limit $\\lim_{x \\to a^+} f(x)$ considers values greater than $a$. For the limit to exist, both one-sided limits must be equal.",
+        "**Existence of a limit:** $\\lim_{x \\to a} f(x) = L$ exists if and only if $\\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$.",
+        "**Geometric interpretation:** On the graph of $y = f(x)$, the limit $\\lim_{x \\to a} f(x) = L$ means the $y$-value approaches $L$ as the curve is traced toward $x = a$ from both sides. The function need not be defined at $x = a$ itself.",
+        "**Physical interpretation:** If $f(t)$ represents position at time $t$, then $\\lim_{t \\to a} f(t)$ gives the position approached at time $a$, regardless of whether the object is actually at that position."
+      ],
+      "confusion": [
+        "The limit $\\lim_{x \\to a} f(x)$ does NOT require $f(a)$ to exist. The limit is about the behaviour of $f(x)$ near $a$, not at $a$.",
+        "Do not substitute $x = a$ directly as a first step — many limits yield $0/0$ which requires algebraic simplification before substitution."
+      ],
+      "practice": [
+        "Evaluate $\\lim_{x \\to 2} (x^2 - 4)/(x - 2)$ by factoring and simplifying.",
+        "Find the left-hand and right-hand limits of $f(x) = |x|/x$ as $x \\to 0$ and determine whether the limit exists.",
+        "Sketch a function where the left-hand and right-hand limits exist but are not equal."
+      ],
+      "universalFacts": [
+        "Limits are the foundation of all calculus — derivatives and integrals are both defined via limits.",
+        "The concept of a limit extends naturally to sequences: $\\lim_{n \\to \\infty} a_n = L$ means the sequence values approach $L$."
+      ]
+    },
+    "hash": "f4a83ce4bd9841b99278bedb1996b94abcb8e201",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\02-indeterminate-forms.json",
+    "data": {
+      "title": "Indeterminate Forms",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 95,
+      "notes": [
+        "**What is an indeterminate form?** When direct substitution into a limit gives an expression like $0/0$, $\\infty/\\infty$, $0 \\cdot \\infty$, $\\infty - \\infty$, $1^\\infty$, $0^0$, or $\\infty^0$, the result is indeterminate — the limit may exist but cannot be determined from this form alone.",
+        "**$0/0$ form:** The most common indeterminate form. Factor or simplify the expression to cancel the zero-producing factor, then substitute.",
+        "**$\\infty/\\infty$ form:** Common in limits at infinity. Divide numerator and denominator by the highest power of $x$, or use L'Hopital's rule (studied later).",
+        "**$\\infty - \\infty$ form:** Rationalize, combine fractions, or use a common denominator to convert into a $0/0$ or $\\infty/\\infty$ form.",
+        "**$0 \\cdot \\infty$ form:** Rewrite as $0/\\frac{1}{\\infty} = 0/0$ or $\\infty/\\frac{1}{0} = \\infty/\\infty$, then apply standard techniques.",
+        "**$1^\\infty$, $0^0$, $\\infty^0$ forms:** Take the natural logarithm of the expression, evaluate the limit of the logarithm, then exponentiate back.",
+        "**Important note:** Not every indeterminate form evaluates to zero or infinity. For example, $\\lim_{x \\to 0} (\\sin x)/x = 1$ despite being a $0/0$ form."
+      ],
+      "confusion": [
+        "$0/0$ is indeterminate, but $k/0$ (where $k \\neq 0$) is NOT indeterminate — the limit is $\\pm \\infty$ (does not exist as a finite number).",
+        "$\\infty/\\infty$ is indeterminate, but $k/\\infty = 0$ for any finite constant $k$ — this IS determinate."
+      ],
+      "practice": [
+        "Evaluate $\\lim_{x \\to 3} (x^2 - 9)/(x - 3)$ — a $0/0$ form solved by factoring.",
+        "Find $\\lim_{x \\to 0} (1 - \\cos x)/x^2$ by using the identity $1 - \\cos x = 2\\sin^2(x/2)$.",
+        "Determine $\\lim_{x \\to \\infty} (3x^2 + 2x)/(5x^2 - 1)$ by dividing by $x^2$."
+      ],
+      "universalFacts": [
+        "The seven indeterminate forms are: $0/0$, $\\infty/\\infty$, $0 \\cdot \\infty$, $\\infty - \\infty$, $1^\\infty$, $0^0$, $\\infty^0$.",
+        "Recognizing an indeterminate form is the critical first step — it tells you that more work is needed, not that the limit does not exist."
+      ]
+    },
+    "hash": "79ce9b3028be3250da99416f4d0d96e18d1238f8",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\03-algebraic-properties-of-limits.json",
+    "data": {
+      "title": "Algebraic Properties of Limits",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 100,
+      "notes": [
+        "**Sum rule:** $\\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x)$, provided both limits exist.",
+        "**Difference rule:** $\\lim_{x \\to a} [f(x) - g(x)] = \\lim_{x \\to a} f(x) - \\lim_{x \\to a} g(x)$.",
+        "**Product rule:** $\\lim_{x \\to a} [f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$.",
+        "**Quotient rule:** $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$, provided the denominator limit is non-zero.",
+        "**Constant multiple rule:** $\\lim_{x \\to a} [c \\cdot f(x)] = c \\cdot \\lim_{x \\to a} f(x)$ for any constant $c$.",
+        "**Power rule:** $\\lim_{x \\to a} [f(x)]^n = [\\lim_{x \\to a} f(x)]^n$ for any positive integer $n$.",
+        "**Root rule:** $\\lim_{x \\to a} \\sqrt[n]{f(x)} = \\sqrt[n]{\\lim_{x \\to a} f(x)}$, provided the limit is positive when $n$ is even.",
+        "**Sandwich (Squeeze) theorem:** If $g(x) \\leq f(x) \\leq h(x)$ near $a$ and $\\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L$, then $\\lim_{x \\to a} f(x) = L$."
+      ],
+      "confusion": [
+        "The quotient rule requires the denominator limit to be non-zero. If both numerator and denominator approach zero, you have a $0/0$ indeterminate form and must simplify first.",
+        "These properties hold only when the individual limits on the right side exist (except for the quotient rule, which also requires a non-zero denominator limit)."
+      ],
+      "practice": [
+        "If $\\lim_{x \\to 2} f(x) = 5$ and $\\lim_{x \\to 2} g(x) = 3$, find $\\lim_{x \\to 2} [3f(x) - 2g(x)]$.",
+        "Use the product rule to evaluate $\\lim_{x \\to 1} (x^2 + 1)(3x - 1)$ by splitting into a product.",
+        "Use the sandwich theorem to prove $\\lim_{x \\to 0} x^2 \\sin(1/x) = 0$."
+      ],
+      "universalFacts": [
+        "These algebraic properties allow you to break complex limits into simpler ones, which is the primary strategy for limit evaluation.",
+        "The properties extend to finite sums and products of any number of functions."
+      ]
+    },
+    "hash": "3661c106dee26d05fd5691df9bfd9dfa4e685ce3",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\04-limits-of-algebraic-functions.json",
+    "data": {
+      "title": "Basic Theorems on Limits of Algebraic Functions",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 100,
+      "notes": [
+        "**Polynomial limit theorem:** For any polynomial $p(x)$, $\\lim_{x \\to a} p(x) = p(a)$. Simply substitute $x = a$.",
+        "**Rational function theorem:** For a rational function $r(x) = p(x)/q(x)$, if $q(a) \\neq 0$, then $\\lim_{x \\to a} r(x) = p(a)/q(a)$. Direct substitution works.",
+        "**When direct substitution fails ($0/0$ form):** Factor the numerator and denominator, cancel common factors, then substitute.",
+        "**Limits at infinity for polynomials:** $\\lim_{x \\to \\infty} a_nx^n + \\cdots = \\begin{cases} \\infty & \\text{if } a_n > 0 \\\\ -\\infty & \\text{if } a_n < 0 \\end{cases}$ (for $n \\geq 1$).",
+        "**Limits at infinity for rational functions:** Divide every term by the highest power of $x$ in the denominator. If degree of numerator < degree of denominator, limit = 0. If equal, limit = ratio of leading coefficients.",
+        "**Example:** $\\lim_{x \\to \\infty} \\frac{3x^2 + 5x - 1}{2x^2 - 7} = \\frac{3}{2}$ (same degree, ratio of leading coefficients).",
+        "**Nested radicals:** For $\\lim_{x \\to a} (\\sqrt{f(x)} - L)$ type limits, rationalize by multiplying by the conjugate $\\sqrt{f(x)} + L$."
+      ],
+      "confusion": [
+        "For rational functions where both numerator and denominator approach 0 at $x = a$, do NOT simply say the limit is the ratio of leading coefficients — you must factor and simplify first.",
+        "At infinity, only the highest-degree terms matter. Lower-degree terms become negligible."
+      ],
+      "practice": [
+        "Evaluate $\\lim_{x \\to -1} \\frac{x^3 + 1}{x + 1}$ by factoring.",
+        "Find $\\lim_{x \\to \\infty} \\frac{5x^3 - 2x}{3x^3 + 4x^2}$.",
+        "Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$ by rationalizing the numerator."
+      ],
+      "universalFacts": [
+        "For polynomials and rational functions, the first strategy is always direct substitution. Only when it fails do you need algebraic manipulation.",
+        "The degree comparison rule for limits at infinity is a quick diagnostic tool that avoids unnecessary computation."
+      ]
+    },
+    "hash": "74f736588f80795298b2b348626edc98ed3c8fc4",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\05-limits-of-trigonometric-functions.json",
+    "data": {
+      "title": "Basic Theorems on Limits of Trigonometric Functions",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 100,
+      "notes": [
+        "**Fundamental trigonometric limit:** $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$, where $x$ is measured in radians. This is the most important limit in introductory calculus.",
+        "**Corollary:** $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$ and $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$.",
+        "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\sin(ax)}{bx} = \\frac{a}{b}$ and $\\lim_{x \\to 0} \\frac{\\sin(ax)}{\\sin(bx)} = \\frac{a}{b}$.",
+        "**Limits at $\\pi/2$:** $\\lim_{x \\to \\pi/2} \\frac{\\cos x}{\\pi/2 - x} = 1$ and $\\lim_{x \\to \\pi/2} \\frac{\\sin x}{\\cos x} \\neq$ straightforward — use substitutions.",
+        "**Working strategy:** When you see $\\sin(\\text{something})$ in a limit, try to make the \"something\" match the other factor by multiplying and dividing.",
+        "**Example:** $\\lim_{x \\to 0} \\frac{\\sin 3x}{x} = \\lim_{x \\to 0} \\frac{\\sin 3x}{3x} \\cdot 3 = 1 \\cdot 3 = 3$.",
+        "**Example:** $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ requires Taylor expansion or repeated applications of L'Hopital's rule (advanced).",
+        "**Reciprocal forms:** $\\lim_{x \\to 0} \\frac{x}{\\sin x} = 1$ follows immediately from the fundamental limit."
+      ],
+      "confusion": [
+        "The limit $\\lim_{x \\to 0} (\\sin x)/x = 1$ only works when $x$ is in RADIANS. In degrees, the limit would be $\\pi/180$.",
+        "Do not confuse $\\lim_{x \\to 0} (\\sin x)/x = 1$ with $\\lim_{x \\to \\infty} (\\sin x)/x = 0$ — these are completely different situations.",
+        "$\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ does NOT mean $\\sin x = x$. It means they are approximately equal for very small $x$."
+      ],
+      "practice": [
+        "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 5x}{\\sin 2x}$.",
+        "Find $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2}$ using the identity $1 - \\cos x = 2\\sin^2(x/2)$.",
+        "Evaluate $\\lim_{x \\to \\pi/4} \\frac{\\tan x - 1}{x - \\pi/4}$."
+      ],
+      "universalFacts": [
+        "The small-angle approximation $\\sin x \\approx x$ (for small $x$) comes directly from this limit and is widely used in physics.",
+        "All other trigonometric limits at 0 can be derived from the fundamental limit $\\lim_{x \\to 0} (\\sin x)/x = 1$."
+      ]
+    },
+    "hash": "7a1d2993af8a3170ee3462afa4ac6de865fa7fb0",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\06-limits-of-exponential-and-logarithmic-functions.json",
+    "data": {
+      "title": "Basic Theorems on Limits of Exponential and Logarithmic Functions",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 100,
+      "notes": [
+        "**Exponential function limits:** $\\lim_{x \\to a} e^x = e^a$ for all real $a$. The exponential function is continuous everywhere.",
+        "**Important exponential limit:** $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$. This is the exponential analogue of $\\lim_{x \\to 0} (\\sin x)/x = 1$.",
+        "**Generalised form:** $\\lim_{x \\to 0} \\frac{e^{ax} - 1}{bx} = \\frac{a}{b}$.",
+        "**Logarithmic function limits:** $\\lim_{x \\to a} \\ln x = \\ln a$ for all $a > 0$. The natural logarithm is continuous on $(0, \\infty)$.",
+        "**Important logarithmic limit:** $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$. Equivalently, $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$.",
+        "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\ln(1 + ax)}{bx} = \\frac{a}{b}$.",
+        "**Limits at infinity for exponential:** $\\lim_{x \\to \\infty} e^x = \\infty$ and $\\lim_{x \\to -\\infty} e^x = 0$.",
+        "**Limits at infinity for logarithmic:** $\\lim_{x \\to \\infty} \\ln x = \\infty$ (slow growth) and $\\lim_{x \\to 0^+} \\ln x = -\\infty$.",
+        "**The number $e$ defined as a limit:** $e = \\lim_{n \\to \\infty} (1 + 1/n)^n \\approx 2.71828$."
+      ],
+      "confusion": [
+        "$\\ln x$ is only defined for $x > 0$. Never attempt $\\ln(0)$ or $\\ln(-1)$.",
+        "The limit $\\lim_{x \\to 0} (e^x - 1)/x = 1$ requires the exponent to be exactly $x$. For $e^{2x}$, adjust: $\\lim_{x \\to 0} (e^{2x} - 1)/x = 2$.",
+        "$e^x$ grows much faster than any polynomial $x^n$ as $x \\to \\infty$, and $\\ln x$ grows much slower than any positive power $x^n$."
+      ],
+      "practice": [
+        "Evaluate $\\lim_{x \\to 0} \\frac{e^{3x} - 1}{x}$.",
+        "Find $\\lim_{x \\to 0} \\frac{\\ln(1 + 5x)}{x}$.",
+        "Evaluate $\\lim_{x \\to \\infty} \\frac{e^x}{x^{10}}$ (answer: $\\infty$, since $e^x$ dominates)."
+      ],
+      "universalFacts": [
+        "The two key limits $\\lim_{x \\to 0} (e^x - 1)/x = 1$ and $\\lim_{x \\to 0} \\ln(1+x)/x = 1$ are the foundations for differentiating exponential and logarithmic functions.",
+        "The exponential function's unique property is that it is its own derivative: $\\frac{d}{dx}e^x = e^x$, which follows directly from the limit $\\lim_{h \\to 0}(e^h - 1)/h = 1$."
+      ]
+    },
+    "hash": "3bbe40b971059ca1b38ec42e435643aed4916387",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\07-continuity-of-a-function.json",
+    "data": {
+      "title": "Continuity of a Function",
+      "unitSlug": "calculus",
+      "topicSlug": "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+      "topicTitle": "Continuity of a function, types of discontinuity, graphs of discontinuous function",
+      "relevance": 100,
+      "notes": [
+        "**Definition:** A function $f(x)$ is continuous at $x = a$ if all three conditions hold: (i) $f(a)$ is defined, (ii) $\\lim_{x \\to a} f(x)$ exists, (iii) $\\lim_{x \\to a} f(x) = f(a)$.",
+        "**Informally:** A function is continuous at a point if you can draw its graph through that point without lifting your pencil.",
+        "**Continuity on an interval:** $f$ is continuous on $[a, b]$ if it is continuous at every point in $(a, b)$, right-continuous at $a$, and left-continuous at $b$.",
+        "**Continuity of standard functions:** All polynomial, rational (where defined), trigonometric (where defined), exponential, and logarithmic functions are continuous on their domains.",
+        "**Algebra of continuous functions:** If $f$ and $g$ are continuous at $x = a$, then $f + g$, $f - g$, $f \\cdot g$, and $f/g$ (if $g(a) \\neq 0$) are all continuous at $x = a$.",
+        "**Composition of continuous functions:** If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then the composite function $f \\circ g$ is continuous at $a$.",
+        "**Intermediate Value Theorem:** If $f$ is continuous on $[a, b]$ and $f(a) \\neq f(b)$, then $f$ takes every value between $f(a)$ and $f(b)$ at least once on $[a, b]$."
+      ],
+      "confusion": [
+        "A function can be continuous at a point but not differentiable there (e.g., $f(x) = |x|$ at $x = 0$). Continuity is a weaker condition than differentiability.",
+        "A function can have a limit at a point without being continuous there — the function might be undefined at that point, or its value might differ from the limit."
+      ],
+      "practice": [
+        "Determine whether $f(x) = \\begin{cases} x^2 & x \\neq 1 \\\\ 3 & x = 1 \\end{cases}$ is continuous at $x = 1$.",
+        "Find the value of $k$ that makes $f(x) = \\begin{cases} kx + 1 & x \\leq 2 \\\\ x^2 & x > 2 \\end{cases}$ continuous at $x = 2$.",
+        "Use the Intermediate Value Theorem to show that $x^3 - x - 1 = 0$ has a root in $[1, 2]$."
+      ],
+      "universalFacts": [
+        "Continuity is essential for the Fundamental Theorem of Calculus, which connects derivatives and integrals.",
+        "The Intermediate Value Theorem guarantees the existence of solutions to equations but does not tell you how to find them."
+      ]
+    },
+    "hash": "f0e7a9e17f9a51846a195a0524cab9fcf3b319b7",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\concepts\\08-types-of-discontinuity.json",
+    "data": {
+      "title": "Types of Discontinuity and Graphs of Discontinuous Functions",
+      "unitSlug": "calculus",
+      "topicSlug": "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+      "topicTitle": "Continuity of a function, types of discontinuity, graphs of discontinuous function",
+      "relevance": 100,
+      "notes": [
+        "**Removable discontinuity (hole):** The limit $\\lim_{x \\to a} f(x)$ exists, but either $f(a)$ is undefined or $f(a) \\neq \\lim_{x \\to a} f(x)$. The graph has a \"hole\" at $x = a$. Example: $f(x) = \\frac{x^2 - 1}{x - 1}$ at $x = 1$.",
+        "**Jump discontinuity:** The left-hand and right-hand limits both exist but are not equal: $\\lim_{x \\to a^-} f(x) \\neq \\lim_{x \\to a^+} f(x)$. The graph \"jumps\" at $x = a$. Example: the floor function $f(x) = \\lfloor x \\rfloor$ at every integer.",
+        "**Infinite discontinuity (asymptotic):** At least one of the one-sided limits is $\\pm \\infty$. The graph has a vertical asymptote at $x = a$. Example: $f(x) = 1/x$ at $x = 0$.",
+        "**Essential (oscillatory) discontinuity:** The function oscillates infinitely near the point, so the limit does not exist in any sense. Example: $f(x) = \\sin(1/x)$ at $x = 0$.",
+        "**Removable discontinuity fix:** If $\\lim_{x \\to a} f(x) = L$ but $f(a) \\neq L$ or is undefined, define a new function $g(x) = f(x)$ for $x \\neq a$ and $g(a) = L$. Then $g$ is continuous at $a$.",
+        "**Graph sketching tips for discontinuous functions:** Mark open circles (holes) at removable discontinuities, closed dots at defined points, and draw vertical dashed lines at vertical asymptotes."
+      ],
+      "confusion": [
+        "A removable discontinuity can be \"fixed\" by redefining the function at one point. Jump and infinite discontinuities cannot be removed this way.",
+        "The function $f(x) = \\sin(1/x)$ for $x \\neq 0$ and $f(0) = 0$ has an essential discontinuity at $x = 0$ — no matter how you define $f(0)$, the limit does not exist.",
+        "A vertical asymptote always indicates an infinite discontinuity, but not all discontinuities involve vertical asymptotes."
+      ],
+      "practice": [
+        "Classify the discontinuity of $f(x) = \\frac{x^2 - 4}{x - 2}$ at $x = 2$.",
+        "Sketch the graph of $f(x) = \\begin{cases} x + 1 & x < 0 \\\\ x^2 & x \\geq 0 \\end{cases}$ and classify any discontinuities.",
+        "For $f(x) = \\frac{1}{x - 3}$, identify the type of discontinuity at $x = 3$ and describe the behaviour from both sides."
+      ],
+      "universalFacts": [
+        "Every discontinuity of a function falls into one of four categories: removable, jump, infinite, or essential.",
+        "Understanding discontinuities is crucial for integration — a function with a finite number of removable or jump discontinuities can still be integrated."
+      ]
+    },
+    "hash": "6431e4e02986f204e668272062a203ceed3c5fe2",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\formula\\01-limits-and-continuity-formulas.json",
+    "data": {
+      "title": "Limits and Continuity — Formula Sheet",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 100,
+      "notes": [
+        "**Existence of limit:** $\\lim_{x \\to a} f(x) = L \\iff \\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$",
+        "**Sum rule:** $\\lim_{x \\to a}[f(x) \\pm g(x)] = \\lim_{x \\to a} f(x) \\pm \\lim_{x \\to a} g(x)$",
+        "**Product rule:** $\\lim_{x \\to a}[f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$",
+        "**Quotient rule:** $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$, when $\\lim_{x \\to a} g(x) \\neq 0$",
+        "**Power rule:** $\\lim_{x \\to a} [f(x)]^n = [\\lim_{x \\to a} f(x)]^n$",
+        "**Fundamental trig limit:** $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ (x in radians)",
+        "**Derived trig limits:** $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$, $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$",
+        "**Generalised trig:** $\\lim_{x \\to 0} \\frac{\\sin ax}{bx} = \\frac{a}{b}$, $\\lim_{x \\to 0} \\frac{\\tan ax}{bx} = \\frac{a}{b}$",
+        "**Fundamental exp limit:** $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$",
+        "**Generalised exp:** $\\lim_{x \\to 0} \\frac{e^{ax} - 1}{bx} = \\frac{a}{b}$",
+        "**Fundamental log limit:** $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$",
+        "**Generalised log:** $\\lim_{x \\to 0} \\frac{\\ln(1 + ax)}{bx} = \\frac{a}{b}$",
+        "**Definition of $e$:** $e = \\lim_{n \\to \\infty}\\left(1 + \\frac{1}{n}\\right)^n = \\lim_{x \\to 0}(1 + x)^{1/x}$",
+        "**Polynomial limit:** $\\lim_{x \\to a} p(x) = p(a)$ for any polynomial $p(x)$",
+        "**Rational function at infinity:** If deg(num) < deg(den), limit = 0. If equal, limit = ratio of leading coefficients.",
+        "**Continuity condition:** $f$ is continuous at $x = a \\iff \\lim_{x \\to a} f(x) = f(a)$",
+        "**Sandwich theorem:** $g(x) \\leq f(x) \\leq h(x)$ and $\\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L \\implies \\lim_{x \\to a} f(x) = L$"
+      ]
+    },
+    "hash": "36293aa770922cb89f058e10ca26621b285dd5a1",
+    "dupType": 1
+  },
+  {
+    "path": "class-11\\mathematics\\calculus\\notes\\01-limits-and-continuity-overview.json",
+    "data": {
+      "title": "Limits and Continuity — Overview Notes",
+      "unitSlug": "calculus",
+      "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+      "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+      "relevance": 100,
+      "notes": [
+        "**What is calculus?** Calculus is the mathematics of change and motion. It has two main branches: differential calculus (rates of change) and integral calculus (accumulation and area). Both branches rest on the concept of a limit.",
+        "**Why limits matter:** Limits formalize the idea of \"approaching\" a value. Without limits, we cannot rigorously define the derivative (instantaneous rate of change) or the integral (area under a curve).",
+        "**Limits → Derivatives → Integration:** The derivative $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$ uses a limit to define instantaneous rate of change. The definite integral $\\int_a^b f(x)\\,dx$ is defined as a limit of Riemann sums.",
+        "**Continuity bridges limits and differentiation:** A function must be continuous (no breaks, holes, or jumps) at a point before it can be differentiated there. Continuity is necessary but not sufficient for differentiability.",
+        "**Key strategy for evaluating limits:** (1) Try direct substitution. (2) If it gives a number, that is the limit. (3) If it gives $0/0$ or another indeterminate form, use algebraic simplification, rationalisation, factoring, or standard limits.",
+        "**Standard limits to memorise:** $\\lim_{x \\to 0}(\\sin x)/x = 1$, $\\lim_{x \\to 0}(e^x - 1)/x = 1$, $\\lim_{x \\to 0}\\ln(1+x)/x = 1$, $e = \\lim_{n \\to \\infty}(1+1/n)^n$.",
+        "**Types of discontinuity:** Removable (hole), jump (step), infinite (vertical asymptote), essential (oscillatory). Understanding these helps in sketching graphs and later in integration.",
+        "**Connection to real-world:** Limits model instantaneous velocity, marginal cost in economics, population growth rates, and any quantity that changes continuously over time."
+      ],
+      "confusion": [
+        "Students often confuse \"the limit exists\" with \"the function is continuous\". A limit can exist at a point where the function is not continuous (e.g., a removable discontinuity).",
+        "Do not treat limits as just algebra exercises — they have deep geometric and physical meaning that makes the rest of calculus meaningful."
+      ],
+      "practice": [
+        "Review all standard limit forms and derive at least three of them from the fundamental limit $\\lim_{x \\to 0}(\\sin x)/x = 1$.",
+        "Given a piecewise function, determine at which points it is continuous and classify any discontinuities.",
+        "Explain in your own words why continuity is necessary for differentiability, using $f(x) = |x|$ as an example."
+      ],
+      "universalFacts": [
+        "Limits were first rigorously formalised by Weierstrass in the 19th century, though Newton and Leibniz used calculus intuitively a century earlier.",
+        "The concept of limits extends beyond single-variable calculus to multivariable calculus, real analysis, and topology."
+      ]
+    },
+    "hash": "9399bf55975c66fea7ee58c422b0371ca71e1183",
     "dupType": 1
   },
   {
