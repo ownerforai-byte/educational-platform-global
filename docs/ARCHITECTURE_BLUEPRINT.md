@@ -175,6 +175,7 @@ ravikishan/
 │   │   │   ├── math-interactive.tsx
 │   │   │   ├── math-modern-3d.tsx
 │   │   │   ├── math-motion-3d.tsx
+│   │   │   ├── math-perpendicular-3d.tsx
 │   │   │   ├── math-series-lab.tsx
 │   │   │   ├── MindMap.tsx
 │   │   │   ├── motion-graphics.tsx
@@ -275,14 +276,19 @@ ravikishan/
 │   │   │   │   └── …
 │   │   │   ├── queries.ts
 │   │   │   └── types.ts
-│   │   └── syllabus/
+│   │   ├── syllabus/
+│   │   │   ├── components/
+│   │   │   │   └── …
+│   │   │   ├── content-router.ts
+│   │   │   ├── hooks.ts
+│   │   │   ├── queries.ts
+│   │   │   ├── schema.ts
+│   │   │   └── types.ts
+│   │   └── syllabus-history/
 │   │       ├── components/
 │   │       │   └── …
-│   │       ├── content-router.ts
-│   │       ├── hooks.ts
-│   │       ├── queries.ts
-│   │       ├── schema.ts
-│   │       └── types.ts
+│   │       └── data/
+│   │           └── …
 │   ├── lib/
 │   │   ├── ai/
 │   │   │   └── prompts.ts
@@ -635,6 +641,7 @@ ravikishan/
 ├── backend.log
 ├── components.json
 ├── drizzle.config.ts
+├── eslint-out.txt
 ├── eslint.config.mjs
 ├── opencode.json
 ├── package.json
