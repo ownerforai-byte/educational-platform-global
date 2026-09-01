@@ -23,6 +23,7 @@ import {
   BiologyPhotosynthesisCalculator,
 } from "@/components/lab/biology-3d";
 import { TheoryPanel } from "@/components/lab/theory-panel";
+import { ScienceLabSection } from "@/components/lab/science-lab-section";
 import { ChapterAnimation } from "@/components/lab/chapter-animation";
 import { TOPIC_3D_MAP } from "@/lib/topic-3d-map";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
@@ -481,6 +482,8 @@ function LabContent({
 
   return (
     <div className="container mx-auto py-8 px-4 space-y-6 max-w-7xl">
+      <ScienceLabSection />
+
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Interactive Labs</h1>
         <p className="text-muted-foreground">
