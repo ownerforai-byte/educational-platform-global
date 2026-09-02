@@ -117,7 +117,6 @@ export function ContentTabs({
               subjectSlug={subjectSlug}
               unitId={unitId}
               topicSlug={topicSlug}
-              unit={unit}
             />
           </div>
         )}

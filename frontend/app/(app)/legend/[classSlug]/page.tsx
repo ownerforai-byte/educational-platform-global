@@ -1,14 +1,10 @@
 import Link from "next/link";
-import { getLegendIndex, filterLegends, groupLegendsBySubject } from "@/lib/legend";
-import { getSubjectSyllabus } from "@/lib/syllabus";
-import { ChevronRight, Lightbulb } from "lucide-react";
+import { getLegendIndex } from "@/lib/legend";
+import { ChevronRight, Lightbulb, BookOpen, FileText } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 
 export async function generateStaticParams() {
-  return [
-    { classSlug: "class-11-notes" },
-    { classSlug: "class-12-notes" },
-  ];
+  return [{ classSlug: "class-11-notes" }, { classSlug: "class-12-notes" }];
 }
 
 export default async function LegendClassPage({
@@ -17,77 +13,73 @@ export default async function LegendClassPage({
   params: Promise<{ classSlug: string }>;
 }) {
   const { classSlug } = await params;
-  const allEntries = await getLegendIndex();
-  const entries = filterLegends(allEntries, { classSlug });
-  const grouped = groupLegendsBySubject(entries);
+  const all = await getLegendIndex();
+  const subjects = all.filter((s) => s.classSlug === classSlug);
+  const totalTopics = subjects.reduce((s, sub) => s + sub.totalTopics, 0);
+  const totalFacts = subjects.reduce((s, sub) => s + sub.totalFacts, 0);
 
-  const subjectList = [...grouped.entries()].sort(([a], [b]) => a.localeCompare(b));
+  const classLabel = classSlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 
   return (
-    <div className="mx-auto max-w-5xl space-y-8 py-10">
+    <div className="mx-auto max-w-6xl space-y-8 py-10">
+      {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/legend" className="hover:text-foreground">Legend & Key Facts</Link>
+        <Link href="/legend" className="hover:text-foreground">Legend &amp; Key Facts</Link>
         <ChevronRight className="h-3 w-3" />
-        <span className="font-medium text-foreground capitalize">{classSlug}</span>
+        <span className="font-medium text-foreground">{classLabel}</span>
       </nav>
 
+      {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold tracking-tight capitalize">
-          {classSlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} — Legend
-        </h1>
+        <h1 className="text-2xl font-bold tracking-tight">{classLabel} — Legend</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {entries.length} topic entries with {entries.reduce((s, e) => s + e.facts.length, 0)} key facts across {grouped.size} subject{grouped.size !== 1 ? "s" : ""}.
+          {totalTopics} topics · {totalFacts} facts · {subjects.length} subjects
         </p>
       </div>
 
-      {entries.length === 0 ? (
+      {subjects.length === 0 ? (
         <EmptyState
           title="No legend content yet"
-          description="Key facts and confusion notes for this class will be added as concept content is built out."
+          description="Concept notes for this class will be scanned and displayed here as they are added."
         />
       ) : (
-        <div className="grid gap-3 md:grid-cols-2">
-          {subjectList.map(([subjectSlug, subjectEntries]) => {
-            const subjectData = getSubjectSyllabus(classSlug, subjectSlug);
-            const colorMap: Record<string, string> = {
-              mathematics: "from-violet-500/20 to-purple-500/20 border-violet-500/30",
-              physics: "from-sky-500/20 to-blue-500/20 border-sky-500/30",
-              chemistry: "from-amber-500/20 to-orange-500/20 border-amber-500/30",
-              biology: "from-emerald-500/20 to-teal-500/20 border-emerald-500/30",
-              english: "from-blue-500/20 to-cyan-500/20 border-blue-500/30",
-              nepali: "from-red-500/20 to-rose-500/20 border-red-500/30",
-            };
-            const iconMap: Record<string, string> = {
-              mathematics: "🔢",
-              physics: "⚡",
-              chemistry: "🧪",
-              biology: "🌿",
-              english: "📖",
-              nepali: "🇳🇵",
-            };
-            const label = subjectSlug.charAt(0).toUpperCase() + subjectSlug.slice(1);
-            const totalFacts = subjectEntries.reduce((s, e) => s + e.facts.length, 0);
-            return (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {subjects
+            .sort((a, b) => {
+              const order = ["mathematics", "physics", "chemistry", "biology", "english", "nepali"];
+              return order.indexOf(a.subjectSlug) - order.indexOf(b.subjectSlug);
+            })
+            .map((subj) => (
               <Link
-                key={subjectSlug}
-                href={`/legend/${classSlug}/${subjectSlug}`}
-                className={`group block rounded-xl border ${colorMap[subjectSlug] ?? "border-border"} bg-card p-5 transition-colors hover:scale-[1.01]`}
+                key={subj.subjectSlug}
+                href={`/legend/${classSlug}/${subj.subjectSlug}`}
+                className={`group block rounded-xl border ${subj.border} bg-gradient-to-br ${subj.gradient} p-5 transition-all hover:scale-[1.015] hover:shadow-md`}
               >
-                <div className="flex items-center gap-3">
-                  <div className="text-3xl leading-none">{iconMap[subjectSlug] ?? "📚"}</div>
+                <div className="flex items-start gap-3">
+                  <div className="text-3xl">{subj.icon}</div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold capitalize group-hover:text-primary transition-colors">
-                      {label}
+                    <h3 className="font-bold text-base group-hover:text-primary transition-colors">
+                      {subj.subjectName}
                     </h3>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {subjectEntries.length} topic{subjectEntries.length !== 1 ? "s" : ""} · {totalFacts} fact{totalFacts !== 1 ? "s" : ""} · {subjectData?.units.length ?? 0} units
-                    </p>
+                    <div className="flex flex-wrap gap-2 mt-3 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <BookOpen className="h-3 w-3" />
+                        {subj.totalTopics} topics
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Lightbulb className="h-3 w-3" />
+                        {subj.totalFacts} facts
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <FileText className="h-3 w-3" />
+                        {subj.units.length} units
+                      </span>
+                    </div>
                   </div>
                   <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
               </Link>
-            );
-          })}
+            ))}
         </div>
       )}
     </div>
