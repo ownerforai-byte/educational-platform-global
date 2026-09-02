@@ -9,22 +9,34 @@
     "**Angular velocity $\\omega$:** rate of change of angular displacement. $\\omega = d\\theta/dt$. Units: rad/s.",
     "**Angular acceleration $\\alpha$:** rate of change of angular velocity. $\\alpha = d\\omega/dt$. Units: rad/s$^2$.",
     "**Connection to linear motion:** $v = r\\omega$ and $a_t = r\\alpha$, where $v$ is tangential speed and $a_t$ is tangential acceleration.",
-    "**Direction:** angular velocity and acceleration are vectors along the axis of rotation, given by the right-hand rule."
+    "**Direction:** angular velocity and acceleration are vectors along the axis of rotation, given by the right-hand rule.",
+    "**Uniform circular motion:** when $\\omega$ is constant, angular displacement $\\theta = \\omega t$, angular acceleration $\\alpha = 0$, but centripetal acceleration $a_c = r\\omega^2$ is nonzero.",
+    "**Constant angular acceleration:** rotational kinematic equations mirror translational ones: $\\omega^2 = \\omega_0^2 + 2\\alpha\\theta$, $\\theta = \\omega_0 t + \\frac{1}{2}\\alpha t^2$, $\\omega = \\omega_0 + \\alpha t$.",
+    "**Radian measure:** one complete revolution $= 2\\pi$ radians $= 360^{\\circ}$. All circular motion formulas require angles in radians, not degrees.",
+    "**Frequency and period:** frequency $f = \\omega/(2\\pi)$ in Hz (revolutions per second). Period $T = 1/f = 2\\pi/\\omega$ is the time for one revolution.",
+    "**Angular velocity in RPM:** to convert from revolutions per minute (RPM) to rad/s: $\\omega = 2\\pi N/60$, where $N$ is RPM.",
+    "**Physical significance:** angular acceleration tells you how quickly the rotation speeds up or slows down. A spinning bicycle wheel with constant $\\omega$ has $\\alpha = 0$ but nonzero centripetal acceleration."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Angular velocity $\\omega$ is in rad/s, not m/s. The linear speed $v = r\\omega$ converts angular velocity to linear speed at distance $r$ from the axis.",
+    "A body can have angular velocity without any linear velocity at all — every point on a body rotating about its own centre has zero linear velocity of the centre.",
+    "Angular acceleration $\\alpha$ is zero in uniform circular motion, even though centripetal acceleration $a_c = r\\omega^2$ is not. $\\alpha$ changes the speed; $a_c$ changes the direction.",
+    "One full revolution $= 2\\pi$ rad $= 360^{\\circ}$. When using formulas like $\\theta = \\omega t$, angles must be in radians, not degrees.",
+    "The sign of $\\omega$ or $\\alpha$ indicates direction of rotation: positive for counterclockwise, negative for clockwise (by convention in the standard coordinate system)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A flywheel spinning at 300 RPM accelerates uniformly to 900 RPM in 10 seconds. Find the angular acceleration and total angular displacement. Solution: $\\omega_0 = 300 \\times 2\\pi/60 = 10\\pi$ rad/s, $\\omega = 900 \\times 2\\pi/60 = 30\\pi$ rad/s. $\\alpha = (30\\pi - 10\\pi)/10 = 2\\pi$ rad/s$^2$. $\\theta = \\omega_0 t + \\frac{1}{2}\\alpha t^2 = 10\\pi \\times 10 + \\frac{1}{2} \\times 2\\pi \\times 100 = 100\\pi + 100\\pi = 200\\pi$ rad $\\approx 628$ rad.",
+    "A wheel of radius 0.5 m rotates with $\\omega = 10$ rad/s and $\\alpha = 4$ rad/s$^2$. Find the tangential speed, centripetal acceleration, and tangential acceleration. Solution: $v = r\\omega = 0.5 \\times 10 = 5$ m/s. $a_c = r\\omega^2 = 0.5 \\times 100 = 50$ m/s$^2$. $a_t = r\\alpha = 0.5 \\times 4 = 2$ m/s$^2$.",
+    "The period of a rotating fan is 0.25 s. Find its angular velocity and frequency. Solution: $\\omega = 2\\pi/T = 2\\pi/0.25 = 8\\pi \\approx 25.13$ rad/s. $f = 1/T = 4$ Hz.",
+    "A disc starts from rest and reaches 1200 RPM in 4 s with uniform angular acceleration. Find $\\alpha$ and the number of revolutions. Solution: $\\omega = 1200 \\times 2\\pi/60 = 40\\pi$ rad/s. $\\alpha = 40\\pi/4 = 10\\pi$ rad/s$^2$. $\\theta = \\frac{1}{2} \\times 10\\pi \\times 16 = 80\\pi$ rad $= 40$ revolutions.",
+    "A point on a rim is at radius 0.3 m from the axis. After rotating through $6\\pi$ radians, how far has this point traveled? Solution: $s = r\\theta = 0.3 \\times 6\\pi = 1.8\\pi \\approx 5.65$ m."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The radian is the natural unit for angular measurements in physics because it directly relates arc length to radius: $s = r\\theta$. Using degrees in formulas would introduce extra conversion factors.",
+    "Angular velocity is a vector directed along the rotation axis by the right-hand rule. Two gears meshing in opposite directions have angular velocities of opposite signs.",
+    "In uniform circular motion, angular velocity is constant ($\\alpha = 0$) but the object still has centripetal acceleration because the direction of velocity continuously changes.",
+    "The period $T$ and frequency $f$ are inversely related: $f = 1/T$. The SI unit of frequency is the hertz (Hz), where $1\\,\\text{Hz} = 1\\,\\text{s}^{-1}$.",
+    "Rotational kinematic equations have exact analogs to translational kinematics: replace $x$ with $\\theta$, $v$ with $\\omega$, and $a$ with $\\alpha$."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion"

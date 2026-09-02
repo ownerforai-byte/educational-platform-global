@@ -5,26 +5,34 @@
   "topicTitle": "Gravitational potential; gravitational potential energy",
   "relevance": 100,
   "notes": [
-    "**Gravitational potential $V$:** work done per unit mass to bring a test mass from infinity to that point. $V = -G\\frac{M}{r}$.",
+    "**Gravitational potential $V$:** work done per unit mass to bring a test mass from infinity to that point. $V = -G\\frac{M}{r}$. Scalar quantity.",
     "**Why negative:** by convention, potential at infinity is zero. Since gravity is attractive, work must be done *against* gravity to move a mass outward, so potential is negative everywhere near a mass.",
-    "**Gravitational potential energy $U$:** $U = mV = -G\\frac{Mm}{r}$. For two masses, this is the energy of the gravitational system.",
-    "**Near Earth's surface approximation:** when $r \\approx R$ (Earth's radius), $U \\approx mgh$, where $h$ is height above the surface. This is valid only for small $h$ compared to $R$.",
-    "**Potential difference:** $\\Delta V = V_b - V_a = -G\\frac{M}{r_b} + G\\frac{M}{r_a}$. Moving from higher $r$ to lower $r$ decreases potential."
+    "**Gravitational potential energy $U$:** $U = mV = -G\\frac{Mm}{r}$. For two masses, this is the energy of the gravitational system. It is the work done by an external agent to assemble the system from infinity.",
+    "**Near Earth's surface approximation:** when $r \\approx R$ (Earth's radius), $U \\approx mgh$, where $h$ is height above the surface. This is valid only for small $h \\ll R$.",
+    "**Potential difference:** $\\Delta V = V_b - V_a = -G\\frac{M}{r_b} + G\\frac{M}{r_a}$. Moving from higher $r$ to lower $r$ decreases potential (becomes more negative).",
+    "**Potential is a scalar:** unlike the field, potential adds algebraically (not vectorially). Total potential at a point due to multiple masses is $V = -\\sum G M_i/r_i$.",
+    "**Potential inside a uniform solid sphere:** for $r \\le R$, $V = -G\\frac{M}{2R}\\left(3 - \\frac{r^2}{R^2}\\right)$. At centre ($r=0$), $V = -3GM/2R$. At surface ($r=R$), $V = -GM/R$ — continuous with outside.",
+    "**Potential inside a hollow spherical shell:** $V = -GM/R$ (constant throughout the interior). Field is zero, so potential is constant.",
+    "**Dimensional formula of $V$:** $[V] = [L^2T^{-2}]$. SI unit: J/kg. For potential energy: $[U] = [ML^2T^{-2}]$ (joules).",
+    "**Relation to field:** $\\vec{g} = -\\nabla V$. In 1D along radial direction: $g = -dV/dr$. The field is the negative spatial derivative of the potential."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Gravitational potential is always NEGATIVE (with zero at infinity) because gravity is always attractive. Electric potential can be positive or negative depending on the source charge.",
+    "Potential energy $U$ is the energy of the SYSTEM, not of a single mass. You cannot say \"the potential energy of mass $m$\" without specifying the other mass(es) it interacts with.",
+    "The formula $U = mgh$ is an approximation valid ONLY near Earth's surface where $g$ is nearly constant. It fails at large altitudes where $g$ varies with $r$.",
+    "Potential difference $\\Delta V$ is what matters physically — the absolute value of $V$ depends on the arbitrary choice of reference (usually $V(\\infty) = 0$)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Find the gravitational potential at a distance of $2R$ from Earth's centre. $R_E = 6400\\,\\text{km}$, $M_E = 6 \\times 10^{24}\\,\\text{kg}$. Solution: $V = -GM/r = -(6.674 \\times 10^{-11})(6 \\times 10^{24})/(1.28 \\times 10^7) = -3.13 \\times 10^7\\,\\text{J/kg}$.",
+    "A satellite of mass $1000\\,\\text{kg}$ orbits at height $400\\,\\text{km}$ above Earth. Find its gravitational potential energy. Solution: $r = R + h = 6800\\,\\text{km} = 6.8 \\times 10^6\\,\\text{m}$. $U = -GMm/r = -(6.674 \\times 10^{-11})(6 \\times 10^{24})(1000)/(6.8 \\times 10^6) = -5.89 \\times 10^{10}\\,\\text{J}$.",
+    "What is the work required to move a $500\\,\\text{kg}$ mass from Earth's surface to an altitude of $2000\\,\\text{km}$? Solution: $W = U_f - U_i = -GMm(1/r_f - 1/r_i) = -(6.674 \\times 10^{-11})(6 \\times 10^{24})(500)(1/8.4 \\times 10^6 - 1/6.4 \\times 10^6) = 4.76 \\times 10^9\\,\\text{J}$.",
+    "At what distance from a point mass $M$ is the potential $V = -GM/(2R)$? Solution: $-GM/r = -GM/(2R) \\Rightarrow r = 2R$. Twice the reference distance."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Gravitational potential is always negative (with the standard $V(\\infty)=0$ convention), which reflects the fact that gravity is always attractive — you must do positive work to separate masses to infinity.",
+    "The potential inside a uniform sphere is a quadratic function of $r$, reaching a minimum at the centre. This means the centre is the point of lowest potential, not the surface.",
+    "The potential energy of a two-mass system is equal in magnitude to the energy needed to separate them to infinity with zero kinetic energy — the binding energy.",
+    "The relation $\\vec{g} = -\\nabla V$ means the gravitational field points in the direction of steepest decrease of potential — toward the mass creating the field."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

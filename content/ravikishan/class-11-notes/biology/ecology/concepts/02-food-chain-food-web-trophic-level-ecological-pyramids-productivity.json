@@ -5,26 +5,45 @@
   "topicTitle": "Food chain, food web, trophic level, ecological pyramids, productivity",
   "relevance": 100,
   "notes": [
-    "**Food chain:** linear sequence of organisms through which nutrients and energy pass. Grazing chain: grass â†’ rabbit â†’ fox. Detritus chain: leaf litter â†’ earthworm â†’ bird.",
+    "**Food chain:** linear sequence of organisms through which nutrients and energy pass. Grazing chain: grass → rabbit → fox. Detritus chain: leaf litter → earthworm → bird.",
     "**Food web:** interconnected network of food chains. More realistic than single chain because most organisms eat multiple foods and are eaten by multiple predators.",
     "**Trophic levels:** producers (1st), primary consumers/herbivores (2nd), secondary consumers/carnivores (3rd), tertiary consumers (4th). Each level is a trophic level.",
     "**Ecological pyramids:** pyramid of number (individuals), pyramid of biomass (total mass), pyramid of energy (energy flow). Energy pyramid is always upright; others can be inverted.",
-    "**Productivity:** primary productivity = rate of biomass production by producers. Gross primary productivity (GPP) includes all photosynthesis; net primary productivity (NPP) = GPP - respiration. NPP is the energy available to consumers."
+    "**Productivity:** primary productivity = rate of biomass production by producers. Gross primary productivity (GPP) includes all photosynthesis; net primary productivity (NPP) = GPP - respiration. NPP is the energy available to consumers.",
+    "**Grazing food chain (GFC):** begins with living green plants and passes energy to herbivores and then to carnivores. Example: grass → grasshopper → frog → snake → hawk. This is the dominant food chain in aquatic ecosystems.",
+    "**Detritus food chain (DFC):** begins with dead organic matter (detritus) and passes energy to detritivores and then to their predators. Example: dead leaves → detritus feeders (earthworms, termites) → predators (birds, insects). This is the dominant food chain in terrestrial ecosystems.",
+    "**Ecological efficiency:** the percentage of energy transferred from one trophic level to the next, typically around 10%. This includes consumption efficiency (how much is eaten), assimilation efficiency (how much is absorbed), and production efficiency (how much becomes biomass).",
+    "**Net secondary productivity:** the rate at which consumers convert assimilated energy into new biomass. It equals consumption minus respiration and waste. This represents the energy available to the next trophic level.",
+    "**Pelagic vs. benthic food chains:** pelagic chains operate in the water column (phytoplankton → zooplankton → small fish → large fish). Benthic chains operate on or in the bottom substrate (detritus → bottom feeders → predatory fish).",
+    "**Keystone species:** a species whose effect on its community is disproportionally large relative to its abundance. Removing a keystone species causes dramatic ecosystem restructuring. Example: sea stars (Pisaster) controlling mussel populations in tide pools.",
+    "**Trophic cascade:** when predators at the top of a food chain indirectly affect organisms at lower trophic levels. Example: wolves reintroduced to Yellowstone National Park reduced elk overgrazing, allowing willow and aspen to recover, which benefited beavers and songbirds.",
+    "**Ecological pyramids — pyramid of numbers:** shows the number of individuals at each trophic level. Can be upright (many grass plants → fewer rabbits → even fewer foxes) or inverted (one large tree → many herbivorous insects → more parasitic wasps).",
+    "**Ecological pyramids — pyramid of biomass:** shows the total dry mass of organisms at each trophic level. Usually upright in terrestrial ecosystems but can be inverted in aquatic ecosystems (low phytoplankton biomass supporting higher zooplankton biomass due to rapid turnover).",
+    "**Ecological pyramids — pyramid of energy:** always upright because energy is lost as heat at each transfer (second law of thermodynamics). Represents the actual flow of energy through trophic levels over time.",
+    "**Standing crop:** the total biomass or number of organisms present in a given area at a particular time. It is a snapshot measure, not a rate. NPP measures the rate of new biomass production."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A food chain is a simplification; real ecosystems contain food webs. No organism feeds on just one thing, and no organism is eaten by just one predator. Food webs better represent ecological reality.",
+    "Detritus food chains are NOT less important than grazing food chains. In terrestrial ecosystems, more energy flows through the detritus pathway than the grazing pathway. Decomposers are essential, not optional.",
+    "The 10% rule is an approximation, not a law. Actual ecological efficiency varies from 5% to 20% depending on the ecosystem, organism type, and trophic level.",
+    "Biomass and productivity are different concepts. Standing biomass is how much exists now; productivity is how fast new biomass is made. Phytoplankton have low standing biomass but very high productivity due to rapid reproduction.",
+    "An inverted pyramid of numbers does NOT violate the laws of thermodynamics. It simply reflects that one large producer (a tree) can support many smaller consumers (insects). The energy pyramid remains upright.",
+    "Apex predators are NOT always at the 'top' in terms of biomass. In some ecosystems, the biomass of primary consumers exceeds that of top predators — but the energy pyramid still shows the correct direction of flow."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Given: GPP of a forest = 2000 kcal/m²/yr, plant respiration = 800 kcal/m²/yr. Calculate NPP. If herbivores consume 200 kcal/m²/yr and respire 150 kcal/m²/yr, what is their net secondary productivity?",
+    "Draw a food web for a temperate forest including at least 8 species and 5 trophic levels. Label producers, primary consumers, secondary consumers, tertiary consumers, and decomposers.",
+    "Explain why an ecological pyramid of biomass in an ocean ecosystem might be inverted, while the pyramid of energy for the same ecosystem would not be.",
+    "Describe a trophic cascade that could result from removing the apex predator from a freshwater lake ecosystem. What would happen to algae populations?",
+    "Compare and contrast grazing and detritus food chains. In which ecosystem type is each more dominant, and why?",
+    "Calculate the energy available to tertiary consumers if primary producers capture 10,000 J of solar energy, assuming 10% ecological efficiency at each transfer."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The total energy captured by all producers on Earth (global GPP) is estimated at approximately 170 billion tonnes of carbon per year, but only about half of this becomes NPP available to consumers.",
+    "The shortest food chains occur in extreme environments (deep sea vents, polar regions) where only 2-3 trophic levels can be sustained due to low energy input.",
+    "Robert Lindeman's 1942 paper 'The trophic-dynamic aspect of ecology' established the quantitative foundation for understanding energy flow through ecosystems — a cornerstone of modern ecology.",
+    "In most ecosystems, more energy flows through detritus food chains than grazing food chains. Up to 90% of primary production in terrestrial ecosystems passes through decomposers rather than herbivores.",
+    "The largest known food web was mapped in a simple estuarine tidal creek in Maryland, USA, containing 90 species and 383 links — but even this represents only a fraction of real-world complexity."
   ],
   "animation3D": "ecology",
   "motionGraphics": "ecology"

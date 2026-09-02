@@ -8,29 +8,36 @@
     "**Mass number:** the sum of masses of sub-atomic particles contained in an atom is responsible for the mass of that atom. Since the mass of electrons is negligible, the mass of an atom is the sum of the masses of protons and neutrons present in the nucleus; the mass of an atom is concentrated on the nucleus.",
     "**Whole number:** a mass number is a whole number since the number of protons and neutrons are whole numbers; it is generally denoted with the letter A.",
     "**Notation:** the mass number is written as a superscript to the symbol of the element; for an atom (X) whose atomic number is Z and mass number is A, the symbol is written with Z as a subscript and A as a superscript.",
-    "**Formulas:** Mass number (A) = atomic number (Z) + number of neutrons (N); A = Z + N; A = pâº + nâ°; Mass number = number of protons + number of neutrons.",
-    "**Example:** â‚â‚‚MgÂ²â´ means the mass number of Mg is 24 amu, i.e., 12 protons and 12 neutrons.",
+    "**Formulas:** Mass number (A) = atomic number (Z) + number of neutrons (N); A = Z + N; A = p⁺ + n⁰; Mass number = number of protons + number of neutrons.",
+    "**Example:** ²⁴₁₂Mg means the mass number of Mg is 24 amu, i.e., 12 protons and 12 neutrons.",
     "**Isotopes definition:** in 1919, F.W. Aston found that certain elements consist of two or more types of atoms with the same atomic number but different mass numbers, which are called isotopes. The word isotope (coined by Soddy in 1913) comes from two Latin words, isos = the same and topos = position/place.",
     "**Isotope properties:** isotopes are different atoms of the same element having the same atomic number but different atomic masses; they possess the same position in the modern periodic table, have the same number of protons and electrons but a different number of neutrons, and possess identical chemical properties (due to same atomic number) but different physical properties (due to different mass numbers).",
     "**Abundance:** around 1000 isotopes have been identified, of which nearly 300 are stable and occur in nature; the stability and natural abundance of isotopes differ. Chlorine has two isotopes, whereas krypton has nearly 20 isotopes. Most abundant isotopes occur from 90-99% with respect to other isotopes, but Cl-35 occurs 75% compared to Cl-37 (25%) in nature.",
-    "**Hydrogen isotopes:** hydrogen exists in three isotopic forms â€” protium (â‚HÂ¹), deuterium (â‚HÂ²), and tritium (â‚HÂ³), denoted with symbols H, D, and T respectively. Out of these, tritium is radioactive. Protium has no neutron, deuterium has one, and tritium has two. Natural abundance: protium 99.98%, deuterium about 0.015%, tritium only 10â»Â¹âµ %.",
-    "**Examples:** carbon isotopes â‚†CÂ¹Â², â‚†CÂ¹Â³, â‚†CÂ¹â´ (most abundant â‚†CÂ¹Â²); nitrogen â‚‡NÂ¹â´, â‚‡NÂ¹âµ (â‚‡NÂ¹â´); oxygen â‚ˆOÂ¹â¶, â‚ˆOÂ¹â·, â‚ˆOÂ¹â¸ (â‚ˆOÂ¹â¶); neon â‚â‚€NeÂ²â°, â‚â‚€NeÂ²Â¹, â‚â‚€NeÂ²Â² (â‚â‚€NeÂ²â°); sulphur â‚â‚†SÂ³Â², â‚â‚†SÂ³Â³, â‚â‚†SÂ³â´, â‚â‚†SÂ³â¶ (â‚â‚†SÂ³Â²); chlorine â‚â‚‡ClÂ³âµ, â‚â‚‡ClÂ³â· (â‚â‚‡ClÂ³âµ); uranium â‚‰â‚‚UÂ²Â³Â³, â‚‰â‚‚UÂ²Â³âµ, â‚‰â‚‚UÂ²Â³â¸ (â‚‰â‚‚UÂ²Â³â¸).",
-    "**Isotopic effect:** the compounds formed by different isotopes possess different physical and chemical properties due to differences in the mass of the isotopes; this difference is called an isotopic effect. e.g. protium and deuterium separately combine with oxygen to give Hâ‚‚O and Dâ‚‚O respectively, whose boiling points, melting points, densities, and ionization constants differ to some extent."
+    "**Hydrogen isotopes:** hydrogen exists in three isotopic forms — protium (¹₁H), deuterium (²₁H), and tritium (³₁H), denoted with symbols H, D, and T respectively. Out of these, tritium is radioactive. Protium has no neutron, deuterium has one, and tritium has two. Natural abundance: protium 99.98%, deuterium about 0.015%, tritium only 10⁻¹⁵ %.",
+    "**Examples:** carbon isotopes ¹²₆C, ¹³₆C, ¹⁴₆C (most abundant ¹²₆C); nitrogen ¹⁴₇N, ¹⁵₇N (¹⁴₇N); oxygen ¹⁶₈O, ¹⁷₈O, ¹⁸₈O (¹⁶₈O); neon ²⁰₁₀Ne, ²¹₁₀Ne, ²²₁₀Ne (²⁰₁₀Ne); sulphur ³²₁₆S, ³³₁₆S, ³⁴₁₆S, ³⁶₁₆S (³²₁₆S); chlorine ³⁵₁₇Cl, ³⁷₁₇Cl (³⁵₁₇Cl); uranium ²³³₉₂U, ²³⁵₉₂U, ²³⁸₉₂U (²³⁸₉₂U).",
+    "**Isotopic effect:** the compounds formed by different isotopes possess different physical and chemical properties due to differences in the mass of the isotopes; this difference is called an isotopic effect. e.g. protium and deuterium separately combine with oxygen to give H₂O and D₂O respectively, whose boiling points, melting points, densities, and ionization constants differ to some extent.",
+    "**Average atomic mass calculation:** the atomic mass on the periodic table is the weighted average of naturally occurring isotopes. For chlorine: (34.969 × 0.7577) + (36.966 × 0.2423) = 35.45 amu. For copper: (62.930 × 0.6917) + (64.928 × 0.3083) = 63.55 amu.",
+    "**Radioactive isotopes:** many isotopes are unstable (radioisotopes) and undergo decay. ¹⁴₆C (half-life 5730 years) is used for radiocarbon dating. ¹³¹₅₃I is used in thyroid treatment. ⁶⁰₂₇Co is a gamma source for cancer therapy and sterilization.",
+    "**Heavy water:** D₂O (deuterium oxide) has density 1.107 g/mL (vs 1.000 for H₂O), boiling point 101.4°C (vs 100.0°C), and is used as a neutron moderator in nuclear reactors (e.g., CANDU reactors) because it slows neutrons effectively without absorbing them.",
+    "**Isotope separation:** separating isotopes is difficult because they have identical chemical properties. Methods include gaseous diffusion (UF₆), centrifugation (UF₆ gas), electromagnetic separation (calutrons), and laser isotope separation (AVLIS). This was crucial for the Manhattan Project (enriching ²³⁵U)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Isotopes have different chemical properties because they have different masses. Correction — chemical properties are determined by electron configuration, which depends on atomic number Z (protons). Isotopes have the same Z, so they have the same electron configuration and nearly identical chemical behavior. Physical properties (density, boiling point, diffusion rate) do differ.",
+    "Misconception: All atoms of an element have the same mass. Correction — the atomic mass on the periodic table is a *weighted average* of all naturally occurring isotopes. No single atom has exactly this mass. For example, chlorine's atomic mass is 35.45 amu, but no chlorine atom has mass 35.45 — they are either ~35 or ~37 amu.",
+    "Misconception: Deuterium and tritium are different elements. Correction — deuterium (D) and tritium (T) are isotopes of hydrogen. They have Z = 1, so they are hydrogen. They differ only in neutron number: H (0 n), D (1 n), T (2 n). Their chemical behavior is nearly identical, but physical properties differ.",
+    "Misconception: The mass number A equals the atomic mass in amu. Correction — A is a whole number (protons + neutrons). Atomic mass in amu is a measured value that is close to but not exactly A, due to mass defect (binding energy) and the fact that the amu is defined as 1/12 of ¹²C, not exactly 1 proton mass."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the average atomic mass of chlorine given: ³⁵₁₇Cl (mass = 34.969 amu, abundance = 75.77%) and ³⁷₁₇Cl (mass = 36.966 amu, abundance = 24.23%). Solution: (34.969 × 0.7577) + (36.966 × 0.2423) = 26.50 + 8.96 = 35.46 amu (periodic table value: 35.45 amu).",
+    "How many protons, neutrons, and electrons are in a neutral ¹⁴₆C atom? In a ¹⁴₆C⁴⁺ ion? Solution: Neutral: p=6, e=6, n=14−6=8. Ion: p=6 (unchanged), e=6−4=2 (lost 4 electrons), n=8. Mass number A=14, Z=6 for both.",
+    "Water formed from protium (H₂O) boils at 100.0°C. Heavy water (D₂O) boils at 101.4°C. Explain the difference. Solution: D has twice the mass of H. The O−D bond has a lower zero-point vibrational energy than O−H, making D₂O's hydrogen bonding slightly stronger. This raises the boiling point by 1.4°C — a small but measurable isotopic effect.",
+    "A sample of carbon contains 98.9% ¹²C (mass = 12.000 amu) and 1.1% ¹³C (mass = 13.003 amu). Calculate the average atomic mass. Solution: (12.000 × 0.989) + (13.003 × 0.011) = 11.868 + 0.143 = 13.011? Wait: 11.868 + 0.143 = 12.011 amu. This matches the periodic table value of 12.011 amu for carbon."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "F.W. Aston discovered isotopes in 1919 using his mass spectrograph, winning the 1922 Nobel Prize. He proved that many 'elements' were actually mixtures of isotopes — e.g., neon was found to be ²⁰Ne and ²²Ne.",
+    "The word 'isotope' was coined by Frederick Soddy in 1913 from Greek 'isos topos' (same place) — because isotopes occupy the same position in the periodic table despite having different masses.",
+    "Tritium (³H) is radioactive with a half-life of 12.32 years, decaying by β⁻ emission to ³He. It is produced naturally by cosmic rays and artificially in nuclear reactors. It is used in self-luminous exit signs, fusion research, and as a tracer in oceanography.",
+    "The isotopic composition of an element can vary slightly by source (e.g., ocean water vs. atmospheric water for oxygen isotopes), leading to the field of isotope geochemistry which traces water cycles, climate history, and geological processes."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

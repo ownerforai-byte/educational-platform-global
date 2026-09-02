@@ -8,23 +8,35 @@
     "**Ohm's law:** $V = IR$. The current through a conductor is directly proportional to the potential difference across it, provided temperature and other physical conditions are constant.",
     "**Resistance $R$:** opposition to current flow. $R = V/I$. Units: ohm ($\\Omega$).",
     "**Resistivity $\\rho$:** intrinsic property of the material. $R = \\rho L/A$, where $L$ is length and $A$ is cross-sectional area.",
-    "**Conductivity $\\sigma$:** reciprocal of resistivity. $\\sigma = 1/\\rho$. Units: S/m.",
-    "**Temperature dependence:** for metals, $\\rho = \\rho_0[1 + \\alpha(T - T_0)]$, where $\\alpha$ is the temperature coefficient of resistance. Resistance increases with temperature because lattice vibrations scatter electrons more."
+    "**Conductivity $\\sigma$:** reciprocal of resistivity. $\\sigma = 1/\\rho$. Units: S/m (siemens per metre).",
+    "**Temperature dependence:** for metals, $\\rho = \\rho_0[1 + \\alpha(T - T_0)]$, where $\\alpha$ is the temperature coefficient of resistance. Resistance increases with temperature because lattice vibrations scatter electrons more.",
+    "**Microscopic form of Ohm's law:** $\\vec{J} = \\sigma\\vec{E}$. Current density is proportional to the electric field, with conductivity $\\sigma$ as the proportionality constant.",
+    "**Resistivity of common materials:** copper $\\rho \\approx 1.68 \\times 10^{-8}$ $\\Omega\\cdot$m, aluminium $\\rho \\approx 2.65 \\times 10^{-8}$ $\\Omega\\cdot$m, iron $\\rho \\approx 1.0 \\times 10^{-7}$ $\\Omega\\cdot$m, glass $\\rho \\approx 10^{10}$ $\\Omega\\cdot$m.",
+    "**Classification by resistivity:** conductors have $\\rho < 10^{-5}$ $\\Omega\\cdot$m, semiconductors have $10^{-5} < \\rho < 10^3$ $\\Omega\\cdot$m, insulators have $\\rho > 10^3$ $\\Omega\\cdot$m.",
+    "**Temperature coefficient sign:** for metals $\\alpha > 0$ (resistance increases with temperature). For semiconductors $\\alpha < 0$ (resistance decreases with temperature because more carriers are freed).",
+    "**Resistance of a wire:** doubling the length doubles the resistance. Doubling the diameter quadruples the cross-sectional area, halving the resistance.",
+    "**Unit analysis:** $[\\rho] = [R][A]/[L] = \\Omega\\cdot\\text{m}^2/\\text{m} = \\Omega\\cdot\\text{m}$. Conductivity $[\\sigma] = \\Omega^{-1}\\cdot\\text{m}^{-1} = \\text{S/m}$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Ohm's law is not a universal law. It applies to ohmic materials (metals at constant temperature) but not to non-ohmic devices like diodes, transistors, and filament lamps.",
+    "Resistance $R$ depends on geometry (length, area), while resistivity $\\rho$ is a material property. Copper always has the same $\\rho$ regardless of the shape of the wire.",
+    "The resistance $R = \\rho L/A$ is derived from $V = IR$ plus the microscopic relation $E = \\rho J$. It is not an independent law but a consequence of the material's properties.",
+    "Temperature affects metals and semiconductors in opposite directions. In metals, more lattice vibrations impede electrons. In semiconductors, more thermal energy frees carriers, increasing conductivity.",
+    "Superconductors have exactly zero resistivity below their critical temperature. This is fundamentally different from very low resistivity — it is a phase transition with quantum mechanical origins."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A copper wire 2 m long has a diameter of 0.5 mm. Find its resistance. ($\\rho_{Cu} = 1.68 \\times 10^{-8}$ $\\Omega\\cdot$m). Solution: $A = \\pi (0.25 \\times 10^{-3})^2 = 1.96 \\times 10^{-7}$ m$^2$. $R = \\rho L/A = 1.68 \\times 10^{-8} \\times 2 / 1.96 \\times 10^{-7} = 0.171\\,\\Omega$.",
+    "A wire of resistance 10 $\\Omega$ is stretched to double its length. Find the new resistance (assume volume is constant). Solution: $L' = 2L$, so $A' = A/2$ (constant volume). $R' = \\rho(2L)/(A/2) = 4\\rho L/A = 4R = 40\\,\\Omega$.",
+    "A carbon resistor has $\\rho = 3.5 \\times 10^{-5}$ $\\Omega\\cdot$m, length 10 cm, and cross-sectional area 2 mm$^2$. Find its resistance and conductivity. Solution: $R = \\rho L/A = 3.5 \\times 10^{-5} \\times 0.1 / 2 \\times 10^{-6} = 1.75\\,\\Omega$. $\\sigma = 1/\\rho = 1/(3.5 \\times 10^{-5}) = 2.86 \\times 10^4$ S/m.",
+    "A wire has resistance 5 $\\Omega$ at 20$^{\\circ}$C and 5.5 $\\Omega$ at 100$^{\\circ}$C. Find the temperature coefficient of resistivity. Solution: $R = R_0[1 + \\alpha(T - T_0)]$, so $5.5 = 5[1 + \\alpha(80)]$. $\\alpha = 0.5/(5 \\times 80) = 0.00125$ $^{\\circ}$C$^{-1}$.",
+    "A gold wire has resistance 2 $\\Omega$, length 5 m, and radius 0.5 mm. Find the resistivity and conductivity. Solution: $A = \\pi (0.5 \\times 10^{-3})^2 = 7.85 \\times 10^{-7}$ m$^2$. $\\rho = RA/L = 2 \\times 7.85 \\times 10^{-7}/5 = 3.14 \\times 10^{-7}$ $\\Omega\\cdot$m. $\\sigma = 1/\\rho = 3.18 \\times 10^6$ S/m."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Copper is the standard conductor for electrical wiring because it has low resistivity, good ductility, and is relatively inexpensive. Silver has lower resistivity but is too expensive for most uses.",
+    "The resistivity of a pure metal increases linearly with temperature at moderate temperatures: $\\rho = \\rho_0(1 + \\alpha \\Delta T)$, where $\\alpha \\approx 0.004$ $^{\\circ}$C$^{-1}$ for most metals.",
+    "Carbon has a negative temperature coefficient — its resistance decreases as it gets hotter. This makes carbon resistors useful as temperature-compensating elements in circuits.",
+    "The resistance of a wire is inversely proportional to its cross-sectional area. This is why high-current applications use thick cables — to minimize resistive heating losses.",
+    "Resistivity $\\rho$ is an intrinsic property that does not depend on the shape or size of the conductor. Two wires of the same material but different dimensions have the same $\\rho$."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits"

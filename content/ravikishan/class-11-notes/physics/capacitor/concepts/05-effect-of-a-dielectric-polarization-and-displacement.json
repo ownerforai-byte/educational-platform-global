@@ -1,5 +1,5 @@
 {
-  "title": "Effect of a Dielectric â€” Polarization and Displacement",
+  "title": "Effect of a Dielectric — Polarization and Displacement",
   "unitSlug": "capacitor",
   "topicSlug": "effect-of-a-dielectric-polarization-and-displacement",
   "topicTitle": "Effect of a dielectric: polarization and displacement",
@@ -9,22 +9,34 @@
     "**Polarization:** the dielectric develops surface charges opposite to the plate charges, reducing the net field inside from $E_0$ to $E = E_0/\\kappa$.",
     "**Capacitance increase:** since $C = Q/V$ and $V = Ed$ decreases while $Q$ stays constant (isolated capacitor), $C$ increases by factor $\\kappa$.",
     "**Electric displacement $\\vec{D}$:** $\\vec{D} = \\epsilon_0\\vec{E} + \\vec{P}$, where $\\vec{P}$ is polarization. In linear dielectrics, $\\vec{D} = \\epsilon\\vec{E} = \\kappa\\epsilon_0\\vec{E}$.",
-    "**Breakdown voltage:** every dielectric has a maximum field it can withstand before conducting. This limits the maximum operating voltage of a capacitor."
+    "**Breakdown voltage:** every dielectric has a maximum field it can withstand before conducting. This limits the maximum operating voltage of a capacitor.",
+    "**Dielectric constant values:** vacuum $\\kappa = 1$, air $\\kappa \\approx 1.0006$, paper $\\kappa \\approx 3.5$, glass $\\kappa \\approx 5{-}10$, distilled water $\\kappa \\approx 80$.",
+    "**Polarization mechanism:** in non-polar dielectrics, the field displaces positive and negative charge centers, creating induced dipoles. In polar dielectrics, permanent dipoles align with the field.",
+    "**Bound charge:** the surface charges induced on the dielectric are called bound charges. They cannot flow freely but create an opposing field that reduces the net field inside.",
+    "**Dielectric strength:** the maximum electric field a material can withstand without breaking down. For air it is $\\approx 3 \\times 10^6$ V/m; for transformer oil it is $\\approx 1.5 \\times 10^7$ V/m.",
+    "**Partial insertion:** if a dielectric slab of thickness $t < d$ is partially inserted, the effective capacitance is $C = \\epsilon_0 A / (d - t + t/\\kappa)$.",
+    "**Energy perspective:** inserting a dielectric into an isolated capacitor reduces the field energy. The dielectric is pulled into the capacitor because the system seeks lower energy."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A dielectric does not conduct current — it only polarizes. The reduced field inside is due to induced surface charges, not due to charge flowing through the material.",
+    "Dielectric constant $\\kappa$ is always greater than 1 for real materials. Do not confuse it with relative permittivity — they are the same quantity; $\\kappa = \\epsilon_r$.",
+    "When a dielectric is inserted while the battery is connected, voltage stays constant but charge increases. When inserted after disconnecting, charge stays constant but voltage decreases. These are opposite effects.",
+    "The electric displacement $\\vec{D}$ depends only on free charge, not bound charge. This makes it useful for applying Gauss's law in dielectrics: $\\oint \\vec{D} \\cdot d\\vec{A} = Q_{free}$.",
+    "Dielectric breakdown is irreversible for some materials (e.g., paper chars) but reversible for others (e.g., air ionizes and recombines). The breakdown field is a hard limit — exceeding it destroys the insulating property."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A parallel plate capacitor with air has capacitance $50$ pF. A dielectric with $\\kappa = 4$ is inserted filling the entire space. Find the new capacitance and explain what happens if the battery remains connected at 100 V. Solution: $C' = \\kappa C = 4 \\times 50 = 200$ pF. With battery connected: $Q' = C'V = 200 \\times 10^{-12} \\times 100 = 2 \\times 10^{-8}$ C $= 20$ nC (was $5$ nC before).",
+    "A capacitor with $C_0 = 10\\,\\mu$F is charged to 200 V and disconnected. A dielectric with $\\kappa = 5$ is inserted. Find the new capacitance, voltage, and energy. Solution: $C' = 50\\,\\mu$F. $Q = 2000\\,\\mu$C (constant). $V' = Q/C' = 2000/50 = 40$ V. $U' = Q^2/(2C') = 4 \\times 10^{-3}/(100 \\times 10^{-6}) = 0.04$ J. Original $U = 0.2$ J.",
+    "A dielectric slab of thickness $t = 3$ mm and $\\kappa = 4$ is inserted between plates separated by $d = 5$ mm. Find the new capacitance in terms of the original air capacitance $C_0$. Solution: $C = \\epsilon_0 A/(d - t + t/\\kappa) = \\epsilon_0 A/(5 - 3 + 0.75) = \\epsilon_0 A/2.75$. Since $C_0 = \\epsilon_0 A/5$, $C = (5/2.75)C_0 \\approx 1.82\\,C_0$.",
+    "The dielectric strength of air is $3 \\times 10^6$ V/m. What is the maximum voltage across a parallel plate capacitor with plate separation 1 mm? Solution: $V_{max} = E_{max} \\times d = 3 \\times 10^6 \\times 0.001 = 3000$ V.",
+    "A parallel plate capacitor has plates of area $100\\,\\text{cm}^2$ separated by 1 mm. The space is filled with a dielectric of $\\kappa = 6$ and dielectric strength $50 \\times 10^6$ V/m. Find the maximum charge the capacitor can hold. Solution: $C = \\kappa\\epsilon_0 A/d = 6 \\times 8.85 \\times 10^{-12} \\times 0.01 / 0.001 = 5.31 \\times 10^{-10}$ F. $V_{max} = 50 \\times 10^6 \\times 0.001 = 50000$ V. $Q_{max} = CV_{max} = 5.31 \\times 10^{-10} \\times 50000 = 2.66 \\times 10^{-5}$ C $= 26.6\\,\\mu$C."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The dielectric constant $\\kappa$ of a material is a measure of how much it reduces the electric field inside it. Water's high $\\kappa \\approx 80$ makes it an excellent solvent for ionic compounds.",
+    "Polarization creates bound surface charges that produce an opposing electric field. The net field inside the dielectric is $E = E_0/\\kappa$, always less than the original field.",
+    "Dielectric breakdown occurs when the electric field is strong enough to strip electrons from atoms, creating a conducting path. This is why capacitors have a maximum voltage rating.",
+    "The electric displacement field $\\vec{D} = \\kappa\\epsilon_0\\vec{E}$ depends only on free charges, making it the natural field to use when applying Gauss's law in dielectric materials.",
+    " inserting a dielectric into an isolated capacitor always decreases the stored energy (the dielectric is pulled in). Inserting it with the battery connected always increases the stored energy (the battery supplies the extra)."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor"

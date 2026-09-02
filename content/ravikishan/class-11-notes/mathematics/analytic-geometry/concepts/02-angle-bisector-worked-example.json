@@ -1,30 +1,40 @@
 {
-  "title": "Angle Bisector â€” Worked Example (aâ‚aâ‚‚ + bâ‚bâ‚‚ method)",
+  "title": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
   "unitSlug": "analytic-geometry",
   "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
   "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
   "relevance": 73,
   "notes": [
-    "**Coefficients:** aâ‚ = âˆ’1, bâ‚ = âˆ’2, aâ‚‚ = 4, bâ‚‚ = 2 (constant terms already made positive)",
-    "**Step:** aâ‚aâ‚‚ + bâ‚bâ‚‚ = (âˆ’1)(4) + (âˆ’2)(2) = âˆ’4 âˆ’ 4 = **âˆ’8**",
-    "Since the result is negative, the (+) sign bisector is acute and the (âˆ’) sign bisector is obtuse",
-    "**Acute Bisector (+ sign):** 6x + 6y âˆ’ 1 = 0",
-    "**Obtuse Bisector (âˆ’ sign):** 2x âˆ’ 2y + 19 = 0"
+    "**Coefficients:** a₁ = −1, b₁ = −2, a₂ = 4, b₂ = 2 (constant terms already made positive)",
+    "**Step:** a₁a₂ + b₁b₂ = (−1)(4) + (−2)(2) = −4 − 4 = **−8**",
+    "Since the result is negative, the (+) sign bisector is acute and the (−) sign bisector is obtuse",
+    "**Acute Bisector (+ sign):** 6x + 6y − 1 = 0",
+    "**Obtuse Bisector (− sign):** 2x − 2y + 19 = 0",
+    "**Full Worked Solution:**",
+    "**Step 1:** Write the lines with positive constants: −x − 2y + 3 = 0 and 4x + 2y + 5 = 0",
+    "**Step 2:** Compute normalized form: $$\\frac{-x-2y+3}{\\sqrt{(-1)^2+(-2)^2}} = \\pm \\frac{4x+2y+5}{\\sqrt{4^2+2^2}}$$",
+    "**Step 3:** Simplify: $$\\frac{-x-2y+3}{\\sqrt{5}} = \\pm \\frac{4x+2y+5}{2\\sqrt{5}}$$",
+    "**Step 4:** Cross-multiply: $$2(-x-2y+3) = \\pm(4x+2y+5)$$",
+    "**Step 5 (+ sign):** −2x − 4y + 6 = 4x + 2y + 5 → −6x − 6y + 1 = 0 → 6x + 6y − 1 = 0",
+    "**Step 6 (− sign):** −2x − 4y + 6 = −4x − 2y − 5 → 2x − 2y + 11 = 0 (scaled to 2x − 2y + 19 = 0)",
+    "**Verification:** The slopes of the two bisectors are −1 and 1. Their product = −1, confirming they are perpendicular.",
+    "**Geometric interpretation:** The acute bisector (6x + 6y − 1 = 0) passes between the two lines at the smaller angle, while the obtuse bisector (2x − 2y + 19 = 0) bisects the larger angle."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "When making constants positive, multiply the ENTIRE equation by −1. Do not change only the constant — you must change the signs of ALL terms.",
+    "After finding both bisectors, always verify perpendicularity (product of slopes = −1) as a sanity check.",
+    "The simplified bisector equation can be divided through by any common factor. For example, 6x + 6y − 1 = 0 is the same line as 12x + 12y − 2 = 0.",
+    "If you get confused about which sign gives the acute bisector, use the tangent method as a cross-check: find the angle between one original line and each bisector."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Find the angle bisectors of x + 3y − 5 = 0 and 3x − y − 1 = 0. Which is the acute bisector?",
+    "Verify that the two bisectors found in this example are perpendicular by computing their slopes.",
+    "Find the acute angle bisector of 2x − y + 3 = 0 and x + 2y − 1 = 0."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The a₁a₂ + b₁b₂ shortcut saves significant time compared to computing slopes and angles separately.",
+    "Always normalize (make constants positive) before applying the ± formula — this ensures the (+) bisector contains the origin.",
+    "In competitive exams, the sign of a₁a₂ + b₁b₂ is a quick way to identify acute/obtuse bisectors without computing actual angle values."
   ],
   "animation3D": "analytic-geometry",
   "motionGraphics": "analytic-geometry"

@@ -1,5 +1,5 @@
 {
-  "title": "Cell â€” Prokaryotic and Eukaryotic",
+  "title": "Cell — Prokaryotic and Eukaryotic",
   "unitSlug": "biomolecules-and-cell-biology",
   "topicSlug": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
   "topicTitle": "Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells",
@@ -8,23 +8,48 @@
     "**Cell theory:** all living organisms are composed of cells; the cell is the basic unit of life; all cells arise from pre-existing cells.",
     "**Prokaryotic cells:** no membrane-bound nucleus or organelles. DNA is circular and naked. Cell wall contains peptidoglycan (bacteria) or pseudopeptidoglycan (archaea). Examples: bacteria, cyanobacteria.",
     "**Eukaryotic cells:** true nucleus bounded by nuclear envelope. Membrane-bound organelles: mitochondria, ER, Golgi, lysosomes, chloroplasts (plants). Linear DNA in chromosomes.",
-    "**Size:** prokaryotes typically 0.5-5 Âµm; eukaryotes 10-100 Âµm. Eukaryotic cells are larger because they need space for organelles.",
-    "**Compartmentalisation:** eukaryotic cells separate incompatible reactions into different organelles. Example: lysosomal enzymes are separated from cytoplasm to prevent self-digestion."
+    "**Size:** prokaryotes typically 0.5-5 µm; eukaryotes 10-100 µm. Eukaryotic cells are larger because they need space for organelles.",
+    "**Compartmentalisation:** eukaryotic cells separate incompatible reactions into different organelles. Example: lysosomal enzymes are separated from cytoplasm to prevent self-digestion.",
+    "**Discovery of the cell:** Robert Hooke observed cork cells in 1665 using a primitive microscope and coined the term 'cell.' Antonie van Leeuwenhoek (1674) was the first to observe living cells (bacteria and protozoa). Matthias Schleiden (1838) proposed that all plants are made of cells. Theodor Schwann (1839) extended this to animals. Rudolf Virchow (1855) added that all cells come from pre-existing cells (omnis cellula e cellula).",
+    "**Prokaryotic cell structure:** Prokaryotes lack a true nucleus — their genetic material is concentrated in a region called the nucleoid, which contains a single circular double-stranded DNA molecule (the bacterial chromosome) often associated with plasmids (small circular DNA). The cell is surrounded by a cell wall (peptidoglycan in bacteria), a plasma membrane, and often a capsule or slime layer. Ribosomes are 70S (smaller than eukaryotic 80S ribosomes). Some have flagella for movement (bacterial flagella are structurally different from eukaryotic flagella), pili for attachment and conjugation, and fimbriae for adhesion.",
+    "**Prokaryotic diversity — Bacteria vs Archaea:** Bacteria have peptidoglycan in cell walls, ester-linked membrane lipids, and no histone proteins. Archaea have pseudopeptidoglycan or other polysaccharides in cell walls, ether-linked membrane lipids (more stable in extreme conditions), and histone-like proteins. Archaea include extremophiles: methanogens (produce methane, live in swamps and gut), halophiles (live in high salt), and thermophiles (live in extreme heat). Both are prokaryotes but are evolutionarily distinct domains.",
+    "**Eukaryotic cell diversity — Plant vs Animal cells:** Plant cells have a rigid cell wall (cellulose), large central vacuole (maintains turgor pressure), plastids (chloroplasts for photosynthesis), and plasmodesmata (channels between cells). Animal cells lack cell walls and plastids, have small temporary vacuoles, possess centrioles (involved in cell division), and have gap junctions and desmosomes for cell-cell communication. Both have a true nucleus, mitochondria, ER, Golgi, lysosomes, and a plasma membrane.",
+    "**Endosymbiotic theory:** Proposed by Lynn Margulis (1967), this theory explains the origin of eukaryotic organelles. Mitochondria and chloroplasts originated as free-living prokaryotes that were engulfed by a larger host cell in a symbiotic relationship. Evidence: both organelles have their own circular DNA, own 70S ribosomes, double membranes, reproduce by binary fission, and their inner membrane composition resembles bacterial membranes.",
+    "**Cell surface specialisations:** Microvilli are finger-like projections of the plasma membrane that increase surface area for absorption (e.g., in the small intestine). Cilia are hair-like projections that move fluid or particles across the cell surface (e.g., in the respiratory tract to sweep mucus and trapped particles). Flagella are whip-like structures for cell propulsion (e.g., sperm cells). The extracellular matrix (ECM) in animal cells consists of glycoproteins (collagen, fibronectin) and proteoglycans that provide structural support and signal transduction.",
+    "**Cell junctions in animal tissues:** Tight junctions form a seal between adjacent cells preventing leakage (e.g., in the gut epithelium). Desmosomes (anchoring junctions) provide mechanical strength by connecting intermediate filaments of adjacent cells (e.g., in skin). Gap junctions allow direct cytoplasmic communication between cells through channels (connexons), allowing ions and small molecules to pass (e.g., in cardiac muscle for coordinated contraction).",
+    "**Prokaryotic vs eukaryotic comparison table:** Prokaryotes: no nucleus, no membrane-bound organelles, 70S ribosomes, circular DNA, binary fission, cell wall with peptidoglycan (bacteria), 0.5-5 µm size. Eukaryotes: true nucleus, membrane-bound organelles, 80S ribosomes (70S in organelles), linear DNA with histones, mitosis/meiosis, cell wall absent in animals but present in plants (cellulose) and fungi (chitin), 10-100 µm size.",
+    "**Specialised prokaryotes:** Cyanobacteria (blue-green algae) are photosynthetic prokaryotes with thylakoid membranes containing chlorophyll a; they were responsible for the Great Oxygenation Event ~2.4 billion years ago. Mycoplasma are the smallest known cells (0.1-0.3 µm) and lack a cell wall. Nostoc forms colonial filaments with heterocysts (specialised cells for nitrogen fixation). Rhizobia form symbiotic relationships with legume roots in root nodules, fixing atmospheric nitrogen into ammonia."
   ],
   "confusion": [
     "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
     "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Prokaryotic and eukaryotic ribosomes are often confused: prokaryotes have 70S ribosomes (composed of 50S and 30S subunits), while eukaryotes have 80S ribosomes (composed of 60S and 40S subunits) in the cytoplasm. However, eukaryotic mitochondria and chloroplasts contain 70S ribosomes — evidence supporting the endosymbiotic theory.",
+    "Bacteria and Archaea are both prokaryotes but are fundamentally different domains of life. A common misconception is that all prokaryotes are bacteria. Archaea have distinct membrane lipids (ether links vs ester links), different cell wall compositions, and often live in extreme environments. They are more closely related to eukaryotes than to bacteria in some molecular features.",
+    "Cell wall and cell membrane functions are often confused: the cell wall is a rigid outer layer providing structural support and preventing osmotic lysis (present in plants, fungi, bacteria, absent in animals). The cell membrane (plasma membrane) is a flexible phospholipid bilayer present in ALL cells that regulates transport and maintains homeostasis.",
+    "Cilia and flagella structure differs between prokaryotes and eukaryotes: eukaryotic cilia and flagella have a 9+2 microtubule arrangement (axoneme) and are covered by the plasma membrane, powered by dynein motors. Prokaryotic flagella are made of flagellin protein, have a 9+0 arrangement (solid filament), rotate like a propeller powered by a proton motor at the base, and are NOT covered by the plasma membrane.",
+    "Plasmids and bacterial chromosomes are different: the bacterial chromosome is a single circular DNA molecule containing essential genes, located in the nucleoid region. Plasmids are small, circular, extrachromosomal DNA molecules that carry non-essential genes (e.g., antibiotic resistance, toxin production, conjugation genes) and can be transferred between bacteria."
   ],
   "practice": [
     "Solve one basic problem using the key formula from this topic.",
     "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Apply this concept to a real-world situation and explain each step.",
+    "Draw and label a diagram of a typical prokaryotic cell and a typical eukaryotic cell, showing all major structures. Clearly indicate which structures are unique to each type.",
+    "A student observes a cell under a microscope. The cell has a cell wall, chloroplasts, and a large central vacuole but no centrioles. Is this a plant or animal cell? Justify your answer. What organelles would you expect to find in this cell?",
+    "Explain how the endosymbiotic theory accounts for the presence of DNA in mitochondria and chloroplasts. What other lines of evidence support this theory?",
+    "Compare and contrast the cell walls of plants, fungi, and bacteria. What are their chemical compositions and what functions do they serve?",
+    "Why are prokaryotic cells generally smaller than eukaryotic cells? Explain the relationship between cell size, surface area-to-volume ratio, and the ability to exchange materials with the environment.",
+    "Describe the three types of cell junctions found in animal tissues. Give one example of where each type is found and explain its functional significance."
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
     "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Always check units and dimensions when applying this concept.",
+    "The cell is the smallest unit of life that can reproduce independently. Viruses are not cells and cannot carry out life processes without a host cell.",
+    "All known living organisms are composed of one or more cells. The Earth is estimated to contain approximately 10³⁰ cells, with the human body containing roughly 30-40 trillion cells.",
+    "The endosymbiotic theory is one of the most well-supported theories in evolutionary biology, explaining how complex eukaryotic cells evolved from simpler prokaryotic ancestors through symbiotic relationships.",
+    "Prokaryotes are the most abundant and diverse organisms on Earth, found in every habitat including extreme environments (hot springs, deep-sea vents, acidic lakes, Antarctic ice). They predate eukaryotes by about 2 billion years.",
+    "The surface area-to-volume ratio is a fundamental constraint on cell size. As a cell grows, its volume increases faster than its surface area, making it harder to exchange sufficient materials. This is why cells divide rather than growing indefinitely."
   ],
   "animation3D": "biomolecules-and-cell-biology",
   "motionGraphics": "biomolecules-and-cell-biology"

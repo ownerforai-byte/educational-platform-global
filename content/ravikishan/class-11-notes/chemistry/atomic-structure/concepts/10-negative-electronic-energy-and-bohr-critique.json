@@ -6,26 +6,39 @@
   "relevance": 80,
   "notes": [
     "**Negative electronic energy:** the energy of an electron in a Bohr orbit is taken as negative because the electron is bound to the nucleus; energy must be supplied to remove it. The most negative energy corresponds to the most stable (lowest) orbit, n = 1.",
+    "**Energy zero reference:** energy is defined as zero when the electron is at infinite distance from the nucleus (completely free). Any bound state has E < 0. For hydrogen: E_n = −13.6/n² eV, so E₁ = −13.6 eV, E₂ = −3.4 eV, E₃ = −1.51 eV.",
+    "**Ionisation energy concept:** the energy required to take an electron from level n to infinity (E = 0) is the ionisation energy from that level. IE_n = 0 − E_n = +13.6/n² eV. It is always positive because energy must be supplied.",
     "**Bohr mechanical model critique:** Bohr treated the electron as a tiny planet moving in a definite circular orbit, a purely mechanical picture. It could not explain why only certain orbits were allowed, nor why the electron did not radiate while moving in a stationary orbit.",
+    "**Classical electromagnetic contradiction:** according to classical electrodynamics, a charged particle (electron) moving in a circle accelerates continuously and should radiate electromagnetic energy, spiralling into the nucleus. Bohr postulated this does not happen without explaining why.",
+    "**Spectral limitations:** Bohr's model accurately predicts the hydrogen spectrum but fails for helium (two electrons) and all other multi-electron atoms. It cannot explain the intensities of spectral lines or their splitting in magnetic fields (Zeeman effect).",
     "**Quantum mechanical shift:** the mechanical orbit picture was replaced by a probabilistic, wave-based description in which the electron's position is described by a wave function rather than a fixed path.",
-    "**SchrÃ¶dinger (1926):** Erwin SchrÃ¶dinger introduced a wave equation whose solutions (wave functions, Ïˆ) describe the electron's behaviour in three dimensions, giving rise to the modern orbital concept.",
+    "**Schrödinger (1926):** Erwin Schrödinger introduced a wave equation whose solutions (wave functions, ψ) describe the electron's behaviour in three dimensions, giving rise to the modern orbital concept.",
     "**Matter wave introduction:** the idea that particles such as electrons also behave as waves (de Broglie) laid the foundation for the wave-mechanical model.",
-    "**Einstein relation:** the equivalence of mass and energy, E = mcÂ², connects the particle and wave descriptions of matter."
+    "**Einstein relation:** the equivalence of mass and energy, E = mc², connects the particle and wave descriptions of matter and underpins the relativistic corrections needed for heavy atoms.",
+    "**Binding energy analogy:** the negative energy of a bound electron is analogous to a satellite in orbit around Earth — energy must be added to escape. However, the quantum mechanical treatment of the electron is fundamentally different from classical orbital mechanics.",
+    "**Virial theorem for Coulomb systems:** for a bound electron in a hydrogen-like atom, the average kinetic energy ⟨T⟩ = −E and the average potential energy ⟨V⟩ = 2E. This relationship holds for any Coulombic bound state.",
+    "**Zero-point energy:** even at absolute zero, the electron retains kinetic energy. It cannot fall to the nucleus because the uncertainty principle would then require infinite momentum uncertainty.",
+    "**Relativistic corrections:** for heavy atoms, electrons move at significant fractions of c. The relativistic mass increase causes a small contraction of s and p orbitals, affecting chemical properties (e.g., gold's yellow color, mercury's liquid state)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Negative energy does NOT mean the electron has less than zero energy in an absolute sense. It is negative relative to the reference point (free electron at infinity = 0). The electron still has kinetic energy (positive) and potential energy (negative), with total E < 0.",
+    "Students often think the electron 'falls into the nucleus' because of the negative energy. In reality, the uncertainty principle prevents this — confining the electron too close to the nucleus would make its momentum (and kinetic energy) too large.",
+    "Bohr's model is NOT wrong — it is an approximation that works well for hydrogen. It correctly predicts energy levels to high accuracy but fails conceptually because it treats the electron as a classical particle with a definite path.",
+    "The negative energy is NOT a sign error. It is a consequence of choosing the zero of potential energy at infinity, which is the standard convention for gravitational and electrostatic systems."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the ionisation energy of hydrogen from the n = 2 level. Solution: IE = 0 − E₂ = 0 − (−3.4) = 3.4 eV. This is the minimum energy needed to remove an electron from the first excited state.",
+    "Find the energy of the photon emitted when an electron drops from n = 3 to n = 1 in hydrogen. Solution: ΔE = E₃ − E₁ = (−1.51) − (−13.6) = 12.09 eV. This photon is in the UV region (Lyman series).",
+    "Explain why the energy levels become closer together as n increases. Solution: E_n = −13.6/n² eV. The difference E_{n+1} − E_n = 13.6(1/n² − 1/(n+1)²) decreases as n grows because 1/n² converges to zero. The levels approach E = 0 (ionisation limit).",
+    "Determine the longest wavelength photon that can ionise hydrogen from the ground state. Solution: IE = 13.6 eV = hc/λ. λ = hc/IE = (6.626 × 10⁻³⁴ × 3 × 10⁸)/(13.6 × 1.602 × 10⁻¹⁹) = 9.12 × 10⁻⁸ m = 91.2 nm.",
+    "Calculate the ratio of ionisation energies for He⁺ and H. Solution: IE ∝ Z². For He⁺, Z = 2, so IE(He⁺)/IE(H) = 4. The ionisation energy of He⁺ is 54.4 eV."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The negative sign in electronic energy is a convention based on the choice of reference point. If we chose a different reference (e.g., the ground state = 0), all energies would be positive but the physics would be identical.",
+    "Bohr's model was revolutionary for its time (1913) because it introduced the concept of quantised energy levels, even though the underlying reasoning was later shown to be incomplete.",
+    "The fact that E_n approaches zero as n approaches infinity means the electron becomes free (ionised) at the series limit. This connection between bound-state energy and ionisation energy is fundamental in spectroscopy.",
+    "The Bohr model's greatest legacy is the concept of quantised orbits, which survived into quantum mechanics as quantised energy levels — the orbital picture replaced the path, but the energy quantisation remained.",
+    "The concept of binding energy extends beyond atomic physics — nuclear binding energy follows similar principles, with the mass defect representing the energy that would be needed to separate the nucleus into individual nucleons."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

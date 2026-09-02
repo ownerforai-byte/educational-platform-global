@@ -1,30 +1,38 @@
 {
-  "title": "Motion of a Satellite â€” Orbital Velocity and Time Period",
+  "title": "Motion of a Satellite — Orbital Velocity and Time Period",
   "unitSlug": "gravitation",
   "topicSlug": "motion-of-a-satellite-orbital-velocity-and-time-period",
   "topicTitle": "Motion of a satellite: orbital velocity and time period of the satellite",
   "relevance": 100,
   "notes": [
-    "**Orbital velocity:** equating gravitational force to centripetal force gives $v = \\sqrt{\\frac{GM}{r}}$, where $r$ is the orbital radius.",
-    "**Near Earth's surface:** $v = \\sqrt{gR} \\approx 7.9\\,\\text{km/s}$. This is the minimum speed to maintain a circular orbit just above the atmosphere.",
+    "**Orbital velocity:** equating gravitational force to centripetal force gives $v = \\sqrt{\\frac{GM}{r}}$, where $r$ is the orbital radius (distance from Earth's centre). The mass of the satellite cancels out — all satellites at the same radius have the same orbital speed.",
+    "**Near Earth's surface:** $v = \\sqrt{gR} \\approx 7.9\\,\\text{km/s}$. This is the minimum speed to maintain a circular orbit just above the atmosphere (ignoring air drag).",
     "**Time period:** $T = \\frac{2\\pi r}{v} = 2\\pi\\sqrt{\\frac{r^3}{GM}}$. This is Kepler's third law in Newtonian form.",
-    "**Kepler's third law:** $T^2 \\propto r^3$. The square of the period is proportional to the cube of the orbital radius.",
-    "**Why higher orbits are slower:** as $r$ increases, $v$ decreases and $T$ increases. The Moon orbits more slowly than a low Earth satellite because it is much farther away."
+    "**Kepler's third law:** $T^2 \\propto r^3$. The square of the period is proportional to the cube of the orbital radius. For Earth satellites: $T^2 = \\frac{4\\pi^2}{GM}r^3$.",
+    "**Why higher orbits are slower:** as $r$ increases, $v$ decreases and $T$ increases. The Moon ($r \\approx 384,\\!400\\,\\text{km}$) has $v \\approx 1.02\\,\\text{km/s}$ and $T = 27.3\\,\\text{days}$, while a LEO satellite ($r \\approx 6600\\,\\text{km}$) has $v \\approx 7.7\\,\\text{km/s}$ and $T \\approx 90\\,\\text{min}$.",
+    "**Low Earth Orbit (LEO):** altitude $200$–$2000\\,\\text{km}$. Period $\\approx 90$–$120\\,\\text{min}$. Velocity $\\approx 7.8\\,\\text{km/s}$. Used for ISS, imaging satellites, human spaceflight.",
+    "**Medium Earth Orbit (MEO):** altitude $\\approx 20,\\!000\\,\\text{km}$. Period $\\approx 12\\,\\text{hours}$. GPS satellites orbit here.",
+    "**Orbital energy:** $E = -GMm/2r$. Higher orbits have less negative (higher) energy. To go to a higher orbit, you must ADD energy.",
+    "**Derivation of orbital velocity:** $F_{grav} = F_{centripetal} \\Rightarrow GMm/r^2 = mv^2/r \\Rightarrow v^2 = GM/r \\Rightarrow v = \\sqrt{GM/r}$.",
+    "**Areal velocity:** $dA/dt = L/2m = \\text{constant}$ (Kepler's second law). The satellite sweeps equal areas in equal times — moves faster near perigee, slower at apogee."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Orbital velocity does NOT depend on the mass of the satellite — it depends only on the central mass $M$ and the orbital radius $r$. A feather and a hammer in orbit would have the same orbital speed.",
+    "Kepler's third law ($T^2 \\propto r^3$) applies to ELLIPTICAL orbits too, with $r$ replaced by the semi-major axis $a$. The constant of proportionality is the same for all satellites of the same central body.",
+    "A satellite in a circular orbit is in FREE FALL — it is continuously falling toward Earth but moving forward fast enough to miss it. The occupants feel weightless because both they and the satellite accelerate at the same rate.",
+    "To raise a satellite to a higher orbit, you must SPEED UP (fire rockets in the direction of motion) — this seems counterintuitive but is correct. The increased kinetic energy goes into potential energy, and the final orbital speed is actually LOWER."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A satellite orbits Earth at an altitude of $400\\,\\text{km}$. Find its orbital velocity and period. $R_E = 6400\\,\\text{km}$, $M_E = 6 \\times 10^{24}\\,\\text{kg}$. Solution: $r = 6800\\,\\text{km} = 6.8 \\times 10^6\\,\\text{m}$. $v = \\sqrt{GM/r} = \\sqrt{(6.674 \\times 10^{-11})(6 \\times 10^{24})/(6.8 \\times 10^6)} = 7.67 \\times 10^3\\,\\text{m/s} = 7.67\\,\\text{km/s}$. $T = 2\\pi r/v = 2\\pi(6.8 \\times 10^6)/(7.67 \\times 10^3) = 5575\\,\\text{s} \\approx 93\\,\\text{min}$.",
+    "Find the radius of a geosynchronous orbit (period = 24 hours). $M_E = 6 \\times 10^{24}\\,\\text{kg}$. Solution: $T = 86400\\,\\text{s}$. $r = \\sqrt[3]{GMT^2/(4\\pi^2)} = \\sqrt[3]{(6.674 \\times 10^{-11})(6 \\times 10^{24})(86400)^2/(4\\pi^2)} = 4.22 \\times 10^7\\,\\text{m} = 42,200\\,\\text{km}$. Altitude $\\approx 35,800\\,\\text{km}$.",
+    "The Moon orbits at $r = 3.84 \\times 10^8\\,\\text{m}$. Verify Kepler's third law: $T^2/r^3$ for Moon and for a LEO satellite ($r = 6.8 \\times 10^6\\,\\text{m}$, $T = 5575\\,\\text{s}$). Solution: Moon: $T = 27.3 \\times 86400 = 2.36 \\times 10^6\\,\\text{s}$. $T^2/r^3 = (2.36 \\times 10^6)^2/(3.84 \\times 10^8)^3 = 5.57 \\times 10^{12}/5.66 \\times 10^{25} = 9.84 \\times 10^{-14}$. LEO: $T^2/r^3 = (5575)^2/(6.8 \\times 10^6)^3 = 3.11 \\times 10^7/3.14 \\times 10^{20} = 9.9 \\times 10^{-14}$. They match.",
+    "A satellite in circular orbit of radius $r$ has speed $v$. If its speed is instantaneously increased by $10\\%$, what happens? Solution: New speed $v' = 1.1v > v_{circular}$ but $< v_{escape} = \\sqrt{2}v \\approx 1.414v$. The orbit becomes elliptical with perigee at the burn point and apogee at a larger radius."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Kepler's laws were derived from Tycho Brahe's precise observations. Newton later showed they are consequences of his law of gravitation.",
+    "Orbital velocity is independent of the satellite's mass — this was one of Newton's great insights, showing the equivalence of gravitational and inertial mass.",
+    "The orbital period of a satellite just above Earth's surface is about $84\\,\\text{minutes}$ — this is also the period of a simple pendulum of length $R_E$ and the period of oscillation through a tunnel through Earth's centre.",
+    "A satellite in low Earth orbit experiences atmospheric drag, which gradually reduces its orbital energy, causing it to spiral inward — eventually it re-enters and burns up."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

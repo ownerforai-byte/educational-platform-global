@@ -9,22 +9,36 @@
     "**Importance of biodiversity:** ecological stability, food security, medicine (50% modern drugs from natural products), raw materials, cultural values, ecosystem services (pollination, water purification, climate regulation).",
     "**Biodiversity hotspots:** regions with high endemism and severe habitat loss. Criteria: at least 1500 endemic vascular plants and lost >70% original habitat. Global hotspots: 36 regions. Nepal has part of the Himalaya hotspot.",
     "**In-situ conservation:** protecting species in their natural habitat. National parks, wildlife reserves, conservation areas, Ramsar sites (wetlands), community forests.",
-    "**Ex-situ conservation:** protecting outside natural habitat. Botanical gardens, seed banks, gene banks, zoos, captive breeding, cryopreservation."
+    "**Ex-situ conservation:** protecting outside natural habitat. Botanical gardens, seed banks, gene banks, zoos, captive breeding, cryopreservation.",
+    "**Genetic diversity:** variation of genes within a species. High genetic diversity increases a population's ability to adapt to changing environments and resist diseases. Examples include different breeds of dogs, rice varieties, and wild relatives of crops.",
+    "**Species diversity metrics:** Species richness (total number of species in an area) and species evenness (relative abundance of each species). The Shannon-Wiener index (H') combines both measures: H' = -Σ(pi × ln(pi)), where pi is the proportion of individuals of species i.",
+    "**Ecological equivalence:** not all species contribute equally to ecosystem function. Keystone species have disproportionately large effects on their environment relative to their abundance (e.g., sea otters controlling urchin populations). Ecosystem engineers (e.g., beavers, corals) modify habitats for other species.",
+    "**Threats to biodiversity:** habitat destruction (primary threat), overexploitation, pollution, invasive species, climate change — collectively known as HIPPCO. Human population growth and consumption patterns drive many of these threats.",
+    "**Conservation biology as a crisis discipline:** Founded in the 1980s, conservation biology applies ecology, genetics, and other fields to protect species and ecosystems. It integrates scientific knowledge with ethics and policy to address biodiversity loss.",
+    "**Bioprospecting:** the search for commercially valuable genetic and biochemical materials from wild species. Examples include the Pacific yew tree (paclitaxel for cancer), rosy periwinkle (vincristine for leukemia), and medicinal plants used in traditional medicine.",
+    "**Cultural and aesthetic value of biodiversity:** Biodiversity supports spiritual, recreational, and artistic values. Many indigenous cultures have deep ecological knowledge tied to specific species and landscapes. Ecotourism generates significant revenue for biodiversity-rich countries.",
+    "**Resilience and redundancy:** Diverse ecosystems are more resilient to disturbances (droughts, fires, diseases). Functional redundancy — multiple species performing similar roles — provides a buffer if one species is lost."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Biodiversity is not just about counting species — it includes genetic variation within species and variety of ecosystems. A single species with high genetic diversity can be more valuable than many closely related species.",
+    "Conservation does not mean locking nature away — community-based conservation and sustainable use are increasingly recognized as effective and equitable approaches.",
+    "Endangered means at high risk of extinction, but it is a specific IUCN category (EN) distinct from Vulnerable (VU) and Critically Endangered (CR). These categories have quantitative thresholds.",
+    "In-situ and ex-situ conservation are complementary, not alternatives. The best conservation programs combine both (e.g., protecting a habitat while also maintaining a captive population as insurance).",
+    "A biodiversity hotspot is not simply a species-rich area — it must meet specific criteria: high endemism AND severe habitat loss. Many species-rich areas (like the Amazon) are not hotspots because they have not lost >70% of original habitat."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the Shannon-Wiener diversity index (H') for two communities: Community A has 4 species with 25 individuals each; Community B has 4 species with 91, 1, 1, 1 individuals. Which community is more diverse and why?",
+    "Classify the following scenarios as in-situ or ex-situ conservation: (a) a seed vault in Svalbard, (b) a national park, (c) a zoo breeding program, (d) a community forest.",
+    "Explain why a keystone species is critical to biodiversity conservation, using the sea otter–sea urchin–kelp forest example.",
+    "A region has 200 endemic plant species and has lost 80% of its original habitat. Does it qualify as a biodiversity hotspot? Show your reasoning using the IUCN criteria.",
+    "Compare and contrast bioprospecting with traditional ecological knowledge. How can both approaches contribute to conservation?"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Tropical rainforests cover only about 6% of Earth's land surface but contain over 50% of known species — making them the most biodiverse terrestrial ecosystems.",
+    "The current extinction rate is estimated to be 100–1000 times higher than the background (natural) extinction rate, a pace many scientists call the sixth mass extinction.",
+    "Over 75% of global food calories come from just 12 plant species and 5 animal species, highlighting the critical importance of genetic diversity in agriculture.",
+    "Nepal's Himalaya hotspot spans altitudes from 600m to over 8,000m, supporting an extraordinary range of ecosystems from subtropical forests to alpine deserts.",
+    "The IUCN Red List, established in 1964, is the world's most comprehensive inventory of species conservation status, with over 170,000 species assessed as of 2024."
   ],
   "animation3D": "conservation-biology",
   "motionGraphics": "conservation-biology"

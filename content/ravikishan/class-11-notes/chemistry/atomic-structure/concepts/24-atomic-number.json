@@ -9,24 +9,34 @@
     "**Neutrality:** an atom is neutral due to the presence of an equal number of positive charges of protons and negative charges of electrons, so the atomic number can be considered as the number of electrons present in a neutral atom.",
     "**Symbol:** the atomic number is generally denoted with the letter Z.",
     "**Origin:** the concept of atomic number was first given by the scientist Moseley in 1913; Moseley formulated the modern periodic table based on increasing atomic numbers.",
-    "**Formulas:** Atomic number (Z) = number of protons (pâº); Number of protons (pâº) = number of electrons (eâ») in a neutral atom; Z = pâº = eâ».",
-    "**Example:** the atomic number of magnesium is 12, indicating there are 12 protons and 12 electrons in the atom. But the magnesium ion (MgÂ²âº) possesses 12 protons and 10 electrons, and its atomic number is 12 and not 10.",
-    "**Notation:** in general, the atomic number of an element is written on the left side of the symbol of the element as a subscript."
+    "**Formulas:** Atomic number (Z) = number of protons (p⁺); Number of protons (p⁺) = number of electrons (e⁻) in a neutral atom; Z = p⁺ = e⁻.",
+    "**Example:** the atomic number of magnesium is 12, indicating there are 12 protons and 12 electrons in the atom. But the magnesium ion (Mg²⁺) possesses 12 protons and 10 electrons, and its atomic number is 12 and not 10.",
+    "**Notation:** in general, the atomic number of an element is written on the left side of the symbol of the element as a subscript.",
+    "**Moseley's law (1913):** Henry Moseley measured the frequencies of characteristic X-ray lines (Kα) for various elements and found √ν = a(Z − b), where ν is the X-ray frequency, Z is the atomic number, and a, b are constants. This showed that atomic number, not atomic mass, is the fundamental property determining an element's position in the periodic table.",
+    "**Resolution of periodic table anomalies:** before Moseley, elements were ordered by atomic mass, which placed Ar (39.9) before K (39.1) and Co (58.9) before Ni (58.7) — incorrect chemical properties. Ordering by Z (Ar=18, K=19; Co=27, Ni=28) resolved these anomalies completely.",
+    "**Atomic number vs mass number:** Z (atomic number) = number of protons = number of electrons in neutral atom. A (mass number) = Z + N = protons + neutrons. Z defines the element; A defines the isotope.",
+    "**Ions and atomic number:** when an atom forms an ion, it loses or gains electrons, changing the electron count. The number of protons (and thus Z) does not change in a chemical reaction. Na (Z=11) → Na⁺ has 11 protons, 10 electrons, Z = 11. Cl (Z=17) → Cl⁻ has 17 protons, 18 electrons, Z = 17.",
+    "**Nuclear notation:** the standard notation for an atom is ¹²₆C: A = 12 (mass number, superscript left), Z = 6 (atomic number, subscript left), C = element symbol. For a neutral atom: #p = Z, #e = Z, #n = A − Z.",
+    "**Real-world application — X-ray fluorescence (XRF):** Moseley's law is the basis of XRF spectroscopy, a non-destructive technique for elemental analysis. By measuring the characteristic X-ray energy, one determines Z and thus identifies the element, used in mining, archaeology, and quality control.",
+    "**Atomic number range:** known elements range from Z = 1 (hydrogen) to Z = 118 (oganesson). Each integer Z corresponds to exactly one element. No gaps exist in the sequence — every integer from 1 to 118 has a confirmed element."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Atomic number changes when an atom forms an ion. Correction — Z is the number of protons, which never changes in chemical reactions. Only the electron count changes. Mg²⁺ has 12 protons (Z=12) and 10 electrons. The charge (+2) means 2 fewer electrons than protons.",
+    "Misconception: Atomic number and mass number are the same thing. Correction — Z counts protons only; A counts protons + neutrons. For ¹⁶₈O: Z = 8, A = 16. For ³⁵₁₇Cl: Z = 17, A = 35. They are different numbers with different physical meanings.",
+    "Misconception: Moseley just rearranged the periodic table. Correction — Moseley provided the *physical justification* for the periodic table. Before him, the table was an empirical pattern; after him, it was ordered by the number of protons, a fundamental nuclear property. He also predicted missing elements (Tc, Pm, etc.) at specific Z values.",
+    "Misconception: The atomic number equals the number of neutrons for most elements. Correction — for light elements (up to Z ≈ 20), N ≈ Z. For heavier elements, N > Z increasingly (e.g., ²³⁸₉₂U: Z=92, N=146). Neutron excess provides the strong force needed to overcome proton-proton repulsion in large nuclei."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A neutral atom has 20 protons. What is its atomic number, number of electrons, and likely element? Solution: Z = 20 (protons). Electrons = 20 (neutral). Element = Calcium (Ca), Z = 20.",
+    "An ion has 17 protons and 18 electrons. What is its atomic number, charge, and identity? Solution: Z = 17 (protons). Charge = +17 − 18 = −1. Ion = Cl⁻. Element = Chlorine (Z = 17).",
+    "For the isotope ⁴⁰₂₀Ca, state the number of protons, neutrons, and electrons in the neutral atom. Solution: Z = 20 → 20 protons. A = 40 → 40 nucleons. Neutrons = A − Z = 40 − 20 = 20. Neutral atom: 20 electrons. (This is the most abundant calcium isotope.)",
+    "Moseley measured the Kα X-ray frequency for element X as 2.47 × 10¹⁸ Hz. If Moseley's constant a = 2.48 × 10⁷ Hz¹ᐟ² and b = 1, find Z. Solution: √ν = a(Z − b) → √(2.47×10¹⁸) = 2.48×10⁷(Z − 1). 1.572×10⁹ = 2.48×10⁷(Z − 1). Z − 1 = 63.4. Z ≈ 64. Element X = Gadolinium (Gd), Z = 64."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Henry Moseley's work in 1913 provided the first experimental proof that the atomic number is the fundamental property of an element. He was killed in WWI at age 27 — his potential was so great that the British government thereafter banned scientists from combat duty.",
+    "The periodic table has no gaps for Z = 1 to 118. Every integer atomic number has a confirmed element. Elements 113 (Nh), 115 (Mc), 117 (Ts), and 118 (Og) were officially named in 2016, completing the 7th period.",
+    "Atomic number determines the electron configuration (for neutral atoms), which determines chemical properties. This is why isotopes (same Z, different A) have nearly identical chemistry, while isobars (same A, different Z) are completely different elements.",
+    "In nuclear reactions, Z is conserved. In β⁻ decay: n → p + e⁻ + ν̄ₑ, the neutron number decreases by 1, proton number increases by 1, so Z increases by 1 (element changes). In β⁺ decay or electron capture: p → n + e⁺ + νₑ, Z decreases by 1."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

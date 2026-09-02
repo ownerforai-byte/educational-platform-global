@@ -1,30 +1,40 @@
 {
-  "title": "Elastic Moduli â€” Young, Bulk, Shear",
+  "title": "Elastic Moduli — Young, Bulk, Shear",
   "unitSlug": "elasticity",
   "topicSlug": "elastic-modulus-young-bulk-shear",
   "topicTitle": "Elastic modulus: Young modulus, bulk modulus, shear modulus",
   "relevance": 100,
   "notes": [
-    "**Young modulus $Y$:** ratio of tensile stress to tensile strain. $Y = \\frac{\\sigma}{\\epsilon} = \\frac{F/A}{\\Delta L/L} = \\frac{FL}{A\\Delta L}$. Measures stiffness in stretching/compressing.",
-    "**Bulk modulus $K$:** ratio of volumetric stress to volumetric strain. $K = -\\frac{\\Delta P}{\\Delta V/V}$. The negative sign ensures $K$ is positive because volume decreases under pressure.",
-    "**Shear modulus $\\eta$:** ratio of shear stress to shear strain. $\\eta = \\frac{F/A}{\\theta}$ where $\\theta$ is the angular deformation in radians.",
-    "**Relative magnitudes:** for most solids, $Y$ is largest because volume is harder to change than shape, and shape is harder to change than length.",
-    "**Practical values:** steel has $Y \\approx 2 \\times 10^{11}\\,\\text{Pa}$, rubber has $Y \\approx 10^6\\,\\text{Pa}$. Steel is about 100,000 times stiffer in tension than rubber."
+    "**Young modulus $Y$:** ratio of tensile stress to tensile strain. $Y = \\frac{\\sigma}{\\epsilon} = \\frac{F/A}{\\Delta L/L} = \\frac{FL}{A\\Delta L}$. Measures stiffness in stretching or compressing. Units: Pa (N/m$^2$).",
+    "**Bulk modulus $K$:** ratio of volumetric stress (pressure) to volumetric strain. $K = -\\frac{\\Delta P}{\\Delta V/V}$. The negative sign ensures $K$ is positive because volume decreases when pressure increases. Units: Pa.",
+    "**Shear modulus $\\eta$ (modulus of rigidity):** ratio of shear stress to shear strain. $\\eta = \\frac{F/A}{\\theta} = \\frac{FL}{A\\Delta x}$, where $\\theta \\approx \\frac{\\Delta x}{L}$ is the angular deformation in radians. Units: Pa.",
+    "**Relative magnitudes:** for most solids, $Y > \\eta > K$ is NOT generally true — typically $Y$ is the largest, but the ordering of $\\eta$ and $K$ depends on the material. For most metals, $Y \\approx 2\\eta \\approx 3K$.",
+    "**Practical values:** steel has $Y \\approx 2 \\times 10^{11}$ Pa, rubber has $Y \\approx 10^6$ Pa. Steel is about 200,000 times stiffer in tension than rubber. The bulk modulus of steel is about $1.6 \\times 10^{11}$ Pa.",
+    "**Interrelations:** for isotropic materials, the moduli are related: $Y = 3K(1 - 2\\sigma)$ and $Y = 2\\eta(1 + \\sigma)$, where $\\sigma$ is Poisson's ratio. These relations allow conversion between different moduli.",
+    "**Physical meaning:** each modulus quantifies resistance to a specific type of deformation. $Y$ resists length change, $K$ resists volume change, and $\\eta$ resists shape change (at constant volume).",
+    "**Compressibility:** the reciprocal of bulk modulus: $\\beta = \\frac{1}{K} = -\\frac{\\Delta V/V}{\\Delta P}$. Liquids have small compressibility (large $K$); gases have large compressibility (small $K$).",
+    "**Unit analysis:** all three moduli have the same units as stress (Pa = N/m$^2$), since strain is dimensionless. This confirms that modulus is a measure of stress required to produce unit strain."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Young's modulus and bulk modulus measure different types of stiffness. $Y$ is for uniaxial deformation (stretching/compression along one axis), while $K$ is for volumetric deformation (compression from all directions). A material can have a high $Y$ but a lower $K$ (or vice versa).",
+    "The negative sign in $K = -\\frac{\\Delta P}{\\Delta V/V}$ is essential — without it, $K$ would be negative because increasing pressure decreases volume. The sign convention ensures $K$ is always positive.",
+    "Shear modulus is NOT the same as the spring constant $k$. Shear modulus $\\eta$ is a material property (like $Y$), while $k$ depends on both the material and the geometry of the object. The relationship is $k = \\frac{\\eta A}{L}$ for a block in shear.",
+    "For liquids and gases, Young's modulus is not defined (they cannot sustain tensile stress), but bulk modulus is very relevant. Water has $K \\approx 2.2 \\times 10^9$ Pa — it is nearly incompressible.",
+    "The relation $Y = 2\\eta(1 + \\sigma)$ shows that $Y$ and $\\eta$ are proportional for a given material. If Poisson's ratio is 0.25, then $Y = 2.5\\eta$. This means it takes 2.5 times more stress to produce a given tensile strain than to produce the same shear strain."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A steel wire of length 4 m and cross-sectional area $10^{-6}$ m$^2$ stretches by 2 mm under a load of 100 N. Find Young's modulus. Solution: $Y = \\frac{FL}{A\\Delta L} = \\frac{100 \\times 4}{10^{-6} \\times 2 \\times 10^{-3}} = \\frac{400}{2 \\times 10^{-9}} = 2 \\times 10^{11}$ Pa.",
+    "A cubic block of side 0.1 m is subjected to a shear force of 500 N on its top face, producing a lateral displacement of 0.5 mm. Find the shear modulus. Solution: Shear stress $= \\frac{F}{A} = \\frac{500}{(0.1)^2} = 5 \\times 10^4$ Pa. Shear strain $= \\theta = \\frac{\\Delta x}{L} = \\frac{0.5 \\times 10^{-3}}{0.1} = 5 \\times 10^{-3}$. $\\eta = \\frac{\\text{stress}}{\\text{strain}} = \\frac{5 \\times 10^4}{5 \\times 10^{-3}} = 10^7$ Pa.",
+    "A sphere is taken to the bottom of the ocean (depth 2 km) where the pressure increases by $2 \\times 10^7$ Pa. If the bulk modulus of the material is $2 \\times 10^{11}$ Pa, find the fractional change in volume. Solution: $K = -\\frac{\\Delta P}{\\Delta V/V}$, so $\\frac{\\Delta V}{V} = -\\frac{\\Delta P}{K} = -\\frac{2 \\times 10^7}{2 \\times 10^{11}} = -10^{-4}$. The volume decreases by 0.01%.",
+    "Given that the Young's modulus of steel is $2 \\times 10^{11}$ Pa and its bulk modulus is $1.6 \\times 10^{11}$ Pa, find Poisson's ratio and the shear modulus. Solution: From $Y = 3K(1 - 2\\sigma)$: $2 \\times 10^{11} = 3 \\times 1.6 \\times 10^{11}(1 - 2\\sigma)$. $1 - 2\\sigma = \\frac{2}{4.8} = 0.4167$, so $\\sigma = 0.292$. From $Y = 2\\eta(1 + \\sigma)$: $\\eta = \\frac{Y}{2(1+\\sigma)} = \\frac{2 \\times 10^{11}}{2 \\times 1.292} \\approx 7.74 \\times 10^{10}$ Pa.",
+    "A material has $Y = 7 \\times 10^{10}$ Pa and $\\eta = 2.8 \\times 10^{10}$ Pa. Find its bulk modulus. Solution: From $Y = 2\\eta(1 + \\sigma)$: $7 \\times 10^{10} = 2 \\times 2.8 \\times 10^{10}(1 + \\sigma)$, so $1 + \\sigma = \\frac{7}{5.6} = 1.25$, giving $\\sigma = 0.25$. From $Y = 3K(1 - 2\\sigma)$: $K = \\frac{Y}{3(1-2\\sigma)} = \\frac{7 \\times 10^{10}}{3 \\times 0.5} = \\frac{7 \\times 10^{10}}{1.5} \\approx 4.67 \\times 10^{10}$ Pa."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The Young's modulus of diamond is about $1.2 \\times 10^{12}$ Pa — the highest of any known material — making it the stiffest natural substance.",
+    "The bulk modulus of water is about $2.2 \\times 10^9$ Pa, meaning water is nearly incompressible. A pressure increase of 1 atmosphere (10$^5$ Pa) reduces water's volume by only about 0.005%.",
+    "Steel and tungsten have similar Young's moduli (~200 GPa), but steel is much denser. This is why tungsten is preferred in applications where stiffness and low weight are both important.",
+    "The shear modulus of rubber is very small (~0.001 GPa) compared to steel (~80 GPa), which is why rubber deforms easily under shear forces.",
+    "Geophysicists use the ratio of bulk modulus to shear modulus to determine whether materials in the Earth's interior are solid or liquid — liquids have zero shear modulus."
   ],
   "animation3D": "elasticity",
   "motionGraphics": "elasticity"

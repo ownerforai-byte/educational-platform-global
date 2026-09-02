@@ -5,26 +5,37 @@
   "topicTitle": "Fundamentals of Applied Chemistry: chemical industry and its importance",
   "relevance": 100,
   "notes": [
-    "**Chemical industry:** converts raw materials into useful chemical products. One of the largest and most important industries globally.",
-    "**Importance:** provides fertilizers for agriculture, medicines for health, polymers for materials, fuels for energy, and pigments for decoration.",
-    "**Stages in producing a new product:** laboratory research â†’ pilot plant â†’ full-scale production â†’ quality control â†’ marketing.",
-    "**Economics:** cost of raw materials, energy consumption, labour, equipment, and waste disposal all affect the economic viability of a process.",
-    "**Environmental impact:** chemical plants produce waste gases ($SO_2$, $NO_x$), liquid effluents, and solid waste. Treatment and disposal costs must be included in process design."
+    "**Chemical industry:** a vast sector that transforms raw materials (petroleum, natural gas, minerals, biomass) into useful chemical products through physical and chemical processes. It is one of the world's largest industries, contributing approximately $4 trillion to global GDP and employing over 14 million people worldwide. Major sub-sectors include petrochemicals, fertilisers, pharmaceuticals, polymers, agrochemicals, and specialty chemicals.",
+    "**Importance to society:** the chemical industry provides fertilisers (urea, ammonia, phosphate salts) that support global food production — without synthetic fertilisers, the Earth could sustain only about half its current population. It produces medicines (aspirin, penicillin, paracetamol), polymers (polyethylene, PVC, nylon), detergents, dyes, pigments, pesticides, and construction materials. Nearly every product in modern life involves chemistry.",
+    "**Major industrial processes:** the Haber-Bosch process ($N_2 + 3H_2 \\rightleftharpoons 2NH_3$, Fe catalyst, 450°C, 200 atm) produces ammonia for fertilisers and explosives. The Contact process ($2SO_2 + O_2 \\rightleftharpoons 2SO_3$, $V_2O_5$ catalyst) produces sulfuric acid, the most produced industrial chemical (~260 million tonnes/year globally). The Ostwald process converts ammonia to nitric acid ($HNO_3$), essential for fertilisers and explosives.",
+    "**Petrochemical industry:** derived from crude oil and natural gas, it produces base chemicals like ethylene (170 million tonnes/year), propylene, benzene, toluene, and xylene (the BTX aromatics). These are feedstocks for plastics, fibres, solvents, and synthetic rubber. Crude oil refining uses fractional distillation, cracking, reforming, and alkylation to maximise useful products.",
+    "**Pharmaceutical industry:** a high-value, low-volume segment that develops and manufactures drugs. The process involves drug discovery (target identification, hit screening), lead optimisation, preclinical testing, clinical trials (Phases I-III), regulatory approval, and mass production. The average new drug takes 10-15 years and $1-2 billion to develop.",
+    "**Agrochemical industry:** produces fertilisers (NPK: nitrogen, phosphorus, potassium), pesticides (insecticides, herbicides, fungicides), and plant growth regulators. Global agrochemical sales exceed $250 billion annually. Modern agriculture depends on these chemicals to achieve yields that feed the global population.",
+    "**Green chemistry principles:** the 12 principles of green chemistry (formulated by Anastas and Warner, 1998) guide the design of chemical processes that reduce or eliminate hazardous substances. Key principles include: prevention of waste, atom economy, less hazardous synthesis, designing safer chemicals, use of renewable feedstocks, and real-time analysis for pollution prevention.",
+    "**Biotechnology in industry:** enzyme-catalysed processes (biocatalysis) are replacing harsh chemical methods. Examples include using immobilised glucose isomerase to convert glucose to fructose (high-fructose corn syrup), penicillin acylase to produce semi-synthetic antibiotics, and lipases for biodiesel production. Biorefineries convert biomass into chemicals, fuels, and materials.",
+    "**Water treatment chemistry:** coagulation using alum ($Al_2(SO_4)_3$) or ferric chloride removes suspended particles. Chlorination ($Cl_2$ or $NaOCl$) disinfects water by killing pathogens. Ozonation ($O_3$) and UV treatment provide alternative disinfection. Ion exchange resins remove heavy metals and soften hard water by exchanging $Ca^{2+}$ and $Mg^{2+}$ for $Na^+$.",
+    "**Real-world example — sulfuric acid production:** sulfuric acid is called the 'king of chemicals' because so many industries depend on it. It is used in fertilizer production (superphosphate, ammonium sulfate), petroleum refining, mineral processing, wastewater treatment, and battery acid (lead-acid batteries). Its production volume is often used as a national indicator of industrial strength."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Petrochemicals vs petroleum products — Petrochemicals are chemical feedstocks derived from petroleum (ethylene, propylene, benzene) used to make plastics and other products. Petroleum products are fuels and lubricants (gasoline, diesel, kerosene, bitumen). The same crude oil is refined to produce both, but they serve different purposes.",
+    "Batch vs continuous processing — Batch processing handles discrete quantities in a sequence (load, react, unload, clean); continuous processing feeds reactants constantly and removes products continuously. Batch is flexible but less efficient; continuous is efficient but requires large upfront investment and is less adaptable to product changes.",
+    "Chemical industry vs pharmaceutical industry — The chemical industry is the broader sector producing bulk chemicals, intermediates, and materials. The pharmaceutical industry is a specialised, highly regulated subset focused on drug discovery and manufacturing. All pharma companies are in the chemical industry, but not all chemical companies make drugs.",
+    "Atom economy vs percentage yield — Atom economy measures what fraction of reactant atoms end up in the desired product (theoretical efficiency). Percentage yield measures how much product was actually obtained compared to the theoretical maximum (experimental efficiency). A reaction can have 100% yield but poor atom economy if it produces large amounts of waste.",
+    "Catalyst vs reagent — A catalyst speeds up a reaction without being consumed; it is regenerated at the end of the reaction cycle. A reagent is consumed in the reaction and becomes part of the products. For example, in the Haber process, iron is a catalyst; in esterification, sulfuric acid acts as both catalyst and dehydrating agent (reagent)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the atom economy for the production of ethanol by hydration of ethylene: $C_2H_4 + H_2O \\rightarrow C_2H_5OH$. Compare this with the atom economy of the fermentation route: $C_6H_{12}O_6 \\rightarrow 2C_2H_5OH + 2CO_2$. Which route is greener and why?",
+    "A chemical plant produces 10,000 tonnes/year of ammonia via the Haber process. If the plant operates at 95% conversion per pass and recycles unreacted gases, estimate the annual feed requirement of nitrogen and hydrogen. Discuss how the recycle loop improves overall atom economy.",
+    "Describe the stages involved in bringing a new pharmaceutical drug from laboratory discovery to market. Include the roles of medicinal chemistry, pharmacology, toxicology, process chemistry, and regulatory affairs. Estimate the typical timeline and cost at each stage.",
+    "Compare the environmental impact of producing chlorine via the mercury cell process versus the membrane cell process for chlor-alkali industry. Consider energy consumption, mercury pollution, product purity, and regulatory constraints. Which process represents greener chemistry?",
+    "Explain why sulfuric acid is considered a critical indicator of a nation's industrial development. List at least five industries that consume sulfuric acid and describe the chemical role it plays in each. Calculate the mass of $SO_3$ required to produce 1 tonne of $H_2SO_4$ via the Contact process."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Sulfuric acid ($H_2SO_4$) is the most produced chemical in the world, with global production exceeding 260 million tonnes per year. No other chemical comes close in terms of tonnage.",
+    "The Haber-Bosch process, invented around 1909, is estimated to support approximately 50% of the world's population by enabling synthetic nitrogen fertiliser production. Without it, global food production would be severely limited.",
+    "The chemical industry is one of the top three industrial sectors in virtually every developed nation, and the top exporter in several countries including the United States, Germany, and China.",
+    "Green chemistry has reduced the environmental footprint of many processes: for example, the production of ibuprofen was redesigned by BHC Company to reduce waste by 80% and increase atom economy from 40% to 77%.",
+    "The concept of 'process intensification' — making chemical plants smaller, safer, and more energy-efficient — is a major trend in modern chemical engineering. Microreactors and continuous flow chemistry are replacing large batch reactors in many applications."
   ],
   "animation3D": "fundamentals-of-applied-chemistry",
   "motionGraphics": "fundamentals-of-applied-chemistry"

@@ -9,22 +9,34 @@
     "**Capacitance:** $C = \\epsilon_0 A/d$ for air; with dielectric, $C = \\kappa \\epsilon_0 A/d$, where $\\kappa$ is the dielectric constant.",
     "**Effect of dielectric:** inserting a dielectric increases capacitance by factor $\\kappa$ because the material polarizes, reducing the effective field and allowing more charge for the same voltage.",
     "**Effect of separation:** increasing $d$ decreases $C$ because the field weakens and less charge can be stored for the same voltage.",
-    "**Effect of area:** increasing $A$ increases $C$ because more charge can be distributed over the larger plates at the same surface charge density."
+    "**Effect of area:** increasing $A$ increases $C$ because more charge can be distributed over the larger plates at the same surface charge density.",
+    "**Derivation from Gauss's law:** the field between plates is $E = \\sigma/\\epsilon_0 = Q/(\\epsilon_0 A)$. The potential difference is $V = Ed = Qd/(\\epsilon_0 A)$. Hence $C = Q/V = \\epsilon_0 A/d$.",
+    "**Edge effects:** the formula $C = \\epsilon_0 A/d$ assumes $d \\ll \\sqrt{A}$ so edge fringing is negligible. For large separations, the actual capacitance is slightly less.",
+    "**Force between plates:** the plates attract with force $F = Q^2/(2\\epsilon_0 A) = \\frac{1}{2}Q E = \\frac{1}{2}\\epsilon_0 A E^2$. This can be derived from the energy $U = Q^2 d/(2\\epsilon_0 A)$.",
+    "**Practical capacitor construction:** real capacitors use rolled or stacked plates to maximize area in a compact volume, with dielectric materials like plastic film, ceramic, or mica between them.",
+    "**Variable capacitor:** by rotating plates to change the effective area $A$, the capacitance can be varied. Used in radio tuning circuits.",
+    "**Unit check:** $[\\epsilon_0] = \\text{F/m}$, $[A] = \\text{m}^2$, $[d] = \\text{m}$, so $[\\epsilon_0 A/d] = \\text{F}$, confirming the formula is dimensionally consistent."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The capacitance $C = \\epsilon_0 A/d$ applies only for a parallel plate capacitor with uniform field. It does not apply to arbitrary conductor shapes — each geometry has its own capacitance formula.",
+    "Inserting a dielectric while the capacitor is connected to a battery keeps $V$ constant but increases $Q$ and $C$. Disconnecting the battery first keeps $Q$ constant but increases $V$ if the dielectric is removed.",
+    "The formula uses the separation $d$ between plates, not the thickness of the plates themselves. The conducting material of the plates does not contribute to the capacitance.",
+    "A larger plate area does not mean a larger charge capacity at all voltages — it means more charge can be stored at the same voltage. The voltage rating depends on the dielectric breakdown, not the area.",
+    "Dielectric constant $\\kappa$ is dimensionless. Do not confuse it with the absolute permittivity $\\epsilon = \\kappa\\epsilon_0$, which has units of F/m."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A parallel plate capacitor has plates of area $200\\,\\text{cm}^2$ separated by $2\\,\\text{mm}$ of air. Find its capacitance. Solution: $A = 200 \\times 10^{-4} = 0.02\\,\\text{m}^2$, $d = 2 \\times 10^{-3}$ m. $C = \\epsilon_0 A/d = 8.85 \\times 10^{-12} \\times 0.02 / 0.002 = 8.85 \\times 10^{-11}$ F $\\approx 88.5$ pF.",
+    "The same capacitor above is connected to a 100 V battery. Find the charge on each plate and the energy stored. Solution: $Q = CV = 8.85 \\times 10^{-11} \\times 100 = 8.85 \\times 10^{-9}$ C $= 8.85$ nC. $U = \\frac{1}{2}CV^2 = \\frac{1}{2} \\times 8.85 \\times 10^{-11} \\times 10000 = 4.43 \\times 10^{-7}$ J.",
+    "A dielectric slab of $\\kappa = 5$ and thickness $1\\,\\text{mm}$ is inserted between the plates (separation $2\\,\\text{mm}$). Find the new capacitance. Solution: The effective capacitance is $C = \\epsilon_0 A / (d - t + t/\\kappa) = 8.85 \\times 10^{-12} \\times 0.02 / (0.002 - 0.001 + 0.001/5) = 8.85 \\times 10^{-12} \\times 0.02 / 0.0012 = 1.475 \\times 10^{-10}$ F $\\approx 147.5$ pF.",
+    "Two parallel plates each of area $0.01\\,\\text{m}^2$ are separated by $1\\,\\text{mm}$. The capacitor is charged to 300 V and disconnected. A dielectric with $\\kappa = 3$ is inserted. Find the new voltage. Solution: $C_0 = 8.85 \\times 10^{-12} \\times 0.01 / 0.001 = 8.85 \\times 10^{-11}$ F. $Q = 2.655 \\times 10^{-8}$ C. $C' = 3C_0 = 2.655 \\times 10^{-10}$ F. $V' = Q/C' = 100$ V.",
+    "Find the plate separation of a $1\\,\\mu$F parallel plate capacitor with plate area $1\\,\\text{m}^2$. Solution: $d = \\epsilon_0 A/C = 8.85 \\times 10^{-12} \\times 1 / 10^{-6} = 8.85 \\times 10^{-6}$ m $\\approx 8.85\\,\\mu$m."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The parallel plate capacitor is the simplest model for understanding capacitance. Its capacitance depends only on geometry ($A$ and $d$) and the dielectric material, not on the applied voltage or stored charge.",
+    "The electric field between parallel plates is uniform (ignoring edge effects): $E = \\sigma/\\epsilon_0 = Q/(\\epsilon_0 A)$, directed from the positive to the negative plate.",
+    "When a dielectric is inserted while the battery remains connected, the battery supplies extra charge to maintain the same voltage, increasing the stored energy.",
+    "The maximum voltage a parallel plate capacitor can handle is limited by dielectric breakdown: $V_{max} = E_{breakdown} \\times d$.",
+    "The force between the plates is attractive and independent of the sign of the charge: $F = Q^2/(2\\epsilon_0 A)$. This force can be measured experimentally to determine $\\epsilon_0$."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor"

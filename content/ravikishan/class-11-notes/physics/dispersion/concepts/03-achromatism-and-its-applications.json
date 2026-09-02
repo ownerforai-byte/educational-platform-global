@@ -5,26 +5,35 @@
   "topicTitle": "Achromatism and its applications",
   "relevance": 100,
   "notes": [
-    "**Achromatic combination:** a convex crown-glass lens paired with a concave flint-glass lens. The crown lens converges all colours; the flint lens diverges more for violet than for red, canceling chromatic spread.",
-    "**Condition for achromatism:** $\\omega_1/f_1 + \\omega_2/f_2 = 0$. Since $\\omega_1$ and $\\omega_2$ are both positive, $f_1$ and $f_2$ must have opposite signs: one converging, one diverging.",
-    "**Result:** two colours (usually red and blue) are brought to the same focus. Intermediate colours are close enough that the image appears colour-free to the eye.",
-    "**Applications:** camera lenses, telescope objectives, microscope objectives all use achromatic doublets or more complex multi-element designs to eliminate chromatic aberration.",
-    "**Apochromatic lenses:** advanced designs that bring three colours to the same focus using special glasses with anomalous dispersion."
+    "**Achromatic doublet:** a convex crown-glass lens paired with a concave flint-glass lens. The crown lens converges all colours; the flint lens diverges more for violet than for red, cancelling the chromatic spread.",
+    "**Condition for achromatism (thin lenses in contact):** $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$. Since $\\omega_1$ and $\\omega_2$ are both positive, $f_1$ and $f_2$ must have opposite signs: one converging, one diverging.",
+    "**Result:** two colours (usually red and blue) are brought to the same focus. Intermediate colours fall close enough that the image appears colour-free to the eye.",
+    "**Power of the combination:** the total power is $P = P_1 + P_2 = \\frac{1}{f_1} + \\frac{1}{f_2}$. For an achromatic doublet, $P = \\frac{1}{f_1} - \\frac{\\omega_1}{\\omega_2 f_1} = \\frac{1}{f_1}\\left(1 - \\frac{\\omega_1}{\\omega_2}\\right)$. The combination remains converging if $\\omega_2 > \\omega_1$.",
+    "**For a convex lens of crown glass ($\\omega_c = 0.016$) and concave lens of flint glass ($\\omega_f = 0.031$):** $\\frac{f_f}{f_c} = -\\frac{\\omega_f}{\\omega_c} = -\\frac{0.031}{0.016} \\approx -1.94$. The flint lens must have roughly twice the focal length (in magnitude) of the crown lens.",
+    "**Applications:** camera lenses, telescope objectives, and microscope objectives all use achromatic doublets or more complex multi-element designs to eliminate chromatic aberration.",
+    "**Apochromatic lenses:** advanced designs that bring three colours to the same focus using special glasses with anomalous dispersion (e.g., fluorite). These provide superior colour correction.",
+    "**Achromatic prism pair:** two prisms of different materials can be combined to produce dispersion without net deviation, or deviation without net dispersion, by adjusting the prism angles."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "An achromatic doublet brings two wavelengths to the same focus, not all wavelengths — there is still residual (secondary) spectrum for intermediate colours.",
+    "The condition $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$ requires that one lens is converging and the other diverging — you cannot make an achromatic doublet from two converging lenses.",
+    "Achromatism eliminates chromatic aberration but NOT spherical aberration — a real achromatic objective must also correct for spherical aberration separately.",
+    "The combination must still have net converging power to be useful as a telescope or camera objective — this requires the flint glass to have the larger dispersive power ($\\omega_f > \\omega_c$).",
+    "For separated lenses (not in contact), the achromatism condition is $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} - \\frac{d(\\omega_1 + \\omega_2)}{f_1 f_2} = 0$, where $d$ is the separation. This gives an additional degree of freedom."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "An achromatic doublet is made by combining a crown glass convex lens of focal length 20 cm ($\\omega_c = 0.016$) with a flint glass concave lens. Find the focal length of the flint lens and the focal length of the combination. Solution: $\\frac{\\omega_c}{f_c} + \\frac{\\omega_f}{f_f} = 0$. Taking $\\omega_f = 0.031$: $\\frac{0.016}{20} + \\frac{0.031}{f_f} = 0$, so $f_f = -\\frac{0.031 \\times 20}{0.016} = -38.75$ cm. Combined focal length: $\\frac{1}{f} = \\frac{1}{20} - \\frac{1}{38.75} = \\frac{38.75 - 20}{20 \\times 38.75} = \\frac{18.75}{775}$, so $f \\approx 41.3$ cm.",
+    "Show that for an achromatic doublet made of two thin lenses in contact, if the combination is to be converging, the converging lens must have the smaller dispersive power. Solution: Condition: $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$. Let lens 1 be converging ($f_1 > 0$) and lens 2 be diverging ($f_2 < 0$). Then $\\frac{\\omega_2}{|f_2|} = \\frac{\\omega_1}{f_1}$, so $|f_2| = f_1 \\cdot \\frac{\\omega_2}{\\omega_1}$. For the combination to be converging: $\\frac{1}{f} = \\frac{1}{f_1} - \\frac{1}{|f_2|} > 0$, so $f_1 < |f_2|$, which means $\\omega_1 < \\omega_2$. The converging lens must have the smaller dispersive power.",
+    "A telescope objective needs a focal length of 100 cm and must be achromatic. The crown glass has $\\omega_c = 0.016$ and the flint glass has $\\omega_f = 0.031$. Find the focal lengths of the two lenses. Solution: $\\frac{1}{f_c} + \\frac{1}{f_f} = \\frac{1}{100}$ and $\\frac{\\omega_c}{f_c} + \\frac{\\omega_f}{f_f} = 0$. From the second equation: $f_f = -\\frac{\\omega_f}{\\omega_c}f_c = -\\frac{31}{16}f_c$. Substituting: $\\frac{1}{f_c} - \\frac{16}{31f_c} = \\frac{1}{100}$, so $\\frac{15}{31f_c} = \\frac{1}{100}$, giving $f_c = \\frac{1500}{31} \\approx 48.4$ cm and $f_f = -\\frac{31}{16} \\times 48.4 \\approx -93.8$ cm.",
+    "Explain why a single lens cannot be made achromatic. Solution: A single lens has one material with one dispersive power $\\omega$. The focal length varies with wavelength as $f(\\lambda) = \\frac{1}{(n(\\lambda)-1)K}$ where $K$ depends on surface curvatures. Since $n$ varies with $\\lambda$, $f$ varies — there is no way to make $f$ independent of wavelength with a single material.",
+    "A converging lens of crown glass ($n_c = 1.514$ for red, $n_c = 1.524$ for violet) and a concave lens of flint glass ($n_f = 1.613$ for red, $n_f = 1.632$ for violet) are placed in contact. Find the ratio of their focal lengths for achromatism. Solution: For the crown lens: $\\omega_c = \\frac{1.524-1.514}{1.519-1} = \\frac{0.010}{0.519} \\approx 0.0193$. For the flint lens: $\\omega_f = \\frac{1.632-1.613}{1.6225-1} = \\frac{0.019}{0.6225} \\approx 0.0305$. Condition: $\\frac{\\omega_c}{f_c} + \\frac{\\omega_f}{f_f} = 0$, so $\\frac{f_f}{f_c} = -\\frac{\\omega_f}{\\omega_c} = -\\frac{0.0305}{0.0193} \\approx -1.58$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The achromatic doublet was invented by Chester Moor Hall around 1733 and independently by John Dollond in 1758, who patented the design.",
+    "An achromatic doublet reduces but does not eliminate chromatic aberration — residual colour errors (secondary spectrum) remain because the dispersion curves of crown and flint glass are not perfectly linear.",
+    "Apochromatic objectives, used in high-end microscopy, bring three wavelengths to a common focus and are made with special low-dispersion materials like fluorite or extra-low dispersion (ED) glass.",
+    "The human eye has a small amount of longitudinal chromatic aberration (about 2 dioptres from red to violet), but the brain compensates and we do not normally perceive colour fringes.",
+    "In photography, \"low dispersion\" (LD) or \"extra-low dispersion\" (ED) glass elements are used in telephoto lenses to reduce chromatic aberration and produce sharper images at the edges."
   ],
   "animation3D": "dispersion",
   "motionGraphics": "dispersion"

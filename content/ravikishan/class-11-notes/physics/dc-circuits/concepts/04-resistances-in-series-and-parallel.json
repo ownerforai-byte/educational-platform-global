@@ -9,22 +9,35 @@
     "**Parallel:** same voltage across all resistors. $1/R_{eq} = 1/R_1 + 1/R_2 + \\ldots$. Current divides: $I_i = V/R_i$.",
     "**Why series increases resistance:** the current must pass through each resistor sequentially, so each adds its opposition to the total.",
     "**Why parallel decreases resistance:** multiple paths allow more current for the same voltage, equivalent to increasing the cross-sectional area of a single conductor.",
-    "**Special case â€” two parallel resistors:** $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. This is always less than the smaller resistor."
+    "**Special case — two parallel resistors:** $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. This is always less than the smaller resistor.",
+    "**Series voltage divider:** in a series chain, each resistor gets a fraction of the total voltage proportional to its resistance: $V_i = V_{total} \\cdot R_i / R_{total}$.",
+    "**Parallel current divider:** in a parallel group, each resistor gets a fraction of the total current inversely proportional to its resistance: $I_i = I_{total} \\cdot R_{eq}/R_i$.",
+    "**Power in series:** $P = I^2 R$. Larger resistors dissipate more power in series because they carry the same current but have larger voltage drop.",
+    "**Power in parallel:** $P = V^2/R$. Smaller resistors dissipate more power in parallel because they draw more current at the same voltage.",
+    "**Identical resistors in parallel:** $n$ identical resistors of value $R$ in parallel give $R_{eq} = R/n$. This is useful for sharing current among multiple resistors.",
+    "**Kirchhoff's laws:** series resistors satisfy KVL (sum of voltages equals source). Parallel resistors satisfy KCL (sum of currents equals total).",
+    "**Mixed networks:** reduce step by step — find series or parallel groups, replace with equivalents, and repeat until one resistor remains."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Resistors in series add (like capacitors in parallel). Resistors in parallel combine inversely (like capacitors in series). The rules for resistors and capacitors are always opposite.",
+    "The equivalent resistance of a parallel combination is always less than the smallest individual resistor. Do not think of it as simply 'dividing' — the math is $R_{eq} = (R_1 R_2)/(R_1 + R_2)$.",
+    "In series, the same current flows through all resistors, but the voltage drop across each is different (proportional to its resistance). In parallel, the same voltage is across each, but current differs.",
+    "When a resistor is added in parallel, the equivalent resistance decreases. When added in series, it increases. This is because parallel paths provide more conduction channels.",
+    "Two resistors of equal value $R$ in parallel give $R/2$. Two resistors of equal value in series give $2R$. These are the most common benchmark results in circuit analysis."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Three resistors $4\\,\\Omega$, $6\\,\\Omega$, and $12\\,\\Omega$ are in parallel. Find the equivalent resistance. Solution: $1/R_{eq} = 1/4 + 1/6 + 1/12 = 3/12 + 2/12 + 1/12 = 6/12 = 1/2$. $R_{eq} = 2\\,\\Omega$.",
+    "Resistors $3\\,\\Omega$ and $6\\,\\Omega$ are in parallel, and this combination is in series with a $2\\,\\Omega$ resistor. Find the total resistance. Solution: Parallel: $R_p = (3 \\times 6)/(3 + 6) = 2\\,\\Omega$. Total: $R = 2 + 2 = 4\\,\\Omega$.",
+    "A 24 V battery is connected across a series combination of $4\\,\\Omega$ and $8\\,\\Omega$. Find the current, voltage across each, and power dissipated by each. Solution: $R_{eq} = 12\\,\\Omega$. $I = 24/12 = 2$ A. $V_1 = 2 \\times 4 = 8$ V, $V_2 = 2 \\times 8 = 16$ V. $P_1 = I^2 R_1 = 4 \\times 4 = 16$ W. $P_2 = I^2 R_2 = 4 \\times 8 = 32$ W.",
+    "A 60 V battery is connected across a parallel combination of $10\\,\\Omega$ and $15\\,\\Omega$. Find the current through each and the total current. Solution: $I_1 = 60/10 = 6$ A. $I_2 = 60/15 = 4$ A. $I_{total} = 10$ A. $R_{eq} = 60/10 = 6\\,\\Omega$. Check: $1/R_{eq} = 1/10 + 1/15 = 1/6$.",
+    "Find the equivalent resistance between points A and B for a network of five $1\\,\\Omega$ resistors arranged in a pentagon, with one resistor across each diagonal. Solution: This is a complex network. Using symmetry and nodal analysis, the equivalent resistance between adjacent vertices is $7/12\\,\\Omega$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The equivalent resistance of resistors in series is always greater than the largest individual resistance. The equivalent resistance of resistors in parallel is always less than the smallest individual resistance.",
+    "In household wiring, all appliances are connected in parallel so each receives the full supply voltage and can be operated independently.",
+    "Fuse wires are connected in series with the load because they must carry the same current as the load to protect it from overcurrent.",
+    "The current divider rule for two parallel resistors: $I_1 = I_{total} \\cdot R_2/(R_1 + R_2)$. The current splits inversely with resistance — the smaller resistor gets more current.",
+    "For $n$ identical resistors of value $R$: series gives $nR$, parallel gives $R/n$. A resistance box achieves any resistance by switching resistors in series or parallel."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits"

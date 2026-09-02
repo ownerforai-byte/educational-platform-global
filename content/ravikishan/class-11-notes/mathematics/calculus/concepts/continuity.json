@@ -5,34 +5,55 @@
   "topicTitle": "Continuity of a Function",
   "relevance": 90,
   "notes": [
-    "A function f is continuous at x = a if three conditions are met: (1) f(a) is defined, (2) lim(x→a) f(x) exists, (3) lim(x→a) f(x) = f(a).",
+    "A function $f$ is continuous at $x = a$ if three conditions are met: (1) $f(a)$ is defined, (2) $\\lim_{x \\to a} f(x)$ exists, (3) $\\lim_{x \\to a} f(x) = f(a)$.",
     "Intuitive idea: the graph can be drawn without lifting the pencil — no breaks, holes, or jumps.",
     "A function is continuous on an interval if it is continuous at every point in that interval.",
     "Types of discontinuity:",
-    "  • Removable (hole): limit exists but f(a) is undefined or different — can be 'fixed' by redefining f(a).",
-    "  • Jump discontinuity: left-hand limit ≠ right-hand limit — graph has a sudden jump.",
-    "  • Infinite discontinuity: function approaches ±∞ — vertical asymptote.",
+    "  • Removable (hole): limit exists but $f(a)$ is undefined or different — can be 'fixed' by redefining $f(a)$.",
+    "  • Jump discontinuity: left-hand limit $\\neq$ right-hand limit — graph has a sudden jump.",
+    "  • Infinite discontinuity: function approaches $\\pm\\infty$ — vertical asymptote.",
     "  • Non/removable: limit does not exist and cannot be fixed.",
     "Algebraic functions are continuous everywhere in their domain.",
-    "Trigonometric functions (sin, cos) are continuous everywhere; tan, sec have discontinuities at odd multiples of π/2.",
-    "Exponential (e^x) and logarithmic (ln x) functions are continuous on their domains.",
-    "Sum, difference, product, and quotient (where denominator ≠ 0) of continuous functions are continuous.",
-    "Composite of continuous functions is continuous."
+    "Trigonometric functions (sin, cos) are continuous everywhere; tan, sec have discontinuities at odd multiples of $\\pi/2$.",
+    "Exponential ($e^x$) and logarithmic ($\\ln x$) functions are continuous on their domains.",
+    "Sum, difference, product, and quotient (where denominator $\\neq 0$) of continuous functions are continuous.",
+    "Composite of continuous functions is continuous.",
+    "<h2>Formal Definition (\\varepsilon-$\\delta$)</h2>",
+    "<p>$f$ is continuous at $a$ if for every $\\varepsilon > 0$, there exists $\\delta > 0$ such that $|f(x) - f(a)| < \\varepsilon$ whenever $|x - a| < \\delta$.</p>",
+    "<h2>Left and Right Continuity</h2>",
+    "<p>$f$ is <b>right-continuous</b> at $a$: $\\lim_{x \\to a^+} f(x) = f(a)$.</p>",
+    "<p>$f$ is <b>left-continuous</b> at $a$: $\\lim_{x \\to a^-} f(x) = f(a)$.</p>",
+    "<p>$f$ is continuous at $a$ if and only if it is both left and right continuous at $a$.</p>",
+    "<h2>Continuity on Intervals</h2>",
+    "<p><b>Open interval $(a,b)$:</b> $f$ is continuous on $(a,b)$ if it is continuous at every point in the interval.</p>",
+    "<p><b>Closed interval $[a,b]$:</b> $f$ is continuous on $[a,b]$ if continuous on $(a,b)$, right-continuous at $a$, and left-continuous at $b$.</p>",
+    "<h2>Important Theorems</h2>",
+    "<p><b>Intermediate Value Theorem:</b> If $f$ is continuous on $[a,b]$ and $k$ is between $f(a)$ and $f(b)$, there exists $c \\in (a,b)$ such that $f(c) = k$.</p>",
+    "<p><b>Extreme Value Theorem:</b> If $f$ is continuous on $[a,b]$, then $f$ attains both a maximum and minimum value on $[a,b]$.</p>",
+    "<p><b>Continuity of composite:</b> If $f$ is continuous at $c$ and $g$ is continuous at $f(c)$, then $g \\circ f$ is continuous at $c$.</p>"
   ],
   "confusion": [
     "Continuity at a point requires the limit to exist — check both LHL and RHS separately.",
     "A function can be continuous on an interval but discontinuous at a single point.",
-    "Differentiability implies continuity, but continuity does NOT imply differentiability (e.g., |x| at x=0)."
+    "Differentiability implies continuity, but continuity does NOT imply differentiability (e.g., $|x|$ at $x=0$).",
+    "A function being defined at a point does NOT make it continuous there — the limit must match the function value.",
+    "Piecewise functions require checking continuity at the boundary points carefully by computing LHL, RHS, and the function value.",
+    "Removable discontinuities can be 'removed' by redefining the function at a single point, while essential discontinuities cannot be fixed."
   ],
   "practice": [
-    "Determine where f(x) = 1/(x−2) is continuous.",
-    "Check continuity of f(x) = |x−1| at x = 1.",
-    "Find the value of k that makes f(x) continuous at x = 2, where f(x) = (x²−4)/(x−2) for x≠2 and f(2) = k."
+    "Determine where $f(x) = \\frac{1}{x-2}$ is continuous.",
+    "Check continuity of $f(x) = |x-1|$ at $x = 1$.",
+    "Find the value of $k$ that makes $f(x)$ continuous at $x = 2$, where $f(x) = \\frac{x^2-4}{x-2}$ for $x \\neq 2$ and $f(2) = k$.",
+    "Show that $f(x) = [x]$ (greatest integer function) is discontinuous at every integer.",
+    "Determine the continuity of $f(x) = \\frac{\\sin x}{x}$ at $x = 0$.",
+    "If $f(x) = \\begin{cases} x^2+1 & x < 2 \\\\ kx & x \\geq 2 \\end{cases}$ is continuous at $x=2$, find $k$."
   ],
   "universalFacts": [
     "Continuity is a prerequisite for differentiability — you cannot differentiate a function at a point where it is discontinuous.",
-    "The Intermediate Value Theorem guarantees that a continuous function on [a,b] takes every value between f(a) and f(b).",
-    "Physical quantities that change continuously (position, temperature) can be modeled with continuous functions."
+    "The Intermediate Value Theorem guarantees that a continuous function on $[a,b]$ takes every value between $f(a)$ and $f(b)$.",
+    "Physical quantities that change continuously (position, temperature) can be modeled with continuous functions.",
+    "A continuous function on a closed interval is uniformly continuous (Heine-Cantor theorem).",
+    "The set of points where a function is continuous is always a $G_\\delta$ set (countable intersection of open sets)."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus"

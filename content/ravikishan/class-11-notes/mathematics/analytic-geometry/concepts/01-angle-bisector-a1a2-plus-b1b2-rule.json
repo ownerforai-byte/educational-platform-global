@@ -1,28 +1,39 @@
 {
-  "title": "Angle Bisector Between Two Lines â€” The aâ‚aâ‚‚ + bâ‚bâ‚‚ Rule",
+  "title": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
   "unitSlug": "analytic-geometry",
   "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
   "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
   "relevance": 79,
   "notes": [
-    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of aâ‚aâ‚‚ + bâ‚bâ‚‚",
-    "**If aâ‚aâ‚‚ + bâ‚bâ‚‚ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (âˆ’) sign gives the **obtuse** bisector",
-    "**If aâ‚aâ‚‚ + bâ‚bâ‚‚ > 0:** the (+) sign gives the **obtuse** bisector, and the (âˆ’) sign gives the **acute** bisector"
+    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of a₁a₂ + b₁b₂",
+    "**If a₁a₂ + b₁b₂ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (−) sign gives the **obtuse** bisector",
+    "**If a₁a₂ + b₁b₂ > 0:** the (+) sign gives the **obtuse** bisector, and the (−) sign gives the **acute** bisector",
+    "**Bisector formula:** For lines a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0 (with c₁, c₂ > 0), the angle bisectors are: $$\\frac{a_1 x + b_1 y + c_1}{\\sqrt{a_1^2 + b_1^2}} = \\pm \\frac{a_2 x + b_2 y + c_2}{\\sqrt{a_2^2 + b_2^2}}$$",
+    "**Step 1:** Rewrite both line equations so the constant terms (c₁ and c₂) are POSITIVE. Multiply entire equation by −1 if needed.",
+    "**Step 2:** Compute a₁a₂ + b₁b₂ to determine which sign gives the acute bisector.",
+    "**Step 3:** Write the two bisector equations using the ± formula, then select the correct one.",
+    "**The two angle bisectors are ALWAYS perpendicular to each other.** This can be verified by showing the product of their slopes equals −1.",
+    "**Bisector containing the origin:** When c₁ and c₂ are both positive, the bisector containing the origin is the one with the (+) sign (since substituting (0,0) gives c₁/√... = +c₂/√..., which is positive = positive).",
+    "**Length of perpendicular from point (x₀, y₀) to line ax + by + c = 0:** $$d = \\frac{|ax_0 + by_0 + c|}{\\sqrt{a^2 + b^2}}$$",
+    "**Two points are on the same side of line ax + by + c = 0** if substituting both points into ax + by + c yields the same sign. Opposite signs mean opposite sides.",
+    "**Worked Example:** Find the acute angle bisector of x + y − 1 = 0 and x − y − 1 = 0. Make constants positive: −x − y + 1 = 0 and x − y − 1 = 0. Here a₁a₂ + b₁b₂ = (−1)(1) + (−1)(−1) = −1 + 1 = 0. When a₁a₂ + b₁b₂ = 0, the lines are perpendicular, and BOTH bisectors are at 45° to the original lines."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The signs in the formula ± are NOT arbitrary. You must first make both constant terms positive, then the (+) bisector contains the origin. Failing to normalize signs is the most common error.",
+    "Do NOT confuse the a₁a₂ + b₁b₂ test with the angle formula tan θ = |(m₁ − m₂)/(1 + m₁m₂)|. The a₁a₂ + b₁b₂ method directly tells you which bisector is acute WITHOUT computing slopes.",
+    "When a₁a₂ + b₁b₂ = 0, the lines are perpendicular and both bisectors are at 45° — neither is acute nor obtuse (both are equal). The rule breaks down here.",
+    "The two bisector lines are ALWAYS perpendicular to each other regardless of the original lines."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Find the equations of the angle bisectors of 3x + 4y + 5 = 0 and 5x − 12y + 7 = 0. Determine which is acute using a₁a₂ + b₁b₂.",
+    "Show that the bisectors of the angles between 2x − y = 0 and x + 2y = 0 are perpendicular.",
+    "Find the bisector of the angle containing the origin between x + 3y − 5 = 0 and 2x − y − 1 = 0."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The angle bisector is the locus of all points equidistant from the two lines — this is the geometric foundation of the formula.",
+    "For any two non-parallel lines, there are exactly two angle bisectors, and they are always perpendicular to each other.",
+    "The a₁a₂ + b₁b₂ rule works because a₁a₂ + b₁b₂ = |a₁||a₂|cos θ (up to sign), which is negative when θ > 90° and positive when θ < 90°.",
+    "The perpendicular distance formula d = |ax₀ + by₀ + c|/√(a² + b²) is used to derive the bisector equation by setting the distances from any point on the bisector to both lines equal."
   ],
   "animation3D": "analytic-geometry",
   "motionGraphics": "analytic-geometry"

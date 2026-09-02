@@ -1,30 +1,41 @@
 {
-  "title": "Aromatic Hydrocarbons â€” Introduction and Characteristics",
+  "title": "Aromatic Hydrocarbons — Introduction and Characteristics",
   "unitSlug": "aromatic-hydrocarbons",
   "topicSlug": "introduction-and-characteristics-of-aromatic-compounds",
   "topicTitle": "Introduction and characteristics of aromatic compounds",
   "relevance": 100,
   "notes": [
-    "**Aromatic compounds:** contain benzene-like ring with delocalised pi electrons following Huckel's rule ($4n+2$ pi electrons). They are unusually stable compared to hypothetical cyclohexatriene.",
-    "**Huckel's rule:** planar, cyclic, fully conjugated system with $4n+2$ pi electrons is aromatic. Benzene has 6 pi electrons ($n=1$), so it is aromatic.",
-    "**Kekule structure:** benzene drawn with alternating single and double bonds. This is a representation; the actual structure is a resonance hybrid with all C-C bonds equal (139 pm, intermediate between single and double).",
-    " **Resonance energy:** benzene is 150 kJ/mol more stable than the Kekule structure would predict. This extra stability is the resonance energy or aromatic stabilization energy.",
-    " **Aromaticity tests:** benzene undergoes substitution reactions (preserves aromaticity) rather than addition reactions (which would break aromaticity)."
+    "**Aromatic compounds:** cyclic, planar molecules with a ring of resonance bonds that exhibit unusual stability. They contain delocalized pi electrons following Hückel's rule ($4n + 2$ pi electrons, where $n = 0, 1, 2, \ldots$). Benzene ($C_6H_6$) is the simplest and most important aromatic compound.",
+    "**Hückel's rule:** a monocyclic planar compound is aromatic if it contains $(4n + 2)$ pi electrons. For benzene, $n = 1$, giving $4(1) + 2 = 6$ pi electrons — satisfying the rule. Anti-aromatic compounds have $4n$ pi electrons (e.g., cyclobutadiene with 4 pi electrons) and are highly unstable.",
+    "**Kekulé structure:** August Kekulé (1865) proposed benzene as a six-membered ring with alternating single and double bonds. While useful for drawing, this is only a limiting structure. The actual molecule is a resonance hybrid where all six C–C bonds are identical at 139 pm (intermediate between C–C at 154 pm and C=C at 134 pm).",
+    "**Resonance energy (delocalization energy):** benzene is approximately 150 kJ/mol more stable than hypothetical cyclohexa-1,3,5-triene. This extra stability is the resonance energy, calculated from hydrogenation data: $\Delta H_{hydrog}(cyclohexene) = -120$ kJ/mol; expected for 3 double bonds = $-360$ kJ/mol; observed for benzene = $-208$ kJ/mol; resonance energy $= 360 - 208 = 152$ kJ/mol.",
+    "**Conditions for aromaticity:** (1) The molecule must be cyclic. (2) It must be planar (or nearly planar) so p-orbitals can overlap. (3) It must be fully conjugated — every atom in the ring must have an available p-orbital. (4) It must obey Hückel's rule with $(4n + 2)$ pi electrons.",
+    "**Electrophilic substitution vs addition:** benzene undergoes electrophilic substitution reactions (e.g., nitration, halogenation) because substitution preserves the stable aromatic ring. Addition reactions (like those of alkenes) would break the delocalized pi system and destroy aromaticity, requiring far more energy.",
+    "**Mechanism of electrophilic substitution (general):** (i) Generation of an electrophile $E^+$, (ii) Attack of the pi electrons on $E^+$ to form a resonance-stabilized cyclohexadienyl cation (sigma complex/Wheland intermediate), (iii) Loss of a proton from the sp³ carbon to restore aromaticity.",
+    "**Non-benzenoid aromatics:** compounds like azulene ($C_{10}H_8$), tropone, and cyclopentadienyl anion ($C_5H_5^-$, 6 pi electrons) are aromatic despite not containing a benzene ring. The cyclopentadienyl anion is aromatic because the negatively charged carbon contributes a lone pair to the pi system, giving 6 pi electrons.",
+    "**Heteroatomic aromatics:** pyridine ($C_5H_5N$) and pyrrole ($C_4H_5N$) are aromatic heterocycles. In pyridine, the nitrogen lone pair is in an sp² orbital perpendicular to the pi system (not part of the 6 pi electrons). In pyrrole, the nitrogen lone pair is in a p-orbital and participates in the aromatic pi system.",
+    "**Physical characteristics:** aromatic compounds are typically colourless liquids or solids with characteristic odours. They are generally non-polar or weakly polar, immiscible with water but soluble in organic solvents. Benzene has a melting point of 5.5°C and boiling point of 80.1°C.",
+    "**Benzenoid vs non-benzenoid:** benzenoid aromatics contain one or more fused benzene rings (e.g., naphthalene $C_{10}H_8$, anthracene $C_{14}H_{10}$). Non-benzenoid aromatics lack a benzene ring but still satisfy Hückel's rule (e.g., fulvene is anti-aromatic with 6 pi electrons but not fully conjugated).",
+    "**Aromaticity in ions:** the cyclopropenyl cation ($C_3H_3^+$, 2 pi electrons, $n=0$) is the smallest aromatic system. The cycloheptatrienyl (tropylium) cation ($C_7H_7^+$, 6 pi electrons) is also aromatic and exceptionally stable for a carbocation.",
+    "**Biological and industrial relevance:** aromatic compounds are ubiquitous in biology (amino acids phenylalanine, tyrosine, tryptophan contain aromatic rings; DNA bases are aromatic heterocycles). Industrially, benzene derivatives are precursors to plastics, dyes, pharmaceuticals, and explosives."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Benzene contains alternating single and double bonds. — Correct explanation: All six C–C bonds in benzene are identical at 139 pm. The Kekulé structure is a useful drawing convention, but the real molecule is a resonance hybrid with completely delocalized pi electrons over all six carbons.",
+    "Misconception: Any compound with a ring structure is aromatic. — Correct explanation: Aromaticity requires four specific conditions — cyclic, planar, fully conjugated, and $(4n+2)$ pi electrons. Cyclohexane is cyclic but has no pi electrons; cyclobutadiene is cyclic and conjugated but has 4 pi electrons ($4n$), making it anti-aromatic and extremely unstable.",
+    "Misconception: Aromatic compounds undergo addition reactions like alkenes. — Correct explanation: Aromatic compounds preferentially undergo electrophilic substitution because addition would destroy the aromatic pi system and its associated stabilization energy (~150 kJ/mol for benzene). Substitution preserves aromaticity by restoring the ring after the electrophile attacks.",
+    "Misconception: All ring compounds with 6 pi electrons are aromatic. — Correct explanation: The molecule must also be cyclic, planar, and fully conjugated. 1,3,5-Cyclohexatriene (if it existed as a discrete alternating-bond structure) would have 6 pi electrons but isn't a real aromatic molecule because it's just a hypothetical construct — real benzene's delocalization is what confers aromaticity."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Calculate the resonance energy of benzene given that the hydrogenation enthalpy of cyclohexene is $-120$ kJ/mol and that of benzene is $-208$ kJ/mol. Show that benzene is significantly more stable than hypothetical cyclohexa-1,3,5-triene. — Solution: Expected $\\Delta H$ for 3 isolated double bonds $= 3 \\times (-120) = -360$ kJ/mol. Observed $\\Delta H$ for benzene $= -208$ kJ/mol. Resonance energy $= -208 - (-360) = 152$ kJ/mol. This means benzene is 152 kJ/mol more stable than expected.",
+    "Problem: Determine which of the following are aromatic: (a) cyclopentadienyl anion $C_5H_5^-$, (b) cycloheptatrienyl cation $C_7H_7^+$, (c) cyclobutadiene $C_4H_4$, (d) pyridine $C_5H_5N$. — Solution: (a) Aromatic: 5 carbons, each sp², the anionic carbon contributes 2 electrons from its lone pair, plus 4 from two double bonds = 6 pi electrons ($4n+2$, $n=1$). (b) Aromatic: 7 carbons, cation means one carbon is sp² with empty p-orbital, 6 pi electrons from 3 double bonds ($n=1$). (c) Anti-aromatic: 4 pi electrons ($4n$, $n=1$), highly unstable. (d) Aromatic: 6 pi electrons from 3 double bonds; nitrogen's lone pair is in the sp² plane, not in the pi system.",
+    "Problem: Explain why nitration of benzene requires a mixture of concentrated $HNO_3$ and concentrated $H_2SO_4$, and write the mechanism for the generation of the electrophile. — Solution: $H_2SO_4$ protonates $HNO_3$: $HNO_3 + 2H_2SO_4 \\rightarrow NO_2^+ + H_3O^+ + 2HSO_4^-$. The electrophile is the nitronium ion $NO_2^+$. Sulfuric acid is a stronger acid than nitric acid and generates the potent electrophile needed to attack the stable aromatic ring.",
+    "Problem: Draw all resonance structures of the cyclohexadienyl cation intermediate formed during nitration of benzene and explain why this intermediate is resonance-stabilized. — Solution: When $NO_2^+$ attacks benzene, one carbon becomes sp³, breaking one pi bond. The positive charge is delocalized over three carbons (positions 2, 4, and 6 relative to the attacked carbon at position 1). Three resonance structures can be drawn, each with the positive charge on a different carbon, providing significant stabilization — though not enough to match the aromatic starting material, explaining the activation energy barrier."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Aromaticity is one of the most important concepts in organic chemistry, explaining the exceptional stability and unique reactivity of benzene and its derivatives. It bridges structure, bonding theory, and reactivity patterns.",
+    "Hückel's rule ($4n+2$ pi electrons) was derived from molecular orbital theory and applies to monocyclic planar systems. It successfully predicts aromaticity for neutral molecules, cations, and anions alike.",
+    "The concept of resonance — that the true structure is a hybrid of multiple Lewis structures — was pioneered by Linus Pauling and is essential for understanding why benzene's bonds are all equal length despite being drawn with alternating single and double bonds.",
+    "Benzene is classified as a Group 2 carcinogen by the IARC. Long-term exposure causes leukemia and other blood disorders. This is why modern labs use toluene or xylene as safer alternatives when a non-polar aromatic solvent is needed."
   ],
   "animation3D": "aromatic-hydrocarbons",
   "motionGraphics": "aromatic-hydrocarbons"

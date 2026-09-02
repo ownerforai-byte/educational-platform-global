@@ -1,30 +1,38 @@
 {
-  "title": "GPS â€” Global Positioning System",
+  "title": "GPS — Global Positioning System",
   "unitSlug": "gravitation",
   "topicSlug": "gps",
   "topicTitle": "GPS",
   "relevance": 100,
   "notes": [
-    "**Principle:** a GPS receiver calculates its position by measuring the time delay of radio signals from at least four satellites whose positions are known precisely.",
-    "**Satellite constellation:** 24+ satellites orbit at about 20,200 km altitude in six orbital planes, ensuring at least four are visible from any point on Earth at any time.",
-    "**Distance measurement:** distance = speed of light $\\times$ time delay. A timing error of just 1 nanosecond causes a position error of about 30 cm.",
-    "**Relativistic corrections:** special relativity slows satellite clocks by about 7 microseconds/day due to their speed; general relativity speeds them up by about 45 microseconds/day due to weaker gravity at altitude. Net effect: +38 microseconds/day, which must be corrected or GPS would accumulate errors of about 10 km per day.",
-    "**Four satellites needed:** three give position in 3D space; the fourth gives the precise time, since the receiver's clock is not synchronized with satellite atomic clocks."
+    "**Principle:** a GPS receiver calculates its 3D position (latitude, longitude, altitude) by measuring the time delay of radio signals from at least four satellites whose positions are known precisely.",
+    "**Satellite constellation:** 24+ operational satellites orbit at about $20,\\!200\\,\\text{km}$ altitude (MEO) in six orbital planes inclined $55^\\circ$ to the equator. This ensures at least four satellites are visible from any point on Earth at any time.",
+    "**Orbital parameters:** altitude $\\approx 20,\\!200\\,\\text{km}$, orbital period $\\approx 12$ hours (sidereal time), velocity $\\approx 3.87\\,\\text{km/s}$. Two complete orbits per sidereal day.",
+    "**Distance measurement:** distance = speed of light $\\times$ time delay. A timing error of just $1\\,\\text{ns}$ causes a position error of about $0.3\\,\\text{m}$ along the line of sight.",
+    "**Relativistic corrections:** special relativity predicts clocks on satellites run slower by $\\Delta f/f = -v^2/2c^2 \\approx -0.84 \\times 10^{-9}$ (about $-7.2\\,\\mu\\text{s/day}$) due to their orbital speed. General relativity predicts they run faster by $\\Delta f/f = \\Delta U/c^2 = GM/(c^2 r_{sat} - GM/(c^2 r_E)) \\approx +5.45 \\times 10^{-10}$ (about $+45.8\\,\\mu\\text{s/day}$) due to weaker gravity. Net effect: satellite clocks gain $+38.7\\,\\mu\\text{s/day}$, which must be corrected or GPS would accumulate errors of about $10\\,\\text{km}$ per day.",
+    "**Four satellites needed:** three give position in 3D space ($x, y, z$). The fourth is needed to solve for the receiver clock offset, since the receiver's inexpensive clock is not synchronized with satellite atomic clocks.",
+    "**Pseudo-range:** the measured distance to each satellite includes a clock bias: $\\rho = r + c\\delta t$. Four equations with four unknowns ($x, y, z, \\delta t$) solve the problem.",
+    "**C/A code and P code:** the coarse acquisition (C/A) code on L1 frequency ($1575.42\\,\\text{MHz}$) provides $\\approx 3\\text{--}5\\,\\text{m}$ accuracy. The precision (P) code on L1 and L2 ($1227.60\\,\\text{MHz}$) provides $\\approx 1\\,\\text{cm}$ accuracy for military users.",
+    "**Dilution of precision (DOP):** the geometry of visible satellites affects accuracy. Good DOP (well-spread satellites) gives better accuracy; poor DOP (satellites clustered) degrades accuracy.",
+    "**Other GNSS systems:** GLONASS (Russia), Galileo (EU), BeiDou (China), QZSS (Japan), IRNSS/NavIC (India). All use similar principles at different frequencies."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "GPS satellites do NOT stay directly above fixed points — they orbit Earth. The receiver accounts for satellite motion using ephemeris data broadcast in the navigation message.",
+    "The $+38.7\\,\\mu\\text{s/day}$ relativistic correction is NOT negligible — without it, GPS would be off by $10\\,\\text{km/day}$, making it completely useless. This is one of the most practical validations of relativity.",
+    "Four satellites are needed because of the receiver's unknown clock bias, not just for 3D positioning. A wristwatch cannot measure time precisely enough; the fourth satellite provides the time reference.",
+    "GPS altitude is measured relative to the WGS84 ellipsoid (a mathematical model of Earth's shape), not sea level. The difference between the ellipsoid and actual geoid can be $\\pm 100\\,\\text{m}$."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A GPS satellite at altitude $20,\\!200\\,\\text{km}$ broadcasts a signal. The receiver measures a time delay of $67.3\\,\\text{ms}$. What is the approximate distance? Solution: $d = c \\times \\Delta t = (3 \\times 10^8\\,\\text{m/s})(67.3 \\times 10^{-3}\\,\\text{s}) = 2.02 \\times 10^7\\,\\text{m} = 20,\\!200\\,\\text{km}$. The delay matches the orbital altitude (two-way travel would be double).",
+    "If the relativistic correction for GPS satellites were NOT applied, how much error would accumulate in one day? Solution: Clock gains $+38.7\\,\\mu\\text{s/day}$. Distance error = $c \\times \\Delta t = (3 \\times 10^8)(38.7 \\times 10^{-6}) = 11.6\\,\\text{km/day}$. In a year, the error would be over $4,\\!000\\,\\text{km}$ — larger than Earth.",
+    "Calculate the orbital period of a GPS satellite. $r = R_E + h = 6378 + 20,\\!200 = 26,\\!578\\,\\text{km} = 2.658 \\times 10^7\\,\\text{m}$. Solution: $T = 2\\pi\\sqrt{r^3/GM} = 2\\pi\\sqrt{(2.658 \\times 10^7)^3/(3.986 \\times 10^{14})} = 2\\pi \\times 46,\\!170\\,\\text{s} \\approx 43,\\!000\\,\\text{s} \\approx 11\\,\\text{h}\,58\\,\\text{min}$, close to 12 hours.",
+    "Three GPS satellites give ranges $\\rho_1 = 22,\\!000\\,\\text{km}$, $\\rho_2 = 23,\\!500\\,\\text{km}$, $\\rho_3 = 21,\\!800\\,\\text{km}$. The receiver's clock is slow by $10\\,\\text{ns}$. What is the true range to satellite 1? Solution: $\\rho_1 = r_1 + c \\delta t = r_1 + (3 \\times 10^8)(10 \\times 10^{-9}) = r_1 + 3\\,\\text{m}$. True range $r_1 = 22,\\!000 - 3 = 21,\\!999.997\\,\\text{km}$. The clock error of just $10\\,\\text{ns}$ creates a $3\\,\\text{m}$ range error."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "GPS is one of the most important practical applications of Einstein's theories of relativity — special and general relativity are both essential corrections that make GPS work.",
+    "GPS satellites carry atomic clocks (rubidium or cesium) accurate to about 1 nanosecond per day. Even this tiny drift must be corrected by ground control stations every day.",
+    "Every GPS satellite broadcasts its own ephemeris (orbital parameters) and the almanac (coarse data for all satellites), allowing the receiver to compute the satellite's position at any time.",
+    "GPS signals are incredibly weak (about as strong as a $50\\,\\text{W}$ light bulb seen from $20,\\!000\\,\\text{km}$) — they can be blocked by buildings, trees, or intentionally jammed."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

@@ -9,22 +9,35 @@
     "**Conventional current:** flows from positive to negative. Electron flow is opposite, from negative to positive.",
     "**Drift velocity $v_d$:** the average velocity of free electrons in a conductor under an electric field. It is very slow, about $10^{-4}\\,\\text{m/s}$.",
     "**Relation:** $I = nAev_d$, where $n$ is electron density, $A$ is cross-sectional area, $e$ is electron charge, and $v_d$ is drift velocity.",
-    "Why signal is fast despite slow drift:** when you switch on a circuit, the electric field propagates at nearly the speed of light, setting all electrons into drift motion simultaneously. The electrons themselves drift slowly, but the signal is instantaneous."
+    " Why signal is fast despite slow drift:** when you switch on a circuit, the electric field propagates at nearly the speed of light, setting all electrons into drift motion simultaneously. The electrons themselves drift slowly, but the signal is instantaneous.",
+    "**Derivation of $I = nAev_d$:** in time $dt$, all electrons within distance $v_d\\,dt$ of a cross-section pass through it. Number of electrons $= nA\\,v_d\\,dt$. Charge $dQ = nAev_d\\,dt$. Hence $I = dQ/dt = nAev_d$.",
+    "**Typical drift velocity:** for copper ($n \\approx 8.5 \\times 10^{28}$ electrons/m$^3$) with $I = 10$ A and $A = 1\\,\\text{mm}^2 = 10^{-6}$ m$^2$: $v_d = I/(nAe) = 10/(8.5 \\times 10^{28} \\times 10^{-6} \\times 1.6 \\times 10^{-19}) = 7.4 \\times 10^{-4}$ m/s.",
+    "**No field, no drift:** without an electric field, electrons move randomly at thermal speeds ($\\sim 10^5$ m/s) but with zero net velocity, so no current flows.",
+    "**Current density $\\vec{J}$:** current per unit area. $J = I/A = nev_d$. Vector form: $\\vec{J} = nq\\vec{v}_d$.",
+    "**Relaxation time $\\tau$:** average time between successive collisions of an electron with the lattice ions. $v_d = eE\\tau/m$, where $m$ is electron mass.",
+    "**Microscopic vs macroscopic:** $I = nAev_d$ is the microscopic view. Ohm's law $V = IR$ is the macroscopic view. They are connected through resistivity $\\rho = m/(ne^2\\tau)$.",
+    "**Sign convention:** current is a scalar quantity. The direction of positive current flow is defined as the direction of motion of positive charge, even though in metals the actual charge carriers (electrons) move opposite."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Drift velocity is very slow ($10^{-4}$ m/s) but the signal (electric field) travels at nearly the speed of light. These are two entirely different things — electrons don't race from switch to bulb; the field establishes itself instantly.",
+    "The magnitude of current $I$ is the same everywhere in a series circuit. Current is not consumed — electrons drift at the same average speed everywhere, just as water flows at the same rate through a pipe of uniform cross-section.",
+    "A larger cross-sectional area means more charge carriers can flow simultaneously, so for the same current, the drift velocity decreases: $v_d = I/(nAe)$. A thick wire carries current with slower drift velocity than a thin wire of the same material.",
+    "The thermal speed of electrons ($\\sim 10^5$ m/s) is about $10^9$ times the drift velocity ($\\sim 10^{-4}$ m/s). The thermal motion is random and contributes no net current; only the drift component does.",
+    "Current is a scalar, not a vector. It has magnitude but the 'direction' is just a convention for analysis. The actual charge carriers (electrons in metals) move opposite to the defined current direction."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A copper wire of cross-section $2\\,\\text{mm}^2$ carries a current of 5 A. Find the drift velocity. ($n = 8.5 \\times 10^{28}$ m$^{-3}$, $e = 1.6 \\times 10^{-19}$ C). Solution: $v_d = I/(nAe) = 5/(8.5 \\times 10^{28} \\times 2 \\times 10^{-6} \\times 1.6 \\times 10^{-19}) = 5/(2.72 \\times 10^4) = 1.84 \\times 10^{-4}$ m/s.",
+    "A 2 A current flows through a wire of radius 1 mm made of a material with $n = 6 \\times 10^{28}$ electrons/m$^3$. Find the drift velocity and current density. Solution: $A = \\pi \\times 10^{-6}$ m$^2$. $v_d = 2/(6 \\times 10^{28} \\times \\pi \\times 10^{-6} \\times 1.6 \\times 10^{-19}) = 2/(3.02 \\times 10^4) = 6.6 \\times 10^{-5}$ m/s. $J = I/A = 2/(\\pi \\times 10^{-6}) = 6.37 \\times 10^5$ A/m$^2$.",
+    "An aluminum wire (density $n = 1.8 \\times 10^{29}$ m$^{-3}$) of diameter 2 mm carries 10 A. How long does it take an electron to drift 1 m? Solution: $A = \\pi \\times 10^{-6}$ m$^2$. $v_d = 10/(1.8 \\times 10^{29} \\times \\pi \\times 10^{-6} \\times 1.6 \\times 10^{-19}) = 10/(9.05 \\times 10^4) = 1.1 \\times 10^{-4}$ m/s. Time $= 1/v_d = 9090$ s $\\approx 2.5$ hours.",
+    "A gold wire carries current density $J = 5 \\times 10^6$ A/m$^2$. Gold has $n = 5.9 \\times 10^{28}$ m$^{-3}$. Find the drift velocity. Solution: $v_d = J/(ne) = 5 \\times 10^6/(5.9 \\times 10^{28} \\times 1.6 \\times 10^{-19}) = 5 \\times 10^6/(9.44 \\times 10^9) = 5.3 \\times 10^{-4}$ m/s.",
+    "A steady current of 3 A flows for 2 minutes through a conductor. Find the total charge and the number of electrons. Solution: $Q = It = 3 \\times 120 = 360$ C. Number of electrons $= Q/e = 360/(1.6 \\times 10^{-19}) = 2.25 \\times 10^{21}$ electrons."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Drift velocity in a typical copper wire is only about $0.1$ mm/s — a snail is millions of times faster than the electrons carrying current.",
+    "Despite the slow drift of electrons, the electric field propagates at a significant fraction of the speed of light ($\\sim 2 \\times 10^8$ m/s in typical wires), which is why lights turn on instantly.",
+    "The product $n \\cdot e$ (charge per unit volume of charge carriers) is sometimes called the charge density of the conductor and is intrinsic to the material.",
+    "In electrolytes and semiconductors, both positive and negative charges can contribute to current, unlike in metals where only electrons move. This affects the sign of the Hall voltage.",
+    "The drift velocity is proportional to the electric field: $v_d = \\mu E$, where $\\mu = e\\tau/m$ is the electron mobility. Higher mobility materials (like silver) conduct better."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits"

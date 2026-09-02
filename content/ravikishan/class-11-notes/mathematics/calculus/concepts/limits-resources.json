@@ -1,19 +1,53 @@
 {
-  "title": "Limits and Continuity — Resources",
+  "title": "Limits and Continuity — Resources and Reference",
   "unitSlug": "calculus",
   "topicSlug": "limits-and-continuity",
-  "topicTitle": "Limits and Continuity — Resources",
+  "topicTitle": "Limits and Continuity — Resources and Reference",
   "relevance": 95,
   "notes": [
-    "📚 Exercise 15.1 PDF: Review of Equations of Straight Lines, function definition, value of function.",
-    "📚 Exercise 15.2 PDF: Trigonometric limits — standard limits, limit formulas for sin, cos, tan.",
-    "📚 Exercise 15.3 PDF: Right-hand limit, left-hand limit, continuity of functions.",
-    "🔗 Source: WebNotee.com — limits-and-continuity-class-11-mathematics",
-    "Interactive visuals below show limit behavior and continuity types."
+    "<h2>Exercise 15.1 — Foundations of Limits</h2>",
+    "<p>Key topics covered: Review of equations of straight lines, function definition, value of function, and introduction to limits.</p>",
+    "<p><b>Essential prerequisite:</b> Understanding of domain, range, and composition of functions before approaching limits.</p>",
+    "<h2>Exercise 15.2 — Trigonometric Limits</h2>",
+    "<p>Standard trigonometric limits:</p>",
+    "<ul><li>$\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$</li><li>$\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$</li><li>$\\lim_{x \\to 0} \\frac{1-\\cos x}{x} = 0$</li><li>$\\lim_{x \\to 0} \\frac{\\sin ax}{\\sin bx} = \\frac{a}{b}$</li><li>$\\lim_{x \\to 0} \\frac{\\tan ax}{\\tan bx} = \\frac{a}{b}$</li><li>$\\lim_{x \\to 0} \\frac{\\sin ax}{\\tan bx} = \\frac{a}{b}$</li></ul>",
+    "<h2>Exercise 15.3 — Continuity and Differentiability</h2>",
+    "<p>Right-hand limit, left-hand limit, continuity of functions, and discontinuities.</p>",
+    "<p><b>Continuity at a point:</b> $f$ is continuous at $x=a$ if $\\lim_{x \\to a} f(x) = f(a)$.</p>",
+    "<p><b>Left and right continuity:</b> $f$ is left-continuous at $a$ if $\\lim_{x \\to a^-} f(x) = f(a)$; right-continuous if $\\lim_{x \\to a^+} f(x) = f(a)$.</p>",
+    "<h2>Key Reference Tables</h2>",
+    "<p><b>Standard limits at zero:</b> $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$, $\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} = 1$, $\\lim_{x \\to 0} \\frac{a^x - 1}{x} = \\ln a$.</p>",
+    "<p><b>Standard limits at infinity:</b> $\\lim_{x \\to \\infty} \\frac{\\sin x}{x} = 0$, $\\lim_{x \\to \\infty} \\frac{\\cos x}{x} = 0$, $\\lim_{x \\to \\infty} (1 + \\frac{1}{x})^x = e$.</p>",
+    "<p><b>Limits of polynomials:</b> For any polynomial $P(x)$, $\\lim_{x \\to a} P(x) = P(a)$.</p>",
+    "<p><b>Limits of rational functions:</b> For rational $R(x) = \\frac{P(x)}{Q(x)}$, $\\lim_{x \\to a} R(x) = R(a)$ provided $Q(a) \\neq 0$.</p>",
+    "<h2>Important Theorems</h2>",
+    "<p><b>Squeeze Theorem:</b> If $g(x) \\leq f(x) \\leq h(x)$ near $a$ and $\\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L$, then $\\lim_{x \\to a} f(x) = L$.</p>",
+    "<p><b>Intermediate Value Theorem:</b> If $f$ is continuous on $[a, b]$ and $k$ is between $f(a)$ and $f(b)$, there exists $c \\in (a, b)$ with $f(c) = k$.</p>",
+    "<p><b>Sum/Difference rule:</b> $\\lim[f(x) \\pm g(x)] = \\lim f(x) \\pm \\lim g(x)$.</p>",
+    "<p><b>Product rule:</b> $\\lim[f(x) \\cdot g(x)] = \\lim f(x) \\cdot \\lim g(x)$.</p>",
+    "<p><b>Quotient rule:</b> $\\lim[f(x)/g(x)] = \\lim f(x) / \\lim g(x)$ (provided denominator limit $\\neq 0$).</p>",
+    "<p><b>Constant multiple rule:</b> $\\lim[c \\cdot f(x)] = c \\cdot \\lim f(x)$.</p>"
   ],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "confusion": [
+    "A limit describes the behavior of $f(x)$ as $x$ APPROACHES $a$, not the value of $f(a)$. The limit can exist even if $f(a)$ is undefined.",
+    "The Squeeze Theorem requires the squeezing functions to approach the SAME limit from both sides — check both bounds carefully.",
+    "Continuity at a point requires three conditions simultaneously: $f(a)$ must exist, the limit must exist, and they must be equal. Missing any one condition means discontinuity.",
+    "The IVT guarantees existence but NOT uniqueness — there may be multiple values of $c$ satisfying $f(c) = k$."
+  ],
+  "practice": [
+    "Use the Squeeze Theorem to show that $\\lim_{x \\to 0} x^2 \\sin(1/x) = 0$.",
+    "Show that $f(x) = \\frac{x^2-4}{x-2}$ can be made continuous at $x=2$ by defining $f(2) = 4$.",
+    "Prove that $x^3 - 2x^2 - 5x + 6 = 0$ has a root between $x = -1$ and $x = 3$ using the IVT.",
+    "Evaluate $\\lim_{x \\to 0} \\frac{\\sqrt{1+x} - \\sqrt{1-x}}{x}$ using rationalization.",
+    "Find $\\lim_{x \\to 0} \\frac{e^{2x} - 1}{\\sin 3x}$ using standard limits."
+  ],
+  "universalFacts": [
+    "Limits are the foundation of all calculus — derivatives and integrals are defined as limits.",
+    "The concept of limit was rigorously formalized by Cauchy and Weierstrass in the 19th century using the $\\varepsilon$-$\\delta$ definition.",
+    "A function can have a limit at a point where it is not defined (removable discontinuity).",
+    "Limits exist if and only if the left-hand limit equals the right-hand limit.",
+    "The number $e \\approx 2.71828$ arises naturally as $\\lim_{n \\to \\infty} (1+1/n)^n$ and is fundamental to calculus."
+  ],
   "animation3D": "calculus",
   "motionGraphics": "calculus"
 }

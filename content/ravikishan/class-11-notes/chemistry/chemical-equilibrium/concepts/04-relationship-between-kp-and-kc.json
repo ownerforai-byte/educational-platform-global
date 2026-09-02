@@ -5,26 +5,33 @@
   "topicTitle": "Relationship between Kp and Kc",
   "relevance": 100,
   "notes": [
-    "**Definitions:** $K_p$ uses partial pressures; $K_c$ uses molar concentrations.",
-    "**Relation:** $K_p = K_c(RT)^{\\Delta n}$, where $\\Delta n = (c+d) - (a+b)$ is the change in moles of gas.",
-    "**Special case â€” $\\Delta n = 0$:** $K_p = K_c$. Examples: $H_2 + I_2 \\rightleftharpoons 2HI$, $N_2 + O_2 \\rightleftharpoons 2NO$.",
-    "**Units:** $K_p$ has units of pressure$^{\\Delta n}$; $K_c$ has units of concentration$^{\\Delta n}$. Thermodynamic equilibrium constants are dimensionless when activities are used.",
-    "**When to use which:** $K_p$ is convenient for gas-phase reactions where pressures are measured directly. $K_c$ is used when concentrations are known or when solids/liquids are involved."
+    "**Definition of $K_p$:** For gas-phase reactions, the equilibrium constant can be expressed in terms of partial pressures: $K_p = \\frac{(P_C)^c(P_D)^d}{(P_A)^a(P_B)^b}$, where $P_X$ is the partial pressure of species X at equilibrium.",
+    "**Definition of $K_c$:** The equilibrium constant in terms of molar concentrations: $K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$. Both $K_p$ and $K_c$ describe the same equilibrium but use different measures.",
+    "**Deriving the relationship:** From the ideal gas law, $P_X = [X]RT$. Substituting into the $K_p$ expression: $K_p = \\frac{([C]RT)^c([D]RT)^d}{([A]RT)^a([B]RT)^b} = \\frac{[C]^c[D]^d}{[A]^a[B]^b} \\times (RT)^{(c+d)-(a+b)} = K_c(RT)^{\\Delta n}$.",
+    "**The formula:** $K_p = K_c(RT)^{\\Delta n}$, where $\\Delta n = (\\text{moles of gaseous products}) - (\\text{moles of gaseous reactants})$, $R = 0.0821\\;\\text{L·atm·K}^{-1}\\text{·mol}^{-1}$ (when pressure is in atm), and $T$ is temperature in Kelvin.",
+    "**Special case $\\Delta n = 0$:** When the number of moles of gas is the same on both sides, $K_p = K_c$. Examples: $\\text{H}_2(g) + \\text{I}_2(g) \\rightleftharpoons 2\\text{HI}(g)$, $\\text{N}_2(g) + \\text{O}_2(g) \\rightleftharpoons 2\\text{NO}(g)$, $\\text{CO}(g) + \\text{H}_2\\text{O}(g) \\rightleftharpoons \\text{CO}_2(g) + \\text{H}_2(g)$.",
+    "**Case $\\Delta n > 0$:** When products have more moles of gas, $K_p > K_c$ (at $T > 1/R \\approx 12.2\\;\\text{K}$, which is always true). Example: $\\text{PCl}_5(g) \\rightleftharpoons \\text{PCl}_3(g) + \\text{Cl}_2(g)$, $\\Delta n = 1$, so $K_p = K_c(RT)$.",
+    "**Case $\\Delta n < 0$:** When reactants have more moles of gas, $K_p < K_c$. Example: $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$, $\\Delta n = -2$, so $K_p = K_c(RT)^{-2} = \\frac{K_c}{(RT)^2}$.",
+    "**Units:** $K_p$ has units of pressure$^{\\Delta n}$ (e.g., atm$^{\\Delta n}$ or bar$^{\\Delta n}$). $K_c$ has units of (mol/L)$^{\\Delta n}$. Modern IUPAC recommendations treat both as dimensionless by using standard state references ($P° = 1\\;\\text{bar}$, $c° = 1\\;\\text{mol/L}$).",
+    "**When to use $K_p$ vs $K_c$:** Use $K_p$ when dealing with gas-phase reactions where partial pressures are measured (e.g., industrial processes). Use $K_c$ when concentrations are known or when the reaction involves solutions. They are interchangeable via $K_p = K_c(RT)^{\\Delta n}$.",
+    "**Numerical example:** For $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$ at 298 K, $K_c = 3.8 \\times 10^8$. Then $K_p = K_c(RT)^{-2} = \\frac{3.8 \\times 10^8}{(0.0821 \\times 298)^2} = \\frac{3.8 \\times 10^8}{(24.46)^2} = \\frac{3.8 \\times 10^8}{598.3} = 6.35 \\times 10^5$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception — \"$K_p$ and $K_c$ are always numerically equal.\" — Clarification: They are equal only when $\\Delta n = 0$. In all other cases, they differ by the factor $(RT)^{\\Delta n}$.",
+    "Misconception — \"$\\Delta n$ includes all species in the reaction.\" — Clarification: $\\Delta n$ counts only gaseous species. Solids and liquids are excluded from the $\\Delta n$ calculation.",
+    "Misconception — \"The value of $R$ is always 8.314 J/mol·K in this formula.\" — Clarification: When pressures are in atm, use $R = 0.0821\\;\\text{L·atm·K}^{-1}\\text{·mol}^{-1}$. Using the wrong value of $R$ gives an incorrect result.",
+    "Misconception — \"Temperature doesn't affect the relationship between $K_p$ and $K_c$.\" — Clarification: The factor $(RT)^{\\Delta n}$ depends directly on temperature, so the numerical relationship between $K_p$ and $K_c$ changes with temperature even though they describe the same equilibrium state."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Convert $K_c = 0.50$ at 400 K to $K_p$ for $\\text{N}_2\\text{O}_4(g) \\rightleftharpoons 2\\text{NO}_2(g)$. Solution: $\\Delta n = 2 - 1 = 1$. $K_p = K_c(RT)^{\\Delta n} = 0.50 \\times (0.0821 \\times 400)^1 = 0.50 \\times 32.84 = 16.4\\;\\text{atm}$.",
+    "For the reaction $2\\text{SO}_2(g) + \\text{O}_2(g) \\rightleftharpoons 2\\text{SO}_3(g)$, $K_p = 3.0 \\times 10^{24}$ at 25°C. Calculate $K_c$. Solution: $\\Delta n = 2 - 3 = -1$. $K_c = \\frac{K_p}{(RT)^{\\Delta n}} = K_p \\times (RT) = 3.0 \\times 10^{24} \\times (0.0821 \\times 298) = 3.0 \\times 10^{24} \\times 24.46 = 7.34 \\times 10^{25}$.",
+    "At 1000 K, $K_p = 3.16$ for $\\text{CaCO}_3(s) \\rightleftharpoons \\text{CaO}(s) + \\text{CO}_2(g)$. Find $K_c$. Solution: $\\Delta n = 1 - 0 = 1$ (only gaseous species count; solids are excluded). $K_p = K_c(RT)^1$, so $K_c = \\frac{K_p}{RT} = \\frac{3.16}{0.0821 \\times 1000} = \\frac{3.16}{82.1} = 0.0385\\;\\text{mol/L}$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The relationship $K_p = K_c(RT)^{\\Delta n}$ is derived directly from the ideal gas law and is valid for reactions involving ideal gases. Real gases require fugacity corrections.",
+    "When $\\Delta n = 0$, $K_p = K_c$ at all temperatures — this is why reactions like $\\text{H}_2 + \\text{I}_2 \\rightleftharpoons 2\\text{HI}$ are often discussed using either constant without conversion.",
+    "In the Haber process ($\\text{N}_2 + 3\\text{H}_2 \\rightleftharpoons 2\\text{NH}_3$), $\\Delta n = -2$, so $K_p = K_c/(RT)^2$. At high temperatures used industrially (700 K), the difference between $K_p$ and $K_c$ is significant.",
+    "The thermodynamic equilibrium constant $K°$ (dimensionless) is related to both $K_p$ and $K_c$ through standard states: $K° = K_p/(P°)^{\\Delta n} = K_c/(c°)^{\\Delta n}$."
   ],
   "animation3D": "chemical-equilibrium",
   "motionGraphics": "chemical-equilibrium"

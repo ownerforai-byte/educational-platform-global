@@ -5,26 +5,33 @@
   "topicTitle": "Reasons for the separate study of organic compounds from inorganic compounds",
   "relevance": 100,
   "notes": [
-    "**Combustion:** organic compounds burn in air to give $CO_2$ and $H_2O$. Inorganic compounds generally do not burn.",
-    "**Low melting and boiling points:** most organic compounds are molecular with weak intermolecular forces, so they melt and boil at relatively low temperatures.",
-    "**Insolubility in water, solubility in organic solvents:** organic compounds are generally non-polar or weakly polar, so they dissolve in non-polar solvents like ether, benzene, chloroform.",
-    "**Slow reactions:** organic reactions are generally slower than inorganic reactions and often need heat, light or catalysts.",
-    "**Isomerism:** same molecular formula can give different structures with different properties. This is rare in inorganic chemistry."
+    "**Combustibility:** Organic compounds burn in air to produce $CO_2$ and $H_2O$. For example: $C_2H_5OH + 3O_2 \\rightarrow 2CO_2 + 3H_2O$. Most inorganic compounds do not burn; this fundamental difference necessitates separate study.",
+    "**Low melting and boiling points:** Organic compounds are molecular with weak intermolecular forces (van der Waals, hydrogen bonds). Methane boils at $-161.5^\\circ C$; ethanol at $78.3^\\circ C$. Inorganic salts like $NaCl$ melt at $801^\\circ C$ due to strong ionic bonds.",
+    "**Covalent vs ionic bonding:** Organic compounds have covalent bonds (electron sharing), producing molecules. Inorganic compounds often have ionic bonds (electron transfer), producing crystal lattices. This fundamental difference in bonding affects all physical properties.",
+    "**Solubility in organic solvents:** Organic compounds dissolve in non-polar solvents like benzene ($C_6H_6$), ether ($C_2H_5OC_2H_5$), and chloroform ($CHCl_3$) following the 'like dissolves like' principle.",
+    "**Insolubility in water:** Most organic compounds are poorly soluble in water because they are non-polar or weakly polar. Exceptions include small polar molecules like ethanol ($C_2H_5OH$) and acetic acid ($CH_3COOH$) that form hydrogen bonds with water.",
+    "**Slow reaction rates:** Organic reactions proceed slowly and require catalysts, heat, or UV radiation. For example, the esterification of acetic acid with ethanol needs concentrated $H_2SO_4$ as a catalyst: $CH_3COOH + C_2H_5OH \\xrightarrow{H_2SO_4} CH_3COOC_2H_5 + H_2O$.",
+    "**Isomerism:** The same molecular formula can give rise to multiple structural arrangements (isomers). For $C_4H_{10}$, there are two isomers: n-butane ($CH_3CH_2CH_2CH_3$) and isobutane ($(CH_3)_3CH$). This phenomenon is far more prevalent in organic chemistry than in inorganic.",
+    "**Complexity and variety:** Organic compounds form straight chains, branched chains, and rings of carbon atoms, creating an enormous diversity. Inorganic compounds tend to have simpler, more regular crystal structures.",
+    "**Electrical conductivity:** Organic compounds are generally poor conductors because they lack free ions. Inorganic ionic compounds in solution or molten state conduct electricity due to mobile ions.",
+    "**Functional group chemistry:** Organic chemistry is organized around functional groups ($-OH$, $-COOH$, $-NH_2$, etc.) that determine reactivity. This concept has no parallel in inorganic chemistry, where properties depend more on ionic charge and size."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Organic compounds are always non-polar and insoluble in water** — While many organic compounds are non-polar, those with polar functional groups like $-OH$ (alcohols), $-COOH$ (carboxylic acids), and $-NH_2$ (amines) can be water-soluble. Methanol, ethanol, and acetic acid are fully miscible with water.",
+    "**Organic reactions are always slow and need high temperatures** — Many organic reactions proceed rapidly at room temperature when proper catalysts are used. Enzymatic reactions in biological systems are organic reactions that occur at body temperature ($37^\\circ C$) with remarkable speed and specificity.",
+    "**Slow organic reactions mean organic compounds are unstable** — Reaction speed is kinetic, not thermodynamic. Many organic compounds (diamond, ethanol, glucose) are thermodynamically stable but kinetically inert because the activation energy for their decomposition is high."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Explain why methane ($CH_4$, boiling point $-161^\\circ C$) is a gas while sodium chloride ($NaCl$, melting point $801^\\circ C$) is a solid at room temperature. Use intermolecular forces in your explanation.",
+    "Predict whether each compound will dissolve in water or in hexane: (a) $CCl_4$, (b) $NaCl$, (c) $C_2H_5OH$, (d) $CH_3COOH$, (e) $C_6H_{14}$ (hexane). Justify using the 'like dissolves like' principle.",
+    "How many structural isomers exist for $C_5H_{12}$? Draw their structural formulas and give their IUPAC names."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Organic compounds are generally flammable while inorganic compounds are not — this is one of the earliest observed differences that led to their separate classification.",
+    "The vast majority of organic compounds are poor electrical conductors, which is why organic solvents are used as insulating liquids in transformers.",
+    "Isomerism is a hallmark of organic chemistry: $C_{10}H_{22}$ has 75 structural isomers, and $C_{20}H_{42}$ has over 366,000 possible structural isomers.",
+    "Organic reactions typically involve the making and breaking of covalent bonds through mechanisms involving intermediates like carbocations, carbanions, and free radicals.",
+    "The separate study of organic chemistry is justified because the sheer number, diversity, and unique properties of organic compounds require specialized reaction mechanisms and analytical techniques."
   ],
   "animation3D": "basic-concept-of-organic-chemistry",
   "motionGraphics": "basic-concept-of-organic-chemistry"

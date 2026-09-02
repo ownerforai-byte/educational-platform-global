@@ -1,32 +1,45 @@
 {
-  "title": "Bohrâ€“Bury Scheme (1921) â€” Subshell & Shell Capacity Rules",
+  "title": "Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
   "relevance": 76,
   "notes": [
-    "**Bohrâ€“Bury scheme (1921):** a set of rules for filling electrons into shells and subshells; electrons occupy the lowest available energy levels first (aufbau principle), so the order of filling runs 1s â†’ 2s â†’ 2p â†’ 3s â†’ 3p â†’ 4s â†’ 3d â†’ 4p â†’ 5s â†’ 4d â†’ 5p â†’ 6s â†’ 4f â†’ 5d â†’ 6p â†’ 7s â†’ 5f â†’ 6d â†’ 7p.",
-    "**Maximum shell capacity:** the maximum number of electrons in a shell is 2nÂ² â€” K: 2, L: 8, M: 18, N: 32.",
-    "**Subshell electron capacity:** s holds 2, p holds 6, d holds 10, f holds 14 electrons.",
-    "**Spatial configurations:** each subshell contains a fixed set of orbitals â€” s: 1, p: 3, d: 5, f: 7 â€” so a shell of principal quantum number n contains a total of nÂ² orbitals.",
-    "**Valence shell limit:** the outermost (valence) shell can hold at most 8 electrons.",
-    "**Penultimate shell limit:** the second-outermost (penultimate) shell can hold at most 18 electrons; the third-outermost (antepenultimate) shell at most 32.",
-    "**Concentric capacity rings:** the electrons are distributed in concentric shells (K, L, M, N, â€¦) around the nucleus, each ring accommodating its characteristic maximum."
+    "**Bohr–Bury scheme (1921):** a set of rules for filling electrons into shells and subshells; electrons occupy the lowest available energy levels first (aufbau principle), so the order of filling runs 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p.",
+    "**Aufbau principle (building-up):** electrons fill orbitals in order of increasing energy. The order is determined by the (n + l) rule: orbitals with lower (n + l) fill first; if (n + l) is equal, the one with lower n fills first. This explains the 4s before 3d anomaly.",
+    "**Maximum shell capacity:** the maximum number of electrons in a shell is 2n² — K (n=1): 2, L (n=2): 8, M (n=3): 18, N (n=4): 32, O (n=5): 50, P (n=6): 72.",
+    "**Subshell electron capacity:** s holds 2, p holds 6, d holds 10, f holds 14 electrons. This follows from: maximum electrons = 2(2l + 1), where l = 0, 1, 2, 3 for s, p, d, f respectively.",
+    "**Spatial configurations:** each subshell contains a fixed set of orbitals — s: 1, p: 3, d: 5, f: 7 — so a shell of principal quantum number n contains a total of n² orbitals.",
+    "**Valence shell limit:** the outermost (valence) shell can hold at most 8 electrons. This is why elements in the same group have similar chemical properties — they have the same number of valence electrons.",
+    "**Penultimate shell limit:** the second-outermost (penultimate) shell can hold at most 18 electrons; the third-outermost (antepenultimate) shell at most 32. This explains transition and inner transition series.",
+    "**Concentric capacity rings:** the electrons are distributed in concentric shells (K, L, M, N, …) around the nucleus, each ring accommodating its characteristic maximum. The actual filling order may skip some subshells temporarily.",
+    "**Electron configuration examples:** N (Z=7): 1s² 2s² 2p³; O (Z=8): 1s² 2s² 2p⁴; Ne (Z=10): 1s² 2s² 2p⁶; Mg (Z=12): 1s² 2s² 2p⁶ 3s²; Cl (Z=17): 1s² 2s² 2p⁶ 3s² 3p⁵.",
+    "**Exceptions to aufbau:** Cr (Z=24) is [Ar] 4s¹ 3d⁵ instead of [Ar] 4s² 3d⁴ because half-filled d-subshell (d⁵) has extra stability. Cu (Z=29) is [Ar] 4s¹ 3d¹⁰ instead of [Ar] 4s² 3d⁹ because filled d-subshell (d¹⁰) is more stable.",
+    "**n + l rule (Madelung's rule) examples:** 4s (n+l=4) fills before 3d (n+l=5). 5s (5) before 4d (6). 6s (6) before 4f (7) before 5d (7) — here 4f and 5d have equal n+l, so lower n (4f) fills first. 7s (7) before 5f (8) before 6d (8).",
+    "**Periodic table blocks:** s-block (groups 1–2): ns¹–². p-block (groups 13–18): ns² np¹–⁶. d-block (groups 3–12): (n−1)d¹–¹⁰ ns⁰–². f-block (lanthanides/actinides): (n−2)f¹–¹⁴ (n−1)d⁰–¹ ns².",
+    "**Hund's rule of maximum multiplicity:** within a subshell, electrons occupy separate orbitals with parallel spins before pairing. This minimises electron–electron repulsion and maximises exchange energy stabilisation.",
+    "**Noble gas core notation:** electron configurations are abbreviated using the preceding noble gas in brackets. For example, sodium (Z=11) is [Ne] 3s¹, where [Ne] represents the 1s² 2s² 2p⁶ core."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The Bohr–Bury scheme gives the MAXIMUM capacity of shells, not the actual electron count for a given atom. For example, the M shell CAN hold 18 electrons, but in potassium (Z=19), the M shell has only 8 electrons (3s² 3p⁶) while the 4s orbital fills before 3d.",
+    "The valence shell limit of 8 applies to MAIN GROUP elements. Transition metals can have more than 8 electrons in their outermost shell because (n−1)d electrons are also involved in bonding.",
+    "The (n + l) rule determines filling ORDER, not the final energy of subshells. Once filled, 3d is actually LOWER in energy than 4s, which is why 4s electrons are lost FIRST when transition metals form cations.",
+    "Bohr–Bury was developed in 1921, before the full quantum mechanical model. It works remarkably well but has exceptions (Cr, Cu) that require quantum mechanical explanations (exchange energy, Hund's rule).",
+    "The 'shell' model (K, L, M, N) is a simplification. In reality, subshells overlap: 4s fills before 3d, but 3d is 'inside' 4s in terms of radial extent."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write the electron configuration for Z = 26 (Fe). Solution: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶. Using the (n+l) rule: 4s (4) fills before 3d (5). Total = 2+2+6+2+6+2+6 = 26.",
+    "Write the electron configuration for Cr (Z=24) and explain the exception. Solution: [Ar] 4s¹ 3d⁵. The half-filled d-subshell (d⁵) has maximum exchange energy and extra stability. The energy gain from exchange interaction outweighs the promotion energy of moving one electron from 4s to 3d.",
+    "Determine the number of unpaired electrons in the ground state of Mn (Z=25). Solution: Mn = [Ar] 4s² 3d⁵. The 3d⁵ subshell has 5 unpaired electrons (Hund's rule: each orbital gets one electron before pairing).",
+    "Predict the electron configuration of Cu⁺ ion. Solution: Cu = [Ar] 4s¹ 3d¹⁰. Cu⁺ loses the 4s electron first: [Ar] 3d¹⁰. This is stable because the filled 3d¹⁰ subshell is particularly stable.",
+    "Write the electron configuration for Mo (Z=42) and explain any deviation from the expected pattern. Solution: Expected [Kr] 5s² 4d⁴, but actual is [Kr] 5s¹ 4d⁵. The half-filled d-subshell (d⁵) gains extra stability from exchange energy, similar to the Cr anomaly."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The Bohr–Bury scheme was proposed by Niels Bohr and John Bury in 1921, two years after Bohr's original model and five years before Schrödinger's equation. It correctly predicted the periodic table structure without the full quantum theory.",
+    "The (n + l) rule was independently formulated by Madelung in 1936 and is sometimes called the Madelung rule. It works because the energy of an orbital depends primarily on its average distance from the nucleus, which correlates with (n + l).",
+    "The scheme explains the periodicity of the periodic table: each period ends when a p-subshell is filled (except period 1, which ends with 1s²). This gives periods of lengths 2, 8, 8, 18, 18, 32, 32.",
+    "The concept of 'valence shell' and 'valence electrons' from this scheme is the foundation of chemical bonding theory — elements with similar valence configurations exhibit similar chemistry.",
+    "The stability of half-filled (d⁵) and fully-filled (d¹⁰) subshells is due to maximised exchange energy and symmetric charge distributions, which lower the total energy of the atom."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

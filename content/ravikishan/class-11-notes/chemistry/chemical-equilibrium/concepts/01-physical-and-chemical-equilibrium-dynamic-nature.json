@@ -1,30 +1,40 @@
 {
-  "title": "Physical and Chemical Equilibrium â€” Dynamic Nature",
+  "title": "Physical and Chemical Equilibrium — Dynamic Nature",
   "unitSlug": "chemical-equilibrium",
   "topicSlug": "physical-and-chemical-equilibrium-dynamic-nature",
   "topicTitle": "Physical and chemical equilibrium; dynamic nature of chemical equilibrium",
   "relevance": 100,
   "notes": [
-    "**Equilibrium:** a state where forward and reverse processes occur at equal rates, so macroscopic properties remain constant.",
-    "**Physical equilibrium:** phase changes like evaporation-condensation or dissolution-precipitation reach equilibrium when rates equalize.",
-    "**Chemical equilibrium:** reversible reactions reach equilibrium when forward and reverse reaction rates become equal: $k_f[reactants] = k_r[products]$.",
-    "**Dynamic, not static:** molecules continue to react in both directions, but the net change is zero. This was proven by mixing isotopically labelled substances at equilibrium.",
-    "**Requirements:** equilibrium is reached only in closed systems, at constant temperature, and when the reaction is reversible."
+    "**Equilibrium:** a state where forward and reverse processes occur at equal rates, so macroscopic properties (concentration, pressure, colour, density) remain constant over time.",
+    "**Physical equilibrium (liquid–vapour):** In a closed container, water evaporates and vapour condenses. At equilibrium: $\\text{H}_2\\text{O}(l) \\rightleftharpoons \\text{H}_2\\text{O}(g)$; the rate of evaporation equals the rate of condensation. The vapour pressure becomes constant at a given temperature.",
+    "**Physical equilibrium (solid–solution):** For a sparingly soluble salt: $\\text{AgCl}(s) \\rightleftharpoons \\text{Ag}^+(aq) + \\text{Cl}^-(aq)$. At equilibrium, the rate of dissolution equals the rate of precipitation — the solution is saturated.",
+    "**Physical equilibrium (gas dissolved in liquid):** Henry's Law describes this: $\\text{Gas}(g) \\rightleftharpoons \\text{Gas}(aq)$, with $C = k_H \\cdot P$. The rate at which gas molecules enter the liquid equals the rate at which they escape.",
+    "**Chemical equilibrium:** In a reversible reaction such as $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$, equilibrium is reached when $r_{\\text{forward}} = r_{\\text{reverse}}$, so concentrations of $\\text{N}_2$, $\\text{H}_2$, and $\\text{NH}_3$ stop changing.",
+    "**Dynamic, not static:** Even at equilibrium, molecules continuously react in both directions. This was proven by exposing a system at equilibrium to an isotope tracer (e.g., $^{14}\\text{CO}$ and $\\text{H}_2\\text{O}$ with a catalyst). Radioactivity appears in both $\\text{CO}_2$ and $\\text{H}_2$ over time, proving ongoing exchange.",
+    "**Rate equality at equilibrium:** For a generic reaction $aA + bB \\rightleftharpoons cC + dD$, at equilibrium $k_f[A]^a[B]^b = k_r[C]^c[D]^d$, where $k_f$ and $k_r$ are the forward and reverse rate constants.",
+    "**Requirements for equilibrium:** (1) The system must be closed — no matter enters or leaves. (2) Temperature must be constant — equilibrium constants are temperature-dependent. (3) The reaction must be reversible.",
+    "**Approaching equilibrium:** If a reaction starts with only reactants, the forward rate is initially high and the reverse rate is zero. As products accumulate, the forward rate decreases and the reverse rate increases, until they meet.",
+    "**Graphical representation:** A plot of concentration versus time shows reactant curves decreasing and product curves increasing, all asymptotically approaching constant values. The point where all curves flatten is equilibrium.",
+    "**Real-world example — Haber process:** The synthesis of ammonia ($\\text{N}_2 + 3\\text{H}_2 \\rightleftharpoons 2\\text{NH}_3$, $\\Delta H = -92.4\\;\\text{kJ/mol}$) is a classic equilibrium process. In industry, conditions are chosen to maximise yield while achieving equilibrium in a reasonable time.",
+    "**Real-world example — Human blood pH:** The bicarbonate buffer system $\\text{CO}_2 + \\text{H}_2\\text{O} \\rightleftharpoons \\text{H}_2\\text{CO}_3 \\rightleftharpoons \\text{H}^+ + \\text{HCO}_3^-$ maintains blood pH around 7.4 through dynamic equilibrium shifts."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception — \"At equilibrium, the concentrations of reactants and products are equal.\" — Clarification: At equilibrium, the rates are equal, not the concentrations. The ratio of concentrations is fixed by the equilibrium constant, which is rarely 1.",
+    "Misconception — \"At equilibrium, all reactions stop.\" — Clarification: Equilibrium is dynamic — both forward and reverse reactions continue at equal rates. No net change occurs, but molecular activity continues.",
+    "Misconception — \"A catalyst shifts the equilibrium position.\" — Clarification: A catalyst speeds up both forward and reverse reactions equally, so equilibrium is reached faster, but the equilibrium concentrations remain unchanged.",
+    "Misconception — \"Open systems can reach chemical equilibrium.\" — Clarification: In an open system, matter can escape (e.g., $\\text{CO}_2$ leaving an open soda bottle), so equilibrium is never established. A closed system is required."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "In a closed vessel at 400 K, $\\text{N}_2\\text{O}_4$ is introduced at an initial pressure of 1.0 atm. At equilibrium, the pressure of $\\text{NO}_2$ is found to be 0.6 atm. Calculate the equilibrium pressure of $\\text{N}_2\\text{O}_4$ and the value of $K_p$ for $\\text{N}_2\\text{O}_4(g) \\rightleftharpoons 2\\text{NO}_2(g)$. Solution: Let x = pressure of $\\text{N}_2\\text{O}_4$ that dissociates. Then $2x = 0.6$, so $x = 0.3$. Equilibrium $P_{\\text{N}_2\\text{O}_4} = 1.0 - 0.3 = 0.7\\;\\text{atm}$. $K_p = \\frac{(0.6)^2}{0.7} = 0.514\\;\\text{atm}$.",
+    "Explain why the equilibrium $\\text{H}_2(g) + \\text{I}_2(g) \\rightleftharpoons 2\\text{HI}(g)$ is dynamic by describing what happens at the molecular level when equal amounts of $\\text{H}_2$ and $\\text{I}_2$ are placed in a sealed tube at 400°C. Solution: $\\text{H}_2$ and $\\text{I}_2$ molecules collide to form HI. As HI builds up, HI molecules collide to reform $\\text{H}_2$ and $\\text{I}_2$. Eventually the rate of formation of HI equals the rate of its decomposition, and the concentrations stabilise — yet individual molecules are constantly reacting in both directions.",
+    "A reversible reaction $A \\rightleftharpoons B$ has $k_f = 3.0 \\times 10^{-3}\\;\\text{s}^{-1}$ and $k_r = 1.0 \\times 10^{-3}\\;\\text{s}^{-1}$. (a) What is the equilibrium constant $K$? (b) If $[A]_0 = 0.5\\;\\text{M}$ and $[B]_0 = 0$, find the equilibrium concentrations. Solution: (a) $K = k_f/k_r = 3.0$. (b) At equilibrium: $\\frac{x}{0.5-x} = 3$, so $x = 1.5 - 3x$, $4x = 1.5$, $x = 0.375\\;\\text{M}$. Thus $[A]_{eq} = 0.125\\;\\text{M}$, $[B]_{eq} = 0.375\\;\\text{M}$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "All reversible reactions in closed systems eventually reach a dynamic equilibrium state if temperature is held constant — this is a universal feature of chemical thermodynamics.",
+    "The dynamic nature of equilibrium was conclusively demonstrated in the 1950s using radioactive isotopes, confirming what chemists had theorised since the 1880s.",
+    "Equilibrium can be approached from either direction — starting with only reactants or only products — and the same equilibrium constant is obtained.",
+    "The time required to reach equilibrium depends on kinetics (activation energy, temperature, catalysts), but the final equilibrium state depends only on thermodynamics (temperature, pressure).",
+    "Every equilibrium system has a characteristic equilibrium constant at a given temperature, which is a fundamental property of the reaction."
   ],
   "animation3D": "chemical-equilibrium",
   "motionGraphics": "chemical-equilibrium"

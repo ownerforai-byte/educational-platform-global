@@ -6,25 +6,37 @@
   "relevance": 100,
   "notes": [
     "**Banked curve:** a road or track tilted at an angle $\\theta$ so that the horizontal component of the normal reaction provides the centripetal force.",
-    " **No friction ideal banking:** $\\tan\\theta = v^2/(rg)$. At this design speed, no friction is needed because the normal reaction alone provides the exact centripetal force required.",
+    "**No friction ideal banking:** $\\tan\\theta = v^2/(rg)$. At this design speed, no friction is needed because the normal reaction alone provides the exact centripetal force required.",
     "**Why banking works:** without banking, friction alone must supply the centripetal force, which limits the safe speed. Banking allows higher safe speeds and reduces tyre wear.",
     "**Real roads:** actual banking angles are chosen for a design speed $v_0$. Slower vehicles need friction up the slope; faster vehicles need friction down the slope.",
-    "**Aircraft banking:** when an aircraft turns, it banks so that the lift force has a horizontal component providing centripetal force: $L\\sin\\theta = mv^2/r$."
+    "**Aircraft banking:** when an aircraft turns, it banks so that the lift force has a horizontal component providing centripetal force: $L\\sin\\theta = mv^2/r$.",
+    "**Banking with friction:** on a banked road with friction, the maximum safe speed is $v_{max} = \\sqrt{rg\\tan(\\theta + \\phi)}$ and the minimum safe speed is $v_{min} = \\sqrt{rg\\tan(\\theta - \\phi)}$, where $\\phi = \\tan^{-1}\\mu$ is the angle of friction.",
+    "**Derivation of ideal banking:** forces on the car: normal $N$ at angle $\\theta$ from vertical and weight $mg$ downward. Vertical: $N\\cos\\theta = mg$. Horizontal: $N\\sin\\theta = mv^2/r$. Dividing: $\\tan\\theta = v^2/(rg)$.",
+    "**Maximum speed on unbanked road:** with friction only, $v_{max} = \\sqrt{\\mu_s rg}$. Banking increases this because the normal force contributes to the centripetal force.",
+    "**Centripetal acceleration in banked turns:** $a_c = g\\tan\\theta$ for the ideal speed. This is independent of mass — all vehicles at the design speed follow the same path.",
+    "**Aeroplane turn radius:** $r = v^2/(g\\tan\\theta)$. A steeper bank angle at the same speed gives a tighter turn. The passenger feels a force $N = mg/\\cos\\theta$ perpendicular to the floor.",
+    "**High-speed railway curves:** tracks are banked at precise angles calculated for the operating speed. The flange of the wheel provides the centripetal force at non-design speeds."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The banking angle formula $\\tan\\theta = v^2/(rg)$ is for the ideal (no-friction) case only. With friction, the actual safe speed range depends on $\\mu$ as well.",
+    "Banking reduces the reliance on friction but does not eliminate it for speeds above or below the design speed. Only at exactly $v = \\sqrt{rg\\tan\\theta}$ is friction zero.",
+    "The normal force on a banked road is NOT $mg\\cos\\theta$ in general. It equals $mg/\\cos\\theta$ for the ideal speed. For other speeds, it varies.",
+    "A car on a banked road at the design speed does not slide because no friction is needed — the normal force alone provides exactly the required centripetal force.",
+    "When a car takes a banked curve faster than the design speed, it tends to slide up the slope, so friction acts down the slope. When slower, it tends to slide down, so friction acts up the slope."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A road is banked at $\\theta = 10^{\\circ}$ with radius $r = 200$ m. Find the design speed (ideal, no friction). Solution: $v = \\sqrt{rg\\tan\\theta} = \\sqrt{200 \\times 9.8 \\times 0.1763} = \\sqrt{345.5} = 18.6$ m/s $= 66.9$ km/h.",
+    "A road has a radius of curvature 500 m. What banking angle is needed for a design speed of 90 km/h? Solution: $v = 90/3.6 = 25$ m/s. $\\tan\\theta = v^2/(rg) = 625/(500 \\times 9.8) = 0.1276$. $\\theta = \\tan^{-1}(0.1276) = 7.27^{\\circ}$.",
+    "A car takes a banked curve at $\\theta = 20^{\\circ}$ at a speed of 30 m/s. Find the radius of curvature. Solution: $r = v^2/(g\\tan\\theta) = 900/(9.8 \\times 0.364) = 900/3.567 = 252$ m.",
+    "An aeroplane flies at 200 m/s and banks at $30^{\\circ}$. Find the turn radius and the force experienced by a 70 kg passenger. Solution: $r = v^2/(g\\tan\\theta) = 40000/(9.8 \\times 0.5774) = 7063$ m $\\approx 7$ km. $N = mg/\\cos\\theta = 70 \\times 9.8/0.866 = 789$ N. The passenger feels $789/9.8 = 80.5$ kg-force, slightly more than their weight.",
+    "A road is banked at $15^{\\circ}$ with radius 100 m. The coefficient of friction is 0.3. Find the maximum and minimum safe speeds. Solution: $\\phi = \\tan^{-1}(0.3) = 16.7^{\\circ}$. $v_{max} = \\sqrt{rg\\tan(15 + 16.7)} = \\sqrt{100 \\times 9.8 \\times \\tan(31.7)} = \\sqrt{100 \\times 9.8 \\times 0.618} = 24.6$ m/s $= 88.6$ km/h. $v_{min} = \\sqrt{rg\\tan(15 - 16.7)}$. Since $\\theta < \\phi$, the car can be at rest without sliding, so $v_{min} = 0$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The ideal banking angle is independent of the mass of the vehicle. A heavy truck and a light car both need the same angle for the same speed and radius.",
+    "At the design speed, the centripetal acceleration equals $g\\tan\\theta$, meaning the acceleration is a fixed fraction of $g$ determined entirely by the banking angle.",
+    "Airplanes bank to turn because they cannot use friction like cars. The lift force, tilted by the bank angle, provides the centripetal force for the turn.",
+    "On a banked curve, a passenger feels pushed into their seat more than on a flat road. The normal force $N = mg/\\cos\\theta$ exceeds $mg$, which is why banked curves feel more comfortable at high speeds.",
+    "High-speed railways use banking angles up to about $10^{\\circ}$. This reduces lateral force on the tracks and increases passenger comfort while allowing higher speeds."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion"

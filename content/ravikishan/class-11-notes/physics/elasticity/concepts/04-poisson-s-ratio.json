@@ -5,25 +5,35 @@
   "topicTitle": "Poisson's ratio",
   "relevance": 100,
   "notes": [
-    "**Definition:** Poisson's ratio $\\sigma$ is the negative ratio of lateral strain to longitudinal strain: $\\sigma = -\\frac{\\text{lateral strain}}{\\text{longitudinal strain}} = -\\frac{\\Delta d/d}{\\Delta L/L}$.",
-    "**Physical meaning:** when you stretch a wire, it not only gets longer but also thinner. Poisson's ratio quantifies how much thinner it gets for a given stretch.",
-    "**Range:** for most materials, $0 < \\sigma < 0.5$. Rubber is close to 0.5 (volume stays nearly constant when stretched). Cork has $\\sigma \\approx 0$ (it does not get thinner when compressed).",
-    "**Theoretical limits:** $\\sigma$ cannot be less than $-1$ or greater than $0.5$ for stable isotropic materials. $\\sigma = 0.5$ means volume is conserved during deformation."
+    "**Definition:** Poisson's ratio $\\sigma$ is the negative ratio of lateral strain to longitudinal strain: $\\sigma = -\\frac{\\text{lateral strain}}{\\text{longitudinal strain}} = -\\frac{\\Delta d/d}{\\Delta L/L} = -\\frac{\\epsilon_{lateral}}{\\epsilon_{longitudinal}}$.",
+    "**Physical meaning:** when you stretch a wire, it not only gets longer but also thinner. Poisson's ratio quantifies how much thinner it gets for a given stretch. A value of 0.3 means the lateral contraction is 30% of the longitudinal extension (as a fraction of original dimensions).",
+    "**Range:** for most common materials, $0 < \\sigma < 0.5$. Typical values: steel $\\sigma \\approx 0.27–0.30$, aluminum $\\sigma \\approx 0.33$, copper $\\sigma \\approx 0.34$, rubber $\\sigma \\approx 0.49–0.50$.",
+    "**Theoretical limits:** $\\sigma$ cannot be less than $-1$ or greater than $0.5$ for stable, isotropic materials. $\\sigma = 0.5$ means volume is conserved during deformation (incompressible material). $\\sigma = 0$ means no lateral contraction (cork).",
+    "**Auxetic materials:** rare materials with negative Poisson's ratio ($\\sigma < 0$). When stretched, they get THICKER instead of thinner. Examples include certain foams and engineered metamaterials.",
+    "**Relation to other moduli:** $Y = 3K(1 - 2\\sigma)$ and $Y = 2\\eta(1 + \\sigma)$. These allow you to find any modulus if you know two of the three ($Y$, $K$, $\\eta$) and $\\sigma$.",
+    "**Volume change:** for a tensile test, the fractional volume change is $\\frac{\\Delta V}{V} \\approx \\epsilon(1 - 2\\sigma)$. If $\\sigma = 0.5$, there is no volume change. If $\\sigma < 0.5$, the volume increases under tension.",
+    "**Engineering significance:** Poisson's ratio affects the design of structures because lateral contraction can cause interference fits to loosen or tighten under load."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Poisson's ratio is NOT a measure of how \"stretchy\" a material is — that is Young's modulus. Two materials can have the same Poisson's ratio but very different stiffnesses (e.g., steel and many polymers both have $\\sigma \\approx 0.3$).",
+    "The symbol $\\sigma$ is used for both Poisson's ratio and stress. In context, stress $\\sigma = F/A$ has units of Pa, while Poisson's ratio $\\sigma$ is dimensionless. Always check the context to avoid confusion.",
+    "A Poisson's ratio of 0.5 does NOT mean the material is rigid — it means the material is incompressible. Rubber has $\\sigma \\approx 0.5$ but is very soft (low Young's modulus). Incompressible means volume doesn't change, not that it is hard to deform.",
+    "Poisson's ratio applies to the elastic (reversible) deformation region. Once the material yields and deforms plastically, Poisson's ratio is no longer constant and can approach 0.5 even for materials that have a lower elastic value.",
+    "The negative sign in the definition $\\sigma = -\\frac{\\epsilon_{lateral}}{\\epsilon_{longitudinal}}$ is essential: under tension, longitudinal strain is positive and lateral strain is negative, so the ratio is negative — the extra minus sign makes Poisson's ratio positive for conventional materials."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A steel wire of diameter 2 mm is stretched so that its length increases by 0.1%. If Poisson's ratio is 0.25, find the percentage change in diameter. Solution: Longitudinal strain $= 0.1\\% = 0.001$. Lateral strain $= -\\sigma \\times \\text{longitudinal strain} = -0.25 \\times 0.001 = -0.00025 = -0.025\\%$. The diameter decreases by 0.025%.",
+    "A copper rod of diameter 10 mm is subjected to a tensile stress of 100 MPa. If $Y = 120$ GPa and $\\sigma = 0.34$, find the longitudinal strain, lateral strain, and the change in diameter. Solution: Longitudinal strain $= \\frac{\\sigma_{stress}}{Y} = \\frac{100 \\times 10^6}{120 \\times 10^9} = 8.33 \\times 10^{-4}$. Lateral strain $= -0.34 \\times 8.33 \\times 10^{-4} = -2.83 \\times 10^{-4}$. Change in diameter $= -2.83 \\times 10^{-4} \\times 10 = -2.83 \\times 10^{-3}$ mm. The diameter decreases by 2.83 micrometres.",
+    "Show that for an incompressible material ($\\sigma = 0.5$), the volume remains constant during elastic deformation. Solution: For a wire of length $L$ and diameter $d$: $V = \\frac{\\pi d^2 L}{4}$. Taking logarithmic differential: $\\frac{\\Delta V}{V} = 2\\frac{\\Delta d}{d} + \\frac{\\Delta L}{L} = 2\\epsilon_{lateral} + \\epsilon_{longitudinal} = -2\\sigma \\epsilon_{longitudinal} + \\epsilon_{longitudinal} = \\epsilon_{longitudinal}(1 - 2\\sigma)$. For $\\sigma = 0.5$: $\\frac{\\Delta V}{V} = 0$. Volume is conserved.",
+    "A material has $Y = 10$ GPa and $\\eta = 4$ GPa. Find Poisson's ratio. Solution: From $Y = 2\\eta(1 + \\sigma)$: $10 = 2 \\times 4(1 + \\sigma)$, so $1 + \\sigma = \\frac{10}{8} = 1.25$, giving $\\sigma = 0.25$.",
+    "A rubber sample ( $\\sigma = 0.49$ ) is stretched by 10%. Find the fractional change in volume. Solution: $\\frac{\\Delta V}{V} = \\epsilon(1 - 2\\sigma) = 0.10 \\times (1 - 2 \\times 0.49) = 0.10 \\times 0.02 = 0.002$. The volume increases by 0.2% — very nearly incompressible."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Poisson's ratio was named after Siméon Denis Poisson (1781–1840), who derived it from molecular theory, though the phenomenon was observed earlier by Johann Bernoulli.",
+    "Cork has a Poisson's ratio of nearly zero ($\\sigma \\approx 0$), which is why wine bottles can be corked tightly — cork doesn't expand laterally when compressed, maintaining a snug fit.",
+    "Most metals have Poisson's ratios in the range 0.25–0.35. This narrow range exists because the atomic bonding in metals allows limited lateral contraction during stretching.",
+    "The theoretical upper limit of 0.5 corresponds to a perfectly incompressible material. No real material reaches exactly 0.5, but rubber comes very close.",
+    "Auxetic materials (negative Poisson's ratio) were first synthesized in the 1980s and have attracted interest for impact-resistant clothing, smart filters, and medical stents because they become thicker when stretched."
   ],
   "animation3D": "elasticity",
   "motionGraphics": "elasticity"

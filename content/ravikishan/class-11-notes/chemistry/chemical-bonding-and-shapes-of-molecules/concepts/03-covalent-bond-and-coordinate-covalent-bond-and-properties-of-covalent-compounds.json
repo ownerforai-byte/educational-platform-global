@@ -5,26 +5,47 @@
   "topicTitle": "Covalent bond and coordinate covalent bond; properties of covalent compounds",
   "relevance": 100,
   "notes": [
-    "**Covalent bond:** formed by sharing one or more pairs of electrons between atoms. Usually between non-metals with similar electronegativities.",
-    "**Single, double, triple bonds:** sharing 2, 4, or 6 electrons respectively. Bond length decreases and bond strength increases with bond order.",
-    "**Coordinate covalent bond (dative bond):** both electrons in the shared pair come from one atom. Example: $NH_3$ donates its lone pair to $BF_3$ to form $H_3N \\rightarrow BF_3$.",
-    "**Polarity:** if electronegativities differ, the bond is polar with partial charges ($\\delta^+$ and $\\delta^-$). Equal electronegativities give nonpolar bonds.",
-    "**Properties of covalent compounds:** low melting and boiling points (weak intermolecular forces), poor electrical conductivity (no free ions or electrons), often soluble in non-polar solvents."
+    "**Covalent bond:** formed by sharing one or more pairs of electrons between two atoms, typically non-metals with similar electronegativities. The shared pair is attracted to both nuclei. Example: H₂ — each H contributes 1 electron to a shared pair (σ bond).",
+    "**Bond order:** the number of electron pairs shared between two atoms. Single bond (order 1): H–H, C–C. Double bond (order 2): O=O, C=C. Triple bond (order 3): N≡N, C≡C. Higher bond order → shorter bond length and greater bond energy.",
+    "**Bond energy data:** N≡N = 941 kJ/mol (very strong, explains N₂ inertness); C≡C = 839 kJ/mol; C=C = 614 kJ/mol; C–C = 347 kJ/mol. Each successive bond is weaker than the previous (π bonds are weaker than σ bonds).",
+    "**Bond length data:** C–C = 154 pm, C=C = 134 pm, C≡C = 120 pm. N–N = 145 pm, N=N = 125 pm, N≡N = 110 pm. O–O = 148 pm, O=O = 121 pm. Bond length decreases with increasing bond order.",
+    "**Coordinate (dative) covalent bond:** a covalent bond where both electrons in the shared pair originate from the same atom. Example: NH₃ + BF₃ → H₃N→BF₃ (the N→B bond is dative). Example: H₃O⁺ (one O–H bond is dative from H₂O to H⁺).",
+    "**Lewis acid–base concept:** a Lewis acid is an electron-pair acceptor (BF₃, AlCl₃, H⁺); a Lewis base is an electron-pair donor (NH₃, H₂O, OH⁻). A coordinate bond forms when a Lewis base donates to a Lewis acid. The BF₃–NH₃ adduct is a classic example.",
+    "**Polar covalent bond:** when electrons are shared unequally due to electronegativity difference (ΔEN). H–F (ΔEN = 1.78) is highly polar; H–Cl (ΔEN = 0.96) is moderately polar; C–H (ΔEN = 0.35) is nearly nonpolar. Partial charges: δ⁺ on less electronegative atom, δ⁻ on more electronegative atom.",
+    "**Dipole moment (μ):** μ = q × d, measured in Debye (1 D = 3.336 × 10⁻³⁰ C·m). HCl: μ = 1.08 D. H₂O: μ = 1.85 D (bent shape + polar bonds). CO₂: μ = 0 D (linear, bond dipoles cancel). Molecular geometry determines whether bond dipoles cancel.",
+    "**Bond polarity and molecular polarity:** a molecule can have polar bonds but be nonpolar overall if its geometry causes dipole cancellation. CCl₄ (tetrahedral) has polar C–Cl bonds but μ = 0. SO₂ (bent) has polar S–O bonds and μ ≠ 0. CH₃Cl (tetrahedral) is polar.",
+    "**Intermolecular forces in covalent compounds:** (1) London dispersion (universal, depends on polarizability/molecular size). (2) Dipole–dipole (between polar molecules, e.g., HCl···HCl). (3) Hydrogen bonding (H bonded to F, O, N interacting with lone pair on another F/O/N). H₂O has strong H-bonding (bp 100°C vs. H₂S at −60°C).",
+    "**Properties of covalent compounds:** (1) Low melting/boiling points (weak intermolecular forces). (2) Poor electrical conductivity (no ions or free electrons). (3) Variable solubility: polar covalent compounds (sugar, ethanol) dissolve in water; nonpolar (hexane, I₂) dissolve in organic solvents. (4) Many are gases or liquids at room temperature.",
+    "**Exception — network covalent solids:** diamond (C, each C sp³ bonded to 4 others, mp > 3550°C), quartz/SiO₂ (each Si bonded to 4 O in a 3D network), SiC. These have extremely high melting points and hardness because breaking them requires breaking covalent bonds, not overcoming weak intermolecular forces.",
+    "**Exception — ionic covalent compounds:** AlCl₃ exists as Al₂Cl₆ dimer (bridging Cl atoms with coordinate bonds). BeCl₂ is polymeric with bridging Cl atoms. These show how polarizing power creates covalent character.",
+    "**Resonance in covalent bonds:** benzene (C₆H₆) has delocalized π electrons over 6 carbons, giving equal C–C bond lengths of 139 pm (intermediate between C–C 154 pm and C=C 134 pm). This delocalization provides extra stability (resonance energy ≈ 152 kJ/mol).",
+    "**Real-world relevance — life itself is covalent:** all biomolecules (proteins, DNA, carbohydrates, lipids) are held together by covalent bonds. Peptide bonds (amide bonds) link amino acids. Phosphodiester bonds link DNA nucleotides. Enzyme catalysis involves making/breaking covalent bonds.",
+    "**Real-world relevance — polymers:** polyethylene (–CH₂–CH₂–)ₙ is a covalent network of carbon chains. Its properties depend on chain length and branching. PVC, nylon, and Teflon are all covalent polymers with commercial importance.",
+    "**Real-world relevance — pharmaceuticals:** drug molecules are covalent structures designed to fit protein binding pockets. The strength and orientation of covalent bonds within the drug molecule determine its stability, bioavailability, and reactivity in the body.",
+    "**Coordinate bond in coordination chemistry:** transition metal complexes like [Cu(NH₃)₄]²⁺, [Fe(CN)₆]⁴⁻, and hemoglobin (Fe²⁺ bound to porphyrin N atoms) rely on coordinate bonds between metal ions and ligands. The crystal field theory explains their colors and magnetism."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Covalent bonds are always nonpolar — False. Most covalent bonds between different atoms are polar. C–O (ΔEN = 0.89), N–H (ΔEN = 0.84), and O–H (ΔEN = 1.24) are all polar covalent bonds. Only bonds between identical atoms (H–H, O=O, N≡N) are purely nonpolar.",
+    "Coordinate bonds are weaker than regular covalent bonds — Not necessarily. Once formed, a coordinate bond is identical to a covalent bond — same strength, same length. The difference is only in how the bond was formed (origin of electrons), not in its properties. The N→B bond in NH₃→BF₃ is a strong, stable bond.",
+    "All covalent compounds have low melting points — False. Network covalent solids (diamond, SiO₂, SiC) have extremely high melting points because they consist of a giant 3D network of covalent bonds. Breaking them requires breaking actual bonds, not just overcoming intermolecular forces.",
+    "Nonpolar molecules cannot have polar bonds — False. CCl₄ has four polar C–Cl bonds but the molecule is nonpolar because the tetrahedral symmetry causes the bond dipoles to cancel completely. Similarly, CO₂ has two polar C=O bonds but is linear and nonpolar.",
+    "Hydrogen bonding is a type of covalent bond — False. Hydrogen bonding is an intermolecular force (attraction between molecules), not a covalent bond. It is much weaker (5–30 kJ/mol) than a covalent bond (200–1000 kJ/mol). The H atom is covalently bonded to F/O/N within a molecule and attracted to a lone pair on another molecule.",
+    "All covalent compounds are soluble in water — False. Solubility depends on polarity matching. Nonpolar covalent compounds (I₂, CCl₄, benzene) are insoluble in water. Only polar covalent compounds that can form hydrogen bonds (sugar, ethanol, NH₃) are soluble in water."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Calculate the bond order and predict bond length for NO⁺, NO, and NO⁻. Solution: NO⁺ has 10 valence e⁻ (σ²π⁴π*⁰) → bond order = (6−0)/2 = 3. NO has 11 valence e⁻ → bond order = (6−1)/2 = 2.5. NO⁻ has 12 valence e⁻ → bond order = (6−2)/2 = 2. Bond lengths: NO⁺ (106 pm) < NO (115 pm) < NO⁻ (126 pm).",
+    "Problem: Determine the dipole moment of HF given the bond length is 91.7 pm and the charge separation is 0.178e (where e = 1.602 × 10⁻¹⁹ C). Solution: μ = q × d = 0.178 × 1.602 × 10⁻¹⁹ × 91.7 × 10⁻¹² = 2.61 × 10⁻³⁰ C·m = 2.61 × 10⁻³⁰ / 3.336 × 10⁻³⁰ D = 0.782 D. (Experimental: 1.82 D — the discrepancy is due to approximations in the charge model.)",
+    "Problem: Draw the Lewis structure of H₃PO₄ and identify the coordinate bond(s). Solution: P is central with 5 valence e⁻. It forms 3 single bonds to OH groups and 1 double bond to O (=O). Total valence = 5 + 3(1) + 4(6) + 1 = 32. P has 5 bonds (10 electrons, expanded octet). FC on P = 5 − 0 − 10/2 = 0. The P=O bond can be viewed as a coordinate bond (O donates 2 e⁻ to P).",
+    "Problem: Explain why NH₃ has a higher boiling point (-33°C) than PH₃ (-88°C) despite PH₃ being heavier. Solution: NH₃ molecules form intermolecular hydrogen bonds (N–H···N), requiring extra energy to break. PH₃ cannot form significant H-bonds because P is not sufficiently electronegative. Despite PH₃ having greater London dispersion forces (higher molecular mass), the H-bonding effect in NH₃ dominates.",
+    "Problem: Determine the hybridization and geometry of SF₄. Solution: S has 6 valence e⁻, forms 4 bonds to F (4 × 1e⁻ each), leaving 2 e⁻ as one lone pair. Steric number = 4 bonds + 1 lone pair = 5 → sp³d hybridization. Geometry: seesaw (distorted tetrahedron). Axial F–S–F angle = 173°, equatorial F–S–F angle = 102° (lone pair compresses the angle).",
+    "Problem: Rank the following in order of increasing boiling point: CH₄, NH₃, H₂O, HF. Solution: CH₄ (nonpolar, only dispersion, bp = −161.5°C) < NH₃ (H-bonding, bp = −33°C) < HF (strong H-bonds but fewer per molecule, bp = 19.5°C) < H₂O (extensive 3D H-bonding network, bp = 100°C). Water has the highest bp because each molecule can form 4 H-bonds."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Bond energy is always positive (energy required to break a bond). The standard convention: E(N–H) = 391 kJ/mol means 391 kJ must be supplied to break one mole of N–H bonds.",
+    "The strength of a hydrogen bond (5–30 kJ/mol) is intermediate between covalent bonds (200–1000 kJ/mol) and London dispersion forces (0.1–10 kJ/mol).",
+    "Hybridization is a mathematical construct (mixing atomic orbitals) used to explain molecular geometry. It is not a physical process but a useful model for predicting shapes.",
+    "The concept of a coordinate bond blurs the distinction between \"ionic\" and \"covalent\" — even NaCl has some covalent character due to polarization of Cl⁻ by Na⁺ (Fajans' rules).",
+    "Network covalent solids (diamond, graphite, SiO₂) demonstrate that covalent bonding can create materials with extreme hardness (diamond) or extreme softness (graphite) depending on the 2D/3D arrangement."
   ],
   "animation3D": "chemical-bonding-and-shapes-of-molecules",
   "motionGraphics": "chemical-bonding-and-shapes-of-molecules"

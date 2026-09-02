@@ -5,26 +5,34 @@
   "topicTitle": "Gravitational field strength",
   "relevance": 100,
   "notes": [
-    "**Definition:** gravitational field strength $g$ at a point is the gravitational force per unit mass placed at that point: $g = F/m$.",
-    "**Field of a point mass:** $g = G\\frac{M}{r^2}$, directed toward the mass $M$.",
-    "**Near Earth's surface:** $g \\approx 9.8\\,\\text{m/s}^2$. This value varies slightly with latitude and altitude.",
-    "**Superposition:** for multiple masses, the total field is the vector sum of the fields from each mass: $\\vec{g}_{total} = \\sum \\vec{g}_i$.",
-    "**Units:** N/kg or m/s$^2$. Both are equivalent because $1\\,\\text{N/kg} = 1\\,\\text{m/s}^2$."
+    "**Definition:** gravitational field strength $g$ at a point is the gravitational force per unit mass placed at that point: $g = F/m$. It is a vector pointing toward the mass creating the field.",
+    "**Field of a point mass:** $g = G\\frac{M}{r^2}$, directed toward the mass $M$. This is independent of the test mass — the field is a property of the source mass and the position.",
+    "**Near Earth's surface:** $g \\approx 9.8\\,\\text{m/s}^2$. This value varies with latitude (higher at poles, lower at equator due to Earth's rotation and oblateness) and altitude.",
+    "**Superposition:** for multiple masses, the total field is the vector sum of the fields from each mass: $\\vec{g}_{total} = \\sum \\vec{g}_i$. Fields add vectorially, like electric fields.",
+    "**Units:** N/kg or m/s$^2$. Both are equivalent because $1\\,\\text{N/kg} = 1\\,\\text{kg}\\cdot\\text{m/s}^2 / \\text{kg} = 1\\,\\text{m/s}^2$.",
+    "**Field is a vector field:** $\\vec{g}$ has magnitude and direction. Field lines for gravity point toward the mass (inward) — opposite to electric field lines for positive charges.",
+    "**Gravitational field inside a solid sphere:** at distance $r$ from centre, $g = G\\frac{M_{inside}}{r^2} = G\\frac{M(r/R)^3}{r^2} = G\\frac{Mr}{R^3}$. Increases linearly from zero at centre to $GM/R^2$ at surface.",
+    "**Field of a spherical shell:** outside: $g = GM/r^2$; inside: $g = 0$ everywhere (shell theorem).",
+    "**Dimensional formula of $g$:** $[g] = [LT^{-2}]$. Same as acceleration — indeed, $g$ is the acceleration a test mass would experience.",
+    "**Relation to potential:** $\\vec{g} = -\\nabla V$, where $V$ is gravitational potential. The field is the negative gradient of the potential."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Gravitational field strength $g$ and acceleration due to gravity are numerically equal near Earth's surface ($9.8\\,\\text{m/s}^2$), but they are conceptually different: $g$ is a property of the field, while acceleration is the response of a mass in that field.",
+    "The field inside a uniform spherical shell is zero EVERYWHERE, not just at the centre. This is because the shell theorem integrates to zero for any interior point.",
+    "Superposition means you must add field vectors, not just magnitudes. Two equal masses on opposite sides of a point produce fields that add in the middle.",
+    "Unlike electric fields, which can be shielded by conductors, gravitational fields CANNOT be shielded — there is no negative mass to cancel the field."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Find the gravitational field at a point $1000\\,\\text{km}$ above Earth's surface. $R_E = 6400\\,\\text{km}$, $g_{surface} = 9.8\\,\\text{m/s}^2$. Solution: $g' = g(R/(R+h))^2 = 9.8 \\times (6400/7400)^2 = 9.8 \\times 0.749 = 7.34\\,\\text{m/s}^2$.",
+    "Two equal masses $M$ are placed at $(-d, 0)$ and $(+d, 0)$. Find the gravitational field at $(0, y)$. Solution: Distance $r = \\sqrt{d^2 + y^2}$. Field from each: $g = GM/r^2$. By symmetry, x-components cancel; y-components add: $g_y = 2(GM/r^2)(y/r) = 2GMy/(d^2 + y^2)^{3/2}$.",
+    "A solid sphere of mass $M$ and radius $R$ has a cavity of radius $R/2$ with its centre at $R/2$ from the sphere centre. Find the field inside the cavity. Solution: Use superposition — the cavity is equivalent to positive mass $M_{cavity}$ plus negative mass of same size. The field inside is uniform: $g = GM_{cavity}/(R/2)^2 = GM/(2R^2)$ toward the cavity centre.",
+    "At what distance from Earth's centre does the gravitational field equal $1\\,\\text{m/s}^2$? $R_E = 6400\\,\\text{km}$, $g_{surface} = 9.8\\,\\text{m/s}^2$. Solution: $g = g_{surface}(R_E/r)^2 \\Rightarrow 1 = 9.8(6400/r)^2 \\Rightarrow r = 6400\\sqrt{9.8} \\approx 20,000\\,\\text{km}$ from centre."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Gravitational field lines point toward the mass (inward), unlike electric field lines for positive charges which point outward.",
+    "The gravitational field inside a uniform spherical shell is exactly zero — this is a unique consequence of the inverse-square law.",
+    "Gravitational fields cannot be shielded or cancelled — there is no \"negative mass\" equivalent to negative charge.",
+    "The concept of gravitational field eliminates action-at-a-distance: a mass creates a field in space, and the field then exerts force on other masses placed in it."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

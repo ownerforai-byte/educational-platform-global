@@ -5,25 +5,34 @@
   "topicTitle": "Expression for equilibrium constant and its importance",
   "relevance": 100,
   "notes": [
-    "**Writing $K_c$:** product concentrations raised to stoichiometric powers divided by reactant concentrations raised to stoichiometric powers. Pure solids and liquids are omitted.",
-    "**Predicting direction:** reaction quotient $Q_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$ using initial concentrations. If $Q_c < K_c$, reaction proceeds forward. If $Q_c > K_c$, reaction proceeds backward. If equal, system is at equilibrium.",
-    "**Importance:** $K_c$ tells you the extent of reaction at equilibrium, whether a reaction is feasible, and how conditions affect the equilibrium position.",
-    "**Relationship to $\\Delta G$:** $\\Delta G = -RT\\ln K$. A large positive $K$ corresponds to large negative $\\Delta G$, meaning the reaction is spontaneous."
+    "**Writing $K_c$ correctly:** For $aA + bB \\rightleftharpoons cC + dD$, $K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$. Only aqueous and gaseous species are included. Pure solids and liquids are excluded.",
+    "**Predicting the direction of reaction using $Q_c$:** The reaction quotient $Q_c$ has the same form as $K_c$ but uses initial (not equilibrium) concentrations. Compare $Q_c$ to $K_c$: if $Q_c < K_c$, the reaction proceeds forward (toward products); if $Q_c > K_c$, it proceeds backward (toward reactants); if $Q_c = K_c$, the system is at equilibrium.",
+    "**Example of $Q_c$ prediction:** For $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$, suppose at some instant $[\\text{N}_2] = 0.5\\;\\text{M}$, $[\\text{H}_2] = 0.2\\;\\text{M}$, $[\\text{NH}_3] = 0.8\\;\\text{M}$, and $K_c = 0.10$. Then $Q_c = \\frac{(0.8)^2}{(0.5)(0.2)^3} = \\frac{0.64}{0.004} = 160$. Since $Q_c \\gg K_c$, the reaction will proceed backward, consuming $\\text{NH}_3$.",
+    "**Importance of $K_c$ — extent of reaction:** A very large $K_c$ ($>10^3$) means the reaction goes essentially to completion. A very small $K_c$ ($<10^{-3}$) means hardly any reaction occurs. Intermediate values indicate a mixture of reactants and products at equilibrium.",
+    "**Importance of $K_c$ — feasibility:** The sign and magnitude of $\\Delta G° = -RT\\ln K$ indicate whether a reaction is thermodynamically feasible. If $K > 1$, $\\Delta G° < 0$ and the forward reaction is spontaneous under standard conditions.",
+    "**Importance of $K_c$ — calculating unknown concentrations:** If $K_c$ and all but one equilibrium concentration are known, the unknown can be found by rearranging the equilibrium expression.",
+    "**Heterogeneous equilibrium example:** For $\\text{CaCO}_3(s) \\rightleftharpoons \\text{CaO}(s) + \\text{CO}_2(g)$, $K_c = [\\text{CO}_2]$. The equilibrium depends only on the concentration (partial pressure) of $\\text{CO}_2$. Adding more $\\text{CaCO}_3$ or $\\text{CaO}$ has no effect on the equilibrium position.",
+    "**Relationship with Gibbs energy:** $\\Delta G = \\Delta G° + RT\\ln Q$. At equilibrium, $\\Delta G = 0$ and $Q = K$, giving $\\Delta G° = -RT\\ln K$. This is one of the most important equations in chemical thermodynamics.",
+    "**Temperature effect via thermodynamics:** The van 't Hoff equation $\\ln\\frac{K_2}{K_1} = \\frac{\\Delta H°}{R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)$ allows calculation of $K$ at different temperatures if $\\Delta H°$ is known.",
+    "**Multiple equilibria:** When reactions are added, their equilibrium constants multiply. If reaction (3) = reaction (1) + reaction (2), then $K_3 = K_1 \\times K_2$. This is essential for solving coupled equilibrium problems."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception — \"$Q_c$ and $K_c$ are the same thing.\" — Clarification: They have the same mathematical form, but $Q_c$ uses current (any-time) concentrations while $K_c$ uses only equilibrium concentrations. Comparing them tells you which direction the reaction will shift.",
+    "Misconception — \"If $K_c$ is large, the reaction is fast.\" — Clarification: $K_c$ indicates the position of equilibrium, not the rate. A reaction with a huge $K_c$ can be kinetically very slow (e.g., $2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}$ has a large $K_c$ but requires a spark to proceed).",
+    "Misconception — \"The equilibrium constant expression always includes every substance in the equation.\" — Clarification: Pure solids, pure liquids, and solvents (when in large excess) are omitted because their activity is 1.",
+    "Misconception — \"$K_c$ changes when you change the initial concentrations.\" — Clarification: $K_c$ is constant at a given temperature regardless of initial amounts. Changing concentrations changes $Q_c$ and the position of equilibrium, but $K_c$ itself is unchanged."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "At 500 K, $K_c = 0.080$ for $\\text{PCl}_5(g) \\rightleftharpoons \\text{PCl}_3(g) + \\text{Cl}_2(g)$. If 0.10 mol of $\\text{PCl}_5$ is placed in a 2.0 L flask, calculate the equilibrium concentrations. Solution: Initial $[\\text{PCl}_5] = 0.050\\;\\text{M}$. ICE: $0.050-x$, $x$, $x$. $K_c = \\frac{x^2}{0.050-x} = 0.080$. $x^2 = 0.0040 - 0.080x$, $x^2 + 0.080x - 0.0040 = 0$. Using quadratic formula: $x = \\frac{-0.080 + \\sqrt{0.0064 + 0.0160}}{2} = \\frac{-0.080 + 0.150}{2} = 0.035\\;\\text{M}$. So $[\\text{PCl}_5] = 0.015\\;\\text{M}$, $[\\text{PCl}_3] = [\\text{Cl}_2] = 0.035\\;\\text{M}$.",
+    "For the reaction $\\text{CO}(g) + \\text{H}_2\\text{O}(g) \\rightleftharpoons \\text{CO}_2(g) + \\text{H}_2(g)$ at 900 K, $K_c = 0.64$. In a 5.0 L vessel, 0.20 mol each of CO and $\\text{H}_2\\text{O}$ are mixed. Determine the direction of reaction and equilibrium concentrations. Solution: Initial concentrations: $[\\text{CO}] = [\\text{H}_2\\text{O}] = 0.040\\;\\text{M}$, $Q_c = 0 < K_c$, so reaction proceeds forward. ICE: $0.040-x$, $0.040-x$, $x$, $x$. $K_c = \\frac{x^2}{(0.040-x)^2} = 0.64$. Taking square root: $\\frac{x}{0.040-x} = 0.8$, so $x = 0.032 - 0.8x$, $1.8x = 0.032$, $x = 0.0178\\;\\text{M}$. Equilibrium: $[\\text{CO}] = [\\text{H}_2\\text{O}] = 0.022\\;\\text{M}$, $[\\text{CO}_2] = [\\text{H}_2] = 0.018\\;\\text{M}$.",
+    "Calculate $\\Delta G°$ at 298 K for a reaction with $K_c = 2.5 \\times 10^{-5}$. Is the reaction spontaneous under standard conditions? Solution: $\\Delta G° = -RT\\ln K = -(8.314)(298)\\ln(2.5 \\times 10^{-5}) = -(2478)(-10.59) = +26{,}200\\;\\text{J/mol} = +26.2\\;\\text{kJ/mol}$. Since $\\Delta G° > 0$, the reaction is non-spontaneous under standard conditions."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The equilibrium constant is a dimensionless quantity when activities are used, but in introductory chemistry it is often reported with concentration or pressure units depending on $\\Delta n$.",
+    "The connection $\\Delta G° = -RT\\ln K$ unifies chemical equilibrium with thermodynamics, allowing prediction of equilibrium positions from tabulated thermodynamic data.",
+    "Equilibrium constants for sequential reactions multiply: if A $\\rightleftharpoons$ B has $K_1$ and B $\\rightleftharpoons$ C has $K_2$, then A $\\rightleftharpoons$ C has $K = K_1 \\times K_2$.",
+    "The equilibrium constant for the reverse reaction is the reciprocal of the forward reaction: $K_{\\text{reverse}} = 1/K_{\\text{forward}}$.",
+    "Biological systems rely on coupled equilibria — an unfavourable reaction ($\\Delta G° > 0$) can be driven by coupling it to a highly favourable one, such as ATP hydrolysis ($\\Delta G° \\approx -30.5\\;\\text{kJ/mol}$)."
   ],
   "animation3D": "chemical-equilibrium",
   "motionGraphics": "chemical-equilibrium"

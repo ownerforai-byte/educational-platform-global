@@ -6,25 +6,36 @@
   "relevance": 100,
   "notes": [
     "**Linear to angular:** $\\omega = v/r$. A point at the rim of a wheel moves faster in linear speed but has the same angular velocity as a point near the centre.",
-    "**Angular to linear:** $v = r\\omega$. If $\\omega$ is constant, linear speed increases with radius â€” which is why the outer edge of a spinning disc has higher speed.",
+    "**Angular to linear:** $v = r\\omega$. If $\\omega$ is constant, linear speed increases with radius — which is why the outer edge of a spinning disc has higher speed.",
     "**Tangential acceleration:** $a_t = r\\alpha$. This is the acceleration tangent to the circle, changing the speed along the path.",
     "**Centripetal acceleration:** $a_c = v^2/r = r\\omega^2$. This is the inward acceleration required to keep the object moving in a circle.",
-    "**Total acceleration:** when both speed and direction change, $\\vec{a} = \\vec{a}_t + \\vec{a}_c$. The two components are perpendicular."
+    "**Total acceleration:** when both speed and direction change, $\\vec{a} = \\vec{a}_t + \\vec{a}_c$. The two components are perpendicular.",
+    "**Direction of $\\vec{v}$:** the linear velocity is always tangential to the circular path. The direction changes continuously even when speed is constant.",
+    "**Instantaneous vs average:** $v = r\\omega$ relates instantaneous values. For average values, $\\bar{v} = r\\bar{\\omega}$ holds only if angular acceleration is constant.",
+    "**Vector form:** $\\vec{v} = \\vec{\\omega} \\times \\vec{r}$. This cross product automatically gives the correct direction (tangential) and magnitude ($r\\omega$).",
+    "**Multiple radii on one body:** all points on a rigid rotating body share the same $\\omega$ and $\\alpha$, but their tangential speed and tangential acceleration differ proportionally to their distance from the axis.",
+    "**Practical example:** a grinding wheel at 3000 RPM with diameter 0.2 m: $\\omega = 3000 \\times 2\\pi/60 = 100\\pi \\approx 314$ rad/s. Rim speed $v = 0.1 \\times 314 = 31.4$ m/s, fast enough to be dangerous."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "All points on a rigid body have the same angular velocity $\\omega$, but points farther from the axis have greater linear speed $v = r\\omega$. The relation $v = r\\omega$ does not mean larger radius means larger $\\omega$.",
+    "Centripetal acceleration $a_c = v^2/r$ depends on $v$ at that radius. Since $v = r\\omega$, substituting gives $a_c = r\\omega^2$, which increases with $r$. Do not confuse with $v^2/r$ appearing to decrease with $r$ — that is for fixed $v$, not fixed $\\omega$.",
+    "Tangential acceleration $a_t = r\\alpha$ changes the speed. Centripetal acceleration $a_c = r\\omega^2$ changes the direction. They are perpendicular and independent — you can have one without the other.",
+    "The formula $\\vec{v} = \\vec{\\omega} \\times \\vec{r}$ is the vector relationship. In one dimension, it simplifies to $v = r\\omega$. But the vector form is essential for 3D problems.",
+    "For a rolling wheel, the velocity of the top is $v + r\\omega$ (which equals $2v$) and the bottom is $v - r\\omega = 0$ (instantaneous rest for rolling without slipping)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A point on a disc of radius 0.1 m is at 5 m/s tangential speed. Find the angular velocity and the centripetal acceleration. Solution: $\\omega = v/r = 5/0.1 = 50$ rad/s. $a_c = v^2/r = 25/0.1 = 250$ m/s$^2$. Alternatively $a_c = r\\omega^2 = 0.1 \\times 2500 = 250$ m/s$^2$.",
+    "A spinning disc has angular acceleration $\\alpha = 10$ rad/s$^2$ and angular velocity $\\omega = 20$ rad/s at a point 0.15 m from the axis. Find the total acceleration. Solution: $a_t = r\\alpha = 0.15 \\times 10 = 1.5$ m/s$^2$. $a_c = r\\omega^2 = 0.15 \\times 400 = 60$ m/s$^2$. $a = \\sqrt{1.5^2 + 60^2} \\approx 60.02$ m/s$^2$. Direction: $\\theta = \\tan^{-1}(1.5/60) = 1.43^{\\circ}$ from the radial direction.",
+    "A merry-go-round rotates at 20 RPM. Two children sit at 1 m and 2 m from the centre. Find their linear speeds and the difference. Solution: $\\omega = 20 \\times 2\\pi/60 = 2\\pi/3$ rad/s. $v_1 = 1 \\times 2\\pi/3 = 2.09$ m/s. $v_2 = 2 \\times 2\\pi/3 = 4.19$ m/s. Difference $= 2.10$ m/s.",
+    "A point 0.4 m from the axis has $\\omega = 15$ rad/s and $\\alpha = 5$ rad/s$^2$. Find the angle between the total acceleration vector and the radius. Solution: $a_t = 2$ m/s$^2$, $a_c = 0.4 \\times 225 = 90$ m/s$^2$. $\\theta = \\tan^{-1}(2/90) = 1.27^{\\circ}$.",
+    "A bicycle wheel of diameter 0.7 m rolls without slipping at 10 m/s. Find the angular velocity. Solution: $r = 0.35$ m. $\\omega = v/r = 10/0.35 = 28.6$ rad/s. RPM $= 28.6 \\times 60/(2\\pi) = 273$ RPM."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "For a rigid body rotating about a fixed axis, every point shares the same angular velocity $\\omega$ and angular acceleration $\\alpha$, regardless of its distance from the axis.",
+    "Linear speed $v = r\\omega$ increases with radius. This is why the tips of helicopter rotor blades can exceed the speed of sound even when the hub rotates relatively slowly.",
+    "Centripetal acceleration $a_c = r\\omega^2$ also increases with radius for a given angular velocity, meaning outer points experience greater centripetal acceleration.",
+    "The vector relation $\\vec{v} = \\vec{\\omega} \\times \\vec{r}$ always gives the tangential velocity direction. The cross product means $\\vec{v}$ is perpendicular to both $\\vec{\\omega}$ and $\\vec{r}$.",
+    "In rolling without slipping, the condition $v = r\\omega$ connects the translational and rotational motions, reducing the degrees of freedom by one."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion"

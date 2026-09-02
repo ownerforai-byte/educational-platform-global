@@ -5,26 +5,36 @@
   "topicTitle": "Conservation of linear momentum",
   "relevance": 100,
   "notes": [
-    "**Law:** in an isolated system with no external forces, the total linear momentum remains constant.",
-    "**Mathematical statement:** $\\sum\\vec{p}_{initial} = \\sum\\vec{p}_{final}$, or $m_1\\vec{u}_1 + m_2\\vec{u}_2 = m_1\\vec{v}_1 + m_2\\vec{v}_2$.",
-    "**Why it is conserved:** Newton's third law gives equal and opposite forces between two bodies. Since $\\vec{F}_{12} = -\\vec{F}_{21}$, the impulses are equal and opposite, so the total momentum change is zero.",
-    "**Collision applications:** in any collision, momentum is always conserved, but kinetic energy is conserved only in elastic collisions.",
-    "**Recoil example:** when a gun fires a bullet forward, the gun recoils backward. The momentum of bullet forward equals momentum of gun backward."
+    "**Law:** in an isolated system with no external forces, the total linear momentum remains constant: $\\sum\\vec{p}_{initial} = \\sum\\vec{p}_{final}$.",
+    "**Mathematical statement:** for a two-body system, $m_1\\vec{u}_1 + m_2\\vec{u}_2 = m_1\\vec{v}_1 + m_2\\vec{v}_2$.",
+    "**Why it is conserved:** Newton's third law gives equal and opposite forces between two bodies ($\\vec{F}_{12} = -\\vec{F}_{21}$). Since impulses are equal and opposite ($\\vec{J}_{12} = -\\vec{J}_{21}$), the total momentum change is zero: $\\Delta\\vec{p}_1 + \\Delta\\vec{p}_2 = 0$.",
+    "**Elastic collision:** both momentum and kinetic energy are conserved. $\\frac{1}{2}m_1 u_1^2 + \\frac{1}{2}m_2 u_2^2 = \\frac{1}{2}m_1 v_1^2 + \\frac{1}{2}m_2 v_2^2$.",
+    "**Inelastic collision:** momentum is conserved but kinetic energy is not. Some KE is converted to heat, sound, or deformation. A perfectly inelastic collision is one where the objects stick together after impact.",
+    "**Collision types:** (1) Elastic: both $p$ and $K$ conserved (e.g., billiard balls, atomic collisions). (2) Inelastic: only $p$ conserved (e.g., car crash). (3) Perfectly inelastic: objects stick together, maximum KE loss consistent with momentum conservation.",
+    "**Explosion:** a special case where initial momentum is zero and the fragments fly apart. $0 = m_1\\vec{v}_1 + m_2\\vec{v}_2 + \\cdots$, so the vector sum of fragment momenta is zero.",
+    "**Recoil example:** when a gun of mass $M$ fires a bullet of mass $m$ with velocity $v$, the gun recoils with velocity $V = -\\frac{mv}{M}$. The momentum of bullet forward equals momentum of gun backward.",
+    "**Center of mass:** in the absence of external forces, the center of mass moves with constant velocity: $\\vec{v}_{cm} = \\frac{\\sum m_i\\vec{v}_i}{\\sum m_i} = \\text{constant}$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Momentum is always conserved in collisions (if no external force), but kinetic energy is conserved ONLY in elastic collisions. In inelastic collisions, KE is lost to heat, sound, and deformation.",
+    "In a perfectly inelastic collision, the objects stick together and move with a common final velocity. This is NOT the same as saying all kinetic energy is lost — some KE always remains (the KE of the combined mass moving together).",
+    "Conservation of momentum applies to the VECTOR sum of momenta. In two-dimensional collisions, you must conserve momentum separately in each direction: $p_x$ and $p_y$ are independently conserved.",
+    "An external force (like friction from the ground) can violate momentum conservation for a subsystem. For example, a ball bouncing on the ground does not conserve momentum because the ground exerts an external impulse.",
+    "The conservation law is symmetric: if object A gains momentum, object B must lose exactly that amount. This is why a rocket in space can accelerate without anything to \"push against\" — it expels mass backward."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 0.5 kg ball moving at 6 m/s collides head-on with a 1 kg ball at rest. If the collision is perfectly inelastic, find the final velocity. Solution: $m_1 u_1 + m_2 u_2 = (m_1 + m_2)v$. $0.5 \\times 6 + 1 \\times 0 = (0.5 + 1)v$. $3 = 1.5v$, so $v = 2$ m/s in the direction of the first ball.",
+    "A 50 g ball moving at 10 m/s strikes a stationary 200 g ball. After the collision, the 50 g ball rebounds at 4 m/s. Find the velocity of the 200 g ball. Is the collision elastic? Solution: $0.05 \\times 10 + 0 = 0.05 \\times (-4) + 0.2 \\times v_2$. $0.5 = -0.2 + 0.2v_2$, so $v_2 = 3.5$ m/s. Initial KE $= \\frac{1}{2}(0.05)(100) = 2.5$ J. Final KE $= \\frac{1}{2}(0.05)(16) + \\frac{1}{2}(0.2)(12.25) = 0.4 + 1.225 = 1.625$ J. KE is not conserved — the collision is inelastic.",
+    "A 2 kg gun fires a 0.02 kg bullet at 400 m/s. Find the recoil velocity of the gun. Solution: Initially at rest, so total momentum is zero. $0 = m_b v_b + M_g V_g$. $V_g = -\\frac{m_b v_b}{M_g} = -\\frac{0.02 \\times 400}{2} = -4$ m/s. The gun recoils at 4 m/s in the opposite direction.",
+    "Two ice skaters (masses 50 kg and 80 kg) push off from each other on frictionless ice. The 50 kg skater moves at 3 m/s. Find the velocity of the 80 kg skater. Solution: $m_1 v_1 + m_2 v_2 = 0$. $50 \\times 3 + 80 \\times v_2 = 0$, so $v_2 = -\\frac{150}{80} = -1.875$ m/s. The 80 kg skater moves at 1.875 m/s in the opposite direction.",
+    "A 1000 kg rocket travelling at 2000 m/s ejects 50 kg of gas at 500 m/s relative to the rocket. Find the final velocity of the rocket. Solution: Using conservation of momentum: $M_i v_i = M_f v_f + m_g v_g$. The gas velocity relative to ground is $v_g = v_f - 500$. So $1000 \\times 2000 = 950 v_f + 50(v_f - 500)$. $2{,}000{,}000 = 950v_f + 50v_f - 25{,}000$. $2{,}025{,}000 = 1000v_f$, so $v_f = 2025$ m/s."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Conservation of momentum is one of the most fundamental laws in physics — it holds even in situations where Newton's laws break down (e.g., at relativistic speeds or in quantum mechanics).",
+    "The conservation of momentum is a consequence of the homogeneity of space (Noether's theorem): because the laws of physics are the same everywhere, momentum must be conserved.",
+    "In particle physics, momentum conservation is used to deduce the properties of invisible particles. The discovery of the neutrino was based on apparent violations of energy and momentum conservation in beta decay.",
+    "A jet engine works on the principle of conservation of momentum — it accelerates air backward, and the reaction pushes the plane forward. No air needs to be \"pushed against\" externally.",
+    "In nuclear fission, the total momentum of the fission fragments and neutrons equals the momentum of the original nucleus. This principle is used in nuclear reactors and weapons."
   ],
   "animation3D": "dynamics",
   "motionGraphics": "dynamics"

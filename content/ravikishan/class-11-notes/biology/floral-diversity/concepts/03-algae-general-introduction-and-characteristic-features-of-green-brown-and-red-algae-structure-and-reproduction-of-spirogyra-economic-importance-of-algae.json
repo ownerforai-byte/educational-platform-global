@@ -1,30 +1,57 @@
 {
-  "title": "Algae â€” Types, Reproduction and Economic Importance",
+  "title": "Algae â€" Types, Reproduction and Economic Importance",
   "unitSlug": "floral-diversity",
   "topicSlug": "algae-general-introduction-characteristic-features-of-green-brown-and-red-algae-structure-and-reproduction-of-spirogyra-economic-importance-of-algae",
   "topicTitle": "Algae: General introduction and characteristic features of green, brown and red algae; structure and reproduction of Spirogyra; economic importance of algae",
   "relevance": 100,
   "notes": [
-    "**General features:** aquatic, photosynthetic, thalloid body (no true roots, stems, leaves), store food as starch or laminarin.",
-    "**Chlorophyceae (green):** chlorophyll a and b dominant, store starch. Examples: Chlamydomonas, Ulothrix, Spirogyra (filamentous, spiral chloroplasts, pyrenoids, conjugation reproduction).",
-    "**Phaeophyceae (brown):** fucoxanthin dominant, store laminarin and mannitol. Complex multicellular, differentiated into holdfast, stipe, blades. Examples: Sargassum, Laminaria.",
-    "**Rhodophyceae (red):** phycoerythrin dominant, store floridean starch. Mostly marine, multicellular, some calcified. Examples: Polysiphonia, Gelidium (agar source).",
-    "**Economic importance:** food (nori, dulse), agar and carrageenan (gelling agents), iodine (Laminaria), fertilizers, oxygen production, biofuel potential."
+    "**General features:** aquatic (freshwater, marine, or terrestrial in moist habitats), photosynthetic, thalloid body (no true roots, stems, leaves), cell wall of cellulose, store food as starch (green), laminarin (brown), or floridean starch (red). Range from unicellular (Chlamydomonas) to massive kelps.",
+    "**Chlorophyceae (green algae):** chlorophyll a and b dominant (with accessory carotenoids), store food as starch. Range from unicellular flagellates (Chlamydomonas) to colonial (Volvox) and filamentous forms (Spirogyra, Ulothrix, Ulva). Freshwater and marine. Cell wall of cellulose.",
+    "**Phaeophyceae (brown algae):** fucoxanthin (brown pigment) dominant, masking chlorophyll; store food as laminarin and mannitol. Mostly marine, multicellular with differentiation into holdfast, stipe, and blades (leaf-like). Largest species: giant kelps (Laminaria, Macrocystis) up to 60 metres. No multicellular reproductive organs (sex organs are single-celled or jacketed).",
+    "**Rhodophyceae (red algae):** phycoerythrin (red pigment) dominant, giving deep-water species their red colour; store floridean starch. Mostly marine (some freshwater). Multicellular, no flagellated cells at any stage. Some are calcified (coralline algae). Includes economically important species: Gelidium and Gracilaria (agar source), Porphyra/Pyropia (nori, sushi wrap).",
+    "**Chlorophyceae vs Phaeophyceae vs Rhodophyceae (summary):** Chlorophyceae have chlorophyll a+b, starch reserve, green colour, cellulose wall. Phaeophyceae have fucoxanthin, laminarin/mannitol, brown colour, cellulose wall (plus algin in some). Rhodophyceae have phycoerythrin, floridean starch, red colour, cellulose wall (plus calcification).",
+    "**Spirogyra — filamentous green alga:** filamentous, unbranched, multicellular. Cells are elongated with a螺旋 (spiral) chloroplast with a highly refractive nucleus called the pyrenoid (starch-storing granule). Cell wall of cellulose. Reproduces asexually by fragmentation; sexually by conjugation (scalariform or lateral).",
+    "**Spirogyra — conjugation reproduction:** (1) Two filaments align side-by-side, forming conjugation tubes. (2) In scalariform conjugation, the tube passes through holes in the septum of adjacent cells. (3) In lateral conjugation, tubes form between adjacent cells of the same filament. (4) Protoplasts of two cells fuse (plasmogamy) forming a zygospore (zygote with thick, spirally threaded wall). (5) Zygospore undergoes meiosis, releasing four haploid cells, and new filaments grow.",
+    "**Spirogyra — key diagnostic features:** (1) spiral chloroplast with pyrenoid (refractive nucleus), (2) conjugation reproduction (not fragmentation only), (3) unbranched filaments, (4) multinucleate at growing tips, (5) found in freshwater ponds and ditches, especially in March–May.",
+    "**Economic importance of algae:** (a) Food: nori (Japanese sushi wrap from Porphyra), dulse (Palmaria), sea lettuce (Ulva), Chlorella and Spirulina (nutritional supplements). (b) Hydrocolloids: agar (from Gelidium/Gracilaria — used in microbiology culture media, food, cosmetics), carrageenan (from Chondrus crispus — used in dairy products), algin (from Laminaria — used in ice cream, textiles). (c) Iodine: Laminaria and Fucus are sources for iodine extraction. (d) Fertilizers: dried seaweed used as organic manure, especially in coastal agriculture. (e) Oxygen production: marine phytoplankton contribute ~50% of global oxygen. (f) Biofuel: algae-derived bioethanol and biodiesel research.",
+    "**Reproduction in algae:** vegetative (fragmentation, tubules, hormogonia in cyanobacteria), asexual (biflagellate zoospores, non-motile spores), and sexual (isogamy — identical gametes, anisogamy — dissimilar gametes, oogamy — large egg + small sperm). Red algae lack flagellated cells entirely.",
+    "**Algae in the food chain:** phytoplankton (microscopic algae) form the base of aquatic food chains. Diatoms (Bacillariophyceae, golden-brown algae) and dinoflagellates are major primary producers in oceans.",
+    "**Important algae genera:** Chlamydomonas (unicellular, biflagellate, contractile vacuole), Volvox (colonial, coenobium of 500-50,000 cells with somatic and reproductive cells), Ulothrix (filamentous, rigid), Ulva (sea lettuce, edible), Sargassum (free-floating, brown, sargassum sea), Fucus (rocky shore, air bladders for buoyancy), Polysiphonia (red alga, polysiphonous — branches within branches).",
+    "**Differences between green, brown, and red algae:** (a) Green algae: fresh/brackish/marine, chlorophyll a+b, starch, cellulose wall, motile zoospores with 2 equal flagella (if present). (b) Brown algae: mostly marine, fucoxanthin, laminarin, cellulose + algin, no flagellated cells in higher forms. (c) Red algae: mostly marine, phycoerythrin, floridean starch, cellulose + agar/carrageenan, no flagellated cells at all stage."
   ],
   "confusion": [
     "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
     "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Spirogyra is NOT a moss — it is a green alga (Chlorophyceae) that reproduces by conjugation, not by spore formation from capsule. Mosses are Bryophytes.",
+    "Pyrenoid is NOT the nucleus — it is a starch-storing granule within the chloroplast that acts as a refractive inclusion, NOT the cell nucleus. The nucleus is a separate, distinct structure.",
+    "Red algae lack flagellated cells at every stage of their life cycle — they are the only major algae group with no motile cells. Brown algae have motile zoospores in lower forms.",
+    "Agar and carrageenan are both hydrocolloids from red algae, but agar is extracted from Gelidium/Gracilaria and used in culture media, while carrageenan is from Chondrus crispus and used in food/dairy.",
+    "Algae are NOT plants — they lack true roots, stems, leaves, and vascular tissue. They are thalloid. Some students incorrectly call algae 'simple plants'.",
+    "Volvox is NOT a bacterium — it is a colonial green alga (Chlorophyceae). Its colonies are eukaryotic with differentiated reproductive (gonidia) and somatic cells.",
+    "Fucoxanthin is the brown pigment in brown algae — it masks chlorophyll, giving the brown colour. Do not confuse fucoxanthin with phycoerythrin (red pigment in red algae)."
   ],
   "practice": [
     "Solve one basic problem using the key formula from this topic.",
     "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Apply this concept to a real-world situation and explain each step.",
+    "**Q1:** What are the diagnostic features of Spirogyra? *Ans:* (1) Filamentous, unbranched green alga, (2) spiral chloroplast with pyrenoid (refractive nucleus/starch granule), (3) reproduces sexually by conjugation, (4) cell wall of cellulose, (5) found in freshwater ponds, (6) multinucleate at growing tips.",
+    "**Q2:** Differentiate between scalariform and lateral conjugation in Spirogyra. *Ans:* Scalariform conjugation occurs between two filaments aligned side-by-side, where conjugation tubes pass through septum pores of adjacent cells. Lateral conjugation occurs between adjacent cells of the same filament, where tubes form on one side.",
+    "**Q3:** Name the brown pigment in brown algae and the red pigment in red algae. What are their functions? *Ans:* Fucoxanthin is the brown pigment in Phaeophyceae (masks chlorophyll, aids light absorption); phycoerythrin is the red pigment in Rhodophyceae (extends the range of light wavelengths for photosynthesis in deep water).",
+    "**Q4:** What is the economic importance of agar? Name the source organisms. *Ans:* Agar is a polysaccharide used as a solidifying agent in microbiological culture media, in food (jellies, desserts), and in cosmetics. It is extracted from red algae: Gelidium and Gracilaria.",
+    "**Q5:** Differentiate between Chlamydomonas and Volvox. *Ans:* Chlamydomonas is unicellular with two flagella, contractile vacuole; Volvox is a colonial coenobium of 500–50,000 cells with differentiated somatic cells and reproductive cells (gonidia). Both are green algae (Chlorophyceae).",
+    "**Q6:** Why are red algae mostly found in deeper water? *Ans:* Phycoerythrin (the dominant pigment) absorbs blue-green light, which penetrates deeper into water than red light. This adaptation allows red algae to photosynthesize at greater depths than green or brown algae."
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
     "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Always check units and dimensions when applying this concept.",
+    "Marine phytoplankton (including diatoms and dinoflagellates) produce an estimated 50–80% of the Earth's atmospheric oxygen — more than all terrestrial forests combined.",
+    "The Great Atlantic Sargassum Belt is a massive accumulation of brown algae (Sargassum) stretching over 8,000 km across the Atlantic Ocean — visible from space.",
+    "Japanese nori (edible seaweed from red algae Porphyra/Pyropia) is harvested from nets suspended in the ocean — a practice dating back over 300 years.",
+    "Ulva (sea lettuce) can double its biomass in under 24 hours, making it one of the fastest-growing organisms on Earth and a promising biofuel feedstock.",
+    "Agar was first used as a microbiological medium by Robert Koch in 1882, revolutionizing bacteriology because bacteria could not digest it (unlike gelatin).",
+    "Coralline red algae deposit calcium carbonate in their cell walls, contributing significantly to coral reef formation and ocean floor sediments."
   ],
   "animation3D": "floral-diversity",
   "motionGraphics": "floral-diversity"

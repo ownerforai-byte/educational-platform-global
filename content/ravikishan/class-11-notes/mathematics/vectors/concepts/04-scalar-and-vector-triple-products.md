@@ -1,0 +1,63 @@
+{
+  "title": "Scalar and Vector Triple Products",
+  "unitSlug": "vectors",
+  "topicSlug": "scalar-and-vector-triple-products",
+  "topicTitle": "Scalar and Vector Triple Products",
+  "relevance": 92,
+  "notes": [
+    "<h2>Scalar Triple Product</h2>",
+    "<p>The scalar triple product of three vectors <b>a</b>, <b>b</b>, and <b>c</b> is defined as:</p>",
+    "<p><b>a</b> &middot; (<b>b</b> &times; <b>c</b>)</p>",
+    "<p>This is a scalar (real number) equal to the signed volume of the parallelepiped formed by the three vectors.</p>",
+    "<p><b>Determinant form:</b> If <b>a</b> = a<sub>1</sub><b>i</b> + a<sub>2</sub><b>j</b> + a<sub>3</sub><b>k</b>, etc., then:</p>",
+    "<p><b>a</b> &middot; (<b>b</b> &times; <b>c</b>) = | a<sub>1</sub> &nbsp; a<sub>2</sub> &nbsp; a<sub>3</sub> |</p>",
+    "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| b<sub>1</sub> &nbsp; b<sub>2</sub> &nbsp; b<sub>3</sub> |</p>",
+    "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| c<sub>1</sub> &nbsp; c<sub>2</sub> &nbsp; c<sub>3</sub> |</p>",
+    "<h2>Cyclic Properties</h2>",
+    "<p><b>a</b> &middot; (<b>b</b> &times; <b>c</b>) = <b>b</b> &middot; (<b>c</b> &times; <b>a</b>) = <b>c</b> &middot; (<b>a</b> &times; <b>b</b>)</p>",
+    "<p>This cyclic property means that cycling the order of the three vectors does not change the scalar triple product.</p>",
+    "<p><b>Anti-cyclic property:</b> Swapping any two vectors changes the sign:</p>",
+    "<p><b>a</b> &middot; (<b>c</b> &times; <b>b</b>) = −<b>a</b> &middot; (<b>b</b> &times; <b>c</b>)</p>",
+    "<h2>Geometric Interpretation</h2>",
+    "<p><b>Volume of parallelepiped:</b> V = |<b>a</b> &middot; (<b>b</b> &times; <b>c</b>)|</p>",
+    "<p><b>Volume of tetrahedron:</b> V = (1/6)|<b>a</b> &middot; (<b>b</b> &times; <b>c</b>)|</p>",
+    "<p><b>Coplanarity condition:</b> Three vectors are coplanar (lie in the same plane) if and only if their scalar triple product is zero: <b>a</b> &middot; (<b>b</b> &times; <b>c</b>) = 0.</p>",
+    "<h2>Vector Triple Product</h2>",
+    "<p>The vector triple product is defined as:</p>",
+    "<p><b>a</b> &times; (<b>b</b> &times; <b>c</b>)</p>",
+    "<p><b>Expansion formula (BAC-CAB rule):</b></p>",
+    "<p><b>a</b> &times; (<b>b</b> &times; <b>c</b>) = (<b>a</b> &middot; <b>c</b>)<b>b</b> − (<b>a</b> &middot; <b>b</b>)<b>c</b></p>",
+    "<p><b>Mnemonic (BAC-CAB):</b> Remember as 'BAC minus CAB' — the order of vectors in the dot products is B then A then C, minus C then A then B.</p>",
+    "<p>Similarly: (<b>a</b> &times; <b>b</b>) &times; <b>c</b> = (<b>a</b> &middot; <b>c</b>)<b>b</b> − (<b>b</b> &middot; <b>c</b>)<b>a</b></p>",
+    "<h2>Key Identities</h2>",
+    "<p><b>Scalar triple product of parallel vectors:</b> If any two of <b>a</b>, <b>b</b>, <b>c</b> are parallel, the scalar triple product is 0.</p>",
+    "<p><b>Vector triple product of collinear vectors:</b> If <b>b</b> and <b>c</b> are parallel, then <b>b</b> &times; <b>c</b> = <b>0</b>, so <b>a</b> &times; (<b>b</b> &times; <b>c</b>) = <b>a</b> &times; <b>0</b> = <b>0</b>.</p>",
+    "<p><b>Jacobi's identity:</b> <b>a</b> &times; (<b>b</b> &times; <b>c</b>) + <b>b</b> &times; (<b>c</b> &times; <b>a</b>) + <b>c</b> &times; (<b>a</b> &times; <b>b</b>) = <b>0</b></p>",
+    "<h2>Applications</h2>",
+    "<p><b>Volume of tetrahedron:</b> If OABC is a tetrahedron with position vectors <b>a</b>, <b>b</b>, <b>c</b> for A, B, C respectively, then V = (1/6)|<b>a</b> &middot; (<b>b</b> &times; <b>c</b>)|.</p>",
+    "<p><b>Checking coplanarity:</b> Three points with position vectors <b>a</b>, <b>b</b>, <b>c</b> and a fourth point <b>d</b> are coplanar if (<b>b</b> − <b>a</b>) &middot; ((<b>c</b> − <b>a</b>) &times; (<b>d</b> − <b>a</b>)) = 0.</p>",
+    "<p><b>Resolution of vectors:</b> The vector triple product formula is used to resolve a vector into components parallel and perpendicular to a given direction.</p>"
+  ],
+  "confusion": [
+    "The BAC-CAB rule: <b>a</b> &times; (<b>b</b> &times; <b>c</b>) = (<b>a</b> &middot; <b>c</b>)<b>b</b> − (<b>a</b> &middot; <b>b</b>)<b>c</b>. Do NOT reverse the terms — it is BAC minus CAB, not ABC minus ACB.",
+    "The vector triple product <b>a</b> &times; (<b>b</b> &times; <b>c</b>) is NOT equal to (<b>a</b> &times; <b>b</b>) &times; <b>c</b>. The cross product is not associative. These two expressions are different vectors.",
+    "If <b>a</b> &middot; (<b>b</b> &times; <b>c</b>) = 0, the three vectors are coplanar (volume is zero), NOT that one of the vectors is zero.",
+    "The scalar triple product <b>a</b> &middot; (<b>b</b> &times; <b>c</b>) can be negative, but the volume is the absolute value: V = |<b>a</b> &middot; (<b>b</b> &times; <b>c</b>)|.",
+    "Cyclic permutation preserves the sign: <b>a</b> &middot; (<b>b</b> &times; <b>c</b>) = <b>b</b> &middot; (<b>c</b> &times; <b>a</b>). But swapping two vectors flips the sign: <b>a</b> &middot; (<b>c</b> &times; <b>b</b>) = −<b>a</b> &middot; (<b>b</b> &times; <b>c</b>)."
+  ],
+  "practice": [
+    "Find the volume of the tetrahedron with vertices at O(0,0,0), A(1,2,3), B(3,−1,2), and C(2,3,1).",
+    "Show that the vectors <b>a</b> = <b>i</b> − <b>j</b> + <b>k</b>, <b>b</b> = 2<b>i</b> + <b>j</b> − <b>k</b>, and <b>c</b> = 3<b>i</b> − <b>k</b> are coplanar.",
+    "Simplify: <b>a</b> &times; (<b>b</b> &times; <b>c</b>) + <b>b</b> &times; (<b>c</b> &times; <b>a</b>) + <b>c</b> &times; (<b>a</b> &times; <b>b</b>)",
+    "If <b>a</b> = <b>i</b> + <b>j</b>, <b>b</b> = <b>j</b> + <b>k</b>, and <b>c</b> = <b>k</b> + <b>i</b>, find <b>a</b> &middot; (<b>b</b> &times; <b>c</b>).",
+    "Find <b>a</b> &times; (<b>b</b> &times; <b>c</b>) for <b>a</b> = <b>i</b> − 2<b>j</b> + <b>k</b>, <b>b</b> = 2<b>i</b> + <b>j</b> − <b>k</b>, <b>c</b> = <b>i</b> + 3<b>j</b> − <b>k</b>."
+  ],
+  "universalFacts": [
+    "The scalar triple product <b>a</b> &middot; (<b>b</b> &times; <b>c</b>) equals the determinant of the 3&times;3 matrix formed by the components of the three vectors.",
+    "The vector triple product BAC-CAB rule is one of the most frequently used identities in vector calculus and physics.",
+    "Three vectors are linearly dependent if and only if their scalar triple product is zero — this is the algebraic version of coplanarity.",
+    "Jacobi's identity <b>a</b> &times; (<b>b</b> &times; <b>c</b>) + <b>b</b> &times; (<b>c</b> &times; <b>a</b>) + <b>c</b> &times; (<b>a</b> &times; <b>b</b>) = 0 is fundamental in Lie algebra theory."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
+}

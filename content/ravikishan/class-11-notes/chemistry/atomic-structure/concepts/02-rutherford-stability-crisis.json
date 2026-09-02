@@ -1,28 +1,34 @@
 {
-  "title": "Rutherford's Atomic Model â€” The Stability Crisis (Flaw)",
+  "title": "Rutherford's Atomic Model — The Stability Crisis (Flaw)",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
   "relevance": 87,
   "notes": [
-    "According to classical electromagnetic theory, any accelerating charged particle â€” such as an electron moving in a circular orbit â€” must continuously radiate energy",
-    "If the electron continuously loses energy, it should spiral inward and eventually collapse into the nucleus",
-    "Rutherford's model gave no explanation for why atoms are actually stable and this collapse does not happen â€” this is the model's central defect"
+    "**Classical electromagnetic theory (Maxwell):** any accelerating charged particle must continuously emit electromagnetic radiation. Since a circularly orbiting electron is continuously accelerating (changing direction), it should radiate energy.",
+    "**Energy loss and spiral collapse:** as the electron radiates energy, its orbital radius decreases ($r \\propto 1/E$), causing it to spiral inward faster and faster, eventually colliding with the nucleus. Estimated collapse time: about $10^{-11}$ seconds.",
+    "**Instability contradiction:** if Rutherford's model predicted atomic collapse in $\\sim 10^{-11}$ s, then all matter should be unstable — yet atoms are demonstrably stable. This is the central crisis of the Rutherford model.",
+    "**Spiral trajectory spectral problem:** as the electron spirals inward, it emits radiation of continuously changing frequency (not discrete lines). This would produce a continuous spectrum, contradicting the experimentally observed line spectra of atoms.",
+    "**Classical theory predicts no line spectra:** the observed sharp, discrete spectral lines of hydrogen (and other elements) have no explanation within classical electrodynamics applied to Rutherford's orbiting electrons.",
+    "**This crisis motivated Bohr (1913)** to incorporate Planck's quantum theory ($E = h\\nu$) into the atomic model, postulating that electrons exist in fixed non-radiating orbits and only emit/absorb energy during transitions between orbits.",
+    "**Real-world implication:** the Rutherford model works well for predicting nuclear scattering experiments but completely fails to explain atomic stability and spectral lines — problems that required quantum mechanics to resolve."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Rutherford's model is completely wrong and useless. — Correction: The nuclear model correctly describes atomic size, nuclear charge, and is foundational for nuclear physics. Its failure is specifically in explaining electron behaviour and atomic stability, which needed quantum theory.",
+    "Misconception: The electron crashes into the nucleus because it is attracted to the positive charge. — Correction: While the electrostatic attraction provides centripetal force, it is the radiation of energy by the accelerating electron (per classical electrodynamics) that would cause it to spiral inward, not a simple gravitational-style collapse.",
+    "Misconception: Bohr completely rejected Rutherford's model. — Correction: Bohr built directly on Rutherford's nuclear model, keeping the nucleus but replacing classical orbit mechanics with quantized orbits to solve the stability problem.",
+    "Misconception: The stability crisis only applies to atoms. — Correction: The same classical prediction applies to any accelerating charged particle. The problem is fundamental to classical electrodynamics and is resolved differently in quantum electrodynamics (QED)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Estimate the time for an electron in the first Bohr orbit of hydrogen to spiral into the nucleus if it radiated energy classically. Given that the electron loses about $8.2 \\times 10^{-8}$ W of power, the initial orbital energy is $-13.6$ eV. Solution: Time $\\approx E/P = 13.6 \\times 1.6 \\times 10^{-19}/8.2 \\times 10^{-8} \\approx 2.6 \\times 10^{-11}$ s — extraordinarily fast.",
+    "Classical electrodynamics predicts that a spiralling electron should emit light of continuously changing wavelength. Explain why this contradicts the experimentally observed spectrum of hydrogen gas. Solution: Hydrogen gas emits light at specific discrete wavelengths (e.g., 656.3 nm, 486.1 nm, 434.0 nm), forming sharp line spectra. A continuously changing frequency would produce a smooth rainbow (continuous spectrum) instead of discrete lines.",
+    "A student claims that according to the Rutherford model, if the electron stops radiating, the atom becomes stable. Explain why this is incorrect. Solution: Even without radiation, a classical orbiting electron would not be in a stable configuration because it still experiences the attractive Coulomb force. Without quantization, there is no reason for the electron to maintain a fixed orbit — any perturbation would change its energy, leading to either escape or collapse. The stability requires quantized orbits, not just zero radiation."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The predicted time for a classical orbiting electron to spiral into the nucleus is approximately $10^{-11}$ seconds. Yet atoms have existed for billions of years, proving classical electrodynamics alone cannot describe atomic-scale behaviour.",
+    "The stability crisis of the Rutherford model was one of the key motivations for the development of quantum mechanics, one of the most transformative scientific revolutions in history.",
+    "Maxwell's classical electromagnetic theory, which successfully describes radio waves, light, and all electromagnetic phenomena at the macroscopic scale, fails spectacularly at the atomic scale — a fact that drove early 20th-century physics.",
+    "Bohr resolved this crisis in 1913 by postulating that electrons occupy fixed, non-radiating energy levels, a conceptual breakthrough that bridged classical physics and the emerging quantum theory."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

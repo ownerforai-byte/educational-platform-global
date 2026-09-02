@@ -1,33 +1,43 @@
 {
-  "title": "The Neutron â€” Discovery & Fundamental Particle Characteristics",
+  "title": "The Neutron — Discovery & Fundamental Particle Characteristics",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
   "relevance": 77,
   "notes": [
-    "**Context of discovery:** the discovery of electrons and protons was followed by neutrons; the presence of a third type of sub-atomic particle is justified by the fact that atomic mass is not equal to the total mass of the protons present in an atom â€” it is much higher, as the mass of the electron is negligible.",
+    "**Context of discovery:** the discovery of electrons and protons was followed by neutrons; the presence of a third type of sub-atomic particle is justified by the fact that atomic mass is not equal to the total mass of the protons present in an atom — it is much higher, as the mass of the electron is negligible.",
     "**Discovery (1932):** this problem was solved by Sir James Chadwick by discovering the presence of neutral particles in an atom.",
-    "**Experiment:** he bombarded Î±-particles on a thin sheet of Beryllium and observed the emission of highly penetrating particles which were neutral.",
+    "**Experiment:** he bombarded α-particles on a thin sheet of Beryllium and observed the emission of highly penetrating particles which were neutral.",
     "**Naming:** Chadwick named the neutral particles neutrons.",
-    "**Mass:** neutrons possess a mass of 1.675 Ã— 10â»Â²â´ g, which is slightly greater than that of protons.",
-    "**Nuclear reaction:** the nuclear reaction used to produce neutrons between Î±-ray and Beryllium is: â‚‚Heâ´ + â‚„Beâ¹ â†’ â‚†CÂ¹Â² + â‚€nÂ¹ (neutron).",
-    "**Fundamental particle summary:** atoms possess mainly three fundamental sub-atomic particles â€” electrons, protons, and neutrons. The protons and neutrons are present in the nucleus of an atom and are called nucleons; the electrons revolve around the nucleus in different orbits or shells.",
-    "**Characteristics table:** Electron (eâ»): mass 9.1 Ã— 10â»Â²â¸ g (0.00055 amu), charge -1.6 Ã— 10â»Â¹â¹ C (-4.803 Ã— 10â»Â¹â° esu), discovered by J.J. Thomson in 1897. Proton (pâº): mass 1.672 Ã— 10â»Â²â´ g (1.00732 amu), charge +1.6 Ã— 10â»Â¹â¹ C (+4.803 Ã— 10â»Â¹â° esu), discovered by E. Goldstein in 1886. Neutron (nâ°): mass 1.675 Ã— 10â»Â²â´ g (1.00871 amu), charge 0, discovered by James Chadwick in 1932."
+    "**Mass:** neutrons possess a mass of 1.675 × 10⁻²⁴ g, which is slightly greater than that of protons.",
+    "**Nuclear reaction:** the nuclear reaction used to produce neutrons between α-ray and Beryllium is: ⁴₂He + ⁹₄Be → ¹²₆C + ¹₀n (neutron).",
+    "**Fundamental particle summary:** atoms possess mainly three fundamental sub-atomic particles — electrons, protons, and neutrons. The protons and neutrons are present in the nucleus of an atom and are called nucleons; the electrons revolve around the nucleus in different orbits or shells.",
+    "**Characteristics table:** Electron (e⁻): mass 9.1 × 10⁻²⁸ g (0.00055 amu), charge −1.6 × 10⁻¹⁹ C (−4.803 × 10⁻¹⁰ esu), discovered by J.J. Thomson in 1897. Proton (p⁺): mass 1.672 × 10⁻²⁴ g (1.00732 amu), charge +1.6 × 10⁻¹⁹ C (+4.803 × 10⁻¹⁰ esu), discovered by E. Goldstein in 1886. Neutron (n⁰): mass 1.675 × 10⁻²⁴ g (1.00871 amu), charge 0, discovered by James Chadwick in 1932.",
+    "**Neutron charge neutrality:** the neutron has exactly zero net electric charge, making it highly penetrating — it is not deflected by electric or magnetic fields and does not ionize atoms directly, unlike α or β particles.",
+    "**Neutron decay:** free neutrons are unstable and undergo beta decay with a half-life of ~880 seconds: n⁰ → p⁺ + e⁻ + ν̄ₑ (antineutrino). Inside stable nuclei, neutrons are stabilized by the strong nuclear force.",
+    "**Chadwick's method — elastic collisions:** Chadwick measured the mass of the neutron by observing its elastic collisions with light nuclei (paraffin wax, rich in hydrogen). The recoil protons' energy and angle allowed calculation of the neutron mass, confirming mₙ ≈ mₚ.",
+    "**Nuclear composition notation:** the standard notation ⁴²He means mass number A = 4 (superscript), atomic number Z = 2 (subscript). For the neutron: ¹₀n (A = 1, Z = 0).",
+    "**Nucleon concept:** protons and neutrons are collectively called nucleons. The total number of nucleons in a nucleus is the mass number A = Z + N. The strong nuclear force binds nucleons together, overcoming proton-proton electrostatic repulsion at short range (~1–3 fm).",
+    "**Real-world applications:** neutrons are used in nuclear reactors (fission chain reactions), neutron activation analysis (identifying elements by their neutron capture products), neutron diffraction (determining crystal structures), and medical neutron therapy (treating certain cancers).",
+    "**Quark structure:** like the proton, the neutron is a composite particle made of three quarks — one up quark and two down quarks (udd). The slight mass difference mₙ > mₚ arises from quark mass differences and electromagnetic self-energy."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: The neutron is a fundamental particle like the electron. Correction — the neutron is a composite baryon made of three quarks (udd), just as the proton is made of three quarks (uud). Only leptons (electron, muon, tau, neutrinos) and quarks are truly fundamental in the Standard Model.",
+    "Misconception: Neutrons have no mass because they have no charge. Correction — mass and charge are independent properties. The neutron's mass (1.675 × 10⁻²⁴ g) is slightly greater than the proton's (1.672 × 10⁻²⁴ g), even though its charge is zero.",
+    "Misconception: Chadwick's experiment used alpha particles directly on beryllium to 'knock out' neutrons. Correction — the alpha particles induce a nuclear reaction (⁴₂He + ⁹₄Be → ¹²₆C + ¹₀n) that *produces* neutrons; the neutrons are not pre-existing in the beryllium. The reaction converts an alpha particle and Be-9 into C-12 and a neutron.",
+    "Misconception: Because neutrons are neutral, they don't interact with matter. Correction — neutrons interact via the strong nuclear force with atomic nuclei. They scatter elastically off nuclei (useful for neutron diffraction) and can be captured, causing nuclear transmutation or fission. They do NOT interact via the electromagnetic force (no Coulomb interaction)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the number of neutrons in ²³⁵₉₂U (uranium-235). Solution: A = 235, Z = 92. Number of neutrons N = A − Z = 235 − 92 = 143 neutrons.",
+    "In Chadwick's experiment, a neutron collides elastically with a stationary proton. If the neutron's initial kinetic energy is 1 MeV, what is the maximum kinetic energy the proton can acquire? Solution: For equal masses (mₙ ≈ mₚ), maximum energy transfer in elastic collision is 100% (head-on collision). Maximum proton KE = 1 MeV. This is how Chadwick measured neutron energy.",
+    "Write the balanced nuclear equation for the production of neutrons by the reaction of alpha particles with beryllium-9. Solution: ⁴₂He + ⁹₄Be → ¹²₆C + ¹₀n. Check conservation: A: 4 + 9 = 12 + 1 = 13 ✓. Z: 2 + 4 = 6 + 0 = 6 ✓.",
+    "Why was the neutron discovered so much later (1932) than the electron (1897) and proton (1886)? Solution: Neutrons are neutral — they leave no tracks in cloud chambers, are not deflected by electric/magnetic fields, and do not ionize gas directly. They were invisible to the detection methods of the 1890s-1920s. Chadwick had to use indirect methods (recoil protons from elastic collisions) to detect them."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The neutron was the last of the three 'classical' subatomic particles to be discovered — 35 years after the electron, 46 years after the proton.",
+    "The neutron's mass is 1.00871 amu, slightly greater than the proton's 1.00732 amu. This tiny mass difference (0.14%) is crucial for nuclear stability and the existence of the universe as we know it.",
+    "Free neutrons decay in ~15 minutes (half-life 880 s), but bound neutrons in stable nuclei can be essentially eternal. The binding energy per nucleon in iron-56 is 8.8 MeV, far exceeding the neutron-proton mass difference (1.29 MeV).",
+    "Neutrons are the primary initiators of nuclear fission — a slow neutron can split a ²³⁵U nucleus, releasing energy and more neutrons, enabling a chain reaction."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

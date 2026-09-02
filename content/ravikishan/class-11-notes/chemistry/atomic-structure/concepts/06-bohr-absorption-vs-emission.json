@@ -1,28 +1,37 @@
 {
-  "title": "Bohr's Atomic Model â€” Absorption vs Emission",
+  "title": "Bohr's Atomic Model — Absorption vs Emission",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
   "relevance": 83,
   "notes": [
-    "While an electron stays within a single stationary orbit, it neither gains nor loses energy",
-    "**Jumping up** to an outer (higher-energy) track = absorbing energy",
-    "**Dropping down** to an inner (lower-energy) track = releasing energy as a flash of light (a photon)"
+    "**Emission (photon released):** When an electron drops from a higher energy orbit $E_{n_2}$ to a lower energy orbit $E_{n_1}$ ($n_2 > n_1$), the energy difference is released as a photon: $E_{n_2} - E_{n_1} = h\\nu = \\frac{hc}{\\lambda}$. The emitted light is an **emission spectrum** (bright lines on a dark background).",
+    "**Absorption (photon absorbed):** When an electron absorbs a photon of exactly the right energy $h\\nu = E_{n_2} - E_{n_1}$, it jumps from a lower orbit $n_1$ to a higher orbit $n_2$. The photon disappears from the incident light, creating a dark line in the **absorption spectrum**.",
+    "**Selection rules:** Not all transitions are equally likely. For electric dipole transitions in hydrogen, the selection rule is $\\Delta l = \\pm 1$ (change in orbital angular momentum quantum number). Transitions like $2s \\to 1s$ (with $\\Delta l = 0$) are 'forbidden' — they occur much more weakly through two-photon or magnetic dipole mechanisms.",
+    "**Absorption vs emission spectra are complementary:** In a hydrogen absorption spectrum, only transitions from the ground state ($n=1$) are significant at room temperature (the **Lyman series**). But in an emission spectrum, electrons from excited states can fall to any lower level, so all series (Lyman, Balmer, Paschen, etc.) appear simultaneously.",
+    "**Quantum efficiency:** The probability of a transition is quantified by the Einstein A coefficient ($A_{21}$, spontaneous emission) and B coefficient ($B_{12}$, absorption). These are related by $\\frac{A_{21}}{B_{12}} = \\frac{8\\pi h \\nu^3}{c^3}$.",
+    "**Metastable states:** Some excited states have very long lifetimes (milliseconds to seconds) because the transition to the ground state violates the selection rule. For example, the $2s$ state of hydrogen is metastable (lifetime ~0.1 s) since $2s \\to 1s$ has $\\Delta l = 0$. This is why lasers need specific energy level structures.",
+    "**Stimulated emission (basis of laser):** If an atom in an excited state $E_2$ encounters a photon of energy $h\\nu = E_2 - E_1$, it can be induced to emit an identical photon (same phase, frequency, polarization, direction). This is the principle behind the laser (Light Amplification by Stimulated Emission of Radiation).",
+    "**Energy conservation in both processes:** $\\Delta E = h\\nu$ holds for both absorption and emission. The photon energy exactly matches the energy gap between the two orbits — this is why atomic spectra are discrete and sharp.",
+    "**Real-world example — sodium street lamps:** Sodium atoms emit strongly at 589.0 nm and 589.6 nm (the D-lines, corresponding to the $3p \\to 3s$ transition). These yellow-orange lines dominate the emission spectrum of sodium vapour lamps used in street lighting."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Absorption and emission happen simultaneously in the same atom. — Correction: A single atom either absorbs a photon (jumping up) or emits one (falling down). In a gas, some atoms are absorbing while others are emitting, but at any instant, an individual atom is doing one or the other.",
+    "Misconception: Any photon can be absorbed by an electron to excite it. — Correction: Only photons with energy EXACTLY matching the gap between two allowed energy levels ($h\\nu = E_f - E_i$) can be absorbed. Photons with slightly different energies pass through — this is why absorption spectra have dark lines, not a continuous dark region.",
+    "Misconception: Emission always produces visible light. — Correction: The energy gap determines the photon's wavelength. Large gaps (e.g., $n=2 \\to 1$ in H) produce UV photons (Lyman series). Small gaps (e.g., $n=4 \\to 3$ in H) produce IR photons (Paschen series).",
+    "Misconception: Absorption and emission intensities are always equal. — Correction: At thermal equilibrium, Einstein's coefficients relate the rates, but the observed intensities depend on the population of the energy levels (Boltzmann distribution). At room temperature, nearly all H atoms are in $n=1$, so absorption is only from Lyman series while emission can show all series."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A hydrogen atom in its ground state absorbs a photon of wavelength 121.6 nm. To which energy level is the electron excited? What is the energy of the absorbed photon? Solution: $E = hc/\\lambda = 1240/121.6 = 10.20$ eV. $\\Delta E = 13.6(1 - 1/n^2) = 10.20$ → $1/n^2 = 1 - 0.75 = 0.25$ → $n = 2$. The electron jumps to the first excited state. This is the Lyman-$\\alpha$ line.",
+    "An electron in a hydrogen atom emits a photon of wavelength 486.1 nm. What is the transition? Solution: $E = 1240/486.1 = 2.55$ eV. This must equal $13.6(1/n_f^2 - 1/n_i^2)$. Trying $n_f = 2$: $13.6(1/4 - 1/n_i^2) = 2.55$ → $1/n_i^2 = 0.25 - 0.1875 = 0.0625$ → $n_i = 4$. This is the Balmer-$\\beta$ (H$\\beta$) line.",
+    "Calculate the wavelength of the photon emitted when an electron in H falls from $n=4$ to $n=2$. Solution: $\\frac{1}{\\lambda} = R_H \\left(\\frac{1}{2^2} - \\frac{1}{4^2}\\right) = 1.097 \\times 10^7 \\times \\frac{3}{16} = 2.057 \\times 10^6$ m$^{-1}$. $\\lambda = 486.1$ nm (blue-green, H$\\beta$ line).",
+    "Why does a hot gas glow with emission lines, but cool gas between a white source and a spectroscope shows absorption lines? Solution: In a hot gas, most atoms are excited and emit as they decay. In cool gas in front of a white continuum source, most atoms are in the ground state and absorb specific wavelengths from the background, leaving dark absorption lines at those same wavelengths."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The energy of the photon emitted in a hydrogen transition always equals the energy difference between the two orbits: $\\Delta E = h\\nu$. This is Bohr's frequency condition, directly derived from energy conservation.",
+    "The Lyman series (transitions to $n=1$) lies in the ultraviolet (91–122 nm), the Balmer series (to $n=2$) in the visible (365–656 nm), and the Paschen series (to $n=3$) in the infrared (820–1875 nm).",
+    "The spontaneous emission lifetime of the hydrogen 2p state is about $1.6 \\times 10^{-9}$ seconds, while the 2s metastable state lasts about 0.1 seconds — a factor of 10$^8$ difference due to selection rules.",
+    "Sodium street lamps exploit the strong $3p \\to 3s$ doublet at 589.0/589.6 nm. The narrow yellow emission matches well with human eye sensitivity (photopic vision peak at 555 nm), making them efficient for public lighting."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

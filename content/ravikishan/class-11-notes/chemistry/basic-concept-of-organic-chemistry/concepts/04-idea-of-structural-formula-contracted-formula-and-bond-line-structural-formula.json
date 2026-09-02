@@ -5,26 +5,33 @@
   "topicTitle": "Idea of structural formula, contracted formula and bond line structural formula",
   "relevance": 100,
   "notes": [
-    "**Structural formula:** shows all atoms and all bonds. Complete but verbose: $CH_3-CH_2-CH_2-CH_3$ for butane.",
-    "**Condensed formula:** groups atoms bonded to the same carbon together. $CH_3CH_2CH_2CH_3$.",
-    "**Bond line notation:** carbon atoms are implied at line ends and vertices; hydrogens are omitted except where needed for functional groups. Each vertex represents a carbon with enough hydrogens to make four bonds.",
-    "**Example:** bond line for butane is a simple zigzag of four vertices. For isobutane, a three-carbon chain with a methyl branch at the middle carbon.",
-    "**Functional group priority:** when drawing bond lines, functional groups must be explicit. OH, COOH, $NH_2$ are always shown."
+    "**Molecular formula:** Shows only the number and type of atoms. Example: $C_4H_{10}$ for butane. It does not reveal how atoms are connected — multiple isomers can share the same molecular formula.",
+    "**Complete structural formula:** Shows every atom and every bond explicitly. For propane: all three carbons and eight hydrogens are drawn with single bonds. This is unambiguous but very cluttered for large molecules.",
+    "**Condensed structural formula:** Groups atoms attached to each carbon together without showing individual bonds. Example: butane is written as $CH_3CH_2CH_2CH_3$. Isobutane: $(CH_3)_3CH$. This is compact yet informative about connectivity.",
+    "**Bond-line (skeletal) notation:** Carbon atoms are implied at every vertex and line end. Hydrogens attached to carbons are omitted — each carbon is assumed to have enough hydrogens to complete four bonds. Example: butane is drawn as a zigzag line with three segments (4 vertices).",
+    "**Rules for bond-line notation:** (1) Each vertex and line end = one carbon. (2) Hydrogens on carbons are not drawn. (3) Heteroatoms (O, N, S, halogens) and their hydrogens are shown explicitly. (4) Double and triple bonds are drawn as parallel lines.",
+    "**Example — ethanol:** Structural: $H-CH_2-CH_2-OH$. Condensed: $CH_3CH_2OH$. Bond line: a two-segment zigzag ending with $OH$.",
+    "**Example — acetic acid:** Structural: shows $CH_3-C(=O)-OH$ with all bonds. Condensed: $CH_3COOH$. Bond line: a line with a vertex showing $=O$ and $-OH$ branching off the terminal carbon.",
+    "**Stereochemical implications:** Bond-line notation can show stereochemistry using wedge bonds (coming toward viewer) and dashed bonds (going away). Example: wedge-dash notation shows the tetrahedral arrangement at a chiral carbon center.",
+    "**Advantages of bond-line notation:** (a) Speed of drawing for complex molecules. (b) Clarity — the carbon backbone is immediately visible. (c) Standard convention used in journals, textbooks, and databases worldwide.",
+    "**When condensed formulas are preferred:** For simple molecules and in reaction equations where showing atom composition is important. Example: $CH_3COCH_3$ (acetone) is clearer than drawing the full bond-line when discussing the carbonyl group."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**A vertex in bond-line notation always represents CH₂** — The number of hydrogens depends on how many bonds are drawn to that carbon. A vertex with one double bond and two single bonds has no hydrogens. A vertex with only two bonds drawn has two implicit hydrogens.",
+    "**Molecular formula is the same as structural formula** — A molecular formula like $C_4H_{10}$ gives only the count of atoms, not their arrangement. The structural formula shows connectivity and distinguishes n-butane ($CH_3CH_2CH_2CH_3$) from isobutane ($(CH_3)_3CH$).",
+    "**Bond-line notation omits ALL hydrogens** — Only hydrogens attached to carbon are omitted. Hydrogens on heteroatoms (like $-OH$, $-NH_2$, $-COOH$) must always be drawn explicitly in bond-line notation."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Convert each compound to all three representations (complete structural, condensed, and bond-line): (a) propane, (b) 2-methylpropane, (c) ethanol, (d) propanoic acid.",
+    "Draw the bond-line structure for each compound and identify the number of carbon and hydrogen atoms: (a) pentane, (b) cyclopentane, (c) 2-butene, (d) acetic acid.",
+    "A compound with molecular formula $C_5H_{10}$ can be either an alkene or a cycloalkane. Draw the structural formula for at least three possible isomers and name them."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Bond-line notation is the most widely used representation in organic chemistry worldwide — it reduces drawing time by over 70% compared to complete structural formulas.",
+    "The zigzag pattern in bond-line notation is not arbitrary — it reflects the actual $109.5^\\circ$ bond angles of $sp^3$ hybridized carbon atoms in a realistic molecular geometry.",
+    "Condensed formulas can sometimes be ambiguous: $CH_3OCH_3$ (dimethyl ether) and $C_2H_5OH$ (ethanol) have the same molecular formula but different condensed representations that reveal their structural difference.",
+    "In bond-line notation, if a heteroatom appears without an explicit hydrogen, it is assumed to carry no hydrogen (e.g., the oxygen in an ether $R-O-R$ or a ketone $R-CO-R$).",
+    "Structural formulas are essential for naming organic compounds according to IUPAC nomenclature rules — you must know the connectivity to determine the correct parent chain and substituent positions."
   ],
   "animation3D": "basic-concept-of-organic-chemistry",
   "motionGraphics": "basic-concept-of-organic-chemistry"

@@ -1,7 +1,7 @@
 {
   "title": "Ecology — Concepts and Ecosystems",
   "unitSlug": "ecology",
-  "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions",
+  "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
   "topicTitle": "Ecosystem ecology: concept of ecology, biotic and abiotic factors, species interactions; concept of ecosystem, structural and functional aspects of pond and forest ecosystem",
   "relevance": 100,
   "notes": [
@@ -10,22 +10,40 @@
     "**Abiotic factors:** non-living components — temperature, light, water, soil, pH, nutrients.",
     "**Pond ecosystem:** structural components: water, soil, dissolved oxygen, producers (algae, rooted plants), consumers (fish, insects), decomposers (bacteria, fungi). Functional: energy flow (sun → producers → consumers), nutrient cycling (carbon, nitrogen).",
     "**Forest ecosystem:** structural: trees (canopy, understory, shrub layer, ground layer), soil, climate. Functional: high biodiversity, complex food webs, major carbon sink.",
-    "**Ecological pyramids:** pyramid of number, biomass and energy. Energy pyramid is always upright because energy dissipates at each trophic level."
+    "**Ecological pyramids:** pyramid of number, biomass and energy. Energy pyramid is always upright because energy dissipates at each trophic level.",
+    "**Niches:** fundamental niche is the full range of conditions an organism could theoretically use; realized niche is what it actually uses due to competition and other biotic interactions. No two species can occupy the exact same niche in the same habitat (competitive exclusion principle).",
+    "**Species interactions — competition:** interspecific competition occurs between different species for shared resources (food, space, light). Intraspecific competition occurs within the same species. Competition drives natural selection and can lead to character displacement.",
+    "**Species interactions — predation:** a predator kills and consumes prey. Predation regulates population sizes and drives co-evolution. Prey defenses include camouflage, warning coloration (aposematism), mimicry (Batesian: harmless mimics harmful; Müllerian: both harmful mimic each other), and behavioral adaptations like flocking or burrowing.",
+    "**Species interactions — herbivory:** animals feeding on plants. Plants defend via thorns, tough leaves, secondary metabolites (alkaloids, tannins, terpenes). Herbivory can stimulate plant growth (compensatory growth) at low levels but is damaging at high levels.",
+    "**Species interactions — symbiosis:** close, long-term interactions between species. Mutualism (both benefit: pollinators-flowers, mycorrhizal fungi-plant roots, gut bacteria-humans). Commensalism (one benefits, other unaffected: epiphytic orchids on trees, remora fish on sharks). Parasitism (one benefits at expense of other: tapeworms, ticks, mistletoe).",
+    "**Ecosystem structure:** the living (biotic) and non-living (abiotic) components arranged in a spatial and functional organization. Biotic structure includes species composition, trophic levels, and producer-decomposer balance. Abiotic structure includes climate, soil type, topography, and water availability.",
+    "**Ecosystem function:** the biological, geological, and chemical processes that operate within an ecosystem. Key functions include energy flow (unidirectional, 10% rule), nutrient cycling (biogeochemical cycles), primary production (GPP and NPP), decomposition, and succession.",
+    "**10% rule (Lindeman's efficiency):** only about 10% of energy is transferred from one trophic level to the next. The remaining 90% is lost as heat through respiration, used for metabolism, or passes to decomposers. This limits food chains to 4-5 trophic levels.",
+    "**Biomagnification:** the progressive concentration of toxic substances (e.g., DDT, mercury) in organisms at successively higher trophic levels. Top predators accumulate the highest concentrations, which can cause reproductive failure, immune suppression, and death.",
+    "**Ecosystem services:** benefits humans obtain from ecosystems. Provisioning (food, water, timber, fuel). Regulating (climate regulation, flood control, pollination, disease regulation). Supporting (soil formation, nutrient cycling, primary production). Cultural (recreation, spiritual, aesthetic values)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Ecology is NOT the same as environmentalism. Ecology is the scientific study of organism-environment interactions; environmentalism is a social/political movement to protect nature.",
+    "Abiotic factors are not 'unimportant' — they fundamentally control where organisms can live. Temperature and water availability are often the primary determinants of biome distribution.",
+    "A habitat is where an organism lives (its address); a niche is how it lives (its profession). Two species can share a habitat but not a niche.",
+    "Symbiosis does not always mean mutual benefit. In biology, symbiosis simply means 'living together' and includes mutualism, commensalism, AND parasitism.",
+    "The competitive exclusion principle does not mean competition always eliminates one species. In nature, species often partition resources (different feeding times, different microhabitats) to coexist.",
+    "An ecological pyramid of biomass CAN be inverted (e.g., in aquatic ecosystems where tiny phytoplankton support a larger standing crop of zooplankton). Only the energy pyramid is always upright."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Classify the following interactions as mutualism, commensalism, or parasitism: (a) cleaner fish removing parasites from a larger fish, (b) a tiger stealing a leopard's kill, (c) oxpecker birds eating ticks off a rhinoceros.",
+    "Draw a pond ecosystem diagram labeling all biotic and abiotic components. Identify at least three food chains within it and show where decomposers fit in.",
+    "Explain why food chains rarely exceed 4-5 trophic levels, referencing the 10% rule and energy loss at each level.",
+    "Compare and contrast the structural and functional aspects of a pond ecosystem versus a forest ecosystem. Which has higher biodiversity? Which has faster nutrient cycling?",
+    "Describe how biomagnification of DDT affected bald eagle populations in the mid-20th century. What does this illustrate about ecosystem interconnectedness?",
+    "A student claims that \"decomposers are not part of the food chain.\" Explain why this is incorrect and describe the role of decomposers in ecosystem function."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Every ecosystem, regardless of size or location, requires three functional components: producers (to capture energy), consumers (to transfer energy), and decomposers (to recycle nutrients).",
+    "The Amazon rainforest produces approximately 20% of the world's oxygen and houses roughly 10% of all known species — demonstrating how biodiversity and ecosystem function are intertwined.",
+    "Ecologists use the term 'biome' to describe large-scale communities of organisms defined by climate and dominant vegetation. There are roughly 14 terrestrial biomes and 10 major aquatic biomes on Earth.",
+    "Eugene Odum's 1953 definition of ecology as 'the study of the structure and function of nature' remains one of the most widely cited definitions, emphasizing both organization and process.",
+    "Human activities now alter more than 75% of Earth's land surface and 66% of ocean area, making human ecology — the study of human impacts on ecosystems — one of the most important subfields of modern ecology."
   ],
   "animation3D": "ecology",
   "motionGraphics": "ecology"

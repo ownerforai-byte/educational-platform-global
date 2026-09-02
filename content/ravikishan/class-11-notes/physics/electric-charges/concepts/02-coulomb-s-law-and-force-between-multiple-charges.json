@@ -2,29 +2,43 @@
   "title": "Coulomb's Law and Force Between Multiple Charges",
   "unitSlug": "electric-charges",
   "topicSlug": "coulomb-s-law-and-force-between-multiple-charges",
-  "topicTitle": "Coulomb's law: force between two point charges; force between multiple electric charges",
+  "topicTitle": "Coulomb's law; force between multiple charges",
   "relevance": 100,
   "notes": [
-    "**Coulomb's law:** $\\vec{F}_{12} = k\\frac{q_1 q_2}{r^2}\\hat{r}_{12}$. The force is along the line joining the charges.",
-    "**Vector form:** for multiple charges, the net force on any charge is the vector sum of forces from all other charges: $\\vec{F}_{net} = \\sum \\vec{F}_i$.",
-    "**Superposition principle:** electric forces add vectorially. This is because electric fields from different sources do not interact with each other.",
-    "**Relative strength:** electric force between electron and proton in hydrogen is about $10^{39}$ times stronger than gravitational force between them.",
-    "**Medium effect:** in a medium with permittivity $\\epsilon$, $F = \\frac{1}{4\\pi\\epsilon} \\frac{q_1 q_2}{r^2}$. Water reduces the force by about 80 times compared to air."
+    "**Coulomb's law (scalar form):** the magnitude of the force between two point charges is $F = \\frac{1}{4\\pi\\epsilon_0} \\cdot \\frac{|q_1 q_2|}{r^2}$. The force is attractive if the charges have opposite signs, repulsive if they have the same sign.",
+    "**Coulomb's law (vector form):** $\\vec{F}_{12} = \\frac{1}{4\\pi\\epsilon_0} \\cdot \\frac{q_1 q_2}{r^2}\\hat{r}_{12}$, where $\\hat{r}_{12}$ is the unit vector from charge 1 to charge 2. The negative of this is the force on charge 1 due to charge 2 (Newton's third law).",
+    "**Permittivity constant:** $k = 1/(4\\pi\\epsilon_0) = 8.99 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$. This is also called Coulomb's constant. $\\epsilon_0 = 8.854 \\times 10^{-12}\\,\\text{C}^2/(\\text{N}\\cdot\\text{m}^2)$.",
+    "**Inverse-square dependence:** the force falls off as $1/r^2$. Doubling the distance reduces the force to one-quarter. This is the same dependence as Newton's law of gravitation.",
+    "**Linear superposition of forces:** for $N$ charges, the total force on charge $i$ is $\\vec{F}_i = \\sum_{j \\neq i} \\vec{F}_{ij}$. Each pair interaction is independent, and the vector sum gives the net force.",
+    "**Direction of force:** $\\vec{F}_{12}$ points along the line connecting the two charges, away from charge 2 if both have the same sign (repulsion) and toward charge 2 if they have opposite signs (attraction).",
+    "**Dielectric effect:** in a uniform dielectric medium with relative permittivity $\\kappa$ (also called dielectric constant), the force is reduced: $F = \\frac{1}{4\\pi\\kappa\\epsilon_0} \\cdot \\frac{|q_1 q_2|}{r^2}$. This is because the medium polarizes and partially shields the charges.",
+    "**Coulomb vs Newton:** the electric force is $10^{36}$ times stronger than the gravitational force between two protons. Yet gravity dominates on cosmic scales because matter is electrically neutral.",
+    "**Action at a distance vs field concept:** Coulomb's law was originally stated as action at a distance. Modern physics interprets it as the interaction mediated by the electromagnetic field. A change in one charge propagates to the other at the speed of light, not instantaneously.",
+    "**Limitation of Coulomb's law:** applies only to point charges or spherically symmetric charge distributions. For non-spherical distributions, the calculation requires integration over the charge distribution.",
+    "**Couple vs force:** two equal and opposite forces on a body form a couple if their lines of action are different. The couple produces a torque but no net force.",
+    "**For three charges:** place the third charge, calculate the force from each of the other two independently, then add them as vectors. Always draw a clear free-body diagram with all forces labelled.",
+    "**Stability of three charges:** the only stable configuration of three point charges is when all three are in a line, with the largest charge in the middle and the smaller charges symmetrically placed (Earnshaw's theorem says stable equilibrium under electrostatic forces alone is impossible)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Coulomb's law $F \\propto 1/r^2$ is for the inverse-square force between two charges in vacuum. Do not confuse with the potential energy $U \\propto 1/r$ — the force is the gradient of potential energy, so different distance dependence.",
+    "The direction of force is determined by the signs of both charges. A positive test charge near a positive source charge is repelled (force outward); near a negative source, it's attracted (force inward).",
+    "Adding more charges does not change the pairwise force between any two. Each pair experiences the same force as if the others were absent — the net force is just the vector sum.",
+    "In a medium with dielectric constant $\\kappa$, the force is reduced by a factor of $\\kappa$. This is not a 'shielding' in the usual sense — it's the medium's polarization creating an opposing field.",
+    "The unit vector $\\hat{r}$ in Coulomb's law is from the source charge toward the point where the field is being calculated. Getting the direction wrong is the most common error in vector force calculations."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two charges $q_1 = +4\\,\\mu$C and $q_2 = +6\\,\\mu$C are placed at vertices of an equilateral triangle of side 10 cm. Find the magnitude of the force on a third charge $q_3 = -2\\,\\mu$C at the third vertex. Solution: Force from $q_1$ on $q_3$: $F_1 = 9 \\times 10^9 \\times 4 \\times 10^{-6} \\times 2 \\times 10^{-6} / 0.1^2 = 7.2$ N (attractive). Force from $q_2$ on $q_3$: $F_2 = 9 \\times 10^9 \\times 6 \\times 10^{-6} \\times 2 \\times 10^{-6} / 0.1^2 = 10.8$ N (attractive). Angle between them = 60°. Net force: $F = \\sqrt{F_1^2 + F_2^2 + 2 F_1 F_2 \\cos 60°} = \\sqrt{51.84 + 116.64 + 77.76} = \\sqrt{246.24} = 15.7$ N.",
+    "Three charges of $+1\\,\\mu$C, $-2\\,\\mu$C, and $+3\\,\\mu$C are placed on a line at positions $x = 0$, $x = 0.5$ m, and $x = 1$ m. Find the net force on the middle charge. Solution: Force from $+1\\,\\mu$C (at $x=0$) on $-2\\,\\mu$C (at $x=0.5$): $F_1 = 9 \\times 10^9 \\times 1 \\times 10^{-6} \\times 2 \\times 10^{-6} / 0.5^2 = 0.072$ N (attractive, points toward $+1\\,\\mu$C, i.e., in $-x$ direction). Force from $+3\\,\\mu$C (at $x=1$) on $-2\\,\\mu$C: $F_2 = 9 \\times 10^9 \\times 2 \\times 10^{-6} \\times 3 \\times 10^{-6} / 0.5^2 = 0.216$ N (attractive, points toward $+3\\,\\mu$C, i.e., in $+x$ direction). Net force = $0.216 - 0.072 = 0.144$ N in $+x$ direction.",
+    "Two small identical conducting spheres of mass 10 g each are hung from the same point by insulating strings of length 1 m. Equal charge is given to each, and they repel so that each string makes an angle of 30° with the vertical. Find the charge on each sphere. Solution: At equilibrium, $\\tan 30° = F_e/(mg)$, so $F_e = mg \\tan 30° = 0.01 \\times 9.8 \\times 0.577 = 0.0566$ N. Distance between spheres: $r = 2L\\sin 30° = 1$ m. $F_e = kq^2/r^2 = 0.0566$ gives $q^2 = 0.0566 \\times 1 / (9 \\times 10^9) = 6.29 \\times 10^{-12}$, so $q = 7.93 \\times 10^{-6}\\,\\text{C} \\approx 8\\,\\mu$C.",
+    "Four equal charges $q$ are placed at the corners of a square of side $a$. Find the magnitude and direction of the force on a charge $q$ at one corner due to the other three. Solution: The two adjacent charges each give force $kq^2/a^2$ along the adjacent sides. The diagonal charge gives $kq^2/(2a^2)$ along the diagonal. Net force along diagonal: $F = 2 \\cdot kq^2/a^2 \\cdot \\cos 45° + kq^2/(2a^2) = (\\sqrt{2} + 1/2) kq^2/a^2 \\approx 1.91 kq^2/a^2$, directed along the diagonal outward.",
+    "A charge $q_1 = 2\\,\\mu$C is at the origin, $q_2 = -2\\,\\mu$C is at $(d, 0)$ where $d = 0.1$ m. Find the point on the x-axis where the net electric field is zero. Solution: On the x-axis between the charges, the fields due to $q_1$ and $q_2$ point in opposite directions. At point $x$: $E_1 = kq_1/x^2$ (in $+x$ direction), $E_2 = kq_2/(d-x)^2$ (in $-x$ direction since $q_2$ is negative). Setting them equal: $q_1/x^2 = q_2/(d-x)^2$, but since $|q_1| = |q_2|$, we need $x = d-x$, so $x = d/2 = 0.05$ m. (The midpoint is the only point on the x-axis where the net field is zero.)"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Coulomb's law is one of the most precisely verified laws in physics. Experiments have confirmed the $1/r^2$ dependence to better than 1 part in $10^{16}$.",
+    "The electric force and gravitational force both follow inverse-square laws, but they are fundamentally different. Gravity is always attractive; the electric force can be attractive or repulsive.",
+    "The superposition principle holds exactly for electric forces in classical electromagnetism. In quantum electrodynamics, it holds as a probability amplitude, not as a force.",
+    "The relative strength of the electric and gravitational forces between two protons is $F_e/F_g \\approx 1.24 \\times 10^{36}$. This dimensionless ratio is one of the great unexplained numbers in physics.",
+    "Coulomb's law is named after Charles-Augustin de Coulomb, who measured the force between charges in 1785 using a torsion balance."
   ],
   "animation3D": "electric-charges",
   "motionGraphics": "electric-charges"

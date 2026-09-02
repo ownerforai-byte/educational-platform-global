@@ -8,23 +8,35 @@
     "**Setup:** a mass $m$ attached to a string of length $l$ rotates in a horizontal circle, making a constant angle $\\theta$ with the vertical.",
     "**Forces:** tension $T$ has components $T\\cos\\theta$ upward balancing weight $mg$, and $T\\sin\\theta$ inward providing centripetal force.",
     "**Period:** $T_{period} = 2\\pi\\sqrt{\\frac{l\\cos\\theta}{g}}$. The period depends on the string length, the angle, and gravity.",
-    "**Special case â€” small angles:** when $\\theta$ is small, $\\cos\\theta \\approx 1$, so $T_{period} \\approx 2\\pi\\sqrt{l/g}$, the same as a simple pendulum.",
-    "**Speed:** $v = \\sqrt{gr\\tan\\theta}$, where $r = l\\sin\\theta$ is the radius of the horizontal circle. Faster spin means a larger angle $\\theta$."
+    "**Special case — small angles:** when $\\theta$ is small, $\\cos\\theta \\approx 1$, so $T_{period} \\approx 2\\pi\\sqrt{l/g}$, the same as a simple pendulum.",
+    "**Speed:** $v = \\sqrt{gr\\tan\\theta}$, where $r = l\\sin\\theta$ is the radius of the horizontal circle. Faster spin means a larger angle $\\theta$.",
+    "**Height of the pendulum:** the vertical distance from the suspension point to the mass is $h = l\\cos\\theta$. The period depends only on this height: $T_{period} = 2\\pi\\sqrt{h/g}$.",
+    "**Angular velocity:** $\\omega = \\sqrt{g/(l\\cos\\theta)} = \\sqrt{g/h}$. As the mass spins faster, $\\theta$ increases, $h$ decreases, and the period decreases.",
+    "**Tension:** from $T\\cos\\theta = mg$, we get $T = mg/\\cos\\theta$. As $\\theta$ increases, tension increases without bound. At $\\theta = 90^{\\circ}$, tension would be infinite — physically impossible.",
+    "**Maximum angle limit:** as $\\omega \\to \\infty$, $\\theta \\to 90^{\\circ}$ but never reaches it. The mass rises toward the horizontal but cannot get there because the required tension would be infinite.",
+    "**Analogy with a spinning conical top:** the path swept by the string traces a cone, hence the name. The path on a horizontal plane is circular, but the full trajectory in 3D is the surface of a cone.",
+    "**Relation to simple pendulum:** a conical pendulum with very small $\\theta$ behaves like a simple pendulum of the same length, oscillating back and forth rather than spinning around."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The period of a conical pendulum $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$ is always less than that of a simple pendulum of the same length ($2\\pi\\sqrt{l/g}$) because $\\cos\\theta < 1$.",
+    "Tension in a conical pendulum is always greater than $mg$ because $T = mg/\\cos\\theta$ and $\\cos\\theta < 1$. The faster the rotation, the greater the tension.",
+    "The period of a conical pendulum decreases as it spins faster (larger $\\theta$), unlike a simple pendulum where period depends only on length and $g$.",
+    "The period depends on the vertical height $h = l\\cos\\theta$, not on the radius of the circle. Two conical pendulums with the same $h$ have the same period regardless of their lengths.",
+    "The conical pendulum is not a 2D problem. The mass moves in a horizontal circle, but the string sweeps out a cone in 3D space."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 0.5 kg ball is attached to a 1 m string and swings in a conical pendulum at $\\theta = 45^{\\circ}$. Find the period, tension, and speed. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g} = 2\\pi\\sqrt{1 \\times 0.707/9.8} = 2\\pi\\sqrt{0.0721} = 2\\pi \\times 0.269 = 1.69$ s. $T = mg/\\cos\\theta = 0.5 \\times 9.8/0.707 = 6.93$ N. $r = l\\sin\\theta = 0.707$ m. $v = \\sqrt{gr\\tan\\theta} = \\sqrt{9.8 \\times 0.707 \\times 1} = 2.63$ m/s.",
+    "A conical pendulum has a period of 2 s and a string length of 1 m. Find the angle $\\theta$ and the radius of the circle. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$, so $2 = 2\\pi\\sqrt{\\cos\\theta/9.8}$. $(2/(2\\pi))^2 = \\cos\\theta/9.8$. $\\cos\\theta = 9.8/(\\pi^2) = 0.993$. $\\theta = 6.8^{\\circ}$. $r = 1 \\times \\sin 6.8^{\\circ} = 0.119$ m.",
+    "A 0.2 kg mass on a 0.5 m string rotates in a horizontal circle at 3 rad/s. Find the angle, tension, and height. Solution: $\\omega = \\sqrt{g/(l\\cos\\theta)}$, so $\\cos\\theta = g/(l\\omega^2) = 9.8/(0.5 \\times 9) = 2.18$. Since this exceeds 1, the pendulum cannot maintain this angular velocity — the required angle would exceed 90 degrees. The maximum $\\omega = \\sqrt{g/l} = \\sqrt{9.8/0.5} = 4.43$ rad/s.",
+    "Two conical pendulums: Pendulum A has length 0.8 m at $\\theta = 30^{\\circ}$, Pendulum B has length 0.5 m at $\\theta = 45^{\\circ}$. Which has the shorter period? Solution: $h_A = 0.8\\cos 30^{\\circ} = 0.693$ m, $h_B = 0.5\\cos 45^{\\circ} = 0.354$ m. $T_A = 2\\pi\\sqrt{0.693/9.8} = 1.67$ s, $T_B = 2\\pi\\sqrt{0.354/9.8} = 1.19$ s. Pendulum B has the shorter period.",
+    "A 100 g ball swings as a conical pendulum with a period of 1.5 s and string length 0.6 m. Find the angle, tension, and speed. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$, so $\\cos\\theta = gT^2/(4\\pi^2 l) = 9.8 \\times 2.25/(4\\pi^2 \\times 0.6) = 22.05/23.69 = 0.931$. $\\theta = 21.4^{\\circ}$. $T = mg/\\cos\\theta = 0.1 \\times 9.8/0.931 = 1.05$ N. $r = 0.6\\sin 21.4^{\\circ} = 0.217$ m. $v = 2\\pi r/T = 2\\pi \\times 0.217/1.5 = 0.91$ m/s."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The period of a conical pendulum depends only on the vertical height from the suspension point to the mass's plane of rotation: $T = 2\\pi\\sqrt{h/g}$.",
+    "As a conical pendulum spins faster, it rises higher (larger $\\theta$), reducing $h$ and decreasing the period. This is the opposite of intuition for many students.",
+    "The tension in the string is always greater than $mg$ because a component of tension must provide both the centripetal force and support the weight.",
+    "A conical pendulum cannot rotate with $\\theta = 90^{\\circ}$ because this would require infinite tension and infinite angular velocity.",
+    "The conical pendulum demonstrates that the period of circular motion depends on the effective height, not the string length alone, which connects it to the physics of satellites at different altitudes."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion"

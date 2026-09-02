@@ -1,30 +1,44 @@
 {
-  "title": "Applications of Gauss Law",
+  "title": "Applications of Gauss's Law",
   "unitSlug": "electric-field",
   "topicSlug": "applications-of-gauss-law",
-  "topicTitle": "Application of Gauss law: field of a charge sphere, line charge, charged plane conductor",
+  "topicTitle": "Applications of Gauss's law",
   "relevance": 100,
   "notes": [
-    "**Infinite line charge:** choose a cylindrical Gaussian surface of radius $r$ and length $L$. $E(2\\pi r L) = \\lambda L/\\epsilon_0$, giving $E = \\frac{\\lambda}{2\\pi\\epsilon_0 r}$.",
-    "**Infinite plane sheet:** choose a pillbox straddling the sheet. $E(2A) = \\sigma A/\\epsilon_0$, giving $E = \\frac{\\sigma}{2\\epsilon_0}$ on each side.",
-    "**Charged conducting plane:** all charge resides on the surface. Field just outside is $E = \\sigma/\\epsilon_0$, twice the value for a non-conducting sheet because the field inside the conductor is zero.",
-    "**Uniformly charged sphere (outside):** treat as point charge at centre: $E = kQ/r^2$ for $r > R$.",
-    "**Uniformly charged sphere (inside):** only charge within radius $r$ contributes: $E = kQr/R^3$ for $r < R$. Field increases linearly from centre to surface."
+    "**Field of a uniformly charged sphere (insulating):** outside ($r > R$): $E = kQ/r^2$ as if all charge at the centre. Inside ($r < R$): $E = kQr/R^3$ (linear in $r$). At the surface ($r = R$): $E = kQ/R^2$ (both formulas give the same value).",
+    "**Field of a charged conducting sphere:** all charge resides on the surface. Outside: $E = kQ/r^2$. Inside: $E = 0$ everywhere (within the conducting material). At the surface: $E = kQ/R^2$.",
+    "**Field of an infinite line of charge:** $E = \\frac{\\lambda}{2\\pi\\epsilon_0 r} = \\frac{2k\\lambda}{r}$. Decreases as $1/r$, not $1/r^2$. Direction is radial (perpendicular to the line).",
+    "**Field of an infinite plane of charge:** $E = \\frac{\\sigma}{2\\epsilon_0}$. Independent of distance from the plane. Direction is perpendicular to the plane (outward for positive $\\sigma$).",
+    "**Field between two parallel planes with opposite charge:** inside: $E = \\sigma/\\epsilon_0$ (twice the single-plane value). Outside: $E = 0$ (fields cancel). This is the configuration of a parallel plate capacitor.",
+    "**Field of a coaxial cable (cylindrical conductor with charge on outer surface):** outside ($r > R_{outer}$): $E = \\lambda/(2\\pi\\epsilon_0 r)$. Inside the inner conductor: $E = 0$. Between the conductors: depends on where the charge is on each conductor.",
+    "**Field at the surface of a conductor:** $E = \\sigma/\\epsilon_0$, directed perpendicular to the surface. This is a special case of the field of a charged plane, but here only one side has field (the other is inside the conductor where $E = 0$).",
+    "**Charge density on a curved conductor:** $\\sigma$ is highest where the surface curvature is highest. At a sharp point (small radius of curvature), the surface charge density is very large, leading to high field and discharge (corona).",
+    "**Field of a uniformly charged cylinder (long):** outside ($r > R$): $E = \\lambda/(2\\pi\\epsilon_0 r)$. Inside the cylinder with volume charge density $\\rho$ ($r < R$): $E = \\rho r/(2\\epsilon_0)$.",
+    "**Field of a uniformly charged slab (thick infinite plane):** inside the slab at distance $d$ from the centre plane: $E = \\rho d/\\epsilon_0$. Outside the slab: $E = \\rho t/(2\\epsilon_0)$ where $t$ is the slab thickness.",
+    "**Field of a charged ring (along its axis):** $E = \\frac{kQz}{(z^2 + R^2)^{3/2}}$, where $z$ is the axial distance from the centre and $R$ is the ring radius. At the centre ($z = 0$), $E = 0$ by symmetry. Far away ($z \\gg R$): $E \\approx kQ/z^2$.",
+    "**Cavity in a charged conductor:** if a cavity has no charge inside, the field in the cavity is zero (regardless of the external field). This is a Faraday cage effect.",
+    "**Solid angle approach:** for any closed surface and any internal charge, the flux is $q/\\epsilon_0$. This works for surfaces of any shape, even irregular ones, as long as they enclose the charge."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The field inside a uniformly charged solid insulating sphere is NOT zero — it is $E = kQr/R^3$, which increases with $r$. Only for conducting spheres (or inside a cavity with no charge) is the field zero.",
+    "For an infinite plane of charge, the field is $E = \\sigma/(2\\epsilon_0)$, not $\\sigma/\\epsilon_0$. The latter is the field just outside a conductor, which is twice as large because the conductor has charge on one side only.",
+    "Between two oppositely charged parallel plates, the field is $E = \\sigma/\\epsilon_0$. Outside the plates, the field is zero (the contributions from each plate cancel). This is not the same as two isolated planes.",
+    "The field of a long line of charge is $E \\propto 1/r$, while the field of a point charge is $E \\propto 1/r^2$. The difference arises because the line charge has an effectively infinite extent.",
+    "Gauss's law gives the magnitude of $\\vec{E}$ when symmetry allows $\\vec{E}$ to be constant over the surface. Without symmetry, you can still use the law but cannot extract $\\vec{E}$ from the integral."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A long straight wire has linear charge density $\\lambda = 2\\,\\mu$C/m. Find the electric field at a point 0.5 m from the wire. Solution: $E = 2k\\lambda/r = 2 \\times 9 \\times 10^9 \\times 2 \\times 10^{-6} / 0.5 = 7.2 \\times 10^4$ N/C, directed radially outward.",
+    "A spherical conducting shell of inner radius 5 cm and outer radius 7 cm has a charge of $+3\\,\\mu$C on the outer surface. A point charge $+1\\,\\mu$C is at the centre. Find the field at (a) 3 cm from centre, (b) at the inner surface (5 cm), (c) at the outer surface (7 cm), (d) at 10 cm. Solution: (a) Inside cavity: $E = kq/r^2 = 9 \\times 10^9 \\times 10^{-6} / 0.03^2 = 10^7$ N/C. (b) At inner surface: $E = kq/R_{in}^2 = 9 \\times 10^9 \\times 10^{-6} / 0.0025 = 3.6 \\times 10^6$ N/C. (c) Inside conductor: $E = 0$. (d) Outside: total enclosed charge is $+4\\,\\mu$C, $E = k(4\\,\\mu\\text{C})/0.1^2 = 3.6 \\times 10^6$ N/C.",
+    "Two infinite parallel planes are 5 cm apart, one with $\\sigma = +10\\,\\mu$C/m² and the other with $\\sigma = -10\\,\\mu$C/m². Find the field at the midpoint between them, and 10 cm beyond the positive plate. Solution: At the midpoint, both fields point from positive to negative, so they add: $E = \\sigma/\\epsilon_0 = 10 \\times 10^{-6}/8.85 \\times 10^{-12} = 1.13 \\times 10^6$ N/C. 10 cm beyond the positive plate: the field from the positive plate is outward (in $+x$), from the negative plate is inward (toward it, in $-x$ direction, so net is in $-x$); magnitudes: $E_1 = \\sigma/(2\\epsilon_0) = 5.65 \\times 10^5$ N/C, $E_2 = \\sigma/(2\\epsilon_0) = 5.65 \\times 10^5$ N/C, so net = 0.",
+    "A long cylinder of radius 0.05 m has a uniform volume charge density $\\rho = 2\\,\\mu$C/m³. Find the field at (a) 0.02 m from the axis, (b) 0.1 m from the axis. Solution: (a) Inside: $E = \\rho r/(2\\epsilon_0) = 2 \\times 10^{-6} \\times 0.02/(2 \\times 8.85 \\times 10^{-12}) = 2.26 \\times 10^5$ N/C. (b) Outside: linear charge density $\\lambda = \\rho \\pi R^2 = 2 \\times 10^{-6} \\times \\pi \\times 0.0025 = 1.57 \\times 10^{-8}$ C/m. $E = \\lambda/(2\\pi\\epsilon_0 r) = 1.57 \\times 10^{-8}/(2\\pi \\times 8.85 \\times 10^{-12} \\times 0.1) = 2.82 \\times 10^3$ N/C.",
+    "A non-conducting sphere of radius 0.1 m has uniform charge density $\\rho = 5\\,\\mu$C/m³. Find the field at 0.05 m and 0.2 m from the centre. Solution: Total charge $Q = \\rho \\cdot \\frac{4}{3}\\pi R^3 = 5 \\times 10^{-6} \\times 4.19 \\times 10^{-3} = 2.09 \\times 10^{-8}$ C. (a) At 0.05 m: $Q_{enc} = \\rho \\cdot \\frac{4}{3}\\pi r^3 = 5 \\times 10^{-6} \\times \\frac{4}{3}\\pi (0.05)^3 = 2.62 \\times 10^{-9}$ C. $E = kQ_{enc}/r^2 = 9 \\times 10^9 \\times 2.62 \\times 10^{-9} / 0.0025 = 9.42 \\times 10^3$ N/C. (b) At 0.2 m: $E = kQ/r^2 = 9 \\times 10^9 \\times 2.09 \\times 10^{-8} / 0.04 = 4.7 \\times 10^3$ N/C."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Gauss's law is most useful when the field has high symmetry — spherical, cylindrical, or planar. For irregular shapes, computational methods are needed.",
+    "The field just outside any conductor in electrostatic equilibrium is $\\sigma/\\epsilon_0$, regardless of the conductor's shape. This is why the charge density can be very high at sharp points.",
+    "The Earth itself has an electric field of about 100-150 V/m near the surface, due to the charge on the ground and in the atmosphere. The total charge of the Earth is about $-5.1 \\times 10^5$ C.",
+    "Lightning rods work on the principle of high field at sharp points. The strong field ionizes the air, providing a conducting path for lightning to follow safely.",
+    "The electric field in a thundercloud can reach 100 kV/m or more. When this exceeds the breakdown field of air ($\\sim 3 \\times 10^6$ V/m), a lightning discharge occurs."
   ],
   "animation3D": "electric-field",
   "motionGraphics": "electric-field"

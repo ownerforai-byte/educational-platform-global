@@ -5,26 +5,36 @@
   "topicTitle": "Stress; strain; elasticity and plasticity",
   "relevance": 100,
   "notes": [
-    "**Stress $\\sigma$:** force per unit area. $\\sigma = F/A$. Units: N/m$^2$ or Pa.",
-    "**Strain $\\epsilon$:** fractional deformation. $\\epsilon = \\Delta L/L$. Strain is dimensionless.",
-    "**Elasticity:** the property of a material to return to its original shape and size after the deforming force is removed.",
-    "**Plasticity:** the property of a material to undergo permanent deformation without breaking. Beyond the elastic limit, materials become plastic.",
-    "**Types of stress:** tensile stress (stretching), compressive stress (squashing), and shear stress (sliding layers)."
+    "**Stress $\\sigma$:** force per unit area. $\\sigma = \\frac{F}{A}$. Units: N/m$^2$ or Pa (pascal). Stress represents the internal restoring force per unit area within a deformed material.",
+    "**Strain $\\epsilon$:** fractional deformation. $\\epsilon = \\frac{\\Delta L}{L}$. Strain is dimensionless — it is a ratio of two lengths.",
+    "**Elasticity:** the property of a material to return to its original shape and size after the deforming force is removed. In the elastic region, stress is proportional to strain (Hooke's law).",
+    "**Plasticity:** the property of a material to undergo permanent deformation without breaking. Beyond the elastic limit, materials become plastic and do not return to their original shape.",
+    "**Types of stress:** (1) Tensile stress — stretching force per unit area. (2) Compressive stress — squashing force per unit area. (3) Shear stress — tangential force per unit area, causing layers to slide past each other.",
+    "**Stress-strain curve:** a plot of stress versus strain reveals the elastic region (linear), the yield point (where plastic deformation begins), the ultimate stress point (maximum stress), and the fracture point.",
+    "**Proportional limit:** the point up to which stress is directly proportional to strain ($\\sigma = Y\\epsilon$). The graph is a straight line from origin to this point.",
+    "**Yield point:** the stress at which the material begins to deform plastically. Beyond this point, permanent deformation occurs even if the load is removed.",
+    "**Ultimate tensile strength:** the maximum stress the material can withstand before necking begins. Beyond this point, the cross-sectional area decreases rapidly and the material fails."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Stress is NOT the same as pressure, though they share the same units. Stress is an internal quantity (restoring force per area within the material), while pressure is an external quantity (force per area applied to a surface).",
+    "Elasticity and plasticity are not opposite properties — most materials exhibit BOTH. A material is elastic for small deformations and becomes plastic beyond the elastic limit. Steel is highly elastic (large elastic region); clay is plastic (very small elastic region).",
+    "A \"hard\" material (like diamond) is not necessarily the same as a \"strong\" material. Hardness is resistance to scratching; strength is resistance to breaking. A material can be hard but brittle (glass) or soft but strong (copper).",
+    "The elastic limit and the proportional limit are distinct points on the stress-strain curve. The proportional limit is where linearity ends; the elastic limit is where permanent deformation begins. They are close but not identical.",
+    "Strain is dimensionless, but it is often expressed as a percentage or in microstrain ($\\mu\\epsilon = 10^{-6}$). A strain of 0.01 means the material has stretched by 1% of its original length."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A steel wire of length 3 m and cross-sectional area $2 \\times 10^{-6}$ m$^2$ is stretched by 2 mm under a load of 400 N. Find the stress, strain, and Young's modulus. Solution: Stress $\\sigma = \\frac{F}{A} = \\frac{400}{2 \\times 10^{-6}} = 2 \\times 10^8$ Pa. Strain $\\epsilon = \\frac{\\Delta L}{L} = \\frac{2 \\times 10^{-3}}{3} = 6.67 \\times 10^{-4}$. Young's modulus $Y = \\frac{\\sigma}{\\epsilon} = \\frac{2 \\times 10^8}{6.67 \\times 10^{-4}} \\approx 3 \\times 10^{11}$ Pa.",
+    "A copper wire of original length 4 m stretches by 1.5 mm when a 50 N weight is hung from it. If the wire has a diameter of 1 mm, find the stress, strain, and Young's modulus. Solution: $A = \\pi(0.5 \\times 10^{-3})^2 = 7.854 \\times 10^{-7}$ m$^2$. Stress $= \\frac{50}{7.854 \\times 10^{-7}} \\approx 6.37 \\times 10^7$ Pa. Strain $= \\frac{1.5 \\times 10^{-3}}{4} = 3.75 \\times 10^{-4}$. $Y = \\frac{6.37 \\times 10^7}{3.75 \\times 10^{-4}} \\approx 1.70 \\times 10^{11}$ Pa.",
+    "A material has a breaking stress of $1.1 \\times 10^9$ Pa. What is the maximum load a steel wire of diameter 2 mm can support before breaking? Solution: $A = \\pi(1 \\times 10^{-3})^2 = 3.142 \\times 10^{-6}$ m$^2$. Maximum load $= \\sigma_{max} \\times A = 1.1 \\times 10^9 \\times 3.142 \\times 10^{-6} \\approx 3456$ N.",
+    "Two wires of the same material and length are stretched by the same load. Wire A has twice the diameter of wire B. Find the ratio of their extensions. Solution: $\\Delta L = \\frac{FL}{AY}$. Since $F$, $L$, and $Y$ are the same: $\\frac{\\Delta L_A}{\\Delta L_B} = \\frac{A_B}{A_A} = \\frac{\\pi(d_B/2)^2}{\\pi(d_A/2)^2} = \\left(\\frac{d_B}{d_A}\\right)^2 = \\left(\\frac{1}{2}\\right)^2 = \\frac{1}{4}$. Wire A extends one quarter as much as wire B.",
+    "A rubber cord of length 10 cm is stretched to 12 cm. Find the strain. If the stress is $5 \\times 10^6$ Pa, find Young's modulus. Solution: Strain $= \\frac{12 - 10}{10} = 0.2$. $Y = \\frac{\\sigma}{\\epsilon} = \\frac{5 \\times 10^6}{0.2} = 2.5 \\times 10^7$ Pa."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The stress-strain curve is a material's \"fingerprint\" — different materials have distinctly different curves that reveal their elastic limit, yield point, ultimate strength, and ductility.",
+    "Brittle materials (cast iron, glass, ceramic) show very little plastic deformation before fracture — their stress-strain curve is nearly a straight line up to the breaking point.",
+    "Ductile materials (copper, mild steel, aluminum) show a large plastic region with significant necking before fracture, allowing them to be drawn into wires or hammered into sheets.",
+    "The area under the stress-strain curve up to the fracture point represents the toughness of the material — the energy per unit volume that the material can absorb before breaking.",
+    "Some materials, like rubber, show large elastic deformations (strains of several hundred percent) but do not obey Hooke's law — their stress-strain curve is nonlinear even in the elastic region."
   ],
   "animation3D": "elasticity",
   "motionGraphics": "elasticity"

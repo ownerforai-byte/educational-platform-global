@@ -1,28 +1,40 @@
 {
-  "title": "The Hydrogen Spectrum â€” Origin & Spectral Series",
+  "title": "The Hydrogen Spectrum — Origin & Spectral Series",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "When hydrogen gas is excited (e.g. electrically), electrons absorb energy and jump to higher tracks; when they fall back down to lower tracks, they release that exact energy as light of a specific wavelength",
-    "Because transitions happen only between specific fixed tracks, the emitted light forms discrete, sharp spectral lines rather than a continuous rainbow",
-    "Each spectral series corresponds to electrons landing on one specific base track (nâ‚): **Lyman** â†’ nâ‚ = 1 (ultraviolet, invisible); **Balmer** â†’ nâ‚ = 2 (the only series visible to the human eye, as coloured lines); **Paschen** â†’ nâ‚ = 3 (infrared); **Brackett** â†’ nâ‚ = 4 (infrared); **Pfund** â†’ nâ‚ = 5 (far-infrared)"
+    "**Origin of spectral lines:** When hydrogen gas is excited (by electric discharge or heating), electrons absorb energy and jump to higher orbits ($n \\ge 2$). When they fall back to lower orbits, they emit photons of specific energy: $h\\nu = E_{n_i} - E_{n_f}$, where $n_i > n_f$. Each transition produces a sharp spectral line at a specific wavelength.",
+    "**Energy level formula:** $E_n = -\\frac{13.6 \\text{ eV}}{n^2}$, where $n = 1, 2, 3, \\dots$. The most negative (lowest) energy is $n=1$ (ground state, $-13.6$ eV). Energy increases (becomes less negative) as $n$ increases, converging to $E = 0$ at $n = \\infty$ (ionization limit).",
+    "**Rydberg formula:** The wavelength of any spectral line is given by $\\frac{1}{\\lambda} = R_H \\left(\\frac{1}{n_f^2} - \\frac{1}{n_i^2}\\right)$, where $R_H = 1.097 \\times 10^7$ m$^{-1}$ is the Rydberg constant, $n_f$ is the final (lower) orbit, and $n_i$ is the initial (higher) orbit. This empirical formula (1888, Rydberg) was later derived theoretically from Bohr's model.",
+    "**Lyman series** ($n_f = 1$, transitions to ground state): All lines are in the **ultraviolet** region (91.2 nm to 121.6 nm). Named after Theodore Lyman (1906–1914). Lines: Lyman-$\\alpha$ ($n=2\\to1$, 121.6 nm), Lyman-$\\beta$ ($n=3\\to1$, 102.6 nm), Lyman-$\\gamma$ ($n=4\\to1$, 97.3 nm). The series limit ($n_i \\to \\infty$) is 91.2 nm — the ionization energy wavelength.",
+    "**Balmer series** ($n_f = 2$): All lines are in the **visible** region (364.6 nm to 656.3 nm). Named after Johann Balmer (1885). The four most prominent lines: H$\\alpha$ ($n=3\\to2$, 656.3 nm, red), H$\\beta$ ($n=4\\to2$, 486.1 nm, blue-green), H$\\gamma$ ($n=5\\to2$, 434.0 nm, violet), H$\\delta$ ($n=6\\to2$, 410.2 nm, violet). The series limit is 364.6 nm (UV). This is the only series visible to the naked eye.",
+    "**Paschen series** ($n_f = 3$): All lines in the **infrared** (820.4 nm to 1875.1 nm). Named after Friedrich Paschen (1908). Lines: Paschen-$\\alpha$ ($n=4\\to3$, 1875 nm), Paschen-$\\beta$ ($n=5\\to3$, 1282 nm).",
+    "**Brackett series** ($n_f = 4$): All lines in the **infrared** (1458 nm to 4051 nm). Named after Frederick Brackett (1922). Series limit at 1458 nm.",
+    "**Pfund series** ($n_f = 5$): All lines in the **far-infrared** (2278 nm to 7458 nm). Named after August Pfund (1924). Series limit at 2278 nm.",
+    "**Humphreys series** ($n_f = 6$): Far infrared, lines beyond 12 μm. Named after Curtis Humphreys (1953).",
+    "**Why these series matter:** Astronomers use the hydrogen spectrum (especially H$\\alpha$ at 656.3 nm) to study stars and nebulae. The red emission from the Orion Nebula is largely H$\\alpha$. Hydrogen spectral lines are used as a standard for wavelength calibration in spectroscopy.",
+    "**Absorption vs emission in stars:** In stellar atmospheres, most hydrogen atoms are in the ground state ($n=1$), so we typically see absorption lines of the Lyman series (in UV) and Balmer series (in visible). The Balmer absorption lines are very prominent in A-type stars (like Sirius).",
+    "**Fine structure:** Each line in the hydrogen spectrum is actually a doublet or triplet when observed with high resolution. For example, H$\\alpha$ splits into two components separated by 0.036 nm due to spin-orbit coupling — a defect that Bohr's model cannot explain."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: All spectral series are equally visible in a hydrogen discharge tube. — Correction: At room temperature, virtually all hydrogen atoms are in the ground state ($n=1$). So absorption only occurs for Lyman series transitions. In emission, electrons can fall from any higher level, so all series can appear. But the intensity of each series depends on the population distribution and transition probabilities.",
+    "Misconception: The Balmer series is the only spectral series of hydrogen. — Correction: Hydrogen has infinitely many series (Lyman, Balmer, Paschen, Brackett, Pfund, Humphreys, etc.). The Balmer series is special only because its lines happen to fall in the visible region where the human eye can detect them.",
+    "Misconception: Each spectral line corresponds to one specific transition between two orbits. — Correction: In hydrogen, each line does correspond to one transition (e.g., H$\\alpha$ = $n=3\\to2$). But in multi-electron atoms, the situation is more complex — energy levels split into sublevels ($l$, $j$), so a single spectral line may correspond to multiple close transitions.",
+    "Misconception: The series limit is the longest wavelength in a series. — Correction: The series limit ($n_i \\to \\infty$) is the SHORTEST wavelength (highest energy) in a series. As $n_i$ increases, the energy gap to the final state decreases, so the wavelength increases, approaching the series limit from below. The series limit represents the ionization energy."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the wavelength of the H$\\alpha$ line (Balmer series, $n=3\\to2$). Solution: $\\frac{1}{\\lambda} = R_H \\left(\\frac{1}{2^2} - \\frac{1}{3^2}\\right) = 1.097 \\times 10^7 \\times \\frac{5}{36} = 1.524 \\times 10^6$ m$^{-1}$. $\\lambda = 656.3$ nm (red light).",
+    "Find the series limit of the Lyman series ($n_i \\to \\infty$, $n_f = 1$). Solution: $\\frac{1}{\\lambda} = R_H \\left(\\frac{1}{1^2} - 0\\right) = R_H = 1.097 \\times 10^7$ m$^{-1}$. $\\lambda = 91.16$ nm (far ultraviolet, ionization energy = 13.6 eV).",
+    "Calculate the wavelength of the first line of the Paschen series ($n=4\\to3$) and state its region. Solution: $\\frac{1}{\\lambda} = R_H \\left(\\frac{1}{3^2} - \\frac{1}{4^2}\\right) = 1.097 \\times 10^7 \\times \\frac{7}{144} = 5.335 \\times 10^5$ m$^{-1}$. $\\lambda = 1875$ nm (infrared).",
+    "A spectral line of wavelength 97.3 nm is observed in the hydrogen emission spectrum. Identify the transition. Solution: $\\frac{1}{\\lambda} = R_H\\left(\\frac{1}{n_f^2} - \\frac{1}{n_i^2}\\right) = \\frac{1}{97.3 \\times 10^{-9}} = 1.028 \\times 10^7$ m$^{-1}$. Since $1.028 \\times 10^7 \\approx R_H$, this is near the series limit, so $n_f=1$ (Lyman). $\\frac{1}{n_i^2} = 1 - \\frac{1.028}{1.097} = 0.063$. $n_i^2 \\approx 16$, so $n_i = 4$. This is the Lyman-$\\gamma$ line ($4\\to1$)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Hydrogen is the only element for which the spectrum can be calculated exactly using the non-relativistic Schrödinger equation. All other elements require approximations, making hydrogen the most studied and understood atom in physics.",
+    "The Balmer series (visible) was discovered before the other series because it was the first to be observed with optical spectrometers. The Lyman series (UV) wasn't observed until vacuum UV spectroscopy was developed in the 1910s.",
+    "The Rydberg constant $R_H = 1.097 \\times 10^7$ m$^{-1}$ is one of the most precisely measured constants in physics (relative uncertainty < $10^{-12}$), making it a fundamental reference for length and wavelength metrology.",
+    "H$\\alpha$ emission at 656.3 nm is the brightest line in the optical spectra of emission nebulae (like the Orion Nebula). Astronomers use H$\\alpha$ imaging to map star-forming regions across the Milky Way and in distant galaxies."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

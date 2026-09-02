@@ -1,27 +1,36 @@
 {
-  "title": "Bohr's Atomic Model â€” Defects",
+  "title": "Bohr's Atomic Model — Defects and Limitations",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
   "relevance": 88,
   "notes": [
-    "Failed to predict the spectra of multi-electron atoms, such as Helium or Carbon",
-    "Could not explain the splitting of spectral lines under a magnetic field (**Zeeman Effect**) or an electric field (**Stark Effect**)"
+    "**Defect 1 — Fails for multi-electron atoms:** Bohr's model assumes a single electron moving in a central Coulomb field. In multi-electron atoms (He, Li, C, etc.), electron-electron repulsion and screening effects make the potential non-Coulombic. The model cannot predict the spectra of helium (two electrons) or any heavier element.",
+    "**Defect 2 — No explanation for fine structure (Zeeman & Stark effects):** When a hydrogen atom is placed in a strong magnetic field, spectral lines split into multiple components (**Zeeman effect**). In an electric field, lines also split (**Stark effect**). Bohr's model treats the electron as a point particle in a circular orbit with no intrinsic magnetic moment or spatial orientation, so it cannot explain these splittings.",
+    "**Defect 3 — Cannot explain relative intensities of spectral lines:** The Bohr model predicts which transitions are possible but gives no information about transition probabilities. Some lines are much brighter than others (e.g., Hα at 656 nm is far more intense than Hβ at 486 nm). Quantum mechanics introduces selection rules and transition dipole moments to explain intensities.",
+    "**Defect 4 — Electron path violates Heisenberg uncertainty principle:** Bohr assumes a well-defined circular orbit with simultaneously known position ($r$) and momentum ($mv$). The uncertainty principle $\\Delta x \\Delta p \\ge \\hbar/2$ forbids this. Quantum mechanics replaces orbits with probability clouds (orbitals).",
+    "**Defect 5 — Assumes planar circular orbits only:** The model restricts electrons to circular paths in a plane. Actual electron orbitals (s, p, d, f) have three-dimensional shapes with angular nodes. Sommerfeld extended Bohr's model with elliptical orbits and additional quantum numbers, but this was a patch, not a fundamental fix.",
+    "**Defect 6 — No account of electron spin:** The discovery of electron spin (1925, Uhlenbeck & Goudsmit) and the associated magnetic moment was completely outside Bohr's framework. Spin is essential for fine structure, the periodic table, and magnetic properties.",
+    "**Defect 7 — Fails for molecules and chemical bonding:** The Bohr model describes isolated atoms only. It cannot explain how atoms bond to form molecules, molecular shapes, bond energies, or the directional nature of covalent bonds.",
+    "**Defect 8 — Arbitrary quantization condition:** The condition $mvr = n\\hbar$ was postulated without deeper justification. de Broglie (1924) later showed it follows from the standing wave condition $2\\pi r = n\\lambda$, but this came after Bohr and was not part of the original theory."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Bohr's model is 'wrong' and should be discarded. — Correction: Bohr's model is a historical stepping stone. It correctly predicts hydrogen's energy levels and introduced quantization. It's still used for order-of-magnitude estimates and as a pedagogical bridge to quantum mechanics.",
+    "Misconception: The Zeeman effect proves Bohr's model wrong. — Correction: The Zeeman effect reveals that energy levels have additional degeneracy (magnetic quantum number $m_l$) that Bohr's model doesn't capture. It motivated the vector atom model (Sommerfeld) and eventually quantum mechanics.",
+    "Misconception: Sommerfeld's elliptical orbits fixed all of Bohr's defects. — Correction: Sommerfeld's model added the azimuthal quantum number and explained some fine structure, but still failed for multi-electron atoms, violated uncertainty principle, and couldn't explain intensities or chemical bonding.",
+    "Misconception: Bohr's model predicts that all spectral lines should have equal intensity. — Correction: Bohr's model is silent on intensities — it doesn't predict them at all. Intensities require transition probability calculations from quantum mechanics (Fermi's Golden Rule, dipole matrix elements)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Why does Bohr's model fail to explain the spectrum of helium? Solution: Helium has two electrons. The electron-electron repulsion term $e^2/4\\pi\\varepsilon_0 r_{12}$ makes the Hamiltonian non-separable. The effective nuclear charge is different for each electron and depends on their relative positions. No closed-form Bohr-like solution exists.",
+    "The normal Zeeman effect splits a spectral line into three components in a magnetic field. Explain why Bohr's circular orbit model cannot produce this splitting. Solution: In Bohr's model, the electron's orbital magnetic moment is $\\mu_L = -\\frac{e}{2m_e} L$. In a magnetic field $B$, the interaction energy is $-\\mu_L \\cdot B = \\frac{e}{2m_e} L_z B$. But Bohr's model has only one $L$ value per $n$ ($L = n\\hbar$), with no spatial orientation (no $m_l$). Thus no splitting is predicted. The observed three lines correspond to $\\Delta m_l = -1, 0, +1$.",
+    "Explain why Bohr's well-defined electron orbit violates the Heisenberg uncertainty principle. Solution: In the ground state of hydrogen, Bohr gives $r = a_0 = 5.29 \\times 10^{-11}$ m and $p = m_e v_1 \\approx 1.99 \\times 10^{-24}$ kg m/s. The uncertainty principle requires $\\Delta r \\Delta p \\ge \\hbar/2 \\approx 5.27 \\times 10^{-35}$ J s. But a well-defined orbit implies $\\Delta r \\approx 0$ and $\\Delta p \\approx 0$, giving $\\Delta r \\Delta p \\approx 0$, which violates the principle.",
+    "Why did the Bohr-Sommerfeld model (with elliptical orbits) still fail for multi-electron atoms? Solution: Even with elliptical orbits and additional quantum numbers ($n, k$), the model assumes independent electrons moving in a central field. It cannot account for electron correlation, exchange energy, or the Pauli exclusion principle which governs electron configurations in multi-electron atoms."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Bohr's model was a 'semi-classical' hybrid — it used classical mechanics for orbits but imposed quantum conditions by fiat. It worked for hydrogen because the Coulomb problem is separable in spherical coordinates, a unique mathematical property.",
+    "The failure of Bohr's model for helium led directly to the development of quantum mechanics (Heisenberg's matrix mechanics, 1925; Schrödinger's wave mechanics, 1926). Helium was the 'two-body problem' that broke the old quantum theory.",
+    "The fine structure of hydrogen (splitting of the 656 nm Hα line into two components separated by 0.14 nm) was first explained by Sommerfeld's relativistic correction and later fully by Dirac's equation (1928) including electron spin.",
+    "Despite its defects, Bohr's model correctly predicts the hydrogen energy level formula $E_n = -13.6/n^2$ eV and the Rydberg constant, which is why it remains a cornerstone of atomic physics education."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

@@ -5,26 +5,33 @@
   "topicTitle": "Law of mass action",
   "relevance": 100,
   "notes": [
-    "**Law of mass action (Guldberg and Waage):** at a constant temperature, the rate of a reaction is proportional to the product of the active masses of the reactants raised to their stoichiometric coefficients.",
-    "**Equilibrium constant $K_c$:** for $aA + bB \\rightleftharpoons cC + dD$, $K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$. Concentrations are equilibrium concentrations in mol/L.",
-    "**Magnitude of $K_c$:** $K_c \\gg 1$ means products dominate (reaction nearly complete). $K_c \\ll 1$ means reactants dominate (reaction barely proceeds).",
-    "**Temperature dependence:** $K_c$ changes only with temperature. A catalyst changes the rate but not $K_c$ because it speeds up both forward and reverse reactions equally.",
-    "**Units:** $K_c$ has units depending on the change in the number of moles of gas: $\\Delta n = (c+d) - (a+b)$."
+    "**Law of mass action (Guldberg and Waage, 1864):** At constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses (molar concentrations) of the reactants, each raised to a power equal to its stoichiometric coefficient in the balanced equation.",
+    "**Equilibrium constant $K_c$:** For the reaction $aA + bB \\rightleftharpoons cC + dD$, the equilibrium constant is defined as $K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$, where all concentrations are equilibrium values in mol/L.",
+    "**Derivation from rate laws:** At equilibrium, $r_f = r_r$, so $k_f[A]^a[B]^b = k_r[C]^c[D]^d$. Rearranging gives $\\frac{k_f}{k_r} = \\frac{[C]^c[D]^d}{[A]^a[B]^b} = K_c$.",
+    "**Magnitude of $K_c$:** If $K_c \\gg 1$ (e.g., $K_c > 10^3$), the reaction proceeds nearly to completion — products dominate. If $K_c \\ll 1$ (e.g., $K_c < 10^{-3}$), the reaction barely proceeds — reactants dominate. If $K_c \\approx 1$, appreciable amounts of both reactants and products are present.",
+    "**Temperature dependence:** $K_c$ is constant only at a fixed temperature. For an exothermic reaction ($\\Delta H < 0$), $K_c$ decreases as temperature increases. For an endothermic reaction ($\\Delta H > 0$), $K_c$ increases as temperature increases. This follows from the van 't Hoff equation: $\\ln\\frac{K_2}{K_1} = \\frac{\\Delta H}{R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)$.",
+    "**Catalysts do not affect $K_c$:** A catalyst lowers the activation energy of both forward and reverse reactions equally, so it increases both rates by the same factor. Equilibrium is reached faster, but $K_c$ is unchanged.",
+    "**Units of $K_c$:** The units depend on $\\Delta n = (c+d) - (a+b)$, the change in moles of gaseous or aqueous species. $K_c$ has units of $(\\text{mol/L})^{\\Delta n}$. When $\\Delta n = 0$, $K_c$ is dimensionless.",
+    "**Heterogeneous equilibria:** Pure solids and pure liquids do not appear in the equilibrium expression because their concentrations (densities) are constant. For $\\text{CaCO}_3(s) \\rightleftharpoons \\text{CaO}(s) + \\text{CO}_2(g)$, $K_c = [\\text{CO}_2]$.",
+    "**Examples:** (1) $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$, $K_c = \\frac{[\\text{NH}_3]^2}{[\\text{N}_2][\\text{H}_2]^3}$. (2) $\\text{CH}_3\\text{COOH}(aq) \\rightleftharpoons \\text{CH}_3\\text{COO}^-(aq) + \\text{H}^+(aq)$, $K_c = \\frac{[\\text{CH}_3\\text{COO}^-][\\text{H}^+]}{[\\text{CH}_3\\text{COOH}]}$.",
+    "**Writing $K_c$ from an equation:** The coefficients become exponents. If you reverse the equation, $K_c$ becomes $1/K_c$. If you multiply the equation by a factor $n$, $K_c$ becomes $(K_c)^n$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception — \"$K_c$ tells you how fast a reaction reaches equilibrium.\" — Clarification: $K_c$ tells you the extent (position) of equilibrium, not the speed. The rate is governed by kinetics and activation energy, not by $K_c$.",
+    "Misconception — \"The equilibrium expression includes all species in the reaction.\" — Clarification: Pure solids and pure liquids are excluded because their effective concentration is constant and incorporated into the equilibrium constant.",
+    "Misconception — \"$K_c$ has the same value regardless of how the equation is written.\" — Clarification: If the equation is reversed, $K_c$ becomes its reciprocal. If the equation is multiplied by 2, $K_c$ is squared. Always write $K_c$ alongside the specific balanced equation.",
+    "Misconception — \"A large $K_c$ means the reaction is fast.\" — Clarification: A large $K_c$ means products are favoured at equilibrium, but the reaction could be extremely slow (e.g., diamond converting to graphite has a favourable $K_c$ but takes millions of years)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write the equilibrium constant expression $K_c$ for the following reactions: (a) $2\\text{NO}(g) + \\text{O}_2(g) \\rightleftharpoons 2\\text{NO}_2(g)$, (b) $\\text{P}_4(s) + 5\\text{O}_2(g) \\rightleftharpoons \\text{P}_4\\text{O}_{10}(s)$, (c) $\\text{CH}_3\\text{COOC}_2\\text{H}_5(aq) + \\text{H}_2\\text{O}(l) \\rightleftharpoons \\text{CH}_3\\text{COOH}(aq) + \\text{C}_2\\text{H}_5\\text{OH}(aq)$. Solution: (a) $K_c = \\frac{[\\text{NO}_2]^2}{[\\text{NO}]^2[\\text{O}_2]}$. (b) $K_c = \\frac{1}{[\\text{O}_2]^5}$ (solids omitted). (c) $K_c = \\frac{[\\text{CH}_3\\text{COOH}][\\text{C}_2\\text{H}_5\\text{OH}]}{[\\text{CH}_3\\text{COOC}_2\\text{H}_5]}$ (water omitted as solvent).",
+    "For the reaction $\\text{N}_2(g) + \\text{O}_2(g) \\rightleftharpoons 2\\text{NO}(g)$, $K_c = 4.8 \\times 10^{-9}$ at 298 K. (a) Is the reaction reactant-favoured or product-favoured? (b) What is $K_c$ for $2\\text{N}_2(g) + 2\\text{O}_2(g) \\rightleftharpoons 4\\text{NO}(g)$ at the same temperature? Solution: (a) Since $K_c \\ll 1$, the reaction is strongly reactant-favoured. (b) The new $K_c = (4.8 \\times 10^{-9})^2 = 2.3 \\times 10^{-17}$.",
+    "At 700 K, $K_c = 0.50$ for $\\text{H}_2(g) + \\text{I}_2(g) \\rightleftharpoons 2\\text{HI}(g)$. If 0.50 mol of $\\text{H}_2$ and 0.50 mol of $\\text{I}_2$ are placed in a 1.0 L vessel, find the equilibrium concentrations. Solution: Set up ICE table. Initial: $[\\text{H}_2] = 0.50$, $[\\text{I}_2] = 0.50$, $[\\text{HI}] = 0$. Change: $-x$, $-x$, $+2x$. Equil: $0.50-x$, $0.50-x$, $2x$. $K_c = \\frac{(2x)^2}{(0.50-x)^2} = 0.50$. Taking the square root: $\\frac{2x}{0.50-x} = \\sqrt{0.50} = 0.707$. Solving: $2x = 0.3535 - 0.707x$, $2.707x = 0.3535$, $x = 0.131$. Equilibrium: $[\\text{H}_2] = [\\text{I}_2] = 0.369\\;\\text{M}$, $[\\text{HI}] = 0.262\\;\\text{M}$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The law of mass action was formulated by Norwegian chemists Cato Maximilian Guldberg and Peter Waage between 1864 and 1879, forming the foundation of chemical equilibrium theory.",
+    "The equilibrium constant is related to the standard Gibbs free energy change by $\\Delta G° = -RT\\ln K$, linking thermodynamics to equilibrium.",
+    "The value of $K_c$ is independent of the initial concentrations, pressure, volume, and presence of a catalyst — it depends only on temperature and the nature of the reaction.",
+    "The law of mass action applies strictly to ideal systems. For real solutions and gases, activities must be used instead of concentrations or pressures."
   ],
   "animation3D": "chemical-equilibrium",
   "motionGraphics": "chemical-equilibrium"

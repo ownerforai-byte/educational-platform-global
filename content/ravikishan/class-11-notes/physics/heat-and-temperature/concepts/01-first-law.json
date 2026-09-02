@@ -5,25 +5,43 @@
   "topicTitle": "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
   "relevance": 83,
   "notes": [
-    "The first law of thermodynamics states that energy can neither be created nor destroyed; it can only be transformed from one form to another.",
-    "For a system undergoing a change: Î”U = Q âˆ’ W, where Î”U is the change in internal energy, Q is the heat supplied to the system and W is the work done by the system.",
-    "This law is essentially the law of conservation of energy applied to thermodynamic systems.",
-    "ADDED LINE: A cyclic process returns the system to its initial state, so Î”U = 0 and Q = W."
+    "**First Law of Thermodynamics:** Energy can neither be created nor destroyed; it can only be transformed from one form to another. This is the law of conservation of energy applied to thermodynamic systems.",
+    "**Mathematical statement:** ΔU = Q − W, where ΔU is the change in internal energy of the system, Q is the heat supplied TO the system, and W is the work done BY the system on the surroundings.",
+    "**Sign conventions (physics/Chemistry IUPAC):** Q > 0 when heat enters the system; W > 0 when work is done BY the system (expansion). Some textbooks use W as work done ON the system (W = -PΔV), giving ΔU = Q + W. Always check the convention used.",
+    "**Internal energy U:** A state function depending only on the thermodynamic state (P, V, T). For an ideal gas, U depends only on temperature: U = nCᵥT. For real substances, U depends on both T and V.",
+    "**Heat Q and Work W are path functions:** Their values depend on the process path, not just the initial and final states. Only ΔU is path-independent.",
+    "**Cyclic process:** The system returns to its initial state, so ΔU = 0 over a complete cycle. Therefore Q = W for any cyclic process — the net heat absorbed equals the net work done.",
+    "**Isothermal process (ideal gas):** ΔU = 0 (since U depends only on T), so Q = W. For reversible isothermal expansion of n moles: W = nRT ln(V₂/V₁).",
+    "**Adiabatic process:** Q = 0 (no heat exchange). Then ΔU = −W. For ideal gas: TV^(γ−1) = constant, PV^γ = constant, where γ = Cₚ/Cᵥ.",
+    "**Isobaric process:** Constant pressure. W = PΔV = nRΔT. Q = nCₚΔT, ΔU = nCᵥΔT.",
+    "**Isochoric (isovolumetric) process:** Constant volume. W = 0 (no volume change). Q = ΔU = nCᵥΔT.",
+    "**Free expansion (Joule expansion):** Gas expands into vacuum. No external pressure, so W = 0. If insulated, Q = 0, so ΔU = 0. For ideal gas, temperature remains constant. For real gases, temperature may change (Joule-Thomson effect).",
+    "**Work done in a reversible process:** W = ∫ P dV. On a P-V diagram, work equals the area under the process curve. Clockwise cycle = positive net work (heat engine); counterclockwise = negative net work (refrigerator/heat pump).",
+    "**Heat capacity:** C = δQ/dT (inexact differential). Molar heat capacities: Cᵥ = (∂U/∂T)ᵥ, Cₚ = Cᵥ + R (for ideal gas, Mayer's relation). Ratio γ = Cₚ/Cᵥ = 5/3 (monatomic), 7/5 (diatomic), 4/3 (polyatomic).",
+    "**Enthalpy H = U + pV:** Useful for constant-pressure processes. ΔH = Qₚ (heat at constant pressure). For ideal gas, H = nCₚT, also depends only on T.",
+    "**Thermodynamic state variables:** Intensive (T, P) vs extensive (U, V, S, H, n). State functions (U, H, S, G) vs path functions (Q, W). The first law connects them: dU = δQ − δW.",
+    "**Practical implications:** Perpetual motion machines of the first kind (producing work without energy input) are impossible. Energy conversion efficiency is limited: η = W_out/Q_in ≤ 1."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Heat (Q) and work (W) are NOT properties of a system — they are energy in transit. A system does not 'contain heat' or 'contain work'; it contains internal energy. Only ΔU is a state function.",
+    "The sign convention for W varies: in physics, W = work done BY the system (expansion = positive); in some chemistry texts, W = work done ON the system (compression = positive). ΔU = Q − W (physics) vs ΔU = Q + W (chemistry). Always verify which convention your textbook uses.",
+    "In an adiabatic process, Q = 0 but temperature CAN change (ΔU = −W ≠ 0). Adiabatic ≠ isothermal. Confusing these is a common error.",
+    "For a cyclic process, ΔU = 0 always (since U is a state function), but Q and W are NOT zero individually — only their net values satisfy Q_net = W_net.",
+    "The first law (ΔU = Q − W) does not tell you the DIRECTION of spontaneous processes — that is governed by the second law (entropy). A process can satisfy the first law but still be impossible (e.g., heat flowing from cold to hot without work input)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A gas expands isobarically at 2 atm from 3 L to 7 L. 500 J of heat is supplied. Find ΔU. Solution: W = PΔV = 2 × 101325 × (7−3)×10⁻³ = 810.6 J. ΔU = Q − W = 500 − 810.6 = −310.6 J. Internal energy decreases.",
+    "Two moles of monatomic ideal gas undergo reversible adiabatic compression from 300 K, 1 atm to 10 atm. Find final temperature and work done. Solution: γ = 5/3. T₂ = T₁(P₂/P₁)^((γ−1)/γ) = 300 × 10^(0.4) = 300 × 2.51 = 753 K. W = ΔU = nCᵥΔT = 2 × (3/2)R × (753−300) = 3 × 8.314 × 453 = 11,300 J (work done ON gas).",
+    "A heat engine operates in a cycle, absorbing 2000 J from a hot reservoir and rejecting 1200 J to a cold reservoir. Find the efficiency and work output per cycle. Solution: W = Q_h − Q_c = 2000 − 1200 = 800 J. η = W/Q_h = 800/2000 = 40%.",
+    "500 g of water at 20°C is mixed with 300 g of water at 80°C in an insulated container. Find the final temperature. Solution: Heat lost = heat gained. m₁c(T_f − 20) = m₂c(80 − T_f). 500(T_f − 20) = 300(80 − T_f). 500T_f − 10000 = 24000 − 300T_f. 800T_f = 34000. T_f = 42.5°C.",
+    "A Carnot engine operates between 500 K and 300 K. If it absorbs 1000 J from the hot reservoir per cycle, how much work does it do and how much heat does it reject? Solution: η_carnot = 1 − T_c/T_h = 1 − 300/500 = 0.4. W = ηQ_h = 0.4 × 1000 = 400 J. Q_c = Q_h − W = 600 J."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The first law is essentially the conservation of energy principle extended to include heat as a form of energy transfer. It was established by Joule, Mayer, and Helmholtz in the 1840s.",
+    "Internal energy U is a state function — its change depends only on initial and final states, not the path. This makes it possible to define enthalpy H = U + pV and other thermodynamic potentials.",
+    "For an ideal gas, internal energy depends ONLY on temperature (Joule's law), not on volume or pressure. This is a consequence of no intermolecular forces in the ideal gas model.",
+    "The efficiency of any heat engine is fundamentally limited by the Carnot efficiency η = 1 − T_c/T_h, a consequence of the second law, not the first. The first law alone would allow 100% efficiency.",
+    "The first law applies to ALL systems — gases, liquids, solids, electromagnetic fields, even black holes (where mass-energy equivalence E=mc² extends the concept of internal energy)."
   ],
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature"

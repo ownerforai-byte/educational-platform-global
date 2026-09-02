@@ -5,26 +5,40 @@
   "topicTitle": "Electric field due to point charges; field lines",
   "relevance": 100,
   "notes": [
-    "**Electric field $\\vec{E}$:** the force per unit positive test charge at a point: $\\vec{E} = \\vec{F}/q_0$.",
-    "**Point charge:** $E = k\\frac{Q}{r^2}$, directed radially outward for positive $Q$ and inward for negative $Q$.",
-    "**Field lines:** imaginary lines showing the direction of $\\vec{E}$. They start on positive charges and end on negative charges, never cross, and their density represents field strength.",
-    "**Properties of field lines:** closer lines mean stronger field; lines are perpendicular to conductor surfaces in electrostatics; they do not pass through conductors.",
-    "**Uniform field:** between two large parallel oppositely charged plates, $E$ is constant in magnitude and direction: $E = \\sigma/\\epsilon_0$."
+    "**Electric field $\\vec{E}$:** the force per unit positive test charge at a point in space. $\\vec{E} = \\vec{F}/q_0$, where $q_0 \\to 0$ to avoid disturbing the field. Units: N/C or V/m. The two are equivalent: $1\\,\\text{N/C} = 1\\,\\text{V/m}$.",
+    "**Field of a point charge:** $\\vec{E} = \\frac{kq}{r^2}\\hat{r} = \\frac{1}{4\\pi\\epsilon_0}\\frac{q}{r^2}\\hat{r}$. Points radially outward for positive charges, radially inward for negative charges.",
+    "**Superposition principle:** the total field at a point due to multiple charges is the vector sum of individual fields: $\\vec{E}_{total} = \\vec{E}_1 + \\vec{E}_2 + \\ldots + \\vec{E}_N$.",
+    "**Continuous charge distribution:** for a line, surface, or volume distribution, the field is calculated by integration: $\\vec{E} = \\int \\frac{k\\,dq}{r^2}\\hat{r}$. Here $dq = \\lambda\\,dl$ (line), $\\sigma\\,dA$ (surface), or $\\rho\\,dV$ (volume).",
+    "**Electric field lines:** a visual representation of the field. They start on positive charges, end on negative charges, never cross, and their density (lines per unit area perpendicular to the field) is proportional to the field strength.",
+    "**Properties of field lines:** (1) Tangent at any point gives the direction of $\\vec{E}$. (2) Density of lines represents magnitude. (3) Lines cannot cross (field is single-valued). (4) Lines start and end on charges or extend to infinity.",
+    "**Dipole field:** for an electric dipole with moment $\\vec{p} = q\\vec{d}$, the field along the axial line at distance $r$ is $E_{axial} = \\frac{2kp}{r^3}$ (for $r \\gg d$). The equatorial field is $E_{eq} = \\frac{kp}{r^3}$, pointing anti-parallel to $\\vec{p}$.",
+    "**Field of an infinite line of charge:** $E = \\frac{\\lambda}{2\\pi\\epsilon_0 r} = \\frac{2k\\lambda}{r}$. The field decreases as $1/r$, not $1/r^2$. It is purely radial.",
+    "**Field of an infinite plane of charge:** $E = \\frac{\\sigma}{2\\epsilon_0}$. The field is constant and perpendicular to the plane. This is independent of distance from the plane.",
+    "**Field of a uniformly charged conducting sphere:** outside ($r > R$): $E = kQ/r^2$ as if all charge were at the centre. At the surface ($r = R$): $E = kQ/R^2$. Inside ($r < R$): $E = 0$ for a conductor in electrostatic equilibrium.",
+    "**Test charge:** a small positive charge used to probe the field without disturbing it. As $q_0 \\to 0$, the field it sees is the actual field at that point.",
+    "**Electric field vs gravitational field:** both are vector fields, but the electric field depends on charge and can be attractive or repulsive, while the gravitational field is always attractive and depends on mass.",
+    "**Relation to potential:** $\\vec{E} = -\\nabla V = -\\frac{dV}{dn}\\hat{n}$. The field points in the direction of decreasing potential. The magnitude equals the rate of change of potential with distance."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Electric field lines are a visualization tool, not physical entities. There is no 'thing' flowing along them. The field itself is what physically exists.",
+    "Field lines do not represent the trajectory of a charged particle. A moving charge follows a curved path, but the field line is the instantaneous direction of force, not motion.",
+    "The number of field lines drawn is conventional; what matters is the ratio of line density between regions. More lines means stronger field, but the actual count is arbitrary.",
+    "Inside a conductor in electrostatic equilibrium, the field is exactly zero, even though there are charges on the surface. The surface charges arrange to cancel any interior field.",
+    "The field at the surface of a conductor is perpendicular to the surface, not parallel. Any parallel component would cause charges to flow along the surface."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two charges $q_1 = +3\\,\\mu$C at $(0, 0)$ and $q_2 = -3\\,\\mu$C at $(0, 0.1$ m$)$ form a dipole. Find the electric field at point $(0.1$ m$, 0)$. Solution: This is the equatorial point. $r = \\sqrt{0.1^2 + 0.1^2} = 0.141$ m. Each field magnitude: $E = 9 \\times 10^9 \\times 3 \\times 10^{-6} / 0.141^2 = 1.35 \\times 10^6$ N/C. By symmetry, the y-components cancel, x-components add. Each x-component: $E \\cos 45° = 1.35 \\times 10^6 \\times 0.707 = 9.55 \\times 10^5$ N/C. Total $E = 2 \\times 9.55 \\times 10^5 = 1.91 \\times 10^6$ N/C in the $-x$ direction (anti-parallel to the dipole moment).",
+    "A long straight wire has a uniform linear charge density $\\lambda = 5\\,\\mu$C/m. Find the electric field at a point 0.1 m from the wire. Solution: $E = 2k\\lambda/r = 2 \\times 9 \\times 10^9 \\times 5 \\times 10^{-6} / 0.1 = 9 \\times 10^5$ N/C, directed radially outward from the wire.",
+    "An infinite plane has surface charge density $\\sigma = 10\\,\\mu$C/m$^2$. Find the field at a point 0.05 m from the plane. Solution: $E = \\sigma/(2\\epsilon_0) = 10 \\times 10^{-6} / (2 \\times 8.85 \\times 10^{-12}) = 5.65 \\times 10^5$ N/C, directed perpendicular to the plane.",
+    "A charge $q = +1\\,\\mu$C is at the origin. Find the work done by the electric field in moving a charge $q_0 = +2\\,\\mu$C from $(0.1$ m$, 0)$ to $(0.5$ m$, 0)$. Solution: $W = q_0(V_i - V_f) = q_0 kq(1/r_i - 1/r_f) = 2 \\times 10^{-6} \\times 9 \\times 10^9 \\times 10^{-6} \\times (10 - 2) = 2 \\times 10^{-6} \\times 9 \\times 10^3 \\times 8 = 0.144$ J.",
+    "Three charges are placed on the x-axis: $+1\\,\\mu$C at $x=0$, $+2\\,\\mu$C at $x=0.5$ m, and $-3\\,\\mu$C at $x=1$ m. Find the net field at $x = 0.2$ m. Solution: $E_1 = 9 \\times 10^9 \\times 1 \\times 10^{-6} / 0.2^2 = 2.25 \\times 10^5$ N/C in $+x$. $E_2 = 9 \\times 10^9 \\times 2 \\times 10^{-6} / 0.3^2 = 2.0 \\times 10^5$ N/C in $-x$. $E_3 = 9 \\times 10^9 \\times 3 \\times 10^{-6} / 0.8^2 = 4.22 \\times 10^4$ N/C in $+x$ (attractive, so toward $q_3$, i.e., in $+x$). Net: $E = 2.25 \\times 10^5 - 2.0 \\times 10^5 + 4.22 \\times 10^4 = 6.72 \\times 10^4$ N/C in $+x$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Electric field lines are also called lines of force because the tangent to a line at any point gives the direction of the force on a positive test charge at that point.",
+    "Faraday introduced the concept of field lines, which was later formalized mathematically by Maxwell. The field concept replaced Newton's action-at-a-distance.",
+    "The electric field of Earth at its surface is about 100-200 V/m, pointing downward, due to the negative charge on the ground and positive charge in the ionosphere.",
+    "The number of field lines per unit area is proportional to the field strength. By convention, the total number of lines from a charge $q$ is $N = q/\\epsilon_0$.",
+    "Inside a Faraday cage, the electric field is zero regardless of external fields. This is the principle behind lightning protection and shielding sensitive electronic equipment."
   ],
   "animation3D": "electric-field",
   "motionGraphics": "electric-field"

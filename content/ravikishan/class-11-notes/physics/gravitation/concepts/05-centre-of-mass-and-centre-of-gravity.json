@@ -5,26 +5,34 @@
   "topicTitle": "Centre of mass and centre of gravity",
   "relevance": 100,
   "notes": [
-    "**Centre of mass (CM):** the point where the entire mass of a body can be considered to be concentrated for translational motion. $\\vec{r}_{CM} = \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i}$.",
-    "**Centre of gravity (CG):** the point where the entire weight of a body can be considered to act. For uniform gravity, CG coincides with CM.",
-    "**Symmetry shortcut:** for symmetric bodies with uniform density, CM lies on the axis or plane of symmetry. For a uniform rod, CM is at its midpoint; for a uniform disc, at its centre.",
-    "**Why CM matters:** external forces cause the CM to accelerate according to $\\vec{F}_{ext} = M\\vec{a}_{CM}$, regardless of internal forces.",
-    "**Difference:** CM depends only on mass distribution; CG depends on the external gravitational field. In a non-uniform field, they can differ."
+    "**Centre of mass (CM):** the point where the entire mass of a body can be considered to be concentrated for translational motion. $\\vec{r}_{CM} = \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i}$ for discrete masses, or $\\vec{r}_{CM} = \\frac{1}{M}\\int \\vec{r}\\,dm$ for continuous bodies.",
+    "**Centre of gravity (CG):** the point where the entire weight of a body can be considered to act. For uniform gravity, CG coincides with CM. In a non-uniform field, they can differ.",
+    "**Symmetry shortcut:** for symmetric bodies with uniform density, CM lies on the axis or plane of symmetry. For a uniform rod, CM is at its midpoint; for a uniform disc, at its centre; for a uniform sphere, at its geometric centre.",
+    "**Why CM matters:** external forces cause the CM to accelerate according to $\\vec{F}_{ext} = M\\vec{a}_{CM}$, regardless of internal forces. The CM moves as if all external forces were applied at that point.",
+    "**Difference between CM and CG:** CM depends only on mass distribution; CG depends on the external gravitational field. In a uniform field, $g$ is constant, so weight is proportional to mass and CG = CM. In a non-uniform field (e.g., near a large planet), the nearer parts experience stronger $g$, shifting CG toward the planet.",
+    "**CM of a two-particle system:** lies on the line joining them, dividing it inversely as the masses: $m_1 r_1 = m_2 r_2$. Closer to the heavier mass.",
+    "**CM of a solid hemisphere:** at distance $3R/8$ from the flat face along the axis of symmetry.",
+    "**CM of a uniform cone:** at distance $h/4$ from the base along the axis.",
+    "**CM of a semicircular wire:** at distance $2R/\\pi$ from the centre along the axis of symmetry.",
+    "**CM of a semicircular disc:** at distance $4R/(3\\pi)$ from the centre along the axis of symmetry."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "CM and CG are the SAME only in a uniform gravitational field. In a non-uniform field (e.g., a long vertical rod near Earth), the CG is slightly lower than the CM because the lower end experiences stronger gravity.",
+    "The centre of mass does NOT have to be inside the body — for a ring or hollow sphere, the CM is at the geometric centre, which is empty space.",
+    "The formula $\\vec{F}_{ext} = M\\vec{a}_{CM}$ means the CM moves as if all mass were concentrated there and all external forces were applied at the CM — but this does NOT mean internal forces are zero.",
+    "For a system of particles, the CM position vector is the mass-weighted average. It is NOT the arithmetic mean of positions unless all masses are equal."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Three masses $2\\,\\text{kg}$, $3\\,\\text{kg}$, and $5\\,\\text{kg}$ are placed at $(0,0)$, $(4,0)$, and $(0,3)$ respectively. Find the CM coordinates. Solution: $x_{CM} = (2(0) + 3(4) + 5(0))/(2+3+5) = 12/10 = 1.2\\,\\text{m}$. $y_{CM} = (2(0) + 3(0) + 5(3))/10 = 15/10 = 1.5\\,\\text{m}$. CM = $(1.2, 1.5)$.",
+    "A uniform rod of length $L$ has a mass $m$. Find the CM distance from one end. Solution: By symmetry, CM is at the midpoint: $L/2$.",
+    "A uniform disc of radius $R$ has a circular hole of radius $R/2$ cut out, with the hole's centre at distance $R/2$ from the disc's centre. Find the CM of the remaining part. Solution: Treat as positive mass $M$ (full disc) plus negative mass $-M/4$ (hole). $x_{CM} = (M(0) - M/4(R/2))/(M - M/4) = -R/6$ from the original centre, toward the hole.",
+    "A body of mass $M$ is suspended by two strings from points A and B. If the CM is directly below the midpoint of AB, what can you say about the tensions? Solution: The CM is at the midpoint horizontally, so the body is symmetric. The tensions are equal: $T_1 = T_2 = Mg/2$ (assuming AB horizontal and strings vertical)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The centre of mass of a system moves as if all external forces were applied at that point — this is why a diver's CM follows a parabolic trajectory even while the body rotates and changes shape.",
+    "For any system with no external forces, the centre of mass moves with constant velocity (or remains at rest) — conservation of momentum of the system.",
+    "The CM of a uniform solid hemisphere is at $3R/8$ from the flat face — this is a standard result often used in composite body problems.",
+    "In rocket motion, the CM of the rocket+exhaust system follows the same trajectory it would have without thrust, because the thrust is internal to the system."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

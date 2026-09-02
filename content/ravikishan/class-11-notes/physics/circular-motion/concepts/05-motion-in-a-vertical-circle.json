@@ -5,26 +5,38 @@
   "topicTitle": "Motion in a vertical circle",
   "relevance": 100,
   "notes": [
-    "**Critical case â€” lowest point:** tension is maximum because it must support weight and provide centripetal force: $T_{max} = mg + mv^2/r$.",
-    "**Critical case â€” highest point:** tension is minimum. The body stays on the circle if $v \\geq \\sqrt{gr}$. If $v < \\sqrt{gr}$, the string goes slack and the body falls.",
+    "**Critical case — lowest point:** tension is maximum because it must support weight and provide centripetal force: $T_{max} = mg + mv^2/r$.",
+    "**Critical case — highest point:** tension is minimum. The body stays on the circle if $v \\geq \\sqrt{gr}$. If $v < \\sqrt{gr}$, the string goes slack and the body falls.",
     "**Minimum speed at top:** $v_{top} = \\sqrt{gr}$. Below this, gravity alone provides more inward force than needed, so the body falls inward.",
     "**Energy conservation:** since only gravity does work, mechanical energy is conserved. $\\frac{1}{2}mv_{bottom}^2 = \\frac{1}{2}mv_{top}^2 + mg(2r)$.",
-    "**Practical example:** a bucket of water swung in a vertical circle does not spill at the top if the speed is high enough, because the water's inertia keeps it pressed against the bucket."
+    "**Practical example:** a bucket of water swung in a vertical circle does not spill at the top if the speed is high enough, because the water's inertia keeps it pressed against the bucket.",
+    "**Speed at bottom for minimum condition:** using energy conservation with $v_{top} = \\sqrt{gr}$: $v_{bottom}^2 = v_{top}^2 + 4gr = gr + 4gr = 5gr$, so $v_{bottom} = \\sqrt{5gr}$.",
+    "**Tension at bottom (minimum case):** $T_{bottom} = mg + m(5gr)/r = mg + 5mg = 6mg$. The tension at the bottom is 6 times the weight when the object barely completes the loop.",
+    "**Tension at top (minimum case):** $T_{top} = mv_{top}^2/r - mg = mg - mg = 0$. The tension is zero — the string is just about to go slack.",
+    "**Tension difference:** the difference between bottom and top tension is always $T_{bottom} - T_{top} = 6mg$, regardless of the actual speed, as long as the motion is circular.",
+    "**Rod vs string:** a light rod (unlike a string) can push. For a rod, the minimum speed at the top can be zero ($v_{top} = 0$). The corresponding minimum speed at the bottom becomes $v_{bottom} = \\sqrt{4gr} = 2\\sqrt{gr}$.",
+    "**Vertical circular motion is non-uniform:** the speed changes continuously because gravity does work. At the top, speed is minimum; at the bottom, it is maximum."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "For a string, the minimum speed at the top is $\\sqrt{gr}$ (not zero). For a rigid rod, it can be zero because the rod can push outward to support the weight.",
+    "At the lowest point, tension exceeds weight because it must both support the weight and provide centripetal force: $T = mg + mv^2/r > mg$.",
+    "At the highest point, tension can be less than weight. If $v = \\sqrt{2gr}$, then $T = mv^2/r - mg = 2mg - mg = mg = $ weight. For $v < \\sqrt{2gr}$, tension is less than weight.",
+    "The condition $v_{top} \\geq \\sqrt{gr}$ ensures the string remains taut. Below this speed, the string goes slack and the object leaves the circular path — it does not continue in a smaller circle.",
+    "In vertical circular motion, the speed is not constant. The kinetic energy converts to potential energy and back, so $v$ varies around the circle even though the radius is fixed."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 0.5 kg ball is swung in a vertical circle of radius 2 m on a string. What is the minimum speed at the bottom? Solution: $v_{bottom} = \\sqrt{5gr} = \\sqrt{5 \\times 9.8 \\times 2} = \\sqrt{98} = 9.9$ m/s.",
+    "A 1 kg ball is swung in a vertical circle of radius 1.5 m. At the top, the speed is 5 m/s. Find the tension at the top and the speed at the bottom. Solution: At top: $T_{top} = mv^2/r - mg = 1 \\times 25/1.5 - 1 \\times 9.8 = 16.67 - 9.8 = 6.87$ N. At bottom: $\\frac{1}{2}mv_b^2 = \\frac{1}{2}mv_t^2 + mg(2r) = \\frac{1}{2}(25) + 9.8 \\times 3 = 12.5 + 29.4 = 41.9$. $v_b = \\sqrt{83.8} = 9.15$ m/s.",
+    "A 200 g ball on a 0.6 m string just completes a vertical circle. Find the tension at the bottom. Solution: $v_{bottom} = \\sqrt{5gr} = \\sqrt{5 \\times 9.8 \\times 0.6} = \\sqrt{29.4} = 5.42$ m/s. $T_{bottom} = mg + mv^2/r = 0.2 \\times 9.8 + 0.2 \\times 29.4/0.6 = 1.96 + 9.8 = 11.76$ N $= 6mg$.",
+    "A ball on a string has $v_{bottom} = 7$ m/s with $r = 1$ m. Find the tension at the bottom and at the top, and the speed at the top. Solution: $T_{bottom} = mg + mv^2/r$. Using energy: $v_{top}^2 = v_{bottom}^2 - 4gr = 49 - 39.2 = 9.8$. $v_{top} = 3.13$ m/s. $T_{top} = mv_{top}^2/r - mg = m(9.8 - 9.8) = 0$. The ball just barely reaches the top with tension zero.",
+    "A light rod carries a 1 kg ball at its end and rotates in a vertical circle of radius 0.8 m. Find the minimum speed at the bottom and the tension at the bottom and top for this minimum case. Solution: For a rod, $v_{top} = 0$. $v_{bottom} = \\sqrt{4gr} = \\sqrt{4 \\times 9.8 \\times 0.8} = 5.6$ m/s. At top: $T_{top} = mg - mv_{top}^2/r = 9.8 - 0 = 9.8$ N (rod pushes up). At bottom: $T_{bottom} = mg + mv_{bottom}^2/r = 9.8 + 1 \\times 31.36/0.8 = 9.8 + 39.2 = 49$ N $= 5mg$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "For a string in vertical circular motion, the minimum speed at the bottom is $\\sqrt{5gr}$, and the minimum speed at the top is $\\sqrt{gr}$. These conditions ensure the string never goes slack.",
+    "The tension at the bottom exceeds the tension at the top by exactly $6mg$ for any speed that completes the loop, as long as the string remains taut.",
+    "A ball on a rigid rod can reach the top with zero speed (unlike a string), so the minimum speed at the bottom is $2\\sqrt{gr}$ for a rod vs $\\sqrt{5gr}$ for a string.",
+    "In a vertical loop, the ball is fastest at the bottom and slowest at the top. The speed difference depends on the loop radius: $v_{bottom}^2 - v_{top}^2 = 4gr$.",
+    "The centripetal force is not constant in vertical circular motion — it varies because the speed changes. Only the radius remains constant."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion"

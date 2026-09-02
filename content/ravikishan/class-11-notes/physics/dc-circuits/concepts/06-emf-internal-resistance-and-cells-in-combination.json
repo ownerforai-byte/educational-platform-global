@@ -9,22 +9,34 @@
     "**Internal resistance $r$:** the resistance inside the cell due to electrolyte and electrodes. It causes the terminal voltage to drop when current flows.",
     "**Terminal voltage:** $V = \\mathcal{E} - Ir$. When no current flows ($I=0$), $V = \\mathcal{E}$. Under load, $V < \\mathcal{E}$.",
     "**Cells in series:** $\\mathcal{E}_{total} = \\mathcal{E}_1 + \\mathcal{E}_2 + \\ldots$, $r_{total} = r_1 + r_2 + \\ldots$. Series adds both EMF and internal resistance.",
-    "**Cells in parallel:** $\\mathcal{E}_{total} = \\mathcal{E}$ (if all equal), $r_{total} = r/n$ for $n$ identical cells. Parallel reduces internal resistance, allowing higher current delivery."
+    "**Cells in parallel:** $\\mathcal{E}_{total} = \\mathcal{E}$ (if all equal), $r_{total} = r/n$ for $n$ identical cells. Parallel reduces internal resistance, allowing higher current delivery.",
+    "**Maximum power transfer:** the power delivered to an external load $R$ is maximum when $R = r$. The maximum power is $P_{max} = \\mathcal{E}^2/(4r)$.",
+    "**Current in a simple circuit:** $I = \\mathcal{E}/(R + r)$, where $R$ is the external resistance and $r$ is the internal resistance.",
+    "**Efficiency:** the efficiency of power transfer is $\\eta = R/(R + r)$. Maximum efficiency approaches 100% when $R \\gg r$, but maximum power requires $R = r$.",
+    "**Short circuit current:** when $R = 0$, $I_{sc} = \\mathcal{E}/r$. This can be very large and dangerous, causing heating and damage.",
+    "**Cells with different EMFs:** when cells with different EMFs are connected in parallel, circulating currents flow between them. This can damage cells and should be avoided.",
+    "**Real cell behavior:** as a cell discharges, its EMF slowly decreases and its internal resistance increases. An old battery reads lower than its rated voltage even when not loaded."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "EMF is not a force — it is a voltage (energy per unit charge). The name is historical. EMF is measured in volts, not newtons.",
+    "Terminal voltage $V = \\mathcal{E} - Ir$ is less than EMF when current flows out of the cell. But when charging the cell, current flows into the positive terminal, so $V = \\mathcal{E} + Ir$ — the terminal voltage is greater than EMF.",
+    "In series, both EMF and internal resistance add. In parallel, the equivalent EMF is the same as one cell, but the equivalent internal resistance is reduced, allowing more current.",
+    "Maximum power transfer ($R = r$) occurs at 50% efficiency. For efficient power delivery, you want $R \\gg r$ (high efficiency, low power). For maximum power, you sacrifice efficiency.",
+    "A fresh battery has a high open-circuit voltage (close to its EMF) but drops significantly under load if its internal resistance has increased with age. That is why old batteries seem weak."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A cell with EMF 1.5 V and internal resistance 0.5 $\Omega$ is connected to a 7 $\Omega$ resistor. Find the current, terminal voltage, and power delivered to the resistor. Solution: $I = 1.5/(7+0.5) = 0.2$ A. $V = 1.5 - 0.2 \\times 0.5 = 1.4$ V. $P = I^2 R = 0.04 \\times 7 = 0.28$ W.",
+    "A cell gives 2.0 V when no current flows and 1.8 V when delivering 1 A. Find the EMF and internal resistance. Solution: EMF $\\mathcal{E} = 2.0$ V (open circuit). Under load: $1.8 = 2.0 - 1 \\times r$, so $r = 0.2\\,\\Omega$.",
+    "Three identical cells of EMF 1.5 V and internal resistance 0.3 $\Omega$ each are connected in series across a 6 $\Omega$ load. Find the current. Solution: $\\mathcal{E}_{total} = 4.5$ V, $r_{total} = 0.9\\,\\Omega$. $I = 4.5/(6+0.9) = 0.652$ A.",
+    "The same three cells above are connected in parallel across the same 6 $\Omega$ load. Find the current. Solution: $\\mathcal{E}_{total} = 1.5$ V, $r_{total} = 0.3/3 = 0.1\\,\\Omega$. $I = 1.5/(6+0.1) = 0.246$ A.",
+    "Find the external resistance for maximum power transfer to a cell with EMF 12 V and internal resistance 2 $\Omega$. Find the maximum power. Solution: $R = r = 2\\,\\Omega$. $I = 12/(2+2) = 3$ A. $P_{max} = I^2 R = 9 \\times 2 = 18$ W. Alternatively $P_{max} = \\mathcal{E}^2/(4r) = 144/8 = 18$ W."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The internal resistance of a typical AA alkaline cell is about 0.15 $\Omega$ when fresh, but increases to 0.5 $\Omega$ or more as it discharges.",
+    "Connecting cells in series increases the available voltage while keeping the same current capacity. Connecting in parallel increases the current capacity while keeping the same voltage.",
+    "A short-circuited 12 V car battery with internal resistance 0.01 $\Omega$ can deliver 1200 A, which is why it can melt tools and cause severe burns.",
+    "The maximum power transfer theorem ($R = r$) is a fundamental design principle for matching loads to sources, but it is inefficient for power distribution systems where $R \\gg r$ is desired.",
+    "In a battery pack, series strings are often used to increase voltage, and parallel strings within each series group are used to increase capacity and reduce internal resistance."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits"

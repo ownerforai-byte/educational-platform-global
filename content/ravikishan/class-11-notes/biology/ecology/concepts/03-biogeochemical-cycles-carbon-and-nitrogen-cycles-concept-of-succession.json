@@ -9,22 +9,44 @@
     "**Nitrogen cycle:** atmospheric $N_2$ fixed to ammonia by lightning, industrial Haber process, and biological N-fixation (Rhizobium, Azotobacter). Ammonia nitrified to nitrite then nitrate by bacteria. Nitrate assimilated by plants, passed through food chain, returned by denitrification ($NO_3^- \\rightarrow N_2$).",
     "**Succession:** gradual replacement of one community by another until a stable climax community is reached. Primary succession starts on bare rock; secondary succession starts on previously colonised soil after disturbance.",
     "**Pioneer species:** first colonisers, usually lichens and mosses, that modify the environment making it suitable for later species.",
-    "**Climax community:** stable, self-sustaining community in equilibrium with local climate. In Nepal, temperate forests climax on mid-hills."
+    "**Climax community:** stable, self-sustaining community in equilibrium with local climate. In Nepal, temperate forests climax on mid-hills.",
+    "**Phosphorus cycle:** phosphorus has no significant atmospheric component. It weathers from rocks into soil as phosphate ($PO_4^{3-}$), is taken up by plants, passes through food chains, and returns to soil via decomposition. Runoff carries phosphate to oceans where it deposits as sediment. Upwelling returns some phosphate to surface waters.",
+    "**Water cycle (hydrologic cycle):** evaporation from oceans and land → condensation → precipitation → infiltration/runoff → collection in oceans/lakes. Transpiration from plants contributes significantly (about 10% of atmospheric moisture). This cycle drives all other biogeochemical cycles by transporting dissolved nutrients.",
+    "**Sedimentary vs. gaseous cycles:** sedimentary cycles (phosphorus, sulfur, calcium) involve rock weathering as the main source and sediment deposition as the main sink. Gaseous cycles (carbon, nitrogen, oxygen) involve the atmosphere as the main reservoir. Gaseous cycles tend to be more rapid and globally distributed.",
+    "**Nitrogen fixation reactions:** biological fixation by cyanobacteria (Anabaena, Nostoc) and symbiotic bacteria (Rhizobium in legume root nodules) is the most important source of usable nitrogen. Chemical fixation by lightning produces NO which dissolves in rain as nitric acid. Industrial fixation via the Haber-Bosch process now produces more fixed nitrogen than all natural sources combined.",
+    "**Nitrification:** two-step bacterial process: ammonia ($NH_3$) → nitrite ($NO_2^-$) by Nitrosomonas, then nitrite → nitrate ($NO_3^-$) by Nitrobacter. Both steps are aerobic. Nitrate is the primary form of nitrogen taken up by most plants.",
+    "**Denitrification:** anaerobic bacteria (Pseudomonas, Paracoccus) convert nitrate back to $N_2$ gas, returning nitrogen to the atmosphere. This occurs in waterlogged soils and deep ocean sediments. Denitrification can reduce soil fertility but is essential for completing the nitrogen cycle.",
+    "**Primary succession stages on bare rock:** (1) Lithobiotic stage — crustose lichens secrete acids that weather rock. (2) Herb stage — mosses and small herbs colonize thin soil. (3) Shrub stage — shrubs establish as soil deepens. (4) Forest stage — trees dominate, forming climax community. This process can take hundreds to thousands of years.",
+    "**Secondary succession stages after disturbance:** (1) Annual weed stage — fast-growing annuals colonize immediately. (2) Perennial weed stage — perennial herbs and grasses establish. (3) Shrub stage — shade-intolerant shrubs invade. (4) Climax community — shade-tolerant trees dominate. This is much faster than primary succession because soil is already present.",
+    "**Seral stages and seriate species:** each intermediate community in a succession is called a seral stage, and the species composing it are seriate species. Seral communities differ from the climax in species composition, structure, and function. Succession proceeds through predictable seral stages.",
+    "**Ecological succession theories:** climax theory (Clements) views succession as deterministic, leading to a single climactic community determined by climate. Monoclimax vs. polyclimax debate: is there one climax per climate area, or multiple stable states depending on soil/topography? Modern ecology recognizes elements of both views.",
+    "**Facilitation vs. inhibition models:** in facilitation, early species modify the environment to make it more suitable for later species (classic view). In inhibition, early species may actually resist invasion by later species until they are disturbed or die. Both patterns are observed in nature.",
+    "**Human impacts on biogeochemical cycles:** burning fossil fuels has increased atmospheric $CO_2$ by ~50% since pre-industrial times, driving climate change. Fertilizer use has doubled the rate of nitrogen fixation, causing eutrophication and dead zones. Deforestation disrupts both carbon and nitrogen cycles locally and globally.",
+    "**R- and K-selection in succession:** early successional species are typically r-selected (fast growth, high reproduction, good dispersal, short lifespan). Late successional species are typically K-selected (slow growth, competitive ability, long lifespan, efficient resource use). The climax community is dominated by K-strategists."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Primary and secondary succession differ in their starting point, NOT in their endpoint. Both can reach a climax community; primary succession just takes longer because it must build soil from scratch.",
+    "The 'climax community' is not necessarily the 'best' or 'most complex' community. It is simply the community most in equilibrium with current environmental conditions. If climate changes, the climax community changes too.",
+    "Nitrogen gas ($N_2$) makes up 78% of the atmosphere, but it is NOT directly usable by most organisms. The triple bond in $N_2$ is extremely strong and requires specialized enzymes (nitrogenase) or high energy (lightning) to break.",
+    "Carbon cycle and climate change are related but distinct. The carbon cycle is the natural movement of carbon; climate change is one consequence of human disruption of that cycle through fossil fuel combustion and deforestation.",
+    "Denitrification is not inherently 'bad.' While it removes usable nitrogen from soil, it is essential for preventing nitrogen accumulation and completing the global nitrogen cycle. The problem is human imbalance, not the process itself.",
+    "Phosphorus is not just important for bones and teeth (though it is). It is a key component of ATP, DNA, RNA, and phospholipid membranes. It is often the limiting nutrient in aquatic ecosystems because its cycle lacks an atmospheric component."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Draw and label the nitrogen cycle, showing all major processes (fixation, nitrification, assimilation, ammonification, denitrification) and the organisms/bacteria involved in each.",
+    "Compare primary and secondary succession using a table. Include: starting conditions, role of soil, speed of succession, pioneer species, and time to reach climax.",
+    "Explain how burning fossil fuels disrupts the carbon cycle. What is the estimated increase in atmospheric $CO_2$ since the Industrial Revolution, and what are the ecological consequences?",
+    "A lake receives excess agricultural runoff containing nitrogen and phosphorus fertilizers. Describe the sequence of ecological events (eutrophication) that would follow, from algal bloom to fish kill.",
+    "Why is phosphorus often the limiting nutrient in freshwater ecosystems while nitrogen is more commonly limiting in marine ecosystems? Consider the differences in their cycles.",
+    "Describe the role of Rhizobium bacteria in the nitrogen cycle. How does the symbiosis work, and what benefit does the plant receive? What does the bacterium receive in return?",
+    "If a forest is cleared by logging (not fire), what type of succession occurs? Predict the seral stages that would follow and estimate the time scale for recovery to climax forest."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The average residence time of a water molecule in the ocean is about 3,000-4,000 years, but in the atmosphere it is only about 9 days — illustrating the vast difference in cycle speeds between reservoirs.",
+    "Human activities now fix more nitrogen than all natural terrestrial processes combined. The Haber-Bosch process alone produces over 150 million tonnes of fixed nitrogen annually — roughly doubling the global nitrogen fixation rate.",
+    "The carbon stored in permafrost (frozen Arctic soil) is estimated at 1,400-1,850 billion tonnes — about twice the amount of carbon currently in the atmosphere. Thawing permafrost is a major potential feedback to climate change.",
+    "Ecological succession is not truly 'cyclical' in the sense of returning to the exact starting point. Each succession modifies the environment, and the trajectory depends on historical contingency, dispersal limitations, and changing environmental conditions.",
+    "The concept of 'baseline shift' warns us that what we consider a 'natural' climax community may itself be the result of millennia of human influence. Truly pristine ecosystems are increasingly rare on Earth."
   ],
   "animation3D": "ecology",
   "motionGraphics": "ecology"

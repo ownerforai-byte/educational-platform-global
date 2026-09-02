@@ -9,22 +9,34 @@
     "**Why 'centripetal' means centre-seeking:** without this inward acceleration, the object would move in a straight line by Newton's first law.",
     "**Centripetal force:** $F_c = mv^2/r = mr\\omega^2$. This is not a new type of force; it is the net inward force required for circular motion.",
     "**Examples of centripetal force:** tension in a string for a conical pendulum, friction between tyres and road for a turning car, gravity for a satellite.",
-    "**Centrifugal force:** in a rotating frame, an outward pseudo force appears. It is not a real force but a consequence of inertia in a non-inertial frame."
+    "**Centrifugal force:** in a rotating frame, an outward pseudo force appears. It is not a real force but a consequence of inertia in a non-inertial frame.",
+    "**Derivation of $a_c$:** for a particle moving at speed $v$ in a circle, the velocity changes direction but not magnitude. For a small angle $d\\theta$, the change in velocity $|d\\vec{v}| = v\\,d\\theta$. Since $d\\theta = ds/r = v\\,dt/r$, the acceleration $a_c = |d\\vec{v}|/dt = v^2/r$.",
+    "**No work done by centripetal force:** since $\\vec{F}_c$ is perpendicular to $\\vec{v}$, the power $P = \\vec{F} \\cdot \\vec{v} = 0$. Centripetal force changes direction but never the kinetic energy.",
+    "**Banking and centripetal force:** on a banked road, the horizontal component of the normal reaction provides $F_c = N\\sin\\theta$. On an unbanked road, static friction provides it: $F_c = \\mu_s N$.",
+    "**Satellite orbit:** for a satellite in circular orbit at radius $R$ from Earth's centre, $mv^2/R = GMm/R^2$, giving $v = \\sqrt{GM/R}$. Larger orbits mean lower orbital speeds.",
+    "**Conical pendulum:** tension $T$ provides centripetal force $T\\sin\\theta = mv^2/r$, while its vertical component $T\\cos\\theta$ balances the weight.",
+    "**Unit analysis:** $[mv^2/r] = \\text{kg} \\cdot (\\text{m/s})^2 / \\text{m} = \\text{kg} \\cdot \\text{m/s}^2 = \\text{N}$. The centripetal force formula is dimensionally consistent."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Centripetal force is not a new or special type of force. It is always one of the existing forces (tension, friction, gravity, normal reaction, or their resultant) directed toward the centre.",
+    "Centrifugal force is a fictitious (pseudo) force that appears only in a rotating reference frame. In an inertial frame, it does not exist — the object merely tends to move in a straight line.",
+    "Centripetal force does no work because it is perpendicular to the velocity. An object in uniform circular motion has constant speed and constant kinetic energy.",
+    "The centripetal force $mv^2/r$ does not appear in free body diagrams as a separate force. The net of all real forces in the radial direction must equal $mv^2/r$.",
+    "As radius increases for a given speed, less centripetal force is needed ($F_c \\propto 1/r$). But for a given angular velocity, more force is needed ($F_c \\propto r$). Always check which variable is held constant."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 2 kg stone is swung in a vertical circle of radius 1.5 m at 6 m/s. Find the centripetal acceleration and centripetal force. Solution: $a_c = v^2/r = 36/1.5 = 24$ m/s$^2$. $F_c = ma_c = 2 \\times 24 = 48$ N.",
+    "A car of mass 1200 kg turns a corner of radius 50 m at 20 m/s on a flat road. Find the friction force needed and the minimum coefficient of friction. Solution: $F_c = mv^2/r = 1200 \\times 400/50 = 9600$ N. $f = \\mu_s mg$, so $\\mu_s = 9600/(1200 \\times 9.8) = 0.816$.",
+    "A satellite orbits Earth at $R = 7000$ km from the centre. Earth's mass $M = 5.97 \\times 10^{24}$ kg, $G = 6.67 \\times 10^{-11}$ Nm$^2$/kg$^2$. Find the orbital speed. Solution: $v = \\sqrt{GM/R} = \\sqrt{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24} / 7 \\times 10^6} = \\sqrt{5.69 \\times 10^7} = 7543$ m/s $\\approx 7.5$ km/s.",
+    "A 0.5 kg mass is attached to a 1 m string and swings in a horizontal circle with the string at $60^{\\circ}$ to the vertical. Find the tension, speed, and period. Solution: $T\\cos 60^{\\circ} = mg = 4.9$, so $T = 9.8$ N. $r = l\\sin 60^{\\circ} = 0.866$ m. $T\\sin 60^{\\circ} = mv^2/r$, so $v = \\sqrt{Tr\\sin 60^{\\circ}/m} = \\sqrt{9.8 \\times 0.866 \\times 0.866/0.5} = 3.83$ m/s. $T_{period} = 2\\pi r/v = 2\\pi \\times 0.866/3.83 = 1.42$ s.",
+    "A washing machine drum of radius 0.25 m spins at 1200 RPM. Find the centripetal acceleration at the rim. Solution: $\\omega = 1200 \\times 2\\pi/60 = 40\\pi \\approx 125.66$ rad/s. $a_c = r\\omega^2 = 0.25 \\times 15791 = 3948$ m/s$^2 \\approx 403g$. This enormous acceleration is how water is extracted from clothes."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Centripetal force is always perpendicular to velocity, so it never changes the kinetic energy or speed of the object — it only changes the direction of motion.",
+    "For any object in uniform circular motion, there must be a net inward force. If this force disappears, the object flies off tangentially in a straight line, not radially outward.",
+    "The fastest a planet can orbit at a given radius is the speed of light. For a black hole, the event horizon radius is where the required centripetal acceleration equals the speed of light divided by light-crossing time.",
+    "In the rotating reference frame of a carnival ride, passengers feel pushed outward (centrifugal force). In the inertial frame, they are simply being constrained to circular motion by the wall of the ride.",
+    "On Earth's surface, objects at the equator experience a centripetal acceleration of about $0.034$ m/s$^2$ due to Earth's rotation — about $0.3\\%$ of $g$."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion"

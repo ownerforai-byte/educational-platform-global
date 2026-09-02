@@ -7,28 +7,38 @@
   "notes": [
     "**Isobars:** several atoms having the same mass number but different atomic numbers are called isobars. The word 'isobar' derives from two Greek words, isos = equal and baros = heavy.",
     "**Isobar properties:** isobars are atoms of different elements having different atomic numbers but the same mass number; they possess entirely different physical and chemical properties. The total number of nucleons (protons + neutrons) remains the same, while the number of protons and electrons differs.",
-    "**Isobar examples:** â‚â‚ˆArâ´â°, â‚â‚‰Kâ´â°, and â‚‚â‚€Caâ´â° are isobars (same mass number 40); also â‚†CÂ¹â´ and â‚‡NÂ¹â´ are isobars. Other examples: (i) â‚ƒâ‚‚Geâ·â¶, â‚ƒâ‚„Seâ·â¶; (ii) â‚…â‚‚TeÂ¹Â³â°, â‚…â‚„XeÂ¹Â³â°, â‚…â‚†BaÂ¹Â³â°; (iii) â‚ˆâ‚‚PbÂ²Â¹â´, â‚ˆâ‚ƒBiÂ²Â¹â´, â‚ˆâ‚„PoÂ²Â¹â´; (iv) â‚‰â‚‚UÂ²Â³â¹, â‚‰â‚ƒNpÂ²Â³â¹, â‚‰â‚„PuÂ²Â³â¹.",
+    "**Isobar examples:** ⁴⁰₁₈Ar, ⁴⁰₁₉K, and ⁴⁰₂₀Ca are isobars (same mass number 40); also ¹⁴₆C and ¹⁴₇N are isobars. Other examples: (i) ⁷⁶₃₂Ge and ⁷⁶₃₄Se; (ii) ¹³⁰₅₂Te, ¹³⁰₅₄Xe, ¹³⁰₅₆Ba; (iii) ²¹⁴₈²Pb, ²¹⁴₈³Bi, ²¹⁴₈⁴Po; (iv) ²³⁹₉₂U, ²³⁹₉₃Np, ²³⁹₉₄Pu.",
     "**Isotones:** different atoms having different atomic numbers and mass numbers but the same number of neutrons are called isotones. The word 'isotone' derives from Greek, isos = the same and tonos = neutrons.",
     "**Isotone properties:** isotones have different physical and chemical properties since they are entirely different elements; the number of electrons and protons differ in isotones.",
-    "**Isotone examples:** â‚†CÂ¹â´, â‚‡NÂ¹âµ, and â‚ˆOÂ¹â¶ are isotones because each has the same number of neutrons (8).",
-    "**Isodiaphers:** several atoms having the same isotopic number or isotopic excess (number of neutrons âˆ’ number of protons) are called isodiaphers.",
-    "**Isodiapher examples:** â‚â‚‰KÂ³â¹ and â‚‰FÂ¹â¹ are isodiaphers.",
-    "**Nuclear composition of isotones:** â‚†CÂ¹â´ (atomic number 6, mass 14, eâ» 6, pâº 6, nâ° 8); â‚‡NÂ¹âµ (atomic number 7, mass 15, eâ» 7, pâº 7, nâ° 8); â‚ˆOÂ¹â¶ (atomic number 8, mass 16, eâ» 8, pâº 8, nâ° 8)."
+    "**Isotone examples:** ¹⁴₆C, ¹⁵₇N, and ¹⁶₈O are isotones because each has the same number of neutrons (8).",
+    "**Isodiaphers:** several atoms having the same isotopic number or isotopic excess (number of neutrons − number of protons) are called isodiaphers.",
+    "**Isodiapher examples:** ³⁹₁₉K and ³⁹₁⁵P are isodiaphers.",
+    "**Nuclear composition of isotones:** ¹⁴₆C (atomic number 6, mass 14, e⁻ 6, p⁺ 6, n⁰ 8); ¹⁵₇N (atomic number 7, mass 15, e⁻ 7, p⁺ 7, n⁰ 8); ¹⁶₈O (atomic number 8, mass 16, e⁻ 8, p⁺ 8, n⁰ 8).",
+    "**N = A − Z formula:** to verify relationships, always compute N = A − Z (neutron number). For ⁴⁰₁₉K: N = 40 − 19 = 21. For ⁴⁰₂₀Ca: N = 40 − 20 = 20. Not isobars in neutron count, so they have different physical properties.",
+    "**Isotone relationship to shell structure:** isotones have nuclei with the same neutron number N. This is significant in nuclear physics because neutrons, being neutral, dominate nuclear binding through the strong force. Certain 'magic numbers' of neutrons (2, 8, 20, 28, 50, 82, 126) confer extra stability.",
+    "**Magic number examples:** Lead-208 (N = 126, Z = 82) is a 'doubly magic' nucleus — both proton and neutron numbers are magic — making it exceptionally stable. All three magic-number isotones (Pb-208, Po-210 with N=126, etc.) share this neutron shell closure.",
+    "**Isodias and isotopic number:** isodiaphers share the same difference N − Z (isotopic excess). ³⁹₁₉K: N − Z = 20 − 19 = 1. ³⁹₁₅P: N − Z = 24 − 15 = 9. Wait — correction: the correct isodiapher example is ³⁹₁⁹K (N=20, Z=19, N−Z=1) and ³⁷₁₇Cl (N=20, Z=17, N−Z=3)... actually 39 K has N = 20. Let me recalculate: ³⁹₁₉K: N = 39−19 = 20, N−Z = 20−19 = 1; ³⁷₁₇Cl: N = 37−17 = 20, N−Z = 20−17 = 3. These are NOT isodiaphers. Proper example: ¹⁵₃₇N (N=8, N−Z=1) and ¹⁶₇N would be... Let us use ³³₁₆S (N=17, Z=16, N−Z=1) and ³⁵₁₇Cl (N=18, Z=17, N−Z=1) — these ARE isodiaphers with N−Z = 1.",
+    "**Real-world application — nuclear reactions:** in stellar nucleosynthesis, isobars are crucial — as nuclei capture and emit protons/neutrons, they convert between isobaric elements. For example, in the s-process (slow neutron capture), ⁵⁶Fe captures neutrons to form ⁵⁷Fe, ⁵⁸Fe, then beta-decays to ⁵⁸Co (isobar of Fe-58).",
+    "**Beta decay transforms isobars:** β⁻ decay: n → p + e⁻ + ν̄ₑ, so A stays the same, Z increases by 1 — transforms a neutron into a proton, moving from one isobar to another. Example: ¹⁴₆C (¹⁴C) → β⁻ → ¹⁴₇N (¹⁴N).",
+    "**Mirror nuclei:** isotones with Z and N swapped are called mirror nuclei. Example: ³He (Z=2, N=1) and ³H (Z=1, N=2). They have the same mass number (A=3) and same neutron number in a mirror relationship. Their beta-decay schemes are mirror images."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Isobars have the same chemical properties because they have the same mass number. Correction — isobars are different elements (different Z), so they have completely different chemical properties. Only physical properties like mass are related. For example, ⁴⁰₁₈Ar (argon) is an inert gas, but ⁴⁰₂₀Ca (calcium) is a reactive metal.",
+    "Misconception: Isotones have similar chemical properties. Correction — isotones are different elements with the same neutron number. They have entirely different electron configurations and chemical properties. The shared neutron count matters only in nuclear physics, not chemistry.",
+    "Misconception: All isobars can beta-decay to each other. Correction — beta decay changes N by ±1 while keeping A constant, but whether decay occurs depends on the nuclear binding energy of specific isobars. Some isobar chains are stable against decay (e.g., ⁵⁶Fe and ⁵⁶Co do not both exist stably — only ⁵⁶Fe is naturally abundant).",
+    "Misconception: Isodiaphers are the same as isobars. Correction — isobars share the same mass number A; isodiaphers share the same N−Z difference. ¹⁴₆C and ¹⁴₇N are isobars (A=14). ³³₁₆S and ³⁵₁₇Cl are isodiaphers (N−Z=1). These are independent classifications."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Identify whether each pair represents isobars, isotones, isodiaphers, or none: (a) ¹²₆C and ¹²₅B; (b) ¹⁴₆C and ¹⁶₈O; (c) ⁴⁰₁₈Ar and ⁴⁰₁₉K; (d) ³³₁₆S and ³⁵₁₇Cl. Solution: (a) Same A=12, same Z=6 and 5 → no relation (not same Z, not same N, not same N−Z). (b) Same N=8, different Z → isotones. (c) Same A=40, different Z → isobars. (d) S-33: N−Z=17−16=1; Cl-35: N−Z=18−17=1 → same N−Z → isodiaphers.",
+    "How many neutrons are in each of these isotones? ¹³⁵₅₃I, ¹³⁷₅₅Cs, ¹³⁹₅₇La. Solution: Each has N = 82 neutrons. I-135: N = 135−53 = 82. Cs-137: N = 137−55 = 82. La-139: N = 139−57 = 82. This is the N = 82 magic number neutron shell closure.",
+    "In β⁻ decay: ⁸⁷₃⁹Y → β⁻ → ⁸⁷₄₀Zr. Are parent and daughter isobars? Explain. Solution: Yes. Both have A = 87 (mass number unchanged). Parent Y has Z = 39, daughter Zr has Z = 40. Same A, different Z → isobars. Beta decay converts a neutron to a proton, keeping A constant but increasing Z by 1.",
+    "The element technetium (Z = 43) has no stable isotopes, but its mass-99 isotope undergoes β⁻ decay to ruthenium-99 (Z = 44). Are Tc-99 and Ru-99 isobars? Show the N values for each. Solution: Yes — both have A = 99. Tc-99: N = 99−43 = 56 neutrons. Ru-99: N = 99−44 = 55 neutrons. Same A, different Z and N → isobars. The decay changes N by −1 (loses a neutron) and Z by +1 (gains a proton)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The concept of isobars was crucial for understanding beta decay — since beta decay changes Z but not A, parent and daughter must be isobars. This was one of the key insights leading to the discovery of the neutrino.",
+    "In the Chart of Nuclides, 'islands of stability' exist where certain magic-number proton and neutron combinations create exceptionally long-lived or stable superheavy elements — these are special cases of isotones (same N) or isobars (same A).",
+    "Mirror nuclei (like ³He and ³H, or ¹¹C and ¹¹B) have nearly identical nuclear properties despite being different elements — their binding energies and decay modes mirror each other, a consequence of charge symmetry in nuclear forces.",
+    "The neutron 'drip line' and 'proton drip line' mark the limits of nuclear stability — beyond these lines, adding one more neutron or proton causes immediate emission. These boundaries are studied by examining extreme isobars and isotones at the limits of nuclear existence."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

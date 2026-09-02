@@ -5,26 +5,36 @@
   "topicTitle": "Linear momentum, impulse",
   "relevance": 100,
   "notes": [
-    "**Linear momentum:** $\\vec{p} = m\\vec{v}$. It is a vector quantity pointing in the same direction as velocity.",
-    "**Impulse:** $\\vec{J} = \\vec{F}\\Delta t$. Impulse equals the product of force and the time over which it acts.",
-    "**Impulse-Momentum Theorem:** $\\vec{J} = \\Delta\\vec{p} = \\vec{p}_f - \\vec{p}_i$. The impulse delivered to an object equals the change in its momentum.",
-    "**Why impulse matters:** a large force acting for a short time can produce the same momentum change as a smaller force acting for a longer time. This is why airbags and crumple zones work â€” they increase the impact time, reducing the average force on passengers.",
-    "**Units:** momentum and impulse both have units of $\\text{kg}\\cdot\\text{m/s}$ or $\\text{N}\\cdot\\text{s}$."
+    "**Linear momentum:** $\\vec{p} = m\\vec{v}$. It is a vector quantity pointing in the same direction as velocity. Momentum measures the \"quantity of motion\" an object possesses.",
+    "**Impulse:** $\\vec{J} = \\int \\vec{F}\\,dt \\approx \\vec{F}_{avg}\\Delta t$. Impulse equals the product of the average force and the time interval over which it acts. For a constant force, $\\vec{J} = \\vec{F}\\Delta t$.",
+    "**Impulse-Momentum Theorem:** $\\vec{J} = \\Delta\\vec{p} = \\vec{p}_f - \\vec{p}_i$. This follows directly from Newton's second law: $\\vec{F} = \\frac{d\\vec{p}}{dt}$, so $\\int\\vec{F}\\,dt = \\Delta\\vec{p}$.",
+    "**Why impulse matters in safety:** a large force acting for a short time can produce the same momentum change as a smaller force acting for a longer time. This is why airbags and crumple zones work — they increase the impact time, reducing the average force on passengers.",
+    "**Units:** momentum has units of $\\text{kg}\\cdot\\text{m/s}$ or equivalently $\\text{N}\\cdot\\text{s}$. These are dimensionally identical: $[M][L][T]^{-1} = [M][L][T]^{-2} \\times [T]$.",
+    "**Dimensional analysis:** $[p] = [M][L][T]^{-1}$, $[J] = [M][L][T]^{-1}$. Both have the same dimensions, confirming $J = \\Delta p$.",
+    "**Relation to kinetic energy:** while $p = mv$, kinetic energy is $K = \\frac{p^2}{2m}$. Two objects with the same momentum but different masses have different kinetic energies — the lighter object has more kinetic energy.",
+    "**Relativistic momentum:** at speeds comparable to light, $\\vec{p} = \\gamma m\\vec{v}$ where $\\gamma = \\frac{1}{\\sqrt{1-v^2/c^2}}$. The impulse-momentum theorem still holds, but the classical expression $p = mv$ underestimates momentum at high speeds.",
+    "**Rocket propulsion:** a rocket accelerates by expelling gas at high speed. The thrust force is $F = v_e \\frac{dm}{dt}$, where $v_e$ is the exhaust velocity. This is an application of the impulse-momentum principle to a system of variable mass."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Momentum and kinetic energy are often confused because both involve mass and velocity. Key difference: momentum is a vector ($\\vec{p} = m\\vec{v}$) while kinetic energy is a scalar ($K = \\frac{1}{2}mv^2$). Two objects with the same momentum can have very different kinetic energies.",
+    "Impulse is NOT the same as work. Work is $W = \\vec{F} \\cdot \\vec{d}$ (force times displacement); impulse is $\\vec{J} = \\vec{F} \\Delta t$ (force times time). They have different physical meanings and different units in some contexts (though both are dimensionally $[M][L][T]^{-1}$).",
+    "A force acting perpendicular to the motion changes the direction of momentum but not its magnitude — this is uniform circular motion. Impulse still occurs, but it changes the momentum vector's direction, not its length.",
+    "In a collision, impulse is equal and opposite on the two colliding objects (Newton's third law), but the momentum change of each object depends on its mass and the duration of the force.",
+    "The term \"momentum\" in everyday language (\"the team has momentum\") is not the same as physical momentum. In physics, momentum is precisely defined as $m\\vec{v}$ and is always conserved in an isolated system."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 0.15 kg baseball moving at 40 m/s is hit by a bat and returns at 50 m/s in the opposite direction. If the contact time is 0.002 s, find the average force exerted by the bat. Solution: Taking the initial direction as positive: $p_i = 0.15 \\times 40 = 6$ kg·m/s, $p_f = 0.15 \\times (-50) = -7.5$ kg·m/s. $\\Delta p = -7.5 - 6 = -13.5$ kg·m/s. $F_{avg} = \\frac{\\Delta p}{\\Delta t} = \\frac{-13.5}{0.002} = -6750$ N. The average force is 6750 N opposite to the initial direction.",
+    "A 2000 kg car travelling at 20 m/s comes to rest in 5 seconds. Find the impulse and the average braking force. Solution: $J = \\Delta p = 0 - (2000 \\times 20) = -40000$ N·s. $F_{avg} = \\frac{J}{\\Delta t} = \\frac{-40000}{5} = -8000$ N.",
+    "A 10 g bullet moving at 500 m/s strikes a stationary 2 kg block on a frictionless surface and embeds itself. Find the final velocity of the block-bullet system. Solution: Conservation of momentum: $m_b v_b = (m_b + m_{block})v_f$. $0.01 \\times 500 = (0.01 + 2) v_f$, so $v_f = \\frac{5}{2.01} \\approx 2.49$ m/s.",
+    "A tennis ball of mass 0.06 kg is served at 30 m/s. If the racket is in contact with the ball for 0.005 s, what is the average force? Solution: $J = \\Delta p = 0.06 \\times 30 - 0 = 1.8$ N·s. $F_{avg} = \\frac{1.8}{0.005} = 360$ N.",
+    "Explain why a goalkeeper pulls his hands backward when catching a fast ball. Solution: By pulling his hands backward, the goalkeeper increases the time over which the ball's momentum is brought to zero. Since $F_{avg} = \\frac{\\Delta p}{\\Delta t}$, a larger $\\Delta t$ means a smaller average force on the hands, reducing the chance of injury."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The impulse-momentum theorem is another way of stating Newton's second law, but it is often more useful than $F = ma$ when forces vary with time or act over short intervals.",
+    "In space, a small thruster firing for a long time can produce the same momentum change as a large thruster firing briefly — this is the principle behind ion propulsion systems.",
+    "The SI unit of momentum, kg·m/s, is equivalent to the N·s (newton-second), the unit of impulse. This equivalence reflects the impulse-momentum theorem.",
+    "In particle physics, momentum is conserved in all interactions, including those where kinetic energy is not conserved (e.g., inelastic collisions at the subatomic level).",
+    "A heavy truck at low speed can have the same momentum as a light bullet at high speed — for example, a 3000 kg truck at 2 m/s has $p = 6000$ kg·m/s, the same as a 0.01 kg bullet at 600 m/s."
   ],
   "animation3D": "dynamics",
   "motionGraphics": "dynamics"

@@ -1,5 +1,5 @@
 {
-  "title": "Biomolecules â€” Introduction and Functions",
+  "title": "Biomolecules — Introduction and Functions",
   "unitSlug": "biomolecules-and-cell-biology",
   "topicSlug": "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water",
   "topicTitle": "Biomolecules: Introduction and functions of carbohydrates, proteins, lipids, nucleic acids, minerals, enzymes and water",
@@ -11,22 +11,49 @@
     "**Nucleic acids:** DNA stores genetic information; RNA transfers it and assists protein synthesis. Polymers of nucleotides (sugar + phosphate + base).",
     "**Minerals:** macro (Ca, P, K, Na, Mg, S, Cl) and micro (Fe, Zn, Cu, Mn, I, Co). Structural (Ca in bones), catalytic (Zn in enzymes), electrical (Na/K in nerves).",
     "**Enzymes:** biological catalysts. Lower activation energy, highly specific, not consumed in reaction. Activity depends on temperature, pH and substrate concentration.",
-    "**Water:** 70-90% of cell mass. Solvent for biochemical reactions, medium for transport, temperature stabiliser, reactant in photosynthesis and hydrolysis."
+    "**Water:** 70-90% of cell mass. Solvent for biochemical reactions, medium for transport, temperature stabiliser, reactant in photosynthesis and hydrolysis.",
+    "**Carbohydrate classification:** Monosaccharides (glucose, fructose, galactose) cannot be hydrolysed further. Disaccharides (sucrose, maltose, lactose) consist of two monosaccharide units. Polysaccharides (starch, glycogen, cellulose, chitin) are long chains of monosaccharides. Starch is the plant storage form (amylose + amylopectin); glycogen is the animal storage form (more branched than starch).",
+    "**Protein structure levels:** Primary structure is the linear sequence of amino acids held by peptide bonds. Secondary structure involves local folding into alpha-helices and beta-pleated sheets, stabilised by hydrogen bonds. Tertiary structure is the overall 3D folding of a single polypeptide chain, stabilised by hydrogen bonds, ionic bonds, disulfide bridges and hydrophobic interactions. Quaternary structure involves two or more polypeptide chains assembled together (e.g., haemoglobin has 4 subunits).",
+    "**Amino acids:** There are 20 standard amino acids. 8 are essential (cannot be synthesised by the human body: isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine); 12 are non-essential. Amino acids are classified as acidic (aspartic acid, glutamic acid), basic (lysine, arginine, histidine) or neutral. Each has an amino group, carboxyl group, hydrogen and a variable R-group attached to the alpha carbon.",
+    "**Lipid classification:** Simple lipids (fats and oils — triglycerides made of glycerol + 3 fatty acids). Complex lipids (phospholipids, glycolipids). Derived lipids (steroids, fat-soluble vitamins A, D, E, K). Saturated fats have no C=C double bonds and are solid at room temperature (butter, ghee). Unsaturated fats have one or more C=C double bonds and are liquid at room temperature (vegetable oils). Trans fats are artificial unsaturated fats linked to heart disease.",
+    "**Phospholipid structure and membrane formation:** Phospholipids are amphipathic molecules with a hydrophilic phosphate head and two hydrophobic fatty acid tails. In aqueous environments, they spontaneously form bilayers, micelles and liposomes. The phospholipid bilayer is the fundamental structure of all cell membranes, with embedded proteins forming the fluid mosaic model proposed by Singer and Nicolson (1972).",
+    "**Nucleotide structure and types:** A nucleotide consists of a pentose sugar (ribose in RNA, deoxyribose in DNA), a nitrogenous base and a phosphate group. Purine bases (adenine, guanine) have a double-ring structure; pyrimidine bases (cytosine, thymine, uracil) have a single-ring structure. DNA contains A, T, G, C; RNA contains A, U, G, C. ATP (adenosine triphosphate) is the universal energy currency of the cell.",
+    "**DNA structure (Watson-Crick model):** Double helix with two antiparallel polynucleotide strands. Sugar-phosphate backbones are on the outside; nitrogenous bases pair inward via hydrogen bonds (A=T with 2 H-bonds, G≡C with 3 H-bonds). The distance between base pairs is 0.34 nm; one complete turn is 3.4 nm containing 10 base pairs. Chargaff's rule states that A=T and G=C in double-stranded DNA.",
+    "**RNA types and functions:** mRNA (messenger RNA) carries the genetic code from DNA to ribosomes for protein synthesis. tRNA (transfer RNA) brings specific amino acids to the ribosome; it has an anticodon loop and an amino acid attachment site. rRNA (ribosomal RNA) combines with proteins to form ribosomes and catalyses peptide bond formation. Other RNAs include miRNA, siRNA and snRNA involved in gene regulation and RNA processing.",
+    "**Enzyme mechanism — Lock and Key vs Induced Fit:** The lock and key model (Fisher, 1894) proposes that the active site has a rigid shape perfectly complementary to the substrate. The induced fit model (Koshland, 1958) is more accurate: the active site is flexible and changes shape slightly upon substrate binding to achieve optimal fit. The enzyme-substrate complex forms at the active site, lowering the activation energy of the reaction.",
+    "**Factors affecting enzyme activity:** Temperature — enzyme activity increases with temperature up to an optimum (usually 37°C in humans), then decreases sharply as the enzyme denatures. pH — each enzyme has an optimum pH (pepsin pH 2, trypsin pH 8). Substrate concentration — rate increases with substrate concentration until all enzyme active sites are saturated (Vmax). Enzyme concentration — rate is directly proportional at constant substrate. Inhibitors — competitive inhibitors bind to the active site (reversible); non-competitive inhibitors bind to an allosteric site (irreversible or reversible).",
+    "**Mineral functions in detail:** Calcium (Ca²⁺) — bone and teeth structure (hydroxyapatite), muscle contraction, blood clotting, nerve transmission. Iron (Fe²⁺/Fe³⁺) — component of haemoglobin and cytochromes for oxygen transport and electron transport. Iodine (I⁻) — essential for thyroid hormones (thyroxine/T4 and triiodothyronine/T3) regulating metabolism. Zinc (Zn²⁺) — cofactor for over 300 enzymes including carbonic anhydrase and DNA polymerase. Sodium (Na⁺) and Potassium (K⁺) — maintain osmotic balance and generate nerve impulses via the Na⁺/K⁺ pump.",
+    "**Water properties and biological significance:** Water is a polar molecule with hydrogen bonding, giving it high cohesion and adhesion. High specific heat capacity stabilises body temperature. High latent heat of vaporisation enables evaporative cooling (sweating, transpiration). Excellent solvent for ionic and polar substances (universal solvent). Low density of ice (hydrogen bonds create open structure) allows aquatic life to survive under ice. Participation in hydrolysis reactions and photosynthesis (6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂).",
+    "**Biomolecule interrelationships:** Carbohydrates can be converted to fats through lipogenesis (excess glucose → acetyl-CoA → fatty acids → triglycerides). Proteins can be converted to carbohydrates via gluconeogenesis (amino acids → pyruvate → glucose). Lipids can be converted to carbohydrates in plants and microbes via the glyoxylate cycle. Nucleic acids are turned over constantly; purines are degraded to uric acid, pyrimidines to β-alanine and β-aminoisobutyrate."
   ],
   "confusion": [
     "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
     "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Starch and glycogen are both glucose polymers but differ in branching — starch is less branched (amylose is linear, amylopectin is branched every 24-30 units), while glycogen is highly branched (every 8-12 units), making it more soluble and suitable for rapid energy mobilisation in animals.",
+    "Competitive and non-competitive enzyme inhibition are often confused: competitive inhibitors resemble the substrate and bind reversibly to the active site (can be overcome by increasing substrate concentration), while non-competitive inhibitors bind to an allosteric site, changing the enzyme shape so the active site no longer functions (cannot be overcome by adding more substrate).",
+    "DNA and RNA are frequently confused: DNA has deoxyribose sugar, is double-stranded, contains thymine, and is stable; RNA has ribose sugar, is usually single-stranded, contains uracil instead of thymine, and is less stable. Both are nucleic acids but serve different roles — DNA stores genetic information, RNA executes it.",
+    "Saturated and unsaturated fats: saturated fats have only single C-C bonds in their fatty acid chains (no hydrogens can be added — saturated with hydrogen), making them straight and able to pack tightly (solid at room temperature). Unsaturated fats have one or more C=C double bonds creating kinks that prevent tight packing (liquid at room temperature). Partially hydrogenated oils create trans fats with health risks."
   ],
   "practice": [
     "Solve one basic problem using the key formula from this topic.",
     "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Apply this concept to a real-world situation and explain each step.",
+    "A solution contains 0.1 M glucose and 0.1 M sucrose. Calculate the total osmolarity and explain why this matters for red blood cells placed in this solution.",
+    "Explain the difference between the primary, secondary, tertiary and quaternary structures of proteins using haemoglobin as an example. What happens to haemoglobin when it is heated to 80°C?",
+    "An enzyme has an optimum pH of 8. Predict and explain what happens to its activity when the pH is changed to 3 and to 12. Draw a labelled graph showing enzyme activity versus pH.",
+    "Given the DNA strand 5'-ATGGCCTTA-3', write the complementary strand with correct 5' and 3' ends. How many hydrogen bonds are present in this double-stranded segment?",
+    "Describe the pathway by which excess dietary carbohydrates are converted and stored as fat in the human body. Name the key intermediates and the organ where this primarily occurs.",
+    "You are given three unknown solutions: one contains an enzyme, one contains a protein, and one contains a carbohydrate. Describe simple chemical tests to identify each substance."
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
     "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Always check units and dimensions when applying this concept.",
+    "Biomolecules are the chemical foundation of all life — from the simplest bacterium to the most complex mammal, the same four classes of biomolecules (carbohydrates, proteins, lipids, nucleic acids) are used.",
+    "Enzymes are extraordinarily efficient — a single enzyme molecule can catalyse thousands of reactions per second (turnover number), making biological processes possible at body temperature.",
+    "Water's unique properties are essential for life: its polarity, hydrogen bonding, high specific heat, and ability to act as a solvent make it impossible to replace with any other liquid in known biochemistry.",
+    "The sequence of amino acids in a protein (primary structure) determines its 3D shape and therefore its function. A single amino acid change (mutation) can cause disease — for example, sickle cell anaemia results from one substitution (glutamic acid → valine) in the beta-globin chain."
   ],
   "animation3D": "biomolecules-and-cell-biology",
   "motionGraphics": "biomolecules-and-cell-biology"

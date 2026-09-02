@@ -1,36 +1,44 @@
 {
-  "title": "The Electron â€” Discovery & Properties of Cathode Rays",
+  "title": "The Electron — Discovery & Properties of Cathode Rays",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
   "relevance": 80,
   "notes": [
-    "**Electron definition:** an electron is a negatively charged subatomic particle denoted with the symbol eâ».",
+    "**Electron definition:** an electron is a negatively charged subatomic particle denoted with the symbol e⁻.",
     "**Discovery (1897):** the electron was first discovered by Joseph John Thomson as a result of a discharge tube experiment.",
-    "**Discharge tube experiment:** Thomson filled gas in a specially designed glass tube provided with metal electrodes and passed high voltage electricity at low pressure (10,000 Volts at 10â»Â² mmHg) through the tube.",
+    "**Discharge tube experiment:** Thomson filled gas in a specially designed glass tube provided with metal electrodes and passed high voltage electricity at low pressure (10,000 Volts at 10⁻² mmHg) through the tube.",
     "**Cathode rays:** as a result, some rays started to flow from the cathode towards the anode, which are called cathode rays.",
     "**Naming:** the term electron was given by George Johnstone Stoney (in 1891).",
     "**Properties of cathode rays:** (a) they cast a shadow of an object on their way; (b) they travel in a straight line; (c) they are deflected towards the anode of the applied electric field, indicating they carry a negative charge; (d) they produce a heating effect when struck to a thin metal coil; (e) they can penetrate a thin sheet of metals; (f) they cause fluorescence on a zinc sulphide screen; (g) they ionize the gas through which they pass.",
     "**Conclusion:** the observation of the above properties led to the conclusion that cathode rays carry a negative charge with a certain mass.",
-    "**Naming as electrons:** J.J. Thomson named cathode rays as electrons, symbolized with eâ» or as a beta particle.",
-    "**Charge and mass:** the charge on an electron is -1.602 Ã— 10â»Â¹â¹ coulombs and the mass is 9.1 Ã— 10â»Â²â¸ g, which is equal to 1/1837th of the mass of a hydrogen atom.",
+    "**Naming as electrons:** J.J. Thomson named cathode rays as electrons, symbolized with e⁻ or as a beta particle.",
+    "**Charge and mass:** the charge on an electron is −1.602 × 10⁻¹⁹ coulombs and the mass is 9.1 × 10⁻²⁸ g, which is equal to 1/1837th of the mass of a hydrogen atom.",
     "**e/m determination:** J.J. Thomson determined the e/m (specific charge) value of the electron and Millikan determined the charge of the electron.",
-    "**e/m order:** the increasing order of the value of e/m is neutron < alpha-ray < proton < electron."
+    "**e/m order:** the increasing order of the value of e/m is neutron < alpha-ray < proton < electron.",
+    "**Thomson's e/m experiment:** J.J. Thomson applied perpendicular electric and magnetic fields to cathode rays and measured their deflection. The specific charge (e/m) was calculated as 1.7588 × 10¹¹ C/kg — the same value for all cathode rays regardless of gas or electrode material, proving electrons are universal constituents of all matter.",
+    "**Millikan's oil drop experiment (1909):** Robert Millikan measured the elementary charge by balancing tiny oil droplets between charged plates. The droplets acquired integer multiples of e = 1.602 × 10⁻¹⁹ C, proving charge is quantized.",
+    "**Calculated electron mass:** combining Thomson's e/m with Millikan's e gives mₑ = e / (e/m) = (1.602 × 10⁻¹⁹ C) / (1.7588 × 10¹¹ C/kg) = 9.109 × 10⁻³¹ kg = 9.1 × 10⁻²⁸ g.",
+    "**Cathode ray tube (CRT) applications:** the discovery led directly to the cathode ray oscilloscope, early television tubes, and X-ray production (when high-energy electrons strike a metal target, they produce bremsstrahlung X-rays).",
+    "**Cathode rays are not electromagnetic waves:** early debate considered whether cathode rays were waves (like light) or particles. The deflection by electric/magnetic fields, the shadow casting, and the heating effect all supported the particle nature, which Thomson confirmed."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Cathode rays are the same as beta radiation. Correction — cathode rays are streams of electrons emitted from a cathode in a vacuum tube; beta radiation is electrons emitted from radioactive nuclei. They are identical particles (electrons) but have different origins and energy ranges.",
+    "Misconception: The electron mass is 1/1837 of a proton. Correction — the electron mass is 1/1837 of a *hydrogen atom* (which consists of one proton + one electron). The electron mass is actually 1/1836 of a proton's mass (mₑ = 9.109 × 10⁻³¹ kg, mₚ = 1.673 × 10⁻²⁷ kg, ratio ≈ 1/1836).",
+    "Misconception: Thomson discovered the electron alone. Correction — while Thomson is credited with discovering the electron as a particle with a definite e/m, the name 'electron' and the concept of a fundamental unit of charge were proposed by Stoney (1891), and the experimental measurement of e was done by Millikan (1909).",
+    "Misconception: All cathode rays have the same energy regardless of voltage. Correction — the energy of cathode rays depends directly on the accelerating voltage: KE = eV. At 10,000 V, electrons have 10 keV kinetic energy; at higher voltages, they are more energetic and penetrate further."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the kinetic energy of an electron accelerated through a potential difference of 500 V. Solution: KE = eV = (1.602 × 10⁻¹⁹ C)(500 V) = 8.01 × 10⁻¹⁷ J = 500 eV (since 1 eV = 1.602 × 10⁻¹⁹ J).",
+    "An oil drop in Millikan's experiment has a charge of 4.806 × 10⁻¹⁹ C. How many excess electrons does it carry? Solution: n = Q/e = (4.806 × 10⁻¹⁹) / (1.602 × 10⁻¹⁹) = 3. The drop carries 3 excess electrons.",
+    "Verify that the specific charge e/m of an electron is approximately 1.76 × 10¹¹ C/kg. Solution: e = 1.602 × 10⁻¹⁹ C, m = 9.109 × 10⁻³¹ kg. e/m = (1.602 × 10⁻¹⁹) / (9.109 × 10⁻³¹) = 1.7588 × 10¹¹ C/kg. Rounded: 1.76 × 10¹¹ C/kg.",
+    "Why did J.J. Thomson use low-pressure gas in his cathode ray tube? Solution: At atmospheric pressure, gas molecules would collide with electrons, preventing them from traveling far. Low pressure (10⁻² mmHg) increases the mean free path so electrons can travel the length of the tube without excessive collisions, producing a visible beam."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The electron was the first subatomic particle discovered — its existence proved that atoms are not indivisible, overturning 2000 years of atomic theory.",
+    "The charge-to-mass ratio (e/m) for electrons is constant regardless of the cathode material or gas used in the discharge tube, proving electrons are universal constituents of all matter.",
+    "Millikan's oil drop experiment (1909) showed that electric charge exists only in integer multiples of e = 1.602 × 10⁻¹⁹ C — charge is quantized, just like energy.",
+    "The cathode ray tube, invented for this research, became the basis for television, radar displays, oscilloscopes, and computer monitors for over 50 years before being replaced by LCD/LED technology."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

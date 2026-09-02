@@ -8,23 +8,31 @@
     "**Definition:** the minimum speed needed for a body to escape Earth's gravitational field completely, reaching infinity with zero kinetic energy.",
     "**Derivation:** at infinity, total energy $E = K + U = 0 + 0 = 0$. By conservation of energy, $E$ at launch must also be zero: $\\frac{1}{2}mv_e^2 - \\frac{GMm}{R} = 0$.",
     "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2\\,\\text{km/s}$ for Earth.",
-    "**Relation to orbital velocity:** $v_e = \\sqrt{2} \\times v_{orbital} \\approx 1.414 \\times 7.9 \\approx 11.2\\,\\text{km/s}$.",
-    "**Independence of direction:** escape velocity does not depend on the angle of projection, only on the launch speed."
+    "**Relation to orbital velocity:** $v_e = \\sqrt{2} \\times v_{orbital} \\approx 1.414 \\times 7.9 \\approx 11.2\\,\\text{km/s}$. Escape velocity is always $\\sqrt{2}$ times the circular orbital velocity at that radius.",
+    "**Independence of direction:** escape velocity does not depend on the angle of projection, only on the launch speed. The only requirement is that the projectile doesn't hit the planet.",
+    "**General formula at radius $r$:** $v_e(r) = \\sqrt{\\frac{2GM}{r}}$. At Earth's surface, $v_e = 11.2\\,\\text{km/s}$; at ISS altitude ($400\\,\\text{km}$), $v_e \\approx 10.9\\,\\text{km/s}$; at Moon's orbit, $v_e \\approx 1.44\\,\\text{km/s}$.",
+    "**Escape energy:** the minimum kinetic energy needed to escape is $K_{min} = \\frac{1}{2}mv_e^2 = \\frac{GMm}{R}$. This equals the magnitude of the potential energy at the surface.",
+    "**Escape velocity from other bodies:** Moon: $2.38\\,\\text{km/s}$; Mars: $5.03\\,\\text{km/s}$; Jupiter: $60.2\\,\\text{km/s}$; Sun (from surface): $617\\,\\text{km/s}$. A black hole's escape velocity exceeds $c$ (speed of light).",
+    "**Atmospheric effects:** the theoretical $11.2\\,\\text{km/s}$ is for vacuum. Real rockets must go faster to overcome air drag — typically $\\sim 12\\text{--}13\\,\\text{km/s}$ for launch from Earth's surface.",
+    "**Connection to black holes:** if a mass is compressed to its Schwarzschild radius $R_s = 2GM/c^2$, the escape velocity equals $c$. For Earth, $R_s \\approx 9\\,\\text{mm}$; for Sun, $R_s \\approx 3\\,\\text{km}$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Escape velocity is a SPEED, not a velocity — it is the minimum speed required, independent of direction (as long as the projectile doesn't hit the planet).",
+    "You do NOT need to reach escape velocity all at once. A rocket can escape at any speed as long as it continuously provides thrust to overcome gravity. Escape velocity only applies to an unpowered projectile.",
+    "Escape velocity from Earth's surface ($11.2\\,\\text{km/s}$) is NOT the speed needed to leave the atmosphere — it's the speed needed to reach infinity with zero final speed. Most satellites orbit well below escape velocity.",
+    "The formula $v_e = \\sqrt{2GM/R}$ assumes the body is spherical and non-rotating. For a rotating planet, the effective escape velocity is slightly lower if launched in the direction of rotation."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the escape velocity from Earth. $M_E = 6 \\times 10^{24}\\,\\text{kg}$, $R_E = 6400\\,\\text{km}$. Solution: $v_e = \\sqrt{2GM/R} = \\sqrt{2 \\times 6.674 \\times 10^{-11} \\times 6 \\times 10^{24} / 6.4 \\times 10^6} = \\sqrt{1.25 \\times 10^8} = 11,180\\,\\text{m/s} \\approx 11.2\\,\\text{km/s}$.",
+    "A rocket is launched from Earth's surface with speed $15\\,\\text{km/s}$. What is its speed at infinity? Solution: Energy conservation: $\\frac{1}{2}mv^2 - GMm/R = \\frac{1}{2}mv_\\infty^2$. $v_\\infty = \\sqrt{v^2 - v_e^2} = \\sqrt{15^2 - 11.2^2} = \\sqrt{225 - 125.4} = \\sqrt{99.6} = 9.98\\,\\text{km/s}$.",
+    "What is the escape velocity from a planet with mass $2M_E$ and radius $0.5R_E$? Solution: $v_e = \\sqrt{2G(2M)/(0.5R)} = \\sqrt{4 \\times 2GM/R} = 2\\sqrt{2GM/R} = 2 \\times 11.2 = 22.4\\,\\text{km/s}$.",
+    "Find the escape velocity from the Moon. $M_{Moon} = 7.35 \\times 10^{22}\\,\\text{kg}$, $R_{Moon} = 1737\\,\\text{km}$. Solution: $v_e = \\sqrt{2GM/R} = \\sqrt{2 \\times 6.674 \\times 10^{-11} \\times 7.35 \\times 10^{22} / 1.737 \\times 10^6} = \\sqrt{5.64 \\times 10^6} = 2375\\,\\text{m/s} = 2.38\\,\\text{km/s}$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Escape velocity is the speed where total energy becomes zero — any speed higher means the object reaches infinity with positive kinetic energy (still moving).",
+    "The concept of escape velocity applies to ANY gravitational field, not just Earth's. It is a fundamental property of a gravitating body.",
+    "A black hole is defined as an object whose escape velocity exceeds the speed of light $c = 3 \\times 10^8\\,\\text{m/s}$. Nothing, not even light, can escape its gravity.",
+    "The Apollo missions to the Moon did NOT reach Earth's escape velocity — they went into a highly elliptical orbit that intersected the Moon's orbit, using the Moon's gravity to assist."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

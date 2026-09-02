@@ -1,25 +1,36 @@
 {
-  "title": "Bio-inorganic Chemistry â€” Metal Ions in Biological Systems",
+  "title": "Bio-inorganic Chemistry — Metal Ions in Biological Systems",
   "notes": [
-    "**Definition:** bio-inorganic chemistry studies the role of metal ions in biological systems.",
-    "**Macronutrients:** Na, K, Mg, Ca. Required in larger amounts. Na and K maintain osmotic pressure and nerve impulse transmission. Ca is essential for bones, teeth, and muscle contraction. Mg is central in chlorophyll.",
-    "**Micronutrients:** Fe, Cu, Zn, Ni, Co, Cr. Required in trace amounts but vital. Fe in haemoglobin and cytochromes. Zn in carbonic anhydrase and DNA polymerase. Cu in cytochrome c oxidase.",
-    "**Ion pumps:** sodium-potassium pump ($Na^+/K^+$-ATPase) moves 3 Na out and 2 K in per ATP, maintaining membrane potential. Sodium-glucose cotransporter uses Na gradient to drive glucose uptake.",
-    "**Metal toxicity:** Fe overload causes oxidative damage via Fenton reaction. Arsenic ($As^{3+}$) binds thiol groups in enzymes. Mercury ($Hg^{2+}$) binds to sulfhydryl groups, denaturing proteins. Lead ($Pb^{2+}$) mimics Ca and disrupts neurotransmitter release."
+    "**Definition:** Bio-inorganic chemistry is the study of the role of metal ions and inorganic elements in biological systems, including their structure, function, and interactions with biomolecules like proteins and nucleic acids.",
+    "**Macronutrients (bulk elements):** Na, K, Mg, Ca are required in amounts greater than 100 mg/day. They serve structural and electrochemical roles. Na$^+$ and K$^+$ maintain osmotic balance and nerve impulse transmission. Ca$^{2+}$ is essential for bones, teeth, blood clotting, and muscle contraction.",
+    "**Micronutrients (trace elements):** Fe, Cu, Zn, Ni, Co, Cr are required in amounts less than 100 mg/day but are vital for enzyme function. Iron is in haemoglobin and cytochromes. Zinc is in carbonic anhydrase and carboxypeptidase. Copper is in cytochrome c oxidase and tyrosinase.",
+    "**Sodium (Na$^+$):** Major extracellular cation. Maintains osmotic pressure and fluid balance. Essential for nerve impulse transmission along the axon. The Na$^+$/K$^+$-ATPase pump maintains the concentration gradient across cell membranes.",
+    "**Potassium (K$^+$):** Major intracellular cation. Maintains cell volume and intracellular pH. Essential for heart rhythm — K$^+$ imbalance causes cardiac arrhythmias. Also involved in protein synthesis and enzyme activation.",
+    "**Magnesium (Mg$^{2+}$):** Central atom in chlorophyll ($C_{55}H_{72}MgN_4O_5$) in plants, enabling photosynthesis. Activates over 300 enzymes. Essential for ATP function — ATP exists as Mg-ATP complex in biological systems.",
+    "**Calcium (Ca$^{2+}$):** Forms the mineral matrix of bones and teeth as hydroxyapatite ($Ca_{10}(PO_4)_6(OH)_2$). Acts as a secondary messenger in cell signaling. Required for blood clotting cascade and muscle contraction (troponin binding).",
+    "**Iron (Fe):** Present as Fe$^{2+}$ in haemoglobin (oxygen transport) and myoglobin (oxygen storage). In cytochromes, iron cycles between Fe$^{2+}$ and Fe$^{3+}$ during electron transport in mitochondria. Also in ferritin (iron storage protein).",
+    "**Zinc (Zn$^{2+}$):** Catalytic and structural role in over 200 enzymes. Carbonic anhydrase catalyzes $CO_2 + H_2O \\rightleftharpoons H_2CO_3$ in red blood cells, increasing the rate 10,000-fold. Zinc finger proteins are crucial for DNA binding and gene expression.",
+    "**Copper (Cu$^{2+}$/Cu$^{+}$):** Cycles between Cu(I) and Cu(II) in redox reactions. Cytochrome c oxidase (Complex IV in electron transport) uses copper centers to reduce $O_2$ to $H_2O$. Superoxide dismutase (Cu/Zn-SOD) detoxifies superoxide radicals.",
+    "**Cobalt (Co$^{2+}$):** Central atom in vitamin B$_{12}$ (cobalamin, $C_{63}H_{88}CoN_{14}O_{14}P$), which is essential for DNA synthesis and nerve function. The cobalt-carbon bond in B$_{12}$ is one of the few natural organometallic bonds.",
+    "**Nickel (Ni$^{2+}$):** Present in urease enzyme, which catalyzes hydrolysis of urea: $(NH_2)_2CO + H_2O \\rightarrow 2NH_3 + CO_2$. Also in some hydrogenases and carbon monoxide dehydrogenases in microorganisms.",
+    "**Chromium (Cr$^{3+}$):** Involved in glucose metabolism as part of glucose tolerance factor (GTF), which enhances insulin action. Cr deficiency leads to impaired glucose tolerance.",
+    "**Manganese (Mn$^{2+}$):** Central to the oxygen-evolving complex (OEC) in Photosystem II of plants, which catalyzes water splitting: $2H_2O \\rightarrow O_2 + 4H^+ + 4e^-$. Also in Mn-superoxide dismutase for antioxidant defense."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Trace elements are less important because they are needed in small amounts** — Trace elements like Fe, Zn, and Cu are absolutely essential. Deficiency in any trace element causes severe disease. Iron deficiency causes anaemia; zinc deficiency impairs immune function and growth.",
+    "**All metal ions are toxic to living organisms** — While some heavy metals (Hg, Pb, Cd) are toxic, essential metal ions are required for life. The body carefully regulates their concentrations through transport proteins, storage proteins, and excretion mechanisms.",
+    "**Calcium is only important for bones** — Calcium serves multiple roles beyond bone structure: it acts as a second messenger in intracellular signaling, triggers muscle contraction by binding troponin, activates blood clotting factors, and regulates neurotransmitter release."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Explain why iron in haemoglobin must bind oxygen reversibly and not irreversibly. How does the protein environment around the iron center achieve this?",
+    "Describe the role of Mg$^{2+}$ in photosynthesis. What would happen to a plant if Mg$^{2+}$ ions were removed from its environment?",
+    "A patient presents with symptoms of anaemia, impaired wound healing, and loss of taste. Which mineral deficiency is most likely? Name two enzymes or proteins that require this element."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "About 25% of all known enzymes require metal ion cofactors for catalytic activity — these are called metalloenzymes.",
+    "Haemoglobin contains about 70% of the iron in the human body, with approximately 3 grams of iron bound in roughly 25 trillion red blood cells.",
+    "The sodium-potassium pump consumes approximately 20-25% of all ATP produced by a resting human cell, highlighting the energetic cost of maintaining ionic gradients.",
+    "Chlorophyll is structurally related to haemoglobin — both contain a porphyrin ring with a metal center (Mg in chlorophyll, Fe in haemoglobin).",
+    "Zinc is the second most abundant trace element in the human body (after iron), with about 2-3 grams distributed across all tissues."
   ]
 }

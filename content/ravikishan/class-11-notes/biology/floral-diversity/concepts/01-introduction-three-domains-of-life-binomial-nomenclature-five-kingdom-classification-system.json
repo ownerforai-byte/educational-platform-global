@@ -1,5 +1,5 @@
 {
-  "title": "Floral Diversity â€” Three Domains and Classification",
+  "title": "Floral Diversity â€" Three Domains and Classification",
   "unitSlug": "floral-diversity",
   "topicSlug": "introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system",
   "topicTitle": "Introduction: Three domains of life, binomial nomenclature, five kingdom classification system (Monera, Protista, Fungi, Plantae and Animalia)",
@@ -7,22 +7,49 @@
   "notes": [
     "**Three domains (Woese, 1990):** Archaea (primitive prokaryotes, extremophiles), Bacteria (true bacteria), Eukarya (eukaryotes). Based on rRNA sequencing.",
     "**Binomial nomenclature (Linnaeus, 1753):** each species has a two-part scientific name: Genus + species. Italicised, Genus capitalised, species lowercase. Example: Homo sapiens.",
-    "**Five kingdoms (Whittaker, 1969):** Monera (prokaryotes), Protista (unicellular eukaryotes), Fungi (heterotrophic absorbers), Plantae (autotrophic multicellular), Animalia (heterotrophic multicellular). Basis: cell structure, nutrition, body organisation, phylogeny."
+    "**Five kingdoms (Whittaker, 1969):** Monera (prokaryotes), Protista (unicellular eukaryotes), Fungi (heterotrophic absorbers), Plantae (autotrophic multicellular), Animalia (heterotrophic multicellular). Basis: cell structure, nutrition, body organisation, phylogeny.",
+    "**Kingdom Monera:** prokaryotic cells (no true nucleus), peptidoglycan cell wall (in bacteria), single circular DNA, no membrane-bound organelles. Includes archaebacteria (methanogens, halophiles, thermoacidophiles) and eubacteria (cyanobacteria, mycoplasma).",
+    "**Kingdom Protista:** unicellular eukaryotes, mostly aquatic, includes photosynthetic (euglenoids, diatoms, dinoflagellates) and heterotrophic forms (protozoans like Amoeba, Paramecium). Cell wall may be present or absent; nutrition is variable.",
+    "**Kingdom Fungi:** eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin and polysaccharides, body is a mycelium of hyphae. Saprophytic, parasitic or symbiotic. Examples: yeasts, moulds, mushrooms.",
+    "**Kingdom Plantae:** multicellular, eukaryotic, autotrophic (photosynthetic), cell wall of cellulose, store food as starch. Range from simple algae (in some classifications) to angiosperms with complex vascular tissue.",
+    "**Kingdom Animalia:** multicellular, eukaryotic, heterotrophic (holozoic nutrition), no cell wall, store food as glycogen. Most show locomotion, sexual reproduction, and embryonic development with blastula stage.",
+    "**Archaea vs Bacteria:** both are prokaryotes but differ in rRNA sequence, cell wall composition (archaea lack peptidoglycan, have pseudomurein), membrane lipids (archaea have branched isoprenoid ethers), and habitat (archaea thrive in extreme conditions).",
+    "**Why two kingdom systems are inadequate:** Aristotle's plants vs animals failed for organisms like Euglena (photosynthetic + motile), fungi (non-photosynthetic, non-motile, not animal), and bacteria (prokaryotic, neither).",
+    "**Taxonomic hierarchy (in order):** Kingdom > Phylum (Division for plants) > Class > Order > Family > Genus > Species. Mnemonic: King Philip Came Over For Good Soup.",
+    "**ICBN and ICZN rules:** International Code of Botanical Nomenclature governs plant names; International Code of Zoological Nomenclature governs animal names. Both mandate Latin or Latinised names, valid publication, and priority of the earliest valid name.",
+    "**Concept of species:** a group of closely related organisms capable of interbreeding and producing fertile offspring. A species is reproductively isolated from others (biological species concept by Ernst Mayr).",
+    "**Three principles of binomial nomenclature:** (1) generic name + specific epithet, (2) Latin language, (3) author's name abbreviated at the end (e.g., Homo sapiens Linn.). Triticum aestivum Linn. is the scientific name of wheat.",
+    "**Prokaryotic vs Eukaryotic cell:** prokaryotes lack membrane-bound nucleus and organelles, are usually 1-10 micrometres, and have circular DNA. Eukaryotes have a true nucleus, membrane-bound organelles, are 10-100 micrometres, and have linear chromosomes."
   ],
   "confusion": [
     "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
     "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Archaea and Bacteria are BOTH prokaryotes — Archaea are NOT the same as Eukarya. Domain 'Archaea' is distinct from 'Bacteria' despite both being prokaryotic.",
+    "Binomial nomenclature uses the Genus name capitalised and species epithet in lowercase — both are italicised, but never capitalise the species epithet (e.g., Mangifera indica, not Mangifera Indica).",
+    "The five-kingdom system is not the same as the three-domain system. Three-domain is a higher rank; five-kingdom fits within the Eukarya domain (plus Monera is split into Archaea and Bacteria in three-domain).",
+    "Whittaker's system classifies Fungi as a separate kingdom from plants — fungi are NOT plants, despite being historically grouped with them.",
+    "Protista is a 'catch-all' kingdom and is considered paraphyletic (not a true clade); some modern classifications are moving away from it."
   ],
   "practice": [
     "Solve one basic problem using the key formula from this topic.",
     "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Apply this concept to a real-world situation and explain each step.",
+    "**Q1:** Write the scientific name of mango following binomial nomenclature. *Ans:* Mangifera indica Linn. (Genus capitalised, species in lowercase, both italicised, author abbreviation at the end).",
+    "**Q2:** Who proposed the three-domain system and what was the basis of classification? *Ans:* Carl Woese (1990) proposed the three-domain system based on differences in 16S rRNA nucleotide sequences. The three domains are Archaea, Bacteria and Eukarya.",
+    "**Q3:** Differentiate between Archaea and Bacteria. *Ans:* Archaea lack peptidoglycan in their cell wall, have ether-linked branched lipids in membranes, and live in extreme environments. Bacteria have peptidoglycan cell walls, ester-linked straight lipids, and live in moderate environments. Both are prokaryotes.",
+    "**Q4:** Why was the two-kingdom classification (Plantae and Animalia) considered inadequate? *Ans:* It failed to classify organisms like Euglena (both photosynthetic and motile), fungi (heterotrophic, non-motile, with cell wall), and bacteria (prokaryotic, no clear plant/animal features).",
+    "**Q5:** List the five kingdoms of Whittaker and the main criterion used to classify them. *Ans:* Monera, Protista, Fungi, Plantae, Animalia. Criteria: cell structure (prokaryotic/eukaryotic), body organisation (unicellular/multicellular), nutrition mode (autotrophic/heterotrophic), and phylogenetic relationships."
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
     "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Always check units and dimensions when applying this concept.",
+    "The first scientific name accepted under binomial nomenclature was that of the wild briar rose, Rosa canina, by Linnaeus in his Species Plantarum (1753).",
+    "Carl Woese discovered archaea as a separate domain in 1977 by comparing 16S ribosomal RNA sequences — this overturned the long-held belief that life had only two major divisions.",
+    "Modern estimates suggest Earth hosts around 8.7 million eukaryotic species, of which only ~1.5 million have been formally described and named.",
+    "The 'Father of Taxonomy' is Carl Linnaeus (1707-1778), who published Systema Naturae (1735) and Species Plantarum (1753), the starting point for binomial nomenclature.",
+    "R.H. Whittaker proposed the five-kingdom system in 1969, replacing the older two-kingdom (Linnaeus) and three-kingdom (Haeckel) classifications."
   ],
   "animation3D": "floral-diversity",
   "motionGraphics": "floral-diversity"

@@ -6,27 +6,37 @@
   "relevance": 83,
   "notes": [
     "**The composition of matter** was studied in the 18th century by different scientists.",
-    "**Atom definition:** all matter is made of millions of tiny particles called atoms. The word 'atom' comes from the Greek (a = absence, tomos = cut), meaning indivisible or indestructible â€” atoms are the smallest units of matter.",
+    "**Atom definition:** all matter is made of millions of tiny particles called atoms. The word 'atom' comes from the Greek (a = absence, tomos = cut), meaning indivisible or indestructible — atoms are the smallest units of matter.",
     "**Dalton's atomic theory (1808):** the concept of the atom was first put forward by the English chemist John Dalton, and his theory laid the foundation of modern atomic theory.",
+    "**Dalton's postulates:** (1) Every element is composed of extremely small, indivisible atoms. (2) All atoms of a given element are identical in mass and properties; atoms of different elements differ in mass and properties. (3) Compounds are formed when atoms of different elements combine in simple, fixed, whole-number ratios. (4) Atoms cannot be created, destroyed, or transformed into atoms of another element in a chemical reaction. (5) In a chemical reaction, atoms are rearranged, separated, or combined.",
+    "**Law of conservation of mass:** Dalton's theory explained Lavoisier's observation that mass is conserved in chemical reactions — since atoms are merely rearranged, the total mass of reactants equals the total mass of products: Σ(mass of reactants) = Σ(mass of products).",
+    "**Law of definite proportions:** Proust's law that a compound always contains the same elements in the same proportion by mass is explained by Dalton's postulate that compounds form in fixed ratios — e.g., water always has H:O = 2:1 by atom count, giving 1:8 by mass.",
+    "**Law of multiple proportions:** when two elements form more than one compound, the ratios of the masses of one element that combine with a fixed mass of the other are small whole numbers — e.g., CO vs CO₂: in CO, 12 g C combines with 16 g O; in CO₂, 12 g C combines with 32 g O. Ratio = 16:32 = 1:2.",
     "**Discovery of subatomic particles:** towards the end of the 19th century it became known that the atom consists of still smaller particles such as electrons, protons and neutrons.",
     "**Further subatomic particles:** subsequent studies led to the discovery of meson, quark, gluon, neutrino, and antiparticles like positron, antiproton, antineutron etc.",
     "**Fundamental particles:** the small particles present in an atom are called subatomic particles; more than 30 have been discovered. Electron, proton and neutron are the principal subatomic particles, generally referred to as fundamental particles.",
-    "Example subatomic particles: electrons, protons, neutrons, a positron (eâº), meson, neutrino (Ï€Â±), quark."
+    "**Democritus and Leucippus (5th century BC):** the concept of the atom predates Dalton by over two millennia — Greek philosophers Democritus and Leucippus proposed that matter is composed of indivisible particles called 'atomos' (uncuttable). However, this was philosophical speculation without experimental evidence.",
+    "**Limitations of Dalton's theory:** (1) Atoms are not indivisible — they contain subatomic particles (electrons, protons, neutrons). (2) Atoms of the same element can have different masses (isotopes — e.g., ¹²C, ¹³C, ¹⁴C). (3) Atoms of different elements can have the same mass (isobars — e.g., ⁴⁰Ar and ⁴⁰Ca). (4) Subatomic particles like quarks are now known to exist inside protons and neutrons.",
+    "**Modern atomic theory (Moseley, 1913):** Henry Moseley showed that atomic number (number of protons), not atomic mass, is the fundamental property that defines an element — correcting Dalton's idea that mass determines elemental identity. This resolved anomalies where mass-based ordering produced incorrect element sequences (e.g., Ar and K, Co and Ni).",
+    "**Avogadro's contribution (1811):** Amedeo Avogadro extended Dalton's theory by proposing that equal volumes of gases at the same temperature and pressure contain equal numbers of molecules (Avogadro's law: V ∝ n at constant T, P), which Dalton's original atomic theory did not address."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Dalton was the first person to ever propose the idea of atoms. Correction — the philosophical concept of atoms was proposed by Democritus and Leucippus around 400 BC. Dalton's contribution was providing experimental evidence and a scientific framework (quantitative laws) that made atomic theory testable and predictive.",
+    "Misconception: Dalton's statement that atoms are indivisible is completely wrong and useless. Correction — while we now know atoms contain subatomic particles, Dalton's postulates were remarkably successful for explaining chemical reactions. For chemical purposes (reactions, bonding, stoichiometry), atoms are effectively indivisible — nuclear reactions are required to break them apart, which does not occur in ordinary chemistry.",
+    "Misconception: All atoms of the same element have exactly the same mass. Correction — isotopes are atoms of the same element (same Z) with different numbers of neutrons, giving different mass numbers. For example, chlorine has two stable isotopes: ³⁵Cl (75.77%) and ³⁷Cl (24.23%), giving an average atomic mass of 35.45 amu.",
+    "Misconception: The law of conservation of mass means matter cannot be converted to energy. Correction — in chemical reactions, mass is conserved to high precision. However, in nuclear reactions (fission, fusion), a small amount of mass is converted to energy according to Einstein's E = mc². The mass defect in nuclear reactions is real but negligible in chemistry."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "In a reaction, 12 g of carbon reacts completely with 32 g of oxygen to form CO₂. In a separate reaction, 12 g of carbon reacts completely with 16 g of oxygen to form CO. Verify the law of multiple proportions. Solution: In CO₂: 32 g O per 12 g C. In CO: 16 g O per 12 g C. The ratio = 32/16 = 2:1, a simple whole number ratio, confirming the law of multiple proportions.",
+    "Magnesium burns in air: 2Mg + O₂ → 2MgO. If 48 g of Mg reacts with 32 g of O₂, verify the law of conservation of mass. Solution: Mass of reactants = 48 + 32 = 80 g. Product 2MgO: Mg has atomic mass 24, O has 16. Mass of 2MgO = 2(24 + 16) = 80 g. Mass is conserved: 80 g = 80 g.",
+    "Two compounds contain only phosphorus and oxygen. In compound A, 1 g of P combines with 1.33 g of O. In compound B, 1 g of P combines with 2.66 g of O. Verify the law of multiple proportions and identify the compounds. Solution: Ratio = 2.66/1.33 = 2:1 (whole number ratio). Compound A is P₂O₃ (empirical) and compound B is P₂O₅, corresponding to the fixed mass ratio predicted by Dalton's theory.",
+    "Why does Dalton's theory fail to explain the existence of ozone (O₃) alongside oxygen (O₂)? Solution: Both O₂ and O₃ are composed entirely of oxygen atoms, so Dalton's theory predicts only one form. The law of multiple proportions applies only when two different elements combine. O₃ is actually an allotrope — a different structural arrangement of the same element — which Dalton's theory did not anticipate."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Dalton published his atomic theory in 1808 in 'A New System of Chemical Philosophy,' which is considered one of the most important chemistry texts ever written.",
+    "The modern definition of the atomic mass unit (amu or u) is exactly 1/12 the mass of a single ¹²C carbon-12 atom, chosen as the standard in 1961.",
+    "Dalton incorrectly assumed that the simplest compound of two elements contains one atom of each (e.g., he wrote the formula of water as HO instead of H₂O) — this error was corrected by Avogadro in 1811.",
+    "The total number of known subatomic particles (quarks, leptons, bosons) described by the Standard Model is 17 fundamental particles, but over 200 hadrons (composite particles including protons, neutrons, and mesons) have been catalogued."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

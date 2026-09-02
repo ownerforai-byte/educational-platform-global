@@ -9,22 +9,34 @@
     "**Source of energy:** the energy comes from the work done by the battery in moving charge from one plate to the other against the increasing potential difference.",
     "**Derivation:** $dW = V\\,dQ = (Q/C)\\,dQ$. Integrating from $Q=0$ to $Q$ gives $W = \\int_0^Q \\frac{Q}{C}\\,dQ = \\frac{Q^2}{2C}$.",
     "**Energy density:** $u = \\frac{U}{Ad} = \\frac{1}{2}\\epsilon_0 E^2$. Energy is stored in the electric field throughout the volume between the plates.",
-    "**Why factor 1/2:** because the potential difference is not constant while charging; it starts at zero and rises to $V$, so the average voltage during charging is $V/2$."
+    "**Why factor 1/2:** because the potential difference is not constant while charging; it starts at zero and rises to $V$, so the average voltage during charging is $V/2$.",
+    "**Work by battery vs energy stored:** the battery supplies energy $QV$, but only half is stored in the capacitor. The other half is dissipated as heat in the connecting wires (even with ideal wires, this appears during the charging transient).",
+    "**Energy when dielectric is inserted (isolated):** if the capacitor is disconnected, $Q$ is constant. $U = Q^2/(2C)$. Since $C$ increases by $\\kappa$, energy decreases to $U/\\kappa$. The dielectric is pulled in, doing mechanical work.",
+    "**Energy when dielectric is inserted (battery connected):** $V$ is constant. $U = \\frac{1}{2}CV^2$. Since $C$ increases by $\\kappa$, energy increases to $\\kappa U$. The battery supplies the extra energy.",
+    "**Dimensional check:** $[U] = [C][V]^2 = \\text{F} \\cdot \\text{V}^2 = (\\text{C/V}) \\cdot \\text{V}^2 = \\text{C} \\cdot \\text{V} = \\text{J}$, confirming energy units.",
+    "**Energy in terms of field:** for a parallel plate capacitor, $U = \\frac{1}{2}\\epsilon_0 E^2 (Ad)$, where $Ad$ is the volume between plates. This shows energy is spread through the field.",
+    "**Capacitor as energy reservoir:** capacitors can release energy very quickly (unlike batteries), making them useful in camera flashes, defibrillators, and pulsed power applications."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The battery supplies energy $QV$, but only $\\frac{1}{2}QV$ is stored. The missing half is dissipated as heat during charging, even through ideal wires, due to the transient current.",
+    "Do not use $U = QV$ for capacitor energy — this is the energy the battery supplies, not what is stored. The correct formula is $U = \\frac{1}{2}QV$ because voltage increases linearly from 0 to $V$ during charging.",
+    "When a dielectric is inserted into an isolated capacitor, energy decreases (the dielectric is pulled in, gaining kinetic energy). When inserted with the battery connected, energy increases (the battery does extra work).",
+    "Energy density $u = \\frac{1}{2}\\epsilon_0 E^2$ applies to any electric field, not just between capacitor plates. It is the energy per unit volume stored in an electric field anywhere in space.",
+    "The formula $U = Q^2/(2C)$ shows that for a fixed charge, smaller capacitance means more stored energy. This seems counterintuitive but is correct — a smaller capacitor has a higher voltage for the same charge."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A $10\\,\\mu$F capacitor is charged to 200 V. Find the energy stored and the charge on each plate. Solution: $Q = CV = 10 \\times 10^{-6} \\times 200 = 2 \\times 10^{-3}$ C $= 2$ mC. $U = \\frac{1}{2}CV^2 = \\frac{1}{2} \\times 10 \\times 10^{-6} \\times 40000 = 0.2$ J.",
+    "A $5\\,\\mu$F capacitor charged to 100 V is disconnected. A dielectric with $\\kappa = 5$ is inserted. Find the new energy and explain where the energy went. Solution: $Q = 500\\,\\mu$C (constant). $C' = 25\\,\\mu$F. $U' = Q^2/(2C') = 25 \\times 10^{-8} / (50 \\times 10^{-6}) = 0.05$ J. Original energy $U = 0.25$ J. Energy lost $= 0.2$ J, converted to work done pulling the dielectric in plus heat.",
+    "Find the energy density in a parallel plate capacitor with plate separation 2 mm and voltage 500 V. Solution: $E = V/d = 500/0.002 = 2.5 \\times 10^5$ V/m. $u = \\frac{1}{2}\\epsilon_0 E^2 = \\frac{1}{2} \\times 8.85 \\times 10^{-12} \\times 6.25 \\times 10^{10} = 0.277$ J/m$^3$.",
+    "Two capacitors $C_1 = 2\\,\\mu$F and $C_2 = 4\\,\\mu$F are charged to 100 V and 50 V respectively. They are disconnected and connected positive-to-positive. Find the final voltage and energy loss. Solution: $Q_1 = 200\\,\\mu$C, $Q_2 = 200\\,\\mu$C. Total $Q = 400\\,\\mu$C. $C_{eq} = 6\\,\\mu$F. $V_f = 400/6 = 66.7$ V. $U_i = \\frac{1}{2}(2 \\times 10000 + 4 \\times 2500) \\times 10^{-6} = 0.2$ J. $U_f = \\frac{1}{2} \\times 6 \\times 10^{-6} \\times 4444 = 0.133$ J. Loss $= 67$ mJ.",
+    "A capacitor stores 1 J of energy when charged to 100 V. Find its capacitance. Solution: $U = \\frac{1}{2}CV^2$, so $C = 2U/V^2 = 2 \\times 1 / 10000 = 2 \\times 10^{-4}$ F $= 200\\,\\mu$F."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Only half the energy supplied by the battery is stored in the capacitor; the other half is dissipated as heat during the charging process, regardless of the resistance in the circuit.",
+    "The energy density of an electric field $u = \\frac{1}{2}\\epsilon_0 E^2$ is a universal result — it applies to any electric field in vacuum, not just inside capacitors.",
+    "When a dielectric is inserted into an isolated (disconnected) capacitor, the stored energy decreases because the dielectric is pulled into the field, converting electrical energy to mechanical work.",
+    "A capacitor can release its stored energy much faster than a battery can deliver current, which is why capacitors are used in camera flashes and pulsed lasers.",
+    "The three equivalent expressions $U = \\frac{1}{2}CV^2 = \\frac{Q^2}{2C} = \\frac{1}{2}QV$ are useful in different situations: use the first when $V$ is known, the second when $Q$ is known, and the third when both are known."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor"

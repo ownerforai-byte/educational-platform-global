@@ -1,30 +1,43 @@
 {
-  "title": "Orbit vs Orbital â€” 10-Point Delta Table & the s-Orbital",
+  "title": "Orbit vs Orbital — 10-Point Delta Table & the s-Orbital",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
   "relevance": 80,
   "notes": [
-    "**Orbit vs orbital (10-point delta):** (1) an orbit is a definite circular path; an orbital is a region of high probability. (2) Orbits are planar; orbitals are three-dimensional. (3) Orbits come from Bohr's model; orbitals from quantum mechanics. (4) An orbit has a fixed radius; an orbital has no sharp boundary. (5) Orbits are described by one quantum number (n); orbitals by three (n, l, m). (6) Orbits imply exact position and momentum; orbitals obey the uncertainty principle. (7) Orbits can hold at most 2nÂ² electrons; orbitals hold at most 2 electrons. (8) Orbits are circular; orbitals have varied shapes (spherical, dumb-bell, etc.). (9) Orbits are not observable; orbitals are mapped by probability density ÏˆÂ². (10) Orbits were abandoned; orbitals are the accepted modern description.",
-    "**Electronic arrays:** the electron configurations of representative atoms follow the Bohrâ€“Bury order â€” N (Z=7): 1sÂ² 2sÂ² 2pÂ³; O (Z=8): 1sÂ² 2sÂ² 2pâ´; Ne (Z=10): 1sÂ² 2sÂ² 2pâ¶; Mg (Z=12): 1sÂ² 2sÂ² 2pâ¶ 3sÂ²; Cl (Z=17): 1sÂ² 2sÂ² 2pâ¶ 3sÂ² 3pâµ.",
+    "**Orbit vs orbital (10-point delta):** (1) an orbit is a definite circular path; an orbital is a region of high probability. (2) Orbits are planar; orbitals are three-dimensional. (3) Orbits come from Bohr's model; orbitals from quantum mechanics. (4) An orbit has a fixed radius; an orbital has no sharp boundary. (5) Orbits are described by one quantum number (n); orbitals by three (n, l, m). (6) Orbits imply exact position and momentum; orbitals obey the uncertainty principle. (7) Orbits can hold at most 2n² electrons; orbitals hold at most 2 electrons. (8) Orbits are circular; orbitals have varied shapes (spherical, dumbbell, etc.). (9) Orbits are not observable; orbitals are mapped by probability density |ψ|². (10) Orbits were abandoned; orbitals are the accepted modern description.",
+    "**Electronic arrays:** the electron configurations of representative atoms follow the Bohr–Bury order — N (Z=7): 1s² 2s² 2p³; O (Z=8): 1s² 2s² 2p⁴; Ne (Z=10): 1s² 2s² 2p⁶; Mg (Z=12): 1s² 2s² 2p⁶ 3s²; Cl (Z=17): 1s² 2s² 2p⁶ 3s² 3p⁵.",
     "**s-orbital sharp metrics:** the s-orbital is spherical, non-directional, has no nodal plane, and its probability density is highest at the nucleus; it is the only orbital with a non-zero value at the nucleus.",
-    "**Opposite spins cancellation:** two electrons in the same orbital must have opposite spins (+Â½ and âˆ’Â½); their magnetic moments cancel, so a fully paired orbital contributes no net magnetism.",
-    "**Energy trend:** for a given principal shell the s-subshell lies lowest in energy: 1s < 2s < 3s < 4s < â€¦"
+    "**s-orbital radial probability:** for the 1s orbital, the radial probability distribution 4πr²|ψ|² peaks at r = a₀ (0.529 Å, the Bohr radius). The electron is most likely to be found at this distance, not at the nucleus despite |ψ|² being maximum there.",
+    "**Radial nodes in s-orbitals:** ns orbitals have (n − 1) radial nodes (spherical surfaces where ψ = 0). 1s: 0 nodes; 2s: 1 node; 3s: 2 nodes; 4s: 3 nodes. Each node is a spherical shell of zero probability.",
+    "**Penetration and shielding:** s-electrons penetrate closer to the nucleus than p, d, or f electrons of the same n because they have non-zero probability at the nucleus. They experience a higher effective nuclear charge (less shielding) and are more tightly bound.",
+    "**Opposite spins cancellation:** two electrons in the same orbital must have opposite spins (+½ and −½); their magnetic moments cancel, so a fully paired orbital contributes no net magnetism.",
+    "**Energy trend:** for a given principal shell the s-subshell lies lowest in energy: 1s < 2s < 3s < 4s < … Within a shell, the energy order is s < p < d < f (for hydrogen-like atoms, all subshells of same n are degenerate).",
+    "**s-orbital wave function (1s):** ψ₁s = (1/√π)(1/a₀)³/² e⁻ʳ/ᵃ⁰. The exponential decay e⁻ʳ/ᵃ⁰ gives the radial probability maximum at r = a₀. The wave function is non-zero at r = 0 (the nucleus).",
+    "**Spin pairing energy:** placing two electrons in the same orbital requires overcoming their mutual electrostatic repulsion. The exchange energy gain from parallel spins in separate orbitals (Hund's rule) often exceeds the pairing energy, leading to maximum multiplicity.",
+    "**s-orbital angular momentum:** s-orbitals have l = 0, so the orbital angular momentum L = √[l(l+1)]ħ = 0. They have no magnetic moment from orbital motion.",
+    "**Radial distribution function:** the quantity 4πr²R²(r) gives the probability of finding the electron at distance r (regardless of direction). For 1s, this function has a single maximum at r = a₀."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "An orbit is NOT a physical 'track' that the electron follows. Bohr's model is a mathematical model, not a physical picture. The electron does not 'move around' the orbit.",
+    "The 'shape' of an orbital is NOT a physical boundary. It is a boundary surface that encloses a given probability (typically 90–95%). The probability density |ψ|² falls off smoothly and never reaches zero at finite distance.",
+    "Students often think the 2s electron is 'farther out' than the 2p electron on average. In reality, the 2s electron has significant probability density CLOSE TO THE NUCLEUS (penetration), while the 2p electron has a nodal plane at the nucleus and stays farther out on average.",
+    "s-orbitals do NOT have angular nodes — only radial nodes. The term 'nodal plane' is sometimes misused for s-orbitals; they have no planar nodes, only spherical nodes (radial).",
+    "The 1s orbital has maximum |ψ|² at the nucleus, but the radial probability 4πr²|ψ|² is zero at r = 0 (because the volume element shrinks). The most probable distance is r = a₀, not r = 0."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "How many radial nodes does the 4s orbital have? Solution: n − l − 1 = 4 − 0 − 1 = 3 radial nodes. These are spherical surfaces at specific radii where the probability of finding the electron is zero.",
+    "Explain why the 2s orbital is lower in energy than the 2p orbital in multi-electron atoms. Solution: The 2s electron penetrates closer to the nucleus (non-zero ψ at r=0), experiencing less shielding and a higher effective nuclear charge. The 2p electron has a nodal plane at the nucleus and stays farther out, experiencing more shielding.",
+    "Calculate the most probable distance of a 1s electron from the nucleus in hydrogen. Solution: The radial probability P(r) = 4πr²|ψ|² = (4/a₀³)r²e⁻²ʳ/ᵃ⁰. dP/dr = 0 gives r = a₀ = 0.529 Å. This is the Bohr radius, the same as the Bohr model's first orbit radius.",
+    "Why does the s-orbital have no nodal plane? Solution: The angular part of the s-orbital wave function is a constant (Y₀₀ = 1/√4π). There is no angular dependence, so no planes of zero probability. All p, d, f orbitals have angular nodes.",
+    "What is the total number of radial nodes in the 3s, 3p, and 3d orbitals? Solution: 3s: n−l−1 = 3−0−1 = 2 nodes. 3p: 3−1−1 = 1 node. 3d: 3−2−1 = 0 nodes."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The 1s orbital has the highest electron density at the nucleus. This is why s-electrons participate in electron capture nuclear reactions (e.g., ⁷Be + e⁻ → ⁷Li) — only s-electrons have significant overlap with the nucleus.",
+    "The concept of 'orbitals' was introduced by Robert Mulliken in 1932. He combined 'orbit' and 'wave' to emphasize the wave nature while keeping the familiar term 'orbit'.",
+    "The spherical symmetry of s-orbitals means they have zero orbital angular momentum (l = 0). This is why they have no magnetic quantum number (m = 0 only) and no splitting in a magnetic field.",
+    "The radial probability maximum of the 1s orbital (r = a₀) exactly matches the Bohr model's first orbit radius. This remarkable agreement is why Bohr's model gave correct energies despite its wrong physical picture.",
+    "The penetration effect explains why the 4s orbital fills before 3d: despite having a higher principal quantum number, 4s electrons penetrate closer to the nucleus and are more strongly bound in multi-electron atoms."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

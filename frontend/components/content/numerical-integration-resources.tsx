@@ -52,7 +52,7 @@ function TrapezoidalVisual() {
   const toSvgY = (vy: number) => oy - vy * scale;
 
   // Generate trapezoids
-  const trapezoids: JSX.Element[] = [];
+  const trapezoids: React.ReactElement[] = [];
   for (let i = 0; i < n; i++) {
     const x0 = a + i * h;
     const x1 = a + (i + 1) * h;
@@ -242,8 +242,8 @@ function SimpsonVisual() {
   const toSvgY = (vy: number) => oy - vy * scale;
 
   // Generate parabolas for each panel
-  const parabolas: JSX.Element[] = [];
-  const points: JSX.Element[] = [];
+  const parabolas: React.ReactElement[] = [];
+  const points: React.ReactElement[] = [];
 
   for (let i = 0; i < panel; i++) {
     const x0 = a + i * h;

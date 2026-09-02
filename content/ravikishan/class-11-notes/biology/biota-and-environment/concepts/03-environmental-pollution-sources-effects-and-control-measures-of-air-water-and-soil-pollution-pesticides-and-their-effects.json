@@ -9,22 +9,56 @@
     "**Water pollution:** sources: domestic sewage, industrial effluents, agricultural runoff (fertilizers, pesticides). Effects: eutrophication, bioaccumulation, biomagnification (DDT in food chain), waterborne diseases (cholera, typhoid). Controls: sewage treatment, effluent standards, wetland restoration.",
     "**Soil pollution:** sources: pesticides, fertilizers, industrial waste, mining. Effects: loss of soil organisms, reduced fertility, heavy metal accumulation in crops. Controls: organic farming, bioremediation, proper waste disposal.",
     "**Pesticides:** organochlorines (DDT: persistent, bioaccumulative, banned in many countries), organophosphates (malathion: less persistent, inhibit acetylcholinesterase), carbamates, pyrethroids (natural, less toxic to mammals).",
-    "**Alternatives:** integrated pest management (IPM), biological control (Bt cotton, Trichoderma), botanical pesticides (neem), crop rotation, resistant varieties."
+    "**Alternatives:** integrated pest management (IPM), biological control (Bt cotton, Trichoderma), botanical pesticides (neem), crop rotation, resistant varieties.",
+    "**Bioaccumulation:** the gradual buildup of a substance (like DDT or mercury) in an individual organism over its lifetime. The organism absorbs the substance faster than it can excrete or metabolize it. Fat-soluble (lipophilic) pollutants accumulate in adipose tissue.",
+    "**Biomagnification:** the increasing concentration of a pollutant at each trophic level of a food chain. DDT concentrations can increase 10 million-fold from water to top predators. Example: plankton (0.04 ppm) → small fish (0.5 ppm) → large fish (2 ppm) → fish-eating birds (25 ppm).",
+    "**Eutrophication process:** nutrient enrichment (nitrogen, phosphorus from fertilizers) → algal bloom → algae die and are decomposed by bacteria → bacterial respiration depletes dissolved oxygen → fish and other aerobic organisms die → dead zone forms. Examples: Gulf of Mexico dead zone, Lake Victoria.",
+    "**Acid rain:** formed when $SO_2$ and $NO_x$ react with water vapor in the atmosphere to form sulfuric and nitric acid. pH can drop below 5.0 (normal rain is ~5.6). Damages forests, acidifies lakes (killing fish), corrodes buildings and monuments (marble, limestone).",
+    "**Particulate matter (PM2.5 and PM10):** microscopic solid or liquid particles suspended in air. PM2.5 (≤2.5 micrometers) can penetrate deep into lungs and enter bloodstream, causing cardiovascular and respiratory disease, premature death. Sources: combustion, construction, industrial processes.",
+    "**Greenhouse effect and global warming:** greenhouse gases ($CO_2$, $CH_4$, $N_2O$, CFCs, water vapor) trap infrared radiation in the atmosphere. $CO_2$ concentration has risen from ~280 ppm (pre-industrial) to over 420 ppm (2024). Causes: fossil fuel combustion, deforestation, cement production.",
+    "**Thermal pollution:** discharge of hot water from power plants and industrial processes into rivers/lakes raises water temperature, reducing dissolved oxygen and harming aquatic life. Many aquatic organisms are sensitive to temperature changes of just 1-2°C.",
+    "**Heavy metal pollution:** lead (Pb) from gasoline (now phased out in most countries), paints, pipes; mercury (Hg) from coal combustion and mining — converted to methylmercury by bacteria, entering food chain; cadmium (Cd) from batteries and industrial waste. All are persistent and toxic.",
+    "**Lead poisoning (plumbism):** causes neurological damage, especially in children (reduced IQ, learning disabilities), anemia (inhibits hemoglobin synthesis), kidney damage, and hypertension. No safe blood lead level has been established.",
+    "**Mercury poisoning (Minamata disease):** caused by ingestion of methylmercury-contaminated seafood. Damages the central nervous system — symptoms include numbness, weakness, vision/hearing loss, ataxia, and death. First identified in Minamata, Japan (1950s).",
+    "**Incineration hazards:** burning plastics (especially PVC) releases dioxins and furans — among the most toxic synthetic compounds known. They are persistent organic pollutants (POPs) that bioaccumulate and cause cancer, reproductive disorders, and immune system damage.",
+    "**Oil spills:** cause devastating marine pollution. Oil coats feathers/fur (destroying insulation), is ingested by marine organisms, and smothers intertidal habitats. Cleanup methods: dispersants, booms, skimmers, bioremediation (oil-eating bacteria). The Deepwater Horizon spill (2010) released ~4.9 million barrels.",
+    "**Sewage treatment stages:** primary (physical screening and sedimentation removes ~60% solids), secondary (biological decomposition by bacteria removes ~90% organic matter), tertiary (chemical/biological removal of nutrients, pathogens, and trace contaminants). Constructed wetlands are natural tertiary treatment systems.",
+    "**Bioremediation:** using living organisms (bacteria, fungi, plants) to degrade or remove environmental pollutants. Examples: oil-degrading bacteria (Pseudomonas) for spill cleanup, mycoremediation (fungi) for soil contamination, phytoremediation (plants like sunflowers for radioactive sites).",
+    "**Integrated Pest Management (IPM):** a sustainable approach combining biological control, habitat manipulation, resistant varieties, and targeted pesticide use. Pesticides are used only as a last resort and in the minimum effective dose. Reduces pesticide resistance and environmental contamination.",
+    "**Bt (Bacillus thuringiensis) toxin:** a naturally occurring soil bacterium that produces crystalline proteins toxic to specific insect larvae. When ingested, the alkaline gut pH solubilizes crystals, activating toxins that puncture the gut lining. Used in Bt cotton, Bt corn — specific to target pests, safe for non-target organisms.",
+    "**Neem-based pesticides:** azadirachtin from neem seeds acts as an antifeedant, growth regulator, and reproductive inhibitor in insects. Less toxic to non-target organisms, biodegradable, and does not promote resistance. Widely used in organic farming across India.",
+    "**Persistent Organic Pollutants (POPs):** toxic chemicals that persist in the environment for decades, travel long distances via air and water, bioaccumulate in fat tissue, and pose risks to human health and wildlife. Regulated by the Stockholm Convention (2001). Includes DDT, dioxins, PCBs."
   ],
   "confusion": [
     "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
     "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Bioaccumulation occurs WITHIN a single organism over time; biomagnification occurs ACROSS trophic levels in a food chain. Bioaccumulation is the mechanism; biomagnification is the ecological consequence.",
+    "Organochlorines (DDT) are fat-soluble and persist for decades; organophosphates (malathion) are water-soluble and break down in weeks. The older class is far more dangerous environmentally despite being less acutely toxic to mammals.",
+    "Acid rain (pH < 5.0) is distinct from normal acidic rain (pH ~5.6 due to dissolved $CO_2$). Acid rain is caused by $SO_2$ and $NO_x$ from fossil fuel combustion, not by natural carbonic acid.",
+    "Primary sewage treatment removes solids physically (screening, sedimentation). Secondary treatment uses bacteria to decompose organic matter. Tertiary treatment removes nutrients and pathogens. Each stage addresses different contaminants.",
+    "Dioxins are NOT intentionally produced — they are unintended byproducts of combustion (incineration, forest fires) and industrial processes (chlorine bleaching, pesticide manufacture). They are the most toxic class of man-made compounds."
   ],
   "practice": [
     "Solve one basic problem using the key formula from this topic.",
     "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Apply this concept to a real-world situation and explain each step.",
+    "Trace the biomagnification pathway of DDT from wastewater discharge to a human consumer. Calculate the concentration at each trophic level if the initial concentration is 0.000003 ppm and the biomagnification factor is 10× per level.",
+    "Design an IPM strategy for a rice farmer facing multiple pest pressures. Justify each component (biological, cultural, mechanical, chemical) and explain how they work together to reduce pesticide dependence.",
+    "Explain the mechanism of organophosphate poisoning and why atropine and pralidoxime are the antidotes. How does this relate to the normal function of acetylcholinesterase at synapses?",
+    "A lake receives agricultural runoff containing nitrates and phosphates. Describe the sequence of events leading to eutrophication and fish kills. What interventions could prevent or reverse this process?",
+    "Compare the environmental fate of DDT (organochlorine) versus malathion (organophosphate). Which is more likely to cause long-term ecological damage and why? Consider persistence, solubility, and biomagnification potential."
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
     "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Always check units and dimensions when applying this concept.",
+    "DDT was banned in the US in 1972 after Rachel Carson's 'Silent Spring' (1962) documented its devastating effects on bird populations — thinning eggshells caused reproductive failure in bald eagles and peregrine falcons.",
+    "The Great Smog of London (1952) killed an estimated 12,000 people in one week from particulate and $SO_2$ pollution, leading to the UK's Clean Air Act of 1956 — a landmark in environmental regulation.",
+    "Minamata disease (1956) was caused by industrial mercury discharge into Minamata Bay, Japan. It took 20 years for the government to acknowledge the link, by which time over 2,000 people were afflicted.",
+    "The ozone layer depletion caused by CFCs (chlorofluorocarbons) is a different but related environmental problem. CFCs are also greenhouse gases. The Montreal Protocol (1987) successfully phased out CFC production globally.",
+    "Microplastics (particles < 5 mm) have been found in every ocean, in drinking water, and in human blood. They adsorb persistent organic pollutants and heavy metals, entering the food chain at the smallest organisms and biomagnifying upward.",
+    "The 'precautionary principle' in environmental policy states that when an activity raises threats of harm to health or the environment, precautionary measures should be taken even if some cause-and-effect relationships are not fully established — this is why many pesticides are banned before all long-term effects are known."
   ],
   "animation3D": "biota-and-environment",
   "motionGraphics": "biota-and-environment"

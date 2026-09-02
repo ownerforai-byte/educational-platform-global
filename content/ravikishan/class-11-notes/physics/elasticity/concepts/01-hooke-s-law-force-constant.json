@@ -5,26 +5,36 @@
   "topicTitle": "Hooke's law: force constant",
   "relevance": 100,
   "notes": [
-    "**Hooke's law:** within the elastic limit, the extension of an elastic body is directly proportional to the applied force: $F \\propto x$, or $F = kx$.",
-    "**Force constant $k$:** the stiffness of the material. A larger $k$ means more force is needed for the same extension. Units: N/m.",
-    "**Elastic limit:** the maximum stress beyond which the material does not return to its original shape when the load is removed.",
-    "**Limit of proportionality:** the point beyond which $F$ is no longer proportional to $x$. The elastic limit is usually just beyond this point.",
-    "**Springs in series and parallel:** for series, $1/k_{eq} = 1/k_1 + 1/k_2$; for parallel, $k_{eq} = k_1 + k_2$. Parallel springs are stiffer; series springs are softer."
+    "**Hooke's law:** within the elastic limit, the extension of an elastic body is directly proportional to the applied force: $F \\propto x$, or $F = kx$, where $k$ is the force constant (spring constant).",
+    "**Force constant $k$:** the stiffness of the spring or wire. A larger $k$ means more force is needed for the same extension. Units: N/m. A stiff spring has a large $k$; a slack spring has a small $k$.",
+    "**Elastic limit:** the maximum stress beyond which the material does not return to its original shape when the load is removed. Beyond this point, permanent (plastic) deformation occurs.",
+    "**Limit of proportionality:** the point beyond which $F$ is no longer proportional to $x$. Hooke's law is valid only up to this point. The elastic limit is usually just beyond the limit of proportionality.",
+    "**Springs in series:** $\\frac{1}{k_{eq}} = \\frac{1}{k_1} + \\frac{1}{k_2} + \\cdots$. Series springs are softer (smaller $k_{eq}$) than either individual spring. The same force acts on each spring.",
+    "**Springs in parallel:** $k_{eq} = k_1 + k_2 + \\cdots$. Parallel springs are stiffer (larger $k_{eq}$) than either individual spring. The same extension is shared by each spring.",
+    "**Wire as a spring:** for a wire of length $L$, cross-sectional area $A$, and Young's modulus $Y$, the force constant is $k = \\frac{YA}{L}$. Longer wires are less stiff; thicker wires are stiffer.",
+    "**Graphical interpretation:** the force-extension graph is a straight line through the origin up to the limit of proportionality. The slope of the line is $k$. Beyond this point, the graph curves.",
+    "**Energy stored:** the work done in stretching a spring is $W = \\frac{1}{2}kx^2$, stored as elastic potential energy. This is the area under the F-x graph (a triangle)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Hooke's law is $F = kx$, where $F$ is the applied force and $x$ is the extension. The restoring force exerted BY the spring is $-kx$ (opposite direction). The negative sign is important when applying Newton's second law to oscillating systems.",
+    "The force constant $k$ is a property of the spring/wire as a whole, not just the material. Two wires of the same material but different lengths have different $k$ values: $k \\propto \\frac{A}{L}$. Cutting a spring in half doubles its force constant.",
+    "Hooke's law applies to both compression and extension — the same constant $k$ works in both directions for an ideal spring, though real springs may buckle under compression.",
+    "The elastic limit and the limit of proportionality are close but NOT the same point. The limit of proportionality is where the graph first deviates from a straight line; the elastic limit is where permanent deformation begins. They are usually very close together.",
+    "For wires, $F = kx$ can be rewritten as $\\frac{F}{A} = Y \\frac{x}{L}$, connecting the macroscopic spring constant to the microscopic material property $Y$. Do not confuse $k$ (spring constant) with $Y$ (Young's modulus) — they have different units and physical meanings."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A spring extends by 0.05 m when a force of 10 N is applied. Find the force constant and the energy stored. Solution: $k = \\frac{F}{x} = \\frac{10}{0.05} = 200$ N/m. Energy stored: $U = \\frac{1}{2}kx^2 = \\frac{1}{2} \\times 200 \\times (0.05)^2 = 0.25$ J.",
+    "Two springs of constants 100 N/m and 200 N/m are connected (a) in series and (b) in parallel. Find the equivalent spring constant in each case. Solution: (a) Series: $\\frac{1}{k_{eq}} = \\frac{1}{100} + \\frac{1}{200} = \\frac{3}{200}$, so $k_{eq} = \\frac{200}{3} \\approx 66.7$ N/m. (b) Parallel: $k_{eq} = 100 + 200 = 300$ N/m.",
+    "A wire of length 2 m and diameter 1 mm is stretched by 0.5 mm when a load of 50 N is applied. Find Young's modulus. Solution: $A = \\pi r^2 = \\pi(0.5 \\times 10^{-3})^2 = \\pi \\times 2.5 \\times 10^{-7}$ m$^2$. $Y = \\frac{FL}{Ax} = \\frac{50 \\times 2}{\\pi \\times 2.5 \\times 10^{-7} \\times 0.5 \\times 10^{-3}} = \\frac{100}{\\pi \\times 1.25 \\times 10^{-10}} \\approx 2.55 \\times 10^{11}$ Pa.",
+    "A spring of constant $k$ is cut into two equal halves. What is the spring constant of each half? Solution: Since $k = \\frac{YA}{L}$, cutting the spring in half gives $L' = \\frac{L}{2}$, so $k' = \\frac{YA}{L/2} = 2k$. Each half has twice the spring constant of the original spring.",
+    "A 2 kg mass is hung from a spring of constant 500 N/m. Find the extension and the elastic potential energy stored. Solution: At equilibrium, $mg = kx$, so $x = \\frac{mg}{k} = \\frac{2 \\times 9.8}{500} = 0.0392$ m $= 3.92$ cm. Energy: $U = \\frac{1}{2}kx^2 = \\frac{1}{2} \\times 500 \\times (0.0392)^2 \\approx 0.384$ J."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Robert Hooke published his law in 1660 as an anagram \"ceiiinosssttuv\" and revealed it in 1678 as \"ut tensio sic vis\" (as the extension, so the force).",
+    "Hooke's law is an approximation that works well for small deformations. Most real materials obey it only within a limited range — typically for strains up to about 0.1% to 1%.",
+    "The concept of force constant is used far beyond springs — it appears in molecular physics (atoms in a molecule are connected by \"springs\"), seismology (earthquake forces), and engineering (structural stiffness).",
+    "A steel wire 1 m long with a cross-section of 1 mm$^2$ has a force constant of about $2 \\times 10^5$ N/m — an enormous stiffness compared to a typical spring, reflecting the rigidity of metals.",
+    "The period of a mass-spring oscillator is $T = 2\\pi\\sqrt{\\frac{m}{k}}$, showing that the oscillation period depends on the force constant but not on the amplitude (for small oscillations)."
   ],
   "animation3D": "elasticity",
   "motionGraphics": "elasticity"

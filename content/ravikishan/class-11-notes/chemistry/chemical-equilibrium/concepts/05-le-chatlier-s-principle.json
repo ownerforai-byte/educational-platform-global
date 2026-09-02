@@ -5,26 +5,36 @@
   "topicTitle": "Le Chatelier's Principle (numericals not required)",
   "relevance": 100,
   "notes": [
-    "**Principle:** when a system at equilibrium is subjected to a change in concentration, pressure, or temperature, the system shifts in the direction that tends to counteract the change and restore a new equilibrium.",
-    "**Concentration:** increasing reactant concentration shifts equilibrium forward; increasing product concentration shifts it backward.",
-    "**Pressure/volume:** for gas-phase reactions with $\\Delta n \\neq 0$, increasing pressure (decreasing volume) shifts toward the side with fewer gas moles. If $\\Delta n = 0$, pressure has no effect.",
-    "**Temperature:** if the forward reaction is exothermic ($\\Delta H < 0$), increasing temperature shifts equilibrium backward (endothermic direction). If endothermic forward, increasing T shifts forward.",
-    "**Catalyst:** does not shift equilibrium position; it only helps the system reach equilibrium faster."
+    "**Statement of the principle:** When a system at equilibrium is disturbed by a change in concentration, pressure, volume, or temperature, the system shifts in a direction that counteracts the disturbance and establishes a new equilibrium.",
+    "**Concentration change:** Adding a reactant shifts equilibrium toward products (to consume the added reactant). Removing a product shifts equilibrium toward products (to replace what was removed). Adding a product shifts equilibrium toward reactants. Removing a reactant shifts equilibrium toward reactants.",
+    "**Example — concentration:** For $\\text{Fe}^{3+}(aq) + \\text{SCN}^-(aq) \\rightleftharpoons \\text{FeSCN}^{2+}(aq)$ (blood-red complex), adding more $\\text{Fe}^{3+}$ ions shifts the equilibrium right, deepening the red colour. Adding $\\text{Cl}^-$ (which precipitates $\\text{Fe}^{3+}$ as $\\text{FeCl}_3$) removes $\\text{Fe}^{3+}$ and shifts equilibrium left, fading the colour.",
+    "**Pressure/volume change (gaseous systems only):** Increasing pressure (decreasing volume) shifts equilibrium toward the side with fewer moles of gas. Decreasing pressure (increasing volume) shifts toward the side with more moles of gas. If $\\Delta n_{\\text{gas}} = 0$, pressure changes have no effect.",
+    "**Example — pressure:** In the Haber process, $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$, $\\Delta n = 2 - 4 = -2$. Increasing pressure shifts equilibrium toward $\\text{NH}_3$ (fewer moles of gas), increasing yield. This is why the industrial process operates at 200 atm.",
+    "**Example — no pressure effect:** For $\\text{H}_2(g) + \\text{I}_2(g) \\rightleftharpoons 2\\text{HI}(g)$, $\\Delta n = 0$. Changing pressure has no effect on the equilibrium position, though it changes all partial pressures proportionally.",
+    "**Temperature change:** Treating heat as a reactant or product: for an exothermic reaction ($\\Delta H < 0$), heat is a product, so increasing temperature shifts equilibrium toward reactants. For an endothermic reaction ($\\Delta H > 0$), heat is a reactant, so increasing temperature shifts equilibrium toward products.",
+    "**Example — temperature:** The Haber process is exothermic ($\\Delta H = -92.4\\;\\text{kJ/mol}$). Increasing temperature shifts equilibrium backward, reducing $\\text{NH}_3$ yield. However, higher temperature increases the reaction rate. Industry uses a compromise temperature (~700 K) with a catalyst.",
+    "**Example — endothermic:** For $\\text{N}_2\\text{O}_4(g) \\rightleftharpoons 2\\text{NO}_2(g)$, $\\Delta H = +57.2\\;\\text{kJ/mol}$. Heating the system shifts equilibrium toward $\\text{NO}_2$, darkening the colour (brown $\\text{NO}_2$ increases). Cooling shifts toward colourless $\\text{N}_2\\text{O}_4$.",
+    "**Catalyst effect:** A catalyst increases the rate of both forward and reverse reactions equally. It does not change the equilibrium position or the value of $K$. It only reduces the time required to reach equilibrium.",
+    "**Adding inert gas:** At constant volume, adding an inert gas (e.g., He, Ar) increases total pressure but does not change partial pressures of reacting species, so equilibrium is unaffected. At constant pressure, adding inert gas increases volume and decreases partial pressures, shifting equilibrium toward the side with more moles of gas.",
+    "**Real-world application — carbonated beverages:** A sealed soda bottle is at equilibrium: $\\text{CO}_2(g) \\rightleftharpoons \\text{CO}_2(aq)$. Opening the bottle reduces $P_{\\text{CO}_2}$ above the liquid, shifting equilibrium to release $\\text{CO}_2$ gas (bubbles). This is Le Chatelier's principle in everyday life.",
+    "**Real-world application — high-altitude breathing:** At high altitude, lower $P_{\\text{O}_2}$ shifts the haemoglobin-oxygen equilibrium $\\text{Hb} + \\text{O}_2 \\rightleftharpoons \\text{HbO}_2$ to the left, reducing oxygen transport. The body compensates by producing more red blood cells over time."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception — \"Increasing pressure always shifts equilibrium toward products.\" — Clarification: Pressure only affects equilibrium when there is a difference in the number of moles of gas between reactants and products. If $\\Delta n = 0$, pressure has no effect.",
+    "Misconception — \"A catalyst shifts the equilibrium position to produce more product.\" — Clarification: A catalyst speeds up both forward and reverse reactions equally, so the equilibrium position is unchanged. Only the time to reach equilibrium is reduced.",
+    "Misconception — \"Adding an inert gas always shifts equilibrium.\" — Clarification: At constant volume, adding an inert gas does not change partial pressures of the reacting species, so equilibrium is unaffected. Only at constant pressure does it cause a shift.",
+    "Misconception — \"Le Chatelier's principle predicts the new equilibrium concentrations exactly.\" — Clarification: The principle only predicts the direction of shift. Quantitative prediction requires using the equilibrium constant expression with an ICE table."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Predict the effect of the following changes on the equilibrium: $\\text{N}_2(g) + 3\\text{H}_2(g) \\rightleftharpoons 2\\text{NH}_3(g)$, $\\Delta H = -92.4\\;\\text{kJ/mol}$. (a) Adding $\\text{N}_2$, (b) Removing $\\text{NH}_3$, (c) Increasing pressure, (d) Increasing temperature, (e) Adding a Fe catalyst. Solution: (a) Shifts right (more $\\text{NH}_3$). (b) Shifts right (replace removed $\\text{NH}_3$). (c) Shifts right (4 mol gas $\\rightarrow$ 2 mol gas). (d) Shifts left (exothermic; heat is a product). (e) No shift — catalyst speeds both directions equally.",
+    "For $\\text{PCl}_5(g) \\rightleftharpoons \\text{PCl}_3(g) + \\text{Cl}_2(g)$, $\\Delta H = +124\\;\\text{kJ/mol}$, predict the effect of: (a) Adding $\\text{Cl}_2$, (b) Increasing volume, (c) Increasing temperature, (d) Adding He at constant volume. Solution: (a) Shifts left (consume added $\\text{Cl}_2$). (b) Shifts right (1 mol gas $\\rightarrow$ 2 mol gas; volume increase favours more moles). (c) Shifts right (endothermic; heat acts as reactant). (d) No effect (partial pressures unchanged at constant volume).",
+    "Explain why the colour of a mixture of $\\text{N}_2\\text{O}_4$ (colourless) and $\\text{NO}_2$ (brown) darkens on heating and lightens on cooling. $\\text{N}_2\\text{O}_4(g) \\rightleftharpoons 2\\text{NO}_2(g)$, $\\Delta H = +57.2\\;\\text{kJ/mol}$. Solution: The reaction is endothermic, so heat is a reactant. Heating adds 'reactant' (heat), shifting equilibrium right, producing more brown $\\text{NO}_2$. Cooling removes heat, shifting equilibrium left, consuming $\\text{NO}_2$ and favouring colourless $\\text{N}_2\\text{O}_4$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Le Chatelier's principle, formulated by French chemist Henri Le Chatelier in 1884, applies to all systems in dynamic equilibrium — chemical, physical, and even biological.",
+    "The principle is a qualitative tool — it predicts the direction of shift but not the magnitude. Quantitative results require equilibrium constant calculations.",
+    "In the industrial Haber process, Le Chatelier's principle explains why high pressure favours ammonia yield, while the compromise temperature balances yield (favourable at low T) against rate (favourable at high T).",
+    "The principle also applies to phase equilibria (melting, boiling, solubility) and electrochemical equilibria (Nernst equation), making it one of the most universal concepts in physical chemistry."
   ],
   "animation3D": "chemical-equilibrium",
   "motionGraphics": "chemical-equilibrium"

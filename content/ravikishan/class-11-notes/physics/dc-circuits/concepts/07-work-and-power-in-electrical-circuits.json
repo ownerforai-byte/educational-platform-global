@@ -9,22 +9,34 @@
     "**Electrical power:** $P = VI = I^2R = V^2/R$. Power is the rate of energy transfer.",
     "**Joule heating:** $P = I^2R$ is the power dissipated as heat in a resistor. This is also called $I^2R$ loss.",
     "**Kilowatt-hour:** unit of electrical energy. $1\\,\\text{kWh} = 3.6 \\times 10^6\\,\\text{J}$. This is what electricity meters measure.",
-    "**Efficiency:** useful power output divided by total power input. Transmission lines use high voltage to reduce $I^2R$ losses because $P_{loss} \\propto I^2$."
+    "**Efficiency:** useful power output divided by total power input. Transmission lines use high voltage to reduce $I^2R$ losses because $P_{loss} \\propto I^2$.",
+    "**Power in different elements:** in a resistor, all electrical energy is converted to heat: $P = I^2R$. In a motor, electrical energy converts to mechanical work plus heat: $P_{input} = VI = I^2R + P_{mech}$. In a battery being charged, electrical energy is stored as chemical energy: $P_{input} = \\mathcal{E}I + I^2r$.",
+    "**Energy conservation in circuits:** the total electrical energy supplied equals the sum of energy dissipated as heat and energy converted to other forms: $V_{source} \\cdot I \\cdot t = I^2Rt + \\text{other forms}$.",
+    "**Power rating of resistors:** resistors are rated by the maximum power they can dissipate without damage. Common ratings are 0.25 W, 0.5 W, and 1 W. Exceeding this causes overheating and failure.",
+    "**Domestic electrical cost:** the cost of running an appliance is $\\text{Cost} = P(\\text{kW}) \\times t(\\text{h}) \\times \\text{rate (per kWh)}$. A 100 W bulb running for 5 hours uses 0.5 kWh.",
+    "**Power factor:** for AC circuits, $P = VI\\cos\\phi$, where $\\cos\\phi$ is the power factor. For DC circuits, $\\cos\\phi = 1$, so $P = VI$ always.",
+    "**Heat energy in calories:** $H = 0.24 I^2 R t$ calories (mechanical equivalent of heat). In SI units, $H = I^2 R t$ joules."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Power $P = I^2R$ and $P = V^2/R$ are both correct but apply in different contexts. Use $I^2R$ when current is known (series circuits). Use $V^2/R$ when voltage is known (parallel circuits). Using the wrong one gives a wrong answer because $V$ and $I$ are not independent.",
+    "Electrical energy is measured in joules (J) or kilowatt-hours (kWh), NOT in watts (W). Watt is a unit of power (energy per time). $1\\,\\text{kWh} = 3.6 \\times 10^6$ J.",
+    "A 100 W bulb connected to 230 V draws less current than a 60 W bulb (because $I = P/V$, so the 100 W bulb has $I = 0.43$ A vs $I = 0.26$ A for the 60 W bulb). The 100 W bulb actually has LOWER resistance.",
+    "In a series circuit, the higher-wattage bulb glows dimmer because it has lower resistance, and in series the same current flows through both: $P = I^2R$, so the higher resistance (60 W bulb) gets more power.",
+    "Power dissipated in internal resistance ($I^2r$) is wasted energy. This is why battery-powered devices get warm — the internal resistance converts some chemical energy to heat instead of useful work."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 60 W, 230 V bulb is connected to a 230 V supply. Find the current, resistance, and energy consumed in 5 hours. Solution: $I = P/V = 60/230 = 0.261$ A. $R = V/I = 230/0.261 = 881\\,\\Omega$. $W = Pt = 60 \\times 5 = 300\\,\\text{Wh} = 0.3\\,\\text{kWh} = 1.08 \\times 10^6$ J.",
+    "A 12 V car headlamp draws 5 A. Find the power, resistance, and cost of running it for 4 hours at 8 pence per kWh. Solution: $P = VI = 12 \\times 5 = 60$ W. $R = V/I = 12/5 = 2.4\\,\\Omega$. Energy $= 60 \\times 4/1000 = 0.24\\,\\text{kWh}$. Cost $= 0.24 \\times 8 = 1.92$ pence.",
+    "A 100 $\Omega$ resistor carries a current of 2 A for 5 minutes. Find the heat produced in joules and calories. Solution: $H = I^2Rt = 4 \\times 100 \\times 300 = 120000$ J. In calories: $H = 120000/4.184 = 28681$ cal $\\approx 28.7$ kcal.",
+    "A transmission line carries 100 A at 11 kV over a total resistance of 5 $\Omega$. Find the power loss and the percentage of power lost. Solution: $P_{loss} = I^2R = 10000 \\times 5 = 50000$ W $= 50$ kW. Power transmitted $= VI = 11000 \\times 100 = 1.1 \\times 10^6$ W $= 1100$ kW. Percentage loss $= 50/1100 = 4.5\\%$.",
+    "A 1.5 V cell with internal resistance 0.5 $\Omega$ is connected to a variable resistor. Find the resistance for maximum power transfer and the power delivered. Solution: $R = r = 0.5\\,\\Omega$. $I = 1.5/(0.5+0.5) = 1.5$ A. $P_{max} = I^2R = 2.25 \\times 0.5 = 1.125$ W."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "A 100 W incandescent bulb is only about 5% efficient — most electrical energy is converted to heat rather than visible light. LEDs are about 15-20% efficient but produce far more lumens per watt.",
+    "Electric transmission lines carry power at very high voltages (up to 765 kV) to minimize $I^2R$ losses. Halving the voltage doubles the current and quadruples the power loss, which is why high-voltage transmission is essential.",
+    "The unit of electrical energy consumption, the kilowatt-hour, is not an SI unit. The SI unit of energy is the joule: $1\\,\\text{kWh} = 3.6 \\times 10^6$ J.",
+    "A typical household circuit breaker is rated for 15-20 A at 120-240 V, giving a maximum power of 1.8-4.8 kW. Connecting too many high-power appliances can trip the breaker or cause a fire.",
+    "The heating effect of current was discovered by James Prescott Joule in 1841. His law $H = I^2Rt$ is a fundamental result of energy conservation in electrical circuits."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits"

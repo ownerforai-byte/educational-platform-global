@@ -1,5 +1,5 @@
 {
-  "title": "Ecological Imbalances â€” Pollution and Climate Change",
+  "title": "Ecological Imbalances — Pollution and Climate Change",
   "unitSlug": "ecology",
   "topicSlug": "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
   "topicTitle": "Ecological imbalances: greenhouse effects and climate change, depletion of ozone layer, acid rain and biological invasion",
@@ -9,22 +9,39 @@
     "**Climate change impacts:** rising temperatures, shifting rainfall patterns, melting glaciers (Himalayan glaciers retreating), sea level rise, extreme weather events, coral bleaching.",
     "**Ozone depletion:** CFCs release Cl atoms in stratosphere, catalytically destroying $O_3$. Antarctic ozone hole forms each spring. Montreal Protocol phased out CFCs; ozone layer is recovering.",
     "**Acid rain:** $SO_2$ and $NO_x$ from fossil fuel combustion form $H_2SO_4$ and $HNO_3$ in rain. pH below 5.6 damages buildings, leaches soil nutrients, kills aquatic life in lakes.",
-    "**Biological invasion:** non-native species introduced accidentally or intentionally outcompete natives. Examples: Parthenium weed, water hyacinth, Lantana. Control is expensive and often difficult."
+    "**Biological invasion:** non-native species introduced accidentally or intentionally outcompete natives. Examples: Parthenium weed, water hyacinth, Lantana. Control is expensive and often difficult.",
+    "**Greenhouse gases and their sources:** Carbon dioxide ($CO_2$) from deforestation and fossil fuels (largest contributor). Methane ($CH_4$) from rice paddies, cattle enteric fermentation, landfills, and wetlands. Nitrous oxide ($N_2O$) from fertilizer use and industrial processes. CFCs from refrigerants and aerosols (now banned under Montreal Protocol).",
+    "**Enhanced greenhouse effect vs. natural greenhouse effect:** The natural greenhouse effect raises Earth's average temperature from -18°C to +15°C, making life possible. The enhanced greenhouse effect, driven by human activities since the Industrial Revolution, adds additional warming of about 1.1°C so far, causing climate disruptions.",
+    "**Ozone chemistry in detail:** The Chapman cycle: UV-C splits $O_2$ into two O atoms; O + $O_2$ forms $O_3$. CFCs release chlorine radicals (Cl·) under UV light. One Cl atom can destroy 100,000 $O_3$ molecules before being deactivated. The ozone hole forms because polar stratospheric clouds provide surfaces for chlorine activation in spring.",
+    "**Acid rain formation process:** $SO_2$ + OH· → HOSO_2· → $SO_3$ + HO_2·. Then $SO_3$ + $H_2O$ → $H_2SO_4$ (sulfuric acid). Similarly, $NO_2$ + OH· → $HNO_3$ (nitric acid). Dry deposition of $SO_2$ and $NO_x$ also causes damage before they dissolve in rainwater.",
+    "**Effects of acid rain on ecosystems:** Leaches aluminum from soil (toxic to plant roots and aquatic organisms). Removes essential minerals (calcium, magnesium) from soil. Acidifies lakes and streams (pH below 5 kills most fish eggs and invertebrates). Dissolves limestone and marble buildings (CaCO_3 + H_2SO_4 → CaSO_4 + H_2O + CO_2).",
+    "**Biological invasion mechanisms:** Invasive species succeed because: (a) they lack natural predators in the new environment (enemy release hypothesis), (b) they have high reproductive rates, (c) they produce allelopathic chemicals that suppress native plants. Lantana camara releases toxic compounds that inhibit growth of surrounding native vegetation.",
+    "**Biodiversity loss from invasives:** Invasive species are the second largest cause of species extinction after habitat destruction globally. In India, Lantana camara has invaded over 13 million hectares of forest, displacing native grasses and reducing food availability for herbivores like deer and elephants.",
+    "**Biogeochemical cycles and imbalance:** Deforestation disrupts the carbon cycle by releasing stored carbon and reducing $CO_2$ absorption. The Amazon rainforest, once a carbon sink, has become a net carbon source in some years due to fires and deforestation. This creates a positive feedback loop — more $CO_2$ → more warming → more forest fires.",
+    "**Climate change feedback loops:** Ice-albedo feedback: melting ice exposes dark ocean/land, absorbs more heat, melts more ice. Permafrost thaw releases trapped methane, further enhancing warming. Ocean warming reduces $CO_2$ solubility, leaving more in atmosphere. These are called positive (amplifying) feedback loops.",
+    "**Montreal Protocol success story:** Signed in 1987, it phased out production of ozone-depleting substances (CFCs, halons). It is the most successful international environmental treaty — ozone layer is projected to recover to 1980 levels by 2066. This prevented an estimated 2 million skin cancer cases per year in the US alone.",
+    "**Major invasive species in India:** Water hyacinth (Eichhornia crassipes) clogs waterways, blocks sunlight for aquatic plants, and reduces dissolved oxygen. Parthenium hysterophorus causes allergic reactions in humans and reduces crop yields. African catfish (Clarias gariepinus) preys on native fish species in Indian rivers."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: The greenhouse effect is harmful to the environment. — Correction: The natural greenhouse effect is essential for life — it keeps Earth warm enough for liquid water. The problem is the ENHANCED greenhouse effect caused by excess greenhouse gas emissions from human activities, which adds extra warming beyond the natural baseline.",
+    "Misconception: Ozone depletion and climate change are the same problem. — Correction: Ozone depletion occurs in the stratosphere (10-50 km above Earth) and increases UV radiation reaching the surface. Climate change occurs mainly in the troposphere (0-10 km) and involves trapping heat near the surface. They are related but distinct atmospheric problems.",
+    "Misconception: Acid rain only falls on the area where the pollution is generated. — Correction: Acid rain can travel hundreds or thousands of kilometers from its source. $SO_2$ and $NO_x$ emissions from industrial areas in northern Europe caused acid rain in Scandinavia. Emissions from eastern US affect Canada and vice versa.",
+    "Misconception: All introduced species become invasive. — Correction: Most introduced species do NOT become invasive. Only about 10% establish self-sustaining populations, and of those, only 10-20% cause significant ecological or economic harm. Factors like absence of natural predators, rapid reproduction, and environmental similarity determine invasiveness.",
+    "Misconception: Planting trees alone can solve the greenhouse effect. — Correction: While reforestation is important, it cannot offset current emission rates. Trees take decades to mature and absorb carbon. We also need to reduce emissions at source — transitioning to renewable energy, improving energy efficiency, and changing land-use practices."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Explain the Chapman cycle and describe how CFCs disrupt it. Include the role of chlorine radicals in ozone destruction.",
+    "A factory emits $SO_2$ into the atmosphere. Trace the chemical pathway by which this emission leads to acid rain and describe two effects on a nearby freshwater lake.",
+    "Compare the greenhouse effect and the ozone depletion problem. How do they differ in terms of: (a) atmospheric layer involved, (b) gases responsible, (c) environmental consequences, and (d) international treaties addressing them.",
+    "Why is Lantana camara considered one of the worst invasive species in Indian forests? Describe its ecological impact and two methods used to control it.",
+    "Draw a diagram showing a positive feedback loop involving Arctic ice melt and global warming. Label the initial change, the feedback process, and the amplification effect."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Earth's average surface temperature has risen by approximately 1.1°C since the pre-industrial era (1850-1900). At current rates, warming could reach 1.5°C above pre-industrial levels by the 2030s.",
+    "The Antarctic ozone hole reached its record size in 2006 at 29.5 million km² — nearly the size of North America. Thanks to the Montreal Protocol, it is slowly shrinking and expected to fully recover by around 2066.",
+    "Water hyacinth can double its population in as few as 6-18 days under favorable conditions, making it one of the fastest-growing aquatic plants and one of the world's worst invasive weeds.",
+    "The Paris Agreement (2015) aims to limit global warming to well below 2°C above pre-industrial levels, with efforts to limit it to 1.5°C. As of 2024, over 190 countries have ratified it.",
+    "Acid rain can lower the pH of a lake from 6.5 to 4.0 within a few years, killing most fish species. Some lakes in Scandinavia and eastern North America became so acidic they supported no aquatic life whatsoever by the 1980s."
   ],
   "animation3D": "ecology",
   "motionGraphics": "ecology"

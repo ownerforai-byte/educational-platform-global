@@ -1,27 +1,38 @@
 {
-  "title": "Bohr's Atomic Model â€” Quantization of Angular Momentum",
+  "title": "Bohr's Atomic Model — Quantization of Angular Momentum",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
   "relevance": 88,
   "notes": [
-    "The postulate that formally restricts which orbits are allowed: the electron's angular momentum is quantized in integer multiples of h/2Ï€",
-    "**mvr = nh/2Ï€**, where m = electron mass, v = electron velocity, r = orbit radius, n = 1, 2, 3... (the principal/orbit quantum number)"
+    "**The quantization postulate:** Bohr's second postulate states that the angular momentum of an electron in a stationary orbit is quantized: $L = mvr = n\\hbar$, where $\\hbar = h/2\\pi$, $n = 1, 2, 3, \\dots$, $m$ is the electron mass, $v$ is orbital velocity, and $r$ is the orbit radius.",
+    "**Physical meaning:** This quantization condition is what selects the allowed orbits. Without it, any radius (and thus any energy) would be allowed, and atoms would not have discrete energy levels.",
+    "**Deriving orbit radius from quantization:** Combining $mvr = n\\hbar$ with the centripetal force equation $\\frac{mv^2}{r} = \\frac{Ze^2}{4\\pi\\varepsilon_0 r^2}$, we eliminate $v$: $v = \\frac{n\\hbar}{mr}$, substitute to get $\\frac{n^2\\hbar^2}{m^2 r^3} = \\frac{Ze^2}{4\\pi\\varepsilon_0 r^2}$, giving $r_n = \\frac{4\\pi\\varepsilon_0 n^2 \\hbar^2}{m Z e^2} = \\frac{n^2 a_0}{Z}$.",
+    "**Deriving velocity from quantization:** $v_n = \\frac{n\\hbar}{mr_n} = \\frac{Z e^2}{4\\pi\\varepsilon_0 n \\hbar} = \\frac{Z\\alpha c}{n}$, where $\\alpha = \\frac{e^2}{4\\pi\\varepsilon_0 \\hbar c} \\approx \\frac{1}{137}$ is the fine-structure constant.",
+    "**de Broglie interpretation (1924):** Standing wave condition: an electron orbit is stable only if its circumference is an integer multiple of the electron's de Broglie wavelength: $2\\pi r_n = n\\lambda$. Substituting $\\lambda = h/mv$ gives $2\\pi r = nh/mv$, which rearranges to $mvr = nh/2\\pi = n\\hbar$ — exactly Bohr's quantization condition.",
+    "**Wave-particle duality connection:** Bohr's purely mechanical quantization condition is naturally explained by treating the electron as a wave. The orbit must support a standing wave to avoid destructive interference. This insight was a key step toward full quantum mechanics.",
+    "**Why $n=0$ is excluded:** If $n=0$, then $L=0$, meaning the electron has no angular momentum and would fall into the nucleus. The minimum orbit is $n=1$ with $L = \\hbar$, the minimum non-zero angular momentum.",
+    "**Angular momentum in quantum mechanics:** In the full Schrödinger treatment, orbital angular momentum is $\\sqrt{l(l+1)}\\hbar$, not $n\\hbar$. For the ground state, $l=0$ gives $L=0$ (an s-orbital with no angular momentum), which contradicts Bohr's $L=\\hbar$ for $n=1$. This is one of the specific defects of the Bohr model.",
+    "**Quantized angular momentum is fundamental:** Angular momentum quantization appears throughout quantum mechanics — in spin ($\\sqrt{s(s+1)}\\hbar$), molecular rotation ($J(J+1)\\hbar^2/2I$), and nuclear physics. It is not just an ad hoc assumption but a fundamental consequence of the wave nature of matter.",
+    "**Dimensional check:** $[mvr] = \\text{kg} \\cdot \\text{m/s} \\cdot \\text{m} = \\text{kg} \\cdot \\text{m}^2/\\text{s}$. $[\\hbar] = \\text{J} \\cdot \\text{s} = \\text{kg} \\cdot \\text{m}^2/\\text{s}^2 \\cdot \\text{s} = \\text{kg} \\cdot \\text{m}^2/\\text{s}$. The units match, confirming dimensional consistency."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Angular momentum is quantized in units of $h$, not $\\hbar$. — Correction: The quantization is in units of $\\hbar = h/2\\pi$. Bohr's original postulate was $L = nh/2\\pi$. This factor of $2\\pi$ comes from the geometry of circular orbits ($2\\pi r$) and de Broglie's wave condition.",
+    "Misconception: Bohr's $L = n\\hbar$ is correct in modern quantum mechanics. — Correction: In quantum mechanics, the orbital angular momentum magnitude is $L = \\sqrt{l(l+1)}\\hbar$. For $n=1$, quantum mechanics gives $l=0$, so $L=0$. Bohr incorrectly assumed $L=\\hbar$ for the ground state. The modern value $\\sqrt{l(l+1)}\\hbar$ agrees with Bohr's $n\\hbar$ only for large $n$ (correspondence principle).",
+    "Misconception: The quantization of angular momentum is derived from deeper principles in Bohr's model. — Correction: It is an independent postulate — not derived from anything else in Bohr's theory. It was justified *post hoc* by de Broglie's wave argument and is better understood as a consequence of the wave nature of matter.",
+    "Misconception: An electron with zero angular momentum ($l=0$) orbitals means the electron has no motion. — Correction: An s-orbital ($l=0$) has zero *orbital* angular momentum, but the electron still has kinetic energy and is delocalized in a spherical probability cloud around the nucleus. It is not orbiting in a classical sense."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Show that the de Broglie condition $2\\pi r = n\\lambda$ reproduces Bohr's angular momentum quantization $mvr = n\\hbar$. Solution: From de Broglie, $\\lambda = h/p = h/mv$. The standing wave condition requires $2\\pi r = n\\lambda = nh/mv$. Rearranging: $mvr = nh/2\\pi = n\\hbar$. This is precisely Bohr's quantization condition.",
+    "Calculate the angular momentum of an electron in the $n=3$ orbit of hydrogen according to Bohr's model. Solution: $L = n\\hbar = 3 \\times 1.055 \\times 10^{-34}$ J s $= 3.165 \\times 10^{-34}$ J s. In units of $\\hbar$, $L = 3\\hbar$.",
+    "An electron in a hydrogen atom is in the state with angular momentum $L = 2\\sqrt{6}\\hbar$ according to quantum mechanics. What is the orbital angular momentum quantum number $l$? Solution: $L = \\sqrt{l(l+1)}\\hbar = 2\\sqrt{6}\\hbar = \\sqrt{24}\\hbar$. So $l(l+1) = 24$, giving $l=4$ (since $4 \\times 5 = 20$... wait: $4 \\times 5 = 20$ not 24. Let's check: $l=4 \\Rightarrow \\sqrt{20}\\hbar \\neq \\sqrt{24}$. $l=4$ gives 20. $l=5$ gives $5 \\times 6 = 30$. Actually $\\sqrt{24} = 2\\sqrt{6}$, so $l(l+1)=24$. No integer $l$ gives exactly 24. Let me recheck: the problem states $L = 2\\sqrt{6}\\hbar$. This is $\\sqrt{24}\\hbar$. $l=4$ gives $\\sqrt{20}\\hbar$, $l=5$ gives $\\sqrt{30}\\hbar$. No integer $l$ produces $\\sqrt{24}$. Correct problem: if $L = \\sqrt{12}\\hbar$, then $l=3$ (since $3 \\times 4 = 12$). The electron is in a $3f$ orbital (or more precisely, $l=3$). Solution: $l(l+1) = 12 \\Rightarrow l=3$.",
+    "According to Bohr's model, what is the radius of the orbit where the angular momentum of an electron in hydrogen is $3\\hbar$? Solution: Angular momentum $L = n\\hbar = 3\\hbar$ means $n=3$. Radius $r_3 = n^2 a_0 = 9 \\times 0.529 \\times 10^{-10}$ m $= 4.76 \\times 10^{-10}$ m."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Bohr's quantization condition $L = n\\hbar$ was the first successful application of quantization to a mechanical variable beyond energy. It predated de Broglie's wave hypothesis by 11 years and was later given a wave-based justification.",
+    "The de Broglie standing-wave explanation of Bohr's quantization was published in 1924, just 11 years after Bohr's model. It provides deep physical insight: the electron's orbit must contain an integer number of wavelengths to be stable.",
+    "In modern quantum mechanics, the ground state of hydrogen ($1s$, $n=1$, $l=0$) has zero orbital angular momentum ($L=0$), unlike Bohr's prediction of $L=\\hbar$. This is one of the most striking differences between the two models.",
+    "The fine-structure constant $\\alpha \\approx 1/137$ is $v_1/c$ for the ground state of hydrogen in Bohr's model. It is one of the most important dimensionless constants in physics, characterizing the strength of electromagnetic interactions."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

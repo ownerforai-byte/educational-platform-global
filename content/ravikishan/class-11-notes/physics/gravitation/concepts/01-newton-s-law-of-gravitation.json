@@ -6,25 +6,33 @@
   "relevance": 100,
   "notes": [
     "**Law statement:** every particle in the universe attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
-    "**Formula:** $F = G\\frac{m_1 m_2}{r^2}$, where $G = 6.674 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2$.",
-    "**Vector form:** $\\vec{F}_{12} = -G\\frac{m_1 m_2}{r^2}\\hat{r}_{12}$. The negative sign indicates attraction; the force on 1 due to 2 points toward 2.",
+    "**Formula:** $F = G\\frac{m_1 m_2}{r^2}$, where $G = 6.674 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2$ is the universal gravitational constant.",
+    "**Vector form:** $\\vec{F}_{12} = -G\\frac{m_1 m_2}{r^2}\\hat{r}_{12}$. The negative sign indicates attraction; the force on mass 1 due to mass 2 points toward mass 2.",
     "**Shell theorem:** a uniform spherical shell attracts an external particle as if all its mass were concentrated at its centre. Inside a uniform shell, the net gravitational force is zero.",
-    "**Why $G$ is so small:** gravitational force is much weaker than electromagnetic force. Between two protons, gravity is about $10^{-36}$ times weaker than the electric force."
+    "**Why $G$ is so small:** gravitational force is much weaker than electromagnetic force. Between two protons, gravity is about $10^{-36}$ times weaker than the electric force.",
+    "**Dimensional formula of $G$:** $[G] = [M^{-1}L^3T^{-2}]$. Check: $[F] = [G][m^2]/[r^2] = M^{-1}L^3T^{-2} \\times M^2 / L^2 = MLT^{-2}$, correct.",
+    "**Cavendish experiment (1798):** first measurement of $G$ using a torsion balance. This also gave the first accurate value for Earth's mass ($M = gR^2/G$).",
+    "**Newton's third law applies:** $\\vec{F}_{12} = -\\vec{F}_{21}$. The force masses exert on each other is equal and opposite.",
+    "**Gravitation is a central force:** it acts along the line joining the centres of the two masses. This conservation of angular momentum is why planetary orbits are planar.",
+    "**Kepler's laws as consequence:** Newton derived Kepler's three laws of planetary motion from his law of gravitation, unifying terrestrial and celestial mechanics."
   ],
   "confusion": [
-    "Gravity is always attractive â€” there are no negative masses to repel. Unlike electric charge, which can be positive or negative.",
-    "The inverse-square law applies at all distances, but at very small distances other forces dominate.",
-    "Shell theorem only applies to uniform spherical shells or solid spheres."
+    "Gravity is always attractive — there are no negative masses to repel. Unlike electric charge, which can be positive or negative.",
+    "The inverse-square law applies at all distances, but at very small distances (sub-atomic) other forces dominate and gravity becomes negligible.",
+    "Shell theorem only applies to uniform spherical shells or solid spheres of uniform density — it does NOT apply to irregular shapes.",
+    "The universal constant $G$ is the same everywhere in the universe — it does not depend on the medium, temperature, or composition of the masses."
   ],
   "practice": [
-    "Calculate the gravitational force between two 1 kg masses separated by 1 m. Compare this with the weight of a 1 g mass on Earth.",
-    "A satellite orbits at height $h = 300\\,\\text{km}$ above Earth ($R = 6400\\,\\text{km}$). Find the orbital speed.",
-    "At what height above Earth's surface does gravity reduce to 25% of its surface value?"
+    "Calculate the gravitational force between two 1 kg masses separated by 1 m. Compare this with the weight of a 1 g mass on Earth. Solution: $F = G(1)(1)/1^2 = 6.674 \\times 10^{-11}\\,\\text{N}$. Weight of 1 g = $mg = 0.001 \\times 9.8 = 0.0098\\,\\text{N}$. Gravitational force is about $6.8 \\times 10^{-9}$ times smaller.",
+    "A satellite orbits at height $h = 300\\,\\text{km}$ above Earth ($R = 6400\\,\\text{km}$). Find the orbital speed. Solution: $v = \\sqrt{GM/r} = \\sqrt{gR^2/(R+h)} = \\sqrt{9.8 \\times (6.4 \\times 10^6)^2 / (6.7 \\times 10^6)} = 7.73 \\times 10^3\\,\\text{m/s} = 7.73\\,\\text{km/s}$.",
+    "At what height above Earth's surface does gravity reduce to 25% of its surface value? Solution: $g' = g(R/(R+h))^2 = 0.25g \\Rightarrow (R/(R+h))^2 = 0.25 \\Rightarrow R/(R+h) = 0.5 \\Rightarrow R+h = 2R \\Rightarrow h = R = 6400\\,\\text{km}$.",
+    "Two spheres of masses $5\\,\\text{kg}$ and $10\\,\\text{kg}$ are placed $0.5\\,\text{m}$ apart. Find the gravitational force between them. Solution: $F = G(5)(10)/(0.5)^2 = (6.674 \\times 10^{-11})(50)/0.25 = 1.335 \\times 10^{-8}\\,\\text{N}$."
   ],
   "universalFacts": [
-    "Gravity is universal â€” it acts between any two masses anywhere in the universe.",
-    "The gravitational constant $G$ is the same everywhere in the universe.",
-    "Inside a uniform spherical shell, gravitational force is exactly zero at every point."
+    "Gravity is universal — it acts between any two masses anywhere in the universe, from apples falling to galaxies orbiting each other.",
+    "The gravitational constant $G$ is the same everywhere in the universe and at all times — it is a fundamental constant of nature.",
+    "Inside a uniform spherical shell, gravitational force is exactly zero at every point, not just at the centre — this is a consequence of the inverse-square law.",
+    "Newton's law of gravitation and Coulomb's law are both inverse-square laws, but gravity is always attractive while electric forces can be attractive or repulsive."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

@@ -1,27 +1,47 @@
 {
-  "title": "The Hydrogen Spectrum â€” Rydberg Equation",
+  "title": "The Hydrogen Spectrum — Rydberg Equation",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "1/Î» = R_HÂ·(1/nâ‚Â² âˆ’ 1/nâ‚‚Â²), where Î» = wavelength of emitted light, R_H = Rydberg constant, nâ‚ = lower (final) orbit, nâ‚‚ = higher (initial) orbit",
-    "The **series limit** (shortest wavelength, highest-energy line in a series) occurs as nâ‚‚ â†’ âˆž, giving the simplified form 1/Î» = R_H/nâ‚Â²"
+    "1/λ = R_H·(1/n₁² − 1/n₂²), where λ = wavelength of emitted light, R_H = Rydberg constant (109,677 cm⁻¹), n₁ = lower (final) orbit, n₂ = higher (initial) orbit.",
+    "The **Rydberg constant** R_H = 1.097 × 10⁷ m⁻¹ is determined experimentally from the hydrogen spectrum and represents the convergence limit of all spectral line series.",
+    "The **series limit** (shortest wavelength, highest-energy line in a series) occurs as n₂ → ∞, giving the simplified form 1/λ = R_H/n₁². For the Lyman series (n₁ = 1), the series limit is at 91.2 nm (ultraviolet).",
+    "The **Lyman series** (n₁ = 1, n₂ = 2, 3, 4, ...) lies in the ultraviolet region. Example: H-α line (n₂ = 2 → n₁ = 1): 1/λ = R_H(1/1 − 1/4) = 3R_H/4, giving λ = 121.6 nm.",
+    "The **Balmer series** (n₁ = 2, n₂ = 3, 4, 5, ...) lies in the visible region. H-α (656.3 nm, red), H-β (486.1 nm, blue-green), H-γ (434.0 nm, violet), H-δ (410.2 nm, violet).",
+    "The **Paschen series** (n₁ = 3, n₂ = 4, 5, 6, ...) lies in the infrared region. The first line (n₂ = 4 → n₁ = 3) has λ = 1875 nm.",
+    "The **Brackett series** (n₁ = 4), **Pfund series** (n₁ = 5), and **Humphreys series** (n₁ = 6) lie in the far-infrared region with increasingly closely spaced lines.",
+    "**Wave number relation:** ν̃ = 1/λ = R_H(1/n₁² − 1/n₂²) gives the number of waves per unit length. Higher wave number means higher frequency and higher energy.",
+    "**Energy relation:** E = hν = hc/λ = hcR_H(1/n₁² − 1/n₂²). The energy of emitted photon equals the difference between two Bohr orbit energy levels.",
+    "**Ionisation from level n:** If an electron in orbit n escapes (n₂ → ∞), the ionisation energy from that level is E = 13.6/n² eV. For n = 1, E = 13.6 eV; for n = 2, E = 3.4 eV.",
+    "**Rydberg equation for hydrogen-like species:** For He⁺, Li²⁺ etc., replace R_H with R = Z² × R_H, where Z is the atomic number. This explains why He⁺ lines are at shorter wavelengths (higher energies).",
+    "**Limitation of Bohr model:** Bohr's theory correctly predicts the hydrogen spectrum but fails for multi-electron atoms. The Schrödinger equation provides a more complete description that also explains fine structure splitting.",
+    "**Continuous vs line spectrum:** The hydrogen emission spectrum shows discrete lines because electrons can only occupy certain allowed energy levels. The transitions between these quantised levels produce photons of specific frequencies.",
+    "**Spectral series naming:** Lyman (UV), Balmer (visible), Paschen (IR), Brackett (far-IR), Pfund (far-IR), Humphreys (far-IR). Each series is named after its discoverer.",
+    "**Convergence of lines:** Within each series, lines get closer together as n₂ increases, converging to the series limit. This reflects the decreasing energy gap between higher orbits.",
+    "**Stellar spectra application:** Hydrogen spectral lines are the primary diagnostic tool in astronomy. The redshift of these lines reveals the recession velocity of galaxies (Hubble's law).",
+    "**Fine structure:** The hydrogen spectrum actually consists of closely spaced doublets (e.g., the Balmer H-α line has two components separated by ~0.1 nm) due to electron spin–orbit coupling, not predicted by the simple Rydberg equation."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "n₁ and n₂ are not interchangeable — n₁ is always the LOWER (final) orbit and n₂ is the HIGHER (initial) orbit. Swapping them gives a negative wave number, which is physically meaningless for emission.",
+    "The Rydberg equation gives wavelengths of EMISSION lines. For ABSORPTION, the electron starts in a lower level and absorbs a photon to reach a higher level — the equation is the same, but the physical process is reversed.",
+    "The Balmer series is the only series with lines in the visible region. Students often mistakenly think the Lyman series is visible because it is the most studied — it is actually in the UV.",
+    "The Rydberg constant R_H is NOT a fundamental constant — it depends on the reduced mass of the electron-nucleus system. For heavy nuclei, R_H ≈ R_∞; for positronium, it differs significantly."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the wavelength of the first line of the Balmer series of hydrogen. Solution: 1/λ = R_H(1/4 − 1/9) = R_H × 5/36. λ = 36/(5 × 109,677) = 6.563 × 10⁻⁵ cm = 656.3 nm (red light).",
+    "Find the wave number of the limit of the Lyman series. Solution: Series limit means n₂ = ∞, so 1/λ = R_H/1² = 109,677 cm⁻¹. λ = 91.2 nm (ultraviolet).",
+    "Determine the ionisation energy of hydrogen in the n = 3 state. Solution: E = 13.6/n² = 13.6/9 = 1.51 eV. This is the energy needed to remove the electron from n = 3 to infinity.",
+    "Calculate the wavelength of the transition from n = 5 to n = 2 in hydrogen. Solution: 1/λ = R_H(1/4 − 1/25) = R_H × 21/100. λ = 100/(21 × 109,677) = 434.0 nm (violet, H-γ line of Balmer series).",
+    "What is the shortest wavelength in the Paschen series? Solution: n₁ = 3, n₂ = ∞. 1/λ = R_H/9 = 12,186 cm⁻¹. λ = 820 nm (infrared). This is the series limit."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The Rydberg equation was an empirical formula before Bohr derived it theoretically. Bohr's model showed that R_H = 2π²me⁴/(ch³), connecting it to fundamental constants.",
+    "The Balmer series was discovered first (1885) because its lines fall in the visible region. Johann Balmer, a mathematics teacher, found the empirical formula decades before Bohr's model.",
+    "Every spectral line in hydrogen can be precisely predicted by the Rydberg equation to within 0.01% accuracy, making it one of the most successful empirical formulas in physics.",
+    "The hydrogen spectrum provided the critical experimental evidence that led to quantum mechanics. Without these precise measurements, the development of atomic theory would have been significantly delayed.",
+    "Spectral line analysis (spectroscopy) is used in chemistry to identify elements in unknown samples. Each element has a unique 'fingerprint' of spectral lines."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

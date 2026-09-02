@@ -5,25 +5,36 @@
   "topicTitle": "Elastic potential energy",
   "relevance": 100,
   "notes": [
-    "**Definition:** the energy stored in an elastic body when it is deformed. For a spring, $U = \\frac{1}{2}kx^2$.",
-    "**Derivation:** work done in stretching a spring from $x=0$ to $x=x$ against the restoring force $F=kx$ is $W = \\int_0^x kx \\, dx = \\frac{1}{2}kx^2$. This work is stored as elastic potential energy.",
-    "**Graphical interpretation:** on a force-extension graph, the area under the line $F=kx$ from 0 to $x$ is the triangle area $\\frac{1}{2}kx^2$.",
-    "**Energy density:** energy stored per unit volume: $U/V = \\frac{1}{2}Y\\epsilon^2$, where $\\epsilon$ is strain. This shows that strain energy depends on the material stiffness $Y$."
+    "**Definition:** the energy stored in an elastic body when it is deformed. For a spring, $U = \\frac{1}{2}kx^2$, where $x$ is the extension or compression from the natural length.",
+    "**Derivation:** work done in stretching a spring from $x=0$ to $x=x$ against the restoring force $F = kx$ is $W = \\int_0^x kx\\,dx = \\frac{1}{2}kx^2$. This work is stored as elastic potential energy.",
+    "**Graphical interpretation:** on a force-extension graph, the area under the line $F = kx$ from 0 to $x$ is the area of a triangle: $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times x \\times kx = \\frac{1}{2}kx^2$.",
+    "**Energy density:** energy stored per unit volume: $u = \\frac{U}{V} = \\frac{\\frac{1}{2}kx^2}{AL} = \\frac{\\frac{1}{2}(YA/L)x^2}{AL} = \\frac{1}{2}Y\\left(\\frac{x}{L}\\right)^2 = \\frac{1}{2}Y\\epsilon^2$, where $\\epsilon$ is the strain.",
+    "**For a wire:** substituting $k = \\frac{YA}{L}$: $U = \\frac{1}{2} \\cdot \\frac{YA}{L} \\cdot (\\Delta L)^2 = \\frac{1}{2} \\cdot \\frac{F^2 L}{YA}$ (since $F = kx$). This form is useful when force is known rather than extension.",
+    "**Restoring force and energy:** the restoring force is $F = -kx = -\\frac{dU}{dx}$, confirming that the force is the negative gradient of the potential energy. The system seeks to minimize $U$ by returning to $x = 0$.",
+    "**Energy conservation in oscillation:** in a mass-spring system, energy continuously converts between kinetic energy ($\\frac{1}{2}mv^2$) and elastic potential energy ($\\frac{1}{2}kx^2$). The total energy $E = \\frac{1}{2}kA^2$ is constant (where $A$ is the amplitude).",
+    "**Unit analysis:** $U = \\frac{1}{2}kx^2$ has units of N/m $\\times$ m$^2$ = N·m = J (joules). Energy density $u = \\frac{1}{2}Y\\epsilon^2$ has units of Pa $\\times$ (dimensionless)$^2$ = Pa = J/m$^3$.",
+    "**Hysteresis:** in real materials, the loading and unloading curves do not coincide. The area between the curves represents energy dissipated as heat. Rubber bands warm up when stretched and released repeatedly due to this effect."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The formula $U = \\frac{1}{2}kx^2$ gives the energy stored, NOT the work done by the spring. The work done BY the spring during extension is $-\\frac{1}{2}kx^2$ (negative because the spring force opposes the extension). The work done AGAINST the spring is $+\\frac{1}{2}kx^2$.",
+    "Elastic potential energy is NOT the same as gravitational potential energy ($mgh$). Elastic PE depends on the deformation of the material ($x^2$), while gravitational PE depends on height ($h$). They can be converted into each other (e.g., a bouncing ball).",
+    "The energy stored in a stretched wire is $U = \\frac{1}{2} \\cdot \\frac{YA}{L} \\cdot (\\Delta L)^2$, not $U = F \\cdot \\Delta L$. The factor of $\\frac{1}{2}$ arises because the force increases linearly from 0 to $F$ as the wire is stretched — you cannot use $W = Fd$ with the final force.",
+    "Energy density depends on the SQUARE of the strain ($u = \\frac{1}{2}Y\\epsilon^2$), not linearly on strain. Doubling the strain quadruples the energy density. This is why large deformations store dramatically more energy.",
+    "In a spring-mass oscillator, the total energy is $\\frac{1}{2}kA^2$ where $A$ is the amplitude (maximum extension). At the equilibrium position, all energy is kinetic; at maximum extension, all energy is potential."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A spring of constant 200 N/m is stretched by 0.1 m. Find the elastic potential energy stored. Solution: $U = \\frac{1}{2}kx^2 = \\frac{1}{2} \\times 200 \\times (0.1)^2 = 1$ J.",
+    "A wire of length 2 m and cross-sectional area $10^{-6}$ m$^2$ is stretched by 1 mm. If $Y = 2 \\times 10^{11}$ Pa, find the energy stored and the energy density. Solution: $k = \\frac{YA}{L} = \\frac{2 \\times 10^{11} \\times 10^{-6}}{2} = 10^5$ N/m. $U = \\frac{1}{2}kx^2 = \\frac{1}{2} \\times 10^5 \\times (10^{-3})^2 = 0.05$ J. Volume $= AL = 10^{-6} \\times 2 = 2 \\times 10^{-6}$ m$^3$. Energy density $= \\frac{0.05}{2 \\times 10^{-6}} = 2.5 \\times 10^4$ J/m$^3$. Check: $u = \\frac{1}{2}Y\\epsilon^2 = \\frac{1}{2} \\times 2 \\times 10^{11} \\times (5 \\times 10^{-4})^2 = 10^{11} \\times 25 \\times 10^{-8} = 2.5 \\times 10^4$ J/m$^3$. Matches.",
+    "A spring stores 10 J of energy when stretched by 5 cm. Find the spring constant. Solution: $U = \\frac{1}{2}kx^2$, so $k = \\frac{2U}{x^2} = \\frac{2 \\times 10}{(0.05)^2} = \\frac{20}{0.0025} = 8000$ N/m.",
+    "Two wires of the same material and length but different radii $r$ and $2r$ are stretched by the same force. Find the ratio of energies stored. Solution: $U = \\frac{F^2 L}{2YA}$. Since $F$, $L$, and $Y$ are the same: $U \\propto \\frac{1}{A} \\propto \\frac{1}{r^2}$. So $\\frac{U_1}{U_2} = \\frac{r_2^2}{r_1^2} = \\frac{(2r)^2}{r^2} = 4$. The thinner wire stores 4 times more energy.",
+    "A hydraulic press piston compresses a spring of constant 5000 N/m by 10 cm. If the energy stored is converted back to lift a 50 kg mass, how high will it rise? (Neglect losses.) Solution: $U = \\frac{1}{2}kx^2 = \\frac{1}{2} \\times 5000 \\times (0.1)^2 = 25$ J. Setting $U = mgh$: $25 = 50 \\times 9.8 \\times h$, so $h = \\frac{25}{490} \\approx 0.051$ m $= 5.1$ cm."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The energy stored in a stretched bow is $\\frac{1}{2}kx^2$, which is then transferred to the arrow as kinetic energy. A typical archery bow stores about 40–60 J of energy.",
+    "Shock absorbers in vehicles convert elastic potential energy into heat through hydraulic damping. The energy stored in the suspension springs is gradually dissipated, preventing the vehicle from bouncing indefinitely.",
+    "The elastic energy stored in a compressed spring can be enormous: a car suspension spring with $k = 30{,}000$ N/m compressed by 0.1 m stores $\\frac{1}{2} \\times 30{,}000 \\times 0.01 = 150$ J — enough to lift a 15 kg mass 1 metre.",
+    "In biology, tendons store elastic potential energy during stretching and release it during contraction, making movement more efficient. Kangaroos use this principle to hop with remarkable energy efficiency.",
+    "The energy density of a steel spring ($U/V = \\frac{1}{2}Y\\epsilon^2$) is limited by the breaking strain. For steel with $Y = 2 \\times 10^{11}$ Pa and breaking strain $\\approx 0.01$, the maximum energy density is about $10^7$ J/m$^3$ — far less than chemical energy in gasoline ($\\sim 3 \\times 10^{10}$ J/m$^3$)."
   ],
   "animation3D": "elasticity",
   "motionGraphics": "elasticity"

@@ -1,26 +1,35 @@
 {
-  "title": "Rutherford's Atomic Model â€” The Alpha-Particle Scattering Experiment",
+  "title": "Rutherford's Atomic Model — The Alpha-Particle Scattering Experiment",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
   "relevance": 87,
   "notes": [
-    "**Experiment:** positively charged helium ions (Î±-particles) were fired at an ultra-thin gold foil",
-    "**Observation:** most Î±-particles passed straight through, undeflected",
-    "**Conclusion:** atoms are mostly empty space, with a tiny, dense, positively charged core called the **nucleus**"
+    "**Experiment (1911):** Rutherford, with Geiger and Marsden, fired positively charged helium ions ($\\alpha$-particles, $^{4}_{2}\\text{He}^{2+}$) at an ultra-thin gold foil (~0.0004 mm thick) surrounded by a zinc sulfide (ZnS) fluorescent screen.",
+    "**Observation 1 — Most particles pass through:** About 99% of the $\\alpha$-particles passed straight through the gold foil with no deflection, proving atoms are mostly empty space.",
+    "**Observation 2 — Small-angle deflections:** A small fraction of $\\alpha$-particles were deflected at small angles, indicating the presence of a concentrated positive charge.",
+    "**Observation 3 — Large-angle scattering:** About 1 in every 20,000 $\\alpha$-particles was deflected back through an angle greater than 90$^{\\circ}$, which Rutherford famously said was as incredible as firing a 15-inch shell at a piece of tissue paper and having it come back and hit you.",
+    "**Conclusion — Nuclear model:** All the positive charge and nearly all the mass of the atom is concentrated in a tiny central core called the **nucleus**. Electrons orbit the nucleus at relatively large distances.",
+    "**Distance of closest approach ($d$):** When an $\\alpha$-particle ($+2e$) approaches the nucleus ($+Ze$) head-on, at the distance of closest approach all kinetic energy converts to electrostatic potential energy: $\\frac{1}{4\\pi\\varepsilon_0}\\cdot\\frac{2Ze^2}{d} = K_{\\alpha}$, giving $d = \\frac{1}{4\\pi\\varepsilon_0}\\cdot\\frac{2Ze^2}{K_{\\alpha}}$.",
+    "**Rutherford scattering formula:** The number of $\\alpha$-particles scattered at an angle $\\theta$ per unit area of the detector is $n(\\theta) \\propto \\frac{1}{\\sin^4(\\theta/2)}$, explaining why most particles go through undeflected but a few scatter at large angles.",
+    "**Gold foil was chosen** because gold is extremely malleable — it can be hammered into sheets as thin as a few hundred atoms thick, ensuring most $\\alpha$-particles interact with only a single layer of atoms."
   ],
   "confusion": [
-    "Rutherford's model placed electrons in orbits like planets, which would cause them to radiate energy and spiral into the nucleus â€” this is why the model was unstable.",
-    "The experiment used gold foil because gold is malleable and can be made extremely thin, increasing the chance of Î±-particle penetration."
+    "Misconception: Rutherford discovered the electron in this experiment. — Correction: The electron was discovered earlier by J.J. Thomson (1897) using cathode ray tubes. Rutherford's experiment revealed the existence of the nucleus.",
+    "Misconception: Most $\\alpha$-particles were deflected because the gold atoms were densely packed. — Correction: Nearly all $\\alpha$-particles passed straight through undeflected, proving the atom is mostly empty space. Only a tiny fraction interacted with the nucleus.",
+    "Misconception: The nucleus was hit directly by every $\\alpha$-particle. — Correction: Only about 1 in 20,000 particles came close enough to the nucleus to be deflected at large angles. The nucleus occupies an incredibly small fraction of the atom's volume.",
+    "Misconception: Rutherford used gold just because it is a good conductor. — Correction: Gold was chosen for its extreme malleability, allowing very thin foils, and its high atomic number ($Z=79$) gives a strong nuclear charge for maximum scattering effect."
   ],
   "practice": [
-    "If an Î±-particle of charge $+2e$ approaches a gold nucleus ($Z = 79$) head-on, find the distance of closest approach for kinetic energy $5\\,\\text{MeV}$.",
-    "Why was a thin foil used in Rutherford's experiment? What would happen with a thick foil?"
+    "An $\\alpha$-particle with kinetic energy 5 MeV approaches a gold nucleus ($Z = 79$) head-on. Calculate the distance of closest approach. (Given: $e = 1.6 \\times 10^{-19}$ C, $\\frac{1}{4\\pi\\varepsilon_0} = 9 \\times 10^{9}$ N m$^2$/C$^2$). Solution: $d = \\frac{2 \\times 79 \\times (1.6 \\times 10^{-19})^2 \\times 9 \\times 10^9}{5 \\times 1.6 \\times 10^{-13}} = 4.55 \\times 10^{-14}$ m.",
+    "In Rutherford's experiment, if a 5 MeV $\\alpha$-particle is directed at a silver nucleus ($Z = 47$), would it penetrate the nucleus or be repelled back? Given that the nuclear radius of silver is approximately $5.5 \\times 10^{-15}$ m. Solution: Distance of closest approach $d = 4.03 \\times 10^{-14}$ m, which is much larger than the nuclear radius, so the $\\alpha$-particle is repelled back without entering the nucleus.",
+    "Explain why Rutherford used a thin gold foil instead of a thick one. What would happen if a thick aluminium foil were used? Solution: A thick foil would cause multiple scattering events, making it impossible to distinguish single deflections. Aluminium ($Z = 13$) would give weaker scattering than gold ($Z = 79$) because scattering intensity $\\propto Z^2$."
   ],
   "universalFacts": [
-    "Rutherford's experiment proved that the atom has a dense, positively charged nucleus.",
-    "The size of the nucleus is about $10^{-15}\\,\\text{m}$ while the atom is about $10^{-10}\\,\\text{m}$ â€” the atom is 100,000 times larger than its nucleus.",
-    "Most of the atom is empty space."
+    "Rutherford's experiment proved that the atom has a dense, positively charged nucleus with a radius of about $10^{-15}$ m, while the atom itself is about $10^{-10}$ m — making the atom roughly 100,000 times larger than its nucleus.",
+    "The nucleus contains virtually all the mass of the atom. If the atom were scaled up to the size of a football stadium, the nucleus would be the size of a marble at the centre, and the electrons would be like grains of sand in the stands.",
+    "The Rutherford scattering formula $n(\\theta) \\propto \\csc^4(\\theta/2)$ was later confirmed experimentally and validated the existence of the nuclear model of the atom.",
+    "Gold is one of the heaviest naturally occurring elements ($Z = 79$, $A = 197$), making it ideal for scattering experiments. Its high nuclear charge produces large, easily measurable deflections."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

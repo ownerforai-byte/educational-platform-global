@@ -5,26 +5,43 @@
   "topicTitle": "Ionic bond and its properties",
   "relevance": 100,
   "notes": [
-    "**Ionic bond:** electrostatic attraction between oppositely charged ions formed by complete transfer of electrons from a metal to a non-metal.",
-    "**Formation example:** Na loses one electron to become Na$^+$, Cl gains one to become Cl$^-$. The oppositely charged ions attract to form NaCl.",
-    "**Lattice energy:** the energy released when gaseous ions combine to form one mole of solid ionic crystal. Higher lattice energy means a more stable ionic compound.",
-    "**Properties:** high melting and boiling points (strong electrostatic forces), brittle (like-charged ions repel when layers shift), conduct electricity when molten or dissolved (ions are free to move).",
-    "**Solubility:** most ionic compounds dissolve in polar solvents like water because water molecules stabilize the separated ions."
+    "**Ionic bond:** electrostatic attraction between oppositely charged ions formed by complete transfer of electrons from a metal (low ionization energy) to a non-metal (high electron affinity). Example: Na (2,8,1) loses 1 e⁻ → Na⁺ (2,8); Cl (2,8,7) gains 1 e⁻ → Cl⁻ (2,8,8).",
+    "**Born–Haber cycle:** a Hess's law cycle to calculate lattice energy from measurable thermodynamic quantities. Steps: sublimation of metal (Na(s) → Na(g)), ionization of metal (Na(g) → Na⁺(g) + e⁻), dissociation of non-metal (Cl₂(g) → 2Cl(g)), electron affinity (Cl(g) + e⁻ → Cl⁻(g)), lattice formation (Na⁺(g) + Cl⁻(g) → NaCl(s)).",
+    "**Lattice energy (U):** energy released when gaseous ions combine to form one mole of solid ionic crystal: Na⁺(g) + Cl⁻(g) → NaCl(s), U ≈ −787 kJ/mol. It is always exothermic. By convention, lattice enthalpy is often reported as positive (energy required to separate ions).",
+    "**Factors affecting lattice energy:** (1) Ionic charge — U ∝ |Z⁺Z⁻|/r₀. MgO (2+/2−) has U ≈ 3795 kJ/mol vs. NaCl (1+/1−) at 787 kJ/mol. (2) Ionic radius — smaller ions give higher lattice energy. LiF (U = 1030 kJ/mol) > KI (U = 649 kJ/mol).",
+    "**Properties — Melting and boiling points:** ionic compounds have high melting points because strong electrostatic forces require large energy to overcome. NaCl: mp 801°C; MgO: mp 2852°C. The high mp of MgO reflects its larger lattice energy.",
+    "**Properties — Hardness and brittleness:** ionic crystals are hard but brittle. When a force displaces layers, like-charged ions come adjacent and repel, causing cleavage. This is why NaCl fractures along smooth planes.",
+    "**Properties — Electrical conductivity:** ionic compounds conduct electricity only when molten or dissolved in water (ions are mobile). Solid NaCl is an insulator — ions are fixed in the lattice. Electrolysis of molten NaCl produces Na at the cathode and Cl₂ at the anode.",
+    "**Properties — Solubility:** most ionic compounds dissolve in polar solvents (water) because hydration energy compensates for lattice energy. NaCl: lattice energy = 787 kJ/mol, hydration energy = −784 kJ/mol. The small net enthalpy makes it soluble. PbSO₄ is insoluble because its lattice energy is much larger than hydration energy.",
+    "**Fajans' rules — covalent character in ionic bonds:** small, highly charged cations polarize large anions, introducing covalent character. (1) Smaller cation → more polarization → more covalent character: LiCl > NaCl > KCl. (2) Higher charge → more polarization: AlCl₃ has significant covalent character (exists as dimer Al₂Cl₆). (3) Larger anion → more polarizable: AgI is less soluble and more covalent than AgF.",
+    "**Crystal structures:** NaCl forms a face-centered cubic (FCC) lattice (6:6 coordination). CsCl forms a simple cubic lattice (8:8 coordination). ZnS (zinc blende) has 4:4 coordination. The structure depends on the radius ratio r₊/r₋.",
+    "**Radius ratio rule:** the coordination number is determined by the ratio of cation to anion radii. 0.225–0.414 → tetrahedral (ZnS); 0.414–0.732 → octahedral (NaCl); 0.732–1.0 → cubic (CsCl).",
+    "**Real-world relevance — table salt (NaCl):** the simplest ionic compound, essential for life (nerve impulse transmission, fluid balance). NaCl's 3D crystal structure is the prototype for understanding all ionic lattices.",
+    "**Real-world relevance — ionic liquids:** salts that are liquid below 100°C (e.g., [EMIM][BF₄]). They have negligible vapor pressure, making them \"green solvents\" for electrochemical applications and organic synthesis.",
+    "**Real-world relevance — ionic compounds in biology:** K⁺ and Na⁺ channels in cell membranes maintain resting potential (~−70 mV) via selective ion transport. Ca²⁺ acts as a signaling ion in muscle contraction and neurotransmitter release.",
+    "**Defects in ionic crystals — Schottky and Frenkel defects:** Schottky defects (missing ion pairs) occur in NaCl and KCl, reducing density. Frenkel defects (ion displaced to interstitial site) occur in AgBr and ZnS, no density change. These defects affect ionic conductivity.",
+    "**Thermodynamic stability criterion:** an ionic compound is stable when ΔG_f < 0. This depends on the balance: lattice energy (favors compound) vs. ionization energy (opposes it). For NaCl, the large lattice energy compensates for the endothermic ionization step."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Ionic compounds always contain metals — False. NH₄Cl is ionic (NH₄⁺ and Cl⁻) but contains no metal. Similarly, (NH₄)₂SO₄, K₂Cr₂O₇ are ionic salts without a metallic cation.",
+    "All ionic compounds are highly soluble in water — False. Solubility depends on the balance of lattice energy and hydration energy. CaCO₃, BaSO₄, AgCl are ionic but insoluble in water because their lattice energies greatly exceed their hydration energies.",
+    "Ionic compounds conduct electricity in all states — False. Solid ionic compounds are electrical insulators because ions are locked in the crystal lattice. Only molten or aqueous ionic compounds conduct (ions are mobile). Exception: some solid electrolytes (e.g., AgI above 147°C) have sufficient ionic mobility.",
+    "Lattice energy is always negative — Depends on convention. The Born–Haber convention defines lattice energy as the energy released when ions form a crystal (negative value). However, many textbooks define it as the energy required to separate ions into gaseous state (positive value). Always check the sign convention used.",
+    "The ionic bond is non-directional and the ionic compound is a discrete molecule — False. Ionic compounds form extended 3D crystal lattices, not discrete molecules. NaCl is a formula unit, not a molecular unit. Each Na⁺ is surrounded by 6 Cl⁻ ions in the crystal, not just one."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Calculate the lattice energy of NaCl using the Born–Haber cycle. Data: ΔH_sub(Na) = 108 kJ/mol, IE₁(Na) = 496 kJ/mol, D(Cl₂) = 242 kJ/mol, EA(Cl) = −349 kJ/mol, ΔH_f(NaCl) = −411 kJ/mol. Solution: ΔH_f = ΔH_sub + IE + ½D + EA + U. −411 = 108 + 496 + 121 − 349 + U. U = −411 − 376 = −787 kJ/mol.",
+    "Problem: Explain why MgO has a much higher melting point (2852°C) than NaCl (801°C) despite similar interatomic distances. Solution: MgO has 2+/2− charges while NaCl has 1+/1−. Lattice energy U ∝ Z⁺Z⁻/r. MgO's lattice energy (3795 kJ/mol) is roughly 4.8 times that of NaCl (787 kJ/mol), requiring far more thermal energy to melt.",
+    "Problem: Use Fajans' rules to explain the trend: LiI is less soluble than NaI in water. Solution: Li⁺ is smaller than Na⁺, so it polarizes I⁻ more strongly, introducing covalent character in LiI. This reduces the ionic interaction with water molecules, making LiI less soluble than NaI.",
+    "Problem: A compound MX has a radius ratio r₊/r₋ = 0.62. Predict its crystal structure and coordination number. Solution: 0.414 < 0.62 < 0.732, so the coordination number is 6 (octahedral geometry). MX will adopt the NaCl (rock salt) structure with each ion surrounded by 6 counter-ions.",
+    "Problem: Which has the greater lattice energy: KBr or RbBr? Explain using ionic radii. Solution: KBr has greater lattice energy. K⁺ (138 pm) is smaller than Rb⁺ (152 pm). Since U ∝ 1/r₀, the shorter K–Br distance gives stronger electrostatic attraction and higher lattice energy."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The lattice energy of an ionic compound is the dominant factor determining its melting point, hardness, and solubility — more than any other single property.",
+    "Fajans' rules show that the ionic–covalent boundary is a continuum, not a sharp division. Even NaCl has about 10% covalent character.",
+    "All ionic crystals are electrically neutral overall, but they can contain charged point defects (vacancies and interstitials) that enable solid-state ionic conduction.",
+    "The radius ratio rule is a geometric approximation. Actual structures also depend on temperature, pressure, and the electronic structure of the ions.",
+    "Ionic conductivity in solids is the basis for solid oxide fuel cells (SOFCs) using O²⁻ conducting electrolytes like Y₂O₃-stabilized ZrO₂."
   ],
   "animation3D": "chemical-bonding-and-shapes-of-molecules",
   "motionGraphics": "chemical-bonding-and-shapes-of-molecules"

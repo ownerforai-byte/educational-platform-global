@@ -1,26 +1,34 @@
 {
   "title": "Cracking, Reforming and Gasoline Quality",
   "notes": [
-    "**Cracking:** breaking large hydrocarbon molecules into smaller ones by heat or catalyst. Thermal cracking: high temperature, no catalyst. Catalytic cracking: lower temperature, silica-alumina catalyst gives branched alkanes.",
-    "**Reforming:** rearranging straight-chain alkanes into branched-chain and aromatic hydrocarbons using $Pt/Al_2O_3$ catalyst at high temperature. Increases octane number.",
-    "**Octane number:** measure of gasoline quality. Iso-octane (2,2,4-trimethylpentane) = 100; n-heptane = 0. Higher octane means resistance to knocking.",
-    "**Antiknocking:** knocking occurs when fuel auto-ignites before the spark. High compression engines need high-octane fuel.",
-    "**Cetane number:** measure of diesel quality. Cetane ($C_{16}H_{34}$) = 100. Higher cetane means shorter ignition delay and smoother combustion.",
-    "**Gasoline additives:** tetraethyl lead (PbEt$_4$) boosts octane but is phased out due to lead pollution. Replaced by MTBE, ethanol, and aromatics."
+    "**Cracking definition:** Breaking down long-chain hydrocarbons into smaller, more useful molecules. Crude oil contains many long-chain fractions that are less valuable than short-chain ones used as fuels.",
+    "**Thermal cracking:** High temperature (750-900°C) and high pressure (7-50 atm) breaks C-C bonds homolytically, producing a mixture of alkanes and alkenes via free radical mechanism. Example: $C_{10}H_{22} \\xrightarrow{750^\\circ C} C_5H_{12} + C_5H_{10}$.",
+    "**Catalytic cracking:** Lower temperature (450-500°C) using silica-alumina zeolite catalyst. Produces branched-chain alkanes and aromatic compounds, which have higher octane numbers. Favored for gasoline production.",
+    "**Steam cracking:** Hydrocarbons are mixed with steam and heated to 850°C. Used primarily to produce ethylene ($C_2H_4$) and propylene ($C_3H_6$), which are raw materials for plastics and polymers.",
+    "**Reforming definition:** Conversion of straight-chain alkanes into branched-chain alkanes and aromatic hydrocarbons using platinum on alumina ($Pt/Al_2O_3$) catalyst at 500°C and high pressure. Example: n-hexane → cyclohexane → benzene.",
+    "**Octane number:** A measure of the antiknock quality of gasoline. The reference fuels are iso-octane (2,2,4-trimethylpentane) = 100 and n-heptane = 0. A fuel with octane number 90 knocks like a mixture of 90% iso-octane and 10% n-heptane.",
+    "**Knocking:** Premature auto-ignition of fuel-air mixture before the spark fires, causing engine damage and reduced efficiency. High compression ratio engines require higher octane fuels.",
+    "**Cetane number:** Measure of the ignition quality of diesel fuel. n-cetane ($C_{16}H_{34}$) = 100 and 2,2,4,4,6,8,8-heptamethylnonane = 15. Higher cetane number means shorter ignition delay and smoother diesel combustion. Ideal: 40-55.",
+    "**Why octane and cetane are opposites:** Branched alkanes have high octane (resist auto-ignition) but low cetane (slow to ignite when needed). Linear alkanes have low octane but high cetane. This is why gasoline and diesel require different hydrocarbon profiles.",
+    "**Lead-free gasoline additives:** Methyl tert-butyl ether (MTBE, $C_5H_{12}O$) raises octane and adds oxygen. Ethanol ($C_2H_5OH$) is a renewable octane booster. Benzene and toluene are aromatic octane enhancers but are regulated due to toxicity.",
+    "**Tetraethyl lead (TEL):** $Pb(C_2H_5)_4$ was the most effective antiknock agent, boosting octane by 10-15 points. Banned in most countries due to lead poisoning — lead damages the catalytic converter and causes neurotoxicity.",
+    "**Industrial importance:** Catalytic cracking converts ~45% of crude oil into gasoline. Without cracking, only ~20% of crude oil would yield useful gasoline fractions."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Cracking and reforming are the same process** — Cracking breaks long-chain hydrocarbons into smaller ones (decreasing molecular weight), while reforming rearranges the molecular structure (isomerization, cyclization, aromatization) without significantly changing molecular weight.",
+    "**Higher octane number means more energy content** — Octane number measures resistance to knocking, not energy density. In fact, n-heptane (octane = 0) has slightly higher energy density than iso-octane (octane = 100). High octane allows higher compression ratios, which extract more energy.",
+    "**Cetane number and octane number work the same way** — They are essentially inversely related. Diesel engines need fuel that ignites easily (high cetane), while petrol engines need fuel that resists auto-ignition (high octane). A high-octane fuel would be terrible diesel fuel."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write the cracking reaction for decane ($C_{10}H_{22}$) to produce pentane and pentene. Balance the equation. What type of cracking is this if performed at 800°C with no catalyst?",
+    "A gasoline sample has an octane rating of 87. Explain what this means in terms of the reference fuel mixture. Why would this fuel be unsuitable for a high-compression sports car engine?",
+    "Compare catalytic cracking with thermal cracking in terms of (a) temperature, (b) catalyst used, (c) products formed, (d) mechanism (radical vs ionic), and (e) industrial importance."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Approximately 45% of every barrel of crude oil is processed through catalytic cracking to produce gasoline — it is the single most important process in petroleum refining.",
+    "Banned worldwide since the 2000s, tetraethyl lead once caused widespread lead contamination — blood lead levels in urban populations dropped dramatically after leaded gasoline was phased out.",
+    "Modern catalytic reforming uses bimetallic catalysts (Pt-Re or Pt-Sn on alumina) that are about 10 times more active than early platinum-only catalysts.",
+    "MTBE was once the primary octane booster but was banned in many US states after it was found to contaminate groundwater due to its high water solubility.",
+    "The octane rating printed at petrol pumps (e.g., 95 RON, 98 RON) represents the Research Octane Number, measured under controlled engine conditions at 600 rpm."
   ]
 }

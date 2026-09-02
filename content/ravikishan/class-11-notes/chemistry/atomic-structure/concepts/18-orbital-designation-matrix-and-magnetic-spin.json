@@ -1,32 +1,41 @@
 {
-  "title": "Orbital Designation Matrix â€” Magnetic & Spin Quantum Numbers",
+  "title": "Orbital Designation Matrix — Magnetic & Spin Quantum Numbers",
   "unitSlug": "atomic-structure",
   "topicSlug": "quantum-numbers",
   "topicTitle": "Quantum numbers",
   "relevance": 100,
   "notes": [
-    "**Tabular orbital designation matrix:** the complete set of orbitals for a given shell is catalogued by combining n, l and m. For n = 2: l = 0 gives the single 2s orbital (m = 0); l = 1 gives the three 2p orbitals (m = +1, 0, âˆ’1), designated 2pâ‚“, 2páµ§, 2p_z.",
-    "**Magnetic quantum number (m):** fixes the orientation of the orbital in space relative to an applied magnetic field; m takes 2l + 1 integer values from âˆ’l to +l.",
-    "**m value sets by subshell:** for l = 0: m = 0 (1 orbital); l = 1: m = +1, 0, âˆ’1 (3 orbitals); l = 2: m = +2, +1, 0, âˆ’1, âˆ’2 (5 orbitals); l = 3: m = +3, +2, +1, 0, âˆ’1, âˆ’2, âˆ’3 (7 orbitals).",
-    "**Total orbitals in a shell:** a shell of principal quantum number n contains exactly nÂ² orbitals, combining all subshells of that shell.",
-    "**LandÃ©â€“Zeeman magnetic orientations:** in an external magnetic field, the degenerate orbitals of a subshell split into distinct energy levels (Zeeman effect), each orbital having a different spatial orientation â€” one line splits into 2l + 1 components.",
-    "**Goudsmitâ€“Uhlenbeck electron axial rotation:** Goudsmit and Uhlenbeck proposed that the electron itself spins about its own axis, producing an intrinsic angular momentum and a tiny magnetic dipole.",
-    "**Clockwise vs anticlockwise spins:** the electron's spin can be clockwise or anticlockwise, giving two spin states; the spin quantum number s takes only two values: +Â½ and âˆ’Â½."
+    "**Tabular orbital designation matrix:** the complete set of orbitals for a given shell is catalogued by combining n, l and m. For n = 2: l = 0 gives the single 2s orbital (m = 0); l = 1 gives the three 2p orbitals (m = +1, 0, −1), designated 2pₓ, 2pᵧ, 2p_z.",
+    "**Magnetic quantum number (m):** fixes the orientation of the orbital in space relative to an applied magnetic field; m takes 2l + 1 integer values from −l to +l.",
+    "**m value sets by subshell:** for l = 0: m = 0 (1 orbital); l = 1: m = +1, 0, −1 (3 orbitals); l = 2: m = +2, +1, 0, −1, −2 (5 orbitals); l = 3: m = +3, +2, +1, 0, −1, −2, −3 (7 orbitals).",
+    "**Total orbitals in a shell:** a shell of principal quantum number n contains exactly n² orbitals, combining all subshells of that shell.",
+    "**Landé–Zeeman magnetic orientations:** in an external magnetic field, the degenerate orbitals of a subshell split into distinct energy levels (Zeeman effect), each orbital having a different spatial orientation — one line splits into 2l + 1 components.",
+    "**Goudsmit–Uhlenbeck electron axial rotation:** Goudsmit and Uhlenbeck proposed that the electron itself spins about its own axis, producing an intrinsic angular momentum and a tiny magnetic dipole.",
+    "**Clockwise vs anticlockwise spins:** the electron's spin can be clockwise or anticlockwise, giving two spin states; the spin quantum number s takes only two values: +½ and −½.",
+    "**Spin quantum number (mₛ):** in modern notation the fourth quantum number is mₛ (magnetic spin), taking values +½ (spin-up, ↑) or −½ (spin-down, ↓); it accounts for the two possible orientations of the electron's intrinsic angular momentum.",
+    "**Pauli exclusion principle:** no two electrons in the same atom can have identical values of all four quantum numbers (n, l, mₗ, mₛ); this is why each orbital holds at most two electrons with opposite spins.",
+    "**Complete orbital address for carbon (Z = 6):** 1s² gives (1,0,0,+½) and (1,0,0,−½); 2s² gives (2,0,0,+½) and (2,0,0,−½); 2p² gives (2,1,−1,+½) and (2,1,0,+½) following Hund's rule (parallel spins in separate orbitals first).",
+    "**Zeeman effect practical significance:** the splitting of spectral lines in a magnetic field was one of the earliest proofs that angular momentum is quantized; it is used in astronomy to measure magnetic fields of stars and in MRI (magnetic resonance imaging) technology.",
+    "**Orbital box notation and mₛ pairing:** when writing orbital diagrams, each box represents one orbital (one mₗ value); electrons fill boxes left to right following Aufbau, Hund's rule, then Pauli — at most two arrows per box, always opposite directions.",
+    "**Selection rules involving mₗ:** in spectroscopic transitions, allowed changes include Δl = ±1 and Δmₗ = 0, ±1, which arise directly from angular momentum conservation and determine which spectral lines appear."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: mₗ = +1, 0, −1 correspond to exact spatial axes x, y, z. Correction — the three 2p orbitals are commonly labelled 2pₓ, 2pᵧ, 2p_z for convenience, but the actual mathematical solutions are complex combinations; the simple axis labels are approximations that work for real-valued orbitals.",
+    "Misconception: The spin quantum number s was part of Schrödinger's equation. Correction — spin is an intrinsic property with no classical analogue; it was introduced empirically by Goudsmit and Uhlenbeck (1925) and later explained by Dirac's relativistic wave equation (1928), not by the original Schrödinger equation.",
+    "Misconception: Hund's rule says electrons pair up in the same orbital before occupying others. Correction — Hund's rule states the opposite: electrons fill degenerate orbitals singly with parallel spins first to minimize electron–electron repulsion, and pairing occurs only after each orbital has one electron.",
+    "Misconception: An orbital with mₗ = +2 is at a higher energy than one with mₗ = −2. Correction — in the absence of an external magnetic field, all orbitals within the same subshell (same n and l) are degenerate (equal energy). The magnetic quantum number mₗ only becomes energetically significant in a magnetic field (Zeeman effect)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "List all possible quantum number sets for the four electrons in a beryllium atom (Z = 4). Solution: (1, 0, 0, +½), (1, 0, 0, −½), (2, 0, 0, +½), (2, 0, 0, −½). Two electrons in 1s and two in 2s, each pair with opposite spins.",
+    "How many distinct orbitals exist in the n = 3 shell? Identify each one. Solution: n = 3 has l = 0 (3s: 1 orbital), l = 1 (3p: 3 orbitals), l = 2 (3d: 5 orbitals). Total = 1 + 3 + 5 = 9 orbitals = n². Each orbital is identified by a unique (n, l, mₗ) triple.",
+    "For nitrogen (Z = 7), write the complete set of quantum numbers for all 7 electrons. Solution: 1s² → (1,0,0,+½), (1,0,0,−½); 2s² → (2,0,0,+½), (2,0,0,−½); 2p³ → (2,1,−1,+½), (2,1,0,+½), (2,1,+1,+½). The three 2p electrons have parallel spins in separate orbitals (Hund's rule).",
+    "A student writes mₛ = +2 for an electron. What is wrong? Solution: The spin quantum number mₛ can only take two values: +½ or −½. The value +2 is not physically meaningful for electron spin. This represents a fundamental misunderstanding — spin is a quantum-mechanical intrinsic property, not a classical rotation speed."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The total number of quantum states for shell n is 2n² — this comes from summing (2l+1) orbitals over l = 0 to n−1, then multiplying by 2 for spin, giving the exact shell electron capacity.",
+    "The Zeeman effect was discovered in 1896 and won the Nobel Prize in 1902; it provided direct experimental evidence that orbital orientations are quantized.",
+    "Electron spin was not confirmed experimentally until the Stern–Gerlach experiment (1922), which showed silver atoms splitting into exactly two beams in a non-uniform magnetic field.",
+    "In box notation, the convention is to draw spin-up (↑) first in each box — this is a notational preference, not a physical requirement, but it aids consistency in writing configurations."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

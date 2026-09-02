@@ -1,25 +1,33 @@
 {
   "title": "Tetra-covalency, Catenation and Classification",
   "notes": [
-    "**Tetra-covalency:** carbon shares four electrons to complete its octet, giving it four bonds. This allows chain, branched, and ring structures.",
-    "**Catenation:** carbon-carbon bonds are strong (348 kJ/mol for C-C), allowing long chains. C-C bond strength decreases down the group: Si-Si (222), Ge-Ge (167), Sn-Sn (122) kJ/mol.",
-    "**Classification by carbon skeleton:** acyclic/open chain (straight or branched) and cyclic/closed chain (homocyclic: C only; heterocyclic: C + O/N/S).",
-    " **Classification by functional groups:** alkanes, alkenes, alkynes, alcohols, ethers, aldehydes, ketones, carboxylic acids, esters, amides, amines, etc.",
-    "**Homologous series:** groups of compounds with same functional group and similar chemical properties, differing by $CH_2$ unit in molecular formula."
+    "**Tetra-covalency:** Carbon has electronic configuration $1s^2 2s^2 2p^2$ with four valence electrons. It shares all four electrons to form four covalent bonds, giving a valency of four. This is called tetravalency or tetra-covalency.",
+    "**Hybridization modes:** Carbon undergoes $sp^3$ hybridization for single bonds (tetrahedral, $109.5^\\circ$), $sp^2$ for double bonds (trigonal planar, $120^\\circ$), and $sp$ for triple bonds (linear, $180^\\circ$), enabling enormous structural diversity.",
+    "**Catenation:** The self-linking ability of carbon atoms through C-C bonds. Carbon has the highest catenation ability due to its small size and strong C-C bond energy of 348 kJ/mol, which is the highest among group 14 elements.",
+    "**Catenation trend in Group 14:** Bond energies: C-C (348 kJ/mol) > Si-Si (222 kJ/mol) > Ge-Ge (167 kJ/mol) > Sn-Sn (122 kJ/mol). Carbon's superior catenation is due to small atomic size, effective orbital overlap, and high bond dissociation energy.",
+    "**Why carbon has maximum catenation:** (1) Small atomic radius allows close approach of bonded atoms. (2) High C-C bond energy makes the chain thermodynamically stable. (3) Carbon can form single, double, and triple bonds with itself, extending the range of catenated structures.",
+    "**Classification by carbon skeleton:** (a) Open-chain or acyclic: straight chain (n-pentane $CH_3CH_2CH_2CH_2CH_3$) or branched chain (isopentane $(CH_3)_3CCH_2H$). (b) Closed-chain or cyclic: homocyclic (all-carbon ring) or heterocyclic (ring contains O, N, S atoms).",
+    "**Homocyclic classification:** Alicyclic (cycloalkanes like cyclohexane $C_6H_{12}$) and aromatic (benzene-like rings $C_6H_6$ with delocalized $\\pi$ electrons).",
+    "**Classification by functional groups:** Alkanes ($-C-C-$, saturated, general formula $C_nH_{2n+2}$), Alkenes ($-C=C-$, unsaturated, $C_nH_{2n}$), Alkynes ($-C\\equiv C-$, $C_nH_{2n-2}$), Alcohols ($-OH$), Aldehydes ($-CHO$), Ketones ($-CO-$), Carboxylic acids ($-COOH$), Esters ($-COOR$), Amines ($-NH_2$), Amides ($-CONH_2$).",
+    "**Homologous series:** A series of compounds having the same functional group and similar chemical properties, in which successive members differ by a $CH_2$ unit. For alkanes: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), butane ($C_4H_{10}$), pentane ($C_5H_{12}$).",
+    "**Saturation:** Saturated compounds contain only C-C single bonds (alkanes). Unsaturated compounds contain at least one C=C double bond (alkenes) or C$\equiv$C triple bond (alkynes). Unsaturated compounds undergo addition reactions; saturated ones undergo substitution reactions.",
+    "**Heterocyclic compounds:** Rings containing at least one non-carbon atom (heteroatom). Examples: furan (O in 5-membered ring), pyridine (N in 6-membered ring), thiophene (S in 5-membered ring). These are common in biological molecules like nucleotide bases."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Tetravalency means carbon always forms four single bonds** — Carbon forms four bonds total, but these can be single, double, or triple bonds, or a combination. In ethylene ($CH_2=CH_2$), each carbon has a double bond and two single bonds. In allene ($H_2C=C=CH_2$), the central carbon forms two double bonds.",
+    "**Catenation only applies to carbon** — While carbon has the strongest catenation, silicon, sulfur, and boron also show catenation. Sulfur forms rings ($S_8$) and chains. Silicon forms silanes ($Si_nH_{2n+2}$), but they are less stable than carbon chains.",
+    "**All cyclic compounds are aromatic** — Cyclic compounds are divided into alicyclic (like cyclohexane, non-aromatic) and aromatic (like benzene, obeying Hückel's rule of $4n+2$ $\\pi$ electrons). Not every ring is aromatic."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Arrange the following in order of decreasing catenation ability: C, Si, Ge, Sn. Explain the trend using bond energies and atomic radii.",
+    "Write the general formula of each homologous series and give the first three members: (a) alkanes, (b) alkenes, (c) alkynes, (d) alcohols, (e) aldehydes, (f) carboxylic acids.",
+    "Classify each compound as open-chain, cyclic, saturated, or unsaturated: (a) cyclohexane, (b) n-hexane, (c) benzene, (d) propyne, (e) 2-methylbutene."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The C-C bond energy (348 kJ/mol) is close to the C-O bond (358 kJ/mol) and C-N bond (305 kJ/mol), meaning carbon chains are nearly as stable as those involving heteroatoms.",
+    "Carbon can form stable double and triple bonds with itself, unlike silicon which almost exclusively forms single bonds — this is called the 'double bond rule' violation by carbon.",
+    "The maximum known continuous carbon chain has over 300 carbon atoms in a single molecule (polyethylene), demonstrating carbon's unmatched catenation.",
+    "Functional group chemistry is the backbone of organic chemistry: the same $-OH$ group in methanol and ethanol gives both compounds similar reactions (esterification, oxidation, dehydration).",
+    "Hückel's rule states that a planar cyclic compound with $4n+2$ delocalized $\\pi$ electrons is aromatic. Benzene ($n=1$, 6 $\\pi$ electrons) is the simplest aromatic compound."
   ]
 }

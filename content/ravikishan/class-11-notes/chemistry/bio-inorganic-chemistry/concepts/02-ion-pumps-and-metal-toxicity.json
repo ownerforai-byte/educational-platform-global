@@ -5,28 +5,36 @@
   "topicTitle": "Ion pumps (sodium-potassium and sodium-glucose pump); metal toxicity (iron, arsenic, mercury, lead and cadmium)",
   "relevance": 100,
   "notes": [
-    "**$Na^+/K^+$ pump:** maintains high K$^+$ and low Na$^+$ inside cells. Essential for nerve impulse transmission, muscle contraction, and cell volume regulation. Consumes about 25% of resting ATP in humans.",
-    "**Sodium-glucose cotransporter (SGLT):** couples downhill Na movement to uphill glucose transport. Found in intestinal epithelium and renal tubules.",
-    "**Iron toxicity:** iron catalyses Fenton reaction: $Fe^{2+} + H_2O_2 \\rightarrow Fe^{3+} + OH^- + \\cdot OH$. Hydroxyl radical damages DNA, proteins and lipids.",
-    "**Arsenic toxicity:** $As^{3+}$ binds to vicinal dithiols in enzymes like pyruvate dehydrogenase, blocking cellular respiration.",
-    "**Mercury toxicity:** $Hg^{2+}$ has high affinity for $-SH$ groups. Binds to cysteine residues, denaturing enzymes. Minamata disease was mercury poisoning from industrial discharge.",
-    "**Lead toxicity:** $Pb^{2+}$ mimics Ca$^{2+}$ and disrupts neurotransmitter release, bone formation, and haem synthesis. Causes anaemia and neurological damage.",
-    "**Cadmium toxicity:** accumulates in kidneys, replaces Zn in enzymes, causing renal dysfunction and itai-itai disease."
+    "**Sodium-Potassium Pump ($Na^+/K^+$-ATPase):** An integral membrane protein that actively transports 3 Na$^+$ ions out of the cell and 2 K$^+$ ions into the cell per ATP hydrolyzed. This creates a net negative charge inside the cell (resting membrane potential, approximately $-70$ mV in neurons).",
+    "**Mechanism of $Na^+/K^+$ pump:** (1) Three intracellular Na$^+$ ions bind. (2) ATP phosphorylates the pump, causing conformational change. (3) Na$^+$ released outside. (4) Two extracellular K$^+$ ions bind. (5) Phosphate group released, pump returns to original shape. (6) K$^+$ released inside.",
+    "**Sodium-Glucose Cotransporter (SGLT):** Found in intestinal epithelium and kidney tubules. Uses the downhill Na$^+$ gradient (created by $Na^+/K^+$-ATPase) to drive uphill glucose transport against its concentration gradient. Example: SGLT1 in intestine, SGLT2 in kidney.",
+    "**$Ca^{2+}$ pump (SERCA):** Pumps calcium from cytoplasm into the sarcoplasmic reticulum in muscle cells, using one ATP per two Ca$^{2+}$ ions. Essential for muscle relaxation — after contraction, Ca$^{2+}$ must be removed from cytoplasm.",
+    "**H$^+$/K$^+$-ATPase (proton pump):** Found in stomach parietal cells. Pumps H$^+$ into stomach lumen in exchange for K$^+$, producing hydrochloric acid (pH ~1). Target of proton pump inhibitors (omeprazole) for treating acid reflux.",
+    "**Iron toxicity and Fenton reaction:** Excess Fe$^{2+}$ reacts with hydrogen peroxide to produce highly reactive hydroxyl radicals: $Fe^{2+} + H_2O_2 \\rightarrow Fe^{3+} + OH^- + \\cdot OH$. These radicals damage DNA, proteins, and lipid membranes, leading to cell death.",
+    "**Arsenic toxicity:** Arsenite ($As^{3+}$) has high affinity for vicinal dithiol groups (-SH HS-) in lipoic acid, which is a cofactor in pyruvate dehydrogenase. Binding blocks the citric acid cycle, shutting down aerobic cellular respiration.",
+    "**Mercury toxicity:** $Hg^{2+}$ ions bind strongly to sulfhydryl (-SH) groups in enzyme cysteine residues: $Enzyme{-}SH + Hg^{2+} \\rightarrow Enzyme{-}S{-}Hg^{+}$. This denatures enzymes and disrupts protein structure. Causes neurological damage (Minamata disease).",
+    "**Lead toxicity:** $Pb^{2+}$ mimics Ca$^{2+}$ due to similar ionic radius (Pb$^{2+}$: 120 pm, Ca$^{2+}$: 100 pm). Substitutes for calcium in bones and teeth. Inhibits $\\delta$-aminolevulinic acid dehydratase (ALAD) in haem synthesis, causing anaemia. Also crosses blood-brain barrier, causing neurological damage in children.",
+    "**Cadmium toxicity:** Cd$^{2+}$ accumulates in kidneys with a biological half-life of 10-30 years. Displaces Zn$^{2+}$ in zinc-dependent enzymes, causing loss of enzyme function. Causes renal tubular damage and itai-itai disease (bone softening). Found in cigarette smoke and industrial waste.",
+    "**Aluminum toxicity:** Al$^{3+}$ accumulates in brain tissue and has been linked to Alzheimer's disease. Interferes with calcium signaling and phosphorus metabolism. Common exposure from aluminium cookware and antacids.",
+    "**Detoxification mechanisms:** (1) Metallothioneins — sulfur-rich proteins that bind and sequester heavy metals. (2) Ferritin — stores excess iron safely. (3) Ceruloplasmin — copper transport protein that oxidizes Fe$^{2+}$ to Fe$^{3+}$ for safe transport.",
+    "**Biological half-life matters:** Lead persists in bones for 20-30 years; cadmium in kidneys for 10-30 years; mercury in the brain for years. This makes chronic low-dose exposure as dangerous as acute poisoning."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**The $Na^+/K^+$ pump moves equal numbers of Na$^+$ and K$^+$** — The pump is electrogenic and moves an unequal ratio: 3 Na$^+$ out for every 2 K$^+$ in. This net export of positive charge is what generates the resting membrane potential (negative inside).",
+    '**Fenton reaction produces toxic $Fe^{3+}$** — It is not the $Fe^{3+}$ product that is toxic, but the hydroxyl radical ($\\cdot OH$) generated as a byproduct. The hydroxyl radical is one of the most reactive species in chemistry and attacks DNA, lipids, and proteins indiscriminately.',
+    "**Lead is toxic because it is heavy** — Lead toxicity is primarily chemical, not physical. $Pb^{2+}$ mimics $Ca^{2+}$ and substitutes in calcium-dependent processes (neurotransmitter release, bone mineralization). It also inhibits enzymes in haem synthesis."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Explain how the $Na^+/K^+$-ATPase pump creates the resting membrane potential of $-70$ mV. Why is this potential essential for nerve impulse transmission?",
+    "Write the Fenton reaction equation. If a patient has iron overload (haemochromatosis), what chelation therapy drug (EDTA or desferrioxamine) would you recommend and why?",
+    "Explain why $Pb^{2+}$ is more toxic to children than adults, considering both biological half-life and the developing nervous system. What are the clinical symptoms of lead poisoning?"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The $Na^+/K^+$-ATPase pump is estimated to consume about 20-25% of all ATP in a resting human cell, making it the single largest consumer of cellular energy.",
+    "Only about 10-15 mg of mercury exposure over a lifetime can cause significant neurological damage — there is no known safe threshold for mercury poisoning.",
+    "The biological half-life of cadmium in the human kidney is 10-30 years, meaning even low-level chronic exposure accumulates to toxic levels over decades.",
+    "Chelation therapy using EDTA or desferrioxamine can remove heavy metals from the body by forming water-soluble metal-chelate complexes that are excreted in urine.",
+    "Lead was used in water pipes (the word 'plumbing' comes from 'plumbum', Latin for lead), paint, and gasoline for centuries before its toxicity was fully recognized."
   ],
   "animation3D": "bio-inorganic-chemistry",
   "motionGraphics": "bio-inorganic-chemistry"

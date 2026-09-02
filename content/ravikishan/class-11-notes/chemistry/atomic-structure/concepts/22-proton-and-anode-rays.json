@@ -1,37 +1,45 @@
 {
-  "title": "The Proton â€” Discovery & Properties of Anode Rays",
+  "title": "The Proton — Discovery & Properties of Anode Rays",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
   "relevance": 80,
   "notes": [
-    "**Proton definition:** a proton is a positively charged subatomic particle denoted with the symbol pâº.",
+    "**Proton definition:** a proton is a positively charged subatomic particle denoted with the symbol p⁺.",
     "**Context of discovery:** it was discovered after the discovery of electrons, with the assumption that positive particles must also exist alongside negative particles since an atom is electrically neutral.",
     "**Discovery (1886):** the proton was discovered by Eugen Goldstein by a discharge tube experiment like that for electrons.",
     "**Experiment:** he passed high voltage electricity through a discharge tube filled with hydrogen gas and provided with a perforated metal cathode.",
-    "**Chemical equation:** H â†’ Hâº + eâ» (proton formation).",
+    "**Chemical equation:** H → H⁺ + e⁻ (proton formation).",
     "**Low pressure:** the discharge was carried out at low pressure.",
     "**Canal rays:** he observed rays travelling opposite to the cathode rays; these were deflected towards the cathode of the applied field and thus called anode rays, positive rays, or canal rays.",
     "**Properties of anode rays:** (a) they cast a shadow of the objects in their path; (b) they travel in a straight line; (c) they are deflected towards the cathode of the applied electric or magnetic field; (d) they cause a heating effect on metal coils; (e) they rotate a small paddle wheel placed on their path.",
     "**Conclusion:** these properties led to the conclusion that anode rays carry a positive charge and possess a certain mass.",
-    "**Naming:** these rays were named protons by Goldstein and symbolized with pâº.",
-    "**Charge:** the proton possesses +1.602 Ã— 10â»Â¹â¹ coulomb of electric charge, equal but opposite in sign to that of an electron.",
-    "**Mass:** a proton is much heavier than an electron; its mass is 1.672 Ã— 10â»Â²â´ g, equal to the mass of the hydrogen atom."
+    "**Naming:** these rays were named protons by Goldstein and symbolized with p⁺.",
+    "**Charge:** the proton possesses +1.602 × 10⁻¹⁹ coulomb of electric charge, equal but opposite in sign to that of an electron.",
+    "**Mass:** a proton is much heavier than an electron; its mass is 1.672 × 10⁻²⁴ g, equal to the mass of the hydrogen atom.",
+    "**Perforated cathode significance:** the holes in the cathode allowed anode rays (positive ions) to pass through from behind the cathode, unlike cathode rays which travel toward the anode — this was the key design feature that enabled their discovery.",
+    "**e/m of anode rays varies with gas:** unlike cathode rays (which have constant e/m), the e/m ratio of anode rays depends on the gas in the tube — it is highest for hydrogen (giving the lightest positive particle, the proton), confirming protons are the fundamental positive particle.",
+    "**Rutherford's naming (1920):** Ernest Rutherford formally named the hydrogen nucleus 'proton' (from Greek 'protos' meaning first), identifying it as a fundamental building block of all nuclei.",
+    "**Proton in the nucleus:** protons reside in the nucleus along with neutrons. The number of protons (atomic number Z) defines the element. Hydrogen-1 has exactly one proton and no neutrons — the simplest atom.",
+    "**Real-world application — particle accelerators:** protons are the workhorse particles in accelerators like the LHC (Large Hadron Collider). Understanding their mass, charge, and behavior in electric/magnetic fields is essential for accelerator design and nuclear physics research."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: Goldstein discovered the proton in 1886 and immediately knew its properties. Correction — Goldstein discovered *canal rays* (positive ions) in 1886, but it was not until Rutherford's work (1911-1919) that the proton was identified as the hydrogen nucleus and a fundamental particle. Goldstein's anode rays were positive ions of the residual gas.",
+    "Misconception: The mass of a proton equals the mass of a hydrogen atom. Correction — a hydrogen atom consists of one proton plus one electron. The electron mass is negligible (~1/1836 of proton mass), so the approximation mₚ ≈ m(H) is excellent, but technically m(H) = mₚ + mₑ.",
+    "Misconception: Anode rays are emitted from the anode. Correction — anode rays (canal rays) travel *from* the cathode *toward* the anode but pass through holes in the cathode, so they appear to come from behind the cathode. The name 'anode rays' refers to their direction of travel (toward the anode), not their origin.",
+    "Misconception: The proton is the only positively charged fundamental particle. Correction — the proton is a *composite* particle made of three quarks (uud). Positrons (e⁺) are fundamental positively charged leptons. In the Standard Model, the proton is not fundamental; the quarks inside it are."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the specific charge (e/m) of a proton. Solution: e = +1.602 × 10⁻¹⁹ C, m = 1.672 × 10⁻²⁷ kg. e/m = (1.602 × 10⁻¹⁹) / (1.672 × 10⁻²⁷) = 9.58 × 10⁷ C/kg. Compare: e/m(proton) ≈ 1/1836 of e/m(electron).",
+    "In a discharge tube with hydrogen gas, the anode rays have e/m = 9.58 × 10⁷ C/kg. With oxygen gas, the e/m is lower. Explain why. Solution: Anode rays are positive ions of the gas. For H₂, the lightest positive ion is H⁺ (proton). For O₂, the lightest is O⁺ (16 times heavier). Since charge is +e for both, e/m for O⁺ is 1/16 that of H⁺. This proved the proton is the lightest positive ion.",
+    "A hydrogen atom has mass 1.6735 × 10⁻²⁷ kg. The electron mass is 9.109 × 10⁻³¹ kg. Calculate the proton mass. Solution: mₚ = m(H) − mₑ = 1.6735 × 10⁻²⁷ − 0.0009109 × 10⁻²⁷ = 1.6726 × 10⁻²⁷ kg ≈ 1.673 × 10⁻²⁷ kg (the difference is 0.05%).",
+    "Why do anode rays have a smaller e/m ratio than cathode rays? Solution: Anode rays are positive ions of gas atoms (mass ≈ atomic mass), while cathode rays are electrons (mass = 1/1836 of proton mass). For hydrogen: e/m(e⁻) = 1.76 × 10¹¹ C/kg, e/m(p⁺) = 9.58 × 10⁷ C/kg. The electron's e/m is ~1836 times larger."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The proton was the first subatomic particle to be named (by Rutherford in 1920). Before that, it was called the 'hydrogen nucleus' or 'positive electron'.",
+    "Protons are not fundamental particles — they are composed of three quarks (two up quarks and one down quark, uud) bound by gluons. The quark model (1964) explained the proton's internal structure.",
+    "The proton's charge is exactly +e, equal in magnitude to the electron's charge. This perfect charge balance is why neutral atoms have exactly equal numbers of protons and electrons.",
+    "Free protons are stable (half-life > 10³⁴ years), but inside nuclei, some protons can undergo beta-plus decay (p → n + e⁺ + νₑ) or electron capture, changing the element's identity."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

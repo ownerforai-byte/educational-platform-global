@@ -1,31 +1,40 @@
 {
-  "title": "Quantum Number Origins â€” Principal, Azimuthal & Subshell Metrics",
+  "title": "Quantum Number Origins — Principal, Azimuthal & Subshell Metrics",
   "unitSlug": "atomic-structure",
   "topicSlug": "quantum-numbers",
   "topicTitle": "Quantum numbers",
   "relevance": 85,
   "notes": [
-    "**SchrÃ¶dinger/Spin origins breakdown:** the principal (n), azimuthal (l) and magnetic (m) quantum numbers arise naturally as the three quantum conditions of SchrÃ¶dinger's wave equation; the spin quantum number (s) was added later from the Sternâ€“Gerlach and Goudsmitâ€“Uhlenbeck experiments.",
-    "**Principal quantum number (n):** fixes the main energy level and size of the orbital (shell). n = 1, 2, 3, â€¦; larger n means a larger, higher-energy orbital farther from the nucleus.",
+    "**Schrödinger/Spin origins breakdown:** the principal (n), azimuthal (l) and magnetic (m) quantum numbers arise naturally as the three quantum conditions of Schrödinger's wave equation; the spin quantum number (s) was added later from the Stern–Gerlach and Goudsmit–Uhlenbeck experiments.",
+    "**Principal quantum number (n):** fixes the main energy level and size of the orbital (shell). n = 1, 2, 3, …; larger n means a larger, higher-energy orbital farther from the nucleus.",
     "**Sommerfeld hyperfine line expansions:** Arnold Sommerfeld introduced the azimuthal (orbital) quantum number l to explain the hyperfine splitting of spectral lines observed under high resolution, which Bohr's model could not explain.",
-    "**Subsidiary (azimuthal) quantum number (l):** fixes the subshell and shape of the orbital; l takes integer values 0 to n âˆ’ 1 and is labelled by letters â€” s: 0, p: 1, d: 2, f: 3.",
-    "**Subshell orbital count:** each subshell contains 2l + 1 orbitals â€” for s (l=0): 1, p (l=1): 3, d (l=2): 5, f (l=3): 7.",
-    "**Subshell electron count:** each subshell holds a maximum of 2(2l + 1) electrons â€” for s: 2, p: 6, d: 10, f: 14."
+    "**Subsidiary (azimuthal) quantum number (l):** fixes the subshell and shape of the orbital; l takes integer values 0 to n − 1 and is labelled by letters — s: 0, p: 1, d: 2, f: 3.",
+    "**Subshell orbital count:** each subshell contains 2l + 1 orbitals — for s (l=0): 1, p (l=1): 3, d (l=2): 5, f (l=3): 7.",
+    "**Subshell electron count:** each subshell holds a maximum of 2(2l + 1) electrons — for s: 2, p: 6, d: 10, f: 14.",
+    "**Shell capacity formula:** the total number of electrons that can be accommodated in shell n is 2n² — for n = 1: 2 electrons, n = 2: 8 electrons, n = 3: 18 electrons, n = 4: 32 electrons.",
+    "**Wave function interpretation:** each quantum number emerges from solving the Schrödinger equation in spherical coordinates — n arises from the radial equation (energy quantization), l from the angular equation (angular momentum quantization), and m from the boundary condition on the azimuthal angle φ.",
+    "**Angular momentum quantization:** the magnitude of orbital angular momentum is L = ℏ√(l(l+1)), where ℏ = h/2π; this shows that angular momentum is not simply lℏ but has a quantum mechanical spread.",
+    "**Energy degeneracy in hydrogen:** for a hydrogen atom, the energy depends only on n (not on l), given by Eₙ = −13.6/n² eV; this is called accidental degeneracy — the 2s and 2p orbitals have the same energy in hydrogen alone.",
+    "**Real-world application — X-ray spectroscopy:** characteristic X-ray wavelengths follow Moseley's law √ν = a(Z − b), where the shift b arises because inner-shell electrons (quantum numbers n, l) screen the nuclear charge; understanding quantum numbers is essential for predicting X-ray line positions.",
+    "**Orbital shapes and quantum numbers:** the azimuthal quantum number l directly determines orbital shape — l = 0 (s): spherical, l = 1 (p): dumbbell-shaped, l = 2 (d): cloverleaf, l = 3 (f): complex multi-lobed structures."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Misconception: n and l are independent. Correction — l is constrained by n: l can only take values 0, 1, 2, …, (n−1). You cannot have a 1p orbital (n=1, l=1) because l must be less than n.",
+    "Misconception: In all atoms, 2s and 2p have the same energy. Correction — this accidental degeneracy holds only for hydrogen (single-electron systems). In multi-electron atoms, electron–electron repulsion lifts the degeneracy: 2s is lower in energy than 2p.",
+    "Misconception: The principal quantum number n directly tells you the orbital shape. Correction — n determines size and energy, while l determines shape. Two orbitals with the same n but different l values (e.g., 3s and 3p) have different shapes.",
+    "Misconception: The number of subshells in a shell equals n. Correction — the number of subshells in shell n equals n (1 subshell in n=1, 2 in n=2, etc.), but the total orbitals equal n² and total electrons equal 2n²."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "For the hydrogen atom, calculate the energy of an electron in the n = 3 shell. Solution: E₃ = −13.6/3² = −13.6/9 = −1.51 eV. The negative sign indicates the electron is bound to the nucleus.",
+    "How many subshells exist in the n = 4 shell? List them and state the number of orbitals in each. Solution: Four subshells exist — l = 0 (4s, 1 orbital), l = 1 (4p, 3 orbitals), l = 2 (4d, 5 orbitals), l = 3 (4f, 7 orbitals). Total orbitals = 1 + 3 + 5 + 7 = 16 = 4². Total electrons = 32 = 2(4²).",
+    "Write all valid quantum number sets (n, l) for a sodium atom (Z = 11) that contains electrons. Solution: n=1: (1,0); n=2: (2,0), (2,1); n=3: (3,0), (3,1). Configuration: 1s² 2s² 2p⁶ 3s¹. The 3p subshell is empty in ground-state sodium.",
+    "Calculate the magnitude of orbital angular momentum for an electron in a d-orbital (l = 2). Solution: L = ℏ√(l(l+1)) = ℏ√(2×3) = ℏ√6 ≈ 2.449ℏ. This is the quantum mechanical angular momentum, distinct from the classical value of 2ℏ."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The four quantum numbers (n, l, mₗ, mₛ) form a complete address for every electron in an atom — no two electrons in the same atom can share all four quantum numbers (Pauli exclusion principle).",
+    "The maximum number of electrons in any shell n is 2n², which gives the familiar shell capacities: K=2, L=8, M=18, N=32.",
+    "Quantum numbers were not all discovered together — Bohr introduced n (1913), Sommerfeld added l (1916), the magnetic field experiments gave m (1921), and electron spin s was proposed in 1925.",
+    "The letter labels s, p, d, f stand for sharp, principal, diffuse, and fundamental — names inherited from the appearance of spectral lines before orbital theory existed."
   ],
   "animation3D": "atomic-structure",
   "motionGraphics": "atomic-structure"

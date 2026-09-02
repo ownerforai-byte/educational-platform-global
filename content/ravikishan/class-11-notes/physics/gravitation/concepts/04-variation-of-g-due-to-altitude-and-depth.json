@@ -5,26 +5,34 @@
   "topicTitle": "Variation in value of 'g' due to altitude and depth",
   "relevance": 100,
   "notes": [
-    "**At altitude $h$:** $g' = g\\left(\\frac{R}{R+h}\\right)^2$. As height increases, $g$ decreases because distance from Earth's centre increases.",
-    "**At depth $d$:** only the mass within radius $(R-d)$ contributes to gravity. $g' = g\\left(1 - \\frac{d}{R}\\right)$. At the centre ($d=R$), $g=0$.",
-    "**Why depth reduces $g$ linearly:** the outer shells cancel by symmetry; only the inner sphere pulls inward, and its mass decreases as $d$ increases.",
-    "**Why altitude reduces $g$ quadratically:** the inverse-square law dominates; even a small increase in $r$ causes a noticeable drop in $g$.",
-    "**Practical note:** $g$ at Mount Everest ($\\approx 9.77\\,\\text{m/s}^2$) is slightly less than at sea level ($\\approx 9.83\\,\\text{m/s}^2$)."
+    "**At altitude $h$ above Earth's surface:** $g' = g\\left(\\frac{R}{R+h}\\right)^2$. As height increases, $g$ decreases because distance from Earth's centre increases according to the inverse-square law.",
+    "**At depth $d$ below Earth's surface:** only the mass within radius $(R-d)$ contributes to gravity. $g' = g\\left(1 - \\frac{d}{R}\\right)$. At the centre ($d=R$), $g=0$.",
+    "**Why depth reduces $g$ linearly:** by shell theorem, the outer shells cancel by symmetry; only the inner sphere of radius $(R-d)$ pulls inward, and its mass decreases as $d$ increases, proportional to $(R-d)^3$, but the distance squared decreases as $(R-d)^2$, giving a net linear dependence.",
+    "**Why altitude reduces $g$ quadratically:** the inverse-square law dominates; even a small increase in $r$ causes a noticeable drop in $g$. For $h \\ll R$, $g' \\approx g(1 - 2h/R)$ (binomial approximation).",
+    "**Practical note:** $g$ at Mount Everest ($h \\approx 8.8\\,\\text{km}$) is $\\approx 9.77\\,\\text{m/s}^2$, slightly less than at sea level ($\\approx 9.83\\,\\text{m/s}^2$). At ISS altitude ($h \\approx 400\\,\\text{km}$), $g \\approx 8.7\\,\\text{m/s}^2$.",
+    "**Effect of Earth's rotation:** the measured $g$ (effective $g$) is slightly less than the true gravitational acceleration due to centrifugal effect. At equator: $g_{eff} = g - \\omega^2 R$. At poles: $g_{eff} = g$.",
+    "**Effect of Earth's shape (oblateness):** Earth is an oblate spheroid — polar radius $R_p \\approx 6357\\,\\text{km}$, equatorial radius $R_e \\approx 6378\\,\\text{km}$. $g$ is larger at poles ($\approx 9.83\\,\\text{m/s}^2$) than at equator ($\approx 9.78\\,\\text{m/s}^2$).",
+    "**Combined formula for effective $g$ at latitude $\\phi$ and altitude $h$:** $g_{eff} \\approx g_0(1 - 2h/R) + g_0(5.3 \\times 10^{-3})\\sin^2\\phi$, where $g_0 = 9.8\\,\\text{m/s}^2$. The $\\sin^2\\phi$ term accounts for centrifugal and oblateness effects.",
+    "**Value of $g$ on other bodies:** Moon: $1.62\\,\\text{m/s}^2$; Mars: $3.71\\,\\text{m/s}^2$; Jupiter: $24.8\\,\\text{m/s}^2$; Sun surface: $274\\,\\text{m/s}^2$.",
+    "**Gravitational potential at height $h$:** $V = -GM/(R+h) \\approx -gR(1 - h/R)$ for $h \\ll R$. At depth $d$: $V = -GM/(2R)(3 - (R-d)^2/R^2)$. Both continuous at $d=0$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Altitude formula uses $g' = g(R/(R+h))^2$ (quadratic), while depth formula uses $g' = g(1 - d/R)$ (linear). These are NOT the same formula applied differently — they arise from different physics (inverse-square vs. shell theorem).",
+    "The formula $g' = g(1 - 2h/R)$ for small $h$ is an APPROXIMATION from binomial expansion. It is only valid when $h \\ll R$. The exact formula is $g(R/(R+h))^2$.",
+    "At the centre of Earth, $g = 0$ but potential is NOT zero — it is $V = -3GM/2R$ (most negative). Field is the gradient of potential, so zero field means potential is at an extremum.",
+    "The rotation of Earth reduces the EFFECTIVE $g$ at the equator by about $0.034\\,\\text{m/s}^2$ (about 0.35%). This is why launch sites prefer equatorial locations — the centrifugal effect helps the rocket."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "At what height above Earth's surface does $g$ become $50\\%$ of its surface value? $R = 6400\\,\\text{km}$. Solution: $g' = 0.5g = g(R/(R+h))^2 \\Rightarrow (R/(R+h))^2 = 0.5 \\Rightarrow R+h = R/\\sqrt{0.5} = 1.414R \\Rightarrow h = 0.414R = 2650\\,\\text{km}$.",
+    "At what depth below Earth's surface does $g$ become $50\\%$ of its surface value? Solution: $g' = g(1 - d/R) = 0.5g \\Rightarrow 1 - d/R = 0.5 \\Rightarrow d = 0.5R = 3200\\,\\text{km}$.",
+    "Find the effective $g$ at latitude $45^\\circ$ on Earth's surface. $g_{poles} = 9.83\\,\\text{m/s}^2$, $g_{equator} = 9.78\\,\\text{m/s}^2$. Solution: $g_{eff} = g_{poles} - (g_{poles} - g_{equator})\\sin^2\\phi = 9.83 - 0.05 \\times (0.707)^2 = 9.83 - 0.025 = 9.805\\,\\text{m/s}^2$.",
+    "A pendulum has period $T = 2.0\\,\\text{s}$ at sea level. What is its period at an altitude of $100\\,\\text{km}$? $R = 6400\\,\\text{km}$. Solution: $T \\propto 1/\\sqrt{g}$. $g' = g(R/(R+h))^2$. $T' = T\\sqrt{g/g'} = 2.0 \\times (R+h)/R = 2.0 \\times 6500/6400 = 2.03\\,\\text{s}$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The linear decrease of $g$ with depth is a direct consequence of the inverse-square law and shell theorem — if gravity fell as $1/r$, $g$ would be constant with depth.",
+    "The value of $g$ is highest at the poles ($9.832\\,\\text{m/s}^2$) and lowest at the equator ($9.780\\,\\text{m/s}^2$) due to the combined effect of Earth's rotation and its equatorial bulge.",
+    "At an altitude of $100\\,\\text{km}$ (the Kármán line, the boundary of space), $g$ is still about $9.5\\,\\text{m/s}^2$ — only $3\\%$ less than at the surface. 'Weightlessness' in orbit is due to free fall, not absence of gravity.",
+    "The variation of $g$ with latitude was first measured by Richer in 1672 using a pendulum clock that ran slower at Cayenne (near equator) than in Paris."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

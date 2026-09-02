@@ -5,26 +5,33 @@
   "topicTitle": "Introduction to organic chemistry and organic compounds",
   "relevance": 100,
   "notes": [
-    "**Definition:** organic chemistry is the study of carbon compounds, with a few exceptions like CO, $CO_2$, carbonates and cyanides.",
-    "**Why separate study:** carbon forms millions of compounds because of catenation (C-C bonds) and tetravalency. The number of organic compounds exceeds all other compounds combined.",
-    "**Catenation:** carbon's unique ability to form strong covalent bonds with itself, giving chains, branches and rings of almost unlimited length.",
-    "**Tetra-covalency:** carbon has four valence electrons and forms four bonds, allowing complex 3D structures with single, double and triple bonds.",
-    "**Classification:** based on carbon skeleton (straight chain, branched, cyclic) or functional groups (alkanes, alkenes, alkynes, alcohols, acids, etc.)."
+    "**Definition:** Organic chemistry is the branch of chemistry that deals with the study of carbon compounds and their derivatives. The word 'organic' originated from the belief that these compounds could only be produced by living organisms.",
+    "**Wohler's synthesis (1828):** Friedrich Wohler synthesized urea ($NH_2CONH_2$) from ammonium cyanate ($NH_4OCN$), disproving the vital force theory: $NH_4OCN \\xrightarrow{\\Delta} NH_2CONH_2$. This was the first synthesis of an organic compound from an inorganic precursor.",
+    "**Organic vs inorganic carbon compounds:** Carbon monoxide ($CO$), carbon dioxide ($CO_2$), carbonates ($Na_2CO_3$), bicarbonates ($NaHCO_3$), and cyanides ($KCN$) are excluded from organic chemistry because they behave like inorganic compounds despite containing carbon.",
+    "**Why carbon forms so many compounds:** Carbon has tetravalency (forms 4 bonds) and catenation (forms strong C-C bonds), enabling an almost unlimited number of compounds. Over 10 million organic compounds are known today.",
+    "**Physical state:** Most organic compounds are gases (methane, ethane), liquids (ethanol, benzene), or low-melting solids (sugar, naphthalene). They have generally low melting and boiling points compared to inorganic salts.",
+    "**Solubility:** 'Like dissolves like' — organic compounds are usually soluble in non-polar organic solvents (benzene, ether, acetone) but poorly soluble in water, especially as molecular size increases.",
+    "**Combustion:** Organic compounds burn in oxygen to produce $CO_2$ and $H_2O$: $CH_4 + 2O_2 \\rightarrow CO_2 + 2H_2O$. This property is used to detect the presence of carbon and hydrogen (Liebig's method).",
+    "**Covalent bonding:** Organic compounds have covalent bonds (shared electron pairs) rather than ionic bonds. This explains their low melting points, poor electrical conductivity, and molecular nature.",
+    "**Sources of organic compounds:** Petroleum, natural gas, coal tar, plant and animal products. The term 'organic' now refers to structure (containing carbon), not origin.",
+    "**Importance in daily life:** Organic chemistry is central to pharmaceuticals (aspirin $C_9H_8O_4$), polymers (plastics, nylon), dyes, food chemistry (proteins, carbohydrates), and petrochemicals (fuel, lubricants)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Organic compounds must come from living things** — Since Wohler's synthesis of urea in 1828, we know organic compounds can be synthesized in the laboratory. The term 'organic' refers to the chemistry of carbon compounds, not their biological origin.",
+    "**All carbon compounds are organic** — Carbon monoxide, carbon dioxide, carbonates, bicarbonates, and simple cyanides are classified as inorganic despite containing carbon. They lack C-H bonds and exhibit properties typical of inorganic compounds.",
+    "**Organic compounds are always non-polar** — While many organic compounds are non-polar, some like ethanol ($C_2H_5OH$), acetic acid ($CH_3COOH$), and sugars are quite polar and even dissolve in water due to hydrogen bonding capability."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Explain why carbon is the element that forms the basis of organic chemistry. Compare its properties with those of silicon, which lies directly below it in the periodic table.",
+    "Classify each of the following as organic or inorganic: (a) $CH_3COOH$, (b) $Na_2CO_3$, (c) $CCl_4$, (d) $CO_2$, (e) $C_6H_{12}O_6$. Justify your answers.",
+    "Write the combustion reaction of ethanol ($C_2H_5OH$) in excess oxygen. If 46 g of ethanol is burned, calculate the mass of $CO_2$ produced. (Molar masses: C = 12, H = 1, O = 16 g/mol)"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Organic chemistry is sometimes called 'the chemistry of carbon and hydrogen' because the vast majority of organic compounds contain only C, H, N, O, S, and halogens.",
+    "The number of known organic compounds exceeds 10 million, dwarfing the approximately 100,000 known inorganic compounds.",
+    "Organic reactions are typically much slower than inorganic reactions and often require catalysts, heat, or UV light to proceed at useful rates.",
+    "The C-H bond (bond energy ~413 kJ/mol) is one of the strongest single bonds in nature, which contributes to the stability of organic molecules.",
+    "Every carbon atom in an organic molecule can form four covalent bonds, allowing for an extraordinary diversity of three-dimensional molecular structures."
   ],
   "animation3D": "basic-concept-of-organic-chemistry",
   "motionGraphics": "basic-concept-of-organic-chemistry"

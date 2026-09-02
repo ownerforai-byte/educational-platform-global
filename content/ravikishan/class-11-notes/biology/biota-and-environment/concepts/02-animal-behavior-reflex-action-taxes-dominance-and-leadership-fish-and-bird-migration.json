@@ -5,26 +5,55 @@
   "topicTitle": "Animal behavior: Reflex action, taxes, dominance and leadership; fish and bird migration",
   "relevance": 100,
   "notes": [
-    "**Reflex action:** involuntary, rapid, stereotyped response to stimulus. Pathway: receptor â†’ sensory neuron â†’ integration centre (spinal cord) â†’ motor neuron â†’ effector. Examples: knee jerk, withdrawal from pain.",
+    "**Reflex action:** involuntary, rapid, stereotyped response to stimulus. Pathway: receptor → sensory neuron → integration centre (spinal cord) → motor neuron → effector. Examples: knee jerk, withdrawal from pain.",
     "**Taxes:** oriented movement toward (positive) or away from (negative) a stimulus. Phototaxis (light), chemotaxis (chemicals), geotaxis (gravity). Euglena shows positive phototaxis.",
     "**Dominance and leadership:** social animals establish hierarchies. Dominant individuals get priority access to food and mates. Leaders guide group movement, often based on experience.",
     "**Fish migration:** anadromous (sea to fresh water to breed: salmon), catadromous (fresh water to sea to breed: eel). Cues: temperature, day length, magnetic field, pheromones.",
-    "**Bird migration:** seasonal movement between breeding and wintering grounds. Cues: photoperiod, temperature, food availability. Navigate using stars, sun, magnetic field, landmarks. Examples: Arctic tern (longest migration), Siberian crane."
+    "**Bird migration:** seasonal movement between breeding and wintering grounds. Cues: photoperiod, temperature, food availability. Navigate using stars, sun, magnetic field, landmarks. Examples: Arctic tern (longest migration), Siberian crane.",
+    "**Reflex arc components:** receptor (detects stimulus) → afferent/sensory neuron → interneuron (in spinal cord or ganglion) → efferent/motor neuron → effector (muscle or gland). The entire arc takes milliseconds. The brain is informed AFTER the reflex occurs.",
+    "**Conditioned vs. unconditioned reflex:** unconditioned reflexes are innate (knee jerk, pupil constriction). Conditioned reflexes are learned through association — Pavlov's dogs salivating at a bell sound. The cerebral cortex is involved in conditioned reflexes.",
+    "**Kinesis vs. taxis:** kinesis is non-oriented movement where speed or turning rate changes with stimulus intensity (woodlice move faster in dry areas). Taxis is directed movement toward or away from a stimulus source. Both are innate behaviors.",
+    "**Fight-or-flight response:** a hormonal reflex mediated by the sympathetic nervous system and adrenaline (epinephrine). Increases heart rate, dilates pupils, redirects blood to muscles, and releases glucose. Prepares the body for immediate action.",
+    "**Pecking order:** a dominance hierarchy established through aggression or ritualized displays in birds and other social animals. Once established, it reduces constant fighting — subordinate animals submit, dominant animals gain priority. First described by Thorpe in chickens.",
+    "**Alpha, beta, omega ranking:** in wolf packs and primate groups, the alpha is the dominant individual, beta are subordinates, and omega is the lowest-ranking member. Leadership is not always the alpha — experienced individuals often guide migration regardless of rank.",
+    "**Photoperiodism and migration trigger:** increasing or decreasing day length is detected by the pineal gland, which regulates melatonin and gonadotropin release. This triggers hormonal changes that prepare animals for migration (hyperphagia, restless behavior called zugunruhe).",
+    "**Magnetic orientation in birds:** magnetite (Fe3O4) crystals in the upper bill and the protein cryptochrome in retinal cells allow birds to detect Earth's magnetic field. This is a true 'magnetic sense' (magnetoreception), not just compass navigation.",
+    "**Salmon homing:** anadromous salmon return to the exact stream where they were born to spawn. They imprint on the unique chemical signature (olfactory map) of their natal stream as juveniles. Neurotransmitter changes in the olfactory bulb enable this memory.",
+    "**Arctic tern migration:** travels approximately 70,000 km annually between Arctic breeding grounds and Antarctic wintering grounds — the longest known migration of any animal. Uses wind patterns and magnetic navigation across oceans.",
+    "**Bar-headed goose migration:** flies over the Himalayas at altitudes exceeding 8,000 m where oxygen is 1/3 of sea-level. Has hemoglobin with higher oxygen affinity, oversized heart and lungs, and specialized capillary networks in muscles.",
+    "**Eel catadromous migration:** European eels spend years in freshwater rivers, then migrate thousands of kilometers across the Atlantic Ocean to the Sargasso Sea to spawn. They undergo dramatic physiological changes (silvering) before departure.",
+    "**Homing pigeon navigation:** combines multiple cues — sun compass, star patterns, magnetic map, olfactory landmarks, and infrasound detection. Experiments show pigeons released in unfamiliar territories can still return to loft using this multimodal navigation.",
+    "**Bioluminescent communication in deep-sea fish:** some deep-sea creatures use species-specific light patterns for mating, prey attraction, and counter-illumination camouflage. The anglerfish uses a bioluminescent lure (esca) to attract prey in complete darkness."
   ],
   "confusion": [
     "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
     "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Reflex actions involve the spinal cord, NOT the brain — the brain receives a copy of the signal after the reflex has already occurred. This is why you pull your hand from a hot object BEFORE you feel pain.",
+    "Taxis is oriented (directed toward/away from stimulus); kinesis is non-oriented (random movement that changes speed/frequency based on stimulus). Woodlice in dry areas move faster and turn more — this is kinesis, not taxis.",
+    "Anadromous = born in fresh water, migrate to sea, return to fresh water to spawn (salmon). Catadromous = born in sea, migrate to fresh water, live there, return to sea to spawn (eels). The direction is defined by where they SPAWN, not where they live.",
+    "Dominance hierarchy (pecking order) is NOT the same as leadership. The alpha may be the most aggressive, but leadership in migration is often exercised by the most experienced individual, regardless of rank.",
+    "Conditioned reflexes require the cerebral cortex (learned, e.g., Pavlov's dog). Unconditioned reflexes do not (innate, e.g., knee jerk). All conditioned responses are learned; not all learned behaviors are reflexes."
   ],
   "practice": [
     "Solve one basic problem using the key formula from this topic.",
     "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Apply this concept to a real-world situation and explain each step.",
+    "Trace the reflex arc for the knee-jerk (patellar) reflex. Label each component and explain why this reflex is monosynaptic while the withdrawal reflex is polysynaptic.",
+    "A researcher observes woodlice moving more rapidly in dry areas and less rapidly in humid areas. Is this taxis or kinesis? Design an experiment to distinguish between the two.",
+    "Compare and contrast anadromous and catadromous fish migration. Explain the physiological challenges each faces during the transition between fresh and salt water (osmoregulation).",
+    "Explain how an Arctic tern navigates during its 70,000 km annual migration. What sensory systems does it use, and how does it integrate multiple cues?",
+    "Describe the pecking order in a chicken flock. How does this hierarchy reduce aggression? What happens when a new chicken is introduced to an established hierarchy?"
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
     "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Always check units and dimensions when applying this concept.",
+    "Reflex actions protect the body from damage and occur in milliseconds — faster than any voluntary response could. The spinal cord acts as an emergency processing center.",
+    "Migration is one of the most energetically expensive behaviors in the animal kingdom. A migrating bird can double its body mass before departure through hyperphagia (excessive eating).",
+    "The Arctic tern's migration covers roughly double the distance of any other animal's — it experiences more daylight than any other organism on Earth over its lifetime.",
+    "Chemical communication (pheromones) is the oldest and most widespread form of animal communication, used by insects, fish, amphibians, and mammals for mating, alarm, trail-following, and territory marking.",
+    "Dominance hierarchies stabilize social groups by reducing the need for constant physical combat. Once established, submission signals are often enough to prevent fights — energy is conserved for both parties."
   ],
   "animation3D": "biota-and-environment",
   "motionGraphics": "biota-and-environment"

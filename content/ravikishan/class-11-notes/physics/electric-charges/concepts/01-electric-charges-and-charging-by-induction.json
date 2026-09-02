@@ -5,26 +5,42 @@
   "topicTitle": "Electric charges; charging by induction",
   "relevance": 100,
   "notes": [
-    "**Charge:** a fundamental property of matter. Two types: positive and negative. Like charges repel; opposite charges attract.",
-    "**Quantization:** charge exists in discrete units. $q = \\pm ne$, where $n$ is an integer and $e = 1.602 \\times 10^{-19}\\,\\text{C}$ is the elementary charge.",
-    "**Conservation:** electric charge is conserved in any process. It can be transferred but not created or destroyed.",
-    " **Charging by induction:** bring a charged object near a neutral conductor, connect the conductor to earth, then remove the earth connection and the charged object. The conductor acquires opposite charge without touching.",
-    "**Coulomb's law:** $F = k\\frac{q_1 q_2}{r^2}$, where $k = 8.99 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$ in vacuum."
+    "**Electric charge:** a fundamental property of matter that causes it to experience a force when placed in an electric field. Charge is quantized in units of the elementary charge $e = 1.6 \\times 10^{-19}$ C.",
+    "**Conservation of charge:** the total electric charge in an isolated system remains constant. Charge can neither be created nor destroyed, only transferred from one object to another.",
+    "**Charging by friction:** when two different materials are rubbed together, electrons transfer from one to the other. The material that loses electrons becomes positively charged; the material that gains electrons becomes negatively charged. Example: rubbing a glass rod with silk gives the glass a positive charge.",
+    "**Charging by contact:** when a charged object touches a neutral conductor, charge flows between them until both have the same electric potential. If the objects are identical, charge distributes equally: each ends up with half the total charge.",
+    "**Charging by induction:** a charged object brought near a conductor (without touching) causes charge redistribution. Electrons in the conductor move in response to the nearby charge. If the conductor is grounded while the charged object is near, charge flows to or from the ground. When the ground connection is broken before removing the inducing charge, the conductor retains a net charge of opposite sign.",
+    "**Coulomb's law:** the force between two point charges is $F = k\\frac{q_1 q_2}{r^2}$, where $k = 1/(4\\pi\\epsilon_0) \\approx 9 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$, and $r$ is the separation distance.",
+    "**Permittivity of free space:** $\\epsilon_0 = 8.854 \\times 10^{-12}\\,\\text{F/m}$. The force can also be written as $F = \\frac{1}{4\\pi\\epsilon_0} \\cdot \\frac{q_1 q_2}{r^2}$.",
+    "**Superposition principle:** the net force on any charge is the vector sum of the forces due to all other charges. For $N$ charges, $\\vec{F}_{net} = \\sum_{i=1}^{N} \\frac{k q q_i}{r_i^2} \\hat{r}_i$.",
+    "**Electric field:** the force per unit charge at a point in space. $\\vec{E} = \\vec{F}/q_0$. For a point charge $q$, $\\vec{E} = \\frac{kq}{r^2}\\hat{r}$. Units: N/C or V/m.",
+    "**Electric field lines:** start on positive charges, end on negative charges. Their density indicates field strength. They never cross. The tangent at any point gives the field direction.",
+    "**Gauss's law:** the total electric flux through a closed surface is $\\Phi_E = \\oint \\vec{E} \\cdot d\\vec{A} = Q_{enc}/\\epsilon_0$. Useful for calculating fields of symmetric charge distributions (spherical, cylindrical, planar).",
+    "**Field of a uniformly charged sphere:** outside the sphere ($r > R$), the field is identical to that of a point charge at the centre: $E = kQ/r^2$. Inside a uniformly charged non-conducting sphere ($r < R$), $E = kQr/R^3$. For a conducting sphere, all charge resides on the surface and $E = 0$ inside.",
+    "**Millikan oil-drop experiment:** measured the elementary charge $e = 1.602 \\times 10^{-19}$ C by observing tiny charged oil droplets between capacitor plates. Confirmed charge quantization.",
+    "**Electric dipole:** two equal and opposite charges separated by a small distance. Dipole moment $\\vec{p} = q\\vec{d}$, where $\\vec{d}$ points from the negative to the positive charge. In a uniform electric field, a dipole experiences a torque $\\vec{\\tau} = \\vec{p} \\times \\vec{E}$ but no net force.",
+    "**Sign of force:** like charges repel, opposite charges attract. The force is along the line connecting the two charges. This is direct from Coulomb's law — the sign of $q_1 q_2$ determines attractive or repulsive."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Charge is quantized in units of $e$, but charge quantization is only noticeable at the atomic/molecular level. At macroscopic scales, charge appears continuous because billions of elementary charges are involved.",
+    "Induction does not transfer charge by itself — it only redistributes existing charge. The conductor must be grounded for charge to flow to/from the earth, and the grounding connection must be broken before removing the inducing charge.",
+    "A charged object brought near a conductor always produces opposite charge on the near side, but the far side has the same sign as the inducing charge. The net charge of the conductor is zero unless it was grounded.",
+    "Coulomb's law gives the force between two point charges in vacuum (or air). In a medium with dielectric constant $\\kappa$, the force is reduced by a factor $\\kappa$: $F = k q_1 q_2/(\\kappa r^2)$. Many students forget the $\\kappa$ factor.",
+    "The electric field inside a conductor in electrostatic equilibrium is exactly zero. This is not true for a conductor carrying a steady current — in that case, there is a net electric field driving the current."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two point charges $q_1 = +2\\,\\mu$C and $q_2 = -3\\,\\mu$C are separated by 0.5 m. Find the magnitude and direction of the force on each charge. Solution: $F = k q_1 q_2 / r^2 = (9 \\times 10^9) \\times (2 \\times 10^{-6}) \\times (3 \\times 10^{-6}) / 0.5^2 = 9 \\times 10^9 \\times 6 \\times 10^{-12} / 0.25 = 0.216$ N. The force is attractive (opposite charges).",
+    "Three identical metal spheres: A carries +6 \\,\\mu\\text{C}, B and C are neutral. A touches B, then B touches C. Find the final charge on each. Solution: A-B: each gets +3 \\,\\mu\\text{C}. B-C: total = 6 \\,\\mu\\text{C}, shared: B = +1.5 \\,\\mu\\text{C}, C = +1.5 \\,\\mu\\text{C}. Final: A = +3 \\,\\mu\\text{C}, B = +1.5 \\,\\mu\\text{C}, C = +1.5 \\,\\mu\\text{C}.",
+    "A point charge $q = +5\\,\\mu$C is at the centre of a spherical conducting shell with inner radius 3 cm and outer radius 5 cm. Find the electric field at (a) 2 cm, (b) 4 cm, (c) 7 cm from the centre. Solution: (a) Inside the cavity: $E = kq/r^2 = 9 \\times 10^9 \\times 5 \\times 10^{-6} / 0.02^2 = 1.125 \\times 10^8$ N/C. (b) Within the conducting material: $E = 0$ (electrostatic equilibrium). (c) Outside the shell: $E = kq/r^2 = (9 \\times 10^9) \\times (5 \\times 10^{-6}) / 0.07^2 = 9.18 \\times 10^6$ N/C.",
+    "Using Millikan's data, an oil drop of mass $1.6 \\times 10^{-15}$ kg has terminal velocities 0.5 mm/s downward and 0.3 mm/s upward in an electric field of $10^4$ V/m. Verify that the charge is quantized. Solution: From Stokes' law, the terminal velocity gives the radius. Then using the electric force balance: $qE = mg(v_{up} + v_{down})/(v_{down} - v_{up})$ gives the effective charge, which should be an integer multiple of $1.6 \\times 10^{-19}$ C.",
+    "Four point charges are placed at corners of a square of side 10 cm: $q_1 = +2\\,\\mu$C (top-left), $q_2 = +2\\,\\mu$C (top-right), $q_3 = -2\\,\\mu$C (bottom-right), $q_4 = -2\\,\\mu$C (bottom-left). Find the net force on a charge $q_5 = +1\\,\\mu$C at the centre. Solution: By symmetry, the diagonal pairs cancel. $F_{13}$ (top-left to bottom-right) and $F_{24}$ (top-right to bottom-left) are equal in magnitude and opposite in direction. The net force is zero."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The total electric charge of the universe is exactly conserved — this is one of the fundamental symmetries of nature (Noether's theorem associated with time-translation invariance).",
+    "Charge is quantized: every measurable charge is an integer multiple of the elementary charge $e = 1.602 \\times 10^{-19}$ C. Millikan's oil-drop experiment first confirmed this.",
+    "The electric force between two protons at a distance of 1 fm ($10^{-15}$ m) is about 130 N — enormously stronger than gravity, which is about $1.86 \\times 10^{-34}$ N at the same distance. This is why electromagnetic forces dominate at small scales.",
+    "The human body can generate and detect electric fields. Nerve impulses use ionic charge flow, and some animals (e.g., electric eels) can produce voltages up to 600 V for hunting and defense.",
+    "Static charge buildup can be dangerous: a spark of just 1 mJ can ignite gasoline vapor, and a discharge of ~5 mJ is perceptible to humans. Lightning involves millions of joules of energy."
   ],
   "animation3D": "electric-charges",
   "motionGraphics": "electric-charges"

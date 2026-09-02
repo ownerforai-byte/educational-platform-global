@@ -1,31 +1,43 @@
 {
-  "title": "Alkanes â€” Preparation and Chemical Properties",
+  "title": "Alkanes — Preparation and Chemical Properties",
   "unitSlug": "hydrocarbons",
   "topicSlug": "alkanes-preparation-and-chemical-properties",
   "topicTitle": "Saturated hydrocarbons (Alkanes): preparation from haloalkanes (reduction and Wurtz reaction), decarboxylation, catalytic hydrogenation of alkene and alkyne; chemical properties: substitution reactions (halogenation, nitration and sulphonation only), oxidation of ethane",
   "relevance": 100,
   "notes": [
-    "**Preparation from haloalkanes:** reduction with Zn + HCl or HI: $R-X + 2[H] \\rightarrow R-H + HX$. Wurtz reaction: $2RX + 2Na \\rightarrow R-R + 2NaX$ (works best for same halide).",
-    "**Decarboxylation:** heating sodium salt of carboxylic acid with soda lime: $RCOONa + NaOH \\rightarrow RH + Na_2CO_3$.",
-    "**Catalytic hydrogenation:** $C_nH_{2n} + H_2 \\xrightarrow{Ni, \\Delta} C_nH_{2n+2}$ for alkenes; $C_nH_{2n-2} + 2H_2 \\xrightarrow{Ni, \\Delta} C_nH_{2n+2}$ for alkynes.",
-    "**Free radical substitution:** requires UV light or heat. Initiation: $Cl_2 \\xrightarrow{h\\nu} 2Cl\\cdot$. Propagation: $CH_4 + Cl\\cdot \\rightarrow CH_3\\cdot + HCl$, then $CH_3\\cdot + Cl_2 \\rightarrow CH_3Cl + Cl\\cdot$.",
-    "**Nitration:** $CH_4 + HNO_3 \\xrightarrow{\\Delta} CH_3NO_2 + H_2O$.",
-    "**Sulphonation:** $C_2H_6 + SO_3 \\xrightarrow{light} C_2H_5SO_3H$ (ethyl hydrogen sulphate)."
+    "**General formula and structure:** alkanes are saturated hydrocarbons with the general formula $C_nH_{2n+2}$. They contain only C-C and C-H single ($\\sigma$) bonds. Each carbon is $sp^3$ hybridised with tetrahedral geometry (bond angle 109.5°). Example: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($C_4H_{10}$).",
+    "**Preparation from haloalkanes (reduction):** haloalkanes can be reduced to alkanes using various reagents. With zinc and acid: $R-X + 2[H] \\xrightarrow{Zn/HCl} R-H + HX$. With lithium aluminium hydride ($LiAlH_4$): $R-X + LiAlH_4 \\rightarrow R-H + LiX + AlH_3$. With HI and red phosphorus: $R-X + 2HI \\xrightarrow{P} R-H + I_2$. The $LiAlH_4$ method is most reliable and works for primary, secondary, and tertiary halides.",
+    "**Wurtz reaction:** two molecules of the same alkyl halide react with sodium in dry ether to give a symmetrical alkane with double the number of carbon atoms: $2R-X + 2Na \\xrightarrow{dry\\ ether} R-R + 2NaX$. Example: $2CH_3Br + 2Na \\rightarrow CH_3CH_3 + 2NaBr$. This reaction is limited to symmetrical alkanes; mixed Wurtz reactions give a mixture of three products and are not synthetically useful.",
+    "**Decarboxylation (soda-lime method):** heating the sodium salt of a carboxylic acid with soda-lime (NaOH + CaO) loses one carbon as $CO_2$ and gives an alkane with one fewer carbon atom: $RCOONa + NaOH \\xrightarrow{CaO, \\Delta} R-H + Na_2CO_3$. Example: $CH_3COONa + NaOH \\xrightarrow{CaO} CH_4 + Na_2CO_3$ (laboratory preparation of methane). CaO absorbs moisture and prevents the glass vessel from cracking.",
+    "**Catalytic hydrogenation of alkenes and alkynes:** alkenes are reduced to alkanes by adding $H_2$ across the double bond using a metal catalyst (Ni, Pd, or Pt): $C_nH_{2n} + H_2 \\xrightarrow{Ni/\\Delta} C_nH_{2n+2}$. Alkynes require two equivalents of hydrogen: $C_nH_{2n-2} + 2H_2 \\xrightarrow{Ni/\\Delta} C_nH_{2n+2}$. Raney nickel is particularly active and works at moderate temperatures. Palladium on carbon (Pd/C) is the most active catalyst.",
+    "**Free-radical halogenation (chlorination of methane):** methane reacts with chlorine under UV light or at 300-400°C via a free-radical chain mechanism. Initiation: $Cl_2 \\xrightarrow{h\\nu} 2Cl\\cdot$. Propagation: $CH_4 + Cl\\cdot \\rightarrow CH_3\\cdot + HCl$, then $CH_3\\cdot + Cl_2 \\rightarrow CH_3Cl + Cl\\cdot$. Termination: $Cl\\cdot + Cl\\cdot \\rightarrow Cl_2$, $CH_3\\cdot + CH_3\\cdot \\rightarrow C_2H_6$, $CH_3\\cdot + Cl\\cdot \\rightarrow CH_3Cl$. The reaction produces a mixture of mono-, di-, tri-, and tetra-chlorinated products unless methane is in large excess.",
+    "**Selectivity in halogenation:** fluorine is too reactive (explosive), iodine is too unreactive (reversible). Chlorination is moderately reactive but non-selective (relative reactivity: $1^\\circ : 2^\\circ : 3^\\circ = 1 : 3.8 : 5$). Bromination is highly selective (relative reactivity: $1^\\circ : 2^\\circ : 3^\\circ = 1 : 82 : 1600$), making it useful for synthesising specific isomers.",
+    "**Nitration of alkanes:** alkanes react with vaporous nitric acid at 400-500°C via a free-radical mechanism to form nitroalkanes: $CH_4 + HNO_3 \\xrightarrow{450°C} CH_3NO_2 + H_2O$. This industrial process (vapour-phase nitration) produces a mixture of nitromethane, nitroethane, and higher nitroalkanes. Nitroalkanes are important intermediates for amines, explosives, and solvents.",
+    "**Sulphonation of alkanes:** alkanes react with oleum ($H_2SO_4$ containing $SO_3$) or sulfur trioxide vapour under heat to form alkyl hydrogen sulfates or sulfonic acids: $C_2H_6 + SO_3 \\xrightarrow{\\Delta} C_2H_5SO_3H$ (ethyl sulfonic acid). This reaction is less common than halogenation or nitration and is mainly of industrial significance for producing detergents.",
+    "**Oxidation of ethane:** ethane undergoes combustion (complete oxidation) to produce $CO_2$ and $H_2O$: $C_2H_6 + \\frac{7}{2}O_2 \\rightarrow 2CO_2 + 3H_2O$ ($\\Delta H = -1560$ kJ/mol). Incomplete combustion produces CO and soot. Partial oxidation of ethane over catalysts (MoO$_3$/TeO$_2$) at 350°C produces acetaldehyde: $C_2H_6 + O_2 \\xrightarrow{catalyst} CH_3CHO + H_2O$, which is an important industrial route to acetic acid.",
+    "**Combustion as a reaction property:** the high heat of combustion makes alkanes excellent fuels. Methane (natural gas) gives 890 kJ/mol, propane (LPG) gives 2220 kJ/mol, and octane (petrol) gives 5470 kJ/mol. The efficiency of combustion increases with the H:C ratio — methane is the cleanest-burning alkane (least CO$_2$ per unit energy).",
+    "**Real-world application — methane as fuel:** methane is the primary component of natural gas (80-97%). It is used for heating, electricity generation, and as a transport fuel (compressed natural gas, CNG). One advantage over petrol and diesel is that methane combustion produces virtually no particulate matter and significantly less CO$_2$ per unit energy. However, methane itself is a potent greenhouse gas (25x CO$_2$ over 100 years) if leaked."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Wurtz reaction limitation — The Wurtz reaction only works well with primary alkyl halides. Secondary and tertiary halides undergo elimination (forming alkenes) as the major product with sodium. Also, mixed Wurtz reactions (two different halides) give three products (R-R, R-R', R'-R'), making separation difficult and the reaction synthetically impractical for unsymmetrical alkanes.",
+    "Decarboxylation reduces carbon count by one — When sodium acetate undergoes decarboxylation, the product (methane) has ONE LESS carbon than the starting acid. This is a common point of confusion: students sometimes expect the same number of carbons. The lost carbon leaves as $CO_2$ from the carboxyl group.",
+    "Chlorination vs bromination selectivity — Students often assume all halogenations are equally selective. In reality, chlorination is relatively non-selective (3°:2°:1° = 5:3.8:1), while bromination is highly selective (3°:2°:1° = 1600:82:1). This means bromination can selectively functionalise a specific C-H bond, while chlorination gives a mixture.",
+    "Alkanes are NOT completely inert — While alkanes are often called 'paraffins' (Latin: parum affinis = little affinity), they do react under the right conditions. They undergo combustion (with $O_2$), free-radical substitution (with halogens/UV), nitration (with $HNO_3$/heat), and cracking (with heat/catalyst). Their low reactivity is relative, not absolute.",
+    "Catalytic hydrogenation requires a metal catalyst — Alkenes and alkynes do NOT react with $H_2$ gas alone at room temperature. A metal catalyst (Ni, Pd, or Pt) is essential to adsorb both $H_2$ and the hydrocarbon on its surface, weakening the H-H bond and allowing addition. Without a catalyst, even heating may not produce reaction at practical rates."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Predict the products of the free-radical chlorination of butane ($C_4H_{10}$). Calculate the percentage yield of each monochlorinated product, given that the relative reactivity of $1^\\circ$ H vs $2^\\circ$ H is 1:3.8. (Hint: butane has 6 primary H atoms and 4 secondary H atoms.)",
+    "Show how you would synthesise (a) ethane from bromoethane, (b) propane from propene, (c) butane from propyl bromide using the Wurtz reaction, and (d) methane from sodium acetate using decarboxylation. Write balanced equations for each.",
+    "A sample of an alkane undergoes complete combustion, producing 3.08 g of $CO_2$ and 1.44 g of $H_2O$. Determine the molecular formula of the alkane. (Atomic masses: C = 12, H = 1, O = 16.)",
+    "Explain why methane is used as a fuel despite being a greenhouse gas, while also discussing the environmental trade-offs compared to coal and petroleum. Calculate the mass of $CO_2$ produced per megajoule of energy from methane combustion ($\\Delta H = -890$ kJ/mol).",
+    "Write the complete free-radical mechanism (initiation, propagation, termination) for the bromination of methane. Explain why bromination is much slower than chlorination but more selective. Use bond dissociation energies: C-H (methane) = 439 kJ/mol, H-Br = 366 kJ/mol, H-Cl = 431 kJ/mol."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Methane ($CH_4$) is the simplest alkane and the primary component of natural gas. It has a tetrahedral structure with four equivalent C-H bonds of length 1.09 Å and bond angle 109.5°.",
+    "Alkanes are non-polar molecules, making them insoluble in water but soluble in non-polar organic solvents like benzene, ether, and carbon tetrachloride. This follows the principle 'like dissolves like.'",
+    "The boiling points of alkanes increase by approximately 20-30°C for each additional $CH_2$ group. Normal alkanes have higher boiling points than their branched isomers due to greater surface area and stronger van der Waals forces.",
+    "Cycloalkanes (e.g., cyclohexane, $C_6H_{12}$) are saturated hydrocarbons with ring structures. They follow the general formula $C_nH_{2n}$ and exhibit conformational isomerism (chair, boat, twist-boat forms in cyclohexane).",
+    "Cracking of long-chain alkanes (e.g., $C_{16}H_{34} \\xrightarrow{cracking} C_8H_{18} + C_8H_{16}$) is a vital refining process that breaks large molecules into smaller, more useful ones like petrol and diesel, producing alkenes as byproducts."
   ],
   "animation3D": "hydrocarbons",
   "motionGraphics": "hydrocarbons"

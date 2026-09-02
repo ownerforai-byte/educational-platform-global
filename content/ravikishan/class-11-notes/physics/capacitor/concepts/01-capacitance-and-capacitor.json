@@ -9,22 +9,36 @@
     "**Units:** farad (F). $1\\,\\text{F} = 1\\,\\text{C/V}$. Practical capacitors are usually microfarads ($\\mu$F) or picofarads (pF).",
     "**Parallel plate capacitor:** $C = \\epsilon_0 A/d$ for air, where $A$ is plate area and $d$ is separation. Larger area and smaller gap give larger capacitance.",
     "**Energy stored:** $U = \\frac{1}{2}CV^2 = \\frac{Q^2}{2C}$. This energy is stored in the electric field between the plates.",
-    "**Energy density:** $u = \\frac{1}{2}\\epsilon_0 E^2$. Energy is distributed throughout the space between the plates, not just on the plates themselves."
+    "**Energy density:** $u = \\frac{1}{2}\\epsilon_0 E^2$. Energy is distributed throughout the space between the plates, not just on the plates themselves.",
+    "**Dimensional analysis:** $[C] = [Q]/[V] = \\text{C/V} = \\text{A}\\cdot\\text{s}/(\\text{J/C}) = \\text{A}^2\\cdot\\text{s}^4\\cdot\\text{kg}^{-1}\\cdot\\text{m}^{-2}$.",
+    "**Dielectric constant $\\kappa$:** for a material, $C = \\kappa\\epsilon_0 A/d$. Vacuum has $\\kappa = 1$, water has $\\kappa \\approx 80$, glass $\\kappa \\approx 5{-}10$.",
+    "**Breakdown field:** every dielectric has a maximum electric field it can sustain before ionization causes conduction. For air, $E_{max} \\approx 3 \\times 10^6\\,\\text{V/m}$.",
+    "**Physical model:** a capacitor is a device designed to provide a known, fixed capacitance. It stores energy in its electric field rather than as separated charge alone.",
+    "**Capacitance of an isolated sphere:** $C = 4\\pi\\epsilon_0 R$, where $R$ is the sphere's radius. The Earth's capacitance is about $711\\,\\mu\\text{F}$.",
+    "**Charging process:** when a capacitor charges through a resistor, the voltage follows $V(t) = V_0(1 - e^{-t/RC})$. The product $RC$ is the time constant $\\tau$.",
+    "**Discharging process:** the voltage decays as $V(t) = V_0 e^{-t/RC}$. After one time constant, the voltage falls to about $37\\%$ of its initial value.",
+    "**Real-world example:** camera flash circuits store energy in a capacitor and release it quickly through the flash tube. Power supply filters use capacitors to smooth voltage ripples."
   ],
   "confusion": [
-    "Capacitance is not the same as charge. A capacitor with large capacitance can store more charge at the same voltage, but $C$ itself depends only on geometry and dielectric.",
-    "Energy stored is $U = \\frac{1}{2}CV^2$, not $CV^2$. The factor $1/2$ appears because voltage rises linearly from 0 to $V$ as the capacitor charges.",
-    "Disconnecting the battery before changing plate separation preserves charge $Q$, not voltage $V$."
+    "Capacitance is not the same as charge. A capacitor with large capacitance can store more charge at the same voltage, but $C$ itself depends only on geometry and dielectric — not on $Q$ or $V$.",
+    "Energy stored is $U = \\frac{1}{2}CV^2$, not $CV^2$. The factor $1/2$ appears because voltage rises linearly from 0 to $V$ as the capacitor charges; the average voltage during charging is $V/2$.",
+    "Disconnecting the battery before changing plate separation preserves charge $Q$, not voltage $V$. With the battery connected, voltage $V$ stays fixed while charge changes.",
+    "The formula $C = Q/V$ is the definition, not the cause. Changing $Q$ or $V$ does not change $C$ — only changing the physical geometry or the dielectric material changes capacitance.",
+    "A capacitor blocks DC but passes AC. In a DC circuit, once fully charged, no current flows through the capacitor. In an AC circuit, the continuously changing voltage causes a displacement current."
   ],
   "practice": [
-    "A parallel plate capacitor with $A = 0.2\\,\\text{m}^2$ and $d = 1\\,\\text{mm}$ is charged to 200 V. Find $C$ and energy stored. ($\\epsilon_0 = 8.85 \\times 10^{-12}$)",
-    "Two capacitors $3\\,\\mu$F and $6\\,\\mu$F are connected in series across 12 V. Find the charge on each and voltage across the $6\\,\\mu$F capacitor.",
-    "A $10\\,\\mu$F capacitor is charged to 100 V and then disconnected. If plate separation is doubled, what is the new voltage?"
+    "A parallel plate capacitor with $A = 0.2\\,\\text{m}^2$ and $d = 1\\,\\text{mm}$ is charged to 200 V. Find $C$ and energy stored. ($\\epsilon_0 = 8.85 \\times 10^{-12}$ F/m). Solution: $C = \\epsilon_0 A/d = 8.85 \\times 10^{-12} \\times 0.2 / 0.001 = 1.77 \\times 10^{-9}$ F $\\approx 1.77$ nF. Energy $U = \\frac{1}{2}CV^2 = \\frac{1}{2} \\times 1.77 \\times 10^{-9} \\times 40000 = 3.54 \\times 10^{-5}$ J.",
+    "Two capacitors $3\\,\\mu$F and $6\\,\\mu$F are connected in series across 12 V. Find the charge on each and voltage across the $6\\,\\mu$F capacitor. Solution: $1/C_{eq} = 1/3 + 1/6 = 1/2$, so $C_{eq} = 2\\,\\mu$F. Charge $Q = C_{eq}V = 2 \\times 12 = 24\\,\\mu$C (same on each). Voltage across 6 $\\mu$F: $V_2 = Q/C_2 = 24/6 = 4$ V.",
+    "A $10\\,\\mu$F capacitor is charged to 100 V and then disconnected. If plate separation is doubled, what is the new voltage? Solution: $Q$ is fixed at $10 \\times 100 = 1000\\,\\mu$C. Doubling $d$ halves $C$, so $C' = 5\\,\\mu$F. New voltage $V' = Q/C' = 1000/5 = 200$ V.",
+    "A capacitor with $C = 5\\,\\mu$F is charged to 12 V, then disconnected. A dielectric with $\\kappa = 4$ is inserted. Find the new capacitance, charge, and voltage. Solution: $Q$ remains $60\\,\\mu$C. New $C' = \\kappa C = 20\\,\\mu$F. New $V' = Q/C' = 60/20 = 3$ V.",
+    "Find the capacitance of an isolated spherical conductor of radius 1 m. Solution: $C = 4\\pi\\epsilon_0 R = 4\\pi \\times 8.85 \\times 10^{-12} \\times 1 = 1.11 \\times 10^{-10}$ F $\\approx 111$ pF."
   ],
   "universalFacts": [
-    "Capacitance depends only on geometry and dielectric â€” never on charge or voltage.",
+    "Capacitance depends only on geometry and dielectric — never on charge or voltage. $C = Q/V$ is a definition, not a causal relationship.",
     "In series, charge is the same on every capacitor; in parallel, voltage is the same across every capacitor.",
-    "Energy in a capacitor is always stored in the electric field, never on the plates."
+    "Energy in a capacitor is always stored in the electric field, never on the plates. The energy density is $u = \\frac{1}{2}\\epsilon_0 E^2$.",
+    "The Earth itself acts as a capacitor with a capacitance of approximately $711\\,\\mu$F relative to infinity.",
+    "A capacitor's time constant $\\tau = RC$ determines how quickly it charges or discharges. After $5\\tau$, the capacitor is considered fully charged or discharged."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor"

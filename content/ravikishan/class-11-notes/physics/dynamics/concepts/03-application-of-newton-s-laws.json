@@ -5,26 +5,36 @@
   "topicTitle": "Application of Newton's laws",
   "relevance": 100,
   "notes": [
-    "**Newton's First Law (Inertia):** a body remains at rest or in uniform motion unless acted on by an external force. Inertia is the resistance to change in motion.",
-    "**Newton's Second Law:** $\\vec{F} = m\\vec{a}$. The acceleration of a body is directly proportional to the net force and inversely proportional to its mass.",
-    "**Newton's Third Law:** for every action, there is an equal and opposite reaction. $\\vec{F}_{AB} = -\\vec{F}_{BA}$.",
-    "**Common applications:** tension in strings, normal reaction, friction, and pseudo forces in accelerating frames all come from applying Newton's laws.",
-    "**Pseudo force:** in a non-inertial frame accelerating with $\\vec{a}$, a fictitious force $-m\\vec{a}$ appears on every mass to explain motion using Newton's second law."
+    "**Newton's First Law (Inertia):** a body remains at rest or in uniform motion unless acted on by an external force. Inertia is the resistance to change in motion, quantified by mass.",
+    "**Newton's Second Law:** $\\vec{F}_{net} = m\\vec{a} = \\frac{d\\vec{p}}{dt}$. The acceleration of a body is directly proportional to the net force and inversely proportional to its mass. In the form $\\vec{F} = \\frac{d\\vec{p}}{dt}$, it is valid even when mass changes (e.g., rockets).",
+    "**Newton's Third Law:** for every action, there is an equal and opposite reaction. $\\vec{F}_{AB} = -\\vec{F}_{BA}$. Action and reaction forces act on DIFFERENT bodies, so they never cancel each other.",
+    "**Free-body diagrams:** the key tool for applying Newton's laws. Draw the body of interest and show ALL forces acting ON it (not forces it exerts on others). Common forces: weight $mg$, normal reaction $N$, tension $T$, friction $f$.",
+    "**Tension in a string:** for a massless, inextensible string, tension is the same throughout. For a massive string, tension varies along its length.",
+    "**Normal reaction:** the force perpendicular to a surface. On an inclined plane at angle $\\theta$, $N = mg\\cos\\theta$ (if no other vertical forces act).",
+    "**Pseudo force:** in a non-inertial frame accelerating with $\\vec{a}$, a fictitious force $-m\\vec{a}$ appears on every mass. For example, in an accelerating car, passengers feel pushed backward — this is the pseudo force.",
+    "**Connected masses:** when two bodies are connected by a string over a pulley (Atwood machine), they share the same acceleration magnitude. Write $F = ma$ for each body separately and solve the system of equations.",
+    "**Friction in Newton's laws:** static friction $f_s \\leq \\mu_s N$ adjusts to prevent slipping; kinetic friction $f_k = \\mu_k N$ opposes motion. Always include friction as a force in the free-body diagram when surfaces are rough."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Action-reaction pairs NEVER act on the same body — they act on two different bodies. A common mistake is to say \"the book pushes down on the table and the table pushes up on the book, so they cancel\" — these forces act on different bodies and never cancel for a single body's analysis.",
+    "Newton's second law is $\\vec{F}_{net} = m\\vec{a}$, not $\\vec{F} = m\\vec{a}$ for any single force. You must sum ALL forces acting on the body before setting them equal to $m\\vec{a}$.",
+    "The normal reaction is NOT always equal to $mg$. On an inclined plane, $N = mg\\cos\\theta$. If an additional vertical force acts, $N$ changes. Always determine $N$ from the specific situation.",
+    "Tension is NOT a force that \"saves\" energy — it does no work on a system of connected masses because the displacements at both ends are equal (for an inextensible string), so the net work by tension is zero.",
+    "In an accelerating reference frame, pseudo forces are NOT real forces — they have no reaction pair and do not arise from any physical interaction. They are introduced only to make Newton's second law work in non-inertial frames."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 5 kg block rests on a smooth horizontal table. A horizontal force of 20 N is applied. Find the acceleration and the tension in a string connecting it to a 3 kg hanging mass over a frictionless pulley. Solution: For the system: $F_{net} = (5+3)a$, so $20 = 8a$, $a = 2.5$ m/s$^2$. For the 5 kg block: $T = 5 \\times 2.5 = 12.5$ N. For the 3 kg mass: $3g - T = 3 \\times 2.5$, so $T = 30 - 7.5 = 22.5$ N. Wait — recheck: the applied force is 20 N on the 5 kg block, and the hanging mass provides additional tension. Let me solve the system properly: $20 + 3g - T_{internal} = 8a$... Actually, with the 20 N force on the 5 kg block and the 3 kg hanging: equations are (1) $20 - T = 5a$ and (2) $T - 3g = 3a$ — no, the hanging mass pulls down: $3g - T = 3a$ is wrong if 20 N pulls the other way. Correct: $20 - T = 5a$ and $T - 3g = 3a$ (if upward is positive for hanging mass). Adding: $20 - 3g = 8a$, $20 - 29.4 = 8a$, $a = -1.175$ m/s$^2$. The system accelerates with the 3 kg mass falling, so $a = 1.175$ m/s$^2$ downward for the 3 kg mass. Tension: $T = 20 - 5(1.175) = 14.125$ N.",
+    "A 10 kg body is pulled up a smooth incline of angle 30° by a force of 80 N parallel to the incline. Find the acceleration. Solution: Forces along the incline: $F - mg\\sin\\theta = ma$. $80 - 10 \\times 9.8 \\times \\sin 30° = 10a$. $80 - 49 = 10a$, so $a = 3.1$ m/s$^2$ up the incline.",
+    "An elevator of mass 500 kg is suspended by a cable. Find the tension when the elevator (a) accelerates upward at 2 m/s$^2$, (b) moves at constant velocity, (c) accelerates downward at 2 m/s$^2$. Solution: (a) $T - mg = ma$, $T = m(g+a) = 500(9.8+2) = 5900$ N. (b) $a = 0$, $T = mg = 500 \\times 9.8 = 4900$ N. (c) $mg - T = ma$, $T = m(g-a) = 500(9.8-2) = 3900$ N.",
+    "Two masses $m_1 = 4$ kg and $m_2 = 6$ kg are connected by a string over a frictionless pulley (Atwood machine). Find the acceleration and tension. Solution: $a = \\frac{(m_2 - m_1)g}{m_1 + m_2} = \\frac{(6-4) \\times 9.8}{10} = 1.96$ m/s$^2$. $T = \\frac{2m_1 m_2 g}{m_1 + m_2} = \\frac{2 \\times 4 \\times 6 \\times 9.8}{10} = 47.04$ N.",
+    "A 2 kg block rests on a rough horizontal surface ($\\mu_s = 0.5$, $\\mu_k = 0.4$). A horizontal force of 8 N is applied. Find the friction force and acceleration. Solution: Maximum static friction $f_{s,max} = \\mu_s N = 0.5 \\times 2 \\times 9.8 = 9.8$ N. Since applied force (8 N) < $f_{s,max}$ (9.8 N), the block does not move. Friction force = 8 N (equal and opposite to the applied force). Acceleration = 0."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Newton's laws were published in his Principia Mathematica in 1687 and remain the foundation of classical mechanics.",
+    "Newton's second law in the form $\\vec{F} = \\frac{d\\vec{p}}{dt}$ is more general than $\\vec{F} = m\\vec{a}$ — it correctly describes systems with changing mass, such as rockets.",
+    "The concept of pseudo force is essential for solving problems in accelerating frames like elevators, rotating platforms, and accelerating vehicles.",
+    "Newton's third law implies conservation of momentum for an isolated system — the two laws are deeply connected.",
+    "In real-world applications, Newton's laws are supplemented by empirical force laws: friction ($f = \\mu N$), spring force ($F = -kx$), and drag force ($F \\propto v$ or $v^2$)."
   ],
   "animation3D": "dynamics",
   "motionGraphics": "dynamics"

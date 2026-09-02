@@ -9,22 +9,34 @@
     "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.",
     "**Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature).",
     "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity. The $I$-$V$ curve bends because $R$ is not constant.",
-    "**Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point."
+    "**Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point.",
+    "**Forward bias diode:** current flows easily once the voltage exceeds the threshold ($\\approx 0.7$ V for silicon, $\\approx 0.3$ V for germanium). Below threshold, very little current flows.",
+    "**Reverse bias diode:** almost no current flows (except a tiny leakage current). At the breakdown voltage, current increases sharply and the diode may be damaged.",
+    "**Thermistor:** a semiconductor device whose resistance decreases sharply with temperature (NTC type). Used as temperature sensors and inrush current limiters.",
+    "**Zener diode:** operates in reverse breakdown at a precise voltage. It maintains a nearly constant voltage across it, used as a voltage regulator.",
+    "**Filament lamp $I$-$V$ curve:** starts linearly at low voltage (cool filament, low resistance). At higher voltages, the curve bends toward the voltage axis as the filament heats and resistance increases.",
+    "**Temperature coefficient of filament:** tungsten has $\\alpha \\approx 0.0045$ $^{\\circ}$C$^{-1}$. A 100 W, 230 V bulb has cold resistance of about $50\\,\\Omega$ but hot resistance of $529\\,\\Omega$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Ohm's law $V = IR$ is a definition of resistance, not a law that all materials obey. Only ohmic conductors have a linear $I$-$V$ relationship. For non-ohmic devices, $R = V/I$ is still defined but varies.",
+    "A filament lamp becomes a better conductor (lower resistance) when cold. This is why bulbs often burn out at the moment they are switched on — the initial current surge is 10 times the steady-state current.",
+    "The dynamic resistance $dV/dI$ is different from the static resistance $V/I$. For a non-ohmic device, the static resistance is $V/I$ while the dynamic resistance is the slope of the $I$-$V$ curve at that point.",
+    "A diode is not simply a 'one-way valve' for current. In reverse bias, a tiny leakage current (nA to $\mu$A range) still flows. In forward bias, the current is exponentially related to voltage, not linearly.",
+    "Thermistors are not simply temperature-dependent resistors. Their resistance changes exponentially with temperature: $R = R_0 e^{\\beta(1/T - 1/T_0)}$, which makes them highly sensitive to small temperature changes."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A filament lamp has a resistance of $20\\,\\Omega$ when cold and $240\\,\\Omega$ when glowing at full brightness. If connected to a 12 V supply, find the current when cold and when glowing. Solution: Cold: $I = V/R = 12/20 = 0.6$ A. Glowing: $I = V/R = 12/240 = 0.05$ A. The inrush current is 12 times the steady-state current.",
+    "A silicon diode has a forward voltage drop of 0.7 V at a current of 10 mA. It is connected in series with a 500 $\Omega$ resistor and a 5 V battery. Find the current. Solution: The diode drops 0.7 V, so the resistor sees $5 - 0.7 = 4.3$ V. $I = 4.3/500 = 8.6$ mA.",
+    "A thermistor has resistance $R_0 = 10\\,\\text{k}\\Omega$ at 25$^{\\circ}$C and $R = 2\\,\\text{k}\\Omega$ at 50$^{\\circ}$C. Find the resistance at 0$^{\\circ}$C assuming a linear temperature coefficient. Solution: $\\alpha = (R_0 - R)/(R \\cdot \\Delta T) = (10000 - 2000)/(2000 \\times 25) = 0.16$ $^{\\circ}$C$^{-1}$. At 0$^{\\circ}$C: $R = R_0/(1 + \\alpha \\cdot 25) = 10000/(1 + 4) = 2000\\,\\Omega$.",
+    "A $I$-$V$ graph of a device shows that at $V = 3$ V, the current is 0.15 A, and the tangent at that point has slope $dI/dV = 0.02$ A/V. Find the static resistance and dynamic resistance. Solution: Static resistance $R_s = V/I = 3/0.15 = 20\\,\\Omega$. Dynamic resistance $R_d = 1/(dI/dV) = 1/0.02 = 50\\,\\Omega$.",
+    "A Zener diode with breakdown voltage 6 V is connected in parallel with a load resistor of 1 k$\Omega$ across a 10 V battery with series resistor of 500 $\Omega$. Find the current through the Zener diode. Solution: Voltage across load: 6 V (clamped by Zener). Current through 500 $\Omega$: $I = (10 - 6)/500 = 8$ mA. Current through load: $I_L = 6/1000 = 6$ mA. Current through Zener: $I_Z = 8 - 6 = 2$ mA."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "A tungsten filament lamp has a resistance that changes by a factor of 10-15 between cold and hot, making it a classic example of non-ohmic behavior due to temperature-dependent resistivity.",
+    "The threshold voltage of a silicon diode is approximately 0.7 V because this is the energy needed to overcome the potential barrier of the p-n junction, corresponding to the band gap energy of silicon.",
+    "Semiconductors have a negative temperature coefficient of resistance (NTC thermistors) because more charge carriers are thermally excited across the band gap, increasing conductivity.",
+    "Ohmic materials include most metals at constant temperature. Non-ohmic materials include all semiconductors, electrolytes, and any device where temperature or other conditions change with current.",
+    "The $I$-$V$ characteristic of a diode is exponential: $I = I_0(e^{eV/kT} - 1)$, where $I_0$ is the reverse saturation current, $k$ is Boltzmann's constant, and $T$ is temperature."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits"

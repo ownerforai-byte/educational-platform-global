@@ -1,30 +1,36 @@
 {
-  "title": "Angle Bisector â€” Verifying with the tan Î¸ Method",
+  "title": "Angle Bisector — Verifying with the tan θ Method",
   "unitSlug": "analytic-geometry",
   "topicSlug": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines",
   "topicTitle": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
   "relevance": 71,
   "notes": [
-    "As a cross-check, find the angle Î¸ between one of the original lines and one candidate bisector using: tan Î¸ = |(mâ‚ âˆ’ m_b)/(1 + mâ‚Â·m_b)|, where mâ‚ is the original line's slope and m_b is the bisector's slope",
-    "**If tan Î¸ < 1** (Î¸ < 45Â°): since Î¸ is half the angle between the two original lines, the total angle is less than 90Â°, so this bisector is the **acute** angle bisector",
-    "**If tan Î¸ > 1** (Î¸ > 45Â°): this bisector is the **obtuse** angle bisector",
-    "**Worked check:** slope of Bisector 1 (6x + 6y âˆ’ 1 = 0) is m_b = âˆ’6/6 = âˆ’1; with the original line's slope mâ‚ = âˆ’1/2: tan Î¸ = |(âˆ’1/2 âˆ’ (âˆ’1))/(1 + (âˆ’1/2)(âˆ’1))| = |(1/2)/(3/2)| = 1/3",
-    "Since tan Î¸ = 1/3 < 1, this confirms 6x + 6y âˆ’ 1 = 0 is definitively the **acute angle bisector** â€” matching the aâ‚aâ‚‚ + bâ‚bâ‚‚ method"
+    "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope",
+    "**If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector",
+    "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector",
+    "**Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3",
+    "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method",
+    "**Angle between two lines formula:** For lines with slopes m₁ and m₂: $$\\tan \\theta = \\left| \\frac{m_1 - m_2}{1 + m_1 m_2} \\right|$$",
+    "**When the bisector is at exactly 45° to the original line**, the two original lines are perpendicular (angle between them is 90°). This happens when a₁a₂ + b₁b₂ = 0.",
+    "**Special case:** If one of the original lines is vertical (undefined slope), use the angle formula θ = |90° − tan⁻¹(m)| or work directly with the angle from the x-axis.",
+    "**Summary of two methods:** (1) a₁a₂ + b₁b₂ method: fast, direct, no slope computation needed. (2) tan θ verification: universal, works as a cross-check, but requires slope computation.",
+    "**Key insight:** The bisector divides the angle between two lines into two equal parts. If the angle between the lines is θ, each half-angle is θ/2. So tan(θ/2) < 1 means θ < 90° (acute), and tan(θ/2) > 1 means θ > 90° (obtuse)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "tan θ < 1 does NOT mean the angle is small in absolute terms — it means θ < 45°, which means the full angle between the lines is < 90° (acute).",
+    "When using the tan θ formula, always take the absolute value. The unsigned angle between lines is always between 0° and 90° by convention.",
+    "Do not confuse the angle between a bisector and one original line (θ/2) with the angle between the two original lines (θ). The bisector formula gives you the half-angle.",
+    "If m₁ · m₂ = −1, the lines are perpendicular and tan θ is undefined (infinite) — this means θ = 90°."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Verify that the obtuse bisector 2x − 2y + 19 = 0 makes an angle > 45° with the line −x − 2y + 3 = 0.",
+    "Find the acute angle bisector of y = 2x + 1 and y = −x + 3 using both the a₁a₂ + b₁b₂ method and tan θ verification.",
+    "Show that if the angle between two lines is 60°, then each bisector makes an angle of 30° with the original lines."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The tan θ method is universally applicable to any pair of lines, while the a₁a₂ + b₁b₂ shortcut requires lines in standard form with positive constants.",
+    "When the angle between lines is exactly 90°, both bisectors are at 45° and neither is acute nor obtuse.",
+    "In competitive exams, the a₁a₂ + b₁b₂ method is preferred for speed, while the tan θ method is preferred for verification."
   ],
   "animation3D": "analytic-geometry",
   "motionGraphics": "analytic-geometry"
