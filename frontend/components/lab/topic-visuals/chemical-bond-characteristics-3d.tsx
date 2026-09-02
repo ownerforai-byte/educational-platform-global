@@ -295,8 +295,8 @@ export function BondCharacteristicsVisual() {
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <p><strong className="text-foreground">Bond length:</strong> Distance between nuclei of bonded atoms. Shorter bonds are stronger (C≡C < C=C < C-C).</p>
-            <p><strong className="text-foreground">Bond energy:</strong> Energy required to break a bond. Stronger bonds require more energy (C≡C > C=C > C-C).</p>
+            <p><strong className="text-foreground">Bond length:</strong> Distance between nuclei of bonded atoms. Shorter bonds are stronger (C≡C &lt; C=C &lt; C-C).</p>
+            <p><strong className="text-foreground">Bond energy:</strong> Energy required to break a bond. Stronger bonds require more energy (C≡C &gt; C=C &gt; C-C).</p>
             <p><strong className="text-foreground">Bond order:</strong> Number of chemical bonds between atoms. Single (1), double (2), triple (3).</p>
             <p><strong className="text-foreground">Relationship:</strong> Higher bond order = shorter bond length = higher bond energy.</p>
             <p><strong className="text-foreground">Factors:</strong> Atomic size, electronegativity, and hybridization affect bond characteristics.</p>

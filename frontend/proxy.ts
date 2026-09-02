@@ -66,7 +66,7 @@ export function proxy(request: NextRequest) {
     "content-security-policy",
     // 'unsafe-inline' and 'unsafe-eval' are needed for Next.js dev mode (Turbopack HMR).
     // They are not required in production builds.
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' http://localhost:3001 https://tsvbksfegvdjwczzfdcx.supabase.co https://ravikisan-backend.onrender.com; frame-src 'none';"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'} https://tsvbksfegvdjwczzfdcx.supabase.co; frame-src 'none';"
   );
 
   return response;

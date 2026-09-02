@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: educational-platform-backend
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm run build -w backend
+    startCommand: npm run start -w backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        value: https://ravikishan.com.np
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 60000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 120
+      - key: SUPABASE_URL
+        fromService:
+          type: env
+          name: educational-platform-backend
+          envVarKey: SUPABASE_URL
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        fromService:
+          type: env
+          name: educational-platform-backend
+          envVarKey: SUPABASE_SERVICE_ROLE_KEY
+      - key: GEMINI_API_KEY
+        fromService:
+          type: env
+          name: educational-platform-backend
+          envVarKey: GEMINI_API_KEY
+      - key: AGNES_API_KEY
+        fromService:
+          type: env
+          name: educational-platform-backend
+          envVarKey: AGNES_API_KEY
