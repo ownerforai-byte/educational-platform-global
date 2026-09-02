@@ -5,6 +5,46 @@ import { ChapterAnimation } from "@/components/lab/chapter-animation";
 import { StraightLineVisual } from "@/components/lab/topic-visuals/straight-line";
 import { CoordinatesSpaceVisual } from "@/components/lab/topic-visuals/coordinates-space";
 import { VectorOperationsVisual } from "@/components/lab/topic-visuals/vector-operations";
+import { VectorAddition3DVisual } from "@/components/lab/topic-visuals/vector-addition-3d";
+import { VectorScalar3DVisual } from "@/components/lab/topic-visuals/vector-scalar-3d";
+import { VectorDot3DVisual } from "@/components/lab/topic-visuals/vector-dot-3d";
+import { VectorCross3DVisual } from "@/components/lab/topic-visuals/vector-cross-3d";
+import { VectorTriple3DVisual } from "@/components/lab/topic-visuals/vector-triple-3d";
+import { VectorCollinear3DVisual } from "@/components/lab/topic-visuals/vector-collinear-3d";
+import { VectorCoplanar3DVisual } from "@/components/lab/topic-visuals/vector-coplanar-3d";
+import { VectorScalarQuantities3DVisual } from "@/components/lab/topic-visuals/vector-scalar-quantities-3d";
+import { VectorAlgebra3DVisual } from "@/components/lab/topic-visuals/vector-algebra-3d";
+import { VectorApplications3DVisual } from "@/components/lab/topic-visuals/vector-applications-3d";
+import { LimitsConcept3D } from "@/components/lab/topic-visuals/limits-concept-3d";
+import { LimitsStandard3D } from "@/components/lab/topic-visuals/limits-standard-3d";
+import { LimitsIndeterminate3D } from "@/components/lab/topic-visuals/limits-indeterminate-3d";
+import { Continuity3D } from "@/components/lab/topic-visuals/continuity-3d";
+import { DerivativeGeometric3D } from "@/components/lab/topic-visuals/derivative-geometric-3d";
+import { DerivativeRules3D } from "@/components/lab/topic-visuals/derivative-rules-3d";
+import { DerivativeParametric3D } from "@/components/lab/topic-visuals/derivative-parametric-3d";
+import { DerivativeHigher3D } from "@/components/lab/topic-visuals/derivative-higher-3d";
+import { DerivativeLogarithmic3D } from "@/components/lab/topic-visuals/derivative-logarithmic-3d";
+import { Differentiability3D } from "@/components/lab/topic-visuals/differentiability-3d";
+import { IonicBondVisual } from "@/components/lab/topic-visuals/chemical-bond-ionic-3d";
+import { CovalentBondVisual } from "@/components/lab/topic-visuals/chemical-bond-covalent-3d";
+import { LewisDotVisual } from "@/components/lab/topic-visuals/chemical-bond-lewis-3d";
+import { VSEPRVisual } from "@/components/lab/topic-visuals/chemical-bond-vsepr-3d";
+import { HybridizationVisual } from "@/components/lab/topic-visuals/chemical-bond-hybridization-3d";
+import { ResonanceVisual } from "@/components/lab/topic-visuals/chemical-bond-resonance-3d";
+import { BondCharacteristicsVisual } from "@/components/lab/topic-visuals/chemical-bond-characteristics-3d";
+import { MetallicBondVisual } from "@/components/lab/topic-visuals/chemical-bond-metallic-3d";
+import { VanderWaalsVisual } from "@/components/lab/topic-visuals/chemical-bond-vdw-3d";
+import { VBTVisual } from "@/components/lab/topic-visuals/chemical-bond-vbt-3d";
+import { OpticsReflection3d } from "@/components/lab/topic-visuals/optics-reflection-3d";
+import { OpticsRefraction3d } from "@/components/lab/topic-visuals/optics-refraction-3d";
+import { OpticsTIR3d } from "@/components/lab/topic-visuals/optics-tir-3d";
+import { OpticsLens3d } from "@/components/lab/topic-visuals/optics-lens-3d";
+import { OpticsPrism3d } from "@/components/lab/topic-visuals/optics-prism-3d";
+import { OpticsDispersion3d } from "@/components/lab/topic-visuals/optics-dispersion-3d";
+import { OpticsPower3d } from "@/components/lab/topic-visuals/optics-power-3d";
+import { OpticsLensMaker3d } from "@/components/lab/topic-visuals/optics-lens-maker-3d";
+import { OpticsTelescope3d } from "@/components/lab/topic-visuals/optics-telescope-3d";
+import { OpticsMicroscope3d } from "@/components/lab/topic-visuals/optics-microscope-3d";
 import { LimitsContinuityVisual } from "@/components/lab/topic-visuals/limits-continuity";
 import { DerivativeVisual } from "@/components/lab/topic-visuals/derivative-visual";
 import { IntegralAreaVisual } from "@/components/lab/topic-visuals/integral-area";
@@ -290,18 +330,18 @@ const CHEMISTRY_11: LabComponentMap = {
   "iupac-classification-of-elements": makeTopic(PeriodicTableVisual, "IUPAC Classification"),
   "nuclear-charge-and-effective-nuclear-charge": makeTopic(PeriodicTableVisual, "Nuclear Charge"),
   "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-electronegativity-metallic-characters-general-trend-and-explanation-only": makeTopic(PeriodicTableVisual, "Periodic Trends"),
-  "chemical-bonding-and-shapes-of-molecules": makeTopic(ChemicalBondingVisual, "Chemical Bonding"),
-  "valence-shell-valence-electron-and-octet-theory": makeTopic(ChemicalBondingVisual, "Octet Theory"),
-  "ionic-bond-and-its-properties": makeTopic(ChemicalBondingVisual, "Ionic Bond"),
-  "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": makeTopic(ChemicalBondingVisual, "Covalent Bond"),
-  "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements": makeTopic(ChemicalBondingVisual, "Lewis Dot Structures"),
-  "resonance": makeTopic(ChemicalBondingVisual, "Resonance"),
-  "vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3": makeTopic(ChemicalBondingVisual, "VSEPR Theory"),
-  "elementary-idea-of-valence-bond-theory": makeTopic(ChemicalBondingVisual, "Valence Bond Theory"),
-  "hybridization-involving-s-and-p-orbitals-only": makeTopic(ChemicalBondingVisual, "Hybridization"),
-  "bond-characteristics-bond-length-ionic-character-dipole-moment": makeTopic(ChemicalBondingVisual, "Bond Characteristics"),
-  "vander-waals-force-and-molecular-solids-hydrogen-bonding-and-its-application": makeTopic(ChemicalBondingVisual, "Vander Waals & H-bond"),
-  "metallic-bonding-and-properties-of-metallic-solids": makeTopic(ChemicalBondingVisual, "Metallic Bonding"),
+  "chemical-bonding-and-shapes-of-molecules": makeTopic(BondCharacteristicsVisual, "Chemical Bonding"),
+  "valence-shell-valence-electron-and-octet-theory": makeTopic(HybridizationVisual, "Octet Theory"),
+  "ionic-bond-and-its-properties": makeTopic(IonicBondVisual, "Ionic Bond"),
+  "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": makeTopic(CovalentBondVisual, "Covalent Bond"),
+  "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements": makeTopic(LewisDotVisual, "Lewis Dot Structures"),
+  "resonance": makeTopic(ResonanceVisual, "Resonance"),
+  "vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3": makeTopic(VSEPRVisual, "VSEPR Theory"),
+  "elementary-idea-of-valence-bond-theory": makeTopic(VBTVisual, "Valence Bond Theory"),
+  "hybridization-involving-s-and-p-orbitals-only": makeTopic(HybridizationVisual, "Hybridization"),
+  "bond-characteristics-bond-length-ionic-character-dipole-moment": makeTopic(BondCharacteristicsVisual, "Bond Characteristics"),
+  "vander-waals-force-and-molecular-solids-hydrogen-bonding-and-its-application": makeTopic(VanderWaalsVisual, "Vander Waals & H-bond"),
+  "metallic-bonding-and-properties-of-metallic-solids": makeTopic(MetallicBondVisual, "Metallic Bonding"),
   "oxidation-and-reduction": make("oxidation", "Oxidation & Reduction", "oxidation-and-reduction", "chemistry"),
   "general-and-electronic-concept-of-oxidation-and-reduction": make("oxidation", "Concepts of Redox", "oxidation-and-reduction", "chemistry"),
   "oxidation-number-and-rules-for-assigning-oxidation-number": make("oxidation number", "Oxidation Number", "oxidation-and-reduction", "chemistry"),
@@ -543,17 +583,35 @@ const MATH_11: LabComponentMap = {
   "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines": makeTopic(StraightLineVisual, "Pair of Straight Lines"),
   "coordinates-in-space-points-in-space-distance-between-two-points-direction-cosines-and-ratios-of-a-line": makeTopic(CoordinatesSpaceVisual, "Coordinates in Space"),
   "vectors": makeTopic(VectorOperationsVisual, "Vectors"),
-  "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors": makeTopic(VectorOperationsVisual, "Collinear & Coplanar Vectors"),
+  "vector-addition-and-scalar-multiplication": makeTopic(VectorAddition3DVisual, "Vector Addition"),
+  "scalar-vectors-and-its-applications": makeTopic(VectorScalar3DVisual, "Scalar & Vector"),
+  "dot-product-scalar-product-and-its-applications": makeTopic(VectorDot3DVisual, "Dot Product"),
+  "cross-product-vector-product-and-its-applications": makeTopic(VectorCross3DVisual, "Cross Product"),
+  "scalar-and-vector-triple-products": makeTopic(VectorTriple3DVisual, "Triple Products"),
+  "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors": makeTopic(VectorCollinear3DVisual, "Collinear & Coplanar"),
+  "coplanar-vectors": makeTopic(VectorCoplanar3DVisual, "Coplanar Vectors"),
+  "types-of-vectors": makeTopic(VectorScalarQuantities3DVisual, "Types of Vectors"),
+  "algebra-of-vectors": makeTopic(VectorAlgebra3DVisual, "Vector Algebra"),
+  "applications-of-vectors": makeTopic(VectorApplications3DVisual, "Vector Applications"),
   "linear-combination-of-vectors-linearly-dependent-and-independent-vectors": makeTopic(VectorOperationsVisual, "Linear Combination"),
   "statistics-and-probability": make("measure of dispersion", "Statistics & Probability", "statistics-and-probability", "mathematics"),
   "measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearsons-coefficient-of-skewness": makeTopic(MeasureDispersionVisual, "Measure of Dispersion"),
   "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability-without-proof": makeTopic(ProbabilityBasicVisual, "Probability"),
   "calculus": make("calculus", "Calculus", "calculus", "mathematics"),
-  "limits-and-continuity-limits-of-a-function-indeterminate-forms-alal-form-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithal-functions": makeTopic(LimitsContinuityVisual, "Limits"),
-  "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function": makeTopic(LimitsContinuityVisual, "Continuity"),
-  "derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithal-functions-by-definition-simple-forms": makeTopic(DerivativeVisual, "Derivatives"),
-  "rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivatives": makeTopic(DerivativeVisual, "Differentiation Rules"),
-  "geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extreme-values-of-a-function-concavity-points-of-inflexion": makeTopic(DerivativeVisual, "Geometric Interpretation"),
+  "limits-and-continuity-limits-of-a-function-indeterminate-forms-alal-form-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithal-functions": makeTopic(LimitsConcept3D, "Limits"),
+  "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function": makeTopic(Continuity3D, "Continuity"),
+  "standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic": makeTopic(LimitsStandard3D, "Standard Limits"),
+  "indeterminate-forms": makeTopic(LimitsIndeterminate3D, "Indeterminate Forms"),
+  "differentiability-and-its-relation-with-continuity": makeTopic(Differentiability3D, "Differentiability"),
+  "differentiation": makeTopic(DerivativeRules3D, "Differentiation"),
+  "derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functions": makeTopic(DerivativeGeometric3D, "Derivatives"),
+  "rules-of-differentiation-product-rule-quotient-rule-chain-rule": makeTopic(DerivativeRules3D, "Differentiation Rules"),
+  "derivatives-of-parametric-and-implicit-functions": makeTopic(DerivativeParametric3D, "Parametric & Implicit"),
+  "higher-order-derivatives": makeTopic(DerivativeHigher3D, "Higher Order Derivatives"),
+  "logarithmic-differentiation": makeTopic(DerivativeLogarithmic3D, "Logarithmic Differentiation"),
+  "geometric-interpretation-tangent-and-normal": makeTopic(DerivativeGeometric3D, "Tangent & Normal"),
+  "monotonicity-maxima-and-minima-first-and-second-derivative-tests": makeTopic(DerivativeGeometric3D, "Maxima & Minima"),
+  "applications-rate-of-change-approximation-error-estimation": makeTopic(DerivativeGeometric3D, "Applications"),
   "anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-methods": makeTopic(IntegralAreaVisual, "Anti-derivatives"),
   "the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-curves": makeTopic(IntegralAreaVisual, "Definite Integrals"),
   "computational-methods-or-mechanics": makeTopic(NumericalComputationVisual, "Computational Methods"),
@@ -602,7 +660,16 @@ const PHYSICS_12: LabComponentMap = {
   "lcr-series-circuit-and-power-factor": make("lcr", "LCR Circuit", "alternating-current", "physics"),
   "transformer-principle-types-and-losses": make("transformer", "Transformer", "alternating-current", "physics"),
   "ray-optics": makeTopic(OpticsVisual, "Ray Optics"),
-  "reflection-at-plane-and-curved-surfaces-mirrors": makeTopic(OpticsVisual, "Reflection at Mirrors"),
+  "reflection-at-plane-and-curved-surfaces-mirrors": makeTopic(OpticsReflection3d, "Reflection at Mirrors"),
+  "laws-of-refraction-refractive-index": makeTopic(OpticsRefraction3d, "Laws of Refraction"),
+  "total-internal-reflection": makeTopic(OpticsTIR3d, "Total Internal Reflection"),
+  "spherical-lenses-angular-magnification": makeTopic(OpticsLens3d, "Spherical Lenses"),
+  "refraction-through-prisms": makeTopic(OpticsPrism3d, "Refraction through Prisms"),
+  "dispersion-and-chromatic-aberration": makeTopic(OpticsDispersion3d, "Dispersion"),
+  "power-of-lens-and-mirror": makeTopic(OpticsPower3d, "Power of Lens"),
+  "lens-makers-formula": makeTopic(OpticsLensMaker3d, "Lens Maker's Formula"),
+  "telescope-and-microscope": makeTopic(OpticsTelescope3d, "Telescope"),
+  "optical-instruments-microscope-and-telescope": makeTopic(OpticsMicroscope3d, "Microscope"),
   "refraction-at-plane-surfaces-total-internal-reflection": makeTopic(OpticsVisual, "TIR"),
   "refraction-through-prisms-angle-of-deviation-and-minimum-deviation": makeTopic(OpticsVisual, "Prism Deviation"),
   "thin-lenses-lens-maker-s-formula-and-power-of-lens": makeTopic(OpticsVisual, "Thin Lenses"),
@@ -694,22 +761,22 @@ const CHEMISTRY_12: LabComponentMap = {
 };
 
 const MATH_12: LabComponentMap = {
-  "limits-and-continuity": makeTopic(LimitsContinuityVisual, "Limits & Continuity"),
-  "concept-of-limit-geometric-and-physical-interpretation": makeTopic(LimitsContinuityVisual, "Concept of Limit"),
-  "standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic": makeTopic(LimitsContinuityVisual, "Standard Limits"),
-  "indeterminate-forms": makeTopic(LimitsContinuityVisual, "Indeterminate Forms"),
-  "continuity-of-algebraic-trigonometric-exponential-logarithmic-functions": makeTopic(LimitsContinuityVisual, "Continuity"),
-  "differentiability-and-its-relation-with-continuity": makeTopic(LimitsContinuityVisual, "Differentiability"),
-  "differentiation": makeTopic(DerivativeVisual, "Differentiation"),
-  "derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functions": makeTopic(DerivativeVisual, "Derivatives"),
-  "rules-of-differentiation-product-rule-quotient-rule-chain-rule": makeTopic(DerivativeVisual, "Differentiation Rules"),
-  "derivatives-of-parametric-and-implicit-functions": makeTopic(DerivativeVisual, "Parametric & Implicit"),
-  "higher-order-derivatives": makeTopic(DerivativeVisual, "Higher Order Derivatives"),
-  "logarithmic-differentiation": makeTopic(DerivativeVisual, "Logarithmic Differentiation"),
+  "limits-and-continuity": makeTopic(LimitsConcept3D, "Limits & Continuity"),
+  "concept-of-limit-geometric-and-physical-interpretation": makeTopic(LimitsConcept3D, "Concept of Limit"),
+  "standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic": makeTopic(LimitsStandard3D, "Standard Limits"),
+  "indeterminate-forms": makeTopic(LimitsIndeterminate3D, "Indeterminate Forms"),
+  "continuity-of-algebraic-trigonometric-exponential-logarithmic-functions": makeTopic(Continuity3D, "Continuity"),
+  "differentiability-and-its-relation-with-continuity": makeTopic(Differentiability3D, "Differentiability"),
+  "differentiation": makeTopic(DerivativeRules3D, "Differentiation"),
+  "derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functions": makeTopic(DerivativeGeometric3D, "Derivatives"),
+  "rules-of-differentiation-product-rule-quotient-rule-chain-rule": makeTopic(DerivativeRules3D, "Differentiation Rules"),
+  "derivatives-of-parametric-and-implicit-functions": makeTopic(DerivativeParametric3D, "Parametric & Implicit"),
+  "higher-order-derivatives": makeTopic(DerivativeHigher3D, "Higher Order Derivatives"),
+  "logarithmic-differentiation": makeTopic(DerivativeLogarithmic3D, "Logarithmic Differentiation"),
   "leibnizs-theorem-for-nth-derivative": makeTopic(DerivativeVisual, "Leibniz's Theorem"),
-  "geometric-interpretation-tangent-and-normal": makeTopic(DerivativeVisual, "Tangent & Normal"),
-  "monotonicity-maxima-and-minima-first-and-second-derivative-tests": makeTopic(DerivativeVisual, "Maxima & Minima"),
-  "applications-rate-of-change-approximation-error-estimation": makeTopic(DerivativeVisual, "Applications"),
+  "geometric-interpretation-tangent-and-normal": makeTopic(DerivativeGeometric3D, "Tangent & Normal"),
+  "monotonicity-maxima-and-minima-first-and-second-derivative-tests": makeTopic(DerivativeGeometric3D, "Maxima & Minima"),
+  "applications-rate-of-change-approximation-error-estimation": makeTopic(DerivativeGeometric3D, "Applications"),
   "integration": makeTopic(IntegralAreaVisual, "Integration"),
   "integration-as-inverse-of-differentiation": makeTopic(IntegralAreaVisual, "Integration Basics"),
   "standard-integrals-and-methods-substitution-parts-partial-fractions": makeTopic(IntegralAreaVisual, "Integration Methods"),
