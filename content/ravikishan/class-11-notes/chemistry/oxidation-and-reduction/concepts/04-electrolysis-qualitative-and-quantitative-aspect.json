@@ -1,30 +1,43 @@
 {
-  "title": "Electrolysis â€” Qualitative and Quantitative Aspects",
+  "title": "Electrolysis — Qualitative and Quantitative Aspects",
   "unitSlug": "oxidation-and-reduction",
   "topicSlug": "electrolysis-qualitative-and-quantitative-aspect",
   "topicTitle": "Electrolysis: qualitative aspect; quantitative aspect (Faraday's laws of electrolysis)",
   "relevance": 100,
   "notes": [
-    "**Electrolysis:** chemical decomposition of an electrolyte by passing electric current through it. Oxidation occurs at the anode; reduction at the cathode.",
-    "**Qualitative prediction:** cations move to cathode and get reduced; anions move to anode and get oxidized. The ease of discharge depends on electrode potentials and concentrations.",
-    "**Faraday's First Law:** the mass of substance deposited or liberated at an electrode is directly proportional to the quantity of electricity passed: $m = ZQ$, where $Z$ is the electrochemical equivalent.",
-    "**Faraday's Second Law:** for the same quantity of electricity, the masses of different substances deposited are proportional to their chemical equivalent weights: $m_1/m_2 = E_1/E_2$.",
-    "**Faraday constant:** $F = 96485\\,\\text{C/mol}$. One mole of electrons carries one Faraday of charge."
+    "**Definition of electrolysis:** Electrolysis is the process of decomposing an electrolyte (an ionic substance that conducts electricity when molten or dissolved) by passing a direct electric current through it. Chemical reactions occur at two electrodes: **oxidation at the anode** (positive electrode) and **reduction at the cathode** (negative electrode).",
+    "**Qualitative aspect — What gets discharged:** The species discharged at each electrode depends on (1) standard electrode potentials, (2) concentration of ions, and (3) overpotential. In aqueous $CuCl_2$ electrolysis: at cathode, $Cu^{2+}$ is reduced to Cu (not $H_2$ from water) because $Cu^{2+}/Cu$ has a higher reduction potential (+0.34 V) than $H^+/H_2$ (0.00 V). At anode, $Cl^-$ is oxidised to $Cl_2$.",
+    "**Electrolysis of molten NaCl (Downs cell):** Cathode: $Na^+ + e^- \\rightarrow Na(l)$. Anode: $2Cl^- \\rightarrow Cl_2(g) + 2e^-$. Overall: $2NaCl(l) \\rightarrow 2Na(l) + Cl_2(g)$. This is how sodium metal and chlorine gas are produced industrially.",
+    "**Electrolysis of aqueous NaCl (chlor-alkali process):** Cathode: $2H_2O + 2e^- \\rightarrow H_2 + 2OH^-$ (water is reduced, not $Na^+$). Anode: $2Cl^- \\rightarrow Cl_2 + 2e^-$. Overall: $2NaCl + 2H_2O \\rightarrow 2NaOH + H_2 + Cl_2$. The three products — NaOH, $H_2$, and $Cl_2$ — are all industrially valuable.",
+    "**Faraday's First Law of Electrolysis:** The mass ($m$) of a substance deposited or liberated at an electrode is directly proportional to the quantity of electricity (charge, Q) passed through the electrolyte: $m = ZQ$, where $Z$ is the **electrochemical equivalent** of the substance. Since $Q = I \\times t$ (current × time in seconds): $m = ZIt$.",
+    "**Faraday's Second Law of Electrolysis:** When the same quantity of electricity is passed through different electrolytes, the masses of substances deposited are proportional to their **equivalent weights** ($E$): $\\dfrac{m_1}{m_2} = \\dfrac{E_1}{E_2} = \\dfrac{M_1/n_1}{M_2/n_2}$, where M is molar mass and n is the number of electrons transferred per ion.",
+    "**Faraday constant:** One mole of electrons carries a charge of **96,485 coulombs** (F). This is known as the Faraday constant. Therefore: $m = \\dfrac{M \\times I \\times t}{n \\times F}$, where M = molar mass, n = number of electrons in the half-reaction, F = 96,485 C/mol.",
+    "**Electrochemical equivalent (Z):** $Z = \\dfrac{M}{nF}$, the mass deposited by 1 coulomb of charge. For silver ($Ag^+ + e^- \\rightarrow Ag$): $Z = \\dfrac{108}{1 \\times 96485} = 1.118 \\times 10^{-3}$ g/C.",
+    "**Industrial application — Electroplating:** A thin layer of a desirable metal (e.g., chromium, nickel, gold, silver) is deposited on a conductive object by making it the cathode in an electrolytic cell. Example: Chromium plating uses $CrO_3$ in acidic solution; the cathode reaction is $Cr^{6+} + 6e^- \\rightarrow Cr$.",
+    "**Industrial application — Aluminium extraction (Hall-Héroult process):** Alumina ($Al_2O_3$) is dissolved in molten cryolite ($Na_3AlF_6$) and electrolysed at ~950°C. Cathode: $Al^{3+} + 3e^- \\rightarrow Al(l)$. Anode: $2O^{2-} \\rightarrow O_2 + 4e^-$ (the oxygen reacts with the carbon anode: $C + O_2 \\rightarrow CO_2$).",
+    "**Quantitative example:** How many grams of copper are deposited when a current of 2 A is passed through $CuSO_4$ solution for 1 hour? $Q = 2 \\times 3600 = 7200$ C. $n = 2$ for $Cu^{2+} + 2e^- \\rightarrow Cu$. $m = \\dfrac{63.5 \\times 7200}{2 \\times 96485} = 2.37$ g of Cu.",
+    "**Quantitative example:** How long must a current of 5 A be passed to deposit 1.5 g of silver from $AgNO_3$ solution? $n = 1$ for $Ag^+ + e^- \\rightarrow Ag$. $t = \\dfrac{m \\times n \\times F}{M \\times I} = \\dfrac{1.5 \\times 1 \\times 96485}{108 \\times 5} = 2680$ s ≈ 44.7 minutes."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Cathode vs. anode in electrolysis vs. galvanic cells:** In electrolysis (non-spontaneous), the cathode is negative and the anode is positive. In a galvanic/voltaic cell (spontaneous), the cathode is positive and the anode is negative. Remember: **reduction always occurs at the cathode**, oxidation always at the anode, regardless of cell type.",
+    "**Why $H_2$ forms at cathode in aqueous NaCl instead of Na:** Although $Na^+$ is present, water has a higher (less negative) reduction potential than $Na^+$, so water is preferentially reduced: $2H_2O + 2e^- \\rightarrow H_2 + 2OH^-$ ($E^\\circ = -0.83$ V) vs. $Na^+ + e^- \\rightarrow Na$ ($E^\\circ = -2.71$ V).",
+    "**Confusing electrochemical equivalent with equivalent weight:** Electrochemical equivalent (Z) is the mass deposited per coulomb (g/C). Equivalent weight (E) is the molar mass divided by the valency factor (g/eq). They are related by $Z = E/F$.",
+    "**Overlooking the carbon anode consumption in aluminium electrolysis:** In the Hall-Héroult process, the graphite anode is consumed as oxygen reacts with it to form $CO_2$. This is why anodes must be periodically replaced.",
+    "**Using wrong n value:** The n in Faraday's equation is the number of electrons per ion in the half-reaction. For $Al^{3+} + 3e^- \\rightarrow Al$, n = 3. For $Cu^{2+} + 2e^- \\rightarrow Cu$, n = 2. For $Ag^+ + e^- \\rightarrow Ag$, n = 1. Using the wrong n gives incorrect masses."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the mass of aluminium deposited when a current of 10 A is passed through molten $Al_2O_3$ (in cryolite) for 2 hours. **Solution:** $Q = 10 \\times 7200 = 72000$ C. $Al^{3+} + 3e^- \\rightarrow Al$, so n = 3, M = 27. $m = \\dfrac{27 \\times 72000}{3 \\times 96485} = 6.72$ g of Al.",
+    "How many coulombs of charge are required to deposit 5.0 g of silver from $AgNO_3$ solution? **Solution:** $Ag^+ + e^- \\rightarrow Ag$, n = 1, M = 108. $Q = \\dfrac{m \\times n \\times F}{M} = \\dfrac{5.0 \\times 1 \\times 96485}{108} = 4467$ C.",
+    "Two cells containing $AgNO_3$ and $CuSO_4$ are connected in series. If 1.08 g of Ag is deposited, calculate the mass of Cu deposited. **Solution:** Same charge passes through both. For Ag: $n_{eq} = \\dfrac{1.08}{108} = 0.01$ eq. For Cu: $m = 0.01 \\times \\dfrac{63.5}{2} = 0.01 \\times 31.75 = 0.3175$ g.",
+    "A current of 3 A is passed through $CuSO_4$ solution for 20 minutes. Calculate the mass of copper deposited. (M(Cu) = 63.5 g/mol, F = 96485 C/mol) **Solution:** $Q = 3 \\times 1200 = 3600$ C. $m = \\dfrac{63.5 \\times 3600}{2 \\times 96485} = 1.186$ g of Cu.",
+    "Calculate the time required to produce 0.500 dm³ of $Cl_2$ at STP by electrolysis of NaCl solution with a current of 5 A. **Solution:** Moles of $Cl_2$ = $0.500 / 22.4 = 0.02232$ mol. For $2Cl^- \\rightarrow Cl_2 + 2e^-$, n = 2 mol $e^-$ per mol $Cl_2$. $Q = 0.02232 \\times 2 \\times 96485 = 4307$ C. $t = Q/I = 4307/5 = 861.4$ s ≈ 14.4 minutes."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The Faraday constant (F = 96,485 C/mol) is one of the most important constants in electrochemistry, linking the macroscopic world of mass and current to the atomic world of moles and electrons.",
+    "Electrolysis is a non-spontaneous process that requires an external power source (DC supply) to drive the redox reaction, unlike a galvanic cell which produces electricity spontaneously.",
+    "The chlor-alkali industry, based on electrolysis of brine, produces approximately 60 million tonnes of NaOH, 35 million tonnes of $Cl_2$, and 5 million tonnes of $H_2$ worldwide each year.",
+    "In electrolysis, the nature of the electrode matters: inert electrodes (Pt, graphite) do not participate in the reaction, while active electrodes (Cu, Ag) can dissolve at the anode.",
+    "The relationship between equivalent weight, molar mass, and the number of electrons transferred is universal: $E = M/n$, where n is the change in oxidation number per formula unit."
   ],
   "animation3D": "oxidation-and-reduction",
   "motionGraphics": "oxidation-and-reduction"

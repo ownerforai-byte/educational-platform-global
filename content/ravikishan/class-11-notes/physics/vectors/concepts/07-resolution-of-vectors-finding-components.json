@@ -1,27 +1,59 @@
 {
-  "title": "Resolution of Vectors â€” Finding Components",
+  "title": "Resolution of Vectors — Finding Components",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 94,
   "notes": [
-    "**Fig(i): a force of 10 N acts at 30Â° from the y-axis.** Taking components along y and x: $F_y=F\\cos30Â°=10\\times(\\sqrt3/2)=5\\sqrt3\\,\\text{N}\\approx8.66\\,\\text{N}$, $F_x=F\\sin30Â°=10\\times0.5=5\\,\\text{N}$.",
-    "**Fig(ii): a force of 10 N acts at 45Â° from the y-axis.** $F_x=F\\cos45Â°=10\\times(1/\\sqrt2)=5\\sqrt2\\,\\text{N}\\approx7.07\\,\\text{N}$, $F_y=F\\sin45Â°=5\\sqrt2\\,\\text{N}\\approx7.07\\,\\text{N}$ (here $\\sin45Â°=\\cos45Â°$, so both components come out equal)."
+    "**Standard formulas**: for a vector $\\vec{F}$ of magnitude $F$ making angle $\\theta$ with the x-axis, the components are $F_x = F\\cos\\theta$ (along x-axis) and $F_y = F\\sin\\theta$ (along y-axis). The vector form is $\\vec{F} = F_x\\hat{i} + F_y\\hat{j}$.",
+    "**Angle measured from y-axis**: if the angle $\\phi$ is measured from the y-axis, the formulas become $F_y = F\\cos\\phi$ (adjacent to y) and $F_x = F\\sin\\phi$ (opposite to y). The component adjacent to the angle uses cosine; the opposite uses sine.",
+    "**Figure (i) — 10 N at 30° from y-axis**: $F_y = F\\cos30° = 10 \\cdot (\\sqrt{3}/2) = 5\\sqrt{3} \\approx 8.66\\,\\text{N}$, $F_x = F\\sin30° = 10 \\cdot 0.5 = 5\\,\\text{N}$. The y-component is larger because the angle is closer to the y-axis.",
+    "**Figure (ii) — 10 N at 45° from y-axis**: $F_x = F\\sin45° = 10 \\cdot (1/\\sqrt{2}) = 5\\sqrt{2} \\approx 7.07\\,\\text{N}$, $F_y = F\\cos45° = 5\\sqrt{2} \\approx 7.07\\,\\text{N}$. At 45° from y-axis (or from x-axis), both components are equal.",
+    "**Why the formulas change**: when the angle is from the x-axis, the x-component is 'adjacent' and uses cosine. When the angle is from the y-axis, the y-component is 'adjacent' and uses cosine. Always identify which axis the angle is measured from.",
+    "**SOH-CAH-TOA**: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent. Apply this to identify which trig function to use for each component.",
+    "**Special angle values to memorize**: $\\sin30° = \\cos60° = 1/2$, $\\cos30° = \\sin60° = \\sqrt{3}/2$, $\\sin45° = \\cos45° = 1/\\sqrt{2}$, $\\tan30° = 1/\\sqrt{3}$, $\\tan60° = \\sqrt{3}$.",
+    "**Components in 3D**: for a vector $\\vec{F}$ in 3D, $F_x = F\\cos\\alpha$, $F_y = F\\cos\\beta$, $F_z = F\\cos\\gamma$ where $\\alpha, \\beta, \\gamma$ are angles with x, y, z axes. The direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.",
+    "**Components for an inclined plane**: for a plane tilted at angle $\\theta$, the component of gravity along the plane is $g\\sin\\theta$ (down the slope) and perpendicular is $g\\cos\\theta$. This is a standard NEB problem.",
+    "**Sign convention for components**: components are positive in the direction of the positive axis. If a force points in the negative x direction, $F_x$ is negative. This is essential for solving equilibrium problems.",
+    "**Negative components**: if the angle $\\theta$ is between 90° and 180° (second quadrant), $\\cos\\theta < 0$, so $F_x$ is negative. Similarly, in the third and fourth quadrants, appropriate components become negative.",
+    "**Adding resolved components**: to find the resultant of multiple forces, resolve each into x and y components, then add: $R_x = \\sum F_{ix}$, $R_y = \\sum F_{iy}$, $R = \\sqrt{R_x^2 + R_y^2}$.",
+    "**Vector magnitude from components**: $F = \\sqrt{F_x^2 + F_y^2 + F_z^2}$. This is the 3D extension of the Pythagorean theorem.",
+    "**Example 1 (10 N at 60° from x-axis)**: $F_x = 10\\cos60° = 5\\,\\text{N}$, $F_y = 10\\sin60° = 5\\sqrt{3} \\approx 8.66\\,\\text{N}$. Compared to 30° from y-axis (which equals 60° from x-axis), the components are the same.",
+    "**Example 2 (15 N at 37° from x-axis, with $\\sin37°\\approx0.6$, $\\cos37°\\approx0.8$)**: $F_x = 15 \\cdot 0.8 = 12\\,\\text{N}$, $F_y = 15 \\cdot 0.6 = 9\\,\\text{N}$. The 3-4-5 triangle appears here, useful in physics problems.",
+    "**Component along an arbitrary direction**: to find the component of $\\vec{A}$ along a unit vector $\\hat{u}$ (any direction), use the dot product: $A_u = \\vec{A}\\cdot\\hat{u} = |\\vec{A}|\\cos\\alpha$, where $\\alpha$ is the angle between $\\vec{A}$ and $\\hat{u}$.",
+    "**Two key rules**: (1) Component along an axis = magnitude × cos(angle with axis). (2) If the angle is with the OTHER axis, use sine (since the two axes are perpendicular).",
+    "**Practical example — pulling a lawn roller**: pulling with force $F$ at angle $\\theta$ to the ground, the effective horizontal force is $F\\cos\\theta$ and the vertical lift is $F\\sin\\theta$. Pulling at an angle reduces ground reaction.",
+    "**Projectile launch at angle $\\theta$**: initial velocity $v_0$ resolves into $v_{0x} = v_0\\cos\\theta$ (horizontal) and $v_{0y} = v_0\\sin\\theta$ (vertical). These are the foundation of projectile motion analysis."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Component formula is always $F\\cos\\theta$ — The component along the axis the angle is measured from uses cosine. The component along the perpendicular axis uses sine. Both formulas change based on reference axis.",
+    "The angle 30° means the x-component is $F\\sin30°$ — It depends on which axis 30° is measured from. If 30° is from the x-axis, $F_x = F\\cos30°$ and $F_y = F\\sin30°$. If 30° is from the y-axis, the formulas swap.",
+    "Components are always positive — Components can be negative if the vector points in the negative direction of an axis. Sign indicates direction along that axis, not magnitude.",
+    "Angle is always from the x-axis — The angle can be from any reference axis. You must state which axis the angle is measured from, or use unambiguous notation (e.g., '30° above the horizontal').",
+    "$\\cos$ and $\\sin$ can be used interchangeably for components — No. The component ALONG the axis the angle is measured from uses $\\cos$. The component PERPENDICULAR to that axis uses $\\sin$. This is fixed.",
+    "A force at 30° above the horizontal has $F_y = F\\sin30°$ — Correct if 30° is from horizontal. If 30° is from vertical, $F_y = F\\cos30°$. Always verify the reference axis.",
+    "Components are independent of the choice of axes — Components DEPEND on the choice of axes. The same vector has different components in different coordinate systems, but the same magnitude and direction.",
+    "Resolving a vector into components changes the vector — No, it gives an EQUIVALENT representation. The vector is unchanged; we just describe it in a different way. $\\vec{F}$ and $(F_x, F_y)$ are two descriptions of the same vector."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A force of 20 N acts at 60° above the horizontal. Find its horizontal and vertical components. [Solution: $F_x = 20\\cos60° = 10\\,\\text{N}$. $F_y = 20\\sin60° = 20\\cdot(\\sqrt{3}/2) = 10\\sqrt{3} \\approx 17.32\\,\\text{N}$.]",
+    "A force of 50 N acts at 30° to the vertical. Resolve it into horizontal and vertical components. [Solution: Vertical (along which 30° is measured): $F_y = 50\\cos30° = 50\\cdot(0.866) = 43.3\\,\\text{N}$. Horizontal: $F_x = 50\\sin30° = 50\\cdot0.5 = 25\\,\\text{N}$.]",
+    "Find the components of a 100 N force at 45° below the horizontal (third quadrant). [Solution: $F_x = 100\\cos45° = 70.7\\,\\text{N}$ (positive, along +x). $F_y = -100\\sin45° = -70.7\\,\\text{N}$ (negative, since below x-axis).]",
+    "A vector makes angles 60°, 45°, and 60° with the x, y, and z axes respectively. If its magnitude is 20, find its components. [Solution: $F_x = 20\\cos60° = 10$, $F_y = 20\\cos45° = 20/\\sqrt{2} = 10\\sqrt{2} \\approx 14.14$, $F_z = 20\\cos60° = 10$. Check: $100 + 200 + 100 = 400 = 20^2$ ✓]",
+    "A body of 5 kg is pushed with horizontal force 30 N. Find the normal reaction from the ground. [Solution: $W = mg = 5\\cdot9.8 = 49\\,\\text{N}$ (down). $N = W = 49\\,\\text{N}$ (up). The horizontal force doesn't affect the vertical equilibrium since there is no vertical component.]",
+    "Resolve a force of 40 N at 53° above the horizontal into components, using $\\sin53°=0.8$ and $\\cos53°=0.6$. [Solution: $F_x = 40\\cdot0.6 = 24\\,\\text{N}$, $F_y = 40\\cdot0.8 = 32\\,\\text{N}$. This is a 3-4-5 right triangle scaled by 8.]",
+    "A force of 60 N is applied at 30° to the horizontal. Find (a) the horizontal component, (b) the vertical component, and (c) verify that $F^2 = F_x^2 + F_y^2$. [Solution: (a) $F_x = 60\\cos30° = 60\\cdot(0.866) = 51.96\\,\\text{N}$. (b) $F_y = 60\\sin30° = 30\\,\\text{N}$. (c) $51.96^2 + 30^2 = 2700 + 900 = 3600 = 60^2$ ✓]",
+    "A 2 kg ball is thrown at 30° above the horizontal with speed 20 m/s. Find the initial horizontal and vertical velocity components. [Solution: $v_x = 20\\cos30° = 20\\cdot(0.866) = 17.32\\,\\text{m/s}$. $v_y = 20\\sin30° = 10\\,\\text{m/s}$.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Resolution of vectors is the **backbone of mechanics**. Almost every NEB problem in vectors, statics, dynamics, and projectile motion requires resolving a vector into perpendicular components.",
+    "**NEB exam tip**: when a problem says 'a force of X N at angle $\\theta$ to the horizontal' or 'to the vertical', identify the reference axis first. Then use $\\cos$ for the axis the angle is from, and $\\sin$ for the perpendicular axis.",
+    "In engineering, the resolution of forces allows **stress analysis** in materials. Forces along structural members (axial) and perpendicular to them (shear) are determined by resolution.",
+    "The famous **3-4-5 right triangle** appears frequently: $\\sin37°\\approx0.6$, $\\cos37°\\approx0.8$, $\\sin53°\\approx0.8$, $\\cos53°\\approx0.6$. Memorize this to speed up problem-solving in NEB exams.",
+    "In **GPS navigation**, the velocity of a vehicle is resolved into north-south and east-west components to track position over time. Position updates are vector additions of resolved velocity components.",
+    "The choice of axes in resolution is **strategic**. For inclined plane problems, axes along and perpendicular to the plane minimize the number of forces that need to be considered in each direction.",
+    "Resolution and addition are **inverse operations**: resolution takes one vector and gives multiple, addition takes multiple and gives one. The formulas $R_x = R\\cos\\theta, R_y = R\\sin\\theta$ and $R = \\sqrt{R_x^2+R_y^2}$ are the two sides of the same coin.",
+    "**Rope-pulling problems** (like dragging a sled) are classic resolution applications. The pulling force at an angle is resolved into a useful component (horizontal motion) and a wasted component (lifting up)."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

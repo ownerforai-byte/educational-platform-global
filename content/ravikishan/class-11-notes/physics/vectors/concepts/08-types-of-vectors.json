@@ -5,26 +5,56 @@
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
-    "**Like (parallel) vectors**: vectors having the same direction, regardless of magnitude.",
-    "**Unlike (anti-parallel) vectors**: vectors having opposite directions.",
-    "**Co-planar vectors**: vectors that lie in the same plane.",
-    "**Null (zero) vector**: a vector with zero magnitude, $\\vec{R}=0$. Its direction is indeterminate.",
-    "**Unit vector**: a vector having unit magnitude (1) but retaining a direction; used to denote direction only. Denoted with a cap/hat overhead, e.g. $\\hat{A}$. Along the x, y, z axes the standard unit vectors are $\\hat{i}, \\hat{j}, \\hat{k}$."
+    "**Like (parallel) vectors**: vectors having the same direction, regardless of their magnitudes. They can be written as $\\vec{A} = a\\vec{B}$ where $a$ is a positive scalar. Like vectors add by ordinary arithmetic: their resultant is also parallel to them.",
+    "**Unlike (anti-parallel) vectors**: vectors having exactly opposite directions. If $\\vec{A}$ and $\\vec{B}$ are anti-parallel, $\\vec{A} = -a\\vec{B}$ where $a$ is a positive scalar. The dot product of two anti-parallel vectors is $-|\\vec{A}||\\vec{B}|$.",
+    "**Co-planar vectors**: vectors that lie in the same plane. Any two vectors are always coplanar. Three vectors are coplanar if their vector sum or the scalar triple product $\\vec{A}\\cdot(\\vec{B}\\times\\vec{C}) = 0$.",
+    "**Non-coplanar (skew) vectors**: vectors that do not lie in the same plane. Three vectors are non-coplanar if they span 3D space. The minimum number of non-coplanar vectors needed to span 3D is three.",
+    "**Null (zero) vector $\\vec{0}$**: a vector with zero magnitude and indeterminate direction. It is the additive identity: $\\vec{A} + \\vec{0} = \\vec{A}$. The zero vector is parallel to every vector, since $0\\vec{A} = \\vec{0}$.",
+    "**Unit vector**: a vector of magnitude 1 in a specified direction, denoted with a hat/circumflex: $\\hat{n}$, $\\hat{A}$. For any vector $\\vec{A}$, the unit vector along it is $\\hat{A} = \\vec{A}/|\\vec{A}|$.",
+    "**Standard unit vectors $\\hat{i}, \\hat{j}, \\hat{k}$**: unit vectors along the x, y, and z axes of a Cartesian coordinate system. They are mutually perpendicular: $\\hat{i}\\cdot\\hat{j} = \\hat{j}\\cdot\\hat{k} = \\hat{k}\\cdot\\hat{i} = 0$ and $\\hat{i}\\times\\hat{j} = \\hat{k}$ (right-hand rule).",
+    "**Position vector**: the vector from the origin to a point, denoted $\\vec{r}$. If the point is $(x, y, z)$, then $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$. It specifies the location of a point relative to the origin.",
+    "**Equal vectors**: two vectors $\\vec{A}$ and $\\vec{B}$ are equal if they have the same magnitude AND the same direction. They can be drawn from different points but are physically equivalent: $\\vec{A} = \\vec{B}$ implies $|\\vec{A}| = |\\vec{B}|$ and parallel with same orientation.",
+    "**Negative vector**: $-\\vec{A}$ is the vector with the same magnitude as $\\vec{A}$ but opposite direction. $\\vec{A} + (-\\vec{A}) = \\vec{0}$. Useful in problems like relative velocity and force balance.",
+    "**Collinear vectors**: vectors lying along the same line, regardless of direction. They are either parallel or anti-parallel. Collinear vectors add algebraically with appropriate signs.",
+    "**Axial vector (pseudovector)**: vectors representing quantities like angular velocity, torque, and magnetic field. They change sign under reflection (mirror inversion). In contrast, **polar vectors** (force, velocity) follow normal vector addition.",
+    "**Free vector**: a vector that can be translated parallel to itself without changing its physical meaning. Examples: velocity, force. In contrast, a **bound (localized) vector** is tied to a specific point (e.g., moment of a force about a point).",
+    "**Basis vectors**: a set of linearly independent vectors that span the entire vector space. For 3D, $\{\\hat{i}, \\hat{j}, \\hat{k}\\}$ is the standard basis. Any vector in 3D can be written as a linear combination of basis vectors.",
+    "**Orthogonal vectors**: vectors that are perpendicular to each other. The dot product of orthogonal vectors is zero: $\\vec{A}\\cdot\\vec{B} = 0$ for perpendicular $\\vec{A}, \\vec{B}$.",
+    "**Mutually perpendicular vectors**: a set of vectors where each is perpendicular to every other. $\{\\hat{i}, \\hat{j}, \\hat{k}\\}$ is the canonical example in 3D. The magnitude of any vector is the square root of the sum of squares of components along such a basis.",
+    "**Solved example**: two vectors $\\vec{A}$ and $\\vec{B}$ are equal if $\\vec{A} = \\vec{B}$. But 'parallel' only requires same direction, allowing different magnitudes. So parallel does not imply equal, but equal implies parallel.",
+    "**Collinear three-vector property**: if $\\vec{A}, \\vec{B}, \\vec{C}$ are collinear, then $\\vec{C} = a\\vec{A} + b\\vec{B}$ for some scalars $a, b$ (and conversely, three collinear vectors are linearly dependent).",
+    "**Vector notation distinction**: bold $\\mathbf{A}$ and arrow $\\vec{A}$ both denote vectors. Magnitude is $|\\vec{A}|$, $|\mathbf{A}|$, or simply $A$. Unit vectors are $\\hat{a}$ or $\\hat{u}$ (with hat).",
+    "**Practical applications**: in physics, identifying the type of vector helps in selecting the correct operation. Force is a polar vector (adds via parallelogram law), torque is an axial vector (different rules for reflection)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Like vectors are equal — Like vectors are parallel (same direction), but their magnitudes can differ. Equal vectors require both same direction and same magnitude. $\\vec{A} = 2\\hat{i}$ and $\\vec{B} = 5\\hat{i}$ are like vectors but not equal.",
+    "The null vector has no direction at all — The null vector has indeterminate direction, meaning we cannot assign a unique direction to it. By convention, it is treated as parallel to every vector.",
+    "All vectors in 3D are coplanar — Any TWO vectors are coplanar, but three vectors can be non-coplanar (skew). Four or more vectors can always be reduced to a set in 3D, with at most 3 linearly independent members.",
+    "Unit vectors are unique for each direction — There are infinitely many unit vectors for the same direction (any vector of magnitude 1 in that direction). However, for a given direction, the unit vector is unique up to sign.",
+    "Co-planar and parallel mean the same thing — Parallel vectors must lie along the same line (collinear). Coplanar vectors only need to be in the same plane; they can point in different directions within that plane.",
+    "Anti-parallel vectors are like vectors with a sign — Anti-parallel vectors point in OPPOSITE directions. Like vectors point in the SAME direction. They are fundamentally different categories.",
+    "Equal vectors must start at the same point — No. Free vectors are equal if they have the same magnitude and direction, regardless of position. The position of the vector's tail or head does not affect its equality.",
+    "Position vector and displacement vector are the same — Position vector $\\vec{r}$ is from origin to a point. Displacement vector $\\Delta\\vec{r}$ is the change in position from one point to another. They are related but not identical."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "State which of the following pairs of vectors are like, unlike, coplanar, or equal: (a) $\\vec{A} = 3\\hat{i}$, $\\vec{B} = 7\\hat{i}$. (b) $\\vec{A} = 4\\hat{j}$, $\\vec{B} = -6\\hat{j}$. (c) $\\vec{A} = 2\\hat{i}+3\\hat{j}$, $\\vec{B} = 2\\hat{i}+3\\hat{j}$. [Solution: (a) like, coplanar, not equal (different magnitudes). (b) unlike, coplanar, not equal. (c) equal (and therefore like, coplanar, parallel).]",
+    "Find the unit vector along $\\vec{A} = 3\\hat{i} + 4\\hat{j}$. [Solution: $|\\vec{A}| = \\sqrt{9+16} = 5$. $\\hat{A} = \\vec{A}/|\\vec{A}| = (3/5)\\hat{i} + (4/5)\\hat{j}$.]",
+    "Are the vectors $\\vec{A} = 2\\hat{i} + 3\\hat{j} + 4\\hat{k}$, $\\vec{B} = \\hat{i} - 2\\hat{j} + \\hat{k}$, $\\vec{C} = 3\\hat{i} + \\hat{j} + 5\\hat{k}$ coplanar? [Solution: Compute the scalar triple product $\\vec{A}\\cdot(\\vec{B}\\times\\vec{C})$. First, $\\vec{B}\\times\\vec{C} = \\hat{i}((-2)(5)-(1)(1)) - \\hat{j}((1)(5)-(1)(3)) + \\hat{k}((1)(1)-(-2)(3)) = -11\\hat{i} - 2\\hat{j} + 7\\hat{k}$. Then $\\vec{A}\\cdot(\\vec{B}\\times\\vec{C}) = 2(-11) + 3(-2) + 4(7) = -22 - 6 + 28 = 0$. Since the scalar triple product is 0, the vectors are coplanar.]",
+    "Show that the zero vector $\\vec{0}$ is parallel to every vector. [Solution: For any $\\vec{A}$, the zero vector can be written as $\\vec{0} = 0\\cdot\\vec{A}$. The scalar multiplier is 0, which is a non-negative real number. So $\\vec{0}$ is parallel to $\\vec{A}$ by the definition of parallelism. Also, $\\vec{0}$ has no specific direction, so the convention treats it as parallel to all directions.]",
+    "If $\\vec{A}$ and $\\vec{B}$ are unit vectors making 60° with each other, find $\\vec{A}+\\vec{B}$. [Solution: $|\\vec{A}+\\vec{B}| = \\sqrt{1+1+2\\cos60°} = \\sqrt{2+1} = \\sqrt{3}$. Direction: bisects the angle, so 30° from each. $\\vec{A}+\\vec{B} = \\sqrt{3}\\hat{n}$, where $\\hat{n}$ is the unit vector at 30° from both.]",
+    "Determine whether the vectors $\\vec{A} = 3\\hat{i} - 2\\hat{j} + \\hat{k}$, $\\vec{B} = \\hat{i} - 3\\hat{j} + 5\\hat{k}$, $\\vec{C} = 2\\hat{i} - \\hat{j} + 3\\hat{k}$ are coplanar. [Solution: $\\vec{B}\\times\\vec{C} = \\hat{i}((-3)(3)-(5)(-1)) - \\hat{j}((1)(3)-(5)(2)) + \\hat{k}((1)(-1)-(-3)(2)) = -4\\hat{i} + 7\\hat{j} + 5\\hat{k}$. $\\vec{A}\\cdot(\\vec{B}\\times\\vec{C}) = 3(-4) + (-2)(7) + 1(5) = -12 - 14 + 5 = -21 \\neq 0$. Not coplanar.]",
+    "Express the vector $\\vec{F} = 6\\hat{i} + 8\\hat{j}$ in terms of its magnitude and a unit vector along it. [Solution: $|\\vec{F}| = \\sqrt{36+64} = 10$. $\\hat{F} = (6/10)\\hat{i} + (8/10)\\hat{j} = 0.6\\hat{i} + 0.8\\hat{j}$. $\\vec{F} = 10(0.6\\hat{i}+0.8\\hat{j}) = 10\\hat{F}$.]",
+    "Given $\\vec{A} = 2\\hat{i} - 3\\hat{j}$ and $\\vec{B} = -4\\hat{i} + 6\\hat{j}$, show that the vectors are anti-parallel. [Solution: $\\vec{B} = -2(2\\hat{i}-3\\hat{j}) = -2\\vec{A}$. The negative scalar indicates opposite direction. So $\\vec{A}$ and $\\vec{B}$ are anti-parallel. Verify: $B/A = |-4\\hat{i}+6\\hat{j}|/|2\\hat{i}-3\\hat{j}| = \\sqrt{52}/\\sqrt{13} = 2$. The ratio is negative, confirming anti-parallel.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The classification of vectors into types (like/unlike, coplanar/non-coplanar, polar/axial) is essential for choosing the right operation. Like vectors add algebraically; non-coplanar vectors require 3D analysis.",
+    "NEB exam pattern: 'types of vectors' questions are usually short answer or fill-in-the-blank format. Common question: 'define and give an example of unit vector/like vector/co-planar vector'.",
+    "The **right-hand rule** for unit vectors $\\hat{i}, \\hat{j}, \\hat{k}$ is essential for cross products: $\\hat{i}\\times\\hat{j} = \\hat{k}$, $\\hat{j}\\times\\hat{k} = \\hat{i}$, $\\hat{k}\\times\\hat{i} = \\hat{j}$. This cyclic order defines the orientation of 3D space.",
+    "**Polarity** of vectors (polar vs axial) matters in electromagnetism. Electric field $\\vec{E}$ is a polar vector, magnetic field $\\vec{B}$ is axial. The Lorentz force $\\vec{F} = q\\vec{v}\\times\\vec{B}$ produces a polar force from the cross product of two vectors of different polarities.",
+    "The **zero vector** is unique in that it is the only vector with indeterminate direction. It is the additive identity, and it is parallel to every vector (since $\\vec{0} = 0 \\cdot \\vec{A}$ for any $\\vec{A}$).",
+    "In **linear algebra**, the concept of basis vectors generalizes $\\hat{i}, \\hat{j}, \\hat{k}$ to any set of linearly independent vectors. The 3D space we work in has dimension 3, requiring exactly 3 linearly independent basis vectors.",
+    "The **displacement vector** $\\Delta\\vec{r} = \\vec{r}_f - \\vec{r}_i$ is a fundamental concept in kinematics. It depends only on initial and final positions, not on the path taken — this is why the work-energy theorem works.",
+    "**Co-planar vectors** simplify problems enormously: any problem with three or more vectors that are coplanar can be analyzed in 2D using x and y components. Non-coplanar vectors require full 3D analysis."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

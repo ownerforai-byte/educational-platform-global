@@ -5,25 +5,53 @@
   "topicTitle": "Collinear and non-collinear vectors, coplanar and non-coplanar vectors",
   "relevance": 82,
   "notes": [
-    "To completely specify a physical quantity we may need to know its **magnitude** alone, or both its **magnitude and direction**. Based on this, physical quantities are divided into two groups.",
-    "**Scalar quantity**: a physical quantity having only magnitude, no direction. Examples: distance, speed, mass, density. Scalars obey the ordinary rules of algebra and are denoted by any ordinary letter.",
-    "**Vector quantity**: a physical quantity defined by both magnitude and direction, which must obey the law of vector addition (triangle law) / vector algebra. Examples: displacement, velocity, force, acceleration.",
-    "Vectors obey vector rules and are represented by a letter with an arrow overhead, e.g. $\\vec{A}$."
+    "Physical quantities are classified by whether they require direction for a complete description. **Scalar quantities** have only magnitude and obey the ordinary rules of algebra (e.g., distance, speed, mass, energy). **Vector quantities** have both magnitude and direction and obey vector algebra (e.g., displacement, velocity, force, acceleration).",
+    "**Scalar quantity**: a physical quantity specified completely by its magnitude alone. Examples include **mass** ($m = 5\\,\\text{kg}$), **temperature** ($T = 300\\,\\text{K}$), **speed** ($v = 60\\,\\text{km/h}$), and **energy** ($E = 500\\,\\text{J}$). Scalars add like ordinary numbers.",
+    "**Vector quantity**: a physical quantity that requires both magnitude and direction for complete specification, and which obeys the triangle law of vector addition. Examples: **displacement** $\\vec{s}$, **velocity** $\\vec{v}$, **acceleration** $\\vec{a}$, **force** $\\vec{F}$. Vectors are written with an arrow, e.g. $\\vec{A}$.",
+    "A vector is represented graphically by a **directed line segment** — the length of the arrow represents the magnitude and the arrowhead indicates the direction. The **magnitude** (or modulus) of $\\vec{A}$ is denoted $|\\vec{A}|$ or simply $A$, and is always a non-negative scalar.",
+    "**Key distinction**: speed is a scalar (magnitude only), while velocity is a vector (magnitude + direction). You can travel at $60\\,\\text{km/h}$ in any direction, but a velocity of $60\\,\\text{km/h}$ east is fundamentally different from $60\\,\\text{km/h}$ north.",
+    "**Position vector**: the vector from the origin $O$ to a point $P(x, y, z)$ is $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$. It specifies the location of point $P$ relative to the origin and is fundamental in describing motion.",
+    "**Displacement vs distance**: distance is the total path length traveled (scalar), while displacement is the straight-line change in position from initial to final point (vector). For a round trip, distance $> 0$ but displacement $= \\vec{0}$.",
+    "A **free vector** can be translated parallel to itself without changing its physical meaning — only magnitude and direction matter. A **bound vector** (e.g., the velocity of a specific particle) is tied to a particular point in space.",
+    "Two vectors are **equal** if and only if they have the same magnitude and the same direction. Thus $\\vec{A} = \\vec{B}$ implies $|\\vec{A}| = |\\vec{B}|$ and their directions coincide, regardless of where they are positioned.",
+    "Scalars follow standard algebraic rules: $a + b = b + a$ and $(a + b) + c = a + (b + c)$. Vectors also follow these commutative and associative laws of addition, but vector multiplication has two distinct types: dot product and cross product.",
+    "**Dimensional formula** of a vector matches its physical quantity: velocity vector $[\\vec{v}] = LT^{-1}$, force vector $[\\vec{F}] = MLT^{-2}$. The direction component is dimensionless.",
+    "In physics, vectors are not optional notation — they encode information that scalars cannot. Force applied in the wrong direction produces a completely different effect, even if the magnitude is the same.",
+    "The **negative of a vector** $\\vec{A}$ is $-\\vec{A}$: it has the same magnitude as $\\vec{A}$ but points in the opposite direction. If $\\vec{A}$ points east, $-\\vec{A}$ points west.",
+    "Scalars can be zero (e.g., mass $= 0$ is unphysical but temperature $= 0\\,\\text{K}$ is the absolute zero). Vectors can be **zero vectors** $\\vec{0}$ (null vector) — a vector with zero magnitude and indeterminate direction.",
+    "Vectors were formalized in the 19th century by **Josiah Willard Gibbs** and **Oliver Heaviside**, who separated vector analysis from quaternion calculus, making it the standard language of physics and engineering.",
+    "When adding scalars: $5\\,\\text{kg} + 3\\,\\text{kg} = 8\\,\\text{kg}$. When adding vectors, direction matters: a $5\\,\\text{N}$ force east plus a $3\\,\\text{N}$ force west gives $2\\,\\text{N}$ east, not $8\\,\\text{N}$.",
+    "**Physical significance check**: any quantity that is added according to the triangle/parallelogram law of vectors is a vector quantity. Electric current, despite having direction, is a scalar because it does not obey vector addition rules."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Distance is the same as displacement — Distance is the total path length (scalar, always positive). Displacement is the straight-line change in position (vector, can be zero even after traveling far). They are equal only for straight-line motion without reversal.",
+    "Speed and velocity are the same — Speed is the scalar rate of distance covered ($v = d/t$). Velocity is the vector rate of displacement ($\\vec{v} = \\Delta\\vec{r}/\\Delta t$). Speed is the magnitude of velocity: $v = |\\vec{v}|$.",
+    "All quantities with direction are vectors — A quantity must also obey vector addition (triangle law) to be a vector. Electric current has direction but adds algebraically, so it is a scalar. Stress has direction but is a tensor, not a vector.",
+    "A vector's position in space matters for equality — Two vectors are equal if they have the same magnitude and direction, regardless of where they are drawn. A free vector can be translated parallel to itself without changing its identity.",
+    "Zero magnitude means the vector has no direction at all — The zero vector $\\vec{0}$ has zero magnitude but its direction is conventionally considered indeterminate. It is the additive identity: $\\vec{A} + \\vec{0} = \\vec{A}$.",
+    "Mass is a vector because it has magnitude — Mass is purely a scalar; it has magnitude but no direction. The idea of 'mass in a direction' is physically meaningless.",
+    "Temperature difference is a vector because it has direction (hot to cold) — Temperature difference is a scalar. While heat flows from hot to cold, that flow direction is described by the heat flux vector, not the temperature difference itself.",
+    "Any rotating quantity must be a vector — Finite rotations do not commute and therefore are not vectors. Only infinitesimal rotations obey vector addition rules. Angular velocity $\\vec{\\omega}$ is a vector because it represents an infinitesimal rotation rate."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A car travels 3 km east then 4 km north. Find (a) the total distance traveled and (b) the magnitude and direction of displacement. [Solution: (a) Distance $= 3 + 4 = 7\\,\\text{km}$. (b) Displacement magnitude $= \\sqrt{3^2+4^2}=5\\,\\text{km}$, direction $= \\tan^{-1}(4/3) \\approx 53.1°$ north of east.]",
+    "Classify each quantity as scalar or vector: (a) 10 N force south, (b) 25 J energy, (c) 60 km/h northwest, (d) 5 kg mass, (e) 20 m displacement east, (f) 300 K temperature. [Solution: (a) vector, (b) scalar, (c) vector, (d) scalar, (e) vector, (f) scalar.]",
+    "Two forces of 10 N and 10 N act at a point with an angle of 60° between them. Find the magnitude of the resultant force. [Solution: $R = \\sqrt{10^2+10^2+2(10)(10)\\cos 60°} = \\sqrt{100+100+100} = \\sqrt{300} = 10\\sqrt{3} \\approx 17.32\\,\\text{N}$.]",
+    "A particle moves from point A to B (3 m east) then to C (4 m north). Calculate the distance and displacement. If the particle returns to A, what is the total displacement? [Solution: A to B: 3 m east. B to C: 4 m north. Distance $= 7\\,\\text{m}$. Displacement $\\vec{AC} = 3\\hat{i}+4\\hat{j}$, magnitude $= 5\\,\\text{m}$. Round trip A→B→C→A: total displacement $= \\vec{0}$.]",
+    "Given $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = -\\hat{i} + 2\\hat{j}$, find (a) $\\vec{A} + \\vec{B}$, (b) $\\vec{A} - \\vec{B}$, (c) $|\\vec{A}|$, (d) $|\\vec{B}|$. [Solution: (a) $2\\hat{i} + 6\\hat{j}$, (b) $4\\hat{i} + 2\\hat{j}$, (c) $\\sqrt{9+16}=5$, (d) $\\sqrt{1+4}=\\sqrt{5}$.]",
+    "Explain why the following are scalars despite having directional properties: (a) tension in a string, (b) electric current. [Solution: Tension is a scalar because it is the magnitude of the restoring force; the directional aspect belongs to the force vector, not tension itself. Electric current is a scalar because it follows algebraic (not vector) addition at a junction (Kirchhoff's law).]",
+    "A vector $\\vec{A}$ has components $A_x = 6$ and $A_y = -8$. Find its magnitude and direction (angle from positive x-axis). [Solution: $|\\vec{A}| = \\sqrt{36+64} = 10$. Direction: $\\theta = \\tan^{-1}(-8/6) = \\tan^{-1}(-4/3) \\approx -53.1°$, i.e., $53.1°$ below the positive x-axis (or $306.9°$ from positive x-axis).]",
+    "Prove that for any vector $\\vec{A}$, $|\\vec{A}| = \\sqrt{\\vec{A}\\cdot\\vec{A}}$. [Solution: If $\\vec{A} = A_x\\hat{i} + A_y\\hat{j} + A_z\\hat{k}$, then $\\vec{A}\\cdot\\vec{A} = A_x^2 + A_y^2 + A_z^2 = |\\vec{A}|^2$. Therefore $|\\vec{A}| = \\sqrt{\\vec{A}\\cdot\\vec{A}}$.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The distinction between scalars and vectors is one of the most fundamental classifications in all of physics. Every equation in mechanics, electromagnetism, and thermodynamics relies on knowing which quantities are vectors and which are scalars.",
+    "Gibbs and Heaviside independently developed modern vector analysis in the 1880s, stripping it from the more cumbersome quaternion system invented by Hamilton. This made physics education dramatically more accessible.",
+    "NEB exam tip: scalar/vector classification questions appear almost every year. Memorize the canonical lists: scalars (mass, energy, temperature, speed, distance, volume, density) and vectors (displacement, velocity, acceleration, force, momentum, weight).",
+    "The concept of a vector extends far beyond physics — in mathematics, vectors represent elements of any vector space, including polynomials, functions, and complex numbers. The physics definition is a specific application of this broader mathematical idea.",
+    "Air traffic controllers use vector addition continuously: the aircraft's velocity relative to the ground equals its airspeed vector plus the wind velocity vector. A 500 km/h plane heading north into a 100 km/h west wind has a ground track of roughly 510 km/h at 11.3° west of north.",
+    "Work is defined as the dot product of force and displacement ($W = \\vec{F}\\cdot\\vec{d}$), which is inherently a scalar. This is why energy, despite being associated with directional forces, is a scalar quantity.",
+    "In NEB numerical problems involving resultants, remember the three special cases: parallel ($\\theta=0°, R=P+Q$), perpendicular ($\\theta=90°, R=\\sqrt{P^2+Q^2}$), and anti-parallel ($\\theta=180°, R=|P-Q|$). These cover roughly half of all exam problems.",
+    "The zero vector $\\vec{0}$ is unique: it is the only vector with undefined direction, and it is parallel to every vector (since $\\vec{0} \\times \\vec{A} = \\vec{0}$ for any $\\vec{A}$)."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

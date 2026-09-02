@@ -5,27 +5,39 @@
   "topicTitle": "Energy bands in solids (qualitative ideas)",
   "relevance": 100,
   "notes": [
-    "**Band formation:** in isolated atoms, electrons occupy discrete energy levels. When atoms form a solid, the large number of atoms causes levels to split into closely spaced bands.",
-    "**Valence band:** the highest energy band that contains electrons at absolute zero. It is formed from the valence shell orbitals of the constituent atoms.",
-    "**Conduction band:** the next higher band, empty at absolute zero. Electrons in this band are free to move and conduct electricity.",
-    "**Band gap $E_g$:** the energy difference between the top of the valence band and the bottom of the conduction band. It determines whether a solid is a metal, insulator, or semiconductor.",
-    "**Forbidden gap:** no electron can have an energy within the band gap. It is a range of forbidden energies."
+    "**Band formation:** In isolated atoms, electrons occupy discrete energy levels. When $N$ atoms aggregate into a solid, each atomic level splits into $N$ closely spaced levels, forming near-continuous energy bands. The broadening width is $\\sim 1\\text{--}10\\,\\text{eV}$, with individual levels separated by $\\sim 10^{-22}\\,\\text{eV}$.",
+    "**Valence band:** The highest energy band that is occupied (filled) at absolute zero. Formed from the valence-shell atomic orbitals. When completely filled with electrons, it cannot conduct electricity unless electrons are promoted to the conduction band.",
+    "**Conduction band:** The next higher energy band, empty at absolute zero. Electrons here are delocalized across the crystal and are free to move under an applied electric field, contributing to electrical conduction.",
+    "**Band gap $E_g$:** The energy difference between the top of the valence band and the bottom of the conduction band. It is the defining parameter: $E_g$ determines whether a material is a metal ($E_g = 0$, overlap), semiconductor ($E_g \\sim 0.5\\text{--}3\\,\\text{eV}$), or insulator ($E_g > 3\\,\\text{eV}$).",
+    "**Forbidden gap:** The range of energies between the valence band top and conduction band bottom where no allowed electronic states exist. An electron must gain exactly $E_g$ energy to traverse this gap.",
+    "**Direct vs indirect band gap:** In direct-gap materials (GaAs, InP), the minimum of the conduction band aligns in $k$-space with the maximum of the valence band. An electron can recombine with a hole without changing momentum, emitting a photon efficiently. In indirect-gap materials (Si, Ge), momentum offset means phonon involvement is required, making recombination less efficient for light emission.",
+    "**Temperature effect on $E_g$:** In most semiconductors, $E_g$ decreases with temperature as $E_g(T) = E_g(0) - \\alpha T^2/(T + \\beta)$. For silicon: $E_g(T) = 1.17 - 4.73\\times 10^{-4} T^2/(T + 636)$ in eV. This is why the resistivity of semiconductors decreases with temperature.",
+    "**Bloch theorem:** Electron wavefunctions in a periodic crystal have the form $\\psi_{nk}(\\mathbf{r}) = e^{i\\mathbf{k}\\cdot\\mathbf{r}} u_{nk}(\\mathbf{r})$, where $u_{nk}$ has the same periodicity as the crystal lattice. This explains why electrons in a solid behave like plane waves modulated by the periodic potential.",
+    "**Effective mass:** Electrons near the band minimum behave as if they have a different mass $m^*$ due to the band curvature: $1/m^* = (1/\\hbar^2)(d^2E/dk^2)$. $m^*$ can be lighter or heavier than the free electron mass, and differs for electrons vs holes."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Confusion: In metals, the conduction band is partially filled, OR the valence band overlaps the conduction band. Students often assume conduction band = empty, which is only true for insulators and semiconductors at absolute zero.",
+    "Confusion: A large band gap ($> 3\\,\\text{eV}$) means the material is an insulator only at room temperature. Diamond ($E_g = 5.5\\,\\text{eV}$) is an excellent insulator but can be doped like a semiconductor, making it useful for high-power electronics.",
+    "Confusion: The band gap is an energy difference, not a physical distance. $E_g = 1\\,\\text{eV}$ means electrons need $1\\,\\text{eV}$ of energy to jump from valence to conduction band — no spatial thickness is implied.",
+    "Confusion: The valence band is filled with electrons in insulators/semiconductors at 0 K, so no current flows. But a completely empty valence band would also not conduct — it is the partial occupancy (holes) that enables conduction.",
+    "Confusion: In p-type semiconductors, the valence band holes are NOT vacancies created by removing electrons from the valence band. They are treated as positively charged particles because electrons in a nearly-full band respond to electric fields as if they were holes.",
+    "Confusion: The effective mass $m^*$ is NOT a fixed constant — it depends on the band curvature at the Fermi level and direction in anisotropic crystals (e.g., silicon has different $m^*$ along different crystal directions).",
+    "Confusion: The forbidden gap has NO electronic states, but phonons (lattice vibrations) can have energies within this range. The term \"forbidden\" refers only to electronic states."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Silicon has $E_g \\approx 1.12\\,\\text{eV}$ at $300\\,\\text{K}$. (a) What is the minimum photon wavelength (in nm) that can create an electron-hole pair? (b) Express this wavelength in terms of $hc \\approx 1240\\,\\text{eV}\\cdot\\text{nm}$. [Solution: (a) $\\lambda_{\\text{threshold}} = hc/E_g = 1240/1.12 \\approx 1107\\,\\text{nm}$ (near-infrared). Wavelengths shorter than this (visible light) can generate carriers in silicon.]",
+    "Problem: GaAs is a direct-gap semiconductor with $E_g = 1.43\\,\\text{eV}$. LED light emission from GaAs is at $\\lambda \\approx 870\\,\\text{nm}$ (infrared). For a GaAsP alloy with $E_g = 1.90\\,\\text{eV}$, what emission wavelength is expected? [Solution: $\\lambda = 1240/1.90 \\approx 653\\,\\text{nm}$ (red light). This is why GaAsP is used for red LEDs.]",
+    "Problem: A semiconductor has $E_g = 0.7\\,\\text{eV}$. At $T = 300\\,\\text{K}$, thermal energy $k_B T \\approx 0.0259\\,\\text{eV}$. What fraction of valence electrons would be thermally excited to the conduction band if $E_g$ were the only barrier? [Solution: The fraction is exponentially suppressed: $\\exp(-E_g/k_B T) = \\exp(-0.7/0.0259) \\approx e^{-27} \\approx 1.9 \\times 10^{-12}$. Only a tiny fraction are excited — but for $n \\sim 10^{22}\\,\\text{cm}^{-3}$, this still gives $\\sim 10^{10}\\,\\text{cm}^{-3}$ intrinsic carriers.]",
+    "Problem: Germanium has $E_g = 0.67\\,\\text{eV}$ and intrinsic carrier concentration $n_i \\approx 2.4\\times 10^{19}\\,\\text{m}^{-3}$ at $300\\,\\text{K}$. If an electron is excited from the valence band to the conduction band, list all conserved quantities. [Solution: Charge: $0 \\rightarrow -1 + +1$ (net 0). Spin: integer (boson $\\gamma$ splits to two fermions $e^- + e^+$). Energy: photon energy $= 2m_e c^2 + K.E._{e^-} + K.E._{e^+}$. Momentum: nucleus must recoil.]",
+    "Problem: The speed of electron in a band can be estimated by $v = \\hbar^{-1} dE/dk$. For a free electron with $E = \\hbar^2 k^2/2m$, show that $v = \\hbar k / m$. For an electron in a band with $E(k) = E_0 - A k^2$, is $v$ positive or negative near $k=0$? [Solution: $v = (1/\\hbar) dE/dk = (1/\\hbar)(-2Ak) = -2Ak/\\hbar$. Near $k=0$, $v \\approx 0$. The sign is negative for positive $k$, meaning the electron moves opposite to increasing $k$ — consistent with negative charge.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "solids",
-  "motionGraphics": "solids"
+    "Fact (Historical): Felix Bloch developed band theory in 1928, applying quantum mechanics to electron motion in crystals. Edward Fermi, Julian Schwinger, and others refined it into the nearly-free electron model and tight-binding model that form the foundation of modern solid-state physics.",
+    "Fact (Application): Laser diodes (VCSELs, edge emitters) work only in direct-gap semiconductors (GaAs, InP). Silicon is an indirect-gap material — electron-hole recombination in silicon is inefficient for light emission, which is why silicon photonics is challenging.",
+    "Fact (Exam tip): For NEB, the key question is: Is there an energy gap? If $E_g = 0$ (overlap), it's a metal. If $0 < E_g < 3\\,\\text{eV}$ (small gap), it's a semiconductor. If $E_g > 3\\,\\text{eV}$, it's an insulator. Memorize silicon ($1.12\\,\\text{eV}$), germanium ($0.67\\,\\text{eV}$), and GaAs ($1.43\\,\\text{eV}$).",
+    "Fact (Connection): The band gap of a semiconductor decreases with temperature. This means more carriers are thermally excited at higher temperatures, explaining why semiconductor resistance decreases with temperature (negative temperature coefficient), opposite to metals.",
+    "Fact (Everyday): Photovoltaic (solar) cells are made from semiconductors. The band gap determines the maximum efficiency via the Shockley-Queisser limit: ~33% for a single-junction cell with $E_g \\approx 1.34\\,\\text{eV}$ (close to GaAs at 1.43 eV).",
+    "Fact (Scale): $1\\,\\text{eV} = 1.602\\times 10^{-19}\\,\\text{J}$. Chemical bond energies are $\\sim 1\\text{--}5\\,\\text{eV}$, while nuclear binding energies are $\\sim \\text{MeV}$. The band gap sits at the chemical energy scale — roughly $10^6$ times smaller than nuclear energies.",
+    "Fact (Origin): The band gap arises from the periodic crystal potential. In a free electron gas (no periodic potential), there is no gap. The periodic potential of ions creates Bragg reflections at Brillouin zone boundaries, opening gaps where standing waves form with different charge densities."
+  ]
 }

@@ -5,26 +5,53 @@
   "topicTitle": "Equipotential lines and surfaces",
   "relevance": 100,
   "notes": [
-    "**Equipotential surface:** a surface on which the electric potential is the same at every point. No work is done moving a charge along it.",
-    "**Relation to field lines:** equipotential surfaces are always perpendicular to electric field lines.",
-    "**Point charge:** concentric spheres centred on the charge. Closer spheres mean stronger field because $\\Delta V/\\Delta r$ is larger.",
-    "**Uniform field:** parallel planes perpendicular to the field direction. Equal spacing means uniform field strength.",
-    "**Conductors:** the surface of a conductor in electrostatic equilibrium is an equipotential. The electric field just outside is perpendicular to the surface."
+    "**Equipotential surface:** a surface on which the electric potential is the same at every point. $V = \\text{constant}$ everywhere on the surface.",
+    "**No work on equipotential:** since $\\Delta V = 0$ on an equipotential surface, the work done moving a charge along it is zero: $W = q\\Delta V = 0$.",
+    "**Perpendicular to field lines:** equipotential surfaces are always perpendicular to electric field lines. If they were not, the field would have a component along the surface, doing work on a charge moving along it.",
+    "**Spacing of equipotentials:** the spacing between equipotential surfaces indicates field strength. Close spacing means a steep potential gradient and thus a strong field: $E = -dV/dn$.",
+    "**Point charge:** equipotential surfaces are concentric spheres centred on the charge. $V = kQ/r = \\text{constant}$ implies $r = \\text{constant}$. The spacing increases with $r$ because $E \\propto 1/r^2$ weakens.",
+    "**Uniform electric field:** equipotential surfaces are parallel planes perpendicular to the field direction. The spacing between equal potential intervals is uniform: $\\Delta r = \\Delta V/E$.",
+    "**Electric dipole:** equipotential surfaces are more complex — they are closed surfaces around each charge near the charges, and approximately plane-like far away. The equatorial plane is at $V = 0$.",
+    "**Conductors in electrostatics:** the entire surface (and interior) of a conductor is an equipotential. The field just outside is perpendicular to the surface, and the surface charge density adjusts to maintain constant potential.",
+    "**Field-line pattern:** field lines always originate from higher potential and terminate at lower potential. The direction of $\\vec{E}$ is always from high $V$ to low $V$, perpendicular to equipotentials.",
+    "**Equipotentials and potential gradient:** $E = -\\nabla V = -\\frac{\\partial V}{\\partial n}\\hat{n}$, where $\\hat{n}$ is the normal to the equipotential surface. The field is steepest in the direction normal to the equipotential.",
+    "**Potential near a charged conducting sphere:** $V = kQ/R$ on the surface (constant). Inside, $V = kQ/R$ (entire interior is at the same potential as the surface).",
+    "**Field of infinite line charge:** equipotential surfaces are coaxial cylinders. $V = -(\\lambda/2\\pi\\epsilon_0)\\ln r + \\text{const}$. The field is radial, perpendicular to cylindrical surfaces.",
+    "**Two oppositely charged parallel plates:** equipotential surfaces are parallel planes between the plates (uniform field). Near the edges, the equipotentials bulge outward (fringing).",
+    "**Non-intersecting:** equipotential surfaces can never intersect. At an intersection, the potential would have two different values, which is impossible since potential is single-valued.",
+    "**Drawing equipotentials:** typically drawn for equal potential increments (e.g., every 10 V). In regions of strong field, they are close together; in weak field, they are far apart.",
+    "**Application — shielding:** a hollow conductor shields its interior from external electric fields. The interior is an equipotential volume with no field, regardless of external charges."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Equipotential surfaces are NOT the same as field lines. Field lines show the direction of force; equipotentials are surfaces of constant potential. They are perpendicular to each other, not parallel.",
+    "A zero potential does not mean zero field. On the equatorial plane of a dipole, $V = 0$ everywhere but $E \\neq 0$. Potential is relative; field is an absolute gradient.",
+    "Equipotential surfaces never intersect because at an intersection point, the potential would need to equal two different values simultaneously, which is impossible for a single-valued function.",
+    "The spacing of equipotentials shows field strength, NOT the magnitude of potential. Close equipotentials mean strong field (large $|dV/dn|$), but the actual potential values can be anything.",
+    "For a point charge, equipotential surfaces are spheres, but the field lines are radial lines. Near a dipole, equipotentials curve around to connect the positive and negative charge regions.",
+    "Inside a conductor, $E = 0$ and $V = \\text{constant}$. But the constant value is not necessarily zero — it depends on the total charge and the reference point. A charged conductor has a non-zero but uniform potential throughout.",
+    "Moving a charge along an equipotential surface requires no work by the electric field, but an external agent may need to do work to move it at constant speed against other forces (gravity, friction).",
+    "Equipotentials are not physical objects — they are mathematical surfaces of constant potential. You cannot place a conductor on them; rather, the conductor's surface itself becomes one if it is in equilibrium.",
+    "In a non-uniform field, equipotential surfaces are not equally spaced even for equal potential intervals. For a point charge, $V = kQ/r$, so equal $\\Delta V$ corresponds to decreasing $\\Delta r$ as you approach the charge."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A uniform electric field of magnitude 200 N/C points in the $+x$ direction. What is the potential difference between $x = 0.1$ m and $x = 0.3$ m? Solution: $\\Delta V = -E\\Delta x = -200 \\times 0.2 = -40$ V. The potential decreases by 40 V as we move in the field direction.",
+    "Draw the equipotential surfaces for an isolated positively charged sphere of radius 0.1 m with potential 100 V on its surface. Solution: Concentric spheres. At the surface ($r = 0.1$ m), $V = 100$ V. At $r = 0.2$ m, $V = 50$ V. At $r = 0.05$ m (inside), $V = 100$ V (constant). Outside: $V = 10$ V at $r = 1$ m.",
+    "Two parallel plates 5 mm apart have a potential difference of 500 V. Find the field strength and the spacing between the 100 V and 200 V equipotential surfaces. Solution: $E = V/d = 500/0.005 = 10^5$ N/C. Between 100 V and 200 V surfaces: $\\Delta V = 100$ V, so $\\Delta x = \\Delta V/E = 100/10^5 = 0.001$ m = 1 mm.",
+    "A point charge $q = +10\\,\\mu$C is at the origin. Find the work done in moving a charge $q_0 = +1\\,\\mu$C from a point on the $x$-axis at 0.2 m to a point on the $y$-axis at 0.2 m. Solution: Both points are at the same distance from the charge, so they are on the same equipotential surface ($r = 0.2$ m). $W = q_0 \\Delta V = 0$. No work is needed.",
+    "Sketch the equipotential lines for an electric dipole and label the regions of high and low potential. Solution: Near the positive charge, equipotentials are small spheres at high positive $V$. Near the negative charge, small spheres at large negative $V$. The equatorial plane is at $V = 0$. Far away, equipotentials merge into figure-eight shapes.",
+    "A conducting sphere of radius 0.05 m is charged to a potential of 5000 V. Find the charge on the sphere and the electric field at its surface. Solution: $V = kQ/R$, so $Q = VR/k = 5000 \\times 0.05 / (9 \\times 10^9) = 2.78 \\times 10^{-8}$ C $= 27.8$ nC. $E = V/R = 5000/0.05 = 10^5$ N/C.",
+    "In a uniform field $\\vec{E} = 200\\hat{i} + 100\\hat{j}$ N/C, find the potential difference between points $A(0,0)$ and $B(0.1, 0.2)$ m. Solution: $\\Delta V = -\\vec{E} \\cdot \\vec{d} = -(200 \\times 0.1 + 100 \\times 0.2) = -(20 + 20) = -40$ V. The potential at $B$ is 40 V lower than at $A$.",
+    "A charged conductor has a surface with varying curvature. Explain where the surface charge density is highest and how this affects the equipotential spacing just outside the surface. Solution: At sharp points (small radius of curvature), $\\sigma$ is highest. Since $E = \\sigma/\\epsilon_0$, the field is strongest there. Equipotentials are closest together near sharp points, indicating the steep potential gradient."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Equipotential surfaces are always perpendicular to electric field lines. This is a universal geometric property — if they were not perpendicular, the field would have a component along the surface, contradicting the definition of an equipotential.",
+    "The interior of a hollow conductor is a field-free region (Faraday cage). Every point inside is at the same potential as the inner surface, regardless of the external field or charges outside the conductor.",
+    "In the human body, the surface of the skin is approximately an equipotential because body fluids are conductive. This is why electric shock risk depends on the path through the body, not just surface contact points.",
+    "Lightning rods are installed on buildings because the sharp points concentrate the electric field, causing corona discharge that can neutralize approaching charged clouds. The building itself acts as an equipotential conductor.",
+    "The Earth's surface is approximately an equipotential surface (the geoid). This is why we use it as the reference $V = 0$ in electrical circuits. Ocean water, being a good conductor, follows this equipotential.",
+    "In semiconductor devices, the depletion region has a potential gradient, and the equipotential surfaces determine the electric field that separates charge carriers. This is fundamental to diodes and transistors.",
+    "For NEB board exams, remember: (1) equipotential surfaces are perpendicular to field lines, (2) no work is done moving a charge along an equipotential, (3) they never intersect, (4) field strength is proportional to the inverse of their spacing.",
+    "The concept of equipotential surfaces generalizes to gravitational fields: equipotential surfaces for gravity are surfaces of constant gravitational potential, perpendicular to gravitational field lines."
   ],
   "animation3D": "potential-potential-difference-and-potential-energy",
   "motionGraphics": "potential-potential-difference-and-potential-energy"

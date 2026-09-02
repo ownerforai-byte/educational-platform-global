@@ -11,28 +11,42 @@
     "**Why altitude reduces $g$ quadratically:** the inverse-square law dominates; even a small increase in $r$ causes a noticeable drop in $g$. For $h \\ll R$, $g' \\approx g(1 - 2h/R)$ (binomial approximation).",
     "**Practical note:** $g$ at Mount Everest ($h \\approx 8.8\\,\\text{km}$) is $\\approx 9.77\\,\\text{m/s}^2$, slightly less than at sea level ($\\approx 9.83\\,\\text{m/s}^2$). At ISS altitude ($h \\approx 400\\,\\text{km}$), $g \\approx 8.7\\,\\text{m/s}^2$.",
     "**Effect of Earth's rotation:** the measured $g$ (effective $g$) is slightly less than the true gravitational acceleration due to centrifugal effect. At equator: $g_{eff} = g - \\omega^2 R$. At poles: $g_{eff} = g$.",
-    "**Effect of Earth's shape (oblateness):** Earth is an oblate spheroid — polar radius $R_p \\approx 6357\\,\\text{km}$, equatorial radius $R_e \\approx 6378\\,\\text{km}$. $g$ is larger at poles ($\approx 9.83\\,\\text{m/s}^2$) than at equator ($\approx 9.78\\,\\text{m/s}^2$).",
+    "**Effect of Earth's shape (oblateness):** Earth is an oblate spheroid — polar radius $R_p \\approx 6357\\,\\text{km}$, equatorial radius $R_e \\approx 6378\\,\\text{km}$. $g$ is larger at poles ($\\approx 9.83\\,\\text{m/s}^2$) than at equator ($\\approx 9.78\\,\\text{m/s}^2$).",
     "**Combined formula for effective $g$ at latitude $\\phi$ and altitude $h$:** $g_{eff} \\approx g_0(1 - 2h/R) + g_0(5.3 \\times 10^{-3})\\sin^2\\phi$, where $g_0 = 9.8\\,\\text{m/s}^2$. The $\\sin^2\\phi$ term accounts for centrifugal and oblateness effects.",
     "**Value of $g$ on other bodies:** Moon: $1.62\\,\\text{m/s}^2$; Mars: $3.71\\,\\text{m/s}^2$; Jupiter: $24.8\\,\\text{m/s}^2$; Sun surface: $274\\,\\text{m/s}^2$.",
-    "**Gravitational potential at height $h$:** $V = -GM/(R+h) \\approx -gR(1 - h/R)$ for $h \\ll R$. At depth $d$: $V = -GM/(2R)(3 - (R-d)^2/R^2)$. Both continuous at $d=0$."
+    "**Gravitational potential at height $h$:** $V = -GM/(R+h) \\approx -gR(1 - h/R)$ for $h \\ll R$. At depth $d$: $V = -GM/(2R)(3 - (R-d)^2/R^2)$. Both continuous at $d=0$.",
+    "**Apparent weight:** the reading on a weighing machine is the normal force, which differs from $mg$ in accelerating frames (elevators, rotating platforms). In free fall, apparent weight is zero.",
+    "**Variation inside Earth (non-uniform):** Earth's core is denser than the mantle, so $g$ actually increases slightly in the upper mantle before decreasing linearly through the core, peaking at about $10\\,\\text{m/s}^2$ at the core-mantle boundary.",
+    "**Importance for surveying:** precise gravimeters can detect changes in $g$ due to underground mineral deposits, oil reservoirs, and tectonic activity, making gravity measurement a vital tool in geophysics.",
+    "**The $1/r^2$ dependence is exact** for point masses and spherically symmetric bodies, but real celestial bodies have mass anomalies that cause small deviations from the predicted values.",
+    "**Gravitational anomaly:** regions with higher density (like iron ore deposits) produce slightly larger $g$ values, while oil reservoirs (less dense) produce slightly smaller $g$ values. These are called Bouguer anomalies.",
+    "**Connection to satellite orbits:** satellites in low orbits experience slightly varying gravitational fields due to Earth's oblateness, causing their orbital planes to precess. This is called nodal precession and is used in sun-synchronous orbits.",
+    "**Gravity probe experiments:** the Gravity Probe A (1976) and Gravity Probe B (2004) missions tested general relativity predictions about how gravity affects time and spacetime, confirming Einstein's theory to high precision."
   ],
   "confusion": [
     "Altitude formula uses $g' = g(R/(R+h))^2$ (quadratic), while depth formula uses $g' = g(1 - d/R)$ (linear). These are NOT the same formula applied differently — they arise from different physics (inverse-square vs. shell theorem).",
     "The formula $g' = g(1 - 2h/R)$ for small $h$ is an APPROXIMATION from binomial expansion. It is only valid when $h \\ll R$. The exact formula is $g(R/(R+h))^2$.",
     "At the centre of Earth, $g = 0$ but potential is NOT zero — it is $V = -3GM/2R$ (most negative). Field is the gradient of potential, so zero field means potential is at an extremum.",
-    "The rotation of Earth reduces the EFFECTIVE $g$ at the equator by about $0.034\\,\\text{m/s}^2$ (about 0.35%). This is why launch sites prefer equatorial locations — the centrifugal effect helps the rocket."
+    "The rotation of Earth reduces the EFFECTIVE $g$ at the equator by about $0.034\\,\\text{m/s}^2$ (about 0.35%). This is why launch sites prefer equatorial locations — the centrifugal effect helps the rocket.",
+    "A person at the poles weighs slightly more than at the equator due to both Earth's rotation and its equatorial bulge — not because gravity is fundamentally different.",
+    "Inside a tunnel through Earth (assuming uniform density), a dropped object performs simple harmonic motion with period $T = 2\\pi\\sqrt{R/g} \\approx 84.5\\,\\text{min}$, independent of the tunnel's path.",
+    "The variation of $g$ with depth assumes uniform density — real Earth has a dense core, so $g$ actually increases slightly in the outer layers before decreasing toward the centre."
   ],
   "practice": [
     "At what height above Earth's surface does $g$ become $50\\%$ of its surface value? $R = 6400\\,\\text{km}$. Solution: $g' = 0.5g = g(R/(R+h))^2 \\Rightarrow (R/(R+h))^2 = 0.5 \\Rightarrow R+h = R/\\sqrt{0.5} = 1.414R \\Rightarrow h = 0.414R = 2650\\,\\text{km}$.",
     "At what depth below Earth's surface does $g$ become $50\\%$ of its surface value? Solution: $g' = g(1 - d/R) = 0.5g \\Rightarrow 1 - d/R = 0.5 \\Rightarrow d = 0.5R = 3200\\,\\text{km}$.",
     "Find the effective $g$ at latitude $45^\\circ$ on Earth's surface. $g_{poles} = 9.83\\,\\text{m/s}^2$, $g_{equator} = 9.78\\,\\text{m/s}^2$. Solution: $g_{eff} = g_{poles} - (g_{poles} - g_{equator})\\sin^2\\phi = 9.83 - 0.05 \\times (0.707)^2 = 9.83 - 0.025 = 9.805\\,\\text{m/s}^2$.",
-    "A pendulum has period $T = 2.0\\,\\text{s}$ at sea level. What is its period at an altitude of $100\\,\\text{km}$? $R = 6400\\,\\text{km}$. Solution: $T \\propto 1/\\sqrt{g}$. $g' = g(R/(R+h))^2$. $T' = T\\sqrt{g/g'} = 2.0 \\times (R+h)/R = 2.0 \\times 6500/6400 = 2.03\\,\\text{s}$."
+    "A pendulum has period $T = 2.0\\,\\text{s}$ at sea level. What is its period at an altitude of $100\\,\\text{km}$? $R = 6400\\,\\text{km}$. Solution: $T \\propto 1/\\sqrt{g}$. $g' = g(R/(R+h))^2$. $T' = T\\sqrt{g/g'} = 2.0 \\times (R+h)/R = 2.0 \\times 6500/6400 = 2.03\\,\\text{s}$.",
+    "Show that the time period of oscillation through a straight tunnel along Earth's diameter is independent of the tunnel length and equals $84.5\\,\\text{min}$. Solution: For a mass at depth $d$, the restoring force is $F = -mg' = -mg(d/R)$. This gives SHM with $\\omega = \\sqrt{g/R}$, so $T = 2\\pi\\sqrt{R/g} = 2\\pi\\sqrt{6.4 \\times 10^6/9.8} \\approx 5060\\,\\text{s} \\approx 84.5\\,\\text{min}$.",
+    "Find the value of $g$ at a depth of $1600\\,\\text{km}$ below Earth's surface. $R = 6400\\,\\text{km}$, $g_{surface} = 9.8\\,\\text{m/s}^2$. Solution: $g' = g(1 - d/R) = 9.8(1 - 1600/6400) = 9.8 \\times 0.75 = 7.35\\,\\text{m/s}^2$."
   ],
   "universalFacts": [
     "The linear decrease of $g$ with depth is a direct consequence of the inverse-square law and shell theorem — if gravity fell as $1/r$, $g$ would be constant with depth.",
     "The value of $g$ is highest at the poles ($9.832\\,\\text{m/s}^2$) and lowest at the equator ($9.780\\,\\text{m/s}^2$) due to the combined effect of Earth's rotation and its equatorial bulge.",
     "At an altitude of $100\\,\\text{km}$ (the Kármán line, the boundary of space), $g$ is still about $9.5\\,\\text{m/s}^2$ — only $3\\%$ less than at the surface. 'Weightlessness' in orbit is due to free fall, not absence of gravity.",
-    "The variation of $g$ with latitude was first measured by Richer in 1672 using a pendulum clock that ran slower at Cayenne (near equator) than in Paris."
+    "The variation of $g$ with latitude was first measured by Richer in 1672 using a pendulum clock that ran slower at Cayenne (near equator) than in Paris.",
+    "Modern gravimeters can detect changes in $g$ as small as $1\\,\\mu\\text{Gal}$ ($10^{-8}\\,\\text{m/s}^2$), allowing detection of underground oil deposits, magma chambers, and even earthquakes.",
+    "The difference between $g$ at the poles and equator is about $0.5\\%$, but this is enough to affect precise scientific measurements and engineering projects like pipelines and railways."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

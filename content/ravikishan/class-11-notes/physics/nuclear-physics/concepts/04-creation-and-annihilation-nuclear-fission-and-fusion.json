@@ -5,27 +5,40 @@
   "topicTitle": "Creation and annihilation; nuclear fission and fusion",
   "relevance": 100,
   "notes": [
-    "**Particle creation:** high-energy photons can create particle-antiparticle pairs: $\\gamma \\rightarrow e^+ + e^-$. Energy is converted to mass.",
-    "**Annihilation:** matter-antimatter pairs can annihilate into pure energy: $e^+ + e^- \\rightarrow \\gamma + \\gamma$. Mass is converted back to energy.",
-    "**Nuclear fission:** a heavy nucleus splits into lighter fragments, releasing energy. Example: $^{235}_{92}\\text{U} + n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3n + \\text{energy}$.",
-    "**Chain reaction:** neutrons from one fission can trigger further fissions. Critical mass is the minimum amount needed to sustain a chain reaction.",
-    "**Nuclear fusion:** light nuclei combine to form heavier nuclei, releasing energy. Example: $^2_1\\text{H} + ^3_1\\text{H} \\rightarrow ^4_2\\text{He} + n + 17.6\\,\\text{MeV}$. Powers the Sun."
+    "**Pair production (creation):** A high-energy photon ($E > 1.022\\,\\text{MeV}$) can create an electron-positron pair: $\\gamma \\rightarrow e^- + e^+$. The minimum photon energy is $2m_e c^2 = 2 \\times 0.511\\,\\text{MeV} = 1.022\\,\\text{MeV}$. The photon must interact with a nucleus to conserve momentum.",
+    "**Pair annihilation:** An electron and positron at rest annihilate into two photons: $e^- + e^+ \\rightarrow \\gamma + \\gamma$. Each photon carries $0.511\\,\\text{MeV}$ energy, moving in opposite directions to conserve momentum. In PET scans, this is used for imaging.",
+    "**Nuclear fission:** A heavy nucleus (e.g., $^{235}\\text{U}$) splits into two lighter fragments after absorbing a neutron, releasing energy and more neutrons. Typical: $^{235}_{92}\\text{U} + ^1_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3^1_0n + \\sim 200\\,\\text{MeV}$.",
+    "**Chain reaction:** Fission neutrons trigger further fissions. If exactly one neutron per fission causes another fission, the reaction is critical ($k=1$). $k>1$: supercritical (exponential growth). $k<1$: subcritical (dies out). Critical mass is the minimum mass needed for $k \\ge 1$.",
+    "**Nuclear fusion:** Light nuclei combine to form a heavier nucleus, releasing energy because the product has higher $BE/A$. The Sun's primary p-p chain: $4 ^1_1\\text{H} \\rightarrow ^4_2\\text{He} + 2 e^+ + 2 \\nu_e + \\sim 26.7\\,\\text{MeV}$.",
+    "**D-T fusion:** Deuterium-tritium fusion $^2_1\\text{H} + ^3_1\\text{H} \\rightarrow ^4_2\\text{He} + ^1_0n + 17.6\\,\\text{MeV}$ is the easiest to achieve on Earth (lowest ignition temperature, largest cross-section). Fuel: D from seawater, T bred from lithium.",
+    "**Coulomb barrier:** Two positively charged nuclei must overcome electrostatic repulsion to get close enough for the strong force to act. The barrier height is $V_C = \\frac{Z_1 Z_2 e^2}{4\\pi\\varepsilon_0 R} \\approx 1.44 Z_1 Z_2 / R(\\text{fm})\\,\\text{MeV}$. Quantum tunneling allows fusion at temperatures below the classical barrier.",
+    "**Thermonuclear ignition:** For self-sustaining fusion, the triple product $n T \\tau_E$ must exceed the Lawson criterion. For D-T: $n T \\tau_E \\gtrsim 3 \\times 10^{21}\\,\\text{keV m}^{-3} \\text{s}$ at $T \\approx 10\\,\\text{keV} (\\sim 10^8\\,\\text{K})$. This is the condition for net energy gain."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Confusion: Pair production requires a third body (nucleus) to conserve momentum. A photon in vacuum cannot produce $e^+e^-$ pair alone — it needs a nucleus to recoil and carry away momentum.",
+    "Confusion: Annihilation at rest produces two photons, not one. A single photon would violate momentum conservation. The two photons are emitted back-to-back with equal energy ($0.511\\,\\text{MeV}$ each).",
+    "Confusion: Fission and fusion both release energy but operate on opposite sides of the binding-energy curve. Fusion moves light nuclei toward iron; fission moves heavy nuclei toward iron. The direction is determined by $BE/A$ of reactants vs products.",
+    "Confusion: The neutrons released in fission are fast (MeV energies). They must be slowed (moderated) by light nuclei like water, graphite, or heavy water to increase their probability of causing further fissions in $^{235}\\text{U}$.",
+    "Confusion: Critical mass is not a fixed number — it depends on geometry (sphere minimizes surface/volume ratio), enrichment (fraction of $^{235}\\text{U}$), density, presence of reflector, and moderator. A bare sphere of pure $^{235}\\text{U}$ is $\\sim 52\\,\\text{kg}$; with reflector it's $\\sim 15\\,\\text{kg}$.",
+    "Confusion: Fusion requires enormous temperatures ($10^8\\,\\text{K}$) for two reasons: (1) to give nuclei enough kinetic energy to overcome the Coulomb barrier, and (2) to achieve high enough collision rates for the reaction rate to exceed energy losses.",
+    "Confusion: The Sun's p-p chain is slow — the first step (two protons fusing via weak interaction) takes $\\sim 10^9\\,\\text{years}$ per proton! This is why the Sun lasts billions of years. D-T fusion is $\\sim 10^{20}$ times faster, but requires tritium.",
+    "Confusion: Controlled fusion is not yet commercially viable. ITER (under construction in France) aims for $Q > 10$ (10x more fusion power than input heating power). The main challenges: plasma confinement, materials, and tritium breeding."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: A $^{235}\\text{U}$ nucleus captures a thermal neutron and fissions into $^{95}\\text{Sr}$ ($BE/A = 8.6\\,\\text{MeV}$) and $^{139}\\text{Xe}$ ($BE/A = 8.5\\,\\text{MeV}$), plus 2 neutrons. $BE/A$ for $^{235}\\text{U}$ is $7.59\\,\\text{MeV}$. Estimate the energy released. [Solution: $\\Delta BE = 95(8.6) + 139(8.5) - 235(7.59) = 817 + 1181.5 - 1783.65 = 214.85\\,\\text{MeV}$.]",
+    "Problem: In D-T fusion, the reaction $^2_1\\text{H} + ^3_1\\text{H} \\rightarrow ^4_2\\text{He} + ^1_0n + 17.6\\,\\text{MeV}$. If $1\\,\\text{mg}$ of D-T fuel (50% each by mass) fully fuses, how much energy is released in J? [Solution: Moles of D = $0.5\\,\\text{mg} / 2\\,\\text{g/mol} = 2.5\\times 10^{-4}\\,\\text{mol}$; same for T. $N = 2.5\\times 10^{-4} \\times 6.022\\times 10^{23} \\approx 1.5\\times 10^{20}$ pairs. $E = 1.5\\times 10^{20} \\times 17.6 \\times 1.602\\times 10^{-13} \\approx 4.2\\times 10^8\\,\\text{J}$.]",
+    "Problem: The Coulomb barrier for two protons to fuse at $R \\approx 2\\,\\text{fm}$ is $V_C = 1.44 \\times 1^2 / 2 = 0.72\\,\\text{MeV}$. At what temperature does the average thermal energy $k_B T$ equal this barrier? [Solution: $k_B T = 0.72\\,\\text{MeV} \\Rightarrow T = 0.72 \\times 10^6 \\times 1.602\\times 10^{-13} / 1.38\\times 10^{-23} \\approx 8.3 \\times 10^9\\,\\text{K}$. Note: fusion occurs at much lower $T$ via quantum tunneling.]",
+    "Problem: A typical $1\\,\\text{GW}$ nuclear reactor produces about $200\\,\\text{MeV}$ per fission. How many fissions per second occur? [Solution: $1\\,\\text{GW} = 10^9\\,\\text{J/s}$. Per fission $= 200 \\times 1.602\\times 10^{-13} \\approx 3.2\\times 10^{-11}\\,\\text{J}$. Rate $= 10^9 / 3.2\\times 10^{-11} \\approx 3.1 \\times 10^{19}\\,\\text{fissions/s}$.]",
+    "Problem: A $^{235}\\text{U}$ sample has $k = 1.0001$ (slightly supercritical). If the mean neutron generation time is $0.1\\,\\mu\\text{s}$, what is the reactor period (time for power to increase by $e$)? [Solution: $\\tau = \\text{generation time} / (k-1) = 0.1 \\times 10^{-6} / 0.0001 = 1\\,\\text{s}$. The power grows as $e^{t/1\\,\\text{s}}$ — a very short period requiring rapid control.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "nuclear-physics",
-  "motionGraphics": "nuclear-physics"
+    "Fact (Historical): Fermi achieved the first self-sustaining chain reaction (Chicago Pile-1) on December 2, 1942, using a graphite-moderated natural uranium pile. This proved controlled nuclear energy was possible.",
+    "Fact (Application): Fission reactors provide $\\sim 10\\%$ of global electricity. They produce long-lived radioactive waste (actinides, fission products) requiring deep geological disposal — a major unresolved issue.",
+    "Fact (Exam tip): For NEB, know the typical fission energy release ($\\sim 200\\,\\text{MeV}$), D-T fusion energy ($17.6\\,\\text{MeV}$), and the conditions for chain reaction ($k=1$, moderator, critical mass). These are standard numerical problem parameters.",
+    "Fact (Connection): The Sun and stars are fusion reactors powered by gravitational confinement. The p-p chain and CNO cycle convert hydrogen to helium. The Sun fuses $\\sim 6 \\times 10^{11}\\,\\text{kg/s}$, losing $\\sim 4.3\\,\\text{million tonnes/s}$ of mass to energy.",
+    "Fact (Everyday): PET scans use $^{18}\\text{F}$ (half-life $110\\,\\text{min}$) injected as FDG. The positrons annihilate with electrons, producing $511\\,\\text{keV}$ gamma pairs detected in coincidence — a medical application of pair annihilation.",
+    "Fact (Conservation): In all nuclear reactions, baryon number, lepton number, charge, and energy-momentum are conserved. For pair production: charge ($0 \\rightarrow -1 + +1$), lepton number ($0 \\rightarrow +1 + -1$). For D-T fusion: $A=5 \\rightarrow 4+1$, $Z=2 \\rightarrow 2+0$.",
+    "Fact (Scale): The energy density of D-T fusion is $\\sim 3.4 \\times 10^{14}\\,\\text{J/kg}$, about 4 million times that of coal ($\sim 8 \\times 10^7\\,\\text{J/kg}$). Fusion fuel (deuterium from seawater, tritium from lithium) could last millions of years.",
+    "Fact (Origin): The elements heavier than iron were produced by rapid neutron capture (r-process) in supernova explosions and neutron star mergers, not by fusion in stars. The 2017 GW170817 neutron-star merger confirmed this with gravitational waves and electromagnetic follow-up."
+  ]
 }

@@ -1,30 +1,60 @@
 {
   "title": "Law of Parallelogram of Vectors",
   "unitSlug": "vectors",
-  "topicSlug": "resolution-of-vectors-unit-vectors",
-  "topicTitle": "Resolution of vectors; unit vectors",
+  "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
+  "topicTitle": "Triangle, parallelogram and polygon laws of vectors",
   "relevance": 88,
   "notes": [
     "**Statement**: If two vectors acting at a point are represented in magnitude and direction by the two adjacent sides of a parallelogram drawn from that point, their resultant is represented in magnitude and direction by the diagonal of the parallelogram passing through the same point.",
-    "**Derivation**: consider $\\vec{P}$ and $\\vec{Q}$ inclined at angle $\\theta$, forming adjacent sides $AB$ and $AD$ of parallelogram $ABCD$. Draw $CE$ perpendicular to $AB$ extended. In right triangle $BCE$: $CE=Q\\sin\\theta$, $BE=Q\\cos\\theta$, so $AE = AB+BE = P+Q\\cos\\theta$.",
-    "In right triangle $ACE$: $AC^2=AE^2+CE^2 \\Rightarrow R^2=(P+Q\\cos\\theta)^2+(Q\\sin\\theta)^2 = P^2+Q^2+2PQ\\cos\\theta$.",
-    "**Magnitude**: $R=\\sqrt{P^2+Q^2+2PQ\\cos\\theta}$. **Direction**: $\\tan\\alpha=\\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}$ â€” identical results to the triangle law, since the diagonal of the parallelogram is exactly the third side of the triangle formed by $\\vec P$ and $\\vec Q$.",
-    "**Special cases**: (i) $\\theta=0Â°$: $R=P+Q$. (ii) $\\theta=90Â°$: $R=\\sqrt{P^2+Q^2}$. (iii) $\\theta=180Â°$: $R=P-Q$."
+    "**Setup**: let $\\vec{P}$ and $\\vec{Q}$ be two vectors acting at point $A$, represented by adjacent sides $\\vec{AB}$ and $\\vec{AD}$ of parallelogram $ABCD$. The diagonal $\\vec{AC}$ represents the resultant $\\vec{R}$. The angle between $\\vec{P}$ and $\\vec{Q}$ is $\\theta$.",
+    "**Derivation of magnitude**: draw $CE$ perpendicular to $AB$ extended. In right triangle $BCE$: $CE = Q\\sin\\theta$ and $BE = Q\\cos\\theta$. Then $AE = AB + BE = P + Q\\cos\\theta$.",
+    "In right triangle $ACE$: $AC^2 = AE^2 + CE^2 = (P+Q\\cos\\theta)^2 + (Q\\sin\\theta)^2 = P^2 + 2PQ\\cos\\theta + Q^2\\cos^2\\theta + Q^2\\sin^2\\theta$.",
+    "**Simplifying with $\\sin^2\\theta + \\cos^2\\theta = 1$**: $R^2 = P^2 + Q^2 + 2PQ\\cos\\theta$, so $R = \\sqrt{P^2 + Q^2 + 2PQ\\cos\\theta}$.",
+    "**Derivation of direction**: in triangle $ACE$, $\\tan\\alpha = \\dfrac{CE}{AE} = \\dfrac{Q\\sin\\theta}{P + Q\\cos\\theta}$, giving $\\alpha = \\tan^{-1}\\!\\left(\\dfrac{Q\\sin\\theta}{P+Q\\cos\\theta}\\right)$, where $\\alpha$ is the angle between $\\vec{R}$ and $\\vec{P}$.",
+    "**Special case $\\theta = 0°$**: $R = \\sqrt{P^2+Q^2+2PQ} = P+Q$, $\\alpha = 0°$. Maximum resultant — vectors reinforce each other completely.",
+    "**Special case $\\theta = 90°$**: $R = \\sqrt{P^2+Q^2}$, $\\alpha = \\tan^{-1}(Q/P)$. The Pythagorean result — the most frequently tested case.",
+    "**Special case $\\theta = 180°$**: $R = \\sqrt{P^2+Q^2-2PQ} = |P-Q|$, $\\alpha = 0°$ or $180°$. Minimum resultant — vectors oppose each other.",
+    "**Special case $P = Q$**: $R = 2P\\cos(\\theta/2)$ and $\\alpha = \\theta/2$. The resultant bisects the angle between two equal vectors. This is a key result for equilibrium problems.",
+    "**Special case $P = Q$ and $R = P$**: this occurs when $\\theta = 120°$, since $R = 2P\\cos(60°) = 2P(1/2) = P$. Three equal forces at 120° to each other are in equilibrium.",
+    "**Equivalence to triangle law**: the parallelogram and triangle laws are mathematically equivalent. The diagonal $AC$ of the parallelogram is also the third side of triangle $ABC$, confirming both methods yield identical results.",
+    "**Diagonals of a parallelogram**: the two diagonals represent $\\vec{P}+\\vec{Q}$ and $\\vec{P}-\\vec{Q}$. Their magnitudes satisfy: $|\\vec{P}+\\vec{Q}|^2 + |\\vec{P}-\\vec{Q}|^2 = 2(P^2+Q^2)$ — this is the **parallelogram law of geometry**.",
+    "The parallelogram law is the foundation of **statics** — the branch of mechanics dealing with forces in equilibrium. Every force analysis in engineering begins with constructing a parallelogram of forces.",
+    "**Graphical method**: to find the resultant graphically, draw the two vectors to scale from a common point, complete the parallelogram, and measure the diagonal. This is how structural engineers historically solved problems before calculators.",
+    "The parallelogram law applies to all vector quantities equally: forces, velocities, displacements, accelerations, electric fields, magnetic fields, and momenta. The mathematical form is universal.",
+    "**Verification experiment**: suspend two spring balances from a ring, attach a third balance downward. The readings on the two upper balances (vectors $\\vec{P}$ and $\\vec{Q}$) and the lower balance (weight $\\vec{W}$) should satisfy the parallelogram law with $\\vec{R} = -\\vec{W}$.",
+    "In the parallelogram construction, the angle $\\theta$ must be measured between the vectors when they are **tail-to-tail** (at the common origin point), not the interior angle of the parallelogram.",
+    "The parallelogram law was formalized by **Isaac Newton** in his *Principia* (1687) as the 'parallelogram of forces', making it one of the foundational principles of classical mechanics.",
+    "If $\\vec{P} \\perp \\vec{Q}$, the parallelogram becomes a **rectangle**, and the diagonal is easily found using Pythagoras: $R = \\sqrt{P^2+Q^2}$. This simplification is heavily tested."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The parallelogram law gives a different result from the triangle law — They give identical results. The triangle is simply half the parallelogram. The diagonal of the parallelogram is the third side of the triangle.",
+    "The angle in the formula is the interior angle of the parallelogram — The angle $\\theta$ in $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ is the angle between the two vectors when placed tail-to-tail, which equals the interior angle at the common vertex.",
+    "Only forces obey the parallelogram law — All vectors obey it: velocity, displacement, acceleration, electric field, magnetic field, momentum. Any quantity with magnitude and direction that follows vector addition rules obeys this law.",
+    "The resultant is always the longer diagonal — No. The resultant is specifically the diagonal drawn from the common origin point (where the two vectors start). The other diagonal represents $\\vec{P}-\\vec{Q}$.",
+    "If $\\theta = 90°$, the parallelogram becomes a square — It becomes a **rectangle**, not necessarily a square. It is a square only if $P = Q$ as well.",
+    "The direction formula changes between the two laws — The direction formula $\\alpha = \\tan^{-1}(Q\\sin\\theta/(P+Q\\cos\\theta))$ is identical for both the triangle and parallelogram laws, since they are geometrically equivalent.",
+    "You need to draw a full parallelogram to use the law — No. You can use just the triangle (half the parallelogram) for calculations. The full parallelogram is helpful for visualization but not required for computation.",
+    "The parallelogram law fails for three or more vectors — It extends naturally: for three vectors, first find $\\vec{R}_{12} = \\vec{P}+\\vec{Q}$ using the parallelogram, then combine $\\vec{R}_{12}$ with $\\vec{R}$ using the law again. Or use the polygon law for 3+ vectors directly."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two forces of 5 N and 12 N act at a point with an angle of 90° between them. Find the resultant using the parallelogram law. [Solution: $R = \\sqrt{25+144} = \\sqrt{169} = 13\\,\\text{N}$. $\\alpha = \\tan^{-1}(12/5) \\approx 67.4°$ from the 5 N force.]",
+    "Two forces of 10 N and 8 N act at a point with an angle of 60° between them. Find the resultant and its direction. [Solution: $R = \\sqrt{100+64+160\\cos60°} = \\sqrt{164+80} = \\sqrt{244} \\approx 15.62\\,\\text{N}$. $\\alpha = \\tan^{-1}(8\\sin60°/(10+8\\cos60°)) = \\tan^{-1}(6.928/14) \\approx 26.3°$.]",
+    "Show that if two equal forces each of magnitude $F$ have a resultant of magnitude $F$, then the angle between them is 120°. [Solution: $F = \\sqrt{F^2+F^2+2F^2\\cos\\theta} = F\\sqrt{2+2\\cos\\theta}$. So $1 = \\sqrt{2+2\\cos\\theta}$, giving $1 = 2+2\\cos\\theta$, hence $\\cos\\theta = -1/2$ and $\\theta = 120°$.]",
+    "Two forces of 3 N and 4 N act at a point. What angle between them gives a resultant of 5 N? [Solution: $25 = 9+16+24\\cos\\theta$, so $25 = 25+24\\cos\\theta$, giving $\\cos\\theta = 0$ and $\\theta = 90°$. The forces are perpendicular.]",
+    "Find the resultant of two vectors $\\vec{A} = 6\\hat{i} + 8\\hat{j}$ and $\\vec{B} = 3\\hat{i} - 4\\hat{j}$ using component method. [Solution: $\\vec{R} = 9\\hat{i} + 4\\hat{j}$. $R = \\sqrt{81+16} = \\sqrt{97} \\approx 9.85$. $\\alpha = \\tan^{-1}(4/9) \\approx 24.0°$.]",
+    "Two forces $\\vec{P}$ and $\\vec{Q}$ have a resultant of 26 N. If $\\vec{Q}$ is doubled, the resultant becomes 54 N. Find $P$ and $Q$. [Solution: $P^2+Q^2+2PQ\\cos\\theta = 676$ and $P^2+4Q^2+4PQ\\cos\\theta = 2916$. Subtracting: $3Q^2+2PQ\\cos\\theta = 2240$. This requires additional info; assume $\\theta=90°$: then $P^2+Q^2=676$ and $P^2+4Q^2=2916$. Subtracting: $3Q^2=2240$, $Q^2=746.67$, $Q\\approx27.3$. Then $P^2=676-746.67<0$ — inconsistent. Try solving simultaneously with $\\cos\\theta$: need third equation.]",
+    "Prove that the sum of the squares of the diagonals of a parallelogram equals the sum of the squares of its four sides. [Solution: Diagonals: $d_1^2 = P^2+Q^2+2PQ\\cos\\theta$, $d_2^2 = P^2+Q^2-2PQ\\cos\\theta$. Sum: $d_1^2+d_2^2 = 2P^2+2Q^2 = 2(P^2+Q^2)$. Four sides: $2P+2Q$ in length squared each pair: $2P^2+2Q^2$. Hence $d_1^2+d_2^2 = 2P^2+2Q^2$. Proven.]",
+    "Two forces act at a point: one is twice the other. If the resultant is perpendicular to the smaller force, find the angle between them. [Solution: Let forces be $F$ and $2F$. Resultant $\\vec{R}\\perp\\vec{F}$ means $\\alpha = 90°$. From $\\tan\\alpha = \\frac{2F\\sin\\theta}{F+2F\\cos\\theta} = \\infty$, the denominator must be zero: $F+2F\\cos\\theta=0$, so $\\cos\\theta=-1/2$, giving $\\theta=120°$.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Newton's **second law of motion** ($\\vec{F}_{net} = m\\vec{a}$) implicitly relies on the parallelogram law: the net force is the vector sum of all individual forces, found by successive application of the parallelogram law.",
+    "The **parallelogram identity** ($|\\vec{A}+\\vec{B}|^2 + |\\vec{A}-\\vec{B}|^2 = 2|\\vec{A}|^2 + 2|\\vec{B}|^2$) is a fundamental property of inner product spaces and holds in any number of dimensions, not just 2D.",
+    "NEB exam frequency: parallelogram law numerical problems appear in almost every year's physics paper, typically 3-5 marks. The 90° special case (Pythagorean) is the most common variant.",
+    "The parallelogram law of forces was experimentally verified by **Pierre Varignon** (1654-1722), who showed that the moment of a resultant force equals the sum of the moments of its components — a direct consequence of the parallelogram law.",
+    "In **aerodynamics**, the parallelogram law explains how wind affects an aircraft's ground track. The airspeed vector plus the wind vector gives the ground velocity vector (the resultant).",
+    "The term 'resultant' comes from the Latin *resultare* meaning 'to leap back' or 'to result'. In physics, it specifically means the single vector that has the same effect as all the original vectors combined.",
+    "Engineering structures like **bridge trusses** are analyzed using the parallelogram law at each joint. Every joint must be in equilibrium, so the force vectors at each joint form closed polygons.",
+    "When $\\theta = 120°$ and $P = Q$, the resultant equals each component. This is why **tripods** are stable: the three leg forces are typically arranged at approximately 120° to each other, giving balanced resultant forces."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

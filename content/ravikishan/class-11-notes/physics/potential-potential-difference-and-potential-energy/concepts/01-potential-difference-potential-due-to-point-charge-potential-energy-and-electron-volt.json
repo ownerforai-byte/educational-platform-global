@@ -5,26 +5,53 @@
   "topicTitle": "Potential difference, potential due to a point charge, potential energy, electron volt",
   "relevance": 100,
   "notes": [
-    "**Potential difference:** work done per unit charge to move a test charge between two points: $\\Delta V = W/q$.",
-    "**Potential due to point charge:** $V = kQ/r$. It is a scalar, so contributions from multiple charges add algebraically.",
-    "**Potential energy of two charges:** $U = kq_1q_2/r$. Positive $U$ means repulsive configuration; negative $U$ means attractive configuration.",
-    "**Relation between field and potential:** $E = -dV/dr$. The electric field is the negative gradient of the potential.",
-    "**Electron volt (eV):** the kinetic energy gained by an electron when accelerated through 1 V potential difference. $1\\,\\text{eV} = 1.602 \\times 10^{-19}\\,\\text{J}$."
+    "**Potential difference:** the work done per unit positive charge in moving a test charge between two points: $\\Delta V = V_B - V_A = W_{AB}/q$. Units: volt (V) = J/C.",
+    "**Potential due to a point charge:** $V = kQ/r = \\frac{1}{4\\pi\\epsilon_0} \\frac{Q}{r}$. This is a scalar, so for multiple charges the potentials add algebraically: $V_{total} = \\sum \\frac{kQ_i}{r_i}$. By convention, $V = 0$ at infinity.",
+    "**Potential energy of two point charges:** $U = k\\frac{q_1 q_2}{r}$. Positive $U$ means repulsive (like charges); negative $U$ means attractive (opposite charges). This energy is stored in the field configuration.",
+    "**Potential energy of a system of charges:** sum over all unique pairs: $U = \\sum_{i<j} \\frac{k q_i q_j}{r_{ij}}$. Work done to assemble the charges from infinity to their positions.",
+    "**Relation between electric field and potential:** $\\vec{E} = -\\nabla V = -\\frac{dV}{dr}\\hat{r}$ (radial). The field points in the direction of steepest decrease of potential. Magnitude: $E = -dV/dr$.",
+    "**Potential difference in terms of field:** $V_B - V_A = -\\int_A^B \\vec{E} \\cdot d\\vec{l}$. The negative sign means moving against the field increases potential.",
+    "**Equipotential surfaces:** surfaces where $V$ is constant. No work is done moving a charge along an equipotential. Electric field lines are always perpendicular to equipotential surfaces.",
+    "**Electron volt (eV):** the kinetic energy gained by an electron (charge $e = 1.602 \\times 10^{-19}$ C) when accelerated through a potential difference of 1 V. $1\\,\\text{eV} = 1.602 \\times 10^{-19}\\,\\text{J}$. Useful unit for atomic-scale energies.",
+    "**Potential of a charged conducting sphere:** outside ($r \\ge R$): $V = kQ/r$. At the surface: $V = kQ/R$. Inside ($r < R$): $V = kQ/R$ (constant, same as surface). The entire conductor is an equipotential.",
+    "**Potential of an electric dipole:** $V = \\frac{k p \\cos\\theta}{r^2}$ for $r \\gg d$, where $p = qd$ is the dipole moment. Along the axis ($\theta = 0$): $V = kp/r^2$. In the equatorial plane ($\theta = 90°$): $V = 0$.",
+    "**Work done by electric field:** $W = -\\Delta U = q(V_A - V_B)$. The field does positive work when a positive charge moves to lower potential (or a negative charge moves to higher potential).",
+    "**Superposition for potential:** since potential is a scalar, $V_{total} = \\sum V_i$. This makes potential easier to calculate than field (vector) for complex charge distributions.",
+    "**Potential of continuous distributions:** $V = \\int \\frac{k\\,dq}{r}$. For a line charge: $V = \\int \\frac{k\\lambda\\,dl}{r}$. For a surface: $V = \\int \\frac{k\\sigma\\,dA}{r}$. For a volume: $V = \\int \\frac{k\\rho\\,dV}{r}$.",
+    "**Zero of potential:** the choice of $V=0$ at infinity is conventional. Only potential differences are physically meaningful. You can add a constant to all potentials without changing the physics.",
+    "**Potential energy of a charge in an external field:** $U = qV$, where $V$ is the potential due to all other charges (not including the charge itself). For a dipole in uniform field: $U = -\\vec{p} \\cdot \\vec{E} = -pE\\cos\\theta$.",
+    "**Electron volt in practice:** ionisation energy of hydrogen = 13.6 eV. Work function of metals $\\sim$ 2-5 eV. Thermal energy at room temperature $k_B T \\approx 0.025$ eV. Energy gap in silicon = 1.1 eV."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Potential is a scalar, field is a vector. You add potentials as numbers, but add fields as vectors. This makes potential calculations much simpler for multiple charges.",
+    "Potential energy $U = qV$ is the energy of a test charge $q$ in the potential $V$ created by OTHER charges. Do not include the self-energy of $q$ in its own potential.",
+    "The electron volt is a unit of ENERGY, not voltage. $1\\,\\text{eV} = 1.602 \\times 10^{-19}$ J. It is the energy an electron gains moving through 1 V potential difference.",
+    "Potential difference $\\Delta V = V_B - V_A = -\\int_A^B \\vec{E} \\cdot d\\vec{l}$. The negative sign means the field points from higher to lower potential. A positive charge accelerates toward lower potential.",
+    "Inside a conductor in electrostatic equilibrium, the potential is CONSTANT, not zero. The entire conductor (including any cavities) is an equipotential volume.",
+    "For a point charge, $V = kQ/r$ and $E = kQ/r^2$. Note $E = -dV/dr$, so $V$ falls off as $1/r$ while $E$ falls off as $1/r^2$. They are not independent — knowing one determines the other.",
+    "The work done BY the electric field is $W = -\\Delta U = q(V_A - V_B)$. The work done BY AN EXTERNAL AGENT against the field is $W_{ext} = +\\Delta U = q(V_B - V_A)$. These have opposite signs.",
+    "Potential of a dipole falls off as $1/r^2$, faster than a point charge ($1/r$). At large distances, the dipole potential dominates only if the net charge is zero.",
+    "In a circuit, the potential difference across a battery is its EMF (when no current flows) or terminal voltage $V = \\mathcal{E} - Ir$ (when current flows). This is different from the electrostatic potential of isolated charges."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two charges $q_1 = +3\\,\\mu$C at $(0,0)$ and $q_2 = -3\\,\\mu$C at $(0.1\\,\\text{m}, 0)$ form a dipole. Find the potential at $(0.05\\,\\text{m}, 0.05\\,\\text{m})$. Solution: $r_1 = r_2 = \\sqrt{0.05^2 + 0.05^2} = 0.0707$ m. $V_1 = 9 \\times 10^9 \\times 3 \\times 10^{-6} / 0.0707 = 3.82 \\times 10^5$ V. $V_2 = -3.82 \\times 10^5$ V. Total $V = 0$ V (point is on equatorial plane of dipole).",
+    "A point charge $q = +2\\,\\mu$C is at the origin. How much work is needed to bring a charge $q_0 = +1\\,\\mu$C from infinity to a point 0.1 m away? Solution: $W = q_0 V = q_0 \\cdot kq/r = 10^{-6} \\times 9 \\times 10^9 \\times 2 \\times 10^{-6} / 0.1 = 0.18$ J. This equals the potential energy of the pair.",
+    "An electron is accelerated through a potential difference of 500 V. Find its kinetic energy in joules and eV, and its final speed. Solution: $K = 500\\,\\text{eV} = 500 \\times 1.602 \\times 10^{-19} = 8.01 \\times 10^{-17}$ J. $K = \\frac{1}{2}mv^2$, so $v = \\sqrt{2K/m} = \\sqrt{2 \\times 8.01 \\times 10^{-17} / 9.11 \\times 10^{-31}} = 1.33 \\times 10^7$ m/s.",
+    "Four charges $+q$ are placed at the corners of a square of side $a$. Find the potential energy of the system. Solution: Pairs: 4 edges with separation $a$, 2 diagonals with separation $a\\sqrt{2}$. $U = 4 \\times \\frac{kq^2}{a} + 2 \\times \\frac{kq^2}{a\\sqrt{2}} = \\frac{kq^2}{a}(4 + \\sqrt{2})$. For $q = 1\\,\\mu$C, $a = 0.1$ m: $U = 9 \\times 10^9 \\times 10^{-12} / 0.1 \\times 5.414 = 0.487$ J.",
+    "A proton and an electron are separated by 0.53 Å (Bohr radius). Find the potential energy of the system in eV. Solution: $U = -k e^2/r = -9 \\times 10^9 \\times (1.602 \\times 10^{-19})^2 / (0.53 \\times 10^{-10}) = -4.36 \\times 10^{-18}$ J = $-27.2$ eV. This is the ground state energy of hydrogen atom.",
+    "A parallel plate capacitor has plates of area 0.01 m$^2$ separated by 2 mm. It is charged to 100 V. Find the energy stored and the energy density. Solution: $C = \\epsilon_0 A/d = 8.85 \\times 10^{-12} \\times 0.01 / 0.002 = 4.425 \\times 10^{-11}$ F. $U = \\frac{1}{2}CV^2 = 0.5 \\times 4.425 \\times 10^{-11} \\times 10000 = 2.21 \\times 10^{-7}$ J. $E = V/d = 5 \\times 10^4$ V/m. $u = \\frac{1}{2}\\epsilon_0 E^2 = 0.5 \\times 8.85 \\times 10^{-12} \\times 25 \\times 10^8 = 1.11 \\times 10^{-2}$ J/m$^3$.",
+    "A charge of $+5\\,\\mu$C is moved from a point at 10 V to a point at 50 V. Find the work done by the electric field and by an external agent. Solution: $\\Delta V = 40$ V. $W_{field} = q(V_A - V_B) = 5 \\times 10^{-6} \\times (-40) = -0.2$ mJ. $W_{ext} = +0.2$ mJ. The field does negative work (the charge moves to higher potential).",
+    "Find the potential at the centre of a uniformly charged ring of radius $R = 0.1$ m and total charge $Q = 1\\,\\mu$C. Solution: All charge elements are at distance $R$ from centre. $V = kQ/R = 9 \\times 10^9 \\times 10^{-6} / 0.1 = 9 \\times 10^4$ V. Note: the field at the centre is zero by symmetry, but potential is not zero."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The electron volt is the standard unit for atomic, nuclear, and particle physics energies. 1 eV = 1.602 × 10⁻¹⁹ J. The proton rest energy is 938 MeV; electron rest energy is 511 keV.",
+    "The potential of Earth is conventionally taken as zero. A 12 V car battery means its positive terminal is 12 V higher than its negative terminal, which is connected to the car chassis (ground).",
+    "In a thundercloud, the potential difference between cloud and ground can reach 100 million volts. The electric field before a lightning strike can exceed 3 × 10⁶ V/m (breakdown field of air).",
+    "The electric potential inside a living cell membrane is about -70 mV relative to the outside. This membrane potential is maintained by ion pumps and is crucial for nerve impulses and muscle contraction.",
+    "A Van de Graaff generator can produce potentials of several million volts. The maximum potential is limited by corona discharge — when the field at the surface exceeds the breakdown strength of air (~3 MV/m), charge leaks into the air.",
+    "In a CRT (old TV/monitor), electrons are accelerated through 10-30 kV. Their kinetic energy is 10-30 keV, corresponding to speeds ~0.1-0.3c. This is a classic application of the electron volt.",
+    "The work function of metals (energy to eject an electron) is typically 2-5 eV. This is why UV light (photons > 3 eV) can cause photoelectric emission but visible light (1.8-3 eV) usually cannot.",
+    "For NEB exams: remember $V = kQ/r$, $U = kq_1q_2/r$, $E = -dV/dr$, and $1\\,\\text{eV} = 1.6 \\times 10^{-19}$ J. Practice converting between eV and J, and calculating potential for multiple charges using scalar addition."
   ],
   "animation3D": "potential-potential-difference-and-potential-energy",
   "motionGraphics": "potential-potential-difference-and-potential-energy"

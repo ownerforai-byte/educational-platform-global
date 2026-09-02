@@ -254,6 +254,8 @@ const PHYSICS_11: LabComponentMap = {
   "particle-physics-particles-and-antiparticles-quarks-baryons-and-mesons-and-leptons-neutrinos": make("quark", "Particle Physics", "recent-trends-in-physics", "physics"),
   "universe-big-bang-and-hubble-law-expansion-of-the-universe": make("big bang", "Big Bang & Hubble", "recent-trends-in-physics", "physics"),
   "dark-matter-black-hole-and-gravitational-wave": make("dark matter", "Dark Matter & Black Holes", "recent-trends-in-physics", "physics"),
+  "application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor": makeTopic(GaussLawVisual, "Applications of Gauss's Law"),
+  "energy-of-charged-capacitor": makeTopic(CapacitorVisual, "Energy of a Charged Capacitor"),
 };
 
 export { PHYSICS_11 };
@@ -322,6 +324,8 @@ const CHEMISTRY_11: LabComponentMap = {
   "expression-for-equilibrium-constant-and-its-importance": makeTopic(EquilibriumVisual, "Equilibrium Constant"),
   "relationship-between-kp-and-kc": makeTopic(EquilibriumVisual, "Kp and Kc"),
   "le-chateliers-principle-numericals-not-required": makeTopic(EquilibriumVisual, "Le Chatelier's Principle"),
+  "sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses": make("sodium carbonate", "Sodium Carbonate", "chemistry-of-metals", "chemistry"),
+  "alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane-chloroform-iodoform-only": makeTopic(OrganicMoleculesVisual, "Alkynes"),
 };
 
 const CHEMISTRY_11_NONMETALS = [
@@ -557,6 +561,7 @@ const MATH_11: LabComponentMap = {
   "numerical-integration-trapezoidal-rule-and-simpsons-rule": makeTopic(NumericalIntegrationVisual, "Numerical Integration"),
   "mechanics-optional-statics-forces-and-resultant-forces-parallelogram-law-of-forces-composition-and-resolution-of-forces-resultant-of-coplanar-forces-acting-on-a-point": makeTopic(StaticsVisual, "Statics"),
   "mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-acceleration-motion-under-gravity-motion-down-a-smooth-inclined-plane": makeTopic(DynamicsVisual, "Dynamics"),
+  "sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-a-m-": makeTopic(SequenceSeriesVisual, "Sequence & Series"),
 };
 
 export { MATH_11 };
@@ -619,6 +624,8 @@ const PHYSICS_12: LabComponentMap = {
   "elements-of-a-communication-system": make("communication", "Communication Elements", "communication-systems", "physics"),
   "modulation-amplitude-modulation-and-frequency-modulation": make("modulation", "Modulation", "communication-systems", "physics"),
   "bandwidth-and-propagation-of-electromagnetic-waves": make("bandwidth", "Bandwidth", "communication-systems", "physics"),
+  "mass-defect-packing-fraction-binding-energy-per-nucleon": make("binding energy", "Mass Defect & Binding Energy", "modern-physics", "physics"),
+  "difference-between-metals-insulators-and-semiconductors-using-band-theory": makeTopic(SemiconductorsVisual, "Band Theory"),
 };
 export { PHYSICS_12 };
 
@@ -682,6 +689,8 @@ const CHEMISTRY_12: LabComponentMap = {
   "d-block-elements-general-characteristics-important-compounds-kmno4-k2cr2o7": make("d-block", "d-block Elements", "chemistry-of-element", "chemistry"),
   "f-block-elements-lanthanoids-and-actinoids": make("f-block", "f-block Elements", "chemistry-of-element", "chemistry"),
   "coordination-compounds-werners-theory-iupac-nomenclature-vbt-cft-qualitative-isomerism": makeTopic(CoordinationCompoundsVisual, "Coordination Compounds"),
+  "van-t-hoff-factor-and-abnormal-molar-masses": makeTopic(RaoultLawVisual, "Van't Hoff Factor"),
+  "p-block-elements-group-1518-important-compounds-trends-in-properties": make("p-block", "p-block Elements", "chemistry-of-element", "chemistry"),
 };
 
 const MATH_12: LabComponentMap = {
@@ -806,7 +815,41 @@ export const TOPIC_3D_MAP: LabComponentMap = {
   ...MATH_11, ...MATH_12,
 };
 
-export function get3DComponentForTopic(topicSlug: string) {
+/** De-apostrophized normalization so "hooke-s-law..." matches "hookes-law...". */
+function normalizeSlugKey(slug: string): string {
+  return slug.replace(/-s-/g, "s-").replace(/-s$/, "s");
+}
+
+/**
+ * Resolve a canonical syllabus topic slug (from slugifySyllabusTopic) to a
+ * TOPIC_3D_MAP key. The syllabus slugifier turns apostrophes into "-s-"
+ * ("newton's law" -> "newton-s-law-of-...") while map keys use "newtons-law-...",
+ * and combined syllabus topics are truncated at 96 chars. This resolver handles:
+ *  1. exact key match
+ *  2. apostrophe-variant match on either side
+ *  3. prefix match — a combined syllabus topic beginning with a granular map key
+ *  4. reverse-prefix match — a truncated syllabus slug that a full map key starts with
+ * Returns the resolved map key, or null when no visual exists for the topic.
+ */
+export function resolveTopic3DKey(topicSlug: string): string | null {
   const normalized = topicSlug.toLowerCase().replace(/[^a-z0-9-]/g, "-");
-  return TOPIC_3D_MAP[normalized] || null;
+  if (TOPIC_3D_MAP[normalized]) return normalized;
+  const deAp = normalizeSlugKey(normalized);
+  const allKeys = Object.keys(TOPIC_3D_MAP);
+  const normHit = allKeys.find((k) => normalizeSlugKey(k) === deAp);
+  if (normHit) return normHit;
+  const prefixHit = allKeys
+    .filter((k) => deAp.startsWith(normalizeSlugKey(k)) && k.length >= 10)
+    .sort((a, b) => normalizeSlugKey(b).length - normalizeSlugKey(a).length)[0];
+  if (prefixHit) return prefixHit;
+  const revHit = allKeys
+    .filter((k) => normalizeSlugKey(k).startsWith(deAp) && deAp.length >= 10)
+    .sort((a, b) => normalizeSlugKey(a).length - normalizeSlugKey(b).length)[0];
+  if (revHit) return revHit;
+  return null;
+}
+
+export function get3DComponentForTopic(topicSlug: string) {
+  const key = resolveTopic3DKey(topicSlug);
+  return key ? TOPIC_3D_MAP[key] : null;
 }

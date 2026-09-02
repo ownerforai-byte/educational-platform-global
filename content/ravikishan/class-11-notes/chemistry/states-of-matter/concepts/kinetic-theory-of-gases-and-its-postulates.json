@@ -5,39 +5,42 @@
   "topicTitle": "Kinetic Theory of Gases and Its Postulates",
   "relevance": 60,
   "notes": [
-    "<h2>Introduction</h2>",
-    "<p>The <b>kinetic molecular theory of gases</b> explains the physical behaviour of gases (pressure, volume, temperature) in terms of the motion of their molecules. It treats a gas as a large collection of tiny, rapidly moving particles in constant random motion.</p>",
-    "<h2>Postulates of the Kinetic Theory of Gases</h2>",
-    "<p>1. A gas consists of a very large number of <b>tiny particles (molecules)</b> which are identical in mass and size for a given gas.</p>",
-    "<p>2. The volume of the individual gas molecules is <b>negligible</b> compared to the total volume occupied by the gas. The molecules are point masses.</p>",
-    "<p>3. The molecules are in a state of <b>continuous, rapid, random motion</b> in all directions. Between collisions they move in straight lines.</p>",
-    "<p>4. The molecules exert <b>no attractive or repulsive forces</b> on one another except during collisions. Between collisions they move freely.</p>",
-    "<p>5. Collisions between molecules and with the walls of the container are <b>perfectly elastic</b> â€” kinetic energy and momentum are conserved, though individual molecular speeds may change.</p>",
-    "<p>6. The <b>duration of a collision</b> is negligible compared to the time between collisions.</p>",
-    "<p>7. The <b>pressure of a gas</b> is caused by the bombardment of the container walls by the molecules. The force per unit area exerted on the walls is the pressure.</p>",
-    "<p>8. The <b>average kinetic energy</b> of the gas molecules is <b>directly proportional to the absolute temperature</b> of the gas: $KE_{avg} = \\frac{3}{2}kT$, where $k$ is Boltzmann's constant. At the same temperature, all gases have the same average kinetic energy per molecule.</p>",
-    "<h2>Important Result â€” Pressure of an Ideal Gas</h2>",
-    "<p>From the postulates, the pressure of an ideal gas is derived as:</p>",
-    "$$P = \\frac{1}{3}\\rho \\bar{v}^2$$",
-    "<p>where $\\rho$ is the density of the gas and $\\bar{v}$ is the root mean square speed of the molecules. Also:</p>",
-    "$$P = \\frac{1}{3}\\frac{mN}{V}\\bar{v}^2, \\quad \\text{and} \\quad \\bar{v} = \\sqrt{\\frac{3RT}{M}}$$",
-    "<h2>Limitations</h2>",
-    "<p>The theory works well for <b>ideal gases</b> at low pressure and high temperature. At high pressure or low temperature, real gases deviate because intermolecular forces and molecular volume can no longer be ignored.</p>"
+    "**Foundation of gas behaviour:** The kinetic molecular theory (KMT) explains macroscopic gas properties (pressure, temperature, volume) by analysing the microscopic motion of molecules. It bridges the gap between the atomic world and observable phenomena.",
+    "**Postulate 1 — Large number of particles:** A gas contains a huge number of identical particles (molecules) moving in random directions. For 1 mol of gas, there are $6.022 \\times 10^{23}$ molecules (Avogadro's number). The large number justifies statistical treatment.",
+    "**Postulate 2 — Negligible molecular volume:** The actual volume of gas molecules is negligible compared to the total volume of the container. Molecules are treated as **point masses** with no volume. This holds at low pressure where molecules are far apart.",
+    "**Postulate 3 — No intermolecular forces:** There are no attractive or repulsive forces between molecules except during collisions. Molecules move in straight lines between collisions. This is why real gases deviate at high pressure (where molecules are close) and low temperature (where kinetic energy is low).",
+    "**Postulate 4 — Perfectly elastic collisions:** Collisions between molecules and with container walls are perfectly elastic — total kinetic energy is conserved. No energy is lost to friction or deformation. Individual molecules may change speed and direction, but the total KE remains constant.",
+    "**Postulate 5 — Random motion:** Molecules move in all directions with a distribution of speeds. No preferred direction exists. The motion is random and continuous, producing uniform pressure on all container walls.",
+    "**Postulate 6 — Collision duration is negligible:** The time spent in collision is extremely small compared to the time between collisions. Molecules spend most of their time in free flight.",
+    "**Postulate 7 — Pressure from molecular collisions:** Pressure is caused by the force of molecular impacts on container walls. Each collision transfers momentum to the wall; the cumulative effect of trillions of collisions per second produces measurable pressure.",
+    "**Postulate 8 — Temperature proportional to average KE:** The average kinetic energy of gas molecules is directly proportional to the absolute temperature: $\\overline{KE} = \\dfrac{3}{2}k_BT$, where $k_B = 1.381 \\times 10^{-23}$ J/K is Boltzmann's constant. At a given temperature, ALL gases have the same average kinetic energy per molecule, regardless of molecular mass.",
+    "**Root mean square speed ($v_{rms}$):** From KMT, pressure can be derived as $P = \\dfrac{1}{3}\\dfrac{Nm\\overline{v^2}}{V}$, leading to $v_{rms} = \\sqrt{\\overline{v^2}} = \\sqrt{\\dfrac{3RT}{M}}$, where M is molar mass in kg/mol. For $N_2$ at 298 K: $v_{rms} = \\sqrt{\\dfrac{3 \\times 8.314 \\times 298}{0.028}} = 515$ m/s.",
+    "**Most probable speed ($v_{mp}$):** The speed at which the maximum number of molecules move: $v_{mp} = \\sqrt{\\dfrac{2RT}{M}}$. For $N_2$ at 298 K: $v_{mp} = 422$ m/s. Note: $v_{mp} < v_{avg} < v_{rms}$.",
+    "**Average speed ($v_{avg}$):** $v_{avg} = \\sqrt{\\dfrac{8RT}{\\pi M}} = 0.9213 \\times v_{rms}$. For $N_2$ at 298 K: $v_{avg} = 472$ m/s.",
+    "**Maxwell-Boltzmann distribution:** At any temperature, gas molecules have a spread of speeds described by the Maxwell-Boltzmann distribution curve. As temperature increases, the curve broadens and shifts right — more molecules have higher speeds, but the total area (total molecules) stays the same.",
+    "**Deriving the ideal gas equation from KMT:** Combining $P = \\dfrac{1}{3}\\dfrac{Nm\\overline{v^2}}{V}$ with $\\overline{KE} = \\dfrac{1}{2}m\\overline{v^2} = \\dfrac{3}{2}k_BT$ gives $PV = Nk_BT = nRT$, which is the ideal gas law.",
+    "**Limitations of KMT:** (1) Assumes no intermolecular forces — fails for real gases at high P and low T. (2) Assumes point particles — fails when molecular volume is significant. (3) Assumes elastic collisions — in reality, some energy is lost. (4) Does not explain chemical reactivity or phase changes."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Same KE but different speeds:** At the same temperature, $H_2$ and $O_2$ have the same average kinetic energy, but $H_2$ molecules move much faster (because KE = ½mv² and H₂ is lighter). This is why hydrogen escapes Earth's gravity more easily.",
+    "**Temperature measures average KE, not total KE:** A cup of warm water and a swimming pool at the same temperature have the same average KE per molecule, but the pool has far more total energy because it has many more molecules.",
+    "**v_rms vs. v_avg vs. v_mp:** These are three different measures of molecular speed. Never use them interchangeably. Remember: $v_{mp} = \\sqrt{2RT/M}$, $v_{avg} = \\sqrt{8RT/\\pi M}$, $v_{rms} = \\sqrt{3RT/M}$. The ratio is approximately 1 : 1.128 : 1.224.",
+    "**KMT applies to ideal gases only:** The theory's postulates describe an ideal gas. Real gases approximate ideal behaviour at high temperature and low pressure. At extreme conditions, KMT predictions deviate from observation.",
+    "**Pressure is not caused by molecular weight alone:** Pressure depends on both the number of collisions per second AND the momentum change per collision. A heavy gas at the same T has the same average KE but fewer, harder collisions compared to a light gas."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the rms speed of $O_2$ molecules at 25°C. (M = 0.032 kg/mol, R = 8.314 J/(mol·K)) **Solution:** $v_{rms} = \\sqrt{\\dfrac{3 \\times 8.314 \\times 298}{0.032}} = \\sqrt{233417} = 483$ m/s.",
+    "At what temperature will the rms speed of $SO_2$ (M = 64 g/mol) equal the rms speed of $O_2$ (M = 32 g/mol) at 300 K? **Solution:** Set $v_{rms}(SO_2) = v_{rms}(O_2)$: $\\dfrac{3RT_{SO2}}{0.064} = \\dfrac{3R \\times 300}{0.032} \\Rightarrow T_{SO2} = 300 \\times \\dfrac{0.064}{0.032} = 600$ K.",
+    "Calculate the most probable speed and average speed of $N_2$ at 27°C (M = 0.028 kg/mol). **Solution:** $v_{mp} = \\sqrt{\\dfrac{2 \\times 8.314 \\times 300}{0.028}} = 422$ m/s. $v_{avg} = \\sqrt{\\dfrac{8 \\times 8.314 \\times 300}{\\pi \\times 0.028}} = 475$ m/s.",
+    "Show that the average kinetic energy of 1 mol of an ideal gas at 300 K is 3.74 kJ. **Solution:** $\\overline{KE}_{total} = N_A \\times \\dfrac{3}{2}k_BT = \\dfrac{3}{2}RT = \\dfrac{3}{2} \\times 8.314 \\times 300 = 3741$ J = 3.74 kJ.",
+    "Two containers A and B have equal volume. A contains $H_2$ at 273 K; B contains $CH_4$ at 298 K. Compare (a) average KE per molecule, (b) total KE, (c) pressure. **Solution:** (a) $KE_A/KE_B = T_A/T_B = 273/298 = 0.916$. (b) Same number of molecules → total KE ratio same as per-molecule. (c) Depends on number of moles; if equal moles, $P_A/P_B = T_A/T_B = 0.916$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The kinetic molecular theory was developed in the mid-19th century by scientists including James Clerk Maxwell, Ludwig Boltzmann, and Rudolf Clausius, who connected macroscopic gas properties to microscopic molecular motion.",
+    "Boltzmann's constant ($k_B = 1.381 \\times 10^{-23}$ J/K) is a fundamental constant linking the atomic scale to the macroscopic scale, just as the gas constant R links moles to energy.",
+    "The Maxwell-Boltzmann distribution explains why some reactions occur even at low temperatures — a small fraction of molecules always has enough kinetic energy (activation energy) to react.",
+    "The theory successfully explains gas laws: Boyle's law (constant T → constant avg KE → pressure inversely proportional to volume), Charles's law (constant P → volume proportional to avg KE → proportional to T), and Avogadro's law (equal V, P, T → equal n).",
+    "At room temperature, gas molecules travel at hundreds of metres per second but only move a few nanometres between collisions (mean free path), resulting in a very large number of collisions per second (~10⁹/s for air at STP)."
   ],
   "animation3D": "states-of-matter",
   "motionGraphics": "states-of-matter"

@@ -5,26 +5,39 @@
   "topicTitle": "General and electronic concept of oxidation and reduction",
   "relevance": 100,
   "notes": [
-    "**Classical concept:** oxidation is addition of oxygen or removal of hydrogen; reduction is removal of oxygen or addition of hydrogen.",
-    "**Electronic concept:** oxidation is loss of electrons; reduction is gain of electrons. This is the most general definition and works for all reactions.",
-    "**Oxidizing agent:** the species that accepts electrons and gets reduced. It causes oxidation of the other reactant.",
-    "**Reducing agent:** the species that donates electrons and gets oxidized. It causes reduction of the other reactant.",
-    "**Simultaneous process:** oxidation and reduction always occur together because electrons lost by one species are gained by another."
+    "**Classical concept of oxidation:** Oxidation originally meant addition of oxygen to a substance. Examples: $2Mg + O_2 \\rightarrow 2MgO$ (oxygen added to magnesium); $S + O_2 \\rightarrow SO_2$ (oxygen added to sulphur). Conversely, **classical reduction** meant removal of oxygen: $CuO + H_2 \\rightarrow Cu + H_2O$ (oxygen removed from copper oxide).",
+    "**Classical concept of hydrogen transfer:** Oxidation can also mean removal of hydrogen: $H_2S + Cl_2 \\rightarrow 2HCl + S$ (hydrogen removed from $H_2S$). Reduction means addition of hydrogen: $CH_2=CH_2 + H_2 \\rightarrow CH_3-CH_3$ (hydrogen added to ethene).",
+    "**Electronic concept — Oxidation:** Oxidation is the **loss of one or more electrons** by an atom, ion, or molecule. It is represented as: $Na \\rightarrow Na^+ + e^-$ (sodium loses one electron). Another example: $Fe^{2+} \\rightarrow Fe^{3+} + e^-$ (ferrous ion oxidised to ferric ion).",
+    "**Electronic concept — Reduction:** Reduction is the **gain of one or more electrons** by an atom, ion, or molecule. It is represented as: $Cl_2 + 2e^- \\rightarrow 2Cl^-$ (chlorine gains electrons to form chloride ions). Another example: $Cu^{2+} + 2e^- \\rightarrow Cu$ (copper(II) ion reduced to copper metal).",
+    "**Oxidising agent (oxidant):** A substance that accepts electrons and is itself reduced in the process. It causes oxidation of another species. Examples: $KMnO_4$, $K_2Cr_2O_7$, $H_2O_2$, $Cl_2$, concentrated $H_2SO_4$. In $Zn + Cu^{2+} \\rightarrow Zn^{2+} + Cu$, $Cu^{2+}$ is the oxidising agent because it accepts electrons from Zn.",
+    "**Reducing agent (reductant):** A substance that donates electrons and is itself oxidised. It causes reduction of another species. Examples: $Zn$, $H_2$, $CO$, $NaBH_4$, $LiAlH_4$. In the same reaction, Zn is the reducing agent because it donates electrons to $Cu^{2+}$.",
+    "**Conjugate redox pairs:** Every oxidation half-reaction has a corresponding reduction half-reaction. The species on either side of a half-reaction form a **redox couple**, e.g., $Zn^{2+}/Zn$ and $Cu^{2+}/Cu$. The oxidised form can act as an oxidising agent; the reduced form can act as a reducing agent.",
+    "**Simultaneity of redox:** Oxidation and reduction always occur simultaneously — electrons lost by the reducing agent must be gained by the oxidising agent. No electron can exist freely in solution; it must be transferred. The total number of electrons lost equals the total number gained.",
+    "**Oxidation number vs. charge:** Oxidation number is a theoretical charge assigned to an atom assuming 100% ionic bonding, while actual charge is the real electrical charge on an ion. For example, in $CH_4$, carbon has an oxidation number of -4 but the molecule is neutral with no actual charge.",
+    "**Real-world application — Respiration:** Cellular respiration is a biological redox process: $C_6H_{12}O_6 + 6O_2 \\rightarrow 6CO_2 + 6H_2O + energy$. Glucose is oxidised (loses electrons/hydrogen) and oxygen is reduced (gains electrons) to form water.",
+    "**Real-world application — Corrosion:** Rusting of iron is an electrochemical redox process. At the anode: $Fe \\rightarrow Fe^{2+} + 2e^-$ (oxidation). At the cathode: $O_2 + 4H^+ + 4e^- \\rightarrow 2H_2O$ (reduction). Overall: $2Fe + O_2 + 4H^+ \\rightarrow 2Fe^{2+} + 2H_2O$, followed by formation of hydrated iron(III) oxide ($Fe_2O_3 \\cdot xH_2O$).",
+    "**Real-world application — Bleaching:** Bleaching agents work by redox. Chlorine bleaching ($Cl_2 + H_2O \\rightarrow HCl + HOCl$) works by oxidation of coloured substances. Hydrogen peroxide ($H_2O_2$) bleaches by oxidising chromophores. Sodium thiosulphate ($Na_2S_2O_3$) is used to remove excess chlorine after bleaching."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Oxidation vs. oxidising agent:** Oxidation is the process of losing electrons; an oxidising agent is the substance that causes oxidation by accepting those electrons. Students often reverse these — remember: the oxidising agent gets reduced.",
+    "**Oxidation number vs. actual charge:** Oxidation numbers are bookkeeping tools and may not reflect real charges. In $CO_2$, carbon has ON +4 but the molecule has no net charge; the bonds are polar covalent, not fully ionic.",
+    "**\"Oxidation\" does not always involve oxygen:** The modern electronic definition is broader. $Na \\rightarrow Na^+ + e^-$ is oxidation even though no oxygen is involved.",
+    "**Adding electrons is reduction, not oxidation:** A common mistake is to associate 'gain' with oxidation. Remember: LEO says GER — Loss of Electrons is Oxidation, Gain of Electrons is Reduction.",
+    "**Not all reactions are redox:** Displacement and combination reactions are often redox, but double displacement (metathesis) reactions like $AgNO_3 + NaCl \\rightarrow AgCl + NaNO_3$ involve no change in oxidation numbers and are not redox reactions."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Identify the oxidised and reduced species, and the oxidising and reducing agents in: $CuO + H_2 \\rightarrow Cu + H_2O$. **Solution:** Cu in CuO goes from +2 to 0 (reduced); H goes from 0 to +1 (oxidised). CuO is the oxidising agent; $H_2$ is the reducing agent.",
+    "In the reaction $Zn(s) + CuSO_4(aq) \\rightarrow ZnSO_4(aq) + Cu(s)$, write the two half-reactions and identify the electron transfer. **Solution:** Oxidation: $Zn \\rightarrow Zn^{2+} + 2e^-$; Reduction: $Cu^{2+} + 2e^- \\rightarrow Cu$. Two electrons are transferred from Zn to $Cu^{2+}$.",
+    "Determine which species is oxidised and which is reduced in: $2Na + Cl_2 \\rightarrow 2NaCl$. **Solution:** Na goes from 0 to +1 (oxidised); Cl goes from 0 to -1 (reduced). Na is the reducing agent; $Cl_2$ is the oxidising agent.",
+    "For the reaction $Fe_2O_3 + 3CO \\rightarrow 2Fe + 3CO_2$, identify the redox changes. **Solution:** Fe goes from +3 to 0 (reduced); C goes from +2 to +4 (oxidised). $Fe_2O_3$ is the oxidising agent; CO is the reducing agent.",
+    "In the reaction $MnO_2 + 4HCl \\rightarrow MnCl_2 + Cl_2 + 2H_2O$, find the oxidation states of Mn and Cl on both sides. **Solution:** Mn: +4 in $MnO_2$ → +2 in $MnCl_2$ (reduced). Cl: -1 in HCl → 0 in $Cl_2$ (oxidised); some Cl remains -1 in $MnCl_2$. $MnO_2$ is the oxidising agent; HCl is the reducing agent."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The electronic definition of oxidation and reduction is the most general and applies to reactions in solution, in the gas phase, and in biological systems.",
+    "The mnemonic **OIL RIG** (Oxidation Is Loss, Reduction Is Gain of electrons) and **LEO says GER** (Loss of Electrons is Oxidation, Gain of Electrons is Reduction) are reliable memory aids.",
+    "Oxidation and reduction are always coupled — the number of electrons lost in oxidation must equal the number gained in reduction in any balanced redox equation.",
+    "The strength of an oxidising or reducing agent can be compared using standard electrode potentials ($E^\\circ$ values) measured under standard conditions (298 K, 1 atm, 1 M).",
+    "Redox reactions are the basis of electrochemical cells (batteries), corrosion, combustion, photosynthesis, respiration, and industrial metal extraction."
   ],
   "animation3D": "oxidation-and-reduction",
   "motionGraphics": "oxidation-and-reduction"

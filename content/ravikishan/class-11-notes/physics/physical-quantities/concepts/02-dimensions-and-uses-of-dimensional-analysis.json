@@ -5,27 +5,39 @@
   "topicTitle": "Dimensions and uses of dimensional analysis",
   "relevance": 100,
   "notes": [
-    "**Dimensions:** every physical quantity can be expressed in terms of the base dimensions: mass $M$, length $L$, time $T$, temperature $\\Theta$, electric current $I$, amount of substance $N$, luminous intensity $J$.",
-    "**Dimensional formula:** written as $[M^a L^b T^c]$ where $a, b, c$ are the powers of the base dimensions. For example, velocity is $[LT^{-1}]$ and force is $[MLT^{-2}]$.",
-    "**Checking equations:** if two sides of an equation have different dimensions, the equation is definitely wrong. If they have the same dimensions, the equation may still be wrong, but it is not ruled out.",
-    "**Finding dimensions of constants:** when a formula contains an unknown constant, dimensional analysis can determine the constant's dimensions. For example, in $F = k\\frac{q_1 q_2}{r^2}$, the dimensions of $k$ must be $[ML^3T^{-2}I^{-2}]$.",
-    "**Limitations:** dimensional analysis cannot determine dimensionless constants such as $2$, $\\pi$, or $e$; it cannot distinguish between different formulas that share the same dimensions; and it fails when trigonometric, exponential, or logarithmic functions are involved because those functions require dimensionless arguments."
+    "**Dimensional formula:** Every physical quantity $Q$ can be expressed in terms of a combination of powers of the fundamental dimensions: mass $M$, length $L$, time $T$, temperature $\\Theta$, electric current $I$, amount of substance $N$, and luminous intensity $J$. Written as $[Q] = [M^a L^b T^c \\Theta^d I^e N^f J^g]$ where $a, b, \\ldots, g$ are rational numbers.",
+    "**Base dimensions:** $[M]$ for mass (kg), $[L]$ for length (m), $[T]$ for time (s), $[\\Theta]$ for temperature (K), $[I]$ for electric current (A), $[N]$ for amount (mol), $[J]$ for luminous intensity (cd). For example, velocity has $[V] = [L T^{-1}]$, force has $[F] = [M L T^{-2}]$, and energy has $[E] = [M L^2 T^{-2}]$.",
+    "**Checking equations:** If two sides of an equation do not have the same dimensional formula, the equation is definitely wrong. For example, $s = ut + at^2$ fails a dimensional check ($[S] = [L]$, $[at^2] = [LT^{-2}][T^2] = [L]$ OK, but $[ut] = [LT^{-1}][T] = [L]$ also OK!). Actually correct. But $s = u + at^2$ fails: $[u] = [LT^{-1}]$ vs $[s] = [L]$ — impossible.",
+    "**Finding dimensions of constants:** When an equation involves an unknown physical constant, dimensional analysis can determine its dimensions. For Coulomb's law $F = k q_1 q_2 / r^2$: $[k] = [Fr^2/(q_1 q_2)] = [MLT^{-2}][L^2]/([I T]^2) = [M L^3 T^{-2} I^{-2}]$.",
+    "**Buckingham Pi theorem (basic form):** If an equation involves $n$ dimensional variables and $m$ fundamental dimensions, then the equation is equivalent to a relation among $(n - m)$ dimensionless groups called $\\pi$ terms.",
+    "**Limitations of dimensional analysis:** (1) Cannot determine dimensionless constants (numbers such as $2, \\pi, 1/2, e$...). (2) Cannot distinguish between different formulas with the same dimensions. (3) Cannot be used when the relationship involves transcendental functions (sin, cos, exp, ln) unless their arguments are dimensionless. (4) Cannot directly relate vector quantities to scalar quantities — direction is not captured.",
+    "**Specific heat capacity:** $c = Q/(m\\Delta T)$, dimensions $[c] = [L^2 T^{-2} \\Theta^{-1}]$, SI unit J/(kg K). The gas constant $R$ has the same dimensions: $[R] = [L^2 T^{-2} \\Theta^{-1} N^{-1}]$.",
+    "**Reynolds number (dimensionless):** $Re = \\rho v L / \\eta$, with dimensions $[ML^{-3}][LT^{-1}][L]/[ML^{-1}T^{-1}] = 1$ (dimensionless). It predicts whether fluid flow is laminar or turbulent."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Confusion: Two equations having the same dimensions does NOT mean they are equivalent. For example, both work and torque have $[ML^2T^{-2}]$, but torque is a vector and work is scalar — the physics is different.",
+    "Confusion: Dimensional analysis can verify an equation is dimensionally consistent, but CANNOT prove it is physically correct. The equation could still be wrong by a dimensionless factor (like a $\\sin \\theta$ or a $\\pi$).",
+    "Confusion: The Buckingham Pi theorem does NOT provide the explicit functional form — it only identifies the relevant dimensionless groups. Experimental data or other theoretical methods are needed to find the actual relationship.",
+    "Confusion: Dimensional analysis fails for transcendental functions. You cannot use it to determine whether $y = A e^{kx}$ or $y = A \\sin(kx)$ is correct, because both $kx$ and $e^{kx}$ are dimensionless but $e^{kx} \\neq \\sin(kx)$.",
+    "Confusion: The dimensions of angle are NOT zero, even though angle has no SI base unit. In the SI system, angles are dimensionless ($[\\theta] = 1$), so expressions like $\\sin \\theta$ and $\\cos \\theta$ have dimensionless arguments.",
+    "Confusion: Angular velocity $\\omega$ has units rad/s but is NOT measured in revolutions/second or degrees/second. In equations, $\\omega$ is treated as $[T^{-1}]$ (dimensionally, radian is a dimensionless derived quantity).",
+    "Confusion: Specific heat at constant pressure $c_p$ and constant volume $c_v$ have the SAME dimensions, but different numerical values — $c_p > c_v$ for gases. Dimensional analysis cannot distinguish these physical situations.",
+    "Confusion: Energy and torque both have dimensions $[ML^2T^{-2}]$ and the same SI unit (Joule) is not assigned to torque — torque is in N·m precisely to distinguish it from energy (in Joules). Dimensionally identical, but conceptually distinct."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Use dimensional analysis to find the form of the period $T$ of a simple pendulum of length $L$ in uniform gravity $g$. Assume $T \\propto L^a g^b$. [Solution: $[T] = [L]^a [g]^b \\Rightarrow [T] = [L^a][L^b T^{-2b}] = L^{a+b} T^{-2b}$. Matching: $-2b = 1 \\Rightarrow b = -1/2$. $a + b = 0 \\Rightarrow a = 1/2$. So $T \\propto L^{1/2} g^{-1/2}$, i.e., $T \\propto \\sqrt{L/g}$. The constant $2\\pi$ cannot be found by dimensional analysis.]",
+    "Problem: Derive the dimensions of Planck's constant $h$ from $E = h\\nu$. [Solution: $[h] = [E]/[\\nu] = [ML^2T^{-2}]/[T^{-1}] = [ML^2T^{-1}]$.]",
+    "Problem: Check the dimensional correctness of Bernoulli's equation: $P + \\frac{1}{2}\\rho v^2 + \\rho g h = \\text{constant}$. [Solution: $[P] = [ML^{-1}T^{-2}]$. $[\\frac{1}{2}\\rho v^2] = [ML^{-3}][L^2T^{-2}] = [ML^{-1}T^{-2}]$. $[\\rho g h] = [ML^{-3}][LT^{-2}][L] = [ML^{-1}T^{-2}]$. All three terms have the same dimensions, so the equation is dimensionally consistent.]",
+    "Problem: The drag force on a sphere moving through a fluid is $F_d = C_d \\cdot \\frac{1}{2} \\rho v^2 A$, where $C_d$ is a dimensionless drag coefficient. Verify that this equation is dimensionally consistent. [Solution: $[F_d] = [MLT^{-2}]$. RHS: $[\\frac{1}{2}] \\cdot [\\rho][v^2][A] = [ML^{-3}][L^2T^{-2}][L^2] = [MLT^{-2}]$. LHS = RHS. Dimensionally consistent.]",
+    "Problem: In the damped harmonic oscillator equation $m\\frac{d^2x}{dt^2} + b\\frac{dx}{dt} + kx = 0$, find the dimensions of the damping constant $b$ and spring constant $k$. [Solution: All terms must have $[Force] = [MLT^{-2}]$. $\\frac{d^2x}{dt^2}$ has $[LT^{-2}]$, so $[m\\frac{d^2x}{dt^2}] = [MLT^{-2}]$, meaning $m$ has mass. $\\frac{dx}{dt}$ has $[LT^{-1}]$, so $[b\\frac{dx}{dt}] = [b][LT^{-1}] = [MLT^{-2}] \\Rightarrow [b] = [MT^{-1}]$. $\\frac{dx}{dt^2}$ has $[L]$, so $[k] = [MT^{-2}]$.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "physical-quantities",
-  "motionGraphics": "physical-quantities"
+    "Fact (Historical): Lord Rayleigh (John William Strutt) pioneered dimensional analysis in the late 1800s, introducing the idea that a physical equation must be dimensionally homogeneous. The Buckingham Pi theorem was formalized by Edgar Buckingham in 1914.",
+    "Fact (Application): The Reynolds number $Re = \\rho v L / \\eta$ predicts flow regime. $Re < 2000$: laminar flow, $2000 < Re < 4000$: transitional, $Re > 4000$: turbulent. Aircraft wings, ship hulls, and pipes are all designed with this parameter.",
+    "Fact (Exam tip): In NEB exams, the question typically asks you to (1) check dimensional homogeneity of a given equation or (2) find the form of a law using a proportionality $Q \\propto X^a Y^b$. Always list fundamental dimensions first.",
+    "Fact (Connection): Dimensional analysis works with SI units but also with any consistent system (cgs, Gaussian). The key requirement is that the equation is dimensionally homogeneous. For example, $F = ma$ in cgs gives dynes $= \\text{g}\\cdot\\text{cm}/\\text{s}^2$.",
+    "Fact (Everyday): When cooking, doubling a recipe while keeping the same pan changes heat transfer (not all quantities scale linearly in cooking — thermal mass matters). Engineering analogs exist in scaling laws.",
+    "Fact (Origin): Dimensional homogeneity is a consequence of the fact that physical laws must not depend on the arbitrary units we choose. If a law worked in meters but not feet, it wouldn't be universal.",
+    "Fact (Scale): The fine-structure constant $\\alpha = e^2/(4\\pi \\varepsilon_0 \\hbar c) \\approx 1/137$ is a dimensionless number. It characterizes the strength of electromagnetic interactions and appears in atomic physics, quantum electrodynamics, and cosmology."
+  ]
 }

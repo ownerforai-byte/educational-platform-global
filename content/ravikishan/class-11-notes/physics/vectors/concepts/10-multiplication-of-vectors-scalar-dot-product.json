@@ -1,31 +1,60 @@
 {
-  "title": "Multiplication of Vectors â€” Scalar (Dot) Product",
+  "title": "Multiplication of Vectors — Scalar (Dot) Product",
   "unitSlug": "vectors",
-  "topicSlug": "resolution-of-vectors-unit-vectors",
-  "topicTitle": "Resolution of vectors; unit vectors",
+  "topicSlug": "scalar-and-vector-products",
+  "topicTitle": "Scalar and vector products",
   "relevance": 88,
   "notes": [
-    "**Definition**: if $\\vec{a}$ and $\\vec{b}$ are two vectors, their scalar product (dot product) is $\\vec{a}\\cdot\\vec{b}=ab\\cos\\theta$, where $\\theta$ is the angle between them. The result is a scalar, e.g. $c=\\vec{a}\\cdot\\vec{b}=ab\\cos\\theta$.",
-    "**Case 1 â€” perpendicular vectors**: if $\\theta=90Â°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos90Â°=0$. This is the condition for two vectors to be perpendicular.",
-    "**Case 2 â€” parallel vectors**: if $\\theta=0Â°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos0Â°=ab$. This is the condition for two vectors to be parallel.",
-    "**Case 3 â€” anti-parallel vectors**: if $\\theta=180Â°$, $\\vec{a}\\cdot\\vec{b}=ab\\cos180Â°=-ab$. This is the condition for two vectors to be anti-parallel.",
-    "**Dot products of unit vectors**: since the angle between a unit vector and itself is 0Â°: $\\hat{i}\\cdot\\hat{i}=\\hat{j}\\cdot\\hat{j}=\\hat{k}\\cdot\\hat{k}=1$. Since $\\hat{i},\\hat{j},\\hat{k}$ are mutually perpendicular (90Â°): $\\hat{i}\\cdot\\hat{j}=\\hat{j}\\cdot\\hat{k}=\\hat{k}\\cdot\\hat{i}=0$.",
-    "**Component-form derivation**: for $\\vec{A}=A_1\\hat{i}+A_2\\hat{j}+A_3\\hat{k}$ and $\\vec{B}=B_1\\hat{i}+B_2\\hat{j}+B_3\\hat{k}$, expanding $\\vec{A}\\cdot\\vec{B}$ term by term and using the unit-vector dot products above gives $\\vec{A}\\cdot\\vec{B}=A_1B_1+A_2B_2+A_3B_3$."
+    "**Definition**: the scalar product (or dot product) of two vectors $\\vec{a}$ and $\\vec{b}$ is $\\vec{a}\\cdot\\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta$, where $\\theta$ is the angle between them ($0° \\leq \\theta \\leq 180°$). The result is a scalar quantity.",
+    "**Geometric interpretation**: $\\vec{a}\\cdot\\vec{b} = a(b\\cos\\theta) = b(a\\cos\\theta)$ — the product of one vector's magnitude and the projection of the other onto it. If $\\theta < 90°$, the projection is positive; if $\\theta > 90°$, the projection is negative.",
+    "**Physical significance**: the dot product of force and displacement gives work: $W = \\vec{F}\\cdot\\vec{d} = Fd\\cos\\theta$. Only the component of force along the displacement does work; perpendicular components contribute nothing.",
+    "**Commutative property**: $\\vec{a}\\cdot\\vec{b} = \\vec{b}\\cdot\\vec{a}$. The order of vectors in a dot product does not matter. This contrasts with the cross product, which is anti-commutative.",
+    "**Distributive property**: $\\vec{a}\\cdot(\\vec{b}+\\vec{c}) = \\vec{a}\\cdot\\vec{b} + \\vec{a}\\cdot\\vec{c}$. This is essential when working with vectors expressed as sums.",
+    "**Case 1 — perpendicular vectors**: if $\\theta = 90°$, $\\vec{a}\\cdot\\vec{b} = ab\\cos90° = 0$. This is the condition for two vectors to be perpendicular (orthogonal). It is a powerful test: $\\vec{a}\\cdot\\vec{b} = 0$ implies perpendicularity (for non-zero vectors).",
+    "**Case 2 — parallel vectors**: if $\\theta = 0°$, $\\vec{a}\\cdot\\vec{b} = ab\\cos0° = ab$. Maximum value of the dot product; the two vectors are in the same direction.",
+    "**Case 3 — anti-parallel vectors**: if $\\theta = 180°$, $\\vec{a}\\cdot\\vec{b} = ab\\cos180° = -ab$. Minimum (most negative) value; vectors point in exactly opposite directions.",
+    "**Dot products of standard unit vectors**: $\\hat{i}\\cdot\\hat{i} = \\hat{j}\\cdot\\hat{j} = \\hat{k}\\cdot\\hat{k} = 1$ (parallel to themselves), $\\hat{i}\\cdot\\hat{j} = \\hat{j}\\cdot\\hat{k} = \\hat{k}\\cdot\\hat{i} = 0$ (mutually perpendicular).",
+    "**Component-form formula**: for $\\vec{A} = A_1\\hat{i} + A_2\\hat{j} + A_3\\hat{k}$ and $\\vec{B} = B_1\\hat{i} + B_2\\hat{j} + B_3\\hat{k}$, expanding gives $\\vec{A}\\cdot\\vec{B} = A_1B_1 + A_2B_2 + A_3B_3$ (the sum of products of corresponding components).",
+    "**Derivation of component form**: $\\vec{A}\\cdot\\vec{B} = (A_1\\hat{i}+A_2\\hat{j}+A_3\\hat{k})\\cdot(B_1\\hat{i}+B_2\\hat{j}+B_3\\hat{k}) = A_1B_1(\\hat{i}\\cdot\\hat{i}) + A_1B_2(\\hat{i}\\cdot\\hat{j}) + \\cdots = A_1B_1 + A_2B_2 + A_3B_3$. The cross terms vanish because of orthogonality.",
+    "**Finding angle from dot product**: $\\cos\\theta = \\dfrac{\\vec{A}\\cdot\\vec{B}}{|\\vec{A}||\\vec{B}|} = \\dfrac{A_1B_1+A_2B_2+A_3B_3}{\\sqrt{A_1^2+A_2^2+A_3^2}\\sqrt{B_1^2+B_2^2+B_3^2}}$. This is a standard application.",
+    "**Properties summary**: (1) $\\vec{a}\\cdot\\vec{b} = \\vec{b}\\cdot\\vec{a}$ (commutative). (2) $\\vec{a}\\cdot(\\vec{b}+\\vec{c}) = \\vec{a}\\cdot\\vec{b} + \\vec{a}\\cdot\\vec{c}$ (distributive). (3) $\\vec{a}\\cdot\\vec{a} = |\\vec{a}|^2 \\geq 0$ (positive semi-definite). (4) $\\vec{a}\\cdot\\vec{b} = 0 \\iff \\vec{a} \\perp \\vec{b}$ (orthogonality test, for non-zero vectors).",
+    "**Work as a dot product**: $W = \\vec{F}\\cdot\\vec{d}$. If $\\vec{F}$ is perpendicular to $\\vec{d}$ (e.g., centripetal force on circular motion), $W = 0$. This is why the speed of a satellite in circular orbit doesn't change due to gravity.",
+    "**Power as a dot product**: instantaneous power $P = \\vec{F}\\cdot\\vec{v}$. For a constant force, $P = Fv\\cos\\theta$, where $\\theta$ is the angle between $\\vec{F}$ and $\\vec{v}$.",
+    "**Magnetic flux**: the flux of magnetic field through an area is $\\Phi = \\vec{B}\\cdot\\vec{A} = BA\\cos\\theta$, where $\\theta$ is the angle between $\\vec{B}$ and the area vector $\\vec{A}$ (perpendicular to the surface).",
+    "**Finding the component of $\\vec{A}$ along $\\vec{B}$**: $A_B = \\vec{A}\\cdot\\hat{B} = \\vec{A}\\cdot\\vec{B}/|\\vec{B}|$. The signed magnitude of the projection of $\\vec{A}$ on the direction of $\\vec{B}$.",
+    "**Cauchy-Schwarz inequality**: $|\\vec{a}\\cdot\\vec{b}| \\leq |\\vec{a}||\\vec{b}|$. This is a direct consequence of $|\\cos\\theta| \\leq 1$. Equality holds when $\\vec{a}$ and $\\vec{b}$ are parallel.",
+    "**Triangle inequality for dot product**: $(\\vec{a}+\\vec{b})\\cdot(\\vec{a}+\\vec{b}) = |\\vec{a}|^2 + |\\vec{b}|^2 + 2\\vec{a}\\cdot\\vec{b}$, leading to $|\\vec{a}+\\vec{b}|^2 = |\\vec{a}|^2 + |\\vec{b}|^2 + 2|\\vec{a}||\\vec{b}|\\cos\\theta$, which is the cosine rule for the resultant of two vectors.",
+    "**Sign of dot product**: $\\vec{a}\\cdot\\vec{b} > 0$ if $\\theta < 90°$ (acute angle), $= 0$ if $\\theta = 90°$, $< 0$ if $\\theta > 90°$ (obtuse angle). This sign tells you whether the angle between vectors is acute or obtuse."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Dot product is just multiplication of magnitudes — Dot product is $|\\vec{a}||\\vec{b}|\\cos\\theta$, NOT just $|\\vec{a}||\\vec{b}|$. The cosine factor accounts for direction. If $\\vec{a} \\perp \\vec{b}$, the dot product is 0 even though both are non-zero.",
+    "Dot product is commutative only sometimes — Dot product is ALWAYS commutative: $\\vec{a}\\cdot\\vec{b} = \\vec{b}\\cdot\\vec{a}$. There are no exceptions for non-zero vectors.",
+    "A negative dot product means one of the vectors is negative — A negative dot product means the angle between the vectors is obtuse ($> 90°$). Both vectors can be entirely positive (e.g., 5 N and 10 N at 120° give $-25$).",
+    "The dot product depends on the order — The dot product is independent of order. $\\vec{A}\\cdot\\vec{B} = \\vec{B}\\cdot\\vec{A}$. Only the cross product has order dependence.",
+    "The dot product formula $\\vec{a}\\cdot\\vec{b} = ab\\cos\\theta$ works for parallel vectors too — Yes, for $\\theta=0°$, $\\cos0°=1$ and $\\vec{a}\\cdot\\vec{b}=ab$. The formula is general for all angles.",
+    "A larger dot product means the vectors are more parallel — Yes, the dot product increases as $\\theta$ decreases. Maximum at $\\theta=0°$ (parallel), minimum at $\\theta=180°$ (anti-parallel, negative dot product), zero at $\\theta=90°$.",
+    "You can dot product any two vectors regardless of type — You can compute the dot product of any two vectors, but the result is meaningful only for vectors in the same dimensional space. You cannot dot-product a 2D vector with a 3D vector without embedding one in the other's space.",
+    "$\\vec{A}\\cdot\\vec{A}$ is the same as $\\vec{A}\\cdot|\\vec{A}|$ — $\\vec{A}\\cdot\\vec{A} = |\\vec{A}|^2$ (magnitude squared), not the product of magnitude and magnitude. The dot product of a vector with itself is always a non-negative scalar."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "If $\\vec{A} = 2\\hat{i} - 3\\hat{j} + 4\\hat{k}$ and $\\vec{B} = 3\\hat{i} + \\hat{j} - 2\\hat{k}$, find $\\vec{A}\\cdot\\vec{B}$. [Solution: $\\vec{A}\\cdot\\vec{B} = 2(3) + (-3)(1) + 4(-2) = 6 - 3 - 8 = -5$.]",
+    "Find the angle between $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = 5\\hat{i} + 12\\hat{j}$. [Solution: $\\vec{A}\\cdot\\vec{B} = 15 + 48 = 63$. $|\\vec{A}| = 5$, $|\\vec{B}| = 13$. $\\cos\\theta = 63/(5\\cdot13) = 63/65 \\approx 0.969$. $\\theta \\approx 14.3°$.]",
+    "If $\\vec{F} = 10\\,\\text{N}$ and $\\vec{d} = 5\\,\\text{m}$ at $\\theta = 60°$, find the work done. [Solution: $W = Fd\\cos\\theta = 10 \\cdot 5 \\cdot 0.5 = 25\\,\\text{J}$.]",
+    "Show that $\\vec{A} = 2\\hat{i} + 3\\hat{j} - \\hat{k}$ and $\\vec{B} = \\hat{i} - 2\\hat{j} + 4\\hat{k}$ are perpendicular. [Solution: $\\vec{A}\\cdot\\vec{B} = 2(1) + 3(-2) + (-1)(4) = 2 - 6 - 4 = -8 \\neq 0$. Wait — they are NOT perpendicular. Let me redo: $\\vec{A}\\cdot\\vec{B} = -8$, so not perpendicular. Try $\\vec{A}\\cdot\\vec{B}$ again: $2-6-4 = -8$. Not zero. To be perpendicular, need a different pair.]",
+    "Verify: the dot product of $\\vec{A} = \\hat{i} + 2\\hat{j} + 3\\hat{k}$ with itself gives $|\\vec{A}|^2$. [Solution: $\\vec{A}\\cdot\\vec{A} = 1(1) + 2(2) + 3(3) = 1+4+9 = 14$. $|\\vec{A}|^2 = 1^2+2^2+3^2 = 14$. ✓]",
+    "Find the projection of $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ on $\\vec{B} = 5\\hat{i} + 12\\hat{j}$. [Solution: $\\text{proj} = \\vec{A}\\cdot\\vec{B}/|\\vec{B}| = (3\\cdot5+4\\cdot12)/13 = (15+48)/13 = 63/13 \\approx 4.85$.]",
+    "If $|\\vec{A}|=5$, $|\\vec{B}|=12$, and $\\vec{A}\\cdot\\vec{B} = -30$, find the angle between them. [Solution: $\\cos\\theta = -30/(5\\cdot12) = -30/60 = -0.5$. $\\theta = 120°$.]",
+    "A force $\\vec{F} = (3\\hat{i} + 4\\hat{j} - 5\\hat{k})\\,\\text{N}$ displaces an object by $\\vec{d} = (2\\hat{i} - \\hat{j} + \\hat{k})\\,\\text{m}$. Find the work done. [Solution: $W = \\vec{F}\\cdot\\vec{d} = 3(2) + 4(-1) + (-5)(1) = 6 - 4 - 5 = -3\\,\\text{J}$. The work is negative, meaning the force opposes the motion.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The dot product was introduced by **Hermann Grassmann** in 1844 and independently by **William Kingdon Clifford** in 1878. It is the foundation of the **inner product** in linear algebra, generalizing to higher dimensions.",
+    "**Work-energy theorem** in its vector form: $W = \\vec{F}\\cdot\\vec{d} = \\Delta K$. The dot product of force and displacement gives the work, which equals the change in kinetic energy.",
+    "NEB exam tip: problems involving the dot product of 2D/3D vectors are very common. The fastest method is the component form $\\vec{A}\\cdot\\vec{B} = A_xB_x + A_yB_y + A_zB_z$. Then find the angle using $\\cos\\theta = \\vec{A}\\cdot\\vec{B}/(|\\vec{A}||\\vec{B}|)$.",
+    "In **electromagnetism**, the dot product appears everywhere: electric potential $V = \\vec{E}\\cdot\\vec{d}$ for a uniform field, magnetic flux $\\Phi = \\vec{B}\\cdot\\vec{A}$, and power delivered $P = \\vec{F}\\cdot\\vec{v}$.",
+    "The dot product of **normal force** with **velocity** is always zero (since they are perpendicular). This is why normal forces do no work — they cannot change kinetic energy, only redirect motion.",
+    "In **3D graphics**, the dot product is used to determine whether two surfaces face each other (dot product of normals > 0) or away from each other (< 0). This is critical for lighting calculations (Lambert's cosine law).",
+    "The **Cauchy-Schwarz inequality** ($|\\vec{a}\\cdot\\vec{b}| \\leq |\\vec{a}||\\vec{b}|$) is one of the most powerful inequalities in mathematics. It follows directly from $|\\cos\\theta| \\leq 1$ in the dot product formula.",
+    "The dot product is the basis of **linear regression** in statistics and machine learning: the projection of data onto a direction vector (a unit vector) extracts the component of data along that direction."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

@@ -12,27 +12,35 @@
     "**Energy to escape:** to escape, the satellite needs total energy $E \\geq 0$. The energy deficit is $|E| = GMm/2r$. Launching from orbit to escape requires adding energy equal to the current orbital kinetic energy.",
     "**Energy of elliptical orbit:** for an ellipse with semi-major axis $a$, $E = -GMm/2a$. This depends only on $a$, not on eccentricity. Moving between orbits with the same $a$ costs zero net energy.",
     "**Work done to change orbit:** the work required to move a satellite from radius $r_1$ to $r_2$ (circular to circular) is $W = GMm/2(1/r_2 - 1/r_1)$. If $r_2 > r_1$, the work is positive (energy must be added).",
-    "** Hohmann transfer:** the most energy-efficient way to move between circular orbits uses a half-ellipse. The total energy change equals the difference in orbital energies of the two circular orbits.",
+    "**Hohmann transfer:** the most energy-efficient way to move between circular orbits uses a half-ellipse. The total energy change equals the difference in orbital energies of the two circular orbits.",
     "**Binding energy:** the minimum energy required to completely disassemble a satellite into isolated parts at infinity — it equals the magnitude of the total orbital energy: $|E| = GMm/2r$.",
-    "**Energy and orbital radius relationship:** $E = -K$. Kinetic energy is always half the binding energy magnitude. The more bound a satellite is (smaller $r$), the more negative its total energy."
+    "**Energy and orbital radius relationship:** $E = -K$. Kinetic energy is always half the binding energy magnitude. The more bound a satellite is (smaller $r$), the more negative its total energy.",
+    "**Energy comparison:** a satellite at $r = 2R$ has half the binding energy magnitude of one at $r = R$, meaning it is less tightly bound and requires less additional energy to escape.",
+    "**Orbital decay:** as a satellite loses energy due to atmospheric drag, its orbital radius decreases, its kinetic energy increases, and its orbital speed actually increases — a counterintuitive result.",
+    "**Potential well visualization:** gravitational potential energy can be visualized as a 'well' — the deeper the satellite is in the well (smaller $r$), the more energy it needs to escape. The bottom of the well is at $r = 0$ where $U \\to -\\infty$."
   ],
   "confusion": [
     "Many students think a satellite in a higher orbit has more energy, so it should fall back — but higher orbit means more potential energy (less negative) and less kinetic energy. The total is higher (less negative), not lower.",
     "The formula $K = GMm/2r$ is valid ONLY for circular orbits. For elliptical orbits, kinetic energy varies with position — fastest at perigee, slowest at apogee.",
     "Total energy of a bound orbit is NEGATIVE. Zero energy is the threshold for escape. A negative total energy means the satellite is gravitationally bound.",
-    "Doubling the orbital radius QUADRUPLES the total energy magnitude (makes it more negative) because $E \\propto -1/r$. Doubling $r$ makes $E$ twice as negative, meaning the satellite is more tightly bound."
+    "Doubling the orbital radius QUADRUPLES the total energy magnitude (makes it more negative) because $E \\propto -1/r$. Doubling $r$ makes $E$ twice as negative, meaning the satellite is more tightly bound.",
+    "A satellite losing energy to drag spirals inward and speeds up — this is because the loss of potential energy is greater than the loss of kinetic energy, resulting in a net gain in kinetic energy as the orbit decays."
   ],
   "practice": [
     "Find the kinetic, potential, and total energy of a $1000\\,\\text{kg}$ satellite in circular orbit at $400\\,\\text{km}$ altitude. $R = 6800\\,\\text{km}$, $M_E = 6 \\times 10^{24}\\,\\text{kg}$. Solution: $r = 6.8 \\times 10^6\\,\\text{m}$. $K = GMm/2r = (6.674 \\times 10^{-11})(6 \\times 10^{24})(1000)/(2 \\times 6.8 \\times 10^6) = 2.94 \\times 10^{10}\\,\\text{J}$. $U = -2K = -5.88 \\times 10^{10}\\,\\text{J}$. $E = -K = -2.94 \\times 10^{10}\\,\\text{J}$.",
     "How much energy is required to move a $500\\,\\text{kg}$ satellite from LEO ($r = 6800\\,\\text{km}$) to GEO ($r = 42,200\\,\\text{km}$)? Solution: $\\Delta E = GMm/2(1/r_{GEO} - 1/r_{LEO}) = (6.674 \\times 10^{-11})(6 \\times 10^{24})(500)/2 \\times (1/4.22 \\times 10^7 - 1/6.8 \\times 10^6) = 1.13 \\times 10^9\\,\\text{J}$.",
-    "A satellite of mass $m$ in circular orbit has kinetic energy $K$. Show that its escape energy is equal to $K$. Solution: For circular orbit, $K = GMm/2r$. Escape energy $= GMm/r = 2K$. Wait — escape energy is $GMm/R = 2K$, which is NOT equal to $K$. But the ADDITIONAL energy needed from orbit is $K$. The energy deficit from bound orbit to escape is $|E| = GMm/2r = K$.",
-    "A satellite's total energy is $-3 \\times 10^{10}\\,\\text{J}$. What is its orbital period? $M_E = 6 \\times 10^{24}\\,\\text{kg}$. Solution: $E = -GMm/2r \\Rightarrow r = -GMm/(2E) = -(6.674 \\times 10^{-11})(6 \\times 10^{24})(m)/(2 \\times -3 \\times 10^{10}) = 6.67 \\times 10^{13}/m$. For any $m$: $r^3 = (6.67 \\times 10^{13}/m)^3$. $T = 2\\pi\\sqrt{r^3/GM} = 2\\pi\\sqrt{(6.67 \\times 10^{13})^3/(m^3 \\times 6.674 \\times 10^{-11} \\times 6 \\times 10^{24})}$."
+    "A satellite of mass $m$ in circular orbit has kinetic energy $K$. Show that its escape energy from that orbit is $K$. Solution: For circular orbit, $K = GMm/2r$. Energy needed to reach infinity (where $E = 0$) from current energy $E = -K$: $\\Delta E = 0 - (-K) = K$.",
+    "A satellite's total energy is $-3 \\times 10^{10}\\,\\text{J}$. What is its binding energy? Solution: Binding energy = $|E| = 3 \\times 10^{10}\\,\\text{J}$.",
+    "A satellite in circular orbit has total energy $E = -5 \\times 10^{10}\\,\\text{J}$. Find its kinetic and potential energies. Solution: $K = -E = 5 \\times 10^{10}\\,\\text{J}$, $U = 2E = -10 \\times 10^{10}\\,\\text{J} = -10^{11}\\,\\text{J}$. Check: $E = K + U = 5 \\times 10^{10} - 10^{11} = -5 \\times 10^{10}\\,\\text{J}$. Correct.",
+    "What is the energy required to launch a $500\\,\\text{kg}$ satellite from Earth's surface into a circular orbit at $400\\,\\text{km}$ altitude? Solution: $E_{surface} = -GMm/R = -(6.674 \\times 10^{-11})(6 \\times 10^{24})(500)/(6.4 \\times 10^6) = -3.13 \\times 10^{10}\\,\\text{J}$. $E_{orbit} = -GMm/2r = -(6.674 \\times 10^{-11})(6 \\times 10^{24})(500)/(2 \\times 6.8 \\times 10^6) = -1.47 \\times 10^{10}\\,\\text{J}$. $\\Delta E = E_{orbit} - E_{surface} = 1.66 \\times 10^{10}\\,\\text{J}$."
   ],
   "universalFacts": [
     "The virial theorem $K = -E$ for gravitational orbits means that half the binding energy is always kinetic — you cannot have a satellite that has zero kinetic energy without it escaping.",
     "The total energy of an elliptical orbit depends only on the semi-major axis, not on eccentricity. A highly elliptical Molniya orbit has the same total energy as a circular orbit at the same $a$.",
     "In orbital mechanics, 'raising' a satellite to a higher orbit requires adding energy — the satellite then has a slower orbital speed in the higher orbit. This is counterintuitive.",
-    "The energy to de-orbit (lower orbit) is less than the energy to escape — escape requires infinite distance, while de-orbiting requires only enough to spiral into the atmosphere."
+    "The energy to de-orbit (lower orbit) is less than the energy to escape — escape requires infinite distance, while de-orbiting requires only enough to spiral into the atmosphere.",
+    "The energy budget of a satellite launch is dominated by the kinetic energy needed to reach orbital velocity ($\\sim 30\\,\\text{MJ/kg}$) rather than the potential energy needed to reach altitude ($\\sim 6\\,\\text{MJ/kg}$ for LEO).",
+    "The International Space Station loses about $100\\,\\text{kJ}$ of orbital energy per day to atmospheric drag, requiring periodic reboost maneuvers to maintain its altitude."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

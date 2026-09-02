@@ -14,25 +14,44 @@
     "**Cavendish experiment (1798):** first measurement of $G$ using a torsion balance. This also gave the first accurate value for Earth's mass ($M = gR^2/G$).",
     "**Newton's third law applies:** $\\vec{F}_{12} = -\\vec{F}_{21}$. The force masses exert on each other is equal and opposite.",
     "**Gravitation is a central force:** it acts along the line joining the centres of the two masses. This conservation of angular momentum is why planetary orbits are planar.",
-    "**Kepler's laws as consequence:** Newton derived Kepler's three laws of planetary motion from his law of gravitation, unifying terrestrial and celestial mechanics."
+    "**Kepler's laws as consequence:** Newton derived Kepler's three laws of planetary motion from his law of gravitation, unifying terrestrial and celestial mechanics.",
+    "**Superposition principle:** when multiple masses act on a particle, the net gravitational force is the vector sum of individual forces: $\\vec{F}_{net} = \\sum_i \\vec{F}_i$.",
+    "**Comparison with Coulomb's law:** both are inverse-square central forces, but gravity is always attractive (mass is always positive) while electric forces can be attractive or repulsive depending on charge signs.",
+    "**Mass-weighted averaging in CM:** the gravitational force on a composite body can be calculated by treating its entire mass as concentrated at the centre of mass, provided the external field is uniform.",
+    "**Gravitational force is additive:** unlike nuclear forces which saturate, gravity adds up over all particles. This is why large bodies like planets and stars dominate gravitational interactions.",
+    "**Force vs. distance graph:** the gravitational force follows a $1/r^2$ curve — it drops rapidly near the source but never truly reaches zero, even at cosmological distances.",
+    "**Newton's synthesis:** Newton's great insight was that the same force causing an apple to fall also keeps the Moon in orbit around Earth and the planets around the Sun, proving the universality of gravitation.",
+    "**Effective mass of Earth:** using $g = GM_E/R_E^2$, one can calculate Earth's mass: $M_E = gR_E^2/G = (9.8)(6.4 \\times 10^6)^2/(6.674 \\times 10^{-11}) \\approx 5.97 \\times 10^{24}\\,\\text{kg}$."
   ],
   "confusion": [
     "Gravity is always attractive — there are no negative masses to repel. Unlike electric charge, which can be positive or negative.",
     "The inverse-square law applies at all distances, but at very small distances (sub-atomic) other forces dominate and gravity becomes negligible.",
     "Shell theorem only applies to uniform spherical shells or solid spheres of uniform density — it does NOT apply to irregular shapes.",
-    "The universal constant $G$ is the same everywhere in the universe — it does not depend on the medium, temperature, or composition of the masses."
+    "The universal constant $G$ is the same everywhere in the universe — it does not depend on the medium, temperature, or composition of the masses.",
+    "Gravitational force exists between any two objects regardless of size, but for everyday objects the force is imperceptibly small due to the tiny value of $G$.",
+    "The force is mutual: Earth pulls you down, but you also pull Earth up with exactly the same force. The accelerations differ because the masses differ enormously.",
+    "Gravitational force does not depend on the presence of any intervening medium — it acts the same in vacuum, air, water, or glass.",
+    "Action-at-a-distance is replaced by the field concept in modern physics, but Newton's law remains perfectly valid for calculating forces between masses."
   ],
   "practice": [
     "Calculate the gravitational force between two 1 kg masses separated by 1 m. Compare this with the weight of a 1 g mass on Earth. Solution: $F = G(1)(1)/1^2 = 6.674 \\times 10^{-11}\\,\\text{N}$. Weight of 1 g = $mg = 0.001 \\times 9.8 = 0.0098\\,\\text{N}$. Gravitational force is about $6.8 \\times 10^{-9}$ times smaller.",
     "A satellite orbits at height $h = 300\\,\\text{km}$ above Earth ($R = 6400\\,\\text{km}$). Find the orbital speed. Solution: $v = \\sqrt{GM/r} = \\sqrt{gR^2/(R+h)} = \\sqrt{9.8 \\times (6.4 \\times 10^6)^2 / (6.7 \\times 10^6)} = 7.73 \\times 10^3\\,\\text{m/s} = 7.73\\,\\text{km/s}$.",
     "At what height above Earth's surface does gravity reduce to 25% of its surface value? Solution: $g' = g(R/(R+h))^2 = 0.25g \\Rightarrow (R/(R+h))^2 = 0.25 \\Rightarrow R/(R+h) = 0.5 \\Rightarrow R+h = 2R \\Rightarrow h = R = 6400\\,\\text{km}$.",
-    "Two spheres of masses $5\\,\\text{kg}$ and $10\\,\\text{kg}$ are placed $0.5\\,\text{m}$ apart. Find the gravitational force between them. Solution: $F = G(5)(10)/(0.5)^2 = (6.674 \\times 10^{-11})(50)/0.25 = 1.335 \\times 10^{-8}\\,\\text{N}$."
+    "Two spheres of masses $5\\,\\text{kg}$ and $10\\,\\text{kg}$ are placed $0.5\\,\\text{m}$ apart. Find the gravitational force between them. Solution: $F = G(5)(10)/(0.5)^2 = (6.674 \\times 10^{-11})(50)/0.25 = 1.335 \\times 10^{-8}\\,\\text{N}$.",
+    "Find the ratio of gravitational force to electric force between two protons. $F_g = Gm_p^2/r^2$, $F_e = ke^2/r^2$. Ratio $= Gm_p^2/(ke^2) = (6.674 \\times 10^{-11})(1.67 \\times 10^{-27})^2/(9 \\times 10^9)(1.6 \\times 10^{-19})^2 \\approx 8.6 \\times 10^{-37}$.",
+    "A planet has twice Earth's mass and twice Earth's radius. What is the acceleration due to gravity on its surface? Solution: $g' = G(2M)/(2R)^2 = 2GM/4R^2 = g/2 = 4.9\\,\\text{m/s}^2$.",
+    "Three equal masses $m$ are placed at the vertices of an equilateral triangle of side $a$. Find the net force on one mass. Solution: Each force has magnitude $F = Gm^2/a^2$. The angle between them is $60^\\circ$. Resultant $F_{net} = 2F\\cos(30^\\circ) = \\sqrt{3}Gm^2/a^2$, directed along the bisector toward the opposite side.",
+    "Calculate Earth's mass using $g = 9.8\\,\\text{m/s}^2$, $R = 6400\\,\\text{km}$, $G = 6.674 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2$. Solution: $M = gR^2/G = (9.8)(6.4 \\times 10^6)^2/(6.674 \\times 10^{-11}) = 5.97 \\times 10^{24}\\,\\text{kg}$.",
+    "Two lead spheres of mass $100\\,\\text{kg}$ each are placed with their centres $1\\,\\text{m}$ apart. Calculate the force. Solution: $F = G(100)(100)/1^2 = 6.674 \\times 10^{-7}\\,\\text{N}$. This is extremely small, demonstrating why Cavendish's experiment required great precision."
   ],
   "universalFacts": [
     "Gravity is universal — it acts between any two masses anywhere in the universe, from apples falling to galaxies orbiting each other.",
     "The gravitational constant $G$ is the same everywhere in the universe and at all times — it is a fundamental constant of nature.",
     "Inside a uniform spherical shell, gravitational force is exactly zero at every point, not just at the centre — this is a consequence of the inverse-square law.",
-    "Newton's law of gravitation and Coulomb's law are both inverse-square laws, but gravity is always attractive while electric forces can be attractive or repulsive."
+    "Newton's law of gravitation and Coulomb's law are both inverse-square laws, but gravity is always attractive while electric forces can be attractive or repulsive.",
+    "The Cavendish experiment was the first to measure $G$ in a laboratory setting, earning it the nickname 'weighing the Earth' since it allowed calculation of Earth's mass.",
+    "Newton published his law of gravitation in 1687 in the Principia Mathematica, one of the most important scientific works ever written.",
+    "The value of $G$ is known to about 4 significant figures, far less precisely than other fundamental constants, making it one of the most challenging measurements in physics."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

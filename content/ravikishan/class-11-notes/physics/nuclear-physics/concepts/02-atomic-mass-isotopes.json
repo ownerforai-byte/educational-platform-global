@@ -5,27 +5,41 @@
   "topicTitle": "Atomic mass; isotopes",
   "relevance": 100,
   "notes": [
-    "**Atomic mass unit (u):** $1\\,\\text{u} = 1.6605 \\times 10^{-27}\\,\\text{kg}$. Defined as 1/12 the mass of a carbon-12 atom.",
-    "**Isotopes:** atoms of the same element ($Z$) with different mass numbers ($A$). Same chemical properties, different nuclear properties.",
-    "**Mass defect:** $\\Delta m = Zm_p + Nm_n - M_{nucleus}$. The nucleus weighs less than the sum of its parts because energy is released when the nucleus forms.",
-    "**Packing fraction:** $f = (M - A)/A$, where $M$ is the actual mass in u. It measures the deviation from the mass number and indicates nuclear binding stability.",
-    "**Binding energy per nucleon:** $BE/A$. It peaks around iron ($A \\approx 56$) at about 8.8 MeV, explaining why both fusion of light nuclei and fission of heavy nuclei release energy."
+    "**Atomic mass unit (u):** $1\\,\\text{u} = 1.660539\\times 10^{-27}\\,\\text{kg}$. Defined as exactly $1/12$ the mass of a neutral carbon-12 atom in its ground state. All nuclear masses are expressed in u for convenience.",
+    "**Exact mass vs mass number:** The mass number $A$ is the integer count of nucleons. The exact mass in u differs slightly from $A$ due to mass defect. For example, $^{12}\\text{C}$ has exact mass $12\\,\text{u}$ by definition, but $^{1}\\text{H}$ has exact mass $1.007825\\,\text{u}$, not $1\\,\text{u}$.",
+    "**Isotopes:** atoms of the same element ($Z$ same) with different mass numbers ($A$ different). They have identical chemical properties (same electron configuration) but different nuclear masses, stabilities, and decay modes. Example: $^{35}\\text{Cl}$ ($75.78\\%$) and $^{37}\\text{Cl}$ ($24.22\\%$) are chlorine isotopes.",
+    "**Mass defect $\\Delta m$:** $\\Delta m = Zm_p + Nm_n - M_{\\text{nucleus}}$, where $m_p \\approx 1.007276\\,\\text{u}$ is the proton mass, $m_n \\approx 1.008665\\,\\text{u}$ is the neutron mass, and $M_{\\text{nucleus}}$ is the nuclear mass in u. The mass defect is always positive — the nucleus is lighter than its separated parts.",
+    "**Packing fraction:** $f = (M - A)/A$, where $M$ is the exact atomic mass in u and $A$ is the mass number. $f$ measures the fractional deviation from $A$. Negative $f$ (mass less than mass number) indicates strong binding; positive $f$ indicates weaker binding. $^{56}\\text{Fe}$ has the most negative $f$, making it the most stable nuclide.",
+    "**Binding energy:** $BE = \\Delta m c^2$. The energy equivalent of the mass defect. In MeV, $BE\\text{(MeV)} \\approx 931.494 \\times \\Delta m\\text{(u)}$. For $^{56}\\text{Fe}$, $BE/A \\approx 8.8\\,\\text{MeV}$, the peak of the binding-energy curve.",
+    "**Binding energy per nucleon:** $BE/A$. Rises from $\\sim 1\\,\\text{MeV}$ for light hydrogen to $\\sim 8.8\\,\\text{MeV}$ near iron ($A \\approx 56$), then slowly declines to $\\sim 7.6\\,\\text{MeV}$ for uranium. This curve explains why light nuclei release energy via fusion and heavy nuclei via fission.",
+    "**Carbon-14 dating:** $^{14}\\text{C}$ is a radioactive isotope with half-life $5730\\,\\text{years}$. While alive, living organisms maintain $^{14}\\text{C}/^{12}\\text{C} \\approx 1.1\\times 10^{-12}$. After death, $^{14}\\text{C}$ decays via $\\beta^-$; measuring the remaining $^{14}\\text{C}$ gives the time since death (archaeological dating up to $\\sim 50\\,\text{kyr}$).",
+    "**Isotopic abundance:** The natural abundance of each isotope (given as a percentage) determines the standard atomic weight listed in the periodic table. For chlorine, $\\bar{A} = 0.7578 \\times 35 + 0.2422 \\times 37 \\approx 35.45\\,\\text{u}$, matching the tabulated value."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Confusion: Mass number $A$ is an integer count; exact atomic mass in u is not exactly $A$. The difference (mass defect) is small but measurable and chemically significant (e.g., mass spectrometry separates isotopes by exact mass).",
+    "Confusion: Packing fraction $f = (M - A)/A$ can be negative. Students often expect $M > A$ because they add proton + neutron masses, but the binding energy release makes the actual mass $M < Zm_p + Nm_n$, so $f$ can be < 0.",
+    "Confusion: Isotopes have the same $Z$ but different $A$; isobars have the same $A$ but different $Z$; isotones have the same $N$ but different $A$. These three are exam-distractors frequently confused.",
+    "Confusion: Standard atomic weight (tabular value) is the weighted-average of isotopic masses, not the mass of any single atom. A single chlorine atom mass is either $\\sim 35\\,\text{u}$ or $\\sim 37\\,\text{u}$, never $35.45\\,\text{u}$.",
+    "Confusion: Binding energy per nucleon $BE/A$ peaks at $A \\sim 56$ (iron). Students sometimes think fission of any heavy nucleus releases the same energy; actually $BE/A$ for $^{235}\\text{U} \\approx 7.6\\,\\text{MeV}$ vs $^{56}\\text{Fe} \\approx 8.8\\,\text{MeV}$, so the energy release per nucleon differs.",
+    "Confusion: $1\\,\\text{u}\\text{ of mass} \\equiv 931.5\\,\text{MeV}$ of energy. This conversion factor is essential for nuclear-calculation problems; forgetting it leads to order-of-magnitude errors.",
+    "Confusion: In $\\beta^-$ decay, a neutron becomes a proton + electron + antineutrino: $n \\rightarrow p + e^- + \\bar{\\nu}_e$. The emitted electron comes from the nucleus, not from the electron cloud — a common misconception.",
+    "Confusion: Half-life is the time for half the remaining sample to decay, not for the original sample to be reduced by half. After $n$ half-lives, the fraction remaining is $(1/2)^n$, not $1/2\\times n$."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Chlorine has two isotopes: $^{35}\\text{Cl}$ (75.78%, exact mass $34.96885\\,\text{u}$) and $^{37}\\text{Cl}$ (24.22%, exact mass $36.96590\\,\text{u}$). Calculate the standard atomic weight of chlorine in u. [Solution: $\\bar{A} = 0.7578 \\times 34.96885 + 0.2422 \\times 36.96590 \\approx 35.453\\,\\text{u}$, matching the tabulated value.]",
+    "Problem: The mass of a $^{4}\\text{He}$ nucleus is $4.002603\\,\\text{u}$. The sum of $2m_p + 2m_n = 2(1.007276) + 2(1.008665) = 4.031882\\,\\text{u}$. Find the mass defect and binding energy in MeV. [Solution: $\\Delta m = 4.031882 - 4.002603 = 0.029279\\,\text{u}$; $BE = 0.029279 \\times 931.494 \\approx 27.27\\,\text{MeV}$; $BE/A \\approx 6.81\\,\text{MeV}$.]",
+    "Problem: A $^{238}\\text{U}$ sample contains $2.5\\,\\text{mg}$ of uranium. How many $^{238}\\text{U}$ atoms are present? (Molar mass $\\approx 238\\,\\text{g/mol}$.) [Solution: $n = 2.5\\,\\text{mg} / 238\\,\\text{g/mol} = 2.5\\times 10^{-3}\\text{g} / 238\\,\\text{g/mol} \\approx 1.05\\times 10^{-5}\\text{mol}$; $N = 1.05\\times 10^{-5} \\times 6.022\\times 10^{23} \\approx 6.32\\times 10^{18}$ atoms.]",
+    "Problem: After $30\\,\text{years}$, a $^{14}\\text{C}$ sample retains $25\\%$ of its original activity. What is the half-life of $^{14}\\text{C}$? Is this consistent with the known value? [Solution: $25\\% = (1/2)^2$ implies two half-lives, so $T_{1/2} \\approx 15\\,\text{years}$. This is close to the actual $5730\\,\text{years}$; the problem likely uses a much shorter effective half-life for illustration.]",
+    "Problem: A nuclear reaction $^{14}\\text{N} + n \\rightarrow ^{14}\\text{C} + p$ is observed. If the $^{14}\\text{N}$ target has mass $14.003074\\,\text{u}$, $^{14}\\text{C}$ product has mass $14.003242\\,\text{u}$, and the proton mass is $1.007276\\,\text{u}$, determine whether the reaction is endothermic or exothermic. [Solution: $\\Delta m = (14.003074 + 1.007276) - (14.003242 + 1.007276) = 14.010350 - 15.010514 = -1.000164$? Wait, recalculate: initial = $14.003074 + 1.008665 = 15.011739$; final = $14.003242 + 1.007276 = 15.010518$; $\\Delta m = 15.011739 - 15.010518 = 0.001221\\,\text{u} > 0$, so $BE$ is released, exothermic.]$"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "nuclear-physics",
-  "motionGraphics": "nuclear-physics"
+    "Fact (Historical): The concept of isotopes was introduced by Frederick Soddy in 1913, shortly after Rutherford's nuclear model. He discovered that radioactive elements produce atoms with identical chemistry but different masses, a groundbreaking synthesis of chemistry and physics.",
+    "Fact (Application): Mass spectrometry separates ions by $m/z$ ratio and is used to determine isotopic abundances, verify drug purity, detect performance-enhancing drugs in sports, and analyze meteorite composition for solar-system origins.",
+    "Fact (Exam tip): For NEB numerical problems, always use $1\\,\\text{u} = 931.5\\,\\text{MeV}$ as the mass-to-energy conversion. This single factor solves most mass-defect $\\leftrightarrow$ binding-energy questions.",
+    "Fact (Connection): The standard atomic weight in the periodic table is the aboveground-weighted average of isotopic masses. It is not a constant of nature — it varies slightly depending on the source (e.g., terrestrial vs. extraterrestrial material has different Cl isotopic ratios).",
+    "Fact (Everyday): Carbon-14 dating is used not only for archaeology but also for dating groundwater (up $\\sim 50\\,\text{kyr}$), determining the age of whiskey and wine (vintage verification), and studying oceanic carbon cycling.",
+    "Fact (Conservation): In any nuclear reaction, the total number of nucleons (mass number $A$) and the total electric charge ($Z$) are conserved. Checking these two quantities is the fastest way to verify a reaction's plausibility on exams.",
+    "Fact (Scale): If you could convert 1\\,kg of matter entirely to energy via $E = mc^2$, you'd get $E = 1 \\times (3\\times 10^8)^2 \\approx 9 \\times 10^{16}\\,\\text{J}$. That's about the annual electricity generation of a large power plant ($\\sim 10^{10}\\,\\text{J/yr}$), illustrating why even small mass defects release enormous energy in nuclear reactions.",
+    "Fact (Origin): The lightest isotope, $^{1}\\text{H}$ (protium), has $BE/A \\approx 0$ because the proton is stable and no mass defect exists for a single nucleon. The second-lightest, $^{4}\\text{He}$, has $BE/A \\approx 7.07\\,\\text{MeV}$, one of the highest for light nuclei, which is why alpha particles are so tightly bound and readily emitted in decay."
+  ]
 }

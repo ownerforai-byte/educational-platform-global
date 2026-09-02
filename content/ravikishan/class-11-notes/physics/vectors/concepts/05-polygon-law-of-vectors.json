@@ -1,28 +1,59 @@
 {
   "title": "Polygon Law of Vectors",
   "unitSlug": "vectors",
-  "topicSlug": "resolution-of-vectors-unit-vectors",
-  "topicTitle": "Resolution of vectors; unit vectors",
+  "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
+  "topicTitle": "Triangle, parallelogram and polygon laws of vectors",
   "relevance": 88,
   "notes": [
     "**Statement**: If a number of vectors are represented in magnitude and direction by the sides of a polygon taken in the same order (head-to-tail), their resultant is represented in magnitude and direction by the closing side of the polygon taken in the opposite order.",
-    "**Derivation**: applying the triangle law repeatedly to vectors $\\vec{A_1},\\vec{A_2},\\dots,\\vec{A_n}$ placed head-to-tail: $\\vec{OB}=\\vec{A_1}+\\vec{A_2}$, then $\\vec{OC}=\\vec{OB}+\\vec{A_3}=\\vec{A_1}+\\vec{A_2}+\\vec{A_3}$, and so on, until the resultant is $\\vec{R}=\\vec{A_1}+\\vec{A_2}+\\vec{A_3}+\\cdots+\\vec{A_n}$, represented by the vector closing the polygon back to the starting point.",
-    "**Q. If two vectors $\\vec{A}$ and $\\vec{B}$ have equal magnitudes $P$ (i.e. $|\\vec{A}|=|\\vec{B}|=P$), find the magnitude and direction of their resultant.** This is the triangle/parallelogram law with $P=Q$: $R=\\sqrt{P^2+P^2+2P^2\\cos\\theta}=\\sqrt{2P^2(1+\\cos\\theta)}=2P\\cos(\\theta/2)$, and the resultant bisects the angle between them, $\\alpha=\\theta/2$."
+    "**Mathematical form**: for $n$ vectors $\\vec{A_1}, \\vec{A_2}, \\ldots, \\vec{A_n}$ placed head-to-tail: $\\vec{R} = \\vec{A_1} + \\vec{A_2} + \\vec{A_3} + \\cdots + \\vec{A_n}$. The closing side (from the tail of the first to the head of the last) represents $\\vec{R}$.",
+    "**Derivation from triangle law**: applying the triangle law successively: $\\vec{OB} = \\vec{A_1} + \\vec{A_2}$, then $\\vec{OC} = \\vec{OB} + \\vec{A_3} = \\vec{A_1} + \\vec{A_2} + \\vec{A_3}$, continuing until $\\vec{R} = \\vec{A_1} + \\vec{A_2} + \\cdots + \\vec{A_n}$. Each step uses the triangle law.",
+    "**Closed polygon ($\\vec{R} = \\vec{0}$)**: if the polygon closes (the last head meets the first tail), the resultant is zero and the system is in equilibrium. This is the **polygon of forces** condition for equilibrium.",
+    "**For three vectors in equilibrium**: the vectors form a closed triangle. This is the **triangle of forces** theorem: if three forces keep a particle in equilibrium, they can be represented by the sides of a triangle taken in order.",
+    "**Lami's theorem** (special case for three forces): if three forces $\\vec{F_1}, \\vec{F_2}, \\vec{F_3}$ act at a point in equilibrium: $\\frac{F_1}{\\sin\\alpha} = \\frac{F_2}{\\sin\\beta} = \\frac{F_3}{\\sin\\gamma}$, where $\\alpha, \\beta, \\gamma$ are the angles opposite to each force respectively.",
+    "**Any number of vectors**: the polygon law generalizes to any number of coplanar vectors. For 4 vectors, you get a quadrilateral; for 5, a pentagon; and so on. The closing side is always the resultant.",
+    "**Component method alternative**: for many vectors, it is more efficient to resolve each into components: $R_x = \\sum A_{ix}$ and $R_y = \\sum A_{iy}$, then $R = \\sqrt{R_x^2+R_y^2}$ and $\\alpha = \\tan^{-1}(R_y/R_x)$.",
+    "**Graphical construction**: (1) Draw the first vector to scale. (2) From its head, draw the second vector to scale at the correct angle. (3) Continue for all vectors. (4) The closing side from the start to the end is the resultant. (5) Measure its length and angle.",
+    "**Order independence**: vector addition is commutative and associative, so the polygon can be drawn in any order — the resultant is the same. $\\vec{A}+\\vec{B}+\\vec{C} = \\vec{B}+\\vec{A}+\\vec{C} = \\vec{C}+\\vec{B}+\\vec{A}$.",
+    "**Equilibrium condition**: a system of coplanar forces is in equilibrium if and only if their vector polygon closes (forms a closed polygon). This means $\\sum \\vec{F} = \\vec{0}$.",
+    "**Resolution method for polygon**: resolve all vectors along two perpendicular axes. For equilibrium: $\\sum F_x = 0$ and $\\sum F_y = 0$. These two equations allow solving for two unknowns.",
+    "The polygon law is essential in **structural analysis** of trusses and frames. Each joint is treated as a point where multiple force vectors meet, and the polygon must close for static equilibrium.",
+    "**Real-world application**: surveyors use the polygon method (called the 'traverse method') to check the accuracy of measured angles and distances. Any closure error indicates measurement mistakes.",
+    "For a regular polygon with $n$ equal forces acting along its sides, the resultant is zero if the forces are arranged symmetrically. This is because the vectors are equally spaced in direction around the circle.",
+    "**Special case — three equal forces**: three equal forces in equilibrium must be at 120° to each other. This follows from the force triangle being equilateral, which requires all angles to be 60° (exterior angles of 120°).",
+    "The polygon law applies to **non-coplanar vectors** as well — in 3D, the polygon becomes a spatial polygon. The component method ($R_x, R_y, R_z$) is preferred for 3D problems.",
+    "In **electrostatics**, the polygon law is used to find the net electric field at a point due to multiple charges. Each field vector is drawn head-to-tail, and the resultant gives the total field.",
+    "When the polygon does not close, the **closing side** (from endpoint back to starting point) represents the **equilibrant** — the force needed to bring the system into equilibrium. The equilibrant is equal in magnitude but opposite in direction to the resultant."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The polygon law is a different law from the triangle and parallelogram laws — It is the generalization of both. The triangle law is the polygon law for 2 vectors; the polygon law extends this to any number of vectors.",
+    "If the polygon doesn't close, the system is in equilibrium — A closed polygon means equilibrium (resultant = 0). An open polygon means the resultant is the closing side. Only a closed polygon indicates equilibrium.",
+    "The order of vectors in the polygon matters — No. Vector addition is commutative: $\\vec{A}+\\vec{B}+\\vec{C}$ gives the same resultant regardless of order. You can rearrange the polygon sides freely.",
+    "Lami's theorem applies to any number of forces — Lami's theorem applies ONLY to three forces in equilibrium. For more than three forces, use the polygon law or component resolution.",
+    "The closing side is the resultant — The closing side TAKEN FROM the tail of the first to the head of the last is the resultant. The closing side TAKEN FROM the head back to the tail is the equilibrant (opposite to the resultant).",
+    "Polygon law only works for forces — It works for all vectors: displacements, velocities, accelerations, electric fields, magnetic fields. Any vector quantity obeys the polygon law.",
+    "A regular polygon of forces always means equilibrium — Only if the forces are equal in magnitude and equally spaced in direction. Unequal forces along the sides of a regular polygon generally do not produce equilibrium.",
+    "You must draw the polygon to scale to get the answer — No. The polygon law is a mathematical principle. You can solve problems analytically using components without any drawing. Graphical methods are for verification and visualization."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Four forces of 10 N, 20 N, 25 N, and 15 N act along the sides of a quadrilateral taken in order. If the quadrilateral closes, show the system is in equilibrium. [Solution: A closed quadrilateral means the vector polygon closes, so $\\vec{R} = \\vec{0}$. The system is in equilibrium by the polygon law.]",
+    "Three forces of 5 N, 7 N, and 8 N act at a point and keep it in equilibrium. Find the angles between the forces. [Solution: The forces form a triangle with sides 5, 7, 8. Using cosine rule: $\\cos A = (49+64-25)/(2\\cdot7\\cdot8) = 88/112 = 0.7857$, so angle opposite 5 N is $\\approx 38.2°$. Similarly, angle opposite 7 N $\\approx 61.0°$, angle opposite 8 N $\\approx 80.8°$. The angles BETWEEN the forces are the supplements: $180°-38.2°=141.8°$, $180°-61.0°=119.0°$, $180°-80.8°=99.2°$.]",
+    "A body is acted upon by three forces: 3 N east, 4 N north, and 5 N at 53° south of west. Show whether the body is in equilibrium. [Solution: Resolve: $F_x = 3 + 0 + 5\\cos(180°-53°) = 3 - 5(0.6018) = 3 - 3.009 \\approx 0$. $F_y = 0 + 4 + 5\\sin(180°-53°)(-1) = 4 - 5(0.7986) = 4 - 3.993 \\approx 0$. Both components $\approx 0$, so the body is in equilibrium.]",
+    "Five equal forces act at a point with consecutive angles of 60° between them. Find the resultant. [Solution: The forces are at 0°, 60°, 120°, 180°, 240°. $R_x = F(\\cos0°+\\cos60°+\\cos120°+\\cos180°+\\cos240°) = F(1+0.5-0.5-1-0.5) = -0.5F$. $R_y = F(\\sin0°+\\sin60°+\\sin120°+\\sin180°+\\sin240°) = F(0+0.866+0.866+0-0.866) = 0.866F$. $R = F\\sqrt{0.25+0.75} = F$. The resultant has magnitude $F$.]",
+    "Using Lami's theorem, find the tension in two strings supporting a 100 N weight, if the strings make angles of 30° and 60° with the vertical. [Solution: The angles between forces: between T1 and T2 is $180°-30°-60°=90°$, between T1 and W is $180°-60°=120°$, between T2 and W is $180°-30°=150°$. By Lami: $T_1/\\sin120° = T_2/\\sin150° = 100/\\sin90°$. $T_1 = 100\\cdot\\sin120°/1 = 86.6\\,\\text{N}$. $T_2 = 100\\cdot\\sin150°/1 = 50\\,\\text{N}$.]",
+    "Three concurrent forces are in equilibrium. The angles between them are 150°, 120°, and 90°. If the smallest force is 20 N, find the other two. [Solution: Smallest force is opposite the largest angle (150°). By Lami's theorem: $F_1/\\sin150° = F_2/\\sin120° = F_3/\\sin90°$. With $F_1 = 20$: $20/0.5 = 40$. So $F_2 = 40\\sin120° = 34.64\\,\\text{N}$, $F_3 = 40\\sin90° = 40\\,\\text{N}].",
+    "A force polygon has sides representing forces of 5 N, 12 N, and 13 N. Show that these forces can be in equilibrium and find the angles between them. [Solution: $5^2+12^2 = 25+144 = 169 = 13^2$. This is a right triangle. For equilibrium, the angles between forces are the supplements of the triangle angles: $90°\\to90°$, $\\tan^{-1}(12/5)\\approx67.4°\\to112.6°$, $\\tan^{-1}(5/12)\\approx22.6°\\to157.4°$.]",
+    "Four forces of magnitudes 1 N, 2 N, 3 N, and 4 N act along the sides of a rectangle taken in order. Find the magnitude and direction of the resultant. [Solution: Along the rectangle sides (say, 2 units by 1 unit): $\\vec{F}_1=1\\hat{i}$, $\\vec{F}_2=2\\hat{j}$, $\\vec{F}_3=-3\\hat{i}$, $\\vec{F}_4=-4\\hat{j}$. $\\vec{R} = (1-3)\\hat{i}+(2-4)\\hat{j} = -2\\hat{i}-2\\hat{j}$. $R = \\sqrt{4+4} = \\sqrt{8} = 2\\sqrt{2} \\approx 2.83\\,\\text{N}$. Direction: $225°$ from positive x-axis (southwest).]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The polygon law of forces is the basis of **graphical statics**, a method developed in the 19th century by engineers like **James Clerk Maxwell** and **Karl Culmann** to analyze structures before the advent of computer-aided design.",
+    "NEB exam tip: questions on the polygon law often appear as 'show that these forces are in equilibrium' problems. The key is to check if the vector polygon closes (sum of components in both directions equals zero).",
+    "The concept of a **force polygon** is used in the graphical analysis of **trusses** (bridge frameworks). Each joint's forces form a closed polygon, allowing engineers to determine internal forces in each member visually.",
+    "In navigation, the **dead reckoning** method uses the polygon law: a ship's position is found by adding successive displacement vectors (course and distance segments) head-to-tail.",
+    "The **closure error** in a surveying traverse is a direct application of the polygon law. If the measured sides and angles don't form a closed polygon, the error is distributed among the measurements.",
+    "Lami's theorem (a corollary of the polygon law for three forces) is named after **Bernard Lami** (1640-1715), a French mathematician and engineer. It provides a quick shortcut for three-force equilibrium problems.",
+    "The polygon law extends to **three dimensions** — spatial force polygons are used in 3D truss analysis. The component method ($\\sum F_x=0$, $\\sum F_y=0$, $\\sum F_z=0$) is the algebraic version of the 3D polygon law.",
+    "When forces are in equilibrium, the polygon closes — this means the work done by the forces in any closed path is also zero (for conservative forces). This connects the polygon law to the concept of conservative force fields."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

@@ -5,26 +5,39 @@
   "topicTitle": "Oxidation number and rules for assigning oxidation number",
   "relevance": 100,
   "notes": [
-    "**Oxidation number (ON):** a bookkeeping device that tracks electron transfer in a reaction. It is the charge an atom would have if all bonds were ionic.",
-    "**Rules:** (1) elemental form: ON = 0; (2) monatomic ions: ON = ionic charge; (3) oxygen: usually -2 (except peroxides -1, superoxides -1/2, with F); (4) hydrogen: +1 (except with metals: -1); (5) sum of ON in neutral compound = 0; in polyatomic ion = ion charge.",
-    "**Fluorine exception:** fluorine is always -1 because it is the most electronegative element.",
-    "**Carbon oxidation states:** range from -4 in $CH_4$ to +4 in $CO_2$. The ON of C in organic compounds is calculated from H=+1, O=-2, and halogens=-1.",
-    "**Why it matters:** oxidation numbers identify which atoms are oxidized and reduced, allow balancing of redox equations, and predict redox behaviour."
+    "**Definition:** An oxidation number (ON) is the charge an atom would bear if all bonds were 100% ionic — that is, if the more electronegative atom took all the bonding electrons. It is a bookkeeping device that tracks electron distribution in compounds.",
+    "**Rule 1 — Elements in free state:** The oxidation number of any atom in its elemental form is **zero**. Examples: $Na$ (ON = 0), $O_2$ (ON = 0), $P_4$ (ON = 0), $S_8$ (ON = 0), $Fe$ (ON = 0).",
+    "**Rule 2 — Monatomic ions:** The oxidation number equals the charge on the ion. Examples: $Na^+$ (ON = +1), $Ca^{2+}$ (ON = +2), $Al^{3+}$ (ON = +3), $Cl^-$ (ON = -1), $O^{2-}$ (ON = -2).",
+    "**Rule 3 — Hydrogen:** Hydrogen has ON = **+1** in most compounds (e.g., $H_2O$, $HCl$, $H_2SO_4$). Exception: in **metal hydrides** (e.g., $NaH$, $CaH_2$, $AlH_3$), hydrogen has ON = **-1** because metals are less electronegative than hydrogen.",
+    "**Rule 4 — Oxygen:** Oxygen has ON = **-2** in most compounds (e.g., $H_2O$, $CO_2$, $Fe_2O_3$). Exceptions: (a) **Peroxides** ($H_2O_2$, $Na_2O_2$): ON = **-1**; (b) **Superoxides** ($KO_2$, $RbO_2$): ON = **-1/2**; (c) With fluorine ($OF_2$, $O_2F_2$): ON = **+2** and **+1** respectively because fluorine is more electronegative.",
+    "**Rule 5 — Fluorine:** Fluorine is the most electronegative element and always has ON = **-1** in all compounds (e.g., $HF$, $SF_6$, $NaF$).",
+    "**Rule 6 — Halogens:** Chlorine, bromine, and iodine generally have ON = **-1** in binary compounds with metals or hydrogen (e.g., $NaCl$, $HBr$). However, when combined with oxygen or fluorine, they can have positive oxidation states: in $Cl_2O$ (Cl = +1), $ClO_2$ (Cl = +4), $KClO_3$ (Cl = +5), $HClO_4$ (Cl = +7).",
+    "**Rule 7 — Sum of oxidation numbers:** In a **neutral compound**, the sum of all oxidation numbers equals zero. In a **polyatomic ion**, the sum equals the charge on the ion. Examples: In $H_2SO_4$: $2(+1) + S + 4(-2) = 0 \\Rightarrow S = +6$. In $SO_4^{2-}$: $S + 4(-2) = -2 \\Rightarrow S = +6$.",
+    "**Rule 8 — Carbon oxidation states:** Carbon shows a wide range of oxidation numbers from -4 to +4. In $CH_4$: C = -4; in $CH_3OH$: C = -2; in $HCHO$: C = 0; in $HCOOH$: C = +2; in $CO_2$: C = +4. For organic compounds, assign H = +1, O = -2, and solve for C.",
+    "**Rule 9 — Algebraic method for complex molecules:** For a compound like $Na_2S_4O_6$ (sodium thiosulphate), the average ON of S can be calculated: $2(+1) + 4S + 6(-2) = 0 \\Rightarrow 4S = 10 \\Rightarrow S = +2.5$. The average oxidation state is +2.5, though individual sulfur atoms have different ON values (+5 and 0) due to the asymmetric structure.",
+    "**Rule 10 — Fractional oxidation numbers:** Some compounds show fractional ONs, e.g., in $Fe_3O_4$ (magnetite), the average ON of Fe is +8/3. This reflects the mixed-valence nature: $Fe_3O_4 = FeO \\cdot Fe_2O_3$, where two Fe are +3 and one Fe is +2.",
+    "**Why oxidation numbers matter:** They allow identification of which element is oxidised and which is reduced, enable balancing of redox equations, and help predict the reactivity and stability of chemical species. They are essential for naming inorganic compounds (e.g., iron(III) chloride vs. iron(II) chloride)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Average vs. individual oxidation numbers:** In $Na_2S_4O_6$, the average ON of S is +2.5, but two sulfur atoms are +5 and two are 0. The algebraic method gives an average; the actual structure reveals different individual values.",
+    "**Oxygen is NOT always -2:** Students often blindly assign -2 to oxygen. Remember the exceptions: peroxides (-1), superoxides (-1/2), and compounds with fluorine (+1, +2).",
+    "**Hydrogen is NOT always +1:** In metal hydrides like $NaH$, $CaH_2$, $LiH$, hydrogen has ON = -1 because the metal is less electronegative.",
+    "**Oxidation number is not the same as ionic charge:** Oxidation numbers can be fractional, while actual ionic charges are always integers. ON is a formalism, not a physical measurement.",
+    "**Positive ON does not mean the atom is a cation:** In $CO_2$, carbon has ON = +4 but exists as part of a covalent molecule, not as a $C^{4+}$ ion."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Find the oxidation number of Cr in $K_2Cr_2O_7$. **Solution:** $2(+1) + 2(Cr) + 7(-2) = 0 \\Rightarrow 2 + 2Cr - 14 = 0 \\Rightarrow 2Cr = 12 \\Rightarrow Cr = +6$.",
+    "Find the oxidation number of S in $Na_2S_2O_3$ (sodium thiosulphate). **Solution:** $2(+1) + 2(S) + 3(-2) = 0 \\Rightarrow 2 + 2S - 6 = 0 \\Rightarrow 2S = 4 \\Rightarrow S = +2$. (Note: the two sulfur atoms are not equivalent — one is +5 and the other is -1 in the actual structure.)",
+    "Find the oxidation number of Mn in $KMnO_4$. **Solution:** $(+1) + Mn + 4(-2) = 0 \\Rightarrow Mn - 7 = 0 \\Rightarrow Mn = +7$.",
+    "Find the oxidation number of Fe in $Fe_3O_4$. **Solution:** $3(Fe) + 4(-2) = 0 \\Rightarrow 3Fe = 16 \\Rightarrow Fe = +16/3 \\approx +5.33$. This is an average; actual structure is $FeO \\cdot Fe_2O_3$ with Fe in +2 and +3 states.",
+    "Find the oxidation number of I in $H_4IO_6^-$ (metaperiodic acid ion). **Solution:** $4(+1) + I + 6(-2) = -1 \\Rightarrow 4 + I - 12 = -1 \\Rightarrow I = +7$. (Note: some texts use $H_5IO_6$ where I = +7 as well.)"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The concept of oxidation number was introduced by Irving Langmuir and is essential for systematic nomenclature in inorganic chemistry (Stock notation).",
+    "The sum of oxidation numbers in a neutral molecule is always zero; in an ion, it equals the ionic charge. This is the key equation for finding unknown oxidation states.",
+    "Transition metals commonly exhibit multiple oxidation states (e.g., Fe: +2, +3; Mn: +2, +3, +4, +6, +7) due to the similar energies of ns and (n-1)d electrons.",
+    "The highest oxidation state of an element generally equals its group number (for groups 1-7), and the lowest often equals (group number - 8) for non-metals.",
+    "Fluorine is the only element that always has a negative oxidation number (-1) because it is the most electronegative element in the periodic table."
   ],
   "animation3D": "oxidation-and-reduction",
   "motionGraphics": "oxidation-and-reduction"

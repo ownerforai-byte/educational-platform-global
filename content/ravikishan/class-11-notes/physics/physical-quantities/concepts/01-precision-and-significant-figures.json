@@ -5,27 +5,40 @@
   "topicTitle": "Precision and significant figures",
   "relevance": 100,
   "notes": [
-    "**Precision vs accuracy:** precision is how repeatable a measurement is; accuracy is how close it is to the true value. A stopped clock is precise but not accurate.",
-    "**Significant figures:** the digits in a measurement that carry meaning. Rules: all non-zero digits are significant; zeros between non-zero digits are significant; leading zeros are not significant; trailing zeros after a decimal point are significant.",
-    "**Addition and subtraction:** the result should be rounded to the least precise decimal place of any term in the calculation.",
-    "**Multiplication and division:** the result should have as many significant figures as the factor with the fewest significant figures.",
-    "**Scientific notation:** writing a number as $a \\times 10^n$ makes the number of significant figures explicit because only the coefficient $a$ counts."
+    "**Precision vs accuracy:** Precision is the reproducibility of repeated measurements (low scatter, close values); accuracy is closeness to the true value. A clock that consistently reads 12:05 PM when it's 12:00 PM is precise but not accurate. A clock that's exactly 12:00 PM only sometimes is accurate on average but not precise.",
+    "**Random vs systematic error:** Random error reduces precision; systematic error reduces accuracy. Repeated measurements and averaging reduce random error; careful calibration and standard reference materials reduce systematic error.",
+    "**Significant figures (definition):** The digits in a measured or calculated value that carry meaningful information about precision. They include all known digits plus the first uncertain (estimated) digit. For example, a length measured as $1.234\\,\\text{cm}$ has 4 significant figures, with the last ($4$) being estimated.",
+    "**Rules for counting sig figs:** (1) All non-zero digits are significant ($1542$ → 4 sig figs). (2) Zeros between non-zero digits are significant ($1003$ → 4 sig figs). (3) Leading zeros are NOT significant ($0.0021$ → 2 sig figs). (4) Trailing zeros after a decimal point are significant ($1.200$ → 4 sig figs). (5) Trailing zeros without a decimal point are ambiguous ($1500$ could be 2, 3, or 4 sig figs; use scientific notation: $1.5\\times 10^3$ → 2 sig figs).",
+    "**Addition/subtraction rule:** Round the result to the same number of decimal places as the LEAST precise measurement. Example: $12.34 + 5.6 = 17.94$, but rounded to the least precise decimal place (tenths): $17.9$. Sig figs of the result is NOT used; decimal place count is used.",
+    "**Multiplication/division rule:** Round the result to the same number of sig figs as the LEAST precise factor. Example: $2.34 \\times 1.2 = 2.808$, rounded to 2 sig figs: $2.8$. Sig fig count is used (not decimal places).",
+    "**Mixed operations:** Do addition/subtraction first, track sig figs, then do multiplication/division. Example: $\\frac{2.34 + 1.2}{3.456} = \\frac{3.54}{3.456} \\approx 1.024$, but $3.54$ has 3 sig figs and $3.456$ has 4, so result $\\approx 1.02$ (3 sig figs).",
+    "**Scientific notation:** Writing a number as $a \\times 10^n$ where $1 \\le a < 10$ makes the number of sig figs explicit. Only the coefficient $a$ counts. Example: $6.02 \\times 10^{23}$ has 3 sig figs.",
+    "**Errors:** Absolute error $\\Delta x$ (in same units as the measurement). Relative error $\\Delta x / x$ (dimensionless, often expressed as %). Percentage error = (relative error) $\\times 100\\%$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Confusion: Precision and accuracy are NOT the same. A 3-decimal-place measurement can be precise (repeatedly gives the same value) but inaccurate (off by 5%). A 2-decimal-place measurement can be both precise and accurate.",
+    "Confusion: A trailing zero without a decimal point is ambiguous. $1500$ could be 2, 3, or 4 sig figs. To be clear, use scientific notation: $1.5 \\times 10^3$ (2 sig figs), $1.50 \\times 10^3$ (3 sig figs), $1.500 \\times 10^3$ (4 sig figs).",
+    "Confusion: Leading zeros are NOT significant. $0.0021$ has 2 sig figs, not 4. The leading zeros only set the decimal position; they don't add precision.",
+    "Confusion: For addition/subtraction, you use DECIMAL PLACES, not sig figs. For multiplication/division, you use SIG FIGS, not decimal places. Mixing these rules is the most common error.",
+    "Confusion: The rules of sig figs in operations do NOT propagate errors rigorously. They are a quick, approximate method. For precise uncertainty quantification, use error propagation formulas.",
+    "Confusion: Sig figs of intermediate results should NOT be rounded to \"save precision.\" Keep extra digits during calculation and round only the FINAL answer.",
+    "Confusion: Significant figures matter for REPORTING measurements, not for the physics itself. The underlying physical value is what it is — sig figs just express measurement precision.",
+    "Confusion: A measurement of $1.0$ (2 sig figs) means uncertainty of $\\pm 0.05$, so the actual value is $0.95$ to $1.05$. A measurement of $1.00$ (3 sig figs) means $\\pm 0.005$, so $0.995$ to $1.005$. The same value 1.0 means different precision than 1.00."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: Determine the number of significant figures in: (a) $0.0023$, (b) $5040$, (c) $6.02 \\times 10^{23}$, (d) $100.0$, (e) $0.00100$, (f) $4500$ (with explanation). [Solution: (a) 2 sig figs (only 2 and 3 are significant). (b) 3 sig figs (4, 0, 4 are significant; trailing zero without decimal is ambiguous). (c) 3 sig figs (only the coefficient counts). (d) 4 sig figs (all 4 are significant due to decimal). (e) 3 sig figs (leading zeros not significant, trailing zeros after decimal are significant). (f) Ambiguous; use $4.5 \\times 10^3$ (2) or $4.50 \\times 10^3$ (3).]",
+    "Problem: Compute the following and round to the correct number of sig figs: (a) $23.4 + 5.21 + 0.003$, (b) $12.6 \\times 3.1$, (c) $\\frac{0.0789}{1.02}$, (d) $(45.6 + 1.2) \\times 2.345$. [Solution: (a) $23.4 + 5.21 + 0.003 = 28.613 \\rightarrow 28.6$ (3 decimal places from $23.4$). (b) $12.6 \\times 3.1 = 39.06 \\rightarrow 39$ (2 sig figs from $3.1$). (c) $0.0789/1.02 = 0.07735 \\rightarrow 0.0774$ (3 sig figs from $0.0789$). (d) $45.6 + 1.2 = 46.8$ (tenths), $\\times 2.345 = 109.74 \\rightarrow 110$ (2 sig figs from $1.2$).]",
+    "Problem: The length of a metal rod is measured as $25.6\\,\\text{cm}$ and the mass as $128.4\\,\\text{g}$. If the density is $0.985\\,\\text{g/cm}^3$, what is the volume? Express with correct sig figs. [Solution: $V = m/\\rho = 128.4/0.985 = 130.36\\,\\text{cm}^3 \\approx 130.4\\,\\text{cm}^3$ (4 sig figs; the fewest is 3 in 0.985, but rule 1 says 4 sig figs here? Wait: $128.4$ has 4, $0.985$ has 3, so result should have 3 sig figs: $130\\,\\text{cm}^3$.]",
+    "Problem: A runner completes $100.0\\,\\text{m}$ in $9.85\\,\\text{s}$. Calculate the average speed with proper sig figs. [Solution: Speed $= 100.0/9.85 = 10.15\\,\\text{m/s} \\approx 10.2\\,\\text{m/s}$ (3 sig figs from $9.85$).]",
+    "Problem: Two quantities are added: $X = 1.2345\\,\\text{m}$ and $Y = 2.3\\,\\text{m}$. Another pair: $A = 1.2345\\,\\text{m}$ and $B = 0.0023\\,\\text{m}$. Which sum has more sig figs in the result, and why? [Solution: First sum: $1.2345 + 2.3 = 3.5\\,\\text{m}$ (1 decimal place). Second: $1.2345 + 0.0023 = 1.2368\\,\\text{m}$ (4 decimal places). The second has more precision because both measurements have the same decimal precision (10,000ths) — they differ in magnitude but not in the precision with which they are known.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "physical-quantities",
-  "motionGraphics": "physical-quantities"
+    "Fact (Historical): The convention of significant figures was formalized in the late 19th and early 20th centuries as precision measurement instruments developed. The American Standards Association adopted a national standard in 1930.",
+    "Fact (Application): In engineering and medicine, sig figs are critical. A drug dose calculated as $12.4\\,\\text{mg}$ vs $12.40\\,\\text{mg}$ could mean a 10% difference. Always carry enough precision for the application.",
+    "Fact (Exam tip): NEB exams often test: (1) counting sig figs in ambiguous cases (trailing zeros), (2) rounding after addition/subtraction vs multiplication/division, (3) using scientific notation to make sig figs explicit.",
+    "Fact (Connection): Relative error $\\Delta x/x$ determines the number of reliable sig figs. A measurement of $x \\pm \\Delta x$ should be reported to the decimal place of $\\Delta x$. For example, $x = 12.34 \\pm 0.05$ has 3 sig figs (the 4 is uncertain).",
+    "Fact (Everyday): GPS positioning: with 4 satellites, your position is determined to $\\sim 5\\,\\text{m}$ (about 1 sig fig of city-block precision). Differential GPS uses reference stations to reduce error to $\\sim 1\\,\\text{cm}$ (more sig figs, higher accuracy).",
+    "Fact (Scale): In particle physics, measurements can reach 8–10 significant figures (e.g., electron magnetic moment to 13 digits). In macroscopic measurements, 4–5 sig figs is typical. In everyday measurement (ruler), 2–3 sig figs is standard.",
+    "Fact (Origin): The introduction of significant figures arose from the realization that no measurement is exact. Every reported value implies an uncertainty; sig figs quantify how well we know the value."
+  ]
 }

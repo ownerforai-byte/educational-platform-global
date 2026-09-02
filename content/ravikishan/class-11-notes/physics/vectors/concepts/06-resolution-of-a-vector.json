@@ -5,26 +5,56 @@
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 82,
   "notes": [
-    "**Definition**: splitting (breaking) a vector into its different constituent parts is known as resolution of a vector.",
-    "If a vector is resolved along two mutually perpendicular directions, it is called **rectangular (perpendicular) resolution**: $R_x=R\\cos\\theta$ and $R_y=R\\sin\\theta$.",
-    "**Derivation**: let $\\vec{R}$ act at a point making angle $\\theta$ with the x-axis. Complete parallelogram $OACB$ with $OA$ along the x-axis and $OC$ along the y-axis. By the law of triangle, $\\vec{OA}+\\vec{OC}=\\vec{OD}$, i.e. $\\vec{R_x}+\\vec{R_y}=\\vec{R}$, so $\\vec{R}=R_x\\hat{i}+R_y\\hat{j}$.",
-    "In right triangle $OAB$: $\\cos\\theta=OA/AB \\Rightarrow OA=AB\\cos\\theta \\Rightarrow R_x=R\\cos\\theta$. Also $\\sin\\theta=OC/OB \\Rightarrow R_y=R\\sin\\theta$.",
-    "Combining: **magnitude** $R=\\sqrt{R_x^2+R_y^2}$, **direction** $\\tan\\theta=R_y/R_x$."
+    "**Definition**: the process of splitting (breaking) a vector into its constituent parts is known as **resolution of a vector**. Each constituent is called a **component** of the vector along the chosen direction.",
+    "**Rectangular (perpendicular) resolution**: when a vector is resolved along two mutually perpendicular directions (typically x and y axes), the components are $R_x = R\\cos\\theta$ and $R_y = R\\sin\\theta$, where $\\theta$ is the angle the vector makes with the x-axis.",
+    "**Inverse operation of addition**: resolution is the reverse of vector addition. If two perpendicular components $\\vec{R}_x$ and $\\vec{R}_y$ add to give $\\vec{R}$, then resolving $\\vec{R}$ recovers these components.",
+    "**Derivation setup**: let $\\vec{R}$ act at origin $O$ making angle $\\theta$ with the x-axis. Construct parallelogram $OACB$ where $OA$ lies on the x-axis and $OC$ lies on the y-axis. The diagonal $OB$ represents $\\vec{R}$.",
+    "**By the parallelogram law**: $\\vec{OA} + \\vec{OC} = \\vec{OB}$, i.e., $\\vec{R}_x + \\vec{R}_y = \\vec{R}$. This means $\\vec{R}$ is completely determined by its two perpendicular components.",
+    "**Deriving the components**: in right triangle $OAB$, $\\cos\\theta = OA/OB = R_x/R$, so $R_x = R\\cos\\theta$. Similarly, $\\sin\\theta = OC/OB = R_y/R$, so $R_y = R\\sin\\theta$.",
+    "**Combining components**: $R = \\sqrt{R_x^2 + R_y^2}$ (magnitude) and $\\tan\\theta = R_y/R_x$ (direction). The original vector is $\\vec{R} = R_x\\hat{i} + R_y\\hat{j}$ in unit vector notation.",
+    "**Sign convention**: $R_x$ is positive if $\\vec{R}_x$ is along $+x$ direction, negative if along $-x$. Same for $R_y$. This sign convention allows vectors in any quadrant to be handled systematically.",
+    "**Vector form**: $\\vec{R} = R_x\\hat{i} + R_y\\hat{j} + R_z\\hat{k}$ for a 3D vector, where $R_x = R\\cos\\alpha$, $R_y = R\\cos\\beta$, $R_z = R\\cos\\gamma$ and $\\alpha, \\beta, \\gamma$ are the angles with x, y, z axes.",
+    "**Direction cosines**: for 3D vectors, $\\cos\\alpha$, $\\cos\\beta$, $\\cos\\gamma$ are called direction cosines, and they satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.",
+    "**Why resolution is useful**: a single vector makes solving equilibrium problems difficult. Resolving into components turns a vector problem into multiple scalar problems, which are easier to solve.",
+    "**Resolution in any two directions**: a vector can be resolved along ANY two non-parallel directions, not just perpendicular ones. Rectangular resolution is the most common because it gives independent components.",
+    "**Resolution and addition are inverse operations**: $\\vec{R}_x + \\vec{R}_y = \\vec{R}$ (addition) and $\\vec{R} = \\vec{R}_x + \\vec{R}_y$ (resolution). The same equation, viewed in two directions.",
+    "**Applications**: inclined plane problems (gravity resolved into parallel and perpendicular components), projectile motion (initial velocity into horizontal and vertical), forces at angles (along and perpendicular to surfaces).",
+    "**On an inclined plane at angle $\\phi$**: weight $mg$ is resolved into $mg\\sin\\phi$ parallel to plane (causing sliding) and $mg\\cos\\phi$ perpendicular to plane (causing normal reaction). This is a classic NEB application.",
+    "**For a vector along an arbitrary direction $\\hat{u}$**: the component of $\\vec{A}$ along $\\hat{u}$ is $A_u = \\vec{A}\\cdot\\hat{u} = |\\vec{A}|\\cos\\alpha$, where $\\alpha$ is the angle between $\\vec{A}$ and $\\hat{u}$.",
+    "**Resolution in 3D**: $\\vec{R} = R_x\\hat{i} + R_y\\hat{j} + R_z\\hat{k}$ where $R_x = R\\cos\\alpha$, $R_y = R\\cos\\beta$, $R_z = R\\cos\\gamma$, and $\\alpha, \\beta, \\gamma$ are angles with x, y, z axes respectively.",
+    "**Equivalence with triangle law**: the resolution of $\\vec{R}$ into $\\vec{R}_x$ and $\\vec{R}_y$ is essentially constructing a right triangle with hypotenuse $R$ and legs $R_x, R_y$. The Pythagorean theorem gives $R = \\sqrt{R_x^2+R_y^2}$.",
+    "**Inverse problem**: given components $R_x$ and $R_y$, the original vector is $\\vec{R} = R_x\\hat{i} + R_y\\hat{j}$ with $R = \\sqrt{R_x^2+R_y^2}$ and $\\theta = \\tan^{-1}(R_y/R_x)$.",
+    "The angle in the formula $\\theta$ must be measured from the axis the component is along. For $R_x = R\\cos\\theta$, $\\theta$ is measured from the x-axis. The component along any other axis at angle $\\phi$ is $R\\cos(\\theta-\\phi)$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Resolution is the same as addition — Resolution BREAKS a vector INTO components; addition COMBINES components INTO a vector. They are inverse operations. $\\vec{R}_x+\\vec{R}_y=\\vec{R}$ is addition; given $\\vec{R}$, find $\\vec{R}_x, \\vec{R}_y$ is resolution.",
+    "Components can be in any two directions — Components can be in ANY two non-parallel directions, but rectangular (perpendicular) resolution is most common because the components are independent. Oblique components can be converted to rectangular using transformation formulas.",
+    "The angle in $R_x = R\\cos\\theta$ is the angle between $R$ and $R_y$ — No, it is the angle between $R$ and the x-axis (the direction of $R_x$). The component $R_y = R\\sin\\theta$ uses the same $\\theta$ because $\\theta_x + \\theta_y = 90°$ for perpendicular components.",
+    "A larger component means a larger vector — A larger component does not mean a larger vector if the components are along different directions. $R = \\sqrt{R_x^2+R_y^2}$ is the actual magnitude, considering both components.",
+    "Resolution gives the magnitudes of sub-vectors only — Resolution gives the FULL components as vectors: $\\vec{R}_x$ (with direction) and $\\vec{R}_y$ (with direction). Magnitudes alone are $R_x$ and $R_y$, but each is along a specific axis.",
+    "The angle in the formulas must be from the x-axis always — The angle can be measured from any axis, but you must use the correct trigonometric function: $R_x = R\\cos\\theta$ if $\\theta$ is from x-axis, $R_y = R\\sin\\theta$. If $\\theta$ is from y-axis, swap the roles.",
+    "Resolution into more than two components is impossible — A vector can be resolved into any number of components, as long as their vector sum equals the original. In 3D, we typically use three perpendicular components.",
+    "You can resolve a vector into components without specifying axes — To resolve a vector, you must specify the directions of resolution. Without axes, there are infinitely many possible resolutions."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A force of 100 N acts at 30° to the horizontal. Find its horizontal and vertical components. [Solution: $F_x = 100\\cos30° = 100\\cdot(0.866) = 86.6\\,\\text{N}$. $F_y = 100\\sin30° = 100\\cdot(0.5) = 50\\,\\text{N}$.]",
+    "A block of 10 kg rests on a smooth inclined plane at 30° to the horizontal. Find the components of weight along and perpendicular to the plane. [Solution: $W = mg = 10\\cdot9.8 = 98\\,\\text{N}$. Along plane: $W\\sin30° = 98\\cdot0.5 = 49\\,\\text{N}$ (down the slope). Perpendicular: $W\\cos30° = 98\\cdot0.866 = 84.87\\,\\text{N}$ (into the plane).]",
+    "Resolve a vector of magnitude 20 N along two perpendicular axes such that the component along one axis is 12 N. Find the other component and the angle. [Solution: $R^2 = R_x^2 + R_y^2$, so $R_y = \\sqrt{20^2-12^2} = \\sqrt{400-144} = \\sqrt{256} = 16\\,\\text{N}$. $\\theta = \\cos^{-1}(12/20) = 53.1°$.]",
+    "A body moves with velocity 50 m/s at 60° north of east. Find its eastward and northward components. [Solution: $v_x = 50\\cos60° = 25\\,\\text{m/s}$ (east). $v_y = 50\\sin60° = 50\\cdot0.866 = 43.3\\,\\text{m/s}$ (north).]",
+    "If $\\vec{A} = 4\\hat{i} + 3\\hat{j}$ and $\\vec{B} = 5\\hat{i} - 12\\hat{j}$, find the resultant. [Solution: $\\vec{R} = \\vec{A}+\\vec{B} = 9\\hat{i} - 9\\hat{j}$. $R = \\sqrt{81+81} = \\sqrt{162} = 9\\sqrt{2} \\approx 12.73$. $\\alpha = \\tan^{-1}(-9/9) = -45°$ (below x-axis).]",
+    "Show that the resultant of two perpendicular vectors of magnitudes 5 and 12 is 13, and find the angle it makes with the 12-unit vector. [Solution: $R = \\sqrt{25+144} = \\sqrt{169} = 13$. $\\theta = \\tan^{-1}(5/12) = 22.6°$ from the 12-unit vector. By the 5-12-13 right triangle, this is the famous 3-4-5 triple scaled up.]",
+    "A force has components $F_x = -6\\,\\text{N}$ and $F_y = 8\\,\\text{N}$. Find the magnitude of the force and the angle it makes with the positive x-axis. [Solution: $F = \\sqrt{36+64} = 10\\,\\text{N}$. $\\theta = \\tan^{-1}(8/(-6)) = 180° - 53.1° = 126.9°$ (second quadrant).]",
+    "A vector of magnitude 10 units makes equal angles with the x and y axes. Find its components. [Solution: If $\\theta_x = \\theta_y = \\alpha$, then since the components are along the axes, the angle between them is 90°. The vector is along the angle bisector, so $\\alpha = 45°$. Components: $R_x = R_y = 10\\cos45° = 10/\\sqrt{2} = 5\\sqrt{2} \\approx 7.07$.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Resolution of vectors is the **inverse operation** of vector addition. Addition combines two or more vectors into a single resultant; resolution decomposes a single vector into two or more components.",
+    "NEB exam frequency: resolution problems appear in nearly every physics paper, especially in inclined plane mechanics, projectile motion, and statics. Mastery of the formulas $R_x = R\\cos\\theta$ and $R_y = R\\sin\\theta$ is essential.",
+    "In **structural engineering**, forces in trusses are resolved into components along the truss members to determine tensions and compressions. The resolution allows solving for multiple unknowns using equilibrium equations.",
+    "The choice of coordinate axes in resolution is a **free choice** that affects the simplicity of the solution. For inclined plane problems, axes along and perpendicular to the plane minimize the work.",
+    "**Galileo's inclined plane experiments** for studying falling bodies relied on resolution. He resolved gravity into components along and perpendicular to the plane, making the analysis tractable.",
+    "Resolution of vectors in **2D** uses two components; in **3D**, three. The number of components equals the dimension of the space — but for any practical purpose, three components suffice for our world.",
+    "The result of resolving a vector into components depends on the **choice of axes**. Different axes give different components, but the resultant is the same. Always choose axes that simplify the problem.",
+    "In computer graphics and game development, every 3D object is manipulated using resolved vector components along x, y, z axes. This allows efficient calculations for rotation, translation, and lighting."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

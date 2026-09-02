@@ -1,31 +1,47 @@
 {
-  "title": "Nucleus â€” Discovery, Density and Composition",
+  "title": "Nucleus – Discovery, Density and Composition",
   "unitSlug": "nuclear-physics",
   "topicSlug": "nucleus-discovery-density-mass-number-and-atomic-number",
   "topicTitle": "Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
   "relevance": 100,
   "notes": [
-    "**Rutherford's discovery (1911):** $\\alpha$-particle scattering experiment showed that atoms have a tiny, dense, positively charged nucleus.",
-    "**Nuclear density:** nearly constant for all nuclei, about $2.3 \\times 10^{17}\\,\\text{kg/m}^3$. This is because the radius scales as $R = R_0 A^{1/3}$, so volume scales as $A$, keeping density constant.",
-    "**Mass number $A$:** total number of protons and neutrons. Symbol: $^A_ZX$.",
-    "**Atomic number $Z$:** number of protons. Determines the element and its chemical properties.",
-    "**Neutron number $N$:** $N = A - Z$. Neutrons add mass and nuclear strong force without adding Coulomb repulsion."
+    "**Rutherford's gold foil experiment (1911):** $\\alpha$-particle scattering revealed that atoms have a tiny, dense, positively charged nucleus at the center, with most of the atom being empty space. Before this, the \"plum pudding\" model held that positive charge was spread uniformly throughout the atom.",
+    "**Nuclear density is nearly constant:** $\\rho_{\\text{nuc}} \\approx 2.3 \\times 10^{17}\\,\\text{kg/m}^3$ for all nuclei. This constancy arises because nuclear radius scales as $R = R_0 A^{1/3}$ with $R_0 \\approx 1.2\\,\\text{fm}$, so volume $V \\propto R^3 \\propto A$, and density $\\rho = m/A \\approx \\text{constant}$.",
+    "**Mass number $A$:** the total count of protons and neutrons ($A = Z + N$). It is the integer superscript in nuclear notation $^A_ZX$. Most of an atom's mass is concentrated in the nucleus.",
+    "**Atomic number $Z$:** the number of protons in the nucleus. It uniquely identifies the element and determines its chemical properties. No two different elements have the same $Z$.",
+    "**Neutron number $N$:** $N = A - Z$. Neutrons contribute significantly to nuclear mass but add strong nuclear force without Coulomb repulsion. The ratio $N/Z$ stabilizes nuclei; for light nuclei $N \\approx Z$, while heavy nuclei need more neutrons.",
+    "**Nuclear notation:** $^A_ZX$ where $X$ is the element symbol, $A$ is the mass number, and $Z$ is the atomic number. For example, $^{235}_{92}\\text{U}$ has $A=235$, $Z=92$, and $N=143$.",
+    "**Isotopes:** nuclides with the same $Z$ (same element) but different $A$ (different neutron counts). Example: $^{12}_6\\text{C}$, $^{13}_6\\text{C}$, and $^{14}_6\\text{C}$ are three isotopes of carbon. Most are stable; some are radioactive (radioisotopes).",
+    "**Isotones:** nuclides with the same neutron number $N$ but different $Z$. Example: $^{14}_6\\text{C}$ ($N=8$) and $^{15}_7\\text{N}$ ($N=8$).",
+    "**Isobars:** nuclides with the same mass number $A$ but different $Z$. Example: $^{40}_{18}\\text{Ar}$, $^{40}_{19}\\text{K}$, and $^{40}_{20}\\text{Ca}$ all have $A=40$. They decay into each other via $\\beta^+$, electron capture, or $\\beta^-$ decay.",
+    "**Radioactive decay law:** the number of undecayed nuclei $N(t) = N_0 e^{-\\lambda t}$, where $\\lambda$ is the decay constant. The half-life $T_{1/2} = \\ln 2 / \\lambda$ is the time for half the sample to decay.",
+    "**Mass-energy equivalence:** $E = mc^2$ underpins nuclear physics. The $\\sim\\text{MeV}$ scale of nuclear energies reflects the large $c^2$ conversion factor, making even small mass defects release enormous energy."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Confusion: Mass number $A$ is the total of protons and neutrons, not just protons. The atomic number $Z$ counts only protons; students sometimes equate $A$ and $Z$ for neutral atoms.",
+    "Confusion: Nuclear density looks like it should decrease as nuclei get larger, but $R \\propto A^{1/3}$ makes volume $\\propto A$, so density stays nearly constant — a key insight often missed.",
+    "Confusion: Isotopes have the same $Z$ (same element) but different $A$; isobars have the same $A$ but different $Z$; isotones have the same $N$ but different $A$. These are frequently mixed up on exams.",
+    "Confusion: Radioactive decay is random for individual nuclei but follows an exponential law for a large sample. The half-life is constant; it does not \"deplete\" like a fuel tank.",
+    "Confusion: $E = mc^2$ applies to any mass–energy conversion, not just nuclear reactions. The $\\text{MeV}$ scale arises because $c^2 \\approx 9 \\times 10^{16}\\,\\text{J/kg}$, so even $1\\,\\text{u}\\text{ of mass}$ yields $\\sim 931.5\\,\\text{MeV}$.",
+    "Confusion: The nucleus is far smaller than the atom. Typical nuclear radius $\\sim 1\\text{--}10\\,\\text{fm}$ while atomic radius $\sim 1\\text{--}100\\,\text{pm}$, so the nuclear volume is $\\sim 10^{-15}$ of the atomic volume.",
+    "Confusion: A higher $N/Z$ ratio does not always mean greater stability. Very neutron-rich or neutron-poor nuclei are unstable and undergo $\\beta^-$ or $\\beta^+$/EC decay to move toward the line of stability.",
+    "Confusion: The mass defect $\\Delta m = Zm_p + Nm_n - M_{\\text{nucleus}}$ is positive (the separated parts weigh more), and the binding energy $BE = \\Delta m c^2$ is the energy required to disassemble the nucleus."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem: A neutral atom of $^{238}_{92}\\text{U}$ has mass number $A=238$ and atomic number $Z=92$. (a) Find the neutron number $N$. (b) If the nuclear radius is $R = R_0 A^{1/3}$ with $R_0 = 1.2\\,\\text{fm}$, compute the nuclear radius in femtometers. (c) Given the nuclear density $\\rho \\approx 2.3 \\times 10^{17}\\,\\text{kg/m}^3$, estimate the nucleus mass in kilograms. [Solution: (a) $N = A - Z = 146$; (b) $R = 1.2 \\times 238^{1/3} \\approx 1.2 \\times 6.2 \\approx 7.4\\,\\text{fm}$; (c) $V = \\frac{4}{3}\\pi R^3 \\approx \\frac{4}{3}\\pi (7.4\\times 10^{-15}\\,\\text{m})^3 \\approx 1.7\\times 10^{-42}\\,\\text{m}^3$, so $m = \\rho V \\approx 2.3\\times 10^{17} \\times 1.7\\times 10^{-42} \\approx 3.9\\times 10^{-25}\\,\\text{kg}$.]",
+    "Problem: Copper has two isotopes: $^{63}_{29}\\text{Cu}$ (69.15% natural abundance, mass $62.93\\,\\text{u}$) and $^{65}_{29}\\text{Cu}$ (30.85% abundance, mass $64.93\\,\\text{u}$). Calculate the average atomic mass of copper in u and kg. [Solution: $\\bar{A} = 0.6915 \\times 62.93 + 0.3085 \\times 64.93 \\approx 63.55\\,\\text{u}$. In kg: $63.55 \\times 1.6605\\times 10^{-27} \\approx 1.055\\times 10^{-25}\\,\\text{kg}$.]",
+    "Problem: A $^{235}_{92}\\text{U}$ nucleus undergoes fission, and the mass defect is measured as $\\Delta m = 0.215\\,\\text{u}$. How much energy (in MeV) is released? [Solution: $\\Delta E = \\Delta m c^2 = 0.215 \\times 931.5\\,\\text{MeV} \\approx 200.3\\,\\text{MeV}$.]",
+    "Problem: The half-life of $^{14}_6\\text{C}$ is $5730\\,\\text{years}$. If a sample initially has $10^{12}$ radioactive carbon atoms, how many remain after $11\,460\\,\\text{years}$ (two half-lives)? [Solution: After each half-life, half remain: $10^{12} \\rightarrow 5\\times 10^{11} \\rightarrow 2.5\\times 10^{11}$.]",
+    "Problem: An $\\alpha$-source emits $^{238}_{92}\\text{U}$ decay products. If the nuclear radius of the daughter nucleus is $7.4\\,\\text{fm}$, what is the mass number $A$? [Solution: $R = R_0 A^{1/3}$, so $A = (R/R_0)^3 = (7.4/1.2)^3 \\approx 6.17^3 \\approx 235$.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "nuclear-physics",
-  "motionGraphics": "nuclear-physics"
+    "Fact (Historical): Ernest Rutherford's 1911 gold foil experiment, using $\\alpha$-particles from radium, overturned the plum-pudding model and established the nucleus as a dense, positively charged center, fundamentally reshaping atomic theory.",
+    "Fact (Application): Nuclear reactors and atomic bombs harness the enormous energy from mass defect via $E = mc^2$. The $\\sim 200\\,\\text{MeV}$ per $^{235}\\text{U}$ fission is the basis of nuclear power generation worldwide.",
+    "Fact (Exam tip): Memorize the radius formula $R = R_0 A^{1/3}$ with $R_0 \\approx 1.2\\,\\text{fm}$ and the near-constant nuclear density $\\sim 2.3 \\times 10^{17}\\,\\text{kg/m}^3$. These are favorite NEB numerical-exam parameters.",
+    "Fact (Connection): The line of stability on a $N$ vs $Z$ plot shows stable nuclides. Light stable nuclei have $N \\approx Z$; heavy stable nuclei need more neutrons ($N > Z$) to counteract Coulomb repulsion via the strong force.",
+    "Fact (Everyday): Smoke detectors often use $^{241}_\\text{Am}\\alpha$-radiation; the ionizing air current conducts current across a small voltage. This is a safe, sealed-source application of nuclear decay.",
+    "Fact (Conservation): In nuclear reactions, both charge ($Z$) and baryon number ($A$) are conserved. The total proton count and total nucleon count before and after must match — a key check for reaction validity.",
+    "Fact (Scale): If all matter were nuclear-density material, the entire human race could fit in a volume the size of a sugar cube ($\\sim 1\\,\text{cm}^3$ at $\\rho \\sim 10^{17}\\,\\text{kg/m}^3$). This illustrates why nuclear energies are so dense.",
+    "Fact (Origin): Almost all elements heavier than iron were synthesized in stellar nucleosynthesis (supernovae and neutron-star mergers). The iron peak ($A \\sim 56$) has the highest binding energy per nucleon, making fusion beyond iron and fission above iron energy-releasing."
+  ]
 }

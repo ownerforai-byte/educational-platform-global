@@ -14,25 +14,33 @@
     "**Ground trace:** a geostationary satellite traces a single point on the equator. A satellite at any other inclination traces a small figure-8 (analemma) with period equal to the orbital period.",
     "**First geostationary satellite:** Syncom 2 (USA, 1963) was the first geostationary communications satellite. India launched INSAT series in the 1980s for TV and telecommunications.",
     "**Orbital slots:** geostationary orbit is a finite resource. Satellites must be spaced about $0.1^\\circ$ apart (about $70\\,\\text{km}$) to avoid signal interference. The ITU regulates these slots.",
-    "**Inclined geostationary orbit:** even a slight inclination causes the satellite to drift north-south with a 24-hour period, completing a figure-8. Satellites need periodic station-keeping thrusters to maintain position."
+    "**Inclined geostationary orbit:** even a slight inclination causes the satellite to drift north-south with a 24-hour period, completing a figure-8. Satellites need periodic station-keeping thrusters to maintain position.",
+    "**Coverage angle:** from a geostationary satellite at $35,786\\,\\text{km}$ altitude, the visible portion of Earth extends to about $81^\\circ$ latitude on either side. Beyond this, the satellite is below the horizon.",
+    "**Signal delay:** the round-trip signal travel time to a geostationary satellite is about $240\\,\\text{ms}$ ($4 \\times 35,786\\,\\text{km} / c$). This causes noticeable lag in phone calls and video conferencing.",
+    "**Three satellites cover most of Earth:** three geostationary satellites placed $120^\\circ$ apart in longitude can provide near-global coverage between latitudes $\\pm 81^\\circ$.",
+    "**GEO vs. LEO comparison:** geostationary satellites require less ground infrastructure (fixed dishes) but have higher latency and signal loss. LEO constellations (like Starlink) have lower latency but require many more satellites and tracking antennas."
   ],
   "confusion": [
     "A satellite can be geosynchronous (period = 24 hours) without being geostationary. An inclined geosynchronous orbit has a 24-hour period but traces a figure-8, not a fixed point.",
     "Geostationary orbit is only possible above the equator. Satellites over India, Europe, or the US are geostationary but appear stationary ONLY to an observer at that longitude — they still orbit above the equator.",
     "A geostationary satellite is NOT at rest relative to Earth — it is orbiting at $3.07\\,\\text{km/s}$. It only appears stationary because its angular speed matches Earth's rotation.",
-    "The coverage area of a geostationary satellite is limited to latitudes below about $81^\\circ$ (both north and south). Polar regions cannot see geostationary satellites."
+    "The coverage area of a geostationary satellite is limited to latitudes below about $81^\\circ$ (both north and south). Polar regions cannot see geostationary satellites.",
+    "A geostationary satellite is NOT at zero altitude — it orbits at $35,786\\,\\text{km}$, which is about $5.6$ times Earth's radius. Its orbital period just happens to match Earth's rotation."
   ],
   "practice": [
     "Calculate the orbital radius of a geostationary satellite. $M_E = 5.97 \\times 10^{24}\\,\\text{kg}$, $T = 24 \\times 3600\\,\\text{s} = 86,\\!164\\,\\text{s}$. Solution: $r = \\sqrt[3]{GMT^2/(4\\pi^2)} = \\sqrt[3]{(6.674 \\times 10^{-11})(5.97 \\times 10^{24})(86,\\!164)^2/(4\\pi^2)} = 4.216 \\times 10^7\\,\\text{m} = 42,\\!164\\,\\text{km}$. Altitude $= r - R_E = 42,\\!164 - 6,\\!378 = 35,\\!786\\,\\text{km}$.",
     "What is the orbital speed of a geostationary satellite? Solution: $v = 2\\pi r / T = 2\\pi(4.216 \\times 10^7)/86,\\!164 = 3.07 \\times 10^3\\,\\text{m/s} = 3.07\\,\\text{km/s}$.",
     "A satellite is placed in an orbit with inclination $i = 5^\\circ$ and period 24 hours. What is the maximum latitude at which it can be seen? Solution: The satellite's latitude oscillates between $\\pm i$. Maximum latitude $= i = 5^\\circ$. The satellite is never visible above $5^\\circ$ latitude.",
-    "If two geostationary satellites are $1^\\circ$ apart in longitude, what is their physical separation? Solution: At geostationary radius $r = 42,\\!164\\,\\text{km}$, arc length $= r \\Delta\\theta = 42,\\!164 \\times (\\pi/180) = 736\\,\\text{km}$. The linear separation is $2r\\sin(\\Delta\\theta/2) \\approx 736\\,\\text{km}$."
+    "If two geostationary satellites are $1^\\circ$ apart in longitude, what is their physical separation? Solution: At geostationary radius $r = 42,\\!164\\,\\text{km}$, arc length $= r \\Delta\\theta = 42,\\!164 \\times (\\pi/180) = 736\\,\\text{km}$. The linear separation is $2r\\sin(\\Delta\\theta/2) \\approx 736\\,\\text{km}$.",
+    "What is the minimum number of geostationary satellites needed to cover the entire equator? Solution: Each satellite covers about $162^\\circ$ of longitude (from $-81^\\circ$ to $+81^\\circ$). Three satellites at $120^\\circ$ intervals provide complete equatorial coverage."
   ],
   "universalFacts": [
     "The geostationary orbit is sometimes called the Clarke orbit, after Arthur C. Clarke, who first proposed using it for communications satellites in 1945.",
     "There is only ONE geostationary orbit (the equatorial circle at $35,\\!786\\,\\text{km}$ altitude), shared by hundreds of operational satellites and thousands of debris objects.",
     "Geostationary satellites drift due to gravitational perturbations from the Sun, Moon, and Earth's equatorial bulge. They need regular station-keeping burns to maintain their position.",
-    "Geostationary satellites are too high to be serviced by human spaceflight (Shuttle, ISS) — any repair requires either robotic missions or accepting the loss of the satellite."
+    "Geostationary satellites are too high to be serviced by human spaceflight (Shuttle, ISS) — any repair requires either robotic missions or accepting the loss of the satellite.",
+    "India's INSAT and GSAT satellites provide television, weather forecasting, and telecom services across the Indian subcontinent from geostationary orbit.",
+    "The Soviet Union's Molniya orbit (highly elliptical, 12-hour period) was designed to provide coverage of high-latitude regions that geostationary satellites cannot serve."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation"

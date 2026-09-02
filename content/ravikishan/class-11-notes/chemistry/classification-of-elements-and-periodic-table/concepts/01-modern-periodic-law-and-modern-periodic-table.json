@@ -5,26 +5,45 @@
   "topicTitle": "Modern periodic law and modern periodic table",
   "relevance": 100,
   "notes": [
-    "**Modern periodic law (Moseley, 1913):** the properties of elements are periodic functions of their atomic numbers.",
-    "**Why atomic number, not mass:** Moseley showed that X-ray frequencies depend on atomic number, not atomic mass. Argon (Z=18, A=40) and potassium (Z=19, A=39) are in the correct order by Z, not A.",
-    "**Periodic table layout:** 7 periods and 18 groups. Period number equals the principal quantum number of the valence shell. Group number relates to valence electron count for main-group elements.",
-    "**Blocks:** s-block (Groups 1-2), p-block (Groups 13-18), d-block (transition metals, Groups 3-12), f-block (lanthanides and actinides, placed below main table).",
-    "**Periodicity:** elements in the same group have similar chemical properties because they have the same valence electron configuration."
+    "**Modern periodic law (Moseley, 1913):** the physical and chemical properties of elements are periodic functions of their atomic numbers. Henry Moseley's X-ray experiments showed that each element has a unique nuclear charge (Z), establishing atomic number as the fundamental ordering principle.",
+    "**Why atomic number, not atomic mass:** Moseley's law for K-alpha X-ray frequency is $\\sqrt{\\nu} = a(Z - b)$. This showed frequency depends on Z, not A. The argon–potassium reversal (A=40, Z=18 for Ar; A=39, Z=19 for K) is only resolved by ordering on Z. Similarly, $^{40}_{19}$Co and $^{40}_{20}$Ca have the same mass but are different elements.",
+    "**Long form periodic table layout:** 7 periods (rows) and 18 groups (columns). The period number equals the principal quantum number n of the valence shell. Group number for main-group elements equals the number of valence electrons (Groups 1–2: ns$^{1-2}$; Groups 13–18: ns$^2$np$^{1-6}$).",
+    "**Electron configuration basis for structure:** The table is built by filling orbitals in order: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p. This is the aufbau principle applied across the table.",
+    "**s-block (Groups 1–2):** Alkali metals (Group 1: ns$^1$) and alkaline earth metals (Group 2: ns$^2$). All are reactive metals. Na: [Ne]3s$^1$, Mg: [Ne]3s$^2$, K: [Ar]4s$^1$.",
+    "**p-block (Groups 13–18):** Valence configuration ns$^2$np$^{1-6}$. Contains metals (Al, Ga), metalloids (Si, Ge), and non-metals (C, N, O, F). Group 18 (He: 1s$^2$) are the noble gases with filled valence shells.",
+    "**d-block (Groups 3–12):** Transition metals with general configuration (n-1)d$^{1-10}$ns$^{0-2}$. Examples: Sc [Ar]3d$^1$4s$^2$, Fe [Ar]3d$^6$4s$^2$, Cu [Ar]3d$^{10}$4s$^1$. They show variable oxidation states, form coloured ions, and act as catalysts (e.g., Fe in Haber process, V$_2$O$_5$ in Contact process).",
+    "**f-block (inner transition metals):** Lanthanides (4f series, Ce–Lu) and actinides (5f series, Th–Lr). General configuration (n-2)f$^{1-14}$(n-1)d$^{0-1}$ns$^2$. Placed below the main table to avoid excessive width. Actinides are all radioactive; U and Pu are fissionable.",
+    "**Period length:** Period 1: 2 elements (1s). Periods 2–3: 8 elements (ns, np). Periods 4–5: 18 elements (ns, (n-1)d, np). Periods 6–7: 32 elements (ns, (n-2)f, (n-1)d, np). The lengths correspond to the number of orbitals available at each subshell level.",
+    "**Anomalies in electron configuration:** Cr (Z=24) is [Ar]3d$^5$4s$^1$, not [Ar]3d$^4$4s$^2$ — half-filled d-subshell is more stable. Cu (Z=29) is [Ar]3d$^{10}$4s$^1$, not [Ar]3d$^9$4s$^2$ — fully-filled d-subshell is more stable. These exceptions arise from the extra stability of half-filled and fully-filled subshells.",
+    "**Relationship between position and properties:** An element's group tells us its valence electron count and common oxidation state. Its period tells us the number of electron shells. Its block (s/p/d/f) tells us which subshell is being filled. This positional information allows prediction of chemical behaviour without memorising individual element properties.",
+    "**Classification of elements:** Elements are broadly classified as metals (left/centre), non-metals (upper right), and metalloids (staircase between metals and non-metals: B, Si, Ge, As, Sb, Te, Po). Metalloids exhibit intermediate properties and are important semiconductors.",
+    "**Noble gases:** Group 18 elements (He, Ne, Ar, Kr, Xe, Rn) have the stable ns$^2$np$^6$ configuration (duplet for He: 1s$^2$). They are chemically inert due to their complete valence shells, though heavier noble gases (Kr, Xe) can form compounds with fluorine and oxygen (e.g., XeF$_2$, XeO$_3$).",
+    "**Historical development:** Dobereiner's triads (groups of 3 with middle atomic mass ≈ average of other two) → Newlands' law of octaves (every 8th element repeats properties) → Mendeleev's periodic table (ordered by atomic mass, left gaps for undiscovered elements) → Moseley's modern table (ordered by atomic number). Each step improved predictive power.",
+    "**Real-world application — semiconductors:** Silicon (Group 14, Period 3) and germanium (Group 14, Period 4) are metalloids whose position in the p-block explains their semiconducting properties. Doping with Group 15 elements (P, As) gives n-type semiconductors; doping with Group 13 elements (B, Al) gives p-type — the basis of all modern electronics.",
+    "**Periodic table and the quantum numbers:** Each element's position uniquely determines its four quantum numbers. For example, chlorine (Z=17, Period 3, Group 17, p-block) has valence electrons with n=3, l=1, and the 3p subshell holds 5 electrons.",
+    "**F-block contraction effect:** The filling of 4f orbitals across the lanthanides causes lanthanoid contraction — a steady decrease in atomic/ionic radii. This makes the 5d series elements (e.g., Hf, Zr) have very similar sizes, leading to difficult separation and similar chemical behaviour.",
+    "The modern periodic table reduces the vast complexity of 118 elements to a compact structure where an element's position encodes its electron configuration, its likely chemistry, and its physical properties — making it the single most powerful organisational tool in chemistry."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Atomic mass vs. atomic number: Mendeleev used atomic mass, but Moseley showed atomic number is the correct ordering parameter. Argon (Z=18, A=39.9) comes before potassium (Z=19, A=39.1) despite having a higher atomic mass.",
+    "Group number vs. valence electrons: For main-group elements (s and p blocks), the group number directly indicates valence electrons (Groups 1–2: 1–2; Groups 13–18: 3–8). This does not hold for d-block transition metals.",
+    "s-block Group 1 vs. alkali metals: Group 1 includes hydrogen, which is a non-metal gas, not an alkali metal. Hydrogen's placement is unique and sometimes debated.",
+    "Noble gas configuration vs. chemical inertness: Noble gases are not universally inert. Xenon forms XeF$_2$, XeF$_4$, XeF$_6$, XeO$_3$, and H$_4$XeO$_6$. The heavier noble gases can be oxidised by the most electronegative elements.",
+    "Block designation: The d-block is Groups 3–12, NOT Groups 2–11. The f-block elements are NOT part of any period's main body — they are shown as a separate row below the table."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "An element has the electron configuration [Ar]3d$^{10}$4s$^2$4p$^3$. Determine its period, group, and block. What element is this? Predict whether it is a metal, non-metal, or metalloid.",
+    "Elements A (Z=12) and B (Z=17) are given. Write their electron configurations, identify their groups and periods, and predict the formula of the compound they form. Justify your answer using valence electron arguments.",
+    "Explain why chromium (Z=24) has the configuration [Ar]3d$^5$4s$^1$ instead of the expected [Ar]3d$^4$4s$^2$. Similarly explain copper's (Z=29) anomalous configuration. How does this relate to periodic trends?",
+    "Using the position of iodine (Z=53) in the periodic table, predict: (a) its valence electron configuration, (b) its group and period, (c) whether it is more likely to form a cation or anion, and (d) the formula of its sodium salt.",
+    "Two oxides of nitrogen contain 36.36% and 53.33% nitrogen by mass respectively. Use the law of multiple proportions to show that these data are consistent with the formation of two distinct compounds (NO and NO$_2$)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The modern periodic table has 118 confirmed elements, with elements up to Z=118 (oganesson) having been synthesised. Each new element fills a specific position based on its electron configuration.",
+    "Elements in the same group have the same number of valence electrons, which is why they exhibit similar chemical properties — e.g., all alkali metals (Group 1) react vigorously with water to produce hydrogen gas and a strong base.",
+    "The periodic law is a consequence of quantum mechanics: the allowed electron energy levels and the Pauli exclusion principle together produce the repeating patterns we observe in the table.",
+    "The heaviest naturally occurring element is uranium (Z=92). Elements beyond uranium (transuranium elements) are synthetic and are produced in nuclear reactors or particle accelerators.",
+    "The concept of 'effective nuclear charge' (Z$_{eff}$) — the net positive charge felt by valence electrons after shielding by inner electrons — is the key to understanding all periodic trends in atomic and ionic size, ionization energy, and electronegativity."
   ],
   "animation3D": "classification-of-elements-and-periodic-table",
   "motionGraphics": "classification-of-elements-and-periodic-table"

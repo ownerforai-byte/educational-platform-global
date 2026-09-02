@@ -25,7 +25,7 @@ import {
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { ScienceLabSection } from "@/components/lab/science-lab-section";
 import { ChapterAnimation } from "@/components/lab/chapter-animation";
-import { TOPIC_3D_MAP } from "@/lib/topic-3d-map";
+import { TOPIC_3D_MAP, resolveTopic3DKey } from "@/lib/topic-3d-map";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
@@ -306,7 +306,7 @@ function LabDashboard({
       l.id.includes(topicSlug) || topicSlug.includes(l.id),
     );
     if (alreadyPresent) return subjectLabs;
-    if (!TOPIC_3D_MAP[topicSlug]) return subjectLabs;
+    if (!TOPIC_3D_MAP[topicSlug] && !resolveTopic3DKey(topicSlug)) return subjectLabs;
     const fallbackLab: LabItem = {
       id: `chapter-${topicSlug}`,
       title: topicTitle,

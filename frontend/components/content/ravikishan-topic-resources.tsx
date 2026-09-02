@@ -5,9 +5,14 @@ import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { EmptyState } from "./empty-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-type TopicData = {
-  title: string;
+/* ============================================================
+   RavikishanTopicResources — loads notes from syllabus-notes
+   and shows duplicate sources as tabs (Type 1 / Type 2 / Type 3).
+   ============================================================ */
+
+type SourceEntry = {
   notes: string[];
   confusion?: string[];
   practice?: string[];
@@ -19,6 +24,8 @@ type ManifestEntry = {
   topicSlug: string;
   title: string;
   noteCount: number;
+  source: "ravikishan" | "r-export";
+  duplicateType?: number;
   filename: string;
 };
 
@@ -37,57 +44,89 @@ function NoteCard({ content }: { content: string }) {
   );
 }
 
-function ConfusionSection({ items }: { items: string[] }) {
+function SectionBadges({ entry }: { entry: ManifestEntry }) {
+  const typeLabel = (entry.duplicateType ?? 1) === 1
+    ? "Original"
+    : `Duplicate #${(entry.duplicateType ?? 1) - 1}`;
+  const typeColor = (entry.duplicateType ?? 1) === 1
+    ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+    : "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400";
+  const sourceBadge = entry.source === "ravikishan"
+    ? "Ravikishan"
+    : "R-Export";
   return (
-    <div className="rounded-xl border border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 p-4">
-      <p className="text-sm font-semibold text-amber-700 dark:text-amber-400 mb-2">
-        Common Confusions
-      </p>
-      <ul className="space-y-1 text-sm text-muted-foreground">
-        {items.map((c, i) => (
-          <li key={i} className="flex gap-2">
-            <span className="text-amber-500 shrink-0">⚠</span>
-            <span>{c}</span>
-          </li>
-        ))}
-      </ul>
+    <div className="flex flex-wrap gap-2 mb-3">
+      <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${typeColor}`}>
+        Type {entry.duplicateType ?? 1} ({typeLabel})
+      </span>
+      <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-muted text-muted-foreground">
+        {sourceBadge}
+      </span>
+      <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-muted text-muted-foreground">
+        {entry.noteCount} notes
+      </span>
     </div>
   );
 }
 
-function PracticeSection({ items }: { items: string[] }) {
+function renderContent(entry: ManifestEntry, data: SourceEntry) {
   return (
-    <div className="rounded-xl border border-blue-200 bg-blue-50/50 dark:bg-blue-950/20 p-4">
-      <p className="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-2">
-        Practice
-      </p>
-      <ul className="space-y-1 text-sm text-muted-foreground">
-        {items.map((p, i) => (
-          <li key={i} className="flex gap-2">
-            <span className="text-blue-500 shrink-0">→</span>
-            <span>{p}</span>
-          </li>
+    <Card key={`${entry.source}-${entry.duplicateType}`.replace("undefined","")} className="border-primary/20 bg-background/80 backdrop-blur-sm">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-base leading-snug">{entry.title}</CardTitle>
+        <SectionBadges entry={entry} />
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {data.notes.map((note, idx) => (
+          <NoteCard key={idx} content={note} />
         ))}
-      </ul>
-    </div>
-  );
-}
-
-function UniversalFactsSection({ items }: { items: string[] }) {
-  return (
-    <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 dark:bg-emerald-950/20 p-4">
-      <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-2">
-        Key Facts
-      </p>
-      <ul className="space-y-1 text-sm text-muted-foreground">
-        {items.map((f, i) => (
-          <li key={i} className="flex gap-2">
-            <span className="text-emerald-500 shrink-0">★</span>
-            <span>{f}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+        {data.confusion && data.confusion.length > 0 && (
+          <div className="rounded-xl border border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 p-4">
+            <p className="text-sm font-semibold text-amber-700 dark:text-amber-400 mb-2">
+              Common Confusions
+            </p>
+            <ul className="space-y-1 text-sm text-muted-foreground">
+              {data.confusion.map((c, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-amber-500 shrink-0">⚠</span>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {data.practice && data.practice.length > 0 && (
+          <div className="rounded-xl border border-blue-200 bg-blue-50/50 dark:bg-blue-950/20 p-4">
+            <p className="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-2">
+              Practice
+            </p>
+            <ul className="space-y-1 text-sm text-muted-foreground">
+              {data.practice.map((p, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-blue-500 shrink-0">→</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {data.universalFacts && data.universalFacts.length > 0 && (
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 dark:bg-emerald-950/20 p-4">
+            <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-2">
+              Key Facts
+            </p>
+            <ul className="space-y-1 text-sm text-muted-foreground">
+              {data.universalFacts.map((f, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-emerald-500 shrink-0">★</span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 }
 
@@ -97,7 +136,8 @@ export function RavikishanTopicResources({
   unitId,
   topicSlug,
 }: Props) {
-  const [data, setData] = useState<TopicData | null>(null);
+  const [entries, setEntries] = useState<ManifestEntry[]>([]);
+  const [dataMap, setDataMap] = useState<Map<string, SourceEntry>>(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -106,24 +146,37 @@ export function RavikishanTopicResources({
     setLoading(true);
     setError(null);
 
-    // Load manifest to resolve the correct filename for this topicSlug
-    const relPath = `syllabus-notes/biology/_manifest.json`;
-    loadData<ManifestEntry[]>(relPath)
+    // Load manifest for this subject
+    const manifestPath = `syllabus-notes/${subjectSlug}/_manifest.json`;
+    loadData<Array<{ unitSlug: string; topicSlug: string; title: string; noteCount: number; source: "ravikishan" | "r-export"; duplicateType?: number; filename: string }>>(manifestPath)
       .then((manifest) => {
         if (cancelled) return;
-        const entry = manifest.find(
+        // Filter to matching unit + topic
+        const relevant = manifest.filter(
           (m) => m.unitSlug === unitId && m.topicSlug === topicSlug
         );
-        if (!entry) {
-          setError("Topic not found in manifest");
+        if (relevant.length === 0) {
+          setError("No notes found for this topic");
           setLoading(false);
           return;
         }
-        // Load the actual topic data using the filename from manifest
-        const dataPath = `syllabus-notes/biology/${unitId}/${entry.filename}`;
-        return loadData<TopicData>(dataPath).then((result) => {
+        setEntries(relevant);
+
+        // Load each source file
+        const loaded = new Map<string, SourceEntry>();
+        const promises = relevant.map(async (entry) => {
+          try {
+            const data = await loadData<SourceEntry>(
+              `syllabus-notes/${subjectSlug}/${unitId}/${entry.filename}`
+            );
+            if (!cancelled) loaded.set(`${entry.source}-${entry.duplicateType ?? 1}`, data);
+          } catch {
+            // skip missing files
+          }
+        });
+        return Promise.all(promises).then(() => {
           if (!cancelled) {
-            setData(result);
+            setDataMap(loaded);
             setLoading(false);
           }
         });
@@ -135,10 +188,8 @@ export function RavikishanTopicResources({
         }
       });
 
-    return () => {
-      cancelled = true;
-    };
-  }, [unitId, topicSlug]);
+    return () => { cancelled = true; };
+  }, [subjectSlug, unitId, topicSlug]);
 
   if (loading) {
     return (
@@ -148,7 +199,7 @@ export function RavikishanTopicResources({
     );
   }
 
-  if (error || !data) {
+  if (error || entries.length === 0) {
     return (
       <EmptyState
         title="No Notes Available"
@@ -157,45 +208,54 @@ export function RavikishanTopicResources({
     );
   }
 
-  if (data.notes.length === 0) {
-    return (
-      <EmptyState
-        title="No Notes Available"
-        description="This topic has no note content from ravikishan."
-      />
-    );
-  }
+  // Sort by duplicateType (1 first, then 2, 3…)
+  const sorted = [...entries].sort((a, b) => (a.duplicateType ?? 1) - (b.duplicateType ?? 1));
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div className="flex items-center gap-3">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
-        <h2 className="text-xl font-bold tracking-tight">Ravikishan Notes</h2>
+        <h2 className="text-xl font-bold tracking-tight">
+          Notes
+          {sorted.length > 1 && (
+            <span className="ml-2 text-sm font-normal text-muted-foreground">
+              ({sorted.length} source{sorted.length > 1 ? "s" : ""})
+            </span>
+          )}
+        </h2>
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
-      <Card className="border-primary/20 bg-background/80 backdrop-blur-sm">
-        <CardHeader className="pb-3">
-          <CardTitle className="text-base leading-snug">{data.title}</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {data.notes.map((note, idx) => (
-            <NoteCard key={idx} content={note} />
-          ))}
-
-          {data.confusion && data.confusion.length > 0 && (
-            <ConfusionSection items={data.confusion} />
-          )}
-
-          {data.practice && data.practice.length > 0 && (
-            <PracticeSection items={data.practice} />
-          )}
-
-          {data.universalFacts && data.universalFacts.length > 0 && (
-            <UniversalFactsSection items={data.universalFacts} />
-          )}
-        </CardContent>
-      </Card>
+      {sorted.length === 1 ? (
+        // Single source — render directly
+        renderContent(sorted[0], dataMap.get(`${sorted[0].source}-${sorted[0].duplicateType ?? 1}`) ?? { notes: [] })
+      ) : (
+        // Multiple sources — show tabs
+        <Tabs defaultValue={`${sorted[0].source}-${sorted[0].duplicateType ?? 1}`} className="w-full">
+          <TabsList className="grid w-full grid-cols-3">
+            {sorted.map((entry, i) => {
+              const typeNum = entry.duplicateType ?? 1;
+              const label = typeNum === 1 ? "Type 1 (Original)" : `Type ${typeNum} (Duplicated)`;
+              return (
+                <TabsTrigger key={`${entry.source}-${typeNum}`} value={`${entry.source}-${typeNum}`} className="text-xs">
+                  {label}
+                </TabsTrigger>
+              );
+            })}
+          </TabsList>
+          {sorted.map((entry) => {
+            const typeNum = entry.duplicateType ?? 1;
+            const data = dataMap.get(`${entry.source}-${typeNum}`);
+            return (
+              <TabsContent key={`${entry.source}-${typeNum}`} value={`${entry.source}-${typeNum}`}>
+                {data ? renderContent(entry, data) : (
+                  <EmptyState title="Content loading failed" description="Could not load this source's notes." />
+                )}
+              </TabsContent>
+            );
+          })}
+        </Tabs>
+      )}
     </div>
   );
 }

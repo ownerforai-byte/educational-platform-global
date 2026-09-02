@@ -5,26 +5,38 @@
   "topicTitle": "Balancing redox reactions by oxidation number and ion-electron (half reaction) method",
   "relevance": 100,
   "notes": [
-    "**Oxidation number method:** (1) write unbalanced equation, (2) assign oxidation numbers, (3) identify atoms oxidized and reduced, (4) equalize electron loss and gain by multiplying half-reactions, (5) combine and balance O and H using $H_2O$ and $H^+$ (acidic) or $OH^-$ (basic).",
-    "**Ion-electron (half-reaction) method:** split into oxidation half-reaction and reduction half-reaction. Balance each for atoms and charge, then combine so electrons cancel.",
-    "**Acidic medium:** balance O with $H_2O$, balance H with $H^+$, balance charge with electrons.",
-    "**Basic medium:** balance as in acid, then add $OH^-$ to both sides to neutralize $H^+$, forming $H_2O$.",
-    "**Example:** $MnO_4^- + Fe^{2+} \\rightarrow Mn^{2+} + Fe^{3+}$ in acid: $MnO_4^- + 5e^- + 8H^+ \\rightarrow Mn^{2+} + 4H_2O$ and $Fe^{2+} \\rightarrow Fe^{3+} + e^-$. Combined: $MnO_4^- + 5Fe^{2+} + 8H^+ \\rightarrow Mn^{2+} + 5Fe^{3+} + 4H_2O$."
+    "**Why balance redox equations:** Unbalanced redox equations violate conservation of mass and charge. Proper balancing ensures the number of atoms and the net charge are the same on both sides, and that electrons lost equal electrons gained.",
+    "**Oxidation number method — Step by step:** (1) Write the unbalanced equation. (2) Assign oxidation numbers to all atoms. (3) Identify the atoms oxidised and reduced; calculate the change in ON per atom. (4) Multiply species to equalise the total increase and decrease in ON. (5) Balance the remaining atoms (O and H) by adding $H_2O$, $H^+$ (acidic) or $OH^-$ (basic).",
+    "**Ion-electron (half-reaction) method — Overview:** Split the reaction into two half-reactions: one for oxidation (electron loss) and one for reduction (electron gain). Balance each half-reaction separately for atoms and charge, then combine them so that electrons cancel.",
+    "**Balancing in acidic medium:** After writing half-reactions, balance O atoms by adding $H_2O$ to the side needing oxygen. Balance H atoms by adding $H^+$ to the opposite side. Balance charge by adding electrons ($e^-$) to the more positive side.",
+    "**Balancing in basic medium:** First balance as if in acidic medium. Then add $OH^-$ ions to both sides equal to the number of $H^+$ ions present. The $H^+$ and $OH^-$ combine to form $H_2O$. Cancel excess water molecules.",
+    "**Example — Acidic medium using half-reaction method:** Balance $MnO_4^- + Fe^{2+} \\rightarrow Mn^{2+} + Fe^{3+}$.\nOxidation half: $Fe^{2+} \\rightarrow Fe^{3+} + e^-$\nReduction half: $MnO_4^- + 8H^+ + 5e^- \\rightarrow Mn^{2+} + 4H_2O$\nMultiply oxidation half by 5: $5Fe^{2+} \\rightarrow 5Fe^{3+} + 5e^-$\nAdd: $MnO_4^- + 5Fe^{2+} + 8H^+ \\rightarrow Mn^{2+} + 5Fe^{3+} + 4H_2O$.",
+    "**Example — Basic medium:** Balance $MnO_4^- + I^- \\rightarrow MnO_2 + IO_3^-$ in basic medium.\nOxidation: $I^- + 6OH^- \\rightarrow IO_3^- + 3H_2O + 4e^-$\nReduction: $MnO_4^- + 2H_2O + 3e^- \\rightarrow MnO_2 + 4OH^-$\nMultiply oxidation by 3, reduction by 4, add and simplify: $MnO_4^- + I^- + 2OH^- \\rightarrow MnO_2 + IO_3^- + H_2O$.",
+    "**Example — Dichromate in acidic medium:** Balance $Cr_2O_7^{2-} + Sn^{2+} + H^+ \\rightarrow Cr^{3+} + Sn^{4+} + H_2O$.\nOxidation: $Sn^{2+} \\rightarrow Sn^{4+} + 2e^-$\nReduction: $Cr_2O_7^{2-} + 14H^+ + 6e^- \\rightarrow 2Cr^{3+} + 7H_2O$\nMultiply oxidation by 3: $3Sn^{2+} \\rightarrow 3Sn^{4+} + 6e^-$\nCombined: $Cr_2O_7^{2-} + 3Sn^{2+} + 14H^+ \\rightarrow 2Cr^{3+} + 3Sn^{4+} + 7H_2O$.",
+    "**Oxidation number method example:** Balance $Cu + HNO_3 \\rightarrow Cu(NO_3)_2 + NO + H_2O$.\nCu: 0 → +2 (change = +2). N in $HNO_3$: +5 → N in NO: +2 (change = -3).\nLCM of 2 and 3 is 6. Multiply Cu by 3 and NO by 2: $3Cu + HNO_3 \\rightarrow 3Cu(NO_3)_2 + 2NO + H_2O$.\nBalance N: 8 $HNO_3$ on left. Balance H and O: $3Cu + 8HNO_3 \\rightarrow 3Cu(NO_3)_2 + 2NO + 4H_2O$.",
+    "**Checking a balanced equation:** Verify by (1) counting atoms of each element on both sides, and (2) checking that the total charge is equal on both sides. For the dichromate example: LHS charge = -2 + 6(+2) + 14(+1) = +24; RHS charge = 2(+3) + 3(+4) = +18. Wait — recheck: LHS = -2 + 6 + 14 = +18; RHS = +6 + 12 = +18. Balanced.",
+    "**Tips for complex redox:** In compounds like $Na_2S_2O_3$ or $Fe_3O_4$, use average ON for the initial method, or write the reaction in ionic form first. For organic redox (e.g., ethanol to ethanoic acid), track the change in ON of the carbon atom undergoing reaction."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "**Adding $H^+$ in basic medium:** You should never have $H^+$ in the final equation for a basic medium reaction. After balancing as in acid, always neutralise $H^+$ by adding equal $OH^-$ to both sides.",
+    "**Forgetting to multiply the entire half-reaction:** When equalising electrons, you must multiply ALL species in a half-reaction by the same factor, not just the electron term.",
+    "**Confusing the two methods:** The oxidation number method tracks changes in ON; the half-reaction method tracks electron transfer explicitly. Both give the same result, but the half-reaction method is more systematic for aqueous solutions.",
+    "**Not checking charge balance:** A common error is balancing atoms but forgetting to verify that the total charge on both sides is equal. Always do a charge check as the final step.",
+    "**Misidentifying the medium:** In acidic medium, use $H^+$ and $H_2O$ to balance H and O. In basic medium, use $OH^-$ and $H_2O$. Using the wrong species leads to incorrect equations."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Balance in acidic medium: $MnO_4^- + C_2O_4^{2-} \\rightarrow Mn^{2+} + CO_2$. **Solution:** Oxidation: $C_2O_4^{2-} \\rightarrow 2CO_2 + 2e^-$. Reduction: $MnO_4^- + 8H^+ + 5e^- \\rightarrow Mn^{2+} + 4H_2O$. Multiply ox by 5, red by 2: $2MnO_4^- + 5C_2O_4^{2-} + 16H^+ \\rightarrow 2Mn^{2+} + 10CO_2 + 8H_2O$.",
+    "Balance in basic medium: $ClO^- \\rightarrow Cl^- + ClO_3^-$. **Solution:** This is a disproportionation. Oxidation: $ClO^- + 2OH^- \\rightarrow ClO_3^- + H_2O + 2e^-$. Reduction: $ClO^- + H_2O + 2e^- \\rightarrow Cl^- + 2OH^-$. Combined: $3ClO^- \\rightarrow 2Cl^- + ClO_3^-$.",
+    "Balance: $K_2Cr_2O_7 + FeSO_4 + H_2SO_4 \\rightarrow Cr_2(SO_4)_3 + Fe_2(SO_4)_3 + K_2SO_4 + H_2O$. **Solution:** Ionic form: $Cr_2O_7^{2-} + 6Fe^{2+} + 14H^+ \\rightarrow 2Cr^{3+} + 6Fe^{3+} + 7H_2O$. Molecular: $K_2Cr_2O_7 + 6FeSO_4 + 7H_2SO_4 \\rightarrow Cr_2(SO_4)_3 + 3Fe_2(SO_4)_3 + K_2SO_4 + 7H_2O$.",
+    "Balance in acidic medium: $Cu + HNO_3 \\rightarrow Cu(NO_3)_2 + NO_2 + H_2O$ (concentrated $HNO_3$). **Solution:** $Cu + 4HNO_3 \\rightarrow Cu(NO_3)_2 + 2NO_2 + 2H_2O$.",
+    "Balance in acidic medium: $Cr_2O_7^{2-} + SO_3^{2-} + H^+ \\rightarrow Cr^{3+} + SO_4^{2-} + H_2O$. **Solution:** Oxidation: $SO_3^{2-} + H_2O \\rightarrow SO_4^{2-} + 2H^+ + 2e^-$. Reduction: $Cr_2O_7^{2-} + 14H^+ + 6e^- \\rightarrow 2Cr^{3+} + 7H_2O$. Combined: $Cr_2O_7^{2-} + 3SO_3^{2-} + 8H^+ \\rightarrow 2Cr^{3+} + 3SO_4^{2-} + 4H_2O$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Both the oxidation number method and the ion-electron (half-reaction) method always yield the same balanced equation; the half-reaction method is generally preferred for aqueous solutions.",
+    "In a disproportionation reaction, the same element is simultaneously oxidised and reduced (e.g., $Cl_2 + 2OH^- \\rightarrow Cl^- + ClO^- + H_2O$).",
+    "The half-reaction method can be applied to reactions in any medium (acidic, basic, or neutral), while the oxidation number method requires extra steps for ionic media.",
+    "In acidic medium, the species available to balance oxygen and hydrogen are $H_2O$, $H^+$, and $e^-$. In basic medium, they are $H_2O$, $OH^-$, and $e^-$.",
+    "Redox equations involving polyatomic ions (like $MnO_4^-$, $Cr_2O_7^{2-}$, $NO_3^-$) are most easily balanced using the ion-electron method because the ionic form isolates the reactive species."
   ],
   "animation3D": "oxidation-and-reduction",
   "motionGraphics": "oxidation-and-reduction"

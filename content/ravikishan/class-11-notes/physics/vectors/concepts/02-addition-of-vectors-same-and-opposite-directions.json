@@ -1,27 +1,56 @@
 {
-  "title": "Addition of Vectors â€” Same and Opposite Directions",
+  "title": "Addition of Vectors — Same and Opposite Directions",
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
   "relevance": 88,
   "notes": [
-    "**Case 1 â€” same direction**: let $\\vec{P}$ and $\\vec{Q}$ act in the same direction. Their sum (resultant) is $\\vec{R} = \\vec{P} + \\vec{Q}$; $\\vec{R}$ is also called the resultant vector, drawn head-to-tail.",
-    "**Case 2 â€” opposite direction**: let $\\vec{P}$ and $\\vec{Q}$ act in opposite directions. The resultant is $\\vec{R} = \\vec{P} + (-\\vec{Q}) = \\vec{P} - \\vec{Q}$, acting along the larger vector."
+    "**Case 1 — same direction**: when two vectors $\\vec{P}$ and $\\vec{Q}$ point in exactly the same direction ($\\theta = 0°$), their resultant has maximum magnitude: $\\vec{R} = \\vec{P} + \\vec{Q}$ with $R = P + Q$. The direction is the same as both original vectors.",
+    "**Case 2 — opposite direction**: when $\\vec{P}$ and $\\vec{Q}$ point in exactly opposite directions ($\\theta = 180°$), the resultant is $\\vec{R} = \\vec{P} - \\vec{Q}$ (assuming $P > Q$) with magnitude $R = |P - Q|$, acting along the direction of the larger vector.",
+    "**General formula** (parallelogram/triangle law): for any angle $\\theta$ between $\\vec{P}$ and $\\vec{Q}$: $R = \\sqrt{P^2 + Q^2 + 2PQ\\cos\\theta}$ and the direction $\\alpha$ from $\\vec{P}$ is $\\alpha = \\tan^{-1}\\!\\left(\\dfrac{Q\\sin\\theta}{P + Q\\cos\\theta}\\right)$.",
+    "**Graphical method (head-to-tail)**: place the tail of $\\vec{Q}$ at the head of $\\vec{P}$. The resultant $\\vec{R}$ is the vector from the tail of $\\vec{P}$ to the head of $\\vec{Q}$. This works for any angle, not just 0° and 180°.",
+    "**Collinear vectors**: vectors lying along the same line (same or opposite direction) are called collinear. Their addition reduces to ordinary algebraic addition with appropriate signs: $\\vec{R} = \\pm P \\pm Q$.",
+    "**Component method for general addition**: resolve each vector into x and y components, add components separately: $R_x = P_x + Q_x$, $R_y = P_y + Q_y$, then $R = \\sqrt{R_x^2 + R_y^2}$ and $\\alpha = \\tan^{-1}(R_y/R_x)$.",
+    "**Three or more vectors**: vector addition is associative: $\\vec{P} + (\\vec{Q} + \\vec{S}) = (\\vec{P} + \\vec{Q}) + \\vec{S}$. The order of addition does not affect the resultant. Use the polygon method for 3+ vectors.",
+    "**Special angles summary**: (i) $\\theta=0°$: $R_{max} = P+Q$, $\\alpha=0°$. (ii) $\\theta=90°$: $R=\\sqrt{P^2+Q^2}$, $\\alpha=\\tan^{-1}(Q/P)$. (iii) $\\theta=180°$: $R_{min}=|P-Q|$, direction of larger vector. (iv) $\\theta=60°$: $R=\\sqrt{P^2+Q^2+PQ}$. (v) $\\theta=120°$ with $P=Q$: $R=P=Q$.",
+    "**Equilibrium condition**: if the resultant of multiple forces is zero ($\\vec{R}=\\vec{0}$), the system is in equilibrium. For two forces, this means they must be equal in magnitude and opposite in direction.",
+    "The resultant of two equal vectors $P=Q$ inclined at angle $\\theta$ bisects the angle between them: $R = 2P\\cos(\\theta/2)$ and $\\alpha = \\theta/2$. This is a frequently used shortcut in NEB problems.",
+    "**Triangle inequality**: for any two vectors, $|P - Q| \\leq R \\leq P + Q$. The resultant can never exceed the sum of magnitudes nor be less than their difference.",
+    "**Physical example**: two people pulling a crate — if both pull east with 50 N each, the resultant is 100 N east. If one pulls east with 50 N and the other west with 30 N, the resultant is 20 N east.",
+    "Vector subtraction $\\vec{P} - \\vec{Q}$ is defined as $\\vec{P} + (-\\vec{Q})$, where $-\\vec{Q}$ has the same magnitude as $\\vec{Q}$ but opposite direction. Graphically, it is the vector from the head of $\\vec{Q}$ to the head of $\\vec{P}$ when both tails are at the same point.",
+    "**Order doesn't matter** (commutative law): $\\vec{P} + \\vec{Q} = \\vec{Q} + \\vec{P}$. The resultant is the same regardless of which vector you place first in the head-to-tail construction.",
+    "When $\\theta = 90°$, the Pythagorean theorem gives $R^2 = P^2 + Q^2$ — this is the most common special case in NEB examinations. Students should memorize this form instantly.",
+    "**Relative velocity** is an application of vector subtraction: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$. If two cars move in the same direction at 60 km/h and 80 km/h, the relative speed is 20 km/h; if opposite directions, it is 140 km/h."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Adding vectors is the same as adding numbers — Vectors have direction, so you cannot simply add magnitudes unless they point in the same direction. Two 5 N forces at 120° give a resultant of only 5 N, not 10 N.",
+    "The resultant is always larger than either component — The resultant can be smaller than one or both components. For opposite directions, $R = |P - Q|$; if $P = Q$, the resultant is zero.",
+    "You can add vectors pointing in different directions by just adding their magnitudes — You must use the parallelogram law, triangle law, or component method. The magnitude of the resultant depends critically on the angle between the vectors.",
+    "If the resultant is zero, the vectors must be zero — Two non-zero vectors can have a zero resultant if they are equal in magnitude and opposite in direction ($\\vec{P} + (-\\vec{P}) = \\vec{0}$).",
+    "The angle in the formula is the angle between the tails of the vectors — In the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$, $\\theta$ is the angle between the vectors when placed tail-to-tail. If given the exterior angle, use $180° - \\text{angle}$.",
+    "Vector addition is not commutative — Vector addition IS commutative: $\\vec{P} + \\vec{Q} = \\vec{Q} + \\vec{P}$. What is non-commutative is vector multiplication (cross product): $\\vec{A} \\times \\vec{B} \\neq \\vec{B} \\times \\vec{A}$.",
+    "A zero resultant means no forces are acting — A zero resultant means all forces balance. Multiple forces can act simultaneously with a net effect of zero (equilibrium).",
+    "The direction of the resultant is always between the two vectors — This is true only for $0° < \\theta < 180°$. In the special case of opposite vectors ($\\theta = 180°$), the resultant lies along the larger vector, not 'between' them."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two forces of 8 N and 6 N act at a point. Find the resultant when (a) they are in the same direction, (b) they are opposite, (c) they are perpendicular. [Solution: (a) $R = 8+6 = 14\\,\\text{N}$, same direction. (b) $R = 8-6 = 2\\,\\text{N}$, along the 8 N force. (c) $R = \\sqrt{64+36} = \\sqrt{100} = 10\\,\\text{N}$, at $\\tan^{-1}(6/8) = 36.9°$ from the 8 N force.]",
+    "Two equal forces of 10 N each have a resultant of 10 N. Find the angle between them. [Solution: $R = 2P\\cos(\\theta/2)$, so $10 = 2(10)\\cos(\\theta/2)$, giving $\\cos(\\theta/2) = 1/2$, so $\\theta/2 = 60°$ and $\\theta = 120°$.]",
+    "A force of 20 N acts due east and a force of 15 N acts due north. Find the magnitude and direction of the resultant. [Solution: $R = \\sqrt{20^2+15^2} = \\sqrt{400+225} = \\sqrt{625} = 25\\,\\text{N}$. Direction: $\\alpha = \\tan^{-1}(15/20) = \\tan^{-1}(3/4) \\approx 36.9°$ north of east.]",
+    "Three forces of 3 N, 4 N, and 5 N act along the sides of a right triangle taken in order. Find their resultant. [Solution: Since $3^2+4^2=5^2$, these forces form a closed triangle. By the triangle law, the resultant is $\\vec{R} = \\vec{0}$. The system is in equilibrium.]",
+    "Two vectors $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = 5\\hat{i} - 2\\hat{j}$ are added. Find the magnitude and direction of the resultant. [Solution: $\\vec{R} = \\vec{A}+\\vec{B} = 8\\hat{i} + 2\\hat{j}$. $R = \\sqrt{64+4} = \\sqrt{68} \\approx 8.25$. $\\alpha = \\tan^{-1}(2/8) = \\tan^{-1}(0.25) \\approx 14.0°$ from the positive x-axis.]",
+    "A boat heads north at 12 km/h in a river flowing east at 5 km/h. Find the boat's actual speed and direction relative to the ground. [Solution: $\\vec{v}_{actual} = 12\\hat{j} + 5\\hat{i}$. Speed $= \\sqrt{144+25} = 13\\,\\text{km/h}$. Direction $= \\tan^{-1}(12/5) \\approx 67.4°$ east of north (or $22.6°$ north of east).]",
+    "Find the resultant of two forces $P$ and $Q$ when the angle between them is $\\theta$. If $\\theta$ increases from 0° to 180°, describe qualitatively how $R$ changes. [Solution: $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$. As $\\theta$ increases, $\\cos\\theta$ decreases from 1 to -1, so $R$ decreases from $P+Q$ to $|P-Q|$. The resultant is maximum when vectors are parallel and minimum when anti-parallel.]",
+    "Two forces act at a point: $\\vec{F}_1 = 10\\,\\text{N}$ at 30° north of east, and $\\vec{F}_2 = 15\\,\\text{N}$ at 60° north of west. Find the resultant using component method. [Solution: $F_{1x} = 10\\cos30° = 8.66$, $F_{1y} = 10\\sin30° = 5.00$. $F_{2x} = -15\\cos60° = -7.50$, $F_{2y} = 15\\sin60° = 12.99$. $R_x = 1.16$, $R_y = 17.99$. $R = \\sqrt{1.35+323.64} \\approx 18.0\\,\\text{N}$, $\\alpha = \\tan^{-1}(17.99/1.16) \\approx 86.3°$ north of east.]"
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The parallelogram law of vector addition was first clearly stated by **Simon Stevin** (1548–1620) in his treatise on statics. He showed that two forces acting at a point are equivalent to a single force represented by the diagonal of the parallelogram.",
+    "NEB exam priority: addition of collinear vectors (same/opposite direction) is a guaranteed question type. Master the sign convention: assign one direction as positive, the opposite as negative, then add algebraically.",
+    "The component method of vector addition works in any number of dimensions — 2D, 3D, or even higher-dimensional spaces. This makes it the most versatile method for finding resultants.",
+    "In navigation and aviation, vector addition is essential. A pilot must account for wind velocity (a vector) to maintain the desired ground track. This is called wind correction angle calculation.",
+    "The concept of **resultant force** is central to Newton's second law: $\\vec{F}_{net} = m\\vec{a}$. The acceleration of an object is determined by the vector sum of all forces acting on it, not by any single force.",
+    "Force polygons are used in engineering to check equilibrium. If the force vectors drawn head-to-tail form a closed polygon, the resultant is zero and the system is in equilibrium.",
+    "When resolving vectors for addition, always draw a clear diagram first. Label all angles, choose convenient axes (often along and perpendicular to an incline), and be consistent with sign conventions.",
+    "For NEB: the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ applies to ANY two vectors at angle $\\theta$. Remember that $\\cos 0°=1$ gives maximum, $\\cos 90°=0$ gives Pythagorean, and $\\cos 180°=-1$ gives minimum."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"
