@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ImportedNotesSection } from "./imported-notes-section";
+import { RavikishanTopicResources } from "./ravikishan-topic-resources";
 import { EmptyState } from "./empty-state";
 import { AnalyticalGeometryResources } from "./analytical-geometry-resources";
 import { LimitsContinuityResources } from "./limits-continuity-resources";
@@ -112,11 +112,12 @@ export function ContentTabs({
         {activeTab === "notes" && (
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Notes</h3>
-            <ImportedNotesSection
-              subject={subjectSlug}
+            <RavikishanTopicResources
+              classSlug={classSlug}
+              subjectSlug={subjectSlug}
               unitId={unitId}
-              topicTitle={topicTitle}
-              target={classSlug as any}
+              topicSlug={topicSlug}
+              unit={unit}
             />
           </div>
         )}

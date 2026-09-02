@@ -23,6 +23,7 @@ import {
   Sparkles,
   UserPlus,
   PenLine,
+  Lightbulb,
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -48,6 +49,8 @@ const browseItems: NavItem[] = [
   { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
   { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },
   { href: "/knowledge/writing", label: "Writing Section", icon: PenLine },
+  { href: "/theorems", label: "Theorems", icon: BookOpen },
+  { href: "/legend", label: "Legend", icon: Lightbulb },
 ];
 
 const accountItems: NavItem[] = [

@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Sparkles, BookOpen, ArrowRight, FileText } from "lucide-react";
+import { GraduationCap, Sparkles, BookOpen, ArrowRight, FileText, Lightbulb } from "lucide-react";
 import Link from "next/link";
 import { ScienceLabSection } from "@/components/lab/science-lab-section";
 
@@ -43,6 +43,7 @@ export default function Home() {
             { href: "/levels", label: "Curriculum", icon: GraduationCap, color: "from-amber-500/10 to-orange-500/10 border-amber-500/20" },
             { href: "/syllabus", label: "Syllabus", icon: BookOpen, color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20" },
             { href: "/theorems", label: "Theorems", icon: FileText, color: "from-violet-500/10 to-fuchsia-500/10 border-violet-500/20" },
+            { href: "/legend", label: "Legend", icon: Lightbulb, color: "from-yellow-500/10 to-amber-500/10 border-yellow-500/20" },
           ].map((card) => {
             const Icon = card.icon;
             return (
