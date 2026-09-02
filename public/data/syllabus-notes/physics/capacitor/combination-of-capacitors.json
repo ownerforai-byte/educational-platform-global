@@ -1,0 +1,25 @@
+{
+  "title": "Combination of Capacitors",
+  "notes": [
+    "**Series combination:** same charge $Q$ on each capacitor. $1/C_{eq} = 1/C_1 + 1/C_2 + \\ldots$. Equivalent capacitance is less than the smallest individual capacitance.",
+    "**Parallel combination:** same voltage $V$ across each capacitor. $C_{eq} = C_1 + C_2 + \\ldots$. Equivalent capacitance is greater than the largest individual capacitance.",
+    "**Why series reduces capacitance:** the effective plate separation increases because the dielectrics are stacked, weakening the overall field.",
+    "**Why parallel increases capacitance:** the effective plate area increases because the plates are side by side, allowing more charge storage at the same voltage.",
+    "**Mixed combinations:** reduce step by step. Identify simple series or parallel groups, find their equivalent, and repeat."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Applications of Banking",
+  "notes": [
+    "**Banked curve:** a road or track tilted at an angle $\\theta$ so that the horizontal component of the normal reaction provides the centripetal force.",
+    " **No friction ideal banking:** $\\tan\\theta = v^2/(rg)$. At this design speed, no friction is needed because the normal reaction alone provides the exact centripetal force required.",
+    "**Why banking works:** without banking, friction alone must supply the centripetal force, which limits the safe speed. Banking allows higher safe speeds and reduces tyre wear.",
+    "**Real roads:** actual banking angles are chosen for a design speed $v_0$. Slower vehicles need friction up the slope; faster vehicles need friction down the slope.",
+    "**Aircraft banking:** when an aircraft turns, it banks so that the lift force has a horizontal component providing centripetal force: $L\\sin\\theta = mv^2/r$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Relationship Between Kp and Kc",
+  "notes": [
+    "**Definitions:** $K_p$ uses partial pressures; $K_c$ uses molar concentrations.",
+    "**Relation:** $K_p = K_c(RT)^{\\Delta n}$, where $\\Delta n = (c+d) - (a+b)$ is the change in moles of gas.",
+    "**Special case â€” $\\Delta n = 0$:** $K_p = K_c$. Examples: $H_2 + I_2 \\rightleftharpoons 2HI$, $N_2 + O_2 \\rightleftharpoons 2NO$.",
+    "**Units:** $K_p$ has units of pressure$^{\\Delta n}$; $K_c$ has units of concentration$^{\\Delta n}$. Thermodynamic equilibrium constants are dimensionless when activities are used.",
+    "**When to use which:** $K_p$ is convenient for gas-phase reactions where pressures are measured directly. $K_c$ is used when concentrations are known or when solids/liquids are involved."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Lewis Dot Structures of Common Compounds",
+  "notes": [
+    "**Lewis structure rules:** count total valence electrons, draw skeleton, distribute electrons to satisfy octets, place remaining electrons on central atom, form double/triple bonds if needed.",
+    "**Formal charge:** $FC = V - N - B/2$, where $V$ is valence electrons, $N$ is non-bonding electrons, $B$ is bonding electrons. The best structure minimizes formal charges.",
+    "**Examples:** NaCl (ionic: Na$^+$ [Ne] and Cl$^-$ [Ar]); $H_2O$ (O with two lone pairs, two O-H bonds, bent shape); $CO_2$ (O=C=O, linear); $NH_3$ (N with one lone pair, three N-H bonds, trigonal pyramidal).",
+    "**Expanded octet:** elements in period 3 and beyond can have more than 8 electrons because they have d-orbitals available. Example: $SF_6$ has 12 valence electrons around S.",
+    "**Odd-electron molecules:** NO has 11 valence electrons, giving an unpaired electron and a doublet state. These are paramagnetic and reactive."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

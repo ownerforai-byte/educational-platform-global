@@ -1,0 +1,25 @@
+{
+  "title": "Pure Spectrum and Dispersive Power",
+  "notes": [
+    "**Dispersion:** splitting of white light into its constituent colours because the refractive index of a material depends on wavelength.",
+    "**Pure spectrum:** a spectrum in which colours do not overlap. Achieved with a narrow slit and a single prism so that each wavelength emerges at a distinct angle.",
+    "**Dispersive power $\\omega$:** $\\omega = \\frac{n_v - n_r}{n_y - 1}$, where $n_v$, $n_r$, $n_y$ are refractive indices for violet, red, and yellow (sodium D line).",
+    "**Crown vs flint glass:** crown glass has $\\omega \\approx 0.016$, flint glass has $\\omega \\approx 0.031$. Flint glass disperses about twice as much, which is why it is used in spectroscope prisms.",
+    "**Angular dispersion:** $\\delta_v - \\delta_r = \\omega A (n_y - 1)$ for a small-angle prism. The spread of colours is proportional to both dispersive power and prism angle."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

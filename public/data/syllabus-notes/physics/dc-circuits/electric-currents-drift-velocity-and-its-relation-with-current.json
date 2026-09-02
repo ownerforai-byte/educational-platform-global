@@ -1,0 +1,25 @@
+{
+  "title": "Electric Currents, Drift Velocity and Current",
+  "notes": [
+    "**Current $I$:** rate of flow of charge. $I = Q/t$. Units: ampere (A).",
+    "**Conventional current:** flows from positive to negative. Electron flow is opposite, from negative to positive.",
+    "**Drift velocity $v_d$:** the average velocity of free electrons in a conductor under an electric field. It is very slow, about $10^{-4}\\,\\text{m/s}$.",
+    "**Relation:** $I = nAev_d$, where $n$ is electron density, $A$ is cross-sectional area, $e$ is electron charge, and $v_d$ is drift velocity.",
+    "Why signal is fast despite slow drift:** when you switch on a circuit, the electric field propagates at nearly the speed of light, setting all electrons into drift motion simultaneously. The electrons themselves drift slowly, but the signal is instantaneous."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

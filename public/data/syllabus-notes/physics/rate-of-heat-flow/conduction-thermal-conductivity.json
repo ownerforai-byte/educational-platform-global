@@ -1,0 +1,25 @@
+{
+  "title": "Conduction and Thermal Conductivity",
+  "notes": [
+    "**Conduction:** heat transfer through a material without bulk motion of the material. Energy is passed from molecule to molecule via collisions and vibrations.",
+    "**Thermal conductivity $k$:** the amount of heat flowing per unit time through unit area per unit temperature gradient. $H = -kA\\frac{dT}{dx}$.",
+    "**Fourier's law:** the negative sign indicates heat flows from hot to cold. $k$ depends on material: metals have high $k$ because free electrons carry energy; gases have low $k$ because molecules are far apart.",
+    "**Measurement:** Searle's apparatus or Forbes's method compares heat flow through a rod to the heat gained by water, giving $k$ from measured temperature changes and dimensions.",
+    "**Why metals feel cold:** metals conduct heat away from your hand faster than insulators, making them feel colder even at the same temperature."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

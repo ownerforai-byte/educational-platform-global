@@ -1,0 +1,40 @@
+{
+  "title": "The Hydrogen Spectrum â€” Origin & Spectral Series",
+  "notes": [
+    "When hydrogen gas is excited (e.g. electrically), electrons absorb energy and jump to higher tracks; when they fall back down to lower tracks, they release that exact energy as light of a specific wavelength",
+    "Because transitions happen only between specific fixed tracks, the emitted light forms discrete, sharp spectral lines rather than a continuous rainbow",
+    "Each spectral series corresponds to electrons landing on one specific base track (nâ‚): **Lyman** â†’ nâ‚ = 1 (ultraviolet, invisible); **Balmer** â†’ nâ‚ = 2 (the only series visible to the human eye, as coloured lines); **Paschen** â†’ nâ‚ = 3 (infrared); **Brackett** â†’ nâ‚ = 4 (infrared); **Pfund** â†’ nâ‚ = 5 (far-infrared)",
+    "1/Î» = R_HÂ·(1/nâ‚Â² âˆ’ 1/nâ‚‚Â²), where Î» = wavelength of emitted light, R_H = Rydberg constant, nâ‚ = lower (final) orbit, nâ‚‚ = higher (initial) orbit",
+    "The **series limit** (shortest wavelength, highest-energy line in a series) occurs as nâ‚‚ â†’ âˆž, giving the simplified form 1/Î» = R_H/nâ‚Â²",
+    "Maxwell's theory states that any accelerating charge radiates electromagnetic energy",
+    "An electron orbiting the nucleus is constantly changing direction, so it is constantly accelerating, and by Maxwell's theory it should continuously lose energy as radiation",
+    "Losing energy means the electron's orbital radius should shrink, causing it to spiral inward and collapse into the nucleus within a fraction of a second â€” but real atoms are stable, which Rutherford's model cannot account for",
+    "Bohr radius formula: r_n = (0.529 Ã…)Â·nÂ²/Z, where n = orbit number and Z = atomic number",
+    "For LiÂ²âº: Z = 3, n = 2",
+    "râ‚‚ = 0.529 Ã— (2Â²)/3 = 0.529 Ã— 4/3 = 2.116/3",
+    "**Answer: râ‚‚ â‰ˆ 0.705 Ã…**",
+    "**Given:** R_H = 1.097 Ã— 10â· mâ»Â¹",
+    "The series limit occurs as nâ‚‚ â†’ âˆž, so 1/Î» = R_H(1/nâ‚Â² âˆ’ 0) = R_H/nâ‚Â²",
+    "For the Lyman series, nâ‚ = 1: 1/Î» = 1.097 Ã— 10â· Ã— 1 = 1.097 Ã— 10â· mâ»Â¹",
+    "Î» = 1/(1.097 Ã— 10â·) â‰ˆ 9.115 Ã— 10â»â¸ m",
+    "**Answer: Î» â‰ˆ 91.15 nm** â€” deep ultraviolet, consistent with the Lyman series being a UV series",
+    "The **Balmer series** (nâ‚ = 2) is the only series entirely visible to the human eye",
+    "Its emitted wavelengths (transitions from nâ‚‚ = 3, 4, 5... down to nâ‚ = 2) happen to fall in the roughly 400â€“700 nm range that human eyes detect",
+    "The Lyman series (nâ‚ = 1) is higher-energy and shorter-wavelength (ultraviolet), while Paschen, Brackett, and Pfund (nâ‚ = 3, 4, 5) are lower-energy and longer-wavelength (infrared) â€” both fall outside the visible window"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

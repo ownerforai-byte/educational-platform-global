@@ -1,0 +1,49 @@
+{
+  "title": "Angle Bisector Between Two Lines â€” The aâ‚aâ‚‚ + bâ‚bâ‚‚ Rule",
+  "notes": [
+    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of aâ‚aâ‚‚ + bâ‚bâ‚‚",
+    "**If aâ‚aâ‚‚ + bâ‚bâ‚‚ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (âˆ’) sign gives the **obtuse** bisector",
+    "**If aâ‚aâ‚‚ + bâ‚bâ‚‚ > 0:** the (+) sign gives the **obtuse** bisector, and the (âˆ’) sign gives the **acute** bisector",
+    "**Coefficients:** aâ‚ = âˆ’1, bâ‚ = âˆ’2, aâ‚‚ = 4, bâ‚‚ = 2 (constant terms already made positive)",
+    "**Step:** aâ‚aâ‚‚ + bâ‚bâ‚‚ = (âˆ’1)(4) + (âˆ’2)(2) = âˆ’4 âˆ’ 4 = **âˆ’8**",
+    "Since the result is negative, the (+) sign bisector is acute and the (âˆ’) sign bisector is obtuse",
+    "**Acute Bisector (+ sign):** 6x + 6y âˆ’ 1 = 0",
+    "**Obtuse Bisector (âˆ’ sign):** 2x âˆ’ 2y + 19 = 0",
+    "aâ‚aâ‚‚ + bâ‚bâ‚‚ is proportional to the cosine of the angle between the two lines' normal vectors (a, b), since aÂ·a' + bÂ·b' = |nâ‚||nâ‚‚|cos Î¸ for normal vectors nâ‚, nâ‚‚",
+    "When this dot product is negative, the normals point in 'opposing' directions relative to each other, which flips which bisector formula (+ or âˆ’) ends up bisecting the acute angle between the actual lines rather than the obtuse one",
+    "This is why the rule reverses depending on the sign â€” it's tracking the relative orientation of the two lines' normals, not just their raw coefficients"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step.",
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step.",
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept.",
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept.",
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

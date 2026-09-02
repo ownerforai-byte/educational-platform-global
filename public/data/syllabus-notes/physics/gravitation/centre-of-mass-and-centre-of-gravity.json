@@ -1,0 +1,25 @@
+{
+  "title": "Centre of Mass and Centre of Gravity",
+  "notes": [
+    "**Centre of mass (CM):** the point where the entire mass of a body can be considered to be concentrated for translational motion. $\\vec{r}_{CM} = \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i}$.",
+    "**Centre of gravity (CG):** the point where the entire weight of a body can be considered to act. For uniform gravity, CG coincides with CM.",
+    "**Symmetry shortcut:** for symmetric bodies with uniform density, CM lies on the axis or plane of symmetry. For a uniform rod, CM is at its midpoint; for a uniform disc, at its centre.",
+    "**Why CM matters:** external forces cause the CM to accelerate according to $\\vec{F}_{ext} = M\\vec{a}_{CM}$, regardless of internal forces.",
+    "**Difference:** CM depends only on mass distribution; CG depends on the external gravitational field. In a non-uniform field, they can differ."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

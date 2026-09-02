@@ -1,0 +1,36 @@
+{
+  "title": "Vector",
+  "notes": [
+    "<h2>Introduction</h2>",
+    "<p>A <b>vector quantity</b> has both <b>magnitude</b> and <b>direction</b> and obeys the triangle law of addition. Examples: displacement, velocity, acceleration, force, momentum. A <b>scalar quantity</b> has only magnitude. Examples: mass, time, temperature, speed, work.</p>",
+    "<h2>Types of Vectors</h2>",
+    "<p><b>Equal vectors</b>: same magnitude and same direction. <b>Negative vector</b>: same magnitude, opposite direction. <b>Null vector</b>: zero magnitude (its direction is undefined). <b>Unit vector</b>: a vector of magnitude 1 along a given direction, written as $\\hat{a} = \\frac{\\vec{a}}{|\\vec{a}|}$. <b>Parallel and antiparallel vectors</b>: vectors along the same line (same or opposite sense). <b>Position vector</b>: vector joining the origin to a point. <b>Collinear vectors</b>: vectors along the same straight line.</p>",
+    "<h2>Addition of Vectors — Triangle and Parallelogram Law</h2>",
+    "<p>If two vectors $\\vec{a}$ and $\\vec{b}$ act at an angle $\\theta$, the magnitude of their resultant $\\vec{R} = \\vec{a} + \\vec{b}$ is:</p>",
+    "$$R = \\sqrt{a^2 + b^2 + 2ab\\cos\\theta}$$",
+    "<p>and its direction is given by $\\tan\\alpha = \\frac{b\\sin\\theta}{a + b\\cos\\theta}$, where $\\alpha$ is the angle made by the resultant with $\\vec{a}$. Special cases: parallel ($\\theta = 0°$) gives $R = a + b$; antiparallel ($\\theta = 180°$) gives $R = |a - b|$; perpendicular ($\\theta = 90°$) gives $R = \\sqrt{a^2 + b^2}$.</p>",
+    "<h2>Resolution of Vectors</h2>",
+    "<p>Any vector $\\vec{A}$ can be resolved into two perpendicular components:</p>",
+    "$$A_x = A\\cos\\theta, \\quad A_y = A\\sin\\theta$$",
+    "<p>with $A = \\sqrt{A_x^2 + A_y^2}$ and $\\tan\\theta = \\frac{A_y}{A_x}$. In unit vector notation, $\\vec{A} = A_x\\hat{i} + A_y\\hat{j}$.</p>",
+    "<h2>Scalar (Dot) Product</h2>",
+    "<p>$\\vec{a} \\cdot \\vec{b} = ab\\cos\\theta$. The result is a scalar. $\\vec{a} \\cdot \\vec{b} = 0$ when the vectors are perpendicular. For unit vectors: $\\hat{i}\\cdot\\hat{i} = \\hat{j}\\cdot\\hat{j} = \\hat{k}\\cdot\\hat{k} = 1$ and $\\hat{i}\\cdot\\hat{j} = 0$.</p>",
+    "<h2>Vector (Cross) Product</h2>",
+    "<p>$|\\vec{a} \\times \\vec{b}| = ab\\sin\\theta$, directed perpendicular to the plane of the two vectors (right-hand rule). $\\vec{a} \\times \\vec{b} = 0$ when the vectors are parallel. The cross product is used for torque ($\\vec{\\tau} = \\vec{r} \\times \\vec{F}$) and angular momentum ($\\vec{L} = \\vec{r} \\times \\vec{p}$).</p>"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

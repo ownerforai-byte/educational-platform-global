@@ -1,0 +1,27 @@
+{
+  "title": "Projectile Motion and Its Applications",
+  "notes": [
+    "**Projectile:** any object thrown or launched into the air and then allowed to move under gravity alone.",
+    "**Key insight â€” independence of motions:** horizontal motion has zero acceleration ($a_x = 0$), so horizontal velocity is constant. Vertical motion has constant acceleration $g$ downward. The two motions are completely independent.",
+    "**Trajectory equation:** eliminating $t$ from $x = u\\cos\\theta \\cdot t$ and $y = u\\sin\\theta \\cdot t - \\frac{1}{2}gt^2$ gives $y = x\\tan\\theta - \\frac{gx^2}{2u^2\\cos^2\\theta}$, which is the equation of a parabola.",
+    "**Maximum height:** $H = \\frac{u^2\\sin^2\\theta}{2g}$. Reached when vertical velocity becomes zero.",
+    "**Time of flight:** $T = \\frac{2u\\sin\\theta}{g}$. The projectile returns to the launch level when vertical displacement is zero.",
+    "**Horizontal range:** $R = \\frac{u^2\\sin 2\\theta}{g}$. The range is maximum when $\\sin 2\\theta = 1$, i.e., $\\theta = 45\\circ$.",
+    "**Applications:** sports (basketball shots, golf drives), military (artillery, rockets), and engineering (water fountains, ballistic trajectories) all rely on the same parabolic equations."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

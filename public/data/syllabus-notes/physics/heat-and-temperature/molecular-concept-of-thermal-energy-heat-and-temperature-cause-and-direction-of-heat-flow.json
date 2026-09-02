@@ -1,0 +1,29 @@
+{
+  "title": "Worked Example: Heat Engine",
+  "notes": [
+    "A Carnot engine absorbs 600 J of heat from a reservoir at 500 K and rejects heat to a sink at 300 K. Calculate the work done and the efficiency.",
+    "Solution: Efficiency Î· = 1 âˆ’ Tc/Th = 1 âˆ’ 300/500 = 0.4.",
+    "Work done W = Î· Ã— Qh = 0.4 Ã— 600 = 240 J.",
+    "Heat rejected Qc = Qh âˆ’ W = 600 âˆ’ 240 = 360 J.",
+    "Q1. Which process takes place at constant temperature?\nAnswer: Isothermal",
+    "Q2. In an adiabatic process, which quantity remains constant?\nAnswer: Heat exchanged (Q = 0)",
+    "Q3. The SI unit of entropy is:\nAnswer: J/K",
+    "Q4. A Carnot engine operating between two fixed temperatures has maximum efficiency when the process is:\nAnswer: Reversible",
+    "Q5. The first law of thermodynamics is a statement of:\nAnswer: Conservation of energy"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

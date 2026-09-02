@@ -1,0 +1,25 @@
+{
+  "title": "Centripetal Acceleration and Centripetal Force",
+  "notes": [
+    "**Centripetal acceleration:** $a_c = v^2/r = r\\omega^2$. It points toward the centre of the circle and changes the direction of velocity without changing its magnitude.",
+    "**Why 'centripetal' means centre-seeking:** without this inward acceleration, the object would move in a straight line by Newton's first law.",
+    "**Centripetal force:** $F_c = mv^2/r = mr\\omega^2$. This is not a new type of force; it is the net inward force required for circular motion.",
+    "**Examples of centripetal force:** tension in a string for a conical pendulum, friction between tyres and road for a turning car, gravity for a satellite.",
+    "**Centrifugal force:** in a rotating frame, an outward pseudo force appears. It is not a real force but a consequence of inertia in a non-inertial frame."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

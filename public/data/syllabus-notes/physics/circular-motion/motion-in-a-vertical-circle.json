@@ -1,0 +1,25 @@
+{
+  "title": "Motion in a Vertical Circle",
+  "notes": [
+    "**Critical case â€” lowest point:** tension is maximum because it must support weight and provide centripetal force: $T_{max} = mg + mv^2/r$.",
+    "**Critical case â€” highest point:** tension is minimum. The body stays on the circle if $v \\geq \\sqrt{gr}$. If $v < \\sqrt{gr}$, the string goes slack and the body falls.",
+    "**Minimum speed at top:** $v_{top} = \\sqrt{gr}$. Below this, gravity alone provides more inward force than needed, so the body falls inward.",
+    "**Energy conservation:** since only gravity does work, mechanical energy is conserved. $\\frac{1}{2}mv_{bottom}^2 = \\frac{1}{2}mv_{top}^2 + mg(2r)$.",
+    "**Practical example:** a bucket of water swung in a vertical circle does not spill at the top if the speed is high enough, because the water's inertia keeps it pressed against the bucket."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

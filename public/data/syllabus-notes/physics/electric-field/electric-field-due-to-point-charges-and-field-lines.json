@@ -1,0 +1,25 @@
+{
+  "title": "Electric Field Due to Point Charges and Field Lines",
+  "notes": [
+    "**Electric field $\\vec{E}$:** the force per unit positive test charge at a point: $\\vec{E} = \\vec{F}/q_0$.",
+    "**Point charge:** $E = k\\frac{Q}{r^2}$, directed radially outward for positive $Q$ and inward for negative $Q$.",
+    "**Field lines:** imaginary lines showing the direction of $\\vec{E}$. They start on positive charges and end on negative charges, never cross, and their density represents field strength.",
+    "**Properties of field lines:** closer lines mean stronger field; lines are perpendicular to conductor surfaces in electrostatics; they do not pass through conductors.",
+    "**Uniform field:** between two large parallel oppositely charged plates, $E$ is constant in magnitude and direction: $E = \\sigma/\\epsilon_0$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

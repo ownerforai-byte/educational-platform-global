@@ -1,0 +1,25 @@
+{
+  "title": "Power",
+  "notes": [
+    "**Power definition:** the rate at which work is done. $P = \\frac{W}{t}$.",
+    "**Alternative form:** since $W = Fs$, $P = Fs/t = Fv$ when force and velocity are in the same direction.",
+    "**Units:** SI unit is watt ($1\\,\\text{W} = 1\\,\\text{J/s}$). Other units: horsepower ($1\\,\\text{hp} = 746\\,\\text{W}$) and kilowatt ($1\\,\\text{kW} = 1000\\,\\text{W}$).",
+    "**Why $P = Fv$ matters:** it tells you that for a given engine power, a lower speed allows a larger force, and vice versa. This is why cars can climb steep hills in low gear: the engine delivers high force at low wheel speed.",
+    "**Average vs instantaneous power:** average power uses total work over total time; instantaneous power uses $P = \\vec{F} \\cdot \\vec{v}$ at a specific instant."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

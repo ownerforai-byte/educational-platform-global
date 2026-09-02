@@ -1,0 +1,25 @@
+{
+  "title": "Potential Divider",
+  "notes": [
+    "**Definition:** two or more resistors in series across a voltage source, used to obtain a fraction of the source voltage.",
+    "**Output voltage:** $V_{out} = V_{in} \\frac{R_2}{R_1 + R_2}$, where $R_2$ is the resistor across which the output is taken.",
+    "**Why useful:** allows you to set any voltage between 0 and $V_{in}$ by adjusting the ratio of resistances.",
+    "**Loading effect:** if a load resistor $R_L$ is connected across $R_2$, the output voltage changes because $R_2$ is now in parallel with $R_L$, reducing the effective resistance.",
+    "**Potentiometer:** a continuous potential divider using a uniform resistance wire. The output voltage is proportional to the length of wire between the wiper and one end."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Metals, Insulators and Semiconductors â€” Band Theory",
+  "notes": [
+    "**Metals:** valence band overlaps with conduction band, or valence band is partially filled. Electrons move freely, giving high conductivity.",
+    "**Insulators:** wide band gap ($E_g > 3\\,\\text{eV}$). Valence band is full, conduction band is empty. Thermal energy at room temperature is insufficient to excite electrons across the gap.",
+    "**Semiconductors:** small band gap ($E_g \\approx 1\\,\\text{eV}$). At room temperature, some electrons thermally excite into the conduction band, leaving holes in the valence band. Both electrons and holes contribute to conduction.",
+    "**Temperature effect:** in semiconductors, conductivity increases with temperature because more electrons are thermally excited across the gap. In metals, conductivity decreases with temperature because lattice vibrations scatter electrons more.",
+    "**Examples:** silicon ($E_g = 1.12\\,\\text{eV}$) and germanium ($E_g = 0.67\\,\\text{eV}$) are classic semiconductors."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

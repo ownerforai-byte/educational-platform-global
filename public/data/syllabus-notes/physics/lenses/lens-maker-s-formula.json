@@ -1,0 +1,25 @@
+{
+  "title": "Lens Maker's Formula",
+  "notes": [
+    "**Formula:** $\\frac{1}{f} = (n - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$, where $n$ is the refractive index of the lens material relative to air, and $R_1$, $R_2$ are the radii of curvature of the two surfaces.",
+    "**Sign convention:** for a convex surface facing the object, $R$ is positive; for a concave surface, $R$ is negative.",
+    "**Why it matters:** the formula shows that a higher-index material can make a thinner lens with the same focal length. This is why modern spectacle lenses can be made thinner.",
+    "**Lens in water:** when a lens is immersed in water, the relative index $n$ decreases, so $f$ increases. A converging lens in water may become less powerful or even diverging if the relative index drops below 1.",
+    "**Thin lens approximation:** the formula assumes the lens is thin compared to its focal length, so the two refracting surfaces can be treated as coincident."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

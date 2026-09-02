@@ -1,0 +1,53 @@
+{
+  "title": "Specific Heat Capacity (c) â€” Definition & Key Values",
+  "notes": [
+    "**Formula:** H = mÂ·cÂ·Î”Î¸",
+    "**Definition:** Setting m = 1 and Î”Î¸ = 1 gives c = H, so specific heat capacity is the heat energy required to raise the temperature of a unit mass of a substance by 1Â°C (or 1 K)",
+    "**Water:** c = 1 cal/gÂ°C (CGS) = 4200 J/kgÂ·K (SI) â€” unusually high, which is why water resists temperature change and is used as a coolant",
+    "**Ice:** c = 0.5 cal/gÂ°C (CGS) = 2100 J/kgÂ·K (SI)",
+    "**CGS unit:** calÂ·gâ»Â¹Â·Â°Câ»Â¹",
+    "**SI unit:** JÂ·kgâ»Â¹Â·Kâ»Â¹ (equivalently JÂ·kgâ»Â¹Â·Â°Câ»Â¹ since it's a temperature *difference*)",
+    "**Dimensional formula:** c = H/(mÂ·Î”Î¸) = [MLÂ²Tâ»Â²]/([M][K]) = **[Mâ°LÂ²Tâ»Â²Kâ»Â¹]**",
+    "Being independent of mass in the dimensional formula reflects that c is an *intensive* property â€” a property of the material, not the amount of it",
+    "**Distinction:** specific heat capacity (c) is defined per unit mass; heat capacity (Câ€²) is for the *entire* mass of a given object",
+    "**Formula:** Câ€² = mÂ·c",
+    "**Heat exchanged:** H = Câ€²Â·Î”Î¸",
+    "**Statement:** when two bodies at different temperatures are brought into thermal contact, they exchange heat until thermal equilibrium â€” the hotter body loses heat, the colder body gains heat",
+    "**Core condition:** if no heat escapes to the surroundings, **Heat lost by hot body = Heat gained by cold body**",
+    "**Governing law:** this follows directly from the Principle of Conservation of Energy",
+    "**Working equation:** mâ‚câ‚(Î¸â‚ âˆ’ Î¸â‚˜) = mâ‚‚câ‚‚(Î¸â‚˜ âˆ’ Î¸â‚‚), where Î¸â‚˜ is the final equilibrium (mixture) temperature",
+    "Because K and (Î¸ âˆ’ Î¸â‚€) are identical for two bodies cooled under identical conditions, mâ‚câ‚(dÎ¸/dt)â‚ = mâ‚‚câ‚‚(dÎ¸/dt)â‚‚ lets you find an unknown specific heat capacity **without measuring heat energy in Joules at all**",
+    "**Requires knowing:** the mass and specific heat of a reference liquid â€” usually water (mâ‚, câ‚); the mass of the unknown liquid (mâ‚‚); and both cooling rates (dÎ¸/dt), measured with a stopwatch and thermometer",
+    "**Rearranged formula:** câ‚‚ = [mâ‚câ‚(dÎ¸/dt)â‚] / [mâ‚‚(dÎ¸/dt)â‚‚]",
+    "Because heat lost = heat gained depends on the mÂ·c product of each body, not just its temperature",
+    "**General result:** Î¸â‚˜ = (mâ‚câ‚Î¸â‚ + mâ‚‚câ‚‚Î¸â‚‚)/(mâ‚câ‚ + mâ‚‚câ‚‚) â€” a weighted average, weighted by each body's heat capacity",
+    "It only reduces to a simple average of Î¸â‚ and Î¸â‚‚ in the special case where mâ‚câ‚ = mâ‚‚câ‚‚",
+    "**Setup:** a 200 g metal piece at 100Â°C is dropped into 500 g of water at 25Â°C (calorimeter heat capacity negligible). Final temperature is 30Â°C. (c_water = 4200 J/kgÂ·K)",
+    "By the principle of calorimetry: Heat lost by metal = Heat gained by water",
+    "m_metalÂ·c_metalÂ·(100 âˆ’ 30) = m_waterÂ·c_waterÂ·(30 âˆ’ 25)",
+    "0.2 Ã— c Ã— 70 = 0.5 Ã— 4200 Ã— 5",
+    "14c = 10500",
+    "**Answer: c = 750 J/kgÂ·K**",
+    "**Setup:** a calorimeter with 100 g of water (câ‚ = 1.0 cal/gÂ°C) cools from 60Â°C to 50Â°C in 200 s. The same calorimeter with 80 g of an unknown oil cools over the same range in 140 s under identical conditions.",
+    "Known values: mâ‚ = 100 g, câ‚ = 1.0 cal/gÂ°C, tâ‚ = 200 s, mâ‚‚ = 80 g, tâ‚‚ = 140 s",
+    "Using mâ‚câ‚/tâ‚ = mâ‚‚câ‚‚/tâ‚‚: (100 Ã— 1.0)/200 = (80 Ã— câ‚‚)/140",
+    "Simplify the water side: 0.5 = (80 Ã— câ‚‚)/140",
+    "Isolate câ‚‚: câ‚‚ = (0.5 Ã— 140)/80 = 70/80",
+    "**Answer: câ‚‚ = 0.875 cal/gÂ°C**"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

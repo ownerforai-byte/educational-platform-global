@@ -1,0 +1,23 @@
+{
+  "title": "Q: In the worked example, both methods agree â€” is checking both methods necessary, or is one sufficient?",
+  "notes": [
+    "The aâ‚aâ‚‚ + bâ‚bâ‚‚ method alone is sufficient and is the standard fast method for exams â€” it requires no slope calculation or angle formula",
+    "The tan Î¸ method is more computationally heavy but is useful as an independent verification, or when the aâ‚aâ‚‚ + bâ‚bâ‚‚ method feels error-prone (e.g. after a sign mistake while normalizing the constant terms)",
+    "In practice: use aâ‚aâ‚‚ + bâ‚bâ‚‚ to solve quickly, and only fall back to tan Î¸ if you want to double-check a specific answer"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Electrolysis â€” Qualitative and Quantitative Aspects",
+  "notes": [
+    "**Electrolysis:** chemical decomposition of an electrolyte by passing electric current through it. Oxidation occurs at the anode; reduction at the cathode.",
+    "**Qualitative prediction:** cations move to cathode and get reduced; anions move to anode and get oxidized. The ease of discharge depends on electrode potentials and concentrations.",
+    "**Faraday's First Law:** the mass of substance deposited or liberated at an electrode is directly proportional to the quantity of electricity passed: $m = ZQ$, where $Z$ is the electrochemical equivalent.",
+    "**Faraday's Second Law:** for the same quantity of electricity, the masses of different substances deposited are proportional to their chemical equivalent weights: $m_1/m_2 = E_1/E_2$.",
+    "**Faraday constant:** $F = 96485\\,\\text{C/mol}$. One mole of electrons carries one Faraday of charge."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

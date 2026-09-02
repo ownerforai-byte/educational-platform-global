@@ -1,0 +1,25 @@
+{
+  "title": "Vector Algebra â€” Types, Addition and Scalar Multiplication",
+  "notes": [
+    "**Scalar vs vector:** scalars have magnitude only (mass, temperature); vectors have magnitude and direction (displacement, force).",
+    "**Types of vectors:** equal vectors (same magnitude and direction), opposite vectors (same magnitude, opposite direction), unit vector (magnitude 1), null vector (magnitude 0), parallel vectors, collinear vectors, coplanar vectors.",
+    "**Addition:** $\\vec{a} + \\vec{b} = \\vec{b} + \\vec{a}$ (commutative). Triangle law: place tail of $\\vec{b}$ at head of $\\vec{a}$; resultant closes the triangle.",
+    " **Subtraction:** $\\vec{a} - \\vec{b} = \\vec{a} + (-\\vec{b})$. Geometrically, draw $\\vec{a}$ and $\\vec{b}$ from same point; $\\vec{a} - \\vec{b}$ is the vector from head of $\\vec{b}$ to head of $\\vec{a}$.",
+    "**Scalar multiplication:** $k\\vec{a}$ has magnitude $|k|\\cdot|\\vec{a}|$. If $k>0$, direction unchanged; if $k<0$, direction reversed; if $k=0$, null vector."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

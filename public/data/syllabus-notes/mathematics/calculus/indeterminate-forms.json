@@ -1,0 +1,35 @@
+{
+  "title": "Indeterminate Forms and Evaluation Techniques",
+  "notes": [
+    "Indeterminate forms arise when direct substitution yields an ambiguous result. The seven forms are: 0/0, ∞/∞, 0·∞, ∞−∞, 0⁰, 1^∞, ∞⁰.",
+    "For 0/0 and ∞/∞ forms, factorization, rationalization, or L'Hôpital's Rule may apply.",
+    "Factorization: factor numerator and denominator to cancel the zero-producing term. Example: lim(x→3) (x²−9)/(x−3) = lim(x→3) (x+3) = 6.",
+    "Rationalization: multiply by conjugate to eliminate radicals. Example: lim(x→0) (√(x+1)−1)/x = lim(x→0) x/[x(√(x+1)+1)] = 1/2.",
+    "Standard limits for trigonometric forms:",
+    "  • lim(x→0) sin(x)/x = 1",
+    "  • lim(x→0) tan(x)/x = 1",
+    "  • lim(x→0) (1−cos x)/x = 0",
+    "  • lim(x→0) sin(ax)/sin(bx) = a/b",
+    "Standard limits for exponential/logarithmic forms:",
+    "  • lim(x→0) (e^x − 1)/x = 1",
+    "  • lim(x→0) ln(1+x)/x = 1",
+    "  • lim(x→∞) (1 + 1/x)^x = e",
+    "For 1^∞, 0⁰, ∞⁰ forms: take natural log, evaluate the resulting limit, then exponentiate.",
+    "L'Hôpital's Rule: if lim f/g gives 0/0 or ∞/∞, then lim f/g = lim f'/g' (provided the latter exists)."
+  ],
+  "confusion": [
+    "L'Hôpital's Rule ONLY applies to 0/0 and ∞/∞ forms — not to 0·∞ or ∞−∞ directly.",
+    "Converting 0·∞ to 0/0 or ∞/∞ requires rearranging the expression.",
+    "1^∞ is NOT 1 — it requires logarithmic transformation."
+  ],
+  "practice": [
+    "Evaluate lim(x→0) (sin 5x)/x.",
+    "Find lim(x→∞) (1 + 2/x)^x.",
+    "Evaluate lim(x→0) (e^x − 1 − x)/x²."
+  ],
+  "universalFacts": [
+    "All indeterminate forms represent competition between two processes (e.g., numerator → 0 vs denominator → 0).",
+    "The value of a limit depends on the relative rates of approach, not just the endpoints.",
+    "These techniques form the basis for defining the derivative: f'(a) = lim(x→a) [f(x)−f(a)]/(x−a)."
+  ]
+}

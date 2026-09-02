@@ -1,0 +1,25 @@
+{
+  "title": "Application of Newton's Laws",
+  "notes": [
+    "**Newton's First Law (Inertia):** a body remains at rest or in uniform motion unless acted on by an external force. Inertia is the resistance to change in motion.",
+    "**Newton's Second Law:** $\\vec{F} = m\\vec{a}$. The acceleration of a body is directly proportional to the net force and inversely proportional to its mass.",
+    "**Newton's Third Law:** for every action, there is an equal and opposite reaction. $\\vec{F}_{AB} = -\\vec{F}_{BA}$.",
+    "**Common applications:** tension in strings, normal reaction, friction, and pseudo forces in accelerating frames all come from applying Newton's laws.",
+    "**Pseudo force:** in a non-inertial frame accelerating with $\\vec{a}$, a fictitious force $-m\\vec{a}$ appears on every mass to explain motion using Newton's second law."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

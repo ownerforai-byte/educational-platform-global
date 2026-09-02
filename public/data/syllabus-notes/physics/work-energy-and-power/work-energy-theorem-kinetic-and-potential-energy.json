@@ -1,0 +1,26 @@
+{
+  "title": "Work-Energy Theorem â€” Kinetic and Potential Energy",
+  "notes": [
+    "**Work-Energy Theorem:** the net work done on a body equals the change in its kinetic energy: $W_{net} = \\Delta K = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2$.",
+    "**Kinetic energy:** $K = \\frac{1}{2}mv^2$. It is always positive and is a scalar. It depends on speed, not velocity direction.",
+    "**Derivation insight:** from Newton's second law, $F = ma = m\\frac{dv}{dt}$. Multiply by $v$ and integrate: $\\int Fv\\,dt = \\int mv\\,dv$, which gives $W = \\Delta K$.",
+    "**Potential energy:** energy stored due to position or configuration. Gravitational PE near Earth's surface: $U_g = mgh$.",
+    "**Elastic PE:** for a spring, $U_s = \\frac{1}{2}kx^2$. This comes directly from the work done against the spring force.",
+    "**Why the theorem is powerful:** it connects force and motion through energy, often simplifying problems where forces are complicated but the energy change is easy to compute."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

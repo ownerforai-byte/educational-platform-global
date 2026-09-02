@@ -1,0 +1,24 @@
+{
+  "title": "Relation Between Prism Angle, Minimum Deviation and Refractive Index",
+  "notes": [
+    "**Prism formula:** $n = \\frac{\\sin\\left(\\frac{A + \\delta_{min}}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)}$, where $A$ is the prism angle and $\\delta_{min}$ is the minimum deviation.",
+    "**Derivation basis:** at minimum deviation, $i = e$ and $r_1 = r_2 = r$. From geometry inside the prism, $A = 2r$, and from Snell's law at each face, $n = \\sin i / \\sin r$.",
+    "**Measuring $n$:** measure $A$ with a spectrometer and $\\delta_{min}$ from the angle of minimum deviation, then use the formula to find $n$ without knowing the speed of light in the material.",
+    "**Dispersion consequence:** because $n$ varies with wavelength, different colours have different $\\delta_{min}$. Violet bends more than red, spreading white light into a spectrum."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

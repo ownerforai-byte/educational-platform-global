@@ -1,0 +1,26 @@
+{
+  "title": "Conservative and Non-Conservative Forces",
+  "notes": [
+    "**Conservative force:** work done is independent of the path and depends only on the initial and final positions. Examples: gravity, spring force, electrostatic force.",
+    "**Closed path test:** for a conservative force, the work done around any closed path is zero: $\\oint \\vec{F} \\cdot d\\vec{r} = 0$.",
+    "**Potential energy association:** conservative forces allow the definition of potential energy because work done against them is stored and recoverable.",
+    "**Non-conservative force:** work done depends on the path. Examples: friction, air resistance, viscous drag.",
+    "**Energy loss:** in non-conservative forces, mechanical energy is dissipated as heat or sound. For example, a sliding block stops because friction converts KE to thermal energy.",
+    "**Mixed systems:** when both conservative and non-conservative forces act: $W_{nc} = \\Delta E_{mech}$, where $W_{nc}$ is the work done by non-conservative forces."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "title": "Limits — Concept and Introduction",
+  "notes": [
+    "A function f assigns a unique element of Y to each element of X. If f(a) is a finite number, f(x) exists at x = a; otherwise it is undefined.",
+    "Example: f(x) = 3x + 5 exists at x = 2 since f(2) = 11 (finite). But f(x) = 1/(x−1) is undefined at x = 1 (1/0).",
+    "The limit describes the value a function approaches as x gets arbitrarily close to a point — even if the function is undefined there.",
+    "Geometric interpretation: the y-value the graph is heading toward as x approaches a from either side.",
+    "Physical interpretation: instantaneous velocity is the limit of average velocity as the time interval approaches zero.",
+    "Indeterminate forms (0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0^0) require special techniques — direct substitution alone is insufficient.",
+    "Key standard limits: lim(x→0) sin(x)/x = 1, lim(x→0) (1−cos x)/x = 0, lim(x→0) tan(x)/x = 1, lim(x→0) (e^x − 1)/x = 1, lim(x→0) ln(1+x)/x = 1.",
+    "Algebraic properties of limits: lim[f±g] = lim f ± lim g, lim[c·f] = c·lim f, lim[f·g] = lim f · lim g, lim[f/g] = lim f / lim g (denominator ≠ 0).",
+    "<h1>The Core Philosophy of Limits</h1>",
+    "<p>A limit asks: as <i>x</i> gets infinitely close to a number, what value is the function heading toward? Sometimes the function has a 'hole' at that exact spot — plugging the number in directly gives 0/0, called an <b>Indeterminate Form</b>. This does <u>not</u> mean the limit doesn't exist; it means the answer is hidden and needs algebra or calculus to expose it. Think of <b>Direct Substitution</b> as checking the front door: if it's unlocked (gives a real number), you walk right in. If it's locked with a 0/0 sign, you need the right tool to pick the lock.</p>",
+    "<h2>Tool 1 — Direct Substitution (The Front Door)</h2>",
+    "<p>When to use: always try this first, for smooth continuous functions. Example: <span class=\"formula\">lim(x→2) (3x² − 5x + 1) = 3(2)² − 5(2) + 1 = 3</span>.</p>",
+    "<h2>Tool 2 — Factoring Method (The Common Factor Cleaner)</h2>",
+    "<p>When to use: if direct substitution gives 0/0 and you see polynomial expressions that share a common factor. Example: <span class=\"formula\">lim(x→3) (x² − 9)/(x − 3) = lim(x→3) (x−3)(x+3)/(x−3) = lim(x→3) (x+3) = 6</span>.</p>",
+    "<h2>Tool 3 — Conjugate Multiplication (The Radical Vaporizer)</h2>",
+    "<p>When to use: if you get 0/0 and see a square root expression like √A − B. Multiply top and bottom by the conjugate (flip the sign): <span class=\"formula\">(√A − B)(√A + B) = A − B²</span>.</p>",
+    "<h2>Tool 4 — Standard Trigonometric Limits (The Squeeze Anchors)</h2>",
+    "<p>When to use: for sin(x) or tan(x) ratios approaching zero. The key rule: <span class=\"formula\">lim(θ→0) sin(θ)/θ = 1</span>.</p>",
+    "<h2>Tool 5 — L'Hôpital's Rule (The Nuclear Option)</h2>",
+    "<p>When to use: if you get 0/0 or ∞/∞ and know derivatives. Differentiate the top and bottom <i>separately</i> (not using the quotient rule), then re-evaluate: <span class=\"formula\">lim f(x)/g(x) = lim f'(x)/g'(x)</span>.</p>"
+  ],
+  "confusion": [
+    "Do not confuse limit with function value — f(a) may not exist while lim(x→a) f(x) does.",
+    "0/0 is NOT zero — it is indeterminate and requires further analysis.",
+    "Left-hand limit and right-hand limit must both exist and be equal for the limit to exist.",
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Find lim(x→2) (x² − 4)/(x − 2) by factoring.",
+    "Evaluate lim(x→0) sin(3x)/x using the standard limit.",
+    "Determine whether lim(x→0) |x|/x exists.",
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "Limits are the foundation of all calculus — derivatives and integrals are defined as limits.",
+    "Every polynomial, rational, trigonometric, exponential, and logarithmic function has a well-defined limit at every point in its domain.",
+    "The concept of limit bridges algebra and geometry — it allows us to talk about instantaneous rates of change.",
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

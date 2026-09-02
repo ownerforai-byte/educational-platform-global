@@ -1,0 +1,26 @@
+{
+  "title": "Modern Chemical Manufactures â€” Ammonia, Nitric Acid, Sulphuric Acid, NaOH, Soda Ash and Urea",
+  "notes": [
+    "**Ammonia (Haber's process):** $N_2 + 3H_2 \\rightleftharpoons 2NH_3$, $\\Delta H = -92.4$ kJ. Conditions: 200 atm, 450Â°C, iron catalyst with $K_2O$ and $Al_2O_3$ promoters. Single pass conversion ~15%; recycle unreacted gases.",
+    "**Nitric acid (Ostwald's process):** $4NH_3 + 5O_2 \\rightarrow 4NO + 6H_2O$ (Pt-Rh catalyst, 900Â°C), then $2NO + O_2 \\rightarrow 2NO_2$, then $3NO_2 + H_2O \\rightarrow 2HNO_3 + NO$.",
+    "**Sulphuric acid (Contact process):** $S + O_2 \\rightarrow SO_2$, then $2SO_2 + O_2 \\rightleftharpoons 2SO_3$ ($V_2O_5$ catalyst, 450Â°C, 1-2 atm), then $SO_3 + H_2SO_4 \\rightarrow H_2S_2O_7$ (oleum), then $H_2S_2O_7 + H_2O \\rightarrow 2H_2SO_4$.",
+    "**Sodium hydroxide (Diaphragm cell):** electrolysis of brine. $2NaCl + 2H_2O \\rightarrow 2NaOH + H_2 + Cl_2$. Mercury cell is being phased out due to mercury pollution.",
+    "**Sodium carbonate (Solvay process):** $NH_3 + CO_2 + H_2O \\rightarrow NH_4HCO_3$, then $NH_4HCO_3 + NaCl \\rightarrow NaHCO_3 + NH_4Cl$, then $2NaHCO_3 \\xrightarrow{\\Delta} Na_2CO_3 + CO_2 + H_2O$.",
+    "**Urea:** $2NH_3 + CO_2 \\xrightarrow{180Â°C, 150 atm} NH_2COONH_4$ (ammonium carbamate), then $NH_2COONH_4 \\rightarrow NH_2CONH_2 + H_2O$. World's most used nitrogen fertilizer."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

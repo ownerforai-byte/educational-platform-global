@@ -1,0 +1,51 @@
+{
+  "title": "First Law of Thermodynamics",
+  "notes": [
+    "The first law of thermodynamics states that energy can neither be created nor destroyed; it can only be transformed from one form to another.",
+    "For a system undergoing a change: Î”U = Q âˆ’ W, where Î”U is the change in internal energy, Q is the heat supplied to the system and W is the work done by the system.",
+    "This law is essentially the law of conservation of energy applied to thermodynamic systems.",
+    "ADDED LINE: A cyclic process returns the system to its initial state, so Î”U = 0 and Q = W.",
+    "$$Î”U = Q âˆ’ W$$",
+    "$$PV = nRT$$",
+    "$$\\eta = 1 - \\frac{T_c}{T_h}$$",
+    "$$\\Delta S = \\frac{Q_{rev}}{T}$$",
+    "$$W = P\\Delta V$$",
+    "- Thermodynamics",
+    "  - Laws",
+    "    - Zeroth law → temperature",
+    "    - First law → internal energy",
+    "    - Second law → entropy",
+    "  - Processes",
+    "    - Isothermal → constant T",
+    "    - Adiabatic → Q = 0",
+    "    - Isochoric → constant V",
+    "  - Cycles",
+    "    - Carnot → most efficient",
+    "    - Refrigerator → reverse cycle",
+    "- Isothermal process: constant temperature (Î”U = 0, all heat becomes work)",
+    "- Adiabatic process: no heat exchange (Q = 0)",
+    "- Isochoric process: constant volume (W = 0)",
+    "- Isobaric process: constant pressure",
+    "- Work done = area under the Pâ€“V curve",
+    "- Efficiency of a Carnot engine: Î· = 1 âˆ’ Tc/Th",
+    "Q1. State the first law of thermodynamics and explain its limitations. [2]",
+    "Q2. Derive an expression for the work done during the isothermal expansion of an ideal gas. [3]",
+    "Q3. Define entropy. Show that the entropy of the universe increases in a spontaneous process. [3]",
+    "Q4. A Carnot engine works between 600 K and 300 K. Find its efficiency. [2]"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

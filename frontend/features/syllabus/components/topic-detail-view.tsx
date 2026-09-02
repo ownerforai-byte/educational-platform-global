@@ -23,6 +23,7 @@ import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import type { NotesTrack } from "@/lib/imported-notes";
+import { RavikishanTopicResources } from "@/components/content/ravikishan-topic-resources";
 
 function isNotesTrack(value: string): value is NotesTrack {
   return value === "class-11-notes" || value === "class-12-notes";
@@ -119,6 +120,14 @@ export async function TopicDetailView({
         unitId={unitId}
         topicSlug={topic.slug}
         unit={unit}
+      />
+
+      {/* Ravikishan-sourced notes — merged, ordered by topic slug ascending */}
+      <RavikishanTopicResources
+        classSlug={classSlug}
+        subjectSlug={subjectSlug}
+        unitId={unitId}
+        topicSlug={topic.slug}
       />
 
       {/* ─── Dedicated Resource Sections by Unit ─── */}

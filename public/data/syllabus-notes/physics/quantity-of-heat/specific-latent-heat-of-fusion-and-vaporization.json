@@ -1,0 +1,30 @@
+{
+  "title": "Heat (H) â€” Mass and Temperature Dependency",
+  "notes": [
+    "**Mass Dependency:** Heat absorbed/released (H) is directly proportional to mass (m): H âˆ m",
+    "**Temperature Dependency:** H is directly proportional to the change in temperature (Î”Î¸): H âˆ Î”Î¸, where Î”Î¸ = Î¸â‚‚ âˆ’ Î¸â‚ (final âˆ’ initial)",
+    "**Combined relation:** H âˆ mÂ·Î”Î¸ â†’ introducing specific heat capacity (s or c) as the constant of proportionality gives **H = mÂ·cÂ·Î”Î¸**",
+    "**Setup:** aluminium (c = 900 J/kgÂ·K) and copper (c = 390 J/kgÂ·K) spheres of equal mass are heated to the same temperature and cooled under identical conditions",
+    "Identical conditions â‡’ same rate of heat loss (dH/dt) for both spheres at a given instant, by Newton's Law of Cooling",
+    "But âˆ’dH/dt = mcÂ·(dÎ¸/dt), so dÎ¸/dt = (dH/dt)/(mc) â€” for the same dH/dt, a smaller c gives a larger dÎ¸/dt",
+    "**Answer: Copper (lower c) cools faster** â€” its temperature falls more quickly even though it isn't losing heat energy any faster than the aluminium sphere",
+    "**Setup:** a brass block (100 g) and a wooden block (100 g) are both initially at 100Â°C and left in the same room",
+    "Wood has a much lower thermal conductivity and typically a lower specific heat capacity than brass, but under Newton's Law of Cooling the key factor is mÂ·c: a lower mÂ·c means a faster rate of temperature fall for the same rate of heat loss",
+    "This is exactly why 'water equivalent' is useful â€” instead of tracking each material's own c, every object can be converted to 'an equivalent mass of water' (W = mc/c_w), letting heat calculations for mixtures of different materials be done as if everything were water"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

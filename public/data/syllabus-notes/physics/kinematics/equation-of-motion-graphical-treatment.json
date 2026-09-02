@@ -1,0 +1,25 @@
+{
+  "title": "Equations of Motion â€” Graphical Treatment",
+  "notes": [
+    "**Three equations for constant acceleration:** $v = u + at$, $s = ut + \\frac{1}{2}at^2$, $v^2 = u^2 + 2as$.",
+    "**Graphical derivation of $v = u + at$:** the slope of a velocity-time graph equals acceleration. The line from $(t=0, v=u)$ to $(t=t, v=v)$ gives $a = (v-u)/t$, so $v = u + at$.",
+    "**Graphical derivation of $s = ut + \\frac{1}{2}at^2$:** the area under the velocity-time graph equals displacement. For constant acceleration, the area is a trapezium: $s = \\text{area} = \\frac{u+v}{2} \\times t$. Substituting $v = u+at$ gives $s = ut + \\frac{1}{2}at^2$.",
+    "**Graphical derivation of $v^2 = u^2 + 2as$:** eliminate $t$ from the first two equations. From $v = u+at$, $t = (v-u)/a$. Substituting into the displacement equation gives $v^2 = u^2 + 2as$.",
+    "**Why constant acceleration matters:** all three derivations assume the acceleration graph is a horizontal line. If acceleration changes with time, these equations do not apply directly."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

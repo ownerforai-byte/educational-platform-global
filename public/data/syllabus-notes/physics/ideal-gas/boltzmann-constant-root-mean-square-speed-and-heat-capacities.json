@@ -1,0 +1,25 @@
+{
+  "title": "Boltzmann Constant, Root Mean Square Speed and Heat Capacities",
+  "notes": [
+    "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\times 10^{-23}\\,\\text{J/K}$. It connects microscopic and macroscopic thermodynamics.",
+    "**RMS speed:** $v_{rms} = \\sqrt{\\frac{3RT}{M}}$, where $M$ is molar mass in kg/mol. At STP, $v_{rms}$ for air is about 485 m/s.",
+    "**Most probable speed:** $v_p = \\sqrt{\\frac{2RT}{M}}$. The speed at which the Maxwell-Boltzmann distribution peaks.",
+    "**Mean speed:** $v_{mean} = \\sqrt{\\frac{8RT}{\\pi M}}$. The average speed of all molecules.",
+    "**Heat capacities:** for a monatomic ideal gas, $C_V = \\frac{3}{2}R$ and $C_P = \\frac{5}{2}R$. The ratio $\\gamma = C_P/C_V = 5/3 \\approx 1.67$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

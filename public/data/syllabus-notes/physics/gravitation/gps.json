@@ -1,0 +1,25 @@
+{
+  "title": "GPS â€” Global Positioning System",
+  "notes": [
+    "**Principle:** a GPS receiver calculates its position by measuring the time delay of radio signals from at least four satellites whose positions are known precisely.",
+    "**Satellite constellation:** 24+ satellites orbit at about 20,200 km altitude in six orbital planes, ensuring at least four are visible from any point on Earth at any time.",
+    "**Distance measurement:** distance = speed of light $\\times$ time delay. A timing error of just 1 nanosecond causes a position error of about 30 cm.",
+    "**Relativistic corrections:** special relativity slows satellite clocks by about 7 microseconds/day due to their speed; general relativity speeds them up by about 45 microseconds/day due to weaker gravity at altitude. Net effect: +38 microseconds/day, which must be corrected or GPS would accumulate errors of about 10 km per day.",
+    "**Four satellites needed:** three give position in 3D space; the fourth gives the precise time, since the receiver's clock is not synchronized with satellite atomic clocks."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

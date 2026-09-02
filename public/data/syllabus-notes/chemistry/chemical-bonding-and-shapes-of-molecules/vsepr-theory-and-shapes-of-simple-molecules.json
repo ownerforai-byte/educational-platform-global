@@ -1,0 +1,28 @@
+{
+  "title": "VSEPR Theory and Shapes of Simple Molecules",
+  "notes": [
+    "**VSEPR principle:** electron pairs around a central atom arrange themselves to minimize repulsion. Both bonding pairs and lone pairs repel, but lone pairs repel more strongly.",
+    "**Linear (2 electron domains):** $BeF_2$, $CO_2$. Bond angle 180Â°. No lone pairs on central atom.",
+    "**Trigonal planar (3 domains):** $BF_3$. Bond angle 120Â°. No lone pairs.",
+    "**Tetrahedral (4 domains):** $CH_4$. Bond angle 109.5Â°. No lone pairs. $CH_3Cl$ is also tetrahedral but bond angles are slightly distorted because Cl is more electronegative than H.",
+    "**Trigonal bipyramidal (5 domains):** $PCl_5$. Axial bonds are longer and at 90Â° to equatorial bonds.",
+    "**Octahedral (6 domains):** $SF_6$. Bond angle 90Â°.",
+    "**Bent (2 bonds + 1 or 2 lone pairs):** $H_2O$ has 2 lone pairs, bond angle 104.5Â° (compressed from 109.5Â°). $H_2S$ is bent but with smaller angle (~92Â°) because S is larger and less electronegative than O.",
+    "**Trigonal pyramidal (3 bonds + 1 lone pair):** $NH_3$. Bond angle 107Â° (compressed from 109.5Â°). $PH_3$ is also pyramidal but with smaller angle (~93Â°) because P is larger."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

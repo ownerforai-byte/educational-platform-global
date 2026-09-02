@@ -1,0 +1,24 @@
+{
+  "title": "Minimum Deviation Condition",
+  "notes": [
+    "**Deviation $\\delta$:** the angle between the original direction of the incident ray and the final direction of the emergent ray after passing through a prism.",
+    "**Minimum deviation $\\delta_{min}$:** occurs when the ray passes symmetrically through the prism. At $\\delta_{min}$, the angle of incidence equals the angle of emergence, and the ray inside the prism is parallel to the base.",
+    "**Measuring $\\delta_{min}$:** rotate the prism and record the angle of minimum deviation using a spectrometer. This gives the most accurate value for calculating refractive index.",
+    "**Why symmetric:** at minimum deviation, the path through the prism is the shortest possible for the given geometry, and any tilt increases the total bending."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

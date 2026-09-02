@@ -1,0 +1,40 @@
+{
+  "title": "Bohr's Atomic Model â€” Defects",
+  "notes": [
+    "Failed to predict the spectra of multi-electron atoms, such as Helium or Carbon",
+    "Could not explain the splitting of spectral lines under a magnetic field (**Zeeman Effect**) or an electric field (**Stark Effect**)",
+    "The postulate that formally restricts which orbits are allowed: the electron's angular momentum is quantized in integer multiples of h/2Ï€",
+    "**mvr = nh/2Ï€**, where m = electron mass, v = electron velocity, r = orbit radius, n = 1, 2, 3... (the principal/orbit quantum number)",
+    "**Bohrâ€“Bury scheme (1921):** a set of rules for filling electrons into shells and subshells; electrons occupy the lowest available energy levels first (aufbau principle), so the order of filling runs 1s â†’ 2s â†’ 2p â†’ 3s â†’ 3p â†’ 4s â†’ 3d â†’ 4p â†’ 5s â†’ 4d â†’ 5p â†’ 6s â†’ 4f â†’ 5d â†’ 6p â†’ 7s â†’ 5f â†’ 6d â†’ 7p.",
+    "**Maximum shell capacity:** the maximum number of electrons in a shell is 2nÂ² â€” K: 2, L: 8, M: 18, N: 32.",
+    "**Subshell electron capacity:** s holds 2, p holds 6, d holds 10, f holds 14 electrons.",
+    "**Spatial configurations:** each subshell contains a fixed set of orbitals â€” s: 1, p: 3, d: 5, f: 7 â€” so a shell of principal quantum number n contains a total of nÂ² orbitals.",
+    "**Valence shell limit:** the outermost (valence) shell can hold at most 8 electrons.",
+    "**Penultimate shell limit:** the second-outermost (penultimate) shell can hold at most 18 electrons; the third-outermost (antepenultimate) shell at most 32.",
+    "**Concentric capacity rings:** the electrons are distributed in concentric shells (K, L, M, N, â€¦) around the nucleus, each ring accommodating its characteristic maximum.",
+    "Bohr's postulates and resulting equations were derived by balancing the electrostatic attraction between a single electron and the nucleus against the centripetal force needed for circular motion â€” a clean two-body problem",
+    "With two or more electrons, electronâ€“electron repulsion enters the picture, making it a multi-body problem that Bohr's simple circular-orbit model has no mechanism to account for â€” this is why it accurately predicts the spectra of H, Heâº, and LiÂ²âº (all single-electron species) but not neutral He or heavier atoms",
+    "**Zeeman Effect:** spectral lines split into multiple closely spaced lines when the atom is placed in a magnetic field",
+    "**Stark Effect:** spectral lines split when the atom is placed in an electric field",
+    "Bohr's model treats each orbit as having a single fixed energy, so it cannot explain why a magnetic or electric field would split a single spectral line into several â€” this splitting requires additional quantum numbers (like the magnetic quantum number) that only came with the more advanced quantum mechanical model of the atom",
+    "**Q1. Why is the energy of an electron in a Bohr orbit taken as negative?** Because the electron is bound to the nucleus; energy must be supplied to remove it. The most negative energy corresponds to the most stable (lowest) orbit, n = 1.",
+    "**Q2. State two major defects of Bohr's atomic model.** (1) It could not explain why only certain orbits are allowed (quantization was assumed, not derived). (2) It could not explain the spectra of atoms with more than one electron (e.g. helium), nor the fine structure of spectral lines.",
+    "**Q3. What is the significance of E = mcÂ² in the development of quantum mechanics?** It links mass and energy, and combined with Planck's E = hÎ½ it leads to the de Broglie relation Î» = h/(mv), showing that matter has wave-like properties.",
+    "**Q4. How did SchrÃ¶dinger's 1926 work shift the atomic model?** SchrÃ¶dinger replaced Bohr's definite circular orbits with a wave equation whose solutions (wave functions Ïˆ) describe the electron's behaviour in three dimensions, giving rise to the probabilistic orbital concept."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

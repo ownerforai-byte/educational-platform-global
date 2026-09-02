@@ -1,0 +1,38 @@
+{
+  "title": "Angle Bisector â€” Verifying with the tan Î¸ Method",
+  "notes": [
+    "As a cross-check, find the angle Î¸ between one of the original lines and one candidate bisector using: tan Î¸ = |(mâ‚ âˆ’ m_b)/(1 + mâ‚Â·m_b)|, where mâ‚ is the original line's slope and m_b is the bisector's slope",
+    "**If tan Î¸ < 1** (Î¸ < 45Â°): since Î¸ is half the angle between the two original lines, the total angle is less than 90Â°, so this bisector is the **acute** angle bisector",
+    "**If tan Î¸ > 1** (Î¸ > 45Â°): this bisector is the **obtuse** angle bisector",
+    "**Worked check:** slope of Bisector 1 (6x + 6y âˆ’ 1 = 0) is m_b = âˆ’6/6 = âˆ’1; with the original line's slope mâ‚ = âˆ’1/2: tan Î¸ = |(âˆ’1/2 âˆ’ (âˆ’1))/(1 + (âˆ’1/2)(âˆ’1))| = |(1/2)/(3/2)| = 1/3",
+    "Since tan Î¸ = 1/3 < 1, this confirms 6x + 6y âˆ’ 1 = 0 is definitively the **acute angle bisector** â€” matching the aâ‚aâ‚‚ + bâ‚bâ‚‚ method",
+    "Both constants (âˆ’5 and +13) â€” the second line already has a positive constant; for the first, multiply through by âˆ’1 so the constant is positive: âˆ’3x âˆ’ 4y + 5 = 0, giving aâ‚ = âˆ’3, bâ‚ = âˆ’4",
+    "For the second line: aâ‚‚ = 5, bâ‚‚ = 12",
+    "aâ‚aâ‚‚ + bâ‚bâ‚‚ = (âˆ’3)(5) + (âˆ’4)(12) = âˆ’15 âˆ’ 48 = **âˆ’63**",
+    "Since this is negative, the **(+) sign bisector is the acute angle bisector**, and the (âˆ’) sign bisector is the obtuse angle bisector"
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations.",
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step.",
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept.",
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

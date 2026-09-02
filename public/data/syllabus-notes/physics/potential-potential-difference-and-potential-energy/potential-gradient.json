@@ -1,0 +1,25 @@
+{
+  "title": "Potential Gradient",
+  "notes": [
+    "**Definition:** the rate of change of potential with distance: $dV/dr$.",
+    "**Relation to electric field:** $E = -dV/dr$. The electric field equals the negative potential gradient.",
+    "**Units:** V/m or N/C. Both are equivalent because $1\\,\\text{V/m} = 1\\,\\text{N/C}$.",
+    "**Physical meaning:** the potential gradient tells you how steeply potential changes in space. A steep gradient means a strong electric field.",
+    "**Graphical interpretation:** on a graph of $V$ versus $r$, the slope at any point equals $-E$ at that point. A steep negative slope means a strong field pointing inward."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

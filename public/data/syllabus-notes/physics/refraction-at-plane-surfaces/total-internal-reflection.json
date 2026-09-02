@@ -1,0 +1,25 @@
+{
+  "title": "Total Internal Reflection",
+  "notes": [
+    "**Condition:** light travels from a denser medium to a rarer medium, and the angle of incidence exceeds the critical angle $\\theta_c$.",
+    "**Critical angle formula:** $\\sin\\theta_c = n_2/n_1$ where $n_1 > n_2$. For glass-to-air ($n_1=1.52, n_2=1.0$), $\\theta_c \\approx 41.1Â°$. For diamond-to-air, $\\theta_c \\approx 24.4Â°$.",
+    "**Why diamonds sparkle:** the tiny critical angle means light entering a cut diamond undergoes many internal reflections before exiting, creating brilliant flashes of colour.",
+    "**Applications:** optical fibres (light guided by repeated TIR), binocular prisms (Porro prisms), automotive reflectors, and diamond cutting.",
+    "**Mirage:** on a hot road, air near the surface is hotter and less dense than air above. Light from the sky bends away from the normal as it passes through these layers, eventually undergoing TIR and reaching the observer's eye as if from a water surface below."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}
