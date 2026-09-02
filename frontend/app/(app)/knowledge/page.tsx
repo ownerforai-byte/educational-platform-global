@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Beaker, Zap, Dna, BookOpen } from "lucide-react";
+import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine } from "lucide-react";
 
 const knowledgeSections = [
   {
@@ -29,6 +29,13 @@ const knowledgeSections = [
     subtitle: "Tenses, Voice, Narration, Clauses, Conditionals, Modals",
     icon: BookOpen,
     color: "#3b82f6",
+  },
+  {
+    href: "/knowledge/writing",
+    title: "English Writing",
+    subtitle: "Essays, Letters, Reports, Articles, Story, Summary — format, structure & conceptual grammar",
+    icon: PenLine,
+    color: "#6366f1",
   },
   {
     href: "/knowledge/byakaran",

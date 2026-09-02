@@ -1,7 +1,7 @@
 # 🧭 Architecture Blueprint — ravikishan (educational-platform-global)
 
 > **Auto-generated** — do not edit by hand. Regenerate with `npm run blueprint` (runs automatically on every commit via the pre-commit hook).
-> Generated: 2026-09-01
+> Generated: 2026-09-02
 
 <!-- BLUEPRINT:START -->
 ```text
@@ -512,6 +512,9 @@ ravikishan/
 │       │   │   └── …
 │       │   └── physics/
 │       │       └── …
+│       ├── class-12/
+│       │   └── english/
+│       │       └── …
 │       ├── _index.json
 │       └── manifest.json
 ├── content-tools/
@@ -547,6 +550,7 @@ ravikishan/
 │   ├── generate-lab-pages.js
 │   ├── generate-lab-pages.ts
 │   ├── generate-theory-routes.mjs
+│   ├── generate-writing-topics.mjs
 │   ├── git-commit-push.sh
 │   ├── git-push.sh
 │   ├── import-r-notes.ts

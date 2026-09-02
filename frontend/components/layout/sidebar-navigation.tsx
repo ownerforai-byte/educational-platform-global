@@ -22,6 +22,7 @@ import {
   ChevronsUp,
   Sparkles,
   UserPlus,
+  PenLine,
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -45,6 +46,8 @@ const browseItems: NavItem[] = [
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/loksewa", label: "Loksewa", icon: Users },
   { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
+  { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },
+  { href: "/knowledge/writing", label: "Writing Section", icon: PenLine },
 ];
 
 const accountItems: NavItem[] = [

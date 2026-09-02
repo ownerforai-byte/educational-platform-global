@@ -14,6 +14,7 @@ import {
   LogIn,
   X,
   Menu,
+  PenLine,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -24,6 +25,7 @@ const mobileItems = [
   { href: "/loksewa", label: "Loksewa", icon: Landmark },
   { href: "/world-knowledge", label: "World Knowledge", icon: Globe },
   { href: "/lab", label: "Lab", icon: FlaskConical },
+  { href: "/knowledge/writing", label: "Writing Section", icon: PenLine },
 ];
 
 export function MobileNav() {

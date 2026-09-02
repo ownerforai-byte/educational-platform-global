@@ -79,6 +79,9 @@ function mapRavUnitToSyllabus(subject: string, unit: string): string | undefined
     "biology/botany": "floral-diversity",
     "biology/unit-8-faunal-diversity": "faunal-diversity",
     "english/short-stories": "reading-and-comprehension",
+    "english/writing-and-composition": "writing-and-composition",
+    "english/writing-skills": "writing-skills",
+    "english/grammar-for-writing": "writing-and-composition",
     "nepali/bhashatattva": "bhasha-ra-vyakarana",
     "nepali/poems": "sahitya-adhyayan",
   };
