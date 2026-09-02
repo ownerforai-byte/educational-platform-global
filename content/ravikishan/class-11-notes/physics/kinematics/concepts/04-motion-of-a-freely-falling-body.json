@@ -5,27 +5,38 @@
   "topicTitle": "Motion of a freely falling body",
   "relevance": 100,
   "notes": [
-    "**Freely falling body:** an object dropped from rest with no air resistance, falling solely under gravity.",
-    "**Acceleration is $g$ downward:** the equations of motion simplify because $a = g$ and initial velocity $u = 0$.",
-    "**Downward motion:** $v = gt$, $h = \\frac{1}{2}gt^2$, $v^2 = 2gh$.",
-    "**Upward motion:** when a body is thrown upward, gravity acts downward. The equations become $v = u - gt$, $h = ut - \\frac{1}{2}gt^2$, $v^2 = u^2 - 2gh$.",
-    "**Time to reach maximum height:** at the top, $v = 0$, so $t_{up} = u/g$. The total time of flight for a body thrown up and caught at the same level is $T = 2u/g$.",
-    "**Maximum height:** $H = u^2/(2g)$. A larger $u$ gives a much larger $H$ because height scales with the square of the initial speed."
+    "**Definition:** A freely falling body is an object moving under the influence of gravity alone, with no air resistance. Near Earth's surface, the acceleration is approximately constant: g = 9.8 m/s² downward.",
+    "**Equations for downward motion (dropped from rest):** If an object is released from rest (u = 0), the equations simplify: v = gt, h = ½gt², v² = 2gh. Here v is downward speed, h is distance fallen.",
+    "**Equations for upward motion (thrown upward):** When a body is thrown upward with initial speed u, gravity acts downward: v = u - gt, h = ut - ½gt², v² = u² - 2gh. Here h is height above launch point, v is velocity (positive upward).",
+    "**Time to reach maximum height:** At the top of the trajectory, v = 0. From v = u - gt, 0 = u - gt_up → t_up = u/g. The body is momentarily at rest at the maximum height.",
+    "**Total time of flight (launch and return to same level):** The body goes up and comes back down to the launch level. The time to go up equals the time to fall down from rest from height H. Total time T = 2u/g.",
+    "**Maximum height reached:** H = u²/(2g). This is derived from v² = u² - 2gH with v = 0 at the top. Height scales with the square of the initial speed — double the speed gives four times the height.",
+    "**Velocity when returning to launch level:** The body returns with the same speed u but opposite direction: v = -u. This is because gravity is a conservative force and mechanical energy is conserved (ignoring air resistance).",
+    "**Effect of air resistance:** In reality, air resistance opposes motion. A light object (feather) reaches terminal velocity quickly. A heavy dense object (coin) approximates free fall better. Terminal velocity v_t = √(2mg/(ρAC_d)) for quadratic drag.",
+    "**Galileo's inclined plane experiment:** Galileo couldn't measure free fall directly (too fast), so he used inclined planes with small angles to slow down the motion, establishing s ∝ t².",
+    "**Variation of g with height:** At height h above Earth's surface, g(h) = g_0(R/(R+h))², where R is Earth's radius (~6400 km). At ISS altitude (400 km), g ≈ 8.7 m/s² (11% less than surface). For most problems, g is treated as constant.",
+    "**Sign convention in free fall:** Choose a coordinate system and stick to it. Convention 1: Upward positive → a = -g. Convention 2: Downward positive → a = +g. Both work if applied consistently. The choice affects the signs of u, v, h, t."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A freely falling body does NOT have constant velocity — it has constant ACCELERATION (g). The velocity increases continuously: v = gt (if dropped) or v = u - gt (if thrown up). Many students confuse 'acceleration is constant' with 'velocity is constant'.",
+    "The mass of the object does NOT affect free fall acceleration (ignoring air resistance). A 1 kg mass and a 1000 kg mass fall with the same acceleration g. This was demonstrated by Galileo (allegedly at the Leaning Tower) and famously by Apollo 15 astronauts on the Moon.",
+    "At the top of the trajectory, the velocity is ZERO but the acceleration is STILL g downward. Many students think acceleration is zero at the top because velocity is zero. The acceleration is the rate of change of velocity; it does not vanish when velocity momentarily becomes zero.",
+    "The time to go up is NOT equal to the time to fall down if the landing level is different from the launch level. The t_up = t_down symmetry only holds for return to the SAME horizontal level.",
+    "Air resistance makes heavier objects fall faster in reality. A feather and a hammer dropped in vacuum fall at the same rate (as shown on the Moon). In air, the feather's terminal velocity is much lower due to its large surface-to-mass ratio."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A stone is dropped from a 100 m tall cliff. (a) How long does it take to reach the ground? (b) What is its velocity just before impact? Solution: u = 0, h = 100 m, g = 9.8 m/s². (a) h = ½gt² → t = √(2h/g) = √(200/9.8) = √20.4 = 4.52 s. (b) v = gt = 9.8 × 4.52 = 44.3 m/s downward. Or v = √(2gh) = √(2×9.8×100) = 44.3 m/s.",
+    "A ball is thrown upward with speed 25 m/s. Find (a) maximum height, (b) time to reach top, (c) time to return to launch level, (d) velocity 3 seconds after launch. Solution: g = 9.8. (a) H = u²/(2g) = 625/19.6 = 31.9 m. (b) t_up = u/g = 25/9.8 = 2.55 s. (c) T = 2t_up = 5.10 s. (d) v = u - gt = 25 - 9.8×3 = 25 - 29.4 = -4.4 m/s (moving downward at 4.4 m/s).",
+    "A rock is thrown downward from a 50 m high bridge with an initial speed of 10 m/s. Find (a) time to hit the water, (b) impact velocity. Solution: Downward positive, u = 10, h = 50, g = 9.8. (a) 50 = 10t + ½(9.8)t² → 4.9t² + 10t - 50 = 0. t = [-10 + √(100 + 980)]/(9.8) = (-10 + √1080)/9.8 = (-10 + 32.86)/9.8 = 22.86/9.8 = 2.33 s. (b) v = u + gt = 10 + 9.8×2.33 = 32.8 m/s.",
+    "A stone is dropped from a balloon rising at 5 m/s at a height of 80 m. Find time to reach the ground and impact velocity. Solution: Balloon rising means stone has initial velocity u = -5 m/s (upward). h = -80 m (displacement downward). -80 = -5t + ½(-9.8)t² → 4.9t² + 5t - 80 = 0. t = [-5 + √(25 + 1568)]/9.8 = (-5 + 39.9)/9.8 = 34.9/9.8 = 3.56 s. v = u + gt = -5 + (-9.8)(3.56) = -5 - 34.9 = -39.9 m/s (downward).",
+    "A parachutist falls freely for 30 s before opening parachute. Find (a) speed after 30 s free fall, (b) distance fallen in 30 s. (Ignore air resistance during free fall.) Solution: (a) v = gt = 9.8 × 30 = 294 m/s. (b) h = ½gt² = 0.5 × 9.8 × 900 = 4410 m = 4.41 km. Note: Real terminal velocity with air resistance is ~50 m/s, not 294 m/s."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The value of g = 9.8 m/s² is an average at Earth's surface. It varies with latitude (higher at poles: 9.83 m/s², lower at equator: 9.78 m/s² due to rotation and Earth's oblate shape) and altitude.",
+    "Free fall is the classic example of constant acceleration motion. All objects in a vacuum fall with the same acceleration regardless of mass — this is the equivalence principle, which led Einstein to general relativity.",
+    "The period of a simple pendulum of length L is T = 2π√(L/g). Measuring T and L gives g. This was the standard method for measuring g before modern gravimeters.",
+    "In free fall, the object is weightless — the normal force is zero. This is why astronauts in orbit (which is continuous free fall) experience weightlessness. They are not outside Earth's gravity; they are falling with it.",
+    "The distance fallen in the nth second of free fall (from rest) is s_n = g(n - ½). This 'odd numbers rule' (1, 3, 5, 7... in units of g/2) was discovered by Galileo and used to prove s ∝ t²."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics"

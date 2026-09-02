@@ -1,31 +1,50 @@
 {
-  "title": "Newton's Law of Cooling â€” Derivation of Rate of Fall of Temperature",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "newton-s-law-of-cooling",
-  "topicTitle": "Newton's law of cooling",
-  "relevance": 100,
-  "notes": [
-    "Let m = mass, c = specific heat capacity of the body",
-    "If the body loses heat âˆ’dH in a small time dt, its temperature falls by âˆ’dÎ¸, so: âˆ’dH = mc(âˆ’dÎ¸)",
-    "Dividing by dt: âˆ’dH/dt = âˆ’mcÂ·(dÎ¸/dt) --- (Equation 2)",
-    "Substituting Equation 2 into âˆ’dH/dt = K(Î¸ âˆ’ Î¸â‚€) gives: **âˆ’mcÂ·(dÎ¸/dt) = K(Î¸ âˆ’ Î¸â‚€)** --- (Equation 3)",
-    "The negative sign shows the temperature is falling â€” a downward trend over time"
+  \"\"\"title\"\"\": \"\"\"Newton's Law of Cooling - Derivation of Rate of Fall of Temperature\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"newtons-law-of-cooling\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Newton's law of cooling - rate of fall of temperature\"\"\",
+  \"\"\"relevance\"\"\": 100,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Starting point:** Newton's law states $\\frac{dH}{dt} = -k(\\theta - \\theta_0)$, where $\\frac{dH}{dt}$ is the rate of heat loss, $k$ is the cooling constant, $\\theta$ is the body's temperature, and $\\theta_0$ is the surrounding temperature.\"\"\",
+    \"\"\"**Heat-temperature relation:** The heat lost by a body of mass $m$ and specific heat $c$ when its temperature falls by $d\\theta$ is $dH = mc\\,d\\theta$. Therefore $\\frac{dH}{dt} = mc\\frac{d\\theta}{dt}$.\"\"\",
+    \"\"\"**Substituting into Newton's law:** $mc\\frac{d\\theta}{dt} = -k(\\theta - \\theta_0)$.\"\"\",
+    \"\"\"**Rate of fall of temperature:** $\\boxed{\\frac{d\\theta}{dt} = -\\frac{k}{mc}(\\theta - \\theta_0)}$. The negative sign confirms the temperature is decreasing.\"\"\",
+    \"\"\"**Defining the cooling constant:** Let $K' = \\frac{k}{mc}$ (units: s⁻¹ or min⁻¹). Then: $\\frac{d\\theta}{dt} = -K'(\\theta - \\theta_0)$. This is the key differential equation.\"\"\",
+    \"\"\"**Physical interpretation:** The rate of temperature fall is proportional to the temperature excess $(\\theta - \\theta_0)$. Larger excess → faster cooling. As $\\theta \\to \\theta_0$, the rate approaches zero.\"\"\",
+    \"\"\"**Factors affecting $K'$:** $K' = \\frac{k}{mc}$. Larger $k$ (better heat transfer, more surface area, rougher surface) → faster cooling. Larger $mc$ (more massive or higher specific heat) → slower cooling.\"\"\",
+    \"\"\"**Comparison of two bodies:** If body 1 has $(mc)_1$ and body 2 has $(mc)_2$, cooled under identical conditions (same $k$): $\\frac{(d\\theta/dt)_1}{(d\\theta/dt)_2} = \\frac{(mc)_2}{(mc)_1}$. The body with smaller heat capacity cools faster.\"\"\",
+    \"\"\"**Units of $K'$:** Since $\\frac{d\\theta}{dt}$ has units K/s and $(\\theta - \\theta_0)$ has units K, $K'$ must have units of s⁻¹ (or min⁻¹, hr⁻¹, etc.). It is a frequency - the inverse of a time.\"\"\",
+    \"\"\"**Time constant:** The quantity $\\tau = \\frac{1}{K'} = \\frac{mc}{k}$ is called the thermal time constant. After time $t = \\tau$, the temperature excess drops to $1/e \\approx 36.8\\%$ of its initial value.\"\"\",
+    \"\"\"**Practical implication:** A body with large $mc$ (like water) has a large time constant and cools slowly. A body with small $mc$ (like a thin metal wire) has a small time constant and cools rapidly.\"\"\",
+    \"\"\"**Graphical interpretation:** The graph of $\\frac{d\\theta}{dt}$ vs. $(\\theta - \\theta_0)$ is a straight line through the origin with slope $-K'$. The graph of $\\theta$ vs. $t$ is a decaying exponential approaching $\\theta_0$.\"\"\",
+    \"\"\"**From rate to total cooling:** Integrating $\\frac{d\\theta}{dt} = -K'(\\theta - \\theta_0)$ gives $\\ln(\\theta - \\theta_0) = -K't + C$, or $\\theta(t) - \\theta_0 = (\\theta_i - \\theta_0)e^{-K't}$. This is the exponential solution.\"\"\",
+    \"\"\"**NEB exam focus:** Derive $\\frac{d\\theta}{dt} = -\\frac{k}{mc}(\\theta - \\theta_0)$ from $\\frac{dH}{dt} = -k(\\theta - \\theta_0)$. Explain each symbol. State that $K' = k/(mc)$ is the cooling constant with units of time⁻¹.\"\"\",
+    \"\"\"**Experimental determination:** Heat a liquid in a calorimeter. Record $\\theta$ at regular $t$ intervals. Plot $\\theta$ vs. $t$ and measure the slope at various points. The slope should be proportional to $(\\theta - \\theta_0)$.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ $\\frac{d\\theta}{dt} = -k(\\theta - \\theta_0)$ - the same $k$ appears without $mc$. ✅ The correct form is $\\frac{d\\theta}{dt} = -\\frac{k}{mc}(\\theta - \\theta_0)$. The $mc$ factor converts heat rate to temperature rate. $k$ is the heat-loss constant; $k/(mc)$ is the cooling constant.\"\"\",
+    \"\"\"❌ A body with larger mass always cools faster. ✅ Larger mass means larger $mc$, which means SMALLER $K'$ and SLOWER cooling. A liter of tea cools more slowly than a cup of tea at the same temperature.\"\"\",
+    \"\"\"❌ The rate of cooling is constant. ✅ The rate $\\frac{d\\theta}{dt}$ DECREASES with time as $(\\theta - \\theta_0)$ decreases. The cooling is fastest at the beginning and slows down.\"\"\",
+    \"\"\"❌ $K'$ has the same value for all bodies. ✅ $K' = k/(mc)$ depends on the body's mass, specific heat, and surface properties. Two bodies cooled under identical conditions still have different $K'$ if their $mc$ differs.\"\"\",
+    \"\"\"❌ The derivation assumes constant specific heat. ✅ Yes, we assume $c$ is constant over the temperature range. For large temperature ranges, $c$ may vary, making the analysis more complex.\"\"\",
+    \"\"\"❌ Newton's law applies when the body is hotter AND colder than surroundings. ✅ The derivation works for both cases. If $\\theta > \\theta_0$, the body cools ($\\frac{d\\theta}{dt} < 0$). If $\\theta < \\theta_0$, the body warms ($\\frac{d\\theta}{dt} > 0$).\"\"\",
+    \"\"\"❌ The time constant $\\tau = mc/k$ has units of seconds. ✅ Yes, $\\tau = mc/k$ has units of time. Specifically: $[mc] = [ML^2T^{-2}\\Theta^{-1}]$ and $[k] = [ML^2T^{-3}\\Theta^{-1}]$ (heat rate per degree), so $\\tau = [T]$. ✓\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"A body of mass 0.5 kg and $c = 800\\text{ J/kg·K}$ cools with $k = 10\\text{ J/(s·K)}$. Find $K'$ and $\\tau$. $K' = k/(mc) = 10/(0.5 \\times 800) = 10/400 = 0.025\\text{ s}^{-1}$. $\\tau = 1/K' = 40\\text{ s}$. After 40 s, the temperature excess drops to 37%.\"\"\",
+    \"\"\"Two identical bodies A and B are made of different materials. A has $c_A = 400$ and B has $c_B = 800\\text{ J/kg·K}$. Both have mass 1 kg and are cooled in the same environment. Which cools faster and by what factor? $K'_A = k/(1 \\times 400) = k/400$. $K'_B = k/(1 \\times 800) = k/800$. Ratio: $K'_A/K'_B = 2$. Body A cools twice as fast.\"\"\",
+    \"\"\"A cup of coffee at 85°C is in a 22°C room. After 5 min it is 65°C. Estimate when it will reach 40°C. Using the approximate method: avg excess in first interval = $(85+65)/2 - 22 = 53°C$. Rate = $20/5 = 4°\\text{C/min}$. $K'_{approx} = 4/53 = 0.0755\\text{ min}^{-1}$. For 65→40°C: avg excess = $(65+40)/2 - 22 = 30.5°C$. Rate = $0.0755 \\times 30.5 = 2.30°\\text{C/min}$. Time = $25/2.30 \\approx 10.9\\text{ min}$.\"\"\",
+    \"\"\"A liquid in a calorimeter cools from 70°C to 55°C in 2 min. The calorimeter has water equivalent 10 g and contains 100 g of liquid. Find the specific heat of the liquid if $k = 5\\text{ J/(s·K)}$. $K' = \\frac{\\Delta\\theta/\\Delta t}{\\theta_{avg} - \\theta_0} = \\frac{7.5/2}{62.5 - 25} = \\frac{3.75}{37.5} = 0.1\\text{ min}^{-1} = 0.00167\\text{ s}^{-1}$. $K' = k/(m_{eff}c)$. $m_{eff} = 0.1 + 0.01 = 0.11\\text{ kg}$. $c = k/(m_{eff}K') = 5/(0.11 \\times 0.00167) = 27{,}210\\text{ J/kg·K}$. This seems high - check the $k$ value. If $k = 0.5\\text{ J/(s·K)}$: $c = 2721\\text{ J/kg·K}$ (reasonable for some liquids).\"\"\",
+    \"\"\"Show that the time for a body to cool from $\\theta_1$ to $\\theta_2$ is $t = \\frac{1}{K'}\\ln\\frac{\\theta_1 - \\theta_0}{\\theta_2 - \\theta_0}$. Starting from $\\theta(t) - \\theta_0 = (\\theta_i - \\theta_0)e^{-K't}$: $\\theta_2 - \\theta_0 = (\\theta_1 - \\theta_0)e^{-K't}$. Taking ln: $\\ln\\frac{\\theta_2 - \\theta_0}{\\theta_1 - \\theta_0} = -K't$. Therefore $t = \\frac{1}{K'}\\ln\\frac{\\theta_1 - \\theta_0}{\\theta_2 - \\theta_0}$. ✓\"\"\",
+    \"\"\"A body takes 12 min to cool from 80°C to 50°C in a 20°C room. How long to cool from 50°C to 35°C? First interval: $t_1 = \\frac{1}{K'}\\ln\\frac{60}{30} = \\frac{\\ln 2}{K'} = 12\\text{ min}$. So $K' = \\frac{\\ln 2}{12} = 0.0578\\text{ min}^{-1}$. Second interval: $t_2 = \\frac{1}{K'}\\ln\\frac{30}{15} = \\frac{\\ln 2}{K'} = 12\\text{ min}$. The time is the same because the ratio of temperature excesses is the same (2:1 in both cases).\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"The cooling constant $K'$ has the same mathematical role as the decay constant $\\lambda$ in radioactivity. Both describe exponential processes: $N = N_0 e^{-\\lambda t}$ and $\\theta - \\theta_0 = (\\theta_i - \\theta_0)e^{-K't}$.\"\"\",
+    \"\"\"The concept of thermal time constant $\\tau = mc/k$ is used in engineering to characterize how quickly a system responds to temperature changes. In electronics, the analogous $RC$ time constant determines circuit response time.\"\"\",
+    \"\"\"Newton's law of cooling is used in food safety: the \"\"\"2-hour rule\"\"\" for perishable foods is based on cooling rate calculations. Food must pass through the danger zone (4-60°C) quickly enough to prevent bacterial growth.\"\"\",
+    \"\"\"The method of cooling (using Newton's law) is one of the standard NEB practical experiments. Students cool water and an organic liquid in identical calorimeters and compare rates to find the unknown specific heat.\"\"\",
+    \"\"\"In meteorology, Newton's law approximates how quickly air temperature changes when a air mass moves over a different surface (e.g., cold air over warm water). The time constant depends on air mass depth and wind speed.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

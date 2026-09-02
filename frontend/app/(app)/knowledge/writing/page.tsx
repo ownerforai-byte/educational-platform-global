@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, PenLine, Layers, FileText, GitBranch, Lightbulb, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, PenLine, Layers, FileText, GitBranch, Lightbulb, CheckCircle2, ScrollText, Sparkles } from "lucide-react";
 import {
   ALL_WRITING_TYPES,
   WRITING_CATEGORIES,
@@ -14,6 +14,8 @@ const CATEGORY_ICONS: Record<string, typeof PenLine> = {
   "Creative Writing": Lightbulb,
   "Textual Skills": Layers,
   "Grammar for Writing": CheckCircle2,
+  "Pro Vocabulary & Flow": ScrollText,
+  "Idea Banks & Flow Plans": Sparkles,
 };
 
 export default function WritingPage() {
@@ -35,7 +37,8 @@ export default function WritingPage() {
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight">English Writing Section</h1>
           <p className="text-sm text-muted-foreground mt-1">
             Every NEB Class 11 &amp; 12 exam writing format — structure, layout, starting lines,
-            connectors, and the conceptual grammar that powers them.
+            connectors, and the conceptual grammar that powers them — plus professional vocabulary
+            banks, sentence-flow toolkits and ready-made idea banks for common topics.
           </p>
         </div>
       </div>

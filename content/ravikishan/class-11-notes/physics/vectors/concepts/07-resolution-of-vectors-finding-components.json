@@ -23,7 +23,11 @@
     "**Component along an arbitrary direction**: to find the component of $\\vec{A}$ along a unit vector $\\hat{u}$ (any direction), use the dot product: $A_u = \\vec{A}\\cdot\\hat{u} = |\\vec{A}|\\cos\\alpha$, where $\\alpha$ is the angle between $\\vec{A}$ and $\\hat{u}$.",
     "**Two key rules**: (1) Component along an axis = magnitude × cos(angle with axis). (2) If the angle is with the OTHER axis, use sine (since the two axes are perpendicular).",
     "**Practical example — pulling a lawn roller**: pulling with force $F$ at angle $\\theta$ to the ground, the effective horizontal force is $F\\cos\\theta$ and the vertical lift is $F\\sin\\theta$. Pulling at an angle reduces ground reaction.",
-    "**Projectile launch at angle $\\theta$**: initial velocity $v_0$ resolves into $v_{0x} = v_0\\cos\\theta$ (horizontal) and $v_{0y} = v_0\\sin\\theta$ (vertical). These are the foundation of projectile motion analysis."
+    "**Projectile launch at angle $\\theta$**: initial velocity $v_0$ resolves into $v_{0x} = v_0\\cos\\theta$ (horizontal) and $v_{0y} = v_0\\sin\\theta$ (vertical). These are the foundation of projectile motion analysis.",
+    "**Direction cosines in 3D**: for a vector $\\vec{A}$ making angles $\\alpha$, $\\beta$, $\\gamma$ with the x, y, z axes: $A_x = A\\cos\\alpha$, $A_y = A\\cos\\beta$, $A_z = A\\cos\\gamma$. The direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.",
+    "**Unit vector from components**: if $\\vec{A} = A_x\\hat{i} + A_y\\hat{j} + A_z\\hat{k}$, then $\\hat{A} = \\frac{\\vec{A}}{|\\vec{A}|} = \\frac{A_x}{A}\\hat{i} + \\frac{A_y}{A}\\hat{j} + \\frac{A_z}{A}\\hat{k} = \\cos\\alpha\\,\\hat{i} + \\cos\\beta\\,\\hat{j} + \\cos\\gamma\\,\\hat{k}$.",
+    "**Component along a line**: to find the component of $\\vec{A}$ along a line with direction cosines $(l, m, n)$, use $A_{\\text{line}} = A_x l + A_y m + A_z n = \\vec{A}\\cdot\\hat{u}$, where $\\hat{u}$ is the unit vector along the line.",
+    "**Vector resolution is unique for rectangular components**: for a given set of perpendicular axes, the rectangular components $R_x$ and $R_y$ are uniquely determined. However, oblique components (along non-perpendicular directions) are not unique without additional constraints."
   ],
   "confusion": [
     "Component formula is always $F\\cos\\theta$ — The component along the axis the angle is measured from uses cosine. The component along the perpendicular axis uses sine. Both formulas change based on reference axis.",
@@ -33,7 +37,9 @@
     "$\\cos$ and $\\sin$ can be used interchangeably for components — No. The component ALONG the axis the angle is measured from uses $\\cos$. The component PERPENDICULAR to that axis uses $\\sin$. This is fixed.",
     "A force at 30° above the horizontal has $F_y = F\\sin30°$ — Correct if 30° is from horizontal. If 30° is from vertical, $F_y = F\\cos30°$. Always verify the reference axis.",
     "Components are independent of the choice of axes — Components DEPEND on the choice of axes. The same vector has different components in different coordinate systems, but the same magnitude and direction.",
-    "Resolving a vector into components changes the vector — No, it gives an EQUIVALENT representation. The vector is unchanged; we just describe it in a different way. $\\vec{F}$ and $(F_x, F_y)$ are two descriptions of the same vector."
+    "Resolving a vector into components changes the vector — No, it gives an EQUIVALENT representation. The vector is unchanged; we just describe it in a different way. $\\vec{F}$ and $(F_x, F_y)$ are two descriptions of the same vector.",
+    "The component along an axis is always $F\\cos\\theta$ — Only if $\\theta$ is measured from that axis. If $\\theta$ is measured from the perpendicular axis, the component along the first axis is $F\\sin\\theta$.",
+    "Components and the original vector have different physical dimensions — No. Components and the original vector always have the same dimensions. If $\\vec{F}$ is a force, both $F_x$ and $F_y$ are forces."
   ],
   "practice": [
     "A force of 20 N acts at 60° above the horizontal. Find its horizontal and vertical components. [Solution: $F_x = 20\\cos60° = 10\\,\\text{N}$. $F_y = 20\\sin60° = 20\\cdot(\\sqrt{3}/2) = 10\\sqrt{3} \\approx 17.32\\,\\text{N}$.]",
@@ -43,7 +49,10 @@
     "A body of 5 kg is pushed with horizontal force 30 N. Find the normal reaction from the ground. [Solution: $W = mg = 5\\cdot9.8 = 49\\,\\text{N}$ (down). $N = W = 49\\,\\text{N}$ (up). The horizontal force doesn't affect the vertical equilibrium since there is no vertical component.]",
     "Resolve a force of 40 N at 53° above the horizontal into components, using $\\sin53°=0.8$ and $\\cos53°=0.6$. [Solution: $F_x = 40\\cdot0.6 = 24\\,\\text{N}$, $F_y = 40\\cdot0.8 = 32\\,\\text{N}$. This is a 3-4-5 right triangle scaled by 8.]",
     "A force of 60 N is applied at 30° to the horizontal. Find (a) the horizontal component, (b) the vertical component, and (c) verify that $F^2 = F_x^2 + F_y^2$. [Solution: (a) $F_x = 60\\cos30° = 60\\cdot(0.866) = 51.96\\,\\text{N}$. (b) $F_y = 60\\sin30° = 30\\,\\text{N}$. (c) $51.96^2 + 30^2 = 2700 + 900 = 3600 = 60^2$ ✓]",
-    "A 2 kg ball is thrown at 30° above the horizontal with speed 20 m/s. Find the initial horizontal and vertical velocity components. [Solution: $v_x = 20\\cos30° = 20\\cdot(0.866) = 17.32\\,\\text{m/s}$. $v_y = 20\\sin30° = 10\\,\\text{m/s}$.]"
+    "A 2 kg ball is thrown at 30° above the horizontal with speed 20 m/s. Find the initial horizontal and vertical velocity components. [Solution: $v_x = 20\\cos30° = 20\\cdot(0.866) = 17.32\\,\\text{m/s}$. $v_y = 20\\sin30° = 10\\,\\text{m/s}$.]",
+    "A vector $\\vec{A}$ has magnitude 10 and makes angles 60°, 60°, and 90° with the x, y, and z axes respectively. Find its components. [Solution: $A_x = 10\\cos60° = 5$, $A_y = 10\\cos60° = 5$, $A_z = 10\\cos90° = 0$. Check: $25+25+0 = 50 \\neq 100$. This is inconsistent — the given angles are impossible for a single vector. Valid angles must satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.]",
+    "Find the components of the vector $\\vec{r} = 3\\hat{i} + 4\\hat{j} + 12\\hat{k}$ along the directions of the unit vectors $\\hat{u}_1 = \\frac{\\hat{i}+\\hat{j}}{\\sqrt{2}}$ and $\\hat{u}_2 = \\frac{\\hat{j}+\\hat{k}}{\\sqrt{2}}$. [Solution: Component along $\\hat{u}_1$: $\\vec{r}\\cdot\\hat{u}_1 = \\frac{3+4+0}{\\sqrt{2}} = \\frac{7}{\\sqrt{2}} \\approx 4.95$. Component along $\\hat{u}_2$: $\\vec{r}\\cdot\\hat{u}_2 = \\frac{0+4+12}{\\sqrt{2}} = \\frac{16}{\\sqrt{2}} = 8\\sqrt{2} \\approx 11.31$.]",
+    "A force of 100 N makes angles of 60° with the x-axis and 45° with the y-axis. Find the angle with the z-axis and the z-component. [Solution: $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. $\\cos^260° + \\cos^245° + \\cos^2\\gamma = 1$. $0.25 + 0.5 + \\cos^2\\gamma = 1$. $\\cos^2\\gamma = 0.25$, so $\\gamma = 60°$ or $120°$. Taking $\\gamma = 60°$: $F_z = 100\\cos60° = 50\\,\\text{N}$. The components are $F_x = 50\\,\\text{N}$, $F_y = 70.7\\,\\text{N}$, $F_z = 50\\,\\text{N}$. Check: $2500+5000+2500 = 10000 = 100^2$ ✓]"
   ],
   "universalFacts": [
     "Resolution of vectors is the **backbone of mechanics**. Almost every NEB problem in vectors, statics, dynamics, and projectile motion requires resolving a vector into perpendicular components.",
@@ -53,7 +62,9 @@
     "In **GPS navigation**, the velocity of a vehicle is resolved into north-south and east-west components to track position over time. Position updates are vector additions of resolved velocity components.",
     "The choice of axes in resolution is **strategic**. For inclined plane problems, axes along and perpendicular to the plane minimize the number of forces that need to be considered in each direction.",
     "Resolution and addition are **inverse operations**: resolution takes one vector and gives multiple, addition takes multiple and gives one. The formulas $R_x = R\\cos\\theta, R_y = R\\sin\\theta$ and $R = \\sqrt{R_x^2+R_y^2}$ are the two sides of the same coin.",
-    "**Rope-pulling problems** (like dragging a sled) are classic resolution applications. The pulling force at an angle is resolved into a useful component (horizontal motion) and a wasted component (lifting up)."
+    "**Rope-pulling problems** (like dragging a sled) are classic resolution applications. The pulling force at an angle is resolved into a useful component (horizontal motion) and a wasted component (lifting up).",
+    "Direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$ are the **components of the unit vector** along the given direction. They completely specify the direction of a vector in 3D space.",
+    "The **dot product** $\\vec{A}\\cdot\\hat{u}$ gives the component of $\\vec{A}$ along $\\hat{u}$ — this is the most general way to find a component along any direction, not just the coordinate axes."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

@@ -5,26 +5,46 @@
   "topicTitle": "Conduction: thermal conductivity and measurement",
   "relevance": 100,
   "notes": [
-    "**Conduction:** heat transfer through a material without bulk motion of the material. Energy is passed from molecule to molecule via collisions and vibrations.",
-    "**Thermal conductivity $k$:** the amount of heat flowing per unit time through unit area per unit temperature gradient. $H = -kA\\frac{dT}{dx}$.",
-    "**Fourier's law:** the negative sign indicates heat flows from hot to cold. $k$ depends on material: metals have high $k$ because free electrons carry energy; gases have low $k$ because molecules are far apart.",
-    "**Measurement:** Searle's apparatus or Forbes's method compares heat flow through a rod to the heat gained by water, giving $k$ from measured temperature changes and dimensions.",
-    "**Why metals feel cold:** metals conduct heat away from your hand faster than insulators, making them feel colder even at the same temperature."
+    "**Conduction:** Heat transfer through a material without any bulk motion of the material itself. Energy is transferred from molecule to molecule via collisions and lattice vibrations (phonons). In metals, free electrons also carry thermal energy, making conduction highly efficient.",
+    "**Fourier's law of heat conduction:** The rate of heat flow through a material is given by $H = \\frac{Q}{t} = kA\\frac{T_1 - T_2}{L}$, where $k$ is the thermal conductivity, $A$ is the cross-sectional area, $T_1 - T_2$ is the temperature difference, and $L$ is the length. In differential form: $H = -kA\\frac{dT}{dx}$. The negative sign ensures heat flows from hot to cold.",
+    "**Thermal conductivity $k$:** A material property that quantifies how well a material conducts heat. Units: $\\text{W/(m·K)}$. Metals have high $k$ (copper: ~400 W/(m·K)), insulators have low $k$ (wood: ~0.1 W/(m·K)), and gases have very low $k$ (air: ~0.025 W/(m·K)).",
+    "**Why metals conduct heat well:** In metals, free electrons are mobile and can move rapidly through the lattice, colliding with ions and carrying energy. These free electrons act as efficient energy carriers, giving metals their high thermal conductivity.",
+    "**Fayer's apparatus:** Used to measure thermal conductivity of liquids. A steam jacket surrounds the liquid-filled cylinder. Thermometers at known distances measure the temperature gradient. By measuring the heat flow and temperature difference, $k$ can be calculated.",
+    "**Temperature dependence of $k$:** For metals, $k$ DECREASES with increasing temperature because lattice vibrations scatter electrons more frequently. For non-metals and gases, $k$ generally INCREASES with temperature as molecular motion increases.",
+    "**Thermal resistance:** Analogous to electrical resistance. $R_{th} = \\frac{L}{kA}$. The heat flow equation becomes $H = \\frac{\\Delta T}{R_{th}}$, directly analogous to Ohm's law $I = \\frac{V}{R}$. For composite walls, resistances add: $R_{total} = R_1 + R_2 + R_3 + ...$",
+    "**Thermal conductivity vs. temperature gradient:** The heat flow depends on the TEMPERATURE GRADIENT ($\\Delta T / L$), not just the temperature difference. A large $\\Delta T$ across a thick slab may produce less heat flow than a small $\\Delta T$ across a thin slab.",
+    "**Application — building insulation:** Double-glazed windows use an air gap ($k_{air} \\approx 0.025$) between glass panes. The air gap provides high thermal resistance. Adding argon gas (even lower $k$) further reduces heat transfer.",
+    "**Application — cooking:** Metal pans conduct heat from the stove to food efficiently. Wooden or plastic handles have low $k$ and protect hands. Pot bases are often made of thick copper or aluminum for rapid, even heat distribution.",
+    "**Application — spacecraft:** Multi-layer insulation (MLI) uses thin reflective layers separated by low-conductivity spacers. Each layer reduces heat flow, keeping spacecraft at stable temperatures in the extreme cold of space.",
+    "**NEB exam focus:** Define thermal conductivity and state Fourier's law. Explain why metals conduct heat better than non-metals. Calculate heat flow rate through a slab given dimensions and $k$. Solve problems involving composite walls.",
+    "**Steady state vs. transient:** In steady state, temperature at every point is constant — heat entering equals heat leaving. In transient (non-steady) state, temperatures are changing with time. Fourier's law applies at each instant in both cases.",
+    "**Thermal diffusivity:** $\\alpha = \\frac{k}{\\rho c_p}$, where $\\rho$ is density and $c_p$ is specific heat capacity. It measures how quickly a material responds to temperature changes. Metals have high diffusivity (they heat/cool fast), while water has very low diffusivity.",
+    "**Historical note:** Fourier published his heat conduction theory in 1822 in "Théorie analytique de la chaleur". Joseph Fourier developed partial differential equations to describe heat flow, which are now fundamental to all areas of physics.",
+    "**Comparison with electrical conduction:** Both follow analogous equations: $H = kA\\frac{\\Delta T}{L}$ is analogous to $I = \\sigma A\\frac{V}{L}$. Materials that are good thermal conductors are generally good electrical conductors (because both involve free electrons)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ Thermal conductivity depends on the thickness of the material. ✅ $k$ is a MATERIAL PROPERTY — it does not depend on dimensions. Thickness affects heat flow rate, but not $k$. A thicker copper bar has the same $k$ as a thin one.",
+    "❌ Metals feel cold because they are at a lower temperature. ✅ Metals feel cold because they CONDUCT heat away from your hand faster. At the same temperature, metal and wood feel different because of different $k$ values.",
+    "❌ Heat flows from hot to cold, so Fourier's law has no negative sign. ✅ The negative sign in $H = -kA\\frac{dT}{dx}$ ensures heat flows from high temperature to low temperature. Without it, heat would flow from cold to hot.",
+    "❌ A good conductor of heat is a good insulator. ✅ Opposite! A good conductor ($k$ large) conducts heat well and is a poor insulator. A good insulator ($k$ small) conducts heat poorly.",
+    "❌ The rate of heat flow is the same as the temperature. ✅ Heat flow rate ($H$, in Watts) and temperature (in Kelvin) are completely different quantities. A large temperature difference across a small resistance gives high heat flow.",
+    "❌ Fourier's law applies only to steady-state conditions. ✅ Fourier's law applies at every instant — both steady state and transient conditions. The differential form $H = -kA\\frac{dT}{dx}$ holds at each point in time.",
+    "❌ Air is a good conductor of heat. ✅ Air is a poor conductor ($k \\approx 0.025$ W/(m·K)). However, air is an excellent convective medium — convection dominates heat transfer in air, not conduction."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A copper rod ($k = 400$ W/(m·K)) of length 0.5 m and cross-section 0.01 m² has ends at 100°C and 0°C. Find the heat flow rate. $H = kA\\frac{\\Delta T}{L} = 400 \\times 0.01 \\times \\frac{100}{0.5} = 800$ W. Heat flows at 800 J/s from hot to cold end.",
+    "A wall consists of a 10 cm brick layer ($k = 0.7$ W/(m·K)) followed by a 5 cm insulation layer ($k = 0.04$ W/(m·K)). Inside temperature is 25°C, outside is 5°C. Find heat flow per unit area. $R_{total} = \\frac{0.1}{0.7} + \\frac{0.05}{0.04} = 0.143 + 1.25 = 1.393$ m²K/W. $H/A = \\frac{20}{1.393} = 14.4$ W/m².",
+    "A rectangular slab has dimensions 20 cm × 10 cm × 5 cm. Heat flows along the 20 cm direction with a temperature difference of 100°C. If $k = 0.5$ W/(m·K), find the heat flow rate. Area $A = 10 \\times 5 = 50$ cm² = $5 \\times 10^{-3}$ m². $H = 0.5 \\times 5 \\times 10^{-3} \\times \\frac{100}{0.2} = 1.25$ W.",
+    "Explain why a double-walled vacuum flask minimizes heat loss by conduction. The vacuum between the walls removes air (poor conductor), and the glass walls have low $k$. This dramatically reduces conductive heat transfer. The silvered surfaces further reduce radiative transfer.",
+    "A composite slab has two materials of equal thickness $L$ and thermal conductivities $k_1$ and $k_2$. Derive the equivalent thermal conductivity. $R_{total} = \\frac{L}{k_1 A} + \\frac{L}{k_2 A} = \\frac{L}{A}\\left(\\frac{1}{k_1} + \\frac{1}{k_2}\\right)$. For equivalent single slab: $\\frac{2L}{k_{eq} A} = \\frac{L}{A}\\left(\\frac{1}{k_1} + \\frac{1}{k_2}\\right)$. So $k_{eq} = \\frac{2k_1 k_2}{k_1 + k_2}$.",
+    "The thermal conductivity of a metal rod is to be measured using Searle's apparatus. Steam enters at one end and water exits at the other. Temperature difference across a 20 cm section is 15°C. The water flow rate is 0.5 kg/min and the temperature rise of water is 20°C. Find $k$. Heat absorbed by water = $0.5/60 \\times 4200 \\times 20 = 700$ W. $H = kA\\frac{15}{0.2}$. Need area from apparatus dimensions to solve completely."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Joseph Fourier developed the mathematical theory of heat conduction in 1822, introducing the concept of thermal conductivity and the partial differential equation that bears his name — the heat equation.",
+    "Diamond has the highest thermal conductivity of any known bulk material at room temperature (~2200 W/(m·K)), exceeding copper (~400 W/(m·K)). This is because of its rigid crystal lattice and strong covalent bonds.",
+    "Superfluid helium (He-4 below 2.17 K) has an extraordinarily high thermal conductivity — millions of times greater than ordinary helium — because of quantum mechanical effects in the superfluid state.",
+    "In building construction, the thermal resistance (R-value) of insulation is a critical specification. Higher R-values mean better insulation. A typical wall requires R-13 to R-21, while attics need R-30 to R-60.",
+    "The thermal conductivity of graphene is approximately 5000 W/(m·K) in the plane direction, making it the strongest and best thermal conductor known at the atomic scale."
   ],
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow"

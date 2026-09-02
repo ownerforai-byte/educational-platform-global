@@ -52,8 +52,11 @@ export function IntegralAreaVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let rectMeshes: THREE.Mesh[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -141,6 +144,7 @@ export function IntegralAreaVisual() {
           const rect = push(new THREE.Mesh(rectGeom, rectMat)) as THREE.Mesh;
           rect.position.set(x0 + width / 2, height / 2, 0.03);
           rect.rotation.x = -Math.PI / 2;
+          rectMeshes.push(rect);
 
           // Top edge highlight
           push(new THREE.Line(
@@ -175,6 +179,11 @@ export function IntegralAreaVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.02;
+        rectMeshes.forEach((r, i) => {
+          const m = r.material as THREE.MeshBasicMaterial;
+          m.opacity = 0.35 + 0.25 * Math.sin(animTime + i * 0.5);
+        });
         renderer.render(scene, camera);
       };
       animate();

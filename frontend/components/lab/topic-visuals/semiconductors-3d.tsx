@@ -44,8 +44,12 @@ export function SemiconductorsVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let electronDot: THREE.Mesh;
+    let holeDot: THREE.Mesh;
 
     const bandGap = material === "insulator" ? 6 : material === "semiconductor" ? 1.1 : 0;
     const gapColor = material === "insulator" ? 0xef4444 : material === "semiconductor" ? 0xfbbf24 : 0x22c55e;
@@ -135,23 +139,14 @@ export function SemiconductorsVisual() {
           new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
         )) as THREE.Mesh;
         electron.position.set(0, cbY, 0);
+        electronDot = electron;
 
         const hole = push(new THREE.Mesh(
           new THREE.SphereGeometry(0.12, 12, 12),
           new THREE.MeshBasicMaterial({ color: 0xfbbf24 }),
         )) as THREE.Mesh;
         hole.position.set(0, vbY, 0);
-
-        let electronPhase = 0;
-        const animateFn = () => {
-          frameId = requestAnimationFrame(animateFn);
-          controls.update();
-          electronPhase += 0.05;
-          electron.position.x = Math.sin(electronPhase) * 1.5;
-          hole.position.x = -Math.sin(electronPhase) * 1.5;
-          renderer.render(scene, camera);
-        };
-        animateFn();
+        holeDot = hole;
 
         // Electron label
         const eLabelPos = new THREE.Vector3(0, cbY + 0.8, 0);
@@ -190,6 +185,13 @@ export function SemiconductorsVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.018;
+        if (electronDot && holeDot) {
+          electronDot.position.x = Math.sin(animTime * 2) * 1.8;
+          holeDot.position.x = -Math.sin(animTime * 2) * 1.8;
+          electronDot.material.opacity = 0.6 + 0.4 * Math.sin(animTime * 3);
+          holeDot.material.opacity = 0.6 + 0.4 * Math.sin(animTime * 3 + Math.PI);
+        }
         renderer.render(scene, camera);
       };
       animate();

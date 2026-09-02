@@ -1,0 +1,93 @@
+{
+  "title": "Stoichiometry Mindmap",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "stoichiometry-mindmap",
+  "topicTitle": "Stoichiometry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Stoichiometry",
+    "children": [
+      {
+        "id": "dalton-s-atomic-theory-and-its",
+        "label": "Dalton's atomic theory",
+        "children": [
+          {
+            "id": "dalton-s-atomic-theory-sub-0",
+            "label": "its postulates"
+          }
+        ]
+      },
+      {
+        "id": "laws-of-stoichiometry",
+        "label": "Laws of stoichiometry"
+      },
+      {
+        "id": "avogadro-s-law-and-some-deduct",
+        "label": "Avogadro's law and some deductions",
+        "children": [
+          {
+            "id": "avogadro-s-law-and-some-deductions-sub-0",
+            "label": "molecular mass and vapour density"
+          },
+          {
+            "id": "avogadro-s-law-and-some-deductions-sub-1",
+            "label": "molecular mass and volume of gas"
+          },
+          {
+            "id": "avogadro-s-law-and-some-deductions-sub-2",
+            "label": "molecular mass and number of particles"
+          }
+        ]
+      },
+      {
+        "id": "mole-and-its-relation-with-mas",
+        "label": "Mole",
+        "children": [
+          {
+            "id": "mole-sub-0",
+            "label": "its relation with mass, volume"
+          },
+          {
+            "id": "mole-sub-1",
+            "label": "number of particles"
+          }
+        ]
+      },
+      {
+        "id": "calculations-based-on-mole-concept",
+        "label": "Calculations based on mole concept"
+      },
+      {
+        "id": "limiting-reactant-and-excess-r",
+        "label": "Limiting reactant",
+        "children": [
+          {
+            "id": "limiting-reactant-sub-0",
+            "label": "excess reactant"
+          }
+        ]
+      },
+      {
+        "id": "theoretical-yield-experimental",
+        "label": "Theoretical yield, experimental yield",
+        "children": [
+          {
+            "id": "theoretical-yield-experimental-yield-sub-0",
+            "label": "% yield"
+          }
+        ]
+      },
+      {
+        "id": "calculation-of-empirical-and-m",
+        "label": "Calculation of empirical",
+        "children": [
+          {
+            "id": "calculation-of-empirical-sub-0",
+            "label": "molecular formula from % composition (solving related numerical problems)"
+          }
+        ]
+      }
+    ]
+  }
+}

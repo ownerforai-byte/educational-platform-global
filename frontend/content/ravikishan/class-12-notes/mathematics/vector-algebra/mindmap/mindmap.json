@@ -1,0 +1,81 @@
+{
+  "title": "Vector Algebra Mindmap",
+  "unitSlug": "vector-algebra",
+  "topicSlug": "vector-algebra-mindmap",
+  "topicTitle": "Vector Algebra — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Vector Algebra",
+    "children": [
+      {
+        "id": "scalar-and-vector-quantities-t",
+        "label": "Scalar",
+        "children": [
+          {
+            "id": "scalar-sub-0",
+            "label": "vector quantities, types of vectors"
+          }
+        ]
+      },
+      {
+        "id": "addition-subtraction-and-scala",
+        "label": "Addition, subtraction",
+        "children": [
+          {
+            "id": "addition-subtraction-sub-0",
+            "label": "scalar multiplication of vectors"
+          }
+        ]
+      },
+      {
+        "id": "dot-product-scalar-product-and",
+        "label": "Dot product (scalar product)",
+        "children": [
+          {
+            "id": "dot-product-scalar-product--sub-0",
+            "label": "its applications"
+          }
+        ]
+      },
+      {
+        "id": "cross-product-vector-product-a",
+        "label": "Cross product (vector product)",
+        "children": [
+          {
+            "id": "cross-product-vector-product--sub-0",
+            "label": "its applications"
+          }
+        ]
+      },
+      {
+        "id": "scalar-and-vector-triple-produ",
+        "label": "Scalar",
+        "children": [
+          {
+            "id": "scalar-sub-0",
+            "label": "vector triple products"
+          }
+        ]
+      },
+      {
+        "id": "applications-work-torque-angul",
+        "label": "Applications",
+        "children": [
+          {
+            "id": "applications-sub-0",
+            "label": "work"
+          },
+          {
+            "id": "applications-sub-1",
+            "label": "torque"
+          },
+          {
+            "id": "applications-sub-2",
+            "label": "angular momentum"
+          }
+        ]
+      }
+    ]
+  }
+}

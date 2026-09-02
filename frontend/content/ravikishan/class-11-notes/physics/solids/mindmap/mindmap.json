@@ -1,0 +1,43 @@
+{
+  "title": "Solids Mindmap",
+  "unitSlug": "solids",
+  "topicSlug": "solids-mindmap",
+  "topicTitle": "Solids — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Solids",
+    "children": [
+      {
+        "id": "energy-bands-in-solids-qualitative-ideas",
+        "label": "Energy bands in solids (qualitative ideas)",
+        "children": [
+          {
+            "id": "energy-bands-in-solids-qualitative-ideas-item-0",
+            "label": "qualitative ideas"
+          }
+        ]
+      },
+      {
+        "id": "difference-between-metals-insu",
+        "label": "Difference between metals, insulators",
+        "children": [
+          {
+            "id": "difference-between-metals-insulators-sub-0",
+            "label": "semiconductors using band theory"
+          }
+        ]
+      },
+      {
+        "id": "intrinsic-and-extrinsic-semico",
+        "label": "Intrinsic",
+        "children": [
+          {
+            "id": "intrinsic-sub-0",
+            "label": "extrinsic semiconductors"
+          }
+        ]
+      }
+    ]
+  }
+}

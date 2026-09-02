@@ -5,26 +5,39 @@
   "topicTitle": "Instantaneous velocity and acceleration",
   "relevance": 100,
   "notes": [
-    "**Average velocity** tells you the overall displacement over a time interval; **instantaneous velocity** tells you the velocity at one exact instant.",
-    "**Mathematical definition:** $v = \\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t} = \\frac{ds}{dt}$. As the time interval shrinks to zero, the average velocity approaches the instantaneous velocity.",
-    "**Graphical meaning:** on a displacement-time graph, the slope of the tangent at any point is the instantaneous velocity at that instant.",
-    "**Instantaneous acceleration:** $a = \\lim_{\\Delta t \\to 0} \\frac{\\Delta v}{\\Delta t} = \\frac{dv}{dt}$. On a velocity-time graph, the slope of the tangent is the instantaneous acceleration.",
-    "**Why the limit matters:** without taking the limit, $\\Delta s / \\Delta t$ is only an average over a finite interval and misses what happens in between."
+    "**Average velocity** tells you the overall displacement over a time interval; **instantaneous velocity** tells you the velocity at one exact instant — defined as the limit of average velocity as the time interval shrinks to zero.",
+    "**Mathematical definition of instantaneous velocity:** v = lim_{Δt→0} Δs/Δt = ds/dt. As Δt → 0, the ratio Δs/Δt approaches the instantaneous rate of change of position with time — the derivative of position with respect to time.",
+    "**Graphical interpretation of velocity:** On a displacement-time (s-t) graph, the slope of the tangent line at any point equals the instantaneous velocity at that instant. A steeper tangent means higher speed.",
+    "**Instantaneous acceleration:** Defined as a = lim_{Δt→0} Δv/Δt = dv/dt. On a velocity-time (v-t) graph, the slope of the tangent at a point gives the instantaneous acceleration at that instant.",
+    "**Why the limit matters:** Without taking the limit, Δs/Δt is only an average over a finite time interval and misses what happens within that interval. The limit extracts the local behavior — the true speed and direction at one exact moment.",
+    "**Units of velocity and acceleration:** Velocity has units of length/time (m/s in SI). Acceleration has units of length/time² (m/s² in SI). From the definitions: [v] = [L T⁻¹], [a] = [L T⁻²].",
+    "**Relation between velocity and acceleration graphs:** The slope of an s-t graph gives velocity; the slope of a v-t graph gives acceleration. Conversely, the area under an a-t graph gives the change in velocity: Δv = ∫a dt, and the area under a v-t graph gives displacement: Δs = ∫v dt.",
+    "**Positive and negative acceleration:** The sign of acceleration relative to velocity matters. If v and a have the same sign, the object is speeding up. If v and a have opposite signs, the object is slowing down (decelerating).",
+    "**Higher derivatives:** The time derivative of acceleration is called jerk (j = da/dt = d³s/dt³), and higher derivatives are called snap, crackle, and pop. Jerk is important in engineering design (elevator smoothness, roller coaster rides).",
+    "**Chain rule forms:** If position is given as a function of position-dependent velocity, a = dv/dt = (dv/dx)(dx/dt) = v(dv/dx). This is useful when acceleration is expressed as a function of position rather than time: a(x) = v·dv/dx.",
+    "**Constant acceleration equations:** When a is constant, v = u + at, s = ut + (1/2)at², and v² = u² + 2as, where u is initial velocity and v is final velocity.",
+    "**Terminal velocity:** When drag force balances gravity (mg = kv for linear drag or mg = kv² for quadratic drag), acceleration becomes zero and velocity reaches a constant terminal value. d²s/dt² = 0 means the s-t graph becomes linear."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Many students think instantaneous velocity is an 'approximation' — it is NOT. It is an exact value obtained by the mathematical limit process. The instantaneous velocity at an instant is as precise as the slope of the tangent line to the curve.",
+    "Velocity is a vector (speed + direction), acceleration is also a vector. An object moving in a circle at constant speed has nonzero acceleration (centripetal), even though its speed is constant — because velocity direction changes.",
+    "'Deceleration' is not the opposite of 'acceleration' — deceleration occurs when acceleration and velocity have opposite signs. An object moving left (negative v) and speeding up has positive acceleration (a points right) if the speed is increasing.",
+    "On a velocity-time graph, areas above the time axis are positive (velocity in +x direction); areas below are negative (velocity in −x direction). The TOTAL area gives displacement; the sum of |areas| gives total distance traveled.",
+    "The derivative ds/dt requires calculus — many students try to compute instantaneous velocity by plugging into v = Δs/Δt with small numbers instead of taking the limit. This introduces rounding errors and is not the correct mathematical procedure."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "The position of a particle is given by x(t) = 3t³ - 10t² + 6t + 20, where x is in meters and t in seconds. Find (a) velocity at t=2s, (b) acceleration at t=2s. Solution: (a) v = dx/dt = 9t² - 20t + 6. At t=2: v = 9(4) - 20(2) + 6 = 36 - 40 + 6 = 2 m/s. (b) a = dv/dt = 18t - 20. At t=2: a = 36 - 20 = 16 m/s².",
+    "A particle's acceleration is a(t) = 6t + 4 m/s². If the initial velocity v(0) = 5 m/s and initial position x(0) = 3 m, find (a) velocity function v(t), (b) position function x(t), (c) velocity at t=3s. Solution: (a) v(t) = ∫a dt = ∫(6t+4)dt = 3t² + 4t + C. At t=0, v=5 → C=5. So v(t) = 3t² + 4t + 5. (b) x(t) = ∫v dt = ∫(3t²+4t+5)dt = t³ + 2t² + 5t + D. At t=0, x=3 → D=3. So x(t) = t³ + 2t² + 5t + 3. (c) v(3) = 3(9) + 4(3) + 5 = 27+12+5 = 44 m/s.",
+    "The position of a simple harmonic oscillator is x(t) = 5 cos(3t + π/4), in meters. Find the velocity and acceleration at t=0.5 s. Solution: v(t) = dx/dt = -5·3·sin(3t + π/4) = -15sin(3t + π/4). At t=0.5: 3(0.5)+π/4 = 1.5+0.785 = 2.285 rad. v = -15sin(2.285) = -15×0.755 = -11.32 m/s. a(t) = dv/dt = -45cos(3t + π/4). a = -45cos(2.285) = -45×(-0.656) = 29.52 m/s².",
+    "Given the velocity-time graph of a car: v(t) increases linearly from 0 to 20 m/s in the first 10 s, then stays constant at 20 m/s for the next 10 s, then decreases linearly to 0 in the final 10 s. Find (a) acceleration at t=5s, (b) acceleration at t=15s, (c) acceleration at t=25s. Solution: (a) t=5s is in the first interval (0-10s), slope = 20/10 = 2 m/s², so a = 2 m/s². (b) t=15s is in the constant region (10-20s), slope = 0, so a = 0 m/s². (c) t=25s is in the third interval (20-30s), slope = (0-20)/10 = -2 m/s², so a = -2 m/s².",
+    "A rocket's altitude is given by y(t) = 8t² - 15t³/2 for t ≥ 0, in meters. Find (a) velocity at t=2 s, (b) acceleration at t=2 s, (c) when does it hit the ground? Solution: (a) v = dy/dt = 16t - (45/2)t². At t=2: v = 32 - 45 = -13 m/s (moving downward). (b) a = dv/dt = 16 - 45t. At t=2: a = 16 - 90 = -74 m/s². (c) Ground hit: y=0 → 8t² - (15/2)t³ = 0 → t²(8 - 15t/2) = 0 → t=0 (launch) or t = 16/15 = 1.067 s (landing)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Instantaneous velocity is the time derivative of position and requires calculus to define precisely. The concept was formalized in the 17th century by Newton and Leibniz independently.",
+    "Acceleration is the derivative of velocity, making it the second derivative of position: a(t) = d²x/dt². Similarly, jerk is the third derivative: j(t) = d³x/dt³.",
+    "In physics, 'average' quantities are defined over finite intervals; 'instantaneous' quantities are defined in the limit of a vanishingly small interval. The instantaneous value represents the local behavior of the function.",
+    "The fundamental theorem of calculus connects differentiation (instantaneous rates) and integration (accumulated quantities): ∫v(t)dt from t₁ to t₂ gives displacement, and d/dt[∫v(t)dt] = v(t).",
+    "For motion in a straight line, speed is the absolute value of velocity: |v| = |dx/dt|. An object can have negative velocity (moving backward) and positive acceleration (speeding up in the negative direction)."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics"

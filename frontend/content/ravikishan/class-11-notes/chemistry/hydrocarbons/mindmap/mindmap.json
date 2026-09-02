@@ -1,0 +1,159 @@
+{
+  "title": "Hydrocarbons Mindmap",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "hydrocarbons-mindmap",
+  "topicTitle": "Hydrocarbons — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Hydrocarbons",
+    "children": [
+      {
+        "id": "saturated-hydrocarbons-alkanes",
+        "label": "Saturated hydrocarbons (Alkanes)",
+        "children": [
+          {
+            "id": "saturated-hydrocarbons-alkanes--sub-0",
+            "label": "preparation from haloalkanes (reduction and Wurtz reaction"
+          },
+          {
+            "id": "saturated-hydrocarbons-alkanes--sub-1",
+            "label": "decarboxylation"
+          },
+          {
+            "id": "saturated-hydrocarbons-alkanes--sub-2",
+            "label": "catalytic hydrogenation of alkene and alkyne"
+          }
+        ]
+      },
+      {
+        "id": "chemical-properties-of-alkanes",
+        "label": "Chemical properties of alkanes",
+        "children": [
+          {
+            "id": "chemical-properties-of-alkanes-sub-0",
+            "label": "substitution reactions (halogenation, nitration and sulphonation only"
+          },
+          {
+            "id": "chemical-properties-of-alkanes-sub-1",
+            "label": "oxidation of ethane"
+          }
+        ]
+      },
+      {
+        "id": "unsaturated-hydrocarbons-alken",
+        "label": "Unsaturated hydrocarbons (Alkenes)",
+        "children": [
+          {
+            "id": "unsaturated-hydrocarbons-alkenes--sub-0",
+            "label": "preparation by dehydration of alcohol"
+          },
+          {
+            "id": "unsaturated-hydrocarbons-alkenes--sub-1",
+            "label": "dehydrohalogenation"
+          },
+          {
+            "id": "unsaturated-hydrocarbons-alkenes--sub-2",
+            "label": "catalytic hydrogenation of alkyne"
+          }
+        ]
+      },
+      {
+        "id": "chemical-properties-of-alkenes",
+        "label": "Chemical properties of alkenes",
+        "children": [
+          {
+            "id": "chemical-properties-of-alkenes-sub-0",
+            "label": "addition reaction with HX (Markovnikov's addition and peroxide effect"
+          },
+          {
+            "id": "chemical-properties-of-alkenes-sub-1",
+            "label": "H2O"
+          },
+          {
+            "id": "chemical-properties-of-alkenes-sub-2",
+            "label": "O3"
+          },
+          {
+            "id": "chemical-properties-of-alkenes-sub-3",
+            "label": "H2SO4 only"
+          }
+        ]
+      },
+      {
+        "id": "alkynes-preparation-from-carbo",
+        "label": "Alkynes",
+        "children": [
+          {
+            "id": "alkynes-sub-0",
+            "label": "preparation from carbon and hydrogen"
+          },
+          {
+            "id": "alkynes-sub-1",
+            "label": "1"
+          },
+          {
+            "id": "alkynes-sub-2",
+            "label": "2-dibromoethane"
+          },
+          {
+            "id": "alkynes-sub-3",
+            "label": "chloroform/iodoform only"
+          }
+        ]
+      },
+      {
+        "id": "chemical-properties-of-alkynes",
+        "label": "Chemical properties of alkynes",
+        "children": [
+          {
+            "id": "chemical-properties-of-alkynes-sub-0",
+            "label": "addition reaction with H2"
+          },
+          {
+            "id": "chemical-properties-of-alkynes-sub-1",
+            "label": "HX"
+          },
+          {
+            "id": "chemical-properties-of-alkynes-sub-2",
+            "label": "H2O; acidic nature (action with sodium, ammoniacal AgNO3 and ammoniacal Cu2Cl2"
+          }
+        ]
+      },
+      {
+        "id": "test-of-unsaturation-ethene-an",
+        "label": "Test of unsaturation (ethene",
+        "children": [
+          {
+            "id": "test-of-unsaturation-ethene-sub-0",
+            "label": "ethyne): bromine water test"
+          },
+          {
+            "id": "test-of-unsaturation-ethene-sub-1",
+            "label": "Baeyer's test"
+          }
+        ]
+      },
+      {
+        "id": "comparative-studies-of-physica",
+        "label": "Comparative studies of physical properties of alkane, alkene",
+        "children": [
+          {
+            "id": "comparative-studies-of-physical-properties-of-alkane-alkene-sub-0",
+            "label": "alkyne"
+          }
+        ]
+      },
+      {
+        "id": "kolbe-s-electrolysis-methods-f",
+        "label": "Kolbe's electrolysis methods for the preparation of alkanes, alkenes",
+        "children": [
+          {
+            "id": "kolbe-s-electrolysis-methods-for-the-preparation-of-alkanes-alkenes-sub-0",
+            "label": "alkynes"
+          }
+        ]
+      }
+    ]
+  }
+}

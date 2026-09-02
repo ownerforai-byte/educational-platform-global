@@ -1,0 +1,71 @@
+{
+  "title": "Aldehydes, Ketones and Carboxylic Acids Mindmap",
+  "unitSlug": "aldehydes-ketones-carboxylic-acids",
+  "topicSlug": "aldehydes-ketones-carboxylic-acids-mindmap",
+  "topicTitle": "Aldehydes, Ketones and Carboxylic Acids — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Aldehydes, Ketones and Carboxylic Acids",
+    "children": [
+      {
+        "id": "aldehydes-and-ketones-preparat",
+        "label": "Aldehydes and ketones",
+        "children": [
+          {
+            "id": "aldehydes-and-ketones-sub-0",
+            "label": "preparation"
+          },
+          {
+            "id": "aldehydes-and-ketones-sub-1",
+            "label": "physical properties"
+          },
+          {
+            "id": "aldehydes-and-ketones-sub-2",
+            "label": "nucleophilic addition reactions"
+          }
+        ]
+      },
+      {
+        "id": "carboxylic-acids-preparation-p",
+        "label": "Carboxylic acids",
+        "children": [
+          {
+            "id": "carboxylic-acids-sub-0",
+            "label": "preparation"
+          },
+          {
+            "id": "carboxylic-acids-sub-1",
+            "label": "physical properties"
+          },
+          {
+            "id": "carboxylic-acids-sub-2",
+            "label": "acidic character"
+          },
+          {
+            "id": "carboxylic-acids-sub-3",
+            "label": "reactions"
+          }
+        ]
+      },
+      {
+        "id": "name-reactions-aldol-condensat",
+        "label": "Name reactions",
+        "children": [
+          {
+            "id": "name-reactions-sub-0",
+            "label": "Aldol condensation"
+          },
+          {
+            "id": "name-reactions-sub-1",
+            "label": "Cannizzaro reaction"
+          },
+          {
+            "id": "name-reactions-sub-2",
+            "label": "HVZ reaction"
+          }
+        ]
+      }
+    ]
+  }
+}

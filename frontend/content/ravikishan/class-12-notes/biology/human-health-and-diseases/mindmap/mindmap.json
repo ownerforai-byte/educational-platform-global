@@ -1,0 +1,99 @@
+{
+  "title": "Human Health and Diseases Mindmap",
+  "unitSlug": "human-health-and-diseases",
+  "topicSlug": "human-health-and-diseases-mindmap",
+  "topicTitle": "Human Health and Diseases — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Human Health and Diseases",
+    "children": [
+      {
+        "id": "pathogens-and-diseases-malaria",
+        "label": "Pathogens and diseases",
+        "children": [
+          {
+            "id": "pathogens-and-diseases-sub-0",
+            "label": "malaria"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-1",
+            "label": "dengue"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-2",
+            "label": "filariasis"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-3",
+            "label": "ascariasis"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-4",
+            "label": "pneumonia"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-5",
+            "label": "typhoid"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-6",
+            "label": "tuberculosis"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-7",
+            "label": "common cold"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-8",
+            "label": "AIDS"
+          },
+          {
+            "id": "pathogens-and-diseases-sub-9",
+            "label": "ringworm"
+          }
+        ]
+      },
+      {
+        "id": "immune-system-innate-and-adapt",
+        "label": "Immune system — innate",
+        "children": [
+          {
+            "id": "immune-system-innate-sub-0",
+            "label": "adaptive immunity"
+          }
+        ]
+      },
+      {
+        "id": "antigens-and-antibodies-immune",
+        "label": "Antigens",
+        "children": [
+          {
+            "id": "antigens-sub-0",
+            "label": "antibodies, immune response"
+          }
+        ]
+      },
+      {
+        "id": "vaccination-and-immunization",
+        "label": "Vaccination",
+        "children": [
+          {
+            "id": "vaccination-sub-0",
+            "label": "immunization"
+          }
+        ]
+      },
+      {
+        "id": "allergy-and-autoimmune-disease",
+        "label": "Allergy",
+        "children": [
+          {
+            "id": "allergy-sub-0",
+            "label": "autoimmune diseases"
+          }
+        ]
+      }
+    ]
+  }
+}

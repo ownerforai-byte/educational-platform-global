@@ -1,0 +1,69 @@
+{
+  "title": "Nuclear Physics Mindmap",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nuclear-physics-mindmap",
+  "topicTitle": "Nuclear Physics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Nuclear Physics",
+    "children": [
+      {
+        "id": "discovery-of-nucleus",
+        "label": "discovery of nucleus"
+      },
+      {
+        "id": "nuclear-density-mass-number-at",
+        "label": "Nuclear density",
+        "children": [
+          {
+            "id": "nuclear-density-sub-0",
+            "label": "mass number"
+          },
+          {
+            "id": "nuclear-density-sub-1",
+            "label": "atomic number"
+          }
+        ]
+      },
+      {
+        "id": "atomic-mass-isotopes",
+        "label": "Atomic mass",
+        "children": [
+          {
+            "id": "atomic-mass-sub-0",
+            "label": "isotopes"
+          }
+        ]
+      },
+      {
+        "id": "einstein-s-mass-energy-relation",
+        "label": "Einstein's mass-energy relation"
+      },
+      {
+        "id": "mass-defect-packing-fraction-binding-ene",
+        "label": "Mass defect, packing fraction, binding energy per nucleon"
+      },
+      {
+        "id": "creation-and-annihilation",
+        "label": "Creation",
+        "children": [
+          {
+            "id": "creation-sub-0",
+            "label": "annihilation"
+          }
+        ]
+      },
+      {
+        "id": "nuclear-fission-and-fusion",
+        "label": "Nuclear fission",
+        "children": [
+          {
+            "id": "nuclear-fission-sub-0",
+            "label": "fusion"
+          }
+        ]
+      }
+    ]
+  }
+}

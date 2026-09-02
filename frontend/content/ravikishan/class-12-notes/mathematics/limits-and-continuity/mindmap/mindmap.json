@@ -1,0 +1,81 @@
+{
+  "title": "Limits and Continuity Mindmap",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "limits-and-continuity-mindmap",
+  "topicTitle": "Limits and Continuity — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Limits and Continuity",
+    "children": [
+      {
+        "id": "concept-of-limit-geometric-and",
+        "label": "Concept of limit — geometric",
+        "children": [
+          {
+            "id": "concept-of-limit-geometric-sub-0",
+            "label": "physical interpretation"
+          }
+        ]
+      },
+      {
+        "id": "standard-limits-and-evaluation",
+        "label": "Standard limits",
+        "children": [
+          {
+            "id": "standard-limits-sub-0",
+            "label": "evaluation (algebraic, trigonometric, exponential, logarithmic)"
+          }
+        ]
+      },
+      {
+        "id": "indeterminate-forms-0-0-0-1-0-",
+        "label": "Indeterminate forms",
+        "children": [
+          {
+            "id": "indeterminate-forms-sub-0",
+            "label": "0/0"
+          },
+          {
+            "id": "indeterminate-forms-sub-1",
+            "label": "∞/∞"
+          },
+          {
+            "id": "indeterminate-forms-sub-2",
+            "label": "0·∞"
+          },
+          {
+            "id": "indeterminate-forms-sub-3",
+            "label": "∞−∞"
+          },
+          {
+            "id": "indeterminate-forms-sub-4",
+            "label": "1^∞"
+          },
+          {
+            "id": "indeterminate-forms-sub-5",
+            "label": "0^0"
+          },
+          {
+            "id": "indeterminate-forms-sub-6",
+            "label": "∞^0"
+          }
+        ]
+      },
+      {
+        "id": "continuity-of-algebraic-trigonometric-ex",
+        "label": "Continuity of algebraic, trigonometric, exponential, logarithmic functions"
+      },
+      {
+        "id": "differentiability-and-its-rela",
+        "label": "Differentiability",
+        "children": [
+          {
+            "id": "differentiability-sub-0",
+            "label": "its relation with continuity"
+          }
+        ]
+      }
+    ]
+  }
+}

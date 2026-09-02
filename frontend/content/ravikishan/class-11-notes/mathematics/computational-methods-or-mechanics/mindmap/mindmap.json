@@ -1,0 +1,81 @@
+{
+  "title": "Computational Methods or Mechanics Mindmap",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "computational-methods-or-mechanics-mindmap",
+  "topicTitle": "Computational Methods or Mechanics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Computational Methods or Mechanics",
+    "children": [
+      {
+        "id": "numerical-computation-roots-of",
+        "label": "Numerical computation: roots of algebraic",
+        "children": [
+          {
+            "id": "numerical-computation-roots-of-algebraic-sub-0",
+            "label": "transcendental equations (bisection"
+          },
+          {
+            "id": "numerical-computation-roots-of-algebraic-sub-1",
+            "label": "Newton-Raphson method)"
+          }
+        ]
+      },
+      {
+        "id": "numerical-integration-trapezoi",
+        "label": "Numerical integration: Trapezoidal rule",
+        "children": [
+          {
+            "id": "numerical-integration-trapezoidal-rule-sub-0",
+            "label": "Simpson's rule"
+          }
+        ]
+      },
+      {
+        "id": "mechanics-optional-statics-for",
+        "label": "Mechanics (optional)",
+        "children": [
+          {
+            "id": "mechanics-optional--sub-0",
+            "label": "Statics — forces and resultant forces"
+          },
+          {
+            "id": "mechanics-optional--sub-1",
+            "label": "parallelogram law of forces"
+          },
+          {
+            "id": "mechanics-optional--sub-2",
+            "label": "composition and resolution of forces"
+          },
+          {
+            "id": "mechanics-optional--sub-3",
+            "label": "resultant of coplanar forces acting on a point"
+          }
+        ]
+      },
+      {
+        "id": "mechanics-optional-dynamics-mo",
+        "label": "Mechanics (optional)",
+        "children": [
+          {
+            "id": "mechanics-optional--sub-0",
+            "label": "Dynamics — motion of particle in a straight line"
+          },
+          {
+            "id": "mechanics-optional--sub-1",
+            "label": "motion with uniform acceleration"
+          },
+          {
+            "id": "mechanics-optional--sub-2",
+            "label": "motion under gravity"
+          },
+          {
+            "id": "mechanics-optional--sub-3",
+            "label": "motion down a smooth inclined plane"
+          }
+        ]
+      }
+    ]
+  }
+}

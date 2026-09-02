@@ -5,26 +5,46 @@
   "topicTitle": "Total internal reflection",
   "relevance": 100,
   "notes": [
-    "**Condition:** light travels from a denser medium to a rarer medium, and the angle of incidence exceeds the critical angle $\\theta_c$.",
-    "**Critical angle formula:** $\\sin\\theta_c = n_2/n_1$ where $n_1 > n_2$. For glass-to-air ($n_1=1.52, n_2=1.0$), $\\theta_c \\approx 41.1Â°$. For diamond-to-air, $\\theta_c \\approx 24.4Â°$.",
-    "**Why diamonds sparkle:** the tiny critical angle means light entering a cut diamond undergoes many internal reflections before exiting, creating brilliant flashes of colour.",
-    "**Applications:** optical fibres (light guided by repeated TIR), binocular prisms (Porro prisms), automotive reflectors, and diamond cutting.",
-    "**Mirage:** on a hot road, air near the surface is hotter and less dense than air above. Light from the sky bends away from the normal as it passes through these layers, eventually undergoing TIR and reaching the observer's eye as if from a water surface below."
+    "**Definition:** Total internal reflection (TIR) occurs when a ray of light traveling in a denser medium strikes the boundary with a rarer medium at an angle of incidence greater than the critical angle. All the light is reflected back into the denser medium — no refraction occurs.",
+    "**Two essential conditions:** (1) Light must travel from a DENSER medium to a RARER medium ($n_1 > n_2$). (2) The angle of incidence must EXCEED the critical angle ($i > \\theta_c$).",
+    "**Critical angle formula:** $\\sin\\theta_c = \\frac{n_2}{n_1}$, where $n_1$ is the refractive index of the denser medium and $n_2$ is the refractive index of the rarer medium. At the critical angle, the refracted ray travels along the boundary ($r = 90°$).",
+    "**Critical angle for common materials:** Glass-to-air ($n = 1.52$): $\\theta_c = \\arcsin(1/1.52) = 41.1°$. Water-to-air ($n = 1.33$): $\\theta_c = \\arcsin(1/1.33) = 48.8°$. Diamond-to-air ($n = 2.42$): $\\theta_c = \\arcsin(1/2.42) = 24.4°$.",
+    "**What happens at different angles:** If $i < \\theta_c$: partial reflection + refraction (most light transmits). If $i = \\theta_c$: refraction at 90° (along the boundary). If $i > \\theta_c$: TOTAL internal reflection (100% reflection, no transmission).",
+    "**Why TIR is "total":** Unlike mirror reflection (which absorbs 5–15% of light), TIR reflects 100% of the light. This makes it far more efficient than metallic mirrors for bending light paths in optical instruments.",
+    "**Optical fibre principle:** An optical fibre consists of a core (high $n$) surrounded by cladding (lower $n$). Light entering the core at angles greater than the critical angle undergoes repeated TIR, traveling kilometers with minimal loss. This is the basis of modern telecommunications.",
+    "**Diamond sparkle:** Diamond's high refractive index ($n = 2.42$) gives a very small critical angle (24.4°). Light entering a well-cut diamond undergoes multiple TIR events before exiting, creating the characteristic brilliant flashes of color (fire).",
+    "**Mirage phenomenon:** On a hot road, air near the surface is hotter and less dense (lower $n$) than air above. Light from the sky bends away from the normal as it passes through increasingly rarer layers. At a certain height, the angle exceeds the critical angle and TIR occurs, creating the illusion of water on the road.",
+    "**Prism binoculars:** Porro prisms in binoculars use TIR at the hypotenuse face (glass-to-air at 45°, which exceeds the critical angle of ~42° for glass). This provides reflection without the need for a silvered coating — brighter images with no degradation.",
+    "**NEB exam focus:** State the two conditions for TIR. Derive the critical angle formula. Calculate critical angles for common material pairs. Explain optical fibres and mirages using TIR. Draw ray diagrams showing TIR in prisms and fibres.",
+    "**Fibre optic numbers — acceptance angle:** The maximum angle at which light can enter an optical fibre and still undergo TIR is called the acceptance angle. $\\sin\\theta_a = \\sqrt{n_{core}^2 - n_{clad}^2}$. For typical fibres ($n_{core} = 1.48$, $n_{clad} = 1.46$): $\\theta_a \\approx 16°$.",
+    "**Optical fibre types:** (1) Step-index fibre: core and cladding have uniform but different indices. (2) Graded-index fibre: the core's index gradually decreases from center to edge, causing light to follow curved paths and reducing modal dispersion.",
+    "**Applications of TIR:** (1) Optical fibres for communication and endoscopy. (2) Prism reflectors in binoculars and periscopes. (3) Diamond cutting for maximum brilliance. (4) Automotive rain sensors (TIR is disrupted by water droplets on the windshield). (5) Fiber-optic sensors for temperature and pressure.",
+    "**Partial reflection at TIR:** In reality, at angles just above the critical angle, a small evanescent wave penetrates into the rarer medium (decaying exponentially over a distance of about one wavelength). This is the principle behind frustrated TIR and near-field optical microscopy.",
+    "**Energy conservation in TIR:** Since no light is transmitted, all the incident energy is reflected. The intensity of the reflected ray equals the intensity of the incident ray (ignoring absorption in the medium). This is why TIR prisms are preferred over silvered mirrors in precision optics."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ TIR can occur when light goes from rarer to denser medium. ✅ TIR ONLY occurs when light travels from DENSER to RARER medium ($n_1 > n_2$). From rarer to denser, the ray always bends toward the normal and always enters the second medium.",
+    "❌ The critical angle exists for any pair of media. ✅ The critical angle only exists when $n_1 > n_2$. If light goes from air to glass ($n_1 < n_2$), there is no critical angle — refraction always occurs.",
+    "❌ At the critical angle, all light is reflected. ✅ At the critical angle ($i = \\theta_c$), the refracted ray travels ALONG the boundary ($r = 90°$). TIR begins only when $i > \\theta_c$, not at $i = \\theta_c$.",
+    "❌ TIR produces a dimmer reflection than a mirror. ✅ TIR reflects 100% of the light — it is BRIGHTER than any metallic mirror, which typically absorbs 5–15% of incident light.",
+    "❌ Optical fibres work because light is "trapped" by the cladding. ✅ Optical fibres work because of TIR at the core-cladding interface. The cladding has a LOWER refractive index than the core, creating the condition for TIR.",
+    "❌ The critical angle for diamond is about 42°. ✅ Diamond's critical angle is about 24.4° (much smaller than glass's 42°). This small critical angle is what makes diamonds so brilliant — light undergoes multiple TIR events before exiting.",
+    "❌ TIR can occur at any interface, including solid-solid interfaces. ✅ TIR requires a boundary between two media with DIFFERENT refractive indices. It can occur at any such boundary (glass-air, water-glass, fibre core-cladding) as long as light travels from the higher-index to the lower-index medium."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Find the critical angle for light going from glass ($n = 1.52$) to water ($n = 1.33$). $\\sin\\theta_c = n_2/n_1 = 1.33/1.52 = 0.875$. $\\theta_c = \\arcsin(0.875) = 61.0°$. Light going from water to glass would not have a critical angle (it's going to a denser medium).",
+    "A ray in water ($n = 1.33$) strikes the water-air interface at 40°. Does TIR occur? The critical angle is $\\theta_c = \\arcsin(1/1.33) = 48.8°$. Since $i = 40° < 48.8°$, TIR does NOT occur. The ray is partially reflected and partially refracted into the air.",
+    "A ray in water ($n = 1.33$) strikes the water-air interface at 60°. Does TIR occur? Since $i = 60° > 48.8° = \\theta_c$, TIR DOES occur. All light is reflected back into the water. This is why underwater swimmers looking up see a mirror-like surface at steep angles.",
+    "Calculate the critical angle for a diamond ($n = 2.42$) in air. $\\sin\\theta_c = 1/2.42 = 0.4132$. $\\theta_c = \\arcsin(0.4132) = 24.4°$. This small critical angle means light entering a diamond at most angles undergoes TIR, contributing to its brilliance.",
+    "An optical fibre has core index 1.48 and cladding index 1.46. Find the acceptance angle. $\\sin\\theta_a = \\sqrt{n_{core}^2 - n_{clad}^2} = \\sqrt{1.48^2 - 1.46^2} = \\sqrt{2.1904 - 2.1316} = \\sqrt{0.0588} = 0.2425$. $\\theta_a = \\arcsin(0.2425) = 14.0°$. Light must enter within 14° of the fibre axis to be guided.",
+    "Explain why a crack in a glass window appears silvery when viewed from certain angles. Light traveling inside the glass reaches the crack (which is filled with air) at angles that may exceed the critical angle for glass-air ($\\theta_c \\approx 42°$). When this happens, TIR occurs at the crack surface, making it appear shiny and silvery — like a mirror."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The phenomenon of total internal reflection was first observed and described by Augustin-Jean Fresnel in 1818. His mathematical treatment of TIR predicted the evanescent wave that penetrates into the rarer medium.",
+    "Optical fibre communication, invented by Charles Kao in the 1960s, revolutionized global communications. Kao won the Nobel Prize in Physics in 2009 for his work. A single fibre can carry terabits of data per second over thousands of kilometers.",
+    "The "sparkle" of a cut diamond is directly related to its small critical angle (24.4°). A poorly cut diamond allows light to escape through the bottom, making it appear dull. Expert cutters angle the facets to maximize TIR and light return to the viewer's eye.",
+    "Frustrated total internal reflection occurs when a third medium is brought very close (within a wavelength) to the interface where TIR is occurring. The evanescent wave can then couple into the third medium, allowing a small amount of light to "tunnel" across the gap.",
+    "TIRprisms are used in high-quality binoculars because they reflect 100% of the light (compared to ~95% for silvered mirrors). This makes the image significantly brighter, especially in low-light conditions."
   ],
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces"

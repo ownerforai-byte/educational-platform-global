@@ -1,30 +1,49 @@
 {
-  "title": "Nitrogen â€” Inertness, Active Nitrogen and Ammonia",
+  "title": "Nitrogen — Inertness, Active Nitrogen and Ammonia",
   "unitSlug": "chemistry-of-non-metals",
   "topicSlug": "nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications",
   "topicTitle": "Nitrogen: reason for inertness of nitrogen and active nitrogen; chemical properties of ammonia and applications and harmful effects of ammonia",
   "relevance": 100,
   "notes": [
-    "**Inertness:** $N_2$ has a very strong triple bond (946 kJ/mol) and no dipole moment, making it chemically unreactive at ordinary conditions.",
-    "**Active nitrogen:** produced by passing an electric discharge through $N_2$. It is an allotrope containing atomic nitrogen and excited molecules, extremely reactive.",
-    "**Ammonia preparation:** Haber process: $N_2 + 3H_2 \\rightleftharpoons 2NH_3$, $\\Delta H = -92.4\\,\\text{kJ}$. High pressure (200 atm), moderate temperature (450Â°C), iron catalyst with promoters.",
-    "**Ammonia properties:** pungent gas, highly soluble in water forming weak base $NH_4OH$. Reacts with acids to form ammonium salts, with $CuSO_4$ to give deep blue complex, with $Na$ to form sodamide.",
-    "**Applications:** fertilizers (urea, ammonium nitrate), refrigerants, cleaning agents, explosives. Harmful effects: toxic if inhaled, caustic burns, contributes to eutrophication in waterways."
+    "**Triple bond and inertness:** $N_2$ contains a $N\\equiv N$ triple bond with bond dissociation energy of 946 kJ/mol, the strongest bond in diatomic molecules. The short bond length (109.8 pm) and absence of a dipole moment make molecular nitrogen exceptionally unreactive at room temperature. This is why the atmosphere (78% $N_2$) is stable and non-flammable.",
+    "**Molecular orbital picture:** The MO configuration $(\\sigma_{1s})^2(\\sigma^*_{1s})^2(\\sigma_{2s})^2(\\sigma^*_{2s})^2(\\pi_{2p_x})^2(\\pi_{2p_y})^2(\\sigma_{2p_z})^2$ gives a bond order of 3. The fully filled bonding orbitals and large HOMO–LUMO gap explain the kinetic inertness — a high activation energy is required to break the triple bond.",
+    "**Active nitrogen:** When $N_2$ is passed through an electric discharge or subjected to high-frequency oscillating discharge, the triple bond partially breaks producing atomic nitrogen ($N$) and excited $N_2^*$ species. This \"active nitrogen\" is highly reactive and can combine with various elements at room temperature — unlike ordinary $N_2$ which requires high temperatures.",
+    "**Haber process — conditions:** $N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)$, $\\Delta H = -92.4\\,\\text{kJ/mol}$. Le Chatelier's principle predicts: high pressure (150–300 atm) favours the forward reaction (4 moles gas → 2 moles); moderate temperature (400–500°C) is a compromise — low temp favours yield but slows rate; iron catalyst (with $K_2O$ and $Al_2O_3$ promoters) lowers activation energy.",
+    "**Haber process — yield optimization:** At 200 atm and 450°C with Fe catalyst, the equilibrium yield is ~35%. The unreacted $N_2$ and $H_2$ are recycled. Ammonia is liquefied and separated (bp = −33°C) while the unreacted gases are compressed and fed back, giving an overall yield >98%.",
+    "**Physical properties of ammonia:** Colourless gas with a characteristic pungent odour. Highly soluble in water (≈ 700 volumes dissolve in 1 volume of water at 20°C) due to hydrogen bonding. Liquefies easily under pressure (bp −33.4°C) and is used as a refrigerant (R-717). Solid ammonia has a cubic close-packed structure.",
+    "**Ammonia in water — basic nature:** $NH_3 + H_2O \\rightleftharpoons NH_4^+ + OH^-$, $K_b = 1.8 \\times 10^{-5}$. The solution (ammonium hydroxide, $NH_4OH$) is a weak base. It turns red litmus blue and reacts with acids to form ammonium salts: $NH_3 + HCl \\rightarrow NH_4Cl$ (white fumes).",
+    "**Ammonia as a ligand:** Ammonia is a good σ-donor ligand. With copper(II) sulfate: $Cu^{2+} + 4NH_3 \\rightarrow [Cu(NH_3)_4]^{2+}$ (deep blue tetraamminecopper(II) complex). With silver nitrate: $Ag^+ + 2NH_3 \\rightarrow [Ag(NH_3)_2]^+$ (Tollens' reagent precursor). These complexes are important in qualitative analysis.",
+    "**Reaction with halogens:** $8NH_3 + 3Cl_2 \\rightarrow 6NH_4Cl + N_2$ (excess ammonia gives white fumes of $NH_4Cl$). With limited $Cl_2$: $NH_3 + 3Cl_2 \\rightarrow NCl_3 + 3HCl$ (explosive yellow oil, nitrogen trichloride). Similarly with bromine: $8NH_3 + 3Br_2 \\rightarrow 6NH_4Br + N_2$.",
+    "**Reduction of metal oxides:** Ammonia acts as a reducing agent: $3CuO + 2NH_3 \\rightarrow 3Cu + N_2 + 3H_2O$. Hot $CuO$ is reduced to copper, and $NH_3$ is oxidized to $N_2$. This demonstrates the reducing character of ammonia at elevated temperatures.",
+    "**Oxidation of ammonia — catalytic:** In the Ostwald process, ammonia is oxidized over a Pt-Rh catalyst at ~900°C: $4NH_3 + 5O_2 \\rightarrow 4NO + 6H_2O$. This is the key industrial step for producing nitric acid. Without a catalyst, $NH_3$ burns in $O_2$ to give $N_2$: $4NH_3 + 3O_2 \\rightarrow 2N_2 + 6H_2O$.",
+    "**Reaction with CO₂ — urea synthesis:** $2NH_3 + CO_2 \\rightarrow NH_2COONH_4$ (ammonium carbamate, at 150°C, 200 atm), then $NH_2COONH_4 \\xrightarrow{\\Delta} CO(NH_2)_2 + H_2O$. Urea (46% nitrogen by mass) is the most widely used nitrogenous fertilizer worldwide.",
+    "**Ammonium salts — thermal decomposition:** $NH_4Cl(s) \\xrightarrow{\\Delta} NH_3(g) + HCl(g)$ (sublimation-like behaviour). $NH_4NO_3 \\xrightarrow{\\Delta} N_2O + 2H_2O$ (used as an explosive and fertiliser). $(NH_4)_2Cr_2O_7 \\xrightarrow{\\Delta} N_2 + Cr_2O_3 + 4H_2O$ (volcano experiment, green $Cr_2O_3$ residue).",
+    "**Harmful effects of ammonia:** Inhalation causes severe irritation of respiratory tract, coughing, and pulmonary oedema. Concentrated aqueous ammonia causes caustic burns to skin and eyes. Environmental impact: ammonia runoff from fertilizers causes eutrophication — excessive algal growth depletes dissolved oxygen, killing aquatic life. $NH_3$ also contributes to particulate matter ($NH_4NO_3$, $(NH_4)_2SO_4$) formation in the atmosphere.",
+    "**Liquid ammonia as solvent:** Anhydrous liquid ammonia (bp −33°C) is a excellent solvent for alkali metals, giving deep blue conductive solutions containing solvated electrons: $M \\xrightarrow{liq.\\ NH_3} M^+ + e^-(NH_3)$. On standing, it slowly reduces to amide: $2NH_3 + 2Na \\rightarrow 2NaNH_2 + H_2$. This property is used in organic synthesis (Birch-type reductions)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ Nitrogen is unreactive because it has a complete octet ✅ Nitrogen is unreactive primarily due to the high bond dissociation energy (946 kJ/mol) of the $N\\equiv N$ triple bond — the complete octet is shared by many reactive species (e.g., $O_3$)",
+    "❌ Active nitrogen is a new allotrope of nitrogen ✅ Active nitrogen is not an allotrope — it is a reactive mixture of atomic nitrogen ($N$) and excited molecular nitrogen ($N_2^*$) produced by electric discharge",
+    "❌ High temperature favours ammonia yield in the Haber process ✅ The Haber reaction is exothermic ($\\Delta H = -92.4$ kJ); low temperature favours yield, but moderate temperature (400–500°C) is used as a compromise for reaction rate",
+    "❌ $NH_3$ is a strong base ✅ $NH_3$ is a weak base ($K_b = 1.8 \\times 10^{-5}$); it is a strong *nucleophile* and a good *ligand*, but only partially ionizes in water",
+    "❌ $NH_4Cl$ undergoes true sublimation ✅ $NH_4Cl$ does not truly sublime — it dissociates into $NH_3$ and $HCl$ on heating and recombines on cooling; true sublimation (e.g., $I_2$, $CO_2$) involves no chemical change",
+    "❌ Ammonia reduces $CuO$ to $Cu_2O$ ✅ Ammonia reduces hot $CuO$ all the way to metallic copper: $3CuO + 2NH_3 \\rightarrow 3Cu + N_2 + 3H_2O$, not to $Cu_2O$",
+    "❌ Liquid ammonia solution of sodium is stable indefinitely ✅ The deep blue solution of Na in liquid ammonia is unstable on standing — it slowly evolves $H_2$ and forms sodium amide: $2Na + 2NH_3 \\rightarrow 2NaNH_2 + H_2$; it is stable only with a stabilizer like methanol"
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Problem 1: In the Haber process, 28 g of $N_2$ reacts with excess $H_2$ at 200 atm and 450°C. If the percentage yield is 35%, calculate the mass of ammonia produced. Solution: Moles of $N_2$ = 28/28 = 1 mol. From $N_2 + 3H_2 \\rightarrow 2NH_3$, theoretical yield = 2 mol $NH_3$ = 2 × 17 = 34 g. Actual yield = 34 × 0.35 = **11.9 g**.",
+    "Problem 2: Calculate the volume of $NH_3$ (at STP) required to completely reduce 4.8 g of $CuO$. Solution: Moles of $CuO$ = 4.8/79.5 = 0.0604 mol. From $3CuO + 2NH_3 \\rightarrow 3Cu + N_2 + 3H_2O$, moles of $NH_3$ = (2/3) × 0.0604 = 0.0403 mol. Volume at STP = 0.0403 × 22.4 = **0.902 L (902 mL)**.",
+    "Problem 3: 500 mL of 0.2 M $HCl$ is completely neutralised by $NH_3$ gas. Calculate the volume of $NH_3$ at 27°C and 1 atm. Solution: Moles of $HCl$ = 0.5 × 0.2 = 0.1 mol. From $NH_3 + HCl \\rightarrow NH_4Cl$, moles of $NH_3$ = 0.1 mol. Using $PV = nRT$: $V = (0.1 \\times 0.0821 \\times 300)/1 = $ **2.463 L**.",
+    "Problem 4: How many litres of $H_2$ (at STP) are needed to produce 68 g of $NH_3$ via the Haber process? Solution: Moles of $NH_3$ = 68/17 = 4 mol. From $N_2 + 3H_2 \\rightarrow 2NH_3$, moles of $H_2$ = (3/2) × 4 = 6 mol. Volume at STP = 6 × 22.4 = **134.4 L**.",
+    "Problem 5: A sample of $NH_3$ is collected over water at 27°C and 750 mm Hg. The volume is 2.5 L. Calculate the moles of dry $NH_3$. (Vapour pressure of water at 27°C = 26.7 mm Hg) Solution: Pressure of dry $NH_3$ = 750 − 26.7 = 723.3 mm Hg = 0.9517 atm. $n = PV/RT = (0.9517 \\times 2.5)/(0.0821 \\times 300) = $ **0.0968 mol**.",
+    "Problem 6: What mass of $NH_4Cl$ is formed when excess $NH_3$ reacts with 2.0 L of $HCl$ at 2 atm and 273 K? Solution: Moles of $HCl$: $n = PV/RT = (2 \\times 2.0)/(0.0821 \\times 273) = 0.1785$ mol. From $NH_3 + HCl \\rightarrow NH_4Cl$, moles of $NH_4Cl$ = 0.1785 mol. Mass = 0.1785 × 53.5 = **9.55 g**."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Over 150 million tonnes of ammonia are produced globally each year — roughly half of all nitrogen fertilizer derives from the Haber process, making it responsible for feeding approximately half the world's population.",
+    "Liquid ammonia was one of the first synthetic refrigerants (designated R-717) and is still used in large industrial cold-storage plants because it has zero ozone depletion potential and zero global warming potential.",
+    "The deep blue colour of sodium dissolved in liquid ammonia is due to ammoniated (solvated) electrons — electrons trapped in cavities formed by ammonia molecules — a phenomenon that inspired the theory of solvated electrons in chemistry.",
+    "Active nitrogen, produced by electric discharge through $N_2$, was first studied by Friedrich Wöhler in 1837 and can nitrate aromatic compounds at room temperature — a reaction that requires harsh conditions with ordinary $N_2$.",
+    "Ammonia's extreme solubility in water (≈ 700 volumes per volume at 20°C) is due to extensive hydrogen bonding; this property is exploited in the 'ammonia fountain' experiment, a classic classroom demonstration of gas solubility and pressure differentials."
   ],
   "animation3D": "chemistry-of-non-metals",
   "motionGraphics": "chemistry-of-non-metals"

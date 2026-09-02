@@ -1,0 +1,65 @@
+{
+  "title": "Foundation and Fundamentals Mindmap",
+  "unitSlug": "foundation-and-fundamentals",
+  "topicSlug": "foundation-and-fundamentals-mindmap",
+  "topicTitle": "Foundation and Fundamentals — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Foundation and Fundamentals",
+    "children": [
+      {
+        "id": "general-introduction-of-chemistry",
+        "label": "General introduction of chemistry"
+      },
+      {
+        "id": "importance-and-scope-of-chemis",
+        "label": "Importance",
+        "children": [
+          {
+            "id": "importance-sub-0",
+            "label": "scope of chemistry"
+          }
+        ]
+      },
+      {
+        "id": "basic-concepts-of-chemistry-at",
+        "label": "Basic concepts of chemistry",
+        "children": [
+          {
+            "id": "basic-concepts-of-chemistry-sub-0",
+            "label": "atoms"
+          },
+          {
+            "id": "basic-concepts-of-chemistry-sub-1",
+            "label": "molecules"
+          },
+          {
+            "id": "basic-concepts-of-chemistry-sub-2",
+            "label": "relative masses of atoms and molecules"
+          },
+          {
+            "id": "basic-concepts-of-chemistry-sub-3",
+            "label": "atomic mass unit (amu"
+          },
+          {
+            "id": "basic-concepts-of-chemistry-sub-4",
+            "label": "radicals"
+          },
+          {
+            "id": "basic-concepts-of-chemistry-sub-5",
+            "label": "molecular formula"
+          },
+          {
+            "id": "basic-concepts-of-chemistry-sub-6",
+            "label": "empirical formula"
+          }
+        ]
+      },
+      {
+        "id": "percentage-composition-from-molecular-fo",
+        "label": "Percentage composition from molecular formula"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Introduction to Biology Mindmap",
+  "unitSlug": "introduction-to-biology",
+  "topicSlug": "introduction-to-biology-mindmap",
+  "topicTitle": "Introduction to Biology — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Introduction to Biology",
+    "children": [
+      {
+        "id": "introduction-to-biology-scope-",
+        "label": "Introduction to Biology: Scope",
+        "children": [
+          {
+            "id": "introduction-to-biology-scope-sub-0",
+            "label": "fields of biology"
+          }
+        ]
+      },
+      {
+        "id": "relation-of-biology-with-other-sciences",
+        "label": "Relation of biology with other sciences"
+      }
+    ]
+  }
+}

@@ -5,25 +5,40 @@
   "topicTitle": "Molecular properties of matter",
   "relevance": 100,
   "notes": [
-    "**Matter is particulate:** all matter is made of tiny particles (atoms or molecules) in constant random motion.",
-    "**Intermolecular spaces:** the space between molecules is much larger than the molecules themselves in gases, smaller in liquids, and smallest in solids.",
-    "**Intermolecular forces:** attractive forces between molecules. They are strongest in solids, weaker in liquids, and negligible in gases at ordinary conditions.",
-    "**Kinetic energy vs potential energy:** in gases, kinetic energy dominates; in solids, potential energy dominates because molecules are held in fixed positions by strong intermolecular forces."
+    "**Kinetic theory of matter:** All matter is composed of tiny particles (atoms or molecules) that are in constant, random motion. The motion is thermal motion - faster at higher temperatures.",
+    "**States of matter and molecular spacing:** In gases, intermolecular spacing is much larger than molecular diameter (10× or more), so molecules move freely. In liquids, spacing is about 1 molecular diameter. In solids, molecules are tightly packed in a regular arrangement.",
+    "**Intermolecular forces:** Attractive forces between molecules (van der Waals, hydrogen bonding, dipole-dipole). These forces are strongest in solids (holding molecules in fixed positions), moderate in liquids, and very weak in gases at ordinary conditions.",
+    "**Kinetic energy vs potential energy in matter:** In gases, kinetic energy dominates (molecules move freely). In solids, potential energy dominates (molecules held in fixed positions by strong intermolecular forces). At the melting/boiling point, energy input goes into breaking bonds (increasing PE) without changing temperature.",
+    "**Brownian motion:** Random zigzag motion of microscopic particles suspended in a fluid, first observed by Robert Brown (1827). Explained by Einstein (1905) as the result of unequal bombardment by fluid molecules - strong evidence for the kinetic theory.",
+    "**Diffusion:** The spontaneous mixing of particles due to random molecular motion. Occurs in all states but fastest in gases and slowest in solids. Fick's law: diffusion rate $\\\\propto$ concentration gradient. At higher temperature, diffusion is faster (faster molecules).",
+    "**Thermal expansion:** Matter expands when heated (generally). In gases, expansion is large (Charles's law). In liquids, expansion is moderate. In solids, expansion is small but measurable. Due to increased molecular vibration amplitudes at higher temperatures.",
+    "**Mean free path:** The average distance a molecule travels between collisions. $\\\\\lambda = \\frac{1}{\\\\\sqrt{2} n \\\\\sigma}$, where $n$ is the number density and $\\\\\sigma$ is the collision cross-section. At STP, the mean free path of air molecules is about 68 nm.",
+    "**Degrees of freedom:** The number of independent ways a molecule can store energy. Monatomic gas: 3 translational DOF. Diatomic: 5 (3 translational + 2 rotational). Polyatomic: 6 (3 translational + 3 rotational) at room temperature.",
+    "**Equipartition theorem:** Each quadratic degree of freedom contributes $\\frac{1}{2}k_BT$ of energy per molecule, or $\\frac{1}{2}RT$ per mole. For monatomic gas ($f=3$): $U = \\frac{3}{2}nRT$. For diatomic ($f=5$): $U = \\frac{5}{2}nRT$.",
+    "**Phase transitions and energy:** During melting or boiling, temperature stays constant even though heat is added. The energy goes into breaking intermolecular bonds (increasing PE), not increasing KE. This is latent heat: $Q = mL$ where $L$ is latent heat.",
+    "**Surface tension:** A consequence of intermolecular attractive forces. Molecules at the surface experience a net inward pull, creating a 'skin' effect. Surface tension $\\\\\gamma$ has units of N/m or J/m$^2$. Water has high surface tension (72 mN/m at 25°C) due to hydrogen bonding.",
+    "**Viscosity:** A measure of a fluid's resistance to flow. Caused by intermolecular forces and molecular momentum transfer. Gases become more viscous at higher temperature (faster molecules, more momentum transfer). Liquids become less viscous at higher temperature (bonds break more easily)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Temperature measures the average kinetic energy of molecules, NOT the total energy. A hot object has higher average KE per molecule, but a large cold object may have more total thermal energy (more molecules).",
+    "Heat and temperature are NOT the same. Temperature is a measure of average molecular KE (intensive property). Heat is the transfer of thermal energy between objects due to temperature difference (extensive property). You can add heat without changing temperature (phase change).",
+    "Intermolecular forces are NOT the same as intramolecular (chemical) forces. Intermolecular forces hold molecules together in condensed phases (weak, ~1-100 kJ/mol). Intramolecular forces hold atoms together within a molecule (strong, ~100-1000 kJ/mol).",
+    "Diffusion in liquids is faster than in solids, but much slower than in gases. This is often confused with the rate of dissolving, which also involves convection and stirring.",
+    "A gas molecule at high altitude has LESS kinetic energy if it has risen (energy converts to gravitational PE). But temperature is a statistical property - individual molecules have a range of speeds given by the Maxwell-Boltzmann distribution, not a single speed."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Estimate the average distance between molecules in air at STP. Solution: Number density $n = N_A/V_m = 6.022 \\times 10^{23} / 0.0224 = 2.69 \\times 10^{25}$ molecules/m$^3$. Average spacing $d \\\\\approx n^{-1/3} = (2.69 \\times 10^{25})^{-1/3} = 3.3 \\times 10^{-9}$ m $= 3.3$ nm. This is about 10 molecular diameters.",
+    "Calculate the root-mean-square speed of O$_2$ at 300 K. $M_{O_2} = 0.032$ kg/mol. Solution: $v_{rms} = \\\\\sqrt{3RT/M} = \\\\\sqrt{3 \\times 8.314 \\times 300 / 0.032} = \\\\\sqrt{7482.6 / 0.032} = \\\\\sqrt{233,831} = 483.6$ m/s. About 1741 km/h!",
+    "A 100 g block of ice at 0°C melts to water at 0°C. How much energy is required? ($L_f = 334$ kJ/kg). Solution: $Q = mL = 0.1 \\times 334,000 = 33,400$ J = 33.4 kJ. Temperature doesn't change - all energy goes into breaking intermolecular bonds (increasing PE).",
+    "Compare the mean free path of gas molecules at STP (68 nm) vs at 1/10th the pressure. Solution: $\\\\\lambda \\\\\propto 1/P$. At $P/10$, $\\\\\lambda = 680$ nm = 0.68 $\\\\\mu$m. At very low pressure (vacuum), mean free path can be kilometers long.",
+    "Using equipartition, calculate the molar internal energy of CO$_2$ at room temperature (assume linear molecule with 4 active DOF: 3 translational + 1 rotational... wait, CO$_2$ is linear so 3 trans + 2 rot = 5 DOF). Solution: $U = \\frac{5}{2}RT = \\frac{5}{2} \\times 8.314 \\times 300 = 6235.5$ J/mol $= 6.24$ kJ/mol."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Einstein's 1905 paper on Brownian motion provided the first quantitative evidence for the existence of atoms and molecules. Jean Perrin experimentally confirmed Einstein's predictions in 1908, earning the Nobel Prize in 1926.",
+    "The kinetic theory was developed by Daniel Bernoulli in 1738 (in his Hydrodynamica), but was ignored until revived by Clausius, Maxwell, and Boltzmann in the 19th century. Bernoulli proposed that gas pressure comes from molecular collisions - centuries before it was accepted.",
+    "At room temperature, gas molecules move at hundreds of meters per second (sound speed!). But gas smells take time to travel across a room because molecules undergo billions of collisions per second (mean free path ~70 nm), resulting in a random walk.",
+    "The equipartition theorem fails at low temperatures, where quantum effects 'freeze out' certain degrees of freedom. This was one of the early successes of quantum mechanics - Planck's quantization explained why solids' heat capacity drops at low $T$ (Einstein model, 1907).",
+    "Water's high surface tension (due to hydrogen bonding) allows insects to walk on water, allows needles to float, and drives capillary action in plants - all critical for life on Earth."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

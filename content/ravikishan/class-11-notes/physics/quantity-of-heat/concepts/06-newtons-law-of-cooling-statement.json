@@ -1,30 +1,50 @@
 {
-  "title": "Newton's Law of Cooling â€” Statement",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "newton-s-law-of-cooling",
-  "topicTitle": "Newton's law of cooling",
-  "relevance": 100,
-  "notes": [
-    "**Statement:** the rate of loss of heat of a body is directly proportional to the difference between the body's temperature (Î¸) and the surrounding temperature (Î¸â‚€), for small differences",
-    "**Proportionality:** âˆ’dH/dt âˆ (Î¸ âˆ’ Î¸â‚€)",
-    "**With constant K:** âˆ’dH/dt = K(Î¸ âˆ’ Î¸â‚€) --- (Equation 1)",
-    "**K (proportionality constant)** depends on: (i) nature of the body â€” material and surface texture, and (ii) exposed surface area â€” a larger surface area increases the cooling rate"
+  \"\"\"title\"\"\": \"\"\"Newton's Law of Cooling - Statement\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"newtons-law-of-cooling\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Newton's law of cooling - statement and basics\"\"\",
+  \"\"\"relevance\"\"\": 100,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Statement:** The rate of loss of heat of a body is directly proportional to the difference between the body's temperature ($\\theta$) and the surrounding temperature ($\\theta_0$), provided the temperature difference is small (typically $< 30°\\text{C}$).\"\"\",
+    \"\"\"**Mathematical form:** $\\frac{dH}{dt} = -k(\\theta - \\theta_0)$, where $k > 0$ is a constant depending on the body's properties and surface area. The negative sign indicates heat is LOST (temperature decreasing).\"\"\",
+    \"\"\"**In terms of temperature rate:** Since $dH = mc\\,d\\theta$, we get $\\frac{d\\theta}{dt} = -\\frac{k}{mc}(\\theta - \\theta_0) = -K'(\\theta - \\theta_0)$, where $K' = \\frac{k}{mc}$ is the cooling constant.\"\"\",
+    \"\"\"**The constant $k$:** $k$ depends on (i) the nature of the body - material, surface texture, emissivity; (ii) the surface area exposed to surroundings; (iii) the nature of the surrounding medium (air, water). A blackened surface cools faster than a polished one.\"\"\",
+    \"\"\"**Applicability condition:** Newton's law is an APPROXIMATION valid only when $(\\theta - \\theta_0)$ is small. For large temperature differences, Stefan-Boltzmann radiation law ($\\frac{dH}{dt} \\propto \\theta^4 - \\theta_0^4$) must be used.\"\"\",
+    \"\"\"**Physical basis:** At small temperature differences, the radiation heat transfer ($\\theta^4 - \\theta_0^4 \\approx 4\\theta_0^3(\\theta - \\theta_0)$) is approximately linear in $(\\theta - \\theta_0)$. Convection also contributes a linear term.\"\"\",
+    \"\"\"**Cooling curve:** Plotting $\\theta$ vs. $t$ gives an exponential decay curve. The slope $\\frac{d\\theta}{dt}$ is steepest at the beginning (large $\\theta - \\theta_0$) and gradually approaches zero as $\\theta \\to \\theta_0$.\"\"\",
+    \"\"\"**Time constant:** The characteristic cooling time is $\\tau = \\frac{1}{K'} = \\frac{mc}{k}$. After time $\\tau$, the temperature difference drops to $1/e \\approx 37\\%$ of its initial value. A larger mass or higher $c$ means slower cooling.\"\"\",
+    \"\"\"**Surface area effect:** A sphere and a cube of the same material and mass cool at different rates because they have different surface areas. More surface area → larger $k$ → faster cooling. This is why thermos flasks have small openings.\"\"\",
+    \"\"\"**Surface texture effect:** A dull, blackened surface has high emissivity and radiates/absorbs heat efficiently. A polished, shiny surface has low emissivity and cools slowly. This is why survival blankets are shiny.\"\"\",
+    \"\"\"**Everyday examples:** A cup of hot coffee cools faster on a windy day (convection increases $k$). A thermos flask slows cooling by reducing conduction and convection (vacuum gap). A radiator in a car has fins to maximize surface area.\"\"\",
+    \"\"\"**Experimental verification:** Heat a liquid (e.g., water or oil) in a copper calorimeter. Record temperature at regular time intervals. Plot $\\theta$ vs. $t$ - you should get a smooth exponential decay curve approaching $\\theta_0$.\"\"\",
+    \"\"\"**Connection to RC circuits:** The mathematical form $\\frac{d\\theta}{dt} = -K'(\\theta - \\theta_0)$ is identical to the charging/discharging of a capacitor: $\\frac{dV}{dt} = -\\frac{1}{RC}(V - V_0)$. Temperature is analogous to voltage; thermal resistance to electrical resistance.\"\"\",
+    \"\"\"**NEB exam focus:** State Newton's law, write the differential equation, identify what $k$ depends on, explain the small-difference condition, and distinguish Newton's law from the Stefan-Boltzmann law.\"\"\",
+    \"\"\"**Common exam trap:** The law applies to the RATE of heat loss, not the total heat lost. $\\frac{dH}{dt} \\propto (\\theta - \\theta_0)$, not $H \\propto (\\theta - \\theta_0)$.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ Newton's law says temperature is proportional to time. ✅ It says the RATE of temperature change is proportional to the temperature difference: $\\frac{d\\theta}{dt} \\propto (\\theta - \\theta_0)$. The solution is exponential, not linear.\"\"\",
+    \"\"\"❌ Newton's law applies to all temperature differences. ✅ It is only accurate when $\\theta - \\theta_0 < 30°\\text{C}$ approximately. For large differences, use Stefan-Boltzmann: rate $\\propto \\theta^4 - \\theta_0^4$.\"\"\",
+    \"\"\"❌ The constant $k$ is the same for all bodies. ✅ $k$ depends on the body's surface area, texture, and the surrounding medium. Two identical bodies in different environments have different $k$ values.\"\"\",
+    \"\"\"❌ A black body cools slower than a shiny body. ✅ A black/dull body has HIGHER emissivity and cools FASTER. This is why radiators are painted black and survival blankets are shiny (to retain heat).\"\"\",
+    \"\"\"❌ Newton's law and Stefan-Boltzmann law give the same result always. ✅ They agree when $(\\theta - \\theta_0)$ is small. For large differences, Stefan-Boltzmann gives a much faster cooling rate (proportional to $T^4$).\"\"\",
+    \"\"\"❌ The surrounding temperature must be zero for Newton's law. ✅ $\\theta_0$ is the temperature of the surroundings (e.g., room temperature ≈ 25°C). The law uses the DIFFERENCE $(\\theta - \\theta_0)$, not absolute temperature.\"\"\",
+    \"\"\"❌ Newton's law applies to heating as well as cooling. ✅ Yes! If $\\theta < \\theta_0$, the body GAINS heat and the rate is positive: $\\frac{d\\theta}{dt} = +K'(\\theta_0 - \\theta)$. The same law describes both heating and cooling.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"A body cools from 80°C to 50°C in 5 minutes in a room at 20°C. Estimate the cooling constant $K'$. Average temperature = 65°C, average excess = 45°C. Using the approximate formula: $\\frac{\\Delta\\theta}{\\Delta t} = K'(\\theta_{avg} - \\theta_0)$. $\\frac{30}{5} = K' \\times 45 \\Rightarrow K' = \\frac{6}{45} = 0.133\\text{ min}^{-1}$.\"\"\",
+    \"\"\"Using the $K'$ from the previous problem, how long will it take the body to cool from 50°C to 30°C? Average temp = 40°C, excess = 20°C. $\\frac{20}{\\Delta t} = 0.133 \\times 20 \\Rightarrow \\Delta t = \\frac{20}{2.66} \\approx 7.5\\text{ min}$.\"\"\",
+    \"\"\"A thermos flask has a silvered double wall. Explain why this reduces heat loss. Silvered surfaces have low emissivity, reducing radiative heat transfer. The vacuum gap eliminates conduction and convection. Together, these minimize all three heat transfer mechanisms.\"\"\",
+    \"\"\"Why does a cup of hot tea cool faster if you blow on it? Blowing increases air movement over the surface, which increases the convection coefficient. This increases $k$ in Newton's law, leading to a faster rate of cooling.\"\"\",
+    \"\"\"A body cools from 60°C to 40°C in 10 min in a 20°C room. Using the exact exponential solution, find the temperature after 20 min. $\\theta - \\theta_0 = (\\theta_i - \\theta_0)e^{-K't}$. From first interval: $20 = 40e^{-10K'} \\Rightarrow e^{-10K'} = 0.5 \\Rightarrow K' = \\frac{\\ln 2}{10} = 0.0693\\text{ min}^{-1}$. After 20 min: $\\theta - 20 = 40e^{-0.0693 \\times 20} = 40 \\times 0.25 = 10$. $\\theta = 30°\\text{C}$.\"\"\",
+    \"\"\"Two identical spheres, one painted black and one polished, are heated to the same temperature. Which cools faster? Why? The black sphere cools faster. Black surfaces have higher emissivity (closer to 1), while polished surfaces have low emissivity (closer to 0). Higher emissivity → larger $k$ → faster cooling per Newton's law.\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"Newton actually stated his law of cooling in 1701, based on experiments with thermometers cooling in air. It is one of the earliest examples of a differential equation in physics.\"\"\",
+    \"\"\"The exponential decay form of Newton's law of cooling is mathematically identical to many other natural processes: radioactive decay, RC circuit discharge, population decay, and drug elimination from the bloodstream.\"\"\",
+    \"\"\"Forensic scientists use Newton's law of cooling to estimate the time of death. A body cooling from 37°C to room temperature follows the exponential law; measuring the current temperature allows back-calculation of time elapsed.\"\"\",
+    \"\"\"The food industry uses Newton's law to determine safe cooling times for cooked food. The \"\"\"danger zone\"\"\" (4-60°C) is where bacteria grow fastest. Proper cooling must move food through this range quickly.\"\"\",
+    \"\"\"In engineering, the concept of \"\"\"thermal time constant\"\"\" comes directly from Newton's law. It's used to design thermostats, temperature controllers, and heat sinks for electronics.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

@@ -1,0 +1,75 @@
+{
+  "title": "Electrostatics Mindmap",
+  "unitSlug": "electrostatics",
+  "topicSlug": "electrostatics-mindmap",
+  "topicTitle": "Electrostatics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Electrostatics",
+    "children": [
+      {
+        "id": "coulomb-s-law-and-its-applicat",
+        "label": "Coulomb's law",
+        "children": [
+          {
+            "id": "coulomb-s-law-sub-0",
+            "label": "its applications"
+          }
+        ]
+      },
+      {
+        "id": "electric-field-and-electric-fi",
+        "label": "Electric field",
+        "children": [
+          {
+            "id": "electric-field-sub-0",
+            "label": "electric field intensity due to point charges, line charges,"
+          },
+          {
+            "id": "electric-field-sub-1",
+            "label": "charged sheets"
+          }
+        ]
+      },
+      {
+        "id": "electric-potential-and-potenti",
+        "label": "Electric potential",
+        "children": [
+          {
+            "id": "electric-potential-sub-0",
+            "label": "potential difference"
+          }
+        ]
+      },
+      {
+        "id": "capacitance-and-capacitors-par",
+        "label": "Capacitance",
+        "children": [
+          {
+            "id": "capacitance-sub-0",
+            "label": "capacitors — parallel plate, series"
+          },
+          {
+            "id": "capacitance-sub-1",
+            "label": "parallel combination"
+          }
+        ]
+      },
+      {
+        "id": "dielectric-and-dielectric-cons",
+        "label": "Dielectric",
+        "children": [
+          {
+            "id": "dielectric-sub-0",
+            "label": "dielectric constant"
+          }
+        ]
+      },
+      {
+        "id": "energy-stored-in-a-capacitor",
+        "label": "Energy stored in a capacitor"
+      }
+    ]
+  }
+}

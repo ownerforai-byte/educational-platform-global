@@ -1,0 +1,67 @@
+{
+  "title": "Ray Optics Mindmap",
+  "unitSlug": "ray-optics",
+  "topicSlug": "ray-optics-mindmap",
+  "topicTitle": "Ray Optics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Ray Optics",
+    "children": [
+      {
+        "id": "reflection-at-plane-and-curved",
+        "label": "Reflection at plane",
+        "children": [
+          {
+            "id": "reflection-at-plane-sub-0",
+            "label": "curved surfaces — mirrors"
+          }
+        ]
+      },
+      {
+        "id": "refraction-at-plane-surfaces-total-inter",
+        "label": "Refraction at plane surfaces — total internal reflection"
+      },
+      {
+        "id": "refraction-through-prisms-angl",
+        "label": "Refraction through prisms — angle of deviation",
+        "children": [
+          {
+            "id": "refraction-through-prisms-angle-of-deviation-sub-0",
+            "label": "minimum deviation"
+          }
+        ]
+      },
+      {
+        "id": "thin-lenses-lens-maker-s-formu",
+        "label": "Thin lenses — lens maker's formula",
+        "children": [
+          {
+            "id": "thin-lenses-lens-maker-s-formula-sub-0",
+            "label": "power of lens"
+          }
+        ]
+      },
+      {
+        "id": "combination-of-lenses-and-mirr",
+        "label": "Combination of lenses",
+        "children": [
+          {
+            "id": "combination-of-lenses-sub-0",
+            "label": "mirrors"
+          }
+        ]
+      },
+      {
+        "id": "optical-instruments-microscope",
+        "label": "Optical instruments — microscope",
+        "children": [
+          {
+            "id": "optical-instruments-microscope-sub-0",
+            "label": "telescope"
+          }
+        ]
+      }
+    ]
+  }
+}

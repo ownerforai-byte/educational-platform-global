@@ -44,8 +44,11 @@ export function ElectricFieldVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let fieldParticle: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -82,6 +85,11 @@ export function ElectricFieldVisual() {
         new THREE.MeshBasicMaterial({ color: chargeColor }),
       )) as THREE.Mesh;
       push(mkSprite(isPos ? "+q" : "−q", isPos ? "#ef4444" : "#3b82f6", new THREE.Vector3(0, 1.2, 0), 0.8));
+      fieldParticle = push(new THREE.Mesh(
+        new THREE.SphereGeometry(0.12, 12, 12),
+        new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
+      )) as THREE.Mesh;
+      fieldParticle.position.set(1, 1, 0);
 
       // Electric field lines (radial)
       const fieldLines: THREE.Line[] = [];
@@ -166,6 +174,12 @@ export function ElectricFieldVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.02;
+        if (fieldParticle) {
+          const angle = animTime * 2;
+          const r = 1.5 + Math.sin(animTime) * 0.5;
+          fieldParticle.position.set(r * Math.cos(angle), r * Math.sin(angle), 0);
+        }
         renderer.render(scene, camera);
       };
       animate();

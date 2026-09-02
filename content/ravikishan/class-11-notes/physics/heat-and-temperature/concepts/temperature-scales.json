@@ -1,40 +1,44 @@
 {
-  "title": "Temperature Scales",
-  "unitSlug": "heat-and-temperature",
-  "topicSlug": "temperature-scales",
-  "topicTitle": "Temperature Scales",
-  "relevance": 45,
-  "notes": [
-    "<h2>Introduction</h2>",
-    "<p>A <b>temperature scale</b> is a calibration of a thermometer based on two fixed reference points. The three most common scales in physics are <b>Celsius (Â°C)</b>, <b>Fahrenheit (Â°F)</b> and <b>Kelvin (K)</b>.</p>",
-    "<h2>Fixed Points</h2>",
-    "<p>Every scale is defined using the freezing point and boiling point of water:</p>",
-    "<table style=\"border-collapse:collapse;width:100%;text-align:center;\"><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\"><b>Scale</b></td><td style=\"border:1px solid #cbd5e1;padding:8px;\"><b>Freezing point</b></td><td style=\"border:1px solid #cbd5e1;padding:8px;\"><b>Boiling point</b></td></tr><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\">Celsius</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">0Â°C</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">100Â°C</td></tr><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\">Fahrenheit</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">32Â°F</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">212Â°F</td></tr><tr><td style=\"border:1px solid #cbd5e1;padding:8px;\">Kelvin</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">273.15 K</td><td style=\"border:1px solid #cbd5e1;padding:8px;\">373.15 K</td></tr></table>",
-    "<h2>Kelvin â€” The SI Scale</h2>",
-    "<p>Kelvin is the SI unit of thermodynamic temperature. It is an <b>absolute scale</b> starting at <b>absolute zero (0 K)</b>, the lowest possible temperature where molecular motion theoretically stops. We write 273 K, never Â°K or degree Kelvin.</p>",
-    "<h2>Relation Between Scales</h2>",
-    "<p>The general relation between the three scales is:</p>",
-    "$$\\frac{C}{100} = \\frac{F - 32}{180} = \\frac{K - 273.15}{100}$$",
-    "<p>From this, the most useful conversion formulas are:</p>",
-    "$$F = \\frac{9}{5}C + 32$$",
-    "$$C = \\frac{5}{9}(F - 32)$$",
-    "$$K = C + 273.15$$"
+  \"\"\"title\"\"\": \"\"\"Temperature Scales\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"heat-and-temperature\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"temperature-scales\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Temperature Scales\"\"\",
+  \"\"\"relevance\"\"\": 45,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Definition:** A temperature scale is created by identifying two easily reproducible fixed points (usually the freezing and boiling points of water at standard atmospheric pressure), then dividing the interval between them into equal divisions.\"\"\",
+    \"\"\"**Celsius scale (°C):** Introduced by Anders Celsius in 1742. Freezing point of water = 0°C, boiling point = 100°C at 1 atm. Has 100 equal divisions between the fixed points. The SI unit for temperature intervals is the degree Celsius.\"\"\",
+    \"\"\"**Fahrenheit scale (°F):** Introduced by Daniel Gabriel Fahrenheit in 1720. Freezing point = 32°F, boiling point = 212°F at 1 atm. Has 180 equal divisions. Widely used in the United States.\"\"\",
+    \"\"\"**Kelvin scale (K):** The SI base unit of thermodynamic temperature, named after Lord Kelvin. It is an absolute scale with zero at absolute zero (0 K = −273.15°C). Freezing point of water = 273.15 K, boiling point = 373.15 K. The Kelvin has the same magnitude as the Celsius degree, so ΔT(K) = ΔT(°C).\"\"\",
+    \"\"\"**Conversion formulas:** K = °C + 273.15; °F = (9/5)°C + 32; °C = (°F − 32) × 5/9; K = (°F + 459.67) × 5/9.\"\"\",
+    \"\"\"**Absolute zero:** 0 K = −273.15°C = −459.67°F. The theoretical temperature at which all molecular motion ceases (classical picture). It is unreachable in practice due to quantum zero-point energy. Modern definition: 0 K is the temperature at which the triple point of water occurs at exactly 273.16 K.\"\"\",
+    \"\"\"**Triple point of water:** The unique temperature and pressure at which solid, liquid, and vapor phases of water coexist in equilibrium: 273.16 K (0.01°C) at 611.657 Pa. This is the defining fixed point of the Kelvin scale.\"\"\",
+    \"\"\"**Reaumur scale (°R or °Ré):** Freezing point = 0°Ré, boiling point = 80°Ré. Rarely used today, except historically in some European countries.\"\"\",
+    \"\"\"**Rankine scale (°Ra):** The absolute version of Fahrenheit. 0°Ra = 0 K = −459.67°F. Freezing point of water = 491.67°Ra, boiling point = 671.67°Ra.\"\"\",
+    \"\"\"**Why use Kelvin?** In gas laws (PV = nRT), temperature must be in Kelvin because the relationship P ∝ T is linear only with absolute temperature. At 0 K, the extrapolated volume of an ideal gas would be zero, making physical sense. In Celsius, this would be −273.15°C - a non-zero volume at \"\"\"zero\"\"\" temperature.\"\"\",
+    \"\"\"**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.\"\"\",
+    \"\"\"**Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"Temperature and heat are NOT the same. Temperature is an intensive property (per unit mass); heat is energy transferred (extensive). A bathtub of 30°C water has more heat than a cup of 80°C water, but lower temperature.\"\"\",
+    \"\"\"A temperature difference of 1°C is NOT the same as 1°F. ΔT(°C) = (5/9)ΔT(°F). A 10°C change equals an 18°F change, so 5°C ≠ 5°F.\"\"\",
+    \"\"\"Kelvin is NOT written as '°K' - it is simply 'K' (e.g., 300 K, not 300°K). There is no 'degree Kelvin.' The word 'kelvin' is not capitalized when spelled out.\"\"\",
+    \"\"\"Absolute zero is NOT just 'really cold' - it is the state where classical thermal motion ceases entirely. At 0 K, only quantum zero-point energy remains, and all real substances have condensed to their ground states.\"\"\",
+    \"\"\"The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K. Confusing these is a common source of error in metrology.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"Convert 300 K to Celsius and Fahrenheit. Solution: T(°C) = 300 − 273.15 = 26.85°C. T(°F) = (9/5)(26.85) + 32 = 80.33°F.\"\"\",
+    \"\"\"At what temperature do Celsius and Fahrenheit scales read the same? Solution: Set C = F in the conversion F = (9/5)C + 32. C = (9/5)C + 32 → C − (9/5)C = 32 → −(4/5)C = 32 → C = −40. Both read −40° at −40° (the same temperature!).\"\"\",
+    \"\"\"A faulty thermometer reads the freezing point of water as 5° (on its scale) and the boiling point as 95°. The temperature difference between these on the real Celsius scale is 100°C, and on the faulty scale is 90°. If the faulty thermometer reads 59°, what is the true Celsius temperature? Solution: Each faulty degree = 100/90 = 1.111°C. Offset from freezing = 59 − 5 = 54 faulty degrees. True temperature = 54 × (100/90) + 0 = 60°C.\"\"\",
+    \"\"\"An ideal gas at 0°C is heated at constant pressure until its volume doubles. Find the new temperature in °C and K. Solution: Charles's law: V₁/T₁ = V₂/T₂. T₁ = 273.15 K. V₂/V₁ = 2 → T₂ = 2T₁ = 546.3 K. In °C: 546.3 − 273.15 = 273.15°C.\"\"\",
+    \"\"\"The Sun's core temperature is about 1.5 × 10⁷ K. Express this in (a) °C, (b) °F. Solution: (a) T(°C) = 1.5×10⁷ − 273.15 ≈ 1.497×10⁷°C. (b) T(°F) = (9/5)(1.497×10⁷) + 32 ≈ 2.695×10⁷°F.\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"Temperature is a measure of the average kinetic energy of particles: ⟨KE⟩ = (3/2)kT, where k = 1.38 × 10⁻²³ J/K is Boltzmann's constant. This is why temperature must be in Kelvin - kinetic energy cannot be negative.\"\"\",
+    \"\"\"There is no upper limit to temperature - particle speeds can increase without bound. The Planck temperature (1.417 × 10³² K) is a theoretical limit where quantum gravity effects become important, not a physical maximum.\"\"\",
+    \"\"\"The Kelvin scale was originally defined by the triple point of water (273.16 K) and absolute zero (0 K). Since 2019, it is defined by fixing the Boltzmann constant k to exactly 1.380649 × 10⁻²³ J/K.\"\"\",
+    \"\"\"Different thermometric substances give slightly different scales because their expansion is not perfectly linear with temperature. Gas thermometers are most accurate because ideal gases have perfectly linear behavior in the limit of zero pressure.\"\"\",
+    \"\"\"The Rankine scale (°R) is to Fahrenheit as Kelvin is to Celsius - it is the absolute temperature scale. NASA uses Rankine in some engineering calculations alongside SI.\"\"\"
   ],
-  "animation3D": "heat-and-temperature",
-  "motionGraphics": "heat-and-temperature"
+  \"\"\"animation3D\"\"\": \"\"\"heat-and-temperature\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"heat-and-temperature\"\"\"
 }

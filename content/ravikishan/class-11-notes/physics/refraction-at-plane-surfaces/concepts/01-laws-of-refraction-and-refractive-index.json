@@ -5,26 +5,48 @@
   "topicTitle": "Laws of refraction: refractive index",
   "relevance": 100,
   "notes": [
-    "**Snell's law:** $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$, where $\\theta_1$ and $\\theta_2$ are measured from the normal.",
-    "**Refractive index:** $n = c/v$, where $c = 3.00 \\times 10^8\\,\\text{m/s}$ is the speed of light in vacuum and $v$ is the speed in the medium. Since $v < c$, $n > 1$ for all real media.",
-    "**Relative refractive index:** $n_{21} = n_2/n_1 = v_1/v_2$. Light bends toward the normal when entering a denser medium ($n_2 > n_1$) and away from the normal when entering a rarer medium.",
-    "**Critical angle:** when light goes from denser to rarer, the refracted angle reaches $90Â°$ at the critical angle $\\theta_c$ where $\\sin\\theta_c = n_2/n_1$ (with $n_1 > n_2$). For glass to air, $\\theta_c \\approx 41Â°$.",
-    "**Total internal reflection:** occurs when the angle of incidence exceeds $\\theta_c$. All light is reflected back into the denser medium. This is the principle behind optical fibres and prisms in binoculars."
+    "**Snell's law (First law of refraction):** When light passes obliquely from one medium to another, $\\frac{\\sin i}{\\sin r} = \\text{constant} = \\frac{n_2}{n_1}$, where $i$ is the angle of incidence, $r$ is the angle of refraction, and $n_1$, $n_2$ are the refractive indices of the first and second media respectively. This law is the basis of all refraction phenomena.",
+    "**Refractive index definition:** $n = \\frac{c}{v}$, where $c = 3.00 \\times 10^8\\,\\text{m/s}$ is the speed of light in vacuum and $v$ is its speed in the medium. Since $v < c$ always, $n > 1$ for all real materials. Higher $n$ means light travels slower in that medium.",
+    "**Relative refractive index:** $n_{21} = \\frac{n_2}{n_1} = \\frac{v_1}{v_2}$. This is the refractive index of medium 2 as seen from medium 1. When light enters a denser medium ($n_2 > n_1$), it bends TOWARD the normal. When entering a rarer medium, it bends AWAY from the normal.",
+    "**Laws of reflection (concurrent with refraction):** The incident ray, reflected ray, and normal all lie in the same plane. The angle of incidence equals the angle of reflection ($i = r$). These laws apply at both the reflecting and refracting surfaces.",
+    "**Dispersion of light:** White light splits into its constituent colors when refracted because different wavelengths travel at different speeds in a medium. Red (long λ) has $n_{red} < n_{blue}$ (short λ). This is why prisms disperse white light into a spectrum.",
+    "**Rainbow formation (primary rainbow):** Water droplets act as spherical prisms. Light enters, refracts, reflects once inside the droplet, then refracts again on exit. Red emerges at about 42° and violet at about 40° from the backscattering direction. The secondary rainbow (24°) forms from two internal reflections.",
+    "**Dispersive power of a material:** $\\omega = \\frac{n_F - n_C}{n_D}$, where $n_F$, $n_C$, $n_D$ are the refractive indices for blue (Fraunhofer F), red (Fraunhofer C), and yellow (Fraunhofer D, sodium D line) light respectively. Higher ω means more dispersion.",
+    "**Abbe number:** $V_D = \\frac{n_D - 1}{n_F - n_C}$. This is the reciprocal of dispersive power, scaled and shifted. Gases have $V_D \\gg 1$ (negligible dispersion). Crown glass has $V_D \\approx 60$, flint glass $V_D \\approx 30$.",
+    "**Limiting cases of Snell's law:** When $i = 0°$: $r = 0°$ (normal incidence, no bending). When $n_2 \\ll n_1$: the ray undergoes total internal reflection if $i > 90°$, which is impossible, so this explains why very high-index materials can guide light.",
+    "**Critical angle derivation:** At the critical angle, $r = 90°$, so $\\sin i_c = \\frac{1}{n_2/n_1} = \\frac{n_1}{n_2}$. In terms of refractive indices: $\\sin i_c = \\frac{n_{rarer}}{n_{denser}}$. For glass ($n = 1.52$): $i_c = \\arcsin(1/1.52) \\approx 41.1°$.",
+    "**Total Internal Reflection (TIR):** When $i > i_c$, no refracted ray exists. 100% of the light is reflected back into the denser medium. This is COMPLETELY different from ordinary reflection at a surface where typically 85-95% is reflected.",
+    "**NEB exam focus:** Apply Snell's law to find angles of incidence and refraction. Calculate refractive indices from speed of light data. Understand the conditions for TIR and calculate critical angles. Draw accurate ray diagrams showing refraction at plane surfaces.",
+    "**Evanescent wave and frustrated TIR:** Just below the critical angle, an evanescent wave penetrates the rarer medium and decays exponentially. If another medium is brought within ~1 wavelength, this wave can transfer energy — this is the principle behind atomic force microscopy and photon tunneling sensors.",
+    "**Practical applications — prisms:** At least 40° apex angle prisms rely on TIR (as in Porro prisms and binocular roof prisms). Right-angle prisms use TIR at two internal surfaces. This provides 100% reflection without coating, unlike mirrors which lose 10-15% per reflection.",
+    "**Astronomical applications — refractive index of air:** Even air has $n \\approx 1.0003$ at STP. This causes atmospheric refraction, making stars appear ~0.5° higher than their true positions. This effect must be corrected in precise astronomical measurements.",
+    "**Biological applications — eye lens:** The human crystalline lens has varying refractive index from center to periphery and from front to back, allowing it to focus light onto the retina for all distances. The cornea contributes ~70% of the eye's refractive power ($n_{cornea} \\approx 1.376$).",
+    "**Wave optical interpretation:** The phase change upon reflection depends on the relative indices. When reflecting off a medium with higher $n$, there is a 180° phase shift (equivalent to a path difference of λ/2). This determines whether thin film interference is constructive or destructive."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ Snell's law is $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$ with no mention of which is larger. ✅ Snell's law shows that when $n_2 > n_1$: $\\sin\\theta_2 < \\sin\\theta_1$, so $r < i$ (ray bends toward normal). When $n_2 < n_1$: $r > i$ (ray bends away from normal). The direction of bending is determined by the relative densities.",
+    "❌ The refractive index $n$ can be less than 1. ✅ For real materials at optical frequencies, $n > 1$ because $v < c$. In some special cases (metamaterials at microwave frequencies), engineered materials can have $n < 1$, but this doesn't apply to standard optical media.",
+    "❌ A larger refractive index means faster light in that medium. ✅ LARGER refractive index means SLOWER light. The relationship is $n = c/v$: larger $n$ means smaller $v$. Diamond ($n \\approx 2.4$) is optically the fastest glass.",
+    "❌ The critical angle formula is $\\sin\\theta_c = \\frac{n_1}{n_2}$. ✅ The correct formula is $\\sin\\theta_c = \\frac{n_2}{n_1}$ where $n_1 > n_2$ (denser to rarer). Using $\\frac{n_1}{n_2} \\approx \\frac{1.52}{1} = 1.52 > 1$ would give $\\sin\\theta_c > 1$, which is impossible for real angles.",
+    "❌ Total internal reflection means all light is absorbed and disappears. ✅ TIR means ALL light is REFLECTED back. No transmission occurs, but the light energy is preserved in the reflected beam.",
+    "❌ Dispersion only happens with prisms. ✅ Dispersion occurs at EVERY refracting surface. Prisms make dispersion visible because they have large apex angles, but rainbows form from millions of tiny atmospheric droplets acting as prisms.",
+    "❌ The angle of refraction is always greater than the angle of incidence. ✅ Refraction angle is SMALLER than incidence angle when entering denser medium, and LARGER when entering rarer medium. The ray bends toward normal in denser medium, away in rarer medium."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A ray of light in water ($n = 1.33$) is incident on a water-to-air interface at 35°. Find the angle of refraction. Since light is going from water to air (denser to rarer), $n_1 = 1.33$, $n_2 = 1$, $i = 35°$. $\\sin r = n_1\\sin i / n_2 = 1.33 \\times \\sin 35° / 1 = 1.33 \\times 0.574 = 0.763$. $r = \\arcsin(0.763) = 49.7°$. The ray bends away from the normal (49.7° > 35°).",
+    "Find the critical angle for diamond ($n = 2.42$) in air. $\\sin\\theta_c = n_{air}/n_{diamond} = 1/2.42 = 0.413$. $\\theta_c = \\arcsin(0.413) = 24.4°$. This is why cut diamonds are so brilliant — many possible paths for light undergo TIR.",
+    "A ray strikes a glass slab ($n = 1.5$) at 60° to the normal. (a) Find the angle inside the glass. $\\sin r = \\sin 60°/1.5 = 0.866/1.5 = 0.577$, so $r = 35.3°$. (b) The emergent ray makes what angle with the normal? Since the slab has parallel faces, the emergent ray is parallel to the incident ray, so it emerges at 60° to the normal.",
+    "A fiber optic cable uses glass with core index 1.48 and cladding index 1.46. Find the critical angle at the core-cladding interface. $\\sin\\theta_c = n_{clad}/n_{core} = 1.46/1.48 = 0.986$. $\\theta_c = \\arcsin(0.986) = 80.4°$. Light incident at angles greater than 80.4° to the normal undergoes TIR and is guided down the fiber.",
+    "White light (λ = 400 nm to 700 nm) enters a glass prism ($n_{blue} = 1.53$, $n_{red} = 1.51$). Calculate the dispersion angle (the angle between blue and red rays after one refraction). For incident angle 45°: $\\sin\\theta_{blue} = \\sin 45°/1.53 = 0.463$, $\\theta_{blue} = 27.6°$. $\\sin\\theta_{red} = \\sin 45°/1.51 = 0.470$, $\\theta_{red} = 28.1°$. Dispersion = 0.5° per interface. With two refractions in a prism, total dispersion is larger.",
+    "A glass window has refractive index 1.5. An object 30 cm behind the glass appears to be how far behind the glass? The apparent depth formula when viewing perpendicular to the surface: $d_{apparent} = d_{real}/n = 30/1.5 = 20$ cm. The object appears 20 cm behind the glass instead of 30 cm. For oblique viewing, both lateral shift and apparent depth occur.",
+    "Light travels through 2 m of glass ($n = 1.5$), then 3 m of water ($n = 1.33$), then air. Find the total optical path length (in wavelengths). Optical path length = $\\sum n_i d_i$. OPL = $1.5 \\times 2 + 1.33 \\times 3 + 1 \\times 0 = 3 + 3.99 = 6.99$ m. The optical path is the same as if the light had traveled 6.99 m in vacuum."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Snell's law was first quantitatively formulated by Willebrord Snellius (Snell) in 1621, though the law was known to Ibn al-Haytham (Alhazen) in the 11th century. Fermat's principle of least time provides the variational derivation of Snell's law.",
+    "The refractive index varies with wavelength (dispersion) because the polarization response of matter to electric fields depends on frequency. This is fundamental to fiber optics, laser technology, and understanding celestial atmospherics.",
+    "In special relativity, vacuum ($n = 1$) is the only medium where phase velocity equals the universal speed limit $c$. In other media, $v = c/n < c$, but signal velocity can still propagate at speeds approaching $c$.",
+    "Metamaterials engineered at optical frequencies can have negative refractive index ($n < 0$), leading to backwards radiation where the wave vector points opposite to the energy flow. This enables perfect lenses and novel waveguides.",
+    "The Abbe number $V_D$ is the primary specification for choosing optical glass. High-dispersion (low $V_D$) glasses like flint are used for prisms. Low-dispersion (high $V_D$) glasses like crown minimize chromatic aberration in lenses."
   ],
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces"

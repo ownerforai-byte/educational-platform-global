@@ -1,0 +1,53 @@
+{
+  "title": "Thermal Expansion Mindmap",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "thermal-expansion-mindmap",
+  "topicTitle": "Thermal Expansion — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Thermal Expansion",
+    "children": [
+      {
+        "id": "linear-expansion-and-its-measu",
+        "label": "Linear expansion",
+        "children": [
+          {
+            "id": "linear-expansion-sub-0",
+            "label": "its measurement"
+          }
+        ]
+      },
+      {
+        "id": "cubical-expansion-superficial-",
+        "label": "Cubical expansion, superficial expansion",
+        "children": [
+          {
+            "id": "cubical-expansion-superficial-expansion-sub-0",
+            "label": "their relation with linear expansion"
+          }
+        ]
+      },
+      {
+        "id": "liquid-expansion-absolute-and-",
+        "label": "Liquid expansion: absolute",
+        "children": [
+          {
+            "id": "liquid-expansion-absolute-sub-0",
+            "label": "apparent"
+          }
+        ]
+      },
+      {
+        "id": "dulong-and-petit-method-of-det",
+        "label": "Dulong",
+        "children": [
+          {
+            "id": "dulong-sub-0",
+            "label": "Petit method of determining expansivity of liquid"
+          }
+        ]
+      }
+    ]
+  }
+}

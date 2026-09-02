@@ -5,26 +5,41 @@
   "topicTitle": "Ideal gas equation",
   "relevance": 100,
   "notes": [
-    "**Ideal gas:** a theoretical gas whose molecules have negligible volume and no intermolecular forces.",
-    "**Combining laws:** Boyle's law ($PV = \\text{const}$ at constant $T$), Charles's law ($V/T = \\text{const}$ at constant $P$), and Avogadro's law ($V/n = \\text{const}$ at constant $P,T$) combine into $PV = nRT$.",
-    "**Universal gas constant:** $R = 8.314\\,\\text{J/mol}\\cdot\\text{K}$. It is the same for all ideal gases.",
-    "**Alternative forms:** $PV = Nk_BT$, where $N$ is the number of molecules and $k_B = R/N_A = 1.38 \\times 10^{-23}\\,\\text{J/K}$ is the Boltzmann constant.",
-    "**Real gases:** deviate from ideal behaviour at high pressure and low temperature, where molecular volume and intermolecular forces become significant."
+    "**Ideal gas definition:** An ideal gas is a theoretical gas composed of point particles (zero volume) with no intermolecular forces, undergoing perfectly elastic collisions. Real gases approximate this behavior at low pressure and high temperature.",
+    "**Boyle's Law ($V \\propto 1/P$ at constant $T$):** At constant temperature, the volume of a fixed mass of gas is inversely proportional to its pressure. $P_1V_1 = P_2V_2$. Discovered by Robert Boyle (1662).",
+    "**Charles's Law ($V \\propto T$ at constant $P$):** At constant pressure, volume is directly proportional to absolute temperature. $V_1/T_1 = V_2/T_2$. Temperature must be in Kelvin! Jacques Charles (1787) discovered this but didn't publish.",
+    "**Gay-Lussac's Law ($P \\propto T$ at constant $V$):** At constant volume, pressure is directly proportional to absolute temperature. $P_1/T_1 = P_2/T_2$. Joseph Louis Gay-Lussac (1802).",
+    "**Avogadro's Law ($V \\propto n$ at constant $P,T$):** Equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. $V_1/n_1 = V_2/n_2$. Amedeo Avogadro (1811). Avogadro's number: $N_A = 6.022 \times 10^{23}$ mol$^{-1}$.",
+    "**Ideal gas equation derivation:** Combining Boyle's, Charles's, and Avogadro's laws: $V \\propto nT/P$. Introducing the proportionality constant $R$: $PV = nRT$. The universal gas constant $R = 8.314$ J/(mol$\\cdot$K) = 0.0821 L$\\cdot$atm/(mol$\\cdot$K).",
+    "**Molecular form:** $PV = Nk_BT$, where $N$ is the number of molecules and $k_B = R/N_A = 1.38 \times 10^{-23}$ J/K is the Boltzmann constant. This is often written as $PV = nRT = Nk_BT$.",
+    "**Gas constant values:** $R = 8.314$ J/(mol$\\cdot$K) = 0.082057$ L$\\cdot$atm/(mol$\\cdot$K) = 8.314$ Pa$\\cdot$m$^3$/(mol$\\cdot$K). Always use consistent units! $R = N_A k_B$ connects macroscopic and microscopic.",
+    "**STP conditions:** Standard Temperature and Pressure: $T = 273.15$ K (0°C), $P = 1$ atm = 101.325 kPa. At STP, 1 mole of any ideal gas occupies $V = nRT/P = 22.414$ L.",
+    "**Normal conditions (NTP):** $T = 293.15$ K (20°C), $P = 1$ atm. Molar volume at NTP $\\approx 24$ L.",
+    "**Density form of ideal gas equation:** From $PM = \rho RT$, where $M$ is molar mass (kg/mol) and $\rho$ is mass density (kg/m$^3$). This is useful when working with gas density.",
+    "**Real gas deviations:** Real gases deviate from ideal behavior at high pressure (molecular volume not negligible) and low temperature (intermolecular attractions significant). The van der Waals equation $(P + an^2/V^2)(V - nb) = nRT$ accounts for these corrections.",
+    "**Van der Waals constants:** $a$ accounts for intermolecular attraction (larger for larger molecules), $b$ accounts for molecular volume. For helium: $a = 0.0341$ L$^2\\cdot$atm/mol$^2$, $b = 0.0237$ L/mol. For CO$_2$: $a = 3.59$, $b = 0.0427$.",
+    "**Compressibility factor $Z = PV/(nRT)$:** For an ideal gas, $Z = 1$. Real gases have $Z > 1$ (repulsion-dominated, at very high $P$) or $Z < 1$ (attraction-dominated, at moderate $P$). $Z = 1$ is approached at high $T$ and low $P$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Temperature must be in Kelvin, not Celsius! Adding $T(°C) + 273.15 = T(K)$. A common error: using 273 instead of 273.15. For most exam problems, 273 is acceptable, but 273.15 is the exact conversion.",
+    "STP has different definitions: IUPAC defines STP as 0°C (273.15 K) and 10$^5$ Pa (100 kPa), while older chemistry uses 1 atm (101.325 kPa). Always check which definition your course uses. The molar volume differs slightly.",
+    "R in $PV = nRT$ is NOT dimensionless - its value depends on the units of $P$, $V$, and $T$. Use $R = 0.0821$ L$\\cdot$atm/(mol$\\cdot$K) only with pressure in atm and volume in liters. For SI units, use $R = 8.314$ J/(mol$\\cdot$K).",
+    "Boyle's law applies ONLY at constant temperature. If you heat a gas while compressing it, $PV$ is NOT constant. The product $PV$ changes due to the temperature change. Students often forget this condition.",
+    "The ideal gas equation assumes the gas is a pure substance. For gas mixtures, use partial pressures: $P_i = x_i P_{\text{total}}$, where $x_i$ is the mole fraction. Dry air has $x_{N_2} = 0.78$, $x_{O_2} = 0.21$."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 2 mol sample of an ideal gas occupies 15 L at 300 K. Find the pressure. Solution: $P = nRT/V = 2 \times 0.0821 \times 300 / 15 = 49.26 / 15 = 3.28$ atm. In SI: $P = 2 \times 8.314 \times 300 / (15 \times 10^{-3}) = 4988.4 / 0.015 = 332,560$ Pa = 3.28 atm.",
+    "A sealed container holds 5 g of helium (He, $M = 4$ g/mol) at 27°C and 2 atm. Find the volume. Solution: $n = 5/4 = 1.25$ mol, $T = 300$ K, $P = 2$ atm. $V = nRT/P = 1.25 \times 0.0821 \times 300 / 2 = 30.8 / 2 = 15.4$ L.",
+    "A balloon contains 0.1 mol of gas at 1 atm and 300 K. It expands isothermally to double its volume. Find the final pressure. Solution: Isothermal: $P_1V_1 = P_2V_2$. $V_2 = 2V_1$. $P_2 = P_1 V_1 / V_2 = 1 \times V_1 / (2V_1) = 0.5$ atm.",
+    "A rigid container at constant volume has gas at 300 K and 1 atm. It is heated to 600 K. Find the new pressure. Solution: Constant $V$, $n$: $P/T = \text{constant}$. $P_2 = P_1 \times T_2/T_1 = 1 \times 600/300 = 2$ atm. Pressure doubles when absolute temperature doubles.",
+    "A gas cylinder contains 10 mol of nitrogen at 250 K and 5 atm. (a) What is the volume? (b) How many molecules are in the cylinder? Solution: (a) $V = nRT/P = 10 \times 0.0821 \times 250 / 5 = 205.25 / 5 = 41.05$ L. (b) $N = n \times N_A = 10 \times 6.022 \times 10^{23} = 6.022 \times 10^{24}$ molecules."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The ideal gas equation was developed gradually from the 17th to 19th centuries. Boyle established the $PV = \text{constant}$ relationship (1662), Charles discovered $V \\propto T$ (1787), and Avogadro established $V \\propto n$ (1811). The full $PV = nRT$ came later.",
+    "Amedeo Avogadro's 1811 paper proposed that equal volumes of gases at the same $P$ and $T$ contain equal numbers of molecules. This radical idea (that atoms of different elements have different masses) took 50 years to be widely accepted.",
+    "The gas constant $R = 8.314$ J/(mol$\\cdot$K) appears in many fundamental equations: ideal gas law, Arrhenius equation for reaction rates, Nernst equation in electrochemistry, and the Stefan-Boltzmann law for blackbody radiation.",
+    "At absolute zero ($T = 0$ K = $-273.15$°C), an ideal gas would have zero pressure and zero volume. However, real gases liquefy and then solidify before reaching absolute zero. Absolute zero is unattainable (third law of thermodynamics).",
+    "The van der Waals equation was proposed by Johannes Diderik van der Waals in 1873, for which he received the Nobel Prize in Physics in 1910. His work was the first to account for the finite size of gas molecules and intermolecular forces."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

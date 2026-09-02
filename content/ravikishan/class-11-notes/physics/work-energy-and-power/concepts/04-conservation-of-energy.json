@@ -5,26 +5,40 @@
   "topicTitle": "Conservation of energy",
   "relevance": 100,
   "notes": [
-    "**Law:** energy can neither be created nor destroyed; it can only be transformed from one form to another or transferred between bodies.",
-    "**Mechanical energy:** $E = K + U$, the sum of kinetic and potential energy.",
-    "**Conservative forces:** when only conservative forces act, mechanical energy is conserved: $\\Delta K + \\Delta U = 0$, so $K_i + U_i = K_f + U_f$.",
-    "**Non-conservative forces:** friction and air resistance convert mechanical energy into heat. In their presence, $E_{mech}$ decreases, but total energy (including thermal) is still conserved.",
-    "**Pendulum example:** at the highest point, all energy is potential; at the lowest point, all is kinetic. In between, energy continuously interconverts, but the total remains constant if air resistance is negligible."
+    "**Law of conservation of energy:** Energy can neither be created nor destroyed; it can only be transformed from one form to another or transferred between systems. The total energy of an isolated system remains constant over time.",
+    "**Mechanical energy conservation:** When only conservative forces (gravity, spring force, electrostatic force) act on a system, mechanical energy E = K + U is conserved: ΔK + ΔU = 0, or K_i + U_i = K_f + U_f.",
+    "**Potential energy types:** Gravitational PE near Earth: U_g = mgh (h = height above reference). Elastic PE of a spring: U_s = ½kx² (x = compression/extension from natural length). For a universal gravitational field: U = -GMm/r.",
+    "**Non-conservative forces and energy loss:** Friction, air resistance, and viscous drag are non-conservative. They convert mechanical energy into thermal energy (heat). Work done by non-conservative forces: W_nc = ΔE_mech = E_final - E_initial.",
+    "**Total energy conservation including heat:** Even with friction, total energy is conserved if you include thermal energy: ΔK + ΔU + ΔE_thermal = 0. The first law of thermodynamics: ΔU_internal = Q - W, where Q is heat added, W is work done BY the system.",
+    "**Pendulum energy conservation:** For a simple pendulum (mass m, length L, angle θ): At the bottom, K = ½mv², U = 0. At the extremes, v = 0, K = 0, U = mgL(1-cosθ). With no air resistance: ½mv² + mgL(1-cosθ) = constant.",
+    "**Spring-mass system:** For a mass m on a spring with constant k: At equilibrium, K = ½mv², U = 0. At max extension x = A, v = 0, K = 0, U = ½kA². Energy oscillates: ½mv² + ½kx² = ½kA² = constant.",
+    "**Roller coaster physics:** At the top of a hill, the car has maximum PE (mgh) and minimum KE. At the bottom, maximum KE and minimum PE. Total energy constant (neglecting friction). Minimum speed at top of vertical loop: v ≥ √(gr) to stay on track.",
+    "**Energy in collisions:** In elastic collisions, both momentum and KE are conserved. In inelastic collisions, momentum is conserved but KE is not (some converts to heat/sound). In perfectly inelastic collisions, objects stick together and KE loss is maximum.",
+    "**Conservation of energy in nuclear reactions:** Mass-energy equivalence E = mc² shows mass is another form of energy. In nuclear fission/fusion, the total mass of products is less than reactants — the mass defect Δm appears as kinetic energy of products: ΔE = Δmc².",
+    "**Power and energy relationship:** Power is the rate of energy transfer: P = dE/dt. If power is constant, E = Pt. If power varies, E = ∫P dt. Energy delivered is the area under the P-t curve.",
+    "**Real-world energy transformations:** Chemical energy (fuel) → thermal (burning) → mechanical (engine) → electrical (generator) → electromagnetic (light) → thermal (absorber). At each step, some energy becomes heat (second law).",
+    "**Reference point for potential energy:** Gravitational PE is defined relative to a chosen zero level. The choice is arbitrary — only differences in PE matter. Usually we set U = 0 at the lowest point in the problem or at ground level."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Energy is NOT created or destroyed — it only transforms. When a pendulum stops swinging due to friction, the energy doesn't 'disappear'; it becomes thermal energy in the air and the pivot. The FIRST law of thermodynamics says energy is conserved in all processes.",
+    "Conservation of mechanical energy (K + U = constant) ONLY holds when ALL forces are conservative. If there is ANY friction, air resistance, or non-conservative force, mechanical energy is NOT conserved. You must include W_nc or track thermal energy.",
+    "Potential energy is NOT absolute — it is defined relative to an arbitrary zero point. A ball on a table has U = mgh relative to the floor, but U = mg(h+H) relative to the basement. Only PE differences matter physically.",
+    "In a collision, momentum is ALWAYS conserved (if no external forces). Kinetic energy is ONLY conserved in perfectly ELASTIC collisions. Many students think KE is always conserved in collisions — it is NOT. Real collisions are usually somewhat inelastic.",
+    "The work-energy theorem (W_net = ΔK) and energy conservation (ΔK + ΔU = -W_nc) are DIFFERENT. The first is about NET work changing kinetic energy. The second is about total mechanical energy. With conservative forces, W_net = -ΔU, so W_net + ΔU = ΔK, which is the work-energy theorem."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 2 kg block slides down a frictionless incline of height 5 m. Find its speed at the bottom. Solution: U_i = mgh = 2 × 9.8 × 5 = 98 J. K_i = 0. At bottom: U_f = 0. K_f = U_i → ½mv² = 98 → v² = 196/2 = 98 → v = √98 = 9.9 m/s.",
+    "A 0.5 kg block on a spring (k = 200 N/m) is compressed 0.1 m and released. Find max speed. Solution: U_s = ½kx² = ½×200×0.01 = 1 J. At equilibrium, all U_s → K. ½mv² = 1 → v² = 4 → v = 2 m/s. Amplitude of oscillation = 0.1 m.",
+    "A 1000 kg car moving at 20 m/s brakes to a stop. The brakes heat up with 80% of the KE going to thermal energy in the brakes. How much heat is generated? Solution: KE_initial = ½×1000×400 = 200,000 J = 200 kJ. Heat = 0.8 × 200 kJ = 160 kJ.",
+    "A ball is dropped from height h = 10 m and bounces back to height 7.5 m. Find the coefficient of restitution e and the fraction of energy lost. Solution: Speed before impact = √(2gh) = √(196) = 14 m/s. Speed after = √(2g×7.5) = √(147) = 12.1 m/s. e = v_after/v_before = 12.1/14 = 0.86. Energy lost = 1 - e² = 1 - 0.74 = 26%.",
+    "A 5 kg block slides down a rough 30° incline of length 4 m with μ = 0.2. Find its speed at the bottom. Solution: Height drop = 4 sin 30° = 2 m. U_i = mgh = 5×9.8×2 = 98 J. Work by friction: W_f = -μmg cosθ × s = -0.2×5×9.8×cos30°×4 = -0.2×5×9.8×0.866×4 = -34 J. ΔK = U_i + W_f = 98 - 34 = 64 J. v = √(2×64/5) = √(128/5) = 5.06 m/s."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The law of conservation of energy is the first law of thermodynamics and applies to ALL physical processes — mechanics, electromagnetism, thermodynamics, quantum mechanics, general relativity. It is the most fundamental and universal law in physics.",
+    "Emmy Noether proved (1918) that conservation of energy is a consequence of time translation symmetry: the laws of physics are the same at all times. This is Noether's theorem — every continuous symmetry implies a conserved quantity.",
+    "Perpetual motion machines of the first kind (producing energy without input) are IMPOSSIBLE because they violate energy conservation. No known process in the universe creates net energy from nothing.",
+    "The total energy of the universe is a subtle concept in cosmology. In an expanding universe, energy conservation is not globally well-defined in the same way. However, in local physics, energy conservation is exact and tested to incredible precision.",
+    "Energy exists in many forms: kinetic, gravitational potential, elastic potential, chemical, nuclear, electromagnetic, thermal, rest mass energy (mc²), etc. All can be converted into each other, subject to the laws of physics."
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power"

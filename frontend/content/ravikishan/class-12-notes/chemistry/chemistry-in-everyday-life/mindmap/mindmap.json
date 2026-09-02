@@ -1,0 +1,37 @@
+{
+  "title": "Chemistry in Everyday Life Mindmap",
+  "unitSlug": "chemistry-in-everyday-life",
+  "topicSlug": "chemistry-in-everyday-life-mindmap",
+  "topicTitle": "Chemistry in Everyday Life — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Chemistry in Everyday Life",
+    "children": [
+      {
+        "id": "medicinal-chemicals-analgesics-tranquili",
+        "label": "Medicinal chemicals — analgesics, tranquilizers, antipyretics, antibiotics, antihistamines, antacids"
+      },
+      {
+        "id": "chemical-cleansers-soaps-and-d",
+        "label": "Chemical cleansers — soaps",
+        "children": [
+          {
+            "id": "chemical-cleansers-soaps-sub-0",
+            "label": "detergents"
+          }
+        ]
+      },
+      {
+        "id": "food-additives-preservatives-a",
+        "label": "Food additives — preservatives",
+        "children": [
+          {
+            "id": "food-additives-preservatives-sub-0",
+            "label": "artificial sweetening agents"
+          }
+        ]
+      }
+    ]
+  }
+}

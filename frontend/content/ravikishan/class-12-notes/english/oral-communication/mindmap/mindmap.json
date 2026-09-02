@@ -1,0 +1,41 @@
+{
+  "title": "Oral Communication Mindmap",
+  "unitSlug": "oral-communication",
+  "topicSlug": "oral-communication-mindmap",
+  "topicTitle": "Oral Communication — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Oral Communication",
+    "children": [
+      {
+        "id": "conversation-and-role-play",
+        "label": "Conversation",
+        "children": [
+          {
+            "id": "conversation-sub-0",
+            "label": "role play"
+          }
+        ]
+      },
+      {
+        "id": "presentation-skills",
+        "label": "Presentation skills"
+      },
+      {
+        "id": "debate-and-discussion",
+        "label": "Debate",
+        "children": [
+          {
+            "id": "debate-sub-0",
+            "label": "discussion"
+          }
+        ]
+      },
+      {
+        "id": "listening-comprehension",
+        "label": "Listening comprehension"
+      }
+    ]
+  }
+}

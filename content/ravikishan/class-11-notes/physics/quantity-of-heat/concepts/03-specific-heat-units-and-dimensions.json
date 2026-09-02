@@ -1,30 +1,49 @@
 {
-  "title": "Specific Heat Capacity â€” Units & Dimensional Formula",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
-  "topicTitle": "Measurement of specific heat capacity of solids and liquids",
-  "relevance": 83,
-  "notes": [
-    "**CGS unit:** calÂ·gâ»Â¹Â·Â°Câ»Â¹",
-    "**SI unit:** JÂ·kgâ»Â¹Â·Kâ»Â¹ (equivalently JÂ·kgâ»Â¹Â·Â°Câ»Â¹ since it's a temperature *difference*)",
-    "**Dimensional formula:** c = H/(mÂ·Î”Î¸) = [MLÂ²Tâ»Â²]/([M][K]) = **[Mâ°LÂ²Tâ»Â²Kâ»Â¹]**",
-    "Being independent of mass in the dimensional formula reflects that c is an *intensive* property â€” a property of the material, not the amount of it"
+  \"\"\"title\"\"\": \"\"\"Specific Heat Capacity - Units & Dimensional Formula\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"specific-heat-capacity\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Specific heat capacity - units and dimensional formula\"\"\",
+  \"\"\"relevance\"\"\": 90,
+  \"\"\"notes\"\"\": [
+    \"\"\"**SI unit:** $\\text{J} \\cdot \\text{kg}^{-1} \\cdot \\text{K}^{-1}$ (joule per kilogram per kelvin). Since a temperature INTERVAL of 1 K equals 1°C, this is also written as $\\text{J} \\cdot \\text{kg}^{-1} \\cdot \\text{°C}^{-1}$.\"\"\",
+    \"\"\"**CGS unit:** $\\text{cal} \\cdot \\text{g}^{-1} \\cdot \\text{°C}^{-1}$ (calorie per gram per degree Celsius). Numerically, water has $c = 1\\text{ cal/g·°C}$ in CGS, making calculations simpler in this system.\"\"\",
+    \"\"\"**Conversion between systems:** $1\\text{ J/kg·K} = 0.000239\\text{ cal/g·°C}$. Conversely, $1\\text{ cal/g·°C} = 4184\\text{ J/kg·K}$. The factor 4184 comes from $1\\text{ cal} = 4.184\\text{ J}$ and $1\\text{ g} = 0.001\\text{ kg}$.\"\"\",
+    \"\"\"**Dimensional formula derivation:** $c = \\frac{H}{m \\cdot \\Delta\\theta}$. Heat $H$ has the same dimensions as energy: $[ML^2T^{-2}]$. Mass: $[M]$. Temperature: $[\\Theta]$ (or $[K]$). Therefore: **$[c] = [M^0 L^2 T^{-2} \\Theta^{-1}]$**.\"\"\",
+    \"\"\"**Dimensionless mass:** Notice $[M^0]$ - mass cancels out. This reflects that specific heat is an INTENSIVE property. Two objects of the same material but different masses have the same $c$.\"\"\",
+    \"\"\"**Alternative form using force:** Since work = force × distance, $[H] = [MLT^{-2}] \\cdot [L] = [ML^2T^{-2}]$. So $[c] = [ML^2T^{-2}\\Theta^{-1}] / ([M][\\Theta]) = [L^2T^{-2}\\Theta^{-1}]$.\"\"\",
+    \"\"\"**Common values in both systems:** Water: $1\\text{ cal/g·°C} = 4186\\text{ J/kg·K}$. Ice: $0.5\\text{ cal/g·°C} = 2100\\text{ J/kg·K}$. Copper: $0.093\\text{ cal/g·°C} = 390\\text{ J/kg·K}$. Aluminum: $0.215\\text{ cal/g·°C} = 900\\text{ J/kg·K}$.\"\"\",
+    \"\"\"**Dimensional check example:** For $H = mc\\Delta\\theta$: $[H] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] \\cdot [\\Theta] = [ML^2T^{-2}]$. This matches the dimension of energy. ✓\"\"\",
+    \"\"\"**Heat capacity dimensional formula:** $C = mc$, so $[C] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] = [ML^2T^{-2}\\Theta^{-1}]$. Unlike specific heat, heat capacity DOES depend on mass (it's extensive).\"\"\",
+    \"\"\"**Molar heat capacity dimensions:** $C_m = c \\times M$ (molar mass), so $[C_m] = [L^2T^{-2}\\Theta^{-1}] \\cdot [M] = [ML^2T^{-2}\\Theta^{-1}]$. Same dimensions as specific heat, but per mole instead of per kg.\"\"\",
+    \"\"\"**In terms of base SI units:** $[c] = [kg^0 \\cdot m^2 \\cdot s^{-2} \\cdot K^{-1}] = [m^2 \\cdot s^{-2} \\cdot K^{-1}]$. This is the simplest form - just length-squared per time-squared per kelvin.\"\"\",
+    \"\"\"**Why $\\Theta$ appears in the denominator:** Specific heat is defined PER UNIT TEMPERATURE CHANGE. If $\\Delta\\theta$ doubles, $H$ doubles. The $\\Theta^{-1}$ dimension captures this inverse proportionality.\"\"\",
+    \"\"\"**Practical importance of correct units:** In $H = mc\\Delta\\theta$, if $m$ is in kg and $c$ in J/kg·K, then $H$ is in joules. If $m$ is in g and $c$ in cal/g·°C, then $H$ is in calories. Mixing systems (e.g., kg with cal/g·°C) gives WRONG answers.\"\"\",
+    \"\"\"**NEB exam focus:** Be able to derive $[c] = [M^0L^2T^{-2}\\Theta^{-1}]$, convert between J/kg·K and cal/g·°C, and use the correct units consistently in numerical problems.\"\"\",
+    \"\"\"**Dimensional homogeneity test:** Any correct formula for heat must have $[H] = [ML^2T^{-2}]$ on both sides. If a proposed formula gives different dimensions, it is immediately wrong - no calculation needed.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ $c$ has dimensions of $[ML^2T^{-2}]$. ✅ $c = H/(m\\Delta\\theta)$, so $[c] = [ML^2T^{-2}] / ([M][\\Theta]) = [L^2T^{-2}\\Theta^{-1}]$. Mass dimension CANCELS. The $[M^0]$ is the key difference from heat capacity.\"\"\",
+    \"\"\"❌ J/kg·K and J/kg·°C are different units. ✅ Since these units involve a TEMPERATURE INTERVAL (Δθ), and 1 K = 1°C in size, J/kg·K and J/kg·°C are EXACTLY the same. Only absolute temperatures differ.\"\"\",
+    \"\"\"❌ The dimensional formula depends on the system of units. ✅ Dimensional formulas are system-independent. Whether you use SI or CGS, $[c] = [L^2T^{-2}\\Theta^{-1}]$. Only the numerical VALUES change, not the dimensions.\"\"\",
+    \"\"\"❌ Heat capacity has the same dimensions as specific heat. ✅ Heat capacity $C = mc$ has $[C] = [ML^2T^{-2}\\Theta^{-1}]$ - it includes the mass dimension $[M]$ because it depends on the amount of substance.\"\"\",
+    \"\"\"❌ $c$ can have negative dimensions. ✅ Specific heat is always positive for normal materials. Negative $c$ would mean adding heat lowers temperature, which violates thermodynamics (except in exotic gravitational systems like stars).\"\"\",
+    \"\"\"❌ $1\\text{ cal/g·°C} = 1\\text{ J/kg·K}$. ✅ They differ by a factor of 4184. The calorie is about 4184 times larger than the joule, and the gram is 1/1000 of a kilogram, so the ratio is $4184 \\times 1000 / 1000 = 4184$.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"Derive the dimensional formula of specific heat capacity from $c = H/(m\\Delta\\theta)$. $[H] = [ML^2T^{-2}]$, $[m] = [M]$, $[\\Delta\\theta] = [\\Theta]$. Therefore $[c] = [ML^2T^{-2}] / ([M][\\Theta]) = [M^0L^2T^{-2}\\Theta^{-1}]$.\"\"\",
+    \"\"\"Convert 0.215 cal/g·°C (aluminum) to J/kg·K. $0.215 \\times 4184 = 900\\text{ J/kg·K}$. ✓ This matches the standard value.\"\"\",
+    \"\"\"Check dimensional homogeneity of $H = mc\\Delta\\theta$. LHS: $[H] = [ML^2T^{-2}]$. RHS: $[m][c][\\Delta\\theta] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] \\cdot [\\Theta] = [ML^2T^{-2}]$. ✓ LHS = RHS.\"\"\",
+    \"\"\"A substance has $c = 390\\text{ J/kg·K}$. Express this in cal/g·°C. $390 / 4184 = 0.0932\\text{ cal/g·°C}$. This is copper.\"\"\",
+    \"\"\"What are the dimensions of molar heat capacity $C_m$? $C_m = c \\times M$ (molar mass). $[C_m] = [L^2T^{-2}\\Theta^{-1}] \\cdot [M] = [ML^2T^{-2}\\Theta^{-1}]$.\"\"\",
+    \"\"\"Use dimensional analysis to show that $H = mc\\Delta\\theta$ is the only possible form (given $H$ depends on $m$, $c$, and $\\Delta\\theta$). $[H] = [M]^a [L^2T^{-2}\\Theta^{-1}]^b [\\Theta]^c = [ML^2T^{-2}]$. Equating powers: $M$: $a=1$; $L$: $2b=2 \\Rightarrow b=1$; $T$: $-2b=-2 \\Rightarrow b=1$; $\\Theta$: $-b+c=0 \\Rightarrow c=1$. So $H \\propto m^1 c^1 \\Delta\\theta^1$. ✓\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"The dimensional formula $[L^2T^{-2}\\Theta^{-1}]$ is the same as \"\"\"specific energy per kelvin\"\"\" - it tells you how much energy per unit mass is needed per degree of temperature change.\"\"\",
+    \"\"\"In the CGS system, specific heat of water is exactly 1 cal/g·°C by definition. This makes the calorie a \"\"\"natural\"\"\" unit for heat calculations, though the SI joule is the standard in modern physics.\"\"\",
+    \"\"\"Dimensional analysis is a powerful check: if you derive a formula for $c$ and it has wrong dimensions, you know immediately that an error was made - even before plugging in numbers.\"\"\",
+    \"\"\"The specific heat's dimensions $[L^2T^{-2}\\Theta^{-1}]$ are the same as \"\"\"velocity squared per kelvin.\"\"\" This reflects that temperature is fundamentally a measure of molecular kinetic energy (velocity).\"\"\",
+    \"\"\"The dimensional formula is independent of the substance. Whether it's water, iron, or helium, $[c] = [M^0L^2T^{-2}\\Theta^{-1}]$. Only the numerical value changes from material to material.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

@@ -1,29 +1,48 @@
 {
   "title": "Minimum Deviation Condition",
   "unitSlug": "refraction-through-prisms",
-  "topicSlug": "minimum-deviation-condition",
-  "topicTitle": "Minimum deviation condition",
+  "topicSlug": "minimum-deviation",
+  "topicTitle": "Minimum deviation condition in a prism",
   "relevance": 100,
   "notes": [
-    "**Deviation $\\delta$:** the angle between the original direction of the incident ray and the final direction of the emergent ray after passing through a prism.",
-    "**Minimum deviation $\\delta_{min}$:** occurs when the ray passes symmetrically through the prism. At $\\delta_{min}$, the angle of incidence equals the angle of emergence, and the ray inside the prism is parallel to the base.",
-    "**Measuring $\\delta_{min}$:** rotate the prism and record the angle of minimum deviation using a spectrometer. This gives the most accurate value for calculating refractive index.",
-    "**Why symmetric:** at minimum deviation, the path through the prism is the shortest possible for the given geometry, and any tilt increases the total bending."
+    "**Deviation angle (δ):** When a ray of light passes through a prism, it bends at both faces. The total angle between the incident ray's original direction and the emergent ray's direction is called the angle of deviation, $\\delta$.",
+    "**Formula for deviation:** $\\delta = i + e - A$, where $i$ is the angle of incidence, $e$ is the angle of emergence, and $A$ is the prism angle (refracting angle).",
+    "**Minimum deviation (δ_min):** As you vary the angle of incidence $i$, the deviation $\\delta$ changes. There is a unique value of $i$ that gives the SMALLEST possible deviation, called the angle of minimum deviation, $\\delta_{min}$.",
+    "**Symmetric path condition:** At minimum deviation, the ray passes SYMMETRICALLY through the prism: $i = e$ (angle of incidence equals angle of emergence) and $r_1 = r_2 = r$ (angles of refraction at both faces are equal).",
+    "**Geometric consequence:** At minimum deviation, the ray inside the prism is parallel to the base of the prism (for an isosceles prism). This is the shortest path through the prism.",
+    "**Finding δ_min experimentally:** Rotate the prism on a spectrometer table while viewing the emergent ray. The deviation angle decreases to a minimum and then increases. The minimum point is marked by the ray momentarily stopping and reversing direction.",
+    "**Why minimum deviation matters:** At $\\delta_{min}$, the prism formula $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$ is exact and doesn't require knowing the internal ray path. This makes it the most accurate way to measure refractive index.",
+    "**Curve of δ vs. i:** Plotting deviation $\\delta$ against angle of incidence $i$ gives a U-shaped curve. The lowest point is $\\delta_{min}$. The curve is symmetric about the minimum point (since swapping $i$ and $e$ gives the same deviation).",
+    "**Physical intuition:** At minimum deviation, the light takes the "path of least resistance" through the prism. Any deviation from the symmetric path increases the total bending because one face does more bending while the other does less, and the net effect is larger.",
+    "**Small prism approximation:** For a thin prism (small $A$), the minimum deviation is approximately $\\delta_{min} \\approx (n - 1)A$. This is useful for estimating deviation without precise measurements.",
+    "**Dispersion at minimum deviation:** Since refractive index $n$ depends on wavelength ($n_{violet} > n_{red}$), each color has a different $\\delta_{min}$. Violet light deviates more than red light, producing a spectrum.",
+    "**Spectrometer measurement:** In a laboratory spectrometer, $\\delta_{min}$ is found by rotating the prism table until the image of the slit stops moving and reverses direction. The angle between the incident and emergent ray at this point is $\\delta_{min}$.",
+    "**NEB exam focus:** State the condition for minimum deviation ($i = e$, $r_1 = r_2$). Draw the ray diagram showing the symmetric path. Explain why minimum deviation gives the most accurate refractive index measurement.",
+    "**Connection to prisms in optics:** Minimum deviation is used in spectrometers, monochromators, and prism-based optical instruments. It provides the most well-defined relationship between angle and refractive index."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ Minimum deviation occurs when the ray passes straight through the prism without bending. ✅ Minimum deviation still involves bending — it's the SMALLEST possible total deviation, not zero deviation. The ray still refracts at both surfaces.",
+    "❌ At minimum deviation, the ray is perpendicular to both prism faces. ✅ At minimum deviation, the ray inside the prism is parallel to the BASE (for an isosceles prism), not perpendicular to the faces. The angles of incidence and emergence are equal but not necessarily 90°.",
+    "❌ Any angle of incidence gives the same deviation. ✅ Deviation varies with angle of incidence. Only at one specific value of $i$ does the deviation reach its minimum. For other values of $i$, the deviation is larger.",
+    "❌ The angle of minimum deviation is zero for a prism. ✅ For a prism with $A > 0$ and $n > 1$, the minimum deviation is always positive. Zero deviation would require no refraction, which is impossible for a prism in air.",
+    "❌ Minimum deviation means the ray doesn't bend at all. ✅ "Minimum" means the smallest possible, not zero. The ray still bends — it's just the configuration that produces the least total bending.",
+    "❌ At minimum deviation, $r_1 \\neq r_2$. ✅ At minimum deviation, $r_1 = r_2 = A/2$. This is one of the key conditions that defines minimum deviation.",
+    "❌ You can find δ_min without a spectrometer. ✅ While you can approximate δ_min with a simple setup, precise measurement requires a spectrometer to accurately measure the angle between incident and emergent rays."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A prism has angle $A = 60°$ and refractive index $n = 1.5$. Find the angle of minimum deviation. At minimum deviation: $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$. $1.5 = \\frac{\\sin\\frac{60+\\delta_{min}}{2}}{\\sin 30°} = \\frac{\\sin\\frac{60+\\delta_{min}}{2}}{0.5}$. So $\\sin\\frac{60+\\delta_{min}}{2} = 0.75$. $\\frac{60+\\delta_{min}}{2} = \\arcsin(0.75) = 48.59°$. $\\delta_{min} = 97.18 - 60 = 37.18°$.",
+    "Show that at minimum deviation, $r = A/2$. At minimum deviation, $i = e$ and by symmetry $r_1 = r_2$. From the prism geometry: $A = r_1 + r_2 = 2r$. Therefore $r = A/2$. For $A = 60°$, $r = 30°$.",
+    "A glass prism ($n = 1.6$) has minimum deviation $\\delta_{min} = 40°$. Find the prism angle $A$. From $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$: $1.6 = \\frac{\\sin\\frac{A+40}{2}}{\\sin\\frac{A}{2}}$. Let $x = A/2$: $1.6 \\sin x = \\sin(x + 20°)$. Solving numerically: $x \\approx 30°$, so $A \\approx 60°$.",
+    "Why is the minimum deviation method more accurate than measuring deviation at arbitrary incidence? At minimum deviation, the ray path is symmetric, making the measurement less sensitive to small errors in reading the angles. Also, the deviation is at a stationary point (minimum), so small errors in prism orientation have minimal effect on the measured angle.",
+    "A ray passes through a prism with $A = 50°$ and $n = 1.52$. Find the angle of incidence that produces minimum deviation. At minimum deviation: $r = A/2 = 25°$. By Snell's law at the first face: $\\sin i = n \\sin r = 1.52 \\times \\sin 25° = 1.52 \\times 0.4226 = 0.6424$. $i = \\arcsin(0.6424) = 40.0°$.",
+    "Prove that for a given prism, the angle of incidence that gives minimum deviation is unique. The deviation function $\\delta(i)$ is convex (U-shaped) with a single minimum. This can be shown by taking the derivative $d\\delta/di$ and showing it equals zero at exactly one value of $i$ (where $i = e$)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The minimum deviation condition was first studied systematically by Isaac Newton in his optical experiments. He used a prism to separate white light into colors and measured the deviation of each color.",
+    "Spectrometers used in chemistry and physics labs are designed to measure angles of minimum deviation with high precision (to within 1 arcminute or better). This allows determination of refractive index to 4-5 significant figures.",
+    "The concept of minimum deviation applies not just to prisms but to any refracting or reflecting system. Mirrors, lenses, and diffraction gratings all have similar minimum-deflection configurations.",
+    "In fiber optics, the concept of minimum deviation is related to the critical angle and total internal reflection. Light entering an optical fiber at certain angles experiences minimum loss.",
+    "The minimum deviation angle depends on the wavelength of light (dispersion). This is why prisms produce rainbows — different colors have different refractive indices and therefore different minimum deviation angles."
   ],
   "animation3D": "refraction-through-prisms",
   "motionGraphics": "refraction-through-prisms"

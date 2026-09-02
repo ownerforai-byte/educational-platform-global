@@ -1,30 +1,45 @@
 {
   "title": "Spherical Lenses and Angular Magnification",
   "unitSlug": "lenses",
-  "topicSlug": "spherical-lenses-and-angular-magnification",
+  "topicSlug": "spherical-lens-and-angular-magnification",
   "topicTitle": "Spherical lenses, angular magnification",
   "relevance": 100,
   "notes": [
-    "**Convex lens:** thicker at the centre, converges parallel rays to the focal point. Positive focal length.",
-    "**Concave lens:** thinner at the centre, diverges parallel rays as if from the focal point. Negative focal length.",
-    "**Lens formula:** $\\frac{1}{f} = \\frac{1}{v} - \\frac{1}{u}$. Note the minus sign compared to the mirror formula, because distances are measured from the lens and sign conventions differ.",
-    "**Angular magnification of a magnifier:** $M = 1 + D/f$, where $D = 25\\,\\text{cm}$ is the near point of a normal eye. A lens with $f = 5\\,\\text{cm}$ gives $M = 6\\times$.",
-    "**Why a magnifier works:** the lens allows the object to be placed closer than the near point, so the eye sees a larger angular size. The lens itself does not enlarge the object; it allows the eye to view it from a closer distance."
+    "**Convex (converging) lens:** A lens thicker at the center than at the edges. Parallel rays of light converge to a real focal point after passing through the lens. The focal length f is positive. Materials with higher refractive index bend light more.",
+    "**Concave (diverging) lens:** A lens thinner at the center than at the edges. Parallel rays diverge as if coming from a virtual focal point on the same side as the incident light. The focal length f is negative.",
+    "**Lens maker's formula:** 1/f = (n−1)[1/R₁ − 1/R₂], where n is the refractive index of the lens material, R₁ is the radius of the first surface (light-entering), and R₂ is the radius of the second surface. Sign convention: R positive if the center of curvature is on the outgoing side; negative if on the incoming side.",
+    "**Lens formula (Gaussian lens formula):** 1/f = 1/v − 1/u, where u is the object distance (negative for real objects on the incident side, by sign convention), v is the image distance (positive for real images on the opposite side, negative for virtual images), and f is the focal length.",
+    "**Real vs. virtual images:** A real image is formed when light rays actually converge at a point — it can be projected onto a screen. A virtual image is formed when light rays appear to diverge from a point — it cannot be projected (it's where the rays appear to come from).",
+    "**Linear (transverse) magnification:** m = h_i/h_o = v/u. For mirrors, m = -v/u. Positive m means upright image; negative m means inverted image. The absolute value |m| tells if the image is magnified (|m|>1) or minified (|m|<1).",
+    "**Angular magnification (magnifying glass):** M = D/f + 1 (for relaxed eye, object at near point F) or M = D/f (for image at infinity). Here D = 25 cm is the near point distance of a normal eye.",
+    "**Why a magnifying glass works:** The lens allows the object to be placed closer than the near point (25 cm), so the eye can focus on it without strain. The angular size subtended by the object is larger when viewed through the lens.",
+    "**Focal points and optical axis:** Every lens has two focal points (one on each side). The optical axis is the line joining these focal points and passing through the center of the lens. All lens calculations assume paraxial rays (close to the axis).",
+    "**Ray diagram conventions for lenses:** Three principal rays: (1) Parallel to axis → through focal point on opposite side. (2) Through optical center → continues straight undeviated. (3) Through focal point → emerges parallel to axis. Their intersection gives the image location.",
+    "**Aberration in lenses:** Spherical aberration occurs because rays far from the axis do NOT converge at the same point as paraxial rays. Chromatic aberration occurs because different wavelengths (colors) have different refractive indices, so f varies with λ (dispersion).",
+    "**Applications of lenses:** Eye glasses and contact lenses (to correct myopia, hypermetropia, astigmatism, presbyopia). Cameras (adjusting distance to focus, achieving specific f-number for depth of field). Microscopes and telescopes (compound optical instruments combining multiple lenses).",
+    "**Optical power of a lens:** P = 1/f (in diopters, D). A lens with f = 0.5 m has P = 2 D. Powers of thin lenses in contact add: P_total = P₁ + P₂ + ... Converging lenses have positive power; diverging lenses have negative power.",
+    "**Focal length and lens curvature:** A shorter focal length means more strongly curved surfaces or a material with higher refractive index. A very powerful lens (small f) is also very curved, leading to more aberrations and a narrower field of view."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Magnification m = v/u does NOT tell you whether the image is real or virtual — that comes from the sign of v (real if v > 0, virtual if v < 0 for real objects). A virtual image can still have |m| > 1 or |m| < 1.",
+    "The lens formula 1/f = 1/v - 1/u uses a particular sign convention (real is positive, virtual is negative). In some textbooks, the sign convention is different. The result is the same if you are consistent, but mixing conventions causes errors.",
+    "A convex lens can produce EITHER a real or a virtual image depending on the object distance. If the object is within the focal length, the image is virtual, upright, and magnified (as in a magnifying glass). If beyond the focal length, the image is real and inverted.",
+    "Angular magnification is NOT the same as linear magnification. Angular magnification compares angles subtended at the eye, while linear magnification is the ratio of image height to object height. They are related but different concepts.",
+    "Thin lens approximation assumes the lens is very thin compared to image and object distances. A real lens has thickness — this shifts the effective optical center slightly, introducing small errors that are corrected in precise optics."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A converging lens has f = 20 cm. An object is placed 30 cm from the lens. Find (a) image distance, (b) magnification, (c) nature of image. Solution: 1/f = 1/v - 1/u → 1/20 = 1/v - 1/(-30). 1/v = 1/20 - 1/30 = (3-2)/60 = 1/60. v = 60 cm. (b) m = v/u = 60/(-30) = -2. Image is 2× larger. (c) v > 0 and m < 0: real and inverted image, magnified 2×.",
+    "A magnifying glass has f = 5 cm. Find its angular magnification when (a) the final image is at the near point (25 cm), (b) the final image is at infinity. Solution: (a) M = 1 + D/f = 1 + 25/5 = 1 + 5 = 6× (image at near point, most strain on eye). (b) M = D/f = 25/5 = 5× (relaxed eye, image at infinity).",
+    "Two lenses in contact: f₁ = 10 cm (convex), f₂ = -20 cm (concave). Find (a) combined focal length, (b) combined power, (c) angular magnification as a magnifier. Solution: (a) 1/f = 1/f₁ + 1/f₂ = 1/10 + 1/(-20) = 2/20 - 1/20 = 1/20. f = 20 cm. (b) P = 10 D + (-5 D) = 5 D. (c) M = D/f = 25/20 = 1.25× (weak magnifier, diverging lens too strong).",
+    "An object is placed 15 cm from a convex lens. A virtual image is formed at 30 cm from the lens. Find the focal length and power. Solution: u = -15 cm, v = -30 cm (virtual, same side as object). 1/f = 1/v - 1/u = 1/(-30) - 1/(-15) = -1/30 + 1/15 = 1/30. f = 30 cm, P = 1/0.30 = 3.33 D.",
+    "A compound microscope has objective focal length f_o = 0.4 cm and eyepiece focal length f_e = 2.5 cm. The tube length is 16 cm. Find the total magnification for the final image at infinity. Solution: Objective forms image at tube length: v_o ≈ 16 (for small object distance). Object distance for objective: 1/u_o = 1/v_o - 1/f_o = 1/16 - 1/0.4 = 0.0625 - 2.5 = -2.4375. u_o = -0.41 cm. m_o = v_o/u_o = 16/(-0.41) = -39. m_e = D/f_e = 25/2.5 = 10. Total M = m_o × m_e = (-39)(10) = -390×. Negative means inverted final image."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The human eye lens is a biconvex lens that changes shape (accommodation) to focus on objects at different distances. The near point (closest focusable distance) is about 25 cm for a normal adult, receding with age (presbyopia).",
+    "The magnifying power of a simple microscope (magnifying glass) when the image is at the near point is M = 1 + D/f, while when the image is at infinity (relaxed eye) it is M = D/f. The extra factor of 1 in the near-point case accounts for the additional strain.",
+    "In a compound microscope, the objective creates a real, inverted, magnified image of a nearby object, and the eyepiece acts as a magnifying glass to view that image. The total magnification is m_total = (v_o/u_o) × (D/f_e), where the first term is objective magnification and second is eyepiece magnification.",
+    "Astronomical telescopes use two lenses: objective (large focal length) and eyepiece (small focal length). The angular magnification is M = f_objective/f_eyepiece. For relaxed normal eye (image at infinity), the separation is f_o + f_e.",
+    "Camera lenses are essentially lens systems. The f-number (f/D, where D is aperture diameter) controls both light gathering and depth of field. A lower f-number = larger aperture = shallower depth of field and more light gathered."
   ],
   "animation3D": "lenses",
   "motionGraphics": "lenses"

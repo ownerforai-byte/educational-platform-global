@@ -1,0 +1,85 @@
+{
+  "title": "Literary Analysis Mindmap",
+  "unitSlug": "literary-analysis",
+  "topicSlug": "literary-analysis-mindmap",
+  "topicTitle": "Literary Analysis — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Literary Analysis",
+    "children": [
+      {
+        "id": "prose-comprehension-analysis-a",
+        "label": "Prose",
+        "children": [
+          {
+            "id": "prose-sub-0",
+            "label": "comprehension"
+          },
+          {
+            "id": "prose-sub-1",
+            "label": "analysis"
+          },
+          {
+            "id": "prose-sub-2",
+            "label": "and appreciation"
+          }
+        ]
+      },
+      {
+        "id": "poetry-poetic-devices-themes-a",
+        "label": "Poetry",
+        "children": [
+          {
+            "id": "poetry-sub-0",
+            "label": "poetic devices"
+          },
+          {
+            "id": "poetry-sub-1",
+            "label": "themes"
+          },
+          {
+            "id": "poetry-sub-2",
+            "label": "and interpretation"
+          }
+        ]
+      },
+      {
+        "id": "drama-structure-characters-and",
+        "label": "Drama",
+        "children": [
+          {
+            "id": "drama-sub-0",
+            "label": "structure"
+          },
+          {
+            "id": "drama-sub-1",
+            "label": "characters"
+          },
+          {
+            "id": "drama-sub-2",
+            "label": "and dramatic devices"
+          }
+        ]
+      },
+      {
+        "id": "novel-study-plot-characterisat",
+        "label": "Novel study",
+        "children": [
+          {
+            "id": "novel-study-sub-0",
+            "label": "plot"
+          },
+          {
+            "id": "novel-study-sub-1",
+            "label": "characterisation"
+          },
+          {
+            "id": "novel-study-sub-2",
+            "label": "and narrative techniques"
+          }
+        ]
+      }
+    ]
+  }
+}

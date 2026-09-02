@@ -1,0 +1,37 @@
+{
+  "title": "Vectors Mindmap",
+  "unitSlug": "vectors",
+  "topicSlug": "vectors-mindmap",
+  "topicTitle": "Vectors — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Vectors",
+    "children": [
+      {
+        "id": "collinear-and-non-collinear-ve",
+        "label": "Collinear",
+        "children": [
+          {
+            "id": "collinear-sub-0",
+            "label": "non-collinear vectors, coplanar"
+          },
+          {
+            "id": "collinear-sub-1",
+            "label": "non-coplanar vectors"
+          }
+        ]
+      },
+      {
+        "id": "linear-combination-of-vectors-",
+        "label": "Linear combination of vectors, linearly dependent",
+        "children": [
+          {
+            "id": "linear-combination-of-vectors-linearly-dependent-sub-0",
+            "label": "independent vectors"
+          }
+        ]
+      }
+    ]
+  }
+}

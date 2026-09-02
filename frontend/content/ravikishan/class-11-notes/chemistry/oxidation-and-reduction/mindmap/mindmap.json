@@ -1,0 +1,55 @@
+{
+  "title": "Oxidation and Reduction Mindmap",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "oxidation-and-reduction-mindmap",
+  "topicTitle": "Oxidation and Reduction — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Oxidation and Reduction",
+    "children": [
+      {
+        "id": "general-and-electronic-concept",
+        "label": "General",
+        "children": [
+          {
+            "id": "general-sub-0",
+            "label": "electronic concept of oxidation"
+          },
+          {
+            "id": "general-sub-1",
+            "label": "reduction"
+          }
+        ]
+      },
+      {
+        "id": "oxidation-number-and-rules-for",
+        "label": "Oxidation number",
+        "children": [
+          {
+            "id": "oxidation-number-sub-0",
+            "label": "rules for assigning oxidation number"
+          }
+        ]
+      },
+      {
+        "id": "balancing-redox-reactions-by-o",
+        "label": "Balancing redox reactions by oxidation number",
+        "children": [
+          {
+            "id": "balancing-redox-reactions-by-oxidation-number-sub-0",
+            "label": "ion-electron (half reaction) method"
+          }
+        ]
+      },
+      {
+        "id": "qualitative-aspect",
+        "label": "qualitative aspect"
+      },
+      {
+        "id": "quantitative-aspect-faraday-s-laws-of-el",
+        "label": "quantitative aspect (Faraday's laws of electrolysis)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "title": "Algebra Mindmap",
+  "unitSlug": "algebra",
+  "topicSlug": "algebra-mindmap",
+  "topicTitle": "Algebra — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Algebra",
+    "children": [
+      {
+        "id": "logic-and-set-statements-logic",
+        "label": "Logic and set",
+        "children": [
+          {
+            "id": "logic-and-set-sub-0",
+            "label": "statements"
+          },
+          {
+            "id": "logic-and-set-sub-1",
+            "label": "logical connectives"
+          },
+          {
+            "id": "logic-and-set-sub-2",
+            "label": "truth tables"
+          },
+          {
+            "id": "logic-and-set-sub-3",
+            "label": "theorems based on set operations"
+          }
+        ]
+      },
+      {
+        "id": "real-numbers-geometric-represe",
+        "label": "Real numbers",
+        "children": [
+          {
+            "id": "real-numbers-sub-0",
+            "label": "geometric representation of real numbers"
+          },
+          {
+            "id": "real-numbers-sub-1",
+            "label": "interval"
+          },
+          {
+            "id": "real-numbers-sub-2",
+            "label": "absolute value"
+          }
+        ]
+      },
+      {
+        "id": "function-domain-and-range-of-a",
+        "label": "Function",
+        "children": [
+          {
+            "id": "function-sub-0",
+            "label": "domain and range of a function"
+          },
+          {
+            "id": "function-sub-1",
+            "label": "inverse function"
+          },
+          {
+            "id": "function-sub-2",
+            "label": "composite function; algebraic (linear, quadratic and cubic) and transcendental (trigonometric, exponential, logarithmic) functions"
+          }
+        ]
+      },
+      {
+        "id": "curve-sketching-odd-and-even-f",
+        "label": "Curve sketching",
+        "children": [
+          {
+            "id": "curve-sketching-sub-0",
+            "label": "odd and even functions"
+          },
+          {
+            "id": "curve-sketching-sub-1",
+            "label": "periodicity"
+          },
+          {
+            "id": "curve-sketching-sub-2",
+            "label": "symmetry (about origin, X- and Y-axis"
+          },
+          {
+            "id": "curve-sketching-sub-3",
+            "label": "monotonicity; graphs of quadratic"
+          },
+          {
+            "id": "curve-sketching-sub-4",
+            "label": "cubic and rational functions"
+          },
+          {
+            "id": "curve-sketching-sub-5",
+            "label": "trigonometric (asinbx and acosbx"
+          },
+          {
+            "id": "curve-sketching-sub-6",
+            "label": "exponential (e^x"
+          },
+          {
+            "id": "curve-sketching-sub-7",
+            "label": "logarithmic (lnx"
+          }
+        ]
+      },
+      {
+        "id": "sequence-and-series-arithmetic",
+        "label": "Sequence and series",
+        "children": [
+          {
+            "id": "sequence-and-series-sub-0",
+            "label": "arithmetic"
+          },
+          {
+            "id": "sequence-and-series-sub-1",
+            "label": "geometric"
+          },
+          {
+            "id": "sequence-and-series-sub-2",
+            "label": "harmonic sequences and series and their properties; A.M"
+          },
+          {
+            "id": "sequence-and-series-sub-3",
+            "label": "G.M"
+          },
+          {
+            "id": "sequence-and-series-sub-4",
+            "label": "H.M and their relations; sum of infinite geometric series"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-tran",
+        "label": "Matrices and determinants",
+        "children": [
+          {
+            "id": "matrices-and-determinants-sub-0",
+            "label": "transpose of a matrix and its properties; minors and cofactors"
+          },
+          {
+            "id": "matrices-and-determinants-sub-1",
+            "label": "adjoint"
+          },
+          {
+            "id": "matrices-and-determinants-sub-2",
+            "label": "inverse matrix"
+          },
+          {
+            "id": "matrices-and-determinants-sub-3",
+            "label": "determinant"
+          },
+          {
+            "id": "matrices-and-determinants-sub-4",
+            "label": "properties of determinants (without proof"
+          }
+        ]
+      },
+      {
+        "id": "quadratic-equation-nature-and-",
+        "label": "Quadratic equation",
+        "children": [
+          {
+            "id": "quadratic-equation-sub-0",
+            "label": "nature and roots of a quadratic equation"
+          },
+          {
+            "id": "quadratic-equation-sub-1",
+            "label": "relation between roots and coefficient"
+          },
+          {
+            "id": "quadratic-equation-sub-2",
+            "label": "formation of a quadratic equation"
+          },
+          {
+            "id": "quadratic-equation-sub-3",
+            "label": "symmetric roots"
+          },
+          {
+            "id": "quadratic-equation-sub-4",
+            "label": "one or both roots common"
+          }
+        ]
+      },
+      {
+        "id": "complex-number-imaginary-unit-",
+        "label": "Complex number",
+        "children": [
+          {
+            "id": "complex-number-sub-0",
+            "label": "imaginary unit"
+          },
+          {
+            "id": "complex-number-sub-1",
+            "label": "algebra of complex numbers"
+          },
+          {
+            "id": "complex-number-sub-2",
+            "label": "geometric representation"
+          },
+          {
+            "id": "complex-number-sub-3",
+            "label": "absolute (modulus) value and conjugate of complex numbers and their properties"
+          },
+          {
+            "id": "complex-number-sub-4",
+            "label": "square root of a complex number"
+          }
+        ]
+      }
+    ]
+  }
+}

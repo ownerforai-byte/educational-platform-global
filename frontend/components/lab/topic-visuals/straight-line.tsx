@@ -61,8 +61,11 @@ export function StraightLineVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let movingPoint: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -189,6 +192,10 @@ export function StraightLineVisual() {
           new THREE.SphereGeometry(0.12, 8, 8),
           new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
         )) as any).position.set(midX, midY, 0.03);
+        movingPoint = push(new THREE.Mesh(
+          new THREE.SphereGeometry(0.15, 12, 12),
+          new THREE.MeshBasicMaterial({ color: 0xf97316 }),
+        )) as THREE.Mesh;
         (meshes[meshes.length - 1] as any).userData.isLabel = false;
       };
 
@@ -197,6 +204,12 @@ export function StraightLineVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.016;
+        const t = (Math.sin(animTime * 0.8) + 1) / 2;
+        if (movingPoint) {
+          movingPoint.position.x = -10 + t * 20;
+          movingPoint.position.y = m * movingPoint.position.x + c;
+        }
         renderer.render(scene, camera);
       };
       animate();

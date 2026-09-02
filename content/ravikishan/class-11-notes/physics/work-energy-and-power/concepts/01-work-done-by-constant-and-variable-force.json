@@ -5,26 +5,41 @@
   "topicTitle": "Work done by a constant force and a variable force",
   "relevance": 100,
   "notes": [
-    "**Work definition:** $W = Fs\\cos\\theta$, where $F$ is the force, $s$ is the displacement, and $\\theta$ is the angle between them.",
-    "**Constant force:** if $F$ and $\\theta$ are constant, work is simply the product. Work is positive if $0Â° < \\theta < 90Â°$, zero if $\\theta = 90Â°$, and negative if $90Â° < \\theta < 180Â°$.",
-    "**Variable force:** when force changes with position, work is the area under the force-displacement graph: $W = \\int F \\, dx$.",
-    "**Spring example:** for a spring, $F = kx$, so work done in stretching from $x=0$ to $x=x$ is $W = \\int_0^x kx \\, dx = \\frac{1}{2}kx^2$.",
-    "**Why area matters:** the integral sums up infinitesimal contributions $F \\, dx$ over the entire displacement, which is exactly what the area under the curve represents."
+    "**Definition of work (constant force):** $W = F s \\\\\cos\\theta$, where $F$ is the magnitude of the constant force, $s$ is the displacement, and $\\theta$ is the angle between the force vector and displacement vector. Work is a scalar quantity - it has magnitude but no direction.",
+    "**Sign of work:** Work is POSITIVE when $0^\\\\\circ \\\\\le \\theta < 90^\\\\\circ$ (force component along displacement). Work is ZERO when $\\theta = 90^\\\\\circ$ (force perpendicular to displacement, e.g., centripetal force, normal force on horizontal surface). Work is NEGATIVE when $90^\\\\\circ < \\theta \\\\\le 180^\\\\\circ$ (force opposes displacement, e.g., kinetic friction, gravity when lifting).",
+    "**Work by multiple forces:** Total work is the sum of works by individual forces: $W_{\\text{net}} = \\\\\sum W_i = \\\\\sum F_i s \\\\\cos\\theta_i$. This is equivalent to the work done by the net force: $W_{\\text{net}} = F_{\\text{net}} s \\\\\cos\\theta_{\\text{net}}$.",
+    "**Variable force definition:** When force varies with position, work is the integral of force over the displacement: $W = \\\\\int_{x_i}^{x_f} F(x) \\\\\, dx$ (for 1D motion). Graphically, this is the area under the $F$ vs $x$ curve between the initial and final positions.",
+    "**Work by a spring force (Hooke's law):** For an ideal spring, $F = -kx$. Work done BY the spring when moving from $x_i$ to $x_f$: $W_{\\text{spring}} = \\\\\int_{x_i}^{x_f} (-kx) dx = \\frac{1}{2}k x_i^2 - \\frac{1}{2}k x_f^2$. Work done ON the spring (by external agent) is the negative of this.",
+    "**Work by gravity (near Earth):** Gravity is a constant force $F_g = mg$ downward. If an object moves vertically by $\\\\\Delta y$ (up positive), $W_g = -mg \\\\\Delta y$. If it moves horizontally, $W_g = 0$. For a path with vertical drop $h$, $W_g = +mgh$ (gravity does positive work).",
+    "**Work by a constant force in 2D/3D:** $W = \\\\\vec{F} \\\\\cdot \\\\\vec{s} = F_x s_x + F_y s_y + F_z s_z$. Only the component of force parallel to displacement contributes. This dot product form is frame-independent.",
+    "**Work-energy connection (preview):** The net work done on an object equals its change in kinetic energy: $W_{\\text{net}} = \\\\\Delta K = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2$. This is the work-energy theorem, derived from Newton's second law.",
+    "**Path dependence for variable forces:** For a variable force, work depends on the path taken. For conservative forces (gravity, spring), work is path-independent and equals $-\\\\\Delta U$. For non-conservative forces (friction), work depends on the actual path length.",
+    "**Graphical interpretation:** The area under the $F$-$x$ curve (with sign) gives the work. Positive area = positive work; negative area = negative work. For a spring, the $F$-$x$ graph is a straight line through origin with slope $k$, and the area is a triangle $\\frac{1}{2}kx^2$.",
+    "**Work by a varying force in 2D:** $W = \\\\\int_C \\\\\vec{F} \\\\\cdot d\\\\\vec{r} = \\\\\int_C (F_x dx + F_y dy)$. This is a line integral. For a force $\\\\\vec{F}(x,y)$, the work along path C depends on the specific curve C unless $\\\\\vec{F}$ is conservative ($\\nabla \\times \\\\\vec{F} = 0$).",
+    "**Constant force vs variable force summary:** Constant force: $W = F s \\\\\cos\\theta$ (simple product). Variable force: $W = \\\\\int F(x) dx$ (area under curve). Both are special cases of the general definition $W = \\\\\int \\\\\vec{F} \\\\\cdot d\\\\\vec{r}$.",
+    "**Example - work by gravity on an incline:** Block slides down incline of angle $\\theta$, length $L$. Vertical drop $h = L \\\\\sin\\theta$. Work by gravity: $W_g = mgh = mgL \\\\\sin\\theta$. This equals force component parallel to incline ($mg\\\\\sin\\theta$) times distance $L$.",
+    "**Example - work by external agent stretching a spring:** Slowly stretch spring from 0 to $x$ (quasi-static, acceleration $\\\\\approx 0$). Applied force $F_{\\text{app}} = +kx$ (matches spring force). Work done: $W = \\\\\int_0^x kx dx = \\frac{1}{2}kx^2$. This energy is STORED as elastic potential energy in the spring."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Work is NOT force times distance in general - it is force component in the direction of displacement times distance. $W = F s$ only when force and displacement are parallel ($\theta = 0$). Many students forget the $\\\\cos\\theta$ factor.",
+    "Work done BY a force vs work done ON an object: $W_{\\text{by}} = -W_{\\text{on}}$. The work-energy theorem uses $W_{\\text{net}}$ (work done BY all forces ON the object). Work done BY the object on something else is the negative.",
+    "Holding a heavy object stationary: You exert a force, but displacement is zero, so $W = 0$! You get tired because your muscles do internal biochemical work (energy conversion), not mechanical work on the object. This is a classic misconception.",
+    "Centripetal force does NO work: $F_c$ is always perpendicular to velocity (displacement), so $\\\\\cos 90^\\\\\circ = 0$. It changes direction, not speed. A planet in circular orbit around the Sun has zero work done by gravity.",
+    "For a variable force, you CANNOT just multiply 'average force' by distance unless you know the average is the integral average. The correct method is always integration or graphical area. A common error: averaging endpoints $\\frac{F_i + F_f}{2}$ only works for linear forces."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 5 kg block is pulled 10 m across a horizontal floor by a force of 20 N at an angle of 30° above the horizontal. The coefficient of kinetic friction is 0.2. Find (a) work done by the applied force, (b) work done by friction, (c) net work, (d) final speed if it started from rest. Solution: (a) $W_F = F s \\\\\cos 30^\\\\\circ = 20 \\times 10 \\times 0.866 = 173.2$ J. (b) Normal force $N = mg - F\\\\\sin 30^\\\\\circ = 5\\times9.8 - 20\\times0.5 = 49 - 10 = 39$ N. Friction $f = 0.2 \\times 39 = 7.8$ N. $W_f = -f s = -7.8 \\times 10 = -78$ J. (c) $W_{\\text{net}} = 173.2 - 78 = 95.2$ J. (d) $W_{\\text{net}} = \\frac{1}{2}mv^2 \\rightarrow v = \\\\\sqrt{2 \\times 95.2 / 5} = 6.17$ m/s.",
+    "A force $F(x) = 3x^2 + 2x$ N acts on a particle moving along the x-axis from $x = 1$ m to $x = 3$ m. Find the work done. Solution: $W = \\\\\int_1^3 (3x^2 + 2x) dx = [x^3 + x^2]_1^3 = (27 + 9) - (1 + 1) = 36 - 2 = 34$ J.",
+    "A spring with $k = 200$ N/m is compressed from 0.1 m to 0.3 m. Find (a) work done BY the spring, (b) work done ON the spring by an external agent. Solution: (a) $W_{\\text{spring}} = \\frac{1}{2}k(x_i^2 - x_f^2) = 100 \\times (0.01 - 0.09) = -8$ J. Spring does negative work (it pushes back). (b) $W_{\\text{ext}} = +8$ J. The external agent stores 8 J in the spring.",
+    "A 2 kg block slides down a frictionless incline of length 5 m and angle 30°. Find the work done by gravity and the final speed. Solution: Vertical drop $h = 5 \\\\\sin 30^\\\\\circ = 2.5$ m. $W_g = mgh = 2 \\times 9.8 \\times 2.5 = 49$ J. $W_g = \\\\\Delta K = \\frac{1}{2}mv^2 \\rightarrow v = \\\\\sqrt{2 \\times 49 / 2} = 7$ m/s. Note: $W_g$ equals force component $mg\\\\\sin 30^\\\\\circ = 9.8$ N times distance 5 m = 49 J.",
+    "The force on a particle is $F(x) = 10 - 2x$ N. The particle moves from $x = 0$ to $x = 6$ m. Find the work done and explain the physical meaning of the negative work portion. Solution: $W = \\\\\int_0^6 (10 - 2x) dx = [10x - x^2]_0^6 = 60 - 36 = 24$ J. Force is positive for $x < 5$, zero at $x = 5$, negative for $x > 5$. Positive work from 0 to 5 m (25 J), negative work from 5 to 6 m (-1 J). Net = 24 J."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The concept of work was formalized by Gaspard-Gustave Coriolis in 1829. He defined 'work' as the product of force and distance - the word 'work' in physics has a precise mathematical meaning different from everyday usage.",
+    "Work is a SCALAR, not a vector. It has no direction, only magnitude and sign. Energy (which work changes) is also a scalar. This is why we can add works from different forces as simple numbers: $W_{\\text{net}} = W_1 + W_2 + \\\\\dots$",
+    "The work-energy theorem $W_{\\text{net}} = \\\\\Delta K$ is mathematically equivalent to Newton's second law $F = ma$. It's not a new law - it's a reformulation that is often easier to use when forces vary or the path is complex.",
+    "One joule (1 J) is the work done by a force of 1 newton moving an object 1 meter in the direction of the force. It's a small amount: lifting a 100 g apple by 1 m does about 1 J of work against gravity.",
+    "In thermodynamics, work is energy transfer across a system boundary due to macroscopic forces. The same definition $W = \\\\\int F dx$ applies, but the 'system' and 'surroundings' must be clearly defined. The sign convention often differs: work done BY the system on surroundings is POSITIVE in thermodynamics (opposite to mechanics convention for the system)."
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power"

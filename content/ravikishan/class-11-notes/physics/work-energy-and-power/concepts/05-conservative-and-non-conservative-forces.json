@@ -5,27 +5,39 @@
   "topicTitle": "Conservative and non-conservative forces",
   "relevance": 100,
   "notes": [
-    "**Conservative force:** work done is independent of the path and depends only on the initial and final positions. Examples: gravity, spring force, electrostatic force.",
-    "**Closed path test:** for a conservative force, the work done around any closed path is zero: $\\oint \\vec{F} \\cdot d\\vec{r} = 0$.",
-    "**Potential energy association:** conservative forces allow the definition of potential energy because work done against them is stored and recoverable.",
-    "**Non-conservative force:** work done depends on the path. Examples: friction, air resistance, viscous drag.",
-    "**Energy loss:** in non-conservative forces, mechanical energy is dissipated as heat or sound. For example, a sliding block stops because friction converts KE to thermal energy.",
-    "**Mixed systems:** when both conservative and non-conservative forces act: $W_{nc} = \\Delta E_{mech}$, where $W_{nc}$ is the work done by non-conservative forces."
+    "**Conservative force definition:** A force is conservative if the work done by it depends ONLY on the initial and final positions, not on the path taken. Equivalently, the work done around any closed loop is zero: ∮F·dr = 0.",
+    "**Path independence:** For a conservative force, W = U_i - U_f = -(U_f - U_i) = -ΔU. The work is the negative of the change in potential energy. This means we can define a potential energy function U(r) such that F = -∇U (force is the negative gradient of potential).",
+    "**Examples of conservative forces:** Gravity (near Earth: F = -mg, U = mgh), spring force (F = -kx, U = ½kx²), electrostatic force (F = kQq/r², U = kQq/r), uniform electric field (F = qE, U = qEy).",
+    "**Non-conservative force definition:** A force is non-conservative if the work done depends on the path taken. The work around a closed loop is NOT zero: ∮F·dr ≠ 0. Energy is dissipated as heat or sound.",
+    "**Examples of non-conservative forces:** Kinetic friction (F_f = μN, work = -μN × distance traveled — depends on path length!), air resistance/viscous drag (proportional to v or v², opposes motion), rolling friction, human muscle force (metabolic energy not recoverable).",
+    "**Potential energy association:** Conservative forces ALLOW the definition of potential energy because the work done against them is stored and recoverable. Non-conservative forces do NOT have an associated potential energy — the energy is lost from the mechanical system.",
+    "**Closed loop test:** Take any closed path. For gravity: lift a mass up height h (W = -mgh), lower it down (W = +mgh). Net work = 0. For friction: slide a block around a closed square (perimeter = 4L). Each side does work = -μmgL. Net work = -4μmgL ≠ 0.",
+    "**Mixed force systems:** When both conservative and non-conservative forces act, use: W_nc = ΔE_mech = (K_f + U_f) - (K_i + U_i). This is the most general energy equation for mechanical systems. If W_nc = 0, mechanical energy is conserved.",
+    "**Energy dissipated by friction:** For a block sliding distance d with kinetic friction μ_k, the thermal energy generated is Q = μ_k N d. This comes from the work done BY friction: W_f = -μ_k N d. The mechanical energy lost equals the heat generated.",
+    "**Conservative force and curl:** In 3D, a force F is conservative iff its curl is zero: ∇ × F = 0 (everywhere in a simply connected region). This is a mathematical test — if the force field has no circulation, it is conservative.",
+    "**Electrostatic force is conservative:** The work done by an electrostatic field depends only on endpoints. This allows defining electric potential V = U/q and voltage differences. The electric field is the negative gradient: E = -∇V.",
+    "**Why it matters for problem solving:** If all forces are conservative, use K_i + U_i = K_f + U_f (simple). If non-conservative forces are present, use W_nc = ΔE_mech. Always identify which forces are conservative and which are not."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Friction does NOT have a potential energy. Many students try to write U_friction = μmgx or something similar. This is WRONG — friction is non-conservative, and the energy it 'removes' from the mechanical system becomes heat, not stored potential energy.",
+    "A force being 'conservative' does NOT mean the total energy of the system is conserved. It means mechanical energy can be conserved IF that force is the ONLY force doing work. If you have conservative forces PLUS non-conservative forces, mechanical energy is not conserved even though some forces are conservative.",
+    "Normal force and tension are NOT conservative forces — they are constraint forces that do zero work (they are perpendicular to displacement). They don't appear in the energy equation because W = 0, not because they have potential energy.",
+    "The term 'non-conservative' does NOT mean 'energy is destroyed.' It means mechanical energy is converted to other forms (heat, sound) that are NOT tracked by potential energy. Total energy is ALWAYS conserved (first law).",
+    "Air resistance (drag) is non-conservative. The work done by drag depends on the path (speed profile). You CANNOT define a 'drag potential energy.' The energy lost to drag becomes heat in the air."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 10 kg block slides on a rough horizontal surface (μ_k = 0.3) from x=0 to x=5 m, then returns to x=0. Find total work done by friction. Solution: W_going = -μmgd = -0.3×10×9.8×5 = -147 J. W_returning = -147 J. Total W = -294 J ≠ 0. Friction is non-conservative. The energy is dissipated as heat.",
+    "A 2 kg mass falls 10 m in air with air resistance. Its speed at the bottom is 12 m/s (instead of 14 m/s without air resistance). Find the work done by air resistance. Solution: Without drag: v = √(2gh) = √(196) = 14 m/s, KE = 196 J. With drag: KE = ½×2×144 = 144 J. Work by drag = ΔKE - W_gravity = 144 - 196 = -52 J. 52 J lost to air resistance.",
+    "Is the force F(x) = 3x² i + 4y j conservative? Find its potential function if it is. Solution: Check ∇ × F = 0. In 2D: ∂F_y/∂x - ∂F_x/∂y = 0 - 0 = 0. Conservative. Find U: F_x = -dU/dx = 3x² → U = -x³ + f(y). F_y = -dU/dy = 4y → -df/dy = 4y → f = -2y². U = -x³ - 2y² + C.",
+    "A spring (k = 500 N/m) launches a 0.5 kg block up a 30° incline with μ = 0.2. The spring is compressed 0.2 m. How far up the incline does the block go? Solution: Initial spring U = ½kx² = ½×500×0.04 = 10 J. Final state: v = 0 at distance d up incline. Height gain = d sin 30° = d/2. U_g = mg(d/2) = 0.5×9.8×d/2 = 2.45d J. Work by friction = -μmg cos30° d = -0.2×0.5×9.8×0.866d = -0.85d. Energy: 10 = 2.45d + 0.85d = 3.3d → d = 10/3.3 = 3.03 m.",
+    "A particle moves in a circle of radius r under a force F = -kr (directed toward center). Is this force conservative? Find the work done over one complete circle. Solution: F = -k(xi + yj) is a central force toward origin. Curl = 0, so conservative. Work over closed circle: ∮F·dr = 0 (conservative forces do zero work over closed paths)."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The fundamental forces of nature (gravity, electromagnetism, strong, weak) are all conservative at the fundamental level. Non-conservative forces like friction are emergent — they arise from many conservative interactions at the microscopic level, with energy going into microscopic degrees of freedom (heat).",
+    "Noether's theorem: Conservation of energy is linked to time translation symmetry. Conservative forces are those derived from a potential that is time-independent. Time-dependent forces (like a time-varying field) can be non-conservative even if they are fundamental.",
+    "The electrostatic force is conservative, but the magnetic force is NOT conservative in the usual sense (it does no work because F = qv×B is perpendicular to v, so W = 0). However, in electromagnetic induction, the induced electric field is non-conservative (∇×E = -∂B/∂t).",
+    "In quantum mechanics, all forces are fundamentally conservative. The apparent non-conservation in decoherence comes from entanglement with the environment — the system's energy is not conserved, but the total universe energy is.",
+    "The work done by a conservative force is the negative of the change in its potential energy: W = -ΔU. This means if you move against a conservative force (lifting a weight), you INCREASE its potential energy (positive ΔU, negative W)."
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power"

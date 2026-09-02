@@ -5,28 +5,43 @@
   "topicTitle": "Projectile motion and its applications",
   "relevance": 100,
   "notes": [
-    "**Projectile:** any object thrown or launched into the air and then allowed to move under gravity alone.",
-    "**Key insight â€” independence of motions:** horizontal motion has zero acceleration ($a_x = 0$), so horizontal velocity is constant. Vertical motion has constant acceleration $g$ downward. The two motions are completely independent.",
-    "**Trajectory equation:** eliminating $t$ from $x = u\\cos\\theta \\cdot t$ and $y = u\\sin\\theta \\cdot t - \\frac{1}{2}gt^2$ gives $y = x\\tan\\theta - \\frac{gx^2}{2u^2\\cos^2\\theta}$, which is the equation of a parabola.",
-    "**Maximum height:** $H = \\frac{u^2\\sin^2\\theta}{2g}$. Reached when vertical velocity becomes zero.",
-    "**Time of flight:** $T = \\frac{2u\\sin\\theta}{g}$. The projectile returns to the launch level when vertical displacement is zero.",
-    "**Horizontal range:** $R = \\frac{u^2\\sin 2\\theta}{g}$. The range is maximum when $\\sin 2\\theta = 1$, i.e., $\\theta = 45\\circ$.",
-    "**Applications:** sports (basketball shots, golf drives), military (artillery, rockets), and engineering (water fountains, ballistic trajectories) all rely on the same parabolic equations."
+    "**Definition:** A projectile is any object given an initial velocity and then allowed to move under gravity alone. The only force (ignoring air resistance) is gravity, acting vertically downward.",
+    "**Key insight — independence of motions:** Horizontal acceleration is zero (a_x = 0), so horizontal velocity v_x is constant. Vertical acceleration is constant: a_y = -g. The horizontal and vertical motions are completely independent.",
+    "**Horizontal projection:** If a body is projected horizontally with speed u from height h, the trajectory is a parabola: x = ut, y = ½gt². Eliminating t gives y = gx²/(2u²), showing y ∝ x².",
+    "**Oblique projection (general case):** If a body is projected with speed u at angle θ to the horizontal, the equations are: x = (u cos θ)t, y = (u sin θ)t - ½gt². Eliminating t gives the trajectory: y = x tan θ - gx²/(2u² cos²θ).",
+    "**Maximum range condition:** The horizontal range R is maximum when sin 2θ = 1, i.e., θ = 45°. R_max = u²/g. For complementary angles (θ and 90°-θ) that give the same range but different times of flight.",
+    "**Time of flight (ground to ground):** T = 2u sin θ / g. This is the time for the projectile to return to the same vertical level from which it was launched.",
+    "**Maximum height:** H = u² sin²θ / (2g). Reached when vertical velocity component becomes zero: v_y = u sin θ - gt = 0.",
+    "**Trajectory equation:** y = x tan θ - gx²/(2u² cos²θ) = x tan θ - gx²/(2u² cos²θ). This is a parabolic equation y = ax - bx².",
+    "**Horizontal range (general):** R = u² sin 2θ / g. At 45°, sin 2θ = 1 and R = u²/g is maximum. At 30° and 60°, the range is the same: R = u² sin 60°/g = u²(√3/2)/g.",
+    "**Velocity at any point:** v_x = u cos θ (constant); v_y = u sin θ - gt. Speed v = √(v_x² + v_y²). The velocity vector is tangent to the trajectory at every point.",
+    "**Symmetry on level ground:** For equal launch and landing heights, the trajectory is symmetric about the vertical line through maximum height. Time ascending = time descending. Impact speed equals launch speed.",
+    "**Projection from a height (not ground level):** If launched from height h₀, there is asymmetry — the descent is faster than the ascent, and the impact speed depends on the height. The trajectory is still a parabola, but h ≠ H.",
+    "**Real-world applications:** Artillery aiming (accounting for elevation differences), sports (golf, basketball, football throws), water fountains, firefighting (hose trajectory), long jump, motorcycle stunts (daredevil jumps).",
+    "**Air resistance effects:** In reality, air resistance reduces range, maximum height, and time of flight. The trajectory deviates from a parabola, becoming more asymmetric. Light objects (tennis balls) are affected more than heavy ones (golf balls).",
+    "**Projectile on an inclined plane:** When launched on or over an inclined plane (angle α), the range and maximum range conditions change: R = 2u² cos(θ+α) sin(θ-α) / (g cos²α). Maximum range occurs at θ = (π/4 + α/2)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Many students think that at the highest point of the trajectory, the vertical velocity is zero but the acceleration is also zero. The acceleration is ALWAYS g downward — even at the top where v_y = 0, the body is still accelerating downward, which is why it starts falling back.",
+    "Horizontal and vertical motions are INDEPENDENT — students often think that a body 'falls behind' if launched horizontally. The horizontal velocity stays constant; gravity only affects vertical motion. A horizontally fired bullet and a dropped bullet hit the ground simultaneously.",
+    "The range formula R = u² sin 2θ/g is ONLY valid for ground-to-ground projection on level terrain. If the launch and landing heights differ, this formula does NOT apply and a more general calculation is needed.",
+    "Maximum range occurs at 45° ONLY when launched and landed at the same height in a uniform gravitational field with no air resistance. With air resistance, the optimal angle is slightly less than 45° (about 42-44° for a golf ball).",
+    "Complementary angles (30° and 60°) give the same range but DIFFERENT times of flight: T = 2u sin θ/g. The 60° trajectory has longer flight time but the same range. This is because it goes higher and stays in the air longer.",
+    "The 'faster' projectile does NOT need larger angle — both the high arc and the flat arc at complementary angles land at the same spot. The difference is the viewing angle, not the arrival time (for ground-to-ground)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A ball is thrown with 30 m/s at 37° above horizontal. Find (a) time of flight, (b) maximum height, (c) horizontal range, (d) velocity at impact (same level). Solution: u=30, θ=37°, sin 37°=0.6, cos 37°=0.8, g=9.8. (a) T = 2u sin θ/g = 2×30×0.6/9.8 = 36/9.8 = 3.67 s. (b) H = u²sin²θ/(2g) = 900×0.36/19.6 = 16.53 m. (c) R = u²sin2θ/g = 900×0.96/9.8 = 88.16 m. (d) Impact speed = 30 m/s at -37° (by symmetry).",
+    "A plane flying horizontally at 80 m/s drops a bomb from 300 m altitude. Find (a) time to hit ground, (b) horizontal distance covered, (c) velocity at impact. Solution: u_x=80, h=300, g=9.8. (a) h = ½gt² → t = √(2×300/9.8) = √61.2 = 7.82 s. (b) x = u_x × t = 80 × 7.82 = 626 m. (c) v_x = 80 m/s, v_y = gt = 9.8×7.82 = 76.6 m/s. v = √(80²+76.6²) = √(6400+5868) = √12268 = 110.8 m/s. Angle = tan⁻¹(76.6/80) = 43.9° below horizontal.",
+    "A cannon fires a shell at 150 m/s. What angle gives maximum range and what is that range? If air is perfectly smooth ground. Solution: Max range at θ=45°. R_max = u²/g = 150²/9.8 = 22500/9.8 = 2296 m. Time of flight at 45°: T = 2u sin45°/g = 2×150×0.707/9.8 = 214.2 s.",
+    "Show that for complementary angles θ and (90°-θ), the horizontal range is the same but the maximum height and time of flight differ. Solution: R(θ) = u²sin2θ/g. sin2θ = sin2(90°-θ) = sin(180°-2θ) = sin2θ. Same range. H(θ) = u²sin²θ/(2g), H(90°-θ) = u²cos²θ/(2g). These are equal only at 45°. T(θ) = 2u sinθ/g, T(90°-θ) = 2u cosθ/g. Also equal only at 45°.",
+    "A ski jumper leaves a ramp at 25 m/s at 15° above horizontal. The landing point is 30 m below the launch level. Find the horizontal distance to the landing point. Solution: u_x=25cos15°=24.1 m/s, u_y=25sin15°=6.47 m/s. y = u_y t + ½gt² → -30 = 6.47t - 4.9t² → 4.9t² - 6.47t - 30 = 0. t = [6.47+√(41.9+588)]/9.8 = (6.47+24.7)/9.8 = 3.18 s. x = 24.1 × 3.18 = 76.6 m."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Galileo was the first to correctly describe projectile motion (1638), showing that a projectile follows a parabolic path and that horizontal motion is independent of vertical motion. This was crucial evidence for the Copernican theory.",
+    "The trajectory of any projectile in a uniform gravitational field (neglecting air resistance) is exactly a parabola — this is a direct consequence of the trajectory equation y = x tan θ - gx²/(2u² cos²θ) being quadratic in x.",
+    "For a given projection speed, there are two angles that give the same range: θ and 90°-θ (complementary angles). The two trajectories have the same range but different flight times and maximum heights.",
+    "The concept of projectile motion applies to a vast range of phenomena: water from a hose, a basketball shot, a long jumper, artillery shells, satellite orbits (which are continuous projectile motion with Earth's curvature), and even light (photon trajectory bending in gravity).",
+    "Maximum range is achieved at 45° for ground-to-ground projection, but this angle is rarely optimal in practice due to air resistance (reduces it to ~43° for a golf ball), elevation differences (higher optimal angle), and target height (must aim higher to hit an elevated target)."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics"

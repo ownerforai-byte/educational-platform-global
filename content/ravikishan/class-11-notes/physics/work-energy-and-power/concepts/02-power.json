@@ -5,26 +5,39 @@
   "topicTitle": "Power",
   "relevance": 100,
   "notes": [
-    "**Power definition:** the rate at which work is done. $P = \\frac{W}{t}$.",
-    "**Alternative form:** since $W = Fs$, $P = Fs/t = Fv$ when force and velocity are in the same direction.",
-    "**Units:** SI unit is watt ($1\\,\\text{W} = 1\\,\\text{J/s}$). Other units: horsepower ($1\\,\\text{hp} = 746\\,\\text{W}$) and kilowatt ($1\\,\\text{kW} = 1000\\,\\text{W}$).",
-    "**Why $P = Fv$ matters:** it tells you that for a given engine power, a lower speed allows a larger force, and vice versa. This is why cars can climb steep hills in low gear: the engine delivers high force at low wheel speed.",
-    "**Average vs instantaneous power:** average power uses total work over total time; instantaneous power uses $P = \\vec{F} \\cdot \\vec{v}$ at a specific instant."
+    "**Definition of power:** Power is the rate at which work is done or energy is transferred. P = dW/dt = dE/dt, where W is work, E is energy, and t is time. Average power = W/t; instantaneous power = lim_{Δt→0} ΔW/Δt = dW/dt.",
+    "**Formula for power:** Since W = F·s for constant force in the direction of motion, power P = W/t = F·s/t = F·(s/t) = Fv, where v is velocity. This form P = Fv is valid when F and v are in the same direction.",
+    "**Units of power:** The SI unit is the watt (W): 1 W = 1 J/s = 1 kg·m²/s³. In engineering, the horsepower (hp) is used: 1 hp (mechanical) = 746 W ≈ 550 ft·lb/s. Kilowatt (kW) = 1000 W is used for engines and appliances.",
+    "**Why P = Fv matters:** Power is the product of force and velocity. For a given engine power, you can calculate the max speed when pushing against a force: v = P/F. Example: a motor with 1000 W lifting water has v = 1000/F where F is the weight per second.",
+    "**Power for variable force:** For a variable force F(t) acting on an object with velocity v(t), instantaneous power is P(t) = F(t)·v(t). In vector form: P = F·v = |F||v|cos θ (dot product), so power is positive when F and v have the same direction (force aids motion), negative when opposite (force opposes motion).",
+    "**Gravitational power:** When lifting an object of mass m at constant speed v, the power required is P = mgh/t = mg(v) = mgv. This is the rate at which gravitational potential energy is increased. For a falling object, P = mgv downward.",
+    "**Power in circular motion:** When a particle moves in a circle with speed v, the centripetal force F = mv²/r is perpendicular to velocity. Power = F·v = Fv cos 90° = 0! A centripetal force does no work — it only changes direction, not speed.",
+    "**Average power in variable processes:** In processes where power varies (e.g., accelerating car, oscillating pendulum), average power = total work/total time = ΔE/dt. The energy delivered equals the area under the P-t graph.",
+    "**Efficiency and power:** No engine is 100% efficient. Input power × efficiency = useful output power. The difference is lost as heat or sound. For a motor with 80% efficiency, P_out = 0.8 × P_input.",
+    "**Power in rotational motion:** For rotational systems, power P = τω, where τ is torque and ω is angular velocity (radians/second). Since power = energy/time, and work W = τθ (torque × angular displacement), then P = τθ/t = τω.",
+    "**Relationship between power, energy, and time:** E = Pt. If a 100 W device runs for 2 hours, it uses E = 100 × 7200 = 7.2 × 10⁵ J = 200 Wh = 0.2 kWh (kilowatt-hour, the standard energy unit for electricity bills).",
+    "**Power rating of devices:** The power rating on appliances (100 W light bulb, 1500 W hair dryer, 2000 W kettle) tells you energy consumption rate, not total energy used. Total energy = power × time of operation. The 60W bulb uses less energy than 100W over the same duration."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Power and work are NOT the same. Work is energy transfer (measured in Joules); power is the rate of that transfer (measured in Watts). A marathon runner does a lot of work (over 200,000 J) but low power (sustained effort). A sprinter does less total work but very high power.",
+    "P = Fv is NOT the same as F·v when the force is not parallel to velocity. The dot product gives P = Fv cos θ, so if F and v are perpendicular (/Centripetal), power is zero. Students often misuse P = Fv without considering the angle.",
+    "A more powerful engine does NOT necessarily accelerate faster from rest if it has low torque. Power = τω, so high power at high RPM (low torque) may not move the car quickly from a standstill. Horsepower and torque are related but different — both matter for acceleration.",
+    "Energy consumption is power × time, not power alone. A 100 W device and a 50 W device use the same energy if they run for the same duration. The 100 W device delivers energy twice as fast, but total energy depends on how long it runs.",
+    "The power rating on a device (e.g., 60 W for an incandescent bulb) is the max power when operated at design voltage. Actual power can vary with line voltage — a bulb at higher voltage runs brighter (more power) but burns out faster."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A pump lifts 50 kg of water to a height of 10 m in 5 seconds. Find the power required. (g = 9.8 m/s²). Solution: Work done = mgh = 50 × 9.8 × 10 = 4900 J. Power = W/t = 4900/5 = 980 W ≈ 1 kW.",
+    "A car travels at 30 m/s (108 km/h) against a resisting force of 400 N. Find the engine's power. Solution: P = Fv = 400 × 30 = 12,000 W = 12 kW. At this speed, the engine outputs 12 kW of useful power, assuming no losses.",
+    "An engine delivers 50 hp. What is its power in watts? If it runs at 2000 RPM with a wheel radius of 15 cm, find the force exerted at the rim. Solution: 50 hp = 50 × 746 = 37,300 W. Angular velocity ω = 2000 rev/min = 2000 × 2π/60 = 209.4 rad/s. P = τω → τ = P/ω = 37300/209.4 = 178.1 N·m. Force at rim: F = τ/r = 178.1/0.15 = 1187 N.",
+    "A person runs up a 10 m staircase in 5 seconds. If the person's mass is 70 kg, what is their average power output? Solution: Height gain = 10 m. Work = mgh = 70 × 9.8 × 10 = 6860 J. Power = 6860 J / 5 s = 1372 W. This is about twice the power of a light bulb!",
+    "A 100 W light bulb operates for 10 hours. How much energy is consumed in kilowatt-hours? If electricity costs $0.12 per kWh, what is the cost? Solution: E = Pt = 100 W × 10 h = 1000 Wh = 1 kWh. Cost = 1 kWh × $0.12/kWh = $0.12."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The watt (W) is named after James Watt (1736-1819), inventor of the steam engine. He defined 1 horsepower as the power needed to lift 550 pounds one foot in one second, which came out to ~746 W.",
+    "Power is a RATE, not a stock. You can have high power for a short time (explosion) or low power for a long time (slow heating), producing the same total energy. This is why endurance athletes often have lower power output than sprinters.",
+    "The SI unit of power is the watt: 1 W = 1 J/s = 1 kg·m²/s³. One horsepower (hp) = 746 W exactly (defined value). A 100 W incandescent bulb, if operated 8 hours/day, uses 0.8 kWh/day.",
+    "In mechanical systems, power is transmitted through shafts via torque. The power in a rotating shaft is P = τω. The SI unit is watts, and the imperial unit is horsepower (1 hp = 550 ft·lb/s = 746 W).",
+    "Einstein's E = mc² represents an enormous power: 1 kg mass converted completely would release 9 × 10¹⁶ J → that's the power equivalent of a billion 100 W bulbs running for one second."
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power"

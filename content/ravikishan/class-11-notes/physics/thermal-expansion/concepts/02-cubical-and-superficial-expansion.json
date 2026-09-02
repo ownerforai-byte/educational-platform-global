@@ -5,26 +5,45 @@
   "topicTitle": "Cubical expansion, superficial expansion and their relation with linear expansion",
   "relevance": 100,
   "notes": [
-    "**Superficial expansion:** area increase when heated. $\\Delta A = A_0 \\beta \\Delta T$, where $\\beta \\approx 2\\alpha$.",
-    "**Cubical expansion:** volume increase when heated. $\\Delta V = V_0 \\gamma \\Delta T$, where $\\gamma \\approx 3\\alpha$.",
-    "**Relation:** for isotropic solids, $\\alpha : \\beta : \\gamma = 1 : 2 : 3$.",
-    "**Why the ratios:** volume depends on three dimensions, area on two, length on one. Each dimension expands by $\\alpha$, so the combined effect multiplies the exponent.",
-    "**Liquids:** only cubical expansion is meaningful. $\\gamma_{liquid} = \\gamma_{solid} - \\gamma_{container}$ for apparent expansion."
+    "**Superficial (area) expansion:** When a solid sheet is heated, its area increases. $\\Delta A = A_0 \\beta \\Delta T$, where $\\beta$ is the coefficient of superficial expansion.",
+    "**Cubical (volume) expansion:** When a solid is heated, its volume increases. $\\Delta V = V_0 \\gamma \\Delta T$, where $\\gamma$ is the coefficient of cubical expansion.",
+    "**Relation for isotropic solids:** $\\alpha : \\beta : \\gamma = 1 : 2 : 3$. That is, $\\beta = 2\\alpha$ and $\\gamma = 3\\alpha$. This holds for isotropic materials (same properties in all directions).",
+    "**Derivation of $\\beta = 2\\alpha$:** For a square of side $L$: $A = L^2 = L_0^2(1 + \\alpha\\Delta T)^2 \\approx L_0^2(1 + 2\\alpha\\Delta T)$ for small $\\alpha\\Delta T$. Therefore $\\beta = 2\\alpha$.",
+    "**Derivation of $\\gamma = 3\\alpha$:** For a cube of side $L$: $V = L^3 = L_0^3(1 + \\alpha\\Delta T)^3 \\approx L_0^3(1 + 3\\alpha\\Delta T)$ for small $\\alpha\\Delta T$. Therefore $\\gamma = 3\\alpha$.",
+    "**Why the ratios hold:** Each dimension (length, breadth, height) expands independently by the factor $(1 + \\alpha\\Delta T)$. Area involves two dimensions → factor $(1 + \\alpha\\Delta T)^2 \\approx 1 + 2\\alpha\\Delta T$. Volume involves three → $1 + 3\\alpha\\Delta T$.",
+    "**Anisotropic crystals:** In crystals like graphite or calcite, expansion differs along different axes. The relation $\\gamma = \\alpha_1 + \\alpha_2 + \\alpha_3$ still holds, where $\\alpha_i$ are the linear coefficients along the three principal axes.",
+    "**Holes and cavities:** A hole in a metal plate expands AS IF it were filled with the same material. The cavity behaves like a solid piece — its volume increases with $\\gamma$. This is because the material around the hole expands outward.",
+    "**Liquids have no $\\alpha$ or $\\beta$:** Liquids cannot sustain shear stress, so they have no fixed shape. Only cubical (volume) expansion is defined for liquids. $\\gamma_{liquid}$ is typically much larger than $\\gamma_{solid}$.",
+    "**Glass vessels and liquids:** When a liquid in a glass vessel is heated, BOTH expand. The liquid level may first fall (glass expands first) then rise (liquid expands more). The apparent expansion measures only the net effect.",
+    "**NEB exam focus:** Derive $\\beta = 2\\alpha$ and $\\gamma = 3\\alpha$. Solve problems involving expansion of area and volume. Distinguish between absolute and apparent expansion of liquids.",
+    "**Numerical example — area expansion:** An aluminum plate has area 1.000 m² at 20°C. At 100°C: $\\Delta A = 1.000 \\times 2 \\times 24 \\times 10^{-6} \\times 80 = 3.84 \\times 10^{-3}$ m². New area = 1.00384 m².",
+    "**Numerical example — volume expansion:** A glass flask of 1000 cm³ is filled with mercury at 20°C. Both are heated to 100°C. $\\gamma_{glass} = 3\\alpha_{glass} = 3 \\times 9 \\times 10^{-6} = 27 \\times 10^{-6}$. $\\gamma_{Hg} = 182 \\times 10^{-6}$. Overflow = $1000 \\times (182 - 27) \\times 10^{-6} \\times 80 = 12.4$ cm³.",
+    "**Practical applications:** (1) Mercury thermometers rely on the large $\\gamma$ of mercury vs. glass. (2) Expansion joints in pipelines accommodate volume changes. (3) Tight metal lids loosen when heated (the lid expands more than the jar).",
+    "**Dimensional analysis:** $[\\alpha] = [\\beta] = [\\gamma] = [\\Theta^{-1}] = [K^{-1}]$. All three coefficients have the same dimensions — they differ only in magnitude by factors of 2 and 3 for isotropic solids."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ The relation $\\gamma = 3\\alpha$ holds for all materials including liquids. ✅ It holds only for ISOTROPIC SOLIDS. Liquids only have $\\gamma$ — they have no $\\alpha$ or $\\beta$ because they have no fixed shape.",
+    "❌ A hole in a metal plate gets smaller when heated. ✅ The hole EXPANDS. The material around it moves outward equally in all directions, so the hole gets larger.",
+    "❌ $\\alpha$, $\\beta$, and $\\gamma$ have different units. ✅ All three have the same units: K⁻¹ or °C⁻¹. They differ only in numerical value for isotropic solids ($\\beta = 2\\alpha$, $\\gamma = 3\\alpha$).",
+    "❌ The expansion ratios $\\beta = 2\\alpha$ and $\\gamma = 3\\alpha$ are exact for all temperature ranges. ✅ They are approximations valid when $\\alpha\\Delta T \\ll 1$. For large $\\Delta T$, higher-order terms become significant.",
+    "❌ Anisotropic crystals have $\\gamma = 3\\alpha$. ✅ For anisotropic crystals, $\\gamma = \\alpha_1 + \\alpha_2 + \\alpha_3$, where the three $\\alpha_i$ may be different along different crystal axes.",
+    "❌ Only solids expand when heated — liquids and gases do not. ✅ Liquids and gases expand significantly more than solids. Mercury in a thermometer rises because liquid expansion is much larger than glass expansion.",
+    "❌ The volume of a cavity inside a solid does not change when heated. ✅ The cavity expands exactly as if it were filled with the solid material. The surrounding material expands outward, enlarging the cavity."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A square copper plate has side 0.500 m at 20°C. Find the increase in area when heated to 100°C. $\\alpha_{Cu} = 17 \\times 10^{-6}$ K⁻¹. $\\beta = 2\\alpha = 34 \\times 10^{-6}$ K⁻¹. $\\Delta A = 0.250 \\times 34 \\times 10^{-6} \\times 80 = 6.8 \\times 10^{-4}$ m² = 6.8 cm².",
+    "A glass flask has a capacity of 500 cm³ at 15°C. How much mercury must be filled so that the empty space remains constant at all temperatures? $\\gamma_{glass} = 27 \\times 10^{-6}$, $\\gamma_{Hg} = 182 \\times 10^{-6}$. Let V_Hg be the mercury volume. For constant empty space: $V_{Hg} \\gamma_{Hg} = V_{flask} \\gamma_{glass}$. $V_{Hg} = 500 \\times 27/182 = 74.2$ cm³.",
+    "Show that for a sphere, $\\Delta V/V_0 = 3\\Delta r/r_0$. From $V = \\frac{4}{3}\\pi r^3$: $\\frac{\\Delta V}{V} = \\frac{3\\Delta r}{r}$ (for small changes). Therefore $\\gamma = 3\\alpha$ for a sphere, consistent with the general relation.",
+    "A steel ball has diameter 5.000 cm at 20°C. What is its volume at 100°C? $\\alpha_{steel} = 12 \\times 10^{-6}$. $\\Delta r = 2.500 \\times 12 \\times 10^{-6} \\times 80 = 2.4 \\times 10^{-3}$ cm. New radius = 2.5024 cm. $V = \\frac{4}{3}\\pi(2.5024)^3 = 65.68$ cm³ (vs. 65.45 at 20°C).",
+    "An iron ring has inner diameter 5.00 cm at 20°C. What temperature must it be heated to fit over a shaft of 5.02 cm? $\\Delta D = 0.02$ cm. $0.02 = 5.00 \\times 12 \\times 10^{-6} \\times \\Delta T$. $\\Delta T = 333°C$. Final temperature = 353°C.",
+    "The density of a liquid decreases when heated. By what fraction does density change if $\\gamma = 10^{-3}$ K⁻¹ and $\\Delta T = 50$ K? $\\rho = m/V$. $\\Delta\\rho/\\rho = -\\Delta V/V = -\\gamma\\Delta T = -10^{-3} \\times 50 = -0.05$. Density decreases by 5%."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The relation $\\gamma = 3\\alpha$ was first derived rigorously by James Clerk Maxwell in his 1871 theory of heat. It follows from the geometry of three-dimensional expansion.",
+    "The anomalous expansion of water (maximum density at 4°C) means that ice floats and aquatic life survives winter. Without this anomaly, lakes would freeze from the bottom up, devastating ecosystems.",
+    "In engineering, the coefficient of cubical expansion is critical for designing fuel tanks, pipelines, and pressure vessels. A 10% volume increase in liquid fuel due to temperature can rupture a sealed tank.",
+    "The expansion ratio $1:2:3$ ($\\alpha:\\beta:\\gamma$) is one of the simplest and most useful relationships in solid-state physics, connecting one-dimensional, two-dimensional, and three-dimensional thermal behavior.",
+    "Gemstones can crack when heated unevenly because they are anisotropic — different crystal axes expand by different amounts. This is why jewelers heat-set stones carefully."
   ],
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion"

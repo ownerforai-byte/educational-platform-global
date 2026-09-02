@@ -1,0 +1,55 @@
+{
+  "title": "Amines Mindmap",
+  "unitSlug": "amines",
+  "topicSlug": "amines-mindmap",
+  "topicTitle": "Amines — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Amines",
+    "children": [
+      {
+        "id": "classification-nomenclature-an",
+        "label": "Classification, nomenclature",
+        "children": [
+          {
+            "id": "classification-nomenclature-sub-0",
+            "label": "preparation"
+          }
+        ]
+      },
+      {
+        "id": "physical-and-chemical-properti",
+        "label": "Physical",
+        "children": [
+          {
+            "id": "physical-sub-0",
+            "label": "chemical properties"
+          }
+        ]
+      },
+      {
+        "id": "basic-character-of-amines",
+        "label": "Basic character of amines"
+      },
+      {
+        "id": "reactions-diazotisation-coupli",
+        "label": "Reactions",
+        "children": [
+          {
+            "id": "reactions-sub-0",
+            "label": "diazotisation"
+          },
+          {
+            "id": "reactions-sub-1",
+            "label": "coupling reactions"
+          },
+          {
+            "id": "reactions-sub-2",
+            "label": "Hinsberg test"
+          }
+        ]
+      }
+    ]
+  }
+}

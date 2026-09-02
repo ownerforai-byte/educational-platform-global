@@ -5,26 +5,41 @@
   "topicTitle": "Average translational kinetic energy of gas molecule",
   "relevance": 100,
   "notes": [
-    "**Result:** $\\langle K \\rangle = \\frac{3}{2}k_BT = \\frac{3}{2}\\frac{R}{N_A}T$.",
-    "**Per mole:** multiply by Avogadro's number: $K_{mol} = \\frac{3}{2}RT$.",
-    "**Independence of gas type:** the average kinetic energy depends only on temperature, not on the mass or identity of the gas molecules. All gases at the same temperature have the same average translational KE.",
-    "**Root-mean-square speed:** $v_{rms} = \\sqrt{\\langle v^2 \\rangle} = \\sqrt{\\frac{3k_BT}{m}} = \\sqrt{\\frac{3RT}{M}}$. Lighter molecules move faster on average.",
-    "**Why hydrogen escapes Earth:** at room temperature, $v_{rms}$ for H$_2$ is about 1838 m/s, which is above Earth's escape velocity (~1100 m/s at the exobase), so light gases can leak into space."
+    "**Fundamental result:** The average translational kinetic energy per molecule in an ideal gas is $\\langle K \\rangle = \\frac{3}{2}k_BT$, where $k_B = 1.38 \\times 10^{-23}$ J/K is the Boltzmann constant and $T$ is absolute temperature in Kelvin.",
+    "**Derivation from pressure formula:** From the pressure derivation $P = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$ and the ideal gas law $P = \\frac{N}{V} k_BT$, equating gives $\\frac{2}{3} \\frac{N}{V} \\langle K \\rangle = \\frac{N}{V} k_BT$, so $\\langle K \\rangle = \\frac{3}{2}k_BT$.",
+    "**Per mole calculation:** Multiply by Avogadro's number: $K_{\\text{per mole}} = N_A \\langle K \\rangle = \\frac{3}{2}RT$, where $R = 8.314$ J/(mol·K) is the gas constant.",
+    "**Independence of molecular identity:** The average translational kinetic energy depends only on temperature, not on the mass or chemical nature of the gas molecules. All gases at the same temperature have the same $\\langle K \\rangle$.",
+    "**Root-mean-square speed:** From $\\langle K \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle = \\frac{3}{2}k_BT$, we get $\\langle v^2 \\rangle = \\frac{3k_BT}{m}$, so $v_{rms} = \\sqrt{\\langle v^2 \\rangle} = \\sqrt{\\frac{3k_BT}{m}} = \\sqrt{\\frac{3RT}{M}}$, where $M$ is molar mass in kg/mol.",
+    "**Temperature and molecular speed:** Lighter molecules have higher rms speed at the same temperature. For example, at 300 K: H₂ ($M=2$ g/mol): $v_{rms} \\approx 1920$ m/s; He ($M=4$): $v_{rms} \\approx 1360$ m/s; N₂ ($M=28$): $v_{rms} \\approx 517$ m/s; O₂ ($M=32$): $v_{rms} \\approx 484$ m/s.",
+    "**Why hydrogen escapes Earth:** At room temperature (300 K), $v_{rms}$ for H₂ is ~1920 m/s. Although Earth's escape velocity is ~11,000 m/s, the Maxwell-Boltzmann distribution has a tail of very fast molecules. Light gases like H₂ and He can gradually leak into space over geological time.",
+    "**Connection to temperature scales:** The Kelvin scale is defined such that $\\langle K \\rangle = \\frac{3}{2}k_BT$. At $T = 0$ K, molecular motion ceases and $\\langle K \\rangle = 0$. This makes the Kelvin scale an absolute temperature scale.",
+    "**Degrees of freedom connection:** For a monatomic gas (3 translational DOF), all internal energy is translational kinetic energy: $U = \\frac{3}{2}nRT = N\\langle K \\rangle$. For polyatomic gases, internal energy includes rotational and vibrational contributions.",
+    "**Experimental verification:** The average kinetic energy can be measured indirectly through techniques like effusion rates or spectroscopic measurements of Doppler broadening.",
+    "**Units check:** $k_BT$ has units: (J/K)·K = J. So $\\frac{3}{2}k_BT$ is indeed in joules, which is correct for energy.",
+    "**Room temperature value:** At $T = 300$ K, $\\langle K \\rangle = \\frac{3}{2} \\times 1.38 \\times 10^{-23} \\times 300 = 6.21 \\times 10^{-21}$ J per molecule. This is about 0.039 eV (electron volts).",
+    "**Relation to internal energy:** For an ideal monatomic gas, total internal energy $U = N\\langle K \\rangle = \\frac{3}{2}Nk_BT = \\frac{3}{2}nRT$.",
+    "**Pressure form:** Substituting $\\langle K \\rangle = \\frac{3}{2}k_BT$ into the pressure formula gives $P = \\frac{2}{3} \\frac{N}{V} \\cdot \\frac{3}{2}k_BT = \\frac{N}{V} k_BT$, recovering the ideal gas law."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Average kinetic energy per molecule is NOT the same as total kinetic energy of the gas. Total kinetic energy is $K_{\\text{total}} = N\\langle K \\rangle = \\frac{3}{2}Nk_BT$, which depends on the number of molecules.",
+    "The formula $\\langle K \\rangle = \\frac{3}{2}k_BT$ applies only to TRANSLATIONAL kinetic energy. Rotational and vibrational kinetic energy contribute additional terms, especially for polyatomic molecules.",
+    "Temperature must be in Kelvin, not Celsius or Fahrenheit. Using $T(°C)$ instead of $T(K)$ gives wrong results. Always convert: $T(K) = T(°C) + 273.15$.",
+    "The mass in $v_{rms} = \\sqrt{3k_BT/m}$ must be the mass of a SINGLE molecule in kg, NOT the molar mass. Use $m = M/N_A$ where $M$ is molar mass in kg/mol.",
+    "The rms speed is NOT the average speed. For the Maxwell-Boltzmann distribution: $v_{rms} > v_{\\text{mean}} > v_{\\text{probable}}$. The factor is $\\sqrt{3} : \\sqrt{8/\\pi} : \\sqrt{2}$."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the average translational kinetic energy of a helium atom at 300 K. Solution: $\\langle K \\rangle = \\frac{3}{2}k_BT = \\frac{3}{2} \\times 1.38 \\times 10^{-23} \\times 300 = 6.21 \\times 10^{-21}$ J.",
+    "Find the root-mean-square speed of oxygen molecules (O₂, M = 0.032 kg/mol) at 300 K. Solution: $v_{rms} = \\sqrt{3RT/M} = \\sqrt{3 \\times 8.314 \\times 300 / 0.032} = \\sqrt{7482.6 / 0.032} = \\sqrt{233,831} = 484$ m/s.",
+    "At what temperature do hydrogen molecules have the same average kinetic energy as oxygen molecules at 300 K? Solution: Since $\\langle K \\rangle = \\frac{3}{2}k_BT$, the temperatures must be equal: T = 300 K. All gases at same T have same average KE per molecule.",
+    "Calculate the root-mean-square speed of hydrogen molecules (H₂, M = 0.002 kg/mol) at 300 K. Compare to Earth's escape velocity (~11,000 m/s). Solution: $v_{rms} = \\sqrt{3 \\times 8.314 \\times 300 / 0.002} = \\sqrt{7482.6 / 0.002} = \\sqrt{3,741,300} = 1934$ m/s. Although less than escape velocity, the Maxwell-Boltzmann distribution has enough fast molecules for gradual escape over time.",
+    "A gas mixture contains equal numbers of helium and xenon atoms at 400 K. Which has higher average kinetic energy per atom? Solution: Both have the same average kinetic energy per atom: $\\langle K \\rangle = \\frac{3}{2}k_BT = \\frac{3}{2} \\times 1.38 \\times 10^{-23} \\times 400 = 8.28 \\times 10^{-21}$ J. Independent of mass."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The equipartition theorem states that each quadratic degree of freedom contributes $\\frac{1}{2}k_BT$ of energy per molecule. For translation (3 DOF), this gives $\\frac{3}{2}k_BT$. This theorem was a key contribution of Boltzmann and Maxwell in the 19th century.",
+    "The kinetic theory connection between temperature and molecular kinetic energy was one of the great unifications of 19th-century physics, connecting the macroscopic concept of temperature with microscopic motion.",
+    "At the same temperature, a hydrogen molecule moves about 4 times faster than an oxygen molecule on average, because $v_{rms} \\propto 1/\\sqrt{M}$ and $M_{O_2}/M_{H_2} = 16$, so $\\sqrt{16} = 4$.",
+    "The Doppler broadening of spectral lines in gases is directly related to the distribution of molecular velocities and thus to temperature. This allows remote temperature measurement of stars and gases.",
+    "The Maxwell-Boltzmann distribution was verified experimentally in the early 20th century by measuring the distribution of speeds using rotating slits and time-of-flight techniques."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

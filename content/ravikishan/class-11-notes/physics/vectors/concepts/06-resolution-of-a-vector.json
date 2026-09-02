@@ -24,7 +24,11 @@
     "**Resolution in 3D**: $\\vec{R} = R_x\\hat{i} + R_y\\hat{j} + R_z\\hat{k}$ where $R_x = R\\cos\\alpha$, $R_y = R\\cos\\beta$, $R_z = R\\cos\\gamma$, and $\\alpha, \\beta, \\gamma$ are angles with x, y, z axes respectively.",
     "**Equivalence with triangle law**: the resolution of $\\vec{R}$ into $\\vec{R}_x$ and $\\vec{R}_y$ is essentially constructing a right triangle with hypotenuse $R$ and legs $R_x, R_y$. The Pythagorean theorem gives $R = \\sqrt{R_x^2+R_y^2}$.",
     "**Inverse problem**: given components $R_x$ and $R_y$, the original vector is $\\vec{R} = R_x\\hat{i} + R_y\\hat{j}$ with $R = \\sqrt{R_x^2+R_y^2}$ and $\\theta = \\tan^{-1}(R_y/R_x)$.",
-    "The angle in the formula $\\theta$ must be measured from the axis the component is along. For $R_x = R\\cos\\theta$, $\\theta$ is measured from the x-axis. The component along any other axis at angle $\\phi$ is $R\\cos(\\theta-\\phi)$."
+    "The angle in the formula $\\theta$ must be measured from the axis the component is along. For $R_x = R\\cos\\theta$, $\\theta$ is measured from the x-axis. The component along any other axis at angle $\\phi$ is $R\\cos(\\theta-\\phi)$.",
+    "**Oblique resolution**: a vector can be resolved along ANY two non-parallel directions, not just perpendicular ones. If resolved along directions making angles $\\alpha$ and $\\beta$ with the vector, the components are found using the sine rule: $\\frac{R}{\\sin(180°-(\\alpha+\\beta))} = \\frac{R_1}{\\sin\\beta} = \\frac{R_2}{\\sin\\alpha}$.",
+    "**Resolution along a non-perpendicular axis**: the component of $\\vec{R}$ along a direction making angle $\\phi$ with the x-axis is $R\\cos(\\theta-\\phi)$, where $\\theta$ is the angle of $\\vec{R}$ with the x-axis.",
+    "**Projection vs component**: the projection of $\\vec{A}$ on $\\vec{B}$ is the scalar $\\vec{A}\\cdot\\hat{B} = A\\cos\\alpha$. The component of $\\vec{A}$ along $\\vec{B}$ is the vector $(\\vec{A}\\cdot\\hat{B})\\hat{B}$. The projection is the magnitude (with sign); the component is the full vector.",
+    "**Resolution in physics problems**: in projectile motion, $v_0$ is resolved into $v_{0x}=v_0\\cos\\theta$ and $v_{0y}=v_0\\sin\\theta$. In inclined planes, weight is resolved into $mg\\sin\\theta$ (parallel) and $mg\\cos\\theta$ (perpendicular). The choice of axes determines the complexity of the problem."
   ],
   "confusion": [
     "Resolution is the same as addition — Resolution BREAKS a vector INTO components; addition COMBINES components INTO a vector. They are inverse operations. $\\vec{R}_x+\\vec{R}_y=\\vec{R}$ is addition; given $\\vec{R}$, find $\\vec{R}_x, \\vec{R}_y$ is resolution.",
@@ -34,7 +38,9 @@
     "Resolution gives the magnitudes of sub-vectors only — Resolution gives the FULL components as vectors: $\\vec{R}_x$ (with direction) and $\\vec{R}_y$ (with direction). Magnitudes alone are $R_x$ and $R_y$, but each is along a specific axis.",
     "The angle in the formulas must be from the x-axis always — The angle can be measured from any axis, but you must use the correct trigonometric function: $R_x = R\\cos\\theta$ if $\\theta$ is from x-axis, $R_y = R\\sin\\theta$. If $\\theta$ is from y-axis, swap the roles.",
     "Resolution into more than two components is impossible — A vector can be resolved into any number of components, as long as their vector sum equals the original. In 3D, we typically use three perpendicular components.",
-    "You can resolve a vector into components without specifying axes — To resolve a vector, you must specify the directions of resolution. Without axes, there are infinitely many possible resolutions."
+    "You can resolve a vector into components without specifying axes — To resolve a vector, you must specify the directions of resolution. Without axes, there are infinitely many possible resolutions.",
+    "Resolution changes the physical meaning of the vector — No. Resolution gives an EQUIVALENT description. The vector's physical effect is unchanged; we've just broken it into parts that are easier to work with.",
+    "A vector can have more than one set of components — Yes! Any vector has infinitely many component representations depending on the choice of axes. However, the rectangular (perpendicular) components are unique for a given choice of axes."
   ],
   "practice": [
     "A force of 100 N acts at 30° to the horizontal. Find its horizontal and vertical components. [Solution: $F_x = 100\\cos30° = 100\\cdot(0.866) = 86.6\\,\\text{N}$. $F_y = 100\\sin30° = 100\\cdot(0.5) = 50\\,\\text{N}$.]",
@@ -44,7 +50,9 @@
     "If $\\vec{A} = 4\\hat{i} + 3\\hat{j}$ and $\\vec{B} = 5\\hat{i} - 12\\hat{j}$, find the resultant. [Solution: $\\vec{R} = \\vec{A}+\\vec{B} = 9\\hat{i} - 9\\hat{j}$. $R = \\sqrt{81+81} = \\sqrt{162} = 9\\sqrt{2} \\approx 12.73$. $\\alpha = \\tan^{-1}(-9/9) = -45°$ (below x-axis).]",
     "Show that the resultant of two perpendicular vectors of magnitudes 5 and 12 is 13, and find the angle it makes with the 12-unit vector. [Solution: $R = \\sqrt{25+144} = \\sqrt{169} = 13$. $\\theta = \\tan^{-1}(5/12) = 22.6°$ from the 12-unit vector. By the 5-12-13 right triangle, this is the famous 3-4-5 triple scaled up.]",
     "A force has components $F_x = -6\\,\\text{N}$ and $F_y = 8\\,\\text{N}$. Find the magnitude of the force and the angle it makes with the positive x-axis. [Solution: $F = \\sqrt{36+64} = 10\\,\\text{N}$. $\\theta = \\tan^{-1}(8/(-6)) = 180° - 53.1° = 126.9°$ (second quadrant).]",
-    "A vector of magnitude 10 units makes equal angles with the x and y axes. Find its components. [Solution: If $\\theta_x = \\theta_y = \\alpha$, then since the components are along the axes, the angle between them is 90°. The vector is along the angle bisector, so $\\alpha = 45°$. Components: $R_x = R_y = 10\\cos45° = 10/\\sqrt{2} = 5\\sqrt{2} \\approx 7.07$.]"
+    "A vector of magnitude 10 units makes equal angles with the x and y axes. Find its components. [Solution: If $\\theta_x = \\theta_y = \\alpha$, then since the components are along the axes, the angle between them is 90°. The vector is along the angle bisector, so $\\alpha = 45°$. Components: $R_x = R_y = 10\\cos45° = 10/\\sqrt{2} = 5\\sqrt{2} \\approx 7.07$.]",
+    "A force of 50 N is resolved into two components along directions making angles of 30° and 45° with the force. Find the magnitudes of the components. [Solution: Using the sine rule in the resolution triangle: $\\frac{50}{\\sin(180°-30°-45°)} = \\frac{F_1}{\\sin45°} = \\frac{F_2}{\\sin30°}$. The angle between the components is $180°-30°-45° = 105°$. $F_1 = 50\\sin45°/\\sin105° = 50(0.7071)/0.9659 = 36.6\\,\\text{N}$. $F_2 = 50\\sin30°/\\sin105° = 50(0.5)/0.9659 = 25.9\\,\\text{N}$.]",
+    "A particle is acted upon by three forces: 10 N along +x, 15 N at 60° from +x, and 20 N at 150° from +x. Find the resultant by resolution. [Solution: $F_{1x}=10$, $F_{1y}=0$. $F_{2x}=15\\cos60°=7.5$, $F_{2y}=15\\sin60°=12.99$. $F_{3x}=20\\cos150°=-17.32$, $F_{3y}=20\\sin150°=10$. $R_x=10+7.5-17.32=0.18$, $R_y=0+12.99+10=22.99$. $R=\\sqrt{0.03+528.54}=\\sqrt{528.57}\\approx23.0\\,\\text{N}$. $\\alpha=\\tan^{-1}(22.99/0.18)\\approx89.6°$ from +x.]"
   ],
   "universalFacts": [
     "Resolution of vectors is the **inverse operation** of vector addition. Addition combines two or more vectors into a single resultant; resolution decomposes a single vector into two or more components.",
@@ -54,7 +62,9 @@
     "**Galileo's inclined plane experiments** for studying falling bodies relied on resolution. He resolved gravity into components along and perpendicular to the plane, making the analysis tractable.",
     "Resolution of vectors in **2D** uses two components; in **3D**, three. The number of components equals the dimension of the space — but for any practical purpose, three components suffice for our world.",
     "The result of resolving a vector into components depends on the **choice of axes**. Different axes give different components, but the resultant is the same. Always choose axes that simplify the problem.",
-    "In computer graphics and game development, every 3D object is manipulated using resolved vector components along x, y, z axes. This allows efficient calculations for rotation, translation, and lighting."
+    "In computer graphics and game development, every 3D object is manipulated using resolved vector components along x, y, z axes. This allows efficient calculations for rotation, translation, and lighting.",
+    "The **resolution of weight on an inclined plane** is one of the most important applications in Class 11 physics. The component $mg\\sin\\theta$ causes acceleration down the plane; $mg\\cos\\theta$ is balanced by the normal reaction.",
+    "In **statics**, resolution of forces into components leads to the two equilibrium equations: $\\sum F_x = 0$ and $\\sum F_y = 0$. These are the algebraic form of the polygon law for coplanar forces."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

@@ -5,26 +5,46 @@
   "topicTitle": "Mirror formula",
   "relevance": 100,
   "notes": [
-    "**Formula:** $\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}$, where $f$ is focal length, $u$ is object distance, $v$ is image distance.",
-    "**Sign convention (New Cartesian):** all distances measured from the pole. Distances in the direction of incident light are positive. For concave mirrors, $f$ and $R$ are positive; for convex mirrors, $f$ and $R$ are negative.",
-    "**Magnification:** $m = -\\frac{v}{u} = \\frac{h_i}{h_o}$. Positive $m$ means upright image; negative $m$ means inverted. $|m| > 1$ means magnified; $|m| < 1$ means diminished.",
-    "**Relation $f = R/2$:** for spherical mirrors, the focal length is exactly half the radius of curvature. This follows from geometry of reflection at a spherical surface.",
-    "**Power of mirror:** $P = -1/f$ (in metres). Concave mirrors have negative power; convex mirrors have positive power. Units: dioptres."
+    "**Mirror formula:** $\\boxed{\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}}$, where $f$ is the focal length, $u$ is the object distance, and $v$ is the image distance. This formula relates the three key distances for spherical mirrors.",
+    "**Sign convention (New Cartesian):** All distances are measured from the pole of the mirror. Distances measured in the direction of incident light are POSITIVE; opposite to incident light are NEGATIVE. For a concave mirror: $f$ and $R$ are negative (focus is in front). For convex: $f$ and $R$ are positive (focus is behind). Object distance $u$ is always negative (object is in front).",
+    "**Derivation:** From the geometry of reflection at a spherical surface, using the paraxial approximation (small angles near the principal axis): In triangle properties and similar triangles formed by the object, image, and focal point, one derives $1/f = 1/u + 1/v$. The derivation assumes the aperture is small compared to the radius of curvature.",
+    "**Relation $f = R/2$:** The focal length is exactly half the radius of curvature: $f = R/2$. This follows from the geometry — the focus is midway between the pole and the center of curvature. For a concave mirror with $R = -20$ cm: $f = -10$ cm.",
+    "**Magnification formula:** $m = -\\frac{v}{u} = \\frac{h_i}{h_o}$. The negative sign ensures that real images (positive $v$, negative $u$) give negative magnification (inverted). Virtual images (negative $v$, negative $u$) give positive magnification (upright).",
+    "**Power of a mirror:** $P = \\frac{1}{f}$ (in metres), measured in dioptres (D). Concave mirrors have negative power; convex mirrors have positive power. A mirror with $f = -0.5$ m has $P = -2$ D.",
+    "**Case analysis — concave mirror:** (1) $u = \\infty$: $v = f$, real, point image. (2) $u > R$: $f < v < f$, real, inverted, diminished. (3) $u = R$: $v = R$, real, inverted, same size. (4) $f < u < R$: $v > R$, real, inverted, magnified. (5) $u = f$: $v = \\infty$, image at infinity. (6) $u < f$: $v$ is negative, virtual, upright, magnified.",
+    "**Case analysis — convex mirror:** For any object position ($u$ negative), $v$ is always positive (behind mirror) and $|v| < |f|$. The image is always virtual, upright, and diminished. As the object approaches the mirror, the image grows but remains virtual and diminished.",
+    "**Lateral magnification sign:** $m > 0$: upright image (virtual for single mirror). $m < 0$: inverted image (real for single mirror). $|m| > 1$: magnified. $|m| < 1$: diminished. $|m| = 1$: same size.",
+    "**NEB exam focus:** State the mirror formula and sign convention. Derive $f = R/2$. Use the formula to find image position, size, and nature. Draw ray diagrams to verify calculations. Solve numerical problems with concave and convex mirrors.",
+    "**Common errors:** (1) Forgetting sign conventions — always assign signs before substituting. (2) Using $f = R$ instead of $f = R/2$. (3) Confusing the magnification formula $m = -v/u$ with the lens formula. (4) Forgetting that virtual images have negative $v$ in the New Cartesian convention.",
+    "**Worked example — concave mirror:** Object at $u = -30$ cm, $f = -10$ cm. $1/v = 1/(-10) - 1/(-30) = -1/10 + 1/30 = -2/30 = -1/15$. $v = -15$ cm. Real image 15 cm in front of mirror. $m = -(-15)/(-30) = -0.5$. Inverted, diminished.",
+    "**Worked example — convex mirror:** Object at $u = -20$ cm, $f = +15$ cm. $1/v = 1/15 - 1/(-20) = 1/15 + 1/20 = 7/60$. $v = +8.57$ cm. Virtual image behind mirror. $m = -(8.57)/(-20) = +0.429$. Upright, diminished.",
+    "**Limitations:** The mirror formula is exact only for paraxial rays (rays close to the principal axis making small angles). For wide apertures, spherical aberration causes rays far from the axis to focus at different points, blurring the image.",
+    "**Relation to lens formula:** The mirror formula $1/f = 1/v + 1/u$ has the same form as the thin lens formula $1/f = 1/v - 1/u$, but with different sign conventions. This similarity reflects the underlying wave optics equivalence.",
+    "**Graphical method:** Plotting $1/v$ vs $1/u$ gives a straight line with slope $-1$ and intercept $1/f$. This is useful for experimental determination of focal length by measuring object and image distances for various positions."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ The mirror formula is $1/f = 1/v - 1/u$. ✅ The correct formula is $1/f = 1/u + 1/v$ (with sign convention applied). The lens formula $1/f = 1/v - 1/u$ looks similar but has a different sign convention.",
+    "❌ $f = R$ for spherical mirrors. ✅ The focal length is HALF the radius of curvature: $f = R/2$. The focus is midway between the pole and the center of curvature.",
+    "❌ Object distance $u$ is always positive. ✅ By the New Cartesian convention, object distance is NEGATIVE (measured against the direction of incident light). $u < 0$ for real objects in front of the mirror.",
+    "❌ The mirror formula works for all rays, not just paraxial ones. ✅ The formula is derived using the paraxial approximation (small angles). For rays far from the axis, spherical aberration causes deviations. The formula is accurate only for mirrors with small aperture relative to $R$.",
+    "❌ A convex mirror can produce a real image. ✅ A convex mirror ALWAYS produces a virtual image. Its reflected rays always diverge and never actually converge to form a real image.",
+    "❌ Magnification $m = v/u$ (without the negative sign). ✅ The correct formula is $m = -v/u$. The negative sign is essential: it ensures that real images (where $v$ and $u$ have opposite signs) give negative magnification (inverted).",
+    "❌ The image distance $v$ is positive for real images in the New Cartesian convention. ✅ In the New Cartesian convention, $v$ is NEGATIVE for real images (in front of the mirror, opposite to incident light direction). $v$ is POSITIVE for virtual images (behind the mirror)."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "An object is placed 15 cm from a concave mirror of focal length 10 cm. Find the image position, nature, and magnification. $u = -15$, $f = -10$. $1/v = 1/(-10) - 1/(-15) = -1/10 + 1/15 = -1/30$. $v = -30$ cm. Real image 30 cm in front. $m = -(-30)/(-15) = -2$. Inverted, magnified 2×.",
+    "A convex mirror has radius of curvature 40 cm. An object is placed 30 cm in front of it. Find the image. $R = +40$ cm, so $f = +20$ cm. $u = -30$ cm. $1/v = 1/20 - 1/30 = 1/60$. $v = +60$ cm. Virtual image 60 cm behind the mirror. $m = -(60)/(-30) = +2$. Upright, magnified. Wait — convex mirrors always give diminished images. Let me recheck: $1/v = 1/f + 1/u = 1/20 + 1/(-30) = 1/20 - 1/30 = 1/60$. $v = +60$ cm. $m = -60/(-30) = +2$. Hmm, this gives magnified — but convex mirrors should give diminished images. The issue: for convex mirror with $u = -30$, $f = +20$: $1/v = 1/20 - 1/30 = 1/60$, $v = +60$. But this contradicts the known behavior. Let me use the standard convention consistently: $1/f = 1/v + 1/u$, $f = +20$, $u = -30$: $1/v = 1/20 - 1/30 = 1/60$, $v = +60$. $m = -v/u = -60/(-30) = +2$. The magnification is +2 — but this is wrong for a convex mirror. The error is in the sign of $u$. With the convention where distances against incident light are negative: $u = -30$, $f = +20$. Actually for convex, $f$ should be positive (focus behind). The formula $1/v = 1/f - 1/u$ gives $1/v = 1/20 - (-1/30) = 1/20 + 1/30 = 1/12$, so $v = +12$ cm. $m = -12/(-30) = +0.4$. Virtual, upright, diminished. ✓",
+    "A concave mirror produces a real image that is twice the size of the object. The object is 15 cm from the mirror. Find the focal length. $m = -2 = -v/u$, so $v = 2u = 30$ cm. $1/f = 1/15 + 1/30 = 3/30 = 1/10$. $f = 10$ cm. Check: object between C (20 cm) and F (10 cm) gives magnified real image. ✓",
+    "An object is placed at the center of curvature of a concave mirror. Where is the image? At C, $u = -R = -2f$. $1/v = 1/f - 1/(2f) = 1/(2f)$. $v = -2f = -R$. Image is at C, real, inverted, same size ($m = -(-2f)/(-2f) = -1$).",
+    "A spherical mirror produces a virtual image that is 3 times the size of the object. The object is 10 cm from the mirror. What type of mirror is it and what is its focal length? Since the image is virtual and magnified, it must be a CONCAVE mirror (convex mirrors always produce diminished images). $m = +3 = -v/u$, so $v = -30$ cm. $1/f = 1/(-10) + 1/(-30) = -4/30 = -2/15$. $f = -7.5$ cm. Radius of curvature $R = 2f = -15$ cm.",
+    "Show that when the object is at the focus of a concave mirror, the image is at infinity. $u = f$ (both negative). $1/v = 1/f - 1/f = 0$. $v \\to \\infty$. The reflected rays are parallel — they never converge to form an image at any finite distance."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The mirror formula was first derived by Ibn al-Haytham (Alhazen, 965–1040 CE) using geometric methods, over 500 years before it was independently rediscovered by European scientists.",
+    "The relation $f = R/2$ holds exactly for paraxial rays but breaks down for wide-aperture mirrors due to spherical aberration. Parabolic mirrors eliminate this aberration and are used in telescopes.",
+    "The mirror formula's mathematical form is identical to the thin lens formula (with sign convention differences), reflecting the deep connection between reflection and refraction in wave optics.",
+    "In astronomical telescopes, the primary mirror's focal length determines the magnification when combined with an eyepiece. Large telescopes have long focal lengths (several meters) to achieve high magnification.",
+    "The concept of optical power (in dioptres) is more commonly used for lenses than mirrors, but the same definition $P = 1/f$ (in metres) applies. A concave mirror with $f = -0.5$ m has power $-2$ D."
   ],
   "animation3D": "reflection-at-curved-mirror",
   "motionGraphics": "reflection-at-curved-mirror"

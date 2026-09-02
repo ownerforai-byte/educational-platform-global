@@ -1,0 +1,39 @@
+{
+  "title": "Rate of Heat Flow Mindmap",
+  "unitSlug": "rate-of-heat-flow",
+  "topicSlug": "rate-of-heat-flow-mindmap",
+  "topicTitle": "Rate of Heat Flow — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Rate of Heat Flow",
+    "children": [
+      {
+        "id": "conduction-thermal-conductivit",
+        "label": "Conduction: thermal conductivity",
+        "children": [
+          {
+            "id": "conduction-thermal-conductivity-sub-0",
+            "label": "measurement"
+          }
+        ]
+      },
+      {
+        "id": "convection",
+        "label": "Convection"
+      },
+      {
+        "id": "ideal-radiator",
+        "label": "ideal radiator"
+      },
+      {
+        "id": "black-body-radiation",
+        "label": "Black-body radiation"
+      },
+      {
+        "id": "stefan-boltzmann-law",
+        "label": "Stefan-Boltzmann law"
+      }
+    ]
+  }
+}

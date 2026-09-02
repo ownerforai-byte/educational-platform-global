@@ -5,26 +5,45 @@
   "topicTitle": "Black-body radiation",
   "relevance": 100,
   "notes": [
-    "**Black body:** an idealized object that absorbs all incident radiation and emits radiation with a spectrum that depends only on its temperature.",
-    "**Spectrum shape:** the radiation intensity versus wavelength curve has a single peak. The peak shifts to shorter wavelengths as temperature increases.",
-    "**Stefan-Boltzmann law:** total energy radiated per unit area per unit time is $E = \\sigma T^4$, where $\\sigma = 5.67 \\times 10^{-8}\\,\\text{W/m}^2\\cdot\\text{K}^4$.",
-    "**Emissivity $e$:** real bodies emit less than a black body. $e$ ranges from 0 to 1. A perfect black body has $e = 1$.",
-    "**Kirchhoff's law:** at thermal equilibrium, a good absorber is also a good emitter at the same wavelength. This is why black surfaces get hotter in sunlight and cool faster at night."
+    "**Black body:** An idealized physical body that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. The term "black" refers to its absorption property, not its visual color — a black body in thermal equilibrium emits radiation across a continuous spectrum.",
+    "**Absorptivity and emissivity:** Absorptivity $\\alpha$ is the fraction of incident radiation absorbed ($\\alpha = 1$ for a black body). Emissivity $e$ is the fraction of radiation emitted compared to a black body ($e = 1$ for a black body). Kirchhoff's law states $\\alpha = e$ at thermal equilibrium for each wavelength.",
+    "**Planck's radiation law:** The spectral radiance of a black body at temperature $T$ is $B(\\lambda, T) = \\frac{2hc^2}{\\lambda^5}\\frac{1}{e^{hc/(\\lambda k_B T)} - 1}$, where $h$ is Planck's constant, $c$ is the speed of light, $k_B$ is Boltzmann's constant, and $\\lambda$ is wavelength. This formula accurately describes the entire spectrum.",
+    "**Wien's displacement law:** $\\lambda_{max} T = b = 2.898 \\times 10^{-3}\\,\\text{m·K}$. The wavelength of peak emission is inversely proportional to temperature. Hot objects peak at shorter wavelengths: the Sun (~5778 K) peaks at ~500 nm (visible), while a room-temperature object (~300 K) peaks at ~10 μm (infrared).",
+    "**Wien's approximation:** At short wavelengths (high frequencies), Planck's law simplifies to $B(\\lambda, T) \\approx \\frac{2hc^2}{\\lambda^5}e^{-hc/(\\lambda k_B T)}$. This is valid when $hc/(\\lambda k_B T) \\gg 1$, i.e., for the short-wavelength tail of the spectrum.",
+    "**Rayleigh-Jeans law:** At long wavelengths (low frequencies), Planck's law simplifies to $B(\\lambda, T) \\approx \\frac{2ck_B T}{\\lambda^4}$. This classical result agrees with experiments at long wavelengths but fails catastrophically at short wavelengths — the "ultraviolet catastrophe" where it predicts infinite energy density.",
+    "**Stefan-Boltzmann law (total emission):** The total power radiated per unit area by a black body is $E = \\sigma T^4$, where $\\sigma = 5.67 \\times 10^{-8}\\,\\text{W/m}^2\\text{K}^4$ is the Stefan-Boltzmann constant. This is obtained by integrating Planck's law over all wavelengths and solid angles.",
+    "**Spectral distribution shape:** The black body spectrum has a characteristic single-peaked curve. At a given temperature, the intensity rises steeply from zero to the peak, then falls off more gradually. The area under the curve (total emission) increases as $T^4$.",
+    "**Temperature dependence of peak wavelength:** As temperature doubles, the peak wavelength halves. For example, at 3000 K, $\\lambda_{max} = 966$ nm (near-IR); at 6000 K, $\\lambda_{max} = 483$ nm (blue-green). This shift explains why metals glow progressively from red to white to blue-white as they heat up.",
+    "**Experimental verification:** Lummer and Pringsheim (1899) experimentally confirmed the shape of the black body spectrum. Their measurements showed the characteristic peak and the shift of the peak with temperature, providing strong evidence against the Rayleigh-Jeans classical prediction.",
+    "**NEB exam focus:** Define a black body and state its properties. Apply Wien's displacement law to find peak wavelengths. Explain the failure of the Rayleigh-Jeans law and the significance of Planck's quantum hypothesis. Sketch the black body spectrum and identify key features.",
+    "**Application — incandescent bulbs:** Traditional light bulbs use a tungsten filament heated to ~2700 K. The filament behaves approximately as a black body but with significant infrared emission — only ~10% of the radiated power is visible light, the rest is heat. This is why incandescent bulbs are inefficient.",
+    "**Application — furnaces and kilns:** The design of industrial furnaces relies on black body radiation principles. The viewing port allows operators to see the incandescent contents. The temperature can be estimated by color (pyrometry) using Wien's law.",
+    "**Application — radiation thermometry:** Optical pyrometers measure temperature by comparing the brightness of an object to a calibrated reference. By filtering to a single wavelength and applying Planck's law, temperature can be determined without contact.",
+    "**Application — climate science:** Earth's energy balance depends on the balance between absorbed solar radiation (peak ~0.5 μm) and emitted terrestrial radiation (peak ~10 μm). Understanding this balance is fundamental to climate models and predictions of global warming."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ A black body must be black in color. ✅ A black body is defined by $\\alpha = 1$ (perfect absorption). At high temperatures, it emits visible light and can appear ANY color — white, yellow, red, or blue-white. The Sun is a perfect black body approximation that appears white.",
+    "❌ Only black bodies emit thermal radiation. ✅ ALL objects above absolute zero emit thermal radiation. A black body is simply the IDEAL emitter — real objects emit less ($e < 1$) but still radiate.",
+    "❌ The Stefan-Boltzmann law $E = \\sigma T^4$ gives the spectral distribution. ✅ The Stefan-Boltzmann law gives the TOTAL power (integrated over all wavelengths). The spectral distribution is given by Planck's law, which shows how power is distributed across different wavelengths.",
+    "❌ Wien's law gives the total power radiated. ✅ Wien's law ($\\lambda_{max} T = b$) gives only the WAVELENGTH OF PEAK EMISSION, not the total power. The total power is given by the Stefan-Boltzmann law $E = \\sigma T^4$.",
+    "❌ The ultraviolet catastrophe means black bodies emit infinite UV radiation. ✅ The ultraviolet catastrophe was a PREDICTION of the CLASSICAL Rayleigh-Jeans law that was contradicted by experiment. Planck's quantum hypothesis RESOLVED it by introducing energy quantization.",
+    "❌ Higher temperature means the peak wavelength shifts to LONGER wavelengths. ✅ Higher temperature shifts the peak to SHORTER wavelengths (Wien's law: $\\lambda_{max} \\propto 1/T$). Hotter objects peak at bluer wavelengths.",
+    "❌ Kirchhoff's law says good absorbers are poor emitters. ✅ Kirchhoff's law says good absorbers are ALSO GOOD emitters ($\\alpha = e$). A perfect absorber is a perfect emitter. This seems counterintuitive but follows from the requirement of thermal equilibrium."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A black body at 3000 K has its peak emission at what wavelength? What color is this? $\\lambda_{max} = 2.898 \\times 10^{-3}/3000 = 9.66 \\times 10^{-7}$ m = 966 nm. This is in the near-infrared — just beyond visible red. The object would appear dull red because it emits some visible red light alongside the infrared.",
+    "Compare the total power radiated by the Sun ($T = 5778$ K, $R = 6.96 \\times 10^8$ m) and a person ($T = 310$ K, $A = 1.8$ m²). Sun: $P = \\sigma T^4 \\times 4\\pi R^2 = 5.67 \\times 10^{-8} \\times 5778^4 \\times 4\\pi \\times (6.96 \\times 10^8)^2 \\approx 3.85 \\times 10^{26}$ W. Person: $P = 0.97 \\times 5.67 \\times 10^{-8} \\times 310^4 \\times 1.8 \\approx 92$ W. The Sun radiates about $4 \\times 10^{24}$ times more power.",
+    "A black body at temperature $T$ emits power $P$. If the temperature is doubled to $2T$, by what factor does the power increase? By the Stefan-Boltzmann law: $P \\propto T^4$, so at $2T$: $P' = (2T)^4/T^4 \\times P = 16P$. The power increases by a factor of 16. Similarly, the peak wavelength halves.",
+    "At what temperature does a black body peak at 1 μm (near-infrared)? $T = b/\\lambda_{max} = 2.898 \\times 10^{-3}/(1 \\times 10^{-6}) = 2898$ K. This is about the temperature of a heating element or a red-hot piece of iron.",
+    "A body at 1000 K emits radiation. Using Wien's law, find the peak wavelength. Then using the Stefan-Boltzmann law, find the total power emitted per unit area. $\\lambda_{max} = 2.898 \\times 10^{-3}/1000 = 2.9$ μm (infrared). $E = \\sigma T^4 = 5.67 \\times 10^{-8} \\times 10^{12} = 5.67 \\times 10^4$ W/m² = 56,700 W/m². The body radiates about 57 kW per square meter.",
+    "Explain why the Rayleigh-Jeans law fails at short wavelengths. The classical theory treats each electromagnetic mode as having average energy $k_B T$. At short wavelengths (high frequencies), there are infinitely many modes, each carrying $k_B T$ energy, giving infinite total energy — the ultraviolet catastrophe. Planck resolved this by assuming energy comes in quanta $E = nhf$, so high-frequency modes require large energy quanta and are less likely to be excited."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Max Planck's resolution of the ultraviolet catastrophe in 1900 is considered the birth of quantum mechanics. His assumption that energy is quantized ($E = nhf$) was initially seen as a mathematical trick, not a physical reality.",
+    "The cosmic microwave background (CMB) is the most perfect black body spectrum ever measured, with temperature 2.7255 ± 0.0006 K. COBE satellite measurements confirmed it matches Planck's law to extraordinary precision.",
+    "Stars approximate black bodies, but their atmospheres cause absorption lines (Fraunhofer lines) that deviate from a pure black body spectrum. By modeling these deviations, astronomers determine stellar composition, magnetic fields, and rotation.",
+    "The concept of a black body is essential to understanding the cosmic infrared background and the extragalactic background light — both are measured to be close to modified black body spectra with different temperatures for different redshift ranges.",
+    "In engineering, selective surfaces are coatings engineered to have high absorptivity at one wavelength and high emissivity at another — for example, solar absorbers (high absorption in visible, low emission in IR) and radiative cooling surfaces (high emission in atmospheric transparency window 8-13 μm)."
   ],
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow"

@@ -1,0 +1,47 @@
+{
+  "title": "Recent Trends in Physics Mindmap",
+  "unitSlug": "recent-trends-in-physics",
+  "topicSlug": "recent-trends-in-physics-mindmap",
+  "topicTitle": "Recent Trends in Physics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Recent Trends in Physics",
+    "children": [
+      {
+        "id": "particle-physics-particles-and",
+        "label": "Particle physics",
+        "children": [
+          {
+            "id": "particle-physics-sub-0",
+            "label": "particles and antiparticles"
+          },
+          {
+            "id": "particle-physics-sub-1",
+            "label": "quarks (baryons and mesons) and leptons (neutrinos"
+          }
+        ]
+      },
+      {
+        "id": "universe-big-bang-and-hubble-l",
+        "label": "Universe: Big Bang",
+        "children": [
+          {
+            "id": "universe-big-bang-sub-0",
+            "label": "Hubble law — expansion of the Universe"
+          }
+        ]
+      },
+      {
+        "id": "dark-matter-black-hole-and-gra",
+        "label": "Dark matter, black hole",
+        "children": [
+          {
+            "id": "dark-matter-black-hole-sub-0",
+            "label": "gravitational wave"
+          }
+        ]
+      }
+    ]
+  }
+}

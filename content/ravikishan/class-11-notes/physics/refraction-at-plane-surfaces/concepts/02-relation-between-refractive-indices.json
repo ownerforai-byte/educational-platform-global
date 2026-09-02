@@ -5,26 +5,44 @@
   "topicTitle": "Relation between refractive indices",
   "relevance": 100,
   "notes": [
-    "**Absolute refractive index:** measured relative to vacuum or air. $n_{abs} = c/v_{medium}$.",
-    "**Relative refractive index:** $n_{21} = n_2/n_1 = v_1/v_2$. This is the ratio of speeds in the two media.",
-    "**Reciprocity:** $n_{12} = 1/n_{21}$. The index of medium 2 relative to 1 is the reciprocal of the index of medium 1 relative to 2.",
-    "**Additivity rule:** for a stack of parallel slabs, the overall lateral shift depends on the sum of individual shifts. The relative indices multiply along the path.",
-    "**Practical example:** light going air ($n_1=1$) to water ($n_2=1.33$) to glass ($n_3=1.52$): $n_{13} = n_3/n_1 = 1.52$, but the effective path depends on each interface separately."
+    "**Absolute refractive index:** The refractive index of a medium measured relative to vacuum (or air, approximately). $n = \\frac{c}{v}$, where $c = 3.00 \\times 10^8$ m/s is the speed of light in vacuum and $v$ is the speed in the medium.",
+    "**Relative refractive index $n_{21}$:** When light passes from medium 1 to medium 2, the relative refractive index is $n_{21} = \\frac{n_2}{n_1} = \\frac{v_1}{v_2}$. It tells how much slower (or faster) light travels in medium 2 compared to medium 1.",
+    "**Snell's law with relative index:** $n_{21} = \\frac{\\sin i}{\\sin r}$, where $i$ is the angle of incidence in medium 1 and $r$ is the angle of refraction in medium 2. This is the original form of Snell's law.",
+    "**Reciprocity relation:** $n_{12} = \\frac{1}{n_{21}}$. The refractive index of medium 1 relative to medium 2 is the reciprocal of the refractive index of medium 2 relative to medium 1. This follows directly from $n_{12} = n_1/n_2$.",
+    "**Multiplicative chain rule:** For light passing through multiple media: $n_{31} = n_{32} \\times n_{21}$. For example, air → water → glass: $n_{glass/air} = n_{glass/water} \\times n_{water/air}$. This is useful for calculating the overall deviation through a stack of materials.",
+    "**Speed of light in different media:** $v = c/n$. In water ($n = 1.33$): $v = 2.26 \\times 10^8$ m/s. In glass ($n = 1.52$): $v = 1.97 \\times 10^8$ m/s. In diamond ($n = 2.42$): $v = 1.24 \\times 10^8$ m/s. Light slows down in denser media.",
+    "**Wavelength changes, frequency stays constant:** When light enters a medium, its speed changes but its frequency remains the same (determined by the source). Therefore: $\\lambda_{medium} = \\frac{\\lambda_{vacuum}}{n}$. The wavelength shortens in denser media.",
+    "**Refractive index and optical density:** A medium with higher $n$ is optically denser. Light travels slower in optically denser media. Note: optical density is NOT the same as mass density (e.g., oil has lower mass density than water but can have a higher refractive index).",
+    "**Practical example — diving board apparent depth:** A diver looking down at a pool floor sees it at apparent depth $d' = d/n$, where $d$ is the real depth. For water ($n = 1.33$), a 3 m deep pool appears to be $3/1.33 = 2.25$ m deep.",
+    "**NEB exam focus:** Distinguish between absolute and relative refractive index. Derive $n_{31} = n_{32} \\times n_{21}$. Solve problems involving light passing through multiple media. Calculate apparent depth and real depth.",
+    "**Why relative index matters:** In compound lens systems (camera lenses, microscopes), light passes through multiple glass-air interfaces. The relative refractive index at each interface determines the bending angle and overall focal length.",
+    "**Refractive index and color:** The refractive index depends on wavelength (dispersion). Blue light has a slightly higher $n$ than red light in most glasses. This causes chromatic aberration in lenses — different colors focus at different points.",
+    "**Fresnel equations connection:** The reflection coefficient at an interface depends on the relative refractive index. For normal incidence: $R = \\left(\\frac{n_2 - n_1}{n_2 + n_1}\\right)^2$. At an air-glass interface ($n_1 = 1, n_2 = 1.52$): $R = (0.52/2.52)^2 = 0.043$ (4.3% reflection).",
+    "**Index matching:** When two media have the same refractive index ($n_1 = n_2$), there is no refraction at the interface — light passes straight through as if the boundary doesn't exist. This principle is used in immersion oil microscopy to increase resolution."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ The refractive index can be less than 1. ✅ For normal materials, $n \\geq 1$ because light travels slowest in vacuum. However, in specialized materials (plasmas, metamaterials), the phase velocity can exceed $c$, giving $n < 1$ — but information still travels at $v \\leq c$.",
+    "❌ A higher refractive index means a denser material (more mass per volume). ✅ Optical density and mass density are different. Oil ($\\rho \\approx 0.9$ g/cm³) can have $n \\approx 1.47$, while water ($\\rho = 1.0$ g/cm³) has $n = 1.33$. Oil is optically denser but mass-wise lighter.",
+    "❌ $n_{21} = n_2 - n_1$. ✅ The relative refractive index is a RATIO, not a difference: $n_{21} = n_2/n_1$. This is crucial for correct application of Snell's law.",
+    "❌ The frequency of light changes when it enters a new medium. ✅ The FREQUENCY remains constant. Only the speed and wavelength change. $f = c/\\lambda_{vacuum} = v/\\lambda_{medium}$.",
+    "❌ Light always bends toward the normal when entering a new medium. ✅ Light bends TOWARD the normal only when entering a denser medium ($n_2 > n_1$). When entering a rarer medium ($n_2 < n_1$), it bends AWAY from the normal.",
+    "❌ The chain rule $n_{31} = n_{32} \\times n_{21}$ only works for three media. ✅ The chain rule generalizes to any number of media: $n_{nm} = n_{n,n-1} \\times n_{n-1,n-2} \\times \\cdots \\times n_{21}$.",
+    "❌ The refractive index is the same for all colors of light. ✅ The refractive index decreases with increasing wavelength (normal dispersion). Blue light ($\\lambda \\approx 450$ nm) has a higher $n$ than red light ($\\lambda \\approx 700$ nm) in most glasses."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Light passes from water ($n = 1.33$) into glass ($n = 1.52$). Find the relative refractive index $n_{glass/water}$ and the angle of refraction if the angle of incidence is 30°. $n_{gw} = 1.52/1.33 = 1.143$. Snell's law: $1.33 \\sin 30° = 1.52 \\sin r$. $\\sin r = 0.665/1.52 = 0.4375$. $r = 25.9°$.",
+    "A ray passes from air into water ($n = 1.33$) then into glass ($n = 1.52$). If the angle of incidence in air is 45°, find the angle in glass. Method 1 (step-by-step): In water: $\\sin r_w = \\sin 45°/1.33 = 0.7071/1.33 = 0.5317$, $r_w = 32.1°$. In glass: $1.33 \\sin 32.1° = 1.52 \\sin r_g$, $\\sin r_g = 1.33 \\times 0.5317/1.52 = 0.4654$, $r_g = 27.7°$. Method 2 (chain rule): $n_{ga} = 1.52$, $\\sin r_g = \\sin 45°/1.52 = 0.4654$, $r_g = 27.7°$. Same result.",
+    "Show that $n_{12} \\times n_{23} \\times n_{31} = 1$. $n_{12} = n_1/n_2$, $n_{23} = n_2/n_3$, $n_{31} = n_3/n_1$. Product: $(n_1/n_2)(n_2/n_3)(n_3/n_1) = 1$. ✓ This is a useful consistency check.",
+    "The speed of light in a certain liquid is $2.0 \\times 10^8$ m/s. Find its refractive index. $n = c/v = 3.0 \\times 10^8 / 2.0 \\times 10^8 = 1.5$. This is typical of crown glass or some oils.",
+    "A coin at the bottom of a pool 2.0 m deep appears to be at what depth when viewed from above? Apparent depth $d' = d/n = 2.0/1.33 = 1.50$ m. The coin appears 50 cm closer than it actually is.",
+    "Light travels from diamond ($n = 2.42$) into water ($n = 1.33$). Find the critical angle. $\\sin \\theta_c = n_2/n_1 = 1.33/2.42 = 0.5496$. $\\theta_c = \\arcsin(0.5496) = 33.4°$. Light entering water from diamond at angles greater than 33.4° undergoes total internal reflection."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The concept of refractive index was formalized by Willebrord Snellius (Snell) in 1621, though the law was first correctly stated by Ibn Sahl (940–1000 CE) in his treatise on burning mirrors and lenses.",
+    "The refractive index of air at STP is 1.000293, so for most practical purposes we treat air as having $n = 1$. This is why we use "absolute" refractive indices measured relative to vacuum but report them as if measured in air.",
+    "Diamond's exceptionally high refractive index ($n = 2.42$) is why it sparkles so brilliantly. The small critical angle (24.4°) means most light entering a well-cut diamond undergoes total internal reflection before exiting, creating the characteristic fire.",
+    "The refractive index is dimensionless — it is a ratio of two speeds. This makes it convenient for calculations because no unit conversions are needed when using Snell's law with relative indices.",
+    "In fiber optics, the core has a slightly higher refractive index than the cladding ($n_{core} \\approx 1.48$, $n_{clad} \\approx 1.46$). This small difference (about 1.4%) is enough to trap light by total internal reflection over kilometers of cable."
   ],
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces"

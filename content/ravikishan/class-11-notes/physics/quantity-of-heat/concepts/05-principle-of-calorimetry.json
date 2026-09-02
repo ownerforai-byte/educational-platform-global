@@ -1,30 +1,50 @@
 {
-  "title": "Principle of Calorimetry (Method of Mixtures)",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
-  "topicTitle": "Measurement of specific heat capacity of solids and liquids",
-  "relevance": 77,
-  "notes": [
-    "**Statement:** when two bodies at different temperatures are brought into thermal contact, they exchange heat until thermal equilibrium â€” the hotter body loses heat, the colder body gains heat",
-    "**Core condition:** if no heat escapes to the surroundings, **Heat lost by hot body = Heat gained by cold body**",
-    "**Governing law:** this follows directly from the Principle of Conservation of Energy",
-    "**Working equation:** mâ‚câ‚(Î¸â‚ âˆ’ Î¸â‚˜) = mâ‚‚câ‚‚(Î¸â‚˜ âˆ’ Î¸â‚‚), where Î¸â‚˜ is the final equilibrium (mixture) temperature"
+  \"\"\"title\"\"\": \"\"\"Principle of Calorimetry (Method of Mixtures)\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"principle-of-calorimetry\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Principle of calorimetry - method of mixtures\"\"\",
+  \"\"\"relevance\"\"\": 100,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Statement:** When two or more bodies at different temperatures are brought into thermal contact in an isolated system, heat flows from hotter to colder bodies until they reach a common final temperature (thermal equilibrium).\"\"\",
+    \"\"\"**Core principle:** In the absence of heat loss to the surroundings: **Heat lost by hot bodies = Heat gained by cold bodies**.\"\"\",
+    \"\"\"**Mathematical form:** For two bodies: $m_1 c_1 (\\theta_1 - \\theta_{eq}) = m_2 c_2 (\\theta_{eq} - \\theta_2)$, where $\\theta_1 > \\theta_{eq} > \\theta_2$.\"\"\",
+    \"\"\"**Including the calorimeter:** In real experiments, the calorimeter vessel also absorbs/releases heat. The full equation is: $m_h c_h (\\theta_h - \\theta_{eq}) = (m_c c_c + C'_{cal})(\\theta_{eq} - \\theta_c)$.\"\"\",
+    \"\"\"**Water equivalent form:** If the calorimeter's water equivalent $W$ is known: $m_h c_h (\\theta_h - \\theta_{eq}) = (m_c c_c + W c_w)(\\theta_{eq} - \\theta_c)$.\"\"\",
+    \"\"\"**Derivation from energy conservation:** The total energy of the isolated system is constant: $\\Delta U_{total} = 0$. Since $\\Delta U = mc\\Delta\\theta$ (no phase change), $\\sum mc\\theta_{final} - \\sum mc\\theta_{initial} = 0$, which rearranges to the method of mixtures equation.\"\"\",
+    \"\"\"**Finding an unknown specific heat:** If you know $m_h$, $c_h$, $\\theta_h$, $m_c$, $\\theta_c$, and measure $\\theta_{eq}$, you can solve for the unknown $c_c$: $c_c = \\frac{m_h c_h (\\theta_h - \\theta_{eq})}{m_c(\\theta_{eq} - \\theta_c)}$.\"\"\",
+    \"\"\"**Finding an unknown mass:** Similarly, if you know the specific heats but not the mass of one body, you can find the mass from the equilibrium temperature.\"\"\",
+    \"\"\"**Finding the equilibrium temperature:** $\\theta_{eq} = \\frac{m_1 c_1 \\theta_1 + m_2 c_2 \\theta_2}{m_1 c_1 + m_2 c_2}$. This is a weighted average of the initial temperatures, weighted by heat capacities.\"\"\",
+    \"\"\"**Calorimeter setup:** A typical calorimeter is a copper vessel (good conductor, low $c$) nested inside an insulating jacket (wood, cork, or air gap) to minimize heat loss. A stirrer ensures uniform temperature, and a thermometer measures the temperature.\"\"\",
+    \"\"\"**Assumptions in the method:** (1) No heat is lost to the surroundings (adiabatic). (2) Heat transfer is complete - all bodies reach the same temperature. (3) No phase change occurs. (4) The calorimeter is in thermal equilibrium with its contents at each reading.\"\"\",
+    \"\"\"**Error sources:** Heat loss to surroundings (always occurs to some degree) makes $\\theta_{eq}$ slightly lower than ideal, leading to overestimation of $c$ for the cold body. Radiation, convection, and conduction through supports all contribute.\"\"\",
+    \"\"\"**Newton's cooling correction:** To minimize heat-loss error, the experiment is often arranged so that the initial temperature excess above room temperature equals the final temperature deficit below room temperature. The gains and losses then approximately cancel.\"\"\",
+    \"\"\"**NEB exam focus:** Method of mixtures problems are extremely common. You MUST include the calorimeter's heat capacity (or water equivalent) in your equation. Forgetting it is the most common error.\"\"\",
+    \"\"\"**Quick check:** After solving for $\\theta_{eq}$, verify that $\\theta_h > \\theta_{eq} > \\theta_c$. If this is violated, you made an error in sign conventions.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ Heat lost + heat gained = 0, so $m_1c_1\\Delta\\theta_1 + m_2c_2\\Delta\\theta_2 = 0$ means both Δθ are positive. ✅ Use signed convention: $\\Delta\\theta_1 = \\theta_{eq} - \\theta_h < 0$ (negative, heat lost) and $\\Delta\\theta_2 = \\theta_{eq} - \\theta_c > 0$ (positive, heat gained). The sum is zero.\"\"\",
+    \"\"\"❌ You can ignore the calorimeter's heat capacity. ✅ The calorimeter is in thermal contact with both substances and reaches the same $\\theta_{eq}$. Its heat capacity $C'_{cal}$ can be significant - especially for thick or non-copper calorimeters.\"\"\",
+    \"\"\"❌ The equilibrium temperature is the arithmetic mean of the two initial temperatures. ✅ Only true if $m_1c_1 = m_2c_2$ (equal heat capacities). Generally: $\\theta_{eq} = \\frac{m_1c_1\\theta_1 + m_2c_2\\theta_2}{m_1c_1 + m_2c_2}$ - a WEIGHTED average.\"\"\",
+    \"\"\"❌ Heat lost by hot body equals heat gained by cold body even if heat escapes to surroundings. ✅ This equality holds ONLY for an isolated (adiabatic) system. In practice, some heat is always lost, making the equation an approximation.\"\"\",
+    \"\"\"❌ You need to know the specific heat of both substances to find the equilibrium temperature. ✅ You need $m$ and $c$ for both, OR you can work with heat capacities directly if they're given. If one $c$ is unknown, you can find it using a known reference substance.\"\"\",
+    \"\"\"❌ The method of mixtures works for gases. ✅ The method is designed for solids and liquids. Gases expand and do work, so $c_p \\neq c_v$ and the analysis is more complex. The method works best for incompressible substances.\"\"\",
+    \"\"\"❌ Phase changes can be included in the method of mixtures using the same formula. ✅ Phase changes require $H = mL$ instead of $H = mc\\Delta\\theta$. If a phase change occurs, you must include the latent heat term separately.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"A 0.2 kg copper calorimeter ($c = 390$) contains 0.15 kg of water at 15°C. A 0.08 kg metal at 90°C is dropped in. Final temperature is 20°C. Find the metal's specific heat. Heat lost by metal: $0.08 \\times c_m \\times 70 = 5.6c_m$. Heat gained: $(0.15 \\times 4200 + 0.2 \\times 390) \\times 5 = (630 + 78) \\times 5 = 3540$. $c_m = 3540/5.6 = 632\\text{ J/kg·K}$ (close to iron).\"\"\",
+    \"\"\"Find the equilibrium temperature when 0.5 kg of aluminum ($c=900$) at 100°C is mixed with 0.3 kg of water ($c=4200$) at 20°C, ignoring the calorimeter. $\\theta_{eq} = \\frac{0.5 \\times 900 \\times 100 + 0.3 \\times 4200 \\times 20}{0.5 \\times 900 + 0.3 \\times 4200} = \\frac{45000 + 25200}{450 + 1260} = \\frac{70200}{1710} = 41.05°\\text{C}$.\"\"\",
+    \"\"\"A 0.1 kg block of lead ($c=130$) at 100°C is dropped into a 0.2 kg copper calorimeter containing 0.25 kg of water at 10°C. The calorimeter's water equivalent is 8 g. Find $\\theta_{eq}$. Heat lost: $0.1 \\times 130 \\times (100 - T) = 13(100-T)$. Heat gained: $(0.25 \\times 4200 + 0.008 \\times 4200) \\times (T-10) = 1092(T-10)$. $1300 - 13T = 1092T - 10920$. $1105T = 12220 \\Rightarrow T \\approx 11.06°\\text{C}$.\"\"\",
+    \"\"\"0.05 kg of a liquid at 60°C is mixed with 0.1 kg of water at 20°C in a calorimeter of water equivalent 5 g. The equilibrium is 30°C. Find the liquid's specific heat. Heat lost by liquid: $0.05 \\times c_l \\times 30 = 1.5c_l$. Heat gained by water+cal: $(0.1 \\times 4200 + 0.005 \\times 4200) \\times 10 = 4410\\text{ J}$. $c_l = 4410/1.5 = 2940\\text{ J/kg·K}$ (close to ethanol).\"\"\",
+    \"\"\"Why must the calorimeter be polished and placed in a lagging jacket? Polishing minimizes radiation heat loss (shiny surfaces reflect IR). Lagging (cork/wood) minimizes conduction/convection. Together they approximate an adiabatic system, making the method of mixtures accurate.\"\"\",
+    \"\"\"Two liquids of equal mass but different specific heats $c_1$ and $c_2$ are at temperatures $\\theta_1$ and $\\theta_2$. Show that the equilibrium temperature is $\\theta_{eq} = \\frac{c_1\\theta_1 + c_2\\theta_2}{c_1 + c_2}$. Since $m_1 = m_2 = m$: $mc_1(\\theta_1 - \\theta_{eq}) = mc_2(\\theta_{eq} - \\theta_2)$. Cancel $m$: $c_1\\theta_1 - c_1\\theta_{eq} = c_2\\theta_{eq} - c_2\\theta_2$. $\\theta_{eq}(c_1 + c_2) = c_1\\theta_1 + c_2\\theta_2$. ✓\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"The calorimeter was invented by Joseph Black in the 1760s. He used an ice calorimeter - measuring heat by the amount of ice melted - which was more accurate than temperature-based methods because ice melts at a fixed temperature.\"\"\",
+    \"\"\"The principle of calorimetry is a special case of the conservation of energy. It was one of the first applications of energy conservation to thermal phenomena, predating the formal statement of the first law of thermodynamics by decades.\"\"\",
+    \"\"\"Modern calorimeters can measure heat changes as small as $10^{-6}$ J (microcalorimetry). These are used in biochemistry to study enzyme reactions, protein folding, and drug binding - processes that release or absorb tiny amounts of heat.\"\"\",
+    \"\"\"The \"\"\"jump method\"\"\" for measuring specific heat uses the method of mixtures: heat a small sample in an oil bath to a known temperature, then quickly transfer it to the calorimeter. The speed of transfer minimizes heat loss during the transfer.\"\"\",
+    \"\"\"Bomb calorimeters (used for food energy and fuel values) operate at constant volume, so the heat measured is $\\Delta U$, not $\\Delta H$. The water equivalent of a bomb calorimeter is typically 500-2000 g of water.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

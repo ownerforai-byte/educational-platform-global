@@ -1,29 +1,49 @@
 {
   "title": "Relation Between Prism Angle, Minimum Deviation and Refractive Index",
   "unitSlug": "refraction-through-prisms",
-  "topicSlug": "relation-between-prism-angle-minimum-deviation-and-refractive-index",
-  "topicTitle": "Relation between the angle of prism, minimum deviation and refractive index",
+  "topicSlug": "prism-formula",
+  "topicTitle": "Prism formula — relation between A, δ_min and n",
   "relevance": 100,
   "notes": [
-    "**Prism formula:** $n = \\frac{\\sin\\left(\\frac{A + \\delta_{min}}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)}$, where $A$ is the prism angle and $\\delta_{min}$ is the minimum deviation.",
-    "**Derivation basis:** at minimum deviation, $i = e$ and $r_1 = r_2 = r$. From geometry inside the prism, $A = 2r$, and from Snell's law at each face, $n = \\sin i / \\sin r$.",
-    "**Measuring $n$:** measure $A$ with a spectrometer and $\\delta_{min}$ from the angle of minimum deviation, then use the formula to find $n$ without knowing the speed of light in the material.",
-    "**Dispersion consequence:** because $n$ varies with wavelength, different colours have different $\\delta_{min}$. Violet bends more than red, spreading white light into a spectrum."
+    "**The prism formula:** $\\boxed{n = \\frac{\\sin\\left(\\frac{A + \\delta_{min}}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)}}$ where $n$ is the refractive index of the prism material, $A$ is the prism angle, and $\\delta_{min}$ is the angle of minimum deviation.",
+    "**Derivation at minimum deviation:** At minimum deviation, $i = e$ and $r_1 = r_2 = r = A/2$. From Snell's law at the first face: $n = \\frac{\\sin i}{\\sin r} = \\frac{\\sin i}{\\sin(A/2)}$.",
+    "**Finding i at minimum deviation:** Since $\\delta_{min} = i + e - A = 2i - A$, we get $i = \\frac{A + \\delta_{min}}{2}$. Substituting into Snell's law: $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$.",
+    "**Measuring n experimentally:** (1) Place the prism on a spectrometer table. (2) Direct a parallel beam of monochromatic light at one face. (3) Rotate the prism to find the position of minimum deviation. (4) Measure $\\delta_{min}$. (5) Measure $A$ separately. (6) Calculate $n$ using the formula.",
+    "**Thin prism approximation:** For small $A$ (typically $A < 10°$), $\\sin\\frac{A}{2} \\approx \\frac{A}{2}$ and $\\sin\\frac{A+\\delta_{min}}{2} \\approx \\frac{A+\\delta_{min}}{2}$. The formula simplifies to: $n \\approx 1 + \\frac{\\delta_{min}}{A}$, or $\\delta_{min} \\approx (n-1)A$.",
+    "**Dispersion and the prism formula:** Since $n$ varies with wavelength (normal dispersion: $n_{violet} > n_{red}$), each color has a different $\\delta_{min}$. This is why a prism separates white light into a spectrum.",
+    "**Refractive index from deviation:** If you know $A$ and measure $\\delta_{min}$, you can find $n$. Conversely, if you know $n$ and measure $\\delta_{min}$, you can find $A$ (useful for identifying unknown prism materials).",
+    "**Wavelength dependence:** For crown glass: $n_{red} \\approx 1.514$, $n_{yellow} \\approx 1.517$, $n_{violet} \\approx 1.532$. For flint glass: $n_{red} \\approx 1.620$, $n_{violet} \\approx 1.662$. Flint glass produces more dispersion (wider spectrum).",
+    "**Deviation for different colors:** At minimum deviation, $\\delta_{min} = 2i - A$. Since $i$ depends on $n$ (via Snell's law), and $n$ depends on wavelength, each color has a different $\\delta_{min}$. Violet deviates most, red deviates least.",
+    "**Angular dispersion:** The angular separation between two colors is $\\delta_{min}(\\lambda_1) - \\delta_{min}(\\lambda_2)$. For a prism with $A = 60°$ and $\\Delta n = 0.018$ (flint glass), the angular dispersion is approximately $\\Delta\\delta \\approx \\frac{d\\delta}{dn}\\Delta n \\approx \\frac{2\\sin(A/2)}{\\cos((A+\\delta)/2)}\\Delta n$.",
+    "**Mean deviation:** The deviation for yellow (sodium D line, 589 nm) is often taken as the mean deviation. This is the wavelength most sensitive to the human eye and is used as the reference in many measurements.",
+    "**Practical application — gemology:** Gemologists use the refractive index (measured via minimum deviation) to identify gemstones. Different gem materials have characteristic refractive indices: quartz ($n \\approx 1.54$), ruby ($n \\approx 1.76$), diamond ($n \\approx 2.42$).",
+    "**Limit of the formula:** The formula assumes the prism is surrounded by air ($n_{air} \\approx 1$). If the prism is in another medium, replace $n$ with $n_{prism}/n_{medium}$. For example, in water: $n_{rel} = n_{glass}/n_{water} \\approx 1.5/1.33 = 1.13$.",
+    "**NEB exam focus:** Derive the prism formula from Snell's law and the minimum deviation condition. Use it to calculate $n$, $A$, or $\\delta_{min}$ when two are known. Distinguish between the general deviation formula and the minimum deviation formula.",
+    "**Common values to remember:** For common glass ($n \\approx 1.5$) and $A = 60°$: $\\delta_{min} \\approx 37°$. For flint glass ($n \\approx 1.65$) and $A = 60°$: $\\delta_{min} \\approx 50°$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ The prism formula $n = \\sin\\frac{A+\\delta}{2}/\\sin\\frac{A}{2}$ works for ANY angle of incidence. ✅ This formula is ONLY valid at minimum deviation. For arbitrary incidence, you must use the general formulas: $\\delta = i + e - A$ and Snell's law at each face.",
+    "❌ All colors deviate by the same amount through a prism. ✅ Different wavelengths have different refractive indices (dispersion). Violet light ($\\lambda \\approx 400$ nm) has a higher $n$ and deviates MORE than red light ($\\lambda \\approx 700$ nm).",
+    "❌ The prism formula gives $n$ directly without measuring $\\delta_{min}$. ✅ You must measure BOTH $A$ and $\\delta_{min}$ experimentally. The formula relates them to $n$, but you need at least two of the three quantities to find the third.",
+    "❌ A larger prism angle always gives larger minimum deviation. ✅ Generally yes, but the relationship is not linear. For a fixed $n$, as $A$ increases, $\\delta_{min}$ increases, but the rate of increase depends on the trigonometric functions involved.",
+    "❌ The thin prism approximation $\\delta_{min} = (n-1)A$ is exact for all prism angles. ✅ It is an approximation valid only for small $A$ (typically $< 10°$). For larger angles, use the full formula with sine functions.",
+    "❌ The refractive index is the same for all wavelengths. ✅ Refractive index depends on wavelength (Cauchy's equation: $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$). This wavelength dependence is what causes dispersion in prisms.",
+    "❌ You can use the prism formula when the prism is immersed in water. ✅ The formula assumes the prism is in air. In water, use the RELATIVE refractive index: $n_{rel} = n_{prism}/n_{water}$. The deviation will be smaller because $n_{rel}$ is closer to 1."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A prism has $A = 60°$ and $\\delta_{min} = 37°$. Find the refractive index. $n = \\frac{\\sin\\frac{60+37}{2}}{\\sin\\frac{60}{2}} = \\frac{\\sin 48.5°}{\\sin 30°} = \\frac{0.749}{0.5} = 1.498 \\approx 1.50$. This is typical crown glass.",
+    "For a prism with $n = 1.6$ and $A = 50°$, find $\\delta_{min}$. $1.6 = \\frac{\\sin\\frac{50+\\delta_{min}}{2}}{\\sin 25°}$. $\\sin\\frac{50+\\delta_{min}}{2} = 1.6 \\times 0.4226 = 0.6762$. $\\frac{50+\\delta_{min}}{2} = \\arcsin(0.6762) = 42.55°$. $\\delta_{min} = 85.1 - 50 = 35.1°$.",
+    "A thin prism produces a deviation of 4° for yellow light. If $n = 1.5$, find the prism angle. Using $\\delta_{min} = (n-1)A$: $4° = (1.5 - 1)A = 0.5A$. $A = 8°$. Check: $n = 1 + 4/8 = 1.5$. ✓",
+    "Red and violet light pass through a prism with $A = 60°$. $n_{red} = 1.514$, $n_{violet} = 1.532$. Find the angular dispersion. For red: $\\sin\\frac{60+\\delta_r}{2} = 1.514 \\times 0.5 = 0.757 \\Rightarrow \\frac{60+\\delta_r}{2} = 49.2° \\Rightarrow \\delta_r = 38.4°$. For violet: $\\sin\\frac{60+\\delta_v}{2} = 1.532 \\times 0.5 = 0.766 \\Rightarrow \\frac{60+\\delta_v}{2} = 50.0° \\Rightarrow \\delta_v = 40.0°$. Angular dispersion $= 40.0 - 38.4 = 1.6°$.",
+    "A prism in water ($n_{water} = 1.33$) has $n_{glass} = 1.5$. Find the relative refractive index and the minimum deviation for $A = 60°$. $n_{rel} = 1.5/1.33 = 1.128$. $\\sin\\frac{60+\\delta_{min}}{2} = 1.128 \\times 0.5 = 0.564$. $\\frac{60+\\delta_{min}}{2} = 34.3°$. $\\delta_{min} = 68.6 - 60 = 8.6°$. Much smaller than in air (37°) because the index contrast is smaller.",
+    "Show that for a given prism material, the minimum deviation increases with prism angle. Taking the derivative of $\\delta_{min}$ with respect to $A$: from $n\\sin(A/2) = \\sin((A+\\delta_{min})/2)$, implicit differentiation shows $\\frac{d\\delta_{min}}{dA} > 0$ for all $A < 90°$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The prism formula was derived by W. Thomson (Lord Kelvin) in the 19th century, though the underlying principles of Snell's law and minimum deviation were known since the 17th century.",
+    "Diamond's high refractive index ($n \\approx 2.42$) is why it produces such brilliant dispersion (fire). A diamond prism would separate white light much more effectively than a glass prism.",
+    "The Cauchy equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$ describes how refractive index varies with wavelength. This is why blue light always bends more than red light in any dispersive medium.",
+    "In spectroscopy, prisms were replaced by diffraction gratings for high-precision work because gratings provide linear dispersion (angle proportional to wavelength), while prisms have nonlinear dispersion.",
+    "The minimum deviation method is so accurate that it can determine refractive index to 5 significant figures. This precision is essential in optics design for cameras, microscopes, and telescopes."
   ],
   "animation3D": "refraction-through-prisms",
   "motionGraphics": "refraction-through-prisms"

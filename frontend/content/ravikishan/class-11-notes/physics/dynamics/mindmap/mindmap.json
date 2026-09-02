@@ -1,0 +1,45 @@
+{
+  "title": "Dynamics Mindmap",
+  "unitSlug": "dynamics",
+  "topicSlug": "dynamics-mindmap",
+  "topicTitle": "Dynamics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Dynamics",
+    "children": [
+      {
+        "id": "linear-momentum-impulse",
+        "label": "Linear momentum, impulse"
+      },
+      {
+        "id": "conservation-of-linear-momentum",
+        "label": "Conservation of linear momentum"
+      },
+      {
+        "id": "application-of-newton-s-laws",
+        "label": "Application of Newton's laws"
+      },
+      {
+        "id": "moment-torque-and-equilibrium",
+        "label": "Moment, torque",
+        "children": [
+          {
+            "id": "moment-torque-sub-0",
+            "label": "equilibrium"
+          }
+        ]
+      },
+      {
+        "id": "solid-friction-laws-of-solid-f",
+        "label": "Solid friction: laws of solid friction",
+        "children": [
+          {
+            "id": "solid-friction-laws-of-solid-friction-sub-0",
+            "label": "their verifications"
+          }
+        ]
+      }
+    ]
+  }
+}

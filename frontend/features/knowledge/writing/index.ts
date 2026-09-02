@@ -5,6 +5,8 @@ import { REPORT_TYPES } from "./data-reports";
 import { CREATIVE_TYPES } from "./data-creative";
 import { TEXTUAL_TYPES } from "./data-textual";
 import { WRITING_GRAMMAR_TYPES } from "./data-grammar";
+import { VOCABULARY_TYPES } from "./data-vocabulary";
+import { IDEA_TYPES } from "./data-ideas";
 
 export type { WritingType, WritingBlock, WritingCategory } from "./types";
 
@@ -16,6 +18,8 @@ export const ALL_WRITING_TYPES: WritingType[] = [
   ...CREATIVE_TYPES,
   ...TEXTUAL_TYPES,
   ...WRITING_GRAMMAR_TYPES,
+  ...VOCABULARY_TYPES,
+  ...IDEA_TYPES,
 ];
 
 export const WRITING_CATEGORIES: WritingCategory[] = [
@@ -25,6 +29,8 @@ export const WRITING_CATEGORIES: WritingCategory[] = [
   "Creative Writing",
   "Textual Skills",
   "Grammar for Writing",
+  "Pro Vocabulary & Flow",
+  "Idea Banks & Flow Plans",
 ];
 
 export const WRITING_COUNTS: Record<WritingCategory, number> = {
@@ -34,6 +40,8 @@ export const WRITING_COUNTS: Record<WritingCategory, number> = {
   "Creative Writing": CREATIVE_TYPES.length,
   "Textual Skills": TEXTUAL_TYPES.length,
   "Grammar for Writing": WRITING_GRAMMAR_TYPES.length,
+  "Pro Vocabulary & Flow": VOCABULARY_TYPES.length,
+  "Idea Banks & Flow Plans": IDEA_TYPES.length,
 };
 
 export function getWritingTypesByCategory(category: WritingCategory): WritingType[] {

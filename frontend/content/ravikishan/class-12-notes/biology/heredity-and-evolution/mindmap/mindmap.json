@@ -1,0 +1,115 @@
+{
+  "title": "Heredity and Evolution Mindmap",
+  "unitSlug": "heredity-and-evolution",
+  "topicSlug": "heredity-and-evolution-mindmap",
+  "topicTitle": "Heredity and Evolution — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Heredity and Evolution",
+    "children": [
+      {
+        "id": "mendel-s-laws-of-inheritance-m",
+        "label": "Mendel's laws of inheritance — monohybrid",
+        "children": [
+          {
+            "id": "mendel-s-laws-of-inheritance-monohybrid-sub-0",
+            "label": "dihybrid cross"
+          }
+        ]
+      },
+      {
+        "id": "incomplete-dominance-and-codom",
+        "label": "Incomplete dominance",
+        "children": [
+          {
+            "id": "incomplete-dominance-sub-0",
+            "label": "codominance"
+          }
+        ]
+      },
+      {
+        "id": "linkage-and-crossing-over",
+        "label": "Linkage",
+        "children": [
+          {
+            "id": "linkage-sub-0",
+            "label": "crossing over"
+          }
+        ]
+      },
+      {
+        "id": "sex-determination-and-sex-link",
+        "label": "Sex determination",
+        "children": [
+          {
+            "id": "sex-determination-sub-0",
+            "label": "sex-linked disorders"
+          }
+        ]
+      },
+      {
+        "id": "chromosome-theory-of-inheritance",
+        "label": "Chromosome theory of inheritance"
+      },
+      {
+        "id": "molecular-basis-of-inheritance",
+        "label": "Molecular basis of inheritance",
+        "children": [
+          {
+            "id": "molecular-basis-of-inheritance-sub-0",
+            "label": "DNA structure"
+          },
+          {
+            "id": "molecular-basis-of-inheritance-sub-1",
+            "label": "replication"
+          },
+          {
+            "id": "molecular-basis-of-inheritance-sub-2",
+            "label": "transcription"
+          },
+          {
+            "id": "molecular-basis-of-inheritance-sub-3",
+            "label": "translation"
+          },
+          {
+            "id": "molecular-basis-of-inheritance-sub-4",
+            "label": "gene regulation"
+          }
+        ]
+      },
+      {
+        "id": "human-genome-project-objective",
+        "label": "Human genome project — objectives",
+        "children": [
+          {
+            "id": "human-genome-project-objectives-sub-0",
+            "label": "significance"
+          }
+        ]
+      },
+      {
+        "id": "evolution-evidences-adaptive-r",
+        "label": "Evolution",
+        "children": [
+          {
+            "id": "evolution-sub-0",
+            "label": "evidences"
+          },
+          {
+            "id": "evolution-sub-1",
+            "label": "adaptive radiation"
+          },
+          {
+            "id": "evolution-sub-2",
+            "label": "Hardy-Weinberg equilibrium"
+          },
+          {
+            "id": "evolution-sub-3",
+            "label": "human evolution"
+          }
+        ]
+      }
+    ]
+  }
+}

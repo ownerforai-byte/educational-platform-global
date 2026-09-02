@@ -1,0 +1,57 @@
+{
+  "title": "Statistics and Probability Mindmap",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "statistics-and-probability-mindmap",
+  "topicTitle": "Statistics and Probability — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Statistics and Probability",
+    "children": [
+      {
+        "id": "measure-of-dispersion-standard",
+        "label": "Measure of dispersion",
+        "children": [
+          {
+            "id": "measure-of-dispersion-sub-0",
+            "label": "standard deviation"
+          },
+          {
+            "id": "measure-of-dispersion-sub-1",
+            "label": "variance"
+          },
+          {
+            "id": "measure-of-dispersion-sub-2",
+            "label": "coefficient of variation"
+          },
+          {
+            "id": "measure-of-dispersion-sub-3",
+            "label": "skewness"
+          },
+          {
+            "id": "measure-of-dispersion-sub-4",
+            "label": "Karl Pearson's coefficient of skewness"
+          }
+        ]
+      },
+      {
+        "id": "probability-independent-cases-",
+        "label": "Probability",
+        "children": [
+          {
+            "id": "probability-sub-0",
+            "label": "independent cases"
+          },
+          {
+            "id": "probability-sub-1",
+            "label": "mathematical and empirical definition of probability"
+          },
+          {
+            "id": "probability-sub-2",
+            "label": "two basic laws of probability (without proof"
+          }
+        ]
+      }
+    ]
+  }
+}

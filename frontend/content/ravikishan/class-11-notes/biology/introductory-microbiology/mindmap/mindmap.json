@@ -1,0 +1,57 @@
+{
+  "title": "Introductory Microbiology Mindmap",
+  "unitSlug": "introductory-microbiology",
+  "topicSlug": "introductory-microbiology-mindmap",
+  "topicTitle": "Introductory Microbiology — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Introductory Microbiology",
+    "children": [
+      {
+        "id": "monera-general-introduction-st",
+        "label": "Monera",
+        "children": [
+          {
+            "id": "monera-sub-0",
+            "label": "General introduction"
+          },
+          {
+            "id": "monera-sub-1",
+            "label": "structure of bacterial cell"
+          },
+          {
+            "id": "monera-sub-2",
+            "label": "mode of nutrition"
+          },
+          {
+            "id": "monera-sub-3",
+            "label": "bacterial growth; cyanobacteria (blue green algae"
+          }
+        ]
+      },
+      {
+        "id": "virus-general-introduction-str",
+        "label": "Virus",
+        "children": [
+          {
+            "id": "virus-sub-0",
+            "label": "General introduction"
+          },
+          {
+            "id": "virus-sub-1",
+            "label": "structure and importance of virus"
+          },
+          {
+            "id": "virus-sub-2",
+            "label": "bacteriophage"
+          }
+        ]
+      },
+      {
+        "id": "impacts-of-biotechnology-in-the-field-of",
+        "label": "Impacts of biotechnology in the field of microbiology"
+      }
+    ]
+  }
+}

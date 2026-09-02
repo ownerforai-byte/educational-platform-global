@@ -47,8 +47,11 @@ export function OpticsVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let pulseDot: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -143,6 +146,11 @@ export function OpticsVisual() {
         0.15,
         0.08,
       ));
+      pulseDot = push(new THREE.Mesh(
+        new THREE.SphereGeometry(0.15, 12, 12),
+        new THREE.MeshBasicMaterial({ color: 0xfbbf24 }),
+      )) as THREE.Mesh;
+      pulseDot.position.set(objX, objH / 2, 0);
       push(mkSprite("Object", "#22d3ee", new THREE.Vector3(objX, objH + 0.5, 0), 0.7));
 
       // Image calculation: 1/v - 1/u = 1/f (mirror sign convention)
@@ -210,6 +218,12 @@ export function OpticsVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.03;
+        if (pulseDot) {
+          const t = (animTime * 0.4) % 1;
+          pulseDot.position.x = -10 + t * 20;
+          pulseDot.position.y = Math.sin(t * Math.PI * 4) * 2;
+        }
         renderer.render(scene, camera);
       };
       animate();

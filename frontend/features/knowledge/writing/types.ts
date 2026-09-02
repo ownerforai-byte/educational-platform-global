@@ -35,4 +35,6 @@ export type WritingCategory =
   | "Reports & Articles"
   | "Creative Writing"
   | "Textual Skills"
-  | "Grammar for Writing";
+  | "Grammar for Writing"
+  | "Pro Vocabulary & Flow"
+  | "Idea Banks & Flow Plans";

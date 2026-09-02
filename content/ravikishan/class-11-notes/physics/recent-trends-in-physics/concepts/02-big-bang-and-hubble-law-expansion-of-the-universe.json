@@ -2,29 +2,49 @@
   "title": "Big Bang, Hubble Law and Expansion of the Universe",
   "unitSlug": "recent-trends-in-physics",
   "topicSlug": "big-bang-and-hubble-law-expansion-of-the-universe",
-  "topicTitle": "Universe: Big Bang and Hubble law â€” expansion of the Universe",
+  "topicTitle": "Universe: Big Bang and Hubble law — expansion of the Universe",
   "relevance": 100,
   "notes": [
-    "**Big Bang theory:** the universe began about 13.8 billion years ago from an extremely hot, dense initial state and has been expanding ever since.",
-    "**Hubble's law:** $v = H_0 d$. The recessional velocity of a galaxy is proportional to its distance from us. $H_0 \\approx 70\\,\\text{km/s/Mpc}$ is the Hubble constant.",
-    "**Redshift:** light from distant galaxies is shifted to longer wavelengths because the galaxies are moving away. This is the observational basis of Hubble's law.",
-    "**Cosmic microwave background (CMB):** the cooled remnant of the hot early universe, now at 2.7 K. Its discovery in 1965 was strong evidence for the Big Bang.",
-    "**Expansion implication:** if the universe is expanding now, it was smaller and denser in the past. Extrapolating back gives the initial singularity."
+    "**Big Bang theory:** The prevailing cosmological model describing the origin and evolution of the universe. The universe began approximately 13.8 billion years ago from an extremely hot, dense initial state — the Big Bang singularity — and has been expanding and cooling ever since. All matter, energy, space, and time originated from this event.",
+    "**Hubble's law:** The recessional velocity $v$ of a galaxy is directly proportional to its distance $d$ from an observer: $v = H_0 d$. This linear relationship is the observational cornerstone of an expanding universe. The constant of proportionality $H_0$ is the Hubble constant, currently measured as $H_0 \\approx 70\\,\\text{km/s/Mpc}$.",
+    "**Hubble parameter and time:** The Hubble time $t_H = 1/H_0 \\approx 14$ billion years gives an approximate age of the universe. This is consistent with the independently measured age of 13.8 billion years from the cosmic microwave background.",
+    "**Cosmological redshift:** Light from distant galaxies is redshifted (wavelengths stretched) because the space between the source and observer is expanding during the light's travel time. The redshift $z = (\\lambda_{obs} - \\lambda_{emit})/\\lambda_{emit}$ directly measures how much the universe has expanded since the light was emitted.",
+    "**Doppler redshift vs. cosmological redshift:** For nearby galaxies ($z < 0.01$), recession velocity is given by the special-relativistic Doppler formula $v \\approx cz$. For distant galaxies, cosmological redshift is due to the expansion of space itself, not the motion of galaxies through space — they are at rest in the expanding space.",
+    "**Evidence for the Big Bang:** (1) Hubble expansion (1929): galaxies recede at speeds proportional to distance. (2) Cosmic microwave background (1965): Penzias and Wilson discovered uniform 2.7 K radiation — relic from hot early universe. (3) Big Bang nucleosynthesis predictions: ~25% helium abundance matches observations. (4) Galaxy evolution: lookback time shows younger galaxies in the distant past.",
+    "**Cosmic microwave background (CMB):** The cooled relic radiation from ~380,000 years after the Big Bang, when the universe became transparent to photons. Originally at ~3000 K (emitting visible light), it has redshifted to 2.725 K. The CMB is uniform to 1 part in 100,000 — tiny temperature fluctuations reveal the seeds of all cosmic structure.",
+    "**Scale factor:** The relative expansion of the universe is described by the scale factor $a(t)$, where distances scale as $d(t) = a(t) d_0$. Hubble's law in general form: $\\dot{a}/a = H(t)$, where $H(t)$ is the Hubble parameter that varies with cosmic time. Currently $H \\approx H_0$, but in the past $H$ was much larger.",
+    "**Friedmann equations:** The dynamics of an expanding universe are governed by Einstein's field equations: $H^2 = (\\dot{a}/a)^2 = \\frac{8\\pi G}{3}\\rho - \\frac{kc^2}{a^2} + \\frac{\\Lambda c^2}{3}$. The curvature parameter $k$ can be $-1$, $0$, or $+1$ (open, flat, or closed universe). Current observations show the universe is spatially flat ($k = 0$).",
+    "**Dark energy and accelerating expansion:** In 1998, observations of distant Type Ia supernovae showed the expansion of the universe is ACCELERATING. This requires a dominant form of energy with negative pressure — dark energy — acting as a cosmological constant $\\Lambda$. Dark energy makes up ~68% of the total energy density of the universe.",
+    "**Timeline of the universe:** Planck epoch (< 10⁻⁴³ s) → Grand unification epoch → Inflationary epoch (10⁻³⁶ to 10⁻³² s, universe expanded by factor ~10²⁶) → Electroweak epoch → Quark epoch → Hadron epoch → Photon epoch → Nucleosynthesis (3 min, formed H, He) → Recombination (380,000 yr, CMB released) → Galaxy formation → Solar system (9 Gyr) → Today (13.8 Gyr).",
+    "**NEB exam focus:** State and explain Hubble's law $v = H_0 d$. Calculate recession velocities and distances using the Hubble constant. Distinguish between Doppler redshift and cosmological redshift. Explain the evidence for the Big Bang theory. Calculate the age of the universe from $H_0$.",
+    "**Olbers' paradox:** If the universe were infinite, static, and uniformly filled with stars, the night sky should be as bright as the surface of a star. The resolution is that the universe has a finite age and is expanding — stars have finite lifetimes and light from distant stars hasn't had time to reach us.",
+    "**Critical density:** The density that makes the universe spatially flat: $\\rho_c = 3H_0^2/(8\\pi G) \\approx 9.5 \\times 10^{-27}\\,\\text{kg/m}^3$. Current density: ordinary matter ~5%, dark matter ~27%, dark energy ~68%. Total density equals critical density to within 0.5% — the universe is flat.",
+    "**Grandfather paradox and causality:** The finite age of the universe (~13.8 Gyr) and the finite speed of light mean that there is a cosmological horizon — regions of space from which light has not yet had time to reach us. We cannot observe the entire universe.",
+    "**Inflationary cosmology:** In the first 10⁻³² seconds, the universe underwent exponential expansion by a factor of at least 10²⁶. This explains the uniformity of the CMB (horizon problem), the flatness of space (flatness problem), and the absence of magnetic monopoles (monopole problem). Inflation was driven by a scalar inflaton field."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "❌ The Big Bang was an explosion in space. ✅ The Big Bang was the BEGINNING of space and time itself. There was no pre-existing space into which the universe exploded. Space, time, matter, and energy all came into existence together.",
+    "❌ Hubble's law applies to all galaxies in the same way. ✅ Hubble's law $v = H_0 d$ applies to galaxies that are not gravitationally bound to each other. Galaxies within the same cluster can have peculiar velocities that deviate from the Hubble flow.",
+    "❌ Redshift means galaxies are moving through space away from us. ✅ Cosmological redshift is caused by the EXPANSION OF SPACE ITSELF. Galaxies are at rest in their local frame; space expands and stretches the wavelength of light as it travels.",
+    "❌ The universe was always expanding at the current rate. ✅ The expansion rate has changed dramatically over cosmic history. In the early universe, expansion was decelerating due to gravity; around 4 billion years ago, dark energy began to dominate and expansion began accelerating.",
+    "❌ The CMB is the leftover heat from the Big Bang explosion. ✅ The CMB is the thermal radiation from the hot plasma that filled the universe 380,000 years after the Big Bang, when it cooled enough to become transparent. It is not from the initial explosion but from the state of the universe at recombination.",
+    "❌ Dark energy and dark matter are the same thing. ✅ Dark matter (27%) interacts gravitationally but not electromagnetically. Dark energy (68%) is a property of space itself causing accelerated expansion. They are completely different phenomena with different effects.",
+    "❌ The Hubble constant has been measured precisely and is not changing. ✅ $H_0$ (the current value) is measured precisely (~70 km/s/Mpc), but the Hubble parameter $H(t)$ varies with cosmic time. Dark energy causes $H(t)$ to decrease at first, then stabilize as dark energy dominates."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A galaxy is observed to have a recession velocity of 14,000 km/s. Using $H_0 = 70$ km/s/Mpc, find its distance. $d = v/H_0 = 14,000/70 = 200$ Mpc. At 1 Mpc = 3.26 million light years, this galaxy is $200 \\times 3.26 = 652$ million light-years away.",
+    "A galaxy at distance 400 Mpc has a redshift $z = 0.095$. Find the recession velocity. For small $z$, $v \\approx cz = 3 \\times 10^5 \\times 0.095 = 28,500$ km/s. Using Hubble's law: $v = H_0 d = 70 \\times 400 = 28,000$ km/s. Good agreement! At larger $z$, the linear approximation breaks down and relativistic formulas are needed.",
+    "A galaxy has redshift $z = 2$. How much has the universe expanded since the light was emitted? $1 + z = a_{now}/a_{then}$, so the scale factor was $a_{then} = a_{now}/(1+z) = a_{now}/3$. The universe was 3 times smaller when the light was emitted. Light took billions of years to reach us.",
+    "The age of the universe estimated from the Hubble constant is $t_H = 1/H_0$. If $H_0 = 70$ km/s/Mpc, show this gives ~14 billion years. $1/H_0 = 1/(70\\,\\text{km/s/Mpc}) = (3.09 \\times 10^{19}\\,\\text{km})/70\\,\\text{km/s} = 4.41 \\times 10^{17}$ s $= 14.0 \\times 10^9$ yr = 14 billion years. This is a rough estimate because expansion was different in the past.",
+    "If the universe doubles in size in the future, what will happen to the Hubble parameter? For a matter-dominated universe, $H \\propto a^{-3/2}$, so doubling $a$ reduces $H$ by $2^{-3/2} \\approx 0.35$. But dark energy-dominated universes have constant $H$. Observations suggest $H$ will approach a constant ~57 km/s/Mpc.",
+    "Why do we see the cosmic microwave background coming from all directions at the same temperature? During inflation, regions that are now far apart were in causal contact — they exchanged information and thermalized. When inflation expanded them apart faster than light could communicate between them, they lost contact. The uniformity we see today reflects their early thermal equilibrium, preserved in the CMB."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The cosmic microwave background was discovered accidentally by Arno Penzias and Robert Wilson in 1965 while working on radio communications. They received the Nobel Prize in Physics in 1978. The CMB is the most perfect black body in nature, matching Planck's law to extraordinary precision.",
+    "The 2011 Nobel Prize in Physics went to Perlmutter, Schmidt, and Riess for the 1998 discovery of the accelerating expansion of the universe — implying that ~68% of the universe consists of dark energy. This was one of the most shocking discoveries in cosmology.",
+    "The Planck satellite (2009-2013) measured the CMB temperature fluctuations to microkelvin precision, determining the universe's age (13.82 Gyr), composition (68.3% dark energy, 26.8% dark matter, 4.9% ordinary matter), and geometry (flat to 0.4%).",
+    "The Hubble Space Telescope was named after Edwin Hubble, who in 1929 published his landmark paper establishing the linear relationship between distance and recession velocity for galaxies — the observational foundation of modern cosmology.",
+    "The concept of an expanding universe was first suggested by Alexander Friedmann in 1922 and independently by Georges Lemaître in 1927, who proposed a 'primeval atom' — essentially the Big Bang — as the origin of the universe."
   ],
   "animation3D": "recent-trends-in-physics",
   "motionGraphics": "recent-trends-in-physics"

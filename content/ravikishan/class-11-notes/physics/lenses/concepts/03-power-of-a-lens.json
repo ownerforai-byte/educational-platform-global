@@ -8,23 +8,38 @@
     "**Definition:** $P = 1/f$, where $f$ is in metres. Units: dioptres (D).",
     "**Convex lens:** $f$ is positive, so $P$ is positive. A +2.0 D lens has $f = 0.5\\,\\text{m} = 50\\,\\text{cm}$.",
     "**Concave lens:** $f$ is negative, so $P$ is negative. A -4.0 D lens has $f = -0.25\\,\\text{m} = -25\\,\\text{cm}$.",
-    "**Combination in contact:** $P_{total} = P_1 + P_2 + P_3 + \\ldots$. Powers add algebraically because thin lenses in contact have a combined focal length given by $1/f_{eq} = 1/f_1 + 1/f_2$.",
-    "**Optician's prescription:** a prescription of +3.0 D means a converging lens of focal length 33.3 cm for hyperopia (farsightedness); -2.5 D means a diverging lens of focal length -40 cm for myopia (nearsightedness)."
+    "**Combination in contact:** $P_{\\text{total}} = P_1 + P_2 + P_3 + \\ldots$. Powers add algebraically because thin lenses in contact have a combined focal length given by $1/f_{\\text{eq}} = 1/f_1 + 1/f_2$.",
+    "**Optician's prescription:** a prescription of +3.0 D means a converging lens of focal length 33.3 cm for hyperopia (farsightedness); -2.5 D means a diverging lens of focal length -40 cm for myopia (nearsightedness).",
+    "**Dioptre definition:** One dioptre (1 D) is the power of a lens with a focal length of exactly 1 metre. The dioptre is a reciprocal metre ($\text{m}^{-1}$).",
+    "**Lensmaker's formula and power:** For a thin lens in air, $P = (n - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$, where $n$ is the refractive index of lens material relative to air, and $R_1$, $R_2$ are radii of curvature (positive if centre of curvature is on the outgoing side). This shows power depends on both material and surface curvatures.",
+    "**Power in a medium other than air:** If a lens of refractive index $n_{\\text{lens}}$ is immersed in a medium of refractive index $n_{\\text{medium}}$, its power becomes $P_{\\text{medium}} = \\left(\\frac{n_{\\text{lens}}}{n_{\\text{medium}}} - 1\\right)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$. For example, a glass lens ($n=1.5$) in water ($n=1.33$) has only about 15% of its power in air — it becomes much weaker.",
+    "**Equivalent power of separated thin lenses:** For two thin lenses separated by distance $d$ (in metres), $P_{\\text{eq}} = P_1 + P_2 - d P_1 P_2$. The term $-d P_1 P_2$ accounts for the separation; when $d \\to 0$, this reduces to simple algebraic sum.",
+    "**Afocal systems (telescopes):** When $P_{\\text{eq}} = 0$, the combination has infinite focal length — it produces parallel output for parallel input. This occurs when $d = 1/P_1 + 1/P_2 = f_1 + f_2$ for two converging lenses (astronomical telescope) or when a converging and diverging lens are separated appropriately (Galilean telescope).",
+    "**Accommodation of the eye:** The human eye changes its power by altering the curvature of the crystalline lens. Total power ranges from approximately +58 D (relaxed, focused at infinity) to +70 D (maximum accommodation, focused at near point ~25 cm). The cornea contributes ~+43 D and the lens ~+15 D to +27 D.",
+    "**Presbyopia:** Age-related loss of accommodation. The near point recedes with age (10 cm at age 10, 25 cm at 40, 50 cm at 50, 100 cm at 60). Corrected by adding a converging lens (reading glasses) to supply the missing accommodation power.",
+    "**Contact lenses vs spectacles:** Contact lenses sit on the cornea (vertex distance ~0), while spectacles are ~12-15 mm in front. The effective power differs: $P_{\\text{spectacle}} = \\frac{P_{\\text{contact}}}{1 - d P_{\\text{contact}}}$ where $d$ is vertex distance in metres. For high prescriptions (>4 D), this difference is clinically significant.",
+    "**Cylindrical power and astigmatism:** Astigmatism requires different powers in two perpendicular meridians. Prescription written as sphere/cylinder $\\times$ axis, e.g., $-2.00 / -0.75 \\times 180$. Total power varies with meridian: $P(\\theta) = P_{\\text{sphere}} + P_{\\text{cylinder}} \\sin^2(\\theta - \\text{axis})$."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Power is the reciprocal of focal length — Confusing power with focal length is common. Remember: $P = 1/f$ (with $f$ in metres). A lens of power +2 D has $f = 0.5$ m, not 2 m. Always convert cm to m before taking the reciprocal.",
+    "Sign of power for concave lens — A concave (diverging) lens has negative focal length and therefore negative power. Students often forget the minus sign. A prescription of -2.0 D means a diverging lens of focal length -50 cm.",
+    "Adding powers vs adding focal lengths — For lenses in contact, powers add algebraically ($P = P_1 + P_2$), but focal lengths do NOT add ($f \\neq f_1 + f_2$). The correct relation for focal lengths is $1/f = 1/f_1 + 1/f_2$.",
+    "Lens power in different media — A lens's power changes when immersed in a medium other than air. A glass lens in water has much lower power because the relative refractive index $n_{\\text{glass}}/n_{\\text{water}}$ is much smaller than $n_{\\text{glass}}/n_{\\text{air}}$. It does NOT retain its air power.",
+    "Vertex distance effect — The power of a spectacle lens is not the same as a contact lens of the same prescription if vertex distance is non-zero. For high powers, the effective power at the cornea differs significantly. Contact lens prescriptions are typically weaker (less minus / more plus) than spectacle prescriptions for myopia."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A convex lens has a focal length of 25 cm. What is its power in dioptres? — Solution: $f = 0.25$ m, so $P = 1/0.25 = +4.0$ D.",
+    "A concave lens of power -6.0 D is placed in contact with a convex lens of power +4.0 D. Find the focal length of the combination. — Solution: $P_{\\text{total}} = -6.0 + 4.0 = -2.0$ D. $f = 1/P = 1/(-2.0) = -0.5$ m = -50 cm. The combination behaves as a diverging lens.",
+    "A thin glass lens ($n = 1.5$) has radii of curvature $R_1 = +20$ cm and $R_2 = -20$ cm. Find its power in air and in water ($n = 4/3$). — Solution: In air, $P = (1.5 - 1)(1/0.20 - 1/(-0.20)) = 0.5(5 + 5) = +5.0$ D. In water, $n_{\\text{rel}} = 1.5 / 1.333 = 1.125$. $P_{\\text{water}} = (1.125 - 1)(5 + 5) = 0.125 \\times 10 = +1.25$ D. Power in water is 1/4 of power in air.",
+    "Two thin lenses of powers +3.0 D and +5.0 D are separated by 10 cm. Find the equivalent power. — Solution: $d = 0.10$ m. $P_{\\text{eq}} = 3.0 + 5.0 - (0.10)(3.0)(5.0) = 8.0 - 1.5 = +6.5$ D.",
+    "A myopic person has a far point of 40 cm. What power spectacle lens (at vertex distance 15 mm) is needed to see distant objects clearly? — Solution: The lens must form a virtual image at the far point. For object at infinity, $f = -0.40$ m (spectacle plane). $P = -2.50$ D. At cornea (15 mm closer), the effective power needed is $P_{\\text{cornea}} = P / (1 - d P) = -2.50 / (1 - 0.015(-2.50)) = -2.50 / 1.0375 \\approx -2.41$ D. So contact lens prescription would be about -2.41 D."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The dioptre is the only SI-derived unit named after a person (Johannes Kepler's 'dioptrice'), though the unit itself is simply $\\text{m}^{-1}$.",
+    "The human eye's total optical power is approximately +60 D, with the cornea providing ~+43 D (fixed) and the crystalline lens providing ~+17 D (variable via accommodation).",
+    "In optometry, the 'spherical equivalent' of a prescription with cylinder is $\\text{SE} = \\text{sphere} + \\frac{1}{2}\\text{cylinder}$. This represents the average power across all meridians.",
+    "A Fresnel lens achieves the same optical power as a conventional lens but with a fraction of the thickness by breaking the surface into concentric annular sections — each section provides the required refraction at its local slope.",
+    "The power of a lens is additive for thin lenses in contact, but for thick lenses or separated lenses, the concept of 'principal planes' must be used. The effective power is then $P = n/f_{\\text{eff}}$ where $f_{\\text{eff}}$ is measured from the principal planes, not the lens vertices."
   ],
   "animation3D": "lenses",
   "motionGraphics": "lenses"

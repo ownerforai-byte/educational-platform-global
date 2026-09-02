@@ -52,7 +52,10 @@ export function LimitsContinuityVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number, animId: number;
+    let controls: any;
+    let frameId: number;
+    let animId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
     let dotPos = 0;
 
@@ -163,6 +166,7 @@ export function LimitsContinuityVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.016;
         renderer.render(scene, camera);
       };
       animate();

@@ -1,0 +1,61 @@
+{
+  "title": "Work, Energy and Power Mindmap",
+  "unitSlug": "work-energy-and-power",
+  "topicSlug": "work-energy-and-power-mindmap",
+  "topicTitle": "Work, Energy and Power — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Work, Energy and Power",
+    "children": [
+      {
+        "id": "work-done-by-a-constant-force-",
+        "label": "Work done by a constant force",
+        "children": [
+          {
+            "id": "work-done-by-a-constant-force-sub-0",
+            "label": "a variable force"
+          }
+        ]
+      },
+      {
+        "id": "power",
+        "label": "Power"
+      },
+      {
+        "id": "work-energy-theorem-kinetic-an",
+        "label": "Work-energy theorem",
+        "children": [
+          {
+            "id": "work-energy-theorem-sub-0",
+            "label": "kinetic and potential energy"
+          }
+        ]
+      },
+      {
+        "id": "conservation-of-energy",
+        "label": "Conservation of energy"
+      },
+      {
+        "id": "conservative-and-non-conservat",
+        "label": "Conservative",
+        "children": [
+          {
+            "id": "conservative-sub-0",
+            "label": "non-conservative forces"
+          }
+        ]
+      },
+      {
+        "id": "elastic-and-inelastic-collisio",
+        "label": "Elastic",
+        "children": [
+          {
+            "id": "elastic-sub-0",
+            "label": "inelastic collisions"
+          }
+        ]
+      }
+    ]
+  }
+}

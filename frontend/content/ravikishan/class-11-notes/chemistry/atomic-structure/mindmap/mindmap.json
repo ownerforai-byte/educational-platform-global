@@ -1,0 +1,87 @@
+{
+  "title": "Atomic Structure Mindmap",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "atomic-structure-mindmap",
+  "topicTitle": "Atomic Structure — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Atomic Structure",
+    "children": [
+      {
+        "id": "rutherford-s-atomic-model-and-",
+        "label": "Rutherford's atomic model",
+        "children": [
+          {
+            "id": "rutherford-s-atomic-model-sub-0",
+            "label": "its limitations"
+          }
+        ]
+      },
+      {
+        "id": "postulates-of-bohr-s-atomic-mo",
+        "label": "Postulates of Bohr's atomic model",
+        "children": [
+          {
+            "id": "postulates-of-bohr-s-atomic-model-sub-0",
+            "label": "its application"
+          }
+        ]
+      },
+      {
+        "id": "spectrum-of-hydrogen-atom",
+        "label": "Spectrum of hydrogen atom"
+      },
+      {
+        "id": "defects-of-bohr-s-theory",
+        "label": "Defects of Bohr's theory"
+      },
+      {
+        "id": "elementary-idea-of-quantum-mechanical-mo",
+        "label": "Elementary idea of quantum mechanical model: de Broglie's wave equation"
+      },
+      {
+        "id": "heisenberg-s-uncertainty-princ",
+        "label": "Heisenberg's Uncertainty Principle",
+        "children": [
+          {
+            "id": "heisenberg-s-uncertainty-principle-sub-0",
+            "label": "concept of probability"
+          }
+        ]
+      },
+      {
+        "id": "quantum-numbers",
+        "label": "Quantum numbers"
+      },
+      {
+        "id": "orbitals-and-shape-of-s-and-p-",
+        "label": "Orbitals",
+        "children": [
+          {
+            "id": "orbitals-sub-0",
+            "label": "shape of s"
+          },
+          {
+            "id": "orbitals-sub-1",
+            "label": "p orbitals only"
+          }
+        ]
+      },
+      {
+        "id": "aufbau-principle-pauli-s-exclu",
+        "label": "Aufbau principle, Pauli's exclusion principle, Hund's rule",
+        "children": [
+          {
+            "id": "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-sub-0",
+            "label": "electronic configurations of atoms"
+          },
+          {
+            "id": "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-sub-1",
+            "label": "ions (up to atomic no. 30)"
+          }
+        ]
+      }
+    ]
+  }
+}

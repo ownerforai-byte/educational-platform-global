@@ -1,0 +1,63 @@
+{
+  "title": "General and Fundamental Principles of Organic Chemistry Mindmap",
+  "unitSlug": "general-and-organic-fundamentals",
+  "topicSlug": "general-and-organic-fundamentals-mindmap",
+  "topicTitle": "General and Fundamental Principles of Organic Chemistry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "General and Fundamental Principles of Organic Chemistry",
+    "children": [
+      {
+        "id": "purification-and-qualitative-q",
+        "label": "Purification",
+        "children": [
+          {
+            "id": "purification-sub-0",
+            "label": "qualitative/quantitative analysis of organic compounds"
+          }
+        ]
+      },
+      {
+        "id": "inductive-effect-resonance-hyperconjugat",
+        "label": "Inductive effect, resonance, hyperconjugation"
+      },
+      {
+        "id": "electrophilic-and-nucleophilic",
+        "label": "Electrophilic",
+        "children": [
+          {
+            "id": "electrophilic-sub-0",
+            "label": "nucleophilic substitution reactions"
+          }
+        ]
+      },
+      {
+        "id": "free-radical-reactions",
+        "label": "Free radical reactions"
+      },
+      {
+        "id": "important-organic-reactions-ox",
+        "label": "Important organic reactions",
+        "children": [
+          {
+            "id": "important-organic-reactions-sub-0",
+            "label": "oxidation"
+          },
+          {
+            "id": "important-organic-reactions-sub-1",
+            "label": "reduction"
+          },
+          {
+            "id": "important-organic-reactions-sub-2",
+            "label": "addition"
+          },
+          {
+            "id": "important-organic-reactions-sub-3",
+            "label": "elimination"
+          }
+        ]
+      }
+    ]
+  }
+}

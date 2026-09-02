@@ -1,29 +1,49 @@
 {
-  "title": "Heat (H) â€” Mass and Temperature Dependency",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "specific-latent-heat-of-fusion-and-vaporization",
-  "topicTitle": "Specific latent heat of fusion and vaporization",
-  "relevance": 79,
-  "notes": [
-    "**Mass Dependency:** Heat absorbed/released (H) is directly proportional to mass (m): H âˆ m",
-    "**Temperature Dependency:** H is directly proportional to the change in temperature (Î”Î¸): H âˆ Î”Î¸, where Î”Î¸ = Î¸â‚‚ âˆ’ Î¸â‚ (final âˆ’ initial)",
-    "**Combined relation:** H âˆ mÂ·Î”Î¸ â†’ introducing specific heat capacity (s or c) as the constant of proportionality gives **H = mÂ·cÂ·Î”Î¸**"
+  \"\"\"title\"\"\": \"\"\"Heat (H) - Mass and Temperature Dependency\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Quantity of heat (H) - mass and temperature dependency\"\"\",
+  \"\"\"relevance\"\"\": 100,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Heat is energy in transit:** Heat ($H$) is the thermal energy transferred between systems due to a temperature difference. It is NOT a property of a body - you cannot say \"\"\"a body contains heat.\"\"\" A body contains internal energy; heat is the transfer of that energy.\"\"\",
+    \"\"\"**Mass dependency (H ∝ m):** For a given substance and temperature change, the heat required is directly proportional to the mass: $H \\propto m$. Doubling the mass doubles the heat needed. This is because more molecules means more total kinetic energy must change.\"\"\",
+    \"\"\"**Temperature dependency (H ∝ Δθ):** For a given mass, heat is directly proportional to the temperature change: $H \\propto \\Delta\\theta$, where $\\Delta\\theta = \\theta_f - \\theta_i$ (final − initial). Heating water from 20°C to 80°C requires 3× the heat of heating from 20°C to 40°C.\"\"\",
+    \"\"\"**Combined relation:** Combining both: $H \\propto m \\cdot \\Delta\\theta$. Introducing the constant of proportionality - the specific heat capacity ($c$) - gives the fundamental equation: **$H = m \\cdot c \\cdot \\Delta\\theta$**\"\"\",
+    \"\"\"**Sign convention:** When heat is absorbed (temperature rises), $H > 0$ and $\\Delta\\theta > 0$. When heat is released (temperature falls), $H < 0$ and $\\Delta\\theta < 0$. The sign tells you the direction of energy flow.\"\"\",
+    \"\"\"**Units of heat:** SI unit is the **joule (J)**. The CGS unit is the **calorie (cal)**. Conversion: $1\\text{ cal} = 4.184\\text{ J}$ (thermochemical calorie). Another unit, the BTU (British Thermal Unit), is used in engineering: $1\\text{ BTU} \\approx 1055\\text{ J}$.\"\"\",
+    \"\"\"**Heat vs. Temperature:** Temperature ($\\theta$) is an intensive property - it doesn't depend on the amount of substance. Heat ($H$) is extensive - it depends on mass. A cup of water at 80°C has a higher temperature than a bathtub at 50°C, but the bathtub has more thermal energy (and more heat to transfer if cooled).\"\"\",
+    \"\"\"**Heat vs. Internal Energy:** Internal energy ($U$) is the total energy stored in a system's molecules. Heat ($H$) is the energy TRANSFERRED. When you heat a body, its internal energy increases: $\\Delta U = H$ (at constant volume, no work done).\"\"\",
+    \"\"\"**Real-world analogy:** Think of water flowing from a high tank to a low tank. Temperature is like water level (height), heat is like the amount of water that flows. Two tanks at the same height have the same temperature, but the larger tank has more water (more heat capacity).\"\"\",
+    \"\"\"**Calorimetry context:** In all calorimetry problems, the equation $H = mc\\Delta\\theta$ is applied to EACH substance separately. Hot body: $H_{lost} = m_h c_h (\\theta_h - \\theta_{eq})$. Cold body: $H_{gained} = m_c c_c (\\theta_{eq} - \\theta_c)$. Set $H_{lost} = H_{gained}$.\"\"\",
+    \"\"\"**Common values of c (for reference):** Water: $c = 4200\\text{ J/kg·K}$. Ice: $c = 2100\\text{ J/kg·K}$. Copper: $c = 390\\text{ J/kg·K}$. Aluminum: $c = 900\\text{ J/kg·K}$. Iron: $c = 450\\text{ J/kg·K}$. Lead: $c = 130\\text{ J/kg·K}$. Higher $c$ means more heat needed per degree.\"\"\",
+    \"\"\"**Why water is special:** Water has the highest specific heat among common liquids ($4200\\text{ J/kg·K}$). This means it absorbs huge amounts of heat with minimal temperature change - why it's used as a coolant in car radiators, power plants, and why coastal climates are moderate.\"\"\",
+    \"\"\"**Quick estimation rule:** For a 1 kg mass of water, raising temperature by 1°C requires 4200 J. So heating 2 kg by 50°C requires $H = 2 \\times 4200 \\times 50 = 420{,}000\\text{ J} = 420\\text{ kJ}$. This is roughly the energy in 100 g of sugar.\"\"\",
+    \"\"\"**Dimensional check:** $[H] = [M][L]^2[T]^{-2}$ (energy). $[mc\\Delta\\theta] = [M] \\cdot [L]^2[T]^{-2}[\\Theta]^{-1} \\cdot [\\Theta] = [M][L]^2[T]^{-2}$. ✓ Dimensions match.\"\"\",
+    \"\"\"**Power and heat rate:** If heat is supplied at a constant rate (power $P$), then $H = Pt$. So $Pt = mc\\Delta\\theta$, which gives $\\Delta\\theta/t = P/(mc)$. A 1500 W kettle heats 1 kg of water at $\\Delta\\theta/t = 1500/(1 \\times 4200) = 0.357\\text{ °C/s}$.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ Heat and temperature are the same thing. ✅ Temperature is the average molecular kinetic energy (intensive). Heat is the total energy transferred (extensive). A spark at 2000°C has tiny heat content; a bathtub at 40°C has huge heat content.\"\"\",
+    \"\"\"❌ A body \"\"\"contains\"\"\" heat. ✅ A body contains internal energy (kinetic + potential of its molecules). Heat is the TRANSFER of energy due to temperature difference. Once energy is in the body, it's no longer \"\"\"heat.\"\"\" Think of it like \"\"\"payment\"\"\" - once received, it's no longer a payment; it's just money in your account.\"\"\",
+    \"\"\"❌ All materials heat up at the same rate with the same power. ✅ Different materials have different specific heats. 1 kW heats 1 kg of aluminum ($c=900$) much faster than 1 kg of water ($c=4200$). The aluminum's temperature rises ~4.7× faster.\"\"\",
+    \"\"\"❌ The formula H = mcΔθ works for phase changes too. ✅ This formula ONLY works when temperature changes WITHOUT a phase change. During melting (ice → water at 0°C) or boiling (water → steam at 100°C), temperature stays constant - you need $H = mL$ instead.\"\"\",
+    \"\"\"❌ Specific heat capacity depends on the amount of substance. ✅ Specific heat capacity is an INTENSIVE property - it depends only on the MATERIAL, not the mass. 1 kg of copper has $c = 390\\text{ J/kg·K}$, same as 1 g of copper.\"\"\",
+    \"\"\"❌ Heat always flows from hot to cold, so a cold object can never lose heat to a hot one. ✅ Heat naturally flows from hot to cold. However, a refrigerator CAN move heat from cold to hot - but only by doing external work (compressor). This doesn't violate the second law.\"\"\",
+    \"\"\"❌ If you add heat, temperature always rises. ✅ During a phase change (melting, boiling, sublimation), added heat goes into breaking intermolecular bonds (increasing potential energy), NOT increasing kinetic energy. Temperature stays constant during the transition.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"How much heat is required to raise the temperature of 2.5 kg of water from 20°C to 80°C? $H = mc\\Delta\\theta = 2.5 \\times 4200 \\times 60 = 630{,}000\\text{ J} = 630\\text{ kJ}$.\"\"\",
+    \"\"\"A 500 g copper block at 100°C is placed in 200 g of water at 20°C. If no heat is lost, what is the final temperature? Set $m_{Cu}c_{Cu}(100 - T) = m_w c_w(T - 20)$. $0.5 \\times 390 \\times (100-T) = 0.2 \\times 4200 \\times (T-20)$. $195(100-T) = 840(T-20)$. $19500 - 195T = 840T - 16800$. $1035T = 36300 \\Rightarrow T \\approx 35.1°\\text{C}$.\"\"\",
+    \"\"\"An electric heater supplies 840 J/s to 2 kg of water. How long to raise the temperature from 25°C to 75°C? $H = mc\\Delta\\theta = 2 \\times 4200 \\times 50 = 420{,}000\\text{ J}$. Time $t = H/P = 420000/840 = 500\\text{ s} \\approx 8\\text{ min } 20\\text{ s}$.\"\"\",
+    \"\"\"What mass of iron ($c = 450\\text{ J/kg·K}$) at 100°C is needed to raise 0.5 kg of water from 15°C to 25°C? $m_{Fe} \\times 450 \\times (100-25) = 0.5 \\times 4200 \\times 10$. $m_{Fe} \\times 33750 = 21000$. $m_{Fe} = 0.622\\text{ kg} = 622\\text{ g}$.\"\"\",
+    \"\"\"A 0.2 kg aluminum calorimeter contains 0.3 kg of water at 20°C. A 0.1 kg copper block at 90°C is dropped in. Find the equilibrium temperature ($c_{Al} = 900$, $c_{Cu} = 390$). Heat gained: $(0.3 \\times 4200 + 0.2 \\times 900)(T-20) = 1440(T-20)$. Heat lost: $0.1 \\times 390 \\times (90-T) = 39(90-T)$. $1440(T-20) = 3510 - 39T$. $1479T = 6390 \\Rightarrow T \\approx 4.32°\\text{C}$ - wait, that's too low. Recalculate: $1440T - 28800 = 3510 - 39T$. $1479T = 32310 \\Rightarrow T \\approx 21.85°\\text{C}$.\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"The calorie was originally defined as the heat needed to raise 1 gram of water by 1°C - specifically from 14.5°C to 15.5°C, since water's specific heat varies slightly with temperature. The modern value is $1\\text{ cal} = 4.184\\text{ J}$ (exact).\"\"\",
+    \"\"\"Water's anomalously high specific heat ($4200\\text{ J/kg·K}$) is due to hydrogen bonding. Breaking these bonds requires extra energy, so more heat goes into the system without raising temperature. This is why oceans moderate Earth's climate.\"\"\",
+    \"\"\"The concept of \"\"\"heat\"\"\" as a form of energy was established by James Prescott Joule in the 1840s. His famous paddle-wheel experiment showed that mechanical work could be converted to heat, establishing the mechanical equivalent of heat: $1\\text{ J} \\leftrightarrow$ temperature rise.\"\"\",
+    \"\"\"Joseph Black (1728-1799) was the first to distinguish between \"\"\"heat\"\"\" and \"\"\"temperature.\"\"\" He observed that melting ice absorbs heat without changing temperature - this led to the concept of \"\"\"latent heat\"\"\" and the caloric theory of heat.\"\"\",
+    \"\"\"Specific heat capacity determines how quickly a material heats up or cools down. Metals (low $c$) heat up fast; water (high $c$) resists temperature change. This is why a metal spoon gets hot quickly in soup, but the soup itself takes minutes to cool.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

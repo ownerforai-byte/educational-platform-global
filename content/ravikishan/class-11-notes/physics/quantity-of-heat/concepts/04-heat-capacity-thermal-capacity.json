@@ -1,29 +1,50 @@
 {
-  "title": "Heat Capacity (Thermal Capacity, Câ€²)",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
-  "topicTitle": "Measurement of specific heat capacity of solids and liquids",
-  "relevance": 77,
-  "notes": [
-    "**Distinction:** specific heat capacity (c) is defined per unit mass; heat capacity (Câ€²) is for the *entire* mass of a given object",
-    "**Formula:** Câ€² = mÂ·c",
-    "**Heat exchanged:** H = Câ€²Â·Î”Î¸"
+  \"\"\"title\"\"\": \"\"\"Heat Capacity (Thermal Capacity, C')\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"heat-capacity\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Heat capacity (thermal capacity, C')\"\"\",
+  \"\"\"relevance\"\"\": 95,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Definition:** Heat capacity (also called thermal capacity), denoted $C'$ or simply $C$, is the amount of heat energy required to raise the temperature of an **entire object** (not a unit mass) by 1 K (or 1°C).\"\"\",
+    \"\"\"**Formula:** $C' = m \\cdot c$, where $m$ is the mass of the object and $c$ is the specific heat capacity of the material. Alternatively, $C' = H/\\Delta\\theta$ - heat required per degree of temperature rise.\"\"\",
+    \"\"\"**Heat exchanged using C':** $H = C' \\cdot \\Delta\\theta$. This is simpler than $H = mc\\Delta\\theta$ when you already know the heat capacity of the object.\"\"\",
+    \"\"\"**SI unit:** $\\text{J/K}$ (joule per kelvin) or $\\text{J/°C}$. Since a kelvin and a degree Celsius have the same size, $\\text{J/K} = \\text{J/°C}$ numerically.\"\"\",
+    \"\"\"**CGS unit:** $\\text{cal/°C}$ (calorie per degree Celsius). Water's heat capacity is $1\\text{ cal/°C}$ per gram, or $4.186\\text{ J/°C}$ per gram.\"\"\",
+    \"\"\"**Key distinction - C' vs c:** $c$ (specific heat) is an INTENSIVE property - it depends only on the MATERIAL (e.g., copper always has $c = 390\\text{ J/kg·K}$). $C'$ (heat capacity) is an EXTENSIVE property - it depends on both the material AND the mass of the object. A 2 kg copper block has $C' = 2 \\times 390 = 780\\text{ J/K}$.\"\"\",
+    \"\"\"**Dimensional formula:** $[C'] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] = [ML^2T^{-2}\\Theta^{-1}]$. Unlike $c$, the mass dimension $[M]$ does NOT cancel.\"\"\",
+    \"\"\"**Water equivalent connection:** Heat capacity is directly related to water equivalent: $C' = W \\cdot c_w$, where $W$ is the water equivalent mass and $c_w$ is water's specific heat. So $C' = W \\times 4186\\text{ J/K}$.\"\"\",
+    \"\"\"**Calorimeter heat capacity:** A calorimeter has its own heat capacity $C'_{cal} = m_{cal} \\cdot c_{cal}$. In calorimetry problems, this must be included: $H_{gained} = (m_{liquid}c_{liquid} + C'_{cal})\\Delta\\theta_{liquid}$.\"\"\",
+    \"\"\"**Practical examples:** A 500 g aluminum pot ($c = 900$): $C' = 0.5 \\times 900 = 450\\text{ J/K}$. A 2 kg iron pan ($c = 450$): $C' = 2 \\times 450 = 900\\text{ J/K}$. The iron pan needs more heat for the same temperature rise - despite iron's lower $c$, its larger mass wins.\"\"\",
+    \"\"\"**Why it matters in experiments:** When measuring specific heat using the method of mixtures, you must account for the heat capacity of the container. Neglecting $C'_{cal}$ is a common source of error.\"\"\",
+    \"\"\"**Thermal mass:** In building physics, \"\"\"thermal mass\"\"\" is the aggregate heat capacity of a building's materials (walls, floors, furniture). High thermal mass means the building heats and cools slowly - beneficial for passive solar design.\"\"\",
+    \"\"\"**Comparison table:** Substance | Mass | c (J/kg·K) | C' (J/K)\nWater (1 L) | 1 kg | 4200 | 4200\nAluminum pot (0.5 kg) | 0.5 kg | 900 | 450\nIron pan (2 kg) | 2 kg | 450 | 900\nLead weight (1 kg) | 1 kg | 130 | 130\"\"\",
+    \"\"\"**NEB exam tip:** Distinguish clearly between $c$ (specific heat, per kg) and $C'$ (heat capacity, for the whole object). Many exam questions give $C'$ directly and ask you to find $c$, or vice versa. Remember: $C' = mc$ and $c = C'/m$.\"\"\",
+    \"\"\"**Relationship to Newton's law of cooling:** In Newton's law, the cooling constant $K$ is often written as $K = hA/C'$, where $h$ is the surface heat transfer coefficient and $A$ is the surface area. A larger $C'$ means slower cooling.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ Heat capacity and specific heat are the same thing. ✅ Heat capacity ($C'$) depends on the object's mass; specific heat ($c$) is a property of the material alone. $C' = mc$ - they are related but not identical.\"\"\",
+    \"\"\"❌ A larger object always has a larger heat capacity. ✅ For the SAME material, yes. But a small lead weight ($c=130$) may have a smaller $C'$ than a large aluminum block ($c=900$) even if the lead is more massive.\"\"\",
+    \"\"\"❌ Heat capacity has no units. ✅ Heat capacity has units: J/K (SI) or cal/°C (CGS). Specific heat has units J/kg·K or cal/g·°C. The units are different by a factor of mass.\"\"\",
+    \"\"\"❌ Heat capacity is the same for all objects of the same material. ✅ Heat capacity depends on BOTH material and mass. Two copper objects have the same $c$ but different $C'$ if their masses differ.\"\"\",
+    \"\"\"❌ The dimensional formula of heat capacity is $[M^0L^2T^{-2}\\Theta^{-1}]$. ✅ Heat capacity includes mass: $[C'] = [ML^2T^{-2}\\Theta^{-1}]$. The $[M]$ does NOT cancel because $C'$ depends on the amount of substance.\"\"\",
+    \"\"\"❌ You can use $C'$ in place of $c$ in all formulas. ✅ In $H = mc\\Delta\\theta$, replace $mc$ with $C'$: $H = C'\\Delta\\theta$. But if you need $c$ itself (e.g., to identify the material), you must divide: $c = C'/m$.\"\"\",
+    \"\"\"❌ Water equivalent has units of J/K. ✅ Water equivalent ($W$) has units of MASS (kg or g). Heat capacity has units of J/K. They are related by $C' = W \\cdot c_w$, where $c_w = 4186\\text{ J/kg·K}$.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"A 2 kg iron block ($c = 450\\text{ J/kg·K}$) is heated from 20°C to 80°C. Find its heat capacity and the heat required. $C' = 2 \\times 450 = 900\\text{ J/K}$. $H = 900 \\times 60 = 54{,}000\\text{ J} = 54\\text{ kJ}$.\"\"\",
+    \"\"\"An object has heat capacity 840 J/K. How much heat raises its temperature by 15°C? $H = C'\\Delta\\theta = 840 \\times 15 = 12{,}600\\text{ J} = 12.6\\text{ kJ}$.\"\"\",
+    \"\"\"A calorimeter has mass 0.05 kg and $c = 400\\text{ J/kg·K}$. Find its heat capacity and water equivalent. $C' = 0.05 \\times 400 = 20\\text{ J/K}$. $W = C'/c_w = 20/4186 = 0.00478\\text{ kg} = 4.78\\text{ g}$.\"\"\",
+    \"\"\"Two objects A and B have the same heat capacity. Object A is 0.5 kg of aluminum ($c=900$). Object B is 1.0 kg of an unknown material. Find B's specific heat. $C'_A = 0.5 \\times 900 = 450\\text{ J/K}$. Since $C'_B = C'_A$: $1.0 \\times c_B = 450 \\Rightarrow c_B = 450\\text{ J/kg·K}$ (iron).\"\"\",
+    \"\"\"A copper calorimeter ($m = 0.1\\text{ kg}$, $c = 390$) contains 0.2 kg of water. Find the total heat capacity of the system. $C'_{cal} = 0.1 \\times 390 = 39\\text{ J/K}$. $C'_{water} = 0.2 \\times 4200 = 840\\text{ J/K}$. $C'_{total} = 39 + 840 = 879\\text{ J/K}$.\"\"\",
+    \"\"\"An object's temperature rises by 10 K when 2000 J of heat is supplied. Find its heat capacity, water equivalent, and the mass if it's made of copper ($c=390$). $C' = 2000/10 = 200\\text{ J/K}$. $W = 200/4186 = 0.0478\\text{ kg} = 47.8\\text{ g}$. $m = C'/c = 200/390 = 0.513\\text{ kg}$.\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"Heat capacity is sometimes called \"\"\"thermal mass\"\"\" in engineering. A brick wall has high thermal mass - it absorbs heat during the day and releases it at night, moderating indoor temperatures.\"\"\",
+    \"\"\"The concept of heat capacity was developed by Joseph Black in the 1760s. He realized that \"\"\"heat content\"\"\" (what he called \"\"\"quantity of heat\"\"\") is different from \"\"\"temperature\"\"\" - two objects at the same temperature can have different heat capacities.\"\"\",
+    \"\"\"In chemistry, the molar heat capacity ($C_m$) is more useful than mass heat capacity. For gases, $C_p$ (constant pressure) and $C_v$ (constant volume) are both molar heat capacities and differ by $R = 8.314\\text{ J/mol·K}$.\"\"\",
+    \"\"\"Phase changes involve enormous heat capacities in a sense - during melting, temperature doesn't change despite continuous heat input, so $C' = H/\\Delta\\theta \\to \\infty$. This is why the concept of heat capacity breaks down at phase transitions.\"\"\",
+    \"\"\"The heat capacity of the Earth's oceans ($\\sim 1.4 \\times 10^{21}\\text{ J/K}$) is so large that absorbing 1 W per square meter of ocean surface raises the ocean temperature by only about 0.02 K per century - yet this small change drives global sea level rise through thermal expansion.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

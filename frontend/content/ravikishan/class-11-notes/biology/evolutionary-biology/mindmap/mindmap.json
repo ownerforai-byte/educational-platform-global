@@ -1,0 +1,81 @@
+{
+  "title": "Evolutionary Biology Mindmap",
+  "unitSlug": "evolutionary-biology",
+  "topicSlug": "evolutionary-biology-mindmap",
+  "topicTitle": "Evolutionary Biology — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Evolutionary Biology",
+    "children": [
+      {
+        "id": "life-and-its-origin-oparin-hal",
+        "label": "Life and its origin",
+        "children": [
+          {
+            "id": "life-and-its-origin-sub-0",
+            "label": "Oparin-Haldane theory"
+          },
+          {
+            "id": "life-and-its-origin-sub-1",
+            "label": "Miller and Urey's experiment"
+          }
+        ]
+      },
+      {
+        "id": "evidences-of-evolution-morphol",
+        "label": "Evidences of evolution",
+        "children": [
+          {
+            "id": "evidences-of-evolution-sub-0",
+            "label": "Morphological"
+          },
+          {
+            "id": "evidences-of-evolution-sub-1",
+            "label": "Anatomical"
+          },
+          {
+            "id": "evidences-of-evolution-sub-2",
+            "label": "Paleontological"
+          },
+          {
+            "id": "evidences-of-evolution-sub-3",
+            "label": "Embryological and Biochemical"
+          }
+        ]
+      },
+      {
+        "id": "theories-of-evolution-lamarcki",
+        "label": "Theories of evolution",
+        "children": [
+          {
+            "id": "theories-of-evolution-sub-0",
+            "label": "Lamarckism"
+          },
+          {
+            "id": "theories-of-evolution-sub-1",
+            "label": "Darwinism and concept of Neo-Darwinism"
+          }
+        ]
+      },
+      {
+        "id": "human-evolution-position-of-man-in-anima",
+        "label": "Human evolution: Position of man in animal kingdom"
+      },
+      {
+        "id": "differences-between-new-world-",
+        "label": "Differences between new world monkeys",
+        "children": [
+          {
+            "id": "differences-between-new-world-monkeys-sub-0",
+            "label": "old-world monkeys, apes"
+          }
+        ]
+      },
+      {
+        "id": "evolution-of-modern-man-starting-from-an",
+        "label": "Evolution of modern man starting from anthropoid ancestor"
+      }
+    ]
+  }
+}

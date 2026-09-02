@@ -56,8 +56,11 @@ export function BiogeochemicalCyclesVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let cycleParticle: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -133,6 +136,11 @@ export function BiogeochemicalCyclesVisual() {
           }
 
           push(mkSprite("Carbon Cycle", "#fbbf24", new THREE.Vector3(0, 4.5, 0), 0.85));
+          cycleParticle = push(new THREE.Mesh(
+            new THREE.SphereGeometry(0.18, 12, 12),
+            new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
+          )) as THREE.Mesh;
+          cycleParticle.position.set(0, 3, 0);
         } else {
           // Nitrogen cycle
           const nodes = [
@@ -193,6 +201,17 @@ export function BiogeochemicalCyclesVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.02;
+        if (cycleParticle) {
+          const nodes = cycle === "carbon"
+            ? [{ x: 0, y: 3 }, { x: -3, y: 1 }, { x: 0, y: -0.5 }, { x: -2.5, y: -2.5 }, { x: 2.5, y: -2.5 }, { x: 3, y: 1 }]
+            : [{ x: 0, y: 3.2 }, { x: -3, y: 1 }, { x: 0, y: -0.5 }, { x: -2.5, y: -2.5 }, { x: 2.5, y: -2.5 }, { x: 3, y: 1 }];
+          const idx = Math.floor(animTime * 2) % nodes.length;
+          const nextIdx = (idx + 1) % nodes.length;
+          const t = (animTime * 2) % 1;
+          cycleParticle.position.x = nodes[idx].x + (nodes[nextIdx].x - nodes[idx].x) * t;
+          cycleParticle.position.y = nodes[idx].y + (nodes[nextIdx].y - nodes[idx].y) * t;
+        }
         renderer.render(scene, camera);
       };
       animate();

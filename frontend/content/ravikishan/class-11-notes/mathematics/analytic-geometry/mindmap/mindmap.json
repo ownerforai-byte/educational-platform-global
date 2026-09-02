@@ -1,0 +1,71 @@
+{
+  "title": "Analytic Geometry Mindmap",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "analytic-geometry-mindmap",
+  "topicTitle": "Analytic Geometry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Analytic Geometry",
+    "children": [
+      {
+        "id": "straight-line-length-of-perpen",
+        "label": "Straight line",
+        "children": [
+          {
+            "id": "straight-line-sub-0",
+            "label": "length of perpendicular from a given point to a given line"
+          },
+          {
+            "id": "straight-line-sub-1",
+            "label": "bisectors of the angles between two straight lines"
+          }
+        ]
+      },
+      {
+        "id": "pair-of-straight-lines-general",
+        "label": "Pair of straight lines",
+        "children": [
+          {
+            "id": "pair-of-straight-lines-sub-0",
+            "label": "general equation of second degree in x and y"
+          },
+          {
+            "id": "pair-of-straight-lines-sub-1",
+            "label": "condition for representing a pair of lines"
+          },
+          {
+            "id": "pair-of-straight-lines-sub-2",
+            "label": "homogenous second-degree equation in x and y"
+          },
+          {
+            "id": "pair-of-straight-lines-sub-3",
+            "label": "angle between pair of lines"
+          },
+          {
+            "id": "pair-of-straight-lines-sub-4",
+            "label": "bisectors of the angles between pair of lines"
+          }
+        ]
+      },
+      {
+        "id": "coordinates-in-space-points-in",
+        "label": "Coordinates in space",
+        "children": [
+          {
+            "id": "coordinates-in-space-sub-0",
+            "label": "points in space"
+          },
+          {
+            "id": "coordinates-in-space-sub-1",
+            "label": "distance between two points"
+          },
+          {
+            "id": "coordinates-in-space-sub-2",
+            "label": "direction cosines and ratios of a line"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -44,8 +44,11 @@ export function OhmsLawVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let currentDot: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -97,6 +100,13 @@ export function OhmsLawVisual() {
       }
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0x22d3ee, linewidth: 2 })));
 
+      // Moving current dot
+      currentDot = push(new THREE.Mesh(
+        new THREE.SphereGeometry(0.12, 12, 12),
+        new THREE.MeshBasicMaterial({ color: 0xf97316 }),
+      )) as THREE.Mesh;
+      currentDot.position.set(0, 0, 0.05);
+
       // Data points
       for (let v = 0; v <= maxVoltage; v += 2) {
         const i = v / R;
@@ -145,6 +155,12 @@ export function OhmsLawVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.025;
+        if (currentDot) {
+          const t = (animTime * 0.5) % 1;
+          currentDot.position.x = t * maxVoltage;
+          currentDot.position.y = (t * maxVoltage) / R;
+        }
         renderer.render(scene, camera);
       };
       animate();

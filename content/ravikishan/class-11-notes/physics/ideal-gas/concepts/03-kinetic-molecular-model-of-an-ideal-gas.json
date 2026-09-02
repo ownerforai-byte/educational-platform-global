@@ -5,25 +5,44 @@
   "topicTitle": "Kinetic-molecular model of an ideal gas",
   "relevance": 100,
   "notes": [
-    "**Postulates:** (1) gas consists of a large number of identical molecules in random motion, (2) molecular volume is negligible compared to container volume, (3) no intermolecular forces except during collisions, (4) collisions are perfectly elastic, (5) collision duration is negligible compared to time between collisions.",
-    "**Pressure origin:** pressure arises from molecules colliding with the container walls. Each collision delivers a tiny impulse; the average over many molecules gives measurable pressure.",
-    "**Temperature and kinetic energy:** the average translational kinetic energy per molecule is $\\langle K \\rangle = \\frac{3}{2}k_BT$. Temperature is a direct measure of average molecular kinetic energy.",
-    "**Why temperature cannot be negative:** kinetic energy is always positive, so absolute temperature $T$ must be $\\geq 0$."
+    "**Postulates (Four fundamental assumptions):**",
+    "1. A gas consists of a large number of identical, point-like molecules with negligible volume (point particles).",
+    "2. The molecules are in constant, random motion. No two molecules occupy the same point in space.",
+    "3. There are no intermolecular forces between molecules except during perfectly elastic collisions.",
+    "4. Collisions between molecules (and with container walls) are perfectly elastic and take negligible time compared to the time between collisions.",
+    "**Why the model works:** The kinetic theory explains gas laws (Boyle's, Charles's, Gay-Lussac's) and pressure. It connects macroscopic properties (P, V, T) to microscopic behavior (molecular speed, collisions).",
+    "**Pressure origin:** Pressure arises from molecules colliding with container walls. Each collision delivers a tiny impulse (change in momentum). The average of many collisions over time creates a constant force on the wall, resulting in pressure.",
+    "**Temperature and kinetic energy:** Temperature is a direct measure of the average translational kinetic energy of the molecules. The average translational kinetic energy per molecule is $\\langle K \\rangle = \\frac{3}{2}k_BT$, where $k_B$ is the Boltzmann constant.",
+    "**Absolute temperature scale:** The Kelvin scale is an absolute temperature scale where $T = 0$ K means zero thermal motion (all molecular motion ceases). This is a fundamental limit of thermodynamics.",
+    "**Why temperature cannot be negative:** Kinetic energy is always non-negative ($\\frac{1}{2}mv^2 \\geq 0$), so $\\langle K \\rangle = \\frac{3}{2}k_BT \\geq 0$. Since $k_B > 0$, this requires $T \\geq 0$. Negative temperature is not possible in the kinetic theory.",
+    "**Maxwell-Boltzmann distribution:** The distribution of molecular speeds in an ideal gas is a specific probability distribution. It shows that most molecules have speeds near the average, with fewer at very low or very high speeds. The shape is asymmetric with a long tail to high speeds.",
+    "**Degrees of freedom:** The number of independent ways a molecule can store energy. Monatomic gas: 3 translational DOF. Diatomic: 3 translational + 2 rotational DOF at room temperature (vibrational DOF not active). Polyatomic: more DOF including vibration.",
+    "**Internal energy:** For an ideal gas, internal energy depends only on temperature and is given by $U = \\frac{f}{2}nRT$, where $f$ is the number of degrees of freedom. Monatomic: $f=3$, so $U = \\frac{3}{2}nRT$.",
+    "**Degrees of freedom and heat capacity:** $C_V = \\frac{f}{2}R$ for molar heat capacity at constant volume. Monatomic gas: $C_V = \\frac{3}{2}R$. Diatomic gas: $C_V = \\frac{5}{2}R$ (at room temperature).",
+    "**Elastic collision definition:** A collision where both momentum and kinetic energy are conserved. In an elastic collision between two molecules, the relative speed of approach equals the relative speed of separation: $|\\vec{v}_1 - \\vec{v}_2|_{\\text{after}} = |\\vec{v}_1 - \\vec{v}_2|_{\\text{before}}$.",
+    "**Collision frequency:** The average number of collisions per unit time per molecule. Increases with higher density and higher temperature (faster molecules collide more often).",
+    "**Real gas approximation:** The kinetic theory works well for gases at low pressure and high temperature where intermolecular forces are negligible and molecular volume is small compared to container volume. Real gases deviate at high pressure/low temperature."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Temperature is a measure of AVERAGE kinetic energy, not the kinetic energy of any single molecule. A hot object has higher average KE per molecule, but individual molecules have a range of speeds.",
+    "The kinetic theory assumes perfectly elastic collisions. In reality, some kinetic energy is lost to internal excitation (vibration, rotation) or radiation, especially in gases with complex molecules.",
+    "Temperature can be defined for any system in thermal equilibrium, but the kinetic energy definition $\\langle K \\rangle = \\frac{3}{2}k_BT$ applies specifically to translational kinetic energy in ideal gases. Rotational and vibrational energy also contribute to temperature.",
+    "The mean free path is inversely proportional to number density (n) and collision cross-section (σ). At higher pressure (lower volume), molecules are closer together and collide more frequently, reducing the mean free path.",
+    "The mean free path decreases with increasing temperature because molecules move faster and cover more distance between collisions, even though number density may change. $\\lambda = \\frac{1}{\\sqrt{2}n\\sigma}$, and $n \\propto P/T$."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A gas sample has a number density of $10^{25}$ molecules/m$^3$. Calculate the mean free path if the collision cross-section is $10^{-19}$ m$^2$. Solution: $\\lambda = \\frac{1}{\\sqrt{2} n \\sigma} = \\frac{1}{\\sqrt{2} \\times 10^{25} \\times 10^{-19}} = \\frac{1}{1.414 \\times 10^6} = 7.07 \\times 10^{-7}$ m $= 707$ nm.",
+    "Calculate the average translational kinetic energy of a nitrogen molecule ($N_2$) at 300 K. Solution: $\\langle K \\rangle = \\frac{3}{2}k_BT = \\frac{3}{2} \\times 1.38 \\times 10^{-23} \\times 300 = 6.21 \\times 10^{-21}$ J. Convert to eV: $6.21 \\times 10^{-21} / 1.6 \\times 10^{-19} = 0.039$ eV.",
+    "A gas expands isothermally (constant T) from 1 L to 3 L. If the initial pressure is 2 atm, find the final pressure. Solution: Boyle's law: $P_1V_1 = P_2V_2 \\rightarrow P_2 = P_1V_1/V_2 = 2 \\times 1 / 3 = 0.67$ atm.",
+    "Calculate the root-mean-square speed of oxygen molecules ($O_2$, $M = 32$ g/mol) at 300 K. Solution: $v_{rms} = \\sqrt{3RT/M} = \\sqrt{3 \\times 8.314 \\times 300 / 0.032} = \\sqrt{7482.6 / 0.032} = \\sqrt{233,831} = 484$ m/s.",
+    "Why does the kinetic theory predict that all ideal gases at the same temperature have the same average kinetic energy? Because $\\langle K \\rangle = \\frac{3}{2}k_BT$, which depends only on T, not on molecular mass or identity."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The kinetic theory was first proposed by Daniel Bernoulli in 1738 in his work 'Hydrodynamica', but it was largely ignored until revived by Clausius, Maxwell, and Boltzmann in the 19th century.",
+    "Maxwell and Boltzmann independently developed the distribution of molecular speeds in the 1860s-1870s. The distribution is now called the Maxwell-Boltzmann distribution.",
+    "At room temperature, a nitrogen molecule has an average speed of about 500 m/s, but its most probable speed (peak of the distribution) is about 470 m/s, while the rms speed is about 517 m/s. The distribution is asymmetric with a long tail to high speeds.",
+    "The kinetic theory explains why sound travels faster in solids (molecules are closer together, so momentum transfer is more efficient) than in gases, despite gases having faster individual molecules.",
+    "The third law of thermodynamics (Nernst's theorem) states that the entropy of a perfect crystal at absolute zero is zero. This is related to the fact that at $T = 0$ K, molecular motion ceases, so there is only one possible microstate."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

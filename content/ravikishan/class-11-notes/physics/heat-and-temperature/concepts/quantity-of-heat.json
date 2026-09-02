@@ -5,40 +5,39 @@
   "topicTitle": "Quantity of Heat",
   "relevance": 45,
   "notes": [
-    "<h2>Heat and Temperature</h2>",
-    "<p><b>Heat</b> is the energy transferred between two bodies due to a temperature difference. It flows from a hotter body to a colder body. <b>Temperature</b> is a measure of the average kinetic energy of the molecules of a body; it decides the direction of heat flow. The SI unit of heat is the <b>joule (J)</b>; the practical unit is the <b>calorie (cal)</b>, where $1\\,cal = 4.186\\,J$.</p>",
-    "<h2>Heat Capacity and Specific Heat Capacity</h2>",
-    "<p>The <b>heat capacity (C)</b> of a body is the quantity of heat required to raise its temperature by 1Â°C (or 1 K): $C = \\frac{Q}{\\Delta\\theta}$, unit J/K.</p>",
-    "<p>The <b>specific heat capacity (s or c)</b> is the heat required to raise the temperature of unit mass of a substance by 1Â°C:</p>",
-    "$$Q = ms\\Delta\\theta$$",
-    "<p>where $m$ is the mass, $s$ is the specific heat capacity, and $\\Delta\\theta$ is the rise in temperature. The SI unit is $J\\,kg^{-1}\\,K^{-1}$. For water, $s = 4200\\,J\\,kg^{-1}\\,K^{-1} = 1\\,cal\\,g^{-1}\\,Â°C^{-1}$.</p>",
-    "<h2>Molar Heat Capacity</h2>",
-    "<p>The heat required to raise the temperature of 1 mole of a substance by 1 K: $C = \\frac{1}{n}\\frac{Q}{\\Delta\\theta}$. For gases there are two values: $C_p$ (at constant pressure) and $C_v$ (at constant volume), with $C_p - C_v = R$ (Mayer's relation).</p>",
-    "<h2>Water Equivalent</h2>",
-    "<p>The <b>water equivalent</b> of a body is the mass of water that would require the same quantity of heat as the body to raise its temperature by the same amount: $W = m s$ (mass of water), unit gram or kilogram.</p>",
-    "<h2>Latent Heat and Change of State</h2>",
-    "<p>During a change of state (melting, boiling), temperature remains constant while heat is absorbed. The <b>latent heat (L)</b> is the heat required to change the state of unit mass of a substance without changing its temperature:</p>",
-    "$$Q = mL$$",
-    "<p>For water: latent heat of fusion $L_f = 3.36 \\times 10^5\\,J\\,kg^{-1}$ and latent heat of vaporisation $L_v = 2.26 \\times 10^6\\,J\\,kg^{-1}$.</p>",
-    "<h2>Calorimetry â€” Principle of Heat Exchange</h2>",
-    "<p>When hot and cold bodies are mixed, the heat lost by the hot body equals the heat gained by the cold body (if no heat is lost to the surroundings):</p>",
-    "$$\\text{Heat lost} = \\text{Heat gained}$$",
-    "<p>This principle is used in a <b>calorimeter</b> to measure specific heat capacities.</p>"
+    "**Heat (Q):** A form of energy that flows between a system and its surroundings due to a temperature difference. The SI unit of heat is the joule (J), where 1 J = 1 kg·m²/s². The practical unit is the calorie (cal), where 1 cal = 4.186 J (the amount of heat to raise 1 g of water by 1°C).",
+    "**Specific heat capacity (s or c):** The quantity of heat required to raise the temperature of 1 kg of a substance by 1 K (or 1°C). Formula: Q = mcΔθ, where m = mass, c = specific heat capacity, Δθ = temperature change. SI unit: J kg⁻¹ K⁻¹. Water has c = 4186 J kg⁻¹ K⁻¹ (or 1 cal g⁻¹ °C⁻¹), the highest among common substances.",
+    "**Heat capacity (C):** The quantity of heat required to raise the temperature of an entire body by 1 K (or 1°C). C = Q/Δθ = mc. SI unit: J/K. Heat capacity is an extensive property (depends on mass); specific heat capacity is intensive.",
+    "**Molar heat capacity (C_m or C_mol):** Heat required to raise 1 mole of a substance by 1 K. C_m = Q/(nΔT). For ideal gases: C_p (constant pressure) and C_v (constant volume), related by Mayer's relation: C_p − C_v = R.",
+    "**Latent heat (L):** Heat required to change the state of a substance without changing its temperature. Formula: Q = mL, where m is mass. Three types: (1) latent heat of fusion L_f (melting/freezing), (2) latent heat of vaporization L_v (boiling/condensation), (3) latent heat of sublimation L_s (solid↔gas). Water: L_f = 3.34 × 10⁵ J/kg, L_v = 2.26 × 10⁶ J/kg.",
+    "**Calorimetry:** The measurement of heat transfer using a calorimeter — an insulated container. The principle of calorimetry: heat lost by hot objects = heat gained by cold objects (assuming no heat loss to surroundings). Q_lost + Q_gained = 0, or ΣmcΔT = 0.",
+    "**Specific latent heat and phase transitions:** During a phase change, temperature remains constant (latent heat is used to break intermolecular bonds). The P-T diagram shows phase boundaries. The Clausius-Clapeyron equation describes how phase boundaries depend on pressure and temperature.",
+    "**Heat of mixing problems:** When substances at different temperatures are mixed, heat transfers until thermal equilibrium is reached: m₁c₁(T_f − T₁) = m₂c₂(T₂ − T_f), assuming no phase change.",
+    "**Water equivalent:** The mass of water that would require the same amount of heat as a given body to produce the same temperature rise. W = m_s × (specific heat of substance)/(specific heat of water) = m_s × (s/c_water).",
+    "**Units and conversions:** 1 calorie (cal) = 4.186 J (approx). Dietary Calorie (Cal or kcal) = 1000 cal = 4186 J. 1 BTU (British thermal unit) = 1055 J (heat to raise 1 lb of water by 1°F).",
+    "**Joule's mechanical equivalent of heat:** In the mechanical equivalent of heat experiment, Joule showed that work done on a system completely equivalent to heat supplied. The mechanical equivalent of heat J = 1 cal / 4.186 J ≈ 1 (i.e., 1 cal = 4.186 J exactly by definition of the calorie).",
+    "**Enthalpy and heat at constant pressure:** At constant pressure, the heat transferred Q_p equals the change in enthalpy ΔH = ΔU + PΔV. This is why chemists often quote heats of reaction (ΔH) at constant pressure."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Heat and temperature are often confused, but they are fundamentally different. Temperature measures average kinetic energy of particles; heat is the energy transferred due to temperature difference. A large ice-water bath at 0°C has far more 'heat' (total thermal energy) than a cup of tea at 60°C, but lower temperature.",
+    "Specific heat capacity is a material property, NOT something you can compute from heat capacity alone without knowing the mass. Many students incorrectly use Q = (heat capacity) × ΔT, forgetting the mass factor.",
+    "During phase changes, Q = mcΔT does NOT apply because ΔT = 0. Heat goes entirely into breaking or forming intermolecular bonds (latent heat): Q = mL. The formula switches at phase transitions.",
+    "The calorie is defined based on water, but 'Calorie' (capital C) equals 'kilocalorie' (kcal) in food labeling. When a food label says '200 Calories,' that means 200 kilocalories = 837 kJ — enough energy to raise 200 kg of water by 1°C.",
+    "Sign convention for Q: Q > 0 when heat is added to the system; Q < 0 when heat leaves the system. In calorimetry calculations, be consistent — set Q_gained = −Q_lost, not Q_gained = Q_lost."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 50 g piece of aluminum (c = 900 J/kg·K) is heated from 20°C to 200°C. Find the heat absorbed. Solution: Q = mcΔT = 0.050 × 900 × (200−20) = 0.050 × 900 × 180 = 8100 J = 8.1 kJ.",
+    "A student drops a 0.050 kg metal block (c = 385 J/kg·K, initial 100°C) into 0.200 kg water (c = 4186 J/kg·K, initial 20°C). Find the final equilibrium temperature. Solution: Heat lost by metal = heat gained by water. 0.050 × 385 × (100−T_f) = 0.200 × 4186 × (T_f−20). Expand: 19.25(100−T_f) = 837.2(T_f−20). 1925 − 19.25T_f = 837.2T_f − 16744. 1925 + 16744 = 837.2T_f + 19.25T_f. 18669 = 856.45T_f. T_f = 21.79°C.",
+    "How much heat is needed to convert 100 g of ice at -10°C to steam at 110°C? (c_ice = 2100 J/kg·K, L_f = 3.34×10⁵ J/kg, c_water = 4186 J/kg·K, L_v = 2.26×10⁶ J/kg, c_steam = 2010 J/kg·K). Solution: Three steps: (1) Q1 = mc_iceΔT = 0.1×2100×10 = 2100 J. (2) Q2 = mL_f = 0.1×3.34×10⁵ = 33400 J. (3) Q3 = mc_waterΔT = 0.1×4186×110 = 46046 J. (4) Q4 = mL_v = 0.1×2.26×10⁶ = 226000 J. (5) Q5 = mc_steamΔT = 0.1×2010×10 = 2010 J. Total = 2100+33400+46046+226000+2010 = 307556 J ≈ 308 kJ.",
+    "In a coffee-cup calorimeter, 50.0 mL of 1.00 M HCl (density = 1.04 g/mL) at 22.46°C is mixed with 50.0 mL of 1.00 M NaOH (same density) at 22.46°C. The temperature rises to 23.29°C. Find the enthalpy of neutralization. (Specific heat ≈ 3.98 J/g·K) Solution: Mass = 100 mL × 1.04 g/mL = 104 g. Q = mcΔT = 104 × 3.98 × (23.29−22.46) = 104 × 3.98 × 0.83 = 344.5 J. Heat per mole of HCl = 344.5 J / 0.050 mol = 6890 J/mol = 6.89 kJ/mol (exothermic, so ΔH = −6.9 kJ/mol).",
+    "A copper pot (m = 2.0 kg, c = 385 J/kg·K) contains 1.5 kg of water (c = 4186 J/kg·K). Both are at 20°C. If 1000 J of heat is added, by how much does the temperature rise? Solution: Total heat capacity = m_Cu×c_Cu + m_H2O×c_H2O = 2.0×385 + 1.5×4186 = 770 + 6279 = 7049 J/K. ΔT = Q/C_total = 1000 / 7049 = 0.142 K. Temperature rises by 0.14°C to 20.14°C."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Water has the highest specific heat capacity among common substances (per gram or kilogram), which is why coastal areas have milder climates — water absorbs enormous amounts of heat with minimal temperature change.",
+    "The latent heat of vaporization (L_v) is always greater than the latent heat of fusion (L_f) for the same substance. For water, L_v ≈ 7L_f — far more energy is needed to vaporize than to melt, because vaporization requires breaking ALL intermolecular bonds, not just some.",
+    "Calorimetry relies on conservation of energy: heat lost = heat gained. This principle allows calculation of unknown specific heat capacities, heat of reaction, or specific latent heats experimentally.",
+    "The mechanical equivalent of heat (J) was historically important — it established that mechanical work and heat are different forms of the same thing (energy). Joule's value: 1 cal = 4.186 J.",
+    "The first law of thermodynamics (ΔU = Q − W) directly links to the quantity of heat in calorimetry: at constant volume (W = 0), Q = ΔU; at constant pressure, Q = ΔH. Calorimeters are designed to measure these quantities precisely."
   ],
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature"

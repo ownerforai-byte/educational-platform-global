@@ -1,0 +1,63 @@
+{
+  "title": "Alcohols, Phenols and Ethers Mindmap",
+  "unitSlug": "alcohols-phenols-ethers",
+  "topicSlug": "alcohols-phenols-ethers-mindmap",
+  "topicTitle": "Alcohols, Phenols and Ethers — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Alcohols, Phenols and Ethers",
+    "children": [
+      {
+        "id": "alcohols-classification-prepar",
+        "label": "Alcohols",
+        "children": [
+          {
+            "id": "alcohols-sub-0",
+            "label": "classification"
+          },
+          {
+            "id": "alcohols-sub-1",
+            "label": "preparation"
+          },
+          {
+            "id": "alcohols-sub-2",
+            "label": "physical and chemical properties"
+          }
+        ]
+      },
+      {
+        "id": "phenols-acidity-electrophilic-",
+        "label": "Phenols",
+        "children": [
+          {
+            "id": "phenols-sub-0",
+            "label": "acidity"
+          },
+          {
+            "id": "phenols-sub-1",
+            "label": "electrophilic substitution"
+          },
+          {
+            "id": "phenols-sub-2",
+            "label": "Kolbe's reaction"
+          },
+          {
+            "id": "phenols-sub-3",
+            "label": "Reimer-Tiemann reaction"
+          }
+        ]
+      },
+      {
+        "id": "ethers-preparation-and-chemica",
+        "label": "Ethers: preparation",
+        "children": [
+          {
+            "id": "ethers-preparation-sub-0",
+            "label": "chemical reactions (cleavage by HI)"
+          }
+        ]
+      }
+    ]
+  }
+}

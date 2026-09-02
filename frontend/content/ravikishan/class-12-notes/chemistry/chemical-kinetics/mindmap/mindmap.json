@@ -1,0 +1,57 @@
+{
+  "title": "Chemical Kinetics Mindmap",
+  "unitSlug": "chemical-kinetics",
+  "topicSlug": "chemical-kinetics-mindmap",
+  "topicTitle": "Chemical Kinetics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Chemical Kinetics",
+    "children": [
+      {
+        "id": "rate-of-reaction-average-and-i",
+        "label": "Rate of reaction — average",
+        "children": [
+          {
+            "id": "rate-of-reaction-average-sub-0",
+            "label": "instantaneous rate"
+          }
+        ]
+      },
+      {
+        "id": "factors-affecting-rate-of-reaction",
+        "label": "Factors affecting rate of reaction"
+      },
+      {
+        "id": "rate-law-and-order-of-reaction",
+        "label": "Rate law",
+        "children": [
+          {
+            "id": "rate-law-sub-0",
+            "label": "order of reaction"
+          }
+        ]
+      },
+      {
+        "id": "integrated-rate-equations-zero",
+        "label": "Integrated rate equations — zero order",
+        "children": [
+          {
+            "id": "integrated-rate-equations-zero-order-sub-0",
+            "label": "first order reactions"
+          }
+        ]
+      },
+      {
+        "id": "arrhenius-equation-and-activat",
+        "label": "Arrhenius equation",
+        "children": [
+          {
+            "id": "arrhenius-equation-sub-0",
+            "label": "activation energy"
+          }
+        ]
+      }
+    ]
+  }
+}

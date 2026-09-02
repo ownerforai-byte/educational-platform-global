@@ -1,0 +1,63 @@
+{
+  "title": "Biodiversity and Conservation Mindmap",
+  "unitSlug": "biodiversity-and-conservation",
+  "topicSlug": "biodiversity-and-conservation-mindmap",
+  "topicTitle": "Biodiversity and Conservation — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Biodiversity and Conservation",
+    "children": [
+      {
+        "id": "biodiversity-genetic-species-a",
+        "label": "Biodiversity — genetic, species,",
+        "children": [
+          {
+            "id": "biodiversity-genetic-species--sub-0",
+            "label": "ecosystem levels"
+          }
+        ]
+      },
+      {
+        "id": "patterns-of-biodiversity-globa",
+        "label": "Patterns of biodiversity — global",
+        "children": [
+          {
+            "id": "patterns-of-biodiversity-global-sub-0",
+            "label": "Nepal"
+          }
+        ]
+      },
+      {
+        "id": "biodiversity-loss-causes-and-c",
+        "label": "Biodiversity loss — causes",
+        "children": [
+          {
+            "id": "biodiversity-loss-causes-sub-0",
+            "label": "consequences"
+          }
+        ]
+      },
+      {
+        "id": "conservation-strategies-in-sit",
+        "label": "Conservation strategies — in-situ",
+        "children": [
+          {
+            "id": "conservation-strategies-in-situ-sub-0",
+            "label": "ex-situ"
+          }
+        ]
+      },
+      {
+        "id": "red-data-book-and-iucn-categor",
+        "label": "Red Data Book",
+        "children": [
+          {
+            "id": "red-data-book-sub-0",
+            "label": "IUCN categories"
+          }
+        ]
+      }
+    ]
+  }
+}

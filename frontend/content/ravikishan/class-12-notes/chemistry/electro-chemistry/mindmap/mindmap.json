@@ -1,0 +1,65 @@
+{
+  "title": "Electrochemistry Mindmap",
+  "unitSlug": "electro-chemistry",
+  "topicSlug": "electro-chemistry-mindmap",
+  "topicTitle": "Electrochemistry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Electrochemistry",
+    "children": [
+      {
+        "id": "oxidation-and-reduction-electr",
+        "label": "Oxidation",
+        "children": [
+          {
+            "id": "oxidation-sub-0",
+            "label": "reduction — electrode reactions"
+          }
+        ]
+      },
+      {
+        "id": "electrochemical-cells-galvanic-cell-cell",
+        "label": "Electrochemical cells — galvanic cell, cell potential, standard electrode potential"
+      },
+      {
+        "id": "nernst-equation-and-its-applic",
+        "label": "Nernst equation",
+        "children": [
+          {
+            "id": "nernst-equation-sub-0",
+            "label": "its applications"
+          }
+        ]
+      },
+      {
+        "id": "conductance-of-electrolytic-solutions",
+        "label": "Conductance of electrolytic solutions"
+      },
+      {
+        "id": "electrolysis-and-faraday-s-law",
+        "label": "Electrolysis",
+        "children": [
+          {
+            "id": "electrolysis-sub-0",
+            "label": "Faraday's laws"
+          }
+        ]
+      },
+      {
+        "id": "batteries-primary-and-secondar",
+        "label": "Batteries — primary",
+        "children": [
+          {
+            "id": "batteries-primary-sub-0",
+            "label": "secondary cells"
+          }
+        ]
+      },
+      {
+        "id": "fuel-cells",
+        "label": "Fuel cells"
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "title": "Hydrocarbons Mindmap",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "hydrocarbons-mindmap",
+  "topicTitle": "Hydrocarbons — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Hydrocarbons",
+    "children": [
+      {
+        "id": "alkanes-conformations-combusti",
+        "label": "Alkanes",
+        "children": [
+          {
+            "id": "alkanes-sub-0",
+            "label": "conformations"
+          },
+          {
+            "id": "alkanes-sub-1",
+            "label": "combustion"
+          },
+          {
+            "id": "alkanes-sub-2",
+            "label": "free radical halogenation"
+          }
+        ]
+      },
+      {
+        "id": "alkenes-preparation-geometrica",
+        "label": "Alkenes",
+        "children": [
+          {
+            "id": "alkenes-sub-0",
+            "label": "preparation"
+          },
+          {
+            "id": "alkenes-sub-1",
+            "label": "geometrical isomerism"
+          },
+          {
+            "id": "alkenes-sub-2",
+            "label": "electrophilic addition (Markovnikov, anti-Markovnikov"
+          },
+          {
+            "id": "alkenes-sub-3",
+            "label": "ozonolysis"
+          },
+          {
+            "id": "alkenes-sub-4",
+            "label": "polymerisation"
+          }
+        ]
+      },
+      {
+        "id": "alkynes-preparation-acidic-cha",
+        "label": "Alkynes",
+        "children": [
+          {
+            "id": "alkynes-sub-0",
+            "label": "preparation"
+          },
+          {
+            "id": "alkynes-sub-1",
+            "label": "acidic character"
+          },
+          {
+            "id": "alkynes-sub-2",
+            "label": "addition reactions"
+          }
+        ]
+      },
+      {
+        "id": "aromatic-hydrocarbons-benzene-",
+        "label": "Aromatic hydrocarbons",
+        "children": [
+          {
+            "id": "aromatic-hydrocarbons-sub-0",
+            "label": "benzene — resonance"
+          },
+          {
+            "id": "aromatic-hydrocarbons-sub-1",
+            "label": "aromaticity"
+          },
+          {
+            "id": "aromatic-hydrocarbons-sub-2",
+            "label": "electrophilic substitution (halogenation, nitration, sulphonation, Friedel-Crafts"
+          }
+        ]
+      }
+    ]
+  }
+}

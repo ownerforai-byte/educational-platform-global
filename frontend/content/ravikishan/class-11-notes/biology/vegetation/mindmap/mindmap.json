@@ -1,0 +1,47 @@
+{
+  "title": "Vegetation Mindmap",
+  "unitSlug": "vegetation",
+  "topicSlug": "vegetation-mindmap",
+  "topicTitle": "Vegetation — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Vegetation",
+    "children": [
+      {
+        "id": "vegetation-introduction-types-",
+        "label": "Vegetation",
+        "children": [
+          {
+            "id": "vegetation-sub-0",
+            "label": "Introduction"
+          },
+          {
+            "id": "vegetation-sub-1",
+            "label": "types of vegetation in Nepal"
+          }
+        ]
+      },
+      {
+        "id": "in-situ-protected-areas-and-ex",
+        "label": "In-situ (protected areas)",
+        "children": [
+          {
+            "id": "in-situ-protected-areas--sub-0",
+            "label": "Ex-situ (botanical garden, seed bank) conservation"
+          }
+        ]
+      },
+      {
+        "id": "natural-environment-vegetation",
+        "label": "Natural environment-vegetation",
+        "children": [
+          {
+            "id": "natural-environment-vegetation-sub-0",
+            "label": "human activities"
+          }
+        ]
+      }
+    ]
+  }
+}

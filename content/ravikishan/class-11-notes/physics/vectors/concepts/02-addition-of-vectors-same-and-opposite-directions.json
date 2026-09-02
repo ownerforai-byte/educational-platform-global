@@ -20,6 +20,11 @@
     "Vector subtraction $\\vec{P} - \\vec{Q}$ is defined as $\\vec{P} + (-\\vec{Q})$, where $-\\vec{Q}$ has the same magnitude as $\\vec{Q}$ but opposite direction. Graphically, it is the vector from the head of $\\vec{Q}$ to the head of $\\vec{P}$ when both tails are at the same point.",
     "**Order doesn't matter** (commutative law): $\\vec{P} + \\vec{Q} = \\vec{Q} + \\vec{P}$. The resultant is the same regardless of which vector you place first in the head-to-tail construction.",
     "When $\\theta = 90°$, the Pythagorean theorem gives $R^2 = P^2 + Q^2$ — this is the most common special case in NEB examinations. Students should memorize this form instantly.",
+    "**Vector subtraction from addition**: $\\vec{P} - \\vec{Q} = \\vec{P} + (-\\vec{Q})$. The magnitude of the difference is $|\\vec{P} - \\vec{Q}| = \\sqrt{P^2+Q^2-2PQ\\cos\\theta}$. Note the minus sign — it is the same formula with $\\theta$ replaced by $180°-\\theta$.",
+    "**Resultant of three vectors in a line**: for vectors along the same line, assign positive/negative signs based on direction, then add algebraically: $R = \\pm P \\pm Q \\pm S$. The sign convention is arbitrary but must be consistent.",
+    "**Geometric interpretation of triangle inequality**: for any two vectors, the straight-line distance between two points is the shortest path. Thus the magnitude of the resultant (straight line) is always less than or equal to the sum of magnitudes (two sides of triangle): $|\\vec{A}+\\vec{B}| \\leq |\\vec{A}|+|\\vec{B}|$.",
+    "**Adding vectors with unknown angle**: if the resultant of two vectors of magnitudes $P$ and $Q$ is $R$, the angle between them is $\\theta = \\cos^{-1}\\!\\left(\\frac{R^2-P^2-Q^2}{2PQ}\\right)$. This inverse form is frequently tested.",
+    "**Resultant when one vector is doubled**: if $\\vec{Q}$ is doubled to $2\\vec{Q}$, the new resultant is $\\vec{R}' = \\vec{P}+2\\vec{Q}$ with magnitude $R' = \\sqrt{P^2+4Q^2+4PQ\\cos\\theta}$. This changes both magnitude and direction of the resultant.",
     "**Relative velocity** is an application of vector subtraction: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$. If two cars move in the same direction at 60 km/h and 80 km/h, the relative speed is 20 km/h; if opposite directions, it is 140 km/h."
   ],
   "confusion": [
@@ -30,7 +35,9 @@
     "The angle in the formula is the angle between the tails of the vectors — In the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$, $\\theta$ is the angle between the vectors when placed tail-to-tail. If given the exterior angle, use $180° - \\text{angle}$.",
     "Vector addition is not commutative — Vector addition IS commutative: $\\vec{P} + \\vec{Q} = \\vec{Q} + \\vec{P}$. What is non-commutative is vector multiplication (cross product): $\\vec{A} \\times \\vec{B} \\neq \\vec{B} \\times \\vec{A}$.",
     "A zero resultant means no forces are acting — A zero resultant means all forces balance. Multiple forces can act simultaneously with a net effect of zero (equilibrium).",
-    "The direction of the resultant is always between the two vectors — This is true only for $0° < \\theta < 180°$. In the special case of opposite vectors ($\\theta = 180°$), the resultant lies along the larger vector, not 'between' them."
+    "The direction of the resultant is always between the two vectors — This is true only for $0° < \\theta < 180°$. In the special case of opposite vectors ($\\theta = 180°$), the resultant lies along the larger vector, not 'between' them.",
+    "The difference of two vectors has a larger magnitude than their sum — No. For $0° < \\theta < 90°$, $|\\vec{P}-\\vec{Q}| < |\\vec{P}+\\vec{Q}|$ because $\\cos\\theta > 0$. The difference is only larger when $\\theta > 90°$.",
+    "You can cancel vectors by just writing them with opposite signs — You must be careful about what 'cancels' what. $\\vec{P} + (-\\vec{P}) = \\vec{0}$ only if they act at the same point. If they act at different points (non-concurrent forces), they produce a couple, not cancellation."
   ],
   "practice": [
     "Two forces of 8 N and 6 N act at a point. Find the resultant when (a) they are in the same direction, (b) they are opposite, (c) they are perpendicular. [Solution: (a) $R = 8+6 = 14\\,\\text{N}$, same direction. (b) $R = 8-6 = 2\\,\\text{N}$, along the 8 N force. (c) $R = \\sqrt{64+36} = \\sqrt{100} = 10\\,\\text{N}$, at $\\tan^{-1}(6/8) = 36.9°$ from the 8 N force.]",
@@ -40,7 +47,9 @@
     "Two vectors $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = 5\\hat{i} - 2\\hat{j}$ are added. Find the magnitude and direction of the resultant. [Solution: $\\vec{R} = \\vec{A}+\\vec{B} = 8\\hat{i} + 2\\hat{j}$. $R = \\sqrt{64+4} = \\sqrt{68} \\approx 8.25$. $\\alpha = \\tan^{-1}(2/8) = \\tan^{-1}(0.25) \\approx 14.0°$ from the positive x-axis.]",
     "A boat heads north at 12 km/h in a river flowing east at 5 km/h. Find the boat's actual speed and direction relative to the ground. [Solution: $\\vec{v}_{actual} = 12\\hat{j} + 5\\hat{i}$. Speed $= \\sqrt{144+25} = 13\\,\\text{km/h}$. Direction $= \\tan^{-1}(12/5) \\approx 67.4°$ east of north (or $22.6°$ north of east).]",
     "Find the resultant of two forces $P$ and $Q$ when the angle between them is $\\theta$. If $\\theta$ increases from 0° to 180°, describe qualitatively how $R$ changes. [Solution: $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$. As $\\theta$ increases, $\\cos\\theta$ decreases from 1 to -1, so $R$ decreases from $P+Q$ to $|P-Q|$. The resultant is maximum when vectors are parallel and minimum when anti-parallel.]",
-    "Two forces act at a point: $\\vec{F}_1 = 10\\,\\text{N}$ at 30° north of east, and $\\vec{F}_2 = 15\\,\\text{N}$ at 60° north of west. Find the resultant using component method. [Solution: $F_{1x} = 10\\cos30° = 8.66$, $F_{1y} = 10\\sin30° = 5.00$. $F_{2x} = -15\\cos60° = -7.50$, $F_{2y} = 15\\sin60° = 12.99$. $R_x = 1.16$, $R_y = 17.99$. $R = \\sqrt{1.35+323.64} \\approx 18.0\\,\\text{N}$, $\\alpha = \\tan^{-1}(17.99/1.16) \\approx 86.3°$ north of east.]"
+    "Two forces act at a point: $\\vec{F}_1 = 10\\,\\text{N}$ at 30° north of east, and $\\vec{F}_2 = 15\\,\\text{N}$ at 60° north of west. Find the resultant using component method. [Solution: $F_{1x} = 10\\cos30° = 8.66$, $F_{1y} = 10\\sin30° = 5.00$. $F_{2x} = -15\\cos60° = -7.50$, $F_{2y} = 15\\sin60° = 12.99$. $R_x = 1.16$, $R_y = 17.99$. $R = \\sqrt{1.35+323.64} \\approx 18.0\\,\\text{N}$, $\\alpha = \\tan^{-1}(17.99/1.16) \\approx 86.3°$ north of east.]",
+    "Three forces of 4 N, 5 N, and 6 N act along the three sides of a triangle taken in order. Find the magnitude and direction of their resultant. [Solution: If taken head-to-tail around a closed triangle, the resultant is $\\vec{R} = \\vec{0}$. The forces form a closed polygon, so the system is in equilibrium.]",
+    "A force of 30 N acts at 0°, another at 90°, and a third at 180°. Find the resultant. [Solution: $\\vec{F}_1 = 30\\hat{i}$, $\\vec{F}_2 = 30\\hat{j}$, $\\vec{F}_3 = -30\\hat{i}$. $\\vec{R} = 30\\hat{i} + 30\\hat{j} - 30\\hat{i} = 30\\hat{j}$. The resultant is 30 N in the +y direction.]"
   ],
   "universalFacts": [
     "The parallelogram law of vector addition was first clearly stated by **Simon Stevin** (1548–1620) in his treatise on statics. He showed that two forces acting at a point are equivalent to a single force represented by the diagonal of the parallelogram.",
@@ -50,7 +59,9 @@
     "The concept of **resultant force** is central to Newton's second law: $\\vec{F}_{net} = m\\vec{a}$. The acceleration of an object is determined by the vector sum of all forces acting on it, not by any single force.",
     "Force polygons are used in engineering to check equilibrium. If the force vectors drawn head-to-tail form a closed polygon, the resultant is zero and the system is in equilibrium.",
     "When resolving vectors for addition, always draw a clear diagram first. Label all angles, choose convenient axes (often along and perpendicular to an incline), and be consistent with sign conventions.",
-    "For NEB: the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ applies to ANY two vectors at angle $\\theta$. Remember that $\\cos 0°=1$ gives maximum, $\\cos 90°=0$ gives Pythagorean, and $\\cos 180°=-1$ gives minimum."
+    "For NEB: the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ applies to ANY two vectors at angle $\\theta$. Remember that $\\cos 0°=1$ gives maximum, $\\cos 90°=0$ gives Pythagorean, and $\\cos 180°=-1$ gives minimum.",
+    "The **equilibrant** is the vector that balances a system — it equals $-\\vec{R}$ (same magnitude as resultant, opposite direction). For equilibrium, the equilibrant must be applied.",
+    "In **relative motion**, vector subtraction is ubiquitous: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$ gives the velocity of A as seen from B. This is a direct application of vector subtraction in the same direction (1D) or at angles (2D)."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors"

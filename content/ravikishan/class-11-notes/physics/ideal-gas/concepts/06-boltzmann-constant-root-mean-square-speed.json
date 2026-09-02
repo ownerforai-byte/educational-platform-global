@@ -5,26 +5,39 @@
   "topicTitle": "Boltzmann constant, root mean square speed",
   "relevance": 100,
   "notes": [
-    "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\times 10^{-23}\\,\\text{J/K}$. It connects microscopic and macroscopic thermodynamics.",
-    "**RMS speed:** $v_{rms} = \\sqrt{\\frac{3RT}{M}}$, where $M$ is molar mass in kg/mol. At STP, $v_{rms}$ for air is about 485 m/s.",
-    "**Most probable speed:** $v_p = \\sqrt{\\frac{2RT}{M}}$. The speed at which the Maxwell-Boltzmann distribution peaks.",
-    "**Mean speed:** $v_{mean} = \\sqrt{\\frac{8RT}{\\pi M}}$. The average speed of all molecules.",
-    "**Heat capacities:** for a monatomic ideal gas, $C_V = \\frac{3}{2}R$ and $C_P = \\frac{5}{2}R$. The ratio $\\gamma = C_P/C_V = 5/3 \\approx 1.67$."
+    "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\times 10^{-23}$ J/K. It connects microscopic and macroscopic thermodynamics. Named after Ludwig Boltzmann (1844-1906).",
+    "**RMS speed:** $v_{rms} = \\\\\sqrt{3RT/M}$, where $M$ is molar mass in kg/mol. At STP (273 K), $v_{rms}$ for air is about 479 m/s. At 300 K, about 484 m/s. Lighter gases move faster on average.",
+    "**Most probable speed:** $v_p = \\\\\sqrt{2RT/M}$. This is the speed at which the Maxwell-Boltzmann distribution peaks. At 300 K for air: $v_p \\\\\approx 364$ m/s. At 300 K for H₂: $v_p \\\\\approx 1650$ m/s.",
+    "**Mean speed:** $v_{mean} = \\\\\sqrt{8RT/\\\\\pi M}$. The average of all molecular speeds. At 300 K for air: $v_{mean} \\\\\approx 464$ m/s. At 300 K for H₂: $v_{mean} \\\\\approx 1760$ m/s.",
+    "**Heat capacities - monatomic gases:** $C_V = \\frac{3}{2}R$, $C_P = \\frac{5}{2}R$. The ratio $\\\\\gamma = C_P/C_V = 5/3 \\\\\approx 1.67$. Monatomic gases (He, Ne, Ar) only have translational degrees of freedom.",
+    "**Heat capacities - diatomic gases:** $C_V = \\frac{5}{2}R$, $C_P = \\frac{7}{2}R$ at ordinary temperatures ($\\\\\gamma = 7/5 = 1.4$). Includes 3 translational + 2 rotational DOF. At high temperature, vibration adds more, so $C_V \\rightarrow 4R$, $C_P \\rightarrow 5R$, $\\\\\gamma \\rightarrow 9/7 \\\\approx 1.29$.",
+    "**Dulong-Petit law for solids:** Molar heat capacity of most solid elements at room temperature $\\\\approx 3R \\\\\approx 25$ J/(mol·K). This comes from 3 quadratic degrees of freedom per atom (one for each spatial axis), each contributing $R$ per mole of atoms.",
+    "**Why heat capacities differ:** The ratio $C_P/C_V = \\\\\gamma$ matters for adiabatic processes ($PV^\\\\gamma = \\text{const}$). This affects everything from engine cycles to atmospheric science. $\\\\gamma \\\\\approx 1.4$ for air is crucial in meteorology.",
+    "**Experimental verification:** Heat capacities were measured by Regnault and others in the 19th century. The agreement with kinetic theory predictions was one of the great successes of molecular physics.",
+    "**Units:** $k_B = 1.38 \\times 10^{-23}$ J/K. $C_P, C_V$ have units J/(mol·K). Gas constant R has the same units.",
+    "**Connection to energy:** Each degree of freedom contributes $\\frac{1}{2}R$ per mole or $\\frac{1}{2}k_B$ per molecule. 3 translational DOF $\rightarrow 3 \\times \\frac{1}{2}R = \\frac{3}{2}R$ for $C_V$"
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The ratio $\\\\\gamma = C_P/C_V$ is NOT always 5/3 or 7/5. It depends on temperature and molecular structure. At very high temperatures, vibrational modes activate, changing $\\\\\gamma$.",
+    "The formula $C_V = \\frac{3}{2}R$ applies ONLY to monatomic ideal gases. For diatomic or polyatomic gases, rotational (and sometimes vibrational) modes contribute.",
+    "Dulong's law ($C \\\\\approx 3R$) for solids works well at room temperature but fails at very low temperatures (quantum effects freeze out degrees of freedom). Einstein and Debye developed low-temperature models.",
+    "The Boltzmann constant $k_B$ is NOT the same as the gas constant R. $k_B = 1.38 \\times 10^{-23}$ J/K per molecule. R = 8.314 J/(mol·K) per mole. $R = N_A k_B$.",
+    "Most probable speed is NOT the average speed. For the Maxwell-Boltzmann distribution: $v_p \\\\\cdot \\\\\sqrt{2} < v_{mean} < v_{rms}$. The order is always $v_p < v_{mean} < v_{rms}$ at the same temperature."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the root-mean-square speed of nitrogen molecules (N₂, M = 0.028 kg/mol) at 350 K. Solution: $v_{rms} = \\\\\sqrt{3RT/M} = \\\\\sqrt{3 \\times 8.314 \\times 350 / 0.028} = \\\\\sqrt{3471.8 / 0.028} = \\\\\sqrt{123,993} = 352$ m/s.",
+    "Find the most probable speed of helium atoms (He, M = 0.004 kg/mol) at 400 K. Solution: $v_p = \\\\\sqrt{2RT/M} = \\\\\sqrt{2 \\times 8.314 \\times 400 / 0.004} = \\\\\sqrt{6651.2 / 0.004} = \\\\\sqrt{1662800} = 1290$ m/s.",
+    "Calculate the mean speed of oxygen molecules (O₂, M = 0.032 kg/mol) at 273 K. Solution: $v_{mean} = \\\\\sqrt{8RT/\\\\\pi M} = \\\\\sqrt{8 \\times 8.314 \\times 273 / (\\\\\pi \\times 0.032)} = \\\\\sqrt{18136 / 0.1005} = \\\\\sqrt{180,458} = 425$ m/s.",
+    "If the rms speed of helium at 300 K is 1250 m/s, what is the rms speed at 600 K? Solution: $v_{rms} \\\\\propto \\\\\sqrt{T}$. $v_{rms}(600) = v_{rms}(300) \\times \\\\\sqrt{600/300} = 1250 \\times \\\\\sqrt{2} = 1768$ m/s.",
+    "A container has 1 mol of gas at 300 K. What is the total internal energy for (a) monatomic gas? Solution: $U = \\frac{3}{2}nRT = \\frac{3}{2} \\times 1 \\times 8.314 \\times 300 = 3741$ J.",
+    "Find the heat capacity ratio $\\\\\gamma$ for a diatomic gas at room temperature. Solution: $\\\\\gamma = C_P/C_V = (7/2R)/(5/2R) = 7/5 = 1.4$."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The Maxwell-Boltzmann distribution was first derived by James Clerk Maxwell in 1860 and later generalized by Ludwig Boltzmann. It describes the distribution of speeds in an ideal gas and is one of the most important results of kinetic theory.",
+    "At 300 K, the three speed measures for nitrogen (M=28 g/mol) are: most probable $v_p \\\\\approx 422$ m/s, mean speed $v_{mean} \\\\\approx 477$ m/s, and rms speed $v_{rms} \\\\\approx 517$ m/s. The ratios are always $v_p : v_{mean} : v_{rms} = \\\\\sqrt{2} : \\\\\sqrt{8/\\\\\pi} : \\\\\sqrt{3} \\\\\approx 1.414 : 1.596 : 1.732$.",
+    "The Boltzmann constant $k_B$ was first introduced by Max Planck in his derivation of the blackbody radiation formula (1900). He used it to connect the energy of oscillators to temperature: $E = k_BT$.",
+    "Dulong and Petit's law ($C \\\\\approx 3R$ for solids) was discovered in 1819. It took nearly 150 years to understand why it works - the kinetic theory's 3 degrees of freedom per atom (1859-1870s) provided the explanation.",
+    "The ratio $\\\\\gamma = C_P/C_V$ determines whether sound speed is faster in an adiabatic process: $v_{sound} = \\\\\sqrt{\\\\\gamma RT/M}$. For air ($\\\\gamma \\\\\approx 1.4$), $v_{sound} \\\\\approx 343$ m/s at 300 K. For helium ($\\\\gamma = 5/3 \\\\\approx 1.67$), $v_{sound} \\\\\approx 965$ m/s at 300 K."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

@@ -5,26 +5,41 @@
   "topicTitle": "Heat capacities of gases and solids",
   "relevance": 100,
   "notes": [
-    "**Molar heat capacity at constant volume $C_V$:** heat required to raise 1 mole of gas by 1 K at fixed volume. For monatomic gases: $C_V = \\frac{3}{2}R$.",
-    "**Molar heat capacity at constant pressure $C_P$:** heat required at fixed pressure. $C_P = C_V + R$ because the gas must do expansion work against the external pressure.",
-    "**Diatomic gases:** at ordinary temperatures, $C_V = \\frac{5}{2}R$ and $C_P = \\frac{7}{2}R$ because rotational modes are also active. At high temperatures, vibrational modes contribute further.",
-    "**Dulong-Petit law:** the molar heat capacity of most solid elements at room temperature is about $3R \\approx 25\\,\\text{J/mol}\\cdot\\text{K}$. This comes from 3 quadratic degrees of freedom per atom (one for each axis), each contributing $k_B$ per atom or $R$ per mole.",
-    "**Why solids have similar $C$:** despite different atomic masses and stiffness, all solids have the same number of atoms per mole, and each atom contributes equally to heat capacity at high temperature."
+    "**Heat capacity definition:** The amount of heat required to raise the temperature of a substance by 1 K (or 1°C). It depends on the amount of substance and the conditions (constant volume or constant pressure).",
+    "**Specific heat capacity (c):** Heat required to raise 1 kg of substance by 1 K. Units: J/(kg·K). Water has c = 4186 J/(kg·K) at 20°C. This is the highest of any common substance.",
+    "**Molar heat capacity (C):** Heat required to raise 1 mole by 1 K. Units: J/(mol·K). For water (M = 0.018 kg/mol): $C = 4186 \\times 0.018 = 75.3$ J/(mol·K).",
+    "**Constant volume molar heat capacity $C_V$:** For an ideal gas, $C_V = \\frac{f}{2}R$, where $f$ is the number of active degrees of freedom. Monatomic: $C_V = \\frac{3}{2}R = 12.5$ J/(mol·K). Diatomic: $C_V = \\frac{5}{2}R = 20.8$ J/(mol·K).",
+    "**Constant pressure molar heat capacity $C_P$:** $C_P = C_V + R$. This extra $R$ is the work the gas does expanding against external pressure when heated at constant pressure. Monatomic: $C_P = \\frac{5}{2}R = 20.8$ J/(mol·K). Diatomic: $C_P = \\frac{7}{2}R = 29.1$ J/(mol·K).",
+    "**Mayer's relation:** $C_P - C_V = R$. This fundamental relation holds for all ideal gases, independent of molecular structure. Derived from the first law of thermodynamics and the ideal gas law.",
+    "**Heat capacity ratio $\\gamma = C_P/C_V$:** For monatomic ideal gas: $\\gamma = 5/3 \\approx 1.67$. For diatomic (room temp): $\\gamma = 7/5 = 1.4$. For triatomic (nonlinear): $\\gamma = 8/6 = 4/3 \\approx 1.33$.",
+    "**Degrees of freedom and $C_V$:** Each quadratic degree of freedom contributes $\\frac{1}{2}R$ to $C_V$. Monatomic (3 trans): $C_V = 3 \\times \\frac{1}{2}R = \\frac{3}{2}R$. Linear diatomic (3 trans + 2 rot): $C_V = 5 \\times \\frac{1}{2}R = \\frac{5}{2}R$. Non-linear triatomic (3 trans + 3 rot): $C_V = 6 \\times \\frac{1}{2}R = 3R$.",
+    "**Vibrational modes at high temperature:** Each vibrational mode contributes 2 degrees of freedom (kinetic + potential), so $2 \\times \\frac{1}{2}R = R$ per mode. At room temperature, vibration is usually frozen out. At high T, $C_V$ increases further.",
+    "**Dulong-Petit law for solids:** At room temperature, the molar heat capacity of most solid elements is approximately $C = 3R \\approx 25$ J/(mol·K). This comes from 3 quadratic DOF per atom: $\\frac{3}{2}k_B$ per atom $\\times N_A = \\frac{3}{2}R$ per mole, but since each atom can vibrate in 3D (kinetic + potential), total is $3R$.",
+    "**Why Dulong-Petit law works:** At high temperature, all degrees of freedom are excited according to equipartition. Each atom has 3 vibrational modes (x, y, z), each with kinetic + potential, giving 6 DOF. So $C = 6 \\times \\frac{1}{2}R = 3R$.",
+    "**Failure of Dulong-Petit at low T:** At low temperatures, heat capacity drops toward zero. This was explained by Einstein (1907) using quantum mechanics: vibrational energy is quantized, and at low T, most oscillators are in the ground state, so they don't contribute to heat capacity.",
+    "**Debye model:** Peter Debye (1912) refined Einstein's model by considering the spectrum of vibrational frequencies (phonons) in a solid. The Debye model gives $C \\propto T^3$ at very low temperatures, which matches experiment much better than Einstein's model.",
+    "**Applications:** Heat capacities determine how much a gas heats up for a given heat input. In isochoric heating ($V$ constant): $Q = n C_V \\Delta T$. In isobaric heating ($P$ constant): $Q = n C_P \\Delta T$. The difference is important for engines operating at constant pressure."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Heat capacity is NOT the same as specific heat. Heat capacity $C$ is for the whole object; specific heat $c$ is per unit mass. Molar heat capacity $C_m$ is per mole. They are related: $C = mc$ for uniform objects.",
+    "$C_P \\neq C_V$. Many students think the heat capacity is the same regardless of conditions. At constant pressure, the gas expands and does work, requiring more heat input to achieve the same temperature rise. $C_P > C_V$ always.",
+    "The Dulong-Petit law ($C \\approx 3R$) works only at sufficiently high temperatures (well above Debye temperature). Below that, quantum effects dominate and heat capacity drops. For diamond, this 'high temperature' is over 2000 K!",
+    "Degrees of freedom 'freeze out' at different temperatures. At room temperature: translational (always active), rotational (active for most molecules), vibrational (usually frozen). The textbook $C_V$ values assume rotational but not vibrational modes are active.",
+    "Heat capacity depends on temperature for real substances. The values $C_V = \\frac{5}{2}R$ for diatomic gases are approximate room-temperature values. Over a wide temperature range, $C_V$ can change significantly."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Calculate the heat required to raise the temperature of 2 mol of helium (monatomic) by 50 K at (a) constant volume, (b) constant pressure. Solution: (a) $Q = n C_V \\Delta T = 2 \\times (3/2 \\times 8.314) \\times 50 = 2 \\times 12.47 \\times 50 = 1247$ J. (b) $Q = n C_P \\Delta T = 2 \\times (5/2 \\times 8.314) \\times 50 = 2 \\times 20.79 \\times 50 = 2079$ J. Note: extra heat goes into expansion work.",
+    "Find the molar heat capacity at constant volume for CO₂ (linear triatomic). At room temperature, ignore vibration. Solution: Linear molecule has 3 translational + 2 rotational = 5 DOF. $C_V = \\frac{5}{2}R = 20.8$ J/(mol·K). $C_P = C_V + R = 29.1$ J/(mol·K). $\\gamma = 29.1/20.8 = 1.4$.",
+    "A 1 kg iron block (c = 449 J/(kg·K)) is heated from 20°C to 80°C. Find the heat absorbed. Solution: $Q = mc\\Delta T = 1 \\times 449 \\times (80-20) = 449 \\times 60 = 26,940$ J $\\approx 27$ kJ.",
+    "Show that for an ideal gas, $C_P - C_V = R$. Solution: At constant volume: $Q_V = n C_V \\Delta T = \\Delta U$ (no $PV$ work). At constant pressure: $Q_P = n C_P \\Delta T = \\Delta U + P\\Delta V$. For ideal gas: $P\\Delta V = nR\\Delta T$. So $n C_P \\Delta T = n C_V \\Delta T + nR\\Delta T \\rightarrow C_P - C_V = R$.",
+    "Compare the heat required to raise 1 mol of H₂ vs 1 mol of Xe by 10 K at constant volume. Solution: Both are diatomic (H₂) or monatomic (Xe). For H₂ (diatomic, $C_V = 5/2 R$): $Q = 1 \\times 20.8 \\times 10 = 208$ J. For Xe (monatomic, $C_V = 3/2 R$): $Q = 1 \\times 12.5 \\times 10 = 125$ J. More complex molecules require more heat."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The law of Dulong and Petit (1819) states that the specific heat of solids is inversely proportional to atomic weight. This was an important empirical law before atomic theory was fully accepted.",
+    "Maxwell's equipartition theorem (1860s) explained why heat capacity should be proportional to the number of degrees of freedom. Each quadratic term in the energy contributes $\\frac{1}{2}k_BT$ per molecule.",
+    "The failure of classical equipartition at low temperatures was one of the first major problems solved by quantum mechanics. Einstein's 1907 paper on specific heats was one of the first successful applications of Planck's quantum hypothesis.",
+    "The Debye model (1912) treated vibrations in a solid as sound waves (phonons) with a range of frequencies. It correctly predicted $C \\propto T^3$ at very low temperatures, for which Debye received the Nobel Prize in Physics in 1936.",
+    "In calorimetry, water's high specific heat (4186 J/(kg·K)) makes it an excellent coolant and heat storage medium. This is why coastal areas have milder climates than inland — the ocean absorbs/releases enormous amounts of heat with small temperature changes."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

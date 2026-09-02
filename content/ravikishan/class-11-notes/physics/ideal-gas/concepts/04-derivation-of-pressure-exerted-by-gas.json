@@ -5,27 +5,43 @@
   "topicTitle": "Derivation of pressure exerted by gas",
   "relevance": 100,
   "notes": [
-    "**Setup:** consider a cubical container of side $L$ containing $N$ molecules of mass $m$.",
-    "**Momentum change per collision:** a molecule with $x$-component of velocity $v_x$ rebounds with $-v_x$, so momentum change is $2mv_x$.",
-    "**Time between collisions:** the molecule travels distance $2L$ between successive wall collisions, taking time $\\Delta t = 2L/v_x$.",
-    "**Force from one molecule:** $F = \\frac{\\Delta p}{\\Delta t} = \\frac{2mv_x}{2L/v_x} = \\frac{mv_x^2}{L}$.",
-    "**Pressure:** $P = \\frac{F}{A} = \\frac{mv_x^2}{L^3} = \\frac{mv_x^2}{V}$. Averaging over all molecules gives $P = \\frac{Nm\\langle v_x^2 \\rangle}{V}$.",
-    "**Final result:** using $\\langle v_x^2 \\rangle = \\frac{1}{3}\\langle v^2 \\rangle$, we get $PV = \\frac{1}{3}Nm\\langle v^2 \\rangle = \\frac{2}{3}N\\langle K \\rangle$."
+    "**Setup:** Consider a cubical container with side length $L$ containing $N$ molecules of mass $m$. The volume is $V = L^3$.",
+    "**Momentum change in one collision:** When a molecule with x-component of velocity $v_x$ hits the wall perpendicular to the x-axis, it rebounds with velocity $-v_x$. The change in momentum is $\\Delta p = p_f - p_i = m(-v_x) - m(v_x) = -2mv_x$. The magnitude is $2mv_x$.",
+    "**Time between collisions:** The molecule travels a distance $2L$ (to the opposite wall and back) at speed $|v_x|$. Time between collisions with the same wall is $\\Delta t = 2L/|v_x|$.",
+    "**Force from one molecule:** $F = \\frac{\\Delta p}{\\Delta t} = \\frac{2mv_x}{2L/|v_x|} = \\frac{2mv_x}{|v_x|} = \\frac{mv_x^2}{L}$. (Note: $|v_x| = v_x$ if $v_x > 0$, but we use magnitude for force magnitude).",
+    "**Pressure contribution:** Force per unit area is $P = F/A = \\frac{mv_x^2}{L} / L^2 = \\frac{mv_x^2}{L^3} = \\frac{mv_x^2}{V}$. This is the pressure contribution from a single molecule with x-velocity $v_x$.",
+    "**Averaging over all molecules:** The total force is the sum of forces from all molecules. Since the wall is perpendicular to x-axis, only $v_x$ components matter. Total pressure $P = \\frac{1}{A} \\sum F_i = \\frac{1}{L^2} \\sum (mv_{ix}^2/L) = \\frac{m}{L^3} \\sum v_{ix}^2 = \\frac{m}{V} \\langle v_x^2 \\rangle$.",
+    "**Relating to total kinetic energy:** The total kinetic energy is $K = \\frac{1}{2}m \\sum v_i^2 = \\frac{1}{2}mN\\langle v^2 \\rangle$. Since $\\langle v^2 \\rangle = \\langle v_x^2 \\rangle + \\langle v_y^2 \\rangle + \\langle v_z^2 \\rangle$ and by symmetry $\\langle v_x^2 \\rangle = \\langle v_y^2 \\rangle = \\langle v_z^2 \\rangle$, we have $\\langle v_x^2 \\rangle = \\frac{1}{3}\\langle v^2 \\rangle$.",
+    "**Final result:** Substituting back, $P = \\frac{m}{V} \\cdot \\frac{1}{3}\\langle v^2 \\rangle = \\frac{1}{3} \\frac{mN}{V} \\langle v^2 \\rangle = \\frac{2}{3} \\frac{N}{V} (\\frac{1}{2}m\\langle v^2 \\rangle) = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$. Since $\\langle K \\rangle = \\frac{3}{2}k_BT$, we get $P = \\frac{N}{V} k_BT = \\frac{n}{V} RT = \\frac{nRT}{V}$.",
+    "**Pressure in terms of average KE:** $P = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$. This shows the direct link between pressure and microscopic kinetic energy. The factor 2/3 comes from the 3 spatial dimensions (1/3 per dimension).",
+    "**Derivation steps recap:**",
+    "1. Momentum change: $\\Delta p = 2mv_x$",
+    "2. Time between collisions: $\\Delta t = 2L/|v_x|$",
+    "3. Force on wall: $F = \\frac{2mv_x^2}{L}$",
+    "4. Pressure: $P = F/A = \\frac{mv_x^2}{L^3} = \\frac{mv_x^2}{V}$",
+    "5. Average over all molecules: $P = \\frac{m}{V} \\langle v_x^2 \\rangle$",
+    "6. Relate to total KE: $\\langle v_x^2 \\rangle = \\frac{1}{3}\\langle v^2 \\rangle$, so $P = \\frac{m}{3V} \\langle v^2 \\rangle$",
+    "7. Substitute $\\langle K \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle$: $P = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$"
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The derivation assumes the wall is perpendicular to the x-axis. For a wall at an angle, the momentum change and force calculation would be different.",
+    "The factor 1/3 comes from the three spatial dimensions. In 2D, it would be 1/2, and in n-dimensions, it would be 1/n. Students often forget this geometric factor.",
+    "The derivation assumes the wall is stationary. If the wall were moving (e.g., piston), the relative velocity would need to be used, and the derivation would be more complex.",
+    "The derivation applies to ideal gases where collisions are perfectly elastic. In real gases with inelastic collisions, energy is lost and the derivation needs modification."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A gas molecule with mass 3.34 × 10⁻²⁶ kg (mass of N₂) has an x-component of velocity of 500 m/s. Calculate the force it exerts on a wall of area 0.01 m². Solution: $F = \\frac{mv_x^2}{L}$. First find $L = V^{1/3} = (0.01)^{1/3} = 0.215$ m. $F = \\frac{3.34 \\times 10^{-26} \\times 500^2}{0.215} = \\frac{3.34 \\times 10^{-26} \\times 250000}{0.215} = \\frac{8.35 \\times 10^{-21}}{0.215} = 3.88 \\times 10^{-20}$ N. Pressure = $F/A = 3.88 \\times 10^{-20} / 0.01 = 3.88 \\times 10^{-18}$ Pa.",
+    "A gas container has side length 0.1 m. A molecule with x-velocity 400 m/s hits the wall. Calculate the time between collisions with the same wall. Solution: $\\Delta t = 2L/|v_x| = 2 \\times 0.1 / 400 = 0.2 / 400 = 0.0005$ s = 5 × 10⁻⁴ s.",
+    "If the average kinetic energy per molecule is 6.21 × 10⁻²¹ J (from previous problem), what is the average vₓ²? Since $\\langle K \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle = \\frac{1}{2}m(3\\langle v_x^2 \\rangle)$, then $\\langle v_x^2 \\rangle = \\frac{3\\langle K \\rangle}{m}$. For m = 3.34 × 10⁻²⁶ kg, $\\langle v_x^2 \\rangle = \\frac{3 \\times 6.21 \\times 10^{-21}}{3.34 \\times 10^{-26}} = 5.57 \\times 10^5$ m²/s².",
+    "A container with 1000 molecules has total kinetic energy 6.21 J. What is the average kinetic energy per molecule? Solution: 6.21 J / 1000 = 6.21 × 10⁻³ J per molecule. This is $\\langle K \\rangle = \\frac{3}{2}k_BT$, so we can find T if needed.",
+    "A molecule with mass 28 u (N₂) has rms speed of 480 m/s. Calculate its average kinetic energy. Solution: $K = \\frac{1}{2}mv^2$. Mass in kg: 28 × 1.66 × 10⁻²⁷ = 4.648 × 10⁻²⁶ kg. $K = 0.5 × 4.648 \\times 10^{-26} \\times 480^2 = 0.5 × 4.648 \\times 10^{-26} \\times 230400 = 5.35 × 10^{-21}$ J."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The kinetic theory was developed in the 19th century by Rudolf Clausius (1850s), James Clerk Maxwell (1860s), and Ludwig Boltzmann (1870s). Maxwell's equations for the distribution of speeds were a major breakthrough.",
+    "The Maxwell-Boltzmann distribution was first derived by James Clerk Maxwell in 1860 for gas molecules. Ludwig Boltzmann later provided a statistical interpretation and connected it to entropy (S = k_B ln Ω).",
+    "At room temperature (300 K), the average speed of a nitrogen molecule (N₂, molar mass 28 g/mol) is about 517 m/s, while the most probable speed is about 470 m/s. The distribution has a long tail to high speeds.",
+    "The kinetic theory explains why the speed of sound is higher in solids and liquids than in gases: in solids, molecules are closer together, so momentum transfer (sound waves) is more efficient even though individual molecules move slower.",
+    "The kinetic theory is foundational to statistical mechanics, which connects microscopic behavior to macroscopic thermodynamics. It was a key step in establishing thermodynamics as a branch of physics rather than just engineering."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas"

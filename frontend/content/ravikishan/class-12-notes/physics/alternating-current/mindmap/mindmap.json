@@ -1,0 +1,53 @@
+{
+  "title": "Alternating Current Mindmap",
+  "unitSlug": "alternating-current",
+  "topicSlug": "alternating-current-mindmap",
+  "topicTitle": "Alternating Current — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Alternating Current",
+    "children": [
+      {
+        "id": "ac-voltage-applied-to-resistor",
+        "label": "AC voltage applied to resistor, inductor,",
+        "children": [
+          {
+            "id": "ac-voltage-applied-to-resistor-inductor--sub-0",
+            "label": "capacitor"
+          }
+        ]
+      },
+      {
+        "id": "lc-oscillations-and-resonance",
+        "label": "LC oscillations",
+        "children": [
+          {
+            "id": "lc-oscillations-sub-0",
+            "label": "resonance"
+          }
+        ]
+      },
+      {
+        "id": "lcr-series-circuit-and-power-f",
+        "label": "LCR series circuit",
+        "children": [
+          {
+            "id": "lcr-series-circuit-sub-0",
+            "label": "power factor"
+          }
+        ]
+      },
+      {
+        "id": "transformer-principle-types-an",
+        "label": "Transformer — principle, types,",
+        "children": [
+          {
+            "id": "transformer-principle-types--sub-0",
+            "label": "losses"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -5,26 +5,38 @@
   "topicTitle": "Relative velocity",
   "relevance": 100,
   "notes": [
-    "**Relative velocity:** the velocity of one object measured with respect to another moving object.",
-    "**Same direction:** if car A moves at $v_A$ and car B at $v_B$ in the same direction, A sees B moving at $v_{B/A} = v_B - v_A$.",
-    "**Opposite direction:** if they move toward each other, the relative speed is the sum: $v_{rel} = v_A + v_B$.",
-    "**Vector form:** $\\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A$. The velocity of B relative to A equals B's velocity in the ground frame minus A's velocity in the ground frame.",
-    "**Rain example:** if rain falls vertically at $v_r$ and you run horizontally at $v_p$, the rain appears to come at you at an angle $\\theta$ where $\\tan\\theta = v_p / v_r$."
+    "**Definition of relative velocity:** The velocity of an object B as measured from the reference frame of another moving object A. It is the velocity of B relative to A.",
+    "**Same direction (one-dimensional):** If car A moves at velocity v_A and car B at v_B in the same direction, the velocity of B relative to A is v_{B/A} = v_B - v_A. If v_B > v_A, B moves ahead relative to A; if v_B < v_A, B falls behind.",
+    "**Opposite directions (one-dimensional):** If A and B move toward each other with speeds v_A and v_B, the relative speed (magnitude of relative velocity) is v_{rel} = v_A + v_B. The direction of v_{B/A} is toward A if B is moving toward A.",
+    "**Vector form (two/three dimensions):** \vec{v}_{B/A} = \vec{v}_B - \vec{v}_A. This is the velocity of B in the ground frame minus the velocity of A in the ground frame. In components: (v_{B/A})_x = v_{Bx} - v_{Ax}, etc.",
+    "**Relative velocity in 2D — Rain example:** If rain falls vertically downward at speed v_r and a person runs horizontally at speed v_p, the rain appears to come at the person at an angle \theta where tan\theta = v_p / v_r. The apparent speed is \sqrt{v_r^2 + v_p^2}.",
+    "**River crossing (boat relative to water vs. ground):** Let \vec{v}_{bw} be the boat's velocity relative to the water (its heading and speed), and \vec{v}_{wg} be the water's velocity relative to ground (current). Then the boat's ground velocity is \vec{v}_{bg} = \vec{v}_{bw} + \vec{v}_{wg}. To reach a point directly across, the boat must angle upstream.",
+    "**Relative velocity of approach/separation:** For two objects approaching, the rate at which their separation decreases is v_{rel} = v_A + v_B (if opposite directions) or |v_B - v_A| (if same direction). For collision problems, relative velocity is crucial.",
+    "**Frame of reference transformation:** To transform from frame A to frame B, subtract the velocity of frame A: \vec{v}' = \vec{v} - \vec{v}_A. The laws of physics (Newton's laws) are the same in all inertial frames (Galilean relativity).",
+    "**Galilean velocity addition:** In classical mechanics, velocities add vectorially: \vec{v}_{B/C} = \vec{v}_{B/A} + \vec{v}_{A/C}. This chain rule allows finding velocity of B relative to C via an intermediate frame A.",
+    "**Relative motion on an incline:** If a block slides down an incline at speed v relative to the incline, and the incline itself moves (e.g., on a truck), the block's ground velocity is the vector sum of its velocity relative to the incline and the incline's velocity relative to ground.",
+    "**Closing speed vs. relative velocity:** Closing speed is the rate at which the distance between two objects decreases. For objects moving directly toward each other, closing speed = |v_A| + |v_B|. This is the magnitude of the relative velocity only if they are on a collision course."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Relative velocity is NOT the same as the difference in speeds. For two cars moving at 60 km/h and 40 km/h in the SAME direction, the relative speed is 20 km/h, NOT 100 km/h. For opposite directions, the relative speed is the SUM (100 km/h).",
+    "When subtracting vectors, the ORDER MATTERS: \vec{v}_{B/A} = \vec{v}_B - \vec{v}_A. This is the velocity of B AS SEEN BY A. \vec{v}_{A/B} = \vec{v}_A - \vec{v}_B = -\vec{v}_{B/A}. They are equal in magnitude but opposite in direction.",
+    "A common mistake in river problems: students add the boat's speed to the current speed as scalars. You must add them as VECTORS: the boat's velocity relative to water PLUS water's velocity relative to ground. The angle matters!",
+    "In the rain problem, the rain does NOT change its actual velocity — it still falls vertically. Only the APPARENT velocity (relative to the moving person) is angled. The person tilts their umbrella forward to block the apparent rain.",
+    "Galilean relativity breaks down at speeds close to the speed of light (c). Einstein's special relativity replaces it with the Lorentz velocity addition formula: v = (v1 + v2)/(1 + v1v2/c^2). For everyday speeds (<< c), this reduces to Galilean addition."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Two trains A and B are moving on parallel tracks. Train A moves east at 60 km/h. Train B moves east at 80 km/h. Find the velocity of B relative to A, and the velocity of A relative to B. Solution: v_{B/A} = 80 - 60 = 20 km/h east (B moves ahead of A at 20 km/h). v_{A/B} = 60 - 80 = -20 km/h (20 km/h west, meaning A falls behind B).",
+    "Rain is falling vertically at 30 m/s. A man runs horizontally at 10 m/s. At what angle from vertical does the rain appear to fall? What is the apparent speed? Solution: tan\theta = v_man/v_rain = 10/30 = 1/3. \theta = \tan^{-1}(1/3) = 18.4° from vertical. Apparent speed = \sqrt{30^2 + 10^2} = \sqrt{1000} = 31.6 m/s.",
+    "A boat's speed in still water is 5 m/s. The river flows at 3 m/s east. The boat wants to reach a point directly across the river (north). (a) At what angle must the boat head? (b) What is its ground speed? (c) Time to cross a 100 m wide river? Solution: (a) Boat must cancel eastward current: 5 sin\theta = 3 → \theta = 36.9° west of north. (b) v_ground = 5 cos\theta = 5 × 0.8 = 4 m/s north. (c) t = width/v_ground = 100/4 = 25 s.",
+    "Two particles move on the x-axis. Particle A: x_A(t) = 2t + 1. Particle B: x_B(t) = -3t + 10. Find their relative velocity at t = 2 s. Solution: v_A = dx_A/dt = 2 m/s. v_B = dx_B/dt = -3 m/s. v_{B/A} = v_B - v_A = -3 - 2 = -5 m/s. The distance between them decreases at 5 m/s.",
+    "An airplane flies at 400 km/h relative to air. The wind blows at 100 km/h from the west (toward east). What is the plane's ground speed and direction if it heads (a) north? (b) northeast? Solution: (a) v_ground = \sqrt{400^2 + 100^2} = 412 km/h. Direction: tan\theta = 100/400 = 1/4 → \theta = 14° east of north. (b) v_plane = 400/\sqrt{2} north + 400/\sqrt{2} east. v_wind = 100 east. v_ground = (400/\sqrt{2}) north + (400/\sqrt{2} + 100) east = 283 north + 383 east. Speed = \sqrt{283^2 + 383^2} = 476 km/h."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Galilean relativity (velocity addition v' = v - u) was the standard until Einstein's special relativity (1905) showed it is only an approximation valid for v ≪ c. At everyday speeds, the error is completely negligible.",
+    "Relative velocity is a fundamental concept in all of physics — from classical mechanics to electromagnetism (magnetic fields are electric fields viewed from a moving frame) to special relativity.",
+    "The principle of Galilean relativity: the laws of motion are identical in all inertial frames. If you toss a ball up in a moving train (constant velocity), it lands back in your hand — the ball has the train's forward velocity added to its motion.",
+    "In collision problems, the relative velocity of approach is often more useful than individual velocities. For elastic collisions, the relative velocity of separation equals the relative velocity of approach (in magnitude).",
+    "The concept of relative velocity explains why we don't feel Earth's orbital speed (30 km/s) or rotation speed (0.46 km/s at equator) — we move with the Earth, so our velocity relative to Earth is zero. Only in non-inertial frames (acceleration) do we feel fictitious forces."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics"

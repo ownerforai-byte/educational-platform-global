@@ -56,7 +56,10 @@ export function VectorOperationsVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
+    let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
 
     const init = async () => {
@@ -179,6 +182,8 @@ export function VectorOperationsVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.02;
+        animPhase = Math.sin(animTime) * 0.3;
         renderer.render(scene, camera);
       };
       animate();

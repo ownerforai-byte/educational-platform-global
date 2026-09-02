@@ -49,8 +49,11 @@ export function CoordinatesSpaceVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let animDot: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -117,6 +120,8 @@ export function CoordinatesSpaceVisual() {
         };
         mkPt(A, 0xef4444, `A(${p1.x}, ${p1.y}, ${p1.z})`);
         mkPt(B, 0x22c55e, `B(${p2.x}, ${p2.y}, ${p2.z})`);
+        animDot = push(new THREE.Mesh(new THREE.SphereGeometry(0.2, 12, 12), new THREE.MeshBasicMaterial({ color: 0xf97316 }))) as THREE.Mesh;
+        animDot.position.set(p1.x, p1.z, p1.y);
 
         // Line AB
         push(new THREE.Line(
@@ -167,6 +172,13 @@ export function CoordinatesSpaceVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.015;
+        if (animDot) {
+          const t = (Math.sin(animTime) + 1) / 2;
+          animDot.position.x = p1.x + (p2.x - p1.x) * t;
+          animDot.position.y = p1.y + (p2.y - p1.y) * t;
+          animDot.position.z = p1.z + (p2.z - p1.z) * t;
+        }
         renderer.render(scene, camera);
       };
       animate();

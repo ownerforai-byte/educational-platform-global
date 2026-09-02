@@ -54,8 +54,11 @@ export function ComplexQuadraticVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let animPoint: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -152,6 +155,7 @@ export function ComplexQuadraticVisual() {
           // Point z
           const pZ = push(new THREE.Mesh(new THREE.SphereGeometry(0.18, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 }))) as THREE.Mesh;
           pZ.position.set(re, im, 0.05);
+          animPoint = pZ;
           push(mkSprite(`z = ${re.toFixed(1)}+${im.toFixed(1)}i`, "#f87171", pZ.position.clone().add(new THREE.Vector3(0.5, 0.5, 0)), 0.75));
 
           // Point conjugate
@@ -180,6 +184,12 @@ export function ComplexQuadraticVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.025;
+        if (animPoint) {
+          const r = 3;
+          animPoint.position.x = re + r * Math.cos(animTime);
+          animPoint.position.y = im + r * Math.sin(animTime);
+        }
         renderer.render(scene, camera);
       };
       animate();

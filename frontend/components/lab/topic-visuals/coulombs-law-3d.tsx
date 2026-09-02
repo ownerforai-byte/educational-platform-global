@@ -45,8 +45,11 @@ export function CoulombsLawVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let forceArrow: THREE.ArrowHelper;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -100,8 +103,9 @@ export function CoulombsLawVisual() {
       // Force arrows on charges
       const forceDir1 = isAttractive ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(-1, 0, 0);
       const forceDir2 = isAttractive ? new THREE.Vector3(-1, 0, 0) : new THREE.Vector3(1, 0, 0);
-      push(new THREE.ArrowHelper(forceDir1, c1.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1));
-      push(new THREE.ArrowHelper(forceDir2, c2.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1));
+      const arrow1 = push(new THREE.ArrowHelper(forceDir1, c1.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1)) as THREE.ArrowHelper;
+      const arrow2 = push(new THREE.ArrowHelper(forceDir2, c2.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1)) as THREE.ArrowHelper;
+      forceArrow = arrow1;
 
       // Long arrow label for force
       const fLabelPos = new THREE.Vector3(0, 3, 0);
@@ -158,6 +162,11 @@ export function CoulombsLawVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.03;
+        const oscillation = Math.sin(animTime * 3) * 0.3;
+        if (forceArrow) {
+          forceArrow.setLength(Math.max(0.5, forceMag + oscillation), 0.2, 0.12);
+        }
         renderer.render(scene, camera);
       };
       animate();

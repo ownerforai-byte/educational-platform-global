@@ -1,0 +1,79 @@
+{
+  "title": "DC Circuits Mindmap",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "dc-circuits-mindmap",
+  "topicTitle": "DC Circuits — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "DC Circuits",
+    "children": [
+      {
+        "id": "electric-currents-drift-veloci",
+        "label": "Electric currents",
+        "children": [
+          {
+            "id": "electric-currents-sub-0",
+            "label": "drift velocity and its relation with current"
+          }
+        ]
+      },
+      {
+        "id": "ohm-s-law-electrical-resistanc",
+        "label": "Ohm's law",
+        "children": [
+          {
+            "id": "ohm-s-law-sub-0",
+            "label": "electrical resistance"
+          },
+          {
+            "id": "ohm-s-law-sub-1",
+            "label": "resistivity"
+          },
+          {
+            "id": "ohm-s-law-sub-2",
+            "label": "conductivity"
+          }
+        ]
+      },
+      {
+        "id": "current-voltage-relations-ohmi",
+        "label": "Current-voltage relations",
+        "children": [
+          {
+            "id": "current-voltage-relations-sub-0",
+            "label": "ohmic and non-ohmic resistance"
+          }
+        ]
+      },
+      {
+        "id": "resistances-in-series-and-para",
+        "label": "Resistances in series",
+        "children": [
+          {
+            "id": "resistances-in-series-sub-0",
+            "label": "parallel"
+          }
+        ]
+      },
+      {
+        "id": "potential-divider",
+        "label": "Potential divider"
+      },
+      {
+        "id": "electromotive-force-of-a-source-internal",
+        "label": "Electromotive force of a source, internal resistance"
+      },
+      {
+        "id": "work-and-power-in-electrical-c",
+        "label": "Work",
+        "children": [
+          {
+            "id": "work-sub-0",
+            "label": "power in electrical circuits"
+          }
+        ]
+      }
+    ]
+  }
+}

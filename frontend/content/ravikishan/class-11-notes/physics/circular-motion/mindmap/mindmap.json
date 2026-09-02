@@ -1,0 +1,59 @@
+{
+  "title": "Circular Motion Mindmap",
+  "unitSlug": "circular-motion",
+  "topicSlug": "circular-motion-mindmap",
+  "topicTitle": "Circular Motion — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Circular Motion",
+    "children": [
+      {
+        "id": "angular-displacement-velocity-",
+        "label": "Angular displacement, velocity",
+        "children": [
+          {
+            "id": "angular-displacement-velocity-sub-0",
+            "label": "acceleration"
+          }
+        ]
+      },
+      {
+        "id": "relation-between-angular-and-l",
+        "label": "Relation between angular",
+        "children": [
+          {
+            "id": "relation-between-angular-sub-0",
+            "label": "linear velocity"
+          },
+          {
+            "id": "relation-between-angular-sub-1",
+            "label": "acceleration"
+          }
+        ]
+      },
+      {
+        "id": "centripetal-acceleration-and-c",
+        "label": "Centripetal acceleration",
+        "children": [
+          {
+            "id": "centripetal-acceleration-sub-0",
+            "label": "centripetal force"
+          }
+        ]
+      },
+      {
+        "id": "conical-pendulum",
+        "label": "Conical pendulum"
+      },
+      {
+        "id": "motion-in-a-vertical-circle",
+        "label": "Motion in a vertical circle"
+      },
+      {
+        "id": "applications-of-banking",
+        "label": "Applications of banking"
+      }
+    ]
+  }
+}

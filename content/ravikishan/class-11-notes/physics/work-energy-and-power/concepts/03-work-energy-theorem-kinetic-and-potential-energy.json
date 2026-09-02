@@ -1,31 +1,44 @@
 {
-  "title": "Work-Energy Theorem â€” Kinetic and Potential Energy",
+  "title": "Work-Energy Theorem — Kinetic and Potential Energy",
   "unitSlug": "work-energy-and-power",
   "topicSlug": "work-energy-theorem-kinetic-and-potential-energy",
   "topicTitle": "Work-energy theorem; kinetic and potential energy",
   "relevance": 100,
   "notes": [
-    "**Work-Energy Theorem:** the net work done on a body equals the change in its kinetic energy: $W_{net} = \\Delta K = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2$.",
-    "**Kinetic energy:** $K = \\frac{1}{2}mv^2$. It is always positive and is a scalar. It depends on speed, not velocity direction.",
-    "**Derivation insight:** from Newton's second law, $F = ma = m\\frac{dv}{dt}$. Multiply by $v$ and integrate: $\\int Fv\\,dt = \\int mv\\,dv$, which gives $W = \\Delta K$.",
-    "**Potential energy:** energy stored due to position or configuration. Gravitational PE near Earth's surface: $U_g = mgh$.",
-    "**Elastic PE:** for a spring, $U_s = \\frac{1}{2}kx^2$. This comes directly from the work done against the spring force.",
-    "**Why the theorem is powerful:** it connects force and motion through energy, often simplifying problems where forces are complicated but the energy change is easy to compute."
+    "**Work-Energy Theorem (statement):** The net work done by all forces acting on a particle equals the change in its kinetic energy: $W_{\\text{net}} = \\Delta K = K_f - K_i = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2$. This is a scalar equation — direction is handled through the dot product in work.",
+    "**Derivation from Newton's Second Law:** $F = ma = m \\frac{dv}{dt}$. Multiply both sides by $v = dx/dt$: $F v = m v \\frac{dv}{dt} = m \\frac{d}{dt}(\\frac{1}{2}v^2)$. Integrate over time: $\\int F v dt = \\int F dx = W = \\Delta(\\frac{1}{2}mv^2) = \\Delta K$. This shows the theorem is mathematically equivalent to $F=ma$.",
+    "**Kinetic energy definition:** $K = \\frac{1}{2}mv^2$. Always positive (since $v^2 \\ge 0$). Scalar quantity — depends on speed, not velocity direction. A 1 kg mass at 10 m/s has $K = 50$ J. Doubling speed quadruples KE (v² dependence).",
+    "**Potential energy — general concept:** Potential energy $U$ is energy stored due to the position or configuration of a system in a conservative force field. It is defined ONLY for conservative forces. The change in potential energy is the negative of the work done by the conservative force: $\\Delta U = -W_{\\text{conservative}}$.",
+    "**Gravitational potential energy (near Earth):** $U_g = mgh$, where $h$ is height above an arbitrarily chosen reference level (usually ground or lowest point in problem). $\\Delta U_g = mg\\Delta h$. Work by gravity: $W_g = -\\Delta U_g = mg(h_i - h_f)$. Only HEIGHT difference matters, not the path taken.",
+    "**Elastic potential energy (spring):** For a spring obeying Hooke's law $F = -kx$, $U_s = \\frac{1}{2}kx^2$ where $x$ is displacement from natural length. Work by spring: $W_s = -\\Delta U_s = \\frac{1}{2}kx_i^2 - \\frac{1}{2}kx_f^2$. $U_s$ is always $\\ge 0$ (minimum at $x=0$).",
+    "**Mechanical energy:** $E = K + U = K + U_g + U_s + \\dots$. When ONLY conservative forces do work, $W_{\\text{net}} = W_{\\text{conservative}} = -\\Delta U$. Then $W_{\\text{net}} = \\Delta K = -\\Delta U$, so $\\Delta K + \\Delta U = 0$, meaning $E = \\text{constant}$. This is conservation of mechanical energy.",
+    "**Non-conservative forces and the general work-energy relation:** When non-conservative forces (friction, air resistance, applied forces) are present: $W_{\\text{nc}} = \\Delta E = \\Delta K + \\Delta U$. This is the most general form. $W_{\\text{nc}}$ is the work done by ALL non-conservative forces. If $W_{\\text{nc}} = 0$, mechanical energy is conserved.",
+    "**Kinetic energy in different frames:** KE is frame-dependent. In lab frame: $K = \\frac{1}{2}mv^2$. In CM frame: $K_{\\text{CM}} = \\frac{1}{2}\\mu v_{\\text{rel}}^2$ where $\\mu$ is reduced mass. The total KE = $K_{\\text{CM}}$ (motion of CM) + $K_{\\text{rel}}$ (internal motion). Only internal KE can be converted to heat in inelastic collisions.",
+    "**Potential energy reference point is arbitrary:** $U = mgh$ uses $h$ measured from any reference. Changing reference adds a constant to all $U$ values, which cancels in $\\Delta U$. Always choose the reference to simplify the problem (e.g., $U=0$ at ground level, or at equilibrium of spring).",
+    "**Energy approach vs force approach:** Force approach: $F=ma$, solve for acceleration, integrate for velocity/position. Energy approach: $W_{\\text{nc}} = \\Delta E$, solve directly for speed or height. Energy is often simpler when forces vary or path is curved, but it gives speeds, not trajectories or times.",
+    "**Work done by gravity in a closed loop:** Zero. $W_g = -\\Delta U_g$, and for a closed loop $\\Delta U_g = 0$ (you return to the same height). This is why gravity is conservative. Work done by friction in a closed loop: NEGATIVE (energy lost to heat). Friction is non-conservative.",
+    "**Power and the work-energy theorem:** $P = \\frac{dW}{dt} = \\frac{dK}{dt} = Fv$ (when $F$ and $v$ are parallel). The rate of change of kinetic energy equals the power delivered by the net force. For a particle moving in a circle at constant speed, $\\Delta K = 0$, so net work = 0, and centripetal force does zero work ($F \\perp v$)."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The work-energy theorem uses NET work (sum of work by ALL forces). A common error is using work by just one force. If you push a block at constant speed on a rough floor, your work is positive, friction's work is negative, NET work = 0, $\\Delta K = 0$ — the theorem holds perfectly.",
+    "Potential energy is NOT defined for non-conservative forces. You CANNOT write $U_{\\text{friction}} = \\mu mg x$. Friction dissipates energy as heat; there is no 'friction potential' to store and recover energy. This is a fundamental distinction.",
+    "Mechanical energy conservation ($K+U=\\text{constant}$) ONLY applies when $W_{\\text{nc}}=0$. If there is ANY friction, air resistance, or external pushing/pulling, mechanical energy is NOT conserved. You MUST use $W_{\\text{nc}} = \\Delta E$ instead.",
+    "The reference point for potential energy does NOT affect the physics. $\\Delta U$ is what matters. If you set $U=0$ at the table vs floor, the KE at the bottom is the same. Students often waste time 'finding the right' reference — any reference works if used consistently.",
+    "Kinetic energy can NEVER be negative ($v^2 \\ge 0$). Potential energy CAN be negative (e.g., $U = -GMm/r$ for universal gravity). Total mechanical energy can be negative (bound systems like planets in orbit). Only ENERGY DIFFERENCES are physically meaningful."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "A 0.5 kg ball is dropped from height 20 m. Find its speed at 5 m above ground using energy conservation. Solution: $U_i = mgh_i = 0.5 \\times 9.8 \\times 20 = 98$ J. $U_f = 0.5 \\times 9.8 \\times 5 = 24.5$ J. $\\Delta U = -73.5$ J. $\\Delta K = +73.5$ J. $\\frac{1}{2}mv^2 = 73.5 \\rightarrow v = \\sqrt{147/0.5} = \\sqrt{294} = 17.1$ m/s.",
+    "A 2 kg block compresses a spring ($k = 400$ N/m) by 0.1 m on a frictionless surface and is released. Find its max speed. Solution: Initial: $U_s = \\frac{1}{2}kx^2 = 200 \\times 0.01 = 2$ J, $K=0$. Final: $U_s = 0$, $K_{\\text{max}} = 2$ J. $\\frac{1}{2} \\times 2 \\times v^2 = 2 \\rightarrow v^2 = 2 \\rightarrow v = 1.41$ m/s.",
+    "A 1 kg block slides on a rough horizontal surface ($\\mu_k = 0.3$) with initial speed 10 m/s. How far does it go before stopping? Solution: $W_{\\text{nc}} = W_f = -\\mu_k mg d$. $\\Delta K = 0 - \\frac{1}{2} \\times 1 \\times 100 = -50$ J. $W_{\\text{nc}} = \\Delta K \\rightarrow -0.3 \\times 1 \\times 9.8 \\times d = -50 \\rightarrow d = 50 / 2.94 = 17$ m.",
+    "A 3 kg mass is attached to a vertical spring ($k = 200$ N/m) and released from the spring's natural length. Find the max extension. Solution: Let $x$ be extension. Initial: $U_g = 0$ (reference), $U_s = 0$, $K = 0$. Final: $U_g = -mgx$, $U_s = \\frac{1}{2}kx^2$, $K = 0$. Energy: $0 = -mgx + \\frac{1}{2}kx^2 \\rightarrow x = 2mg/k = 2 \\times 3 \\times 9.8 / 200 = 0.294$ m.",
+    "A 1000 kg car goes up a 10° hill at constant 20 m/s. Engine power? Assume 20% losses. Solution: Force to overcome gravity: $F_g = mg \\sin 10^\\circ = 1000 \\times 9.8 \\times 0.174 = 1705$ N. Useful power $P = F_g v = 1705 \\times 20 = 34,100$ W. With 20% loss, input power = $34,100 / 0.8 = 42,625$ W ≈ 57 hp."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The work-energy theorem was developed by Leibniz, Bernoulli, and Coriolis in the 17th-19th centuries. The concept of 'vis viva' (living force, $mv^2$) by Leibniz (1686) was a precursor — he argued $mv^2$ (not $mv$) was the conserved quantity in mechanical systems.",
+    "Noether's theorem (1918) proves that conservation of energy is a consequence of time translation symmetry: the laws of physics don't change with time. If physics were different tomorrow, energy wouldn't be conserved. This is one of the deepest connections in physics.",
+    "Kinetic energy $\\frac{1}{2}mv^2$ is NOT a relativistic formula — it's the low-speed approximation of $(\\gamma - 1)mc^2$. At $v = 0.1c$, the error is about 0.5%. At everyday speeds, Newtonian KE is exact for all practical purposes.",
+    "Potential energy is a property of the SYSTEM, not a single object. A ball alone doesn't have gravitational PE; the ball-EARTH system does. The energy is stored in the gravitational field. Similarly, spring PE is stored in the spring's deformed configuration.",
+    "The total energy of the universe (if well-defined) is constant. In general relativity, energy conservation is subtle — in an expanding universe, energy of photons decreases (redshift), and there's no global energy conservation law. But locally, energy conservation is exact and tested to extraordinary precision."
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power"

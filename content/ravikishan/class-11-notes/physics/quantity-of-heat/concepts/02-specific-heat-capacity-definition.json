@@ -1,30 +1,50 @@
 {
-  "title": "Specific Heat Capacity (c) â€” Definition & Key Values",
-  "unitSlug": "quantity-of-heat",
-  "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
-  "topicTitle": "Measurement of specific heat capacity of solids and liquids",
-  "relevance": 80,
-  "notes": [
-    "**Formula:** H = mÂ·cÂ·Î”Î¸",
-    "**Definition:** Setting m = 1 and Î”Î¸ = 1 gives c = H, so specific heat capacity is the heat energy required to raise the temperature of a unit mass of a substance by 1Â°C (or 1 K)",
-    "**Water:** c = 1 cal/gÂ°C (CGS) = 4200 J/kgÂ·K (SI) â€” unusually high, which is why water resists temperature change and is used as a coolant",
-    "**Ice:** c = 0.5 cal/gÂ°C (CGS) = 2100 J/kgÂ·K (SI)"
+  \"\"\"title\"\"\": \"\"\"Specific Heat Capacity (c) - Definition & Key Values\"\"\",
+  \"\"\"unitSlug\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"topicSlug\"\"\": \"\"\"specific-heat-capacity\"\"\",
+  \"\"\"topicTitle\"\"\": \"\"\"Specific heat capacity (c) - definition and key values\"\"\",
+  \"\"\"relevance\"\"\": 100,
+  \"\"\"notes\"\"\": [
+    \"\"\"**Definition:** Specific heat capacity ($c$) is the amount of heat energy required to raise the temperature of **1 kg** (SI) or **1 g** (CGS) of a substance by **1 K** (or 1°C). It is an intrinsic property of the material.\"\"\",
+    \"\"\"**Formula:** From $H = mc\\Delta\\theta$, solving for $c$: **$c = \\frac{H}{m \\cdot \\Delta\\theta}$**. This shows $c$ is the heat per unit mass per unit temperature change.\"\"\",
+    \"\"\"**Water - the benchmark:** $c_{water} = 4186\\text{ J/kg·K}$ (more precisely 4181.3 J/kg·K at 15°C, but 4200 J/kg·K is standard for exam work). This is unusually high compared to most substances, making water an excellent thermal buffer.\"\"\",
+    \"\"\"**Ice vs. liquid water:** $c_{ice} \\approx 2100\\text{ J/kg·K}$ - about HALF of liquid water's specific heat. This means ice heats up twice as fast as liquid water for the same mass. During melting, the $c$ changes discontinuously.\"\"\",
+    \"\"\"**Metals - low specific heats:** Copper: $c = 390\\text{ J/kg·K}$, Aluminum: $c = 900\\text{ J/kg·K}$, Iron: $c = 450\\text{ J/kg·K}$, Lead: $c = 130\\text{ J/kg·K}$, Gold: $c = 129\\text{ J/kg·K}$. Low $c$ means metals respond quickly to heating - useful for cookware, bad for thermal storage.\"\"\",
+    \"\"\"**Solids (Dulong-Petit Law):** For most solid elements at room temperature, $c \\times M \\approx 25\\text{ J/mol·K}$ (molar heat capacity). So $c \\approx 25/M$ where $M$ is molar mass in kg/mol. Heavy atoms → low $c$ per kg; light atoms → high $c$ per kg.\"\"\",
+    \"\"\"**Liquids:** Water: 4186, Ethanol: 2440, Mercury: 140, Glycerin: 2430, Ammonia (liquid): 4700. Gases have two specific heats ($c_p$ and $c_v$); most liquids have only one since they don't expand significantly.\"\"\",
+    \"\"\"**Gases - two specific heats:** For gases, $c_p > c_v$ always. At constant pressure, gas expands and does work, needing MORE heat for the same temperature rise. For air: $c_p = 1005\\text{ J/kg·K}$, $c_v = 718\\text{ J/kg·K}$. Ratio $\\gamma = c_p/c_v \\approx 1.4$.\"\"\",
+    \"\"\"**Temperature dependence:** Specific heat capacity is NOT truly constant - it varies with temperature. For water, $c$ changes from 4217 J/kg·K at 0°C to 4181 J/kg·K at 15°C to 4219 J/kg·K at 100°C. For most school problems, treat $c$ as constant.\"\"\",
+    \"\"\"**Molar heat capacity vs. specific heat:** Molar heat capacity $C_m = c \\times M$ (where $M$ = molar mass). For water: $C_m = 4186 \\times 0.018 = 75.3\\text{ J/mol·K}$. This is useful for comparing substances on a per-molecule basis.\"\"\",
+    \"\"\"**Why specific heat differs:** The specific heat depends on how energy is distributed among molecular degrees of freedom. Monatomic gases store energy only in translation (3 DOF). Diatomic gases also store in rotation (2 DOF). Polyatomic molecules add vibration. More ways to store energy → higher $c$.\"\"\",
+    \"\"\"**Water's anomalous value:** Water's $c = 4186$ is about 5× that of copper and 10× that of lead. This is because water molecules form hydrogen bonds that must be partially broken before molecules can move faster (higher temperature). This \"\"\"hidden\"\"\" energy cost makes $c$ high.\"\"\",
+    \"\"\"**Practical - mixing two substances:** When a hot substance (mass $m_1$, $c_1$, $T_1$) is mixed with a cold substance ($m_2$, $c_2$, $T_2$), the equilibrium temperature is: $T_{eq} = \\frac{m_1 c_1 T_1 + m_2 c_2 T_2}{m_1 c_1 + m_2 c_2}$. This is a weighted average by heat capacity.\"\"\",
+    \"\"\"**NEB focus:** Know the formula $H = mc\\Delta\\theta$, the values of $c$ for water and common metals, the distinction between $c$ and heat capacity ($C = mc$), and unit conversion between J/kg·K and cal/g·°C ($1\\text{ J/kg·K} = 0.000239\\text{ cal/g·°C}$).\"\"\",
+    \"\"\"**Common misconception:** \"\"\"Specific\"\"\" means \"\"\"per unit mass\"\"\" - it does NOT mean \"\"\"typical\"\"\" or \"\"\"usual.\"\"\" Specific heat capacity is a very specific property that varies enormously between materials. Gold ($c=129$) and water ($c=4186$) differ by a factor of 32.\"\"\"
   ],
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+  \"\"\"confusion\"\"\": [
+    \"\"\"❌ Specific heat capacity is the same for all states of a substance. ✅ Ice ($c=2100$), liquid water ($c=4186$), and steam ($c=2010$) all have different specific heats. The value changes at phase transitions.\"\"\",
+    \"\"\"❌ Specific heat depends on the shape/size of the object. ✅ Specific heat is an INTENSIVE property - it depends only on the material, not on the object's shape, size, or mass. A gold ring and a gold bar have the same $c$.\"\"\",
+    \"\"\"❌ $c_p$ and $c_v$ are the same for all substances. ✅ For solids and liquids, $c_p \\approx c_v$ because they barely expand. For gases, $c_p > c_v$ significantly because gases expand and do work. The difference is $c_p - c_v = R/M$ (per kg) or $R$ (per mole).\"\"\",
+    \"\"\"❌ A substance with high specific heat is always \"\"\"hotter.\"\"\" ✅ High $c$ means the substance RESISTS temperature change - it takes a lot of heat to raise its temperature. Water at 20°C has high $c$ but isn't \"\"\"hot\"\"\" - it just requires a lot of energy to change its temperature.\"\"\",
+    \"\"\"❌ The specific heat of water is 1 cal/g·°C everywhere. ✅ The calorie is DEFINED using water's specific heat, but that specific heat varies slightly with temperature. At 15°C, $c = 4.1855\\text{ J/g·K}$ (giving 1 cal = 4.1855 J). The modern exact value is $1\\text{ cal} = 4.184\\text{ J}$ (thermochemical calorie).\"\"\",
+    \"\"\"❌ Gases have only one specific heat capacity. ✅ Gases have TWO: $c_p$ (constant pressure) and $c_v$ (constant volume). $c_p - c_v = R$ per mole, or $c_p - c_v = R/M$ per unit mass. For air, $c_p = 1005$ and $c_v = 718\\text{ J/kg·K}$.\"\"\",
+    \"\"\"❌ Metals always have low specific heat. ✅ While most metals do have low $c$ (because they're dense and atoms are heavy), beryllium ($c = 1825$) and lithium ($c = 3580$) are exceptions - they have low atomic mass, so per kg they have many atoms and high heat capacity.\"\"\"
   ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+  \"\"\"practice\"\"\": [
+    \"\"\"What is the specific heat capacity of a metal if 500 J raises 0.2 kg by 10°C? $c = H/(m\\Delta\\theta) = 500/(0.2 \\times 10) = 500/2 = 250\\text{ J/kg·K}$. This matches lead or gold.\"\"\",
+    \"\"\"How much heat is needed to raise 3 kg of aluminum from 20°C to 100°C? $H = mc\\Delta\\theta = 3 \\times 900 \\times 80 = 216{,}000\\text{ J} = 216\\text{ kJ}$. Compare: same mass of water would need $3 \\times 4200 \\times 80 = 1{,}008{,}000\\text{ J}$ - nearly 5× more!\"\"\",
+    \"\"\"Find the equilibrium temperature when 0.5 kg of copper ($c=390$) at 90°C is mixed with 0.2 kg of water ($c=4200$) at 20°C. $0.5 \\times 390 \\times (90-T) = 0.2 \\times 4200 \\times (T-20)$. $195(90-T) = 840(T-20)$. $17550 - 195T = 840T - 16800$. $1035T = 34350 \\Rightarrow T \\approx 33.2°\\text{C}$.\"\"\",
+    \"\"\"A 0.1 kg metal at 100°C is dropped into 0.3 kg of water at 15°C. The equilibrium is 18°C. Find the metal's specific heat. Heat lost by metal: $0.1 \\times c \\times 82 = 8.2c$. Heat gained by water: $0.3 \\times 4200 \\times 3 = 3780$. $8.2c = 3780 \\Rightarrow c \\approx 461\\text{ J/kg·K}$ (close to iron).\"\"\",
+    \"\"\"Why does a coastal city have smaller temperature swings than an inland city? Water has $c = 4186\\text{ J/kg·K}$ - about 5× that of sand/rock ($\\sim 800$). The ocean absorbs/releases enormous heat with minimal temperature change, moderating the nearby air temperature through convection and wind.\"\"\",
+    \"\"\"Convert 0.5 cal/g·°C to J/kg·K. $0.5\\text{ cal/g·°C} \\times 4.184\\text{ J/cal} \\times 1000\\text{ g/kg} = 2092\\text{ J/kg·K}$. The factor 1000 comes from g→kg; the factor 4.184 from cal→J.\"\"\"
   ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+  \"\"\"universalFacts\"\"\": [
+    \"\"\"The Dulong-Petit law (1819) states that molar heat capacity of most solid elements is approximately $3R = 24.9\\text{ J/mol·K}$ at room temperature. This arises because each atom in a solid has 6 quadratic degrees of freedom (3 kinetic + 3 potential), each contributing $\\frac{1}{2}k_BT$.\"\"\",
+    \"\"\"Water's specific heat is the highest of any common liquid. This is due to hydrogen bonding - energy goes into partially breaking H-bonds before molecules can move faster. This property is why Earth's oceans store vast amounts of solar energy.\"\"\",
+    \"\"\"Mercury has one of the lowest specific heats among liquids ($c = 140\\text{ J/kg·K}$). This is why mercury thermometers respond quickly to temperature changes - they need very little heat to change temperature.\"\"\",
+    \"\"\"The concept of \"\"\"thermal inertia\"\"\" in climate science comes directly from specific heat. Land has lower thermal inertia than ocean, so continents heat and cool faster. This drives monsoon patterns and sea breezes.\"\"\",
+    \"\"\"Historical note: The word \"\"\"calorimeter\"\"\" comes from Latin \"\"\"calor\"\"\" (heat). Antoine Lavoisier built the first ice calorimeter in 1780, measuring heat by the amount of ice melted. This was the first quantitative calorimetry.\"\"\"
   ],
-  "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  \"\"\"animation3D\"\"\": \"\"\"quantity-of-heat\"\"\",
+  \"\"\"motionGraphics\"\"\": \"\"\"quantity-of-heat\"\"\"
 }

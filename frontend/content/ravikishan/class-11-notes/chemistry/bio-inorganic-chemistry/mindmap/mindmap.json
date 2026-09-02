@@ -1,0 +1,93 @@
+{
+  "title": "Bio-inorganic Chemistry Mindmap",
+  "unitSlug": "bio-inorganic-chemistry",
+  "topicSlug": "bio-inorganic-chemistry-mindmap",
+  "topicTitle": "Bio-inorganic Chemistry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Bio-inorganic Chemistry",
+    "children": [
+      {
+        "id": "introduction-to-bio-inorganic-chemistry",
+        "label": "Introduction to Bio-inorganic Chemistry"
+      },
+      {
+        "id": "micro-and-macro-nutrients",
+        "label": "Micro",
+        "children": [
+          {
+            "id": "micro-sub-0",
+            "label": "macro nutrients"
+          }
+        ]
+      },
+      {
+        "id": "importance-of-metal-ions-in-biological-s",
+        "label": "Importance of metal ions in biological systems (ions of Na, K, Mg, Ca, Fe, Cu, Zn, Ni, Co, Cr)",
+        "children": [
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-0",
+            "label": "ions of Na"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-1",
+            "label": "K"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-2",
+            "label": "Mg"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-3",
+            "label": "Ca"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-4",
+            "label": "Fe"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-5",
+            "label": "Cu"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-6",
+            "label": "Zn"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-7",
+            "label": "Ni"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-8",
+            "label": "Co"
+          },
+          {
+            "id": "importance-of-metal-ions-in-biological-s-item-9",
+            "label": "Cr"
+          }
+        ]
+      },
+      {
+        "id": "ion-pumps-sodium-potassium-and",
+        "label": "Ion pumps (sodium-potassium",
+        "children": [
+          {
+            "id": "ion-pumps-sodium-potassium-sub-0",
+            "label": "sodium-glucose pump)"
+          }
+        ]
+      },
+      {
+        "id": "metal-toxicity-toxicity-due-to",
+        "label": "Metal toxicity (toxicity due to iron, arsenic, mercury, lead",
+        "children": [
+          {
+            "id": "metal-toxicity-toxicity-due-to-iron-arsenic-mercury-lead-sub-0",
+            "label": "cadmium)"
+          }
+        ]
+      }
+    ]
+  }
+}

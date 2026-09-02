@@ -1,30 +1,43 @@
 {
-  "title": "Equations of Motion â€” Graphical Treatment",
+  "title": "Equations of Motion — Graphical Treatment",
   "unitSlug": "kinematics",
   "topicSlug": "equation-of-motion-graphical-treatment",
   "topicTitle": "Equation of motion (graphical treatment)",
   "relevance": 100,
   "notes": [
-    "**Three equations for constant acceleration:** $v = u + at$, $s = ut + \\frac{1}{2}at^2$, $v^2 = u^2 + 2as$.",
-    "**Graphical derivation of $v = u + at$:** the slope of a velocity-time graph equals acceleration. The line from $(t=0, v=u)$ to $(t=t, v=v)$ gives $a = (v-u)/t$, so $v = u + at$.",
-    "**Graphical derivation of $s = ut + \\frac{1}{2}at^2$:** the area under the velocity-time graph equals displacement. For constant acceleration, the area is a trapezium: $s = \\text{area} = \\frac{u+v}{2} \\times t$. Substituting $v = u+at$ gives $s = ut + \\frac{1}{2}at^2$.",
-    "**Graphical derivation of $v^2 = u^2 + 2as$:** eliminate $t$ from the first two equations. From $v = u+at$, $t = (v-u)/a$. Substituting into the displacement equation gives $v^2 = u^2 + 2as$.",
-    "**Why constant acceleration matters:** all three derivations assume the acceleration graph is a horizontal line. If acceleration changes with time, these equations do not apply directly."
+    "**Three equations of motion for constant acceleration:** v = u + at, s = ut + ½at², v² = u² + 2as. Here u = initial velocity, v = final velocity, a = constant acceleration, t = time elapsed, s = displacement. These relate five kinematic variables.",
+    "**Graphical derivation of v = u + at:** On a velocity-time (v-t) graph with constant acceleration, the graph is a straight line from point A (t=0, v=u) to point B (t=t, v=v). The slope of this line is acceleration: a = (v - u)/t. Rearranging gives v = u + at.",
+    "**Graphical derivation of s = ut + ½at²:** The displacement s equals the area under the v-t graph. For constant acceleration, the area is a trapezium OABC: Area = Area of rectangle OADC + Area of triangle ADB = u × t + ½ × t × (v-u) = ut + ½t(v-u). Substituting v-u = at gives s = ut + ½at².",
+    "**Graphical derivation of v² = u² + 2as:** Eliminate t from the first two equations. From v = u + at, t = (v - u)/a. Substitute into s = ut + ½at²: s = u(v-u)/a + ½a[(v-u)/a]² = u(v-u)/a + ½(v-u)²/a = [u(v-u) + ½(v-u)²]/a = [(v-u)(u + ½(v-u))]/a = [(v-u)(½(u+v))]/a. Thus 2as = (v-u)(v+u) = v² - u², giving v² = u² + 2as.",
+    "**Velocity-time graph characteristics:** A straight line with positive slope (upward) means positive acceleration. A horizontal line means zero acceleration (constant velocity). A straight line with negative slope (downward) means negative acceleration (deceleration).",
+    "**Displacement from area under v-t graph:** The total area between the v-t curve and time axis equals total displacement. A rectangle represents displacement at constant velocity; a trapezium represents displacement during constant acceleration. The area above the t-axis is positive displacement; below is negative.",
+    "**Acceleration-time graph:** The area under an acceleration-time (a-t) graph gives the change in velocity: Δv = ∫a dt. For constant acceleration, this is simply the rectangle a × t, confirming v = u + at.",
+    "**Displacement-time graph for constant acceleration:** The s-t graph is a parabola. If u = 0, it passes through the origin with curvature determined by a. The slope of the tangent at any point gives instantaneous velocity. Curvature = 1/R ∝ 1/a (sharper curvature means larger acceleration).",
+    "**Why constant acceleration simplifies physics:** Only with constant a do we get the three simple closed-form equations. With variable acceleration a(t), we must integrate: v(t) = ∫a(t)dt + u, s(t) = ∫v(t)dt + s₀. The closed-form solutions are unique to the constant case.",
+    "**Sign convention in kinematics equations:** Choose a positive direction. All quantities (u, v, a, s) are signed: positive if in the chosen direction, negative if opposite. This is crucial for 1D motion problems.",
+    "**Velocity-displacement relationship:** From a = dv/dt = (dv/ds)(ds/dt) = v(dv/ds), we get v dv = a ds. Integrating: v² - u² = 2∫a ds. For constant a, this gives v² = u² + 2as. This form is useful when time is not given or needed.",
+    "**Real-world application:** Car acceleration, free fall, rocket motion, braking distance. Police radar guns use the constant acceleration model to estimate vehicle speeds from skid marks (s = v²/(2μg))."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The three equations of motion ONLY apply when acceleration is CONSTANT. If acceleration changes (e.g., a = kt), these equations are invalid. You must use calculus: v = ∫a dt, s = ∫v dt. Many students apply v = u + at to situations where acceleration is not constant.",
+    "Displacement s and distance traveled are NOT the same. On a v-t graph, s = signed area (net displacement); distance = sum of absolute areas. If a particle reverses direction, its displacement can be zero while distance traveled is large.",
+    "In v² = u² + 2as, the quantities are all signed. If a body decelerates, a is negative. Then v² = u² - 2|a|s, and v becomes zero when s = u²/(2|a|). The equation handles deceleration correctly if sign conventions are followed.",
+    "The graphical method (trapezoidal area) assumes the v-t graph is a straight line (constant acceleration). If the graph is curved, the trapezium formula gives an approximation only. Integration (or Simpson's rule) is needed for exact results.",
+    "Many students confuse the three formulas — thinking any of the three can be used to solve any problem. Each formula is derived to eliminate one variable: v=u+at eliminates s, s=ut+½at² eliminates v, v²=u²+2as eliminates t. Use the one that does NOT require the unknown variable."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "An electron in a cathode ray tube accelerates from rest at 5 × 10¹⁵ m/s². How long does it take to reach 1/4 the speed of light? What distance does it travel? Solution: v = c/4 = 7.5×10⁷ m/s. a = 5×10¹⁵. t = v/a = 7.5×10⁷/5×10¹⁵ = 1.5×10⁻⁸ s = 15 ns. s = ½at² = ½×5×10¹⁵×(1.5×10⁻⁸)² = ½×5×10¹⁵×2.25×10⁻¹⁶ = 5.625 m.",
+    "A car moving at 25 m/s (90 km/h) applies brakes with deceleration 5 m/s². (a) How long to stop? (b) How far does it travel? (c) If the road is wet and μ drops by half, what changes? Solution: (a) v = 0, u = 25, a = -5. t = (v-u)/a = 25/5 = 5 s. (b) s = (v² - u²)/(2a) = -625/(-10) = 62.5 m. (c) Halving μ → halving |a| → doubling stopping distance to 125 m. This is why roads are dangerous when wet.",
+    "A particle starts from rest at s = 0 and accelerates uniformly at 4 m/s² for 3 s, then continues at constant velocity for 2 s, then decelerates uniformly at 2 m/s² to rest over 4 s. Find (a) total distance, (b) average velocity. Solution: Phase 1: a=4, t=3. v=12, s=½×4×9=18 m. Phase 2: v=12, t=2. s=24 m. Phase 3: u=12, a=-2, v=0. t=6 s. Wait, t=6 but given 4 s. Recalculate: v_final = u + at = 12 - 2×4 = 4 m/s, not 0. Correction: decelerates over 4 s from 12 m/s at -2 m/s²: final v = 12-8 = 4, not rest. If it must stop in 4s: a = -12/4 = -3 m/s². s = 12×4 + ½(-3)(16) = 48 - 24 = 24 m. Total distance = 18+24+24 = 66 m. Total time = 9 s. Average v = 66/9 = 7.33 m/s.",
+    "A bus starts from rest and moves with a constant acceleration of 2 m/s² for 10 s, then moves with constant velocity, then decelerates uniformly at 5 m/s² to stop at a distance of 200 m from start. Find the total time. Solution: Phase 1: a=2, t=10. v=20, s=¼×2×100=100 m. Phase 3: u=20, a=-5, v=0. s=(v²-u²)/(2a) = -400/(-10) = 40 m. Phase 2 distance = 200 - 100 - 40 = 60 m. Phase 2 time = 60/20 = 3 s. Phase 3 time = 20/5 = 4 s. Total time = 10+3+4 = 17 s.",
+    "From a v-t graph showing a car accelerating from 0 to 20 m/s in 10 s in a straight line, then traveling at 20 m/s for 20 s, then decelerating to rest in 5 s: Find acceleration in each phase and total distance. Solution: Phase 1: a = 20/10 = 2 m/s². Phase 2: a = 0. Phase 3: a = -20/5 = -4 m/s². Distance = area = ½×20×10 + 20×20 + ½×20×5 = 100 + 400 + 50 = 550 m."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The three equations of motion were derived using calculus by Newton and Leibniz in the late 17th century. They represent the double-integration of acceleration when it is constant: a = constant → v = at + u → s = ½at² + ut.",
+    "Galileo (1591) was the first to establish that distance fallen from rest is proportional to time squared (s ∝ t²), by using an inclined plane to slow down the motion so he could time it accurately.",
+    "The area-under-curve interpretation is the fundamental theorem of calculus in action: ∫v(t)dt from t₁ to t₂ gives displacement, and d/dt[s(t)] gives velocity. The graphical method is equivalent to integration.",
+    "In non-inertial (accelerating reference frame) motion, fictitious forces appear and the kinematic equations must be modified. For example, in a car accelerating forward, a dropped ball appears to accelerate backward (pseudo-force).",
+    "The SUVAT equations (using s, u, v, a, t notation) are taught worldwide in high school physics and are the foundation of classical mechanics. They apply to any scenario with constant acceleration: free fall, car braking, rocket thrust, elevator motion."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics"

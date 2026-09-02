@@ -68,8 +68,11 @@ export function DerivativeVisual() {
     if (!container || !isWebGL) return;
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
-    let controls: any, frameId: number;
+    let controls: any;
+    let frameId: number;
+    let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    let tangentPoint: THREE.Mesh;
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -145,6 +148,7 @@ export function DerivativeVisual() {
         // Point on curve
         const pt = push(new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 }))) as THREE.Mesh;
         pt.position.set(tx, y0, 0.05);
+        tangentPoint = pt;
         push(mkSprite(`P(${tx.toFixed(1)}, ${y0.toFixed(2)})`, "#f87171", pt.position.clone().add(new THREE.Vector3(0.5, 0.5, 0)), 0.75));
 
         // Slope triangle
@@ -164,6 +168,12 @@ export function DerivativeVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
+        animTime += 0.012;
+        const txAuto = 1.5 * Math.sin(animTime * 0.5);
+        if (tangentPoint) {
+          tangentPoint.position.x = txAuto;
+          tangentPoint.position.y = f(txAuto);
+        }
         renderer.render(scene, camera);
       };
       animate();
