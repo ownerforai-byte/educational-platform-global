@@ -214,4 +214,8 @@ export default function OpticsLensMaker3d() {
         </div>
       </CardContent>
     </Card>
- 
+  );
+}
+
+
+export { OpticsLensMaker3d };

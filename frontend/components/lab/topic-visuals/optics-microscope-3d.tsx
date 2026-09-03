@@ -218,4 +218,8 @@ export default function OpticsMicroscope3d() {
         </div>
       </CardContent>
     </Card>
- 
+  );
+}
+
+
+export { OpticsMicroscope3d };

@@ -224,4 +224,8 @@ export default function OpticsTelescope3d() {
         </div>
       </CardContent>
     </Card>
- 
+  );
+}
+
+
+export { OpticsTelescope3d };
