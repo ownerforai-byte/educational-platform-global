@@ -2,9 +2,10 @@ services:
   - type: web
     name: educational-platform-backend
     env: node
+    nodeVersion: 20
     region: oregon
     plan: starter
-    installCommand: npm install
+    installCommand: npm ci
     buildCommand: npm run build -w backend
     startCommand: npm run start -w backend
     envVars:
