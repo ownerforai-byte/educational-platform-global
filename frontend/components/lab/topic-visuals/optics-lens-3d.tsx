@@ -31,7 +31,7 @@ export default function OpticsLens3d() {
   const [lensType, setLensType] = useState<"convex" | "concave">("convex");
   const [focalLength, setFocalLength] = useState(2);
   const [objDistance, setObjDistance] = useState(4);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

@@ -30,7 +30,7 @@ export default function OpticsPower3d() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [focalLength, setFocalLength] = useState(2);
   const [lensType, setLensType] = useState<"convex" | "concave">("convex");
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

@@ -30,7 +30,7 @@ export default function OpticsMicroscope3d() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [fObjective, setFObjective] = useState(1);
   const [fEyepiece, setFEyepiece] = useState(2.5);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

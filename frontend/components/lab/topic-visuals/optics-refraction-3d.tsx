@@ -31,7 +31,7 @@ export default function OpticsRefraction3d() {
   const [n1, setN1] = useState(1.0);
   const [n2, setN2] = useState(1.5);
   const [incAngle, setIncAngle] = useState(45);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

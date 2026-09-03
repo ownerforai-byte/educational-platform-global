@@ -33,7 +33,7 @@ export default function OpticsDispersion3d() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [prismAngle, setPrismAngle] = useState(60);
   const [incAngle, setIncAngle] = useState(50);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

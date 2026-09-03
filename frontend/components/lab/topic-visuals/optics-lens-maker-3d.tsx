@@ -31,7 +31,7 @@ export default function OpticsLensMaker3d() {
   const [R1, setR1] = useState(5);
   const [R2, setR2] = useState(-5);
   const [n, setN] = useState(1.5);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

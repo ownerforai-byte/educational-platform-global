@@ -30,7 +30,7 @@ export default function OpticsReflection3d() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<"concave" | "convex">("concave");
   const [angle, setAngle] = useState(45);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;

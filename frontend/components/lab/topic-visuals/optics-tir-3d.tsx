@@ -31,7 +31,7 @@ export default function OpticsTIR3d() {
   const [n1, setN1] = useState(1.5);
   const [n2, setN2] = useState(1.0);
   const [incAngle, setIncAngle] = useState(42);
-  const [isWebGL] = useState(isWebGLAvailable());
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -74,6 +74,9 @@ export default function OpticsTIR3d() {
     scene.add(interfaceLine);
 
     const textureLines: THREE.Line[] = [];
+
+    let normalLine: THREE.Line;
+    let normalLabel: THREE.Sprite;
 
     const updateRays = () => {
       const theta1 = (incAngle * Math.PI) / 180;
@@ -146,9 +149,6 @@ export default function OpticsTIR3d() {
       spCrit.position.set(-2, -1.5, 0);
       return { incRay, normalLine };
     };
-
-    let normalLine: THREE.Line;
-    let normalLabel: THREE.Sprite;
 
     const rayHelpers = updateRays();
     const animate = () => {
