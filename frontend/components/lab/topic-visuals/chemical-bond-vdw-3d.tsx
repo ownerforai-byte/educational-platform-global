@@ -280,7 +280,7 @@ export function VanderWaalsVisual() {
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">London dispersion forces:</strong> Temporary dipoles induced in nonpolar molecules. Weakest intermolecular force.</p>
             <p><strong className="text-foreground">Hydrogen bonding:</strong> Strong dipole-dipole attraction when H is bonded to N, O, or F. Important in water and DNA.</p>
-            <p><strong className="text-foreground">Strength order:</strong> H-bond > dipole-dipole > London dispersion.</p>
+            <p><strong className="text-foreground">Strength order:</strong> H-bond &gt; dipole-dipole &gt; London dispersion.</p>
             <p><strong className="text-foreground">Effects:</strong> Intermolecular forces affect boiling point, melting point, and solubility.</p>
             <p><strong className="text-foreground">Water:</strong> Hydrogen bonding explains water's high boiling point and ice floating.</p>
           </div>
