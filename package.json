@@ -47,5 +47,13 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.9.0",
     "typescript-eslint": "^8.68.0"
+  },
+  "overrides": {
+    "glob": "^10.0.0",
+    "node-domexception": "^1.0.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }

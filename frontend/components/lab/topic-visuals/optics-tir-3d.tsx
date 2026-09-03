@@ -169,7 +169,7 @@ export default function OpticsTIR3d() {
       normalLine.geometry.dispose();
       if (!(normalLine.material instanceof Array)) normalLine.material.dispose();
       normalLabel.material.map?.dispose();
-      normalLabeif (!(l.material instanceof Array)) (l.material as THREE.Material).dispose();
+      normalLabel.material.dispose();
       // Cleanup texture lines
       textureLines.forEach((l) => {
         l.geometry.dispose();
