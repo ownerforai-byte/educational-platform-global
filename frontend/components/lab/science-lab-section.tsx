@@ -3,12 +3,14 @@
 import {
   FlaskConical,
   Atom,
+  Dna,
 } from "lucide-react";
 import Link from "next/link";
 
 const labs = [
   { key: "physics", label: "Physics", icon: FlaskConical, desc: "Optics, gravitation, mechanics & waves", href: "/lab/physics" },
   { key: "chemistry", label: "Chemistry", icon: Atom, desc: "Molecules, reactions & stoichiometry", href: "/lab/chemistry" },
+  { key: "biology", label: "Biology", icon: Dna, desc: "Cells, genetics, ecology & evolution", href: "/lab/biology" },
 ];
 
 export function ScienceLabSection() {

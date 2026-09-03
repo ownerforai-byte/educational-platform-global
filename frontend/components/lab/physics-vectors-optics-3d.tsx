@@ -219,8 +219,9 @@ export function Vectors3D() {
 
     rebuild();
 
+    let frameId: number;
     function animate() {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
     }
@@ -235,6 +236,7 @@ export function Vectors3D() {
     window.addEventListener("resize", onResize);
 
     return () => {
+      cancelAnimationFrame(frameId);
       window.removeEventListener("resize", onResize);
       renderer.dispose();
       controls.dispose();
@@ -568,8 +570,9 @@ export function Optics3D() {
     controls.enableDamping = true;
     controls.autoRotate = false;
 
+    let frameId: number;
     function animate() {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
     }
@@ -584,6 +587,7 @@ export function Optics3D() {
     window.addEventListener("resize", onResize);
 
     return () => {
+      cancelAnimationFrame(frameId);
       window.removeEventListener("resize", onResize);
       renderer.dispose();
       controls.dispose();
@@ -801,8 +805,9 @@ export function Refraction3D() {
     controls.autoRotate = false;
     controls.enableZoom = false;
 
+    let frameId: number;
     function animate() {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
     }
@@ -818,6 +823,7 @@ export function Refraction3D() {
     window.addEventListener("resize", onResize);
 
     return () => {
+      cancelAnimationFrame(frameId);
       window.removeEventListener("resize", onResize);
       renderer.dispose();
       controls.dispose();

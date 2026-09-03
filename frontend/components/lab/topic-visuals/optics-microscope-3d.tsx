@@ -173,7 +173,7 @@ export default function OpticsMicroscope3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [fObjective, fEyepiece, isWebGL]);
+  }, [isWebGL]);
 
   if (!isWebGL) return <WebGLFallback title="Microscope" />;
 

@@ -73,6 +73,8 @@ export default function OpticsTIR3d() {
     );
     scene.add(interfaceLine);
 
+    const textureLines: THREE.Line[] = [];
+
     const updateRays = () => {
       const theta1 = (incAngle * Math.PI) / 180;
       const sinTheta2 = (n1 / n2) * Math.sin(theta1);
@@ -133,6 +135,7 @@ export default function OpticsTIR3d() {
           new THREE.LineBasicMaterial({ color: 0xea580c, transparent: true, opacity: 0.3 })
         );
         scene.add(texLine);
+        textureLines.push(texLine);
       }
 
       const sp1 = mkSprite(isTIR ? "TIR!" : "Refracted", isTIR ? "#22d3ee" : "#fbbf24");
@@ -168,9 +171,10 @@ export default function OpticsTIR3d() {
       normalLabel.material.map?.dispose();
       normalLabel.material.dispose();
       // Cleanup texture lines
-      for (let i = -3; i <= 3; i++) {
-        // Texture lines are created inline, cleaned up via scene.children
-      }
+      textureLines.forEach((l) => {
+        l.geometry.dispose();
+        l.material.dispose();
+      });
       renderer.dispose();
       controls?.dispose();
     };

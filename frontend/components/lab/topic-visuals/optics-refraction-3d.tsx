@@ -142,13 +142,6 @@ export default function OpticsRefraction3d() {
       return { incRay, refrRay, normalLine, boundLine1, normalLabel, interfaceLabel, boundLabel1, boundLabel2 };
     };
 
-    let normalLine: THREE.Line | null = null;
-    let normalLabel: THREE.Sprite | null = null;
-    let interfaceLabel: THREE.Sprite | null = null;
-    let boundLine1: THREE.Line | null = null;
-    let boundLabel1: THREE.Sprite | null = null;
-    let boundLabel2: THREE.Sprite | null = null;
-
     let rayHelpers = updateRays();
     let frameId: number;
     const animate = () => {
