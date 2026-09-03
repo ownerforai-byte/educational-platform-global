@@ -152,13 +152,18 @@ const makeTopic = (Component: React.FC, title: string) => {
 };
 
 const PHYSICS_11: LabComponentMap = {
+  // Physical Quantities and Measurement
   "physical-quantities": make("physical-quantities", "Physical Quantities", "physical-quantities", "physics"),
   "precision-and-significant-figures": make("precision", "Precision and Significant Figures", "physical-quantities", "physics"),
   "dimensions-and-uses-of-dimensional-analysis": make("dimensions", "Dimensions and Dimensional Analysis", "physical-quantities", "physics"),
+
+  // Vectors
   "vectors": make("vectors", "Vectors", "vectors", "physics"),
   "triangle-parallelogram-and-polygon-laws-of-vectors": make("triangle", "Triangle Parallelogram Polygon Laws", "vectors", "physics"),
   "resolution-of-vectors-unit-vectors": make("resolution", "Resolution of Vectors", "vectors", "physics"),
   "scalar-and-vector-products": make("dot product", "Scalar and Vector Products", "vectors", "physics"),
+
+  // Kinematics
   "kinematics": make("kinematics", "Kinematics", "kinematics", "physics"),
   "instantaneous-velocity-and-acceleration": make("instantaneous velocity", "Instantaneous Velocity & Acceleration", "kinematics", "physics"),
   "relative-velocity": make("relative velocity", "Relative Velocity", "kinematics", "physics"),
@@ -476,6 +481,8 @@ CHEMISTRY_11_MANUFACTURE.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 
 
 export { CHEMISTRY_11 };
 
+// BIOLOGY — CONFUSION CLARIFIED / CORE LEVEL
+// Not surface: 5 precise levels (molecular→cellular→organismal→ecosystem→evolution) mapped to 3D
 const BIOLOGY_11: LabComponentMap = {
   "biomolecules-and-cell-biology": makeTopic(CellBiologyVisual, "Biomolecules & Cell Biology"),
   "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water": makeTopic(CellBiologyVisual, "Biomolecules"),
