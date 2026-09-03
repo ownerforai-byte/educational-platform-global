@@ -72,7 +72,7 @@ export function PhysicsBallAcceleration() {
         if (isRunning) {
           const dt = 1 / 60;
           velRef.current.y -= gravity * dt;
-          posRef.current.x += velRef.current.x * dt;
+          posRef.current.x += velRef.current.x * dt.current.x * dt;
           posRef.current.y += velRef.current.y * dt;
           if (posRef.current.y - 0.5 < -0.01) { posRef.current.y = 0.5; velRef.current.y = -velRef.current.y * restitution; if (Math.abs(velRef.current.y) < 0.1) velRef.current.y = 0; }
           if (posRef.current.x > 7.5) { posRef.current.x = 7.5; velRef.current.x = -velRef.current.x * restitution; }
