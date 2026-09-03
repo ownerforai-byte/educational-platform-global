@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 export function PhysicsBallAcceleration() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mass, setMass] = useState(1);
-  const [restitution, setAcceleration] = useState(0.8);
+  const [restitution, setRestitution] = useState(0.8);
   const [gravity, setGravity] = useState(9.8);
   const [isRunning, setIsRunning] = useState(true);
   const frameRef = useRef(0);
@@ -72,7 +72,7 @@ export function PhysicsBallAcceleration() {
         if (isRunning) {
           const dt = 1 / 60;
           velRef.current.y -= gravity * dt;
-          posRef.current.x += velRef.current.x * dt.current.x * dt;
+          posRef.current.x += velRef.current.x * dt;
           posRef.current.y += velRef.current.y * dt;
           if (posRef.current.y - 0.5 < -0.01) { posRef.current.y = 0.5; velRef.current.y = -velRef.current.y * restitution; if (Math.abs(velRef.current.y) < 0.1) velRef.current.y = 0; }
           if (posRef.current.x > 7.5) { posRef.current.x = 7.5; velRef.current.x = -velRef.current.x * restitution; }
@@ -104,7 +104,7 @@ export function PhysicsBallAcceleration() {
       <div ref={containerRef} className='w-full rounded-md border border-border' style={{ height: 'clamp(300px, 50vh, 500px)' }} />
       <div className='grid gap-3 sm:grid-cols-2 lg:grid-cols-4'>
         <div className='rounded-md border border-border bg-muted/30 p-3 space-y-2'><Label>Mass</Label><Input type='range' min={0.5} max={3} step={0.1} value={mass} onChange={(e) => setMass(parseFloat(e.target.value))} /><p className='text-xs text-muted-foreground'>{mass.toFixed(1)} kg</p></div>
-        <div className='rounded-md border border-border bg-muted/30 p-3 space-y-2'><Label>Acceleration</Label><Input type='range' min={0} max={1} step={0.05} value={restitution} onChange={(e) => setAcceleration(parseFloat(e.target.value))} /><p className='text-xs text-muted-foreground'>{(restitution * 100).toFixed(0)}% energy</p></div>
+        <div className='rounded-md border border-border bg-muted/30 p-3 space-y-2'><Label>Acceleration</Label><Input type='range' min={0} max={1} step={0.05} value={restitution} onChange={(e) => setRestitution(parseFloat(e.target.value))} /><p className='text-xs text-muted-foreground'>{(restitution * 100).toFixed(0)}% energy</p></div>
         <div className='rounded-md border border-border bg-muted/30 p-3 space-y-2'><Label>Gravity</Label><Input type='range' min={1} max={20} step={0.1} value={gravity} onChange={(e) => setGravity(parseFloat(e.target.value))} /><p className='text-xs text-muted-foreground'>{gravity.toFixed(1)} m/s2</p></div>
         <div className='rounded-md border border-border bg-muted/30 p-3 flex items-center justify-between'><Label>Sim</Label><button onClick={() => setIsRunning(!isRunning)} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${isRunning ? 'bg-red-500/20 text-red-400 hover:bg-red-500/30' : 'bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30'}`}>{isRunning ? 'Pause' : 'Play'}</button></div>
       </div>
