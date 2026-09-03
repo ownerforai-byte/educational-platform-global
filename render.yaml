@@ -6,8 +6,8 @@ services:
     region: oregon
     plan: starter
     installCommand: npm ci
-    buildCommand: npm run build -w backend
-    startCommand: npm run start -w backend
+    buildCommand: npm run build:backend
+    startCommand: npm run start:backend
     envVars:
       - key: NODE_ENV
         value: production
