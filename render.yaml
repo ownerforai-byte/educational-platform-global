@@ -4,6 +4,7 @@ services:
     env: node
     region: oregon
     plan: starter
+    installCommand: npm install
     buildCommand: npm run build -w backend
     startCommand: npm run start -w backend
     envVars:
