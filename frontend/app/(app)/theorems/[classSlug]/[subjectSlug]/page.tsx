@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getTheoremIndex, filterTheorems, groupTheoremsByUnit } from "@/lib/theorems";
+import { getTheoremIndex, filterTheorems, groupTheoremsByUnit, readTheoremContent } from "@/lib/theorems";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 import { ChevronRight, FileText } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
@@ -101,13 +101,7 @@ async function TheoremCard({
   classSlug: string;
   subjectSlug: string;
 }) {
-  const { readFile } = await import("node:fs/promises");
-  const { join } = await import("node:path");
-  let json = null;
-  try {
-    const raw = await readFile(join(process.cwd(), entry.filePath), "utf-8"); // filePath = "content/ravikishan/..." relative to cwd
-    json = JSON.parse(raw);
-  } catch { /* already have entry data */ }
+  const json = await readTheoremContent(entry.filePath);
 
   const hasProof = entry.hasProof;
   const preview = entry.preview

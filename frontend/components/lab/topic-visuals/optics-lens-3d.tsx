@@ -4,9 +4,9 @@ import { useRef, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import CollapsibleControls from "@/components/lab/collapsible-controls";
+import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
-import WebGLFallback from "@/components/lab/webgl-fallback";
+import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -222,3 +222,6 @@ export default function OpticsLens3d() {
     </Card>
   );
 }
+
+
+export { OpticsLens3d };

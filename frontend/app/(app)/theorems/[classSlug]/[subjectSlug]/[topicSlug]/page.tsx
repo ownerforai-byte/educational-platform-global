@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { getTheoremIndex, filterTheorems } from "@/lib/theorems";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { getTheoremIndex, filterTheorems, readTheoremContent } from "@/lib/theorems";
 import { ChevronRight, FileText, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
@@ -34,14 +32,8 @@ export default async function TheoremDetailPage({
     );
   }
 
-  // Load the full JSON content
-  let rawJson = null;
-  try {
-    const raw = await readFile(join(process.cwd(), entry.filePath), "utf-8");
-    rawJson = JSON.parse(raw);
-  } catch {
-    // Fallback — continue with metadata only
-  }
+  // Load the full JSON content (statically-scoped read, see lib/theorems.ts)
+  const rawJson = await readTheoremContent(entry.filePath);
 
   const title = (rawJson as any)?.title ?? entry.topicTitle;
   const notes = (rawJson as any)?.notes ?? entry.snippets;
