@@ -124,31 +124,28 @@ export default function OpticsPower3d() {
       }
     }
 
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       lensGeo.dispose();
       lensMat.dispose();
       axisLine.geometry.dispose();
       axisLine.material.dispose();
-      rayLines.forEach((r) => { r.geometry.dispose(); r.material.dispose(); });
+      rayLines.forEach((r) => { r.geometry.dispose(); if (!(r.material instanceof Array)) r.material.dispose(); });
       lens.material.map?.dispose();
-      lens.material.dispose();
+      if (!(lens.material instanceof Array)) lens.material.dispose();
       spF.material.map?.dispose();
       spF.material.dispose();
       spP.material.map?.dispose();
       spP.material.dispose();
-      powerBar.geometry.dispose();
-      powerBar.material.dispose();
-      barLabel.material.map?.dispose();
-      barLabel.material.dispose();
       diopterScale.geometry.dispose();
       diopterScale.material.dispose();
       tickLabels.forEach((t) => { t.material.map?.dispose(); t.material.dispose(); });
@@ -157,7 +154,7 @@ export default function OpticsPower3d() {
     };
   }, [focalLength, lensType, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Lens Power" />;
+  if (!isWebGL) return <WebGLFallback title="Lens Power" />;
 
   return (
     <Card className="border-emerald-500/30">

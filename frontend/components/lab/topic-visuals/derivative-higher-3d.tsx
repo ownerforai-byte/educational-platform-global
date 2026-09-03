@@ -88,7 +88,7 @@ export function DerivativeHigher3D() {
           pts.push(new THREE.Vector3(x, deriv + yOffsets[i], 0));
         }
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: colors[i] })));
-        push(mkSprite(labels[i], colors[i], new THREE.Vector3(5, yOffsets[i] + 1.2, 0), 0.7));
+        push(mkSprite(labels[i], '#' + colors[i].toString(16).padStart(6, '0'), new THREE.Vector3(5, yOffsets[i] + 1.2, 0), 0.7));
       }
 
       const connLines: THREE.Line[] = [];
@@ -156,6 +156,11 @@ export function DerivativeHigher3D() {
     return <WebGLFallback title="Higher Order Derivatives" description="f, f, f, f visualization — requires WebGL." />;
   }
 
+  const funcOptions: [string, string][] = [
+    ["cubic", "f(x) = 0.05x^3 - 0.2x"],
+    ["quartic", "f(x) = 0.02x^4 - 0.1x^2"],
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -167,10 +172,7 @@ export function DerivativeHigher3D() {
       <CardContent className="space-y-4">
         <CollapsibleControls label="Base Function">
           <div className="flex flex-wrap gap-2 mt-2">
-            {[
-              ["cubic", "f(x) = 0.05x^3 - 0.2x"],
-              ["quartic", "f(x) = 0.02x^4 - 0.1x^2"],
-            ].map(([key, label]: [string, string]) => (
+            {funcOptions.map(([key, label]) => (
               <button key={key} onClick={() => setFuncChoice(key as typeof funcChoice)} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${funcChoice === key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{label}</button>
             ))}
           </div>

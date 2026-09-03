@@ -1,0 +1,14 @@
+const fs = require("fs");
+const p = "C:/Users/ASUS/Desktop/rn/frontend/components/lab/topic-visuals/optics-dispersion-3d.tsx";
+const t = fs.readFileSync(p, "utf8");
+console.log("=== First 20 lines ===");
+t.split("\n").slice(0, 20).forEach((l, i) => console.log((i+1) + ": " + l));
+console.log("\n=== Looking for export patterns ===");
+const foundExports = [...t.matchAll(/export\s+(?:default\s+)?(?:function|class|const)\s+([A-Za-z0-9_$]+)/g)];
+console.log("Named exports found:", foundExports.map(m => m[1]).join(", "));
+console.log("Has default export?", /export\s+default/.test(t));
+console.log("=== Looking for CollapsibleControls import ===");
+const coll = t.split("\n").filter(l => l.includes("CollapsibleControls") && l.includes("import"));
+coll.forEach((l,i) => console.log(i+1 + ": " + l));
+console.log("=== Last 5 lines ===");
+t.split("\n").slice(-5).forEach((l,i) => console.log((t.split("\n").length - 4 + i) + ": " + l));

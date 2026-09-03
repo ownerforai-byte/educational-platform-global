@@ -189,8 +189,8 @@ export function SemiconductorsVisual() {
         if (electronDot && holeDot) {
           electronDot.position.x = Math.sin(animTime * 2) * 1.8;
           holeDot.position.x = -Math.sin(animTime * 2) * 1.8;
-          electronDot.material.opacity = 0.6 + 0.4 * Math.sin(animTime * 3);
-          holeDot.material.opacity = 0.6 + 0.4 * Math.sin(animTime * 3 + Math.PI);
+          ((electronDot.material as THREE.Material).opacity = 0.6 + 0.4 * Math.sin(animTime * 3));
+          ((holeDot.material as THREE.Material).opacity = 0.6 + 0.4 * Math.sin(animTime * 3 + Math.PI));
         }
         renderer.render(scene, camera);
       };

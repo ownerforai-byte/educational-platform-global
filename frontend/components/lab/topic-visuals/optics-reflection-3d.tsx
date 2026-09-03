@@ -123,15 +123,16 @@ export default function OpticsReflection3d() {
     };
 
     let rayHelper = updateRays();
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       mirrorGeo.dispose();
       mirrorMat.dispose();
@@ -152,7 +153,7 @@ export default function OpticsReflection3d() {
     };
   }, [mode, angle, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Reflection" />;
+  if (!isWebGL) return <WebGLFallback title="Reflection" />;
 
   return (
     <Card className="border-purple-500/30">

@@ -138,15 +138,16 @@ export default function OpticsPrism3d() {
     };
 
     let rayHelpers = updateRays();
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       prismGeo.dispose();
       prismMesh.material.dispose();
@@ -171,7 +172,7 @@ export default function OpticsPrism3d() {
     };
   }, [prismAngle, wavelength, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Prism" />;
+  if (!isWebGL) return <WebGLFallback title="Prism" />;
 
   return (
     <Card className="border-emerald-500/30">

@@ -125,15 +125,19 @@ export default function OpticsDispersion3d() {
     scene.add(matLabel);
     matLabel.position.set(0, -1.8, 0);
 
+    let incArc: THREE.Line | null = null;
+    let incLabel: THREE.Sprite | null = null;
+
     const animate = () => {
-      requestAnimationFrame(animate);
+      const id = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
+      return id;
     };
-    animate();
+    let frameId = animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       prismGeo.dispose();
       prismMesh.material.dispose();
@@ -150,16 +154,12 @@ export default function OpticsDispersion3d() {
       spLabel.material.dispose();
       spSpec.material.map?.dispose();
       spSpec.material.dispose();
-      incArc.geometry.dispose();
-      incArc.material.dispose();
-      incLabel.material.map?.dispose();
-      incLabel.material.dispose();
       renderer.dispose();
       controls?.dispose();
     };
   }, [prismAngle, incAngle, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Dispersion" />;
+  if (!isWebGL) return <WebGLFallback title="Dispersion" />;
 
   return (
     <Card className="border-purple-500/30">

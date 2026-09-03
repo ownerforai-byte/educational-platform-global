@@ -173,6 +173,13 @@ export function DerivativeRules3D() {
     return <WebGLFallback title="Differentiation Rules" description="Power, product, quotient, chain rules — requires WebGL." />;
   }
 
+  const ruleOptions: [string, string][] = [
+    ["power", "Power Rule"],
+    ["product", "Product Rule"],
+    ["quotient", "Quotient Rule"],
+    ["chain", "Chain Rule"],
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -184,12 +191,7 @@ export function DerivativeRules3D() {
       <CardContent className="space-y-4">
         <CollapsibleControls label="Differentiation Rule">
           <div className="flex flex-wrap gap-2 mt-2">
-            {[
-              ["power", "Power Rule"],
-              ["product", "Product Rule"],
-              ["quotient", "Quotient Rule"],
-              ["chain", "Chain Rule"],
-            ].map(([key, label]: [string, string]) => (
+            {ruleOptions.map(([key, label]) => (
               <button key={key} onClick={() => setRuleType(key as RuleType)} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${ruleType === key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{label}</button>
             ))}
           </div>

@@ -135,15 +135,16 @@ export default function OpticsMicroscope3d() {
     };
 
     let rayHelper = updateRays();
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       objLens.geometry.dispose();
       objLens.material.dispose();
@@ -174,7 +175,7 @@ export default function OpticsMicroscope3d() {
     };
   }, [fObjective, fEyepiece, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Microscope" />;
+  if (!isWebGL) return <WebGLFallback title="Microscope" />;
 
   return (
     <Card className="border-rose-500/30">

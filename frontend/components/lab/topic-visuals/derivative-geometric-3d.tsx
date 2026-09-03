@@ -176,6 +176,12 @@ export function DerivativeGeometric3D() {
     return <WebGLFallback title="Geometric Interpretation" description="Tangent line slope visualization — requires WebGL." />;
   }
 
+  const funcOptions: [string, string][] = [
+    ["quadratic", "f(x) = 0.2x^2 - 1"],
+    ["cubic", "f(x) = 0.08x^3 - 0.4x"],
+    ["trig", "f(x) = 2sin(x)"],
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -187,11 +193,7 @@ export function DerivativeGeometric3D() {
       <CardContent className="space-y-4">
         <CollapsibleControls label="Function">
           <div className="flex flex-wrap gap-2 mt-2">
-            {[
-              ["quadratic", "f(x) = 0.2x^2 - 1"],
-              ["cubic", "f(x) = 0.08x^3 - 0.4x"],
-              ["trig", "f(x) = 2sin(x)"],
-            ].map(([key, label]: [string, string]) => (
+            {funcOptions.map(([key, label]) => (
               <button key={key} onClick={() => setFuncName(key as typeof funcName)} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${funcName === key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{label}</button>
             ))}
           </div>

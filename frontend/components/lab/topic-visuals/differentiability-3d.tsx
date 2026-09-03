@@ -208,6 +208,13 @@ export function Differentiability3D() {
     return <WebGLFallback title="Differentiability" description="Cusp and corner visualizations — requires WebGL." />;
   }
 
+  const curveOptions: [string, string][] = [
+    ["smooth", "Smooth Curve"],
+    ["corner", "Corner |x|"],
+    ["cusp", "Cusp x^(2/3)"],
+    ["vertical_tangent", "Vertical Tangent"],
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -219,12 +226,7 @@ export function Differentiability3D() {
       <CardContent className="space-y-4">
         <CollapsibleControls label="Function Type">
           <div className="flex flex-wrap gap-2 mt-2">
-            {[
-              ["smooth", "Smooth Curve"],
-              ["corner", "Corner |x|"],
-              ["cusp", "Cusp x^(2/3)"],
-              ["vertical_tangent", "Vertical Tangent"],
-            ].map(([key, label]: [string, string]) => (
+            {curveOptions.map(([key, label]) => (
               <button key={key} onClick={() => setDiffType(key as DiffType)} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${diffType === key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{label}</button>
             ))}
           </div>

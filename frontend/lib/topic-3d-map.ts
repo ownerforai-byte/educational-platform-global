@@ -681,7 +681,6 @@ const PHYSICS_12: LabComponentMap = {
   "refraction-through-prisms-angle-of-deviation-and-minimum-deviation": makeTopic(OpticsVisual, "Prism Deviation"),
   "thin-lenses-lens-maker-s-formula-and-power-of-lens": makeTopic(OpticsVisual, "Thin Lenses"),
   "combination-of-lenses-and-mirrors": makeTopic(OpticsVisual, "Lens & Mirror Combinations"),
-  "optical-instruments-microscope-and-telescope": make("microscope", "Optical Instruments", "ray-optics", "physics"),
   "wave-optics": makeTopic(WaveOpticsVisual, "Wave Optics"),
   "wavefront-and-huygens-principle": makeTopic(WaveMotionVisual, "Huygens' Principle"),
   "interference-of-light-youngs-double-slit-experiment": makeTopic(WaveOpticsVisual, "Young's Double Slit"),

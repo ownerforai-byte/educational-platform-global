@@ -88,7 +88,7 @@ export function MetallicBondVisual() {
           g.traverse((c) => {
             if ((c as THREE.Mesh).geometry) (c as THREE.Mesh).geometry.dispose();
             const mat = (c as THREE.Mesh).material;
-            if (mat) mat.dispose();
+            if (mat && !(mat instanceof Array)) mat.dispose();
           });
         }
       };
@@ -296,7 +296,7 @@ export function MetallicBondVisual() {
           g.traverse((c) => {
             if ((c as THREE.Mesh).geometry) (c as THREE.Mesh).geometry.dispose();
             const mat = (c as THREE.Mesh).material;
-            if (mat) mat.dispose();
+            if (mat && !(mat instanceof Array)) mat.dispose();
           });
         });
         renderer.dispose();

@@ -139,19 +139,27 @@ export default function OpticsRefraction3d() {
       scene.add(spAngle);
       spAngle.position.set(-0.5, -0.5, 0);
 
-      return { incRay, refrRay, normalLine, boundLine1 };
+      return { incRay, refrRay, normalLine, boundLine1, normalLabel, interfaceLabel, boundLabel1, boundLabel2 };
     };
 
+    let normalLine: THREE.Line | null = null;
+    let normalLabel: THREE.Sprite | null = null;
+    let interfaceLabel: THREE.Sprite | null = null;
+    let boundLine1: THREE.Line | null = null;
+    let boundLabel1: THREE.Sprite | null = null;
+    let boundLabel2: THREE.Sprite | null = null;
+
     let rayHelpers = updateRays();
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       interfacePlane.geometry.dispose();
       interfacePlane.material.dispose();
@@ -161,24 +169,24 @@ export default function OpticsRefraction3d() {
       rayHelpers.incRay.material.dispose();
       rayHelpers.refrRay.geometry.dispose();
       rayHelpers.refrRay.material.dispose();
-      normalLine.geometry.dispose();
-      normalLine.material.dispose();
-      normalLabel.material.map?.dispose();
-      normalLabel.material.dispose();
-      interfaceLabel.material.map?.dispose();
-      interfaceLabel.material.dispose();
-      boundLine1.geometry.dispose();
-      boundLine1.material.dispose();
-      boundLabel1.material.map?.dispose();
-      boundLabel1.material.dispose();
-      boundLabel2.material.map?.dispose();
-      boundLabel2.material.dispose();
+      rayHelpers.normalLine.geometry.dispose();
+      if (!(rayHelpers.normalLine.material instanceof Array)) rayHelpers.normalLine.material.dispose();
+      rayHelpers.normalLabel.material.map?.dispose();
+      rayHelpers.normalLabel.material.dispose();
+      rayHelpers.interfaceLabel.material.map?.dispose();
+      rayHelpers.interfaceLabel.material.dispose();
+      rayHelpers.boundLine1.geometry.dispose();
+      if (!(rayHelpers.boundLine1.material instanceof Array)) rayHelpers.boundLine1.material.dispose();
+      rayHelpers.boundLabel1.material.map?.dispose();
+      rayHelpers.boundLabel1.material.dispose();
+      rayHelpers.boundLabel2.material.map?.dispose();
+      rayHelpers.boundLabel2.material.dispose();
       renderer.dispose();
       controls?.dispose();
     };
   }, [n1, n2, incAngle, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Refraction" />;
+  if (!isWebGL) return <WebGLFallback title="Refraction" />;
 
   return (
     <Card className="border-cyan-500/30">

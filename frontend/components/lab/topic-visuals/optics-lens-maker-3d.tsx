@@ -136,15 +136,16 @@ export default function OpticsLensMaker3d() {
       scene.add(sTick);
     }
 
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       lensGeo.dispose();
       lensMat.dispose();
@@ -163,7 +164,7 @@ export default function OpticsLensMaker3d() {
     };
   }, [R1, R2, n, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Lens Maker" />;
+  if (!isWebGL) return <WebGLFallback title="Lens Maker" />;
 
   return (
     <Card className="border-violet-500/30">

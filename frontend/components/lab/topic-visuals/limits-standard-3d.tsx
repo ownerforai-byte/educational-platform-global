@@ -177,6 +177,13 @@ export function LimitsStandard3D() {
     return <WebGLFallback title="Standard Limits" description="Visual proofs of fundamental limit formulas — requires WebGL." />;
   }
 
+  const limitOptions: [string, string][] = [
+    ["sinx_over_x", "sin(x)/x -> 1"],
+    ["e_def", "(1+1/n)^n -> e"],
+    ["power_rule", "Power Rule Def."],
+    ["log_limit", "ln(1+x)/x -> 1"],
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -188,12 +195,7 @@ export function LimitsStandard3D() {
       <CardContent className="space-y-4">
         <CollapsibleControls label="Standard Limit">
           <div className="flex flex-wrap gap-2 mt-2">
-            {[
-              ["sinx_over_x", "sin(x)/x -> 1"],
-              ["e_def", "(1+1/n)^n -> e"],
-              ["power_rule", "Power Rule Def."],
-              ["log_limit", "ln(1+x)/x -> 1"],
-            ].map(([key, label]: [string, string]) => (
+            {limitOptions.map(([key, label]) => (
               <button key={key} onClick={() => setLimitType(key as StandardLimit)} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${limitType === key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{label}</button>
             ))}
           </div>

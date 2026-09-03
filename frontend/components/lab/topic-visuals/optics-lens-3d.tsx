@@ -96,6 +96,8 @@ export default function OpticsLens3d() {
     );
     scene.add(principalPlane);
 
+    let ray1: THREE.Line;
+    let ray2: THREE.Line;
     const updateRays = () => {
       const f = focalLength;
       const u = -objDistance;
@@ -103,7 +105,7 @@ export default function OpticsLens3d() {
         ? 1 / (1 / f - 1 / Math.abs(u))
         : -1 / (1 / f + 1 / Math.abs(u));
 
-      const ray1 = new THREE.Line(
+      ray1 = new THREE.Line(
         new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(-4, 1.5, 0), new THREE.Vector3(0, 1.5, 0),
           new THREE.Vector3(4, 0, 0),
@@ -112,7 +114,7 @@ export default function OpticsLens3d() {
       );
       scene.add(ray1);
 
-      const ray2 = new THREE.Line(
+      ray2 = new THREE.Line(
         new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(-4, 1.5, 0), new THREE.Vector3(0, 0, 0),
           new THREE.Vector3(4, -v / Math.abs(u) * 1.5, 0),
@@ -138,24 +140,25 @@ export default function OpticsLens3d() {
     };
 
     let rayHelpers = updateRays();
+    let frameId: number;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
     };
     animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       lensGeo.dispose();
       lensMat.dispose();
       axisLine.geometry.dispose();
       axisLine.material.dispose();
       rayHelpers.ray1.geometry.dispose();
-      rayHelpers.ray1.material.dispose();
+      if (!(rayHelpers.ray1.material instanceof Array)) rayHelpers.ray1.material.dispose();
       rayHelpers.ray2.geometry.dispose();
-      rayHelpers.ray2.material.dispose();
+      if (!(rayHelpers.ray2.material instanceof Array)) rayHelpers.ray2.material.dispose();
       fMarker.geometry.dispose();
       fMarker.material.dispose();
       fMarker2.geometry.dispose();
@@ -166,7 +169,7 @@ export default function OpticsLens3d() {
     };
   }, [lensType, focalLength, objDistance, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Lenses" />;
+  if (!isWebGL) return <WebGLFallback title="Lenses" />;
 
   return (
     <Card className="border-blue-500/30">

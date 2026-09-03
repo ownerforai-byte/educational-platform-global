@@ -2066,4 +2066,3 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
 };
 
 export type { TopicData, SectionData };
-export { THEORY_CONTENT };

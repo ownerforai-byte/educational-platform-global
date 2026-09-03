@@ -98,9 +98,17 @@ export default function OpticsTelescope3d() {
     eyeHousing.position.set(2.5, -0.3, 0);
     scene.add(eyeHousing);
 
+    let ray1: THREE.Line;
+    let spMag: THREE.Sprite | null = null;
+    let incArc: THREE.Line | null = null;
+    let eyeF: THREE.Mesh | null = null;
+    let eyeFLabel: THREE.Sprite | null = null;
+
     const updateRays = () => {
       const mag = fObjective / fEyepiece;
-      const ray1 = new THREE.Line(
+
+      if (ray1) { scene.remove(ray1); ray1.geometry.dispose(); if (!(ray1.material instanceof Array)) ray1.material.dispose(); }
+      ray1 = new THREE.Line(
         new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(-5, 0.3, 0), new THREE.Vector3(-2.5, 0.15, 0),
           new THREE.Vector3(0, 0, 0), new THREE.Vector3(2.5, -0.15 * mag, 0),
@@ -117,44 +125,48 @@ export default function OpticsTelescope3d() {
       scene.add(sp2);
       sp2.position.set(2.5, -1.2, 0);
 
-      // Magnification display
-      const spMag = mkSprite("M=" + mag.toFixed(1) + "×", "#fbbf24");
+      if (spMag) { scene.remove(spMag); spMag.material.map?.dispose(); spMag.material.dispose(); }
+      spMag = mkSprite("M=" + mag.toFixed(1) + "×", "#fbbf24");
       scene.add(spMag);
       spMag.position.set(0, -1.5, 0);
 
-      // Angle of incidence arc
-      const incArcPts = [];
+      const incArcPts: THREE.Vector3[] = [];
       for (let a = Math.PI; a >= Math.PI - 0.3; a -= 0.02) {
         incArcPts.push(new THREE.Vector3(0.5 * Math.cos(a), 0.5 * Math.sin(a) - 0.5, 0));
       }
-      const incArc = new THREE.Line(
+      if (incArc) { scene.remove(incArc); incArc.geometry.dispose(); if (!(incArc.material instanceof Array)) incArc.material.dispose(); }
+      incArc = new THREE.Line(
         new THREE.BufferGeometry().setFromPoints(incArcPts),
         new THREE.LineBasicMaterial({ color: 0xfbbf24 })
       );
       scene.add(incArc);
 
-    // Eyepiece focal point
-    const eyeF = new THREE.Mesh(
-      new THREE.SphereGeometry(0.08, 12, 12),
-      new THREE.MeshPhongMaterial({ color: 0x94a3b8 })
-    );
-    eyeF.position.set(2.5 + fEyepiece / 10, 0, 0);
-    scene.add(eyeF);
-    const eyeFLabel = mkSprite("Fₑ", "#cbd5e1");
-    scene.add(eyeFLabel);
-    eyeFLabel.position.set(2.5 + fEyepiece / 10, -0.4, 0);
+      if (eyeF) { scene.remove(eyeF); eyeF.geometry.dispose(); if (!(eyeF.material instanceof Array)) eyeF.material.dispose(); }
+      eyeF = new THREE.Mesh(
+        new THREE.SphereGeometry(0.08, 12, 12),
+        new THREE.MeshPhongMaterial({ color: 0x94a3b8 })
+      );
+      eyeF.position.set(2.5 + fEyepiece / 10, 0, 0);
+      scene.add(eyeF);
+
+      if (eyeFLabel) { scene.remove(eyeFLabel); eyeFLabel.material.map?.dispose(); eyeFLabel.material.dispose(); }
+      eyeFLabel = mkSprite("Fₑ", "#cbd5e1");
+      scene.add(eyeFLabel);
+      eyeFLabel.position.set(2.5 + fEyepiece / 10, -0.4, 0);
     };
 
-    let rayHelper = updateRays();
+    updateRays();
+
     const animate = () => {
-      requestAnimationFrame(animate);
+      const id = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
+      return id;
     };
-    animate();
+    let frameId = animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       objLens.geometry.dispose();
       objLens.material.dispose();
@@ -166,21 +178,18 @@ export default function OpticsTelescope3d() {
       objHousing.material.dispose();
       eyeHousing.geometry.dispose();
       eyeHousing.material.dispose();
-      rayHelper.ray1.geometry.dispose();
-      rayHelper.ray1.material.dispose();
-      if (rayHelper.spMag) {
-        rayHelper.spMag.material.map?.dispose();
-        rayHelper.spMag.material.dispose();
-      }
-      if (rayHelper.incArc) { rayHelper.incArc.geometry.dispose(); rayHelper.incArc.material.dispose(); }
-      if (rayHelper.eyeF) { rayHelper.eyeF.geometry.dispose(); rayHelper.eyeF.material.dispose(); }
-      if (rayHelper.eyeFLabel) { rayHelper.eyeFLabel.material.map?.dispose(); rayHelper.eyeFLabel.material.dispose(); }
+      ray1.geometry.dispose();
+      if (!(ray1.material instanceof Array)) ray1.material.dispose();
+      if (spMag) { spMag.material.map?.dispose(); spMag.material.dispose(); }
+      if (incArc) { incArc.geometry.dispose(); if (!(incArc.material instanceof Array)) incArc.material.dispose(); }
+      if (eyeF) { eyeF.geometry.dispose(); if (!(eyeF.material instanceof Array)) eyeF.material.dispose(); }
+      if (eyeFLabel) { eyeFLabel.material.map?.dispose(); eyeFLabel.material.dispose(); }
       renderer.dispose();
       controls?.dispose();
     };
   }, [fObjective, fEyepiece, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Telescope" />;
+  if (!isWebGL) return <WebGLFallback title="Telescope" />;
 
   return (
     <Card className="border-slate-500/30">

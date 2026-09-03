@@ -112,7 +112,7 @@ export default function OpticsTIR3d() {
         scene.add(reflRay);
       }
 
-      const normalLine = new THREE.Line(
+      normalLine = new THREE.Line(
         new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(0, -2.5, 0), new THREE.Vector3(0, 2.5, 0),
         ]),
@@ -120,7 +120,7 @@ export default function OpticsTIR3d() {
       );
       scene.add(normalLine);
 
-      const normalLabel = mkSprite("Normal", "#a5b4fc");
+      normalLabel = mkSprite("Normal", "#a5b4fc");
       scene.add(normalLabel);
       normalLabel.position.set(0.3, 2, 0);
 
@@ -144,23 +144,27 @@ export default function OpticsTIR3d() {
       return { incRay, normalLine };
     };
 
-    let rayHelpers = updateRays();
+    let normalLine: THREE.Line;
+    let normalLabel: THREE.Sprite;
+
+    const rayHelpers = updateRays();
     const animate = () => {
-      requestAnimationFrame(animate);
+      const id = requestAnimationFrame(animate);
       controls?.update();
       renderer.render(scene, camera);
+      return id;
     };
-    animate();
+    let frameId = animate();
 
     return () => {
-      cancelAnimationFrame(animate);
+      cancelAnimationFrame(frameId);
       if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
       halfPlane.geometry.dispose();
       halfPlane.material.dispose();
       interfaceLine.geometry.dispose();
       interfaceLine.material.dispose();
       normalLine.geometry.dispose();
-      normalLine.material.dispose();
+      if (!(normalLine.material instanceof Array)) normalLine.material.dispose();
       normalLabel.material.map?.dispose();
       normalLabel.material.dispose();
       // Cleanup texture lines
@@ -172,7 +176,7 @@ export default function OpticsTIR3d() {
     };
   }, [n1, n2, incAngle, isWebGL]);
 
-  if (!isWebGL) return <WebGLFallback topic="Total Internal Reflection" />;
+  if (!isWebGL) return <WebGLFallback title="Total Internal Reflection" />;
 
   return (
     <Card className="border-orange-500/30">

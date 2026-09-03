@@ -160,6 +160,12 @@ export function DerivativeParametric3D() {
     return <WebGLFallback title="Parametric & Implicit" description="Parametric curve derivatives — requires WebGL." />;
   }
 
+  const curveOptions: [string, string][] = [
+    ["circle", "Circle"],
+    ["lissajous", "Lissajous"],
+    ["spiral", "Spiral"],
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -171,11 +177,7 @@ export function DerivativeParametric3D() {
       <CardContent className="space-y-4">
         <CollapsibleControls label="Parametric Curve">
           <div className="flex flex-wrap gap-2 mt-2">
-            {[
-              ["circle", "Circle"],
-              ["lissajous", "Lissajous"],
-              ["spiral", "Spiral"],
-            ].map(([key, label]: [string, string]) => (
+            {curveOptions.map(([key, label]) => (
               <button key={key} onClick={() => setParamType(key as ParametricType)} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${paramType === key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{label}</button>
             ))}
           </div>

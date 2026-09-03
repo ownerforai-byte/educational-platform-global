@@ -10,6 +10,8 @@ import {
   slugifySyllabusTopic,
   isClassTrackSlug,
   type SyllabusUnit,
+  type ClassSyllabus,
+  type SubjectSyllabus,
 } from "@/lib/syllabus";
 
 describe("SYLLABUS", () => {
