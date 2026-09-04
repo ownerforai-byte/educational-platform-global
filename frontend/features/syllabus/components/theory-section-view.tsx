@@ -28,7 +28,12 @@ export async function TheorySectionView({
     );
   }
 
-  const bank = await getSubjectPyqBank(classSlug, subjectSlug);
+  let bank: Awaited<ReturnType<typeof getSubjectPyqBank>>;
+  try {
+    bank = await getSubjectPyqBank(classSlug, subjectSlug);
+  } catch {
+    bank = { theory: [], pyqs: [] };
+  }
 
   return (
     <div className="mx-auto max-w-5xl space-y-8 py-10">

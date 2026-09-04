@@ -3,6 +3,8 @@ import { listSubjects } from "@/features/syllabus/queries";
 
 const CLASS_SLUG = "class-12-notes";
 
+export const dynamic = "force-dynamic";
+
 export function generateStaticParams() {
   return listSubjects(CLASS_SLUG).map((s) => ({ subject: s.slug }));
 }

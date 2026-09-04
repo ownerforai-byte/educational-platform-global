@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AppShell } from "@/components/layout/app-shell";
 
 export const metadata: Metadata = {
   title: "AI Quiz Generator — NEB Practice Questions",
@@ -11,5 +10,5 @@ export const viewport = {
 };
 
 export default function AiQuizLayout({ children }: { children: React.ReactNode }) {
-  return <AppShell>{children}</AppShell>;
+  return <>{children}</>;
 }

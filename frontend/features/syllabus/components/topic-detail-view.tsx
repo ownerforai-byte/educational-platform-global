@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
 import { MindmapInterface } from "@/features/mindmap/components/mindmap-interface";
-import { getTopicMindmap } from "@/features/mindmap/queries";
+import { getTopicMindmap, buildSyllabusTopicMindmap } from "@/features/mindmap/queries";
+import type { MindmapNode } from "@/features/mindmap/types";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
@@ -36,13 +37,29 @@ export async function TopicDetailView({
   }
 
   const { unit, topic } = data;
-  const mindmap = await getTopicMindmap({
-    classSlug,
-    subjectSlug,
-    unitId,
-    topicSlug: topic.slug,
-    topicTitle: topic.title,
-  });
+  let mindmap: Awaited<ReturnType<typeof getTopicMindmap>> | undefined;
+  try {
+    mindmap = await getTopicMindmap({
+      classSlug,
+      subjectSlug,
+      unitId,
+      topicSlug: topic.slug,
+      topicTitle: topic.title,
+    });
+  } catch {
+    mindmap = {
+      id: `${classSlug}/${subjectSlug}/${unitId}/${topic.slug}`,
+      title: topic.title,
+      classSlug,
+      subjectSlug,
+      unitId,
+      topicSlug: topic.slug,
+      source: "syllabus",
+      root: buildSyllabusTopicMindmap(topic.title, topic.slug),
+      mediaUrl: null,
+      href: `/${classSlug}/${subjectSlug}/chapters/${unitId}/topics/${topic.slug}#mindmap`,
+    };
+  }
 
   return (
     <div className="space-y-6">

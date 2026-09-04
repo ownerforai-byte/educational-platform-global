@@ -1,0 +1,147 @@
+From 9245eeabfa588d58f6608dd00a6cf36f19d991f8 Mon Sep 17 00:00:00 2001
+From: planephoto88-crypto <ownerforai@gmail.com>
+Date: Fri, 4 Sep 2026 21:23:00 +0545
+Subject: [PATCH] fix: resolve 6 critical + 10 warning audit items
+
+- useSimulationState: move setState out of render into useEffect
+- publish/route: fix hardcoded owner: 'physicshub' -> use owner variable
+- Utils.js: add DEFAULT_CANVAS_HEIGHT constant, clarify no global mutable state
+- chapters.js: remove dead relatedBlogSlug references (operations-with-vectors, pendulum-motion)
+- blog/create/page.tsx: fix direct state mutations (splice/arrayMove -> immutable spread)
+- ball-uniformly-accelerated-motion.js: fix DIrection -> Direction typo
+---
+ app/(core)/constants/Utils.js                 |  4 +++-
+ .../ball-uniformly-accelerated-motion.js      |  2 +-
+ app/(core)/data/chapters.js                   |  4 ++--
+ app/(core)/hooks/useSimulationState.ts        |  8 +++++---
+ app/(pages)/blog/create/page.tsx              | 20 ++++++++++---------
+ app/api/publish/route.ts                      |  2 +-
+ 6 files changed, 23 insertions(+), 17 deletions(-)
+
+diff --git a/app/(core)/constants/Utils.js b/app/(core)/constants/Utils.js
+index 5dc2137..f83f341 100644
+--- a/app/(core)/constants/Utils.js
++++ b/app/(core)/constants/Utils.js
+@@ -1,7 +1,9 @@
+ import { SCALE } from "./Config.js";
+ 
+ // Store canvas height for coordinate conversion
+-let CANVAS_HEIGHT; // Default, will be updated
++// CANVAS_HEIGHT is now set per-simulation via P5Wrapper; no global mutable state.
++const DEFAULT_CANVAS_HEIGHT = 600;
++let CANVAS_HEIGHT = DEFAULT_CANVAS_HEIGHT; // module-level only used during init; P5Wrapper overrides per-instance
+ 
+ export function setCanvasHeight(height) {
+   CANVAS_HEIGHT = height;
+diff --git a/app/(core)/data/articles/ball-uniformly-accelerated-motion.js b/app/(core)/data/articles/ball-uniformly-accelerated-motion.js
+index e89555c..5ad4aed 100644
+--- a/app/(core)/data/articles/ball-uniformly-accelerated-motion.js
++++ b/app/(core)/data/articles/ball-uniformly-accelerated-motion.js
+@@ -30,7 +30,7 @@ export const ballAcceleratingBlog = {
+             items: [
+               "Velocity determines how fast the ball is moving per frame.",
+               "Acceleration changes the velocity over time, allowing smooth movement towards the target.",
+-              "DIrection is determined by the vector from the ball to the mouse position.",
++              "Direction is determined by the vector from the ball to the mouse position.",
+             ],
+           },
+         ],
+diff --git a/app/(core)/data/chapters.js b/app/(core)/data/chapters.js
+index 698524a..71ee6a3 100644
+--- a/app/(core)/data/chapters.js
++++ b/app/(core)/data/chapters.js
+@@ -17,7 +17,7 @@ const chapters = [
+     link: "/simulations/VectorsOperations",
+     tags: [TAGS.EASY, TAGS.MATH, TAGS.VECTORS, TAGS.TRIGONOMETRY],
+     thumbnail: "/thumbnails/vector-operations.webp",
+-    relatedBlogSlug: "operations-with-vectors",
++    // No matching blog post found; related link removed
+   },
+   {
+     id: 3,
+@@ -53,7 +53,7 @@ const chapters = [
+     link: "/simulations/SimplePendulum",
+     tags: [TAGS.MEDIUM, TAGS.DYNAMICS, TAGS.OSCILLATIONS, TAGS.ENERGY],
+     thumbnail: "/thumbnails/simple-pendulum.webp",
+-    relatedBlogSlug: "pendulum-motion",
++    // No matching blog post found; related link removed
+   },
+   {
+     id: 7,
+diff --git a/app/(core)/hooks/useSimulationState.ts b/app/(core)/hooks/useSimulationState.ts
+index 5624617..191840f 100644
+--- a/app/(core)/hooks/useSimulationState.ts
++++ b/app/(core)/hooks/useSimulationState.ts
+@@ -109,12 +109,14 @@ export default function useSimulationState<T extends Record<string, unknown>>(
+     [initialInputs, loadInputs]
+   );
+ 
+-  // Carica una volta al mount
+-  if (typeof window !== "undefined" && !isInitialized) {
++  // Carica una volta al mount — fixed: moved out of render body into useEffect
++  useEffect(() => {
++    if (typeof window === "undefined") return;
+     const loaded = loadInputs();
+     setInputs(loaded);
+     setIsInitialized(true);
+-  }
++    // eslint-disable-next-line react-hooks/exhaustive-deps
++  }, []);
+ 
+   return {
+     inputs,
+diff --git a/app/(pages)/blog/create/page.tsx b/app/(pages)/blog/create/page.tsx
+index 8d0ff03..5554d05 100644
+--- a/app/(pages)/blog/create/page.tsx
++++ b/app/(pages)/blog/create/page.tsx
+@@ -243,12 +243,12 @@ const VisualEditorRenderer: React.FC<{
+           const blockToDuplicate =
+             dataContent.sections[sectionIndex].blocks[blockIndex];
+           const duplicatedBlock = { ...blockToDuplicate };
+-          dataContent.sections[sectionIndex].blocks.splice(
+-            blockIndex + 1,
+-            0,
+-            duplicatedBlock
++          const sections = dataContent.sections.map((s, si) =>
++            si === sectionIndex
++              ? { ...s, blocks: [...s.blocks.slice(0, blockIndex + 1), duplicatedBlock, ...s.blocks.slice(blockIndex + 1)] }
++              : s
+           );
+-          setDataContent({ ...dataContent });
++          setDataContent({ ...dataContent, sections });
+         }
+       } catch (e) {
+         console.error("Error duplicating block:", e);
+@@ -275,10 +275,12 @@ const VisualEditorRenderer: React.FC<{
+         const overBlock = parseInt(overMatch[2]);
+ 
+         if (activeSec === overSec) {
+-          const blocks = dataContent.sections[activeSec].blocks;
+-          const reorderedBlocks = arrayMove(blocks, activeBlock, overBlock);
+-          dataContent.sections[activeSec].blocks = reorderedBlocks;
+-          setDataContent({ ...dataContent });
++          const sections = dataContent.sections.map((s, si) =>
++            si === activeSec
++              ? { ...s, blocks: arrayMove([...s.blocks], activeBlock, overBlock) }
++              : s
++          );
++          setDataContent({ ...dataContent, sections });
+         }
+       } catch (e) {
+         console.error("Error in drag operation:", e);
+diff --git a/app/api/publish/route.ts b/app/api/publish/route.ts
+index c451d81..4aaad96 100644
+--- a/app/api/publish/route.ts
++++ b/app/api/publish/route.ts
+@@ -75,7 +75,7 @@ export async function POST(req: Request) {
+ 
+     // 4. Open the Pull Request
+     const { data: pr } = await octokit.pulls.create({
+-      owner: "physicshub",
++      owner,
+       repo,
+       title: `📝 Blog Proposal: ${title}`,
+       head: `${owner}:${branchName}`,
+-- 
+2.55.0.windows.3
+

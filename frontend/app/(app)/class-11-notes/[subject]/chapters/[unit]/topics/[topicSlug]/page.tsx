@@ -6,6 +6,8 @@ import { getUnitTopic } from "@/features/syllabus/queries";
 
 const CLASS_SLUG = "class-11-notes";
 
+export const dynamic = "force-dynamic";
+
 
 export default async function TopicPage({
   params,
