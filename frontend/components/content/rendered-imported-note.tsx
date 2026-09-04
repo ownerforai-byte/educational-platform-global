@@ -32,9 +32,12 @@ async function getRavikishanNote(sourcePath: string) {
 }
 
 async function getRExportEntry(subject: string, chapterPath: string) {
-  const chapter = chapterPath.split("/").slice(1).join("/");
+  // chapterPath is `${subject}/${chapter}/${id}` (see buildImportedNotes)
+  const [, chapter, id] = chapterPath.split("/");
   const manifest = await loadData<RExportManifestItem[]>("r-export/manifest.json");
-  const entry = manifest.find((item) => item.subject === subject && item.chapter === chapter);
+  const entry = manifest.find(
+    (item) => item.subject === subject && item.chapter === chapter && item.id === id,
+  );
   if (!entry) return null;
   return { ...entry, source: "r-export" as const };
 }
