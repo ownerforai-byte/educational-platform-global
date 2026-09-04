@@ -24,9 +24,12 @@ import {
   UserPlus,
   PenLine,
   Lightbulb,
+  Flame,
+  ClipboardList,
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { StreakBadge } from "@/components/streak-badge";
 
 type NavItem = {
   href: string;
@@ -44,6 +47,8 @@ const browseItems: NavItem[] = [
   { href: "/subjects", label: "Subjects", icon: Layers },
   { href: "/syllabus", label: "Syllabus", icon: BookOpen },
   { href: "/lab", label: "Lab", icon: FlaskConical },
+  { href: "/quiz", label: "PYQ Practice", icon: ClipboardList },
+  { href: "/exam-countdown", label: "Exam Countdown", icon: ClipboardList },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/loksewa", label: "Loksewa", icon: Users },
   { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
@@ -225,6 +230,13 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
           />
         )}
       </div>
+
+      {/* Streak badge */}
+      {!collapsed && (
+        <div className="px-1 pb-2">
+          <StreakBadge />
+        </div>
+      )}
 
       {/* Bottom action */}
       <div className="border-t border-border/40 p-3 shrink-0 space-y-1">

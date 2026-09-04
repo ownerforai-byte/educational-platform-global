@@ -7,9 +7,10 @@ interface ProgressProps {
   value: number;
   className?: string;
   indicatorClassName?: string;
+  accentColor?: string;
 }
 
-export function Progress({ value, className, indicatorClassName }: ProgressProps) {
+export function Progress({ value, className, indicatorClassName, accentColor }: ProgressProps) {
   const clamped = Math.min(100, Math.max(0, value));
   return (
     <div
@@ -20,8 +21,8 @@ export function Progress({ value, className, indicatorClassName }: ProgressProps
       className={cn("h-2 w-full rounded-full bg-muted", className)}
     >
       <div
-        className={cn("h-2 rounded-full bg-primary transition-all", indicatorClassName)}
-        style={{ width: `${clamped}%` }}
+        className={cn("h-2 rounded-full transition-all", indicatorClassName)}
+        style={{ width: `${clamped}%`, backgroundColor: accentColor || undefined }}
       />
     </div>
   );
