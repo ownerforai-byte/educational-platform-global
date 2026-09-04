@@ -2,7 +2,6 @@ import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
 import { MindmapInterface } from "@/features/mindmap/components/mindmap-interface";
 import { getTopicMindmap, buildSyllabusTopicMindmap } from "@/features/mindmap/queries";
-import type { MindmapNode } from "@/features/mindmap/types";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
