@@ -5,6 +5,8 @@ import type {
   AIChatResponse,
   AISearchRequest,
   SearchResponse,
+  GenerateQuestionsRequest,
+  GenerateQuestionsResponse,
 } from "../../types/api";
 
 /**
@@ -55,5 +57,18 @@ export async function search(
   return apiFetch<SearchResponse>("/api/search", {
     method: "POST",
     body: JSON.stringify(body),
+  });
+}
+
+/**
+ * Generate MCQs via AI from syllabus content and internet context.
+ * Supports easy / intermediate / hard difficulty levels.
+ */
+export async function generateQuestions(
+  payload: GenerateQuestionsRequest
+): Promise<GenerateQuestionsResponse> {
+  return apiFetch<GenerateQuestionsResponse>("/api/ai/generate-questions", {
+    method: "POST",
+    body: JSON.stringify(payload),
   });
 }

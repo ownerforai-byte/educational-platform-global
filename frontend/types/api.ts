@@ -325,3 +325,27 @@ export interface AISearchRequest {
 export interface ApiError {
   error: string;
 }
+
+export interface GeneratedQuestion {
+  prompt: string;
+  options: string[];
+  correctIndex: number;
+  difficulty: "easy" | "intermediate" | "hard";
+  subject: string;
+  topic: string;
+  explanation: string;
+}
+
+export interface GenerateQuestionsRequest {
+  classSlug: string;
+  subjectSlug: string;
+  topic?: string;
+  difficulty?: "easy" | "intermediate" | "hard";
+  count?: number;
+}
+
+export interface GenerateQuestionsResponse {
+  questions: GeneratedQuestion[];
+  provider: string;
+  topic?: string;
+}

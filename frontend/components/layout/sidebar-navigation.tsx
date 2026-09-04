@@ -48,6 +48,7 @@ const browseItems: NavItem[] = [
   { href: "/syllabus", label: "Syllabus", icon: BookOpen },
   { href: "/lab", label: "Lab", icon: FlaskConical },
   { href: "/quiz", label: "PYQ Practice", icon: ClipboardList },
+  { href: "/ai-quiz", label: "AI Quiz Generator", icon: Sparkles, badge: "AI" },
   { href: "/exam-countdown", label: "Exam Countdown", icon: ClipboardList },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/loksewa", label: "Loksewa", icon: Users },
