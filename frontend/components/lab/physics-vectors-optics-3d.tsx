@@ -829,7 +829,7 @@ export function Refraction3D() {
       controls.dispose();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [n1, n2, incAngle, sinRef, refAngle, tir, criticalAngle]);
+  }, [n1, n2, incAngle]);
 
   return (
     <div className="space-y-4">
