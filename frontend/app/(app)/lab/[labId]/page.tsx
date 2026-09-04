@@ -136,7 +136,9 @@ export default function LabPage() {
           {/* Lab Component + long-arrow annotations */}
           <div className="p-5">
             <AnimationFrame heightClass="min-h-[340px]">
-              {typeof lab.component === "function" ? lab.component() : lab.component}
+              {typeof lab.component === "function"
+                ? (lab.component as () => React.ReactNode)()
+                : lab.component}
               {LAB_ANNOTATIONS[lab.id]?.map((ann, i) => (
                 <ArrowLabel key={`${lab.id}-${i}`} {...ann} delay={0.3 + i * 0.25} />
               ))}
