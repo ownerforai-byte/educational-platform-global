@@ -35,9 +35,8 @@ export function PhotoelectricEffectVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [wavelength, setWavelength] = useState(400);
   const [workFunc, setWorkFunc] = useState(2.3);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const h = 6.626e-34;
   const c = 3e8;

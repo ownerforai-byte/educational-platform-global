@@ -34,9 +34,8 @@ type StandardLimit = "sinx_over_x" | "e_def" | "power_rule" | "log_limit";
 export function LimitsStandard3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [limitType, setLimitType] = useState<StandardLimit>("sinx_over_x");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -41,9 +41,8 @@ export function MatricesDeterminantsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [matrix, setMatrix] = useState([[2, 1], [1, 3]]);
   const [showInverse, setShowInverse] = useState(false);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
   const trace = matrix[0][0] + matrix[1][1];

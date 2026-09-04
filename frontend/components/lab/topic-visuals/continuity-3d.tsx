@@ -34,9 +34,8 @@ type ContinuityType = "continuous" | "removable" | "jump" | "infinite";
 export function Continuity3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ctype, setCtype] = useState<ContinuityType>("continuous");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

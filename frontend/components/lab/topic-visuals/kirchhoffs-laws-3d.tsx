@@ -38,9 +38,8 @@ export function KirchhoffsLawsVisual() {
   const [r1, setR1] = useState(4);
   const [r2, setR2] = useState(2);
   const [r3, setR3] = useState(6);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   // Solve circuit: two loops with shared resistor R3
   const solveCircuit = () => {

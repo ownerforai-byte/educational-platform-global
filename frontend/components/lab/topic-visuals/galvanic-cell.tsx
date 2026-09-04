@@ -37,9 +37,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function GalvanicCellVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [voltage, setVoltage] = useState(1.10);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

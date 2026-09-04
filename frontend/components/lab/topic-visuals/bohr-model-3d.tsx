@@ -35,9 +35,8 @@ export function BohrModelVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [Z, setZ] = useState(1);
   const [n, setN] = useState(3);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

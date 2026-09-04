@@ -43,9 +43,8 @@ export function BayesTheoremVisual() {
   const [pA2, setPA2] = useState(0.5);
   const [pB1, setPB1] = useState(0.2);
   const [pB2, setPB2] = useState(0.6);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   // P(A1|B) = P(B|A1)*P(A1) / [P(B|A1)*P(A1) + P(B|A2)*P(A2)]
   const pB = pB1 * pA1 + pB2 * pA2;

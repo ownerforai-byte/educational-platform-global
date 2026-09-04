@@ -38,9 +38,8 @@ export function ElectrolysisVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [electrolyte, setElectrolyte] = useState<"molten-nacl" | "aq-cuSO4" | "water">("aq-cuSO4");
   const [isOn, setIsOn] = useState(true);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

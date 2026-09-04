@@ -52,9 +52,8 @@ export function StraightLineVisual() {
   const [a, setA] = useState(1);
   const [b, setB] = useState(-2);
   const [cc, setCc] = useState(2);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

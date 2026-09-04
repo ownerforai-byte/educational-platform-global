@@ -41,9 +41,8 @@ export function DerivativeVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [func, setFunc] = useState<"quadratic" | "cubic" | "trig" | "exp">("quadratic");
   const [tx, setTx] = useState(1.5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const f = useCallback((x: number) => {
     switch (func) {

@@ -47,9 +47,8 @@ type SystemView = "external" | "digestive" | "excretory" | "nervous";
 export function EarthwormVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<SystemView>("external");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

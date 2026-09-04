@@ -34,9 +34,8 @@ type OrbitalType = "sp3" | "sp2" | "sp";
 export function HybridizationVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [orbital, setOrbital] = useState<OrbitalType>("sp3");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

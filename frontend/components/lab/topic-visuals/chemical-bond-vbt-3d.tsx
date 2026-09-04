@@ -34,9 +34,8 @@ type OverlapType = "sigma" | "pi";
 export function VBTVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [overlap, setOverlap] = useState<OverlapType>("sigma");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

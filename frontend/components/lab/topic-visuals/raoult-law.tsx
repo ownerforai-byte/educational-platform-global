@@ -37,9 +37,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function RaoultLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [moleFraction, setMoleFraction] = useState(0.3);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

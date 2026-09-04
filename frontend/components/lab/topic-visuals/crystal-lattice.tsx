@@ -40,9 +40,8 @@ type LatticeType = "sc" | "bcc" | "fcc";
 export function CrystalLatticeVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [lattice, setLattice] = useState<LatticeType>("fcc");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

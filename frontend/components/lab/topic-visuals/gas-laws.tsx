@@ -42,10 +42,9 @@ export function GasLawsVisual() {
   const [mode, setMode] = useState<GasLawMode>("boyle");
   const [nMoles, setNMoles] = useState(1);
   const [temperature, setTemperature] = useState(300);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const [time, setTime] = useState(0);
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -35,9 +35,8 @@ export function ElectricFieldVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [chargeType, setChargeType] = useState<"positive" | "negative">("positive");
   const [chargeMag, setChargeMag] = useState(5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

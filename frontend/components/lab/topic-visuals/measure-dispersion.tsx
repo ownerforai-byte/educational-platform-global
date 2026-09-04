@@ -42,9 +42,8 @@ export function MeasureDispersionVisual() {
   const [spread, setSpread] = useState(2);
   const [center, setCenter] = useState(5);
   const [n, setN] = useState(30);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const getData = () => {
     const arr: number[] = [];

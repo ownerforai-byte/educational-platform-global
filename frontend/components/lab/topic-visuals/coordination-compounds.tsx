@@ -40,9 +40,8 @@ type CoordType = "octahedral" | "tetrahedral" | "square-planar";
 export function CoordinationCompoundsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [geometry, setGeometry] = useState<CoordType>("octahedral");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

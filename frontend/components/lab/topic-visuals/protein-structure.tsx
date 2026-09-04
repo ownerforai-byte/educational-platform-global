@@ -39,9 +39,8 @@ type ProteinLevel = "primary" | "secondary" | "tertiary" | "quaternary";
 export function ProteinStructureVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [level, setLevel] = useState<ProteinLevel>("primary");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

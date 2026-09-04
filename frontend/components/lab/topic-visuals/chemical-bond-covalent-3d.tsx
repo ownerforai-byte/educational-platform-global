@@ -34,9 +34,8 @@ type Molecule = "water" | "oxygen" | "carbon-dioxide" | "methane";
 export function CovalentBondVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [molecule, setMolecule] = useState<Molecule>("water");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

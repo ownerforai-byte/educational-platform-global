@@ -34,9 +34,8 @@ type RuleType = "power" | "product" | "quotient" | "chain";
 export function DerivativeRules3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ruleType, setRuleType] = useState<RuleType>("power");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

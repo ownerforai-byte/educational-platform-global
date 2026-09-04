@@ -40,9 +40,8 @@ type BondMode = "ionic" | "covalent" | "vsepr";
 export function ChemicalBondingVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<BondMode>("covalent");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

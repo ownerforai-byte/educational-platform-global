@@ -38,9 +38,8 @@ export function EquilibriumVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [stress, setStress] = useState<"none" | "add-reactant" | "add-product" | "increase-T" | "increase-P">("none");
   const progressRef = useRef(0.5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

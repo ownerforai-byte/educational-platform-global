@@ -34,9 +34,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function LimitsConcept3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [targetX, setTargetX] = useState(3);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

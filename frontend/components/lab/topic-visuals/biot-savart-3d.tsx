@@ -34,9 +34,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function BiotSavartVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -47,9 +47,8 @@ type Organism = "paramecium" | "plasmodium";
 export function ProtozoaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [organism, setOrganism] = useState<Organism>("paramecium");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

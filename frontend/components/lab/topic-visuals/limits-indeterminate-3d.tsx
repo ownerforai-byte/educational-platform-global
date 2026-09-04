@@ -34,9 +34,8 @@ type IndeterminateType = "zero_zero" | "inf_inf" | "lhopital";
 export function LimitsIndeterminate3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [formType, setFormType] = useState<IndeterminateType>("zero_zero");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

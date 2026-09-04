@@ -36,9 +36,8 @@ export function ACcircuitsVisual() {
   const [frequency, setFrequency] = useState(1);
   const [voltage, setVoltage] = useState(10);
   const [component, setComponent] = useState<"resistor" | "inductor" | "capacitor">("resistor");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

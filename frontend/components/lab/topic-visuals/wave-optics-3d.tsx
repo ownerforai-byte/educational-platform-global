@@ -36,9 +36,8 @@ export function WaveOpticsVisual() {
   const [mode, setMode] = useState<"double-slit" | "single-slit">("double-slit");
   const [wavelength, setWavelength] = useState(0.5);
   const [slitSep, setSlitSep] = useState(2);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

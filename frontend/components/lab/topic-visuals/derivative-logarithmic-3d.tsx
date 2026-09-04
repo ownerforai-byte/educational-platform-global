@@ -32,10 +32,9 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function DerivativeLogarithmic3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const totalSteps = 4;
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

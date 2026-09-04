@@ -32,9 +32,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function DerivativeHigher3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [funcChoice, setFuncChoice] = useState<"cubic" | "quartic">("cubic");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -34,9 +34,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function NuclearPhysicsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isotope, setIsotope] = useState<"h1" | "he4" | "c12" | "u238">("u238");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const nuclei = {
     "h1": { protons: 1, neutrons: 0, label: "¹H (Protium)", color: 0xef4444 },

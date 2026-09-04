@@ -34,9 +34,8 @@ type ResonanceView = "ozone" | "carbonate" | "benzene" | "hybrid";
 export function ResonanceVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<ResonanceView>("ozone");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

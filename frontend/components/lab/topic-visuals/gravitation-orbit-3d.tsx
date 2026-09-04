@@ -35,9 +35,8 @@ export function GravitationVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mass, setMass] = useState(100);
   const [orbitalRadius, setOrbitalRadius] = useState(5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

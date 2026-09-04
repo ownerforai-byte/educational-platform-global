@@ -41,9 +41,8 @@ export function ReactionKineticsVisual() {
   const [order, setOrder] = useState<OrderMode>("first");
   const [k, setK] = useState(0.5);
   const [A0, setA0] = useState(1.0);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

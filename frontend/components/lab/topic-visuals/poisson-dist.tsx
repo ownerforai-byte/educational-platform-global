@@ -40,9 +40,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function PoissonDistVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [lambda, setLambda] = useState(3);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
   const pmf = (k: number) => Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k);

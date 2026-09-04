@@ -35,9 +35,8 @@ export function SemiconductorsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [material, setMaterial] = useState<"insulator" | "semiconductor" | "conductor">("semiconductor");
   const [temp, setTemp] = useState(300);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

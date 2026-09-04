@@ -44,9 +44,8 @@ export function TrigEquationsVisual() {
   const [eqType, setEqType] = useState<EqType>("sin");
   const [k, setK] = useState(0.5);
   const [range, setRange] = useState(360);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

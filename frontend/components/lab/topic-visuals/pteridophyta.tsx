@@ -44,9 +44,8 @@ function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPo
 
 export function PteridophytaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

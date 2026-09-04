@@ -35,9 +35,8 @@ export function CircularMotionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [radius, setRadius] = useState(3);
   const [speed, setSpeed] = useState(2);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -47,9 +47,8 @@ type CycleView = "carbon" | "nitrogen";
 export function BiogeochemicalCyclesVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [cycle, setCycle] = useState<CycleView>("carbon");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

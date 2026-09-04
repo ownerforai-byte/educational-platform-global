@@ -45,10 +45,9 @@ function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPo
 export function ProteinSynthesisVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const steps = ["Transcription (Nucleus)", "mRNA Processing", "Translation (Ribosome)", "Polypeptide Chain"];
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

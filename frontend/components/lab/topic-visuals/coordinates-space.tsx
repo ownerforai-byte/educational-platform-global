@@ -40,9 +40,8 @@ export function CoordinatesSpaceVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [p1, setP1] = useState({ x: 1, y: 2, z: 3 });
   const [p2, setP2] = useState({ x: 4, y: 1, z: 2 });
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

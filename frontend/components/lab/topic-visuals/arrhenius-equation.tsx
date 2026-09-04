@@ -39,9 +39,8 @@ export function ArrheniusEquationVisual() {
   const [Ea, setEa] = useState(50);
   const [isEndothermic, setIsEndothermic] = useState(true);
   const [hasCat, setHasCat] = useState(false);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -35,9 +35,8 @@ export function OhmsLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [resistance, setResistance] = useState(10);
   const [maxVoltage, setMaxVoltage] = useState(12);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

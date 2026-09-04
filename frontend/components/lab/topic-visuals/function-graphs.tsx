@@ -45,9 +45,8 @@ export function FunctionVisual() {
   const [funcType, setFuncType] = useState<FuncType>("quadratic");
   const [params, setParams] = useState({ a: 1, b: -2, c: -3, k: 1, h: 0 });
   const [showDomainRange, setShowDomainRange] = useState(true);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const getFunc = (x: number) => {
     switch (funcType) {

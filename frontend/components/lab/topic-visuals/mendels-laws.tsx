@@ -47,9 +47,8 @@ type CrossType = "mono" | "di";
 export function MendelsLawsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [crossType, setCrossType] = useState<CrossType>("mono");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

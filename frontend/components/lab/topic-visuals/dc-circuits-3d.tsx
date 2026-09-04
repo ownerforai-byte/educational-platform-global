@@ -35,9 +35,8 @@ export function DCCircuitsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [voltage, setVoltage] = useState(12);
   const [resistance, setResistance] = useState(6);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

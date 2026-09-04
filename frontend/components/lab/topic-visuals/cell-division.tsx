@@ -49,9 +49,8 @@ const STAGES: Stage[] = ["interphase", "prophase", "metaphase", "anaphase", "tel
 export function CellDivisionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [stage, setStage] = useState<Stage>("metaphase");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

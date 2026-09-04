@@ -45,10 +45,9 @@ export function NumericalComputationVisual() {
   const [a, setA] = useState(-2);
   const [b, setB] = useState(3);
   const [x0, setX0] = useState(2);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const [iterations, setIterations] = useState<{ label: string; val: number; err: number }[]>([]);
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const f = (x: number) => x * x * x - x - 2;
   const df = (x: number) => 3 * x * x - 1;

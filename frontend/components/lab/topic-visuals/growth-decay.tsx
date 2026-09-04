@@ -45,9 +45,8 @@ export function GrowthDecayDEVisual() {
   const [k, setK] = useState(0.5);
   const [n0, setN0] = useState(100);
   const [carrying, setCarrying] = useState(500);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const getN = (t: number) => {
     if (type === "growth") return n0 * Math.exp(k * t);

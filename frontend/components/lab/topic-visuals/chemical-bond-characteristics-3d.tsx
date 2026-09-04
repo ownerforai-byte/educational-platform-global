@@ -34,9 +34,8 @@ type BondProperty = "length" | "energy" | "order";
 export function BondCharacteristicsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [property, setProperty] = useState<BondProperty>("length");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

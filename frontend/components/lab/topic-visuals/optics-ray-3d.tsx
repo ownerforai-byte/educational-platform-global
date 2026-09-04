@@ -38,9 +38,7 @@ export function OpticsVisual() {
   const [mode, setMode] = useState<OpticMode>("concave-mirror");
   const [focalLen, setFocalLen] = useState(3);
   const [objDist, setObjDist] = useState(6);
-  const [isWebGL, setIsWebGL] = useState(true);
-
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     const container = containerRef.current;

@@ -41,9 +41,8 @@ export function InverseTrigVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [func, setFunc] = useState<InvFunc>("asin");
   const [angleDeg, setAngleDeg] = useState(45);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

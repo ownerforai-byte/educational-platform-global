@@ -34,9 +34,8 @@ type Molecule = "h2" | "h2o" | "co2" | "nh3" | "ch4" | "nacl";
 export function LewisDotVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [molecule, setMolecule] = useState<Molecule>("h2o");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

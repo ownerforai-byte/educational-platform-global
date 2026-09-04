@@ -45,9 +45,8 @@ export function ComplexQuadraticVisual() {
   const [mode, setMode] = useState<"quadratic" | "complex">("quadratic");
   const [re, setRe] = useState(2);
   const [im, setIm] = useState(1);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

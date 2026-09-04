@@ -47,9 +47,8 @@ type Species = "australopithecus" | "homo habilis" | "homo erectus" | "neanderth
 export function HumanEvolutionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [species, setSpecies] = useState<Species>("sapiens");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const speciesData: Record<Species, { name: string; brainVol: string; browRidge: string; chin: string; posture: string }> = {
     australopithecus: { name: "Australopithecus", brainVol: "~450 cc", browRidge: "Prominent", chin: "Absent", posture: "Bipedal" },

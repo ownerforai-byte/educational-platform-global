@@ -35,9 +35,8 @@ export function DerivativeGeometric3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [funcName, setFuncName] = useState<"quadratic" | "cubic" | "trig">("quadratic");
   const [px, setPx] = useState(1.5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const f = (x: number) => {
     switch (funcName) {

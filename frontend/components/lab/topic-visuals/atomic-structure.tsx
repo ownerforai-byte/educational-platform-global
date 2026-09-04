@@ -37,10 +37,9 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function AtomicStructureVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [nElectrons, setNElectrons] = useState(10);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const animRef = useRef<number>(0);
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

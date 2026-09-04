@@ -36,9 +36,8 @@ export function WaveMotionVisual() {
   const [waveType, setWaveType] = useState<"transverse" | "longitudinal">("transverse");
   const [wavelength, setWavelength] = useState(3);
   const [amplitude, setAmplitude] = useState(1);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

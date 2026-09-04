@@ -47,10 +47,9 @@ type PcrStep = "denature" | "anneal" | "extend";
 export function PCRVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState<PcrStep>("denature");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const [cycle, setCycle] = useState(1);
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

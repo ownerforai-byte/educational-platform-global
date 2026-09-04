@@ -35,9 +35,8 @@ export function SHMVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [amplitude, setAmplitude] = useState(3);
   const [frequency, setFrequency] = useState(1);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

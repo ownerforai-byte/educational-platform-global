@@ -48,9 +48,8 @@ type MolKey = keyof typeof MOLECULES;
 export function OrganicMoleculesVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [molecule, setMolecule] = useState<MolKey>("methane");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

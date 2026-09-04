@@ -46,9 +46,8 @@ export function DynamicsVisual() {
   const [a, setA] = useState(2);
   const [t, setT] = useState(5);
   const [angle, setAngle] = useState(30);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

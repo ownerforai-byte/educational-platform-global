@@ -41,9 +41,8 @@ export function IntegralAreaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [nRects, setNRects] = useState(8);
   const [method, setMethod] = useState<"left" | "right" | "midpoint">("midpoint");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const f = (x: number) => Math.sin(x) * 2 + 1.5;
 

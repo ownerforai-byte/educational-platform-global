@@ -34,9 +34,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function LenzLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [direction, setDirection] = useState<"approaching" | "receding">("approaching");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

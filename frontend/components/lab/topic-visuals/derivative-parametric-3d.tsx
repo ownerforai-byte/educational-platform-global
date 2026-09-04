@@ -37,9 +37,8 @@ export function DerivativeParametric3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [paramType, setParamType] = useState<ParametricType>("circle");
   const [t, setT] = useState(0);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

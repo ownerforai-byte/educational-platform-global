@@ -45,9 +45,8 @@ function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPo
 export function EcosystemVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<"chain" | "web" | "pyramid">("pyramid");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

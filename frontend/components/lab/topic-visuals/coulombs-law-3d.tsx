@@ -36,9 +36,8 @@ export function CoulombsLawVisual() {
   const [q1, setQ1] = useState(5);
   const [q2, setQ2] = useState(-3);
   const [distance, setDistance] = useState(4);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

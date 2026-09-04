@@ -34,9 +34,8 @@ type ForceType = "vdw" | "hbond";
 export function VanderWaalsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [force, setForce] = useState<ForceType>("vdw");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

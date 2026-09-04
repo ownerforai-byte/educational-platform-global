@@ -44,9 +44,8 @@ export function CurveSketchingVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [curveType, setCurveType] = useState<CurveType>("quadratic");
   const [params, setParams] = useState({ a: 1, b: 0, c: -2 });
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const getFunc = (x: number) => {
     switch (curveType) {

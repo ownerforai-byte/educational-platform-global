@@ -34,9 +34,8 @@ type LatticeView = "unit-cell" | "extended" | "ion-sizes";
 export function IonicBondVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<LatticeView>("unit-cell");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

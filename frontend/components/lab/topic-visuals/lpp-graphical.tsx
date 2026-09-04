@@ -48,9 +48,8 @@ export function LPPGraphicalVisual() {
   const [p, setP] = useState(3);
   const [q, setQ] = useState(2);
   const [isoLevel, setIsoLevel] = useState(0);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const det = a1 * b2 - a2 * b1;
   const ix = det !== 0 ? (c1 * b2 - c2 * b1) / det : NaN;

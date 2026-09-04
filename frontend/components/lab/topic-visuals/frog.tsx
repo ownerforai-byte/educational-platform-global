@@ -47,9 +47,8 @@ type SystemView = "digestive" | "circulatory" | "respiratory";
 export function FrogVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<SystemView>("digestive");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

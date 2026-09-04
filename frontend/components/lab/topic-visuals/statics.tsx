@@ -41,9 +41,8 @@ export function StaticsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [f1, setF1] = useState({ mag: 5, angle: 30 });
   const [f2, setF2] = useState({ mag: 4, angle: 120 });
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

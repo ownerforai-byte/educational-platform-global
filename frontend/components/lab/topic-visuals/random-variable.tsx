@@ -43,9 +43,8 @@ export function RandomVariableVisual() {
   const [distType, setDistType] = useState<DistType>("discrete");
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const binomialPMF = (k: number) => {
     const comb = factorial(n) / (factorial(k) * factorial(n - k));

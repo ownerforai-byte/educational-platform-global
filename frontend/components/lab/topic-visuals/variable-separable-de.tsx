@@ -41,9 +41,8 @@ export function VariableSeparableDEVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [k, setK] = useState(1);
   const [y0, setY0] = useState(1);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   // dy/dx = ky  →  y = y0 * e^(kx)
   const getSolution = (x: number) => y0 * Math.exp(k * x);

@@ -42,9 +42,8 @@ export function NumericalIntegrationVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<IntMode>("trapezoidal");
   const [n, setN] = useState(6);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const f = (x: number) => Math.sin(x) + 1.5;
 

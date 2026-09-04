@@ -34,9 +34,8 @@ type DiffType = "smooth" | "corner" | "cusp" | "vertical_tangent";
 export function Differentiability3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [diffType, setDiffType] = useState<DiffType>("smooth");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

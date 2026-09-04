@@ -42,9 +42,8 @@ export function IndependentEventsVisual() {
   const [pA, setPA] = useState(0.4);
   const [pB, setPB] = useState(0.3);
   const [isIndependent, setIsIndependent] = useState(true);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const pAB_indep = pA * pB;
   const pAB_actual = isIndependent ? pAB_indep : pAB_indep * 1.8; // Artificially increase to show dependence

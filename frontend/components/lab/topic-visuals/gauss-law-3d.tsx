@@ -34,9 +34,8 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function GaussLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [chargeType, setChargeType] = useState<"point" | "sphere" | "line">("point");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

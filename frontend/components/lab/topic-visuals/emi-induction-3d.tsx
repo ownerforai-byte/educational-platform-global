@@ -34,10 +34,9 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 export function EMIInductionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [speed, setSpeed] = useState(2);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const [animating, setAnimating] = useState(true);
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -35,10 +35,9 @@ export function ProjectileMotionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [angle, setAngle] = useState(45);
   const [velocity, setVelocity] = useState(20);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const [animating, setAnimating] = useState(true);
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

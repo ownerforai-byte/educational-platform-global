@@ -18,9 +18,8 @@ type ProbMode = "sample-space" | "independent" | "two-events";
 export function ProbabilityBasicVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<ProbMode>("sample-space");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

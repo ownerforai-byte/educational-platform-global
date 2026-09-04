@@ -45,9 +45,8 @@ export function RealNumbersVisual() {
   const [val, setVal] = useState(3);
   const [a, setA] = useState(1);
   const [b, setB] = useState(5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -47,9 +47,8 @@ export function LPPFormulationVisual() {
   const [c2, setC2] = useState(12);
   const [pa, setPa] = useState(5);
   const [pb, setPb] = useState(4);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   // Constraint lines: a1*x + b1*y = c1 and a2*x + b2*y = c2
   // Intersection point

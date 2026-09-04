@@ -41,9 +41,8 @@ export function FormationDEVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [c1, setC1] = useState(1);
   const [c2, setC2] = useState(0);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

@@ -46,9 +46,8 @@ export function SequenceSeriesVisual() {
   const [a, setA] = useState(1);
   const [dOrR, setDOrR] = useState(2);
   const [terms, setTerms] = useState(10);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const getTerms = () => {
     const arr: number[] = [];

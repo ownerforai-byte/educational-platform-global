@@ -41,9 +41,8 @@ export function BinomialDistVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
   const pmf = (k: number) => factorial(n) / (factorial(k) * factorial(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);

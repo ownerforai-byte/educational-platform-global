@@ -45,9 +45,8 @@ function addLabel(meshes: THREE.Object3D[], scene: THREE.Scene, text: string, co
 export function CellBiologyVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotationSpeed, setRotationSpeed] = useState(0.3);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

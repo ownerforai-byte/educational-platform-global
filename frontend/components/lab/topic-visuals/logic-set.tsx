@@ -40,9 +40,8 @@ type SetOp = "union" | "intersection" | "complement" | "subset" | "difference";
 export function LogicSetVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [op, setOp] = useState<SetOp>("union");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

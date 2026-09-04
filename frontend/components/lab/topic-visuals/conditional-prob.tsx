@@ -42,9 +42,8 @@ export function ConditionalProbabilityVisual() {
   const [pA, setPA] = useState(0.4);
   const [pB, setPB] = useState(0.3);
   const [pAB, setPAB] = useState(0.1);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

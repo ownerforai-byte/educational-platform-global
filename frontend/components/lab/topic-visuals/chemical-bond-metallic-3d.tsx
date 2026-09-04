@@ -34,9 +34,8 @@ type MetalType = "simple" | "alloy" | "ions";
 export function MetallicBondVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<MetalType>("simple");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;

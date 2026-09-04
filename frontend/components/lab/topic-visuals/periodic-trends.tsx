@@ -68,9 +68,8 @@ function normalize(val: number, min: number, max: number): number {
 export function PeriodicTableVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<TrendMode>("radius");
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => { setIsWebGL(isWebGLAvailable()); }, []);
 
   useEffect(() => {
     const container = containerRef.current;
