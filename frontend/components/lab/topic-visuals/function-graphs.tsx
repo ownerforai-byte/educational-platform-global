@@ -179,7 +179,7 @@ export function FunctionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [funcType, params, showDomainRange, isWebGL, getFunc]);
+  }, [funcType, params, showDomainRange, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Functions" description="Function graph explorer — requires WebGL." />;

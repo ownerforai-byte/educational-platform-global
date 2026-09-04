@@ -209,7 +209,7 @@ export function CurveSketchingVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [curveType, params, isWebGL, getFunc]);
+  }, [curveType, params, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Curve Sketching" description="Graph analysis — requires WebGL." />;

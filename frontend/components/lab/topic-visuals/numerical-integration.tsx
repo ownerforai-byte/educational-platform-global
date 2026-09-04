@@ -194,7 +194,7 @@ export function NumericalIntegrationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, n, isWebGL, f]);
+  }, [mode, n, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Numerical Integration" description="Area approximation methods — requires WebGL." />;

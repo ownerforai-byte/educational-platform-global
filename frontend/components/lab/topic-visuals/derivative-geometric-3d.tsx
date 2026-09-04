@@ -169,7 +169,7 @@ export function DerivativeGeometric3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [funcName, px, isWebGL, f, df]);
+  }, [funcName, px, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Geometric Interpretation" description="Tangent line slope visualization — requires WebGL." />;

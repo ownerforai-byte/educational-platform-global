@@ -67,10 +67,6 @@ export function MathPerpendicular3D() {
   const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
-    setIsWebGL(isWebGLAvailable());
-  }, []);
-
-  useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 

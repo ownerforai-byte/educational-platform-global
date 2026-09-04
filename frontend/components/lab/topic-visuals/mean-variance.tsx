@@ -158,7 +158,7 @@ export function MeanVarianceVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [n, p, pmf, mean, variance, sd, isWebGL]);
+  }, [n, p, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Mean & Variance" description="Distribution statistics — requires WebGL." />;

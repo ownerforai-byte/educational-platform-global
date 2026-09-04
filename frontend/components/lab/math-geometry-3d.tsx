@@ -46,10 +46,6 @@ function CoordinatePlane3D() {
   const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
-    setIsWebGL(isWebGLAvailable());
-  }, []);
-
-  useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -361,10 +357,6 @@ function CoordinateAxes3D() {
   const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
-    setIsWebGL(isWebGLAvailable());
-  }, []);
-
-  useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -650,10 +642,6 @@ function VectorViewer() {
   const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
-    setIsWebGL(isWebGLAvailable());
-  }, []);
-
-  useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -896,10 +884,6 @@ function ParabolaExplorer() {
   for (let x = -5; x <= 5; x++) {
     tablePoints.push({ x, y: a * x * x + b * x + c });
   }
-
-  useEffect(() => {
-    setIsWebGL(isWebGLAvailable());
-  }, []);
 
   useEffect(() => {
     const container = containerRef.current;

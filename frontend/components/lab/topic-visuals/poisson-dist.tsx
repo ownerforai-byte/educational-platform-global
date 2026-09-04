@@ -148,7 +148,7 @@ export function PoissonDistVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [lambda, pmf, isWebGL]);
+  }, [lambda, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Poisson Distribution" description="Rate-based PMF visualization — requires WebGL." />;

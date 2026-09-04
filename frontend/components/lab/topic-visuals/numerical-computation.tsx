@@ -194,7 +194,7 @@ export function NumericalComputationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [method, a, b, x0, isWebGL, f, df]);
+  }, [method, a, b, x0, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Numerical Computation" description="Root-finding algorithms — requires WebGL." />;

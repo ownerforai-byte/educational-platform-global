@@ -152,7 +152,7 @@ export function BinomialDistVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [n, p, pmf, isWebGL]);
+  }, [n, p, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Binomial Distribution" description="3D probability mass function — requires WebGL." />;
