@@ -230,10 +230,16 @@ function RcCurve({
 }
 
 export function PremiumAdvancedCircuitSimulator() {
-  /* ---- Tab 1 : Series / Parallel analysis ---- */
+  /* ---- State ---- */
   const [resistorsStr, setResistorsStr] = useState("10, 20, 30");
   const [seriesVoltage, setSeriesVoltage] = useState("12");
+  const [rcVoltage, setRcVoltage] = useState("5");
+  const [rcResistance, setRcResistance] = useState("1000");
+  const [rcCap, setRcCap] = useState("0.001");
+  const [chargeMode, setChargeMode] = useState<"charge" | "discharge">("charge");
+  const [tauSlider, setTauSlider] = useState(1);
 
+  /* ---- Tab 1 : Series / Parallel analysis ---- */
   const resistanceAnalysis = useMemo(() => {
     const resistances = parseResistors(resistorsStr);
     const v = parseFloat(seriesVoltage);
@@ -261,12 +267,6 @@ export function PremiumAdvancedCircuitSimulator() {
   }, [resistorsStr, seriesVoltage]);
 
   /* ---- Tab 2 & 3: RC circuit ---- */
-  const [rcVoltage, setRcVoltage] = useState("5");
-  const [rcResistance, setRcResistance] = useState("1000");
-  const [rcCap, setRcCap] = useState("0.001");
-  const [chargeMode, setChargeMode] = useState<"charge" | "discharge">("charge");
-  const [tauSlider, setTauSlider] = useState(1);
-
   const rc = useMemo(() => {
     const V = parseFloat(rcVoltage);
     const R = parseFloat(rcResistance);
