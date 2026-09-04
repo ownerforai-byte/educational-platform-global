@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -100,7 +101,7 @@ export function BohrModelVisual() {
         const labelPos = new THREE.Vector3(radius + 0.8, 0, 0);
         const targetPos = new THREE.Vector3(radius, 0, 0);
         const dir = targetPos.clone().sub(labelPos).normalize();
-        push(new THREE.ArrowHelper(dir, labelPos, labelPos.distanceTo(targetPos) * 0.9, 0xa78bfa, 0.15, 0.1));
+        push(new LiveArrow(dir, labelPos, labelPos.distanceTo(targetPos) * 0.9, 0xa78bfa, 0.15, 0.1));
         push(mkSprite(`n=${i}: E = ${energy.toFixed(1)} eV`, "#a78bfa", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
       }
 
@@ -115,14 +116,14 @@ export function BohrModelVisual() {
       const velLabelPos = new THREE.Vector3(electronRadius + 1.5, electronRadius + 0.5, 0);
       const velTarget = new THREE.Vector3(electronRadius * Math.cos(electronAngle), electronRadius * Math.sin(electronAngle), 0);
       const velDir = velTarget.clone().sub(velLabelPos).normalize();
-      push(new THREE.ArrowHelper(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
+      push(new LiveArrow(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
       push(mkSprite("v (velocity)", "#22d3ee", velLabelPos.clone().sub(velDir.multiplyScalar(0.5)), 0.75));
 
       // Angular momentum quantization label
       const amLabelPos = new THREE.Vector3(-electronRadius - 2, electronRadius + 1, 0);
       const amTarget = new THREE.Vector3(0, 0, 0);
       const amDir = amTarget.clone().sub(amLabelPos).normalize();
-      push(new THREE.ArrowHelper(amDir, amLabelPos, amLabelPos.distanceTo(amTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(amDir, amLabelPos, amLabelPos.distanceTo(amTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite("mvr = nh/2π (quantization)", "#fbbf24", amLabelPos.clone().sub(amDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

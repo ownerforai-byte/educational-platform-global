@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -133,19 +134,19 @@ export function ElectricFieldVisual() {
       const ELabelPos = new THREE.Vector3(4.5, 0, 0);
       const ETarget = new THREE.Vector3(2, 0, 0);
       const EDir = ETarget.clone().sub(ELabelPos).normalize();
-      push(new THREE.ArrowHelper(EDir, ELabelPos, ELabelPos.distanceTo(ETarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveArrow(EDir, ELabelPos, ELabelPos.distanceTo(ETarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite("E (field direction)", "#22d3ee", ELabelPos.clone().sub(EDir.multiplyScalar(0.5)), 0.8));
 
       const RLabelPos = new THREE.Vector3(-4.5, 0, 0);
       const RTarget = new THREE.Vector3(-2, 0, 0);
       const RDir = RTarget.clone().sub(RLabelPos).normalize();
-      push(new THREE.ArrowHelper(RDir, RLabelPos, RLabelPos.distanceTo(RTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(RDir, RLabelPos, RLabelPos.distanceTo(RTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite("r (distance from charge)", "#a78bfa", RLabelPos.clone().sub(RDir.multiplyScalar(0.5)), 0.75));
 
       const QLabelPos = new THREE.Vector3(0, -3.5, 0);
       const QTarget = new THREE.Vector3(0, 0, 0);
       const QDir = QTarget.clone().sub(QLabelPos).normalize();
-      push(new THREE.ArrowHelper(QDir, QLabelPos, QLabelPos.distanceTo(QTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(QDir, QLabelPos, QLabelPos.distanceTo(QTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`q = ${chargeMag} μC`, "#34d399", QLabelPos.clone().sub(QDir.multiplyScalar(0.5)), 0.8));
 
       // Equipotential sphere (dashed)

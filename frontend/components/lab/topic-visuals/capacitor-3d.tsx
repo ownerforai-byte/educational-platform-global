@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -116,21 +117,21 @@ export function CapacitorVisual() {
       const chargeLabelPos = new THREE.Vector3(0, -2.5, 0);
       const chargeTarget = new THREE.Vector3(0, 0, 0);
       const chargeDir = chargeTarget.clone().sub(chargeLabelPos).normalize();
-      push(new THREE.ArrowHelper(chargeDir, chargeLabelPos, chargeLabelPos.distanceTo(chargeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveArrow(chargeDir, chargeLabelPos, chargeLabelPos.distanceTo(chargeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite(`Q = ${charge} μC`, "#22d3ee", chargeLabelPos.clone().sub(chargeDir.multiplyScalar(0.5)), 0.8));
 
       // Voltage label
       const vLabelPos = new THREE.Vector3(3.5, 0, 0);
       const vTarget = new THREE.Vector3(1.5, 0, 0);
       const vDir = vTarget.clone().sub(vLabelPos).normalize();
-      push(new THREE.ArrowHelper(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite("V (potential difference)", "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.7));
 
       // Capacitance formula label
       const CLabelPos = new THREE.Vector3(-3.5, 0, 0);
       const CTarget = new THREE.Vector3(-1.5, 0, 0);
       const CDir = CTarget.clone().sub(CLabelPos).normalize();
-      push(new THREE.ArrowHelper(CDir, CLabelPos, CLabelPos.distanceTo(CTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(CDir, CLabelPos, CLabelPos.distanceTo(CTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite("C = Q/V", "#34d399", CLabelPos.clone().sub(CDir.multiplyScalar(0.5)), 0.75));
 
       // Electron flow animation

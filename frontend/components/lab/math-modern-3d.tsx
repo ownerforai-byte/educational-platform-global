@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { SimCard } from "@/components/lab/sim-card";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -209,7 +210,7 @@ function VectorFieldDivCurl() {
               if (divSign > 0.1) color = 0x22c55e;      // divergence (source)
               else if (divSign < -0.1) color = 0xef4444; // convergence (sink)
               const len = Math.min(1.6, mag * 0.28);
-              const arrow = new THREE.ArrowHelper(new THREE.Vector3(fx, fy, fz).normalize(), new THREE.Vector3(px, py, pz), len, color, len * 0.3, len * 0.2);
+              const arrow = new LiveArrow(new THREE.Vector3(fx, fy, fz).normalize(), new THREE.Vector3(px, py, pz), len, color, len * 0.3, len * 0.2);
               ts.group.add(arrow);
             }
           }
@@ -492,9 +493,9 @@ function MatrixTransforms() {
 
         // original basis (reference)
         const origin = new THREE.Vector3(0, 0, 0);
-        ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), origin, 2, 0xef4444, 0.4, 0.25));
-        ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), origin, 2, 0x22c55e, 0.4, 0.25));
-        ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), origin, 2, 0x3b82f6, 0.4, 0.25));
+        ts.group.add(new LiveArrow(new THREE.Vector3(1, 0, 0), origin, 2, 0xef4444, 0.4, 0.25));
+        ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), origin, 2, 0x22c55e, 0.4, 0.25));
+        ts.group.add(new LiveArrow(new THREE.Vector3(0, 0, 1), origin, 2, 0x3b82f6, 0.4, 0.25));
         // unit cube
         const cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true, transparent: true, opacity: 0.5 }));
         cube.position.set(0.5, 0.5, 0.5);
@@ -526,7 +527,7 @@ function MatrixTransforms() {
         ];
         for (const [v, col] of basis) {
           const tv = matmul(M, [v.x, v.y, v.z]);
-          const arrow = new THREE.ArrowHelper(new THREE.Vector3(tv[0], tv[1], tv[2]).normalize(), origin, Math.hypot(tv[0], tv[1], tv[2]), col, 0.4, 0.25);
+          const arrow = new LiveArrow(new THREE.Vector3(tv[0], tv[1], tv[2]).normalize(), origin, Math.hypot(tv[0], tv[1], tv[2]), col, 0.4, 0.25);
           ts.group.add(arrow);
         }
         // transformed cube (Wireframe via transformed vertices)

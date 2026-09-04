@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Benzene Ring — Resonance Structure with Electron Arrows
@@ -156,14 +157,14 @@ export function BenzeneRingVisual() {
         const targetPos1 = new THREE.Vector3(R * 0.55, 0, 0);
         const dir1 = targetPos1.clone().sub(labelPos1).normalize();
         const arrowLen1 = labelPos1.distanceTo(targetPos1);
-        push(new THREE.ArrowHelper(dir1, labelPos1, arrowLen1 * 0.8, 0xfbbf24, 0.28, 0.12));
+        push(new LiveArrow(dir1, labelPos1, arrowLen1 * 0.8, 0xfbbf24, 0.28, 0.12));
         push(mkSprite("Delocalized π electrons (circle)", "#fbbf24", labelPos1.clone().sub(dir1.multiplyScalar(0.5)), 0.7));
 
         const labelPos2 = new THREE.Vector3(-R - 1.8, 0, 0);
         const targetPos2 = new THREE.Vector3(-R * 0.55, 0, 0);
         const dir2 = targetPos2.clone().sub(labelPos2).normalize();
         const arrowLen2 = labelPos2.distanceTo(targetPos2);
-        push(new THREE.ArrowHelper(dir2, labelPos2, arrowLen2 * 0.8, 0x22d3ee, 0.28, 0.12));
+        push(new LiveArrow(dir2, labelPos2, arrowLen2 * 0.8, 0x22d3ee, 0.28, 0.12));
         push(mkSprite("Resonance hybrid structure", "#22d3ee", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.7));
 
         // Carbon labels with arrows
@@ -172,7 +173,7 @@ export function BenzeneRingVisual() {
           const tp = pos.clone();
           const d = tp.clone().sub(lp).normalize();
           const al = lp.distanceTo(tp);
-          push(new THREE.ArrowHelper(d, lp, al * 0.6, 0x374151, 0.15, 0.08));
+          push(new LiveArrow(d, lp, al * 0.6, 0x374151, 0.15, 0.08));
           push(mkSprite(`C${i + 1}`, "#94a3b8", lp.clone().sub(d.multiplyScalar(0.4)), 0.45));
         });
 

@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { useWebGLCanvas, WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 /* ============================================================
@@ -38,7 +39,7 @@ function makeArrow(
   color: number,
 ) {
   const norm = dir.clone().normalize();
-  const arrow = new THREE.ArrowHelper(norm, origin, length, color, 0.35, 0.2);
+  const arrow = new LiveArrow(norm, origin, length, color, 0.35, 0.2);
   parent.add(arrow);
   return arrow;
 }

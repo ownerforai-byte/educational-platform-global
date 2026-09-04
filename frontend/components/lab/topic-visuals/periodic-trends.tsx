@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Periodic Table Trends — Atomic Radius, IE, Electronegativity
@@ -155,7 +156,7 @@ export function PeriodicTableVisual() {
             const annotPos = new THREE.Vector3(x + 1.2, y + 1.0, 0);
             const arrowDir = new THREE.Vector3(x, y, 0).clone().sub(annotPos).normalize();
             const arrowLen = annotPos.distanceTo(new THREE.Vector3(x, y, 0));
-            push(new THREE.ArrowHelper(arrowDir, annotPos, arrowLen * 0.7, color, 0.22, 0.1));
+            push(new LiveArrow(arrowDir, annotPos, arrowLen * 0.7, color.getHex(), 0.22, 0.1));
             const valStr = trend.key === "r" ? `${val} pm` : trend.key === "ie" ? `${val} kJ/mol` : `${val}`;
             push(mkSprite(`${el.sym}: ${valStr}`, `#${color.getHexString()}`, annotPos.clone().sub(arrowDir.multiplyScalar(0.5)), 0.5));
           }

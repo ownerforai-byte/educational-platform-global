@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -113,19 +114,19 @@ export function ACcircuitsVisual() {
       const vLabelPos = new THREE.Vector3(5, voltage + 1.5, 0);
       const vTarget = new THREE.Vector3(5, voltage * Math.sin(omega * 5), 0);
       const vDir = vTarget.clone().sub(vLabelPos).normalize();
-      push(new THREE.ArrowHelper(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveArrow(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite("V = V₀ sin(ωt)", "#22d3ee", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.8));
 
       const fLabelPos = new THREE.Vector3(-7, 0, 0);
       const fTarget = new THREE.Vector3(-7, voltage, 0);
       const fDir = fTarget.clone().sub(fLabelPos).normalize();
-      push(new THREE.ArrowHelper(fDir, fLabelPos, vLabelPos.distanceTo(fTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(fDir, fLabelPos, vLabelPos.distanceTo(fTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`f = ${frequency} Hz`, "#fbbf24", fLabelPos.clone().sub(fDir.multiplyScalar(0.5)), 0.75));
 
       const V0LabelPos = new THREE.Vector3(0, voltage + 1, 0);
       const V0Target = new THREE.Vector3(0, voltage, 0);
       const V0Dir = V0Target.clone().sub(V0LabelPos).normalize();
-      push(new THREE.ArrowHelper(V0Dir, V0LabelPos, V0LabelPos.distanceTo(V0Target) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(V0Dir, V0LabelPos, V0LabelPos.distanceTo(V0Target) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`V₀ = ${voltage} V (peak)`, "#34d399", V0LabelPos.clone().sub(V0Dir.multiplyScalar(0.5)), 0.75));
 
       // Phase label
@@ -133,7 +134,7 @@ export function ACcircuitsVisual() {
       const phaseLabelPos = new THREE.Vector3(-5, -8, 0);
       const phaseTarget = new THREE.Vector3(0, 0, 0);
       const phaseDir = phaseTarget.clone().sub(phaseLabelPos).normalize();
-      push(new THREE.ArrowHelper(phaseDir, phaseLabelPos, phaseLabelPos.distanceTo(phaseTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveArrow(phaseDir, phaseLabelPos, phaseLabelPos.distanceTo(phaseTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite(phaseText, "#ef4444", phaseLabelPos.clone().sub(phaseDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

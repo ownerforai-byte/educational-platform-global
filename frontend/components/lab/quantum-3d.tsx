@@ -11,6 +11,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 /* ============================================================
@@ -492,7 +493,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           const dir = new THREE.Vector3(0, 0, -1).normalize();
           const origin = new THREE.Vector3(0, 0, endRadius);
           const length = endRadius - startRadius;
-          arrow = new THREE.ArrowHelper(dir, origin, length, series.color, 0.4, 0.3);
+          arrow = new LiveArrow(dir, origin, length, series.color, 0.4, 0.3);
           arrowGroup.add(arrow);
         }
         rebuildArrow();

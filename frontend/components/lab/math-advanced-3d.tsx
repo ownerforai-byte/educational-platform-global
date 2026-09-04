@@ -11,6 +11,7 @@ import { useWebGLCanvas, WebGLFallback } from "@/components/lab/webgl-fallback";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { evaluateMath, evaluateComplex } from "@/lib/math-expression";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 function ParametricCurvePlotter() {
@@ -233,7 +234,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
                 if (mag < 0.001) continue;
                 const len = Math.min(1.5, mag * 0.3);
                 const dir = v.clone().normalize();
-                const arrow = new THREE.ArrowHelper(dir, new THREE.Vector3(x, y, z), len, 0x3b82f6, len * 0.3, len * 0.2);
+                const arrow = new LiveArrow(dir, new THREE.Vector3(x, y, z), len, 0x3b82f6, len * 0.3, len * 0.2);
                 const arrowAny = arrow as any;
                 if (arrowAny.line?.material) { arrowAny.line.material.transparent = true; arrowAny.line.material.opacity = Math.min(1, mag * 0.05); }
                 group.add(arrow);

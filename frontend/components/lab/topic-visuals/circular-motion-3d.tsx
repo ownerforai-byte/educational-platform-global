@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -93,28 +94,28 @@ export function CircularMotionVisual() {
       const radiusLabelPos = new THREE.Vector3(radius + 2, 1, 0);
       const radiusTarget = new THREE.Vector3(radius, 0, 0);
       const radiusDir = radiusTarget.clone().sub(radiusLabelPos).normalize();
-      push(new THREE.ArrowHelper(radiusDir, radiusLabelPos, radiusLabelPos.distanceTo(radiusTarget) * 0.9, 0x94a3b8, 0.15, 0.1));
+      push(new LiveArrow(radiusDir, radiusLabelPos, radiusLabelPos.distanceTo(radiusTarget) * 0.9, 0x94a3b8, 0.15, 0.1));
       push(mkSprite(`r = ${radius} m`, "#94a3b8", radiusLabelPos.clone().sub(radiusDir.multiplyScalar(0.5)), 0.75));
 
       // Tangential velocity arrow (always tangent to circle)
       const velLabelPos = new THREE.Vector3(radius, 0, radius + 3);
       const velTarget = new THREE.Vector3(radius, 0, radius);
       const velDir = velTarget.clone().sub(velLabelPos).normalize();
-      push(new THREE.ArrowHelper(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
+      push(new LiveArrow(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
       push(mkSprite("v (tangential velocity)", "#22d3ee", velLabelPos.clone().sub(velDir.multiplyScalar(0.5)), 0.7));
 
       // Centripetal force arrow (toward center)
       const cfLabelPos = new THREE.Vector3(radius + 3, 1.5, 0);
       const cfTarget = new THREE.Vector3(radius * 0.5, 0, 0);
       const cfDir = cfTarget.clone().sub(cfLabelPos).normalize();
-      push(new THREE.ArrowHelper(cfDir, cfLabelPos, cfLabelPos.distanceTo(cfTarget) * 0.9, 0xef4444, 0.2, 0.1));
+      push(new LiveArrow(cfDir, cfLabelPos, cfLabelPos.distanceTo(cfTarget) * 0.9, 0xef4444, 0.2, 0.1));
       push(mkSprite("F_c = mv²/r (centripetal force)", "#ef4444", cfLabelPos.clone().sub(cfDir.multiplyScalar(0.5)), 0.7));
 
       // Angular velocity label
       const angLabelPos = new THREE.Vector3(-radius - 2, 1.5, 0);
       const angTarget = new THREE.Vector3(0, 0, 0);
       const angDir = angTarget.clone().sub(angLabelPos).normalize();
-      push(new THREE.ArrowHelper(angDir, angLabelPos, angLabelPos.distanceTo(angTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(angDir, angLabelPos, angLabelPos.distanceTo(angTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite("ω (angular velocity)", "#a78bfa", angLabelPos.clone().sub(angDir.multiplyScalar(0.5)), 0.75));
 
       // Orbiting ball

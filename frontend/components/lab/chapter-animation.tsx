@@ -1,5 +1,6 @@
 "use client";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import {
   createMouseOrbitScene,
   makeTitleSprite,
@@ -21,7 +22,7 @@ const ProjectileScene: SceneRender = (h) => {
   const trailGeom = new THREE.BufferGeometry();
   trailGeom.setAttribute("position", new THREE.BufferAttribute(new Float32Array(300 * 3), 3));
   const trail = new THREE.Line(trailGeom, new THREE.LineBasicMaterial({ color: 0xfb923c })); h.group.add(trail);
-  const arrow = new THREE.ArrowHelper(new THREE.Vector3(1, 1, 0).normalize(), new THREE.Vector3(0, 0.5, 0), 3, 0xef4444, 0.6, 0.4); h.group.add(arrow);
+  const arrow = new LiveArrow(new THREE.Vector3(1, 1, 0).normalize(), new THREE.Vector3(0, 0.5, 0), 3, 0xef4444, 0.6, 0.4); h.group.add(arrow);
   let t = 0; const v0 = 14, angle = Math.PI / 4, g = 9.8;
   const points: THREE.Vector3[] = [];
   const id = setInterval(() => {
@@ -56,7 +57,7 @@ const CircularMotionScene: SceneRender = (h) => {
   const center = new THREE.Mesh(SPHERE, mat(0xfbbf24, 0xfbbf24));
   center.scale.setScalar(0.6); h.group.add(center);
   const ball = new THREE.Mesh(SPHERE, mat(0xef4444, 0xef4444)); h.group.add(ball);
-  const arrow = new THREE.ArrowHelper(new THREE.Vector3(-1, 0, 0), new THREE.Vector3(), 2.5, 0x60a5fa, 0.5, 0.3);
+  const arrow = new LiveArrow(new THREE.Vector3(-1, 0, 0), new THREE.Vector3(), 2.5, 0x60a5fa, 0.5, 0.3);
   h.group.add(arrow);
   const id = setInterval(() => {
     const t = performance.now() / 700;
@@ -106,9 +107,9 @@ const PendulumScene: SceneRender = (h) => {
 const VectorScene: SceneRender = (h) => {
   const origin = new THREE.Mesh(SPHERE, mat(0xfbbf24));
   origin.scale.setScalar(0.3); h.group.add(origin);
-  h.group.add(new THREE.ArrowHelper(new THREE.Vector3(1, 0.5, 0).normalize(), new THREE.Vector3(), 4, 0xef4444, 0.4, 0.3));
-  h.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0.5).normalize(), new THREE.Vector3(), 4, 0x22c55e, 0.4, 0.3));
-  h.group.add(new THREE.ArrowHelper(new THREE.Vector3(1, 1.5, 0.5).normalize(), new THREE.Vector3(), 6, 0x60a5fa, 0.5, 0.4));
+  h.group.add(new LiveArrow(new THREE.Vector3(1, 0.5, 0).normalize(), new THREE.Vector3(), 4, 0xef4444, 0.4, 0.3));
+  h.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0.5).normalize(), new THREE.Vector3(), 4, 0x22c55e, 0.4, 0.3));
+  h.group.add(new LiveArrow(new THREE.Vector3(1, 1.5, 0.5).normalize(), new THREE.Vector3(), 6, 0x60a5fa, 0.5, 0.4));
   h.group.add(makeTitleSprite("A + B = R", "#7dd3fc"));
   return () => {};
 };
@@ -120,7 +121,7 @@ const EMFieldScene: SceneRender = (h) => {
     const t = (i / 6) * Math.PI * 2;
     const e = new THREE.Mesh(SPHERE, mat(0xf97316, 0xf97316));
     e.scale.setScalar(0.18); e.position.set(Math.cos(t) * 1.5, 0, Math.sin(t) * 1.5); h.group.add(e);
-    h.group.add(new THREE.ArrowHelper(new THREE.Vector3(Math.cos(t), 0, Math.sin(t)), e.position, 1.5, 0xf97316, 0.2, 0.15));
+    h.group.add(new LiveArrow(new THREE.Vector3(Math.cos(t), 0, Math.sin(t)), e.position, 1.5, 0xf97316, 0.2, 0.15));
   }
   return () => {};
 };
@@ -176,7 +177,7 @@ const CapacitorScene: SceneRender = (h) => {
     e.position.set((Math.random() - 0.5) * 3.6, isTop ? 0.7 : -0.7, (Math.random() - 0.5) * 0.1);
     h.group.add(e);
   }
-  h.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -0.7, 0), 2, 0x22d3ee, 0.4, 0.3));
+  h.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -0.7, 0), 2, 0x22d3ee, 0.4, 0.3));
   return () => {};
 };
 
@@ -455,7 +456,7 @@ const EcosystemScene: SceneRender = (h) => {
   });
   for (let i = 0; i < 8; i++) {
     const angle = (i / 8) * Math.PI * 2;
-    h.group.add(new THREE.ArrowHelper(
+    h.group.add(new LiveArrow(
       new THREE.Vector3(Math.cos(angle), 0.3, Math.sin(angle)),
       new THREE.Vector3(Math.cos(angle) * 2, 1, Math.sin(angle) * 2), 2, 0xfbbf24, 0.3, 0.2,
     ));
@@ -512,13 +513,13 @@ const SurfaceScene: SceneRender = (h) => {
 const Vector3DScene: SceneRender = (h) => {
   const colors = [0xef4444, 0x10b981, 0x3b82f6];
   for (let i = 0; i < 3; i++) {
-    h.group.add(new THREE.ArrowHelper(
+    h.group.add(new LiveArrow(
       new THREE.Vector3(i === 0 ? 1 : 0, i === 1 ? 1 : 0, i === 2 ? 1 : 0),
       new THREE.Vector3(), 5, colors[i], 0.3, 0.2,
     ));
   }
   for (let i = 0; i < 6; i++) {
-    h.group.add(new THREE.ArrowHelper(
+    h.group.add(new LiveArrow(
       new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize(),
       new THREE.Vector3(), 4, 0xfbbf24, 0.3, 0.2,
     ));

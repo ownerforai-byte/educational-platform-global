@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -108,7 +109,7 @@ export const ConcaveMirror3D: React.FC = () => {
         // Object (arrow)
         const objectGroup = new THREE.Group();
         const objectHeight = 2;
-        const objectArrow = new THREE.ArrowHelper(
+        const objectArrow = new LiveArrow(
           new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -objectHeight/2, 0), objectHeight, 0xef4444, 0.4, 0.3
         );
         objectGroup.add(objectArrow);

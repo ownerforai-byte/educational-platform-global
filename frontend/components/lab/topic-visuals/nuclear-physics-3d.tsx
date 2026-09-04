@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -113,35 +114,35 @@ export function NuclearPhysicsVisual() {
       const pLabelPos = new THREE.Vector3(3, 2.5, 0);
       const pTarget = new THREE.Vector3(0, 0, 0);
       const pDir = pTarget.clone().sub(pLabelPos).normalize();
-      push(new THREE.ArrowHelper(pDir, pLabelPos, pLabelPos.distanceTo(pTarget) * 0.9, 0xef4444, 0.2, 0.12));
+      push(new LiveArrow(pDir, pLabelPos, pLabelPos.distanceTo(pTarget) * 0.9, 0xef4444, 0.2, 0.12));
       push(mkSprite(`Protons (Z) = ${nProtons}`, "#ef4444", pLabelPos.clone().sub(pDir.multiplyScalar(0.5)), 0.8));
 
       // Neutron count label with long arrow
       const nLabelPos = new THREE.Vector3(-3, 2.5, 0);
       const nTarget = new THREE.Vector3(0, 0, 0);
       const nDir = nTarget.clone().sub(nLabelPos).normalize();
-      push(new THREE.ArrowHelper(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0x3b82f6, 0.2, 0.12));
+      push(new LiveArrow(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0x3b82f6, 0.2, 0.12));
       push(mkSprite(`Neutrons (N) = ${nNeutrons}`, "#3b82f6", nLabelPos.clone().sub(nDir.multiplyScalar(0.5)), 0.8));
 
       // Isotope label
       const isoLabelPos = new THREE.Vector3(0, -3, 0);
       const isoTarget = new THREE.Vector3(0, 0, 0);
       const isoDir = isoTarget.clone().sub(isoLabelPos).normalize();
-      push(new THREE.ArrowHelper(isoDir, isoLabelPos, isoLabelPos.distanceTo(isoTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(isoDir, isoLabelPos, isoLabelPos.distanceTo(isoTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(nucleus.label, "#fbbf24", isoLabelPos.clone().sub(isoDir.multiplyScalar(0.5)), 0.85));
 
       // Mass number label
       const ALabelPos = new THREE.Vector3(-3, -2.5, 0);
       const ATarget = new THREE.Vector3(0, 0, 0);
       const ADir = ATarget.clone().sub(ALabelPos).normalize();
-      push(new THREE.ArrowHelper(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`Mass # (A) = ${totalParticles}`, "#a78bfa", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
 
       // Nuclear force range indicator
       const rfLabelPos = new THREE.Vector3(0, 3.5, 0);
       const rfTarget = new THREE.Vector3(0.8, 0.5, 0);
       const rfDir = rfTarget.clone().sub(rfLabelPos).normalize();
-      push(new THREE.ArrowHelper(rfDir, rfLabelPos, rfLabelPos.distanceTo(rfTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(rfDir, rfLabelPos, rfLabelPos.distanceTo(rfTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite("Nuclear force (short range)", "#34d399", rfLabelPos.clone().sub(rfDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

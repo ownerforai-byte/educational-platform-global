@@ -3,6 +3,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -64,7 +65,7 @@ const VectorBasics3D: React.FC = () => {
         ts.group.add(axesHelper);
 
         // Vector 1 (Red)
-        const vec1Arrow = new THREE.ArrowHelper(
+        const vec1Arrow = new LiveArrow(
           new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize(),
           new THREE.Vector3(0, 0, 0),
           vec1Mag,
@@ -76,7 +77,7 @@ const VectorBasics3D: React.FC = () => {
         ts.group.add(vec1Arrow);
 
         // Vector 2 (Blue)
-        const vec2Arrow = new THREE.ArrowHelper(
+        const vec2Arrow = new LiveArrow(
           new THREE.Vector3(vec2X, vec2Y, vec2Z).normalize(),
           new THREE.Vector3(0, 0, 0),
           vec2Mag,
@@ -96,7 +97,7 @@ const VectorBasics3D: React.FC = () => {
           );
 
           // Vector 1
-          const newVec1Arrow = new THREE.ArrowHelper(
+          const newVec1Arrow = new LiveArrow(
             new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize(),
             new THREE.Vector3(0, 0, 0),
             vec1Mag,
@@ -108,7 +109,7 @@ const VectorBasics3D: React.FC = () => {
           ts.group.add(newVec1Arrow);
 
           // Vector 2
-          const newVec2Arrow = new THREE.ArrowHelper(
+          const newVec2Arrow = new LiveArrow(
             new THREE.Vector3(vec2X, vec2Y, vec2Z).normalize(),
             new THREE.Vector3(0, 0, 0),
             vec2Mag,
@@ -121,7 +122,7 @@ const VectorBasics3D: React.FC = () => {
 
           // Resultant
           if (showResultant) {
-            resultantArrow = new THREE.ArrowHelper(
+            resultantArrow = new LiveArrow(
               new THREE.Vector3(resultantX, resultantY, resultantZ).normalize(),
               new THREE.Vector3(0, 0, 0),
               resultantMag,
@@ -295,7 +296,7 @@ const DotProduct3D: React.FC = () => {
         ts.group.add(axesHelper);
 
         // Vector A (Red) - fixed along x-axis
-        const vecA = new THREE.ArrowHelper(
+        const vecA = new LiveArrow(
           new THREE.Vector3(1, 0, 0),
           new THREE.Vector3(0, 0, 0),
           magA,
@@ -307,7 +308,7 @@ const DotProduct3D: React.FC = () => {
 
         // Vector B (Blue) - at angle
         const angleRad = angle * Math.PI / 180;
-        const vecB = new THREE.ArrowHelper(
+        const vecB = new LiveArrow(
           new THREE.Vector3(Math.cos(angleRad), Math.sin(angleRad), 0),
           new THREE.Vector3(0, 0, 0),
           magB,
@@ -339,7 +340,7 @@ const DotProduct3D: React.FC = () => {
           ts.group.add(projectionLine);
 
           // Projection arrow (from origin to projection point)
-          projectionArrow = new THREE.ArrowHelper(
+          projectionArrow = new LiveArrow(
             new THREE.Vector3(1, 0, 0),
             new THREE.Vector3(0, 0, 0),
             magB * Math.cos(angleRad),
@@ -496,7 +497,7 @@ const CrossProduct3D: React.FC = () => {
         ts.group.add(axesHelper);
 
         // Vector A (Red) - along x-axis
-        const vecA = new THREE.ArrowHelper(
+        const vecA = new LiveArrow(
           new THREE.Vector3(1, 0, 0),
           new THREE.Vector3(0, 0, 0),
           magA,
@@ -507,7 +508,7 @@ const CrossProduct3D: React.FC = () => {
         ts.group.add(vecA);
 
         // Vector B (Blue) - at angle in x-y plane
-        const vecB = new THREE.ArrowHelper(
+        const vecB = new LiveArrow(
           new THREE.Vector3(bx/magB, by/magB, 0),
           new THREE.Vector3(0, 0, 0),
           magB,
@@ -524,7 +525,7 @@ const CrossProduct3D: React.FC = () => {
           
           if (!showNormal) return;
           
-          crossArrow = new THREE.ArrowHelper(
+          crossArrow = new LiveArrow(
             new THREE.Vector3(0, 0, cz > 0 ? 1 : -1),
             new THREE.Vector3(0, 0, 0),
             Math.abs(cz),

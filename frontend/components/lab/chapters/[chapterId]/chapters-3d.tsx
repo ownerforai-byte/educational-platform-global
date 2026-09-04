@@ -9,7 +9,7 @@ export default function Chapter3DComponent() {
       coreColor="#f97316"
       emissiveColor="#ea580c"
       wireframeColor="#fb923c"
-      orbitColors={["#fbbf24", "#34d399"]}
+      orbitColors={["#fbbf24", "#34d399", "#f97316"]}
       bgGradient="bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950/40"
       particleCount={60}
     />

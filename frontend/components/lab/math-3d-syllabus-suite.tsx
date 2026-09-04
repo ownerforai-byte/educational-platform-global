@@ -10,6 +10,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -299,7 +300,7 @@ const CalculusTab: React.FC = () => {
     tplane.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), nrm);
     g.add(tplane);
     // Normal arrow
-    g.add(new THREE.ArrowHelper(nrm, new THREE.Vector3(x0, f0, y0), 1.4, 0xfacc15, 0.18, 0.1));
+    g.add(new LiveArrow(nrm, new THREE.Vector3(x0, f0, y0), 1.4, 0xfacc15, 0.18, 0.1));
     kit.addLabel("#f97316", `P(${x0.toFixed(1)}, ${y0.toFixed(1)})`, `z = ${f0.toFixed(2)}`, new THREE.Vector3(x0, f0 + 0.5, y0));
     kit.addLabel("#facc15", `∂f/∂x = ${fx.toFixed(2)},  ∂f/∂y = ${fy.toFixed(2)}`, "slopes along x and y", new THREE.Vector3(0, -3.2, 0));
     kit.addLabel("#7dd3fc", "z = f(x, y)", undefined, new THREE.Vector3(-3.2, 2.8, -2.4));

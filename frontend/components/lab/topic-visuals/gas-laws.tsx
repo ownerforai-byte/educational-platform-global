@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Gas Laws — PV Diagrams (Boyle's, Charles', Ideal Gas)
@@ -137,7 +138,7 @@ export function GasLawsVisual() {
           const targetPos = new THREE.Vector3(ox + 5 * sx, oy + (constant / 5) * sy, 0);
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
-          push(new THREE.ArrowHelper(dir, labelPos, arrowLen * 0.8, 0xf97316, 0.25, 0.12));
+          push(new LiveArrow(dir, labelPos, arrowLen * 0.8, 0xf97316, 0.25, 0.12));
           push(mkSprite(` Boyle's Law: P ∝ 1/V  (T constant)`, "#f97316", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
 
           // Multiple isotherms
@@ -173,7 +174,7 @@ export function GasLawsVisual() {
           const targetPos = new THREE.Vector3(ox + 3, oy + 2.5, 0);
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
-          push(new THREE.ArrowHelper(dir, labelPos, arrowLen * 0.8, 0x22c55e, 0.25, 0.12));
+          push(new LiveArrow(dir, labelPos, arrowLen * 0.8, 0x22c55e, 0.25, 0.12));
           push(mkSprite(` Charles's Law: V ∝ T  (P constant)`, "#22c55e", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
         }
         else if (mode === "combined") {
@@ -208,7 +209,7 @@ export function GasLawsVisual() {
           const targetPos = ptPos.clone();
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
-          push(new THREE.ArrowHelper(dir, labelPos, arrowLen * 0.8, 0xef4444, 0.25, 0.12));
+          push(new LiveArrow(dir, labelPos, arrowLen * 0.8, 0xef4444, 0.25, 0.12));
           push(mkSprite(` Combined: PV = nRT`, "#ef4444", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.75));
         }
 

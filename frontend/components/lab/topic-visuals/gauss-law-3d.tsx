@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -113,19 +114,19 @@ export function GaussLawVisual() {
       const fluxLabelPos = new THREE.Vector3(4.5, 0, 0);
       const fluxTarget = new THREE.Vector3(3, 0, 0);
       const fluxDir = fluxTarget.clone().sub(fluxLabelPos).normalize();
-      push(new THREE.ArrowHelper(fluxDir, fluxLabelPos, fluxLabelPos.distanceTo(fluxTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(fluxDir, fluxLabelPos, fluxLabelPos.distanceTo(fluxTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite("Φ_E = ∮E·dA = q/ε₀", "#a78bfa", fluxLabelPos.clone().sub(fluxDir.multiplyScalar(0.5)), 0.8));
 
       const ELabelPos = new THREE.Vector3(0, 4.5, 0);
       const ETarget = new THREE.Vector3(0, 3, 0);
       const EDir = ETarget.clone().sub(ELabelPos).normalize();
-      push(new THREE.ArrowHelper(EDir, ELabelPos, ELabelPos.distanceTo(ETarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(EDir, ELabelPos, ELabelPos.distanceTo(ETarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite("E = q/(4πε₀r²)", "#34d399", ELabelPos.clone().sub(EDir.multiplyScalar(0.5)), 0.8));
 
       const ALabelPos = new THREE.Vector3(-4.5, 0, 0);
       const ATarget = new THREE.Vector3(-3, 0, 0);
       const ADir = ATarget.clone().sub(ALabelPos).normalize();
-      push(new THREE.ArrowHelper(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveArrow(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite("dA (area element)", "#22d3ee", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {

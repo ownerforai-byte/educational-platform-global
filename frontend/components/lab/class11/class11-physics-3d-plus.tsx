@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { SimCard } from "@/components/lab/sim-card";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -160,12 +161,12 @@ function InclinedPlaneLab() {
 
         // force vectors: weight (vertical), normal (⊥ surface), friction (up-slope)
         const weightLen = 3.2;
-        ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, -1, 0), block.position.clone(), weightLen, 0xef4444, 0.45, 0.28));
+        ts.group.add(new LiveArrow(new THREE.Vector3(0, -1, 0), block.position.clone(), weightLen, 0xef4444, 0.45, 0.28));
         const normalDir = new THREE.Vector3(-Math.sin(theta), Math.cos(theta), 0);
-        ts.group.add(new THREE.ArrowHelper(normalDir, block.position.clone(), weightLen * Math.cos(theta), 0x22c55e, 0.45, 0.28));
+        ts.group.add(new LiveArrow(normalDir, block.position.clone(), weightLen * Math.cos(theta), 0x22c55e, 0.45, 0.28));
         const frictionMag = muVal * weightLen * Math.cos(theta);
         if (frictionMag > 0.15) {
-          ts.group.add(new THREE.ArrowHelper(slideDir.clone().negate(), block.position.clone().add(new THREE.Vector3(0, 0.9, 0)), Math.min(3, frictionMag), 0x38bdf8, 0.4, 0.25));
+          ts.group.add(new LiveArrow(slideDir.clone().negate(), block.position.clone().add(new THREE.Vector3(0, 0.9, 0)), Math.min(3, frictionMag), 0x38bdf8, 0.4, 0.25));
         }
         titleText(ts, "mg sinθ drives motion · μmg cosθ opposes it", new THREE.Vector3(0, 4.6, 0));
         function animate() {
@@ -389,14 +390,14 @@ function MirrorOpticsLab() {
         // object arrow (upright, left of the mirror)
         const objX = -u * scale;
         const objH = 1.2;
-        ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(objX, 0, 0), objH, 0x22c55e, 0.35, 0.22));
+        ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(objX, 0, 0), objH, 0x22c55e, 0.35, 0.22));
 
         // image arrow — real images are inverted and on the same side
         const imgX = -v * scale;
         const imgH = Math.min(6, Math.abs(m) * objH);
         if (Number.isFinite(imgX)) {
           const dir = m < 0 ? new THREE.Vector3(0, -1, 0) : new THREE.Vector3(0, 1, 0);
-          ts.group.add(new THREE.ArrowHelper(dir, new THREE.Vector3(imgX, 0, 0), imgH, 0xef4444, 0.35, 0.22));
+          ts.group.add(new LiveArrow(dir, new THREE.Vector3(imgX, 0, 0), imgH, 0xef4444, 0.35, 0.22));
         }
 
         // focal point marker at F

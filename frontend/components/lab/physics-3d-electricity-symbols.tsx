@@ -9,6 +9,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -215,12 +216,12 @@ function WireForce3D() {
         ts.group.add(wire);
 
         /* B arrows: N → S (along +x) at three depths */
-        const mkB = (z: number) => ts!.group.add(new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1.15, 1.1, z), 2.3, 0x3b82f6, 0.3, 0.17));
+        const mkB = (z: number) => ts!.group.add(new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1.15, 1.1, z), 2.3, 0x3b82f6, 0.3, 0.17));
         mkB(-1); mkB(0); mkB(1);
         /* I arrow along +z */
-        ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 1.1, 1.2), 1.1, 0xfbbf24, 0.3, 0.17));
+        ts.group.add(new LiveArrow(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 1.1, 1.2), 1.1, 0xfbbf24, 0.3, 0.17));
         /* F arrow up, length scales with force */
-        fArrow = new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.1, 0), 0.9 + Math.min(F, 3) * 0.45, 0xef4444, 0.32, 0.18);
+        fArrow = new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.1, 0), 0.9 + Math.min(F, 3) * 0.45, 0xef4444, 0.32, 0.18);
         ts.group.add(fArrow);
 
         sys = await createLabelSystem();

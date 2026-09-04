@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -203,7 +204,7 @@ export function LewisDotVisual() {
         const clPos = new THREE.Vector3(0.7, 0, 0);
         makeAtom("Na+", "#3b82f6", naPos);
         makeAtom("Cl-", "#22c55e", clPos);
-        const arrowHelper = new THREE.ArrowHelper(
+        const arrowHelper = new LiveArrow(
           new THREE.Vector3(1, 0, 0).normalize(),
           naPos.clone().add(new THREE.Vector3(0.3, 0.3, 0)),
           0.4,

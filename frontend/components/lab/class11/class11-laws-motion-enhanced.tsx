@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
@@ -213,7 +214,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
           // Show forces
           if (showForces) {
             // Applied force arrow on block 1
-            forceArrow = new THREE.ArrowHelper(
+            forceArrow = new LiveArrow(
               new THREE.Vector3(1, 0, 0),
               new THREE.Vector3(pos1 - 0.5, 1, 0),
               force * 0.1,
@@ -222,7 +223,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
             ts.group.add(forceArrow);
 
             // Friction arrow on block 1
-            frictionArrow = new THREE.ArrowHelper(
+            frictionArrow = new LiveArrow(
               new THREE.Vector3(-1, 0, 0),
               new THREE.Vector3(pos1 - 0.5, 1, 0),
               friction * mass1 * 9.8 * 0.1,
@@ -231,7 +232,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
             ts.group.add(frictionArrow);
 
             // Tension arrow on pulley
-            tensionArrow = new THREE.ArrowHelper(
+            tensionArrow = new LiveArrow(
               new THREE.Vector3(0, -1, 0),
               new THREE.Vector3(pos1, 10, 0),
               tension * 0.1,
@@ -240,7 +241,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
             ts.group.add(tensionArrow);
 
             // Normal force arrow on block 1
-            normalArrow1 = new THREE.ArrowHelper(
+            normalArrow1 = new LiveArrow(
               new THREE.Vector3(0, 1, 0),
               new THREE.Vector3(pos1, 0.5, 0),
               normalForce1 * 0.1,
@@ -249,7 +250,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
             ts.group.add(normalArrow1);
 
             // Normal force arrow on block 2 (from tension)
-            normalArrow2 = new THREE.ArrowHelper(
+            normalArrow2 = new LiveArrow(
               new THREE.Vector3(0, 1, 0),
               new THREE.Vector3(pos1, block2Group.position.y, 0),
               normalForce2 * 0.1,
@@ -258,7 +259,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
             ts.group.add(normalArrow2);
 
             // Weight arrow on block 1
-            weightArrow1 = new THREE.ArrowHelper(
+            weightArrow1 = new LiveArrow(
               new THREE.Vector3(0, -1, 0),
               new THREE.Vector3(pos1, 0.5, 0),
               mass1 * 9.8 * 0.1,
@@ -267,7 +268,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
             ts.group.add(weightArrow1);
 
             // Weight arrow on block 2
-            weightArrow2 = new THREE.ArrowHelper(
+            weightArrow2 = new LiveArrow(
               new THREE.Vector3(0, -1, 0),
               new THREE.Vector3(pos1, block2Group.position.y, 0),
               mass2 * 9.8 * 0.1,

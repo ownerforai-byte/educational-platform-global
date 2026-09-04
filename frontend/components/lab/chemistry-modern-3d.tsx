@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { SimCard } from "@/components/lab/sim-card";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -86,7 +87,7 @@ function MolecularDynamics() {
         rotor.position.set(-bondLen / 2, 0, 0);
         rotor.rotation.y = Math.PI / 2;
         // axis arrow for torsion reference
-        const axis = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 3.6, 0x64748b, 0.3, 0.2);
+        const axis = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 3.6, 0x64748b, 0.3, 0.2);
         grp.add(axis);
 
         const vib = { t: 0 };
@@ -778,9 +779,9 @@ function GalvanicCell() {
           ts.group.add(e);
         }
         // ion arrows in salt bridge (cation/anion)
-        const anion = new THREE.ArrowHelper(new THREE.Vector3(-0.8, 0, 0), new THREE.Vector3(-2.4, 2.2, 0), 1.4, 0x34d399, 0.3, 0.16);
+        const anion = new LiveArrow(new THREE.Vector3(-0.8, 0, 0), new THREE.Vector3(-2.4, 2.2, 0), 1.4, 0x34d399, 0.3, 0.16);
         ts.group.add(anion);
-        const cation = new THREE.ArrowHelper(new THREE.Vector3(0.8, 0, 0), new THREE.Vector3(1.4, 2.2, 0), 1.4, 0xf472b6, 0.3, 0.16);
+        const cation = new LiveArrow(new THREE.Vector3(0.8, 0, 0), new THREE.Vector3(1.4, 2.2, 0), 1.4, 0xf472b6, 0.3, 0.16);
         ts.group.add(cation);
         titleText(ts, "Galvanic cell — electron flow", new THREE.Vector3(0, 5.8, 0));
 

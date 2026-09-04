@@ -10,6 +10,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -109,7 +110,7 @@ const MagnetismTab: React.FC = () => {
             }
             ts.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), fieldMat));
             /* tangent arrow (anticlockwise from above) */
-            const tang = new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), new THREE.Vector3(r, y, 0), 0.5, 0x38bdf8, 0.18, 0.1);
+            const tang = new LiveArrow(new THREE.Vector3(0, 0, 1), new THREE.Vector3(r, y, 0), 0.5, 0x38bdf8, 0.18, 0.1);
             ts.group.add(tang);
           }
           addLbl("#f87171", `Conductor — I = ${current} A upward`, [2.2, 6.4, 0], "point thumb along the current", [0, 5.2, 0]);
@@ -125,7 +126,7 @@ const MagnetismTab: React.FC = () => {
           ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 120, 0.07, 8), standardMaterial(0xf87171, { metalness: 0.6 })));
           for (const s of [-1, 1]) {
             for (let k = 0; k < 3; k++) {
-              ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, s, 0), new THREE.Vector3((k - 1) * 0.7, 1.6, 0), 1.6, 0x38bdf8, 0.2, 0.12));
+              ts.group.add(new LiveArrow(new THREE.Vector3(0, s, 0), new THREE.Vector3((k - 1) * 0.7, 1.6, 0), 1.6, 0x38bdf8, 0.2, 0.12));
             }
           }
           addLbl("#f87171", `Loop — I = ${current} A`, [3.0, 2.4, 0], "curl right hand with the current", [2.0, 1.7, 0]);
@@ -142,14 +143,14 @@ const turns = 14;
           }
           ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 400, 0.05, 8), standardMaterial(0xf87171, { metalness: 0.6 })));
           for (const dx of [-0.4, 0, 0.4]) {
-            ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(dx, 0.4, 0), 2.6, 0x38bdf8, 0.2, 0.12));
+            ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(dx, 0.4, 0), 2.6, 0x38bdf8, 0.2, 0.12));
           }
           addLbl("#f87171", `Solenoid — I = ${current} A, n = 800 /m`, [3.6, 5.0, 0], "acts like a bar magnet outside", [0.7, 4.2, 0]);
           addLbl("#38bdf8", "Uniform field inside", [-3.6, 2.6, 0], `B = µ₀nI = ${(bSolenoid * 1000).toFixed(2)} mT`, [0, 2.0, 0]);
           addLbl("#facc15", "Soft-iron core boosts flux", [3.2, 0.7, 0], "electromagnets & relays", [0, 1.0, 0]);
         } else {
           /* Lorentz force — charge circles in uniform B */
-          ts.group.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.6, 0), 4.2, 0x38bdf8, 0.3, 0.16));
+          ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.6, 0), 4.2, 0x38bdf8, 0.3, 0.16));
           addLbl("#38bdf8", `Uniform B = ${fieldB} T`, [0.2, 5.4, 0], "field through the whole region", [0, 4.4, 0]);
           const q = new THREE.Mesh(new THREE.SphereGeometry(0.3, 20, 14), standardMaterial(0xfacc15, { emissive: 0xfacc15, emissiveIntensity: 0.7 }));
           ts.group.add(q);

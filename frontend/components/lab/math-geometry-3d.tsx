@@ -11,6 +11,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function MeaningPanel({ title, meaning, points }: { title: string; meaning: string; points: string[] }) {
   return (
@@ -181,7 +182,7 @@ function CoordinatePlane3D() {
       }
 
       // Position vector arrow + point markers
-      const vecArrow = new THREE.ArrowHelper(P.clone().normalize(), new THREE.Vector3(0, 0, 0), P.length(), 0x22d3ee, 0.25, 0.18);
+      const vecArrow = new LiveArrow(P.clone().normalize(), new THREE.Vector3(0, 0, 0), P.length(), 0x22d3ee, 0.25, 0.18);
       scene.add(vecArrow);
       meshes.push(vecArrow as unknown as THREE.Mesh);
 
@@ -488,7 +489,7 @@ function CoordinateAxes3D() {
       }
 
       // Vector arrow from origin to P (cyan)
-      const vecArrow = new THREE.ArrowHelper(
+      const vecArrow = new LiveArrow(
         P.clone().normalize(),
         new THREE.Vector3(0, 0, 0),
         P.length(),
@@ -697,7 +698,7 @@ function VectorViewer() {
         const p = new THREE.Vector3(v.x, v.y, v.z);
         const len = p.length();
         if (len < 0.05) return;
-        const arrow = new THREE.ArrowHelper(p.clone().normalize(), origin, len, color, 0.3, 0.2);
+        const arrow = new LiveArrow(p.clone().normalize(), origin, len, color, 0.3, 0.2);
         scene.add(arrow);
         meshes.push(arrow);
 

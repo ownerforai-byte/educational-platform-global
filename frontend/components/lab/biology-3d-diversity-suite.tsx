@@ -12,6 +12,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -714,7 +715,7 @@ const CyclesTab: React.FC = () => {
       const to = new THREE.Vector3(...spec.nodes[e.to].pos);
       const mid = from.clone().add(to).multiplyScalar(0.5);
       const dir = to.clone().sub(from);
-      g.add(new THREE.ArrowHelper(dir.clone().normalize(), from, dir.length() - 0.7, 0xfacc15, 0.28, 0.14));
+      g.add(new LiveArrow(dir.clone().normalize(), from, dir.length() - 0.7, 0xfacc15, 0.28, 0.14));
       kit.addLabel("#facc15", e.label, undefined, mid.add(new THREE.Vector3((i % 2 === 0 ? 1 : -1) * 0.4, 0.3, 0)));
     });
     titleText(kit.ts, cycle === "carbon" ? "Carbon cycle" : "Nitrogen cycle", new THREE.Vector3(0, 5.6, 0));

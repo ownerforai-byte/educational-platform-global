@@ -9,6 +9,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -210,7 +211,7 @@ function Projectile3D() {
         ts.group.add(ball);
 
         const mkArrow = (o: THREE.Vector3, d: THREE.Vector3, len: number, col: number) =>
-          ts!.group.add(new THREE.ArrowHelper(d.clone().normalize(), o, len, col, 0.32, 0.18));
+          ts!.group.add(new LiveArrow(d.clone().normalize(), o, len, col, 0.32, 0.18));
         mkArrow(new THREE.Vector3(0, 0.4, 0), new THREE.Vector3(v0 * Math.cos(a), vy0, 0), 1.1, 0xfbbf24); // v₀
         mkArrow(new THREE.Vector3(2.2, 2.6, 0), new THREE.Vector3(1, 0, 0), 1.0, 0x38bdf8);              // vₓ
         mkArrow(new THREE.Vector3(2.4, 2.4, 0), new THREE.Vector3(0, 1, 0), 1.0, 0x22d3ee);              // v_y
@@ -351,7 +352,7 @@ function Incline3D() {
 
         /* force arrows */
         const mk = (dir: THREE.Vector3, len: number, col: number) =>
-          ts!.group.add(new THREE.ArrowHelper(dir.clone().normalize(), C, len, col, 0.3, 0.17));
+          ts!.group.add(new LiveArrow(dir.clone().normalize(), C, len, col, 0.3, 0.17));
         mk(new THREE.Vector3(0, -1, 0), 1.55, 0xef4444);            // mg
         mk(downhill(), 1.5, 0xf97316);                              // mg·sinθ
         mk(new THREE.Vector3(Math.sin(th), -Math.cos(th), 0), 1.35, 0xa78bfa); // mg·cosθ

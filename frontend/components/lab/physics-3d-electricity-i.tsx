@@ -8,6 +8,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -122,7 +123,7 @@ labelRenderer = new CSS2DRenderer();
         /* uniform field arrows between plates */
         for (let row = 0; row < 3; row++) {
           for (let col = 0; col < 3; col++) {
-            const a = new THREE.ArrowHelper(
+            const a = new LiveArrow(
               new THREE.Vector3(0, 0, -1),
               new THREE.Vector3(-1.1 + col * 1.1, 1.5 + row * 0.9, 0),
               Math.max(0.12, gap * 0.8),

@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Dot Product 3D â€” NEB Analytic Geometry & Vectors (Maths 11)
@@ -106,7 +107,7 @@ export function VectorDot3DVisual() {
       const drawArrow = (from: THREE.Vector3, to: THREE.Vector3, color: number, label: string) => {
         const dir = to.clone().sub(from).normalize();
         const len = to.clone().sub(from).length();
-        push(new THREE.ArrowHelper(dir, from, len, color, 0.2, 0.12));
+        push(new LiveArrow(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
         push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
       };

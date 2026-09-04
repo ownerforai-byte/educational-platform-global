@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -99,20 +100,20 @@ export function WaveMotionVisual() {
       const λLabelPos = new THREE.Vector3(0, -2.5, 0);
       const λTarget = new THREE.Vector3(wavelength, 0, 0);
       const λDir = λTarget.clone().sub(λLabelPos).normalize();
-      push(new THREE.ArrowHelper(λDir, λLabelPos, λLabelPos.distanceTo(λTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(λDir, λLabelPos, λLabelPos.distanceTo(λTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`λ = ${wavelength} m (wavelength)`, "#fbbf24", λLabelPos.clone().sub(λDir.multiplyScalar(0.5)), 0.8));
 
       const ALabelPos = new THREE.Vector3(wavelength / 2, amplitude + 1, 0);
       const ATarget = new THREE.Vector3(wavelength / 2, 0, 0);
       const ADir = ATarget.clone().sub(ALabelPos).normalize();
-      push(new THREE.ArrowHelper(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`A = ${amplitude} m (amplitude)`, "#a78bfa", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
 
       // Wave type label
       const typeLabelPos = new THREE.Vector3(-5, 3.5, 0);
       const typeTarget = new THREE.Vector3(0, 0, 0);
       const typeDir = typeTarget.clone().sub(typeLabelPos).normalize();
-      push(new THREE.ArrowHelper(typeDir, typeLabelPos, typeLabelPos.distanceTo(typeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveArrow(typeDir, typeLabelPos, typeLabelPos.distanceTo(typeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite(
         waveType === "transverse" ? "Transverse: displacement ⟂ propagation" : "Longitudinal: displacement ∥ propagation",
         "#22d3ee", typeLabelPos.clone().sub(typeDir.multiplyScalar(0.5)), 0.7
@@ -122,7 +123,7 @@ export function WaveMotionVisual() {
       const eqLabelPos = new THREE.Vector3(5, 3.5, 0);
       const eqTarget = new THREE.Vector3(0, 0, 0);
       const eqDir = eqTarget.clone().sub(eqLabelPos).normalize();
-      push(new THREE.ArrowHelper(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite("y = A sin(kx − ωt)", "#34d399", eqLabelPos.clone().sub(eqDir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {

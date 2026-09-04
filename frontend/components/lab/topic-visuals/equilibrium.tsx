@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Chemical Equilibrium — Le Chatelier's Principle
@@ -155,7 +156,7 @@ export function EquilibriumVisual() {
           const tp = new THREE.Vector3(0, 2.5, 0);
           const d = tp.clone().sub(sp).normalize();
           const al = sp.distanceTo(tp);
-          push(new THREE.ArrowHelper(d, sp, al * 0.8, stressColors[stress], 0.25, 0.12));
+          push(new LiveArrow(d, sp, al * 0.8, stressColors[stress], 0.25, 0.12));
           push(mkSprite(stressLabels[stress], `#${stressColors[stress].toString(16).padStart(6, "0")}`, sp.clone().sub(d.multiplyScalar(0.5)), 0.7));
         }
 

@@ -3,6 +3,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -309,7 +310,7 @@ const CoulombsLaw3D: React.FC = () => {
             dir.subVectors(charge1Mesh.position, charge2Mesh.position).normalize();
           }
           
-          forceArrow = new THREE.ArrowHelper(
+          forceArrow = new LiveArrow(
             dir,
             charge1Mesh.position,
             forceMagnitude * 0.002,

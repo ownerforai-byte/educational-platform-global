@@ -11,6 +11,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -40,7 +41,7 @@ function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
 }
 
 function arrow(dir: THREE.Vector3, origin: THREE.Vector3, len: number, color: number): THREE.ArrowHelper {
-  return new THREE.ArrowHelper(dir.clone().normalize(), origin.clone(), len, color, len * 0.22, len * 0.12);
+  return new LiveArrow(dir.clone().normalize(), origin.clone(), len, color, len * 0.22, len * 0.12);
 }
 /* =====================================================================
  * TAB 1 — Projectile motion (Kinematics)
@@ -597,7 +598,7 @@ const WorkEnergyTab: React.FC = () => {
 
         const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
         ts.group.add(ball);
-        const keArrow = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
+        const keArrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
         ts.group.add(keArrow);
 
         addLbl("#f87171", `Start — h = ${heightM} m`, [-9.2, topY + 1.6, 0], `PE = mgh = ${E.toFixed(0)} J, KE = 0`, [-9.2, topY + 0.4, 0]);

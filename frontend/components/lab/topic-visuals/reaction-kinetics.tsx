@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Reaction Kinetics — Concentration vs Time Graph
@@ -140,7 +141,7 @@ export function ReactionKineticsVisual() {
         const rateTarget = new THREE.Vector3(ox + 3 * sx, oy + 3.0, 0);
         const rDir = rateTarget.clone().sub(rateLabelPos).normalize();
         const rLen = rateLabelPos.distanceTo(rateTarget);
-        push(new THREE.ArrowHelper(rDir, rateLabelPos, rLen * 0.75, 0xfbbf24, 0.25, 0.12));
+        push(new LiveArrow(rDir, rateLabelPos, rLen * 0.75, 0xfbbf24, 0.25, 0.12));
         push(mkSprite(rateLabel, "#fbbf24", rateLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.7));
 
         // Integrated rate law
@@ -148,7 +149,7 @@ export function ReactionKineticsVisual() {
         const intTarget = new THREE.Vector3(ox + 2 * sx, oy + 2.5, 0);
         const iDir = intTarget.clone().sub(intLabelPos).normalize();
         const iLen = intLabelPos.distanceTo(intTarget);
-        push(new THREE.ArrowHelper(iDir, intLabelPos, iLen * 0.7, 0xa855f7, 0.25, 0.12));
+        push(new LiveArrow(iDir, intLabelPos, iLen * 0.7, 0xa855f7, 0.25, 0.12));
         push(mkSprite(integratedLabel, "#a855f7", intLabelPos.clone().sub(iDir.multiplyScalar(0.5)), 0.65));
 
         // Half-life

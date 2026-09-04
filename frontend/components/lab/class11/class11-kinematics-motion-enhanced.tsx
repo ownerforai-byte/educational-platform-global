@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
@@ -301,7 +302,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
             const accelValue = acceleration;
             
             const arrowScale = 0.4;
-            velocityArrow = new THREE.ArrowHelper(
+            velocityArrow = new LiveArrow(
               new THREE.Vector3(1, 0, 0),
               new THREE.Vector3(animX - 0.5, 1.5, 0),
               velValue * arrowScale,
@@ -309,7 +310,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
             );
             ts.group.add(velocityArrow);
 
-            accelerationArrow = new THREE.ArrowHelper(
+            accelerationArrow = new LiveArrow(
               new THREE.Vector3(1, 0, 0),
               new THREE.Vector3(animX - 0.5, 1.5, 0),
               accelValue * arrowScale,

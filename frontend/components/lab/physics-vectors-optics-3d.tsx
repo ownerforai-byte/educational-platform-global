@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 /* ============================================================
@@ -24,7 +25,7 @@ function ArrowHelper3D(
   const length = dir.length();
   if (length < 0.001) return;
 
-  const arrow = new THREE.ArrowHelper(dir.normalize(), origin, length, color, 0.3, 0.15);
+  const arrow = new LiveArrow(dir.normalize(), origin, length, color, 0.3, 0.15);
   group.add(arrow);
 
   // End sphere

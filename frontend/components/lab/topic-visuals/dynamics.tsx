@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,9 +8,10 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { createAnimatedArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
-   Dynamics — NEB Mechanics (Maths 11)
+   Dynamics â€” NEB Mechanics (Maths 11)
    Motion of a particle in a straight line: uniform acceleration,
    gravity, and inclined plane visualization.
    ============================================================ */
@@ -78,7 +79,11 @@ export function DynamicsVisual() {
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
 
+      const animatedArrows: ReturnType<typeof createAnimatedArrow>[] = [];
+
       const update = () => {
+        animatedArrows.forEach((a) => { scene.remove(a.group); a.dispose(); });
+        animatedArrows.length = 0;
         while (meshes.length > 25) {
           const m = meshes.pop()!;
           scene.remove(m);
@@ -99,7 +104,7 @@ export function DynamicsVisual() {
           push(mkSprite("t", "#94a3b8", new THREE.Vector3(ox + graphW + 0.3, oy, 0), 0.5));
           push(mkSprite("x", "#94a3b8", new THREE.Vector3(ox, oy + graphH + 0.3, 0), 0.5));
 
-          // x = ut + 0.5at²
+          // x = ut + 0.5atÂ²
           const pts: THREE.Vector3[] = [];
           for (let i = 0; i <= 100; i++) {
             const ti = (i / 100) * 10;
@@ -119,7 +124,7 @@ export function DynamicsVisual() {
           push(mkSprite(`x = ${xx.toFixed(1)}m  v = ${v.toFixed(1)}m/s  at t=${tt.toFixed(1)}s`, "#fbbf24", new THREE.Vector3(0, 6, 0), 0.8));
 
           // Equations
-          push(mkSprite("x = ut + ½at²    v = u + at    v² = u² + 2as", "#a78bfa", new THREE.Vector3(0, -6.5, 0), 0.7));
+          push(mkSprite("x = ut + Â½atÂ²    v = u + at    vÂ² = uÂ² + 2as", "#a78bfa", new THREE.Vector3(0, -6.5, 0), 0.7));
         } else if (mode === "gravity") {
           // Projectile / free fall
           const g = 9.8;
@@ -142,7 +147,7 @@ export function DynamicsVisual() {
           ball.position.set(0, Math.max(ballY, groundY + 0.2), 0.05);
           // Height label
           push(mkSprite(`h = ${Math.max(0, h0 - 0.5 * g * tt * tt).toFixed(1)}m`, "#fbbf24", new THREE.Vector3(1.5, Math.max(ballY, groundY) + 0.8, 0), 0.7));
-          push(mkSprite("Free fall: v = gt,  h = ½gt²", "#a78bfa", new THREE.Vector3(0, 6, 0), 0.8));
+          push(mkSprite("Free fall: v = gt,  h = Â½gtÂ²", "#a78bfa", new THREE.Vector3(0, 6, 0), 0.8));
         } else if (mode === "inclined") {
           // Inclined plane
           const rad = angle * Math.PI / 180;
@@ -168,15 +173,19 @@ export function DynamicsVisual() {
           const block = push(new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 0.5), new THREE.MeshBasicMaterial({ color: 0xef4444 })));
           block.position.copy(blockPos);
           block.rotation.z = rad;
-          // Force arrows
+          // Force arrows (dynamic)
           const weight = new THREE.Vector3(0, -1.5, 0);
-          push(new THREE.ArrowHelper(new THREE.Vector3(0, -1, 0).normalize(), blockPos, 1.2, 0xef4444, 0.15, 0.1));
-          push(mkSprite("mg↓", "#f87171", blockPos.clone().add(new THREE.Vector3(0, -1.8, 0)), 0.65));
+          const weightArrow = createAnimatedArrow(blockPos.clone(), new THREE.Vector3(0, -1, 0).normalize(), 1.2, 0xef4444, { headLength: 0.15, headWidth: 0.1 });
+          scene.add(weightArrow.group);
+          animatedArrows.push(weightArrow);
+          push(mkSprite("mgâ†“", "#f87171", blockPos.clone().add(new THREE.Vector3(0, -1.8, 0)), 0.65));
           const normalDir = new THREE.Vector3(-Math.sin(rad), Math.cos(rad), 0);
-          push(new THREE.ArrowHelper(normalDir, blockPos, 1.0, 0x3b82f6, 0.15, 0.1));
-          push(mkSprite("N⊥", "#60a5fa", blockPos.clone().add(normalDir.clone().multiplyScalar(1.3)), 0.65));
+          const normalArrow = createAnimatedArrow(blockPos.clone(), normalDir, 1.2, 0x60a5fa, { headLength: 0.15, headWidth: 0.1 });
+          scene.add(normalArrow.group);
+          animatedArrows.push(normalArrow);
+          push(mkSprite("NâŠ¥", "#60a5fa", blockPos.clone().add(normalDir.clone().multiplyScalar(1.3)), 0.65));
           // Readout
-          push(mkSprite(`θ = ${angle}°   g sin θ = ${(9.8 * Math.sin(rad)).toFixed(1)} m/s²   g cos θ = ${(9.8 * Math.cos(rad)).toFixed(1)}`, "#fbbf24", new THREE.Vector3(-3, 6, 0), 0.75));
+          push(mkSprite(`Î¸ = ${angle}Â°   g sin Î¸ = ${(9.8 * Math.sin(rad)).toFixed(1)} m/sÂ²   g cos Î¸ = ${(9.8 * Math.cos(rad)).toFixed(1)}`, "#fbbf24", new THREE.Vector3(-3, 6, 0), 0.75));
         }
       };
 
@@ -184,6 +193,8 @@ export function DynamicsVisual() {
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
+        const time = performance.now() / 1000;
+        animatedArrows.forEach((arrow) => arrow.update(time));
         controls.update();
         renderer.render(scene, camera);
       };
@@ -201,12 +212,12 @@ export function DynamicsVisual() {
         cancelAnimationFrame(frameId);
         window.removeEventListener("resize", handleResize);
         if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+        animatedArrows.forEach((a) => { scene.remove(a.group); a.dispose(); });
         meshes.forEach((m) => {
           scene.remove(m);
           if (m instanceof THREE.Mesh) { m.geometry?.dispose(); const mat = m.material; if (Array.isArray(mat)) mat.forEach((x) => x.dispose()); else (Array.isArray(mat) ? mat : [mat]).forEach((x) => x.dispose()); }
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
           else if (m instanceof THREE.Sprite) { const sm = m.material; sm.map?.dispose?.(); sm.dispose(); }
-          else if (m instanceof THREE.ArrowHelper) m.dispose();
         });
         renderer.dispose();
         controls.dispose?.();
@@ -218,15 +229,15 @@ export function DynamicsVisual() {
   }, [mode, u, a, t, angle, isWebGL]);
 
   if (!isWebGL) {
-    return <WebGLFallback title="Dynamics" description="Motion visualization — requires WebGL." />;
+    return <WebGLFallback title="Dynamics" description="Motion visualization â€” requires WebGL." />;
   }
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
-          <span>Dynamics — Motion of a Particle</span>
-          <span className="text-xs text-muted-foreground font-normal">Straight line · Gravity · Inclined plane</span>
+          <span>Dynamics â€” Motion of a Particle</span>
+          <span className="text-xs text-muted-foreground font-normal">Straight line Â· Gravity Â· Inclined plane</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -250,7 +261,7 @@ export function DynamicsVisual() {
           <CollapsibleControls label="Initial Conditions">
             <div className="flex gap-3 mt-2">
               <div className="w-16"><Label className="text-xs text-muted-foreground">u (m/s):</Label><Input type="number" step="0.5" value={u} onChange={(e) => setU(Number(e.target.value))} className="mt-1" /></div>
-              <div className="w-16"><Label className="text-xs text-muted-foreground">a (m/s²):</Label><Input type="number" step="0.5" value={a} onChange={(e) => setA(Number(e.target.value))} className="mt-1" /></div>
+              <div className="w-16"><Label className="text-xs text-muted-foreground">a (m/sÂ²):</Label><Input type="number" step="0.5" value={a} onChange={(e) => setA(Number(e.target.value))} className="mt-1" /></div>
             </div>
           </CollapsibleControls>
         )}
@@ -258,7 +269,7 @@ export function DynamicsVisual() {
         {mode === "inclined" && (
           <CollapsibleControls label="Incline Angle">
             <input type="range" min={5} max={60} value={angle} onChange={(e) => setAngle(Number(e.target.value))} className="w-full mt-1" />
-            <p className="text-xs font-mono text-primary mt-1">{angle}°</p>
+            <p className="text-xs font-mono text-primary mt-1">{angle}Â°</p>
           </CollapsibleControls>
         )}
 
@@ -268,9 +279,9 @@ export function DynamicsVisual() {
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Equations of Motion</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">v = u + at</strong></p>
-            <p><strong className="text-foreground">s = ut + ½at²</strong></p>
-            <p><strong className="text-foreground">v² = u² + 2as</strong></p>
-            <p><strong className="text-foreground">Inclined plane:</strong> a = g sin θ (smooth), a = g(sin θ − μ cos θ) (rough)</p>
+            <p><strong className="text-foreground">s = ut + Â½atÂ²</strong></p>
+            <p><strong className="text-foreground">vÂ² = uÂ² + 2as</strong></p>
+            <p><strong className="text-foreground">Inclined plane:</strong> a = g sin Î¸ (smooth), a = g(sin Î¸ âˆ’ Î¼ cos Î¸) (rough)</p>
           </div>
         </div>
       </CardContent>

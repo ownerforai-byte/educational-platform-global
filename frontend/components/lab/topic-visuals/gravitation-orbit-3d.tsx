@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -103,21 +104,21 @@ export function GravitationVisual() {
       const gfLabelPos = new THREE.Vector3(satX + 3, 2, 0);
       const gfTarget = new THREE.Vector3(satX, 0, 0);
       const gfDir = gfTarget.clone().sub(gfLabelPos).normalize();
-      push(new THREE.ArrowHelper(gfDir, gfLabelPos, gfLabelPos.distanceTo(gfTarget) * 0.9, 0xef4444, 0.2, 0.12));
+      push(new LiveArrow(gfDir, gfLabelPos, gfLabelPos.distanceTo(gfTarget) * 0.9, 0xef4444, 0.2, 0.12));
       push(mkSprite(`F_g = GMm/r²`, "#ef4444", gfLabelPos.clone().sub(gfDir.multiplyScalar(0.5)), 0.75));
 
       // Orbital velocity arrow (tangential)
       const ovLabelPos = new THREE.Vector3(satX, 0, orbitalRadius + 3);
       const ovTarget = new THREE.Vector3(satX, 0, orbitalRadius);
       const ovDir = ovTarget.clone().sub(ovLabelPos).normalize();
-      push(new THREE.ArrowHelper(ovDir, ovLabelPos, ovLabelPos.distanceTo(ovTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
+      push(new LiveArrow(ovDir, ovLabelPos, ovLabelPos.distanceTo(ovTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
       push(mkSprite("v_orb (tangential)", "#22d3ee", ovLabelPos.clone().sub(ovDir.multiplyScalar(0.5)), 0.75));
 
       // Radius label
       const rLabelPos = new THREE.Vector3(orbitalRadius / 2, 1.5, 0);
       const rTarget = new THREE.Vector3(orbitalRadius, 0, 0);
       const rDir = rTarget.clone().sub(rLabelPos).normalize();
-      push(new THREE.ArrowHelper(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`r = ${orbitalRadius} units`, "#fbbf24", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.7));
 
       // Satellite
@@ -130,7 +131,7 @@ export function GravitationVisual() {
       const evLabelPos = new THREE.Vector3(-orbitalRadius - 3, 2, 0);
       const evTarget = new THREE.Vector3(0, 0, 0);
       const evDir = evTarget.clone().sub(evLabelPos).normalize();
-      push(new THREE.ArrowHelper(evDir, evLabelPos, evLabelPos.distanceTo(evTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(evDir, evLabelPos, evLabelPos.distanceTo(evTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`v_escape = √(2GM/r)`, "#a78bfa", evLabelPos.clone().sub(evDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Chemical Bonding — Ionic Lattice, Covalent Bonds & VSEPR
@@ -138,14 +139,14 @@ export function ChemicalBondingVisual() {
           const target1 = new THREE.Vector3(spacing, spacing, 0);
           const dir1 = target1.clone().sub(labelPos1).normalize();
           const arrowLen1 = labelPos1.distanceTo(target1);
-          push(new THREE.ArrowHelper(dir1, labelPos1, arrowLen1 * 0.8, 0x6366f1, 0.25, 0.12));
+          push(new LiveArrow(dir1, labelPos1, arrowLen1 * 0.8, 0x6366f1, 0.25, 0.12));
           push(mkSprite("Na⁺ (cation)", "#6366f1", labelPos1.clone().sub(dir1.multiplyScalar(0.5)), 0.7));
 
           const labelPos2 = new THREE.Vector3(-3, -1, 0);
           const target2 = new THREE.Vector3(-spacing, -spacing, 0);
           const dir2 = target2.clone().sub(labelPos2).normalize();
           const arrowLen2 = labelPos2.distanceTo(target2);
-          push(new THREE.ArrowHelper(dir2, labelPos2, arrowLen2 * 0.8, 0x22c55e, 0.25, 0.12));
+          push(new LiveArrow(dir2, labelPos2, arrowLen2 * 0.8, 0x22c55e, 0.25, 0.12));
           push(mkSprite("Cl⁻ (anion)", "#22c55e", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.7));
 
           push(mkSprite("Ionic Lattice — electrostatic attraction between oppositely charged ions", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.65));
@@ -196,28 +197,28 @@ export function ChemicalBondingVisual() {
           const targetO = O.clone();
           const dirO = targetO.clone().sub(labelO).normalize();
           const arrowLenO = labelO.distanceTo(targetO);
-          push(new THREE.ArrowHelper(dirO, labelO, arrowLenO * 0.85, 0xef4444, 0.25, 0.12));
+          push(new LiveArrow(dirO, labelO, arrowLenO * 0.85, 0xef4444, 0.25, 0.12));
           push(mkSprite("Oxygen — central atom (sp³ hybridized)", "#ef4444", labelO.clone().sub(dirO.multiplyScalar(0.5)), 0.7));
 
           const labelH1 = new THREE.Vector3(-2.5, 1.8, 0);
           const targetH1 = H1.clone();
           const dirH1 = targetH1.clone().sub(labelH1).normalize();
           const arrowLenH1 = labelH1.distanceTo(targetH1);
-          push(new THREE.ArrowHelper(dirH1, labelH1, arrowLenH1 * 0.85, 0xf5f5f5, 0.22, 0.1));
+          push(new LiveArrow(dirH1, labelH1, arrowLenH1 * 0.85, 0xf5f5f5, 0.22, 0.1));
           push(mkSprite("H — covalent bond (shared e⁻ pair)", "#f5f5f5", labelH1.clone().sub(dirH1.multiplyScalar(0.5)), 0.65));
 
           const labelAngle = new THREE.Vector3(2.5, -0.5, 0);
           const targetAngle = new THREE.Vector3(0, 0.4, 0);
           const dirAngle = targetAngle.clone().sub(labelAngle).normalize();
           const arrowLenAngle = labelAngle.distanceTo(targetAngle);
-          push(new THREE.ArrowHelper(dirAngle, labelAngle, arrowLenAngle * 0.8, 0x22d3ee, 0.25, 0.12));
+          push(new LiveArrow(dirAngle, labelAngle, arrowLenAngle * 0.8, 0x22d3ee, 0.25, 0.12));
           push(mkSprite("H-O-H angle ≈ 104.5° (bent shape)", "#22d3ee", labelAngle.clone().sub(dirAngle.multiplyScalar(0.5)), 0.7));
 
           const labelLP = new THREE.Vector3(0, -1.8, 0.8);
           const targetLP = new THREE.Vector3(-0.3, -0.5, 0.3);
           const dirLP = targetLP.clone().sub(labelLP).normalize();
           const arrowLenLP = labelLP.distanceTo(targetLP);
-          push(new THREE.ArrowHelper(dirLP, labelLP, arrowLenLP * 0.8, 0xfbbf24, 0.22, 0.1));
+          push(new LiveArrow(dirLP, labelLP, arrowLenLP * 0.8, 0xfbbf24, 0.22, 0.1));
           push(mkSprite("Lone pairs (2) — cause bent geometry", "#fbbf24", labelLP.clone().sub(dirLP.multiplyScalar(0.5)), 0.65));
         }
         else if (mode === "vsepr") {
@@ -273,7 +274,7 @@ export function ChemicalBondingVisual() {
             const tp = shape.center.clone().add(new THREE.Vector3(0, 0.5, 0));
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
-            push(new THREE.ArrowHelper(d, lp, al * 0.8, 0xfbbf24, 0.25, 0.12));
+            push(new LiveArrow(d, lp, al * 0.8, 0xfbbf24, 0.25, 0.12));
             push(mkSprite(shape.name, "#fbbf24", lp.clone().sub(d.multiplyScalar(0.5)), 0.7));
           });
         }

@@ -9,6 +9,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -37,7 +38,7 @@ function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
 
 /* shared helper: an arrow, added to the given scene group */
 function arrow(dir: THREE.Vector3, origin: THREE.Vector3, len: number, color: number): THREE.ArrowHelper {
-  return new THREE.ArrowHelper(dir.clone().normalize(), origin.clone(), len, color, len * 0.2, len * 0.11);
+  return new LiveArrow(dir.clone().normalize(), origin.clone(), len, color, len * 0.2, len * 0.11);
 }
 
 /* shared: vertical intensity bars standing on a base line */

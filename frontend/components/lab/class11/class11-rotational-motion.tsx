@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
@@ -130,7 +131,7 @@ export const Class11RotationalMotion: React.FC = () => {
           if (showVectors) {
             const velX = -Math.sin(angle);
             const velZ = Math.cos(angle);
-            velocityArrow = new THREE.ArrowHelper(
+            velocityArrow = new LiveArrow(
               new THREE.Vector3(velX, 0, velZ),
               new THREE.Vector3(x, 0.5, z),
               linearVelocity * 0.3,
@@ -141,7 +142,7 @@ export const Class11RotationalMotion: React.FC = () => {
             // Acceleration vector (centripetal, towards center)
             const accX = -x / radius;
             const accZ = -z / radius;
-            accelerationArrow = new THREE.ArrowHelper(
+            accelerationArrow = new LiveArrow(
               new THREE.Vector3(accX, 0, accZ),
               new THREE.Vector3(x, 0.5, z),
               centripetalAcceleration * 0.3,
@@ -151,7 +152,7 @@ export const Class11RotationalMotion: React.FC = () => {
 
             // Force vector
             if (showTorque) {
-              forceArrow = new THREE.ArrowHelper(
+              forceArrow = new LiveArrow(
                 new THREE.Vector3(accX, 0, accZ),
                 new THREE.Vector3(x, 0.5, z),
                 centripetalForce * 0.03,
@@ -160,7 +161,7 @@ export const Class11RotationalMotion: React.FC = () => {
               ts.group.add(forceArrow);
 
               // Radius vector
-              radiusArrow = new THREE.ArrowHelper(
+              radiusArrow = new LiveArrow(
                 new THREE.Vector3(-x, 0, -z),
                 new THREE.Vector3(0, 0.5, 0),
                 radius,

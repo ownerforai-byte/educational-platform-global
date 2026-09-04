@@ -11,6 +11,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { useWebGLCanvas, WebGLFallback } from "@/components/lab/webgl-fallback";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 type Charge = { x: number; y: number; z: number; q: number };
@@ -132,7 +133,7 @@ function ElectricFieldVisualizer() {
                 const len = Math.min(0.4, E * 0.05);
                 const dir = new THREE.Vector3(Ex / E, Ey / E, Ez / E).multiplyScalar(len);
                 const origin = new THREE.Vector3(x, y, z);
-                const arrow = new THREE.ArrowHelper(dir, origin, len, 0x22c55e, len * 0.3, len * 0.2);
+                const arrow = new LiveArrow(dir, origin, len, 0x22c55e, len * 0.3, len * 0.2);
                 const arrowAny = arrow as any;
                 if (arrowAny.line?.material) { arrowAny.line.material.transparent = true; arrowAny.line.material.opacity = Math.min(1, E * 0.1); }
                 fieldGroup.add(arrow);
@@ -621,7 +622,7 @@ function GravitationalField3D() {
                 if (gMag < 0.01) continue;
                 const dir = new THREE.Vector3(-dx / r, -dy / r, -dz / r).multiplyScalar(Math.min(0.3, gMag * 0.02));
                 const origin = new THREE.Vector3(x, y + 1.5, z);
-                const arrow = new THREE.ArrowHelper(dir, origin, dir.length(), 0xfbbf24, dir.length() * 0.3, dir.length() * 0.2);
+                const arrow = new LiveArrow(dir, origin, dir.length(), 0xfbbf24, dir.length() * 0.3, dir.length() * 0.2);
                 const arrowAny = arrow as any;
                 if (arrowAny.line?.material) { arrowAny.line.material.transparent = true; arrowAny.line.material.opacity = Math.min(1, gMag * 0.05); }
                 fieldGroup.add(arrow);
@@ -770,13 +771,13 @@ function Vector3DExplorer() {
 
         // Vector A (red)
         if (A.length() > 0.05) {
-          const arrowA = new THREE.ArrowHelper(A.clone().normalize(), new THREE.Vector3(0, 0, 0), A.length(), 0xef4444, 0.3, 0.2);
+          const arrowA = new LiveArrow(A.clone().normalize(), new THREE.Vector3(0, 0, 0), A.length(), 0xef4444, 0.3, 0.2);
           vectorGroup.add(arrowA);
         }
 
         // Vector B (green)
         if (B.length() > 0.05) {
-          const arrowB = new THREE.ArrowHelper(B.clone().normalize(), new THREE.Vector3(0, 0, 0), B.length(), 0x22c55e, 0.3, 0.2);
+          const arrowB = new LiveArrow(B.clone().normalize(), new THREE.Vector3(0, 0, 0), B.length(), 0x22c55e, 0.3, 0.2);
           vectorGroup.add(arrowB);
         }
 
@@ -784,7 +785,7 @@ function Vector3DExplorer() {
         if (showSum) {
           const sum = A.clone().add(B);
           if (sum.length() > 0.05) {
-            const arrowSum = new THREE.ArrowHelper(sum.clone().normalize(), new THREE.Vector3(0, 0, 0), sum.length(), 0xf59e0b, 0.35, 0.25);
+            const arrowSum = new LiveArrow(sum.clone().normalize(), new THREE.Vector3(0, 0, 0), sum.length(), 0xf59e0b, 0.35, 0.25);
             vectorGroup.add(arrowSum);
           }
         }
@@ -797,7 +798,7 @@ function Vector3DExplorer() {
             A.x * B.y - A.y * B.x
           );
           if (cross.length() > 0.05) {
-            const arrowCross = new THREE.ArrowHelper(cross.clone().normalize(), new THREE.Vector3(0, 0, 0), cross.length(), 0xa855f7, 0.35, 0.25);
+            const arrowCross = new LiveArrow(cross.clone().normalize(), new THREE.Vector3(0, 0, 0), cross.length(), 0xa855f7, 0.35, 0.25);
             vectorGroup.add(arrowCross);
           }
         }

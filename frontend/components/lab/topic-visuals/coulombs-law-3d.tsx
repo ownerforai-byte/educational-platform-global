@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -102,29 +103,29 @@ export function CoulombsLawVisual() {
       // Force arrows on charges
       const forceDir1 = isAttractive ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(-1, 0, 0);
       const forceDir2 = isAttractive ? new THREE.Vector3(-1, 0, 0) : new THREE.Vector3(1, 0, 0);
-      const arrow1 = push(new THREE.ArrowHelper(forceDir1, c1.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1)) as THREE.ArrowHelper;
-      const arrow2 = push(new THREE.ArrowHelper(forceDir2, c2.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1)) as THREE.ArrowHelper;
+      const arrow1 = push(new LiveArrow(forceDir1, c1.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1)) as THREE.ArrowHelper;
+      const arrow2 = push(new LiveArrow(forceDir2, c2.position.clone(), Math.min(forceMag * 2, 3), forceColor, 0.2, 0.1)) as THREE.ArrowHelper;
       forceArrow = arrow1;
 
       // Long arrow label for force
       const fLabelPos = new THREE.Vector3(0, 3, 0);
       const fTarget = new THREE.Vector3(0, 0, 0);
       const fDir = fTarget.clone().sub(fLabelPos).normalize();
-      push(new THREE.ArrowHelper(fDir, fLabelPos, fLabelPos.distanceTo(fTarget) * 0.9, forceColor, 0.15, 0.1));
+      push(new LiveArrow(fDir, fLabelPos, fLabelPos.distanceTo(fTarget) * 0.9, forceColor, 0.15, 0.1));
       push(mkSprite(`F = ${forceMag.toFixed(2)} N (${isAttractive ? "attractive" : "repulsive"})`, "#34d399", fLabelPos.clone().sub(fDir.multiplyScalar(0.5)), 0.75));
 
       // Distance label
       const dLabelPos = new THREE.Vector3(0, -2.5, 0);
       const dTarget = new THREE.Vector3(distance / 2, 0, 0);
       const dDir = dTarget.clone().sub(dLabelPos).normalize();
-      push(new THREE.ArrowHelper(dDir, dLabelPos, dLabelPos.distanceTo(dTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(dDir, dLabelPos, dLabelPos.distanceTo(dTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`r = ${distance} m`, "#fbbf24", dLabelPos.clone().sub(dDir.multiplyScalar(0.5)), 0.8));
 
       // Coulomb's law formula label
       const formulaLabelPos = new THREE.Vector3(-4.5, 2, 0);
       const formulaTarget = new THREE.Vector3(0, 0, 0);
       const formulaDir = formulaTarget.clone().sub(formulaLabelPos).normalize();
-      push(new THREE.ArrowHelper(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite("F = kq₁q₂/r²", "#a78bfa", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.8));
 
       // Field lines from q1 to q2 (if attractive) or away (if repulsive)

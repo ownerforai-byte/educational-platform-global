@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -152,7 +153,7 @@ export function KirchhoffsLawsVisual() {
       const drawCurrentArrow = (from: THREE.Vector3, to: THREE.Vector3, current: number, color: number, label: string) => {
         const mid = from.clone().add(to).multiplyScalar(0.5);
         const dir = to.clone().sub(from).normalize();
-        push(new THREE.ArrowHelper(dir, mid.clone().sub(dir.clone().multiplyScalar(0.5)), 0.6, color, 0.15, 0.08));
+        push(new LiveArrow(dir, mid.clone().sub(dir.clone().multiplyScalar(0.5)), 0.6, color, 0.15, 0.08));
         push(mkSprite(`${label}=${current.toFixed(2)}A`, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.7));
       };
 
@@ -164,14 +165,14 @@ export function KirchhoffsLawsVisual() {
       const juncLabelPos = new THREE.Vector3(2, 3.5, 0);
       const juncTarget = new THREE.Vector3(0, 2, 0);
       const juncDir = juncTarget.clone().sub(juncLabelPos).normalize();
-      push(new THREE.ArrowHelper(juncDir, juncLabelPos, juncLabelPos.distanceTo(juncTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveArrow(juncDir, juncLabelPos, juncLabelPos.distanceTo(juncTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite("KCL: I₁ = I₂ + I₃", "#ef4444", juncLabelPos.clone().sub(juncDir.multiplyScalar(0.5)), 0.8));
 
       // Loop rule label
       const loopLabelPos = new THREE.Vector3(-3.5, -3, 0);
       const loopTarget = new THREE.Vector3(0, 0, 0);
       const loopDir = loopTarget.clone().sub(loopLabelPos).normalize();
-      push(new THREE.ArrowHelper(loopDir, loopLabelPos, loopLabelPos.distanceTo(loopTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(loopDir, loopLabelPos, loopLabelPos.distanceTo(loopTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite("KVL: ΣV = 0 around any loop", "#fbbf24", loopLabelPos.clone().sub(loopDir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {

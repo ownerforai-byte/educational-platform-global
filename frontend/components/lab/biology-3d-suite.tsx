@@ -10,6 +10,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -616,7 +617,7 @@ const EcosystemTab: React.FC = () => {
         if (i < levels.length - 1) {
           const from = new THREE.Vector3(l.x + 0.6, mesh.position.y, 0);
           const to = new THREE.Vector3(levels[i + 1].x - 0.7, levels[i + 1].shape === "bird" ? 3.2 : 1.0, 0);
-          g.add(new THREE.ArrowHelper(to.clone().sub(from).normalize(), from, to.distanceTo(from) - 0.4, 0xfacc15, 0.28, 0.14));
+          g.add(new LiveArrow(to.clone().sub(from).normalize(), from, to.distanceTo(from) - 0.4, 0xfacc15, 0.28, 0.14));
         }
       });
       // Decomposers recycle nutrients back to the soil

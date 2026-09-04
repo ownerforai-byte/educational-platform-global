@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -212,7 +213,7 @@ function WaveOptics3D() {
           ts.group.add(slitBox);
         }
         for (let i = -3; i <= 3; i++) {
-          const arrow = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-6.5, i * 0.9, 0), 1.4, 0x38bdf8, 0.4, 0.25);
+          const arrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-6.5, i * 0.9, 0), 1.4, 0x38bdf8, 0.4, 0.25);
           ts.group.add(arrow);
         }
         titleText(ts, "Diffraction interference pattern", new THREE.Vector3(0, 4.2, 2));

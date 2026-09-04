@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -95,7 +96,7 @@ export function PhotoelectricEffectVisual() {
       const wfLabelPos = new THREE.Vector3(3, 1.5, 0);
       const wfTarget = new THREE.Vector3(0, -1, 0);
       const wfDir = wfTarget.clone().sub(wfLabelPos).normalize();
-      push(new THREE.ArrowHelper(wfDir, wfLabelPos, wfLabelPos.distanceTo(wfTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(wfDir, wfLabelPos, wfLabelPos.distanceTo(wfTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`Φ = ${workFunc} eV (work function)`, "#fbbf24", wfLabelPos.clone().sub(wfDir.multiplyScalar(0.5)), 0.75));
 
       // Photon incoming
@@ -109,14 +110,14 @@ export function PhotoelectricEffectVisual() {
       const phLabelPos = new THREE.Vector3(-3, 2.5, 0);
       const phTarget = new THREE.Vector3(-2, 0, 0);
       const phDir = phTarget.clone().sub(phLabelPos).normalize();
-      push(new THREE.ArrowHelper(phDir, phLabelPos, phLabelPos.distanceTo(phTarget) * 0.9, photonColor, 0.2, 0.1));
+      push(new LiveArrow(phDir, phLabelPos, phLabelPos.distanceTo(phTarget) * 0.9, photonColor, 0.2, 0.1));
       push(mkSprite(`hν = ${photonEnergyEV.toFixed(2)} eV`, photonColor === 0x3b82f6 ? "#60a5fa" : photonColor === 0x22c55e ? "#4ade80" : photonColor === 0xf97316 ? "#fb923c" : "#f87171", phLabelPos.clone().sub(phDir.multiplyScalar(0.5)), 0.8));
 
       // Wavelength label
       const wlLabelPos = new THREE.Vector3(-3, 3.5, 0);
       const wlTarget = new THREE.Vector3(-2, 0, 0);
       const wlDir = wlTarget.clone().sub(wlLabelPos).normalize();
-      push(new THREE.ArrowHelper(wlDir, wlLabelPos, wlLabelPos.distanceTo(wlTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(wlDir, wlLabelPos, wlLabelPos.distanceTo(wlTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`λ = ${wavelength} nm`, "#a78bfa", wlLabelPos.clone().sub(wlDir.multiplyScalar(0.5)), 0.75));
 
       // Collected electrons
@@ -136,7 +137,7 @@ export function PhotoelectricEffectVisual() {
         const keLabelPos = new THREE.Vector3(3, 2, 0);
         const keTarget = new THREE.Vector3(0, 0, 0);
         const keDir = keTarget.clone().sub(keLabelPos).normalize();
-        push(new THREE.ArrowHelper(keDir, keLabelPos, keLabelPos.distanceTo(keTarget) * 0.9, 0x34d399, 0.15, 0.1));
+        push(new LiveArrow(keDir, keLabelPos, keLabelPos.distanceTo(keTarget) * 0.9, 0x34d399, 0.15, 0.1));
         push(mkSprite(`KE_max = ${keMax.toFixed(2)} eV`, "#34d399", keLabelPos.clone().sub(keDir.multiplyScalar(0.5)), 0.8));
       } else {
         const noEmitLabelPos = new THREE.Vector3(0, 2.5, 0);
@@ -147,7 +148,7 @@ export function PhotoelectricEffectVisual() {
       const eqLabelPos = new THREE.Vector3(-4, -0.5, 0);
       const eqTarget = new THREE.Vector3(0, 0, 0);
       const eqDir = eqTarget.clone().sub(eqLabelPos).normalize();
-      push(new THREE.ArrowHelper(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveArrow(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite("hν = Φ + KE_max (Einstein)", "#ef4444", eqLabelPos.clone().sub(eqDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -126,14 +127,14 @@ export function DCCircuitsVisual() {
       const currentLabelPos = new THREE.Vector3(W / 2 + 2, H / 2, 0);
       const currentTarget = new THREE.Vector3(W / 2, H / 2, 0);
       const curDir = currentTarget.clone().sub(currentLabelPos).normalize();
-      push(new THREE.ArrowHelper(curDir, currentLabelPos, currentLabelPos.distanceTo(currentTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
+      push(new LiveArrow(curDir, currentLabelPos, currentLabelPos.distanceTo(currentTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
       push(mkSprite(`I = V/R = ${I.toFixed(1)} A`, "#22d3ee", currentLabelPos.clone().sub(curDir.multiplyScalar(0.5)), 0.75));
 
       // Voltage drop label
       const vLabelPos = new THREE.Vector3(W / 2 + 2, -H / 2, 0);
       const vTarget = new THREE.Vector3(W / 2, -H / 2, 0);
       const vDir = vTarget.clone().sub(vLabelPos).normalize();
-      push(new THREE.ArrowHelper(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`V = IR = ${V} V`, "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.75));
 
       // Moving electrons

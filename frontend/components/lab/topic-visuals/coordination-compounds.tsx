@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Coordination Compounds — Octahedral & Tetrahedral Geometry
@@ -133,7 +134,7 @@ export function CoordinationCompoundsVisual() {
             const tp = pos.clone();
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
-            push(new THREE.ArrowHelper(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
+            push(new LiveArrow(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
             push(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
           });
 
@@ -142,7 +143,7 @@ export function CoordinationCompoundsVisual() {
           const mt = new THREE.Vector3(0, 0, 0);
           const md = mt.clone().sub(ml).normalize();
           const mL = ml.distanceTo(mt);
-          push(new THREE.ArrowHelper(md, ml, mL * 0.8, M_COLOR, 0.28, 0.12));
+          push(new LiveArrow(md, ml, mL * 0.8, M_COLOR, 0.28, 0.12));
           push(mkSprite("Metal center (M²⁺/M³⁺)", `#${M_COLOR.toString(16).padStart(6, "0")}`, ml.clone().sub(md.multiplyScalar(0.5)), 0.7));
 
           // Bond angle labels
@@ -150,14 +151,14 @@ export function CoordinationCompoundsVisual() {
           const angleTarget1 = new THREE.Vector3(0.75, 0.75, 0);
           const a1Dir = angleTarget1.clone().sub(angleLabel1).normalize();
           const a1Len = angleLabel1.distanceTo(angleTarget1);
-          push(new THREE.ArrowHelper(a1Dir, angleLabel1, a1Len * 0.6, 0xfbbf24, 0.22, 0.1));
+          push(new LiveArrow(a1Dir, angleLabel1, a1Len * 0.6, 0xfbbf24, 0.22, 0.1));
           push(mkSprite("90° bond angles", "#fbbf24", angleLabel1.clone().sub(a1Dir.multiplyScalar(0.5)), 0.6));
 
           const angleLabel2 = new THREE.Vector3(-2.0, -2.0, 0);
           const angleTarget2 = new THREE.Vector3(-0.75, -0.75, 0);
           const a2Dir = angleTarget2.clone().sub(angleLabel2).normalize();
           const a2Len = angleLabel2.distanceTo(angleTarget2);
-          push(new THREE.ArrowHelper(a2Dir, angleLabel2, a2Len * 0.6, 0xf97316, 0.22, 0.1));
+          push(new LiveArrow(a2Dir, angleLabel2, a2Len * 0.6, 0xf97316, 0.22, 0.1));
           push(mkSprite("180° trans angle", "#f97316", angleLabel2.clone().sub(a2Dir.multiplyScalar(0.5)), 0.6));
         }
         else if (geometry === "tetrahedral") {
@@ -197,7 +198,7 @@ export function CoordinationCompoundsVisual() {
             const tp = pos.clone();
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
-            push(new THREE.ArrowHelper(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
+            push(new LiveArrow(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
             push(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
           });
 
@@ -206,7 +207,7 @@ export function CoordinationCompoundsVisual() {
           const tTarget = new THREE.Vector3(0, 0.5, 0);
           const tDir = tTarget.clone().sub(tLabel).normalize();
           const tLen = tLabel.distanceTo(tTarget);
-          push(new THREE.ArrowHelper(tDir, tLabel, tLen * 0.7, 0xfbbf24, 0.25, 0.12));
+          push(new LiveArrow(tDir, tLabel, tLen * 0.7, 0xfbbf24, 0.25, 0.12));
           push(mkSprite("Bond angle: 109.5° (tetrahedral)", "#fbbf24", tLabel.clone().sub(tDir.multiplyScalar(0.5)), 0.7));
         }
         else { // square-planar
@@ -243,7 +244,7 @@ export function CoordinationCompoundsVisual() {
             const tp = pos.clone();
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
-            push(new THREE.ArrowHelper(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
+            push(new LiveArrow(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
             push(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
           });
 
@@ -258,7 +259,7 @@ export function CoordinationCompoundsVisual() {
           const pTarget = new THREE.Vector3(0, 0, 0);
           const pDir = pTarget.clone().sub(pLabel).normalize();
           const pLen = pLabel.distanceTo(pTarget);
-          push(new THREE.ArrowHelper(pDir, pLabel, pLen * 0.6, 0x22d3ee, 0.25, 0.12));
+          push(new LiveArrow(pDir, pLabel, pLen * 0.6, 0x22d3ee, 0.25, 0.12));
           push(mkSprite("Square planar: all in one plane, 90° angles", "#22d3ee", pLabel.clone().sub(pDir.multiplyScalar(0.5)), 0.65));
         }
 

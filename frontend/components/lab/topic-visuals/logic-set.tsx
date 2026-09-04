@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Logic & Sets — NEB Algebra (Maths 11)
@@ -178,7 +179,7 @@ export function LogicSetVisual() {
         } else if (op === "subset") {
           // Show B containing A
           (ellipseA.material as THREE.MeshBasicMaterial).opacity = 0.1;
-          const subArrow = new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0).normalize(), new THREE.Vector3(0, -4, 0), 1.5, highlightColor, 0.2, 0.12);
+          const subArrow = new LiveArrow(new THREE.Vector3(0, 1, 0).normalize(), new THREE.Vector3(0, -4, 0), 1.5, highlightColor, 0.2, 0.12);
           push(subArrow);
         } else if (op === "difference") {
           // Shade only A excluding B

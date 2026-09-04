@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Perpendicular Distance 3D â€” "Distance of perpendicular from
@@ -207,7 +208,7 @@ export function MathPerpendicular3D() {
       // ===== Normal vector arrow at F (plane mode) =====
       if (mode === "plane" && showNormal) {
         const nrm = normalWorld.clone().normalize();
-        push(new THREE.ArrowHelper(nrm, F, 1.6, 0xa78bfa, 0.22, 0.14));
+        push(new LiveArrow(nrm, F, 1.6, 0xa78bfa, 0.22, 0.14));
         push(mkSpriteLabel("n-hat", "#a78bfa", F.clone().add(nrm.clone().multiplyScalar(1.85)), 0.85));
       }
 

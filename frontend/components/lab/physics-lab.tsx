@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Shared helpers
@@ -265,13 +266,13 @@ function ProjectileMotion3D() {
           const vx = velocity * Math.cos(rad);
           const vy = velocity * Math.sin(rad);
           const arrowScale = 0.05;
-          vxArrow = new THREE.ArrowHelper(
+          vxArrow = new LiveArrow(
             new THREE.Vector3(1, 0, 0),
             new THREE.Vector3(0, 0.5, 0),
             vx * arrowScale,
             0x3b82f6
           );
-          vyArrow = new THREE.ArrowHelper(
+          vyArrow = new LiveArrow(
             new THREE.Vector3(0, 1, 0),
             new THREE.Vector3(0, 0.5, 0),
             vy * arrowScale,
@@ -576,7 +577,7 @@ function CircularMotion3D() {
           // Velocity is tangential
           const vx = -Math.sin(a);
           const vz = Math.cos(a);
-          velocityArrow = new THREE.ArrowHelper(
+          velocityArrow = new LiveArrow(
             new THREE.Vector3(vx, 0, vz),
             new THREE.Vector3(x, 0, z),
             1.5,
@@ -588,7 +589,7 @@ function CircularMotion3D() {
           // Centripetal acceleration points to center
           const cx = -x / radius;
           const cz = -z / radius;
-          centripetalArrow = new THREE.ArrowHelper(
+          centripetalArrow = new LiveArrow(
             new THREE.Vector3(cx, 0, cz),
             new THREE.Vector3(x, 0, z),
             1.5,

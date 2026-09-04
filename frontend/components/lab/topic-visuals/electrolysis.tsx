@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
    Electrolysis — Beaker with Electrodes & Ion Movement
@@ -132,14 +133,14 @@ export function ElectrolysisVisual() {
         const anodeTarget = anode.position.clone();
         const aDir = anodeTarget.clone().sub(anodeLabel).normalize();
         const aLen = anodeLabel.distanceTo(anodeTarget);
-        push(new THREE.ArrowHelper(aDir, anodeLabel, aLen * 0.85, 0xef4444, 0.28, 0.12));
+        push(new LiveArrow(aDir, anodeLabel, aLen * 0.85, 0xef4444, 0.28, 0.12));
         push(mkSprite("ANODE (+) — Oxidation", "#ef4444", anodeLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.7));
 
         const cathLabel = new THREE.Vector3(3.5, 2.5, 0);
         const cathTarget = cathode.position.clone();
         const cDir = cathTarget.clone().sub(cathLabel).normalize();
         const cLen = cathLabel.distanceTo(cathTarget);
-        push(new THREE.ArrowHelper(cDir, cathLabel, cLen * 0.85, 0x22c55e, 0.28, 0.12));
+        push(new LiveArrow(cDir, cathLabel, cLen * 0.85, 0x22c55e, 0.28, 0.12));
         push(mkSprite("CATHODE (−) — Reduction", "#22c55e", cathLabel.clone().sub(cDir.multiplyScalar(0.5)), 0.7));
 
         // Battery
@@ -189,7 +190,7 @@ export function ElectrolysisVisual() {
                 const labelPos = g.position.clone().add(new THREE.Vector3(type === "pos" ? 0.5 : -0.5, 0.3, 0));
                 const dir = target.clone().sub(labelPos).normalize();
                 const arrowLen = labelPos.distanceTo(target);
-                push(new THREE.ArrowHelper(dir, labelPos, Math.min(arrowLen * 0.5, 0.6), mat.color, 0.15, 0.08));
+                push(new LiveArrow(dir, labelPos, Math.min(arrowLen * 0.5, 0.6), mat.color.getHex(), 0.15, 0.08));
               }
             }
           });

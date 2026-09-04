@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -120,19 +121,19 @@ export function OhmsLawVisual() {
       const RLabelPos = new THREE.Vector3(6, 7, 0);
       const RTarget = new THREE.Vector3(maxVoltage * 0.6, maxVoltage * 0.6 / R, 0);
       const RDir = RTarget.clone().sub(RLabelPos).normalize();
-      push(new THREE.ArrowHelper(RDir, RLabelPos, RLabelPos.distanceTo(RTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(RDir, RLabelPos, RLabelPos.distanceTo(RTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`R = ${R} Ω (slope = 1/R)`, "#a78bfa", RLabelPos.clone().sub(RDir.multiplyScalar(0.5)), 0.8));
 
       const VLabelPos = new THREE.Vector3(maxVoltage + 1, 0, 0);
       const VTarget = new THREE.Vector3(maxVoltage, 0, 0);
       const VDir = VTarget.clone().sub(VLabelPos).normalize();
-      push(new THREE.ArrowHelper(VDir, VLabelPos, VLabelPos.distanceTo(VTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(VDir, VLabelPos, VLabelPos.distanceTo(VTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`V_max = ${maxVoltage} V`, "#34d399", VLabelPos.clone().sub(VDir.multiplyScalar(0.5)), 0.75));
 
       const ILabelPos = new THREE.Vector3(0, maxVoltage / R + 1, 0);
       const ITarget = new THREE.Vector3(0, maxVoltage / R, 0);
       const IDir = ITarget.clone().sub(ILabelPos).normalize();
-      push(new THREE.ArrowHelper(IDir, ILabelPos, ILabelPos.distanceTo(ITarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(IDir, ILabelPos, ILabelPos.distanceTo(ITarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`I_max = ${(maxVoltage / R).toFixed(1)} A`, "#fbbf24", ILabelPos.clone().sub(IDir.multiplyScalar(0.5)), 0.75));
 
       // Linear relationship note

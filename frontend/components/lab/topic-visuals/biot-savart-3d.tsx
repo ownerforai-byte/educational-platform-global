@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -81,7 +82,7 @@ export function BiotSavartVisual() {
       push(mkSprite("Wire (current I)", "#94a3b8", new THREE.Vector3(0, 4.5, 0), 0.7));
 
       // Current direction arrow
-      push(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -3, 0), 2, 0xf97316, 0.15, 0.08));
+      push(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -3, 0), 2, 0xf97316, 0.15, 0.08));
       push(mkSprite(`I = ${current} A`, "#f97316", new THREE.Vector3(1, -3, 0), 0.75));
 
       // Magnetic field circles around wire
@@ -102,35 +103,35 @@ export function BiotSavartVisual() {
       // Field direction arrows (circular around wire)
       const arrowPos = new THREE.Vector3(fieldRadius, 0, 0);
       const arrowDir = new THREE.Vector3(0, 0, 1).normalize();
-      push(new THREE.ArrowHelper(arrowDir, arrowPos, 0.8, 0x22d3ee, 0.15, 0.08));
+      push(new LiveArrow(arrowDir, arrowPos, 0.8, 0x22d3ee, 0.15, 0.08));
       push(mkSprite("B field (circular)", "#22d3ee", new THREE.Vector3(fieldRadius + 1, 0.5, 0), 0.7));
 
       // Long arrow labels
       const rLabelPos = new THREE.Vector3(fieldRadius + 2, 0, 0);
       const rTarget = new THREE.Vector3(fieldRadius, 0, 0);
       const rDir = rTarget.clone().sub(rLabelPos).normalize();
-      push(new THREE.ArrowHelper(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveArrow(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite("r (distance from wire)", "#fbbf24", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.75));
 
       // Biot-Savart formula label
       const formulaLabelPos = new THREE.Vector3(-4, 2.5, 0);
       const formulaTarget = new THREE.Vector3(0, 0, 0);
       const formulaDir = formulaTarget.clone().sub(formulaLabelPos).normalize();
-      push(new THREE.ArrowHelper(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveArrow(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite("dB = μ₀Idl×r̂/(4πr²)", "#a78bfa", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.75));
 
       // Ampere's law label
       const ampLabelPos = new THREE.Vector3(-3, -3, 0);
       const ampTarget = new THREE.Vector3(0, 0, 0);
       const ampDir = ampTarget.clone().sub(ampLabelPos).normalize();
-      push(new THREE.ArrowHelper(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveArrow(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite("∮B·dl = μ₀I (Ampere's Law)", "#34d399", ampLabelPos.clone().sub(ampDir.multiplyScalar(0.5)), 0.7));
 
       // Right-hand grip rule indicator
       const gripLabelPos = new THREE.Vector3(3, 2, 0);
       const gripTarget = new THREE.Vector3(0, 0, 0);
       const gripDir = gripTarget.clone().sub(gripLabelPos).normalize();
-      push(new THREE.ArrowHelper(gripDir, gripLabelPos, gripLabelPos.distanceTo(gripTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveArrow(gripDir, gripLabelPos, gripLabelPos.distanceTo(gripTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite("RHR: thumb→I, fingers→B", "#ef4444", gripLabelPos.clone().sub(gripDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

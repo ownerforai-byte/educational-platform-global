@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
+import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -146,21 +147,21 @@ const Gravitation3D: React.FC = () => {
 
           // Position vector (from sun to planet)
           const posDir = new THREE.Vector3(planetGroup.position.x, planetGroup.position.y, planetGroup.position.z).normalize();
-          const positionVector = new THREE.ArrowHelper(
+          const positionVector = new LiveArrow(
             posDir, new THREE.Vector3(0, 0, 0), orbitalRadius, 0x06b6d4, 0.3, 0.2
           );
           vectorGroup.add(positionVector);
 
           // Gravitational force vector (toward sun)
           const forceDir = new THREE.Vector3(-planetGroup.position.x, -planetGroup.position.y, -planetGroup.position.z).normalize();
-          const forceVector = new THREE.ArrowHelper(
+          const forceVector = new LiveArrow(
             forceDir, planetGroup.position, orbitalRadius * 0.4, 0xef4444, 0.4, 0.2
           );
           vectorGroup.add(forceVector);
 
           // Velocity vector (tangent to orbit)
           const velDir = new THREE.Vector3(-planetGroup.position.z, 0, planetGroup.position.x).normalize();
-          const velocityVector = new THREE.ArrowHelper(
+          const velocityVector = new LiveArrow(
             velDir, planetGroup.position, orbitalRadius * 0.3, 0x22c55e, 0.4, 0.2
           );
           vectorGroup.add(velocityVector);
