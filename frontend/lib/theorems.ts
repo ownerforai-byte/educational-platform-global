@@ -6,10 +6,15 @@
  * then returns them grouped by unit and topic.
  */
 
-import { readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ClassSyllabus, SubjectSyllabus, SyllabusUnit } from "@/lib/syllabus";
+
+// Server-only fs imports — dynamically loaded to avoid client-side crash
+async function getFs() {
+  const mod = await import("node:fs/promises");
+  const { join } = await import("node:path");
+  return { ...mod, join };
+}
 
 export interface TheoremEntry {
   /** The class slug: "class-11-notes", "class-12-notes", etc. */
@@ -89,6 +94,7 @@ export async function readTheoremContent(filePath: string): Promise<any> {
   const cached = theoremJsonCache.get(filePath);
   if (cached !== undefined) return cached;
 
+  const { join, readFile } = await getFs();
   const abs = join(process.cwd(), "content", filePath);
   let parsed: any = null;
   try {
@@ -117,6 +123,7 @@ async function scanSubject(
   classSlug: string,
   subjectSlug: string,
 ): Promise<TheoremEntry[]> {
+  const { join, readdir, readFile } = await getFs();
   const baseDir = join(process.cwd(), "content", "ravikishan", classSlug, subjectSlug);
   let entries: TheoremEntry[] = [];
 

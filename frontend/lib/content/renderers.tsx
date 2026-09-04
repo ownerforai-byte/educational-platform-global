@@ -4,6 +4,11 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { KATEX_OPTIONS } from "@/lib/content/katex";
 
 export function renderKatex(expression: string, displayMode = false) {
+  // Guard against SSR: katex.render() needs a DOM element; on the server
+  // fall back to katex.renderToString which returns HTML directly.
+  if (typeof document === "undefined") {
+    return katex.renderToString(expression, { displayMode, throwOnError: false });
+  }
   const container = document.createElement("div");
   katex.render(expression, container, { ...KATEX_OPTIONS, displayMode });
   return container.innerHTML;

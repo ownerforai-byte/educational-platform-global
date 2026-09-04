@@ -189,7 +189,8 @@ export async function getLevelBySlug(slug: string) {
       `/api/levels/${encodeURIComponent(slug)}`
     );
     return data.level;
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }
@@ -201,7 +202,8 @@ export async function getClassesByLevel(levelSlug: string) {
       `/api/levels/${encodeURIComponent(levelSlug)}`
     );
     return (data.classes ?? []).map(mapGroup);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return [];
   }
 }
@@ -213,7 +215,8 @@ export async function getClassBySlug(levelSlug: string, classSlug: string) {
       `/api/classes/${encodeURIComponent(classSlug)}`
     );
     return mapGroup(data.class);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }
@@ -229,7 +232,8 @@ export async function getSubjectsByClass(
       `/api/classes/${encodeURIComponent(cls.slug)}`
     );
     return (data.subjects ?? []).map(mapSubject);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return [];
   }
 }
@@ -246,7 +250,8 @@ export async function getSubjectBySlug(
       `/api/subjects/${encodeURIComponent(subjectSlug)}`
     );
     return mapSubject(data.subject);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }
@@ -263,7 +268,8 @@ export async function getChaptersBySubject(
       `/api/subjects/${encodeURIComponent(subject.slug)}`
     );
     return (data.chapters ?? []).map(mapChapter);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return [];
   }
 }
@@ -281,7 +287,8 @@ export async function getChapterBySlug(
       `/api/chapters/${encodeURIComponent(chapterSlug)}`
     );
     return mapChapter(data.chapter);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }
@@ -304,7 +311,8 @@ export async function getTopicsByChapter(
       `/api/chapters/${encodeURIComponent(chapter.slug)}`
     );
     return (data.topics ?? []).map(mapTopic);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return [];
   }
 }
@@ -328,7 +336,8 @@ export async function getTopicBySlug(
       `/api/topics/${encodeURIComponent(topicSlug)}`
     );
     return mapTopic(data.topic);
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }
@@ -339,7 +348,8 @@ export async function getResourcesByTopic(topicId: string) {
       `/api/resources?topic_id=${encodeURIComponent(topicId)}`
     );
     return data;
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return [];
   }
 }
@@ -350,13 +360,22 @@ export async function getResourceById(resourceId: string) {
       `/api/resources/${encodeURIComponent(resourceId)}`
     );
     return data;
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }
 
-export async function getLinkedResources(_resourceId: string) {
-  return [];
+export async function getLinkedResources(resourceId: string) {
+  try {
+    const data = await apiFetch<Resource[]>(
+      `/api/resources/${encodeURIComponent(resourceId)}/linked`
+    );
+    return data ?? [];
+  } catch (e) {
+    console.error(`[curriculum] getLinkedResources error: ${e instanceof Error ? e.message : String(e)}`);
+    return [];
+  }
 }
 
 export async function getTopicDetail(
@@ -401,7 +420,8 @@ export async function getChapterDetail(
       topics: (data.topics ?? []).map(mapTopic),
       progress: data.progress ?? { completed: 0, total: 0 },
     };
-  } catch {
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
     return null;
   }
 }

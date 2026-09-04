@@ -11,7 +11,7 @@ function dataUrl(safe: string): string {
   if (typeof window !== "undefined") return relPath;
   const base =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    `http://127.0.0.1:${process.env.PORT || 3000}`;
+    `http://127.0.0.1:${parseInt(process.env.PORT || "3000", 10) || 3000}`;
   return new URL(relPath, base).toString();
 }
 

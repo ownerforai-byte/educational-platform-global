@@ -224,12 +224,6 @@ PREFIX probability-independent-cases-mathematical-and-empirical-definition-of-pr
     -> probability
 PREFIX limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi
     -> limits-and-continuity
-REV-PREFIX derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri
-    -> derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithal-functions-by-definition-simple-forms
-REV-PREFIX rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ
-    -> rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivatives
-REV-PREFIX geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre
-    -> geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extreme-values-of-a-function-concavity-points-of-inflexion
 REV-PREFIX anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth
     -> anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-methods
 REV-PREFIX the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu
@@ -313,6 +307,8 @@ EXACT photoelectric-effect-and-einstein-s-photoelectric-equation
 EXACT atom-bohr-s-model-and-hydrogen-spectrum
     -> atom-bohrs-model-and-hydrogen-spectrum
 
-Resolved: 157/157
-Unresolved (0):
-
+Resolved: 154/157
+Unresolved (3):
+  derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri
+  rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ
+  geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre

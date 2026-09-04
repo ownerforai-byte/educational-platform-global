@@ -51,7 +51,7 @@ function extractBiologyContent(files: ContentFile[]): LabEntry[] {
   const labs: Record<string, LabEntry> = {};
 
   for (const { path, data } of files) {
-    const relPath = path.replace(CONTENT_ROOT + "\\", "").replace(/\\/g, "/");
+    const relPath = path.slice(CONTENT_ROOT.length + 1).replace(/\\/g, "/");
     const parts = relPath.split("/");
     
     // Match: ravikishan/class-11-notes/biology/{unit-slug}/{type}/{filename}.json
@@ -125,7 +125,7 @@ export function getLabContent(id: string): BiologyLabContent | undefined {
 function main() {
   console.log("Scanning content directory:", CONTENT_ROOT);
   
-  if (!require("fs").existsSync(CONTENT_ROOT)) {
+  if (!existsSync(CONTENT_ROOT)) {
     console.log("Content directory not found. Creating empty mapping.");
     const empty = generateTypeScript([]);
     writeFileSync(OUTPUT_FILE, empty);

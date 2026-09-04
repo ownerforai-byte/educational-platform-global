@@ -148,6 +148,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import { SYLLABUS } from "@/lib/syllabus";
 import type {
   ClassSyllabus,
 } from "@/lib/syllabus";
@@ -271,9 +272,9 @@ function slugifyTopic(topic: string): string {
     .slice(0, 60);
 }
 
-export function getClassSyllabus(_classSlug: string): ClassSyllabus | undefined {
-  // Re-exported from syllabus.ts at runtime; here for type safety
-  throw new Error("Use getSyllabusByClass from syllabus.ts instead");
+export function getClassSyllabus(classSlug: string): ClassSyllabus | undefined {
+  // Delegate to the actual syllabus implementation
+  return SYLLABUS.find((c) => c.slug === classSlug);
 }
 
 export function getTopicPath(

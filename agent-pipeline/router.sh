@@ -54,7 +54,7 @@ for ROLE in "${ROLES[@]}"; do
 
   release_lock
 
-  if [ $STATUS -ne 0 ]; then
+  if [ "$STATUS" -ne 0 ]; then
     echo "[$ROLE:$AGENT] FAILED (exit $STATUS) — see $OUTFILE" | tee -a "$ROUTERLOG"
   else
     echo "[$ROLE:$AGENT] done — output in $OUTFILE" | tee -a "$ROUTERLOG"

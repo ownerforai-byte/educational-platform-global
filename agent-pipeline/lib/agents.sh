@@ -78,7 +78,7 @@ Does this task fall inside these rules? Answer with exactly one word: YES or NO.
 
   # Extract the verdict from anywhere in the reply, not just the first char.
   local answer
-  answer=$(printf '%s' "$verdict" | tr -d '\r' | grep -oiE '\b(yes|no)\b' 2>/dev/null | head -n1 | tr '[:lower:]' '[:upper:]')
+  answer=$(printf '%s' "$verdict" | tr -d '\r' | grep -oiw 'yes\|no' 2>/dev/null | head -n1 | tr '[:lower:]' '[:upper:]')
   if [ "$answer" = "YES" ]; then
     echo "YES"
   else
@@ -98,7 +98,7 @@ collect_task_file_contents() {
         out="$out
 
 --- FILE: $rel ---
-$(head -n 250 "$f")"
+$(cat "$f")"
         break
       fi
     done

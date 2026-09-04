@@ -379,9 +379,16 @@ function OrganelleSVG({ type }: { type: Tab }) {
             { desc: "Green pigment\n(Chlorophyll a+b)\n\nDouble membrane\nThylakoids + grana\nStroma\nOwn DNA (70S ribosomes)", x: 110, y: 100, color: "#22c55e" },
             { desc: "Red/orange pigments\n(Carotenoids: carotene,\nxanthophyll)\n\nNo thylakoids\n\nConverts from chloroplast\nor formed de novo", x: 305, y: 100, color: "#ef4444" },
             { desc: "Colorless\n\nStorage function\n\n3 types:\n• Amyloplasts (starch)\n• Elaioplasks (oils)\n• Proteinoplasts (protein)", x: 500, y: 100, color: "#e2e8f0" },
-          ].map((p, i) => (
-            <text key={i} x={p.x} y={p.y} fill="#94a3b8" fontSize="8" dangerouslySetInnerHTML={{ __html: p.desc.replace(/\n/g, "<tspan x='" + p.x + "' dy='14'>") }} />
-          ))}
+          ].map((p, i) => {
+            const lines = p.desc.split("\n");
+            return (
+              <g key={i}>
+                {lines.map((line, li) => (
+                  <text key={li} x={p.x} y={p.y + li * 14} fill="#94a3b8" fontSize="8">{line}</text>
+                ))}
+              </g>
+            );
+          })}
           {/* Interconversion */}
           <rect x="20" y="290" width="560" height="35" rx="8" fill="rgba(132,204,22,0.08)" stroke="#84cc16" strokeWidth="0.5" />
           <text x="300" y="312" textAnchor="middle" fill="#a3e635" fontSize="10" fontWeight="600">PLASTID INTERCONVERSION</text>

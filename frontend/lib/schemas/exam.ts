@@ -12,7 +12,7 @@ export const examSchema = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
   durationMin: z.number().int().positive(),
-  questions: z.array(mcqSchema).length(20),
+  questions: z.array(mcqSchema).min(1).max(50),
 });
 
 export type Mcq = z.infer<typeof mcqSchema>;

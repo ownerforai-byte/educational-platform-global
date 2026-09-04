@@ -11,10 +11,15 @@
  * definitions, and key points from there.
  */
 
-import { readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { SyllabusUnit, SubjectSyllabus } from "@/lib/syllabus";
+
+// Server-only fs imports — dynamically loaded to avoid client-side crash
+async function getFs() {
+  const mod = await import("node:fs/promises");
+  const { join } = await import("node:path");
+  return { ...mod, join };
+}
 
 // ─────────────────────────────────────────────────────────────
 // Types
@@ -289,6 +294,7 @@ async function scanSubject(
   classSlug: string,
   subjectSlug: string,
 ): Promise<LegendTopic[]> {
+  const { join, readdir, readFile } = await getFs();
   const baseDir = join(process.cwd(), "content", "ravikishan", classSlug, subjectSlug);
   const topics: LegendTopic[] = [];
 

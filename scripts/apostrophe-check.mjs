@@ -1,8 +1,9 @@
 import { readFileSync, writeFileSync } from "fs";
 
-const gaps = readFileSync("C:/Users/ASUS/desktop/rn/gaps-list.txt", "utf8")
+const ROOT = new URL("../", import.meta.url).pathname;
+const gaps = readFileSync(ROOT + "gaps-list.txt", "utf8")
   .split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
-const mapSrc = readFileSync("C:/Users/ASUS/desktop/rn/frontend/lib/topic-3d-map.ts", "utf8");
+const mapSrc = readFileSync(ROOT + "frontend/lib/topic-3d-map.ts", "utf8");
 let keys = [...mapSrc.matchAll(/"([a-z0-9][a-z0-9-]{2,})":/g)].map((m) => m[1]);
 // keys added at runtime via arrays: CHEMISTRY_11_XXX.forEach((slug, i) => { CHEMISTRY_11[slug] = ... })
 for (const arr of mapSrc.matchAll(/const (\w+) = \[([\s\S]*?)\];/g)) {
@@ -44,5 +45,5 @@ for (const g of gaps) {
 }
 out += `\nResolved: ${resolved}/${gaps.length}\n`;
 out += `Unresolved (${unresolved.length}):\n` + unresolved.map((u) => "  " + u).join("\n") + "\n";
-writeFileSync("C:/Users/ASUS/desktop/rn/scripts/resolve-check.txt", out);
+writeFileSync(ROOT + "scripts/resolve-check.txt", out);
 
