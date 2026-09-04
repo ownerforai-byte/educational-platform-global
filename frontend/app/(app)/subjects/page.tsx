@@ -54,7 +54,7 @@ export default function SubjectsPage() {
                 </div>
                 <div className="space-y-1.5">
                   <Link
-                    href={`/levels/library/classes/${track.slug}/subjects/${subject.slug}`}
+                    href={`/${track.slug}/${subject.slug}`}
                     className="block rounded-lg border border-border/60 px-3 py-2 text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                   >
                     <div className="flex items-center justify-between">
