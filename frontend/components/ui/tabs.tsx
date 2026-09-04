@@ -103,14 +103,15 @@ export function TabsContent({
   className?: string;
 }) {
   const { value: selected } = useTabs();
-  if (selected !== value) return null;
+  const isActive = selected === value;
 
   return (
     <div
       role="tabpanel"
-      data-state={selected === value ? "active" : "inactive"}
+      data-state={isActive ? "active" : "inactive"}
       className={cn(
         "mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+        !isActive && "hidden",
         className
       )}
     >

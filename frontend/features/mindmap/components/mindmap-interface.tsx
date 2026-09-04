@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useRef, useCallback } from "react";
+import { useMemo, useState, useRef, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Search, ZoomIn, ZoomOut, Maximize, Download, ChevronDown, ChevronRight, X } from "lucide-react";
 import type { MindmapNode, MindmapSource } from "../types";
@@ -142,7 +142,7 @@ export function MindmapInterface({
   const [treeRoot, setTreeRoot] = useState<LayoutNode | null>(null);
 
   // Initial layout
-  useMemo(() => {
+  useEffect(() => {
     const raw = buildLayoutTree(root, 0, null);
     const W = 900;
     const H = 600;
