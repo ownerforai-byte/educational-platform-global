@@ -64,7 +64,7 @@ export function MathPerpendicular3D() {
   const [point, setPoint] = useState({ x: 3, y: 4, z: 3 });
   const [showNormal, setShowNormal] = useState(true);
   const [showRightAngle, setShowRightAngle] = useState(true);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     setIsWebGL(isWebGLAvailable());

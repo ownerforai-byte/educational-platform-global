@@ -43,7 +43,7 @@ function CoordinatePlane3D() {
   const [showComponents, setShowComponents] = useState(true);
   const [showCircle, setShowCircle] = useState(false);
   const [gridSize, setGridSize] = useState(5);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     setIsWebGL(isWebGLAvailable());
@@ -358,7 +358,7 @@ function CoordinateAxes3D() {
   const [showPlanes, setShowPlanes] = useState(true);
   const [showProjections, setShowProjections] = useState(true);
   const [showBox, setShowBox] = useState(true);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     setIsWebGL(isWebGLAvailable());
@@ -647,7 +647,7 @@ function VectorViewer() {
   const [v1, setV1] = useState({ x: 3, y: 1.5, z: 0 });
   const [v2, setV2] = useState({ x: 1, y: 3, z: 0.5 });
   const [showSum, setShowSum] = useState(true);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
 
   useEffect(() => {
     setIsWebGL(isWebGLAvailable());
@@ -864,7 +864,7 @@ function VectorViewer() {
 
 function ParabolaExplorer() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isWebGL, setIsWebGL] = useState(true);
+  const [isWebGL] = useState(() => isWebGLAvailable());
   const [a, setA] = useState(1);
   const [b, setB] = useState(0);
   const [c, setC] = useState(-4);
