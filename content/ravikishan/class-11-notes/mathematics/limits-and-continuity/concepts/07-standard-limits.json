@@ -1,0 +1,41 @@
+{
+  "title": "Standard Limits",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "standard-limits",
+  "topicTitle": "Standard Limits",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-standard",
+  "notes": [
+    "**Definition:** Standard limits are fundamental limit results that are used as building blocks for evaluating more complex limits.",
+    "**Basic limits:** lim(x→a) x = a and lim(x→a) c = c (where c is constant).",
+    "**Trigonometric limits:** lim(x→0) sin(x)/x = 1, lim(x→0) (1-cos x)/x = 0, lim(x→0) tan(x)/x = 1.",
+    "**Exponential limits:** lim(x→0) (eˣ - 1)/x = 1 and lim(x→0) (aˣ - 1)/x = ln(a).",
+    "**Logarithmic limit:** lim(x→0) ln(1+x)/x = 1.",
+    "**Infinite limit:** lim(x→∞) (1 + 1/x)ˣ = e, where e ≈ 2.71828 is Euler's number.",
+    "**Usage:** These standard limits are derived from first principles and are proven using geometric or algebraic methods.",
+    "**Important:** These limits assume x is in radians for trigonometric functions."
+  ],
+  "confusion": [
+    "The limit sin(x)/x → 1 as x → 0 only holds when x is in radians, not degrees.",
+    "Don't confuse lim(x→0) sin(x)/x = 1 with lim(x→0) cos(x)/x (which does not exist).",
+    "The standard limit (eˣ-1)/x → 1 is different from (aˣ-1)/x → ln(a) — the latter depends on the base.",
+    "lim(x→∞) (1+1/x)ˣ = e is different from lim(x→∞) (1+x)¹/ˣ = 1.",
+    "These limits are indeterminate forms 0/0 but resolve to specific values through careful analysis."
+  ],
+  "practice": [
+    "Evaluate lim(x→0) sin(3x)/x using the standard limit sin(x)/x → 1.",
+    "Find lim(x→0) (1-cos(2x))/x² using the standard limit (1-cos x)/x → 0.",
+    "Evaluate lim(x→0) (e²ˣ - 1)/x using the standard exponential limit.",
+    "Find lim(x→∞) (1 + 3/x)ˣ using the standard limit involving e.",
+    "Evaluate lim(x→0) tan(5x)/x using the standard limit tan(x)/x → 1."
+  ],
+  "universalFacts": [
+    "Standard limits form the foundation for all limit calculations in calculus.",
+    "These limits were historically crucial in developing rigorous foundations for analysis.",
+    "The limit sin(x)/x → 1 is proven using the squeeze theorem and geometric arguments.",
+    "Euler's number e appears naturally in these limits and is fundamental to exponential growth.",
+    "These standard results are used repeatedly in derivative and integral calculations."
+  ],
+  "animation3D": "limits-and-continuity-standard",
+  "motionGraphics": "limits-and-continuity-standard"
+}
