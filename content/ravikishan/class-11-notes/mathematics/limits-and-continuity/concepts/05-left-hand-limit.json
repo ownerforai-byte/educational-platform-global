@@ -1,0 +1,41 @@
+{
+  "title": "Left Hand Limit",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "left-hand-limit",
+  "topicTitle": "Left Hand Limit",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-lhl",
+  "notes": [
+    "**Definition:** A function f(x) is said to have the left hand limit l₂ at x = a as x approaches a through values less than a (i.e., x approaches a from the left).",
+    "**Symbolic notation:** lim(x→a⁻) f(x) = l₂ means the left hand limit of f(x) at x = a is l₂.",
+    "**Alternative notation:** lim(x→a⁻⁰) f(x) = f(a - 0) — this reads as 'as x approaches a from negative side'.",
+    "**Concept:** We consider values of x that are slightly less than a (like a - 0.1, a - 0.01, a - 0.001) and observe what value f(x) approaches.",
+    "**Direction:** The '-' superscript indicates approach from the LEFT side (negative direction) on the number line.",
+    "**Geometric interpretation:** On a graph, we trace the curve from the left side toward x = a and observe the y-value being approached.",
+    "**Example:** For f(x) = |x|/x, as x approaches 0 from the left (x < 0), f(x) = -x/x = -1, so lim(x→0⁻) f(x) = -1.",
+    "**Importance:** Left hand limits, combined with right hand limits, determine whether a general limit exists."
+  ],
+  "confusion": [
+    "Do not confuse left hand limit with the function value f(a). The left hand limit considers x approaching a from below, not x equaling a.",
+    "The notation x → a⁻ means x is getting closer to a from values LESS than a, not from values greater than a.",
+    "A left hand limit can exist even when f(a) is undefined — limits describe behavior near a point, not at the point.",
+    "For the absolute value function |x|/x, the left hand limit at 0 is -1 while the right hand limit is 1, showing they can differ.",
+    "Don't confuse the notation: x → a⁻ (approaching from left) is different from x → -∞ (approaching negative infinity)."
+  ],
+  "practice": [
+    "Find lim(x→1⁻) (x² - 1)/|x - 1| by evaluating f(x) for x = 0.9, 0.99, 0.999.",
+    "For f(x) = ⌊x⌋ (greatest integer function), find lim(x→3⁻) f(x).",
+    "If f(x) = {x+1 for x > 2, x-1 for x < 2}, find lim(x→2⁻) f(x).",
+    "Sketch the graph of f(x) = sign(x) and find lim(x→0⁻) f(x).",
+    "Explain why lim(x→0⁻) 1/x = -∞ while lim(x→0⁺) 1/x = +∞."
+  ],
+  "universalFacts": [
+    "Left hand limits are the other one-sided limit used alongside right hand limits to define general limits.",
+    "The distinction between left and right limits is essential for understanding discontinuities in functions.",
+    "For piecewise functions, we often need to compute both left and right limits at the boundary points.",
+    "In engineering and physics, left and right limits can represent approaching from different directions in space or time.",
+    "The concept of one-sided limits provides the foundation for defining derivatives from first principles."
+  ],
+  "animation3D": "limits-and-continuity-lhl",
+  "motionGraphics": "limits-and-continuity-lhl"
+}
