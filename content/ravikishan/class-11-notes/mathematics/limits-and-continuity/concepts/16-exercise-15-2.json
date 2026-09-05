@@ -1,0 +1,42 @@
+{
+  "title": "Exercise 15.2: Limits of Trigonometric Functions",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "exercise-15-2",
+  "topicTitle": "Limits of Trigonometric Functions",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-trig-ex",
+  "notes": [
+    "**Topic focus:** Applying trigonometric limits to solve problems.",
+    "**Primary tool:** lim(x→0) sin(x)/x = 1 and related standard limits.",
+    "**Key technique:** Transform expressions to match standard limit forms using identities.",
+    "**Common patterns:** sin(ax)/bx, (1-cos x)/x², tan(x)/x variations.",
+    "**Trig identities needed:** sin(2x) = 2sin(x)cos(x), 1-cos(2x) = 2sin²(x), etc.",
+    "**Example:** lim(x→0) sin(3x)/x = 3·lim(x→0) sin(3x)/(3x) = 3·1 = 3.",
+    "**Example:** lim(x→0) (1-cos x)/x² = 1/2 using the standard limit.",
+    "**Practice source:** Exercise 15.2 with trigonometric limit problems and solutions.",
+    "**Connection:** These exercises prepare students for derivative calculations of trig functions."
+  ],
+  "confusion": [
+    "Don't forget to adjust the argument: sin(ax)/x needs to become sin(ax)/(ax)·a.",
+    "Confusing (1-cos x)/x → 0 with (1-cos x)/x² → 1/2 — the denominator matters.",
+    "Forgetting that all trig limits assume radians, not degrees.",
+    "Not recognizing when to use which trigonometric identity to transform the expression.",
+    "Applying algebraic techniques to trigonometric limits without proper transformation."
+  ],
+  "practice": [
+    "Evaluate lim(x→0) sin(5x)/sin(2x) by rewriting in standard form.",
+    "Find lim(x→0) (1-cos(2x))/x² using double angle identities.",
+    "Evaluate lim(x→0) tan(x)/x² and explain why it doesn't exist.",
+    "Find lim(x→0) (sin x - x)/x³ using appropriate trigonometric manipulation.",
+    "Evaluate lim(x→π/2) cos(x)/(π/2-x) by substitution."
+  ],
+  "universalFacts": [
+    "Trigonometric limit exercises build intuition for the derivatives of sin and cos.",
+    "The technique of making substitutions (u = ax) is widely applicable in calculus.",
+    "These limits are used in physics to analyze small angle approximations in oscillations.",
+    "Mastering these exercises is essential for success in differential calculus.",
+    "The same techniques extend to inverse trigonometric function limits."
+  ],
+  "animation3D": "limits-and-continuity-trig-ex",
+  "motionGraphics": "limits-and-continuity-trig-ex"
+}
