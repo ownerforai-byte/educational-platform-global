@@ -1,0 +1,41 @@
+{
+  "title": "Existence of Limit (LHL = RHL)",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "existence-of-limit",
+  "topicTitle": "Existence of Limit",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-existence",
+  "notes": [
+    "**Fundamental theorem:** The limit lim(x→a) f(x) exists if and only if the left hand limit equals the right hand limit.",
+    "**Condition for existence:** lim(x→a) f(x) = L if and only if lim(x→a⁻) f(x) = lim(x→a⁺) f(x) = L.",
+    "**Interpretation:** Both one-sided limits must exist AND must be equal to each other for the general limit to exist.",
+    "**Notation:** We write lim(x→a⁻) f(x) for left hand limit and lim(x→a⁺) f(x) for right hand limit.",
+    "**If LHL ≠ RHL:** When left and right limits exist but are different, the limit does NOT exist (DNE). This creates a jump discontinuity.",
+    "**If either one-sided limit DNE:** When either LHL or RHL does not exist, the general limit also does not exist.",
+    "**Example where limit exists:** For f(x) = x + 2, lim(x→3⁻) f(x) = 5 and lim(x→3⁺) f(x) = 5, so lim(x→3) f(x) = 5.",
+    "**Example where limit DNE:** For f(x) = |x|/x, lim(x→0⁻) f(x) = -1 but lim(x→0⁺) f(x) = 1, so lim(x→0) f(x) does not exist."
+  ],
+  "confusion": [
+    "The limit can exist even when f(a) is undefined — existence of limit depends only on LHL and RHL being equal.",
+    "Do not confuse 'limit does not exist' with 'limit equals infinity' — the latter is a specific type of non-existence.",
+    "If LHL = RHL but this value differs from f(a), the limit still exists (this is a removable discontinuity).",
+    "Having f(a) defined does NOT guarantee the limit exists — the function could have a jump at that point.",
+    "The notation lim(x→a) f(x) DNE is different from lim(x→a) f(x) = ±∞ — the latter describes infinite behavior."
+  ],
+  "practice": [
+    "For f(x) = {x+1 if x < 2, 3 if x = 2, x-1 if x > 2}, find LHL, RHL, and determine if lim(x→2) f(x) exists.",
+    "Show that lim(x→0) |x|/x does not exist by computing both one-sided limits.",
+    "If lim(x→a⁻) f(x) = 5 and lim(x→a⁺) f(x) = 5, must lim(x→a) f(x) exist? What must f(a) equal for continuity?",
+    "Find all values of x where f(x) = ⌊x⌋ (greatest integer function) has limits that do not exist.",
+    "Explain why lim(x→0) 1/x does not exist, distinguishing between 'DNE' and 'approaches infinity'."
+  ],
+  "universalFacts": [
+    "The equality of one-sided limits is the fundamental test for limit existence in real analysis.",
+    "This theorem connects the local behavior of functions to their global properties in calculus.",
+    "Limits that don't exist are just as important as those that do — they reveal discontinuities and special behavior.",
+    "The concept extends to higher dimensions where limits must be path-independent.",
+    "In computer graphics, checking limit existence helps detect sharp edges and discontinuities in surfaces."
+  ],
+  "animation3D": "limits-and-continuity-existence",
+  "motionGraphics": "limits-and-continuity-existence"
+}
