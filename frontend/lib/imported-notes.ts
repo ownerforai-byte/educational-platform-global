@@ -164,10 +164,16 @@ let importedNotesPromise: Promise<Record<string, ImportedNote[]>> | null = null;
 function getImportedNotesBySubject(): Promise<Record<string, ImportedNote[]>> {
   if (!importedNotesPromise) {
     importedNotesPromise = (async () => {
-      const [rav, rexp] = await Promise.all([
-        loadData<RavikishanManifestItem[]>("ravikishan/manifest.json"),
-        loadData<RExportManifestItem[]>("r-export/manifest.json"),
-      ]);
+      let rav: RavikishanManifestItem[] = [];
+      let rexp: ReExportManifestItem[] = [];
+      try {
+        [rav, rexp] = await Promise.all([
+          loadData<RavikishanManifestItem[]>("ravikishan/manifest.json"),
+          loadData<RExportManifestItem[]>("r-export/manifest.json"),
+        ]);
+      } catch {
+        // NEXT_PUBLIC_SITE_URL may be missing in production; fall back to empty manifests
+      }
       const built = buildImportedNotes(rav, rexp);
       for (const key of Object.keys(built)) {
         IMPORTED_NOTES_BY_SUBJECT[key] = built[key];

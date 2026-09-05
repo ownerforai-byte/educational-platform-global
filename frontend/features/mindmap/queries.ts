@@ -155,7 +155,12 @@ type ImportedMindmap = {
 
 function buildImportedMindmaps(): Promise<ImportedMindmap[]> {
   return (async () => {
-    const manifest = await loadData<ManifestItem[]>("ravikishan/manifest.json");
+    let manifest: ManifestItem[] = [];
+    try {
+      manifest = await loadData<ManifestItem[]>("ravikishan/manifest.json");
+    } catch {
+      // NEXT_PUBLIC_SITE_URL may be missing in production; fall back to no imported maps
+    }
     const out: ImportedMindmap[] = [];
 
     for (const item of manifest) {

@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { AppShell } from "@/components/layout/app-shell";
 
 export const metadata: Metadata = {
   title: "Exam Countdown & Study Planner",
@@ -11,5 +10,5 @@ export const viewport: Viewport = {
 };
 
 export default function ExamCountdownLayout({ children }: { children: React.ReactNode }) {
-  return <AppShell>{children}</AppShell>;
+  return <>{children}</>;
 }

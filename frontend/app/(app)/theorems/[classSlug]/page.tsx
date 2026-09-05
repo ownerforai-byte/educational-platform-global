@@ -4,6 +4,8 @@ import { getSubjectSyllabus } from "@/lib/syllabus";
 import { ChevronRight, FileText, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   return [
     { classSlug: "class-11-notes" },
@@ -18,7 +20,7 @@ export default async function TheoremsClassPage({
 }) {
   const { classSlug } = await params;
   const allEntries = await getTheoremIndex();
-  const entries = filterTheorems(allEntries, { classSlug, subjectSlug: "" });
+  const entries = allEntries.filter((e) => e.classSlug === classSlug);
 
   // Group by subject
   const subjectMap = new Map<string, typeof entries>();

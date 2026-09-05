@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
 import { StatusBadge } from "@/components/content/status-badge";
 import { NOTE_STATUS, NOTE_STATUS_HINTS } from "@/lib/content/note-status";
@@ -7,7 +8,7 @@ import {
   getImportedNotesForUnit,
   type NotesTrack,
 } from "@/lib/imported-notes";
-import { RenderedImportedNote } from "@/components/content/rendered-imported-note";
+import { FileText } from "lucide-react";
 
 type ImportedNotesSectionProps = {
   subject: string;
@@ -47,21 +48,36 @@ export async function ImportedNotesSection({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div className="flex items-center gap-3">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
         <h2 className="text-xl font-bold tracking-tight">Notes</h2>
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+        <span className="text-xs text-muted-foreground">{notes.length} note{notes.length !== 1 ? "s" : ""}</span>
       </div>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-2 md:grid-cols-2">
         {notes.map((note, idx) => (
-          <div
+          <Link
             key={note.path}
-            className="animate-slide-up"
-            style={{ animationDelay: `${idx * 50}ms` }}
+            href={note.path}
+            className="group flex items-center gap-3 rounded-lg border border-border bg-card/50 px-4 py-3 transition-colors hover:border-primary/30 hover:bg-accent/30"
+            style={{ animationDelay: `${idx * 20}ms` }}
           >
-            <RenderedImportedNote note={note} />
-          </div>
+            <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
+              <FileText className="h-4 w-4" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-medium truncate group-hover:text-primary transition-colors">
+                {note.title}
+              </p>
+              {note.unit && (
+                <p className="text-xs text-muted-foreground">{note.unit}</p>
+              )}
+            </div>
+            <span className="text-xs text-muted-foreground shrink-0">
+              {note.source === "ravikishan" ? "RK" : "RE"}
+            </span>
+          </Link>
         ))}
       </div>
     </div>

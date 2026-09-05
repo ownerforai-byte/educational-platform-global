@@ -1,6 +1,8 @@
 import { SubjectHubView } from "@/features/syllabus/components/subject-hub-view";
 import { listSubjects } from "@/features/syllabus/queries";
 
+export const dynamic = "force-dynamic";
+
 const CLASS_SLUG = "class-11-notes";
 
 export function generateStaticParams() {

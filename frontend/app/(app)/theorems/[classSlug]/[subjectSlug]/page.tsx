@@ -5,6 +5,8 @@ import { ChevronRight, FileText } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   return [
     { classSlug: "class-11-notes", subjectSlug: "mathematics" },

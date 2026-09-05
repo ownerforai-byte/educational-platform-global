@@ -4,6 +4,8 @@ import { ChevronRight, FileText, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   const entries = await getTheoremIndex();
   return entries.map((e) => ({
