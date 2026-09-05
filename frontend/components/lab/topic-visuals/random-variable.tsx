@@ -45,17 +45,15 @@ export function RandomVariableVisual() {
   const [p, setP] = useState(0.4);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const binomialPMF = (k: number) => {
-    const comb = factorial(n) / (factorial(k) * factorial(n - k));
-    return comb * Math.pow(p, k) * Math.pow(1 - p, n - k);
-  };
-
-  const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
+    const binomialPMF = (k: number) => {
+      const comb = factorial(n) / (factorial(k) * factorial(n - k));
+      return comb * Math.pow(p, k) * Math.pow(1 - p, n - k);
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
@@ -174,7 +172,7 @@ export function RandomVariableVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [distType, n, p, binomialPMF, isWebGL]);
+  }, [distType, n, p, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Random Variable" description="Distribution visualization — requires WebGL." />;

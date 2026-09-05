@@ -47,23 +47,22 @@ export function FunctionVisual() {
   const [showDomainRange, setShowDomainRange] = useState(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const getFunc = (x: number) => {
-    switch (funcType) {
-      case "linear": return params.a * x + params.b;
-      case "quadratic": return params.a * x * x + params.b * x + params.c;
-      case "cubic": return params.a * x * x * x + params.b * x;
-      case "reciprocal": return params.a / (x - params.b);
-      case "exponential": return params.a * Math.exp(params.b * x);
-      case "logarithmic": return params.a * Math.log(Math.abs(x - params.b) + 0.1);
-      case "trig": return params.a * Math.sin(params.b * x);
-      case "inverse": return params.a * Math.sqrt(Math.abs(x));
-    }
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const getFunc = (x: number) => {
+      switch (funcType) {
+        case "linear": return params.a * x + params.b;
+        case "quadratic": return params.a * x * x + params.b * x + params.c;
+        case "cubic": return params.a * x * x * x + params.b * x;
+        case "reciprocal": return params.a / (x - params.b);
+        case "exponential": return params.a * Math.exp(params.b * x);
+        case "logarithmic": return params.a * Math.log(Math.abs(x - params.b) + 0.1);
+        case "trig": return params.a * Math.sin(params.b * x);
+        case "inverse": return params.a * Math.sqrt(Math.abs(x));
+      }
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;

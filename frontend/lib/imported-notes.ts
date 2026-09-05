@@ -165,7 +165,7 @@ function getImportedNotesBySubject(): Promise<Record<string, ImportedNote[]>> {
   if (!importedNotesPromise) {
     importedNotesPromise = (async () => {
       let rav: RavikishanManifestItem[] = [];
-      let rexp: ReExportManifestItem[] = [];
+      let rexp: RExportManifestItem[] = [];
       try {
         [rav, rexp] = await Promise.all([
           loadData<RavikishanManifestItem[]>("ravikishan/manifest.json"),

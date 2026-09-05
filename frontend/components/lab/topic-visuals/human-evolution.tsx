@@ -45,19 +45,18 @@ function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPo
 
 type Species = "australopithecus" | "homo habilis" | "homo erectus" | "neanderthal" | "sapiens";
 
+const speciesData: Record<Species, { name: string; brainVol: string; browRidge: string; chin: string; posture: string }> = {
+  australopithecus: { name: "Australopithecus", brainVol: "~450 cc", browRidge: "Prominent", chin: "Absent", posture: "Bipedal" },
+  "homo habilis": { name: "Homo habilis", brainVol: "~650 cc", browRidge: "Moderate", chin: "Absent", posture: "Bipedal" },
+  "homo erectus": { name: "Homo erectus", brainVol: "~900 cc", browRidge: "Heavy", chin: "Absent", posture: "Fully bipedal" },
+  neanderthal: { name: "Neanderthal", brainVol: "~1500 cc", browRidge: "Very heavy", chin: "Present (weak)", posture: "Fully bipedal" },
+  sapiens: { name: "Homo sapiens", brainVol: "~1350 cc", browRidge: "Reduced", chin: "Prominent", posture: "Fully bipedal" },
+};
+
 export function HumanEvolutionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [species, setSpecies] = useState<Species>("sapiens");
   const [isWebGL] = useState(() => isWebGLAvailable());
-
-
-  const speciesData: Record<Species, { name: string; brainVol: string; browRidge: string; chin: string; posture: string }> = {
-    australopithecus: { name: "Australopithecus", brainVol: "~450 cc", browRidge: "Prominent", chin: "Absent", posture: "Bipedal" },
-    "homo habilis": { name: "Homo habilis", brainVol: "~650 cc", browRidge: "Moderate", chin: "Absent", posture: "Bipedal" },
-    "homo erectus": { name: "Homo erectus", brainVol: "~900 cc", browRidge: "Heavy", chin: "Absent", posture: "Fully bipedal" },
-    neanderthal: { name: "Neanderthal", brainVol: "~1500 cc", browRidge: "Very heavy", chin: "Present (weak)", posture: "Fully bipedal" },
-    sapiens: { name: "Homo sapiens", brainVol: "~1350 cc", browRidge: "Reduced", chin: "Prominent", posture: "Fully bipedal" },
-  };
 
   useEffect(() => {
     const container = containerRef.current;

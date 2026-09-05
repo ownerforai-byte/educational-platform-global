@@ -23,6 +23,7 @@
     "blueprint": "node scripts/generate-blueprint.mjs"
   },
   "dependencies": {
+    "@heyputer/puter.js": "^2.6.2",
     "@react-spring/three": "^10.1.2",
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
@@ -55,5 +56,13 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "description": "<!--\r   README.md — Main documentation for the Educational Platform split architecture.\r   This file describes the project structure, quick-start commands, environment variables,\r   deployment notes, API endpoints, architecture decisions, and migration status.\r -->\r # Educational Platform — Split Architecture",
+  "main": "add_patterns.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

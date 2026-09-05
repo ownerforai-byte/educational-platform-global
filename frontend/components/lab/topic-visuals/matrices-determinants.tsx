@@ -175,7 +175,7 @@ export function MatricesDeterminantsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [matrix, showInverse, isWebGL]);
+  }, [matrix, det, trace, showInverse, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Matrices & Determinants" description="Linear transformation visualization — requires WebGL." />;

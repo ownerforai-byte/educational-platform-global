@@ -48,27 +48,26 @@ export function SequenceSeriesVisual() {
   const [terms, setTerms] = useState(10);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const getTerms = () => {
-    const arr: number[] = [];
-    if (seqType === "arithmetic") {
-      for (let n = 0; n < terms; n++) arr.push(a + n * dOrR);
-    } else if (seqType === "geometric") {
-      for (let n = 0; n < terms; n++) arr.push(a * Math.pow(dOrR, n));
-    } else {
-      for (let n = 1; n <= terms; n++) arr.push(1 / n);
-    }
-    return arr;
-  };
-
-  const getSum = (n: number) => {
-    const ts = getTerms().slice(0, Math.min(n, terms));
-    return ts.reduce((s, v) => s + v, 0);
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const getTerms = () => {
+      const arr: number[] = [];
+      if (seqType === "arithmetic") {
+        for (let n = 0; n < terms; n++) arr.push(a + n * dOrR);
+      } else if (seqType === "geometric") {
+        for (let n = 0; n < terms; n++) arr.push(a * Math.pow(dOrR, n));
+      } else {
+        for (let n = 1; n <= terms; n++) arr.push(1 / n);
+      }
+      return arr;
+    };
+
+    const getSum = (n: number) => {
+      const ts = getTerms().slice(0, Math.min(n, terms));
+      return ts.reduce((s, v) => s + v, 0);
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
@@ -169,7 +168,7 @@ export function SequenceSeriesVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [seqType, a, dOrR, terms, isWebGL, getTerms]);
+  }, [seqType, a, dOrR, terms, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Sequences & Series" description="3D sequence visualization — requires WebGL." />;

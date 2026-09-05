@@ -32,18 +32,18 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+const nuclei = {
+  "h1": { protons: 1, neutrons: 0, label: "¹H (Protium)", color: 0xef4444 },
+  "he4": { protons: 2, neutrons: 2, label: "⁴He", color: 0x3b82f6 },
+  "c12": { protons: 6, neutrons: 6, label: "¹²C", color: 0x22c55e },
+  "u238": { protons: 92, neutrons: 146, label: "²³⁸U", color: 0xf97316 },
+};
+
 export function NuclearPhysicsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isotope, setIsotope] = useState<"h1" | "he4" | "c12" | "u238">("u238");
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const nuclei = {
-    "h1": { protons: 1, neutrons: 0, label: "¹H (Protium)", color: 0xef4444 },
-    "he4": { protons: 2, neutrons: 2, label: "⁴He", color: 0x3b82f6 },
-    "c12": { protons: 6, neutrons: 6, label: "¹²C", color: 0x22c55e },
-    "u238": { protons: 92, neutrons: 146, label: "²³⁸U", color: 0xf97316 },
-  };
 
   useEffect(() => {
     const container = containerRef.current;

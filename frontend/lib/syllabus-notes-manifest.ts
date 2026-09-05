@@ -31,7 +31,6 @@ export interface SyllabusNoteEntry {
 export function buildManifest(
   ravEntries: Array<{ unitSlug: string; topicSlug: string; title: string; noteCount: number }>,
   reEntries: Array<{ subject: string; chapter: string; id: string; title: string; noteCount: number }>,
-  subjectSlug: string,
 ): SyllabusNoteEntry[] {
   // Index ravikishan by unitSlug+topicSlug
   const ravIndex = new Map<string, typeof ravEntries[0]>();

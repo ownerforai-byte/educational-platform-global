@@ -13,7 +13,7 @@ export const KATEX_MACROS: Record<string, string> = {
   "\\C": "\\mathbb{C}",
   "\\oo": "\\infty",
   // ── Set notation ───────────────────────────────────────────────────────
-  // \set{x}{x > 0}  →  { x | x > 0 }
+  // \\set{x}{x > 0}  →  { x | x > 0 }
   "\\set": "\\left\\{\\,#1\\;\\middle|\\;#2\\,\\right\\}",
   "\\card": "\\left|#1\\right|",
   "\\pow": "\\mathcal{P}\\!\\left(#1\\right)",
@@ -21,7 +21,7 @@ export const KATEX_MACROS: Record<string, string> = {
   "\\dd": "\\mathrm{d}",
   "\\dx": "\\,dx",
   "\\dt": "\\,dt",
-  // \limto{x}{0}  →  lim_{x → 0}
+  // \\limto{x}{0}  →  lim_{x → 0}
   "\\limto": "\\lim_{#1 \\to #2}",
   // ── Linear algebra / determinants ──────────────────────────────────────
   "\\tr": "\\operatorname{tr}",
@@ -43,7 +43,7 @@ export const KATEX_MACROS: Record<string, string> = {
   "\\uvk": "\\hat{k}",
   "\\dotp": "\\cdot",
   "\\cross": "\\times",
-  // \proj{u}{v}  →  proj_u v
+  // \\proj{u}{v}  →  proj_u v
   "\\proj": "\\text{proj}_{#1}\\,#2",
   "\\unit": "\\,\\mathrm{#1}",
   "\\degree": "^{\\circ}",

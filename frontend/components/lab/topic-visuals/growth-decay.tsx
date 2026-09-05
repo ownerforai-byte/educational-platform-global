@@ -47,17 +47,15 @@ export function GrowthDecayDEVisual() {
   const [carrying, setCarrying] = useState(500);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const getN = (t: number) => {
-    if (type === "growth") return n0 * Math.exp(k * t);
-    if (type === "decay") return n0 * Math.exp(-k * t);
-    // Logistic: N(t) = K / (1 + ((K - N0)/N0) * e^(-kt))
-    return carrying / (1 + ((carrying - n0) / n0) * Math.exp(-k * t));
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const getN = (t: number) => {
+      if (type === "growth") return n0 * Math.exp(k * t);
+      if (type === "decay") return n0 * Math.exp(-k * t);
+      return carrying / (1 + ((carrying - n0) / n0) * Math.exp(-k * t));
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
@@ -182,7 +180,7 @@ export function GrowthDecayDEVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [type, k, n0, carrying, isWebGL, getN]);
+  }, [type, k, n0, carrying, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Growth & Decay" description="Population dynamics — requires WebGL." />;

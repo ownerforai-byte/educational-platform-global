@@ -13,12 +13,12 @@ import {
 } from "lucide-react";
 
 const SUBJECT_CONFIG: Record<string, { icon: string; color: string; gradient: string; labs: string }> = {
-  mathematics: { icon: "\uD83D\uDD22", color: "text-violet-400", gradient: "from-violet-500/20 to-purple-500/20", labs: "28+" },
-  physics:     { icon: "\u26A1",  color: "text-sky-400",   gradient: "from-sky-500/20 to-blue-500/20",  labs: "32+" },
-  chemistry:   { icon: "\uD83E\uDDD0", color: "text-amber-400", gradient: "from-amber-500/20 to-orange-500/20", labs: "22+" },
-  biology:     { icon: "\uD83C\uDF3F", color: "text-emerald-400", gradient: "from-emerald-500/20 to-teal-500/20", labs: "24+" },
-  english:     { icon: "\uD83D\uDCD6", color: "text-blue-400",  gradient: "from-blue-500/20 to-cyan-500/20", labs: "12+" },
-  nepali:      { icon: "\uD83C\uDDF3\uD83C\uDDF5", color: "text-red-400", gradient: "from-red-500/20 to-rose-500/20", labs: "10+" },
+  mathematics: { icon: "🔢", color: "text-violet-400", gradient: "from-violet-500/20 to-purple-500/20", labs: "28+" },
+  physics:     { icon: "⚡",  color: "text-sky-400",   gradient: "from-sky-500/20 to-blue-500/20",  labs: "32+" },
+  chemistry:   { icon: "🧪", color: "text-amber-400", gradient: "from-amber-500/20 to-orange-500/20", labs: "22+" },
+  biology:     { icon: "🌿", color: "text-emerald-400", gradient: "from-emerald-500/20 to-teal-500/20", labs: "24+" },
+  english:     { icon: "📖", color: "text-blue-400",  gradient: "from-blue-500/20 to-cyan-500/20", labs: "12+" },
+  nepali:      { icon: "🇳🇵", color: "text-red-400", gradient: "from-red-500/20 to-rose-500/20", labs: "10+" },
 };
 
 const FEATURES = [

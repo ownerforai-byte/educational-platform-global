@@ -173,7 +173,7 @@ export function BayesTheoremVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d: any) => d?.()); };
-  }, [pA1, pA2, pB1, pB2, isWebGL]);
+  }, [pA1, pA2, pB1, pB2, pA1gB, pA2gB, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Bayes' Theorem" description="Probability tree — requires WebGL." />;

@@ -43,13 +43,12 @@ export function BinomialDistVisual() {
   const [p, setP] = useState(0.4);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
-  const pmf = (k: number) => factorial(n) / (factorial(k) * factorial(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
+    const pmf = (k: number) => factorial(n) / (factorial(k) * factorial(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;

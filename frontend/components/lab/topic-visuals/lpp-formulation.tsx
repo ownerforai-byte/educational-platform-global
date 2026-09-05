@@ -155,7 +155,7 @@ export function LPPFormulationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d: any) => d?.()); };
-  }, [a1, b1, c1, a2, b2, c2, pa, pb, isWebGL]);
+  }, [a1, b1, c1, a2, b2, c2, pa, pb, intersectX, intersectY, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="LPP Formulation" description="Feasible region visualization — requires WebGL." />;

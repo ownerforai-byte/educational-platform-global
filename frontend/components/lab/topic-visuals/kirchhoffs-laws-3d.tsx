@@ -41,19 +41,17 @@ export function KirchhoffsLawsVisual() {
   const [r3, setR3] = useState(6);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  // Solve circuit: two loops with shared resistor R3
-  const solveCircuit = () => {
-    const denom = r1 * r2 + r2 * r3 + r3 * r1;
-    const i1 = (v1 * (r2 + r3) - v2 * r3) / denom;
-    const i2 = (v2 * (r1 + r3) - v1 * r3) / denom;
-    const i3 = i1 - i2;
-    return { i1, i2, i3 };
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const solveCircuit = () => {
+      const denom = r1 * r2 + r2 * r3 + r3 * r1;
+      const i1 = (v1 * (r2 + r3) - v2 * r3) / denom;
+      const i2 = (v2 * (r1 + r3) - v1 * r3) / denom;
+      const i3 = i1 - i2;
+      return { i1, i2, i3 };
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;

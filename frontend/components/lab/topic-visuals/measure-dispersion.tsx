@@ -45,29 +45,29 @@ export function MeasureDispersionVisual() {
   const [isWebGL] = useState(() => isWebGLAvailable());
 
 
-  const getData = () => {
-    const arr: number[] = [];
-    for (let i = 0; i < n; i++) {
-      arr.push(center + (Math.random() - 0.5) * 2 * spread);
-    }
-    return arr;
-  };
-
-  const stats = () => {
-    const d = getData();
-    const mean = d.reduce((s, v) => s + v, 0) / d.length;
-    const variance = d.reduce((s, v) => s + (v - mean) ** 2, 0) / d.length;
-    const sd = Math.sqrt(variance);
-    const cv = (sd / Math.abs(mean)) * 100;
-    const min = Math.min(...d);
-    const max = Math.max(...d);
-    const range = max - min;
-    return { mean, variance, sd, cv, min, max, range, data: d };
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const getData = () => {
+      const arr: number[] = [];
+      for (let i = 0; i < n; i++) {
+        arr.push(center + (Math.random() - 0.5) * 2 * spread);
+      }
+      return arr;
+    };
+
+    const stats = () => {
+      const d = getData();
+      const mean = d.reduce((s, v) => s + v, 0) / d.length;
+      const variance = d.reduce((s, v) => s + (v - mean) ** 2, 0) / d.length;
+      const sd = Math.sqrt(variance);
+      const cv = (sd / Math.abs(mean)) * 100;
+      const min = Math.min(...d);
+      const max = Math.max(...d);
+      const range = max - min;
+      return { mean, variance, sd, cv, min, max, range, data: d };
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
@@ -174,7 +174,7 @@ export function MeasureDispersionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [spread, center, n, isWebGL, stats]);
+  }, [spread, center, n, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Measure of Dispersion" description="Statistical visualization — requires WebGL." />;

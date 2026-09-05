@@ -38,25 +38,25 @@ export function DerivativeGeometric3D() {
   const [isWebGL] = useState(() => isWebGLAvailable());
 
 
-  const f = (x: number) => {
-    switch (funcName) {
-      case "quadratic": return 0.2 * x * x - 1;
-      case "cubic": return 0.08 * x * x * x - 0.4 * x;
-      case "trig": return Math.sin(x) * 2;
-    }
-  };
-
-  const df = (x: number) => {
-    switch (funcName) {
-      case "quadratic": return 0.4 * x;
-      case "cubic": return 0.24 * x * x - 0.4;
-      case "trig": return Math.cos(x) * 2;
-    }
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const f = (x: number) => {
+      switch (funcName) {
+        case "quadratic": return 0.2 * x * x - 1;
+        case "cubic": return 0.08 * x * x * x - 0.4 * x;
+        case "trig": return Math.sin(x) * 2;
+      }
+    };
+
+    const df = (x: number) => {
+      switch (funcName) {
+        case "quadratic": return 0.4 * x;
+        case "cubic": return 0.24 * x * x - 0.4;
+        case "trig": return Math.cos(x) * 2;
+      }
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any;

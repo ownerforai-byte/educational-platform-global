@@ -15,11 +15,18 @@ export function Katex({ math, displayMode = false, className }: KatexProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    katex.render(math, containerRef.current, {
-      ...KATEX_OPTIONS,
-      displayMode,
-    });
+    if (!containerRef.current || !math) return;
+    try {
+      katex.render(math, containerRef.current, {
+        ...KATEX_OPTIONS,
+        displayMode,
+      });
+    } catch (error) {
+      console.error("KaTeX rendering error:", error);
+      if (containerRef.current) {
+        containerRef.current.innerHTML = `<span style="color: ${KATEX_OPTIONS.errorColor}">Error rendering math</span>`;
+      }
+    }
   }, [math, displayMode]);
 
   return (

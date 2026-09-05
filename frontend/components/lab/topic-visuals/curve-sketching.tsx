@@ -46,22 +46,21 @@ export function CurveSketchingVisual() {
   const [params, setParams] = useState({ a: 1, b: 0, c: -2 });
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  const getFunc = (x: number) => {
-    switch (curveType) {
-      case "quadratic": return params.a * x * x + params.b * x + params.c;
-      case "cubic": return params.a * x * x * x + params.b * x;
-      case "rational": return 1 / (x * x - 1);
-      case "trig-asin": return Math.asin(x / 2) * 2;
-      case "trig-acos": return Math.acos(x / 2) * 2;
-      case "exponential": return params.a * Math.exp(-params.b * x * x);
-      case "logarithmic": return params.a * Math.log(x + params.c + 2);
-    }
-  };
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const getFunc = (x: number) => {
+      switch (curveType) {
+        case "quadratic": return params.a * x * x + params.b * x + params.c;
+        case "cubic": return params.a * x * x * x + params.b * x;
+        case "rational": return 1 / (x * x - 1);
+        case "trig-asin": return Math.asin(x / 2) * 2;
+        case "trig-acos": return Math.acos(x / 2) * 2;
+        case "exponential": return params.a * Math.exp(-params.b * x * x);
+        case "logarithmic": return params.a * Math.log(x + params.c + 2);
+      }
+    };
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
@@ -126,7 +125,7 @@ export function CurveSketchingVisual() {
 
         // Key features
         const features: string[] = [];
-        let labelColor = "#fbbf24";
+        let labelColor: string = "#7dd3fc";
 
         if (curveType === "quadratic") {
           const vertexX = -params.b / (2 * params.a);

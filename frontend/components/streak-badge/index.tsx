@@ -11,7 +11,6 @@ export function StreakBadge({ compact = false }: { compact?: boolean }) {
   useEffect(() => {
     const fresh = markCheckIn();
     setState(fresh);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (compact) {

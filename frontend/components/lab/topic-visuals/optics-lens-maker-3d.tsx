@@ -35,8 +35,9 @@ export default function OpticsLensMaker3d() {
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
-    const w = containerRef.current.clientWidth;
-    const h = containerRef.current.clientHeight || 400;
+    const container = containerRef.current;
+    const w = container.clientWidth;
+    const h = container.clientHeight || 400;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x2e1065);
     const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
@@ -44,7 +45,7 @@ export default function OpticsLensMaker3d() {
     camera.lookAt(0, 0, 0);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(w, h);
-    containerRef.current.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
@@ -146,7 +147,7 @@ export default function OpticsLensMaker3d() {
 
     return () => {
       cancelAnimationFrame(frameId);
-      if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
+      container.removeChild(renderer.domElement);
       lensGeo.dispose();
       lensMat.dispose();
       r1Line.geometry.dispose();

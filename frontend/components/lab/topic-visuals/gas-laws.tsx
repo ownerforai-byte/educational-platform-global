@@ -258,7 +258,7 @@ export function GasLawsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, nMoles, temperature, isWebGL]);
+  }, [mode, nMoles, temperature, time, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Gas Laws" description="PV diagram animations — requires WebGL." />;

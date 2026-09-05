@@ -173,13 +173,13 @@ function extractFacts(notes: string[]): LegendFact[] {
     }
 
     // Detect definitions (starts with bold term or "is" / "are" patterns)
-    if (/^\*\*[A-Z][^\*]+\*\*:\s/.test(trimmed) || /^\*\*[\w\s]+\*\*\s+(is|are|refers|means)\s/i.test(trimmed)) {
+    if (/^\*\*[A-Z][^*]+\*\*:\s/.test(trimmed) || /^\*\*[\w\s]+\*\*\s+(is|are|refers|means)\s/i.test(trimmed)) {
       facts.push({ type: "definition", content: trimmed });
       continue;
     }
 
     // Detect bullet-point facts
-    if (/^•|^[•\-\*]\s/.test(trimmed) || /^\d+\.\s/.test(trimmed)) {
+    if (/^•|^[•*-]\s/.test(trimmed) || /^\d+\.\s/.test(trimmed)) {
       facts.push({ type: "fact", content: trimmed });
       continue;
     }
@@ -322,7 +322,6 @@ async function scanSubject(
 
           const topicSlug = slugifyFileName(file.name);
           const topicTitle = (parsed.topicTitle as string) ?? file.name.replace(/\.json$/, "");
-          const title = (parsed.title as string) ?? topicTitle;
           const relevance = (parsed.relevance as number) ?? 50;
           const notes = (parsed.notes as string[] | undefined) ?? [];
           const confusionField = (parsed.confusion as string[] | undefined) ?? [];

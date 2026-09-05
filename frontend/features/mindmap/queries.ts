@@ -11,6 +11,7 @@ import {
   type SyllabusUnit,
 } from "@/lib/syllabus";
 import type { MindmapDocument, MindmapItem, MindmapNode, MindmapSource } from "./types";
+export type { MindmapItem };
 
 type ManifestItem = {
   path: string;

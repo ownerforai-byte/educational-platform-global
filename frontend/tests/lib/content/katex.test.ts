@@ -3,7 +3,7 @@ import { KATEX_MACROS, normalizeMathDelimiters } from "@/lib/content/katex";
 
 describe("normalizeMathDelimiters", () => {
   it("converts bracket display math to $$", () => {
-    const input = "Consider \\[\\lim_{x \\to 0} x\\] done";
+    const input = "Consider \\$\\lim_{x \\to 0} x\\$ done";
     expect(normalizeMathDelimiters(input)).toBe(
       "Consider $$\\lim_{x \\to 0} x$$ done"
     );
@@ -15,7 +15,7 @@ describe("normalizeMathDelimiters", () => {
   });
 
   it("handles multi-line bracket blocks", () => {
-    const input = "\\[\n\\begin{pmatrix}\na & b\n\\end{pmatrix}\n\\]";
+    const input = "\\$\n\\begin{pmatrix}\na & b\n\\end{pmatrix}\n\\$";
     const result = normalizeMathDelimiters(input);
     expect(result).toContain("$$");
     expect(result).toContain("\\begin{pmatrix}");
@@ -27,7 +27,7 @@ describe("normalizeMathDelimiters", () => {
   });
 
   it("leaves code fences untouched", () => {
-    const input = "```\n\\[x\\]\n```";
+    const input = "```\n\\$x\\$\n```";
     expect(normalizeMathDelimiters(input)).toBe(input);
   });
 

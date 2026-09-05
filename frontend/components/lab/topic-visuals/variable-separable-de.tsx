@@ -43,13 +43,11 @@ export function VariableSeparableDEVisual() {
   const [y0, setY0] = useState(1);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-
-  // dy/dx = ky  →  y = y0 * e^(kx)
-  const getSolution = (x: number) => y0 * Math.exp(k * x);
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
+
+    const getSolution = (x: number) => y0 * Math.exp(k * x);
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
@@ -171,7 +169,7 @@ export function VariableSeparableDEVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [k, y0, isWebGL, getSolution]);
+  }, [k, y0, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Variable Separable DE" description="Separation of variables visualization — requires WebGL." />;
