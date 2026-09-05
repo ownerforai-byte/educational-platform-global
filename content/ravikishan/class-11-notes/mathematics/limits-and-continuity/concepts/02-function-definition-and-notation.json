@@ -1,0 +1,41 @@
+{
+  "title": "Function Definition and Notation",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "function-definition-and-notation",
+  "topicTitle": "Function",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-function",
+  "notes": [
+    "**Formal definition:** Let X and Y be two non-empty sets. Then a function f from X to Y is a rule which assigns a **unique** element of Y to each element of X.",
+    "**Notation:** We write f: X → Y to denote 'f is a function from X to Y'. This is read as 'f maps X to Y'.",
+    "**Image notation:** The unique element of Y which f assigns corresponding to an element x in X is denoted by f(x). We also write y = f(x) to show the relationship.",
+    "**Domain:** The set X from which elements are taken is called the domain of the function f. It contains all possible input values.",
+    "**Codomain:** The set Y to which elements are mapped is called the codomain of f. It contains all possible output values (though not all may be achieved).",
+    "**Image (Range subset):** The element f(x) of Y, corresponding to x in X, is called the image of x under the function f.",
+    "**Key property:** Each input x in the domain must have exactly ONE output f(x) in the codomain. A relation is NOT a function if any input maps to multiple outputs.",
+    "**Visual representation:** Functions can be represented as arrows from domain elements to codomain elements, or as graphs showing the relationship between x and f(x)."
+  ],
+  "confusion": [
+    "A function requires UNIQUE assignment — one input cannot map to multiple outputs. Relations that do this are not functions.",
+    "Domain and codomain are different concepts: domain is the set of all inputs, codomain is the set of all possible outputs.",
+    "Notation f: X → Y does NOT mean f equals something — it means 'f is a function from set X to set Y'.",
+    "f(x) is the value of the function at x, not f multiplied by x. The parentheses indicate function application, not multiplication.",
+    "Multiple inputs can map to the same output (many-to-one), but one input cannot map to multiple outputs (one-to-many is not allowed)."
+  ],
+  "practice": [
+    "Given f: {1, 2, 3} → {a, b, c} defined by f(1) = a, f(2) = b, f(3) = a, identify the domain, codomain, and all images.",
+    "Which of these relations are functions? (a) {(1,a), (2,b), (1,c)} (b) {(1,a), (2,b), (3,c)} (c) {(1,a), (2,b), (2,c)}",
+    "Write the function notation for: 'The rule that assigns to each real number its square'.",
+    "If f: ℝ → ℝ is defined by f(x) = 2x + 1, find f(3), f(-1), and f(0). What is the domain and codomain?",
+    "Explain why the relation {(1,2), (2,3), (3,4)} is a function but {(1,2), (1,3), (2,4)} is not."
+  ],
+  "universalFacts": [
+    "Functions are the fundamental building blocks of mathematics — all of calculus is built on the concept of functions.",
+    "The concept of a function was formalized in the 17th century by Leibniz and Euler, though the idea was used implicitly earlier.",
+    "Every equation y = f(x) defines a function, but not every relation defines a function (use the vertical line test on graphs).",
+    "Functions appear everywhere: physics (position as function of time), economics (cost as function of quantity), computer science (input-output mappings).",
+    "The notation f(x) was introduced by Euler in 1734 and has been standard ever since."
+  ],
+  "animation3D": "limits-and-continuity-function",
+  "motionGraphics": "limits-and-continuity-function"
+}
