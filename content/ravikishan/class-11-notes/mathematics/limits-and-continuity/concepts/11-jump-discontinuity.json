@@ -1,0 +1,41 @@
+{
+  "title": "Types of Discontinuity: Jump",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "jump-discontinuity",
+  "topicTitle": "Jump Discontinuity",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-jump",
+  "notes": [
+    "**Definition:** A jump discontinuity occurs when both left hand limit (LHL) and right hand limit (RHL) exist but are not equal.",
+    "**Condition:** lim(x→a⁻) f(x) ≠ lim(x→a⁺) f(x), but both are finite values.",
+    "**Key feature:** The function 'jumps' from one value to another at x = a — there's a break in the graph.",
+    "**Limit existence:** Since LHL ≠ RHL, the general limit lim(x→a) f(x) does NOT exist.",
+    "**Graphical appearance:** Two separate curve endpoints at x = a with different y-values, often shown with open and closed circles.",
+    "**Example:** The sign function f(x) = sign(x) has a jump discontinuity at x = 0: LHL = -1, RHL = 1.",
+    "**Piecewise functions:** Jump discontinuities commonly occur at the boundary points of piecewise-defined functions.",
+    "**Non-removable:** Unlike removable discontinuities, jump discontinuities cannot be fixed by redefining f(a)."
+  ],
+  "confusion": [
+    "Don't confuse jump discontinuities with removable discontinuities — in jumps, LHL ≠ RHL, but in removable, LHL = RHL ≠ f(a).",
+    "A jump doesn't require the function to be undefined at the point — f(a) can exist but won't equal either limit.",
+    "Jump discontinuities are non-removable by definition — no redefinition of f(a) can make the function continuous.",
+    "Don't confuse with infinite discontinuities where one or both limits approach ±∞.",
+    "The size of the 'jump' is |LHL - RHL|, which can be any positive finite number."
+  ],
+  "practice": [
+    "For f(x) = ⌊x⌋ (greatest integer function), find LHL and RHL at x = 2 and identify the jump size.",
+    "Show that the sign function has a jump discontinuity at x = 0 and calculate the jump size.",
+    "For f(x) = {x+1 if x < 0, x-1 if x ≥ 0}, identify the type of discontinuity at x = 0 and the jump size.",
+    "Sketch a function with a jump discontinuity at x = 3 where LHL = 2, RHL = 5, and f(3) = 10.",
+    "Explain why step functions always have jump discontinuities at their 'steps'."
+  ],
+  "universalFacts": [
+    "Jump discontinuities are the second most common type after removable discontinuities.",
+    "In signal processing, jump discontinuities represent instantaneous changes in digital signals.",
+    "The greatest integer function (floor function) has jump discontinuities at every integer.",
+    "In economics, jump discontinuities model sudden price changes or policy shifts.",
+    "Functions with only jump discontinuities are called 'piecewise continuous' and have useful properties."
+  ],
+  "animation3D": "limits-and-continuity-jump",
+  "motionGraphics": "limits-and-continuity-jump"
+}
