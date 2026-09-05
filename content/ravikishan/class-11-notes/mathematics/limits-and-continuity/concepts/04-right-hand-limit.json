@@ -1,0 +1,41 @@
+{
+  "title": "Right Hand Limit",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "right-hand-limit",
+  "topicTitle": "Right Hand Limit",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-rhl",
+  "notes": [
+    "**Definition:** A function f(x) is said to have the right hand limit l₁ at x = a as x approaches a through values greater than a (i.e., x approaches a from the right).",
+    "**Symbolic notation:** lim(x→a⁺) f(x) = l₁ means the right hand limit of f(x) at x = a is l₁.",
+    "**Alternative notation:** lim(x→a⁺⁰) f(x) = f(a + 0) — this reads as 'as x approaches a from positive side'.",
+    "**Concept:** We consider values of x that are slightly greater than a (like a + 0.1, a + 0.01, a + 0.001) and observe what value f(x) approaches.",
+    "**Direction:** The '+' superscript indicates approach from the RIGHT side (positive direction) on the number line.",
+    "**Geometric interpretation:** On a graph, we trace the curve from the right side toward x = a and observe the y-value being approached.",
+    "**Example:** For f(x) = |x|/x, as x approaches 0 from the right (x > 0), f(x) = x/x = 1, so lim(x→0⁺) f(x) = 1.",
+    "**Importance:** Right hand limits are essential for determining continuity and for analyzing piecewise functions."
+  ],
+  "confusion": [
+    "Do not confuse right hand limit with the function value f(a). The right hand limit considers x approaching a, not x equaling a.",
+    "The notation x → a⁺ means x is getting closer to a from values GREATER than a, not from values less than a.",
+    "A right hand limit can exist even when f(a) is undefined — limits describe behavior near a point, not at the point.",
+    "For continuous functions, the right hand limit equals the left hand limit equals the function value, but this is not always true.",
+    "Don't confuse the notation: x → a⁺ (approaching from right) is different from x → +∞ (approaching positive infinity)."
+  ],
+  "practice": [
+    "Find lim(x→2⁺) (x² - 4)/(x - 2) by evaluating f(x) for x = 2.1, 2.01, 2.001.",
+    "For f(x) = ⌊x⌋ (greatest integer function), find lim(x→3⁺) f(x).",
+    "If f(x) = {x+1 for x > 2, x-1 for x < 2}, find lim(x→2⁺) f(x).",
+    "Sketch the graph of f(x) = sign(x) and find lim(x→0⁺) f(x).",
+    "Explain why lim(x→0⁺) √x exists but lim(x→0⁻) √x does not exist."
+  ],
+  "universalFacts": [
+    "Right hand limits are one of two one-sided limits used to define the existence of general limits.",
+    "The concept of one-sided limits was formalized in the 19th century to provide rigorous foundations for calculus.",
+    "Right hand limits are crucial for analyzing discontinuities, especially jump discontinuities.",
+    "In physics, right hand limits can represent approaching a value from one direction (e.g., time increasing).",
+    "Many real-world phenomena have different behaviors when approached from different directions."
+  ],
+  "animation3D": "limits-and-continuity-rhl",
+  "motionGraphics": "limits-and-continuity-rhl"
+}
