@@ -177,39 +177,44 @@ router.post(
         hard: `Focus on: synthesis, analysis, evaluation, and complex problem-solving. Include numerical problems, case-based questions, and questions that require connecting multiple concepts. Use precise scientific language. Aim for 3+ step reasoning.`,
       };
 
-      const systemPrompt = `You are an expert NEB (+2) exam question setter for Nepalese science students. You generate high-quality multiple-choice questions aligned with the Nepal Education Board curriculum.
+      const systemPrompt = `You are an expert NEB (+2) exam question setter for Nepalese science students. You generate high-quality multiple-choice questions from MULTIPLE SOURCES — not just textbooks.
 
-OUTPUT FORMAT — Return ONLY valid JSON, no markdown, no explanation before or after:
+**SOURCES TO COMBINE:**
+1. **Internal** — Syllabus topics, definitions, formulas from NEB curriculum
+2. **External** — Real-world phenomena, current events, news, technology, nature
+3. **Applied** — Practical scenarios, case studies, everyday observations
+
+**QUESTION STYLE VARIETY** — Each question must use a DIFFERENT approach:
+- Type A: Direct definition (What is X?)
+- Type B: Application (How does X work in real life?)
+- Type C: Scenario-based (In a situation where...)
+- Type D: Comparison (X vs Y — which is correct?)
+- Type E: Problem-solving (Given..., find...)
+- Type F: True/False with reasoning
+
+Randomly mix these types. Do NOT use the same style twice in a row.
+
+OUTPUT FORMAT — Return ONLY valid JSON, no markdown:
 {
   "questions": [
     {
       "prompt": "The question text",
-      "options": ["Option A", "Option B", "Option C", "Option D"],
+      "options": ["A", "B", "C", "D"],
       "correctIndex": 0,
-      "difficulty": "easy",
+      "difficulty": "intermediate",
       "subject": "Physics",
       "topic": "Topic Name",
-      "explanation": "Clear explanation of why the answer is correct"
+      "explanation": "Short, accurate answer — 1-2 sentences max"
     }
   ]
 }
 
 RULES:
-- Each question has exactly 4 options
-- correctIndex is 0-based (0=A, 1=B, 2=C, 3=D)
-- The correct answer must be unambiguously right
-- Explanation should be 2-3 sentences, clear and educational
-- Topics should match NEB (+2) curriculum accurately
-- Never reuse the exact same question across difficulties
-
-CRITICAL REQUIREMENTS FOR QUESTION QUALITY:
-1. CONCERNED TERMS: Every question MUST include at least one key technical term from the syllabus in either the question stem OR the options. Look at the "Key terms" section below to identify terms for each topic.
-2. INTERNAL-EXTERNAL CONNECTION: Each question should connect internal syllabus knowledge with real-world applications or external contexts (e.g., daily life examples, current events, natural phenomena, technological applications).
-3. DETAILED EXPLANATIONS: The explanation must:
-   - State WHY the correct answer is right
-   - Explain WHY the other options are wrong (briefly)
-   - Include a real-world example or analogy when possible
-   - Be comprehensive enough to reinforce learning`;
+- 4 options per question, correctIndex is 0-based
+- Each question connects INTERNAL knowledge with EXTERNAL context
+- Explanation: SHORT + ACCURATE — state why correct, skip the rest
+- Rotate through different question styles each generation
+- Include key technical terms from the syllabus`;
 
       const userPrompt = `Generate ${requestedCount} NEB (+2) multiple-choice questions.
 
@@ -220,18 +225,21 @@ ${topicContext}
 
 ${difficultyInstructions[difficulty]}
 
-${keyTermsContext ? `IMPORTANT KEY TERMS TO USE:\n${keyTermsContext}` : "Use standard syllabus terminology from the subject."}
+${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standard syllabus terminology."}
 
-**EXTERNAL CONTENT CONTEXT** — Connect each question to real-world applications:
-- Physics: Real phenomena (lightning, GPS, nuclear energy, bridges), technology (MRI, fiber optics, solar panels)
-- Chemistry: Daily life (cooking, cleaning, medicines), industry (fertilizers, polymers, pharmaceuticals)
-- Biology: Health (vaccines, genetics, ecosystems), biotechnology (GMOs, cloning, PCR)
-- Mathematics: Real problems (architecture, finance, cryptography, data analysis)
+**INSTRUCTIONS:**
+1. Draw from BOTH internal (syllabus) AND external (real-world) sources
+2. Use DIFFERENT question styles for each question (definition, scenario, application, comparison, problem-solving)
+3. Keep explanations SHORT and ACCURATE — max 2 sentences
+4. Include at least one key term in every question
+5. Mix easy, intermediate, and hard questions based on difficulty setting
 
-Make sure each question:
-1. Includes at least ONE key technical term from the "IMPORTANT KEY TERMS" section above
-2. Connects to a real-world example or external context
-3. Has a detailed explanation (2-3 sentences minimum) that explains why correct/incorrect
+**EXAMPLE Question Styles:**
+- Definition: "What is the unit of electric current?"
+- Application: "A bulb glows because of heating effect. Which principle explains this?"
+- Scenario: "You drop a stone from a cliff. After 2 seconds, how far has it fallen?"
+- Comparison: "Which has greater momentum — a fast bullet or a slow truck?"
+- Problem: "If velocity = 10 m/s and time = 5s, find distance using v = d/t."
 `;
 
       const messages: AIChatMessage[] = [
