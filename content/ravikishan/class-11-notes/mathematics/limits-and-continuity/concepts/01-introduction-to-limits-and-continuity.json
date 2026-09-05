@@ -1,0 +1,41 @@
+{
+  "title": "Introduction to Limits and Continuity",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "introduction-to-limits-and-continuity",
+  "topicTitle": "Introduction",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-introduction",
+  "notes": [
+    "**Limits and continuity are fundamental for the development of calculus.** These two concepts are closely linked together with the involvement of the concept of limit in the definition of continuity.",
+    "**The concept of limit comes first** in the sequence, followed by continuity. The discussion is initiated with some examples so as to give an intuitive idea about limits.",
+    "**Functions review:** Before defining limits, we review the definition of a function, its domain, range, and graph from earlier chapters.",
+    "**Function definition:** Let X and Y be two non-empty sets. A function f from X to Y is a rule which assigns a unique element of Y to each element of X.",
+    "**Notation:** The element f(x) of Y is called the image of x under the function f. We write f: X → Y to mean 'f is a function from X to Y'.",
+    "**Why limits matter:** Limits allow us to describe the behavior of functions as inputs approach specific values, even when the function is not defined at that exact point. This is essential for defining derivatives and integrals in calculus.",
+    "**Continuity connection:** A function is continuous at a point if the limit as x approaches that point equals the function's value at that point. This bridges the concepts of limits and continuity.",
+    "**Limit theorems:** We will discuss some limit theorems and properties of continuous functions without proof, which will be used extensively in subsequent chapters."
+  ],
+  "confusion": [
+    "Limits describe behavior AS x approaches a value, not the value AT that point. A function can have a limit at a point where it is undefined.",
+    "Do not confuse limits with function values. lim(x→a) f(x) = L means f(x) gets arbitrarily close to L as x gets close to a, regardless of whether f(a) exists or equals L.",
+    "Continuity requires three conditions: f(a) exists, the limit exists, and they are equal. Missing any one makes the function discontinuous.",
+    "A function can be continuous on an interval but not differentiable at certain points (e.g., |x| at x=0).",
+    "The intuitive idea of continuity (drawing without lifting pencil) applies to the entire interval, not just a single point."
+  ],
+  "practice": [
+    "Explain in your own words why limits are called the foundation of calculus.",
+    "Given f(x) = (x² - 4)/(x - 2), find lim(x→2) f(x) by direct substitution and by factoring. What does this tell you about continuity at x = 2?",
+    "Sketch a graph of a function that has a limit as x → 3 but is discontinuous at x = 3. Label the limit value and the function value.",
+    "State the three conditions for continuity at a point and explain what happens if each condition fails.",
+    "Describe how the concept of a limit connects to the intuitive idea of a continuous curve."
+  ],
+  "universalFacts": [
+    "Limits are the gateway to calculus — derivatives and integrals are both defined using limits.",
+    "The concept of a limit was developed independently by Newton and Leibniz in the 17th century to solve problems in physics and geometry.",
+    "Limits allow us to handle 'infinitely small' quantities rigorously, which was a major mathematical breakthrough.",
+    "Every continuous function on a closed interval [a,b] has both a maximum and minimum value (Extreme Value Theorem).",
+    "Limits are used in real-world applications: calculating instantaneous velocity, finding tangent lines, optimizing designs, and modeling rates of change."
+  ],
+  "animation3D": "limits-and-continuity-introduction",
+  "motionGraphics": "limits-and-continuity-introduction"
+}
