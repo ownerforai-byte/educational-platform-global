@@ -211,8 +211,9 @@ OUTPUT FORMAT — Return ONLY valid JSON, no markdown:
 
 RULES:
 - 4 options per question, correctIndex is 0-based
-- Each question connects INTERNAL knowledge with EXTERNAL context
-- Explanation: SHORT + ACCURATE — state why correct, skip the rest
+- Each question MUST have one, and only one, definitively correct answer (no ambiguity).
+- Explanation: SHORT + ACCURATE — state why the correct answer is 100% right, briefly explain why others are wrong.
+- Comprehensive Learning: Design each question to act as a mini-tutorial, ensuring all necessary conceptual components for that specific sub-topic are present.
 - Rotate through different question styles each generation
 - Include key technical terms from the syllabus`;
 
@@ -230,9 +231,11 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
 **INSTRUCTIONS:**
 1. Draw from BOTH internal (syllabus) AND external (real-world) sources
 2. Use DIFFERENT question styles for each question (definition, scenario, application, comparison, problem-solving)
-3. Keep explanations SHORT and ACCURATE — max 2 sentences
+3. Keep explanations SHORT and ACCURATE — max 2 sentences, state WHY correct and WHY wrong
 4. Include at least one key term in every question
 5. Mix easy, intermediate, and hard questions based on difficulty setting
+6. **ABSOLUTE CLARITY**: Every question must have one, and only one, 100% correct answer. No ambiguous options.
+7. **COMPREHENSIVE COVERAGE**: Each question should reinforce all relevant concepts for that sub-topic, acting as a mini-lesson.
 
 **EXAMPLE Question Styles:**
 - Definition: "What is the unit of electric current?"
