@@ -1,0 +1,41 @@
+{
+  "title": "Limits of Trigonometric Functions",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "trigonometric-limits",
+  "topicTitle": "Limits of Trigonometric Functions",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-trig",
+  "notes": [
+    "**Standard trigonometric limits:** These are essential tools for evaluating limits involving trigonometric functions.",
+    "**Primary limit:** lim(x→0) sin(x)/x = 1 (where x is in radians).",
+    "**Secondary limit:** lim(x→0) (1-cos x)/x = 0.",
+    "**Tangent limit:** lim(x→0) tan(x)/x = 1 (follows from sin/cos limits).",
+    "**Prerequisites:** Basic trigonometry formulas from class 10 plus these limit-specific formulas.",
+    "**Key technique:** Use trigonometric identities to transform expressions into standard forms.",
+    "**Important:** All trigonometric limits assume x is measured in radians, not degrees.",
+    "**Applications:** These limits are fundamental for deriving derivatives of trigonometric functions."
+  ],
+  "confusion": [
+    "The limit sin(x)/x → 1 only holds when x → 0, not for other values of x.",
+    "Radians vs degrees: if x is in degrees, lim(x→0) sin(x)/x ≠ 1 — must convert to radians.",
+    "Don't confuse lim(x→0) sin(x)/x = 1 with lim(x→0) cos(x)/x (which does not exist).",
+    "The limit (1-cos x)/x → 0 is different from (1-cos x)/x² → 1/2 (a related but different limit).",
+    "These limits are indeterminate forms 0/0 but resolve to specific values through geometric proof."
+  ],
+  "practice": [
+    "Evaluate lim(x→0) sin(5x)/x using the standard limit sin(x)/x → 1.",
+    "Find lim(x→0) (1-cos(3x))/x using trigonometric identities and standard limits.",
+    "Evaluate lim(x→0) tan(2x)/x using the standard tangent limit.",
+    "Find lim(x→0) sin(3x)/sin(2x) by rewriting in terms of standard limits.",
+    "Evaluate lim(x→0) (sin x - x cos x)/x³ using appropriate trigonometric manipulations."
+  ],
+  "universalFacts": [
+    "Trigonometric limits are proven using the squeeze theorem and geometric arguments with the unit circle.",
+    "These limits are essential for deriving the derivatives of sin(x) and cos(x) in calculus.",
+    "The radian measure is natural for calculus because it makes these limits work cleanly.",
+    "Similar limit techniques apply to inverse trigonometric functions.",
+    "These limits appear in physics when analyzing oscillatory motion and wave phenomena."
+  ],
+  "animation3D": "limits-and-continuity-trig",
+  "motionGraphics": "limits-and-continuity-trig"
+}
