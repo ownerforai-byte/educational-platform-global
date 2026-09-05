@@ -1,0 +1,41 @@
+{
+  "title": "Value of a Function at a Point",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "value-of-function-at-a-point",
+  "topicTitle": "Value of the Function",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-value",
+  "notes": [
+    "**Definition:** If f is a function from X to Y and x = a is an element in the domain of f, then the image f(a) corresponding to x = a is said to be the value of the function at x = a.",
+    "**Existence condition:** If the value of the function f(x) at x = a denoted by f(a) is a finite number, then f(x) exists or is defined at x = a.",
+    "**Non-existence condition:** Otherwise (if f(a) is not a finite number), f(x) does not exist or is not defined at x = a.",
+    "**Notation:** The value of f at point a is written as f(a). This is called 'evaluating the function at a'.",
+    "**Example - Defined case:** For f(x) = 3x + 5, f(2) = 3(2) + 5 = 11, which is finite. So f(x) exists at x = 2.",
+    "**Example - Undefined case:** For f(x) = 1/(x-1), f(1) = 1/0, which is undefined. So f(x) does not exist at x = 1.",
+    "**Key principle:** A function value exists only when substituting the input gives a finite, well-defined real number.",
+    "**Connection to limits:** Even if f(a) is undefined, the limit lim(x→a) f(x) may still exist (this is the basis of removable discontinuities)."
+  ],
+  "confusion": [
+    "Do not confuse 'value at a point' with 'limit at a point'. f(a) may not exist but lim(x→a) f(x) may exist.",
+    "Undefined does not mean infinity — it means the expression has no mathematical meaning (like division by zero).",
+    "A function can be undefined at a point but defined everywhere else in its domain.",
+    "f(a) = ∞ is not valid notation for 'value at a point' — this indicates the limit, not the function value.",
+    "When f(a) involves division by zero, the function is simply not defined at that point — there is no 'value' to discuss."
+  ],
+  "practice": [
+    "Find f(2) if f(x) = 2x² - 3x + 1. Is the function defined at x = 2?",
+    "For f(x) = 1/(x-3), explain why f(3) does not exist. What happens to f(x) as x approaches 3?",
+    "If f(x) = √(x-4), find f(4), f(5), and f(3). For which values is f defined?",
+    "Given g(x) = (x²-4)/(x-2), find g(2). Is g defined at x = 2? What about lim(x→2) g(x)?",
+    "Explain the difference between 'f(a) does not exist' and 'f(a) = 0'."
+  ],
+  "universalFacts": [
+    "The concept of function value at a point is essential for defining continuity: f is continuous at a if lim(x→a) f(x) = f(a).",
+    "Functions that are undefined at certain points appear frequently in rational expressions, logarithmic functions, and radical functions.",
+    "The domain of a function consists of all points where the function is defined (where f(x) is a finite real number).",
+    "In calculus, we often study behavior near points where functions are undefined — this leads to the concept of limits.",
+    "Evaluating functions at specific points is a fundamental skill used in every area of mathematics."
+  ],
+  "animation3D": "limits-and-continuity-value",
+  "motionGraphics": "limits-and-continuity-value"
+}
