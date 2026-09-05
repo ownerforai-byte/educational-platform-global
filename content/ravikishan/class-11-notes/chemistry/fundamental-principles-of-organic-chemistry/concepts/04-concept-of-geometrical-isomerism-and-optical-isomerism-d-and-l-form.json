@@ -35,7 +35,7 @@
   "practice": [
     "**Problem 1:** Draw all geometrical isomers of but-2-ene and 1,2-dichlorocyclopropane. Label each as cis/trans and E/Z.\n\n**Solution:**\n**But-2-ene ($CH_3CH=CHCH_3$):**\n- Each C has CH3 and H. Priority: CH3 > H (C atomic no. 6 > H 1).\n- **Cis (Z):** Both CH3 on same side. Dipole moment \\u2260 0. BP 3.7\\u00b0C.\n- **Trans (E):** CH3 groups opposite. Dipole moment = 0. BP 0.9\\u00b0C.\n\n**1,2-Dichlorocyclopropane:**\n- Ring creates restricted rotation. Two chiral centers.\n- **Cis:** Both Cl on same face (both wedges or both dashes). Has plane of symmetry \\u2192 **meso compound**, optically inactive.\n- **Trans:** Cl on opposite faces (one wedge, one dash). No symmetry \\u2192 **chiral**, exists as enantiomeric pair (R,R and S,S).\n\n**Answer:** But-2-ene: cis-(Z) and trans-(E). 1,2-Dichlorocyclopropane: cis-meso, trans-(R,R)/(S,S) enantiomeric pair.",
     "**Problem 2:** A compound with formula $C_4H_8Cl_2$ has two chiral centers and exists as three stereoisomers. Identify the structure and explain.\n\n**Solution:**\n1. $C_4H_8Cl_2$ with two chiral centers \\u2192 likely 2,3-dichlorobutane ($CH_3CHClCHClCH_3$).\n2. Two chiral centers (C-2 and C-3) \\u2192 max $2^2 = 4$ stereoisomers.\n3. Only 3 stereoisomers exist \\u2192 one must be **meso** (internally compensated).\n4. The four theoretical: (2R,3R), (2S,3S) = enantiomeric pair; (2R,3S), (2S,3R).\n5. (2R,3S) and (2S,3R) are identical (meso) due to plane of symmetry through C2-C3 bond.\n6. Three stereoisomers: **(+)-2,3-dichlorobutane (2R,3R)**, **(-)-2,3-dichlorobutane (2S,3S)**, **meso-2,3-dichlorobutane (2R,3S)**.\n\n**Answer:** 2,3-Dichlorobutane. Three stereoisomers: one enantiomeric pair + one meso form.",
-    "**Problem 3:** Calculate the specific rotation of a mixture containing 8 g of (+)-lactic acid ($[\\alpha]_D = +3.8\\degree$) and 2 g of (-)-lactic acid ($[\\alpha]_D = -3.8\\degree$) dissolved in 100 mL water, measured in a 1 dm tube.\n\n**Solution:**\n1. Total mass = 10 g in 100 mL \\u2192 concentration $c = 10/100 = 0.1$ g/mL.\n2. Path length $l = 1$ dm.\n3. Enantiomeric excess: mass of (+) = 8 g, mass of (-) = 2 g. Net excess of (+) = 6 g.\n4. $ee = (6/10) \\times 100\\% = 60\\%$.\n5. Observed rotation $\\alpha = ee \\times [\\alpha]_{pure} = 0.60 \\times (+3.8\\degree) = +2.28\\degree$.\n   (Alternatively: $\\alpha = [\\alpha] \\times l \\times c_{net}$ where $c_{net}$ = conc. of excess enantiomer = 6g/100mL = 0.06 g/mL. $\\alpha = 3.8 \\times 1 \\times 0.06 = +0.228\\degree$? Wait \u2014 specific rotation formula: $[\\alpha] = \\alpha/(l \\times c)$. For mixture, observed $\\alpha = [\\alpha]_{mix} \\times l \\times c_{total}$. $[\\alpha]_{mix} = ee \\times [\\alpha]_{pure} = 0.6 \\times 3.8 = 2.28$. Then $\\alpha = 2.28 \\times 1 \\times 0.1 = 0.228\\degree$. But question asks for specific rotation of mixture.\n6. Specific rotation of mixture $[\\alpha]_{mix} = ee \\times [\\alpha]_{pure} = 0.60 \\times (+3.8) = +2.28\\degree$.\n\n**Answer:** Specific rotation of mixture = **+2.28\\u00b0** (or $+2.3\\u00b0$). Enantiomeric excess = 60%.",
+    "**Problem 3:** Calculate the specific rotation of a mixture containing 8 g of (+)-lactic acid ($[\\alpha]_D = +3.8\\degree$) and 2 g of (-)-lactic acid ($[\\alpha]_D = -3.8\\degree$) dissolved in 100 mL water, measured in a 1 dm tube.\n\n**Solution:**\n1. Total mass = 10 g in 100 mL \\u2192 concentration $c = 10/100 = 0.1$ g/mL.\n2. Path length $l = 1$ dm.\n3. Enantiomeric excess: mass of (+) = 8 g, mass of (-) = 2 g. Net excess of (+) = 6 g.\n4. $ee = (6/10) \\times 100\\% = 60\\%$.\n5. Observed rotation $\\alpha = ee \\times [\\alpha]_{pure} = 0.60 \\times (+3.8\\degree) = +2.28\\degree$.\n   (Alternatively: $\\alpha = [\\alpha] \\times l \\times c_{net}$ where $c_{net}$ = conc. of excess enantiomer = 6g/100mL = 0.06 g/mL. $\\alpha = 3.8 \\times 1 \\times 0.06 = +0.228\\degree$? Wait — specific rotation formula: $[\\alpha] = \\alpha/(l \\times c)$. For mixture, observed $\\alpha = [\\alpha]_{mix} \\times l \\times c_{total}$. $[\\alpha]_{mix} = ee \\times [\\alpha]_{pure} = 0.6 \\times 3.8 = 2.28$. Then $\\alpha = 2.28 \\times 1 \\times 0.1 = 0.228\\degree$. But question asks for specific rotation of mixture.\n6. Specific rotation of mixture $[\\alpha]_{mix} = ee \\times [\\alpha]_{pure} = 0.60 \\times (+3.8) = +2.28\\degree$.\n\n**Answer:** Specific rotation of mixture = **+2.28\\u00b0** (or $+2.3\\u00b0$). Enantiomeric excess = 60%.",
     "**Problem 4:** An organic compound $C_5H_{10}O$ shows geometrical isomerism and has a chiral center. Draw its structure and name all stereoisomers.\n\n**Solution:**\n1. $C_5H_{10}O$: DBE = 5 - 10/2 + 1 = 1. One DBE \\u2192 could be C=C or ring + OH/aldehyde/ketone.\n2. Needs geometrical isomerism \\u2192 C=C with two different groups on each carbon.\n3. Needs chiral center \\u2192 $sp^3$ carbon with 4 different groups.\n4. Candidate: **Pent-3-en-2-ol** ($CH_3CH=CHCH(OH)CH_3$).\n   - C=C at C-3/C-4: C-3 has H and CH3; C-4 has H and CH(OH)CH3. Two different groups on each \\u2192 **E/Z isomerism**.\n   - C-2 (CH(OH)CH3) has H, OH, CH3, CH=CHCH3 \\u2192 **four different groups** \\u2192 chiral center.\n5. Stereoisomers: 2 (E/Z) \\u00d7 2 (R/S at C-2) = **4 stereoisomers**.\n   - (3E,2R)-pent-3-en-2-ol\n   - (3E,2S)-pent-3-en-2-ol\n   - (3Z,2R)-pent-3-en-2-ol\n   - (3Z,2S)-pent-3-en-2-ol\n6. (E,2R) and (E,2S) are enantiomers. (Z,2R) and (Z,2S) are enantiomers. Cross pairs are diastereomers.\n\n**Answer:** Pent-3-en-2-ol. Four stereoisomers: (E,R), (E,S), (Z,R), (Z,S). Two enantiomeric pairs.",
     "**Problem 5:** 2.5 g of a chiral compound was dissolved in 50 mL solvent and placed in a 2 dm polarimeter tube. The observed rotation was +0.75\\u00b0. The pure enantiomer has $[\\alpha]_D = +15.0\\u00b0$. Calculate the enantiomeric excess and the mass of each enantiomer in the sample.\n\n**Solution:**\n1. Concentration $c = 2.5 / 50 = 0.05$ g/mL.\n2. Path length $l = 2$ dm.\n3. Observed rotation $\\alpha = +0.75\\u00b0$.\n4. Specific rotation of sample: $[\\alpha]_{sample} = \\frac{\\alpha}{l \\times c} = \\frac{0.75}{2 \\times 0.05} = \\frac{0.75}{0.1} = +7.5\\u00b0$.\n5. Enantiomeric excess: $ee = \\frac{[\\alpha]_{sample}}{[\\alpha]_{pure}} \\times 100 = \\frac{7.5}{15.0} \\times 100 = 50\\%$.\n6. Let $x$ = mass of major enantiomer, $y$ = mass of minor. $x + y = 2.5$, $x - y = ee \\times 2.5 = 1.25$.\n7. Solving: $2x = 3.75 \\Rightarrow x = 1.875$ g. $y = 2.5 - 1.875 = 0.625$ g.\n\n**Answer:** Enantiomeric excess = 50%. Major enantiomer = 1.875 g, minor enantiomer = 0.625 g.",
     "**Problem 6:** Which of the following show optical isomerism? Explain.\n(a) 2-Chlorobutane  (b) 1-Chlorobutane  (c) 2,3-Dichlorobutane  (d) 1,2-Dichlorocyclopropane\n\n**Solution:**\n(a) **2-Chlorobutane ($CH_3CHClCH_2CH_3$):** C-2 has H, Cl, CH3, CH2CH3 \\u2192 **four different groups** \\u2192 **chiral** \\u2192 shows optical isomerism (enantiomers).\n\n(b) **1-Chlorobutane ($CH_2ClCH_2CH_2CH_3$):** C-1 has two H atoms (CH2Cl) \\u2192 **not a chiral center**. No other chiral centers \\u2192 **achiral** \\u2192 no optical isomerism.\n\n(c) **2,3-Dichlorobutane ($CH_3CHClCHClCH_3$):** Two chiral centers (C-2, C-3). Exists as **three stereoisomers**: (2R,3R) and (2S,3S) = enantiomeric pair (optically active); meso-(2R,3S) = optically inactive. **Shows optical isomerism** (the enantiomeric pair).\n\n(d) **1,2-Dichlorocyclopropane:** Two chiral centers. **Cis isomer** = meso (plane of symmetry) \\u2192 optically inactive. **Trans isomer** = no symmetry \\u2192 chiral, exists as enantiomeric pair (1R,2R) and (1S,2S) \\u2192 **shows optical isomerism**.\n\n**Answer:** (a) Yes, (b) No, (c) Yes (enantiomeric pair), (d) Yes (trans enantiomers only)."
@@ -43,10 +43,140 @@
   "universalFacts": [
     "The **first resolution of enantiomers** was performed by **Louis Pasteur in 1848** at age 25. He manually separated left- and right-handed crystals of sodium ammonium tartrate with tweezers under a microscope, proving molecular chirality. This founded stereochemistry.",
     "Over **50% of modern drugs** are chiral, and ~90% of new chiral drugs are marketed as single enantiomers. The 'chiral switch' strategy (re-developing racemic drugs as single enantiomers) has created blockbusters: esomeprazole (Nexium, $6B/yr), levocetirizine (Xyzal), dexlansoprazole.",
-    "Life uses **exclusively L-amino acids** and **D-sugars**. The origin is unknown \u2014 hypotheses include: circularly polarized light from neutron stars, weak nuclear force parity violation (tiny energy difference ~10\\u207b\\u00b9\\u2077 kT), autocatalytic amplification, or chance in a 'RNA world'. This is one of science's great unsolved mysteries.",
+    "Life uses **exclusively L-amino acids** and **D-sugars**. The origin is unknown — hypotheses include: circularly polarized light from neutron stars, weak nuclear force parity violation (tiny energy difference ~10\\u207b\\u00b9\\u2077 kT), autocatalytic amplification, or chance in a 'RNA world'. This is one of science's great unsolved mysteries.",
     "**Specific rotation** is the standard quality control for sugar purity in the sugar industry. Sucrose: $[\\alpha]_D = +66.5\\u00b0$. Glucose: $+52.7\\u00b0$. Fructose: $-92.4\\u00b0$. **Invert sugar** (hydrolyzed sucrose) has negative rotation due to excess fructose. 'Inversion' = change in sign of rotation. Polarimeters on production lines monitor this in real-time.",
     "The **thalidomide tragedy** transformed drug regulation. Marketed as racemic sedative (1957-1961), caused >10,000 birth defects. The (S)-enantiomer is teratogenic; (R)-enantiomer is therapeutic. But in vivo, they **interconvert** (racemize at chiral center via enolization). Modern FDA requires **enantiomeric purity data** and **chiral toxicology** for all new chiral drugs."
   ],
   "animation3D": "fundamental-principles-of-organic-chemistry",
-  "motionGraphics": "fundamental-principles-of-organic-chemistry"
+  "motionGraphics": "fundamental-principles-of-organic-chemistry",
+  "examples": [
+    "Example 1: Real-world application of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Example 2: Practical demonstration of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) concepts",
+    "Example 3: Numerical problem on Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Example 4: Diagram-based question on Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Example 5: Application in daily life involving Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) with suitable example.",
+    "Q2. Solve problems related to Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form).",
+    "Q3. Differentiate between various aspects of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form).",
+    "Q4. Derive the key formula related to Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form).",
+    "Q5. What are the applications of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Formula 2: Mathematical expression of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Formula 3: Application formula for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Formula 4: Derivation result for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Formula 5: Important relation in Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Point 2: Essential theorem or principle related to Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Point 3: Important condition or constraint for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Point 4: Common applications of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) applies",
+    "Note 2: Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Note 4: Remember the units and dimensions involved in Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Note 5: Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Statement 2: Theorem related to Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Statement 3: Condition for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) to be valid",
+    "Statement 4: Principle governing Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Statement 5: Corollary or consequence of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)"
+  ],
+  "importantNotes": [
+    "Note 1: Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Note 3: Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Note 5: Cross-check your answers using alternative methods for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) formula",
+    "Trick 2: Elimination technique for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) MCQs",
+    "Trick 3: Dimensional analysis shortcut for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Trick 4: Memory aid for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) formulas",
+    "Trick 5: Time-saving approach for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Exam Tip 2: Practice previous year questions on Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Exam Tip 3: Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) thoroughly",
+    "Exam Tip 5: Review common mistakes related to Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form), which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Concept 2: Key theorem or principle in Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Concept 3: Important application area of Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Concept 4: Fundamental relationship in Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Concept 5: Connection between Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Task 2: Derive the main formula for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Task 3: Create a concept map for Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Task 4: Practice previous year exam questions on Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Task 5: Explain Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) to a peer or study group"
+  ]
 }
