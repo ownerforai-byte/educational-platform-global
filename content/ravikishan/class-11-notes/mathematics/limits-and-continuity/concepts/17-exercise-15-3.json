@@ -1,0 +1,42 @@
+{
+  "title": "Exercise 15.3: Continuity and Discontinuity",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "exercise-15-3",
+  "topicTitle": "Continuity of Functions",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-continuity-ex",
+  "notes": [
+    "**Topic focus:** Checking continuity and identifying types of discontinuities.",
+    "**Three-condition test:** Verify all three conditions: f(a) defined, limit exists, limit equals f(a).",
+    "**Common problem types:** Piecewise functions, rational functions, absolute value functions.",
+    "**Identifying discontinuities:** Classify as removable, jump, or infinite based on limit behavior.",
+    "**Continuity on intervals:** A function is continuous on [a,b] if continuous at every point.",
+    "**Example type 1:** Check continuity of f(x) = (x²-1)/(x-1) at x = 1 (removable discontinuity).",
+    "**Example type 2:** Check continuity of piecewise function at boundary points.",
+    "**Example type 3:** Find values of constants that make a function continuous.",
+    "**Practice source:** Exercise 15.3 with continuity problems and detailed solutions."
+  ],
+  "confusion": [
+    "Don't forget to check all THREE conditions — missing any one means discontinuity.",
+    "For piecewise functions, always check both LHL and RHL at boundary points separately.",
+    "Confusing continuity with differentiability — a function can be continuous but not differentiable.",
+    "Not checking if f(a) is defined before evaluating the limit.",
+    "Assuming rational functions are continuous everywhere without checking denominator zeros."
+  ],
+  "practice": [
+    "Determine the values of k that make f(x) = {x²+k if x≤1, 2x+1 if x>1} continuous at x = 1.",
+    "Check continuity of f(x) = ⌊x⌋ (greatest integer function) at integer points.",
+    "Find all points of discontinuity of f(x) = 1/(x²-4) and classify them.",
+    "Show that f(x) = |x-2| is continuous everywhere but not differentiable at x = 2.",
+    "Determine k and m so that f(x) = {kx+1 if x≤2, mx²-1 if x>2} is continuous everywhere."
+  ],
+  "universalFacts": [
+    "Continuity is preserved under addition, subtraction, multiplication, and composition of functions.",
+    "Polynomial functions are continuous everywhere — a fundamental result in analysis.",
+    "The intermediate value theorem requires continuity on a closed interval.",
+    "Continuous functions on closed intervals achieve maximum and minimum values (extreme value theorem).",
+    "Understanding continuity is essential for understanding derivatives and integrals."
+  ],
+  "animation3D": "limits-and-continuity-continuity-ex",
+  "motionGraphics": "limits-and-continuity-continuity-ex"
+}
