@@ -270,7 +270,7 @@ class InternalProvider implements AIProvider {
 class GeminiProvider implements AIProvider {
   name = "gemini";
   private apiKey: string;
-  private model = "gemini-3.6-flash";
+  private model = "gemini-2.5-flash";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;

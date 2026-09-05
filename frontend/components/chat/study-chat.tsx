@@ -133,10 +133,10 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
 
     try {
       if (isLoggedIn) {
-        const res = await chat([...messages, userMsg], "agnes");
+        const res = await chat([...messages, userMsg]);
         setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
       } else {
-        const res = await guestChat([...messages, userMsg], "agnes");
+        const res = await guestChat([...messages, userMsg]);
         setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
         if (typeof window !== "undefined") {
           const next = guestCount + 1;

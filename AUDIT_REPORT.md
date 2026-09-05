@@ -1,7 +1,7 @@
 # Codebase Audit Report
 
 **Date:** 2026-09-04  
-**Scope:** `rn/` monorepo — frontend, backend, scripts, content-tools, deploy, agent-pipeline, physicshub.github.io  
+**Scope:** `rn/` monorepo — frontend, backend, scripts, content-tools, deploy, physicshub.github.io  
 **Lines of code:** ~450k (TypeScript/TSX)  
 **Method:** Parallel agents + direct reads + targeted grep passes  
 
@@ -207,43 +207,6 @@ No functional harm, but confusing and risks future drift if one is changed and t
 user www-data;  # Linux only — crashes on Windows with "unknown user"
 ```
 Wrap with `# Linux:` comment or use a platform guard if the config is ever tested cross-platform.
-
-### 23. Missing `set -e` in router shell script
-
-**`agent-pipeline/router.sh`** — Line 18  
-Without `set -e`, a failed agent step is silently ignored and the pipeline continues. Risk of partial/consistent runs going unnoticed.
-
-### 24. Unquoted variable in shell script
-
-**`agent-pipeline/router.sh`** — Line 57  
-```bash
-if [ $STATUS != "ok" ]; then  # Breaks if $STATUS contains spaces
-```
-Should be `if [ "$STATUS" != "ok" ]; then`.
-
-### 25. Hardcoded `/tmp` lock path
-
-**`agent-pipeline/lib/lock.sh`** — Line 16  
-```bash
-LOCKFILE="/tmp/audit.lock"  # No /tmp on Windows
-```
-Use `$TMPDIR` or a platform-aware path.
-
-### 26. Truncated output from agent log reading
-
-**`agent-pipeline/lib/agents.sh`** — Line 101  
-```bash
-head -n 250 "$log"  # Silently truncates logs longer than 250 lines
-```
-Important error details at the end of long logs will be missed.
-
-### 27. GNU-specific `\b` word boundaries in grep
-
-**`agent-pipeline/lib/agents.sh`** — Lines 81, 95  
-```bash
-grep -E "\b$1\b"  # \b is not POSIX; fails on macOS/BSD grep
-```
-Use `grep -w` instead for portable word-boundary matching.
 
 ---
 

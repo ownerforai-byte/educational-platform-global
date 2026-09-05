@@ -605,43 +605,6 @@ ravikishan/
 ├── .cursor/
 ├── .vscode/
 │   └── settings.json
-├── agent-pipeline/
-│   ├── bin/
-│   │   ├── agnes
-│   │   ├── claude
-│   │   ├── entry.sh
-│   │   └── kilo
-│   ├── lib/
-│   │   ├── agents.sh
-│   │   └── lock.sh
-│   ├── logs/
-│   │   ├── .gitkeep
-│   │   ├── 20260831_212245_implementer_kilocode.log
-│   │   ├── 20260831_212400_implementer_kilocode.log
-│   │   ├── 20260831_212400_planner_claude.log
-│   │   ├── 20260831_213602_generator_mistral.log
-│   │   ├── 20260831_213945_generator_mistral.log
-│   │   ├── 20260831_214406_generator_mistral.log
-│   │   ├── 20260831_215522_planner_claude.log
-│   │   ├── 20260831_215522_verifier_agnes.log
-│   │   ├── 20260831_215729_generator_mistral.log
-│   │   ├── 20260831_224535_verifier_agnes.log
-│   │   ├── 20260831_224941_planner_claude.log
-│   │   ├── 20260831_224941_verifier_agnes.log
-│   │   ├── 20260831_225023_planner_claude.log
-│   │   ├── 20260831_225023_verifier_agnes.log
-│   │   ├── 20260901_003742_generator_mistral.log
-│   │   ├── 20260901_003742_implementer_kilocode.log
-│   │   └── router.log
-│   ├── rules/
-│   │   ├── generator.md
-│   │   ├── implementer.md
-│   │   ├── overseer.md
-│   │   ├── planner.md
-│   │   └── verifier.md
-│   ├── README.md
-│   ├── router.sh
-│   └── TASKS.md
 ├── db/
 │   ├── schema.ts
 │   └── seed.ts
