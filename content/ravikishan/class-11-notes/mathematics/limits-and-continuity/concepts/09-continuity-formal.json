@@ -1,0 +1,41 @@
+{
+  "title": "Continuity at a Point (Formal Definition)",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "continuity-formal",
+  "topicTitle": "Continuity at a Point",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-formal",
+  "notes": [
+    "**Formal definition:** A function f(x) is continuous at x = a if three conditions are satisfied.",
+    "**Condition 1:** f(a) is defined (the function exists at x = a).",
+    "**Condition 2:** lim(x→a) f(x) exists (both left and right limits exist and are equal).",
+    "**Condition 3:** lim(x→a) f(x) = f(a) (the limit equals the function value).",
+    "**All three conditions must be met** for continuity at a point — failure of any one means discontinuity.",
+    "**Continuity on an interval:** f is continuous on [a,b] if it's continuous at every point in the interval.",
+    "**Algebraic continuity:** Polynomials, rational functions (where defined), trig functions, exponential functions are continuous on their domains.",
+    "**Breaking continuity:** Discontinuities occur when any of the three conditions fail."
+  ],
+  "confusion": [
+    "Continuity at a point requires all THREE conditions — missing even one means the function is discontinuous there.",
+    "f(a) existing is necessary but not sufficient — the limit must also exist and equal f(a).",
+    "Don't confuse continuity with differentiability — all differentiable functions are continuous, but not vice versa.",
+    "A function can be continuous on an interval but discontinuous at the endpoints if defined appropriately.",
+    "The formal definition uses limits, connecting continuity directly to the limit concept."
+  ],
+  "practice": [
+    "Show that f(x) = x² + 2x - 1 is continuous at x = 3 by verifying all three conditions.",
+    "For f(x) = {x+1 if x≠2, 5 if x=2}, check continuity at x = 2. Which condition fails?",
+    "Determine if g(x) = 1/(x-1) is continuous at x = 1. Explain which condition(s) fail.",
+    "Prove that h(x) = √x is continuous at x = 4 using the formal definition.",
+    "Find the value of k that makes f(x) = {x²+k if x≤2, 3x-1 if x>2} continuous at x = 2."
+  ],
+  "universalFacts": [
+    "The formal definition of continuity was refined by Cauchy in the 19th century.",
+    "Continuous functions preserve limits: if xₙ → a, then f(xₙ) → f(a).",
+    "The composition of continuous functions is continuous — a fundamental property.",
+    "Continuous functions on closed intervals have the intermediate value property.",
+    "Most elementary functions encountered in calculus are continuous on their domains."
+  ],
+  "animation3D": "limits-and-continuity-formal",
+  "motionGraphics": "limits-and-continuity-formal"
+}
