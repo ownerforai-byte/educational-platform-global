@@ -1,0 +1,42 @@
+{
+  "title": "Exercise 15.1: Limits of Algebraic Functions",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "exercise-15-1",
+  "topicTitle": "Limits of Normal (Algebraic) Functions",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-algebraic",
+  "notes": [
+    "**Topic focus:** Finding limits of polynomial and rational functions.",
+    "**Polynomial limits:** For polynomial p(x), lim(x→a) p(x) = p(a) — simply substitute.",
+    "**Rational function limits:** For rational function p(x)/q(x), substitute if q(a) ≠ 0.",
+    "**Indeterminate forms:** If substitution gives 0/0, factor and simplify before evaluating.",
+    "**Common techniques:** Factoring, rationalization, dividing by highest power of x.",
+    "**Example type 1:** lim(x→2) (x²-4)/(x-2) = lim(x→2) (x+2) = 4 after factoring.",
+    "**Example type 2:** lim(x→∞) (3x²+2x)/(2x²-1) = 3/2 by dividing by x².",
+    "**Connection:** These techniques use the standard limits and algebraic manipulation.",
+    "**Practice source:** Exercise 15.1 from the textbook with detailed solutions available."
+  ],
+  "confusion": [
+    "Direct substitution only works when the function is defined at the point — check for 0/0 first.",
+    "Don't forget to factor completely before canceling — partial factoring leads to errors.",
+    "For limits at infinity, divide by the highest power of x in the denominator.",
+    "Confusing lim(x→∞) with lim(x→a): the techniques are different for each case.",
+    "Don't apply L'Hôpital's rule here — use algebraic manipulation as intended at this level."
+  ],
+  "practice": [
+    "Evaluate lim(x→3) (x²-9)/(x-3) by factoring.",
+    "Find lim(x→0) (√(1+x)-1)/x by rationalizing the numerator.",
+    "Evaluate lim(x→2) (x³-8)/(x-2) using difference of cubes factorization.",
+    "Find lim(x→∞) (5x²+3x-1)/(2x²-x+4) by dividing by highest power.",
+    "Evaluate lim(x→-1) (x⁴-1)/(x+1) using factorization."
+  ],
+  "universalFacts": [
+    "Polynomial functions are continuous everywhere, so direct substitution always works.",
+    "Rational functions are continuous except where the denominator equals zero.",
+    "The factorization technique works because (x-a) is a factor of p(x)-p(a).",
+    "Limits at infinity reveal horizontal asymptotes of rational functions.",
+    "These algebraic limit techniques form the foundation for understanding derivatives."
+  ],
+  "animation3D": "limits-and-continuity-algebraic",
+  "motionGraphics": "limits-and-continuity-algebraic"
+}
