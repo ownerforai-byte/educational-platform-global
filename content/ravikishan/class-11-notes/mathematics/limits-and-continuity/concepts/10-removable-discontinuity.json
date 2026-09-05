@@ -1,0 +1,41 @@
+{
+  "title": "Types of Discontinuity: Removable",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "removable-discontinuity",
+  "topicTitle": "Removable Discontinuity",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-removable",
+  "notes": [
+    "**Definition:** A removable discontinuity occurs when lim(x→a) f(x) exists but either f(a) is undefined or f(a) ≠ lim(x→a) f(x).",
+    "**Key characteristic:** The limit exists (LHL = RHL), but the function value doesn't match or isn't defined.",
+    "**Removable aspect:** The discontinuity can be 'removed' by redefining f(a) to equal the limit value.",
+    "**Condition:** lim(x→a) f(x) exists but lim(x→a) f(x) ≠ f(a), or f(a) is not defined.",
+    "**Graphical appearance:** A hole or gap in the graph at x = a, with the curve approaching the same point from both sides.",
+    "**Example:** f(x) = (x²-4)/(x-2) has a removable discontinuity at x = 2 (hole at (2,4)).",
+    "**Fix:** Define f(2) = 4 to make the function continuous at x = 2.",
+    "**Distinction:** Different from jump and infinite discontinuities where the limit doesn't exist."
+  ],
+  "confusion": [
+    "Don't confuse removable discontinuities with jump discontinuities — in removable cases, the limit exists.",
+    "A hole in the graph doesn't always mean removable — check if LHL = RHL first.",
+    "Removable doesn't mean 'easily fixed' — it refers to the mathematical property that redefining one point creates continuity.",
+    "Don't confuse with infinite discontinuities where the limit approaches ±∞.",
+    "The function may be undefined at the point, but that alone doesn't guarantee removability — the limit must exist."
+  ],
+  "practice": [
+    "Show that f(x) = (x²-4)/(x-2) has a removable discontinuity at x = 2 and define f(2) to make it continuous.",
+    "For f(x) = sin(x)/x, identify the removable discontinuity and define f(0) appropriately.",
+    "Determine if g(x) = {x² for x≠1, 3 for x=1} has a removable discontinuity at x = 1.",
+    "Find all removable discontinuities of h(x) = (x³-1)/(x-1).",
+    "Explain why f(x) = 1/x has a non-removable discontinuity at x = 0."
+  ],
+  "universalFacts": [
+    "Removable discontinuities are the 'mildest' type of discontinuity — they can be fixed by redefinition.",
+    "In complex analysis, removable singularities have special significance in function theory.",
+    "Many apparent discontinuities in formulas turn out to be removable upon simplification.",
+    "The concept extends to higher dimensions where removable singularities are studied in several complex variables.",
+    "In numerical analysis, understanding removable discontinuities helps avoid computational errors."
+  ],
+  "animation3D": "limits-and-continuity-removable",
+  "motionGraphics": "limits-and-continuity-removable"
+}
