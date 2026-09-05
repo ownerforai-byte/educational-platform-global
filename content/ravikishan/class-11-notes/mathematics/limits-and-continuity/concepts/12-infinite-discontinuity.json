@@ -1,0 +1,41 @@
+{
+  "title": "Types of Discontinuity: Infinite",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "infinite-discontinuity",
+  "topicTitle": "Infinite Discontinuity",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-infinite",
+  "notes": [
+    "**Definition:** An infinite discontinuity occurs when one or both one-sided limits approach infinity or negative infinity.",
+    "**Condition:** lim(x→a⁻) f(x) = ±∞ or lim(x→a⁺) f(x) = ±∞ (or both).",
+    "**Key feature:** The function grows without bound near x = a — there's a vertical asymptote.",
+    "**Limit behavior:** The limit does not exist in the finite sense, but we describe the behavior as approaching ±∞.",
+    "**Graphical appearance:** The curve shoots upward or downward toward infinity as it approaches x = a from one or both sides.",
+    "**Example:** f(x) = 1/x² has an infinite discontinuity at x = 0: both LHL and RHL approach +∞.",
+    "**Asymptotes:** Infinite discontinuities are associated with vertical asymptotes at x = a.",
+    "**Non-removable:** Cannot be fixed by redefinition — the unbounded behavior is intrinsic to the function."
+  ],
+  "confusion": [
+    "Don't confuse infinite discontinuities with jump discontinuities — in infinite cases, at least one limit is unbounded.",
+    "'Approaching infinity' means the limit doesn't exist as a finite number, but we use ∞ notation to describe the behavior.",
+    "A function can have different infinite behaviors from left and right (e.g., +∞ from left, -∞ from right).",
+    "Infinite discontinuities are not the same as holes — holes have finite limits but undefined function values.",
+    "The function may be defined at x = a even with an infinite discontinuity nearby (e.g., f(0) = 0 for 1/x with f(0)=0)."
+  ],
+  "practice": [
+    "Find lim(x→0⁺) 1/x and lim(x→0⁻) 1/x. What type of discontinuity is this at x = 0?",
+    "For f(x) = 1/(x-2)², determine the infinite discontinuity at x = 2 and describe the behavior from both sides.",
+    "Show that f(x) = tan(x) has infinite discontinuities at x = π/2 + nπ for integer n.",
+    "Analyze g(x) = ln(x) for infinite discontinuities and describe the behavior as x → 0⁺.",
+    "Explain why f(x) = 1/x³ has an infinite discontinuity at x = 0 with different behaviors from left and right."
+  ],
+  "universalFacts": [
+    "Infinite discontinuities are common in rational functions where the denominator equals zero.",
+    "In physics, infinite discontinuities model idealized situations like point charges or singularities.",
+    "The study of infinite discontinuities led to the development of improper integrals in calculus.",
+    "In complex analysis, infinite discontinuities are called poles and are classified by order.",
+    "Vertical asymptotes are graphical representations of infinite discontinuities."
+  ],
+  "animation3D": "limits-and-continuity-infinite",
+  "motionGraphics": "limits-and-continuity-infinite"
+}
