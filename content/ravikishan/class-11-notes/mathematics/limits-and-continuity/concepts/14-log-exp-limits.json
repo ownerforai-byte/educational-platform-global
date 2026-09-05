@@ -1,0 +1,41 @@
+{
+  "title": "Limits of Logarithmic and Exponential Functions",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "log-exp-limits",
+  "topicTitle": "Limits of Logarithmic and Exponential Functions",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-logexp",
+  "notes": [
+    "**Standard exponential limit:** lim(x→0) (eˣ - 1)/x = 1.",
+    "**General exponential limit:** lim(x→0) (aˣ - 1)/x = ln(a) for a > 0, a ≠ 1.",
+    "**Standard logarithmic limit:** lim(x→0) ln(1+x)/x = 1.",
+    "**Euler's number limit:** lim(x→∞) (1 + 1/x)ˣ = e ≈ 2.71828.",
+    "**Key formulas:** These require knowledge of logarithmic and exponential function properties.",
+    "**Special case:** When a = e, the limit (eˣ-1)/x → 1 is the most commonly used form.",
+    "**Applications:** These limits are essential for finding derivatives of exponential and logarithmic functions.",
+    "**Connection:** The number e appears naturally in growth and decay problems."
+  ],
+  "confusion": [
+    "Don't confuse lim(x→0) (eˣ-1)/x = 1 with lim(x→0) (aˣ-1)/x = ln(a) — the latter depends on the base.",
+    "The limit ln(1+x)/x → 1 requires the argument to be (1+x), not just x.",
+    "lim(x→∞) (1+1/x)ˣ = e is different from lim(x→∞) (1+x)¹/ˣ = 1.",
+    "For the general exponential limit, ln(a) appears in the result — this is the natural logarithm.",
+    "These limits assume x approaches 0, not other values."
+  ],
+  "practice": [
+    "Evaluate lim(x→0) (e²ˣ - 1)/x using the standard exponential limit.",
+    "Find lim(x→0) (3ˣ - 1)/x using the general exponential limit formula.",
+    "Evaluate lim(x→0) ln(1+2x)/x using the standard logarithmic limit.",
+    "Find lim(x→∞) (1 + 2/x)ˣ using the Euler's number limit.",
+    "Evaluate lim(x→0) (eˣ - 1)/sin(x) by combining standard limits."
+  ],
+  "universalFacts": [
+    "The number e is defined in part by this limit: e = lim(x→∞) (1+1/x)ˣ.",
+    "Exponential limits are fundamental in compound interest calculations and population growth models.",
+    "These limits lead directly to the derivatives: d/dx[eˣ] = eˣ and d/dx[ln(x)] = 1/x.",
+    "Natural logarithm and exponential functions are inverse functions, reflected in their limit properties.",
+    "In physics, exponential limits model radioactive decay and cooling processes."
+  ],
+  "animation3D": "limits-and-continuity-logexp",
+  "motionGraphics": "limits-and-continuity-logexp"
+}
