@@ -829,9 +829,10 @@ export class AIService {
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: agnes → gemini → internal
+    // Preferred order: agnes → openrouter → gemini → internal
     const chain: AIProvider[] = [];
     if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
+    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
     chain.push(this.providers.get("internal")!);
 
@@ -855,9 +856,10 @@ export class AIService {
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: agnes → gemini → internal
+    // Preferred order: agnes → openrouter → gemini → internal
     const chain: AIProvider[] = [];
     if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
+    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
     chain.push(this.providers.get("internal")!);
 
