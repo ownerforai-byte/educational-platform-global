@@ -81,10 +81,11 @@ router.post(
       const requestedCount = Math.min(Math.max(count, 1), 20);
       const aiService = getService();
 
-      // Fetch syllabus context from Supabase
+      // Fetch syllabus context from Supabase with KEY TERMS extraction
       let subjectContext = "";
       let chapterContext = "";
       let availableTopics: string[] = [];
+      let keyTermsContext = ""; // New: Extract key vocabulary for each topic
 
       try {
         // Step 1: get subject to confirm it exists and get its name
@@ -108,6 +109,8 @@ router.post(
         const chaptersList = (chRes.data ?? []) as DbChapter[];
 
         chapterContext = "Chapters and topics in this subject:\n";
+        keyTermsContext = "Key terms and vocabulary by topic (for question generation):\n";
+
         for (const ch of chaptersList) {
           chapterContext += `\n📖 ${ch.title}`;
           if (ch.description) chapterContext += `\n   ${ch.description}`;
@@ -119,8 +122,22 @@ router.post(
             .eq("is_active", true);
           const topicsList = (tpRes.data ?? []) as DbTopic[];
           for (const tp of topicsList) {
-            chapterContext += `\n   • ${tp.title}${tp.description ? ` — ${tp.description}` : ""}`;
+            const termLine = `   • ${tp.title}${tp.description ? ` — ${tp.description}` : ""}`;
+            chapterContext += `\n${termLine}`;
             availableTopics.push(tp.title);
+
+            // Build key terms context: combine topic title and description into searchable terms
+            if (tp.description) {
+              const terms = tp.description
+                .split(/[,\s]+/)
+                .filter((w) => w.length > 3)
+                .map((w) => w.replace(/[^a-zA-Z0-9]/g, ""))
+                .slice(0, 15)
+                .join(", ");
+              if (terms) {
+                keyTermsContext += `\n📌 ${tp.title}: ${terms}`;
+              }
+            }
           }
         }
       } catch (dbErr) {
@@ -181,9 +198,18 @@ RULES:
 - Each question has exactly 4 options
 - correctIndex is 0-based (0=A, 1=B, 2=C, 3=D)
 - The correct answer must be unambiguously right
-- Explanation should be 1-2 sentences, clear and educational
+- Explanation should be 2-3 sentences, clear and educational
 - Topics should match NEB (+2) curriculum accurately
-- Never reuse the exact same question across difficulties`;
+- Never reuse the exact same question across difficulties
+
+CRITICAL REQUIREMENTS FOR QUESTION QUALITY:
+1. CONCERNED TERMS: Every question MUST include at least one key technical term from the syllabus in either the question stem OR the options. Look at the "Key terms" section below to identify terms for each topic.
+2. INTERNAL-EXTERNAL CONNECTION: Each question should connect internal syllabus knowledge with real-world applications or external contexts (e.g., daily life examples, current events, natural phenomena, technological applications).
+3. DETAILED EXPLANATIONS: The explanation must:
+   - State WHY the correct answer is right
+   - Explain WHY the other options are wrong (briefly)
+   - Include a real-world example or analogy when possible
+   - Be comprehensive enough to reinforce learning`;
 
       const userPrompt = `Generate ${requestedCount} NEB (+2) multiple-choice questions.
 
@@ -192,7 +218,21 @@ Subject: ${subjectSlug}
 Difficulty: ${difficulty}
 ${topicContext}
 
-${difficultyInstructions[difficulty]}`;
+${difficultyInstructions[difficulty]}
+
+${keyTermsContext ? `IMPORTANT KEY TERMS TO USE:\n${keyTermsContext}` : "Use standard syllabus terminology from the subject."}
+
+**EXTERNAL CONTENT CONTEXT** — Connect each question to real-world applications:
+- Physics: Real phenomena (lightning, GPS, nuclear energy, bridges), technology (MRI, fiber optics, solar panels)
+- Chemistry: Daily life (cooking, cleaning, medicines), industry (fertilizers, polymers, pharmaceuticals)
+- Biology: Health (vaccines, genetics, ecosystems), biotechnology (GMOs, cloning, PCR)
+- Mathematics: Real problems (architecture, finance, cryptography, data analysis)
+
+Make sure each question:
+1. Includes at least ONE key technical term from the "IMPORTANT KEY TERMS" section above
+2. Connects to a real-world example or external context
+3. Has a detailed explanation (2-3 sentences minimum) that explains why correct/incorrect
+`;
 
       const messages: AIChatMessage[] = [
         { role: "system", content: systemPrompt },
