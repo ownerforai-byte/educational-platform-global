@@ -1,0 +1,41 @@
+{
+  "title": "Continuity of a Function (Intuitive Definition)",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "continuity-intuitive",
+  "topicTitle": "Continuity of a Function (Intuitive)",
+  "relevance": 100,
+  "simulation": "limits-and-continuity-continuity",
+  "notes": [
+    "**Intuitive definition:** A function f is continuous on an interval [a,b] if its graph is a smooth curve without any breaks in that interval.",
+    "**Visual interpretation:** The curve can be drawn by continuous motion of a pencil without lifting it from the paper.",
+    "**Contrast with discontinuity:** A discontinuous function has breaks, jumps, or holes in its graph.",
+    "**Key requirement:** There are no abrupt changes, gaps, or undefined points in the interval.",
+    "**Examples of continuous functions:** Polynomials, sine, cosine, exponential functions are continuous everywhere.",
+    "**Examples of discontinuous functions:** Functions with vertical asymptotes or jump discontinuities.",
+    "**Physical analogy:** Continuous motion vs. teleportation — continuous functions have no 'jumps' in value.",
+    "**Mathematical basis:** Intuitive continuity leads to the formal definition involving limits."
+  ],
+  "confusion": [
+    "Intuitive continuity is not the same as formal continuity — the intuitive version lacks precision.",
+    "A function can look continuous but have a removable discontinuity (hole) that's hard to see.",
+    "Don't confuse continuity with differentiability — continuous functions may not be smooth (e.g., |x| at 0).",
+    "Intervals matter — a function can be continuous on [a,b] but discontinuous outside that interval.",
+    "Visual inspection can be misleading; formal limit conditions are needed for rigorous analysis."
+  ],
+  "practice": [
+    "Sketch a function that appears continuous but has a removable discontinuity at x = 2.",
+    "Identify which of these are continuous on ℝ: f(x) = x², g(x) = 1/x, h(x) = |x|.",
+    "Explain why the graph of y = sin(x) is continuous everywhere using the intuitive definition.",
+    "Draw a piecewise function that is discontinuous at x = 0 but continuous everywhere else.",
+    "Describe a real-world situation that exhibits continuous change versus discontinuous change."
+  ],
+  "universalFacts": [
+    "Continuity is one of the most fundamental concepts in calculus and analysis.",
+    "Continuous functions have important properties: they achieve maximum and minimum values on closed intervals.",
+    "The intermediate value theorem applies to continuous functions on closed intervals.",
+    "Most physical quantities (temperature, position, velocity) vary continuously in nature.",
+    "Computer graphics use continuous functions to create smooth curves and surfaces."
+  ],
+  "animation3D": "limits-and-continuity-continuity",
+  "motionGraphics": "limits-and-continuity-continuity"
+}
