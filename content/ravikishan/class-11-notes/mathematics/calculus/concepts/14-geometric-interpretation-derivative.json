@@ -1,0 +1,34 @@
+{
+  "title": "Geometric Interpretation of Derivative",
+  "unitSlug": "calculus",
+  "topicSlug": "geometric-interpretation-derivative",
+  "topicTitle": "Geometric Interpretation of Derivative",
+  "relevance": 100,
+  "notes": [
+    "**Derivative definition:** f'(x) = lim(h→0) [f(x+h)-f(x)]/h = lim(Δx→0) Δy/Δx.",
+    "**Geometric meaning:** f'(a) is the slope of the tangent line to y=f(x) at x=a.",
+    "**Basic derivatives:** d/dx(xⁿ) = nxⁿ⁻¹, d/dx(sin x) = cos x, d/dx(cos x) = -sin x, d/dx(eˣ) = eˣ, d/dx(ln x) = 1/x.",
+    "**Product rule:** (fg)' = f'g + fg'.",
+    "**Quotient rule:** (f/g)' = (f'g - fg')/g².",
+    "**Chain rule:** d/dx[f(g(x))] = f'(g(x))·g'(x).",
+    "**Higher order derivatives:** f''(x) = d/dx[f'(x)], f'''(x) = d/dx[f''(x)], etc."
+  ],
+  "confusion": [
+    "Carefully distinguish between similar-looking concepts in geometric interpretation of derivative.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
+  ],
+  "practice": [
+    "Solve at least 5 problems on geometric interpretation of derivative from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the mathematics curriculum and appears consistently in examinations.",
+    "Understanding geometric interpretation of derivative builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of geometric interpretation of derivative span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "calculus",
+  "motionGraphics": "calculus"
+}

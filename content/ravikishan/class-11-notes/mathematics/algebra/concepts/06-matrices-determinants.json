@@ -1,0 +1,30 @@
+{
+  "title": "Matrices and Determinants",
+  "unitSlug": "algebra",
+  "topicSlug": "matrices-determinants",
+  "topicTitle": "Matrices and Determinants",
+  "relevance": 100,
+  "notes": [
+    "**Matrices and Determinants:** This topic covers the fundamental concepts of matrices and determinants in the mathematics curriculum.",
+    "Understanding matrices and determinants is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to matrices and determinants should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "Determinants only exist for SQUARE matrices (n×n). You cannot take the determinant of a 2×3 matrix.",
+    "det(A+B) ≠ det(A)+det(B) in general. Matrix operations do not distribute over determinants.",
+    "A⁻¹ exists ONLY if det(A) ≠ 0. A singular matrix (det=0) has no inverse."
+  ],
+  "practice": [
+    "If A = [[1,2],[3,4]], find det(A), adj(A), and A⁻¹.",
+    "Solve the system: 2x+3y=8, 4x-y=2 using matrix method.",
+    "If A = [[1,0,2],[0,1,1],[2,1,0]], find det(A) using cofactor expansion along first row.",
+    "Verify that (AB)ᵀ = BᵀAᵀ for A=[[1,2],[3,4]], B=[[0,1],[1,0]]."
+  ],
+  "universalFacts": [
+    "Matrices were independently discovered by Japanese mathematician Seki Kōwa (1683) and German mathematician Leibniz (1693).",
+    "Determinants are used to find areas of triangles, solve systems of equations, and in computer graphics for transformations.",
+    "The Cayley-Hamilton theorem states that every square matrix satisfies its own characteristic equation — a profound result."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra"
+}

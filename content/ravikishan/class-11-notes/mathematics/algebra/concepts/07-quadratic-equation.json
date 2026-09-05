@@ -1,0 +1,30 @@
+{
+  "title": "Quadratic Equation",
+  "unitSlug": "algebra",
+  "topicSlug": "quadratic-equation",
+  "topicTitle": "Quadratic Equation",
+  "relevance": 100,
+  "notes": [
+    "**Quadratic Equation:** This topic covers the fundamental concepts of quadratic equation in the mathematics curriculum.",
+    "Understanding quadratic equation is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to quadratic equation should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "The discriminant D=b²-4ac determines the NATURE of roots, not their values. Use the quadratic formula for values.",
+    "If D<0, roots are COMPLEX (not \"no roots\"). They come in conjugate pairs: a+bi and a-bi.",
+    "\"One root common\" is different from \"both roots common.\" Check carefully which case applies."
+  ],
+  "practice": [
+    "Find the nature of roots of 2x²-3x+5=0. Also find the roots.",
+    "If α,β are roots of x²-5x+6=0, form a quadratic equation whose roots are α² and β².",
+    "Find k if the equations x²-kx+12=0 and x²-kx+Kx-12=0 have a common root.",
+    "Solve: x²-7x+12≤0."
+  ],
+  "universalFacts": [
+    "The quadratic formula was known to Babylonian mathematicians over 4000 years ago.",
+    "The discriminant concept connects algebra to geometry: D>0 means the parabola crosses the x-axis twice, D=0 means it touches once, D<0 means it never touches.",
+    "Quadratic equations model projectile motion, area optimization, and many real-world situations."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra"
+}

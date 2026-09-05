@@ -1,0 +1,30 @@
+{
+  "title": "Logic and Set",
+  "unitSlug": "algebra",
+  "topicSlug": "logic-and-set",
+  "topicTitle": "Logic and Set",
+  "relevance": 100,
+  "notes": [
+    "**Logic and Set:** This topic covers the fundamental concepts of logic and set in the mathematics curriculum.",
+    "Understanding logic and set is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to logic and set should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "Do not confuse \"subset\" (⊆) with \"proper subset\" (⊂). A set IS a subset of itself, but NOT a proper subset.",
+    "Remember: ∅ ⊆ A for ALL sets A. The empty set is a subset of every set, including itself.",
+    "De Morgan's Laws: (A∪B)' = A'∩B' and (A∩B)' = A'∪B'. The complement DISTRIBUTES over the operation, flipping it."
+  ],
+  "practice": [
+    "Construct the truth table for (p∧q)→¬r and identify whether it is a tautology, contradiction, or contingency.",
+    "If A = {1,2,3,4,5} and B = {3,4,5,6,7}, find (i) A∪B, (ii) A∩B, (iii) A-B, (iv) B-A, (v) A'∩B' where U={1,2,...,7}.",
+    "Prove De Morgan's law: (A∪B)' = A'∩B'.",
+    "If n(A)=25, n(B)=40, n(A∪B)=55, find n(A∩B)."
+  ],
+  "universalFacts": [
+    "George Boole (1815-1864) developed Boolean algebra, the foundation of all digital computing.",
+    "Georg Cantor (1845-1918) founded set theory and discovered that some infinities are larger than others.",
+    "The concept of a function was formalized by Euler in the 18th century and is fundamental to all of mathematics."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra"
+}

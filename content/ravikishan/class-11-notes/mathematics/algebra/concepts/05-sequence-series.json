@@ -1,0 +1,30 @@
+{
+  "title": "Sequence and Series",
+  "unitSlug": "algebra",
+  "topicSlug": "sequence-series",
+  "topicTitle": "Sequence and Series",
+  "relevance": 100,
+  "notes": [
+    "**Sequence and Series:** This topic covers the fundamental concepts of sequence and series in the mathematics curriculum.",
+    "Understanding sequence and series is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to sequence and series should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "AP vs GP: In AP, you ADD a constant (d). In GP, you MULTIPLY by a constant (r).",
+    "The sum formula Sₙ = n/2[2a+(n-1)d] is for AP. Sₙ = a(rⁿ-1)/(r-1) is for GP. Don't mix them!",
+    "For infinite GP sum S∞ = a/(1-r), you MUST have |r|<1. If |r|≥1, the series diverges."
+  ],
+  "practice": [
+    "Find the 15th term and sum of first 15 terms of the AP: 3, 7, 11, 15, ...",
+    "The 3rd term of a GP is 12 and 6th term is 96. Find the GP and the sum of its first 6 terms.",
+    "Insert 3 geometric means between 3 and 48.",
+    "Find the sum to n terms of the series: 1·2·3 + 2·3·4 + 3·4·5 + ..."
+  ],
+  "universalFacts": [
+    "The story of young Gauss summing 1+2+3+...+100 in seconds is a famous anecdote in mathematics.",
+    "Geometric series appear in compound interest calculations, population growth models, and computer science (binary search analysis).",
+    "The harmonic series 1+1/2+1/3+... diverges (goes to infinity) even though its terms approach zero — a counterintuitive result."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra"
+}

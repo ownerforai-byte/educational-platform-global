@@ -1,0 +1,30 @@
+{
+  "title": "Complex Number",
+  "unitSlug": "algebra",
+  "topicSlug": "complex-number",
+  "topicTitle": "Complex Number",
+  "relevance": 100,
+  "notes": [
+    "**Complex Number:** This topic covers the fundamental concepts of complex number in the mathematics curriculum.",
+    "Understanding complex number is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to complex number should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "i = √(-1), so i² = -1. But √(-4) ≠ 2i — it equals 2i (principal square root). Be careful with √(a)·√(b) = √(ab) — this fails for negative a,b.",
+    "The modulus |z| is ALWAYS non-negative. |z| = √(a²+b²), not √(a²-b²).",
+    "Conjugate z̄ changes the sign of the IMAGINARY part only: if z=a+bi, then z̄=a-bi."
+  ],
+  "practice": [
+    "Express z = 3+4i in polar form.",
+    "Find the modulus and argument of z = -1+i√3.",
+    "Solve: z² + (1+i)z + i = 0.",
+    "If z = 2(cos π/6 + i sin π/6), find z³ using De Moivre's theorem."
+  ],
+  "universalFacts": [
+    "Cardano first encountered complex numbers while solving cubic equations in 1545, though he didn't understand them fully.",
+    "Gauss gave the first rigorous treatment of complex numbers and proved the Fundamental Theorem of Algebra.",
+    "Complex numbers are essential in electrical engineering (AC circuits), quantum mechanics, and signal processing."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra"
+}

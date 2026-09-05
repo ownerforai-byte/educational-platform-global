@@ -1,0 +1,30 @@
+{
+  "title": "Function: Domain and Range",
+  "unitSlug": "algebra",
+  "topicSlug": "function-domain-range",
+  "topicTitle": "Function: Domain and Range",
+  "relevance": 100,
+  "notes": [
+    "**Function: Domain and Range:** This topic covers the fundamental concepts of function: domain and range in the mathematics curriculum.",
+    "Understanding function: domain and range is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to function: domain and range should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "The domain is about INPUTS (x-values), the range is about OUTPUTS (y-values). Don't mix them up.",
+    "f(x) does NOT mean f times x. It means \"the value of function f at input x\".",
+    "For inverse functions: swap x and y, then solve for y. The domain of f becomes the range of f⁻¹ and vice versa."
+  ],
+  "practice": [
+    "Find the domain and range of f(x) = √(4-x²).",
+    "If f(x) = 2x+3 and g(x) = x², find (f∘g)(x) and (g∘f)(x). Are they equal?",
+    "Find the inverse of f(x) = (2x+1)/(x-3) and state its domain.",
+    "Determine whether f(x) = x³ is one-to-one and onto from ℝ to ℝ."
+  ],
+  "universalFacts": [
+    "The concept of a function is one of the most fundamental ideas in all of mathematics.",
+    "Functions model real-world relationships: distance vs time, cost vs quantity, temperature vs altitude.",
+    "The vertical line test determines whether a graph represents a function: if any vertical line crosses the graph more than once, it's not a function."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra"
+}

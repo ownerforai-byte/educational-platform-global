@@ -1,0 +1,34 @@
+{
+  "title": "Types of Discontinuity",
+  "unitSlug": "calculus",
+  "topicSlug": "types-of-discontinuity",
+  "topicTitle": "Types of Discontinuity",
+  "relevance": 100,
+  "notes": [
+    "**Continuity at a point:** f is continuous at x=a if: (1) f(a) exists, (2) lim(x→a) f(x) exists, (3) lim(x→a) f(x) = f(a).",
+    "**Continuous on an interval:** f is continuous on [a,b] if continuous at every point in (a,b), right-continuous at a, left-continuous at b.",
+    "**Polynomial functions:** Continuous everywhere on ℝ.",
+    "**Rational functions:** Continuous everywhere except where denominator = 0.",
+    "**Trigonometric functions:** sin x, cos x continuous everywhere; tan x continuous except at x = (2n+1)π/2.",
+    "**Exponential and logarithmic:** eˣ continuous everywhere; ln x continuous for x>0.",
+    "**Intermediate Value Theorem:** If f is continuous on [a,b] and k is between f(a) and f(b), then there exists c∈(a,b) such that f(c)=k."
+  ],
+  "confusion": [
+    "Carefully distinguish between similar-looking concepts in types of discontinuity.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
+  ],
+  "practice": [
+    "Solve at least 5 problems on types of discontinuity from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the mathematics curriculum and appears consistently in examinations.",
+    "Understanding types of discontinuity builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of types of discontinuity span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "calculus",
+  "motionGraphics": "calculus"
+}

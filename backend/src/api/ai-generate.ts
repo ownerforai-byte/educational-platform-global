@@ -215,7 +215,9 @@ RULES:
 - Explanation: SHORT + ACCURATE — state why the correct answer is 100% right, briefly explain why others are wrong.
 - Comprehensive Learning: Design each question to act as a mini-tutorial, ensuring all necessary conceptual components for that specific sub-topic are present.
 - Rotate through different question styles each generation
-- Include key technical terms from the syllabus`;
+- Include key technical terms from the syllabus
+- **NO CONFLICTING CONCEPTS**: Ensure no ambiguity in options or explanations
+- **COMPLETE COVERAGE**: Each question reinforces ALL relevant concepts for that sub-topic`;
 
       const userPrompt = `Generate ${requestedCount} NEB (+2) multiple-choice questions.
 

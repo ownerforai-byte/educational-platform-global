@@ -1,0 +1,35 @@
+{
+  "title": "Scalar and Vector Products",
+  "unitSlug": "vectors",
+  "topicSlug": "scalar-vector-products",
+  "topicTitle": "Scalar and Vector Products",
+  "relevance": 100,
+  "notes": [
+    "**Vector:** A quantity having both magnitude and direction. Represented as arrow or bold letter: **a** or a⃗.",
+    "**Scalar:** A quantity with magnitude only (mass, temperature, time).",
+    "**Vector addition:** Triangle law: place tail of b at head of a; resultant closes triangle. Parallelogram law: diagonal from common tail.",
+    "**Scalar multiplication:** ka has magnitude |k|·|a|. Direction same as a if k>0, opposite if k<0.",
+    "**Dot product:** **a**·**b** = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃. Result is scalar.",
+    "**Cross product:** **a**×**b** = |a||b|sinθ · n̂. Result is vector perpendicular to both a and b.",
+    "**Unit vector:** â = **a**/|**a**|. Standard unit vectors: î, ĵ, k̂ along x,y,z axes.",
+    "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes."
+  ],
+  "confusion": [
+    "Carefully distinguish between similar-looking concepts in scalar and vector products.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
+  ],
+  "practice": [
+    "Solve at least 5 problems on scalar and vector products from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding scalar and vector products builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of scalar and vector products span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors"
+}
