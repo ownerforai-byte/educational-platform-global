@@ -232,7 +232,10 @@ export function RavikishanTopicResources({
       ) : (
         // Multiple sources — show tabs
         <Tabs defaultValue={`${sorted[0].source}-${sorted[0].duplicateType ?? 1}`} className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList
+            className="grid w-full"
+            style={{ gridTemplateColumns: `repeat(${sorted.length}, minmax(0, 1fr))` }}
+          >
             {sorted.map((entry, i) => {
               const typeNum = entry.duplicateType ?? 1;
               const label = typeNum === 1 ? "Type 1 (Original)" : `Type ${typeNum} (Duplicated)`;

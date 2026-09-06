@@ -4,157 +4,147 @@
   "topicSlug": "elastic-modulus",
   "topicTitle": "Elastic Modulus (Young, Bulk, Shear)",
   "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "elastic-modulus-young-bulk-shear",
   "notes": [
-    "**Elastic Modulus (Young, Bulk, Shear):** This topic covers the fundamental concepts of elastic modulus (young, bulk, shear) in the physics curriculum.",
-    "Understanding elastic modulus (young, bulk, shear) is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to elastic modulus (young, bulk, shear) should be memorized and practiced regularly."
+    "**Young's modulus (E):** the ratio of longitudinal stress to longitudinal strain: E = (F/A)/(Δl/l) = Fl/(AΔl). It measures resistance to stretching/compression. For steel, E ≈ 2×10¹¹ N/m²; for aluminium ≈ 7×10¹⁰ N/m²; for rubber ≈ 5×10⁶ N/m².",
+    "**Bulk modulus (B):** the ratio of volume stress (pressure) to volume strain: B = −P/(ΔV/V). It measures resistance to uniform compression. The minus sign keeps B positive (ΔV is negative under pressure). For water B ≈ 2.2×10⁹ Pa; steel B ≈ 1.6×10¹¹ Pa.",
+    "**Shear modulus / modulus of rigidity (G or η):** the ratio of shear stress to shear strain: G = τ/θ = (F/A)/θ. It measures resistance to change of shape without change of volume. For steel G ≈ 8×10¹⁰ N/m².",
+    "**Key relation between moduli (for isotropic materials):** E = 2G(1 + σ) and E = 3B(1 − 2σ), where σ is Poisson's ratio. Combining them: 9/B = 3/G + 1/E or E = 9BG/(3B + G). These links let you compute one modulus from the others.",
+    "**Worked example — Young's modulus:** a wire of length 2 m and area 1 mm² extends 1 mm under a 50 kg load. F = 490 N, σ = 490/10⁻⁶ = 4.9×10⁸ Pa, ε = 10⁻³/2 = 5×10⁻⁴, E = 4.9×10⁸/5×10⁻⁴ = 9.8×10¹¹ ≈ 10¹¹ N/m².",
+    "**Worked example — bulk modulus:** 10⁵ Pa pressure on 1 m³ of water changes its volume by 4.5×10⁻⁵ m³. B = 10⁵/(4.5×10⁻⁵) = 2.2×10⁹ Pa.",
+    "**Compressibility:** the reciprocal of bulk modulus: k = 1/B. Fluids with high B are hard to compress; gases have very low B.",
+    "**Which modulus to use?** stretching a wire → Young's modulus; squeezing a sphere → bulk modulus; twisting/sliding layers → shear modulus. Choose by the type of deformation."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in elastic modulus (young, bulk, shear).",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'All three moduli have different units.' ✅ All three are measured in N/m² (Pa) — same units, different deformation types.",
+    "❌ 'Bulk modulus applies only to liquids.' ✅ It applies to solids and gases too — any material under uniform pressure.",
+    "❌ 'Shear strain is a length ratio.' ✅ Shear strain is the ANGLE of displacement θ (radians), not a length ratio.",
+    "❌ 'Young's modulus and stiffness k are the same.' ✅ Y and k connect through geometry: E = Fl/(AΔl) while k = F/Δl, so E = kL/A.",
+    "❌ 'Liquids have Young's modulus.' ✅ Liquids flow; they have NO shear modulus and no Young's modulus for stretching — only bulk modulus.",
+    "❌ 'B increases when you compress a solid.' ✅ B is a constant MATERIAL property within the elastic range; it does not change with the applied pressure."
   ],
   "practice": [
-    "Solve at least 5 problems on elastic modulus (young, bulk, shear) from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "A steel wire (L = 3 m, A = 2 mm²) extends 1.5 mm under a 300 N load. Find E.",
+    "A force of 2000 N produces a shear stress on a 5 cm² face with shear angle 0.002 rad. Find G.",
+    "Pressure of 2×10⁶ Pa reduces the volume of 2 m³ of oil by 1.2 L. Find B.",
+    "Given E = 2×10¹¹ and G = 8×10¹⁰ for steel, find Poisson's ratio. (Use E = 2G(1+σ)).",
+    "Convert: a water column adds 5×10⁵ Pa at its bottom. If B_water = 2.2×10⁹ Pa, find the fractional volume change.",
+    "Explain why gases are far more compressible than solids using bulk modulus values."
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding elastic modulus (young, bulk, shear) builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of elastic modulus (young, bulk, shear) span engineering, physics, economics, and computer science."
+    "Thomas Young established the concept of the modulus of elasticity in 1807 — his modulus E is one of the most fundamental material constants.",
+    "Rigidity (shear) modulus explains why liquids flow: their G = 0 — they cannot resist shear.",
+    "Diamond has the largest E of all materials (≈ 1.2×10¹² N/m²), which is why it is used for cutting tools.",
+    "Rubber has a low E but a very high elastic limit — it can stretch hundreds of percent before breaking.",
+    "Ultrasound techniques measure tissue Young's modulus for medical diagnosis (elastography)."
   ],
   "animation3D": "elasticity",
   "motionGraphics": "elasticity",
   "examples": [
-    "Example 1: Real-world application of Elastic Modulus (Young, Bulk, Shear)",
-    "Example 2: Practical demonstration of Elastic Modulus (Young, Bulk, Shear) concepts",
-    "Example 3: Numerical problem on Elastic Modulus (Young, Bulk, Shear)",
-    "Example 4: Diagram-based question on Elastic Modulus (Young, Bulk, Shear)",
-    "Example 5: Application in daily life involving Elastic Modulus (Young, Bulk, Shear)"
+    "Young: A 1 mm² wire, 2 m long, carrying 200 N extends 2 mm → E = (200/10⁻⁶)/(2×10⁻³/2) = 2×10¹¹ N/m².",
+    "Bulk: 3×10⁶ Pa pressure shrinks 1 m³ of steel by 1.9×10⁻⁵ m³ → B = 1.6×10¹¹ Pa.",
+    "Shear: A 2×10⁴ N force shears a 10⁻³ m² face by 2.5×10⁻³ rad → G = (2×10⁴/10⁻³)/2.5×10⁻³ = 8×10⁹ N/m².",
+    "Relation check: E = 2G(1+σ) for steel: 2×10¹¹ = 2×8×10¹⁰(1+σ) → σ = 0.25.",
+    "Compressibility: water k = 1/B = 1/2.2×10⁹ = 4.5×10⁻¹⁰ Pa⁻¹."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Elastic Modulus (Young, Bulk, Shear) with suitable example.",
-    "Q2. Solve problems related to Elastic Modulus (Young, Bulk, Shear).",
-    "Q3. Differentiate between various aspects of Elastic Modulus (Young, Bulk, Shear).",
-    "Q4. Derive the key formula related to Elastic Modulus (Young, Bulk, Shear).",
-    "Q5. What are the applications of Elastic Modulus (Young, Bulk, Shear)?"
+    "A 2 m copper wire of area 1 mm² extends by 1.2 mm under a 40 N load. Find Young's modulus for copper.",
+    "Calculate the bulk modulus of a liquid if 2×10⁶ Pa pressure reduces 1.5 m³ of it by 0.75×10⁻³ m³.",
+    "A shear force of 5000 N acts on a 4 cm² face producing a shear angle of 0.01 rad. Find the shear modulus.",
+    "Steel has E = 2×10¹¹ N/m² and G = 8×10¹⁰ N/m². Find Poisson's ratio from E = 2G(1+σ).",
+    "A 10 m steel cable (E = 2×10¹¹) of area 2 cm² must not stretch more than 5 mm under load. Find the maximum load.",
+    "Explain why it is easier to compress a gas than a liquid or solid, using B values."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Elastic Modulus (Young, Bulk, Shear)",
-    "Key Formula 2: Mathematical expression of Elastic Modulus (Young, Bulk, Shear)",
-    "Key Formula 3: Application formula for Elastic Modulus (Young, Bulk, Shear)",
-    "Key Formula 4: Derivation result for Elastic Modulus (Young, Bulk, Shear)",
-    "Key Formula 5: Important relation in Elastic Modulus (Young, Bulk, Shear)"
+    "Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)",
+    "Bulk modulus: B = −P/(ΔV/V)",
+    "Shear modulus: G = (F/A)/θ = τ/θ",
+    "Relation: E = 2G(1 + σ) = 3B(1 − 2σ)",
+    "Combined: E = 9BG/(3B + G); compressibility k = 1/B"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Elastic Modulus (Young, Bulk, Shear)",
-    "Key Point 2: Essential theorem or principle related to Elastic Modulus (Young, Bulk, Shear)",
-    "Key Point 3: Important condition or constraint for Elastic Modulus (Young, Bulk, Shear)",
-    "Key Point 4: Common applications of Elastic Modulus (Young, Bulk, Shear)",
-    "Key Point 5: Connection to other topics in Science"
+    "E, B, G all have units N/m² (Pa) — they differ by the type of deformation they describe.",
+    "E (stretching), B (volume), G (shape) measure the corresponding resistance of a material.",
+    "The three moduli are linked: E = 2G(1+σ) and E = 3B(1−2σ).",
+    "Liquids and gases have G = 0 (they cannot resist shear) — only solids have a shear modulus.",
+    "Compressibility is the reciprocal of B."
   ],
-  "summary": "Elastic Modulus (Young, Bulk, Shear) is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "The three elastic moduli — Young's (E), bulk (B), and shear (G) — quantify how materials resist stretching, uniform compression, and shape change respectively. Each is stress/strain with units N/m². They are related by E = 2G(1+σ) = 3B(1−2σ). Solids possess all three; fluids have only bulk modulus.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Elastic Modulus (Young, Bulk, Shear) applies",
-    "Note 2: Elastic Modulus (Young, Bulk, Shear) connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Elastic Modulus (Young, Bulk, Shear)",
-    "Note 4: Remember the units and dimensions involved in Elastic Modulus (Young, Bulk, Shear)",
-    "Note 5: Elastic Modulus (Young, Bulk, Shear) frequently appears in examination questions"
+    "Choose the modulus by the type of deformation: stretch → E, squeeze → B, twist → G.",
+    "The sign in B = −P/(ΔV/V) makes the modulus positive since ΔV is negative under compression.",
+    "Convert areas to m² before computing stress (1 mm² = 10⁻⁶ m², 1 cm² = 10⁻⁴ m²).",
+    "The relation E = 2G(1+σ) lets you compute Poisson's ratio from E and G.",
+    "NEB commonly asks to compute one modulus from two others using the linking relations."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Elastic Modulus (Young, Bulk, Shear)",
-    "Statement 2: Theorem related to Elastic Modulus (Young, Bulk, Shear)",
-    "Statement 3: Condition for Elastic Modulus (Young, Bulk, Shear) to be valid",
-    "Statement 4: Principle governing Elastic Modulus (Young, Bulk, Shear)",
-    "Statement 5: Corollary or consequence of Elastic Modulus (Young, Bulk, Shear)"
+    "Young's modulus E = Fl/(AΔl) measures resistance to longitudinal deformation.",
+    "Bulk modulus B = −P/(ΔV/V) measures resistance to uniform compression.",
+    "Shear modulus G = τ/θ measures resistance to change of shape.",
+    "All three moduli have the units N/m² and are related by E = 2G(1+σ) = 3B(1−2σ).",
+    "Fluids have G = 0 and no Young's modulus — only bulk modulus."
   ],
   "importantNotes": [
-    "Note 1: Elastic Modulus (Young, Bulk, Shear) is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Elastic Modulus (Young, Bulk, Shear)",
-    "Note 3: Elastic Modulus (Young, Bulk, Shear) has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Elastic Modulus (Young, Bulk, Shear)",
-    "Note 5: Cross-check your answers using alternative methods for Elastic Modulus (Young, Bulk, Shear)"
+    "Each modulus = stress/strain: E (longitudinal), B (volume), G (shear) — pick by the deformation type.",
+    "E, B and G are linked by Poisson's ratio σ: E = 2G(1+σ) = 3B(1−2σ).",
+    "Materials with low E (rubber) stretch easily; high E (diamond) resists deformation.",
+    "Fluids have no shear modulus — they flow in response to shear stress.",
+    "Compressibility k = 1/B is used to gauge how easily a substance is squeezed."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Elastic Modulus (Young, Bulk, Shear) formula",
-    "Trick 2: Elimination technique for Elastic Modulus (Young, Bulk, Shear) MCQs",
-    "Trick 3: Dimensional analysis shortcut for Elastic Modulus (Young, Bulk, Shear)",
-    "Trick 4: Memory aid for Elastic Modulus (Young, Bulk, Shear) formulas",
-    "Trick 5: Time-saving approach for Elastic Modulus (Young, Bulk, Shear) problems"
+    "unit memory: all three moduli are in N/m² (Pa).",
+    "For Young's modulus: rearrange E = Fl/(AΔl) to solve any one variable.",
+    "For bulk modulus: B = −P/(ΔV/V) — use the minus sign only once (final positive).",
+    "If you know E and G, find σ = E/(2G) − 1.",
+    "Convert mm² → 10⁻⁶ m² and cm² → 10⁻⁴ m² before stress calculations."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Elastic Modulus (Young, Bulk, Shear)",
-    "Exam Tip 2: Practice previous year questions on Elastic Modulus (Young, Bulk, Shear)",
-    "Exam Tip 3: Elastic Modulus (Young, Bulk, Shear) carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Elastic Modulus (Young, Bulk, Shear) thoroughly",
-    "Exam Tip 5: Review common mistakes related to Elastic Modulus (Young, Bulk, Shear)"
+    "E, B, G definitions and units are certainty for short-answer questions.",
+    "Young's modulus wire problems remain the most-tested numerical.",
+    "The relation E = 2G(1+σ) is frequently used to find Poisson's ratio.",
+    "Comparing bulk moduli of solids, liquids, gases comes up in conceptual questions.",
+    "NEB often provides two moduli and asks for the third using the linking relation."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Elastic Modulus (Young, Bulk, Shear)?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The primary application of Elastic Modulus (Young, Bulk, Shear) is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For Elastic Modulus (Young, Bulk, Shear), which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Elastic Modulus (Young, Bulk, Shear)?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Elastic Modulus (Young, Bulk, Shear) is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
+      "question": "Young's modulus is the ratio of longitudinal stress to:",
+      "options": ["volume strain", "shear strain", "longitudinal strain", "force"],
       "answer": "C"
+    },
+    {
+      "question": "A liquid has which elastic modulus?",
+      "options": ["Young's modulus only", "Shear modulus only", "Bulk modulus only", "All three"],
+      "answer": "C"
+    },
+    {
+      "question": "Bulk modulus B = −P/(ΔV/V). For pressure P = 10⁵ Pa and ΔV/V = 5×10⁻⁵, B is:",
+      "options": ["2×10⁹ Pa", "5×10⁹ Pa", "10¹⁵ Pa", "5×10⁻¹⁰ Pa"],
+      "answer": "A"
+    },
+    {
+      "question": "Which material has the largest Young's modulus?",
+      "options": ["rubber", "steel", "diamond", "aluminium"],
+      "answer": "C"
+    },
+    {
+      "question": "The units of shear modulus are:",
+      "options": ["N/m", "N/m²", "N·m", "m/N"],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Elastic Modulus (Young, Bulk, Shear)",
-    "Concept 2: Key theorem or principle in Elastic Modulus (Young, Bulk, Shear)",
-    "Concept 3: Important application area of Elastic Modulus (Young, Bulk, Shear)",
-    "Concept 4: Fundamental relationship in Elastic Modulus (Young, Bulk, Shear)",
-    "Concept 5: Connection between Elastic Modulus (Young, Bulk, Shear) and other topics"
+    "Young's modulus E = Fl/(AΔl) describes stretching/compression stiffness.",
+    "Bulk modulus B = −P/(ΔV/V) describes compression under uniform pressure.",
+    "Shear modulus G = τ/θ describes change of shape under tangential stress.",
+    "The three moduli are interrelated: E = 2G(1+σ) = 3B(1−2σ).",
+    "Fluids possess only bulk modulus; compressibility = 1/B."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Elastic Modulus (Young, Bulk, Shear)",
-    "Task 2: Derive the main formula for Elastic Modulus (Young, Bulk, Shear)",
-    "Task 3: Create a concept map for Elastic Modulus (Young, Bulk, Shear)",
-    "Task 4: Practice previous year exam questions on Elastic Modulus (Young, Bulk, Shear)",
-    "Task 5: Explain Elastic Modulus (Young, Bulk, Shear) to a peer or study group"
+    "Compute Young's modulus from a wire experiment data set.",
+    "Compute bulk modulus from a known pressure and volume change.",
+    "Compute shear modulus from a tangential force and shear angle.",
+    "Evaluate Poisson's ratio from given E and G.",
+    "Compare the compressibility of steel, water, and air."
   ]
 }

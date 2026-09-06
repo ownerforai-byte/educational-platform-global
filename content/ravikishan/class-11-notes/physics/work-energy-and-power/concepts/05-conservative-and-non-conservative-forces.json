@@ -42,133 +42,113 @@
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power",
   "examples": [
-    "Example 1: Real-world application of Conservative and non-conservative forces",
-    "Example 2: Practical demonstration of Conservative and non-conservative forces concepts",
-    "Example 3: Numerical problem on Conservative and non-conservative forces",
-    "Example 4: Diagram-based question on Conservative and non-conservative forces",
-    "Example 5: Application in daily life involving Conservative and non-conservative forces"
+    "Gravity is conservative: Lift a 5 kg mass 3 m up and lower it down. Net work = 0 (closed loop).",
+    "Friction is non-conservative: Slide a 2 kg block 5 m on a surface (μ_k = 0.3). Work = −0.3 × 2 × 9.8 × 5 = −29.4 J (depends on path length).",
+    "Mixed system: A 1 kg ball falls 10 m through air. Gravity does +98 J, air resistance does −20 J. Net work = 78 J = ΔK.",
+    "Spring is conservative: Compress a spring (k = 500 N/m) by 0.2 m. Work done = ½kx² = 10 J stored as elastic PE.",
+    "Closed loop test: A 3 kg block slides around a 2 m × 2 m square (μ_k = 0.2). Net work = −0.2 × 3 × 9.8 × 8 = −47 J ≠ 0 (non-conservative)."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Conservative and non-conservative forces with suitable example.",
-    "Q2. Solve problems related to Conservative and non-conservative forces.",
-    "Q3. Differentiate between various aspects of Conservative and non-conservative forces.",
-    "Q4. Derive the key formula related to Conservative and non-conservative forces.",
-    "Q5. What are the applications of Conservative and non-conservative forces?"
+    "A 2 kg block slides 5 m on a rough surface (μ_k = 0.3). Find the work done by friction and the thermal energy generated.",
+    "A 1 kg ball is dropped from 20 m. Air resistance does −15 J of work. Find the speed at the ground.",
+    "Explain why gravity is conservative but friction is not, using the closed-loop test.",
+    "A spring (k = 400 N/m) is compressed 0.15 m and released. Find the maximum speed of a 0.5 kg mass.",
+    "A 3 kg block slides down a rough 30° slope (μ_k = 0.2) of length 6 m. Find the speed at the bottom."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Conservative and non-conservative forces",
-    "Key Formula 2: Mathematical expression of Conservative and non-conservative forces",
-    "Key Formula 3: Application formula for Conservative and non-conservative forces",
-    "Key Formula 4: Derivation result for Conservative and non-conservative forces",
-    "Key Formula 5: Important relation in Conservative and non-conservative forces"
+    "Conservative force: work depends only on endpoints; ∮F·dr = 0 (closed loop)",
+    "Non-conservative force: work depends on path; ∮F·dr ≠ 0",
+    "Work-energy relation: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)",
+    "Conservative force and PE: W = −ΔU (work = negative change in potential energy)",
+    "Friction work: W_f = −μNd (always negative; energy dissipated as heat)"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Conservative and non-conservative forces",
-    "Key Point 2: Essential theorem or principle related to Conservative and non-conservative forces",
-    "Key Point 3: Important condition or constraint for Conservative and non-conservative forces",
-    "Key Point 4: Common applications of Conservative and non-conservative forces",
-    "Key Point 5: Connection to other topics in Science"
+    "Conservative forces (gravity, spring, electrostatic) allow potential energy definition.",
+    "Non-conservative forces (friction, air resistance) dissipate energy as heat.",
+    "The closed-loop test: if net work around a closed path is zero, the force is conservative.",
+    "When both types act, use W_nc = ΔE_mech (general energy equation).",
+    "Friction always does negative work — it removes mechanical energy from the system."
   ],
-  "summary": "Conservative and non-conservative forces is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Conservative forces (gravity, spring, electrostatic) do path-independent work and allow potential energy definition. Non-conservative forces (friction, air resistance) dissipate energy as heat. The general energy equation W_nc = ΔE_mech handles both types — if W_nc = 0, mechanical energy is conserved.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Conservative and non-conservative forces applies",
-    "Note 2: Conservative and non-conservative forces connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Conservative and non-conservative forces",
-    "Note 4: Remember the units and dimensions involved in Conservative and non-conservative forces",
-    "Note 5: Conservative and non-conservative forces frequently appears in examination questions"
+    "Friction does NOT have a potential energy — the energy becomes heat, not stored PE.",
+    "A conservative force does NOT guarantee energy conservation if non-conservative forces are also present.",
+    "The closed-loop test is the definitive way to classify a force as conservative or not.",
+    "Normal force is conservative (work = 0 when displacement is perpendicular).",
+    "NEB frequently asks: 'Is this force conservative? Justify using the closed-loop test.'"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Conservative and non-conservative forces",
-    "Statement 2: Theorem related to Conservative and non-conservative forces",
-    "Statement 3: Condition for Conservative and non-conservative forces to be valid",
-    "Statement 4: Principle governing Conservative and non-conservative forces",
-    "Statement 5: Corollary or consequence of Conservative and non-conservative forces"
+    "A force is conservative if the work done depends only on initial and final positions, not the path.",
+    "The work done by a conservative force around any closed loop is zero: ∮F·dr = 0.",
+    "Non-conservative forces dissipate mechanical energy as heat, sound, or deformation.",
+    "The general energy equation: W_nc = (K_f + U_f) − (K_i + U_i).",
+    "Conservative forces allow potential energy definition: F = −∇U."
   ],
   "importantNotes": [
-    "Note 1: Conservative and non-conservative forces is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Conservative and non-conservative forces",
-    "Note 3: Conservative and non-conservative forces has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Conservative and non-conservative forces",
-    "Note 5: Cross-check your answers using alternative methods for Conservative and non-conservative forces"
+    "Friction does NOT have a potential energy — the energy becomes heat, not stored PE.",
+    "A conservative force does NOT guarantee energy conservation if non-conservative forces are also present.",
+    "The closed-loop test is the definitive way to classify a force as conservative or not.",
+    "Normal force is conservative (work = 0 when displacement is perpendicular).",
+    "NEB frequently asks: 'Is this force conservative? Justify using the closed-loop test.'"
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Conservative and non-conservative forces formula",
-    "Trick 2: Elimination technique for Conservative and non-conservative forces MCQs",
-    "Trick 3: Dimensional analysis shortcut for Conservative and non-conservative forces",
-    "Trick 4: Memory aid for Conservative and non-conservative forces formulas",
-    "Trick 5: Time-saving approach for Conservative and non-conservative forces problems"
+    "Closed-loop test: if net work around a closed path is zero, the force is conservative.",
+    "Path-independence shortcut: gravity, spring, and electrostatic forces are always conservative.",
+    "Friction shortcut: always non-conservative — work = −μNd (depends on path length).",
+    "Mixed systems: use W_nc = ΔE_mech — identify non-conservative forces first.",
+    "PE definition: only conservative forces allow U to be defined (F = −∇U)."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Conservative and non-conservative forces",
-    "Exam Tip 2: Practice previous year questions on Conservative and non-conservative forces",
-    "Exam Tip 3: Conservative and non-conservative forces carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Conservative and non-conservative forces thoroughly",
-    "Exam Tip 5: Review common mistakes related to Conservative and non-conservative forces"
+    "The closed-loop test is the standard way to justify whether a force is conservative.",
+    "Gravity, spring, and electrostatic forces are always conservative — memorize these.",
+    "Friction and air resistance are always non-conservative — they dissipate energy.",
+    "Mixed systems (conservative + non-conservative) use W_nc = ΔE_mech.",
+    "NEB asks both numerical problems and conceptual questions about force classification."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Conservative and non-conservative forces?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
+      "question": "Which of the following is a conservative force?",
+      "options": ["Kinetic friction", "Air resistance", "Gravity", "Viscous drag"],
+      "answer": "C"
     },
     {
-      "question": "The primary application of Conservative and non-conservative forces is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
+      "question": "A block slides 5 m on a rough surface (μ_k = 0.3) and returns to its starting point. The net work done by friction is:",
+      "options": ["Zero", "Positive", "Negative", "Cannot be determined"],
+      "answer": "C"
     },
     {
-      "question": "For Conservative and non-conservative forces, which condition is necessary?",
+      "question": "Which statement about conservative forces is correct?",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "The work done depends on the path taken",
+        "The work around a closed loop is non-zero",
+        "They allow the definition of potential energy",
+        "Friction is an example of a conservative force"
       ],
-      "answer": "A"
+      "answer": "C"
     },
     {
-      "question": "What is the unit/dimension used in Conservative and non-conservative forces?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
+      "question": "A 2 kg mass falls 10 m. Air resistance does −20 J of work. The speed at the ground is: (g = 10 m/s²)",
+      "options": ["10 m/s", "12 m/s", "14 m/s", "16 m/s"],
+      "answer": "B"
     },
     {
-      "question": "Which statement about Conservative and non-conservative forces is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
+      "question": "The work done by a conservative force around a closed loop is:",
+      "options": ["Always positive", "Always negative", "Always zero", "Depends on the path"],
       "answer": "C"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Conservative and non-conservative forces",
-    "Concept 2: Key theorem or principle in Conservative and non-conservative forces",
-    "Concept 3: Important application area of Conservative and non-conservative forces",
-    "Concept 4: Fundamental relationship in Conservative and non-conservative forces",
-    "Concept 5: Connection between Conservative and non-conservative forces and other topics"
+    "A force is conservative if the work done depends only on initial and final positions, not the path.",
+    "The work done by a conservative force around any closed loop is zero: ∮F·dr = 0.",
+    "Non-conservative forces dissipate mechanical energy as heat, sound, or deformation.",
+    "The general energy equation: W_nc = (K_f + U_f) − (K_i + U_i).",
+    "Conservative forces allow potential energy definition: F = −∇U."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Conservative and non-conservative forces",
-    "Task 2: Derive the main formula for Conservative and non-conservative forces",
-    "Task 3: Create a concept map for Conservative and non-conservative forces",
-    "Task 4: Practice previous year exam questions on Conservative and non-conservative forces",
-    "Task 5: Explain Conservative and non-conservative forces to a peer or study group"
+    "Solve 5 problems classifying forces as conservative or non-conservative using the closed-loop test.",
+    "Solve 5 mixed-system problems using W_nc = ΔE_mech.",
+    "Solve 3 problems finding the potential function for a conservative force.",
+    "Solve 3 problems calculating thermal energy generated by friction.",
+    "Solve 2 problems comparing path-independent and path-dependent work."
   ]
 }

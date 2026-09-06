@@ -1,0 +1,171 @@
+{
+  "title": "Projectile Motion",
+  "unitSlug": "kinematics",
+  "topicSlug": "projectile-motion",
+  "topicTitle": "Projectile Motion",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "projectile-motion-and-its-applications",
+  "notes": [
+    "**Type 2 — alternate treatment:** this version builds projectile motion from the independence of the two components and derives all standard results step by step — the derivation chain NEB expects.",
+    "**The governing idea:** horizontal and vertical motions are INDEPENDENT. Gravity acts only vertically, so the horizontal velocity stays constant ($v_x = u\\cos\\theta$) while the vertical motion is free fall with initial speed $u\\sin\\theta$. The path is the combination — a parabola.",
+    "**Component equations (up positive, launch at angle $\\theta$ with speed $u$):** horizontal: $x = (u\\cos\\theta)t$, $v_x = u\\cos\\theta$; vertical: $y = (u\\sin\\theta)t - \\tfrac{1}{2}gt^2$, $v_y = u\\sin\\theta - gt$.",
+    "**Time of flight:** set $y = 0$ on landing: $T = \\dfrac{2u\\sin\\theta}{g}$ — twice the time to the top ($u\\sin\\theta/g$).",
+    "**Maximum height:** at the top $v_y = 0$: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$ — vertical throw with initial speed $u\\sin\\theta$.",
+    "**Horizontal range:** $R = v_x T = \\dfrac{u^2\\sin 2\\theta}{g}$. Since $\\sin 2\\theta$ peaks at $2\\theta = 90°$, **maximum range at $\\theta = 45°$**, and complementary angles ($30°$ & $60°$, $15°$ & $75°$) give the SAME range.",
+    "**Velocity at any instant:** $v = \\sqrt{(u\\cos\\theta)^2 + (u\\sin\\theta - gt)^2}$ at angle $\\phi = \\tan^{-1}\\!\\left(\\frac{u\\sin\\theta - gt}{u\\cos\\theta}\\right)$ below/above horizontal. On landing, magnitude equals $u$ (symmetry) with direction $-\\theta$.",
+    "**Trajectory equation:** eliminate $t$: $y = x\\tan\\theta - \\dfrac{g x^2}{2u^2\\cos^2\\theta}$ — a parabola. Also useful: $R = 4H\\cot\\theta$ connecting range and height.",
+    "**Applications to quote:** cannon/artillery ranges, projectile games (javelin, football), water-fountain arcs, bombing-release problems (bomb keeps the plane's horizontal velocity), and projectile on an inclined plane (extension: $R = \\frac{2u^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}$ for incline angle $\\alpha$ — beyond syllabus but good insight).",
+    "**NEB exam focus:** state independence of motions; derive $T$, $H$, $R$; prove max range at 45°; show complementary angles share range; compute velocity (magnitude and direction) at a given time or height; draw the labelled trajectory."
+  ],
+  "confusion": [
+    "❌ 'A projectile's horizontal velocity decreases during flight.' ✅ $v_x = u\\cos\\theta$ is CONSTANT (no horizontal force in the ideal model); only $v_y$ changes.",
+    "❌ 'At the top of the trajectory the velocity is zero.' ✅ Only $v_y = 0$; the horizontal component $u\\cos\\theta$ persists — speed at the top is $u\\cos\\theta$, the MINIMUM of the flight.",
+    "❌ 'The path is part of a circle / straight line decaying.' ✅ The trajectory is a PARABOLA — the graph of $y = x\\tan\\theta - gx^2/(2u^2\\cos^2\\theta)$.",
+    "❌ Using $\\sin\\theta$ instead of $\\sin 2\\theta$ in the range. ✅ $R = u^2\\sin 2\\theta/g$; and $\\sin 2\\theta$ is maximal at $\\theta = 45°$, not $90°$.",
+    "❌ 'Complementary angles give different ranges.' ✅ $\\sin 2(90°-\\theta) = \\sin(180°-2\\theta) = \\sin 2\\theta$ — $30°$ and $60°$ land at the SAME spot (the 60° shot flies higher).",
+    "❌ Doubling $u$ doubles the range. ✅ $R \\propto u^2$ — doubling launch speed QUADRUPLES range (and quadruples max height too)."
+  ],
+  "practice": [
+    "A ball is kicked at 20 m/s at 30°. Find $T$, $H$, $R$ ($g = 10$). — $T = 2$ s; $H = 5$ m; $R = 34.6$ m.",
+    "Prove that the speed on landing equals the launch speed, using components at $t = T$.",
+    "A projectile has range 100 m and time of flight 4 s. Find its horizontal velocity and launch angle. — $v_x = 25$ m/s; $u_y = gt/2 = 20$ m/s → $\\theta = \\tan^{-1}(20/25) = 38.7°$.",
+    "Two projectiles are fired at 30° and 60° with the same speed 40 m/s. Show both have $R = 141$ m, and compare their maximum heights (1 : 3).",
+    "From a 45 m cliff a stone is thrown horizontally at 10 m/s. When and where does it land? — fall time $t = 3$ s; horizontal landing distance $= 30$ m; impact speed $= \\sqrt{10^2 + 30^2} \\approx 31.6$ m/s."
+  ],
+  "universalFacts": [
+    "Galileo's *Dialogues* (1638) first showed projectile motion is a parabola by superposing uniform horizontal motion with vertical fall — the first known composition of motions.",
+    "Artillery fire above ~30 km (Paris Gun, WWI) deviates from the parabola: thin air changes drag and $g$'s direction varies — ideal parabolic flight is a near-Earth, no-air model.",
+    "Long-jump athletes take off near 21°, not 45°, because take-off speed itself drops with steeper angles — the real optimum balances range angle against speed loss.",
+    "Basketball free throws exploit the high-arc (complementary-angle) region: a steep entry angle enlarges the effective hoop target, even though the flatter shot travels the same distance."
+  ],
+  "animation3D": "kinematics",
+  "motionGraphics": "kinematics",
+  "examples": [
+    "Example 1 (horizontal launch): a stone thrown horizontally at 15 m/s from a 20 m tower: $t = \\sqrt{2 \\times 20/10} = 2$ s; lands 30 m out — vertical fall sets the TIME, horizontal speed sets the DISTANCE.",
+    "Example 2 (full trajectory): $u = 25$ m/s at $\\theta = 37°$ ($\\sin 37° = 0.6$, $\\cos 37° = 0.8$): $T = 3$ s, $H = 11.25$ m, $R = 60$ m — the classic 3-4-5 projectile.",
+    "Example 3 (velocity at top): speed at the top $= u\\cos\\theta = 20$ m/s for the previous shot — the projectile is never at rest.",
+    "Example 4 (45° range): maximum range with $u = 30$ m/s is $R_{max} = u^2/g = 90$ m at 45°, with $H = R/4 = 22.5$ m — note $R_{max} = 4H$.",
+    "Example 5 (bomb release): a plane at 500 m flying level at 100 m/s releases a bomb — it lands after $t = 10$ s, $500$ m ahead of the release point (it keeps the plane's horizontal velocity)."
+  ],
+  "practiceQuestions": [
+    "Q1. Show that the path of a projectile is a parabola by eliminating $t$ from the equations of motion.",
+    "Q2. Derive $R = \\dfrac{u^2 \\sin 2\\theta}{g}$ and hence prove that the range is maximum for $\\theta = 45°$.",
+    "Q3. Show that two angles of projection differing by 90° give the same horizontal range.",
+    "Q4. A projectile is fired at 50 m/s at 60°. Find (a) time of flight, (b) maximum height, (c) velocity after 2 s.",
+    "Q5. Show that the relation between range and maximum height is $R = 4H\\cot\\theta$, and verify it for $\\theta = 45°$ where $R = 4H$."
+  ],
+  "formulas": [
+    "Components: $v_x = u\\cos\\theta$ (constant); $v_y = u\\sin\\theta - gt$",
+    "Time of flight: $T = \\dfrac{2u\\sin\\theta}{g}$",
+    "Maximum height: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$",
+    "Range: $R = \\dfrac{u^2\\sin 2\\theta}{g}$; $R_{max} = \\dfrac{u^2}{g}$ at $\\theta = 45°$",
+    "Trajectory: $y = x\\tan\\theta - \\dfrac{gx^2}{2u^2\\cos^2\\theta}$ (parabola); $R = 4H\\cot\\theta$"
+  ],
+  "keyPoints": [
+    "Horizontal and vertical motions are independent; they share only TIME.",
+    "$v_x$ is constant; $v_y$ changes by $g$ every second; the path is a parabola.",
+    "At the top: $v_y = 0$, speed $= u\\cos\\theta$ (minimum), $a = g$ downward.",
+    "Landing speed equals launch speed; landing angle equals −launch angle (symmetry).",
+    "$R$ is maximum at 45°; complementary angles give equal ranges but different heights.",
+    "$R \\propto u^2$ and $H \\propto u^2$ — doubling launch speed quadruples both."
+  ],
+  "summary": "Projectile motion is the superposition of constant horizontal velocity and vertical free fall, giving a parabolic path. The three headline results — $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$ — all follow from the component equations, with maximum range at 45° and equal ranges at complementary angles. Speed at the top is $u\\cos\\theta$ (never zero), landing speed equals launch speed, and horizontal-launch problems are handled by letting the vertical fall set the time. These results assume no air resistance and constant $g$.",
+  "specialNotes": [
+    "Note 1: In horizontal-launch problems, get the time from the VERTICAL fall first, then multiply by $v_x$.",
+    "Note 2: Memorise $\\sin 37° = 0.6$, $\\cos 37° = 0.8$ and $\\sin 2\\theta$ values for 30°/45°/60° — NEB numericals use them constantly.",
+    "Note 3: 'Same range' pairs: compare heights as $\\sin^2\\theta : \\sin^2(90°-\\theta)$ — the steeper shot rises 3× higher for the 30°/60° pair.",
+    "Note 4: State the assumptions (no air resistance, constant $g$, flat ground) in theory answers — they define the model."
+  ],
+  "importantStatements": [
+    "Statement 1: A projectile's horizontal and vertical motions are completely independent; gravity acts only on the vertical component.",
+    "Statement 2: The horizontal velocity of a projectile remains constant throughout the flight (no air resistance).",
+    "Statement 3: The trajectory of an ideal projectile is a parabola.",
+    "Statement 4: The horizontal range is maximum at 45° and equal for complementary angles of projection."
+  ],
+  "importantNotes": [
+    "Note 1: At the highest point the velocity is purely horizontal: $v = u\\cos\\theta$ — not zero.",
+    "Note 2: Landing speed equals launch speed and the landing angle mirrors the launch angle (energy/symmetry).",
+    "Note 3: $R \\propto u^2$: small speed increases at launch produce large range gains.",
+    "Note 4: For horizontal projection from a height, time of flight depends ONLY on the height: $t = \\sqrt{2h/g}$."
+  ],
+  "examShortTricks": [
+    "Trick 1: $R = u^2\\sin2\\theta/g$ — for 30° and 60°, $\\sin 2\\theta = \\sin 60° = 0.866$; write the common range instantly.",
+    "Trick 2: At 45°, $R = 4H$ — if a question gives one, the other is a division away.",
+    "Trick 3: Horizontal launch from height $h$: time $= \\sqrt{2h/g}$, landing speed $= \\sqrt{v_x^2 + 2gh}$.",
+    "Trick 4: Velocity direction at time $t$: $\\tan\\phi = \\dfrac{u\\sin\\theta - gt}{u\\cos\\theta}$ — positive above the horizontal, negative below.",
+    "Trick 5: In 'bomb released from plane' questions, the bomb retains the plane's horizontal speed — range = plane speed × fall time."
+  ],
+  "examNotes": [
+    "Exam Tip 1: Derivations of $T$, $H$ and $R$ from components are standard 4-mark questions — write the two component tables first.",
+    "Exam Tip 2: Draw the trajectory with $v_x$ arrows equal everywhere and $v_y$ arrows shrinking/rising — examiners look for the independence idea.",
+    "Exam Tip 3: For 'velocity at height h' questions use $v_y^2 = (u\\sin\\theta)^2 - 2gh$ — avoids solving a quadratic in $t$.",
+    "Exam Tip 4: State the no-air-resistance assumption; if a question mentions drag, the parabola model no longer applies."
+  ],
+  "mcs": [
+    {
+      "question": "The horizontal component of a projectile's velocity during ideal flight is:",
+      "options": [
+        "Zero at the top",
+        "Constant",
+        "Equal to g",
+        "Increasing"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Maximum range for a given launch speed occurs at:",
+      "options": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two projectiles launched at 20° and 70° with the same speed have:",
+      "options": [
+        "Different ranges",
+        "The same range",
+        "The same maximum height",
+        "Different flight times but same height"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At the highest point of the trajectory, the speed equals:",
+      "options": [
+        "Zero",
+        "u",
+        "u cos θ",
+        "u sin θ"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A stone thrown horizontally from a cliff lands after 3 s. From twice the height it would land after:",
+      "options": [
+        "6 s",
+        "3√2 s",
+        "1.5 s",
+        "9 s"
+      ],
+      "answer": "B (t ∝ √h)"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Independence of horizontal (uniform) and vertical (accelerated) motions.",
+    "Concept 2: Component kinematics — $v_x$ constant, $v_y$ with $-gt$; time is the shared variable.",
+    "Concept 3: Standard results: $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$.",
+    "Concept 4: Symmetry — equal speeds at equal heights; landing mirrors launching.",
+    "Concept 5: Trajectory parabola and the $R$–$H$ relation $R = 4H\\cot\\theta$."
+  ],
+  "importantTasks": [
+    "Task 1: Derive $T$, $H$, $R$ from components in writing, then specialise to $\\theta = 45°$.",
+    "Task 2: Solve ten numericals: horizontal launches, angled launches, and velocity-at-time/height cases.",
+    "Task 3: Verify the complementary-angle range equality numerically for 15°/75° with $u = 40$ m/s.",
+    "Task 4: Trace the full trajectory table ($x, y, v_x, v_y$ each 0.5 s) for $u = 20$ m/s at 30° and plot it.",
+    "Task 5: Explain in words why a horizontally thrown stone and a dropped stone hit the ground together."
+  ]
+}

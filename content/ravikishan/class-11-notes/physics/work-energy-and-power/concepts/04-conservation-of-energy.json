@@ -43,133 +43,113 @@
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power",
   "examples": [
-    "Example 1: Real-world application of Conservation of energy",
-    "Example 2: Practical demonstration of Conservation of energy concepts",
-    "Example 3: Numerical problem on Conservation of energy",
-    "Example 4: Diagram-based question on Conservation of energy",
-    "Example 5: Application in daily life involving Conservation of energy"
+    "Pendulum: A 2 kg bob is released from 0.5 m above the lowest point. Speed at bottom: mgh = ½mv² → v = √(2×9.8×0.5) = 3.13 m/s.",
+    "Spring-mass: A 0.5 kg mass on a spring (k = 200 N/m) compressed 0.1 m. Max speed: ½kA² = ½mv² → v = √(200×0.01/0.5) = 2 m/s.",
+    "Roller coaster: A 500 kg car starts at 20 m height. Speed at bottom: v = √(2×9.8×20) = 19.8 m/s.",
+    "Free fall: A 1 kg stone dropped from 45 m. Speed at ground: v = √(2×9.8×45) = 29.7 m/s.",
+    "Inclined plane: A 3 kg block slides down a smooth 30° slope of length 10 m. Speed at bottom: v = √(2×9.8×5) = 9.9 m/s (h = 10 sin 30° = 5 m)."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Conservation of energy with suitable example.",
-    "Q2. Solve problems related to Conservation of energy.",
-    "Q3. Differentiate between various aspects of Conservation of energy.",
-    "Q4. Derive the key formula related to Conservation of energy.",
-    "Q5. What are the applications of Conservation of energy?"
+    "A 0.2 kg ball is dropped from 15 m. Find its speed just before hitting the ground.",
+    "A 1.5 kg mass on a spring (k = 300 N/m) is stretched 0.2 m and released. Find the maximum speed.",
+    "A 600 kg roller coaster car starts at 25 m height. Find its speed at the bottom and at 10 m height.",
+    "A 0.5 kg pendulum bob is pulled to 30° from vertical (length 1.2 m). Find its speed at the lowest point.",
+    "A 2 kg block slides down a rough 40° slope (μ_k = 0.2) of length 8 m. Find the speed at the bottom."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Conservation of energy",
-    "Key Formula 2: Mathematical expression of Conservation of energy",
-    "Key Formula 3: Application formula for Conservation of energy",
-    "Key Formula 4: Derivation result for Conservation of energy",
-    "Key Formula 5: Important relation in Conservation of energy"
+    "Mechanical energy conservation: K_i + U_i = K_f + U_f (only conservative forces)",
+    "Work-energy theorem: W_net = ΔK = ½mv_f² − ½mv_i²",
+    "Work by non-conservative forces: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)",
+    "Gravitational PE: U_g = mgh (near Earth); U = −GMm/r (universal)",
+    "Elastic PE: U_s = ½kx²; total spring energy: ½mv² + ½kx² = ½kA²"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Conservation of energy",
-    "Key Point 2: Essential theorem or principle related to Conservation of energy",
-    "Key Point 3: Important condition or constraint for Conservation of energy",
-    "Key Point 4: Common applications of Conservation of energy",
-    "Key Point 5: Connection to other topics in Science"
+    "Mechanical energy (K + U) is conserved ONLY when all forces are conservative.",
+    "Friction and air resistance are non-conservative — they convert mechanical energy to heat.",
+    "The work-energy theorem (W_net = ΔK) holds for ALL forces, conservative or not.",
+    "Total energy (including thermal) is always conserved — this is the first law of thermodynamics.",
+    "Choose the reference level for PE at the lowest point to simplify calculations."
   ],
-  "summary": "Conservation of energy is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Energy cannot be created or destroyed — only transformed. When only conservative forces act, mechanical energy (K + U) is conserved. Non-conservative forces (friction) convert mechanical energy to heat, but total energy is always conserved. The work-energy theorem (W_net = ΔK) is the key tool for solving problems.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Conservation of energy applies",
-    "Note 2: Conservation of energy connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Conservation of energy",
-    "Note 4: Remember the units and dimensions involved in Conservation of energy",
-    "Note 5: Conservation of energy frequently appears in examination questions"
+    "Mechanical energy conservation requires ALL forces to be conservative — one friction force breaks it.",
+    "The reference level for gravitational PE is arbitrary — only differences matter.",
+    "In a spring-mass system, energy oscillates between kinetic and potential: ½mv² + ½kx² = constant.",
+    "The work-energy theorem is more general than mechanical energy conservation — it works with friction.",
+    "NEB frequently asks: 'Find the speed at the bottom' — use mgh = ½mv² for smooth surfaces."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Conservation of energy",
-    "Statement 2: Theorem related to Conservation of energy",
-    "Statement 3: Condition for Conservation of energy to be valid",
-    "Statement 4: Principle governing Conservation of energy",
-    "Statement 5: Corollary or consequence of Conservation of energy"
+    "The law of conservation of energy: energy cannot be created or destroyed, only transformed.",
+    "Mechanical energy (K + U) is conserved when only conservative forces do work.",
+    "The work-energy theorem states that the net work on a body equals its change in kinetic energy.",
+    "Non-conservative forces (friction) convert mechanical energy into thermal energy.",
+    "Total energy (mechanical + thermal + other forms) is always conserved in an isolated system."
   ],
   "importantNotes": [
-    "Note 1: Conservation of energy is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Conservation of energy",
-    "Note 3: Conservation of energy has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Conservation of energy",
-    "Note 5: Cross-check your answers using alternative methods for Conservation of energy"
+    "Mechanical energy conservation requires ALL forces to be conservative — one friction force breaks it.",
+    "The work-energy theorem (W_net = ΔK) works for ALL forces — it is more general than energy conservation.",
+    "The reference level for gravitational PE is arbitrary — choose it at the lowest point to simplify.",
+    "In a spring-mass system, energy oscillates: ½mv² + ½kx² = ½kA² = constant.",
+    "NEB frequently asks: 'Find the speed at the bottom' — use mgh = ½mv² for smooth surfaces."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Conservation of energy formula",
-    "Trick 2: Elimination technique for Conservation of energy MCQs",
-    "Trick 3: Dimensional analysis shortcut for Conservation of energy",
-    "Trick 4: Memory aid for Conservation of energy formulas",
-    "Trick 5: Time-saving approach for Conservation of energy problems"
+    "Smooth surface shortcut: mgh = ½mv² — mass cancels, so v = √(2gh) independent of mass.",
+    "Spring shortcut: ½kA² = ½mv² — max speed v = A√(k/m).",
+    "Pendulum shortcut: v_max = √(2gL(1−cosθ)) — depends on L and θ, not mass.",
+    "Rough slope shortcut: mgh − μmg cos θ × d = ½mv² — friction does negative work.",
+    "Work-energy shortcut: W_net = ΔK — always works, even with friction."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Conservation of energy",
-    "Exam Tip 2: Practice previous year questions on Conservation of energy",
-    "Exam Tip 3: Conservation of energy carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Conservation of energy thoroughly",
-    "Exam Tip 5: Review common mistakes related to Conservation of energy"
+    "Mechanical energy conservation (K_i + U_i = K_f + U_f) is the most common problem type.",
+    "Work-energy theorem (W_net = ΔK) is more general — use it when friction is present.",
+    "Pendulum and spring problems are standard — know the energy oscillation formulas.",
+    "Roller coaster and free-fall problems use mgh = ½mv² (smooth surface).",
+    "NEB asks both numerical problems and conceptual questions about energy transformation."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Conservation of energy?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
+      "question": "A 2 kg ball is dropped from 20 m. Its speed just before hitting the ground is: (g = 10 m/s²)",
+      "options": ["10 m/s", "20 m/s", "30 m/s", "40 m/s"],
+      "answer": "B"
     },
     {
-      "question": "The primary application of Conservation of energy is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
+      "question": "A spring (k = 400 N/m) is compressed 0.1 m. A 0.5 kg mass is placed against it. The maximum speed is:",
+      "options": ["2 m/s", "2.83 m/s", "4 m/s", "8 m/s"],
+      "answer": "B"
     },
     {
-      "question": "For Conservation of energy, which condition is necessary?",
+      "question": "Which statement about energy is correct?",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Conservation of energy?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Conservation of energy is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "Mechanical energy is always conserved",
+        "Friction increases mechanical energy",
+        "Total energy is always conserved in an isolated system",
+        "Potential energy depends on the path taken"
       ],
       "answer": "C"
+    },
+    {
+      "question": "A pendulum of length 1 m is pulled to 60°. The speed at the lowest point is: (g = 10 m/s²)",
+      "options": ["2 m/s", "3.16 m/s", "4 m/s", "5 m/s"],
+      "answer": "B"
+    },
+    {
+      "question": "A 1 kg block slides down a rough 30° slope (μ_k = 0.2) of length 4 m. The speed at the bottom is: (g = 10 m/s²)",
+      "options": ["4 m/s", "5 m/s", "6 m/s", "8 m/s"],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Conservation of energy",
-    "Concept 2: Key theorem or principle in Conservation of energy",
-    "Concept 3: Important application area of Conservation of energy",
-    "Concept 4: Fundamental relationship in Conservation of energy",
-    "Concept 5: Connection between Conservation of energy and other topics"
+    "Energy cannot be created or destroyed — only transformed from one form to another.",
+    "Mechanical energy (K + U) is conserved when only conservative forces do work.",
+    "The work-energy theorem (W_net = ΔK) holds for all forces, conservative or not.",
+    "Non-conservative forces convert mechanical energy into thermal energy.",
+    "Total energy (mechanical + thermal + other) is always conserved in an isolated system."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Conservation of energy",
-    "Task 2: Derive the main formula for Conservation of energy",
-    "Task 3: Create a concept map for Conservation of energy",
-    "Task 4: Practice previous year exam questions on Conservation of energy",
-    "Task 5: Explain Conservation of energy to a peer or study group"
+    "Solve 5 free-fall problems using mgh = ½mv².",
+    "Solve 5 pendulum problems finding speed at the lowest point.",
+    "Solve 5 spring-mass problems finding maximum speed.",
+    "Solve 5 roller coaster problems finding speed at different heights.",
+    "Solve 5 rough-slope problems using the work-energy theorem with friction."
   ]
 }

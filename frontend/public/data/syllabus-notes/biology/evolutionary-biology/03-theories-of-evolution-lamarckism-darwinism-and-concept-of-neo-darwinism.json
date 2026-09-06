@@ -1,0 +1,180 @@
+{
+  "title": "Theories of Evolution",
+  "unitSlug": "evolutionary-biology",
+  "topicSlug": "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism",
+  "topicTitle": "Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+  "relevance": 100,
+  "notes": [
+    "**Lamarckism (1809):** inheritance of acquired characteristics. Use and disuse of organs causes them to develop or atrophy, and these changes are passed to offspring. Example: giraffe neck stretched by reaching for leaves, passed to offspring.",
+    "**Critique of Lamarckism:** acquired changes in somatic cells are not inherited because germ cells are set aside early in development. Weismann's germ plasm theory separated somatic and germ lineages.",
+    "**Darwinism (1859, natural selection):** (1) overproduction of offspring, (2) struggle for existence, (3) variation and heredity, (4) survival of the fittest (natural selection). advantageous traits accumulate over generations.",
+    "**Neo-Darwinism (Modern Synthesis):** combines Darwin's natural selection with Mendelian genetics and population genetics. Variation arises from mutation and recombination; natural selection acts on phenotypes; allele frequencies change in populations.",
+    "**Key addition:** mutations (de Vries) provide the raw material for evolution. Genetic drift, gene flow and non-random mating also change allele frequencies.",
+    "**Lamarck's two laws:** (1) Law of Use and Disuse — organs used extensively become stronger and larger; organs not used deteriorate and eventually disappear. (2) Law of Inheritance of Acquired Characters — changes acquired during an organism's lifetime are transmitted to its offspring.",
+    "**Weismann's experiment (1889):** cut off tails of mice for 22 consecutive generations (over 1,500 mice). Offspring were always born with normal-length tails. This experiment powerfully demonstrated that acquired characteristics (tail removal) are NOT inherited, contradicting Lamarckism.",
+    "**Darwin's postulates in detail:** (1) Overproduction — organisms produce more offspring than can survive. (2) Variation — individuals within a population show heritable variation. (3) Struggle for existence — limited resources create competition. (4) Natural selection — individuals with advantageous variations survive and reproduce more. (5) Gradual change — over generations, populations evolve.",
+    "**Neo-Darwinism modern synthesis contributors:** Fisher, Haldane, Wright (population genetics); Dobzhansky (genetic basis of variation); Mayr (biological species concept); Simpson (paleontology); Huxley (synthesized framework). These scientists unified genetics with evolutionary theory between 1930s–1950s.",
+    "**Types of natural selection:** (1) Stabilizing selection — favours intermediate variants, reduces extremes (e.g., human birth weight). (2) Directional selection — favours one extreme phenotype, shifts population mean (e.g., industrial melanism). (3) Disruptive (diversifying) selection — favours both extremes over intermediates (e.g., beak sizes in seed-cracking birds).",
+    "**Hardy-Weinberg equilibrium principle:** in a population not evolving, allele and genotype frequencies remain constant across generations ($p^2 + 2pq + q^2 = 1$ and $p + q = 1$). This serves as a null model — deviations indicate evolution is occurring.",
+    "**Causes of evolutionary change (deviations from Hardy-Weinberg):** mutation (introduces new alleles), genetic drift (random changes, especially in small populations — bottleneck and founder effects), gene flow/migration (moves alleles between populations), non-random mating (sexual selection), and natural selection (directional change in allele frequencies).",
+    "**Genetic drift — bottleneck effect:** a sudden catastrophic event drastically reduces population size. The surviving individuals may have allele frequencies very different from the original population. Example: Northern elephant seals were hunted down to ~20 individuals; the current population of ~100,000 has very low genetic diversity.",
+    "**Founder effect:** a few individuals colonize a new area and establish a population. Their limited gene pool may carry different allele frequencies than the source population. Example: Amish communities in North America, descended from a small group of founders, have unusually high frequencies of certain genetic conditions (e.g., Ellis-van Creveld syndrome).",
+    "**Sexual selection (Darwin):** a form of natural selection where individuals with certain traits are preferred as mates, even if those traits reduce survival. (1) Intrasexual selection — competition within a sex (e.g., antlers in deer, large body size in male elephants). (2) Intersexual selection — mate choice, usually by females (e.g., peacock's tail, birdsong complexity)."
+  ],
+  "confusion": [
+    "❌ Do not confuse: Lamarckism is NOT entirely wrong in all respects — epigenetics (heritable changes in gene expression without DNA sequence changes) shows that some environmentally induced changes CAN be transmitted across a few generations. However, Lamarck's mechanism is not the primary driver of evolution as he proposed.",
+    "❌ Do not confuse: Natural selection does NOT work on individuals — it acts on populations. An individual does not evolve; its traits either help it survive and reproduce or they don't. Evolution (change in allele frequencies) happens at the population level over generations.",
+    "❌ Do not confuse: Survival of the fittest does NOT mean the strongest or most aggressive — 'fitness' in evolutionary biology means reproductive success. An organism is 'fit' if it passes its genes to the next generation. A small, camouflaged organism that produces many offspring is more 'fit' than a large, powerful one that fails to reproduce.",
+    "❌ Do not confuse: Darwin did NOT know about DNA, genes, or mutations — his theory could not explain the source of variation. Neo-Darwinism fills this gap by incorporating Mendelian genetics, mutations, and recombination as the sources of variation that natural selection acts upon.",
+    "❌ Do not confuse: Genetic drift is NOT adaptation — it is a random process that changes allele frequencies by chance, especially in small populations. Unlike natural selection, drift can increase harmful alleles or decrease beneficial ones, and its effects are unpredictable.",
+    "❌ Do not confuse: Microevolution (changes within a species over generations) is NOT fundamentally different in mechanism from macroevolution (origins of new species, genera, etc.). The only difference is scale and time — the same processes (mutation, selection, drift) operate in both micro- and macroevolution.",
+    "❌ Do not confuse: Natural selection does NOT produce 'perfect' organisms — it only favors traits that are 'good enough' to survive and reproduce in a given environment. Organisms are constrained by their evolutionary history, genetic variation, and trade-offs between competing demands."
+  ],
+  "practice": [
+    "Explain why Lamarck's theory of inheritance of acquired characteristics was widely accepted in its time and what specific evidence later overturned it. Could any aspect of Lamarckism be partially correct in light of modern epigenetics?",
+    "In a population of 1,000 individuals, 840 have the dominant phenotype and 160 have the recessive phenotype. Using the Hardy-Weinberg equation, calculate the frequency of the recessive allele (q) and the carrier frequency (2pq). Is this population likely to be in equilibrium?",
+    "Compare Lamarckism, Darwinism, and Neo-Darwinism in a table showing: year proposed, mechanism of variation, mechanism of evolution, unit of evolution, and key limitation of each theory.",
+    "Describe three real-world examples where each type of natural selection (stabilizing, directional, disruptive) can be observed. For each, explain what trait is being selected and why.",
+    "Explain how the bottleneck effect and founder effect both lead to reduced genetic diversity but through different mechanisms. Give a real-world example of each.",
+    "Explain the mechanism of balancing selection using the sickle cell allele and malaria resistance as an example. Why does this maintain both alleles in the population rather than leading to fixation of one?"
+  ],
+  "universalFacts": [
+    "Darwin's 'On the Origin of Species' (1859) sold out on its first day of publication. It presented natural selection as the mechanism of evolution but did not explain the genetic basis of variation — that gap took another 80 years to fill with the Modern Synthesis.",
+    "Alfred Russel Wallace independently conceived the theory of natural selection at nearly the same time as Darwin. Wallace's observations of mimicry in tropical butterflies helped shape his ideas. The theory was presented jointly to the Linnean Society in 1858.",
+    "The Modern Synthesis (1930s–1950s) unified five major fields — Mendelian genetics, population genetics, systematics, paleontology, and botany — into a coherent evolutionary framework, making it one of the greatest intellectual achievements in the history of biology.",
+    "Richard Lenski's Long-Term Evolution Experiment (started 1988) has tracked over 80,000 generations of E. coli. One lineage evolved the ability to metabolize citrate — a trait E. coli normally cannot use — providing direct, observable evidence of evolution in action.",
+    "The peppered moth (Biston betularia) before the Industrial Revolution was predominantly light-coloured. By 1895 in Manchester, 98% were dark (melanic). After clean air legislation reduced pollution, the light form has rebounded — demonstrating that evolution is reversible when selection pressures change."
+  ],
+  "animation3D": "evolutionary-biology",
+  "motionGraphics": "evolutionary-biology",
+  "examples": [
+    "Example 1: Real-world application of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Example 2: Practical demonstration of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism concepts",
+    "Example 3: Numerical problem on Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Example 4: Diagram-based question on Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Example 5: Application in daily life involving Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism with suitable example.",
+    "Q2. Solve problems related to Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism.",
+    "Q3. Differentiate between various aspects of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism.",
+    "Q4. Derive the key formula related to Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism.",
+    "Q5. What are the applications of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Formula 2: Mathematical expression of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Formula 3: Application formula for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Formula 4: Derivation result for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Formula 5: Important relation in Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Point 2: Essential theorem or principle related to Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Point 3: Important condition or constraint for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Point 4: Common applications of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism applies",
+    "Note 2: Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Note 4: Remember the units and dimensions involved in Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Note 5: Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Statement 2: Theorem related to Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Statement 3: Condition for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism to be valid",
+    "Statement 4: Principle governing Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Statement 5: Corollary or consequence of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism"
+  ],
+  "importantNotes": [
+    "Note 1: Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Note 3: Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Note 5: Cross-check your answers using alternative methods for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism formula",
+    "Trick 2: Elimination technique for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism MCQs",
+    "Trick 3: Dimensional analysis shortcut for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Trick 4: Memory aid for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism formulas",
+    "Trick 5: Time-saving approach for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Exam Tip 2: Practice previous year questions on Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Exam Tip 3: Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism thoroughly",
+    "Exam Tip 5: Review common mistakes related to Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Concept 2: Key theorem or principle in Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Concept 3: Important application area of Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Concept 4: Fundamental relationship in Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Concept 5: Connection between Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Task 2: Derive the main formula for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Task 3: Create a concept map for Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Task 4: Practice previous year exam questions on Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Task 5: Explain Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism to a peer or study group"
+  ]
+}

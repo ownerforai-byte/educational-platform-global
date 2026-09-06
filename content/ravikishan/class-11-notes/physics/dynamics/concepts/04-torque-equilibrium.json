@@ -5,156 +5,142 @@
   "topicTitle": "Moment, Torque and Equilibrium",
   "relevance": 100,
   "notes": [
-    "**Moment, Torque and Equilibrium:** This topic covers the fundamental concepts of moment, torque and equilibrium in the physics curriculum.",
-    "Understanding moment, torque and equilibrium is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to moment, torque and equilibrium should be memorized and practiced regularly."
+    "**Torque (moment of a force):** τ = rF sin θ, where r is the distance from the pivot to the point of application, F is the force, and θ is the angle between r and F. The SI unit is Nm. Torque is positive for anticlockwise rotation, negative for clockwise.",
+    "**Equilibrium of a rigid body:** two conditions must BOTH hold: (1) translational equilibrium: ΣF = 0 (no net force → no linear acceleration); (2) rotational equilibrium: Στ = 0 (no net torque → no angular acceleration). A body at rest or rotating at constant angular velocity satisfies both.",
+    "**Couple:** two equal and opposite forces separated by a distance d produce a pure torque (independent of pivot): τ = F × d. The net force is zero, so there is no linear acceleration — only rotation. The turning effect is the same about ANY point.",
+    "**Centre of gravity (CG):** the single point where the entire weight of a body may be considered to act. For regular uniform bodies, the CG is at the geometric centre. For irregular bodies, it can be found by balancing or suspension.",
+    "**Worked example — seesaw:** a 40 kg child sits 2 m from the fulcrum. Where must a 50 kg child sit to balance? Torque balance: 40×9.8×2 = 50×9.8×x → x = 1.6 m. The heavier child sits closer to the fulcrum.",
+    "**Worked example — ladder:** a uniform ladder of length L leans against a smooth wall at angle θ. The wall reaction is horizontal (smooth), the ground reaction has both normal and friction components. Torque about the base eliminates the unknown ground reaction: N_wall × L sin θ = mg × (L/2) cos θ.",
+    "**Equilibrium in the NEB exam:** the standard problem is a beam/ladder/plank with multiple forces — apply ΣF_x = 0, ΣF_y = 0, and Στ = 0 (choosing the pivot wisely to eliminate unknowns). Three equations for up to three unknowns.",
+    "**Practical examples:** opening a door (push at the handle, not near the hinge — larger r gives more τ), using a spanner (longer handle = more torque for the same force), a wheelbarrow (load CG near the wheel reduces the lifting torque)."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in moment, torque and equilibrium.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Torque and moment are different.' ✅ In physics problems, they are the same quantity: τ = rF sin θ. Engineers sometimes distinguish 'moment' (bending) from 'torque' (twisting), but here they are interchangeable.",
+    "❌ 'A body with zero net force is in equilibrium.' ✅ It must ALSO have zero net torque. A couple (equal and opposite forces) produces zero net force but a non-zero torque — the body rotates.",
+    "❌ 'The torque depends on the pivot chosen.' ✅ The torque of a single force depends on the pivot, but the NET torque in equilibrium is zero about ANY pivot. Choose the pivot to eliminate unknowns.",
+    "❌ 'Heavier bodies always produce more torque.' ✅ Torque depends on BOTH force and distance. A small force far from the pivot can produce more torque than a large force close to it.",
+    "❌ 'The centre of gravity is always inside the body.' ✅ For a ring, the CG is at the centre (in empty space). For an L-shaped body, it lies outside the material.",
+    "❌ 'A ladder leaning against a wall is safe if ΣF = 0.' ✅ You also need Στ = 0 AND friction at the ground to be ≤ μN. The ladder slips when the required friction exceeds μN_ground."
   ],
   "practice": [
-    "Solve at least 5 problems on moment, torque and equilibrium from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Solve 5 torque-calculation problems for forces applied at different angles and distances from the pivot.",
+    "Solve 5 equilibrium problems (beams, planks, seesaws) using ΣF = 0 and Στ = 0.",
+    "Solve 3 ladder problems (smooth wall, rough ground) for reactions and the minimum angle before slipping.",
+    "Find the centre of gravity of composite bodies (rod + disk, L-shaped body) by taking moments.",
+    "Solve 3 couple problems showing that the torque is independent of the pivot chosen."
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding moment, torque and equilibrium builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of moment, torque and equilibrium span engineering, physics, economics, and computer science."
+    "Torque is the rotational analogue of force — just as force causes linear acceleration, torque causes angular acceleration.",
+    "The principle of moments (Στ = 0 for equilibrium) is the basis of all lever, beam, and structure problems.",
+    "Every rigid-body equilibrium problem in the NEB exam requires both ΣF = 0 and Στ = 0.",
+    "The centre of gravity is a powerful simplification — it reduces a distributed weight to a single point force.",
+    "Couples produce pure rotation — they are used in steering wheels, screwdrivers, and any tool that applies a twisting force."
   ],
   "animation3D": "dynamics",
   "motionGraphics": "dynamics",
   "examples": [
-    "Example 1: Real-world application of Moment, Torque and Equilibrium",
-    "Example 2: Practical demonstration of Moment, Torque and Equilibrium concepts",
-    "Example 3: Numerical problem on Moment, Torque and Equilibrium",
-    "Example 4: Diagram-based question on Moment, Torque and Equilibrium",
-    "Example 5: Application in daily life involving Moment, Torque and Equilibrium"
+    "Seesaw: A 30 kg child sits 1.5 m from the fulcrum. A 45 kg child sits on the other side. Balance distance = 30×1.5/45 = 1.0 m.",
+    "Spanner: A 200 N force is applied at 0.25 m from a bolt. Torque = 200 × 0.25 = 50 Nm.",
+    "Uniform beam: A 6 m uniform beam (mass 20 kg) supports a 10 kg load at its end. The support force at the free end: torque about the wall → T × 6 = 20×9.8×3 + 10×9.8×6 → T = 196 N.",
+    "Ladder: A 5 m uniform ladder (mass 15 kg) leans at 60° against a smooth wall. Wall reaction N = (15×9.8×2.5×cos60°)/(5×sin60°) = 42.4 N.",
+    "Couple: Two 30 N forces act on opposite sides of a wheel (radius 0.4 m). Torque = 30 × 0.8 = 24 Nm (same about any point)."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Moment, Torque and Equilibrium with suitable example.",
-    "Q2. Solve problems related to Moment, Torque and Equilibrium.",
-    "Q3. Differentiate between various aspects of Moment, Torque and Equilibrium.",
-    "Q4. Derive the key formula related to Moment, Torque and Equilibrium.",
-    "Q5. What are the applications of Moment, Torque and Equilibrium?"
+    "A 50 N force is applied at 30° to a spanner of length 0.3 m. Find the torque about the bolt.",
+    "A uniform beam of length 4 m and mass 10 kg supports a 20 kg load at its end. Find the support forces at both ends.",
+    "A 3 m ladder of mass 8 kg leans against a smooth wall at 50° to the horizontal. Find the reactions at the wall and ground.",
+    "Two children of masses 25 kg and 35 kg sit on a seesaw 3 m long. Where should the fulcrum be placed?",
+    "A couple consists of two 20 N forces separated by 0.5 m. Find the torque and show it is the same about any point."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Moment, Torque and Equilibrium",
-    "Key Formula 2: Mathematical expression of Moment, Torque and Equilibrium",
-    "Key Formula 3: Application formula for Moment, Torque and Equilibrium",
-    "Key Formula 4: Derivation result for Moment, Torque and Equilibrium",
-    "Key Formula 5: Important relation in Moment, Torque and Equilibrium"
+    "Torque of a force: τ = rF sin θ (positive = anticlockwise, negative = clockwise)",
+    "Equilibrium conditions: ΣF = 0 (translational) AND Στ = 0 (rotational)",
+    "Couple torque: τ = F × d (independent of pivot position)",
+    "Centre of gravity: x_CG = Σ(mᵢxᵢ)/Σmᵢ (weighted average of positions)",
+    "Principle of moments: for equilibrium, sum of clockwise torques = sum of anticlockwise torques"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Moment, Torque and Equilibrium",
-    "Key Point 2: Essential theorem or principle related to Moment, Torque and Equilibrium",
-    "Key Point 3: Important condition or constraint for Moment, Torque and Equilibrium",
-    "Key Point 4: Common applications of Moment, Torque and Equilibrium",
-    "Key Point 5: Connection to other topics in Science"
+    "Torque = rF sin θ — it depends on force, distance, AND the angle between them.",
+    "Equilibrium requires BOTH ΣF = 0 and Στ = 0 — one without the other is not enough.",
+    "A couple produces pure rotation (zero net force, non-zero torque) — the torque is the same about any point.",
+    "The centre of gravity simplifies a distributed weight to a single point force.",
+    "Choose the pivot at an unknown force's point of application to eliminate that force from the torque equation."
   ],
-  "summary": "Moment, Torque and Equilibrium is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Torque (τ = rF sin θ) is the rotational analogue of force. A rigid body is in equilibrium only when both ΣF = 0 (no linear acceleration) and Στ = 0 (no angular acceleration). The principle of moments, couples, and centre of gravity are the key tools for solving beam, ladder, and structure problems.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Moment, Torque and Equilibrium applies",
-    "Note 2: Moment, Torque and Equilibrium connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Moment, Torque and Equilibrium",
-    "Note 4: Remember the units and dimensions involved in Moment, Torque and Equilibrium",
-    "Note 5: Moment, Torque and Equilibrium frequently appears in examination questions"
+    "Always choose the pivot at the point of an unknown force — that force then contributes zero torque and drops out of the equation.",
+    "Torque sign convention: anticlockwise = positive, clockwise = negative (or vice versa — just be consistent).",
+    "For a uniform beam, the weight acts at the centre (L/2 from either end).",
+    "A ladder against a smooth wall has only a horizontal reaction at the wall (no friction).",
+    "NEB equilibrium problems always require all three equations: ΣF_x = 0, ΣF_y = 0, Στ = 0."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Moment, Torque and Equilibrium",
-    "Statement 2: Theorem related to Moment, Torque and Equilibrium",
-    "Statement 3: Condition for Moment, Torque and Equilibrium to be valid",
-    "Statement 4: Principle governing Moment, Torque and Equilibrium",
-    "Statement 5: Corollary or consequence of Moment, Torque and Equilibrium"
+    "Torque is the rotational effect of a force: τ = r × F (vector cross product), magnitude rF sin θ.",
+    "A rigid body is in static equilibrium if and only if ΣF = 0 and Στ = 0 about any point.",
+    "The principle of moments: in equilibrium, the sum of clockwise torques equals the sum of anticlockwise torques about any pivot.",
+    "A couple produces a pure torque τ = Fd that is independent of the pivot position.",
+    "The centre of gravity of a body is the point where the total weight may be considered to act for torque calculations."
   ],
   "importantNotes": [
-    "Note 1: Moment, Torque and Equilibrium is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Moment, Torque and Equilibrium",
-    "Note 3: Moment, Torque and Equilibrium has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Moment, Torque and Equilibrium",
-    "Note 5: Cross-check your answers using alternative methods for Moment, Torque and Equilibrium"
+    "Torque is a vector: τ = r × F. The direction (into or out of the page) is given by the right-hand rule.",
+    "The two equilibrium conditions (ΣF = 0, Στ = 0) are independent — both must be checked.",
+    "A couple's torque is independent of the pivot — this is why a steering wheel feels the same no matter where you push.",
+    "The centre of gravity coincides with the centre of mass only in a uniform gravitational field.",
+    "NEB equilibrium problems: always draw the FBD first, then choose the pivot to eliminate unknowns."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Moment, Torque and Equilibrium formula",
-    "Trick 2: Elimination technique for Moment, Torque and Equilibrium MCQs",
-    "Trick 3: Dimensional analysis shortcut for Moment, Torque and Equilibrium",
-    "Trick 4: Memory aid for Moment, Torque and Equilibrium formulas",
-    "Trick 5: Time-saving approach for Moment, Torque and Equilibrium problems"
+    "Pivot trick: place the pivot at the point of an unknown force — that force drops out of the torque equation.",
+    "Seesaw shortcut: m₁r₁ = m₂r₂ — the product of mass and distance must be equal on both sides.",
+    "Ladder shortcut: take torques about the ground contact point — the ground reaction (both N and f) drops out.",
+    "Couple shortcut: τ = F × d — just multiply one force by the perpendicular distance between them.",
+    "CG shortcut: for a uniform rod, the weight acts at L/2 — no calculation needed."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Moment, Torque and Equilibrium",
-    "Exam Tip 2: Practice previous year questions on Moment, Torque and Equilibrium",
-    "Exam Tip 3: Moment, Torque and Equilibrium carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Moment, Torque and Equilibrium thoroughly",
-    "Exam Tip 5: Review common mistakes related to Moment, Torque and Equilibrium"
+    "The FBD is essential — draw ALL forces with their correct points of application.",
+    "Choose the pivot wisely: at the point of an unknown force, that force contributes zero torque.",
+    "Ladder problems (smooth wall, rough ground) are standard — know the torque equation about the base.",
+    "Seesaw and beam problems use the principle of moments: clockwise torques = anticlockwise torques.",
+    "Couple problems: remember that the torque is the same about any point — pick the easiest one."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Moment, Torque and Equilibrium?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
+      "question": "A 40 N force is applied perpendicularly at the end of a 0.5 m spanner. The torque is:",
+      "options": ["20 Nm", "40 Nm", "80 Nm", "10 Nm"],
       "answer": "A"
     },
     {
-      "question": "The primary application of Moment, Torque and Equilibrium is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
+      "question": "A uniform beam of length L and mass M is supported at both ends. Each support carries:",
+      "options": ["Mg/2", "Mg", "Mg/4", "2Mg"],
       "answer": "A"
     },
     {
-      "question": "For Moment, Torque and Equilibrium, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
+      "question": "A couple consists of two 10 N forces separated by 0.3 m. The torque is:",
+      "options": ["3 Nm", "30 Nm", "0.3 Nm", "300 Nm"],
       "answer": "A"
     },
     {
-      "question": "What is the unit/dimension used in Moment, Torque and Equilibrium?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
+      "question": "A 2 m uniform rod is balanced at its centre. A 5 N weight is placed at one end. The support force at the other end to balance it is:",
+      "options": ["5 N upward", "5 N downward", "10 N upward", "2.5 N upward"],
       "answer": "A"
     },
     {
-      "question": "Which statement about Moment, Torque and Equilibrium is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
+      "question": "Which condition is necessary for a rigid body to be in static equilibrium?",
+      "options": ["ΣF = 0 only", "Στ = 0 only", "Both ΣF = 0 and Στ = 0", "Either ΣF = 0 or Στ = 0"],
       "answer": "C"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Moment, Torque and Equilibrium",
-    "Concept 2: Key theorem or principle in Moment, Torque and Equilibrium",
-    "Concept 3: Important application area of Moment, Torque and Equilibrium",
-    "Concept 4: Fundamental relationship in Moment, Torque and Equilibrium",
-    "Concept 5: Connection between Moment, Torque and Equilibrium and other topics"
+    "Torque (τ = rF sin θ) is the rotational analogue of force — it causes angular acceleration.",
+    "A rigid body is in equilibrium only when both ΣF = 0 and Στ = 0 — both conditions are independent.",
+    "The principle of moments: in equilibrium, clockwise torques balance anticlockwise torques about any pivot.",
+    "A couple produces a pure torque τ = Fd that is independent of the pivot position.",
+    "The centre of gravity is the single point where the total weight may be considered to act."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Moment, Torque and Equilibrium",
-    "Task 2: Derive the main formula for Moment, Torque and Equilibrium",
-    "Task 3: Create a concept map for Moment, Torque and Equilibrium",
-    "Task 4: Practice previous year exam questions on Moment, Torque and Equilibrium",
-    "Task 5: Explain Moment, Torque and Equilibrium to a peer or study group"
+    "Solve 5 torque-calculation problems for forces at different angles and distances from the pivot.",
+    "Solve 5 equilibrium problems (beams, seesaws) using ΣF = 0 and Στ = 0.",
+    "Solve 3 ladder problems for reactions and the minimum angle before slipping.",
+    "Find the centre of gravity of composite bodies by taking moments.",
+    "Solve 3 couple problems showing that the torque is independent of the pivot."
   ]
 }

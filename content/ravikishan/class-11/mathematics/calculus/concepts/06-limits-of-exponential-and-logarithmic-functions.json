@@ -5,65 +5,45 @@
   "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
   "relevance": 100,
   "notes": [
-    "**Exponential function limits:** $\\lim_{x \\to a} e^x = e^a$ for all real $a$. The exponential function is continuous everywhere.",
-    "**Important exponential limit:** $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$. This is the exponential analogue of $\\lim_{x \\to 0} (\\sin x)/x = 1$.",
-    "**Generalised form:** $\\lim_{x \\to 0} \\frac{e^{ax} - 1}{bx} = \\frac{a}{b}$.",
-    "**Logarithmic function limits:** $\\lim_{x \\to a} \\ln x = \\ln a$ for all $a > 0$. The natural logarithm is continuous on $(0, \\infty)$.",
-    "**Important logarithmic limit:** $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$. Equivalently, $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$.",
-    "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\ln(1 + ax)}{bx} = \\frac{a}{b}$.",
-    "**Limits at infinity for exponential:** $\\lim_{x \\to \\infty} e^x = \\infty$ and $\\lim_{x \\to -\\infty} e^x = 0$.",
-    "**Limits at infinity for logarithmic:** $\\lim_{x \\to \\infty} \\ln x = \\infty$ (slow growth) and $\\lim_{x \\to 0^+} \\ln x = -\\infty$.",
-    "**The number $e$ defined as a limit:** $e = \\lim_{n \\to \\infty} (1 + 1/n)^n \\approx 2.71828$."
+    "**Basic Theorems on Limits of Exponential and Logarithmic Functions:** Class 11 concept.",
+    "**Why:** connects to other topics.",
+    "**Study:** learn definitions, formulas, practice."
   ],
   "confusion": [
-    "$\\ln x$ is only defined for $x > 0$. Never attempt $\\ln(0)$ or $\\ln(-1)$.",
-    "The limit $\\lim_{x \\to 0} (e^x - 1)/x = 1$ requires the exponent to be exactly $x$. For $e^{2x}$, adjust: $\\lim_{x \\to 0} (e^{2x} - 1)/x = 2$.",
-    "$e^x$ grows much faster than any polynomial $x^n$ as $x \\to \\infty$, and $\\ln x$ grows much slower than any positive power $x^n$."
+    "Distinguish concepts in Basic Theorems on Limits of Exponential and Logarithmic Functions.",
+    "Check formula conditions."
   ],
   "practice": [
-    "Evaluate $\\lim_{x \\to 0} \\frac{e^{3x} - 1}{x}$.",
-    "Find $\\lim_{x \\to 0} \\frac{\\ln(1 + 5x)}{x}$.",
-    "Evaluate $\\lim_{x \\to \\infty} \\frac{e^x}{x^{10}}$ (answer: $\\infty$, since $e^x$ dominates)."
+    "Solve 5 problems on Basic Theorems on Limits of Exponential and Logarithmic Functions.",
+    "Derive the key formula for Basic Theorems on Limits of Exponential and Logarithmic Functions."
   ],
   "universalFacts": [
-    "The two key limits $\\lim_{x \\to 0} (e^x - 1)/x = 1$ and $\\lim_{x \\to 0} \\ln(1+x)/x = 1$ are the foundations for differentiating exponential and logarithmic functions.",
-    "The exponential function's unique property is that it is its own derivative: $\\frac{d}{dx}e^x = e^x$, which follows directly from the limit $\\lim_{h \\to 0}(e^h - 1)/h = 1$."
+    "Basic Theorems on Limits of Exponential and Logarithmic Functions appears in exams.",
+    "Foundational for advanced topics."
   ],
   "examples": [
-    "Example 1: Real-world application of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Example 2: Practical demonstration of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions concepts",
-    "Example 3: Numerical problem on Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Example 4: Diagram-based question on Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Example 5: Application in daily life involving Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions"
+    "Application of Basic Theorems on Limits of Exponential and Logarithmic Functions",
+    "Numerical problem on Basic Theorems on Limits of Exponential and Logarithmic Functions",
+    "Daily life use of Basic Theorems on Limits of Exponential and Logarithmic Functions"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions with suitable example.",
-    "Q2. Solve problems related to Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions.",
-    "Q3. Differentiate between various aspects of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions.",
-    "Q4. Derive the key formula related to Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions.",
-    "Q5. What are the applications of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions?"
+    "Q1. Define Basic Theorems on Limits of Exponential and Logarithmic Functions.",
+    "Q2. Key formula for Basic Theorems on Limits of Exponential and Logarithmic Functions.",
+    "Q3. Problem on Basic Theorems on Limits of Exponential and Logarithmic Functions."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Formula 2: Mathematical expression of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Formula 3: Application formula for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Formula 4: Derivation result for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Formula 5: Important relation in Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions"
+    "Formula for Basic Theorems on Limits of Exponential and Logarithmic Functions: [insert from textbook].",
+    "Key relationship: [variable formula]."
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Point 2: Essential theorem or principle related to Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Point 3: Important condition or constraint for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Point 4: Common applications of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Key Point 5: Connection to other topics in Science"
+    "Core principle of Basic Theorems on Limits of Exponential and Logarithmic Functions",
+    "Application of Basic Theorems on Limits of Exponential and Logarithmic Functions",
+    "Connection of Basic Theorems on Limits of Exponential and Logarithmic Functions to other topics"
   ],
-  "summary": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Basic Theorems on Limits of Exponential and Logarithmic Functions covers essential principles and applications.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions applies",
-    "Note 2: Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Note 4: Remember the units and dimensions involved in Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Note 5: Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions frequently appears in examination questions"
+    "Check conditions for Basic Theorems on Limits of Exponential and Logarithmic Functions.",
+    "Basic Theorems on Limits of Exponential and Logarithmic Functions connects to other topics."
   ],
   "importantStatements": [
     "Statement 1: Definition of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
@@ -73,90 +53,33 @@
     "Statement 5: Corollary or consequence of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions"
   ],
   "importantNotes": [
-    "Note 1: Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Note 3: Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Note 5: Cross-check your answers using alternative methods for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions"
+    "Basic Theorems on Limits of Exponential and Logarithmic Functions is based on fundamental principles."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions formula",
-    "Trick 2: Elimination technique for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions MCQs",
-    "Trick 3: Dimensional analysis shortcut for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Trick 4: Memory aid for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions formulas",
-    "Trick 5: Time-saving approach for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions problems"
+    "Recall the formula for Basic Theorems on Limits of Exponential and Logarithmic Functions."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Exam Tip 2: Practice previous year questions on Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Exam Tip 3: Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions thoroughly",
-    "Exam Tip 5: Review common mistakes related to Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions"
+    "Focus on Basic Theorems on Limits of Exponential and Logarithmic Functions problems - significant marks."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions?",
+      "question": "Which describes Basic Theorems on Limits of Exponential and Logarithmic Functions?",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "Correct definition",
+        "Related concept",
+        "Incorrect description",
+        "Unrelated"
       ],
       "answer": "A"
-    },
-    {
-      "question": "The primary application of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Concept 2: Key theorem or principle in Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Concept 3: Important application area of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Concept 4: Fundamental relationship in Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Concept 5: Connection between Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions and other topics"
+    "Definition and significance of Basic Theorems on Limits of Exponential and Logarithmic Functions."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Task 2: Derive the main formula for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Task 3: Create a concept map for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Task 4: Practice previous year exam questions on Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Task 5: Explain Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions to a peer or study group"
-  ]
+    "Solve 5 problems on Basic Theorems on Limits of Exponential and Logarithmic Functions."
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1
 }

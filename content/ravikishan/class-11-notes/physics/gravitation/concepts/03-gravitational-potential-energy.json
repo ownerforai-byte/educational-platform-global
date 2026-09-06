@@ -4,157 +4,147 @@
   "topicSlug": "gravitational-potential-energy",
   "topicTitle": "Gravitational Potential and Potential Energy",
   "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "gravitational-potential-and-potential-energy",
   "notes": [
-    "**Gravitational Potential and Potential Energy:** This topic covers the fundamental concepts of gravitational potential and potential energy in the physics curriculum.",
-    "Understanding gravitational potential and potential energy is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to gravitational potential and potential energy should be memorized and practiced regularly."
+    "**Gravitational potential V:** the work done per unit mass in bringing a test mass from infinity to a point, without acceleration. For a point mass M: V = −GM/r. At infinity V = 0, and everywhere else V is negative because gravity does positive work as the mass approaches — the field does the work, so potential decreases.",
+    "**Gravitational potential energy U:** the work done against gravity in assembling a system; for two masses separated by r: U = −GMm/r. It is the energy of the whole system, not of one mass alone. U is negative because the system is bound — you must supply GMm/r of energy to separate the masses to infinity.",
+    "**Why the minus sign matters:** potential energy is defined with zero at infinity. Since the force is attractive, energy is released (and PE decreases) as masses come together. A satellite in orbit at radius r has U = −GMm/r — its total mechanical energy is E = K + U = −GMm/2r, which is negative, confirming a bound orbit.",
+    "**Near Earth's surface:** for small heights h above the surface, U = mgh. This is the constant-g approximation of −GMm/r: since Δ(1/r) ≈ −h/R², the change matches mgh. Use mgh only for h ≪ R; use −GMm/r for large altitudes (satellites, rockets).",
+    "**Worked example — escape energy:** to launch a mass m from Earth's surface (R) to infinity you must supply GMm/R. Numerically for m = 1 kg: (6.67×10⁻¹¹)(5.97×10²⁴)/6.37×10⁶ ≈ 6.25×10⁷ J ≈ 62.5 MJ per kg. This energy corresponds to the escape speed 11.2 km/s.",
+    "**Potential vs potential energy vs field:** field g = −dV/dr (the force per unit mass, a vector); potential V is a scalar (J/kg); potential energy U = mV. The field is the negative gradient of the potential: g = −dV/dr radially.",
+    "**Equipotential surfaces:** surfaces of constant V. Moving along an equipotential surface requires zero work; the field is always perpendicular to these surfaces. For a point mass, equipotentials are concentric spheres.",
+    "**Superposition:** for multiple masses, V = Σ(−GMᵢ/rᵢ) and U = Σ(−GMᵢm/rᵢ) — potentials add as scalars, which is much simpler than adding force vectors."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in gravitational potential and potential energy.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Potential and potential energy are the same.' ✅ Potential V is work per unit mass (J/kg); potential energy U = mV (J). V belongs to a point in the field; U belongs to the mass–field system.",
+    "❌ 'Negative energy is unphysical.' ✅ Negative potential energy simply means the system is BOUND — energy must be added to separate it. It is a matter of the reference at infinity.",
+    "❌ 'U = mgh and U = −GMm/r disagree.' ✅ They agree for small heights: mgh is the CHANGE in −GMm/r near the surface. Use the right one for the régime.",
+    "❌ 'Potential is maximum at Earth's surface.' ✅ Potential is most negative at the surface (−GM/R) and rises toward zero with altitude — at infinity it reaches the (higher) value 0.",
+    "❌ 'Doubling the distance doubles the potential energy.' ✅ U = −GMm/r — doubling r halves the magnitude, so U becomes −GMm/2r (less negative).",
+    "❌ 'A satellite far away has lots of potential energy.' ✅ A far-away satellite has potential energy near ZERO (least negative, but U ≈ 0). It needs enormous kinetic energy (orbital speed) that comes from the launch energy."
   ],
   "practice": [
-    "Solve at least 5 problems on gravitational potential and potential energy from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Find V and g at a point 2R above Earth's centre.",
+    "Calculate the potential energy of a 1000 kg satellite at r = 6.8×10⁶ m.",
+    "Find the energy required to move a 500 kg mass from R to 3R.",
+    "Show that for a circular orbit E_total = U/2 = −GMm/2r.",
+    "Derive the escape speed from setting K + U = 0 at infinity.",
+    "Find the work needed to place a 10 kg mass at infinity from Earth's surface."
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding gravitational potential and potential energy builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of gravitational potential and potential energy span engineering, physics, economics, and computer science."
+    "Gravitational potential energy is exactly the 'missing' energy that binds systems — this is why the binding energy of Earth + satellite equals |U|.",
+    "The concept of potential is useful because it is scalar: complex many-body problems reduce to addition rather than vector resolution.",
+    "Near a black hole, gravitational potential becomes so deep (−GM/r) that even light cannot escape — the origin of the event horizon.",
+    "Gravitational potential determines whether planets retain atmospheres: gas molecules with thermal speeds above the local escape speed leak away.",
+    "The Voyager probes were launched using the escape-energy budget — their final trajectory traced the potential wells of the Sun and giant planets."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation",
   "examples": [
-    "Example 1: Real-world application of Gravitational Potential and Potential Energy",
-    "Example 2: Practical demonstration of Gravitational Potential and Potential Energy concepts",
-    "Example 3: Numerical problem on Gravitational Potential and Potential Energy",
-    "Example 4: Diagram-based question on Gravitational Potential and Potential Energy",
-    "Example 5: Application in daily life involving Gravitational Potential and Potential Energy"
+    "V at Earth's surface: V = −GM/R = −6.25×10⁷ J/kg.",
+    "U of 1000 kg satellite at r = 6.8×10⁶ m: U = −GMm/r = −5.9×10¹⁰ J.",
+    "Escape energy per kg: GM/R = 6.25×10⁷ J ≈ 17 kWh per kg.",
+    "Near surface: a 2 kg mass lifted 10 m gains U = mgh = 196 J.",
+    "Total energy of circular orbit: E = −GMm/2r — negative, so the orbit is bound."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Gravitational Potential and Potential Energy with suitable example.",
-    "Q2. Solve problems related to Gravitational Potential and Potential Energy.",
-    "Q3. Differentiate between various aspects of Gravitational Potential and Potential Energy.",
-    "Q4. Derive the key formula related to Gravitational Potential and Potential Energy.",
-    "Q5. What are the applications of Gravitational Potential and Potential Energy?"
+    "Calculate the gravitational potential at a point 3×10⁷ m from the centre of Earth (M = 6×10²⁴ kg).",
+    "Find the gravitational potential energy of a 1500 kg satellite at an altitude of 2000 km above Earth.",
+    "How much energy is required to move a 3000 kg spacecraft from Earth's surface to infinity?",
+    "A 700 kg probe is moved from r = 8×10⁶ m to r = 5×10⁶ m. Find the change in its potential energy.",
+    "Derive that for a circular orbit v² = GM/r and hence E = −GMm/2r.",
+    "At what height is the gravitational potential of Earth equal to −3×10⁷ J/kg?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Gravitational Potential and Potential Energy",
-    "Key Formula 2: Mathematical expression of Gravitational Potential and Potential Energy",
-    "Key Formula 3: Application formula for Gravitational Potential and Potential Energy",
-    "Key Formula 4: Derivation result for Gravitational Potential and Potential Energy",
-    "Key Formula 5: Important relation in Gravitational Potential and Potential Energy"
+    "Gravitational potential: V = −GM/r (J/kg)",
+    "Gravitational potential energy: U = mV = −GMm/r (J)",
+    "Near the surface: U = mgh (h ≪ R)",
+    "Field from potential: g = −dV/dr",
+    "Total orbital energy: E = −GMm/2r = U/2"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Gravitational Potential and Potential Energy",
-    "Key Point 2: Essential theorem or principle related to Gravitational Potential and Potential Energy",
-    "Key Point 3: Important condition or constraint for Gravitational Potential and Potential Energy",
-    "Key Point 4: Common applications of Gravitational Potential and Potential Energy",
-    "Key Point 5: Connection to other topics in Science"
+    "V = −GM/r is negative, approaching zero at infinity.",
+    "U = −GMm/r is the energy of the (bound) system, negative for attraction.",
+    "Near Earth's surface U = mgh is the appropriate approximation.",
+    "Potential and field connect: g = −dV/dr.",
+    "Total energy of a circular orbit is negative: E = −GMm/2r."
   ],
-  "summary": "Gravitational Potential and Potential Energy is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Gravitational potential V = −GM/r is the work per unit mass to bring a test mass from infinity; potential energy U = −GMm/r is the negative binding energy of two masses. Near the surface U ≈ mgh. The field relates to the potential by g = −dV/dr, and circular orbits have total energy E = −GMm/2r, confirming their bound nature.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Gravitational Potential and Potential Energy applies",
-    "Note 2: Gravitational Potential and Potential Energy connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Gravitational Potential and Potential Energy",
-    "Note 4: Remember the units and dimensions involved in Gravitational Potential and Potential Energy",
-    "Note 5: Gravitational Potential and Potential Energy frequently appears in examination questions"
+    "Both V and U are defined with reference zero at infinity — that is why they are negative.",
+    "Use U = mgh only for small heights (h ≪ R); use −GMm/r for space-scale problems.",
+    "Potential is a scalar — use scalar addition with multiple masses.",
+    "The escape energy equals |U| at the surface: GMm/R.",
+    "NEB may ask 'derive U = −GMm/r starting from F = GMm/r²' — know the integration step."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Gravitational Potential and Potential Energy",
-    "Statement 2: Theorem related to Gravitational Potential and Potential Energy",
-    "Statement 3: Condition for Gravitational Potential and Potential Energy to be valid",
-    "Statement 4: Principle governing Gravitational Potential and Potential Energy",
-    "Statement 5: Corollary or consequence of Gravitational Potential and Potential Energy"
+    "Gravitational potential at a point is the work done per unit mass in bringing a mass from infinity to that point: V = −GM/r.",
+    "Gravitational potential energy of two masses is U = −GMm/r, taking zero at infinity.",
+    "For small heights near Earth's surface, U = mgh.",
+    "The gravitational field is the negative gradient of the potential: g = −dV/dr.",
+    "A satellite in a circular orbit has total energy E = −GMm/2r (bound system)."
   ],
   "importantNotes": [
-    "Note 1: Gravitational Potential and Potential Energy is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Gravitational Potential and Potential Energy",
-    "Note 3: Gravitational Potential and Potential Energy has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Gravitational Potential and Potential Energy",
-    "Note 5: Cross-check your answers using alternative methods for Gravitational Potential and Potential Energy"
+    "V = −GM/r (potential) and U = −GMm/r (potential energy) both take zero at infinity — hence negative for attracted masses.",
+    "Near Earth's surface use U = mgh; for space-scale distances use the inverse-r form.",
+    "The field is the negative slope of the potential: g = −dV/dr.",
+    "Binding energy of a two-mass system = |U| = GMm/r.",
+    "Total energy of a circular orbit (E = −GMm/2r) is negative — a signature of a bound state."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Gravitational Potential and Potential Energy formula",
-    "Trick 2: Elimination technique for Gravitational Potential and Potential Energy MCQs",
-    "Trick 3: Dimensional analysis shortcut for Gravitational Potential and Potential Energy",
-    "Trick 4: Memory aid for Gravitational Potential and Potential Energy formulas",
-    "Trick 5: Time-saving approach for Gravitational Potential and Potential Energy problems"
+    "Escape-energy shortcut: energy to infinity = GMm/R = mgR (since g = GM/R²).",
+    "Orbital energy memory: E = −GMm/2r = U/2 means K = −U/2.",
+    "V at surface ≈ −6.25×10⁷ J/kg for Earth — compare planets by this value.",
+    "When moving closer to a mass, U becomes MORE negative (energy is released).",
+    "Use mgh only when the height is small compared with Earth's radius — a quick sanity check."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Gravitational Potential and Potential Energy",
-    "Exam Tip 2: Practice previous year questions on Gravitational Potential and Potential Energy",
-    "Exam Tip 3: Gravitational Potential and Potential Energy carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Gravitational Potential and Potential Energy thoroughly",
-    "Exam Tip 5: Review common mistakes related to Gravitational Potential and Potential Energy"
+    "Derivation of U = −GMm/r from integrating F = GMm/r² is a standard question.",
+    "Numericals on satellite total energy and escape energy are frequently asked.",
+    "Conceptual MCQ: why is potential energy negative? → because zero is at infinity and gravity is attractive.",
+    "Linking g = −dV/dr to a V–r graph slope appears in higher-level questions.",
+    "Compare U = mgh with −GMm/r: know when each applies."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Gravitational Potential and Potential Energy?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
+      "question": "The gravitational potential at a point at distance r from mass M is:",
+      "options": ["GM/r", "−GM/r", "GM/r²", "−GM/r²"],
+      "answer": "B"
     },
     {
-      "question": "The primary application of Gravitational Potential and Potential Energy is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
+      "question": "Gravitational potential energy of two masses m and M at distance r is:",
+      "options": ["+GMm/r", "−GMm/r", "GMm/r²", "−GMm/r²"],
+      "answer": "B"
     },
     {
-      "question": "For Gravitational Potential and Potential Energy, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
+      "question": "As a satellite moves from a higher orbit to a lower one, its potential energy:",
+      "options": ["increases", "decreases (becomes more negative)", "stays the same", "becomes zero"],
+      "answer": "B"
     },
     {
-      "question": "What is the unit/dimension used in Gravitational Potential and Potential Energy?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
+      "question": "The total energy of a satellite in a circular orbit is:",
+      "options": ["+GMm/2r", "−GMm/2r", "GMm/r", "zero"],
+      "answer": "B"
     },
     {
-      "question": "Which statement about Gravitational Potential and Potential Energy is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
+      "question": "U = mgh is valid when:",
+      "options": ["h is very large", "h ≪ R", "g varies with height", "any height"],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Gravitational Potential and Potential Energy",
-    "Concept 2: Key theorem or principle in Gravitational Potential and Potential Energy",
-    "Concept 3: Important application area of Gravitational Potential and Potential Energy",
-    "Concept 4: Fundamental relationship in Gravitational Potential and Potential Energy",
-    "Concept 5: Connection between Gravitational Potential and Potential Energy and other topics"
+    "Gravitational potential V = −GM/r is scalar work per unit mass.",
+    "Gravitational potential energy U = −GMm/r equals the negative binding energy.",
+    "Near the surface U = mgh; far away use −GMm/r.",
+    "g = −dV/dr links the vector field to the scalar potential.",
+    "Circular orbits are bound: E_total = −GMm/2r = U/2."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Gravitational Potential and Potential Energy",
-    "Task 2: Derive the main formula for Gravitational Potential and Potential Energy",
-    "Task 3: Create a concept map for Gravitational Potential and Potential Energy",
-    "Task 4: Practice previous year exam questions on Gravitational Potential and Potential Energy",
-    "Task 5: Explain Gravitational Potential and Potential Energy to a peer or study group"
+    "Derive V and U starting from F = GMm/r² by integration.",
+    "Solve 5 numericals for V and U at various distances.",
+    "Compute the escape energy for Earth, Moon, and Mars.",
+    "Show K = −U/2 for a circular orbit.",
+    "Sketch the V–r and U–r graphs, labelling zero at infinity."
   ]
 }

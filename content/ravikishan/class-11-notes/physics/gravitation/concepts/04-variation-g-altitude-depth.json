@@ -4,157 +4,147 @@
   "topicSlug": "variation-g-altitude-depth",
   "topicTitle": "Variation in g due to Altitude and Depth",
   "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "variation-of-g-due-to-altitude-and-depth",
   "notes": [
-    "**Variation in g due to Altitude and Depth:** This topic covers the fundamental concepts of variation in g due to altitude and depth in the physics curriculum.",
-    "Understanding variation in g due to altitude and depth is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to variation in g due to altitude and depth should be memorized and practiced regularly."
+    "**g above the surface (altitude):** at height h above Earth's surface, g' = GM/(R+h)² = g(R/(R+h))². As h increases, g decreases. For small h (h ≪ R), a binomial expansion gives g' ≈ g(1 − 2h/R) — a useful approximation.",
+    "**g below the surface (depth):** at depth d, only the mass inside the concentric sphere of radius (R−d) contributes: g' = g(1 − d/R) — gravity DECREASES linearly with depth. At the centre (d = R), g' = 0.",
+    "**Why they differ:** above the surface, whole-earth mass acts from a larger distance (1/r² law); below the surface, the shell above the point exerts zero net force (shell theorem) and only the inner sphere matters, whose mass scales as (R−d)³ while distance scales as (R−d) — giving linear decrease.",
+    "**Worked example — altitude:** at h = R (one Earth radius up), g' = g(R/2R)² = g/4 = 2.45 m/s². At h = 100 km, using the small-h formula, the fractional decrease is 2h/R = 2×100/6400 = 0.031, so g' ≈ 9.5 m/s².",
+    "**Worked example — depth:** at d = R/2 (3200 km deep), g' = g(1 − 1/2) = g/2 = 4.9 m/s². At d = R (centre) → g' = 0 (weightlessness, though pressure is immense).",
+    "**Graphs (NEB favourite):** g vs r rises linearly from 0 at the centre to g at the surface, then falls as 1/r² beyond the surface. The maximum value of g on Earth is at the surface.",
+    "**Other causes of variation:** (1) rotation of Earth: g reduced by ω²R cos²λ (λ = latitude), maximum at the equator; (2) shape: Earth is an oblate spheroid — g is larger at the poles (≈9.832) than the equator (≈9.78); (3) local density anomalies (mountains, mineral deposits) cause tiny local changes used in geophysics.",
+    "**Altitude formula for satellites:** for an orbit at height h, effective r = R + h: v = √(GM/(R+h)) and the orbital g is g' = GM/(R+h)² — the same g formula used at that radius."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in variation in g due to altitude and depth.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'g increases with altitude.' ✅ Above the surface g DEcreases as 1/(R+h)²; below the surface it also decreases (linearly). g is max at the surface.",
+    "❌ 'From height h, g falls by h/R.' ✅ The small-h approximation is 2h/R (from the square), not h/R. At h = 100 km, that is ≈ 3%.",
+    "❌ 'Deep inside Earth, g keeps growing.' ✅ It decreases linearly: g' = g(1 − d/R), zero at the centre. The shell above you pulls equally in all directions (zero net).",
+    "❌ 'g is the same at poles and equator.' ✅ Rotation and the oblate shape make g slightly larger at the poles (~0.5% difference).",
+    "❌ 'At altitude 6400 km, g is half of surface.' ✅ At h = R, g' = g/4 — the height doubles the distance, so the square halves twice.",
+    "❌ 'Weightlessness in orbit means no gravity.' ✅ Astronauts at 400 km still feel ~88% of surface gravity — they float because they are in free fall around Earth."
   ],
   "practice": [
-    "Solve at least 5 problems on variation in g due to altitude and depth from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Find g at a height of 1000 km (R = 6400 km, g = 9.8).",
+    "Find g at a depth of 1000 km.",
+    "At what height is g reduced by 1%? (Use the small-h formula.)",
+    "Compare g at the equator and pole given Earth's rotation speed at equator ≈ 465 m/s.",
+    "Show that g at h = R is g/4.",
+    "Sketch the g–r graph from the centre of Earth to 3R and label all key values."
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding variation in g due to altitude and depth builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of variation in g due to altitude and depth span engineering, physics, economics, and computer science."
+    "Mines and boreholes show g decreasing with depth, exactly as the shell theorem predicts — gravity direction reverses inside Earth for local asymmetry reasons.",
+    "GOCE and GRACE satellites mapped tiny variations in Earth's g (from density differences) to model the interior and global water distribution.",
+    "At Earth's centre, g = 0 but pressure is ~3.6 million atmospheres — so you'd be crushed, not weightless in the usual sense.",
+    "The international gravity formula accounts for latitude: g(λ) ≈ 9.7803(1 + 0.0053 sin²λ) m/s².",
+    "Astronauts in low Earth orbit experience ~0.9 g of gravity yet float — free fall, not absence of gravity, explains weightlessness."
   ],
   "animation3D": "gravitation",
   "motionGraphics": "gravitation",
   "examples": [
-    "Example 1: Real-world application of Variation in g due to Altitude and Depth",
-    "Example 2: Practical demonstration of Variation in g due to Altitude and Depth concepts",
-    "Example 3: Numerical problem on Variation in g due to Altitude and Depth",
-    "Example 4: Diagram-based question on Variation in g due to Altitude and Depth",
-    "Example 5: Application in daily life involving Variation in g due to Altitude and Depth"
+    "h = R: g' = g/4 = 2.45 m/s².",
+    "h = 200 km: g' ≈ g(1 − 2×200/6400) = 9.8 × 0.9375 = 9.2 m/s² (ISS altitude ≈ 400 km → ≈8.7 m/s²).",
+    "d = R/2: g' = g/2 = 4.9 m/s².",
+    "d = R: g' = 0.",
+    "Equator vs pole: g_eq ≈ 9.78, g_pole ≈ 9.83 — difference ≈ 0.5%."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Variation in g due to Altitude and Depth with suitable example.",
-    "Q2. Solve problems related to Variation in g due to Altitude and Depth.",
-    "Q3. Differentiate between various aspects of Variation in g due to Altitude and Depth.",
-    "Q4. Derive the key formula related to Variation in g due to Altitude and Depth.",
-    "Q5. What are the applications of Variation in g due to Altitude and Depth?"
+    "Find the value of g at a height of 3200 km above Earth's surface (g = 9.8, R = 6400 km).",
+    "Find g at a depth of 3200 km below Earth's surface.",
+    "At what height will g reduce to 81% of its surface value?",
+    "At what depth will g reduce to 50% of its surface value?",
+    "Compute the percentage change in g at the top of Mount Everest (h ≈ 8.8 km).",
+    "Explain with a diagram how g varies from the centre of Earth to a distance far beyond the surface."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Variation in g due to Altitude and Depth",
-    "Key Formula 2: Mathematical expression of Variation in g due to Altitude and Depth",
-    "Key Formula 3: Application formula for Variation in g due to Altitude and Depth",
-    "Key Formula 4: Derivation result for Variation in g due to Altitude and Depth",
-    "Key Formula 5: Important relation in Variation in g due to Altitude and Depth"
+    "g at altitude h: g' = g(R/(R+h))²",
+    "Small-h approximation: g' ≈ g(1 − 2h/R)",
+    "g at depth d: g' = g(1 − d/R)",
+    "g at latitude λ due to rotation: g' = g − ω²R cos²λ",
+    "g inside a uniform sphere: g' = g·r/R (r ≤ R)"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Variation in g due to Altitude and Depth",
-    "Key Point 2: Essential theorem or principle related to Variation in g due to Altitude and Depth",
-    "Key Point 3: Important condition or constraint for Variation in g due to Altitude and Depth",
-    "Key Point 4: Common applications of Variation in g due to Altitude and Depth",
-    "Key Point 5: Connection to other topics in Science"
+    "Above the surface: g' = g(R/(R+h))² — decreases as 1/(R+h)².",
+    "Below the surface: g' = g(1 − d/R) — decreases linearly to zero at the centre.",
+    "g is maximum at the surface.",
+    "Rotation and oblateness also reduce g at the equator.",
+    "The g–r graph: linear rise inside, 1/r² fall outside."
   ],
-  "summary": "Variation in g due to Altitude and Depth is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "g varies with altitude (g' = g(R/(R+h))²), depth (g' = g(1 − d/R)), and latitude. Above the surface g falls as the inverse square of distance; below the surface the shell theorem makes it fall linearly to zero at the centre. The g–r graph is a straight rise then a 1/r² fall.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Variation in g due to Altitude and Depth applies",
-    "Note 2: Variation in g due to Altitude and Depth connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Variation in g due to Altitude and Depth",
-    "Note 4: Remember the units and dimensions involved in Variation in g due to Altitude and Depth",
-    "Note 5: Variation in g due to Altitude and Depth frequently appears in examination questions"
+    "Small-height formula: g' ≈ g(1 − 2h/R) — remember the factor 2.",
+    "Shell theorem is the tool for points inside Earth — shells outside contribute zero net force.",
+    "g at poles is slightly greater than at the equator due to rotation and oblateness.",
+    "NEB asks to derive both formulas and to sketch the g–r graph.",
+    "Satellite problems use r = R + h in g = GM/r² too."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Variation in g due to Altitude and Depth",
-    "Statement 2: Theorem related to Variation in g due to Altitude and Depth",
-    "Statement 3: Condition for Variation in g due to Altitude and Depth to be valid",
-    "Statement 4: Principle governing Variation in g due to Altitude and Depth",
-    "Statement 5: Corollary or consequence of Variation in g due to Altitude and Depth"
+    "At altitude h, g' = g(R/(R+h))².",
+    "At depth d, g' = g(1 − d/R).",
+    "g is maximum at Earth's surface.",
+    "Inside a uniform sphere, g varies linearly with distance from the centre.",
+    "Rotation and non-spherical shape cause additional small variations of g with latitude."
   ],
   "importantNotes": [
-    "Note 1: Variation in g due to Altitude and Depth is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Variation in g due to Altitude and Depth",
-    "Note 3: Variation in g due to Altitude and Depth has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Variation in g due to Altitude and Depth",
-    "Note 5: Cross-check your answers using alternative methods for Variation in g due to Altitude and Depth"
+    "At altitude: g' = g(R/(R+h))²; at depth: g' = g(1 − d/R).",
+    "g is maximum at the surface and falls on both sides (linear inside, 1/r² outside).",
+    "The small-height approximation g' ≈ g(1 − 2h/R) has a factor of 2.",
+    "Shell theorem: shells outside the point contribute zero net field.",
+    "Rotation reduces g at the equator: g' = g − ω²R cos²λ."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Variation in g due to Altitude and Depth formula",
-    "Trick 2: Elimination technique for Variation in g due to Altitude and Depth MCQs",
-    "Trick 3: Dimensional analysis shortcut for Variation in g due to Altitude and Depth",
-    "Trick 4: Memory aid for Variation in g due to Altitude and Depth formulas",
-    "Trick 5: Time-saving approach for Variation in g due to Altitude and Depth problems"
+    "h = R → g/4; d = R/2 → g/2 — memorise these anchor values.",
+    "Percentage change at small h ≈ (2h/R)×100%.",
+    "For depth use linear term only — no square.",
+    "Inside the sphere r ≤ R: g' = g·r/R (direct proportion).",
+    "Weight at centre of Earth: zero apparent weight (g = 0)."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Variation in g due to Altitude and Depth",
-    "Exam Tip 2: Practice previous year questions on Variation in g due to Altitude and Depth",
-    "Exam Tip 3: Variation in g due to Altitude and Depth carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Variation in g due to Altitude and Depth thoroughly",
-    "Exam Tip 5: Review common mistakes related to Variation in g due to Altitude and Depth"
+    "Deriving g' = g(1 − 2h/R) from the binomial expansion is frequently asked.",
+    "Sketch-the-graph questions (inside + outside) appear in exams.",
+    "Numericals mixing altitude and depth are standard.",
+    "The rotation term g' = g − ω²R cos²λ is a common short answer.",
+    "Comparing g at poles vs equator is a favourite conceptual MCQ."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Variation in g due to Altitude and Depth?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The primary application of Variation in g due to Altitude and Depth is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For Variation in g due to Altitude and Depth, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Variation in g due to Altitude and Depth?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Variation in g due to Altitude and Depth is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
+      "question": "At a height equal to Earth's radius, the value of g is:",
+      "options": ["g", "g/2", "g/4", "zero"],
       "answer": "C"
+    },
+    {
+      "question": "At the centre of Earth, the value of g is:",
+      "options": ["9.8", "zero", "g/2", "2g"],
+      "answer": "B"
+    },
+    {
+      "question": "Inside a uniform sphere, g varies with distance r from the centre as:",
+      "options": ["1/r²", "linearly (∝ r)", "1/r", "constantly"],
+      "answer": "B"
+    },
+    {
+      "question": "The value of g is slightly larger at the:",
+      "options": ["equator", "poles", "centre", "mountains"],
+      "answer": "B"
+    },
+    {
+      "question": "At depth d, g' is given by:",
+      "options": ["g(1 − d/R)", "g(R/(R+d))²", "g(1−2d/R)", "g·d/R"],
+      "answer": "A"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Variation in g due to Altitude and Depth",
-    "Concept 2: Key theorem or principle in Variation in g due to Altitude and Depth",
-    "Concept 3: Important application area of Variation in g due to Altitude and Depth",
-    "Concept 4: Fundamental relationship in Variation in g due to Altitude and Depth",
-    "Concept 5: Connection between Variation in g due to Altitude and Depth and other topics"
+    "Altitude: g' = g(R/(R+h))² (inverse-square fall above the surface).",
+    "Depth: g' = g(1 − d/R) (linear fall inside).",
+    "g is maximum at Earth's surface.",
+    "Rotation and ellipticity cause small latitude variations.",
+    "The g–r graph is triangular-like: linear rise then inverse-square fall."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Variation in g due to Altitude and Depth",
-    "Task 2: Derive the main formula for Variation in g due to Altitude and Depth",
-    "Task 3: Create a concept map for Variation in g due to Altitude and Depth",
-    "Task 4: Practice previous year exam questions on Variation in g due to Altitude and Depth",
-    "Task 5: Explain Variation in g due to Altitude and Depth to a peer or study group"
+    "Derive the altitude formula and its small-h approximation.",
+    "Derive the depth formula using the shell theorem.",
+    "Solve 5 mixed altitude/depth numericals.",
+    "Sketch and label the g–r graph from centre to beyond the surface.",
+    "Compute the effect of rotation on g at the equator."
   ]
 }

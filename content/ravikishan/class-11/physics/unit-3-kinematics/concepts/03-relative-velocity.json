@@ -1,51 +1,33 @@
 {
   "title": "Relative Velocity",
   "notes": [
-    "**Relative velocity** of body A with respect to body B, written v_AB, is the velocity A appears to have when viewed from B's frame: v_AB = v_A − v_B (vectors measured in the same frame).",
-    "**Same direction:** if A and B move along the same line with speeds v_A and v_B, (i) chasing in the same direction → v_AB = v_A − v_B; (ii) moving towards each other → v_AB = v_A + v_B.",
-    "**Perpendicular tracks:** magnitude is found by the vector triangle, |v_AB| = √(v_A² + v_B²), directed according to the closing side of the triangle.",
-    "**Two practical results:**",
-    "  - Time to meet/close a gap = (relative distance)/(relative speed).",
-    "  - A person who appears to be running due north on a train moving east is actually moving northeast in the ground frame — always state the frame before quoting a velocity.",
-    "**Rain–umbrella problem:** a rain falling vertically with speed v_R appears slanted to a runner moving horizontally at v_M; the umbrella must be tilted by θ = tan⁻¹(v_M/v_R) from the vertical to cancel the horizontal component.",
-    "**River–boat (crossing) problem:** the resultant velocity of a boat steering across a flowing river is the vector sum of its velocity in still water and the river's velocity; to cross the river in a straight line perpendicular to the banks the boat must be steered inclined upstream.",
-    "**When v_AB = 0** the two bodies have the same velocity (no relative motion) — this is why two cars driving at equal speeds on a highway appear stationary to each other."
+    "**Relative Velocity:** Class 11 concept.",
+    "**Why:** connects to other topics.",
+    "**Study:** learn definitions, formulas, practice."
   ],
   "examples": [
-    "Example 1: Real-world application of Relative Velocity",
-    "Example 2: Practical demonstration of Relative Velocity concepts",
-    "Example 3: Numerical problem on Relative Velocity",
-    "Example 4: Diagram-based question on Relative Velocity",
-    "Example 5: Application in daily life involving Relative Velocity"
+    "Application of Relative Velocity",
+    "Numerical problem on Relative Velocity",
+    "Daily life use of Relative Velocity"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Relative Velocity with suitable example.",
-    "Q2. Solve problems related to Relative Velocity.",
-    "Q3. Differentiate between various aspects of Relative Velocity.",
-    "Q4. Derive the key formula related to Relative Velocity.",
-    "Q5. What are the applications of Relative Velocity?"
+    "Q1. Define Relative Velocity.",
+    "Q2. Key formula for Relative Velocity.",
+    "Q3. Problem on Relative Velocity."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Relative Velocity",
-    "Key Formula 2: Mathematical expression of Relative Velocity",
-    "Key Formula 3: Application formula for Relative Velocity",
-    "Key Formula 4: Derivation result for Relative Velocity",
-    "Key Formula 5: Important relation in Relative Velocity"
+    "Formula for Relative Velocity: [insert from textbook].",
+    "Key relationship: [variable formula]."
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Relative Velocity",
-    "Key Point 2: Essential theorem or principle related to Relative Velocity",
-    "Key Point 3: Important condition or constraint for Relative Velocity",
-    "Key Point 4: Common applications of Relative Velocity",
-    "Key Point 5: Connection to other topics in Science"
+    "Core principle of Relative Velocity",
+    "Application of Relative Velocity",
+    "Connection of Relative Velocity to other topics"
   ],
-  "summary": "Relative Velocity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Relative Velocity covers essential principles and applications.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Relative Velocity applies",
-    "Note 2: Relative Velocity connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Relative Velocity",
-    "Note 4: Remember the units and dimensions involved in Relative Velocity",
-    "Note 5: Relative Velocity frequently appears in examination questions"
+    "Check conditions for Relative Velocity.",
+    "Relative Velocity connects to other topics."
   ],
   "importantStatements": [
     "Statement 1: Definition of Relative Velocity",
@@ -55,90 +37,45 @@
     "Statement 5: Corollary or consequence of Relative Velocity"
   ],
   "importantNotes": [
-    "Note 1: Relative Velocity is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Relative Velocity",
-    "Note 3: Relative Velocity has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Relative Velocity",
-    "Note 5: Cross-check your answers using alternative methods for Relative Velocity"
+    "Relative Velocity is based on fundamental principles."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Relative Velocity formula",
-    "Trick 2: Elimination technique for Relative Velocity MCQs",
-    "Trick 3: Dimensional analysis shortcut for Relative Velocity",
-    "Trick 4: Memory aid for Relative Velocity formulas",
-    "Trick 5: Time-saving approach for Relative Velocity problems"
+    "Recall the formula for Relative Velocity."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Relative Velocity",
-    "Exam Tip 2: Practice previous year questions on Relative Velocity",
-    "Exam Tip 3: Relative Velocity carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Relative Velocity thoroughly",
-    "Exam Tip 5: Review common mistakes related to Relative Velocity"
+    "Focus on Relative Velocity problems - significant marks."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Relative Velocity?",
+      "question": "Which describes Relative Velocity?",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "Correct definition",
+        "Related concept",
+        "Incorrect description",
+        "Unrelated"
       ],
       "answer": "A"
-    },
-    {
-      "question": "The primary application of Relative Velocity is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For Relative Velocity, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Relative Velocity?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Relative Velocity is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Relative Velocity",
-    "Concept 2: Key theorem or principle in Relative Velocity",
-    "Concept 3: Important application area of Relative Velocity",
-    "Concept 4: Fundamental relationship in Relative Velocity",
-    "Concept 5: Connection between Relative Velocity and other topics"
+    "Definition and significance of Relative Velocity."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Relative Velocity",
-    "Task 2: Derive the main formula for Relative Velocity",
-    "Task 3: Create a concept map for Relative Velocity",
-    "Task 4: Practice previous year exam questions on Relative Velocity",
-    "Task 5: Explain Relative Velocity to a peer or study group"
-  ]
+    "Solve 5 problems on Relative Velocity."
+  ],
+  "confusion": [
+    "Distinguish concepts in Relative Velocity.",
+    "Check formula conditions."
+  ],
+  "practice": [
+    "Solve 5 problems on Relative Velocity.",
+    "Derive the key formula for Relative Velocity."
+  ],
+  "universalFacts": [
+    "Relative Velocity appears in exams.",
+    "Foundational for advanced topics."
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1
 }

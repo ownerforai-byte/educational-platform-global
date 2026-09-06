@@ -42,133 +42,108 @@
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power",
   "examples": [
-    "Example 1: Real-world application of Elastic and inelastic collisions",
-    "Example 2: Practical demonstration of Elastic and inelastic collisions concepts",
-    "Example 3: Numerical problem on Elastic and inelastic collisions",
-    "Example 4: Diagram-based question on Elastic and inelastic collisions",
-    "Example 5: Application in daily life involving Elastic and inelastic collisions"
+    "Equal mass elastic: A 2 kg ball at 6 m/s hits a stationary 2 kg ball. After collision: first ball stops, second ball moves at 6 m/s (velocities exchanged).",
+    "Perfectly inelastic: A 3 kg ball at 4 m/s hits a stationary 1 kg ball. They stick together. Common velocity = (3×4 + 0)/(3+1) = 3 m/s. KE lost = ½×3×16 − ½×4×9 = 24 − 18 = 6 J.",
+    "Coefficient of restitution: A ball dropped from 5 m rebounds to 3.2 m. e = √(3.2/5) = 0.8.",
+    "Golf club: A 0.2 kg club at 50 m/s hits a 0.046 kg ball at rest (e = 0.8). Ball speed = 73.2 m/s (faster than the club!).",
+    "Newton's cradle: Pull one ball, release — one ball flies out the other end at the same speed. Pull two balls, two fly out."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Elastic and inelastic collisions with suitable example.",
-    "Q2. Solve problems related to Elastic and inelastic collisions.",
-    "Q3. Differentiate between various aspects of Elastic and inelastic collisions.",
-    "Q4. Derive the key formula related to Elastic and inelastic collisions.",
-    "Q5. What are the applications of Elastic and inelastic collisions?"
+    "A 4 kg ball moving at 5 m/s collides elastically with a 2 kg ball at rest. Find their velocities after collision.",
+    "A 5 kg ball moving at 6 m/s hits a stationary 3 kg ball in a perfectly inelastic collision. Find the common velocity and the KE lost.",
+    "A ball is dropped from 10 m and rebounds to 6.4 m. Find the coefficient of restitution and the fraction of energy lost.",
+    "A 1 kg ball moving at 8 m/s collides with a stationary 4 kg ball. If e = 0.6, find the final velocities.",
+    "Explain why the ball in a golf shot travels faster than the club head."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Elastic and inelastic collisions",
-    "Key Formula 2: Mathematical expression of Elastic and inelastic collisions",
-    "Key Formula 3: Application formula for Elastic and inelastic collisions",
-    "Key Formula 4: Derivation result for Elastic and inelastic collisions",
-    "Key Formula 5: Important relation in Elastic and inelastic collisions"
+    "Elastic collision (1D): v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂)",
+    "Perfectly inelastic: m₁u₁ + m₂u₂ = (m₁+m₂)v (common velocity v)",
+    "Coefficient of restitution: e = (v₂ − v₁)/(u₁ − u₂) = relative speed of separation / relative speed of approach",
+    "KE loss in inelastic collision: ΔK = ½μv_rel²(1 − e²), where μ = m₁m₂/(m₁+m₂)",
+    "Equal mass elastic (one at rest): v₁ = 0, v₂ = u₁ (velocities exchanged)"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Elastic and inelastic collisions",
-    "Key Point 2: Essential theorem or principle related to Elastic and inelastic collisions",
-    "Key Point 3: Important condition or constraint for Elastic and inelastic collisions",
-    "Key Point 4: Common applications of Elastic and inelastic collisions",
-    "Key Point 5: Connection to other topics in Science"
+    "Elastic collision: both momentum AND kinetic energy are conserved.",
+    "Inelastic collision: momentum conserved, kinetic energy NOT conserved (some → heat/sound).",
+    "Perfectly inelastic: bodies stick together, KE loss is maximum.",
+    "Coefficient of restitution e = 1 (elastic), e = 0 (perfectly inelastic), 0 < e < 1 (inelastic).",
+    "Equal-mass elastic collision (one at rest): the masses exchange velocities."
   ],
-  "summary": "Elastic and inelastic collisions is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "In an elastic collision, both momentum and kinetic energy are conserved. In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound). In a perfectly inelastic collision, the bodies stick together and KE loss is maximum. The coefficient of restitution e measures the elasticity of the collision.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Elastic and inelastic collisions applies",
-    "Note 2: Elastic and inelastic collisions connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Elastic and inelastic collisions",
-    "Note 4: Remember the units and dimensions involved in Elastic and inelastic collisions",
-    "Note 5: Elastic and inelastic collisions frequently appears in examination questions"
+    "In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.",
+    "The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.",
+    "In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.",
+    "Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.",
+    "NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation)."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Elastic and inelastic collisions",
-    "Statement 2: Theorem related to Elastic and inelastic collisions",
-    "Statement 3: Condition for Elastic and inelastic collisions to be valid",
-    "Statement 4: Principle governing Elastic and inelastic collisions",
-    "Statement 5: Corollary or consequence of Elastic and inelastic collisions"
+    "In an elastic collision, both total momentum and total kinetic energy are conserved.",
+    "In an inelastic collision, momentum is conserved but kinetic energy is not — some converts to internal energy.",
+    "In a perfectly inelastic collision, the colliding bodies stick together and move with a common velocity.",
+    "The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).",
+    "In the center-of-mass frame, total momentum is zero — this simplifies collision analysis."
   ],
   "importantNotes": [
-    "Note 1: Elastic and inelastic collisions is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Elastic and inelastic collisions",
-    "Note 3: Elastic and inelastic collisions has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Elastic and inelastic collisions",
-    "Note 5: Cross-check your answers using alternative methods for Elastic and inelastic collisions"
+    "In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.",
+    "The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.",
+    "In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.",
+    "Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.",
+    "NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Elastic and inelastic collisions formula",
-    "Trick 2: Elimination technique for Elastic and inelastic collisions MCQs",
-    "Trick 3: Dimensional analysis shortcut for Elastic and inelastic collisions",
-    "Trick 4: Memory aid for Elastic and inelastic collisions formulas",
-    "Trick 5: Time-saving approach for Elastic and inelastic collisions problems"
+    "Equal mass shortcut: if m₁ = m₂ and the collision is elastic, the masses exchange velocities.",
+    "Perfectly inelastic shortcut: bodies stick together → use m₁u₁ + m₂u₂ = (m₁ + m₂)v to find the common velocity.",
+    "KE loss shortcut: ΔK = ½μv_rel²(1 − e²) — maximum when e = 0 (perfectly inelastic).",
+    "e = 1 → elastic (KE conserved); e = 0 → perfectly inelastic (maximum KE loss); 0 < e < 1 → inelastic.",
+    "CM frame shortcut: in the center-of-mass frame, total momentum is zero — simplifies 2D collision analysis."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Elastic and inelastic collisions",
-    "Exam Tip 2: Practice previous year questions on Elastic and inelastic collisions",
-    "Exam Tip 3: Elastic and inelastic collisions carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Elastic and inelastic collisions thoroughly",
-    "Exam Tip 5: Review common mistakes related to Elastic and inelastic collisions"
+    "One-dimensional elastic collision formulas are standard — know how to derive and apply them.",
+    "Equal-mass elastic collision (one at rest): the moving mass stops, the stationary one moves off at the original speed.",
+    "Perfectly inelastic collision: find the common velocity using momentum conservation, then compute KE loss.",
+    "Coefficient of restitution problems: e = (v₂ − v₁)/(u₁ − u₂) — just the ratio of relative speeds.",
+    "NEB asks both numerical problems and conceptual questions about energy loss in collisions."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Elastic and inelastic collisions?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
+      "question": "A 2 kg ball moving at 6 m/s hits a stationary 2 kg ball in an elastic collision. The final velocity of the first ball is:",
+      "options": ["0 m/s", "6 m/s", "3 m/s", "12 m/s"],
       "answer": "A"
     },
     {
-      "question": "The primary application of Elastic and inelastic collisions is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
+      "question": "A 3 kg ball moving at 4 m/s hits a stationary 1 kg ball in a perfectly inelastic collision. Their common velocity is:",
+      "options": ["3 m/s", "4 m/s", "1 m/s", "12 m/s"],
       "answer": "A"
     },
     {
-      "question": "For Elastic and inelastic collisions, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Elastic and inelastic collisions?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Elastic and inelastic collisions is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
+      "question": "In an elastic collision, which quantity is conserved?",
+      "options": ["Momentum only", "Kinetic energy only", "Both momentum and kinetic energy", "Neither momentum nor kinetic energy"],
       "answer": "C"
+    },
+    {
+      "question": "The coefficient of restitution for a perfectly inelastic collision is:",
+      "options": ["0", "1", "Between 0 and 1", "Greater than 1"],
+      "answer": "A"
+    },
+    {
+      "question": "A 1 kg ball moving at 10 m/s hits a stationary 9 kg ball elastically. The speed of the 9 kg ball after collision is:",
+      "options": ["1 m/s", "2 m/s", "5 m/s", "10 m/s"],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Elastic and inelastic collisions",
-    "Concept 2: Key theorem or principle in Elastic and inelastic collisions",
-    "Concept 3: Important application area of Elastic and inelastic collisions",
-    "Concept 4: Fundamental relationship in Elastic and inelastic collisions",
-    "Concept 5: Connection between Elastic and inelastic collisions and other topics"
+    "In an elastic collision, both momentum and kinetic energy are conserved.",
+    "In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound).",
+    "In a perfectly inelastic collision, the bodies stick together and KE loss is maximum.",
+    "The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).",
+    "In the center-of-mass frame, total momentum is zero — simplifies collision analysis."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Elastic and inelastic collisions",
-    "Task 2: Derive the main formula for Elastic and inelastic collisions",
-    "Task 3: Create a concept map for Elastic and inelastic collisions",
-    "Task 4: Practice previous year exam questions on Elastic and inelastic collisions",
-    "Task 5: Explain Elastic and inelastic collisions to a peer or study group"
+    "Solve 5 one-dimensional elastic collision problems using the standard formulas.",
+    "Solve 5 perfectly inelastic collision problems finding the common velocity and KE loss.",
+    "Solve 3 equal-mass elastic collision problems using the velocity-exchange shortcut.",
+    "Solve 3 coefficient of restitution problems computing e from given velocities.",
+    "Solve 2 two-dimensional elastic collision problems using vector momentum conservation."
   ]
 }
