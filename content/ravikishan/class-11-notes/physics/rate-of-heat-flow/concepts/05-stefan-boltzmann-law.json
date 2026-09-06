@@ -29,7 +29,7 @@
     "❌ The Stefan-Boltzmann law applies only to black bodies. ✅ It applies to ALL bodies, with the modification $E = e\\sigma T^4$ where $e$ is the emissivity. Real objects with $e < 1$ emit less than a black body at the same temperature.",
     "❌ A body at thermal equilibrium radiates no energy. ✅ A body at thermal equilibrium radiates energy continuously, but it also ABSORBS exactly the same amount of energy from its surroundings. The NET radiation is zero — not the radiation itself.",
     "❌ The Stefan-Boltzmann law was discovered by Boltzmann alone. ✅ Josef Stefan proposed it empirically in 1879. Ludwig Boltzmann derived it theoretically in 1884. Both are credited for the law.",
-    "❌ The Stefan-Boltzmann law applies only to radiation — it has no analog in conduction or convection. ✅ The concept of thermal radiation power ($P = e\\sigma A T^4$) has NO analog in conduction or convection because those mechanisms depend on temperature DIFFERENCE ($\Delta T$), not absolute $T^4$."
+    "❌ The Stefan-Boltzmann law applies only to radiation — it has no analog in conduction or convection. ✅ The concept of thermal radiation power ($P = e\\sigma A T^4$) has NO analog in conduction or convection because those mechanisms depend on temperature DIFFERENCE ($\\Delta T$), not absolute $T^4$."
   ],
   "practice": [
     "A black body sphere of radius 0.2 m at 400 K. Surface area $A = 4\\pi(0.2)^2 = 0.503$ m². Total power = $e\\sigma A T^4 = 1 \\times 5.67 \\times 10^{-8} \\times 0.503 \\times 400^4 = 5.67 \\times 10^{-8} \\times 0.503 \\times 2.56 \\times 10^{10} = 732$ W. The sphere radiates 732 W.",
