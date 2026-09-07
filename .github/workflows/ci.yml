@@ -110,3 +110,6 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+      - name: Trigger Render deploy (deploy hook)
+        if: ${{ secrets.RENDER_DEPLOY_HOOK_URL != '' }}
+        run: curl -fsS --max-time 30 -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
