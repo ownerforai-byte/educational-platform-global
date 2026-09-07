@@ -1,4 +1,40 @@
 {
+  "title": "Elasticity Mindmap",
+  "unitSlug": "elasticity",
+  "topicSlug": "elasticity-mindmap",
+  "topicTitle": "elasticity — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of elasticity - ability of materials to return to original shape after deformation.",
+    "Covers stress, strain, elastic moduli, and Hooke's law.",
+    "Essential for engineering and material science."
+  ],
+  "mindmap": {
+    "centralConcept": "Elasticity",
+    "branches": [
+      {"topic": "Hooke's Law", "subtopics": [
+        {"name": "Statement", "points": ["Stress ∝ strain (within elastic limit)", "F = kx for springs"]},
+        {"name": "Force Constant", "points": ["k = F/x, depends on material and dimensions"]}
+      ]},
+      {"topic": "Stress & Strain", "subtopics": [
+        {"name": "Stress", "points": ["Force/Area, units: N/m² or Pa"]},
+        {"name": "Strain", "points": ["Change/Original, dimensionless"]},
+        {"name": "Types", "points": ["Tensile, compressive, shear"]}
+      ]},
+      {"topic": "Elastic Moduli", "subtopics": [
+        {"name": "Young's (Y)", "points": ["Tensile stress/strain", "Y = Fl/(AΔl)"]},
+        {"name": "Bulk (K)", "points": ["Volumetric stress/strain", "K = -VΔP/ΔV"]},
+        {"name": "Shear (η)", "points": ["Shear stress/strain", "η = F/(Aθ)"]}
+      ]},
+      {"topic": "Poisson's Ratio", "subtopics": [
+        {"name": "Definition", "points": ["σ = lateral strain/longitudinal strain", "Range: -1 to 0.5"]}
+      ]},
+      {"topic": "Elastic Energy", "subtopics": [
+        {"name": "Energy", "points": ["U = ½ × stress × strain × volume", "U = ½kx² for spring"]}
+      ]}
+    ]
+  }
+}
   "title": "elasticity Mindmap",
   "unitSlug": "elasticity",
   "topicSlug": "elasticity-mindmap",

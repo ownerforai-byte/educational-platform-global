@@ -1,4 +1,37 @@
 {
+  "title": "Kinematics Mindmap",
+  "unitSlug": "kinematics",
+  "topicSlug": "kinematics-mindmap",
+  "topicTitle": "kinematics — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of kinematics - motion without considering forces.",
+    "Covers equations of motion, free fall, and projectile motion.",
+    "Foundation for all mechanics."
+  ],
+  "mindmap": {
+    "centralConcept": "Kinematics",
+    "branches": [
+      {"topic": "Basic Quantities", "subtopics": [
+        {"name": "Distance/Displacement", "points": ["Distance: scalar, total path", "Displacement: vector, change in position"]},
+        {"name": "Speed/Velocity", "points": ["Speed: scalar, rate of distance", "Velocity: vector, rate of displacement"]},
+        {"name": "Acceleration", "points": ["Rate of change of velocity, a = dv/dt"]}
+      ]},
+      {"topic": "Equations", "subtopics": [
+        {"name": "Linear (constant a)", "points": ["v = u + at", "s = ut + ½at²", "v² = u² + 2as"]},
+        {"name": "Graphical", "points": ["x-t: slope = velocity", "v-t: slope = acceleration, area = displacement"]}
+      ]},
+      {"topic": "Free Fall", "subtopics": [
+        {"name": "Characteristics", "points": ["a = g = 9.8 m/s² downward", "v = gt, h = ½gt², v² = 2gh"]},
+        {"name": "Projected Up", "points": ["v = u - gt, h = ut - ½gt²", "Time of flight: 2u/g"]}
+      ]},
+      {"topic": "Projectile", "subtopics": [
+        {"name": "Components", "points": ["Horizontal: uniform", "Vertical: uniform acceleration"]},
+        {"name": "Results", "points": ["Range: R = u²sin2θ/g", "Max height: H = u²sin²θ/2g", "Max range at θ=45°"]}
+      ]}
+    ]
+  }
+}
   "title": "kinematics Mindmap",
   "unitSlug": "kinematics",
   "topicSlug": "kinematics-mindmap",

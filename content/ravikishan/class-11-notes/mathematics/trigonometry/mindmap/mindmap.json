@@ -1,4 +1,34 @@
 {
+  "title": "Trigonometry Mindmap",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-mindmap",
+  "topicTitle": "trigonometry — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of trigonometry - relationships between angles and sides of triangles.",
+    "Covers inverse functions and trigonometric equations.",
+    "Essential for physics, engineering, and navigation."
+  ],
+  "mindmap": {
+    "centralConcept": "Trigonometry",
+    "branches": [
+      {"topic": "Inverse Functions", "subtopics": [
+        {"name": "sin⁻¹x", "points": ["Principal value [-π/2, π/2]", "Domain: [-1, 1]"]},
+        {"name": "cos⁻¹x", "points": ["Principal value [0, π]", "Domain: [-1, 1]"]},
+        {"name": "tan⁻¹x", "points": ["Principal value (-π/2, π/2)", "Domain: all reals"]},
+        {"name": "Relations", "points": ["sin⁻¹x + cos⁻¹x = π/2", "tan⁻¹x + cot⁻¹x = π/2"]}
+      ]},
+      {"topic": "Trig Equations", "subtopics": [
+        {"name": "General Solutions", "points": ["sinθ=sinα: θ=nπ+(-1)ⁿα", "cosθ=cosα: θ=2nπ±α", "tanθ=tanα: θ=nπ+α"]},
+        {"name": "Standard", "points": ["sinθ=0: θ=nπ", "cosθ=0: θ=(2n+1)π/2"]}
+      ]},
+      {"topic": "Identities", "subtopics": [
+        {"name": "Pythagorean", "points": ["sin²θ + cos²θ = 1", "1 + tan²θ = sec²θ", "1 + cot²θ = cosec²θ"]},
+        {"name": "Sum/Difference", "points": ["sin(A±B) = sinAcosB ± cosAsinB", "cos(A±B) = cosAcosB ∓ sinAsinB"]}
+      ]}
+    ]
+  }
+}
   "title": "trigonometry Mindmap",
   "unitSlug": "trigonometry",
   "topicSlug": "trigonometry-mindmap",

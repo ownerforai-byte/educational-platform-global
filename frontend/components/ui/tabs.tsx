@@ -47,7 +47,15 @@ export function Tabs({
   );
 }
 
-export function TabsList({ children, className }: { children: React.ReactNode; className?: string }) {
+export function TabsList({
+  children,
+  className,
+  style,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
   return (
     <div
       role="tablist"
@@ -55,6 +63,7 @@ export function TabsList({ children, className }: { children: React.ReactNode; c
         "inline-flex h-10 items-center rounded-md bg-muted p-1 text-muted-foreground",
         className
       )}
+      style={style}
     >
       {children}
     </div>

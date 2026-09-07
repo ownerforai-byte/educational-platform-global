@@ -1,4 +1,44 @@
 {
+  "title": "Vectors Mindmap",
+  "unitSlug": "vectors",
+  "topicSlug": "vectors-mindmap",
+  "topicTitle": "vectors — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of vectors - quantities with magnitude and direction.",
+    "Covers vector algebra, products, and applications in physics.",
+    "Essential tool for physics and engineering."
+  ],
+  "mindmap": {
+    "centralConcept": "Vectors",
+    "branches": [
+      {"topic": "Basic Concepts", "subtopics": [
+        {"name": "Definition", "points": ["Magnitude + direction, scalar vs vector"]},
+        {"name": "Types", "points": ["Unit, zero, position, equal, negative"]},
+        {"name": "Components", "points": ["a = a₁i + a₂j + a₃k", "|a| = √(a₁² + a₂² + a₃²)"]}
+      ]},
+      {"topic": "Addition", "subtopics": [
+        {"name": "Triangle Law", "points": ["Head-to-tail, resultant from first to last"]},
+        {"name": "Parallelogram", "points": ["Common tail, diagonal = resultant"]},
+        {"name": "Polygon", "points": ["Multiple vectors, chain method"]}
+      ]},
+      {"topic": "Scalar Product", "subtopics": [
+        {"name": "Definition", "points": ["a·b = |a||b|cosθ, scalar result"]},
+        {"name": "Properties", "points": ["Perpendicular: a·b=0, projection"]},
+        {"name": "Components", "points": ["a·b = a₁b₁ + a₂b₂ + a₃b₃"]}
+      ]},
+      {"topic": "Vector Product", "subtopics": [
+        {"name": "Definition", "points": ["a×b = |a||b|sinθ n̂, vector result"]},
+        {"name": "Properties", "points": ["Parallel: a×b=0, area of parallelogram"]},
+        {"name": "Components", "points": ["Determinant form"]}
+      ]},
+      {"topic": "Applications", "subtopics": [
+        {"name": "Triple Products", "points": ["Scalar triple: volume", "Vector triple: BAC-CAB"]},
+        {"name": "Physics", "points": ["Work: W=F·s", "Torque: τ=r×F", "Angular momentum: L=r×p"]}
+      ]}
+    ]
+  }
+}
   "title": "vectors Mindmap",
   "unitSlug": "vectors",
   "topicSlug": "vectors-mindmap",

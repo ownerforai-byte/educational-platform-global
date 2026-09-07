@@ -1,4 +1,41 @@
 {
+  "title": "Oxidation & Reduction Mindmap",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "oxidation-and-reduction-mindmap",
+  "topicTitle": "oxidation and reduction — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of oxidation-reduction (redox) reactions - electron transfer processes.",
+    "Covers oxidation numbers, balancing methods, and electrolysis.",
+    "Essential for understanding batteries, corrosion, and electroplating."
+  ],
+  "mindmap": {
+    "centralConcept": "Oxidation & Reduction",
+    "branches": [
+      {"topic": "Concepts", "subtopics": [
+        {"name": "Definitions", "points": ["Oxidation: lose electrons", "Reduction: gain electrons", "OIL RIG mnemonic"]},
+        {"name": "Agents", "points": ["Oxidizing agent: gets reduced", "Reducing agent: gets oxidized"]}
+      ]},
+      {"topic": "Oxidation Numbers", "subtopics": [
+        {"name": "Rules", "points": ["Element = 0, O = -2, H = +1, sum = charge"]},
+        {"name": "Assignment", "points": ["Find known first, solve for unknown"]}
+      ]},
+      {"topic": "Balancing", "subtopics": [
+        {"name": "Half-Reaction", "points": ["Split into half-reactions, balance atoms and charge"]},
+        {"name": "Ion-Electron", "points": ["Add H₂O for O, H⁺ for H, e⁻ for charge"]}
+      ]},
+      {"topic": "Electrolysis", "subtopics": [
+        {"name": "Process", "points": ["Forced redox, cathode: reduction, anode: oxidation"]},
+        {"name": "Faraday", "points": ["m = QM/(nF), F = 96485 C/mol"]}
+      ]},
+      {"topic": "Applications", "subtopics": [
+        {"name": "Batteries", "points": ["Electrochemical cells, anode/cathode"]},
+        {"name": "Corrosion", "points": ["Rust, galvanic protection"]},
+        {"name": "Electroplating", points: ["Surface coating, purification"]}
+      ]}
+    ]
+  }
+}
   "title": "oxidation-and-reduction Mindmap",
   "unitSlug": "oxidation-and-reduction",
   "topicSlug": "oxidation-and-reduction-mindmap",

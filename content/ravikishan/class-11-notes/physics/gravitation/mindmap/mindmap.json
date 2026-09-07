@@ -1,4 +1,42 @@
 {
+  "title": "Gravitation Mindmap",
+  "unitSlug": "gravitation",
+  "topicSlug": "gravitation-mindmap",
+  "topicTitle": "gravitation — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of gravitation - universal force of attraction between masses.",
+    "Covers Newton's law, gravitational field, potential, and satellite motion.",
+    "Key for understanding planetary motion and space travel."
+  ],
+  "mindmap": {
+    "centralConcept": "Gravitation",
+    "branches": [
+      {"topic": "Newton's Law", "subtopics": [
+        {"name": "Universal Law", "points": ["F=GMm/r², G=6.67×10⁻¹¹ N·m²/kg²"]},
+        {"name": "Properties", "points": ["Always attractive, inverse square, action-reaction"]}
+      ]},
+      {"topic": "Gravitational Field", "subtopics": [
+        {"name": "Field Strength", "points": ["g=F/m=GM/r², units: N/kg or m/s²"]},
+        {"name": "Variation", "points": ["Altitude: g'=g(R/(R+h))², Depth: g'=g(1-d/R)"]}
+      ]},
+      {"topic": "Potential", "subtopics": [
+        {"name": "Potential", "points": ["V=-GM/r, units: J/kg, always negative"]},
+        {"name": "Potential Energy", "points": ["U=-GMm/r, zero at infinity"]}
+      ]},
+      {"topic": "Satellite Motion", "subtopics": [
+        {"name": "Orbital Velocity", "points": ["v₀=√(GM/r)=√(gR²/r), ≈7.9 km/s at surface"]},
+        {"name": "Time Period", "points": ["T=2π√(r³/GM), Kepler's 3rd law: T²∝r³"]},
+        {"name": "Escape Velocity", "points": ["vₑ=√(2GM/R)=√(2gR), ≈11.2 km/s"]},
+        {"name": "Energy", "points": ["KE=GMm/2r, PE=-GMm/r, Total=-GMm/2r"]}
+      ]},
+      {"topic": "Geostationary", "subtopics": [
+        {"name": "Properties", "points": ["T=24h, equatorial orbit, height=35,786 km"]},
+        {"name": "Uses", "points": ["Communication, weather, broadcasting"]}
+      ]}
+    ]
+  }
+}
   "title": "gravitation Mindmap",
   "unitSlug": "gravitation",
   "topicSlug": "gravitation-mindmap",

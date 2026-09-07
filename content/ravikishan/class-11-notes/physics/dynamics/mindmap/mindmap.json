@@ -1,4 +1,47 @@
 {
+  "title": "Dynamics Mindmap",
+  "unitSlug": "dynamics",
+  "topicSlug": "dynamics-mindmap",
+  "topicTitle": "dynamics — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of dynamics - forces and their effects on motion.",
+    "Covers Newton's laws, momentum, energy, and collisions.",
+    "Core of classical mechanics."
+  ],
+  "mindmap": {
+    "centralConcept": "Dynamics",
+    "branches": [
+      {"topic": "Newton's Laws", "subtopics": [
+        {"name": "1st Law", "points": ["Inertia, rest stays rest"]},
+        {"name": "2nd Law", "points": ["F=ma, direction of a same as F"]},
+        {"name": "3rd Law", "points": ["Action-reaction, equal and opposite"]}
+      ]},
+      {"topic": "Momentum", "subtopics": [
+        {"name": "Definition", "points": ["p=mv, vector quantity"]},
+        {"name": "Impulse", "points": ["J=FΔt=Δp"]},
+        {"name": "Conservation", "points": ["If F_ext=0, total p constant"]}
+      ]},
+      {"topic": "Energy", "subtopics": [
+        {"name": "Work", "points": ["W=Fd cosθ, units: Joule"]},
+        {"name": "Kinetic Energy", "points": ["KE=½mv²"]},
+        {"name": "Potential Energy", "points": ["PE=mgh, PE=½kx²"]},
+        {"name": "Conservation", "points": ["Energy cannot be created or destroyed"]}
+      ]},
+      {"topic": "Power", "subtopics": [
+        {"name": "Definition", "points": ["P=W/t=Fv, units: Watt"]}
+      ]},
+      {"topic": "Collisions", "subtopics": [
+        {"name": "Elastic", "points": ["Momentum conserved, KE conserved, e=1"]},
+        {"name": "Inelastic", "points": ["Momentum conserved, KE not conserved, e<1"]}
+      ]},
+      {"topic": "Friction", "subtopics": [
+        {"name": "Static", "points": ["f_s≤μ_sN, prevents motion"]},
+        {"name": "Kinetic", "points": ["f_k=μ_kN, opposes motion"]}
+      ]}
+    ]
+  }
+}
   "title": "dynamics Mindmap",
   "unitSlug": "dynamics",
   "topicSlug": "dynamics-mindmap",

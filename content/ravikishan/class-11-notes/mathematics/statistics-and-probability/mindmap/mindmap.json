@@ -1,4 +1,32 @@
 {
+  "title": "Statistics & Probability Mindmap",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "statistics-and-probability-mindmap",
+  "topicTitle": "statistics and probability — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of statistics and probability - data analysis and chance.",
+    "Covers measures of dispersion and probability laws.",
+    "Essential for data science, research, and decision making."
+  ],
+  "mindmap": {
+    "centralConcept": "Statistics & Probability",
+    "branches": [
+      {"topic": "Dispersion", "subtopics": [
+        {"name": "Range", "points": ["Max - Min, simple but affected by outliers"]},
+        {"name": "Mean Deviation", "points": ["MD = Σ|xᵢ - x̄|/n"]},
+        {"name": "Standard Deviation", "points": ["σ = √[Σ(xᵢ-x̄)²/n]", "Variance = σ²"]},
+        {"name": "CV", "points": ["CV = (σ/x̄) × 100%, relative measure"]}
+      ]},
+      {"topic": "Probability", "subtopics": [
+        {"name": "Definitions", "points": ["Experiment, sample space, event"]},
+        {"name": "Types", "points": ["Theoretical, empirical, subjective"]},
+        {"name": "Laws", "points": ["P(A∪B) = P(A)+P(B)-P(A∩B)", "P(A') = 1-P(A)"]},
+        {"name": "Conditional", "points": ["P(A|B) = P(A∩B)/P(B)", "Independent: P(A∩B)=P(A)·P(B)"]}
+      ]}
+    ]
+  }
+}
   "title": "statistics-and-probability Mindmap",
   "unitSlug": "statistics-and-probability",
   "topicSlug": "statistics-and-probability-mindmap",

@@ -1,4 +1,42 @@
 {
+  "title": "States of Matter Mindmap",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "states-of-matter-mindmap",
+  "topicTitle": "states of matter — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of states of matter - solid, liquid, and gas phases.",
+    "Covers gas laws, kinetic theory, and real gas behavior.",
+    "Essential for understanding phase transitions and physical properties."
+  ],
+  "mindmap": {
+    "centralConcept": "States of Matter",
+    "branches": [
+      {"topic": "Gas Laws", "subtopics": [
+        {"name": "Boyle's Law", "points": ["P ∝ 1/V, PV = constant"]},
+        {"name": "Charles's Law", "points": ["V ∝ T, V₁/T₁ = V₂/T₂"]},
+        {"name": "Gay-Lussac's", "points": ["P ∝ T, P₁/T₁ = P₂/T₂"]},
+        {"name": "Avogadro's", "points": ["V ∝ n, equal volumes = equal molecules"]},
+        {"name": "Ideal Gas", "points": ["PV = nRT, R = 0.0821 L·atm/mol·K"]}
+      ]},
+      {"topic": "Kinetic Theory", "subtopics": [
+        {"name": "Postulates", "points": ["Random motion, no forces, elastic collisions"]},
+        {"name": "Results", "points": ["P = (1/3)(N/V)mv²_rms", "KE = (3/2)kT", "v_rms = √(3RT/M)"]}
+      ]},
+      {"topic": "Real Gases", "subtopics": [
+        {"name": "Deviation", "points": ["High P, low T, molecular volume matters"]},
+        {"name": "van der Waals", "points": ["(P + an²/V²)(V - nb) = nRT"]},
+        {"name": "Compressibility", "points": ["Z = PV/nRT, Z=1 for ideal"]}
+      ]},
+      {"topic": "Liquid State", "subtopics": [
+        {"name": "Properties", "points": ["Fixed volume, surface tension, viscosity"]}
+      ]},
+      {"topic": "Solid State", "subtopics": [
+        {"name": "Properties", "points": ["Fixed shape, crystalline, amorphous"]}
+      ]}
+    ]
+  }
+}
   "title": "states-of-matter Mindmap",
   "unitSlug": "states-of-matter",
   "topicSlug": "states-of-matter-mindmap",

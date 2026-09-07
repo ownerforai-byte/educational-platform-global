@@ -1,4 +1,50 @@
 {
+  "title": "Algebra Mindmap",
+  "unitSlug": "algebra",
+  "topicSlug": "algebra-mindmap",
+  "topicTitle": "algebra — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of algebra - mathematical symbols and rules for manipulating them.",
+    "Covers logic, sets, functions, sequences, matrices, and complex numbers.",
+    "Foundation for all higher mathematics."
+  ],
+  "mindmap": {
+    "centralConcept": "Algebra",
+    "branches": [
+      {"topic": "Logic & Sets", "subtopics": [
+        {"name": "Logic", "points": ["Statements, AND/OR/NOT, truth tables"]},
+        {"name": "Sets", "points": ["Union, intersection, complement, Venn diagrams"]},
+        {"name": "De Morgan", "points": ["Laws for complements"]}
+      ]},
+      {"topic": "Functions", "subtopics": [
+        {"name": "Definition", "points": ["f:X→Y, domain, range"]},
+        {"name": "Types", "points": ["One-one, onto, bijective"]},
+        {"name": "Operations", "points": ["Composition, inverse"]}
+      ]},
+      {"topic": "Sequences", "subtopics": [
+        {"name": "AP", "points": ["a, a+d, a+2d... T_n=a+(n-1)d"]},
+        {"name": "GP", "points": ["a, ar, ar²... T_n=ar^(n-1)"]},
+        {"name": "Sum Formulas", "points": ["S_n=n/2[2a+(n-1)d], S_n=a(1-r^n)/(1-r)"]}
+      ]},
+      {"topic": "Matrices", "subtopics": [
+        {"name": "Operations", "points": ["Addition, multiplication, transpose"]},
+        {"name": "Determinant", "points": ["2×2: ad-bc, 3×3: expansion"]},
+        {"name": "Inverse", "points": ["A⁻¹=adj(A)/det(A)"]}
+      ]},
+      {"topic": "Quadratic", "subtopics": [
+        {"name": "Form", "points": ["ax²+bx+c=0"]},
+        {"name": "Discriminant", "points": ["D=b²-4ac, nature of roots"]},
+        {"name": "Formula", "points": ["x=(-b±√D)/2a"]}
+      ]},
+      {"topic": "Complex Numbers", "subtopics": [
+        {"name": "Definition", "points": ["z=a+bi, i=√-1"]},
+        {"name": "Modulus", "points": ["|z|=√(a²+b²)"]},
+        {"name": "Operations", "points": ["Add, multiply, divide"]}
+      ]}
+    ]
+  }
+}
   "title": "algebra Mindmap",
   "unitSlug": "algebra",
   "topicSlug": "algebra-mindmap",

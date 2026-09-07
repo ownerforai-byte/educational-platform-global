@@ -1,4 +1,42 @@
 {
+  "title": "Stoichiometry Mindmap",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "stoichiometry-mindmap",
+  "topicTitle": "stoichiometry — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of stoichiometry - quantitative relationships in chemical reactions.",
+    "Covers laws of chemical combination, mole concept, and calculations.",
+    "Essential for balancing equations and predicting reaction yields."
+  ],
+  "mindmap": {
+    "centralConcept": "Stoichiometry",
+    "branches": [
+      {"topic": "Laws of Combination", "subtopics": [
+        {"name": "Conservation of Mass", "points": ["Lavoisier, mass conserved, balanced equations"]},
+        {"name": "Definite Proportions", "points": ["Proust, fixed ratio, H₂O always 1:8"]},
+        {"name": "Multiple Proportions", "points": ["Dalton, whole number ratios, CO vs CO₂"]},
+        {"name": "Reciprocal Proportions", "points": ["Richter, related ratios"]}
+      ]},
+      {"topic": "Mole Concept", "subtopics": [
+        {"name": "Avogadro's Number", "points": ["6.022×10²³, bridge macroscopic/microscopic"]},
+        {"name": "Molar Mass", "points": ["Mass of one mole, g/mol"]},
+        {"name": "Calculations", "points": ["n=m/M, m=n×M"]},
+        {"name": "Gas Moles", "points": ["n=V/22.4 at STP"]}
+      ]},
+      {"topic": "Chemical Formulae", "subtopics": [
+        {"name": "Empirical", "points": ["Simplest ratio, from percentage"]},
+        {"name": "Molecular", "points": ["Actual atoms, multiple of empirical"]},
+        {"name": "Determination", "points": ["Convert % to grams, grams to moles, find ratio"]}
+      ]},
+      {"topic": "Calculations", "subtopics": [
+        {"name": "Limiting Reactant", "points": ["Completely consumed, limits product"]},
+        {"name": "Yield", "points": ["Theoretical vs actual, percent yield"]},
+        {"name": "Concentration", "points": ["Molarity, molality, mole fraction"]}
+      ]}
+    ]
+  }
+}
   "title": "stoichiometry Mindmap",
   "unitSlug": "stoichiometry",
   "topicSlug": "stoichiometry-mindmap",

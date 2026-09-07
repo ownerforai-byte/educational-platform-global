@@ -1,4 +1,48 @@
 {
+  "title": "Calculus Mindmap",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-mindmap",
+  "topicTitle": "calculus — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of calculus - limits, continuity, derivatives, and integrals.",
+    "Covers differentiation rules, integration techniques, and applications.",
+    "Essential tool for physics, engineering, and optimization."
+  ],
+  "mindmap": {
+    "centralConcept": "Calculus",
+    "branches": [
+      {"topic": "Limits", "subtopics": [
+        {"name": "Definition", "points": ["lim(x→a)f(x)=L, value approached"]},
+        {"name": "Methods", "points": ["Direct substitution, factoring, rationalization"]},
+        {"name": "Special Limits", "points": ["lim(sinx/x)=1, lim((1+1/n)^n)=e"]},
+        {"name": "Indeterminate", "points": ["0/0, ∞/∞, L'Hôpital's rule"]}
+      ]},
+      {"topic": "Continuity", "subtopics": [
+        {"name": "Definition", "points": ["lim(x→a)f(x)=f(a), three conditions"]},
+        {"name": "Discontinuity", "points": ["Removable, jump, infinite, oscillating"]},
+        {"name": "Properties", "points": ["IVT, EVT, continuous functions"]}
+      ]},
+      {"topic": "Differentiation", "subtopics": [
+        {"name": "Definition", "points": ["f'(x)=lim[h→0](f(x+h)-f(x))/h"]},
+        {"name": "Rules", "points": ["Power, product, quotient, chain"]},
+        {"name": "Standard", "points": ["(sinx)'=cosx, (eˣ)'=eˣ, (lnx)'=1/x"]},
+        {"name": "Applications", "points": ["Tangents, maxima/minima, curve sketching"]}
+      ]},
+      {"topic": "Integration", "subtopics": [
+        {"name": "Indefinite", "points": ["∫f(x)dx=F(x)+C, reverse of differentiation"]},
+        {"name": "Standard", "points": ["∫xⁿdx=xⁿ⁺¹/(n+1), ∫sinxdx=-cosx"]},
+        {"name": "Methods", "points": ["Substitution, parts, partial fractions"]},
+        {"name": "Definite", "points": ["∫ₐᵇf(x)dx=F(b)-F(a), area under curve"]}
+      ]},
+      {"topic": "Applications", "subtopics": [
+        {"name": "Area", "points": ["Area under curve, between curves"]},
+        {"name": "Volume", "points": ["Revolution, disk/washer method"]},
+        {"name": "Physics", "points": ["Work, average value"]}
+      ]}
+    ]
+  }
+}
   "title": "calculus Mindmap",
   "unitSlug": "calculus",
   "topicSlug": "calculus-mindmap",

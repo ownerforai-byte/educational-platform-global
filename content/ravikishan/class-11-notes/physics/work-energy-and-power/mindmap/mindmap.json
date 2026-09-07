@@ -1,4 +1,42 @@
 {
+  "title": "Work-Energy-Power Mindmap",
+  "unitSlug": "work-energy-and-power",
+  "topicSlug": "work-energy-and-power-mindmap",
+  "topicTitle": "work energy and power — interactive concept map",
+  "relevance": 0,
+  "notes": [
+    "Study of work, energy, and power - fundamental concepts in physics.",
+    "Covers work-energy theorem, conservation of energy, and power.",
+    "Essential for understanding mechanical systems."
+  ],
+  "mindmap": {
+    "centralConcept": "Work, Energy & Power",
+    "branches": [
+      {"topic": "Work", "subtopics": [
+        {"name": "Definition", "points": ["W=F·d=Fd cosθ, units: Joule (J)"]},
+        {"name": "Variable Force", "points": ["W=∫F·dx, area under F-x graph"]},
+        {"name": "Spring Work", "points": ["W=½kx²"]}
+      ]},
+      {"topic": "Energy", "subtopics": [
+        {"name": "Kinetic Energy", "points": ["KE=½mv², energy due to motion"]},
+        {"name": "Potential Energy", "points": ["Gravitational: PE=mgh, Elastic: PE=½kx²"]},
+        {"name": "Conservation", "points": ["Total mechanical energy constant (conservative forces)"]}
+      ]},
+      {"topic": "Work-Energy Theorem", "subtopics": [
+        {"name": "Statement", "points": ["W_net=ΔKE=½mv²-½mu²"]}
+      ]},
+      {"topic": "Power", "subtopics": [
+        {"name": "Definition", "points": ["P=W/t=F·v, units: Watt (W)"]},
+        {"name": "Applications", "points": ["Engine power, efficiency"]}
+      ]},
+      {"topic": "Collisions", "subtopics": [
+        {"name": "Elastic", "points": ["Momentum conserved, KE conserved, e=1"]},
+        {"name": "Inelastic", "points": ["Momentum conserved, KE not conserved, e<1"]},
+        {"name": "Perfectly Inelastic", "points": ["Stick together, e=0"]}
+      ]}
+    ]
+  }
+}
   "title": "work-energy-and-power Mindmap",
   "unitSlug": "work-energy-and-power",
   "topicSlug": "work-energy-and-power-mindmap",
