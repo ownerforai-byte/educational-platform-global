@@ -287,6 +287,43 @@ function AMGMHMVisual() {
   );
 }
 
+/* ---------- Theory Content ---------- */
+const THEORY_SECTIONS = [
+  {
+    title: "Arithmetic Sequence",
+    points: [
+      "nth term: aₙ = a + (n−1)d",
+      "Sum: Sₙ = n/2 × (2a + (n−1)d) = n/2 × (a + aₙ)",
+      "Arithmetic Mean: A.M. = (a + b) / 2",
+    ],
+  },
+  {
+    title: "Geometric Sequence",
+    points: [
+      "nth term: aₙ = arⁿ⁻¹",
+      "Finite sum: Sₙ = a(1−rⁿ)/(1−r), r ≠ 1",
+      "Infinite sum: S∞ = a/(1−r), |r| < 1",
+      "Geometric Mean: G.M. = √(ab)",
+    ],
+  },
+  {
+    title: "Harmonic Sequence",
+    points: [
+      "a₁, a₂, a₃, ... is H.P. if 1/a₁, 1/a₂, 1/a₃, ... is A.P.",
+      "Harmonic Mean: H.M. = 2ab/(a+b)",
+      "H.M. = G.M.² / A.M.",
+    ],
+  },
+  {
+    title: "Key Inequalities",
+    points: [
+      "A.M. ≥ G.M. ≥ H.M. (for positive reals)",
+      "Equality iff all numbers are equal",
+      "For n numbers: A.M. = Σxᵢ/n, G.M. = (∏xᵢ)¹ᐟⁿ",
+    ],
+  },
+];
+
 /* ---------- Main Panel ---------- */
 export function SequenceSeriesResources() {
   return (
@@ -299,9 +336,11 @@ export function SequenceSeriesResources() {
               <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Sequence &amp; Series — Resources</CardTitle>
+              <CardTitle className="text-lg">
+                Sequence &amp; Series — Resources
+              </CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Exercise solutions from WebNotee
+                Exercises covering arithmetic, geometric, and harmonic sequences
               </p>
             </div>
           </div>
@@ -363,7 +402,9 @@ export function SequenceSeriesResources() {
               <Calculator className="w-5 h-5 text-purple-600 dark:text-purple-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Interactive Visualizations</CardTitle>
+              <CardTitle className="text-lg">
+                Interactive Visualizations
+              </CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
                 Explore sequences, series, and inequalities interactively
               </p>
@@ -372,10 +413,11 @@ export function SequenceSeriesResources() {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="ap" className="space-y-4">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="ap">AP Visual</TabsTrigger>
               <TabsTrigger value="gp">GP Visual</TabsTrigger>
               <TabsTrigger value="amgm">AM-GM-HM</TabsTrigger>
+              <TabsTrigger value="theory">Theory</TabsTrigger>
             </TabsList>
 
             <TabsContent value="ap" className="space-y-4">
@@ -402,60 +444,76 @@ export function SequenceSeriesResources() {
                 <br />AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b)
               </div>
             </TabsContent>
+
+            <TabsContent value="theory" className="space-y-4">
+              <div className="grid gap-3 md:grid-cols-2">
+                {THEORY_SECTIONS.map((sec) => (
+                  <div
+                    key={sec.title}
+                    className="p-3 rounded-lg border bg-background/60"
+                  >
+                    <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-purple-500" />
+                      {sec.title}
+                    </h4>
+                    <ul className="space-y-1">
+                      {sec.points.map((p, i) => (
+                        <li
+                          key={i}
+                          className="text-xs text-muted-foreground flex items-start gap-1.5"
+                        >
+                          <span className="text-purple-500 mt-0.5">•</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
           </Tabs>
         </CardContent>
       </Card>
 
-      {/* Theory Summary */}
+      {/* Formulas & Key Results */}
       <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50/50 to-transparent dark:from-green-950/20">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-green-100 dark:bg-green-900/40 rounded-lg">
-              <TrendingUp className="w-5 h-5 text-green-600 dark:text-green-400" />
+              <BookOpen className="w-5 h-5 text-green-600 dark:text-green-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Theory Summary</CardTitle>
+              <CardTitle className="text-lg">Formulas & Key Results</CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Key formulas and properties
+                Quick reference for essential formulas and properties
               </p>
             </div>
           </div>
         </CardHeader>
-        <CardContent className="space-y-3 text-sm">
-          <div className="grid gap-3 md:grid-cols-2">
-            <div className="p-3 rounded-lg bg-green-50/50 dark:bg-green-950/10 border border-green-200/50 dark:border-green-800/30">
-              <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2">Arithmetic Sequence</h4>
-              <ul className="space-y-1 text-xs text-muted-foreground">
-                <li>nth term: aₙ = a + (n−1)d</li>
-                <li>Sum: Sₙ = n/2 × (2a + (n−1)d) = n/2 × (a + aₙ)</li>
-                <li>Arithmetic Mean: A.M. = (a + b) / 2</li>
-              </ul>
-            </div>
-            <div className="p-3 rounded-lg bg-purple-50/50 dark:bg-purple-950/10 border border-purple-200/50 dark:border-purple-800/30">
-              <h4 className="font-semibold text-purple-700 dark:text-purple-400 mb-2">Geometric Sequence</h4>
-              <ul className="space-y-1 text-xs text-muted-foreground">
-                <li>nth term: aₙ = arⁿ⁻¹</li>
-                <li>Finite sum: Sₙ = a(1−rⁿ)/(1−r), r ≠ 1</li>
-                <li>Infinite sum: S∞ = a/(1−r), |r| &lt; 1</li>
-                <li>Geometric Mean: G.M. = √(ab)</li>
-              </ul>
-            </div>
-            <div className="p-3 rounded-lg bg-blue-50/50 dark:bg-blue-950/10 border border-blue-200/50 dark:border-blue-800/30">
-              <h4 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">Harmonic Sequence</h4>
-              <ul className="space-y-1 text-xs text-muted-foreground">
-                <li>a₁, a₂, a₃, ... is H.P. if 1/a₁, 1/a₂, 1/a₃, ... is A.P.</li>
-                <li>Harmonic Mean: H.M. = 2ab/(a+b)</li>
-                <li>H.M. = G.M.² / A.M.</li>
-              </ul>
-            </div>
-            <div className="p-3 rounded-lg bg-amber-50/50 dark:bg-amber-950/10 border border-amber-200/50 dark:border-amber-800/30">
-              <h4 className="font-semibold text-amber-700 dark:text-amber-400 mb-2">Key Inequalities</h4>
-              <ul className="space-y-1 text-xs text-muted-foreground">
-                <li>A.M. ≥ G.M. ≥ H.M. (for positive reals)</li>
-                <li>Equality iff all numbers are equal</li>
-                <li>For n numbers: A.M. = Σxᵢ/n, G.M. = (∏xᵢ)¹ᐟⁿ</li>
-              </ul>
-            </div>
+        <CardContent>
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {THEORY_SECTIONS.map((sec) => (
+              <div
+                key={sec.title}
+                className="p-3 rounded-lg border bg-background/60"
+              >
+                <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
+                  {sec.title}
+                </h4>
+                <ul className="space-y-1">
+                  {sec.points.map((p, i) => (
+                    <li
+                      key={i}
+                      className="text-xs text-muted-foreground flex items-start gap-1.5"
+                    >
+                      <span className="text-green-500 mt-0.5 shrink-0" />
+                      <span dangerouslySetInnerHTML={{ __html: p }} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </CardContent>
       </Card>

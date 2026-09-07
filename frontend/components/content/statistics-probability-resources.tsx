@@ -6,7 +6,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { BookOpen, Calculator } from "lucide-react";
+import { BookOpen, Calculator, ExternalLink, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -687,7 +688,7 @@ export function StatisticsProbabilityResources() {
         </CardContent>
       </Card>
 
-      {/* Theory Summary */}
+      {/* Formulas & Key Results */}
       <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50/50 to-transparent dark:from-green-950/20">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-3">
@@ -695,9 +696,9 @@ export function StatisticsProbabilityResources() {
               <BookOpen className="w-5 h-5 text-green-600 dark:text-green-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Theory Summary</CardTitle>
+              <CardTitle className="text-lg">Formulas & Key Results</CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Key formulas and concepts for Statistics and Probability
+                Quick reference for essential formulas and concepts
               </p>
             </div>
           </div>
@@ -719,7 +720,7 @@ export function StatisticsProbabilityResources() {
                       key={i}
                       className="text-xs text-muted-foreground flex items-start gap-1.5"
                     >
-                      <span className="text-green-500 mt-0.5 shrink-0">•</span>
+                      <span className="text-green-500 mt-0.5 shrink-0" />
                       <span dangerouslySetInnerHTML={{ __html: p }} />
                     </li>
                   ))}

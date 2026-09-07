@@ -6,7 +6,8 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Calculator, TrendingUp } from "lucide-react";
+import { BookOpen, Calculator, ExternalLink, FileText, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
@@ -528,7 +529,9 @@ export function VectorsResources() {
               <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Vectors — Resources</CardTitle>
+              <CardTitle className="text-lg">
+                Vectors — Resources
+              </CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
                 Exercises covering vector operations, dot product, and linear dependence
               </p>
@@ -541,20 +544,16 @@ export function VectorsResources() {
               id: "vec-1",
               title: "Vectors — Basic Operations",
               description: "Vector addition, subtraction, scalar multiplication, and magnitude.",
+              url: "https://drive.google.com/file/d/1example-vectors-basic/preview",
+              pdfUrl: "https://drive.google.com/file/d/1example-vectors-basic/view?usp=sharing",
               tags: ["Addition", "Magnitude", "Scalar Mult"],
-            },
-            {
-              id: "vec-2",
-              title: "Vectors — Dot Product & Applications",
-              description: "Dot product, angle between vectors, projection, and perpendicularity.",
-              tags: ["Dot Product", "Projection", "Angle"],
             },
           ].map((res) => (
             <div
               key={res.id}
               className="flex items-start gap-3 p-3 rounded-lg border bg-background/60 hover:bg-accent/50 transition-colors"
             >
-              <BookOpen className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+              <FileText className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
                 <h4 className="text-sm font-semibold">{res.title}</h4>
                 <p className="text-xs text-muted-foreground mt-1">{res.description}</p>
@@ -569,6 +568,12 @@ export function VectorsResources() {
                   ))}
                 </div>
               </div>
+              <Button asChild size="sm" variant="outline" className="shrink-0">
+                <a href={res.url} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3.5 h-3.5 mr-1" />
+                  Open
+                </a>
+              </Button>
             </div>
           ))}
         </CardContent>
@@ -582,19 +587,22 @@ export function VectorsResources() {
               <Calculator className="w-5 h-5 text-purple-600 dark:text-purple-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Interactive Visualizations</CardTitle>
+              <CardTitle className="text-lg">
+                Interactive Visualizations
+              </CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Explore vectors, dot product, and linear dependence visually
+                Explore vector addition, dot product, and linear dependence
               </p>
             </div>
           </div>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="2d" className="space-y-4">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="2d">2D Vectors</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="2d">Vector 2D</TabsTrigger>
               <TabsTrigger value="dot">Dot Product</TabsTrigger>
-              <TabsTrigger value="linear">Linear Dependence</TabsTrigger>
+              <TabsTrigger value="dep">Dependence</TabsTrigger>
+              <TabsTrigger value="theory">Theory</TabsTrigger>
             </TabsList>
 
             <TabsContent value="2d" className="space-y-4">
@@ -605,34 +613,64 @@ export function VectorsResources() {
               <DotProductVisual />
             </TabsContent>
 
-            <TabsContent value="linear" className="space-y-4">
+            <TabsContent value="dep" className="space-y-4">
               <LinearDependenceVisual />
+            </TabsContent>
+
+            <TabsContent value="theory" className="space-y-4">
+              <div className="grid gap-3 md:grid-cols-2">
+                {THEORY_SECTIONS.map((sec) => (
+                  <div
+                    key={sec.title}
+                    className="p-3 rounded-lg border bg-background/60"
+                  >
+                    <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-purple-500" />
+                      {sec.title}
+                    </h4>
+                    <ul className="space-y-1">
+                      {sec.points.map((p, i) => (
+                        <li
+                          key={i}
+                          className="text-xs text-muted-foreground flex items-start gap-1.5"
+                        >
+                          <span className="text-purple-500 mt-0.5">•</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
         </CardContent>
       </Card>
 
-      {/* Theory Summary */}
+      {/* Formulas & Key Results */}
       <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50/50 to-transparent dark:from-green-950/20">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-green-100 dark:bg-green-900/40 rounded-lg">
-              <TrendingUp className="w-5 h-5 text-green-600 dark:text-green-400" />
+              <BookOpen className="w-5 h-5 text-green-600 dark:text-green-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Theory Summary</CardTitle>
+              <CardTitle className="text-lg">Formulas & Key Results</CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Key concepts for Class 11 Vectors
+                Quick reference for essential formulas and properties
               </p>
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {THEORY_SECTIONS.map((sec) => (
-              <div key={sec.title} className="p-3 rounded-lg border bg-background/60">
+              <div
+                key={sec.title}
+                className="p-3 rounded-lg border bg-background/60"
+              >
                 <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-green-500" />
+                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
                   {sec.title}
                 </h4>
                 <ul className="space-y-1">
@@ -641,8 +679,8 @@ export function VectorsResources() {
                       key={i}
                       className="text-xs text-muted-foreground flex items-start gap-1.5"
                     >
-                      <span className="text-green-500 mt-0.5">•</span>
-                      {p}
+                      <span className="text-green-500 mt-0.5 shrink-0" />
+                      <span dangerouslySetInnerHTML={{ __html: p }} />
                     </li>
                   ))}
                 </ul>

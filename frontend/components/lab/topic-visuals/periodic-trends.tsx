@@ -37,28 +37,42 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 }
 
 type TrendMode = "radius" | "ionization" | "electronegativity";
+type FilterMode = "all" | "s" | "p" | "d" | "f" | "metal" | "non-metal";
 
-const ELEMENT_DATA = [
-  { sym: "H", z: 1, row: 0, col: 0, r: 37, ie: 1312, en: 2.20 },
-  { sym: "He", z: 2, row: 0, col: 7, r: 32, ie: 2372, en: 0 },
-  { sym: "Li", z: 3, row: 1, col: 0, r: 152, ie: 520, en: 0.98 },
-  { sym: "Be", z: 4, row: 1, col: 1, r: 112, ie: 899, en: 1.57 },
-  { sym: "B", z: 5, row: 1, col: 2, r: 85, ie: 801, en: 2.04 },
-  { sym: "C", z: 6, row: 1, col: 3, r: 77, ie: 1086, en: 2.55 },
-  { sym: "N", z: 7, row: 1, col: 4, r: 75, ie: 1402, en: 3.04 },
-  { sym: "O", z: 8, row: 1, col: 5, r: 73, ie: 1314, en: 3.44 },
-  { sym: "F", z: 9, row: 1, col: 6, r: 72, ie: 1681, en: 3.98 },
-  { sym: "Ne", z: 10, row: 1, col: 7, r: 69, ie: 2081, en: 0 },
-  { sym: "Na", z: 11, row: 2, col: 0, r: 186, ie: 496, en: 0.93 },
-  { sym: "Mg", z: 12, row: 2, col: 1, r: 160, ie: 738, en: 1.31 },
-  { sym: "Al", z: 13, row: 2, col: 2, r: 143, ie: 578, en: 1.61 },
-  { sym: "Si", z: 14, row: 2, col: 3, r: 117, ie: 787, en: 1.90 },
-  { sym: "P", z: 15, row: 2, col: 4, r: 110, ie: 1012, en: 2.19 },
-  { sym: "S", z: 16, row: 2, col: 5, r: 104, ie: 1000, en: 2.58 },
-  { sym: "Cl", z: 17, row: 2, col: 6, r: 99, ie: 1251, en: 3.16 },
-  { sym: "Ar", z: 18, row: 2, col: 7, r: 97, ie: 1521, en: 0 },
-  { sym: "K", z: 19, row: 3, col: 0, r: 227, ie: 419, en: 0.82 },
-  { sym: "Ca", z: 20, row: 3, col: 1, r: 197, ie: 590, en: 1.00 },
+type ElementData = {
+  sym: string;
+  z: number;
+  row: number;
+  col: number;
+  r: number;
+  ie: number;
+  en: number;
+  block: "s" | "p" | "d" | "f";
+  series: string;
+  config: string;
+};
+
+const ELEMENT_DATA: ElementData[] = [
+  { sym: "H", z: 1, row: 0, col: 0, r: 37, ie: 1312, en: 2.20, block: "s", series: "non-metal", config: "1s1" },
+  { sym: "He", z: 2, row: 0, col: 7, r: 32, ie: 2372, en: 0, block: "s", series: "noble-gas", config: "1s2" },
+  { sym: "Li", z: 3, row: 1, col: 0, r: 152, ie: 520, en: 0.98, block: "s", series: "alkali-metal", config: "[He] 2s1" },
+  { sym: "Be", z: 4, row: 1, col: 1, r: 112, ie: 899, en: 1.57, block: "s", series: "alkaline-earth-metal", config: "[He] 2s2" },
+  { sym: "B", z: 5, row: 1, col: 2, r: 85, ie: 801, en: 2.04, block: "p", series: "metalloid", config: "[He] 2s2 2p1" },
+  { sym: "C", z: 6, row: 1, col: 3, r: 77, ie: 1086, en: 2.55, block: "p", series: "non-metal", config: "[He] 2s2 2p2" },
+  { sym: "N", z: 7, row: 1, col: 4, r: 75, ie: 1402, en: 3.04, block: "p", series: "non-metal", config: "[He] 2s2 2p3" },
+  { sym: "O", z: 8, row: 1, col: 5, r: 73, ie: 1314, en: 3.44, block: "p", series: "non-metal", config: "[He] 2s2 2p4" },
+  { sym: "F", z: 9, row: 1, col: 6, r: 72, ie: 1681, en: 3.98, block: "p", series: "non-metal", config: "[He] 2s2 2p5" },
+  { sym: "Ne", z: 10, row: 1, col: 7, r: 69, ie: 2081, en: 0, block: "p", series: "noble-gas", config: "[He] 2s2 2p6" },
+  { sym: "Na", z: 11, row: 2, col: 0, r: 186, ie: 496, en: 0.93, block: "s", series: "alkali-metal", config: "[Ne] 3s1" },
+  { sym: "Mg", z: 12, row: 2, col: 1, r: 160, ie: 738, en: 1.31, block: "s", series: "alkaline-earth-metal", config: "[Ne] 3s2" },
+  { sym: "Al", z: 13, row: 2, col: 2, r: 143, ie: 578, en: 1.61, block: "p", series: "metal", config: "[Ne] 3s2 3p1" },
+  { sym: "Si", z: 14, row: 2, col: 3, r: 117, ie: 787, en: 1.90, block: "p", series: "metalloid", config: "[Ne] 3s2 3p2" },
+  { sym: "P", z: 15, row: 2, col: 4, r: 110, ie: 1012, en: 2.19, block: "p", series: "non-metal", config: "[Ne] 3s2 3p3" },
+  { sym: "S", z: 16, row: 2, col: 5, r: 104, ie: 1000, en: 2.58, block: "p", series: "non-metal", config: "[Ne] 3s2 3p4" },
+  { sym: "Cl", z: 17, row: 2, col: 6, r: 99, ie: 1251, en: 3.16, block: "p", series: "non-metal", config: "[Ne] 3s2 3p5" },
+  { sym: "Ar", z: 18, row: 2, col: 7, r: 97, ie: 1521, en: 0, block: "p", series: "noble-gas", config: "[Ne] 3s2 3p6" },
+  { sym: "K", z: 19, row: 3, col: 0, r: 227, ie: 419, en: 0.82, block: "s", series: "alkali-metal", config: "[Ar] 4s1" },
+  { sym: "Ca", z: 20, row: 3, col: 1, r: 197, ie: 590, en: 1.00, block: "s", series: "alkaline-earth-metal", config: "[Ar] 4s2" },
 ];
 
 function normalize(val: number, min: number, max: number): number {
@@ -69,6 +83,7 @@ function normalize(val: number, min: number, max: number): number {
 export function PeriodicTableVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<TrendMode>("radius");
+  const [filter, setFilter] = useState<FilterMode>("all");
   const [isWebGL] = useState(() => isWebGLAvailable());
 
 
@@ -112,6 +127,14 @@ export function PeriodicTableVisual() {
 
       const trend = trends[mode];
 
+      const getFilteredElements = () => {
+        if (filter === "all") return ELEMENT_DATA;
+        if (filter === "metal" || filter === "non-metal") {
+          return ELEMENT_DATA.filter((el) => el.series === filter);
+        }
+        return ELEMENT_DATA.filter((el) => el.block === filter);
+      };
+
       const updateScene = () => {
         while (meshes.length > 5) {
           const m = meshes.pop()!;
@@ -121,16 +144,17 @@ export function PeriodicTableVisual() {
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
         }
 
+        const filteredElements = getFilteredElements();
         const colStep = 1.8;
         const rowStep = 1.6;
-        const offsetX = -(ELEMENT_DATA.length * colStep) / 2;
+        const offsetX = -(filteredElements.length * colStep) / 2;
         const offsetY = 3.5;
 
-        const values = ELEMENT_DATA.map((e) => e[trend.key] as number);
+        const values = filteredElements.map((e) => e[trend.key] as number);
         const globalMin = Math.min(...values.filter((v) => v > 0));
         const globalMax = Math.max(...values.filter((v) => v > 0));
 
-        ELEMENT_DATA.forEach((el, idx) => {
+        filteredElements.forEach((el, idx) => {
           const val = el[trend.key] as number;
           const norm = val > 0 ? normalize(val, globalMin, globalMax) : 0;
 
@@ -207,7 +231,7 @@ export function PeriodicTableVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, isWebGL]);
+  }, [mode, filter, isWebGL]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Periodic Trends" description="Periodic table trend visualization — requires WebGL." />;
@@ -230,6 +254,20 @@ export function PeriodicTableVisual() {
               <TabsTrigger value="electronegativity" className="text-xs">Electronegativity</TabsTrigger>
             </TabsList>
           </Tabs>
+        </CollapsibleControls>
+
+        <CollapsibleControls label="Element Filter">
+          <div className="mt-1 flex flex-wrap gap-1">
+            {(["all", "s", "p", "d", "f", "metal", "non-metal"] as FilterMode[]).map((f) => (
+              <button
+                key={f}
+                className={`px-2 py-1 text-xs rounded-md border ${filter === f ? "bg-primary text-primary-foreground" : "bg-background hover:bg-accent"}`}
+                onClick={() => setFilter(f)}
+              >
+                {f === "all" ? "All" : f === "metal" ? "Metals" : f === "non-metal" ? "Non-metals" : `${f}-block`}
+              </button>
+            ))}
+          </div>
         </CollapsibleControls>
 
         <div ref={containerRef} className="relative h-[420px] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />

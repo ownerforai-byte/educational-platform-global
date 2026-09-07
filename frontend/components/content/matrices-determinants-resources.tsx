@@ -400,7 +400,7 @@ const THEORY_SECTIONS = [
 export function MatricesDeterminantsResources() {
   return (
     <div className="space-y-6">
-      {/* Resource Links */}
+      {/* PDF Resources */}
       <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-950/20">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-3">
@@ -409,10 +409,10 @@ export function MatricesDeterminantsResources() {
             </div>
             <div>
               <CardTitle className="text-lg">
-                Matrices & Determinants — Resources
+                Matrices &amp; Determinants — Resources
               </CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Theory summaries, formula references, and practice material
+                Exercises covering matrix operations, determinants, and inverses
               </p>
             </div>
           </div>
@@ -420,25 +420,31 @@ export function MatricesDeterminantsResources() {
         <CardContent className="space-y-3">
           {[
             {
-              id: "theory",
-              title: "Matrix Theory — Definitions & Formulas",
+              id: "mat-1",
+              title: "Matrices — Operations & Properties",
               description:
-                "Matrix addition, multiplication, transpose, minors, cofactors, adjoint, and inverse formulas with examples.",
-              tags: ["Theory", "Formulas", "Definitions"],
+                "Matrix addition, multiplication, transpose, and algebraic properties.",
+              url: "https://drive.google.com/file/d/1example-matrices-ops/preview",
+              pdfUrl: "https://drive.google.com/file/d/1example-matrices-ops/view?usp=sharing",
+              tags: ["Matrices", "Operations", "Transpose"],
             },
             {
-              id: "det-props",
-              title: "Determinant Properties — Key Results",
+              id: "mat-2",
+              title: "Determinants — Properties & Expansion",
               description:
-                "Properties of determinants: row operations, cofactor expansion, det(AB)=det(A)det(B), singular matrices.",
-              tags: ["Determinants", "Properties", "Proofs"],
+                "Cofactor expansion, properties of determinants, singular vs non-singular matrices.",
+              url: "https://drive.google.com/file/d/1example-det-props/preview",
+              pdfUrl: "https://drive.google.com/file/d/1example-det-props/view?usp=sharing",
+              tags: ["Determinants", "Cofactors", "Properties"],
             },
             {
-              id: "practice",
-              title: "Practice Problems — Matrices & Determinants",
+              id: "mat-3",
+              title: "Inverse Matrices — 2×2 & 3×3",
               description:
-                "Worked examples: finding inverses, computing determinants, applying properties. Use the interactive tools below.",
-              tags: ["Practice", "Examples", "Exercises"],
+                "Finding inverse using adjoint method, conditions for invertibility.",
+              url: "https://drive.google.com/file/d/1example-inverse-mat/preview",
+              pdfUrl: "https://drive.google.com/file/d/1example-inverse-mat/view?usp=sharing",
+              tags: ["Inverse", "Adjoint", "Solving Systems"],
             },
           ].map((res) => (
             <div
@@ -462,6 +468,12 @@ export function MatricesDeterminantsResources() {
                   ))}
                 </div>
               </div>
+              <Button asChild size="sm" variant="outline" className="shrink-0">
+                <a href={res.url} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3.5 h-3.5 mr-1" />
+                  Open
+                </a>
+              </Button>
             </div>
           ))}
         </CardContent>
@@ -476,7 +488,7 @@ export function MatricesDeterminantsResources() {
             </div>
             <div>
               <CardTitle className="text-lg">
-                Interactive Calculators
+                Interactive Visualizations
               </CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
                 Edit matrices and see results update live
@@ -486,51 +498,88 @@ export function MatricesDeterminantsResources() {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="transpose" className="space-y-4">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="transpose">Transpose</TabsTrigger>
               <TabsTrigger value="determinant">Determinant</TabsTrigger>
               <TabsTrigger value="inverse">Inverse (2×2)</TabsTrigger>
+              <TabsTrigger value="theory">Theory</TabsTrigger>
             </TabsList>
 
             <TabsContent value="transpose" className="space-y-4">
               <MatrixVisual />
+              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
+                <strong className="text-foreground">Transpose:</strong> Swap rows and columns to get Aᵀ. A symmetric matrix satisfies A = Aᵀ.
+              </div>
             </TabsContent>
 
             <TabsContent value="determinant" className="space-y-4">
               <DeterminantVisual />
+              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
+                <strong className="text-foreground">Cofactor Expansion:</strong> Expand along the first row. The determinant is zero for singular matrices (no inverse exists).
+              </div>
             </TabsContent>
 
             <TabsContent value="inverse" className="space-y-4">
               <InverseVisual />
+              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
+                <strong className="text-foreground">Inverse Formula:</strong> A⁻¹ = adj(A) / det(A). Only exists when det(A) ≠ 0.
+              </div>
+            </TabsContent>
+
+            <TabsContent value="theory" className="space-y-4">
+              <div className="grid gap-3 md:grid-cols-2">
+                {THEORY_SECTIONS.map((sec) => (
+                  <div
+                    key={sec.title}
+                    className="p-3 rounded-lg border bg-background/60"
+                  >
+                    <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-purple-500" />
+                      {sec.title}
+                    </h4>
+                    <ul className="space-y-1">
+                      {sec.points.map((p, i) => (
+                        <li
+                          key={i}
+                          className="text-xs text-muted-foreground flex items-start gap-1.5"
+                        >
+                          <span className="text-purple-500 mt-0.5">•</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
         </CardContent>
       </Card>
 
-      {/* Theory Summary */}
+      {/* Formulas & Key Results */}
       <Card className="border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50/50 to-transparent dark:from-green-950/20">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-green-100 dark:bg-green-900/40 rounded-lg">
-              <TrendingUp className="w-5 h-5 text-green-600 dark:text-green-400" />
+              <BookOpen className="w-5 h-5 text-green-600 dark:text-green-400" />
             </div>
             <div>
-              <CardTitle className="text-lg">Theory Summary</CardTitle>
+              <CardTitle className="text-lg">Formulas & Key Results</CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Key concepts at a glance
+                Quick reference for essential formulas and properties
               </p>
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {THEORY_SECTIONS.map((sec) => (
               <div
                 key={sec.title}
                 className="p-3 rounded-lg border bg-background/60"
               >
                 <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-green-500" />
+                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
                   {sec.title}
                 </h4>
                 <ul className="space-y-1">
@@ -539,8 +588,8 @@ export function MatricesDeterminantsResources() {
                       key={i}
                       className="text-xs text-muted-foreground flex items-start gap-1.5"
                     >
-                      <span className="text-green-500 mt-0.5">•</span>
-                      <span>{p}</span>
+                      <span className="text-green-500 mt-0.5 shrink-0">•</span>
+                      <span dangerouslySetInnerHTML={{ __html: p }} />
                     </li>
                   ))}
                 </ul>

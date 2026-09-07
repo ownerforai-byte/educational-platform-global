@@ -13,16 +13,15 @@ import {
   FlaskConical,
   MessageSquareText,
   ArrowRight,
+  Settings2,
 } from "lucide-react";
-import { chat, guestChat } from "@/lib/api/ai";
+import { chat, guestChat, streamChat, getProviders } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
 // Strip weird chars, normalise whitespace, and render inline markdown-ish links as clickable
-// Clean AI reply: strip noise, render links as clickable
 function formatAiReply(raw: string): React.ReactNode {
-  // Strip stray markdown noise chars
   const cleaned = raw
     // eslint-disable-next-line no-useless-escape -- the [ and ] must stay escaped inside the character class (ESLint false positive)
     .replace(/[*`~#>_\[\](){}|\\^%$@!]{2,}/g, " ")
@@ -96,6 +95,10 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [guestCount, setGuestCount] = useState(0);
+  const [providers, setProviders] = useState<string[]>([]);
+  const [defaultProvider, setDefaultProvider] = useState<string>("");
+  const [selectedProvider, setSelectedProvider] = useState<string>("");
+  const [showProviderSelector, setShowProviderSelector] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -104,6 +107,17 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       const v = localStorage.getItem("neb_ai_guest_count");
       setGuestCount(v ? parseInt(v, 10) : 0);
     }
+  }, []);
+
+  useEffect(() => {
+    // Load available providers
+    getProviders().then(({ providers: provs, defaultProvider: defProv }) => {
+      setProviders(provs);
+      setDefaultProvider(defProv);
+      setSelectedProvider(defProv);
+    }).catch(() => {
+      setProviders([]);
+    });
   }, []);
 
   const isLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
@@ -133,10 +147,20 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
 
     try {
       if (isLoggedIn) {
-        const res = await chat([...messages, userMsg]);
-        setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
+        // Use streaming for logged-in users
+        let accumulated = "";
+        setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+        
+        for await (const chunk of streamChat([...messages, userMsg], selectedProvider)) {
+          accumulated += chunk;
+          setMessages((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = { role: "assistant", content: accumulated };
+            return updated;
+          });
+        }
       } else {
-        const res = await guestChat([...messages, userMsg]);
+        const res = await guestChat([...messages, userMsg], selectedProvider);
         setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
         if (typeof window !== "undefined") {
           const next = guestCount + 1;
@@ -167,6 +191,16 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   const visibleMessages = messages.filter((m) => m.role !== "system");
   const hasStarted = visibleMessages.length > 1;
 
+  const providerLabel = (name: string) => {
+    const labels: Record<string, string> = {
+      internal: "Internal",
+      gemini: "Gemini",
+      openrouter: "OpenRouter",
+      agnes: "Agnes",
+    };
+    return labels[name] || name;
+  };
+
   return (
     <div className="flex h-[calc(100vh-9rem)] flex-col rounded-2xl border border-border bg-card overflow-hidden">
       {/* Header */}
@@ -181,6 +215,46 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             Online · answers + points you to notes, labs &amp; PYQs
           </p>
         </div>
+        
+        {/* Provider selector */}
+        {providers.length > 0 && (
+          <div className="relative shrink-0">
+            <button
+              onClick={() => setShowProviderSelector(!showProviderSelector)}
+              className="flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-lg hover:bg-muted"
+            >
+              <Settings2 className="h-3.5 w-3.5" />
+              <span>{providerLabel(selectedProvider)}</span>
+            </button>
+            
+            {showProviderSelector && (
+              <>
+                <div 
+                  className="fixed inset-0 z-10" 
+                  onClick={() => setShowProviderSelector(false)}
+                />
+                <div className="absolute right-0 top-full mt-1 w-40 bg-popover border border-border rounded-lg shadow-lg z-20 py-1">
+                  {providers.map((p) => (
+                    <button
+                      key={p}
+                      onClick={() => {
+                        setSelectedProvider(p);
+                        setShowProviderSelector(false);
+                      }}
+                      className={`w-full text-left px-3 py-1.5 text-xs hover:bg-accent transition-colors ${
+                        p === selectedProvider ? "text-primary font-semibold" : ""
+                      }`}
+                    >
+                      {providerLabel(p)}
+                      {p === defaultProvider && <span className="ml-1 text-muted-foreground">(default)</span>}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+        
         {!isLoggedIn && (
           <div className="flex items-center gap-2 text-[11px] text-muted-foreground shrink-0">
             <div className="flex items-center gap-1 bg-muted rounded-lg px-2 py-1">
@@ -248,7 +322,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             <div className="flex justify-start">
               <div className="bg-muted rounded-2xl px-4 py-2.5 flex items-center gap-2 text-sm text-muted-foreground">
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Thinking…
+                {selectedProvider ? `Streaming via ${providerLabel(selectedProvider)}…` : "Thinking…"}
               </div>
             </div>
           )}

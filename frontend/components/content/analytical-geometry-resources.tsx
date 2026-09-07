@@ -17,6 +17,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { DistancePointToLineVisual } from "./distance-point-to-line";
+import { AngleBetweenLinesVisual } from "./angle-between-lines";
+import { ParallelLinesVisual } from "./parallel-lines";
 
 /* ---------- PDF resource data ---------- */
 const PDF_RESOURCES = [
@@ -81,6 +84,62 @@ const THEORY_SECTIONS = [
     ],
   },
 ];
+
+/* ---------- Theorem: Distance from Point to Line ---------- */
+const DISTANCE_THEOREM = `
+<strong>Theorem:</strong> The shortest distance from a point P(x₀, y₀) to the line Ax + By + C = 0 is:
+<br/><br/>
+<span class="text-orange-500 font-bold text-lg">d = |Ax₀ + By₀ + C| / √(A² + B²)</span>
+<br/><br/>
+<strong>Proof:</strong>
+<br/>1. Let L be the line Ax + By + C = 0
+<br/>2. The perpendicular from P to L has direction (A, B)
+<br/>3. Parametric form of perpendicular: (x, y) = (x₀ + At, y₀ + Bt)
+<br/>4. Substitute into line equation: A(x₀ + At) + B(y₀ + Bt) + C = 0
+<br/>5. Solve for t: t = −(Ax₀ + By₀ + C)/(A² + B²)
+<br/>6. Distance d = |t|√(A² + B²) = |Ax₀ + By₀ + C| / √(A² + B²) ∎
+`.trim();
+
+/* ---------- Theorem: Angle Between Two Lines ---------- */
+const ANGLE_THEOREM = `
+<strong>Theorem:</strong> The acute angle θ between two lines with slopes m₁ and m₂ is:
+<br/><br/>
+<span class="text-orange-500 font-bold text-lg">tan θ = |(m₂ − m₁) / (1 + m₁m₂)|</span>
+<br/><br/>
+<strong>Proof:</strong>
+<br/>1. Let α₁, α₂ be angles made by lines with positive x-axis
+<br/>2. Then m₁ = tan α₁, m₂ = tan α₂
+<br/>3. Angle between lines: θ = |α₂ − α₁|
+<br/>4. tan θ = tan|α₂ − α₁| = |tan(α₂ − α₁)|
+<br/>5. Using formula: tan(A−B) = (tanA − tanB)/(1 + tanA·tanB)
+<br/>6. Therefore: tan θ = |(m₂ − m₁)/(1 + m₁m₂)| ∎
+`.trim();
+
+/* ---------- Theorem: Distance Between Parallel Lines ---------- */
+const PARALLEL_THEOREM = `
+<strong>Theorem:</strong> Distance between parallel lines Ax + By + C₁ = 0 and Ax + By + C₂ = 0 is:
+<br/><br/>
+<span class="text-orange-500 font-bold text-lg">d = |C₁ − C₂| / √(A² + B²)</span>
+<br/><br/>
+<strong>Proof:</strong>
+<br/>1. Take any point on first line: Ax₀ + By₀ + C₁ = 0
+<br/>2. Distance to second line = |Ax₀ + By₀ + C₂| / √(A² + B²)
+<br/>3. Since Ax₀ + By₀ = −C₁, distance = |−C₁ + C₂| / √(A² + B²)
+<br/>4. Therefore: d = |C₁ − C₂| / √(A² + B²) ∎
+`.trim();
+
+/* ---------- Theorem: Condition for Concurrency ---------- */
+const CONCURRENT_THEOREM = `
+<strong>Theorem:</strong> Three lines a₁x + b₁y + c₁ = 0, a₂x + b₂y + c₂ = 0, a₃x + b₃y + c₃ = 0 are concurrent if:
+<br/><br/>
+<span class="text-orange-500 font-bold text-lg">a₁(b₂c₃ − b₃c₂) − b₁(a₂c₃ − a₃c2) + c₁(a₂b₃ − a₃b₂) = 0</span>
+<br/><br/>
+<strong>Proof:</strong>
+<br/>1. Solve first two lines to find their intersection point (x, y)
+<br/>2. Substitute into third line
+<br/>3. Using Cramer's rule or elimination, condition for all three to pass through same point:
+<br/>4. det [[a₁,b₁,c₁],[a₂,b₂,c₂],[a₃,b₃,c₃]] = 0 ∎
+`.trim();
 
 /* ---------- Inline 3D visual — Conic Section Interactive ---------- */
 function ConicVisual() {
@@ -211,85 +270,6 @@ function ConicVisual() {
   );
 }
 
-/* ---------- Straight Line Visual ---------- */
-function StraightLineVisual() {
-  const [a, setA] = useState(2);
-  const [b, setB] = useState(3);
-  const [c, setC] = useState(-6);
-
-  const w = 360;
-  const h = 300;
-  const ox = w / 2;
-  const oy = h / 2;
-  const scale = 25;
-
-  // Line: ax + by + c = 0  →  y = (-ax - c) / b
-  const linePoints: string[] = [];
-  for (let px = -w; px <= w * 2; px += 2) {
-    const x = (px - ox) / scale;
-    const y = b !== 0 ? (-a * x - c) / b : 0;
-    const sy = oy - y * scale;
-    if (sy >= -20 && sy <= h + 20) {
-      linePoints.push(`${px},${sy.toFixed(1)}`);
-    }
-  }
-
-  // Perpendicular from origin
-  const d = Math.abs(c) / Math.sqrt(a * a + b * b);
-  const footX = (-a * c) / (a * a + b * b);
-  const footY = (-b * c) / (a * a + b * b);
-  const footPx = ox + footX * scale;
-  const footPy = oy - footY * scale;
-
-  return (
-    <div className="space-y-3">
-      <div className="flex flex-wrap items-center gap-3 text-sm">
-        <label className="text-muted-foreground">
-          a = <input type="number" value={a} onChange={e => setA(+e.target.value)} className="w-12 bg-transparent border-b text-foreground ml-1" />
-        </label>
-        <label className="text-muted-foreground">
-          b = <input type="number" value={b} onChange={e => setB(+e.target.value)} className="w-12 bg-transparent border-b text-foreground ml-1" />
-        </label>
-        <label className="text-muted-foreground">
-          c = <input type="number" value={c} onChange={e => setC(+e.target.value)} className="w-12 bg-transparent border-b text-foreground ml-1" />
-        </label>
-        <span className="text-xs font-mono text-orange-500">
-          {a}x + {b}y + {c} = 0
-        </span>
-      </div>
-      <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-md border rounded-lg bg-slate-950">
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="0.5" />
-          <line x1={ox} y1={0} x2={ox} y2={h} stroke="#475569" strokeWidth="0.5" />
-          <text x={w - 15} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">y</text>
-          {/* Origin */}
-          <circle cx={ox} cy={oy} r="2" fill="#64748b" />
-          {/* The line */}
-          {linePoints.length > 1 && (
-            <polyline points={linePoints.join(" ")} fill="none" stroke="#f97316" strokeWidth="2.5" />
-          )}
-          {/* Perpendicular from origin */}
-          <line x1={ox} y1={oy} x2={footPx} y2={footPy} stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="4 3" />
-          <circle cx={footPx} cy={footPy} r="3" fill="#22d3ee" />
-          {/* Right angle marker */}
-          {b !== 0 && (
-            <text x={ox + (footPx - ox) / 2 - 5} y={oy + (footPy - oy) / 2 + 3} fill="#22d3ee" fontSize="10">∟</text>
-          )}
-          {/* Labels */}
-          <text x={5} y={h - 5} fill="#f97316" fontSize="10" fontWeight="600">
-            Line: {a}x + {b}y + {c} = 0
-          </text>
-          <text x={5} y={h - 18} fill="#22d3ee" fontSize="10">
-            ⊥ distance from origin = {d.toFixed(2)}
-          </text>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
 /* ---------- Main Panel ---------- */
 export function AnalyticalGeometryResources() {
   return (
@@ -378,12 +358,56 @@ export function AnalyticalGeometryResources() {
           </div>
         </CardHeader>
         <CardContent>
-          <Tabs defaultValue="conics" className="space-y-4">
-            <TabsList className="grid w-full grid-cols-3">
+          <Tabs defaultValue="theorems" className="space-y-4">
+            <TabsList className="grid w-full grid-cols-5">
+              <TabsTrigger value="theorems">Theorems</TabsTrigger>
               <TabsTrigger value="conics">Conic Sections</TabsTrigger>
-              <TabsTrigger value="line">Straight Line</TabsTrigger>
-              <TabsTrigger value="theory">Theory Summary</TabsTrigger>
+              <TabsTrigger value="point-line">Point to Line</TabsTrigger>
+              <TabsTrigger value="angle">Angle</TabsTrigger>
+              <TabsTrigger value="parallel">Parallel</TabsTrigger>
             </TabsList>
+
+            <TabsContent value="theorems" className="space-y-4">
+              <div className="grid gap-4">
+                <div className="p-4 rounded-lg border bg-muted/30">
+                  <h4 className="font-semibold text-orange-500 mb-2">Theorem 1: Distance from Point to Line</h4>
+                  <div className="text-sm prose prose-sm" dangerouslySetInnerHTML={{ __html: DISTANCE_THEOREM }} />
+                </div>
+                <div className="p-4 rounded-lg border bg-muted/30">
+                  <h4 className="font-semibold text-orange-500 mb-2">Theorem 2: Angle Between Two Lines</h4>
+                  <div className="text-sm prose prose-sm" dangerouslySetInnerHTML={{ __html: ANGLE_THEOREM }} />
+                </div>
+                <div className="p-4 rounded-lg border bg-muted/30">
+                  <h4 className="font-semibold text-orange-500 mb-2">Theorem 3: Distance Between Parallel Lines</h4>
+                  <div className="text-sm prose prose-sm" dangerouslySetInnerHTML={{ __html: PARALLEL_THEOREM }} />
+                </div>
+                <div className="p-4 rounded-lg border bg-muted/30">
+                  <h4 className="font-semibold text-orange-500 mb-2">Theorem 4: Condition for Concurrency</h4>
+                  <div className="text-sm prose prose-sm" dangerouslySetInnerHTML={{ __html: CONCURRENT_THEOREM }} />
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="point-line" className="space-y-4">
+              <DistancePointToLineVisual />
+              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
+                <strong className="text-foreground">Simulation:</strong> Drag the sliders to adjust the line parameters (a, b, c) and point coordinates (x₀, y₀). The cyan dashed line shows the perpendicular from the point to the line.
+              </div>
+            </TabsContent>
+
+            <TabsContent value="angle" className="space-y-4">
+              <AngleBetweenLinesVisual />
+              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
+                <strong className="text-foreground">Simulation:</strong> Adjust slopes m₁, m₂ and y-intercepts c₁, c₂ to see how the angle between two lines changes. The intersection point is marked in yellow.
+              </div>
+            </TabsContent>
+
+            <TabsContent value="parallel" className="space-y-4">
+              <ParallelLinesVisual />
+              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
+                <strong className="text-foreground">Simulation:</strong> Adjust A, B to change the slope, and C₁, C₂ to shift the parallel lines. The distance between them is shown as a dashed line.
+              </div>
+            </TabsContent>
 
             <TabsContent value="conics" className="space-y-4">
               <ConicVisual />
@@ -399,39 +423,6 @@ export function AnalyticalGeometryResources() {
                   Open Full 3D Lab
                 </a>
               </Button>
-            </TabsContent>
-
-            <TabsContent value="line" className="space-y-4">
-              <StraightLineVisual />
-              <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
-                <strong className="text-foreground">Straight Lines:</strong> Adjust
-                a, b, c to see how the line Ax + By + C = 0 moves. The cyan dashed
-                line shows the perpendicular distance from the origin to the line.
-              </div>
-            </TabsContent>
-
-            <TabsContent value="theory" className="space-y-4">
-              <div className="grid gap-3 md:grid-cols-2">
-                {THEORY_SECTIONS.map((sec) => (
-                  <div
-                    key={sec.title}
-                    className="p-3 rounded-lg border bg-background/60"
-                  >
-                    <h4 className="text-sm font-semibold mb-2">{sec.title}</h4>
-                    <ul className="space-y-1">
-                      {sec.points.map((p, i) => (
-                        <li
-                          key={i}
-                          className="text-xs text-muted-foreground flex items-start gap-1.5"
-                        >
-                          <span className="text-purple-500 mt-0.5">•</span>
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
             </TabsContent>
           </Tabs>
         </CardContent>

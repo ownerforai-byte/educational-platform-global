@@ -310,6 +310,7 @@ export interface AIChatMessage {
 export interface AIChatRequest {
   messages: AIChatMessage[];
   provider?: string;
+  stream?: boolean;
 }
 
 export interface AIChatResponse {

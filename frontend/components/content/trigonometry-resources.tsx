@@ -12,10 +12,45 @@ import {
   FileText,
   Calculator,
   TrendingUp,
+  Sigma,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+/* ---------- Theorem Constants ---------- */
+export const PROJECTION_THEOREM = `
+  <h4 class="font-semibold mb-2">Projection Theorem</h4>
+  <p class="text-sm mb-2">In any triangle ABC with sides a, b, c and angles A, B, C:</p>
+  <ul class="list-disc pl-5 text-sm space-y-1">
+    <li>a = b cos C + c cos B</li>
+    <li>b = c cos A + a cos C</li>
+    <li>c = a cos B + b cos A</li>
+  </ul>
+`;
+
+export const SINE_RULE = `
+  <h4 class="font-semibold mb-2">Sine Rule</h4>
+  <p class="text-sm mb-2">In any triangle ABC:</p>
+  <p class="text-sm font-mono text-center my-2">a/sin A = b/sin B = c/sin C = 2R</p>
+  <p class="text-sm">where R is the circumradius.</p>
+`;
+
+export const COSINE_RULE = `
+  <h4 class="font-semibold mb-2">Cosine Rule</h4>
+  <p class="text-sm mb-2">In any triangle ABC:</p>
+  <ul class="list-disc pl-5 text-sm space-y-1">
+    <li>a² = b² + c² - 2bc cos A</li>
+    <li>b² = a² + c² - 2ac cos B</li>
+    <li>c² = a² + b² - 2ab cos C</li>
+  </ul>
+`;
+
+export const TANGENT_RULE = `
+  <h4 class="font-semibold mb-2">Tangent Rule</h4>
+  <p class="text-sm mb-2">In any triangle ABC:</p>
+  <p class="text-sm font-mono text-center my-2">(a - b)/(a + b) = tan((A-B)/2) / tan((A+B)/2)</p>
+`;
 
 /* ---------- Unit Circle Visual ---------- */
 function UnitCircleVisual() {
@@ -704,10 +739,11 @@ export function TrigonometryResources() {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="unit-circle" className="space-y-4">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="unit-circle">Unit Circle</TabsTrigger>
               <TabsTrigger value="inverse-trig">Inverse Trig</TabsTrigger>
               <TabsTrigger value="trig-eq">Trig Equations</TabsTrigger>
+              <TabsTrigger value="theorems">Theorems</TabsTrigger>
             </TabsList>
 
             <TabsContent value="unit-circle" className="space-y-4">
@@ -732,6 +768,24 @@ export function TrigonometryResources() {
               <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
                 <strong className="text-foreground">General Solutions:</strong> Adjust k to see how the solutions change on the unit circle.
                 The general solution accounts for all angles that satisfy the equation, using integer n.
+              </div>
+            </TabsContent>
+
+            <TabsContent value="theorems" className="space-y-4">
+              <div className="grid gap-3 md:grid-cols-2">
+                {[
+                  { title: "Projection Theorem", content: PROJECTION_THEOREM },
+                  { title: "Sine Rule", content: SINE_RULE },
+                  { title: "Cosine Rule", content: COSINE_RULE },
+                  { title: "Tangent Rule", content: TANGENT_RULE },
+                ].map((theorem) => (
+                  <div
+                    key={theorem.title}
+                    className="p-4 rounded-lg border bg-background/60"
+                  >
+                    <div dangerouslySetInnerHTML={{ __html: theorem.content }} />
+                  </div>
+                ))}
               </div>
             </TabsContent>
 
