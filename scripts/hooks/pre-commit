@@ -1,0 +1,20 @@
+#!/bin/sh
+# Blueprint auto-update: regenerates docs/ARCHITECTURE_BLUEPRINT.md on every commit.
+# If the tree changed, the fresh blueprint is staged so it ships with the change.
+# Install once with:  node scripts/install-hooks.mjs   (or manually copy to .git/hooks/pre-commit)
+set -e
+
+ROOT=$(git rev-parse --show-toplevel)
+BLUEPRINT="$ROOT/docs/ARCHITECTURE_BLUEPRINT.md"
+
+echo "🔁 Updating architecture blueprint..."
+node "$ROOT/scripts/generate-blueprint.mjs" || {
+  echo "⚠️  Blueprint generation failed — commit proceeds without refreshing it."
+}
+
+# Stage the regenerated blueprint so it is included in this commit.
+if [ -f "$BLUEPRINT" ]; then
+  git add "$BLUEPRINT"
+fi
+
+exit 0
