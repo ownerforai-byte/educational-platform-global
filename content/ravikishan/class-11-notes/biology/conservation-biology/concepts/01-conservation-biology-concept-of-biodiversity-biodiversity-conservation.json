@@ -5,7 +5,11 @@
   "topicTitle": "Conservation biology: concept of biodiversity, biodiversity conservation",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 conservation biology concept of biodiversity biodiversity conservation within the conservation biology unit."
+    "Biodiversity: genetic, species, ecosystem levels.",
+    "Nepal national parks: Chitwan (1973), Sagarmatha (1976), etc. (10 total).",
+    "IUCN Red List: CR, EN, VU, NT, LC.",
+    "In-situ: protected areas, community forests.",
+    "Ex-situ: zoos, seed banks, botanical gardens."
   ],
   "confusion": [
     "❌ Misconception about 01 conservation biology concept of biodiversity biodiversity conservation. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 conservation biology concept of biodiversity biodiversity conservation."
+    "Chitwan: Bengal tiger, one-horned rhino",
+    "Community forestry: 22,000+ groups manage 36% of forests"
   ],
   "practiceQuestions": [
     "Practice question for 01 conservation biology concept of biodiversity biodiversity conservation."
@@ -79,5 +84,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "map",
+    "component": "NepalConservationMap",
+    "desc": "Interactive map of Nepal's protected areas and biodiversity hotspots"
+  }
 }

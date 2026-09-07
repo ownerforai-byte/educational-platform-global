@@ -5,7 +5,10 @@
   "topicTitle": "Molecular formula and uses of quick lime, bleaching powder, magnesia, plaster of Paris and Epsom salt; solubility of hydroxides, carbonates and sulphates of alkaline earth metals; stability of carbonate and nitrate of alkaline earth metals",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 08 molecular formula and uses of quick lime bleaching powder magnesia plaster of paris and epsom salt solubility of hydroxides carbonates and sulphates of alkaline earth metals stability of carbonate and nitrate of alkaline earth metals within the chemistry of metals unit."
+    "Metals: electropositive, form cations.",
+    "Activity series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au.",
+    "Extraction: smelting, electrolysis.",
+    "Alloys: mixtures of metals."
   ],
   "confusion": [
     "❌ Misconception about 08 molecular formula and uses of quick lime bleaching powder magnesia plaster of paris and epsom salt solubility of hydroxides carbonates and sulphates of alkaline earth metals stability of carbonate and nitrate of alkaline earth metals. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 08 molecular formula and uses of quick lime bleaching powder magnesia plaster of paris and epsom salt solubility of hydroxides carbonates and sulphates of alkaline earth metals stability of carbonate and nitrate of alkaline earth metals."
+    "Iron from hematite: Fe₂O₃ + 3CO → 2Fe + 3CO₂",
+    "Aluminum by Hall-Héroult process"
   ],
   "practiceQuestions": [
     "Practice question for 08 molecular formula and uses of quick lime bleaching powder magnesia plaster of paris and epsom salt solubility of hydroxides carbonates and sulphates of alkaline earth metals stability of carbonate and nitrate of alkaline earth metals."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MetalExtractionSim",
+    "desc": "Metal extraction process visualizer"
+  }
 }

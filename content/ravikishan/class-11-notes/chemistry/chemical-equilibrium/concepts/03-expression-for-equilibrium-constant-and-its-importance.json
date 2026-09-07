@@ -5,7 +5,10 @@
   "topicTitle": "Expression for equilibrium constant and its importance",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 expression for equilibrium constant and its importance within the chemical equilibrium unit."
+    "Dynamic equilibrium: forward rate = backward rate.",
+    "Kc = [products]/[reactants].",
+    "Le Chatelier's principle.",
+    "pH = -log[H⁺]."
   ],
   "confusion": [
     "❌ Misconception about 03 expression for equilibrium constant and its importance. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 03 expression for equilibrium constant and its importance."
+    "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
   ],
   "practiceQuestions": [
     "Practice question for 03 expression for equilibrium constant and its importance."
@@ -90,5 +93,22 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Calculate pH of 0.01M HCl",
+      "steps": [
+        "HCl→H⁺+Cl⁻",
+        "[H⁺]=0.01",
+        "pH=-log(0.01)=2"
+      ],
+      "answer": "pH = 2"
+    }
+  ],
+  "visualization": {
+    "type": "simulation",
+    "component": "EquilibriumShiftSim",
+    "desc": "Le Chatelier principle interactive simulation"
+  }
 }

@@ -5,7 +5,11 @@
   "topicTitle": "Ecological imbalances: greenhouse effects and climate change, depletion of ozone layer, acid rain and biological invasion",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion within the ecology unit."
+    "Ecosystem: biotic + abiotic components.",
+    "Food chain: linear energy transfer (grass→rabbit→fox).",
+    "Food web: interconnected chains.",
+    "10% energy transfer rule.",
+    "Biogeochemical cycles: carbon, nitrogen."
   ],
   "confusion": [
     "❌ Misconception about 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion. ✅ Scientific explanation."
@@ -19,12 +23,15 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+    "Pond: phytoplankton→zooplankton→fish→birds",
+    "Nepal: terai→hills→mountains ecosystems"
   ],
   "practiceQuestions": [
     "Practice question for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
   ],
-  "formulas": [],
+  "formulas": [
+    "dN/dt=rN((K-N)/K) (logistic growth)"
+  ],
   "keyPoints": [
     "Core point for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
   ],
@@ -87,5 +94,11 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "EcosystemSim",
+    "desc": "Interactive ecosystem energy flow simulation"
+  }
 }

@@ -5,7 +5,11 @@
   "topicTitle": "Environmental Pollution",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 environmental pollution within the biota and environment unit."
+    "Aquatic adaptations: streamlined body, gills, lateral line.",
+    "Terrestrial adaptations: waterproof skin, lungs, internal fertilization.",
+    "Volant adaptations: wings, hollow bones, air sacs.",
+    "Reflex action: automatic response via spinal cord.",
+    "Pollution: air (SO₂, NOx, PM2.5), water, soil."
   ],
   "confusion": [
     "❌ Misconception about 03 environmental pollution. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 03 environmental pollution."
+    "Fish gills: countercurrent exchange",
+    "Kathmandu Valley: PM2.5 exceeds WHO 10× in winter"
   ],
   "practiceQuestions": [
     "Practice question for 03 environmental pollution."
@@ -79,5 +84,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "PollutionSim",
+    "desc": "Air quality monitor and pollution impact visualizer"
+  }
 }

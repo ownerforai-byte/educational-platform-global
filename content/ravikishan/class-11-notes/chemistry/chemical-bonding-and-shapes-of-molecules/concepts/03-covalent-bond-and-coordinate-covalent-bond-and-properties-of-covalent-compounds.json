@@ -5,7 +5,11 @@
   "topicTitle": "Covalent bond and coordinate covalent bond; properties of covalent compounds",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 covalent bond and coordinate covalent bond and properties of covalent compounds within the chemical bonding and shapes of molecules unit."
+    "VSEPR theory predicts molecular geometry from electron pairs.",
+    "sp³: 4 pairs → tetrahedral (109.5°).",
+    "sp²: 3 pairs → trigonal planar (120°).",
+    "sp: 2 pairs → linear (180°).",
+    "Lone pairs compress bond angles."
   ],
   "confusion": [
     "❌ Misconception about 03 covalent bond and coordinate covalent bond and properties of covalent compounds. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 03 covalent bond and coordinate covalent bond and properties of covalent compounds."
+    "H₂O: sp³, 2BP+2LP → bent",
+    "CO₂: sp, 2BP+0LP → linear"
   ],
   "practiceQuestions": [
     "Practice question for 03 covalent bond and coordinate covalent bond and properties of covalent compounds."
@@ -77,5 +82,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "VSEPRModeler",
+    "desc": "3D molecular geometry predictor"
+  }
 }

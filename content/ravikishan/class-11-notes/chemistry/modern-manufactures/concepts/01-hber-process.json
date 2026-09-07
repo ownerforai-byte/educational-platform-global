@@ -4,13 +4,17 @@
   "topicSlug": "01-hber-process",
   "topicTitle": "01 hber process",
   "notes": [
-    "Detailed notes on 01 hber process within the modern manufactures unit."
+    "Cement: limestone + clay, kiln process.",
+    "Glass: sand + soda ash + limestone.",
+    "Paper: cellulose from wood pulp.",
+    "Steel: iron + carbon + alloying elements."
   ],
   "confusion": [
     "❌ Misconception about 01 hber process. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 01 hber process."
+    "Portland cement: Ca₃SiO₅, Ca₂SiO₄",
+    "Soda-lime glass: SiO₂, Na₂O, CaO"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 01 hber process)"
@@ -76,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ManufacturingProcSim",
+    "desc": "Manufacturing process flow"
+  }
 }

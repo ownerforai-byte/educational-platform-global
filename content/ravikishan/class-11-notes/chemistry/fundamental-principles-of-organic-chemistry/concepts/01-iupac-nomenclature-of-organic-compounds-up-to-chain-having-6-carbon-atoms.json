@@ -5,7 +5,10 @@
   "topicTitle": "IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms within the fundamental principles of organic chemistry unit."
+    "Electronic effects: inductive, resonance, electromeric.",
+    "Bond fission: homolytic (radicals), heterolytic (ions).",
+    "Reaction mechanisms: step-by-step electron movement.",
+    "Intermediates: carbocations, carbanions, free radicals."
   ],
   "confusion": [
     "❌ Misconception about 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms. ✅ Scientific explanation."
@@ -26,7 +29,7 @@
   ],
   "summary": "Summary of 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms.",
   "examples": [
-    "Real-world example of 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
+    "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
   ],
   "importantConcepts": [
     "Key concept 1 for 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MechanismAnimator",
+    "desc": "Reaction mechanism animation"
+  }
 }

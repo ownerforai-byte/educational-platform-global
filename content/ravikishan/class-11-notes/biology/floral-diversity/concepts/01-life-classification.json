@@ -5,7 +5,10 @@
   "topicTitle": "Three Domains and Classification",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 life classification within the floral diversity unit."
+    "Five kingdom classification (Whittaker, 1969).",
+    "Binomial nomenclature: Genus species.",
+    "Plant evolution: algae→bryophytes→pteridophytes→gymnosperms→angiosperms.",
+    "Double fertilization: zygote + endosperm."
   ],
   "confusion": [
     "❌ Misconception about 01 life classification. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 life classification."
+    "Rhododendron arboreum: Nepal national flower",
+    "Pinus: gymnosperm, timber industry"
   ],
   "practiceQuestions": [
     "Practice question for 01 life classification."
@@ -79,5 +83,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "PlantKingdomViewer",
+    "desc": "Interactive plant classification explorer"
+  }
 }

@@ -4,13 +4,17 @@
   "topicSlug": "02-periodic-trends",
   "topicTitle": "02 periodic trends",
   "notes": [
-    "Detailed notes on 02 periodic trends within the classification of elements unit."
+    "Periodic table: 7 periods, 18 groups.",
+    "Groups: similar valence electron configuration.",
+    "Periods: increasing atomic number.",
+    "Metals left, non-metals right, metalloids diagonal."
   ],
   "confusion": [
     "❌ Misconception about 02 periodic trends. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 02 periodic trends."
+    "Group 1: alkali metals (Li, Na, K)",
+    "Group 17: halogens (F, Cl, Br)"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 02 periodic trends)"
@@ -76,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "map",
+    "component": "PeriodicTableView",
+    "desc": "Interactive periodic table"
+  }
 }

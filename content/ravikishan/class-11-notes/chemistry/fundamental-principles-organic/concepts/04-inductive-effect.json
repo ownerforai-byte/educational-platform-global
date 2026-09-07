@@ -4,13 +4,17 @@
   "topicSlug": "04-inductive-effect",
   "topicTitle": "04 inductive effect",
   "notes": [
-    "Detailed notes on 04 inductive effect within the fundamental principles organic unit."
+    "Resonance: delocalization of π electrons.",
+    "Inductive effect: electron withdrawal/donation through σ bonds.",
+    "Electrophiles: electron-seeking (e.g., NO₂⁺).",
+    "Nucleophiles: nucleus-seeking (e.g., OH⁻)."
   ],
   "confusion": [
     "❌ Misconception about 04 inductive effect. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 04 inductive effect."
+    "Benzene: resonance stabilization",
+    "SN2 reaction: nucleophilic substitution"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 04 inductive effect)"
@@ -76,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ElectronFlowSim",
+    "desc": "Electron flow visualization"
+  }
 }

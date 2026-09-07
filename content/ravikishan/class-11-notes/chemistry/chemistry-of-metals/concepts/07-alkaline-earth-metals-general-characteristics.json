@@ -5,7 +5,10 @@
   "topicTitle": "Alkaline earth metals: general characteristics",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 07 alkaline earth metals general characteristics within the chemistry of metals unit."
+    "Metals: electropositive, form cations.",
+    "Activity series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au.",
+    "Extraction: smelting, electrolysis.",
+    "Alloys: mixtures of metals."
   ],
   "confusion": [
     "❌ Misconception about 07 alkaline earth metals general characteristics. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 07 alkaline earth metals general characteristics."
+    "Iron from hematite: Fe₂O₃ + 3CO → 2Fe + 3CO₂",
+    "Aluminum by Hall-Héroult process"
   ],
   "practiceQuestions": [
     "Practice question for 07 alkaline earth metals general characteristics."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MetalExtractionSim",
+    "desc": "Metal extraction process visualizer"
+  }
 }

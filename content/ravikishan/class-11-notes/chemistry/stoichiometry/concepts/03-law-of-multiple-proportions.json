@@ -5,7 +5,10 @@
   "topicTitle": "Laws of stoichiometry",
   "relevance": 80,
   "notes": [
-    "Detailed notes on 03 law of multiple proportions within the stoichiometry unit."
+    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
+    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
+    "Limiting reagent determines max product.",
+    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
   ],
   "confusion": [
     "❌ Misconception about 03 law of multiple proportions. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 03 law of multiple proportions."
+    "23g Na + excess Cl₂ → 58.5g NaCl"
   ],
   "practiceQuestions": [
     "Practice question for 03 law of multiple proportions."
@@ -90,5 +93,32 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Mass of NaCl from 23g Na",
+      "steps": [
+        "n(Na)=23/23=1 mol",
+        "Na+Cl₂→NaCl",
+        "m(NaCl)=1×58.5"
+      ],
+      "answer": "58.5 g"
+    },
+    {
+      "id": "2",
+      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
+      "steps": [
+        "n=50/100=0.5 mol",
+        "CaCO₃→CaO+CO₂",
+        "V=0.5×22.4"
+      ],
+      "answer": "11.2 L"
+    }
+  ],
+  "visualization": {
+    "type": "simulation",
+    "component": "MoleCalculator",
+    "desc": "Interactive mole-mass-volume calculator"
+  }
 }

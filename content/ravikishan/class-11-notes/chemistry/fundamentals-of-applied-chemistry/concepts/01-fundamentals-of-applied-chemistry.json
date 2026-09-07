@@ -5,7 +5,10 @@
   "topicTitle": "Fundamentals of Applied Chemistry: chemical industry and its importance",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 fundamentals of applied chemistry within the fundamentals of applied chemistry unit."
+    "Chemical industry: fertilizers, pharmaceuticals, dyes.",
+    "Fuel chemistry: combustion, engines.",
+    "Water treatment: purification, desalination.",
+    "Materials science: ceramics, composites."
   ],
   "confusion": [
     "❌ Misconception about 01 fundamentals of applied chemistry. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 fundamentals of applied chemistry."
+    "Urea: NH₂CONH₂ (fertilizer)",
+    "Aspirin: C₉H₈O₄ (pharmaceutical)"
   ],
   "practiceQuestions": [
     "Practice question for 01 fundamentals of applied chemistry."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "IndustrySim",
+    "desc": "Industrial chemistry processes"
+  }
 }

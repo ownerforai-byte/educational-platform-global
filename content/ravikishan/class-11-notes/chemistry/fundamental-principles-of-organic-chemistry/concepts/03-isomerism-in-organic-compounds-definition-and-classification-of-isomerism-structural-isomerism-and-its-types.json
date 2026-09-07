@@ -5,7 +5,10 @@
   "topicTitle": "Isomerism in organic compounds: definition and classification of isomerism; structural isomerism and its types",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types within the fundamental principles of organic chemistry unit."
+    "Electronic effects: inductive, resonance, electromeric.",
+    "Bond fission: homolytic (radicals), heterolytic (ions).",
+    "Reaction mechanisms: step-by-step electron movement.",
+    "Intermediates: carbocations, carbanions, free radicals."
   ],
   "confusion": [
     "❌ Misconception about 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types. ✅ Scientific explanation."
@@ -28,7 +31,7 @@
   ],
   "summary": "Summary of 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types.",
   "examples": [
-    "Real-world example of 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
+    "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
   ],
   "importantConcepts": [
     "Key concept 1 for 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MechanismAnimator",
+    "desc": "Reaction mechanism animation"
+  }
 }

@@ -5,7 +5,10 @@
   "topicTitle": "Introduction to Biology: scope and fields of biology",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 introduction to biology scope and fields of biology within the introduction to biology unit."
+    "Biology: study of life (Greek: bios + logos).",
+    "Branches: botany, zoology, microbiology, genetics, ecology.",
+    "Characteristics of life: organization, metabolism, homeostasis, growth, reproduction, response, evolution.",
+    "Scientific method: observation → hypothesis → experiment → conclusion."
   ],
   "confusion": [
     "❌ Misconception about 01 introduction to biology scope and fields of biology. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 introduction to biology scope and fields of biology."
+    "Nepal: 10% world plants, 1% mammals in 0.1% Earth land"
   ],
   "practiceQuestions": [
     "Practice question for 01 introduction to biology scope and fields of biology."
@@ -79,5 +82,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "interactive",
+    "component": "BiologyIntro",
+    "desc": "Biology branches explorer and scientific method simulator"
+  }
 }

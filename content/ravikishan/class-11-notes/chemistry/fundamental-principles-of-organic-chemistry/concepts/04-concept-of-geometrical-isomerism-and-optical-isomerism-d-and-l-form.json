@@ -5,7 +5,10 @@
   "topicTitle": "Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 04 concept of geometrical isomerism and optical isomerism d and l form within the fundamental principles of organic chemistry unit."
+    "Electronic effects: inductive, resonance, electromeric.",
+    "Bond fission: homolytic (radicals), heterolytic (ions).",
+    "Reaction mechanisms: step-by-step electron movement.",
+    "Intermediates: carbocations, carbanions, free radicals."
   ],
   "confusion": [
     "❌ Misconception about 04 concept of geometrical isomerism and optical isomerism d and l form. ✅ Scientific explanation."
@@ -28,7 +31,7 @@
   ],
   "summary": "Summary of 04 concept of geometrical isomerism and optical isomerism d and l form.",
   "examples": [
-    "Real-world example of 04 concept of geometrical isomerism and optical isomerism d and l form."
+    "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
   ],
   "importantConcepts": [
     "Key concept 1 for 04 concept of geometrical isomerism and optical isomerism d and l form."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MechanismAnimator",
+    "desc": "Reaction mechanism animation"
+  }
 }

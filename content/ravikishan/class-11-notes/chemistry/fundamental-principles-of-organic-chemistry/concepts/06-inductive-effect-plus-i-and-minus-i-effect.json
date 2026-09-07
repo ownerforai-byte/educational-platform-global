@@ -5,7 +5,10 @@
   "topicTitle": "Inductive effect: +I and -I effect",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 06 inductive effect plus i and minus i effect within the fundamental principles of organic chemistry unit."
+    "Electronic effects: inductive, resonance, electromeric.",
+    "Bond fission: homolytic (radicals), heterolytic (ions).",
+    "Reaction mechanisms: step-by-step electron movement.",
+    "Intermediates: carbocations, carbanions, free radicals."
   ],
   "confusion": [
     "❌ Misconception about 06 inductive effect plus i and minus i effect. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 06 inductive effect plus i and minus i effect."
+    "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
   ],
   "practiceQuestions": [
     "Practice question for 06 inductive effect plus i and minus i effect."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MechanismAnimator",
+    "desc": "Reaction mechanism animation"
+  }
 }

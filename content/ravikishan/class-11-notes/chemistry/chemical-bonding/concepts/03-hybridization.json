@@ -4,13 +4,18 @@
   "topicSlug": "03-hybridization",
   "topicTitle": "03 hybridization",
   "notes": [
-    "Detailed notes on 03 hybridization within the chemical bonding unit."
+    "Ionic bond: electron transfer (metal+nonmetal).",
+    "Covalent bond: electron sharing.",
+    "VSEPR theory: molecular geometry.",
+    "Hybridization: sp, sp², sp³."
   ],
   "confusion": [
     "❌ Misconception about 03 hybridization. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 03 hybridization."
+    "H₂O: bent, 104.5°",
+    "CH₄: tetrahedral, 109.5°",
+    "NH₃: pyramidal, 107°"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 03 hybridization)"
@@ -76,5 +81,23 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Predict shape of NH₃",
+      "steps": [
+        "3 bonding pairs + 1 lone pair",
+        "sp³ hybridization",
+        "Pyramidal geometry",
+        "Bond angle ≈107°"
+      ],
+      "answer": "Pyramidal"
+    }
+  ],
+  "visualization": {
+    "type": "3d-model",
+    "component": "MoleculeViewer",
+    "desc": "3D molecular structure viewer with VSEPR prediction"
+  }
 }

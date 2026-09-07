@@ -5,7 +5,10 @@
   "topicTitle": "Alkynes: preparation from carbon and hydrogen, 1,2-dibromoethane, chloroform/iodoform only; chemical properties: addition reaction with H2, HX, H2O; acidic nature",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 alkynes preparation and chemical properties within the hydrocarbons unit."
+    "Alkanes: CnH2n+2, single bonds (saturated).",
+    "Alkenes: CnH2n, double bonds (unsaturated).",
+    "Alkynes: CnH2n-2, triple bonds.",
+    "Aromatic: benzene ring, delocalized π electrons."
   ],
   "confusion": [
     "❌ Misconception about 03 alkynes preparation and chemical properties. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 03 alkynes preparation and chemical properties."
+    "Methane CH₄, Ethene C₂H₄, Ethyne C₂H₂"
   ],
   "practiceQuestions": [
     "Practice question for 03 alkynes preparation and chemical properties."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "HydrocarbonViewer",
+    "desc": "3D hydrocarbon structure viewer"
+  }
 }

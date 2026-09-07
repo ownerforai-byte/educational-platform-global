@@ -5,7 +5,11 @@
   "topicTitle": "Resonance",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 05 resonance within the chemical bonding and shapes of molecules unit."
+    "VSEPR theory predicts molecular geometry from electron pairs.",
+    "sp³: 4 pairs → tetrahedral (109.5°).",
+    "sp²: 3 pairs → trigonal planar (120°).",
+    "sp: 2 pairs → linear (180°).",
+    "Lone pairs compress bond angles."
   ],
   "confusion": [
     "❌ Misconception about 05 resonance. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 05 resonance."
+    "H₂O: sp³, 2BP+2LP → bent",
+    "CO₂: sp, 2BP+0LP → linear"
   ],
   "practiceQuestions": [
     "Practice question for 05 resonance."
@@ -77,5 +82,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "VSEPRModeler",
+    "desc": "3D molecular geometry predictor"
+  }
 }

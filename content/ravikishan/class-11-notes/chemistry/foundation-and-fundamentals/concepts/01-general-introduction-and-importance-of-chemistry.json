@@ -5,7 +5,11 @@
   "topicTitle": "General introduction of chemistry; importance and scope of chemistry",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 general introduction and importance of chemistry within the foundation and fundamentals unit."
+    "Matter: anything with mass and volume.",
+    "Atoms: basic unit of elements.",
+    "Molecules: combinations of atoms.",
+    "Mixtures: physical combinations, separable.",
+    "Pure substances: elements and compounds."
   ],
   "confusion": [
     "❌ Misconception about 01 general introduction and importance of chemistry. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 general introduction and importance of chemistry."
+    "Water: H₂O (compound)",
+    "Air: mixture of N₂, O₂, etc."
   ],
   "practiceQuestions": [
     "Practice question for 01 general introduction and importance of chemistry."
@@ -77,5 +82,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "interactive",
+    "component": "MatterClassifier",
+    "desc": "Interactive matter classification tool"
+  }
 }

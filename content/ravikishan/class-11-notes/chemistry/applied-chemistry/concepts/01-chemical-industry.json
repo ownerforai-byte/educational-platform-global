@@ -4,13 +4,17 @@
   "topicSlug": "01-chemical-industry",
   "topicTitle": "01 chemical industry",
   "notes": [
-    "Detailed notes on 01 chemical industry within the applied chemistry unit."
+    "Industrial chemistry: chemicals for production.",
+    "Polymer chemistry: plastics, fibers, rubber.",
+    "Pesticides: herbicides, insecticides, fungicides.",
+    "Environmental chemistry: pollution control."
   ],
   "confusion": [
     "❌ Misconception about 01 chemical industry. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 01 chemical industry."
+    "Polyethylene: [-CH₂-CH₂-]n",
+    "DDT: Dichlorodiphenyltrichloroethane"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 01 chemical industry)"
@@ -76,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "PolymerBuilder",
+    "desc": "Polymer structure builder"
+  }
 }

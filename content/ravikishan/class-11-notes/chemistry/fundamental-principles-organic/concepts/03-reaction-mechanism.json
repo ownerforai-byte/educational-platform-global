@@ -4,13 +4,17 @@
   "topicSlug": "03-reaction-mechanism",
   "topicTitle": "03 reaction mechanism",
   "notes": [
-    "Detailed notes on 03 reaction mechanism within the fundamental principles organic unit."
+    "Resonance: delocalization of π electrons.",
+    "Inductive effect: electron withdrawal/donation through σ bonds.",
+    "Electrophiles: electron-seeking (e.g., NO₂⁺).",
+    "Nucleophiles: nucleus-seeking (e.g., OH⁻)."
   ],
   "confusion": [
     "❌ Misconception about 03 reaction mechanism. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 03 reaction mechanism."
+    "Benzene: resonance stabilization",
+    "SN2 reaction: nucleophilic substitution"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 03 reaction mechanism)"
@@ -76,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ElectronFlowSim",
+    "desc": "Electron flow visualization"
+  }
 }

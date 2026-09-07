@@ -5,7 +5,10 @@
   "topicTitle": "Tetra-covalency and catenation properties of carbon; classification of organic compounds",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 tetra covalency and catenation properties of carbon classification of organic compounds within the basic concept of organic chemistry unit."
+    "Organic chemistry: study of carbon compounds.",
+    "Carbon: tetravalent, forms 4 bonds.",
+    "Functional groups: -OH (alcohol), -COOH (carboxylic acid), etc.",
+    "Homologous series: same functional group, differ by CH₂."
   ],
   "confusion": [
     "❌ Misconception about 03 tetra covalency and catenation properties of carbon classification of organic compounds. ✅ Scientific explanation."
@@ -26,7 +29,7 @@
   ],
   "summary": "Summary of 03 tetra covalency and catenation properties of carbon classification of organic compounds.",
   "examples": [
-    "Real-world example of 03 tetra covalency and catenation properties of carbon classification of organic compounds."
+    "Methane CH₄, Ethane C₂H₆, Ethene C₂H₄"
   ],
   "importantConcepts": [
     "Key concept 1 for 03 tetra covalency and catenation properties of carbon classification of organic compounds."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "OrganicMoleculeViewer",
+    "desc": "3D organic molecule explorer"
+  }
 }

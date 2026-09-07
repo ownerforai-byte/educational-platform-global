@@ -5,7 +5,10 @@
   "topicTitle": "Nitrogen: reason for inertness of nitrogen and active nitrogen; chemical properties of ammonia and applications and harmful effects of ammonia",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 05 nitrogen reason for inertness of nitrogen and active nitrogen chemical properties of ammonia and its applications within the chemistry of non metals unit."
+    "Non-metals: electronegative, form anions.",
+    "Halogen reactivity decreases down group.",
+    "Nitrogen: N₂ triple bond, very stable.",
+    "Oxygen: O₂ paramagnetic, supports combustion."
   ],
   "confusion": [
     "❌ Misconception about 05 nitrogen reason for inertness of nitrogen and active nitrogen chemical properties of ammonia and its applications. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 05 nitrogen reason for inertness of nitrogen and active nitrogen chemical properties of ammonia and its applications."
+    "Cl₂ + 2NaBr → 2NaCl + Br₂",
+    "N₂ + 3H₂ → 2NH₃ (Haber process)"
   ],
   "practiceQuestions": [
     "Practice question for 05 nitrogen reason for inertness of nitrogen and active nitrogen chemical properties of ammonia and its applications."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "NonmetalReactSim",
+    "desc": "Non-metal reactivity simulator"
+  }
 }

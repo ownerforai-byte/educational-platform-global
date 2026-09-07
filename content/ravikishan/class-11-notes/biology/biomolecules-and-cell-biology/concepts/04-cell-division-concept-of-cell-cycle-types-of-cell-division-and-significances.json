@@ -5,7 +5,11 @@
   "topicTitle": "Cell division: concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 04 cell division concept of cell cycle types of cell division and significances within the biomolecules and cell biology unit."
+    "Carbohydrates: (CH₂O)n; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
+    "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
+    "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
+    "Nucleic acids: DNA (double helix, A=T, G≡C, deoxyribose) stores genetic info; RNA (single strand, A=U) for protein synthesis.",
+    "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
   ],
   "confusion": [
     "❌ Misconception about 04 cell division concept of cell cycle types of cell division and significances. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 04 cell division concept of cell cycle types of cell division and significances."
+    "Glucose → 38 ATP via cellular respiration",
+    "Insulin: 51 amino acids, protein hormone"
   ],
   "practiceQuestions": [
     "Practice question for 04 cell division concept of cell cycle types of cell division and significances."
@@ -79,5 +84,22 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Identify the bond linking amino acids",
+      "steps": [
+        "Amino acids are monomers",
+        "Link between -COOH and -NH₂",
+        "Peptide bond formed"
+      ],
+      "answer": "Peptide bond"
+    }
+  ],
+  "visualization": {
+    "type": "3d-model",
+    "component": "ProteinStructureViewer",
+    "desc": "Interactive 3D protein structure showing primary to quaternary levels"
+  }
 }

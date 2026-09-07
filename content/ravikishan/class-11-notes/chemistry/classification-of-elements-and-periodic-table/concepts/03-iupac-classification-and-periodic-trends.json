@@ -5,7 +5,10 @@
   "topicTitle": "IUPAC classification of elements; periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 03 iupac classification and periodic trends within the classification of elements and periodic table unit."
+    "Modern periodic law: properties function of atomic number.",
+    "s, p, d, f blocks based on orbital type.",
+    "Periodic trends: atomic radius, ionization energy, electronegativity.",
+    "Lanthanides and actinides: inner transition elements."
   ],
   "confusion": [
     "❌ Misconception about 03 iupac classification and periodic trends. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 03 iupac classification and periodic trends."
+    "Na (Z=11): [Ne]3s¹, s-block",
+    "Fe (Z=26): [Ar]3d⁶4s², d-block"
   ],
   "practiceQuestions": [
     "Practice question for 03 iupac classification and periodic trends."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "map",
+    "component": "PeriodicTrendsMap",
+    "desc": "Periodic trends visualization"
+  }
 }

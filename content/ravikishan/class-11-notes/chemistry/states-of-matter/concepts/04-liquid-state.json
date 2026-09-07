@@ -5,7 +5,10 @@
   "topicTitle": "Liquid State",
   "relevance": 30,
   "notes": [
-    "Detailed notes on 04 liquid state within the states of matter unit."
+    "Ideal gas: PV=nRT.",
+    "Kinetic theory explains gas properties.",
+    "Real gases: van der Waals equation.",
+    "Liquid properties: surface tension, viscosity."
   ],
   "confusion": [
     "❌ Misconception about 04 liquid state. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 04 liquid state."
+    "V of 2mol at 27°C, 2atm: V=24.63L",
+    "vrms of O₂ at 300K: 484 m/s"
   ],
   "practiceQuestions": [
     "Practice question for 04 liquid state."
@@ -90,5 +94,22 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Volume of 2mol at 27°C, 2atm",
+      "steps": [
+        "V=nRT/P",
+        "V=(2×0.0821×300)/2",
+        "V=24.63L"
+      ],
+      "answer": "24.63 L"
+    }
+  ],
+  "visualization": {
+    "type": "simulation",
+    "component": "GasLawSim",
+    "desc": "Interactive gas law demonstrator"
+  }
 }

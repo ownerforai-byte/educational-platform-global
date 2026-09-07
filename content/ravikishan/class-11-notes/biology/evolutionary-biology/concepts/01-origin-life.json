@@ -5,7 +5,11 @@
   "topicTitle": "Origin of Life",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 origin life within the evolutionary biology unit."
+    "Darwin: natural selection.",
+    "Miller-Urey experiment: amino acids from inorganic precursors.",
+    "Fossil evidence: progressive complexity.",
+    "Homologous organs: common ancestry (divergent).",
+    "Analogous organs: convergent evolution."
   ],
   "confusion": [
     "❌ Misconception about 01 origin life. ✅ Scientific explanation."
@@ -19,7 +23,9 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 origin life."
+    "Darwin's finches: beak adaptation",
+    "Archaeopteryx: reptile-bird link",
+    "Human: Australopithecus→H.erectus→H.sapiens"
   ],
   "practiceQuestions": [
     "Practice question for 01 origin life."
@@ -79,5 +85,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "EvolutionSim",
+    "desc": "Evolutionary tree builder and natural selection simulator"
+  }
 }

@@ -5,7 +5,10 @@
   "topicTitle": "Test of unsaturation (ethene and ethyne): bromine water test and Baeyer's test; comparative studies of physical properties of alkane, alkene and alkyne; Kolbe's electrolysis methods",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 04 test of unsaturation and comparative study of physical properties of alkane alkene and alkyne kolbe s electrolysis methods for the preparation of alkanes alkenes and alkynes within the hydrocarbons unit."
+    "Alkanes: CnH2n+2, single bonds (saturated).",
+    "Alkenes: CnH2n, double bonds (unsaturated).",
+    "Alkynes: CnH2n-2, triple bonds.",
+    "Aromatic: benzene ring, delocalized π electrons."
   ],
   "confusion": [
     "❌ Misconception about 04 test of unsaturation and comparative study of physical properties of alkane alkene and alkyne kolbe s electrolysis methods for the preparation of alkanes alkenes and alkynes. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 04 test of unsaturation and comparative study of physical properties of alkane alkene and alkyne kolbe s electrolysis methods for the preparation of alkanes alkenes and alkynes."
+    "Methane CH₄, Ethene C₂H₄, Ethyne C₂H₂"
   ],
   "practiceQuestions": [
     "Practice question for 04 test of unsaturation and comparative study of physical properties of alkane alkene and alkyne kolbe s electrolysis methods for the preparation of alkanes alkenes and alkynes."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "HydrocarbonViewer",
+    "desc": "3D hydrocarbon structure viewer"
+  }
 }

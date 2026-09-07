@@ -5,7 +5,11 @@
   "topicTitle": "Basic concepts of chemistry: atoms, molecules, relative masses of atoms and molecules, atomic mass unit (amu), radicals, molecular formula, empirical formula",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 02 basic concepts atoms molecules relative masses and formulae within the foundation and fundamentals unit."
+    "Matter: anything with mass and volume.",
+    "Atoms: basic unit of elements.",
+    "Molecules: combinations of atoms.",
+    "Mixtures: physical combinations, separable.",
+    "Pure substances: elements and compounds."
   ],
   "confusion": [
     "❌ Misconception about 02 basic concepts atoms molecules relative masses and formulae. ✅ Scientific explanation."
@@ -19,7 +23,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 02 basic concepts atoms molecules relative masses and formulae."
+    "Water: H₂O (compound)",
+    "Air: mixture of N₂, O₂, etc."
   ],
   "practiceQuestions": [
     "Practice question for 02 basic concepts atoms molecules relative masses and formulae."
@@ -77,5 +82,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "interactive",
+    "component": "MatterClassifier",
+    "desc": "Interactive matter classification tool"
+  }
 }

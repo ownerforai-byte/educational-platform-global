@@ -4,13 +4,16 @@
   "topicSlug": "01-redox-concepts",
   "topicTitle": "01 redox concepts",
   "notes": [
-    "Detailed notes on 01 redox concepts within the oxidation reduction unit."
+    "Oxidation = loss of electrons, Reduction = gain of electrons.",
+    "Oxidizing agent accepts electrons, reducing agent donates.",
+    "Electrochemical cells convert chemical energy to electrical.",
+    "Faraday's laws relate charge to mass deposited."
   ],
   "confusion": [
     "❌ Misconception about 01 redox concepts. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 01 redox concepts."
+    "Zn+Cu²⁺→Zn²⁺+Cu (electrochemical cell)"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 01 redox concepts)"
@@ -76,5 +79,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ElectrochemistrySim",
+    "desc": "Electrochemical cell simulation"
+  }
 }

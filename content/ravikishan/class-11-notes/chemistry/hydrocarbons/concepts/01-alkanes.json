@@ -4,13 +4,16 @@
   "topicSlug": "01-alkanes",
   "topicTitle": "01 alkanes",
   "notes": [
-    "Detailed notes on 01 alkanes within the hydrocarbons unit."
+    "Alkanes: CnH2n+2, single bonds (saturated).",
+    "Alkenes: CnH2n, double bonds (unsaturated).",
+    "Alkynes: CnH2n-2, triple bonds.",
+    "Aromatic: benzene ring, delocalized π electrons."
   ],
   "confusion": [
     "❌ Misconception about 01 alkanes. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 01 alkanes."
+    "Methane CH₄, Ethene C₂H₄, Ethyne C₂H₂"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 01 alkanes)"
@@ -76,5 +79,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "HydrocarbonViewer",
+    "desc": "3D hydrocarbon structure viewer"
+  }
 }

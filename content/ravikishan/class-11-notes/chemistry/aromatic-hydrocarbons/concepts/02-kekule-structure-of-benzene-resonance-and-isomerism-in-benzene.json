@@ -5,7 +5,10 @@
   "topicTitle": "Kekulé structure of benzene; resonance and isomerism in benzene",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 02 kekule structure of benzene resonance and isomerism in benzene within the aromatic hydrocarbons unit."
+    "Benzene C₆H₆: hexagonal ring, delocalized π electrons.",
+    "Aromaticity: Hückel's rule (4n+2 π electrons).",
+    "Electrophilic substitution: nitration, halogenation, sulfonation.",
+    "Substituent effects: activating/deactivating groups."
   ],
   "confusion": [
     "❌ Misconception about 02 kekule structure of benzene resonance and isomerism in benzene. ✅ Scientific explanation."
@@ -28,7 +31,8 @@
   ],
   "summary": "Summary of 02 kekule structure of benzene resonance and isomerism in benzene.",
   "examples": [
-    "Real-world example of 02 kekule structure of benzene resonance and isomerism in benzene."
+    "Nitration: C₆H₆ + HNO₃ → C₆H₅NO₂",
+    "Toluene → TNT"
   ],
   "importantConcepts": [
     "Key concept 1 for 02 kekule structure of benzene resonance and isomerism in benzene."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "AromaticReactSim",
+    "desc": "Aromatic reaction simulator"
+  }
 }

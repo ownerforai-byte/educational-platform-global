@@ -5,7 +5,11 @@
   "topicTitle": "Human evolution: position of man in animal kingdom; differences between new world monkeys and old-world monkeys, apes and man; evolution of modern man starting from anthropoid ancestor",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 04 human evolution within the evolutionary biology unit."
+    "Darwin: natural selection.",
+    "Miller-Urey experiment: amino acids from inorganic precursors.",
+    "Fossil evidence: progressive complexity.",
+    "Homologous organs: common ancestry (divergent).",
+    "Analogous organs: convergent evolution."
   ],
   "confusion": [
     "❌ Misconception about 04 human evolution. ✅ Scientific explanation."
@@ -19,7 +23,9 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 04 human evolution."
+    "Darwin's finches: beak adaptation",
+    "Archaeopteryx: reptile-bird link",
+    "Human: Australopithecus→H.erectus→H.sapiens"
   ],
   "practiceQuestions": [
     "Practice question for 04 human evolution."
@@ -79,5 +85,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "EvolutionSim",
+    "desc": "Evolutionary tree builder and natural selection simulator"
+  }
 }

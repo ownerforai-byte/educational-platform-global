@@ -5,7 +5,9 @@
   "topicTitle": "Orbitals and shape of s and p orbitals only",
   "relevance": 77,
   "notes": [
-    "Detailed notes on 25 mass number and isotopes within the atomic structure unit."
+    "Rutherford's model: nucleus existence via α-scattering.",
+    "Bohr's model: quantized energy levels, atomic stability.",
+    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
   ],
   "confusion": [
     "❌ Misconception about 25 mass number and isotopes. ✅ Scientific explanation."
@@ -19,16 +21,15 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 25 mass number and isotopes."
+    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
   ],
   "practiceQuestions": [
     "Practice question for 25 mass number and isotopes."
   ],
   "formulas": [
-    "E = hν",
-    "λ = h/mv",
-    "mvr = nh/2π",
-    "Δx · Δp ≥ h/4π"
+    "E=hν",
+    "λ=h/mv",
+    "ΔxΔp≥h/4π"
   ],
   "keyPoints": [
     "Core point for 25 mass number and isotopes."
@@ -90,5 +91,23 @@
       ],
       "answer": "B"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "ex-1",
+      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
+      "steps": [
+        "Formula: λ = h / (m * v)",
+        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
+        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
+        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
+      ],
+      "answer": "0.727 nm"
+    }
+  ],
+  "visualization": {
+    "type": "simulation",
+    "component": "RutherfordScatteringSim",
+    "description": "Interactive visualization of α-particle deflection by the nucleus."
+  }
 }

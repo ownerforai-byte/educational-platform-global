@@ -5,7 +5,10 @@
   "topicTitle": "Idea of structural formula, contracted formula and bond line structural formula",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 04 idea of structural formula contracted formula and bond line structural formula within the basic concept of organic chemistry unit."
+    "Organic chemistry: study of carbon compounds.",
+    "Carbon: tetravalent, forms 4 bonds.",
+    "Functional groups: -OH (alcohol), -COOH (carboxylic acid), etc.",
+    "Homologous series: same functional group, differ by CH₂."
   ],
   "confusion": [
     "❌ Misconception about 04 idea of structural formula contracted formula and bond line structural formula. ✅ Scientific explanation."
@@ -28,7 +31,7 @@
   ],
   "summary": "Summary of 04 idea of structural formula contracted formula and bond line structural formula.",
   "examples": [
-    "Real-world example of 04 idea of structural formula contracted formula and bond line structural formula."
+    "Methane CH₄, Ethane C₂H₆, Ethene C₂H₄"
   ],
   "importantConcepts": [
     "Key concept 1 for 04 idea of structural formula contracted formula and bond line structural formula."
@@ -77,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "OrganicMoleculeViewer",
+    "desc": "3D organic molecule explorer"
+  }
 }

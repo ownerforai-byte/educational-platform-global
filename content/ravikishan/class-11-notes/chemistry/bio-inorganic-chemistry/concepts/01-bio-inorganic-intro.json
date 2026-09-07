@@ -5,7 +5,10 @@
   "topicTitle": "Bio-inorganic Chemistry Introduction",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 bio inorganic intro within the bio inorganic chemistry unit."
+    "Biological inorganic chemistry: metals in biology.",
+    "Hemoglobin: Fe²⁺ transports O₂.",
+    "Chlorophyll: Mg²⁺ in photosynthesis.",
+    "Enzymes: metal ion cofactors (Zn, Fe, Cu)."
   ],
   "confusion": [
     "❌ Misconception about 01 bio inorganic intro. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 bio inorganic intro."
+    "Hemoglobin: heme group with Fe",
+    "Vitamin B₁₂: Co-containing"
   ],
   "practiceQuestions": [
     "Practice question for 01 bio inorganic intro."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "BioinorganicViewer",
+    "desc": "Metal-centered biomolecule viewer"
+  }
 }

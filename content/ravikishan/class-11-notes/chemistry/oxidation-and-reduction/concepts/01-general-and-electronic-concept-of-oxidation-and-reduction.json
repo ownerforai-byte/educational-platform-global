@@ -5,7 +5,10 @@
   "topicTitle": "General and electronic concept of oxidation and reduction",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 general and electronic concept of oxidation and reduction within the oxidation and reduction unit."
+    "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).",
+    "Oxidation numbers identify redox.",
+    "Galvanic cells: chemical → electrical energy.",
+    "Faraday laws: m = ZIt."
   ],
   "confusion": [
     "❌ Misconception about 01 general and electronic concept of oxidation and reduction. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 general and electronic concept of oxidation and reduction."
+    "Zn|Zn²⁺||Cu²⁺|Cu: E°=+1.10V",
+    "Cu deposited by 2A for 30min: m≈1.19g"
   ],
   "practiceQuestions": [
     "Practice question for 01 general and electronic concept of oxidation and reduction."
@@ -89,5 +93,23 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Mass of Cu deposited by 2A for 30min",
+      "steps": [
+        "t=30×60=1800s",
+        "m=(M×I×t)/(n×F)",
+        "m=(63.5×2×1800)/(2×96500)",
+        "m≈1.19g"
+      ],
+      "answer": "1.19 g"
+    }
+  ],
+  "visualization": {
+    "type": "simulation",
+    "component": "RedoxCellSim",
+    "desc": "Interactive electrochemical cell"
+  }
 }

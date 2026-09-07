@@ -5,7 +5,10 @@
   "topicTitle": "Sulphur",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 07 sulphur within the chemistry of non metals unit."
+    "Non-metals: electronegative, form anions.",
+    "Halogen reactivity decreases down group.",
+    "Nitrogen: N₂ triple bond, very stable.",
+    "Oxygen: O₂ paramagnetic, supports combustion."
   ],
   "confusion": [
     "❌ Misconception about 07 sulphur. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 07 sulphur."
+    "Cl₂ + 2NaBr → 2NaCl + Br₂",
+    "N₂ + 3H₂ → 2NH₃ (Haber process)"
   ],
   "practiceQuestions": [
     "Practice question for 07 sulphur."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "NonmetalReactSim",
+    "desc": "Non-metal reactivity simulator"
+  }
 }

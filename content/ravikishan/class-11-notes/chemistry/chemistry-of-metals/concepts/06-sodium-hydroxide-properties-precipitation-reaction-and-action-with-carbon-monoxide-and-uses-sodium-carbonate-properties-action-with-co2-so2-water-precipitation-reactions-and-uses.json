@@ -5,7 +5,10 @@
   "topicTitle": "Sodium hydroxide: properties, precipitation reaction, and action with carbon monoxide and uses; sodium carbonate: properties, action with CO₂, SO₂, water, precipitation reactions and uses",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 06 sodium hydroxide properties precipitation reaction and action with carbon monoxide and uses sodium carbonate properties action with co2 so2 water precipitation reactions and uses within the chemistry of metals unit."
+    "Metals: electropositive, form cations.",
+    "Activity series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au.",
+    "Extraction: smelting, electrolysis.",
+    "Alloys: mixtures of metals."
   ],
   "confusion": [
     "❌ Misconception about 06 sodium hydroxide properties precipitation reaction and action with carbon monoxide and uses sodium carbonate properties action with co2 so2 water precipitation reactions and uses. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 06 sodium hydroxide properties precipitation reaction and action with carbon monoxide and uses sodium carbonate properties action with co2 so2 water precipitation reactions and uses."
+    "Iron from hematite: Fe₂O₃ + 3CO → 2Fe + 3CO₂",
+    "Aluminum by Hall-Héroult process"
   ],
   "practiceQuestions": [
     "Practice question for 06 sodium hydroxide properties precipitation reaction and action with carbon monoxide and uses sodium carbonate properties action with co2 so2 water precipitation reactions and uses."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MetalExtractionSim",
+    "desc": "Metal extraction process visualizer"
+  }
 }

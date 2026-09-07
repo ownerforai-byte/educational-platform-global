@@ -5,7 +5,10 @@
   "topicTitle": "Stages in producing a new product; economics of production; running a chemical plant; continuous and batch processing; environmental impact of the chemical industry",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact within the fundamentals of applied chemistry unit."
+    "Chemical industry: fertilizers, pharmaceuticals, dyes.",
+    "Fuel chemistry: combustion, engines.",
+    "Water treatment: purification, desalination.",
+    "Materials science: ceramics, composites."
   ],
   "confusion": [
     "❌ Misconception about 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact."
+    "Urea: NH₂CONH₂ (fertilizer)",
+    "Aspirin: C₉H₈O₄ (pharmaceutical)"
   ],
   "practiceQuestions": [
     "Practice question for 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "IndustrySim",
+    "desc": "Industrial chemistry processes"
+  }
 }

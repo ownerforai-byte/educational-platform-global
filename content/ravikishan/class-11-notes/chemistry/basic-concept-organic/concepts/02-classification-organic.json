@@ -4,13 +4,16 @@
   "topicSlug": "02-classification-organic",
   "topicTitle": "02 classification organic",
   "notes": [
-    "Detailed notes on 02 classification organic within the basic concept organic unit."
+    "Carbon tetravalency allows complex molecules.",
+    "Isomerism: same formula, different structure.",
+    "IUPAC naming: systematic nomenclature.",
+    "Hybridization: sp³ (alkanes), sp² (alkenes), sp (alkynes)."
   ],
   "confusion": [
     "❌ Misconception about 02 classification organic. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 02 classification organic."
+    "Butane and isobutane (C₄H₁₀): structural isomers"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 02 classification organic)"
@@ -76,5 +79,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "IsomerBuilder",
+    "desc": "Isomer structure builder"
+  }
 }

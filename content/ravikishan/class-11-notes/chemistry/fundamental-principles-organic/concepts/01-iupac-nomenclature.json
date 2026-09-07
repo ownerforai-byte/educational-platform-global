@@ -4,13 +4,17 @@
   "topicSlug": "01-iupac-nomenclature",
   "topicTitle": "01 iupac nomenclature",
   "notes": [
-    "Detailed notes on 01 iupac nomenclature within the fundamental principles organic unit."
+    "Resonance: delocalization of π electrons.",
+    "Inductive effect: electron withdrawal/donation through σ bonds.",
+    "Electrophiles: electron-seeking (e.g., NO₂⁺).",
+    "Nucleophiles: nucleus-seeking (e.g., OH⁻)."
   ],
   "confusion": [
     "❌ Misconception about 01 iupac nomenclature. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 01 iupac nomenclature."
+    "Benzene: resonance stabilization",
+    "SN2 reaction: nucleophilic substitution"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 01 iupac nomenclature)"
@@ -76,5 +80,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ElectronFlowSim",
+    "desc": "Electron flow visualization"
+  }
 }

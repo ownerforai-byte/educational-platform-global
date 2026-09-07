@@ -5,7 +5,10 @@
   "topicTitle": "Relation of biology with other sciences",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 02 relation of biology with other sciences within the introduction to biology unit."
+    "Biology: study of life (Greek: bios + logos).",
+    "Branches: botany, zoology, microbiology, genetics, ecology.",
+    "Characteristics of life: organization, metabolism, homeostasis, growth, reproduction, response, evolution.",
+    "Scientific method: observation → hypothesis → experiment → conclusion."
   ],
   "confusion": [
     "❌ Misconception about 02 relation of biology with other sciences. ✅ Scientific explanation."
@@ -19,7 +22,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 02 relation of biology with other sciences."
+    "Nepal: 10% world plants, 1% mammals in 0.1% Earth land"
   ],
   "practiceQuestions": [
     "Practice question for 02 relation of biology with other sciences."
@@ -79,5 +82,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "interactive",
+    "component": "BiologyIntro",
+    "desc": "Biology branches explorer and scientific method simulator"
+  }
 }

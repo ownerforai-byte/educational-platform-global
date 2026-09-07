@@ -5,7 +5,10 @@
   "topicTitle": "Introduction and characteristics of aromatic compounds",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 introduction and characteristics of aromatic compounds within the aromatic hydrocarbons unit."
+    "Benzene C₆H₆: hexagonal ring, delocalized π electrons.",
+    "Aromaticity: Hückel's rule (4n+2 π electrons).",
+    "Electrophilic substitution: nitration, halogenation, sulfonation.",
+    "Substituent effects: activating/deactivating groups."
   ],
   "confusion": [
     "❌ Misconception about 01 introduction and characteristics of aromatic compounds. ✅ Scientific explanation."
@@ -26,7 +29,8 @@
   ],
   "summary": "Summary of 01 introduction and characteristics of aromatic compounds.",
   "examples": [
-    "Real-world example of 01 introduction and characteristics of aromatic compounds."
+    "Nitration: C₆H₆ + HNO₃ → C₆H₅NO₂",
+    "Toluene → TNT"
   ],
   "importantConcepts": [
     "Key concept 1 for 01 introduction and characteristics of aromatic compounds."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "AromaticReactSim",
+    "desc": "Aromatic reaction simulator"
+  }
 }

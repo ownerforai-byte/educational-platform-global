@@ -5,7 +5,10 @@
   "topicTitle": "Angiosperm: morphology of root, stem, leaves, inflorescences, flowers and fruit; taxonomic study: definition, taxonomic hierarchy, classification systems (artificial, natural and phylogenetic) of angiosperms; angiosperm families with economic importance: Brassicaceae, Fabaceae, Solanaceae and Liliaceae",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 07 angiosperm morphology and taxonomic study within the floral diversity unit."
+    "Five kingdom classification (Whittaker, 1969).",
+    "Binomial nomenclature: Genus species.",
+    "Plant evolution: algae→bryophytes→pteridophytes→gymnosperms→angiosperms.",
+    "Double fertilization: zygote + endosperm."
   ],
   "confusion": [
     "❌ Misconception about 07 angiosperm morphology and taxonomic study. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 07 angiosperm morphology and taxonomic study."
+    "Rhododendron arboreum: Nepal national flower",
+    "Pinus: gymnosperm, timber industry"
   ],
   "practiceQuestions": [
     "Practice question for 07 angiosperm morphology and taxonomic study."
@@ -79,5 +83,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "PlantKingdomViewer",
+    "desc": "Interactive plant classification explorer"
+  }
 }

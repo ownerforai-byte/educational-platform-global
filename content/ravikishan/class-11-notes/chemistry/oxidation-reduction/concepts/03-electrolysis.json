@@ -4,13 +4,16 @@
   "topicSlug": "03-electrolysis",
   "topicTitle": "03 electrolysis",
   "notes": [
-    "Detailed notes on 03 electrolysis within the oxidation reduction unit."
+    "Oxidation = loss of electrons, Reduction = gain of electrons.",
+    "Oxidizing agent accepts electrons, reducing agent donates.",
+    "Electrochemical cells convert chemical energy to electrical.",
+    "Faraday's laws relate charge to mass deposited."
   ],
   "confusion": [
     "❌ Misconception about 03 electrolysis. ✅ Scientific explanation."
   ],
   "examples": [
-    "Real-world example of 03 electrolysis."
+    "Zn+Cu²⁺→Zn²⁺+Cu (electrochemical cell)"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 03 electrolysis)"
@@ -76,5 +79,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ElectrochemistrySim",
+    "desc": "Electrochemical cell simulation"
+  }
 }

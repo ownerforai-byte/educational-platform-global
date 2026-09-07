@@ -5,7 +5,11 @@
   "topicTitle": "Food chain, food web, trophic level, ecological pyramids, productivity",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 02 food chain food web trophic level ecological pyramids productivity within the ecology unit."
+    "Ecosystem: biotic + abiotic components.",
+    "Food chain: linear energy transfer (grass→rabbit→fox).",
+    "Food web: interconnected chains.",
+    "10% energy transfer rule.",
+    "Biogeochemical cycles: carbon, nitrogen."
   ],
   "confusion": [
     "❌ Misconception about 02 food chain food web trophic level ecological pyramids productivity. ✅ Scientific explanation."
@@ -19,12 +23,15 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 02 food chain food web trophic level ecological pyramids productivity."
+    "Pond: phytoplankton→zooplankton→fish→birds",
+    "Nepal: terai→hills→mountains ecosystems"
   ],
   "practiceQuestions": [
     "Practice question for 02 food chain food web trophic level ecological pyramids productivity."
   ],
-  "formulas": [],
+  "formulas": [
+    "dN/dt=rN((K-N)/K) (logistic growth)"
+  ],
   "keyPoints": [
     "Core point for 02 food chain food web trophic level ecological pyramids productivity."
   ],
@@ -87,5 +94,11 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "EcosystemSim",
+    "desc": "Interactive ecosystem energy flow simulation"
+  }
 }

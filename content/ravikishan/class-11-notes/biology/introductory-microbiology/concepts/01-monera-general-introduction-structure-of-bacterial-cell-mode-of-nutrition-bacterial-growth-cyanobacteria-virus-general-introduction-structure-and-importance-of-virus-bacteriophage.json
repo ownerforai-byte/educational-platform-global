@@ -5,7 +5,11 @@
   "topicTitle": "Monera: General introduction, structure of bacterial cell, mode of nutrition, bacterial growth; cyanobacteria (blue green algae); Virus: General introduction, structure and importance of virus, bacteriophage",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage within the introductory microbiology unit."
+    "Monera: prokaryotes (bacteria, cyanobacteria).",
+    "Bacteria: cell wall (peptidoglycan), 70S ribosomes, binary fission.",
+    "Virus: acellular, protein coat + nucleic acid, obligate parasite.",
+    "Gram stain: positive (purple) vs negative (pink).",
+    "Biotechnology: insulin, vaccines, GMOs."
   ],
   "confusion": [
     "❌ Misconception about 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage. ✅ Scientific explanation."
@@ -19,7 +23,9 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "E. coli: model organism",
+    "T4 bacteriophage: lytic cycle in 20 min",
+    "Recombinant insulin from E. coli"
   ],
   "practiceQuestions": [
     "Practice question for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
@@ -79,5 +85,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "MicrobeViewer",
+    "desc": "Interactive microorganism explorer with Gram stain simulation"
+  }
 }

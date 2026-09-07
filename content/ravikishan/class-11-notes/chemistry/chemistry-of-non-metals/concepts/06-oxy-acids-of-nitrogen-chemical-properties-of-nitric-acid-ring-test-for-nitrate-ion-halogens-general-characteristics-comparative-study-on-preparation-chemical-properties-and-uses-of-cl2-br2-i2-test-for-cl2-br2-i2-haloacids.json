@@ -5,7 +5,10 @@
   "topicTitle": "Oxy-acids of nitrogen (name and formula); chemical properties of nitric acid; ring test for nitrate ion; halogens: general characteristics; comparative study of Cl2, Br2, I2; haloacids",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 06 oxy acids of nitrogen chemical properties of nitric acid ring test for nitrate ion halogens general characteristics comparative study on preparation chemical properties and uses of cl2 br2 i2 test for cl2 br2 i2 haloacids within the chemistry of non metals unit."
+    "Non-metals: electronegative, form anions.",
+    "Halogen reactivity decreases down group.",
+    "Nitrogen: N₂ triple bond, very stable.",
+    "Oxygen: O₂ paramagnetic, supports combustion."
   ],
   "confusion": [
     "❌ Misconception about 06 oxy acids of nitrogen chemical properties of nitric acid ring test for nitrate ion halogens general characteristics comparative study on preparation chemical properties and uses of cl2 br2 i2 test for cl2 br2 i2 haloacids. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 06 oxy acids of nitrogen chemical properties of nitric acid ring test for nitrate ion halogens general characteristics comparative study on preparation chemical properties and uses of cl2 br2 i2 test for cl2 br2 i2 haloacids."
+    "Cl₂ + 2NaBr → 2NaCl + Br₂",
+    "N₂ + 3H₂ → 2NH₃ (Haber process)"
   ],
   "practiceQuestions": [
     "Practice question for 06 oxy acids of nitrogen chemical properties of nitric acid ring test for nitrate ion halogens general characteristics comparative study on preparation chemical properties and uses of cl2 br2 i2 test for cl2 br2 i2 haloacids."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "NonmetalReactSim",
+    "desc": "Non-metal reactivity simulator"
+  }
 }

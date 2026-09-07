@@ -5,7 +5,10 @@
   "topicTitle": "Modern Chemical Manufactures: manufacture of ammonia, nitric acid, sulphuric acid, sodium hydroxide, sodium carbonate and urea",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 modern chemical manufactures within the modern chemical manufactures unit."
+    "Petrochemical industry: feeds from crude oil.",
+    "Pharmaceutical manufacturing: GMP standards.",
+    "Agrochemicals: fertilizers, pesticides.",
+    "Green chemistry: atom economy, waste reduction."
   ],
   "confusion": [
     "❌ Misconception about 01 modern chemical manufactures. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 modern chemical manufactures."
+    "Ammonia: Haber process (150-300 atm)",
+    "Sulfuric acid: Contact process"
   ],
   "practiceQuestions": [
     "Practice question for 01 modern chemical manufactures."
@@ -77,5 +81,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "simulation",
+    "component": "ManufacturingSim",
+    "desc": "Chemical plant simulation"
+  }
 }

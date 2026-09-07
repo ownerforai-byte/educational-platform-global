@@ -5,7 +5,13 @@
   "topicTitle": "Vegetation: Introduction, types of vegetation in Nepal; in-situ (protected areas) and ex-situ (botanical garden, seed bank) conservation; natural environment-vegetation and human activities",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities within the vegetation unit."
+    "Nepal vegetation zones by altitude:",
+    "Terai (100-500m): sal forest, grasslands.",
+    "Subtropical (500-1000m): chir pine, semal.",
+    "Temperate (1000-2000m): oak, rhododendron.",
+    "Sub-alpine (2000-3000m): rhododendron, juniper.",
+    "Alpine (3000-4000m): shrubs, meadows.",
+    "Nival (>4000m): snow, lichens, mosses."
   ],
   "confusion": [
     "❌ Misconception about 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities. ✅ Scientific explanation."
@@ -19,7 +25,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Chitwan sal forest: tiger, rhino habitat",
+    "Everest: alpine meadows in summer"
   ],
   "practiceQuestions": [
     "Practice question for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
@@ -79,5 +86,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "map",
+    "component": "NepalVegetationMap",
+    "desc": "Interactive vegetation zone map of Nepal by altitude"
+  }
 }

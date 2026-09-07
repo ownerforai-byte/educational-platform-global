@@ -5,7 +5,10 @@
   "topicTitle": "Animalia: Phyla Classification",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 02 animalia phyla within the faunal diversity unit."
+    "Protista: single-celled eukaryotes (Amoeba, Paramecium, Plasmodium).",
+    "Animal phyla: Porifera→Cnidaria→Platyhelminthes→Annelida→Arthropoda→Mollusca→Chordata.",
+    "Earthworm: Pheretima posthuma, closed circulatory system.",
+    "Frog: Rana tigrina, 3-chambered heart, amphibian."
   ],
   "confusion": [
     "❌ Misconception about 02 animalia phyla. ✅ Scientific explanation."
@@ -19,7 +22,8 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 02 animalia phyla."
+    "Paramecium: cilia movement, contractile vacuole",
+    "Earthworm: nephridia excretion, clitellum reproduction"
   ],
   "practiceQuestions": [
     "Practice question for 02 animalia phyla."
@@ -79,5 +83,11 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "AnimalPhylaViewer",
+    "desc": "Interactive animal body plan explorer"
+  }
 }
