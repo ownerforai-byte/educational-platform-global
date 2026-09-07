@@ -75,7 +75,8 @@ export function normalizeMathDelimiters(text: string): string {
       if (segment.startsWith("`")) return segment;
       return segment
         .replace(/\\\[((?:.|\n)*?)\\\]/g, (_m, body) => `$$${String(body).trim()}$$`)
-        .replace(/\\\(((?:.|\n)*?)\\\)/g, (_m, body) => `$${String(body).trim()}$`);
+        .replace(/\\\(((?:.|\n)*?)\\\)/g, (_m, body) => `$${String(body).trim()}$`)
+        .replace(/\\\$(?:(?!\\\$)[\s\S])*?\\\$/g, (m) => `$$${m.slice(2, -2)}$$`);
     })
     .join("");
 }
