@@ -61,7 +61,7 @@ function TopicCard({
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all"
           style={{ backgroundColor: active ? `${color}20` : `${color}10` }}
         >
-          {createElement(I, { className: "h-4 w-4", style: { color: active ? color : `${color}80` } })}
+          <I className="h-4 w-4" style={{ color: active ? color : `${color}80` }} />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold truncate" style={{ color: active ? color : undefined }}>{title}</p>
