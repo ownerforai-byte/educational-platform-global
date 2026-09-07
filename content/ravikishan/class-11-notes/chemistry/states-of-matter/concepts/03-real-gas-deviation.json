@@ -25,12 +25,15 @@
     "Practice question for 03 real gas deviation."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 real gas deviation)"
+    "PV = nRT",
+    "PV = (m/M)RT",
+    "vrms = √(3RT/M)",
+    "P = P° × χ(solvent)"
   ],
   "keyPoints": [
     "Core point for 03 real gas deviation."
   ],
-  "summary": "Summary of 03 real gas deviation.",
+  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
   "specialNotes": [
     "Specialized insight for 03 real gas deviation."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "03-real-gas-deviation",
   "mcqs": [
     {
-      "question": "Question about 03 real gas deviation?",
+      "question": "Which gas has the highest rms speed at same temperature?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "O₂",
+        "N₂",
+        "H₂",
+        "CO₂"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Surface tension decreases with:",
+      "options": [
+        "Increase in temperature",
+        "Decrease in temperature",
+        "Constant temperature",
+        "None"
       ],
       "answer": "A"
     }

@@ -25,12 +25,15 @@
     "Practice question for 17 quantum number origins and subshell metrics."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 17 quantum number origins and subshell metrics)"
+    "E = hν",
+    "λ = h/mv",
+    "mvr = nh/2π",
+    "Δx · Δp ≥ h/4π"
   ],
   "keyPoints": [
     "Core point for 17 quantum number origins and subshell metrics."
   ],
-  "summary": "Summary of 17 quantum number origins and subshell metrics.",
+  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
   "specialNotes": [
     "Specialized insight for 17 quantum number origins and subshell metrics."
   ],
@@ -68,14 +71,24 @@
   "tabGroup": "17-quantum-number-origins-and-subshell-metrics",
   "mcqs": [
     {
-      "question": "Question about 17 quantum number origins and subshell metrics?",
+      "question": "Who proposed the dual nature of matter?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Planck",
+        "de Broglie",
+        "Bohr",
+        "Heisenberg"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "options": [
+        "n",
+        "n²",
+        "n³",
+        "n⁴"
+      ],
+      "answer": "B"
     }
   ]
 }

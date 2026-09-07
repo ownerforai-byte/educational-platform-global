@@ -44,7 +44,7 @@ function TopicCard({
   id: string;
   title: string;
   subtitle: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
   color: string;
   active: boolean;
   onClick: () => void;
@@ -213,7 +213,7 @@ function ContentPanel({ topicId }: { topicId: string }) {
 export function BiologySyllabus3D() {
   const [activeTopic, setActiveTopic] = useState<string>("biomolecules");
 
-  const topics: { id: string; title: string; subtitle: string; icon: React.ElementType; color: string }[] = [
+  const topics: { id: string; title: string; subtitle: string; icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>; color: string }[] = [
     { id: "biomolecules", title: "Biomolecules", subtitle: "Carbs, proteins, lipids, DNA", icon: Dna, color: "#3b82f6" },
     { id: "cell-structure", title: "Cell Structure", subtitle: "Organelles, membranes, nucleus", icon: Microscope, color: "#22c55e" },
     { id: "cell-division", title: "Cell Division", subtitle: "Mitosis, meiosis, cell cycle", icon: Binary, color: "#8b5cf6" },

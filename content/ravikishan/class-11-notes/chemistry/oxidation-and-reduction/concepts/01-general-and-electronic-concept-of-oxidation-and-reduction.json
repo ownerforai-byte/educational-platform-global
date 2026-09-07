@@ -25,12 +25,14 @@
     "Practice question for 01 general and electronic concept of oxidation and reduction."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 general and electronic concept of oxidation and reduction)"
+    "E°cell = E°cathode - E°anode",
+    "Q = It",
+    "m = ZIt (Faraday's first law)"
   ],
   "keyPoints": [
     "Core point for 01 general and electronic concept of oxidation and reduction."
   ],
-  "summary": "Summary of 01 general and electronic concept of oxidation and reduction.",
+  "summary": "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
   "specialNotes": [
     "Specialized insight for 01 general and electronic concept of oxidation and reduction."
   ],
@@ -68,14 +70,24 @@
   "tabGroup": "01-general-and-electronic-concept-of-oxidation-and-reduction",
   "mcqs": [
     {
-      "question": "Question about 01 general and electronic concept of oxidation and reduction?",
+      "question": "In the reaction Zn → Zn²⁺ + 2e⁻, zinc is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Oxidized",
+        "Reduced",
+        "Neither",
+        "Both"
       ],
       "answer": "A"
+    },
+    {
+      "question": "Which is a strong oxidizing agent?",
+      "options": [
+        "Li",
+        "Na",
+        "F₂",
+        "K"
+      ],
+      "answer": "C"
     }
   ]
 }

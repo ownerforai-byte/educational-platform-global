@@ -25,12 +25,15 @@
     "Practice question for 02 law mass action."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 law mass action)"
+    "Kc = [Products]/[Reactants]",
+    "Kp = Kc(RT)^Δn",
+    "pH = -log[H⁺]",
+    "Ka × Kb = Kw"
   ],
   "keyPoints": [
     "Core point for 02 law mass action."
   ],
-  "summary": "Summary of 02 law mass action.",
+  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
   "specialNotes": [
     "Specialized insight for 02 law mass action."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "02-law-mass-action",
   "mcqs": [
     {
-      "question": "Question about 02 law mass action?",
+      "question": "What happens to K when temperature increases for an exothermic reaction?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Increases",
+        "Decreases",
+        "Remains same",
+        "Becomes zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "options": [
+        "Le Chatelier's",
+        "Boyle's",
+        "Charles's",
+        "Avogadro's"
       ],
       "answer": "A"
     }

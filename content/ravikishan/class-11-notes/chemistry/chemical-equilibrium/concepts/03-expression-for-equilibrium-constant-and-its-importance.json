@@ -25,12 +25,15 @@
     "Practice question for 03 expression for equilibrium constant and its importance."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 expression for equilibrium constant and its importance)"
+    "Kc = [Products]/[Reactants]",
+    "Kp = Kc(RT)^Δn",
+    "pH = -log[H⁺]",
+    "Ka × Kb = Kw"
   ],
   "keyPoints": [
     "Core point for 03 expression for equilibrium constant and its importance."
   ],
-  "summary": "Summary of 03 expression for equilibrium constant and its importance.",
+  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
   "specialNotes": [
     "Specialized insight for 03 expression for equilibrium constant and its importance."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "03-expression-for-equilibrium-constant-and-its-importance",
   "mcqs": [
     {
-      "question": "Question about 03 expression for equilibrium constant and its importance?",
+      "question": "What happens to K when temperature increases for an exothermic reaction?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Increases",
+        "Decreases",
+        "Remains same",
+        "Becomes zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "options": [
+        "Le Chatelier's",
+        "Boyle's",
+        "Charles's",
+        "Avogadro's"
       ],
       "answer": "A"
     }

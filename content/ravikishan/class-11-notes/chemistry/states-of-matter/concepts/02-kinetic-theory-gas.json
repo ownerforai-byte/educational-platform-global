@@ -25,12 +25,15 @@
     "Practice question for 02 kinetic theory gas."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 kinetic theory gas)"
+    "PV = nRT",
+    "PV = (m/M)RT",
+    "vrms = √(3RT/M)",
+    "P = P° × χ(solvent)"
   ],
   "keyPoints": [
     "Core point for 02 kinetic theory gas."
   ],
-  "summary": "Summary of 02 kinetic theory gas.",
+  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
   "specialNotes": [
     "Specialized insight for 02 kinetic theory gas."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "02-kinetic-theory-gas",
   "mcqs": [
     {
-      "question": "Question about 02 kinetic theory gas?",
+      "question": "Which gas has the highest rms speed at same temperature?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "O₂",
+        "N₂",
+        "H₂",
+        "CO₂"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Surface tension decreases with:",
+      "options": [
+        "Increase in temperature",
+        "Decrease in temperature",
+        "Constant temperature",
+        "None"
       ],
       "answer": "A"
     }

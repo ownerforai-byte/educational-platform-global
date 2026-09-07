@@ -25,12 +25,15 @@
     "Practice question for 19 electron spin notation and shell mapping."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 19 electron spin notation and shell mapping)"
+    "E = hν",
+    "λ = h/mv",
+    "mvr = nh/2π",
+    "Δx · Δp ≥ h/4π"
   ],
   "keyPoints": [
     "Core point for 19 electron spin notation and shell mapping."
   ],
-  "summary": "Summary of 19 electron spin notation and shell mapping.",
+  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
   "specialNotes": [
     "Specialized insight for 19 electron spin notation and shell mapping."
   ],
@@ -68,14 +71,24 @@
   "tabGroup": "19-electron-spin-notation-and-shell-mapping",
   "mcqs": [
     {
-      "question": "Question about 19 electron spin notation and shell mapping?",
+      "question": "Who proposed the dual nature of matter?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Planck",
+        "de Broglie",
+        "Bohr",
+        "Heisenberg"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "options": [
+        "n",
+        "n²",
+        "n³",
+        "n⁴"
+      ],
+      "answer": "B"
     }
   ]
 }

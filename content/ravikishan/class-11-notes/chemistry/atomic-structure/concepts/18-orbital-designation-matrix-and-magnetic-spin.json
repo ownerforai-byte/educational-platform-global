@@ -25,12 +25,15 @@
     "Practice question for 18 orbital designation matrix and magnetic spin."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 18 orbital designation matrix and magnetic spin)"
+    "E = hν",
+    "λ = h/mv",
+    "mvr = nh/2π",
+    "Δx · Δp ≥ h/4π"
   ],
   "keyPoints": [
     "Core point for 18 orbital designation matrix and magnetic spin."
   ],
-  "summary": "Summary of 18 orbital designation matrix and magnetic spin.",
+  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
   "specialNotes": [
     "Specialized insight for 18 orbital designation matrix and magnetic spin."
   ],
@@ -68,14 +71,24 @@
   "tabGroup": "18-orbital-designation-matrix-and-magnetic-spin",
   "mcqs": [
     {
-      "question": "Question about 18 orbital designation matrix and magnetic spin?",
+      "question": "Who proposed the dual nature of matter?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Planck",
+        "de Broglie",
+        "Bohr",
+        "Heisenberg"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "options": [
+        "n",
+        "n²",
+        "n³",
+        "n⁴"
+      ],
+      "answer": "B"
     }
   ]
 }

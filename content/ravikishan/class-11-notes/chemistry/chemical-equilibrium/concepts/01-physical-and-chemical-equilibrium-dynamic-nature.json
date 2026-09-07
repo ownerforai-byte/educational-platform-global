@@ -25,12 +25,15 @@
     "Practice question for 01 physical and chemical equilibrium dynamic nature."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 physical and chemical equilibrium dynamic nature)"
+    "Kc = [Products]/[Reactants]",
+    "Kp = Kc(RT)^Δn",
+    "pH = -log[H⁺]",
+    "Ka × Kb = Kw"
   ],
   "keyPoints": [
     "Core point for 01 physical and chemical equilibrium dynamic nature."
   ],
-  "summary": "Summary of 01 physical and chemical equilibrium dynamic nature.",
+  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
   "specialNotes": [
     "Specialized insight for 01 physical and chemical equilibrium dynamic nature."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "01-physical-and-chemical-equilibrium-dynamic-nature",
   "mcqs": [
     {
-      "question": "Question about 01 physical and chemical equilibrium dynamic nature?",
+      "question": "What happens to K when temperature increases for an exothermic reaction?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Increases",
+        "Decreases",
+        "Remains same",
+        "Becomes zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "options": [
+        "Le Chatelier's",
+        "Boyle's",
+        "Charles's",
+        "Avogadro's"
       ],
       "answer": "A"
     }

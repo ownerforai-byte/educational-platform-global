@@ -25,12 +25,15 @@
     "Practice question for 01 rutherford model."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 rutherford model)"
+    "E = hν",
+    "λ = h/mv",
+    "mvr = nh/2π",
+    "Δx · Δp ≥ h/4π"
   ],
   "keyPoints": [
     "Core point for 01 rutherford model."
   ],
-  "summary": "Summary of 01 rutherford model.",
+  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
   "specialNotes": [
     "Specialized insight for 01 rutherford model."
   ],
@@ -68,14 +71,24 @@
   "tabGroup": "01-rutherford-model",
   "mcqs": [
     {
-      "question": "Question about 01 rutherford model?",
+      "question": "Who proposed the dual nature of matter?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Planck",
+        "de Broglie",
+        "Bohr",
+        "Heisenberg"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "options": [
+        "n",
+        "n²",
+        "n³",
+        "n⁴"
+      ],
+      "answer": "B"
     }
   ]
 }

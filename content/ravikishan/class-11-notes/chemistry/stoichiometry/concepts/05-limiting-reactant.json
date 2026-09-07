@@ -25,12 +25,15 @@
     "Practice question for 05 limiting reactant."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 limiting reactant)"
+    "n = m/M",
+    "n = V/22.4 (at STP)",
+    "Molarity (M) = n/V(L)",
+    "Molality (m) = n/solvent(kg)"
   ],
   "keyPoints": [
     "Core point for 05 limiting reactant."
   ],
-  "summary": "Summary of 05 limiting reactant.",
+  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
   "specialNotes": [
     "Specialized insight for 05 limiting reactant."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "05-limiting-reactant",
   "mcqs": [
     {
-      "question": "Question about 05 limiting reactant?",
+      "question": "What is the molar mass of water?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "18 g/mol",
+        "32 g/mol",
+        "44 g/mol",
+        "16 g/mol"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "One mole of any gas occupies what volume at STP?",
+      "options": [
+        "22.4 L",
+        "2.24 L",
+        "224 L",
+        "2240 L"
       ],
       "answer": "A"
     }

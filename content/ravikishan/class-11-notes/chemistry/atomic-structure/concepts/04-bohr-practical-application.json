@@ -25,12 +25,15 @@
     "Practice question for 04 bohr practical application."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 bohr practical application)"
+    "E = hν",
+    "λ = h/mv",
+    "mvr = nh/2π",
+    "Δx · Δp ≥ h/4π"
   ],
   "keyPoints": [
     "Core point for 04 bohr practical application."
   ],
-  "summary": "Summary of 04 bohr practical application.",
+  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
   "specialNotes": [
     "Specialized insight for 04 bohr practical application."
   ],
@@ -68,14 +71,24 @@
   "tabGroup": "04-bohr-practical-application",
   "mcqs": [
     {
-      "question": "Question about 04 bohr practical application?",
+      "question": "Who proposed the dual nature of matter?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Planck",
+        "de Broglie",
+        "Bohr",
+        "Heisenberg"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "options": [
+        "n",
+        "n²",
+        "n³",
+        "n⁴"
+      ],
+      "answer": "B"
     }
   ]
 }

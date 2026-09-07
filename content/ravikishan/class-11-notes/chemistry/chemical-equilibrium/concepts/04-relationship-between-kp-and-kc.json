@@ -25,12 +25,15 @@
     "Practice question for 04 relationship between kp and kc."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 relationship between kp and kc)"
+    "Kc = [Products]/[Reactants]",
+    "Kp = Kc(RT)^Δn",
+    "pH = -log[H⁺]",
+    "Ka × Kb = Kw"
   ],
   "keyPoints": [
     "Core point for 04 relationship between kp and kc."
   ],
-  "summary": "Summary of 04 relationship between kp and kc.",
+  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
   "specialNotes": [
     "Specialized insight for 04 relationship between kp and kc."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "04-relationship-between-kp-and-kc",
   "mcqs": [
     {
-      "question": "Question about 04 relationship between kp and kc?",
+      "question": "What happens to K when temperature increases for an exothermic reaction?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Increases",
+        "Decreases",
+        "Remains same",
+        "Becomes zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "options": [
+        "Le Chatelier's",
+        "Boyle's",
+        "Charles's",
+        "Avogadro's"
       ],
       "answer": "A"
     }

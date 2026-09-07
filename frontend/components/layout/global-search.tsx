@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 import { Search, X, TrendingUp, BookOpen, FlaskConical, Atom, Microscope } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { search } from "@/lib/api/ai";
 import type { SearchResultItem } from "@/types/api";
@@ -11,7 +12,7 @@ import { SYLLABUS } from "@/lib/syllabus";
 /* ────────────────────────────────────────────────────────────
    Popular / recommended topics extracted from the syllabus
    ──────────────────────────────────────────────────────────── */
-const POPULAR_TOPICS: { label: string; href: string; subject: string; icon: React.ElementType }[] = [
+const POPULAR_TOPICS: { label: string; href: string; subject: string; icon: LucideIcon }[] = [
   // Physics — high-frequency exam topics
   { label: "Projectile Motion",         href: "/lab/physics?topic=projectile-motion",        subject: "Physics",    icon: FlaskConical },
   { label: "Simple Harmonic Motion",    href: "/lab/physics?topic=shm",                     subject: "Physics",    icon: FlaskConical },

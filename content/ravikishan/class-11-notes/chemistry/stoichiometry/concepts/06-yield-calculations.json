@@ -13,7 +13,10 @@
     "Real-world example of 06 yield calculations."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 06 yield calculations)"
+    "n = m/M",
+    "n = V/22.4 (at STP)",
+    "Molarity (M) = n/V(L)",
+    "Molality (m) = n/solvent(kg)"
   ],
   "importantConcepts": [
     "Key concept 1 for 06 yield calculations."
@@ -51,7 +54,7 @@
   "specialNotes": [
     "Specialized insight for 06 yield calculations."
   ],
-  "summary": "Summary of 06 yield calculations.",
+  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
   "universalFacts": [
     "Universal scientific fact for 06 yield calculations."
   ],
@@ -67,12 +70,22 @@
   ],
   "mcqs": [
     {
-      "question": "Question about 06 yield calculations?",
+      "question": "What is the molar mass of water?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "18 g/mol",
+        "32 g/mol",
+        "44 g/mol",
+        "16 g/mol"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "One mole of any gas occupies what volume at STP?",
+      "options": [
+        "22.4 L",
+        "2.24 L",
+        "224 L",
+        "2240 L"
       ],
       "answer": "A"
     }

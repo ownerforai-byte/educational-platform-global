@@ -25,12 +25,15 @@
     "Practice question for 05 le chatlier s principle."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 le chatlier s principle)"
+    "Kc = [Products]/[Reactants]",
+    "Kp = Kc(RT)^Δn",
+    "pH = -log[H⁺]",
+    "Ka × Kb = Kw"
   ],
   "keyPoints": [
     "Core point for 05 le chatlier s principle."
   ],
-  "summary": "Summary of 05 le chatlier s principle.",
+  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
   "specialNotes": [
     "Specialized insight for 05 le chatlier s principle."
   ],
@@ -68,12 +71,22 @@
   "tabGroup": "05-le-chatlier-s-principle",
   "mcqs": [
     {
-      "question": "Question about 05 le chatlier s principle?",
+      "question": "What happens to K when temperature increases for an exothermic reaction?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Increases",
+        "Decreases",
+        "Remains same",
+        "Becomes zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "options": [
+        "Le Chatelier's",
+        "Boyle's",
+        "Charles's",
+        "Avogadro's"
       ],
       "answer": "A"
     }
