@@ -543,6 +543,7 @@ ravikishan/
 │   ├── debug-build.js
 │   ├── enhance-mindmaps.js
 │   ├── ensure-all-fields.js
+│   ├── expand-confusion-practice-summary.js
 │   ├── fill-all-fields.js
 │   ├── fix-mindmap-tails.js
 │   ├── fix-placeholders.js
@@ -550,6 +551,7 @@ ravikishan/
 │   ├── generate-mindmaps.js
 │   ├── generate-real-content.js
 │   ├── migrate-biology.ts
+│   ├── populate-neb-content-patched.js
 │   ├── populate-neb-content.js
 │   ├── refine-chemistry-content.js
 │   ├── update-mindmaps-details.js
