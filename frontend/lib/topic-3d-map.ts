@@ -146,7 +146,7 @@ const make = (slug: string, title: string, unit?: string, subject?: string) => {
 
 /** Create a topic-specific 3D visual component. */
 const makeTopic = (Component: React.FC, title: string) => {
-  const TopicLab = () => React.createElement(Component);
+  const TopicLab = () => <Component />;
   TopicLab.displayName = `TopicLab(${title})`;
   return TopicLab;
 };

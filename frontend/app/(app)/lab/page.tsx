@@ -448,9 +448,7 @@ function LabDashboard({
                     <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
                   </div>
                 }>
-                  {typeof activeLabData.component === "function"
-                    ? React.createElement(activeLabData.component as React.ElementType)
-                    : activeLabData.component}
+                  {typeof activeLabData.component === "function" ? <activeLabData.component /> : activeLabData.component}
                 </Suspense>
               )}
             </CardContent>
