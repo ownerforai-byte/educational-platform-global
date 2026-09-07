@@ -1,10 +1,64 @@
 {
-  "title": "basic-concept-of-organic-chemistry Mindmap",
+  "title": "basic concept of organic chemistry Mindmap",
   "unitSlug": "basic-concept-of-organic-chemistry",
   "topicSlug": "basic-concept-of-organic-chemistry-mindmap",
-  "topicTitle": "basic concept of organic chemistry — interactive concept map",
+  "topicTitle": "basic concept of organic chemistry interactive concept map",
   "relevance": 0,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Study of basic concept of organic chemistry concepts."
+  ],
+  "mindmap": {
+    "centralConcept": "BASIC CONCEPT OF ORGANIC CHEMISTRY",
+    "branches": [
+      {
+        "topic": "Core Concepts",
+        "subtopics": [
+          {
+            "name": "Fundamentals",
+            "points": [
+              "Key Definitions",
+              "Basic Theories",
+              "Historical Context"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Properties",
+        "subtopics": [
+          {
+            "name": "Physical",
+            "points": [
+              "State",
+              "Melting/Boiling Points"
+            ]
+          },
+          {
+            "name": "Chemical",
+            "points": [
+              "Reactivity",
+              "Periodic Trends"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications",
+        "subtopics": [
+          {
+            "name": "Industrial",
+            "points": [
+              "Manufacturing Processes",
+              "Practical Uses",
+              "Environmental Impact"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  }
 }

@@ -5,166 +5,102 @@
   "topicTitle": "Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
   "relevance": 100,
   "notes": [
-    "**Cracking definition:** Breaking down long-chain hydrocarbons into smaller, more useful molecules. Crude oil contains many long-chain fractions that are less valuable than short-chain ones used as fuels.",
-    "**Thermal cracking:** High temperature (750-900°C) and high pressure (7-50 atm) breaks C-C bonds homolytically, producing a mixture of alkanes and alkenes via free radical mechanism. Example: $C_{10}H_{22} \\xrightarrow{750^\\circ C} C_5H_{12} + C_5H_{10}$.",
-    "**Catalytic cracking:** Lower temperature (450-500°C) using silica-alumina zeolite catalyst. Produces branched-chain alkanes and aromatic compounds, which have higher octane numbers. Favored for gasoline production.",
-    "**Steam cracking:** Hydrocarbons are mixed with steam and heated to 850°C. Used primarily to produce ethylene ($C_2H_4$) and propylene ($C_3H_6$), which are raw materials for plastics and polymers.",
-    "**Reforming definition:** Conversion of straight-chain alkanes into branched-chain alkanes and aromatic hydrocarbons using platinum on alumina ($Pt/Al_2O_3$) catalyst at 500°C and high pressure. Example: n-hexane → cyclohexane → benzene.",
-    "**Octane number:** A measure of the antiknock quality of gasoline. The reference fuels are iso-octane (2,2,4-trimethylpentane) = 100 and n-heptane = 0. A fuel with octane number 90 knocks like a mixture of 90% iso-octane and 10% n-heptane.",
-    "**Knocking:** Premature auto-ignition of fuel-air mixture before the spark fires, causing engine damage and reduced efficiency. High compression ratio engines require higher octane fuels.",
-    "**Cetane number:** Measure of the ignition quality of diesel fuel. n-cetane ($C_{16}H_{34}$) = 100 and 2,2,4,4,6,8,8-heptamethylnonane = 15. Higher cetane number means shorter ignition delay and smoother diesel combustion. Ideal: 40-55.",
-    "**Why octane and cetane are opposites:** Branched alkanes have high octane (resist auto-ignition) but low cetane (slow to ignite when needed). Linear alkanes have low octane but high cetane. This is why gasoline and diesel require different hydrocarbon profiles.",
-    "**Lead-free gasoline additives:** Methyl tert-butyl ether (MTBE, $C_5H_{12}O$) raises octane and adds oxygen. Ethanol ($C_2H_5OH$) is a renewable octane booster. Benzene and toluene are aromatic octane enhancers but are regulated due to toxicity.",
-    "**Tetraethyl lead (TEL):** $Pb(C_2H_5)_4$ was the most effective antiknock agent, boosting octane by 10-15 points. Banned in most countries due to lead poisoning — lead damages the catalytic converter and causes neurotoxicity.",
-    "**Industrial importance:** Catalytic cracking converts ~45% of crude oil into gasoline. Without cracking, only ~20% of crude oil would yield useful gasoline fractions."
+    "**Tetra-covalency:** Carbon has electronic configuration $1s^2 2s^2 2p^2$ with four valence electrons. It shares all four electrons to form four covalent bonds, giving a valency of four. This is called tetravalency or tetra-covalency.",
+    "**Hybridization modes:** Carbon undergoes $sp^3$ hybridization for single bonds (tetrahedral, $109.5^\\circ$), $sp^2$ for double bonds (trigonal planar, $120^\\circ$), and $sp$ for triple bonds (linear, $180^\\circ$), enabling enormous structural diversity.",
+    "**Catenation:** The self-linking ability of carbon atoms through C-C bonds. Carbon has the highest catenation ability due to its small size and strong C-C bond energy of 348 kJ/mol, which is the highest among group 14 elements.",
+    "**Catenation trend in Group 14:** Bond energies: C-C (348 kJ/mol) > Si-Si (222 kJ/mol) > Ge-Ge (167 kJ/mol) > Sn-Sn (122 kJ/mol). Carbon's superior catenation is due to small atomic size, effective orbital overlap, and high bond dissociation energy.",
+    "**Why carbon has maximum catenation:** (1) Small atomic radius allows close approach of bonded atoms. (2) High C-C bond energy makes the chain thermodynamically stable. (3) Carbon can form single, double, and triple bonds with itself, extending the range of catenated structures.",
+    "**Classification by carbon skeleton:** (a) Open-chain or acyclic: straight chain (n-pentane $CH_3CH_2CH_2CH_2CH_3$) or branched chain (isopentane $(CH_3)_3CCH_2H$). (b) Closed-chain or cyclic: homocyclic (all-carbon ring) or heterocyclic (ring contains O, N, S atoms).",
+    "**Homocyclic classification:** Alicyclic (cycloalkanes like cyclohexane $C_6H_{12}$) and aromatic (benzene-like rings $C_6H_6$ with delocalized $\\pi$ electrons).",
+    "**Classification by functional groups:** Alkanes ($-C-C-$, saturated, general formula $C_nH_{2n+2}$), Alkenes ($-C=C-$, unsaturated, $C_nH_{2n}$), Alkynes ($-C\\equiv C-$, $C_nH_{2n-2}$), Alcohols ($-OH$), Aldehydes ($-CHO$), Ketones ($-CO-$), Carboxylic acids ($-COOH$), Esters ($-COOR$), Amines ($-NH_2$), Amides ($-CONH_2$).",
+    "**Homologous series:** A series of compounds having the same functional group and similar chemical properties, in which successive members differ by a $CH_2$ unit. For alkanes: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), butane ($C_4H_{10}$), pentane ($C_5H_{12}$).",
+    "**Saturation:** Saturated compounds contain only C-C single bonds (alkanes). Unsaturated compounds contain at least one C=C double bond (alkenes) or C$\\equiv$C triple bond (alkynes). Unsaturated compounds undergo addition reactions; saturated ones undergo substitution reactions.",
+    "**Heterocyclic compounds:** Rings containing at least one non-carbon atom (heteroatom). Examples: furan (O in 5-membered ring), pyridine (N in 6-membered ring), thiophene (S in 5-membered ring). These are common in biological molecules like nucleotide bases."
   ],
   "confusion": [
-    "**Cracking and reforming are the same process** — Cracking breaks long-chain hydrocarbons into smaller ones (decreasing molecular weight), while reforming rearranges the molecular structure (isomerization, cyclization, aromatization) without significantly changing molecular weight.",
-    "**Higher octane number means more energy content** — Octane number measures resistance to knocking, not energy density. In fact, n-heptane (octane = 0) has slightly higher energy density than iso-octane (octane = 100). High octane allows higher compression ratios, which extract more energy.",
-    "**Cetane number and octane number work the same way** — They are essentially inversely related. Diesel engines need fuel that ignites easily (high cetane), while petrol engines need fuel that resists auto-ignition (high octane). A high-octane fuel would be terrible diesel fuel."
+    "**Tetravalency means carbon always forms four single bonds** — Carbon forms four bonds total, but these can be single, double, or triple bonds, or a combination. In ethylene ($CH_2=CH_2$), each carbon has a double bond and two single bonds. In allene ($H_2C=C=CH_2$), the central carbon forms two double bonds.",
+    "**Catenation only applies to carbon** — While carbon has the strongest catenation, silicon, sulfur, and boron also show catenation. Sulfur forms rings ($S_8$) and chains. Silicon forms silanes ($Si_nH_{2n+2}$), but they are less stable than carbon chains.",
+    "**All cyclic compounds are aromatic** — Cyclic compounds are divided into alicyclic (like cyclohexane, non-aromatic) and aromatic (like benzene, obeying Hückel's rule of $4n+2$ $\\pi$ electrons). Not every ring is aromatic."
   ],
   "practice": [
-    "Write the cracking reaction for decane ($C_{10}H_{22}$) to produce pentane and pentene. Balance the equation. What type of cracking is this if performed at 800°C with no catalyst?",
-    "A gasoline sample has an octane rating of 87. Explain what this means in terms of the reference fuel mixture. Why would this fuel be unsuitable for a high-compression sports car engine?",
-    "Compare catalytic cracking with thermal cracking in terms of (a) temperature, (b) catalyst used, (c) products formed, (d) mechanism (radical vs ionic), and (e) industrial importance."
+    "Arrange the following in order of decreasing catenation ability: C, Si, Ge, Sn. Explain the trend using bond energies and atomic radii.",
+    "Write the general formula of each homologous series and give the first three members: (a) alkanes, (b) alkenes, (c) alkynes, (d) alcohols, (e) aldehydes, (f) carboxylic acids.",
+    "Classify each compound as open-chain, cyclic, saturated, or unsaturated: (a) cyclohexane, (b) n-hexane, (c) benzene, (d) propyne, (e) 2-methylbutene."
   ],
   "universalFacts": [
-    "Approximately 45% of every barrel of crude oil is processed through catalytic cracking to produce gasoline — it is the single most important process in petroleum refining.",
-    "Banned worldwide since the 2000s, tetraethyl lead once caused widespread lead contamination — blood lead levels in urban populations dropped dramatically after leaded gasoline was phased out.",
-    "Modern catalytic reforming uses bimetallic catalysts (Pt-Re or Pt-Sn on alumina) that are about 10 times more active than early platinum-only catalysts.",
-    "MTBE was once the primary octane booster but was banned in many US states after it was found to contaminate groundwater due to its high water solubility.",
-    "The octane rating printed at petrol pumps (e.g., 95 RON, 98 RON) represents the Research Octane Number, measured under controlled engine conditions at 600 rpm."
+    "The C-C bond energy (348 kJ/mol) is close to the C-O bond (358 kJ/mol) and C-N bond (305 kJ/mol), meaning carbon chains are nearly as stable as those involving heteroatoms.",
+    "Carbon can form stable double and triple bonds with itself, unlike silicon which almost exclusively forms single bonds — this is called the 'double bond rule' violation by carbon.",
+    "The maximum known continuous carbon chain has over 300 carbon atoms in a single molecule (polyethylene), demonstrating carbon's unmatched catenation.",
+    "Functional group chemistry is the backbone of organic chemistry: the same $-OH$ group in methanol and ethanol gives both compounds similar reactions (esterification, oxidation, dehydration).",
+    "Hückel's rule states that a planar cyclic compound with $4n+2$ delocalized $\\pi$ electrons is aromatic. Benzene ($n=1$, 6 $\\pi$ electrons) is the simplest aromatic compound."
   ],
   "animation3D": "basic-concept-of-organic-chemistry",
   "motionGraphics": "basic-concept-of-organic-chemistry",
-  "examples": [
-    "Example 1: Real-world application of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Example 2: Practical demonstration of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive concepts",
-    "Example 3: Numerical problem on Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Example 4: Diagram-based question on Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Example 5: Application in daily life involving Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive"
-  ],
-  "practiceQuestions": [
-    "Q1. Define and explain Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive with suitable example.",
-    "Q2. Solve problems related to Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive.",
-    "Q3. Differentiate between various aspects of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive.",
-    "Q4. Derive the key formula related to Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive.",
-    "Q5. What are the applications of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive?"
-  ],
+  "duplicateType": 2,
+  "tabGroup": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
   "formulas": [
-    "Key Formula 1: Definition formula for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Formula 2: Mathematical expression of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Formula 3: Application formula for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Formula 4: Derivation result for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Formula 5: Important relation in Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive"
+    "$Result = Factor \\times Input$ (General relation for 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive)"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Point 2: Essential theorem or principle related to Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Point 3: Important condition or constraint for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Point 4: Common applications of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Key Point 5: Connection to other topics in Science"
+    "Important concept.",
+    "Relates to other chemistry topics."
   ],
-  "summary": "Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive applies",
-    "Note 2: Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Note 4: Remember the units and dimensions involved in Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Note 5: Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive frequently appears in examination questions"
+  "summary": "This topic provides a clear understanding of the core concept.",
+  "examples": [
+    "Example: Consider a standard 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive scenario where reactant A converts to product B."
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Statement 2: Theorem related to Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Statement 3: Condition for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive to be valid",
-    "Statement 4: Principle governing Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Statement 5: Corollary or consequence of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive"
+  "importantConcepts": [
+    "Core principle A",
+    "Fundamental rule B",
+    "Operational constraint C"
   ],
   "importantNotes": [
-    "Note 1: Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Note 3: Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Note 5: Cross-check your answers using alternative methods for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive"
+    "Always define variables clearly before applying formulas.",
+    "Check units to ensure dimensional consistency."
   ],
-  "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive formula",
-    "Trick 2: Elimination technique for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive MCQs",
-    "Trick 3: Dimensional analysis shortcut for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Trick 4: Memory aid for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive formulas",
-    "Trick 5: Time-saving approach for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive problems"
+  "importantStatements": [
+    "The application of 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive is universal across inorganic and organic chemistry."
   ],
-  "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Exam Tip 2: Practice previous year questions on Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Exam Tip 3: Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive thoroughly",
-    "Exam Tip 5: Review common mistakes related to Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive"
+  "importantTasks": [
+    "Derive the core equation for 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive.",
+    "Apply the principle to a sample chemical reaction."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive?",
+      "question": "What is the primary significance of 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive?",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "Fundamental structure",
+        "Reaction speed",
+        "Stability",
+        "All of the above"
       ],
-      "answer": "A"
-    },
-    {
-      "question": "The primary application of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
+      "answer": "All of the above"
     }
   ],
-  "importantConcepts": [
-    "Concept 1: Core definition of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Concept 2: Key theorem or principle in Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Concept 3: Important application area of Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Concept 4: Fundamental relationship in Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Concept 5: Connection between Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive and other topics"
+  "practiceQuestions": [
+    "Question 1: Define 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive and provide an illustrative example.",
+    "Question 2: How does 05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive interact with external variables?"
   ],
-  "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Task 2: Derive the main formula for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Task 3: Create a concept map for Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Task 4: Practice previous year exam questions on Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive",
-    "Task 5: Explain Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive to a peer or study group"
+  "specialNotes": [
+    "Note: This concept is frequently linked with related phenomena in the unit.",
+    "Note: Pay special attention to the exceptions defined in the textbook."
+  ],
+  "examShortTricks": [
+    "Trick 1"
+  ],
+  "examNotes": [
+    "Exam note 1."
+  ],
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
   ]
 }

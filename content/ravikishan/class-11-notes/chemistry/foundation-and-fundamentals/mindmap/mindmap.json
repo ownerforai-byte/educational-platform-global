@@ -6,5 +6,59 @@
   "relevance": 0,
   "notes": [
     "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "FOUNDATION AND FUNDAMENTALS",
+    "branches": [
+      {
+        "topic": "Core Concepts",
+        "subtopics": [
+          {
+            "name": "Fundamentals",
+            "points": [
+              "Key Definitions",
+              "Basic Theories",
+              "Historical Context"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Properties",
+        "subtopics": [
+          {
+            "name": "Physical",
+            "points": [
+              "State",
+              "Melting/Boiling Points"
+            ]
+          },
+          {
+            "name": "Chemical",
+            "points": [
+              "Reactivity",
+              "Periodic Trends"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications",
+        "subtopics": [
+          {
+            "name": "Industrial",
+            "points": [
+              "Manufacturing Processes",
+              "Practical Uses",
+              "Environmental Impact"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

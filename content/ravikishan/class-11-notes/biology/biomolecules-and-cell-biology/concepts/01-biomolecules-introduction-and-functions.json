@@ -41,7 +41,10 @@
     "Describe the key features of Biomolecules: Functions.",
     "Compare and contrast Biomolecules: Functions with related concepts."
   ],
-  "formulas": [],
+  "formulas": [
+    "Formula 1",
+    "Formula 2"
+  ],
   "keyPoints": [
     "Think about the incredible variety of living things, from tiny microorganisms to the complex structures of plants and animals.",
     "What ties them all together at the tiniest level.",
@@ -118,5 +121,17 @@
     "Practice with previous exam questions."
   ],
   "duplicateType": 2,
-  "tabGroup": "biomolecules-functions"
+  "tabGroup": "biomolecules-functions",
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
+  ]
 }

@@ -41,7 +41,10 @@
     "Describe the key features of Frog.",
     "Compare and contrast Frog with related concepts."
   ],
-  "formulas": [],
+  "formulas": [
+    "Formula 1",
+    "Formula 2"
+  ],
   "keyPoints": [
     "What are the end products of carbohydrate, protein and fat digestion.",
     "What is the feeding habit of frog.",
@@ -118,5 +121,17 @@
     "Practice with previous exam questions."
   ],
   "duplicateType": 2,
-  "tabGroup": "frog"
+  "tabGroup": "frog",
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
+  ]
 }

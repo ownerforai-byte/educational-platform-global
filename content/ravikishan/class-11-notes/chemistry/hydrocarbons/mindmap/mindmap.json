@@ -2,9 +2,63 @@
   "title": "hydrocarbons Mindmap",
   "unitSlug": "hydrocarbons",
   "topicSlug": "hydrocarbons-mindmap",
-  "topicTitle": "hydrocarbons — interactive concept map",
+  "topicTitle": "hydrocarbons interactive concept map",
   "relevance": 0,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Study of hydrocarbons concepts."
+  ],
+  "mindmap": {
+    "centralConcept": "HYDROCARBONS",
+    "branches": [
+      {
+        "topic": "Core Concepts",
+        "subtopics": [
+          {
+            "name": "Fundamentals",
+            "points": [
+              "Key Definitions",
+              "Basic Theories",
+              "Historical Context"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Properties",
+        "subtopics": [
+          {
+            "name": "Physical",
+            "points": [
+              "State",
+              "Melting/Boiling Points"
+            ]
+          },
+          {
+            "name": "Chemical",
+            "points": [
+              "Reactivity",
+              "Periodic Trends"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications",
+        "subtopics": [
+          {
+            "name": "Industrial",
+            "points": [
+              "Manufacturing Processes",
+              "Practical Uses",
+              "Environmental Impact"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  }
 }

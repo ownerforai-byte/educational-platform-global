@@ -1,48 +1,64 @@
 {
-  "title": "Chemical Equilibrium Mindmap",
+  "title": "chemical equilibrium Mindmap",
   "unitSlug": "chemical-equilibrium",
   "topicSlug": "chemical-equilibrium-mindmap",
-  "topicTitle": "chemical equilibrium — interactive concept map",
+  "topicTitle": "chemical equilibrium interactive concept map",
   "relevance": 0,
   "notes": [
-    "Study of chemical equilibrium - dynamic state where forward and reverse reactions occur at equal rates.",
-    "Covers equilibrium constants, Le Chatelier's principle, and applications.",
-    "Essential for understanding reaction yields and industrial processes."
+    "Study of chemical equilibrium concepts."
   ],
   "mindmap": {
-    "centralConcept": "Chemical Equilibrium",
+    "centralConcept": "CHEMICAL EQUILIBRIUM",
     "branches": [
-      {"topic": "Types", "subtopics": [
-        {"name": "Physical", "points": ["Phase equilibrium, solution equilibrium"]},
-        {"name": "Chemical", "points": ["Forward rate = reverse rate, dynamic, closed system"]}
-      ]},
-      {"topic": "Equilibrium Constant", "subtopics": [
-        {"name": "Kc", "points": ["[C]^c[D]^d/[A]^a[B]^b, K>1 products favored"]},
-        {"name": "Kp", "points": ["Partial pressures, Kp=Kc(RT)^Δn"]},
-        {"name": "Significance", "points": ["K>>1: products, K<<1: reactants"]}
-      ]},
-      {"topic": "Le Chatelier", "subtopics": [
-        {"name": "Concentration", "points": ["Add reactant → forward, add product → reverse"]},
-        {"name": "Pressure", "points": ["Increase P → fewer moles side"]},
-        {"name": "Temperature", "points": ["Increase T → endothermic direction"]}
-      ]},
-      {"topic": "Reaction Quotient", "subtopics": [
-        {"name": "Q", "points": ["Same form as K, any point in reaction"]},
-        {"name": "Q vs K", "points": ["Q<K: forward, Q=K: equilibrium, Q>K: reverse"]}
-      ]},
-      {"topic": "Applications", "subtopics": [
-        {"name": "Haber Process", "points": ["NH₃ synthesis, yield optimization"]},
-        {"name": "Contact Process", "points": ["H₂SO₄ production"]}
-      ]}
+      {
+        "topic": "Core Concepts",
+        "subtopics": [
+          {
+            "name": "Fundamentals",
+            "points": [
+              "Key Definitions",
+              "Basic Theories",
+              "Historical Context"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Properties",
+        "subtopics": [
+          {
+            "name": "Physical",
+            "points": [
+              "State",
+              "Melting/Boiling Points"
+            ]
+          },
+          {
+            "name": "Chemical",
+            "points": [
+              "Reactivity",
+              "Periodic Trends"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications",
+        "subtopics": [
+          {
+            "name": "Industrial",
+            "points": [
+              "Manufacturing Processes",
+              "Practical Uses",
+              "Environmental Impact"
+            ]
+          }
+        ]
+      }
     ]
+  },
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   }
-}
-  "title": "chemical-equilibrium Mindmap",
-  "unitSlug": "chemical-equilibrium",
-  "topicSlug": "chemical-equilibrium-mindmap",
-  "topicTitle": "chemical equilibrium — interactive concept map",
-  "relevance": 0,
-  "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
 }

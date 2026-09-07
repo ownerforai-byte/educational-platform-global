@@ -1,12 +1,21 @@
 [
   {
     "unitSlug": "applied-chemistry",
-    "topicSlug": "chemical-industry",
-    "title": "Chemical Industry",
+    "topicSlug": "01-chemical-industry",
+    "title": "01 CHEMICAL INDUSTRY",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-chemical-industry.json"
+  },
+  {
+    "unitSlug": "aromatic-hydrocarbons",
+    "topicSlug": "aromatic-compounds",
+    "title": "Aromatic Compounds",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-aromatic-compounds.json"
   },
   {
     "unitSlug": "aromatic-hydrocarbons",
@@ -28,30 +37,21 @@
   },
   {
     "unitSlug": "aromatic-hydrocarbons",
-    "topicSlug": "introduction-and-characteristics-of-aromatic-compounds",
-    "title": "Aromatic Compounds",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-aromatic-compounds-2.json"
-  },
-  {
-    "unitSlug": "aromatic-hydrocarbons",
-    "topicSlug": "introduction-and-characteristics-of-aromatic-compounds",
+    "topicSlug": "kekule-structure-of-benzene-resonance-and-isomerism-in-benzene",
     "title": "Benzene — Structure, Resonance and Isomerism",
     "noteCount": 1,
     "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-kekule-structure-of-benzene-resonance-and-isomerism-in-benzene-2.json"
+    "duplicateType": 1,
+    "filename": "02-kekule-structure-of-benzene-resonance-and-isomerism-in-benzene.json"
   },
   {
     "unitSlug": "aromatic-hydrocarbons",
-    "topicSlug": "introduction-and-characteristics-of-aromatic-compounds",
+    "topicSlug": "preparation-properties-and-uses-of-benzene",
     "title": "Preparation, Properties and Uses of Benzene",
     "noteCount": 1,
     "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-preparation-properties-and-uses-of-benzene-2.json"
+    "duplicateType": 1,
+    "filename": "03-preparation-properties-and-uses-of-benzene.json"
   },
   {
     "unitSlug": "atomic-structure",
@@ -388,6 +388,42 @@
   },
   {
     "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
+    "title": "Structural Formula, Contracted Formula and Bond Line Notation",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula.json"
+  },
+  {
+    "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "introduction-to-organic-chemistry-and-organic-compounds",
+    "title": "Introduction to Organic Chemistry",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-introduction-to-organic-chemistry-and-organic-compounds.json"
+  },
+  {
+    "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive",
+    "title": "Cracking, Reforming and Gasoline Quality",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive.json"
+  },
+  {
+    "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds",
+    "title": "Reasons for Separate Study of Organic Compounds",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-reasons-for-separate-study-of-organic-compounds.json"
+  },
+  {
+    "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
     "title": "Tetra-covalency, Catenation and Classification",
     "noteCount": 1,
@@ -396,58 +432,22 @@
     "filename": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds.json"
   },
   {
-    "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "title": "Introduction to Organic Chemistry",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-introduction-to-organic-chemistry-and-organic-compounds-2.json"
-  },
-  {
-    "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "title": "Reasons for Separate Study of Organic Compounds",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-reasons-for-separate-study-of-organic-compounds-2.json"
-  },
-  {
-    "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "title": "Structural Formula, Contracted Formula and Bond Line Notation",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula-2.json"
-  },
-  {
-    "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "title": "Cracking, Reforming and Gasoline Quality",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive-2.json"
-  },
-  {
     "unitSlug": "basic-concept-organic",
-    "topicSlug": "classification-organic",
-    "title": "Classification of Organic Compounds",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-classification-organic.json"
-  },
-  {
-    "unitSlug": "basic-concept-organic",
-    "topicSlug": "organic-chemistry-intro",
-    "title": "Introduction to Organic Chemistry",
+    "topicSlug": "01-organic-chemistry-intro",
+    "title": "01 ORGANIC CHEMISTRY INTRO",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-organic-chemistry-intro.json"
+  },
+  {
+    "unitSlug": "basic-concept-organic",
+    "topicSlug": "02-classification-organic",
+    "title": "02 CLASSIFICATION ORGANIC",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-classification-organic.json"
   },
   {
     "unitSlug": "bio-inorganic-chemistry",
@@ -485,17 +485,8 @@
   },
   {
     "unitSlug": "chemical-bonding",
-    "topicSlug": "hybridization",
-    "title": "Hybridization",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-hybridization.json"
-  },
-  {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "ionic-covalent-bond",
-    "title": "Ionic and Covalent Bond",
+    "topicSlug": "01-ionic-covalent-bond",
+    "title": "01 IONIC COVALENT BOND",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -503,21 +494,30 @@
   },
   {
     "unitSlug": "chemical-bonding",
-    "topicSlug": "molecular-orbital-theory",
-    "title": "Molecular Orbital Theory",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-molecular-orbital-theory.json"
-  },
-  {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "vsepr-theory",
-    "title": "VSEPR Theory",
+    "topicSlug": "02-vsepr-theory",
+    "title": "02 VSEPR THEORY",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-vsepr-theory.json"
+  },
+  {
+    "unitSlug": "chemical-bonding",
+    "topicSlug": "03-hybridization",
+    "title": "03 HYBRIDIZATION",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-hybridization.json"
+  },
+  {
+    "unitSlug": "chemical-bonding",
+    "topicSlug": "04-molecular-orbital-theory",
+    "title": "04 MOLECULAR ORBITAL THEORY",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-molecular-orbital-theory.json"
   },
   {
     "unitSlug": "chemical-bonding-and-shapes-of-molecules",
@@ -933,8 +933,8 @@
   },
   {
     "unitSlug": "classification-of-elements",
-    "topicSlug": "modern-periodic-law",
-    "title": "Modern Periodic Law",
+    "topicSlug": "01-modern-periodic-law",
+    "title": "01 MODERN PERIODIC LAW",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -942,8 +942,8 @@
   },
   {
     "unitSlug": "classification-of-elements",
-    "topicSlug": "periodic-trends",
-    "title": "Periodic Trends",
+    "topicSlug": "02-periodic-trends",
+    "title": "02 PERIODIC TRENDS",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1032,12 +1032,30 @@
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
+    "topicSlug": "concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form",
+    "title": "Geometrical and Optical Isomerism",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form.json"
+  },
+  {
+    "unitSlug": "fundamental-principles-of-organic-chemistry",
     "topicSlug": "inductive-effect-plus-i-and-minus-i-effect",
     "title": "Inductive Effect — +I and -I",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-inductive-effect-plus-i-and-minus-i-effect.json"
+  },
+  {
+    "unitSlug": "fundamental-principles-of-organic-chemistry",
+    "topicSlug": "isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types",
+    "title": "Isomerism — Classification and Types",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types.json"
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
@@ -1050,39 +1068,21 @@
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
-    "topicSlug": "iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
-    "title": "Qualitative Analysis of Organic Compounds",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassigne-s-test-2.json"
-  },
-  {
-    "unitSlug": "fundamental-principles-of-organic-chemistry",
-    "topicSlug": "iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
-    "title": "Isomerism — Classification and Types",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types-2.json"
-  },
-  {
-    "unitSlug": "fundamental-principles-of-organic-chemistry",
-    "topicSlug": "iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
-    "title": "Geometrical and Optical Isomerism",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form-2.json"
-  },
-  {
-    "unitSlug": "fundamental-principles-of-organic-chemistry",
-    "topicSlug": "iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
+    "topicSlug": "preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission",
     "title": "Preliminary Idea of Reaction Mechanism",
     "noteCount": 1,
     "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "05-preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission-electrophiles-nucleophiles-and-free-radicals-2.json"
+    "duplicateType": 1,
+    "filename": "05-preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission-electrophiles-nucleophiles-and-free-radicals.json"
+  },
+  {
+    "unitSlug": "fundamental-principles-of-organic-chemistry",
+    "topicSlug": "qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassigne-s-test",
+    "title": "Qualitative Analysis of Organic Compounds",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassigne-s-test.json"
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
@@ -1095,26 +1095,8 @@
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "inductive-effect",
-    "title": "Inductive Effect",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-inductive-effect.json"
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "isomerism",
-    "title": "Isomerism",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-isomerism.json"
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "iupac-nomenclature",
-    "title": "IUPAC Nomenclature",
+    "topicSlug": "01-iupac-nomenclature",
+    "title": "01 IUPAC NOMENCLATURE",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1122,8 +1104,17 @@
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "reaction-mechanism",
-    "title": "Reaction Mechanism",
+    "topicSlug": "02-isomerism",
+    "title": "02 ISOMERISM",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-isomerism.json"
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "03-reaction-mechanism",
+    "title": "03 REACTION MECHANISM",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1131,8 +1122,17 @@
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "resonance-effect",
-    "title": "Resonance Effect",
+    "topicSlug": "04-inductive-effect",
+    "title": "04 INDUCTIVE EFFECT",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-inductive-effect.json"
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "05-resonance-effect",
+    "title": "05 RESONANCE EFFECT",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1158,12 +1158,30 @@
   },
   {
     "unitSlug": "hydrocarbons",
-    "topicSlug": "alkanes",
-    "title": "Alkanes",
+    "topicSlug": "01-alkanes",
+    "title": "01 ALKANES",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-alkanes.json"
+  },
+  {
+    "unitSlug": "hydrocarbons",
+    "topicSlug": "02-alkenes",
+    "title": "02 ALKENES",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-alkenes.json"
+  },
+  {
+    "unitSlug": "hydrocarbons",
+    "topicSlug": "03-alkynes",
+    "title": "03 ALKYNES",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-alkynes.json"
   },
   {
     "unitSlug": "hydrocarbons",
@@ -1176,30 +1194,12 @@
   },
   {
     "unitSlug": "hydrocarbons",
-    "topicSlug": "alkenes",
-    "title": "Alkenes",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-alkenes.json"
-  },
-  {
-    "unitSlug": "hydrocarbons",
     "topicSlug": "alkenes-preparation-and-chemical-properties",
     "title": "Alkenes — Preparation and Chemical Properties",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-alkenes-preparation-and-chemical-properties.json"
-  },
-  {
-    "unitSlug": "hydrocarbons",
-    "topicSlug": "alkynes",
-    "title": "Alkynes",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-alkynes.json"
   },
   {
     "unitSlug": "hydrocarbons",
@@ -1230,17 +1230,8 @@
   },
   {
     "unitSlug": "modern-manufactures",
-    "topicSlug": "contact-process",
-    "title": "Contact Process",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-contact-process.json"
-  },
-  {
-    "unitSlug": "modern-manufactures",
-    "topicSlug": "hber-process",
-    "title": "Haber Process",
+    "topicSlug": "01-hber-process",
+    "title": "01 HBER PROCESS",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1248,8 +1239,17 @@
   },
   {
     "unitSlug": "modern-manufactures",
-    "topicSlug": "solvay-process",
-    "title": "Solvay Process",
+    "topicSlug": "02-contact-process",
+    "title": "02 CONTACT PROCESS",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-contact-process.json"
+  },
+  {
+    "unitSlug": "modern-manufactures",
+    "topicSlug": "03-solvay-process",
+    "title": "03 SOLVAY PROCESS",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1293,8 +1293,17 @@
   },
   {
     "unitSlug": "oxidation-reduction",
-    "topicSlug": "balancing-redox",
-    "title": "Balancing Redox Reactions",
+    "topicSlug": "01-redox-concepts",
+    "title": "01 REDOX CONCEPTS",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-redox-concepts.json"
+  },
+  {
+    "unitSlug": "oxidation-reduction",
+    "topicSlug": "02-balancing-redox",
+    "title": "02 BALANCING REDOX",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1302,21 +1311,12 @@
   },
   {
     "unitSlug": "oxidation-reduction",
-    "topicSlug": "electrolysis",
-    "title": "Electrolysis",
+    "topicSlug": "03-electrolysis",
+    "title": "03 ELECTROLYSIS",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-electrolysis.json"
-  },
-  {
-    "unitSlug": "oxidation-reduction",
-    "topicSlug": "redox-concepts",
-    "title": "Redox Concepts",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-redox-concepts.json"
   },
   {
     "unitSlug": "states-of-matter",
@@ -1392,17 +1392,8 @@
   },
   {
     "unitSlug": "stoichiometry",
-    "topicSlug": "avogadro-law",
-    "title": "Avogadro's Law",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-avogadro-law.json"
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "dalton-atomic-theory",
-    "title": "Dalton's Atomic Theory",
+    "topicSlug": "01-dalton-atomic-theory",
+    "title": "01 DALTON ATOMIC THEORY",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1410,8 +1401,35 @@
   },
   {
     "unitSlug": "stoichiometry",
-    "topicSlug": "empirical-molecular-formula",
-    "title": "Empirical and Molecular Formula",
+    "topicSlug": "03-avogadro-law",
+    "title": "03 AVOGADRO LAW",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-avogadro-law.json"
+  },
+  {
+    "unitSlug": "stoichiometry",
+    "topicSlug": "04-mole-concept",
+    "title": "04 MOLE CONCEPT",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-mole-concept.json"
+  },
+  {
+    "unitSlug": "stoichiometry",
+    "topicSlug": "06-yield-calculations",
+    "title": "06 YIELD CALCULATIONS",
+    "noteCount": 1,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "06-yield-calculations.json"
+  },
+  {
+    "unitSlug": "stoichiometry",
+    "topicSlug": "07-empirical-molecular-formula",
+    "title": "07 EMPIRICAL MOLECULAR FORMULA",
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
@@ -1479,23 +1497,5 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-limiting-reactant.json"
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "mole-concept",
-    "title": "Mole Concept",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-mole-concept.json"
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "yield-calculations",
-    "title": "Theoretical and % Yield",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-yield-calculations.json"
   }
 ]

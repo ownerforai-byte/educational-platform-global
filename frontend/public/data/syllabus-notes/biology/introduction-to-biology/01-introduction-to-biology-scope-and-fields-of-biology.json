@@ -5,218 +5,133 @@
   "topicTitle": "Introduction to Biology: scope and fields of biology",
   "relevance": 100,
   "notes": [
-    "**Biology:** the scientific study of living organisms and their interactions with each other and their environment. From the smallest molecule to the largest ecosystem, biology seeks to understand the mechanisms, diversity, and evolution of life.",
-    "**Major branches:** botany (plants), zoology (animals), microbiology (microorganisms), genetics (inheritance), ecology (environment), evolution (change over time), physiology (function), biochemistry (molecular basis). Each branch represents a distinct perspective on living systems.",
-    "**Levels of organisation:** molecular → cellular → tissue → organ → organism → population → community → ecosystem → biosphere. Each level exhibits emergent properties not predictable from the level below.",
-    "**Scope:** includes medicine, agriculture, biotechnology, environmental conservation, forensic science, bioinformatics, and biomedical engineering. Biology underpins virtually every sector of modern society.",
-    "**Relation to other sciences:** biology uses chemistry (biochemistry), physics (biophysics), mathematics (biostatistics), and geology (palaeontology). The interdisciplinary nature of biology makes it unique among sciences.",
-    "**Botany sub-disciplines:** phycology (algae), bryology (mosses), pteridology (ferns), mycology (fungi), paleobotany (fossil plants), plant anatomy, plant physiology, plant taxonomy, ethnobotany (plant uses by humans).",
-    "**Zoology sub-disciplines:** entomology (insects), ornithology (birds), mammalogy (mammals), herpetology (reptiles and amphibians), ichthyology (fish), embryology (development), ethology (animal behaviour), comparative anatomy, marine biology.",
-    "**Microbiology sub-disciplines:** bacteriology (bacteria), virology (viruses), mycology (fungi), protozoology (protozoa), phycology (algae), immunology (immune system), soil microbiology, food microbiology, industrial microbiology.",
-    "**Genetics:** studies heredity and variation. Includes molecular genetics (DNA structure/function, gene regulation), population genetics (allele frequency changes, evolution), quantitative genetics (polygenic traits, heritability), cytogenetics (chromosome behaviour), epigenetics, and genomics.",
-    "**Ecology:** studies interactions between organisms and their environment. Sub-fields: autecology (individual species ecology), synecology (community ecology), landscape ecology, restoration ecology, conservation biology, behavioural ecology.",
-    "**Evolution:** Darwin's theory of natural selection explains adaptation and speciation. Modern evolutionary synthesis combines Mendelian genetics with Darwinian selection. Evidence comes from fossils, comparative anatomy, embryology, biogeography, and molecular biology (DNA sequences).",
-    "**Physiology:** study of functions and mechanisms in living systems. Human physiology covers organ systems (circulatory, respiratory, nervous, digestive, excretory, endocrine, reproductive). Comparative physiology examines adaptations across species — e.g., how desert animals conserve water versus aquatic animals regulate salt balance.",
-    "**Taxonomy and systematics:** taxonomy classifies organisms into hierarchical groups; systematics studies their evolutionary relationships. Three-domain system: Bacteria, Archaea, Eukarya. Linnaean hierarchy: kingdom, phylum, class, order, family, genus, species.",
-    "**Molecular biology:** studies biological molecules — DNA, RNA, proteins. Central dogma: DNA → RNA → protein. Techniques include PCR (polymerase chain reaction), gel electrophoresis, Southern/Northern/Western blotting, CRISPR-Cas9 gene editing, and next-generation sequencing.",
-    "**Cell biology:** studies cell structure and function. Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have nucleus, mitochondria, ER, Golgi apparatus, lysosomes, chloroplasts (in plants). Cell theory: all living things are made of cells; cells are the basic unit of life; all cells come from pre-existing cells.",
-    "**Biotechnology applications:** medicine (gene therapy, monoclonal antibodies, recombinant vaccines), agriculture (GMOs, tissue culture, marker-assisted breeding), industry (enzymes, biofuels, bioplastics), environment (bioremediation, wastewater treatment).",
-    "**Biomedical science:** applies biological principles to medicine. Includes pathology, pharmacology, hematology, radiology, clinical diagnostics, and medical microbiology. Bridges basic biology and clinical practice.",
-    "**Agricultural biology:** crop improvement, plant breeding, soil science, agronomy, horticulture, animal husbandry, fisheries science, entomology for pest management. Food security depends on advances in agricultural biology.",
-    "**Marine biology:** study of ocean ecosystems. Includes pelagic zone organisms, coral reef ecology, deep-sea vent communities (chemosynthetic bacteria), tidal zone adaptation, marine conservation, and fisheries management.",
-    "**Developmental biology:** studies how organisms grow and develop from a single cell (zygote) into a multicellular adult. Key concepts: differentiation (cells become specialised), morphogenesis (formation of shape), pattern formation (spatial organisation), and stem cell biology (cells that can differentiate into many types).",
-    "**Neurobiology:** studies the nervous system — neurons, synapses, neural circuits, brain function, and behaviour. Bridges cell biology, physiology, and psychology. Modern neurobiology uses fMRI, EEG, optogenetics, and connectomics.",
-    "**Immunology:** studies the immune system — innate immunity (physical barriers, phagocytes, inflammation, complement system) and adaptive immunity (B cells producing antibodies, T cells for cell-mediated immunity, immunological memory). Vaccines exploit adaptive immunity.",
-    "**Virology:** studies viruses — structure (capsid, envelope, genome type: DNA or RNA, single or double-stranded), replication cycles (lytic vs lysogenic for bacteriophages), host interaction, and viral evolution. Viruses sit at the boundary of living and non-living.",
-    "**Chronobiology:** studies biological rhythms — circadian rhythms (~24-hour cycles in humans, plants, animals), seasonal cycles (migration, hibernation, flowering), and tidal cycles. Regulated by internal biological clocks (suprachiasmatic nucleus in mammals) and external cues called zeitgebers (light, temperature).",
-    "**Space biology / astrobiology:** studies how life responds to space conditions — microgravity effects on growth and physiology, radiation damage to DNA, and the potential for life in extraterrestrial environments. Astrobiology also searches for habitable exoplanets.",
-    "**Conservation biology:** an applied discipline that uses ecology, genetics, and population biology to prevent species extinction, maintain biodiversity, and restore degraded ecosystems. Key concepts: minimum viable population, habitat fragmentation, edge effects, and reintroduction programmes.",
-    "**Paleobiology:** combines palaeontology and biology to study extinct organisms — their anatomy, ecology, evolution, and extinction events. Major events include the Cambrian explosion (~541 Mya) and the K-Pg extinction (~66 Mya, dinosaurs).",
-    "**Phylogenetics and cladistics:** phylogenetics reconstructs evolutionary relationships using molecular (DNA/protein sequences) and morphological data. Cladistics groups organisms by shared derived characteristics (synapomorphies) into monophyletic clades. Trees are built using maximum parsimony, maximum likelihood, and Bayesian methods.",
-    "**Evo-devo (evolutionary developmental biology):** studies how changes in developmental genes (Hox genes, signaling pathways like Wnt and Hedgehog) produce evolutionary change. Explains how similar body plans arise across diverse animals and how developmental processes can be co-opted for novel structures (exaptation).",
-    "**Structural biology:** determines 3D structures of biological macromolecules using X-ray crystallography, cryo-electron microscopy (cryo-EM), and NMR spectroscopy. Understanding structure explains function — enzyme active sites, drug-receptor interactions, and molecular machines.",
-    "**Systems biology:** takes a holistic approach — integrates genomics, transcriptomics, proteomics, and metabolomics data to model complex interactions (gene regulatory networks, metabolic pathways). Uses computational modelling to understand emergent properties that reductionist approaches miss.",
-    "**Astrobiology:** studies the origin, evolution, distribution, and future of life in the universe. Combines biology, astronomy, geology, and chemistry. Focus areas: extremophiles as analogs for extraterrestrial life, biosignature detection, planetary protection, and the habitable zone concept.",
-    "**Ethology and behavioural ecology:** studies animal behaviour from evolutionary and ecological perspectives. Tinbergen's four questions (causation, development, function, evolution). Optimal foraging theory, kin selection (inclusive fitness), territory defence, and game theory in animal conflict (Hawk-Dove game).",
-    "**Biomechanics:** applies principles of mechanics to biological systems. Studies locomotion (swimming, flying, walking), skeletal mechanics, muscle physiology, fluid dynamics in circulatory and respiratory systems, and the physics of sensory organs (e.g., echolocation in bats).",
-    "**Nephrology and comparative excretion:** studies excretory systems across organisms. Protonephridia (flatworms, flame cells) → metanephridia (annelids) → Malpighian tubules (insects) → kidneys (vertebrates). Osmoregulation maintains internal solute balance in freshwater and marine environments.",
-    "**Sensory biology and neuroecology:** studies how organisms detect environmental information. Special senses: electroreception (sharks), magnetoreception (birds, sea turtles), infrared detection (pit vipers), echolocation (bats, dolphins). General senses: mechanoreception, chemoreception, photoreception.",
-    "**Population biology and life history theory:** studies population dynamics (growth models — exponential, logistic; carrying capacity K; Allee effect) and life history strategies (r-selected: many offspring, little parental care; K-selected: few offspring, high parental care).",
-    "**Biogeochemistry and nutrient cycling:** biology drives global cycles of carbon, nitrogen, phosphorus, and water. Photosynthesis fixes carbon; nitrogen fixation converts N₂ to ammonia (Rhizobium, cyanobacteria); decomposition recycles nutrients. Human activity has dramatically altered these cycles through fossil fuel burning, fertilizer use, and deforestation.",
-    "**Regeneration and stem cell biology:** some organisms (planarians, Hydra, axolotls) can regenerate entire body parts through dedifferentiation and stem cell proliferation. Mammalian stem cells (embryonic, adult tissue, iPSCs) maintain tissue homeostasis and offer therapeutic potential.",
-    "**Bioluminescence and biofluorescence:** living organisms produce light through chemical reactions (luciferin-luciferase in fireflies, coelenterazine in marine organisms) or absorb and re-emit light (GFP in jellyfish, GFP-like proteins in corals). Functions include predation (anglerfish lure), mating (firefly signals), camouflage (counter-illumination in squid), and warning coloration.",
-    "**Extremophiles and industrial applications:** organisms thriving in extreme conditions — thermophiles (hot springs, hydrothermal vents — Taq polymerase for PCR), halophiles (salt lakes), acidophiles (acid mine drainage), barophiles (deep ocean), psychrophiles (Antarctic ice). Their enzymes (extremozymes) have industrial applications.",
-    "**Epigenetics:** heritable changes in gene expression without altering DNA sequence. Mechanisms: DNA methylation (usually silences genes), histone modification (acetylation, methylation — activates or silences), and non-coding RNA regulation. Epigenetic marks respond to environment and can be transgenerational. Critical in development, cancer, and ageing."
+    "5 Scopes of Biology Biology is very important as it helps us to understand nature and living things and adjust to our surroundings.",
+    "Its application extends far beyond basic scientific research, impacting crucial sectors like health, genetics, nursing, agriculture, environmental science, and conservation.",
+    "The diverse scopes of biology underscore its importance in addressing societal challenges and advancing technological innovations that benefit both humans and the environment.",
+    "Some important scopes of biology can be discussed under following heads: 1.",
+    "In the Field of Health, Disease and Medicine: Biology provides essential knowledge for understanding human health, disease mechanisms, and developing medical treatments.",
+    "It helps to maintain health and control epidemic diseases, offering insights into controlling and curing diseases transmitted by parasites like Anopheles (malaria), sandfly (kala-azar), Tse-tse (sleeping sickness), and housefly (typhoid).",
+    "Advancements in medical technology often involve testing drugs and vaccines on animals.",
+    "In the Field of agriculture: Agriculture is a part of applied biology."
   ],
   "confusion": [
-    "Biology is not just the study of 'living things' in a vague sense — it has precise definitions at each level of organisation and each branch has specific methodologies and boundaries.",
-    "Taxonomy is classification (naming and grouping); systematics is about evolutionary relationships (constructing phylogenetic trees). They overlap but are distinct disciplines.",
-    "Physiology studies HOW organisms function; anatomy studies WHAT organisms are made of (structure). Do not confuse function with structure.",
-    "Microbiology is not just bacteria — it includes viruses (acellular), fungi, protozoa, algae, and prions. Each requires different approaches.",
-    "Evolution is NOT progress toward perfection; it is change in heritable traits over generations driven by natural selection, genetic drift, mutation, and gene flow. There is no 'goal' of evolution.",
-    "Botany is a formal discipline with defined sub-fields (phycology, bryology, pteridology, mycology); 'plant biology' is a broader informal term encompassing molecular and applied approaches to plants.",
-    "Biotechnology is NOT the same as genetic engineering — genetic engineering is one tool within biotechnology; biotechnology also includes traditional techniques like fermentation (beer, cheese), selective breeding, and tissue culture.",
-    "Ecology is NOT the same as environmental science — ecology specifically studies organism-environment interactions; environmental science is interdisciplinary, adding chemistry, policy, economics, and ethics.",
-    "Phylogenetics and systematics are closely related but distinct — phylogenetics provides the methodology (how to reconstruct trees); systematics is the broader discipline (what the trees tell us about relationships).",
-    "Extremophiles are NOT pathogens of extreme environments — extremophiles thrive IN extreme conditions; pathogens cause disease in hosts regardless of environmental extremity.",
-    "Bioluminescence (chemical light production) is distinct from biofluorescence (absorbing UV/blue light and re-emitting visible light) and phosphorescence (delayed emission). Do not confuse these mechanisms.",
-    "Epigenetics is NOT genetic mutation — epigenetic changes alter gene expression WITHOUT changing the DNA sequence itself, though they can be heritable across cell divisions and sometimes generations.",
-    "Phylogenetics is not just 'making family trees' — it uses mathematical models of sequence evolution (substitution matrices, molecular clocks) to quantify relationships and divergence times.",
-    "Biomathematics is NOT just 'math applied to biology' — it develops mathematical theories specifically inspired by biological problems (e.g., reaction-diffusion models for pattern formation).",
-    "Evo-devo is not just developmental biology — it specifically asks how developmental PROGRAMS have evolved and how changes in Hox genes and signalling pathways produce evolutionary novelty (new structures)."
+    "Distinguish between key concepts in Scope and Fields of Biology.",
+    "Understand the differences between similar topics.",
+    "Practice identifying the correct application of principles."
   ],
   "practice": [
-    "List all levels of biological organisation from smallest to largest: molecule → organelle → cell → tissue → organ → organ system → organism → population → community → ecosystem → biosphere. Give one specific example at each level (e.g., haemoglobin molecule → ribosome → red blood cell → blood tissue → heart → circulatory system → human → human population → forest community → coral reef ecosystem → biosphere).",
-    "Classify the following organisms into the three-domain system and justify: E. coli (Bacteria), Saccharomyces cerevisiae/yeast (Eukarya), Homo sapiens/human (Eukarya), Nostoc/cyanobacteria (Bacteria), Methanobacterium/archaea from hot springs (Archaea). Explain why each belongs to its domain.",
-    "Explain how a single organism (e.g., a human or a tree) can be studied at every level of organisation from molecule (DNA, proteins) to biosphere (ecosystem impact). Draw the connections between levels.",
-    "Map out which biological sub-disciplines would be involved in studying a coral reef ecosystem: molecular biology (coral symbiont genomics), cell biology (coral polyp cells), physiology (coral bleaching mechanism), ecology (food web), evolutionary biology (coral speciation), conservation biology (reef protection), marine biology (oceanographic context), climate science (ocean warming)).",
-    "Distinguish between taxonomy and systematics using the classification of humans (Homo sapiens: Animalia → Chordata → Mammalia → Primates → Hominidae → Homo → sapiens). Taxonomy gives the classification; systematics explains WHY the classification looks this way (evolutionary relationships).",
-    "A new species of deep-sea fish is discovered at 4000 m depth. Describe the biological sub-disciplines you would consult: taxonomy (formally describe and name the species), morphology (describe body features), physiology (adaptation to high pressure), ecology (what it eats, what eats it), evolutionary biology (phylogenetic relationships), biogeography (why found at this depth), conservation biology (threats from deep-sea mining).",
-    "Explain why virology is considered a 'border' discipline of biology. Viruses lack cells, cannot metabolise, cannot reproduce independently — yet they evolve, have genomes, and are subject to natural selection. They are obligate intracellular parasites.",
-    "Construct a phylogenetic tree for five organisms (human, chimpanzee, rat, chicken, yeast) using morphological and molecular evidence. Explain which branching pattern is most supported: the tree should show human and chimp as sister taxa, rat further from primates, chicken (reptile) more distant, yeast (fungus) most distant."
+    "Review the main points from Scope and Fields of Biology.",
+    "Practice answering questions from this topic.",
+    "Connect concepts to other topics in the chapter."
   ],
   "universalFacts": [
-    "Biology is uniquely interdisciplinary — no other science touches so many other fields in everyday practice. Biology connects to medicine, agriculture, law (forensic biology), ethics, economics, and even philosophy.",
-    "The hierarchy of biological organisation (molecule → biosphere) is a recurring framework used across all biology courses and research programmes.",
-    "Every branch of biology shares the same core themes: evolution (change over time), energy flow (metabolism), information transfer (DNA → RNA → protein), and homeostasis (maintaining internal stability).",
-    "The number of described species is estimated at 1.5–2 million, but total species (including undescribed invertebrates, deep-sea organisms, and soil microbes) may exceed 8–10 million — the vast majority remain unknown.",
-    "Biology is the only science that studies its own origins — the origin of life from non-living matter through chemical evolution (abiogenesis). This remains one of the greatest unsolved questions.",
-    "All known life on Earth shares the same genetic code (almost universal), suggesting a single common ancestor for all organisms (universal common ancestor).",
-    "The deepest branches of the tree of life are occupied by prokaryotes (Bacteria and Archaea), which diverged from each other and from eukaryotes over 3 billion years ago.",
-    "Biology has more sub-disciplines than any other science — over 150 recognised branches — reflecting the extraordinary diversity of life and the many ways humans interact with it.",
-    "The same fundamental molecules (DNA, RNA, proteins, lipids, carbohydrates) are used by every known organism, from the simplest bacterium to the largest whale — evidence for common descent.",
-    "Biology is experiencing a data revolution: the amount of biological data doubles roughly every 2 years, driven by high-throughput sequencing, cryo-EM imaging, and computational biology."
+    "Scope and Fields of Biology is a fundamental concept in biology.",
+    "Understanding Scope and Fields of Biology helps explain biological phenomena.",
+    "Scope and Fields of Biology connects to other areas of science."
   ],
   "animation3D": "introduction-to-biology",
   "motionGraphics": "introduction-to-biology",
   "examples": [
-    "Example 1: Real-world application of Introduction to Biology: scope and fields of biology",
-    "Example 2: Practical demonstration of Introduction to Biology: scope and fields of biology concepts",
-    "Example 3: Numerical problem on Introduction to Biology: scope and fields of biology",
-    "Example 4: Diagram-based question on Introduction to Biology: scope and fields of biology",
-    "Example 5: Application in daily life involving Introduction to Biology: scope and fields of biology"
+    "Example of Scope and Fields of Biology in nature",
+    "Application of Scope and Fields of Biology in medicine",
+    "Real-world scenario involving Scope and Fields of Biology"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Introduction to Biology: scope and fields of biology with suitable example.",
-    "Q2. Solve problems related to Introduction to Biology: scope and fields of biology.",
-    "Q3. Differentiate between various aspects of Introduction to Biology: scope and fields of biology.",
-    "Q4. Derive the key formula related to Introduction to Biology: scope and fields of biology.",
-    "Q5. What are the applications of Introduction to Biology: scope and fields of biology?"
+    "Define and explain Scope and Fields of Biology with example.",
+    "Describe the key features of Scope and Fields of Biology.",
+    "Compare and contrast Scope and Fields of Biology with related concepts."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Introduction to Biology: scope and fields of biology",
-    "Key Formula 2: Mathematical expression of Introduction to Biology: scope and fields of biology",
-    "Key Formula 3: Application formula for Introduction to Biology: scope and fields of biology",
-    "Key Formula 4: Derivation result for Introduction to Biology: scope and fields of biology",
-    "Key Formula 5: Important relation in Introduction to Biology: scope and fields of biology"
+    "Formula 1",
+    "Formula 2"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Introduction to Biology: scope and fields of biology",
-    "Key Point 2: Essential theorem or principle related to Introduction to Biology: scope and fields of biology",
-    "Key Point 3: Important condition or constraint for Introduction to Biology: scope and fields of biology",
-    "Key Point 4: Common applications of Introduction to Biology: scope and fields of biology",
-    "Key Point 5: Connection to other topics in Science"
+    "5 Scopes of Biology Biology is very important as it helps us to understand nature and living things and adjust to our surroundings.",
+    "Its application extends far beyond basic scientific research, impacting crucial sectors like health, genetics, nursing, agriculture, environmental science, and conservation.",
+    "The diverse scopes of biology underscore its importance in addressing societal challenges and advancing technological innovations that benefit both humans and the environment.",
+    "Some important scopes of biology can be discussed under following heads: 1.",
+    "In the Field of Health, Disease and Medicine: Biology provides essential knowledge for understanding human health, disease mechanisms, and developing medical treatments."
   ],
-  "summary": "Introduction to Biology: scope and fields of biology is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Figure 6.5 Scopes of Biology \n \nBiology is very important as it helps us to understand nature and living things and adjust to our \nsurroundings.  Its  application  extends far  beyond basic scientific  research,  impacting  crucial \nsectors like health, genetics, nursing, agriculture, environmental science, and conservation. The \ndiverse  scopes  of  biology  underscore  its  importance  in  addressing  societal  challenges  and \nadvancing  technological  innovations  that  benefit  both  humans",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Introduction to Biology: scope and fields of biology applies",
-    "Note 2: Introduction to Biology: scope and fields of biology connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Introduction to Biology: scope and fields of biology",
-    "Note 4: Remember the units and dimensions involved in Introduction to Biology: scope and fields of biology",
-    "Note 5: Introduction to Biology: scope and fields of biology frequently appears in examination questions"
+    "Pay attention to key terminology in Scope and Fields of Biology.",
+    "Connect this topic to other biological concepts."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Introduction to Biology: scope and fields of biology",
-    "Statement 2: Theorem related to Introduction to Biology: scope and fields of biology",
-    "Statement 3: Condition for Introduction to Biology: scope and fields of biology to be valid",
-    "Statement 4: Principle governing Introduction to Biology: scope and fields of biology",
-    "Statement 5: Corollary or consequence of Introduction to Biology: scope and fields of biology"
+    "5 Scopes of Biology Biology is very important as it helps us to understand nature and living things and adjust to our surroundings.",
+    "Its application extends far beyond basic scientific research, impacting crucial sectors like health, genetics, nursing, agriculture, environmental science, and conservation.",
+    "The diverse scopes of biology underscore its importance in addressing societal challenges and advancing technological innovations that benefit both humans and the environment."
   ],
   "importantNotes": [
-    "Note 1: Introduction to Biology: scope and fields of biology is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Introduction to Biology: scope and fields of biology",
-    "Note 3: Introduction to Biology: scope and fields of biology has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Introduction to Biology: scope and fields of biology",
-    "Note 5: Cross-check your answers using alternative methods for Introduction to Biology: scope and fields of biology"
+    "5 Scopes of Biology Biology is very important as it helps us to understand nature and living things and adjust to our surroundings.",
+    "Its application extends far beyond basic scientific research, impacting crucial sectors like health, genetics, nursing, agriculture, environmental science, and conservation.",
+    "The diverse scopes of biology underscore its importance in addressing societal challenges and advancing technological innovations that benefit both humans and the environment.",
+    "Some important scopes of biology can be discussed under following heads: 1."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Introduction to Biology: scope and fields of biology formula",
-    "Trick 2: Elimination technique for Introduction to Biology: scope and fields of biology MCQs",
-    "Trick 3: Dimensional analysis shortcut for Introduction to Biology: scope and fields of biology",
-    "Trick 4: Memory aid for Introduction to Biology: scope and fields of biology formulas",
-    "Trick 5: Time-saving approach for Introduction to Biology: scope and fields of biology problems"
+    "Focus on definitions and classifications.",
+    "Use diagrams to understand Scope and Fields of Biology."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Introduction to Biology: scope and fields of biology",
-    "Exam Tip 2: Practice previous year questions on Introduction to Biology: scope and fields of biology",
-    "Exam Tip 3: Introduction to Biology: scope and fields of biology carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Introduction to Biology: scope and fields of biology thoroughly",
-    "Exam Tip 5: Review common mistakes related to Introduction to Biology: scope and fields of biology"
+    "Scope and Fields of Biology is frequently tested.",
+    "Practice writing detailed answers."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Introduction to Biology: scope and fields of biology?",
+      "question": "According to the text, which statement is true about Scopes Biology Biology?",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "Statement related to the topic",
+        "Alternative interpretation",
+        "Related concept from another topic",
+        "Unrelated statement"
       ],
       "answer": "A"
     },
     {
-      "question": "The primary application of Introduction to Biology: scope and fields of biology is in:",
+      "question": "According to the text, which statement is true about application extends beyond?",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "Statement related to the topic",
+        "Alternative interpretation",
+        "Related concept from another topic",
+        "Unrelated statement"
       ],
       "answer": "A"
     },
     {
-      "question": "For Introduction to Biology: scope and fields of biology, which condition is necessary?",
+      "question": "According to the text, which statement is true about diverse scopes biology?",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "Statement related to the topic",
+        "Alternative interpretation",
+        "Related concept from another topic",
+        "Unrelated statement"
       ],
       "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Introduction to Biology: scope and fields of biology?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Introduction to Biology: scope and fields of biology is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Introduction to Biology: scope and fields of biology",
-    "Concept 2: Key theorem or principle in Introduction to Biology: scope and fields of biology",
-    "Concept 3: Important application area of Introduction to Biology: scope and fields of biology",
-    "Concept 4: Fundamental relationship in Introduction to Biology: scope and fields of biology",
-    "Concept 5: Connection between Introduction to Biology: scope and fields of biology and other topics"
+    "5 Scopes of Biology Biology is very important as it helps us to understand nature and living things and adjust to our surroundings.",
+    "Its application extends far beyond basic scientific research, impacting crucial sectors like health, genetics, nursing, agriculture, environmental science, and conservation.",
+    "The diverse scopes of biology underscore its importance in addressing societal challenges and advancing technological innovations that benefit both humans and the environment.",
+    "Some important scopes of biology can be discussed under following heads: 1.",
+    "In the Field of Health, Disease and Medicine: Biology provides essential knowledge for understanding human health, disease mechanisms, and developing medical treatments."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Introduction to Biology: scope and fields of biology",
-    "Task 2: Derive the main formula for Introduction to Biology: scope and fields of biology",
-    "Task 3: Create a concept map for Introduction to Biology: scope and fields of biology",
-    "Task 4: Practice previous year exam questions on Introduction to Biology: scope and fields of biology",
-    "Task 5: Explain Introduction to Biology: scope and fields of biology to a peer or study group"
+    "Study the definitions and key terms.",
+    "Create a summary of Scope and Fields of Biology.",
+    "Practice with previous exam questions."
+  ],
+  "duplicateType": 2,
+  "tabGroup": "scope-fields-biology",
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
   ]
 }

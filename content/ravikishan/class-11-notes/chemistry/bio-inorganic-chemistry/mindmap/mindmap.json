@@ -1,10 +1,64 @@
 {
-  "title": "bio-inorganic-chemistry Mindmap",
+  "title": "bio inorganic chemistry Mindmap",
   "unitSlug": "bio-inorganic-chemistry",
   "topicSlug": "bio-inorganic-chemistry-mindmap",
-  "topicTitle": "bio inorganic chemistry — interactive concept map",
+  "topicTitle": "bio inorganic chemistry interactive concept map",
   "relevance": 0,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Study of bio inorganic chemistry concepts."
+  ],
+  "mindmap": {
+    "centralConcept": "BIO INORGANIC CHEMISTRY",
+    "branches": [
+      {
+        "topic": "Core Concepts",
+        "subtopics": [
+          {
+            "name": "Fundamentals",
+            "points": [
+              "Key Definitions",
+              "Basic Theories",
+              "Historical Context"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Properties",
+        "subtopics": [
+          {
+            "name": "Physical",
+            "points": [
+              "State",
+              "Melting/Boiling Points"
+            ]
+          },
+          {
+            "name": "Chemical",
+            "points": [
+              "Reactivity",
+              "Periodic Trends"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications",
+        "subtopics": [
+          {
+            "name": "Industrial",
+            "points": [
+              "Manufacturing Processes",
+              "Practical Uses",
+              "Environmental Impact"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  }
 }

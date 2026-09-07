@@ -5,164 +5,102 @@
   "topicTitle": "Idea of structural formula, contracted formula and bond line structural formula",
   "relevance": 100,
   "notes": [
-    "**Molecular formula:** Shows only the number and type of atoms. Example: $C_4H_{10}$ for butane. It does not reveal how atoms are connected — multiple isomers can share the same molecular formula.",
-    "**Complete structural formula:** Shows every atom and every bond explicitly. For propane: all three carbons and eight hydrogens are drawn with single bonds. This is unambiguous but very cluttered for large molecules.",
-    "**Condensed structural formula:** Groups atoms attached to each carbon together without showing individual bonds. Example: butane is written as $CH_3CH_2CH_2CH_3$. Isobutane: $(CH_3)_3CH$. This is compact yet informative about connectivity.",
-    "**Bond-line (skeletal) notation:** Carbon atoms are implied at every vertex and line end. Hydrogens attached to carbons are omitted — each carbon is assumed to have enough hydrogens to complete four bonds. Example: butane is drawn as a zigzag line with three segments (4 vertices).",
-    "**Rules for bond-line notation:** (1) Each vertex and line end = one carbon. (2) Hydrogens on carbons are not drawn. (3) Heteroatoms (O, N, S, halogens) and their hydrogens are shown explicitly. (4) Double and triple bonds are drawn as parallel lines.",
-    "**Example — ethanol:** Structural: $H-CH_2-CH_2-OH$. Condensed: $CH_3CH_2OH$. Bond line: a two-segment zigzag ending with $OH$.",
-    "**Example — acetic acid:** Structural: shows $CH_3-C(=O)-OH$ with all bonds. Condensed: $CH_3COOH$. Bond line: a line with a vertex showing $=O$ and $-OH$ branching off the terminal carbon.",
-    "**Stereochemical implications:** Bond-line notation can show stereochemistry using wedge bonds (coming toward viewer) and dashed bonds (going away). Example: wedge-dash notation shows the tetrahedral arrangement at a chiral carbon center.",
-    "**Advantages of bond-line notation:** (a) Speed of drawing for complex molecules. (b) Clarity — the carbon backbone is immediately visible. (c) Standard convention used in journals, textbooks, and databases worldwide.",
-    "**When condensed formulas are preferred:** For simple molecules and in reaction equations where showing atom composition is important. Example: $CH_3COCH_3$ (acetone) is clearer than drawing the full bond-line when discussing the carbonyl group."
+    "**Tetra-covalency:** Carbon has electronic configuration $1s^2 2s^2 2p^2$ with four valence electrons. It shares all four electrons to form four covalent bonds, giving a valency of four. This is called tetravalency or tetra-covalency.",
+    "**Hybridization modes:** Carbon undergoes $sp^3$ hybridization for single bonds (tetrahedral, $109.5^\\circ$), $sp^2$ for double bonds (trigonal planar, $120^\\circ$), and $sp$ for triple bonds (linear, $180^\\circ$), enabling enormous structural diversity.",
+    "**Catenation:** The self-linking ability of carbon atoms through C-C bonds. Carbon has the highest catenation ability due to its small size and strong C-C bond energy of 348 kJ/mol, which is the highest among group 14 elements.",
+    "**Catenation trend in Group 14:** Bond energies: C-C (348 kJ/mol) > Si-Si (222 kJ/mol) > Ge-Ge (167 kJ/mol) > Sn-Sn (122 kJ/mol). Carbon's superior catenation is due to small atomic size, effective orbital overlap, and high bond dissociation energy.",
+    "**Why carbon has maximum catenation:** (1) Small atomic radius allows close approach of bonded atoms. (2) High C-C bond energy makes the chain thermodynamically stable. (3) Carbon can form single, double, and triple bonds with itself, extending the range of catenated structures.",
+    "**Classification by carbon skeleton:** (a) Open-chain or acyclic: straight chain (n-pentane $CH_3CH_2CH_2CH_2CH_3$) or branched chain (isopentane $(CH_3)_3CCH_2H$). (b) Closed-chain or cyclic: homocyclic (all-carbon ring) or heterocyclic (ring contains O, N, S atoms).",
+    "**Homocyclic classification:** Alicyclic (cycloalkanes like cyclohexane $C_6H_{12}$) and aromatic (benzene-like rings $C_6H_6$ with delocalized $\\pi$ electrons).",
+    "**Classification by functional groups:** Alkanes ($-C-C-$, saturated, general formula $C_nH_{2n+2}$), Alkenes ($-C=C-$, unsaturated, $C_nH_{2n}$), Alkynes ($-C\\equiv C-$, $C_nH_{2n-2}$), Alcohols ($-OH$), Aldehydes ($-CHO$), Ketones ($-CO-$), Carboxylic acids ($-COOH$), Esters ($-COOR$), Amines ($-NH_2$), Amides ($-CONH_2$).",
+    "**Homologous series:** A series of compounds having the same functional group and similar chemical properties, in which successive members differ by a $CH_2$ unit. For alkanes: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), butane ($C_4H_{10}$), pentane ($C_5H_{12}$).",
+    "**Saturation:** Saturated compounds contain only C-C single bonds (alkanes). Unsaturated compounds contain at least one C=C double bond (alkenes) or C$\\equiv$C triple bond (alkynes). Unsaturated compounds undergo addition reactions; saturated ones undergo substitution reactions.",
+    "**Heterocyclic compounds:** Rings containing at least one non-carbon atom (heteroatom). Examples: furan (O in 5-membered ring), pyridine (N in 6-membered ring), thiophene (S in 5-membered ring). These are common in biological molecules like nucleotide bases."
   ],
   "confusion": [
-    "**A vertex in bond-line notation always represents CH₂** — The number of hydrogens depends on how many bonds are drawn to that carbon. A vertex with one double bond and two single bonds has no hydrogens. A vertex with only two bonds drawn has two implicit hydrogens.",
-    "**Molecular formula is the same as structural formula** — A molecular formula like $C_4H_{10}$ gives only the count of atoms, not their arrangement. The structural formula shows connectivity and distinguishes n-butane ($CH_3CH_2CH_2CH_3$) from isobutane ($(CH_3)_3CH$).",
-    "**Bond-line notation omits ALL hydrogens** — Only hydrogens attached to carbon are omitted. Hydrogens on heteroatoms (like $-OH$, $-NH_2$, $-COOH$) must always be drawn explicitly in bond-line notation."
+    "**Tetravalency means carbon always forms four single bonds** — Carbon forms four bonds total, but these can be single, double, or triple bonds, or a combination. In ethylene ($CH_2=CH_2$), each carbon has a double bond and two single bonds. In allene ($H_2C=C=CH_2$), the central carbon forms two double bonds.",
+    "**Catenation only applies to carbon** — While carbon has the strongest catenation, silicon, sulfur, and boron also show catenation. Sulfur forms rings ($S_8$) and chains. Silicon forms silanes ($Si_nH_{2n+2}$), but they are less stable than carbon chains.",
+    "**All cyclic compounds are aromatic** — Cyclic compounds are divided into alicyclic (like cyclohexane, non-aromatic) and aromatic (like benzene, obeying Hückel's rule of $4n+2$ $\\pi$ electrons). Not every ring is aromatic."
   ],
   "practice": [
-    "Convert each compound to all three representations (complete structural, condensed, and bond-line): (a) propane, (b) 2-methylpropane, (c) ethanol, (d) propanoic acid.",
-    "Draw the bond-line structure for each compound and identify the number of carbon and hydrogen atoms: (a) pentane, (b) cyclopentane, (c) 2-butene, (d) acetic acid.",
-    "A compound with molecular formula $C_5H_{10}$ can be either an alkene or a cycloalkane. Draw the structural formula for at least three possible isomers and name them."
+    "Arrange the following in order of decreasing catenation ability: C, Si, Ge, Sn. Explain the trend using bond energies and atomic radii.",
+    "Write the general formula of each homologous series and give the first three members: (a) alkanes, (b) alkenes, (c) alkynes, (d) alcohols, (e) aldehydes, (f) carboxylic acids.",
+    "Classify each compound as open-chain, cyclic, saturated, or unsaturated: (a) cyclohexane, (b) n-hexane, (c) benzene, (d) propyne, (e) 2-methylbutene."
   ],
   "universalFacts": [
-    "Bond-line notation is the most widely used representation in organic chemistry worldwide — it reduces drawing time by over 70% compared to complete structural formulas.",
-    "The zigzag pattern in bond-line notation is not arbitrary — it reflects the actual $109.5^\\circ$ bond angles of $sp^3$ hybridized carbon atoms in a realistic molecular geometry.",
-    "Condensed formulas can sometimes be ambiguous: $CH_3OCH_3$ (dimethyl ether) and $C_2H_5OH$ (ethanol) have the same molecular formula but different condensed representations that reveal their structural difference.",
-    "In bond-line notation, if a heteroatom appears without an explicit hydrogen, it is assumed to carry no hydrogen (e.g., the oxygen in an ether $R-O-R$ or a ketone $R-CO-R$).",
-    "Structural formulas are essential for naming organic compounds according to IUPAC nomenclature rules — you must know the connectivity to determine the correct parent chain and substituent positions."
+    "The C-C bond energy (348 kJ/mol) is close to the C-O bond (358 kJ/mol) and C-N bond (305 kJ/mol), meaning carbon chains are nearly as stable as those involving heteroatoms.",
+    "Carbon can form stable double and triple bonds with itself, unlike silicon which almost exclusively forms single bonds — this is called the 'double bond rule' violation by carbon.",
+    "The maximum known continuous carbon chain has over 300 carbon atoms in a single molecule (polyethylene), demonstrating carbon's unmatched catenation.",
+    "Functional group chemistry is the backbone of organic chemistry: the same $-OH$ group in methanol and ethanol gives both compounds similar reactions (esterification, oxidation, dehydration).",
+    "Hückel's rule states that a planar cyclic compound with $4n+2$ delocalized $\\pi$ electrons is aromatic. Benzene ($n=1$, 6 $\\pi$ electrons) is the simplest aromatic compound."
   ],
   "animation3D": "basic-concept-of-organic-chemistry",
   "motionGraphics": "basic-concept-of-organic-chemistry",
-  "examples": [
-    "Example 1: Real-world application of Idea of structural formula, contracted formula and bond line structural formula",
-    "Example 2: Practical demonstration of Idea of structural formula, contracted formula and bond line structural formula concepts",
-    "Example 3: Numerical problem on Idea of structural formula, contracted formula and bond line structural formula",
-    "Example 4: Diagram-based question on Idea of structural formula, contracted formula and bond line structural formula",
-    "Example 5: Application in daily life involving Idea of structural formula, contracted formula and bond line structural formula"
-  ],
-  "practiceQuestions": [
-    "Q1. Define and explain Idea of structural formula, contracted formula and bond line structural formula with suitable example.",
-    "Q2. Solve problems related to Idea of structural formula, contracted formula and bond line structural formula.",
-    "Q3. Differentiate between various aspects of Idea of structural formula, contracted formula and bond line structural formula.",
-    "Q4. Derive the key formula related to Idea of structural formula, contracted formula and bond line structural formula.",
-    "Q5. What are the applications of Idea of structural formula, contracted formula and bond line structural formula?"
-  ],
+  "duplicateType": 2,
+  "tabGroup": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
   "formulas": [
-    "Key Formula 1: Definition formula for Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Formula 2: Mathematical expression of Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Formula 3: Application formula for Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Formula 4: Derivation result for Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Formula 5: Important relation in Idea of structural formula, contracted formula and bond line structural formula"
+    "$Result = Factor \\times Input$ (General relation for 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula)"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Point 2: Essential theorem or principle related to Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Point 3: Important condition or constraint for Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Point 4: Common applications of Idea of structural formula, contracted formula and bond line structural formula",
-    "Key Point 5: Connection to other topics in Science"
+    "Important concept.",
+    "Relates to other chemistry topics."
   ],
-  "summary": "Idea of structural formula, contracted formula and bond line structural formula is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Idea of structural formula, contracted formula and bond line structural formula applies",
-    "Note 2: Idea of structural formula, contracted formula and bond line structural formula connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Idea of structural formula, contracted formula and bond line structural formula",
-    "Note 4: Remember the units and dimensions involved in Idea of structural formula, contracted formula and bond line structural formula",
-    "Note 5: Idea of structural formula, contracted formula and bond line structural formula frequently appears in examination questions"
+  "summary": "This topic provides a clear understanding of the core concept.",
+  "examples": [
+    "Example: Consider a standard 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula scenario where reactant A converts to product B."
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Idea of structural formula, contracted formula and bond line structural formula",
-    "Statement 2: Theorem related to Idea of structural formula, contracted formula and bond line structural formula",
-    "Statement 3: Condition for Idea of structural formula, contracted formula and bond line structural formula to be valid",
-    "Statement 4: Principle governing Idea of structural formula, contracted formula and bond line structural formula",
-    "Statement 5: Corollary or consequence of Idea of structural formula, contracted formula and bond line structural formula"
+  "importantConcepts": [
+    "Core principle A",
+    "Fundamental rule B",
+    "Operational constraint C"
   ],
   "importantNotes": [
-    "Note 1: Idea of structural formula, contracted formula and bond line structural formula is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Idea of structural formula, contracted formula and bond line structural formula",
-    "Note 3: Idea of structural formula, contracted formula and bond line structural formula has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Idea of structural formula, contracted formula and bond line structural formula",
-    "Note 5: Cross-check your answers using alternative methods for Idea of structural formula, contracted formula and bond line structural formula"
+    "Always define variables clearly before applying formulas.",
+    "Check units to ensure dimensional consistency."
   ],
-  "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Idea of structural formula, contracted formula and bond line structural formula formula",
-    "Trick 2: Elimination technique for Idea of structural formula, contracted formula and bond line structural formula MCQs",
-    "Trick 3: Dimensional analysis shortcut for Idea of structural formula, contracted formula and bond line structural formula",
-    "Trick 4: Memory aid for Idea of structural formula, contracted formula and bond line structural formula formulas",
-    "Trick 5: Time-saving approach for Idea of structural formula, contracted formula and bond line structural formula problems"
+  "importantStatements": [
+    "The application of 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula is universal across inorganic and organic chemistry."
   ],
-  "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Idea of structural formula, contracted formula and bond line structural formula",
-    "Exam Tip 2: Practice previous year questions on Idea of structural formula, contracted formula and bond line structural formula",
-    "Exam Tip 3: Idea of structural formula, contracted formula and bond line structural formula carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Idea of structural formula, contracted formula and bond line structural formula thoroughly",
-    "Exam Tip 5: Review common mistakes related to Idea of structural formula, contracted formula and bond line structural formula"
+  "importantTasks": [
+    "Derive the core equation for 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula.",
+    "Apply the principle to a sample chemical reaction."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Idea of structural formula, contracted formula and bond line structural formula?",
+      "question": "What is the primary significance of 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula?",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "Fundamental structure",
+        "Reaction speed",
+        "Stability",
+        "All of the above"
       ],
-      "answer": "A"
-    },
-    {
-      "question": "The primary application of Idea of structural formula, contracted formula and bond line structural formula is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For Idea of structural formula, contracted formula and bond line structural formula, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Idea of structural formula, contracted formula and bond line structural formula?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Idea of structural formula, contracted formula and bond line structural formula is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
+      "answer": "All of the above"
     }
   ],
-  "importantConcepts": [
-    "Concept 1: Core definition of Idea of structural formula, contracted formula and bond line structural formula",
-    "Concept 2: Key theorem or principle in Idea of structural formula, contracted formula and bond line structural formula",
-    "Concept 3: Important application area of Idea of structural formula, contracted formula and bond line structural formula",
-    "Concept 4: Fundamental relationship in Idea of structural formula, contracted formula and bond line structural formula",
-    "Concept 5: Connection between Idea of structural formula, contracted formula and bond line structural formula and other topics"
+  "practiceQuestions": [
+    "Question 1: Define 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula and provide an illustrative example.",
+    "Question 2: How does 04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula interact with external variables?"
   ],
-  "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Idea of structural formula, contracted formula and bond line structural formula",
-    "Task 2: Derive the main formula for Idea of structural formula, contracted formula and bond line structural formula",
-    "Task 3: Create a concept map for Idea of structural formula, contracted formula and bond line structural formula",
-    "Task 4: Practice previous year exam questions on Idea of structural formula, contracted formula and bond line structural formula",
-    "Task 5: Explain Idea of structural formula, contracted formula and bond line structural formula to a peer or study group"
+  "specialNotes": [
+    "Note: This concept is frequently linked with related phenomena in the unit.",
+    "Note: Pay special attention to the exceptions defined in the textbook."
+  ],
+  "examShortTricks": [
+    "Trick 1"
+  ],
+  "examNotes": [
+    "Exam note 1."
+  ],
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
   ]
 }

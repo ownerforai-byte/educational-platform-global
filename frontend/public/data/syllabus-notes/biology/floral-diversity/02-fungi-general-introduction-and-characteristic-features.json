@@ -5,182 +5,133 @@
   "topicTitle": "Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
   "relevance": 100,
   "notes": [
-    "**General features:** eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin and polysaccharides, filamentous hyphae forming mycelium, reproduce by spores (asexual and sexual), store food as glycogen or oil, thallus may be unicellular (yeast) or multicellular.",
-    "**Phycomycetes (lower fungi):** asexual spores (zoospores) formed in sporangia, coenocytic hyphae (multinucleate, non-septate). Habitat: freshwater or damp soil. Examples: Rhizopus (bread mould, causes food spoilage), Phytophthora (late blight of potato, Irish famine pathogen). Also includes Oomycetes (water moulds).",
-    "**Ascomycetes (sac fungi):** sexual spores (ascospores) formed inside sac-like asci (8 ascospores per ascus). Ascospores develop inside ascocarps (fruit bodies). Includes yeasts (fermentation, bread making), Penicillium (penicillin production, blue cheese), Aspergillus (food spoilage, aflatoxin), morels and truffles (edible fungi).",
-    "**Basidiomycetes (club fungi):** sexual spores (basidiospores) produced externally on club-shaped basidia, typically four per basidium. Basidia are borne on basidiocarps (mushrooms, toadstools). Includes edible mushrooms, bracket fungi (shelf fungi), rusts (plant pathogens causing rust diseases), and smuts (e.g., loose smut of wheat, covered smut of barley).",
-    "**Deuteromycetes (imperfect fungi):** no known sexual reproductive stage; only asexual reproduction by conidia (mitospores). Conidia are exogenous, haploid spores. Includes Alternaria (leaf spot diseases), Trichoderma (biocontrol agent, antibiotics), and Epidermophyton (causes ringworm in humans and animals).",
-    "**Asexual reproduction in fungi:** vegetative reproduction by fragmentation, fission, budding (in yeasts), and formation of specialized asexual spores: sporangiospores, conidia, zoospores. In ascomycetes, conidia are produced on conidiophores outside the ascus.",
-    "**Sexual reproduction in fungi:** three phases — plasmogamy (fusion of cytoplasm), karyogamy (fusion of nuclei), and meiosis. The sexual cycle may be homothallic (self-fertile) or heterothallic (requires compatible mating types/mating strains). In Basidiomycetes, basidiospores are the dispersal units after karyogamy and meiosis on the basidium.",
-    "**Mycelium and vegetative structure:** the mycelium is the main body of the fungus, composed of a network of hyphae. Septate hyphae have septa (cross-walls) with pores allowing cytoplasm flow; coenocytic hyphae are aseptate and multinucleate. The basal part anchoring to substrate is the holdfast; absorbing hyphae are rhizoids or haustoria (parasites).",
-    "**Economic importance of fungi:** beneficial: food (mushrooms, truffles, yeast in bread/beer), antibiotics (penicillins, cephalosporins), biocontrol agents (Trichoderma, Bacillus thuringiensis), decomposers (organic matter recycling). Harmful: plant pathogens (late blight, rusts, smuts, powdery mildew), human diseases (candidiasis, ringworm, aspergillosis), food spoilage, mycotoxin production (aflatoxin, ochratoxin).",
-    "**Lichens:** symbiotic association between fungi (mycobiont, provides structure, water retention) and algae or cyanophotobiont (photosynthetic partner). The fungus benefits from carbohydrates; the photobiont benefits from shelter and minerals. Lichens are pollution indicators and pioneers in barren habitats.",
-    "**Fungal cell vs plant cell:** plant cell wall is cellulose; fungal cell wall is chitin (N-acetylglucosamine polysaccharide). Plant cells have plastids; fungal cells lack plastids but may have ergosterol in membranes instead of cholesterol.",
-    "**Important fungal products:** penicillin from Penicillium notatum (first antibiotic, 1928), cyclosporine (organ transplant rejection prevention, from Tolypocladium inflatum), statins (cholesterol-lowering, from Aspergillus terreus), stat and wine yeast (Saccharomyces cerevisiae)."
+    "‘Domains’ are the top level classification that categorizes the life in the most general way.",
+    "The three domain of life is a biological classification discovered by Carl Woese (1990).",
+    "This classification system is also known as “Three Domains Classification” because it divides the life forms into three domains on the basis of differences of rRNA sequence.",
+    "The domains of life are Archaea, Bacteria and Eukarya.",
+    "1 Phylogenetic tree Archaea Bacteria Eukarya 1.",
+    "They are early prokaryotes that live in extreme environments.",
+    "They are all eukaryotic organisms.",
+    "Cell walls is made up of polypeptide or pseudopeptidoglycan."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations.",
-    "Phycomycetes are NOT true fungi in some classifications — they were historically grouped with fungi due to similar morphology but now belong to Stramenopiles/Oomycetes in modern systems. Key difference: Oomycetes have cellulose cell walls and reproduce via zoospores with two flagella (one tinsel, one whiplash).",
-    "Yeast is a fungus, NOT a bacterium. Many students mistakenly call yeast 'bacterial culture' — yeast is eukaryotic with nucleus.",
-    "Bread mould (Rhizopus) and cheese mould (Penicillium) are both fungi, but one produces bread spoilage and the other produces penicillin. Don't confuse their economic roles.",
-    "Ascospores and basidiospores: ascospores form INSIDE asci (sac-like structures) within ascocarps; basidiospores form EXTERNALLY on basidia tips. Do not confuse the two sexual spore types.",
-    "Deuteromycetes were once called 'imperfect fungi' because their sexual stage was unknown, but many have since been reclassified into Ascomycetes or Basidiomycetes once their sexual cycles were discovered. Do not treat Deuteromycetes as a permanent category.",
-    "Fungi are more closely related to animals (both heterotrophic, absorb nutrients) than to plants — fungal membranes contain ergosterol, not cellulose. Do not assume fungi photosynthesize like plants.",
-    "All mushrooms are fungi, but not all fungi are mushrooms. 'Mushroom' refers specifically to the basidiocarp fruit body of certain Basidiomycetes."
+    "Distinguish between key concepts in Three Domains and Classification.",
+    "Understand the differences between similar topics.",
+    "Practice identifying the correct application of principles."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step.",
-    "**Q1:** Which group of fungi produces penicillin? *Ans:* Penicillium (Ascomycetes). Penicillium notatum was discovered by Alexander Fleming in 1928; the secondary metabolite penicillin kills bacteria by inhibiting cell wall synthesis.",
-    "**Q2:** What is the key difference between Phycomycetes and Basidiomycetes? *Ans:* Phycomycetes produce zoospores in sporangia with coenocytic hyphae; Basidiomycetes produce basidiospores externally on basidia and have septate hyphae with clamp connections.",
-    "**Q3:** Differentiate between Ascomycetes and Basidiomycetes based on spore formation. *Ans:* Ascomycetes produce ascospores inside sac-like asci (8 per ascus) within ascocarps; Basidiomycetes produce basidiospores externally on club-shaped basidia (typically 4 per basidium), borne on basidiocarps.",
-    "**Q4:** What are deuteromycetes? Why are they called 'imperfect fungi'? *Ans:* Deuteromycetes are fungi that reproduce only asexually (by conidia), and their sexual reproductive stage is unknown or has never been observed. They are called 'imperfect fungi' because the complete life cycle including sexual reproduction is not known.",
-    "**Q5:** List three economically important fungi and their uses. *Ans:* (1) Penicillium — produces antibiotic penicillin; (2) Saccharomyces cerevisiae — used in bread fermentation and brewing; (3) Agaricus bisporus (mushroom) — edible food source; (4) Rhizobium (symbiotic nitrogen-fixer, often studied with fungi in root nodules).",
-    "**Q6:** What are lichens and what does the fungal partner gain from the association? *Ans:* Lichens are symbiotic associations between a fungus (mycobiont) and an algae/cyanobacterium (photobiont). The fungus gains carbohydrates (sugars) produced by the photobiont through photosynthesis."
+    "Review the main points from Three Domains and Classification.",
+    "Practice answering questions from this topic.",
+    "Connect concepts to other topics in the chapter."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept.",
-    "The first antibiotic, penicillin, was discovered from Penicillium notatum by Alexander Fleming in 1928 — a contaminating mold culture saved millions of lives.",
-    "Fungi are more closely related to animals than to plants — molecular studies show shared ancestry of heterotrophic nutrition, and fungal membranes contain ergosterol (like animal cholesterol) rather than cellulose.",
-    "A single underground mycelium network in Oregon's Malheur National Forest is estimated to be 2,400 years old, covers 3.7 square miles, and is the largest living organism on Earth.",
-    "Yeast (Saccharomyces cerevisiae) has been used in baking and brewing for at least 5,000 years — one of the oldest domesticated microorganisms.",
-    "The global fungal kingdom is estimated to contain 2.2–3.8 million species, but only about 120,000 have been formally described — less than 5% of fungal diversity is known to science."
+    "Three Domains and Classification is a fundamental concept in biology.",
+    "Understanding Three Domains and Classification helps explain biological phenomena.",
+    "Three Domains and Classification connects to other areas of science."
   ],
   "animation3D": "floral-diversity",
   "motionGraphics": "floral-diversity",
   "examples": [
-    "Example 1: Real-world application of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Example 2: Practical demonstration of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes concepts",
-    "Example 3: Numerical problem on Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Example 4: Diagram-based question on Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Example 5: Application in daily life involving Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes"
+    "Example of Three Domains and Classification in nature",
+    "Application of Three Domains and Classification in medicine",
+    "Real-world scenario involving Three Domains and Classification"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes with suitable example.",
-    "Q2. Solve problems related to Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes.",
-    "Q3. Differentiate between various aspects of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes.",
-    "Q4. Derive the key formula related to Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes.",
-    "Q5. What are the applications of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes?"
+    "Define and explain Three Domains and Classification with example.",
+    "Describe the key features of Three Domains and Classification.",
+    "Compare and contrast Three Domains and Classification with related concepts."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Formula 2: Mathematical expression of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Formula 3: Application formula for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Formula 4: Derivation result for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Formula 5: Important relation in Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes"
+    "Formula 1",
+    "Formula 2"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Point 2: Essential theorem or principle related to Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Point 3: Important condition or constraint for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Point 4: Common applications of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Key Point 5: Connection to other topics in Science"
+    "‘Domains’ are the top level classification that categorizes the life in the most general way.",
+    "The three domain of life is a biological classification discovered by Carl Woese (1990).",
+    "This classification system is also known as “Three Domains Classification” because it divides the life forms into three domains on the basis of differences of rRNA sequence.",
+    "The domains of life are Archaea, Bacteria and Eukarya.",
+    "1 Phylogenetic tree Archaea Bacteria Eukarya 1."
   ],
-  "summary": "Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "‘Domains’ are the top level classification  that categorizes the life in the most general way. The \nthree  domain  of  life  is  a  biological  classification  discovered  by  Carl  Woese  (1990).  This \nclassification  system is also known as “Three Domains Classification”  because it divides the \nlife forms  into three domains  on the basis of differences  of rRNA sequence. The domains of \nlife are Archaea, Bacteria and Eukarya.  \n \n          2.1    \n \nIntroduction  to \nFloral Diversity \n\n\n \n ",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes applies",
-    "Note 2: Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Note 4: Remember the units and dimensions involved in Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Note 5: Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes frequently appears in examination questions"
+    "Pay attention to key terminology in Three Domains and Classification.",
+    "Connect this topic to other biological concepts."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Statement 2: Theorem related to Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Statement 3: Condition for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes to be valid",
-    "Statement 4: Principle governing Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Statement 5: Corollary or consequence of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes"
+    "‘Domains’ are the top level classification that categorizes the life in the most general way.",
+    "The three domain of life is a biological classification discovered by Carl Woese (1990).",
+    "This classification system is also known as “Three Domains Classification” because it divides the life forms into three domains on the basis of differences of rRNA sequence."
   ],
   "importantNotes": [
-    "Note 1: Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Note 3: Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Note 5: Cross-check your answers using alternative methods for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes"
+    "‘Domains’ are the top level classification that categorizes the life in the most general way.",
+    "The three domain of life is a biological classification discovered by Carl Woese (1990).",
+    "This classification system is also known as “Three Domains Classification” because it divides the life forms into three domains on the basis of differences of rRNA sequence.",
+    "The domains of life are Archaea, Bacteria and Eukarya."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes formula",
-    "Trick 2: Elimination technique for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes MCQs",
-    "Trick 3: Dimensional analysis shortcut for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Trick 4: Memory aid for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes formulas",
-    "Trick 5: Time-saving approach for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes problems"
+    "Focus on definitions and classifications.",
+    "Use diagrams to understand Three Domains and Classification."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Exam Tip 2: Practice previous year questions on Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Exam Tip 3: Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes thoroughly",
-    "Exam Tip 5: Review common mistakes related to Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes"
+    "Three Domains and Classification is frequently tested.",
+    "Practice writing detailed answers."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes?",
+      "question": "According to the text, which statement is true about ‘Domains’ level classification?",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "Statement related to the topic",
+        "Alternative interpretation",
+        "Related concept from another topic",
+        "Unrelated statement"
       ],
       "answer": "A"
     },
     {
-      "question": "The primary application of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes is in:",
+      "question": "According to the text, which statement is true about three domain life?",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "Statement related to the topic",
+        "Alternative interpretation",
+        "Related concept from another topic",
+        "Unrelated statement"
       ],
       "answer": "A"
     },
     {
-      "question": "For Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes, which condition is necessary?",
+      "question": "According to the text, which statement is true about This classification system?",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "Statement related to the topic",
+        "Alternative interpretation",
+        "Related concept from another topic",
+        "Unrelated statement"
       ],
       "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Concept 2: Key theorem or principle in Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Concept 3: Important application area of Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Concept 4: Fundamental relationship in Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Concept 5: Connection between Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes and other topics"
+    "‘Domains’ are the top level classification that categorizes the life in the most general way.",
+    "The three domain of life is a biological classification discovered by Carl Woese (1990).",
+    "This classification system is also known as “Three Domains Classification” because it divides the life forms into three domains on the basis of differences of rRNA sequence.",
+    "The domains of life are Archaea, Bacteria and Eukarya.",
+    "1 Phylogenetic tree Archaea Bacteria Eukarya 1."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Task 2: Derive the main formula for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Task 3: Create a concept map for Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Task 4: Practice previous year exam questions on Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes",
-    "Task 5: Explain Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes to a peer or study group"
+    "Study the definitions and key terms.",
+    "Create a summary of Three Domains and Classification.",
+    "Practice with previous exam questions."
+  ],
+  "duplicateType": 2,
+  "tabGroup": "life-classification",
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
   ]
 }

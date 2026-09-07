@@ -41,7 +41,10 @@
     "Describe the key features of Monera and Bacteria.",
     "Compare and contrast Monera and Bacteria with related concepts."
   ],
-  "formulas": [],
+  "formulas": [
+    "Formula 1",
+    "Formula 2"
+  ],
   "keyPoints": [
     "Bacteria are the simplest, minute, unicellular prokaryotes that can survive even in diverse environments.",
     "Bacteria are found in all possible habitats wherever life can exist.",
@@ -118,5 +121,17 @@
     "Practice with previous exam questions."
   ],
   "duplicateType": 2,
-  "tabGroup": "monera-bacteria"
+  "tabGroup": "monera-bacteria",
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
+  ]
 }

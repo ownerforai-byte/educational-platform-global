@@ -40,7 +40,10 @@
     "Describe the key features of Animalia: Phyla Classification.",
     "Compare and contrast Animalia: Phyla Classification with related concepts."
   ],
-  "formulas": [],
+  "formulas": [
+    "Formula 1",
+    "Formula 2"
+  ],
   "keyPoints": [
     "The organisms shown in the picture above are Euglena, Paramecium, Fuligo and Plasmodium respectively.",
     "Euglena is a microscopic, unicellular and flagellate organism primariely found in freshwater.",
@@ -117,5 +120,17 @@
     "Practice with previous exam questions."
   ],
   "duplicateType": 2,
-  "tabGroup": "animalia-phyla"
+  "tabGroup": "animalia-phyla",
+  "mcqs": [
+    {
+      "question": "Question?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
+  ]
 }

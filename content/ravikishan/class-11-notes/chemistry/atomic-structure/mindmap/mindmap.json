@@ -1,52 +1,64 @@
 {
-  "title": "Atomic Structure Mindmap",
+  "title": "atomic structure Mindmap",
   "unitSlug": "atomic-structure",
   "topicSlug": "atomic-structure-mindmap",
-  "topicTitle": "atomic structure — interactive concept map",
+  "topicTitle": "atomic structure interactive concept map",
   "relevance": 0,
   "notes": [
-    "Study of atomic structure - understanding the fundamental building blocks of matter.",
-    "Covers subatomic particles, atomic models, quantum mechanics, and electron configuration.",
-    "Key for understanding chemical bonding, periodicity, and reactivity."
+    "Study of atomic structure concepts."
   ],
   "mindmap": {
-    "centralConcept": "Atomic Structure",
+    "centralConcept": "ATOMIC STRUCTURE",
     "branches": [
-      {"topic": "Fundamental Particles", "subtopics": [
-        {"name": "Electron", "points": ["Thomson, e/m ratio, -1.6×10⁻¹⁹ C"]},
-        {"name": "Proton", "points": ["Goldstein, +1.6×10⁻¹⁹ C"]},
-        {"name": "Neutron", "points": ["Chadwick, Neutral"]}
-      ]},
-      {"topic": "Atomic Models", "subtopics": [
-        {"name": "Thomson", "points": ["Plum pudding, positive sphere"]},
-        {"name": "Rutherford", "points": ["Gold foil, nucleus discovered"]},
-        {"name": "Bohr", "points": ["Quantized orbits, hydrogen spectrum"]}
-      ]},
-      {"topic": "Quantum Numbers", "subtopics": [
-        {"name": "n (principal)", "points": ["Energy level, size"]},
-        {"name": "l (azimuthal)", "points": ["Shape, 0 to n-1"]},
-        {"name": "m_l (magnetic)", "points": ["Orientation"]},
-        {"name": "m_s (spin)", "points": ["+½ or -½"]}
-      ]},
-      {"topic": "Electron Config", "subtopics": [
-        {"name": "Rules", "points": ["Aufbau, Pauli, Hund"]},
-        {"name": "Order", "points": ["1s→2s→2p→3s→3p→4s→3d→4p"]},
-        {"name": "Exceptions", "points": ["Cr: 3d⁵4s¹, Cu: 3d¹⁰4s¹"]}
-      ]},
-      {"topic": "Quantum Mechanics", "subtopics": [
-        {"name": "de Broglie", "points": ["λ=h/mv, wave-particle duality"]},
-        {"name": "Heisenberg", "points": ["Uncertainty principle"]},
-        {"name": "Schrödinger", "points": ["Wave equation, ψ² probability"]}
-      ]}
+      {
+        "topic": "Core Concepts",
+        "subtopics": [
+          {
+            "name": "Fundamentals",
+            "points": [
+              "Key Definitions",
+              "Basic Theories",
+              "Historical Context"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Properties",
+        "subtopics": [
+          {
+            "name": "Physical",
+            "points": [
+              "State",
+              "Melting/Boiling Points"
+            ]
+          },
+          {
+            "name": "Chemical",
+            "points": [
+              "Reactivity",
+              "Periodic Trends"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications",
+        "subtopics": [
+          {
+            "name": "Industrial",
+            "points": [
+              "Manufacturing Processes",
+              "Practical Uses",
+              "Environmental Impact"
+            ]
+          }
+        ]
+      }
     ]
+  },
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   }
-}
-  "title": "atomic-structure Mindmap",
-  "unitSlug": "atomic-structure",
-  "topicSlug": "atomic-structure-mindmap",
-  "topicTitle": "atomic structure — interactive concept map",
-  "relevance": 0,
-  "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
 }
