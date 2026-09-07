@@ -911,6 +911,7 @@ ravikishan/
 │   │   │   ├── topics/
 │   │   │   │   └── [topicId]/
 │   │   │   │       └── …
+│   │   │   ├── ai-lab-tutor.tsx
 │   │   │   ├── Analytics.tsx
 │   │   │   ├── animated-arrow-helper.ts
 │   │   │   ├── animated-arrow.tsx
@@ -964,8 +965,7 @@ ravikishan/
 │   │   │   ├── math-advanced-3d.tsx
 │   │   │   ├── math-geometry-3d.tsx
 │   │   │   ├── math-interactive.tsx
-│   │   │   ├── math-modern-3d.tsx
-│   │   │   └── … (59 more entries)
+│   │   │   └── … (61 more entries)
 │   │   ├── layout/
 │   │   │   ├── ai-widget.tsx
 │   │   │   ├── app-shell.tsx
@@ -1738,6 +1738,7 @@ ravikishan/
 ├── check-json.js
 ├── check-output.txt
 ├── check-tir-status.js
+├── ci-status.txt
 ├── cleanup_extra_files.js
 ├── components.json
 ├── create-components.js
@@ -1752,8 +1753,7 @@ ravikishan/
 ├── debug-categorize.js
 ├── debug-detailed.js
 ├── debug-essay-intro-v2.js
-├── debug-essay-intro.js
-└── … (262 more entries)
+└── … (263 more entries)
 ```
 
 ## 🔁 Keeping this up to date

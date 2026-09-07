@@ -33,6 +33,8 @@ import { Class11Biology3DPlus } from "@/components/lab/class11/class11-biology-3
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
+import { AILabTutor } from "@/components/lab/ai-lab-tutor";
+import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 
 /**
@@ -324,13 +326,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     type: "calculator" as const,
     status: "active" as const,
     color: "#f59e0b",
-    component: () => (
-      <PremiumPlaceholder
-        title="AI Lab Tutor"
-        icon={<span className="text-amber-500">🧠</span>}
-        description="Get instant help with lab concepts."
-      />
-    ),
+    component: AILabTutor,
   },
   {
     id: "advanced-circuit",
@@ -528,13 +524,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     type: "3d" as const,
     status: "active" as const,
     color: "#f59e0b",
-    component: () => (
-      <PremiumPlaceholder
-        title="Molecular Builder 3D"
-        icon={<span className="text-amber-500">🔬</span>}
-        description="Build molecules from scratch."
-      />
-    ),
+    component: MolecularBuilder3D,
   },
 
   // ===== BIOLOGY LABS =====

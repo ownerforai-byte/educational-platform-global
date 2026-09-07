@@ -29,6 +29,8 @@ import { TOPIC_3D_MAP, resolveTopic3DKey } from "@/lib/topic-3d-map";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
+import { AILabTutor } from "@/components/lab/ai-lab-tutor";
+import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 import { useSearchParams } from "next/navigation";
 
@@ -186,7 +188,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: <Eye className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <span className="text-blue-500">ðŸš€</span>, status: "active", component: () => <PhysicsLab /> },
     // General
-    { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumPlaceholder title="AI Lab Tutor" icon={<Brain className="h-5 w-5 text-amber-500" />} description="Get instant help with lab concepts." /> },
+    { id: "ai-tutor", title: "AI Lab Tutor", description: "Get instant help with lab concepts. AI explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <AILabTutor /> },
     { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumAdvancedCircuitSimulator /> },
   ],
 
@@ -211,7 +213,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ch-calc-molarmass", title: "Molar Mass Calculator", description: "Enter a chemical formula and get molar mass.", category: "chemistry", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
     { id: "ch-calc-stoich", title: "Stoichiometry Lab", description: "Moles, percent composition, limiting reagent.", category: "chemistry", icon: <Dna className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLab /> },
     // General
-    { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumPlaceholder title="Molecular Builder 3D" icon={<AtomIcon className="h-5 w-5 text-amber-500" />} description="Build molecules from scratch." /> },
+    { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-amber-500" />, status: "active", component: () => <MolecularBuilder3D /> },
   ],
 
   biology: [
