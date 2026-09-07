@@ -78,7 +78,7 @@ const CHEMISTRY = {
     title: 'Chemical Equilibrium',
     notes: ['Dynamic equilibrium: forward rate = backward rate.', 'Kc = [products]/[reactants].', 'Le Chatelier\'s principle.', 'pH = -log[H⁺].'],
     formulas: ['Kc=[C]ᶜ[D]ᵈ/[A]ᵃ[B]ᵇ', 'Kp=Kc(RT)^Δn', 'pH=-log[H⁺]', 'pH+pOH=14', 'Ka×Kb=Kw'],
-    examples: ['Haber process: N₂+3H₂⇌2NH�3 (exothermic, high P favors NH₃)'],
+    examples: ['Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)'],
     keyPoints: ['K changes only with T', 'High P favors fewer gas moles'],
     summary: 'Chemical equilibrium describes equal forward/backward rates; Le Chatelier predicts shifts.',
     mcqs: [
@@ -377,7 +377,7 @@ const CHEMISTRY = {
   },
   'modern-chemical-manufactures': {
     title: 'Modern Chemical Manufactures',
-    notes: ['Petrochemical industry: feeds from crude oil.', 'Pharmaceutical manufacturing: GMP standards.', 'Agrochemicals: fertilizers, pesticides.', 'Green chemistry: atom economy, waste reduction.'],
+    notes: ['Petrochemical industry: feeds from crude oil.', 'Pharmaceutical manufacturing: GMP standards.', 'Fine chemicals: dyes, fragrances, flavors.', 'Specialty chemicals: adhesives, coatings, detergents.'],
     formulas: [],
     examples: ['Ammonia: Haber process (150-300 atm)', 'Sulfuric acid: Contact process'],
     keyPoints: ['Large-scale chemical production', 'Safety and environmental regulations'],
@@ -398,6 +398,59 @@ const CHEMISTRY = {
     importantConcepts: ['Material science','Industrial processes','Manufacturing'],
     exercises: [],
     visualization:{type:'simulation',component:'ManufacturingProcSim',desc:'Manufacturing process flow'}
+  }
+};
+
+// ────────────────────────────────────────────────────────────
+// PER-CONCEPT FILE TOPIC DATA — overrides unit-level for specific files
+// ────────────────────────────────────────────────────────────
+const CHEMISTRY_TOPICS = {
+  'atomic-structure': {
+    topics: {
+      '01-rutherford-alpha-particle-scattering': {
+        title: "Rutherford's Atomic Model — The Alpha-Particle Scattering Experiment",
+        notes: [
+          'Rutherford α-scattering experiment (1911): Dense positive nucleus discovered; most α-particles passed through (atom mostly empty).',
+          'Nucleus contains >99.9% mass but <0.01% volume of atom.',
+          'Scattering angle depends on impact parameter and nuclear charge.',
+          'Most α-particles undeflected → atom is mostly empty space.',
+          'Few particles deflected at large angles → concentrated positive charge at center.'
+        ],
+        formulas: ['Impact parameter: b = (Z₁Z₂e²/4πε₀mv²) cot(θ/2)', 'Nuclear radius ≈ 10⁻¹⁵ m'],
+        examples: ['Gold foil experiment: 1 in 8000 α-particles deflected >90°'],
+        keyPoints: ['Nucleus: ~10⁻¹⁵m diameter', 'Atom is mostly empty space', 'Positive charge concentrated at center'],
+        summary: "Rutherford's α-scattering experiment discovered the nucleus, showing atoms have a tiny, dense, positively charged core surrounded by mostly empty space.",
+        mcqs: [
+          {question:'Most α-particles passed through gold foil because:',options:['Atom is mostly empty space','Nucleus is small','Electrons are small','All of above'],answer:'D'},
+          {question:'Rutherford concluded nucleus is:',options:['Negative','Positive','Neutral','Empty'],answer:'B'}
+        ],
+        importantConcepts: ['Nuclear model','Alpha scattering','Impact parameter'],
+        exercises: [
+          {id:'1', question:'Calculate impact parameter for 5 MeV α-particle scattered at 60° by gold (Z=79)', steps:['Use: b = (Z₁Z₂e²/4πε₀mv²) cot(θ/2)','Given: E=5MeV, θ=60°','Calculate and substitute values'], answer:'~2.7×10⁻¹⁴ m'}
+        ],
+        visualization:{type:'simulation',component:'RutherfordScatteringSim',description:'Interactive α-particle deflection visualization showing how impact parameter affects scattering angle.'}
+      },
+      '01-rutherford-model': {
+        title: 'Rutherford Nuclear Model of the Atom',
+        notes: [
+          'Postulates: (1) Atom has a small, dense, positively charged nucleus. (2) Electrons revolve around nucleus in circular orbits. (3) Electrostatic force provides centripetal force.',
+          'Atomic structure: nucleus (protons+neutrons) at center, electrons in orbits.',
+          'Most of atom is empty space (electrons orbit far from nucleus).',
+          'Nuclear size ~10⁻¹⁵ m; atomic size ~10⁻¹⁰ m — ratio 1:100,000.'
+        ],
+        formulas: ['mv²/r = kZe²/r²', 'F_centripetal = mv²/r', 'F_electrostatic = kZe²/r²'],
+        examples: ['Hydrogen atom: 1 proton, 1 electron; diameter ~10⁻¹⁰ m'],
+        keyPoints: ['Nucleus contains protons (+) and neutrons (neutral)', 'Electrons orbit in defined paths', 'Model explains scattering but not stability'],
+        summary: "Rutherford's nuclear model proposes a tiny, dense, positively charged nucleus surrounded by orbiting electrons, explaining α-scattering results.",
+        mcqs: [
+          {question:'Who proposed nuclear model of atom?',options:['Thomson','Rutherford','Bohr','Dalton'],answer:'B'},
+          {question:'Nucleus contains:',options:['Protons only','Protons and neutrons','Electrons and protons','Neutrons only'],answer:'B'}
+        ],
+        importantConcepts: ['Nuclear model','Atomic structure','Electrostatic attraction'],
+        exercises: [],
+        visualization:{type:'3d-model',component:'RutherfordAtomViewer',desc:'3D visualization of Rutherford nuclear model with nucleus and orbiting electrons'}
+      }
+    }
   }
 };
 
@@ -624,13 +677,20 @@ function updateFile(filePath, data) {
 function processUnit(unitSlug, dataMap, subject) {
   const conceptDir = path.join(ROOT, subject, unitSlug, 'concepts');
   if (!fs.existsSync(conceptDir)) return 0;
-  const data = dataMap[unitSlug];
-  if (!data) return 0;
+  const unitData = dataMap[unitSlug];
+  if (!unitData) return 0;
 
   const files = fs.readdirSync(conceptDir).filter(f => f.endsWith('.json'));
   let updated = 0;
   for (const file of files) {
-    if (updateFile(path.join(conceptDir, file), data)) {
+    // Get topic-specific data if available
+    const topicSlug = file.replace('.json', '');
+    const topicData = unitData.topics ? unitData.topics[topicSlug] : null;
+    
+    // Use topic data if available, otherwise use unit data
+    const dataToUse = topicData || unitData; 
+
+    if (updateFile(path.join(conceptDir, file), dataToUse)) {
       updated++;
       console.log('  ✓', file);
     }

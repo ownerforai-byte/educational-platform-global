@@ -12,22 +12,73 @@
     "Biogeochemical cycles: carbon, nitrogen."
   ],
   "confusion": [
-    "❌ Misconception about 01 ecosystem ecology concept of ecology biotic and abiotic factors species interactions concept of ecosystem structural and functional aspects of pond and forest ecosystem. ✅ Scientific explanation."
+    "❌ Ecology is the same as environmental science. ✅ Ecology studies organism-environment interactions; environmental science is broader, including policy and chemistry.",
+    "❌ Biotic factors are non-living. ✅ Biotic = living (plants, animals, microbes); Abiotic = non-living (light, temperature, water).",
+    "❌ Abiotic factors don't affect species distribution. ✅ Abiotic factors (temperature, pH, salinity) are primary determinants of where organisms live.",
+    "❌ Competition always benefits both species. ✅ Competition harms both (−/−); mutualism benefits both (+/+); predation benefits one, harms other (+/−).",
+    "❌ A food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected, complex feeding relationships.",
+    "❌ 90% of energy transfers to the next trophic level. ✅ Only ~10% transfers; ~90% lost as heat at each level (10% rule).",
+    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
+    "❌ An ecosystem includes only living organisms. ✅ Ecosystem = biotic community + abiotic environment interacting as a system.",
+    "❌ Pond and forest ecosystems have the same structure. ✅ Pond: aquatic, open water column, phytoplankton-dominated; Forest: terrestrial, stratified canopy, detritus-dominated.",
+    "❌ Producers are at the top of the food chain. ✅ Producers (autotrophs) are always at the base (first trophic level).",
+    "❌ Energy flows in cycles in an ecosystem. ✅ Energy flows unidirectionally (sun→producers→consumers→heat); nutrients cycle.",
+    "❌ Decomposers are not part of the food chain. ✅ Decomposers (bacteria, fungi) recycle nutrients from all trophic levels.",
+    "❌ A biome and an ecosystem are the same thing. ✅ Biome = large-scale community (e.g., tropical rainforest); Ecosystem = specific community + environment in an area.",
+    "❌ Ecological succession always leads to a forest. ✅ Climax community depends on climate; tundra succession stops at grassland/shrubland.",
+    "❌ Primary succession starts with soil already present. ✅ Primary succession starts on bare rock/substrate with no soil; secondary starts with existing soil.",
+    "❌ In a pond ecosystem, plants are only at the bottom. ✅ Pond has floating plants (phytoplankton), emergent (reeds), submerged (hydrilla), and littoral zone plants.",
+    "❌ Forest ecosystems have uniform temperature year-round. ✅ Forests have vertical stratification (canopy, understory, forest floor) with different microclimates.",
+    "❌ Species interactions only involve animals. ✅ Interactions include plants-pollinators, plants-herbivores, microbes-decomposers, etc.",
+    "❌ The biosphere is the same as the atmosphere. ✅ Biosphere = all living zones (atmosphere + hydrosphere + lithosphere where life exists).",
+    "❌ Ecological pyramids can be inverted for energy. ✅ Energy pyramid is never inverted; biomass/number pyramids can be (e.g., one tree → many insects)."
   ],
   "practice": [
-    "Practice exercise for 01 ecosystem ecology concept of ecology biotic and abiotic factors species interactions concept of ecosystem structural and functional aspects of pond and forest ecosystem."
+    "Practice identifying biotic and abiotic factors in a given ecosystem.",
+    "Practice drawing food chains and food webs for pond and forest ecosystems.",
+    "Practice constructing ecological pyramids (energy, biomass, numbers) and explaining when they invert.",
+    "Practice tracing carbon and nitrogen cycles with all major steps and reservoirs.",
+    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism, competition).",
+    "Practice distinguishing between primary and secondary succession with examples.",
+    "Practice describing the structural zonation of a pond ecosystem (limnetic, profundal, benthic).",
+    "Practice describing the vertical stratification of a forest ecosystem (emergent, canopy, understory, forest floor).",
+    "Practice calculating energy transfer between trophic levels using the 10% rule.",
+    "Practice identifying producers, consumers, and decomposers in given food chains.",
+    "Practice explaining biomagnification with DDT as an example.",
+    "Practice comparing pond vs forest ecosystem structure and function.",
+    "Practice defining ecological niche and explaining competitive exclusion principle.",
+    "Practice identifying adaptation types (structural, physiological, behavioral) in ecosystem organisms.",
+    "Practice drawing and labeling a generalized pond ecosystem diagram.",
+    "Practice drawing and labeling a forest ecosystem cross-section.",
+    "Practice solving numerical problems on population growth (exponential and logistic)."
   ],
   "universalFacts": [
     "Universal scientific fact for 01 ecosystem ecology concept of ecology biotic and abiotic factors species interactions concept of ecosystem structural and functional aspects of pond and forest ecosystem."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
+  "animation3D": "biology",
+  "motionGraphics": "biology",
   "examples": [
     "Pond: phytoplankton→zooplankton→fish→birds",
     "Nepal: terai→hills→mountains ecosystems"
   ],
   "practiceQuestions": [
-    "Practice question for 01 ecosystem ecology concept of ecology biotic and abiotic factors species interactions concept of ecosystem structural and functional aspects of pond and forest ecosystem."
+    "Practice identifying biotic and abiotic factors in a given ecosystem.",
+    "Practice drawing food chains and food webs for pond and forest ecosystems.",
+    "Practice constructing ecological pyramids (energy, biomass, numbers) and explaining when they invert.",
+    "Practice tracing carbon and nitrogen cycles with all major steps and reservoirs.",
+    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism, competition).",
+    "Practice distinguishing between primary and secondary succession with examples.",
+    "Practice describing the structural zonation of a pond ecosystem (limnetic, profundal, benthic).",
+    "Practice describing the vertical stratification of a forest ecosystem (emergent, canopy, understory, forest floor).",
+    "Practice calculating energy transfer between trophic levels using the 10% rule.",
+    "Practice identifying producers, consumers, and decomposers in given food chains.",
+    "Practice explaining biomagnification with DDT as an example.",
+    "Practice comparing pond vs forest ecosystem structure and function.",
+    "Practice defining ecological niche and explaining competitive exclusion principle.",
+    "Practice identifying adaptation types (structural, physiological, behavioral) in ecosystem organisms.",
+    "Practice drawing and labeling a generalized pond ecosystem diagram.",
+    "Practice drawing and labeling a forest ecosystem cross-section.",
+    "Practice solving numerical problems on population growth (exponential and logistic)."
   ],
   "formulas": [
     "dN/dt=rN((K-N)/K) (logistic growth)"
