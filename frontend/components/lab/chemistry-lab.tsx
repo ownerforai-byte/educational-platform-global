@@ -169,6 +169,15 @@ const CATEGORY_CSS: Record<string, string> = {
   "actinide": "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200",
 };
 
+type BlockFilter = "all" | "s" | "p" | "d" | "f";
+const BLOCK_FILTER_LABELS: Record<BlockFilter, string> = {
+  "all": "All Blocks",
+  "s": "s-block",
+  "p": "p-block",
+  "d": "d-block",
+  "f": "f-block",
+};
+
 const METAL_CATEGORIES = new Set(["alkali-metal", "alkaline-earth", "transition-metal", "metal", "lanthanide", "actinide"]);
 const NONMETAL_CATEGORIES = new Set(["nonmetal", "halogen", "noble-gas"]);
 const METALLOID_CATEGORIES = new Set(["metalloid"]);
@@ -193,6 +202,17 @@ function isInClass(el: Element, activeClass: string | null): boolean {
   if (activeClass === "non-metals") return NONMETAL_CATEGORIES.has(el.category);
   if (activeClass === "metalloids") return METALLOID_CATEGORIES.has(el.category);
   return el.category === activeClass;
+}
+
+/** Derive the s/p/d/f block from an element's electron configuration. */
+export function getBlock(el: Element): "s" | "p" | "d" | "f" {
+  const config = el.electronConfig ?? "";
+  const match = config.match(/([spdf])[\d⁰¹²³⁴⁵⁶⁷⁸⁹]+$/);
+  if (match) return match[1] as "s" | "p" | "d" | "f";
+  if (el.row === 9 || el.row === 10) return "f";
+  if (el.col >= 3 && el.col <= 12) return "d";
+  if (el.col >= 13 && el.col <= 18) return "p";
+  return "s";
 }
 
 const GROUP_MNEMONICS: Record<number, string> = {
@@ -236,11 +256,33 @@ function createSymbolTexture(symbol: string): THREE.CanvasTexture {
   return texture;
 }
 
+/** Create a texture showing both the element symbol (top) and full name (bottom). */
+function createElementLabelTexture(symbol: string, name: string): THREE.CanvasTexture {
+  const canvas = document.createElement("canvas");
+  canvas.width = 192;
+  canvas.height = 96;
+  const ctx = canvas.getContext("2d")!;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "bold 40px Inter, system-ui, sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "#ffffff";
+  ctx.fillText(symbol, canvas.width / 2, canvas.height * 0.35);
+  ctx.font = "16px Inter, system-ui, sans-serif";
+  ctx.fillStyle = "#e2e8f0";
+  ctx.fillText(name, canvas.width / 2, canvas.height * 0.72);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  return texture;
+}
+
 export function ChemistryLab() {
   const [selected, setSelected] = useState<Element | null>(null);
   const [hovered, setHovered] = useState<Element | null>(null);
   const [search, setSearch] = useState("");
   const [activeClass, setActiveClass] = useState<string | null>(null);
+  const [blockFilter, setBlockFilter] = useState<BlockFilter>("all");
   const [tab, setTab] = useState("periodic");
   const [autoRotate, setAutoRotate] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -343,12 +385,14 @@ export function ChemistryLab() {
         const geometry = new THREE.BoxGeometry(boxW, boxH, boxD);
         const color = CATEGORY_COLORS[el.category] ?? 0x888888;
         const inClass = isInClass(el, activeClass);
+        const inBlock = blockFilter === "all" || getBlock(el) === blockFilter;
+        const visible = inClass && inBlock;
         const material = new THREE.MeshStandardMaterial({
           color,
           roughness: 0.25,
           metalness: 0.35,
           transparent: true,
-          opacity: inClass ? 1 : 0.12,
+          opacity: visible ? 1 : 0.12,
         });
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(x, y, z);
@@ -361,10 +405,10 @@ export function ChemistryLab() {
         const border = new THREE.LineSegments(borderGeo, borderMat);
         mesh.add(border);
 
-        const spriteMaterial = new THREE.SpriteMaterial({ map: createSymbolTexture(el.symbol), transparent: true, depthTest: false, opacity: inClass ? 1 : 0.15 });
+        const spriteMaterial = new THREE.SpriteMaterial({ map: createElementLabelTexture(el.symbol, el.name), transparent: true, depthTest: false, opacity: visible ? 1 : 0.15 });
         const sprite = new THREE.Sprite(spriteMaterial);
-        sprite.position.set(0, boxH / 2 + 0.4, 0);
-        sprite.scale.set(1.2, 0.6, 1);
+        sprite.position.set(0, boxH / 2 + 0.5, 0);
+        sprite.scale.set(1.6, 0.8, 1);
         mesh.add(sprite);
       });
 
@@ -672,7 +716,7 @@ export function ChemistryLab() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [search, activeClass, autoRotate]);
+  }, [search, activeClass, blockFilter, autoRotate]);
 
   const hoveredGroup = hovered ? hovered.col : null;
   const hoveredPeriod = hovered ? hovered.row : null;
@@ -758,7 +802,41 @@ export function ChemistryLab() {
               </div>
             )}
 
-            <div 
+            {!activeClass && (
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <span className="text-xs font-medium text-muted-foreground">Blocks:</span>
+                {(Object.keys(BLOCK_FILTER_LABELS) as BlockFilter[]).map((bf) => (
+                  <button
+                    key={bf}
+                    className={`px-3 py-1 text-xs rounded-md border transition-colors ${
+                      blockFilter === bf
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "bg-background hover:bg-accent border-border"
+                    }`}
+                    onClick={() => setBlockFilter(bf)}
+                  >
+                    {BLOCK_FILTER_LABELS[bf]}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {blockFilter !== "all" && (
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                <span className="text-xs font-medium text-muted-foreground">Filtered by:</span>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setBlockFilter("all")}
+                  title="Click to clear block filter"
+                >
+                  {BLOCK_FILTER_LABELS[blockFilter]} ✕
+                </Button>
+              </div>
+            )}
+
+            
+            <div
               ref={containerRef} 
               className="lab-3d-container relative overflow-hidden rounded-lg border border-border bg-slate-950 w-full"
               style={{ height: 'clamp(300px, 50vh, 600px)' }}

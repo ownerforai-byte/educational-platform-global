@@ -1725,11 +1725,14 @@ ravikishan/
 ├── 0
 ├── 0)
 ├── add_patterns.js
+├── add-getblock.js
+├── add-name-texture.js
 ├── AGENT_RULES.md
 ├── agent.mjs
 ├── ai.bat
 ├── analytical_geometry.pdf
 ├── apply_physics_fix.js
+├── apply-block-filter.js
 ├── ask-ai.mjs
 ├── AUDIT_REPORT.md
 ├── backend.log
@@ -1753,10 +1756,7 @@ ravikishan/
 ├── debug_regex.js
 ├── debug-all-remaining.js
 ├── debug-bytes.js
-├── debug-categorize.js
-├── debug-detailed.js
-├── debug-essay-intro-v2.js
-└── … (265 more entries)
+└── … (271 more entries)
 ```
 
 ## 🔁 Keeping this up to date
