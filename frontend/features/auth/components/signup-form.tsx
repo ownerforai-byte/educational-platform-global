@@ -31,7 +31,7 @@ export function SignupForm() {
       setMessage(result.message);
     } else if (result.ok) {
       router.refresh();
-      router.push("/");
+      router.push("/home");
     } else {
       setError(result.error);
     }

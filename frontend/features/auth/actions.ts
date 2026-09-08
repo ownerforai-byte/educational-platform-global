@@ -1,5 +1,6 @@
 import { loginSchema, signupSchema } from "./schema";
 import { login as apiLogin, signup as apiSignup, logout as apiLogout } from "@/lib/api/auth";
+import { setAccessToken } from "@/lib/api-client";
 import type { SessionUser } from "./types";
 
 export type AuthActionResult =
@@ -14,6 +15,10 @@ export async function loginAction(input: unknown): Promise<AuthActionResult> {
 
   try {
     const res = await apiLogin(parsed.data);
+    // Persist the access token for cross-origin Bearer auth.
+    if (res.accessToken) {
+      setAccessToken(res.accessToken);
+    }
     return { ok: true, user: res.user ?? null };
   } catch (err) {
     return {
@@ -31,6 +36,10 @@ export async function signupAction(input: unknown): Promise<AuthActionResult> {
 
   try {
     const res = await apiSignup(parsed.data);
+    // Persist the access token for cross-origin Bearer auth.
+    if (res.accessToken) {
+      setAccessToken(res.accessToken);
+    }
     return { ok: true, user: res.user ?? null, message: res.message };
   } catch (err) {
     return {
@@ -43,8 +52,12 @@ export async function signupAction(input: unknown): Promise<AuthActionResult> {
 export async function logoutAction(): Promise<AuthActionResult> {
   try {
     await apiLogout();
+    // Clear the stored access token.
+    setAccessToken(null);
     return { ok: true, user: null };
   } catch (err) {
+    // Clear token even if the API call fails (e.g. network error).
+    setAccessToken(null);
     return {
       ok: false,
       error: err instanceof Error ? err.message : "Something went wrong. Please try again.",

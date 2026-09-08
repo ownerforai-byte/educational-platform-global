@@ -26,7 +26,7 @@ export function LoginForm() {
 
     if (result.ok) {
       router.refresh();
-      router.push("/");
+      router.push("/home");
     } else {
       setError(result.error);
     }

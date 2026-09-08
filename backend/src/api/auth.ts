@@ -74,7 +74,7 @@ router.post("/login", async (req: Request, res: Response) => {
   setSessionCookie(res, data.session.access_token, data.session.expires_in);
 
   const user = await resolveSessionUser(data.user.id, data.user.email ?? parsed.data.email);
-  res.json({ user });
+  res.json({ user, accessToken: data.session.access_token });
 });
 
 router.post("/signup", async (req: Request, res: Response) => {
@@ -102,7 +102,7 @@ router.post("/signup", async (req: Request, res: Response) => {
   setSessionCookie(res, data.session.access_token, data.session.expires_in);
 
   const user = await resolveSessionUser(data.user.id, data.user.email ?? parsed.data.email);
-  res.json({ user });
+  res.json({ user, accessToken: data.session.access_token });
 });
 
 router.post("/logout", async (req: Request, res: Response) => {

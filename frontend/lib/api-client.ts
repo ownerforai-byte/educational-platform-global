@@ -2,6 +2,24 @@ import type { ApiError } from "../types/api";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
+const TOKEN_KEY = "neb_access_token";
+
+/** Store the Supabase access token so subsequent requests can authenticate cross-origin. */
+export function setAccessToken(token: string | null): void {
+  if (typeof window === "undefined") return;
+  if (token) {
+    localStorage.setItem(TOKEN_KEY, token);
+  } else {
+    localStorage.removeItem(TOKEN_KEY);
+  }
+}
+
+/** Read the stored access token (returns undefined on the server). */
+export function getAccessToken(): string | undefined {
+  if (typeof window === "undefined") return undefined;
+  return localStorage.getItem(TOKEN_KEY) ?? undefined;
+}
+
 export type RequestOptions = RequestInit & {
   params?: Record<string, string | number>;
 };
@@ -34,11 +52,16 @@ export async function apiFetch<T>(
   const { params, ...fetchOptions } = options;
   const url = buildUrl(path, params);
 
+  // Attach the stored Bearer token for cross-origin auth.
+  const token = getAccessToken();
+  const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
+
   const response = await fetch(url, {
     ...fetchOptions,
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      ...authHeader,
       ...(fetchOptions.headers || {}),
     },
   });

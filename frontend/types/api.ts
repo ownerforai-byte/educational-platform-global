@@ -20,11 +20,13 @@ export interface AuthSignupRequest {
 
 export interface AuthLoginResponse {
   user: SessionUser;
+  accessToken?: string;
 }
 
 export interface AuthSignupResponse {
   user: SessionUser | null;
   message?: string;
+  accessToken?: string;
 }
 
 export interface AuthLogoutResponse {
