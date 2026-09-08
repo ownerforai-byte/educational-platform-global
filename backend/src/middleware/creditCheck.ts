@@ -12,6 +12,21 @@ const PREMIUM_FEATURES = {
 
 export type FeatureKey = keyof typeof PREMIUM_FEATURES;
 
+/**
+ * Returns true when the user has unrestricted access to all features.
+ *
+ * A user qualifies when ANY of the following is true:
+ *  - Role is OWNER or ADMIN (privileged roles).
+ *  - `premiumStatus` is true (verified / approved by the owner).
+ */
+export function hasFullAccess(
+  role: string | null | undefined,
+  premiumStatus?: boolean | null,
+): boolean {
+  if (role === "OWNER" || role === "ADMIN") return true;
+  return premiumStatus === true;
+}
+
 async function getUserFromRequest(req: Request): Promise<{ id: string; email: string; role?: string } | null> {
   // Try Bearer token first
   const authHeader = req.headers.authorization;
@@ -45,10 +60,10 @@ async function getUserFromRequest(req: Request): Promise<{ id: string; email: st
   return null;
 }
 
-export async function requireCredit(
+export function requireCredit(
   feature: FeatureKey,
   cost: number = 0
-): Promise<(req: Request, res: Response, next: NextFunction) => Promise<void>> {
+): (req: Request, res: Response, next: NextFunction) => Promise<void> {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
       const userData = await getUserFromRequest(req);
@@ -59,7 +74,7 @@ export async function requireCredit(
       }
 
       // Owner/Admin always has access
-      if (userData.role === "OWNER" || userData.role === "ADMIN") {
+      if (hasFullAccess(userData.role)) {
         return next();
       }
 
@@ -76,7 +91,7 @@ export async function requireCredit(
       }
 
       // Premium users have unlimited access
-      if (profile.premium_status) {
+      if (hasFullAccess(userData.role, profile.premium_status)) {
         return next();
       }
 
@@ -131,7 +146,7 @@ export async function requirePremium(
     }
 
     // Owner/Admin always has access
-    if (userData.role === "OWNER" || userData.role === "ADMIN") {
+    if (hasFullAccess(userData.role)) {
       return next();
     }
 
@@ -146,7 +161,7 @@ export async function requirePremium(
       return;
     }
 
-    if (!profile.premium_status) {
+    if (!hasFullAccess(userData.role, profile.premium_status)) {
       res.status(402).json({
         error: "Premium required",
         message: "This feature requires premium access. Please contact the owner to upgrade.",

@@ -1,10 +1,11 @@
 import { apiFetch } from "../api-client";
+import type { UserRole } from "@/features/auth/types";
 
 export interface UserCreditInfo {
   id: string;
   email: string;
   fullName: string | null;
-  role: string;
+  role: UserRole;
   credits: number;
   creditsLimit: number;
   premiumStatus: boolean;

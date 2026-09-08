@@ -5,6 +5,9 @@ export interface SessionUser {
   email: string;
   fullName: string | null;
   role: UserRole | null;
+  credits?: number;
+  creditsLimit?: number;
+  premiumStatus?: boolean;
 }
 
 export interface AuthLoginRequest {

@@ -34,3 +34,21 @@ export function canManageContent(role: UserRole | null | undefined): boolean {
   if (!role) return false;
   return atLeast(role, "TEACHER");
 }
+
+/**
+ * Returns true when the user has unrestricted access to all platform features.
+ *
+ * A user qualifies when ANY of the following is true:
+ *  - Role is OWNER or ADMIN (privileged roles).
+ *  - `premiumStatus` is true (verified / approved by the owner).
+ *
+ * Use this to bypass credit checks in the UI and to show/hide
+ * premium-gated elements.
+ */
+export function hasFullAccess(
+  role: UserRole | null | undefined,
+  premiumStatus?: boolean | null,
+): boolean {
+  if (role === "OWNER" || role === "ADMIN") return true;
+  return premiumStatus === true;
+}

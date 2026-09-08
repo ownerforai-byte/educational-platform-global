@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { hasFullAccess } from "@/lib/auth/roles";
 import { StreakBadge } from "@/components/streak-badge";
 
 type NavItem = {
@@ -222,7 +223,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             onToggle={() => toggleSection("account")}
           />
         )}
-        {(user?.role === "ADMIN" || user?.role === "OWNER") && (
+        {hasFullAccess(user?.role) && (
           <NavSection
             label="Admin"
             icon={ShieldCheck}

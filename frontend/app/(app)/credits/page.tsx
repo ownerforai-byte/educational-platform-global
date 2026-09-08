@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getUserCredits, getUserTransactions } from "@/lib/api/credits";
 import type { UserCreditInfo, CreditTransaction } from "@/lib/api/credits";
+import { hasFullAccess } from "@/lib/auth/roles";
 
 export default function CreditsPage() {
   const [credits, setCredits] = useState<UserCreditInfo | null>(null);
@@ -47,7 +48,7 @@ export default function CreditsPage() {
 
   if (!credits) return null;
 
-  const isPremium = credits.premiumStatus || credits.role === "OWNER" || credits.role === "ADMIN";
+  const isPremium = hasFullAccess(credits.role, credits.premiumStatus);
 
   return (
     <div className="container max-w-4xl py-8 space-y-6">
