@@ -146,7 +146,7 @@ export function ProjectileMotionVisual() {
         new THREE.LineBasicMaterial({ color: 0xf97316 }),
       )) as THREE.Line;
 
-      let prevPos = new THREE.Vector3(0, 0, 0);
+      const prevPos = new THREE.Vector3(0, 0, 0);
       update();
 
       function update() {

@@ -140,7 +140,7 @@ export default function OpticsLens3d() {
       return { ray1, ray2 };
     };
 
-    let rayHelpers = updateRays();
+    const rayHelpers = updateRays();
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);

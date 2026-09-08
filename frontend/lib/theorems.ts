@@ -130,7 +130,7 @@ async function scanSubject(
 ): Promise<TheoremEntry[]> {
   const { readdir, readFile } = await import("node:fs/promises");
   const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
-  let entries: TheoremEntry[] = [];
+  const entries: TheoremEntry[] = [];
 
   try {
     const unitDirs = await readdir(baseDir, { withFileTypes: true });

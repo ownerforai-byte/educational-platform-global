@@ -10,8 +10,7 @@
  * default to the directory name).
  */
 
-import { SYLLABUS } from "@/lib/syllabus";
-import type { ClassSyllabus, SubjectSyllabus, SyllabusUnit } from "@/lib/syllabus";
+import { SYLLABUS, type SyllabusUnit } from "@/lib/syllabus";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -99,7 +98,7 @@ async function scanSubject(
 ): Promise<DerivationEntry[]> {
   const { readdir, readFile } = await import("node:fs/promises");
   const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
-  let entries: DerivationEntry[] = [];
+  const entries: DerivationEntry[] = [];
 
   try {
     const unitDirs = await readdir(baseDir, { withFileTypes: true });

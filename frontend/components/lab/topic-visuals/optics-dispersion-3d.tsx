@@ -126,8 +126,8 @@ export default function OpticsDispersion3d() {
     scene.add(matLabel);
     matLabel.position.set(0, -1.8, 0);
 
-    let incArc: THREE.Line | null = null;
-    let incLabel: THREE.Sprite | null = null;
+    const incArc: THREE.Line | null = null;
+    const incLabel: THREE.Sprite | null = null;
 
     const animate = () => {
       const id = requestAnimationFrame(animate);
@@ -135,7 +135,7 @@ export default function OpticsDispersion3d() {
       renderer.render(scene, camera);
       return id;
     };
-    let frameId = animate();
+    const frameId = animate();
 
     return () => {
       cancelAnimationFrame(frameId);

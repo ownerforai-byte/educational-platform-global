@@ -125,7 +125,7 @@ export function CurveSketchingVisual() {
 
         // Key features
         const features: string[] = [];
-        let labelColor: string = "#7dd3fc";
+        const labelColor: string = "#7dd3fc";
 
         if (curveType === "quadratic") {
           const vertexX = -params.b / (2 * params.a);

@@ -143,7 +143,7 @@ export default function OpticsRefraction3d() {
       return { incRay, refrRay, normalLine, boundLine1, normalLabel, interfaceLabel, boundLabel1, boundLabel2 };
     };
 
-    let rayHelpers = updateRays();
+    const rayHelpers = updateRays();
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);

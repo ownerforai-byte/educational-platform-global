@@ -49,7 +49,7 @@ export function EquilibriumVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
-    let stressAnim = 0;
+    const stressAnim = 0;
     let targetProgress = 0.5;
 
     const init = async () => {

@@ -135,7 +135,7 @@ export default function OpticsMicroscope3d() {
       return { ray, spImg, spFinal, spObj };
     };
 
-    let rayHelper = updateRays();
+    const rayHelper = updateRays();
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);

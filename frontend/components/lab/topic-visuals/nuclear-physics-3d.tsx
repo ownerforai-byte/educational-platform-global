@@ -90,7 +90,7 @@ export function NuclearPhysicsVisual() {
       const nucleons: THREE.Mesh[] = [];
       const positions: THREE.Vector3[] = [];
       const rand = (seed: number) => {
-        let x = Math.sin(seed) * 10000;
+        const x = Math.sin(seed) * 10000;
         return x - Math.floor(x);
       };
       for (let i = 0; i < Math.min(totalParticles, 30); i++) {

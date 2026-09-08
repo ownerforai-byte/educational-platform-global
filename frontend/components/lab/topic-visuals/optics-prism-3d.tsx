@@ -138,7 +138,7 @@ export default function OpticsPrism3d() {
       return { ray, dev, devArc, entryNormal, exitNormal };
     };
 
-    let rayHelpers = updateRays();
+    const rayHelpers = updateRays();
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);

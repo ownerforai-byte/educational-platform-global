@@ -123,7 +123,7 @@ export default function OpticsReflection3d() {
       return { ray, reflRay, spec };
     };
 
-    let rayHelper = updateRays();
+    const rayHelper = updateRays();
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);

@@ -51,7 +51,7 @@ export function PhotoelectricEffectVisual() {
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
     let photonTime = 0;
-    let emittedElectrons: { mesh: THREE.Mesh; vel: number }[] = [];
+    const emittedElectrons: { mesh: THREE.Mesh; vel: number }[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");

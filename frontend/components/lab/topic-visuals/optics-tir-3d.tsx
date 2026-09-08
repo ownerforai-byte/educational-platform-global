@@ -158,7 +158,7 @@ export default function OpticsTIR3d() {
       renderer.render(scene, camera);
       return id;
     };
-    let frameId = animate();
+    const frameId = animate();
 
     return () => {
       cancelAnimationFrame(frameId);

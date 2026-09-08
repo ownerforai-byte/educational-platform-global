@@ -55,7 +55,7 @@ export function IntegralAreaVisual() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
-    let rectMeshes: THREE.Mesh[] = [];
+    const rectMeshes: THREE.Mesh[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");

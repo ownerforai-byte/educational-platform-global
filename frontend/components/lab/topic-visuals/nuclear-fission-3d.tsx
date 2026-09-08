@@ -45,7 +45,7 @@ export function NuclearFissionVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
-    let neutrinos: THREE.Mesh[] = [];
+    const neutrinos: THREE.Mesh[] = [];
     let fragments: { mesh: THREE.Mesh; vel: THREE.Vector3 }[] = [];
 
     const init = async () => {
