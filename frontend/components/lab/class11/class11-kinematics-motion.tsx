@@ -7,7 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11KinematicsMotion: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -30,217 +37,209 @@ export const Class11KinematicsMotion: React.FC = () => {
     return displacement / time;
   }, [displacement, time]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(15, 10, 20),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Create ground plane
-        const groundGeo = new THREE.PlaneGeometry(30, 30);
-        const groundMat = new THREE.MeshStandardMaterial({ 
-          color: 0x1e293b, 
-          roughness: 0.8, 
-          metalness: 0.2 
-        });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Create grid helper
-        const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Create axes helper
-        const axes = new THREE.AxesHelper(10);
-        ts.group.add(axes);
+    // Create ground plane
+    const groundGeo = new THREE.PlaneGeometry(30, 30);
+    const groundMat = new THREE.MeshStandardMaterial({ 
+      color: 0x1e293b, 
+      roughness: 0.8, 
+      metalness: 0.2 
+    });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
 
-        // Create moving object (car-like)
-        const carGroup = new THREE.Group();
-        const carBodyGeo = new THREE.BoxGeometry(2, 0.8, 1);
-        const carBodyMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.2 });
-        const carBody = new THREE.Mesh(carBodyGeo, carBodyMat);
-        carBody.castShadow = true;
-        carGroup.add(carBody);
+    // Create grid helper
+    const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Car wheels
-        const wheelGeo = new THREE.CylinderGeometry(0.3, 0.3, 0.4, 16);
-        const wheelMat = standardMaterial(0x22c55e);
-        const wheel1 = new THREE.Mesh(wheelGeo, wheelMat);
-        wheel1.position.set(-0.6, -0.2, 0.5);
-        wheel1.rotation.z = Math.PI / 2;
-        carGroup.add(wheel1);
+    // Create axes helper
+    const axes = new THREE.AxesHelper(10);
+    ts.group.add(axes);
 
-        const wheel2 = new THREE.Mesh(wheelGeo, wheelMat);
-        wheel2.position.set(0.6, -0.2, 0.5);
-        wheel2.rotation.z = Math.PI / 2;
-        carGroup.add(wheel2);
+    // Create moving object (car-like)
+    const carGroup = new THREE.Group();
+    const carBodyGeo = new THREE.BoxGeometry(2, 0.8, 1);
+    const carBodyMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.2 });
+    const carBody = new THREE.Mesh(carBodyGeo, carBodyMat);
+    carBody.castShadow = true;
+    carGroup.add(carBody);
 
-        const wheel3 = new THREE.Mesh(wheelGeo, wheelMat);
-        wheel3.position.set(-0.6, -0.2, -0.5);
-        wheel3.rotation.z = Math.PI / 2;
-        carGroup.add(wheel3);
+    // Car wheels
+    const wheelGeo = new THREE.CylinderGeometry(0.3, 0.3, 0.4, 16);
+    const wheelMat = standardMaterial(0x22c55e);
+    const wheel1 = new THREE.Mesh(wheelGeo, wheelMat);
+    wheel1.position.set(-0.6, -0.2, 0.5);
+    wheel1.rotation.z = Math.PI / 2;
+    carGroup.add(wheel1);
 
-        const wheel4 = new THREE.Mesh(wheelGeo, wheelMat);
-        wheel4.position.set(0.6, -0.2, -0.5);
-        wheel4.rotation.z = Math.PI / 2;
-        carGroup.add(wheel4);
+    const wheel2 = new THREE.Mesh(wheelGeo, wheelMat);
+    wheel2.position.set(0.6, -0.2, 0.5);
+    wheel2.rotation.z = Math.PI / 2;
+    carGroup.add(wheel2);
 
-        ts.group.add(carGroup);
+    const wheel3 = new THREE.Mesh(wheelGeo, wheelMat);
+    wheel3.position.set(-0.6, -0.2, -0.5);
+    wheel3.rotation.z = Math.PI / 2;
+    carGroup.add(wheel3);
 
-        // Path line
-        let pathLine: THREE.Line | null = null;
-        let velocityArrow: THREE.ArrowHelper | null = null;
-        let accelerationArrow: THREE.ArrowHelper | null = null;
-        let startPoint: THREE.Mesh | null = null;
-        let endPoint: THREE.Mesh | null = null;
+    const wheel4 = new THREE.Mesh(wheelGeo, wheelMat);
+    wheel4.position.set(0.6, -0.2, -0.5);
+    wheel4.rotation.z = Math.PI / 2;
+    carGroup.add(wheel4);
 
-        // Position markers
-        const startGeo = new THREE.SphereGeometry(0.3, 16, 16);
-        const startMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5 });
-        startPoint = new THREE.Mesh(startGeo, startMat);
-        startPoint.position.set(0, 0, 0);
-        ts.group.add(startPoint);
+    ts.group.add(carGroup);
 
-        const endGeo = new THREE.SphereGeometry(0.3, 16, 16);
-        const endMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
-        endPoint = new THREE.Mesh(endGeo, endMat);
-        ts.group.add(endPoint);
+    // Path line
+    let pathLine: THREE.Line | null = null;
+    let velocityArrow: THREE.ArrowHelper | null = null;
+    let accelerationArrow: THREE.ArrowHelper | null = null;
+    let startPoint: THREE.Mesh | null = null;
+    let endPoint: THREE.Mesh | null = null;
 
-        // Distance marker
-        const distanceGeo = new THREE.CylinderGeometry(0.1, 0.1, 1, 8);
-        const distanceMat = standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.3 });
-        const distanceMarker = new THREE.Mesh(distanceGeo, distanceMat);
-        distanceMarker.position.y = 0.5;
-        distanceMarker.visible = false;
-        ts.group.add(distanceMarker);
+    // Position markers
+    const startGeo = new THREE.SphereGeometry(0.3, 16, 16);
+    const startMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5 });
+    startPoint = new THREE.Mesh(startGeo, startMat);
+    startPoint.position.set(0, 0, 0);
+    ts.group.add(startPoint);
 
-        const startTime = performance.now();
+    const endGeo = new THREE.SphereGeometry(0.3, 16, 16);
+    const endMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
+    endPoint = new THREE.Mesh(endGeo, endMat);
+    ts.group.add(endPoint);
 
-        function updateScene() {
-          if (!ts) return;
+    // Distance marker
+    const distanceGeo = new THREE.CylinderGeometry(0.1, 0.1, 1, 8);
+    const distanceMat = standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.3 });
+    const distanceMarker = new THREE.Mesh(distanceGeo, distanceMat);
+    distanceMarker.position.y = 0.5;
+    distanceMarker.visible = false;
+    ts.group.add(distanceMarker);
 
-          // Clear existing path and arrows
-          if (pathLine) {
-            ts.group.remove(pathLine);
-            pathLine.geometry.dispose();
-            (pathLine.material as THREE.Material).dispose();
-          }
-          if (velocityArrow) { ts.group.remove(velocityArrow); }
-          if (accelerationArrow) { ts.group.remove(accelerationArrow); }
+    const startTime = performance.now();
 
-          // Calculate positions based on kinematic equations
-          const positions: THREE.Vector3[] = [];
-          const steps = 50;
-          const maxDisplacement = initialVelocity * time + 0.5 * acceleration * time * time;
-          
-          for (let i = 0; i <= steps; i++) {
-            const t = (i / steps) * time;
-            const x = initialVelocity * t + 0.5 * acceleration * t * t;
-            positions.push(new THREE.Vector3(x, 0, 0));
-          }
+    function updateScene() {
+      if (!ts) return;
 
-          // Create path line
-          if (showPath) {
-            const geometry = new THREE.BufferGeometry().setFromPoints(positions);
-            const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
-            pathLine = new THREE.Line(geometry, material);
-            ts.group.add(pathLine);
-          }
-
-          // Update end point position
-          if (endPoint) {
-            endPoint.position.x = maxDisplacement;
-          }
-
-          // Update distance marker
-          if (distanceMarker) {
-            distanceMarker.position.x = maxDisplacement / 2;
-            distanceMarker.scale.y = maxDisplacement * 0.1;
-            distanceMarker.visible = true;
-          }
-
-          // Update car position (animated)
-          const elapsed = (performance.now() - startTime) / 1000;
-          const animTime = elapsed % time;
-          const animX = initialVelocity * animTime + 0.5 * acceleration * animTime * animTime;
-          carGroup.position.x = animX;
-
-          // Rotate wheels based on motion
-          if (wheel1 && animTime > 0) {
-            wheel1.rotation.x += 0.1;
-            wheel2.rotation.x += 0.1;
-            wheel3.rotation.x += 0.1;
-            wheel4.rotation.x += 0.1;
-          }
-
-          // Add velocity and acceleration arrows at car position
-          if (showVectors && carGroup) {
-            const velValue = initialVelocity + acceleration * animTime;
-            const accelValue = acceleration;
-            
-            const arrowScale = 0.5;
-            velocityArrow = new LiveArrow(
-              new THREE.Vector3(1, 0, 0),
-              carGroup.position,
-              velValue * arrowScale,
-              0x22c55e
-            );
-            ts.group.add(velocityArrow);
-
-            accelerationArrow = new LiveArrow(
-              new THREE.Vector3(1, 0, 0),
-              carGroup.position,
-              accelValue * arrowScale,
-              0xef4444
-            );
-            ts.group.add(accelerationArrow);
-          }
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
+      // Clear existing path and arrows
+      if (pathLine) {
+        ts.group.remove(pathLine);
+        pathLine.geometry.dispose();
+        (pathLine.material as THREE.Material).dispose();
       }
+      if (velocityArrow) { ts.group.remove(velocityArrow); }
+      if (accelerationArrow) { ts.group.remove(accelerationArrow); }
+
+      // Calculate positions based on kinematic equations
+      const positions: THREE.Vector3[] = [];
+      const steps = 50;
+      const maxDisplacement = initialVelocity * time + 0.5 * acceleration * time * time;
+      
+      for (let i = 0; i <= steps; i++) {
+        const t = (i / steps) * time;
+        const x = initialVelocity * t + 0.5 * acceleration * t * t;
+        positions.push(new THREE.Vector3(x, 0, 0));
+      }
+
+      // Create path line
+      if (showPath) {
+        const geometry = new THREE.BufferGeometry().setFromPoints(positions);
+        const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
+        pathLine = new THREE.Line(geometry, material);
+        ts.group.add(pathLine);
+      }
+
+      // Update end point position
+      if (endPoint) {
+        endPoint.position.x = maxDisplacement;
+      }
+
+      // Update distance marker
+      if (distanceMarker) {
+        distanceMarker.position.x = maxDisplacement / 2;
+        distanceMarker.scale.y = maxDisplacement * 0.1;
+        distanceMarker.visible = true;
+      }
+
+      // Update car position (animated)
+      const elapsed = (performance.now() - startTime) / 1000;
+      const animTime = elapsed % time;
+      const animX = initialVelocity * animTime + 0.5 * acceleration * animTime * animTime;
+      carGroup.position.x = animX;
+
+      // Rotate wheels based on motion
+      if (wheel1 && animTime > 0) {
+        wheel1.rotation.x += 0.1;
+        wheel2.rotation.x += 0.1;
+        wheel3.rotation.x += 0.1;
+        wheel4.rotation.x += 0.1;
+      }
+
+      // Add velocity and acceleration arrows at car position
+      if (showVectors && carGroup) {
+        const velValue = initialVelocity + acceleration * animTime;
+        const accelValue = acceleration;
+        
+        const arrowScale = 0.5;
+        velocityArrow = new LiveArrow(
+          new THREE.Vector3(1, 0, 0),
+          carGroup.position,
+          velValue * arrowScale,
+          0x22c55e
+        );
+        ts.group.add(velocityArrow);
+
+        accelerationArrow = new LiveArrow(
+          new THREE.Vector3(1, 0, 0),
+          carGroup.position,
+          accelValue * arrowScale,
+          0xef4444
+        );
+        ts.group.add(accelerationArrow);
+      }
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
 
-    init();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
+    updateRef.current = (time) => {
+    updateScene();
     };
   }, [initialVelocity, acceleration, time, showPath, showVectors]);
+
 
   return (
     <Card className="w-full">

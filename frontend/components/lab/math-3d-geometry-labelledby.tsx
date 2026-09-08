@@ -7,7 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 type Shape = {
   name: string;
@@ -163,123 +170,122 @@ const SHAPES: Shape[] = [
 
 export const Math3DGeometryLabeled: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [selectedShape, setSelectedShape] = useState(SHAPES[0]);
   const [showLabels, setShowLabels] = useState(true);
   const [autoRotate, setAutoRotate] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 5, 12),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Ground plane
-        const groundGeo = new THREE.PlaneGeometry(30, 30);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Lighting
-        ts.group.add(new THREE.AmbientLight(0xffffff, 0.4));
-        const dir = new THREE.DirectionalLight(0xffffff, 1);
-        dir.position.set(5, 10, 7);
-        ts.group.add(dir);
+    // Ground plane
+    const groundGeo = new THREE.PlaneGeometry(30, 30);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ts.group.add(ground);
 
-        // Shape group
-        const shapeGroup = new THREE.Group();
-        ts.group.add(shapeGroup);
+    const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // LABELS
-        let labelRenderer: any = null;
-        let shapeLabels: any[] = [];
+    // Lighting
+    ts.group.add(new THREE.AmbientLight(0xffffff, 0.4));
+    const dir = new THREE.DirectionalLight(0xffffff, 1);
+    dir.position.set(5, 10, 7);
+    ts.group.add(dir);
 
-        try {
-          labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-          labelRenderer.domElement.style.position = "absolute";
-          labelRenderer.domElement.style.top = "0";
-          labelRenderer.domElement.style.pointerEvents = "none";
-          labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch { console.log("CSS2DRenderer not available"); }
+    // Shape group
+    const shapeGroup = new THREE.Group();
+    ts.group.add(shapeGroup);
 
-        function createShape() {
-          // Clear previous shape
-          while (shapeGroup.children.length > 0) {
-            const child = shapeGroup.children[0];
-            shapeGroup.remove(child);
-            if (child instanceof THREE.Mesh) {
-              child.geometry.dispose();
-              (child.material as THREE.Material).dispose();
-            }
-          }
+    // LABELS
+    let labelRenderer: any = null;
+    let shapeLabels: any[] = [];
 
-          // Clear previous labels
-          shapeLabels.forEach(label => {
-            if (label && label.parent) {
-              (label.parent as any).remove(label);
-            }
-          });
-          shapeLabels = [];
+    try {
+      labelRenderer = new CSS2DRenderer();
+      labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+      labelRenderer.domElement.style.position = "absolute";
+      labelRenderer.domElement.style.top = "0";
+      labelRenderer.domElement.style.pointerEvents = "none";
+      labelRenderer.domElement.style.zIndex = "10";
+      mountRef.current!.appendChild(labelRenderer.domElement);
+    } catch { console.log("CSS2DRenderer not available"); }
 
-          // Create new shape
-          const result = selectedShape.create(ts.group);
-          result.meshes.forEach(m => shapeGroup.add(m));
-
-          // Add labels
-          if (showLabels && labelRenderer) {
-            result.labels.forEach(labelInfo => {
-              const label = new CSS2DObject(document.createElement("div"));
-              label.element.className = "label";
-              label.element.innerHTML = `<div style="background:rgba(0,0,0,0.75);padding:4px 8px;border-radius:4px;color:${labelInfo.color};font-weight:600;font-size:11px">${labelInfo.text}</div>`;
-              label.position.set(labelInfo.position.x, labelInfo.position.y, labelInfo.position.z);
-              shapeGroup.add(label);
-              shapeLabels.push(label);
-            });
-          }
+    function createShape() {
+      // Clear previous shape
+      while (shapeGroup.children.length > 0) {
+        const child = shapeGroup.children[0];
+        shapeGroup.remove(child);
+        if (child instanceof THREE.Mesh) {
+          child.geometry.dispose();
+          (child.material as THREE.Material).dispose();
         }
+      }
 
-        createShape();
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts.controls.autoRotate = autoRotate;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+      // Clear previous labels
+      shapeLabels.forEach(label => {
+        if (label && label.parent) {
+          (label.parent as any).remove(label);
         }
+      });
+      shapeLabels = [];
 
-        animate();
-      } catch (error) { console.error("Error:", error); }
+      // Create new shape
+      const result = selectedShape.create(ts.group);
+      result.meshes.forEach(m => shapeGroup.add(m));
+
+      // Add labels
+      if (showLabels && labelRenderer) {
+        result.labels.forEach(labelInfo => {
+          const label = new CSS2DObject(document.createElement("div"));
+          label.element.className = "label";
+          label.element.innerHTML = `<div style="background:rgba(0,0,0,0.75);padding:4px 8px;border-radius:4px;color:${labelInfo.color};font-weight:600;font-size:11px">${labelInfo.text}</div>`;
+          label.position.set(labelInfo.position.x, labelInfo.position.y, labelInfo.position.z);
+          shapeGroup.add(label);
+          shapeLabels.push(label);
+        });
+      }
     }
 
-    init();
+    createShape();
 
-    return () => {
-      cancelled = true; if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
+
+    updateRef.current = (time) => {
+    ts.controls.autoRotate = autoRotate;
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
   }, [selectedShape, showLabels, autoRotate]);
+
 
   return (
     <Card className="w-full">

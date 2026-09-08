@@ -7,7 +7,14 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  clearGroup,
+  standardMaterial,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 type CalculusMode = "derivative" | "integral" | "limit" | "series";
 
@@ -39,27 +46,37 @@ export const MotionGraphicsCalculus: React.FC = () => {
     return (getFunctionValue(x + h) - getFunctionValue(x - h)) / (2 * h);
   };
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let animationId: number;
-    let labelRenderer: any = null;
-    let labels: any[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 0, 50),
           autoRotate: false,
           background: 0x0a0a0a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let labels: any[] = [];
+let labelRenderer: any = null;
+let animationId: number;
 
         // Add lights
         const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
@@ -84,333 +101,96 @@ export const MotionGraphicsCalculus: React.FC = () => {
         }
 
         // Animation loop
-        function animate() {
-          if (cancelled) return;
-          
-          animationId = requestAnimationFrame(animate);
-          
-          // Clear and rebuild
-          clearGroup(ts.group);
-          
-          // Clear previous labels
-          labels.forEach(label => {
-            if (label?.element?.parentNode) {
-              label.element.parentNode.removeChild(label.element);
-            }
-          });
-          labels = [];
-          
-          // Add title label
-          if (labelRenderer) {
-            const CSS2DObject = (THREE as any).CSS2DObject;
-            const titleLabel = new CSS2DObject(document.createElement("div"));
-            titleLabel.element.innerHTML = `
-              <div style="background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:8px;color:black;font-weight:700;font-size:14px;border:2px solid #10b981">
-                <div>📐 Calculus in Motion</div>
-                <div style="font-size:11px;color:#666">Mode: ${mode === 'derivative' ? 'Derivative' : mode === 'integral' ? 'Integral' : mode === 'limit' ? 'Limit' : 'Series'}</div>
-              </div>
-            `;
-            titleLabel.element.style.pointerEvents = "none";
-            titleLabel.position.set(0, 15, 0);
-            ts.group.add(titleLabel);
-            labels.push(titleLabel);
-          }
-          
-          // Create coordinate grid
-          createGrid(ts.group);
-          
-          // Create function plot with label
-          if (showFunction) {
-            createFunctionPlot(ts.group);
-          }
-          
-          // Create derivative plot with label
-          if (showDerivative && mode === "derivative") {
-            createDerivativePlot(ts.group);
-          }
-          
-          // Create integral visualization with label
-          if (showIntegral && mode === "integral") {
-            createIntegralVisualization(ts.group);
-          }
-          
-          // Create tangent line with label
-          if (showTangent && mode === "derivative") {
-            createTangentLine(ts.group);
-          }
-          
-          // Add mode-specific explanations
-          if (labelRenderer) {
-            const CSS2DObject = (THREE as any).CSS2DObject;
-            
-            if (mode === "derivative") {
-              const derivLabel = new CSS2DObject(document.createElement("div"));
-              derivLabel.element.innerHTML = `
-                <div style="background:rgba(16,185,129,0.85);padding:8px 14px;border-radius:6px;color:white;font-size:10px;font-weight:600">
-                  <div>📈 f'(x) = Derivative</div>
-                  <div style="font-size:9px;opacity:0.9">Slope of tangent = Rate of change</div>
-                </div>
-              `;
-              derivLabel.element.style.pointerEvents = "none";
-              derivLabel.position.set(-12, -8, 0);
-              ts.group.add(derivLabel);
-              labels.push(derivLabel);
-            } else if (mode === "integral") {
-              const intLabel = new CSS2DObject(document.createElement("div"));
-              intLabel.element.innerHTML = `
-                <div style="background:rgba(236,72,153,0.85);padding:8px 14px;border-radius:6px;color:white;font-size:10px;font-weight:600">
-                  <div>⫰ ∫f(x)dx = Integral</div>
-                  <div style="font-size:9px;opacity:0.9">Area under the curve</div>
-                </div>
-              `;
-              intLabel.element.style.pointerEvents = "none";
-              intLabel.position.set(12, -8, 0);
-              ts.group.add(intLabel);
-              labels.push(intLabel);
-            }
-          }
-          
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        
-        animate();
-      } catch (error) {
-        console.error("Error initializing Calculus animation:", error);
-      }
-    }
 
-    function createGrid(group: THREE.Group) {
-      // X-axis grid
-      for (let x = -10; x <= 10; x += 0.5) {
-        const lineGeo = new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(x, -5, 0),
-          new THREE.Vector3(x, 5, 0)
-        ]);
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x333333 });
-        const line = new THREE.Line(lineGeo, lineMat);
-        group.add(line);
+    updateRef.current = (time) => {
+    
+    animationId = requestAnimationFrame(animate);
+    
+    // Clear and rebuild
+    clearGroup(ts.group);
+    
+    // Clear previous labels
+    labels.forEach(label => {
+      if (label?.element?.parentNode) {
+        label.element.parentNode.removeChild(label.element);
       }
-      
-      // Y-axis grid
-      for (let y = -5; y <= 5; y += 0.5) {
-        const lineGeo = new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(-10, y, 0),
-          new THREE.Vector3(10, y, 0)
-        ]);
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x333333 });
-        const line = new THREE.Line(lineGeo, lineMat);
-        group.add(line);
-      }
-      
-      // Main axes with labels
-      const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(-10, 0, 0),
-        new THREE.Vector3(10, 0, 0)
-      ]);
-      const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: 2 }));
-      group.add(xAxis);
-      
-      const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(0, -5, 0),
-        new THREE.Vector3(0, 5, 0)
-      ]);
-      const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x00ff00, linewidth: 2 }));
-      group.add(yAxis);
-      
-      // Add axis labels
-      if (labelRenderer) {
-        const CSS2DObject = (THREE as any).CSS2DObject;
-        
-        const xLabel = new CSS2DObject(document.createElement("div"));
-        xLabel.element.innerHTML = `<div style="background:rgba(255,0,0,0.8);padding:4px 8px;border-radius:4px;color:white;font-size:9px">X</div>`;
-        xLabel.element.style.pointerEvents = "none";
-        xLabel.position.set(10, 0, 0);
-        group.add(xLabel);
-        labels.push(xLabel);
-        
-        const yLabel = new CSS2DObject(document.createElement("div"));
-        yLabel.element.innerHTML = `<div style="background:rgba(0,255,0,0.8);padding:4px 8px;border-radius:4px;color:white;font-size:9px">Y = f(x)</div>`;
-        yLabel.element.style.pointerEvents = "none";
-        yLabel.position.set(0, 5, 0);
-        group.add(yLabel);
-        labels.push(yLabel);
-      }
+    });
+    labels = [];
+    
+    // Add title label
+    if (labelRenderer) {
+      const CSS2DObject = (THREE as any).CSS2DObject;
+      const titleLabel = new CSS2DObject(document.createElement("div"));
+      titleLabel.element.innerHTML = `
+        <div style="background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:8px;color:black;font-weight:700;font-size:14px;border:2px solid #10b981">
+          <div>📐 Calculus in Motion</div>
+          <div style="font-size:11px;color:#666">Mode: ${mode === 'derivative' ? 'Derivative' : mode === 'integral' ? 'Integral' : mode === 'limit' ? 'Limit' : 'Series'}</div>
+        </div>
+      `;
+      titleLabel.element.style.pointerEvents = "none";
+      titleLabel.position.set(0, 15, 0);
+      ts.group.add(titleLabel);
+      labels.push(titleLabel);
     }
-
-    function createFunctionPlot(group: THREE.Group) {
-      const points: THREE.Vector3[] = [];
-      for (let x = -10; x <= 10; x += 0.05) {
-        const y = getFunctionValue(x);
-        points.push(new THREE.Vector3(x, y, 0));
-      }
-      
-      const geometry = new THREE.BufferGeometry().setFromPoints(points);
-      const material = new THREE.LineBasicMaterial({ 
-        color: 0x00aaff, 
-        linewidth: 3 
-      });
-      const line = new THREE.Line(geometry, material);
-      group.add(line);
-      
-      // Add function label
-      if (labelRenderer) {
-        const CSS2DObject = (THREE as any).CSS2DObject;
-        const funcLabel = new CSS2DObject(document.createElement("div"));
-        funcLabel.element.innerHTML = `<div style="background:rgba(0,170,255,0.8);padding:4px 8px;border-radius:4px;color:white;font-size:9px">f(x)</div>`;
-        funcLabel.element.style.pointerEvents = "none";
-        funcLabel.position.set(8, getFunctionValue(8), 0);
-        group.add(funcLabel);
-        labels.push(funcLabel);
-      }
+    
+    // Create coordinate grid
+    createGrid(ts.group);
+    
+    // Create function plot with label
+    if (showFunction) {
+      createFunctionPlot(ts.group);
     }
-
-    function createDerivativePlot(group: THREE.Group) {
-      const points: THREE.Vector3[] = [];
-      for (let x = -10; x <= 10; x += 0.05) {
-        const y = getDerivativeValue(x);
-        points.push(new THREE.Vector3(x, y, 0));
-      }
+    
+    // Create derivative plot with label
+    if (showDerivative && mode === "derivative") {
+      createDerivativePlot(ts.group);
+    }
+    
+    // Create integral visualization with label
+    if (showIntegral && mode === "integral") {
+      createIntegralVisualization(ts.group);
+    }
+    
+    // Create tangent line with label
+    if (showTangent && mode === "derivative") {
+      createTangentLine(ts.group);
+    }
+    
+    // Add mode-specific explanations
+    if (labelRenderer) {
+      const CSS2DObject = (THREE as any).CSS2DObject;
       
-      const geometry = new THREE.BufferGeometry().setFromPoints(points);
-      const material = new THREE.LineBasicMaterial({ 
-        color: 0xff44ff, 
-        linewidth: 3 
-      });
-      const line = new THREE.Line(geometry, material);
-      group.add(line);
-      
-      // Add derivative label
-      if (labelRenderer) {
-        const CSS2DObject = (THREE as any).CSS2DObject;
+      if (mode === "derivative") {
         const derivLabel = new CSS2DObject(document.createElement("div"));
-        derivLabel.element.innerHTML = `<div style="background:rgba(255,68,255,0.8);padding:4px 8px;border-radius:4px;color:white;font-size:9px">f'(x)</div>`;
+        derivLabel.element.innerHTML = `
+          <div style="background:rgba(16,185,129,0.85);padding:8px 14px;border-radius:6px;color:white;font-size:10px;font-weight:600">
+            <div>📈 f'(x) = Derivative</div>
+            <div style="font-size:9px;opacity:0.9">Slope of tangent = Rate of change</div>
+          </div>
+        `;
         derivLabel.element.style.pointerEvents = "none";
-        derivLabel.position.set(8, getDerivativeValue(8), 0);
-        group.add(derivLabel);
+        derivLabel.position.set(-12, -8, 0);
+        ts.group.add(derivLabel);
         labels.push(derivLabel);
-      }
-    }
-
-    function createTangentLine(group: THREE.Group) {
-      const x = pointX;
-      const y = getFunctionValue(x);
-      const slope = getDerivativeValue(x);
-      
-      // Tangent line: y = slope * (x - x0) + y0
-      const points: THREE.Vector3[] = [];
-      for (let dx = -5; dx <= 5; dx += 0.1) {
-        const tx = x + dx;
-        const ty = slope * dx + y;
-        points.push(new THREE.Vector3(tx, ty, 0));
-      }
-      
-      const geometry = new THREE.BufferGeometry().setFromPoints(points);
-      const material = new THREE.LineBasicMaterial({ 
-        color: 0xffff00, 
-        linewidth: 2
-      });
-      const line = new THREE.Line(geometry, material);
-      group.add(line);
-      
-      // Tangent point with label
-      const pointGeo = new THREE.SphereGeometry(0.2, 8, 8);
-      const pointMat = standardMaterial(0xffff00);
-      const point = new THREE.Mesh(pointGeo, pointMat);
-      point.position.set(x, y, 0);
-      group.add(point);
-      
-      if (labelRenderer) {
-        const CSS2DObject = (THREE as any).CSS2DObject;
-        const pointLabel = new CSS2DObject(document.createElement("div"));
-        pointLabel.element.innerHTML = `<div style="background:rgba(255,255,0,0.8);padding:4px 8px;border-radius:4px;color:black;font-size:9px;font-weight:600">(x, f(x))</div>`;
-        pointLabel.element.style.pointerEvents = "none";
-        pointLabel.position.set(0, 0.4, 0);
-        point.add(pointLabel);
-        labels.push(pointLabel);
-        
-        // Slope triangle with label
-        const trianglePoints: THREE.Vector3[] = [
-          new THREE.Vector3(x, y, 0),
-          new THREE.Vector3(x + 1, y, 0),
-          new THREE.Vector3(x + 1, y + slope, 0)
-        ];
-        const triangleGeo = new THREE.BufferGeometry().setFromPoints(trianglePoints);
-        const triangle = new THREE.Line(triangleGeo, new THREE.LineBasicMaterial({ color: 0xffff00 }));
-        group.add(triangle);
-        
-        const slopeLabel = new CSS2DObject(document.createElement("div"));
-        slopeLabel.element.innerHTML = `<div style="background:rgba(255,255,0,0.8);padding:4px 8px;border-radius:4px;color:black;font-size:9px">Slope = f'(x)</div>`;
-        slopeLabel.element.style.pointerEvents = "none";
-        slopeLabel.position.set(x + 1, y + slope/2, 0);
-        group.add(slopeLabel);
-        labels.push(slopeLabel);
-      }
-    }
-
-    function createIntegralVisualization(group: THREE.Group) {
-      // Create area under curve
-      const areaPoints: THREE.Vector3[] = [];
-      const numPoints = 100;
-      
-      for (let i = 0; i <= numPoints; i++) {
-        const x = -5 + (i / numPoints) * 10;
-        const y = getFunctionValue(x);
-        areaPoints.push(new THREE.Vector3(x, y, 0));
-        areaPoints.push(new THREE.Vector3(x, 0, 0));
-      }
-      
-      const geometry = new THREE.BufferGeometry().setFromPoints(areaPoints);
-      const material = new THREE.LineBasicMaterial({ 
-        color: 0x00ff88, 
-        linewidth: 2
-      });
-      const line = new THREE.Line(geometry, material);
-      group.add(line);
-      
-      // Fill area with semi-transparent rectangles
-      for (let x = -5; x <= 5; x += 0.5) {
-        const y = getFunctionValue(x);
-        const height = Math.abs(y);
-        const rectGeo = new THREE.PlaneGeometry(0.45, height, 1, 1);
-        const rectMat = new THREE.MeshBasicMaterial({ 
-          color: 0x00ff88, 
-          transparent: true, 
-          opacity: 0.3,
-          side: THREE.DoubleSide
-        });
-        const rect = new THREE.Mesh(rectGeo, rectMat);
-        rect.position.set(x, height / 2, 0);
-        group.add(rect);
-      }
-      
-      // Add integral label
-      if (labelRenderer) {
-        const CSS2DObject = (THREE as any).CSS2DObject;
+      } else if (mode === "integral") {
         const intLabel = new CSS2DObject(document.createElement("div"));
-        intLabel.element.innerHTML = `<div style="background:rgba(0,255,136,0.8);padding:4px 8px;border-radius:4px;color:black;font-size:9px">Area = ∫f(x)dx</div>`;
+        intLabel.element.innerHTML = `
+          <div style="background:rgba(236,72,153,0.85);padding:8px 14px;border-radius:6px;color:white;font-size:10px;font-weight:600">
+            <div>⫰ ∫f(x)dx = Integral</div>
+            <div style="font-size:9px;opacity:0.9">Area under the curve</div>
+          </div>
+        `;
         intLabel.element.style.pointerEvents = "none";
-        intLabel.position.set(0, -3, 0);
-        group.add(intLabel);
+        intLabel.position.set(12, -8, 0);
+        ts.group.add(intLabel);
         labels.push(intLabel);
       }
     }
-
-    init();
-
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(animationId);
-      if (unbind) unbind();
-      disposeThreeScene(ts);
-      // Clean up label renderer
-      if (labelRenderer && labelRenderer.domElement?.parentNode) {
-        labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      }
-      labels = [];
+    
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, functionType, frequency, amplitude, showFunction, showDerivative, showIntegral, showTangent, pointX]);
+
 
   const currentSlope = useMemo(() => {
     return getDerivativeValue(pointX).toFixed(3);

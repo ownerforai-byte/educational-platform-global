@@ -23,6 +23,7 @@ import {
   standardMaterial,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
@@ -51,6 +52,8 @@ const DIELECTRICS = [
 
 const CapacitorTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(1);
   const [separationMm, setSeparationMm] = useState(4);
@@ -67,21 +70,30 @@ const CapacitorTab: React.FC = () => {
   const energy = 0.5 * cEff * volts ** 2;
   const field = volts / d;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(7, 4.5, 10), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(7, 4.5, 10), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
         titleText(ts, `C = ${(cEff * 1e12).toFixed(1)} pF — κ = ${mat.k}, d = ${separationMm} mm`, new THREE.Vector3(0, 4.2, 0));
 labelRenderer = new CSS2DRenderer();
         labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
@@ -149,34 +161,19 @@ labelRenderer = new CSS2DRenderer();
         addLbl("#facc15", "Uniform field E = V/d", [-3.0, 4.4, 0], `E = ${field.toExponential(1)} V/m`, [-0.6, 3.4, 0]);
         addLbl(mat.k === 1 ? "#94a3b8" : "#67e8f9", mat.k === 1 ? "Air gap (κ = 1)" : `${mat.name} dielectric (κ = ${mat.k})`, [-2.9, 0.9, 0], "polarised molecules weaken the field", [slab.position.x - 1.4, 2.4, slab.position.z]);
         addLbl("#22c55e", `Battery ${volts} V`, [-4.6, 2.0, 0], "keeps V fixed while C changes", [-4.6, 1.1, 0]);
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          /* slab gently slides in/out around the set position */
-          slab.position.z = THREE.MathUtils.clamp(
-            slab.position.z + Math.sin(t * 0.9) * 0.0012,
-            -gap / 2 + (gap * 0.7) / 2 - 0.001,
-            gap / 2 + 1.2
-          );
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
 
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    updateRef.current = (time) => {
+    /* slab gently slides in/out around the set position */
+    slab.position.z = THREE.MathUtils.clamp(
+      slab.position.z + Math.sin(time * 0.9) * 0.0012,
+      -gap / 2 + (gap * 0.7) / 2 - 0.001,
+      gap / 2 + 1.2
+    );
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, matIdx, separationMm, volts, inserted]);
+
 
   return (
     <div className="space-y-3">
@@ -224,6 +221,8 @@ function animate() {
 
 const MeterBridgeTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [knownR, setKnownR] = useState(6);
   const [unknownS, setUnknownS] = useState(4);
@@ -233,118 +232,112 @@ const MeterBridgeTab: React.FC = () => {
   const sCalc = knownR * ((100 - balanceCm) / balanceCm);
   const errMax = Math.abs(100 - 2 * balanceCm) < 20 ? "balanced — l near 50 cm, most accurate" : "move l toward 50 cm by swapping R for best accuracy";
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(0, 9, 13), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(0, 9, 13), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, `Meter bridge — null at l = ${balanceCm.toFixed(1)} cm → S = ${sCalc.toFixed(2)} Ω`, new THREE.Vector3(0, 4.4, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, `Meter bridge — null at l = ${balanceCm.toFixed(1)} cm → S = ${sCalc.toFixed(2)} Ω`, new THREE.Vector3(0, 4.4, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        /* wooden board */
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(15, 0.3, 7), standardMaterial(0x7c4a21, { roughness: 0.9 })));
-
-        /* 1 m wire stretched along a scale */
-        const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 10, 8), standardMaterial(0xd6d3d1, { metalness: 0.9 }));
-        wire.rotation.z = Math.PI / 2;
-        wire.position.set(0, 1.1, 0);
-        ts.group.add(wire);
-        for (let i = 0; i <= 10; i++) {
-          const tick = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.28, 0.02), standardMaterial(0xfafafa));
-          tick.position.set(-5 + i, 1.35, 0);
-          ts.group.add(tick);
-          const numLbl = mkLabel("#e2e8f0", i === 10 ? "100" : `${i * 10}`);
-          numLbl.style.fontSize = "9px";
-          const o = new CSS2DObject(numLbl);
-          o.position.set(-5 + i, 1.75, 0);
-          ts.group.add(o);
-        }
-        const scaleStrip = new THREE.Mesh(new THREE.BoxGeometry(10.4, 0.06, 0.4), standardMaterial(0x334155, { roughness: 0.5 }));
-        scaleStrip.position.set(0, 0.92, 0);
-        ts.group.add(scaleStrip);
-
-        /* resistance boxes: left = known R, right = unknown S */
-        const boxL = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.9, 0.9), standardMaterial(0x38bdf8, { metalness: 0.3 }));
-        boxL.position.set(-4.2, 1.3, 2.6);
-        ts.group.add(boxL);
-        const boxR = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.9, 0.9), standardMaterial(0xf97316, { metalness: 0.3 }));
-        boxR.position.set(4.2, 1.3, 2.6);
-        ts.group.add(boxR);
-
-        /* galvanometer with jockey */
-        const galv = new THREE.Group();
-        galv.add(new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.55, 0.3, 24), standardMaterial(0x1f2937, { metalness: 0.4 })));
-        const dial = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.06, 24), standardMaterial(0xfafafa));
-        dial.position.y = 0.18;
-        galv.add(dial);
-        const needle = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.72), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.6 }));
-        needle.position.y = 0.24;
-        galv.add(needle);
-        galv.position.set(0, 2.6, 2.2);
-        ts.group.add(galv);
-
-        /* jockey that slides along the wire */
-        const jockey = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.5, 10), standardMaterial(0xfacc15, { metalness: 0.6 }));
-        jockey.rotation.x = Math.PI;
-        jockey.position.set(-5 + balanceCm / 10, 1.5, 0);
-        ts.group.add(jockey);
-
-        addLbl("#38bdf8", `Known R = ${knownR} Ω`, [-4.4, 2.6, 3.4], "resistance box in left gap", [-4.2, 1.9, 2.6]);
-        addLbl("#fb923c", `Unknown S = ${unknownS} Ω`, [4.4, 2.6, 3.4], "the resistance being determined", [4.2, 1.9, 2.6]);
-        addLbl("#facc15", "Jockey — slides for null point", [-5 + balanceCm / 10 - 1.2, 3.0, 0.4], `null at l = ${balanceCm.toFixed(1)} cm`, [-5 + balanceCm / 10, 1.4, 0]);
-        addLbl("#ef4444", "Galvanometer", [0.1, 3.8, 3.2], "reads zero at balance", [0, 2.9, 2.2]);
-        addLbl("#4ade80", "1 m constantan wire", [0, 0.6, 1.9], "uniform cross-section → R ∝ length", [-1.8, 1.1, 0]);
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          /* jockey hunts around the balance point; needle swings toward null */
-          const jx = -5 + balanceCm / 10 + Math.sin(t * 1.7) * 0.5;
-          jockey.position.x = jx;
-          const off = Math.abs(jx - (-5 + balanceCm / 10)); // distance from null (scene units)
-          const defl = Math.min(0.9, off * 1.2) * Math.sign(jx - (-5 + balanceCm / 10) || 1);
-          needle.rotation.y = defl * (batteryV > 0 ? 1 : 0);
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    /* wooden board */
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(15, 0.3, 7), standardMaterial(0x7c4a21, { roughness: 0.9 })));
+
+    /* 1 m wire stretched along a scale */
+    const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 10, 8), standardMaterial(0xd6d3d1, { metalness: 0.9 }));
+    wire.rotation.z = Math.PI / 2;
+    wire.position.set(0, 1.1, 0);
+    ts.group.add(wire);
+    for (let i = 0; i <= 10; i++) {
+      const tick = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.28, 0.02), standardMaterial(0xfafafa));
+      tick.position.set(-5 + i, 1.35, 0);
+      ts.group.add(tick);
+      const numLbl = mkLabel("#e2e8f0", i === 10 ? "100" : `${i * 10}`);
+      numLbl.style.fontSize = "9px";
+      const o = new CSS2DObject(numLbl);
+      o.position.set(-5 + i, 1.75, 0);
+      ts.group.add(o);
+    }
+    const scaleStrip = new THREE.Mesh(new THREE.BoxGeometry(10.4, 0.06, 0.4), standardMaterial(0x334155, { roughness: 0.5 }));
+    scaleStrip.position.set(0, 0.92, 0);
+    ts.group.add(scaleStrip);
+
+    /* resistance boxes: left = known R, right = unknown S */
+    const boxL = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.9, 0.9), standardMaterial(0x38bdf8, { metalness: 0.3 }));
+    boxL.position.set(-4.2, 1.3, 2.6);
+    ts.group.add(boxL);
+    const boxR = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.9, 0.9), standardMaterial(0xf97316, { metalness: 0.3 }));
+    boxR.position.set(4.2, 1.3, 2.6);
+    ts.group.add(boxR);
+
+    /* galvanometer with jockey */
+    const galv = new THREE.Group();
+    galv.add(new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.55, 0.3, 24), standardMaterial(0x1f2937, { metalness: 0.4 })));
+    const dial = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.06, 24), standardMaterial(0xfafafa));
+    dial.position.y = 0.18;
+    galv.add(dial);
+    const needle = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.72), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.6 }));
+    needle.position.y = 0.24;
+    galv.add(needle);
+    galv.position.set(0, 2.6, 2.2);
+    ts.group.add(galv);
+
+    /* jockey that slides along the wire */
+    const jockey = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.5, 10), standardMaterial(0xfacc15, { metalness: 0.6 }));
+    jockey.rotation.x = Math.PI;
+    jockey.position.set(-5 + balanceCm / 10, 1.5, 0);
+    ts.group.add(jockey);
+
+    addLbl("#38bdf8", `Known R = ${knownR} Ω`, [-4.4, 2.6, 3.4], "resistance box in left gap", [-4.2, 1.9, 2.6]);
+    addLbl("#fb923c", `Unknown S = ${unknownS} Ω`, [4.4, 2.6, 3.4], "the resistance being determined", [4.2, 1.9, 2.6]);
+    addLbl("#facc15", "Jockey — slides for null point", [-5 + balanceCm / 10 - 1.2, 3.0, 0.4], `null at l = ${balanceCm.toFixed(1)} cm`, [-5 + balanceCm / 10, 1.4, 0]);
+    addLbl("#ef4444", "Galvanometer", [0.1, 3.8, 3.2], "reads zero at balance", [0, 2.9, 2.2]);
+    addLbl("#4ade80", "1 m constantan wire", [0, 0.6, 1.9], "uniform cross-section → R ∝ length", [-1.8, 1.1, 0]);
+
+    updateRef.current = (time) => {
+    /* jockey hunts around the balance point; needle swings toward null */
+    const jx = -5 + balanceCm / 10 + Math.sin(time * 1.7) * 0.5;
+    jockey.position.x = jx;
+    const off = Math.abs(jx - (-5 + balanceCm / 10)); // distance from null (scene units)
+    const defl = Math.min(0.9, off * 1.2) * Math.sign(jx - (-5 + balanceCm / 10) || 1);
+    needle.rotation.y = defl * (batteryV > 0 ? 1 : 0);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, knownR, unknownS, batteryV]);
+
 
   return (
     <div className="space-y-3">

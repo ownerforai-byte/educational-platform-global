@@ -113,6 +113,12 @@ export function TabsContent({
 }) {
   const { value: selected } = useTabs();
   const isActive = selected === value;
+  const hasBeenActive = React.useRef(false);
+
+  // Keep content mounted after first activation to preserve local state (e.g. Three.js scenes).
+  // Once active, always render the children but hide when inactive.
+  if (isActive) hasBeenActive.current = true;
+  if (!hasBeenActive.current) return null;
 
   return (
     <div

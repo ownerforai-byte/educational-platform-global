@@ -25,6 +25,7 @@ import {
   standardMaterial,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
@@ -45,6 +46,8 @@ type MMode = "wire" | "loop" | "solenoid" | "lorentz";
 
 const MagnetismTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [mode, setMode] = useState<MMode>("wire");
   const [current, setCurrent] = useState(10); // A
@@ -56,21 +59,30 @@ const MagnetismTab: React.FC = () => {
   const bSolenoid = 4 * Math.PI * 1e-7 * current * 800; // n = 800 turns/m
   const fLorentz = chargeQ * 1e-6 * 10 * fieldB; // q v B with v = 10 m/s
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(8, 7, 11), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(8, 7, 11), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
         const titles: Record<MMode, string> = {
           wire: "Field of a Straight Wire — right-hand grip",
           loop: "Field of a Circular Loop",
@@ -171,33 +183,18 @@ const turns = 14;
 /* animation for Lorentz mode: charge circles the guide circle */
         const lorentzMesh: THREE.Mesh | null = mode === "lorentz" ? (ts.group.children.find((c) => (c as any).__circ) as THREE.Mesh) || null : null;
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          if (mode === "lorentz" && lorentzMesh) {
-            const r = (lorentzMesh as any).__circ?.r ?? 1.6;
-            const w = 1.4; // angular speed (scaled)
-            lorentzMesh.position.set(r * Math.cos(t * w), 1.6, -r * Math.sin(t * w));
-          }
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
 
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    updateRef.current = (time) => {
+    if (mode === "lorentz" && lorentzMesh) {
+      const r = (lorentzMesh as any).__circ?.r ?? 1.6;
+      const w = 1.4; // angular speed (scaled)
+      lorentzMesh.position.set(r * Math.cos(time * w), 1.6, -r * Math.sin(time * w));
+    }
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, mode, current, chargeQ, fieldB]);
+
 
   const bReadout = mode === "wire" ? bWire * 1e6 : mode === "loop" ? bLoop * 1e6 : mode === "solenoid" ? bSolenoid * 1000 : NaN;
   const fReadout = mode === "lorentz" ? fLorentz * 1000 : NaN;
@@ -262,6 +259,8 @@ const turns = 14;
 
 const EMITab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [speed, setSpeed] = useState(1);
   const [turnsN, setTurnsN] = useState(100);
@@ -271,114 +270,108 @@ const EMITab: React.FC = () => {
   const tau = inducL / resistR; // L/R time constant
   const emfPeak = 0.5 * turnsN * 0.02 * speed; // ε = N·A·(dB/dt·v)
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(8, 5.5, 12), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(8, 5.5, 12), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, "Faraday & Lenz — a moving magnet induces an EMF", new THREE.Vector3(0, 5.0, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, "Faraday & Lenz — a moving magnet induces an EMF", new THREE.Vector3(0, 5.0, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
-
-        /* coil: a few turns wrapped into a cylinder */
-        const coilR = 1.4;
-        const coilLen = 0.9;
-        const coilPts: THREE.Vector3[] = [];
-        for (let i = 0; i <= 160; i++) {
-          const s = i / 160;
-          const a = s * 7 * Math.PI * 2;
-          coilPts.push(new THREE.Vector3(coilR * Math.cos(a), 1.7 - coilLen / 2 + (s - 0.5) * coilLen, coilR * Math.sin(a)));
-        }
-        const coilGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coilPts), 260, 0.06, 8);
-        ts.group.add(new THREE.Mesh(coilGeo, standardMaterial(0xf87171, { metalness: 0.7 })));
-
-        const axis = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, coilLen + 0.6, 12), standardMaterial(0x94a3b8, { metalness: 0.6 }));
-        axis.rotation.x = Math.PI / 2;
-        axis.position.y = 1.6;
-        ts.group.add(axis);
-
-        /* magnet: red/blue bar travelling along the core */
-        const magnet = new THREE.Group();
-        magnet.add(new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.55, 0.55), standardMaterial(0xef4444, { emissive: 0x7f1d1d, emissiveIntensity: 0.4 })));
-        const capN = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.18, 12), standardMaterial(0x3b82f6));
-        capN.rotation.x = Math.PI / 2;
-        capN.position.z = 0.55 / 2;
-        magnet.add(capN);
-        const capS = capN.clone();
-        capS.position.z = -0.55 / 2;
-        capS.material = standardMaterial(0xf87171, { metalness: 0.5 });
-        magnet.add(capS);
-        magnet.position.set(0, 1.6, 3.2);
-        ts.group.add(magnet);
-
-        /* galvanometer */
-        const galv = new THREE.Group();
-        galv.add(new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.3, 24), standardMaterial(0x1f2937, { metalness: 0.4 })));
-        const dial = new THREE.Mesh(new THREE.CylinderGeometry(0.46, 0.46, 0.05, 24), standardMaterial(0xfafafa));
-        dial.position.y = 0.17;
-        galv.add(dial);
-        const needle = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.8), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.6 }));
-        needle.position.y = 0.23;
-        galv.add(needle);
-        galv.position.set(0, 3.6, 0);
-        ts.group.add(galv);
-
-        addLbl("#f87171", `Coil — ${turnsN} turns`, [2.9, 3.2, 0], "axis of the magnet", [coilR, 1.6, 0]);
-        addLbl("#3b82f6", "Bar magnet (N-blue / S-red)", [1.4, 0.6, 3.6], "pushes through the coil", [0, 1.6, 3.2]);
-        addLbl("#ef4444", "Galvanometer", [0.1, 4.3, 0], "kicks only while flux changes", [0.4, 3.6, 0]);
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          /* magnet oscillates through the coil */
-          const z = 3.2 - ((t * speed * 0.8) % 6.4);
-          magnet.position.z = z;
-          const inside = Math.abs(z) < 1.7 ? 1 : 0;
-          const rateon = Math.cos(t * speed * 0.8) * inside;
-          needle.rotation.y = Math.min(0.9, emfPeak * rateon * 20);
-          needle.scale.y = 0.9 + 0.4 * Math.abs(rateon);
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
+
+    /* coil: a few turns wrapped into a cylinder */
+    const coilR = 1.4;
+    const coilLen = 0.9;
+    const coilPts: THREE.Vector3[] = [];
+    for (let i = 0; i <= 160; i++) {
+      const s = i / 160;
+      const a = s * 7 * Math.PI * 2;
+      coilPts.push(new THREE.Vector3(coilR * Math.cos(a), 1.7 - coilLen / 2 + (s - 0.5) * coilLen, coilR * Math.sin(a)));
+    }
+    const coilGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coilPts), 260, 0.06, 8);
+    ts.group.add(new THREE.Mesh(coilGeo, standardMaterial(0xf87171, { metalness: 0.7 })));
+
+    const axis = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, coilLen + 0.6, 12), standardMaterial(0x94a3b8, { metalness: 0.6 }));
+    axis.rotation.x = Math.PI / 2;
+    axis.position.y = 1.6;
+    ts.group.add(axis);
+
+    /* magnet: red/blue bar travelling along the core */
+    const magnet = new THREE.Group();
+    magnet.add(new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.55, 0.55), standardMaterial(0xef4444, { emissive: 0x7f1d1d, emissiveIntensity: 0.4 })));
+    const capN = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.18, 12), standardMaterial(0x3b82f6));
+    capN.rotation.x = Math.PI / 2;
+    capN.position.z = 0.55 / 2;
+    magnet.add(capN);
+    const capS = capN.clone();
+    capS.position.z = -0.55 / 2;
+    capS.material = standardMaterial(0xf87171, { metalness: 0.5 });
+    magnet.add(capS);
+    magnet.position.set(0, 1.6, 3.2);
+    ts.group.add(magnet);
+
+    /* galvanometer */
+    const galv = new THREE.Group();
+    galv.add(new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.3, 24), standardMaterial(0x1f2937, { metalness: 0.4 })));
+    const dial = new THREE.Mesh(new THREE.CylinderGeometry(0.46, 0.46, 0.05, 24), standardMaterial(0xfafafa));
+    dial.position.y = 0.17;
+    galv.add(dial);
+    const needle = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.8), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.6 }));
+    needle.position.y = 0.23;
+    galv.add(needle);
+    galv.position.set(0, 3.6, 0);
+    ts.group.add(galv);
+
+    addLbl("#f87171", `Coil — ${turnsN} turns`, [2.9, 3.2, 0], "axis of the magnet", [coilR, 1.6, 0]);
+    addLbl("#3b82f6", "Bar magnet (N-blue / S-red)", [1.4, 0.6, 3.6], "pushes through the coil", [0, 1.6, 3.2]);
+    addLbl("#ef4444", "Galvanometer", [0.1, 4.3, 0], "kicks only while flux changes", [0.4, 3.6, 0]);
+
+    updateRef.current = (time) => {
+    /* magnet oscillates through the coil */
+    const z = 3.2 - ((time * speed * 0.8) % 6.4);
+    magnet.position.z = z;
+    const inside = Math.abs(z) < 1.7 ? 1 : 0;
+    const rateon = Math.cos(time * speed * 0.8) * inside;
+    needle.rotation.y = Math.min(0.9, emfPeak * rateon * 20);
+    needle.scale.y = 0.9 + 0.4 * Math.abs(rateon);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, speed, turnsN]);
+
 
   return (
     <div className="space-y-3">

@@ -23,6 +23,7 @@ import {
   standardMaterial,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
@@ -53,6 +54,8 @@ const WIRES = [
 
 const ElasticityTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [mode, setMode] = useState<"hooke" | "young">("hooke");
   const [springIdx, setSpringIdx] = useState(1);
@@ -70,136 +73,131 @@ const ElasticityTab: React.FC = () => {
   const strain = stress / (wire.Y * 1e9);
   const dL = strain * lenM;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
-(async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(8, 5, 12), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, mode === "hooke" ? `Hooke's Law — k = ${spring.k} N/m` : `Young's Modulus — ${wire.name} wire, Y = ${wire.Y} GPa`, new THREE.Vector3(0, 5.2, 0));
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(8, 5, 12), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    titleText(ts, mode === "hooke" ? `Hooke's Law — k = ${spring.k} N/m` : `Young's Modulus — ${wire.name} wire, Y = ${wire.Y} GPa`, new THREE.Vector3(0, 5.2, 0));
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 10), standardMaterial(0x1e293b, { roughness: 0.95 })));
-        /* ceiling */
-        const ceil = new THREE.Mesh(new THREE.BoxGeometry(6, 0.3, 2.4), standardMaterial(0x57534e, { metalness: 0.5 }));
-        ceil.position.set(0, 4.6, 0);
-        ts.group.add(ceil);
-        addLbl("#f87171", "Rigid support", [0, 5.6, 0], "top fixed end", [0, 4.5, 0]);
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        let hangGrp: THREE.Group | null = null;
-        if (mode === "hooke") {
-          /* coil spring drawn as a helix tube */
-          const restLen = 2.0;
-          const stretch = Math.min(1.9, Math.max(0.05, xSpring * 0.9));
-          const helixPts: THREE.Vector3[] = [];
-          const turns = 10;
-          const steps = 120;
-          for (let i = 0; i <= steps; i++) {
-            const s = i / steps;
-            helixPts.push(new THREE.Vector3(0.32 * Math.cos(s * turns * Math.PI * 2), 4.5 - s * (restLen + stretch), 0.32 * Math.sin(s * turns * Math.PI * 2)));
-          }
-          const springMesh = new THREE.Mesh(
-            new THREE.TubeGeometry(new THREE.CatmullRomCurve3(helixPts), 200, 0.055, 8),
-            standardMaterial(spring.color, { metalness: 0.6, roughness: 0.35 })
-          );
-          ts.group.add(springMesh);
-
-          /* hanger + slotted weights */
-          const hanger = new THREE.Group();
-          hanger.add(new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.1, 24), standardMaterial(0x94a3b8, { metalness: 0.7 })));
-          const weight = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.55, 24), standardMaterial(0x64748b, { metalness: 0.75 }));
-          weight.position.y = -0.4;
-          hanger.add(weight);
-          hanger.position.set(0, 4.5 - (restLen + stretch) - 0.15, 0);
-          const hangerRestY = hanger.position.y;
-          ts.group.add(hanger);
-          hangGrp = hanger;
-
-          /* ruler beside spring */
-          const ruler = new THREE.Mesh(new THREE.BoxGeometry(0.14, 4.2, 0.08), standardMaterial(0xfafafa, { roughness: 0.6 }));
-          ruler.position.set(-1.5, 2.4, 0);
-          ts.group.add(ruler);
-          for (let i = 0; i <= 8; i++) {
-            const tick = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.02, 0.09), standardMaterial(0x111827));
-            tick.position.set(-1.5, 0.35 + i * 0.5, 0);
-            ts.group.add(tick);
-          }
-          addLbl("#38bdf8", `Spring — k = ${spring.k} N/m`, [2.6, 4.0, 0], "F = k·x (linear region)", [0.3, 3.6, 0]);
-          addLbl("#facc15", `Load F = ${massN} N`, [1.9, hangerRestY + 0.4, 0], `x = F/k = ${xSpring.toFixed(2)} m stretch`, [0, hangerRestY, 0]);
-          addLbl("#4ade80", "Millimetre scale", [-2.4, 2.4, 0], "measure x from the pointer", [-1.5, 2.4, 0]);
-          addLbl("#a78bfa", "Elastic limit — don't cross it", [3.6, 1.2, 0], "beyond it the spring deforms permanently", [0.6, 2.0, 0]);
-        } else {
-          /* Young's modulus wire */
-          const wireLen = 3.6;
-          const wireMesh = new THREE.Mesh(
-            new THREE.CylinderGeometry(Math.max(0.02, diaMm * 0.09), Math.max(0.02, diaMm * 0.09), wireLen + Math.min(0.5, dL * 400), 12),
-            standardMaterial(wire.color, { metalness: 0.7, roughness: 0.3 })
-          );
-          wireMesh.position.set(0, 4.5 - (wireLen + Math.min(0.5, dL * 400)) / 2, 0);
-          ts.group.add(wireMesh);
-
-          const clamp = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.35, 16), standardMaterial(0x57534e, { metalness: 0.6 }));
-          clamp.position.set(0, 4.5 - (wireLen + Math.min(0.5, dL * 400)) - 0.2, 0);
-          ts.group.add(clamp);
-
-          const pan = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.45, 0.12, 24), standardMaterial(0x94a3b8, { metalness: 0.7 }));
-          pan.position.set(0, clamp.position.y - 0.45, 0);
-          ts.group.add(pan);
-          hangGrp = new THREE.Group();
-          hangGrp.add(clamp, pan);
-          ts.group.add(hangGrp);
-          hangGrp.position.set(0, 0, 0);
-
-          addLbl("#fbbf24", `${wire.name} wire`, [1.9, 3.9, 0], `L = ${lenM.toFixed(2)} m, d = ${diaMm.toFixed(1)} mm`, [0.05, 3.4, 0]);
-          addLbl("#facc15", `Load F = ${forceN} N`, [1.7, clamp.position.y - 1.1, 0], `stress = ${stress.toExponential(2)} Pa`, [0, clamp.position.y - 0.45, 0]);
-          addLbl("#38bdf8", `ΔL = ${(dL * 1000).toFixed(2)} mm`, [-2.5, 1.3, 0], `strain = ${(strain * 100).toFixed(4)} %`, [0, 1.5, 0]);
-        }
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          if (mode === "hooke" && hangGrp) {
-            hangGrp.position.y = Math.sin(t * 2.4) * 0.07; // gentle bounce about equilibrium
-          }
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 10), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    /* ceiling */
+    const ceil = new THREE.Mesh(new THREE.BoxGeometry(6, 0.3, 2.4), standardMaterial(0x57534e, { metalness: 0.5 }));
+    ceil.position.set(0, 4.6, 0);
+    ts.group.add(ceil);
+    addLbl("#f87171", "Rigid support", [0, 5.6, 0], "top fixed end", [0, 4.5, 0]);
+
+    let hangGrp: THREE.Group | null = null;
+    if (mode === "hooke") {
+      /* coil spring drawn as a helix tube */
+      const restLen = 2.0;
+      const stretch = Math.min(1.9, Math.max(0.05, xSpring * 0.9));
+      const helixPts: THREE.Vector3[] = [];
+      const turns = 10;
+      const steps = 120;
+      for (let i = 0; i <= steps; i++) {
+        const s = i / steps;
+        helixPts.push(new THREE.Vector3(0.32 * Math.cos(s * turns * Math.PI * 2), 4.5 - s * (restLen + stretch), 0.32 * Math.sin(s * turns * Math.PI * 2)));
+      }
+      const springMesh = new THREE.Mesh(
+        new THREE.TubeGeometry(new THREE.CatmullRomCurve3(helixPts), 200, 0.055, 8),
+        standardMaterial(spring.color, { metalness: 0.6, roughness: 0.35 })
+      );
+      ts.group.add(springMesh);
+
+      /* hanger + slotted weights */
+      const hanger = new THREE.Group();
+      hanger.add(new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.1, 24), standardMaterial(0x94a3b8, { metalness: 0.7 })));
+      const weight = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.55, 24), standardMaterial(0x64748b, { metalness: 0.75 }));
+      weight.position.y = -0.4;
+      hanger.add(weight);
+      hanger.position.set(0, 4.5 - (restLen + stretch) - 0.15, 0);
+      const hangerRestY = hanger.position.y;
+      ts.group.add(hanger);
+      hangGrp = hanger;
+
+      /* ruler beside spring */
+      const ruler = new THREE.Mesh(new THREE.BoxGeometry(0.14, 4.2, 0.08), standardMaterial(0xfafafa, { roughness: 0.6 }));
+      ruler.position.set(-1.5, 2.4, 0);
+      ts.group.add(ruler);
+      for (let i = 0; i <= 8; i++) {
+        const tick = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.02, 0.09), standardMaterial(0x111827));
+        tick.position.set(-1.5, 0.35 + i * 0.5, 0);
+        ts.group.add(tick);
+      }
+      addLbl("#38bdf8", `Spring — k = ${spring.k} N/m`, [2.6, 4.0, 0], "F = k·x (linear region)", [0.3, 3.6, 0]);
+      addLbl("#facc15", `Load F = ${massN} N`, [1.9, hangerRestY + 0.4, 0], `x = F/k = ${xSpring.toFixed(2)} m stretch`, [0, hangerRestY, 0]);
+      addLbl("#4ade80", "Millimetre scale", [-2.4, 2.4, 0], "measure x from the pointer", [-1.5, 2.4, 0]);
+      addLbl("#a78bfa", "Elastic limit — don't cross it", [3.6, 1.2, 0], "beyond it the spring deforms permanently", [0.6, 2.0, 0]);
+    } else {
+      /* Young's modulus wire */
+      const wireLen = 3.6;
+      const wireMesh = new THREE.Mesh(
+        new THREE.CylinderGeometry(Math.max(0.02, diaMm * 0.09), Math.max(0.02, diaMm * 0.09), wireLen + Math.min(0.5, dL * 400), 12),
+        standardMaterial(wire.color, { metalness: 0.7, roughness: 0.3 })
+      );
+      wireMesh.position.set(0, 4.5 - (wireLen + Math.min(0.5, dL * 400)) / 2, 0);
+      ts.group.add(wireMesh);
+
+      const clamp = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.35, 16), standardMaterial(0x57534e, { metalness: 0.6 }));
+      clamp.position.set(0, 4.5 - (wireLen + Math.min(0.5, dL * 400)) - 0.2, 0);
+      ts.group.add(clamp);
+
+      const pan = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.45, 0.12, 24), standardMaterial(0x94a3b8, { metalness: 0.7 }));
+      pan.position.set(0, clamp.position.y - 0.45, 0);
+      ts.group.add(pan);
+      hangGrp = new THREE.Group();
+      hangGrp.add(clamp, pan);
+      ts.group.add(hangGrp);
+      hangGrp.position.set(0, 0, 0);
+
+      addLbl("#fbbf24", `${wire.name} wire`, [1.9, 3.9, 0], `L = ${lenM.toFixed(2)} m, d = ${diaMm.toFixed(1)} mm`, [0.05, 3.4, 0]);
+      addLbl("#facc15", `Load F = ${forceN} N`, [1.7, clamp.position.y - 1.1, 0], `stress = ${stress.toExponential(2)} Pa`, [0, clamp.position.y - 0.45, 0]);
+      addLbl("#38bdf8", `ΔL = ${(dL * 1000).toFixed(2)} mm`, [-2.5, 1.3, 0], `strain = ${(strain * 100).toFixed(4)} %`, [0, 1.5, 0]);
+    }
+
+    updateRef.current = (time) => {
+    if (mode === "hooke" && hangGrp) {
+      hangGrp.position.y = Math.sin(time * 2.4) * 0.07; // gentle bounce about equilibrium
+    }
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, mode, springIdx, massN, wireIdx, forceN, lenM, diaMm]);
+
 return (
     <div className="space-y-3">
       <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr]">
@@ -272,6 +270,8 @@ const GAS_COLORS = [0x22d3ee, 0x4ade80, 0xfacc15, 0xf97316, 0xa78bfa, 0x38bdf8] 
 
 const IdealGasTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [molecules, setMolecules] = useState(60);
   const [tempK, setTempK] = useState(300);
@@ -281,111 +281,105 @@ const IdealGasTab: React.FC = () => {
   const pressure = (nMol * Rgas * tempK) / (volumeL / 1000); // Pa
   const vrms = Math.sqrt((3 * Rgas * tempK) / 0.029); // r.m.s. speed, molar mass 29 g/mol air
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(7, 5.5, 11), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(7, 5.5, 11), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, `PV = nRT → P = ${pressureKPa(pressure)} kPa at T = ${tempK} K, V = ${volumeL} L`, new THREE.Vector3(0, 4.8, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, `PV = nRT → P = ${pressureKPa(pressure)} kPa at T = ${tempK} K, V = ${volumeL} L`, new THREE.Vector3(0, 4.8, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        function pressureKPa(p: number) { return (p / 1000).toFixed(1); }
-
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
-
-        /* cylinder: glass walls, piston on top */
-        const cylH = 5.6;
-        const gasH = Math.max(1.2, (volumeL / 45) * cylH); // piston height from volume
-        const glassMat = standardMaterial(0x67e8f9, { transparent: true, opacity: 0.12 });
-        glassMat.side = THREE.DoubleSide;
-        const tube = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, cylH, 32, 1, true), glassMat);
-        tube.position.set(0, 0.15 + cylH / 2, 0);
-        ts.group.add(tube);
-        const base = new THREE.Mesh(new THREE.CylinderGeometry(2.25, 2.25, 0.3, 32), standardMaterial(0x57534e, { metalness: 0.6 }));
-        base.position.set(0, 0.3, 0);
-        ts.group.add(base);
-
-        /* piston (position animated below) */
-        const piston = new THREE.Mesh(new THREE.CylinderGeometry(2.02, 2.02, 0.34, 32), standardMaterial(0xf59e0b, { metalness: 0.5, roughness: 0.4 }));
-        ts.group.add(piston);
-        const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 1.6, 10), standardMaterial(0x94a3b8, { metalness: 0.7 }));
-        ts.group.add(rod);
-
-        /* gas molecules */
-        const mols: { mesh: THREE.Mesh; vel: THREE.Vector3 }[] = [];
-        for (let i = 0; i < molecules; i++) {
-          const mesh = new THREE.Mesh(
-            new THREE.SphereGeometry(0.085, 10, 8),
-            standardMaterial(GAS_COLORS[i % GAS_COLORS.length], { emissive: GAS_COLORS[i % GAS_COLORS.length], emissiveIntensity: 0.7 })
-          );
-          ts.group.add(mesh);
-          const sp = 1.2 + Math.sqrt(tempK / 100) * 1.4 * (0.75 + Math.random() * 0.5);
-          mols.push({ mesh, vel: new THREE.Vector3((Math.random() - 0.5) * sp, (Math.random() - 0.5) * sp, (Math.random() - 0.5) * sp) });
-          mesh.position.set((Math.random() - 0.5) * 3.4, 0.6 + Math.random() * (gasH - 0.7), (Math.random() - 0.5) * 3.4);
-        }
-        (mols as any).speedScale = 1;
-
-        addLbl("#f59e0b", "Piston (movable)", [3.4, 0.3 + gasH + 1.2, 0], "weight sets external pressure", [1.6, 0.3 + gasH, 0]);
-        addLbl("#67e8f9", "Cylinder — sealed, frictionless", [-3.9, 2.2, 0], "glass walls let you watch the molecules", [-2.0, 2.2, 0]);
-        addLbl("#4ade80", `Gas — ${molecules} molecules shown`, [0.4, 0.2, 3.9], `of ~10²³ real molecules; ½mv² ∝ T`, [0, 1.0, 0]);
-        addLbl("#a78bfa", "Wall collisions = pressure", [-3.8, 0.3 + gasH - 0.6, 0], "each impact pushes the piston out", [-0.6, 1.8, 0]);
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const pistonY = 0.3 + gasH + Math.sin(t * 1.4) * 0.06;
-          piston.position.set(0, pistonY, 0);
-          rod.position.set(0, pistonY + 0.9, 0);
-          const speedF = Math.sqrt(tempK / 300);
-          for (const m of mols) {
-            m.mesh.position.addScaledVector(m.vel, speedF * 0.016);
-            const p = m.mesh.position;
-            if (p.x > 2.0 || p.x < -2.0) { m.vel.x *= -1; p.x = THREE.MathUtils.clamp(p.x, -2.0, 2.0); }
-            if (p.z > 2.0 || p.z < -2.0) { m.vel.z *= -1; p.z = THREE.MathUtils.clamp(p.z, -2.0, 2.0); }
-            if (p.y < 0.45) { m.vel.y *= -1; p.y = 0.45; }
-            if (p.y > pistonY - 0.12) { m.vel.y *= -1; p.y = pistonY - 0.12; }
-          }
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    function pressureKPa(p: number) { return (p / 1000).toFixed(1); }
+
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+
+    /* cylinder: glass walls, piston on top */
+    const cylH = 5.6;
+    const gasH = Math.max(1.2, (volumeL / 45) * cylH); // piston height from volume
+    const glassMat = standardMaterial(0x67e8f9, { transparent: true, opacity: 0.12 });
+    glassMat.side = THREE.DoubleSide;
+    const tube = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, cylH, 32, 1, true), glassMat);
+    tube.position.set(0, 0.15 + cylH / 2, 0);
+    ts.group.add(tube);
+    const base = new THREE.Mesh(new THREE.CylinderGeometry(2.25, 2.25, 0.3, 32), standardMaterial(0x57534e, { metalness: 0.6 }));
+    base.position.set(0, 0.3, 0);
+    ts.group.add(base);
+
+    /* piston (position animated below) */
+    const piston = new THREE.Mesh(new THREE.CylinderGeometry(2.02, 2.02, 0.34, 32), standardMaterial(0xf59e0b, { metalness: 0.5, roughness: 0.4 }));
+    ts.group.add(piston);
+    const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 1.6, 10), standardMaterial(0x94a3b8, { metalness: 0.7 }));
+    ts.group.add(rod);
+
+    /* gas molecules */
+    const mols: { mesh: THREE.Mesh; vel: THREE.Vector3 }[] = [];
+    for (let i = 0; i < molecules; i++) {
+      const mesh = new THREE.Mesh(
+        new THREE.SphereGeometry(0.085, 10, 8),
+        standardMaterial(GAS_COLORS[i % GAS_COLORS.length], { emissive: GAS_COLORS[i % GAS_COLORS.length], emissiveIntensity: 0.7 })
+      );
+      ts.group.add(mesh);
+      const sp = 1.2 + Math.sqrt(tempK / 100) * 1.4 * (0.75 + Math.random() * 0.5);
+      mols.push({ mesh, vel: new THREE.Vector3((Math.random() - 0.5) * sp, (Math.random() - 0.5) * sp, (Math.random() - 0.5) * sp) });
+      mesh.position.set((Math.random() - 0.5) * 3.4, 0.6 + Math.random() * (gasH - 0.7), (Math.random() - 0.5) * 3.4);
+    }
+    (mols as any).speedScale = 1;
+
+    addLbl("#f59e0b", "Piston (movable)", [3.4, 0.3 + gasH + 1.2, 0], "weight sets external pressure", [1.6, 0.3 + gasH, 0]);
+    addLbl("#67e8f9", "Cylinder — sealed, frictionless", [-3.9, 2.2, 0], "glass walls let you watch the molecules", [-2.0, 2.2, 0]);
+    addLbl("#4ade80", `Gas — ${molecules} molecules shown`, [0.4, 0.2, 3.9], `of ~10²³ real molecules; ½mv² ∝ T`, [0, 1.0, 0]);
+    addLbl("#a78bfa", "Wall collisions = pressure", [-3.8, 0.3 + gasH - 0.6, 0], "each impact pushes the piston out", [-0.6, 1.8, 0]);
+
+    updateRef.current = (time) => {
+    const pistonY = 0.3 + gasH + Math.sin(time * 1.4) * 0.06;
+    piston.position.set(0, pistonY, 0);
+    rod.position.set(0, pistonY + 0.9, 0);
+    const speedF = Math.sqrt(tempK / 300);
+    for (const m of mols) {
+      m.mesh.position.addScaledVector(m.vel, speedF * 0.016);
+      const p = m.mesh.position;
+      if (p.x > 2.0 || p.x < -2.0) { m.vel.x *= -1; p.x = THREE.MathUtils.clamp(p.x, -2.0, 2.0); }
+      if (p.z > 2.0 || p.z < -2.0) { m.vel.z *= -1; p.z = THREE.MathUtils.clamp(p.z, -2.0, 2.0); }
+      if (p.y < 0.45) { m.vel.y *= -1; p.y = 0.45; }
+      if (p.y > pistonY - 0.12) { m.vel.y *= -1; p.y = pistonY - 0.12; }
+    }
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, molecules, tempK, volumeL]);
+
 
   return (
     <div className="space-y-3">

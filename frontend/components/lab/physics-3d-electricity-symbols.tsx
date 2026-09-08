@@ -16,7 +16,15 @@ import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
-import { createThreeScene, bindResize, disposeThreeScene, standardMaterial, titleText } from "@/components/lab/three-scene";
+import {
+  createThreeScene,
+  bindResize,
+  disposeThreeScene,
+  standardMaterial,
+  titleText,
+  clearGroup,
+  type ThreeScene,
+} from "@/components/lab/three-scene";
 import { createLabelSystem, LabelDef, SceneArea, GuidePanel } from "@/components/lab/label3d";
 
 /* ================================================================
@@ -25,6 +33,8 @@ import { createLabelSystem, LabelDef, SceneArea, GuidePanel } from "@/components
 
 function OhmsCircuit3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [V, setV] = useState(12);   // volts
   const [R, setR] = useState(4);    // ohms
@@ -39,20 +49,33 @@ function OhmsCircuit3D() {
     { x: 0, y: -1.8, z: 0, symbol: "P = V·I", name: "Power dissipated", desc: "Energy rate as heat, live value " + P.toFixed(1) + " W.", color: "#fbbf24" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    let charge: THREE.Mesh | null = null;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 3.2, 11), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 3.2, 11), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let charge: THREE.Mesh | null = null;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Ohm's Law Circuit", new THREE.Vector3(0, 3.1, 0));
 
         const wireMat = standardMaterial(0x94a3b8, { metalness: 0.5 });
@@ -109,30 +132,21 @@ function OhmsCircuit3D() {
         sys.add({ x: 1.5, y: -2.0, z: 0, symbol: "A", name: "Ammeter", desc: "Series meter; reads I = " + I.toFixed(2) + " A.", color: "#38bdf8" });
         sys.add({ x: 1.7, y: 2.15, z: 0, symbol: "V", name: "Voltmeter", desc: "Parallel (across R); reads V = " + V.toFixed(1) + " V.", color: "#22c55e" });
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const u = (t * 0.5) % 1;
-          // travel around the rectangle loop: 4 edges
-          const s = u * 8; // 0..8 perimeter units
-          let cx = 0, cy = 0;
-          if (s < 2) { cx = -3 + 6.4 * (s / 2); cy = 1.5; }
-          else if (s < 4) { cx = 3.4; cy = 1.5 - 3 * ((s - 2) / 2); }
-          else if (s < 6) { cx = 3.4 - 6.4 * ((s - 4) / 2); cy = -1.5; }
-          else { cx = -3; cy = -1.5 + 3 * ((s - 6) / 2); }
-          if (charge) charge.position.set(cx, cy, 0);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("ohm", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    const u = (time * 0.5) % 1;
+    // travel around the rectangle loop: 4 edges
+    const s = u * 8; // 0..8 perimeter units
+    let cx = 0, cy = 0;
+    if (s < 2) { cx = -3 + 6.4 * (s / 2); cy = 1.5; }
+    else if (s < 4) { cx = 3.4; cy = 1.5 - 3 * ((s - 2) / 2); }
+    else if (s < 6) { cx = 3.4 - 6.4 * ((s - 4) / 2); cy = -1.5; }
+    else { cx = -3; cy = -1.5 + 3 * ((s - 6) / 2); }
+    if (charge) charge.position.set(cx, cy, 0);
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, V, R]);
+
 
   return (
     <Card className="w-full">
@@ -167,6 +181,8 @@ function OhmsCircuit3D() {
 
 function WireForce3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [B, setB] = useState(0.8);
   const [I, setI] = useState(4);
@@ -183,20 +199,33 @@ function WireForce3D() {
     { x: -3.6, y: 3.6, z: 0, symbol: "FLH", name: "Fleming's left hand", desc: "First finger = B, seCond = I, thuMb = F (all mutually ⊥).", color: "#a78bfa" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    let fArrow: THREE.ArrowHelper | null = null;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(1.5, 4, 10), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(1.5, 4, 10), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let fArrow: THREE.ArrowHelper | null = null;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Force on a Current-Carrying Wire", new THREE.Vector3(0, 4.6, 0));
 
         /* horseshoe magnet: N (red), S (blue), yoke on top */
@@ -228,22 +257,13 @@ function WireForce3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          if (fArrow) fArrow.setLength(0.9 + Math.min(F, 3) * 0.45 + Math.sin(t * 4) * 0.05, 0.32, 0.18);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("wireforce", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    if (fArrow) fArrow.setLength(0.9 + Math.min(F, 3) * 0.45 + Math.sin(time * 4) * 0.05, 0.32, 0.18);
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, B, I, Lcm]);
+
 
   return (
     <Card className="w-full">

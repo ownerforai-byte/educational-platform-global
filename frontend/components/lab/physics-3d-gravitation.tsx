@@ -9,11 +9,20 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 // Gravitation 3D Component showing orbital motion
 const Gravitation3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [orbitalRadius, setOrbitalRadius] = useState(10);
   const [planetSize, setPlanetSize] = useState(0.8);
   const [showOrbit, setShowOrbit] = useState(true);
@@ -21,27 +30,37 @@ const Gravitation3D: React.FC = () => {
   const [showLabels, setShowLabels] = useState(true);
   const [isAnimating, setIsAnimating] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let labelRenderer: any = null;
-    const labels: any[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(0, 15, 25),
           autoRotate: false,
           background: 0x000000
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const labels: any[] = [];
+let labelRenderer: any = null;
+const container = mountRef.current!;
 
         // Add stars background
         const starsGeometry = new THREE.BufferGeometry();
@@ -211,54 +230,41 @@ const Gravitation3D: React.FC = () => {
         } catch { console.log("CSS2DRenderer not available"); }
 
         let time = 0;
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          
-          if (isAnimating) {
-            time += 0.01;
-            // Circular orbit
-            planetGroup.position.x = orbitalRadius * Math.cos(time);
-            planetGroup.position.z = orbitalRadius * Math.sin(time);
-            planetGroup.position.y = 0;
-            
-            // Moon orbits planet
-            moon.position.x = planetSize * 2 * Math.cos(time * 2);
-            moon.position.z = planetSize * 2 * Math.sin(time * 2);
-            moon.position.y = 0;
-          }
-          
-          updateVectors();
-          if (labels[3]) {
-            labels[3].position.x = planetGroup.position.x;
-            labels[3].position.z = planetGroup.position.z;
-          }
-          if (labels[2]) {
-            labels[2].position.x = planetGroup.position.x + moon.position.x;
-            labels[2].position.z = planetGroup.position.z + moon.position.z;
-          }
-          if (labels[4]) {
-            labels[4].position.x = orbitalRadius * Math.cos(time);
-            labels[4].position.z = orbitalRadius * Math.sin(time) + 3;
-            labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #3b82f6"><span style="color:#3b82f6;font-weight:600">Orbit</span><br><span style="color:#93c5fd;font-size:10px">r = ${orbitalRadius} AU</span></div>`;
-          }
-          
-          ts.controls.update(); 
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (error) { console.error("Error:", error); }
-    }
-    init();
 
-    return () => {
-      cancelled = true; 
-      if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+    updateRef.current = (time) => {
+    
+    if (isAnimating) {
+      time += 0.01;
+      // Circular orbit
+      planetGroup.position.x = orbitalRadius * Math.cos(time);
+      planetGroup.position.z = orbitalRadius * Math.sin(time);
+      planetGroup.position.y = 0;
+      
+      // Moon orbits planet
+      moon.position.x = planetSize * 2 * Math.cos(time * 2);
+      moon.position.z = planetSize * 2 * Math.sin(time * 2);
+      moon.position.y = 0;
+    }
+    
+    updateVectors();
+    if (labels[3]) {
+      labels[3].position.x = planetGroup.position.x;
+      labels[3].position.z = planetGroup.position.z;
+    }
+    if (labels[2]) {
+      labels[2].position.x = planetGroup.position.x + moon.position.x;
+      labels[2].position.z = planetGroup.position.z + moon.position.z;
+    }
+    if (labels[4]) {
+      labels[4].position.x = orbitalRadius * Math.cos(time);
+      labels[4].position.z = orbitalRadius * Math.sin(time) + 3;
+      labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #3b82f6"><span style="color:#3b82f6;font-weight:600">Orbit</span><br><span style="color:#93c5fd;font-size:10px">r = ${orbitalRadius} AU</span></div>`;
+    }
+    
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
   }, [orbitalRadius, planetSize, showOrbit, showVectors, showLabels, isAnimating]);
+
 
   return (
     <Card className="w-full">
@@ -333,32 +339,44 @@ const Gravitation3D: React.FC = () => {
 // Gravitational Field Visualizer
 const GravitationalField: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [fieldLines, setFieldLines] = useState(20);
   const [showField, setShowField] = useState(true);
   const [showLabels, setShowLabels] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let labelRenderer: any = null;
-    const labels: any[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 20),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x000000
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const labels: any[] = [];
+let labelRenderer: any = null;
+const container = mountRef.current!;
 
         // Stars background
         const starsGeometry = new THREE.BufferGeometry();
@@ -470,25 +488,12 @@ const GravitationalField: React.FC = () => {
           labels.push(fieldLabel);
         } catch { console.log("CSS2DRenderer not available"); }
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts.controls.update(); 
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (error) { console.error("Error:", error); }
-    }
-    init();
 
-    return () => {
-      cancelled = true; 
-      if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+    updateRef.current = (time) => {
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
   }, [fieldLines, showField, showLabels]);
+
 
   return (
     <Card className="w-full">

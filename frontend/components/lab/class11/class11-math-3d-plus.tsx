@@ -15,6 +15,7 @@ import {
   bindResize,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 function num(v: string, fallback = 0) {
@@ -122,63 +123,61 @@ function TrigWavesLab() {
 // 2. Conic sections — slice a cone and watch the curve change
 // ---------------------------------------------------------------------------
 function ConicSectionsLab() {
+  const tsRef = useRef<ThreeScene | null>(null);
   const [tilt, setTilt] = useState("20");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(10, 6, 12), autoRotate: true, autoRotateSpeed: 0.45 });
-        unbind = bindResize(ts);
-
-        const H = 8;
-        const R = 3;
-        // double cone (two cones tip to tip)
-        const coneGeo = new THREE.ConeGeometry(R, H, 48, 1, true);
-        const coneMat = new THREE.MeshStandardMaterial({ color: 0x334155, transparent: true, opacity: 0.35, side: THREE.DoubleSide });
-        const upper = new THREE.Mesh(coneGeo, coneMat);
-        upper.position.y = -H / 2 + H / 2; // apex at y=0? ConeGeometry is centered
-        // place two cones: one up, one down, tips touching at origin
-        upper.position.set(0, H / 2, 0);
-        ts.group.add(upper);
-        const lower = new THREE.Mesh(coneGeo, coneMat);
-        lower.rotation.x = Math.PI;
-        lower.position.set(0, -H / 2, 0);
-        ts.group.add(lower);
-
-        // slicing plane — tilt controls the conic type
-        const tiltRad = (Math.min(88, Math.max(0, num(tilt, 20))) * Math.PI) / 180;
-        const plane = new THREE.Mesh(new THREE.PlaneGeometry(9, 9), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.3, side: THREE.DoubleSide }));
-        plane.position.y = 0.5;
-        plane.rotation.x = -Math.PI / 2 + tiltRad * 0.55;
-        ts.group.add(plane);
-
-        // intersection ellipse preview on the plane (approximate)
-        const kind =
-          tiltRad < Math.PI / 12 ? "Circle" : tiltRad < Math.PI / 5 ? "Ellipse" : tiltRad < Math.PI / 2.4 ? "Parabola" : "Hyperbola";
-        titleText(ts, `Tilt ${num(tilt).toFixed(0)}° → ${kind}`, new THREE.Vector3(0, 6.4, 0));
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(10, 6, 12), autoRotate: true, autoRotateSpeed: 0.45 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
-    };
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    const H = 8;
+    const R = 3;
+    // double cone (two cones tip to tip)
+    const coneGeo = new THREE.ConeGeometry(R, H, 48, 1, true);
+    const coneMat = new THREE.MeshStandardMaterial({ color: 0x334155, transparent: true, opacity: 0.35, side: THREE.DoubleSide });
+    const upper = new THREE.Mesh(coneGeo, coneMat);
+    upper.position.y = -H / 2 + H / 2; // apex at y=0? ConeGeometry is centered
+    // place two cones: one up, one down, tips touching at origin
+    upper.position.set(0, H / 2, 0);
+    ts.group.add(upper);
+    const lower = new THREE.Mesh(coneGeo, coneMat);
+    lower.rotation.x = Math.PI;
+    lower.position.set(0, -H / 2, 0);
+    ts.group.add(lower);
+
+    // slicing plane — tilt controls the conic type
+    const tiltRad = (Math.min(88, Math.max(0, num(tilt, 20))) * Math.PI) / 180;
+    const plane = new THREE.Mesh(new THREE.PlaneGeometry(9, 9), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.3, side: THREE.DoubleSide }));
+    plane.position.y = 0.5;
+    plane.rotation.x = -Math.PI / 2 + tiltRad * 0.55;
+    ts.group.add(plane);
+
+    // intersection ellipse preview on the plane (approximate)
+    const kind =
+      tiltRad < Math.PI / 12 ? "Circle" : tiltRad < Math.PI / 5 ? "Ellipse" : tiltRad < Math.PI / 2.4 ? "Parabola" : "Hyperbola";
+    titleText(ts, `Tilt ${num(tilt).toFixed(0)}° → ${kind}`, new THREE.Vector3(0, 6.4, 0));
+
   }, [tilt]);
+
 
   return (
     <SimCard title="🔻 Analytic Geometry — Conic Sections">
@@ -258,57 +257,55 @@ function StatisticsLab() {
 // 4. Sequences & series — AP vs GP tower growth
 // ---------------------------------------------------------------------------
 function SequenceTowersLab() {
+  const tsRef = useRef<ThreeScene | null>(null);
   const [seriesType, setSeriesType] = useState<"ap" | "gp">("gp");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(11, 8, 12), autoRotate: true, autoRotateSpeed: 0.5 });
-        unbind = bindResize(ts);
-        const N = 12;
-        const a = 1;
-        const d = 1.1;
-        const r = 1.42;
-
-        for (let i = 0; i < N; i++) {
-          const term = seriesType === "ap" ? a + i * d : a * Math.pow(r, i);
-          const h = Math.min(6, term);
-          const col = new THREE.Color().setHSL(0.62 - Math.min(0.55, h / 11), 0.85, 0.55);
-          const bar = new THREE.Mesh(new THREE.BoxGeometry(0.9, h, 0.9), new THREE.MeshStandardMaterial({ color: col.getHex(), emissive: col.getHex(), emissiveIntensity: 0.2 }));
-          bar.position.set((i - (N - 1) / 2) * 1.25, h / 2, 0);
-          ts.group.add(bar);
-        }
-
-        titleText(
-          ts,
-          seriesType === "ap"
-            ? "AP: terms grow by +d → linear"
-            : "GP: terms multiply ×r → explosive growth",
-          new THREE.Vector3(0, 6.6, 0)
-        );
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(11, 8, 12), autoRotate: true, autoRotateSpeed: 0.5 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
-    };
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+    const N = 12;
+    const a = 1;
+    const d = 1.1;
+    const r = 1.42;
+
+    for (let i = 0; i < N; i++) {
+      const term = seriesType === "ap" ? a + i * d : a * Math.pow(r, i);
+      const h = Math.min(6, term);
+      const col = new THREE.Color().setHSL(0.62 - Math.min(0.55, h / 11), 0.85, 0.55);
+      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.9, h, 0.9), new THREE.MeshStandardMaterial({ color: col.getHex(), emissive: col.getHex(), emissiveIntensity: 0.2 }));
+      bar.position.set((i - (N - 1) / 2) * 1.25, h / 2, 0);
+      ts.group.add(bar);
+    }
+
+    titleText(
+      ts,
+      seriesType === "ap"
+        ? "AP: terms grow by +d → linear"
+        : "GP: terms multiply ×r → explosive growth",
+      new THREE.Vector3(0, 6.6, 0)
+    );
+
   }, [seriesType]);
+
 
   return (
     <SimCard title="📈 Sequences & Series — AP vs GP Growth">

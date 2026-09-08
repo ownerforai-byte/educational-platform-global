@@ -18,7 +18,13 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
-import { disposeThreeScene, type ThreeScene } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  type ThreeScene,
+  clearGroup,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
 
@@ -34,6 +40,8 @@ const C_WATER = 4186; // J/(kg·K)
 export const SearlesBarExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(0);
   const [barLengthCm, setBarLengthCm] = useState(10); // between T1 & T2
@@ -54,29 +62,37 @@ export const SearlesBarExperiment: React.FC = () => {
   const K = T1 - T2 !== 0 ? (Qdot * Lm) / (area * (T1 - T2)) : NaN;
   const deviation = Number.isFinite(K) ? ((K - rod.k) / rod.k) * 100 : NaN;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !webGL) return;
-
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial } = mod;
-        if (!container || cancelled) return;
-
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(2, 4.4, 14.5),
           autoRotate: false,
           background: 0x0b1220,
         });
-        if (!ts) return;
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let leaderLayer: any = null;
+let labelRenderer: any = null;
+const container = mountRef.current!;
 
         /* ---- long metal bar along X ---- */
         const rodY = 1.1;
@@ -259,51 +275,28 @@ export const SearlesBarExperiment: React.FC = () => {
 
           /* ---------- ANIMATION LOOP ---------- */
           const s = storeRef.current;
-          function animate() {
-            if (cancelled || !ts) return;
-            requestAnimationFrame(animate);
-            const t = performance.now() / 1000;
 
-            s.hotMat.emissiveIntensity = 0.5 + Math.sin(t * 2.4) * 0.22;
+    updateRef.current = (time) => {
+    s.hotMat.emissiveIntensity = 0.5 + Math.sin(time * 2.4) * 0.22;
 
-            s.drips.forEach((d: any) => {
-              const u = (t * 0.55 + d.phase) % 1;
-              d.mesh.position.set(
-                s.dripStart.x,
-                s.dripStart.y - u * 0.42,
-                s.dripStart.z
-              );
-              (d.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, u > 0.82 ? 0 : 1);
-              d.mesh.visible = u <= 0.82;
-            });
-            s.jarWater.scale.y = Math.min(1.35, 1 + ((t * 0.55) % 30) * 0.004);
+    s.drips.forEach((d: any) => {
+      const u = (time * 0.55 + d.phase) % 1;
+      d.mesh.position.set(
+        s.dripStart.x,
+        s.dripStart.y - u * 0.42,
+        s.dripStart.z
+      );
+      (d.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, u > 0.82 ? 0 : 1);
+      d.mesh.visible = u <= 0.82;
+    });
+    s.jarWater.scale.y = Math.min(1.35, 1 + ((time * 0.55) % 30) * 0.004);
 
-            ts.controls.update();
-            ts.renderer.render(ts.scene, ts.camera);
-            if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-            if (leaderLayer) leaderLayer.draw(ts.camera, connections);
-          }
-          animate();
-        } catch { console.log("CSS2DRenderer not available"); }
-      } catch (err) {
-        console.error("SearlesBar init:", err);
-      }
-    }
-    init();
-
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = container;
-      if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
-        m.removeChild(labelRenderer.domElement);
-      }
-      try { leaderLayer?.dispose?.(); } catch {}
-      if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } catch { /* CSS2D not available */ }
   }, [webGL, matIdx, barLengthCm, rodRadiusMm, flowGramPerMin, deltaThetaW, T1, T2]);
+
 
   return (
     <Card className="w-full">

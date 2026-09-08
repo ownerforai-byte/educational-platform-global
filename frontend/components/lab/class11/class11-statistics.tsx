@@ -6,7 +6,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11Statistics: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -76,205 +83,197 @@ export const Class11Statistics: React.FC = () => {
     return Math.max(...dataPoints) - Math.min(...dataPoints);
   }, [dataPoints]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 20),
           autoRotate: true,
           autoRotateSpeed: 0.2,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Ground
-        const groundGeo = new THREE.PlaneGeometry(50, 50);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Axes for data visualization
-        const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(-10, 0, 0),
-          new THREE.Vector3(10, 0, 0)
-        ]);
-        const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0xef4444 }));
-        ts.group.add(xAxis);
+    // Ground
+    const groundGeo = new THREE.PlaneGeometry(50, 50);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
 
-        const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(0, -5, 0),
-          new THREE.Vector3(0, 10, 0)
-        ]);
-        const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x22c55e }));
-        ts.group.add(yAxis);
+    const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Data points as spheres
-        const dataPointMeshes: THREE.Mesh[] = [];
-        const maxVal = Math.max(...dataPoints, meanValue + stdDev * 3);
-        const minVal = Math.min(...dataPoints, meanValue - stdDev * 3);
-        const valueRange = maxVal - minVal;
+    // Axes for data visualization
+    const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(-10, 0, 0),
+      new THREE.Vector3(10, 0, 0)
+    ]);
+    const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0xef4444 }));
+    ts.group.add(xAxis);
 
-        if (showDataPoints) {
-          dataPoints.forEach((value, index) => {
-            const x = -8 + (index / (dataPoints.length - 1 || 1)) * 16;
-            const y = (value - minVal) / valueRange * 8;
-            const z = 0;
+    const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(0, -5, 0),
+      new THREE.Vector3(0, 10, 0)
+    ]);
+    const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x22c55e }));
+    ts.group.add(yAxis);
 
-            const geometry = new THREE.SphereGeometry(0.3, 16, 16);
-            const material = standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.5 });
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(x, y, z);
-            mesh.castShadow = true;
-            ts.group.add(mesh);
-            dataPointMeshes.push(mesh);
-          });
-        }
+    // Data points as spheres
+    const dataPointMeshes: THREE.Mesh[] = [];
+    const maxVal = Math.max(...dataPoints, meanValue + stdDev * 3);
+    const minVal = Math.min(...dataPoints, meanValue - stdDev * 3);
+    const valueRange = maxVal - minVal;
 
-        // Histogram bars
-        const histogramBars: THREE.Mesh[] = [];
-        if (showHistogram && dataPoints.length > 0) {
-          const numBars = 5;
-          const barWidth = 16 / numBars;
+    if (showDataPoints) {
+      dataPoints.forEach((value, index) => {
+        const x = -8 + (index / (dataPoints.length - 1 || 1)) * 16;
+        const y = (value - minVal) / valueRange * 8;
+        const z = 0;
 
-          for (let i = 0; i < numBars; i++) {
-            const binMin = minVal + (i / numBars) * valueRange;
-            const binMax = minVal + ((i + 1) / numBars) * valueRange;
-            const count = dataPoints.filter(dp => dp >= binMin && dp < binMax).length;
-            const height = (count / dataPoints.length) * 8;
+        const geometry = new THREE.SphereGeometry(0.3, 16, 16);
+        const material = standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.5 });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(x, y, z);
+        mesh.castShadow = true;
+        ts.group.add(mesh);
+        dataPointMeshes.push(mesh);
+      });
+    }
 
-            const x = -8 + i * barWidth + barWidth / 2 - 16 / numBars / 2;
-            const geometry = new THREE.BoxGeometry(barWidth * 0.8, height, 0.5);
-            const material = standardMaterial(0xfbbf24, { transparent: true, opacity: 0.7 });
-            const bar = new THREE.Mesh(geometry, material);
-            bar.userData.height = height;
-            bar.position.set(x, height / 2, 0);
-            bar.castShadow = true;
-            ts.group.add(bar);
-            histogramBars.push(bar);
-          }
-        }
+    // Histogram bars
+    const histogramBars: THREE.Mesh[] = [];
+    if (showHistogram && dataPoints.length > 0) {
+      const numBars = 5;
+      const barWidth = 16 / numBars;
 
-        // Normal distribution curve
-        let normalCurve: THREE.Line | null = null;
-        if (showNormalCurve) {
-          const points: THREE.Vector3[] = [];
-          const steps = 100;
-          for (let i = 0; i <= steps; i++) {
-            const x = -8 + (i / steps) * 16;
-            const value = minVal + (x + 8) / 16 * valueRange;
-            const probability = Math.exp(-Math.pow(value - meanValue, 2) / (2 * stdDev * stdDev)) / 
-                               (stdDev * Math.sqrt(2 * Math.PI));
-            const y = (probability * dataPoints.length * valueRange / numDataPoints) * 8;
-            points.push(new THREE.Vector3(x, y, 0));
-          }
-          const geometry = new THREE.BufferGeometry().setFromPoints(points);
-          const material = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 3 });
-          normalCurve = new THREE.Line(geometry, material);
-          ts.group.add(normalCurve);
-        }
+      for (let i = 0; i < numBars; i++) {
+        const binMin = minVal + (i / numBars) * valueRange;
+        const binMax = minVal + ((i + 1) / numBars) * valueRange;
+        const count = dataPoints.filter(dp => dp >= binMin && dp < binMax).length;
+        const height = (count / dataPoints.length) * 8;
 
-        // Mean, median, mode indicators
-        const meanX = -8 + ((meanValue - minVal) / valueRange) * 16;
-        const meanY = (calculatedMean - minVal) / valueRange * 8;
-        
-        const meanIndicatorGeo = new THREE.SphereGeometry(0.4, 16, 16);
-        const meanIndicatorMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.8 });
-        const meanIndicator = new THREE.Mesh(meanIndicatorGeo, meanIndicatorMat);
-        meanIndicator.position.set(meanX, meanY, 0);
-        ts.group.add(meanIndicator);
-
-        const medianX = -8 + ((calculatedMedian - minVal) / valueRange) * 16;
-        const medianY = (calculatedMedian - minVal) / valueRange * 8;
-        
-        const medianIndicatorGeo = new THREE.SphereGeometry(0.4, 16, 16);
-        const medianIndicatorMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.8 });
-        const medianIndicator = new THREE.Mesh(medianIndicatorGeo, medianIndicatorMat);
-        medianIndicator.position.set(medianX, medianY, 0);
-        ts.group.add(medianIndicator);
-
-        const modeX = -8 + ((calculatedMode - minVal) / valueRange) * 16;
-        const modeY = (calculatedMode - minVal) / valueRange * 8;
-        
-        const modeIndicatorGeo = new THREE.SphereGeometry(0.4, 16, 16);
-        const modeIndicatorMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.8 });
-        const modeIndicator = new THREE.Mesh(modeIndicatorGeo, modeIndicatorMat);
-        modeIndicator.position.set(modeX, modeY, 0);
-        ts.group.add(modeIndicator);
-
-        // Labels
-        const meanLabelGeo = new THREE.PlaneGeometry(0.5, 0.2);
-        const meanLabelMat = new THREE.MeshBasicMaterial({ color: 0x22c55e, transparent: true });
-        const meanLabel = new THREE.Mesh(meanLabelGeo, meanLabelMat);
-        meanLabel.position.set(meanX, meanY + 1, 0);
-        ts.group.add(meanLabel);
-
-        const startTime = performance.now();
-
-        function updateScene() {
-          if (!ts) return;
-
-          const elapsed = (performance.now() - startTime) / 1000;
-          const time = elapsed;
-
-          // Animate data points
-          dataPointMeshes.forEach((mesh, index) => {
-            mesh.position.y += Math.sin(time * 2 + index * 0.5) * 0.05;
-            mesh.rotation.y += 0.02;
-          });
-
-          // Animate histogram bars
-          histogramBars.forEach((bar, index) => {
-            bar.position.y = (bar.userData.height as number) / 2 + Math.sin(time + index * 0.3) * 0.1;
-          });
-
-          // Animate indicators
-          meanIndicator.position.y = meanY + Math.sin(time * 3) * 0.1;
-          medianIndicator.position.y = medianY + Math.sin(time * 3 + 1) * 0.1;
-          modeIndicator.position.y = modeY + Math.sin(time * 3 + 2) * 0.1;
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
+        const x = -8 + i * barWidth + barWidth / 2 - 16 / numBars / 2;
+        const geometry = new THREE.BoxGeometry(barWidth * 0.8, height, 0.5);
+        const material = standardMaterial(0xfbbf24, { transparent: true, opacity: 0.7 });
+        const bar = new THREE.Mesh(geometry, material);
+        bar.userData.height = height;
+        bar.position.set(x, height / 2, 0);
+        bar.castShadow = true;
+        ts.group.add(bar);
+        histogramBars.push(bar);
       }
     }
 
-    init();
-
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
+    // Normal distribution curve
+    let normalCurve: THREE.Line | null = null;
+    if (showNormalCurve) {
+      const points: THREE.Vector3[] = [];
+      const steps = 100;
+      for (let i = 0; i <= steps; i++) {
+        const x = -8 + (i / steps) * 16;
+        const value = minVal + (x + 8) / 16 * valueRange;
+        const probability = Math.exp(-Math.pow(value - meanValue, 2) / (2 * stdDev * stdDev)) / 
+                           (stdDev * Math.sqrt(2 * Math.PI));
+        const y = (probability * dataPoints.length * valueRange / numDataPoints) * 8;
+        points.push(new THREE.Vector3(x, y, 0));
       }
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const material = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 3 });
+      normalCurve = new THREE.Line(geometry, material);
+      ts.group.add(normalCurve);
+    }
+
+    // Mean, median, mode indicators
+    const meanX = -8 + ((meanValue - minVal) / valueRange) * 16;
+    const meanY = (calculatedMean - minVal) / valueRange * 8;
+    
+    const meanIndicatorGeo = new THREE.SphereGeometry(0.4, 16, 16);
+    const meanIndicatorMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.8 });
+    const meanIndicator = new THREE.Mesh(meanIndicatorGeo, meanIndicatorMat);
+    meanIndicator.position.set(meanX, meanY, 0);
+    ts.group.add(meanIndicator);
+
+    const medianX = -8 + ((calculatedMedian - minVal) / valueRange) * 16;
+    const medianY = (calculatedMedian - minVal) / valueRange * 8;
+    
+    const medianIndicatorGeo = new THREE.SphereGeometry(0.4, 16, 16);
+    const medianIndicatorMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.8 });
+    const medianIndicator = new THREE.Mesh(medianIndicatorGeo, medianIndicatorMat);
+    medianIndicator.position.set(medianX, medianY, 0);
+    ts.group.add(medianIndicator);
+
+    const modeX = -8 + ((calculatedMode - minVal) / valueRange) * 16;
+    const modeY = (calculatedMode - minVal) / valueRange * 8;
+    
+    const modeIndicatorGeo = new THREE.SphereGeometry(0.4, 16, 16);
+    const modeIndicatorMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.8 });
+    const modeIndicator = new THREE.Mesh(modeIndicatorGeo, modeIndicatorMat);
+    modeIndicator.position.set(modeX, modeY, 0);
+    ts.group.add(modeIndicator);
+
+    // Labels
+    const meanLabelGeo = new THREE.PlaneGeometry(0.5, 0.2);
+    const meanLabelMat = new THREE.MeshBasicMaterial({ color: 0x22c55e, transparent: true });
+    const meanLabel = new THREE.Mesh(meanLabelGeo, meanLabelMat);
+    meanLabel.position.set(meanX, meanY + 1, 0);
+    ts.group.add(meanLabel);
+
+    const startTime = performance.now();
+
+    function updateScene() {
+      if (!ts) return;
+
+      const elapsed = (performance.now() - startTime) / 1000;
+      const time = elapsed;
+
+      // Animate data points
+      dataPointMeshes.forEach((mesh, index) => {
+        mesh.position.y += Math.sin(time * 2 + index * 0.5) * 0.05;
+        mesh.rotation.y += 0.02;
+      });
+
+      // Animate histogram bars
+      histogramBars.forEach((bar, index) => {
+        bar.position.y = (bar.userData.height as number) / 2 + Math.sin(time + index * 0.3) * 0.1;
+      });
+
+      // Animate indicators
+      meanIndicator.position.y = meanY + Math.sin(time * 3) * 0.1;
+      medianIndicator.position.y = medianY + Math.sin(time * 3 + 1) * 0.1;
+      modeIndicator.position.y = modeY + Math.sin(time * 3 + 2) * 0.1;
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+
+
+    updateRef.current = (time) => {
+    updateScene();
     };
   }, [numDataPoints, meanValue, stdDev, showHistogram, showDataPoints, showNormalCurve, dataPoints, calculatedMean, calculatedMedian, calculatedMode, calculatedStdDev, calculatedRange]);
+
 
   return (
     <Card className="w-full">

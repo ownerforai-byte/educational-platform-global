@@ -18,7 +18,13 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
-import { disposeThreeScene, type ThreeScene } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  type ThreeScene,
+  clearGroup,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
 
@@ -35,6 +41,8 @@ const C_COPPER = 385; // J/(kg·K) — Lee's disc is pure copper
 export const LeesDiscExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(0);
   const [discMass, setDiscMass] = useState(0.45); // kg of copper Lee's disc
@@ -55,29 +63,37 @@ export const LeesDiscExperiment: React.FC = () => {
   const K = dTheta > 0 ? (heatLossRate * thicknessM) / (area * dTheta) : NaN;
   const deviation = Number.isFinite(K) ? ((K - mat.k) / mat.k) * 100 : NaN;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !webGL) return;
-
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText } = mod;
-        if (!mountRef.current || cancelled) return;
-
-        ts = createThreeScene(mountRef.current!, {
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(8.6, 4.4, 12.6),
           autoRotate: false,
           background: 0x0b1220,
         });
-        if (!ts) return;
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let leaderLayer: any = null;
+let labelRenderer: any = null;
+const container = mountRef.current!;
         titleText(ts, "Lee's Disc Apparatus", new THREE.Vector3(0, 3.65, 0));
 
         const discR = radiusCm * 0.42;
@@ -234,47 +250,25 @@ export const LeesDiscExperiment: React.FC = () => {
           addLbl("#94a3b8", "Tripod Stand", [-(discR + 2.4), 0.4, 0], "insulated wooden top", [0, 0.07, 0.6]);
 
           /* ---------- ANIMATION LOOP ---------- */
-          function animate() {
-            if (cancelled || !ts) return;
-            requestAnimationFrame(animate);
-            const t = performance.now() / 1000;
-            glowMats.forEach((m) => { m.emissiveIntensity = 0.65 + Math.sin(t * 3.2) * 0.3; });
-            puffs.forEach((pf) => {
-              const u = (t * 0.45 + pf.seed) % 1;
-              pf.mesh.position.set(
-                outletTip.x + Math.sin((u + pf.seed) * 6) * 0.2,
-                outletTip.y + u * 1.7,
-                outletTip.z + Math.cos((u + pf.seed) * 6) * 0.2
-              );
-              pf.mesh.scale.setScalar(Math.max(0.05, 1 - u * 0.85));
-              (pf.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, 0.55 * (1 - u));
-            });
-            ts.controls.update();
-            ts.renderer.render(ts.scene, ts.camera);
-            if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-            if (leaderLayer) leaderLayer.draw(ts.camera, connections);
-          }
-          animate();
-        } catch { console.log("CSS2DRenderer not available"); }
-      } catch (err) {
-        console.error("LeesDisc init:", err);
-      }
-    }
-    init();
 
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = container;
-      if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
-        m.removeChild(labelRenderer.domElement);
-      }
-      try { leaderLayer?.dispose?.(); } catch {}
-      if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
+    updateRef.current = (time) => {
+    glowMats.forEach((m) => { m.emissiveIntensity = 0.65 + Math.sin(time * 3.2) * 0.3; });
+    puffs.forEach((pf) => {
+      const u = (time * 0.45 + pf.seed) % 1;
+      pf.mesh.position.set(
+        outletTip.x + Math.sin((u + pf.seed) * 6) * 0.2,
+        outletTip.y + u * 1.7,
+        outletTip.z + Math.cos((u + pf.seed) * 6) * 0.2
+      );
+      pf.mesh.scale.setScalar(Math.max(0.05, 1 - u * 0.85));
+      (pf.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, 0.55 * (1 - u));
+    });
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } catch { /* CSS2D not available */ }
   }, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);
+
 
   return (
     <Card className="w-full">

@@ -24,6 +24,7 @@ import {
   standardMaterial,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
@@ -60,6 +61,8 @@ function makeBars(ts: ThreeScene, values: number[], baseX: number, baseY: number
 
 const InterferenceTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [slitSepMm, setSlitSepMm] = useState(0.5);
   const [lambdaNm, setLambdaNm] = useState(600);
@@ -69,21 +72,30 @@ const InterferenceTab: React.FC = () => {
   const lam = lambdaNm * 1e-9;
   const beta = (lam * screenM) / d;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(9, 5, 13), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(9, 5, 13), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
         titleText(ts, `Young's Double Slit — β = ${(beta * 1000).toFixed(2)} mm`, new THREE.Vector3(0, 4.8, 0));
 
         labelRenderer = new CSS2DRenderer();
@@ -138,29 +150,14 @@ const InterferenceTab: React.FC = () => {
         addLbl("#fef3c7", "Screen — interference bars", [4.6, 4.6, 0], `β = λD/d = ${(beta * 1000).toFixed(2)} mm`, [4.6, 3.4, 0]);
 const barMats = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.MeshStandardMaterial);
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          barMats.forEach((m, i) => { m.emissiveIntensity = 0.4 + 0.6 * Math.abs(Math.sin(t * 3 + i * 0.35)); });
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
 
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    updateRef.current = (time) => {
+    barMats.forEach((m, i) => { m.emissiveIntensity = 0.4 + 0.6 * Math.abs(Math.sin(time * 3 + i * 0.35)); });
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, slitSepMm, lambdaNm, screenM]);
+
 
   return (
     <div className="space-y-3">
@@ -202,6 +199,8 @@ const barMats = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.M
 
 const DiffractionTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [slitWmm, setSlitWmm] = useState(0.1);
   const [lambdaNm, setLambdaNm] = useState(600);
@@ -210,21 +209,30 @@ const DiffractionTab: React.FC = () => {
   const lam = lambdaNm * 1e-9;
   const thetaFirst = Math.asin(Math.min(1, lam / a));
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(9, 5, 13), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(9, 5, 13), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
         titleText(ts, `Single-slit Diffraction — sinθ₁ = λ/a = ${(lam / a).toFixed(3)}`, new THREE.Vector3(0, 4.8, 0));
 
         labelRenderer = new CSS2DRenderer();
@@ -271,29 +279,14 @@ const DiffractionTab: React.FC = () => {
         addLbl("#fef3c7", "Central maximum — widest", [4.6, 2.4, 0], "≈ 2λD/a full width", [4.6, 1.6, 0]);
 const barMats2 = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.MeshStandardMaterial);
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          barMats2.forEach((m, i) => { m.emissiveIntensity = 0.35 + 0.5 * Math.abs(Math.sin(t * 2.4 + i * 0.3)); });
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
 
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    updateRef.current = (time) => {
+    barMats2.forEach((m, i) => { m.emissiveIntensity = 0.35 + 0.5 * Math.abs(Math.sin(time * 2.4 + i * 0.3)); });
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, slitWmm, lambdaNm]);
+
 
   return (
     <div className="space-y-3">
@@ -331,6 +324,8 @@ const barMats2 = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.
 
 const PolarizationTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [thetaDeg, setThetaDeg] = useState(56.3); // near Brewster for glass n=1.5
   const [nGlass, setNG] = useState(1.5);
@@ -339,80 +334,75 @@ const PolarizationTab: React.FC = () => {
   const brewDeg = (thetaB * 180) / Math.PI;
   const polarized = Math.abs(thetaDeg - brewDeg) < 1.5;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(8, 5.5, 12), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(8, 5.5, 12), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, `Brewster's angle for glass n = ${nGlass.toFixed(2)} is ${brewDeg.toFixed(1)}°`, new THREE.Vector3(0, 4.8, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, `Brewster's angle for glass n = ${nGlass.toFixed(2)} is ${brewDeg.toFixed(1)}°`, new THREE.Vector3(0, 4.8, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
-
-        /* glass slab */
-        const slab = new THREE.Mesh(new THREE.BoxGeometry(5.4, 0.7, 4.4), standardMaterial(0x67e8f9, { transparent: true, opacity: 0.4, metalness: 0.1 }));
-        slab.rotation.z = (thetaB * 180) / Math.PI > 40 ? -0.2 : 0.2;
-        slab.position.set(-1.5, 1.6, 0);
-        ts.group.add(slab);
-
-        /* incident, reflected, refracted beams */
-        const origin = new THREE.Vector3(-1.5, 1.6, 0);
-        const dirIn = new THREE.Vector3(-Math.cos(thetaB), -Math.sin(thetaB), 0).normalize();
-        arrow(dirIn, origin, 4.0, 0xfef08a);
-        const dirRef = new THREE.Vector3(Math.cos(thetaB), Math.sin(thetaB), 0);
-        arrow(dirRef, origin, 4.2, 0x38bdf8);
-        const dirTrans = new THREE.Vector3(Math.sin(thetaB), -Math.cos(thetaB), 0);
-        arrow(dirTrans, origin, 3.0, 0x4ade80);
-
-        addLbl("#fef08a", `Incident unpolarised, i = ${thetaDeg}°`, [-5.4, 4.0, 0], "vibrations in every plane", [-5.4 + Math.cos(thetaB) * 2, 1.6 + Math.sin(thetaB) * 2, 0]);
-        addLbl("#38bdf8", "Reflected ray", [1.6, 4.4, 0], "polarised ⊥ to the plane at Brewster", [1.2, 2.6, 0]);
-        addLbl("#4ade80", "Refracted ray", [0.9, 4.2, 0], "slightly polarised parallel", [0.4, 1.8, 0]);
-        addLbl("#f97316", polarized ? "✔ Brewster angle — reflected ray is fully polarised" : "Not at Brewster — mixed", [-0.5, 4.4, 0], `θ_B = tan⁻¹(n) = ${brewDeg.toFixed(1)}°`, [origin.x, origin.y + 0.4, 0]);
-
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+
+    /* glass slab */
+    const slab = new THREE.Mesh(new THREE.BoxGeometry(5.4, 0.7, 4.4), standardMaterial(0x67e8f9, { transparent: true, opacity: 0.4, metalness: 0.1 }));
+    slab.rotation.z = (thetaB * 180) / Math.PI > 40 ? -0.2 : 0.2;
+    slab.position.set(-1.5, 1.6, 0);
+    ts.group.add(slab);
+
+    /* incident, reflected, refracted beams */
+    const origin = new THREE.Vector3(-1.5, 1.6, 0);
+    const dirIn = new THREE.Vector3(-Math.cos(thetaB), -Math.sin(thetaB), 0).normalize();
+    arrow(dirIn, origin, 4.0, 0xfef08a);
+    const dirRef = new THREE.Vector3(Math.cos(thetaB), Math.sin(thetaB), 0);
+    arrow(dirRef, origin, 4.2, 0x38bdf8);
+    const dirTrans = new THREE.Vector3(Math.sin(thetaB), -Math.cos(thetaB), 0);
+    arrow(dirTrans, origin, 3.0, 0x4ade80);
+
+    addLbl("#fef08a", `Incident unpolarised, i = ${thetaDeg}°`, [-5.4, 4.0, 0], "vibrations in every plane", [-5.4 + Math.cos(thetaB) * 2, 1.6 + Math.sin(thetaB) * 2, 0]);
+    addLbl("#38bdf8", "Reflected ray", [1.6, 4.4, 0], "polarised ⊥ to the plane at Brewster", [1.2, 2.6, 0]);
+    addLbl("#4ade80", "Refracted ray", [0.9, 4.2, 0], "slightly polarised parallel", [0.4, 1.8, 0]);
+    addLbl("#f97316", polarized ? "✔ Brewster angle — reflected ray is fully polarised" : "Not at Brewster — mixed", [-0.5, 4.4, 0], `θ_B = tan⁻¹(n) = ${brewDeg.toFixed(1)}°`, [origin.x, origin.y + 0.4, 0]);
+
+
+    updateRef.current = (time) => {
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    };
   }, [webGL, thetaDeg, nGlass]);
+
 
   return (
     <div className="space-y-3">

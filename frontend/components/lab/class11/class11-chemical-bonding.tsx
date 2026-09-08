@@ -7,7 +7,14 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11ChemicalBonding: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -98,177 +105,169 @@ export const Class11ChemicalBonding: React.FC = () => {
     return (molecules as any)[moleculeType] || molecules.water;
   }, [moleculeType]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 5, 15),
           autoRotate: true,
           autoRotateSpeed: 0.2,
           background: 0x0f172a
         });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    // Clear existing objects
+    ts.group.children.forEach((child: any) => {
+      ts.group.remove(child);
+      if (child.geometry) child.geometry.dispose();
+      if (child.material) child.material.dispose();
+    });
+
+    // Ground
+    const groundGeo = new THREE.PlaneGeometry(30, 30);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
+
+    const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
+    ts.group.add(grid);
+
+    // Create atoms
+    const atomGroups: THREE.Group[] = [];
+    const bondLines: THREE.Line[] = [];
+
+    moleculeInfo.atoms.forEach((atom: any, _index: number) => {
+      const atomGroup = new THREE.Group();
+      const atomGeo = new THREE.SphereGeometry(atom.radius, 32, 32);
+      const atomMat = standardMaterial(atom.color, { 
+        emissive: atom.color, 
+        emissiveIntensity: 0.3,
+        metalness: 0.2
+      });
+      const atomMesh = new THREE.Mesh(atomGeo, atomMat);
+      atomMesh.castShadow = true;
+      atomGroup.add(atomMesh);
+      atomGroup.position.set(
+        atom.position[0] * bondLength / 1.5,
+        atom.position[1] * bondLength / 1.5,
+        atom.position[2] * bondLength / 1.5
+      );
+      ts.group.add(atomGroup);
+      atomGroups.push(atomGroup);
+    });
+
+    // Create bonds
+    moleculeInfo.bonds.forEach((bond: any[]) => {
+      const atom1 = moleculeInfo.atoms[bond[0]];
+      const atom2 = moleculeInfo.atoms[bond[1]];
+      
+      const start = new THREE.Vector3(
+        atom1.position[0] * bondLength / 1.5,
+        atom1.position[1] * bondLength / 1.5,
+        atom1.position[2] * bondLength / 1.5
+      );
+      const end = new THREE.Vector3(
+        atom2.position[0] * bondLength / 1.5,
+        atom2.position[1] * bondLength / 1.5,
+        atom2.position[2] * bondLength / 1.5
+      );
+
+      const points = [start, end];
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const material = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
+      const line = new THREE.Line(geometry, material);
+      ts.group.add(line);
+      bondLines.push(line);
+    });
+
+    // Electron pairs for covalent bonds
+    if (showElectrons && bondType === "covalent") {
+      moleculeInfo.bonds.forEach((bond: any[]) => {
+        const atom1 = moleculeInfo.atoms[bond[0]];
+        const atom2 = moleculeInfo.atoms[bond[1]];
         
-        unbind = bindResize(ts);
+        const start = new THREE.Vector3(
+          atom1.position[0] * bondLength / 1.5,
+          atom1.position[1] * bondLength / 1.5,
+          atom1.position[2] * bondLength / 1.5
+        );
+        const end = new THREE.Vector3(
+          atom2.position[0] * bondLength / 1.5,
+          atom2.position[1] * bondLength / 1.5,
+          atom2.position[2] * bondLength / 1.5
+        );
 
-        // Clear existing objects
-        ts.group.children.forEach((child: any) => {
-          ts.group.remove(child);
-          if (child.geometry) child.geometry.dispose();
-          if (child.material) child.material.dispose();
-        });
+        // Create electron pairs
+        const electronGeo = new THREE.SphereGeometry(0.1, 16, 16);
+        const electronMat = standardMaterial(0xffffff, { emissive: 0xffffff, emissiveIntensity: 0.8 });
 
-        // Ground
-        const groundGeo = new THREE.PlaneGeometry(30, 30);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
-
-        const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
-
-        // Create atoms
-        const atomGroups: THREE.Group[] = [];
-        const bondLines: THREE.Line[] = [];
-
-        moleculeInfo.atoms.forEach((atom: any, _index: number) => {
-          const atomGroup = new THREE.Group();
-          const atomGeo = new THREE.SphereGeometry(atom.radius, 32, 32);
-          const atomMat = standardMaterial(atom.color, { 
-            emissive: atom.color, 
-            emissiveIntensity: 0.3,
-            metalness: 0.2
-          });
-          const atomMesh = new THREE.Mesh(atomGeo, atomMat);
-          atomMesh.castShadow = true;
-          atomGroup.add(atomMesh);
-          atomGroup.position.set(
-            atom.position[0] * bondLength / 1.5,
-            atom.position[1] * bondLength / 1.5,
-            atom.position[2] * bondLength / 1.5
-          );
-          ts.group.add(atomGroup);
-          atomGroups.push(atomGroup);
-        });
-
-        // Create bonds
-        moleculeInfo.bonds.forEach((bond: any[]) => {
-          const atom1 = moleculeInfo.atoms[bond[0]];
-          const atom2 = moleculeInfo.atoms[bond[1]];
+        for (let i = 0; i < 2; i++) {
+          const electron1 = new THREE.Mesh(electronGeo, electronMat);
+          const electron2 = new THREE.Mesh(electronGeo, electronMat);
           
-          const start = new THREE.Vector3(
-            atom1.position[0] * bondLength / 1.5,
-            atom1.position[1] * bondLength / 1.5,
-            atom1.position[2] * bondLength / 1.5
-          );
-          const end = new THREE.Vector3(
-            atom2.position[0] * bondLength / 1.5,
-            atom2.position[1] * bondLength / 1.5,
-            atom2.position[2] * bondLength / 1.5
-          );
-
-          const points = [start, end];
-          const geometry = new THREE.BufferGeometry().setFromPoints(points);
-          const material = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
-          const line = new THREE.Line(geometry, material);
-          ts.group.add(line);
-          bondLines.push(line);
-        });
-
-        // Electron pairs for covalent bonds
-        if (showElectrons && bondType === "covalent") {
-          moleculeInfo.bonds.forEach((bond: any[]) => {
-            const atom1 = moleculeInfo.atoms[bond[0]];
-            const atom2 = moleculeInfo.atoms[bond[1]];
-            
-            const start = new THREE.Vector3(
-              atom1.position[0] * bondLength / 1.5,
-              atom1.position[1] * bondLength / 1.5,
-              atom1.position[2] * bondLength / 1.5
-            );
-            const end = new THREE.Vector3(
-              atom2.position[0] * bondLength / 1.5,
-              atom2.position[1] * bondLength / 1.5,
-              atom2.position[2] * bondLength / 1.5
-            );
-
-            // Create electron pairs
-            const electronGeo = new THREE.SphereGeometry(0.1, 16, 16);
-            const electronMat = standardMaterial(0xffffff, { emissive: 0xffffff, emissiveIntensity: 0.8 });
-
-            for (let i = 0; i < 2; i++) {
-              const electron1 = new THREE.Mesh(electronGeo, electronMat);
-              const electron2 = new THREE.Mesh(electronGeo, electronMat);
-              
-              const midPoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
-              const offset = new THREE.Vector3(0, 0.3, 0);
-              const offset2 = new THREE.Vector3(0, -0.3, 0);
-              
-              electron1.position.copy(midPoint).add(offset);
-              electron2.position.copy(midPoint).add(offset2);
-              
-              ts.group.add(electron1);
-              ts.group.add(electron2);
-            }
-          });
+          const midPoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+          const offset = new THREE.Vector3(0, 0.3, 0);
+          const offset2 = new THREE.Vector3(0, -0.3, 0);
+          
+          electron1.position.copy(midPoint).add(offset);
+          electron2.position.copy(midPoint).add(offset2);
+          
+          ts.group.add(electron1);
+          ts.group.add(electron2);
         }
-
-        const startTime = performance.now();
-
-        function updateScene() {
-          if (!ts) return;
-
-          const elapsed = (performance.now() - startTime) / 1000;
-          const time = elapsed;
-
-          // Rotate molecule
-          ts.group.rotation.y = time * 0.1;
-
-          // Animate electron pairs
-          ts.group.children.forEach((child: any) => {
-            if (child.geometry && (child.geometry as any).type === 'SphereGeometry' && child.material.emissiveIntensity > 0.5) {
-              child.position.y += Math.sin(time * 2 + child.position.x * 10) * 0.02;
-            }
-          });
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
-      }
+      });
     }
 
-    init();
+    const startTime = performance.now();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
+    function updateScene() {
+      if (!ts) return;
+
+      const elapsed = (performance.now() - startTime) / 1000;
+      const time = elapsed;
+
+      // Rotate molecule
+      ts.group.rotation.y = time * 0.1;
+
+      // Animate electron pairs
+      ts.group.children.forEach((child: any) => {
+        if (child.geometry && (child.geometry as any).type === 'SphereGeometry' && child.material.emissiveIntensity > 0.5) {
+          child.position.y += Math.sin(time * 2 + child.position.x * 10) * 0.02;
+        }
+      });
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+
+
+    updateRef.current = (time) => {
+    updateScene();
     };
   }, [bondType, moleculeType, bondLength, bondAngle, showElectrons, showOrbitals, moleculeInfo]);
+
 
   return (
     <Card className="w-full">

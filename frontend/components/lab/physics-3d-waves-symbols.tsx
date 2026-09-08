@@ -15,11 +15,21 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
-import { createThreeScene, bindResize, disposeThreeScene, standardMaterial, titleText } from "@/components/lab/three-scene";
+import {
+  createThreeScene,
+  bindResize,
+  disposeThreeScene,
+  standardMaterial,
+  titleText,
+  clearGroup,
+  type ThreeScene,
+} from "@/components/lab/three-scene";
 import { createLabelSystem, LabelDef, SceneArea, GuidePanel } from "@/components/lab/label3d";
 
 function TransverseWave3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [A, setA] = useState(1.0);      // amplitude (units)
   const [lambda, setLambda] = useState(4); // wavelength (units)
@@ -41,21 +51,34 @@ function TransverseWave3D() {
     { x: -S + 1.4, y: 1.1, z: 0, symbol: "f = v/λ", name: "Frequency", desc: "Cycles per second; T = 1/f.", color: "#22c55e" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    let dot: THREE.Mesh | null = null;
-    const NPTS = 220;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 4.6, 12), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 4.6, 12), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const NPTS = 220;
+let dot: THREE.Mesh | null = null;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Travelling Transverse Wave", new THREE.Vector3(0, 4.0, 0));
 
         const eq = new THREE.Line(
@@ -85,31 +108,22 @@ function TransverseWave3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const phase = running ? t * speed : 0;
-          const pos = line.geometry.attributes.position as THREE.BufferAttribute;
-          for (let i = 0; i <= NPTS; i++) {
-            const x = pos.getX(i);
-            pos.setY(i, A * Math.sin(k * x - phase));
-          }
-          pos.needsUpdate = true;
-          const dx = (t * speed) % (2 * S);
-          const dotX = (dx);
-          if (dot) dot.position.set(Math.min(dotX, S), A * Math.sin(k * dotX - phase), 0);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("wave", e); }
+
+    updateRef.current = (time) => {
+    const phase = running ? time * speed : 0;
+    const pos = line.geometry.attributes.position as THREE.BufferAttribute;
+    for (let i = 0; i <= NPTS; i++) {
+      const x = pos.getX(i);
+      pos.setY(i, A * Math.sin(k * x - phase));
     }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    pos.needsUpdate = true;
+    const dx = (time * speed) % (2 * S);
+    const dotX = (dx);
+    if (dot) dot.position.set(Math.min(dotX, S), A * Math.sin(k * dotX - phase), 0);
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, A, lambda, speed, running]);
+
 
   return (
     <Card className="w-full">
@@ -148,6 +162,8 @@ function TransverseWave3D() {
 
 function DoubleSlit3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [lambdaNm, setLambdaNm] = useState(550);
   const [dMm, setDMm] = useState(0.5);
@@ -170,20 +186,33 @@ function DoubleSlit3D() {
     { x: -4.2, y: 3.3, z: 0, symbol: "Δ = mλ", name: "Path condition", desc: "d·sinθ = mλ ⇒ bright; (m + ½)λ ⇒ dark.", color: "#fb923c" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    const families: { rings: { mesh: THREE.Line; mat: THREE.LineBasicMaterial }[]; cy: number }[] = [];
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(-2, 0.5, 12.5), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(-2, 0.5, 12.5), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const families: { rings: { mesh: THREE.Line; mat: THREE.LineBasicMaterial }[]; cy: number }[] = [];
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Young's Double Slit Interference", new THREE.Vector3(-1.5, 4.4, 0));
 
         const src = new THREE.Mesh(new THREE.SphereGeometry(0.16, 14, 14), standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.9 }));
@@ -242,28 +271,19 @@ function DoubleSlit3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          families.forEach((fam) => {
-            fam.rings.forEach((r, i) => {
-              const rad = (t * 1.5 + i * lamU) % maxR;
-              r.mesh.scale.set(Math.max(rad, 0.02), Math.max(rad, 0.02), 1);
-              r.mat.opacity = 0.55 * (1 - rad / maxR);
-            });
-          });
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("dslit", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    families.forEach((fam) => {
+      fam.rings.forEach((r, i) => {
+        const rad = (time * 1.5 + i * lamU) % maxR;
+        r.mesh.scale.set(Math.max(rad, 0.02), Math.max(rad, 0.02), 1);
+        r.mat.opacity = 0.55 * (1 - rad / maxR);
+      });
+    });
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, lambdaNm, dMm, Dm]);
+
 
   return (
     <Card className="w-full">

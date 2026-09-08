@@ -11,13 +11,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { createThreeScene, disposeThreeScene, bindResize, ThreeScene } from "@/components/lab/three-scene";
+import {
+  createThreeScene,
+  disposeThreeScene,
+  bindResize,
+  ThreeScene,
+  clearGroup,
+} from "@/components/lab/three-scene";
 
 // Enhanced 3D Vector Visualization with all cases
 const VectorComprehensive3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   
   // Vector 1 state
+  const tsRef = useRef<ThreeScene | null>(null);
   const [vec1X, setVec1X] = useState(3);
   const [vec1Y, setVec1Y] = useState(0);
   const [vec1Z, setVec1Z] = useState(0);
@@ -89,233 +96,221 @@ const VectorComprehensive3D: React.FC = () => {
     }
   };
   
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(15, 15, 25),
           autoRotate: false,
           background: 0x0a0a1a
         });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Grid helper
-        const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-        ts!.group.add(gridHelper);
 
-        // Main axes (X, Y, Z) - thicker
-        const mainAxes = new THREE.AxesHelper(10);
-        ts!.group.add(mainAxes);
+    // Grid helper
+    const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
+    ts!.group.add(gridHelper);
 
-        // Create custom axis helpers with labels
-        const createLabeledAxis = (direction: THREE.Vector3, color: number, label: string, length: number = 8) => {
-          const arrow = new LiveArrow(
-            direction.clone().normalize(),
-            new THREE.Vector3(0, 0, 0),
-            length,
-            color,
+    // Main axes (X, Y, Z) - thicker
+    const mainAxes = new THREE.AxesHelper(10);
+    ts!.group.add(mainAxes);
+
+    // Create custom axis helpers with labels
+    const createLabeledAxis = (direction: THREE.Vector3, color: number, label: string, length: number = 8) => {
+      const arrow = new LiveArrow(
+        direction.clone().normalize(),
+        new THREE.Vector3(0, 0, 0),
+        length,
+        color,
+        0.3,
+        0.15
+      );
+      return arrow;
+    };
+
+    // X and X' axes (positive and negative)
+    const xPosArrow = createLabeledAxis(new THREE.Vector3(1, 0, 0), 0xff3333, "X", 8);
+    xPosArrow.name = "x-axis";
+    ts!.group.add(xPosArrow);
+
+    const xNegArrow = createLabeledAxis(new THREE.Vector3(-1, 0, 0), 0xff3333, "X'", 8);
+    xNegArrow.name = "x'-axis";
+    ts!.group.add(xNegArrow);
+
+    // Y and Y' axes
+    const yPosArrow = createLabeledAxis(new THREE.Vector3(0, 1, 0), 0x33ff33, "Y", 8);
+    yPosArrow.name = "y-axis";
+    ts!.group.add(yPosArrow);
+
+    const yNegArrow = createLabeledAxis(new THREE.Vector3(0, -1, 0), 0x33ff33, "Y'", 8);
+    yNegArrow.name = "y'-axis";
+    ts!.group.add(yNegArrow);
+
+    // Z and Z' axes
+    const zPosArrow = createLabeledAxis(new THREE.Vector3(0, 0, 1), 0x3333ff, "Z", 8);
+    zPosArrow.name = "z-axis";
+    ts!.group.add(zPosArrow);
+
+    const zNegArrow = createLabeledAxis(new THREE.Vector3(0, 0, -1), 0x3333ff, "Z'", 8);
+    zNegArrow.name = "z'-axis";
+    ts!.group.add(zNegArrow);
+
+    // Vector arrows
+    let vec1Arrow: THREE.ArrowHelper | null = null;
+    let vec2Arrow: THREE.ArrowHelper | null = null;
+    let resultantArrow: THREE.ArrowHelper | null = null;
+    const componentArrows: THREE.ArrowHelper[] = [];
+    const angleLines: THREE.Line[] = [];
+
+    function updateScene() {
+      const scene = ts!;
+      // Dispose and remove previous vectors (proper cleanup)
+      if (vec1Arrow) { scene.group.remove(vec1Arrow); vec1Arrow.dispose(); vec1Arrow = null; }
+      if (vec2Arrow) { scene.group.remove(vec2Arrow); vec2Arrow.dispose(); vec2Arrow = null; }
+      if (resultantArrow) { scene.group.remove(resultantArrow); resultantArrow.dispose(); resultantArrow = null; }
+      componentArrows.forEach(arrow => { scene.group.remove(arrow); arrow.dispose(); });
+      componentArrows.length = 0;
+      angleLines.forEach(line => { scene.group.remove(line); line.geometry.dispose(); (line.material as THREE.Material).dispose(); });
+      angleLines.length = 0;
+
+      // Vector 1 (Red) - with proper negative sign handling
+      const vec1Dir = new THREE.Vector3(vec1X, vec1Y, vec1Z);
+      const vec1Color = showNegativeSigns && vec1X < 0 && vec1Y === 0 && vec1Z === 0 ? 0xff0000 : 
+                       showNegativeSigns && vec1Y < 0 && vec1X === 0 && vec1Z === 0 ? 0xff0000 :
+                       showNegativeSigns && vec1Z < 0 && vec1X === 0 && vec1Y === 0 ? 0xff0000 : 0xff4444;
+      
+      vec1Arrow = new LiveArrow(
+        vec1Dir.clone().normalize(),
+        new THREE.Vector3(0, 0, 0),
+        vec1Mag,
+        vec1Color,
+        0.5,
+        0.25
+      );
+      vec1Arrow.name = "vec-1";
+      ts!.group.add(vec1Arrow);
+
+      // Vector 2 (Blue) - with proper negative sign handling
+      const vec2Dir = new THREE.Vector3(vec2X, vec2Y, vec2Z);
+      const vec2Color = showNegativeSigns && vec2X < 0 && vec2Y === 0 && vec2Z === 0 ? 0x0000ff :
+                       showNegativeSigns && vec2Y < 0 && vec2X === 0 && vec2Z === 0 ? 0x0000ff :
+                       showNegativeSigns && vec2Z < 0 && vec2X === 0 && vec2Y === 0 ? 0x0000ff : 0x4444ff;
+      
+      vec2Arrow = new LiveArrow(
+        vec2Dir.clone().normalize(),
+        new THREE.Vector3(0, 0, 0),
+        vec2Mag,
+        vec2Color,
+        0.5,
+        0.25
+      );
+      vec2Arrow.name = "vec-2";
+      ts!.group.add(vec2Arrow);
+
+      // Resultant (Green)
+      if (showResultant) {
+        const resultantDir = new THREE.Vector3(resultantX, resultantY, resultantZ);
+        resultantArrow = new LiveArrow(
+          resultantDir.clone().normalize(),
+          new THREE.Vector3(0, 0, 0),
+          resultantMag,
+          0x44ff44,
+          0.6,
+          0.3
+        );
+        resultantArrow.name = "resultant-main";
+        ts!.group.add(resultantArrow);
+      }
+
+      // Component arrows (from head of first vector)
+      if (showComponents && vec2Mag > 0) {
+        // Component of vec2 along vec1 direction
+        const projMag = dotProduct / vec1Mag;
+        const projDir = new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize();
+        const projVec = projDir.clone().multiplyScalar(projMag);
+        
+        const compArrow = new LiveArrow(
+          projDir.clone(),
+          new THREE.Vector3(vec1X, vec1Y, vec1Z),
+          projMag,
+          0xffff00,
+          0.3,
+          0.15
+        );
+        compArrow.name = "comp-projection";
+        ts!.group.add(compArrow);
+        componentArrows.push(compArrow);
+
+        // Perpendicular component
+        const perpVec = new THREE.Vector3(vec2X, vec2Y, vec2Z).sub(projVec);
+        if (perpVec.length() > 0.01) {
+          const perpArrow = new LiveArrow(
+            perpVec.clone().normalize(),
+            new THREE.Vector3(vec1X, vec1Y, vec1Z),
+            perpVec.length(),
+            0xff88ff,
             0.3,
             0.15
           );
-          return arrow;
-        };
+          perpArrow.name = "comp-perpendicular";
+          ts!.group.add(perpArrow);
+          componentArrows.push(perpArrow);
+        }
+      }
 
-        // X and X' axes (positive and negative)
-        const xPosArrow = createLabeledAxis(new THREE.Vector3(1, 0, 0), 0xff3333, "X", 8);
-        xPosArrow.name = "x-axis";
-        ts!.group.add(xPosArrow);
+      // Angle visualization
+      if (showAngle && vec1Mag > 0 && vec2Mag > 0) {
+        // Create arc to show angle
+        const radius = 3;
+        const startAngle = Math.atan2(vec1Y, vec1X);
+        const endAngle = Math.atan2(vec2Y, vec2X);
+        const arcPoints: THREE.Vector3[] = [];
+        const numSegments = 30;
 
-        const xNegArrow = createLabeledAxis(new THREE.Vector3(-1, 0, 0), 0xff3333, "X'", 8);
-        xNegArrow.name = "x'-axis";
-        ts!.group.add(xNegArrow);
-
-        // Y and Y' axes
-        const yPosArrow = createLabeledAxis(new THREE.Vector3(0, 1, 0), 0x33ff33, "Y", 8);
-        yPosArrow.name = "y-axis";
-        ts!.group.add(yPosArrow);
-
-        const yNegArrow = createLabeledAxis(new THREE.Vector3(0, -1, 0), 0x33ff33, "Y'", 8);
-        yNegArrow.name = "y'-axis";
-        ts!.group.add(yNegArrow);
-
-        // Z and Z' axes
-        const zPosArrow = createLabeledAxis(new THREE.Vector3(0, 0, 1), 0x3333ff, "Z", 8);
-        zPosArrow.name = "z-axis";
-        ts!.group.add(zPosArrow);
-
-        const zNegArrow = createLabeledAxis(new THREE.Vector3(0, 0, -1), 0x3333ff, "Z'", 8);
-        zNegArrow.name = "z'-axis";
-        ts!.group.add(zNegArrow);
-
-        // Vector arrows
-        let vec1Arrow: THREE.ArrowHelper | null = null;
-        let vec2Arrow: THREE.ArrowHelper | null = null;
-        let resultantArrow: THREE.ArrowHelper | null = null;
-        const componentArrows: THREE.ArrowHelper[] = [];
-        const angleLines: THREE.Line[] = [];
-
-        function updateScene() {
-          const scene = ts!;
-          // Dispose and remove previous vectors (proper cleanup)
-          if (vec1Arrow) { scene.group.remove(vec1Arrow); vec1Arrow.dispose(); vec1Arrow = null; }
-          if (vec2Arrow) { scene.group.remove(vec2Arrow); vec2Arrow.dispose(); vec2Arrow = null; }
-          if (resultantArrow) { scene.group.remove(resultantArrow); resultantArrow.dispose(); resultantArrow = null; }
-          componentArrows.forEach(arrow => { scene.group.remove(arrow); arrow.dispose(); });
-          componentArrows.length = 0;
-          angleLines.forEach(line => { scene.group.remove(line); line.geometry.dispose(); (line.material as THREE.Material).dispose(); });
-          angleLines.length = 0;
-
-          // Vector 1 (Red) - with proper negative sign handling
-          const vec1Dir = new THREE.Vector3(vec1X, vec1Y, vec1Z);
-          const vec1Color = showNegativeSigns && vec1X < 0 && vec1Y === 0 && vec1Z === 0 ? 0xff0000 : 
-                           showNegativeSigns && vec1Y < 0 && vec1X === 0 && vec1Z === 0 ? 0xff0000 :
-                           showNegativeSigns && vec1Z < 0 && vec1X === 0 && vec1Y === 0 ? 0xff0000 : 0xff4444;
-          
-          vec1Arrow = new LiveArrow(
-            vec1Dir.clone().normalize(),
-            new THREE.Vector3(0, 0, 0),
-            vec1Mag,
-            vec1Color,
-            0.5,
-            0.25
-          );
-          vec1Arrow.name = "vec-1";
-          ts!.group.add(vec1Arrow);
-
-          // Vector 2 (Blue) - with proper negative sign handling
-          const vec2Dir = new THREE.Vector3(vec2X, vec2Y, vec2Z);
-          const vec2Color = showNegativeSigns && vec2X < 0 && vec2Y === 0 && vec2Z === 0 ? 0x0000ff :
-                           showNegativeSigns && vec2Y < 0 && vec2X === 0 && vec2Z === 0 ? 0x0000ff :
-                           showNegativeSigns && vec2Z < 0 && vec2X === 0 && vec2Y === 0 ? 0x0000ff : 0x4444ff;
-          
-          vec2Arrow = new LiveArrow(
-            vec2Dir.clone().normalize(),
-            new THREE.Vector3(0, 0, 0),
-            vec2Mag,
-            vec2Color,
-            0.5,
-            0.25
-          );
-          vec2Arrow.name = "vec-2";
-          ts!.group.add(vec2Arrow);
-
-          // Resultant (Green)
-          if (showResultant) {
-            const resultantDir = new THREE.Vector3(resultantX, resultantY, resultantZ);
-            resultantArrow = new LiveArrow(
-              resultantDir.clone().normalize(),
-              new THREE.Vector3(0, 0, 0),
-              resultantMag,
-              0x44ff44,
-              0.6,
-              0.3
-            );
-            resultantArrow.name = "resultant-main";
-            ts!.group.add(resultantArrow);
-          }
-
-          // Component arrows (from head of first vector)
-          if (showComponents && vec2Mag > 0) {
-            // Component of vec2 along vec1 direction
-            const projMag = dotProduct / vec1Mag;
-            const projDir = new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize();
-            const projVec = projDir.clone().multiplyScalar(projMag);
-            
-            const compArrow = new LiveArrow(
-              projDir.clone(),
-              new THREE.Vector3(vec1X, vec1Y, vec1Z),
-              projMag,
-              0xffff00,
-              0.3,
-              0.15
-            );
-            compArrow.name = "comp-projection";
-            ts!.group.add(compArrow);
-            componentArrows.push(compArrow);
-
-            // Perpendicular component
-            const perpVec = new THREE.Vector3(vec2X, vec2Y, vec2Z).sub(projVec);
-            if (perpVec.length() > 0.01) {
-              const perpArrow = new LiveArrow(
-                perpVec.clone().normalize(),
-                new THREE.Vector3(vec1X, vec1Y, vec1Z),
-                perpVec.length(),
-                0xff88ff,
-                0.3,
-                0.15
-              );
-              perpArrow.name = "comp-perpendicular";
-              ts!.group.add(perpArrow);
-              componentArrows.push(perpArrow);
-            }
-          }
-
-          // Angle visualization
-          if (showAngle && vec1Mag > 0 && vec2Mag > 0) {
-            // Create arc to show angle
-            const radius = 3;
-            const startAngle = Math.atan2(vec1Y, vec1X);
-            const endAngle = Math.atan2(vec2Y, vec2X);
-            const arcPoints: THREE.Vector3[] = [];
-            const numSegments = 30;
-
-            for (let i = 0; i <= numSegments; i++) {
-              const t = i / numSegments;
-              const currentAngle = startAngle + (endAngle - startAngle) * t;
-              arcPoints.push(new THREE.Vector3(
-                radius * Math.cos(currentAngle),
-                radius * Math.sin(currentAngle),
-                0
-              ));
-            }
-
-            const arcGeometry = new THREE.BufferGeometry().setFromPoints(arcPoints);
-            const arcMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.7 });
-            const arc = new THREE.Line(arcGeometry, arcMaterial);
-            arc.name = "angle-arc";
-            angleLines.push(arc);
-            ts!.group.add(arc);
-          }
-
-          // Add text labels for axes (simplified - using sprite text would be better but more complex)
-          if (showAxesLabels) {
-            // For now, we'll use the axis colors to indicate positive/negative
-            // In a more advanced version, we'd add proper text labels
-          }
+        for (let i = 0; i <= numSegments; i++) {
+          const t = i / numSegments;
+          const currentAngle = startAngle + (endAngle - startAngle) * t;
+          arcPoints.push(new THREE.Vector3(
+            radius * Math.cos(currentAngle),
+            radius * Math.sin(currentAngle),
+            0
+          ));
         }
 
-        updateScene();
+        const arcGeometry = new THREE.BufferGeometry().setFromPoints(arcPoints);
+        const arcMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.7 });
+        const arc = new THREE.Line(arcGeometry, arcMaterial);
+        arc.name = "angle-arc";
+        angleLines.push(arc);
+        ts!.group.add(arc);
+      }
 
-        function animate() {
-          if (cancelled) return;
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
+      // Add text labels for axes (simplified - using sprite text would be better but more complex)
+      if (showAxesLabels) {
+        // For now, we'll use the axis colors to indicate positive/negative
+        // In a more advanced version, we'd add proper text labels
       }
     }
 
-    init();
+    updateScene();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vec1X, vec1Y, vec1Z, vec2X, vec2Y, vec2Z, showComponents, showResultant, showNegativeSigns, showAxesLabels, showAngle]);
+
 
   // Format vector for display
   const formatVector = (x: number, y: number, z: number) => {

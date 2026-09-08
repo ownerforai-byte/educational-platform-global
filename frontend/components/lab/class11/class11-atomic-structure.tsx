@@ -6,7 +6,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11AtomicStructure: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -49,187 +56,179 @@ export const Class11AtomicStructure: React.FC = () => {
     return config;
   }, [elementInfo.electrons]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 0, 25),
           autoRotate: false,
           background: 0x000000
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Nucleus
-        const nucleusGroup = new THREE.Group();
-        const nucleusGeo = new THREE.SphereGeometry(1, 32, 32);
-        const nucleusMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5, metalness: 0.3 });
-        const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
-        nucleus.castShadow = true;
-        nucleusGroup.add(nucleus);
-        nucleusGroup.position.set(0, 0, 0);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Add protons and neutrons inside nucleus
-        if (showNucleus) {
-          const protonGeo = new THREE.SphereGeometry(0.15, 16, 16);
-          const protonMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.8 });
-          const neutronGeo = new THREE.SphereGeometry(0.15, 16, 16);
-          const neutronMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.8 });
 
-          // Add protons
-          for (let i = 0; i < elementInfo.protons; i++) {
-            const angle1 = (i / elementInfo.protons) * Math.PI * 2;
-            const distance1 = 0.4;
-            const proton = new THREE.Mesh(protonGeo, protonMat);
-            proton.position.set(
-              distance1 * Math.cos(angle1),
-              0,
-              distance1 * Math.sin(angle1)
-            );
-            nucleusGroup.add(proton);
-          }
+    // Nucleus
+    const nucleusGroup = new THREE.Group();
+    const nucleusGeo = new THREE.SphereGeometry(1, 32, 32);
+    const nucleusMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5, metalness: 0.3 });
+    const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
+    nucleus.castShadow = true;
+    nucleusGroup.add(nucleus);
+    nucleusGroup.position.set(0, 0, 0);
 
-          // Add neutrons
-          for (let i = 0; i < elementInfo.neutrons; i++) {
-            const angle2 = (i / elementInfo.neutrons) * Math.PI * 2;
-            const distance2 = 0.7;
-            const neutron = new THREE.Mesh(neutronGeo, neutronMat);
-            neutron.position.set(
-              distance2 * Math.cos(angle2),
-              0,
-              distance2 * Math.sin(angle2)
-            );
-            nucleusGroup.add(neutron);
-          }
-        }
+    // Add protons and neutrons inside nucleus
+    if (showNucleus) {
+      const protonGeo = new THREE.SphereGeometry(0.15, 16, 16);
+      const protonMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.8 });
+      const neutronGeo = new THREE.SphereGeometry(0.15, 16, 16);
+      const neutronMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.8 });
 
-        ts.group.add(nucleusGroup);
+      // Add protons
+      for (let i = 0; i < elementInfo.protons; i++) {
+        const angle1 = (i / elementInfo.protons) * Math.PI * 2;
+        const distance1 = 0.4;
+        const proton = new THREE.Mesh(protonGeo, protonMat);
+        proton.position.set(
+          distance1 * Math.cos(angle1),
+          0,
+          distance1 * Math.sin(angle1)
+        );
+        nucleusGroup.add(proton);
+      }
 
-        // Electron shells
-        const electronGroups: THREE.Group[] = [];
-        const orbitalLines: THREE.Line[] = [];
-
-        if (showOrbitals) {
-          electronShells.forEach((shellConfig) => {
-            const radius = shellConfig.shell * 3;
-            
-            // Create orbital path
-            const points: THREE.Vector3[] = [];
-            const steps = 64;
-            for (let i = 0; i <= steps; i++) {
-              const theta = (i / steps) * Math.PI * 2;
-              points.push(new THREE.Vector3(
-                radius * Math.cos(theta),
-                0,
-                radius * Math.sin(theta)
-              ));
-            }
-            const geometry = new THREE.BufferGeometry().setFromPoints(points);
-            const material = new THREE.LineBasicMaterial({ 
-              color: 0x3b82f6, 
-              transparent: true, 
-              opacity: 0.3 
-            });
-            const line = new THREE.Line(geometry, material);
-            ts.group.add(line);
-            orbitalLines.push(line);
-          });
-        }
-
-        // Electrons
-        if (showElectrons) {
-          electronShells.forEach((shellConfig) => {
-            const radius = shellConfig.shell * 3;
-            const electronGroup = new THREE.Group();
-            const electronGeo = new THREE.SphereGeometry(0.2, 16, 16);
-            const electronMat = standardMaterial(0xffffff, { emissive: 0xffffff, emissiveIntensity: 0.6 });
-
-            for (let i = 0; i < shellConfig.electrons; i++) {
-              const electron = new THREE.Mesh(electronGeo, electronMat);
-              const angle = (i / shellConfig.electrons) * Math.PI * 2;
-              electron.position.set(
-                radius * Math.cos(angle),
-                0,
-                radius * Math.sin(angle)
-              );
-              electronGroup.add(electron);
-            }
-            ts.group.add(electronGroup);
-            electronGroups.push(electronGroup);
-          });
-        }
-
-        // Element symbol label
-        const symbolGeo = new THREE.PlaneGeometry(2, 1);
-        const symbolMat = new THREE.MeshBasicMaterial({ 
-          color: 0xffffff,
-          transparent: true,
-          side: THREE.DoubleSide
-        });
-        const symbolLabel = new THREE.Mesh(symbolGeo, symbolMat);
-        symbolLabel.position.set(0, 4, 0);
-        ts.group.add(symbolLabel);
-
-        const startTime = performance.now();
-
-        function updateScene() {
-          if (!ts) return;
-
-          const elapsed = (performance.now() - startTime) / 1000;
-          const time = elapsed * animationSpeed;
-
-          // Rotate electrons in their shells
-          electronGroups.forEach((group, shellIndex) => {
-            const shellConfig = electronShells[shellIndex];
-            const radius = shellConfig.shell * 3;
-            const speed = 0.5 + shellIndex * 0.3;
-            
-            group.children.forEach((electron, eIndex) => {
-              const angle = time * speed + (eIndex / shellConfig.electrons) * Math.PI * 2;
-              electron.position.x = radius * Math.cos(angle);
-              electron.position.z = radius * Math.sin(angle);
-            });
-          });
-
-          // Rotate nucleus
-          nucleusGroup.rotation.y += 0.005 * animationSpeed;
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
+      // Add neutrons
+      for (let i = 0; i < elementInfo.neutrons; i++) {
+        const angle2 = (i / elementInfo.neutrons) * Math.PI * 2;
+        const distance2 = 0.7;
+        const neutron = new THREE.Mesh(neutronGeo, neutronMat);
+        neutron.position.set(
+          distance2 * Math.cos(angle2),
+          0,
+          distance2 * Math.sin(angle2)
+        );
+        nucleusGroup.add(neutron);
       }
     }
 
-    init();
+    ts.group.add(nucleusGroup);
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
+    // Electron shells
+    const electronGroups: THREE.Group[] = [];
+    const orbitalLines: THREE.Line[] = [];
+
+    if (showOrbitals) {
+      electronShells.forEach((shellConfig) => {
+        const radius = shellConfig.shell * 3;
+        
+        // Create orbital path
+        const points: THREE.Vector3[] = [];
+        const steps = 64;
+        for (let i = 0; i <= steps; i++) {
+          const theta = (i / steps) * Math.PI * 2;
+          points.push(new THREE.Vector3(
+            radius * Math.cos(theta),
+            0,
+            radius * Math.sin(theta)
+          ));
+        }
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const material = new THREE.LineBasicMaterial({ 
+          color: 0x3b82f6, 
+          transparent: true, 
+          opacity: 0.3 
+        });
+        const line = new THREE.Line(geometry, material);
+        ts.group.add(line);
+        orbitalLines.push(line);
+      });
+    }
+
+    // Electrons
+    if (showElectrons) {
+      electronShells.forEach((shellConfig) => {
+        const radius = shellConfig.shell * 3;
+        const electronGroup = new THREE.Group();
+        const electronGeo = new THREE.SphereGeometry(0.2, 16, 16);
+        const electronMat = standardMaterial(0xffffff, { emissive: 0xffffff, emissiveIntensity: 0.6 });
+
+        for (let i = 0; i < shellConfig.electrons; i++) {
+          const electron = new THREE.Mesh(electronGeo, electronMat);
+          const angle = (i / shellConfig.electrons) * Math.PI * 2;
+          electron.position.set(
+            radius * Math.cos(angle),
+            0,
+            radius * Math.sin(angle)
+          );
+          electronGroup.add(electron);
+        }
+        ts.group.add(electronGroup);
+        electronGroups.push(electronGroup);
+      });
+    }
+
+    // Element symbol label
+    const symbolGeo = new THREE.PlaneGeometry(2, 1);
+    const symbolMat = new THREE.MeshBasicMaterial({ 
+      color: 0xffffff,
+      transparent: true,
+      side: THREE.DoubleSide
+    });
+    const symbolLabel = new THREE.Mesh(symbolGeo, symbolMat);
+    symbolLabel.position.set(0, 4, 0);
+    ts.group.add(symbolLabel);
+
+    const startTime = performance.now();
+
+    function updateScene() {
+      if (!ts) return;
+
+      const elapsed = (performance.now() - startTime) / 1000;
+      const time = elapsed * animationSpeed;
+
+      // Rotate electrons in their shells
+      electronGroups.forEach((group, shellIndex) => {
+        const shellConfig = electronShells[shellIndex];
+        const radius = shellConfig.shell * 3;
+        const speed = 0.5 + shellIndex * 0.3;
+        
+        group.children.forEach((electron, eIndex) => {
+          const angle = time * speed + (eIndex / shellConfig.electrons) * Math.PI * 2;
+          electron.position.x = radius * Math.cos(angle);
+          electron.position.z = radius * Math.sin(angle);
+        });
+      });
+
+      // Rotate nucleus
+      nucleusGroup.rotation.y += 0.005 * animationSpeed;
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+
+
+    updateRef.current = (time) => {
+    updateScene();
     };
   }, [atomicNumber, showElectrons, showOrbitals, showNucleus, animationSpeed, elementInfo, electronShells]);
+
 
   return (
     <Card className="w-full">

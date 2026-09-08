@@ -7,7 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11LawsOfMotion: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -33,225 +40,216 @@ export const Class11LawsOfMotion: React.FC = () => {
     return (mass1 * mass2 * 9.8) / (mass1 + mass2);
   }, [mass1, mass2]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(10, 12, 15),
           autoRotate: true,
           autoRotateSpeed: 0.2,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Create ground
-        const groundGeo = new THREE.PlaneGeometry(40, 40);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Block 1 (horizontal motion with friction)
-        const block1Group = new THREE.Group();
-        const block1Geo = new THREE.BoxGeometry(mass1 * 0.8, 1, mass1 * 0.4);
-        const block1Mat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.2 });
-        const block1 = new THREE.Mesh(block1Geo, block1Mat);
-        block1.castShadow = true;
-        block1Group.add(block1);
-        block1Group.position.set(0, 0.5, 0);
-        ts.group.add(block1Group);
+    // Create ground
+    const groundGeo = new THREE.PlaneGeometry(40, 40);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
 
-        // Block 2 (hanging)
-        const block2Group = new THREE.Group();
-        const block2Geo = new THREE.BoxGeometry(mass2 * 0.6, mass2 * 0.6, mass2 * 0.6);
-        const block2Mat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.2 });
-        const block2 = new THREE.Mesh(block2Geo, block2Mat);
-        block2.castShadow = true;
-        block2Group.add(block2);
-        block2Group.position.set(0, 10, 0);
-        ts.group.add(block2Group);
+    const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Pulley system
-        const pulleyGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.3, 16);
-        const pulleyMat = standardMaterial(0x6366f1, { metalness: 0.8 });
-        const pulley = new THREE.Mesh(pulleyGeo, pulleyMat);
-        pulley.position.set(0, 10, 0);
-        pulley.rotation.x = Math.PI / 2;
-        ts.group.add(pulley);
+    // Block 1 (horizontal motion with friction)
+    const block1Group = new THREE.Group();
+    const block1Geo = new THREE.BoxGeometry(mass1 * 0.8, 1, mass1 * 0.4);
+    const block1Mat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.2 });
+    const block1 = new THREE.Mesh(block1Geo, block1Mat);
+    block1.castShadow = true;
+    block1Group.add(block1);
+    block1Group.position.set(0, 0.5, 0);
+    ts.group.add(block1Group);
 
-        // Rope
-        let rope: THREE.Line | null = null;
-        let forceArrow: THREE.ArrowHelper | null = null;
-        let frictionArrow: THREE.ArrowHelper | null = null;
-        let tensionArrow: THREE.ArrowHelper | null = null;
-        let trajectoryLine: THREE.Line | null = null;
+    // Block 2 (hanging)
+    const block2Group = new THREE.Group();
+    const block2Geo = new THREE.BoxGeometry(mass2 * 0.6, mass2 * 0.6, mass2 * 0.6);
+    const block2Mat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.2 });
+    const block2 = new THREE.Mesh(block2Geo, block2Mat);
+    block2.castShadow = true;
+    block2Group.add(block2);
+    block2Group.position.set(0, 10, 0);
+    ts.group.add(block2Group);
+
+    // Pulley system
+    const pulleyGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.3, 16);
+    const pulleyMat = standardMaterial(0x6366f1, { metalness: 0.8 });
+    const pulley = new THREE.Mesh(pulleyGeo, pulleyMat);
+    pulley.position.set(0, 10, 0);
+    pulley.rotation.x = Math.PI / 2;
+    ts.group.add(pulley);
+
+    // Rope
+    let rope: THREE.Line | null = null;
+    let forceArrow: THREE.ArrowHelper | null = null;
+    let frictionArrow: THREE.ArrowHelper | null = null;
+    let tensionArrow: THREE.ArrowHelper | null = null;
+    let trajectoryLine: THREE.Line | null = null;
+
+    // Normal force arrows
+    const normalArrows: THREE.ArrowHelper[] = [];
+
+    const startTime = performance.now();
+
+    function updateScene() {
+      if (!ts) return;
+
+      // Clear previous objects
+      if (rope) { ts.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); rope = null; }
+      if (forceArrow) { ts.group.remove(forceArrow); forceArrow.dispose(); forceArrow = null; }
+      if (frictionArrow) { ts.group.remove(frictionArrow); frictionArrow.dispose(); frictionArrow = null; }
+      if (tensionArrow) { ts.group.remove(tensionArrow); tensionArrow.dispose(); tensionArrow = null; }
+      if (trajectoryLine) {
+        ts.group.remove(trajectoryLine);
+        trajectoryLine.geometry.dispose();
+        (trajectoryLine.material as THREE.Material).dispose();
+        trajectoryLine = null;
+      }
+      normalArrows.forEach(arrow => {
+        ts.group.remove(arrow);
+        arrow.dispose();
+      });
+      normalArrows.length = 0;
+
+      const elapsed = (performance.now() - startTime) / 1000;
+      const t = elapsed % 5;
+
+      // Animate blocks
+      const pos1 = Math.min(8, 0.5 * acceleration1 * t * t);
+      block1Group.position.x = pos1;
+      block2Group.position.y = 10 - 0.5 * acceleration2 * t * t;
+
+      // Update pulley and rope
+      pulley.position.set(pos1, 10, 0);
+
+      // Trajectory tracing for block 1: the path it sweeps over one full cycle
+      if (showTrajectory) {
+        const maxT = t === 0 ? 5 : t;
+        const points: THREE.Vector3[] = [];
+        const steps = 40;
+        for (let s = 0; s <= steps; s++) {
+          const tt = (s / steps) * maxT;
+          const x = Math.min(8, 0.5 * acceleration1 * tt * tt);
+          points.push(new THREE.Vector3(x, 0.5, 0));
+        }
+        const trajGeo = new THREE.BufferGeometry().setFromPoints(points);
+        const trajMat = new THREE.LineDashedMaterial({
+          color: 0x60a5fa,
+          dashSize: 0.4,
+          gapSize: 0.2,
+          transparent: true,
+          opacity: 0.7
+        });
+        trajectoryLine = new THREE.Line(trajGeo, trajMat);
+        trajectoryLine.computeLineDistances();
+        trajectoryLine.name = "trajectory";
+        ts.group.add(trajectoryLine);
+      }
+
+      if (showTrajectory) {
+        const ropePoints = [
+          new THREE.Vector3(pos1, 10, 0),
+          new THREE.Vector3(pos1, block2Group.position.y + mass2 * 0.3, 0)
+        ];
+        const ropeGeo = new THREE.BufferGeometry().setFromPoints(ropePoints);
+        const ropeMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
+        rope = new THREE.Line(ropeGeo, ropeMat);
+        ts.group.add(rope);
+      }
+
+      // Show forces
+      if (showForces) {
+        // Force arrow on block 1
+        forceArrow = new LiveArrow(
+          new THREE.Vector3(1, 0, 0),
+          new THREE.Vector3(pos1 - 0.5, 1, 0),
+          force * 0.1,
+          0xef4444
+        );
+        ts.group.add(forceArrow);
+
+        // Friction arrow on block 1
+        frictionArrow = new LiveArrow(
+          new THREE.Vector3(-1, 0, 0),
+          new THREE.Vector3(pos1 - 0.5, 1, 0),
+          friction * mass1 * 9.8 * 0.1,
+          0x6366f1
+        );
+        ts.group.add(frictionArrow);
+
+        // Tension arrow
+        tensionArrow = new LiveArrow(
+          new THREE.Vector3(0, -1, 0),
+          new THREE.Vector3(pos1, 10, 0),
+          tension * 0.1,
+          0x22c55e
+        );
+        ts.group.add(tensionArrow);
 
         // Normal force arrows
-        const normalArrows: THREE.ArrowHelper[] = [];
+        const normalArrow1 = new LiveArrow(
+          new THREE.Vector3(0, 1, 0),
+          new THREE.Vector3(pos1, 0.5, 0),
+          mass1 * 9.8 * 0.1,
+          0xfbbf24
+        );
+        ts.group.add(normalArrow1);
+        normalArrows.push(normalArrow1);
 
-        const startTime = performance.now();
-
-        function updateScene() {
-          if (!ts) return;
-
-          // Clear previous objects
-          if (rope) { ts.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); rope = null; }
-          if (forceArrow) { ts.group.remove(forceArrow); forceArrow.dispose(); forceArrow = null; }
-          if (frictionArrow) { ts.group.remove(frictionArrow); frictionArrow.dispose(); frictionArrow = null; }
-          if (tensionArrow) { ts.group.remove(tensionArrow); tensionArrow.dispose(); tensionArrow = null; }
-          if (trajectoryLine) {
-            ts.group.remove(trajectoryLine);
-            trajectoryLine.geometry.dispose();
-            (trajectoryLine.material as THREE.Material).dispose();
-            trajectoryLine = null;
-          }
-          normalArrows.forEach(arrow => {
-            ts.group.remove(arrow);
-            arrow.dispose();
-          });
-          normalArrows.length = 0;
-
-          const elapsed = (performance.now() - startTime) / 1000;
-          const t = elapsed % 5;
-
-          // Animate blocks
-          const pos1 = Math.min(8, 0.5 * acceleration1 * t * t);
-          block1Group.position.x = pos1;
-          block2Group.position.y = 10 - 0.5 * acceleration2 * t * t;
-
-          // Update pulley and rope
-          pulley.position.set(pos1, 10, 0);
-
-          // Trajectory tracing for block 1: the path it sweeps over one full cycle
-          if (showTrajectory) {
-            const maxT = t === 0 ? 5 : t;
-            const points: THREE.Vector3[] = [];
-            const steps = 40;
-            for (let s = 0; s <= steps; s++) {
-              const tt = (s / steps) * maxT;
-              const x = Math.min(8, 0.5 * acceleration1 * tt * tt);
-              points.push(new THREE.Vector3(x, 0.5, 0));
-            }
-            const trajGeo = new THREE.BufferGeometry().setFromPoints(points);
-            const trajMat = new THREE.LineDashedMaterial({
-              color: 0x60a5fa,
-              dashSize: 0.4,
-              gapSize: 0.2,
-              transparent: true,
-              opacity: 0.7
-            });
-            trajectoryLine = new THREE.Line(trajGeo, trajMat);
-            trajectoryLine.computeLineDistances();
-            trajectoryLine.name = "trajectory";
-            ts.group.add(trajectoryLine);
-          }
-
-          if (showTrajectory) {
-            const ropePoints = [
-              new THREE.Vector3(pos1, 10, 0),
-              new THREE.Vector3(pos1, block2Group.position.y + mass2 * 0.3, 0)
-            ];
-            const ropeGeo = new THREE.BufferGeometry().setFromPoints(ropePoints);
-            const ropeMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
-            rope = new THREE.Line(ropeGeo, ropeMat);
-            ts.group.add(rope);
-          }
-
-          // Show forces
-          if (showForces) {
-            // Force arrow on block 1
-            forceArrow = new LiveArrow(
-              new THREE.Vector3(1, 0, 0),
-              new THREE.Vector3(pos1 - 0.5, 1, 0),
-              force * 0.1,
-              0xef4444
-            );
-            ts.group.add(forceArrow);
-
-            // Friction arrow on block 1
-            frictionArrow = new LiveArrow(
-              new THREE.Vector3(-1, 0, 0),
-              new THREE.Vector3(pos1 - 0.5, 1, 0),
-              friction * mass1 * 9.8 * 0.1,
-              0x6366f1
-            );
-            ts.group.add(frictionArrow);
-
-            // Tension arrow
-            tensionArrow = new LiveArrow(
-              new THREE.Vector3(0, -1, 0),
-              new THREE.Vector3(pos1, 10, 0),
-              tension * 0.1,
-              0x22c55e
-            );
-            ts.group.add(tensionArrow);
-
-            // Normal force arrows
-            const normalArrow1 = new LiveArrow(
-              new THREE.Vector3(0, 1, 0),
-              new THREE.Vector3(pos1, 0.5, 0),
-              mass1 * 9.8 * 0.1,
-              0xfbbf24
-            );
-            ts.group.add(normalArrow1);
-            normalArrows.push(normalArrow1);
-
-            const normalArrow2 = new LiveArrow(
-              new THREE.Vector3(0, 1, 0),
-              new THREE.Vector3(pos1, block2Group.position.y, 0),
-              mass2 * 9.8 * 0.1,
-              0xfbbf24
-            );
-            ts.group.add(normalArrow2);
-            normalArrows.push(normalArrow2);
-          }
-
-          // Rotate pulley
-          pulley.rotation.z += 0.05;
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
+        const normalArrow2 = new LiveArrow(
+          new THREE.Vector3(0, 1, 0),
+          new THREE.Vector3(pos1, block2Group.position.y, 0),
+          mass2 * 9.8 * 0.1,
+          0xfbbf24
+        );
+        ts.group.add(normalArrow2);
+        normalArrows.push(normalArrow2);
       }
+
+      // Rotate pulley
+      pulley.rotation.z += 0.05;
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
 
-    init();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
+    updateRef.current = (time) => {
+    updateScene();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mass1, mass2, force, friction, showForces, showTrajectory]);
+
 
   return (
     <Card className="w-full">

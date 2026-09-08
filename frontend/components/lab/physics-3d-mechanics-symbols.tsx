@@ -18,7 +18,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLabelSystem, LabelDef, SceneArea, GuidePanel } from "@/components/lab/label3d";
-import { createThreeScene, bindResize, disposeThreeScene, standardMaterial, titleText } from "@/components/lab/three-scene";
+import {
+  createThreeScene,
+  bindResize,
+  disposeThreeScene,
+  standardMaterial,
+  titleText,
+  clearGroup,
+  type ThreeScene,
+} from "@/components/lab/three-scene";
 
 /* ================================================================
    EXPERIMENT 1 · SIMPLE PENDULUM (θ, L, mg, T, ω)
@@ -26,6 +34,8 @@ import { createThreeScene, bindResize, disposeThreeScene, standardMaterial, titl
 
 function Pendulum3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [L, setL] = useState(2.4);
   const [theta0, setTheta0] = useState(22);
@@ -44,20 +54,33 @@ function Pendulum3D() {
     { x: 0, y: 3.0, z: 0, symbol: "ω = √(g/L)", name: "Angular frequency", desc: "Rad/s oscillation rate; period T = 2π/ω.", color: "#a78bfa" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    const pivotY = 2.6;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 3.4, 9.5), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 3.4, 9.5), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const pivotY = 2.6;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Simple Pendulum", new THREE.Vector3(0, 4.0, 0));
 
         const pivot = new THREE.Vector3(0, pivotY, 0);
@@ -82,36 +105,21 @@ function Pendulum3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const ang = running ? thR * Math.cos(om * t) : thR;
-          if (swing) swing.rotation.z = ang;
-          const bxc = Math.sin(ang) * L;
-          const byc = pivot.y - Math.cos(ang) * L;
-          sys.setPos(0, Math.sin(ang) * 0.4 + 0.5, pivot.y + 0.2, 0);
-          sys.setPos(1, bxc - 1.15, pivot.y - Math.cos(ang) * (L / 2) * 0.7, 0);
-          sys.setPos(2, bxc, byc - 0.65, 0);
-          sys.setPos(3, (bxc - 0.8) / 1 - 0.3, pivot.y - Math.cos(ang) * (L / 2) * 0.5, 0);
-          sys.setPos(4, 0.6, pivot.y + 0.9, 0);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("pendulum", e); }
-    }
-    init();
 
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (sys) try { sys.dispose(); } catch {}
-      if (ts) try { disposeThreeScene(ts); } catch {}
+    updateRef.current = (time) => {
+    const ang = running ? thR * Math.cos(om * time) : thR;
+    if (swing) swing.rotation.z = ang;
+    const bxc = Math.sin(ang) * L;
+    const byc = pivot.y - Math.cos(ang) * L;
+    sys.setPos(0, Math.sin(ang) * 0.4 + 0.5, pivot.y + 0.2, 0);
+    sys.setPos(1, bxc - 1.15, pivot.y - Math.cos(ang) * (L / 2) * 0.7, 0);
+    sys.setPos(2, bxc, byc - 0.65, 0);
+    sys.setPos(3, (bxc - 0.8) / 1 - 0.3, pivot.y - Math.cos(ang) * (L / 2) * 0.5, 0);
+    sys.setPos(4, 0.6, pivot.y + 0.9, 0);
+    sys.render(ts.scene, ts.camera);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webgl, L, g, theta0, running]);
+
 
   return (
     <Card className="w-full">
@@ -151,6 +159,8 @@ function Pendulum3D() {
 
 function Projectile3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [v0, setV0] = useState(16);
   const [angle, setAngle] = useState(45);
@@ -181,21 +191,34 @@ function Projectile3D() {
     { x: 8.4, y: -0.7, z: 0, symbol: "T = 2v₀sinθ/g", name: "Time of flight", desc: "Seconds from launch to landing.", color: "#94a3b8" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    let ball: THREE.Mesh | null = null;
-    const NPOINTS = 90;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 5.5, 14), autoRotate: false, background: 0x0b1220, grid: true });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 5.5, 14), autoRotate: false, background: 0x0b1220, grid: true });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const NPOINTS = 90;
+let ball: THREE.Mesh | null = null;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Projectile Motion", new THREE.Vector3(5, 6.6, 0));
 
         const ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 9), standardMaterial(0x1e293b, { roughness: 0.9 }));
@@ -234,24 +257,15 @@ function Projectile3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const p = running ? (t * 0.4) % 1 : 0;
-          const pp = pt(Math.min(p, 1));
-          if (ball) ball.position.set(pp[0], Math.max(pp[1], 0), 0);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("projectile", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    const p = running ? (time * 0.4) % 1 : 0;
+    const pp = pt(Math.min(p, 1));
+    if (ball) ball.position.set(pp[0], Math.max(pp[1], 0), 0);
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, v0, angle, g, running]);
+
 
   return (
     <Card className="w-full">
@@ -291,6 +305,8 @@ function Projectile3D() {
 
 function Incline3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [deg, setDeg] = useState(25);
   const [mu, setMu] = useState(0.3);
@@ -319,19 +335,32 @@ function Incline3D() {
     { x: -3.9, y: 0.35, z: 0, symbol: "θ", name: "Incline angle", desc: "Set at the base corner = " + deg + "°; controls how mg splits.", color: "#fb923c" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 3.4, 11), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 3.4, 11), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Block on an Incline — Force Decomposition", new THREE.Vector3(0, 6.3, 0));
 
         /* wedge: right triangle extruded */
@@ -363,20 +392,12 @@ function Incline3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("incline", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, deg, mu, m]);
+
 
   function downhill() {
     return new THREE.Vector3(-Math.cos(th), -Math.sin(th), 0);

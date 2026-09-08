@@ -6,7 +6,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11WorkEnergy: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -23,26 +30,36 @@ export const Class11WorkEnergy: React.FC = () => {
   const springPE = useMemo(() => 0.5 * springConstant * compression * compression, [springConstant, compression]);
   const totalEnergy = useMemo(() => gravitationalPE + kineticEnergy + springPE, [gravitationalPE, kineticEnergy, springPE]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    const labelMaterials: THREE.SpriteMaterial[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(12, 12, 15),
           autoRotate: true,
           autoRotateSpeed: 0.25,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const labelMaterials: THREE.SpriteMaterial[] = [];
 
         // Ground
         const groundGeo = new THREE.PlaneGeometry(30, 30);
@@ -208,36 +225,12 @@ export const Class11WorkEnergy: React.FC = () => {
           ts.renderer.render(ts.scene, ts.camera);
         }
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
 
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
-      }
-    }
-
-    init();
-
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      labelMaterials.forEach((m) => {
-        m.map?.dispose();
-        m.dispose();
-      });
-      labelMaterials.length = 0;
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
+    updateRef.current = (time) => {
+    updateScene();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mass, height, velocity, springConstant, compression, showWork]);
+
 
   return (
     <Card className="w-full">

@@ -9,11 +9,20 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 // Piston-Cylinder System (First Law of Thermodynamics)
 const PistonCylinder3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [pistonHeight, setPistonHeight] = useState(5);
   const [gasTemperature, setGasTemperature] = useState(300);
   const [showProcess, setShowProcess] = useState<"isothermal" | "adiabatic" | "isobaric" | "isochoric">("isothermal");
@@ -25,112 +34,104 @@ const PistonCylinder3D: React.FC = () => {
   const volume = Math.PI * cylinderRadius * cylinderRadius * pistonHeight;
   const workDone = pressure * (volume / 1000); // kJ
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 20),
           autoRotate: false,
           background: 0x081428
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Cylinder
-        const cylinderGeo = new THREE.CylinderGeometry(cylinderRadius, cylinderRadius, 10, 32);
-        const cylinderMat = standardMaterial(0x666666, { metalness: 0.7, roughness: 0.3 });
-        const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
-        cylinder.position.y = -5; // Center at origin
-        ts.group.add(cylinder);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Piston
-        const pistonGeo = new THREE.CylinderGeometry(cylinderRadius - 0.1, cylinderRadius - 0.1, 0.5, 32);
-        const pistonMat = standardMaterial(0x333333, { metalness: 0.8, roughness: 0.2 });
-        const piston = new THREE.Mesh(pistonGeo, pistonMat);
-        piston.position.y = pistonHeight - 2.25; // Adjust for height
-        ts.group.add(piston);
 
-        // Piston rod
-        const rodGeo = new THREE.CylinderGeometry(0.3, 0.3, pistonHeight + 2, 16);
-        const rodMat = standardMaterial(0x444444, { metalness: 0.8, roughness: 0.3 });
-        const rod = new THREE.Mesh(rodGeo, rodMat);
-        rod.position.y = pistonHeight + 1;
-        ts.group.add(rod);
+    // Cylinder
+    const cylinderGeo = new THREE.CylinderGeometry(cylinderRadius, cylinderRadius, 10, 32);
+    const cylinderMat = standardMaterial(0x666666, { metalness: 0.7, roughness: 0.3 });
+    const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
+    cylinder.position.y = -5; // Center at origin
+    ts.group.add(cylinder);
 
-        // Gas particles (small spheres)
-        const particles: THREE.Mesh[] = [];
-        for (let i = 0; i < 50; i++) {
-          const particleGeo = new THREE.SphereGeometry(0.1, 8, 8);
-          const particleMat = standardMaterial(0xff4444, { emissive: 0xff4444, emissiveIntensity: 0.3 });
-          const particle = new THREE.Mesh(particleGeo, particleMat);
-          
-          // Random position inside cylinder
-          const r = Math.random() * (cylinderRadius - 0.5);
-          const theta = Math.random() * Math.PI * 2;
-          const x = r * Math.cos(theta);
-          const z = r * Math.sin(theta);
-          const y = -5 + Math.random() * pistonHeight;
-          
-          particle.position.set(x, y, z);
-          ts.group.add(particle);
-          particles.push(particle);
-        }
+    // Piston
+    const pistonGeo = new THREE.CylinderGeometry(cylinderRadius - 0.1, cylinderRadius - 0.1, 0.5, 32);
+    const pistonMat = standardMaterial(0x333333, { metalness: 0.8, roughness: 0.2 });
+    const piston = new THREE.Mesh(pistonGeo, pistonMat);
+    piston.position.y = pistonHeight - 2.25; // Adjust for height
+    ts.group.add(piston);
 
-        // Base
-        const baseGeo = new THREE.CylinderGeometry(cylinderRadius + 0.5, cylinderRadius + 0.5, 0.5, 32);
-        const baseMat = standardMaterial(0x222222, { metalness: 0.5, roughness: 0.5 });
-        const base = new THREE.Mesh(baseGeo, baseMat);
-        base.position.y = -10;
-        ts.group.add(base);
+    // Piston rod
+    const rodGeo = new THREE.CylinderGeometry(0.3, 0.3, pistonHeight + 2, 16);
+    const rodMat = standardMaterial(0x444444, { metalness: 0.8, roughness: 0.3 });
+    const rod = new THREE.Mesh(rodGeo, rodMat);
+    rod.position.y = pistonHeight + 1;
+    ts.group.add(rod);
 
-        // Ambient light for better visibility
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        ts.scene.add(ambientLight);
-
-        // Directional light
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.set(10, 20, 10);
-        directionalLight.castShadow = true;
-        ts.scene.add(directionalLight);
-
-        function animate() {
-          if (cancelled) return;
-          
-          if (isAnimating) {
-            // Animate piston movement
-            const time = Date.now() * 0.001;
-            const newHeight = 5 + Math.sin(time * 2) * 2;
-            setPistonHeight(newHeight);
-          }
-          
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
-      }
+    // Gas particles (small spheres)
+    const particles: THREE.Mesh[] = [];
+    for (let i = 0; i < 50; i++) {
+      const particleGeo = new THREE.SphereGeometry(0.1, 8, 8);
+      const particleMat = standardMaterial(0xff4444, { emissive: 0xff4444, emissiveIntensity: 0.3 });
+      const particle = new THREE.Mesh(particleGeo, particleMat);
+      
+      // Random position inside cylinder
+      const r = Math.random() * (cylinderRadius - 0.5);
+      const theta = Math.random() * Math.PI * 2;
+      const x = r * Math.cos(theta);
+      const z = r * Math.sin(theta);
+      const y = -5 + Math.random() * pistonHeight;
+      
+      particle.position.set(x, y, z);
+      ts.group.add(particle);
+      particles.push(particle);
     }
 
-    init();
+    // Base
+    const baseGeo = new THREE.CylinderGeometry(cylinderRadius + 0.5, cylinderRadius + 0.5, 0.5, 32);
+    const baseMat = standardMaterial(0x222222, { metalness: 0.5, roughness: 0.5 });
+    const base = new THREE.Mesh(baseGeo, baseMat);
+    base.position.y = -10;
+    ts.group.add(base);
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
+    // Ambient light for better visibility
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    ts.scene.add(ambientLight);
+
+    // Directional light
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(10, 20, 10);
+    directionalLight.castShadow = true;
+    ts.scene.add(directionalLight);
+
+
+    updateRef.current = (time) => {
+    
+    if (isAnimating) {
+      // Animate piston movement
+      const newHeight = 5 + Math.sin(time * 2) * 2;
+      setPistonHeight(newHeight);
+    }
+    
     };
   }, [pistonHeight, isAnimating]);
+
 
   return (
     <Card className="w-full">
@@ -232,115 +233,110 @@ const PistonCylinder3D: React.FC = () => {
 // Heat Engine (Carnot Cycle)
 const HeatEngine3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [engineSpeed, setEngineSpeed] = useState(1);
   const [showPiston, setShowPiston] = useState(true);
   const [showFlywheel, setShowFlywheel] = useState(true);
   const [isAnimating, setIsAnimating] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(15, 10, 20),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x111111
         });
-        
-        unbind = bindResize(ts);
-
-        // Base
-        const baseGeo = new THREE.BoxGeometry(20, 1, 10);
-        const baseMat = standardMaterial(0x444444, { metalness: 0.6, roughness: 0.4 });
-        const base = new THREE.Mesh(baseGeo, baseMat);
-        base.position.y = -1;
-        ts.group.add(base);
-
-        // Cylinder
-        const cylinderGeo = new THREE.CylinderGeometry(2, 2, 6, 32);
-        const cylinderMat = standardMaterial(0x666666, { metalness: 0.7, roughness: 0.3 });
-        const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
-        cylinder.position.set(0, 3, 0);
-        ts.group.add(cylinder);
-
-        // Piston
-        const pistonGeo = new THREE.CylinderGeometry(1.8, 1.8, 0.5, 32);
-        const pistonMat = standardMaterial(0x333333, { metalness: 0.8, roughness: 0.2 });
-        const piston = new THREE.Mesh(pistonGeo, pistonMat);
-        piston.position.y = 3 + 3; // Start at top
-        ts.group.add(piston);
-
-        // Connecting rod
-        const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, 4, 16);
-        const rodMat = standardMaterial(0x555555, { metalness: 0.8, roughness: 0.3 });
-        const rod = new THREE.Mesh(rodGeo, rodMat);
-        rod.rotation.x = Math.PI / 4;
-        rod.position.set(0, 5, 0);
-        ts.group.add(rod);
-
-        // Flywheel
-        const flywheelGeo = new THREE.TorusGeometry(3, 0.5, 16, 48);
-        const flywheelMat = standardMaterial(0x777777, { metalness: 0.8, roughness: 0.2 });
-        const flywheel = new THREE.Mesh(flywheelGeo, flywheelMat);
-        flywheel.rotation.x = Math.PI / 2;
-        flywheel.position.set(0, 0, 5);
-        ts.group.add(flywheel);
-
-        // Crankshaft
-        const crankGeo = new THREE.CylinderGeometry(0.3, 0.3, 6, 16);
-        const crankMat = standardMaterial(0x666666, { metalness: 0.8, roughness: 0.3 });
-        const crankshaft = new THREE.Mesh(crankGeo, crankMat);
-        crankshaft.position.set(0, 0, 2);
-        ts.group.add(crankshaft);
-
-        // Animation
-        let timeOffset = 0;
-        function animate() {
-          if (cancelled) return;
-          
-          if (isAnimating) {
-            timeOffset += 0.01 * engineSpeed;
-            
-            // Animate piston (sinusoidal motion)
-            const pistonY = 3 + 2.5 + Math.sin(timeOffset * 2) * 2.5;
-            piston.position.y = pistonY;
-            
-            // Animate connecting rod
-            rod.rotation.x = Math.PI / 4 + Math.sin(timeOffset * 2) * 0.4;
-            rod.position.y = pistonY - 1;
-            
-            // Rotate flywheel
-            flywheel.rotation.z = timeOffset * 2;
-          }
-          
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
-      }
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    init();
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
+
+    // Base
+    const baseGeo = new THREE.BoxGeometry(20, 1, 10);
+    const baseMat = standardMaterial(0x444444, { metalness: 0.6, roughness: 0.4 });
+    const base = new THREE.Mesh(baseGeo, baseMat);
+    base.position.y = -1;
+    ts.group.add(base);
+
+    // Cylinder
+    const cylinderGeo = new THREE.CylinderGeometry(2, 2, 6, 32);
+    const cylinderMat = standardMaterial(0x666666, { metalness: 0.7, roughness: 0.3 });
+    const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
+    cylinder.position.set(0, 3, 0);
+    ts.group.add(cylinder);
+
+    // Piston
+    const pistonGeo = new THREE.CylinderGeometry(1.8, 1.8, 0.5, 32);
+    const pistonMat = standardMaterial(0x333333, { metalness: 0.8, roughness: 0.2 });
+    const piston = new THREE.Mesh(pistonGeo, pistonMat);
+    piston.position.y = 3 + 3; // Start at top
+    ts.group.add(piston);
+
+    // Connecting rod
+    const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, 4, 16);
+    const rodMat = standardMaterial(0x555555, { metalness: 0.8, roughness: 0.3 });
+    const rod = new THREE.Mesh(rodGeo, rodMat);
+    rod.rotation.x = Math.PI / 4;
+    rod.position.set(0, 5, 0);
+    ts.group.add(rod);
+
+    // Flywheel
+    const flywheelGeo = new THREE.TorusGeometry(3, 0.5, 16, 48);
+    const flywheelMat = standardMaterial(0x777777, { metalness: 0.8, roughness: 0.2 });
+    const flywheel = new THREE.Mesh(flywheelGeo, flywheelMat);
+    flywheel.rotation.x = Math.PI / 2;
+    flywheel.position.set(0, 0, 5);
+    ts.group.add(flywheel);
+
+    // Crankshaft
+    const crankGeo = new THREE.CylinderGeometry(0.3, 0.3, 6, 16);
+    const crankMat = standardMaterial(0x666666, { metalness: 0.8, roughness: 0.3 });
+    const crankshaft = new THREE.Mesh(crankGeo, crankMat);
+    crankshaft.position.set(0, 0, 2);
+    ts.group.add(crankshaft);
+
+    // Animation
+    let timeOffset = 0;
+
+    updateRef.current = (time) => {
+    
+    if (isAnimating) {
+      timeOffset += 0.01 * engineSpeed;
+      
+      // Animate piston (sinusoidal motion)
+      const pistonY = 3 + 2.5 + Math.sin(timeOffset * 2) * 2.5;
+      piston.position.y = pistonY;
+      
+      // Animate connecting rod
+      rod.rotation.x = Math.PI / 4 + Math.sin(timeOffset * 2) * 0.4;
+      rod.position.y = pistonY - 1;
+      
+      // Rotate flywheel
+      flywheel.rotation.z = timeOffset * 2;
+    }
+    
     };
   }, [engineSpeed, isAnimating, showPiston, showFlywheel]);
+
 
   return (
     <Card className="w-full">
@@ -407,105 +403,93 @@ const HeatEngine3D: React.FC = () => {
 // Thermodynamic Processes Comparison
 const Processes3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [processType, setProcessType] = useState<"isothermal" | "adiabatic" | "isobaric" | "isochoric">("isothermal");
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 0, 30),
           autoRotate: false,
           background: 0x000000
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Create P-V diagram axes
-        const axesHelper = new THREE.AxesHelper(10);
-        ts.group.add(axesHelper);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Grid
-        const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-        ts.group.add(gridHelper);
 
-        // Plot different processes
-        function plotProcess() {
-          // Clear existing plots
-          ts.group.children = ts.group.children.filter((child: any) => 
-            !(child instanceof THREE.Line) && !(child.name === "process")
-          );
+    // Create P-V diagram axes
+    const axesHelper = new THREE.AxesHelper(10);
+    ts.group.add(axesHelper);
 
-          const lineGeo = new THREE.BufferGeometry();
-          const points: THREE.Vector3[] = [];
+    // Grid
+    const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
+    ts.group.add(gridHelper);
 
-          if (processType === "isothermal") {
-            // Isothermal: Hyperbola (PV = constant)
-            for (let v = 1; v <= 10; v += 0.5) {
-              const p = 10 / v;
-              points.push(new THREE.Vector3(p - 5, v - 5, 0));
-            }
-          } else if (processType === "adiabatic") {
-            // Adiabatic: PV^γ = constant (γ = 1.4)
-            for (let v = 1; v <= 8; v += 0.5) {
-              const p = 20 / Math.pow(v, 1.4);
-              points.push(new THREE.Vector3(p - 5, v - 5, 0));
-            }
-          } else if (processType === "isobaric") {
-            // Isobaric: Horizontal line (P = constant)
-            for (let v = 1; v <= 10; v += 0.5) {
-              points.push(new THREE.Vector3(5, v - 5, 0));
-            }
-          } else if (processType === "isochoric") {
-            // Isochoric: Vertical line (V = constant)
-            for (let p = 1; p <= 10; p += 0.5) {
-              points.push(new THREE.Vector3(p - 5, 0, 0));
-            }
-          }
+    // Plot different processes
+    function plotProcess() {
+      // Clear existing plots
+      ts.group.children = ts.group.children.filter((child: any) => 
+        !(child instanceof THREE.Line) && !(child.name === "process")
+      );
 
-          lineGeo.setFromPoints(points);
-          const lineMat = new THREE.LineBasicMaterial({ 
-            color: processType === "isothermal" ? 0xff4444 : 
-                   processType === "adiabatic" ? 0x4444ff :
-                   processType === "isobaric" ? 0x44ff44 : 0xffff44,
-            linewidth: 3
-          });
-          const line = new THREE.Line(lineGeo, lineMat);
-          line.name = "process";
-          ts.group.add(line);
+      const lineGeo = new THREE.BufferGeometry();
+      const points: THREE.Vector3[] = [];
+
+      if (processType === "isothermal") {
+        // Isothermal: Hyperbola (PV = constant)
+        for (let v = 1; v <= 10; v += 0.5) {
+          const p = 10 / v;
+          points.push(new THREE.Vector3(p - 5, v - 5, 0));
         }
-
-        plotProcess();
-
-        function animate() {
-          if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
+      } else if (processType === "adiabatic") {
+        // Adiabatic: PV^γ = constant (γ = 1.4)
+        for (let v = 1; v <= 8; v += 0.5) {
+          const p = 20 / Math.pow(v, 1.4);
+          points.push(new THREE.Vector3(p - 5, v - 5, 0));
         }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
+      } else if (processType === "isobaric") {
+        // Isobaric: Horizontal line (P = constant)
+        for (let v = 1; v <= 10; v += 0.5) {
+          points.push(new THREE.Vector3(5, v - 5, 0));
+        }
+      } else if (processType === "isochoric") {
+        // Isochoric: Vertical line (V = constant)
+        for (let p = 1; p <= 10; p += 0.5) {
+          points.push(new THREE.Vector3(p - 5, 0, 0));
+        }
       }
+
+      lineGeo.setFromPoints(points);
+      const lineMat = new THREE.LineBasicMaterial({ 
+        color: processType === "isothermal" ? 0xff4444 : 
+               processType === "adiabatic" ? 0x4444ff :
+               processType === "isobaric" ? 0x44ff44 : 0xffff44,
+        linewidth: 3
+      });
+      const line = new THREE.Line(lineGeo, lineMat);
+      line.name = "process";
+      ts.group.add(line);
     }
 
-    init();
+    plotProcess();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
   }, [processType]);
+
 
   return (
     <Card className="w-full">

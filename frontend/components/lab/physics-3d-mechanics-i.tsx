@@ -26,6 +26,7 @@ import {
   standardMaterial,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 /* ---------- shared small helpers ---------- */
@@ -49,6 +50,8 @@ function arrow(dir: THREE.Vector3, origin: THREE.Vector3, len: number, color: nu
 
 const ProjectilesTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [v0, setV0] = useState(40);
   const [theta, setTheta] = useState(45);
@@ -59,21 +62,30 @@ const ProjectilesTab: React.FC = () => {
   const R = (v0 * v0 * Math.sin(2 * rad)) / g;
   const T = (2 * v0 * Math.sin(rad)) / g;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(14, 9, 18), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(14, 9, 18), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
         titleText(ts, `Projectile — v₀ ${v0} m/s, θ ${theta}°`, new THREE.Vector3(0, 5.6, 0));
 
         labelRenderer = new CSS2DRenderer();
@@ -131,30 +143,15 @@ const ProjectilesTab: React.FC = () => {
         const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
         ts.group.add(ball);
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const p = (t * 0.28) % 1;
-          ball.position.copy(pts[Math.min(n - 1, Math.floor(p * n))]);
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable — readouts beside the scene stay valid */ }
-    })();
 
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    updateRef.current = (time) => {
+    const p = (time * 0.28) % 1;
+    ball.position.copy(pts[Math.min(n - 1, Math.floor(p * n))]);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, v0, theta, g]);
+
 
   return (
     <div className="space-y-3">
@@ -199,6 +196,8 @@ type CMMode = "conical" | "vertical" | "banked";
 
 const CircularMotionTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [mode, setMode] = useState<CMMode>("conical");
   const [lenM, setLenM] = useState(1.8);
@@ -214,127 +213,121 @@ const CircularMotionTab: React.FC = () => {
   const vTop = Math.sqrt(g * lenM);
   const vBank = Math.sqrt(g * r * Math.tan(th));
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(10, 6.5, 12), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(10, 6.5, 12), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, mode === "conical" ? "Conical Pendulum" : mode === "vertical" ? "Vertical Circle" : "Banked Road (frictionless)", new THREE.Vector3(0, 5.2, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, mode === "conical" ? "Conical Pendulum" : mode === "vertical" ? "Vertical Circle" : "Banked Road (frictionless)", new THREE.Vector3(0, 5.2, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 24), standardMaterial(0x1e293b, { roughness: 0.95 })));
-        const stand = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.16, 4.6, 12), standardMaterial(0x94a3b8, { metalness: 0.6 }));
-        stand.position.set(0, 2.3, -2.6);
-        ts.group.add(stand);
-
-        const pivot = new THREE.Vector3(0, 4.6, -2.6);
-        const L = Math.min(4.8, Math.max(1.8, lenM * 2.2));
-        const str = new THREE.Line(new THREE.BufferGeometry().setFromPoints([pivot, pivot.clone()]), new THREE.LineBasicMaterial({ color: 0xe2e8f0 }));
-        ts.group.add(str);
-        const bob = new THREE.Mesh(new THREE.SphereGeometry(0.38, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.55 }));
-        ts.group.add(bob);
-
-        addLbl("#f87171", "Pivot (ceiling mount)", [0, 5.9, -2.6], "string swings about this point", [0, 4.6, -2.6]);
-        addLbl("#fb923c", `Bob — string L = ${lenM} m`, [3.4, 1.0, 0], "tension acts along the string", [1.2, 1.4, -2.6]);
-
-        if (mode === "conical") {
-          const rU = L * Math.sin(th);
-          const cPts: THREE.Vector3[] = [];
-          for (let i = 0; i <= 48; i++) {
-            const a = (i / 48) * Math.PI * 2;
-            cPts.push(new THREE.Vector3(rU * Math.cos(a), 4.6 - L * Math.cos(th), -2.6 + rU * Math.sin(a)));
-          }
-          const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0x38bdf8, dashSize: 0.3, gapSize: 0.2 }));
-          circ.computeLineDistances();
-          ts.group.add(circ);
-          addLbl("#38bdf8", `Radius r = L·sinθ = ${r.toFixed(2)} m`, [rU + 1.4, 2.0, -2.6], `semi-vertical angle θ = ${angleDeg}°`, [rU, 4.6 - L * Math.cos(th), -2.6]);
-          addLbl("#a78bfa", "Centripetal force = T·sinθ", [-4.2, 3.8, -2.6], "points to the circle centre", [0, 4.6 - L * Math.cos(th), -2.6 + rU]);
-          addLbl("#4ade80", "Vertical: T·cosθ = mg", [3.6, 3.2, -2.6], "bob stays at constant height", [1.4, 3.0, -2.6]);
-        } else if (mode === "vertical") {
-          const cPts: THREE.Vector3[] = [];
-          for (let i = 0; i <= 48; i++) {
-            const a = (i / 48) * Math.PI * 2;
-            cPts.push(new THREE.Vector3(L * Math.cos(a), 2.4 + L * Math.sin(a), -2.6));
-          }
-          const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0x38bdf8 }));
-          circ.computeLineDistances();
-          ts.group.add(circ);
-          addLbl("#38bdf8", "Top of circle", [0, 2.4 + L + 1.3, -2.6], `least speed v_top = √(gL) = ${vTop.toFixed(2)} m/s`, [0, 2.4 + L, -2.6]);
-          addLbl("#4ade80", "Bottom of circle", [0, 2.4 - L - 1.1, -2.6], "string tension largest here", [0, 2.4 - L, -2.6]);
-          addLbl("#a78bfa", "Below √(gL) the string goes slack", [4.6, 2.4, -2.6], "bob leaves the circle", [L * 0.7, 3.4, -2.6]);
-        } else {
-          const road = new THREE.Mesh(new THREE.CylinderGeometry(4.4, 4.4, 0.24, 40), standardMaterial(0x475569, { roughness: 0.8 }));
-          road.position.set(0, 1.6, 0);
-          road.rotation.z = -th;
-          ts.group.add(road);
-          const car = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.4, 0.5), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.4 }));
-          car.position.set(3.2, 2.0, 0);
-          ts.group.add(car);
-          addLbl("#38bdf8", `Banking angle θ = ${angleDeg}°`, [-4.8, 3.8, 0], "road tilted inward", [-2.2, 2.6, 0]);
-          addLbl("#facc15", "N·cosθ = mg", [4.8, 4.4, 0], "vertical balance", [1.4, 2.6, 0]);
-          addLbl("#4ade80", `Safe speed v = √(rg·tanθ) = ${vBank.toFixed(1)} m/s`, [-1.5, 0.7, 3.6], "no friction needed at this speed", [2.4, 2.2, 0]);
-        }
-
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          if (mode === "conical") {
-            const a = t * omega * 0.9;
-            const rU = L * Math.sin(th);
-            bob.position.set(rU * Math.cos(a), 4.6 - L * Math.cos(th), -2.6 + rU * Math.sin(a));
-            str.geometry.setFromPoints([pivot, bob.position]);
-          } else if (mode === "vertical") {
-            const a = t * 2.2;
-            bob.position.set(L * Math.cos(a), 2.4 + L * Math.sin(a), -2.6);
-            str.geometry.setFromPoints([pivot, bob.position]);
-          } else {
-            const a = t * Math.sqrt(g / (lenM * Math.sin(th))) * 0.35;
-            const rr = 3.2;
-            bob.position.set(rr * Math.cos(a), 2.0 - Math.sin(th) * rr * Math.sin(a) * 0.18, rr * Math.sin(a));
-            bob.rotation.y = -a;
-          }
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 24), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    const stand = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.16, 4.6, 12), standardMaterial(0x94a3b8, { metalness: 0.6 }));
+    stand.position.set(0, 2.3, -2.6);
+    ts.group.add(stand);
+
+    const pivot = new THREE.Vector3(0, 4.6, -2.6);
+    const L = Math.min(4.8, Math.max(1.8, lenM * 2.2));
+    const str = new THREE.Line(new THREE.BufferGeometry().setFromPoints([pivot, pivot.clone()]), new THREE.LineBasicMaterial({ color: 0xe2e8f0 }));
+    ts.group.add(str);
+    const bob = new THREE.Mesh(new THREE.SphereGeometry(0.38, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.55 }));
+    ts.group.add(bob);
+
+    addLbl("#f87171", "Pivot (ceiling mount)", [0, 5.9, -2.6], "string swings about this point", [0, 4.6, -2.6]);
+    addLbl("#fb923c", `Bob — string L = ${lenM} m`, [3.4, 1.0, 0], "tension acts along the string", [1.2, 1.4, -2.6]);
+
+    if (mode === "conical") {
+      const rU = L * Math.sin(th);
+      const cPts: THREE.Vector3[] = [];
+      for (let i = 0; i <= 48; i++) {
+        const a = (i / 48) * Math.PI * 2;
+        cPts.push(new THREE.Vector3(rU * Math.cos(a), 4.6 - L * Math.cos(th), -2.6 + rU * Math.sin(a)));
+      }
+      const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0x38bdf8, dashSize: 0.3, gapSize: 0.2 }));
+      circ.computeLineDistances();
+      ts.group.add(circ);
+      addLbl("#38bdf8", `Radius r = L·sinθ = ${r.toFixed(2)} m`, [rU + 1.4, 2.0, -2.6], `semi-vertical angle θ = ${angleDeg}°`, [rU, 4.6 - L * Math.cos(th), -2.6]);
+      addLbl("#a78bfa", "Centripetal force = T·sinθ", [-4.2, 3.8, -2.6], "points to the circle centre", [0, 4.6 - L * Math.cos(th), -2.6 + rU]);
+      addLbl("#4ade80", "Vertical: T·cosθ = mg", [3.6, 3.2, -2.6], "bob stays at constant height", [1.4, 3.0, -2.6]);
+    } else if (mode === "vertical") {
+      const cPts: THREE.Vector3[] = [];
+      for (let i = 0; i <= 48; i++) {
+        const a = (i / 48) * Math.PI * 2;
+        cPts.push(new THREE.Vector3(L * Math.cos(a), 2.4 + L * Math.sin(a), -2.6));
+      }
+      const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0x38bdf8 }));
+      circ.computeLineDistances();
+      ts.group.add(circ);
+      addLbl("#38bdf8", "Top of circle", [0, 2.4 + L + 1.3, -2.6], `least speed v_top = √(gL) = ${vTop.toFixed(2)} m/s`, [0, 2.4 + L, -2.6]);
+      addLbl("#4ade80", "Bottom of circle", [0, 2.4 - L - 1.1, -2.6], "string tension largest here", [0, 2.4 - L, -2.6]);
+      addLbl("#a78bfa", "Below √(gL) the string goes slack", [4.6, 2.4, -2.6], "bob leaves the circle", [L * 0.7, 3.4, -2.6]);
+    } else {
+      const road = new THREE.Mesh(new THREE.CylinderGeometry(4.4, 4.4, 0.24, 40), standardMaterial(0x475569, { roughness: 0.8 }));
+      road.position.set(0, 1.6, 0);
+      road.rotation.z = -th;
+      ts.group.add(road);
+      const car = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.4, 0.5), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.4 }));
+      car.position.set(3.2, 2.0, 0);
+      ts.group.add(car);
+      addLbl("#38bdf8", `Banking angle θ = ${angleDeg}°`, [-4.8, 3.8, 0], "road tilted inward", [-2.2, 2.6, 0]);
+      addLbl("#facc15", "N·cosθ = mg", [4.8, 4.4, 0], "vertical balance", [1.4, 2.6, 0]);
+      addLbl("#4ade80", `Safe speed v = √(rg·tanθ) = ${vBank.toFixed(1)} m/s`, [-1.5, 0.7, 3.6], "no friction needed at this speed", [2.4, 2.2, 0]);
+    }
+
+
+    updateRef.current = (time) => {
+    if (mode === "conical") {
+      const a = time * omega * 0.9;
+      const rU = L * Math.sin(th);
+      bob.position.set(rU * Math.cos(a), 4.6 - L * Math.cos(th), -2.6 + rU * Math.sin(a));
+      str.geometry.setFromPoints([pivot, bob.position]);
+    } else if (mode === "vertical") {
+      const a = time * 2.2;
+      bob.position.set(L * Math.cos(a), 2.4 + L * Math.sin(a), -2.6);
+      str.geometry.setFromPoints([pivot, bob.position]);
+    } else {
+      const a = time * Math.sqrt(g / (lenM * Math.sin(th))) * 0.35;
+      const rr = 3.2;
+      bob.position.set(rr * Math.cos(a), 2.0 - Math.sin(th) * rr * Math.sin(a) * 0.18, rr * Math.sin(a));
+      bob.rotation.y = -a;
+    }
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, mode, lenM, angleDeg]);
+
 
   const readouts: [string, string, string][] = mode === "conical"
     ? [["Radius r", `${r.toFixed(2)} m`, "border-sky-500/30 text-sky-500"], ["Period T", `${period.toFixed(2)} s`, "border-emerald-500/30 text-emerald-500"], ["Tension T", `${tensionMul.toFixed(2)}·mg`, "border-amber-500/30 text-amber-500"]]
@@ -389,6 +382,8 @@ const CircularMotionTab: React.FC = () => {
 
 const CollisionsTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [m1, setM1] = useState(2);
   const [m2, setM2] = useState(3);
@@ -403,92 +398,86 @@ const CollisionsTab: React.FC = () => {
   const v2 = ((m2 - e * m1) * u2 + (1 + e) * m1 * u1) / M;
   const keAfter = 0.5 * m1 * v1 ** 2 + 0.5 * m2 * v2 ** 2;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(9, 7.5, 15), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(9, 7.5, 15), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, e === 1 ? "Perfectly Elastic Collision" : e === 0 ? "Perfectly Inelastic Collision" : `Collision (e = ${e.toFixed(2)})`, new THREE.Vector3(0, 4.6, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, e === 1 ? "Perfectly Elastic Collision" : e === 0 ? "Perfectly Inelastic Collision" : `Collision (e = ${e.toFixed(2)})`, new THREE.Vector3(0, 4.6, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        /* frictionless air-track */
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(26, 0.5, 3.4), standardMaterial(0x334155, { metalness: 0.5 })));
-        const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.3, 1.6, 10), standardMaterial(0x1e293b));
-        leg.position.y = -1.0;
-        ts.group.add(leg);
-
-        const sizeOf = (m: number) => 0.75 + m * 0.28;
-        const cartA = new THREE.Mesh(new THREE.BoxGeometry(sizeOf(m1), 1.0, 1.3), standardMaterial(0x38bdf8, { emissive: 0x0ea5e9, emissiveIntensity: 0.25 }));
-        cartA.position.set(-10, 1.0, 0);
-        ts.group.add(cartA);
-        const cartB = new THREE.Mesh(new THREE.BoxGeometry(sizeOf(m2), 1.0, 1.3), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.25 }));
-        cartB.position.set(10, 1.0, 0);
-        ts.group.add(cartB);
-
-        addLbl("#38bdf8", `Glider A — m₁ = ${m1} kg`, [-10, 3.6, 0], `u₁ = ${u1} m/s`, [-10, 1.9, 0]);
-        addLbl("#fb923c", `Glider B — m₂ = ${m2} kg`, [10, 3.6, 0], `u₂ = ${u2} m/s`, [10, 1.9, 0]);
-        addLbl("#4ade80", "Air track — frictionless", [-8.5, -0.9, 2.6], "momentum is conserved exactly", [-8.5, 0.3, 1.0]);
-        addLbl("#a78bfa", "Collision point", [0, 4.0, 0], e === 0 ? "carts stick together (e = 0)" : "carts separate after impact", [0, 1.4, 0]);
-
-        const uScale = 0.55; // scene units per m/s
-        ts.group.add(arrow(new THREE.Vector3(Math.sign(u1), 0, 0), new THREE.Vector3(-10, 2.6, 0), Math.abs(u1) * uScale + 0.8, 0x22d3ee));
-        ts.group.add(arrow(new THREE.Vector3(Math.sign(u2), 0, 0), new THREE.Vector3(10, 2.6, 0), Math.abs(u2) * uScale + 0.8, 0xfacc15));
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const p = (t % 7) / 7;
-          const approachT = 0.5;
-          if (p < approachT) {
-            const q = p / approachT;
-            cartA.position.x = -10 + q * 10;
-            cartB.position.x = 10 - q * 10;
-          } else {
-            const q = (p - approachT) / (1 - approachT);
-            cartA.position.x = q * v1 * 5.2 * uScale;
-            cartB.position.x = q * (e === 0 ? v1 : v2) * 5.2 * uScale;
-          }
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    /* frictionless air-track */
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(26, 0.5, 3.4), standardMaterial(0x334155, { metalness: 0.5 })));
+    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.3, 1.6, 10), standardMaterial(0x1e293b));
+    leg.position.y = -1.0;
+    ts.group.add(leg);
+
+    const sizeOf = (m: number) => 0.75 + m * 0.28;
+    const cartA = new THREE.Mesh(new THREE.BoxGeometry(sizeOf(m1), 1.0, 1.3), standardMaterial(0x38bdf8, { emissive: 0x0ea5e9, emissiveIntensity: 0.25 }));
+    cartA.position.set(-10, 1.0, 0);
+    ts.group.add(cartA);
+    const cartB = new THREE.Mesh(new THREE.BoxGeometry(sizeOf(m2), 1.0, 1.3), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.25 }));
+    cartB.position.set(10, 1.0, 0);
+    ts.group.add(cartB);
+
+    addLbl("#38bdf8", `Glider A — m₁ = ${m1} kg`, [-10, 3.6, 0], `u₁ = ${u1} m/s`, [-10, 1.9, 0]);
+    addLbl("#fb923c", `Glider B — m₂ = ${m2} kg`, [10, 3.6, 0], `u₂ = ${u2} m/s`, [10, 1.9, 0]);
+    addLbl("#4ade80", "Air track — frictionless", [-8.5, -0.9, 2.6], "momentum is conserved exactly", [-8.5, 0.3, 1.0]);
+    addLbl("#a78bfa", "Collision point", [0, 4.0, 0], e === 0 ? "carts stick together (e = 0)" : "carts separate after impact", [0, 1.4, 0]);
+
+    const uScale = 0.55; // scene units per m/s
+    ts.group.add(arrow(new THREE.Vector3(Math.sign(u1), 0, 0), new THREE.Vector3(-10, 2.6, 0), Math.abs(u1) * uScale + 0.8, 0x22d3ee));
+    ts.group.add(arrow(new THREE.Vector3(Math.sign(u2), 0, 0), new THREE.Vector3(10, 2.6, 0), Math.abs(u2) * uScale + 0.8, 0xfacc15));
+
+    updateRef.current = (time) => {
+    const p = (t % 7) / 7;
+    const approachT = 0.5;
+    if (p < approachT) {
+      const q = p / approachT;
+      cartA.position.x = -10 + q * 10;
+      cartB.position.x = 10 - q * 10;
+    } else {
+      const q = (p - approachT) / (1 - approachT);
+      cartA.position.x = q * v1 * 5.2 * uScale;
+      cartB.position.x = q * (e === 0 ? v1 : v2) * 5.2 * uScale;
+    }
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, m1, m2, u1, u2, e]);
+
 
   return (
     <div className="space-y-3">
@@ -543,6 +532,8 @@ function animate() {
 
 const WorkEnergyTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [heightM, setHeightM] = useState(6);
   const [massKg, setMassKg] = useState(2);
@@ -553,97 +544,91 @@ const WorkEnergyTab: React.FC = () => {
   const vBottom = Math.sqrt(2 * g * heightM);
   const keHalf = E - massKg * g * heightM / 2; // KE at half height (frictionless)
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !webGL) return;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, { cameraPosition: new THREE.Vector3(10, 6, 13), background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    (async () => {
-      try {
-        const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
-        if (!mountRef.current || cancelled) return;
-        ts = createThreeScene(mountRef.current!, { cameraPosition: new THREE.Vector3(10, 6, 13), background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
-        titleText(ts, `Energy conservation — m·g·h = ½mv²  (E = ${E.toFixed(0)} J)`, new THREE.Vector3(0, 5.4, 0));
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        labelRenderer = new CSS2DRenderer();
-        labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-        labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
-        mountRef.current!.appendChild(labelRenderer.domElement);
-        try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+    titleText(ts, `Energy conservation — m·g·h = ½mv²  (E = ${E.toFixed(0)} J)`, new THREE.Vector3(0, 5.4, 0));
 
-        const connections: any[] = [];
-        const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
-          const o = new CSS2DObject(mkLabel(color, t, sub));
-          o.position.set(pos[0], pos[1], pos[2]);
-          ts!.group.add(o);
-          if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
-        };
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+    labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
+    mountRef.current!.appendChild(labelRenderer.domElement);
+    try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
 
-        /* track: cosine-shaped valley from (-9, 6) down to (0, 0) up to (9, 3) */
-        const topY = heightM * 0.62;
-        const trackPts: THREE.Vector3[] = [];
-        for (let i = 0; i <= 72; i++) {
-          const x = -9 + (18 * i) / 72;
-          const y = topY * 0.5 * (1 + Math.cos((x / 9) * Math.PI)) + 0.3;
-          trackPts.push(new THREE.Vector3(x, Math.max(0.3, y), 0));
-        }
-        const track = new THREE.Line(new THREE.BufferGeometry().setFromPoints(trackPts), new THREE.LineBasicMaterial({ color: 0x94a3b8 }));
-        ts.group.add(track);
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 14), standardMaterial(0x14532d, { roughness: 0.95 })));
-
-        const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
-        ts.group.add(ball);
-        const keArrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
-        ts.group.add(keArrow);
-
-        addLbl("#f87171", `Start — h = ${heightM} m`, [-9.2, topY + 1.6, 0], `PE = mgh = ${E.toFixed(0)} J, KE = 0`, [-9.2, topY + 0.4, 0]);
-        addLbl("#4ade80", "Bottom — lowest point", [0.5, 0.2, 2.8], `v = √(2gh) = ${vBottom.toFixed(1)} m/s → all energy is KE`, [0, 0.5, 0]);
-        addLbl("#38bdf8", "Half-way down", [-4.6, topY * 0.62 + 1.4, 0], "PE = KE = E/2 (frictionless)", [-4.6, trackPts[Math.round(72 * 0.25)].y, 0]);
-        addLbl("#a78bfa", frictionless ? "Frictionless — E is constant" : "With friction — E leaks as heat", [6.5, 4.6, 0], "watch the ball stop short", [7.5, 1.6, 0]);
-function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const cyc = 9;
-          const p = (t % cyc) / cyc;
-          let s: number;
-          if (p < 0.42) s = (p / 0.42) * 0.75;                    // descend to bottom
-          else if (p < 0.84) s = 0.75 + ((p - 0.42) / 0.42) * 0.25; // climb far side
-          else s = 1 - ((p - 0.84) / 0.16) * 0.25;                 // roll back (bounce)
-          const idx = Math.min(72, Math.round(s * 72));
-          const pos = trackPts[idx];
-          ball.position.copy(pos);
-
-          const hNow = Math.max(0, pos.y - 0.3);
-          const pe = massKg * g * hNow;
-          const ke = Math.max(0, E - pe * (frictionless ? 1 : 1.06));
-          keArrow.position.copy(ball.position.clone().add(new THREE.Vector3(0, 0.8, 0)));
-          keArrow.setLength(Math.max(0.01, (ke / Math.max(1, E)) * 3.6), 0.3, 0.18);
-          keArrow.setColor(new THREE.Color(frictionless ? 0x22d3ee : 0xf87171));
-
-          if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* CSS2D/WebGL unavailable */ }
-    })();
-
-    return () => {
-      cancelled = true;
-      if (ts) disposeThreeScene(ts);
-      if (unbind) unbind();
-      if (labelRenderer?.domElement?.parentNode) labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
-      leaderLayer?.dispose?.();
+    const connections: any[] = [];
+    const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
+      const o = new CSS2DObject(mkLabel(color, t, sub));
+      o.position.set(pos[0], pos[1], pos[2]);
+      ts!.group.add(o);
+      if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    /* track: cosine-shaped valley from (-9, 6) down to (0, 0) up to (9, 3) */
+    const topY = heightM * 0.62;
+    const trackPts: THREE.Vector3[] = [];
+    for (let i = 0; i <= 72; i++) {
+      const x = -9 + (18 * i) / 72;
+      const y = topY * 0.5 * (1 + Math.cos((x / 9) * Math.PI)) + 0.3;
+      trackPts.push(new THREE.Vector3(x, Math.max(0.3, y), 0));
+    }
+    const track = new THREE.Line(new THREE.BufferGeometry().setFromPoints(trackPts), new THREE.LineBasicMaterial({ color: 0x94a3b8 }));
+    ts.group.add(track);
+    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 14), standardMaterial(0x14532d, { roughness: 0.95 })));
+
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
+    ts.group.add(ball);
+    const keArrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
+    ts.group.add(keArrow);
+
+    addLbl("#f87171", `Start — h = ${heightM} m`, [-9.2, topY + 1.6, 0], `PE = mgh = ${E.toFixed(0)} J, KE = 0`, [-9.2, topY + 0.4, 0]);
+    addLbl("#4ade80", "Bottom — lowest point", [0.5, 0.2, 2.8], `v = √(2gh) = ${vBottom.toFixed(1)} m/s → all energy is KE`, [0, 0.5, 0]);
+    addLbl("#38bdf8", "Half-way down", [-4.6, topY * 0.62 + 1.4, 0], "PE = KE = E/2 (frictionless)", [-4.6, trackPts[Math.round(72 * 0.25)].y, 0]);
+    addLbl("#a78bfa", frictionless ? "Frictionless — E is constant" : "With friction — E leaks as heat", [6.5, 4.6, 0], "watch the ball stop short", [7.5, 1.6, 0]);
+
+    updateRef.current = (time) => {
+    const cyc = 9;
+    const p = (t % cyc) / cyc;
+    let s: number;
+    if (p < 0.42) s = (p / 0.42) * 0.75;                    // descend to bottom
+    else if (p < 0.84) s = 0.75 + ((p - 0.42) / 0.42) * 0.25; // climb far side
+    else s = 1 - ((p - 0.84) / 0.16) * 0.25;                 // roll back (bounce)
+    const idx = Math.min(72, Math.round(s * 72));
+    const pos = trackPts[idx];
+    ball.position.copy(pos);
+
+    const hNow = Math.max(0, pos.y - 0.3);
+    const pe = massKg * g * hNow;
+    const ke = Math.max(0, E - pe * (frictionless ? 1 : 1.06));
+    keArrow.position.copy(ball.position.clone().add(new THREE.Vector3(0, 0.8, 0)));
+    keArrow.setLength(Math.max(0.01, (ke / Math.max(1, E)) * 3.6), 0.3, 0.18);
+    keArrow.setColor(new THREE.Color(frictionless ? 0x22d3ee : 0xf87171));
+
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    };
   }, [webGL, heightM, massKg, frictionless]);
+
 
   return (
     <div className="space-y-3">

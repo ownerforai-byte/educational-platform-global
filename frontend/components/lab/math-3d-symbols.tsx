@@ -15,11 +15,21 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { createThreeScene, bindResize, disposeThreeScene, standardMaterial, titleText } from "@/components/lab/three-scene";
+import {
+  createThreeScene,
+  bindResize,
+  disposeThreeScene,
+  standardMaterial,
+  titleText,
+  clearGroup,
+  type ThreeScene,
+} from "@/components/lab/three-scene";
 import { createLabelSystem, LabelDef, SceneArea, GuidePanel } from "@/components/lab/label3d";
 
 function UnitCircle3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [deg, setDeg] = useState(45);
 
@@ -35,23 +45,36 @@ function UnitCircle3D() {
     { x: 1.6, y: t / 2, z: 0, symbol: "tanθ", name: "Tangent value", desc: "Opposite over adjacent = sinθ/cosθ = " + (isFinite(t) ? t.toFixed(2) : "∞") + ".", color: "#fbbf24" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    let radiusLine: THREE.Line | null = null;
-    let sinSeg: THREE.Line | null = null;
-    let cosSeg: THREE.Line | null = null;
-    let tanSeg: THREE.Line | null = null;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 0.4, 7), autoRotate: false, background: 0x0b1220, grid: false });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 0.4, 7), autoRotate: false, background: 0x0b1220, grid: false });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let tanSeg: THREE.Line | null = null;
+let cosSeg: THREE.Line | null = null;
+let sinSeg: THREE.Line | null = null;
+let radiusLine: THREE.Line | null = null;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Unit Circle — Trigonometry", new THREE.Vector3(0, 2.6, 0));
 
         const circle = new THREE.Line(
@@ -87,20 +110,12 @@ function UnitCircle3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("unitcircle", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, deg]);
+
 
   return (
     <Card className="w-full">
@@ -136,6 +151,8 @@ function UnitCircle3D() {
 
 function Tangent3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [a, setA] = useState(1);
   const [h, setH] = useState(1);
@@ -156,19 +173,32 @@ function Tangent3D() {
     { x: a - 1.9, y: fa + d * -1.6 + 0.6, z: 0, symbol: "dy/dx", name: "Derivative (tangent)", desc: "f'(a) = " + d.toFixed(2) + " — as h→0 the secant becomes this tangent.", color: "#22c55e" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 2.6, 10.5), autoRotate: false, background: 0x0b1220, grid: false });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 2.6, 10.5), autoRotate: false, background: 0x0b1220, grid: false });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Derivative = Slope of the Tangent", new THREE.Vector3(0, 6.4, 0));
 
         /* axes */
@@ -215,20 +245,12 @@ function Tangent3D() {
         ts.group.add(sys.group);
         defs.forEach((dd) => sys.add(dd));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("tangent", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, a, h, fn]);
+
 
   return (
     <Card className="w-full">

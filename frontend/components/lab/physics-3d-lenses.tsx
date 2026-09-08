@@ -9,11 +9,20 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 // Convex Lens 3D Component
 const ConvexLens3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [focalLength, setFocalLength] = useState(10);
   const [objectPosition, setObjectPosition] = useState(-15);
   const [showRays, setShowRays] = useState(true);
@@ -25,27 +34,37 @@ const ConvexLens3D: React.FC = () => {
   const isRealImage = objectPosition < -focalLength;
   const magnification = -imagePosition / objectPosition;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let labelRenderer: any = null;
-    const labels: any[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(0, 5, 20),
           autoRotate: false,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const labels: any[] = [];
+let labelRenderer: any = null;
+const container = mountRef.current!;
 
         // Ground plane
         const groundGeo = new THREE.PlaneGeometry(40, 40);
@@ -260,35 +279,21 @@ const ConvexLens3D: React.FC = () => {
           }
         } catch { console.log("CSS2DRenderer not available"); }
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          objectGroup.position.x = objectPosition;
-          focusGroup1.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = -focalLength; });
-          focusGroup2.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = focalLength; });
-          if (labels[1]) labels[1].position.x = -focalLength;
-          if (labels[2]) labels[2].position.x = focalLength;
-          if (isRealImage) { imageGroup.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = imagePosition; }); }
-          if (labels[4] && isRealImage) { labels[4].position.x = imagePosition; labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #fbbf24"><span style="color:#fbbf24;font-weight:600">Image (I)</span><br><span style="color:#fda4af;font-size:10px">m=${magnification.toFixed(2)}x</span></div>`; }
-          if (labels[3]) labels[3].position.x = objectPosition;
-          updateRays();
-          ts.controls.update(); 
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (error) { console.error("Error:", error); }
-    }
-    init();
 
-    return () => {
-      cancelled = true; 
-      if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+    updateRef.current = (time) => {
+    objectGroup.position.x = objectPosition;
+    focusGroup1.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = -focalLength; });
+    focusGroup2.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = focalLength; });
+    if (labels[1]) labels[1].position.x = -focalLength;
+    if (labels[2]) labels[2].position.x = focalLength;
+    if (isRealImage) { imageGroup.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = imagePosition; }); }
+    if (labels[4] && isRealImage) { labels[4].position.x = imagePosition; labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #fbbf24"><span style="color:#fbbf24;font-weight:600">Image (I)</span><br><span style="color:#fda4af;font-size:10px">m=${magnification.toFixed(2)}x</span></div>`; }
+    if (labels[3]) labels[3].position.x = objectPosition;
+    updateRays();
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focalLength, objectPosition, showRays, showLabels, showFocus]);
+
 
   return (
     <Card className="w-full">
@@ -361,6 +366,8 @@ const ConvexLens3D: React.FC = () => {
 // Concave Lens 3D Component
 const ConcaveLens3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [focalLength, setFocalLength] = useState(10);
   const [objectPosition, setObjectPosition] = useState(-15);
   const [showRays, setShowRays] = useState(true);
@@ -372,27 +379,37 @@ const ConcaveLens3D: React.FC = () => {
   const imagePosition = 1 / (1/(-focalLength) + 1/objectPosition);
   const magnification = -imagePosition / objectPosition;
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let labelRenderer: any = null;
-    const labels: any[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(0, 5, 20),
           autoRotate: false,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const labels: any[] = [];
+let labelRenderer: any = null;
+const container = mountRef.current!;
 
         // Ground plane
         const groundGeo = new THREE.PlaneGeometry(40, 40);
@@ -603,35 +620,21 @@ const ConcaveLens3D: React.FC = () => {
           labels.push(imageLabel);
         } catch { console.log("CSS2DRenderer not available"); }
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          objectGroup.position.x = objectPosition;
-          focusGroup1.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = -focalLength; });
-          focusGroup2.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = focalLength; });
-          if (labels[1]) labels[1].position.x = -focalLength;
-          if (labels[2]) labels[2].position.x = focalLength;
-          imageGroup.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = imagePosition; });
-          if (labels[4]) { labels[4].position.x = imagePosition; }
-          if (labels[3]) labels[3].position.x = objectPosition;
-          updateRays();
-          ts.controls.update(); 
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (error) { console.error("Error:", error); }
-    }
-    init();
 
-    return () => {
-      cancelled = true; 
-      if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+    updateRef.current = (time) => {
+    objectGroup.position.x = objectPosition;
+    focusGroup1.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = -focalLength; });
+    focusGroup2.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = focalLength; });
+    if (labels[1]) labels[1].position.x = -focalLength;
+    if (labels[2]) labels[2].position.x = focalLength;
+    imageGroup.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = imagePosition; });
+    if (labels[4]) { labels[4].position.x = imagePosition; }
+    if (labels[3]) labels[3].position.x = objectPosition;
+    updateRays();
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focalLength, objectPosition, showRays, showLabels, showFocus]);
+
 
   return (
     <Card className="w-full">

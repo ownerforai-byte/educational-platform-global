@@ -15,6 +15,7 @@ import {
   bindResize,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 import { cn } from "@/lib/utils";
 
@@ -42,87 +43,91 @@ function makeCanvasText(text: string): THREE.CanvasTexture {
 // 1. Molecular dynamics - bond vibration, rotation, reaction
 // ---------------------------------------------------------------------------
 function MolecularDynamics() {
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [mode, setMode] = useState<"vibration" | "rotation" | "torsion">("vibration");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(7, 5, 9), autoRotate: true, autoRotateSpeed: 0.6 });
-        unbind = bindResize(ts);
-
-        const grp = new THREE.Group();
-        ts.group.add(grp);
-        const bondLen = 2.4;
-        const springMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8 });
-        const spring = new THREE.Mesh(new THREE.BoxGeometry(bondLen, 0.14, 0.14), springMat);
-        grp.add(spring);
-
-        const atomA = new THREE.Mesh(new THREE.SphereGeometry(0.6, 32, 32), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.3 }));
-        atomA.position.set(-bondLen / 2, 0, 0);
-        grp.add(atomA);
-        const atomB = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 32), new THREE.MeshStandardMaterial({ color: 0x3b82f6, emissive: 0x2563eb, emissiveIntensity: 0.3 }));
-        atomB.position.set(bondLen / 2, 0, 0);
-        grp.add(atomB);
-
-        // methyl rotor attached to atom A (for torsion demo)
-        const rotor = new THREE.Group();
-        grp.add(rotor);
-        const hColor = 0xf8fafc;
-        for (let i = 0; i < 3; i++) {
-          const a = (i / 3) * Math.PI * 2;
-          const h = new THREE.Mesh(new THREE.SphereGeometry(0.28, 16, 16), new THREE.MeshStandardMaterial({ color: hColor }));
-          h.position.set(0, Math.cos(a) * 0.7, Math.sin(a) * 0.7);
-          const stick = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.9, 8), new THREE.MeshStandardMaterial({ color: 0x94a3b8 }));
-          stick.position.set(-0.35, Math.cos(a) * 0.35, Math.sin(a) * 0.35);
-          stick.lookAt(0, 0, 0);
-          rotor.add(h);
-          rotor.add(stick);
-        }
-        rotor.position.set(-bondLen / 2, 0, 0);
-        rotor.rotation.y = Math.PI / 2;
-        // axis arrow for torsion reference
-        const axis = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 3.6, 0x64748b, 0.3, 0.2);
-        grp.add(axis);
-
-        const vib = { t: 0 };
-        const glowPhase = { t: 0 };
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          vib.t += 0.02;
-          glowPhase.t += 0.04;
-          const s = Math.sin(vib.t * 3) * 0.3; // bond stretch
-          spring.scale.set(1 + s, 1, 1);
-          atomB.position.x = (bondLen / 2) * (1 + s);
-          rotor.rotation.z = vib.t; // torsional rotation about C-C bond
-          if (mode === "vibration") grp.rotation.y = 0.15;
-          else if (mode === "rotation") grp.rotation.y = vib.t * 0.7;
-          else grp.rotation.z = 0;
-          // Pulse atom glow
-          const pulseA = 0.3 + Math.sin(glowPhase.t) * 0.15;
-          const pulseB = 0.3 + Math.sin(glowPhase.t + Math.PI) * 0.15;
-          (atomA.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseA;
-          (atomB.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseB;
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-        titleText(ts, "Molecular dynamics — vibration, rotation, torsion", new THREE.Vector3(0, 3.4, 0));
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(7, 5, 9), autoRotate: true, autoRotateSpeed: 0.6 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    const grp = new THREE.Group();
+    ts.group.add(grp);
+    const bondLen = 2.4;
+    const springMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8 });
+    const spring = new THREE.Mesh(new THREE.BoxGeometry(bondLen, 0.14, 0.14), springMat);
+    grp.add(spring);
+
+    const atomA = new THREE.Mesh(new THREE.SphereGeometry(0.6, 32, 32), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.3 }));
+    atomA.position.set(-bondLen / 2, 0, 0);
+    grp.add(atomA);
+    const atomB = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 32), new THREE.MeshStandardMaterial({ color: 0x3b82f6, emissive: 0x2563eb, emissiveIntensity: 0.3 }));
+    atomB.position.set(bondLen / 2, 0, 0);
+    grp.add(atomB);
+
+    // methyl rotor attached to atom A (for torsion demo)
+    const rotor = new THREE.Group();
+    grp.add(rotor);
+    const hColor = 0xf8fafc;
+    for (let i = 0; i < 3; i++) {
+      const a = (i / 3) * Math.PI * 2;
+      const h = new THREE.Mesh(new THREE.SphereGeometry(0.28, 16, 16), new THREE.MeshStandardMaterial({ color: hColor }));
+      h.position.set(0, Math.cos(a) * 0.7, Math.sin(a) * 0.7);
+      const stick = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.9, 8), new THREE.MeshStandardMaterial({ color: 0x94a3b8 }));
+      stick.position.set(-0.35, Math.cos(a) * 0.35, Math.sin(a) * 0.35);
+      stick.lookAt(0, 0, 0);
+      rotor.add(h);
+      rotor.add(stick);
+    }
+    rotor.position.set(-bondLen / 2, 0, 0);
+    rotor.rotation.y = Math.PI / 2;
+    // axis arrow for torsion reference
+    const axis = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 3.6, 0x64748b, 0.3, 0.2);
+    grp.add(axis);
+
+    const vib = { t: 0 };
+    const glowPhase = { t: 0 };
+
+    updateRef.current = (time) => {
+    vib.t += 0.02;
+    glowPhase.t += 0.04;
+    const s = Math.sin(vib.time * 3) * 0.3; // bond stretch
+    spring.scale.set(1 + s, 1, 1);
+    atomB.position.x = (bondLen / 2) * (1 + s);
+    rotor.rotation.z = vib.t; // torsional rotation about C-C bond
+    if (mode === "vibration") grp.rotation.y = 0.15;
+    else if (mode === "rotation") grp.rotation.y = vib.time * 0.7;
+    else grp.rotation.z = 0;
+    // Pulse atom glow
+    const pulseA = 0.3 + Math.sin(glowPhase.time) * 0.15;
+    const pulseB = 0.3 + Math.sin(glowPhase.t + Math.PI) * 0.15;
+    (atomA.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseA;
+    (atomB.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseB;
     };
   }, [mode]);
+
 
   return (
     <SimCard title="🔬 Chemistry — Molecular Dynamics">
@@ -150,94 +155,92 @@ function MolecularDynamics() {
 // 2. Crystallography - FCC / BCC / HCP lattices with Miller indices
 // ---------------------------------------------------------------------------
 function CrystalLattice() {
+  const tsRef = useRef<ThreeScene | null>(null);
   const [lattice, setLattice] = useState<"sc" | "bcc" | "fcc" | "hcp">("fcc");
   const [miller, setMiller] = useState<"100" | "110" | "111">("100");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(9, 7, 9), autoRotate: true, autoRotateSpeed: 0.4 });
-        unbind = bindResize(ts);
-
-        const a = 2; // cell parameter
-        const atomPos: [number, number, number][] = [];
-        const cornerColor = 0xfbbf24;
-
-        if (lattice === "hcp") {
-          // two hexagonal layers + interstitials  = simple hexagonal lattice
-          for (let layer = 0; layer < 2; layer++) {
-            const y = layer * 0.9 - 0.45;
-            for (let row = -1; row <= 1; row++) {
-              for (let col = -1; col <= 1; col++) {
-                const x = (col + (row % 2 ? 0.5 : 0)) * 1.0;
-                const z = row * 0.86;
-                atomPos.push([x, y, z]);
-              }
-            }
-          }
-        } else {
-          for (let x = -1; x <= 1; x++) {
-            for (let y = -1; y <= 1; y++) {
-              for (let z = -1; z <= 1; z++) {
-                atomPos.push([x * a, y * a, z * a]);
-              }
-            }
-          }
-          if (lattice === "bcc") {
-            for (let x = -1; x < 1; x++) for (let y = -1; y < 1; y++) for (let z = -1; z < 1; z++) atomPos.push([(x + 0.5) * a, (y + 0.5) * a, (z + 0.5) * a]);
-          } else if (lattice === "fcc") {
-            for (const [dx, dy, dz] of [[1, 1, 0], [1, 0, 1], [0, 1, 1]] as [number, number, number][]) {
-              for (let x = -1; x < 1; x++) for (let y = -1; y < 1; y++) for (let z = -1; z < 1; z++) {
-                atomPos.push([(x + dx / 2) * a, (y + dy / 2) * a, (z + dz / 2) * a]);
-              }
-            }
-          }
-        }
-
-        const mat = new THREE.MeshStandardMaterial({ color: cornerColor, metalness: 0.4, roughness: 0.35 });
-        for (const [x, y, z] of atomPos) {
-          const sph = new THREE.Mesh(new THREE.SphereGeometry(0.38, 20, 20), mat);
-          sph.position.set(x, y, z);
-          ts.group.add(sph);
-        }
-
-        // wireframe unit cell box
-        const box = new THREE.Mesh(new THREE.BoxGeometry(a, a, a), new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true, transparent: true, opacity: 0.4 }));
-        ts.group.add(box);
-
-        // Miller index plane
-        const planeGeo = new THREE.PlaneGeometry(6, 6);
-        const planeMat = new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.28, side: THREE.DoubleSide });
-        const plane = new THREE.Mesh(planeGeo, planeMat);
-        plane.position.set(0, 0, 0);
-        if (miller === "100") { plane.rotation.y = Math.PI / 2; plane.position.x = 0; }
-        else if (miller === "110") { plane.rotation.y = Math.PI / 4; }
-        else { plane.rotation.x = Math.atan(1 / Math.sqrt(2)); plane.rotation.z = Math.PI / 4; }
-        ts.group.add(plane);
-        titleText(ts, `${lattice.toUpperCase()} lattice — plane (${miller})`, new THREE.Vector3(0, 3.4, 0));
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(9, 7, 9), autoRotate: true, autoRotateSpeed: 0.4 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
-    };
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    const a = 2; // cell parameter
+    const atomPos: [number, number, number][] = [];
+    const cornerColor = 0xfbbf24;
+
+    if (lattice === "hcp") {
+      // two hexagonal layers + interstitials  = simple hexagonal lattice
+      for (let layer = 0; layer < 2; layer++) {
+        const y = layer * 0.9 - 0.45;
+        for (let row = -1; row <= 1; row++) {
+          for (let col = -1; col <= 1; col++) {
+            const x = (col + (row % 2 ? 0.5 : 0)) * 1.0;
+            const z = row * 0.86;
+            atomPos.push([x, y, z]);
+          }
+        }
+      }
+    } else {
+      for (let x = -1; x <= 1; x++) {
+        for (let y = -1; y <= 1; y++) {
+          for (let z = -1; z <= 1; z++) {
+            atomPos.push([x * a, y * a, z * a]);
+          }
+        }
+      }
+      if (lattice === "bcc") {
+        for (let x = -1; x < 1; x++) for (let y = -1; y < 1; y++) for (let z = -1; z < 1; z++) atomPos.push([(x + 0.5) * a, (y + 0.5) * a, (z + 0.5) * a]);
+      } else if (lattice === "fcc") {
+        for (const [dx, dy, dz] of [[1, 1, 0], [1, 0, 1], [0, 1, 1]] as [number, number, number][]) {
+          for (let x = -1; x < 1; x++) for (let y = -1; y < 1; y++) for (let z = -1; z < 1; z++) {
+            atomPos.push([(x + dx / 2) * a, (y + dy / 2) * a, (z + dz / 2) * a]);
+          }
+        }
+      }
+    }
+
+    const mat = new THREE.MeshStandardMaterial({ color: cornerColor, metalness: 0.4, roughness: 0.35 });
+    for (const [x, y, z] of atomPos) {
+      const sph = new THREE.Mesh(new THREE.SphereGeometry(0.38, 20, 20), mat);
+      sph.position.set(x, y, z);
+      ts.group.add(sph);
+    }
+
+    // wireframe unit cell box
+    const box = new THREE.Mesh(new THREE.BoxGeometry(a, a, a), new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true, transparent: true, opacity: 0.4 }));
+    ts.group.add(box);
+
+    // Miller index plane
+    const planeGeo = new THREE.PlaneGeometry(6, 6);
+    const planeMat = new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.28, side: THREE.DoubleSide });
+    const plane = new THREE.Mesh(planeGeo, planeMat);
+    plane.position.set(0, 0, 0);
+    if (miller === "100") { plane.rotation.y = Math.PI / 2; plane.position.x = 0; }
+    else if (miller === "110") { plane.rotation.y = Math.PI / 4; }
+    else { plane.rotation.x = Math.atan(1 / Math.sqrt(2)); plane.rotation.z = Math.PI / 4; }
+    ts.group.add(plane);
+    titleText(ts, `${lattice.toUpperCase()} lattice — plane (${miller})`, new THREE.Vector3(0, 3.4, 0));
+
   }, [lattice, miller]);
+
 
   return (
     <SimCard title="💎 Crystallography — Crystal Lattices & Miller Indices">
@@ -277,89 +280,92 @@ function CrystalLattice() {
 // 3. Spectroscopy - 3D IR / NMR spectrum + bond vibration
 // ---------------------------------------------------------------------------
 function Spectroscopy3D() {
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [spec, setSpec] = useState<"ir" | "nmr">("ir");
   const containerRef = useRef<HTMLDivElement>(null);
   const molGrp = useRef<THREE.Group | null>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    molGrp.current = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(10, 8, 11), autoRotate: true, autoRotateSpeed: 0.4, grid: false, axes: true });
-        unbind = bindResize(ts);
-
-        // axis line
-        const axis = new THREE.Mesh(new THREE.BoxGeometry(11, 0.05, 0.05), new THREE.MeshStandardMaterial({ color: 0x64748b }));
-        axis.position.set(0, 0, 0);
-        ts.group.add(axis);
-        // peaks: {x, height, width}
-        const irPeaks: [number, number][] = [[-3.5, 0.8], [-1.2, 3.4], [0.2, 2.2], [1.5, 4.0], [3.2, 2.5], [4.2, 1.1]];
-        const nmrPeaks: [number, number][] = [[-4.4, 2.0], [-2.0, 1.0], [0.6, 1.5], [2.8, 3.0], [4.0, 1.2]];
-        const pk = spec === "ir" ? irPeaks : nmrPeaks;
-        const peakColor = spec === "ir" ? 0x22c55e : 0xa78bfa;
-        const _base = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.2, 0.35), new THREE.MeshStandardMaterial({ color: peakColor }));
-        for (const [x, h] of pk) {          const bar = new THREE.Mesh(new THREE.BoxGeometry(0.35, h, 0.35), new THREE.MeshStandardMaterial({ color: peakColor, emissive: peakColor, emissiveIntensity: 0.2 }));
-          bar.position.set(x, h / 2, 0);
-          ts.group.add(bar);
-          // Lorentzian spread lines
-          const pos: number[] = [];
-          for (let i = -80; i <= 80; i++) {
-            const dx = i * 0.02;
-            const lw = 1 + dx * dx;
-            pos.push(x + dx, h / lw, 0);
-          }
-          const lineGeo = new THREE.BufferGeometry();
-          lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
-          ts.group.add(new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: peakColor, transparent: true, opacity: 0.4 })));
-        }
-        // axis label sprites
-        const xLabel = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText(spec === "ir" ? "Wavenumber (cm⁻¹) →" : "Chemical shift δ (ppm) →"), transparent: true }));
-        xLabel.scale.set(4, 0.7, 1);
-        xLabel.position.set(0, -0.9, 0);
-        ts.group.add(xLabel);
-
-        // animated diatomic molecule representing vibration
-        const mg = new THREE.Group();
-        molGrp.current = mg;
-        ts.group.add(mg);
-        const mA = new THREE.Mesh(new THREE.SphereGeometry(0.7, 24, 24), new THREE.MeshStandardMaterial({ color: 0xf43f5e }));
-        mA.position.set(-1.1, 0, 0);
-        mg.add(mA);
-        const mB = new THREE.Mesh(new THREE.SphereGeometry(0.6, 24, 24), new THREE.MeshStandardMaterial({ color: 0x38bdf8 }));
-        mB.position.set(1.1, 1.2, 0);
-        mg.add(mB);
-        const bond = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.12, 0.12), new THREE.MeshStandardMaterial({ color: 0x94a3b8 }));
-        bond.position.set(0, 0.6, 0);
-        mg.add(bond);
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const stretch = Math.sin(t * 2.4) * 0.12;
-          mB.position.x = (1.1 + stretch) * 1;
-          mB.position.y = 1.2 + Math.sin(t * 2.4) * 0.06;
-          bond.scale.set(1 + stretch * 0.9, 1, 1);
-          mg.position.x = -8.4;
-          mg.position.y = 0.6;
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(10, 8, 11), autoRotate: true, autoRotateSpeed: 0.4, grid: false, axes: true });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    // axis line
+    const axis = new THREE.Mesh(new THREE.BoxGeometry(11, 0.05, 0.05), new THREE.MeshStandardMaterial({ color: 0x64748b }));
+    axis.position.set(0, 0, 0);
+    ts.group.add(axis);
+    // peaks: {x, height, width}
+    const irPeaks: [number, number][] = [[-3.5, 0.8], [-1.2, 3.4], [0.2, 2.2], [1.5, 4.0], [3.2, 2.5], [4.2, 1.1]];
+    const nmrPeaks: [number, number][] = [[-4.4, 2.0], [-2.0, 1.0], [0.6, 1.5], [2.8, 3.0], [4.0, 1.2]];
+    const pk = spec === "ir" ? irPeaks : nmrPeaks;
+    const peakColor = spec === "ir" ? 0x22c55e : 0xa78bfa;
+    const _base = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.2, 0.35), new THREE.MeshStandardMaterial({ color: peakColor }));
+    for (const [x, h] of pk) {          const bar = new THREE.Mesh(new THREE.BoxGeometry(0.35, h, 0.35), new THREE.MeshStandardMaterial({ color: peakColor, emissive: peakColor, emissiveIntensity: 0.2 }));
+      bar.position.set(x, h / 2, 0);
+      ts.group.add(bar);
+      // Lorentzian spread lines
+      const pos: number[] = [];
+      for (let i = -80; i <= 80; i++) {
+        const dx = i * 0.02;
+        const lw = 1 + dx * dx;
+        pos.push(x + dx, h / lw, 0);
+      }
+      const lineGeo = new THREE.BufferGeometry();
+      lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+      ts.group.add(new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: peakColor, transparent: true, opacity: 0.4 })));
+    }
+    // axis label sprites
+    const xLabel = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText(spec === "ir" ? "Wavenumber (cm⁻¹) →" : "Chemical shift δ (ppm) →"), transparent: true }));
+    xLabel.scale.set(4, 0.7, 1);
+    xLabel.position.set(0, -0.9, 0);
+    ts.group.add(xLabel);
+
+    // animated diatomic molecule representing vibration
+    const mg = new THREE.Group();
+    molGrp.current = mg;
+    ts.group.add(mg);
+    const mA = new THREE.Mesh(new THREE.SphereGeometry(0.7, 24, 24), new THREE.MeshStandardMaterial({ color: 0xf43f5e }));
+    mA.position.set(-1.1, 0, 0);
+    mg.add(mA);
+    const mB = new THREE.Mesh(new THREE.SphereGeometry(0.6, 24, 24), new THREE.MeshStandardMaterial({ color: 0x38bdf8 }));
+    mB.position.set(1.1, 1.2, 0);
+    mg.add(mB);
+    const bond = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.12, 0.12), new THREE.MeshStandardMaterial({ color: 0x94a3b8 }));
+    bond.position.set(0, 0.6, 0);
+    mg.add(bond);
+
+
+    updateRef.current = (time) => {
+    const stretch = Math.sin(time * 2.4) * 0.12;
+    mB.position.x = (1.1 + stretch) * 1;
+    mB.position.y = 1.2 + Math.sin(time * 2.4) * 0.06;
+    bond.scale.set(1 + stretch * 0.9, 1, 1);
+    mg.position.x = -8.4;
+    mg.position.y = 0.6;
     };
   }, [spec]);
+
 
   return (
     <SimCard title="📡 Spectroscopy — 3D IR / NMR Spectra">
@@ -386,98 +392,102 @@ function Spectroscopy3D() {
 // 4. Reaction mechanisms - SN1 / SN2 step-by-step animation
 // ---------------------------------------------------------------------------
 function ReactionMechanism() {
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [reaction, setReaction] = useState<"sn2" | "sn1">("sn2");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(6, 5, 10), autoRotate: true, autoRotateSpeed: 0.3 });
-        unbind = bindResize(ts);
-
-        const group = new THREE.Group();
-        ts.group.add(group);
-
-        function atom(radius: number, color: number) {
-          return new THREE.Mesh(new THREE.SphereGeometry(radius, 24, 24), new THREE.MeshStandardMaterial({ color, roughness: 0.4 }));
-        }
-        // Substrate: central carbon with R, CH3, H and leaving group X
-        const C = atom(0.5, 0x1e293b); group.add(C);
-        const LG = atom(0.6, 0x22c55e); LG.position.set(-1.9, 0, 0); group.add(LG);
-        const CH3 = atom(0.55, 0x94a3b8); CH3.position.set(0, 1.6, 0); group.add(CH3);
-        const HB = atom(0.4, 0xf8fafc); HB.position.set(0, -1.6, 0); group.add(HB);
-        const Rg = atom(0.5, 0xa78bfa); Rg.position.set(0, 0, -1.6); group.add(Rg);
-        // nucleophile
-        const Nu = atom(0.6, 0x38bdf8); Nu.position.set(2.6, 0, 0); group.add(Nu);
-
-        // bonds as cylinders
-        function bond(from: THREE.Vector3, to: THREE.Vector3, color = 0x64748b) {
-          const dir = to.clone().sub(from);
-          const len = dir.length();
-          const cyl = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, len, 8), new THREE.MeshStandardMaterial({ color }));
-          cyl.position.copy(from).add(to).multiplyScalar(0.5);
-          cyl.lookAt(to);
-          cyl.rotateX(Math.PI / 2);
-          group.add(cyl);
-        }
-        bond(new THREE.Vector3(-0.9, 0, 0), new THREE.Vector3(-1.9, 0, 0));
-        bond(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 1.6, 0));
-        bond(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, -1.6, 0));
-        bond(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1.6));
-        // nucleophile arrow
-        bond(new THREE.Vector3(2.6, 0, 0), new THREE.Vector3(1.6, 0, 0), 0x38bdf8);
-
-        const progress = { t: 0 };
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          progress.t += 0.004;
-          const p = progress.t % 1;
-          if (reaction === "sn2") {
-            // backside attack: Nu moves in, LG leaves, inversion
-            LG.position.x = -1.9 - p * 1.6;
-            const nuX = 2.6 - p * 1.6;
-            Nu.position.set(nuX, 0, 0);
-            // substituent inversion (Walden): flips to opposite side as Nu arrives
-            const flip = p * 0.6;
-            group.rotation.z = flip;
-            // fine-tune: keep carbon centered by re-adding? skip
-          } else {
-            // SN1: step 1) LG leaves -> cation; step 2) Nu attacks
-            if (p < 0.5) {
-              const q = p / 0.5;
-              LG.position.x = -1.9 - q * 2.4;
-              Nu.position.set(2.6 - q * 0.4, 0, 0);
-            } else {
-              const q = (p - 0.5) / 0.5;
-              LG.position.set(-4.6, 0, 0);
-              Nu.position.set(2.6 - q * 2.6, 0, 0);
-              // planar cation flatten on water
-              CH3.position.y = 1.6 * Math.cos(q * 0);
-              HB.position.y = -1.6;
-              Rg.position.z = -1.6;
-              group.rotation.z = q * 0.5;
-            }
-          }
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-        titleText(ts, reaction === "sn2" ? "SN2 — single concerted step" : "SN1 — stepwise via carbon cation", new THREE.Vector3(0, 3.4, 0));
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(6, 5, 10), autoRotate: true, autoRotateSpeed: 0.3 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    const group = new THREE.Group();
+    ts.group.add(group);
+
+    function atom(radius: number, color: number) {
+      return new THREE.Mesh(new THREE.SphereGeometry(radius, 24, 24), new THREE.MeshStandardMaterial({ color, roughness: 0.4 }));
+    }
+    // Substrate: central carbon with R, CH3, H and leaving group X
+    const C = atom(0.5, 0x1e293b); group.add(C);
+    const LG = atom(0.6, 0x22c55e); LG.position.set(-1.9, 0, 0); group.add(LG);
+    const CH3 = atom(0.55, 0x94a3b8); CH3.position.set(0, 1.6, 0); group.add(CH3);
+    const HB = atom(0.4, 0xf8fafc); HB.position.set(0, -1.6, 0); group.add(HB);
+    const Rg = atom(0.5, 0xa78bfa); Rg.position.set(0, 0, -1.6); group.add(Rg);
+    // nucleophile
+    const Nu = atom(0.6, 0x38bdf8); Nu.position.set(2.6, 0, 0); group.add(Nu);
+
+    // bonds as cylinders
+    function bond(from: THREE.Vector3, to: THREE.Vector3, color = 0x64748b) {
+      const dir = to.clone().sub(from);
+      const len = dir.length();
+      const cyl = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, len, 8), new THREE.MeshStandardMaterial({ color }));
+      cyl.position.copy(from).add(to).multiplyScalar(0.5);
+      cyl.lookAt(to);
+      cyl.rotateX(Math.PI / 2);
+      group.add(cyl);
+    }
+    bond(new THREE.Vector3(-0.9, 0, 0), new THREE.Vector3(-1.9, 0, 0));
+    bond(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 1.6, 0));
+    bond(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, -1.6, 0));
+    bond(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1.6));
+    // nucleophile arrow
+    bond(new THREE.Vector3(2.6, 0, 0), new THREE.Vector3(1.6, 0, 0), 0x38bdf8);
+
+    const progress = { t: 0 };
+
+    updateRef.current = (time) => {
+    progress.t += 0.004;
+    const p = progress.t % 1;
+    if (reaction === "sn2") {
+      // backside attack: Nu moves in, LG leaves, inversion
+      LG.position.x = -1.9 - p * 1.6;
+      const nuX = 2.6 - p * 1.6;
+      Nu.position.set(nuX, 0, 0);
+      // substituent inversion (Walden): flips to opposite side as Nu arrives
+      const flip = p * 0.6;
+      group.rotation.z = flip;
+      // fine-tune: keep carbon centered by re-adding? skip
+    } else {
+      // SN1: step 1) LG leaves -> cation; step 2) Nu attacks
+      if (p < 0.5) {
+        const q = p / 0.5;
+        LG.position.x = -1.9 - q * 2.4;
+        Nu.position.set(2.6 - q * 0.4, 0, 0);
+      } else {
+        const q = (p - 0.5) / 0.5;
+        LG.position.set(-4.6, 0, 0);
+        Nu.position.set(2.6 - q * 2.6, 0, 0);
+        // planar cation flatten on water
+        CH3.position.y = 1.6 * Math.cos(q * 0);
+        HB.position.y = -1.6;
+        Rg.position.z = -1.6;
+        group.rotation.z = q * 0.5;
+      }
+    }
     };
   }, [reaction]);
+
 
   return (
     <SimCard title="⚗️ Reaction Mechanisms — SN1 vs SN2">
@@ -591,84 +601,81 @@ function BiomoleculeViewer() {
 // 6. VSEPR theory - geometry predictor with lone pairs
 // ---------------------------------------------------------------------------
 function VSEPRGeometry() {
+  const tsRef = useRef<ThreeScene | null>(null);
   const [shape, setShape] = useState<"linear" | "trigonal" | "tetrahedral" | "tbp" | "octahedral" | "bent" | "pyramidal">("tetrahedral");
   const containerRef = useRef<HTMLDivElement>(null);
   const loneSpheres = useRef<THREE.Mesh[]>([]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    loneSpheres.current = [];
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(6, 5, 8), autoRotate: true, autoRotateSpeed: 0.6 });
-        unbind = bindResize(ts);
-
-        // ligand directions per electron-domain arrangement
-        const dirs: Record<string, THREE.Vector3[]> = {
-          linear: [new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0)],
-          trigonal: [new THREE.Vector3(1, 0, 0), new THREE.Vector3(-0.5, 0, 0.866), new THREE.Vector3(-0.5, 0, -0.866)],
-          tetrahedral: [
-            new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0.5, 0.5).normalize(),
-            new THREE.Vector3(0.4, -1, 0).normalize(), new THREE.Vector3(-0.4, 0.5, -1).normalize(),
-          ],
-          tbp: [
-            new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0),
-            new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -0.7, 0.7).normalize(), new THREE.Vector3(0, -0.7, -0.7).normalize(),
-          ],
-          octahedral: [
-            new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0),
-            new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -1, 0),
-            new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 0, -1),
-          ],
-          bent: [new THREE.Vector3(0.9, 0.4, 0).normalize(), new THREE.Vector3(-0.9, 0.4, 0).normalize()],
-          pyramidal: [new THREE.Vector3(0.9, -0.4, 0).normalize(), new THREE.Vector3(-0.45, -0.4, 0.78).normalize(), new THREE.Vector3(-0.45, -0.4, -0.78).normalize()],
-        };
-        const checked = dirs[shape];
-        const central = new THREE.Mesh(new THREE.SphereGeometry(0.62, 32, 32), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.3 }));
-        ts.group.add(central);
-        checked.forEach((d) => {
-          const lig = new THREE.Mesh(new THREE.SphereGeometry(0.5, 24, 24), new THREE.MeshStandardMaterial({ color: 0x3b82f6 }));
-          const pos = d.clone().multiplyScalar(2.0);
-          lig.position.copy(pos);
-          ts!.group.add(lig);
-          const len = pos.length();
-          const cy = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, len, 8), new THREE.MeshStandardMaterial({ color: 0x64748b }));
-          cy.position.copy(pos).multiplyScalar(0.5);
-          cy.lookAt(pos);
-          cy.rotateX(Math.PI / 2);
-          ts!.group.add(cy);
-        });
-
-        // lone pairs as translucent electron-density blobs
-        const loneNum = shape === "bent" || shape === "pyramidal" ? 1 : shape === "linear" ? 2 : 0;
-        for (let i = 0; i < loneNum; i++) {
-          const lp = new THREE.Mesh(new THREE.SphereGeometry(0.55, 20, 20), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.35 }));
-          lp.position.set(shape === "linear" ? 2.0 - i * 4.0 : 0, 1.7, 0);
-          if (shape !== "linear") lp.position.x = i === 0 ? 0 : 0;
-          ts.group.add(lp);
-          loneSpheres.current.push(lp);
-        }
-        titleText(ts, shapeLabel(shape), new THREE.Vector3(0, 3.4, 0));
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(6, 5, 8), autoRotate: true, autoRotateSpeed: 0.6 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    // ligand directions per electron-domain arrangement
+    const dirs: Record<string, THREE.Vector3[]> = {
+      linear: [new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0)],
+      trigonal: [new THREE.Vector3(1, 0, 0), new THREE.Vector3(-0.5, 0, 0.866), new THREE.Vector3(-0.5, 0, -0.866)],
+      tetrahedral: [
+        new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0.5, 0.5).normalize(),
+        new THREE.Vector3(0.4, -1, 0).normalize(), new THREE.Vector3(-0.4, 0.5, -1).normalize(),
+      ],
+      tbp: [
+        new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0),
+        new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -0.7, 0.7).normalize(), new THREE.Vector3(0, -0.7, -0.7).normalize(),
+      ],
+      octahedral: [
+        new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0),
+        new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -1, 0),
+        new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 0, -1),
+      ],
+      bent: [new THREE.Vector3(0.9, 0.4, 0).normalize(), new THREE.Vector3(-0.9, 0.4, 0).normalize()],
+      pyramidal: [new THREE.Vector3(0.9, -0.4, 0).normalize(), new THREE.Vector3(-0.45, -0.4, 0.78).normalize(), new THREE.Vector3(-0.45, -0.4, -0.78).normalize()],
     };
+    const checked = dirs[shape];
+    const central = new THREE.Mesh(new THREE.SphereGeometry(0.62, 32, 32), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.3 }));
+    ts.group.add(central);
+    checked.forEach((d) => {
+      const lig = new THREE.Mesh(new THREE.SphereGeometry(0.5, 24, 24), new THREE.MeshStandardMaterial({ color: 0x3b82f6 }));
+      const pos = d.clone().multiplyScalar(2.0);
+      lig.position.copy(pos);
+      ts!.group.add(lig);
+      const len = pos.length();
+      const cy = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, len, 8), new THREE.MeshStandardMaterial({ color: 0x64748b }));
+      cy.position.copy(pos).multiplyScalar(0.5);
+      cy.lookAt(pos);
+      cy.rotateX(Math.PI / 2);
+      ts!.group.add(cy);
+    });
+
+    // lone pairs as translucent electron-density blobs
+    const loneNum = shape === "bent" || shape === "pyramidal" ? 1 : shape === "linear" ? 2 : 0;
+    for (let i = 0; i < loneNum; i++) {
+      const lp = new THREE.Mesh(new THREE.SphereGeometry(0.55, 20, 20), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.35 }));
+      lp.position.set(shape === "linear" ? 2.0 - i * 4.0 : 0, 1.7, 0);
+      if (shape !== "linear") lp.position.x = i === 0 ? 0 : 0;
+      ts.group.add(lp);
+      loneSpheres.current.push(lp);
+    }
+    titleText(ts, shapeLabel(shape), new THREE.Vector3(0, 3.4, 0));
   }, [shape]);
+
 
   return (
     <SimCard title="📐 VSEPR — Geometry Predictor with Lone Pairs">

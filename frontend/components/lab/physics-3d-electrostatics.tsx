@@ -10,39 +10,58 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 // Electric Field Lines Component
 const ElectricField3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [chargeValue, _setChargeValue] = useState(5);
   const [showFieldLines, setShowFieldLines] = useState(true);
   const [showEquipotential, setShowEquipotential] = useState(false);
   const [showLabels, setShowLabels] = useState(true);
   const [numFieldLines, setNumFieldLines] = useState(20);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let labelRenderer: CSS2DRenderer | null = null;
-    let labels: CSS2DObject[] = [];
-    let fieldLines: THREE.Line[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 25),
           autoRotate: false,
           background: 0x000000
         });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let fieldLines: THREE.Line[] = [];
+let labels: CSS2DObject[] = [];
+let labelRenderer: CSS2DRenderer | null = null;
 
         // CSS2D label layer (kept entirely separate from the WebGL canvas)
         const mount = mountRef.current!;
@@ -98,95 +117,21 @@ const ElectricField3D: React.FC = () => {
         ts.group.add(ground);
 
         // Animation loop
-        function animate() {
-          if (cancelled) return;
-          
-          // Update field lines based on charge value
-          updateFieldLines();
 
-          // Toggle the CSS2D label layer with the rest of the scene
-          if (labelRenderer && labels.length) {
-            labels.forEach((l) => { l.visible = showLabels; });
-          }
+    updateRef.current = (time) => {
+    
+    // Update field lines based on charge value
+    updateFieldLines();
 
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        function updateFieldLines() {
-          // Dispose and remove existing field lines
-          fieldLines.forEach(line => {
-            ts.group.remove(line);
-            line.geometry.dispose();
-            (line.material as THREE.Material).dispose();
-          });
-          fieldLines = [];
-
-          if (!showFieldLines) return;
-
-          // Create field lines from positive to negative charge
-          const numLines = numFieldLines;
-          for (let i = 0; i < numLines; i++) {
-            const lineGeo = new THREE.BufferGeometry();
-            const points: THREE.Vector3[] = [];
-            
-            // Start from positive charge surface
-            const theta = Math.random() * Math.PI * 2;
-            const phi = Math.random() * Math.PI;
-            const startX = Math.sin(phi) * Math.cos(theta) * 2;
-            const startY = Math.sin(phi) * Math.sin(theta) * 2;
-            const startZ = Math.cos(phi) * 2;
-            
-            points.push(new THREE.Vector3(startX, startY, startZ));
-            
-            // Curve towards negative charge
-            for (let t = 0.1; t <= 1; t += 0.1) {
-              const curveT = Math.pow(t, 0.7);
-              const x = startX + (12 - startX) * curveT;
-              const y = startY + (0 - startY) * curveT + Math.sin(t * Math.PI * 3) * 2 * (1 - t);
-              const z = startZ + (0 - startZ) * curveT;
-              points.push(new THREE.Vector3(x, y, z));
-            }
-            
-            lineGeo.setFromPoints(points);
-            const lineMat = new THREE.LineBasicMaterial({ 
-              color: 0xffaa00, 
-              transparent: true, 
-              opacity: 0.6 
-            });
-            const line = new THREE.Line(lineGeo, lineMat);
-            ts.group.add(line);
-            fieldLines.push(line);
-          }
-        }
-
-        // Start with field lines
-        updateFieldLines();
-        
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
-      }
+    // Toggle the CSS2D label layer with the rest of the scene
+    if (labelRenderer && labels.length) {
+      labels.forEach((l) => { l.visible = showLabels; });
     }
 
-    init();
-
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-      if (labelRenderer) {
-        labels.forEach((l) => {
-          l.element.remove?.();
-        });
-        labelRenderer.domElement?.remove();
-        labelRenderer = null;
-      }
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
   }, [chargeValue, showFieldLines, showEquipotential, numFieldLines, showLabels]);
+
 
   return (
     <Card className="w-full">
@@ -249,6 +194,7 @@ const ElectricField3D: React.FC = () => {
 // Coulomb's Law Visualization
 const CoulombsLaw3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [charge1, setCharge1] = useState(5);
   const [charge2, setCharge2] = useState(-5);
   const [distance, setDistance] = useState(10);
@@ -260,123 +206,109 @@ const CoulombsLaw3D: React.FC = () => {
   const forceMagnitude = Math.abs(k * charge1 * charge2 / (distance * distance));
   const forceDirection = charge1 * charge2 < 0 ? "Attractive" : "Repulsive";
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 15, 25),
           autoRotate: false,
           background: 0x020617
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Charge 1 (variable color based on sign)
-        const charge1Geo = new THREE.SphereGeometry(1.5, 32, 32);
-        const charge1Mat = standardMaterial(charge1 > 0 ? 0xff4444 : 0x4444ff, { emissive: charge1 > 0 ? 0xff4444 : 0x4444ff, emissiveIntensity: 0.5 });
-        const charge1Mesh = new THREE.Mesh(charge1Geo, charge1Mat);
-        charge1Mesh.position.set(-distance/2, 0, 0);
-        ts.group.add(charge1Mesh);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Charge 2
-        const charge2Geo = new THREE.SphereGeometry(1.5, 32, 32);
-        const charge2Mat = standardMaterial(charge2 > 0 ? 0xff4444 : 0x4444ff, { emissive: charge2 > 0 ? 0xff4444 : 0x4444ff, emissiveIntensity: 0.5 });
-        const charge2Mesh = new THREE.Mesh(charge2Geo, charge2Mat);
-        charge2Mesh.position.set(distance/2, 0, 0);
-        ts.group.add(charge2Mesh);
 
-        // Force arrow
-        let forceArrow: THREE.ArrowHelper | null = null;
-        
-        function updateForceArrow() {
-          if (forceArrow) ts.group.remove(forceArrow);
-          
-          if (!showForce) return;
-          
-          const dir = new THREE.Vector3();
-          if (charge1 * charge2 < 0) {
-            // Attractive
-            dir.subVectors(charge2Mesh.position, charge1Mesh.position).normalize();
-          } else {
-            // Repulsive
-            dir.subVectors(charge1Mesh.position, charge2Mesh.position).normalize();
-          }
-          
-          forceArrow = new LiveArrow(
-            dir,
-            charge1Mesh.position,
-            forceMagnitude * 0.002,
-            0xffff00,
-            0.5,
-            0.2
-          );
-          ts.group.add(forceArrow);
-        }
+    // Charge 1 (variable color based on sign)
+    const charge1Geo = new THREE.SphereGeometry(1.5, 32, 32);
+    const charge1Mat = standardMaterial(charge1 > 0 ? 0xff4444 : 0x4444ff, { emissive: charge1 > 0 ? 0xff4444 : 0x4444ff, emissiveIntensity: 0.5 });
+    const charge1Mesh = new THREE.Mesh(charge1Geo, charge1Mat);
+    charge1Mesh.position.set(-distance/2, 0, 0);
+    ts.group.add(charge1Mesh);
 
-        // Vector lines
-        let vectorLines: THREE.Line[] = [];
-        function updateVectors() {
-          vectorLines.forEach(line => ts.group.remove(line));
-          vectorLines = [];
-          
-          if (!showVectors) return;
-          
-          // Vector from charge1 to charge2
-          const vecGeo = new THREE.BufferGeometry();
-          const points = [
-            new THREE.Vector3(-distance/2, 0, 0),
-            new THREE.Vector3(distance/2, 0, 0)
-          ];
-          vecGeo.setFromPoints(points);
-          const vecMat = new THREE.LineDashedMaterial({ color: 0xffffff, dashSize: 0.5, gapSize: 0.2 });
-          const vecLine = new THREE.Line(vecGeo, vecMat);
-          ts.group.add(vecLine);
-          vectorLines.push(vecLine);
-        }
+    // Charge 2
+    const charge2Geo = new THREE.SphereGeometry(1.5, 32, 32);
+    const charge2Mat = standardMaterial(charge2 > 0 ? 0xff4444 : 0x4444ff, { emissive: charge2 > 0 ? 0xff4444 : 0x4444ff, emissiveIntensity: 0.5 });
+    const charge2Mesh = new THREE.Mesh(charge2Geo, charge2Mat);
+    charge2Mesh.position.set(distance/2, 0, 0);
+    ts.group.add(charge2Mesh);
 
-        // Ground
-        const groundGeo = new THREE.PlaneGeometry(50, 50);
-        const groundMat = standardMaterial(0x081428, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -5;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
-
-        updateForceArrow();
-        updateVectors();
-
-        function animate() {
-          if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
+    // Force arrow
+    let forceArrow: THREE.ArrowHelper | null = null;
+    
+    function updateForceArrow() {
+      if (forceArrow) ts.group.remove(forceArrow);
+      
+      if (!showForce) return;
+      
+      const dir = new THREE.Vector3();
+      if (charge1 * charge2 < 0) {
+        // Attractive
+        dir.subVectors(charge2Mesh.position, charge1Mesh.position).normalize();
+      } else {
+        // Repulsive
+        dir.subVectors(charge1Mesh.position, charge2Mesh.position).normalize();
       }
+      
+      forceArrow = new LiveArrow(
+        dir,
+        charge1Mesh.position,
+        forceMagnitude * 0.002,
+        0xffff00,
+        0.5,
+        0.2
+      );
+      ts.group.add(forceArrow);
     }
 
-    init();
+    // Vector lines
+    let vectorLines: THREE.Line[] = [];
+    function updateVectors() {
+      vectorLines.forEach(line => ts.group.remove(line));
+      vectorLines = [];
+      
+      if (!showVectors) return;
+      
+      // Vector from charge1 to charge2
+      const vecGeo = new THREE.BufferGeometry();
+      const points = [
+        new THREE.Vector3(-distance/2, 0, 0),
+        new THREE.Vector3(distance/2, 0, 0)
+      ];
+      vecGeo.setFromPoints(points);
+      const vecMat = new THREE.LineDashedMaterial({ color: 0xffffff, dashSize: 0.5, gapSize: 0.2 });
+      const vecLine = new THREE.Line(vecGeo, vecMat);
+      ts.group.add(vecLine);
+      vectorLines.push(vecLine);
+    }
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Ground
+    const groundGeo = new THREE.PlaneGeometry(50, 50);
+    const groundMat = standardMaterial(0x081428, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -5;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
+
+    updateForceArrow();
+    updateVectors();
+
   }, [charge1, charge2, distance, showForce, showVectors]);
+
 
   return (
     <Card className="w-full">
@@ -457,115 +389,103 @@ const CoulombsLaw3D: React.FC = () => {
 // Electric Dipole Component
 const ElectricDipole3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [dipoleLength, setDipoleLength] = useState(6);
   const [showField, setShowField] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 30),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x000000
         });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    // +q charge
+    const posGeo = new THREE.SphereGeometry(1, 32, 32);
+    const posMat = standardMaterial(0xff4444, { emissive: 0xff4444, emissiveIntensity: 0.5 });
+    const posCharge = new THREE.Mesh(posGeo, posMat);
+    posCharge.position.set(dipoleLength/2, 0, 0);
+    ts.group.add(posCharge);
+
+    // -q charge
+    const negGeo = new THREE.SphereGeometry(1, 32, 32);
+    const negMat = standardMaterial(0x4444ff, { emissive: 0x4444ff, emissiveIntensity: 0.5 });
+    const negCharge = new THREE.Mesh(negGeo, negMat);
+    negCharge.position.set(-dipoleLength/2, 0, 0);
+    ts.group.add(negCharge);
+
+    // Dipole axis (rod)
+    const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, dipoleLength, 32);
+    const rodMat = standardMaterial(0x666666, { metalness: 0.8, roughness: 0.3 });
+    const rod = new THREE.Mesh(rodGeo, rodMat);
+    rod.rotation.x = Math.PI / 2;
+    ts.group.add(rod);
+
+    // Field lines
+    const dipoleFieldLines: THREE.Line[] = [];
+    function createFieldLines() {
+      if (!showField) return;
+
+      // Dispose and remove previous lines
+      dipoleFieldLines.forEach(line => {
+        ts.group.remove(line);
+        line.geometry.dispose();
+        (line.material as THREE.Material).dispose();
+      });
+      dipoleFieldLines.length = 0;
+
+      const numLines = 30;
+      for (let i = 0; i < numLines; i++) {
+        const lineGeo = new THREE.BufferGeometry();
+        const points: THREE.Vector3[] = [];
         
-        unbind = bindResize(ts);
-
-        // +q charge
-        const posGeo = new THREE.SphereGeometry(1, 32, 32);
-        const posMat = standardMaterial(0xff4444, { emissive: 0xff4444, emissiveIntensity: 0.5 });
-        const posCharge = new THREE.Mesh(posGeo, posMat);
-        posCharge.position.set(dipoleLength/2, 0, 0);
-        ts.group.add(posCharge);
-
-        // -q charge
-        const negGeo = new THREE.SphereGeometry(1, 32, 32);
-        const negMat = standardMaterial(0x4444ff, { emissive: 0x4444ff, emissiveIntensity: 0.5 });
-        const negCharge = new THREE.Mesh(negGeo, negMat);
-        negCharge.position.set(-dipoleLength/2, 0, 0);
-        ts.group.add(negCharge);
-
-        // Dipole axis (rod)
-        const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, dipoleLength, 32);
-        const rodMat = standardMaterial(0x666666, { metalness: 0.8, roughness: 0.3 });
-        const rod = new THREE.Mesh(rodGeo, rodMat);
-        rod.rotation.x = Math.PI / 2;
-        ts.group.add(rod);
-
-        // Field lines
-        const dipoleFieldLines: THREE.Line[] = [];
-        function createFieldLines() {
-          if (!showField) return;
-
-          // Dispose and remove previous lines
-          dipoleFieldLines.forEach(line => {
-            ts.group.remove(line);
-            line.geometry.dispose();
-            (line.material as THREE.Material).dispose();
-          });
-          dipoleFieldLines.length = 0;
-
-          const numLines = 30;
-          for (let i = 0; i < numLines; i++) {
-            const lineGeo = new THREE.BufferGeometry();
-            const points: THREE.Vector3[] = [];
-            
-            // Start from positive charge
-            const startX = dipoleLength/2 + Math.random() * 0.5 - 0.25;
-            const startY = (Math.random() - 0.5) * 2;
-            const startZ = (Math.random() - 0.5) * 2;
-            points.push(new THREE.Vector3(startX, startY, startZ));
-            
-            // Curve to negative charge
-            for (let t = 0.1; t <= 1; t += 0.1) {
-              const curveT = Math.pow(t, 0.5);
-              const x = startX + (-dipoleLength - startX) * curveT;
-              const y = startY + Math.sin(t * Math.PI * 2) * 3 * (1 - t);
-              const z = startZ + Math.cos(t * Math.PI) * 2 * (1 - t);
-              points.push(new THREE.Vector3(x, y, z));
-            }
-            
-            lineGeo.setFromPoints(points);
-            const lineMat = new THREE.LineBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.4 });
-            const line = new THREE.Line(lineGeo, lineMat);
-            dipoleFieldLines.push(line);
-            ts.group.add(line);
-          }
+        // Start from positive charge
+        const startX = dipoleLength/2 + Math.random() * 0.5 - 0.25;
+        const startY = (Math.random() - 0.5) * 2;
+        const startZ = (Math.random() - 0.5) * 2;
+        points.push(new THREE.Vector3(startX, startY, startZ));
+        
+        // Curve to negative charge
+        for (let t = 0.1; t <= 1; t += 0.1) {
+          const curveT = Math.pow(t, 0.5);
+          const x = startX + (-dipoleLength - startX) * curveT;
+          const y = startY + Math.sin(t * Math.PI * 2) * 3 * (1 - t);
+          const z = startZ + Math.cos(t * Math.PI) * 2 * (1 - t);
+          points.push(new THREE.Vector3(x, y, z));
         }
-
-        createFieldLines();
-
-        function animate() {
-          if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
+        
+        lineGeo.setFromPoints(points);
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.4 });
+        const line = new THREE.Line(lineGeo, lineMat);
+        dipoleFieldLines.push(line);
+        ts.group.add(line);
       }
     }
 
-    init();
+    createFieldLines();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
   }, [dipoleLength, showField]);
+
 
   return (
     <Card className="w-full">

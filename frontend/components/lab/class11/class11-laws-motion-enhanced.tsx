@@ -7,7 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
@@ -39,26 +46,36 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
   const normalForce1 = useMemo(() => mass1 * 9.8, [mass1]);
   const normalForce2 = useMemo(() => mass2 * 9.8, [mass2]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!mountRef.current || !isWebGLAvailable()) return;
-    const container = mountRef.current;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(container!, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(12, 15, 18),
           autoRotate: true,
           autoRotateSpeed: 0.2,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const container = mountRef.current;
 
         // Create ground
         const groundGeo = new THREE.PlaneGeometry(50, 50);
@@ -285,36 +302,12 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
           if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
         }
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
 
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
-      }
-    }
-
-    init();
-
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
-      // Cleanup labels
-      if (container) {
-        const labelElements = container!.querySelectorAll(".label");
-        labelElements.forEach(el => el.remove());
-      }
+    updateRef.current = (time) => {
+    updateScene();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mass1, mass2, force, friction, showForces, showTrajectory, showLabels]);
+
 
   return (
     <Card className="w-full">

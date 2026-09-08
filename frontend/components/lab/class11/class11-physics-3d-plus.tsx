@@ -15,6 +15,7 @@ import {
   bindResize,
   titleText,
   type ThreeScene,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 function num(v: string, fallback = 0) {
@@ -25,86 +26,91 @@ function num(v: string, fallback = 0) {
 // 1. Projectile motion — live trajectory, range & height markers
 // ---------------------------------------------------------------------------
 function ProjectileLab() {
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [velocity, setVelocity] = useState("20");
   const [angle, setAngle] = useState("45");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(14, 8, 16), autoRotate: true, autoRotateSpeed: 0.4 });
-        unbind = bindResize(ts);
-
-        const u = Math.max(1, num(velocity, 20));
-        const deg = (Math.min(89, Math.max(1, num(angle, 45))) * Math.PI) / 180;
-        const g = 9.8;
-        const T = (2 * u * Math.sin(deg)) / g;
-        const H = (u * u * Math.sin(deg) * Math.sin(deg)) / (2 * g);
-        const R = (u * u * Math.sin(2 * deg)) / g;
-
-        // ground grid strip
-        const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 12), new THREE.MeshStandardMaterial({ color: 0x1e293b }));
-        ground.rotation.x = -Math.PI / 2;
-        ts.group.add(ground);
-
-        // trajectory curve
-        const pts: THREE.Vector3[] = [];
-        const steps = 90;
-        for (let i = 0; i <= steps; i++) {
-          const t = (i / steps) * T;
-          pts.push(new THREE.Vector3(u * Math.cos(deg) * t, u * Math.sin(deg) * t - 0.5 * g * t * t, 0));
-        }
-        const curve = new THREE.CatmullRomCurve3(pts);
-        ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 120, 0.08, 8, false), new THREE.MeshStandardMaterial({ color: 0x22d3ee })));
-
-        // peak marker
-        const peakPos = pts[Math.floor(steps / 2)];
-        const peak = new THREE.Mesh(new THREE.SphereGeometry(0.25, 16, 16), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.4 }));
-        peak.position.copy(peakPos);
-        ts.group.add(peak);
-
-        // animated ball along the path
-        const ball = new THREE.Mesh(new THREE.SphereGeometry(0.35, 24, 24), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.35 }));
-        ts.group.add(ball);
-
-        // launcher barrel
-        const barrelLen = 1.6;
-        const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.22, barrelLen, 16), new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.6 }));
-        barrel.position.set(Math.cos(deg) * barrelLen / 2, Math.sin(deg) * barrelLen / 2, 0);
-        barrel.rotation.z = deg - Math.PI / 2;
-        ts.group.add(barrel);
-
-        titleText(ts, `R = ${R.toFixed(1)} m · H = ${H.toFixed(1)} m · T = ${T.toFixed(2)} s`, new THREE.Vector3(R / 2 + 2, 4.5, 0));
-
-        let t = 0;
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          t += 0.02;
-          const tt = t % T;
-          ball.position.set(
-            u * Math.cos(deg) * tt,
-            Math.max(0.35, u * Math.sin(deg) * tt - 0.5 * g * tt * tt),
-            0
-          );
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(14, 8, 16), autoRotate: true, autoRotateSpeed: 0.4 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+
+    const u = Math.max(1, num(velocity, 20));
+    const deg = (Math.min(89, Math.max(1, num(angle, 45))) * Math.PI) / 180;
+    const g = 9.8;
+    const T = (2 * u * Math.sin(deg)) / g;
+    const H = (u * u * Math.sin(deg) * Math.sin(deg)) / (2 * g);
+    const R = (u * u * Math.sin(2 * deg)) / g;
+
+    // ground grid strip
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 12), new THREE.MeshStandardMaterial({ color: 0x1e293b }));
+    ground.rotation.x = -Math.PI / 2;
+    ts.group.add(ground);
+
+    // trajectory curve
+    const pts: THREE.Vector3[] = [];
+    const steps = 90;
+    for (let i = 0; i <= steps; i++) {
+      const t = (i / steps) * T;
+      pts.push(new THREE.Vector3(u * Math.cos(deg) * t, u * Math.sin(deg) * t - 0.5 * g * t * t, 0));
+    }
+    const curve = new THREE.CatmullRomCurve3(pts);
+    ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 120, 0.08, 8, false), new THREE.MeshStandardMaterial({ color: 0x22d3ee })));
+
+    // peak marker
+    const peakPos = pts[Math.floor(steps / 2)];
+    const peak = new THREE.Mesh(new THREE.SphereGeometry(0.25, 16, 16), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.4 }));
+    peak.position.copy(peakPos);
+    ts.group.add(peak);
+
+    // animated ball along the path
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(0.35, 24, 24), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.35 }));
+    ts.group.add(ball);
+
+    // launcher barrel
+    const barrelLen = 1.6;
+    const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.22, barrelLen, 16), new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.6 }));
+    barrel.position.set(Math.cos(deg) * barrelLen / 2, Math.sin(deg) * barrelLen / 2, 0);
+    barrel.rotation.z = deg - Math.PI / 2;
+    ts.group.add(barrel);
+
+    titleText(ts, `R = ${R.toFixed(1)} m · H = ${H.toFixed(1)} m · T = ${T.toFixed(2)} s`, new THREE.Vector3(R / 2 + 2, 4.5, 0));
+
+    let t = 0;
+
+    updateRef.current = (time) => {
+    t += 0.02;
+    const tt = t % T;
+    ball.position.set(
+      u * Math.cos(deg) * tt,
+      Math.max(0.35, u * Math.sin(deg) * tt - 0.5 * g * tt * tt),
+      0
+    );
     };
   }, [velocity, angle]);
+
 
   return (
     <SimCard title="🎯 Kinematics — Projectile Motion">
@@ -123,68 +129,66 @@ function ProjectileLab() {
 // 2. Inclined plane & friction — force vectors on a slope
 // ---------------------------------------------------------------------------
 function InclinedPlaneLab() {
+  const tsRef = useRef<ThreeScene | null>(null);
   const [angleDeg, setAngleDeg] = useState("30");
   const [mu, setMu] = useState("0.3");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(9, 7, 11), autoRotate: true, autoRotateSpeed: 0.5 });
-        unbind = bindResize(ts);
-        const theta = (Math.min(60, Math.max(5, num(angleDeg, 30))) * Math.PI) / 180;
-        const muVal = Math.max(0, num(mu, 0.3));
-
-        // incline wedge
-        const L = 8;
-        const shape = new THREE.Shape();
-        shape.moveTo(0, 0);
-        shape.lineTo(L * Math.cos(theta), 0);
-        shape.lineTo(0, L * Math.sin(theta));
-        shape.lineTo(0, 0);
-        const wedgeGeo = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: false });
-        const wedge = new THREE.Mesh(wedgeGeo, new THREE.MeshStandardMaterial({ color: 0x334155 }));
-        wedge.position.set(-L * Math.cos(theta) / 2, -L * Math.sin(theta) / 2, -2);
-        ts.group.add(wedge);
-
-        // block resting on the slope surface
-        const slideDir = new THREE.Vector3(Math.cos(theta), Math.sin(theta), 0);
-        const block = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.1, 1.1), new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xb45309, emissiveIntensity: 0.25 }));
-        block.position.copy(slideDir).multiplyScalar(L * 0.35).add(new THREE.Vector3(0, 0.55 / Math.cos(theta), 0));
-        block.rotation.z = theta;
-        ts.group.add(block);
-
-        // force vectors: weight (vertical), normal (⊥ surface), friction (up-slope)
-        const weightLen = 3.2;
-        ts.group.add(new LiveArrow(new THREE.Vector3(0, -1, 0), block.position.clone(), weightLen, 0xef4444, 0.45, 0.28));
-        const normalDir = new THREE.Vector3(-Math.sin(theta), Math.cos(theta), 0);
-        ts.group.add(new LiveArrow(normalDir, block.position.clone(), weightLen * Math.cos(theta), 0x22c55e, 0.45, 0.28));
-        const frictionMag = muVal * weightLen * Math.cos(theta);
-        if (frictionMag > 0.15) {
-          ts.group.add(new LiveArrow(slideDir.clone().negate(), block.position.clone().add(new THREE.Vector3(0, 0.9, 0)), Math.min(3, frictionMag), 0x38bdf8, 0.4, 0.25));
-        }
-        titleText(ts, "mg sinθ drives motion · μmg cosθ opposes it", new THREE.Vector3(0, 4.6, 0));
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(9, 7, 11), autoRotate: true, autoRotateSpeed: 0.5 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
-    };
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+    const theta = (Math.min(60, Math.max(5, num(angleDeg, 30))) * Math.PI) / 180;
+    const muVal = Math.max(0, num(mu, 0.3));
+
+    // incline wedge
+    const L = 8;
+    const shape = new THREE.Shape();
+    shape.moveTo(0, 0);
+    shape.lineTo(L * Math.cos(theta), 0);
+    shape.lineTo(0, L * Math.sin(theta));
+    shape.lineTo(0, 0);
+    const wedgeGeo = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: false });
+    const wedge = new THREE.Mesh(wedgeGeo, new THREE.MeshStandardMaterial({ color: 0x334155 }));
+    wedge.position.set(-L * Math.cos(theta) / 2, -L * Math.sin(theta) / 2, -2);
+    ts.group.add(wedge);
+
+    // block resting on the slope surface
+    const slideDir = new THREE.Vector3(Math.cos(theta), Math.sin(theta), 0);
+    const block = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.1, 1.1), new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xb45309, emissiveIntensity: 0.25 }));
+    block.position.copy(slideDir).multiplyScalar(L * 0.35).add(new THREE.Vector3(0, 0.55 / Math.cos(theta), 0));
+    block.rotation.z = theta;
+    ts.group.add(block);
+
+    // force vectors: weight (vertical), normal (⊥ surface), friction (up-slope)
+    const weightLen = 3.2;
+    ts.group.add(new LiveArrow(new THREE.Vector3(0, -1, 0), block.position.clone(), weightLen, 0xef4444, 0.45, 0.28));
+    const normalDir = new THREE.Vector3(-Math.sin(theta), Math.cos(theta), 0);
+    ts.group.add(new LiveArrow(normalDir, block.position.clone(), weightLen * Math.cos(theta), 0x22c55e, 0.45, 0.28));
+    const frictionMag = muVal * weightLen * Math.cos(theta);
+    if (frictionMag > 0.15) {
+      ts.group.add(new LiveArrow(slideDir.clone().negate(), block.position.clone().add(new THREE.Vector3(0, 0.9, 0)), Math.min(3, frictionMag), 0x38bdf8, 0.4, 0.25));
+    }
+    titleText(ts, "mg sinθ drives motion · μmg cosθ opposes it", new THREE.Vector3(0, 4.6, 0));
   }, [angleDeg, mu]);
+
 
   return (
     <SimCard title="🧱 Dynamics — Block on an Inclined Plane">
@@ -286,57 +290,62 @@ function EnergyCoaster() {
 // 4. Thermal expansion — rod grows with temperature
 // ---------------------------------------------------------------------------
 function ThermalExpansionLab() {
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [tempC, setTempC] = useState("100");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(8, 4, 11), autoRotate: true, autoRotateSpeed: 0.5 });
-        unbind = bindResize(ts);
-        const T = Math.max(0, num(tempC, 100));
-        const alpha = 1.7e-5; // steel-like coefficient
-        const L0 = 6;
-
-        const wall = new THREE.Mesh(new THREE.BoxGeometry(0.4, 3.2, 2.4), new THREE.MeshStandardMaterial({ color: 0x334155 }));
-        wall.position.set(-L0 / 2 - 0.3, 0, 0);
-        ts.group.add(wall);
-
-        // rod — visual growth exaggerated ×400 for visibility
-        const visualGrowth = L0 * alpha * T * 400 * 0.001;
-        const rod = new THREE.Mesh(new THREE.BoxGeometry(L0 + visualGrowth, 0.7, 0.7), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xb45309, emissiveIntensity: Math.min(0.8, T / 300) }));
-        ts.group.add(rod);
-
-        // burner flame under the rod
-        const flame = new THREE.Mesh(new THREE.ConeGeometry(1.2, 1.6, 20), new THREE.MeshBasicMaterial({ color: 0xf97316, transparent: true, opacity: Math.min(0.75, T / 250) }));
-        flame.rotation.x = Math.PI;
-        flame.position.set(0, -1.6, 0);
-        ts.group.add(flame);
-
-        titleText(ts, `ΔL = L₀αΔT → ${(L0 * alpha * T).toFixed(5)} m (exaggerated)`, new THREE.Vector3(0, 2.6, 0));
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          flame.scale.y = 1 + Math.sin(performance.now() / 180) * 0.15;
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(8, 4, 11), autoRotate: true, autoRotateSpeed: 0.5 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+    const T = Math.max(0, num(tempC, 100));
+    const alpha = 1.7e-5; // steel-like coefficient
+    const L0 = 6;
+
+    const wall = new THREE.Mesh(new THREE.BoxGeometry(0.4, 3.2, 2.4), new THREE.MeshStandardMaterial({ color: 0x334155 }));
+    wall.position.set(-L0 / 2 - 0.3, 0, 0);
+    ts.group.add(wall);
+
+    // rod — visual growth exaggerated ×400 for visibility
+    const visualGrowth = L0 * alpha * T * 400 * 0.001;
+    const rod = new THREE.Mesh(new THREE.BoxGeometry(L0 + visualGrowth, 0.7, 0.7), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xb45309, emissiveIntensity: Math.min(0.8, T / 300) }));
+    ts.group.add(rod);
+
+    // burner flame under the rod
+    const flame = new THREE.Mesh(new THREE.ConeGeometry(1.2, 1.6, 20), new THREE.MeshBasicMaterial({ color: 0xf97316, transparent: true, opacity: Math.min(0.75, T / 250) }));
+    flame.rotation.x = Math.PI;
+    flame.position.set(0, -1.6, 0);
+    ts.group.add(flame);
+
+    titleText(ts, `ΔL = L₀αΔT → ${(L0 * alpha * T).toFixed(5)} m (exaggerated)`, new THREE.Vector3(0, 2.6, 0));
+
+
+    updateRef.current = (time) => {
+    flame.scale.y = 1 + Math.sin(performance.now() / 180) * 0.15;
     };
   }, [tempC]);
+
 
   return (
     <SimCard title="🌡️ Heat — Thermal Expansion of a Rod">
@@ -352,20 +361,32 @@ function ThermalExpansionLab() {
 // 5. Spherical mirror optics — concave mirror ray diagram in 3D
 // ---------------------------------------------------------------------------
 function MirrorOpticsLab() {
+  const tsRef = useRef<ThreeScene | null>(null);
   const [objDist, setObjDist] = useState("30");
   const [focalLen, setFocalLen] = useState("10");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    let cancelled = false;
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 4, 16), autoRotate: true, autoRotateSpeed: 0.4 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function load() {
-      try {
-        if (!containerRef.current || !isWebGLAvailable()) return;
-        ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 4, 16), autoRotate: true, autoRotateSpeed: 0.4 });
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
 
         const f = Math.max(2, num(focalLen, 10));
         const u = Math.max(f + 0.5, num(objDist, 30)); // object outside focus
@@ -426,22 +447,8 @@ function MirrorOpticsLab() {
 
         titleText(ts, `u = ${u.toFixed(0)} cm · f = ${f.toFixed(0)} cm ⇒ v = ${v.toFixed(1)} cm · m = ${m.toFixed(2)}`, new THREE.Vector3(0, 4.8, 0));
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts!.controls.update();
-          ts!.renderer.render(ts!.scene, ts!.camera);
-        }
-        animate();
-      } catch { /* 3D unavailable */ }
-    }
-    load();
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) disposeThreeScene(ts);
-    };
   }, [objDist, focalLen]);
+
 
   return (
     <SimCard title="🪞 Optics — Concave Mirror Ray Diagram">

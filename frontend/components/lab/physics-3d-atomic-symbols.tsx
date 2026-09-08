@@ -15,11 +15,21 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { createThreeScene, bindResize, disposeThreeScene, standardMaterial, titleText } from "@/components/lab/three-scene";
+import {
+  createThreeScene,
+  bindResize,
+  disposeThreeScene,
+  standardMaterial,
+  titleText,
+  clearGroup,
+  type ThreeScene,
+} from "@/components/lab/three-scene";
 import { createLabelSystem, LabelDef, SceneArea, GuidePanel } from "@/components/lab/label3d";
 
 function BohrAtom3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [n, setN] = useState(2);
   const [Z, setZ] = useState(1);
@@ -38,20 +48,33 @@ function BohrAtom3D() {
     { x: 0, y: 4.4, z: 0, symbol: "hν = E₂ − E₁", name: "Photon", desc: "A photon of exactly the level gap is absorbed or emitted in a jump.", color: "#a78bfa" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    let electron: THREE.Mesh | null = null;
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 6, 13), autoRotate: true, autoRotateSpeed: 0.5, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(0, 6, 13), autoRotate: true, autoRotateSpeed: 0.5, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let electron: THREE.Mesh | null = null;
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Bohr Model of the Atom", new THREE.Vector3(0, 5.4, 0));
 
         const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 24), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.7 }));
@@ -79,23 +102,14 @@ function BohrAtom3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          const a = t * 1.4;
-          if (electron) electron.position.set(Math.cos(a) * rN, Math.sin(a) * rN, 0);
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("bohr", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    const a = time * 1.4;
+    if (electron) electron.position.set(Math.cos(a) * rN, Math.sin(a) * rN, 0);
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, n, Z]);
+
 
   return (
     <Card className="w-full">
@@ -137,6 +151,8 @@ const METAL_PHI = [
 
 function Photoelectric3D() {
   const mount = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webgl] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [lambdaNm, setLambdaNm] = useState(400);
   const [metalIdx, setMetalIdx] = useState(0);
@@ -157,21 +173,34 @@ function Photoelectric3D() {
     { x: -4.9, y: -2.0, z: 0, symbol: "λ₀ = 1240/φ", name: "Threshold wavelength", desc: "= " + lambda0.toFixed(0) + " nm — only λ shorter than this can eject electrons.", color: "#a78bfa" },
   ];
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const el = mount.current;
-    if (!el || !webgl) return;
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let sys: any = null;
-    let cancelled = false;
-    const photons: { mesh: THREE.Mesh; u: number }[] = [];
-    const electrons: { mesh: THREE.Mesh; y: number; z: number; x: number }[] = [];
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(1, 3.6, 11), autoRotate: false, background: 0x0b1220 });
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-    async function init() {
-      try {
-        ts = createThreeScene(el!, { cameraPosition: new THREE.Vector3(1, 3.6, 11), autoRotate: false, background: 0x0b1220 });
-        if (!ts) return;
-        unbind = bindResize(ts);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const electrons: { mesh: THREE.Mesh; y: number; z: number; x: number }[] = [];
+const photons: { mesh: THREE.Mesh; u: number }[] = [];
+let sys: any = null;
+const el = mount.current;
         titleText(ts, "Photoelectric Effect", new THREE.Vector3(1.2, 3.9, 0));
 
         const plate = new THREE.Mesh(new THREE.BoxGeometry(0.5, 3.4, 1.7), standardMaterial(0x94a3b8, { metalness: 0.8, roughness: 0.3 }));
@@ -203,36 +232,27 @@ function Photoelectric3D() {
         ts.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
-        function animate() {
-          if (cancelled || !ts) return;
-          requestAnimationFrame(animate);
-          const t = performance.now() / 1000;
-          photons.forEach((p, i) => {
-            p.u = (p.u + 0.006) % 1;
-            p.mesh.position.set(-7 + p.u * 4.7, 0.6 + (i % 3) * 0.5 - 0.5, i % 2 === 0 ? 0.3 : -0.3);
-            (p.mesh.material as THREE.MeshStandardMaterial).emissive.setHex(photonColor);
-            (p.mesh.material as THREE.MeshStandardMaterial).color.setHex(photonColor);
-          });
-          electrons.forEach((e, i) => {
-            if (!emit) { e.mesh.visible = false; return; }
-            e.mesh.visible = true;
-            const sp = 0.03 + Math.min(KE, 3) * 0.03;
-            e.x += sp;
-            if (e.x > 5.1) { e.x = -1.9; e.y = 1.3 * Math.sin(i * 2.1 + t); e.z = (i % 3 - 1) * 0.4; }
-            if (e.x <= -1.89) { e.y = 1.3 * Math.sin(i * 2.1 + t); e.z = (i % 3 - 1) * 0.4; }
-            e.mesh.position.set(e.x, e.y, e.z);
-          });
-          sys.render(ts.scene, ts.camera);
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (e) { console.error("photo", e); }
-    }
-    init();
-    return () => { cancelled = true; unbind?.(); if (sys) try { sys.dispose(); } catch {}; if (ts) try { disposeThreeScene(ts); } catch {}; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    updateRef.current = (time) => {
+    photons.forEach((p, i) => {
+      p.u = (p.u + 0.006) % 1;
+      p.mesh.position.set(-7 + p.u * 4.7, 0.6 + (i % 3) * 0.5 - 0.5, i % 2 === 0 ? 0.3 : -0.3);
+      (p.mesh.material as THREE.MeshStandardMaterial).emissive.setHex(photonColor);
+      (p.mesh.material as THREE.MeshStandardMaterial).color.setHex(photonColor);
+    });
+    electrons.forEach((e, i) => {
+      if (!emit) { e.mesh.visible = false; return; }
+      e.mesh.visible = true;
+      const sp = 0.03 + Math.min(KE, 3) * 0.03;
+      e.x += sp;
+      if (e.x > 5.1) { e.x = -1.9; e.y = 1.3 * Math.sin(i * 2.1 + time); e.z = (i % 3 - 1) * 0.4; }
+      if (e.x <= -1.89) { e.y = 1.3 * Math.sin(i * 2.1 + time); e.z = (i % 3 - 1) * 0.4; }
+      e.mesh.position.set(e.x, e.y, e.z);
+    });
+    sys.render(ts.scene, ts.camera);
+    };
   }, [webgl, lambdaNm, metalIdx]);
+
 
   return (
     <Card className="w-full">

@@ -25,6 +25,7 @@ import {
   titleText,
   type ThreeScene,
   type ThreeSceneOptions,
+  clearGroup,
 } from "@/components/lab/three-scene";
 
 type Kit = {

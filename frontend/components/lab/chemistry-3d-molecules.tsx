@@ -7,7 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 type Molecule = {
   name: string;
@@ -108,175 +115,174 @@ const MOLECULES: Molecule[] = [
 
 export const Chemistry3DMolecules: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [selectedMolecule, setSelectedMolecule] = useState(MOLECULES[0]);
   const [showLabels, setShowLabels] = useState(true);
   const [showBonds, setShowBonds] = useState(true);
   const [autoRotate, setAutoRotate] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 5, 8),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Ground plane
-        const groundGeo = new THREE.PlaneGeometry(30, 30);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Lighting
-        ts.group.add(new THREE.AmbientLight(0xffffff, 0.4));
-        const dir = new THREE.DirectionalLight(0xffffff, 1);
-        dir.position.set(5, 10, 7);
-        ts.group.add(dir);
+    // Ground plane
+    const groundGeo = new THREE.PlaneGeometry(30, 30);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ts.group.add(ground);
 
-        // Molecule group
-        const moleculeGroup = new THREE.Group();
-        ts.group.add(moleculeGroup);
+    const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Atom spheres
-        const atomGroup = new THREE.Group();
-        moleculeGroup.add(atomGroup);
+    // Lighting
+    ts.group.add(new THREE.AmbientLight(0xffffff, 0.4));
+    const dir = new THREE.DirectionalLight(0xffffff, 1);
+    dir.position.set(5, 10, 7);
+    ts.group.add(dir);
 
-        // Bond lines
-        const bondGroup = new THREE.Group();
-        moleculeGroup.add(bondGroup);
+    // Molecule group
+    const moleculeGroup = new THREE.Group();
+    ts.group.add(moleculeGroup);
 
-        // LABELS
-        let labelRenderer: any = null;
-        let atomLabels: any[] = [];
+    // Atom spheres
+    const atomGroup = new THREE.Group();
+    moleculeGroup.add(atomGroup);
 
-        try {
-          labelRenderer = new CSS2DRenderer();
-          labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
-          labelRenderer.domElement.style.position = "absolute";
-          labelRenderer.domElement.style.top = "0";
-          labelRenderer.domElement.style.pointerEvents = "none";
-          labelRenderer.domElement.style.zIndex = "10";
-          mountRef.current!.appendChild(labelRenderer.domElement);
-        } catch { console.log("CSS2DRenderer not available"); }
+    // Bond lines
+    const bondGroup = new THREE.Group();
+    moleculeGroup.add(bondGroup);
 
-        function createMolecule() {
-          // Clear previous atoms
-          while (atomGroup.children.length > 0) {
-            const child = atomGroup.children[0];
-            atomGroup.remove(child);
-            if (child instanceof THREE.Mesh) {
-              child.geometry.dispose();
-              (child.material as THREE.Material).dispose();
-            }
-          }
-          
-          // Clear previous bonds
-          while (bondGroup.children.length > 0) {
-            const child = bondGroup.children[0];
-            bondGroup.remove(child);
-            if (child instanceof THREE.Line) {
-              child.geometry.dispose();
-              (child.material as THREE.Material).dispose();
-            }
-          }
+    // LABELS
+    let labelRenderer: any = null;
+    let atomLabels: any[] = [];
 
-          // Clear previous labels
-          atomLabels.forEach(label => {
-            if (label && label.parent) {
-              (label.parent as any).remove(label);
-            }
-          });
-          atomLabels = [];
+    try {
+      labelRenderer = new CSS2DRenderer();
+      labelRenderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+      labelRenderer.domElement.style.position = "absolute";
+      labelRenderer.domElement.style.top = "0";
+      labelRenderer.domElement.style.pointerEvents = "none";
+      labelRenderer.domElement.style.zIndex = "10";
+      mountRef.current!.appendChild(labelRenderer.domElement);
+    } catch { console.log("CSS2DRenderer not available"); }
 
-          // Create atoms
-          selectedMolecule.atoms.forEach((atom, _index) => {
-            const geo = new THREE.SphereGeometry(atom.radius, 32, 32);
-            const mat = standardMaterial(atom.color, { 
-              emissive: atom.color, 
-              emissiveIntensity: 0.2,
-              metalness: 0.1,
-              roughness: 0.4
-            });
-            const sphere = new THREE.Mesh(geo, mat);
-            sphere.position.set(atom.x, atom.y, atom.z);
-            sphere.castShadow = true;
-            atomGroup.add(sphere);
-
-            // Add label
-            if (showLabels && labelRenderer) {
-              const label = new CSS2DObject(document.createElement("div"));
-              label.element.className = "label";
-              label.element.innerHTML = `<div style="background:rgba(0,0,0,0.75);padding:3px 6px;border-radius:3px;color:white;font-weight:600;font-size:10px">${atom.element}</div>`;
-              label.position.set(atom.x, atom.y + atom.radius + 0.3, atom.z);
-              sphere.add(label);
-              atomLabels.push(label);
-            }
-          });
-
-          // Create bonds
-          if (showBonds) {
-            selectedMolecule.bonds.forEach(bond => {
-              const from = selectedMolecule.atoms[bond.from];
-              const to = selectedMolecule.atoms[bond.to];
-              const fromVec = new THREE.Vector3(from.x, from.y, from.z);
-              const toVec = new THREE.Vector3(to.x, to.y, to.z);
-              const geo = new THREE.BufferGeometry().setFromPoints([fromVec, toVec]);
-              const mat = new THREE.LineBasicMaterial({ color: bond.color, linewidth: 3 });
-              const line = new THREE.Line(geo, mat);
-              bondGroup.add(line);
-            });
-          }
-
-          // Molecule name label
-          if (labelRenderer) {
-            const nameLabel = new CSS2DObject(document.createElement("div"));
-            nameLabel.element.className = "label";
-            nameLabel.element.innerHTML = `<div style="background:rgba(0,0,0,0.85);padding:8px 14px;border-radius:6px;border:2px solid #3b82f6"><span style="color:#3b82f6;font-weight:700;font-size:14px">${selectedMolecule.name}</span><br><span style="color:#93c5fd;font-size:11px">${selectedMolecule.formula}</span></div>`;
-            nameLabel.position.set(0, selectedMolecule.atoms.reduce((max, a) => Math.max(max, a.y), 0) + 1.5, 0);
-            moleculeGroup.add(nameLabel);
-            atomLabels.push(nameLabel);
-          }
+    function createMolecule() {
+      // Clear previous atoms
+      while (atomGroup.children.length > 0) {
+        const child = atomGroup.children[0];
+        atomGroup.remove(child);
+        if (child instanceof THREE.Mesh) {
+          child.geometry.dispose();
+          (child.material as THREE.Material).dispose();
         }
-
-        createMolecule();
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          ts.controls.autoRotate = autoRotate;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+      }
+      
+      // Clear previous bonds
+      while (bondGroup.children.length > 0) {
+        const child = bondGroup.children[0];
+        bondGroup.remove(child);
+        if (child instanceof THREE.Line) {
+          child.geometry.dispose();
+          (child.material as THREE.Material).dispose();
         }
+      }
 
-        animate();
-      } catch (error) { console.error("Error:", error); }
+      // Clear previous labels
+      atomLabels.forEach(label => {
+        if (label && label.parent) {
+          (label.parent as any).remove(label);
+        }
+      });
+      atomLabels = [];
+
+      // Create atoms
+      selectedMolecule.atoms.forEach((atom, _index) => {
+        const geo = new THREE.SphereGeometry(atom.radius, 32, 32);
+        const mat = standardMaterial(atom.color, { 
+          emissive: atom.color, 
+          emissiveIntensity: 0.2,
+          metalness: 0.1,
+          roughness: 0.4
+        });
+        const sphere = new THREE.Mesh(geo, mat);
+        sphere.position.set(atom.x, atom.y, atom.z);
+        sphere.castShadow = true;
+        atomGroup.add(sphere);
+
+        // Add label
+        if (showLabels && labelRenderer) {
+          const label = new CSS2DObject(document.createElement("div"));
+          label.element.className = "label";
+          label.element.innerHTML = `<div style="background:rgba(0,0,0,0.75);padding:3px 6px;border-radius:3px;color:white;font-weight:600;font-size:10px">${atom.element}</div>`;
+          label.position.set(atom.x, atom.y + atom.radius + 0.3, atom.z);
+          sphere.add(label);
+          atomLabels.push(label);
+        }
+      });
+
+      // Create bonds
+      if (showBonds) {
+        selectedMolecule.bonds.forEach(bond => {
+          const from = selectedMolecule.atoms[bond.from];
+          const to = selectedMolecule.atoms[bond.to];
+          const fromVec = new THREE.Vector3(from.x, from.y, from.z);
+          const toVec = new THREE.Vector3(to.x, to.y, to.z);
+          const geo = new THREE.BufferGeometry().setFromPoints([fromVec, toVec]);
+          const mat = new THREE.LineBasicMaterial({ color: bond.color, linewidth: 3 });
+          const line = new THREE.Line(geo, mat);
+          bondGroup.add(line);
+        });
+      }
+
+      // Molecule name label
+      if (labelRenderer) {
+        const nameLabel = new CSS2DObject(document.createElement("div"));
+        nameLabel.element.className = "label";
+        nameLabel.element.innerHTML = `<div style="background:rgba(0,0,0,0.85);padding:8px 14px;border-radius:6px;border:2px solid #3b82f6"><span style="color:#3b82f6;font-weight:700;font-size:14px">${selectedMolecule.name}</span><br><span style="color:#93c5fd;font-size:11px">${selectedMolecule.formula}</span></div>`;
+        nameLabel.position.set(0, selectedMolecule.atoms.reduce((max, a) => Math.max(max, a.y), 0) + 1.5, 0);
+        moleculeGroup.add(nameLabel);
+        atomLabels.push(nameLabel);
+      }
     }
 
-    init();
+    createMolecule();
 
-    return () => {
-      cancelled = true; if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
+
+    updateRef.current = (time) => {
+    ts.controls.autoRotate = autoRotate;
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
   }, [selectedMolecule, showLabels, showBonds, autoRotate]);
+
 
   return (
     <Card className="w-full">

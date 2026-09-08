@@ -10,11 +10,18 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 // Vector Basics 3D Component
 const VectorBasics3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [vec1Mag, setVec1Mag] = useState(5);
   const [vec1AngleX, setVec1AngleX] = useState(0);
   const [vec1AngleY, setVec1AngleY] = useState(0);
@@ -37,129 +44,115 @@ const VectorBasics3D: React.FC = () => {
   const resultantZ = vec1Z + vec2Z;
   const resultantMag = Math.sqrt(resultantX * resultantX + resultantY * resultantY + resultantZ * resultantZ);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 15, 25),
           autoRotate: false,
           background: 0x020617
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Grid helper
-        const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-        ts.group.add(gridHelper);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Axes helper
-        const axesHelper = new THREE.AxesHelper(8);
-        ts.group.add(axesHelper);
 
-        // Vector 1 (Red)
-        const vec1Arrow = new LiveArrow(
-          new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize(),
+    // Grid helper
+    const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
+    ts.group.add(gridHelper);
+
+    // Axes helper
+    const axesHelper = new THREE.AxesHelper(8);
+    ts.group.add(axesHelper);
+
+    // Vector 1 (Red)
+    const vec1Arrow = new LiveArrow(
+      new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize(),
+      new THREE.Vector3(0, 0, 0),
+      vec1Mag,
+      0xff4444,
+      0.4,
+      0.2
+    );
+    vec1Arrow.name = "vec1";
+    ts.group.add(vec1Arrow);
+
+    // Vector 2 (Blue)
+    const vec2Arrow = new LiveArrow(
+      new THREE.Vector3(vec2X, vec2Y, vec2Z).normalize(),
+      new THREE.Vector3(0, 0, 0),
+      vec2Mag,
+      0x4444ff,
+      0.4,
+      0.2
+    );
+    vec2Arrow.name = "vec2";
+    ts.group.add(vec2Arrow);
+
+    // Resultant (Green)
+    let resultantArrow: THREE.ArrowHelper | null = null;
+    function updateVectors() {
+      // Remove old arrows
+      ts.group.children = ts.group.children.filter((child: any) => 
+        child.name !== "vec1" && child.name !== "vec2" && child.name !== "resultant"
+      );
+
+      // Vector 1
+      const newVec1Arrow = new LiveArrow(
+        new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize(),
+        new THREE.Vector3(0, 0, 0),
+        vec1Mag,
+        0xff4444,
+        0.4,
+        0.2
+      );
+      newVec1Arrow.name = "vec1";
+      ts.group.add(newVec1Arrow);
+
+      // Vector 2
+      const newVec2Arrow = new LiveArrow(
+        new THREE.Vector3(vec2X, vec2Y, vec2Z).normalize(),
+        new THREE.Vector3(0, 0, 0),
+        vec2Mag,
+        0x4444ff,
+        0.4,
+        0.2
+      );
+      newVec2Arrow.name = "vec2";
+      ts.group.add(newVec2Arrow);
+
+      // Resultant
+      if (showResultant) {
+        resultantArrow = new LiveArrow(
+          new THREE.Vector3(resultantX, resultantY, resultantZ).normalize(),
           new THREE.Vector3(0, 0, 0),
-          vec1Mag,
-          0xff4444,
-          0.4,
-          0.2
+          resultantMag,
+          0x44ff44,
+          0.5,
+          0.25
         );
-        vec1Arrow.name = "vec1";
-        ts.group.add(vec1Arrow);
-
-        // Vector 2 (Blue)
-        const vec2Arrow = new LiveArrow(
-          new THREE.Vector3(vec2X, vec2Y, vec2Z).normalize(),
-          new THREE.Vector3(0, 0, 0),
-          vec2Mag,
-          0x4444ff,
-          0.4,
-          0.2
-        );
-        vec2Arrow.name = "vec2";
-        ts.group.add(vec2Arrow);
-
-        // Resultant (Green)
-        let resultantArrow: THREE.ArrowHelper | null = null;
-        function updateVectors() {
-          // Remove old arrows
-          ts.group.children = ts.group.children.filter((child: any) => 
-            child.name !== "vec1" && child.name !== "vec2" && child.name !== "resultant"
-          );
-
-          // Vector 1
-          const newVec1Arrow = new LiveArrow(
-            new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize(),
-            new THREE.Vector3(0, 0, 0),
-            vec1Mag,
-            0xff4444,
-            0.4,
-            0.2
-          );
-          newVec1Arrow.name = "vec1";
-          ts.group.add(newVec1Arrow);
-
-          // Vector 2
-          const newVec2Arrow = new LiveArrow(
-            new THREE.Vector3(vec2X, vec2Y, vec2Z).normalize(),
-            new THREE.Vector3(0, 0, 0),
-            vec2Mag,
-            0x4444ff,
-            0.4,
-            0.2
-          );
-          newVec2Arrow.name = "vec2";
-          ts.group.add(newVec2Arrow);
-
-          // Resultant
-          if (showResultant) {
-            resultantArrow = new LiveArrow(
-              new THREE.Vector3(resultantX, resultantY, resultantZ).normalize(),
-              new THREE.Vector3(0, 0, 0),
-              resultantMag,
-              0x44ff44,
-              0.5,
-              0.25
-            );
-            resultantArrow.name = "resultant";
-            ts.group.add(resultantArrow);
-          }
-        }
-
-        updateVectors();
-
-        function animate() {
-          if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
+        resultantArrow.name = "resultant";
+        ts.group.add(resultantArrow);
       }
     }
 
-    init();
+    updateVectors();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vec1Mag, vec1AngleX, vec1AngleY, vec2Mag, vec2AngleX, vec2AngleY, showResultant]);
+
 
   return (
     <Card className="w-full">
@@ -263,6 +256,7 @@ const VectorBasics3D: React.FC = () => {
 // Dot Product Visualization
 const DotProduct3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [angle, setAngle] = useState(45);
   const [magA, setMagA] = useState(5);
   const [magB, setMagB] = useState(5);
@@ -270,111 +264,98 @@ const DotProduct3D: React.FC = () => {
 
   const dotProduct = magA * magB * Math.cos(angle * Math.PI / 180);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 15, 25),
           autoRotate: false,
           background: 0x020617
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Grid and axes
-        const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-        ts.group.add(gridHelper);
-        const axesHelper = new THREE.AxesHelper(8);
-        ts.group.add(axesHelper);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Vector A (Red) - fixed along x-axis
-        const vecA = new LiveArrow(
-          new THREE.Vector3(1, 0, 0),
-          new THREE.Vector3(0, 0, 0),
-          magA,
-          0xff4444,
-          0.4,
-          0.2
-        );
-        ts.group.add(vecA);
 
-        // Vector B (Blue) - at angle
-        const angleRad = angle * Math.PI / 180;
-        const vecB = new LiveArrow(
-          new THREE.Vector3(Math.cos(angleRad), Math.sin(angleRad), 0),
-          new THREE.Vector3(0, 0, 0),
-          magB,
-          0x4444ff,
-          0.4,
-          0.2
-        );
-        ts.group.add(vecB);
+    // Grid and axes
+    const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
+    ts.group.add(gridHelper);
+    const axesHelper = new THREE.AxesHelper(8);
+    ts.group.add(axesHelper);
 
-        // Projection
-        let projectionLine: THREE.Line | null = null;
-        let projectionArrow: THREE.ArrowHelper | null = null;
-        
-        function updateProjection() {
-          if (projectionLine) ts.group.remove(projectionLine);
-          if (projectionArrow) ts.group.remove(projectionArrow);
-          
-          if (!showProjection) return;
+    // Vector A (Red) - fixed along x-axis
+    const vecA = new LiveArrow(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      magA,
+      0xff4444,
+      0.4,
+      0.2
+    );
+    ts.group.add(vecA);
 
-          // Projection line (dashed)
-          const projectionGeo = new THREE.BufferGeometry();
-          const points = [
-            new THREE.Vector3(magB * Math.cos(angleRad), magB * Math.sin(angleRad), 0),
-            new THREE.Vector3(magB * Math.cos(angleRad), 0, 0)
-          ];
-          projectionGeo.setFromPoints(points);
-          const projectionMat = new THREE.LineDashedMaterial({ color: 0x888888, dashSize: 0.2, gapSize: 0.1 });
-          projectionLine = new THREE.Line(projectionGeo, projectionMat);
-          ts.group.add(projectionLine);
+    // Vector B (Blue) - at angle
+    const angleRad = angle * Math.PI / 180;
+    const vecB = new LiveArrow(
+      new THREE.Vector3(Math.cos(angleRad), Math.sin(angleRad), 0),
+      new THREE.Vector3(0, 0, 0),
+      magB,
+      0x4444ff,
+      0.4,
+      0.2
+    );
+    ts.group.add(vecB);
 
-          // Projection arrow (from origin to projection point)
-          projectionArrow = new LiveArrow(
-            new THREE.Vector3(1, 0, 0),
-            new THREE.Vector3(0, 0, 0),
-            magB * Math.cos(angleRad),
-            0xffffff,
-            0.3,
-            0.15
-          );
-          ts.group.add(projectionArrow);
-        }
+    // Projection
+    let projectionLine: THREE.Line | null = null;
+    let projectionArrow: THREE.ArrowHelper | null = null;
+    
+    function updateProjection() {
+      if (projectionLine) ts.group.remove(projectionLine);
+      if (projectionArrow) ts.group.remove(projectionArrow);
+      
+      if (!showProjection) return;
 
-        updateProjection();
+      // Projection line (dashed)
+      const projectionGeo = new THREE.BufferGeometry();
+      const points = [
+        new THREE.Vector3(magB * Math.cos(angleRad), magB * Math.sin(angleRad), 0),
+        new THREE.Vector3(magB * Math.cos(angleRad), 0, 0)
+      ];
+      projectionGeo.setFromPoints(points);
+      const projectionMat = new THREE.LineDashedMaterial({ color: 0x888888, dashSize: 0.2, gapSize: 0.1 });
+      projectionLine = new THREE.Line(projectionGeo, projectionMat);
+      ts.group.add(projectionLine);
 
-        function animate() {
-          if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
-      }
+      // Projection arrow (from origin to projection point)
+      projectionArrow = new LiveArrow(
+        new THREE.Vector3(1, 0, 0),
+        new THREE.Vector3(0, 0, 0),
+        magB * Math.cos(angleRad),
+        0xffffff,
+        0.3,
+        0.15
+      );
+      ts.group.add(projectionArrow);
     }
 
-    init();
+    updateProjection();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
   }, [angle, magA, magB, showProjection]);
+
 
   return (
     <Card className="w-full">
@@ -446,6 +427,7 @@ const DotProduct3D: React.FC = () => {
 // Cross Product Visualization
 const CrossProduct3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [angleX, setAngleX] = useState(90);
   const [angleY, setAngleY] = useState(0);
   const [showNormal, setShowNormal] = useState(true);
@@ -471,117 +453,103 @@ const CrossProduct3D: React.FC = () => {
   
   const crossMagnitude = Math.sqrt(cx * cx + cy * cy + cz * cz);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 15, 25),
           autoRotate: false,
           background: 0x020617
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    function animate() {
+      requestAnimationFrame(animate);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Grid and axes
-        const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-        ts.group.add(gridHelper);
-        const axesHelper = new THREE.AxesHelper(8);
-        ts.group.add(axesHelper);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        // Vector A (Red) - along x-axis
-        const vecA = new LiveArrow(
-          new THREE.Vector3(1, 0, 0),
-          new THREE.Vector3(0, 0, 0),
-          magA,
-          0xff4444,
-          0.4,
-          0.2
-        );
-        ts.group.add(vecA);
 
-        // Vector B (Blue) - at angle in x-y plane
-        const vecB = new LiveArrow(
-          new THREE.Vector3(bx/magB, by/magB, 0),
-          new THREE.Vector3(0, 0, 0),
-          magB,
-          0x4444ff,
-          0.4,
-          0.2
-        );
-        ts.group.add(vecB);
+    // Grid and axes
+    const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
+    ts.group.add(gridHelper);
+    const axesHelper = new THREE.AxesHelper(8);
+    ts.group.add(axesHelper);
 
-        // Cross product result (Green) - along z-axis
-        let crossArrow: THREE.ArrowHelper | null = null;
-        function updateCrossProduct() {
-          if (crossArrow) ts.group.remove(crossArrow);
-          
-          if (!showNormal) return;
-          
-          crossArrow = new LiveArrow(
-            new THREE.Vector3(0, 0, cz > 0 ? 1 : -1),
-            new THREE.Vector3(0, 0, 0),
-            Math.abs(cz),
-            0x44ff44,
-            0.5,
-            0.25
-          );
-          ts.group.add(crossArrow);
-        }
+    // Vector A (Red) - along x-axis
+    const vecA = new LiveArrow(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      magA,
+      0xff4444,
+      0.4,
+      0.2
+    );
+    ts.group.add(vecA);
 
-        // Plane formed by A and B
-        let planeMesh: THREE.Mesh | null = null;
-        function updatePlane() {
-          if (planeMesh) ts.group.remove(planeMesh);
-          
-          if (!showPlane) return;
-          
-          // Create a plane that contains both vectors
-          const planeGeo = new THREE.PlaneGeometry(20, 20);
-          const planeMat = new THREE.MeshBasicMaterial({ 
-            color: 0x448844, 
-            side: THREE.DoubleSide,
-            transparent: true,
-            opacity: 0.2
-          });
-          planeMesh = new THREE.Mesh(planeGeo, planeMat);
-          planeMesh.position.set(0, 0, 0);
-          ts.group.add(planeMesh);
-        }
+    // Vector B (Blue) - at angle in x-y plane
+    const vecB = new LiveArrow(
+      new THREE.Vector3(bx/magB, by/magB, 0),
+      new THREE.Vector3(0, 0, 0),
+      magB,
+      0x4444ff,
+      0.4,
+      0.2
+    );
+    ts.group.add(vecB);
 
-        updateCrossProduct();
-        updatePlane();
-
-        function animate() {
-          if (cancelled) return;
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-      } catch (error) {
-        console.error("Error loading three.js:", error);
-      }
+    // Cross product result (Green) - along z-axis
+    let crossArrow: THREE.ArrowHelper | null = null;
+    function updateCrossProduct() {
+      if (crossArrow) ts.group.remove(crossArrow);
+      
+      if (!showNormal) return;
+      
+      crossArrow = new LiveArrow(
+        new THREE.Vector3(0, 0, cz > 0 ? 1 : -1),
+        new THREE.Vector3(0, 0, 0),
+        Math.abs(cz),
+        0x44ff44,
+        0.5,
+        0.25
+      );
+      ts.group.add(crossArrow);
     }
 
-    init();
+    // Plane formed by A and B
+    let planeMesh: THREE.Mesh | null = null;
+    function updatePlane() {
+      if (planeMesh) ts.group.remove(planeMesh);
+      
+      if (!showPlane) return;
+      
+      // Create a plane that contains both vectors
+      const planeGeo = new THREE.PlaneGeometry(20, 20);
+      const planeMat = new THREE.MeshBasicMaterial({ 
+        color: 0x448844, 
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.2
+      });
+      planeMesh = new THREE.Mesh(planeGeo, planeMat);
+      planeMesh.position.set(0, 0, 0);
+      ts.group.add(planeMesh);
+    }
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) disposeThreeScene(ts);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    updateCrossProduct();
+    updatePlane();
+
   }, [angleX, angleY, showNormal, showPlane]);
+
 
   return (
     <Card className="w-full">

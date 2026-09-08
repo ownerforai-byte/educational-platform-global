@@ -20,6 +20,9 @@ import { createLeaderLayer } from "./leader-lines";
 import {
   disposeThreeScene,
   type ThreeScene,
+  clearGroup,
+  createThreeScene,
+  bindResize,
 } from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
@@ -33,6 +36,8 @@ const LIQUIDS = [
 export const NewtonCoolingExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [liqIdx, setLiqIdx] = useState(0);
   const [T0, setT0] = useState(82); // initial temperature °C
@@ -46,29 +51,37 @@ export const NewtonCoolingExperiment: React.FC = () => {
   const Tat = (t: number) => Ts + (T0 - Ts) * Math.exp(-kPerMin * t);
   const table = [2, 4, 6, 8].map((t) => ({ t, T: Tat(Math.min(t, duration)) }));
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !webGL) return;
-
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText } = mod;
-        if (!container || cancelled) return;
-
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(1.5, 4.6, 13.5),
           autoRotate: false,
           background: 0x0b1220,
         });
-        if (!ts) return;
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let leaderLayer: any = null;
+let labelRenderer: any = null;
+const container = mountRef.current!;
         titleText(ts, "Newton's Law of Cooling", new THREE.Vector3(-2.5, 3.5, 0));
 
         /* ================= Calorimeter assembly (left) ================= */
@@ -226,59 +239,38 @@ export const NewtonCoolingExperiment: React.FC = () => {
           const s = storeRef.current;
           let elapsed = 0;
           let last = performance.now();
-          function animate() {
-            if (cancelled || !ts) return;
-            requestAnimationFrame(animate);
-            const now = performance.now();
-            if (running) elapsed += (now - last) / 1000 * 3;
-            last = now;
-            if (elapsed > duration) elapsed %= duration;
 
-            const t = elapsed;
-            const idx = Math.min(fullPts.length - 1, Math.max(1, Math.round((t / duration) * (fullPts.length - 1))));
-            solidGeo.setDrawRange(0, idx + 1);
-            s.dot.position.copy(fullPts[idx]);
-            s.dotLight.position.copy(s.dot.position);
+    updateRef.current = (time) => {
+    const now = performance.now();
+    if (running) elapsed += (now - last) / 1000 * 3;
+    last = now;
+    if (elapsed > duration) elapsed %= duration;
 
-            const span = Math.max(T0 - Ts, 1);
-            const frac = Math.min(1, Math.max(0, (Tat(t) - Ts) / span));
-            s.mercury.scale.y = 0.22 + frac * 0.78;
-            s.mercury.position.y = 0.52 + (s.mercury.scale.y * 2.6) / 2 * 0.99;
+    const t = elapsed;
+    const idx = Math.min(fullPts.length - 1, Math.max(1, Math.round((t / duration) * (fullPts.length - 1))));
+    solidGeo.setDrawRange(0, idx + 1);
+    s.dot.position.copy(fullPts[idx]);
+    s.dotLight.position.copy(s.dot.position);
 
-            s.stirrer.rotation.y += 0.03;
-            s.waves.forEach((w: any) => {
-              const u = ((t * 0.32) + w.phase) % 1;
-              w.mesh.visible = true;
-              w.mesh.scale.setScalar(1 + u * 0.95);
-              w.mat.opacity = Math.max(0, 0.5 * (1 - u));
-            });
+    const span = Math.max(T0 - Ts, 1);
+    const frac = Math.min(1, Math.max(0, (Tat(time) - Ts) / span));
+    s.mercury.scale.y = 0.22 + frac * 0.78;
+    s.mercury.position.y = 0.52 + (s.mercury.scale.y * 2.6) / 2 * 0.99;
 
-            ts.controls.update();
-            ts.renderer.render(ts.scene, ts.camera);
-            if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-            if (leaderLayer) leaderLayer.draw(ts.camera, connections);
-          }
-          animate();
-        } catch { console.log("CSS2DRenderer not available"); }
-      } catch (err) {
-        console.error("NewtonCooling init:", err);
-      }
-    }
-    init();
+    s.stirrer.rotation.y += 0.03;
+    s.waves.forEach((w: any) => {
+      const u = ((time * 0.32) + w.phase) % 1;
+      w.mesh.visible = true;
+      w.mesh.scale.setScalar(1 + u * 0.95);
+      w.mat.opacity = Math.max(0, 0.5 * (1 - u));
+    });
 
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = container;
-      if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
-        m.removeChild(labelRenderer.domElement);
-      }
-      try { leaderLayer?.dispose?.(); } catch {}
-      if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } catch { /* CSS2D not available */ }
   }, [webGL, liqIdx, T0, Ts, kPerMin, duration, running]);
+
 
   return (
     <Card className="w-full">

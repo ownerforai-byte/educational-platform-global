@@ -16,7 +16,13 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
-import { disposeThreeScene, type ThreeScene } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  type ThreeScene,
+  clearGroup,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 /* ---------------- Data ---------------- */
 
@@ -34,6 +40,8 @@ const MICROMETER_BASE = 12.4; // mm baseline reading at T₁
 export const LinearExpansionExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(2);
   const [rodLengthCm, setRodLengthCm] = useState(80); // cm between clamp A and screw B
@@ -50,29 +58,37 @@ export const LinearExpansionExperiment: React.FC = () => {
   const microAfter = MICROMETER_BASE + deltaLmm;
         const errIfMisread = (1e-5 / (rodLengthM * dT)) * 1e6; // Δα (in 10⁻⁶ K⁻¹) caused by a ±0.01 mm gauge miss-read
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !webGL) return;
-
-    let ts: ThreeScene | null = null;
-    let unbind: (() => void) | null = null;
-    let labelRenderer: any = null;
-    let leaderLayer: any = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const mod = await import("@/components/lab/three-scene");
-        const { createThreeScene, bindResize, standardMaterial, titleText } = mod;
-        if (!container || cancelled) return;
-
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(0.5, 4.4, 13.8),
           autoRotate: false,
           background: 0x0b1220,
         });
-        if (!ts) return;
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+let leaderLayer: any = null;
+let labelRenderer: any = null;
+const container = mountRef.current!;
         titleText(ts, "Linear Expansion Apparatus", new THREE.Vector3(0, 3.4, 0));
 
         /* ---- bench & fixed clamp A ---- */
@@ -250,67 +266,45 @@ export const LinearExpansionExperiment: React.FC = () => {
           /* ---------- ANIMATION LOOP ---------- */
           const s = storeRef.current;
           const smooth = (x: number) => x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x);
-          function animate() {
-            if (cancelled || !ts) return;
-            requestAnimationFrame(animate);
-            const t = performance.now() / 1000;
-            const P = 9;
-            const p = (t % P) / P;
-            const q = p < 0.45 ? smooth(p / 0.45) : p < 0.82 ? 1 : 1 - smooth((p - 0.82) / 0.18);
 
-            const exg = Math.max(0.03, Math.min(2.4, deltaLmm * 0.55)) * q;
-            const newLen = rodLenU + exg;
-            rod.scale.y = newLen / rodLenU;
-            rod.position.x = rodEnd0 + newLen / 2;
-            gaugeGrp.position.x = (rodEnd0 + newLen) + 0.08;
+    updateRef.current = (time) => {
+    const P = 9;
+    const p = (t % P) / P;
+    const q = p < 0.45 ? smooth(p / 0.45) : p < 0.82 ? 1 : 1 - smooth((p - 0.82) / 0.18);
 
-            s.needle.rotation.z = -q * Math.min(4.2, 0.5 + deltaLmm);
-            s.thimble.rotation.y += q * 0.06;
+    const exg = Math.max(0.03, Math.min(2.4, deltaLmm * 0.55)) * q;
+    const newLen = rodLenU + exg;
+    rod.scale.y = newLen / rodLenU;
+    rod.position.x = rodEnd0 + newLen / 2;
+    gaugeGrp.position.x = (rodEnd0 + newLen) + 0.08;
 
-            s.tMerc.scale.y = 0.22 + q * 0.78;
-            s.rodMat.emissiveIntensity = q * 0.85;
+    s.needle.rotation.z = -q * Math.min(4.2, 0.5 + deltaLmm);
+    s.thimble.rotation.y += q * 0.06;
 
-            s.flame.scale.setScalar(0.88 + 0.16 * Math.sin(t * 17));
-            s.flameMat.emissiveIntensity = 1.15 + 0.3 * Math.abs(Math.sin(t * 21));
+    s.tMerc.scale.y = 0.22 + q * 0.78;
+    s.rodMat.emissiveIntensity = q * 0.85;
 
-            s.puffs.forEach((pf: any) => {
-              const u = (t * 0.5 + pf.seed) % 1;
-              pf.mesh.position.set(
-                s.puffHome.x + Math.sin((u + pf.seed) * 5.5) * 0.22,
-                s.puffHome.y + u * 1.6,
-                s.puffHome.z + Math.cos((u + pf.seed) * 5.5) * 0.16
-              );
-              pf.mesh.scale.setScalar(Math.max(0.05, 1 - u * 0.85));
-              (pf.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, 0.5 * (1 - u));
-              pf.mesh.visible = q > 0.12;
-            });
+    s.flame.scale.setScalar(0.88 + 0.16 * Math.sin(time * 17));
+    s.flameMat.emissiveIntensity = 1.15 + 0.3 * Math.abs(Math.sin(time * 21));
 
-            ts.controls.update();
-            ts.renderer.render(ts.scene, ts.camera);
-            if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-            if (leaderLayer) leaderLayer.draw(ts.camera, connections);
-          }
-          animate();
-        } catch { console.log("CSS2DRenderer not available"); }
-      } catch (err) {
-        console.error("LinearExpansion init:", err);
-      }
-    }
-    init();
+    s.puffs.forEach((pf: any) => {
+      const u = (time * 0.5 + pf.seed) % 1;
+      pf.mesh.position.set(
+        s.puffHome.x + Math.sin((u + pf.seed) * 5.5) * 0.22,
+        s.puffHome.y + u * 1.6,
+        s.puffHome.z + Math.cos((u + pf.seed) * 5.5) * 0.16
+      );
+      pf.mesh.scale.setScalar(Math.max(0.05, 1 - u * 0.85));
+      (pf.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, 0.5 * (1 - u));
+      pf.mesh.visible = q > 0.12;
+    });
 
-    return () => {
-      cancelled = true;
-      unbind?.();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      const m = container;
-      if (labelRenderer?.domElement && m && labelRenderer.domElement.parentNode === m) {
-        m.removeChild(labelRenderer.domElement);
-      }
-      try { leaderLayer?.dispose?.(); } catch {}
-      if (m) m.querySelectorAll(".label").forEach((e) => e.remove());
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } catch { /* CSS2D not available */ }
   }, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);
+
 
   return (
     <Card className="w-full">

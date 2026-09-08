@@ -8,38 +8,57 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 // Prism 3D Component showing refraction and dispersion
 const Prism3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
   const [prismAngle, setPrismAngle] = useState(60);
   const [refractiveIndex, setRefractiveIndex] = useState(1.52);
   const [showRays, setShowRays] = useState(true);
   const [showLabels, setShowLabels] = useState(true);
   const [showDispersion, setShowDispersion] = useState(true);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    const container = mountRef.current!;
-    if (!container || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-    let labelRenderer: any = null;
-    const labels: any[] = [];
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(container, {
+    if (!containerRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 25),
           autoRotate: false,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
+
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
+
+const labels: any[] = [];
+let labelRenderer: any = null;
+const container = mountRef.current!;
 
         // Ground plane
         const groundGeo = new THREE.PlaneGeometry(50, 50);
@@ -221,31 +240,18 @@ const Prism3D: React.FC = () => {
           labels.push(angleLabel);
         } catch { console.log("CSS2DRenderer not available"); }
 
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          if (labels[0]) {
-            labels[0].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:6px 10px;border-radius:4px;border:1px solid #6366f1"><span style="color:#6366f1;font-weight:600">Prism</span><br><span style="color:#818cf8;font-size:10px">A = ${prismAngle}°</span></div>`;
-          }
-          if (labels[4]) {
-            labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #6366f1"><span style="color:#818cf8;font-weight:600">A = ${prismAngle}°</span></div>`;
-          }
-          ts.controls.update(); 
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-        }
-        animate();
-      } catch (error) { console.error("Error:", error); }
-    }
-    init();
 
-    return () => {
-      cancelled = true; 
-      if (unbind) unbind();
-      if (ts) try { disposeThreeScene(ts); } catch {}
-      if (container) { const el = container.querySelectorAll(".label"); el.forEach(e => e.remove()); }
+    updateRef.current = (time) => {
+    if (labels[0]) {
+      labels[0].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:6px 10px;border-radius:4px;border:1px solid #6366f1"><span style="color:#6366f1;font-weight:600">Prism</span><br><span style="color:#818cf8;font-size:10px">A = ${prismAngle}°</span></div>`;
+    }
+    if (labels[4]) {
+      labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #6366f1"><span style="color:#818cf8;font-weight:600">A = ${prismAngle}°</span></div>`;
+    }
+    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
   }, [prismAngle, refractiveIndex, showRays, showLabels, showDispersion]);
+
 
   return (
     <Card className="w-full">

@@ -7,7 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11RotationalMotion: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -25,181 +32,172 @@ export const Class11RotationalMotion: React.FC = () => {
   const frequency = useMemo(() => angularVelocity / (2 * Math.PI), [angularVelocity]);
   const momentOfInertia = useMemo(() => mass * radius * radius, [mass, radius]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 5, 15),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Ground
-        const groundGeo = new THREE.PlaneGeometry(30, 30);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Central pivot
-        const pivotGeo = new THREE.CylinderGeometry(0.3, 0.3, 1, 16);
-        const pivotMat = standardMaterial(0xfbbf24, { metalness: 0.8, emissive: 0xfbbf24, emissiveIntensity: 0.3 });
-        const pivot = new THREE.Mesh(pivotGeo, pivotMat);
-        pivot.position.y = 0.5;
-        pivot.castShadow = true;
-        ts.group.add(pivot);
+    // Ground
+    const groundGeo = new THREE.PlaneGeometry(30, 30);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
 
-        // Rotating arm
-        const armGroup = new THREE.Group();
-        const armGeo = new THREE.CylinderGeometry(0.1, 0.1, radius, 16);
-        const armMat = standardMaterial(0x6366f1, { metalness: 0.5 });
-        const arm = new THREE.Mesh(armGeo, armMat);
-        arm.rotation.x = Math.PI / 2;
-        arm.castShadow = true;
-        armGroup.add(arm);
-        armGroup.position.y = 0.5;
-        ts.group.add(armGroup);
+    const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Mass at the end
-        const massGroup = new THREE.Group();
-        const massGeo = new THREE.SphereGeometry(mass * 0.3, 16, 16);
-        const massMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.3 });
-        const massObj = new THREE.Mesh(massGeo, massMat);
-        massObj.castShadow = true;
-        massGroup.add(massObj);
-        massGroup.position.x = radius;
-        armGroup.add(massGroup);
+    // Central pivot
+    const pivotGeo = new THREE.CylinderGeometry(0.3, 0.3, 1, 16);
+    const pivotMat = standardMaterial(0xfbbf24, { metalness: 0.8, emissive: 0xfbbf24, emissiveIntensity: 0.3 });
+    const pivot = new THREE.Mesh(pivotGeo, pivotMat);
+    pivot.position.y = 0.5;
+    pivot.castShadow = true;
+    ts.group.add(pivot);
 
-        // Circular path
-        let pathCircle: THREE.Line | null = null;
-        let velocityArrow: THREE.ArrowHelper | null = null;
-        let accelerationArrow: THREE.ArrowHelper | null = null;
-        let forceArrow: THREE.ArrowHelper | null = null;
-        let radiusArrow: THREE.ArrowHelper | null = null;
+    // Rotating arm
+    const armGroup = new THREE.Group();
+    const armGeo = new THREE.CylinderGeometry(0.1, 0.1, radius, 16);
+    const armMat = standardMaterial(0x6366f1, { metalness: 0.5 });
+    const arm = new THREE.Mesh(armGeo, armMat);
+    arm.rotation.x = Math.PI / 2;
+    arm.castShadow = true;
+    armGroup.add(arm);
+    armGroup.position.y = 0.5;
+    ts.group.add(armGroup);
 
-        const startTime = performance.now();
+    // Mass at the end
+    const massGroup = new THREE.Group();
+    const massGeo = new THREE.SphereGeometry(mass * 0.3, 16, 16);
+    const massMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.3 });
+    const massObj = new THREE.Mesh(massGeo, massMat);
+    massObj.castShadow = true;
+    massGroup.add(massObj);
+    massGroup.position.x = radius;
+    armGroup.add(massGroup);
 
-        function updateScene() {
-          if (!ts) return;
+    // Circular path
+    let pathCircle: THREE.Line | null = null;
+    let velocityArrow: THREE.ArrowHelper | null = null;
+    let accelerationArrow: THREE.ArrowHelper | null = null;
+    let forceArrow: THREE.ArrowHelper | null = null;
+    let radiusArrow: THREE.ArrowHelper | null = null;
 
-          // Clear previous objects
-          if (pathCircle) { ts.group.remove(pathCircle); pathCircle.geometry.dispose(); }
-          if (velocityArrow) ts.group.remove(velocityArrow);
-          if (accelerationArrow) ts.group.remove(accelerationArrow);
-          if (forceArrow) ts.group.remove(forceArrow);
-          if (radiusArrow) ts.group.remove(radiusArrow);
+    const startTime = performance.now();
 
-          const elapsed = (performance.now() - startTime) / 1000;
-          const angle = elapsed * angularVelocity;
+    function updateScene() {
+      if (!ts) return;
 
-          // Rotate arm
-          armGroup.rotation.z = angle;
+      // Clear previous objects
+      if (pathCircle) { ts.group.remove(pathCircle); pathCircle.geometry.dispose(); }
+      if (velocityArrow) ts.group.remove(velocityArrow);
+      if (accelerationArrow) ts.group.remove(accelerationArrow);
+      if (forceArrow) ts.group.remove(forceArrow);
+      if (radiusArrow) ts.group.remove(radiusArrow);
 
-          // Create circular path
-          const points: THREE.Vector3[] = [];
-          const steps = 64;
-          for (let i = 0; i <= steps; i++) {
-            const theta = (i / steps) * Math.PI * 2;
-            points.push(new THREE.Vector3(radius * Math.cos(theta), 0.5, radius * Math.sin(theta)));
-          }
-          const geometry = new THREE.BufferGeometry().setFromPoints(points);
-          const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.5 });
-          pathCircle = new THREE.Line(geometry, material);
-          ts.group.add(pathCircle);
+      const elapsed = (performance.now() - startTime) / 1000;
+      const angle = elapsed * angularVelocity;
 
-          // Current position
-          const x = radius * Math.cos(angle);
-          const z = radius * Math.sin(angle);
+      // Rotate arm
+      armGroup.rotation.z = angle;
 
-          // Velocity vector (tangential)
-          if (showVectors) {
-            const velX = -Math.sin(angle);
-            const velZ = Math.cos(angle);
-            velocityArrow = new LiveArrow(
-              new THREE.Vector3(velX, 0, velZ),
-              new THREE.Vector3(x, 0.5, z),
-              linearVelocity * 0.3,
-              0x22c55e
-            );
-            ts.group.add(velocityArrow);
-
-            // Acceleration vector (centripetal, towards center)
-            const accX = -x / radius;
-            const accZ = -z / radius;
-            accelerationArrow = new LiveArrow(
-              new THREE.Vector3(accX, 0, accZ),
-              new THREE.Vector3(x, 0.5, z),
-              centripetalAcceleration * 0.3,
-              0xef4444
-            );
-            ts.group.add(accelerationArrow);
-
-            // Force vector
-            if (showTorque) {
-              forceArrow = new LiveArrow(
-                new THREE.Vector3(accX, 0, accZ),
-                new THREE.Vector3(x, 0.5, z),
-                centripetalForce * 0.03,
-                0xfbbf24
-              );
-              ts.group.add(forceArrow);
-
-              // Radius vector
-              radiusArrow = new LiveArrow(
-                new THREE.Vector3(-x, 0, -z),
-                new THREE.Vector3(0, 0.5, 0),
-                radius,
-                0xffffff
-              );
-              ts.group.add(radiusArrow);
-            }
-          }
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
+      // Create circular path
+      const points: THREE.Vector3[] = [];
+      const steps = 64;
+      for (let i = 0; i <= steps; i++) {
+        const theta = (i / steps) * Math.PI * 2;
+        points.push(new THREE.Vector3(radius * Math.cos(theta), 0.5, radius * Math.sin(theta)));
       }
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.5 });
+      pathCircle = new THREE.Line(geometry, material);
+      ts.group.add(pathCircle);
+
+      // Current position
+      const x = radius * Math.cos(angle);
+      const z = radius * Math.sin(angle);
+
+      // Velocity vector (tangential)
+      if (showVectors) {
+        const velX = -Math.sin(angle);
+        const velZ = Math.cos(angle);
+        velocityArrow = new LiveArrow(
+          new THREE.Vector3(velX, 0, velZ),
+          new THREE.Vector3(x, 0.5, z),
+          linearVelocity * 0.3,
+          0x22c55e
+        );
+        ts.group.add(velocityArrow);
+
+        // Acceleration vector (centripetal, towards center)
+        const accX = -x / radius;
+        const accZ = -z / radius;
+        accelerationArrow = new LiveArrow(
+          new THREE.Vector3(accX, 0, accZ),
+          new THREE.Vector3(x, 0.5, z),
+          centripetalAcceleration * 0.3,
+          0xef4444
+        );
+        ts.group.add(accelerationArrow);
+
+        // Force vector
+        if (showTorque) {
+          forceArrow = new LiveArrow(
+            new THREE.Vector3(accX, 0, accZ),
+            new THREE.Vector3(x, 0.5, z),
+            centripetalForce * 0.03,
+            0xfbbf24
+          );
+          ts.group.add(forceArrow);
+
+          // Radius vector
+          radiusArrow = new LiveArrow(
+            new THREE.Vector3(-x, 0, -z),
+            new THREE.Vector3(0, 0.5, 0),
+            radius,
+            0xffffff
+          );
+          ts.group.add(radiusArrow);
+        }
+      }
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
     }
 
-    init();
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
-      }
+    updateRef.current = (time) => {
+    updateScene();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [radius, angularVelocity, mass, showVectors, showTorque]);
+
 
   return (
     <Card className="w-full">

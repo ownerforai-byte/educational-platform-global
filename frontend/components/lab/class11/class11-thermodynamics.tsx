@@ -6,7 +6,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11Thermodynamics: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -32,198 +39,190 @@ export const Class11Thermodynamics: React.FC = () => {
   // Gas constant R = 8.314 J/(mol·K)
   // For water: specific heat ≈ 4.186 J/(g·°C)
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(10, 8, 15),
           autoRotate: true,
           autoRotateSpeed: 0.2,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Ground
-        const groundGeo = new THREE.PlaneGeometry(40, 40);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Piston-cylinder system
-        const cylinderGeo = new THREE.CylinderGeometry(2, 2, 5, 32);
-        const cylinderMat = standardMaterial(0x6366f1, { metalness: 0.5 });
-        const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
-        cylinder.position.y = 2.5;
-        cylinder.castShadow = true;
-        cylinder.receiveShadow = true;
-        ts.group.add(cylinder);
+    // Ground
+    const groundGeo = new THREE.PlaneGeometry(40, 40);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
 
-        // Piston
-        const pistonGroup = new THREE.Group();
-        const pistonGeo = new THREE.CylinderGeometry(1.9, 1.9, 0.5, 32);
-        const pistonMat = standardMaterial(0xfbbf24, { metalness: 0.8, emissive: 0xfbbf24, emissiveIntensity: 0.2 });
-        const piston = new THREE.Mesh(pistonGeo, pistonMat);
-        piston.position.y = 5;
-        piston.castShadow = true;
-        pistonGroup.add(piston);
+    const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Piston rod
-        const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, 3, 16);
-        const rodMat = standardMaterial(0xef4444, { metalness: 0.6 });
-        const rod = new THREE.Mesh(rodGeo, rodMat);
-        rod.position.y = 6.5;
-        rod.castShadow = true;
-        pistonGroup.add(rod);
+    // Piston-cylinder system
+    const cylinderGeo = new THREE.CylinderGeometry(2, 2, 5, 32);
+    const cylinderMat = standardMaterial(0x6366f1, { metalness: 0.5 });
+    const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
+    cylinder.position.y = 2.5;
+    cylinder.castShadow = true;
+    cylinder.receiveShadow = true;
+    ts.group.add(cylinder);
 
-        ts.group.add(pistonGroup);
+    // Piston
+    const pistonGroup = new THREE.Group();
+    const pistonGeo = new THREE.CylinderGeometry(1.9, 1.9, 0.5, 32);
+    const pistonMat = standardMaterial(0xfbbf24, { metalness: 0.8, emissive: 0xfbbf24, emissiveIntensity: 0.2 });
+    const piston = new THREE.Mesh(pistonGeo, pistonMat);
+    piston.position.y = 5;
+    piston.castShadow = true;
+    pistonGroup.add(piston);
 
-        // Gas particles
-        const particleGeo = new THREE.SphereGeometry(0.15, 16, 16);
-        const particleMat = standardMaterial(0xffffff, { emissive: 0xffffff, emissiveIntensity: 0.8 });
-        const particles: THREE.Mesh[] = [];
-        const numParticles = 30;
+    // Piston rod
+    const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, 3, 16);
+    const rodMat = standardMaterial(0xef4444, { metalness: 0.6 });
+    const rod = new THREE.Mesh(rodGeo, rodMat);
+    rod.position.y = 6.5;
+    rod.castShadow = true;
+    pistonGroup.add(rod);
 
-        for (let i = 0; i < numParticles; i++) {
-          const particle = new THREE.Mesh(particleGeo, particleMat);
-          particle.position.set(
-            (Math.random() - 0.5) * 3,
-            Math.random() * 4 + 1,
-            (Math.random() - 0.5) * 3
-          );
-          particle.castShadow = true;
-          ts.group.add(particle);
-          particles.push(particle);
-        }
+    ts.group.add(pistonGroup);
 
-        // Temperature indicator
-        const tempIndicator = new THREE.Group();
-        const indicatorGeo = new THREE.CylinderGeometry(0.3, 0.3, 4, 16);
-        const indicatorMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
-        const indicator = new THREE.Mesh(indicatorGeo, indicatorMat);
-        indicator.position.set(-8, 2, 0);
-        tempIndicator.add(indicator);
-        ts.group.add(tempIndicator);
+    // Gas particles
+    const particleGeo = new THREE.SphereGeometry(0.15, 16, 16);
+    const particleMat = standardMaterial(0xffffff, { emissive: 0xffffff, emissiveIntensity: 0.8 });
+    const particles: THREE.Mesh[] = [];
+    const numParticles = 30;
 
-        // Energy bars
-        const heatBarGeo = new THREE.BoxGeometry(0.5, heatAdded * 0.01, 0.5);
-        const heatBarMat = standardMaterial(0xef4444, { transparent: true, opacity: 0.8 });
-        const heatBar = new THREE.Mesh(heatBarGeo, heatBarMat);
-        heatBar.position.set(-5, heatBarGeo.parameters.height / 2, 0);
-        ts.group.add(heatBar);
-
-        const workBarGeo = new THREE.BoxGeometry(0.5, Math.abs(workDone) * 0.01, 0.5);
-        const workBarMat = standardMaterial(0x3b82f6, { transparent: true, opacity: 0.8 });
-        const workBar = new THREE.Mesh(workBarGeo, workBarMat);
-        workBar.position.set(-3, workBarGeo.parameters.height / 2, 0);
-        ts.group.add(workBar);
-
-        const deltaUBarGeo = new THREE.BoxGeometry(0.5, Math.abs(deltaU) * 0.01, 0.5);
-        const deltaUBarMat = standardMaterial(0x22c55e, { transparent: true, opacity: 0.8 });
-        const deltaUBar = new THREE.Mesh(deltaUBarGeo, deltaUBarMat);
-        deltaUBar.position.set(-1, deltaUBarGeo.parameters.height / 2, 0);
-        ts.group.add(deltaUBar);
-
-        const startTime = performance.now();
-        let pistonHeight = 5;
-
-        function updateScene() {
-          if (!ts) return;
-
-          const elapsed = (performance.now() - startTime) / 1000;
-          const time = elapsed;
-
-          // Animate particles (random motion based on temperature)
-          const tempFactor = finalTemp / initialTemp;
-          particles.forEach(particle => {
-            particle.position.x += (Math.random() - 0.5) * 0.02 * tempFactor;
-            particle.position.y += (Math.random() - 0.5) * 0.02 * tempFactor;
-            particle.position.z += (Math.random() - 0.5) * 0.02 * tempFactor;
-
-            // Keep particles inside cylinder
-            const r = Math.sqrt(particle.position.x * particle.position.x + particle.position.z * particle.position.z);
-            if (r > 1.8) {
-              particle.position.x *= 0.9;
-              particle.position.z *= 0.9;
-            }
-            if (particle.position.y < 0.5) particle.position.y = 0.5;
-            if (particle.position.y > pistonHeight - 0.2) particle.position.y = pistonHeight - 0.2;
-          });
-
-          // Animate piston based on process type
-          if (processType === "isobaric") {
-            // Volume changes, pressure constant
-            pistonHeight = 5 + Math.sin(time * 0.5) * 1;
-          } else if (processType === "isochoric") {
-            // Volume constant
-            pistonHeight = 5;
-          } else if (processType === "isothermal") {
-            // Temperature constant
-            pistonHeight = 5 + Math.sin(time * 0.3) * 0.5;
-          } else {
-            // Adiabatic
-            pistonHeight = 5 + Math.sin(time * 0.8) * 1.5;
-          }
-
-          pistonGroup.position.y = pistonHeight;
-          rod.position.y = pistonHeight + 1.5;
-
-          // Update temperature indicator height
-          indicator.scale.y = finalTemp / 300;
-          indicator.position.y = 2 + indicator.scale.y * 2;
-
-          // Update energy bars
-          heatBar.scale.y = Math.max(0.01, heatAdded * 0.01);
-          heatBar.position.y = heatBar.scale.y / 2;
-          
-          workBar.scale.y = Math.max(0.01, Math.abs(workDone) * 0.01);
-          workBar.position.y = workBar.scale.y / 2;
-          
-          deltaUBar.scale.y = Math.max(0.01, Math.abs(deltaU) * 0.01);
-          deltaUBar.position.y = deltaUBar.scale.y / 2;
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
-      }
+    for (let i = 0; i < numParticles; i++) {
+      const particle = new THREE.Mesh(particleGeo, particleMat);
+      particle.position.set(
+        (Math.random() - 0.5) * 3,
+        Math.random() * 4 + 1,
+        (Math.random() - 0.5) * 3
+      );
+      particle.castShadow = true;
+      ts.group.add(particle);
+      particles.push(particle);
     }
 
-    init();
+    // Temperature indicator
+    const tempIndicator = new THREE.Group();
+    const indicatorGeo = new THREE.CylinderGeometry(0.3, 0.3, 4, 16);
+    const indicatorMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
+    const indicator = new THREE.Mesh(indicatorGeo, indicatorMat);
+    indicator.position.set(-8, 2, 0);
+    tempIndicator.add(indicator);
+    ts.group.add(tempIndicator);
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
+    // Energy bars
+    const heatBarGeo = new THREE.BoxGeometry(0.5, heatAdded * 0.01, 0.5);
+    const heatBarMat = standardMaterial(0xef4444, { transparent: true, opacity: 0.8 });
+    const heatBar = new THREE.Mesh(heatBarGeo, heatBarMat);
+    heatBar.position.set(-5, heatBarGeo.parameters.height / 2, 0);
+    ts.group.add(heatBar);
+
+    const workBarGeo = new THREE.BoxGeometry(0.5, Math.abs(workDone) * 0.01, 0.5);
+    const workBarMat = standardMaterial(0x3b82f6, { transparent: true, opacity: 0.8 });
+    const workBar = new THREE.Mesh(workBarGeo, workBarMat);
+    workBar.position.set(-3, workBarGeo.parameters.height / 2, 0);
+    ts.group.add(workBar);
+
+    const deltaUBarGeo = new THREE.BoxGeometry(0.5, Math.abs(deltaU) * 0.01, 0.5);
+    const deltaUBarMat = standardMaterial(0x22c55e, { transparent: true, opacity: 0.8 });
+    const deltaUBar = new THREE.Mesh(deltaUBarGeo, deltaUBarMat);
+    deltaUBar.position.set(-1, deltaUBarGeo.parameters.height / 2, 0);
+    ts.group.add(deltaUBar);
+
+    const startTime = performance.now();
+    let pistonHeight = 5;
+
+    function updateScene() {
+      if (!ts) return;
+
+      const elapsed = (performance.now() - startTime) / 1000;
+      const time = elapsed;
+
+      // Animate particles (random motion based on temperature)
+      const tempFactor = finalTemp / initialTemp;
+      particles.forEach(particle => {
+        particle.position.x += (Math.random() - 0.5) * 0.02 * tempFactor;
+        particle.position.y += (Math.random() - 0.5) * 0.02 * tempFactor;
+        particle.position.z += (Math.random() - 0.5) * 0.02 * tempFactor;
+
+        // Keep particles inside cylinder
+        const r = Math.sqrt(particle.position.x * particle.position.x + particle.position.z * particle.position.z);
+        if (r > 1.8) {
+          particle.position.x *= 0.9;
+          particle.position.z *= 0.9;
+        }
+        if (particle.position.y < 0.5) particle.position.y = 0.5;
+        if (particle.position.y > pistonHeight - 0.2) particle.position.y = pistonHeight - 0.2;
+      });
+
+      // Animate piston based on process type
+      if (processType === "isobaric") {
+        // Volume changes, pressure constant
+        pistonHeight = 5 + Math.sin(time * 0.5) * 1;
+      } else if (processType === "isochoric") {
+        // Volume constant
+        pistonHeight = 5;
+      } else if (processType === "isothermal") {
+        // Temperature constant
+        pistonHeight = 5 + Math.sin(time * 0.3) * 0.5;
+      } else {
+        // Adiabatic
+        pistonHeight = 5 + Math.sin(time * 0.8) * 1.5;
       }
+
+      pistonGroup.position.y = pistonHeight;
+      rod.position.y = pistonHeight + 1.5;
+
+      // Update temperature indicator height
+      indicator.scale.y = finalTemp / 300;
+      indicator.position.y = 2 + indicator.scale.y * 2;
+
+      // Update energy bars
+      heatBar.scale.y = Math.max(0.01, heatAdded * 0.01);
+      heatBar.position.y = heatBar.scale.y / 2;
+      
+      workBar.scale.y = Math.max(0.01, Math.abs(workDone) * 0.01);
+      workBar.position.y = workBar.scale.y / 2;
+      
+      deltaUBar.scale.y = Math.max(0.01, Math.abs(deltaU) * 0.01);
+      deltaUBar.position.y = deltaUBar.scale.y / 2;
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+
+
+    updateRef.current = (time) => {
+    updateScene();
     };
   }, [initialTemp, finalTemp, mass, specificHeat, processType, showEnergy, deltaT, heatAdded, workDone, deltaU]);
+
 
   return (
     <Card className="w-full">

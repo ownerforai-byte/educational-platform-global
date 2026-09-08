@@ -6,7 +6,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import { disposeThreeScene, standardMaterial } from "@/components/lab/three-scene";
+import {
+  disposeThreeScene,
+  standardMaterial,
+  clearGroup,
+  type ThreeScene,
+  createThreeScene,
+  bindResize,
+} from "@/components/lab/three-scene";
 
 export const Class11SetsFunctions: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -28,247 +35,239 @@ export const Class11SetsFunctions: React.FC = () => {
   }, [setA, setB]);
   const differenceAB = useMemo(() => setA.filter(x => !setB.includes(x)).length, [setA, setB]);
 
+  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-
-    let ts: any = null;
-    let unbind: (() => void) | null = null;
-    let cancelled = false;
-
-    async function init() {
-      try {
-        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
-        
-        ts = createThreeScene(mountRef.current!, {
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0, 10, 20),
           autoRotate: true,
           autoRotateSpeed: 0.2,
           background: 0x0f172a
         });
-        
-        unbind = bindResize(ts);
+    tsRef.current = ts;
+    const unbind = bindResize(ts);
+    let rafId = 0;
+    function animate() {
+      rafId = requestAnimationFrame(animate);
+      const time = performance.now() / 1000;
+      updateRef.current?.(time);
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+    animate();
+    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+  }, []);
 
-        // Ground
-        const groundGeo = new THREE.PlaneGeometry(50, 50);
-        const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.01;
-        ground.receiveShadow = true;
-        ts.group.add(ground);
+  // Rebuild 3D content on state change
+  useEffect(() => {
+    const ts = tsRef.current;
+    if (!ts) return;
+    clearGroup(ts.group);
 
-        const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-        ts.group.add(grid);
 
-        // Axes
-        const axes = new THREE.AxesHelper(10);
-        ts.group.add(axes);
+    // Ground
+    const groundGeo = new THREE.PlaneGeometry(50, 50);
+    const groundMat = standardMaterial(0x1e293b, { roughness: 0.8 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.01;
+    ground.receiveShadow = true;
+    ts.group.add(ground);
 
-        // Set A visualization (left circle)
-        const setACircle = new THREE.Group();
-        const circleRadius = 4;
-        const circlePoints: THREE.Vector3[] = [];
-        const circleSteps = 64;
-        for (let i = 0; i <= circleSteps; i++) {
-          const theta = (i / circleSteps) * Math.PI * 2;
-          circlePoints.push(new THREE.Vector3(
-            -8 + circleRadius * Math.cos(theta),
-            0,
-            circleRadius * Math.sin(theta)
-          ));
-        }
-        const circleGeo = new THREE.BufferGeometry().setFromPoints(circlePoints);
-        const circleMat = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 2 });
-        const circleA = new THREE.Line(circleGeo, circleMat);
-        setACircle.add(circleA);
-        ts.group.add(setACircle);
+    const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
+    ts.group.add(grid);
 
-        // Set B visualization (right circle)
-        const setBCircle = new THREE.Group();
-        const circlePointsB: THREE.Vector3[] = [];
-        for (let i = 0; i <= circleSteps; i++) {
-          const theta = (i / circleSteps) * Math.PI * 2;
-          circlePointsB.push(new THREE.Vector3(
-            8 - circleRadius * Math.cos(theta),
-            0,
-            circleRadius * Math.sin(theta)
-          ));
-        }
-        const circleGeoB = new THREE.BufferGeometry().setFromPoints(circlePointsB);
-        const circleMatB = new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2 });
-        const circleB = new THREE.Line(circleGeoB, circleMatB);
-        setBCircle.add(circleB);
-        ts.group.add(setBCircle);
+    // Axes
+    const axes = new THREE.AxesHelper(10);
+    ts.group.add(axes);
 
-        // Overlapping region visualization
-        const overlapGroup = new THREE.Group();
-        if (overlap > 0) {
-          const overlapPoints: THREE.Vector3[] = [];
-          const overlapAngle = Math.acos((16 - overlap * 0.8) / (2 * circleRadius)) * 2;
-          for (let i = 0; i <= circleSteps; i++) {
-            const theta = (i / circleSteps) * overlapAngle - overlapAngle / 2;
-            overlapPoints.push(new THREE.Vector3(
-              -8 + circleRadius * Math.cos(theta),
-              0,
-              circleRadius * Math.sin(theta)
-            ));
-          }
-          const overlapGeo = new THREE.BufferGeometry().setFromPoints(overlapPoints);
-          const overlapMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 2, transparent: true, opacity: 0.7 });
-          const overlapLine = new THREE.Line(overlapGeo, overlapMat);
-          overlapGroup.add(overlapLine);
-        }
-        ts.group.add(overlapGroup);
+    // Set A visualization (left circle)
+    const setACircle = new THREE.Group();
+    const circleRadius = 4;
+    const circlePoints: THREE.Vector3[] = [];
+    const circleSteps = 64;
+    for (let i = 0; i <= circleSteps; i++) {
+      const theta = (i / circleSteps) * Math.PI * 2;
+      circlePoints.push(new THREE.Vector3(
+        -8 + circleRadius * Math.cos(theta),
+        0,
+        circleRadius * Math.sin(theta)
+      ));
+    }
+    const circleGeo = new THREE.BufferGeometry().setFromPoints(circlePoints);
+    const circleMat = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 2 });
+    const circleA = new THREE.Line(circleGeo, circleMat);
+    setACircle.add(circleA);
+    ts.group.add(setACircle);
 
-        // Elements in sets as spheres
-        const elements: THREE.Mesh[] = [];
-        if (showSets) {
-          // Set A elements
-          for (let i = 0; i < setA.length; i++) {
-            const angle = (i / setA.length) * Math.PI * 2;
-            const distance = 2.5;
-            const elementGeo = new THREE.SphereGeometry(0.3, 16, 16);
-            const elementMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.5 });
-            const element = new THREE.Mesh(elementGeo, elementMat);
-            element.position.set(
-              -8 + distance * Math.cos(angle),
-              0.5,
-              distance * Math.sin(angle)
-            );
-            element.castShadow = true;
-            ts.group.add(element);
-            elements.push(element);
-          }
+    // Set B visualization (right circle)
+    const setBCircle = new THREE.Group();
+    const circlePointsB: THREE.Vector3[] = [];
+    for (let i = 0; i <= circleSteps; i++) {
+      const theta = (i / circleSteps) * Math.PI * 2;
+      circlePointsB.push(new THREE.Vector3(
+        8 - circleRadius * Math.cos(theta),
+        0,
+        circleRadius * Math.sin(theta)
+      ));
+    }
+    const circleGeoB = new THREE.BufferGeometry().setFromPoints(circlePointsB);
+    const circleMatB = new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2 });
+    const circleB = new THREE.Line(circleGeoB, circleMatB);
+    setBCircle.add(circleB);
+    ts.group.add(setBCircle);
 
-          // Set B elements
-          for (let i = 0; i < setB.length; i++) {
-            const angle = (i / setB.length) * Math.PI * 2;
-            const distance = 2.5;
-            const elementGeo = new THREE.SphereGeometry(0.3, 16, 16);
-            const elementMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
-            const element = new THREE.Mesh(elementGeo, elementMat);
-            element.position.set(
-              8 - distance * Math.cos(angle),
-              0.5,
-              distance * Math.sin(angle)
-            );
-            element.castShadow = true;
-            ts.group.add(element);
-            elements.push(element);
-          }
-        }
+    // Overlapping region visualization
+    const overlapGroup = new THREE.Group();
+    if (overlap > 0) {
+      const overlapPoints: THREE.Vector3[] = [];
+      const overlapAngle = Math.acos((16 - overlap * 0.8) / (2 * circleRadius)) * 2;
+      for (let i = 0; i <= circleSteps; i++) {
+        const theta = (i / circleSteps) * overlapAngle - overlapAngle / 2;
+        overlapPoints.push(new THREE.Vector3(
+          -8 + circleRadius * Math.cos(theta),
+          0,
+          circleRadius * Math.sin(theta)
+        ));
+      }
+      const overlapGeo = new THREE.BufferGeometry().setFromPoints(overlapPoints);
+      const overlapMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 2, transparent: true, opacity: 0.7 });
+      const overlapLine = new THREE.Line(overlapGeo, overlapMat);
+      overlapGroup.add(overlapLine);
+    }
+    ts.group.add(overlapGroup);
 
-        // Function visualization
-        if (showFunctions) {
-          const funcGroup = new THREE.Group();
-          const points: THREE.Vector3[] = [];
-          const steps = 200;
-          const scale = 2;
+    // Elements in sets as spheres
+    const elements: THREE.Mesh[] = [];
+    if (showSets) {
+      // Set A elements
+      for (let i = 0; i < setA.length; i++) {
+        const angle = (i / setA.length) * Math.PI * 2;
+        const distance = 2.5;
+        const elementGeo = new THREE.SphereGeometry(0.3, 16, 16);
+        const elementMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.5 });
+        const element = new THREE.Mesh(elementGeo, elementMat);
+        element.position.set(
+          -8 + distance * Math.cos(angle),
+          0.5,
+          distance * Math.sin(angle)
+        );
+        element.castShadow = true;
+        ts.group.add(element);
+        elements.push(element);
+      }
 
-          for (let i = 0; i <= steps; i++) {
-            const x = (i / steps - 0.5) * 15;
-            let y = 0;
-            const xVal = x / scale;
-
-            switch (functionType) {
-              case "linear":
-                y = xVal * 2;
-                break;
-              case "quadratic":
-                y = xVal * xVal;
-                break;
-              case "cubic":
-                y = xVal * xVal * xVal * 0.5;
-                break;
-              case "trigonometric":
-                y = Math.sin(xVal * 2) * 2;
-                break;
-            }
-
-            points.push(new THREE.Vector3(x, y * scale, -10));
-          }
-
-          const funcGeo = new THREE.BufferGeometry().setFromPoints(points);
-          const funcMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 3 });
-          const funcLine = new THREE.Line(funcGeo, funcMat);
-          funcGroup.add(funcLine);
-          ts.group.add(funcGroup);
-
-          // Axes for function
-          const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
-            new THREE.Vector3(-8, 0, -10),
-            new THREE.Vector3(8, 0, -10)
-          ]);
-          const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0x6366f1 }));
-          funcGroup.add(xAxis);
-
-          const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
-            new THREE.Vector3(0, -3, -10),
-            new THREE.Vector3(0, 5, -10)
-          ]);
-          const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x6366f1 }));
-          funcGroup.add(yAxis);
-        }
-
-        // Labels
-        const labelAGeo = new THREE.PlaneGeometry(1, 0.3);
-        const labelAMat = new THREE.MeshBasicMaterial({ color: 0xef4444, transparent: true });
-        const labelA = new THREE.Mesh(labelAGeo, labelAMat);
-        labelA.position.set(-10, 0, 0);
-        ts.group.add(labelA);
-
-        const labelBGeo = new THREE.PlaneGeometry(1, 0.3);
-        const labelBMat = new THREE.MeshBasicMaterial({ color: 0x22c55e, transparent: true });
-        const labelB = new THREE.Mesh(labelBGeo, labelBMat);
-        labelB.position.set(10, 0, 0);
-        ts.group.add(labelB);
-
-        const startTime = performance.now();
-
-        function updateScene() {
-          if (!ts) return;
-
-          const elapsed = (performance.now() - startTime) / 1000;
-          const time = elapsed;
-
-          // Rotate circles
-          setACircle.rotation.y = time * 0.1;
-          setBCircle.rotation.y = time * 0.1;
-
-          // Animate elements
-          elements.forEach((element, index) => {
-            element.position.y = 0.5 + Math.sin(time + index * 0.3) * 0.2;
-            element.rotation.y += 0.02;
-          });
-
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-        }
-
-        function animate() {
-          if (cancelled) return;
-          requestAnimationFrame(animate);
-          updateScene();
-        }
-
-        animate();
-      } catch (error) {
-        console.error("Error initializing 3D scene:", error);
+      // Set B elements
+      for (let i = 0; i < setB.length; i++) {
+        const angle = (i / setB.length) * Math.PI * 2;
+        const distance = 2.5;
+        const elementGeo = new THREE.SphereGeometry(0.3, 16, 16);
+        const elementMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
+        const element = new THREE.Mesh(elementGeo, elementMat);
+        element.position.set(
+          8 - distance * Math.cos(angle),
+          0.5,
+          distance * Math.sin(angle)
+        );
+        element.castShadow = true;
+        ts.group.add(element);
+        elements.push(element);
       }
     }
 
-    init();
+    // Function visualization
+    if (showFunctions) {
+      const funcGroup = new THREE.Group();
+      const points: THREE.Vector3[] = [];
+      const steps = 200;
+      const scale = 2;
 
-    return () => {
-      cancelled = true;
-      if (unbind) unbind();
-      if (ts) {
-        try {
-          disposeThreeScene(ts);
-        } catch {}
+      for (let i = 0; i <= steps; i++) {
+        const x = (i / steps - 0.5) * 15;
+        let y = 0;
+        const xVal = x / scale;
+
+        switch (functionType) {
+          case "linear":
+            y = xVal * 2;
+            break;
+          case "quadratic":
+            y = xVal * xVal;
+            break;
+          case "cubic":
+            y = xVal * xVal * xVal * 0.5;
+            break;
+          case "trigonometric":
+            y = Math.sin(xVal * 2) * 2;
+            break;
+        }
+
+        points.push(new THREE.Vector3(x, y * scale, -10));
       }
+
+      const funcGeo = new THREE.BufferGeometry().setFromPoints(points);
+      const funcMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 3 });
+      const funcLine = new THREE.Line(funcGeo, funcMat);
+      funcGroup.add(funcLine);
+      ts.group.add(funcGroup);
+
+      // Axes for function
+      const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(-8, 0, -10),
+        new THREE.Vector3(8, 0, -10)
+      ]);
+      const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0x6366f1 }));
+      funcGroup.add(xAxis);
+
+      const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(0, -3, -10),
+        new THREE.Vector3(0, 5, -10)
+      ]);
+      const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x6366f1 }));
+      funcGroup.add(yAxis);
+    }
+
+    // Labels
+    const labelAGeo = new THREE.PlaneGeometry(1, 0.3);
+    const labelAMat = new THREE.MeshBasicMaterial({ color: 0xef4444, transparent: true });
+    const labelA = new THREE.Mesh(labelAGeo, labelAMat);
+    labelA.position.set(-10, 0, 0);
+    ts.group.add(labelA);
+
+    const labelBGeo = new THREE.PlaneGeometry(1, 0.3);
+    const labelBMat = new THREE.MeshBasicMaterial({ color: 0x22c55e, transparent: true });
+    const labelB = new THREE.Mesh(labelBGeo, labelBMat);
+    labelB.position.set(10, 0, 0);
+    ts.group.add(labelB);
+
+    const startTime = performance.now();
+
+    function updateScene() {
+      if (!ts) return;
+
+      const elapsed = (performance.now() - startTime) / 1000;
+      const time = elapsed;
+
+      // Rotate circles
+      setACircle.rotation.y = time * 0.1;
+      setBCircle.rotation.y = time * 0.1;
+
+      // Animate elements
+      elements.forEach((element, index) => {
+        element.position.y = 0.5 + Math.sin(time + index * 0.3) * 0.2;
+        element.rotation.y += 0.02;
+      });
+
+      ts.controls.update();
+      ts.renderer.render(ts.scene, ts.camera);
+    }
+
+
+    updateRef.current = (time) => {
+    updateScene();
     };
   }, [numElementsA, numElementsB, overlap, functionType, showSets, showFunctions, setA, setB, unionAB, intersectionAB, differenceAB]);
+
 
   return (
     <Card className="w-full">
