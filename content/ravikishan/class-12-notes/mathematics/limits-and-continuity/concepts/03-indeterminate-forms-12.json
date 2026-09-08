@@ -5,14 +5,17 @@
   "topicTitle": "Indeterminate Forms",
   "relevance": 100,
   "notes": [
-    "**Indeterminate Forms:** This topic covers the fundamental concepts of indeterminate forms in the mathematics curriculum.",
-    "Understanding indeterminate forms is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to indeterminate forms should be memorized and practiced regularly."
+    "**Indeterminate Forms:** Limits that cannot be directly evaluated (0/0, ∞/∞, 0·∞, ∞-∞, 0⁰, 1^∞, ∞⁰).",
+    "**L'Hopital's Rule:** For 0/0 or ∞/∞ forms: lim f/g = lim f'/g' if limit of derivatives exists.",
+    "**0/0 form:** Requires factoring, rationalization, or L'Hopital's rule.",
+    "**∞/∞ form:** Same techniques apply; divide by highest power of variable.",
+    "**0·∞ form:** Convert to 0/0 or ∞/∞ by rewriting as fraction.",
+    "**∞-∞ form:** Combine fractions or factor to resolve.",
+    "**Exponential forms (0⁰, 1^∞, ∞⁰):** Use logarithms: y = f^g → ln y = g·ln f."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in indeterminate forms.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ Applying L'Hopital's rule to 0/1 or 1/0 forms ✅ L'Hopital only applies to 0/0 or ∞/∞ indeterminate forms.",
+    "❌ Forgetting to check indeterminate form before using L'Hopital ✅ Direct substitution first; only use L'Hopital if result is 0/0 or ∞/∞."
   ],
   "practice": [
     "Solve at least 5 problems on indeterminate forms from your textbook.",

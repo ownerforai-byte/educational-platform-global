@@ -10,9 +10,9 @@
     "Key definitions and theorems related to direction cosines and ratios should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in direction cosines and ratios.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Direction cosines are arbitrary' ✅ Direction cosines l, m, n are *fixed* values for a given vector: l = cos α, m = cos β, n = cos γ.",
+    "❌ 'Sum of direction ratios is always 1' ✅ The sum of the *squares* of direction *cosines* (l² + m² + n²) equals 1; direction *ratios* do not have this constraint.",
+    "❌ 'Direction ratios and cosines are the same' ✅ Direction ratios (a, b, c) are proportional to direction cosines (l, m, n), not equal."
   ],
   "practice": [
     "Solve at least 5 problems on direction cosines and ratios from your textbook.",

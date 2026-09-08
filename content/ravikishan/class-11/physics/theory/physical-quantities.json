@@ -1,5 +1,10 @@
 {
   "title": "Physical Quantities, Units & Measurement",
+  "confusion": [
+    "❌ 'Dimensions of force and energy are same.' ✅ Force = [MLT⁻²], Energy = [ML²T⁻²]. Dimensionally distinct because distance factor differs.",
+    "❌ '10⁻³ mm is 1 micrometer.' ✅ 10⁻³ mm = 10⁻³ * 10⁻³ m = 10⁻⁶ m = 1 μm. Confusion usually arises from prefix mismatch.",
+    "❌ 'Significant figures include all digits.' ✅ Trailing zeros in non-decimal numbers may not be significant (e.g., 500 might have 1, 2, or 3). Scientific notation (5.00 * 10²) removes this ambiguity."
+  ],
   "notes": [
     "**Physical quantity:** any property that can be measured — length, mass, time, force, energy. Every physical quantity has a *magnitude* and a *unit*.",
     "**Fundamental quantities:** length (L), mass (M), time (T), temperature (Θ), electric current (A), amount of substance (mol), luminous intensity (cd). Derived quantities are expressed in terms of these (e.g. velocity = m s⁻¹, force = kg m s⁻²).",

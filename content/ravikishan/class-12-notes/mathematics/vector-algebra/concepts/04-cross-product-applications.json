@@ -10,9 +10,9 @@
     "Key definitions and theorems related to cross product applications should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in cross product applications.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Cross product results in a scalar' ✅ Cross product (vector product) *always* results in a vector, which is perpendicular to the plane of the two operand vectors.",
+    "❌ 'Cross product order doesn't matter' ✅ The cross product is *anti-commutative*: A × B = -(B × A). Swapping the order reverses the direction.",
+    "❌ 'Cross product of parallel vectors is max' ✅ The cross product of parallel vectors is *zero* (sin 0° = 0), because they enclose no area."
   ],
   "practice": [
     "Solve at least 5 problems on cross product applications from your textbook.",

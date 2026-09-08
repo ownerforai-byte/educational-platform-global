@@ -10,9 +10,9 @@
     "Key definitions and theorems related to wheatstone and meter bridge should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in wheatstone and meter bridge.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'A meter bridge can measure any resistance accurately.' ✅ It is accurate only for *moderate* resistances (≈1 Ω to 1 kΩ); very high or very low resistances give poor null points.",
+    "❌ 'The null point is always at the center (50 cm) of the meter bridge.' ✅ The null point shifts depending on the ratio of resistances; it is at 50 cm *only* when the two known resistances are equal.",
+    "❌ 'Wheatstone bridge and meter bridge are completely different instruments.' ✅ A meter bridge is essentially a *Wheatstone bridge* with a uniform 1-meter wire replacing two arms."
   ],
   "practice": [
     "Solve at least 5 problems on wheatstone and meter bridge from your textbook.",

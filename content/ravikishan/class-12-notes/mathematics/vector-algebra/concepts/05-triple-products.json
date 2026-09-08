@@ -10,9 +10,9 @@
     "Key definitions and theorems related to triple products should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in triple products.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Scalar triple product results in a vector' ✅ Scalar triple product (A · (B × C)) results in a *scalar* (volume of a parallelepiped).",
+    "❌ 'Vector triple product (A × B) × C is associative' ✅ Vector triple product is *not* associative: (A × B) × C ≠ A × (B × C).",
+    "❌ 'Triple product with a zero vector is non-zero' ✅ Scalar triple product is *zero* if any vector is zero or if vectors are coplanar."
   ],
   "practice": [
     "Solve at least 5 problems on triple products from your textbook.",

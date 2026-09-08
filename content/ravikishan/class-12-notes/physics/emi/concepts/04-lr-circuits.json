@@ -10,9 +10,9 @@
     "Key definitions and theorems related to lr circuits should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in lr circuits.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Inductor instantly passes current.' ✅ Inductors *oppose* changes in current; at the moment of switching (t=0), current through an inductor remains zero.",
+    "❌ 'An inductor behaves like a resistor in DC steady state.' ✅ In DC steady state (t → ∞), an inductor acts as a *short circuit* (ideal wire with zero resistance).",
+    "❌ 'LR circuit decay time is infinite.' ✅ Current in an LR circuit decays exponentially; after $5\\tau$ (where $\\tau = L/R$), it is effectively zero."
   ],
   "practice": [
     "Solve at least 5 problems on lr circuits from your textbook.",

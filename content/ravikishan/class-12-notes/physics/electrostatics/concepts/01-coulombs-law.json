@@ -5,25 +5,26 @@
   "topicTitle": "Coulomb's Law",
   "relevance": 100,
   "notes": [
-    "**Coulomb's Law:** This topic covers the fundamental concepts of coulomb's law in the physics curriculum.",
-    "Understanding coulomb's law is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to coulomb's law should be memorized and practiced regularly."
+    "**Coulomb's Law:** The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them: F = k(q₁q₂)/r².",
+    "Understanding Coulomb's Law is essential for solving electrostatics problems and understanding electric fields.",
+    "Key definitions and principles related to Coulomb's Law should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in coulomb's law.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Coulomb's law force is always attractive.' ✅ Force is *attractive* for opposite charges, but *repulsive* for like charges.",
+    "❌ 'Coulomb force acts only in a vacuum.' ✅ It applies in any medium, but the force is *reduced* by the dielectric constant (relative permittivity) of the medium: F_medium = F_vacuum / εᵣ.",
+    "❌ 'Point charges must be stationary for Coulomb's law.' ✅ While electrostatic formulas assume static charges for simplicity, the law applies to charges at any instant; magnetic forces emerge only when charges are in motion.",
+    "❌ 'The force depends on the presence of other charges.' ✅ Coulomb's Law describes the interaction between *two* specific point charges; the presence of a third charge does not change this pair-wise interaction (Superposition Principle applies for net force)."
   ],
   "practice": [
-    "Solve at least 5 problems on coulomb's law from your textbook.",
-    "Try to derive the key formulas from first principles.",
+    "Solve at least 5 problems on Coulomb's law from your textbook.",
+    "Try to derive the electrostatic force for simple charge configurations.",
     "Create a summary sheet with all important formulas and theorems.",
     "Practice identifying which method/formula to apply in each problem type."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding coulomb's law builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of coulomb's law span engineering, physics, economics, and computer science."
+    "Understanding Coulomb's law builds the foundation for more advanced topics in electromagnetism.",
+    "Real-world applications of Coulomb's law span engineering, electronics, and molecular physics."
   ],
   "animation3D": "electrostatics",
   "motionGraphics": "electrostatics",

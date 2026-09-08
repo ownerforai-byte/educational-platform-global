@@ -14,9 +14,10 @@
     "**Higher order derivatives:** f''(x) = d/dx[f'(x)], f'''(x) = d/dx[f''(x)], etc."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in derivatives of algebraic and trig functions.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'd/dx(sin x) = cos x means the slope of sin at x=0 is 0.' ✅ At x = 0, sin(0) = 0, but d/dx(sin 0) = cos 0 = 1 — the tangent is steep, not flat.",
+    "❌ 'The derivative of a product is the product of the derivatives.' ✅ No! (fg)' = f'g + fg'. The 'product rule' is NOT 'differentiate each and multiply.'",
+    "❌ 'If f(x) = sin²x, then f'(x) = cos²x.' ✅ f'(x) = 2 sin x cos x = sin 2x. You must apply the Chain Rule: derivative of the *outer* function (u² → 2u) times the derivative of the *inner* function (sin x → cos x).",
+    "❌ 'd/dx(eˣ) = x·eˣ⁻¹ (power rule).' ✅ No — the power rule is for xⁿ where n is constant. For eˣ (constant base, variable exponent), d/dx(eˣ) = eˣ."
   ],
   "practice": [
     "Solve at least 5 problems on derivatives of algebraic and trig functions from your textbook.",

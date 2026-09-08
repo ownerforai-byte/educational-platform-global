@@ -1,5 +1,11 @@
 {
   "title": "Vectors",
+  "confusion": [
+    "❌ 'The triangle law and parallelogram law give different resultants.' ✅ They are mathematically EQUIVALENT — the triangle is half the parallelogram, so the same diagonal/resultant appears in both.",
+    "❌ 'θ is the angle between the two sides inside the parallelogram.' ✅ θ is the angle between the vectors placed TAIL-TO-TAIL at the common origin.",
+    "❌ 'A dot product results in a vector.' ✅ Dot product (scalar product) *always* results in a SCALAR quantity (e.g., Work).",
+    "❌ 'A cross product direction is arbitrary.' ✅ Direction is strictly defined by the Right-Hand Rule (RHR), perpendicular to the plane of the two vectors."
+  ],
   "notes": [
     "**Scalar:** magnitude only (mass, speed, work, temperature). **Vector:** magnitude + direction (displacement, velocity, force, momentum).",
     "**Triangle law / Parallelogram law:** resultant R of two vectors P and Q inclined at angle θ: R² = P² + Q² + 2PQ cos θ, tan α = Q sin θ / (P + Q cos θ).",

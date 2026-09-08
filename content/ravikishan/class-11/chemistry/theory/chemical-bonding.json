@@ -1,5 +1,11 @@
 {
   "title": "Chemical Bonding & Shapes of Molecules (VSEPR)",
+  "confusion": [
+    "❌ 'Ionic bonds are always stronger than covalent bonds.' ✅ Ionic bonds are strong in crystal lattices, but covalent bonds can be stronger in individual molecules (e.g., C≡C triple bond is very strong).",
+    "❌ 'VSEPR considers all electron pairs equally.' ✅ VSEPR accounts for different repulsion strengths: lp-lp > lp-bp > bp-bp, which distorts bond angles from ideal values.",
+    "❌ 'NH₃ is trigonal planar because it has 3 bond pairs.' ✅ NH₃ has 3 bp + 1 lp → tetrahedral electron geometry, but molecular shape is PYRAMIDAL (not planar) due to the lone pair.",
+    "❌ 'Hybridisation determines geometry; geometry determines hybridisation.' ✅ Hybridisation is a model used to *explain* observed geometries; it is not a physical process that happens before bonding."
+  ],
   "notes": [
     "**Ionic bond:** electrostatic attraction between oppositely charged ions, formed by transfer of electrons (e.g. NaCl). High melting point, conducts electricity in molten/solution state.",
     "**Covalent bond:** mutual sharing of electron pairs (e.g. H₂, CH₄). Directional; low melting/boiling point compared with ionic solids.",

@@ -10,9 +10,9 @@
     "Key definitions and theorems related to biot-savart law should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in biot-savart law.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Biot-Savart law gives the total magnetic field directly.' ✅ It gives the *contribution* dB from a tiny element dl; the total field requires integration over the entire conductor.",
+    "❌ 'The magnetic field is parallel to the current element.' ✅ dB is *perpendicular* to both dl and r̂ (given by the cross product dl × r̂).",
+    "❌ 'Biot-Savart law applies to moving charges but not currents.' ✅ A current is just moving charges; the law applies to *both* — for a charge: dB = (μ₀/4π)·(qv×r̂)/r²."
   ],
   "practice": [
     "Solve at least 5 problems on biot-savart law from your textbook.",

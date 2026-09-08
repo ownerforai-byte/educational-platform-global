@@ -10,9 +10,9 @@
     "Key definitions and theorems related to ampere's circuital law should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in ampere's circuital law.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Ampere's law works for any current distribution.' ✅ It is most useful for *highly symmetric* situations (infinite wire, solenoid, toroid); for arbitrary shapes, Biot-Savart is needed.",
+    "❌ 'The enclosed current must be at the center of the Amperian loop.' ✅ The current only needs to pass *through* the loop; its position inside the loop does not matter for the line integral.",
+    "❌ 'Magnetic field outside a solenoid is always zero.' ✅ For an *ideal infinite* solenoid it is zero, but a real finite solenoid has a weak external field."
   ],
   "practice": [
     "Solve at least 5 problems on ampere's circuital law from your textbook.",

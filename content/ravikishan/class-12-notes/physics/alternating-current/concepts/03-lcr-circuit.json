@@ -5,156 +5,156 @@
   "topicTitle": "LCR Series Circuit",
   "relevance": 100,
   "notes": [
-    "**LCR Series Circuit:** This topic covers the fundamental concepts of lcr series circuit in the physics curriculum.",
-    "Understanding lcr series circuit is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to lcr series circuit should be memorized and practiced regularly."
+    "**LCR Series Circuit:** An AC circuit containing a resistor (R), inductor (L), and capacitor (C) connected in series.",
+    "The behavior is determined by the combination of resistance and reactance (inductive and capacitive).",
+    "It exhibits resonance when the net reactance is zero."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in lcr series circuit.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ Believing resonance occurs at all frequencies ✅ Resonance occurs only at a specific frequency (f_r = 1 / (2π√LC)) where inductive reactance equals capacitive reactance (X_L = X_C).",
+    "❌ Misinterpreting phase angle as constant ✅ The phase angle φ (where tan φ = (X_L - X_C) / R) depends on the frequency of the AC source; it is zero at resonance.",
+    "❌ Assuming voltage across L and C is zero at resonance ✅ While the net voltage across the L-C combination is zero (because they are 180° out of phase), individual voltages across L and C can be non-zero and large."
   ],
   "practice": [
-    "Solve at least 5 problems on lcr series circuit from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Solve problems calculating impedance (Z) for given L, C, R values.",
+    "Determine the resonance frequency for a series LCR circuit.",
+    "Construct and interpret phasor diagrams for series LCR circuits.",
+    "Calculate the Q-factor to analyze the sharpness of resonance."
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding lcr series circuit builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of lcr series circuit span engineering, physics, economics, and computer science."
+    "Series LCR circuits are widely used in frequency tuning applications (e.g., radio receivers).",
+    "At resonance, the impedance is purely resistive (Z = R).",
+    "The phase relationship between voltage and current changes from capacitive (current leads) to inductive (voltage leads) as frequency passes resonance."
   ],
   "animation3D": "alternating-current",
   "motionGraphics": "alternating-current",
   "examples": [
-    "Example 1: Real-world application of LCR Series Circuit",
-    "Example 2: Practical demonstration of LCR Series Circuit concepts",
-    "Example 3: Numerical problem on LCR Series Circuit",
-    "Example 4: Diagram-based question on LCR Series Circuit",
-    "Example 5: Application in daily life involving LCR Series Circuit"
+    "Example 1: Calculating impedance and phase angle",
+    "Example 2: Finding resonance frequency",
+    "Example 3: Interpreting phasor diagrams at resonance",
+    "Example 4: Calculating power dissipation",
+    "Example 5: Determining bandwidth and Q-factor"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain LCR Series Circuit with suitable example.",
-    "Q2. Solve problems related to LCR Series Circuit.",
-    "Q3. Differentiate between various aspects of LCR Series Circuit.",
-    "Q4. Derive the key formula related to LCR Series Circuit.",
-    "Q5. What are the applications of LCR Series Circuit?"
+    "Q1. Derive the expression for impedance Z in a series LCR circuit.",
+    "Q2. Explain resonance and its condition (X_L = X_C).",
+    "Q3. How does the current vary with frequency in a series LCR circuit?",
+    "Q4. Define Q-factor and explain its significance.",
+    "Q5. Calculate the resonance frequency if L=2H, C=5µF, R=10Ω."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for LCR Series Circuit",
-    "Key Formula 2: Mathematical expression of LCR Series Circuit",
-    "Key Formula 3: Application formula for LCR Series Circuit",
-    "Key Formula 4: Derivation result for LCR Series Circuit",
-    "Key Formula 5: Important relation in LCR Series Circuit"
+    "Key Formula 1: Impedance Z = √(R² + (X_L - X_C)²)",
+    "Key Formula 2: Resonance frequency f_r = 1 / (2π√LC)",
+    "Key Formula 3: Phase angle φ = tan⁻¹((X_L - X_C) / R)",
+    "Key Formula 4: Current I = V / Z",
+    "Key Formula 5: Quality Factor Q = (1/R)√(L/C)"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of LCR Series Circuit",
-    "Key Point 2: Essential theorem or principle related to LCR Series Circuit",
-    "Key Point 3: Important condition or constraint for LCR Series Circuit",
-    "Key Point 4: Common applications of LCR Series Circuit",
-    "Key Point 5: Connection to other topics in Science"
+    "Key Point 1: Condition for Resonance (X_L = X_C)",
+    "Key Point 2: Phasor diagram analysis",
+    "Key Point 3: Frequency dependence of Impedance",
+    "Key Point 4: Power factor cos φ",
+    "Key Point 5: Sharpness of resonance (Q-factor)"
   ],
-  "summary": "LCR Series Circuit is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "A series LCR circuit combines resistance, inductance, and capacitance. It demonstrates resonance when inductive and capacitive reactances cancel, leading to minimum impedance and maximum current.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which LCR Series Circuit applies",
-    "Note 2: LCR Series Circuit connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of LCR Series Circuit",
-    "Note 4: Remember the units and dimensions involved in LCR Series Circuit",
-    "Note 5: LCR Series Circuit frequently appears in examination questions"
+    "Note 1: Resonance occurs when X_L = X_C.",
+    "Note 2: At resonance, current is in phase with voltage (φ=0).",
+    "Note 3: Impedance is minimum and equal to R at resonance.",
+    "Note 4: X_L increases with frequency; X_C decreases with frequency.",
+    "Note 5: The Q-factor measures the sharpness of the resonance peak."
   ],
   "importantStatements": [
-    "Statement 1: Definition of LCR Series Circuit",
-    "Statement 2: Theorem related to LCR Series Circuit",
-    "Statement 3: Condition for LCR Series Circuit to be valid",
-    "Statement 4: Principle governing LCR Series Circuit",
-    "Statement 5: Corollary or consequence of LCR Series Circuit"
+    "Statement 1: At resonance, impedance Z is minimum.",
+    "Statement 2: The circuit is purely resistive at resonance.",
+    "Statement 3: X_L = 2πfL and X_C = 1/(2πfC).",
+    "Statement 4: Voltage across the combination of L and C is zero at resonance.",
+    "Statement 5: A higher Q-factor implies sharper resonance."
   ],
   "importantNotes": [
-    "Note 1: LCR Series Circuit is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in LCR Series Circuit",
-    "Note 3: LCR Series Circuit has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for LCR Series Circuit",
-    "Note 5: Cross-check your answers using alternative methods for LCR Series Circuit"
+    "Note 1: Always sketch the phasor diagram.",
+    "Note 2: Understand the phase relationship at frequencies below and above resonance.",
+    "Note 3: Resonance is used for selectivity in communication systems.",
+    "Note 4: Practice calculations for impedance at frequencies other than resonance.",
+    "Note 5: Pay close attention to the formula for Q-factor."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable LCR Series Circuit formula",
-    "Trick 2: Elimination technique for LCR Series Circuit MCQs",
-    "Trick 3: Dimensional analysis shortcut for LCR Series Circuit",
-    "Trick 4: Memory aid for LCR Series Circuit formulas",
-    "Trick 5: Time-saving approach for LCR Series Circuit problems"
+    "Trick 1: f_r = 1 / (2π√LC).",
+    "Trick 2: At resonance, Z = R.",
+    "Trick 3: If X_L > X_C, circuit is inductive (voltage leads).",
+    "Trick 4: If X_C > X_L, circuit is capacitive (current leads).",
+    "Trick 5: Q = (1/R)√(L/C)."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from LCR Series Circuit",
-    "Exam Tip 2: Practice previous year questions on LCR Series Circuit",
-    "Exam Tip 3: LCR Series Circuit carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for LCR Series Circuit thoroughly",
-    "Exam Tip 5: Review common mistakes related to LCR Series Circuit"
+    "Exam Tip 1: Resonance conditions are highly examinable.",
+    "Exam Tip 2: Be comfortable with phasor diagrams for RLC.",
+    "Exam Tip 3: Know the definition of Q-factor.",
+    "Exam Tip 4: Watch for units (convert mH, µF to H, F).",
+    "Exam Tip 5: Understand the frequency variation of impedance."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes LCR Series Circuit?",
+      "question": "At resonance, the phase angle φ in an LCR series circuit is:",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The primary application of LCR Series Circuit is in:",
-      "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For LCR Series Circuit, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in LCR Series Circuit?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about LCR Series Circuit is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "90°",
+        "45°",
+        "0°",
+        "180°"
       ],
       "answer": "C"
+    },
+    {
+      "question": "The resonant frequency of an LCR series circuit is given by:",
+      "options": [
+        "2π√LC",
+        "1 / (2π√LC)",
+        "√(LC)",
+        "1 / √(LC)"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a series LCR circuit, if X_L > X_C, the circuit is:",
+      "options": [
+        "Capacitive",
+        "Inductive",
+        "Resistive",
+        "None"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At resonance, the impedance Z of a series LCR circuit is:",
+      "options": [
+        "R",
+        "X_L",
+        "X_C",
+        "0"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The quality factor Q is a measure of:",
+      "options": [
+        "Voltage gain",
+        "Sharpness of resonance",
+        "Maximum power",
+        "Circuit resistance"
+      ],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of LCR Series Circuit",
-    "Concept 2: Key theorem or principle in LCR Series Circuit",
-    "Concept 3: Important application area of LCR Series Circuit",
-    "Concept 4: Fundamental relationship in LCR Series Circuit",
-    "Concept 5: Connection between LCR Series Circuit and other topics"
+    "Concept 1: Impedance",
+    "Concept 2: Resonance",
+    "Concept 3: Phase Angle",
+    "Concept 4: Power Factor",
+    "Concept 5: Q-Factor"
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on LCR Series Circuit",
-    "Task 2: Derive the main formula for LCR Series Circuit",
-    "Task 3: Create a concept map for LCR Series Circuit",
-    "Task 4: Practice previous year exam questions on LCR Series Circuit",
-    "Task 5: Explain LCR Series Circuit to a peer or study group"
+    "Task 1: Calculate impedance for different f.",
+    "Task 2: Find resonance frequency.",
+    "Task 3: Plot I vs f (Resonance curve).",
+    "Task 4: Calculate Q-factor.",
+    "Task 5: Construct phasor diagrams."
   ]
 }

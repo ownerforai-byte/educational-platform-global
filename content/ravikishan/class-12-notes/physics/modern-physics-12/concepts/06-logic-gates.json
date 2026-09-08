@@ -10,9 +10,9 @@
     "Key definitions and theorems related to logic gates should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in logic gates.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ Confusing NAND/NOR as universal gates ✅ NAND and NOR are universal gates because any logic gate (AND, OR, NOT) can be constructed solely using them.",
+    "❌ Thinking logic levels are continuous ✅ Logic gates operate on discrete digital voltage levels (typically 0 or 1), not continuous analog signals.",
+    "❌ Misinterpreting Truth Tables for complex gates ✅ Truth tables must be evaluated step-by-step for complex gate combinations, not by guessing the output based on a single input."
   ],
   "practice": [
     "Solve at least 5 problems on logic gates from your textbook.",

@@ -1,5 +1,11 @@
 {
   "title": "Analytic Geometry & Vectors",
+  "confusion": [
+    "❌ 'Same slope means same line.' ✅ Same slope = parallel. Same line requires same slope AND same intercept.",
+    "❌ 'Perpendicular bisector and angle bisector are the same.' ✅ Perp bisector passes through midpoint at 90°. Angle bisector divides angle into two equal parts. Different in general.",
+    "❌ 'Normal to circle is parallel to radius.' ✅ Normal is COLLINEAR with radius (passes through centre), not just parallel.",
+    "❌ 'Distance between parallel lines is zero if they have same intercept.' ✅ Same slope AND intercept = coincident (same line). Distance = 0 only then."
+  ],
   "notes": [
     "**Straight line:** slope m = (y₂ − y₁)/(x₂ − x₁); point-slope form y − y₁ = m(x − x₁); two-point, intercept and normal forms; general form ax + by + c = 0.",
     "**Angle between lines:** tan θ = |(m₁ − m₂)/(1 + m₁m₂)|; perpendicular ⇒ m₁m₂ = −1; parallel ⇒ m₁ = m₂. Distance of point from line = |ax₁ + by₁ + c|/√(a² + b²).",

@@ -15,9 +15,9 @@
     "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in addition and subtraction.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Vector addition is simply adding components' ✅ While true for components, the *geometric* interpretation requires head-to-tail placement; you must not just add scalar magnitudes.",
+    "❌ 'Subtraction is same as addition' ✅ Subtraction is vector addition of the first vector and the negative (reversed direction) of the second vector: A - B = A + (-B).",
+    "❌ 'The resultant vector's direction is always the average of the two vectors' ✅ The resultant depends on the relative magnitudes and directions (angles between vectors); it is not a simple average."
   ],
   "practice": [
     "Solve at least 5 problems on addition and subtraction from your textbook.",

@@ -14,9 +14,8 @@
     "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a)."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in standard limits and evaluation.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ Applying limits directly when 0/0 form exists ✅ Must resolve 0/0 form using algebra, L'Hopital, or standard limits.",
+    "❌ Assuming lim(x→0) sin(x)/x is 1 in degrees ✅ Angle must be in radians for lim(x→0) sin(x)/x = 1."
   ],
   "practice": [
     "Solve at least 5 problems on standard limits and evaluation from your textbook.",

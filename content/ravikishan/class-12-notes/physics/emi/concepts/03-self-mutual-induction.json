@@ -10,9 +10,9 @@
     "Key definitions and theorems related to self and mutual induction should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in self and mutual induction.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Self-induction only happens in a coil.' ✅ It happens whenever the current *within* a conductor changes, creating a changing magnetic flux through itself.",
+    "❌ 'Mutual induction is the same as self-induction.' ✅ Self-induction is EMF induced by a coil's *own* current change; mutual induction is EMF induced in a *secondary* coil due to current changes in a *primary* coil.",
+    "❌ 'Inductance depends on the current flowing.' ✅ Like capacitance, inductance is a *geometric property* of the coil (turns, core material, shape), not dependent on the magnitude of the current."
   ],
   "practice": [
     "Solve at least 5 problems on self and mutual induction from your textbook.",

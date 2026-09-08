@@ -10,9 +10,9 @@
     "Key definitions and theorems related to ohm's law should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in ohm's law.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Ohm's Law applies to all conductors.' ✅ It is valid only for *ohmic conductors* (where V is proportional to I, like metallic resistors), not for non-ohmic devices like diodes or transistors.",
+    "❌ 'Ohm's Law defines Resistance (R=V/I).' ✅ Resistance is a *property* of the conductor (geometry/material); Ohm's law states that *for some materials*, R remains constant regardless of V or I.",
+    "❌ 'V is always proportional to I.' ✅ This holds true only when *temperature and other physical conditions* are kept constant."
   ],
   "practice": [
     "Solve at least 5 problems on ohm's law from your textbook.",

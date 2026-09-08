@@ -1,5 +1,11 @@
 {
   "title": "Dynamics & Newton's Laws",
+  "confusion": [
+    "❌ 'The normal force is always mg.' ✅ N = mg only on a horizontal surface with no vertical acceleration.",
+    "❌ 'Friction always opposes motion.' ✅ Friction opposes RELATIVE motion between surfaces, not necessarily the body's motion.",
+    "❌ 'Action and reaction forces cancel each other.' ✅ They act on DIFFERENT bodies, so they never cancel in a single FBD.",
+    "❌ 'Heavier bodies slide slower down a slope.' ✅ a = g(sin θ − μ cos θ) has no mass term."
+  ],
   "notes": [
     "**Newton's first law:** a body at rest stays at rest and a body in motion stays in uniform motion unless acted on by a net external force. Inertia = the tendency to resist change in state of motion; mass is a measure of inertia.",
     "**Newton's second law:** F = ma — the rate of change of momentum is proportional to the applied force and takes place in the direction of the force.",

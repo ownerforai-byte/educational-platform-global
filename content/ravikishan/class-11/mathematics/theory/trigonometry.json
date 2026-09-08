@@ -1,5 +1,11 @@
 {
   "title": "Trigonometry",
+  "confusion": [
+    "❌ 'sin²θ + cos²θ = 1 means sin θ = cos θ.' ✅ The identity holds for ALL θ, but sin θ = cos θ only at specific angles (e.g., 45°).",
+    "❌ 'sin(A + B) = sin A + sin B.' ✅ FALSE. sin(A+B) = sin A cos B + cos A sin B. Sine is not linear.",
+    "❌ 'General solution of sin x = a is just x = arcsin a.' ✅ Complete solution: x = nπ + (−1)ⁿ α, where α = arcsin a.",
+    "❌ 'cos 2A = 2 cos A.' ✅ cos 2A = cos²A − sin²A. The '2A' means 'cosine of twice the angle', not '2 times cos A'."
+  ],
   "notes": [
     "**Fundamental identities:** sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ.",
     "**Compound angles:** sin(A ± B) = sin A cos B ± cos A sin B; cos(A ± B) = cos A cos B ∓ sin A sin B; tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B).",

@@ -10,9 +10,9 @@
     "Key definitions and theorems related to kirchhoff's laws should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in kirchhoff's laws.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'KCL applies to open circuits.' ✅ KCL (junction rule) applies only at *nodes/junctions* where currents meet; it states ΣI_in = ΣI_out.",
+    "❌ 'KVL is valid for any loop including those with capacitors.' ✅ KVL applies to *closed loops*; for capacitors, you must include the potential difference V = q/C across the capacitor.",
+    "❌ 'Sign conventions for KVL don't matter as long as you're consistent.' ✅ While consistency is key, wrong sign conventions will flip *all* your results; the standard rule is: voltage rise = +, voltage drop = − when traversing the loop."
   ],
   "practice": [
     "Solve at least 5 problems on kirchhoff's laws from your textbook.",

@@ -5,14 +5,16 @@
   "topicTitle": "Differentiability",
   "relevance": 100,
   "notes": [
-    "**Differentiability:** This topic covers the fundamental concepts of differentiability in the mathematics curriculum.",
-    "Understanding differentiability is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to differentiability should be memorized and practiced regularly."
+    "**Differentiability at a point:** f is differentiable at x=a if f'(a) exists, i.e., lim(h→0) [f(a+h)-f(a)]/h exists.",
+    "**Differentiable implies continuous:** If f is differentiable at a, then f is continuous at a.",
+    "**Continuous does not imply differentiable:** |x| is continuous at x=0 but not differentiable.",
+    "**Smooth functions:** Differentiable everywhere (e.g., polynomials, sin x, cos x, eˣ).",
+    "**Corner/cusp points:** Non-differentiable points where left derivative ≠ right derivative.",
+    "**Vertical tangent:** Point where derivative approaches infinity (not differentiable)."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in differentiability.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ Assuming continuous functions are always differentiable ✅ |x| at x=0 is continuous but has a corner (not differentiable).",
+    "❌ Differentiable implies the function is smooth ✅ Differentiable means derivative exists at that point; corners still exist elsewhere."
   ],
   "practice": [
     "Solve at least 5 problems on differentiability from your textbook.",

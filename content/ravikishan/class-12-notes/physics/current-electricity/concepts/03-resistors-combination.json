@@ -10,9 +10,9 @@
     "Key definitions and theorems related to resistors in combination should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in resistors in combination.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Adding resistors in parallel increases the total resistance.' ✅ Parallel connections *decrease* total resistance, as they provide more paths for current to flow (1/Rp = 1/R1 + 1/R2).",
+    "❌ 'In series, current changes across each resistor.' ✅ In a series circuit, the *current* remains the same through all components, while *voltage* splits proportionally.",
+    "❌ 'Total resistance in series is the average of individual resistances.' ✅ In series, the total resistance is the *sum* of individual resistances (Rs = R1 + R2), which is always greater than the largest individual resistor."
   ],
   "practice": [
     "Solve at least 5 problems on resistors in combination from your textbook.",

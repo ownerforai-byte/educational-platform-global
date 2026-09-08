@@ -10,9 +10,9 @@
     "Key definitions and theorems related to equation of a plane should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in equation of a plane.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'A plane equation only needs the normal vector' ✅ A plane requires *both* a normal vector (direction) *and* at least one point it passes through.",
+    "❌ 'The coefficients A, B, C in Ax + By + Cz + D = 0 are arbitrary' ✅ The coefficients (A, B, C) represent the components of the normal vector to the plane.",
+    "❌ 'Two planes are always parallel if their normal vectors are different' ✅ Two planes are parallel if their normal vectors are *proportional* (not necessarily equal)."
   ],
   "practice": [
     "Solve at least 5 problems on equation of a plane from your textbook.",

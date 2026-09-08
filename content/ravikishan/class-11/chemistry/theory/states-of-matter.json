@@ -1,5 +1,11 @@
 {
   "title": "States of Matter (Gaseous State)",
+  "confusion": [
+    "❌ 'Ideal gases exist in reality.' ✅ Ideal gas is a theoretical model. Real gases approximate ideal behaviour at high temperature and low pressure where intermolecular forces are negligible.",
+    "❌ 'Boyle's law and Charles' law apply to real gases under all conditions.' ✅ They are exact only for ideal gases. Real gases deviate at high pressure/low temperature (described by van der Waals equation).",
+    "❌ 'Graham's law applies to rate of effusion but not diffusion.' ✅ Graham's law applies to both effusion (through a pinhole) and diffusion, though diffusion is more complex due to molecular collisions.",
+    "❌ 'At 0 K, all molecular motion stops completely.' ✅ At absolute zero, translational motion ceases but zero-point quantum energy remains. Also, no real gas reaches 0 K."
+  ],
   "notes": [
     "**Boyle's law:** at constant T, V ∝ 1/P. **Charles' law:** at constant P, V ∝ T. **Avogadro's law:** equal volumes of gases contain equal numbers of molecules at same T and P.",
     "**Ideal gas equation:** PV = nRT, R = 0.0821 L atm K⁻¹ mol⁻¹ = 8.314 J K⁻¹ mol⁻¹.",

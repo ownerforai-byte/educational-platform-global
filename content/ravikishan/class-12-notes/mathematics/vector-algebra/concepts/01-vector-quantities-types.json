@@ -15,9 +15,9 @@
     "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in vector quantities and types.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Vector magnitude can be negative' ✅ Magnitude is defined as the absolute length, so it is always ≥ 0.",
+    "❌ 'Adding vectors is same as adding scalar magnitudes' ✅ Vector addition must account for direction using head-to-tail or component methods; only scalar magnitudes can be added algebraically.",
+    "❌ 'A vector with zero magnitude points in a specific direction' ✅ A zero vector (null vector) has undefined direction because it doesn't have a distinct displacement."
   ],
   "practice": [
     "Solve at least 5 problems on vector quantities and types from your textbook.",

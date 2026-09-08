@@ -1,5 +1,11 @@
 {
   "title": "Sets, Logic & Real Number System",
+  "confusion": [
+    "❌ 'Intersection of two sets is always non-empty.' ✅ A ∩ B = ∅ if sets are disjoint (no common elements).",
+    "❌ 'A ∪ B always has more elements than A or B.' ✅ If A ⊆ B, then A ∪ B = B. Union is only strictly larger when sets overlap partially or not at all.",
+    "❌ '\"Nothing\" is not a set.' ✅ Empty set ∅ = {} is a valid set with zero elements. It is a subset of EVERY set.",
+    "❌ '|x| = x always.' ✅ |x| = x when x ≥ 0; |x| = −x when x < 0. Absolute value outputs non-negative magnitude."
+  ],
   "notes": [
     "**Set:** a well-defined collection of objects. Representation: roster/listing form or set-builder form.",
     "**Operations:** union A ∪ B, intersection A ∩ B, difference A − B, complement A′, symmetric difference A Δ B.",

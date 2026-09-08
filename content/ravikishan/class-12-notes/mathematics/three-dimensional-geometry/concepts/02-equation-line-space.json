@@ -10,9 +10,9 @@
     "Key definitions and theorems related to equation of a line in space should be memorized and practiced regularly."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in equation of a line in space.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'Vector equation and Cartesian equation are completely unrelated' ✅ They represent the same line; the vector form is r = a + tb, while the Cartesian form is (x-x₁)/a = (y-y₁)/b = (z-z₁)/c.",
+    "❌ 'A line in space is defined by only one point' ✅ A line in space requires *two* points OR *one point and a direction vector* to be uniquely defined.",
+    "❌ 'The parameter t is always restricted' ✅ In the line equation r = a + tb, the parameter t can typically be any real number (-∞, ∞) unless specified otherwise."
   ],
   "practice": [
     "Solve at least 5 problems on equation of a line in space from your textbook.",

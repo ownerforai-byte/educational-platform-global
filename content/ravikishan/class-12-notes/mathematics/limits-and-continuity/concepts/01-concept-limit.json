@@ -14,9 +14,9 @@
     "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a)."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in concept of limit.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'The limit of a function at a point is always its value at that point' ✅ The limit only concerns values *near* a, not *at* a; f(a) might not even be defined.",
+    "❌ 'If the limit doesn't exist, the function is undefined' ✅ A function can be well-defined at a point, but the limit might not exist (e.g., jump discontinuities or oscillations).",
+    "❌ 'Indeterminate form 0/0 means the result is 0 or undefined' ✅ 0/0 is a signal to apply algebraic manipulation or L'Hôpital's Rule to find the limit, which may be a finite number."
   ],
   "practice": [
     "Solve at least 5 problems on concept of limit from your textbook.",

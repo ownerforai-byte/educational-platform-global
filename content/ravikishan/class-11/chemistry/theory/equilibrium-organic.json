@@ -1,5 +1,11 @@
 {
   "title": "Chemical Equilibrium & Organic Fundamentals",
+  "confusion": [
+    "❌ 'Equilibrium means equal amounts of reactants and products.' ✅ Equilibrium means *constant* concentrations, not equal ones. The position of equilibrium depends on K, which can heavily favour either side.",
+    "❌ 'Le Chatelier's principle shifts equilibrium to re-establish old rates.' ✅ It shifts to oppose the *change in conditions* (concentration, pressure, temperature), not to restore old rates.",
+    "❌ 'K changes when concentration or pressure changes.' ✅ K is constant at a given temperature. Only temperature changes alter the value of K.",
+    "❌ 'Catenation is unique to carbon.' ✅ Carbon shows the *greatest* catenation, but silicon and sulfur also exhibit it to lesser degrees."
+  ],
   "notes": [
     "**Chemical equilibrium:** the stage at which rate of forward reaction equals rate of backward reaction; concentrations remain constant. Dynamic in nature.",
     "**Le Chatelier's principle:** if a system at equilibrium is disturbed by changing concentration, pressure or temperature, the equilibrium shifts in the direction that opposes the change.",

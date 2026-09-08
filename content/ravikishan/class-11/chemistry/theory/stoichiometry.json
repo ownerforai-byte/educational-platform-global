@@ -1,5 +1,11 @@
 {
   "title": "Basic Concepts of Chemistry & Stoichiometry",
+  "confusion": [
+    "❌ 'One mole of any substance has the same mass.' ✅ One mole has the same NUMBER of particles (6.022 × 10²³), but different masses depending on molar mass (e.g., 1 mol H₂ = 2 g, 1 mol O₂ = 32 g).",
+    "❌ 'Empirical and molecular formulas are always the same.' ✅ Empirical formula is the simplest ratio; molecular formula is the actual count. They differ when n > 1 (e.g., empirical CH₂, molecular C₆H₁₂).",
+    "❌ 'The limiting reagent determines the mass of all products equally.' ✅ The limiting reagent determines the maximum amount of *each* product formed, but different products have different molar ratios from the balanced equation.",
+    "❌ 'Percentage yield can exceed 100%.' ✅ Theoretical yield is the maximum possible. Yield > 100% indicates impure product or incomplete drying, not an error in calculation."
+  ],
   "notes": [
     "**Mole:** the amount of substance containing as many particles (atoms, molecules, ions) as there are atoms in exactly 12 g of carbon-12. One mole = **6.022 × 10²³** particles (Avogadro's number, N_A).",
     "**Molar mass:** mass of one mole of a substance in grams; numerically equal to its molecular/atomic weight. n = given mass / molar mass.",

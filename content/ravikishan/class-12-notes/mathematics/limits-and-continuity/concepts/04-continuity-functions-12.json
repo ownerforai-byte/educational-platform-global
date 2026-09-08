@@ -14,9 +14,8 @@
     "**Intermediate Value Theorem:** If f is continuous on [a,b] and k is between f(a) and f(b), then there exists c∈(a,b) such that f(c)=k."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in continuity of functions.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ Assuming all functions with a hole are continuous ✅ A function is discontinuous at a point if f(a) doesn't exist or doesn't equal the limit.",
+    "❌ Continuity means the graph has no breaks ✅ Also requires f(a) to equal the limit value; removable discontinuity exists."
   ],
   "practice": [
     "Solve at least 5 problems on continuity of functions from your textbook.",

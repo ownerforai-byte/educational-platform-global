@@ -5,156 +5,156 @@
   "topicTitle": "AC through R, L, C",
   "relevance": 100,
   "notes": [
-    "**AC through R, L, C:** This topic covers the fundamental concepts of ac through r, l, c in the physics curriculum.",
-    "Understanding ac through r, l, c is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to ac through r, l, c should be memorized and practiced regularly."
+    "**AC through R, L, C:** This topic covers the behavior of AC circuits containing Resistors (R), Inductors (L), and Capacitors (C).",
+    "Understanding the phase relationships between voltage and current in R, L, and C components is essential for analyzing complex AC circuits.",
+    "Key concepts include impedance, reactance, and the conditions for electrical resonance."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in ac through r, l, c.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "❌ 'In an AC circuit, the voltage and current are always in phase' ✅ In a pure resistor, they are in phase. In an inductor, voltage leads current by 90°. In a capacitor, voltage lags current by 90°.",
+    "❌ 'Impedance (Z) is the algebraic sum of resistance (R) and reactance (X)' ✅ Impedance is the vector sum: Z = √(R² + (X_L - X_C)²).",
+    "❌ 'Resonance occurs when resistance is maximum' ✅ Resonance occurs when inductive reactance equals capacitive reactance (X_L = X_C), which minimizes impedance in a series circuit."
   ],
   "practice": [
-    "Solve at least 5 problems on ac through r, l, c from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Solve at least 5 problems on AC circuits (RL, RC, RLC) from your textbook.",
+    "Draw phasor diagrams for different combinations of R, L, and C.",
+    "Derive the resonance frequency formula for a series LCR circuit.",
+    "Practice identifying which formula (Z or resonance frequency) to apply in each problem."
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding ac through r, l, c builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of ac through r, l, c span engineering, physics, economics, and computer science."
+    "Phasor diagrams are a standard tool in the NEB physics curriculum for visualizing AC circuit behavior.",
+    "Resonance is the fundamental principle behind radio tuning.",
+    "The impedance triangle is an essential visual representation for understanding AC circuit analysis."
   ],
   "animation3D": "alternating-current",
   "motionGraphics": "alternating-current",
   "examples": [
-    "Example 1: Real-world application of AC through R, L, C",
-    "Example 2: Practical demonstration of AC through R, L, C concepts",
-    "Example 3: Numerical problem on AC through R, L, C",
-    "Example 4: Diagram-based question on AC through R, L, C",
-    "Example 5: Application in daily life involving AC through R, L, C"
+    "Example 1: Calculating impedance for an RL circuit",
+    "Example 2: Determining resonance frequency of a series LCR circuit",
+    "Example 3: Constructing a phasor diagram for an RC circuit",
+    "Example 4: Calculating power factor in an AC circuit",
+    "Example 5: Analyzing the effect of frequency on capacitive reactance"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain AC through R, L, C with suitable example.",
-    "Q2. Solve problems related to AC through R, L, C.",
-    "Q3. Differentiate between various aspects of AC through R, L, C.",
-    "Q4. Derive the key formula related to AC through R, L, C.",
-    "Q5. What are the applications of AC through R, L, C?"
+    "Q1. Derive an expression for the impedance of a series LCR circuit.",
+    "Q2. Explain the condition for electrical resonance in a series LCR circuit.",
+    "Q3. How does the phase difference between voltage and current change with frequency in an LCR circuit?",
+    "Q4. Define quality factor (Q-factor) and its importance.",
+    "Q5. Calculate the current in a circuit with known R, L, C values at a specific frequency."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for AC through R, L, C",
-    "Key Formula 2: Mathematical expression of AC through R, L, C",
-    "Key Formula 3: Application formula for AC through R, L, C",
-    "Key Formula 4: Derivation result for AC through R, L, C",
-    "Key Formula 5: Important relation in AC through R, L, C"
+    "Key Formula 1: Inductive Reactance X_L = 2πfL",
+    "Key Formula 2: Capacitive Reactance X_C = 1 / (2πfC)",
+    "Key Formula 3: Impedance Z = √(R² + (X_L - X_C)²)",
+    "Key Formula 4: Resonance frequency f_r = 1 / (2π√LC)",
+    "Key Formula 5: Power Factor cos φ = R/Z"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of AC through R, L, C",
-    "Key Point 2: Essential theorem or principle related to AC through R, L, C",
-    "Key Point 3: Important condition or constraint for AC through R, L, C",
-    "Key Point 4: Common applications of AC through R, L, C",
-    "Key Point 5: Connection to other topics in Science"
+    "Key Point 1: Phasor diagram representations",
+    "Key Point 2: Definition of Impedance and Reactance",
+    "Key Point 3: Condition for Resonance",
+    "Key Point 4: Power in AC circuits",
+    "Key Point 5: Frequency dependence of reactances"
   ],
-  "summary": "AC through R, L, C is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "This topic covers the analysis of AC voltage applied to resistors, inductors, and capacitors. It focuses on understanding impedance, phase relationships through phasor diagrams, and the concept of resonance.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which AC through R, L, C applies",
-    "Note 2: AC through R, L, C connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of AC through R, L, C",
-    "Note 4: Remember the units and dimensions involved in AC through R, L, C",
-    "Note 5: AC through R, L, C frequently appears in examination questions"
+    "Note 1: Ensure you understand the difference between pure and practical components.",
+    "Note 2: Pay attention to the phase difference (φ) and its dependence on frequency.",
+    "Note 3: Practice numerical problems focusing on Z, φ, and resonance frequency.",
+    "Note 4: Units for reactance and impedance are Ohms (Ω).",
+    "Note 5: Resonance frequency problems are common in examinations."
   ],
   "importantStatements": [
-    "Statement 1: Definition of AC through R, L, C",
-    "Statement 2: Theorem related to AC through R, L, C",
-    "Statement 3: Condition for AC through R, L, C to be valid",
-    "Statement 4: Principle governing AC through R, L, C",
-    "Statement 5: Corollary or consequence of AC through R, L, C"
+    "Statement 1: Voltage leads current in an inductor.",
+    "Statement 2: Current leads voltage in a capacitor.",
+    "Statement 3: At resonance, the circuit behaves as a pure resistor.",
+    "Statement 4: Power factor can be at most 1.",
+    "Statement 5: Impedance is frequency-dependent."
   ],
   "importantNotes": [
-    "Note 1: AC through R, L, C is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in AC through R, L, C",
-    "Note 3: AC through R, L, C has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for AC through R, L, C",
-    "Note 5: Cross-check your answers using alternative methods for AC through R, L, C"
+    "Note 1: Always check for series vs parallel combinations.",
+    "Note 2: Remember that X_L and X_C are 180° out of phase.",
+    "Note 3: Phasor diagrams are invaluable for solving LCR problems.",
+    "Note 4: Understand the impact of frequency on the circuit's behavior (inductive vs capacitive).",
+    "Note 5: Resonance is a frequency-selective property."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable AC through R, L, C formula",
-    "Trick 2: Elimination technique for AC through R, L, C MCQs",
-    "Trick 3: Dimensional analysis shortcut for AC through R, L, C",
-    "Trick 4: Memory aid for AC through R, L, C formulas",
-    "Trick 5: Time-saving approach for AC through R, L, C problems"
+    "Trick 1: Use the mnemonic 'ELI' (Voltage leads Current in Inductor) and 'ICE' (Current leads Voltage in Capacitor).",
+    "Trick 2: At resonance, X_L cancels X_C; Z = R.",
+    "Trick 3: If frequency increases, X_L increases and X_C decreases.",
+    "Trick 4: The power factor is 1 at resonance.",
+    "Trick 5: Use phasor diagrams to quickly determine the phase of voltage relative to current."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from AC through R, L, C",
-    "Exam Tip 2: Practice previous year questions on AC through R, L, C",
-    "Exam Tip 3: AC through R, L, C carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for AC through R, L, C thoroughly",
-    "Exam Tip 5: Review common mistakes related to AC through R, L, C"
+    "Exam Tip 1: Always draw the phasor diagram first.",
+    "Exam Tip 2: Be precise with units and calculations in reactance formulas.",
+    "Exam Tip 3: Understand the definition and importance of Q-factor.",
+    "Exam Tip 4: Focus on the meaning of 'phase angle' and how to calculate it.",
+    "Exam Tip 5: Review previous exam questions on series resonance."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes AC through R, L, C?",
+      "question": "In a pure inductor, the phase difference between voltage and current is:",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "0°",
+        "90° (Voltage leads)",
+        "90° (Voltage lags)",
+        "180°"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "The primary application of AC through R, L, C is in:",
+      "question": "The formula for impedance Z in a series LCR circuit is:",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "For AC through R, L, C, which condition is necessary?",
-      "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in AC through R, L, C?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about AC through R, L, C is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "Z = R + X_L + X_C",
+        "Z = R² + (X_L - X_C)²",
+        "Z = √(R² + (X_L - X_C)²)",
+        "Z = √(R² + (X_L + X_C)²)"
       ],
       "answer": "C"
+    },
+    {
+      "question": "At resonance in a series LCR circuit, the impedance is:",
+      "options": [
+        "Maximum",
+        "Minimum",
+        "Zero",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What is the unit of capacitive reactance?",
+      "options": [
+        "Farad",
+        "Henry",
+        "Ohm",
+        "Siemens"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "If frequency is increased in an AC circuit, inductive reactance X_L:",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Remains same",
+        "Becomes zero"
+      ],
+      "answer": "A"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of AC through R, L, C",
-    "Concept 2: Key theorem or principle in AC through R, L, C",
-    "Concept 3: Important application area of AC through R, L, C",
-    "Concept 4: Fundamental relationship in AC through R, L, C",
-    "Concept 5: Connection between AC through R, L, C and other topics"
+    "Concept 1: Phasor Diagrams",
+    "Concept 2: Impedance and Reactance",
+    "Concept 3: Series Resonance",
+    "Concept 4: Power Factor",
+    "Concept 5: Quality Factor"
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on AC through R, L, C",
-    "Task 2: Derive the main formula for AC through R, L, C",
-    "Task 3: Create a concept map for AC through R, L, C",
-    "Task 4: Practice previous year exam questions on AC through R, L, C",
-    "Task 5: Explain AC through R, L, C to a peer or study group"
+    "Task 1: Solve problems involving Z calculation.",
+    "Task 2: Determine resonance frequency for given L and C.",
+    "Task 3: Practice constructing phasor diagrams.",
+    "Task 4: Calculate power factor for various frequencies.",
+    "Task 5: Review derivations of impedance and resonance frequency."
   ]
 }
