@@ -181,8 +181,12 @@ function RutherfordModel() {
           renderer.setSize(container.clientWidth, container.clientHeight);
         }
         window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
         return () => {
           window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
           renderer.dispose();
           if (container && renderer.domElement.parentNode === container) container.removeChild(renderer.domElement);
         };
@@ -198,7 +202,7 @@ function RutherfordModel() {
         <CardTitle>3D Rutherford Model â€” Planetary Atom</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D Rutherford model" />
+        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D Rutherford model" />
         <CollapsibleControls label="Model Options">
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="space-y-1">
@@ -364,7 +368,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
         <CardTitle>3D Heisenberg Uncertainty Principle</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D Heisenberg uncertainty" />
+        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D Heisenberg uncertainty" />
         <CollapsibleControls label="Uncertainty Options">
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1">
@@ -542,7 +546,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
         <CardTitle>3D Hydrogen Spectral Series</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D hydrogen spectral series" />
+        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D hydrogen spectral series" />
         <CollapsibleControls label="Series Options">
           <div className="flex flex-wrap items-center gap-2">
             <Label>Series:</Label>
@@ -878,7 +882,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           </Button>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg border border-border bg-slate-950" />
+        <div ref={containerRef} className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-lg border border-border bg-slate-950" />
 
         <div className="rounded-md border border-border bg-muted/30 p-3 text-sm">
           {selectedElement ? (

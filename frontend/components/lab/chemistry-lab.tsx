@@ -648,10 +648,14 @@ export function ChemistryLab() {
         renderer.setSize(container.clientWidth, container.clientHeight);
       };
       window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
 
       return () => {
         cancelAnimationFrame(frameId);
         window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
         if (renderer.domElement.parentNode) {
           renderer.domElement.parentNode.removeChild(renderer.domElement);
         }

@@ -240,7 +240,7 @@ export function BiologyCellDivision3D() {
           </button>
         ))}
       </div>
-      <div className="min-h-[320px] rounded-xl border border-border bg-card overflow-auto">
+      <div className="min-h-[clamp(320px,60vh,640px)] rounded-xl border border-border bg-card overflow-auto">
         {tab === "amitosis" && <AmitosisView />}
         {tab === "mitosis" && <MitosisView />}
         {tab === "meiosis" && <MeiosisView />}

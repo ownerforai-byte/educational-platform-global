@@ -314,7 +314,7 @@ export function BiologyFaunalDiversity3D() {
           );
         })}
       </div>
-      <div className="min-h-[320px] rounded-xl border border-border bg-card overflow-auto">
+      <div className="min-h-[clamp(320px,60vh,640px)] rounded-xl border border-border bg-card overflow-auto">
         {tab === "protista" && <ProtistaView />}
         {tab === "phyla" && <AnimalPhylaView />}
         {tab === "earthworm" && <EarthwormView />}

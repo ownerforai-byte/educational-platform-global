@@ -177,9 +177,13 @@ function EMWave3D() {
         renderer.setSize(container.clientWidth, container.clientHeight);
       };
       window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
 
       return () => {
         window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
         cancelled = true;
         cancelAnimationFrame(frameRef.current);
         if (renderer.domElement.parentNode === container) container.removeChild(renderer.domElement);
@@ -227,7 +231,7 @@ function EMWave3D() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-80 sm:h-96 md:h-[500px] lg:h-[600px]" />
+        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)]" />
 
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-md border border-border bg-muted/30 p-3">
@@ -461,7 +465,7 @@ function MagneticFieldLines3D() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-80 sm:h-96 md:h-[500px] lg:h-[600px]" />
+        <div ref={containerRef} className="lab-3d-container rounded-md border border-border h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)]" />
 
         <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
           <span className="flex items-center gap-1"><span className="h-3 w-3 rounded-sm bg-red-500" /> North pole</span>

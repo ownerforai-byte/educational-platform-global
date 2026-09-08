@@ -169,8 +169,12 @@ function FunctionGraph3D({
           renderer.setSize(container.clientWidth, container.clientHeight);
         };
         window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
         return () => {
           window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
           meshes.forEach((m) => {
             group.remove(m);
             if (m instanceof THREE.Mesh) {

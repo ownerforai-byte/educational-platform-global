@@ -150,7 +150,7 @@ const electronMats = electrons.map((e) => e.material as THREE.MeshStandardMateri
   return (
     <div className="space-y-3">
       <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr]">
-        <div className="relative min-h-[300px] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
+        <div className="relative min-h-[clamp(320px,60vh,640px)] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
           {!webGL && <div className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">WebGL unavailable.</div>}
         </div>
         <div className="space-y-4">
@@ -294,7 +294,7 @@ const BohrTab: React.FC = () => {
 return (
     <div className="space-y-3">
       <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr]">
-        <div className="relative min-h-[300px] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
+        <div className="relative min-h-[clamp(320px,60vh,640px)] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
           {!webGL && <div className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">WebGL unavailable.</div>}
         </div>
         <div className="space-y-4">
@@ -445,7 +445,7 @@ const NucleusTab: React.FC = () => {
 return (
     <div className="space-y-3">
       <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr]">
-        <div className="relative min-h-[300px] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
+        <div className="relative min-h-[clamp(320px,60vh,640px)] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
           {!webGL && <div className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">WebGL unavailable.</div>}
         </div>
         <div className="space-y-4">
@@ -567,7 +567,7 @@ const LogicTab: React.FC = () => {
 return (
     <div className="space-y-3">
       <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr]">
-        <div className="relative min-h-[300px] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
+        <div className="relative min-h-[clamp(320px,60vh,640px)] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
           {!webGL && <div className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">WebGL unavailable.</div>}
         </div>
         <div className="space-y-4">

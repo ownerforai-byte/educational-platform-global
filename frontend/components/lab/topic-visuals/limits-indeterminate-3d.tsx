@@ -179,7 +179,7 @@ export function LimitsIndeterminate3D() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[420px] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
 
         <div className="rounded-lg border border-rose-500/30 bg-rose-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-rose-400">Indeterminate Forms</p>

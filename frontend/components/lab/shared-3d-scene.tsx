@@ -129,7 +129,7 @@ export default function Shared3DScene({
   particleCount = 60,
 }: Shared3DSceneProps) {
   return (
-    <div className={`w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden border border-primary/20 ${bgGradient}`}>
+    <div className={`w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-xl overflow-hidden border border-primary/20 ${bgGradient}`}>
       <Canvas
         camera={{ position: [0, 0, 5], fov: 55 }}
         gl={{ antialias: true, alpha: true }}

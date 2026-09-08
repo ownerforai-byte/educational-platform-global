@@ -170,8 +170,12 @@ function ElectricFieldVisualizer() {
           renderer.setSize(container.clientWidth, container.clientHeight);
         }
         window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
         return () => {
           window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
           renderer.dispose();
           if (container && renderer.domElement.parentNode === container) container.removeChild(renderer.domElement);
         };
@@ -187,7 +191,7 @@ function ElectricFieldVisualizer() {
         <CardTitle>3D Electric Field Visualizer</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D electric field" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D electric field" />}
 
         <div className="flex flex-wrap gap-2">
           <Button onClick={addCharge} size="sm">+ Add Charge</Button>
@@ -440,7 +444,7 @@ function DoublePendulum3D() {
         <CardTitle>3D Double Pendulum — Chaotic Motion</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D double pendulum" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D double pendulum" />}
 
         <CollapsibleControls label="Pendulum Parameters">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
@@ -665,7 +669,7 @@ function GravitationalField3D() {
         <CardTitle>3D Gravitational Field</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D gravitational field" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D gravitational field" />}
         <CollapsibleControls label="Field Options">
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1"><Label htmlFor="mass">Planet Mass (relative)</Label><Input id="mass" type="number" step="1" value={planetMass} onChange={(e) => setPlanetMass(Number(e.target.value))} /></div>

@@ -122,8 +122,12 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           renderer.setSize(container.clientWidth, container.clientHeight);
         }
         window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
         return () => {
           window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
           renderer.dispose();
           if (container && renderer.domElement.parentNode === container) container.removeChild(renderer.domElement);
         };
@@ -152,7 +156,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             </Select>
           </div>
         </CollapsibleControls>
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D molecular orbitals" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D molecular orbitals" />}
         <p className="text-xs text-muted-foreground">Electron cloud probability distribution. Cyan dots = electron positions. Red sphere = nucleus. Drag to rotate.</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>
@@ -304,7 +308,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             </Select>
           </div>
         </CollapsibleControls>
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D crystal lattice" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D crystal lattice" />}
         <p className="text-xs text-muted-foreground">Green spheres = atoms. Simple Cubic: atoms at corners only. FCC: atoms at corners + face centers. BCC: atoms at corners + body center. Drag to rotate.</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>

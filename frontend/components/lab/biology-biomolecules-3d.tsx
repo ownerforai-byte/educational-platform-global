@@ -629,7 +629,7 @@ export function BiologyBiomolecules3D() {
           );
         })}
       </div>
-      <div className="min-h-[420px] rounded-xl border border-border bg-card overflow-auto">
+      <div className="min-h-[clamp(320px,60vh,640px)] rounded-xl border border-border bg-card overflow-auto">
         {tab === "intro" && <IntroView />}
         {tab === "carbs" && <CarbsView />}
         {tab === "proteins" && <ProteinsView />}

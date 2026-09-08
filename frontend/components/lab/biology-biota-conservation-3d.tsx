@@ -225,7 +225,7 @@ export function BiologyBiotaConservation3D() {
           );
         })}
       </div>
-      <div className="min-h-[280px] rounded-xl border border-border bg-card overflow-auto">
+      <div className="min-h-[clamp(320px,60vh,640px)] rounded-xl border border-border bg-card overflow-auto">
         {tab === "adaptation" && <AdaptationsView />}
         {tab === "behavior" && <BehaviorView />}
         {tab === "conservation" && <ConservationView />}

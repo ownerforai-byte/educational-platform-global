@@ -34,7 +34,7 @@ export function LabWorkspace({ type, children, className }: LabWorkspaceProps) {
       {/* Content Area - Responsive height for 3D, auto for others */}
       <div className={cn(
         "flex-1 p-4",
-        type === "3d" && "min-h-[400px] max-h-[600px] overflow-auto"
+        type === "3d" && "min-h-[clamp(320px,60vh,640px)] max-h-[clamp(320px,60vh,640px)] overflow-auto"
       )}>
         {children}
       </div>

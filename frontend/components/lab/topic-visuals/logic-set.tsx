@@ -206,10 +206,14 @@ export function LogicSetVisual() {
         renderer.setSize(container.clientWidth, container.clientHeight);
       };
       window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
 
       return () => {
         cancelAnimationFrame(frameId);
         window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
         if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
         meshes.forEach((m) => {
           scene.remove(m);
@@ -255,7 +259,7 @@ export function LogicSetVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[420px] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
 
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Key Concepts</p>

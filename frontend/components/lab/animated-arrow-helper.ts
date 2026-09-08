@@ -245,6 +245,8 @@ export class LiveArrow extends THREE.ArrowHelper {
   private baseHeadLength = 0.2;
   private baseHeadWidth = 0.12;
   private disposables: Array<() => void> = [];
+  /** Per-arrow random phase so multiple arrows never pulse in unison. */
+  private phase = Math.random() * Math.PI * 2;
 
   constructor(
     dir: THREE.Vector3,
@@ -304,25 +306,39 @@ export class LiveArrow extends THREE.ArrowHelper {
 
     // Animate every frame via onBeforeRender — no changes needed in the host render loop.
     this.onBeforeRender = () => {
-      const t = performance.now() / 1000;
+      const t = performance.now() / 1000 + this.phase;
+
+      // Dynamic length breathing — the arrow visibly grows/shrinks around its
+      // base magnitude each frame (like vectors in the live simulations).
+      const breathe = 1 + Math.sin(t * 2.2) * 0.05;
+      const shaftLen = Math.max(0.0001, this.baseLength - this.baseHeadLength) * breathe;
+      this.line.scale.set(1, shaftLen, 1);
+      this.line.updateMatrix();
+      this.cone.position.y = Math.max(0.0001, this.baseLength * breathe);
+      this.cone.updateMatrix();
 
       const pulse = 1 + Math.sin(t * 2.2) * 0.12;
       (this.line.material as THREE.LineBasicMaterial).opacity = 0.75 + Math.sin(t * 2.2) * 0.2;
       (this.cone.material as THREE.MeshBasicMaterial).opacity = 0.85 + Math.sin(t * 2.2 + 0.6) * 0.15;
-      this.cone.scale.setScalar(pulse);
+      this.cone.scale.set(
+        this.baseHeadWidth * pulse,
+        this.baseHeadLength * pulse,
+        this.baseHeadWidth * pulse
+      );
+      this.cone.updateMatrix();
 
       if (this.glowMaterial) {
         this.glowMaterial.opacity = 0.12 + (Math.sin(t * 1.8) * 0.5 + 0.5) * 0.12;
       }
       if (this.glowMesh) {
-        this.glowMesh.scale.set(1 + Math.sin(t * 2.2) * 0.15, 1, 1 + Math.sin(t * 2.2) * 0.15);
+        this.glowMesh.scale.set(1 + Math.sin(t * 2.2) * 0.15, shaftLen / Math.max(0.001, this.glowBaseHeight), 1 + Math.sin(t * 2.2) * 0.15);
       }
 
       // Particles flow origin → tip
       const flow = Math.max(0.001, this.baseLength - this.baseHeadLength);
       this.particles.forEach((p, i) => {
-        this.particleOffsets[i] = (this.particleOffsets[i] + 0.008) % 1;
-        const d = this.particleOffsets[i] * flow;
+        this.particleOffsets[i] = (this.particleOffsets[i] + 0.01) % 1;
+        const d = this.particleOffsets[i] * flow * breathe;
         p.position.set(0, d, 0);
         p.position.applyQuaternion(this.quaternion);
         const s = 0.7 + (Math.sin(t * 3 + i * 1.7) * 0.5 + 0.5) * 0.6;

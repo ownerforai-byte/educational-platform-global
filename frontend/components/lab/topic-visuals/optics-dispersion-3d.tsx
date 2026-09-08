@@ -173,7 +173,7 @@ export default function OpticsDispersion3d() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div ref={containerRef} className="h-[400px] w-full rounded-md overflow-hidden mb-4" />
+        <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4" />
         <CollapsibleControls label="Prism Parameters">
           <div className="space-y-4">
             <div className="space-y-2">

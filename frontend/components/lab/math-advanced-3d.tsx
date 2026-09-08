@@ -117,8 +117,12 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           renderer.setSize(container.clientWidth, container.clientHeight);
         }
         window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
         return () => {
           window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
           renderer.dispose();
           if (container && renderer.domElement.parentNode === container) container.removeChild(renderer.domElement);
         };
@@ -143,7 +147,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             <div className="space-y-1"><Label htmlFor="tmax">t max</Label><Input id="tmax" value={tMax} onChange={(e) => setTMax(e.target.value)} /></div>
           </div>
         </CollapsibleControls>
-        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D parametric curve" />}
+        {error ? <WebGLFallback /> : <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D parametric curve" />}
         <p className="text-xs text-muted-foreground">Enter parametric equations x(t), y(t), z(t). Supports: +, -, *, /, ^, sin, cos, tan, sqrt, abs, exp, log, pi. Green = start, Red = end.</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>
@@ -291,7 +295,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             </Select>
           </div>
         </CollapsibleControls>
-        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D vector field" />
+        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D vector field" />
         <p className="text-xs text-muted-foreground">Blue arrows show vector field F(x,y,z) at grid points. Arrow length = magnitude. Vortex: F = (-y, x, 0.1z). Saddle: F = (x, -y, z). Radial: F = (x, y, z).</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>
@@ -443,7 +447,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
             <Input id="func" value={func} onChange={(e) => setFunc(e.target.value)} placeholder="e.g. z^2, sin(z), 1/z" />
           </div>
         </CollapsibleControls>
-        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg border border-border" aria-label="3D complex function" />
+        <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D complex function" />
         <p className="text-xs text-muted-foreground">Domain coloring with height = log|f(z)|. Hue = arg(f(z)). Red = real axis, Blue = imaginary. Supports: +, -, *, /, ^, sin, cos, tan, sqrt, abs, exp, log, pi, i.</p>
               <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>

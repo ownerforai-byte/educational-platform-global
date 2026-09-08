@@ -123,7 +123,7 @@ function ContentPanel({ topicId }: { topicId: string }) {
       </div>
 
       {/* 3D visualization area */}
-      <div className="min-h-[260px] rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-[clamp(320px,60vh,640px)] rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ background: `radial-gradient(circle at 30% 40%, ${color}, transparent 70%)` }} />
         <div className="text-center space-y-3 z-10 p-6">
           <div
@@ -248,7 +248,7 @@ export function BiologySyllabus3D() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4 min-h-[400px]">
+      <div className="flex flex-col lg:flex-row gap-4 min-h-[clamp(320px,60vh,640px)]">
         {/* Topic list */}
         <div className="lg:w-64 shrink-0 space-y-1.5 overflow-y-auto pr-1">
           {topics.map((t) => (
@@ -302,7 +302,7 @@ export function BiologyCell3D() {
         <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center"><Microscope className="h-5 w-5 text-green-600" /></div>
         <div><h2 className="font-semibold text-base">Cell Structure 3D</h2><p className="text-xs text-muted-foreground">Plant & animal cell ultrastructure</p></div>
       </div>
-      <div className="flex gap-4 min-h-[300px]">
+      <div className="flex gap-4 min-h-[clamp(320px,60vh,640px)]">
         <div className="w-40 shrink-0 space-y-1.5 overflow-y-auto">
           {["nucleus", "mitochondria", "chloroplast", "er", "golgi", "ribosome", "lysosome", "membrane", "wall"].map((o) => (
             <button key={o} onClick={() => setActiveOrganelle(o)} className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-all ${activeOrganelle === o ? "bg-green-500/15 text-green-700 border border-green-500/30" : "hover:bg-muted/50 text-muted-foreground"}`}>
@@ -310,7 +310,7 @@ export function BiologyCell3D() {
             </button>
           ))}
         </div>
-        <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[280px]">
+        <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[clamp(320px,60vh,640px)]">
           <div className="text-center space-y-2">
             <div className="w-14 h-14 mx-auto rounded-full bg-green-500/10 border-2 border-green-500/30 flex items-center justify-center animate-pulse-subtle"><Microscope className="h-7 w-7 text-green-600" /></div>
             <p className="font-semibold text-foreground text-sm capitalize">{activeOrganelle}</p>
@@ -352,7 +352,7 @@ export function BiologyDNA3D() {
           </button>
         ))}
       </div>
-      <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[280px]">
+      <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[clamp(320px,60vh,640px)]">
         <div className="text-center space-y-2">
           <div className="w-14 h-14 mx-auto rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 flex items-center justify-center"><Dna className="h-7 w-7 text-emerald-600" /></div>
           <p className="font-semibold text-foreground text-sm capitalize">{mode}</p>
@@ -375,7 +375,7 @@ export function BiologyEcology3D() {
         <div className="w-10 h-10 rounded-xl bg-lime-500/10 flex items-center justify-center"><TreeDeciduous className="h-5 w-5 text-lime-600" /></div>
         <div><h2 className="font-semibold text-base">Ecology & Ecosystem 3D</h2><p className="text-xs text-muted-foreground">Food chains, biogeochemical cycles, population dynamics</p></div>
       </div>
-      <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[280px]">
+      <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[clamp(320px,60vh,640px)]">
         <div className="text-center space-y-3 p-6">
           <div className="w-14 h-14 mx-auto rounded-full bg-lime-500/10 border-2 border-lime-500/30 flex items-center justify-center animate-pulse-subtle"><TreeDeciduous className="h-7 w-7 text-lime-600" /></div>
           <p className="font-semibold text-foreground">Ecosystem Explorer</p>
@@ -420,7 +420,7 @@ export function BiologyHuman3D() {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-[280px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-[clamp(320px,60vh,640px)]">
         <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[200px]">
           <div className="text-center">
             <Heart className="h-10 w-10 mx-auto mb-2" style={{ color: systems.find(s => s.id === system)?.color }} />
@@ -447,7 +447,7 @@ export function BiologyEvolution3D() {
         <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center"><Users className="h-5 w-5 text-amber-600" /></div>
         <div><h2 className="font-semibold text-base">Evolution & Classification 3D</h2><p className="text-xs text-muted-foreground">Phylogenetic trees, taxonomy, natural selection</p></div>
       </div>
-      <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[280px]">
+      <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[clamp(320px,60vh,640px)]">
         <div className="text-center space-y-3 p-6">
           <div className="w-14 h-14 mx-auto rounded-full bg-amber-500/10 border-2 border-amber-500/30 flex items-center justify-center"><Users className="h-7 w-7 text-amber-600" /></div>
           <p className="font-semibold text-foreground">Evolution Explorer</p>
@@ -510,7 +510,7 @@ export function BiologyAdvanced3D() {
           );
         })}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-[300px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-[clamp(320px,60vh,640px)]">
         <div className="min-h-[240px] rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center">
           <div className="text-center space-y-3 p-6">
             <div className="w-16 h-16 mx-auto rounded-full border-2 flex items-center justify-center animate-pulse-subtle" style={{ borderColor: `${current.color}40`, backgroundColor: `${current.color}10` }}>
