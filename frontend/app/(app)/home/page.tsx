@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SYLLABUS } from "@/lib/syllabus";
 import { StudyChat } from "@/components/chat/study-chat";
+import { getTheoremIndex } from "@/lib/theorems";
 import {
   BookOpen,
   FlaskConical,
@@ -11,6 +12,7 @@ import {
   Play,
   CheckCircle2,
   Trophy,
+  ChevronRight,
 } from "lucide-react";
 
 const SUBJECT_CONFIG: Record<string, { icon: string; color: string; gradient: string; labs: string }> = {
@@ -31,12 +33,24 @@ const FEATURES = [
   { icon: BookOpen, title: "Complete Notes", desc: "Full NEB-aligned notes, formula sheets, and mind maps for every chapter.", count: "ALL", color: "text-teal-400" },
 ];
 
-export default function HomePage() {
+async function getTheoremsSummary() {
+  const entries = await getTheoremIndex();
+  const byClass = new Map<string, Map<string, number>>();
+  for (const e of entries) {
+    const subjectMap = byClass.get(e.classSlug) ?? new Map();
+    subjectMap.set(e.subjectSlug, (subjectMap.get(e.subjectSlug) ?? 0) + 1);
+    byClass.set(e.classSlug, subjectMap);
+  }
+  return { entries, byClass };
+}
+
+export default async function HomePage() {
   const class11 = SYLLABUS.find((c) => c.slug === "class-11-notes")!;
   const class12 = SYLLABUS.find((c) => c.slug === "class-12-notes")!;
   const allSubjects = [...class11.subjects, ...class12.subjects].filter(
     (s, i, arr) => arr.findIndex((x) => x.slug === s.slug) === i
   );
+  const { entries: theoremEntries, byClass } = await getTheoremsSummary();
 
   return (
     <div className="min-h-screen bg-background">
@@ -86,7 +100,7 @@ export default function HomePage() {
           {[
             { label: "Subjects", value: "6" },
             { label: "3D Labs", value: "96+" },
-            { label: "Theorem Proofs", value: "29+" },
+            { label: "Theorem Proofs", value: String(theoremEntries.length) + "+" },
             { label: "Practice Tests", value: "500+" },
             { label: "Topics Covered", value: "ALL" },
           ].map((s) => (
@@ -167,12 +181,72 @@ export default function HomePage() {
       </section>
 
       {/* AI Lab Tutor - Interactive Chat */}
-      <section className="mx-auto max-w-6xl px-4 pb-16">
+      <section className="mx-auto max-w-6xl px-4 pb-8">
         <div className="mb-6">
           <h2 className="text-2xl font-bold tracking-tight">AI Study Assistant</h2>
           <p className="text-sm text-muted-foreground mt-1">Ask anything about your NEB subjects — get instant explanations and resources</p>
         </div>
         <StudyChat compact={false} />
+      </section>
+
+      {/* Theorems & Proofs */}
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight">Theorems &amp; Proofs</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              {theoremEntries.length} theorem entries across {byClass.size} class track{byClass.size !== 1 ? "s" : ""}
+            </p>
+          </div>
+          <Link
+            href="/theorems"
+            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            View all <ChevronRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        {theoremEntries.length === 0 ? (
+          <div className="rounded-2xl border border-border/60 bg-card p-8 text-center text-sm text-muted-foreground">
+            Theorem and proof content is being added — check back soon.
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {[...byClass.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([classSlug, subjectMap]) => {
+              const classLabel = classSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+              const totalForClass = [...subjectMap.values()].reduce((a, b) => a + b, 0);
+              return (
+                <div key={classSlug} className="rounded-2xl border border-border/60 bg-card overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border/60 bg-muted/30 flex items-center gap-3">
+                    <Trophy className="h-4 w-4 text-amber-400 shrink-0" />
+                    <span className="font-semibold text-sm">{classLabel}</span>
+                    <span className="text-xs text-muted-foreground">{totalForClass} theorem{totalForClass !== 1 ? "s" : ""}</span>
+                  </div>
+                  <div className="grid gap-2 p-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {[...subjectMap.entries()]
+                      .sort(([a], [b]) => a.localeCompare(b))
+                      .map(([subjectSlug, count]) => (
+                        <Link
+                          key={subjectSlug}
+                          href={`/theorems/${classSlug}/${subjectSlug}`}
+                          className="flex items-center gap-3 rounded-xl border border-border/50 px-4 py-3 transition-colors hover:border-primary/40 hover:bg-primary/5"
+                        >
+                          <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
+                            <BookOpen className="h-4 w-4" />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium capitalize truncate">{subjectSlug}</p>
+                            <p className="text-xs text-muted-foreground">{count} theorem{count !== 1 ? "s" : ""}</p>
+                          </div>
+                          <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto shrink-0" />
+                        </Link>
+                      ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </section>
     </div>
   );
