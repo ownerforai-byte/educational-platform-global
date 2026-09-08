@@ -3,10 +3,18 @@ import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
 
 const router = Router();
-const aiService = createAIService();
+
+// Lazy init: create service on first request so dotenv has already loaded
+// env vars (AGNES_API_KEY, GEMINI_API_KEY, OPENROUTER_API_KEY, etc.).
+let _service: ReturnType<typeof createAIService> | null = null;
+function getService() {
+  if (!_service) _service = createAIService();
+  return _service;
+}
 
 // List available providers (no auth required)
 router.get("/providers", (_req: Request, res: Response) => {
+  const aiService = getService();
   const providers = aiService.getProviders();
   const defaultProvider = aiService.getDefaultProvider();
   res.json({ providers, defaultProvider });
@@ -24,6 +32,8 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       res.status(400).json({ error: "messages array is required" });
       return;
     }
+
+    const aiService = getService();
 
     // Handle streaming
     if (stream) {

@@ -40,19 +40,33 @@ async function requireTeacher(req: Request, res: Response) {
 }
 
 router.get("/", async (_req: Request, res: Response) => {
-  const { data, error } = await supabaseAdmin
-    .from("resources")
-    .select("*")
-    .eq("is_published", true)
-    .order("type", { ascending: true })
-    .limit(50);
+  try {
+    const topicId = typeof _req.query.topic_id === "string" ? _req.query.topic_id : undefined;
 
-  if (error) {
-    res.status(500).json({ error: error.message });
-    return;
+    let query = supabaseAdmin
+      .from("resources")
+      .select("*")
+      .eq("is_published", true)
+      .order("type", { ascending: true });
+
+    if (topicId) {
+      query = query.eq("topic_id", topicId);
+    } else {
+      query = query.limit(50);
+    }
+
+    const { data, error } = await query;
+
+    if (error) {
+      res.status(500).json({ error: error.message });
+      return;
+    }
+
+    res.json(data ?? []);
+  } catch (err: any) {
+    console.error("resources GET failed:", err);
+    res.status(500).json({ error: err.message || "Internal server error" });
   }
-
-  res.json(data ?? []);
 });
 
 router.post("/", async (req: Request, res: Response) => {
@@ -113,6 +127,28 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 
   res.json(data);
+});
+
+router.get("/:id/linked", async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+
+    const { data, error } = await supabaseAdmin
+      .from("resource_references")
+      .select("id, reference_type, attribution, referenced:referenced_id(*)")
+      .eq("resource_id", id);
+
+    if (error) {
+      console.error("linked resources lookup failed:", error.message);
+      res.status(500).json({ error: error.message });
+      return;
+    }
+
+    res.json(data ?? []);
+  } catch (err: any) {
+    console.error("linked resources lookup failed:", err);
+    res.status(500).json({ error: err.message || "Internal server error" });
+  }
 });
 
 // Strict field allowlist for PATCH. Service-role key makes RLS inert, so this

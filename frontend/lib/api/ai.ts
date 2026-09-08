@@ -41,9 +41,9 @@ export async function* streamChat(
 
   const response = await fetch("/api/ai", {
     method: "POST",
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${localStorage.getItem("neb_token")}`,
     },
     body: JSON.stringify(body),
   });

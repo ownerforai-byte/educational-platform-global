@@ -36,6 +36,7 @@ export function ResourceLinkForm({
     try {
       const res = await fetch(`/api/resources/${resourceId}/link`, {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           resource_id: resourceId,

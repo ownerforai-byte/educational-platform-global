@@ -366,9 +366,11 @@ export async function getResourceById(resourceId: string) {
   }
 }
 
-export async function getLinkedResources(resourceId: string) {
+export async function getLinkedResources(
+  resourceId: string
+): Promise<TopicDetail["linkedResources"]> {
   try {
-    const data = await apiFetch<Resource[]>(
+    const data = await apiFetch<TopicDetail["linkedResources"]>(
       `/api/resources/${encodeURIComponent(resourceId)}/linked`
     );
     return data ?? [];
@@ -395,12 +397,7 @@ export async function getTopicDetail(
   if (!topic) return null;
 
   const resources = await getResourcesByTopic(topic.id);
-  let linkedResources: TopicDetail["linkedResources"] = [];
-  try {
-    linkedResources = [];
-  } catch {
-    linkedResources = [];
-  }
+  const linkedResources = await getLinkedResources(topic.id);
 
   return { topic, resources, linkedResources };
 }
@@ -443,13 +440,22 @@ export async function getSubjectDetail(
   let progressData: { chapterId: string; completed: number; total: number }[] =
     [];
   try {
+    const chapterDetails = await Promise.all(
+      chapters.map((c) =>
+        getChapterDetail(levelSlug, classSlug, subjectSlug, c.slug)
+      )
+    );
+    progressData = chapters.map((c, i) => ({
+      chapterId: c.id,
+      completed: chapterDetails[i]?.progress.completed ?? 0,
+      total: chapterDetails[i]?.progress.total ?? 0,
+    }));
+  } catch {
     progressData = chapters.map((c) => ({
       chapterId: c.id,
       completed: 0,
       total: 0,
     }));
-  } catch {
-    progressData = [];
   }
 
   return { subject, chapters, chapterProgress: progressData };

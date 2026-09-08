@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { SessionUser } from "../types";
+import { getSession } from "@/lib/api/auth";
 
 export function useSession() {
   const [user, setUser] = useState<SessionUser | null>(null);
@@ -13,14 +14,9 @@ export function useSession() {
 
     const load = async () => {
       try {
-        const res = await fetch("/api/auth/me");
+        const data = await getSession();
         if (cancelled) return;
-        if (!res.ok) {
-          setUser(null);
-          return;
-        }
-        const data = await res.json();
-        if (!cancelled) setUser(data?.user ?? null);
+        setUser(data.user ?? null);
       } catch {
         if (!cancelled) setUser(null);
       } finally {
