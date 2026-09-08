@@ -13,6 +13,13 @@
 
 import { SYLLABUS } from "@/lib/syllabus";
 import type { SyllabusUnit, SubjectSyllabus } from "@/lib/syllabus";
+import { join, resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Resolve the project root from this module's location (frontend/lib/legend.ts → two levels up).
+// This avoids relying on process.cwd(), which differs between build and dev servers.
+const __filename = fileURLToPath(import.meta.url);
+const PROJECT_ROOT = resolve(dirname(__filename), "..", "..");
 
 // Server-only fs imports — dynamically loaded to avoid client-side crash
 async function getFs() {
@@ -166,8 +173,12 @@ function extractFacts(notes: string[]): LegendFact[] {
     const trimmed = note.trim();
     if (!trimmed) continue;
 
-    // Detect formulas (lines containing math patterns)
-    if (/\\\[|\\\(|\\left|\\right|\\frac|\\lim|\\int|\\sum|\\prod|\\sqrt|\\hat|\\vec|\\mathbf|\\textbf|\\mathrm/.test(trimmed)) {
+    // Detect formulas (lines containing LaTeX/math patterns)
+    const latexPatterns = [
+      "\\[", "\\(", "\\right", "\\frac", "\\lim", "\\int", "\\sum", "\\prod",
+      "\\sqrt", "\\hat", "\\vec", "\\mathbf", "\\textbf", "\\mathrm",
+    ];
+    if (latexPatterns.some((p) => trimmed.includes(p))) {
       facts.push({ type: "formula", content: trimmed });
       continue;
     }
@@ -295,7 +306,7 @@ async function scanSubject(
   subjectSlug: string,
 ): Promise<LegendTopic[]> {
   const { join, readdir, readFile } = await getFs();
-  const baseDir = join(process.cwd(), "content", "ravikishan", classSlug, subjectSlug);
+  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
   const topics: LegendTopic[] = [];
 
   try {
@@ -312,7 +323,7 @@ async function scanSubject(
         for (const file of files) {
           if (!file.name.endsWith(".json")) continue;
           const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", file.name);
-          const raw = await readFile(filePath, "utf-8");
+          const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
           let parsed: Record<string, unknown>;
           try {
             parsed = JSON.parse(raw);
@@ -380,6 +391,31 @@ async function scanSubject(
   return topics;
 }
 
+/**
+ * Discover subject directories present on disk but not yet in SYLLABUS.
+ */
+async function getSubjectsForClass(classSlug: string): Promise<string[]> {
+  const { join, readdir } = await getFs();
+  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug);
+  try {
+    const items = await readdir(baseDir, { withFileTypes: true });
+    const syllabusSlugs = new Set(
+      SYLLABUS.find((c) => c.slug === classSlug)?.subjects.map((s) => s.slug) ?? [],
+    );
+    const discovered: string[] = [];
+    for (const item of items) {
+      if (!item.isDirectory() || item.name.startsWith(".")) continue;
+      if (item.name === "notes" || item.name === "pyqs" || item.name === "sets" || item.name === "examples") continue;
+      if (!syllabusSlugs.has(item.name)) {
+        discovered.push(item.name);
+      }
+    }
+    return discovered;
+  } catch {
+    return [];
+  }
+}
+
 // ─────────────────────────────────────────────────────────────
 // Index builders
 // ─────────────────────────────────────────────────────────────
@@ -392,8 +428,15 @@ export async function getLegendIndex(): Promise<LegendSubject[]> {
   const allTopics: LegendTopic[] = [];
 
   for (const cls of SYLLABUS) {
+    // Scan subjects registered in SYLLABUS
     for (const subject of cls.subjects) {
       const entries = await scanSubject(cls.slug, subject.slug);
+      allTopics.push(...entries);
+    }
+    // Also scan any subject directories present on disk but not yet in SYLLABUS
+    const extraSubjects = await getSubjectsForClass(cls.slug);
+    for (const subjectSlug of extraSubjects) {
+      const entries = await scanSubject(cls.slug, subjectSlug);
       allTopics.push(...entries);
     }
   }
