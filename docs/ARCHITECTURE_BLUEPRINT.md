@@ -648,6 +648,10 @@ ravikishan/
 │   │   │   │   └── page.tsx
 │   │   │   ├── credits/
 │   │   │   │   └── page.tsx
+│   │   │   ├── derivations/
+│   │   │   │   ├── [classSlug]/
+│   │   │   │   │   └── …
+│   │   │   │   └── page.tsx
 │   │   │   ├── exam-countdown/
 │   │   │   │   ├── layout.tsx
 │   │   │   │   └── page.tsx
@@ -1124,6 +1128,7 @@ ravikishan/
 │   │   ├── api.ts
 │   │   ├── curriculum.ts
 │   │   ├── data-loader.ts
+│   │   ├── derivations.ts
 │   │   ├── hast-util-from-html-isomorphic.js
 │   │   ├── imported-notes.ts
 │   │   ├── lab-annotations.ts
