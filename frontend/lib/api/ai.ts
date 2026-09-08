@@ -1,4 +1,4 @@
-import { apiFetch } from "../api-client";
+import { apiFetch, getAccessToken } from "../api-client";
 import type {
   AIChatMessage,
   AIChatRequest,
@@ -39,12 +39,18 @@ export async function* streamChat(
     body.provider = provider;
   }
 
+  const token = getAccessToken();
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+
   const response = await fetch("/api/ai", {
     method: "POST",
     credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers,
     body: JSON.stringify(body),
   });
 
