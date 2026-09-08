@@ -1727,6 +1727,7 @@ ravikishan/
 ├── add_patterns.js
 ├── add-getblock.js
 ├── add-name-texture.js
+├── add-theorems-nav.js
 ├── AGENT_RULES.md
 ├── agent.mjs
 ├── ai.bat
@@ -1755,8 +1756,7 @@ ravikishan/
 ├── debug_json.py
 ├── debug_regex.js
 ├── debug-all-remaining.js
-├── debug-bytes.js
-└── … (271 more entries)
+└── … (272 more entries)
 ```
 
 ## 🔁 Keeping this up to date

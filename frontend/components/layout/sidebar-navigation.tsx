@@ -26,6 +26,7 @@ import {
   Lightbulb,
   Flame,
   ClipboardList,
+  FileText,
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -51,6 +52,7 @@ const browseItems: NavItem[] = [
   { href: "/ai-quiz", label: "AI Quiz Generator", icon: Sparkles, badge: "AI" },
   { href: "/exam-countdown", label: "Exam Countdown", icon: ClipboardList },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
+  { href: "/theorems", label: "Theorems & Proofs", icon: FileText },
   { href: "/loksewa", label: "Loksewa", icon: Users },
   { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
   { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },
