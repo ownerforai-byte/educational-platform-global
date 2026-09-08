@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { loginAction } from "../actions";
+import { useAuth } from "@/providers/auth-provider";
 
 export function LoginForm() {
   const router = useRouter();
+  const { refresh } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +28,7 @@ export function LoginForm() {
     setLoading(false);
 
     if (result.ok) {
-      router.refresh();
+      refresh();
       router.push("/home");
     } else {
       setError(result.error);
@@ -81,6 +84,12 @@ export function LoginForm() {
             {loading ? "Signing in…" : "Sign In"}
           </Button>
         </form>
+        <p className="mt-4 text-center text-sm text-muted-foreground">
+          Don&apos;t have an account?{" "}
+          <Link href="/signup" className="font-medium text-primary hover:underline">
+            Sign up
+          </Link>
+        </p>
       </CardContent>
     </Card>
   );

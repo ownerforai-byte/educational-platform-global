@@ -1152,6 +1152,7 @@ ravikishan/
 │   │   ├── utils.ts
 │   │   └── webgl.ts
 │   ├── providers/
+│   │   ├── auth-provider.tsx
 │   │   └── query-provider.tsx
 │   ├── public/
 │   │   ├── data/

@@ -1,10 +1,19 @@
 import type { ApiError } from "../types/api";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
+/**
+ * API base URL strategy:
+ *  – Browser: empty string → relative paths → Next.js rewrite proxy handles /api/* → backend.
+ *    This avoids CORS entirely because the browser sees same-origin requests.
+ *  – Server (SSR / Node): absolute URL → direct server-to-server, no CORS needed.
+ */
+const API_BASE =
+  typeof window === "undefined"
+    ? process.env.NEXT_PUBLIC_API_URL || ""
+    : "";
 
 const TOKEN_KEY = "neb_access_token";
 
-/** Store the Supabase access token so subsequent requests can authenticate cross-origin. */
+/** Persist the Supabase access token so subsequent requests can attach it as a Bearer header. */
 export function setAccessToken(token: string | null): void {
   if (typeof window === "undefined") return;
   if (token) {
@@ -25,24 +34,18 @@ export type RequestOptions = RequestInit & {
 };
 
 function buildUrl(path: string, params?: Record<string, string | number>): string {
-  if (!API_BASE) {
-    // No base URL — relative path works through Next.js proxy (/api/* → backend)
-    let url = path;
-    if (params) {
-      const qs = Object.entries(params)
-        .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
-        .join("&");
-      if (qs) url += `?${qs}`;
-    }
-    return url;
+  let url = path;
+  if (API_BASE) {
+    // Server-side: construct absolute URL for direct backend calls.
+    url = new URL(path, API_BASE).toString();
   }
-  const url = new URL(path, API_BASE);
   if (params) {
-    for (const [key, value] of Object.entries(params)) {
-      url.searchParams.set(key, String(value));
-    }
+    const qs = Object.entries(params)
+      .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
+      .join("&");
+    if (qs) url += (url.includes("?") ? "&" : "?") + qs;
   }
-  return url.toString();
+  return url;
 }
 
 export async function apiFetch<T>(
@@ -52,15 +55,18 @@ export async function apiFetch<T>(
   const { params, ...fetchOptions } = options;
   const url = buildUrl(path, params);
 
-  // Attach the stored Bearer token for cross-origin auth.
+  // Attach the stored Bearer token for authenticated requests.
   const token = getAccessToken();
 
   // Build headers explicitly to avoid TS union-type spread issues.
-  const mergedHeaders: Record<string, string> = {
-    "Content-Type": "application/json",
-  };
+  const mergedHeaders: Record<string, string> = {};
   if (token) {
     mergedHeaders["Authorization"] = `Bearer ${token}`;
+  }
+  // Only set Content-Type for request bodies (GET/HEAD have no body).
+  const method = (fetchOptions.method ?? "GET").toUpperCase();
+  if (method !== "GET" && method !== "HEAD") {
+    mergedHeaders["Content-Type"] = "application/json";
   }
   if (fetchOptions.headers) {
     const h = fetchOptions.headers;

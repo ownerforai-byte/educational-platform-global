@@ -64,9 +64,16 @@ export function proxy(request: NextRequest) {
   response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "content-security-policy",
-    // 'unsafe-inline' and 'unsafe-eval' are needed for Next.js dev mode (Turbopack HMR).
-    // They are not required in production builds.
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'} https://tsvbksfegvdjwczzfdcx.supabase.co; frame-src 'none';"
+    [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: https:",
+      "font-src 'self' data:",
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
+      "frame-src 'none'",
+      "worker-src 'self' blob:",
+    ].join("; ") + ";",
   );
 
   return response;

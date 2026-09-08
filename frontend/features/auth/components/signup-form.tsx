@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { signupAction } from "../actions";
+import { useAuth } from "@/providers/auth-provider";
 
 export function SignupForm() {
   const router = useRouter();
+  const { refresh } = useAuth();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,7 +33,7 @@ export function SignupForm() {
     if (result.ok && result.message) {
       setMessage(result.message);
     } else if (result.ok) {
-      router.refresh();
+      refresh();
       router.push("/home");
     } else {
       setError(result.error);
@@ -38,7 +41,7 @@ export function SignupForm() {
   };
 
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm mx-auto">
       <CardHeader>
         <CardTitle className="text-lg text-center">Create Account</CardTitle>
       </CardHeader>
@@ -101,6 +104,12 @@ export function SignupForm() {
             {loading ? "Creating account…" : "Sign Up"}
           </Button>
         </form>
+        <p className="mt-4 text-center text-sm text-muted-foreground">
+          Already have an account?{" "}
+          <Link href="/login" className="font-medium text-primary hover:underline">
+            Sign in
+          </Link>
+        </p>
       </CardContent>
     </Card>
   );

@@ -5,6 +5,10 @@ import type { Request, Response, NextFunction } from "express";
  *   FRONTEND_URL=https://app.example.com,https://admin.example.com
  * The request Origin is reflected only when it matches an entry; no wildcard
  * is ever emitted (credentials are always allowed).
+ *
+ * On Vercel, each deployment gets a unique *.vercel.app URL, so we also
+ * accept any *.vercel.app origin when FRONTEND_URL is not set.  For
+ * production, always set FRONTEND_URL to your custom domain.
  */
 export function parseAllowedOrigins(raw: string | undefined): string[] {
   if (!raw) return [];
@@ -20,6 +24,22 @@ export function getAllowedOrigins(): string[] {
     origins.push("http://localhost:5173");
   }
   return Array.from(new Set(origins));
+}
+
+/** Check if a given origin is allowed. */
+export function isOriginAllowed(origin: string): boolean {
+  const allowed = getAllowedOrigins();
+  if (allowed.includes(origin)) return true;
+  // Allow Vercel preview deployments when FRONTEND_URL is not explicitly set.
+  if (allowed.length === 1 && allowed[0] === "http://localhost:5173") {
+    try {
+      const hostname = new URL(origin).hostname;
+      if (hostname.endsWith(".vercel.app")) return true;
+    } catch {
+      // not a valid URL — fall through
+    }
+  }
+  return false;
 }
 
 export function corsMiddleware(req: Request, res: Response, next: NextFunction) {

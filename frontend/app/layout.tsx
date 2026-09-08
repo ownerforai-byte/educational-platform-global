@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
+import { AuthProvider } from "@/providers/auth-provider";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
 
 export const metadata: Metadata = {
@@ -40,8 +41,10 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
-            <ServiceWorkerRegistrar />
-            {children}
+            <AuthProvider>
+              <ServiceWorkerRegistrar />
+              {children}
+            </AuthProvider>
           </ThemeProvider>
         </QueryProvider>
       </body>

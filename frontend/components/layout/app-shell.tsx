@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { PanelLeftClose, PanelLeftOpen, LogOut, LogIn, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
@@ -10,6 +11,9 @@ import { BackButton } from "@/components/navigation/back-button";
 import { AIWidget } from "./ai-widget";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { GlobalSearch } from "./global-search";
+import { useAuth } from "@/providers/auth-provider";
+import { logoutAction } from "@/features/auth/actions";
+import { setAccessToken } from "@/lib/api-client";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -18,6 +22,8 @@ interface AppShellProps {
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const { user, isLoading, refresh } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     const saved = localStorage.getItem("sidebar-collapsed");
@@ -29,6 +35,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   useEffect(() => {
     localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed));
   }, [sidebarCollapsed]);
+
+  const handleLogout = async () => {
+    await logoutAction();
+    setAccessToken(null);
+    refresh();
+    router.push("/");
+  };
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -70,8 +83,41 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <GlobalSearch />
         </div>
 
-          {/* Right: theme toggle only */}
+          {/* Right: auth + theme toggle */}
           <div className="flex items-center gap-1.5 shrink-0">
+            {isLoading ? (
+              <div className="h-8 w-8 rounded-full bg-muted animate-pulse" />
+            ) : user ? (
+              <div className="flex items-center gap-2">
+                <span className="hidden md:block text-xs font-medium text-muted-foreground truncate max-w-[120px]">
+                  {user.fullName || user.email}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 rounded-xl text-muted-foreground hover:text-destructive"
+                  onClick={handleLogout}
+                  title="Log out"
+                >
+                  <LogOut className="h-4 w-4" />
+                </Button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-1">
+                <Button variant="ghost" size="sm" asChild className="h-8 rounded-xl text-xs font-medium">
+                  <Link href="/login">
+                    <LogIn className="h-3.5 w-3.5 mr-1" />
+                    <span className="hidden sm:inline">Log in</span>
+                  </Link>
+                </Button>
+                <Button size="sm" asChild className="h-8 rounded-xl text-xs font-medium">
+                  <Link href="/signup">
+                    <UserPlus className="h-3.5 w-3.5 mr-1" />
+                    <span className="hidden sm:inline">Sign up</span>
+                  </Link>
+                </Button>
+              </div>
+            )}
             <ThemeToggle />
           </div>
         </div>

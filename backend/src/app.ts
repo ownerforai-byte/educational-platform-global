@@ -27,7 +27,7 @@ import adminRoutes from "./api/admin";
 import userRoutes from "./api/user";
 import biologyRoutes from "./api/biology";
 import { rateLimit } from "./middleware/rateLimit";
-import { getAllowedOrigins } from "./middleware/cors";
+import { isOriginAllowed } from "./middleware/cors";
 
 export function createApp(): express.Express {
   const app = express();
@@ -37,9 +37,9 @@ export function createApp(): express.Express {
   app.use(
     cors({
       // Reflect only allow-listed origins (FRONTEND_URL may be comma-separated).
-      // No wildcard — authenticated traffic uses credentials.
+      // Also allows *.vercel.app previews when FRONTEND_URL is not set.
       origin(origin, cb) {
-        if (!origin || getAllowedOrigins().includes(origin)) return cb(null, true);
+        if (!origin || isOriginAllowed(origin)) return cb(null, true);
         return cb(null, false);
       },
       credentials: true,
