@@ -43,6 +43,8 @@ export function createApp(): express.Express {
         return cb(null, false);
       },
       credentials: true,
+      // Allow Authorization header so cross-origin Bearer token auth works.
+      allowedHeaders: ["Content-Type", "Authorization"],
     }),
   );
   app.use(morgan("combined"));
