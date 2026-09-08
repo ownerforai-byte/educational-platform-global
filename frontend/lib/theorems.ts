@@ -111,6 +111,33 @@ export async function readTheoremContent(filePath: string): Promise<any> {
   return parsed;
 }
 
+const LEGACY_CLASS_SLUGS = new Set(["class-11", "class-12", "class-11e"]);
+
+/**
+ * Heuristic to detect placeholder / auto-generated entries that are not real theorem content.
+ * These come from generic template files whose notes contain boilerplate like
+ * "Statement 2: Theorem related to X" or filenames like Matrix5.02, Limits5.1, N1.
+ */
+function isPlaceholderEntry(topicTitle: string, topicSlug: string, raw: string): boolean {
+  const titleLower = topicTitle.toLowerCase();
+  const slugLower = topicSlug.toLowerCase();
+
+  // Obvious placeholder filenames
+  if (/^(matrix\.\d+|limits?\d+\.?\d*|n\d+|geometry\s*\d+-\d+|\.000\d)/i.test(slugLower)) return true;
+
+  // Template-style titles
+  if (/^statement\s*\d+:\s*theorem/i.test(titleLower)) return true;
+  if (/theorem related to/i.test(titleLower) && titleLower.length < 60) return true;
+  if (/^generic theorem/i.test(titleLower)) return true;
+
+  // Content-level check: boilerplate practice/notes text
+  const lower = raw.toLowerCase();
+  if (/statement \d+: theorem related to/i.test(lower)) return true;
+  if (/derive the key formula for/i.test(lower) && !lower.includes("derivation")) return true;
+
+  return false;
+}
+
 function slugifyFileName(name: string): string {
   return name
     .replace(/\.json$/, "")
@@ -150,6 +177,7 @@ async function scanSubject(
           const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", conceptFile.name);
           const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
           if (!isTheoremNote(raw)) continue;
+          if (LEGACY_CLASS_SLUGS.has(classSlug)) continue;
 
           const topicSlug = slugifyFileName(conceptFile.name);
           const snippets = extractSnippets(raw);
@@ -160,6 +188,8 @@ async function scanSubject(
             topicTitle = parsed.title ?? conceptFile.name;
           } catch { /* fallback to filename */ }
           if (!topicTitle) topicTitle = conceptFile.name.replace(/\.json$/, "");
+
+          if (isPlaceholderEntry(topicTitle, topicSlug, raw)) continue;
 
           entries.push({
             classSlug,

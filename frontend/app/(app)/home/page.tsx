@@ -27,13 +27,21 @@ const SUBJECT_CONFIG: Record<string, { icon: string; color: string; gradient: st
 };
 
 const FEATURES = [
-  { icon: FlaskConical, title: "3D Interactive Labs", desc: "Every topic comes with a dedicated 3D animation — drag, zoom, and explore.", count: "96+", color: "text-violet-400" },
-  { icon: Brain, title: "AI Tutor (Agnes)", desc: "Ask any question and get instant, syllabus-aligned explanations.", count: "UNLIMITED", color: "text-emerald-400" },
-  { icon: Target, title: "Practice Tests", desc: "PYQs, quizzes, and numerical problems for every unit and topic.", count: "500+", color: "text-sky-400" },
-  { icon: TrendingUp, title: "Progress Tracking", desc: "Track your completion across all 6 subjects with visual analytics.", count: "REAL-TIME", color: "text-amber-400" },
-  { icon: Trophy, title: "Theorem Proofs", desc: "Step-by-step proofs for all mathematics theorems — algebra, trig, calculus.", count: "29+", color: "text-rose-400" },
-  { icon: BookOpen, title: "Complete Notes", desc: "Full NEB-aligned notes, formula sheets, and mind maps for every chapter.", count: "ALL", color: "text-teal-400" },
+  { icon: FlaskConical, title: "3D Interactive Labs", desc: "Every topic comes with a dedicated 3D animation — drag, zoom, and explore.", countId: "labs", color: "text-violet-400" },
+  { icon: Brain, title: "AI Tutor (Agnes)", desc: "Ask any question and get instant, syllabus-aligned explanations.", countId: "ai", color: "text-emerald-400" },
+  { icon: Target, title: "Practice Tests", desc: "PYQs, quizzes, and numerical problems for every unit and topic.", countId: "tests", color: "text-sky-400" },
+  { icon: TrendingUp, title: "Progress Tracking", desc: "Track your completion across all 6 subjects with visual analytics.", countId: "progress", color: "text-amber-400" },
+  { icon: Trophy, title: "Theorem Proofs", desc: "Step-by-step proofs for all mathematics theorems — algebra, trig, calculus.", countId: "theorems", color: "text-rose-400" },
+  { icon: BookOpen, title: "Complete Notes", desc: "Full NEB-aligned notes, formula sheets, and mind maps for every chapter.", countId: "notes", color: "text-teal-400" },
 ];
+
+const FEATURE_COUNTS: Record<string, string> = {
+  labs: "96+",
+  ai: "UNLIMITED",
+  tests: "500+",
+  progress: "REAL-TIME",
+  notes: "ALL",
+};
 
 async function getTheoremsSummary() {
   const entries = await getTheoremIndex();
@@ -131,17 +139,20 @@ export default async function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-12">
         <h2 className="text-2xl font-bold tracking-tight mb-6">Platform Features</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-primary/30 hover:shadow-lg"
-            >
-              <f.icon className={`h-8 w-8 ${f.color} mb-3`} />
-              <h3 className="font-semibold text-foreground">{f.title}</h3>
-              <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{f.desc}</p>
-              <p className="text-xs font-mono text-primary mt-2">{f.count} available</p>
-            </div>
-          ))}
+          {FEATURES.map((f) => {
+            const count = f.countId === "theorems" ? `${theoremEntries.length}+` : (FEATURE_COUNTS[f.countId] ?? "?");
+            return (
+              <div
+                key={f.title}
+                className="rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-primary/30 hover:shadow-lg"
+              >
+                <f.icon className={`h-8 w-8 ${f.color} mb-3`} />
+                <h3 className="font-semibold text-foreground">{f.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{f.desc}</p>
+                <p className="text-xs font-mono text-primary mt-2">{count} available</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 

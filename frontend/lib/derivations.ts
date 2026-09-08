@@ -92,6 +92,27 @@ function slugifyFileName(name: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+const LEGACY_CLASS_SLUGS = new Set(["class-11", "class-12", "class-11e"]);
+
+/**
+ * Heuristic to detect placeholder / auto-generated entries that are not real derivation content.
+ */
+function isPlaceholderEntry(topicTitle: string, topicSlug: string, raw: string): boolean {
+  const titleLower = topicTitle.toLowerCase();
+  const slugLower = topicSlug.toLowerCase();
+
+  if (/^(matrix\.\d+|limits?\d+\.?\d*|n\d+|geometry\s*\d+-\d+|\.000\d)/i.test(slugLower)) return true;
+  if (/^statement\s*\d+:\s*theorem/i.test(titleLower)) return true;
+  if (/theorem related to/i.test(titleLower) && titleLower.length < 60) return true;
+  if (/^generic theorem/i.test(titleLower)) return true;
+
+  const lower = raw.toLowerCase();
+  if (/statement \d+: theorem related to/i.test(lower)) return true;
+  if (/derive the key formula for/i.test(lower) && !lower.includes("derivation")) return true;
+
+  return false;
+}
+
 async function scanSubject(
   classSlug: string,
   subjectSlug: string,
@@ -118,6 +139,7 @@ async function scanSubject(
           const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", conceptFile.name);
           const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
           if (!isDerivationNote(raw)) continue;
+          if (LEGACY_CLASS_SLUGS.has(classSlug)) continue;
 
           const topicSlug = slugifyFileName(conceptFile.name);
           const snippets = extractSnippets(raw);
@@ -127,6 +149,8 @@ async function scanSubject(
             topicTitle = parsed.title ?? conceptFile.name;
           } catch { /* fallback to filename */ }
           if (!topicTitle) topicTitle = conceptFile.name.replace(/\.json$/, "");
+
+          if (isPlaceholderEntry(topicTitle, topicSlug, raw)) continue;
 
           entries.push({
             classSlug,
