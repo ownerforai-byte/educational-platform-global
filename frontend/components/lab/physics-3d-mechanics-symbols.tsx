@@ -73,7 +73,7 @@ function Pendulum3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -118,7 +118,7 @@ const el = mount.current;
     sys.setPos(4, 0.6, pivot.y + 0.9, 0);
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, L, g, theta0, running]);
+  })();}, [webgl, L, g, theta0, running]);
 
 
   return (
@@ -210,7 +210,7 @@ function Projectile3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -264,7 +264,7 @@ const el = mount.current;
     if (ball) ball.position.set(pp[0], Math.max(pp[1], 0), 0);
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, v0, angle, g, running]);
+  })();}, [webgl, v0, angle, g, running]);
 
 
   return (
@@ -354,7 +354,7 @@ function Incline3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -396,7 +396,7 @@ const el = mount.current;
     updateRef.current = (time) => {
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, deg, mu, m]);
+  })();}, [webgl, deg, mu, m]);
 
 
   function downhill() {

@@ -53,7 +53,7 @@ export const ConcaveMirror3D: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -251,7 +251,7 @@ const container = mountRef.current!;
     updateRays(); if (labels[4]) { labels[4].position.x = (objectPosition + Math.abs(focalLength))/2; labels[4].position.y = objectHeight/2 + 0.5; }
     if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  }, [focalLength, objectPosition, showRays, showLabels, showFocus]);
+  })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
 
 
   return (

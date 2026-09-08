@@ -33,7 +33,7 @@ function Molecule3D() {
   const [molecule, setMolecule] = useState("h2o");
   const sceneRef = useRef<{ dispose: () => void } | null>(null);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     let cancelled = false;
     async function load() {
       try {
@@ -244,7 +244,7 @@ function Molecule3D() {
       cancelled = true;
       cleanup.then((fn) => fn?.());
     };
-  }, [molecule]);
+  })();}, [molecule]);
 
   useEffect(() => {
     return () => {
@@ -300,7 +300,7 @@ function PeriodicTable3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<{ dispose: () => void } | null>(null);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     let cancelled = false;
     async function load() {
       try {
@@ -442,7 +442,7 @@ function PeriodicTable3D() {
       cancelled = true;
       cleanup.then((fn) => fn?.());
     };
-  }, []);
+  })();}, []);
 
   useEffect(() => {
     return () => {

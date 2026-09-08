@@ -54,16 +54,29 @@ export async function apiFetch<T>(
 
   // Attach the stored Bearer token for cross-origin auth.
   const token = getAccessToken();
-  const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
+
+  // Build headers explicitly to avoid TS union-type spread issues.
+  const mergedHeaders: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+  if (token) {
+    mergedHeaders["Authorization"] = `Bearer ${token}`;
+  }
+  if (fetchOptions.headers) {
+    const h = fetchOptions.headers;
+    if (h instanceof Headers) {
+      h.forEach((v, k) => { mergedHeaders[k] = v; });
+    } else if (Array.isArray(h)) {
+      h.forEach(([k, v]) => { mergedHeaders[k] = v; });
+    } else {
+      Object.assign(mergedHeaders, h);
+    }
+  }
 
   const response = await fetch(url, {
     ...fetchOptions,
     credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-      ...authHeader,
-      ...(fetchOptions.headers || {}),
-    },
+    headers: mergedHeaders,
   });
 
   if (!response.ok) {

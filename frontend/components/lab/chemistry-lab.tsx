@@ -288,7 +288,7 @@ export function ChemistryLab() {
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -716,7 +716,7 @@ export function ChemistryLab() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [search, activeClass, blockFilter, autoRotate]);
+  })();}, [search, activeClass, blockFilter, autoRotate]);
 
   const hoveredGroup = hovered ? hovered.col : null;
   const hoveredPeriod = hovered ? hovered.row : null;

@@ -85,7 +85,7 @@ export const SearlesBarExperiment: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -295,7 +295,7 @@ const container = mountRef.current!;
     if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
   } catch { /* CSS2D not available */ }
-  }, [webGL, matIdx, barLengthCm, rodRadiusMm, flowGramPerMin, deltaThetaW, T1, T2]);
+  })();}, [webGL, matIdx, barLengthCm, rodRadiusMm, flowGramPerMin, deltaThetaW, T1, T2]);
 
 
   return (

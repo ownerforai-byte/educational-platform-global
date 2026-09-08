@@ -86,7 +86,7 @@ export const LeesDiscExperiment: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -267,7 +267,7 @@ const container = mountRef.current!;
     if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
   } catch { /* CSS2D not available */ }
-  }, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);
+  })();}, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);
 
 
   return (

@@ -64,7 +64,7 @@ function UnitCircle3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -114,7 +114,7 @@ const el = mount.current;
     updateRef.current = (time) => {
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, deg]);
+  })();}, [webgl, deg]);
 
 
   return (
@@ -192,7 +192,7 @@ function Tangent3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -249,7 +249,7 @@ const el = mount.current;
     updateRef.current = (time) => {
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, a, h, fn]);
+  })();}, [webgl, a, h, fn]);
 
 
   return (

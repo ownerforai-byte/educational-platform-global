@@ -285,8 +285,7 @@ const DotProduct3D: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
-    const ts = tsRef.current;
-    if (!ts) return;
+    const ts = tsRef.current!;
     clearGroup(ts.group);
 
 
@@ -474,8 +473,7 @@ const CrossProduct3D: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
-    const ts = tsRef.current;
-    if (!ts) return;
+    const ts = tsRef.current!;
     clearGroup(ts.group);
 
 

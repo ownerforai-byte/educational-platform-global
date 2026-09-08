@@ -68,7 +68,7 @@ function OhmsCircuit3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -145,7 +145,7 @@ const el = mount.current;
     if (charge) charge.position.set(cx, cy, 0);
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, V, R]);
+  })();}, [webgl, V, R]);
 
 
   return (
@@ -218,7 +218,7 @@ function WireForce3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -262,7 +262,7 @@ const el = mount.current;
     if (fArrow) fArrow.setLength(0.9 + Math.min(F, 3) * 0.45 + Math.sin(time * 4) * 0.05, 0.32, 0.18);
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, B, I, Lcm]);
+  })();}, [webgl, B, I, Lcm]);
 
 
   return (

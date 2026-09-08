@@ -53,8 +53,8 @@ function TransverseWave3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 4.6, 12), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 4.6, 12), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -70,7 +70,7 @@ function TransverseWave3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -122,7 +122,7 @@ const el = mount.current;
     if (dot) dot.position.set(Math.min(dotX, S), A * Math.sin(k * dotX - phase), 0);
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, A, lambda, speed, running]);
+  })();}, [webgl, A, lambda, speed, running]);
 
 
   return (
@@ -188,8 +188,8 @@ function DoubleSlit3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(-2, 0.5, 12.5), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(-2, 0.5, 12.5), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -205,7 +205,7 @@ function DoubleSlit3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -282,7 +282,7 @@ const el = mount.current;
     });
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, lambdaNm, dMm, Dm]);
+  })();}, [webgl, lambdaNm, dMm, Dm]);
 
 
   return (

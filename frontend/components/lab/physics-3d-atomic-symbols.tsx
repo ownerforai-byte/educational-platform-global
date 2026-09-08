@@ -67,7 +67,7 @@ function BohrAtom3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -108,7 +108,7 @@ const el = mount.current;
     if (electron) electron.position.set(Math.cos(a) * rN, Math.sin(a) * rN, 0);
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, n, Z]);
+  })();}, [webgl, n, Z]);
 
 
   return (
@@ -192,7 +192,7 @@ function Photoelectric3D() {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -251,7 +251,7 @@ const el = mount.current;
     });
     sys.render(ts.scene, ts.camera);
     };
-  }, [webgl, lambdaNm, metalIdx]);
+  })();}, [webgl, lambdaNm, metalIdx]);
 
 
   return (

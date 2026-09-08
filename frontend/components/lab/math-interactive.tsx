@@ -48,7 +48,7 @@ function FunctionGraph3D({
   const containerRef = useRef<HTMLDivElement>(null);
   const { error } = useWebGLCanvas(containerRef);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     let cancelled = false;
     async function load() {
       try {
@@ -194,7 +194,7 @@ function FunctionGraph3D({
     }
     load();
     return () => { cancelled = true; };
-  }, [fn, range, color, tangentAt]);
+  })();}, [fn, range, color, tangentAt]);
 
   if (error) {
     return <WebGLFallback title="3D Function Graph" description="WebGL is required to render the function as a 3D curve." />;
@@ -525,7 +525,7 @@ function Plotter3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { error } = useWebGLCanvas(containerRef);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     let cancelled = false;
     async function load() {
       try {
@@ -607,7 +607,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
     }
     load();
     return () => { cancelled = true; };
-  }, [expr, range]);
+  })();}, [expr, range]);
 
   return (
     <div className="space-y-3">

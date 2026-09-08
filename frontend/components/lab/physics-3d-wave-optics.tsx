@@ -16,6 +16,7 @@ import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 import { createLeaderLayer } from "./leader-lines";
 import {
   createThreeScene,
@@ -61,6 +62,8 @@ function makeBars(ts: ThreeScene, values: number[], baseX: number, baseY: number
 
 const InterferenceTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  let labelRenderer: any = null;
+  let leaderLayer: any = null;
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
@@ -199,6 +202,8 @@ const barMats = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.M
 
 const DiffractionTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  let labelRenderer: any = null;
+  let leaderLayer: any = null;
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
@@ -324,6 +329,8 @@ const barMats2 = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.
 
 const PolarizationTab: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  let labelRenderer: any = null;
+  let leaderLayer: any = null;
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());

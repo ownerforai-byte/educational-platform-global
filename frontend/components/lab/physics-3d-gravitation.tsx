@@ -53,7 +53,7 @@ const Gravitation3D: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -263,7 +263,7 @@ const container = mountRef.current!;
     
     if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  }, [orbitalRadius, planetSize, showOrbit, showVectors, showLabels, isAnimating]);
+  })();}, [orbitalRadius, planetSize, showOrbit, showVectors, showLabels, isAnimating]);
 
 
   return (
@@ -369,7 +369,7 @@ const GravitationalField: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -492,7 +492,7 @@ const container = mountRef.current!;
     updateRef.current = (time) => {
     if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  }, [fieldLines, showField, showLabels]);
+  })();}, [fieldLines, showField, showLabels]);
 
 
   return (

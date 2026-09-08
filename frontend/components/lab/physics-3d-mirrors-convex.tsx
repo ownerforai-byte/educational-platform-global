@@ -52,7 +52,7 @@ export const ConvexMirror3D: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -245,7 +245,7 @@ const container = mountRef.current!;
     updateRays();
     if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  }, [focalLength, objectPosition, showRays, showLabels, showFocus]);
+  })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
 
 
   return (

@@ -99,7 +99,7 @@ function ProjectileMotion3D() {
     setTrajectory(getTrajectoryPoints(velocity, angle, gravity));
   }, [velocity, angle, gravity, getTrajectoryPoints]);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -344,7 +344,7 @@ function ProjectileMotion3D() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [trajectory, showVectors, showPath, angle, velocity]);
+  })();}, [trajectory, showVectors, showPath, angle, velocity]);
 
   const handleRun = () => {
     ballIndexRef.current = 0;
@@ -487,7 +487,7 @@ function CircularMotion3D() {
   const [showCentripetal, setShowCentripetal] = useState(true);
   const [showVelocity, setShowVelocity] = useState(true);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -628,7 +628,7 @@ function CircularMotion3D() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [radius, speed, showVelocity, showCentripetal]);
+  })();}, [radius, speed, showVelocity, showCentripetal]);
 
   const angularVel = speed / radius;
   const linearVel = radius * angularVel;
@@ -714,7 +714,7 @@ function SHMViewer() {
   const [frequency, setFrequency] = useState(0.8);
   const [showTimeGraph, setShowTimeGraph] = useState(true);
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -844,7 +844,7 @@ function SHMViewer() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [amplitude, frequency, showTimeGraph]);
+  })();}, [amplitude, frequency, showTimeGraph]);
 
   const period = 1 / frequency;
   const angularFreq = 2 * Math.PI * frequency;

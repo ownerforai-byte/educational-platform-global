@@ -81,7 +81,7 @@ export const LinearExpansionExperiment: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -303,7 +303,7 @@ const container = mountRef.current!;
     if (leaderLayer) leaderLayer.draw(ts.camera, connections);
     };
   } catch { /* CSS2D not available */ }
-  }, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);
+  })();}, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);
 
 
   return (

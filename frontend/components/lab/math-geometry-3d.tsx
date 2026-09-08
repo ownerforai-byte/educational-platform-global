@@ -46,7 +46,7 @@ function CoordinatePlane3D() {
   const [gridSize, setGridSize] = useState(5);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -261,7 +261,7 @@ function CoordinatePlane3D() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [point, showAngle, showComponents, showCircle, gridSize, isWebGL]);
+  })();}, [point, showAngle, showComponents, showCircle, gridSize, isWebGL]);
 
   const r = Math.hypot(point.x, point.y, point.z);
   const thetaDeg = (Math.atan2(point.y, point.x) * 180) / Math.PI;
@@ -361,7 +361,7 @@ function CoordinateAxes3D() {
   const [showBox, setShowBox] = useState(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -560,7 +560,7 @@ function CoordinateAxes3D() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [point, showPlanes, showProjections, showBox, isWebGL]);
+  })();}, [point, showPlanes, showProjections, showBox, isWebGL]);
 
   if (!isWebGL) {
     return (
@@ -646,7 +646,7 @@ function VectorViewer() {
   const [showSum, setShowSum] = useState(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -756,7 +756,7 @@ function VectorViewer() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [v1, v2, showSum, isWebGL]);
+  })();}, [v1, v2, showSum, isWebGL]);
 
   if (!isWebGL) {
     return (
@@ -890,7 +890,7 @@ function ParabolaExplorer() {
     tablePoints.push({ x, y: a * x * x + b * x + c });
   }
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -1038,7 +1038,7 @@ function ParabolaExplorer() {
       cleanup.then((dispose) => dispose?.());
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [a, b, c, showRoots, showVertex, showAxis, showFocus, showDirectrix, isWebGL]);
+  })();}, [a, b, c, showRoots, showVertex, showAxis, showFocus, showDirectrix, isWebGL]);
 
   const rootText = discriminant > 0
     ? `Two real roots: x = ${roots[0].toFixed(2)}, ${roots[1].toFixed(2)}`

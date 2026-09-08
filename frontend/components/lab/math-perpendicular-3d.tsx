@@ -67,7 +67,7 @@ export function MathPerpendicular3D() {
   const [showRightAngle, setShowRightAngle] = useState(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
@@ -284,7 +284,7 @@ export function MathPerpendicular3D() {
     return () => {
       cleanup.then((dispose) => dispose?.());
     };
-  }, [mode, plane, line, point, showNormal, showRightAngle, isWebGL]);
+  })();}, [mode, plane, line, point, showNormal, showRightAngle, isWebGL]);
 
   // ===== Live math (math coordinates, world mapping hidden from user) =====
   const nMag = Math.sqrt(plane.a ** 2 + plane.b ** 2 + plane.c ** 2) || 1e-9;

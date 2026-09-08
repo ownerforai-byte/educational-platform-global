@@ -51,7 +51,7 @@ const Prism3D: React.FC = () => {
   }, []);
 
   // Rebuild 3D content on state change
-  useEffect(() => {
+  useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts.group);
@@ -250,7 +250,7 @@ const container = mountRef.current!;
     }
     if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
     };
-  }, [prismAngle, refractiveIndex, showRays, showLabels, showDispersion]);
+  })();}, [prismAngle, refractiveIndex, showRays, showLabels, showDispersion]);
 
 
   return (
