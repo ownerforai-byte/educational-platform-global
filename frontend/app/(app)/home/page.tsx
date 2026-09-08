@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SYLLABUS } from "@/lib/syllabus";
+import { StudyChat } from "@/components/chat/study-chat";
 import {
   BookOpen,
   FlaskConical,
@@ -116,7 +117,7 @@ export default function HomePage() {
       </section>
 
       {/* Subject cards */}
-      <section className="mx-auto max-w-6xl px-4 pb-16">
+      <section className="mx-auto max-w-6xl px-4 pb-8">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold tracking-tight">All Six Subjects</h2>
@@ -163,6 +164,15 @@ export default function HomePage() {
             );
           })}
         </div>
+      </section>
+
+      {/* AI Lab Tutor - Interactive Chat */}
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold tracking-tight">AI Study Assistant</h2>
+          <p className="text-sm text-muted-foreground mt-1">Ask anything about your NEB subjects — get instant explanations and resources</p>
+        </div>
+        <StudyChat compact={false} />
       </section>
     </div>
   );

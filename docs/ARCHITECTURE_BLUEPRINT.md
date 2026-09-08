@@ -1,7 +1,7 @@
 # 🧭 Architecture Blueprint — ravikishan (educational-platform-global)
 
 > **Auto-generated** — do not edit by hand. Regenerate with `npm run blueprint` (runs automatically on every commit via the pre-commit hook).
-> Generated: 2026-09-07
+> Generated: 2026-09-08
 
 <!-- BLUEPRINT:START -->
 ```text
