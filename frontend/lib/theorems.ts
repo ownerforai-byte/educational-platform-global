@@ -4,17 +4,21 @@
  * Scans `content/ravikishan/{classSlug}/{subjectSlug}/` directories for
  * concept JSON files that contain theorem statements or proofs,
  * then returns them grouped by unit and topic.
+ *
+ * When a subject directory exists on disk but is absent from SYLLABUS,
+ * the scanner discovers it directly from the filesystem (unit titles
+ * default to the directory name).
  */
 
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ClassSyllabus, SubjectSyllabus, SyllabusUnit } from "@/lib/syllabus";
+import { join, resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-// Server-only fs imports — dynamically loaded to avoid client-side crash
-async function getFs() {
-  const mod = await import("node:fs/promises");
-  const { join } = await import("node:path");
-  return { ...mod, join };
-}
+// Resolve the project root from this module's location (frontend/lib/theorems.ts → two levels up).
+// This avoids relying on process.cwd(), which differs between build and dev servers.
+const __filename = fileURLToPath(import.meta.url);
+const PROJECT_ROOT = resolve(dirname(__filename), "..", "..");
 
 export interface TheoremEntry {
   /** The class slug: "class-11-notes", "class-12-notes", etc. */
@@ -54,7 +58,7 @@ const THEOREM_KEYWORDS = [
 function isTheoremNote(content: string): boolean {
   const lower = content.toLowerCase();
   return THEOREM_KEYWORDS.some(
-    (kw) => lower.includes(kw.toLowerCase())
+    (kw) => lower.includes(kw.toLowerCase()),
   );
 }
 
@@ -94,8 +98,8 @@ export async function readTheoremContent(filePath: string): Promise<any> {
   const cached = theoremJsonCache.get(filePath);
   if (cached !== undefined) return cached;
 
-  const { join, readFile } = await getFs();
-  const abs = join(process.cwd(), "content", filePath);
+  const { readFile } = await import("node:fs/promises");
+  const abs = join(PROJECT_ROOT, filePath);
   let parsed: any = null;
   try {
     const raw = await readFile(abs, "utf-8");
@@ -106,6 +110,7 @@ export async function readTheoremContent(filePath: string): Promise<any> {
   theoremJsonCache.set(filePath, parsed);
   return parsed;
 }
+
 function slugifyFileName(name: string): string {
   return name
     .replace(/\.json$/, "")
@@ -123,8 +128,8 @@ async function scanSubject(
   classSlug: string,
   subjectSlug: string,
 ): Promise<TheoremEntry[]> {
-  const { join, readdir, readFile } = await getFs();
-  const baseDir = join(process.cwd(), "content", "ravikishan", classSlug, subjectSlug);
+  const { readdir, readFile } = await import("node:fs/promises");
+  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
   let entries: TheoremEntry[] = [];
 
   try {
@@ -139,22 +144,22 @@ async function scanSubject(
 
       const conceptsDir = join(baseDir, unitId, "concepts");
       try {
-        const files = await readdir(conceptsDir, { withFileTypes: true });
-        for (const file of files) {
-          if (!file.name.endsWith(".json")) continue;
-          const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", file.name);
-          const raw = await readFile(filePath, "utf-8");
+        const conceptFiles = await readdir(conceptsDir, { withFileTypes: true });
+        for (const conceptFile of conceptFiles) {
+          if (!conceptFile.name.endsWith(".json")) continue;
+          const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", conceptFile.name);
+          const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
           if (!isTheoremNote(raw)) continue;
 
-          const topicSlug = slugifyFileName(file.name);
+          const topicSlug = slugifyFileName(conceptFile.name);
           const snippets = extractSnippets(raw);
           // Find title: use the JSON title field, or derive from filename
           let topicTitle = "";
           try {
             const parsed = JSON.parse(raw);
-            topicTitle = parsed.title ?? file.name;
+            topicTitle = parsed.title ?? conceptFile.name;
           } catch { /* fallback to filename */ }
-          if (!topicTitle) topicTitle = file.name.replace(/\.json$/, "");
+          if (!topicTitle) topicTitle = conceptFile.name.replace(/\.json$/, "");
 
           entries.push({
             classSlug,
@@ -193,14 +198,45 @@ function findUnit(
 }
 
 /**
+ * Get all subject slugs present on disk for a given class slug.
+ * Returns subjects that are already in SYLLABUS plus any discovered
+ * directories that aren't yet registered.
+ */
+async function getSubjectsForClass(classSlug: string): Promise<string[]> {
+  const { readdir } = await import("node:fs/promises");
+  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug);
+  try {
+    const items = await readdir(baseDir, { withFileTypes: true });
+    const syllabusSlugs = new Set(
+      SYLLABUS.find((c) => c.slug === classSlug)?.subjects.map((s) => s.slug) ?? [],
+    );
+    const discovered: string[] = [];
+    for (const item of items) {
+      if (!item.isDirectory() || item.name.startsWith(".")) continue;
+      if (item.name === "notes" || item.name === "pyqs" || item.name === "sets" || item.name === "examples") continue;
+      if (!syllabusSlugs.has(item.name)) {
+        discovered.push(item.name);
+      }
+    }
+    return discovered;
+  } catch {
+    return [];
+  }
+}
+
+/**
  * Build the full theorem index across all class tracks and subjects.
  * Returns entries sorted by class → subject → unit order.
+ *
+ * Subjects missing from SYLLABUS are discovered directly from the
+ * filesystem so theorem content in those subjects is still indexed.
  */
 export async function getTheoremIndex(): Promise<TheoremEntry[]> {
   const all: TheoremEntry[] = [];
   const seen = new Set<string>();
 
   for (const cls of SYLLABUS) {
+    // Scan subjects registered in SYLLABUS
     for (const subject of cls.subjects) {
       const entries = await scanSubject(cls.slug, subject.slug);
       for (const e of entries) {
@@ -210,20 +246,35 @@ export async function getTheoremIndex(): Promise<TheoremEntry[]> {
         all.push(e);
       }
     }
+    // Also scan any subject directories present on disk but not yet in SYLLABUS
+    const extraSubjects = await getSubjectsForClass(cls.slug);
+    for (const subjectSlug of extraSubjects) {
+      const entries = await scanSubject(cls.slug, subjectSlug);
+      for (const e of entries) {
+        const key = `${e.classSlug}/${e.subjectSlug}/${e.unitId}/${e.topicSlug}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        all.push(e);
+      }
+    }
   }
 
-  // Sort: class order, then subject order, then unit order, then topic order
+  // Sort: class order, then subject order (syllabus first, then discovered), then unit order, then topic order
   all.sort((a, b) => {
     const clsA = SYLLABUS.findIndex((c) => c.slug === a.classSlug);
     const clsB = SYLLABUS.findIndex((c) => c.slug === b.classSlug);
     if (clsA !== clsB) return clsA - clsB;
-    const subjA = SYLLABUS[clsA]?.subjects.findIndex((s) => s.slug === a.subjectSlug) ?? -1;
-    const subjB = SYLLABUS[clsB]?.subjects.findIndex((s) => s.slug === b.subjectSlug) ?? -1;
-    if (subjA !== subjB) return subjA - subjB;
-    const unitA = SYLLABUS[clsA]?.subjects[subjA]?.units.findIndex((u) => u.id === a.unitId) ?? -1;
-    const unitB = SYLLABUS[clsB]?.subjects[subjB]?.units.findIndex((u) => u.id === b.unitId) ?? -1;
-    if (unitA !== unitB) return unitA - unitB;
-    return a.topicSlug.localeCompare(b.topicSlug);
+
+    // Subject ordering: syllabus subjects first (in their defined order), then discovered subjects alphabetically
+    const syllabusOrder = SYLLABUS[clsA]?.subjects.map((s) => s.slug) ?? [];
+    const subjAInSyllabus = syllabusOrder.indexOf(a.subjectSlug);
+    const subjBInSyllabus = syllabusOrder.indexOf(b.subjectSlug);
+    const subjAIsExtra = subjAInSyllabus === -1;
+    const subjBIsExtra = subjBInSyllabus === -1;
+    if (subjAIsExtra && !subjBIsExtra) return 1;
+    if (!subjAIsExtra && subjBIsExtra) return -1;
+    if (subjAIsExtra && subjBIsExtra) return a.subjectSlug.localeCompare(b.subjectSlug);
+    return subjAInSyllabus - subjBInSyllabus;
   });
 
   return all;
