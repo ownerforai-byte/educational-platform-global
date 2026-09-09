@@ -57,6 +57,18 @@ export function createApp(): express.Express {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
 
+  // Debug: log all registered routes
+  app._router.stack.forEach((layer: any) => {
+    if (layer.route) {
+      const methods = layer.route.methods ? Object.keys(layer.route.methods).join(", ") : "use";
+      console.log(`  ${methods.padEnd(7)} ${layer.route.path}`);
+    } else if (layer.name === "router") {
+      console.log(`  [Router] ${layer.regexp}`);
+    } else {
+      console.log(`  [Middleware] type=${layer.name || "unknown"}`);
+    }
+  });
+
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);
@@ -80,6 +92,20 @@ export function createApp(): express.Express {
   app.use("/api/admin", adminRoutes);
   app.use("/api/user", userRoutes);
   app.use("/api/biology", biologyRoutes);
+
+  // Debug after API routes
+  console.log("\n=== AFTER API REGISTRATION ===");
+  app._router.stack.forEach((layer: any) => {
+    if (layer.route) {
+      const methods = layer.route.methods ? Object.keys(layer.route.methods).join(", ") : "use";
+      console.log(`  ${methods.padEnd(7)} ${layer.route.path}`);
+    } else if (layer.name === "router") {
+      console.log(`  [Router] ${layer.regexp}`);
+    } else {
+      console.log(`  [Middleware] type=${layer.name || "unknown"}`);
+    }
+  });
+  console.log("=== END ===\n");
 
   app.use((_req, res) => {
     res.status(404).json({ error: "Not found" });

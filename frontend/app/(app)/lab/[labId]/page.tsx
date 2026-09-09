@@ -4,7 +4,7 @@
  */
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, createElement, ComponentType } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft, Cuboid, Loader2 } from "lucide-react";
@@ -13,6 +13,14 @@ import type { LabMeta } from "@/lib/types/lab";
 import { LabLearningSection } from "@/components/lab/learning-section";
 import { AnimationFrame, ArrowLabel } from "@/components/lab/annotation/arrow-label";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
+
+// Wrapper that renders a lab component as a proper React element (using createElement),
+// ensuring React creates a separate fiber and isolates its hooks from LabPage.
+// Without this, inline function calls would attribute the lab's hooks to LabPage,
+// causing Rules of Hooks violations when loading state changes.
+function LabComponent(props: { component: React.ComponentType | (() => React.ReactNode) }) {
+  return createElement(props.component as React.ComponentType);
+}
 
 export default function LabPage() {
   const params = useParams();
@@ -137,7 +145,7 @@ export default function LabPage() {
           <div className="p-5">
             <AnimationFrame heightClass="min-h-[340px]">
               {typeof lab.component === "function"
-                ? (lab.component as () => React.ReactNode)()
+                ? <LabComponent component={lab.component} />
                 : lab.component}
               {LAB_ANNOTATIONS[lab.id]?.map((ann, i) => (
                 <ArrowLabel key={`${lab.id}-${i}`} {...ann} delay={0.3 + i * 0.25} />
