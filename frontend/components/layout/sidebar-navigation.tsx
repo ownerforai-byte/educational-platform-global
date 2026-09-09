@@ -54,6 +54,7 @@ const browseItems: NavItem[] = [
   { href: "/exam-countdown", label: "Exam Countdown", icon: ClipboardList },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/theorems", label: "Theorems & Proofs", icon: FileText },
+  { href: "/derivations", label: "Derivations", icon: FileText },
   { href: "/loksewa", label: "Loksewa", icon: Users },
   { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
   { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },

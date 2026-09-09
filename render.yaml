@@ -14,7 +14,7 @@ services:
       - key: PORT
         value: 10000
       - key: FRONTEND_URL
-        value: https://ravikishan.com.np
+        value: https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app
       - key: RATE_LIMIT_WINDOW_MS
         value: 60000
       - key: RATE_LIMIT_MAX_REQUESTS
@@ -25,5 +25,13 @@ services:
         sync: false
       - key: GEMINI_API_KEY
         sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
       - key: AGNES_API_KEY
+        sync: false
+      - key: AI_DEFAULT_PROVIDER
+        value: agnes
+      - key: GOOGLE_SEARCH_API_KEY
+        sync: false
+      - key: GOOGLE_SEARCH_ENGINE_ID
         sync: false

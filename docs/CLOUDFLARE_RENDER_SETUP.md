@@ -1,8 +1,8 @@
-# Deployment Checklist: Cloudflare Pages + Render Backend
+﻿# Deployment Checklist: Cloudflare Pages + Render Backend
 
 **Project:** ravikisan (educational-platform-global)  
-**Frontend:** Cloudflare Pages (`ravikisan.pages.dev` → custom domain later)  
-**Backend:** Render (Node.js)  
+**Frontend:** Vercel (`https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/`)  
+**Backend:** Render (Node.js) (`https://rn01.onrender.com`)  
 **Database:** Supabase (`ravikisan1814-lang's Project`)  
 **Setup Date:** 2026-08-25
 
@@ -69,13 +69,13 @@ When Cloudflare prompts for build details, enter:
 2. Add these (mark as **Public** with the ✓):
 
 ```
-NEXT_PUBLIC_API_URL = https://ravikisan-backend.onrender.com
-NEXT_PUBLIC_SITE_URL = https://ravikisan.pages.dev
+NEXT_PUBLIC_API_URL = https://rn01.onrender.com
+NEXT_PUBLIC_SITE_URL = https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/
 ```
 
 3. Click "Save and deploy"
 4. **Wait for first deploy** (usually 2-5 min)
-5. Once complete, your site is live at `https://ravikisan.pages.dev` ✓
+5. Once complete, your site is live at `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/` ✓
 
 ---
 
@@ -110,7 +110,7 @@ In Render Web Service → Environment:
 
 ```
 PORT=3001
-FRONTEND_URL=https://ravikisan.pages.dev,http://localhost:5173
+FRONTEND_URL=https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app,http://localhost:5173
 SUPABASE_URL=https://tsvbksfegvdjwczzfdcx.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=<your-NEW-rotated-key>
 SUPABASE_STORAGE_BUCKET=resources
@@ -125,7 +125,7 @@ AI_PROVIDER=internal
 1. Click "Create Web Service"
 2. Render will auto-deploy from `main` branch
 3. **Wait for build** (usually 3-5 min)
-4. Once live, your backend is at: `https://ravikisan-backend.onrender.com` ✓
+4. Once live, your backend is at: `https://rn01.onrender.com` ✓
 
 ### 4.6 Enable Auto-Deploy
 1. Render → ravikisan-backend → Settings → Auto-deploy
@@ -139,7 +139,7 @@ AI_PROVIDER=internal
 ### 5.1 Test Frontend
 ```bash
 # In your browser:
-https://ravikisan.pages.dev
+https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/
 ```
 - [ ] Site loads without errors
 - [ ] Check console (F12) for errors
@@ -147,14 +147,14 @@ https://ravikisan.pages.dev
 ### 5.2 Test Backend Health
 ```bash
 # In your browser:
-https://ravikisan-backend.onrender.com/health
+https://rn01.onrender.com/health
 ```
 - [ ] Should return: `{"status":"ok"}`
 
 ### 5.3 Test API Proxy
 ```bash
 # In your browser:
-https://ravikisan.pages.dev/api/health
+https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/api/health
 ```
 - [ ] Should return: `{"status":"ok"}` (proves frontend → backend works)
 
@@ -171,7 +171,7 @@ When ready to add a custom domain:
 4. Auto-SSL ✓
 
 ### Option B: External DNS
-1. Add CNAME at registrar: `yourdomain.com` → `ravikisan.pages.dev`
+1. Add CNAME at registrar: `yourdomain.com` → `ravikisan-7phkshvvk-ownerforai-byte.vercel.app`
 2. Pages → Custom domain → Add `yourdomain.com`
 
 ---
@@ -200,8 +200,8 @@ npm run dev:backend
 - Render API Key: (optional, for remote deploys)
 
 **Public (safe to share):**
-- Frontend URL: `https://ravikisan.pages.dev`
-- Backend URL: `https://ravikisan-backend.onrender.com`
+- Frontend URL: `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/`
+- Backend URL: `https://rn01.onrender.com`
 
 ---
 
@@ -218,7 +218,7 @@ npm run dev:backend
 - Common: `FRONTEND_URL` missing → add it to env vars
 
 ### CORS errors
-- Check backend `.env`: `FRONTEND_URL` must include `https://ravikisan.pages.dev`
+- Check backend `.env`: `FRONTEND_URL` must include `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app`
 - Render auto-redeploys when you push to `main`
 
 ### Render auto-sleep (free plan)
@@ -236,7 +236,7 @@ npm run dev:backend
 - [ ] Frontend env vars set in Pages
 - [ ] Render account created & backend deployed
 - [ ] Backend env vars set (including rotated Supabase key)
-- [ ] Frontend loads at `https://ravikisan.pages.dev`
+- [ ] Frontend loads at `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/`
 - [ ] Backend health check passes
 - [ ] API proxy works (frontend calls backend)
 

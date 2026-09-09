@@ -25,7 +25,7 @@ Supabase (Postgres + Auth + Storage)
 
 Environment variables (Pages project settings):
 - `NEXT_PUBLIC_API_URL` = public backend URL, e.g. `https://api.yourdomain.com` *(Public)*
-- `NEXT_PUBLIC_SITE_URL` = the Pages domain, e.g. `https://your-site.pages.dev` *(Public — used by SSR data fetches)*
+- `NEXT_PUBLIC_SITE_URL` = the frontend domain, e.g. `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app` *(Public — used by SSR data fetches)*
 
 No secrets belong here. The old monolithic Worker (`_worker.js` from root `.vercel/output`) is deprecated; root `wrangler.jsonc` no longer references it.
 
@@ -43,7 +43,7 @@ npm start                 # node dist/index.js
 
 Required environment (see `backend/.env.example`):
 - `PORT` (default 3001)
-- `FRONTEND_URL` — comma-separated allow-list of origins, e.g. `https://your-site.pages.dev,http://localhost:5173`. CORS reflects ONLY these origins with credentials — never a wildcard.
+- `FRONTEND_URL` — comma-separated allow-list of origins, e.g. `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app,http://localhost:5173`. CORS reflects ONLY these origins with credentials — never a wildcard.
 - `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` *(Secret — server-only, never NEXT_PUBLIC)*
 - `SUPABASE_STORAGE_BUCKET` (default `resources`)
 - `GEMINI_API_KEY` / `OPENROUTER_API_KEY` / `AI_PROVIDER` / `AI_DEFAULT_PROVIDER` (optional; internal fallback provider works keyless)

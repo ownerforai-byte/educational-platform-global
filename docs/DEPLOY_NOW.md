@@ -1,4 +1,4 @@
-# 🚀 Deploy Your App NOW — 3 Services, 30 Minutes
+﻿# 🚀 Deploy Your App NOW — 3 Services, 30 Minutes
 
 Your code is ready. Let's get it live. You'll use:
 - **Cloudflare Pages** (free) — for frontend
@@ -39,15 +39,15 @@ After Pages creates your project:
 3. Add these two:
 
 ```
-NEXT_PUBLIC_API_URL = https://ravikisan-backend.onrender.com
-NEXT_PUBLIC_SITE_URL = https://ravikisan.pages.dev
+NEXT_PUBLIC_API_URL = https://rn01.onrender.com
+NEXT_PUBLIC_SITE_URL = https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/
 ```
 
 3. Mark both as **Public** (toggle the eye icon)
 4. Click "Save"
 5. Trigger a redeploy by going to Deployments → redeploy latest
 
-✅ **Your site will be live at: `https://ravikisan.pages.dev`**
+✅ **Your site will be live at: `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/`**
 
 ---
 
@@ -86,7 +86,7 @@ While it's building, go to Environment:
 
 ```
 PORT = 3001
-FRONTEND_URL = https://ravikisan.pages.dev,http://localhost:5173
+FRONTEND_URL = https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app,http://localhost:5173
 SUPABASE_URL = https://tsvbksfegvdjwczzfdcx.supabase.co
 SUPABASE_SERVICE_ROLE_KEY = <your-NEW-rotated-key>
 SUPABASE_STORAGE_BUCKET = resources
@@ -103,7 +103,7 @@ AI_PROVIDER = internal
 
 3. Click "Save"
 
-✅ **Your backend will be live at: `https://ravikisan-backend.onrender.com`**
+✅ **Your backend will be live at: `https://rn01.onrender.com`**
 
 ---
 
@@ -112,7 +112,7 @@ AI_PROVIDER = internal
 ### 3.1 Test Frontend
 Open in browser:
 ```
-https://ravikisan.pages.dev
+https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/
 ```
 - Should see your educational platform
 - Check console (F12) for any red errors
@@ -120,14 +120,14 @@ https://ravikisan.pages.dev
 ### 3.2 Test Backend Health
 Open in browser:
 ```
-https://ravikisan-backend.onrender.com/health
+https://rn01.onrender.com/health
 ```
 - Should show: `{"status":"ok"}`
 
 ### 3.3 Test API Proxy
 Open in browser:
 ```
-https://ravikisan.pages.dev/api/health
+https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/api/health
 ```
 - Should show: `{"status":"ok"}` (proves frontend talks to backend)
 
@@ -151,8 +151,8 @@ So every push to GitHub automatically deploys:
 
 | Service | URL | Status |
 |---------|-----|--------|
-| Frontend | `https://ravikisan.pages.dev` | ✅ Live |
-| Backend | `https://ravikisan-backend.onrender.com` | ✅ Live |
+| Frontend | `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/` | ✅ Live |
+| Backend | `https://rn01.onrender.com` | ✅ Live |
 | Database | Supabase | ✅ Connected |
 
 ---
@@ -198,7 +198,7 @@ So every push to GitHub automatically deploys:
 - [ ] GitHub connected to Cloudflare
 - [ ] Cloudflare Pages project created
 - [ ] Cloudflare env vars set
-- [ ] Frontend live at `ravikisan.pages.dev`
+- [ ] Frontend live at `ravikisan-7phkshvvk-ownerforai-byte.vercel.app`
 - [ ] Render account created
 - [ ] GitHub connected to Render
 - [ ] Render backend service created

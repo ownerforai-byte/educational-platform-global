@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+﻿import { Router, Request, Response } from "express";
 import { createAIService } from "../ai/service";
 import { supabaseAdmin } from "../db/supabase";
 
@@ -129,7 +129,7 @@ router.post("/", async (req: Request, res: Response) => {
       .select("key, value")
       .eq("key", "officialLink");
 
-    const officialLink = settingsData?.[0]?.value ?? "https://ravikishan.com.np";
+    const officialLink = settingsData?.[0]?.value ?? "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/";
 
     res.json({
       query,

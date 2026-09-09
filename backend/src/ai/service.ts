@@ -1,6 +1,7 @@
-import { supabaseAdmin } from "../db/supabase";
+﻿import { supabaseAdmin } from "../db/supabase";
+import { getSearchService, type WebSearchService } from "./search-engine";
 
-export type SupportedProvider = "gemini" | "openrouter" | "internal";
+export type SupportedProvider = "gemini" | "openrouter" | "internal" | "agnes";
 
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -126,6 +127,145 @@ function buildQuickTake(item: IndexItem): string {
   return `Quick take: ${item.title} covers ${clean || "some great material"} — here's the short version.`;
 }
 
+// ── Shared: Syllabus context helpers (used by all providers) ────────────────
+
+async function buildSyllabusContext(query: string): Promise<string> {
+  const lower = query.toLowerCase();
+  const matches: Array<{ subject: string; unit: string; topics: string[] }> = [];
+
+  const { data: sData } = await supabaseAdmin
+    .from("subjects")
+    .select("id, name")
+    .eq("is_active", true);
+
+  if (!sData || sData.length === 0) return "";
+
+  const { data: cData } = await supabaseAdmin
+    .from("chapters")
+    .select("id, subject_id, title")
+    .eq("is_active", true);
+
+  const { data: tData } = await supabaseAdmin
+    .from("topics")
+    .select("id, chapter_id, title")
+    .eq("is_active", true);
+
+  const subjects = (sData ?? []) as unknown as DbSubject[];
+  const chapters = (cData ?? []) as unknown as DbChapter[];
+  const topics = (tData ?? []) as unknown as DbTopic[];
+
+  const chapterMap = new Map<string, { title: string; subjectName: string }>();
+  for (const chapter of chapters) {
+    const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
+    if (subject) {
+      chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
+    }
+  }
+
+  for (const topic of topics) {
+    const chapter = chapterMap.get(topic.chapter_id);
+    if (!chapter) continue;
+    const topicLower = topic.title.toLowerCase();
+    if (topicLower.includes(lower) || lower.includes(topicLower)) {
+      matches.push({
+        subject: chapter.subjectName,
+        unit: chapter.title,
+        topics: [topic.title],
+      });
+    }
+  }
+
+  if (!matches.length) return "";
+  const lines = ["Relevant syllabus scope before answering:"];
+  for (const hint of matches.slice(0, 3)) {
+    lines.push(`- ${hint.subject} / ${hint.unit}`);
+    for (const topic of hint.topics) lines.push(`  - ${topic}`);
+  }
+  return lines.join("\n");
+}
+
+async function extractSyllabusHints(
+  query: string,
+): Promise<Array<{ subject: string; unit: string; topics: string[] }>> {
+  const lower = query.toLowerCase();
+  const hints: Array<{ subject: string; unit: string; topics: string[] }> = [];
+
+  const { data: sData } = await supabaseAdmin
+    .from("subjects")
+    .select("id, name")
+    .eq("is_active", true);
+
+  if (!sData || sData.length === 0) return hints;
+
+  const { data: cData } = await supabaseAdmin
+    .from("chapters")
+    .select("id, subject_id, title")
+    .eq("is_active", true);
+
+  const { data: tData } = await supabaseAdmin
+    .from("topics")
+    .select("id, chapter_id, title")
+    .eq("is_active", true);
+
+  const subjects = (sData ?? []) as unknown as DbSubject[];
+  const chapters = (cData ?? []) as unknown as DbChapter[];
+  const topics = (tData ?? []) as unknown as DbTopic[];
+
+  const chapterMap = new Map<string, { title: string; subjectName: string }>();
+  for (const chapter of chapters) {
+    const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
+    if (subject) {
+      chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
+    }
+  }
+
+  for (const topic of topics) {
+    const chapter = chapterMap.get(topic.chapter_id);
+    if (!chapter) continue;
+    const topicLower = topic.title.toLowerCase();
+    if (topicLower.includes(lower) || lower.includes(topicLower)) {
+      hints.push({
+        subject: chapter.subjectName,
+        unit: chapter.title,
+        topics: [topic.title],
+      });
+    }
+  }
+
+  return hints.slice(0, 5);
+}
+
+// ── Shared: Search system prompt (used by all providers) ────────────────────
+
+const SEARCH_SYSTEM_PROMPT = `You are Ravikisan Study Assistant — a warm, wise mentor for NEB Science students (https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/).
+
+**YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
+
+**WHEN ANSWERING ANY QUESTION (STUDY OR NON-STUDY), ALWAYS INCLUDE RELEVANT LINKS:**
+
+For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
+- First link to relevant content ON the platform:
+  - NEB Class 11/12 Science notes → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/class-11 or /class-12
+  - Labs (3D/theory) → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/lab
+  - Subjects overview → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
+  - Loksewa prep → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/loksewa
+  - World knowledge & current affairs → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/world-knowledge
+  - R Notes by Ravishankit → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/r-notes
+  - PYQs & practice → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
+  - Numerical problems → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/knowledge/numerical-physics or /knowledge/numerical-chemistry
+- Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
+
+For NON-STUDY / human topics (motivation, STEM career advice, mental health, relationships, current events, entertainment, etc.):
+- Respond with genuine warmth and insight — like a friend who knows their stuff
+- Always include at least one helpful official link related to what they asked about
+- Never refuse to answer. You help with everything, but always keep it grounded and useful.
+
+**TONE GUIDELINES:**
+- Start with a short, human hook — a question, a truth, or a moment of connection
+- Weave in real wisdom or a brief story when it fits naturally
+- End with a nudge toward action or reflection
+- Keep the response concise but never shallow`;
+
 class InternalProvider implements AIProvider {
   name = "internal";
   private index: IndexItem[] = [];
@@ -215,18 +355,18 @@ class InternalProvider implements AIProvider {
     const results = this.match(query, 5);
 
     if (!results.length) {
-      return `Hey — I don't have notes on that one in the vault just yet, but I'm here for you. A few things that might help:\n\n• Flip through the full subject list at https://ravikishan.com.np/subjects — you might find something close that connects.\n• Try asking about biomolecules, gravitation, or algebra — those are solid starting points and I'll walk you straight to the right notes.\n\nKeep going. The fact that you're asking the right questions already puts you ahead.`;
+      return `Hey — I don't have notes on that one in the vault just yet, but I'm here for you. A few things that might help:\n\n• Flip through the full subject list at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects — you might find something close that connects.\n• Try asking about biomolecules, gravitation, or algebra — those are solid starting points and I'll walk you straight to the right notes.\n\nKeep going. The fact that you're asking the right questions already puts you ahead.`;
     }
 
     const nudge = STUDY_NUDGES[hashQuery(query) % STUDY_NUDGES.length];
     const lines = [buildQuickTake(results[0]), "", nudge, "", "Start here:"];
     for (const item of results.slice(0, 3)) {
-      const fullUrl = `https://ravikishan.com.np${item.url}`;
+      const fullUrl = `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/${item.url}`;
       lines.push(`- ${item.title} (${item.type}) — ${shorten(item.snippet)}`);
       lines.push(`  ${fullUrl}`);
     }
     lines.push("");
-    lines.push("If you want more depth or external references, just ask — I'll point you to official sources too.");
+    lines.push("If you want more depth or external references, just ask — I'll point you to official sources too. Also, you can practice past papers at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects.");
     return lines.join("\n");
   }
 
@@ -244,7 +384,7 @@ class InternalProvider implements AIProvider {
       return {
         results: [],
         fallbackMessage:
-          `Hey, that one isn't in the vault just yet — but you're not stuck.\n\n• Browse all subjects at https://ravikishan.com.np/subjects\n• Try biomolecules, gravitation, or algebra — solid starting points with full notes ready for you.\n\nKeep showing up. That's where the real growth happens.`,
+          `Hey, that one isn't in the vault just yet — but you're not stuck.\n\n• Browse all subjects at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects\n• Try biomolecules, gravitation, or algebra — solid starting points with full notes ready for you.\n• Practice past papers at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects\n\nKeep showing up. That's where the real growth happens.`,
       };
     }
 
@@ -329,151 +469,23 @@ class GeminiProvider implements AIProvider {
 
   async search(query: string): Promise<AISearchResponse> {
     if (!this.apiKey) throw new Error("Missing Gemini API key");
-    const syllabusContext = await this.buildSyllabusContext(query);
-    const prompt = `You are Ravikishan Study Assistant — a warm, wise mentor for NEB Science students (https://ravikishan.com.np).
+    const syllabusContext = await buildSyllabusContext(query);
 
-**YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
+    // Fetch real-time internet search context
+    const searchService = getSearchService();
+    const searchContext = await searchService.searchAsContext(query);
 
-**WHEN ANSWERING ANY QUESTION (STUDY OR NON-STUDY), ALWAYS INCLUDE RELEVANT LINKS:**
+    const prompt = `${SEARCH_SYSTEM_PROMPT}
 
-For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
-- First link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → https://ravikishan.com.np/class-11 or /class-12
-  - Labs (3D/theory) → https://ravikishan.com.np/lab
-  - Subjects overview → https://ravikishan.com.np/subjects
-  - Loksewa prep → https://ravikishan.com.np/loksewa
-  - World knowledge & current affairs → https://ravikishan.com.np/world-knowledge
-  - R Notes by Ravishankit → https://ravikishan.com.np/r-notes
-  - PYQs & practice → https://ravikishan.com.np/pyqs
-  - Numerical problems → https://ravikishan.com.np/knowledge/numerical-physics or /knowledge/numerical-chemistry
-- Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
-
-For NON-STUDY / human topics (motivation, STEM career advice, mental health, relationships, current events, entertainment, etc.):
-- Respond with genuine warmth and insight — like a friend who knows their stuff
-- Always include at least one helpful official link related to what they asked about
-- Never refuse to answer. You help with everything, but always keep it grounded and useful.
-
-**TONE GUIDELINES:**
-- Start with a short, human hook — a question, a truth, or a moment of connection
-- Weave in real wisdom or a brief story when it fits naturally
-- End with a nudge toward action or reflection
-- Keep the response concise but never shallow
-
-${syllabusContext}
+${searchContext ? searchContext + "\n" : ""}${syllabusContext}
 User query: ${query}`;
 
     const reply = await this.callGemini(prompt);
     return {
       results: [],
       fallbackMessage: reply,
-      syllabusHints: syllabusContext ? await this.extractSyllabusHints(query) : undefined,
+      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : undefined,
     };
-  }
-
-  private async buildSyllabusContext(query: string): Promise<string> {
-    const lower = query.toLowerCase();
-    const matches: Array<{ subject: string; unit: string; topics: string[] }> = [];
-
-    const { data: sData } = await supabaseAdmin
-      .from("subjects")
-      .select("id, name")
-      .eq("is_active", true);
-
-    if (!sData || sData.length === 0) return "";
-
-    const { data: cData } = await supabaseAdmin
-      .from("chapters")
-      .select("id, subject_id, title")
-      .eq("is_active", true);
-
-    const { data: tData } = await supabaseAdmin
-      .from("topics")
-      .select("id, chapter_id, title")
-      .eq("is_active", true);
-
-    const subjects = (sData ?? []) as unknown as DbSubject[];
-    const chapters = (cData ?? []) as unknown as DbChapter[];
-    const topics = (tData ?? []) as unknown as DbTopic[];
-
-    const chapterMap = new Map<string, { title: string; subjectName: string }>();
-    for (const chapter of chapters) {
-      const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
-      if (subject) {
-        chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
-      }
-    }
-
-    for (const topic of topics) {
-      const chapter = chapterMap.get(topic.chapter_id);
-      if (!chapter) continue;
-      const topicLower = topic.title.toLowerCase();
-      if (topicLower.includes(lower) || lower.includes(topicLower)) {
-        matches.push({
-          subject: chapter.subjectName,
-          unit: chapter.title,
-          topics: [topic.title],
-        });
-      }
-    }
-
-    if (!matches.length) return "";
-    const lines = ["Relevant syllabus scope before answering:"];
-    for (const hint of matches.slice(0, 3)) {
-      lines.push(`- ${hint.subject} / ${hint.unit}`);
-      for (const topic of hint.topics) lines.push(`  - ${topic}`);
-    }
-    return lines.join("\n");
-  }
-
-  private async extractSyllabusHints(
-    query: string,
-  ): Promise<Array<{ subject: string; unit: string; topics: string[] }>> {
-    const lower = query.toLowerCase();
-    const hints: Array<{ subject: string; unit: string; topics: string[] }> = [];
-
-    const { data: sData } = await supabaseAdmin
-      .from("subjects")
-      .select("id, name")
-      .eq("is_active", true);
-
-    if (!sData || sData.length === 0) return hints;
-
-    const { data: cData } = await supabaseAdmin
-      .from("chapters")
-      .select("id, subject_id, title")
-      .eq("is_active", true);
-
-    const { data: tData } = await supabaseAdmin
-      .from("topics")
-      .select("id, chapter_id, title")
-      .eq("is_active", true);
-
-    const subjects = (sData ?? []) as unknown as DbSubject[];
-    const chapters = (cData ?? []) as unknown as DbChapter[];
-    const topics = (tData ?? []) as unknown as DbTopic[];
-
-    const chapterMap = new Map<string, { title: string; subjectName: string }>();
-    for (const chapter of chapters) {
-      const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
-      if (subject) {
-        chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
-      }
-    }
-
-    for (const topic of topics) {
-      const chapter = chapterMap.get(topic.chapter_id);
-      if (!chapter) continue;
-      const topicLower = topic.title.toLowerCase();
-      if (topicLower.includes(lower) || lower.includes(topicLower)) {
-        hints.push({
-          subject: chapter.subjectName,
-          unit: chapter.title,
-          topics: [topic.title],
-        });
-      }
-    }
-
-    return hints.slice(0, 5);
   }
 }
 
@@ -493,8 +505,8 @@ class OpenRouterProvider implements AIProvider {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${this.apiKey}`,
-        "HTTP-Referer": "https://ravikisan.platform",
-        "X-Title": "Ravikisan Platform",
+        "HTTP-Referer": "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/",
+        "X-Title": "Ravikisan",
       },
       body: JSON.stringify({
         model: this.model,
@@ -526,40 +538,18 @@ class OpenRouterProvider implements AIProvider {
 
   async search(query: string): Promise<AISearchResponse> {
     if (!this.apiKey) throw new Error("Missing OpenRouter API key");
-    const syllabusContext = await this.buildSyllabusContext(query);
+    const syllabusContext = await buildSyllabusContext(query);
+
+    // Fetch real-time internet search context
+    const searchService = getSearchService();
+    const searchContext = await searchService.searchAsContext(query);
+
     const messages: AIChatMessage[] = [
       {
         role: "system",
-        content: `You are Ravikishan Study Assistant — a warm, wise mentor for NEB Science students (https://ravikishan.com.np).
+        content: `${SEARCH_SYSTEM_PROMPT}
 
-**YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
-
-**WHEN ANSWERING ANY QUESTION (STUDY OR NON-STUDY), ALWAYS INCLUDE RELEVANT LINKS:**
-
-For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
-- First link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → https://ravikishan.com.np/class-11 or /class-12
-  - Labs (3D/theory) → https://ravikishan.com.np/lab
-  - Subjects overview → https://ravikishan.com.np/subjects
-  - Loksewa prep → https://ravikishan.com.np/loksewa
-  - World knowledge & current affairs → https://ravikishan.com.np/world-knowledge
-  - R Notes by Ravishankit → https://ravikishan.com.np/r-notes
-  - PYQs & practice → https://ravikishan.com.np/pyqs
-  - Numerical problems → https://ravikishan.com.np/knowledge/numerical-physics or /knowledge/numerical-chemistry
-- Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
-
-For NON-STUDY / human topics (motivation, STEM career advice, mental health, relationships, current events, entertainment, etc.):
-- Respond with genuine warmth and insight — like a friend who knows their stuff
-- Always include at least one helpful official link related to what they asked about
-- Never refuse to answer. You help with everything, but always keep it grounded and useful.
-
-**TONE GUIDELINES:**
-- Start with a short, human hook — a question, a truth, or a moment of connection
-- Weave in real wisdom or a brief story when it fits naturally
-- End with a nudge toward action or reflection
-- Keep the response concise but never shallow
-
-${syllabusContext}`,
+${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
       },
       { role: "user", content: query },
     ];
@@ -568,115 +558,10 @@ ${syllabusContext}`,
     return {
       results: [],
       fallbackMessage: reply,
-      syllabusHints: syllabusContext ? await this.extractSyllabusHints(query) : undefined,
+      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : undefined,
     };
   }
 
-  private async buildSyllabusContext(query: string): Promise<string> {
-    const lower = query.toLowerCase();
-    const matches: Array<{ subject: string; unit: string; topics: string[] }> = [];
-
-    const { data: sData } = await supabaseAdmin
-      .from("subjects")
-      .select("id, name")
-      .eq("is_active", true);
-
-    if (!sData || sData.length === 0) return "";
-
-    const { data: cData } = await supabaseAdmin
-      .from("chapters")
-      .select("id, subject_id, title")
-      .eq("is_active", true);
-
-    const { data: tData } = await supabaseAdmin
-      .from("topics")
-      .select("id, chapter_id, title")
-      .eq("is_active", true);
-
-    const subjects = (sData ?? []) as unknown as DbSubject[];
-    const chapters = (cData ?? []) as unknown as DbChapter[];
-    const topics = (tData ?? []) as unknown as DbTopic[];
-
-    const chapterMap = new Map<string, { title: string; subjectName: string }>();
-    for (const chapter of chapters) {
-      const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
-      if (subject) {
-        chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
-      }
-    }
-
-    for (const topic of topics) {
-      const chapter = chapterMap.get(topic.chapter_id);
-      if (!chapter) continue;
-      const topicLower = topic.title.toLowerCase();
-      if (topicLower.includes(lower) || lower.includes(topicLower)) {
-        matches.push({
-          subject: chapter.subjectName,
-          unit: chapter.title,
-          topics: [topic.title],
-        });
-      }
-    }
-
-    if (!matches.length) return "";
-    const lines = ["Relevant syllabus scope before answering:"];
-    for (const hint of matches.slice(0, 3)) {
-      lines.push(`- ${hint.subject} / ${hint.unit}`);
-      for (const topic of hint.topics) lines.push(`  - ${topic}`);
-    }
-    return lines.join("\n");
-  }
-
-  private async extractSyllabusHints(
-    query: string,
-  ): Promise<Array<{ subject: string; unit: string; topics: string[] }>> {
-    const lower = query.toLowerCase();
-    const hints: Array<{ subject: string; unit: string; topics: string[] }> = [];
-
-    const { data: sData } = await supabaseAdmin
-      .from("subjects")
-      .select("id, name")
-      .eq("is_active", true);
-
-    if (!sData || sData.length === 0) return hints;
-
-    const { data: cData } = await supabaseAdmin
-      .from("chapters")
-      .select("id, subject_id, title")
-      .eq("is_active", true);
-
-    const { data: tData } = await supabaseAdmin
-      .from("topics")
-      .select("id, chapter_id, title")
-      .eq("is_active", true);
-
-    const subjects = (sData ?? []) as unknown as DbSubject[];
-    const chapters = (cData ?? []) as unknown as DbChapter[];
-    const topics = (tData ?? []) as unknown as DbTopic[];
-
-    const chapterMap = new Map<string, { title: string; subjectName: string }>();
-    for (const chapter of chapters) {
-      const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
-      if (subject) {
-        chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
-      }
-    }
-
-    for (const topic of topics) {
-      const chapter = chapterMap.get(topic.chapter_id);
-      if (!chapter) continue;
-      const topicLower = topic.title.toLowerCase();
-      if (topicLower.includes(lower) || lower.includes(topicLower)) {
-        hints.push({
-          subject: chapter.subjectName,
-          unit: chapter.title,
-          topics: [topic.title],
-        });
-      }
-    }
-
-    return hints.slice(0, 5);
-  }
 }
 
 class AgnesProvider implements AIProvider {
@@ -727,37 +612,13 @@ class AgnesProvider implements AIProvider {
 
   async search(query: string): Promise<AISearchResponse> {
     if (!this.apiKey) throw new Error("Missing Agnes API key");
-    const messages: AIChatMessage[] = [
-      {
-        role: "system",
-        content: `You are Ravikishan Study Assistant — a warm, wise mentor for NEB Science students (https://ravikishan.com.np).
+    const syllabusContext = await buildSyllabusContext(query);
 
-**YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
+    // Fetch real-time internet search context
+    const searchService = getSearchService();
+    const searchContext = await searchService.searchAsContext(query);
 
-**WHEN ANSWERING ANY QUESTION (STUDY OR NON-STUDY), ALWAYS INCLUDE RELEVANT LINKS:**
-
-For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
-- First link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → https://ravikishan.com.np/class-11 or /class-12
-  - Labs (3D/theory) → https://ravikishan.com.np/lab
-  - Subjects overview → https://ravikishan.com.np/subjects
-  - Loksewa prep → https://ravikishan.com.np/loksewa
-  - World knowledge & current affairs → https://ravikishan.com.np/world-knowledge
-  - R Notes by Ravishankit → https://ravikishan.com.np/r-notes
-  - PYQs & practice → https://ravikishan.com.np/pyqs
-  - Numerical problems → https://ravikishan.com.np/knowledge/numerical-physics or /knowledge/numerical-chemistry
-- Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
-
-For NON-STUDY / human topics (motivation, STEM career advice, mental health, relationships, current events, entertainment, etc.):
-- Respond with genuine warmth and insight — like a friend who knows their stuff
-- Always include at least one helpful official link related to what they asked about
-- Never refuse to answer. You help with everything, but always keep it grounded and useful.
-
-**TONE GUIDELINES:**
-- Start with a short, human hook — a question, a truth, or a moment of connection
-- Weave in real wisdom or a brief story when it fits naturally
-- End with a nudge toward action or reflection
-- Keep the response concise but never shallow
+    const systemContent = `${SEARCH_SYSTEM_PROMPT}
 
 **PLATFORM NAVIGATION:**
 - Notes: /class-11 or /class-12
@@ -766,19 +627,31 @@ For NON-STUDY / human topics (motivation, STEM career advice, mental health, rel
 - Loksewa: /loksewa
 - World Knowledge: /world-knowledge
 - R Notes: /r-notes
-- PYQs: /pyqs
+- PYQs: https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
 - Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
 
-NEVER hallucinate features. Only reference real platform sections.`,
+NEVER hallucinate features. Only reference real platform sections.`;
+
+    const messages: AIChatMessage[] = [
+      {
+        role: "system",
+        content: systemContent,
       },
-      { role: "user", content: query },
+      {
+        role: "user",
+        content: searchContext
+          ? `${searchContext}\n\n${syllabusContext ? syllabusContext + "\n\n" : ""}User query: ${query}`
+          : syllabusContext
+            ? `${syllabusContext}\n\nUser query: ${query}`
+            : query,
+      },
     ];
 
     const reply = await this.callAgnes(messages);
     return {
       results: [],
       fallbackMessage: reply,
-      syllabusHints: [],
+      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : [],
     };
   }
 }
@@ -884,3 +757,6 @@ export class AIService {
 export function createAIService(): AIService {
   return new AIService();
 }
+
+
+

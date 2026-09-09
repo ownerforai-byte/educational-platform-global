@@ -23,6 +23,7 @@ const SW_ROUTES = [
   "/exam-countdown",
   "/notes",
   "/theorems",
+  "/derivations",
   "/knowledge",
   "/progress",
   "/bookmarks",
