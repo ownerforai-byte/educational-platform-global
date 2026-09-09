@@ -13,6 +13,7 @@
 import * as THREE from "three";
 import { ReactNode, RefObject } from "react";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 export interface LabelDef {
   x: number;

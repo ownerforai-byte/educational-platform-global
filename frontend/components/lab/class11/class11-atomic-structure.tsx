@@ -17,6 +17,8 @@ import {
 
 export const Class11AtomicStructure: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [atomicNumber, setAtomicNumber] = useState(8);
   const [showElectrons, setShowElectrons] = useState(true);
   const [showOrbitals, setShowOrbitals] = useState(true);
@@ -71,8 +73,8 @@ export const Class11AtomicStructure: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -80,9 +82,11 @@ export const Class11AtomicStructure: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Nucleus
@@ -128,7 +132,7 @@ export const Class11AtomicStructure: React.FC = () => {
       }
     }
 
-    ts.group.add(nucleusGroup);
+    ts!.group.add(nucleusGroup);
 
     // Electron shells
     const electronGroups: THREE.Group[] = [];
@@ -156,7 +160,7 @@ export const Class11AtomicStructure: React.FC = () => {
           opacity: 0.3 
         });
         const line = new THREE.Line(geometry, material);
-        ts.group.add(line);
+        ts!.group.add(line);
         orbitalLines.push(line);
       });
     }
@@ -179,7 +183,7 @@ export const Class11AtomicStructure: React.FC = () => {
           );
           electronGroup.add(electron);
         }
-        ts.group.add(electronGroup);
+        ts!.group.add(electronGroup);
         electronGroups.push(electronGroup);
       });
     }
@@ -193,7 +197,7 @@ export const Class11AtomicStructure: React.FC = () => {
     });
     const symbolLabel = new THREE.Mesh(symbolGeo, symbolMat);
     symbolLabel.position.set(0, 4, 0);
-    ts.group.add(symbolLabel);
+    ts!.group.add(symbolLabel);
 
     const startTime = performance.now();
 
@@ -219,12 +223,12 @@ export const Class11AtomicStructure: React.FC = () => {
       // Rotate nucleus
       nucleusGroup.rotation.y += 0.005 * animationSpeed;
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [atomicNumber, showElectrons, showOrbitals, showNucleus, animationSpeed, elementInfo, electronShells]);

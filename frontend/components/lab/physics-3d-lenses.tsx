@@ -17,10 +17,12 @@ import {
   createThreeScene,
   bindResize,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 // Convex Lens 3D Component
 const ConvexLens3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [focalLength, setFocalLength] = useState(10);
@@ -49,8 +51,8 @@ const ConvexLens3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -60,7 +62,7 @@ const ConvexLens3D: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const labels: any[] = [];
 let labelRenderer: any = null;
@@ -73,10 +75,10 @@ const container = mountRef.current!;
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Main axis line
         const axisGeo = new THREE.BufferGeometry().setFromPoints([
@@ -85,7 +87,7 @@ const container = mountRef.current!;
         ]);
         const axisMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
         const axis = new THREE.Line(axisGeo, axisMat);
-        ts.group.add(axis);
+        ts!.group.add(axis);
 
         // Create convex lens (biconvex)
         const lensGroup = new THREE.Group();
@@ -121,14 +123,14 @@ const container = mountRef.current!;
         frame.rotation.x = Math.PI / 2;
         lensGroup.add(frame);
         
-        ts.group.add(lensGroup);
+        ts!.group.add(lensGroup);
 
         // Pole to hold lens
         const poleGeo = new THREE.CylinderGeometry(0.2, 0.2, 1, 16);
         const poleMat = standardMaterial(0x475569);
         const pole = new THREE.Mesh(poleGeo, poleMat);
         pole.position.set(0, -1, 0);
-        ts.group.add(pole);
+        ts!.group.add(pole);
 
         // Object (arrow)
         const objectGroup = new THREE.Group();
@@ -143,7 +145,7 @@ const container = mountRef.current!;
         );
         objectGroup.add(objectArrow);
         objectGroup.position.x = objectPosition;
-        ts.group.add(objectGroup);
+        ts!.group.add(objectGroup);
 
         // Focus points
         const focusGroup1 = new THREE.Group();
@@ -162,8 +164,8 @@ const container = mountRef.current!;
           focus2.position.x = focalLength;
           focusGroup2.add(focus2);
         }
-        ts.group.add(focusGroup1);
-        ts.group.add(focusGroup2);
+        ts!.group.add(focusGroup1);
+        ts!.group.add(focusGroup2);
 
         // Image point
         const imageGroup = new THREE.Group();
@@ -174,7 +176,7 @@ const container = mountRef.current!;
           image.position.x = imagePosition;
           imageGroup.add(image);
         }
-        ts.group.add(imageGroup);
+        ts!.group.add(imageGroup);
 
         // Ray lines
         const rayGroup = new THREE.Group();
@@ -225,7 +227,7 @@ const container = mountRef.current!;
           const r3Cont = new THREE.Line(r3ContGeo, new THREE.LineBasicMaterial({ color: 0xa855f7, linewidth: 2, transparent: true, opacity: 0.8 }));
           rayGroup.add(r3Cont);
         }
-        ts.group.add(rayGroup);
+        ts!.group.add(rayGroup);
         updateRays();
 
         // LABELS
@@ -290,7 +292,7 @@ const container = mountRef.current!;
     if (labels[4] && isRealImage) { labels[4].position.x = imagePosition; labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #fbbf24"><span style="color:#fbbf24;font-weight:600">Image (I)</span><br><span style="color:#fda4af;font-size:10px">m=${magnification.toFixed(2)}x</span></div>`; }
     if (labels[3]) labels[3].position.x = objectPosition;
     updateRays();
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
 
@@ -366,6 +368,7 @@ const container = mountRef.current!;
 // Concave Lens 3D Component
 const ConcaveLens3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [focalLength, setFocalLength] = useState(10);
@@ -394,8 +397,8 @@ const ConcaveLens3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -405,7 +408,7 @@ const ConcaveLens3D: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const labels: any[] = [];
 let labelRenderer: any = null;
@@ -418,10 +421,10 @@ const container = mountRef.current!;
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Main axis line
         const axisGeo = new THREE.BufferGeometry().setFromPoints([
@@ -430,7 +433,7 @@ const container = mountRef.current!;
         ]);
         const axisMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
         const axis = new THREE.Line(axisGeo, axisMat);
-        ts.group.add(axis);
+        ts!.group.add(axis);
 
         // Create concave lens (biconcave)
         const lensGroup = new THREE.Group();
@@ -466,14 +469,14 @@ const container = mountRef.current!;
         frame.rotation.x = Math.PI / 2;
         lensGroup.add(frame);
         
-        ts.group.add(lensGroup);
+        ts!.group.add(lensGroup);
 
         // Pole to hold lens
         const poleGeo = new THREE.CylinderGeometry(0.2, 0.2, 1, 16);
         const poleMat = standardMaterial(0x475569);
         const pole = new THREE.Mesh(poleGeo, poleMat);
         pole.position.set(0, -1, 0);
-        ts.group.add(pole);
+        ts!.group.add(pole);
 
         // Object (arrow)
         const objectGroup = new THREE.Group();
@@ -488,7 +491,7 @@ const container = mountRef.current!;
         );
         objectGroup.add(objectArrow);
         objectGroup.position.x = objectPosition;
-        ts.group.add(objectGroup);
+        ts!.group.add(objectGroup);
 
         // Virtual focus points
         const focusGroup1 = new THREE.Group();
@@ -507,8 +510,8 @@ const container = mountRef.current!;
           focus2.position.x = focalLength;
           focusGroup2.add(focus2);
         }
-        ts.group.add(focusGroup1);
-        ts.group.add(focusGroup2);
+        ts!.group.add(focusGroup1);
+        ts!.group.add(focusGroup2);
 
         // Image point (always virtual for concave lens)
         const imageGroup = new THREE.Group();
@@ -517,7 +520,7 @@ const container = mountRef.current!;
         const image = new THREE.Mesh(imageGeo, imageMat);
         image.position.x = imagePosition;
         imageGroup.add(image);
-        ts.group.add(imageGroup);
+        ts!.group.add(imageGroup);
 
         // Ray lines
         const rayGroup = new THREE.Group();
@@ -568,7 +571,7 @@ const container = mountRef.current!;
           const r3Cont = new THREE.Line(r3ContGeo, new THREE.LineBasicMaterial({ color: 0xa855f7, linewidth: 2, transparent: true, opacity: 0.8 }));
           rayGroup.add(r3Cont);
         }
-        ts.group.add(rayGroup);
+        ts!.group.add(rayGroup);
         updateRays();
 
         // LABELS
@@ -631,7 +634,7 @@ const container = mountRef.current!;
     if (labels[4]) { labels[4].position.x = imagePosition; }
     if (labels[3]) labels[3].position.x = objectPosition;
     updateRays();
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
 

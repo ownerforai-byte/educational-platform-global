@@ -24,7 +24,9 @@ import {
   clearGroup,
   createThreeScene,
   bindResize,
+  standardMaterial,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 /* ---------------- Data ---------------- */
 
@@ -39,6 +41,7 @@ const C_WATER = 4186; // J/(kg·K)
 
 export const SearlesBarExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
@@ -77,8 +80,8 @@ export const SearlesBarExperiment: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -88,7 +91,7 @@ export const SearlesBarExperiment: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let leaderLayer: any = null;
 let labelRenderer: any = null;
@@ -100,17 +103,17 @@ const container = mountRef.current!;
         const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, barLen, 22), standardMaterial(rod.scene as number, { metalness: 0.8, roughness: 0.3 }));
         bar.rotation.z = Math.PI / 2;
         bar.position.y = rodY;
-        ts.group.add(bar);
+        ts!.group.add(bar);
         const hotMat = standardMaterial(0xff8c00, { emissive: 0xff6a00, emissiveIntensity: 0.55, transparent: true, opacity: 0.5 });
         const hotSection = new THREE.Mesh(new THREE.CylinderGeometry(0.315, 0.315, 3.4, 22), hotMat);
         hotSection.rotation.z = Math.PI / 2;
         hotSection.position.set(-barLen / 2 + 1.9, rodY, 0);
-        ts.group.add(hotSection);
+        ts!.group.add(hotSection);
 
         /* ---- bench slab + bushing stands ---- */
         const bench = new THREE.Mesh(new THREE.BoxGeometry(13.4, 0.2, 3.2), standardMaterial(0x7c4a21, { roughness: 0.85 }));
         bench.position.y = -0.12;
-        ts.group.add(bench);
+        ts!.group.add(bench);
         [-4.3, 4.6].forEach((bx) => {
           const st = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.95, 0.6), standardMaterial(0x3f3f46));
           st.position.set(bx, rodY - 0.62, 0);
@@ -126,11 +129,11 @@ const container = mountRef.current!;
         chestMat.side = THREE.DoubleSide;
         const chest = new THREE.Mesh(new THREE.BoxGeometry(2.1, 2.1, 2.1), chestMat);
         chest.position.set(-barLen / 2 - 0.55, rodY, 0);
-        ts.group.add(chest);
+        ts!.group.add(chest);
         const chestPipe = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 1.4, 10), standardMaterial(0xfb923c, { metalness: 0.5 }));
         chestPipe.position.set(chest.position.x + 0.2, rodY + 1.65, 0);
         chestPipe.rotation.z = 0.5;
-        ts.group.add(chestPipe);
+        ts!.group.add(chestPipe);
 
         /* ---- thermojunction collars T₁ T₂ + distance dimension ---- */
         const dimLen = 2.2 + ((barLengthCm - 5) / 25) * 4.4;
@@ -155,7 +158,7 @@ const container = mountRef.current!;
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(p1, dimY, 0), new THREE.Vector3(p2, dimY, 0)]),
           new THREE.LineBasicMaterial({ color: 0xc084fc })
         );
-        ts.group.add(dimLine);
+        ts!.group.add(dimLine);
         [p1, p2].forEach((px) => {
           const tick = new THREE.Line(
             new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(px, dimY - 0.14, 0), new THREE.Vector3(px, dimY + 0.14, 0)]),
@@ -170,7 +173,7 @@ const container = mountRef.current!;
         coilBoxMat.side = THREE.DoubleSide;
         const coilBox = new THREE.Mesh(new THREE.BoxGeometry(1.8, 1.8, 1.8), coilBoxMat);
         coilBox.position.set(coilX, rodY, 0);
-        ts.group.add(coilBox);
+        ts!.group.add(coilBox);
         const helixPts: THREE.Vector3[] = [];
         const turns = 6;
         for (let i = 0; i <= turns * 24; i++) {
@@ -180,7 +183,7 @@ const container = mountRef.current!;
         }
         const coilCurve = new THREE.CatmullRomCurve3(helixPts);
         const coil = new THREE.Mesh(new THREE.TubeGeometry(coilCurve, 220, 0.085, 10, false), standardMaterial(0x2563eb, { metalness: 0.4 }));
-        ts.group.add(coil);
+        ts!.group.add(coil);
 
         /* IN / OUT pipes + thermometer bulbs T₃ / T₄ */
         const inPipe = new THREE.Mesh(
@@ -191,7 +194,7 @@ const container = mountRef.current!;
           ]), 40, 0.075, 10, false),
           standardMaterial(0x3b82f6)
         );
-        ts.group.add(inPipe);
+        ts!.group.add(inPipe);
         const outPipe = new THREE.Mesh(
           new THREE.TubeGeometry(new THREE.CatmullRomCurve3([
             new THREE.Vector3(coilX + 0.7, rodY + 0.55, -0.5),
@@ -200,28 +203,28 @@ const container = mountRef.current!;
           ]), 40, 0.075, 10, false),
           standardMaterial(0xef4444)
         );
-        ts.group.add(outPipe);
+        ts!.group.add(outPipe);
         const bulbIn = new THREE.Mesh(new THREE.SphereGeometry(0.13, 14, 14), standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.8 }));
         bulbIn.position.set(coilX - 0.9, rodY - 1.02, 1.26);
-        ts.group.add(bulbIn);
+        ts!.group.add(bulbIn);
         const bulbOut = new THREE.Mesh(new THREE.SphereGeometry(0.13, 14, 14), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.8 }));
         bulbOut.position.set(coilX + 1.18, rodY - 0.5, -1.44);
-        ts.group.add(bulbOut);
+        ts!.group.add(bulbOut);
 
         /* measuring jar collecting drips */
         const jarWater = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.31, 0.6, 20), standardMaterial(0x3b82f6, { transparent: true, opacity: 0.55 }));
         jarWater.position.set(coilX + 1.18, 0.6, -1.44);
-        ts.group.add(jarWater);
+        ts!.group.add(jarWater);
         const jarGlass = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.34, 1.5, 22, 1, true), standardMaterial(0xbae6fd, { transparent: true, opacity: 0.3 }));
         jarGlass.material.side = THREE.DoubleSide;
         jarGlass.position.set(coilX + 1.18, 0.75, -1.44);
-        ts.group.add(jarGlass);
+        ts!.group.add(jarGlass);
         const dripStart = new THREE.Vector3(coilX + 1.18, rodY - 0.56, -1.44);
         const drips: Array<{ mesh: THREE.Mesh; phase: number }> = [];
         for (let i = 0; i < 5; i++) {
           const d = new THREE.Mesh(new THREE.SphereGeometry(0.055, 8, 8), standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.5 }));
           drips.push({ mesh: d, phase: i / 5 });
-          ts.group.add(d);
+          ts!.group.add(d);
         }
 
         storeRef.current = { hotMat, drips, dripStart, jarWater };
@@ -291,8 +294,8 @@ const container = mountRef.current!;
     });
     s.jarWater.scale.y = Math.min(1.35, 1 + ((time * 0.55) % 30) * 0.004);
 
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, barLengthCm, rodRadiusMm, flowGramPerMin, deltaThetaW, T1, T2]);

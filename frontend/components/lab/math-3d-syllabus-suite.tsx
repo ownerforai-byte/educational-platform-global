@@ -64,7 +64,7 @@ function setupKit(mount: HTMLElement, opts: ThreeSceneOptions = {}): Kit {
   return {
     ts,
     labelRenderer,
-    addLabel(color, title, sub, pos, parent = ts.group) {
+    addLabel(color, title, sub, pos, parent = ts!.group) {
       const o = new CSS2DObject(chipEl(color, title, sub));
       o.position.copy(pos);
       parent.add(o);
@@ -79,9 +79,9 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
   const animate = () => {
     raf = requestAnimationFrame(animate);
     onUpdate?.(clock.getElapsedTime());
-    kit.ts.controls.update();
-    kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
-    kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+    kit.ts!.controls.update();
+    kit.ts!.renderer.render(kit.ts!.scene, kit.ts!.camera);
+    kit.labelRenderer.render(kit.ts!.scene, kit.ts!.camera);
   };
   animate();
   return () => cancelAnimationFrame(raf);
@@ -133,7 +133,7 @@ const ConicTab: React.FC = () => {
   const c = 1.4;
   const type = m < 0.98 ? "Ellipse" : m <= 1.02 ? "Parabola" : "Hyperbola";
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     // Double cone (slope 1: r = |z|), axis along z, apex at origin
     const coneMat = standardMaterial(0x38bdf8, { transparent: true, opacity: 0.14 });
     const upper = new THREE.Mesh(new THREE.ConeGeometry(7, 7, 64, 1, true), coneMat);
@@ -195,7 +195,7 @@ const StatsTab: React.FC = () => {
   const [mu, setMu] = useState(0);
   const [sigma, setSigma] = useState(1);
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const pdf = (x: number) => Math.exp(-((x - mu) ** 2) / (2 * sigma * sigma));
     // Bars from z = −3.5 … 3.5 (σ units on x)
     for (let i = 0; i < 28; i++) {
@@ -269,7 +269,7 @@ const CalculusTab: React.FC = () => {
   const [x0, setX0] = useState(0.8);
   const [y0, setY0] = useState(0.6);
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const S = SURFACES[key];
     // Surface: PlaneGeometry displaced; local (x, y) → world (x, z_local→y, −y_local→z)
     const seg = 60, span = 5.2;

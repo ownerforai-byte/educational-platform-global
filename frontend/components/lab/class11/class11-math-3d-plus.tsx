@@ -48,13 +48,13 @@ function TrigWavesLab() {
           circlePts.push(new THREE.Vector3(-6 + Math.cos(a) * R, 0, Math.sin(a) * R));
         }
         const circleCurve = new THREE.CatmullRomCurve3(circlePts);
-        ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(circleCurve, 120, 0.05, 8, true), new THREE.MeshStandardMaterial({ color: 0x64748b })));
+        ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(circleCurve, 120, 0.05, 8, true), new THREE.MeshStandardMaterial({ color: 0x64748b })));
 
         // rotating radius arm + point
         const arm = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-6, 0, 0), new THREE.Vector3()]), new THREE.LineBasicMaterial({ color: 0xfbbf24 }));
-        ts.group.add(arm);
+        ts!.group.add(arm);
         const dot = new THREE.Mesh(new THREE.SphereGeometry(0.22, 16, 16), new THREE.MeshBasicMaterial({ color: 0xf43f5e }));
-        ts.group.add(dot);
+        ts!.group.add(dot);
 
         // sine (cyan) and cosine (violet) ribbons sweeping along +x
         const N = 220;
@@ -64,12 +64,12 @@ function TrigWavesLab() {
         cosGeo.setAttribute("position", new THREE.Float32BufferAttribute(new Float32Array((N + 1) * 3), 3));
         const sineLine = new THREE.Line(sineGeo, new THREE.LineBasicMaterial({ color: 0x22d3ee }));
         const cosLine = new THREE.Line(cosGeo, new THREE.LineBasicMaterial({ color: 0xa78bfa }));
-        ts.group.add(sineLine);
-        ts.group.add(cosLine);
+        ts!.group.add(sineLine);
+        ts!.group.add(cosLine);
         // guide rails
         for (const y of [R, -R]) {
           const rail = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-4, y, 0), new THREE.Vector3(14, y, 0)]), new THREE.LineBasicMaterial({ color: 0x334155 }));
-          ts.group.add(rail);
+          ts!.group.add(rail);
         }
 
         titleText(ts, "Unit circle drives sin θ & cos θ waves", new THREE.Vector3(4, 3.4, 0));
@@ -135,8 +135,8 @@ function ConicSectionsLab() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -146,7 +146,7 @@ function ConicSectionsLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const H = 8;
@@ -158,18 +158,18 @@ function ConicSectionsLab() {
     upper.position.y = -H / 2 + H / 2; // apex at y=0? ConeGeometry is centered
     // place two cones: one up, one down, tips touching at origin
     upper.position.set(0, H / 2, 0);
-    ts.group.add(upper);
+    ts!.group.add(upper);
     const lower = new THREE.Mesh(coneGeo, coneMat);
     lower.rotation.x = Math.PI;
     lower.position.set(0, -H / 2, 0);
-    ts.group.add(lower);
+    ts!.group.add(lower);
 
     // slicing plane — tilt controls the conic type
     const tiltRad = (Math.min(88, Math.max(0, num(tilt, 20))) * Math.PI) / 180;
     const plane = new THREE.Mesh(new THREE.PlaneGeometry(9, 9), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.3, side: THREE.DoubleSide }));
     plane.position.y = 0.5;
     plane.rotation.x = -Math.PI / 2 + tiltRad * 0.55;
-    ts.group.add(plane);
+    ts!.group.add(plane);
 
     // intersection ellipse preview on the plane (approximate)
     const kind =
@@ -214,7 +214,7 @@ function StatisticsLab() {
           const hue = new THREE.Color().setHSL(0.55 - (i / bins.length) * 0.35, 0.8, 0.55);
           const bar = new THREE.Mesh(new THREE.BoxGeometry(1, h, 1), new THREE.MeshStandardMaterial({ color: hue.getHex(), emissive: hue.getHex(), emissiveIntensity: 0.15 }));
           bar.position.set((i - (bins.length - 1) / 2) * 1.35, h / 2, 0);
-          ts.group.add(bar);
+          ts!.group.add(bar);
         }
 
         // normal curve overlay
@@ -225,7 +225,7 @@ function StatisticsLab() {
           curvePts.push(new THREE.Vector3(x, z, 0));
         }
         const nCurve = new THREE.CatmullRomCurve3(curvePts);
-        ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(nCurve, 100, 0.07, 8, false), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.4 })));
+        ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(nCurve, 100, 0.07, 8, false), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.4 })));
 
         titleText(ts, "Marks distribution — gold line = normal fit", new THREE.Vector3(0, 5, 0));
 
@@ -269,8 +269,8 @@ function SequenceTowersLab() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -280,7 +280,7 @@ function SequenceTowersLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const N = 12;
     const a = 1;
@@ -293,7 +293,7 @@ function SequenceTowersLab() {
       const col = new THREE.Color().setHSL(0.62 - Math.min(0.55, h / 11), 0.85, 0.55);
       const bar = new THREE.Mesh(new THREE.BoxGeometry(0.9, h, 0.9), new THREE.MeshStandardMaterial({ color: col.getHex(), emissive: col.getHex(), emissiveIntensity: 0.2 }));
       bar.position.set((i - (N - 1) / 2) * 1.25, h / 2, 0);
-      ts.group.add(bar);
+      ts!.group.add(bar);
     }
 
     titleText(

@@ -62,7 +62,7 @@ function setupKit(mount: HTMLElement, opts: ThreeSceneOptions = {}): Kit {
   return {
     ts,
     labelRenderer,
-    addLabel(color, title, sub, pos, parent = ts.group) {
+    addLabel(color, title, sub, pos, parent = ts!.group) {
       const o = new CSS2DObject(chipEl(color, title, sub));
       o.position.copy(pos);
       parent.add(o);
@@ -77,9 +77,9 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
   const animate = () => {
     raf = requestAnimationFrame(animate);
     onUpdate?.(clock.getElapsedTime());
-    kit.ts.controls.update();
-    kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
-    kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+    kit.ts!.controls.update();
+    kit.ts!.renderer.render(kit.ts!.scene, kit.ts!.camera);
+    kit.labelRenderer.render(kit.ts!.scene, kit.ts!.camera);
   };
   animate();
   return () => cancelAnimationFrame(raf);
@@ -156,7 +156,7 @@ function shellConfig(z: number): number[] {
 const AtomicTab: React.FC = () => {
   const [z, setZ] = useState(11);
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const shells = shellConfig(z);
     const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.55, 24, 18), standardMaterial(0xf43f5e, { emissive: 0xf43f5e, emissiveIntensity: 0.5 }));
     g.add(nucleus);
@@ -242,7 +242,7 @@ const VseprTab: React.FC = () => {
   const [idx, setIdx] = useState(3);
   const shape = VSEPR_SHAPES[idx];
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const center = new THREE.Mesh(new THREE.SphereGeometry(0.55, 28, 20), standardMaterial(0xa78bfa));
     g.add(center);
     shape.dirs.forEach((d) => {
@@ -304,7 +304,7 @@ const TRENDS = {
 const PeriodicTab: React.FC = () => {
   const [metric, setMetric] = useState<keyof typeof TRENDS>("radius");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const t = TRENDS[metric];
     // Baseline axis
     g.add(new THREE.Mesh(new THREE.BoxGeometry(10, 0.06, 0.06), standardMaterial(0x475569)));
@@ -365,7 +365,7 @@ function multiBond(a: THREE.Vector3, b: THREE.Vector3, n: number): THREE.Group {
 const OrganicTab: React.FC = () => {
   const [mol, setMol] = useState<"methane" | "ethane" | "ethene" | "ethyne" | "benzene">("benzene");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     if (mol === "methane") {
       g.add(atom(new THREE.Vector3(), C_COLOR, 0.5));
       [v([1, 1, 1]), v([1, -1, -1]), v([-1, 1, -1]), v([-1, -1, 1])].forEach((d) => {

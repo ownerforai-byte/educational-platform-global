@@ -59,8 +59,8 @@ function MolecularDynamics() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -70,11 +70,11 @@ function MolecularDynamics() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const grp = new THREE.Group();
-    ts.group.add(grp);
+    ts!.group.add(grp);
     const bondLen = 2.4;
     const springMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8 });
     const spring = new THREE.Mesh(new THREE.BoxGeometry(bondLen, 0.14, 0.14), springMat);
@@ -113,15 +113,15 @@ function MolecularDynamics() {
     updateRef.current = (time) => {
     vib.t += 0.02;
     glowPhase.t += 0.04;
-    const s = Math.sin(vib.time * 3) * 0.3; // bond stretch
+    const s = Math.sin(vib.t * 3) * 0.3; // bond stretch
     spring.scale.set(1 + s, 1, 1);
     atomB.position.x = (bondLen / 2) * (1 + s);
     rotor.rotation.z = vib.t; // torsional rotation about C-C bond
     if (mode === "vibration") grp.rotation.y = 0.15;
-    else if (mode === "rotation") grp.rotation.y = vib.time * 0.7;
+    else if (mode === "rotation") grp.rotation.y = vib.t * 0.7;
     else grp.rotation.z = 0;
     // Pulse atom glow
-    const pulseA = 0.3 + Math.sin(glowPhase.time) * 0.15;
+    const pulseA = 0.3 + Math.sin(glowPhase.t) * 0.15;
     const pulseB = 0.3 + Math.sin(glowPhase.t + Math.PI) * 0.15;
     (atomA.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseA;
     (atomB.material as THREE.MeshStandardMaterial).emissiveIntensity = pulseB;
@@ -168,8 +168,8 @@ function CrystalLattice() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -179,7 +179,7 @@ function CrystalLattice() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const a = 2; // cell parameter
@@ -221,12 +221,12 @@ function CrystalLattice() {
     for (const [x, y, z] of atomPos) {
       const sph = new THREE.Mesh(new THREE.SphereGeometry(0.38, 20, 20), mat);
       sph.position.set(x, y, z);
-      ts.group.add(sph);
+      ts!.group.add(sph);
     }
 
     // wireframe unit cell box
     const box = new THREE.Mesh(new THREE.BoxGeometry(a, a, a), new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true, transparent: true, opacity: 0.4 }));
-    ts.group.add(box);
+    ts!.group.add(box);
 
     // Miller index plane
     const planeGeo = new THREE.PlaneGeometry(6, 6);
@@ -236,7 +236,7 @@ function CrystalLattice() {
     if (miller === "100") { plane.rotation.y = Math.PI / 2; plane.position.x = 0; }
     else if (miller === "110") { plane.rotation.y = Math.PI / 4; }
     else { plane.rotation.x = Math.atan(1 / Math.sqrt(2)); plane.rotation.z = Math.PI / 4; }
-    ts.group.add(plane);
+    ts!.group.add(plane);
     titleText(ts, `${lattice.toUpperCase()} lattice — plane (${miller})`, new THREE.Vector3(0, 3.4, 0));
 
   }, [lattice, miller]);
@@ -297,8 +297,8 @@ function Spectroscopy3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -308,13 +308,13 @@ function Spectroscopy3D() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // axis line
     const axis = new THREE.Mesh(new THREE.BoxGeometry(11, 0.05, 0.05), new THREE.MeshStandardMaterial({ color: 0x64748b }));
     axis.position.set(0, 0, 0);
-    ts.group.add(axis);
+    ts!.group.add(axis);
     // peaks: {x, height, width}
     const irPeaks: [number, number][] = [[-3.5, 0.8], [-1.2, 3.4], [0.2, 2.2], [1.5, 4.0], [3.2, 2.5], [4.2, 1.1]];
     const nmrPeaks: [number, number][] = [[-4.4, 2.0], [-2.0, 1.0], [0.6, 1.5], [2.8, 3.0], [4.0, 1.2]];
@@ -323,7 +323,7 @@ function Spectroscopy3D() {
     const _base = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.2, 0.35), new THREE.MeshStandardMaterial({ color: peakColor }));
     for (const [x, h] of pk) {          const bar = new THREE.Mesh(new THREE.BoxGeometry(0.35, h, 0.35), new THREE.MeshStandardMaterial({ color: peakColor, emissive: peakColor, emissiveIntensity: 0.2 }));
       bar.position.set(x, h / 2, 0);
-      ts.group.add(bar);
+      ts!.group.add(bar);
       // Lorentzian spread lines
       const pos: number[] = [];
       for (let i = -80; i <= 80; i++) {
@@ -333,18 +333,18 @@ function Spectroscopy3D() {
       }
       const lineGeo = new THREE.BufferGeometry();
       lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
-      ts.group.add(new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: peakColor, transparent: true, opacity: 0.4 })));
+      ts!.group.add(new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: peakColor, transparent: true, opacity: 0.4 })));
     }
     // axis label sprites
     const xLabel = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText(spec === "ir" ? "Wavenumber (cm⁻¹) →" : "Chemical shift δ (ppm) →"), transparent: true }));
     xLabel.scale.set(4, 0.7, 1);
     xLabel.position.set(0, -0.9, 0);
-    ts.group.add(xLabel);
+    ts!.group.add(xLabel);
 
     // animated diatomic molecule representing vibration
     const mg = new THREE.Group();
     molGrp.current = mg;
-    ts.group.add(mg);
+    ts!.group.add(mg);
     const mA = new THREE.Mesh(new THREE.SphereGeometry(0.7, 24, 24), new THREE.MeshStandardMaterial({ color: 0xf43f5e }));
     mA.position.set(-1.1, 0, 0);
     mg.add(mA);
@@ -408,8 +408,8 @@ function ReactionMechanism() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -419,11 +419,11 @@ function ReactionMechanism() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const group = new THREE.Group();
-    ts.group.add(group);
+    ts!.group.add(group);
 
     function atom(radius: number, color: number) {
       return new THREE.Mesh(new THREE.SphereGeometry(radius, 24, 24), new THREE.MeshStandardMaterial({ color, roughness: 0.4 }));
@@ -567,7 +567,7 @@ function BiomoleculeViewer() {
           cy.position.copy(mid);
           cy.lookAt(a);
           cy.rotateX(Math.PI / 2);
-          ts.group.add(cy);
+          ts!.group.add(cy);
         }
         titleText(ts, "DNA double helix — antiparallel strands", new THREE.Vector3(0, 4.2, 0));
 
@@ -614,8 +614,8 @@ function VSEPRGeometry() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -625,7 +625,7 @@ function VSEPRGeometry() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // ligand directions per electron-domain arrangement
@@ -650,7 +650,7 @@ function VSEPRGeometry() {
     };
     const checked = dirs[shape];
     const central = new THREE.Mesh(new THREE.SphereGeometry(0.62, 32, 32), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.3 }));
-    ts.group.add(central);
+    ts!.group.add(central);
     checked.forEach((d) => {
       const lig = new THREE.Mesh(new THREE.SphereGeometry(0.5, 24, 24), new THREE.MeshStandardMaterial({ color: 0x3b82f6 }));
       const pos = d.clone().multiplyScalar(2.0);
@@ -670,7 +670,7 @@ function VSEPRGeometry() {
       const lp = new THREE.Mesh(new THREE.SphereGeometry(0.55, 20, 20), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.35 }));
       lp.position.set(shape === "linear" ? 2.0 - i * 4.0 : 0, 1.7, 0);
       if (shape !== "linear") lp.position.x = i === 0 ? 0 : 0;
-      ts.group.add(lp);
+      ts!.group.add(lp);
       loneSpheres.current.push(lp);
     }
     titleText(ts, shapeLabel(shape), new THREE.Vector3(0, 3.4, 0));
@@ -753,43 +753,43 @@ function GalvanicCell() {
         // Electrode plates
         const zn = new THREE.Mesh(new THREE.BoxGeometry(0.25, 2.6, 1.6), new THREE.MeshStandardMaterial({ color: 0xb8b8b8, metalness: 0.8 }));
         zn.position.set(-half, 1.8, 0);
-        ts.group.add(zn);
+        ts!.group.add(zn);
         const cu = new THREE.Mesh(new THREE.BoxGeometry(0.25, 2.6, 1.6), new THREE.MeshStandardMaterial({ color: 0xd97706, metalness: 0.8 }));
         cu.position.set(half, 1.8, 0);
-        ts.group.add(cu);
+        ts!.group.add(cu);
 
         // Labels
         const lZn = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText("Zn electrode"), transparent: true }));
-        lZn.scale.set(2.6, 0.55, 1); lZn.position.set(-half, 4.5, 1); ts.group.add(lZn);
+        lZn.scale.set(2.6, 0.55, 1); lZn.position.set(-half, 4.5, 1); ts!.group.add(lZn);
         const lCu = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText("Cu electrode"), transparent: true }));
-        lCu.scale.set(2.6, 0.55, 1); lCu.position.set(half, 4.5, 1); ts.group.add(lCu);
+        lCu.scale.set(2.6, 0.55, 1); lCu.position.set(half, 4.5, 1); ts!.group.add(lCu);
 
         // Salt bridge connecting the two beakers
         const bridge = new THREE.Mesh(new THREE.BoxGeometry(Math.abs(half * 2) - 1, 0.4, 0.4), new THREE.MeshStandardMaterial({ color: 0xf8fafc, transparent: true, opacity: 0.6 }));
         bridge.position.set(0, 2.6, 0);
-        ts.group.add(bridge);
+        ts!.group.add(bridge);
 
         // Load bulb between electrodes
         const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.5, 20, 20), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 1 }));
         bulb.position.set(0, 3.4, 0);
-        ts.group.add(bulb);
+        ts!.group.add(bulb);
         // wires
         const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, half * 2, 8), new THREE.MeshStandardMaterial({ color: 0xcbd5e1, metalness: 0.8 }));
         wire.rotation.x = Math.PI / 2;
         wire.position.set(0, 3.5, 0);
-        ts.group.add(wire);
+        ts!.group.add(wire);
 
         // electron flow dots along the wire
         for (let i = 0; i < 8; i++) {
           const e = new THREE.Mesh(new THREE.SphereGeometry(0.12, 10, 10), new THREE.MeshBasicMaterial({ color: 0xfef08a }));
           eFlow.current.push(e);
-          ts.group.add(e);
+          ts!.group.add(e);
         }
         // ion arrows in salt bridge (cation/anion)
         const anion = new LiveArrow(new THREE.Vector3(-0.8, 0, 0), new THREE.Vector3(-2.4, 2.2, 0), 1.4, 0x34d399, 0.3, 0.16);
-        ts.group.add(anion);
+        ts!.group.add(anion);
         const cation = new LiveArrow(new THREE.Vector3(0.8, 0, 0), new THREE.Vector3(1.4, 2.2, 0), 1.4, 0xf472b6, 0.3, 0.16);
-        ts.group.add(cation);
+        ts!.group.add(cation);
         titleText(ts, "Galvanic cell — electron flow", new THREE.Vector3(0, 5.8, 0));
 
         function animate() {
@@ -884,22 +884,22 @@ function PhaseDiagram() {
         tint(3.2, 5.4, 2.2, 4.2, 0x38bdf8);
 
         const mk = (tx: string): THREE.Texture => makeCanvasText(tx);
-        const ls = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Solid"), transparent: true })); ls.scale.set(1.8, 0.5, 1); ls.position.set(0.8, 7.2, 0.5); ts.group.add(ls);
-        const ll = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Liquid"), transparent: true })); ll.scale.set(1.8, 0.5, 1); ll.position.set(3.1, 6.6, 0.5); ts.group.add(ll);
-        const lg = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Gas / Vapour"), transparent: true })); lg.scale.set(2.4, 0.5, 1); lg.position.set(6.2, 1.4, 0.5); ts.group.add(lg);
+        const ls = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Solid"), transparent: true })); ls.scale.set(1.8, 0.5, 1); ls.position.set(0.8, 7.2, 0.5); ts!.group.add(ls);
+        const ll = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Liquid"), transparent: true })); ll.scale.set(1.8, 0.5, 1); ll.position.set(3.1, 6.6, 0.5); ts!.group.add(ll);
+        const lg = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Gas / Vapour"), transparent: true })); lg.scale.set(2.4, 0.5, 1); lg.position.set(6.2, 1.4, 0.5); ts!.group.add(lg);
 
         const triple = new THREE.Mesh(new THREE.SphereGeometry(0.18, 16, 16), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-        triple.position.set(2.0, 4.0, 0.2); ts.group.add(triple);
+        triple.position.set(2.0, 4.0, 0.2); ts!.group.add(triple);
         const critical = new THREE.Mesh(new THREE.SphereGeometry(0.18, 16, 16), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-        critical.position.set(3.9, 6.4, 0.2); ts.group.add(critical);
-        const lt = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Triple point"), transparent: true })); lt.scale.set(2.2, 0.5, 1); lt.position.set(2.0, 3.2, 0.6); ts.group.add(lt);
-        const lc = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Critical point"), transparent: true })); lc.scale.set(2.6, 0.5, 1); lc.position.set(3.9, 7.2, 0.6); ts.group.add(lc);
+        critical.position.set(3.9, 6.4, 0.2); ts!.group.add(critical);
+        const lt = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Triple point"), transparent: true })); lt.scale.set(2.2, 0.5, 1); lt.position.set(2.0, 3.2, 0.6); ts!.group.add(lt);
+        const lc = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Critical point"), transparent: true })); lc.scale.set(2.6, 0.5, 1); lc.position.set(3.9, 7.2, 0.6); ts!.group.add(lc);
 
         const mark = new THREE.Mesh(new THREE.SphereGeometry(0.22, 16, 16), new THREE.MeshBasicMaterial({ color: 0x38bdf8 }));
-        mark.position.set(2.0, 4.0, 0.4); ts.group.add(mark); marker.current = mark;
+        mark.position.set(2.0, 4.0, 0.4); ts!.group.add(mark); marker.current = mark;
 
-        const axT = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Temperature →"), transparent: true })); axT.scale.set(2.6, 0.55, 1); axT.position.set(5, 0.3, 0.6); ts.group.add(axT);
-        const axP = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Pressure"), transparent: true })); axP.scale.set(2.2, 0.55, 1); axP.position.set(0.2, 5.2, 0.6); ts.group.add(axP);
+        const axT = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Temperature →"), transparent: true })); axT.scale.set(2.6, 0.55, 1); axT.position.set(5, 0.3, 0.6); ts!.group.add(axT);
+        const axP = new THREE.Sprite(new THREE.SpriteMaterial({ map: mk("Pressure"), transparent: true })); axP.scale.set(2.2, 0.55, 1); axP.position.set(0.2, 5.2, 0.6); ts!.group.add(axP);
         titleText(ts, "3D Phase Diagram — P vs T", new THREE.Vector3(5, 10.5, 4));
 
         function animate() {

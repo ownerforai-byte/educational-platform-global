@@ -16,10 +16,12 @@ import {
   createThreeScene,
   bindResize,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 // Prism 3D Component showing refraction and dispersion
 const Prism3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [prismAngle, setPrismAngle] = useState(60);
@@ -43,8 +45,8 @@ const Prism3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -54,7 +56,7 @@ const Prism3D: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const labels: any[] = [];
 let labelRenderer: any = null;
@@ -67,10 +69,10 @@ const container = mountRef.current!;
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Create triangular prism
         const prismGroup = new THREE.Group();
@@ -134,7 +136,7 @@ const container = mountRef.current!;
         const edgeLines = new THREE.LineSegments(edges, edgeMat);
         prismGroup.add(edgeLines);
         
-        ts.group.add(prismGroup);
+        ts!.group.add(prismGroup);
 
         // Light source (white light)
         const lightSourceGroup = new THREE.Group();
@@ -182,7 +184,7 @@ const container = mountRef.current!;
         }
         
         lightSourceGroup.add(rayGroup);
-        ts.group.add(lightSourceGroup);
+        ts!.group.add(lightSourceGroup);
 
         // LABELS
         try {
@@ -214,21 +216,21 @@ const container = mountRef.current!;
             redLabel.element.className = "label";
             redLabel.element.innerHTML = '<div style="background:rgba(0,0,0,0.8);padding:3px 6px;border-radius:4px;border:1px solid #ef4444"><span style="color:#ef4444;font-size:10px">Red</span></div>';
             redLabel.position.set(15, apexHeight/2 - 3, 0);
-            ts.group.add(redLabel);
+            ts!.group.add(redLabel);
             labels.push(redLabel);
 
             const greenLabel = new CSS2DObject(document.createElement("div"));
             greenLabel.element.className = "label";
             greenLabel.element.innerHTML = '<div style="background:rgba(0,0,0,0.8);padding:3px 6px;border-radius:4px;border:1px solid #22c55e"><span style="color:#22c55e;font-size:10px">Green</span></div>';
             greenLabel.position.set(15, apexHeight/2, 0);
-            ts.group.add(greenLabel);
+            ts!.group.add(greenLabel);
             labels.push(greenLabel);
 
             const blueLabel = new CSS2DObject(document.createElement("div"));
             blueLabel.element.className = "label";
             blueLabel.element.innerHTML = '<div style="background:rgba(0,0,0,0.8);padding:3px 6px;border-radius:4px;border:1px solid #3b82f6"><span style="color:#3b82f6;font-size:10px">Blue</span></div>';
             blueLabel.position.set(15, apexHeight/2 + 3, 0);
-            ts.group.add(blueLabel);
+            ts!.group.add(blueLabel);
             labels.push(blueLabel);
           }
 
@@ -248,7 +250,7 @@ const container = mountRef.current!;
     if (labels[4]) {
       labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #6366f1"><span style="color:#818cf8;font-weight:600">A = ${prismAngle}°</span></div>`;
     }
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [prismAngle, refractiveIndex, showRays, showLabels, showDispersion]);
 

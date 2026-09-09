@@ -108,8 +108,8 @@ const VectorComprehensive3D: React.FC = () => {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -119,7 +119,7 @@ const VectorComprehensive3D: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Grid helper

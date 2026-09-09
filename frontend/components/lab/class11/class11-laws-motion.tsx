@@ -18,6 +18,8 @@ import {
 
 export const Class11LawsOfMotion: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [mass1, setMass1] = useState(2);
   const [mass2, setMass2] = useState(3);
   const [force, setForce] = useState(10);
@@ -56,8 +58,8 @@ export const Class11LawsOfMotion: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -65,9 +67,11 @@ export const Class11LawsOfMotion: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Create ground
@@ -77,10 +81,10 @@ export const Class11LawsOfMotion: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Block 1 (horizontal motion with friction)
     const block1Group = new THREE.Group();
@@ -90,7 +94,7 @@ export const Class11LawsOfMotion: React.FC = () => {
     block1.castShadow = true;
     block1Group.add(block1);
     block1Group.position.set(0, 0.5, 0);
-    ts.group.add(block1Group);
+    ts!.group.add(block1Group);
 
     // Block 2 (hanging)
     const block2Group = new THREE.Group();
@@ -100,7 +104,7 @@ export const Class11LawsOfMotion: React.FC = () => {
     block2.castShadow = true;
     block2Group.add(block2);
     block2Group.position.set(0, 10, 0);
-    ts.group.add(block2Group);
+    ts!.group.add(block2Group);
 
     // Pulley system
     const pulleyGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.3, 16);
@@ -108,7 +112,7 @@ export const Class11LawsOfMotion: React.FC = () => {
     const pulley = new THREE.Mesh(pulleyGeo, pulleyMat);
     pulley.position.set(0, 10, 0);
     pulley.rotation.x = Math.PI / 2;
-    ts.group.add(pulley);
+    ts!.group.add(pulley);
 
     // Rope
     let rope: THREE.Line | null = null;
@@ -126,18 +130,18 @@ export const Class11LawsOfMotion: React.FC = () => {
       if (!ts) return;
 
       // Clear previous objects
-      if (rope) { ts.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); rope = null; }
-      if (forceArrow) { ts.group.remove(forceArrow); forceArrow.dispose(); forceArrow = null; }
-      if (frictionArrow) { ts.group.remove(frictionArrow); frictionArrow.dispose(); frictionArrow = null; }
-      if (tensionArrow) { ts.group.remove(tensionArrow); tensionArrow.dispose(); tensionArrow = null; }
+      if (rope) { ts!.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); rope = null; }
+      if (forceArrow) { ts!.group.remove(forceArrow); forceArrow.dispose(); forceArrow = null; }
+      if (frictionArrow) { ts!.group.remove(frictionArrow); frictionArrow.dispose(); frictionArrow = null; }
+      if (tensionArrow) { ts!.group.remove(tensionArrow); tensionArrow.dispose(); tensionArrow = null; }
       if (trajectoryLine) {
-        ts.group.remove(trajectoryLine);
+        ts!.group.remove(trajectoryLine);
         trajectoryLine.geometry.dispose();
         (trajectoryLine.material as THREE.Material).dispose();
         trajectoryLine = null;
       }
       normalArrows.forEach(arrow => {
-        ts.group.remove(arrow);
+        ts!.group.remove(arrow);
         arrow.dispose();
       });
       normalArrows.length = 0;
@@ -174,7 +178,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         trajectoryLine = new THREE.Line(trajGeo, trajMat);
         trajectoryLine.computeLineDistances();
         trajectoryLine.name = "trajectory";
-        ts.group.add(trajectoryLine);
+        ts!.group.add(trajectoryLine);
       }
 
       if (showTrajectory) {
@@ -185,7 +189,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         const ropeGeo = new THREE.BufferGeometry().setFromPoints(ropePoints);
         const ropeMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
         rope = new THREE.Line(ropeGeo, ropeMat);
-        ts.group.add(rope);
+        ts!.group.add(rope);
       }
 
       // Show forces
@@ -197,7 +201,7 @@ export const Class11LawsOfMotion: React.FC = () => {
           force * 0.1,
           0xef4444
         );
-        ts.group.add(forceArrow);
+        ts!.group.add(forceArrow);
 
         // Friction arrow on block 1
         frictionArrow = new LiveArrow(
@@ -206,7 +210,7 @@ export const Class11LawsOfMotion: React.FC = () => {
           friction * mass1 * 9.8 * 0.1,
           0x6366f1
         );
-        ts.group.add(frictionArrow);
+        ts!.group.add(frictionArrow);
 
         // Tension arrow
         tensionArrow = new LiveArrow(
@@ -215,7 +219,7 @@ export const Class11LawsOfMotion: React.FC = () => {
           tension * 0.1,
           0x22c55e
         );
-        ts.group.add(tensionArrow);
+        ts!.group.add(tensionArrow);
 
         // Normal force arrows
         const normalArrow1 = new LiveArrow(
@@ -224,7 +228,7 @@ export const Class11LawsOfMotion: React.FC = () => {
           mass1 * 9.8 * 0.1,
           0xfbbf24
         );
-        ts.group.add(normalArrow1);
+        ts!.group.add(normalArrow1);
         normalArrows.push(normalArrow1);
 
         const normalArrow2 = new LiveArrow(
@@ -233,19 +237,19 @@ export const Class11LawsOfMotion: React.FC = () => {
           mass2 * 9.8 * 0.1,
           0xfbbf24
         );
-        ts.group.add(normalArrow2);
+        ts!.group.add(normalArrow2);
         normalArrows.push(normalArrow2);
       }
 
       // Rotate pulley
       pulley.rotation.z += 0.05;
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [mass1, mass2, force, friction, showForces, showTrajectory]);

@@ -56,8 +56,8 @@ function Pendulum3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 3.4, 9.5), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 3.4, 9.5), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -65,8 +65,8 @@ function Pendulum3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -76,7 +76,7 @@ function Pendulum3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const pivotY = 2.6;
 let sys: any = null;
@@ -86,14 +86,14 @@ const el = mount.current;
         const pivot = new THREE.Vector3(0, pivotY, 0);
         const mountBox = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.18, 0.7), standardMaterial(0x475569, { metalness: 0.4 }));
         mountBox.position.copy(pivot);
-        ts.group.add(mountBox);
+        ts!.group.add(mountBox);
         const pin = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 12), standardMaterial(0xf8fafc));
         pin.position.set(0, pivot.y - 0.16, 0);
-        ts.group.add(pin);
+        ts!.group.add(pin);
 
         const swing = new THREE.Group();
         swing.position.copy(pivot);
-        ts.group.add(swing);
+        ts!.group.add(swing);
         const rodMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, L, 8), standardMaterial(0x94a3b8, { metalness: 0.3 }));
         rodMesh.position.y = -L / 2;
         swing.add(rodMesh);
@@ -102,7 +102,7 @@ const el = mount.current;
         swing.add(bob);
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
@@ -116,7 +116,7 @@ const el = mount.current;
     sys.setPos(2, bxc, byc - 0.65, 0);
     sys.setPos(3, (bxc - 0.8) / 1 - 0.3, pivot.y - Math.cos(ang) * (L / 2) * 0.5, 0);
     sys.setPos(4, 0.6, pivot.y + 0.9, 0);
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, L, g, theta0, running]);
 
@@ -193,8 +193,8 @@ function Projectile3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 5.5, 14), autoRotate: false, background: 0x0b1220, grid: true });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 5.5, 14), autoRotate: false, background: 0x0b1220, grid: true });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -202,8 +202,8 @@ function Projectile3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -213,7 +213,7 @@ function Projectile3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const NPOINTS = 90;
 let ball: THREE.Mesh | null = null;
@@ -224,16 +224,16 @@ const el = mount.current;
         const ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 9), standardMaterial(0x1e293b, { roughness: 0.9 }));
         ground.rotation.x = -Math.PI / 2;
         ground.position.set(6, 0, 0);
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const pts: THREE.Vector3[] = [];
         for (let i = 0; i <= NPOINTS; i++) { const p = pt(i / NPOINTS); pts.push(new THREE.Vector3(p[0], Math.max(p[1], 0), 0)); }
-        ts.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0x7dd3fc })));
+        ts!.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0x7dd3fc })));
 
         ball = new THREE.Mesh(new THREE.SphereGeometry(0.3, 20, 20), standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5 }));
-        ts.group.add(ball);
+        ts!.group.add(ball);
 
-        const mkArrow = (o: THREE.Vector3, d: THREE.Vector3, len: number, col: number) =>
+        const mkArrow = async (o: THREE.Vector3, d: THREE.Vector3, len: number, col: number) =>
           ts!.group.add(new LiveArrow(d.clone().normalize(), o, len, col, 0.32, 0.18));
         mkArrow(new THREE.Vector3(0, 0.4, 0), new THREE.Vector3(v0 * Math.cos(a), vy0, 0), 1.1, 0xfbbf24); // v₀
         mkArrow(new THREE.Vector3(2.2, 2.6, 0), new THREE.Vector3(1, 0, 0), 1.0, 0x38bdf8);              // vₓ
@@ -245,16 +245,16 @@ const el = mount.current;
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(apex.x, 0, 0), apex.clone()]),
           new THREE.LineDashedMaterial({ color: 0xa78bfa, dashSize: 0.2, gapSize: 0.14 })
         );
-        dH.computeLineDistances(); ts.group.add(dH);
+        dH.computeLineDistances(); ts!.group.add(dH);
         const landX = pts[pts.length - 1].x;
         const dR = new THREE.Line(
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, -0.02, 0.3), new THREE.Vector3(landX, -0.02, 0.3)]),
           new THREE.LineDashedMaterial({ color: 0x22c55e, dashSize: 0.2, gapSize: 0.14 })
         );
-        dR.computeLineDistances(); ts.group.add(dR);
+        dR.computeLineDistances(); ts!.group.add(dR);
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
@@ -262,7 +262,7 @@ const el = mount.current;
     const p = running ? (time * 0.4) % 1 : 0;
     const pp = pt(Math.min(p, 1));
     if (ball) ball.position.set(pp[0], Math.max(pp[1], 0), 0);
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, v0, angle, g, running]);
 
@@ -337,8 +337,8 @@ function Incline3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 3.4, 11), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 3.4, 11), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -346,8 +346,8 @@ function Incline3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -357,7 +357,7 @@ function Incline3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let sys: any = null;
 const el = mount.current;
@@ -371,16 +371,16 @@ const el = mount.current;
           standardMaterial(0x7c4a21, { roughness: 0.85 })
         );
         wedge.position.z = -1.1;
-        ts.group.add(wedge);
+        ts!.group.add(wedge);
 
         /* block sitting on the slope */
         const block = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.6, 0.9), standardMaterial(0x38bdf8, { emissive: 0x38bdf8, emissiveIntensity: 0.3 }));
         block.position.copy(C);
         block.rotation.z = th;
-        ts.group.add(block);
+        ts!.group.add(block);
 
         /* force arrows */
-        const mk = (dir: THREE.Vector3, len: number, col: number) =>
+        const mk = async (dir: THREE.Vector3, len: number, col: number) =>
           ts!.group.add(new LiveArrow(dir.clone().normalize(), C, len, col, 0.3, 0.17));
         mk(new THREE.Vector3(0, -1, 0), 1.55, 0xef4444);            // mg
         mk(downhill(), 1.5, 0xf97316);                              // mg·sinθ
@@ -389,12 +389,12 @@ const el = mount.current;
         mk(uSlope, 1.1, 0xfacc15);                                  // f
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
     updateRef.current = (time) => {
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, deg, mu, m]);
 

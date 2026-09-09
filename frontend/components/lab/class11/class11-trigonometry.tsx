@@ -17,6 +17,8 @@ import {
 
 export const Class11Trigonometry: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [angleDegrees, setAngleDegrees] = useState(45);
   const [radius, setRadius] = useState(3);
   const [showUnitCircle, setShowUnitCircle] = useState(true);
@@ -47,8 +49,8 @@ export const Class11Trigonometry: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -56,9 +58,11 @@ export const Class11Trigonometry: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Ground
@@ -68,10 +72,10 @@ export const Class11Trigonometry: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Unit circle
     let unitCircle: THREE.Line | null = null;
@@ -92,14 +96,14 @@ export const Class11Trigonometry: React.FC = () => {
       new THREE.Vector3(8, 0, 0)
     ]);
     const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0xef4444 }));
-    ts.group.add(xAxis);
+    ts!.group.add(xAxis);
 
     const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(0, -5, 0),
       new THREE.Vector3(0, 5, 0)
     ]);
     const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x22c55e }));
-    ts.group.add(yAxis);
+    ts!.group.add(yAxis);
 
     // Secondary axes for waves
     const xAxis2Geo = new THREE.BufferGeometry().setFromPoints([
@@ -107,21 +111,21 @@ export const Class11Trigonometry: React.FC = () => {
       new THREE.Vector3(8, 0, -10)
     ]);
     const xAxis2 = new THREE.Line(xAxis2Geo, new THREE.LineBasicMaterial({ color: 0x6366f1, transparent: true, opacity: 0.5 }));
-    ts.group.add(xAxis2);
+    ts!.group.add(xAxis2);
 
     const yAxis2Geo = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(0, -3, -10),
       new THREE.Vector3(0, 3, -10)
     ]);
     const yAxis2 = new THREE.Line(yAxis2Geo, new THREE.LineBasicMaterial({ color: 0x6366f1, transparent: true, opacity: 0.5 }));
-    ts.group.add(yAxis2);
+    ts!.group.add(yAxis2);
 
     // Lighting
     const ambient = new THREE.AmbientLight(0xffffff, 0.5);
-    ts.scene.add(ambient);
+    ts!.scene.add(ambient);
     const dir = new THREE.DirectionalLight(0xffffff, 0.8);
     dir.position.set(5, 8, 6);
-    ts.scene.add(dir);
+    ts!.scene.add(dir);
 
     const startTime = performance.now();
 
@@ -129,15 +133,15 @@ export const Class11Trigonometry: React.FC = () => {
       if (!ts) return;
 
       // Clear previous objects
-      if (unitCircle) { ts.group.remove(unitCircle); unitCircle.geometry.dispose(); }
-      if (angleLine) { ts.group.remove(angleLine); angleLine.geometry.dispose(); }
-      if (sinLine) { ts.group.remove(sinLine); sinLine.geometry.dispose(); }
-      if (cosLine) { ts.group.remove(cosLine); cosLine.geometry.dispose(); }
-      if (tanLine) { ts.group.remove(tanLine); tanLine.geometry.dispose(); }
-      if (pointOnCircle) { ts.group.remove(pointOnCircle); pointOnCircle.geometry.dispose(); }
-      if (sineWave) { ts.group.remove(sineWave); sineWave.geometry.dispose(); }
-      if (cosineWave) { ts.group.remove(cosineWave); cosineWave.geometry.dispose(); }
-      if (tangentWave) { ts.group.remove(tangentWave); tangentWave.geometry.dispose(); }
+      if (unitCircle) { ts!.group.remove(unitCircle); unitCircle.geometry.dispose(); }
+      if (angleLine) { ts!.group.remove(angleLine); angleLine.geometry.dispose(); }
+      if (sinLine) { ts!.group.remove(sinLine); sinLine.geometry.dispose(); }
+      if (cosLine) { ts!.group.remove(cosLine); cosLine.geometry.dispose(); }
+      if (tanLine) { ts!.group.remove(tanLine); tanLine.geometry.dispose(); }
+      if (pointOnCircle) { ts!.group.remove(pointOnCircle); pointOnCircle.geometry.dispose(); }
+      if (sineWave) { ts!.group.remove(sineWave); sineWave.geometry.dispose(); }
+      if (cosineWave) { ts!.group.remove(cosineWave); cosineWave.geometry.dispose(); }
+      if (tangentWave) { ts!.group.remove(tangentWave); tangentWave.geometry.dispose(); }
 
       const elapsed = (performance.now() - startTime) / 1000;
       const time = elapsed;
@@ -153,7 +157,7 @@ export const Class11Trigonometry: React.FC = () => {
         const circleGeo = new THREE.BufferGeometry().setFromPoints(circlePoints);
         const circleMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
         unitCircle = new THREE.Line(circleGeo, circleMat);
-        ts.group.add(unitCircle);
+        ts!.group.add(unitCircle);
 
         // Angle line from origin
         const anglePoints = [
@@ -163,7 +167,7 @@ export const Class11Trigonometry: React.FC = () => {
         const angleGeo = new THREE.BufferGeometry().setFromPoints(anglePoints);
         const angleMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 2 });
         angleLine = new THREE.Line(angleGeo, angleMat);
-        ts.group.add(angleLine);
+        ts!.group.add(angleLine);
 
         // Point on circle
         const pointGeo = new THREE.SphereGeometry(0.2, 16, 16);
@@ -174,7 +178,7 @@ export const Class11Trigonometry: React.FC = () => {
           radius * Math.sin(angleRadians),
           0
         );
-        ts.group.add(pointOnCircle);
+        ts!.group.add(pointOnCircle);
 
         // Sin line (vertical from point to x-axis)
         const sinPoints = [
@@ -184,7 +188,7 @@ export const Class11Trigonometry: React.FC = () => {
         const sinGeo = new THREE.BufferGeometry().setFromPoints(sinPoints);
         const sinMat = new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2, transparent: true, opacity: 0.8 });
         sinLine = new THREE.Line(sinGeo, sinMat);
-        ts.group.add(sinLine);
+        ts!.group.add(sinLine);
 
         // Cos line (horizontal from origin to point projection)
         const cosPoints = [
@@ -194,7 +198,7 @@ export const Class11Trigonometry: React.FC = () => {
         const cosGeo = new THREE.BufferGeometry().setFromPoints(cosPoints);
         const cosMat = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 2, transparent: true, opacity: 0.8 });
         cosLine = new THREE.Line(cosGeo, cosMat);
-        ts.group.add(cosLine);
+        ts!.group.add(cosLine);
 
         // Tan line (extended)
         const tanLength = Math.min(5, Math.abs(radius * Math.tan(angleRadians)));
@@ -205,7 +209,7 @@ export const Class11Trigonometry: React.FC = () => {
         const tanGeo = new THREE.BufferGeometry().setFromPoints(tanPoints);
         const tanMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 2, transparent: true, opacity: 0.8 });
         tanLine = new THREE.Line(tanGeo, tanMat);
-        ts.group.add(tanLine);
+        ts!.group.add(tanLine);
       }
 
       // Wave graphs
@@ -221,7 +225,7 @@ export const Class11Trigonometry: React.FC = () => {
         const sineGeo = new THREE.BufferGeometry().setFromPoints(sinePoints);
         const sineMat = new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2 });
         sineWave = new THREE.Line(sineGeo, sineMat);
-        ts.group.add(sineWave);
+        ts!.group.add(sineWave);
 
         // Cosine wave
         const cosinePoints: THREE.Vector3[] = [];
@@ -233,7 +237,7 @@ export const Class11Trigonometry: React.FC = () => {
         const cosineGeo = new THREE.BufferGeometry().setFromPoints(cosinePoints);
         const cosineMat = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 2 });
         cosineWave = new THREE.Line(cosineGeo, cosineMat);
-        ts.group.add(cosineWave);
+        ts!.group.add(cosineWave);
 
         // Tangent wave (partial)
         const tangentPoints: THREE.Vector3[] = [];
@@ -247,7 +251,7 @@ export const Class11Trigonometry: React.FC = () => {
         const tangentGeo = new THREE.BufferGeometry().setFromPoints(tangentPoints);
         const tangentMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 2 });
         tangentWave = new THREE.Line(tangentGeo, tangentMat);
-        ts.group.add(tangentWave);
+        ts!.group.add(tangentWave);
       }
 
       // Animate
@@ -255,12 +259,12 @@ export const Class11Trigonometry: React.FC = () => {
         pointOnCircle.position.y += Math.sin(time * 5) * 0.02;
       }
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [angleDegrees, radius, showUnitCircle, showWave, showIdentities, angleRadians, sinValue, cosValue, tanValue]);

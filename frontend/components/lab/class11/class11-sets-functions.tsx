@@ -17,6 +17,8 @@ import {
 
 export const Class11SetsFunctions: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [numElementsA, setNumElementsA] = useState(5);
   const [numElementsB, setNumElementsB] = useState(5);
   const [overlap, setOverlap] = useState(3);
@@ -51,8 +53,8 @@ export const Class11SetsFunctions: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -60,9 +62,11 @@ export const Class11SetsFunctions: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Ground
@@ -72,14 +76,14 @@ export const Class11SetsFunctions: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Axes
     const axes = new THREE.AxesHelper(10);
-    ts.group.add(axes);
+    ts!.group.add(axes);
 
     // Set A visualization (left circle)
     const setACircle = new THREE.Group();
@@ -98,7 +102,7 @@ export const Class11SetsFunctions: React.FC = () => {
     const circleMat = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 2 });
     const circleA = new THREE.Line(circleGeo, circleMat);
     setACircle.add(circleA);
-    ts.group.add(setACircle);
+    ts!.group.add(setACircle);
 
     // Set B visualization (right circle)
     const setBCircle = new THREE.Group();
@@ -115,7 +119,7 @@ export const Class11SetsFunctions: React.FC = () => {
     const circleMatB = new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2 });
     const circleB = new THREE.Line(circleGeoB, circleMatB);
     setBCircle.add(circleB);
-    ts.group.add(setBCircle);
+    ts!.group.add(setBCircle);
 
     // Overlapping region visualization
     const overlapGroup = new THREE.Group();
@@ -135,7 +139,7 @@ export const Class11SetsFunctions: React.FC = () => {
       const overlapLine = new THREE.Line(overlapGeo, overlapMat);
       overlapGroup.add(overlapLine);
     }
-    ts.group.add(overlapGroup);
+    ts!.group.add(overlapGroup);
 
     // Elements in sets as spheres
     const elements: THREE.Mesh[] = [];
@@ -153,7 +157,7 @@ export const Class11SetsFunctions: React.FC = () => {
           distance * Math.sin(angle)
         );
         element.castShadow = true;
-        ts.group.add(element);
+        ts!.group.add(element);
         elements.push(element);
       }
 
@@ -170,7 +174,7 @@ export const Class11SetsFunctions: React.FC = () => {
           distance * Math.sin(angle)
         );
         element.castShadow = true;
-        ts.group.add(element);
+        ts!.group.add(element);
         elements.push(element);
       }
     }
@@ -209,7 +213,7 @@ export const Class11SetsFunctions: React.FC = () => {
       const funcMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 3 });
       const funcLine = new THREE.Line(funcGeo, funcMat);
       funcGroup.add(funcLine);
-      ts.group.add(funcGroup);
+      ts!.group.add(funcGroup);
 
       // Axes for function
       const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
@@ -232,13 +236,13 @@ export const Class11SetsFunctions: React.FC = () => {
     const labelAMat = new THREE.MeshBasicMaterial({ color: 0xef4444, transparent: true });
     const labelA = new THREE.Mesh(labelAGeo, labelAMat);
     labelA.position.set(-10, 0, 0);
-    ts.group.add(labelA);
+    ts!.group.add(labelA);
 
     const labelBGeo = new THREE.PlaneGeometry(1, 0.3);
     const labelBMat = new THREE.MeshBasicMaterial({ color: 0x22c55e, transparent: true });
     const labelB = new THREE.Mesh(labelBGeo, labelBMat);
     labelB.position.set(10, 0, 0);
-    ts.group.add(labelB);
+    ts!.group.add(labelB);
 
     const startTime = performance.now();
 
@@ -258,12 +262,12 @@ export const Class11SetsFunctions: React.FC = () => {
         element.rotation.y += 0.02;
       });
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [numElementsA, numElementsB, overlap, functionType, showSets, showFunctions, setA, setB, unionAB, intersectionAB, differenceAB]);

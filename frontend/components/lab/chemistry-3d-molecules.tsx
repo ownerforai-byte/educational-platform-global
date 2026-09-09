@@ -138,8 +138,8 @@ export const Chemistry3DMolecules: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -149,7 +149,7 @@ export const Chemistry3DMolecules: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Ground plane
@@ -158,20 +158,20 @@ export const Chemistry3DMolecules: React.FC = () => {
     const ground = new THREE.Mesh(groundGeo, groundMat);
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Lighting
-    ts.group.add(new THREE.AmbientLight(0xffffff, 0.4));
+    ts!.group.add(new THREE.AmbientLight(0xffffff, 0.4));
     const dir = new THREE.DirectionalLight(0xffffff, 1);
     dir.position.set(5, 10, 7);
-    ts.group.add(dir);
+    ts!.group.add(dir);
 
     // Molecule group
     const moleculeGroup = new THREE.Group();
-    ts.group.add(moleculeGroup);
+    ts!.group.add(moleculeGroup);
 
     // Atom spheres
     const atomGroup = new THREE.Group();
@@ -278,8 +278,8 @@ export const Chemistry3DMolecules: React.FC = () => {
 
 
     updateRef.current = (time) => {
-    ts.controls.autoRotate = autoRotate;
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    ts!.controls.autoRotate = autoRotate;
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [selectedMolecule, showLabels, showBonds, autoRotate]);
 

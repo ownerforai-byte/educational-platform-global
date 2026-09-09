@@ -17,6 +17,8 @@ import {
 
 export const Class11Statistics: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [numDataPoints, setNumDataPoints] = useState(10);
   const [meanValue, setMeanValue] = useState(5);
   const [stdDev, setStdDev] = useState(2);
@@ -99,8 +101,8 @@ export const Class11Statistics: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -108,9 +110,11 @@ export const Class11Statistics: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Ground
@@ -120,10 +124,10 @@ export const Class11Statistics: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Axes for data visualization
     const xAxisGeo = new THREE.BufferGeometry().setFromPoints([
@@ -131,14 +135,14 @@ export const Class11Statistics: React.FC = () => {
       new THREE.Vector3(10, 0, 0)
     ]);
     const xAxis = new THREE.Line(xAxisGeo, new THREE.LineBasicMaterial({ color: 0xef4444 }));
-    ts.group.add(xAxis);
+    ts!.group.add(xAxis);
 
     const yAxisGeo = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(0, -5, 0),
       new THREE.Vector3(0, 10, 0)
     ]);
     const yAxis = new THREE.Line(yAxisGeo, new THREE.LineBasicMaterial({ color: 0x22c55e }));
-    ts.group.add(yAxis);
+    ts!.group.add(yAxis);
 
     // Data points as spheres
     const dataPointMeshes: THREE.Mesh[] = [];
@@ -157,7 +161,7 @@ export const Class11Statistics: React.FC = () => {
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(x, y, z);
         mesh.castShadow = true;
-        ts.group.add(mesh);
+        ts!.group.add(mesh);
         dataPointMeshes.push(mesh);
       });
     }
@@ -181,7 +185,7 @@ export const Class11Statistics: React.FC = () => {
         bar.userData.height = height;
         bar.position.set(x, height / 2, 0);
         bar.castShadow = true;
-        ts.group.add(bar);
+        ts!.group.add(bar);
         histogramBars.push(bar);
       }
     }
@@ -202,7 +206,7 @@ export const Class11Statistics: React.FC = () => {
       const geometry = new THREE.BufferGeometry().setFromPoints(points);
       const material = new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 3 });
       normalCurve = new THREE.Line(geometry, material);
-      ts.group.add(normalCurve);
+      ts!.group.add(normalCurve);
     }
 
     // Mean, median, mode indicators
@@ -213,7 +217,7 @@ export const Class11Statistics: React.FC = () => {
     const meanIndicatorMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.8 });
     const meanIndicator = new THREE.Mesh(meanIndicatorGeo, meanIndicatorMat);
     meanIndicator.position.set(meanX, meanY, 0);
-    ts.group.add(meanIndicator);
+    ts!.group.add(meanIndicator);
 
     const medianX = -8 + ((calculatedMedian - minVal) / valueRange) * 16;
     const medianY = (calculatedMedian - minVal) / valueRange * 8;
@@ -222,7 +226,7 @@ export const Class11Statistics: React.FC = () => {
     const medianIndicatorMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.8 });
     const medianIndicator = new THREE.Mesh(medianIndicatorGeo, medianIndicatorMat);
     medianIndicator.position.set(medianX, medianY, 0);
-    ts.group.add(medianIndicator);
+    ts!.group.add(medianIndicator);
 
     const modeX = -8 + ((calculatedMode - minVal) / valueRange) * 16;
     const modeY = (calculatedMode - minVal) / valueRange * 8;
@@ -231,14 +235,14 @@ export const Class11Statistics: React.FC = () => {
     const modeIndicatorMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.8 });
     const modeIndicator = new THREE.Mesh(modeIndicatorGeo, modeIndicatorMat);
     modeIndicator.position.set(modeX, modeY, 0);
-    ts.group.add(modeIndicator);
+    ts!.group.add(modeIndicator);
 
     // Labels
     const meanLabelGeo = new THREE.PlaneGeometry(0.5, 0.2);
     const meanLabelMat = new THREE.MeshBasicMaterial({ color: 0x22c55e, transparent: true });
     const meanLabel = new THREE.Mesh(meanLabelGeo, meanLabelMat);
     meanLabel.position.set(meanX, meanY + 1, 0);
-    ts.group.add(meanLabel);
+    ts!.group.add(meanLabel);
 
     const startTime = performance.now();
 
@@ -264,12 +268,12 @@ export const Class11Statistics: React.FC = () => {
       medianIndicator.position.y = medianY + Math.sin(time * 3 + 1) * 0.1;
       modeIndicator.position.y = modeY + Math.sin(time * 3 + 2) * 0.1;
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [numDataPoints, meanValue, stdDev, showHistogram, showDataPoints, showNormalCurve, dataPoints, calculatedMean, calculatedMedian, calculatedMode, calculatedStdDev, calculatedRange]);

@@ -63,7 +63,7 @@ function setupKit(mount: HTMLElement, opts: ThreeSceneOptions = {}): Kit {
   return {
     ts,
     labelRenderer,
-    addLabel(color, title, sub, pos, parent = ts.group) {
+    addLabel(color, title, sub, pos, parent = ts!.group) {
       const o = new CSS2DObject(chipEl(color, title, sub));
       o.position.copy(pos);
       parent.add(o);
@@ -78,9 +78,9 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
   const animate = () => {
     raf = requestAnimationFrame(animate);
     onUpdate?.(clock.getElapsedTime());
-    kit.ts.controls.update();
-    kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
-    kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+    kit.ts!.controls.update();
+    kit.ts!.renderer.render(kit.ts!.scene, kit.ts!.camera);
+    kit.labelRenderer.render(kit.ts!.scene, kit.ts!.camera);
   };
   animate();
   return () => cancelAnimationFrame(raf);
@@ -144,7 +144,7 @@ const VernierTab: React.FC = () => {
   const [w, setW] = useState(2.34); // object width in cm
   const [zero, setZero] = useState<keyof typeof VERNIER_ZERO_ERRORS>("none");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const RAIL_Y = 0.7;
     const JAW_X = -4.1; // inner face of fixed jaw
     // Main scale rail
@@ -231,7 +231,7 @@ const VernierTab: React.FC = () => {
 const ScrewGaugeTab: React.FC = () => {
   const [d, setD] = useState(3.46); // object diameter in mm
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const U = 0.22; // scene units per mm
     const du = d * U; // gap in units
     // C-frame

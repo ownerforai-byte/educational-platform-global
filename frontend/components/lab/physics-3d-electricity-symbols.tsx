@@ -51,8 +51,8 @@ function OhmsCircuit3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 3.2, 11), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 3.2, 11), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -60,8 +60,8 @@ function OhmsCircuit3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -71,7 +71,7 @@ function OhmsCircuit3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let charge: THREE.Mesh | null = null;
 let sys: any = null;
@@ -100,13 +100,13 @@ const el = mount.current;
         const pt2 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.9, 0.5), standardMaterial(0x334155, { metalness: 0.6 }));
         pt2.position.x = -0.53; battery.add(pt2);
         battery.position.set(-3, 0, 0);
-        ts.group.add(battery);
+        ts!.group.add(battery);
 
         const resMat = standardMaterial(0xfb923c, { emissive: 0xfb923c, emissiveIntensity: 0.5 });
         for (let i = 0; i < 8; i++) {
           const z = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.07, 0.08), resMat);
           z.position.set(1.1 + i * 0.42, 1.5 - (i % 2 === 0 ? 0 : 0.05), 0);
-          ts.group.add(z);
+          ts!.group.add(z);
         }
 
         const meter = (col: number) => {
@@ -119,14 +119,14 @@ const el = mount.current;
           needle.position.y = 0.1; g.add(needle);
           return g;
         };
-        const am = meter(0x38bdf8); am.position.set(1.6, -2.0, 0); ts.group.add(am);   // ammeter (series)
-        const vm = meter(0x22c55e); vm.position.set(1.7, 2.15, 0); ts.group.add(vm);  // voltmeter (parallel)
+        const am = meter(0x38bdf8); am.position.set(1.6, -2.0, 0); ts!.group.add(am);   // ammeter (series)
+        const vm = meter(0x22c55e); vm.position.set(1.7, 2.15, 0); ts!.group.add(vm);  // voltmeter (parallel)
 
         charge = new THREE.Mesh(new THREE.SphereGeometry(0.14, 12, 12), standardMaterial(0x38bdf8, { emissive: 0x38bdf8, emissiveIntensity: 0.9 }));
-        ts.group.add(charge);
+        ts!.group.add(charge);
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
         sys.add({ x: 1.5, y: -2.0, z: 0, symbol: "A", name: "Ammeter", desc: "Series meter; reads I = " + I.toFixed(2) + " A.", color: "#38bdf8" });
@@ -143,7 +143,7 @@ const el = mount.current;
     else if (s < 6) { cx = 3.4 - 6.4 * ((s - 4) / 2); cy = -1.5; }
     else { cx = -3; cy = -1.5 + 3 * ((s - 6) / 2); }
     if (charge) charge.position.set(cx, cy, 0);
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, V, R]);
 
@@ -201,8 +201,8 @@ function WireForce3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(1.5, 4, 10), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(1.5, 4, 10), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -210,8 +210,8 @@ function WireForce3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -221,7 +221,7 @@ function WireForce3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let fArrow: THREE.ArrowHelper | null = null;
 let sys: any = null;
@@ -230,37 +230,37 @@ const el = mount.current;
 
         /* horseshoe magnet: N (red), S (blue), yoke on top */
         const poleN = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.9, 1.5), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.25 }));
-        poleN.position.set(-1.7, 1.1, 0); ts.group.add(poleN);
+        poleN.position.set(-1.7, 1.1, 0); ts!.group.add(poleN);
         const poleS = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.9, 1.5), standardMaterial(0x3b82f6, { emissive: 0x3b82f6, emissiveIntensity: 0.25 }));
-        poleS.position.set(1.7, 1.1, 0); ts.group.add(poleS);
+        poleS.position.set(1.7, 1.1, 0); ts!.group.add(poleS);
         const yoke = new THREE.Mesh(new THREE.BoxGeometry(4.3, 0.5, 1.5), standardMaterial(0x64748b, { metalness: 0.5 }));
-        yoke.position.set(0, 2.3, 0); ts.group.add(yoke);
+        yoke.position.set(0, 2.3, 0); ts!.group.add(yoke);
         const nLbl = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.3, 0.05), standardMaterial(0xf8fafc));
-        nLbl.position.set(-1.7, 1.1, 0.78); ts.group.add(nLbl);
+        nLbl.position.set(-1.7, 1.1, 0.78); ts!.group.add(nLbl);
 
         /* the wire passes between the poles along z */
         const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 4.6, 10), standardMaterial(0xd97706, { metalness: 0.7 }));
         wire.rotation.x = Math.PI / 2;
         wire.position.set(0, 1.1, 0);
-        ts.group.add(wire);
+        ts!.group.add(wire);
 
         /* B arrows: N → S (along +x) at three depths */
-        const mkB = (z: number) => ts!.group.add(new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1.15, 1.1, z), 2.3, 0x3b82f6, 0.3, 0.17));
+        const mkB = async (z: number) => ts!.group.add(new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1.15, 1.1, z), 2.3, 0x3b82f6, 0.3, 0.17));
         mkB(-1); mkB(0); mkB(1);
         /* I arrow along +z */
-        ts.group.add(new LiveArrow(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 1.1, 1.2), 1.1, 0xfbbf24, 0.3, 0.17));
+        ts!.group.add(new LiveArrow(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 1.1, 1.2), 1.1, 0xfbbf24, 0.3, 0.17));
         /* F arrow up, length scales with force */
         fArrow = new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.1, 0), 0.9 + Math.min(F, 3) * 0.45, 0xef4444, 0.32, 0.18);
-        ts.group.add(fArrow);
+        ts!.group.add(fArrow);
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
     updateRef.current = (time) => {
     if (fArrow) fArrow.setLength(0.9 + Math.min(F, 3) * 0.45 + Math.sin(time * 4) * 0.05, 0.32, 0.18);
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, B, I, Lcm]);
 

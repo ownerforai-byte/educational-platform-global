@@ -18,6 +18,8 @@ import {
 
 export const Class11KinematicsMotion: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [initialVelocity, setInitialVelocity] = useState(10);
   const [acceleration, setAcceleration] = useState(2);
   const [time, setTime] = useState(5);
@@ -53,8 +55,8 @@ export const Class11KinematicsMotion: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -62,9 +64,11 @@ export const Class11KinematicsMotion: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Create ground plane
@@ -78,15 +82,15 @@ export const Class11KinematicsMotion: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     // Create grid helper
     const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Create axes helper
     const axes = new THREE.AxesHelper(10);
-    ts.group.add(axes);
+    ts!.group.add(axes);
 
     // Create moving object (car-like)
     const carGroup = new THREE.Group();
@@ -119,7 +123,7 @@ export const Class11KinematicsMotion: React.FC = () => {
     wheel4.rotation.z = Math.PI / 2;
     carGroup.add(wheel4);
 
-    ts.group.add(carGroup);
+    ts!.group.add(carGroup);
 
     // Path line
     let pathLine: THREE.Line | null = null;
@@ -133,12 +137,12 @@ export const Class11KinematicsMotion: React.FC = () => {
     const startMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5 });
     startPoint = new THREE.Mesh(startGeo, startMat);
     startPoint.position.set(0, 0, 0);
-    ts.group.add(startPoint);
+    ts!.group.add(startPoint);
 
     const endGeo = new THREE.SphereGeometry(0.3, 16, 16);
     const endMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
     endPoint = new THREE.Mesh(endGeo, endMat);
-    ts.group.add(endPoint);
+    ts!.group.add(endPoint);
 
     // Distance marker
     const distanceGeo = new THREE.CylinderGeometry(0.1, 0.1, 1, 8);
@@ -146,7 +150,7 @@ export const Class11KinematicsMotion: React.FC = () => {
     const distanceMarker = new THREE.Mesh(distanceGeo, distanceMat);
     distanceMarker.position.y = 0.5;
     distanceMarker.visible = false;
-    ts.group.add(distanceMarker);
+    ts!.group.add(distanceMarker);
 
     const startTime = performance.now();
 
@@ -155,12 +159,12 @@ export const Class11KinematicsMotion: React.FC = () => {
 
       // Clear existing path and arrows
       if (pathLine) {
-        ts.group.remove(pathLine);
+        ts!.group.remove(pathLine);
         pathLine.geometry.dispose();
         (pathLine.material as THREE.Material).dispose();
       }
-      if (velocityArrow) { ts.group.remove(velocityArrow); }
-      if (accelerationArrow) { ts.group.remove(accelerationArrow); }
+      if (velocityArrow) { ts!.group.remove(velocityArrow); }
+      if (accelerationArrow) { ts!.group.remove(accelerationArrow); }
 
       // Calculate positions based on kinematic equations
       const positions: THREE.Vector3[] = [];
@@ -178,7 +182,7 @@ export const Class11KinematicsMotion: React.FC = () => {
         const geometry = new THREE.BufferGeometry().setFromPoints(positions);
         const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
         pathLine = new THREE.Line(geometry, material);
-        ts.group.add(pathLine);
+        ts!.group.add(pathLine);
       }
 
       // Update end point position
@@ -219,7 +223,7 @@ export const Class11KinematicsMotion: React.FC = () => {
           velValue * arrowScale,
           0x22c55e
         );
-        ts.group.add(velocityArrow);
+        ts!.group.add(velocityArrow);
 
         accelerationArrow = new LiveArrow(
           new THREE.Vector3(1, 0, 0),
@@ -227,11 +231,11 @@ export const Class11KinematicsMotion: React.FC = () => {
           accelValue * arrowScale,
           0xef4444
         );
-        ts.group.add(accelerationArrow);
+        ts!.group.add(accelerationArrow);
       }
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 

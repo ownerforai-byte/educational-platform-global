@@ -56,8 +56,8 @@ const VectorBasics3D: React.FC = () => {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -67,16 +67,16 @@ const VectorBasics3D: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Grid helper
     const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-    ts.group.add(gridHelper);
+    ts!.group.add(gridHelper);
 
     // Axes helper
     const axesHelper = new THREE.AxesHelper(8);
-    ts.group.add(axesHelper);
+    ts!.group.add(axesHelper);
 
     // Vector 1 (Red)
     const vec1Arrow = new LiveArrow(
@@ -88,7 +88,7 @@ const VectorBasics3D: React.FC = () => {
       0.2
     );
     vec1Arrow.name = "vec1";
-    ts.group.add(vec1Arrow);
+    ts!.group.add(vec1Arrow);
 
     // Vector 2 (Blue)
     const vec2Arrow = new LiveArrow(
@@ -100,13 +100,13 @@ const VectorBasics3D: React.FC = () => {
       0.2
     );
     vec2Arrow.name = "vec2";
-    ts.group.add(vec2Arrow);
+    ts!.group.add(vec2Arrow);
 
     // Resultant (Green)
     let resultantArrow: THREE.ArrowHelper | null = null;
     function updateVectors() {
       // Remove old arrows
-      ts.group.children = ts.group.children.filter((child: any) => 
+    if (ts) ts.group.children = ts.group.children.filter((child: any) => 
         child.name !== "vec1" && child.name !== "vec2" && child.name !== "resultant"
       );
 
@@ -120,7 +120,7 @@ const VectorBasics3D: React.FC = () => {
         0.2
       );
       newVec1Arrow.name = "vec1";
-      ts.group.add(newVec1Arrow);
+      ts?.group.add(newVec1Arrow);
 
       // Vector 2
       const newVec2Arrow = new LiveArrow(
@@ -132,7 +132,7 @@ const VectorBasics3D: React.FC = () => {
         0.2
       );
       newVec2Arrow.name = "vec2";
-      ts.group.add(newVec2Arrow);
+      ts?.group.add(newVec2Arrow);
 
       // Resultant
       if (showResultant) {
@@ -145,7 +145,7 @@ const VectorBasics3D: React.FC = () => {
           0.25
         );
         resultantArrow.name = "resultant";
-        ts.group.add(resultantArrow);
+        ts?.group.add(resultantArrow);
       }
     }
 
@@ -276,8 +276,8 @@ const DotProduct3D: React.FC = () => {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -286,14 +286,14 @@ const DotProduct3D: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     const ts = tsRef.current!;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Grid and axes
     const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-    ts.group.add(gridHelper);
+    ts!.group.add(gridHelper);
     const axesHelper = new THREE.AxesHelper(8);
-    ts.group.add(axesHelper);
+    ts!.group.add(axesHelper);
 
     // Vector A (Red) - fixed along x-axis
     const vecA = new LiveArrow(
@@ -304,7 +304,7 @@ const DotProduct3D: React.FC = () => {
       0.4,
       0.2
     );
-    ts.group.add(vecA);
+    ts!.group.add(vecA);
 
     // Vector B (Blue) - at angle
     const angleRad = angle * Math.PI / 180;
@@ -316,15 +316,15 @@ const DotProduct3D: React.FC = () => {
       0.4,
       0.2
     );
-    ts.group.add(vecB);
+    ts!.group.add(vecB);
 
     // Projection
     let projectionLine: THREE.Line | null = null;
     let projectionArrow: THREE.ArrowHelper | null = null;
     
     function updateProjection() {
-      if (projectionLine) ts.group.remove(projectionLine);
-      if (projectionArrow) ts.group.remove(projectionArrow);
+      if (projectionLine) ts!.group.remove(projectionLine);
+      if (projectionArrow) ts!.group.remove(projectionArrow);
       
       if (!showProjection) return;
 
@@ -337,7 +337,7 @@ const DotProduct3D: React.FC = () => {
       projectionGeo.setFromPoints(points);
       const projectionMat = new THREE.LineDashedMaterial({ color: 0x888888, dashSize: 0.2, gapSize: 0.1 });
       projectionLine = new THREE.Line(projectionGeo, projectionMat);
-      ts.group.add(projectionLine);
+      ts!.group.add(projectionLine);
 
       // Projection arrow (from origin to projection point)
       projectionArrow = new LiveArrow(
@@ -348,7 +348,7 @@ const DotProduct3D: React.FC = () => {
         0.3,
         0.15
       );
-      ts.group.add(projectionArrow);
+      ts!.group.add(projectionArrow);
     }
 
     updateProjection();
@@ -464,8 +464,8 @@ const CrossProduct3D: React.FC = () => {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -474,14 +474,14 @@ const CrossProduct3D: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     const ts = tsRef.current!;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Grid and axes
     const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-    ts.group.add(gridHelper);
+    ts!.group.add(gridHelper);
     const axesHelper = new THREE.AxesHelper(8);
-    ts.group.add(axesHelper);
+    ts!.group.add(axesHelper);
 
     // Vector A (Red) - along x-axis
     const vecA = new LiveArrow(
@@ -492,7 +492,7 @@ const CrossProduct3D: React.FC = () => {
       0.4,
       0.2
     );
-    ts.group.add(vecA);
+    ts!.group.add(vecA);
 
     // Vector B (Blue) - at angle in x-y plane
     const vecB = new LiveArrow(
@@ -503,12 +503,12 @@ const CrossProduct3D: React.FC = () => {
       0.4,
       0.2
     );
-    ts.group.add(vecB);
+    ts!.group.add(vecB);
 
     // Cross product result (Green) - along z-axis
     let crossArrow: THREE.ArrowHelper | null = null;
     function updateCrossProduct() {
-      if (crossArrow) ts.group.remove(crossArrow);
+      if (crossArrow) ts!.group.remove(crossArrow);
       
       if (!showNormal) return;
       
@@ -520,13 +520,13 @@ const CrossProduct3D: React.FC = () => {
         0.5,
         0.25
       );
-      ts.group.add(crossArrow);
+      ts!.group.add(crossArrow);
     }
 
     // Plane formed by A and B
     let planeMesh: THREE.Mesh | null = null;
     function updatePlane() {
-      if (planeMesh) ts.group.remove(planeMesh);
+      if (planeMesh) ts!.group.remove(planeMesh);
       
       if (!showPlane) return;
       
@@ -540,7 +540,7 @@ const CrossProduct3D: React.FC = () => {
       });
       planeMesh = new THREE.Mesh(planeGeo, planeMat);
       planeMesh.position.set(0, 0, 0);
-      ts.group.add(planeMesh);
+      ts!.group.add(planeMesh);
     }
 
     updateCrossProduct();

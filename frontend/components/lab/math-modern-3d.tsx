@@ -49,8 +49,8 @@ function MultivariableSurface() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -60,7 +60,7 @@ function MultivariableSurface() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const res = 80;
@@ -95,8 +95,8 @@ function MultivariableSurface() {
     geo.computeVertexNormals();
     // add tiny wireframe on top
     const wire = new THREE.Mesh(new THREE.BufferGeometry().copy(geo), new THREE.MeshStandardMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.12 }));
-    ts.group.add(wire);
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide })));
+    ts!.group.add(wire);
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide })));
 
     // contour projection onto the base plane z = -3 (marching-squares style)
     const baseY = -3;
@@ -129,16 +129,16 @@ function MultivariableSurface() {
       }
       const lg = new THREE.BufferGeometry();
       lg.setAttribute("position", new THREE.Float32BufferAttribute(segs, 3));
-      ts.group.add(new THREE.Line(lg, new THREE.LineBasicMaterial({ color: contourColors[lv % contourColors.length], transparent: true, opacity: 0.85 })));
+      ts!.group.add(new THREE.Line(lg, new THREE.LineBasicMaterial({ color: contourColors[lv % contourColors.length], transparent: true, opacity: 0.85 })));
     }
 
     const base = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), new THREE.MeshBasicMaterial({ color: 0x0ea5e9, transparent: true, opacity: 0.06, side: THREE.DoubleSide }));
     base.rotation.x = -Math.PI / 2;
     base.position.y = baseY;
-    ts.group.add(base);
+    ts!.group.add(base);
     titleText(ts, func === "wave" ? "z = sin x · cos y with contours" : "z = x² − y² (saddle) with contours", new THREE.Vector3(0, 3.4, 0));
 
-    const surfMesh = ts.group.children[ts.group.children.length - 2] as THREE.Mesh;
+    const surfMesh = ts!.group.children[ts!.group.children.length - 2] as THREE.Mesh;
     const wavePhase = { t: 0 };
 
 
@@ -147,7 +147,7 @@ function MultivariableSurface() {
     if (func === "wave" && surfMesh && surfMesh.material) {
       const mat = surfMesh.material as THREE.MeshStandardMaterial;
       // Subtle emissive pulse on wave surface
-      mat.emissiveIntensity = 0.05 + Math.sin(wavePhase.time * 2) * 0.03;
+      mat.emissiveIntensity = 0.05 + Math.sin(wavePhase.t * 2) * 0.03;
     }
     };
   }, [func]);
@@ -190,8 +190,8 @@ function VectorFieldDivCurl() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -201,7 +201,7 @@ function VectorFieldDivCurl() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // choose field vectors F(x,y,z)
@@ -229,7 +229,7 @@ function VectorFieldDivCurl() {
           else if (divSign < -0.1) color = 0xef4444; // convergence (sink)
           const len = Math.min(1.6, mag * 0.28);
           const arrow = new LiveArrow(new THREE.Vector3(fx, fy, fz).normalize(), new THREE.Vector3(px, py, pz), len, color, len * 0.3, len * 0.2);
-          ts.group.add(arrow);
+          ts!.group.add(arrow);
         }
       }
     }
@@ -278,8 +278,8 @@ function MandelbulbFractal() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -289,7 +289,7 @@ function MandelbulbFractal() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const powN = Math.max(2, Math.min(12, parseInt(power) || 8));
 
@@ -339,7 +339,7 @@ function MandelbulbFractal() {
     g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
     g.setAttribute("color", new THREE.Float32BufferAttribute(color, 3));
     const pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 0.02, vertexColors: true }));
-    ts.group.add(pts);
+    ts!.group.add(pts);
     titleText(ts, `Mandelbulb — power ${powN}`, new THREE.Vector3(0, 2.4, 0));
 
   }, [power]);
@@ -376,8 +376,8 @@ function ParametricSurface() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -387,7 +387,7 @@ function ParametricSurface() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const fn = (u: number, v: number): [number, number, number] => {
@@ -429,7 +429,7 @@ function ParametricSurface() {
     geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
     geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geo.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.4 })));
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.4 })));
     titleText(ts, surfaceLabel(surface), new THREE.Vector3(0, 3.4, 0));
 
   }, [surface]);
@@ -489,8 +489,8 @@ function MatrixTransforms() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -500,18 +500,18 @@ function MatrixTransforms() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // original basis (reference)
     const origin = new THREE.Vector3(0, 0, 0);
-    ts.group.add(new LiveArrow(new THREE.Vector3(1, 0, 0), origin, 2, 0xef4444, 0.4, 0.25));
-    ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), origin, 2, 0x22c55e, 0.4, 0.25));
-    ts.group.add(new LiveArrow(new THREE.Vector3(0, 0, 1), origin, 2, 0x3b82f6, 0.4, 0.25));
+    ts!.group.add(new LiveArrow(new THREE.Vector3(1, 0, 0), origin, 2, 0xef4444, 0.4, 0.25));
+    ts!.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), origin, 2, 0x22c55e, 0.4, 0.25));
+    ts!.group.add(new LiveArrow(new THREE.Vector3(0, 0, 1), origin, 2, 0x3b82f6, 0.4, 0.25));
     // unit cube
     const cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true, transparent: true, opacity: 0.5 }));
     cube.position.set(0.5, 0.5, 0.5);
-    ts.group.add(cube);
+    ts!.group.add(cube);
 
     const a = (parseFloat(rx) || 0) * Math.PI / 180;
     const b = (parseFloat(ry) || 0) * Math.PI / 180;
@@ -540,7 +540,7 @@ function MatrixTransforms() {
     for (const [v, col] of basis) {
       const tv = matmul(M, [v.x, v.y, v.z]);
       const arrow = new LiveArrow(new THREE.Vector3(tv[0], tv[1], tv[2]).normalize(), origin, Math.hypot(tv[0], tv[1], tv[2]), col, 0.4, 0.25);
-      ts.group.add(arrow);
+      ts!.group.add(arrow);
     }
     // transformed cube (Wireframe via transformed vertices)
     const corners: number[][] = [];
@@ -550,7 +550,7 @@ function MatrixTransforms() {
     for (const [e1, e2] of edges) pts.push(...corners[e1], ...corners[e2]);
     const lg = new THREE.BufferGeometry();
     lg.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
-    ts.group.add(new THREE.Line(lg, new THREE.LineBasicMaterial({ color: 0xfbbf24 })));
+    ts!.group.add(new THREE.Line(lg, new THREE.LineBasicMaterial({ color: 0xfbbf24 })));
     titleText(ts, "Linear transformation — columns = images of basis", new THREE.Vector3(0, 3.6, 0));
 
   }, [rx, ry, rz, sx]);
@@ -589,8 +589,8 @@ function RiemannSurface() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -600,7 +600,7 @@ function RiemannSurface() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const sheets = func === "sqrt" ? 2 : 3;
@@ -638,7 +638,7 @@ function RiemannSurface() {
     geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
     geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geo.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.45 })));
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.45 })));
     titleText(ts, func === "sqrt" ? "Riemann surface of √z (2 sheets)" : "Riemann surface of ∛z (3 sheets)", new THREE.Vector3(0, 3.2, 0));
 
   }, [func]);
@@ -697,29 +697,29 @@ function GameTheory3D() {
             // stacked bars: P1 height then P2 on top
             const col1 = new THREE.Mesh(new THREE.BoxGeometry(1, p1, 1), new THREE.MeshStandardMaterial({ color: isNash ? 0xfbbf24 : 0x3b82f6 }));
             col1.position.set(x, p1 / 2, z);
-            ts.group.add(col1);
+            ts!.group.add(col1);
             const col2 = new THREE.Mesh(new THREE.BoxGeometry(1, p2, 1), new THREE.MeshStandardMaterial({ color: isNash ? 0xfde68a : 0x22c55e }));
             col2.position.set(x, p1 + p2 / 2, z);
-            ts.group.add(col2);
+            ts!.group.add(col2);
             // base square
             const base = new THREE.Mesh(new THREE.PlaneGeometry(1.1, 1.1), new THREE.MeshBasicMaterial({ color: isNash ? 0xfbbf24 : 0x334155, transparent: true, opacity: 0.5, side: THREE.DoubleSide }));
             base.rotation.x = -Math.PI / 2;
             base.position.set(x, 0.02, z);
-            ts.group.add(base);
+            ts!.group.add(base);
             // label sprite
             const lab = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText(`${moves[i]} vs ${moves[j]}`), transparent: true }));
             lab.scale.set(1.5, 0.4, 1);
             lab.position.set(x, -0.5, z);
-            ts.group.add(lab);
+            ts!.group.add(lab);
           }
         }
         const tokenMesh = new THREE.Mesh(new THREE.SphereGeometry(0.35, 20, 20), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-        ts.group.add(tokenMesh);
+        ts!.group.add(tokenMesh);
         token.current = tokenMesh;
         const nb = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeCanvasText("Nash ● (D,D)"), transparent: true }));
         nb.scale.set(2.4, 0.5, 1);
         nb.position.set(1.2, 3.8, 0);
-        ts.group.add(nb);
+        ts!.group.add(nb);
         titleText(ts, "Prisoner's Dilemma — payoff matrix", new THREE.Vector3(0, 4.6, 0));
 
         const tokenPhase = { t: 0 };
@@ -772,8 +772,8 @@ function TopologyTwist() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -783,7 +783,7 @@ function TopologyTwist() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const halfTurns = parseInt(twist) || 1;
@@ -825,7 +825,7 @@ function TopologyTwist() {
     geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
     geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geo.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.4 })));
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.4 })));
 
     // show the single edge as a tube
     const edgePts: THREE.Vector3[] = [];
@@ -838,7 +838,7 @@ function TopologyTwist() {
     }
     if (halfTurns !== 1) {
       const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(edgePts), 120, 0.05, 6, false), new THREE.MeshStandardMaterial({ color: 0xf472b6 }));
-      ts.group.add(tube);
+      ts!.group.add(tube);
     }
     titleText(ts, halfTurns === 0 ? "Twisted band (0 half-twist) → cylinder" : halfTurns === 1 ? "Möbius strip — one sided (1 half-twist)" : "Full-twist band (2 half-twists)", new THREE.Vector3(0, 2.8, 0));
 

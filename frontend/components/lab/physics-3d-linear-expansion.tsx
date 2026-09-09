@@ -22,7 +22,9 @@ import {
   clearGroup,
   createThreeScene,
   bindResize,
+  standardMaterial, titleText,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 /* ---------------- Data ---------------- */
 
@@ -39,6 +41,7 @@ const MICROMETER_BASE = 12.4; // mm baseline reading at T₁
 
 export const LinearExpansionExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
@@ -73,8 +76,8 @@ export const LinearExpansionExperiment: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -84,7 +87,7 @@ export const LinearExpansionExperiment: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let leaderLayer: any = null;
 let labelRenderer: any = null;
@@ -94,10 +97,10 @@ const container = mountRef.current!;
         /* ---- bench & fixed clamp A ---- */
         const bench = new THREE.Mesh(new THREE.BoxGeometry(12.4, 0.18, 3.0), standardMaterial(0x7c4a21, { roughness: 0.85 }));
         bench.position.y = -0.1;
-        ts.group.add(bench);
+        ts!.group.add(bench);
         const pillar = new THREE.Mesh(new THREE.BoxGeometry(0.7, 1.9, 1.0), standardMaterial(0x57534e, { metalness: 0.4 }));
         pillar.position.set(-4.9, 0.95, 0);
-        ts.group.add(pillar);
+        ts!.group.add(pillar);
 
         /* ---- rod geometry ---- */
         const rodLenU = 2.6 + ((rodLengthCm - 40) / 80) * 3.4; // 40→120 cm maps to 2.6→6.0 units
@@ -108,7 +111,7 @@ const container = mountRef.current!;
         const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, rodLenU, 18), rodMat);
         rod.rotation.z = Math.PI / 2;
         rod.position.set(rodCenterX, rodY, 0);
-        ts.group.add(rod);
+        ts!.group.add(rod);
         const freeEndX = rodEnd0 + rodLenU;
 
         /* ---- steam jacket around middle of rod ---- */
@@ -119,20 +122,20 @@ const container = mountRef.current!;
         const jacket = new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.52, jLen, 30, 1, true), jacketMat);
         jacket.rotation.z = Math.PI / 2;
         jacket.position.set(jX, rodY, 0);
-        ts.group.add(jacket);
+        ts!.group.add(jacket);
         const wrap = new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.58, jLen * 0.96, 18, 4, true), standardMaterial(0x334155, { wireframe: true, transparent: true, opacity: 0.4 }));
         wrap.rotation.z = Math.PI / 2;
         wrap.position.copy(jacket.position);
-        ts.group.add(wrap);
+        ts!.group.add(wrap);
         const inletPos = new THREE.Vector3(jX - jLen / 2 - 0.4, rodY - 0.25, 0);
         const inletP = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.85, 10), standardMaterial(0x38bdf8));
         inletP.rotation.z = Math.PI / 2;
         inletP.position.copy(inletPos);
-        ts.group.add(inletP);
+        ts!.group.add(inletP);
         const outP = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.7, 10), standardMaterial(0xcbd5e1));
         outP.rotation.x = Math.PI / 2.6;
         outP.position.set(jX + jLen / 2 - 0.2, rodY + 0.38, 0.38);
-        ts.group.add(outP);
+        ts!.group.add(outP);
 
         /* ---- kettle steam generator + flame ---- */
         const kettleG = new THREE.Group();
@@ -147,12 +150,12 @@ const container = mountRef.current!;
         nozzle.rotation.z = -Math.PI / 3.6;
         kettleG.add(nozzle);
         kettleG.position.set(-6.3, 0.28, 0.4);
-        ts.group.add(kettleG);
+        ts!.group.add(kettleG);
         const flameMat = standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 1.4, transparent: true, opacity: 0.85 });
         const flame = new THREE.Mesh(new THREE.ConeGeometry(0.34, 0.85, 14), flameMat);
         flame.position.set(kettleG.position.x, -0.32, kettleG.position.z);
         flame.rotation.x = Math.PI;
-        ts.group.add(flame);
+        ts!.group.add(flame);
 
         /* ---- micrometer screw gauge station B ---- */
         const gaugeX0 = freeEndX + 0.08;
@@ -183,7 +186,7 @@ const container = mountRef.current!;
         gaugeStand.position.set(1.05, -0.72, 0);
         gaugeGrp.add(gaugeStand);
         gaugeGrp.position.set(gaugeX0, rodY, 0);
-        ts.group.add(gaugeGrp);
+        ts!.group.add(gaugeGrp);
 
         /* ---- L₀ dimension bracket between clamp face and free end ---- */
         const dimY = rodY + 1.0;
@@ -193,7 +196,7 @@ const container = mountRef.current!;
             base.clone().add(new THREE.Vector3(0, -h, 0)),
             base.clone().add(new THREE.Vector3(0, h, 0)),
           ]), lMat);
-        ts.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([
+        ts!.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(rodEnd0, dimY, 0),
           new THREE.Vector3(freeEndX, dimY, 0),
         ]), lMat));
@@ -202,10 +205,10 @@ const container = mountRef.current!;
         /* ---- thermometer T inside jacket top ---- */
         const tStem = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 1.9, 10), standardMaterial(0xf8fafc));
         tStem.position.set(jX + 0.6, rodY + 1.15, 0);
-        ts.group.add(tStem);
+        ts!.group.add(tStem);
         const tMerc = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 1.45, 8), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.9 }));
         tMerc.position.set(jX + 0.6, rodY + 0.65, 0);
-        ts.group.add(tMerc);
+        ts!.group.add(tMerc);
 
         /* ---- steam puffs at jacket outlet ---- */
         const puffHome = new THREE.Vector3(outP.position.x + 0.26, outP.position.y + 0.34, outP.position.z + 0.24);
@@ -213,7 +216,7 @@ const container = mountRef.current!;
         for (let i = 0; i < 6; i++) {
           const pm = new THREE.Mesh(new THREE.SphereGeometry(0.12, 10, 10), standardMaterial(0xe2e8f0, { transparent: true, opacity: 0.5 }));
           puffs.push({ mesh: pm, seed: Math.random() });
-          ts.group.add(pm);
+          ts!.group.add(pm);
         }
 
         storeRef.current = { rodCenterX, rodLenU, freeEndX, rodMat, needle, thimble, tMerc, flame, flameMat, puffs, puffHome, deltaLmm };
@@ -269,7 +272,7 @@ const container = mountRef.current!;
 
     updateRef.current = (time) => {
     const P = 9;
-    const p = (t % P) / P;
+    const p = (time % P) / P;
     const q = p < 0.45 ? smooth(p / 0.45) : p < 0.82 ? 1 : 1 - smooth((p - 0.82) / 0.18);
 
     const exg = Math.max(0.03, Math.min(2.4, deltaLmm * 0.55)) * q;
@@ -299,8 +302,8 @@ const container = mountRef.current!;
       pf.mesh.visible = q > 0.12;
     });
 
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);

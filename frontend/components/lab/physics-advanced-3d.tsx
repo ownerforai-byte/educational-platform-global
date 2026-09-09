@@ -46,7 +46,7 @@ function titleText(ts: ThreeScene, text: string, pos: THREE.Vector3) {
   const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
   sprite.scale.set(6, 1.2, 1);
   sprite.position.copy(pos);
-  ts.group.add(sprite);
+  ts!.group.add(sprite);
 }
 
 // ---------------------------------------------------------------------------
@@ -69,8 +69,8 @@ function MagneticField3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -80,15 +80,15 @@ function MagneticField3D() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const flowParticles: THREE.Mesh[] = [];
         const I = parseFloat(current) || 0;
 
         const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 14, 24), new THREE.MeshStandardMaterial({ color: 0xfbbf24, metalness: 0.8, roughness: 0.2 }));
-        ts.group.add(wire);
+        ts!.group.add(wire);
         const glow = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 14, 24), new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.25 }));
-        ts.group.add(glow);
+        ts!.group.add(glow);
 
         const radii = [1.4, 2.2, 3.0];
         for (let hi = 0; hi < 5; hi++) {
@@ -104,17 +104,17 @@ const flowParticles: THREE.Mesh[] = [];
             const g = new THREE.BufferGeometry();
             g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
             const t = Math.max(0.15, 0.6 - r * 0.12 + I * 0.06);
-            ts.group.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: Math.min(1, t) })));
+            ts!.group.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: Math.min(1, t) })));
             const a0 = Math.PI / 2;
             const cone = new THREE.Mesh(new THREE.ConeGeometry(0.15, 0.32, 10), new THREE.MeshBasicMaterial({ color: 0x22d3ee }));
             cone.position.set(Math.cos(a0) * r, y, Math.sin(a0) * r);
-            ts.group.add(cone);
+            ts!.group.add(cone);
           }
         }
         for (let i = 0; i < 8; i++) {
           const p = new THREE.Mesh(new THREE.SphereGeometry(0.16, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444, transparent: true, opacity: 0.9 }));
           flowParticles.push(p);
-          ts.group.add(p);
+          ts!.group.add(p);
         }
         titleText(ts, "B ∝ I / r — right-hand rule", new THREE.Vector3(0, 5.6, 0));
 
@@ -165,8 +165,8 @@ function WaveOptics3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -176,7 +176,7 @@ function WaveOptics3D() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const n = Math.max(1, parseInt(slits) || 2);
     const lam = Math.max(120, parseFloat(wavelength) || 550) / 550;
@@ -220,21 +220,21 @@ function WaveOptics3D() {
     geo2.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
     geo2.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geo2.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo2, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.DoubleSide })));
+    ts!.group.add(new THREE.Mesh(geo2, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.DoubleSide })));
     // Grating barrier plane with slit apertures at z = 0
     const barrier = new THREE.Mesh(new THREE.PlaneGeometry(12, 7), new THREE.MeshStandardMaterial({ color: 0x475569, transparent: true, opacity: 0.35, side: THREE.DoubleSide }));
     barrier.position.set(0, 0, 0);
-    ts.group.add(barrier);
+    ts!.group.add(barrier);
     const slitCount = Math.max(1, parseInt(slits) || 2);
     for (let s = 0; s < slitCount; s++) {
       const sx = -1.5 + s * (3 / Math.max(1, slitCount - 1));
       const slitBox = new THREE.Mesh(new THREE.BoxGeometry(0.28, 7, 0.05), new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.9 }));
       slitBox.position.set(sx, 0, 0.03);
-      ts.group.add(slitBox);
+      ts!.group.add(slitBox);
     }
     for (let i = -3; i <= 3; i++) {
       const arrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-6.5, i * 0.9, 0), 1.4, 0x38bdf8, 0.4, 0.25);
-      ts.group.add(arrow);
+      ts!.group.add(arrow);
     }
     titleText(ts, "Diffraction interference pattern", new THREE.Vector3(0, 4.2, 2));
 
@@ -245,7 +245,7 @@ function WaveOptics3D() {
         const sph = new THREE.Mesh(new THREE.SphereGeometry(0.5, 20, 20), new THREE.MeshBasicMaterial({ color: 0x22d3ee, wireframe: true, transparent: true, opacity: 0.55 }));
         sph.position.set(sx, k * 1.2 - 2.4, 0.4);
         wavePoints.current.push({ mesh: sph, base: k });
-        ts.group.add(sph);
+        ts!.group.add(sph);
       }
     }
 
@@ -309,8 +309,8 @@ function SpacetimeCurvature() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -320,7 +320,7 @@ function SpacetimeCurvature() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const M = Math.max(0.1, parseFloat(mass) || 5);
 
@@ -354,19 +354,19 @@ function SpacetimeCurvature() {
     geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
     geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geo.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, wireframe: false, side: THREE.DoubleSide, roughness: 0.6 })));
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, wireframe: false, side: THREE.DoubleSide, roughness: 0.6 })));
 
     // central mass
     const star = new THREE.Mesh(new THREE.SphereGeometry(Math.min(0.7, M * 0.18), 32, 32), new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xf59e0b, emissiveIntensity: 0.6 }));
     star.position.set(0, -M * 1.1, 0);
-    ts.group.add(star);
+    ts!.group.add(star);
     const halo = new THREE.Mesh(new THREE.SphereGeometry(Math.min(1, M * 0.25), 32, 32), new THREE.MeshBasicMaterial({ color: 0xfdba74, transparent: true, opacity: 0.2 }));
     halo.position.copy(star.position);
-    ts.group.add(halo);
+    ts!.group.add(halo);
 
     // orbiting light (geodesic)
     const orb = new THREE.Mesh(new THREE.SphereGeometry(0.22, 16, 16), new THREE.MeshBasicMaterial({ color: 0x38bdf8 }));
-    ts.group.add(orb);
+    ts!.group.add(orb);
     titleText(ts, "General relativity — mass bends spacetime", new THREE.Vector3(0, 2.5, 0));
 
 
@@ -415,8 +415,8 @@ function QuantumOrbitals() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -426,7 +426,7 @@ function QuantumOrbitals() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const N = 1800;
@@ -459,10 +459,10 @@ function QuantumOrbitals() {
     for (let i = 0; i < n; i++) colArr.push(0.3, 0.7, 1);
     g.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     const pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 0.07, vertexColors: true, transparent: true, opacity: 0.75 }));
-    ts.group.add(pts);
+    ts!.group.add(pts);
 
     const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.18, 16, 16), new THREE.MeshBasicMaterial({ color: 0xef4444 }));
-    ts.group.add(nucleus);
+    ts!.group.add(nucleus);
     titleText(ts, `Hydrogen ${orbital} orbital — |ψ|² cloud`, new THREE.Vector3(0, 3.2, 0));
 
 
@@ -516,8 +516,8 @@ function NuclearDecay() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -527,18 +527,18 @@ function NuclearDecay() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // parent nucleus
     const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 32), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xb45309, emissiveIntensity: 0.7 }));
-    ts.group.add(nucleus);
+    ts!.group.add(nucleus);
     for (let i = 0; i < 30; i++) {
       const d = (i / 30) * Math.PI * 2;
       const dn = i * 0.71;
       const pNe = new THREE.Mesh(new THREE.SphereGeometry(0.14, 12, 12), new THREE.MeshStandardMaterial({ color: i % 2 ? 0xef4444 : 0x60a5fa }));
       pNe.position.set(Math.sin(d) * Math.cos(dn) * 0.5, Math.sin(dn) * 0.5, Math.cos(d) * Math.cos(dn) * 0.5);
-      ts.group.add(pNe);
+      ts!.group.add(pNe);
     }
     titleText(ts, "Radioactive decay simulation", new THREE.Vector3(0, 2.6, 0));
 
@@ -548,7 +548,7 @@ function NuclearDecay() {
       const meshP = new THREE.Mesh(new THREE.SphereGeometry(decayType === "gamma" ? 0.1 : 0.16, 10, 10), new THREE.MeshBasicMaterial({ color: colors[decayType], transparent: true, opacity: 0.9 }));
       const dir = new THREE.Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1).normalize();
       particles.current.push({ mesh: meshP, dir, speed: 0.35 + Math.random() * 0.4, life: 0, age: Math.random() * 6 });
-      ts.group.add(meshP);
+      ts!.group.add(meshP);
     }
 
 
@@ -612,8 +612,8 @@ function FluidFlow() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -623,7 +623,7 @@ function FluidFlow() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
         // obstacle
@@ -631,11 +631,11 @@ function FluidFlow() {
           const cyl = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 8, 40), new THREE.MeshStandardMaterial({ color: 0x475569, metalness: 0.4, roughness: 0.4 }));
           cyl.rotation.x = Math.PI / 2;
           cyl.position.z = 0;
-          ts.group.add(cyl);
+          ts!.group.add(cyl);
         } else {
           const sph = new THREE.Mesh(new THREE.SphereGeometry(1.2, 40, 40), new THREE.MeshStandardMaterial({ color: 0x475569, metalness: 0.4, roughness: 0.4 }));
           sph.position.z = 0;
-          ts.group.add(sph);
+          ts!.group.add(sph);
         }
 
         // ambient particles upstream
@@ -664,8 +664,8 @@ const z = 0;
           lineGeos.current.push(g);
           const line = new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.5 }));
           seedParticles.current.push({ mesh: new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), new THREE.MeshBasicMaterial({ color: 0x22d3ee })), line, y0, x0: -8 });
-          ts.group.add(line);
-          ts.group.add(seedParticles.current[seedParticles.current.length - 1].mesh);
+          ts!.group.add(line);
+          ts!.group.add(seedParticles.current[seedParticles.current.length - 1].mesh);
         }
         titleText(ts, "Laminar flow streamlines", new THREE.Vector3(0, 4.5, 0));
 
@@ -724,8 +724,8 @@ function NBodySystem() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -735,7 +735,7 @@ function NBodySystem() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const N = Math.min(8, Math.max(2, parseInt(bodies) || 5));
 
@@ -768,11 +768,11 @@ function NBodySystem() {
     geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
     geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geo.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, wireframe: true, transparent: true, opacity: 0.55, side: THREE.DoubleSide })));
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, wireframe: true, transparent: true, opacity: 0.55, side: THREE.DoubleSide })));
 
     // central star
     const star = new THREE.Mesh(new THREE.SphereGeometry(1.1, 40, 40), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.9 }));
-    ts.group.add(star);
+    ts!.group.add(star);
 
     for (let i = 0; i < N; i++) {
       const r = 2.2 + i * 0.8;
@@ -780,7 +780,7 @@ function NBodySystem() {
       // ring
       const ring = new THREE.Mesh(new THREE.TorusGeometry(r, 0.02, 8, 80), new THREE.MeshBasicMaterial({ color: 0x64748b, transparent: true, opacity: 0.5 }));
       ring.rotation.x = Math.PI / 2;
-      ts.group.add(ring);
+      ts!.group.add(ring);
       planets.current.push({
         mesh: pl,
         trail: ring,
@@ -789,7 +789,7 @@ function NBodySystem() {
         phase: Math.random() * Math.PI * 2,
         tilt: (Math.random() - 0.5) * 0.6,
       });
-      ts.group.add(pl);
+      ts!.group.add(pl);
     }
     titleText(ts, "N-body gravity — Kepler orbits", new THREE.Vector3(0, 4.6, 0));
 
@@ -835,8 +835,8 @@ function PVTSurface() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -846,7 +846,7 @@ function PVTSurface() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const n = Math.max(0.1, parseFloat(nMol) || 1);
     const R = 1; // scaled gas constant
@@ -880,7 +880,7 @@ function PVTSurface() {
     geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
     geo.setAttribute("color", new THREE.Float32BufferAttribute(col, 3));
     geo.computeVertexNormals();
-    ts.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide })));
+    ts!.group.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide })));
 
     // isotherm rise surface
     titleText(ts, "Ideal gas PVT surface — P = nRT/V", new THREE.Vector3(5, 6.5, 6));
@@ -895,7 +895,7 @@ function PVTSurface() {
     pg.setAttribute("position", new THREE.Float32BufferAttribute(pPos, 3));
     const pts = new THREE.Points(pg, new THREE.PointsMaterial({ color: 0x22d3ee, size: 0.06, transparent: true, opacity: 0.4 }));
     cloud.current = pts;
-    ts.group.add(pts);
+    ts!.group.add(pts);
 
   }, [nMol]);
 

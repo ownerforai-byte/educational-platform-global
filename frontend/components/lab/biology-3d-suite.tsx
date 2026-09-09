@@ -68,7 +68,7 @@ function setupKit(mount: HTMLElement, opts: ThreeSceneOptions = {}): Kit {
   return {
     ts,
     labelRenderer,
-    addLabel(color, title, sub, pos, parent = ts.group) {
+    addLabel(color, title, sub, pos, parent = ts!.group) {
       const o = new CSS2DObject(chipEl(color, title, sub));
       o.position.copy(pos);
       parent.add(o);
@@ -83,9 +83,9 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
   const animate = () => {
     raf = requestAnimationFrame(animate);
     onUpdate?.(clock.getElapsedTime());
-    kit.ts.controls.update();
-    kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
-    kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+    kit.ts!.controls.update();
+    kit.ts!.renderer.render(kit.ts!.scene, kit.ts!.camera);
+    kit.labelRenderer.render(kit.ts!.scene, kit.ts!.camera);
   };
   animate();
   return () => cancelAnimationFrame(raf);
@@ -135,7 +135,7 @@ function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivEle
 const CellTab: React.FC = () => {
   const [plant, setPlant] = useState(true);
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     g.add(new THREE.Mesh(new THREE.SphereGeometry(4, 48, 32),
       standardMaterial(0x38bdf8, { transparent: true, opacity: 0.14 })));
     if (plant) {
@@ -308,7 +308,7 @@ const DivisionTab: React.FC = () => {
   const [stage, setStage] = useState<Stage>(1);
   const [meiosis, setMeiosis] = useState(false);
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     g.add(new THREE.Mesh(new THREE.TorusGeometry(4.4, 0.07, 10, 64),
       standardMaterial(0x38bdf8, { transparent: true, opacity: 0.5 })));
     const poleL = new THREE.Vector3(-3.1, 0, 0);
@@ -407,7 +407,7 @@ const DnaTab: React.FC = () => {
   const [speed, setSpeed] = useState(0.6);
   const { mountRef, webGL } = useLabScene((kit) => {
     const helix = new THREE.Group();
-    kit.ts.group.add(helix);
+    kit.ts!.group.add(helix);
     const N = 60;
     const steps: [THREE.Vector3, THREE.Vector3][] = [];
     for (let i = 0; i < N; i++) {
@@ -483,7 +483,7 @@ const DnaTab: React.FC = () => {
 const PhageTab: React.FC = () => {
   const [contracted, setContracted] = useState(false);
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     // Capsid (head) — icosahedral
     const head = new THREE.Mesh(new THREE.IcosahedronGeometry(1.7, 0), standardMaterial(0x38bdf8, { transparent: true, opacity: 0.85 }));
     head.position.y = 2.6;
@@ -582,7 +582,7 @@ const PhageTab: React.FC = () => {
 const EcosystemTab: React.FC = () => {
   const [mode, setMode] = useState<"chain" | "pyramid">("chain");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     if (mode === "chain") {
       const sun = new THREE.Mesh(new THREE.SphereGeometry(0.9, 24, 18), standardMaterial(0xfacc15, { emissive: 0xfacc15, emissiveIntensity: 0.9 }));
       sun.position.set(-6, 4.6, 0);

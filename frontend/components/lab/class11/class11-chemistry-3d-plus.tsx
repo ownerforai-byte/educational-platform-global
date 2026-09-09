@@ -37,8 +37,8 @@ function BohrAtomLab() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -48,13 +48,13 @@ function BohrAtomLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const Z = element === "H" ? 1 : element === "He+" ? 2 : 3;
 
     // nucleus
     const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 32), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.7 }));
-    ts.group.add(nucleus);
+    ts!.group.add(nucleus);
 
     // orbits r ∝ n²/Z (scaled)
     const orbitRadii = [1.6, 3.4, 5.8];
@@ -75,8 +75,8 @@ function BohrAtomLab() {
     // electrons on n=1 and n=2
     const e1 = new THREE.Mesh(new THREE.SphereGeometry(0.18, 16, 16), new THREE.MeshBasicMaterial({ color: 0x60a5fa }));
     const e2 = new THREE.Mesh(new THREE.SphereGeometry(0.18, 16, 16), new THREE.MeshBasicMaterial({ color: 0xa78bfa }));
-    ts.group.add(e1);
-    ts.group.add(e2);
+    ts!.group.add(e1);
+    ts!.group.add(e2);
 
     titleText(ts, `${element}: rₙ ∝ n²/Z · Eₙ = −13.6 Z²/n² eV`, new THREE.Vector3(0, 4.4, 0));
 
@@ -141,8 +141,8 @@ function PeriodicTrendsLab() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -152,7 +152,7 @@ function PeriodicTrendsLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const data = trend === "radius" ? radii : ionisation;
     const maxV = Math.max(...data);
@@ -164,12 +164,12 @@ function PeriodicTrendsLab() {
       const col = colorA.clone().lerp(colorB, i / (elements.length - 1));
       const bar = new THREE.Mesh(new THREE.BoxGeometry(1, h, 1), new THREE.MeshStandardMaterial({ color: col.getHex(), emissive: col.getHex(), emissiveIntensity: 0.15 }));
       bar.position.set((i - (elements.length - 1) / 2) * 1.6, h / 2, 0);
-      ts.group.add(bar);
+      ts!.group.add(bar);
 
       const lbl = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeLabel(elements[i]), transparent: true }));
       lbl.scale.set(1.2, 0.35, 1);
       lbl.position.set((i - (elements.length - 1) / 2) * 1.6, h + 0.45, 0);
-      ts.group.add(lbl);
+      ts!.group.add(lbl);
     }
     titleText(ts, trend === "radius" ? "Atomic radius ↓ across period 3 (pm)" : "Ionisation energy ↑ across period 3 (kJ/mol)", new THREE.Vector3(0, 5.2, 0));
 
@@ -222,7 +222,7 @@ function IonicLatticeLab() {
                 new THREE.MeshStandardMaterial({ color: isNa ? 0xf59e0b : 0x22d3ee })
               );
               s.position.set(x * a, y * a, z * a);
-              ts.group.add(s);
+              ts!.group.add(s);
             }
           }
         }
@@ -268,8 +268,8 @@ function HybridisationLab() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -279,11 +279,11 @@ function HybridisationLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const central = new THREE.Mesh(new THREE.SphereGeometry(0.55, 28, 28), new THREE.MeshStandardMaterial({ color: 0x94a3b8 }));
-    ts.group.add(central);
+    ts!.group.add(central);
 
     const dirs: Record<string, THREE.Vector3[]> = {
       sp: [new THREE.Vector3(1, 0.35, 0).normalize(), new THREE.Vector3(-1, 0.35, 0).normalize()],
@@ -301,13 +301,13 @@ function HybridisationLab() {
       const pos = d.clone().multiplyScalar(2.2);
       const h = new THREE.Mesh(new THREE.SphereGeometry(0.42, 20, 20), new THREE.MeshStandardMaterial({ color: 0xf8fafc }));
       h.position.copy(pos);
-      ts.group.add(h);
+      ts!.group.add(h);
 
       const bond = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, pos.length(), 10), new THREE.MeshStandardMaterial({ color: 0x64748b }));
       bond.position.copy(pos).multiplyScalar(0.5);
       bond.lookAt(pos);
       bond.rotateX(Math.PI / 2);
-      ts.group.add(bond);
+      ts!.group.add(bond);
     }
 
     titleText(ts, `${type}-hybridised — ${angleLabel[type]} (${type === "sp2" ? "C₂H₄" : type === "sp3" ? "CH₄" : "C₂H₂"})`, new THREE.Vector3(0, 3.2, 0));

@@ -24,7 +24,9 @@ import {
   clearGroup,
   createThreeScene,
   bindResize,
+  standardMaterial, titleText,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 /* ---------------- Data ---------------- */
 
@@ -78,8 +80,8 @@ export const LeesDiscExperiment: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -89,7 +91,7 @@ export const LeesDiscExperiment: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let leaderLayer: any = null;
 let labelRenderer: any = null;
@@ -108,20 +110,20 @@ const container = mountRef.current!;
           leg.position.set(Math.cos(a) * (discR + 0.8), 1.02, Math.sin(a) * (discR + 0.8));
           leg.rotation.z = -Math.cos(a) * 0.16;
           leg.rotation.x = Math.sin(a) * 0.16;
-          ts.group.add(leg);
+          ts!.group.add(leg);
         }
         const platform = new THREE.Mesh(new THREE.CylinderGeometry(discR + 0.62, discR + 0.62, 0.14, 36), woodMat);
         platform.position.y = 0.07;
-        ts.group.add(platform);
+        ts!.group.add(platform);
 
         /* ---- Lee's disc: two stacked copper halves (radial T₂ pocket) ---- */
         const cuMat = standardMaterial(0xd97706, { emissive: 0x7c2d12, emissiveIntensity: 0.32, metalness: 0.75 });
         const lowerHalf = new THREE.Mesh(new THREE.CylinderGeometry(discR, discR, 0.3, 48), cuMat);
         lowerHalf.position.y = 0.26;
-        ts.group.add(lowerHalf);
+        ts!.group.add(lowerHalf);
         const upperHalf = new THREE.Mesh(new THREE.CylinderGeometry(discR, discR, 0.3, 48), cuMat);
         upperHalf.position.y = 0.58;
-        ts.group.add(upperHalf);
+        ts!.group.add(upperHalf);
 
         /* ---- bad-conductor sample disc (gold) ---- */
         const sampleMesh = new THREE.Mesh(
@@ -130,7 +132,7 @@ const container = mountRef.current!;
         );
         const sampleY = 0.73 + thickU / 2;
         sampleMesh.position.y = sampleY;
-        ts.group.add(sampleMesh);
+        ts!.group.add(sampleMesh);
 
         /* ---- steam chamber (translucent) + lid ---- */
         const steamMat = standardMaterial(0xfb923c, { transparent: true, opacity: 0.22 });
@@ -139,27 +141,27 @@ const container = mountRef.current!;
         const chamber = new THREE.Mesh(new THREE.CylinderGeometry(chamR, chamR, chamberH, 48), steamMat);
         const chamCenter = sampleY + thickU / 2 + chamberH / 2;
         chamber.position.y = chamCenter;
-        ts.group.add(chamber);
+        ts!.group.add(chamber);
         const lid = new THREE.Mesh(new THREE.CylinderGeometry(chamR + 0.08, chamR + 0.08, 0.1, 48), standardMaterial(0x94a3b8, { metalness: 0.6 }));
         lid.position.y = chamCenter + chamberH / 2 + 0.05;
-        ts.group.add(lid);
+        ts!.group.add(lid);
 
         /* ---- steam inlet & vapour outlet stubs ---- */
         const inletStub = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 1.15, 12), standardMaterial(0x38bdf8, { metalness: 0.5 }));
         inletStub.position.set(-(chamR + 0.42), chamCenter + 0.42, 0);
         inletStub.rotation.z = Math.PI / 3.4;
-        ts.group.add(inletStub);
+        ts!.group.add(inletStub);
         const outletTip = new THREE.Vector3(chamR + 0.05, chamCenter + 0.72, 0);
         const outlet = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.8, 12), standardMaterial(0xcbd5e1));
         outlet.position.set(outletTip.x + 0.28, outletTip.y + 0.22, 0);
         outlet.rotation.z = -Math.PI / 3;
-        ts.group.add(outlet);
+        ts!.group.add(outlet);
 
         /* ---- clamping weight stack on lid (keeps faces in contact) ---- */
         const pinY = lid.position.y + 0.34;
         const pin = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.75, 10), standardMaterial(0xa8a29e));
         pin.position.set(0.55, pinY - 0.18, 0);
-        ts.group.add(pin);
+        ts!.group.add(pin);
         [0.16, 0.38].forEach((dy) => {
           const w = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.16, 24), standardMaterial(0x78716c, { metalness: 0.5 }));
           w.position.set(0.55, pinY - 0.32 + dy, 0);
@@ -175,7 +177,7 @@ const container = mountRef.current!;
         t2Bulb.position.set(discR - 0.28, 0.44, 0);
         t2Group.add(t2Bulb);
         t2Body.position.set(t2Bulb.position.x + 0.78, 0.68, 0);
-        ts.group.add(t2Group);
+        ts!.group.add(t2Group);
 
         /* ---- heat-flow rings at both steady-state interfaces ---- */
         const glowMats: THREE.MeshStandardMaterial[] = [];
@@ -191,7 +193,7 @@ const container = mountRef.current!;
         /* ---- rising steam puffs at the vapour outlet ---- */
         const puffGroup = new THREE.Group();
         puffGroup.visible = showSteam;
-        ts.group.add(puffGroup);
+        ts!.group.add(puffGroup);
         const puffs: Array<{ mesh: THREE.Mesh; seed: number }> = [];
         for (let i = 0; i < 7; i++) {
           const p = new THREE.Mesh(
@@ -263,8 +265,8 @@ const container = mountRef.current!;
       pf.mesh.scale.setScalar(Math.max(0.05, 1 - u * 0.85));
       (pf.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, 0.55 * (1 - u));
     });
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);

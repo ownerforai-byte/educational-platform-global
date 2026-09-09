@@ -18,6 +18,8 @@ import {
 
 export const Class11ChemicalBonding: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [bondType, setBondType] = useState<"ionic" | "covalent" | "metallic">("covalent");
   const [moleculeType, setMoleculeType] = useState("water");
   const [bondLength, setBondLength] = useState(1.5);
@@ -121,8 +123,8 @@ export const Class11ChemicalBonding: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -130,14 +132,16 @@ export const Class11ChemicalBonding: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Clear existing objects
-    ts.group.children.forEach((child: any) => {
-      ts.group.remove(child);
+    ts!.group.children.forEach((child: any) => {
+      ts!.group.remove(child);
       if (child.geometry) child.geometry.dispose();
       if (child.material) child.material.dispose();
     });
@@ -149,10 +153,10 @@ export const Class11ChemicalBonding: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Create atoms
     const atomGroups: THREE.Group[] = [];
@@ -174,7 +178,7 @@ export const Class11ChemicalBonding: React.FC = () => {
         atom.position[1] * bondLength / 1.5,
         atom.position[2] * bondLength / 1.5
       );
-      ts.group.add(atomGroup);
+      ts!.group.add(atomGroup);
       atomGroups.push(atomGroup);
     });
 
@@ -198,7 +202,7 @@ export const Class11ChemicalBonding: React.FC = () => {
       const geometry = new THREE.BufferGeometry().setFromPoints(points);
       const material = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
       const line = new THREE.Line(geometry, material);
-      ts.group.add(line);
+      ts!.group.add(line);
       bondLines.push(line);
     });
 
@@ -234,8 +238,8 @@ export const Class11ChemicalBonding: React.FC = () => {
           electron1.position.copy(midPoint).add(offset);
           electron2.position.copy(midPoint).add(offset2);
           
-          ts.group.add(electron1);
-          ts.group.add(electron2);
+          ts!.group.add(electron1);
+          ts!.group.add(electron2);
         }
       });
     }
@@ -249,21 +253,21 @@ export const Class11ChemicalBonding: React.FC = () => {
       const time = elapsed;
 
       // Rotate molecule
-      ts.group.rotation.y = time * 0.1;
+      ts!.group.rotation.y = time * 0.1;
 
       // Animate electron pairs
-      ts.group.children.forEach((child: any) => {
+      ts!.group.children.forEach((child: any) => {
         if (child.geometry && (child.geometry as any).type === 'SphereGeometry' && child.material.emissiveIntensity > 0.5) {
           child.position.y += Math.sin(time * 2 + child.position.x * 10) * 0.02;
         }
       });
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [bondType, moleculeType, bondLength, bondAngle, showElectrons, showOrbitals, moleculeInfo]);

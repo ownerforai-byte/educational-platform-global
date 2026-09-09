@@ -28,6 +28,7 @@ import {
   type ThreeScene,
   clearGroup,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 /* ---------- shared small helpers ---------- */
 
@@ -73,8 +74,8 @@ const ProjectilesTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -82,9 +83,11 @@ const ProjectilesTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
         titleText(ts, `Projectile — v₀ ${v0} m/s, θ ${theta}°`, new THREE.Vector3(0, 5.6, 0));
 
@@ -102,15 +105,15 @@ const ProjectilesTab: React.FC = () => {
           if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
         };
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(34, 0.3, 16), standardMaterial(0x14532d, { roughness: 0.9 })));
+        ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(34, 0.3, 16), standardMaterial(0x14532d, { roughness: 0.9 })));
         const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.8, 1.1, 20), standardMaterial(0x57534e, { metalness: 0.5 }));
         pedestal.position.set(-13.5, 0.85, 0);
-        ts.group.add(pedestal);
+        ts!.group.add(pedestal);
         const cannon = new THREE.Group();
         cannon.add(new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.36, 2.3, 16), standardMaterial(0x334155, { metalness: 0.7 })));
         cannon.position.set(-13.5, 1.65, 0);
         cannon.rotation.z = rad;
-        ts.group.add(cannon);
+        ts!.group.add(cannon);
         addLbl("#f87171", "Cannon (launch point)", [-13.5, 3.9, 0], `muzzle speed v₀ = ${v0} m/s`, [-12.5, 2.2, 0]);
         addLbl("#38bdf8", "Launch angle θ", [-13.5, 3.0, 2.6], `θ = ${theta}°`, [-12.9, 2.6, 0]);
 /* predicted parabola in scene units */
@@ -128,20 +131,20 @@ const ProjectilesTab: React.FC = () => {
           new THREE.LineDashedMaterial({ color: 0xfacc15, dashSize: 0.42, gapSize: 0.28 })
         );
         path.computeLineDistances();
-        ts.group.add(path);
+        ts!.group.add(path);
 
         const apex = pts[Math.round(n / 2)];
         addLbl("#facc15", `Apex H = ${H.toFixed(1)} m`, [apex.x + 0.4, apex.y + 2.1, 0], `at t = T/2 = ${(T / 2).toFixed(2)} s, v_y = 0`, [apex.x, apex.y + 0.3, 0]);
         addLbl("#4ade80", `Range R = ${R.toFixed(1)} m`, [0.5, 1.7, -4.4], `flight time T = ${T.toFixed(2)} s`, [Math.min(17, pts[n].x), 0.4, 0]);
         addLbl("#c084fc", "Only g acts after launch", [-6.5, 5.0, 0], "hence the parabolic path", [-6.5, 3.6, 0]);
 
-        ts.group.add(arrow(new THREE.Vector3(Math.cos(rad), Math.sin(rad), 0), new THREE.Vector3(-13.5, 1.65, 0), 3.2, 0xfb923c));
-        ts.group.add(arrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-13.5, 1.65, 0), 3.2 * Math.cos(rad), 0x22d3ee));
-        ts.group.add(arrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(-13.5, 1.65, 0), 3.2 * Math.sin(rad), 0xa78bfa));
+        ts!.group.add(arrow(new THREE.Vector3(Math.cos(rad), Math.sin(rad), 0), new THREE.Vector3(-13.5, 1.65, 0), 3.2, 0xfb923c));
+        ts!.group.add(arrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(-13.5, 1.65, 0), 3.2 * Math.cos(rad), 0x22d3ee));
+        ts!.group.add(arrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(-13.5, 1.65, 0), 3.2 * Math.sin(rad), 0xa78bfa));
         addLbl("#fb923c", "v₀ = √(vₓ² + v_y²)", [-9.0, 5.6, 0], "vₓ constant; v_y falls by g each second", [-12.6, 3.6, 0]);
 
         const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
-        ts.group.add(ball);
+        ts!.group.add(ball);
 
 
     updateRef.current = (time) => {
@@ -224,8 +227,8 @@ const CircularMotionTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -233,9 +236,11 @@ const CircularMotionTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, mode === "conical" ? "Conical Pendulum" : mode === "vertical" ? "Vertical Circle" : "Banked Road (frictionless)", new THREE.Vector3(0, 5.2, 0));
 
@@ -253,17 +258,17 @@ const CircularMotionTab: React.FC = () => {
       if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 24), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 24), standardMaterial(0x1e293b, { roughness: 0.95 })));
     const stand = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.16, 4.6, 12), standardMaterial(0x94a3b8, { metalness: 0.6 }));
     stand.position.set(0, 2.3, -2.6);
-    ts.group.add(stand);
+    ts!.group.add(stand);
 
     const pivot = new THREE.Vector3(0, 4.6, -2.6);
     const L = Math.min(4.8, Math.max(1.8, lenM * 2.2));
     const str = new THREE.Line(new THREE.BufferGeometry().setFromPoints([pivot, pivot.clone()]), new THREE.LineBasicMaterial({ color: 0xe2e8f0 }));
-    ts.group.add(str);
+    ts!.group.add(str);
     const bob = new THREE.Mesh(new THREE.SphereGeometry(0.38, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.55 }));
-    ts.group.add(bob);
+    ts!.group.add(bob);
 
     addLbl("#f87171", "Pivot (ceiling mount)", [0, 5.9, -2.6], "string swings about this point", [0, 4.6, -2.6]);
     addLbl("#fb923c", `Bob — string L = ${lenM} m`, [3.4, 1.0, 0], "tension acts along the string", [1.2, 1.4, -2.6]);
@@ -277,7 +282,7 @@ const CircularMotionTab: React.FC = () => {
       }
       const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0x38bdf8, dashSize: 0.3, gapSize: 0.2 }));
       circ.computeLineDistances();
-      ts.group.add(circ);
+      ts!.group.add(circ);
       addLbl("#38bdf8", `Radius r = L·sinθ = ${r.toFixed(2)} m`, [rU + 1.4, 2.0, -2.6], `semi-vertical angle θ = ${angleDeg}°`, [rU, 4.6 - L * Math.cos(th), -2.6]);
       addLbl("#a78bfa", "Centripetal force = T·sinθ", [-4.2, 3.8, -2.6], "points to the circle centre", [0, 4.6 - L * Math.cos(th), -2.6 + rU]);
       addLbl("#4ade80", "Vertical: T·cosθ = mg", [3.6, 3.2, -2.6], "bob stays at constant height", [1.4, 3.0, -2.6]);
@@ -289,7 +294,7 @@ const CircularMotionTab: React.FC = () => {
       }
       const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0x38bdf8 }));
       circ.computeLineDistances();
-      ts.group.add(circ);
+      ts!.group.add(circ);
       addLbl("#38bdf8", "Top of circle", [0, 2.4 + L + 1.3, -2.6], `least speed v_top = √(gL) = ${vTop.toFixed(2)} m/s`, [0, 2.4 + L, -2.6]);
       addLbl("#4ade80", "Bottom of circle", [0, 2.4 - L - 1.1, -2.6], "string tension largest here", [0, 2.4 - L, -2.6]);
       addLbl("#a78bfa", "Below √(gL) the string goes slack", [4.6, 2.4, -2.6], "bob leaves the circle", [L * 0.7, 3.4, -2.6]);
@@ -297,10 +302,10 @@ const CircularMotionTab: React.FC = () => {
       const road = new THREE.Mesh(new THREE.CylinderGeometry(4.4, 4.4, 0.24, 40), standardMaterial(0x475569, { roughness: 0.8 }));
       road.position.set(0, 1.6, 0);
       road.rotation.z = -th;
-      ts.group.add(road);
+      ts!.group.add(road);
       const car = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.4, 0.5), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.4 }));
       car.position.set(3.2, 2.0, 0);
-      ts.group.add(car);
+      ts!.group.add(car);
       addLbl("#38bdf8", `Banking angle θ = ${angleDeg}°`, [-4.8, 3.8, 0], "road tilted inward", [-2.2, 2.6, 0]);
       addLbl("#facc15", "N·cosθ = mg", [4.8, 4.4, 0], "vertical balance", [1.4, 2.6, 0]);
       addLbl("#4ade80", `Safe speed v = √(rg·tanθ) = ${vBank.toFixed(1)} m/s`, [-1.5, 0.7, 3.6], "no friction needed at this speed", [2.4, 2.2, 0]);
@@ -409,8 +414,8 @@ const CollisionsTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -418,9 +423,11 @@ const CollisionsTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, e === 1 ? "Perfectly Elastic Collision" : e === 0 ? "Perfectly Inelastic Collision" : `Collision (e = ${e.toFixed(2)})`, new THREE.Vector3(0, 4.6, 0));
 
@@ -439,18 +446,18 @@ const CollisionsTab: React.FC = () => {
     };
 
     /* frictionless air-track */
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(26, 0.5, 3.4), standardMaterial(0x334155, { metalness: 0.5 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(26, 0.5, 3.4), standardMaterial(0x334155, { metalness: 0.5 })));
     const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.3, 1.6, 10), standardMaterial(0x1e293b));
     leg.position.y = -1.0;
-    ts.group.add(leg);
+    ts!.group.add(leg);
 
     const sizeOf = (m: number) => 0.75 + m * 0.28;
     const cartA = new THREE.Mesh(new THREE.BoxGeometry(sizeOf(m1), 1.0, 1.3), standardMaterial(0x38bdf8, { emissive: 0x0ea5e9, emissiveIntensity: 0.25 }));
     cartA.position.set(-10, 1.0, 0);
-    ts.group.add(cartA);
+    ts!.group.add(cartA);
     const cartB = new THREE.Mesh(new THREE.BoxGeometry(sizeOf(m2), 1.0, 1.3), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.25 }));
     cartB.position.set(10, 1.0, 0);
-    ts.group.add(cartB);
+    ts!.group.add(cartB);
 
     addLbl("#38bdf8", `Glider A — m₁ = ${m1} kg`, [-10, 3.6, 0], `u₁ = ${u1} m/s`, [-10, 1.9, 0]);
     addLbl("#fb923c", `Glider B — m₂ = ${m2} kg`, [10, 3.6, 0], `u₂ = ${u2} m/s`, [10, 1.9, 0]);
@@ -458,11 +465,11 @@ const CollisionsTab: React.FC = () => {
     addLbl("#a78bfa", "Collision point", [0, 4.0, 0], e === 0 ? "carts stick together (e = 0)" : "carts separate after impact", [0, 1.4, 0]);
 
     const uScale = 0.55; // scene units per m/s
-    ts.group.add(arrow(new THREE.Vector3(Math.sign(u1), 0, 0), new THREE.Vector3(-10, 2.6, 0), Math.abs(u1) * uScale + 0.8, 0x22d3ee));
-    ts.group.add(arrow(new THREE.Vector3(Math.sign(u2), 0, 0), new THREE.Vector3(10, 2.6, 0), Math.abs(u2) * uScale + 0.8, 0xfacc15));
+    ts!.group.add(arrow(new THREE.Vector3(Math.sign(u1), 0, 0), new THREE.Vector3(-10, 2.6, 0), Math.abs(u1) * uScale + 0.8, 0x22d3ee));
+    ts!.group.add(arrow(new THREE.Vector3(Math.sign(u2), 0, 0), new THREE.Vector3(10, 2.6, 0), Math.abs(u2) * uScale + 0.8, 0xfacc15));
 
     updateRef.current = (time) => {
-    const p = (t % 7) / 7;
+    const p = (time % 7) / 7;
     const approachT = 0.5;
     if (p < approachT) {
       const q = p / approachT;
@@ -555,8 +562,8 @@ const WorkEnergyTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -564,9 +571,11 @@ const WorkEnergyTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, `Energy conservation — m·g·h = ½mv²  (E = ${E.toFixed(0)} J)`, new THREE.Vector3(0, 5.4, 0));
 
@@ -593,13 +602,13 @@ const WorkEnergyTab: React.FC = () => {
       trackPts.push(new THREE.Vector3(x, Math.max(0.3, y), 0));
     }
     const track = new THREE.Line(new THREE.BufferGeometry().setFromPoints(trackPts), new THREE.LineBasicMaterial({ color: 0x94a3b8 }));
-    ts.group.add(track);
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 14), standardMaterial(0x14532d, { roughness: 0.95 })));
+    ts!.group.add(track);
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(24, 0.3, 14), standardMaterial(0x14532d, { roughness: 0.95 })));
 
     const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
-    ts.group.add(ball);
+    ts!.group.add(ball);
     const keArrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
-    ts.group.add(keArrow);
+    ts!.group.add(keArrow);
 
     addLbl("#f87171", `Start — h = ${heightM} m`, [-9.2, topY + 1.6, 0], `PE = mgh = ${E.toFixed(0)} J, KE = 0`, [-9.2, topY + 0.4, 0]);
     addLbl("#4ade80", "Bottom — lowest point", [0.5, 0.2, 2.8], `v = √(2gh) = ${vBottom.toFixed(1)} m/s → all energy is KE`, [0, 0.5, 0]);
@@ -608,7 +617,7 @@ const WorkEnergyTab: React.FC = () => {
 
     updateRef.current = (time) => {
     const cyc = 9;
-    const p = (t % cyc) / cyc;
+    const p = (time % cyc) / cyc;
     let s: number;
     if (p < 0.42) s = (p / 0.42) * 0.75;                    // descend to bottom
     else if (p < 0.84) s = 0.75 + ((p - 0.42) / 0.42) * 0.25; // climb far side

@@ -23,7 +23,9 @@ import {
   clearGroup,
   createThreeScene,
   bindResize,
+  standardMaterial, titleText,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 /* ---------------- Data ---------------- */
 
@@ -35,6 +37,7 @@ const LIQUIDS = [
 
 export const NewtonCoolingExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
@@ -66,8 +69,8 @@ export const NewtonCoolingExperiment: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -77,7 +80,7 @@ export const NewtonCoolingExperiment: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let leaderLayer: any = null;
 let labelRenderer: any = null;
@@ -91,23 +94,23 @@ const container = mountRef.current!;
         shellMat.side = THREE.DoubleSide;
         const shell = new THREE.Mesh(new THREE.CylinderGeometry(1.62, 1.62, 2.6, 36, 1, true), shellMat);
         shell.position.set(calX, 1.3, 0);
-        ts.group.add(shell);
+        ts!.group.add(shell);
         const shellBase = new THREE.Mesh(new THREE.CylinderGeometry(1.72, 1.72, 0.16, 36), standardMaterial(0x475569));
         shellBase.position.set(calX, 0.08, 0);
-        ts.group.add(shellBase);
+        ts!.group.add(shellBase);
         // Inner polished calorimeter with liquid
         const calorimeter = new THREE.Mesh(new THREE.CylinderGeometry(1.05, 1.05, 2.25, 36), standardMaterial(0xdfe7ef, { metalness: 0.85, roughness: 0.25 }));
         calorimeter.position.set(calX, 1.22, 0);
-        ts.group.add(calorimeter);
+        ts!.group.add(calorimeter);
         const liqColor = liq.scene as number;
         const liquidMat = standardMaterial(liqColor, { transparent: true, opacity: 0.55, emissive: liqColor, emissiveIntensity: 0.3 });
         const liquid = new THREE.Mesh(new THREE.CylinderGeometry(0.98, 0.98, 1.5, 36), liquidMat);
         liquid.position.set(calX, 1.0, 0);
-        ts.group.add(liquid);
+        ts!.group.add(liquid);
         const lidRing = new THREE.Mesh(new THREE.TorusGeometry(1.05, 0.09, 10, 36), standardMaterial(0x94a3b8));
         lidRing.rotation.x = Math.PI / 2;
         lidRing.position.set(calX, 2.4, 0);
-        ts.group.add(lidRing);
+        ts!.group.add(lidRing);
 
         /* Stirrer */
         const stirrer = new THREE.Group();
@@ -118,19 +121,19 @@ const container = mountRef.current!;
         stLoop.position.y = -0.85;
         stirrer.add(stLoop);
         stirrer.position.set(calX - 0.55, 1.15, 0.35);
-        ts.group.add(stirrer);
+        ts!.group.add(stirrer);
 
         /* Thermometer through lid */
         const thermStem = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 3.4, 10), standardMaterial(0xf8fafc, { metalness: 0.2 }));
         thermStem.position.set(calX + 0.35, 2.85, 0);
-        ts.group.add(thermStem);
+        ts!.group.add(thermStem);
         const mercuryMat = standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.9 });
         const mercury = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.6, 8), mercuryMat);
         mercury.position.set(calX + 0.35, 1.7, 0);
-        ts.group.add(mercury);
+        ts!.group.add(mercury);
         const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.16, 14, 14), mercuryMat.clone());
         bulb.position.set(calX + 0.35, 0.45, 0);
-        ts.group.add(bulb);
+        ts!.group.add(bulb);
 
         /* Cooling radiance rings (expanding, fading) */
         const waves: Array<{ mesh: THREE.Mesh; mat: THREE.MeshStandardMaterial; phase: number }> = [];
@@ -139,7 +142,7 @@ const container = mountRef.current!;
           const ring = new THREE.Mesh(new THREE.TorusGeometry(2.0, 0.03, 8, 48), m);
           ring.position.copy(shell.position);
           ring.visible = false;
-          ts.group.add(ring);
+          ts!.group.add(ring);
           waves.push({ mesh: ring, mat: m, phase: i / 3 });
         }
 
@@ -148,8 +151,8 @@ const container = mountRef.current!;
         const gW = 8.8, gH = 3.1;
         const axisMat = new THREE.LineBasicMaterial({ color: 0x64748b });
         const mkSeg = (a: THREE.Vector3, b: THREE.Vector3) => new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), axisMat);
-        ts.group.add(mkSeg(gO.clone(), gO.clone().add(new THREE.Vector3(gW, 0, 0))));
-        ts.group.add(mkSeg(gO.clone(), gO.clone().add(new THREE.Vector3(0, gH, 0))));
+        ts!.group.add(mkSeg(gO.clone(), gO.clone().add(new THREE.Vector3(gW, 0, 0))));
+        ts!.group.add(mkSeg(gO.clone(), gO.clone().add(new THREE.Vector3(0, gH, 0))));
 
         const axisMin = Math.max(0, Ts - 6);
         const spanT = Math.max(T0 - axisMin + 6, 55);
@@ -166,16 +169,16 @@ const container = mountRef.current!;
           new THREE.LineDashedMaterial({ color: 0x475569, dashSize: 0.16, gapSize: 0.12 })
         );
         dashed.computeLineDistances();
-        ts.group.add(dashed);
+        ts!.group.add(dashed);
         const solidGeo = new THREE.BufferGeometry().setFromPoints(fullPts);
         solidGeo.setDrawRange(0, 0);
-        ts.group.add(new THREE.Line(solidGeo, new THREE.LineBasicMaterial({ color: 0x22d3ee })));
+        ts!.group.add(new THREE.Line(solidGeo, new THREE.LineBasicMaterial({ color: 0x22d3ee })));
         const dot = new THREE.Mesh(new THREE.SphereGeometry(0.14, 16, 16), standardMaterial(0x22d3ee, { emissive: 0x22d3ee, emissiveIntensity: 1.2 }));
         dot.position.copy(fullPts[0]);
-        ts.group.add(dot);
+        ts!.group.add(dot);
         const dotLight = new THREE.PointLight(0x22d3ee, 0.7, 7);
         dotLight.position.copy(fullPts[0]);
-        ts.group.add(dotLight);
+        ts!.group.add(dotLight);
 
         /* minute ticks every 2 min */
         for (let tm = 0; tm <= duration; tm += 2) {
@@ -265,8 +268,8 @@ const container = mountRef.current!;
       w.mat.opacity = Math.max(0, 0.5 * (1 - u));
     });
 
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, liqIdx, T0, Ts, kPerMin, duration, running]);

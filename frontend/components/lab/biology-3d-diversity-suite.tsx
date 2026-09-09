@@ -64,7 +64,7 @@ function setupKit(mount: HTMLElement, opts: ThreeSceneOptions = {}): Kit {
   return {
     ts,
     labelRenderer,
-    addLabel(color, title, sub, pos, parent = ts.group) {
+    addLabel(color, title, sub, pos, parent = ts!.group) {
       const o = new CSS2DObject(chipEl(color, title, sub));
       o.position.copy(pos);
       parent.add(o);
@@ -79,9 +79,9 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
   const animate = () => {
     raf = requestAnimationFrame(animate);
     onUpdate?.(clock.getElapsedTime());
-    kit.ts.controls.update();
-    kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
-    kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+    kit.ts!.controls.update();
+    kit.ts!.renderer.render(kit.ts!.scene, kit.ts!.camera);
+    kit.labelRenderer.render(kit.ts!.scene, kit.ts!.camera);
   };
   animate();
   return () => cancelAnimationFrame(raf);
@@ -153,7 +153,7 @@ function glucoseRing(center: THREE.Vector3, color: number): THREE.Group {
 const BioMoleculesTab: React.FC = () => {
   const [mode, setMode] = useState<BioMode>("carb");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     if (mode === "carb") {
       g.add(glucoseRing(new THREE.Vector3(-2.6, 1.4, 0), 0x64748b));
       kit.addLabel("#ef4444", "Oxygen in ring", undefined, new THREE.Vector3(-3.6, 2.4, 0));
@@ -303,7 +303,7 @@ const BioMoleculesTab: React.FC = () => {
 const BacteriaTab: React.FC = () => {
   const [gram, setGram] = useState<"positive" | "negative">("positive");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     // Capsule (glycocalyx)
     g.add(new THREE.Mesh(new THREE.CapsuleGeometry(1.35, 2.7, 8, 32), standardMaterial(0x86efac, { transparent: true, opacity: 0.2 })));
     // Cell wall — thick peptidoglycan (Gram+) or thin (Gram−)
@@ -393,7 +393,7 @@ const BacteriaTab: React.FC = () => {
 
 const FlowerTab: React.FC = () => {
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     // Thalamus (receptacle)
     const thalamus = new THREE.Mesh(new THREE.SphereGeometry(0.55, 24, 16), standardMaterial(0x4d7c0f));
     thalamus.scale.y = 0.5;
@@ -491,7 +491,7 @@ type Species = "spirogyra" | "mucor" | "yeast" | "mushroom" | "marchantia" | "pi
 const DiversityTab: React.FC = () => {
   const [sp, setSp] = useState<Species>("mushroom");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     if (sp === "spirogyra") {
       // Filament cylinder + spiral chloroplast ribbon
       const cell = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.55, 5.4, 24, 1, true), standardMaterial(0x86efac, { transparent: true, opacity: 0.25 }));
@@ -702,7 +702,7 @@ const CYCLES: Record<"carbon" | "nitrogen", { nodes: CycleNode[]; edges: CycleEd
 const CyclesTab: React.FC = () => {
   const [cycle, setCycle] = useState<"carbon" | "nitrogen">("nitrogen");
   const { mountRef, webGL } = useLabScene((kit) => {
-    const g = kit.ts.group;
+    const g = kit.ts!.group;
     const spec = CYCLES[cycle];
     spec.nodes.forEach((n) => {
       const node = new THREE.Mesh(new THREE.SphereGeometry(0.5, 24, 18), standardMaterial(n.color, { emissive: n.color, emissiveIntensity: 0.2 }));

@@ -16,9 +16,13 @@ import {
   createThreeScene,
   bindResize,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 export const ConcaveMirror3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [focalLength, setFocalLength] = useState(5);
   const [objectPosition, setObjectPosition] = useState(-8);
   const [showRays, setShowRays] = useState(true);
@@ -45,8 +49,8 @@ export const ConcaveMirror3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -56,7 +60,7 @@ export const ConcaveMirror3D: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const container = mountRef.current!;
 
@@ -67,10 +71,10 @@ const container = mountRef.current!;
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Main axis line
         const axisGeo = new THREE.BufferGeometry().setFromPoints([
@@ -79,7 +83,7 @@ const container = mountRef.current!;
         ]);
         const axisMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
         const axis = new THREE.Line(axisGeo, axisMat);
-        ts.group.add(axis);
+        ts!.group.add(axis);
 
         // Create concave mirror
         const mirrorGroup = new THREE.Group();
@@ -114,14 +118,14 @@ const container = mountRef.current!;
         rim.position.set(0, 0, 0);
         mirrorGroup.add(rim);
         
-        ts.group.add(mirrorGroup);
+        ts!.group.add(mirrorGroup);
 
         // Pole to hold mirror
         const poleGeo = new THREE.CylinderGeometry(0.2, 0.2, 2, 16);
         const poleMat = standardMaterial(0x475569);
         const pole = new THREE.Mesh(poleGeo, poleMat);
         pole.position.set(0, -1, 0);
-        ts.group.add(pole);
+        ts!.group.add(pole);
 
         // Object (arrow)
         const objectGroup = new THREE.Group();
@@ -131,7 +135,7 @@ const container = mountRef.current!;
         );
         objectGroup.add(objectArrow);
         objectGroup.position.x = objectPosition;
-        ts.group.add(objectGroup);
+        ts!.group.add(objectGroup);
 
         // Focus point
         const focusGroup = new THREE.Group();
@@ -142,7 +146,7 @@ const container = mountRef.current!;
           focus.position.x = Math.abs(focalLength);
           focusGroup.add(focus);
         }
-        ts.group.add(focusGroup);
+        ts!.group.add(focusGroup);
 
         // Image point
         const imageGroup = new THREE.Group();
@@ -153,12 +157,12 @@ const container = mountRef.current!;
           image.position.x = imagePosition;
           imageGroup.add(image);
         }
-        ts.group.add(imageGroup);
+        ts!.group.add(imageGroup);
 
         // Ray lines
         const rayGroup = new THREE.Group();
         
-        function updateRays() {
+        async function updateRays() {
           while (rayGroup.children.length > 0) {
             const child = rayGroup.children[0];
             rayGroup.remove(child);
@@ -190,7 +194,7 @@ const container = mountRef.current!;
           const r3 = new THREE.Line(r3Geo, new THREE.LineBasicMaterial({ color: 0xa855f7, linewidth: 2, transparent: true, opacity: 0.8 }));
           rayGroup.add(r3);
         }
-        ts.group.add(rayGroup);
+        ts!.group.add(rayGroup);
         updateRays();
 
         // LABELS
@@ -241,7 +245,7 @@ const container = mountRef.current!;
         } catch { console.log("CSS2DRenderer not available"); }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     objectGroup.position.x = objectPosition;
     focusGroup.children.forEach((c: any) => { if (c instanceof THREE.Mesh) c.position.x = Math.abs(focalLength); });
     if (labels[1]) labels[1].position.x = Math.abs(focalLength);
@@ -249,7 +253,7 @@ const container = mountRef.current!;
     if (labels[3] && isRealImage) { labels[3].position.x = imagePosition; labels[3].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #fbbf24"><span style="color:#fbbf24;font-weight:600">Image (I)</span><br><span style="color:#fda4af;font-size:10px">m=${magnification.toFixed(2)}x</span></div>`; }
     if (labels[2]) labels[2].position.x = objectPosition;
     updateRays(); if (labels[4]) { labels[4].position.x = (objectPosition + Math.abs(focalLength))/2; labels[4].position.y = objectHeight/2 + 0.5; }
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
 

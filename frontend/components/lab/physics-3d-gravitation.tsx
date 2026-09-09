@@ -17,10 +17,12 @@ import {
   createThreeScene,
   bindResize,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 // Gravitation 3D Component showing orbital motion
 const Gravitation3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [orbitalRadius, setOrbitalRadius] = useState(10);
@@ -45,8 +47,8 @@ const Gravitation3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -56,7 +58,7 @@ const Gravitation3D: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const labels: any[] = [];
 let labelRenderer: any = null;
@@ -74,7 +76,7 @@ const container = mountRef.current!;
         starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
         const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
         const stars = new THREE.Points(starsGeometry, starsMaterial);
-        ts.group.add(stars);
+        ts!.group.add(stars);
 
         // Create sun (central mass)
         const sunGroup = new THREE.Group();
@@ -103,9 +105,9 @@ const container = mountRef.current!;
         // Light source
         const sunLight = new THREE.PointLight(0xfbbf24, 2, 50);
         sunLight.position.set(0, 0, 0);
-        ts.group.add(sunLight);
+        ts!.group.add(sunLight);
         
-        ts.group.add(sunGroup);
+        ts!.group.add(sunGroup);
 
         // Create planet (orbiting body)
         const planetGroup = new THREE.Group();
@@ -131,7 +133,7 @@ const container = mountRef.current!;
         moon.position.x = planetSize * 2;
         planetGroup.add(moon);
         
-        ts.group.add(planetGroup);
+        ts!.group.add(planetGroup);
 
         // Orbit path
         const orbitGroup = new THREE.Group();
@@ -147,12 +149,12 @@ const container = mountRef.current!;
           orbit.rotation.x = Math.PI / 2;
           orbitGroup.add(orbit);
         }
-        ts.group.add(orbitGroup);
+        ts!.group.add(orbitGroup);
 
         // Vectors (force, velocity)
         const vectorGroup = new THREE.Group();
         
-        function updateVectors() {
+        async function updateVectors() {
           while (vectorGroup.children.length > 0) {
             const child = vectorGroup.children[0];
             vectorGroup.remove(child);
@@ -186,7 +188,7 @@ const container = mountRef.current!;
           vectorGroup.add(velocityVector);
         }
         
-        ts.group.add(vectorGroup);
+        ts!.group.add(vectorGroup);
         updateVectors();
 
         // LABELS
@@ -261,7 +263,7 @@ const container = mountRef.current!;
       labels[4].element.innerHTML = `<div style="background:rgba(0,0,0,0.8);padding:4px 8px;border-radius:4px;border:1px solid #3b82f6"><span style="color:#3b82f6;font-weight:600">Orbit</span><br><span style="color:#93c5fd;font-size:10px">r = ${orbitalRadius} AU</span></div>`;
     }
     
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [orbitalRadius, planetSize, showOrbit, showVectors, showLabels, isAnimating]);
 
@@ -339,6 +341,7 @@ const container = mountRef.current!;
 // Gravitational Field Visualizer
 const GravitationalField: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
   const [fieldLines, setFieldLines] = useState(20);
@@ -361,8 +364,8 @@ const GravitationalField: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -372,7 +375,7 @@ const GravitationalField: React.FC = () => {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const labels: any[] = [];
 let labelRenderer: any = null;
@@ -390,7 +393,7 @@ const container = mountRef.current!;
         starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
         const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
         const stars = new THREE.Points(starsGeometry, starsMaterial);
-        ts.group.add(stars);
+        ts!.group.add(stars);
 
         // Central mass (creating gravitational field)
         const centerGroup = new THREE.Group();
@@ -401,7 +404,7 @@ const container = mountRef.current!;
         });
         const center = new THREE.Mesh(centerGeo, centerMat);
         centerGroup.add(center);
-        ts.group.add(centerGroup);
+        ts!.group.add(centerGroup);
 
         // Gravitational field lines (radial inward)
         const fieldGroup = new THREE.Group();
@@ -444,7 +447,7 @@ const container = mountRef.current!;
         }
         
         createFieldLines();
-        ts.group.add(fieldGroup);
+        ts!.group.add(fieldGroup);
 
         // Test mass in field
         const testMassGroup = new THREE.Group();
@@ -453,7 +456,7 @@ const container = mountRef.current!;
         const testMass = new THREE.Mesh(testMassGeo, testMassMat);
         testMass.position.set(10, 0, 0);
         testMassGroup.add(testMass);
-        ts.group.add(testMassGroup);
+        ts!.group.add(testMassGroup);
 
         // LABELS
         try {
@@ -490,7 +493,7 @@ const container = mountRef.current!;
 
 
     updateRef.current = (time) => {
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [fieldLines, showField, showLabels]);
 

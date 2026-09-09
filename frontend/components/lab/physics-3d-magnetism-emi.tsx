@@ -27,6 +27,7 @@ import {
   type ThreeScene,
   clearGroup,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
   const el = document.createElement("div");
@@ -70,8 +71,8 @@ const MagnetismTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -79,9 +80,11 @@ const MagnetismTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
         const titles: Record<MMode, string> = {
           wire: "Field of a Straight Wire — right-hand grip",
@@ -105,7 +108,7 @@ const MagnetismTab: React.FC = () => {
           if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
         };
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 14), standardMaterial(0x1e293b, { roughness: 0.95 })));
+        ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 14), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
         const fieldMat = new THREE.LineBasicMaterial({ color: 0x38bdf8 });
 
@@ -113,17 +116,17 @@ const MagnetismTab: React.FC = () => {
           /* vertical wire with circular field rings */
           const conductor = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 7, 12), standardMaterial(0xf87171, { metalness: 0.6 }));
           conductor.position.set(0, 3.6, 0);
-          ts.group.add(conductor);
+          ts!.group.add(conductor);
           for (const [r, y] of [[1.0, 1.4], [1.9, 3.0], [2.9, 4.6]] as const) {
             const pts: THREE.Vector3[] = [];
             for (let i = 0; i <= 40; i++) {
               const a = (i / 40) * Math.PI * 2;
               pts.push(new THREE.Vector3(r * Math.cos(a), y, r * Math.sin(a)));
             }
-            ts.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), fieldMat));
+            ts!.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), fieldMat));
             /* tangent arrow (anticlockwise from above) */
             const tang = new LiveArrow(new THREE.Vector3(0, 0, 1), new THREE.Vector3(r, y, 0), 0.5, 0x38bdf8, 0.18, 0.1);
-            ts.group.add(tang);
+            ts!.group.add(tang);
           }
           addLbl("#f87171", `Conductor — I = ${current} A upward`, [2.2, 6.4, 0], "point thumb along the current", [0, 5.2, 0]);
           addLbl("#38bdf8", "Field rings — B ∝ I/r", [3.4, 1.6, 0], `B(5 cm) = ${(bWire * 1e6).toFixed(1)} µT`, [1.0, 1.4, 1.0]);
@@ -135,10 +138,10 @@ const MagnetismTab: React.FC = () => {
             const a = (i / 64) * Math.PI * 2;
             pts.push(new THREE.Vector3(rL * Math.cos(a), 1.6, rL * Math.sin(a)));
           }
-          ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 120, 0.07, 8), standardMaterial(0xf87171, { metalness: 0.6 })));
+          ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 120, 0.07, 8), standardMaterial(0xf87171, { metalness: 0.6 })));
           for (const s of [-1, 1]) {
             for (let k = 0; k < 3; k++) {
-              ts.group.add(new LiveArrow(new THREE.Vector3(0, s, 0), new THREE.Vector3((k - 1) * 0.7, 1.6, 0), 1.6, 0x38bdf8, 0.2, 0.12));
+              ts!.group.add(new LiveArrow(new THREE.Vector3(0, s, 0), new THREE.Vector3((k - 1) * 0.7, 1.6, 0), 1.6, 0x38bdf8, 0.2, 0.12));
             }
           }
           addLbl("#f87171", `Loop — I = ${current} A`, [3.0, 2.4, 0], "curl right hand with the current", [2.0, 1.7, 0]);
@@ -153,19 +156,19 @@ const turns = 14;
             const a = s * turns * Math.PI * 2;
             pts.push(new THREE.Vector3(0.75 * Math.cos(a), 1.6 + (s - 0.5) * lenS, 0.75 * Math.sin(a)));
           }
-          ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 400, 0.05, 8), standardMaterial(0xf87171, { metalness: 0.6 })));
+          ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 400, 0.05, 8), standardMaterial(0xf87171, { metalness: 0.6 })));
           for (const dx of [-0.4, 0, 0.4]) {
-            ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(dx, 0.4, 0), 2.6, 0x38bdf8, 0.2, 0.12));
+            ts!.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(dx, 0.4, 0), 2.6, 0x38bdf8, 0.2, 0.12));
           }
           addLbl("#f87171", `Solenoid — I = ${current} A, n = 800 /m`, [3.6, 5.0, 0], "acts like a bar magnet outside", [0.7, 4.2, 0]);
           addLbl("#38bdf8", "Uniform field inside", [-3.6, 2.6, 0], `B = µ₀nI = ${(bSolenoid * 1000).toFixed(2)} mT`, [0, 2.0, 0]);
           addLbl("#facc15", "Soft-iron core boosts flux", [3.2, 0.7, 0], "electromagnets & relays", [0, 1.0, 0]);
         } else {
           /* Lorentz force — charge circles in uniform B */
-          ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.6, 0), 4.2, 0x38bdf8, 0.3, 0.16));
+          ts!.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1.6, 0), 4.2, 0x38bdf8, 0.3, 0.16));
           addLbl("#38bdf8", `Uniform B = ${fieldB} T`, [0.2, 5.4, 0], "field through the whole region", [0, 4.4, 0]);
           const q = new THREE.Mesh(new THREE.SphereGeometry(0.3, 20, 14), standardMaterial(0xfacc15, { emissive: 0xfacc15, emissiveIntensity: 0.7 }));
-          ts.group.add(q);
+          ts!.group.add(q);
           const rCirc = Math.max(0.8, Math.min(3.4, (1.6 * (chargeQ / 2)) / fieldB + 0.8));
           const cPts: THREE.Vector3[] = [];
           for (let i = 0; i <= 48; i++) {
@@ -174,14 +177,14 @@ const turns = 14;
           }
           const circ = new THREE.Line(new THREE.BufferGeometry().setFromPoints(cPts), new THREE.LineDashedMaterial({ color: 0xfacc15, dashSize: 0.25, gapSize: 0.18 }));
           circ.computeLineDistances();
-          ts.group.add(circ);
+          ts!.group.add(circ);
           (q as any).__circ = { r: rCirc };
           addLbl("#facc15", `Charge q = ${chargeQ} µC — r = mv/qB`, [3.8, 2.6, 0], "force ⊥ velocity → circle", [rCirc, 1.6, 0]);
           addLbl("#4ade80", "F = qvB (v ⊥ B)", [-3.9, 2.8, 0], `|F| = ${(fLorentz * 1000).toFixed(2)} mN at v = 10 m/s`, [-rCirc, 1.6, 0]);
           addLbl("#a78bfa", "Reverse q or B → reverses", [-3.5, 0.6, 0], "cyclotrons & mass spectrometers", [-1.8, 1.0, 0]);
         }
 /* animation for Lorentz mode: charge circles the guide circle */
-        const lorentzMesh: THREE.Mesh | null = mode === "lorentz" ? (ts.group.children.find((c) => (c as any).__circ) as THREE.Mesh) || null : null;
+        const lorentzMesh: THREE.Mesh | null = mode === "lorentz" ? (ts!.group.children.find((c) => (c as any).__circ) as THREE.Mesh) || null : null;
 
 
     updateRef.current = (time) => {
@@ -281,8 +284,8 @@ const EMITab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -290,9 +293,11 @@ const EMITab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, "Faraday & Lenz — a moving magnet induces an EMF", new THREE.Vector3(0, 5.0, 0));
 
@@ -310,7 +315,7 @@ const EMITab: React.FC = () => {
       if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
     /* coil: a few turns wrapped into a cylinder */
     const coilR = 1.4;
@@ -322,12 +327,12 @@ const EMITab: React.FC = () => {
       coilPts.push(new THREE.Vector3(coilR * Math.cos(a), 1.7 - coilLen / 2 + (s - 0.5) * coilLen, coilR * Math.sin(a)));
     }
     const coilGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coilPts), 260, 0.06, 8);
-    ts.group.add(new THREE.Mesh(coilGeo, standardMaterial(0xf87171, { metalness: 0.7 })));
+    ts!.group.add(new THREE.Mesh(coilGeo, standardMaterial(0xf87171, { metalness: 0.7 })));
 
     const axis = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, coilLen + 0.6, 12), standardMaterial(0x94a3b8, { metalness: 0.6 }));
     axis.rotation.x = Math.PI / 2;
     axis.position.y = 1.6;
-    ts.group.add(axis);
+    ts!.group.add(axis);
 
     /* magnet: red/blue bar travelling along the core */
     const magnet = new THREE.Group();
@@ -341,7 +346,7 @@ const EMITab: React.FC = () => {
     capS.material = standardMaterial(0xf87171, { metalness: 0.5 });
     magnet.add(capS);
     magnet.position.set(0, 1.6, 3.2);
-    ts.group.add(magnet);
+    ts!.group.add(magnet);
 
     /* galvanometer */
     const galv = new THREE.Group();
@@ -353,7 +358,7 @@ const EMITab: React.FC = () => {
     needle.position.y = 0.23;
     galv.add(needle);
     galv.position.set(0, 3.6, 0);
-    ts.group.add(galv);
+    ts!.group.add(galv);
 
     addLbl("#f87171", `Coil — ${turnsN} turns`, [2.9, 3.2, 0], "axis of the magnet", [coilR, 1.6, 0]);
     addLbl("#3b82f6", "Bar magnet (N-blue / S-red)", [1.4, 0.6, 3.6], "pushes through the coil", [0, 1.6, 3.2]);

@@ -18,6 +18,8 @@ import {
 
 export const Class11RotationalMotion: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [radius, setRadius] = useState(3);
   const [angularVelocity, setAngularVelocity] = useState(2);
   const [mass, setMass] = useState(1);
@@ -48,8 +50,8 @@ export const Class11RotationalMotion: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -57,9 +59,11 @@ export const Class11RotationalMotion: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Ground
@@ -69,10 +73,10 @@ export const Class11RotationalMotion: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Central pivot
     const pivotGeo = new THREE.CylinderGeometry(0.3, 0.3, 1, 16);
@@ -80,7 +84,7 @@ export const Class11RotationalMotion: React.FC = () => {
     const pivot = new THREE.Mesh(pivotGeo, pivotMat);
     pivot.position.y = 0.5;
     pivot.castShadow = true;
-    ts.group.add(pivot);
+    ts!.group.add(pivot);
 
     // Rotating arm
     const armGroup = new THREE.Group();
@@ -91,7 +95,7 @@ export const Class11RotationalMotion: React.FC = () => {
     arm.castShadow = true;
     armGroup.add(arm);
     armGroup.position.y = 0.5;
-    ts.group.add(armGroup);
+    ts!.group.add(armGroup);
 
     // Mass at the end
     const massGroup = new THREE.Group();
@@ -116,11 +120,11 @@ export const Class11RotationalMotion: React.FC = () => {
       if (!ts) return;
 
       // Clear previous objects
-      if (pathCircle) { ts.group.remove(pathCircle); pathCircle.geometry.dispose(); }
-      if (velocityArrow) ts.group.remove(velocityArrow);
-      if (accelerationArrow) ts.group.remove(accelerationArrow);
-      if (forceArrow) ts.group.remove(forceArrow);
-      if (radiusArrow) ts.group.remove(radiusArrow);
+      if (pathCircle) { ts!.group.remove(pathCircle); pathCircle.geometry.dispose(); }
+      if (velocityArrow) ts!.group.remove(velocityArrow);
+      if (accelerationArrow) ts!.group.remove(accelerationArrow);
+      if (forceArrow) ts!.group.remove(forceArrow);
+      if (radiusArrow) ts!.group.remove(radiusArrow);
 
       const elapsed = (performance.now() - startTime) / 1000;
       const angle = elapsed * angularVelocity;
@@ -138,7 +142,7 @@ export const Class11RotationalMotion: React.FC = () => {
       const geometry = new THREE.BufferGeometry().setFromPoints(points);
       const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.5 });
       pathCircle = new THREE.Line(geometry, material);
-      ts.group.add(pathCircle);
+      ts!.group.add(pathCircle);
 
       // Current position
       const x = radius * Math.cos(angle);
@@ -154,7 +158,7 @@ export const Class11RotationalMotion: React.FC = () => {
           linearVelocity * 0.3,
           0x22c55e
         );
-        ts.group.add(velocityArrow);
+        ts!.group.add(velocityArrow);
 
         // Acceleration vector (centripetal, towards center)
         const accX = -x / radius;
@@ -165,7 +169,7 @@ export const Class11RotationalMotion: React.FC = () => {
           centripetalAcceleration * 0.3,
           0xef4444
         );
-        ts.group.add(accelerationArrow);
+        ts!.group.add(accelerationArrow);
 
         // Force vector
         if (showTorque) {
@@ -175,7 +179,7 @@ export const Class11RotationalMotion: React.FC = () => {
             centripetalForce * 0.03,
             0xfbbf24
           );
-          ts.group.add(forceArrow);
+          ts!.group.add(forceArrow);
 
           // Radius vector
           radiusArrow = new LiveArrow(
@@ -184,12 +188,12 @@ export const Class11RotationalMotion: React.FC = () => {
             radius,
             0xffffff
           );
-          ts.group.add(radiusArrow);
+          ts!.group.add(radiusArrow);
         }
       }
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 

@@ -49,8 +49,8 @@ const PistonCylinder3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -60,7 +60,7 @@ const PistonCylinder3D: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Cylinder
@@ -68,21 +68,21 @@ const PistonCylinder3D: React.FC = () => {
     const cylinderMat = standardMaterial(0x666666, { metalness: 0.7, roughness: 0.3 });
     const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
     cylinder.position.y = -5; // Center at origin
-    ts.group.add(cylinder);
+    ts!.group.add(cylinder);
 
     // Piston
     const pistonGeo = new THREE.CylinderGeometry(cylinderRadius - 0.1, cylinderRadius - 0.1, 0.5, 32);
     const pistonMat = standardMaterial(0x333333, { metalness: 0.8, roughness: 0.2 });
     const piston = new THREE.Mesh(pistonGeo, pistonMat);
     piston.position.y = pistonHeight - 2.25; // Adjust for height
-    ts.group.add(piston);
+    ts!.group.add(piston);
 
     // Piston rod
     const rodGeo = new THREE.CylinderGeometry(0.3, 0.3, pistonHeight + 2, 16);
     const rodMat = standardMaterial(0x444444, { metalness: 0.8, roughness: 0.3 });
     const rod = new THREE.Mesh(rodGeo, rodMat);
     rod.position.y = pistonHeight + 1;
-    ts.group.add(rod);
+    ts!.group.add(rod);
 
     // Gas particles (small spheres)
     const particles: THREE.Mesh[] = [];
@@ -99,7 +99,7 @@ const PistonCylinder3D: React.FC = () => {
       const y = -5 + Math.random() * pistonHeight;
       
       particle.position.set(x, y, z);
-      ts.group.add(particle);
+      ts!.group.add(particle);
       particles.push(particle);
     }
 
@@ -108,17 +108,17 @@ const PistonCylinder3D: React.FC = () => {
     const baseMat = standardMaterial(0x222222, { metalness: 0.5, roughness: 0.5 });
     const base = new THREE.Mesh(baseGeo, baseMat);
     base.position.y = -10;
-    ts.group.add(base);
+    ts!.group.add(base);
 
     // Ambient light for better visibility
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    ts.scene.add(ambientLight);
+    ts!.scene.add(ambientLight);
 
     // Directional light
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(10, 20, 10);
     directionalLight.castShadow = true;
-    ts.scene.add(directionalLight);
+    ts!.scene.add(directionalLight);
 
 
     updateRef.current = (time) => {
@@ -256,8 +256,8 @@ const HeatEngine3D: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -267,7 +267,7 @@ const HeatEngine3D: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Base
@@ -275,21 +275,21 @@ const HeatEngine3D: React.FC = () => {
     const baseMat = standardMaterial(0x444444, { metalness: 0.6, roughness: 0.4 });
     const base = new THREE.Mesh(baseGeo, baseMat);
     base.position.y = -1;
-    ts.group.add(base);
+    ts!.group.add(base);
 
     // Cylinder
     const cylinderGeo = new THREE.CylinderGeometry(2, 2, 6, 32);
     const cylinderMat = standardMaterial(0x666666, { metalness: 0.7, roughness: 0.3 });
     const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
     cylinder.position.set(0, 3, 0);
-    ts.group.add(cylinder);
+    ts!.group.add(cylinder);
 
     // Piston
     const pistonGeo = new THREE.CylinderGeometry(1.8, 1.8, 0.5, 32);
     const pistonMat = standardMaterial(0x333333, { metalness: 0.8, roughness: 0.2 });
     const piston = new THREE.Mesh(pistonGeo, pistonMat);
     piston.position.y = 3 + 3; // Start at top
-    ts.group.add(piston);
+    ts!.group.add(piston);
 
     // Connecting rod
     const rodGeo = new THREE.CylinderGeometry(0.2, 0.2, 4, 16);
@@ -297,7 +297,7 @@ const HeatEngine3D: React.FC = () => {
     const rod = new THREE.Mesh(rodGeo, rodMat);
     rod.rotation.x = Math.PI / 4;
     rod.position.set(0, 5, 0);
-    ts.group.add(rod);
+    ts!.group.add(rod);
 
     // Flywheel
     const flywheelGeo = new THREE.TorusGeometry(3, 0.5, 16, 48);
@@ -305,14 +305,14 @@ const HeatEngine3D: React.FC = () => {
     const flywheel = new THREE.Mesh(flywheelGeo, flywheelMat);
     flywheel.rotation.x = Math.PI / 2;
     flywheel.position.set(0, 0, 5);
-    ts.group.add(flywheel);
+    ts!.group.add(flywheel);
 
     // Crankshaft
     const crankGeo = new THREE.CylinderGeometry(0.3, 0.3, 6, 16);
     const crankMat = standardMaterial(0x666666, { metalness: 0.8, roughness: 0.3 });
     const crankshaft = new THREE.Mesh(crankGeo, crankMat);
     crankshaft.position.set(0, 0, 2);
-    ts.group.add(crankshaft);
+    ts!.group.add(crankshaft);
 
     // Animation
     let timeOffset = 0;
@@ -418,8 +418,8 @@ const Processes3D: React.FC = () => {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -429,23 +429,25 @@ const Processes3D: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Create P-V diagram axes
     const axesHelper = new THREE.AxesHelper(10);
-    ts.group.add(axesHelper);
+    ts!.group.add(axesHelper);
 
     // Grid
     const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
-    ts.group.add(gridHelper);
+    ts!.group.add(gridHelper);
 
     // Plot different processes
     function plotProcess() {
       // Clear existing plots
-      ts.group.children = ts.group.children.filter((child: any) => 
-        !(child instanceof THREE.Line) && !(child.name === "process")
-      );
+      if (ts) {
+        ts!.group.children = ts!.group.children.filter((child: any) => 
+          !(child instanceof THREE.Line) && !(child.name === "process")
+        );
+      }
 
       const lineGeo = new THREE.BufferGeometry();
       const points: THREE.Vector3[] = [];
@@ -483,7 +485,7 @@ const Processes3D: React.FC = () => {
       });
       const line = new THREE.Line(lineGeo, lineMat);
       line.name = "process";
-      ts.group.add(line);
+      ts?.group.add(line);
     }
 
     plotProcess();

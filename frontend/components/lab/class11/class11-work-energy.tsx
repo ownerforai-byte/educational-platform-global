@@ -17,6 +17,8 @@ import {
 
 export const Class11WorkEnergy: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [mass, setMass] = useState(2);
   const [height, setHeight] = useState(5);
   const [velocity, setVelocity] = useState(4);
@@ -46,8 +48,8 @@ export const Class11WorkEnergy: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -55,9 +57,11 @@ export const Class11WorkEnergy: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const labelMaterials: THREE.SpriteMaterial[] = [];
 
@@ -68,10 +72,10 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const grid = new THREE.GridHelper(30, 60, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Platform at height
         const platformGeo = new THREE.BoxGeometry(8, 0.3, 8);
@@ -79,7 +83,7 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
         const platform = new THREE.Mesh(platformGeo, platformMat);
         platform.position.y = height;
         platform.receiveShadow = true;
-        ts.group.add(platform);
+        ts!.group.add(platform);
 
         // Mass (ball)
         const ballGroup = new THREE.Group();
@@ -89,7 +93,7 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
         ball.castShadow = true;
         ballGroup.add(ball);
         ballGroup.position.set(0, height + 0.5, 0);
-        ts.group.add(ballGroup);
+        ts!.group.add(ballGroup);
 
         // Spring
         const springGroup = new THREE.Group();
@@ -99,14 +103,14 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
         spring.castShadow = true;
         springGroup.add(spring);
         springGroup.position.set(5, 0.5, 0);
-        ts.group.add(springGroup);
+        ts!.group.add(springGroup);
 
         // Base for spring
         const baseGeo = new THREE.BoxGeometry(3, 0.2, 3);
         const baseMat = standardMaterial(0xfbbf24, { metalness: 0.4 });
         const base = new THREE.Mesh(baseGeo, baseMat);
         base.position.set(5, 0.1, 0);
-        ts.group.add(base);
+        ts!.group.add(base);
 
         // Energy visualization bars
         const barWidth = 0.5;
@@ -119,21 +123,21 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
         const peBarMat = standardMaterial(0x3b82f6, { transparent: true, opacity: 0.8 });
         const peBar = new THREE.Mesh(peBarGeo, peBarMat);
         peBar.position.set(-6, barHeightPE / 2, 0);
-        ts.group.add(peBar);
+        ts!.group.add(peBar);
 
         // KE bar
         const keBarGeo = new THREE.BoxGeometry(barWidth, barHeightKE, barWidth);
         const keBarMat = standardMaterial(0x22c55e, { transparent: true, opacity: 0.8 });
         const keBar = new THREE.Mesh(keBarGeo, keBarMat);
         keBar.position.set(-3, barHeightKE / 2, 0);
-        ts.group.add(keBar);
+        ts!.group.add(keBar);
 
         // Spring PE bar
         const springBarGeo = new THREE.BoxGeometry(barWidth, barHeightSpring, barWidth);
         const springBarMat = standardMaterial(0xfbbf24, { transparent: true, opacity: 0.8 });
         const springBar = new THREE.Mesh(springBarGeo, springBarMat);
         springBar.position.set(0, barHeightSpring / 2, 0);
-        ts.group.add(springBar);
+        ts!.group.add(springBar);
 
         // Energy labels as sprites above each bar. Materials/textures are tracked so
         // they can be disposed on unmount (CanvasTexture isn't freed by disposeThreeScene).
@@ -162,15 +166,15 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
 
         const peLabel = makeLabel("PE", "#3b82f6");
         peLabel.position.set(-6, barHeightPE + 1, 0);
-        ts.group.add(peLabel);
+        ts!.group.add(peLabel);
 
         const keLabel = makeLabel("KE", "#22c55e");
         keLabel.position.set(-3, barHeightKE + 1, 0);
-        ts.group.add(keLabel);
+        ts!.group.add(keLabel);
 
         const springLabel = makeLabel("SE", "#fbbf24");
         springLabel.position.set(0, barHeightSpring + 1, 0);
-        ts.group.add(springLabel);
+        ts!.group.add(springLabel);
 
         const startTime = performance.now();
         let falling = false;
@@ -221,12 +225,12 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
           keLabel.position.y = keBar.position.y + keBar.scale.y / 2 + 0.8;
           springLabel.position.y = springBar.position.y + springBar.scale.y / 2 + 0.8;
 
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
+          ts!.controls.update();
+          ts!.renderer.render(ts!.scene, ts!.camera);
         }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [mass, height, velocity, springConstant, compression, showWork]);

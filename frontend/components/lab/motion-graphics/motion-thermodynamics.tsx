@@ -7,14 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
-import {
-  disposeThreeScene,
-  clearGroup,
-  standardMaterial,
-  type ThreeScene,
-  createThreeScene,
-  bindResize,
-} from "@/components/lab/three-scene";
+import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
 
 type ProcessType = "isothermal" | "adiabatic" | "isobaric" | "isochoric";
 
@@ -29,39 +22,29 @@ export const MotionGraphicsThermodynamics: React.FC = () => {
   const [showGas, setShowGas] = useState(true);
   const [showPVDiagram, setShowPVDiagram] = useState(true);
 
-  // Scene lifecycle - mount/unmount only
   useEffect(() => {
     if (!mountRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(mountRef.current, {
+
+    let ts: any = null;
+    let unbind: (() => void) | null = null;
+    let cancelled = false;
+    let animationId: number;
+    let time = 0;
+    let labelRenderer: any = null;
+    let labels: any[] = [];
+
+    async function init() {
+      try {
+        const { createThreeScene, bindResize } = await import("@/components/lab/three-scene");
+        
+        ts = createThreeScene(mountRef.current!, {
           cameraPosition: new THREE.Vector3(0, 5, 20),
           autoRotate: true,
           autoRotateSpeed: 0.3,
           background: 0x0f0f23
         });
-    tsRef.current = ts;
-    const unbind = bindResize(ts);
-    let rafId = 0;
-    function animate() {
-      rafId = requestAnimationFrame(animate);
-      const time = performance.now() / 1000;
-      updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
-    }
-    animate();
-    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
-  }, []);
-
-  // Rebuild 3D content on state change
-  useEffect(() => {
-    const ts = tsRef.current;
-    if (!ts) return;
-    clearGroup(ts.group);
-
-let labels: any[] = [];
-let labelRenderer: any = null;
-let time = 0;
-let animationId: number;
+        
+        unbind = bindResize(ts);
 
         // Add lights
         const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
@@ -86,84 +69,344 @@ let animationId: number;
         }
 
         // Animation loop
-
-    updateRef.current = (time) => {
-    
-    animationId = requestAnimationFrame(animate);
-    
-    time += 0.016;
-    
-    // Clear and rebuild
-    clearGroup(ts.group);
-    
-    // Clear previous labels
-    labels.forEach(label => {
-      if (label?.element?.parentNode) {
-        label.element.parentNode.removeChild(label.element);
+        function animate() {
+          if (cancelled) return;
+          
+          animationId = requestAnimationFrame(animate);
+          
+          time += 0.016;
+          
+          // Clear and rebuild
+          clearGroup(ts.group);
+          
+          // Clear previous labels
+          labels.forEach(label => {
+            if (label?.element?.parentNode) {
+              label.element.parentNode.removeChild(label.element);
+            }
+          });
+          labels = [];
+          
+          // Add main title label
+          if (labelRenderer) {
+            const CSS2DObject = (THREE as any).CSS2DObject;
+            const titleLabel = new CSS2DObject(document.createElement("div"));
+            titleLabel.element.innerHTML = `
+              <div style="background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:8px;color:black;font-weight:700;font-size:14px;border:2px solid #ef4444">
+                <div>🔥 Thermodynamics</div>
+                <div style="font-size:11px;color:#666">Process: ${processType.replace('-',' ').charAt(0).toUpperCase() + processType.replace('-',' ').slice(1)}</div>
+              </div>
+            `;
+            titleLabel.element.style.pointerEvents = "none";
+            titleLabel.position.set(0, 15, 0);
+            ts.group.add(titleLabel);
+            labels.push(titleLabel);
+          }
+          
+          // Create cylinder (piston container)
+          createCylinder(ts.group);
+          
+          // Create piston with labels
+          if (showPiston) {
+            createPiston(ts.group, time);
+          }
+          
+          // Create gas particles with labels
+          if (showGas) {
+            createGasParticles(ts.group, time, temperature);
+          }
+          
+          // Create PV diagram in corner with labels
+          if (showPVDiagram) {
+            createPVDiagram(ts.group);
+          }
+          
+          // Add process info label
+          if (labelRenderer) {
+            const CSS2DObject = (THREE as any).CSS2DObject;
+            const processInfo = {
+              isothermal: "ΔT = 0 (Temperature constant)",
+              adiabatic: "Q = 0 (No heat transfer)",
+              isobaric: "ΔP = 0 (Pressure constant)",
+              isochoric: "ΔV = 0 (Volume constant)"
+            };
+            const infoLabel = new CSS2DObject(document.createElement("div"));
+            infoLabel.element.innerHTML = `
+              <div style="background:rgba(139,92,246,0.85);padding:8px 14px;border-radius:6px;color:white;font-size:10px;font-weight:600">
+                <div>ℹ️ ${processType.charAt(0).toUpperCase() + processType.slice(1)} Process</div>
+                <div style="font-size:9px;opacity:0.9">${processInfo[processType]}</div>
+              </div>
+            `;
+            infoLabel.element.style.pointerEvents = "none";
+            infoLabel.position.set(0, -10, -12);
+            ts.group.add(infoLabel);
+            labels.push(infoLabel);
+          }
+          
+          ts.renderer.render(ts.scene, ts.camera);
+          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+        }
+        
+        animate();
+      } catch (error) {
+        console.error("Error initializing Thermodynamics animation:", error);
       }
-    });
-    labels = [];
-    
-    // Add main title label
-    if (labelRenderer) {
-      const CSS2DObject = (THREE as any).CSS2DObject;
-      const titleLabel = new CSS2DObject(document.createElement("div"));
-      titleLabel.element.innerHTML = `
-        <div style="background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:8px;color:black;font-weight:700;font-size:14px;border:2px solid #ef4444">
-          <div>🔥 Thermodynamics</div>
-          <div style="font-size:11px;color:#666">Process: ${processType.replace('-',' ').charAt(0).toUpperCase() + processType.replace('-',' ').slice(1)}</div>
-        </div>
-      `;
-      titleLabel.element.style.pointerEvents = "none";
-      titleLabel.position.set(0, 15, 0);
-      ts.group.add(titleLabel);
-      labels.push(titleLabel);
     }
-    
-    // Create cylinder (piston container)
-    createCylinder(ts.group);
-    
-    // Create piston with labels
-    if (showPiston) {
-      createPiston(ts.group, time);
-    }
-    
-    // Create gas particles with labels
-    if (showGas) {
-      createGasParticles(ts.group, time, temperature);
-    }
-    
-    // Create PV diagram in corner with labels
-    if (showPVDiagram) {
-      createPVDiagram(ts.group);
-    }
-    
-    // Add process info label
-    if (labelRenderer) {
-      const CSS2DObject = (THREE as any).CSS2DObject;
-      const processInfo = {
-        isothermal: "ΔT = 0 (Temperature constant)",
-        adiabatic: "Q = 0 (No heat transfer)",
-        isobaric: "ΔP = 0 (Pressure constant)",
-        isochoric: "ΔV = 0 (Volume constant)"
-      };
-      const infoLabel = new CSS2DObject(document.createElement("div"));
-      infoLabel.element.innerHTML = `
-        <div style="background:rgba(139,92,246,0.85);padding:8px 14px;border-radius:6px;color:white;font-size:10px;font-weight:600">
-          <div>ℹ️ ${processType.charAt(0).toUpperCase() + processType.slice(1)} Process</div>
-          <div style="font-size:9px;opacity:0.9">${processInfo[processType]}</div>
-        </div>
-      `;
-      infoLabel.element.style.pointerEvents = "none";
-      infoLabel.position.set(0, -10, -12);
-      ts.group.add(infoLabel);
-      labels.push(infoLabel);
-    }
-    
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
-    };
-  }, [pistonPosition, temperature, showPiston, showGas, showPVDiagram]);
 
+    function createCylinder(group: THREE.Group) {
+      // Cylinder base
+      const cylinderGeo = new THREE.CylinderGeometry(4, 4, 12, 32);
+      const cylinderMat = new THREE.MeshPhongMaterial({ 
+        color: 0x333333,
+        transparent: true,
+        opacity: 0.5
+      });
+      const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
+      cylinder.position.y = -6;
+      group.add(cylinder);
+      
+      // Top rim
+      const rimGeo = new THREE.TorusGeometry(4, 0.1, 16, 32);
+      const rimMat = standardMaterial(0x666666);
+      const rim = new THREE.Mesh(rimGeo, rimMat);
+      rim.position.y = 0;
+      rim.rotation.x = Math.PI / 2;
+      group.add(rim);
+      
+      // Label for cylinder
+      if (labelRenderer) {
+        const CSS2DObject = (THREE as any).CSS2DObject;
+        const cylLabel = new CSS2DObject(document.createElement("div"));
+        cylLabel.element.innerHTML = `<div style="background:rgba(128,128,128,0.85);padding:6px 12px;border-radius:6px;color:white;font-size:11px;font-weight:600">Cylinder Container</div>`;
+        cylLabel.element.style.pointerEvents = "none";
+        cylLabel.position.set(0, -6, -5);
+        group.add(cylLabel);
+        labels.push(cylLabel);
+      }
+    }
+
+    function createPiston(group: THREE.Group, time: number) {
+      // Piston (moves up and down)
+      const pistonHeight = 0.5;
+      const pistonY = pistonPosition - 6;
+      
+      // Piston head
+      const headGeo = new THREE.CylinderGeometry(3.8, 3.8, pistonHeight, 32);
+      const headMat = standardMaterial(0x888888);
+      const head = new THREE.Mesh(headGeo, headMat);
+      head.position.y = pistonY;
+      group.add(head);
+      
+      // Piston rod
+      const rodGeo = new THREE.CylinderGeometry(0.3, 0.3, 3, 16);
+      const rodMat = standardMaterial(0x666666);
+      const rod = new THREE.Mesh(rodGeo, rodMat);
+      rod.position.y = pistonY + pistonHeight / 2 + 1.5;
+      group.add(rod);
+      
+      // Piston handle
+      const handleGeo = new THREE.BoxGeometry(1, 0.3, 0.3);
+      const handleMat = standardMaterial(0x444444);
+      const handle = new THREE.Mesh(handleGeo, handleMat);
+      handle.position.y = pistonY + pistonHeight + 3;
+      group.add(handle);
+      
+      // Add weight indicator
+      const weightGeo = new THREE.CylinderGeometry(1, 1, 0.5, 16);
+      const weightMat = standardMaterial(0xff4444);
+      const weight = new THREE.Mesh(weightGeo, weightMat);
+      weight.position.y = pistonY + pistonHeight + 4;
+      group.add(weight);
+      
+      // Animate piston slightly
+      head.position.y = pistonY + Math.sin(time * 2) * 0.1;
+      
+      // Label for piston
+      if (labelRenderer) {
+        const CSS2DObject = (THREE as any).CSS2DObject;
+        const pistonLabel = new CSS2DObject(document.createElement("div"));
+        pistonLabel.element.innerHTML = `<div style="background:rgba(136,136,136,0.85);padding:6px 12px;border-radius:6px;color:white;font-size:11px;font-weight:600">Piston (Movable)</div>`;
+        pistonLabel.element.style.pointerEvents = "none";
+        pistonLabel.position.set(0, pistonY + pistonHeight + 0.5, 0);
+        head.add(pistonLabel);
+        labels.push(pistonLabel);
+        
+        // Weight label
+        const weightLabel = new CSS2DObject(document.createElement("div"));
+        weightLabel.element.innerHTML = `<div style="background:rgba(255,68,68,0.85);padding:4px 8px;border-radius:4px;color:white;font-size:9px">Weight (Pressure)</div>`;
+        weightLabel.element.style.pointerEvents = "none";
+        weightLabel.position.set(0, 0.5, 0);
+        weight.add(weightLabel);
+        labels.push(weightLabel);
+      }
+    }
+
+    function createGasParticles(group: THREE.Group, time: number, temp: number) {
+      const numParticles = 200;
+      const speedFactor = temp / 300; // Higher temperature = faster movement
+      
+      // Particle explanation label
+      if (labelRenderer) {
+        const CSS2DObject = (THREE as any).CSS2DObject;
+        const particleLabel = new CSS2DObject(document.createElement("div"));
+        particleLabel.element.innerHTML = `
+          <div style="background:rgba(0,170,255,0.85);padding:6px 12px;border-radius:6px;color:white;font-size:10px;font-weight:600">
+            <div>🔵 Gas Particles</div>
+            <div style="font-size:9px;opacity:0.9">Ideal gas molecules</div>
+          </div>
+        `;
+        particleLabel.element.style.pointerEvents = "none";
+        particleLabel.position.set(-12, 8, 0);
+        group.add(particleLabel);
+        labels.push(particleLabel);
+      }
+      
+      for (let i = 0; i < numParticles; i++) {
+        // Random position within cylinder
+        const angle = Math.random() * Math.PI * 2;
+        const radius = Math.random() * 3.5;
+        const x = radius * Math.cos(angle);
+        const z = radius * Math.sin(angle);
+        const y = -6 + Math.random() * pistonPosition;
+        
+        // Create particle
+        const particleGeo = new THREE.SphereGeometry(0.1 + Math.random() * 0.1, 4, 4);
+        const particleMat = standardMaterial(0x00aaff, {
+          emissive: 0x0088ff,
+          emissiveIntensity: 0.5 + Math.random() * 0.5
+        });
+        const particle = new THREE.Mesh(particleGeo, particleMat);
+        
+        // Random motion
+        const offset = i * 100;
+        particle.position.set(
+          x + Math.sin(time * 10 + offset) * speedFactor * 0.2,
+          y + Math.cos(time * 15 + offset * 2) * speedFactor * 0.3,
+          z + Math.sin(time * 20 + offset * 3) * speedFactor * 0.2
+        );
+        
+        group.add(particle);
+        
+        // Add particle label (only for first few)
+        if (i < 3) {
+          const CSS2DObject = (THREE as any).CSS2DObject;
+          const pLabel = new CSS2DObject(document.createElement("div"));
+          pLabel.element.innerHTML = `<div style="background:rgba(0,170,255,0.7);padding:2px 4px;border-radius:2px;color:white;font-size:8px">Particle</div>`;
+          pLabel.element.style.pointerEvents = "none";
+          pLabel.position.set(0, 0.2, 0);
+          particle.add(pLabel);
+          labels.push(pLabel);
+        }
+      }
+      
+      // Temperature explanation label
+      if (labelRenderer) {
+        const CSS2DObject = (THREE as any).CSS2DObject;
+        const tempLabel = new CSS2DObject(document.createElement("div"));
+        tempLabel.element.innerHTML = `
+          <div style="background:rgba(239,68,68,0.85);padding:6px 12px;border-radius:6px;color:white;font-size:10px;font-weight:600">
+            <div>🌡️ Temperature: ${temp}K</div>
+            <div style="font-size:9px;opacity:0.9">Higher T = faster particles</div>
+          </div>
+        `;
+        tempLabel.element.style.pointerEvents = "none";
+        tempLabel.position.set(12, 8, 0);
+        group.add(tempLabel);
+        labels.push(tempLabel);
+      }
+    }
+
+    function createPVDiagram(group: THREE.Group) {
+      // Create a mini PV diagram in the corner
+      const diagramX = 15;
+      const diagramY = 10;
+      const diagramSize = 8;
+      
+      // Background
+      const bgGeo = new THREE.PlaneGeometry(diagramSize, diagramSize);
+      const bgMat = new THREE.MeshBasicMaterial({ 
+        color: 0x111111,
+        transparent: true,
+        opacity: 0.7
+      });
+      const bg = new THREE.Mesh(bgGeo, bgMat);
+      bg.position.set(diagramX, diagramY, -1);
+      group.add(bg);
+      
+      // P axis
+      const pAxisGeo = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(diagramX - diagramSize/2, diagramY - diagramSize/2, -1),
+        new THREE.Vector3(diagramX + diagramSize/2, diagramY - diagramSize/2, -1),
+        new THREE.Vector3(diagramX + diagramSize/2, diagramY + diagramSize/2, -1)
+      ]);
+      const pAxis = new THREE.Line(pAxisGeo, new THREE.LineBasicMaterial({ color: 0xff0000 }));
+      group.add(pAxis);
+      
+      // V axis
+      const vAxisGeo = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(diagramX - diagramSize/2, diagramY - diagramSize/2, -1),
+        new THREE.Vector3(diagramX - diagramSize/2, diagramY + diagramSize/2, -1),
+        new THREE.Vector3(diagramX + diagramSize/2, diagramY + diagramSize/2, -1)
+      ]);
+      const vAxis = new THREE.Line(vAxisGeo, new THREE.LineBasicMaterial({ color: 0x00ff00 }));
+      group.add(vAxis);
+      
+      // Curve
+      const curvePoints: THREE.Vector3[] = [];
+      for (let i = 0; i <= 10; i++) {
+        const x = diagramX - diagramSize/2 + (i / 10) * diagramSize;
+        const y = diagramY - diagramSize/2 + (i / 10) * diagramSize;
+        curvePoints.push(new THREE.Vector3(x, y, -1));
+      }
+      const curve = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(curvePoints),
+        new THREE.LineBasicMaterial({ color: 0x00aaff })
+      );
+      group.add(curve);
+      
+      // Add PV diagram label
+      if (labelRenderer) {
+        const CSS2DObject = (THREE as any).CSS2DObject;
+        const pvLabel = new CSS2DObject(document.createElement("div"));
+        pvLabel.element.innerHTML = `<div style="background:rgba(128,128,128,0.85);padding:6px 12px;border-radius:6px;color:white;font-size:11px;font-weight:600">P-V Diagram</div>`;
+        pvLabel.element.style.pointerEvents = "none";
+        pvLabel.position.set(diagramX, diagramY + diagramSize/2 + 1, -1);
+        group.add(pvLabel);
+        labels.push(pvLabel);
+        
+        // P axis label
+        const pLabel = new CSS2DObject(document.createElement("div"));
+        pLabel.element.innerHTML = `<div style="background:rgba(255,0,0,0.8);padding:3px 6px;border-radius:3px;color:white;font-size:8px">P</div>`;
+        pLabel.element.style.pointerEvents = "none";
+        pLabel.position.set(diagramX + diagramSize/2, diagramY - diagramSize/2, -1);
+        group.add(pLabel);
+        labels.push(pLabel);
+        
+        // V axis label
+        const vLabel = new CSS2DObject(document.createElement("div"));
+        vLabel.element.innerHTML = `<div style="background:rgba(0,255,0,0.8);padding:3px 6px;border-radius:3px;color:white;font-size:8px">V</div>`;
+        vLabel.element.style.pointerEvents = "none";
+        vLabel.position.set(diagramX - diagramSize/2, diagramY - diagramSize/2, -1);
+        group.add(vLabel);
+        labels.push(vLabel);
+      }
+    }
+
+    init();
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(animationId);
+      if (unbind) unbind();
+      disposeThreeScene(ts);
+      // Clean up label renderer
+      if (labelRenderer && labelRenderer.domElement?.parentNode) {
+        labelRenderer.domElement.parentNode.removeChild(labelRenderer.domElement);
+      }
+      labels = [];
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pistonPosition, temperature, showPiston, showGas, showPVDiagram]);
 
   // Calculate work done (W = PΔV)
   const workDone = useMemo(() => {

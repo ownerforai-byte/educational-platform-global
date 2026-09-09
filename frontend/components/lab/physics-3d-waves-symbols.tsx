@@ -62,8 +62,8 @@ function TransverseWave3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -73,7 +73,7 @@ function TransverseWave3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const NPTS = 220;
 let dot: THREE.Mesh | null = null;
@@ -86,26 +86,26 @@ const el = mount.current;
           new THREE.LineDashedMaterial({ color: 0x475569, dashSize: 0.3, gapSize: 0.2 })
         );
         eq.computeLineDistances();
-        ts.group.add(eq);
+        ts!.group.add(eq);
 
         const pts: THREE.Vector3[] = [];
         for (let i = 0; i <= NPTS; i++) { const x = -S + (2 * S * i) / NPTS; pts.push(new THREE.Vector3(x, 0, 0)); }
         const lineMat = new THREE.LineBasicMaterial({ color: 0x22d3ee });
         const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lineMat);
-        ts.group.add(line);
+        ts!.group.add(line);
 
         dot = new THREE.Mesh(new THREE.SphereGeometry(0.14, 12, 12), standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.8 }));
-        ts.group.add(dot);
+        ts!.group.add(dot);
 
         /* λ marker: a bracket spanning one full wave starting at x=0 */
         const lam = new THREE.Line(
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, -A - 0.6, 0), new THREE.Vector3(lambda > 0 ? lambda : 1, -A - 0.6, 0)]),
           new THREE.LineBasicMaterial({ color: 0xef4444 })
         );
-        ts.group.add(lam);
+        ts!.group.add(lam);
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
@@ -120,7 +120,7 @@ const el = mount.current;
     const dx = (time * speed) % (2 * S);
     const dotX = (dx);
     if (dot) dot.position.set(Math.min(dotX, S), A * Math.sin(k * dotX - phase), 0);
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, A, lambda, speed, running]);
 
@@ -197,8 +197,8 @@ function DoubleSlit3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -208,7 +208,7 @@ function DoubleSlit3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const families: { rings: { mesh: THREE.Line; mat: THREE.LineBasicMaterial }[]; cy: number }[] = [];
 let sys: any = null;
@@ -217,7 +217,7 @@ const el = mount.current;
 
         const src = new THREE.Mesh(new THREE.SphereGeometry(0.16, 14, 14), standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.9 }));
         src.position.set(-5.4, 0, 0);
-        ts.group.add(src);
+        ts!.group.add(src);
 
         const barMat = standardMaterial(0x64748b, { metalness: 0.4 });
         const bar = (y0: number, y1: number) => {
@@ -231,7 +231,7 @@ const el = mount.current;
         bar(dU / 2 - 0.1, -dU / 2 + 0.1);
         bar(-dU / 2 - 0.1, -3.4);
 
-        ts.group.add(new THREE.Line(
+        ts!.group.add(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(DU, -3.4, 0), new THREE.Vector3(DU, 3.4, 0)]),
           new THREE.LineBasicMaterial({ color: 0xe2e8f0 })
         ));
@@ -240,14 +240,14 @@ const el = mount.current;
           if (Math.abs(y) > 3.2) continue;
           const dot = new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 10), standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.9 }));
           dot.position.set(DU + 0.05, y, 0);
-          ts.group.add(dot);
+          ts!.group.add(dot);
         }
         const axis = new THREE.Line(
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-5.4, 0, 0), new THREE.Vector3(DU, 0, 0)]),
           new THREE.LineDashedMaterial({ color: 0x475569, dashSize: 0.25, gapSize: 0.18 })
         );
         axis.computeLineDistances();
-        ts.group.add(axis);
+        ts!.group.add(axis);
 
         const unit = Array.from({ length: 65 }, (_, i) => {
           const aa = (i / 64) * Math.PI * 2;
@@ -268,7 +268,7 @@ const el = mount.current;
         });
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
@@ -280,7 +280,7 @@ const el = mount.current;
         r.mat.opacity = 0.55 * (1 - rad / maxR);
       });
     });
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, lambdaNm, dMm, Dm]);
 

@@ -25,6 +25,7 @@ import {
   type ThreeScene,
   clearGroup,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
   const el = document.createElement("div");
@@ -84,8 +85,8 @@ const ElasticityTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -93,9 +94,11 @@ const ElasticityTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, mode === "hooke" ? `Hooke's Law — k = ${spring.k} N/m` : `Young's Modulus — ${wire.name} wire, Y = ${wire.Y} GPa`, new THREE.Vector3(0, 5.2, 0));
 
@@ -113,11 +116,11 @@ const ElasticityTab: React.FC = () => {
       if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 10), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 10), standardMaterial(0x1e293b, { roughness: 0.95 })));
     /* ceiling */
     const ceil = new THREE.Mesh(new THREE.BoxGeometry(6, 0.3, 2.4), standardMaterial(0x57534e, { metalness: 0.5 }));
     ceil.position.set(0, 4.6, 0);
-    ts.group.add(ceil);
+    ts!.group.add(ceil);
     addLbl("#f87171", "Rigid support", [0, 5.6, 0], "top fixed end", [0, 4.5, 0]);
 
     let hangGrp: THREE.Group | null = null;
@@ -136,7 +139,7 @@ const ElasticityTab: React.FC = () => {
         new THREE.TubeGeometry(new THREE.CatmullRomCurve3(helixPts), 200, 0.055, 8),
         standardMaterial(spring.color, { metalness: 0.6, roughness: 0.35 })
       );
-      ts.group.add(springMesh);
+      ts!.group.add(springMesh);
 
       /* hanger + slotted weights */
       const hanger = new THREE.Group();
@@ -146,17 +149,17 @@ const ElasticityTab: React.FC = () => {
       hanger.add(weight);
       hanger.position.set(0, 4.5 - (restLen + stretch) - 0.15, 0);
       const hangerRestY = hanger.position.y;
-      ts.group.add(hanger);
+      ts!.group.add(hanger);
       hangGrp = hanger;
 
       /* ruler beside spring */
       const ruler = new THREE.Mesh(new THREE.BoxGeometry(0.14, 4.2, 0.08), standardMaterial(0xfafafa, { roughness: 0.6 }));
       ruler.position.set(-1.5, 2.4, 0);
-      ts.group.add(ruler);
+      ts!.group.add(ruler);
       for (let i = 0; i <= 8; i++) {
         const tick = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.02, 0.09), standardMaterial(0x111827));
         tick.position.set(-1.5, 0.35 + i * 0.5, 0);
-        ts.group.add(tick);
+        ts!.group.add(tick);
       }
       addLbl("#38bdf8", `Spring — k = ${spring.k} N/m`, [2.6, 4.0, 0], "F = k·x (linear region)", [0.3, 3.6, 0]);
       addLbl("#facc15", `Load F = ${massN} N`, [1.9, hangerRestY + 0.4, 0], `x = F/k = ${xSpring.toFixed(2)} m stretch`, [0, hangerRestY, 0]);
@@ -170,18 +173,18 @@ const ElasticityTab: React.FC = () => {
         standardMaterial(wire.color, { metalness: 0.7, roughness: 0.3 })
       );
       wireMesh.position.set(0, 4.5 - (wireLen + Math.min(0.5, dL * 400)) / 2, 0);
-      ts.group.add(wireMesh);
+      ts!.group.add(wireMesh);
 
       const clamp = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.35, 16), standardMaterial(0x57534e, { metalness: 0.6 }));
       clamp.position.set(0, 4.5 - (wireLen + Math.min(0.5, dL * 400)) - 0.2, 0);
-      ts.group.add(clamp);
+      ts!.group.add(clamp);
 
       const pan = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.45, 0.12, 24), standardMaterial(0x94a3b8, { metalness: 0.7 }));
       pan.position.set(0, clamp.position.y - 0.45, 0);
-      ts.group.add(pan);
+      ts!.group.add(pan);
       hangGrp = new THREE.Group();
       hangGrp.add(clamp, pan);
-      ts.group.add(hangGrp);
+      ts!.group.add(hangGrp);
       hangGrp.position.set(0, 0, 0);
 
       addLbl("#fbbf24", `${wire.name} wire`, [1.9, 3.9, 0], `L = ${lenM.toFixed(2)} m, d = ${diaMm.toFixed(1)} mm`, [0.05, 3.4, 0]);
@@ -292,8 +295,8 @@ const IdealGasTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -301,9 +304,11 @@ const IdealGasTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, `PV = nRT → P = ${pressureKPa(pressure)} kPa at T = ${tempK} K, V = ${volumeL} L`, new THREE.Vector3(0, 4.8, 0));
 
@@ -323,7 +328,7 @@ const IdealGasTab: React.FC = () => {
 
     function pressureKPa(p: number) { return (p / 1000).toFixed(1); }
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
     /* cylinder: glass walls, piston on top */
     const cylH = 5.6;
@@ -332,16 +337,16 @@ const IdealGasTab: React.FC = () => {
     glassMat.side = THREE.DoubleSide;
     const tube = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, cylH, 32, 1, true), glassMat);
     tube.position.set(0, 0.15 + cylH / 2, 0);
-    ts.group.add(tube);
+    ts!.group.add(tube);
     const base = new THREE.Mesh(new THREE.CylinderGeometry(2.25, 2.25, 0.3, 32), standardMaterial(0x57534e, { metalness: 0.6 }));
     base.position.set(0, 0.3, 0);
-    ts.group.add(base);
+    ts!.group.add(base);
 
     /* piston (position animated below) */
     const piston = new THREE.Mesh(new THREE.CylinderGeometry(2.02, 2.02, 0.34, 32), standardMaterial(0xf59e0b, { metalness: 0.5, roughness: 0.4 }));
-    ts.group.add(piston);
+    ts!.group.add(piston);
     const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 1.6, 10), standardMaterial(0x94a3b8, { metalness: 0.7 }));
-    ts.group.add(rod);
+    ts!.group.add(rod);
 
     /* gas molecules */
     const mols: { mesh: THREE.Mesh; vel: THREE.Vector3 }[] = [];
@@ -350,7 +355,7 @@ const IdealGasTab: React.FC = () => {
         new THREE.SphereGeometry(0.085, 10, 8),
         standardMaterial(GAS_COLORS[i % GAS_COLORS.length], { emissive: GAS_COLORS[i % GAS_COLORS.length], emissiveIntensity: 0.7 })
       );
-      ts.group.add(mesh);
+      ts!.group.add(mesh);
       const sp = 1.2 + Math.sqrt(tempK / 100) * 1.4 * (0.75 + Math.random() * 0.5);
       mols.push({ mesh, vel: new THREE.Vector3((Math.random() - 0.5) * sp, (Math.random() - 0.5) * sp, (Math.random() - 0.5) * sp) });
       mesh.position.set((Math.random() - 0.5) * 3.4, 0.6 + Math.random() * (gasH - 0.7), (Math.random() - 0.5) * 3.4);

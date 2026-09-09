@@ -50,8 +50,8 @@ function BohrAtom3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(0, 6, 13), autoRotate: true, autoRotateSpeed: 0.5, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 6, 13), autoRotate: true, autoRotateSpeed: 0.5, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -59,8 +59,8 @@ function BohrAtom3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -70,7 +70,7 @@ function BohrAtom3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 let electron: THREE.Mesh | null = null;
 let sys: any = null;
@@ -78,7 +78,7 @@ const el = mount.current;
         titleText(ts, "Bohr Model of the Atom", new THREE.Vector3(0, 5.4, 0));
 
         const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 24), standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.7 }));
-        ts.group.add(nucleus);
+        ts!.group.add(nucleus);
 
         const orbits = new THREE.Group();
         for (let m = 1; m <= 4; m++) {
@@ -92,21 +92,21 @@ const el = mount.current;
           orbits.add(ring);
         }
         orbits.rotation.x = 0.55;
-        ts.group.add(orbits);
+        ts!.group.add(orbits);
 
         electron = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 16), standardMaterial(0x38bdf8, { emissive: 0x38bdf8, emissiveIntensity: 0.9 }));
         electron.position.set(rN, 0, 0);
-        ts.group.add(electron);
+        ts!.group.add(electron);
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
     updateRef.current = (time) => {
     const a = time * 1.4;
     if (electron) electron.position.set(Math.cos(a) * rN, Math.sin(a) * rN, 0);
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, n, Z]);
 
@@ -175,8 +175,8 @@ function Photoelectric3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(1, 3.6, 11), autoRotate: false, background: 0x0b1220 });
+    if (!mount.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(1, 3.6, 11), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
@@ -184,8 +184,8 @@ function Photoelectric3D() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -195,7 +195,7 @@ function Photoelectric3D() {
   useEffect(() => {(async () => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const electrons: { mesh: THREE.Mesh; y: number; z: number; x: number }[] = [];
 const photons: { mesh: THREE.Mesh; u: number }[] = [];
@@ -205,12 +205,12 @@ const el = mount.current;
 
         const plate = new THREE.Mesh(new THREE.BoxGeometry(0.5, 3.4, 1.7), standardMaterial(0x94a3b8, { metalness: 0.8, roughness: 0.3 }));
         plate.position.set(-2.2, 0, 0);
-        ts.group.add(plate);
+        ts!.group.add(plate);
         const collector = new THREE.Mesh(new THREE.BoxGeometry(0.3, 3.4, 1.7), standardMaterial(0x334155, { metalness: 0.6 }));
         collector.position.set(5.2, 0, 0);
-        ts.group.add(collector);
+        ts!.group.add(collector);
         /* battery / meter hint between plates */
-        ts.group.add(new THREE.Line(
+        ts!.group.add(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-1.95, -1.9, 0), new THREE.Vector3(5.05, -1.9, 0)]),
           new THREE.LineDashedMaterial({ color: 0x475569, dashSize: 0.2, gapSize: 0.15 })
         ));
@@ -219,17 +219,17 @@ const el = mount.current;
           const p = new THREE.Mesh(new THREE.SphereGeometry(0.12, 10, 10), standardMaterial(photonColor, { emissive: photonColor, emissiveIntensity: 1 }));
           p.position.set(-7 + i * 1.1, 0.6 + (i % 3) * 0.5 - 0.5, (i % 2 === 0 ? 0.3 : -0.3));
           photons.push({ mesh: p, u: i / 5 });
-          ts.group.add(p);
+          ts!.group.add(p);
         }
         for (let i = 0; i < 6; i++) {
           const e = new THREE.Mesh(new THREE.SphereGeometry(0.09, 10, 10), standardMaterial(0x22d3ee, { emissive: 0x22d3ee, emissiveIntensity: 0.9 }));
           e.visible = false;
           electrons.push({ mesh: e, y: 0, z: 0, x: -1.9 });
-          ts.group.add(e);
+          ts!.group.add(e);
         }
 
         sys = await createLabelSystem();
-        ts.group.add(sys.group);
+        ts!.group.add(sys.group);
         defs.forEach((d) => sys.add(d));
 
 
@@ -249,7 +249,7 @@ const el = mount.current;
       if (e.x <= -1.89) { e.y = 1.3 * Math.sin(i * 2.1 + time); e.z = (i % 3 - 1) * 0.4; }
       e.mesh.position.set(e.x, e.y, e.z);
     });
-    sys.render(ts.scene, ts.camera);
+    sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, lambdaNm, metalIdx]);
 

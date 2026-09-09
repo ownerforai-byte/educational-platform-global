@@ -16,9 +16,13 @@ import {
   bindResize,
 } from "@/components/lab/three-scene";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 export const Class11KinematicsMotionEnhanced: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [initialVelocity, setInitialVelocity] = useState(10);
   const [acceleration, setAcceleration] = useState(2);
   const [time, setTime] = useState(5);
@@ -42,6 +46,7 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
+    
     if (!containerRef.current || !isWebGLAvailable()) return;
     const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(25, 15, 25),
@@ -56,8 +61,8 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -65,9 +70,11 @@ export const Class11KinematicsMotionEnhanced: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const container = mountRef.current;
 
@@ -82,15 +89,15 @@ const container = mountRef.current;
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         // Create grid helper
         const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Create axes helper
         const axes = new THREE.AxesHelper(15);
-        ts.group.add(axes);
+        ts!.group.add(axes);
 
         // LABELLED COMPONENTS
         // Create origin point (labeled)
@@ -98,7 +105,7 @@ const container = mountRef.current;
         const originMat = standardMaterial(0xfbbf24, { emissive: 0xfbbf24, emissiveIntensity: 0.5 });
         const origin = new THREE.Mesh(originGeo, originMat);
         origin.position.set(0, 0, 0);
-        ts.group.add(origin);
+        ts!.group.add(origin);
 
         // Create moving object (car with labelled parts)
         const carGroup = new THREE.Group();
@@ -141,14 +148,14 @@ const container = mountRef.current;
         front.position.set(1.4, 0, 0);
         carGroup.add(front);
 
-        ts.group.add(carGroup);
+        ts!.group.add(carGroup);
 
         // End point (labeled)
         const endGeo = new THREE.SphereGeometry(0.4, 16, 16);
         const endMat = standardMaterial(0x22c55e, { emissive: 0x22c55e, emissiveIntensity: 0.5 });
         const endPoint = new THREE.Mesh(endGeo, endMat);
         endPoint.position.set(0, 0, 0);
-        ts.group.add(endPoint);
+        ts!.group.add(endPoint);
 
         // Path line
         let pathLine: THREE.Line | null = null;
@@ -161,14 +168,13 @@ const container = mountRef.current;
         const distanceMarker = new THREE.Mesh(distanceGeo, distanceMat);
         distanceMarker.position.y = 0.5;
         distanceMarker.visible = false;
-        ts.group.add(distanceMarker);
+        ts!.group.add(distanceMarker);
 
         // LABEL OBJECTS (Using CSS2DRenderer for text labels)
-        let labelRenderer: any = null;
         const labels: any[] = [];
 
         try {
-          const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
+          // CSS2DRenderer and CSS2DObject already imported at top
           
           labelRenderer = new CSS2DRenderer();
           labelRenderer.setSize(container!.clientWidth, container!.clientHeight);
@@ -187,7 +193,7 @@ const container = mountRef.current;
           originLabel.element.style.borderRadius = "4px";
           originLabel.element.style.color = "#fbbf24";
           originLabel.position.set(0, 0.8, 0);
-          ts.group.add(originLabel);
+          ts!.group.add(originLabel);
           labels.push(originLabel);
 
           const carLabel = new CSS2DObject(document.createElement("div"));
@@ -220,7 +226,7 @@ const container = mountRef.current;
           pathLabel.element.style.borderRadius = "4px";
           pathLabel.element.style.color = "#3b82f6";
           pathLabel.position.set(10, 0.5, 0);
-          ts.group.add(pathLabel);
+          ts!.group.add(pathLabel);
           labels.push(pathLabel);
 
           const velocityLabel = new CSS2DObject(document.createElement("div"));
@@ -232,7 +238,7 @@ const container = mountRef.current;
           velocityLabel.element.style.color = "#22c55e";
           velocityLabel.position.set(0, 1, 0);
           velocityLabel.visible = false;
-          ts.group.add(velocityLabel);
+          ts!.group.add(velocityLabel);
           labels.push(velocityLabel);
 
           const accelerationLabel = new CSS2DObject(document.createElement("div"));
@@ -244,7 +250,7 @@ const container = mountRef.current;
           accelerationLabel.element.style.color = "#ef4444";
           accelerationLabel.position.set(0, 1, 0);
           accelerationLabel.visible = false;
-          ts.group.add(accelerationLabel);
+          ts!.group.add(accelerationLabel);
           labels.push(accelerationLabel);
 
         } catch {
@@ -258,12 +264,12 @@ const container = mountRef.current;
 
           // Clear existing path and arrows
           if (pathLine) {
-            ts.group.remove(pathLine);
+            ts!.group.remove(pathLine);
             pathLine.geometry.dispose();
             (pathLine.material as THREE.Material).dispose();
           }
-          if (velocityArrow) { ts.group.remove(velocityArrow); }
-          if (accelerationArrow) { ts.group.remove(accelerationArrow); }
+          if (velocityArrow) { ts!.group.remove(velocityArrow); }
+          if (accelerationArrow) { ts!.group.remove(accelerationArrow); }
 
           // Calculate positions based on kinematic equations
           const positions: THREE.Vector3[] = [];
@@ -281,7 +287,7 @@ const container = mountRef.current;
             const geometry = new THREE.BufferGeometry().setFromPoints(positions);
             const material = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 3 });
             pathLine = new THREE.Line(geometry, material);
-            ts.group.add(pathLine);
+            ts!.group.add(pathLine);
           }
 
           // Update end point position
@@ -325,7 +331,7 @@ const container = mountRef.current;
               velValue * arrowScale,
               0x22c55e
             );
-            ts.group.add(velocityArrow);
+            ts!.group.add(velocityArrow);
 
             accelerationArrow = new LiveArrow(
               new THREE.Vector3(1, 0, 0),
@@ -333,7 +339,7 @@ const container = mountRef.current;
               accelValue * arrowScale,
               0xef4444
             );
-            ts.group.add(accelerationArrow);
+            ts!.group.add(accelerationArrow);
 
             // Update label positions
             if (labels[4]) {
@@ -353,9 +359,9 @@ const container = mountRef.current;
             labels[3].position.x = maxDisplacement / 2;
           }
 
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+          ts!.controls.update();
+          ts!.renderer.render(ts!.scene, ts!.camera);
+          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
         }
 
 

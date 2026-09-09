@@ -17,9 +17,13 @@ import {
 } from "@/components/lab/three-scene";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 export const Class11LawsOfMotionEnhanced: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [mass1, setMass1] = useState(2);
   const [mass2, setMass2] = useState(3);
   const [force, setForce] = useState(10);
@@ -48,6 +52,7 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
+    
     if (!containerRef.current || !isWebGLAvailable()) return;
     const ts = createThreeScene(containerRef.current, {
           cameraPosition: new THREE.Vector3(12, 15, 18),
@@ -62,8 +67,8 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -71,9 +76,11 @@ export const Class11LawsOfMotionEnhanced: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 const container = mountRef.current;
 
@@ -84,10 +91,10 @@ const container = mountRef.current;
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.01;
         ground.receiveShadow = true;
-        ts.group.add(ground);
+        ts!.group.add(ground);
 
         const grid = new THREE.GridHelper(50, 100, 0x334155, 0x1e293b);
-        ts.group.add(grid);
+        ts!.group.add(grid);
 
         // Block 1 (horizontal motion with friction) - LABELLED
         const block1Group = new THREE.Group();
@@ -97,7 +104,7 @@ const container = mountRef.current;
         block1.castShadow = true;
         block1Group.add(block1);
         block1Group.position.set(0, 0.5, 0);
-        ts.group.add(block1Group);
+        ts!.group.add(block1Group);
 
         // Block 2 (hanging) - LABELLED
         const block2Group = new THREE.Group();
@@ -107,7 +114,7 @@ const container = mountRef.current;
         block2.castShadow = true;
         block2Group.add(block2);
         block2Group.position.set(0, 10, 0);
-        ts.group.add(block2Group);
+        ts!.group.add(block2Group);
 
         // Pulley system - LABELLED
         const pulleyGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.3, 16);
@@ -115,14 +122,14 @@ const container = mountRef.current;
         const pulley = new THREE.Mesh(pulleyGeo, pulleyMat);
         pulley.position.set(0, 10, 0);
         pulley.rotation.x = Math.PI / 2;
-        ts.group.add(pulley);
+        ts!.group.add(pulley);
 
         // Ceiling support for pulley
         const ceilingGeo = new THREE.BoxGeometry(10, 0.2, 2);
         const ceilingMat = standardMaterial(0x334155);
         const ceiling = new THREE.Mesh(ceilingGeo, ceilingMat);
         ceiling.position.set(0, 11, 0);
-        ts.group.add(ceiling);
+        ts!.group.add(ceiling);
 
         // Rope
         let rope: THREE.Line | null = null;
@@ -138,11 +145,10 @@ const container = mountRef.current;
         const startTime = performance.now();
 
         // LABELS for components
-        let labelRenderer: any = null;
         const labels: any[] = [];
 
         try {
-          const { CSS2DRenderer, CSS2DObject } = await import("three/addons/renderers/CSS2DRenderer.js");
+          // CSS2DRenderer and CSS2DObject already imported at top
           
           labelRenderer = new CSS2DRenderer();
           labelRenderer.setSize(container!.clientWidth, container!.clientHeight);
@@ -196,15 +202,15 @@ const container = mountRef.current;
           if (!ts) return;
 
           // Clear previous objects
-          if (rope) { ts.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); }
-          if (forceArrow) ts.group.remove(forceArrow);
-          if (frictionArrow) ts.group.remove(frictionArrow);
-          if (tensionArrow) ts.group.remove(tensionArrow);
-          if (normalArrow1) ts.group.remove(normalArrow1);
-          if (normalArrow2) ts.group.remove(normalArrow2);
-          if (weightArrow1) ts.group.remove(weightArrow1);
-          if (weightArrow2) ts.group.remove(weightArrow2);
-          if (trajectoryLine) { ts.group.remove(trajectoryLine); trajectoryLine.geometry.dispose(); }
+          if (rope) { ts!.group.remove(rope); rope.geometry.dispose(); (rope.material as THREE.Material).dispose(); }
+          if (forceArrow) ts!.group.remove(forceArrow);
+          if (frictionArrow) ts!.group.remove(frictionArrow);
+          if (tensionArrow) ts!.group.remove(tensionArrow);
+          if (normalArrow1) ts!.group.remove(normalArrow1);
+          if (normalArrow2) ts!.group.remove(normalArrow2);
+          if (weightArrow1) ts!.group.remove(weightArrow1);
+          if (weightArrow2) ts!.group.remove(weightArrow2);
+          if (trajectoryLine) { ts!.group.remove(trajectoryLine); trajectoryLine.geometry.dispose(); }
 
           const elapsed = (performance.now() - startTime) / 1000;
           const t = elapsed % 5;
@@ -225,7 +231,7 @@ const container = mountRef.current;
             const ropeGeo = new THREE.BufferGeometry().setFromPoints(ropePoints);
             const ropeMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 3 });
             rope = new THREE.Line(ropeGeo, ropeMat);
-            ts.group.add(rope);
+            ts!.group.add(rope);
           }
 
           // Show forces
@@ -237,7 +243,7 @@ const container = mountRef.current;
               force * 0.1,
               0xef4444
             );
-            ts.group.add(forceArrow);
+            ts!.group.add(forceArrow);
 
             // Friction arrow on block 1
             frictionArrow = new LiveArrow(
@@ -246,7 +252,7 @@ const container = mountRef.current;
               friction * mass1 * 9.8 * 0.1,
               0x6366f1
             );
-            ts.group.add(frictionArrow);
+            ts!.group.add(frictionArrow);
 
             // Tension arrow on pulley
             tensionArrow = new LiveArrow(
@@ -255,7 +261,7 @@ const container = mountRef.current;
               tension * 0.1,
               0x22c55e
             );
-            ts.group.add(tensionArrow);
+            ts!.group.add(tensionArrow);
 
             // Normal force arrow on block 1
             normalArrow1 = new LiveArrow(
@@ -264,7 +270,7 @@ const container = mountRef.current;
               normalForce1 * 0.1,
               0xfbbf24
             );
-            ts.group.add(normalArrow1);
+            ts!.group.add(normalArrow1);
 
             // Normal force arrow on block 2 (from tension)
             normalArrow2 = new LiveArrow(
@@ -273,7 +279,7 @@ const container = mountRef.current;
               normalForce2 * 0.1,
               0xfbbf24
             );
-            ts.group.add(normalArrow2);
+            ts!.group.add(normalArrow2);
 
             // Weight arrow on block 1
             weightArrow1 = new LiveArrow(
@@ -282,7 +288,7 @@ const container = mountRef.current;
               mass1 * 9.8 * 0.1,
               0xfbbf24
             );
-            ts.group.add(weightArrow1);
+            ts!.group.add(weightArrow1);
 
             // Weight arrow on block 2
             weightArrow2 = new LiveArrow(
@@ -291,15 +297,15 @@ const container = mountRef.current;
               mass2 * 9.8 * 0.1,
               0xfbbf24
             );
-            ts.group.add(weightArrow2);
+            ts!.group.add(weightArrow2);
           }
 
           // Rotate pulley
           pulley.rotation.z += 0.05;
 
-          ts.controls.update();
-          ts.renderer.render(ts.scene, ts.camera);
-          if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+          ts!.controls.update();
+          ts!.renderer.render(ts!.scene, ts!.camera);
+          if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
         }
 
 

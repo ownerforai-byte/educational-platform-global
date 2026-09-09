@@ -17,6 +17,8 @@ import {
 
 export const Class11Thermodynamics: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const tsRef = useRef<ThreeScene | null>(null);
+  const updateRef = useRef<((time: number) => void) | null>(null);
   const [initialTemp, setInitialTemp] = useState(300);
   const [finalTemp, setFinalTemp] = useState(400);
   const [mass, setMass] = useState(1);
@@ -55,8 +57,8 @@ export const Class11Thermodynamics: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -64,9 +66,11 @@ export const Class11Thermodynamics: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     // Ground
@@ -76,10 +80,10 @@ export const Class11Thermodynamics: React.FC = () => {
     ground.rotation.x = -Math.PI / 2;
     ground.position.y = -0.01;
     ground.receiveShadow = true;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     const grid = new THREE.GridHelper(40, 80, 0x334155, 0x1e293b);
-    ts.group.add(grid);
+    ts!.group.add(grid);
 
     // Piston-cylinder system
     const cylinderGeo = new THREE.CylinderGeometry(2, 2, 5, 32);
@@ -88,7 +92,7 @@ export const Class11Thermodynamics: React.FC = () => {
     cylinder.position.y = 2.5;
     cylinder.castShadow = true;
     cylinder.receiveShadow = true;
-    ts.group.add(cylinder);
+    ts!.group.add(cylinder);
 
     // Piston
     const pistonGroup = new THREE.Group();
@@ -107,7 +111,7 @@ export const Class11Thermodynamics: React.FC = () => {
     rod.castShadow = true;
     pistonGroup.add(rod);
 
-    ts.group.add(pistonGroup);
+    ts!.group.add(pistonGroup);
 
     // Gas particles
     const particleGeo = new THREE.SphereGeometry(0.15, 16, 16);
@@ -123,7 +127,7 @@ export const Class11Thermodynamics: React.FC = () => {
         (Math.random() - 0.5) * 3
       );
       particle.castShadow = true;
-      ts.group.add(particle);
+      ts!.group.add(particle);
       particles.push(particle);
     }
 
@@ -134,26 +138,26 @@ export const Class11Thermodynamics: React.FC = () => {
     const indicator = new THREE.Mesh(indicatorGeo, indicatorMat);
     indicator.position.set(-8, 2, 0);
     tempIndicator.add(indicator);
-    ts.group.add(tempIndicator);
+    ts!.group.add(tempIndicator);
 
     // Energy bars
     const heatBarGeo = new THREE.BoxGeometry(0.5, heatAdded * 0.01, 0.5);
     const heatBarMat = standardMaterial(0xef4444, { transparent: true, opacity: 0.8 });
     const heatBar = new THREE.Mesh(heatBarGeo, heatBarMat);
     heatBar.position.set(-5, heatBarGeo.parameters.height / 2, 0);
-    ts.group.add(heatBar);
+    ts!.group.add(heatBar);
 
     const workBarGeo = new THREE.BoxGeometry(0.5, Math.abs(workDone) * 0.01, 0.5);
     const workBarMat = standardMaterial(0x3b82f6, { transparent: true, opacity: 0.8 });
     const workBar = new THREE.Mesh(workBarGeo, workBarMat);
     workBar.position.set(-3, workBarGeo.parameters.height / 2, 0);
-    ts.group.add(workBar);
+    ts!.group.add(workBar);
 
     const deltaUBarGeo = new THREE.BoxGeometry(0.5, Math.abs(deltaU) * 0.01, 0.5);
     const deltaUBarMat = standardMaterial(0x22c55e, { transparent: true, opacity: 0.8 });
     const deltaUBar = new THREE.Mesh(deltaUBarGeo, deltaUBarMat);
     deltaUBar.position.set(-1, deltaUBarGeo.parameters.height / 2, 0);
-    ts.group.add(deltaUBar);
+    ts!.group.add(deltaUBar);
 
     const startTime = performance.now();
     let pistonHeight = 5;
@@ -213,12 +217,12 @@ export const Class11Thermodynamics: React.FC = () => {
       deltaUBar.scale.y = Math.max(0.01, Math.abs(deltaU) * 0.01);
       deltaUBar.position.y = deltaUBar.scale.y / 2;
 
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
 
 
-    updateRef.current = (time) => {
+    updateRef.current = (time: number) => {
     updateScene();
     };
   }, [initialTemp, finalTemp, mass, specificHeat, processType, showEnergy, deltaT, heatAdded, workDone, deltaU]);

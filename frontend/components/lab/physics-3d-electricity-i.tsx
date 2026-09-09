@@ -25,6 +25,7 @@ import {
   type ThreeScene,
   clearGroup,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
   const el = document.createElement("div");
@@ -81,8 +82,8 @@ const CapacitorTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -90,9 +91,11 @@ const CapacitorTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
         titleText(ts, `C = ${(cEff * 1e12).toFixed(1)} pF — κ = ${mat.k}, d = ${separationMm} mm`, new THREE.Vector3(0, 4.2, 0));
 labelRenderer = new CSS2DRenderer();
@@ -109,7 +112,7 @@ labelRenderer = new CSS2DRenderer();
           if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
         };
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 11), standardMaterial(0x1e293b, { roughness: 0.95 })));
+        ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 11), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
         /* plates */
         const gap = 0.22 + separationMm * 0.22;
@@ -117,19 +120,19 @@ labelRenderer = new CSS2DRenderer();
         const plateMatN = standardMaterial(0x60a5fa, { metalness: 0.8, emissive: 0x1e3a8a, emissiveIntensity: 0.35 });
         const plateP = new THREE.Mesh(new THREE.BoxGeometry(3.2, 3.2, 0.1), plateMatP);
         plateP.position.set(0, 2.4, gap / 2);
-        ts.group.add(plateP);
+        ts!.group.add(plateP);
         const plateN = new THREE.Mesh(new THREE.BoxGeometry(3.2, 3.2, 0.1), plateMatN);
         plateN.position.set(0, 2.4, -gap / 2);
-        ts.group.add(plateN);
+        ts!.group.add(plateN);
 
         /* + charges on positive plate, − on negative */
         for (let i = 0; i < 8; i++) {
           const plus = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.04, 0.36), standardMaterial(0xfca5a5, { emissive: 0xfca5a5, emissiveIntensity: 0.8 }));
           plus.position.set(-1.2 + (i % 4) * 0.8, i < 4 ? 1.6 : 3.1, gap / 2 + 0.07);
-          ts.group.add(plus);
+          ts!.group.add(plus);
           const minus = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.04, 0.36), standardMaterial(0x93c5fd, { emissive: 0x93c5fd, emissiveIntensity: 0.8 }));
           minus.position.set(-1.2 + (i % 4) * 0.8, i < 4 ? 1.6 : 3.1, -gap / 2 - 0.07);
-          ts.group.add(minus);
+          ts!.group.add(minus);
         }
 
         /* uniform field arrows between plates */
@@ -141,7 +144,7 @@ labelRenderer = new CSS2DRenderer();
               Math.max(0.12, gap * 0.8),
               0xfacc15, 0.1, 0.07
             );
-            ts.group.add(a);
+            ts!.group.add(a);
           }
         }
 
@@ -149,12 +152,12 @@ labelRenderer = new CSS2DRenderer();
         const slab = new THREE.Mesh(new THREE.BoxGeometry(3.0, 3.0, Math.max(0.03, gap * 0.7)), standardMaterial(mat.color, { transparent: true, opacity: 0.55 }));
         const slabZ = gap / 2 - (gap * 0.7) / 2 - (1 - frac) * 3.4;
         slab.position.set(0, 2.4, Math.max(-gap / 2 + (gap * 0.7) / 2 - 0.001, slabZ));
-        ts.group.add(slab);
+        ts!.group.add(slab);
 
         /* battery + wires */
         const batt = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.6, 0.6), standardMaterial(0x22c55e, { metalness: 0.3 }));
         batt.position.set(-4.6, 0.75, 0);
-        ts.group.add(batt);
+        ts!.group.add(batt);
 
         addLbl("#f87171", "Positive plate (+Q)", [2.6, 4.4, gap / 2], "connected to battery +", [1.4, 3.2, gap / 2]);
         addLbl("#60a5fa", "Negative plate (−Q)", [2.6, 0.9, -gap / 2], "connected to battery −", [1.4, 1.6, -gap / 2]);
@@ -243,8 +246,8 @@ const MeterBridgeTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -252,9 +255,11 @@ const MeterBridgeTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, `Meter bridge — null at l = ${balanceCm.toFixed(1)} cm → S = ${sCalc.toFixed(2)} Ω`, new THREE.Vector3(0, 4.4, 0));
 
@@ -273,34 +278,34 @@ const MeterBridgeTab: React.FC = () => {
     };
 
     /* wooden board */
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(15, 0.3, 7), standardMaterial(0x7c4a21, { roughness: 0.9 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(15, 0.3, 7), standardMaterial(0x7c4a21, { roughness: 0.9 })));
 
     /* 1 m wire stretched along a scale */
     const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 10, 8), standardMaterial(0xd6d3d1, { metalness: 0.9 }));
     wire.rotation.z = Math.PI / 2;
     wire.position.set(0, 1.1, 0);
-    ts.group.add(wire);
+    ts!.group.add(wire);
     for (let i = 0; i <= 10; i++) {
       const tick = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.28, 0.02), standardMaterial(0xfafafa));
       tick.position.set(-5 + i, 1.35, 0);
-      ts.group.add(tick);
+      ts!.group.add(tick);
       const numLbl = mkLabel("#e2e8f0", i === 10 ? "100" : `${i * 10}`);
       numLbl.style.fontSize = "9px";
       const o = new CSS2DObject(numLbl);
       o.position.set(-5 + i, 1.75, 0);
-      ts.group.add(o);
+      ts!.group.add(o);
     }
     const scaleStrip = new THREE.Mesh(new THREE.BoxGeometry(10.4, 0.06, 0.4), standardMaterial(0x334155, { roughness: 0.5 }));
     scaleStrip.position.set(0, 0.92, 0);
-    ts.group.add(scaleStrip);
+    ts!.group.add(scaleStrip);
 
     /* resistance boxes: left = known R, right = unknown S */
     const boxL = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.9, 0.9), standardMaterial(0x38bdf8, { metalness: 0.3 }));
     boxL.position.set(-4.2, 1.3, 2.6);
-    ts.group.add(boxL);
+    ts!.group.add(boxL);
     const boxR = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.9, 0.9), standardMaterial(0xf97316, { metalness: 0.3 }));
     boxR.position.set(4.2, 1.3, 2.6);
-    ts.group.add(boxR);
+    ts!.group.add(boxR);
 
     /* galvanometer with jockey */
     const galv = new THREE.Group();
@@ -312,13 +317,13 @@ const MeterBridgeTab: React.FC = () => {
     needle.position.y = 0.24;
     galv.add(needle);
     galv.position.set(0, 2.6, 2.2);
-    ts.group.add(galv);
+    ts!.group.add(galv);
 
     /* jockey that slides along the wire */
     const jockey = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.5, 10), standardMaterial(0xfacc15, { metalness: 0.6 }));
     jockey.rotation.x = Math.PI;
     jockey.position.set(-5 + balanceCm / 10, 1.5, 0);
-    ts.group.add(jockey);
+    ts!.group.add(jockey);
 
     addLbl("#38bdf8", `Known R = ${knownR} Ω`, [-4.4, 2.6, 3.4], "resistance box in left gap", [-4.2, 1.9, 2.6]);
     addLbl("#fb923c", `Unknown S = ${unknownS} Ω`, [4.4, 2.6, 3.4], "the resistance being determined", [4.2, 1.9, 2.6]);

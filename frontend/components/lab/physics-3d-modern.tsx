@@ -26,6 +26,7 @@ import {
   type ThreeScene,
   clearGroup,
 } from "@/components/lab/three-scene";
+import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
 function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
   const el = document.createElement("div");
@@ -67,8 +68,8 @@ const PhotoelectricTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -76,9 +77,11 @@ const PhotoelectricTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
         titleText(ts, `Photoelectric — hf = ${f.toFixed(2)} eV ; φ(${metal}) = ${phi.toFixed(1)} eV`, new THREE.Vector3(0, 4.6, 0));
 
@@ -96,33 +99,33 @@ const PhotoelectricTab: React.FC = () => {
           if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
         };
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
+        ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
         const tube = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 1.6, 6.4, 24, 1, true), (() => { const m = standardMaterial(0x67e8f9, { transparent: true, opacity: 0.12 }); m.side = THREE.DoubleSide; return m; })());
         tube.position.set(0, 3.4, 0);
-        ts.group.add(tube);
+        ts!.group.add(tube);
 
         const plate = new THREE.Mesh(new THREE.BoxGeometry(0.14, 2.6, 2.6), standardMaterial(0x64748b, { metalness: 0.8 }));
         plate.position.set(-4.6, 2.6, 0);
-        ts.group.add(plate);
+        ts!.group.add(plate);
 
         const anode = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.6, 16), standardMaterial(0xf87171, { metalness: 0.7 }));
         anode.rotation.x = Math.PI / 2;
         anode.position.set(4.2, 2.6, 0);
-        ts.group.add(anode);
+        ts!.group.add(anode);
 
         const photons: THREE.Mesh[] = [];
         for (let i = 0; i < intensity; i++) {
           const p = new THREE.Mesh(new THREE.SphereGeometry(0.16, 10, 8), standardMaterial(0xfef08a, { emissive: 0xfef08a, emissiveIntensity: 1.4 }));
           p.position.set(-5.6 - i * 0.3, 2.6 + (i % 2) * 0.5, (i % 3) * 0.6);
-          ts.group.add(p);
+          ts!.group.add(p);
           photons.push(p);
         }
         const electrons: THREE.Mesh[] = [];
         for (let i = 0; i < Math.min(4, Math.max(0, Math.round(keMax * 2))); i++) {
           const e = new THREE.Mesh(new THREE.SphereGeometry(0.16, 10, 8), standardMaterial(0x22d3ee, { emissive: 0x22d3ee, emissiveIntensity: 1.2 }));
           e.position.set(-4.2, 2.2, 0);
-          ts.group.add(e);
+          ts!.group.add(e);
           electrons.push(e);
         }
 
@@ -139,7 +142,7 @@ const electronMats = electrons.map((e) => e.material as THREE.MeshStandardMateri
     electronMats.forEach((m, i) => { m.emissiveIntensity = keMax > 0 ? 1.0 + 0.5 * Math.sin(time * 5 + i) : 0.05; });
     photonMats.forEach((m, i) => { m.emissiveIntensity = 0.9 + 0.7 * Math.sin(time * 6 + i); });
     if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, lambdaNm, metal, intensity]);
 
@@ -214,8 +217,8 @@ const BohrTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -223,9 +226,11 @@ const BohrTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, fromN > toN ? `Emission photon = ${photon.toFixed(2)} eV (λ ≈ ${lambdaNm ? lambdaNm.toFixed(0) : "—"} nm)` : "Choose n₁ > n₂ for emission", new THREE.Vector3(0, 5.4, 0));
 
@@ -243,12 +248,12 @@ const BohrTab: React.FC = () => {
       if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 13), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
     /* nucleus (proton) */
     const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.3, 20, 16), standardMaterial(0xef4444, { emissive: 0x7f1d1d, emissiveIntensity: 0.6 }));
     nucleus.position.set(0, 2.4, 0);
-    ts.group.add(nucleus);
+    ts!.group.add(nucleus);
 
     /* orbit shells */
     const shellRadii = [0.9, 1.7, 2.7, 3.7];
@@ -259,13 +264,13 @@ const BohrTab: React.FC = () => {
         const a = (i / 48) * Math.PI * 2;
         pts.push(new THREE.Vector3(r * Math.cos(a), 2.4, r * Math.sin(a)));
       }
-      ts.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineDashedMaterial({ color: n === 1 ? 0x38bdf8 : 0x475569, dashSize: 0.2, gapSize: 0.16 })));
+      ts!.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineDashedMaterial({ color: n === 1 ? 0x38bdf8 : 0x475569, dashSize: 0.2, gapSize: 0.16 })));
       addLbl(n === 1 ? "#38bdf8" : "#64748b", `n = ${n}  E${n} = ${EN(n).toFixed(2)} eV`, [r + 0.4, n === 1 ? 3.4 : (n % 2 ? 4.0 : 1.4), (n % 2) * 0.6], "Bohr orbit", [r, 2.4, 0]);
     }
 
     /* electron on the starting level */
     const eStart = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 12), standardMaterial(0x22d3ee, { emissive: 0x22d3ee, emissiveIntensity: 1.2 }));
-    ts.group.add(eStart);
+    ts!.group.add(eStart);
 
     addLbl("#ef4444", "Nucleus (+e)", [0, 2.4 - 1.2, 0.6], "proton of hydrogen", [0, 2.4, 0]);
     addLbl("#22d3ee", "Electron", [0, 2.4 - 0.8, 2.6], `jumps from n=${fromN} to n=${toN}`, [0, 2.4, 0]);
@@ -280,7 +285,7 @@ const BohrTab: React.FC = () => {
     eStart.position.set(rFrom * Math.cos(time * 2.2), 2.4, rFrom * Math.sin(time * 2.2));
     void rTo;
     if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, fromN, toN]);
 
@@ -356,8 +361,8 @@ const NucleusTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -365,9 +370,11 @@ const NucleusTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, "Binding energy per nucleon — the source of nuclear power", new THREE.Vector3(0, 5.0, 0));
 
@@ -407,18 +414,18 @@ const NucleusTab: React.FC = () => {
       pts3.push(new THREE.Vector3(x, 0.5 + y, 0));
     }
     const curveMat = new THREE.LineBasicMaterial({ color: 0x4ade80 });
-    ts.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts3), curveMat));
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.06, 4), standardMaterial(0x1e293b)));
+    ts!.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts3), curveMat));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(16, 0.06, 4), standardMaterial(0x1e293b)));
     for (let i = 0; i < pts3.length; i++) {
       const pt = pts3[i];
       const dot = new THREE.Mesh(new THREE.SphereGeometry(0.07, 10, 8), standardMaterial(0x4ade80, { emissive: 0x4ade80, emissiveIntensity: 0.9 }));
       dot.position.copy(pt);
-      ts.group.add(dot);
+      ts!.group.add(dot);
       const num = mkLabel("#86efac", `${A_LIST[i]}`);
       num.style.fontSize = "9px";
       const o = new CSS2DObject(num);
       o.position.set(pt.x, 0.3, 0);
-      ts.group.add(o);
+      ts!.group.add(o);
     }
 
     addLbl("#4ade80", "Binding energy / nucleon MEAN", [0, 4.6, 2.2], "peaks near A ≈ 56 (iron)", [0, 4.2, 0]);
@@ -428,8 +435,8 @@ const NucleusTab: React.FC = () => {
 
 
     updateRef.current = (time) => {
-    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL]);
 
@@ -488,8 +495,8 @@ const LogicTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -497,9 +504,11 @@ const LogicTab: React.FC = () => {
 
   // Rebuild 3D content on state change
   useEffect(() => {
+    let labelRenderer: any;
+    let leaderLayer: any;
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, "Semiconductor logic gates & AM / FM modulation", new THREE.Vector3(0, 4.8, 0));
 
@@ -517,7 +526,7 @@ const LogicTab: React.FC = () => {
       if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
     /* three logic gate blocks */
     const gates = ["AND", "OR", "NOT"];
@@ -541,14 +550,14 @@ const LogicTab: React.FC = () => {
       wavePts.push(new THREE.Vector3(x, y, 0));
     }
     const wave = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(wavePts), 240, 0.04, 6), standardMaterial(0x22d3ee, { emissive: 0x22d3ee, emissiveIntensity: 0.6 }));
-    ts.group.add(wave);
+    ts!.group.add(wave);
 
     addLbl("#22d3ee", showAm ? "AM signal — carrier amplitude follows the message" : "FM signal — carrier frequency follows the message", [0, 0.7, 2.4], "the message rides on a high-frequency carrier", [0, 1.5, 0]);
 
 
     updateRef.current = (time) => {
-    if (leaderLayer) leaderLayer.draw(ts.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, aIn, bIn, showAm]);
 

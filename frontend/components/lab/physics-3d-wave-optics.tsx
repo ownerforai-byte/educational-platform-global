@@ -53,7 +53,7 @@ function makeBars(ts: ThreeScene, values: number[], baseX: number, baseY: number
     bar.position.set(baseX, baseY + h / 2 + i * 0.06, 0);
     g.add(bar);
   }
-  ts.group.add(g);
+  ts!.group.add(g);
   return g;
 }
 /* =====================================================================
@@ -86,8 +86,8 @@ const InterferenceTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -97,7 +97,7 @@ const InterferenceTab: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
         titleText(ts, `Young's Double Slit — β = ${(beta * 1000).toFixed(2)} mm`, new THREE.Vector3(0, 4.8, 0));
 
@@ -115,28 +115,28 @@ const InterferenceTab: React.FC = () => {
           if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
         };
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+        ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
         for (let i = 0; i < 6; i++) {
           const w = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4.4, 2.6), standardMaterial(0x67e8f9, { transparent: true, opacity: 0.1 }));
           w.position.set(-6.2 + i * 0.5, 2.2, 0);
-          ts.group.add(w);
+          ts!.group.add(w);
         }
 
         const barrier = new THREE.Mesh(new THREE.BoxGeometry(0.16, 4.6, 3.4), standardMaterial(0x475569, { metalness: 0.4 }));
         barrier.position.set(-1.5, 2.2, 0);
-        ts.group.add(barrier);
+        ts!.group.add(barrier);
 
         const slitGapScene = Math.max(0.04, d * 600);
         for (const s of [-1, 1]) {
           const gap = new THREE.Mesh(new THREE.BoxGeometry(0.22, Math.max(0.06, d * 600), 0.4), standardMaterial(0x111827));
           gap.position.set(-1.5, 2.2 + s * slitGapScene * 0.6, 0);
-          ts.group.add(gap);
+          ts!.group.add(gap);
         }
 
         const screen = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4.6, 3), standardMaterial(0xfef3c7, { emissive: 0xfef3c7, emissiveIntensity: 0.12 }));
         screen.position.set(4.6, 2.2, 0);
-        ts.group.add(screen);
+        ts!.group.add(screen);
 
         /* fringe bars along the screen: intensity ∝ cos² */
         const NREDS = 61;
@@ -157,7 +157,7 @@ const barMats = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.M
     updateRef.current = (time) => {
     barMats.forEach((m, i) => { m.emissiveIntensity = 0.4 + 0.6 * Math.abs(Math.sin(time * 3 + i * 0.35)); });
     if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, slitSepMm, lambdaNm, screenM]);
 
@@ -225,8 +225,8 @@ const DiffractionTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -236,7 +236,7 @@ const DiffractionTab: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
         titleText(ts, `Single-slit Diffraction — sinθ₁ = λ/a = ${(lam / a).toFixed(3)}`, new THREE.Vector3(0, 4.8, 0));
 
@@ -254,19 +254,19 @@ const DiffractionTab: React.FC = () => {
           if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
         };
 
-        ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+        ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(20, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
         const barrier = new THREE.Mesh(new THREE.BoxGeometry(0.16, 4.6, 3.4), standardMaterial(0x475569, { metalness: 0.4 }));
         barrier.position.set(-1.5, 2.2, 0);
-        ts.group.add(barrier);
+        ts!.group.add(barrier);
         /* slit gap: dark gap whose width scales with a */
         const slitGap = new THREE.Mesh(new THREE.BoxGeometry(0.22, Math.max(0.05, a * 1200), 0.4), standardMaterial(0x111827));
         slitGap.position.set(-1.5, 2.2, 0);
-        ts.group.add(slitGap);
+        ts!.group.add(slitGap);
 
         const screen = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4.6, 3), standardMaterial(0xf2f7ff, { emissive: 0xf2f7ff, emissiveIntensity: 0.12 }));
         screen.position.set(4.6, 2.2, 0);
-        ts.group.add(screen);
+        ts!.group.add(screen);
 
         /* sinc² intensity profile */
         const N = 81;
@@ -288,7 +288,7 @@ const barMats2 = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.
     updateRef.current = (time) => {
     barMats2.forEach((m, i) => { m.emissiveIntensity = 0.35 + 0.5 * Math.abs(Math.sin(time * 2.4 + i * 0.3)); });
     if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, slitWmm, lambdaNm]);
 
@@ -352,8 +352,8 @@ const PolarizationTab: React.FC = () => {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -363,7 +363,7 @@ const PolarizationTab: React.FC = () => {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     titleText(ts, `Brewster's angle for glass n = ${nGlass.toFixed(2)} is ${brewDeg.toFixed(1)}°`, new THREE.Vector3(0, 4.8, 0));
 
@@ -381,13 +381,13 @@ const PolarizationTab: React.FC = () => {
       if (target) connections.push({ label: o, target: new THREE.Vector3(target[0], target[1], target[2]), color });
     };
 
-    ts.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
+    ts!.group.add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.3, 12), standardMaterial(0x1e293b, { roughness: 0.95 })));
 
     /* glass slab */
     const slab = new THREE.Mesh(new THREE.BoxGeometry(5.4, 0.7, 4.4), standardMaterial(0x67e8f9, { transparent: true, opacity: 0.4, metalness: 0.1 }));
     slab.rotation.z = (thetaB * 180) / Math.PI > 40 ? -0.2 : 0.2;
     slab.position.set(-1.5, 1.6, 0);
-    ts.group.add(slab);
+    ts!.group.add(slab);
 
     /* incident, reflected, refracted beams */
     const origin = new THREE.Vector3(-1.5, 1.6, 0);
@@ -406,7 +406,7 @@ const PolarizationTab: React.FC = () => {
 
     updateRef.current = (time) => {
     if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
-    if (labelRenderer) labelRenderer.render(ts.scene, ts.camera);
+    if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, thetaDeg, nGlass]);
 

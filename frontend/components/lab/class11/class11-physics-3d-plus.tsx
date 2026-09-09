@@ -43,8 +43,8 @@ function ProjectileLab() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -54,7 +54,7 @@ function ProjectileLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
     const u = Math.max(1, num(velocity, 20));
@@ -67,7 +67,7 @@ function ProjectileLab() {
     // ground grid strip
     const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 12), new THREE.MeshStandardMaterial({ color: 0x1e293b }));
     ground.rotation.x = -Math.PI / 2;
-    ts.group.add(ground);
+    ts!.group.add(ground);
 
     // trajectory curve
     const pts: THREE.Vector3[] = [];
@@ -77,24 +77,24 @@ function ProjectileLab() {
       pts.push(new THREE.Vector3(u * Math.cos(deg) * t, u * Math.sin(deg) * t - 0.5 * g * t * t, 0));
     }
     const curve = new THREE.CatmullRomCurve3(pts);
-    ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 120, 0.08, 8, false), new THREE.MeshStandardMaterial({ color: 0x22d3ee })));
+    ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 120, 0.08, 8, false), new THREE.MeshStandardMaterial({ color: 0x22d3ee })));
 
     // peak marker
     const peakPos = pts[Math.floor(steps / 2)];
     const peak = new THREE.Mesh(new THREE.SphereGeometry(0.25, 16, 16), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.4 }));
     peak.position.copy(peakPos);
-    ts.group.add(peak);
+    ts!.group.add(peak);
 
     // animated ball along the path
     const ball = new THREE.Mesh(new THREE.SphereGeometry(0.35, 24, 24), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xdc2626, emissiveIntensity: 0.35 }));
-    ts.group.add(ball);
+    ts!.group.add(ball);
 
     // launcher barrel
     const barrelLen = 1.6;
     const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.22, barrelLen, 16), new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.6 }));
     barrel.position.set(Math.cos(deg) * barrelLen / 2, Math.sin(deg) * barrelLen / 2, 0);
     barrel.rotation.z = deg - Math.PI / 2;
-    ts.group.add(barrel);
+    ts!.group.add(barrel);
 
     titleText(ts, `R = ${R.toFixed(1)} m · H = ${H.toFixed(1)} m · T = ${T.toFixed(2)} s`, new THREE.Vector3(R / 2 + 2, 4.5, 0));
 
@@ -142,8 +142,8 @@ function InclinedPlaneLab() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -153,7 +153,7 @@ function InclinedPlaneLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const theta = (Math.min(60, Math.max(5, num(angleDeg, 30))) * Math.PI) / 180;
     const muVal = Math.max(0, num(mu, 0.3));
@@ -168,23 +168,23 @@ function InclinedPlaneLab() {
     const wedgeGeo = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: false });
     const wedge = new THREE.Mesh(wedgeGeo, new THREE.MeshStandardMaterial({ color: 0x334155 }));
     wedge.position.set(-L * Math.cos(theta) / 2, -L * Math.sin(theta) / 2, -2);
-    ts.group.add(wedge);
+    ts!.group.add(wedge);
 
     // block resting on the slope surface
     const slideDir = new THREE.Vector3(Math.cos(theta), Math.sin(theta), 0);
     const block = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.1, 1.1), new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xb45309, emissiveIntensity: 0.25 }));
     block.position.copy(slideDir).multiplyScalar(L * 0.35).add(new THREE.Vector3(0, 0.55 / Math.cos(theta), 0));
     block.rotation.z = theta;
-    ts.group.add(block);
+    ts!.group.add(block);
 
     // force vectors: weight (vertical), normal (⊥ surface), friction (up-slope)
     const weightLen = 3.2;
-    ts.group.add(new LiveArrow(new THREE.Vector3(0, -1, 0), block.position.clone(), weightLen, 0xef4444, 0.45, 0.28));
+    ts!.group.add(new LiveArrow(new THREE.Vector3(0, -1, 0), block.position.clone(), weightLen, 0xef4444, 0.45, 0.28));
     const normalDir = new THREE.Vector3(-Math.sin(theta), Math.cos(theta), 0);
-    ts.group.add(new LiveArrow(normalDir, block.position.clone(), weightLen * Math.cos(theta), 0x22c55e, 0.45, 0.28));
+    ts!.group.add(new LiveArrow(normalDir, block.position.clone(), weightLen * Math.cos(theta), 0x22c55e, 0.45, 0.28));
     const frictionMag = muVal * weightLen * Math.cos(theta);
     if (frictionMag > 0.15) {
-      ts.group.add(new LiveArrow(slideDir.clone().negate(), block.position.clone().add(new THREE.Vector3(0, 0.9, 0)), Math.min(3, frictionMag), 0x38bdf8, 0.4, 0.25));
+      ts!.group.add(new LiveArrow(slideDir.clone().negate(), block.position.clone().add(new THREE.Vector3(0, 0.9, 0)), Math.min(3, frictionMag), 0x38bdf8, 0.4, 0.25));
     }
     titleText(ts, "mg sinθ drives motion · μmg cosθ opposes it", new THREE.Vector3(0, 4.6, 0));
   }, [angleDeg, mu]);
@@ -229,23 +229,23 @@ function EnergyCoaster() {
           pts.push(new THREE.Vector3(x, y, 0));
         }
         const curve = new THREE.CatmullRomCurve3(pts);
-        ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 200, 0.12, 8, false), new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.5 })));
+        ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 200, 0.12, 8, false), new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.5 })));
 
         for (let i = 10; i < 140; i += 16) {
           const p = pts[i];
           const pillar = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, p.y, 8), new THREE.MeshStandardMaterial({ color: 0x64748b }));
           pillar.position.set(p.x, p.y / 2, 0);
-          ts.group.add(pillar);
+          ts!.group.add(pillar);
         }
 
         const cart = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.4, 0.4), new THREE.MeshStandardMaterial({ color: 0xf43f5e, emissive: 0xbe123c, emissiveIntensity: 0.3 }));
-        ts.group.add(cart);
+        ts!.group.add(cart);
 
         // energy meters — sphere size shows the KE/PE split
         const keBall = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 16), new THREE.MeshStandardMaterial({ color: 0x22c55e, emissive: 0x16a34a, emissiveIntensity: 0.4 }));
         const peBall = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 16), new THREE.MeshStandardMaterial({ color: 0x3b82f6, emissive: 0x2563eb, emissiveIntensity: 0.4 }));
-        ts.group.add(keBall);
-        ts.group.add(peBall);
+        ts!.group.add(keBall);
+        ts!.group.add(peBall);
 
         titleText(ts, "Green = Kinetic Energy · Blue = Potential Energy", new THREE.Vector3(0, 5.4, 0));
 
@@ -306,8 +306,8 @@ function ThermalExpansionLab() {
       rafId = requestAnimationFrame(animate);
       const time = performance.now() / 1000;
       updateRef.current?.(time);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -317,7 +317,7 @@ function ThermalExpansionLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
     const T = Math.max(0, num(tempC, 100));
     const alpha = 1.7e-5; // steel-like coefficient
@@ -325,18 +325,18 @@ function ThermalExpansionLab() {
 
     const wall = new THREE.Mesh(new THREE.BoxGeometry(0.4, 3.2, 2.4), new THREE.MeshStandardMaterial({ color: 0x334155 }));
     wall.position.set(-L0 / 2 - 0.3, 0, 0);
-    ts.group.add(wall);
+    ts!.group.add(wall);
 
     // rod — visual growth exaggerated ×400 for visibility
     const visualGrowth = L0 * alpha * T * 400 * 0.001;
     const rod = new THREE.Mesh(new THREE.BoxGeometry(L0 + visualGrowth, 0.7, 0.7), new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xb45309, emissiveIntensity: Math.min(0.8, T / 300) }));
-    ts.group.add(rod);
+    ts!.group.add(rod);
 
     // burner flame under the rod
     const flame = new THREE.Mesh(new THREE.ConeGeometry(1.2, 1.6, 20), new THREE.MeshBasicMaterial({ color: 0xf97316, transparent: true, opacity: Math.min(0.75, T / 250) }));
     flame.rotation.x = Math.PI;
     flame.position.set(0, -1.6, 0);
-    ts.group.add(flame);
+    ts!.group.add(flame);
 
     titleText(ts, `ΔL = L₀αΔT → ${(L0 * alpha * T).toFixed(5)} m (exaggerated)`, new THREE.Vector3(0, 2.6, 0));
 
@@ -374,8 +374,8 @@ function MirrorOpticsLab() {
     const unbind = bindResize(ts);
     function animate() {
       requestAnimationFrame(animate);
-      ts.controls.update();
-      ts.renderer.render(ts.scene, ts.camera);
+      ts!.controls.update();
+      ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
     return () => { unbind(); disposeThreeScene(ts); tsRef.current = null; };
@@ -385,7 +385,7 @@ function MirrorOpticsLab() {
   useEffect(() => {
     const ts = tsRef.current;
     if (!ts) return;
-    clearGroup(ts.group);
+    clearGroup(ts!.group);
 
 
         const f = Math.max(2, num(focalLen, 10));
@@ -397,7 +397,7 @@ function MirrorOpticsLab() {
         // principal axis
         const axis = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 24, 8), new THREE.MeshStandardMaterial({ color: 0x64748b }));
         axis.rotation.z = Math.PI / 2;
-        ts.group.add(axis);
+        ts!.group.add(axis);
 
         // concave mirror arc at x = 0 (opening toward +x)
         const arcPts: THREE.Vector3[] = [];
@@ -406,25 +406,25 @@ function MirrorOpticsLab() {
           arcPts.push(new THREE.Vector3((y * y) / (4 * f), y, 0));
         }
         const arcCurve = new THREE.CatmullRomCurve3(arcPts);
-        ts.group.add(new THREE.Mesh(new THREE.TubeGeometry(arcCurve, 60, 0.14, 8, false), new THREE.MeshStandardMaterial({ color: 0x38bdf8, metalness: 0.7 })));
+        ts!.group.add(new THREE.Mesh(new THREE.TubeGeometry(arcCurve, 60, 0.14, 8, false), new THREE.MeshStandardMaterial({ color: 0x38bdf8, metalness: 0.7 })));
 
         // object arrow (upright, left of the mirror)
         const objX = -u * scale;
         const objH = 1.2;
-        ts.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(objX, 0, 0), objH, 0x22c55e, 0.35, 0.22));
+        ts!.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(objX, 0, 0), objH, 0x22c55e, 0.35, 0.22));
 
         // image arrow — real images are inverted and on the same side
         const imgX = -v * scale;
         const imgH = Math.min(6, Math.abs(m) * objH);
         if (Number.isFinite(imgX)) {
           const dir = m < 0 ? new THREE.Vector3(0, -1, 0) : new THREE.Vector3(0, 1, 0);
-          ts.group.add(new LiveArrow(dir, new THREE.Vector3(imgX, 0, 0), imgH, 0xef4444, 0.35, 0.22));
+          ts!.group.add(new LiveArrow(dir, new THREE.Vector3(imgX, 0, 0), imgH, 0xef4444, 0.35, 0.22));
         }
 
         // focal point marker at F
         const fp = new THREE.Mesh(new THREE.SphereGeometry(0.18, 12, 12), new THREE.MeshBasicMaterial({ color: 0xfbbf24 }));
         fp.position.set(-f * scale, 0, 0);
-        ts.group.add(fp);
+        ts!.group.add(fp);
 // construction rays from the object tip
         const tipY = objH;
         const rayMat = new THREE.LineBasicMaterial({ color: 0xf59e0b });
@@ -435,7 +435,7 @@ function MirrorOpticsLab() {
           new THREE.Vector3(-f * scale, 0, 0),
           Number.isFinite(imgX) ? new THREE.Vector3(imgX, -Math.sign(m) * imgH * 0.9, 0) : new THREE.Vector3(objX - 6, tipY, 0),
         ]);
-        ts.group.add(new THREE.Line(r1, rayMat));
+        ts!.group.add(new THREE.Line(r1, rayMat));
         // ray 2: through centre of curvature C (at 2f) → reflects back on itself
         const r2 = new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(objX, tipY, 0),
@@ -443,7 +443,7 @@ function MirrorOpticsLab() {
         ]);
         const r2line = new THREE.Line(r2, new THREE.LineDashedMaterial({ color: 0xa78bfa, dashSize: 0.25, gapSize: 0.15 }));
         r2line.computeLineDistances();
-        ts.group.add(r2line);
+        ts!.group.add(r2line);
 
         titleText(ts, `u = ${u.toFixed(0)} cm · f = ${f.toFixed(0)} cm ⇒ v = ${v.toFixed(1)} cm · m = ${m.toFixed(2)}`, new THREE.Vector3(0, 4.8, 0));
 
