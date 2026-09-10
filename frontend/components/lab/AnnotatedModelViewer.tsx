@@ -6,6 +6,7 @@ import { Line, Html, OrbitControls } from "@react-three/drei";
 import gsap from "gsap";
 import * as THREE from "three";
 import { MathDisplay, MathInline } from "../content/MathRenderer";
+import { ViewportRelativeArrow } from "./viewport-relative-arrow";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -898,6 +899,39 @@ export function AnnotatedModelViewer({
             enablePan
             panSpeed={0.5}
           />
+
+          {/* Viewport-relative directional arrow that follows camera view */}
+          {/* dynamic=true (default) tracks camera/viewport changes */}
+          <ViewportRelativeArrow
+            screenTarget={[0.5, 0.4]}
+            depth={5}
+            length={2}
+            color="#6366f1"
+            pulse={true}
+            pulseSpeed={2.5}
+            flowParticles={true}
+            particleCount={10}
+            followCamera={true}
+            dynamic={true}
+          />
+
+          {/* Annotation guide arrows - one per annotation, viewport-relative */}
+          {annotations.map((ann) => (
+            <ViewportRelativeArrow
+              key={`guide-${ann.id}`}
+              screenTarget={[0.5, 0.5]}
+              depth={4}
+              length={0.8}
+              color={ann.color || "#f59e0b"}
+              headLength={0.12}
+              headWidth={0.08}
+              pulse={true}
+              pulseSpeed={3}
+              flowParticles={false}
+              followCamera={false}
+              dynamic={true}
+            />
+          ))}
         </Canvas>
       ) : (
         <div style={{

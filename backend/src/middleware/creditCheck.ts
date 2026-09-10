@@ -2,12 +2,14 @@ import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
 
 // Features that require premium or sufficient credits
+// NOTE: As of 2026-09-10, premium features have been made public.
+// All features are now accessible to all users without credit checks.
 const PREMIUM_FEATURES = {
-  lab: { cost: 10, requiresPremium: false },
-  aiChat: { cost: 5, requiresPremium: false },
+  lab: { cost: 0, requiresPremium: false },
+  aiChat: { cost: 0, requiresPremium: false },
   bookmarks: { cost: 0, requiresPremium: false },
   progress: { cost: 0, requiresPremium: false },
-  premiumLab: { cost: 0, requiresPremium: true },
+  premiumLab: { cost: 0, requiresPremium: false },
 };
 
 export type FeatureKey = keyof typeof PREMIUM_FEATURES;

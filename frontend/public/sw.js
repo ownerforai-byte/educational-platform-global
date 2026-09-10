@@ -9,8 +9,8 @@
  * Add route patterns to SW_ROUTES to cache additional pages.
  */
 
-const CACHE_NAME = "neb-vault-v1";
-const DATA_CACHE = "neb-data-v1";
+const CACHE_NAME = "neb-vault-v2";
+const DATA_CACHE = "neb-data-v2";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -28,12 +28,17 @@ const SW_ROUTES = [
   "/progress",
   "/bookmarks",
   "/chat",
+  "/offline",
 ];
 
 /** Install: precache the app shell. */
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(SW_ROUTES))
+    caches.open(CACHE_NAME).then((cache) =>
+      // Cache each route independently — a single 404/redirect must not
+      // abort the whole install and leave the app shell uncached.
+      Promise.allSettled(SW_ROUTES.map((route) => cache.add(route)))
+    )
   );
   self.skipWaiting();
 });
@@ -71,11 +76,13 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // App pages: stale-while-revalidate
-  event.respondWith(staleWhileRevalidate(request, CACHE_NAME));
+  // App pages: stale-while-revalidate (with offline fallback for navigations)
+  event.respondWith(
+    staleWhileRevalidate(request, CACHE_NAME, request.mode === "navigate")
+  );
 });
 
-async function cacheFirst(request: Request, cacheName: string): Promise<Response> {
+async function cacheFirst(request, cacheName) {
   const cached = await caches.match(request);
   if (cached) return cached;
   try {
@@ -90,7 +97,7 @@ async function cacheFirst(request: Request, cacheName: string): Promise<Response
   }
 }
 
-async function networkFirst(request: Request): Promise<Response> {
+async function networkFirst(request) {
   try {
     const response = await fetch(request);
     if (response.ok) return response;
@@ -101,7 +108,7 @@ async function networkFirst(request: Request): Promise<Response> {
   return cached ?? new Response("Offline", { status: 503, statusText: "Offline" });
 }
 
-async function staleWhileRevalidate(request: Request, cacheName: string): Promise<Response> {
+async function staleWhileRevalidate(request, cacheName, isNavigation = false) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request);
 
@@ -112,5 +119,17 @@ async function staleWhileRevalidate(request: Request, cacheName: string): Promis
     return response;
   }).catch(() => cached);
 
-  return cached ?? fetchPromise;
+  if (cached) return cached;
+
+  try {
+    return await fetchPromise;
+  } catch {
+    // Network and cache both unavailable:
+    // serve the offline fallback page for navigations instead of failing.
+    if (isNavigation) {
+      const offline = await caches.match("/offline");
+      if (offline) return offline;
+    }
+    return new Response("Offline", { status: 503, statusText: "Offline" });
+  }
 }

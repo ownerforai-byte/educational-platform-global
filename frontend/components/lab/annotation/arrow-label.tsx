@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 /**
  * ArrowLabel — long-arrow annotation overlay for lab animations.
  *
@@ -37,17 +39,72 @@ export function ArrowLabel({
   color = "#3b82f6",
   sub,
   delay = 0,
-}: ArrowLabelProps) {
+  viewportRelative = false,
+}: ArrowLabelProps & { viewportRelative?: boolean }) {
   const uid = `al-${x1}-${y1}-${x2}-${y2}-${color.replace("#", "")}`;
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({ w: 0, h: 0, left: 0, top: 0 });
+  const prevVpW = useRef(0);
+  const prevVpH = useRef(0);
+
+  // Observe container dimensions for dynamic positioning
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+    const rect = wrapperRef.current.getBoundingClientRect();
+    setDimensions({ w: rect.width, h: rect.height, left: rect.left, top: rect.top });
+    prevVpW.current = window.innerWidth;
+    prevVpH.current = window.innerHeight;
+  }, []);
+
+  // Recalculate on viewport resize (debounced with rAF)
+  useEffect(() => {
+    let rafId: number;
+    const handle = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        if (!wrapperRef.current) return;
+        const rect = wrapperRef.current.getBoundingClientRect();
+        setDimensions({ w: rect.width, h: rect.height, left: rect.left, top: rect.top });
+      });
+    };
+    window.addEventListener("resize", handle);
+    return () => { window.removeEventListener("resize", handle); cancelAnimationFrame(rafId); };
+  }, []);
+
+  // Convert percentage coords to absolute pixels, with optional viewport-relative offset
+  const px = (
+    coord: number,
+    _dim: "w" | "h",
+    isX: boolean,
+  ) => {
+    const basePct = coord;
+    const vpOffset = viewportRelative ? (window.innerWidth * 0.02) : 0;
+    if (isX) {
+      return dimensions.w > 0 ? (basePct / 100) * dimensions.w + (viewportRelative ? (window.innerWidth - prevVpW.current) * 0.5 : 0) : 0;
+    } else {
+      return dimensions.h > 0 ? (basePct / 100) * dimensions.h + (viewportRelative ? (window.innerHeight - prevVpH.current) * 0.5 : 0) : 0;
+    }
+  };
+
   const chipAlign = x1 <= 50 ? "items-start text-left" : "items-end text-right";
+
+  // Fallback: if dimensions not ready, render at 0 so layout doesn't break
+  const x1Abs = dimensions.w > 0 ? px(x1, "w", true) + dimensions.left : x1;
+  const y1Abs = dimensions.h > 0 ? px(y1, "h", false) + dimensions.top : y1;
+  const x2Abs = dimensions.w > 0 ? px(x2, "w", true) + dimensions.left : x2;
+  const y2Abs = dimensions.h > 0 ? px(y2, "h", false) + dimensions.top : y2;
 
   return (
     <div
+      ref={wrapperRef}
       className="pointer-events-none absolute inset-0 z-20 animate-in fade-in duration-700"
       style={{ animationDelay: `${delay}s` }}
     >
-      {/* Long arrow */}
-      <svg className="absolute inset-0 h-full w-full overflow-visible">
+      {/* Long arrow — uses absolute pixel coords for proper scaling */}
+      <svg
+        className="absolute inset-0 h-full w-full overflow-visible"
+        style={{ pointerEvents: "none" }}
+      >
         <defs>
           <marker
             id={`${uid}-head`}
@@ -61,10 +118,10 @@ export function ArrowLabel({
           </marker>
         </defs>
         <line
-          x1={`${x1}%`}
-          y1={`${y1}%`}
-          x2={`${x2}%`}
-          y2={`${y2}%`}
+          x1={x1Abs}
+          y1={y1Abs}
+          x2={x2Abs}
+          y2={y2Abs}
           stroke={color}
           strokeWidth="2.5"
           strokeLinecap="round"
@@ -74,10 +131,15 @@ export function ArrowLabel({
         />
       </svg>
 
-      {/* Label chip at the tail */}
+      {/* Label chip at the tail — positioned in viewport coords */}
       <div
         className={`absolute flex flex-col gap-0.5 ${chipAlign}`}
-        style={{ left: `${x1}%`, top: `${y1}%`, transform: "translate(-4px, -110%)" }}
+        style={{
+          left: x1Abs,
+          top: y1Abs,
+          transform: "translate(-4px, -110%)",
+          position: "absolute",
+        }}
       >
         <span
           className="inline-flex items-center whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-semibold shadow-sm backdrop-blur-sm"

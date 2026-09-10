@@ -45,6 +45,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      {/* Skip link — first focusable element, jumps past all navigation */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
       {/* ── Header ─────────────────────────────────────────────────── */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background">
         <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
@@ -141,8 +148,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <SidebarNavigation collapsed={sidebarCollapsed} />
         </aside>
 
-        {/* Main content — auto-fits, no max-width constraint */}
-        <main className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8">
+        {/* Main content — auto-fits, no max-width constraint.
+            tabIndex={-1} lets the skip link move focus here. */}
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8 focus:outline-none"
+        >
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav className="mb-4 text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (

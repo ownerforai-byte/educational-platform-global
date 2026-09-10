@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
+import { OfflineBanner } from "@/components/pwa/offline-banner";
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform — NEB (+2) Learning Platform",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  // No `maximumScale` — blocking pinch-zoom fails WCAG 1.4.4 (Resize Text).
   themeColor: "#3b82f6",
 };
 
@@ -43,6 +44,7 @@ export default function RootLayout({
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
             <AuthProvider>
               <ServiceWorkerRegistrar />
+              <OfflineBanner />
               {children}
             </AuthProvider>
           </ThemeProvider>

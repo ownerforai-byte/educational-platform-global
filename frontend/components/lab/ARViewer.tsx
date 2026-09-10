@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { ARButton, XR, useXR } from "@react-three/xr";
 import * as THREE from "three";
+import { ViewportRelativeArrow } from "./viewport-relative-arrow";
 
 interface ARObject {
   id: string;
@@ -55,6 +56,21 @@ function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdde
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
       
+      {/* Viewport-relative arrow that dynamically points toward center of view */}
+      {/* dynamic=true (default) makes this track camera/viewport changes */}
+      <ViewportRelativeArrow
+        screenTarget={[0.5, 0.5]}
+        depth={3}
+        length={1.5}
+        color="#6366f1"
+        pulse={true}
+        pulseSpeed={2}
+        flowParticles={true}
+        particleCount={8}
+        followCamera={true}
+        dynamic={true}
+      />
+
       {objects.map((obj) => (
         <group key={obj.id} position={obj.position}>
           {obj.type === "cube" && (

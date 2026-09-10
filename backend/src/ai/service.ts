@@ -410,7 +410,9 @@ class InternalProvider implements AIProvider {
 class GeminiProvider implements AIProvider {
   name = "gemini";
   private apiKey: string;
-  private model = "gemini-1.5-flash";
+  // gemini-1.5-flash is retired (404 for new projects). "gemini-flash-latest"
+  // is a stable alias that always points to the current flash model.
+  private model = process.env.GEMINI_MODEL || "gemini-flash-latest";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -494,7 +496,11 @@ class OpenRouterProvider implements AIProvider {
   private apiKey: string;
   private model: string;
 
-  constructor(apiKey: string, model = "google/gemini-2.0-flash-exp:free") {
+  constructor(
+    apiKey: string,
+    // Free-model slugs churn on OpenRouter; make it env-configurable.
+    model: string = process.env.OPENROUTER_MODEL || "nvidia/nemotron-3.5-lightning:free"
+  ) {
     this.apiKey = apiKey;
     this.model = model;
   }
@@ -676,12 +682,12 @@ export class AIService {
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
-    } else if (agnesKey) {
-      this.defaultProvider = "agnes";
-    } else if (openrouterKey) {
-      this.defaultProvider = "openrouter";
     } else if (geminiKey) {
       this.defaultProvider = "gemini";
+    } else if (openrouterKey) {
+      this.defaultProvider = "openrouter";
+    } else if (agnesKey) {
+      this.defaultProvider = "agnes";
     }
   }
 
@@ -702,11 +708,12 @@ export class AIService {
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: agnes → openrouter → gemini → internal
+    // Preferred order: gemini → openrouter → agnes → internal
+    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
     const chain: AIProvider[] = [];
-    if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
-    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
+    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
+    if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
     chain.push(this.providers.get("internal")!);
 
     const target = requested || chain[0];
@@ -729,11 +736,12 @@ export class AIService {
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: agnes → openrouter → gemini → internal
+    // Preferred order: gemini → openrouter → agnes → internal
+    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
     const chain: AIProvider[] = [];
-    if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
-    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
+    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
+    if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
     chain.push(this.providers.get("internal")!);
 
     const target = requested || chain[0];
