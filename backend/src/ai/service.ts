@@ -410,9 +410,9 @@ class InternalProvider implements AIProvider {
 class GeminiProvider implements AIProvider {
   name = "gemini";
   private apiKey: string;
-  // gemini-1.5-flash is retired (404 for new projects). "gemini-flash-latest"
-  // is a stable alias that always points to the current flash model.
-  private model = process.env.GEMINI_MODEL || "gemini-flash-latest";
+  // gemini-3.6-flash is the current supported model in this environment
+  // (tested and working). Override via GEMINI_MODEL if it ever changes.
+  private model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -573,8 +573,12 @@ ${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
 class AgnesProvider implements AIProvider {
   name = "agnes";
   private apiKey: string;
-  private apiUrl = "https://api.agnes.ai/v1/chat/completions";
-  private model = "agnes-2.5-flash";
+  // Agnes AI is an OpenAI-compatible gateway. The real API base URL is
+  // https://apihub.agnes-ai.com/v1 — the old "api.agnes.ai" does NOT resolve
+  // (that was the original bug). Auth is `Authorization: Bearer <key>`.
+  private apiUrl = `${process.env.AGNES_BASE_URL || "https://apihub.agnes-ai.com/v1"}/chat/completions`;
+  // agnes-2.5-flash is the current official flash model (free tier).
+  private model = process.env.AGNES_MODEL || "agnes-2.5-flash";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -709,7 +713,6 @@ export class AIService {
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const requested = providerName ? this.resolve(providerName) : null;
     // Preferred order: gemini → openrouter → agnes → internal
-    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
     const chain: AIProvider[] = [];
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
     if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
@@ -737,7 +740,6 @@ export class AIService {
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const requested = providerName ? this.resolve(providerName) : null;
     // Preferred order: gemini → openrouter → agnes → internal
-    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
     const chain: AIProvider[] = [];
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
     if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);

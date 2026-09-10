@@ -7,7 +7,7 @@ import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 const router = Router();
 
 // Lazy init: create service on first request so dotenv has already loaded
-// env vars (AGNES_API_KEY, GEMINI_API_KEY, OPENROUTER_API_KEY, etc.).
+// env vars (GEMINI_API_KEY, OPENROUTER_API_KEY, AGNES_API_KEY, etc.).
 let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();

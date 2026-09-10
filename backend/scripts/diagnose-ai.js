@@ -22,27 +22,18 @@ console.log('  AGNES_API_KEY:', process.env.AGNES_API_KEY ? '✅ Set' : '❌ Mis
 console.log('  AI_DEFAULT_PROVIDER:', process.env.AI_DEFAULT_PROVIDER || '(not set)');
 console.log('  NODE_ENV:', process.env.NODE_ENV || 'development');
 
-// Test Agnes API
+// Test Agnes API (real base: https://apihub.agnes-ai.com/v1)
 async function testAgnes() {
   console.log('\n[AGNES API TEST]');
   try {
-    const res = await fetch('https://api.agnes.ai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.AGNES_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: 'agnes-2.5-flash',
-        messages: [{ role: 'user', content: 'Say hello' }],
-        max_tokens: 50
-      })
+    const res = await fetch('https://apihub.agnes-ai.com/v1/models', {
+      headers: { 'Authorization': `Bearer ${process.env.AGNES_API_KEY}` }
     });
-    
+
     if (res.ok) {
       const data = await res.json();
       console.log('  ✅ Agnes API working');
-      console.log('  Response:', data.choices?.[0]?.message?.content?.trim()?.substring(0, 100));
+      console.log('  Models:', (data.data || []).map(m => m.id).join(', '));
       return true;
     } else {
       const text = await res.text();
@@ -61,7 +52,7 @@ async function testGemini() {
   console.log('\n[GEMINI API TEST]');
   try {
     const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

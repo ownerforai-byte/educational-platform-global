@@ -30,7 +30,7 @@ services:
       - key: AGNES_API_KEY
         sync: false
       - key: AI_DEFAULT_PROVIDER
-        value: agnes
+        value: gemini
       - key: GOOGLE_SEARCH_API_KEY
         sync: false
       - key: GOOGLE_SEARCH_ENGINE_ID
