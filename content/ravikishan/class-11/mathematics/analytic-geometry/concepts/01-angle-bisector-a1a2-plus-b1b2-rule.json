@@ -1,81 +1,8 @@
 {
   "title": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
   "notes": [
-    "**Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
-  ],
-  "examples": [
-    "Application of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Numerical problem on Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Daily life use of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule.",
-    "Q2. Key formula for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule.",
-    "Q3. Problem on Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
-  ],
-  "formulas": [
-    "Formula for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule: [insert from textbook].",
-    "Key relationship: [variable formula]."
-  ],
-  "keyPoints": [
-    "Core principle of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Application of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Connection of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule to other topics"
-  ],
-  "summary": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule covers essential principles and applications.",
-  "specialNotes": [
-    "Check conditions for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule.",
-    "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule connects to other topics."
-  ],
-  "importantStatements": [
-    "Statement 1: Definition of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Statement 2: Theorem related to Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Statement 3: Condition for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule to be valid",
-    "Statement 4: Principle governing Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "Statement 5: Corollary or consequence of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule"
-  ],
-  "importantNotes": [
-    "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
-  ],
-  "examNotes": [
-    "Focus on Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Definition and significance of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
-  ],
-  "importantTasks": [
-    "Solve 5 problems on Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
-  ],
-  "confusion": [
-    "Distinguish concepts in Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule.",
-    "Check formula conditions."
-  ],
-  "practice": [
-    "Solve 5 problems on Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule.",
-    "Derive the key formula for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
-  ],
-  "universalFacts": [
-    "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule appears in exams.",
-    "Foundational for advanced topics."
-  ],
-  "animation3D": "physics",
-  "motionGraphics": "physics",
-  "duplicateType": 1
+    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of a₁a₂ + b₁b₂",
+    "**If a₁a₂ + b₁b₂ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (−) sign gives the **obtuse** bisector",
+    "**If a₁a₂ + b₁b₂ > 0:** the (+) sign gives the **obtuse** bisector, and the (−) sign gives the **acute** bisector"
+  ]
 }

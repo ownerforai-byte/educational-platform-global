@@ -29,7 +29,7 @@ const MODULES = [
   "morgan",
   "cookie-parser",
   "@supabase/supabase-js",
-  "@google/generative-ai",
+  "@google/genai",
   "typescript",
 ];
 
@@ -59,9 +59,10 @@ function hasLock(dir) {
   return fs.existsSync(path.join(dir, "package-lock.json"));
 }
 
-function runNpmCi(dir) {
-  console.log(`ensure-deps: running npm ci in ${dir}`);
-  const r = spawnSync("npm", ["ci", "--no-audit", "--no-fund"], {
+function runNpm(dir) {
+  const cmd = hasLock(dir) ? "ci" : "install";
+  console.log(`ensure-deps: running npm ${cmd} in ${dir}`);
+  const r = spawnSync("npm", [cmd, "--no-audit", "--no-fund"], {
     cwd: dir,
     stdio: "inherit",
     shell: process.platform === "win32",
@@ -81,25 +82,20 @@ console.log(
     " — attempting install"
 );
 
-// Strategy 1: install at the workspace root (render.yaml does this; this is a
-// fallback if Render's install step was skipped or ran elsewhere).
-if (hasLock(rootDir)) {
-  runNpmCi(rootDir);
-  ({ missingMods, missingTypes } = depsPresent());
-  if (missingMods.length === 0 && missingTypes.length === 0) {
-    console.log("ensure-deps: resolved via root npm ci ✓");
-    process.exit(0);
-  }
+// Strategy 1: install at the workspace root
+runNpm(rootDir);
+({ missingMods, missingTypes } = depsPresent());
+if (missingMods.length === 0 && missingTypes.length === 0) {
+  console.log("ensure-deps: resolved via root npm ✓");
+  process.exit(0);
 }
 
-// Strategy 2: install standalone in the backend directory.
-if (hasLock(backendDir)) {
-  runNpmCi(backendDir);
-  ({ missingMods, missingTypes } = depsPresent());
-  if (missingMods.length === 0 && missingTypes.length === 0) {
-    console.log("ensure-deps: resolved via backend npm ci ✓");
-    process.exit(0);
-  }
+// Strategy 2: install standalone in the backend directory
+runNpm(backendDir);
+({ missingMods, missingTypes } = depsPresent());
+if (missingMods.length === 0 && missingTypes.length === 0) {
+  console.log("ensure-deps: resolved via backend npm ✓");
+  process.exit(0);
 }
 
 console.error(

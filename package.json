@@ -1,71 +1,15 @@
 {
   "name": "educational-platform-global",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "private": true,
+  "type": "module",
   "workspaces": [
-    "frontend",
     "backend"
   ],
   "scripts": {
-    "dev": "npm run dev -w frontend",
-    "dev:backend": "npm run dev -w backend",
-    "dev:all": "concurrently \"npm run dev\" \"npm run dev:backend\"",
-    "build:backend": "npm run build -w backend",
-    "start:backend": "npm run start -w backend",
-    "build:frontend": "npm run build -w frontend",
-    "build": "npm run build -w frontend && npm run build -w backend",
-    "lint": "npm run lint -w frontend",
-    "typecheck": "npm run typecheck -w frontend",
-    "test": "npm run test -w frontend && npm run test -w backend",
-    "test:run": "npm run test:run -w frontend && npm run test:run -w backend",
-    "start": "npm run start -w backend",
-    "content:build": "node scripts/build-ravikishan-manifest.mjs",
-    "content:generate": "npx tsx scripts/generate-content.ts",
-    "content:all": "npx tsx scripts/generate-content.ts && node scripts/build-ravikishan-manifest.mjs",
-    "blueprint": "node scripts/build-ravikishan-manifest.mjs"
-  },
-  "dependencies": {
-    "@heyputer/puter.js": "^2.6.2",
-    "@react-spring/three": "^10.1.2",
-    "@react-three/drei": "^10.7.8",
-    "@react-three/fiber": "^9.7.0",
-    "@react-three/postprocessing": "^3.1.1",
-    "@react-three/rapier": "^2.2.0",
-    "@tanstack/react-query": "^5.70.0",
-    "@use-gesture/react": "^10.3.1",
-    "gsap": "^3.13.0",
-    "jsonrepair": "^3.15.0",
-    "mathjs": "^13.2.3",
-    "next": "^16.3.3",
-    "postprocessing": "^6.39.4",
-    "three": "^0.185.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@next/eslint-plugin-next": "^16.0.0",
-    "@tanstack/react-query-devtools": "^5.70.0",
-    "@types/three": "^0.170.0",
-    "concurrently": "^10.0.5",
-    "eslint": "^9.39.5",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.68.0"
-  },
-  "overrides": {
-    "glob": "^10.0.0",
-    "node-domexception": "^1.0.0"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
-  },
-  "description": "<!--\r   README.md — Main documentation for the Educational Platform split architecture.\r   This file describes the project structure, quick-start commands, environment variables,\r   deployment notes, API endpoints, architecture decisions, and migration status.\r -->\r # Educational Platform — Split Architecture",
-  "main": "add_patterns.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "dev": "npm run dev --workspace=backend",
+    "build": "npm run build --workspace=backend",
+    "start": "npm run start --workspace=backend",
+    "lint": "npm run lint --workspace=backend"
+  }
 }

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
 const WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60000);
-const MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 20);
+const MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 120);
 
 const hits = new Map<string, { count: number; reset: number }>();
 

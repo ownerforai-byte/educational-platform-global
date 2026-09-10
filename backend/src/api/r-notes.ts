@@ -21,17 +21,23 @@ type RNoteEntry = {
 };
 
 async function loadManifest(): Promise<RExportManifestItem[]> {
-  // public/data lives at the workspace root (sibling of backend/)
-  const manifestPath = path.join(
-    process.cwd(),
-    "..",
-    "public",
-    "data",
-    "r-export",
-    "manifest.json"
-  );
-  const content = await readFile(manifestPath, "utf-8");
-  return JSON.parse(content) as RExportManifestItem[];
+  const candidates = [
+    path.join(process.cwd(), "content", "r-export", "manifest.json"),
+    path.join(process.cwd(), "..", "content", "r-export", "manifest.json"),
+    path.join(process.cwd(), "public", "data", "r-export", "manifest.json"),
+    path.join(process.cwd(), "..", "public", "data", "r-export", "manifest.json"),
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      const content = await readFile(candidate, "utf-8");
+      return JSON.parse(content) as RExportManifestItem[];
+    } catch {
+      // try next candidate
+    }
+  }
+
+  return [];
 }
 
 router.get("/", async (req: Request, res: Response) => {

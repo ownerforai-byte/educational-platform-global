@@ -5,81 +5,26 @@
   "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
   "relevance": 100,
   "notes": [
-    "**Algebraic Properties of Limits:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Sum rule:** $\\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x)$, provided both limits exist.",
+    "**Difference rule:** $\\lim_{x \\to a} [f(x) - g(x)] = \\lim_{x \\to a} f(x) - \\lim_{x \\to a} g(x)$.",
+    "**Product rule:** $\\lim_{x \\to a} [f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$.",
+    "**Quotient rule:** $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$, provided the denominator limit is non-zero.",
+    "**Constant multiple rule:** $\\lim_{x \\to a} [c \\cdot f(x)] = c \\cdot \\lim_{x \\to a} f(x)$ for any constant $c$.",
+    "**Power rule:** $\\lim_{x \\to a} [f(x)]^n = [\\lim_{x \\to a} f(x)]^n$ for any positive integer $n$.",
+    "**Root rule:** $\\lim_{x \\to a} \\sqrt[n]{f(x)} = \\sqrt[n]{\\lim_{x \\to a} f(x)}$, provided the limit is positive when $n$ is even.",
+    "**Sandwich (Squeeze) theorem:** If $g(x) \\leq f(x) \\leq h(x)$ near $a$ and $\\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L$, then $\\lim_{x \\to a} f(x) = L$."
   ],
   "confusion": [
-    "Distinguish concepts in Algebraic Properties of Limits.",
-    "Check formula conditions."
+    "The quotient rule requires the denominator limit to be non-zero. If both numerator and denominator approach zero, you have a $0/0$ indeterminate form and must simplify first.",
+    "These properties hold only when the individual limits on the right side exist (except for the quotient rule, which also requires a non-zero denominator limit)."
   ],
   "practice": [
-    "Solve 5 problems on Algebraic Properties of Limits.",
-    "Derive the key formula for Algebraic Properties of Limits."
+    "If $\\lim_{x \\to 2} f(x) = 5$ and $\\lim_{x \\to 2} g(x) = 3$, find $\\lim_{x \\to 2} [3f(x) - 2g(x)]$.",
+    "Use the product rule to evaluate $\\lim_{x \\to 1} (x^2 + 1)(3x - 1)$ by splitting into a product.",
+    "Use the sandwich theorem to prove $\\lim_{x \\to 0} x^2 \\sin(1/x) = 0$."
   ],
   "universalFacts": [
-    "Algebraic Properties of Limits appears in exams.",
-    "Foundational for advanced topics."
-  ],
-  "examples": [
-    "Application of Algebraic Properties of Limits",
-    "Numerical problem on Algebraic Properties of Limits",
-    "Daily life use of Algebraic Properties of Limits"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Algebraic Properties of Limits.",
-    "Q2. Key formula for Algebraic Properties of Limits.",
-    "Q3. Problem on Algebraic Properties of Limits."
-  ],
-  "formulas": [
-    "Formula for Algebraic Properties of Limits: [insert from textbook].",
-    "Key relationship: [variable formula]."
-  ],
-  "keyPoints": [
-    "Core principle of Algebraic Properties of Limits",
-    "Application of Algebraic Properties of Limits",
-    "Connection of Algebraic Properties of Limits to other topics"
-  ],
-  "summary": "Algebraic Properties of Limits covers essential principles and applications.",
-  "specialNotes": [
-    "Check conditions for Algebraic Properties of Limits.",
-    "Algebraic Properties of Limits connects to other topics."
-  ],
-  "importantStatements": [
-    "Statement 1: Definition of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Statement 2: Theorem related to Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Statement 3: Condition for Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions to be valid",
-    "Statement 4: Principle governing Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
-    "Statement 5: Corollary or consequence of Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions"
-  ],
-  "importantNotes": [
-    "Algebraic Properties of Limits is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Algebraic Properties of Limits."
-  ],
-  "examNotes": [
-    "Focus on Algebraic Properties of Limits problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes Algebraic Properties of Limits?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Definition and significance of Algebraic Properties of Limits."
-  ],
-  "importantTasks": [
-    "Solve 5 problems on Algebraic Properties of Limits."
-  ],
-  "animation3D": "physics",
-  "motionGraphics": "physics",
-  "duplicateType": 1
+    "These algebraic properties allow you to break complex limits into simpler ones, which is the primary strategy for limit evaluation.",
+    "The properties extend to finite sums and products of any number of functions."
+  ]
 }

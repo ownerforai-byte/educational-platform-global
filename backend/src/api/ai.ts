@@ -7,7 +7,7 @@ import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 const router = Router();
 
 // Lazy init: create service on first request so dotenv has already loaded
-// env vars (GEMINI_API_KEY, OPENROUTER_API_KEY, AGNES_API_KEY, etc.).
+// env vars (AGNES_API_KEY, GEMINI_API_KEY, OPENROUTER_API_KEY, etc.).
 let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();
@@ -20,6 +20,31 @@ router.get("/providers", (_req: Request, res: Response) => {
   const providers = aiService.getProviders();
   const defaultProvider = aiService.getDefaultProvider();
   res.json({ providers, defaultProvider });
+});
+
+// Open chat route for student learning assistance
+router.post("/chat", async (req: Request, res: Response) => {
+  try {
+    const body = req.body;
+    let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
+    const provider: string = typeof body?.provider === "string" ? body.provider : "";
+
+    if (!messages.length) {
+      res.status(400).json({ error: "messages array is required" });
+      return;
+    }
+
+    const aiService = getService();
+    const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+    const professorContext = await buildProfessorContext(lastUser);
+    messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
+
+    const response = await aiService.chat(provider || aiService.getDefaultProvider(), messages);
+    res.json({ response, provider: provider || aiService.getDefaultProvider() });
+  } catch (err: any) {
+    console.error("AI chat error:", err);
+    res.status(500).json({ error: err.message || "AI chat failed" });
+  }
 });
 
 router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res: Response) => {

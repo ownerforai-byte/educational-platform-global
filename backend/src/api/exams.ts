@@ -1,11 +1,22 @@
 import { Router, Request, Response } from "express";
 import { readFile, readdir } from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
 
 const router = Router();
 
-// Exams JSON lives at the workspace root (sibling of backend/)
-const EXAMS_DIR = path.join(process.cwd(), "..", "public", "data", "exams");
+function getExamsDir(): string {
+  const candidates = [
+    path.join(process.cwd(), "content", "exams"),
+    path.join(process.cwd(), "..", "content", "exams"),
+    path.join(process.cwd(), "public", "data", "exams"),
+    path.join(process.cwd(), "..", "public", "data", "exams"),
+  ];
+  for (const c of candidates) {
+    if (existsSync(c)) return c;
+  }
+  return candidates[0];
+}
 
 const SAFE_SLUG = /^[a-z0-9-]+$/;
 
@@ -13,20 +24,22 @@ async function loadExamFile(slug: string): Promise<any> {
   if (!SAFE_SLUG.test(slug)) {
     throw new Error("Invalid slug");
   }
-  const filePath = path.join(EXAMS_DIR, `${slug}.json`);
+  const examsDir = getExamsDir();
+  const filePath = path.join(examsDir, `${slug}.json`);
   const content = await readFile(filePath, "utf-8");
   return JSON.parse(content);
 }
 
 router.get("/", async (_req: Request, res: Response) => {
   try {
+    const examsDir = getExamsDir();
     let entries: string[];
     try {
-      const dirEntries = await readdir(EXAMS_DIR);
+      const dirEntries = await readdir(examsDir);
       entries = dirEntries.filter((f) => f.endsWith(".json") && f !== "manifest.json");
-    } catch {
-      res.status(500).json({ error: "Exams directory not found" });
-      return;
+    } catch (e) {
+      console.warn("Could not read exams directory:", e);
+      return res.status(200).json([]);
     }
 
     const exams = await Promise.all(

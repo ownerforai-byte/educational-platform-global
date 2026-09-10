@@ -39,6 +39,11 @@ const BIOLOGY_UNITS = [
   { id: "unit10", title: "Conservation Biology", labCount: 1, hours: 3 },
 ];
 
+// GET /api/biology/units
+router.get("/units", (_req: Request, res: Response) => {
+  res.json({ units: BIOLOGY_UNITS, total: BIOLOGY_UNITS.length });
+});
+
 // GET /api/biology/labs
 router.get("/labs", (_req: Request, res: Response) => {
   res.json({

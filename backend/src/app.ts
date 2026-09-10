@@ -28,12 +28,18 @@ import userRoutes from "./api/user";
 import biologyRoutes from "./api/biology";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
+import { renderApiDashboardHtml } from "./views/dashboard";
 
 export function createApp(): express.Express {
   const app = express();
 
   app.set("trust proxy", 1);
-  app.use(helmet());
+  app.use(
+    helmet({
+      contentSecurityPolicy: false,
+      frameguard: false,
+    }),
+  );
   app.use(
     cors({
       // Reflect only allow-listed origins (FRONTEND_URL may be comma-separated).
@@ -55,6 +61,32 @@ export function createApp(): express.Express {
 
   app.get("/health", (_req, res) => {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
+  });
+
+  app.get("/", (req, res) => {
+    if (req.accepts("html")) {
+      return res.send(renderApiDashboardHtml());
+    }
+    return res.json({
+      name: "Educational Platform Global",
+      description: "NEB Study Vault API",
+      status: "operational",
+      version: "0.1.0",
+      endpoints: {
+        health: "/health",
+        providers: "/api/ai/providers",
+        classes: "/api/classes/grade-11",
+        subjects: "/api/subjects/physics",
+        chapters: "/api/chapters/vectors",
+        topics: "/api/topics/01-scalars-and-vectors",
+        biology_units: "/api/biology/units",
+        biology_labs: "/api/biology/labs",
+        ravikishan_notes: "/api/ravikishan-notes",
+        r_notes: "/api/r-notes",
+        pyqs: "/api/pyqs",
+        exams: "/api/exams",
+      },
+    });
   });
 
   // Debug: log all registered routes

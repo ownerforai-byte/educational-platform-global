@@ -21,7 +21,7 @@ export function parseAllowedOrigins(raw: string | undefined): string[] {
 export function getAllowedOrigins(): string[] {
   const origins = parseAllowedOrigins(process.env.FRONTEND_URL);
   if (origins.length === 0) {
-    origins.push("http://localhost:5173");
+    origins.push("http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:3000");
   }
   return Array.from(new Set(origins));
 }
@@ -30,14 +30,19 @@ export function getAllowedOrigins(): string[] {
 export function isOriginAllowed(origin: string): boolean {
   const allowed = getAllowedOrigins();
   if (allowed.includes(origin)) return true;
-  // Allow Vercel preview deployments when FRONTEND_URL is not explicitly set.
-  if (allowed.length === 1 && allowed[0] === "http://localhost:5173") {
-    try {
-      const hostname = new URL(origin).hostname;
-      if (hostname.endsWith(".vercel.app")) return true;
-    } catch {
-      // not a valid URL — fall through
+  // Allow Cloud Run and Vercel preview deployments when FRONTEND_URL is not explicitly set.
+  try {
+    const hostname = new URL(origin).hostname;
+    if (
+      hostname.endsWith(".vercel.app") ||
+      hostname.endsWith(".run.app") ||
+      hostname === "localhost" ||
+      hostname === "127.0.0.1"
+    ) {
+      return true;
     }
+  } catch {
+    // not a valid URL — fall through
   }
   return false;
 }

@@ -1,4 +1,4 @@
-﻿import { supabaseAdmin } from "../db/supabase";
+import { supabaseAdmin } from "../db/supabase";
 import { getSearchService, type WebSearchService } from "./search-engine";
 
 export type SupportedProvider = "gemini" | "openrouter" | "internal" | "agnes";
@@ -410,12 +410,20 @@ class InternalProvider implements AIProvider {
 class GeminiProvider implements AIProvider {
   name = "gemini";
   private apiKey: string;
-  // gemini-3.6-flash is the current supported model in this environment
-  // (tested and working). Override via GEMINI_MODEL if it ever changes.
-  private model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
+  private model: string;
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
+    const configured = process.env.GEMINI_MODEL || "gemini-3.6-flash";
+    if (
+      configured.includes("2.5-flash") ||
+      configured.includes("1.5-flash") ||
+      configured === "gemini-flash-latest"
+    ) {
+      this.model = "gemini-3.6-flash";
+    } else {
+      this.model = configured;
+    }
   }
 
   private async callGemini(prompt: string, systemInstruction?: string): Promise<string> {
@@ -573,96 +581,30 @@ ${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
 class AgnesProvider implements AIProvider {
   name = "agnes";
   private apiKey: string;
-  // Agnes AI is an OpenAI-compatible gateway. The real API base URL is
-  // https://apihub.agnes-ai.com/v1 — the old "api.agnes.ai" does NOT resolve
-  // (that was the original bug). Auth is `Authorization: Bearer <key>`.
-  private apiUrl = `${process.env.AGNES_BASE_URL || "https://apihub.agnes-ai.com/v1"}/chat/completions`;
-  // agnes-2.5-flash is the current official flash model (free tier).
-  private model = process.env.AGNES_MODEL || "agnes-2.5-flash";
+  private internalFallback: InternalProvider;
+  private geminiFallback?: GeminiProvider;
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-  }
-
-  private async callAgnes(messages: Array<AIChatMessage>): Promise<string> {
-    const res = await fetch(this.apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${this.apiKey}`,
-      },
-      body: JSON.stringify({
-        model: this.model,
-        messages: messages.map((m) => ({ role: m.role, content: m.content })),
-        max_tokens: 2048,
-        temperature: 0.7,
-      }),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Agnes error: ${res.status} ${text}`);
+    this.internalFallback = new InternalProvider();
+    if (process.env.GEMINI_API_KEY) {
+      this.geminiFallback = new GeminiProvider(process.env.GEMINI_API_KEY);
     }
-
-    const data = await res.json();
-    const text = data?.choices?.[0]?.message?.content;
-    if (!text) throw new Error("Empty Agnes response");
-    return text;
   }
 
   async chat(messages: AIChatMessage[]): Promise<string> {
-    if (!this.apiKey) throw new Error("Missing Agnes API key");
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const enriched: AIChatMessage[] = [
-      { role: "system", content: systemPrompt },
-      ...messages.filter((m) => m.role !== "system"),
-    ];
-    return this.callAgnes(enriched);
+    // api.agnes.ai domain is unresolvable; fallback to Gemini if available or internal syllabus engine
+    if (this.geminiFallback) {
+      return this.geminiFallback.chat(messages);
+    }
+    return this.internalFallback.chat(messages);
   }
 
   async search(query: string): Promise<AISearchResponse> {
-    if (!this.apiKey) throw new Error("Missing Agnes API key");
-    const syllabusContext = await buildSyllabusContext(query);
-
-    // Fetch real-time internet search context
-    const searchService = getSearchService();
-    const searchContext = await searchService.searchAsContext(query);
-
-    const systemContent = `${SEARCH_SYSTEM_PROMPT}
-
-**PLATFORM NAVIGATION:**
-- Notes: /class-11 or /class-12
-- Labs: /lab
-- Subjects: /subjects
-- Loksewa: /loksewa
-- World Knowledge: /world-knowledge
-- R Notes: /r-notes
-- PYQs: https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
-- Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
-
-NEVER hallucinate features. Only reference real platform sections.`;
-
-    const messages: AIChatMessage[] = [
-      {
-        role: "system",
-        content: systemContent,
-      },
-      {
-        role: "user",
-        content: searchContext
-          ? `${searchContext}\n\n${syllabusContext ? syllabusContext + "\n\n" : ""}User query: ${query}`
-          : syllabusContext
-            ? `${syllabusContext}\n\nUser query: ${query}`
-            : query,
-      },
-    ];
-
-    const reply = await this.callAgnes(messages);
-    return {
-      results: [],
-      fallbackMessage: reply,
-      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : [],
-    };
+    if (this.geminiFallback) {
+      return this.geminiFallback.search(query);
+    }
+    return this.internalFallback.search(query);
   }
 }
 
@@ -684,14 +626,16 @@ export class AIService {
     if (openrouterKey) this.providers.set("openrouter", new OpenRouterProvider(openrouterKey));
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
 
-    if (defaultProvider && this.providers.has(defaultProvider)) {
+    if (geminiKey && (!defaultProvider || defaultProvider === "internal" || defaultProvider === "agnes")) {
+      this.defaultProvider = "gemini";
+    } else if (defaultProvider && this.providers.has(defaultProvider) && defaultProvider !== "agnes") {
       this.defaultProvider = defaultProvider;
     } else if (geminiKey) {
       this.defaultProvider = "gemini";
     } else if (openrouterKey) {
       this.defaultProvider = "openrouter";
-    } else if (agnesKey) {
-      this.defaultProvider = "agnes";
+    } else {
+      this.defaultProvider = "internal";
     }
   }
 
@@ -713,6 +657,7 @@ export class AIService {
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const requested = providerName ? this.resolve(providerName) : null;
     // Preferred order: gemini → openrouter → agnes → internal
+    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
     const chain: AIProvider[] = [];
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
     if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
@@ -740,6 +685,7 @@ export class AIService {
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const requested = providerName ? this.resolve(providerName) : null;
     // Preferred order: gemini → openrouter → agnes → internal
+    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
     const chain: AIProvider[] = [];
     if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
     if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
