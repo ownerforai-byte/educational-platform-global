@@ -6,6 +6,9 @@ import { ScienceLabSection } from "@/components/lab/science-lab-section";
 import { PhysicsShowcase } from "@/components/home/physics-showcase";
 import { BiologyShowcase } from "@/components/home/biology-showcase";
 import { CellArchitectureShowcase } from "@/components/home/cell-architecture-showcase";
+import { BiologyPracticalShowcase } from "@/components/home/biology-practical-showcase";
+import { PhysicsPracticalShowcase } from "@/components/home/physics-practical-showcase";
+import { ChemistryPracticalShowcase } from "@/components/home/chemistry-practical-showcase";
 
 export default function Home() {
   return (
@@ -71,6 +74,15 @@ export default function Home() {
       {/* Biology Showcase */}
       <BiologyShowcase />
       <CellArchitectureShowcase />
+
+      {/* Biology Practical */}
+      <BiologyPracticalShowcase />
+
+      {/* Physics Practical */}
+      <PhysicsPracticalShowcase />
+
+      {/* Chemistry Practical */}
+      <ChemistryPracticalShowcase />
     </div>
   );
 }
