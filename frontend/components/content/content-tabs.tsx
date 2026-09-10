@@ -3,6 +3,7 @@
 import type { ComponentType, ReactNode } from "react";
 import { useState } from "react";
 import { RavikishanTopicResources } from "./ravikishan-topic-resources";
+import { FormulaPanel, NumericalPanel } from "./ravikishan-concept-panels";
 import { EmptyState } from "./empty-state";
 import { AnalyticalGeometryResources } from "./analytical-geometry-resources";
 import { LimitsContinuityResources } from "./limits-continuity-resources";
@@ -183,9 +184,12 @@ export function ContentTabs({
         {activeTab === "formulas" && (
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Formulas</h3>
-            <EmptyState
-              title="Coming soon"
-              description={`Formula sheets for ${topicTitle} will be available here.`}
+            <FormulaPanel
+              classSlug={classSlug}
+              subjectSlug={subjectSlug}
+              unitId={unitId}
+              topicSlug={topicSlug}
+              topicTitle={topicTitle}
             />
           </div>
         )}
@@ -193,9 +197,12 @@ export function ContentTabs({
         {activeTab === "numericals" && (
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Numericals</h3>
-            <EmptyState
-              title="Coming soon"
-              description={`Practice problems for ${topicTitle} will be available here.`}
+            <NumericalPanel
+              classSlug={classSlug}
+              subjectSlug={subjectSlug}
+              unitId={unitId}
+              topicSlug={topicSlug}
+              topicTitle={topicTitle}
             />
           </div>
         )}

@@ -39,6 +39,35 @@ import { WaveOpticsSuite3D } from "@/components/lab/physics-3d-wave-optics";
 import { Vectors3D, Optics3D, Refraction3D } from "@/components/lab/physics-vectors-optics-3d";
 import { OpticsInterferenceLab } from "@/components/lab/optics-interference-lab";
 
+// Additional wired-in 3D visualizations + simulations (previously created but unused)
+import { Physics3DElectrostatics } from "@/components/lab/physics-3d-electrostatics";
+import { Physics3DGravitation } from "@/components/lab/physics-3d-gravitation";
+import { Physics3DLenses } from "@/components/lab/physics-3d-lenses";
+import { Physics3DMeasurement } from "@/components/lab/physics-3d-measurement";
+import { Physics3DMirrors } from "@/components/lab/physics-3d-mirrors";
+import { Physics3DPrism } from "@/components/lab/physics-3d-prism";
+import { Physics3DThermodynamics } from "@/components/lab/physics-3d-thermodynamics";
+import { Physics3DVectorsComprehensive } from "@/components/lab/physics-3d-vectors-comprehensive";
+import { PhysicsBallAcceleration } from "@/components/lab/physics-sim-acceleration";
+import { PhysicsBouncingBall } from "@/components/lab/physics-sim-bounce";
+import { PhysicsBallGravity } from "@/components/lab/physics-sim-gravity";
+import { PhysicsThreeBody } from "@/components/lab/physics-sim-threebody";
+import { PhysicsDoublePendulum } from "@/components/lab/physics-sim-double-pendulum";
+import { PhysicsPiCollisions } from "@/components/lab/physics-sim-pi-collisions";
+import { Chemistry3DMolecules } from "@/components/lab/chemistry-3d-molecules";
+import { Chemistry3DSyllabusSuite } from "@/components/lab/chemistry-3d-syllabus-suite";
+import { Math3DGeometryLabeled } from "@/components/lab/math-3d-geometry-labelledby";
+import { Math3DSyllabusSuite } from "@/components/lab/math-3d-syllabus-suite";
+import { MathAdvanced3D } from "@/components/lab/math-advanced-3d";
+import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
+import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
+import { BiologyBiomolecules3D } from "@/components/lab/biology-biomolecules-3d";
+import { BiologyBiotaConservation3D } from "@/components/lab/biology-biota-conservation-3d";
+import { BiologyCellDivision3D } from "@/components/lab/biology-cell-division-3d";
+import { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-diversity-3d";
+import { BiologyFloralDiversity3D } from "@/components/lab/biology-floral-diversity-3d";
+import { BiologyMicrobiology3D } from "@/components/lab/biology-microbiology-3d";
+
 /**
  * Lab registry mapping lab IDs to their component implementations
  * Each entry includes metadata for display and routing
@@ -997,8 +1026,314 @@ export const LAB_REGISTRY: LabMeta[] = [
     unit: "Unit: Class 11 Biology",
     component: Class11Biology3DPlus,
   },
-];
 
+  // ===== ADDED PHYSICS 3D VISUALIZATIONS =====
+  {
+    id: "ph-3d-electrostatics",
+    title: "Electrostatics 3D",
+    description: "Electric field, force and potential from point charges with field-line visualization.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Electrostatics",
+    component: Physics3DElectrostatics,
+  },
+  {
+    id: "ph-3d-gravitation",
+    title: "Gravitation 3D",
+    description: "Gravitational field, potential and orbital mechanics with live force vectors.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Gravitation",
+    component: Physics3DGravitation,
+  },
+  {
+    id: "ph-3d-lenses",
+    title: "Lenses 3D",
+    description: "Convex and concave lens ray diagrams with adjustable object distance.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Optics",
+    component: Physics3DLenses,
+  },
+  {
+    id: "ph-3d-measurement",
+    title: "Measurement 3D",
+    description: "Vernier caliper, screw gauge and dimensional analysis visualized in 3D.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Measurement",
+    component: Physics3DMeasurement,
+  },
+  {
+    id: "ph-3d-mirrors",
+    title: "Mirrors 3D",
+    description: "Concave and convex mirror ray diagrams with focal points and image formation.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Optics",
+    component: Physics3DMirrors,
+  },
+  {
+    id: "ph-3d-prism",
+    title: "Prism 3D",
+    description: "Dispersion and minimum deviation of light through a triangular prism.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Optics",
+    component: Physics3DPrism,
+  },
+  {
+    id: "ph-3d-thermodynamics",
+    title: "Thermodynamics 3D",
+    description: "Gas laws, PV diagram and first law of thermodynamics in interactive 3D.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Thermo",
+    component: Physics3DThermodynamics,
+  },
+  {
+    id: "ph-3d-vectors-full",
+    title: "Vectors Comprehensive 3D",
+    description: "Scalar and vector quantities, addition, resolution into components, and 3D vector operations.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Vectors",
+    component: Physics3DVectorsComprehensive,
+  },
+
+  // ===== ADDED PHYSICS SIMULATIONS =====
+  {
+    id: "ph-sim-acceleration",
+    title: "Ball Acceleration Sim",
+    description: "Constant acceleration motion with real-time position, velocity and acceleration graphs.",
+    category: "physics",
+    type: "calculator" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Kinematics",
+    component: PhysicsBallAcceleration,
+  },
+  {
+    id: "ph-sim-bounce",
+    title: "Bouncing Ball Sim",
+    description: "Coefficient of restitution and energy loss on each bounce.",
+    category: "physics",
+    type: "calculator" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Kinematics",
+    component: PhysicsBouncingBall,
+  },
+  {
+    id: "ph-sim-gravity",
+    title: "Gravity Sim",
+    description: "Free-fall and projectile motion under gravity with adjustable g.",
+    category: "physics",
+    type: "calculator" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Gravitation",
+    component: PhysicsBallGravity,
+  },
+  {
+    id: "ph-sim-threebody",
+    title: "Three-Body Sim",
+    description: "Chaos in gravitational three-body systems.",
+    category: "physics",
+    type: "calculator" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Gravitation",
+    component: PhysicsThreeBody,
+  },
+  {
+    id: "ph-sim-double-pendulum",
+    title: "Double Pendulum Sim",
+    description: "Chaotic double pendulum with adjustable speed.",
+    category: "physics",
+    type: "calculator" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Oscillations",
+    component: PhysicsDoublePendulum,
+  },
+  {
+    id: "ph-sim-pi-collisions",
+    title: "Pi Collisions Sim",
+    description: "Elastic collision demonstration where bounce count approximates digits of pi.",
+    category: "physics",
+    type: "calculator" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Work Energy",
+    component: PhysicsPiCollisions,
+  },
+
+  // ===== ADDED CHEMISTRY 3D =====
+  {
+    id: "ch-3d-molecules",
+    title: "3D Molecules",
+    description: "Interactive 3D molecular geometries with bond angles and VSEPR theory.",
+    category: "chemistry",
+    type: "3d" as const,
+    status: "new",
+    color: "#10b981",
+    unit: "Unit: Bonding",
+    component: Chemistry3DMolecules,
+  },
+  {
+    id: "ch-3d-syllabus-suite",
+    title: "Chemistry Syllabus Suite 3D",
+    description: "Syllabus-mapped 3D chemistry visualizations across all class 11 topics.",
+    category: "chemistry",
+    type: "3d" as const,
+    status: "new",
+    color: "#10b981",
+    unit: "Unit: Chemistry",
+    component: Chemistry3DSyllabusSuite,
+  },
+
+  // ===== ADDED MATH 3D =====
+  {
+    id: "math-3d-labeled",
+    title: "3D Geometry Labeled",
+    description: "Labelled 3D solid geometry — solids, planes, vectors in space.",
+    category: "mathematics",
+    type: "3d" as const,
+    status: "new",
+    color: "#8b5cf6",
+    unit: "Unit: Geometry",
+    component: Math3DGeometryLabeled,
+  },
+  {
+    id: "math-3d-syllabus-suite",
+    title: "Math Syllabus Suite 3D",
+    description: "Syllabus-mapped interactive 3D math visualizations.",
+    category: "mathematics",
+    type: "3d" as const,
+    status: "new",
+    color: "#8b5cf6",
+    unit: "Unit: Math",
+    component: Math3DSyllabusSuite,
+  },
+  {
+    id: "math-advanced",
+    title: "Math Advanced 3D",
+    description: "Advanced math visualizations including parametric and implicit surfaces.",
+    category: "mathematics",
+    type: "3d" as const,
+    status: "new",
+    color: "#8b5cf6",
+    unit: "Unit: Math",
+    component: MathAdvanced3D,
+  },
+
+  // ===== ADDED BIOLOGY 3D =====
+  {
+    id: "bio-3d-suite",
+    title: "Biology 3D Suite",
+    description: "NEB Biology XI curriculum-mapped 3D visualizations in official unit order.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Biology",
+    component: Biology3DSuite,
+  },
+  {
+    id: "bio-3d-diversity",
+    title: "Biology Diversity & Ecology Suite 3D",
+    description: "Diversity of life, ecosystems, and conservation in 3D.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Diversity",
+    component: Biology3DDiversitySuite,
+  },
+  {
+    id: "bio-3d-biomolecules",
+    title: "Biomolecules 3D",
+    description: "3D structures of proteins, carbohydrates, lipids and nucleic acids.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Cell Biology",
+    component: BiologyBiomolecules3D,
+  },
+  {
+    id: "bio-3d-biota-conservation",
+    title: "Biota & Conservation 3D",
+    description: "Biodiversity, biogeography and conservation strategies in 3D.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Ecology",
+    component: BiologyBiotaConservation3D,
+  },
+  {
+    id: "bio-3d-cell-division",
+    title: "Cell Division 3D",
+    description: "Mitosis and meiosis stages in interactive 3D.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Genetics",
+    component: BiologyCellDivision3D,
+  },
+  {
+    id: "bio-3d-faunal",
+    title: "Faunal Diversity 3D",
+    description: "Animal kingdom diversity and taxonomy in 3D.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Diversity",
+    component: BiologyFaunalDiversity3D,
+  },
+  {
+    id: "bio-3d-floral",
+    title: "Floral Diversity 3D",
+    description: "Plant kingdom diversity and life forms in 3D.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Diversity",
+    component: BiologyFloralDiversity3D,
+  },
+  {
+    id: "bio-3d-micro",
+    title: "Microbiology 3D",
+    description: "Prokaryotes, viruses and microbial biology in 3D.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Cell Biology",
+    component: BiologyMicrobiology3D,
+  },
+];
 /**
  * Get a lab by its ID
  * @param id - The lab ID

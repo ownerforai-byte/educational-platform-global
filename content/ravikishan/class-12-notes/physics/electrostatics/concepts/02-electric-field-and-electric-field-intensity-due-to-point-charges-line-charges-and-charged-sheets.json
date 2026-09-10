@@ -1,0 +1,100 @@
+{
+  "title": "Electric field and electric field intensity due to point …",
+  "unitSlug": "electrostatics",
+  "topicSlug": "electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets",
+  "topicTitle": "Electric field and electric field intensity due to point charges, line charges, and charged sheets",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Electric field and electric field intensity due to point … — Electrostatics, Physics (class-12-notes).",
+    "**Tested.** define it · list: electric field, electric field intensity due to point charges, line charges, charged sheets · one worked example · one misconception each.",
+    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
+    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
+    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines.",
+    "**Electric field intensity due to point charges.** one-line definition + one-line exam use.",
+    "**Line charges.** one-line definition + one-line exam use.",
+    "**Charged sheets.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Electric field\" as one blob → ✅ split into: electric field, electric field intensity due to point charges, line charges.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
+  ],
+  "bounds": [
+    "Covers only: electric field, electric field intensity due to point charges, line charges, charged sheets (within Electrostatics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
+  ],
+  "practice": [
+    "define + example each sub-idea: electric field, electric field intensity due to point charges, line charges, charged sheets.",
+    "one worked example for \"Electric field and electric field intensity due to point …\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
+    "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
+    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Electric field and electric field intensity due to point …\" with one example.",
+    "compare \"Electric field\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electric field and electric field intensity due to point …\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "F = k q₁q₂/r²",
+    "E = F/q",
+    "∮E·dA = Q/ε₀",
+    "V = kq/r"
+  ],
+  "numericals": [
+    "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
+    "Use  E = F/q  — pick reasonable values, solve, and check the units.",
+    "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Electric field",
+    "• Electric field intensity due to point charges",
+    "• Line charges",
+    "• Charged sheets"
+  ],
+  "summary": "Electric field and electric field intensity due to point … (Electrostatics, Physics, class-12-notes) covers Electric field, electric field intensity due to point charges, line charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Electric field and electric field intensity due to point …\"?",
+      "options": [
+        "Electric field",
+        "Electric field intensity due to point charges",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Electric field",
+      "explanation": "Electric field is listed among the official sub-ideas of Electric field and electric field intensity due to point …; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Electric field and electric field intensity due to point …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Electric field and electric field intensity due to point …\"?",
+      "options": [
+        "F = k q₁q₂/r²",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "F = k q₁q₂/r²",
+      "explanation": "F = k q₁q₂/r² is the standard form used for this topic."
+    }
+  ]
+}

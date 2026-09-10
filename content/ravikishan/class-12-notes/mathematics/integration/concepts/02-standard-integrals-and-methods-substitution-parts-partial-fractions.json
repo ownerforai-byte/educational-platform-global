@@ -1,0 +1,79 @@
+{
+  "title": "Standard integrals and methods: substitution, parts, part…",
+  "unitSlug": "integration",
+  "topicSlug": "standard-integrals-and-methods-substitution-parts-partial-fractions",
+  "topicTitle": "Standard integrals and methods: substitution, parts, partial fractions",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Standard integrals and methods: substitution, parts, part… — Integration, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: standard integrals, methods: substitution, parts, partial fractions · one worked example · one misconception each.",
+    "**Methods: substitution.** one-line definition + one-line exam use.",
+    "**Parts.** one-line definition + one-line exam use.",
+    "**Partial fractions.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Standard integrals\" as one blob → ✅ split into: standard integrals, methods: substitution, parts.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result."
+  ],
+  "bounds": [
+    "Covers only: standard integrals, methods: substitution, parts, partial fractions (within Integration).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "define + example each sub-idea: standard integrals, methods: substitution, parts, partial fractions.",
+    "one worked example for \"Standard integrals and methods: substitution, parts, part…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Standard integrals and methods: substitution, parts, part…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Standard integrals and methods: substitution, parts, part…\" with one example.",
+    "compare \"Standard integrals\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Standard integrals and methods: substitution, parts, part…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Standard result for \"Standard integrals and methods: substitution, parts, part…\" — state it and verify by substituting a simple case."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Standard integrals and methods: substitution, parts, part…\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Standard integrals",
+    "• Methods: substitution",
+    "• Parts",
+    "• Partial fractions"
+  ],
+  "summary": "Standard integrals and methods: substitution, parts, part… (Integration, Mathematics, class-12-notes) covers Standard integrals, methods: substitution, parts. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Standard integrals and methods: substitution, parts, part…\"?",
+      "options": [
+        "Standard integrals",
+        "Methods: substitution",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Standard integrals",
+      "explanation": "Standard integrals is listed among the official sub-ideas of Standard integrals and methods: substitution, parts, part…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Standard integrals and methods: substitution, parts, part…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

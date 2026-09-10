@@ -1,0 +1,104 @@
+{
+  "title": "Mechanics (optional): Dynamics — motion of particle in a …",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati",
+  "topicTitle": "Mechanics (optional): Dynamics — motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Mechanics (optional): Dynamics — motion of particle in a … — Computational Methods or Mechanics, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration · one worked example · one misconception each.",
+    "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
+    "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m).",
+    "**Fact.** 3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body).",
+    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).",
+    "**Optional.** one-line definition + one-line exam use.",
+    "**: Dynamics — motion of particle in a straight line.** one-line definition + one-line exam use.",
+    "**Motion with uniform acceleration.** one-line definition + one-line exam use.",
+    "**Motion under gravity.** one-line definition + one-line exam use.",
+    "**Motion down a smooth inclined plane.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Mechanics\" as one blob → ✅ split into: mechanics, optional, : dynamics — motion of particle in a straight line.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.."
+  ],
+  "bounds": [
+    "Covers only: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration (within Computational Methods or Mechanics).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
+  ],
+  "practice": [
+    "define + example each sub-idea: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration.",
+    "one worked example for \"Mechanics (optional): Dynamics — motion of particle in a …\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
+    "2nd law: net force = rate of change of momentum = m·a (for constant m).",
+    "3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Mechanics (optional): Dynamics — motion of particle in a …\" with one example.",
+    "compare \"Mechanics\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Mechanics (optional): Dynamics — motion of particle in a …\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "F = ma",
+    "J = F·Δt = m·Δv",
+    "p = mv"
+  ],
+  "numericals": [
+    "Use  F = ma  — pick reasonable values, solve, and check the units.",
+    "Use  J = F·Δt = m·Δv  — pick reasonable values, solve, and check the units.",
+    "Use  p = mv  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Mechanics",
+    "• Optional",
+    "• : Dynamics — motion of particle in a straight line",
+    "• Motion with uniform acceleration",
+    "• Motion under gravity",
+    "• Motion down a smooth inclined plane"
+  ],
+  "summary": "Mechanics (optional): Dynamics — motion of particle in a … (Computational Methods or Mechanics, Mathematics, class-11-notes) covers Mechanics, optional, : Dynamics — motion of particle in a straight line. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Mechanics (optional): Dynamics — motion of particle in a …\"?",
+      "options": [
+        "Mechanics",
+        "Optional",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Mechanics",
+      "explanation": "Mechanics is listed among the official sub-ideas of Mechanics (optional): Dynamics — motion of particle in a …; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Mechanics (optional): Dynamics — motion of particle in a …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Mechanics (optional): Dynamics — motion of particle in a …\"?",
+      "options": [
+        "F = ma",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "F = ma",
+      "explanation": "F = ma is the standard form used for this topic."
+    }
+  ]
+}

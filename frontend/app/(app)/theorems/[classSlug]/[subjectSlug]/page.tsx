@@ -5,19 +5,17 @@ import { ChevronRight, FileText } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
-export const dynamic = "force-dynamic";
-
 export async function generateStaticParams() {
-  return [
-    { classSlug: "class-11-notes", subjectSlug: "mathematics" },
-    { classSlug: "class-11-notes", subjectSlug: "physics" },
-    { classSlug: "class-11-notes", subjectSlug: "chemistry" },
-    { classSlug: "class-11-notes", subjectSlug: "biology" },
-    { classSlug: "class-12-notes", subjectSlug: "mathematics" },
-    { classSlug: "class-12-notes", subjectSlug: "physics" },
-    { classSlug: "class-12-notes", subjectSlug: "chemistry" },
-    { classSlug: "class-12-notes", subjectSlug: "biology" },
-  ];
+  const all = await getTheoremIndex();
+  const seen = new Set<string>();
+  const params: { classSlug: string; subjectSlug: string }[] = [];
+  for (const e of all) {
+    const key = `${e.classSlug}/${e.subjectSlug}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    params.push({ classSlug: e.classSlug, subjectSlug: e.subjectSlug });
+  }
+  return params;
 }
 
 export default async function TheoremsSubjectPage({

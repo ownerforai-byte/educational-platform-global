@@ -1,0 +1,77 @@
+{
+  "title": "Three Dimensional Geometry",
+  "unitSlug": "three-dimensional-geometry",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-three-dimensional-geometry",
+    "label": "Three Dimensional Geometry",
+    "children": [
+      {
+        "id": "unit-topic-direction-cosines-and-direction-ratios-of-a-line",
+        "label": "Direction cosines and direction ratios of a line",
+        "children": [
+          {
+            "id": "unit-three-dimensional-geometry-direction-cosines-and-direction-ratios-of-a-line-0",
+            "label": "Direction ratios of a line"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-equation-of-a-line-in-space-standard-and-general-form",
+        "label": "Equation of a line in space — standard and general form",
+        "children": [
+          {
+            "id": "unit-three-dimensional-geometry-equation-of-a-line-in-space-standard-and-general-form-0",
+            "label": "General form"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-equation-of-a-plane-normal-form-general-form",
+        "label": "Equation of a plane — normal form, general form",
+        "children": [
+          {
+            "id": "unit-three-dimensional-geometry-equation-of-a-plane-normal-form-general-form-0",
+            "label": "General form"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-angle-between-two-lines-two-planes-and-a-line-and-a-plane",
+        "label": "Angle between two lines, two planes, and a line and a plane",
+        "children": [
+          {
+            "id": "unit-three-dimensional-geometry-angle-between-two-lines-two-planes-and-a-line-and-a-plane-0",
+            "label": "Two planes"
+          },
+          {
+            "id": "unit-three-dimensional-geometry-angle-between-two-lines-two-planes-and-a-line-and-a-plane-1",
+            "label": "A line"
+          },
+          {
+            "id": "unit-three-dimensional-geometry-angle-between-two-lines-two-planes-and-a-line-and-a-plane-2",
+            "label": "A plane"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-distance-of-a-point-from-a-plane-and-line",
+        "label": "Distance of a point from a plane and line",
+        "children": [
+          {
+            "id": "unit-three-dimensional-geometry-distance-of-a-point-from-a-plane-and-line-0",
+            "label": "Line"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Three Dimensional Geometry\n  - Direction cosines and direction ratios of a line\n  - Equation of a line in space — standard and general form\n  - Equation of a plane — normal form, general form\n  - Angle between two lines, two planes, and a line and a plane\n  - Distance of a point from a plane and line"
+  ]
+}

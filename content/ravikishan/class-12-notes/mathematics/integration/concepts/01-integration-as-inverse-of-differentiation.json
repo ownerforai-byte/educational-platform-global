@@ -1,0 +1,82 @@
+{
+  "title": "Integration as inverse of differentiation",
+  "unitSlug": "integration",
+  "topicSlug": "integration-as-inverse-of-differentiation",
+  "topicTitle": "Integration as inverse of differentiation",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Integration as inverse of differentiation — Integration, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: integration as inverse of differentiation · one worked example · one misconception each.",
+    "**Fact.** Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
+    "**Fact.** d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
+    "**Fact.** Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+  ],
+  "confusion": [
+    "❌ treat \"Integration as inverse of differentiation\" as one blob → ✅ split into: integration as inverse of differentiation.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.."
+  ],
+  "bounds": [
+    "Covers only: integration as inverse of differentiation (within Integration).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain."
+  ],
+  "practice": [
+    "define + example each sub-idea: integration as inverse of differentiation.",
+    "one worked example for \"Integration as inverse of differentiation\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
+    "d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
+    "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Integration as inverse of differentiation\" with one example.",
+    "compare \"Integration as inverse of differentiation\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Integration as inverse of differentiation\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "f'(x) = lim [f(x+h)−f(x)]/h",
+    "(fg)' = f'g + fg'",
+    "d/dx xⁿ = nx^{n−1}"
+  ],
+  "numericals": [
+    "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",
+    "Use  (fg)' = f'g + fg'  — pick reasonable values, solve, and check the units.",
+    "Use  d/dx xⁿ = nx^{n−1}  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Integration as inverse of differentiation"
+  ],
+  "summary": "Integration as inverse of differentiation (Integration, Mathematics, class-12-notes) covers Integration as inverse of differentiation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Integration as inverse of differentiation\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Integration as inverse of differentiation\"?",
+      "options": [
+        "f'(x) = lim [f(x+h)−f(x)]/h",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "f'(x) = lim [f(x+h)−f(x)]/h",
+      "explanation": "f'(x) = lim [f(x+h)−f(x)]/h is the standard form used for this topic."
+    }
+  ]
+}

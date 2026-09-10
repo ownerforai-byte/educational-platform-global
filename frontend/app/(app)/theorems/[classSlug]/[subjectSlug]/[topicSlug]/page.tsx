@@ -4,15 +4,17 @@ import { ChevronRight, FileText, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
-export const dynamic = "force-dynamic";
-
 export async function generateStaticParams() {
-  const entries = await getTheoremIndex();
-  return entries.map((e) => ({
-    classSlug: e.classSlug,
-    subjectSlug: e.subjectSlug,
-    topicSlug: e.topicSlug,
-  }));
+  const all = await getTheoremIndex();
+  const seen = new Set<string>();
+  const params: { classSlug: string; subjectSlug: string; topicSlug: string }[] = [];
+  for (const e of all) {
+    const key = `${e.classSlug}/${e.subjectSlug}/${e.topicSlug}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    params.push({ classSlug: e.classSlug, subjectSlug: e.subjectSlug, topicSlug: e.topicSlug });
+  }
+  return params;
 }
 
 export default async function TheoremDetailPage({

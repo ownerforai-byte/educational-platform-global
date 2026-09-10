@@ -1,0 +1,82 @@
+{
+  "title": "IUPAC classification of elements",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "iupac-classification-of-elements",
+  "topicTitle": "IUPAC classification of elements",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** IUPAC classification of elements — Classification of Elements and Periodic Table, Chemistry (class-11-notes).",
+    "**Tested.** define it · list: iupac classification of elements · one worked example · one misconception each.",
+    "**Fact.** v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "**Fact.** Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "**Fact.** Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+  ],
+  "confusion": [
+    "❌ treat \"IUPAC classification of elements\" as one blob → ✅ split into: iupac classification of elements.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2.."
+  ],
+  "bounds": [
+    "Covers only: iupac classification of elements (within Classification of Elements and Periodic Table).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
+  ],
+  "practice": [
+    "define + example each sub-idea: iupac classification of elements.",
+    "one worked example for \"IUPAC classification of elements\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"IUPAC classification of elements\" with one example.",
+    "compare \"IUPAC classification of elements\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"IUPAC classification of elements\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "V_rms = V₀/√2",
+    "Z_L = ωL, Z_C = 1/(ωC)",
+    "ω₀ = 1/√(LC)"
+  ],
+  "numericals": [
+    "Use  V_rms = V₀/√2  — pick reasonable values, solve, and check the units.",
+    "Use  Z_L = ωL, Z_C = 1/(ωC)  — pick reasonable values, solve, and check the units.",
+    "Use  ω₀ = 1/√(LC)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• IUPAC classification of elements"
+  ],
+  "summary": "IUPAC classification of elements (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers IUPAC classification of elements. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"IUPAC classification of elements\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"IUPAC classification of elements\"?",
+      "options": [
+        "V_rms = V₀/√2",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "V_rms = V₀/√2",
+      "explanation": "V_rms = V₀/√2 is the standard form used for this topic."
+    }
+  ]
+}

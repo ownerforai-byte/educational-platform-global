@@ -1,0 +1,53 @@
+{
+  "title": "Electric Field",
+  "unitSlug": "electric-field",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-electric-field",
+    "label": "Electric Field",
+    "children": [
+      {
+        "id": "unit-topic-electric-field-due-to-point-charges-field-lines",
+        "label": "Electric field due to point charges; field lines",
+        "children": [
+          {
+            "id": "unit-electric-field-electric-field-due-to-point-charges-field-lines-0",
+            "label": "Field lines"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-gauss-law-electric-flux",
+        "label": "Gauss law: electric flux",
+        "children": [
+          {
+            "id": "unit-electric-field-gauss-law-electric-flux-0",
+            "label": "Electric flux"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor",
+        "label": "Application of Gauss law: field of a charge sphere, line charge, char…",
+        "children": [
+          {
+            "id": "unit-electric-field-application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor-0",
+            "label": "Line charge"
+          },
+          {
+            "id": "unit-electric-field-application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor-1",
+            "label": "Charged plane conductor"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Electric Field\n  - Electric field due to point charges; field lines\n  - Gauss law: electric flux\n  - Application of Gauss law: field of a charge sphere, line charge, char…"
+  ]
+}

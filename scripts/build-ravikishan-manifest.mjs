@@ -11,10 +11,24 @@ function walk(dir) {
     if (!name.endsWith(".json") || name === "manifest.json") continue;
     try {
       const data = JSON.parse(readFileSync(full, "utf8"));
-      items.push({
+      const entry = {
         path: relative(ROOT, full).split("\\").join("/"),
-        data: { title: data?.title ?? name.replace(/\.json$/, "") },
-      });
+        data: {
+          title: data?.title ?? name.replace(/\.json$/, ""),
+          unitSlug: data?.unitSlug ?? "",
+          topicSlug: data?.topicSlug ?? "",
+          source: data?.source ?? "ravikishan",
+          // Carry mindmap structure so the frontend can prefer it
+          ...(data?.root ? { root: data.root } : {}),
+          ...(Array.isArray(data?.notes) ? { notes: data.notes } : {}),
+          // Display fields for the Formulas / Numericals / Notes tabs
+          ...(Array.isArray(data?.formulas) ? { formulas: data.formulas } : {}),
+          ...(Array.isArray(data?.numericals) ? { numericals: data.numericals } : {}),
+          ...(Array.isArray(data?.bounds) ? { bounds: data.bounds } : {}),
+          ...(Array.isArray(data?.confusion) ? { confusion: data.confusion } : {}),
+        },
+      };
+      items.push(entry);
     } catch (e) {
       console.error(`SKIP (invalid JSON): ${full} -> ${e.message}`);
     }

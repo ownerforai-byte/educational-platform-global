@@ -15,8 +15,24 @@ export type { MindmapItem };
 
 type ManifestItem = {
   path: string;
-  data: { title?: string; notes?: string[] | string; type?: string };
+  data: {
+    title?: string;
+    notes?: string[] | string;
+    type?: string;
+    unitSlug?: string;
+    topicSlug?: string;
+    source?: string;
+    /** Structured mindmap tree carried by the content generator (preferred over auto-gen). */
+    root?: MindmapNode;
+  };
 };
+
+/** A manifest `root` is usable when it has a non-empty label. */
+function isValidMindmapRoot(node: unknown): node is MindmapNode {
+  if (!node || typeof node !== "object") return false;
+  const n = node as MindmapNode;
+  return typeof n.label === "string" && n.label.length > 0;
+}
 
 function normalizePath(path: string): string {
   return path.replace(/\\/g, "/");
@@ -151,6 +167,7 @@ type ImportedMindmap = {
   title: string;
   subject: string;
   unitId?: string;
+  topicSlug?: string;
   root: MindmapNode;
 };
 
@@ -182,7 +199,10 @@ function buildImportedMindmaps(): Promise<ImportedMindmap[]> {
         title,
         subject,
         unitId: unitPath ? mapRavUnitToSyllabus(subject, unitPath) : undefined,
-        root: buildTreeFromOutlineNotes(title, notes),
+        root: isValidMindmapRoot(item.data?.root)
+          ? (item.data!.root as MindmapNode)
+          : buildTreeFromOutlineNotes(title, notes),
+        topicSlug: item.data?.topicSlug || undefined,
       });
     }
 
@@ -211,9 +231,11 @@ async function findImportedForTopic(
   subjectSlug: string,
   unitId: string,
   topicTitle: string,
+  topicSlug?: string,
 ): Promise<ImportedMindmap | undefined> {
   const maps = await getImportedMindmaps();
   const norm = topicTitle.toLowerCase();
+  if (topicSlug) { const bySlug = maps.find((m) => m.subject === subjectSlug && m.topicSlug === topicSlug); if (bySlug) return bySlug; }
   return maps.find((m) => {
     if (m.subject !== subjectSlug) return false;
     if (m.unitId && m.unitId !== unitId) return false;
@@ -233,6 +255,7 @@ export async function getTopicMindmap(args: {
     args.subjectSlug,
     args.unitId,
     args.topicTitle,
+    args.topicSlug,
   );
   const source: MindmapSource = imported ? "imported" : "syllabus";
   const root = imported

@@ -50,6 +50,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/lab/physics/optics",
+        destination: "/lab/ph-3d-optics",
+        permanent: false,
+      },
+      {
         source: "/r-notes",
         destination: "/notes",
         permanent: false,

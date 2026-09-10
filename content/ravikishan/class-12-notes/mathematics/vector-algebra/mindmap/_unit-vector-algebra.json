@@ -1,0 +1,103 @@
+{
+  "title": "Vector Algebra",
+  "unitSlug": "vector-algebra",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-vector-algebra",
+    "label": "Vector Algebra",
+    "children": [
+      {
+        "id": "unit-topic-scalar-and-vector-quantities-types-of-vectors",
+        "label": "Scalar and vector quantities, types of vectors",
+        "children": [
+          {
+            "id": "unit-vector-algebra-scalar-and-vector-quantities-types-of-vectors-0",
+            "label": "Vector quantities"
+          },
+          {
+            "id": "unit-vector-algebra-scalar-and-vector-quantities-types-of-vectors-1",
+            "label": "Types of vectors"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-addition-subtraction-and-scalar-multiplication-of-vectors",
+        "label": "Addition, subtraction and scalar multiplication of vectors",
+        "children": [
+          {
+            "id": "unit-vector-algebra-addition-subtraction-and-scalar-multiplication-of-vectors-0",
+            "label": "Subtraction"
+          },
+          {
+            "id": "unit-vector-algebra-addition-subtraction-and-scalar-multiplication-of-vectors-1",
+            "label": "Scalar multiplication of vectors"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-dot-product-scalar-product-and-its-applications",
+        "label": "Dot product (scalar product) and its applications",
+        "children": [
+          {
+            "id": "unit-vector-algebra-dot-product-scalar-product-and-its-applications-0",
+            "label": "Scalar product"
+          },
+          {
+            "id": "unit-vector-algebra-dot-product-scalar-product-and-its-applications-1",
+            "label": "Its applications"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-cross-product-vector-product-and-its-applications",
+        "label": "Cross product (vector product) and its applications",
+        "children": [
+          {
+            "id": "unit-vector-algebra-cross-product-vector-product-and-its-applications-0",
+            "label": "Vector product"
+          },
+          {
+            "id": "unit-vector-algebra-cross-product-vector-product-and-its-applications-1",
+            "label": "Its applications"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-scalar-and-vector-triple-products",
+        "label": "Scalar and vector triple products",
+        "children": [
+          {
+            "id": "unit-vector-algebra-scalar-and-vector-triple-products-0",
+            "label": "Vector triple products"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-applications-work-torque-angular-momentum",
+        "label": "Applications: work, torque, angular momentum",
+        "children": [
+          {
+            "id": "unit-vector-algebra-applications-work-torque-angular-momentum-0",
+            "label": "Work"
+          },
+          {
+            "id": "unit-vector-algebra-applications-work-torque-angular-momentum-1",
+            "label": "Torque"
+          },
+          {
+            "id": "unit-vector-algebra-applications-work-torque-angular-momentum-2",
+            "label": "Angular momentum"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Vector Algebra\n  - Scalar and vector quantities, types of vectors\n  - Addition, subtraction and scalar multiplication of vectors\n  - Dot product (scalar product) and its applications\n  - Cross product (vector product) and its applications\n  - Scalar and vector triple products\n  - Applications: work, torque, angular momentum"
+  ]
+}

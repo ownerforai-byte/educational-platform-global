@@ -1,0 +1,84 @@
+{
+  "title": "Deviation of real gas from ideality (solving related nume…",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws",
+  "topicTitle": "Deviation of real gas from ideality (solving related numerical problems based on gas laws)",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Deviation of real gas from ideality (solving related nume… — States of Matter, Chemistry (class-11-notes).",
+    "**Tested.** define it · list: deviation of real gas from ideality, solving related numerical problems based on gas laws · one worked example · one misconception each.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT.",
+    "**Solving related numerical problems based on gas laws.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Deviation of real gas from ideality\" as one blob → ✅ split into: deviation of real gas from ideality, solving related numerical problems based on gas laws.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
+  ],
+  "bounds": [
+    "Covers only: deviation of real gas from ideality, solving related numerical problems based on gas laws (within States of Matter).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
+  ],
+  "practice": [
+    "define + example each sub-idea: deviation of real gas from ideality, solving related numerical problems based on gas laws.",
+    "one worked example for \"Deviation of real gas from ideality (solving related nume…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Deviation of real gas from ideality (solving related nume…\" with one example.",
+    "compare \"Deviation of real gas from ideality\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Deviation of real gas from ideality (solving related nume…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "PV = nRT",
+    "c_rms = √(3RT/M)",
+    "KE_mole = 3RT/2"
+  ],
+  "numericals": [
+    "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
+    "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
+    "Use  KE_mole = 3RT/2  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Deviation of real gas from ideality",
+    "• Solving related numerical problems based on gas laws"
+  ],
+  "summary": "Deviation of real gas from ideality (solving related nume… (States of Matter, Chemistry, class-11-notes) covers Deviation of real gas from ideality, solving related numerical problems based on gas laws. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Deviation of real gas from ideality (solving related nume…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Deviation of real gas from ideality (solving related nume…\"?",
+      "options": [
+        "PV = nRT",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "PV = nRT",
+      "explanation": "PV = nRT is the standard form used for this topic."
+    }
+  ]
+}

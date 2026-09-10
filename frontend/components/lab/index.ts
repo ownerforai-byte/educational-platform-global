@@ -53,3 +53,32 @@ export {
 } from "@/components/lab/lab-workspace";
 export { LabDashboard } from "@/components/lab/lab-dashboard";
 export { InteractiveTemplate } from "@/components/lab/interactive-3d-template";
+
+// Wired-in 3D visualizations + simulations (previously created but unused)
+export { Physics3DElectrostatics } from "@/components/lab/physics-3d-electrostatics";
+export { Physics3DGravitation } from "@/components/lab/physics-3d-gravitation";
+export { Physics3DLenses } from "@/components/lab/physics-3d-lenses";
+export { Physics3DMeasurement } from "@/components/lab/physics-3d-measurement";
+export { Physics3DMirrors } from "@/components/lab/physics-3d-mirrors";
+export { Physics3DPrism } from "@/components/lab/physics-3d-prism";
+export { Physics3DThermodynamics } from "@/components/lab/physics-3d-thermodynamics";
+export { Physics3DVectorsComprehensive } from "@/components/lab/physics-3d-vectors-comprehensive";
+export { PhysicsBallAcceleration } from "@/components/lab/physics-sim-acceleration";
+export { PhysicsBouncingBall } from "@/components/lab/physics-sim-bounce";
+export { PhysicsBallGravity } from "@/components/lab/physics-sim-gravity";
+export { PhysicsThreeBody } from "@/components/lab/physics-sim-threebody";
+export { PhysicsDoublePendulum } from "@/components/lab/physics-sim-double-pendulum";
+export { PhysicsPiCollisions } from "@/components/lab/physics-sim-pi-collisions";
+export { Chemistry3DMolecules } from "@/components/lab/chemistry-3d-molecules";
+export { Chemistry3DSyllabusSuite } from "@/components/lab/chemistry-3d-syllabus-suite";
+export { Math3DGeometryLabeled } from "@/components/lab/math-3d-geometry-labelledby";
+export { Math3DSyllabusSuite } from "@/components/lab/math-3d-syllabus-suite";
+export { MathAdvanced3D } from "@/components/lab/math-advanced-3d";
+export { Biology3DSuite } from "@/components/lab/biology-3d-suite";
+export { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
+export { BiologyBiomolecules3D } from "@/components/lab/biology-biomolecules-3d";
+export { BiologyBiotaConservation3D } from "@/components/lab/biology-biota-conservation-3d";
+export { BiologyCellDivision3D } from "@/components/lab/biology-cell-division-3d";
+export { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-diversity-3d";
+export { BiologyFloralDiversity3D } from "@/components/lab/biology-floral-diversity-3d";
+export { BiologyMicrobiology3D } from "@/components/lab/biology-microbiology-3d";

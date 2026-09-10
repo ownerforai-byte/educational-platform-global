@@ -1,0 +1,97 @@
+{
+  "title": "Cubical expansion, superficial expansion and their relati…",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "cubical-expansion-superficial-expansion-and-their-relation-with-linear-expansion",
+  "topicTitle": "Cubical expansion, superficial expansion and their relation with linear expansion",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Cubical expansion, superficial expansion and their relati… — Thermal Expansion, Physics (class-11-notes).",
+    "**Tested.** define it · list: cubical expansion, superficial expansion, their relation with linear expansion · one worked example · one misconception each.",
+    "**Fact.** Linear: ΔL = αL₀ΔT (α = coefficient of linear expansion). Superficial ΔA ≈ 2αA₀ΔT; cubical ΔV ≈ 3αV₀ΔT.",
+    "**Fact.** Liquid expansion: apparent vs absolute; glass volumetric expansivity ≈ 27×10⁻⁶ K⁻¹.",
+    "**Fact.** Dulong & Petit: c_m (solid) ≈ 3R ≈ 12.6 J mol⁻¹ K⁻¹ at moderate T.",
+    "**Superficial expansion.** one-line definition + one-line exam use.",
+    "**Their relation with linear expansion.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Cubical expansion\" as one blob → ✅ split into: cubical expansion, superficial expansion, their relation with linear expansion.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ linear: δl = αl₀δt (α = coefficient of linear expansion). superficial δa ≈ 2αa₀δt; cubical δv ≈ 3αv₀δt.."
+  ],
+  "bounds": [
+    "Covers only: cubical expansion, superficial expansion, their relation with linear expansion (within Thermal Expansion).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: linear: δl = αl₀δt (α = coefficient of linear expansion). superficial δa ≈ 2αa₀δt; cubical δv ≈ 3αv₀δt."
+  ],
+  "practice": [
+    "define + example each sub-idea: cubical expansion, superficial expansion, their relation with linear expansion.",
+    "one worked example for \"Cubical expansion, superficial expansion and their relati…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Linear: ΔL = αL₀ΔT (α = coefficient of linear expansion). Superficial ΔA ≈ 2αA₀ΔT; cubical ΔV ≈ 3αV₀ΔT.",
+    "Liquid expansion: apparent vs absolute; glass volumetric expansivity ≈ 27×10⁻⁶ K⁻¹.",
+    "Dulong & Petit: c_m (solid) ≈ 3R ≈ 12.6 J mol⁻¹ K⁻¹ at moderate T."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Cubical expansion, superficial expansion and their relati…\" with one example.",
+    "compare \"Cubical expansion\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Cubical expansion, superficial expansion and their relati…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "ΔL = αL₀ΔT",
+    "γ ≈ 3α",
+    "β ≈ 3α (volumetric)"
+  ],
+  "numericals": [
+    "Use  ΔL = αL₀ΔT  — pick reasonable values, solve, and check the units.",
+    "Use  γ ≈ 3α  — pick reasonable values, solve, and check the units.",
+    "Use  β ≈ 3α (volumetric)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Cubical expansion",
+    "• Superficial expansion",
+    "• Their relation with linear expansion"
+  ],
+  "summary": "Cubical expansion, superficial expansion and their relati… (Thermal Expansion, Physics, class-11-notes) covers Cubical expansion, superficial expansion, their relation with linear expansion. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Cubical expansion, superficial expansion and their relati…\"?",
+      "options": [
+        "Cubical expansion",
+        "Superficial expansion",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Cubical expansion",
+      "explanation": "Cubical expansion is listed among the official sub-ideas of Cubical expansion, superficial expansion and their relati…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Cubical expansion, superficial expansion and their relati…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Cubical expansion, superficial expansion and their relati…\"?",
+      "options": [
+        "ΔL = αL₀ΔT",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "ΔL = αL₀ΔT",
+      "explanation": "ΔL = αL₀ΔT is the standard form used for this topic."
+    }
+  ]
+}

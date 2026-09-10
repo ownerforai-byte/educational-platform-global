@@ -1,0 +1,85 @@
+{
+  "title": "Atom — Bohr's model and hydrogen spectrum",
+  "unitSlug": "modern-physics",
+  "topicSlug": "atom-bohr-s-model-and-hydrogen-spectrum",
+  "topicTitle": "Atom — Bohr's model and hydrogen spectrum",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Atom — Bohr's model and hydrogen spectrum — Modern Physics, Physics (class-12-notes).",
+    "**Tested.** define it · list: atom — bohr's model, hydrogen spectrum · one worked example · one misconception each.",
+    "**Fact.** Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
+    "**Fact.** Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
+    "**Fact.** Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
+    "**Fact.** Filling order (Aufbau, n+l rule): 1s 2s 2p 3s 3p 4s 3d…; Hund's rule: maximise unpaired spin before pairing; Pauli: no two electrons share all four quantum numbers.",
+    "**Hydrogen spectrum.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Atom — Bohr's model\" as one blob → ✅ split into: atom — bohr's model, hydrogen spectrum.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1).."
+  ],
+  "bounds": [
+    "Covers only: atom — bohr's model, hydrogen spectrum (within Modern Physics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
+  ],
+  "practice": [
+    "define + example each sub-idea: atom — bohr's model, hydrogen spectrum.",
+    "one worked example for \"Atom — Bohr's model and hydrogen spectrum\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
+    "Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
+    "Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Atom — Bohr's model and hydrogen spectrum\" with one example.",
+    "compare \"Atom — Bohr's model\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Atom — Bohr's model and hydrogen spectrum\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "En(H) = −13.6 Z²/n² eV",
+    "hν = ΔE",
+    "λ = h/(mv) (de Broglie)"
+  ],
+  "numericals": [
+    "Use  En(H) = −13.6 Z²/n² eV  — pick reasonable values, solve, and check the units.",
+    "Use  hν = ΔE  — pick reasonable values, solve, and check the units.",
+    "Use  λ = h/(mv) (de Broglie)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Atom — Bohr's model",
+    "• Hydrogen spectrum"
+  ],
+  "summary": "Atom — Bohr's model and hydrogen spectrum (Modern Physics, Physics, class-12-notes) covers Atom — Bohr's model, hydrogen spectrum. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Atom — Bohr's model and hydrogen spectrum\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Atom — Bohr's model and hydrogen spectrum\"?",
+      "options": [
+        "En(H) = −13.6 Z²/n² eV",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "En(H) = −13.6 Z²/n² eV",
+      "explanation": "En(H) = −13.6 Z²/n² eV is the standard form used for this topic."
+    }
+  ]
+}

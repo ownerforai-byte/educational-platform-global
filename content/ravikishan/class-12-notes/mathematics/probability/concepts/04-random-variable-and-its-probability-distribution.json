@@ -1,0 +1,84 @@
+{
+  "title": "Random variable and its probability distribution",
+  "unitSlug": "probability",
+  "topicSlug": "random-variable-and-its-probability-distribution",
+  "topicTitle": "Random variable and its probability distribution",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Random variable and its probability distribution — Probability, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: random variable, its probability distribution · one worked example · one misconception each.",
+    "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ.",
+    "**Its probability distribution.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Random variable\" as one blob → ✅ split into: random variable, its probability distribution.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).."
+  ],
+  "bounds": [
+    "Covers only: random variable, its probability distribution (within Probability).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
+  ],
+  "practice": [
+    "define + example each sub-idea: random variable, its probability distribution.",
+    "one worked example for \"Random variable and its probability distribution\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Random variable and its probability distribution\" with one example.",
+    "compare \"Random variable\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Random variable and its probability distribution\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "P(A∪B) = P(A)+P(B)−P(A∩B)",
+    "P(A∩B) = P(A)P(B|A)",
+    "P(A') = 1 − P(A)"
+  ],
+  "numericals": [
+    "Use  P(A∪B) = P(A)+P(B)−P(A∩B)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A∩B) = P(A)P(B|A)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A') = 1 − P(A)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Random variable",
+    "• Its probability distribution"
+  ],
+  "summary": "Random variable and its probability distribution (Probability, Mathematics, class-12-notes) covers Random variable, its probability distribution. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Random variable and its probability distribution\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Random variable and its probability distribution\"?",
+      "options": [
+        "P(A∪B) = P(A)+P(B)−P(A∩B)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "P(A∪B) = P(A)+P(B)−P(A∩B)",
+      "explanation": "P(A∪B) = P(A)+P(B)−P(A∩B) is the standard form used for this topic."
+    }
+  ]
+}

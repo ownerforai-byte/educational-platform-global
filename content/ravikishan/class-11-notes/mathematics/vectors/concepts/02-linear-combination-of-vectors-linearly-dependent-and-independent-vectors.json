@@ -1,0 +1,97 @@
+{
+  "title": "Linear combination of vectors, linearly dependent and ind…",
+  "unitSlug": "vectors",
+  "topicSlug": "linear-combination-of-vectors-linearly-dependent-and-independent-vectors",
+  "topicTitle": "Linear combination of vectors, linearly dependent and independent vectors",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Linear combination of vectors, linearly dependent and ind… — Vectors, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: linear combination of vectors, linearly dependent, independent vectors · one worked example · one misconception each.",
+    "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "**Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
+    "**Linearly dependent.** one-line definition + one-line exam use.",
+    "**Independent vectors.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Linear combination of vectors\" as one blob → ✅ split into: linear combination of vectors, linearly dependent, independent vectors.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).."
+  ],
+  "bounds": [
+    "Covers only: linear combination of vectors, linearly dependent, independent vectors (within Vectors).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)."
+  ],
+  "practice": [
+    "define + example each sub-idea: linear combination of vectors, linearly dependent, independent vectors.",
+    "one worked example for \"Linear combination of vectors, linearly dependent and ind…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Linear combination of vectors, linearly dependent and ind…\" with one example.",
+    "compare \"Linear combination of vectors\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Linear combination of vectors, linearly dependent and ind…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "a·b = a₁b₁+a₂b₂+a₃b₃",
+    "|a×b| = |a||b|sinθ",
+    "|a| = √(a²+b²+c²)"
+  ],
+  "numericals": [
+    "Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.",
+    "Use  |a×b| = |a||b|sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  |a| = √(a²+b²+c²)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Linear combination of vectors",
+    "• Linearly dependent",
+    "• Independent vectors"
+  ],
+  "summary": "Linear combination of vectors, linearly dependent and ind… (Vectors, Mathematics, class-11-notes) covers Linear combination of vectors, linearly dependent, independent vectors. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Linear combination of vectors, linearly dependent and ind…\"?",
+      "options": [
+        "Linear combination of vectors",
+        "Linearly dependent",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Linear combination of vectors",
+      "explanation": "Linear combination of vectors is listed among the official sub-ideas of Linear combination of vectors, linearly dependent and ind…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Linear combination of vectors, linearly dependent and ind…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Linear combination of vectors, linearly dependent and ind…\"?",
+      "options": [
+        "a·b = a₁b₁+a₂b₂+a₃b₃",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "a·b = a₁b₁+a₂b₂+a₃b₃",
+      "explanation": "a·b = a₁b₁+a₂b₂+a₃b₃ is the standard form used for this topic."
+    }
+  ]
+}

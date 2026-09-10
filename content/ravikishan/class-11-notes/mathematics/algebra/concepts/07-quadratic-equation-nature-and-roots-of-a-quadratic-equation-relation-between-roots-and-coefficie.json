@@ -1,0 +1,105 @@
+{
+  "title": "Quadratic equation: nature and roots of a quadratic equat…",
+  "unitSlug": "algebra",
+  "topicSlug": "quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficie",
+  "topicTitle": "Quadratic equation: nature and roots of a quadratic equation, relation between roots and coefficient, formation of a quadratic equation, symmetric roots, one or both roots common",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Quadratic equation: nature and roots of a quadratic equat… — Algebra, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: quadratic equation, nature, roots of a quadratic equation, relation between roots · one worked example · one misconception each.",
+    "**Fact.** ax² + bx + c = 0; discriminant D = b² − 4ac: D>0 two distinct real, D=0 equal, D<0 complex conjugate.",
+    "**Fact.** Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving.",
+    "**Fact.** For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) < 0). One root common with another: discriminant-of-conditions / resultant.",
+    "**Nature.** one-line definition + one-line exam use.",
+    "**Roots of a quadratic equation.** one-line definition + one-line exam use.",
+    "**Relation between roots.** one-line definition + one-line exam use.",
+    "**Coefficient.** one-line definition + one-line exam use.",
+    "**Formation of a quadratic equation.** one-line definition + one-line exam use.",
+    "**Symmetric roots.** one-line definition + one-line exam use.",
+    "**One or both roots common.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Quadratic equation\" as one blob → ✅ split into: quadratic equation, nature, roots of a quadratic equation.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate.."
+  ],
+  "bounds": [
+    "Covers only: quadratic equation, nature, roots of a quadratic equation, relation between roots (within Algebra).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate."
+  ],
+  "practice": [
+    "define + example each sub-idea: quadratic equation, nature, roots of a quadratic equation, relation between roots.",
+    "one worked example for \"Quadratic equation: nature and roots of a quadratic equat…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "ax² + bx + c = 0; discriminant D = b² − 4ac: D>0 two distinct real, D=0 equal, D<0 complex conjugate.",
+    "Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving.",
+    "For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) < 0). One root common with another: discriminant-of-conditions / resultant."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Quadratic equation: nature and roots of a quadratic equat…\" with one example.",
+    "compare \"Quadratic equation\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Quadratic equation: nature and roots of a quadratic equat…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "x = (−b ± √D)/(2a)",
+    "α + β = −b/a",
+    "αβ = c/a"
+  ],
+  "numericals": [
+    "Use  x = (−b ± √D)/(2a)  — pick reasonable values, solve, and check the units.",
+    "Use  α + β = −b/a  — pick reasonable values, solve, and check the units.",
+    "Use  αβ = c/a  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Quadratic equation",
+    "• Nature",
+    "• Roots of a quadratic equation",
+    "• Relation between roots",
+    "• Coefficient",
+    "• Formation of a quadratic equation"
+  ],
+  "summary": "Quadratic equation: nature and roots of a quadratic equat… (Algebra, Mathematics, class-11-notes) covers Quadratic equation, nature, roots of a quadratic equation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Quadratic equation: nature and roots of a quadratic equat…\"?",
+      "options": [
+        "Quadratic equation",
+        "Nature",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Quadratic equation",
+      "explanation": "Quadratic equation is listed among the official sub-ideas of Quadratic equation: nature and roots of a quadratic equat…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Quadratic equation: nature and roots of a quadratic equat…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Quadratic equation: nature and roots of a quadratic equat…\"?",
+      "options": [
+        "x = (−b ± √D)/(2a)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "x = (−b ± √D)/(2a)",
+      "explanation": "x = (−b ± √D)/(2a) is the standard form used for this topic."
+    }
+  ]
+}

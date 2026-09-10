@@ -1,0 +1,99 @@
+{
+  "title": "Solving first order, first degree equations: variable sep…",
+  "unitSlug": "differential-equations",
+  "topicSlug": "solving-first-order-first-degree-equations-variable-separable-homogeneous-linear",
+  "topicTitle": "Solving first order, first degree equations: variable separable, homogeneous, linear",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Solving first order, first degree equations: variable sep… — Differential Equations, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: solving first order, first degree equations: variable separable, homogeneous, linear · one worked example · one misconception each.",
+    "**Fact.** Colligative properties depend on number of solute particles: relative lowering of vapour pressure Δp/p = x₂ (Raoult).",
+    "**Fact.** Boiling-point elevation ΔT_b = K_b m; depression ΔT_f = K_f m; osmotic pressure π = CRT (dilute).",
+    "**Fact.** m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass.",
+    "**First degree equations: variable separable.** one-line definition + one-line exam use.",
+    "**Homogeneous.** one-line definition + one-line exam use.",
+    "**Linear.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Solving first order\" as one blob → ✅ split into: solving first order, first degree equations: variable separable, homogeneous.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult).."
+  ],
+  "bounds": [
+    "Covers only: solving first order, first degree equations: variable separable, homogeneous, linear (within Differential Equations).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult)."
+  ],
+  "practice": [
+    "define + example each sub-idea: solving first order, first degree equations: variable separable, homogeneous, linear.",
+    "one worked example for \"Solving first order, first degree equations: variable sep…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Colligative properties depend on number of solute particles: relative lowering of vapour pressure Δp/p = x₂ (Raoult).",
+    "Boiling-point elevation ΔT_b = K_b m; depression ΔT_f = K_f m; osmotic pressure π = CRT (dilute).",
+    "m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Solving first order, first degree equations: variable sep…\" with one example.",
+    "compare \"Solving first order\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Solving first order, first degree equations: variable sep…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "ΔT_b = K_b m",
+    "π = CRT",
+    "Δp/p = x₂ (Raoult)"
+  ],
+  "numericals": [
+    "Use  ΔT_b = K_b m  — pick reasonable values, solve, and check the units.",
+    "Use  π = CRT  — pick reasonable values, solve, and check the units.",
+    "Use  Δp/p = x₂ (Raoult)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Solving first order",
+    "• First degree equations: variable separable",
+    "• Homogeneous",
+    "• Linear"
+  ],
+  "summary": "Solving first order, first degree equations: variable sep… (Differential Equations, Mathematics, class-12-notes) covers Solving first order, first degree equations: variable separable, homogeneous. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Solving first order, first degree equations: variable sep…\"?",
+      "options": [
+        "Solving first order",
+        "First degree equations: variable separable",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Solving first order",
+      "explanation": "Solving first order is listed among the official sub-ideas of Solving first order, first degree equations: variable sep…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Solving first order, first degree equations: variable sep…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Solving first order, first degree equations: variable sep…\"?",
+      "options": [
+        "ΔT_b = K_b m",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "ΔT_b = K_b m",
+      "explanation": "ΔT_b = K_b m is the standard form used for this topic."
+    }
+  ]
+}

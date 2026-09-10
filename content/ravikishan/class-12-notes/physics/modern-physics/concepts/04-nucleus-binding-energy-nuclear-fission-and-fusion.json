@@ -1,0 +1,97 @@
+{
+  "title": "Nucleus — binding energy, nuclear fission and fusion",
+  "unitSlug": "modern-physics",
+  "topicSlug": "nucleus-binding-energy-nuclear-fission-and-fusion",
+  "topicTitle": "Nucleus — binding energy, nuclear fission and fusion",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Nucleus — binding energy, nuclear fission and fusion — Modern Physics, Physics (class-12-notes).",
+    "**Tested.** define it · list: nucleus — binding energy, nuclear fission, fusion · one worked example · one misconception each.",
+    "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
+    "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
+    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars).",
+    "**Nuclear fission.** one-line definition + one-line exam use.",
+    "**Fusion.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Nucleus — binding energy\" as one blob → ✅ split into: nucleus — binding energy, nuclear fission, fusion.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).."
+  ],
+  "bounds": [
+    "Covers only: nucleus — binding energy, nuclear fission, fusion (within Modern Physics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
+  ],
+  "practice": [
+    "define + example each sub-idea: nucleus — binding energy, nuclear fission, fusion.",
+    "one worked example for \"Nucleus — binding energy, nuclear fission and fusion\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
+    "Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
+    "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Nucleus — binding energy, nuclear fission and fusion\" with one example.",
+    "compare \"Nucleus — binding energy\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Nucleus — binding energy, nuclear fission and fusion\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "BE = Δm c²",
+    "N = N₀ e^(−λt)",
+    "t_½ = ln2 / λ"
+  ],
+  "numericals": [
+    "Use  BE = Δm c²  — pick reasonable values, solve, and check the units.",
+    "Use  N = N₀ e^(−λt)  — pick reasonable values, solve, and check the units.",
+    "Use  t_½ = ln2 / λ  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Nucleus — binding energy",
+    "• Nuclear fission",
+    "• Fusion"
+  ],
+  "summary": "Nucleus — binding energy, nuclear fission and fusion (Modern Physics, Physics, class-12-notes) covers Nucleus — binding energy, nuclear fission, fusion. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Nucleus — binding energy, nuclear fission and fusion\"?",
+      "options": [
+        "Nucleus — binding energy",
+        "Nuclear fission",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Nucleus — binding energy",
+      "explanation": "Nucleus — binding energy is listed among the official sub-ideas of Nucleus — binding energy, nuclear fission and fusion; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Nucleus — binding energy, nuclear fission and fusion\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Nucleus — binding energy, nuclear fission and fusion\"?",
+      "options": [
+        "BE = Δm c²",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "BE = Δm c²",
+      "explanation": "BE = Δm c² is the standard form used for this topic."
+    }
+  ]
+}

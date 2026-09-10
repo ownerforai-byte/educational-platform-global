@@ -1,0 +1,98 @@
+{
+  "title": "Straight line: length of perpendicular from a given point…",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles",
+  "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Straight line: length of perpendicular from a given point… — Analytic Geometry, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines · one worked example · one misconception each.",
+    "**Fact.** Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
+    "**Fact.** Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
+    "**Fact.** Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h.",
+    "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²).",
+    "**Length of perpendicular from a given point to a given line.** one-line definition + one-line exam use.",
+    "**Bisectors of the angles between two straight lines.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Straight line\" as one blob → ✅ split into: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).."
+  ],
+  "bounds": [
+    "Covers only: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines (within Analytic Geometry).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²)."
+  ],
+  "practice": [
+    "define + example each sub-idea: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines.",
+    "one worked example for \"Straight line: length of perpendicular from a given point…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
+    "Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
+    "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Straight line: length of perpendicular from a given point…\" with one example.",
+    "compare \"Straight line\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Straight line: length of perpendicular from a given point…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "d = |ax₁+by₁+c|/√(a²+b²)",
+    "h² ≥ ab ⟺ real pair",
+    "l²+m²+n² = 1"
+  ],
+  "numericals": [
+    "Use  d = |ax₁+by₁+c|/√(a²+b²)  — pick reasonable values, solve, and check the units.",
+    "Use  h² ≥ ab ⟺ real pair  — pick reasonable values, solve, and check the units.",
+    "Use  l²+m²+n² = 1  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Straight line",
+    "• Length of perpendicular from a given point to a given line",
+    "• Bisectors of the angles between two straight lines"
+  ],
+  "summary": "Straight line: length of perpendicular from a given point… (Analytic Geometry, Mathematics, class-11-notes) covers Straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Straight line: length of perpendicular from a given point…\"?",
+      "options": [
+        "Straight line",
+        "Length of perpendicular from a given point to a given line",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Straight line",
+      "explanation": "Straight line is listed among the official sub-ideas of Straight line: length of perpendicular from a given point…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Straight line: length of perpendicular from a given point…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Straight line: length of perpendicular from a given point…\"?",
+      "options": [
+        "d = |ax₁+by₁+c|/√(a²+b²)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "d = |ax₁+by₁+c|/√(a²+b²)",
+      "explanation": "d = |ax₁+by₁+c|/√(a²+b²) is the standard form used for this topic."
+    }
+  ]
+}

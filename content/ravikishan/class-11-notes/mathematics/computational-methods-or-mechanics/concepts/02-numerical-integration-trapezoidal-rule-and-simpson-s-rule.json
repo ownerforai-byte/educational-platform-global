@@ -1,0 +1,98 @@
+{
+  "title": "Numerical integration: Trapezoidal rule and Simpson's rule",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "numerical-integration-trapezoidal-rule-and-simpson-s-rule",
+  "topicTitle": "Numerical integration: Trapezoidal rule and Simpson's rule",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Numerical integration: Trapezoidal rule and Simpson's rule — Computational Methods or Mechanics, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: numerical integration, trapezoidal rule, simpson's rule · one worked example · one misconception each.",
+    "**Fact.** ∫xⁿ dx = x^{n+1}/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C. Indefinite = family of antiderivatives.",
+    "**Fact.** Integration by parts: ∫u dv = uv − ∫v du (LIATE choice). Substitution: let t = g(x), adjust dx.",
+    "**Fact.** Definite integral = accumulation; area under y=f over [a,b] when f ≥ 0; area between curves = ∫|f−g| dx.",
+    "**Fact.** Fundamental theorem: d/dx ∫_a^x f(t)dt = f(x); ∫_a^b f = F(b) − F(a).",
+    "**Trapezoidal rule.** one-line definition + one-line exam use.",
+    "**Simpson's rule.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Numerical integration\" as one blob → ✅ split into: numerical integration, trapezoidal rule, simpson's rule.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ ∫xⁿ dx = x^{n+1}/(n+1) + c (n ≠ −1); ∫dx/x = ln|x| + c. indefinite = family of antiderivatives.."
+  ],
+  "bounds": [
+    "Covers only: numerical integration, trapezoidal rule, simpson's rule (within Computational Methods or Mechanics).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ∫xⁿ dx = x^{n+1}/(n+1) + c (n ≠ −1); ∫dx/x = ln|x| + c. indefinite = family of antiderivatives."
+  ],
+  "practice": [
+    "define + example each sub-idea: numerical integration, trapezoidal rule, simpson's rule.",
+    "one worked example for \"Numerical integration: Trapezoidal rule and Simpson's rule\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "∫xⁿ dx = x^{n+1}/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C. Indefinite = family of antiderivatives.",
+    "Integration by parts: ∫u dv = uv − ∫v du (LIATE choice). Substitution: let t = g(x), adjust dx.",
+    "Definite integral = accumulation; area under y=f over [a,b] when f ≥ 0; area between curves = ∫|f−g| dx."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Numerical integration: Trapezoidal rule and Simpson's rule\" with one example.",
+    "compare \"Numerical integration\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Numerical integration: Trapezoidal rule and Simpson's rule\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "∫xⁿ dx = x^{n+1}/(n+1)+C",
+    "∫u dv = uv − ∫v du",
+    "∫_a^b f = F(b) − F(a)"
+  ],
+  "numericals": [
+    "Use  ∫xⁿ dx = x^{n+1}/(n+1)+C  — pick reasonable values, solve, and check the units.",
+    "Use  ∫u dv = uv − ∫v du  — pick reasonable values, solve, and check the units.",
+    "Use  ∫_a^b f = F(b) − F(a)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Numerical integration",
+    "• Trapezoidal rule",
+    "• Simpson's rule"
+  ],
+  "summary": "Numerical integration: Trapezoidal rule and Simpson's rule (Computational Methods or Mechanics, Mathematics, class-11-notes) covers Numerical integration, Trapezoidal rule, Simpson's rule. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Numerical integration: Trapezoidal rule and Simpson's rule\"?",
+      "options": [
+        "Numerical integration",
+        "Trapezoidal rule",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Numerical integration",
+      "explanation": "Numerical integration is listed among the official sub-ideas of Numerical integration: Trapezoidal rule and Simpson's rule; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Numerical integration: Trapezoidal rule and Simpson's rule\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Numerical integration: Trapezoidal rule and Simpson's rule\"?",
+      "options": [
+        "∫xⁿ dx = x^{n+1}/(n+1)+C",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "∫xⁿ dx = x^{n+1}/(n+1)+C",
+      "explanation": "∫xⁿ dx = x^{n+1}/(n+1)+C is the standard form used for this topic."
+    }
+  ]
+}

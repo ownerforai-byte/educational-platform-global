@@ -1,0 +1,64 @@
+{
+  "title": "Electromagnetic Induction",
+  "unitSlug": "electromagnetic-induction",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-electromagnetic-induction",
+    "label": "Electromagnetic Induction",
+    "children": [
+      {
+        "id": "unit-topic-faraday-s-laws-of-electromagnetic-induction",
+        "label": "Faraday's laws of electromagnetic induction",
+        "children": []
+      },
+      {
+        "id": "unit-topic-lenz-s-law-and-conservation-of-energy",
+        "label": "Lenz's law and conservation of energy",
+        "children": [
+          {
+            "id": "unit-electromagnetic-induction-lenz-s-law-and-conservation-of-energy-0",
+            "label": "Conservation of energy"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-self-induction-and-self-inductance",
+        "label": "Self-induction and self-inductance",
+        "children": [
+          {
+            "id": "unit-electromagnetic-induction-self-induction-and-self-inductance-0",
+            "label": "Self-inductance"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-mutual-induction-and-mutual-inductance",
+        "label": "Mutual induction and mutual inductance",
+        "children": [
+          {
+            "id": "unit-electromagnetic-induction-mutual-induction-and-mutual-inductance-0",
+            "label": "Mutual inductance"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-growing-and-decaying-current-in-lr-circuits",
+        "label": "Growing and decaying current in LR circuits",
+        "children": [
+          {
+            "id": "unit-electromagnetic-induction-growing-and-decaying-current-in-lr-circuits-0",
+            "label": "Decaying current in LR circuits"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Electromagnetic Induction\n  - Faraday's laws of electromagnetic induction\n  - Lenz's law and conservation of energy\n  - Self-induction and self-inductance\n  - Mutual induction and mutual inductance\n  - Growing and decaying current in LR circuits"
+  ]
+}

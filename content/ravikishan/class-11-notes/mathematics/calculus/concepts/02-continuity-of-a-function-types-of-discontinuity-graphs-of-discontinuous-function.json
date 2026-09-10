@@ -1,0 +1,95 @@
+{
+  "title": "Continuity of a function, types of discontinuity, graphs …",
+  "unitSlug": "calculus",
+  "topicSlug": "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+  "topicTitle": "Continuity of a function, types of discontinuity, graphs of discontinuous function",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Continuity of a function, types of discontinuity, graphs … — Calculus, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: continuity of a function, types of discontinuity, graphs of discontinuous function · one worked example · one misconception each.",
+    "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
+    "**Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
+    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite.",
+    "**Types of discontinuity.** one-line definition + one-line exam use.",
+    "**Graphs of discontinuous function.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Continuity of a function\" as one blob → ✅ split into: continuity of a function, types of discontinuity, graphs of discontinuous function.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).."
+  ],
+  "bounds": [
+    "Covers only: continuity of a function, types of discontinuity, graphs of discontinuous function (within Calculus).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)."
+  ],
+  "practice": [
+    "define + example each sub-idea: continuity of a function, types of discontinuity, graphs of discontinuous function.",
+    "one worked example for \"Continuity of a function, types of discontinuity, graphs …\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
+    "Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
+    "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Continuity of a function, types of discontinuity, graphs …\" with one example.",
+    "compare \"Continuity of a function\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Continuity of a function, types of discontinuity, graphs …\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "lim sin x/x = 1 (x→0, rad)",
+    "(1+x)^{1/x} → e as x→0"
+  ],
+  "numericals": [
+    "Use  lim sin x/x = 1 (x→0, rad)  — pick reasonable values, solve, and check the units.",
+    "Use  (1+x)^{1/x} → e as x→0  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Continuity of a function",
+    "• Types of discontinuity",
+    "• Graphs of discontinuous function"
+  ],
+  "summary": "Continuity of a function, types of discontinuity, graphs … (Calculus, Mathematics, class-11-notes) covers Continuity of a function, types of discontinuity, graphs of discontinuous function. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Continuity of a function, types of discontinuity, graphs …\"?",
+      "options": [
+        "Continuity of a function",
+        "Types of discontinuity",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Continuity of a function",
+      "explanation": "Continuity of a function is listed among the official sub-ideas of Continuity of a function, types of discontinuity, graphs …; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Continuity of a function, types of discontinuity, graphs …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Continuity of a function, types of discontinuity, graphs …\"?",
+      "options": [
+        "lim sin x/x = 1 (x→0, rad)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "lim sin x/x = 1 (x→0, rad)",
+      "explanation": "lim sin x/x = 1 (x→0, rad) is the standard form used for this topic."
+    }
+  ]
+}

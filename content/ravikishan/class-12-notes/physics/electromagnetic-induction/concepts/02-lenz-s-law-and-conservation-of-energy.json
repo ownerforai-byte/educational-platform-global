@@ -1,0 +1,85 @@
+{
+  "title": "Lenz's law and conservation of energy",
+  "unitSlug": "electromagnetic-induction",
+  "topicSlug": "lenz-s-law-and-conservation-of-energy",
+  "topicTitle": "Lenz's law and conservation of energy",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Lenz's law and conservation of energy — Electromagnetic Induction, Physics (class-12-notes).",
+    "**Tested.** define it · list: lenz's law, conservation of energy · one worked example · one misconception each.",
+    "**Fact.** Work W = F·s·cosθ (J); power P = W/t = F·v.",
+    "**Fact.** Work-energy theorem: net work = ΔKE = ½m(v₂² − v₁²).",
+    "**Fact.** Mechanical energy conserved when only conservative forces act: KE + PE = const; PE(mg) = mgh.",
+    "**Conservation of energy.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Lenz's law\" as one blob → ✅ split into: lenz's law, conservation of energy.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ work w = f·s·cosθ (j); power p = w/t = f·v.."
+  ],
+  "bounds": [
+    "Covers only: lenz's law, conservation of energy (within Electromagnetic Induction).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: work w = f·s·cosθ (j); power p = w/t = f·v."
+  ],
+  "practice": [
+    "define + example each sub-idea: lenz's law, conservation of energy.",
+    "one worked example for \"Lenz's law and conservation of energy\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Work W = F·s·cosθ (J); power P = W/t = F·v.",
+    "Work-energy theorem: net work = ΔKE = ½m(v₂² − v₁²).",
+    "Mechanical energy conserved when only conservative forces act: KE + PE = const; PE(mg) = mgh."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Lenz's law and conservation of energy\" with one example.",
+    "compare \"Lenz's law\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Lenz's law and conservation of energy\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "W = F s cosθ",
+    "KE = ½mv²",
+    "PE = mgh",
+    "P = Fv"
+  ],
+  "numericals": [
+    "Use  W = F s cosθ  — pick reasonable values, solve, and check the units.",
+    "Use  KE = ½mv²  — pick reasonable values, solve, and check the units.",
+    "Use  PE = mgh  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Lenz's law",
+    "• Conservation of energy"
+  ],
+  "summary": "Lenz's law and conservation of energy (Electromagnetic Induction, Physics, class-12-notes) covers Lenz's law, conservation of energy. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Lenz's law and conservation of energy\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Lenz's law and conservation of energy\"?",
+      "options": [
+        "W = F s cosθ",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "W = F s cosθ",
+      "explanation": "W = F s cosθ is the standard form used for this topic."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Modulation — amplitude modulation and frequency modulation",
+  "unitSlug": "communication-systems",
+  "topicSlug": "modulation-amplitude-modulation-and-frequency-modulation",
+  "topicTitle": "Modulation — amplitude modulation and frequency modulation",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Modulation — amplitude modulation and frequency modulation — Communication Systems, Physics (class-12-notes).",
+    "**Tested.** define it · list: modulation — amplitude modulation, frequency modulation · one worked example · one misconception each.",
+    "**Fact.** Diode: p–n junction; forward biased ≈ 0.7 V (Si), reverse conducts only near breakdown. Rectification converts AC to DC.",
+    "**Fact.** Band theory: metals (bands overlap), semiconductors (small Eg, ~1.1 eV Si), insulators (large Eg).",
+    "**Fact.** Bandwidth and modulation: AM (information in amplitude), FM (in frequency) — FM more noise-resistant for audio.",
+    "**Frequency modulation.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Modulation — amplitude modulation\" as one blob → ✅ split into: modulation — amplitude modulation, frequency modulation.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ diode: p–n junction; forward biased ≈ 0.7 v (si), reverse conducts only near breakdown. rectification converts ac to dc.."
+  ],
+  "bounds": [
+    "Covers only: modulation — amplitude modulation, frequency modulation (within Communication Systems).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: diode: p–n junction; forward biased ≈ 0.7 v (si), reverse conducts only near breakdown. rectification converts ac to dc."
+  ],
+  "practice": [
+    "define + example each sub-idea: modulation — amplitude modulation, frequency modulation.",
+    "one worked example for \"Modulation — amplitude modulation and frequency modulation\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Diode: p–n junction; forward biased ≈ 0.7 V (Si), reverse conducts only near breakdown. Rectification converts AC to DC.",
+    "Band theory: metals (bands overlap), semiconductors (small Eg, ~1.1 eV Si), insulators (large Eg).",
+    "Bandwidth and modulation: AM (information in amplitude), FM (in frequency) — FM more noise-resistant for audio."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Modulation — amplitude modulation and frequency modulation\" with one example.",
+    "compare \"Modulation — amplitude modulation\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Modulation — amplitude modulation and frequency modulation\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "η (rectifier) ≤ 40.6% (half-wave) / 81% (full-wave) max AC utilisation"
+  ],
+  "numericals": [
+    "Use  η (rectifier) ≤ 40.6% (half-wave) / 81% (full-wave) max AC utilisation  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Modulation — amplitude modulation",
+    "• Frequency modulation"
+  ],
+  "summary": "Modulation — amplitude modulation and frequency modulation (Communication Systems, Physics, class-12-notes) covers Modulation — amplitude modulation, frequency modulation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Modulation — amplitude modulation and frequency modulation\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Modulation — amplitude modulation and frequency modulation\"?",
+      "options": [
+        "η (rectifier) ≤ 40.6% (half-wave) / 81% (full-wave) max AC utilisation",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "η (rectifier) ≤ 40.6% (half-wave) / 81% (full-wave) max AC utilisation",
+      "explanation": "η (rectifier) ≤ 40.6% (half-wave) / 81% (full-wave) max AC utilisation is the standard form used for this topic."
+    }
+  ]
+}

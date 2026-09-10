@@ -1,0 +1,130 @@
+{
+  "title": "Differentiation",
+  "unitSlug": "differentiation",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-differentiation",
+    "label": "Differentiation",
+    "children": [
+      {
+        "id": "unit-topic-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functio",
+        "label": "Derivatives of algebraic, trigonometric, inverse trigonometric, expon…",
+        "children": [
+          {
+            "id": "unit-differentiation-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functio-0",
+            "label": "Trigonometric"
+          },
+          {
+            "id": "unit-differentiation-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functio-1",
+            "label": "Inverse trigonometric"
+          },
+          {
+            "id": "unit-differentiation-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functio-2",
+            "label": "Exponential"
+          },
+          {
+            "id": "unit-differentiation-derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functio-3",
+            "label": "Logarithmic functions"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-rules-of-differentiation-product-rule-quotient-rule-chain-rule",
+        "label": "Rules of differentiation: product rule, quotient rule, chain rule",
+        "children": [
+          {
+            "id": "unit-differentiation-rules-of-differentiation-product-rule-quotient-rule-chain-rule-0",
+            "label": "Quotient rule"
+          },
+          {
+            "id": "unit-differentiation-rules-of-differentiation-product-rule-quotient-rule-chain-rule-1",
+            "label": "Chain rule"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-derivatives-of-parametric-and-implicit-functions",
+        "label": "Derivatives of parametric and implicit functions",
+        "children": [
+          {
+            "id": "unit-differentiation-derivatives-of-parametric-and-implicit-functions-0",
+            "label": "Implicit functions"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-higher-order-derivatives",
+        "label": "Higher order derivatives",
+        "children": []
+      },
+      {
+        "id": "unit-topic-logarithmic-differentiation",
+        "label": "Logarithmic differentiation",
+        "children": []
+      },
+      {
+        "id": "unit-topic-leibniz-s-theorem-for-nth-derivative",
+        "label": "Leibniz's theorem for nth derivative",
+        "children": []
+      },
+      {
+        "id": "unit-topic-geometric-interpretation-tangent-and-normal",
+        "label": "Geometric interpretation — tangent and normal",
+        "children": [
+          {
+            "id": "unit-differentiation-geometric-interpretation-tangent-and-normal-0",
+            "label": "Normal"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-monotonicity-maxima-and-minima-first-and-second-derivative-tests",
+        "label": "Monotonicity, maxima and minima (first and second derivative tests)",
+        "children": [
+          {
+            "id": "unit-differentiation-monotonicity-maxima-and-minima-first-and-second-derivative-tests-0",
+            "label": "Maxima"
+          },
+          {
+            "id": "unit-differentiation-monotonicity-maxima-and-minima-first-and-second-derivative-tests-1",
+            "label": "Minima"
+          },
+          {
+            "id": "unit-differentiation-monotonicity-maxima-and-minima-first-and-second-derivative-tests-2",
+            "label": "First"
+          },
+          {
+            "id": "unit-differentiation-monotonicity-maxima-and-minima-first-and-second-derivative-tests-3",
+            "label": "Second derivative tests"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-applications-rate-of-change-approximation-error-estimation",
+        "label": "Applications: rate of change, approximation, error estimation",
+        "children": [
+          {
+            "id": "unit-differentiation-applications-rate-of-change-approximation-error-estimation-0",
+            "label": "Rate of change"
+          },
+          {
+            "id": "unit-differentiation-applications-rate-of-change-approximation-error-estimation-1",
+            "label": "Approximation"
+          },
+          {
+            "id": "unit-differentiation-applications-rate-of-change-approximation-error-estimation-2",
+            "label": "Error estimation"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Differentiation\n  - Derivatives of algebraic, trigonometric, inverse trigonometric, expon…\n  - Rules of differentiation: product rule, quotient rule, chain rule\n  - Derivatives of parametric and implicit functions\n  - Higher order derivatives\n  - Logarithmic differentiation\n  - Leibniz's theorem for nth derivative\n  - Geometric interpretation — tangent and normal\n  - Monotonicity, maxima and minima (first and second derivative tests)\n  - Applications: rate of change, approximation, error estimation"
+  ]
+}

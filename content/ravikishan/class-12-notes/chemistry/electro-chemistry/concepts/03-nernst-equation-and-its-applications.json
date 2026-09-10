@@ -1,0 +1,84 @@
+{
+  "title": "Nernst equation and its applications",
+  "unitSlug": "electro-chemistry",
+  "topicSlug": "nernst-equation-and-its-applications",
+  "topicTitle": "Nernst equation and its applications",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Nernst equation and its applications — Electrochemistry, Chemistry (class-12-notes).",
+    "**Tested.** define it · list: nernst equation, its applications · one worked example · one misconception each.",
+    "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
+    "**Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
+    "**Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion.",
+    "**Its applications.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Nernst equation\" as one blob → ✅ split into: nernst equation, its applications.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm.."
+  ],
+  "bounds": [
+    "Covers only: nernst equation, its applications (within Electrochemistry).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
+  ],
+  "practice": [
+    "define + example each sub-idea: nernst equation, its applications.",
+    "one worked example for \"Nernst equation and its applications\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
+    "Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
+    "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Nernst equation and its applications\" with one example.",
+    "compare \"Nernst equation\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Nernst equation and its applications\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "ΔG = −nFE",
+    "E = E° − (0.0592/n)log Q (25°C)",
+    "m = (M/F)Q"
+  ],
+  "numericals": [
+    "Use  ΔG = −nFE  — pick reasonable values, solve, and check the units.",
+    "Use  E = E° − (0.0592/n)log Q (25°C)  — pick reasonable values, solve, and check the units.",
+    "Use  m = (M/F)Q  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Nernst equation",
+    "• Its applications"
+  ],
+  "summary": "Nernst equation and its applications (Electrochemistry, Chemistry, class-12-notes) covers Nernst equation, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Nernst equation and its applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Nernst equation and its applications\"?",
+      "options": [
+        "ΔG = −nFE",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "ΔG = −nFE",
+      "explanation": "ΔG = −nFE is the standard form used for this topic."
+    }
+  ]
+}

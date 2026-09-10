@@ -1,0 +1,83 @@
+{
+  "title": "Electrochemistry",
+  "unitSlug": "electro-chemistry",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-electro-chemistry",
+    "label": "Electrochemistry",
+    "children": [
+      {
+        "id": "unit-topic-oxidation-and-reduction-electrode-reactions",
+        "label": "Oxidation and reduction — electrode reactions",
+        "children": [
+          {
+            "id": "unit-electro-chemistry-oxidation-and-reduction-electrode-reactions-0",
+            "label": "Reduction — electrode reactions"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential",
+        "label": "Electrochemical cells — galvanic cell, cell potential, standard elect…",
+        "children": [
+          {
+            "id": "unit-electro-chemistry-electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential-0",
+            "label": "Cell potential"
+          },
+          {
+            "id": "unit-electro-chemistry-electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential-1",
+            "label": "Standard electrode potential"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-nernst-equation-and-its-applications",
+        "label": "Nernst equation and its applications",
+        "children": [
+          {
+            "id": "unit-electro-chemistry-nernst-equation-and-its-applications-0",
+            "label": "Its applications"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-conductance-of-electrolytic-solutions",
+        "label": "Conductance of electrolytic solutions",
+        "children": []
+      },
+      {
+        "id": "unit-topic-electrolysis-and-faraday-s-laws",
+        "label": "Electrolysis and Faraday's laws",
+        "children": [
+          {
+            "id": "unit-electro-chemistry-electrolysis-and-faraday-s-laws-0",
+            "label": "Faraday's laws"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-batteries-primary-and-secondary-cells",
+        "label": "Batteries — primary and secondary cells",
+        "children": [
+          {
+            "id": "unit-electro-chemistry-batteries-primary-and-secondary-cells-0",
+            "label": "Secondary cells"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-fuel-cells",
+        "label": "Fuel cells",
+        "children": []
+      }
+    ]
+  },
+  "notes": [
+    "- Electrochemistry\n  - Oxidation and reduction — electrode reactions\n  - Electrochemical cells — galvanic cell, cell potential, standard elect…\n  - Nernst equation and its applications\n  - Conductance of electrolytic solutions\n  - Electrolysis and Faraday's laws\n  - Batteries — primary and secondary cells\n  - Fuel cells"
+  ]
+}

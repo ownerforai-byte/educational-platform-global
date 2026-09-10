@@ -19,8 +19,10 @@
     "test": "npm run test -w frontend && npm run test -w backend",
     "test:run": "npm run test:run -w frontend && npm run test:run -w backend",
     "start": "npm run start -w backend",
-    "content:build": "node scripts/build-content.mjs",
-    "blueprint": "node scripts/generate-blueprint.mjs"
+    "content:build": "node scripts/build-ravikishan-manifest.mjs",
+    "content:generate": "npx tsx scripts/generate-content.ts",
+    "content:all": "npx tsx scripts/generate-content.ts && node scripts/build-ravikishan-manifest.mjs",
+    "blueprint": "node scripts/build-ravikishan-manifest.mjs"
   },
   "dependencies": {
     "@heyputer/puter.js": "^2.6.2",
