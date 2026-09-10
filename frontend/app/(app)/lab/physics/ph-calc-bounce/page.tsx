@@ -21,7 +21,7 @@ export default function PhysicsLabPage() {
               </div>
               <div>
                 <h1 className="text-sm font-semibold leading-none">Bouncing Ball</h1>
-                <p className="text-[10px] text-muted-foreground mt-0.5">Unit: Kinematics Â· Elastic collisions and energy loss</p>
+                <p className="text-[10px] text-muted-foreground mt-0.5">Unit: Kinematics · Elastic collisions and energy loss</p>
               </div>
             </div>
           </div>

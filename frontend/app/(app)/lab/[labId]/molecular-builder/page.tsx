@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
-import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
+import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
 
 export default function LabPage() {
   const params = useParams();
@@ -37,11 +37,7 @@ export default function LabPage() {
               </div>
             }
           >
-            <PremiumPlaceholder
-              title="Molecular Builder 3D"
-              icon={<span className="text-amber-500">🔬</span>}
-              description="Build molecules from scratch."
-            />
+            <MolecularBuilder3D />
           </Suspense>
         </CardContent>
       </Card>

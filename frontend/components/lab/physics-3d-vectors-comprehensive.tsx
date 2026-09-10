@@ -490,7 +490,7 @@ const VectorComprehensive3D: React.FC = () => {
               <ul className="space-y-1">
                 <li><strong>Cross Product:</strong> |A×B| = |A||B|sinθ</li>
                 <li><strong>Projection:</strong> A·B̂ = |A|cosθ (scalar)</li>
-                <li><strong>Unit Vector:</strong> Â = A/|A|</li>
+                <li><strong>Unit Vector:</strong>  = A/|A|</li>
                 <li><strong>Negative:</strong> -A = (-Aₓ, -A_y, -A_z)</li>
               </ul>
             </div>
@@ -598,11 +598,11 @@ const VectorProblems: React.FC = () => {
         steps: [
           "Given: A = (3, -4, 12)",
           "|A| = √(3² + (-4)² + 12²) = √(9 + 16 + 144) = √169 = 13",
-          "Â = A/|A| = (3/13, -4/13, 12/13)",
-          "Â = (0.23, -0.31, 0.92) approximately"
+          " = A/|A| = (3/13, -4/13, 12/13)",
+          " = (0.23, -0.31, 0.92) approximately"
         ],
-        result: "Â = (3/13)î - (4/13)ĵ + (12/13)k̂",
-        formula: "Â = A/|A|, |Â| = 1"
+        result: " = (3/13)î - (4/13)ĵ + (12/13)k̂",
+        formula: " = A/|A|, || = 1"
       },
       category: "unit"
     },

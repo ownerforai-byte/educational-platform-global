@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { ArrowLeft, Cuboid } from "lucide-react";
-import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
+import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
 
-export default function PremiumPlaceholderPage() {
+export default function MolecularBuilderPage() {
   return (
     <div className="py-4 md:py-6">
       <div className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
@@ -21,7 +21,7 @@ export default function PremiumPlaceholderPage() {
               </div>
               <div>
                 <h1 className="text-sm font-semibold leading-none">Molecular Builder 3D</h1>
-                <p className="text-[10px] text-muted-foreground mt-0.5">Premium · Build molecules.</p>
+                <p className="text-[10px] text-muted-foreground mt-0.5">Build molecules in 3D.</p>
               </div>
             </div>
           </div>
@@ -43,10 +43,10 @@ export default function PremiumPlaceholderPage() {
               <h2 className="font-semibold text-base">Molecular Builder 3D</h2>
               <p className="text-xs text-muted-foreground truncate">Build molecules.</p>
             </div>
-            <span className={`shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-amber-100 text-amber-700 dark:bg-amber-950/20 dark:text-amber-400 border-amber-200 dark:border-amber-800`}>Premium</span>
+            <span className={`shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-sky-100 text-sky-700 dark:bg-sky-950/20 dark:text-sky-400 border-sky-200 dark:border-sky-800`}>3D</span>
           </div>
           <div className="p-5">
-            <PremiumPlaceholder title="Molecular Builder 3D" description="Build molecules." />
+            <MolecularBuilder3D />
           </div>
         </div>
         <div className="mt-5">

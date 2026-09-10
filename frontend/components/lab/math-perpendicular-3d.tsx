@@ -12,14 +12,14 @@ import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
-   Perpendicular Distance 3D â€” "Distance of perpendicular from
+   Perpendicular Distance 3D — "Distance of perpendicular from
    a point to a line / plane" + the theorems that sit above it
    in the NEB Straight Line / Coordinates in Space chapter.
    Well-labelled axes, points, foot of perpendicular, normal
    arrow, right-angle marker and live distance readout.
    ============================================================ */
 
-/** Small labelled sprite (canvas texture) â€” same technique as axis labels */
+/** Small labelled sprite (canvas texture) — same technique as axis labels */
 function mkSpriteLabel(text: string, colorHex: string, position: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
   canvas.width = 256;

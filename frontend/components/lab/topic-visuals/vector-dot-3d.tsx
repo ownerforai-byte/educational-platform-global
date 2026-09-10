@@ -12,7 +12,7 @@ import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
 /* ============================================================
-   Dot Product 3D â€” NEB Analytic Geometry & Vectors (Maths 11)
+   Dot Product 3D — NEB Analytic Geometry & Vectors (Maths 11)
    Shows vector addition, scalar multiplication, collinearity,
    coplanarity, and linear dependence / independence.
    ============================================================ */
@@ -143,7 +143,7 @@ export function VectorDot3DVisual() {
           const scaled = A.clone().multiplyScalar(k);
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), scaled, 0xf97316, `kA (${k})`);
-          push(mkSprite(`kÂ·A = (${(k * a.x).toFixed(1)}, ${(k * a.y).toFixed(1)}, ${(k * a.z).toFixed(1)})`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.8));
+          push(mkSprite(`k·A = (${(k * a.x).toFixed(1)}, ${(k * a.y).toFixed(1)}, ${(k * a.z).toFixed(1)})`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.8));
         } else if (mode === "collinear") {
           // Two vectors collinear if A = kB
           const bScaled = B.clone().multiplyScalar(2);
@@ -221,15 +221,15 @@ export function VectorDot3DVisual() {
   }, [mode, a, b, c, k, isWebGL]);
 
   if (!isWebGL) {
-    return <WebGLFallback title="Dot Product 3D" description="Interactive 3D vector visualization â€” requires WebGL." />;
+    return <WebGLFallback title="Dot Product 3D" description="Interactive 3D vector visualization — requires WebGL." />;
   }
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex flex-wrap items-center gap-2">
-          <span>Dot Product 3D â€” Addition, Collinearity & Coplanarity</span>
-          <span className="text-xs text-muted-foreground font-normal">Drag to rotate Â· Scroll to zoom</span>
+          <span>Dot Product 3D — Addition, Collinearity & Coplanarity</span>
+          <span className="text-xs text-muted-foreground font-normal">Drag to rotate · Scroll to zoom</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -284,7 +284,7 @@ export function VectorDot3DVisual() {
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">Collinear vectors:</strong> A and B are collinear if A = kB for some scalar k.</p>
-            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product AÂ·(BÃ—C) = 0.</p>
+            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(BÃ—C) = 0.</p>
             <p><strong className="text-foreground">Linear combination:</strong> v = câ‚a + câ‚‚b + câ‚ƒc for scalars câ‚, câ‚‚, câ‚ƒ.</p>
             <p><strong className="text-foreground">Linearly independent:</strong> No non-trivial combination gives the zero vector.</p>
           </div>

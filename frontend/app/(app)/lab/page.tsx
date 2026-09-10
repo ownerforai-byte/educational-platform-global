@@ -28,7 +28,6 @@ import { ChapterAnimation } from "@/components/lab/chapter-animation";
 import { TOPIC_3D_MAP, resolveTopic3DKey } from "@/lib/topic-3d-map";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
-import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
 import { AILabTutor } from "@/components/lab/ai-lab-tutor";
 import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
 import { getSubjectSyllabus } from "@/lib/syllabus";
@@ -167,7 +166,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-3d-pendulum", title: "Pendulum 3D", description: "Pendulum with trail visualization and period calculations.", category: "physics", icon: <span className="text-blue-500">â±ï¸</span>, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-3d-em", title: "EM Wave 3D", description: "Electromagnetic wave propagation with E and B field visualization.", category: "physics", icon: <span className="text-blue-500">ðŸ“»</span>, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-3d-magnetic", title: "Magnetic Field 3D", description: "Bar magnet field lines and iron filings pattern.", category: "physics", icon: <span className="text-blue-500">ðŸ§­</span>, status: "active", component: () => <PhysicsLab /> },
-    { id: "ph-3d-vectors", title: "Vector Addition 3D", description: "Interactive 3D vectors â€” components, dot product, cross product, parallelogram rule.", category: "physics", icon: <span className="text-blue-500">â†—ï¸</span>, status: "new", component: () => <PhysicsLab /> },
+    { id: "ph-3d-vectors", title: "Vector Addition 3D", description: "Interactive 3D vectors — components, dot product, cross product, parallelogram rule.", category: "physics", icon: <span className="text-blue-500">â†—ï¸</span>, status: "new", component: () => <PhysicsLab /> },
     { id: "ph-3d-optics", title: "Optics & Lens 3D", description: "Ray diagrams for convex/concave lenses and mirrors with live lens equation.", category: "physics", icon: <span className="text-blue-500">ðŸ‘ï¸</span>, status: "new", component: () => <PhysicsLab /> },
     { id: "ph-3d-refraction", title: "Refraction 3D", description: "Snell's law visualization with total internal reflection and critical angle.", category: "physics", icon: <span className="text-blue-500">ðŸ”¬</span>, status: "new", component: () => <PhysicsLab /> },
     { id: "ph-3d-classic", title: "Physics 3D Classic", description: "Electric field, double pendulum, and gravitational field visualizers.", category: "physics", icon: <span className="text-blue-500">ðŸ“¦</span>, status: "development", component: () => <PhysicsLab /> },
@@ -218,7 +217,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
 
   biology: [
     // 3D Labs
-    { id: "bio-3d-cell", title: "Cell Structure 3D", description: "Plant and animal cell ultrastructure â€” organelles, membranes, nucleus in 3D.", category: "biology", icon: <Microscope className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyAdvanced3D /> },
+    { id: "bio-3d-cell", title: "Cell Structure 3D", description: "Plant and animal cell ultrastructure — organelles, membranes, nucleus in 3D.", category: "biology", icon: <Microscope className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyAdvanced3D /> },
     { id: "bio-3d-dna", title: "DNA & Genetics 3D", description: "Double-helix DNA structure, replication, transcription, translation.", category: "biology", icon: <Dna className="h-4 w-4 text-green-500" />, status: "active", component: () => <BiologyAdvanced3D /> },
     { id: "bio-3d-advanced", title: "Biology 3D Advanced", description: "Cell ultrastructure, molecular genetics, ecology networks, human systems, evolution trees.", category: "biology", icon: <FlaskConical className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyAdvanced3D /> },
     { id: "bio-3d-ecology", title: "Ecology & Ecosystem 3D", description: "Food chains, food webs, biogeochemical cycles, population dynamics in 3D.", category: "biology", icon: <TreeDeciduous className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyAdvanced3D /> },
@@ -252,7 +251,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "math-th-geo", title: "Coordinate Geometry Theory", description: "Lines, circles, conics in coordinate plane.", category: "mathematics", icon: <Crosshair className="h-4 w-4 text-violet-500" />, status: "active", component: () => <TheoryPanel subject="mathematics" topic="geometry" /> },
     // Calculator Labs
     { id: "math-calc-deriv", title: "Derivative Calculator", description: "Compute derivatives and integrals numerically.", category: "mathematics", icon: <FunctionSquare className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="derivative" /> },
-    { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve axÂ² + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: <Sigma className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="quadratic" /> },
+    { id: "math-calc-quad", title: "Quadratic Solver", description: "Solve ax² + bx + c = 0 and visualize the parabola.", category: "mathematics", icon: <Sigma className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="quadratic" /> },
     { id: "math-calc-stats", title: "Statistics Calculator", description: "Mean, median, mode, standard deviation.", category: "mathematics", icon: <BarChart3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="statistics" /> },
     { id: "math-calc-matrix", title: "Matrix Calculator", description: "Add, multiply, and transpose matrices.", category: "mathematics", icon: <Grid3x3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathInteractive defaultTab="matrix" /> },
     { id: "math-calc-trig", title: "Trigonometry Lab", description: "Unit circle visualization and sine/cosine/tangent graphing.", category: "mathematics", icon: <Target className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathSymbols /> },
@@ -268,7 +267,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "class11-physics", title: "Class 11 Physics 3D Plus", description: "Extended 3D physics visualizations for Class 11.", category: "class11", icon: <span className="text-blue-500">ðŸš€</span>, status: "new", component: () => <PhysicsLab /> },
     { id: "class11-chemistry", title: "Class 11 Chemistry 3D Plus", description: "Extended 3D chemistry visualizations for Class 11.", category: "class11", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "new", component: () => <ChemistryLab /> },
     { id: "class11-math", title: "Class 11 Math 3D Plus", description: "Extended 3D math visualizations for Class 11.", category: "class11", icon: <Binary className="h-4 w-4 text-violet-500" />, status: "new", component: () => <Class11Math3DPlus /> },
-    { id: "class11-biology", title: "Class 11 Biology 3D Plus", description: "Extended 3D biology visualizations â€” cells, genetics, ecology for Class 11.", category: "class11", icon: <Dna className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyLab /> },
+    { id: "class11-biology", title: "Class 11 Biology 3D Plus", description: "Extended 3D biology visualizations — cells, genetics, ecology for Class 11.", category: "class11", icon: <Dna className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyLab /> },
   ],
 };
 
@@ -312,7 +311,7 @@ function LabDashboard({
     const fallbackLab: LabItem = {
       id: `chapter-${topicSlug}`,
       title: topicTitle,
-      description: "Chapter-specific 3D animation â€” drag with the mouse to rotate the camera.",
+      description: "Chapter-specific 3D animation — drag with the mouse to rotate the camera.",
       category: (subjectSlug as LabCategory) || "physics",
       icon: <Cuboid className="h-4 w-4 text-violet-500" />,
       status: "new",
@@ -411,7 +410,7 @@ function LabDashboard({
                 )}
                 {lab.status === "development" && (
                   <div className="mt-2 flex items-center gap-1 text-xs text-amber-600">
-                    <span>âš™ï¸ In Development</span>
+                    <span>In Development</span>
                   </div>
                 )}
               </CardContent>

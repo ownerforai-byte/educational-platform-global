@@ -35,7 +35,9 @@ import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver"
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { AILabTutor } from "@/components/lab/ai-lab-tutor";
 import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
-import { PremiumPlaceholder } from "@/components/lab/premium-placeholder";
+import { WaveOpticsSuite3D } from "@/components/lab/physics-3d-wave-optics";
+import { Vectors3D, Optics3D, Refraction3D } from "@/components/lab/physics-vectors-optics-3d";
+import { OpticsInterferenceLab } from "@/components/lab/optics-interference-lab";
 
 /**
  * Lab registry mapping lab IDs to their component implementations
@@ -129,7 +131,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#3b82f6",
     unit: "Unit: Vectors",
-    component: PhysicsLab,
+    component: Vectors3D,
   },
   {
     id: "ph-3d-optics",
@@ -140,7 +142,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#3b82f6",
     unit: "Unit: Optics",
-    component: PhysicsLab,
+    component: Optics3D,
   },
   {
     id: "ph-3d-refraction",
@@ -151,7 +153,30 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#3b82f6",
     unit: "Unit: Optics",
-    component: PhysicsLab,
+    component: Refraction3D,
+  },
+
+  {
+    id: "ph-3d-wave-suite",
+    title: "Wave Optics Suite 3D",
+    description: "Young's double slit, single-slit diffraction, and Brewster polarisation in interactive 3D.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Optics",
+    component: WaveOpticsSuite3D,
+  },
+  {
+    id: "ph-3d-interference",
+    title: "Double-Slit Interference",
+    description: "Live wavefront interference with fringe spacing readout — adjust wavelength, slit gap and screen distance.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Optics",
+    component: OpticsInterferenceLab,
   },
   {
     id: "ph-3d-classic",

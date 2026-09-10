@@ -39,7 +39,7 @@ function MeaningPanel({ title, meaning, points }: { title: string; meaning: stri
 }
 
 /* ============================================================
-   1. Rutherford Model â€” 3D Planetary Atom
+   1. Rutherford Model — 3D Planetary Atom
    ============================================================ */
 
 function RutherfordModel() {
@@ -72,7 +72,7 @@ function RutherfordModel() {
         dir.position.set(10, 20, 15);
         scene.add(dir);
 
-        // Nucleus (gold â€” Rutherford used gold foil)
+        // Nucleus (gold — Rutherford used gold foil)
         const nucleusGeo = new THREE.SphereGeometry(0.7, 32, 32);
         const nucleusMat = new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 0.4, roughness: 0.3, metalness: 0.4 });
         const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
@@ -199,7 +199,7 @@ function RutherfordModel() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>3D Rutherford Model â€” Planetary Atom</CardTitle>
+        <CardTitle>3D Rutherford Model — Planetary Atom</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div ref={containerRef} className="w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-lg border border-border" aria-label="3D Rutherford model" />
@@ -221,7 +221,7 @@ function RutherfordModel() {
         <p className="text-xs text-muted-foreground">Gold nucleus at center. Electrons orbit in fixed circular shells (planetary model). Red particles = alpha particles scattering off the nucleus.</p>
         <MeaningPanel
           title="Rutherford's Gold Foil Experiment (1911)"
-          meaning="Rutherford fired alpha particles at thin gold foil. Most passed straight through, but a few bounced back â€” proving the atom is mostly empty space with a tiny, dense, positively-charged nucleus."
+          meaning="Rutherford fired alpha particles at thin gold foil. Most passed straight through, but a few bounced back — proving the atom is mostly empty space with a tiny, dense, positively-charged nucleus."
           points={[
             "Most alpha particles passed straight through â†’ atom is mostly empty space",
             "Some deflected at large angles â†’ a concentrated positive charge (nucleus) exists",
@@ -236,7 +236,7 @@ function RutherfordModel() {
 }
 
 /* ============================================================
-   2. Heisenberg Uncertainty Principle â€” 3D Position/Momentum
+   2. Heisenberg Uncertainty Principle — 3D Position/Momentum
    ============================================================ */
 
 function HeisenbergUncertainty() {
@@ -320,7 +320,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           // Scale cloud based on position uncertainty
           cloud.scale.set(positionUncertainty, positionUncertainty, positionUncertainty);
 
-          // Animate wave â€” higher momentum uncertainty = tighter wave
+          // Animate wave — higher momentum uncertainty = tighter wave
           const time = Date.now() * 0.002;
           const freq = 1 / positionUncertainty;
           const positions = waveLine.geometry.attributes.position;
@@ -385,10 +385,10 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           title="Heisenberg Uncertainty Principle (1927)"
           meaning="You cannot simultaneously know both the exact position and exact momentum of a particle. The product of their uncertainties is always â‰¥ h/4Ï€ (Planck's constant)."
           points={[
-            "Î”x Â· Î”p â‰¥ h/4Ï€ â€” the fundamental limit of measurement",
+            "Î”x · Î”p â‰¥ h/4Ï€ — the fundamental limit of measurement",
             "Narrow position (small Î”x) â†’ broad momentum spread (large Î”p)",
             "Wide position (large Î”x) â†’ narrow momentum spread (small Î”p)",
-            "This is not a limitation of instruments â€” it's a fundamental property of nature",
+            "This is not a limitation of instruments — it's a fundamental property of nature",
             "Explains why electrons form probability clouds, not fixed orbits",
           ]}
         />
@@ -398,7 +398,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 }
 
 /* ============================================================
-   3. Hydrogen Spectral Series â€” 3D Energy Levels & Photons
+   3. Hydrogen Spectral Series — 3D Energy Levels & Photons
    ============================================================ */
 
 type SeriesDef = {
@@ -412,7 +412,7 @@ type SeriesDef = {
 
 const SPECTRAL_SERIES: SeriesDef[] = [
   { id: "lyman", name: "Lyman Series", nFinal: 1, region: "Ultraviolet (UV)", color: 0x8b5cf6, description: "Transitions to n=1. Highest energy photons. Ultraviolet region." },
-  { id: "balmer", name: "Balmer Series", nFinal: 2, region: "Visible Light", color: 0x22d3ee, description: "Transitions to n=2. Visible spectrum â€” the famous hydrogen lines (HÎ±, HÎ², HÎ³, HÎ´)." },
+  { id: "balmer", name: "Balmer Series", nFinal: 2, region: "Visible Light", color: 0x22d3ee, description: "Transitions to n=2. Visible spectrum — the famous hydrogen lines (HÎ±, HÎ², HÎ³, HÎ´)." },
   { id: "paschen", name: "Paschen Series", nFinal: 3, region: "Infrared (IR)", color: 0xef4444, description: "Transitions to n=3. Infrared region." },
   { id: "brackett", name: "Brackett Series", nFinal: 4, region: "Far Infrared", color: 0xf97316, description: "Transitions to n=4. Far infrared region." },
   { id: "pfund", name: "Pfund Series", nFinal: 5, region: "Far Infrared", color: 0x22c55e, description: "Transitions to n=5. Far infrared region." },
@@ -573,11 +573,11 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           title="Hydrogen spectral lines & the Rydberg formula"
           meaning="When an electron drops from a higher energy level (nâ‚‚) to a lower one (nâ‚), it emits a photon of specific wavelength. Each series corresponds to a fixed final level nâ‚."
           points={[
-            "1/Î» = R(1/nâ‚Â² âˆ’ 1/nâ‚‚Â²) â€” Rydberg formula (R = 1.097 Ã— 10â· mâ»Â¹)",
+            "1/Î» = R(1/nâ‚² âˆ’ 1/nâ‚‚²) — Rydberg formula (R = 1.097 Ã— 10â· mâ»¹)",
             "Lyman (nâ‚=1): UV â€¢ Balmer (nâ‚=2): visible â€¢ Paschen (nâ‚=3): IR",
             "Brackett (nâ‚=4), Pfund (nâ‚=5), Humphreys (nâ‚=6): far infrared",
             "Balmer series produces the 4 visible lines: HÎ± (red), HÎ² (cyan), HÎ³ (blue), HÎ´ (violet)",
-            "These discrete lines proved energy levels are quantized â€” the birth of quantum theory",
+            "These discrete lines proved energy levels are quantized — the birth of quantum theory",
           ]}
         />
       </CardContent>
@@ -586,7 +586,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 }
 
 /* ============================================================
-   4. Modern Periodic Table â€” 3D Element Blocks
+   4. Modern Periodic Table — 3D Element Blocks
    ============================================================ */
 
 type ElementDef = {
@@ -944,7 +944,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 }
 
 /* ============================================================
-   Export â€” Quantum 3D Lab
+   Export — Quantum 3D Lab
    ============================================================ */
 
 export function Quantum3D() {

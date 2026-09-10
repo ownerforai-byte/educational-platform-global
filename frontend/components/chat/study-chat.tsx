@@ -7,8 +7,6 @@ import {
   Send,
   Loader2,
   Sparkles,
-  ShieldCheck,
-  Coins,
   BookOpen,
   FlaskConical,
   MessageSquareText,
@@ -20,58 +18,65 @@ import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
-// Strip weird chars, normalise whitespace, and render inline markdown-ish links as clickable
+// Renders AI replies as clean plain text. Markdown links ([Title](url)) are
+// harvested BEFORE scrubbing so they survive, then rendered as clickable chips
+// (internal links use next/link, external ones open in a new tab). Everything
+// else is stripped of symbol soup (LaTeX/markdown leftovers) for a pure look.
 function formatAiReply(raw: string): React.ReactNode {
-  const cleaned = raw
-    // eslint-disable-next-line no-useless-escape -- the [ and ] must stay escaped inside the character class (ESLint false positive)
-    .replace(/[*`~#>_\[\](){}|\\^%$@!]{2,}/g, " ")
-    .replace(/[^\w\s.,!?;:'"()\n\r\-–—/@#.]/g, " ")
-    .replace(/\s{2,}/g, " ")
+  const links: Array<{ title: string; url: string }> = [];
+  const guarded = raw.replace(
+    /\[([^\]\n]{1,80})\]\(([^)\s]{1,300})\)/g,
+    (_match: string, title: string, url: string) => {
+      links.push({ title: title.trim(), url: url.trim() });
+      return `RVKLINKREF${links.length - 1}RVKLINKREF`;
+    }
+  );
+
+  // Pure appearance: drop banned symbol chars (keeps unicode letters so
+  // Nepali text and emoji survive), then tidy spacing without killing lines.
+  // eslint-disable-next-line no-useless-escape -- [ and ] must stay escaped in the class
+  const cleaned = guarded
+    .replace(/[<>=+*#$^&\\|{}~`\[\]]/g, " ")
+    .replace(/[^\S\n]{2,}/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
     .trim();
 
-  const lines = cleaned.split(/\n/);
-  const elements: React.ReactNode[] = [];
-  const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+  const segments = cleaned.split(/(RVKLINKREF\d+RVKLINKREF)/g);
+  const chipClass =
+    "inline-flex items-center gap-1 mx-0.5 my-1 px-2 py-1 rounded-lg text-xs font-mono bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors align-baseline";
+  const linkIcon = (
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+  );
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const parts: React.ReactNode[] = [];
-    let lastIndex = 0;
-    let match: RegExpExecArray | null;
-
-    while ((match = linkRegex.exec(line)) !== null) {
-      if (match.index > lastIndex) {
-        parts.push(line.slice(lastIndex, match.index));
+  const parts: React.ReactNode[] = [];
+  segments.forEach((seg, idx) => {
+    const token = /^RVKLINKREF(\d+)RVKLINKREF$/.exec(seg);
+    if (token) {
+      const l = links[Number(token[1])];
+      if (!l) return;
+      if (l.url.startsWith("/")) {
+        parts.push(
+          <Link key={`l${idx}`} href={l.url} className={chipClass}>
+            {linkIcon}
+            {l.title}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a key={`l${idx}`} href={l.url} target="_blank" rel="noopener noreferrer" className={chipClass}>
+            {linkIcon}
+            {l.title}
+          </a>
+        );
       }
-      parts.push(
-        <a
-          key={match.index}
-          href={match[2]}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 mt-1 mb-1 px-2 py-1 rounded-lg text-xs font-mono bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          {match[1]}
-        </a>
-      );
-      lastIndex = match.index + match[0].length;
+      return;
     }
+    if (seg.trim()) parts.push(<span key={`t${idx}`}>{seg}</span>);
+  });
 
-    if (parts.length > 0) {
-      if (lastIndex < line.length) parts.push(line.slice(lastIndex));
-      elements.push(<div key={i} className="leading-relaxed">{parts}</div>);
-    } else if (line.trim()) {
-      elements.push(<div key={i} className="leading-relaxed">{line}</div>);
-    } else {
-      elements.push(<div key={i} className="h-2" />);
-    }
-  }
-
-  return elements;
+  if (!parts.length) return null;
+  return <div className="leading-relaxed whitespace-pre-line">{parts}</div>;
 }
-
-const MAX_GUEST_MESSAGES = 7;
 
 const SUGGESTIONS = [
   { icon: BookOpen, label: "Explain photosynthesis simply", text: "Explain photosynthesis simply, with why plants need it." },
@@ -94,20 +99,12 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [guestCount, setGuestCount] = useState(0);
   const [providers, setProviders] = useState<string[]>([]);
   const [defaultProvider, setDefaultProvider] = useState<string>("");
   const [selectedProvider, setSelectedProvider] = useState<string>("");
   const [showProviderSelector, setShowProviderSelector] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const v = localStorage.getItem("neb_ai_guest_count");
-      setGuestCount(v ? parseInt(v, 10) : 0);
-    }
-  }, []);
 
   useEffect(() => {
     // Load available providers
@@ -120,24 +117,12 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     });
   }, []);
 
-  const isLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-
-  const scrollToBottom = useCallback(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, sending, scrollToBottom]);
-
-  useEffect(() => {
-    if (!compact) inputRef.current?.focus();
-  }, [compact]);
+  const visibleMessages = messages.filter((m) => m.role !== "system");
+  const hasStarted = visibleMessages.length > 1;
 
   const sendMessage = async (textOverride?: string) => {
     const text = (textOverride ?? input).trim();
     if (!text || sending) return;
-    if (isLimited) return;
 
     const userMsg: AIChatMessage = { role: "user", content: text };
     setMessages((prev) => [...prev, userMsg]);
@@ -162,11 +147,6 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       } else {
         const res = await guestChat([...messages, userMsg], selectedProvider);
         setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
-        if (typeof window !== "undefined") {
-          const next = guestCount + 1;
-          setGuestCount(next);
-          localStorage.setItem("neb_ai_guest_count", String(next));
-        }
       }
     } catch (e: any) {
       const errText =
@@ -188,9 +168,6 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     }
   };
 
-  const visibleMessages = messages.filter((m) => m.role !== "system");
-  const hasStarted = visibleMessages.length > 1;
-
   const providerLabel = (name: string) => {
     const labels: Record<string, string> = {
       internal: "Internal",
@@ -209,8 +186,8 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           <Bot className="h-5 w-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-sm font-bold leading-none">Ravikishan Study Assistant</h2>
-          <p className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1.5">
+          <h2 className="text-xs font-bold leading-none">Ravikishan Study Assistant</h2>
+          <p className="text-[10px] text-muted-foreground mt-1 flex items-center gap-1.5">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
             Online · answers + points you to notes, labs &amp; PYQs
           </p>
@@ -254,19 +231,6 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             )}
           </div>
         )}
-        
-        {!isLoggedIn && (
-          <div className="flex items-center gap-2 text-[11px] text-muted-foreground shrink-0">
-            <div className="flex items-center gap-1 bg-muted rounded-lg px-2 py-1">
-              <Coins className="h-3 w-3 text-amber-500" />
-              <span>{MAX_GUEST_MESSAGES - guestCount} free</span>
-            </div>
-            <Link href="/signup" className="flex items-center gap-1 text-primary font-semibold hover:underline">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              Sign in
-            </Link>
-          </div>
-        )}
       </div>
 
       {/* Messages */}
@@ -277,8 +241,8 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
               <div className="mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20 mb-3">
                 <Sparkles className="h-7 w-7 text-white" />
               </div>
-              <h2 className="text-xl font-bold">Learn with your AI study buddy</h2>
-              <p className="text-sm text-muted-foreground mt-1">
+              <h2 className="text-lg font-bold">Learn with your AI study buddy</h2>
+              <p className="text-xs text-muted-foreground mt-1">
                 Ask anything about Class 11 &amp; 12 science — I&apos;ll explain it and send you to the right notes.
               </p>
             </div>
@@ -295,7 +259,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                       <Icon className="h-4 w-4 text-primary" />
                     </div>
-                    <span className="text-sm font-medium group-hover:text-foreground">{s.label}</span>
+                    <span className="text-xs font-medium group-hover:text-foreground">{s.label}</span>
                   </button>
                 );
               })}
@@ -307,7 +271,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           {visibleMessages.map((m, i) => (
             <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs leading-relaxed ${
                   m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
                 }`}
               >
@@ -320,7 +284,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
 
           {sending && (
             <div className="flex justify-start">
-              <div className="bg-muted rounded-2xl px-4 py-2.5 flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="bg-muted rounded-2xl px-4 py-2.5 flex items-center gap-2 text-xs text-muted-foreground">
                 <Loader2 className="h-4 w-4 animate-spin" />
                 {selectedProvider ? `Streaming via ${providerLabel(selectedProvider)}…` : "Thinking…"}
               </div>
@@ -338,36 +302,26 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
 
       {/* Input */}
       <div className="border-t border-border px-4 sm:px-6 py-3 shrink-0">
-        {isLimited ? (
-          <div className="max-w-2xl mx-auto text-center py-2 rounded-xl bg-muted/40 border border-border">
-            <p className="text-sm font-semibold">You&apos;ve used all your free messages</p>
-            <p className="text-xs text-muted-foreground mt-1 mb-2">Sign in to keep chatting with the AI study assistant.</p>
-            <Link href="/signup" className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
-              Get free access <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-        ) : (
-          <div className="max-w-2xl mx-auto flex gap-2">
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Ask about notes, formulas, labs, past questions…"
-              disabled={sending}
-              className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-50"
-            />
-            <button
-              onClick={() => sendMessage()}
-              disabled={!input.trim() || sending}
-              className="h-11 px-4 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 disabled:opacity-50 transition-opacity"
-              aria-label="Send message"
-            >
-              <Send className="h-4 w-4" />
-            </button>
-          </div>
-        )}
+        <div className="max-w-2xl mx-auto flex gap-2">
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Ask about notes, formulas, labs, past questions…"
+            disabled={sending}
+            className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-xs placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-50"
+          />
+          <button
+            onClick={() => sendMessage()}
+            disabled={!input.trim() || sending}
+            className="h-11 px-4 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 disabled:opacity-50 transition-opacity"
+            aria-label="Send message"
+          >
+            <Send className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

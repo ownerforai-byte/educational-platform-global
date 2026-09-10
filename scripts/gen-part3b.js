@@ -1,0 +1,8 @@
+// Part 3b: branches 3-4
+const mindmap = global.mindmap;
+mindmap.notes.push(
+    "**BRANCH 3 — SUBJECT-VERB AGREEMENT:** the verb agrees with the HEAD of the subject. Rules cascade: of-phrases don't count ('the bouquet of roses IS'); each/every/either/neither/everyone = singular; collective nouns usually singular (team IS) but plural when members act individually; pair nouns (scissors, trousers) plural; 'one of + plural noun + singular verb'; subjects joined by and = plural (except single ideas: bread and butter IS); either...or / neither...nor → verb agrees with the NEARER subject; distances/amounts as one unit = singular ('Ten miles IS a long walk').",
+    "**BRANCH 3 sub-node — concord traps:** 'There/Here' sentences hide the subject after the verb; relative pronouns take the number of their antecedent ('one of the boys WHO play'); 'a number of' = plural, 'the number of' = singular; 'news/mathematics/physics' = singular though they look plural.",
+    "**BRANCH 4 — VOICE (active ↔ passive):** only TRANSITIVE verbs passivise. Machine: object → subject + be (in the tense of the original verb) + past participle + by + agent. Present: is/am/are + V3. Past: was/were + V3. Perfect: has/have been + V3. Future: will be + V3. Modals: can/must be + V3. Skip the agent when it's obvious/unimportant ('My bicycle has been stolen' — not 'by someone'). State verbs (have, resemble, suit, lack) have no passive."
+);
+require("./gen-part3c.js");

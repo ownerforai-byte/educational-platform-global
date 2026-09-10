@@ -1,15 +1,32 @@
 {
-  "title": "Periodic Table & Periodicity",
-  "confusion": [
-    "❌ 'Ionisation energy always increases across a period.' ✅ Generally yes, but anomalies exist: Be > B (2s² vs 2p¹) and N > O (half-filled vs paired electrons in 2p).",
-    "❌ 'Electronegativity and electron affinity are the same.' ✅ Electronegativity is a relative tendency to attract bonding electrons; electron affinity is the actual energy change when an electron is added. They correlate but are distinct concepts.",
-    "❌ 'Atomic radius increases across a period.' ✅ Atomic radius DECREASES across a period due to increasing effective nuclear charge pulling electrons closer.',
-    "❌ 'All elements in the same group have the same number of shells.' ✅ Elements in the same group have the same number of VALENCE electrons, but different total shells as you go down the group."
+  "title": "Periodic Table",
+  "subject": "chemistry",
+  "concepts": [
+    {
+      "id": "periodic-law",
+      "title": "Periodic Law & Modern Table"
+    },
+    {
+      "id": "s-block",
+      "title": "s-Block Elements"
+    },
+    {
+      "id": "p-block",
+      "title": "p-Block Elements"
+    },
+    {
+      "id": "d-block",
+      "title": "d-Block & Transition Elements"
+    },
+    {
+      "id": "trends",
+      "title": "Periodic Trends"
+    }
   ],
   "notes": [
-    "**Modern periodic law:** properties of elements are a periodic function of their atomic numbers. The long form of the periodic table has 7 periods and 18 groups.",
-    "**Periodic trends:**\n- **Atomic radius** decreases across a period (increasing nuclear charge) and increases down a group (new shells added).\n- **Ionisation energy** increases across a period, decreases down a group.\n- **Electronegativity** increases across a period, decreases down a group.\n- **Electron affinity** generally increases across a period.\n- **Metallic character** decreases across a period and increases down a group.",
-    "**Anomalies:** Be > B and N > O in ionisation energy due to extra stability of fully/half-filled sub-shells (1s², 2s², 2p³).",
-    "**Diagonal relationship:** elements of period 2 (Li–Mg, Be–Al, B–Si) resemble the diagonal element of period 3 in properties."
+    "Modern periodic law: properties are periodic functions of atomic number.",
+    "s-block: groups 1-2; p-block: groups 13-18; d-block: groups 3-12.",
+    "Trends: atomic radius decreases across a period, increases down a group.",
+    "Ionization energy increases across a period; electronegativity follows the same pattern."
   ]
 }

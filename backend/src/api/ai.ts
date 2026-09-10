@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
 import { requireCredit } from "../middleware/creditCheck";
+import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 
 const router = Router();
 
@@ -25,7 +26,7 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
   try {
     const user = (req as AuthedRequest).user;
     const body = req.body;
-    const messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
+    let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
     const provider: string = typeof body?.provider === "string" ? body.provider : "";
     const stream: boolean = body?.stream === true;
 
@@ -35,6 +36,12 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
     }
 
     const aiService = getService();
+
+    // Professor mode: enforce plain-text style + inject live web results
+    // for the student's latest question (Google CSE, timeout-protected).
+    const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+    const professorContext = await buildProfessorContext(lastUser);
+    messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // Handle streaming
     if (stream) {
