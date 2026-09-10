@@ -39,10 +39,10 @@ export function PhysicsPracticalShowcase() {
           Physics Practical
         </h2>
         <Link
-          href="/lab/physics"
+          href="/practical/physics"
           className="inline-flex items-center gap-1 text-xs font-semibold text-blue-500 hover:text-blue-600 hover:underline"
         >
-          View All Physics Labs <ArrowRight className="h-3 w-3" />
+          View All Physics Practical <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

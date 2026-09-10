@@ -39,10 +39,10 @@ export function BiologyPracticalShowcase() {
           Biology Practical
         </h2>
         <Link
-          href="/lab/biology"
+          href="/practical/biology"
           className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-500 hover:text-emerald-600 hover:underline"
         >
-          View All Biology Labs <ArrowRight className="h-3 w-3" />
+          View All Biology Practical <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
