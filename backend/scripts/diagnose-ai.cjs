@@ -25,22 +25,48 @@ console.log('  NODE_ENV:', process.env.NODE_ENV || 'development');
 // Test Agnes API
 async function testAgnes() {
   console.log('\n[AGNES API TEST]');
-  console.log('  ⚠️ api.agnes.ai is unresolvable/deprecated. AIService automatically falls back to Gemini.');
-  return false;
+  try {
+    const res = await fetch('https://api.agnes.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.AGNES_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'agnes-2.5-flash',
+        messages: [{ role: 'user', content: 'Say hello' }],
+        max_tokens: 50
+      })
+    });
+    
+    if (res.ok) {
+      const data = await res.json();
+      console.log('  ✅ Agnes API working');
+      console.log('  Response:', data.choices?.[0]?.message?.content?.trim()?.substring(0, 100));
+      return true;
+    } else {
+      const text = await res.text();
+      console.log(`  ❌ Agnes API error: ${res.status}`);
+      console.log('  Details:', text.substring(0, 200));
+      return false;
+    }
+  } catch (err) {
+    console.log('  ❌ Agnes API connection failed:', err.message);
+    return false;
+  }
 }
 
 // Test Gemini API
 async function testGemini() {
   console.log('\n[GEMINI API TEST]');
   try {
-    const modelName = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
     const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: 'Say hello in 5 words for NEB Nepal' }] }],
+          contents: [{ parts: [{ text: 'Say hello' }] }],
           generationConfig: { maxOutputTokens: 50 }
         })
       }
@@ -48,7 +74,7 @@ async function testGemini() {
     
     if (res.ok) {
       const data = await res.json();
-      console.log(`  ✅ Gemini API (${modelName}) working`);
+      console.log('  ✅ Gemini API working');
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
       console.log('  Response:', text?.trim()?.substring(0, 100));
       return true;

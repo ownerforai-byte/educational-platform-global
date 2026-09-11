@@ -2,196 +2,76 @@
   "title": "IUPAC Classification and Periodic Trends",
   "unitSlug": "classification-of-elements-and-periodic-table",
   "topicSlug": "iupac-classification-of-elements-and-periodic-trends",
-  "topicTitle": "IUPAC classification of elements; periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters",
+  "topicTitle": "IUPAC classification and periodic trends: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters and anomalies",
   "relevance": 100,
   "notes": [
-    "Modern periodic law: properties function of atomic number.",
-    "s, p, d, f blocks based on orbital type.",
-    "Periodic trends: atomic radius, ionization energy, electronegativity.",
-    "Lanthanides and actinides: inner transition elements."
+    "### 1. Atomic and Ionic Radii",
+    "• **Covalent Radius:** Half the inter-nuclear distance between two identical non-metallic atoms bonded by a single covalent bond ($r_{cov} = d/2$).",
+    "• **Van der Waals Radius:** Half the distance between nuclei of two non-bonded adjacent identical atoms of separate molecules in solid state. Order: $r_{vdw} > r_{metallic} > r_{covalent}$. Noble gases are reported only in Van der Waals radius, which is why noble gas radii appear anomalously large.",
+    "• **Periodic Trend:**",
+    "  - **Across a Period (Left to Right):** Atomic radius decreases steadily due to increasing effective nuclear charge ($Z_{eff} = Z - \\sigma$), which pulls electrons closer without adding new shells.",
+    "  - **Down a Group (Top to Bottom):** Atomic radius increases because new principal energy shells ($n$) are added, which outweighs the increase in nuclear charge.",
+    "• **Ionic Radius Rules:**",
+    "  - **Cation < Parent Atom:** Removal of valence electrons decreases electron-electron repulsion and increases $Z_{eff}$ per electron (e.g., $Na^+ = 102$ pm < $Na = 186$ pm).",
+    "  - **Anion > Parent Atom:** Addition of electrons increases mutual electron repulsion, swelling the electron cloud ($Cl^- = 181$ pm > $Cl = 99$ pm).",
+    "  - **Isoelectronic Series:** Species with identical number of electrons (e.g., $N^{3-}, O^{2-}, F^-, Na^+, Mg^{2+}, Al^{3+}$ each have 10 electrons). As nuclear charge (protons) increases, radius decreases strictly:",
+    "    $$N^{3-} (Z=7) > O^{2-} (Z=8) > F^- (Z=9) > Na^+ (Z=11) > Mg^{2+} (Z=12) > Al^{3+} (Z=13)$$",
+    "",
+    "### 2. Ionization Enthalpy (IE) & Critical Anomalies",
+    "• **Definition:** The minimum energy required to remove the most loosely bound electron from an isolated gaseous atom in its ground state: $X(g) + \\Delta_i H \\rightarrow X^+(g) + e^-$. Units: kJ/mol or eV/atom.",
+    "• **Successive Ionization Enthalpies:** $\\Delta_i H_3 > \\Delta_i H_2 > \\Delta_i H_1$ always, because removing an electron from a positively charged cation experiences much higher electrostatic attraction.",
+    "• **General Trend:** Increases across a period (increasing $Z_{eff}$), decreases down a group (increasing atomic size and shielding).",
+    "• **High-Yield NEB Exam Anomalies:**",
+    "  1. **Beryllium vs Boron:** $IE_1(Be) > IE_1(B)$ ($899$ vs $801$ kJ/mol). Beryllium ($1s^2 2s^2$) has a completely filled 2s subshell with greater penetration power and screening, whereas Boron ($1s^2 2s^2 2p^1$) has a solitary 2p electron in a higher energy subshell that is easier to remove.",
+    "  2. **Nitrogen vs Oxygen:** $IE_1(N) > IE_1(O)$ ($1402$ vs $1314$ kJ/mol). Nitrogen ($1s^2 2s^2 2p_x^1 2p_y^1 2p_z^1$) possesses an extra-stable half-filled 2p subshell with maximum exchange energy. Oxygen ($1s^2 2s^2 2p_x^2 2p_y^1 2p_z^1$) has a paired electron in the $2p_x$ orbital; inter-electronic pairing repulsion makes this fourth electron easier to remove.",
+    "  3. **Magnesium vs Aluminium:** $IE_1(Mg) > IE_1(Al)$ ($737$ vs $577$ kJ/mol) for identical subshell penetration reasons ($3s^2$ vs $3s^2 3p^1$).",
+    "  4. **Phosphorus vs Sulfur:** $IE_1(P) > IE_1(S)$ ($1012$ vs $1000$ kJ/mol) due to half-filled $3p^3$ configuration in phosphorus.",
+    "",
+    "### 3. Electron Gain Enthalpy (Electron Affinity, $\\Delta_{eg}H$)",
+    "• **Definition:** Enthalpy change when an electron is added to an isolated gaseous atom to form a monovalent anion: $X(g) + e^- \\rightarrow X^-(g)$. Usually negative (exothermic) for first electron addition (except noble gases and Be/Mg/N where it is positive/endothermic).",
+    "• **Second Electron Gain Enthalpy:** Always strongly POSITIVE (endothermic, e.g., $O^-(g) + e^- \\rightarrow O^{2-}(g)$, $\\Delta_{eg}H = +780$ kJ/mol) because incoming electron must overcome strong electrostatic repulsion from the negatively charged anion.",
+    "• **Crucial Group 17 Exception (Cl vs F):**",
+    "  - Experimental negative electron gain enthalpy order: **$Cl > F > Br > I$** (Cl = -349 kJ/mol, F = -328 kJ/mol).",
+    "  - **Reason:** Fluorine atom has an exceptionally small and compact 2p subshell ($n=2$). When an extra electron approaches, it suffers high inter-electronic repulsion from the tightly packed valence electrons. Chlorine has a more spacious 3p subshell ($n=3$), which accommodates the extra electron with significantly less repulsion.",
+    "• **Crucial Group 16 Exception (S vs O):** Sulfur has higher electron affinity than Oxygen for the exact same reason ($S = -200$ kJ/mol, $O = -141$ kJ/mol).",
+    "",
+    "### 4. Electronegativity (EN)",
+    "• **Definition:** The qualitative relative tendency of an atom in a chemical compound to attract the shared pair of electrons towards itself.",
+    "• **Pauling Scale (Most common):** Based on excess bond energies. Values: Fluorine (F = 4.0, highest in periodic table), Oxygen (O = 3.5), Nitrogen (N = 3.0), Chlorine (Cl = 3.0), Bromine (Br = 2.8), Carbon (C = 2.5), Hydrogen (H = 2.1), Cesium/Francium (Cs/Fr = 0.7, lowest).",
+    "• **Mulliken-Jaffe Scale:** Average of ionization energy and electron affinity: $EN = (IE + EA) / 2$ (in eV).",
+    "• **Factors Affecting Electronegativity:**",
+    "  - Oxidation State: Higher oxidation state element is more electronegative ($Fe^{3+} > Fe^{2+}, Sn^{4+} > Sn^{2+}$).",
+    "  - Hybridization: Higher % s-character = higher EN ($sp$ [50% s] > $sp^2$ [33.3% s] > $sp^3$ [25% s]). Thus, terminal alkynes are acidic.",
+    "",
+    "### 5. Metallic, Non-Metallic, and Chemical Reactivity Trends",
+    "• **Metallic Character (Electropositivity):** Decreases across a period (electrons harder to lose), increases down a group. Most metallic: Francium/Cesium; Most non-metallic: Fluorine.",
+    "• **Nature of Oxides:**",
+    "  - Basic oxides: Group 1 and 2 metal oxides ($Na_2O, K_2O, CaO, BaO$).",
+    "  - Amphoteric oxides: React with both acids and bases ($Al_2O_3, ZnO, BeO, PbO, SnO_2$).",
+    "    $ZnO + 2HCl \\rightarrow ZnCl_2 + H_2O$",
+    "    $ZnO + 2NaOH + H_2O \\rightarrow Na_2[Zn(OH)_4]$ (Sodium zincate)",
+    "    $Al_2O_3 + 2NaOH + 3H_2O \\rightarrow 2Na[Al(OH)_4]$ (Sodium tetrahydroxoaluminate)",
+    "  - Acidic oxides: Non-metal oxides ($SO_2, SO_3, N_2O_5, P_4O_{10}, Cl_2O_7$) and transition metals in high oxidation states ($CrO_3, Mn_2O_7$).",
+    "  - Neutral oxides: Do not react with acids or bases ($CO, NO, N_2O$).",
+    "• **Diagonal Relationship Causes:** Identical charge-to-radius ratio (polarizing power $\\phi = \\text{charge}/\\text{radius}$). Pairs: Li–Mg, Be–Al, B–Si."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-    "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
+    "❌ Noble gases have zero atomic radius because they do not bond. ✅ Noble gases have non-bonded Van der Waals radii, which are physically larger than covalent radii of neighboring halogens.",
+    "❌ Second electron gain enthalpy of Oxygen ($O^- + e^- \\rightarrow O^{2-}$) is negative because $O^{2-}$ gets stable octet. ✅ It is strongly POSITIVE (+780 kJ/mol) because the incoming electron experiences strong repulsive force from the negative $O^-$ ion.",
+    "❌ Nitrogen has lower electronegativity than Oxygen, so its ionization enthalpy must be lower. ✅ Electronegativity is for bonded atoms; ionization enthalpy is for isolated gaseous atoms. Nitrogen's half-filled $2p^3$ subshell makes its $IE_1$ higher than Oxygen's.",
+    "❌ Fluorine is the most electronegative, so it must have the highest electron gain enthalpy. ✅ Chlorine has the highest negative electron gain enthalpy because Fluorine has compact 2p orbitals causing severe electronic repulsion.",
+    "❌ Amphoteric oxides only react with strong acids. ✅ Amphoteric oxides ($Al_2O_3, ZnO, BeO$) react with BOTH strong acids (forming salts) AND strong bases (forming complex aluminates/zincates)."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice calculating energy of photon from frequency and wavelength."
+    "Arrange the following species in order of increasing ionic radii: $Al^{3+}, Mg^{2+}, Na^+, F^-, O^{2-}, N^{3-}$ and explain your reasoning.",
+    "Why is the first ionization enthalpy of Nitrogen higher than that of Oxygen, whereas the second ionization enthalpy of Oxygen is higher than that of Nitrogen?",
+    "Fluorine has lower negative electron gain enthalpy than Chlorine, but Fluorine is a much stronger oxidizing agent than Chlorine in aqueous solution. Explain why using bond dissociation energy and hydration enthalpy.",
+    "Write balanced chemical equations proving that $ZnO$ and $Al_2O_3$ are amphoteric oxides.",
+    "Give two examples of diagonal relationship in the periodic table and explain why they occur."
   ],
   "universalFacts": [
-    "Universal scientific fact for 03 iupac classification and periodic trends."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Na (Z=11): [Ne]3s¹, s-block",
-    "Fe (Z=26): [Ar]3d⁶4s², d-block"
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 iupac classification and periodic trends)"
-  ],
-  "keyPoints": [
-    "Core point for 03 iupac classification and periodic trends."
-  ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nQuantum numbers fully describe electron state; Aufbau, Pauli, and Hund guide electron configuration.\n\nHeisenberg uncertainty is a fundamental limit, not measurement error.",
-  "specialNotes": [
-    "Specialized insight for 03 iupac classification and periodic trends."
-  ],
-  "importantStatements": [
-    "Key statement for 03 iupac classification and periodic trends."
-  ],
-  "importantNotes": [
-    "Important note regarding 03 iupac classification and periodic trends."
-  ],
-  "examShortTricks": [
-    "Recall the formula for IUPAC Classification and Periodic Trends."
-  ],
-  "examNotes": [
-    "Focus on IUPAC Classification and Periodic Trends problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 iupac classification and periodic trends?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 iupac classification and periodic trends."
-  ],
-  "importantTasks": [
-    "Task for studying 03 iupac classification and periodic trends."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-iupac-classification-and-periodic-trends",
-  "mcqs": [
-    {
-      "question": "Question about 03 iupac classification and periodic trends?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [],
-  "visualization": {
-    "type": "map",
-    "component": "PeriodicTrendsMap",
-    "desc": "Periodic trends visualization"
-  }
+    "Chlorine has the highest negative electron gain enthalpy (-349 kJ/mol) of any element in the periodic table, while Fluorine is the most electronegative (4.0).",
+    "All cations are smaller than their parent atoms; all anions are larger than their parent atoms.",
+    "Second and higher electron gain enthalpies are always endothermic (positive) due to electrostatic repulsion from the existing anion."
+  ]
 }

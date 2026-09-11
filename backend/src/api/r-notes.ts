@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { readFile } from "fs/promises";
-import path from "path";
+import { resolveDataPath } from "../utils/paths";
 
 const router = Router();
 
@@ -21,23 +21,9 @@ type RNoteEntry = {
 };
 
 async function loadManifest(): Promise<RExportManifestItem[]> {
-  const candidates = [
-    path.join(process.cwd(), "content", "r-export", "manifest.json"),
-    path.join(process.cwd(), "..", "content", "r-export", "manifest.json"),
-    path.join(process.cwd(), "public", "data", "r-export", "manifest.json"),
-    path.join(process.cwd(), "..", "public", "data", "r-export", "manifest.json"),
-  ];
-
-  for (const candidate of candidates) {
-    try {
-      const content = await readFile(candidate, "utf-8");
-      return JSON.parse(content) as RExportManifestItem[];
-    } catch {
-      // try next candidate
-    }
-  }
-
-  return [];
+  const manifestPath = resolveDataPath("r-export", "manifest.json");
+  const content = await readFile(manifestPath, "utf-8");
+  return JSON.parse(content) as RExportManifestItem[];
 }
 
 router.get("/", async (req: Request, res: Response) => {
@@ -70,6 +56,22 @@ router.get("/", async (req: Request, res: Response) => {
   } catch (err) {
     console.error("Failed to load r-notes manifest:", err);
     res.status(500).json({ error: "Could not load r-notes" });
+  }
+});
+
+router.get("/:id", async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const manifest = await loadManifest();
+    const item = manifest.find((m) => m.id === id);
+    if (!item) {
+      res.status(404).json({ error: "Note not found" });
+      return;
+    }
+    res.json(item);
+  } catch (err) {
+    console.error("Failed to load note:", err);
+    res.status(500).json({ error: "Could not load note" });
   }
 });
 

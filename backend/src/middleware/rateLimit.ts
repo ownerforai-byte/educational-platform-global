@@ -1,22 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 
-const WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60000);const MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 20);
-const MAX_KEYS = Number(process.env.RATE_LIMIT_MAX_KEYS || 5000);
+const WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60000);
+const MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 20);
+
 const hits = new Map<string, { count: number; reset: number }>();
-let cleanupInterval: NodeJS.Timeout;
-
-function cleanupHits() {
-  const now = Date.now();
-  for (const [key, entry] of hits.entries()) {
-    if (now > entry.reset) hits.delete(key);
-  }
-}
-
-function initializeCleanup() {
-  cleanupInterval = setInterval(cleanupHits, 60000);
-}
-
-initializeCleanup();
 
 function getClientId(req: Request): string {
   const forwarded = req.headers["x-forwarded-for"];
@@ -35,12 +22,6 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
 
   if (!entry || now > entry.reset) {
     hits.set(id, { count: 1, reset: now + WINDOW_MS });
-    
-    if (hits.size > MAX_KEYS) {
-      const oldestKey = hits.keys().next().value;
-      hits.delete(oldestKey);
-    }
-    
     next();
     return;
   }

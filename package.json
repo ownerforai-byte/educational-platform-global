@@ -1,15 +1,15 @@
 {
   "name": "educational-platform-global",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "workspaces": [
     "backend"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=backend",
-    "build": "npm run build --workspace=backend",
-    "start": "npm run start --workspace=backend",
-    "lint": "npm run lint --workspace=backend"
+    "dev": "npm run dev --workspace=educational-platform-backend",
+    "build": "npm run build --workspace=educational-platform-backend",
+    "start": "npm run start --workspace=educational-platform-backend",
+    "lint": "npm run lint --workspace=educational-platform-backend"
   }
 }

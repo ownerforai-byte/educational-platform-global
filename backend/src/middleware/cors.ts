@@ -21,24 +21,22 @@ export function parseAllowedOrigins(raw: string | undefined): string[] {
 export function getAllowedOrigins(): string[] {
   const origins = parseAllowedOrigins(process.env.FRONTEND_URL);
   if (origins.length === 0) {
-    origins.push("http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:3000");
+    origins.push("http://localhost:5173", "http://localhost:3000", "http://0.0.0.0:3000");
   }
   return Array.from(new Set(origins));
 }
 
 /** Check if a given origin is allowed. */
 export function isOriginAllowed(origin: string): boolean {
+  if (!origin) return true;
   const allowed = getAllowedOrigins();
   if (allowed.includes(origin)) return true;
-  // Allow Cloud Run and Vercel preview deployments when FRONTEND_URL is not explicitly set.
   try {
-    const hostname = new URL(origin).hostname;
-    if (
-      hostname.endsWith(".vercel.app") ||
-      hostname.endsWith(".run.app") ||
-      hostname === "localhost" ||
-      hostname === "127.0.0.1"
-    ) {
+    const url = new URL(origin);
+    if (url.hostname === "localhost" || url.hostname === "127.0.0.1" || url.hostname === "0.0.0.0") {
+      return true;
+    }
+    if (url.hostname.endsWith(".vercel.app") || url.hostname.endsWith(".google.com") || url.hostname.endsWith(".googleusercontent.com")) {
       return true;
     }
   } catch {

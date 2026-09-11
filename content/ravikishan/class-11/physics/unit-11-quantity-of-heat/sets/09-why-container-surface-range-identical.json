@@ -1,8 +1,0 @@
-{
-  "title": "Q: Why must the container shape, surface texture AND temperature range be identical in the cooling-rate experiment?",
-  "notes": [
-    "K depends on the nature of the body's surface (material, texture) and its exposed surface area — mismatched containers or surfaces would give each liquid a different K",
-    "The cooling rate dθ/dt also depends on (θ − θ₀), so an unequal temperature range would make the two rates incomparable even if K matched",
-    "If either condition isn't met, the K and (θ − θ₀) terms don't cancel out correctly, and m₁c₁/t₁ = m₂c₂/t₂ would give a wrong value for the unknown specific heat"
-  ]
-}

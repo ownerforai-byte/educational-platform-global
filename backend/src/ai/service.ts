@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "../db/supabase";
+﻿import { supabaseAdmin } from "../db/supabase";
 import { getSearchService, type WebSearchService } from "./search-engine";
 
 export type SupportedProvider = "gemini" | "openrouter" | "internal" | "agnes";
@@ -410,20 +410,12 @@ class InternalProvider implements AIProvider {
 class GeminiProvider implements AIProvider {
   name = "gemini";
   private apiKey: string;
-  private model: string;
+  // gemini-1.5-flash is retired (404 for new projects). "gemini-flash-latest"
+  // is a stable alias that always points to the current flash model.
+  private model = process.env.GEMINI_MODEL || "gemini-flash-latest";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-    const configured = process.env.GEMINI_MODEL || "gemini-3.6-flash";
-    if (
-      configured.includes("2.5-flash") ||
-      configured.includes("1.5-flash") ||
-      configured === "gemini-flash-latest"
-    ) {
-      this.model = "gemini-3.6-flash";
-    } else {
-      this.model = configured;
-    }
   }
 
   private async callGemini(prompt: string, systemInstruction?: string): Promise<string> {
@@ -581,30 +573,92 @@ ${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
 class AgnesProvider implements AIProvider {
   name = "agnes";
   private apiKey: string;
-  private internalFallback: InternalProvider;
-  private geminiFallback?: GeminiProvider;
+  private apiUrl = "https://api.agnes.ai/v1/chat/completions";
+  private model = "agnes-2.5-flash";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-    this.internalFallback = new InternalProvider();
-    if (process.env.GEMINI_API_KEY) {
-      this.geminiFallback = new GeminiProvider(process.env.GEMINI_API_KEY);
+  }
+
+  private async callAgnes(messages: Array<AIChatMessage>): Promise<string> {
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: messages.map((m) => ({ role: m.role, content: m.content })),
+        max_tokens: 2048,
+        temperature: 0.7,
+      }),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Agnes error: ${res.status} ${text}`);
     }
+
+    const data = await res.json();
+    const text = data?.choices?.[0]?.message?.content;
+    if (!text) throw new Error("Empty Agnes response");
+    return text;
   }
 
   async chat(messages: AIChatMessage[]): Promise<string> {
-    // api.agnes.ai domain is unresolvable; fallback to Gemini if available or internal syllabus engine
-    if (this.geminiFallback) {
-      return this.geminiFallback.chat(messages);
-    }
-    return this.internalFallback.chat(messages);
+    if (!this.apiKey) throw new Error("Missing Agnes API key");
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const enriched: AIChatMessage[] = [
+      { role: "system", content: systemPrompt },
+      ...messages.filter((m) => m.role !== "system"),
+    ];
+    return this.callAgnes(enriched);
   }
 
   async search(query: string): Promise<AISearchResponse> {
-    if (this.geminiFallback) {
-      return this.geminiFallback.search(query);
-    }
-    return this.internalFallback.search(query);
+    if (!this.apiKey) throw new Error("Missing Agnes API key");
+    const syllabusContext = await buildSyllabusContext(query);
+
+    // Fetch real-time internet search context
+    const searchService = getSearchService();
+    const searchContext = await searchService.searchAsContext(query);
+
+    const systemContent = `${SEARCH_SYSTEM_PROMPT}
+
+**PLATFORM NAVIGATION:**
+- Notes: /class-11 or /class-12
+- Labs: /lab
+- Subjects: /subjects
+- Loksewa: /loksewa
+- World Knowledge: /world-knowledge
+- R Notes: /r-notes
+- PYQs: https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
+- Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
+
+NEVER hallucinate features. Only reference real platform sections.`;
+
+    const messages: AIChatMessage[] = [
+      {
+        role: "system",
+        content: systemContent,
+      },
+      {
+        role: "user",
+        content: searchContext
+          ? `${searchContext}\n\n${syllabusContext ? syllabusContext + "\n\n" : ""}User query: ${query}`
+          : syllabusContext
+            ? `${syllabusContext}\n\nUser query: ${query}`
+            : query,
+      },
+    ];
+
+    const reply = await this.callAgnes(messages);
+    return {
+      results: [],
+      fallbackMessage: reply,
+      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : [],
+    };
   }
 }
 
@@ -626,16 +680,14 @@ export class AIService {
     if (openrouterKey) this.providers.set("openrouter", new OpenRouterProvider(openrouterKey));
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
 
-    if (geminiKey && (!defaultProvider || defaultProvider === "internal" || defaultProvider === "agnes")) {
-      this.defaultProvider = "gemini";
-    } else if (defaultProvider && this.providers.has(defaultProvider) && defaultProvider !== "agnes") {
+    if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
     } else if (geminiKey) {
       this.defaultProvider = "gemini";
     } else if (openrouterKey) {
       this.defaultProvider = "openrouter";
-    } else {
-      this.defaultProvider = "internal";
+    } else if (agnesKey) {
+      this.defaultProvider = "agnes";
     }
   }
 

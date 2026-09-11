@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "topic": "Periodic Table Classification & Filters",
+  "filters": [
+    {
+      "id": "metals",
+      "name": "Metals",
+      "badge": "Electropositive Elements",
+      "oneLineSummary": "Electropositive elements that lose valence electrons to form cations and basic oxides.",
+      "config": "ns¹⁻², (n-1)d¹⁻¹⁰ ns¹⁻², (n-2)f¹⁻¹⁴",
+      "characteristics": [
+        { "title": "Metallic Bonding", "detail": "Lattice of positive cations submerged in a sea of delocalized valence electrons." },
+        { "title": "Conductivity", "detail": "High electrical and thermal conductivity, metallic luster, malleable and ductile." },
+        { "title": "Chemical Nature", "detail": "Strong reducing agents; oxides/hydroxides are basic or amphoteric (Al₂O₃, ZnO)." }
+      ],
+      "examTraps": [
+        "Mercury (Hg) is the only liquid metal at standard room conditions.",
+        "Alkali metals (Li, Na, K) can be sliced with a knife and float on water.",
+        "Tungsten (W) holds the highest melting point of any metal (3422°C)."
+      ],
+      "keyElements": ["Li", "Na", "K", "Be", "Mg", "Ca", "Al", "Fe", "Cu", "Ag", "Au", "Zn", "W", "Pt", "Hg"]
+    },
+    {
+      "id": "nonmetals",
+      "name": "Non-Metals",
+      "badge": "Electronegative Elements",
+      "oneLineSummary": "Electronegative elements that gain or share electrons to form anions or covalent bonds.",
+      "config": "ns² np¹⁻⁶ (plus H: 1s¹, He: 1s²)",
+      "characteristics": [
+        { "title": "Oxide Character", "detail": "Exclusively acidic (SO₂, CO₂, P₄O₁₀) or neutral (CO, NO, N₂O). Never basic." },
+        { "title": "Diverse States", "detail": "Gases (H₂, N₂, O₂, F₂, Cl₂, noble gases), Liquid (Br₂), Solids (C, P, S, I₂)." },
+        { "title": "Conductivity", "detail": "Poor thermal and electrical conductors due to localized valence electron pairs." }
+      ],
+      "examTraps": [
+        "Bromine (Br₂) is the only liquid non-metal at standard conditions.",
+        "Graphite conducts electricity via delocalized pi-electrons between hexagonal carbon sheets.",
+        "Iodine crystals display a lustrous metallic sheen despite being a halogen."
+      ],
+      "keyElements": ["H", "He", "C", "N", "O", "F", "Ne", "P", "S", "Cl", "Ar", "Br", "I"]
+    },
+    {
+      "id": "metalloids",
+      "name": "Metalloids",
+      "badge": "Semiconductors",
+      "oneLineSummary": "Staircase borderline elements displaying intermediate metallic and non-metallic behaviors.",
+      "config": "ns² np¹⁻⁴",
+      "characteristics": [
+        { "title": "Semiconductivity", "detail": "Electrical conductivity increases with temperature (negative temperature coefficient of resistance)." },
+        { "title": "Doping Substrates", "detail": "Basis for microelectronics and semiconductors (p-type with B; n-type with P/As)." },
+        { "title": "Chemical Dualism", "detail": "Form amphoteric or weakly acidic oxides (e.g. As₂O₃, Sb₂O₃)." }
+      ],
+      "examTraps": [
+        "Primary set: B, Si, Ge, As, Sb, Te, Po.",
+        "Silicon constitutes ~28% of Earth's crust mass, second only to oxygen.",
+        "Unlike metals whose resistance rises with heat, metalloid conductivity improves with temperature."
+      ],
+      "keyElements": ["B", "Si", "Ge", "As", "Sb", "Te", "Po"]
+    },
+    {
+      "id": "coinage_metals",
+      "name": "Coinage Metals",
+      "badge": "Group 11 (IB)",
+      "oneLineSummary": "Group 11 noble transition metals historically used for coinage due to extreme corrosion resistance.",
+      "config": "(n-1)d¹⁰ ns¹",
+      "characteristics": [
+        { "title": "Members", "detail": "Copper (Cu), Silver (Ag), and Gold (Au)." },
+        { "title": "Conductivity Peak", "detail": "Silver has the highest electrical and thermal conductivity of all elements, followed by Copper." },
+        { "title": "Corrosion Resistance", "detail": "Noble metals resistant to air, moisture, and non-oxidizing acids." }
+      ],
+      "examTraps": [
+        "Anomalous electron configuration: Cu is 3d¹⁰ 4s¹ (not 3d⁹ 4s²) for d¹⁰ exchange stability.",
+        "Zn, Cd, Hg are NOT coinage metals.",
+        "Gold dissolves in Aqua Regia (3:1 HCl:HNO₃) to yield soluble [AuCl₄]⁻."
+      ],
+      "keyElements": ["Cu", "Ag", "Au"]
+    },
+    {
+      "id": "volatile_metals",
+      "name": "Volatile Metals",
+      "badge": "Group 12 (IIB)",
+      "oneLineSummary": "Group 12 metals with completely filled d¹⁰ s² subshells, weak metallic bonds, and low boiling points.",
+      "config": "(n-1)d¹⁰ ns²",
+      "characteristics": [
+        { "title": "Members", "detail": "Zinc (Zn), Cadmium (Cd), and Mercury (Hg)." },
+        { "title": "Weak Lattice", "detail": "No unpaired d-electrons participate in metallic bonding, resulting in unusually low melting/boiling points." },
+        { "title": "Pseudo-Transition", "detail": "Often called non-typical transition elements because d-subshell remains full (d¹⁰) in both elemental and +2 ionic states." }
+      ],
+      "examTraps": [
+        "Mercury (Hg) is liquid at room temperature (MP: -38.8°C).",
+        "Zn²⁺, Cd²⁺, Hg²⁺ compounds are strictly diamagnetic and colorless (no d-d transitions).",
+        "Amalgams: Mercury dissolves almost all metals except Iron, Platinum, and Tungsten."
+      ],
+      "keyElements": ["Zn", "Cd", "Hg"]
+    },
+    {
+      "id": "s_block",
+      "name": "s-Block Elements",
+      "badge": "Groups 1 & 2",
+      "oneLineSummary": "Highly reactive, electropositive light metals where differentiating electrons enter the outermost s-orbital.",
+      "config": "ns¹ (Alkali) and ns² (Alkaline Earth)",
+      "characteristics": [
+        { "title": "Low Ionization Enthalpy", "detail": "Largest atomic radii per period; strong reducing agents." },
+        { "title": "Flame Test", "detail": "Impart vivid colors: Li (Crimson), Na (Yellow), K (Lilac), Ca (Brick Red), Ba (Apple Green)." },
+        { "title": "Oxidation States", "detail": "Strictly fixed +1 (Group 1) and +2 (Group 2); never show variable valency." }
+      ],
+      "examTraps": [
+        "Be and Mg do NOT give flame colors because their valence electrons are bound too tightly.",
+        "Diagonal relationships: Li resembles Mg; Be resembles Al in polarizing power.",
+        "Alkali metals in liquid ammonia produce deep blue, conductive, paramagnetic solutions."
+      ],
+      "keyElements": ["H", "He", "Li", "Be", "Na", "Mg", "K", "Ca", "Ba"]
+    },
+    {
+      "id": "p_block",
+      "name": "p-Block Elements",
+      "badge": "Groups 13 to 18",
+      "oneLineSummary": "The most diverse block containing all non-metals, all metalloids, and post-transition metals.",
+      "config": "ns² np¹⁻⁶",
+      "characteristics": [
+        { "title": "Multi-Phase Block", "detail": "Houses metals (Al, Sn, Pb), metalloids (Si, Ge, As), and non-metals (C, O, halogens)." },
+        { "title": "Inert Pair Effect", "detail": "Reluctance of valence s-electrons to bond in heavier elements (Pb²⁺ > Pb⁴⁺, Tl⁺ > Tl³⁺)." },
+        { "title": "Oxidation Variety", "detail": "Oxidation states vary in steps of two units; max state = Group number - 10." }
+      ],
+      "examTraps": [
+        "Inert pair effect makes PbCl₂ stable and PbCl₄ an unstable strong oxidizer.",
+        "Fluorine never exhibits positive oxidation states (highest electronegativity, no d-orbitals in 2nd shell).",
+        "Carbon has exceptional catenation capability due to strong C-C bond energy (348 kJ/mol)."
+      ],
+      "keyElements": ["B", "C", "N", "O", "F", "Al", "Si", "P", "S", "Cl", "Ga", "Ge", "As", "Br", "Sn", "I", "Pb"]
+    },
+    {
+      "id": "d_block",
+      "name": "d-Block Elements",
+      "badge": "Transition Metals (Groups 3-12)",
+      "oneLineSummary": "Transition elements with progressive filling of penultimate (n-1)d orbitals between s and p blocks.",
+      "config": "(n-1)d¹⁻¹⁰ ns¹⁻²",
+      "characteristics": [
+        { "title": "Variable Valency", "detail": "Both (n-1)d and ns electrons participate in bonding (e.g. Mn shows +2 through +7)." },
+        { "title": "Colored Compounds", "detail": "d-d orbital splitting in crystal fields absorbs visible wavelengths (Cu²⁺ blue, Fe³⁺ amber)." },
+        { "title": "Catalytic & Magnetic", "detail": "Unpaired d-electrons impart paramagnetism and high catalytic surface reactivity." }
+      ],
+      "examTraps": [
+        "Sc³⁺ and Ti⁴⁺ compounds are colorless because their d-subshell is empty (d⁰).",
+        "Zn²⁺ is colorless and diamagnetic because its d-subshell is completely full (d¹⁰).",
+        "Osmium and Ruthenium exhibit the highest known oxidation state (+8 in OsO₄ and RuO₄)."
+      ],
+      "keyElements": ["Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ag", "Cd", "W", "Au", "Hg"]
+    },
+    {
+      "id": "f_block",
+      "name": "f-Block Elements",
+      "badge": "Lanthanides & Actinides",
+      "oneLineSummary": "Inner transition series filling anti-penultimate (n-2)f subshells: 4f (Lanthanides) and 5f (Actinides).",
+      "config": "(n-2)f¹⁻¹⁴ (n-1)d⁰⁻¹ ns²",
+      "characteristics": [
+        { "title": "Common Valency", "detail": "+3 is the universal stable oxidation state for lanthanides." },
+        { "title": "Lanthanide Contraction", "detail": "Poor shielding of 4f electrons causes radii to steadily shrink across the row." },
+        { "title": "Actinide Radioactivity", "detail": "All actinides are radioactive; transuranics (Z > 92) are synthetic." }
+      ],
+      "examTraps": [
+        "Due to lanthanide contraction, Zr (4d) and Hf (5d) have identical radii (~160 pm), making separation hard.",
+        "Ce⁴⁺ is a powerful analytical oxidizer returning to Ce³⁺.",
+        "Promethium (Pm) is the only synthetic/radioactive lanthanide."
+      ],
+      "keyElements": ["Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Th", "U"]
+    }
+  ]
+}

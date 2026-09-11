@@ -27,11 +27,16 @@ export function extractToken(req: Request): string | undefined {
 }
 
 export async function loadProfileRole(userId: string): Promise<UserRole | null> {
-  const { data: profile } = await supabaseAdmin
+  const { data: profile, error } = await supabaseAdmin
     .from("profiles")
     .select("role")
     .eq("id", userId)
-    .single();
+    .maybeSingle();
+
+  if (error) {
+    console.warn(`[Auth] Unable to load profile for user ${userId}:`, error.message);
+    return null;
+  }
 
   const rawRole = typeof profile?.role === "string" ? profile.role.toUpperCase() : null;
 
@@ -62,18 +67,23 @@ export async function getUserFromRequest(req: Request): Promise<SessionUser | nu
     const { data, error } = await supabaseAdmin.auth.getUser(token);
 
     if (error || !data.user) {
+      if (error) {
+        console.warn("[Auth] Token validation failed:", error.message);
+      }
       return null;
     }
 
     let role: UserRole | null = null;
     try {
       role = await loadProfileRole(data.user.id);
-    } catch {
+    } catch (roleErr) {
+      console.warn(`[Auth] Failed to resolve role for user ${data.user.id}:`, roleErr);
       role = null;
     }
 
     return buildSessionUser(data.user.id, data.user.email ?? "", role);
-  } catch {
+  } catch (err) {
+    console.error("[Auth] Unexpected error during getUserFromRequest:", err);
     return null;
   }
 }
@@ -93,7 +103,8 @@ export async function requireAuth(
 
     (req as AuthedRequest).user = user;
     next();
-  } catch {
+  } catch (err) {
+    console.error("[Auth] requireAuth caught exception:", err);
     res.status(401).json({ error: "Unauthorized" });
   }
 }

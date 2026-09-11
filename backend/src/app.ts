@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -26,30 +27,23 @@ import storageRoutes from "./api/storage";
 import adminRoutes from "./api/admin";
 import userRoutes from "./api/user";
 import biologyRoutes from "./api/biology";
+import periodicTableRoutes from "./api/periodic-table";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
-import { renderApiDashboardHtml } from "./views/dashboard";
 
 export function createApp(): express.Express {
   const app = express();
 
   app.set("trust proxy", 1);
-  app.use(
-    helmet({
-      contentSecurityPolicy: false,
-      frameguard: false,
-    }),
-  );
+  // Configure helmet to allow iframe embedding in preview
+  app.use(helmet({ frameguard: false, contentSecurityPolicy: false }));
   app.use(
     cors({
-      // Reflect only allow-listed origins (FRONTEND_URL may be comma-separated).
-      // Also allows *.vercel.app previews when FRONTEND_URL is not set.
       origin(origin, cb) {
         if (!origin || isOriginAllowed(origin)) return cb(null, true);
         return cb(null, false);
       },
       credentials: true,
-      // Allow Authorization header so cross-origin Bearer token auth works.
       allowedHeaders: ["Content-Type", "Authorization"],
     }),
   );
@@ -59,34 +53,17 @@ export function createApp(): express.Express {
   app.use(express.json({ limit: "15mb" }));
   app.use(cookieParser());
 
+  // Serve static assets from public directory
+  const publicPaths = [
+    path.join(process.cwd(), "public"),
+    path.join(process.cwd(), "..", "public"),
+  ];
+  for (const p of publicPaths) {
+    app.use(express.static(p));
+  }
+
   app.get("/health", (_req, res) => {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
-  });
-
-  app.get("/", (req, res) => {
-    if (req.accepts("html")) {
-      return res.send(renderApiDashboardHtml());
-    }
-    return res.json({
-      name: "Educational Platform Global",
-      description: "NEB Study Vault API",
-      status: "operational",
-      version: "0.1.0",
-      endpoints: {
-        health: "/health",
-        providers: "/api/ai/providers",
-        classes: "/api/classes/grade-11",
-        subjects: "/api/subjects/physics",
-        chapters: "/api/chapters/vectors",
-        topics: "/api/topics/01-scalars-and-vectors",
-        biology_units: "/api/biology/units",
-        biology_labs: "/api/biology/labs",
-        ravikishan_notes: "/api/ravikishan-notes",
-        r_notes: "/api/r-notes",
-        pyqs: "/api/pyqs",
-        exams: "/api/exams",
-      },
-    });
   });
 
   // Debug: log all registered routes
@@ -124,6 +101,7 @@ export function createApp(): express.Express {
   app.use("/api/admin", adminRoutes);
   app.use("/api/user", userRoutes);
   app.use("/api/biology", biologyRoutes);
+  app.use("/api/periodic-table", periodicTableRoutes);
 
   // Debug after API routes
   console.log("\n=== AFTER API REGISTRATION ===");

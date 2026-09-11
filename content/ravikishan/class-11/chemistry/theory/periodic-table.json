@@ -1,32 +1,63 @@
 {
-  "title": "Periodic Table",
+  "title": "Classification of Elements and Periodic Table (NEB Class 11 & 12 Complete Notes)",
   "subject": "chemistry",
+  "syllabus": "NEB Grade 11 & 12 Chemistry (Physical, Inorganic & Heavy Metals)",
   "concepts": [
     {
-      "id": "periodic-law",
-      "title": "Periodic Law & Modern Table"
+      "id": "modern-periodic-law",
+      "title": "Moseley's Experiment & Modern Periodic Law"
     },
     {
-      "id": "s-block",
-      "title": "s-Block Elements"
+      "id": "block-classification",
+      "title": "s, p, d, f Block Divisions & Valence Configurations"
     },
     {
-      "id": "p-block",
-      "title": "p-Block Elements"
+      "id": "element-types",
+      "title": "Metals, Non-Metals, Metalloids & Semimetals"
     },
     {
-      "id": "d-block",
-      "title": "d-Block & Transition Elements"
+      "id": "coinage-metals",
+      "title": "Coinage Metals (Group 11: Cu, Ag, Au) - Metallurgy & Coordination"
     },
     {
-      "id": "trends",
-      "title": "Periodic Trends"
+      "id": "volatile-metals",
+      "title": "Volatile Metals (Group 12: Zn, Cd, Hg) - Amalgams & Non-Typical d-Block"
+    },
+    {
+      "id": "inner-transition",
+      "title": "f-Block Lanthanides & Actinides - Lanthanide Contraction & Consequences"
+    },
+    {
+      "id": "periodic-trends-anomalies",
+      "title": "Periodic Trends & Critical Exam Anomalies (IE, EA, EN, Radii, Oxides)"
     }
   ],
   "notes": [
-    "Modern periodic law: properties are periodic functions of atomic number.",
-    "s-block: groups 1-2; p-block: groups 13-18; d-block: groups 3-12.",
-    "Trends: atomic radius decreases across a period, increases down a group.",
-    "Ionization energy increases across a period; electronegativity follows the same pattern."
+    "### Modern Periodic Law & Moseley's Discovery:",
+    "Henry Moseley (1913) bombarded metallic targets with cathode rays and discovered that √(frequency) of characteristic K_α X-rays is strictly proportional to atomic number Z: √(ν) = a(Z - b). This proved that nuclear charge (Z), not atomic mass, dictates chemical properties, resolving Mendeleev's inverted pairs (Ar/K, Co/Ni, Te/I) and placing isotopes in a single slot.",
+    "",
+    "### Division into Four Blocks (s, p, d, f):",
+    "• s-Block (Groups 1 & 2): Valence configuration ns¹⁻². Includes highly reactive Alkali metals (Li, Na, K, Rb, Cs, Fr) and Alkaline earth metals (Be, Mg, Ca, Sr, Ba, Ra). Strong reducing agents, low melting points, signature flame coloration (Li crimson, Na yellow, K violet, Ca brick red). Be and Mg give no flame color due to high nuclear attraction. Li and Be show diagonal relationships with Mg and Al respectively.",
+    "• p-Block (Groups 13 to 18): Valence configuration ns² np¹⁻⁶. Houses metals, metalloids, and non-metals. Features the Inert Pair Effect in heavier members (Tl⁺ > Tl³⁺, Pb²⁺ > Pb⁴⁺, Bi³⁺ > Bi⁵⁺) where s-electrons remain non-bonding due to poor shielding by d and f electrons.",
+    "• d-Block (Groups 3 to 12): Valence configuration (n-1)d¹⁻¹⁰ ns¹⁻². True transition metals require partially filled d-orbitals in ground or ionic states. Characteristic properties: variable oxidation states (Mn from +2 to +7), catalytic power (Fe, Ni, V₂O₅, Pt), colored ions via d-d transitions, paramagnetism (spin-only μ = √(n(n+2)) BM), and formation of interstitial compounds and alloys.",
+    "• f-Block (Lanthanides 4f & Actinides 5f): Valence configuration (n-2)f¹⁻¹⁴ (n-1)d⁰⁻¹ ns². Characterized by common +3 oxidation state. Lanthanide Contraction causes progressive radius decrease across Ce to Lu due to poor 4f shielding, making 4d/5d pairs (Zr/Hf, Nb/Ta, Mo/W) virtually identical in size and decreasing basicity from La(OH)₃ to Lu(OH)₃.",
+    "",
+    "### Classification by Character: Metals, Non-Metals, Metalloids:",
+    "• Metals (~78% of elements): Low ionization energy, lustrous, malleable, ductile, form basic oxides (Na₂O, CaO) or amphoteric oxides in moderate oxidation states (Al₂O₃, ZnO).",
+    "• Non-Metals: High electronegativity and electron affinity, form acidic oxides (SO₂, SO₃, N₂O₅, P₄O₁₀) or neutral oxides (CO, NO, N₂O), electrical insulators (except graphite).",
+    "• Metalloids (B, Si, Ge, As, Sb, Te, Po): Borderline semiconductor elements with intermediate electronegativity. Electrical conductivity increases with temperature. Doped to produce p-type (Group 13 dopant) and n-type (Group 15 dopant) semiconductors.",
+    "",
+    "### Coinage Metals (Group 11: Cu, Ag, Au):",
+    "Valence configuration (n-1)d¹⁰ ns¹. Classified as transition metals because common oxidation states have incompletely filled d-subshells (Cu²⁺ is 3d⁹, Au³⁺ is 5d⁸). Very low chemical reactivity (noble character, high positive standard reduction potentials). Unsurpassed electrical and thermal conductivities (Ag > Cu > Au). Dissolve only in oxidizing acids (HNO₃, hot conc. H₂SO₄) or Aqua Regia (for Au). Form crucial analytical reagents: Tollens' reagent [Ag(NH₃)₂]⁺ and Fehling's/Schweizer's reagent [Cu(NH₃)₄]²⁺.",
+    "",
+    "### Volatile Metals (Group 12: Zn, Cd, Hg):",
+    "Valence configuration (n-1)d¹⁰ ns². Non-typical transition metals: both elemental and +2 ions possess completely filled d¹⁰ shells. Lack unpaired electrons in metallic bonding, resulting in low melting/boiling points. Mercury (Hg) is liquid at room temperature (MP -38.8°C) due to relativistic contraction of 6s electrons. Salts are white/colorless and diamagnetic. Readily form amalgams with most metals, except Iron (Fe), Platinum (Pt), and Tungsten (W).",
+    "",
+    "### High-Yield Periodic Trend Anomalies for NEB Exams:",
+    "1. Ionization Enthalpy: Be > B (penetration and full 2s subshell of Be vs solitary 2p electron in B); N > O (half-filled 2p³ stability in N vs inter-electronic pairing repulsion in O's 2p⁴).",
+    "2. Electron Gain Enthalpy: Cl > F (Fluorine's compact 2p subshell suffers high electron-electron repulsion, making Chlorine's larger 3p subshell more welcoming to incoming electrons); S > O for the same reason.",
+    "3. Electronegativity: Fluorine (4.0) > Oxygen (3.5) > Nitrogen (3.0) ≈ Chlorine (3.0) on Pauling Scale.",
+    "4. Isoelectronic Radii: N³⁻ (1.71 Å) > O²⁻ (1.40 Å) > F⁻ (1.36 Å) > Na⁺ (1.02 Å) > Mg²⁺ (0.72 Å) > Al³⁺ (0.54 Å) — higher nuclear charge pulls identical 10 electrons tighter.",
+    "5. Amphoteric Oxides: React with both acids and bases: ZnO + 2HCl → ZnCl₂ + H₂O; ZnO + 2NaOH + H₂O → Na₂[Zn(OH)₄] (Sodium Zincate)."
   ]
 }
