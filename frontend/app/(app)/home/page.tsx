@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { SYLLABUS } from "@/lib/syllabus";
 import { StudyChat } from "@/components/chat/study-chat";
+import { BiologyPracticalShowcase } from "@/components/home/biology-practical-showcase";
+import { PhysicsPracticalShowcase } from "@/components/home/physics-practical-showcase";
+import { ChemistryPracticalShowcase } from "@/components/home/chemistry-practical-showcase";
 import { getTheoremIndex } from "@/lib/theorems";
 import { getDerivationIndex } from "@/lib/derivations";
 import {
@@ -275,6 +278,30 @@ export default async function HomePage() {
             })}
           </div>
         )}
+      </section>
+
+      {/* Practical Labs */}
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight">Practical</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              Hands-on experiments and lab simulations across all science subjects
+            </p>
+          </div>
+          <Link
+            href="/practical"
+            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            View all <ChevronRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="space-y-6">
+          <BiologyPracticalShowcase />
+          <PhysicsPracticalShowcase />
+          <ChemistryPracticalShowcase />
+        </div>
       </section>
 
       {/* Derivations */}
