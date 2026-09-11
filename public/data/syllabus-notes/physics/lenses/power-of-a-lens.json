@@ -1,0 +1,25 @@
+{
+  "title": "Power of a Lens",
+  "notes": [
+    "**Definition:** $P = 1/f$, where $f$ is in metres. Units: dioptres (D).",
+    "**Convex lens:** $f$ is positive, so $P$ is positive. A +2.0 D lens has $f = 0.5\\,\\text{m} = 50\\,\\text{cm}$.",
+    "**Concave lens:** $f$ is negative, so $P$ is negative. A -4.0 D lens has $f = -0.25\\,\\text{m} = -25\\,\\text{cm}$.",
+    "**Combination in contact:** $P_{total} = P_1 + P_2 + P_3 + \\ldots$. Powers add algebraically because thin lenses in contact have a combined focal length given by $1/f_{eq} = 1/f_1 + 1/f_2$.",
+    "**Optician's prescription:** a prescription of +3.0 D means a converging lens of focal length 33.3 cm for hyperopia (farsightedness); -2.5 D means a diverging lens of focal length -40 cm for myopia (nearsightedness)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

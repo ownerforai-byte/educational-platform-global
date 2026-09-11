@@ -1,0 +1,398 @@
+{
+  "title": "Motion in a Vertical Circle",
+  "unitSlug": "circular-motion",
+  "topicSlug": "motion-in-a-vertical-circle",
+  "topicTitle": "Motion in a vertical circle",
+  "relevance": 100,
+  "notes": [
+    "**Motion in a vertical circle:** a body of mass m attached to a string moves in a vertical plane under gravity. Unlike horizontal circular motion, the speed varies with height — fastest at the bottom, slowest at the top.",
+    "**Why speed varies:** gravity does work on the body as it moves vertically. Kinetic energy is converted to gravitational PE on the way up, and back to KE on the way down. Total mechanical energy is conserved (ignoring air resistance).",
+    "**Critical distinction — string vs rigid rod:** a string can only pull (tension ≥ 0), so the body must have enough speed at the top to keep the string taut. A rigid rod can push or pull, so the body can reach the top with zero speed.",
+    "**Minimum speed at the top (string):** at the top, both tension T and weight mg point downward: T + mg = mv²/r. The minimum speed occurs when T → 0: mg = mv_min²/r → v_top(min) = √(gr). Below this, the string goes slack.",
+    "**Minimum speed at the bottom (string):** using energy conservation from bottom to top: ½mv_bottom² = ½mv_top² + mg(2r). With v_top = √(gr): ½v_bottom² = ½(gr) + 2gr → v_bottom² = 5gr → v_bottom(min) = √(5gr). This is the critical NEB result.",
+    "**Minimum speed at the bottom (rod):** since the rod can push, the body can reach the top with v_top = 0. Energy conservation: ½v_bottom² = 0 + 2gr → v_bottom(min) = √(2gr). This is lower than the string case.",
+    "**Tension at the bottom:** T_bottom − mg = mv_bottom²/r → T_bottom = mg + mv_bottom²/r. For the minimum case (string): T_bottom = mg + 5mg = 6mg. The tension at the bottom is 6 times the weight.",
+    "**Tension at the top:** T_top + mg = mv_top²/r → T_top = mv_top²/r − mg. For the minimum case (string): T_top = 0.",
+    "**Worked example:** a 0.5 kg bob on a 1.5 m string. v_top(min) = √(9.8 × 1.5) = 3.83 m/s. v_bottom(min) = √(5 × 9.8 × 1.5) = 8.57 m/s. T_bottom = 6 × 0.5 × 9.8 = 29.4 N.",
+    "**NEB exam focus:** deriving v_top(min) = √(gr) and v_bottom(min) = √(5gr); comparing string vs rod; finding tension at top and bottom; energy conservation between positions.",
+    "**Energy diagram for vertical circle:** plot KE, PE, and total E vs. height. KE is maximum at the bottom (½mv_b²), minimum at the top (½mv_t²). PE is minimum (0) at the bottom and maximum (mg·2r) at the top. Total energy E = ½mv_b² = ½mv_t² + 2mgr — a horizontal line on the diagram.",
+    "**Tension variation around the circle:** at any angle θ from the bottom, T = mv²/r + mg cos θ. At the bottom (θ = 0°): T = mg + mv²/r (maximum). At the top (θ = 180°): T = mv²/r − mg (minimum). The tension difference between bottom and top is always 6mg when the minimum-speed condition holds.",
+    "**Worked example — tension at arbitrary point:** a 0.2 kg bob on a 0.8 m string has speed 6 m/s at the bottom. At the top: ½v_t² = ½ × 36 − 9.8 × 1.6 = 18 − 15.68 = 2.32 → v_t = 2.15 m/s. T_top = 0.2 × 4.62/0.8 − 1.96 = 1.16 − 1.96 = −0.80 N. Since T < 0, the string goes slack before reaching the top. The bob cannot complete the circle.",
+    "**Rod vs. string — key differences:** a rod can support compression, so the bob can reach the top with v = 0. The rod pushes upward with force mg at the top. Minimum bottom speed for a rod: √(2gr). For a string: √(5gr). The factor 5 versus 2 is the critical distinction tested in NEB.",
+    "**Complete-the-circle condition:** for a string, the condition is v_bottom ≥ √(5gr). For a rod, it is v_bottom ≥ √(2gr). If v_bottom is between √(2gr) and √(5gr), the bob completes the circle with a rod but not with a string."
+  ],
+  "confusion": [
+    "❌ 'The speed is constant in vertical circular motion.' ✅ The speed VARIES — gravity speeds up the body on the way down and slows it on the way up. Only energy is conserved.",
+    "❌ 'The minimum speed at the top is zero.' ✅ For a STRING, the minimum speed at the top is √(gr). For a ROD, it is indeed zero.",
+    "❌ 'The tension is the same at all points.' ✅ The tension varies — maximum at the bottom (T = mg + mv²/r) and minimum at the top (T = mv²/r − mg).",
+    "❌ 'The minimum speed at the bottom is √(2gr).' ✅ That is for a ROD. For a STRING, it is √(5gr) — the body must have enough energy to reach the top with speed √(gr).",
+    "❌ 'If the string goes slack, the body stops.' ✅ If the string goes slack, the body becomes a projectile — it follows a parabolic path under gravity.",
+    "❌ 'The centripetal force is constant.' ✅ The centripetal force (mv²/r) varies because v varies. At the bottom, it is maximum; at the top, it is minimum."
+  ],
+  "practice": [
+    "Derive v_top(min) = √(gr) and v_bottom(min) = √(5gr) for a string using energy conservation.",
+    "Solve 5 problems finding the minimum speed at the top and bottom for both string and rod cases.",
+    "Solve 5 problems finding the tension at the top and bottom of the circle.",
+    "Solve 3 problems comparing the string and rod cases (different minimum speeds).",
+    "Solve 2 problems where the string goes slack and the body becomes a projectile."
+  ],
+  "universalFacts": [
+    "The minimum speed at the top of a vertical circle (string) is √(gr) — independent of mass.",
+    "The minimum speed at the bottom (string) is √(5gr) — the factor 5 is a key NEB result.",
+    "A rigid rod allows the body to complete the circle with v_top = 0 — minimum bottom speed is √(2gr).",
+    "The tension at the bottom (minimum case) is 6mg — six times the weight.",
+    "Energy conservation is the key tool — the speed varies with height, but total mechanical energy is constant."
+  ],
+  "animation3D": "circular-motion",
+  "motionGraphics": "circular-motion",
+  "examples": [
+    "String case: A 0.3 kg bob on a 2 m string. v_top(min) = √(9.8 × 2) = 4.43 m/s. v_bottom(min) = √(5 × 9.8 × 2) = 9.90 m/s. T_bottom = 6 × 0.3 × 9.8 = 17.6 N.",
+    "Rod case: Same bob and length. v_top(min) = 0. v_bottom(min) = √(2 × 9.8 × 2) = 6.26 m/s. The rod can push, so the bob can reach the top with zero speed.",
+    "Tension at top: A 0.4 kg bob on a 1.5 m string moving at 5 m/s at the top. T = mv²/r − mg = 0.4 × 25/1.5 − 3.92 = 6.67 − 3.92 = 2.75 N.",
+    "Energy conservation: A bob has speed 8 m/s at the bottom. Speed at the top: ½v_top² = ½ × 64 − 9.8 × 3 = 32 − 29.4 = 2.6 → v_top = 2.28 m/s.",
+    "String goes slack: A bob on a 2 m string has speed 4 m/s at the bottom. At the top: ½v_top² = ½ × 16 − 9.8 × 4 = 8 − 39.2 < 0 → impossible. The bob never reaches the top."
+  ],
+  "practiceQuestions": [
+    "A 0.4 kg bob on a 1.2 m string rotates in a vertical circle. Find the minimum speeds at the top and bottom, and the tension at the bottom.",
+    "A 0.5 kg ball is whirled in a vertical circle of radius 0.8 m. If the tension at the bottom is 3 times the weight, find the speed at the bottom.",
+    "A rigid rod of length 1.5 m has a 0.3 kg bob at its end. What is the minimum speed at the bottom to complete the vertical circle?",
+    "A stone tied to a 2 m string is whirled vertically. If the tension at the top is equal to the weight of the stone, find its speed at the top.",
+    "A 1 kg mass is rotated in a vertical circle of radius 1 m. Find the difference in tension between the bottom and top positions when the speed at the bottom is 10 m/s."
+  ],
+  "formulas": [
+    "Minimum speed at top (string): v_top = √(gr)",
+    "Minimum speed at bottom (string): v_bottom = √(5gr)",
+    "Minimum speed at bottom (rod): v_bottom = √(2gr)",
+    "Tension at bottom: T_bottom = mg + mv²/r",
+    "Tension at top: T_top = mv²/r − mg",
+    "Energy conservation: ½mv_b² = ½mv_t² + mg(2r)"
+  ],
+  "keyPoints": [
+    "The minimum speed at the top (string) is √(gr), independent of mass.",
+    "The minimum speed at the bottom (string) is √(5gr) — the most tested result.",
+    "For a rigid rod, v_bottom(min) = √(2gr) — the rod can push, not just pull.",
+    "Tension at the bottom is always maximum; at the top it is minimum.",
+    "At the minimum case (string), T_bottom = 6mg — six times the weight."
+  ],
+  "summary": "Motion in a vertical circle involves varying speed due to gravity. For a string, the minimum speed at the top is √(gr) and at the bottom is √(5gr). A rigid rod allows v_top = 0, giving v_bottom(min) = √(2gr). Tension is maximum at the bottom (T = mg + mv²/r) and minimum at the top. Energy conservation links speeds at different heights.",
+  "specialNotes": [
+    "The factor √(5gr) for minimum bottom speed (string) is the single most tested result in NEB exams.",
+    "Always distinguish between string (T ≥ 0) and rod (T can be negative / pushing).",
+    "If the string goes slack, the body becomes a projectile — follow parabolic path.",
+    "T_bottom = 6mg only when v_bottom = √(5gr) — this is the minimum case.",
+    "NEB frequently asks: 'Find the minimum speed at the bottom to complete the vertical circle'."
+  ],
+  "importantStatements": [
+    "The minimum speed at the top of a vertical circle (string) is √(gr), independent of mass.",
+    "The minimum speed at the bottom (string) is √(5gr) — derived from energy conservation.",
+    "For a rigid rod, the body can complete the circle with v_top = 0, giving v_bottom(min) = √(2gr).",
+    "Tension is maximum at the bottom and minimum at the top in vertical circular motion.",
+    "At the critical case (string), the tension at the bottom equals 6 times the weight."
+  ],
+  "importantNotes": [
+    "The minimum speed at the bottom (string) is √(5gr), not √(2gr) — that is for a rod.",
+    "Always apply energy conservation between the top and bottom: ½mv_b² = ½mv_t² + mg(2r).",
+    "The tension at the bottom is always T = mg + mv²/r — add the weight to the centripetal force.",
+    "At the top, tension and weight both point down: T + mg = mv²/r.",
+    "If v_top < √(gr) for a string, the string goes slack and circular motion is lost."
+  ],
+  "examShortTricks": [
+    "Top minimum: v_top = √(gr) — just take √(g × r).",
+    "Bottom minimum (string): v_bottom = √(5gr) — remember the factor 5.",
+    "Bottom minimum (rod): v_bottom = �√(2gr) — smaller because rod can push.",
+    "Tension ratio: at minimum, T_bottom = 6mg — six times the weight.",
+    "Energy shortcut: the height difference between top and bottom is always 2r."
+  ],
+  "examNotes": [
+    "√(5gr) is tested almost every year — memorize this result.",
+    "String vs rod distinction is a classic conceptual question.",
+    "Tension at top and bottom problems are standard numerical questions.",
+    "Energy conservation between two points is the primary solution method.",
+    "NEB may ask: 'Why does the string go slack?' — explain with v < √(gr)."
+  ],
+  "mcs": [
+    {
+      "question": "The minimum speed at the top of a vertical circle (string of length L) is:",
+      "options": [
+        "√(gL)",
+        "√(2gL)",
+        "√(5gL)",
+        "√(gL/2)"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The minimum speed at the bottom to complete a vertical circle (string) is:",
+      "options": [
+        "√(2gr)",
+        "√(3gr)",
+        "√(4gr)",
+        "√(5gr)"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "A rigid rod of length L has a bob at its end. The minimum speed at the bottom to complete the circle is:",
+      "options": [
+        "√(2gL)",
+        "√(3gL)",
+        "√(4gL)",
+        "√(5gL)"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the minimum speed case (string), the tension at the bottom is:",
+      "options": [
+        "3mg",
+        "4mg",
+        "5mg",
+        "6mg"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "If the string goes slack at the top of a vertical circle, the bob will:",
+      "options": [
+        "Fall straight down",
+        "Move tangentially",
+        "Follow a parabolic path",
+        "Continue in a circle"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Minimum speed at top (string): v = √(gr) — the string goes slack below this.",
+    "Minimum speed at bottom (string): v = √(5gr) — derived from energy conservation.",
+    "Rigid rod case: v_bottom(min) = √(2gr) — rod can push, so v_top can be zero.",
+    "Tension at bottom: T = mg + mv²/r — weight and centripetal force add.",
+    "Energy conservation: ½mv_b² = ½mv_t² + mg(2r) — links speeds at top and bottom."
+  ],
+  "importantTasks": [
+    "Derive v_top(min) = √(gr) from the force equation at the top.",
+    "Derive v_bottom(min) = √(5gr) using energy conservation.",
+    "Solve 5 problems finding tension at the top and bottom.",
+    "Compare string and rod cases — show different minimum speeds.",
+    "Solve 2 problems where the string goes slack before reaching the top."
+  ],
+  "simulation": {
+    "title": "Vertical Circle Simulator",
+    "description": "Simulate a bob on a string or rod rotating in a vertical plane. Watch how speed, tension, and energy change at every point. Toggle between string and rod modes to see the critical difference. Visualize the energy bar chart in real time.",
+    "parameters": [
+      {
+        "name": "m",
+        "label": "Mass (kg)",
+        "default": 0.5,
+        "min": 0.1,
+        "max": 5
+      },
+      {
+        "name": "r",
+        "label": "String/rod length (m)",
+        "default": 1,
+        "min": 0.2,
+        "max": 5
+      },
+      {
+        "name": "v_bottom",
+        "label": "Initial speed at bottom (m/s)",
+        "default": 8,
+        "min": 0,
+        "max": 20
+      },
+      {
+        "name": "mode",
+        "label": "Constraint type",
+        "default": "string",
+        "options": [
+          "string",
+          "rod"
+        ]
+      }
+    ],
+    "outputs": [
+      "v_top = √(v_bottom² − 4gr) — speed at the top",
+      "T_top = mv_top²/r − mg — tension at the top",
+      "T_bottom = mv_bottom²/r + mg — tension at the bottom",
+      "KE_bottom = ½mv_bottom², PE_bottom = 0",
+      "KE_top = ½mv_top², PE_top = mg·2r",
+      "Condition check: v_bottom ≥ √(5gr) for string, ≥ √(2gr) for rod"
+    ],
+    "visualElements": [
+      "Animated bob rotating in vertical circle",
+      "Tension vector arrow changing length at each position",
+      "Speed indicator with numerical value",
+      "Energy bar chart: KE, PE, Total (real-time updating)",
+      "Threshold indicator: shows minimum required v_bottom for completion",
+      "String slack indicator: turns red when T < 0 (string mode only)"
+    ]
+  },
+  "mindmap": {
+    "centralConcept": "Motion in a Vertical Circle",
+    "branches": [
+      {
+        "topic": "Key Principles",
+        "subtopics": [
+          {
+            "name": "Energy Conservation",
+            "points": [
+              "½mv_b² = ½mv_t² + mg(2r)",
+              "Speed varies with height",
+              "Total mechanical energy constant",
+              "Only conservative force: gravity"
+            ]
+          },
+          {
+            "name": "Force Analysis",
+            "points": [
+              "At top: T + mg = mv²/r",
+              "At bottom: T − mg = mv²/r",
+              "Tension varies with position",
+              "Net radial force = centripetal force"
+            ]
+          },
+          {
+            "name": "String vs. Rod",
+            "points": [
+              "String: T ≥ 0 only (pulls)",
+              "Rod: T can be negative (pushes)",
+              "Different minimum speeds",
+              "Rod allows v_top = 0"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Critical Speeds",
+        "subtopics": [
+          {
+            "name": "String — Top",
+            "points": [
+              "v_top(min) = √(gr)",
+              "T → 0 at minimum",
+              "Below this: string goes slack",
+              "Independent of mass"
+            ]
+          },
+          {
+            "name": "String — Bottom",
+            "points": [
+              "v_bottom(min) = √(5gr)",
+              "Derived from energy conservation",
+              "Most tested NEB result",
+              "Factor 5 is key"
+            ]
+          },
+          {
+            "name": "Rod — Bottom",
+            "points": [
+              "v_bottom(min) = √(2gr)",
+              "Since v_top can be 0",
+              "Lower than string case",
+              "Rod provides support at top"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Tension Formulae",
+        "subtopics": [
+          {
+            "name": "At the bottom",
+            "points": [
+              "T = mg + mv²/r",
+              "Maximum tension in the motion",
+              "At min speed: T = 6mg",
+              "Weight and centripetal force add"
+            ]
+          },
+          {
+            "name": "At the top",
+            "points": [
+              "T = mv²/r − mg",
+              "Minimum tension in the motion",
+              "At min speed: T = 0",
+              "Weight opposes centripetal force"
+            ]
+          },
+          {
+            "name": "At angle θ",
+            "points": [
+              "T = mv²/r + mg cos θ",
+              "θ measured from bottom",
+              "General formula for any position",
+              "Reduces to top/bottom cases"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Common Mistakes",
+        "subtopics": [
+          {
+            "name": "Confusing string/rod",
+            "points": [
+              "String: v_top(min) = √(gr)",
+              "Rod: v_top(min) = 0",
+              "Different minimum bottom speeds",
+              "Always check the constraint type"
+            ]
+          },
+          {
+            "name": "Wrong tension direction",
+            "points": [
+              "At top: both T and mg point down",
+              "At bottom: T up, mg down",
+              "Sign convention matters",
+              "Draw FBD at each point"
+            ]
+          },
+          {
+            "name": "Energy errors",
+            "points": [
+              "Height difference = 2r, not r",
+              "PE_top − PE_bottom = mg(2r)",
+              "Don't forget the factor 2",
+              "Check units carefully"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "NEB Exam Focus",
+        "subtopics": [
+          {
+            "name": "Derivations",
+            "points": [
+              "Derive v_top(min) = √(gr)",
+              "Derive v_bottom(min) = √(5gr)",
+              "Show T_bottom = 6mg at min speed",
+              "Energy conservation steps"
+            ]
+          },
+          {
+            "name": "Numerical Problems",
+            "points": [
+              "Find tension at top and bottom",
+              "Find minimum speeds",
+              "Compare string vs. rod",
+              "Check if bob completes circle"
+            ]
+          },
+          {
+            "name": "Conceptual Questions",
+            "points": [
+              "Why does string go slack?",
+              "Difference between string and rod",
+              "Where is tension maximum/minimum?",
+              "Energy transformation in the motion"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "duplicateType": 2,
+  "tabGroup": "vertical-circle"
+}

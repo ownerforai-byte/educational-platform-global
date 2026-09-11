@@ -1,0 +1,100 @@
+# =============================================================================
+# Educational Platform — main site (Nginx reverse proxy)
+# =============================================================================
+#  Route map:
+#   /            , /_next/static/*    ->  Next.js         127.0.0.1:3000
+#   /api/*                                    ->  Express API    127.0.0.1:3001
+#   /health                                   ->  Express API    127.0.0.1:3001
+#
+#  Install:  /etc/nginx/sites-available/educational-platform
+#  Enable:   ln -s /etc/nginx/sites-available/educational-platform \
+#                          /etc/nginx/sites-enabled/educational-platform
+#
+#  TODO: Replace every  your-domain.com  (and www variant) with
+#  the real domain.  For HTTPS via certbot: run
+#     sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+#  and certbot writes the real cert paths into the 443 block below.
+
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# HTTP :80  — ACME challenge + permanent redirect to HTTPS
+# -----------------------------------------------------------------------------
+server {
+    listen 80;
+    listen [::]:80;
+    server_name your-domain.com www.your-domain.com;
+
+    # Let certbot/letsencrypt verify the domain (webroot method)
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+# -----------------------------------------------------------------------------
+# HTTPS :443  — the actual application
+# -----------------------------------------------------------------------------
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name your-domain.com www.your-domain.com;
+
+    # ---- TLS (certbot --nginx replaces these paths automatically) ----
+    ssl_certificate     /etc/letsencrypt/live/your-domain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
+
+    # ---- TLS hardening ----
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+    ssl_session_cache   shared:SSL:10m;
+    ssl_session_timeout  1d;
+    ssl_session_tickets off;
+
+    # ---- HSTS (HTTPS only — safe here; we are a 443 server block) ----
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+    # ---- shared snippets ----
+    include /etc/nginx/snippets/proxy-params.conf;
+    include /etc/nginx/snippets/security-headers.conf;
+
+    # ---- access/error logging for this site ----
+    access_log /var/log/nginx/educational-platform.access.log main;
+    error_log  /var/log/nginx/educational-platform.error.log warn;
+
+    # ---- Next.js static assets (hashed filenames — cache long, immutable) ----
+    location /_next/static/ {
+        proxy_pass http://127.0.0.1:3000;
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        include /etc/nginx/snippets/security-headers.conf;
+        access_log off;
+    }
+
+    # ---- Next.js image optimizer (Next sets its own cache headers) ----
+    location /_next/image {
+        proxy_pass http://127.0.0.1:3000;
+    }
+
+    # ---- Express API (routes are mounted under /api/* — pass through untouched) ----
+    location /api/ {
+        proxy_pass http://127.0.0.1:3001;
+    }
+
+    # ---- Backend health check (no auth, becomes :3001 directly) ----
+    location = /health {
+        proxy_pass http://127.0.0.1:3001;
+        access_log off;
+    }
+
+    # ---- Everything else -> Next.js ----
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+
+        # Don't let Next cache HTML responses at the proxy layer
+        add_header Cache-Control "no-store" always;
+        include /etc/nginx/snippets/security-headers.conf;
+    }
+}

@@ -1,0 +1,175 @@
+{
+  "title": "Variation of g Due to Altitude and Depth",
+  "unitSlug": "gravitation",
+  "topicSlug": "variation-of-g-due-to-altitude-and-depth",
+  "topicTitle": "Variation in value of 'g' due to altitude and depth",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "variation-g-altitude-depth",
+  "notes": [
+    "**g above the surface (altitude):** at height h above Earth's surface, g' = GM/(R+h)² = g(R/(R+h))². As h increases, g decreases. For small h (h ≪ R), a binomial expansion gives g' ≈ g(1 − 2h/R) — a useful approximation.",
+    "**g below the surface (depth):** at depth d, only the mass inside the concentric sphere of radius (R−d) contributes: g' = g(1 − d/R) — gravity DECREASES linearly with depth. At the centre (d = R), g' = 0.",
+    "**Why they differ:** above the surface, whole-earth mass acts from a larger distance (1/r² law); below the surface, the shell above the point exerts zero net force (shell theorem) and only the inner sphere matters, whose mass scales as (R−d)³ while distance scales as (R−d) — giving linear decrease.",
+    "**Worked example — altitude:** at h = R (one Earth radius up), g' = g(R/2R)² = g/4 = 2.45 m/s². At h = 100 km, using the small-h formula, the fractional decrease is 2h/R = 2×100/6400 = 0.031, so g' ≈ 9.5 m/s².",
+    "**Worked example — depth:** at d = R/2 (3200 km deep), g' = g(1 − 1/2) = g/2 = 4.9 m/s². At d = R (centre) → g' = 0 (weightlessness, though pressure is immense).",
+    "**Graphs (NEB favourite):** g vs r rises linearly from 0 at the centre to g at the surface, then falls as 1/r² beyond the surface. The maximum value of g on Earth is at the surface.",
+    "**Other causes of variation:** (1) rotation of Earth: g reduced by ω²R cos²λ (λ = latitude), maximum at the equator; (2) shape: Earth is an oblate spheroid — g is larger at the poles (≈9.832) than the equator (≈9.78); (3) local density anomalies (mountains, mineral deposits) cause tiny local changes used in geophysics.",
+    "**Altitude formula for satellites:** for an orbit at height h, effective r = R + h: v = √(GM/(R+h)) and the orbital g is g' = GM/(R+h)² — the same g formula used at that radius."
+  ],
+  "confusion": [
+    "❌ 'g increases with altitude.' ✅ Above the surface g DEcreases as 1/(R+h)²; below the surface it also decreases (linearly). g is max at the surface.",
+    "❌ 'From height h, g falls by h/R.' ✅ The small-h approximation is 2h/R (from the square), not h/R. At h = 100 km, that is ≈ 3%.",
+    "❌ 'Deep inside Earth, g keeps growing.' ✅ It decreases linearly: g' = g(1 − d/R), zero at the centre. The shell above you pulls equally in all directions (zero net).",
+    "❌ 'g is the same at poles and equator.' ✅ Rotation and the oblate shape make g slightly larger at the poles (~0.5% difference).",
+    "❌ 'At altitude 6400 km, g is half of surface.' ✅ At h = R, g' = g/4 — the height doubles the distance, so the square halves twice.",
+    "❌ 'Weightlessness in orbit means no gravity.' ✅ Astronauts at 400 km still feel ~88% of surface gravity — they float because they are in free fall around Earth."
+  ],
+  "practice": [
+    "Find g at a height of 1000 km (R = 6400 km, g = 9.8).",
+    "Find g at a depth of 1000 km.",
+    "At what height is g reduced by 1%? (Use the small-h formula.)",
+    "Compare g at the equator and pole given Earth's rotation speed at equator ≈ 465 m/s.",
+    "Show that g at h = R is g/4.",
+    "Sketch the g–r graph from the centre of Earth to 3R and label all key values."
+  ],
+  "universalFacts": [
+    "Mines and boreholes show g decreasing with depth, exactly as the shell theorem predicts — gravity direction reverses inside Earth for local asymmetry reasons.",
+    "GOCE and GRACE satellites mapped tiny variations in Earth's g (from density differences) to model the interior and global water distribution.",
+    "At Earth's centre, g = 0 but pressure is ~3.6 million atmospheres — so you'd be crushed, not weightless in the usual sense.",
+    "The international gravity formula accounts for latitude: g(λ) ≈ 9.7803(1 + 0.0053 sin²λ) m/s².",
+    "Astronauts in low Earth orbit experience ~0.9 g of gravity yet float — free fall, not absence of gravity, explains weightlessness."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation",
+  "examples": [
+    "h = R: g' = g/4 = 2.45 m/s².",
+    "h = 200 km: g' ≈ g(1 − 2×200/6400) = 9.8 × 0.9375 = 9.2 m/s² (ISS altitude ≈ 400 km → ≈8.7 m/s²).",
+    "d = R/2: g' = g/2 = 4.9 m/s².",
+    "d = R: g' = 0.",
+    "Equator vs pole: g_eq ≈ 9.78, g_pole ≈ 9.83 — difference ≈ 0.5%."
+  ],
+  "practiceQuestions": [
+    "Find the value of g at a height of 3200 km above Earth's surface (g = 9.8, R = 6400 km).",
+    "Find g at a depth of 3200 km below Earth's surface.",
+    "At what height will g reduce to 81% of its surface value?",
+    "At what depth will g reduce to 50% of its surface value?",
+    "Compute the percentage change in g at the top of Mount Everest (h ≈ 8.8 km).",
+    "Explain with a diagram how g varies from the centre of Earth to a distance far beyond the surface."
+  ],
+  "formulas": [
+    "g at altitude h: g' = g(R/(R+h))²",
+    "Small-h approximation: g' ≈ g(1 − 2h/R)",
+    "g at depth d: g' = g(1 − d/R)",
+    "g at latitude λ due to rotation: g' = g − ω²R cos²λ",
+    "g inside a uniform sphere: g' = g·r/R (r ≤ R)"
+  ],
+  "keyPoints": [
+    "Above the surface: g' = g(R/(R+h))² — decreases as 1/(R+h)².",
+    "Below the surface: g' = g(1 − d/R) — decreases linearly to zero at the centre.",
+    "g is maximum at the surface.",
+    "Rotation and oblateness also reduce g at the equator.",
+    "The g–r graph: linear rise inside, 1/r² fall outside."
+  ],
+  "summary": "g varies with altitude (g' = g(R/(R+h))²), depth (g' = g(1 − d/R)), and latitude. Above the surface g falls as the inverse square of distance; below the surface the shell theorem makes it fall linearly to zero at the centre. The g–r graph is a straight rise then a 1/r² fall.",
+  "specialNotes": [
+    "Small-height formula: g' ≈ g(1 − 2h/R) — remember the factor 2.",
+    "Shell theorem is the tool for points inside Earth — shells outside contribute zero net force.",
+    "g at poles is slightly greater than at the equator due to rotation and oblateness.",
+    "NEB asks to derive both formulas and to sketch the g–r graph.",
+    "Satellite problems use r = R + h in g = GM/r² too."
+  ],
+  "importantStatements": [
+    "At altitude h, g' = g(R/(R+h))².",
+    "At depth d, g' = g(1 − d/R).",
+    "g is maximum at Earth's surface.",
+    "Inside a uniform sphere, g varies linearly with distance from the centre.",
+    "Rotation and non-spherical shape cause additional small variations of g with latitude."
+  ],
+  "importantNotes": [
+    "At altitude: g' = g(R/(R+h))²; at depth: g' = g(1 − d/R).",
+    "g is maximum at the surface and falls on both sides (linear inside, 1/r² outside).",
+    "The small-height approximation g' ≈ g(1 − 2h/R) has a factor of 2.",
+    "Shell theorem: shells outside the point contribute zero net field.",
+    "Rotation reduces g at the equator: g' = g − ω²R cos²λ."
+  ],
+  "examShortTricks": [
+    "h = R → g/4; d = R/2 → g/2 — memorise these anchor values.",
+    "Percentage change at small h ≈ (2h/R)×100%.",
+    "For depth use linear term only — no square.",
+    "Inside the sphere r ≤ R: g' = g·r/R (direct proportion).",
+    "Weight at centre of Earth: zero apparent weight (g = 0)."
+  ],
+  "examNotes": [
+    "Deriving g' = g(1 − 2h/R) from the binomial expansion is frequently asked.",
+    "Sketch-the-graph questions (inside + outside) appear in exams.",
+    "Numericals mixing altitude and depth are standard.",
+    "The rotation term g' = g − ω²R cos²λ is a common short answer.",
+    "Comparing g at poles vs equator is a favourite conceptual MCQ."
+  ],
+  "mcs": [
+    {
+      "question": "At a height equal to Earth's radius, the value of g is:",
+      "options": [
+        "g",
+        "g/2",
+        "g/4",
+        "zero"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "At the centre of Earth, the value of g is:",
+      "options": [
+        "9.8",
+        "zero",
+        "g/2",
+        "2g"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Inside a uniform sphere, g varies with distance r from the centre as:",
+      "options": [
+        "1/r²",
+        "linearly (∝ r)",
+        "1/r",
+        "constantly"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The value of g is slightly larger at the:",
+      "options": [
+        "equator",
+        "poles",
+        "centre",
+        "mountains"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At depth d, g' is given by:",
+      "options": [
+        "g(1 − d/R)",
+        "g(R/(R+d))²",
+        "g(1−2d/R)",
+        "g·d/R"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [
+    "Altitude: g' = g(R/(R+h))² (inverse-square fall above the surface).",
+    "Depth: g' = g(1 − d/R) (linear fall inside).",
+    "g is maximum at Earth's surface.",
+    "Rotation and ellipticity cause small latitude variations.",
+    "The g–r graph is triangular-like: linear rise then inverse-square fall."
+  ],
+  "importantTasks": [
+    "Derive the altitude formula and its small-h approximation.",
+    "Derive the depth formula using the shell theorem.",
+    "Solve 5 mixed altitude/depth numericals.",
+    "Sketch and label the g–r graph from centre to beyond the surface.",
+    "Compute the effect of rotation on g at the equator."
+  ]
+}

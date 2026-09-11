@@ -1,0 +1,35 @@
+{
+  "title": "लेखन कौशल Mindmap",
+  "unitSlug": "lekhan-koushal",
+  "topicSlug": "lekhan-koushal-mindmap",
+  "topicTitle": "लेखन कौशल — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "लेखन कौशल",
+    "children": [
+      {
+        "id": "-",
+        "label": "आवधिव निबन्ध लेखन"
+      },
+      {
+        "id": "-",
+        "label": "पत्र लेखन (आधिकारिक र अनौपचारिक)",
+        "children": [
+          {
+            "id": "--item-0",
+            "label": "आधिकारिक र अनौपचारिक"
+          }
+        ]
+      },
+      {
+        "id": "-",
+        "label": "प्रेषणात्मक लेखन"
+      },
+      {
+        "id": "-",
+        "label": "समावेशक लेखन"
+      }
+    ]
+  }
+}

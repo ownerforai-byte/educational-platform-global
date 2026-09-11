@@ -1,0 +1,83 @@
+{
+  "title": "Gravitation Mindmap",
+  "unitSlug": "gravitation",
+  "topicSlug": "gravitation-mindmap",
+  "topicTitle": "Gravitation — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Gravitation",
+    "children": [
+      {
+        "id": "newton-s-law-of-gravitation",
+        "label": "Newton's law of gravitation"
+      },
+      {
+        "id": "gravitational-field-strength",
+        "label": "Gravitational field strength"
+      },
+      {
+        "id": "gravitational-potential-gravit",
+        "label": "Gravitational potential",
+        "children": [
+          {
+            "id": "gravitational-potential-sub-0",
+            "label": "gravitational potential energy"
+          }
+        ]
+      },
+      {
+        "id": "variation-in-value-of-g-due-to",
+        "label": "Variation in value of 'g' due to altitude",
+        "children": [
+          {
+            "id": "variation-in-value-of-g-due-to-altitude-sub-0",
+            "label": "depth"
+          }
+        ]
+      },
+      {
+        "id": "centre-of-mass-and-centre-of-g",
+        "label": "Centre of mass",
+        "children": [
+          {
+            "id": "centre-of-mass-sub-0",
+            "label": "centre of gravity"
+          }
+        ]
+      },
+      {
+        "id": "motion-of-a-satellite-orbital-",
+        "label": "Motion of a satellite: orbital velocity",
+        "children": [
+          {
+            "id": "motion-of-a-satellite-orbital-velocity-sub-0",
+            "label": "time period of the satellite"
+          }
+        ]
+      },
+      {
+        "id": "escape-velocity",
+        "label": "Escape velocity"
+      },
+      {
+        "id": "potential-and-kinetic-energy-o",
+        "label": "Potential",
+        "children": [
+          {
+            "id": "potential-sub-0",
+            "label": "kinetic energy of the satellite"
+          }
+        ]
+      },
+      {
+        "id": "geostationary-satellite",
+        "label": "Geostationary satellite"
+      },
+      {
+        "id": "gps",
+        "label": "GPS"
+      }
+    ]
+  }
+}

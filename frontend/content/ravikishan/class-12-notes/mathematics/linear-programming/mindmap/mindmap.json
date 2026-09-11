@@ -1,0 +1,31 @@
+{
+  "title": "Linear Programming Mindmap",
+  "unitSlug": "linear-programming",
+  "topicSlug": "linear-programming-mindmap",
+  "topicTitle": "Linear Programming — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Linear Programming",
+    "children": [
+      {
+        "id": "linear-programming-formulation-of-lpp",
+        "label": "Linear programming — formulation of LPP"
+      },
+      {
+        "id": "graphical-method-for-solving-lpp-with-tw",
+        "label": "Graphical method for solving LPP with two variables"
+      },
+      {
+        "id": "maximization-and-minimization-",
+        "label": "Maximization",
+        "children": [
+          {
+            "id": "maximization-sub-0",
+            "label": "minimization problems"
+          }
+        ]
+      }
+    ]
+  }
+}

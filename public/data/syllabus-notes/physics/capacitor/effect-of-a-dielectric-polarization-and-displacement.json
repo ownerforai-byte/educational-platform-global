@@ -1,0 +1,25 @@
+{
+  "title": "Effect of a Dielectric â€” Polarization and Displacement",
+  "notes": [
+    "**Dielectric:** an insulating material that can be polarized by an electric field. Examples: paper, mica, ceramics, distilled water.",
+    "**Polarization:** the dielectric develops surface charges opposite to the plate charges, reducing the net field inside from $E_0$ to $E = E_0/\\kappa$.",
+    "**Capacitance increase:** since $C = Q/V$ and $V = Ed$ decreases while $Q$ stays constant (isolated capacitor), $C$ increases by factor $\\kappa$.",
+    "**Electric displacement $\\vec{D}$:** $\\vec{D} = \\epsilon_0\\vec{E} + \\vec{P}$, where $\\vec{P}$ is polarization. In linear dielectrics, $\\vec{D} = \\epsilon\\vec{E} = \\kappa\\epsilon_0\\vec{E}$.",
+    "**Breakdown voltage:** every dielectric has a maximum field it can withstand before conducting. This limits the maximum operating voltage of a capacitor."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "title": "Differential Equations Mindmap",
+  "unitSlug": "differential-equations",
+  "topicSlug": "differential-equations-mindmap",
+  "topicTitle": "Differential Equations — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Differential Equations",
+    "children": [
+      {
+        "id": "formation-of-differential-equations",
+        "label": "Formation of differential equations"
+      },
+      {
+        "id": "solving-first-order-first-degr",
+        "label": "Solving first order, first degree equations",
+        "children": [
+          {
+            "id": "solving-first-order-first-degree-equations-sub-0",
+            "label": "variable separable"
+          },
+          {
+            "id": "solving-first-order-first-degree-equations-sub-1",
+            "label": "homogeneous"
+          },
+          {
+            "id": "solving-first-order-first-degree-equations-sub-2",
+            "label": "linear"
+          }
+        ]
+      },
+      {
+        "id": "applications-growth-and-decay-",
+        "label": "Applications",
+        "children": [
+          {
+            "id": "applications-sub-0",
+            "label": "growth and decay"
+          },
+          {
+            "id": "applications-sub-1",
+            "label": "population dynamics"
+          }
+        ]
+      }
+    ]
+  }
+}

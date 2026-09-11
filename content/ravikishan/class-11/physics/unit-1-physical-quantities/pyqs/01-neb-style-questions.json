@@ -1,0 +1,12 @@
+{
+  "title": "NEB-Style Questions — Physical Quantities & Dimensions",
+  "notes": [
+    "Q1. (Short answer) Distinguish between precision and accuracy.\nAns: Precision is reproducibility of repeated measurements (low scatter); accuracy is closeness to the true value. A reading can be precise but not accurate (systematic error).",
+    "Q2. (Short answer) State the principle of homogeneity of dimensions and its one use.\nAns: Dimensions of every term in a physical equation must be the same; used to check the dimensional correctness of relations.",
+    "Q3. (Derivation) Using dimensional analysis derive the relation for the period T of a simple pendulum.\nAns: Assume T = k lᵃ gᵇ; [T] = [L]ᵃ[L T⁻²]ᵇ ⇒ −2b = 1 ⇒ b = −½, a = ½; T = k√(l/g) with k = 2π.",
+    "Q4. (Numerical) Convert 5 joules into erg.\nAns: 1 J = 10⁷ erg, so 5 J = 5 × 10⁷ erg (using n₁u₁ = n₂u₂ with [M L² T⁻²]).",
+    "Q5. (Concept) Why can dimensional analysis not distinguish work and torque?\nAns: Both have dimensions [M L² T⁻²]; dimensional analysis compares only dimensions, so quantities differing in physical nature but sharing dimensions cannot be told apart.",
+    "Q6. (Liquidity) A measurement gives 0.0002040 s. How many significant figures? Express in scientific notation.\nAns: 4 sig figs (0.0002040 → trailing zero counts); = 2.040 × 10⁻⁴ s.",
+    "Q7. (Concept) What do you mean by the order of magnitude of a quantity? Give an example.\nAns: The nearest power of ten of the value. The radius of Earth (6.4 × 10⁶ m) has order of magnitude 10⁶ m."
+  ]
+}

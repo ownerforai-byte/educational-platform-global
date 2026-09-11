@@ -1,0 +1,14 @@
+{
+  "title": "Quick Revision — Kinematics (Mechanics)",
+  "notes": [
+    "- **Kinematics** studies motion (position, velocity, acceleration) without asking about forces.",
+    "- **Instantaneous velocity** v = dx/dt; **instantaneous acceleration** a = dv/dt.",
+    "- **Equations of motion (uniform a):** v = u + at; s = ut + ½at²; v² = u² + 2as.",
+    "- **Relative velocity:** v_AB = v_A − v_B (same line: add when approaching, subtract when chasing).",
+    "- **Free fall:** v = gt; h = ½gt²; v² = 2gh; time to reach top for upward throw t = u/g; max height u²/2g.",
+    "- **Projectile:** T = 2u sinθ/g; H = u² sin²θ/2g; R = u² sin2θ/g; range maximum u²/g at 45°.",
+    "- **Graphs:** slope of x–t → velocity; slope of v–t → acceleration; area under v–t → displacement.",
+    "- **Remember:** at the top of a projectile or a vertical throw, velocity = 0 but acceleration = g — never zero.",
+    "- **Mechanics = statics + kinematics + dynamics** (forces → Newton's laws, covered in the Dynamics unit)."
+  ]
+}

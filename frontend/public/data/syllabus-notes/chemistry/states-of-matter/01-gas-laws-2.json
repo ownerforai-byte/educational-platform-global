@@ -1,0 +1,176 @@
+{
+  "title": "Gas Laws",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "gas-laws",
+  "topicTitle": "Gas Laws",
+  "relevance": 30,
+  "notes": [
+    "**Five states of matter:** Solid, liquid, gas, plasma, and Bose-Einstein condensate (BEC). Gases are the most disordered state with the highest kinetic energy and the weakest intermolecular forces among the three classical states.",
+    "**Characteristics of the gaseous state:** (1) No definite shape or volume — gases expand to fill any container. (2) Highly compressible — large intermolecular spaces allow molecules to be pushed closer. (3) Low density — typically 1000× less dense than solids or liquids. (4) Exert pressure uniformly in all directions on container walls. (5) Mix completely and spontaneously (diffusion and effusion).",
+    "**Measurable properties of gases — Amount (n):** The amount of gas is measured in **moles**: $n = \\dfrac{m}{M}$, where m is mass in grams and M is molar mass in g/mol. Examples: 44 g $CO_2$ = 1 mol (M = 44); 2 g $H_2$ = 1 mol (M = 2); 14 g $N_2$ = 0.5 mol.",
+    "**Measurable properties — Volume (V):** Common units: 1 L = 1 dm³ = 1000 cm³ = 1000 mL; 1 mL = 1 cm³ = 1 cc (cubic centimetre). The SI unit is cubic metre (m³). Gas volumes are highly dependent on pressure and temperature.",
+    "**Measurable properties — Pressure (P):** Pressure is force per unit area: $P = F/A$. Units: 1 atm = 760 mmHg = 760 torr = 101.325 kPa = 1.01325 × 10⁵ Pa = 1.01325 bar. Mercury is used in barometers because of its high density (13.6 g/cm³), giving a manageable column height (~760 mm).",
+    "**Measurable properties — Temperature (T):** Gas calculations require the **absolute (Kelvin) scale**: $T(K) = t(°C) + 273.15$. Examples: 0°C = 273.15 K; 25°C = 298.15 K; 100°C = 373.15 K. The Kelvin scale starts at absolute zero (0 K = -273.15°C), where molecular motion theoretically ceases.",
+    "**Kinetic molecular theory postulates:** (1) Gases consist of large numbers of tiny particles in constant random motion. (2) The volume of individual molecules is negligible compared to the container volume. (3) Intermolecular forces are negligible except during collisions. (4) Collisions are perfectly elastic — total kinetic energy is conserved. (5) The average kinetic energy is proportional to absolute temperature: $\\overline{KE} = \\dfrac{3}{2}k_BT$.",
+    "**Ideal gas vs. real gas:** An **ideal gas** perfectly obeys all gas laws under all conditions. It is a theoretical model with point particles and no intermolecular forces. A **real gas** deviates from ideal behaviour, especially at high pressure and low temperature. The van der Waals equation corrects for these deviations: $\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT$.",
+    "**Diffusion and effusion:** **Diffusion** is the spontaneous mixing of gas molecules from high to low concentration. **Effusion** is the escape of gas molecules through a tiny hole into a vacuum. Graham's law states: rate of diffusion/effusion $\\propto \\dfrac{1}{\\sqrt{M}}$, so lighter gases diffuse faster (e.g., $H_2$ diffuses 4× faster than $O_2$).",
+    "**Gas laws overview:** (1) **Boyle's law:** $V \\propto 1/P$ (constant T). (2) **Charles's law:** $V \\propto T$ (constant P). (3) **Gay-Lussac's law:** $P \\propto T$ (constant V). (4) **Avogadro's law:** $V \\propto n$ (constant P, T). Combined: $PV = nRT$ (ideal gas equation), where R = 8.314 J/(mol·K) = 0.0821 L·atm/(mol·K).",
+    "**Standard conditions:** **STP** (Standard Temperature and Pressure): T = 273.15 K, P = 1 atm (101.325 kPa). Molar volume of an ideal gas at STP = 22.414 L/mol. **SATP** (Standard Ambient Temperature and Pressure): T = 298.15 K, P = 1 bar. Molar volume at SATP ≈ 24.79 L/mol.",
+    "**Real-world applications:** (1) **Scuba diving** — gas compression at depth follows Boyle's law; air supply depletes faster at depth due to increased pressure. (2) **Aerosol cans** — warning against heating because pressure increases with temperature (Gay-Lussac's law). (3) **Tire pressure** — increases during driving due to temperature rise. (4) **Hot air balloons** — heating air decreases its density, causing buoyancy (Charles's law)."
+  ],
+  "confusion": [
+    "**Kelvin vs. Celsius in gas laws:** Gas law calculations MUST use Kelvin, not Celsius. Using °C directly gives wrong results. Always convert: $T(K) = t(°C) + 273.15$.",
+    "**Volume of gas molecules is negligible, not zero:** The kinetic theory assumes molecular volume is negligible compared to container volume. This is true at low pressure (molecules far apart) but fails at high pressure where molecular volume matters.",
+    "**Ideal gas is a model, not a reality:** No gas is truly ideal. Helium and hydrogen are the most ideal at room conditions because of their weak intermolecular forces. All real gases approach ideal behaviour at high temperature and low pressure.",
+    "**Pressure units confusion:** 1 atm ≠ 1 bar (1 atm = 101.325 kPa, 1 bar = 100 kPa). The difference is small (~1.3%) but significant in precise calculations. IUPAC recommends using bar for standard pressure.",
+    "**Diffusion vs. effusion:** Diffusion is mixing through a concentration gradient; effusion is escape through a small orifice. Both follow Graham's law, but the physical processes are different."
+  ],
+  "practice": [
+    "Calculate the number of moles in 88 g of $CO_2$ and the volume it occupies at STP. **Solution:** $n = 88/44 = 2.0$ mol. Volume at STP = $2.0 \\times 22.414 = 44.83$ L.",
+    "A gas occupies 5.0 L at 27°C and 1 atm. What volume will it occupy at 127°C and 2 atm? **Solution:** $\\dfrac{P_1V_1}{T_1} = \\dfrac{P_2V_2}{T_2} \\Rightarrow \\dfrac{1 \\times 5.0}{300} = \\dfrac{2 \\times V_2}{400} \\Rightarrow V_2 = \\dfrac{5.0 \\times 400}{300 \\times 2} = 3.33$ L.",
+    "What is the pressure exerted by 0.5 mol of an ideal gas occupying 11.2 L at 273 K? **Solution:** $P = \\dfrac{nRT}{V} = \\dfrac{0.5 \\times 0.0821 \\times 273}{11.2} = 1.00$ atm. (This is STP — 0.5 mol occupies half the molar volume.)",
+    "Two gases, $H_2$ (M = 2 g/mol) and $O_2$ (M = 32 g/mol), are allowed to effuse through the same pinhole. How many times faster does $H_2$ effuse compared to $O_2$? **Solution:** $\\dfrac{r_{H_2}}{r_{O_2}} = \\sqrt{\\dfrac{M_{O_2}}{M_{H_2}}} = \\sqrt{\\dfrac{32}{2}} = \\sqrt{16} = 4$. Hydrogen effuses 4 times faster.",
+    "A sample of gas has volume 2.0 L at 25°C and 750 mmHg. Calculate the volume at STP. **Solution:** $\\dfrac{750 \\times 2.0}{298} = \\dfrac{760 \\times V_2}{273} \\Rightarrow V_2 = \\dfrac{750 \\times 2.0 \\times 273}{298 \\times 760} = 1.71$ L."
+  ],
+  "universalFacts": [
+    "The concept of absolute zero (0 K = -273.15°C) comes from extrapolating gas volume vs. temperature data — all ideal gases would have zero volume at this temperature.",
+    "Avogadro's hypothesis (1811) that equal volumes of gases at the same T and P contain equal numbers of molecules was crucial in establishing the mole concept and distinguishing atoms from molecules.",
+    "The ideal gas constant R has different numerical values depending on the units used: 8.314 J/(mol·K), 0.0821 L·atm/(mol·K), or 62.36 L·torr/(mol·K).",
+    "Real gas behaviour is described by the van der Waals equation, which introduces two correction terms: 'a' for intermolecular attractions and 'b' for molecular volume.",
+    "The kinetic molecular theory successfully explains all gas laws and predicts gas properties (pressure, temperature, diffusion rates) from molecular motion."
+  ],
+  "animation3D": "states-of-matter",
+  "motionGraphics": "states-of-matter",
+  "examples": [
+    "Example 1: Real-world application of Gas State",
+    "Example 2: Practical demonstration of Gas State concepts",
+    "Example 3: Numerical problem on Gas State",
+    "Example 4: Diagram-based question on Gas State",
+    "Example 5: Application in daily life involving Gas State"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Gas State with suitable example.",
+    "Q2. Solve problems related to Gas State.",
+    "Q3. Differentiate between various aspects of Gas State.",
+    "Q4. Derive the key formula related to Gas State.",
+    "Q5. What are the applications of Gas State?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Gas State",
+    "Key Formula 2: Mathematical expression of Gas State",
+    "Key Formula 3: Application formula for Gas State",
+    "Key Formula 4: Derivation result for Gas State",
+    "Key Formula 5: Important relation in Gas State"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Gas State",
+    "Key Point 2: Essential theorem or principle related to Gas State",
+    "Key Point 3: Important condition or constraint for Gas State",
+    "Key Point 4: Common applications of Gas State",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Gas State is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Gas State applies",
+    "Note 2: Gas State connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Gas State",
+    "Note 4: Remember the units and dimensions involved in Gas State",
+    "Note 5: Gas State frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Gas State",
+    "Statement 2: Theorem related to Gas State",
+    "Statement 3: Condition for Gas State to be valid",
+    "Statement 4: Principle governing Gas State",
+    "Statement 5: Corollary or consequence of Gas State"
+  ],
+  "importantNotes": [
+    "Note 1: Gas State is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Gas State",
+    "Note 3: Gas State has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Gas State",
+    "Note 5: Cross-check your answers using alternative methods for Gas State"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Gas State formula",
+    "Trick 2: Elimination technique for Gas State MCQs",
+    "Trick 3: Dimensional analysis shortcut for Gas State",
+    "Trick 4: Memory aid for Gas State formulas",
+    "Trick 5: Time-saving approach for Gas State problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Gas State",
+    "Exam Tip 2: Practice previous year questions on Gas State",
+    "Exam Tip 3: Gas State carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Gas State thoroughly",
+    "Exam Tip 5: Review common mistakes related to Gas State"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Gas State?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Gas State is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Gas State, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Gas State?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Gas State is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Gas State",
+    "Concept 2: Key theorem or principle in Gas State",
+    "Concept 3: Important application area of Gas State",
+    "Concept 4: Fundamental relationship in Gas State",
+    "Concept 5: Connection between Gas State and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Gas State",
+    "Task 2: Derive the main formula for Gas State",
+    "Task 3: Create a concept map for Gas State",
+    "Task 4: Practice previous year exam questions on Gas State",
+    "Task 5: Explain Gas State to a peer or study group"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "gas-state"
+}

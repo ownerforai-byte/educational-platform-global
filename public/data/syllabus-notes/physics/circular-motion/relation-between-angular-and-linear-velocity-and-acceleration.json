@@ -1,0 +1,25 @@
+{
+  "title": "Relation Between Angular and Linear Velocity and Acceleration",
+  "notes": [
+    "**Linear to angular:** $\\omega = v/r$. A point at the rim of a wheel moves faster in linear speed but has the same angular velocity as a point near the centre.",
+    "**Angular to linear:** $v = r\\omega$. If $\\omega$ is constant, linear speed increases with radius â€” which is why the outer edge of a spinning disc has higher speed.",
+    "**Tangential acceleration:** $a_t = r\\alpha$. This is the acceleration tangent to the circle, changing the speed along the path.",
+    "**Centripetal acceleration:** $a_c = v^2/r = r\\omega^2$. This is the inward acceleration required to keep the object moving in a circle.",
+    "**Total acceleration:** when both speed and direction change, $\\vec{a} = \\vec{a}_t + \\vec{a}_c$. The two components are perpendicular."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

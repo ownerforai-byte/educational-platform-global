@@ -1,0 +1,84 @@
+{
+  "title": "Resistance and resistivity — temperature dependence",
+  "unitSlug": "current-electricity",
+  "topicSlug": "resistance-and-resistivity-temperature-dependence",
+  "topicTitle": "Resistance and resistivity — temperature dependence",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Resistance and resistivity — temperature dependence — Current Electricity, Physics (class-12-notes).",
+    "**Tested.** define it · list: resistance, resistivity — temperature dependence · one worked example · one misconception each.",
+    "**Fact.** Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "**Fact.** Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir.",
+    "**Resistivity — temperature dependence.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Resistance\" as one blob → ✅ split into: resistance, resistivity — temperature dependence.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material).."
+  ],
+  "bounds": [
+    "Covers only: resistance, resistivity — temperature dependence (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
+  ],
+  "practice": [
+    "define + example each sub-idea: resistance, resistivity — temperature dependence.",
+    "one worked example for \"Resistance and resistivity — temperature dependence\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Resistance and resistivity — temperature dependence\" with one example.",
+    "compare \"Resistance\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Resistance and resistivity — temperature dependence\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "V = IR",
+    "P = IV = I²R = V²/R",
+    "V_term = E − Ir"
+  ],
+  "numericals": [
+    "Use  V = IR  — pick reasonable values, solve, and check the units.",
+    "Use  P = IV = I²R = V²/R  — pick reasonable values, solve, and check the units.",
+    "Use  V_term = E − Ir  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Resistance",
+    "• Resistivity — temperature dependence"
+  ],
+  "summary": "Resistance and resistivity — temperature dependence (Current Electricity, Physics, class-12-notes) covers Resistance, resistivity — temperature dependence. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Resistance and resistivity — temperature dependence\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Resistance and resistivity — temperature dependence\"?",
+      "options": [
+        "V = IR",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "V = IR",
+      "explanation": "V = IR is the standard form used for this topic."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Dispersion Mindmap",
+  "unitSlug": "dispersion",
+  "topicSlug": "dispersion-mindmap",
+  "topicTitle": "Dispersion — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Dispersion",
+    "children": [
+      {
+        "id": "pure-spectrum-and-dispersive-p",
+        "label": "Pure spectrum",
+        "children": [
+          {
+            "id": "pure-spectrum-sub-0",
+            "label": "dispersive power"
+          }
+        ]
+      },
+      {
+        "id": "chromatic-and-spherical-aberra",
+        "label": "Chromatic",
+        "children": [
+          {
+            "id": "chromatic-sub-0",
+            "label": "spherical aberration"
+          }
+        ]
+      },
+      {
+        "id": "achromatism-and-its-applicatio",
+        "label": "Achromatism",
+        "children": [
+          {
+            "id": "achromatism-sub-0",
+            "label": "its applications"
+          }
+        ]
+      }
+    ]
+  }
+}

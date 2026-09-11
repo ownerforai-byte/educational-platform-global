@@ -1,0 +1,61 @@
+{
+  "title": "साहित्य अध्‍ययन Mindmap",
+  "unitSlug": "sahitya-adhyayan",
+  "topicSlug": "sahitya-adhyayan-mindmap",
+  "topicTitle": "साहित्य अध्‍ययन — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "साहित्य अध्‍ययन",
+    "children": [
+      {
+        "id": "-",
+        "label": "कविता र गीत",
+        "children": [
+          {
+            "id": "--sub-0",
+            "label": "रस"
+          },
+          {
+            "id": "--sub-1",
+            "label": "अलङ्कार"
+          },
+          {
+            "id": "--sub-2",
+            "label": "छन्द"
+          }
+        ]
+      },
+      {
+        "id": "-",
+        "label": "निर्धारित पाठ",
+        "children": [
+          {
+            "id": "--sub-0",
+            "label": "कथा"
+          },
+          {
+            "id": "--sub-1",
+            "label": "उपन्यास"
+          },
+          {
+            "id": "--sub-2",
+            "label": "नाटक"
+          }
+        ]
+      },
+      {
+        "id": "-",
+        "label": "व्यङ्ग्य साहित्यको अध्‍ययन"
+      },
+      {
+        "id": "-",
+        "label": "आधुनिक नेपाली साहित्यको इतिहास"
+      },
+      {
+        "id": "-",
+        "label": "निबन्ध र लेखन कौशल"
+      }
+    ]
+  }
+}

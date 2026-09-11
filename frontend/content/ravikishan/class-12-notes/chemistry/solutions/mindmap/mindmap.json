@@ -1,0 +1,57 @@
+{
+  "title": "Solutions Mindmap",
+  "unitSlug": "solutions",
+  "topicSlug": "solutions-mindmap",
+  "topicTitle": "Solutions — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Solutions",
+    "children": [
+      {
+        "id": "types-of-solutions-and-express",
+        "label": "Types of solutions",
+        "children": [
+          {
+            "id": "types-of-solutions-sub-0",
+            "label": "expression of concentration"
+          }
+        ]
+      },
+      {
+        "id": "solubility-of-gases-and-solids",
+        "label": "Solubility of gases",
+        "children": [
+          {
+            "id": "solubility-of-gases-sub-0",
+            "label": "solids in liquids"
+          }
+        ]
+      },
+      {
+        "id": "vapour-pressure-of-solutions-raoult-s-la",
+        "label": "Vapour pressure of solutions — Raoult's law"
+      },
+      {
+        "id": "colligative-properties-relativ",
+        "label": "Colligative properties — relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmosis",
+        "children": [
+          {
+            "id": "colligative-properties-relative-lowering-of-vapour-pressure-elevation-of-boiling-point-depression-of-freezing-point-osmosis-sub-0",
+            "label": "osmotic pressure"
+          }
+        ]
+      },
+      {
+        "id": "van-t-hoff-factor-and-abnormal",
+        "label": "Van't Hoff factor",
+        "children": [
+          {
+            "id": "van-t-hoff-factor-sub-0",
+            "label": "abnormal molar masses"
+          }
+        ]
+      }
+    ]
+  }
+}

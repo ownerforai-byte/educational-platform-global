@@ -1,0 +1,25 @@
+{
+  "title": "EMF, Internal Resistance and Cells in Combination",
+  "notes": [
+    "**EMF ($\\mathcal{E}$):** the open-circuit voltage of a source. It is the work done per unit charge in moving charge around the complete circuit.",
+    "**Internal resistance $r$:** the resistance inside the cell due to electrolyte and electrodes. It causes the terminal voltage to drop when current flows.",
+    "**Terminal voltage:** $V = \\mathcal{E} - Ir$. When no current flows ($I=0$), $V = \\mathcal{E}$. Under load, $V < \\mathcal{E}$.",
+    "**Cells in series:** $\\mathcal{E}_{total} = \\mathcal{E}_1 + \\mathcal{E}_2 + \\ldots$, $r_{total} = r_1 + r_2 + \\ldots$. Series adds both EMF and internal resistance.",
+    "**Cells in parallel:** $\\mathcal{E}_{total} = \\mathcal{E}$ (if all equal), $r_{total} = r/n$ for $n$ identical cells. Parallel reduces internal resistance, allowing higher current delivery."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

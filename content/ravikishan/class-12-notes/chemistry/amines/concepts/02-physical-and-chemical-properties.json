@@ -1,0 +1,85 @@
+{
+  "title": "Physical and chemical properties",
+  "unitSlug": "amines",
+  "topicSlug": "physical-and-chemical-properties",
+  "topicTitle": "Physical and chemical properties",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Physical and chemical properties — Amines, Chemistry (class-12-notes).",
+    "**Tested.** define it · list: physical, chemical properties · one worked example · one misconception each.",
+    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
+    "**Chemical properties.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Physical\" as one blob → ✅ split into: physical, chemical properties.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ.."
+  ],
+  "bounds": [
+    "Covers only: physical, chemical properties (within Amines).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "define + example each sub-idea: physical, chemical properties.",
+    "one worked example for \"Physical and chemical properties\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Physical and chemical properties\" with one example.",
+    "compare \"Physical\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Physical and chemical properties\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  ε = −N dΦ/dt  — pick reasonable values, solve, and check the units.",
+    "Use  F = BIL  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Physical",
+    "• Chemical properties"
+  ],
+  "summary": "Physical and chemical properties (Amines, Chemistry, class-12-notes) covers Physical, chemical properties. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Physical and chemical properties\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Physical and chemical properties\"?",
+      "options": [
+        "F = qvB sinθ",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "F = qvB sinθ",
+      "explanation": "F = qvB sinθ is the standard form used for this topic."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Equipotential Lines and Surfaces",
+  "notes": [
+    "**Equipotential surface:** a surface on which the electric potential is the same at every point. No work is done moving a charge along it.",
+    "**Relation to field lines:** equipotential surfaces are always perpendicular to electric field lines.",
+    "**Point charge:** concentric spheres centred on the charge. Closer spheres mean stronger field because $\\Delta V/\\Delta r$ is larger.",
+    "**Uniform field:** parallel planes perpendicular to the field direction. Equal spacing means uniform field strength.",
+    "**Conductors:** the surface of a conductor in electrostatic equilibrium is an equipotential. The electric field just outside is perpendicular to the surface."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

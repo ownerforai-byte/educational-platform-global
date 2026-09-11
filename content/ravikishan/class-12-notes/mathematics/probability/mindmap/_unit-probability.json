@@ -1,0 +1,96 @@
+{
+  "title": "Probability",
+  "unitSlug": "probability",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-probability",
+    "label": "Probability",
+    "children": [
+      {
+        "id": "unit-topic-conditional-probability-and-multiplication-theorem",
+        "label": "Conditional probability and multiplication theorem",
+        "children": [
+          {
+            "id": "unit-probability-conditional-probability-and-multiplication-theorem-0",
+            "label": "Multiplication theorem"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-independent-events",
+        "label": "Independent events",
+        "children": []
+      },
+      {
+        "id": "unit-topic-bayes-theorem-and-its-applications",
+        "label": "Bayes' theorem and its applications",
+        "children": [
+          {
+            "id": "unit-probability-bayes-theorem-and-its-applications-0",
+            "label": "Its applications"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-random-variable-and-its-probability-distribution",
+        "label": "Random variable and its probability distribution",
+        "children": [
+          {
+            "id": "unit-probability-random-variable-and-its-probability-distribution-0",
+            "label": "Its probability distribution"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-mean-variance-and-standard-deviation-of-a-random-variable",
+        "label": "Mean, variance and standard deviation of a random variable",
+        "children": [
+          {
+            "id": "unit-probability-mean-variance-and-standard-deviation-of-a-random-variable-0",
+            "label": "Variance"
+          },
+          {
+            "id": "unit-probability-mean-variance-and-standard-deviation-of-a-random-variable-1",
+            "label": "Standard deviation of a random variable"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-binomial-distribution-definition-mean-variance",
+        "label": "Binomial distribution — definition, mean, variance",
+        "children": [
+          {
+            "id": "unit-probability-binomial-distribution-definition-mean-variance-0",
+            "label": "Mean"
+          },
+          {
+            "id": "unit-probability-binomial-distribution-definition-mean-variance-1",
+            "label": "Variance"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-poisson-distribution-definition-mean-variance",
+        "label": "Poisson distribution — definition, mean, variance",
+        "children": [
+          {
+            "id": "unit-probability-poisson-distribution-definition-mean-variance-0",
+            "label": "Mean"
+          },
+          {
+            "id": "unit-probability-poisson-distribution-definition-mean-variance-1",
+            "label": "Variance"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Probability\n  - Conditional probability and multiplication theorem\n  - Independent events\n  - Bayes' theorem and its applications\n  - Random variable and its probability distribution\n  - Mean, variance and standard deviation of a random variable\n  - Binomial distribution — definition, mean, variance\n  - Poisson distribution — definition, mean, variance"
+  ]
+}

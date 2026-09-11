@@ -1,0 +1,59 @@
+{
+  "title": "Biotechnology and Its Applications Mindmap",
+  "unitSlug": "biotechnology-applications",
+  "topicSlug": "biotechnology-applications-mindmap",
+  "topicTitle": "Biotechnology and Its Applications — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Biotechnology and Its Applications",
+    "children": [
+      {
+        "id": "biotechnological-applications-",
+        "label": "Biotechnological applications in agriculture",
+        "children": [
+          {
+            "id": "biotechnological-applications-in-agriculture-sub-0",
+            "label": "Bt cotton"
+          },
+          {
+            "id": "biotechnological-applications-in-agriculture-sub-1",
+            "label": "nematode-resistant tobacco"
+          }
+        ]
+      },
+      {
+        "id": "biotechnological-applications-",
+        "label": "Biotechnological applications in medicine",
+        "children": [
+          {
+            "id": "biotechnological-applications-in-medicine-sub-0",
+            "label": "insulin"
+          },
+          {
+            "id": "biotechnological-applications-in-medicine-sub-1",
+            "label": "gene therapy"
+          },
+          {
+            "id": "biotechnological-applications-in-medicine-sub-2",
+            "label": "therapeutic proteins"
+          }
+        ]
+      },
+      {
+        "id": "transgenic-animals",
+        "label": "Transgenic animals"
+      },
+      {
+        "id": "biopiracy-and-patent-issues",
+        "label": "Biopiracy",
+        "children": [
+          {
+            "id": "biopiracy-sub-0",
+            "label": "patent issues"
+          }
+        ]
+      }
+    ]
+  }
+}

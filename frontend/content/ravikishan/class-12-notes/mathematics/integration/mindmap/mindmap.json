@@ -1,0 +1,63 @@
+{
+  "title": "Integration Mindmap",
+  "unitSlug": "integration",
+  "topicSlug": "integration-mindmap",
+  "topicTitle": "Integration — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Integration",
+    "children": [
+      {
+        "id": "integration-as-inverse-of-differentiatio",
+        "label": "Integration as inverse of differentiation"
+      },
+      {
+        "id": "standard-integrals-and-methods",
+        "label": "Standard integrals and methods",
+        "children": [
+          {
+            "id": "standard-integrals-and-methods-sub-0",
+            "label": "substitution"
+          },
+          {
+            "id": "standard-integrals-and-methods-sub-1",
+            "label": "parts"
+          },
+          {
+            "id": "standard-integrals-and-methods-sub-2",
+            "label": "partial fractions"
+          }
+        ]
+      },
+      {
+        "id": "definite-integrals-and-propert",
+        "label": "Definite integrals",
+        "children": [
+          {
+            "id": "definite-integrals-sub-0",
+            "label": "properties"
+          }
+        ]
+      },
+      {
+        "id": "integration-of-trigonometric-functions",
+        "label": "Integration of trigonometric functions"
+      },
+      {
+        "id": "applications-area-under-curve-",
+        "label": "Applications",
+        "children": [
+          {
+            "id": "applications-sub-0",
+            "label": "area under curve"
+          },
+          {
+            "id": "applications-sub-1",
+            "label": "area between two curves"
+          }
+        ]
+      }
+    ]
+  }
+}

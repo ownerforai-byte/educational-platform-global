@@ -1,0 +1,85 @@
+{
+  "title": "Motion of a satellite: orbital velocity and time period o…",
+  "unitSlug": "gravitation",
+  "topicSlug": "motion-of-a-satellite-orbital-velocity-and-time-period-of-the-satellite",
+  "topicTitle": "Motion of a satellite: orbital velocity and time period of the satellite",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Motion of a satellite: orbital velocity and time period o… — Gravitation, Physics (class-11-notes).",
+    "**Tested.** define it · list: motion of a satellite: orbital velocity, time period of the satellite · one worked example · one misconception each.",
+    "**Fact.** Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s².",
+    "**Fact.** Orbital velocity v = √(GM/r); time period T = 2π√(r³/GM); escape velocity v_esc = √(2GM/r) = √2·v_orbital (at same r).",
+    "**Fact.** For a uniform sphere, g ∝ r inside and g = 0 at the centre; g decreases as 1/r² outside.",
+    "**Time period of the satellite.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Motion of a satellite: orbital velocity\" as one blob → ✅ split into: motion of a satellite: orbital velocity, time period of the satellite.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ newton: f = g m₁m₂/r²; g = gm/r²; at earth's surface g = gm/r² ≈ 9.8 m/s².."
+  ],
+  "bounds": [
+    "Covers only: motion of a satellite: orbital velocity, time period of the satellite (within Gravitation).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: newton: f = g m₁m₂/r²; g = gm/r²; at earth's surface g = gm/r² ≈ 9.8 m/s²."
+  ],
+  "practice": [
+    "define + example each sub-idea: motion of a satellite: orbital velocity, time period of the satellite.",
+    "one worked example for \"Motion of a satellite: orbital velocity and time period o…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s².",
+    "Orbital velocity v = √(GM/r); time period T = 2π√(r³/GM); escape velocity v_esc = √(2GM/r) = √2·v_orbital (at same r).",
+    "For a uniform sphere, g ∝ r inside and g = 0 at the centre; g decreases as 1/r² outside."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Motion of a satellite: orbital velocity and time period o…\" with one example.",
+    "compare \"Motion of a satellite: orbital velocity\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Motion of a satellite: orbital velocity and time period o…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "g = GM/r²",
+    "v_orb = √(GM/r)",
+    "v_esc = √(2GM/r)",
+    "T² ∝ r³ (Kepler)"
+  ],
+  "numericals": [
+    "Use  g = GM/r²  — pick reasonable values, solve, and check the units.",
+    "Use  v_orb = √(GM/r)  — pick reasonable values, solve, and check the units.",
+    "Use  v_esc = √(2GM/r)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Motion of a satellite: orbital velocity",
+    "• Time period of the satellite"
+  ],
+  "summary": "Motion of a satellite: orbital velocity and time period o… (Gravitation, Physics, class-11-notes) covers Motion of a satellite: orbital velocity, time period of the satellite. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Motion of a satellite: orbital velocity and time period o…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Motion of a satellite: orbital velocity and time period o…\"?",
+      "options": [
+        "g = GM/r²",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "g = GM/r²",
+      "explanation": "g = GM/r² is the standard form used for this topic."
+    }
+  ]
+}

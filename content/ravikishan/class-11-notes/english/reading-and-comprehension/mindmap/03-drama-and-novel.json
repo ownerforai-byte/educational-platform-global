@@ -1,0 +1,46 @@
+{
+  "title": "Drama and Novel",
+  "unitSlug": "reading-and-comprehension",
+  "topicSlug": "drama-and-novel",
+  "topicTitle": "Drama and Novel",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "topic-drama-and-novel",
+    "label": "Drama and Novel",
+    "children": [
+      {
+        "id": "drama-and-novel-branch-0",
+        "label": "Drama",
+        "children": [
+          {
+            "id": "drama-and-novel-branch-0-def",
+            "label": "Definition"
+          },
+          {
+            "id": "drama-and-novel-branch-0-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "drama-and-novel-branch-1",
+        "label": "Novel",
+        "children": [
+          {
+            "id": "drama-and-novel-branch-1-def",
+            "label": "Definition"
+          },
+          {
+            "id": "drama-and-novel-branch-1-use",
+            "label": "Exam use"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Drama and Novel\n  - Drama\n  - Novel"
+  ]
+}

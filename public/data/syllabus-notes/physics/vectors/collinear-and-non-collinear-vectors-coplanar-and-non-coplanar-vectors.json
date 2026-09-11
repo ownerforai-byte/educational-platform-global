@@ -1,0 +1,26 @@
+{
+  "title": "Scalars and Vectors",
+  "notes": [
+    "To completely specify a physical quantity we may need to know its **magnitude** alone, or both its **magnitude and direction**. Based on this, physical quantities are divided into two groups.",
+    "**Scalar quantity**: a physical quantity having only magnitude, no direction. Examples: distance, speed, mass, density. Scalars obey the ordinary rules of algebra and are denoted by any ordinary letter.",
+    "**Vector quantity**: a physical quantity defined by both magnitude and direction, which must obey the law of vector addition (triangle law) / vector algebra. Examples: displacement, velocity, force, acceleration.",
+    "Vectors obey vector rules and are represented by a letter with an arrow overhead, e.g. $\\vec{A}$.",
+    "**Q1. Find $|\\vec{A}|$, $|\\vec{B}|$, $|\\vec{A}+\\vec{B}|$ and $|\\vec{A}-\\vec{B}|$ for $\\vec{A}=5\\hat{i}+4\\hat{j}$ and $\\vec{B}=4\\hat{i}+6\\hat{j}$.** $|\\vec{A}|=\\sqrt{5^2+4^2}=\\sqrt{41}$. $|\\vec{B}|=\\sqrt{4^2+6^2}=\\sqrt{16+36}=\\sqrt{52}$. $\\vec{A}+\\vec{B}=9\\hat{i}+10\\hat{j} \\Rightarrow |\\vec{A}+\\vec{B}|=\\sqrt{81+100}=\\sqrt{181}$. $\\vec{A}-\\vec{B}=\\hat{i}-2\\hat{j} \\Rightarrow |\\vec{A}-\\vec{B}|=\\sqrt{1+4}=\\sqrt5$.",
+    "**Q2. Find the angle between $\\vec{a}=2\\hat{i}+3\\hat{j}+4\\hat{k}$ and $\\vec{c}=2\\hat{i}+3\\hat{j}-4\\hat{k}$.** $\\vec{a}\\cdot\\vec{c}=2(2)+3(3)+4(-4)=4+9-16=-3$. $|\\vec{a}|=|\\vec{c}|=\\sqrt{4+9+16}=\\sqrt{29}$ (both vectors have the same magnitude here). $\\cos\\theta=\\dfrac{-3}{29}\\approx-0.103 \\Rightarrow \\theta\\approx95.9Â°$ (obtuse, since the dot product is negative)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

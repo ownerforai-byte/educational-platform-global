@@ -1,0 +1,24 @@
+{
+  "title": "Numerical Computation and Integration Methods",
+  "notes": [
+    "**Bisection method:** repeatedly bisect an interval $[a,b]$ where $f(a)$ and $f(b)$ have opposite signs. Converges linearly but is guaranteed to converge if $f$ is continuous.",
+    "**Newton-Raphson:** $x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$. Uses tangent to approximate root. Converges quadratically when close to root, but requires derivative and good initial guess.",
+    "**Trapezoidal rule:** approximates $\\int_a^b f(x)\\,dx \\approx \\frac{h}{2}[y_0 + 2(y_1 + ... + y_{n-1}) + y_n]$, where $h = (b-a)/n$. Exact for linear functions.",
+    "**Simpson's rule:** $\\int_a^b f(x)\\,dx \\approx \\frac{h}{3}[y_0 + 4(y_1 + y_3 + ...) + 2(y_2 + y_4 + ...) + y_n]$. Requires even number of intervals. Exact for polynomials up to degree 3."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

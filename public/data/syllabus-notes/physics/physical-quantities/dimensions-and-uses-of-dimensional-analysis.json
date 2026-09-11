@@ -1,0 +1,25 @@
+{
+  "title": "Dimensions and Uses of Dimensional Analysis",
+  "notes": [
+    "**Dimensions:** every physical quantity can be expressed in terms of the base dimensions: mass $M$, length $L$, time $T$, temperature $\\Theta$, electric current $I$, amount of substance $N$, luminous intensity $J$.",
+    "**Dimensional formula:** written as $[M^a L^b T^c]$ where $a, b, c$ are the powers of the base dimensions. For example, velocity is $[LT^{-1}]$ and force is $[MLT^{-2}]$.",
+    "**Checking equations:** if two sides of an equation have different dimensions, the equation is definitely wrong. If they have the same dimensions, the equation may still be wrong, but it is not ruled out.",
+    "**Finding dimensions of constants:** when a formula contains an unknown constant, dimensional analysis can determine the constant's dimensions. For example, in $F = k\\frac{q_1 q_2}{r^2}$, the dimensions of $k$ must be $[ML^3T^{-2}I^{-2}]$.",
+    "**Limitations:** dimensional analysis cannot determine dimensionless constants such as $2$, $\\pi$, or $e$; it cannot distinguish between different formulas that share the same dimensions; and it fails when trigonometric, exponential, or logarithmic functions are involved because those functions require dimensionless arguments."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

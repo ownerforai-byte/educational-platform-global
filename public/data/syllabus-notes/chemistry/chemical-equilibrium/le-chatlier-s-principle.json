@@ -1,0 +1,25 @@
+{
+  "title": "Le Chatelier's Principle",
+  "notes": [
+    "**Principle:** when a system at equilibrium is subjected to a change in concentration, pressure, or temperature, the system shifts in the direction that tends to counteract the change and restore a new equilibrium.",
+    "**Concentration:** increasing reactant concentration shifts equilibrium forward; increasing product concentration shifts it backward.",
+    "**Pressure/volume:** for gas-phase reactions with $\\Delta n \\neq 0$, increasing pressure (decreasing volume) shifts toward the side with fewer gas moles. If $\\Delta n = 0$, pressure has no effect.",
+    "**Temperature:** if the forward reaction is exothermic ($\\Delta H < 0$), increasing temperature shifts equilibrium backward (endothermic direction). If endothermic forward, increasing T shifts forward.",
+    "**Catalyst:** does not shift equilibrium position; it only helps the system reach equilibrium faster."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

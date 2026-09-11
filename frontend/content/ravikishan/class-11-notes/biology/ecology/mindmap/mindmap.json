@@ -1,0 +1,91 @@
+{
+  "title": "Ecology Mindmap",
+  "unitSlug": "ecology",
+  "topicSlug": "ecology-mindmap",
+  "topicTitle": "Ecology — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Ecology",
+    "children": [
+      {
+        "id": "ecosystem-ecology-concept-of-e",
+        "label": "Ecosystem ecology",
+        "children": [
+          {
+            "id": "ecosystem-ecology-sub-0",
+            "label": "Concept of ecology"
+          },
+          {
+            "id": "ecosystem-ecology-sub-1",
+            "label": "biotic and abiotic factors"
+          },
+          {
+            "id": "ecosystem-ecology-sub-2",
+            "label": "species interactions"
+          }
+        ]
+      },
+      {
+        "id": "concept-of-ecosystem-structura",
+        "label": "Concept of ecosystem, structural",
+        "children": [
+          {
+            "id": "concept-of-ecosystem-structural-sub-0",
+            "label": "functional aspects of pond"
+          },
+          {
+            "id": "concept-of-ecosystem-structural-sub-1",
+            "label": "forest ecosystem"
+          }
+        ]
+      },
+      {
+        "id": "food-chain-food-web-trophic-level-ecolog",
+        "label": "Food chain, food web, trophic level, ecological pyramids, productivity"
+      },
+      {
+        "id": "biogeochemical-cycles-carbon-a",
+        "label": "Biogeochemical cycles: carbon and nitrogen cycles",
+        "children": [
+          {
+            "id": "biogeochemical-cycles-carbon-and-nitrogen-cycles-sub-0",
+            "label": "concept of succession"
+          }
+        ]
+      },
+      {
+        "id": "ecological-adaptation-concept-",
+        "label": "Ecological adaptation",
+        "children": [
+          {
+            "id": "ecological-adaptation-sub-0",
+            "label": "Concept of adaptation"
+          },
+          {
+            "id": "ecological-adaptation-sub-1",
+            "label": "hydrophytes and xerophytes"
+          }
+        ]
+      },
+      {
+        "id": "ecological-imbalances-greenhou",
+        "label": "Ecological imbalances",
+        "children": [
+          {
+            "id": "ecological-imbalances-sub-0",
+            "label": "Greenhouse effects and climate change"
+          },
+          {
+            "id": "ecological-imbalances-sub-1",
+            "label": "depletion of ozone layer"
+          },
+          {
+            "id": "ecological-imbalances-sub-2",
+            "label": "acid rain and biological invasion"
+          }
+        ]
+      }
+    ]
+  }
+}

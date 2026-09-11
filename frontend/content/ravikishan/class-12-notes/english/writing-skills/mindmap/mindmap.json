@@ -1,0 +1,93 @@
+{
+  "title": "Writing Skills Mindmap",
+  "unitSlug": "writing-skills",
+  "topicSlug": "writing-skills-mindmap",
+  "topicTitle": "Writing Skills — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Writing Skills",
+    "children": [
+      {
+        "id": "essay-writing-argumentative-descriptive-",
+        "label": "Essay writing — argumentative, descriptive, narrative, expository"
+      },
+      {
+        "id": "letter-writing-formal-and-info",
+        "label": "Letter writing — formal",
+        "children": [
+          {
+            "id": "letter-writing-formal-sub-0",
+            "label": "informal"
+          }
+        ]
+      },
+      {
+        "id": "email-writing",
+        "label": "Email writing"
+      },
+      {
+        "id": "report-writing-and-summarisati",
+        "label": "Report writing",
+        "children": [
+          {
+            "id": "report-writing-sub-0",
+            "label": "summarisation"
+          }
+        ]
+      },
+      {
+        "id": "article-writing",
+        "label": "Article writing"
+      },
+      {
+        "id": "note-making-and-summary",
+        "label": "Note-making",
+        "children": [
+          {
+            "id": "note-making-sub-0",
+            "label": "summary"
+          }
+        ]
+      },
+      {
+        "id": "story-writing",
+        "label": "Story writing"
+      },
+      {
+        "id": "speech-and-dialogue-writing",
+        "label": "Speech",
+        "children": [
+          {
+            "id": "speech-sub-0",
+            "label": "dialogue writing"
+          }
+        ]
+      },
+      {
+        "id": "review-writing-book-and-film",
+        "label": "Review writing — book",
+        "children": [
+          {
+            "id": "review-writing-book-sub-0",
+            "label": "film"
+          }
+        ]
+      },
+      {
+        "id": "comprehension-and-paraphrasing",
+        "label": "Comprehension",
+        "children": [
+          {
+            "id": "comprehension-sub-0",
+            "label": "paraphrasing"
+          }
+        ]
+      },
+      {
+        "id": "grammar-for-writing-sentences-clauses-pu",
+        "label": "Grammar for writing — sentences, clauses, punctuation"
+      }
+    ]
+  }
+}

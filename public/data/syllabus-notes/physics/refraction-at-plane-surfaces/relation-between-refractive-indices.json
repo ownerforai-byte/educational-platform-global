@@ -1,0 +1,25 @@
+{
+  "title": "Relation Between Refractive Indices",
+  "notes": [
+    "**Absolute refractive index:** measured relative to vacuum or air. $n_{abs} = c/v_{medium}$.",
+    "**Relative refractive index:** $n_{21} = n_2/n_1 = v_1/v_2$. This is the ratio of speeds in the two media.",
+    "**Reciprocity:** $n_{12} = 1/n_{21}$. The index of medium 2 relative to 1 is the reciprocal of the index of medium 1 relative to 2.",
+    "**Additivity rule:** for a stack of parallel slabs, the overall lateral shift depends on the sum of individual shifts. The relative indices multiply along the path.",
+    "**Practical example:** light going air ($n_1=1$) to water ($n_2=1.33$) to glass ($n_3=1.52$): $n_{13} = n_3/n_1 = 1.52$, but the effective path depends on each interface separately."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

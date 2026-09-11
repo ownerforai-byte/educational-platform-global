@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "State the first law of thermodynamics and explain its limitations.",
+      "marks": 2,
+      "solution": "**First law:** ΔQ = ΔU + ΔW — heat supplied to a system partly increases its internal energy and partly does external work.\n\n**Limitations:**\n- It cannot tell the *direction* of heat flow (it permits heat to flow from a cold body to a hot body spontaneously, which never happens).\n- It does not define whether a process is possible at all — it says nothing about entropy.\n- It cannot explain why heat cannot be converted completely into work."
+    },
+    {
+      "question": "Derive an expression for the work done during the isothermal expansion of an ideal gas.",
+      "marks": 3,
+      "solution": "For an isothermal process T is constant, so P = nRT/V.\n\nW = ∫(V₁→V₂) P dV = nRT ∫(V₁→V₂) dV/V\n\nW = **nRT ln(V₂/V₁)**.\n\nSince V₂ > V₁ in expansion, W is positive (work done by the gas)."
+    },
+    {
+      "question": "Define entropy. Show that the entropy of the universe increases in a spontaneous process.",
+      "marks": 3,
+      "solution": "**Entropy** is a thermodynamic property measuring the disorder of a system; change in entropy ΔS = ΔQ_rev/T (unit J K⁻¹).\n\nFor any spontaneous (irreversible) process:\nΔS_universe = ΔS_system + ΔS_surroundings > 0.\n\nFor a reversible process ΔS_universe = 0. Hence entropy of the universe always **increases** in a spontaneous process — this is the second law of thermodynamics."
+    },
+    {
+      "question": "A Carnot engine works between 600 K and 300 K. Find its efficiency.",
+      "marks": 2,
+      "solution": "η = 1 − T₂/T₁ = 1 − 300/600 = 1 − 0.5 = **0.5 = 50%**."
+    }
+  ]
+}

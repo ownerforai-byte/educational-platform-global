@@ -1,0 +1,51 @@
+{
+  "title": "Kinematics Mindmap",
+  "unitSlug": "kinematics",
+  "topicSlug": "kinematics-mindmap",
+  "topicTitle": "Kinematics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Kinematics",
+    "children": [
+      {
+        "id": "instantaneous-velocity-and-acc",
+        "label": "Instantaneous velocity",
+        "children": [
+          {
+            "id": "instantaneous-velocity-sub-0",
+            "label": "acceleration"
+          }
+        ]
+      },
+      {
+        "id": "relative-velocity",
+        "label": "Relative velocity"
+      },
+      {
+        "id": "equation-of-motion-graphical-treatment-",
+        "label": "Equation of motion (graphical treatment)",
+        "children": [
+          {
+            "id": "equation-of-motion-graphical-treatment--item-0",
+            "label": "graphical treatment"
+          }
+        ]
+      },
+      {
+        "id": "motion-of-a-freely-falling-body",
+        "label": "Motion of a freely falling body"
+      },
+      {
+        "id": "projectile-motion-and-its-appl",
+        "label": "Projectile motion",
+        "children": [
+          {
+            "id": "projectile-motion-sub-0",
+            "label": "its applications"
+          }
+        ]
+      }
+    ]
+  }
+}

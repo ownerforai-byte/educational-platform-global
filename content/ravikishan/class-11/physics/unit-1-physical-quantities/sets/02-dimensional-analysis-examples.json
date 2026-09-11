@@ -1,0 +1,11 @@
+{
+  "title": "Dimensional Analysis Worked Examples",
+  "notes": [
+    "Ex 1. Check s = ut + ½at² for dimensional correctness.\nLHS s: [L]. RHS ut: [L T⁻¹][T] = [L]; ½at²: [L T⁻²][T²] = [L]. All terms [L] → dimensionally correct.",
+    "Ex 2. Check v² = u² + 2as.\nv² and u²: [L T⁻¹]² = [L² T⁻²]. as: [L T⁻²][L] = [L² T⁻²]. Consistent → correct.",
+    "Ex 3. Derive the time period of a simple pendulum: assume T = k lᵃ gᵇ.\n[T] = [L]ᵃ [L T⁻²]ᵇ = [Lᵃ⁺ᵇ T⁻²ᵇ]. Matching: −2b = 1 → b = −½; a + b = 0 → a = ½. So T = k√(l/g); experiment gives k = 2π.",
+    "Ex 4. Convert 1 newton to CGS (dyne).\nn₁u₁ = n₂u₂: 1 kg·m/s² = n₂ g·cm/s². 1 kg → 10³ g; 1 m → 10² cm; so 1 N = 10³ × 10² = 10⁵ dyne.",
+    "Ex 5. Find the dimensions of the gravitational constant G using F = Gm₁m₂/ρ².\n[G] = [F][ρ²]/[m₁m₂] = [M L T⁻²][L²]/[M²] = [M⁻¹ L³ T⁻²].",
+    "Ex 6. Count significant figures in 3.050 × 10².\nAnswer: 4 (all digits in 3.050 are significant)."
+  ]
+}

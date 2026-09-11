@@ -1,0 +1,173 @@
+{
+  "title": "Conical Pendulum",
+  "unitSlug": "circular-motion",
+  "topicSlug": "conical-pendulum",
+  "topicTitle": "Conical pendulum",
+  "relevance": 100,
+  "notes": [
+    "**Setup:** a mass $m$ attached to a string of length $l$ rotates in a horizontal circle, making a constant angle $\\theta$ with the vertical.",
+    "**Forces:** tension $T$ has components $T\\cos\\theta$ upward balancing weight $mg$, and $T\\sin\\theta$ inward providing centripetal force.",
+    "**Period:** $T_{period} = 2\\pi\\sqrt{\\frac{l\\cos\\theta}{g}}$. The period depends on the string length, the angle, and gravity.",
+    "**Special case — small angles:** when $\\theta$ is small, $\\cos\\theta \\approx 1$, so $T_{period} \\approx 2\\pi\\sqrt{l/g}$, the same as a simple pendulum.",
+    "**Speed:** $v = \\sqrt{gr\\tan\\theta}$, where $r = l\\sin\\theta$ is the radius of the horizontal circle. Faster spin means a larger angle $\\theta$.",
+    "**Height of the pendulum:** the vertical distance from the suspension point to the mass is $h = l\\cos\\theta$. The period depends only on this height: $T_{period} = 2\\pi\\sqrt{h/g}$.",
+    "**Angular velocity:** $\\omega = \\sqrt{g/(l\\cos\\theta)} = \\sqrt{g/h}$. As the mass spins faster, $\\theta$ increases, $h$ decreases, and the period decreases.",
+    "**Tension:** from $T\\cos\\theta = mg$, we get $T = mg/\\cos\\theta$. As $\\theta$ increases, tension increases without bound. At $\\theta = 90^{\\circ}$, tension would be infinite — physically impossible.",
+    "**Maximum angle limit:** as $\\omega \\to \\infty$, $\\theta \\to 90^{\\circ}$ but never reaches it. The mass rises toward the horizontal but cannot get there because the required tension would be infinite.",
+    "**Analogy with a spinning conical top:** the path swept by the string traces a cone, hence the name. The path on a horizontal plane is circular, but the full trajectory in 3D is the surface of a cone.",
+    "**Relation to simple pendulum:** a conical pendulum with very small $\\theta$ behaves like a simple pendulum of the same length, oscillating back and forth rather than spinning around."
+  ],
+  "confusion": [
+    "The period of a conical pendulum $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$ is always less than that of a simple pendulum of the same length ($2\\pi\\sqrt{l/g}$) because $\\cos\\theta < 1$.",
+    "Tension in a conical pendulum is always greater than $mg$ because $T = mg/\\cos\\theta$ and $\\cos\\theta < 1$. The faster the rotation, the greater the tension.",
+    "The period of a conical pendulum decreases as it spins faster (larger $\\theta$), unlike a simple pendulum where period depends only on length and $g$.",
+    "The period depends on the vertical height $h = l\\cos\\theta$, not on the radius of the circle. Two conical pendulums with the same $h$ have the same period regardless of their lengths.",
+    "The conical pendulum is not a 2D problem. The mass moves in a horizontal circle, but the string sweeps out a cone in 3D space."
+  ],
+  "practice": [
+    "A 0.5 kg ball is attached to a 1 m string and swings in a conical pendulum at $\\theta = 45^{\\circ}$. Find the period, tension, and speed. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g} = 2\\pi\\sqrt{1 \\times 0.707/9.8} = 2\\pi\\sqrt{0.0721} = 2\\pi \\times 0.269 = 1.69$ s. $T = mg/\\cos\\theta = 0.5 \\times 9.8/0.707 = 6.93$ N. $r = l\\sin\\theta = 0.707$ m. $v = \\sqrt{gr\\tan\\theta} = \\sqrt{9.8 \\times 0.707 \\times 1} = 2.63$ m/s.",
+    "A conical pendulum has a period of 2 s and a string length of 1 m. Find the angle $\\theta$ and the radius of the circle. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$, so $2 = 2\\pi\\sqrt{\\cos\\theta/9.8}$. $(2/(2\\pi))^2 = \\cos\\theta/9.8$. $\\cos\\theta = 9.8/(\\pi^2) = 0.993$. $\\theta = 6.8^{\\circ}$. $r = 1 \\times \\sin 6.8^{\\circ} = 0.119$ m.",
+    "A 0.2 kg mass on a 0.5 m string rotates in a horizontal circle at 3 rad/s. Find the angle, tension, and height. Solution: $\\omega = \\sqrt{g/(l\\cos\\theta)}$, so $\\cos\\theta = g/(l\\omega^2) = 9.8/(0.5 \\times 9) = 2.18$. Since this exceeds 1, the pendulum cannot maintain this angular velocity — the required angle would exceed 90 degrees. The maximum $\\omega = \\sqrt{g/l} = \\sqrt{9.8/0.5} = 4.43$ rad/s.",
+    "Two conical pendulums: Pendulum A has length 0.8 m at $\\theta = 30^{\\circ}$, Pendulum B has length 0.5 m at $\\theta = 45^{\\circ}$. Which has the shorter period? Solution: $h_A = 0.8\\cos 30^{\\circ} = 0.693$ m, $h_B = 0.5\\cos 45^{\\circ} = 0.354$ m. $T_A = 2\\pi\\sqrt{0.693/9.8} = 1.67$ s, $T_B = 2\\pi\\sqrt{0.354/9.8} = 1.19$ s. Pendulum B has the shorter period.",
+    "A 100 g ball swings as a conical pendulum with a period of 1.5 s and string length 0.6 m. Find the angle, tension, and speed. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$, so $\\cos\\theta = gT^2/(4\\pi^2 l) = 9.8 \\times 2.25/(4\\pi^2 \\times 0.6) = 22.05/23.69 = 0.931$. $\\theta = 21.4^{\\circ}$. $T = mg/\\cos\\theta = 0.1 \\times 9.8/0.931 = 1.05$ N. $r = 0.6\\sin 21.4^{\\circ} = 0.217$ m. $v = 2\\pi r/T = 2\\pi \\times 0.217/1.5 = 0.91$ m/s."
+  ],
+  "universalFacts": [
+    "The period of a conical pendulum depends only on the vertical height from the suspension point to the mass's plane of rotation: $T = 2\\pi\\sqrt{h/g}$.",
+    "As a conical pendulum spins faster, it rises higher (larger $\\theta$), reducing $h$ and decreasing the period. This is the opposite of intuition for many students.",
+    "The tension in the string is always greater than $mg$ because a component of tension must provide both the centripetal force and support the weight.",
+    "A conical pendulum cannot rotate with $\\theta = 90^{\\circ}$ because this would require infinite tension and infinite angular velocity.",
+    "The conical pendulum demonstrates that the period of circular motion depends on the effective height, not the string length alone, which connects it to the physics of satellites at different altitudes."
+  ],
+  "animation3D": "circular-motion",
+  "motionGraphics": "circular-motion",
+  "examples": [
+    "Example 1: Real-world application of Conical pendulum",
+    "Example 2: Practical demonstration of Conical pendulum concepts",
+    "Example 3: Numerical problem on Conical pendulum",
+    "Example 4: Diagram-based question on Conical pendulum",
+    "Example 5: Application in daily life involving Conical pendulum"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Conical pendulum with suitable example.",
+    "Q2. Solve problems related to Conical pendulum.",
+    "Q3. Differentiate between various aspects of Conical pendulum.",
+    "Q4. Derive the key formula related to Conical pendulum.",
+    "Q5. What are the applications of Conical pendulum?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Conical pendulum",
+    "Key Formula 2: Mathematical expression of Conical pendulum",
+    "Key Formula 3: Application formula for Conical pendulum",
+    "Key Formula 4: Derivation result for Conical pendulum",
+    "Key Formula 5: Important relation in Conical pendulum"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Conical pendulum",
+    "Key Point 2: Essential theorem or principle related to Conical pendulum",
+    "Key Point 3: Important condition or constraint for Conical pendulum",
+    "Key Point 4: Common applications of Conical pendulum",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Conical pendulum is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Conical pendulum applies",
+    "Note 2: Conical pendulum connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Conical pendulum",
+    "Note 4: Remember the units and dimensions involved in Conical pendulum",
+    "Note 5: Conical pendulum frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Conical pendulum",
+    "Statement 2: Theorem related to Conical pendulum",
+    "Statement 3: Condition for Conical pendulum to be valid",
+    "Statement 4: Principle governing Conical pendulum",
+    "Statement 5: Corollary or consequence of Conical pendulum"
+  ],
+  "importantNotes": [
+    "Note 1: Conical pendulum is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Conical pendulum",
+    "Note 3: Conical pendulum has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Conical pendulum",
+    "Note 5: Cross-check your answers using alternative methods for Conical pendulum"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Conical pendulum formula",
+    "Trick 2: Elimination technique for Conical pendulum MCQs",
+    "Trick 3: Dimensional analysis shortcut for Conical pendulum",
+    "Trick 4: Memory aid for Conical pendulum formulas",
+    "Trick 5: Time-saving approach for Conical pendulum problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Conical pendulum",
+    "Exam Tip 2: Practice previous year questions on Conical pendulum",
+    "Exam Tip 3: Conical pendulum carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Conical pendulum thoroughly",
+    "Exam Tip 5: Review common mistakes related to Conical pendulum"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Conical pendulum?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Conical pendulum is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Conical pendulum, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Conical pendulum?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Conical pendulum is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Conical pendulum",
+    "Concept 2: Key theorem or principle in Conical pendulum",
+    "Concept 3: Important application area of Conical pendulum",
+    "Concept 4: Fundamental relationship in Conical pendulum",
+    "Concept 5: Connection between Conical pendulum and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Conical pendulum",
+    "Task 2: Derive the main formula for Conical pendulum",
+    "Task 3: Create a concept map for Conical pendulum",
+    "Task 4: Practice previous year exam questions on Conical pendulum",
+    "Task 5: Explain Conical pendulum to a peer or study group"
+  ]
+}

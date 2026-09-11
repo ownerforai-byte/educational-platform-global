@@ -1,0 +1,25 @@
+{
+  "title": "Capacitance and Capacitor",
+  "notes": [
+    "**Capacitance $C$:** the ability of a system to store charge per unit potential difference. $C = Q/V$.",
+    "**Units:** farad (F). $1\\,\\text{F} = 1\\,\\text{C/V}$. Practical capacitors are usually microfarads ($\\mu$F) or picofarads (pF).",
+    "**Parallel plate capacitor:** $C = \\epsilon_0 A/d$ for air, where $A$ is plate area and $d$ is separation. Larger area and smaller gap give larger capacitance.",
+    "**Energy stored:** $U = \\frac{1}{2}CV^2 = \\frac{Q^2}{2C}$. This energy is stored in the electric field between the plates.",
+    "**Energy density:** $u = \\frac{1}{2}\\epsilon_0 E^2$. Energy is distributed throughout the space between the plates, not just on the plates themselves."
+  ],
+  "confusion": [
+    "Capacitance is not the same as charge. A capacitor with large capacitance can store more charge at the same voltage, but $C$ itself depends only on geometry and dielectric.",
+    "Energy stored is $U = \\frac{1}{2}CV^2$, not $CV^2$. The factor $1/2$ appears because voltage rises linearly from 0 to $V$ as the capacitor charges.",
+    "Disconnecting the battery before changing plate separation preserves charge $Q$, not voltage $V$."
+  ],
+  "practice": [
+    "A parallel plate capacitor with $A = 0.2\\,\\text{m}^2$ and $d = 1\\,\\text{mm}$ is charged to 200 V. Find $C$ and energy stored. ($\\epsilon_0 = 8.85 \\times 10^{-12}$)",
+    "Two capacitors $3\\,\\mu$F and $6\\,\\mu$F are connected in series across 12 V. Find the charge on each and voltage across the $6\\,\\mu$F capacitor.",
+    "A $10\\,\\mu$F capacitor is charged to 100 V and then disconnected. If plate separation is doubled, what is the new voltage?"
+  ],
+  "universalFacts": [
+    "Capacitance depends only on geometry and dielectric â€” never on charge or voltage.",
+    "In series, charge is the same on every capacitor; in parallel, voltage is the same across every capacitor.",
+    "Energy in a capacitor is always stored in the electric field, never on the plates."
+  ]
+}

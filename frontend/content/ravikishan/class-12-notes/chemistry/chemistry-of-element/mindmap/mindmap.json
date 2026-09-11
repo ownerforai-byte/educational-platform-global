@@ -1,0 +1,77 @@
+{
+  "title": "Chemistry of Element Mindmap",
+  "unitSlug": "chemistry-of-element",
+  "topicSlug": "chemistry-of-element-mindmap",
+  "topicTitle": "Chemistry of Element — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Chemistry of Element",
+    "children": [
+      {
+        "id": "p-block-elements-group-15-18-i",
+        "label": "p-block elements (Group 15–18)",
+        "children": [
+          {
+            "id": "p-block-elements-group-15-18--sub-0",
+            "label": "important compounds"
+          },
+          {
+            "id": "p-block-elements-group-15-18--sub-1",
+            "label": "trends in properties"
+          }
+        ]
+      },
+      {
+        "id": "d-block-elements-general-chara",
+        "label": "d-block elements",
+        "children": [
+          {
+            "id": "d-block-elements-sub-0",
+            "label": "general characteristics"
+          },
+          {
+            "id": "d-block-elements-sub-1",
+            "label": "important compounds (KMnO₄, K₂Cr₂O₇"
+          }
+        ]
+      },
+      {
+        "id": "f-block-elements-lanthanoids-a",
+        "label": "f-block elements: lanthanoids",
+        "children": [
+          {
+            "id": "f-block-elements-lanthanoids-sub-0",
+            "label": "actinoids"
+          }
+        ]
+      },
+      {
+        "id": "coordination-compounds-werner-",
+        "label": "Coordination compounds",
+        "children": [
+          {
+            "id": "coordination-compounds-sub-0",
+            "label": "Werner's theory"
+          },
+          {
+            "id": "coordination-compounds-sub-1",
+            "label": "IUPAC nomenclature"
+          },
+          {
+            "id": "coordination-compounds-sub-2",
+            "label": "VBT"
+          },
+          {
+            "id": "coordination-compounds-sub-3",
+            "label": "CFT (qualitative"
+          },
+          {
+            "id": "coordination-compounds-sub-4",
+            "label": "isomerism"
+          }
+        ]
+      }
+    ]
+  }
+}

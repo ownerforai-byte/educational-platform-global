@@ -1,0 +1,13 @@
+{
+  "name": "moecdc-extraction",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Extracts chapter text from the CDC Physics Grade 11 textbook PDF (moecdc.gov.np)",
+  "scripts": {
+    "download": "node download_pdf.js",
+    "extract": "node extract_chapters.js"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}

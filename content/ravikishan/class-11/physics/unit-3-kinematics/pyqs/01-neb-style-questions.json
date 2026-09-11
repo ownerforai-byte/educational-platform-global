@@ -1,0 +1,12 @@
+{
+  "title": "NEB-Style Questions — Kinematics",
+  "notes": [
+    "Q1. (Short answer) Define instantaneous velocity and instantaneous acceleration. How are they obtained graphically?\nAns: v = dx/dt (slope of x–t curve); a = dv/dt (slope of v–t curve).",
+    "Q2. (Short answer) A ball is projected horizontally from a height h with speed u. Find the time to hit the ground and the horizontal range.\nAns: t = √(2h/g); range = u√(2h/g).",
+    "Q3. (Derivation) Derive s = ut + ½at² by velocity–time graph.\nAns: Area under v–t line = rectangle ut + triangle ½ t·(at) = ut + ½at².",
+    "Q4. (Numerical) A car accelerates uniformly from rest to 20 m/s in 10 s. Find acceleration and distance covered.\nAns: a = (v−u)/t = 2 m/s²; s = ut + ½at² = (0) + ½·2·100 = 100 m.",
+    "Q5. (Numerical) A stone is thrown vertically upward with velocity 30 m/s (g = 10 m/s²). Compute max height, time to reach the top and total time of flight.\nAns: H = u²/(2g) = 900/20 = 45 m; t_asc = u/g = 3 s; total T = 2u/g = 6 s.",
+    "Q6. (Concept) Two projectiles thrown at θ and 90° − θ with the same speed. Show they have equal ranges and derive the condition for maximum range.\nAns: R = u² sin2θ/g; sin2(90°−θ) = sin2θ so ranges equal; R is max when sin2θ = 1 → θ = 45°.",
+    "Q7. (Practical) Why is 45° the ideal angle for a long jump/javelin? \nAns: Range R = u² sin2θ/g is greatest at 45° where sin2θ = 1; real athletes adjust for height of release and air drag."
+  ]
+}

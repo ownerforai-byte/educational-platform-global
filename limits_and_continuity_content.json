@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "source": "webnotee.com",
+    "title": "Limits and Continuity - Class 11 Mathematics (Chapter 15)",
+    "subject": "Mathematics",
+    "grade": 11,
+    "chapter": 15,
+    "author": "Sanjeev (WebNotee)",
+    "last_updated": "2026-01-10",
+    "exercise_pages": {
+      "exercise_15_1": "https://webnotee.com/limits-and-continuity-class-11-mathematics/",
+      "exercise_15_2": "https://webnotee.com/limits-and-continuity-class-11-mathematics-solutions/",
+      "exercise_15_3": "https://webnotee.com/limits-and-continuity-class-11-mathematics-solution/"
+    },
+    "pdf_solutions": {
+      "exercise_15_1": {
+        "url": "https://drive.google.com/file/d/1AzJClQ9yS-1cbHLjgU5HEO4DrlyEdh6x/preview",
+        "download_url": "https://drive.google.com/uc?export=download&id=1AzJClQ9yS-1cbHLjgU5HEO4DrlyEdh6x",
+        "description": "Solutions for Exercise 15.1"
+      },
+      "exercise_15_2": {
+        "url": "https://drive.google.com/file/d/1BHRefOfe4aUssh4OdLDf4SvciIuxRgyr/preview",
+        "download_url": "https://drive.google.com/uc?export=download&id=1BHRefOfe4aUssh4OdLDf4SvciIuxRgyr",
+        "description": "Solutions for Exercise 15.2"
+      },
+      "exercise_15_3": {
+        "url": "https://drive.google.com/file/d/1BNiGWmNx2Br1hJf9bL0fsrXmAs8a6ctW/preview",
+        "download_url": "https://drive.google.com/uc?export=download&id=1BNiGWmNx2Br1hJf9bL0fsrXmAs8a6ctW",
+        "description": "Solutions for Exercise 15.3"
+      }
+    },
+    "note": "Some formulas (trigonometric limits, log/exponential limits) are presented as images on the source pages. The image URLs are included in the formula_images section."
+  },
+  "formula_images": {
+    "limits_of_trigonometric_functions": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjr-wQ01l8qLY9WQCD6667Ec5_ClAjqD_PUzJEw9infIXcxshyPMD62OiLUhfNNy7ytJlTQrmQ5Qk0slB6_tq2XERWNJhoKQpj6cC-sRrxEqrGem_F1smC8I2DHV4qlD1tBbWrveV9nJ0VstJ78HBiYCBrMCoojUhYsNvDXDAHwwjLj-9RL-yR38o8DqQ/s802/Limits%20of%20trigonometric%20functions%20.png",
+    "limits_of_log_and_exponential_functions": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiH8ZnyGLt_eTSPSZr8O_1qJjPe2p9DmqF-gpzHtfazbfTKyO0oGP4SQ9RWvHj0BGQqJGlTjrqpli0g4tUAl-bv3wtq4gCsA5C4Roo1JH_ZZHICQ16bOxGMqSmcq5rNzK0gxmZr7lXbGrTXKua_6lfzIXbh1YPI_jjSEwhwxYzaev8axXrRr0CYyxN6bg/w539-h640/Limits%20of%20log%20and%20Exponential%20Functions%20.png",
+    "continuity_of_a_function_graph": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibgSQ3qlM8qR-iSQ-4-hb73-_AwjygupZyrzq7LTqqlYjaOkkgh3uKjGg2qSo5_2TLOw6E6_DctpgMbGVDJrau2BIfLCNhDPmfFnVJpmz29r3xfyIyV4S883hA5kRF7NHdj8CNMrt7a2xZCTWk5mYVdNWw6DVWmJ45Vubg8-35111DZHIPiGkLNj605A/w640-h402/Continuity%20of%20a%20Function%20.jpg"
+  },
+  "topics": {
+    "introduction": {
+      "title": "Introduction",
+      "content": "We have discussed a function and its graph in chapter I. As a review, we give the definition of a function, its domain, range and its graph once again before defining the limit of a function. We deal with limits and continuity which are quite fundamental for the development of calculus. These two concepts are closely linked together with the involvement of the concept of limit in the definition of continuity. So in the sequence, limit comes first and it is proper to begin with some discussion about it. The discussion is initiated with some examples so as to give some intuitive idea about it. Then follows the precise definition of the limit. The same line of approach is being followed in the case of continuity as well. We shall also mention some limit theorems and properties of continuous functions without proof.",
+      "key_points": [
+        "Limits and continuity are fundamental for the development of calculus",
+        "These two concepts are closely linked together",
+        "The concept of limit is involved in the definition of continuity",
+        "Limit comes first in the sequence, followed by continuity",
+        "The chapter discusses limit theorems and properties of continuous functions"
+      ]
+    },
+    "function_definition": {
+      "title": "Function",
+      "content": "Let X and Y be two non-empty sets. Then a function f from X to Y is a rule which assigns a unique element of Y to each element of X. The unique element of Y which f assigns corresponding to an element x in X is denoted by f(x). So, we also write y = f(x). The symbol f: X->Y usually means 'f is a function from X to Y'. The element f(x) of Y is called the image of x under the function f.",
+      "notation": "f: X -> Y, y = f(x)",
+      "key_terms": {
+        "function": "A rule which assigns a unique element of Y to each element of X",
+        "domain": "The set X from which elements are taken",
+        "codomain": "The set Y to which elements are mapped",
+        "image": "The element f(x) of Y, corresponding to x in X"
+      }
+    },
+    "value_of_function": {
+      "title": "Value of the Function",
+      "content": "If f is a function from X to Y and x = a is an element in the domain of f, then the image f(a) corresponding to x = a is said to be the value of the function at x = a. If the value of the function f(x) at x = a denoted by f(a) is a finite number, then f(x) exists or is defined at x = a otherwise, f(x) does not exist or is not defined at x = a.",
+      "key_points": [
+        "f(a) is the value of the function at x = a",
+        "f(x) exists or is defined at x = a if f(a) is a finite number",
+        "f(x) does not exist or is undefined if f(a) is not a finite number"
+      ],
+      "examples": [
+        "Example i: y = f(x) = 3x + 5 exists or is defined at x = 2 as f(2) = 3 * 2 + 5 = 11 is a finite number",
+        "Example ii: y = f(x) = 1/(x - 1) is not defined at x = 1 as f(1) = 1/0 is not a finite number. Hence f(x) does not exist or is undefined at x = 1."
+      ]
+    },
+    "limits": {
+      "title": "Limits",
+      "subtopics": {
+        "right_hand_limit": {
+          "title": "Right Hand Limit",
+          "definition": "A function f(x) is said to have the right hand limit l1 at x = a as x approaches a through values greater than a (i.e. x approaches a from the right) and symbolically it is written as lim(x->a+) f(x) = l1. The right hand limit of f(x) at x = a is also written as lim(x->a+0) f(x) = f(a + 0).",
+          "notation": [
+            "lim(x->a+) f(x) = l1",
+            "lim(x->a+0) f(x) = f(a + 0)"
+          ],
+          "description": "As x approaches a from the right side (values greater than a)"
+        },
+        "left_hand_limit": {
+          "title": "Left Hand Limit",
+          "definition": "A function f(x) is said to have the left hand limit l2 at x = a as x approaches a through values less than a (i.e. x approaches a from the left) and symbolically it is written as lim(x->a-) f(x) = l2. The left hand limit of f(x) at x = a is also written as lim(x->a-0) f(x) = f(a - 0).",
+          "notation": [
+            "lim(x->a-) f(x) = l2",
+            "lim(x->a-0) f(x) = f(a - 0)"
+          ],
+          "description": "As x approaches a from the left side (values less than a)"
+        },
+        "existence_of_limit": {
+          "title": "Existence of Limit",
+          "rule": "The limit lim(x->a) f(x) exists if and only if the left hand limit equals the right hand limit: lim(x->a-) f(x) = lim(x->a+) f(x)",
+          "notation": "lim(x->a) f(x) = L if and only if lim(x->a-) f(x) = lim(x->a+) f(x) = L"
+        }
+      },
+      "standard_limits": [
+        "lim(x->a) x = a",
+        "lim(x->a) c = c (where c is a constant)",
+        "lim(x->0) sin(x)/x = 1",
+        "lim(x->0) (1 - cos x)/x = 0",
+        "lim(x->0) tan(x)/x = 1",
+        "lim(x->0) (e^x - 1)/x = 1",
+        "lim(x->0) (a^x - 1)/x = ln(a)",
+        "lim(x->infinity) (1 + 1/x)^x = e"
+      ]
+    },
+    "continuity": {
+      "title": "Continuity of a Function",
+      "intuitive_definition": "The intuitive idea of a continuous function f in the interval [a, b] gives the impression that the graph of the function f in this interval is a smooth curve without any break in it. Actually this curve is such that it can be drawn by the continuous motion of pencil without lifting it on a sheet of paper. Similarly, a discontinuous function gives the picture consisting of disconnected curves.",
+      "formal_definition": "A function f(x) is said to be continuous at x = a if three conditions are satisfied: (1) f(a) is defined, (2) lim(x->a) f(x) exists, (3) lim(x->a) f(x) = f(a). If any of these conditions fails, the function is discontinuous at x = a.",
+      "conditions_for_continuity_at_x_eq_a": [
+        "Condition 1: f(a) is defined (f exists at x = a)",
+        "Condition 2: lim(x->a) f(x) exists (both LHL and RHL exist and are equal)",
+        "Condition 3: lim(x->a) f(x) = f(a) (the limit equals the function value)"
+      ],
+      "types_of_discontinuity": {
+        "removable": {
+          "name": "Removable Discontinuity",
+          "description": "The limit exists but does not equal the function value, or the function is undefined at that point. The discontinuity can be removed by redefining or defining the function at that point.",
+          "condition": "lim(x->a) f(x) exists but lim(x->a) f(x) != f(a), or f(a) is not defined"
+        },
+        "jump": {
+          "name": "Jump Discontinuity",
+          "description": "The left hand limit and right hand limit both exist but are not equal.",
+          "condition": "lim(x->a-) f(x) != lim(x->a+) f(x), but both are finite"
+        },
+        "infinite": {
+          "name": "Infinite Discontinuity",
+          "description": "One or both one-sided limits approach infinity or negative infinity.",
+          "condition": "lim(x->a-) f(x) = +/-infinity or lim(x->a+) f(x) = +/-infinity"
+        }
+      }
+    },
+    "limits_of_trigonometric_functions": {
+      "title": "Limits of Trigonometric Functions",
+      "description": "In Exercise 15.2, students learn to find limits of trigonometric functions. This requires knowledge of basic trigonometry formulas from class 10 plus additional limit-specific formulas.",
+      "prerequisites": [
+        "Basic trigonometry formulas from class 10",
+        "Limit formulas specific to trigonometric functions"
+      ],
+      "formulas_source": "Presented as images on the source page (see formula_images section)",
+      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjr-wQ01l8qLY9WQCD6667Ec5_ClAjqD_PUzJEw9infIXcxshyPMD62OiLUhfNNy7ytJlTQrmQ5Qk0slB6_tq2XERWNJhoKQpj6cC-sRrxEqrGem_F1smC8I2DHV4qlD1tBbWrveV9nJ0VstJ78HBiYCBrMCoojUhYsNvDXDAHwwjLj-9RL-yR38o8DqQ/s802/Limits%20of%20trigonometric%20functions%20.png"
+    },
+    "limits_of_log_and_exponential_functions": {
+      "title": "Limits of Logarithmic and Exponential Functions",
+      "description": "Formula of log and exponential functions are needed while finding their limits.",
+      "formulas_source": "Presented as images on the source page (see formula_images section)",
+      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiH8ZnyGLt_eTSPSZr8O_1qJjPe2p9DmqF-gpzHtfazbfTKyO0oGP4SQ9RWvHj0BGQqJGlTjrqpli0g4tUAl-bv3wtq4gCsA5C4Roo1JH_ZZHICQ16bOxGMqSmcq5rNzK0gxmZr7lXbGrTXKua_6lfzIXbh1YPI_jjSEwhwxYzaev8axXrRr0CYyxN6bg/w539-h640/Limits%20of%20log%20and%20Exponential%20Functions%20.png"
+    }
+  },
+  "exercise_structure": {
+    "exercise_15_1": {
+      "topic": "Limits of normal (algebraic) functions",
+      "page": "https://webnotee.com/limits-and-continuity-class-11-mathematics/",
+      "pdf": {
+        "url": "https://drive.google.com/file/d/1AzJClQ9yS-1cbHLjgU5HEO4DrlyEdh6x/preview",
+        "download_url": "https://drive.google.com/uc?export=download&id=1AzJClQ9yS-1cbHLjgU5HEO4DrlyEdh6x",
+        "description": "Solutions for Exercise 15.1"
+      },
+      "covers": [
+        "Finding limits of polynomial functions",
+        "Finding limits of rational functions",
+        "Function definition and evaluation"
+      ]
+    },
+    "exercise_15_2": {
+      "topic": "Limits of trigonometric functions",
+      "page": "https://webnotee.com/limits-and-continuity-class-11-mathematics-solutions/",
+      "pdf": {
+        "url": "https://drive.google.com/file/d/1BHRefOfe4aUssh4OdLDf4SvciIuxRgyr/preview",
+        "download_url": "https://drive.google.com/uc?export=download&id=1BHRefOfe4aUssh4OdLDf4SvciIuxRgyr",
+        "description": "Solutions for Exercise 15.2"
+      },
+      "covers": [
+        "Limits of trigonometric functions",
+        "Trigonometry formulas review",
+        "Limits of log and exponential functions"
+      ]
+    },
+    "exercise_15_3": {
+      "topic": "Continuity of functions",
+      "page": "https://webnotee.com/limits-and-continuity-class-11-mathematics-solution/",
+      "pdf": {
+        "url": "https://drive.google.com/file/d/1BNiGWmNx2Br1hJf9bL0fsrXmAs8a6ctW/preview",
+        "download_url": "https://drive.google.com/uc?export=download&id=1BNiGWmNx2Br1hJf9bL0fsrXmAs8a6ctW",
+        "description": "Solutions for Exercise 15.3"
+      },
+      "covers": [
+        "Right hand limit",
+        "Left hand limit",
+        "Checking continuity of functions",
+        "Identifying types of discontinuity"
+      ]
+    }
+  }
+}

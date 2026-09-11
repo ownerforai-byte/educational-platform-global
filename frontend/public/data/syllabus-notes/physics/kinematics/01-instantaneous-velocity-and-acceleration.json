@@ -1,0 +1,170 @@
+{
+  "title": "Instantaneous Velocity and Acceleration",
+  "unitSlug": "kinematics",
+  "topicSlug": "instantaneous-velocity-and-acceleration",
+  "topicTitle": "Instantaneous velocity and acceleration",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "instantaneous-velocity-acceleration",
+  "notes": [
+    "**Type 2 — alternate treatment:** this version complements the original note with the limit-definition approach, calculus forms and graphical slope reasoning for instantaneous velocity and acceleration.",
+    "**Average quantities first:** average velocity $v_{avg} = \\frac{\\Delta x}{\\Delta t}$ uses the whole interval; average acceleration $a_{avg} = \\frac{\\Delta v}{\\Delta t}$ likewise. They smooth out everything that happened in between — a car doing 100 km in 2 h has $v_{avg} = 50$ km/h regardless of traffic.",
+    "**The limit idea:** instantaneous velocity is the average velocity as $\\Delta t \\to 0$: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$. It answers 'how fast RIGHT NOW' — exactly what a speedometer reads.",
+    "**Instantaneous acceleration:** $a = \\lim_{\\Delta t \\to 0}\\frac{\\Delta v}{\\Delta t} = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$. Acceleration is the derivative of velocity — the 'slope of the slope'.",
+    "**Graphical meaning:** on an $x$–$t$ graph, velocity = slope of the tangent at the instant (not the chord); on a $v$–$t$ graph, acceleration = slope of the tangent, and the AREA under the curve between two times gives the displacement.",
+    "**Sign reasoning:** $v > 0$ → moving forward; $v < 0$ → moving backward; $a > 0$ with $v > 0$ → speeding up; $a > 0$ with $v < 0$ → slowing down (a negative velocity becoming more negative). 'Slowing down' means $v$ and $a$ have OPPOSITE signs — the classic exam trap.",
+    "**Worked calculus example:** $x(t) = 5t^2 - 3t$. Then $v = dx/dt = 10t - 3$ and $a = dv/dt = 10\\,\\text{m/s}^2$ (constant). At $t = 2$ s: $v = 17$ m/s; the particle is momentarily at rest when $t = 0.3$ s.",
+    "**Uniform vs non-uniform acceleration:** if $a$ is constant the SUVAT equations apply; if $a$ varies with time, position or velocity, only the calculus definitions (or graphs) work. This is why the derivative definition is the more general and more fundamental one.",
+    "**NEB exam focus:** define instantaneous velocity/acceleration as limits; differentiate a given $x(t)$; find when a particle is at rest or reverses; convert between $x$–$t$, $v$–$t$ and $a$–$t$ graphs (slopes and areas)."
+  ],
+  "confusion": [
+    "❌ 'Instantaneous velocity equals average velocity.' ✅ Only when motion is uniform. In general $v_{inst} = dx/dt$ while $v_{avg} = \\Delta x/\\Delta t$; they coincide only if the $x$–$t$ graph is a straight line.",
+    "❌ 'Negative acceleration always means slowing down.' ✅ Slowing means $v$ and $a$ have OPPOSITE signs. A ball thrown upward (up = positive) has $v > 0$ with $a = -g$ — it slows going up and speeds up coming down, with the SAME downward acceleration throughout.",
+    "❌ 'The area under an $x$–$t$ graph gives velocity.' ✅ The SLOPE of $x$–$t$ gives velocity; the AREA under a $v$–$t$ graph gives displacement. Mixing these up is the classic graph-question error.",
+    "❌ 'At the turning point, acceleration is zero.' ✅ At a reversal, $v = 0$ but $a$ is NOT zero (e.g. a ball at the top of its flight has $v = 0$, $a = g$ downward). Zero velocity ≠ zero acceleration.",
+    "❌ 'Speed can be negative.' ✅ Speed is $|v|$, always non-negative; velocity carries the sign (direction).",
+    "❌ 'If $v = 0$ at an instant, the particle has stopped permanently.' ✅ $v = 0$ can be a momentary pause (top of a throw) — check the acceleration to know what happens next."
+  ],
+  "practice": [
+    "Given $x(t) = 4t^3 - 2t^2 + 5$ (m): find $v(t)$ and $a(t)$; evaluate at $t = 1$ s. — $v = 12t^2 - 4t = 8$ m/s; $a = 24t - 4 = 20$ m/s².",
+    "A particle's velocity is $v(t) = 6t - 3t^2$ (m/s). When is it instantaneously at rest, and what is its acceleration then? — $t = 0$ or $2$ s; at $t = 2$: $a = 6 - 6t = -6$ m/s².",
+    "From a $v$–$t$ graph consisting of a straight line from (0, 4) to (4, 12) m/s, find the acceleration and the displacement in 4 s. — $a = 2$ m/s²; displacement = area $= \\frac{4+12}{2}\\times4 = 32$ m.",
+    "A stone is thrown up at 20 m/s ($g = 10$ m/s²). Find its velocity and acceleration at the highest point. — $v = 0$; $a = 10$ m/s² downward — zero velocity, non-zero acceleration.",
+    "The position of two trains is $x_1 = 20t$ and $x_2 = 5t^2$ (m). When are their instantaneous velocities equal, and where? — $20 = 10t$ → $t = 2$ s at $x = 40$ m."
+  ],
+  "universalFacts": [
+    "Calculus was invented (Newton and Leibniz, 1660s–70s) precisely to handle instantaneous quantities — physics and calculus were born together, and Newton's name for the derivative was the 'fluxion'.",
+    "Car speedometers show instantaneous speed, while trip computers computing distance ÷ time show average speed — the two can differ enormously in city traffic.",
+    "Radar guns and GPS speed trackers estimate instantaneous velocity by measuring position over very small time windows — a physical implementation of the limit $\\Delta x/\\Delta t$ with $\\Delta t \\to 0$.",
+    "In relativity and quantum mechanics, instantaneous velocity remains fundamental: particle accelerators track beam particles through billions of instantaneous velocity updates per second."
+  ],
+  "animation3D": "kinematics",
+  "motionGraphics": "kinematics",
+  "examples": [
+    "Example 1: $x(t) = 3t^2$ m → $v = 6t$ m/s; at $t = 2$ s the instantaneous velocity is 12 m/s, while the average velocity over 0–2 s is $\\frac{12-0}{2} = 6$ m/s — different because the motion speeds up.",
+    "Example 2: A metro train's $v$–$t$ graph: trapezoid of acceleration, cruise, braking. Displacement = area of trapezoid; acceleration = slope in each segment.",
+    "Example 3: $v(t) = 8 - 4t$: the particle reverses at $t = 2$ s where $v = 0$ but $a = -4$ m/s² throughout — illustrating reversal with constant acceleration.",
+    "Example 4: Two instants with equal speeds but different velocities: $v = +10$ m/s at $t_1$ and $v = -10$ m/s at $t_2$ — same speed, opposite direction of motion.",
+    "Example 5: From $a = 6t$ and $v(0) = 2$ m/s: integrate to $v = 3t^2 + 2$ and, with $x(0) = 0$, $x = t^3 + 2t$ — showing how derivatives run downward ($x \\to v \\to a$) and integrals run upward."
+  ],
+  "practiceQuestions": [
+    "Q1. Define instantaneous velocity with the limit definition and explain its graphical meaning on an $x$–$t$ graph.",
+    "Q2. Distinguish between average acceleration and instantaneous acceleration with one example each.",
+    "Q3. For $x(t) = 2t^3 - 9t^2 + 12t$ (m), find when the velocity is zero and classify each instant (pause vs reversal).",
+    "Q4. Sketch the $v$–$t$ graph for a ball thrown vertically upward and returning; mark where $v = 0$ and the sign of $a$ throughout.",
+    "Q5. A particle moves with $v = kt$ where $k = 2$ m/s². Find its instantaneous acceleration and displacement after 3 s from rest."
+  ],
+  "formulas": [
+    "Instantaneous velocity: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$",
+    "Instantaneous acceleration: $a = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$",
+    "Displacement from velocity: $x_2 - x_1 = \\int_{t_1}^{t_2} v\\,dt$ (area under $v$–$t$ curve)",
+    "Velocity from acceleration: $v_2 - v_1 = \\int_{t_1}^{t_2} a\\,dt$",
+    "Rest condition: $v = \\frac{dx}{dt} = 0$; reversal check: sign change of $v$ around that instant"
+  ],
+  "keyPoints": [
+    "Instantaneous velocity is the slope of the tangent of the $x$–$t$ graph; instantaneous acceleration is the slope of the $v$–$t$ graph.",
+    "Displacement is the area under the $v$–$t$ graph; change in velocity is the area under the $a$–$t$ graph.",
+    "$v = 0$ does not imply $a = 0$ — turning points have zero velocity but non-zero acceleration.",
+    "Speeding up ⟺ $v$ and $a$ share the same sign; slowing down ⟺ opposite signs.",
+    "Derivatives go down the chain $x \\to v \\to a$; integrals go up $a \\to v \\to x$, using initial conditions.",
+    "The limit definition is valid for ANY motion — SUVAT equations are special cases of constant acceleration only."
+  ],
+  "summary": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change. These definitions work for all motion — uniform or not — making them more fundamental than the constant-acceleration equations. Key exam skills: differentiating given $x(t)$, locating rest/reversal instants, and reading slopes and areas correctly with attention to signs.",
+  "specialNotes": [
+    "Note 1: Carry units through calculus: if $x$ is in metres and $t$ in seconds, $v$ is m/s and $a$ is m/s² automatically.",
+    "Note 2: NEB graph questions award marks for BOTH slope reasoning and area reasoning — label which you used.",
+    "Note 3: When integrating acceleration, always determine integration constants from given initial conditions.",
+    "Note 4: In 'is the particle speeding up?' questions, compare signs of $v$ and $a$ at that instant — not the sign of $a$ alone."
+  ],
+  "importantStatements": [
+    "Statement 1: Instantaneous velocity is the limit of average velocity as the time interval tends to zero: $v = dx/dt$.",
+    "Statement 2: Instantaneous acceleration is the derivative of velocity with respect to time: $a = dv/dt$.",
+    "Statement 3: On a position–time graph the slope of the tangent at any instant gives the instantaneous velocity at that instant.",
+    "Statement 4: The area under a velocity–time curve between two instants equals the displacement in that interval, regardless of whether the acceleration is constant."
+  ],
+  "importantNotes": [
+    "Note 1: Zero instantaneous velocity does not imply zero acceleration (turning points).",
+    "Note 2: Instantaneous speed equals the magnitude of instantaneous velocity, but never carries a direction.",
+    "Note 3: For constant acceleration only, $v_{avg} = (u+v)/2$; this shortcut fails when $a$ varies.",
+    "Note 4: The calculus definitions apply to ALL motion; SUVAT equations are the special case of constant $a$."
+  ],
+  "examShortTricks": [
+    "Trick 1: 'At rest' ⇒ set $dx/dt = 0$ and solve for $t$; then check the sign of $v$ on both sides to classify pause vs reversal.",
+    "Trick 2: In graph MCQs, remember: slope of $x$–$t$ = $v$; slope of $v$–$t$ = $a$; area of $v$–$t$ = $x$; area of $a$–$t$ = $v$.",
+    "Trick 3: If $x(t)$ is a polynomial, differentiate term-by-term ($d(t^n)/dt = nt^{n-1}$) — no formula sheet needed.",
+    "Trick 4: 'Maximum/minimum position' questions ⇒ set $v = dx/dt = 0$, exactly like turning points in calculus.",
+    "Trick 5: Units self-check: differentiate $x$ in metres → $v$ in m/s → $a$ in m/s²; if your units don't cascade, recheck the algebra."
+  ],
+  "examNotes": [
+    "Exam Tip 1: NEB regularly sets 2-3 mark calculus questions: differentiate $x(t)$, evaluate $v$ and $a$ at a given time — show the derivative step explicitly.",
+    "Exam Tip 2: In graph-conversion questions (given $v$–$t$, sketch $x$–$t$), track curvature: constant $v$ → straight $x$ line; linear $v$ → parabolic $x$.",
+    "Exam Tip 3: When asked 'when is the particle at rest', also state the acceleration at that instant — examiners expect the follow-through.",
+    "Exam Tip 4: Define the limit properly in theory questions: shrinking interval, ratio of small changes — vague wording loses marks."
+  ],
+  "mcs": [
+    {
+      "question": "The instantaneous velocity of a particle is given by:",
+      "options": [
+        "Δx/Δt over a long interval",
+        "dx/dt",
+        "x/t",
+        "Δv/Δt"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If x(t) = 5t² m, the instantaneous velocity at t = 3 s is:",
+      "options": [
+        "15 m/s",
+        "30 m/s",
+        "45 m/s",
+        "5 m/s"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At the highest point of a ball thrown vertically upward:",
+      "options": [
+        "v = 0 and a = 0",
+        "v = 0 and a = g downward",
+        "v ≠ 0 and a = 0",
+        "v and a are both upward"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The displacement of a particle between two times equals:",
+      "options": [
+        "The slope of the v–t graph",
+        "The area under the v–t graph",
+        "The area under the x–t graph",
+        "The slope of the a–t graph"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A particle is slowing down when:",
+      "options": [
+        "a is negative",
+        "v is negative",
+        "v and a have opposite signs",
+        "v and a have the same sign"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Limit definition — instantaneous quantities are average quantities over a vanishing interval.",
+    "Concept 2: Derivative chain: $x \\xrightarrow{d/dt} v \\xrightarrow{d/dt} a$; integrals run the reverse way with initial conditions.",
+    "Concept 3: Graph duality — slopes give rates (v, a); areas give accumulations (x, v).",
+    "Concept 4: Sign logic — direction of motion from sign of $v$; speeding up/slowing down from relative signs of $v$ and $a$.",
+    "Concept 5: Generality — the derivative definitions hold for any acceleration; constant-$a$ equations are a special case."
+  ],
+  "importantTasks": [
+    "Task 1: Differentiate five polynomial position functions, evaluating $v$ and $a$ at specified instants.",
+    "Task 2: Sketch $x$–$t$, $v$–$t$ and $a$–$t$ triplet graphs for: uniform motion, uniformly accelerated motion, and simple back-and-forth motion.",
+    "Task 3: Given $a(t) = 4t$ with $v(0) = 5$ m/s and $x(0) = 2$ m, find $v(t)$ and $x(t)$.",
+    "Task 4: Solve the NEB past question: particle at rest — find times, positions and accelerations at those times.",
+    "Task 5: Explain to a classmate why a speedometer shows instantaneous speed and why trip-average speed can differ, using the limit definition."
+  ]
+}

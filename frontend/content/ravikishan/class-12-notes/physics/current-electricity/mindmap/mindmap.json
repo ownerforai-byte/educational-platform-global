@@ -1,0 +1,93 @@
+{
+  "title": "Current Electricity Mindmap",
+  "unitSlug": "current-electricity",
+  "topicSlug": "current-electricity-mindmap",
+  "topicTitle": "Current Electricity — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Current Electricity",
+    "children": [
+      {
+        "id": "electric-current-drift-velocit",
+        "label": "Electric current, drift velocity,",
+        "children": [
+          {
+            "id": "electric-current-drift-velocity--sub-0",
+            "label": "relaxation time"
+          }
+        ]
+      },
+      {
+        "id": "ohm-s-law-and-its-limitations",
+        "label": "Ohm's law",
+        "children": [
+          {
+            "id": "ohm-s-law-sub-0",
+            "label": "its limitations"
+          }
+        ]
+      },
+      {
+        "id": "resistance-and-resistivity-tem",
+        "label": "Resistance",
+        "children": [
+          {
+            "id": "resistance-sub-0",
+            "label": "resistivity — temperature dependence"
+          }
+        ]
+      },
+      {
+        "id": "series-and-parallel-combinatio",
+        "label": "Series",
+        "children": [
+          {
+            "id": "series-sub-0",
+            "label": "parallel combination of resistors"
+          }
+        ]
+      },
+      {
+        "id": "kirchhoff-s-laws-and-their-app",
+        "label": "Kirchhoff's laws",
+        "children": [
+          {
+            "id": "kirchhoff-s-laws-sub-0",
+            "label": "their applications"
+          }
+        ]
+      },
+      {
+        "id": "electromotive-force-emf-intern",
+        "label": "Electromotive force (emf), internal resistance,",
+        "children": [
+          {
+            "id": "electromotive-force-emf-internal-resistance--sub-0",
+            "label": "cells in combination"
+          }
+        ]
+      },
+      {
+        "id": "wheatstone-bridge-and-meter-br",
+        "label": "Wheatstone bridge",
+        "children": [
+          {
+            "id": "wheatstone-bridge-sub-0",
+            "label": "meter bridge"
+          }
+        ]
+      },
+      {
+        "id": "potentiometer-and-its-applicat",
+        "label": "Potentiometer",
+        "children": [
+          {
+            "id": "potentiometer-sub-0",
+            "label": "its applications"
+          }
+        ]
+      }
+    ]
+  }
+}

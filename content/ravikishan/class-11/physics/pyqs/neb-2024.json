@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "What do you mean by angular momentum? State the law of conservation of angular momentum.",
+      "marks": 2,
+      "solution": "**Angular momentum** L = r × p = Iω is the rotational analogue of linear momentum (unit kg m² s⁻¹).\n\n**Law of conservation:** if the net external torque acting on a system is zero, its total angular momentum remains constant. Example: an ice-skater pulls her arms in — I decreases, ω increases, so L = Iω stays constant."
+    },
+    {
+      "question": "A body is projected with velocity 20 m s⁻¹ at 30° to the horizontal. Find its maximum height and horizontal range.",
+      "marks": 3,
+      "solution": "H = u² sin²θ/(2g) = (400 × sin²30°)/19.6 = (400 × 0.25)/19.6 ≈ **5.1 m**.\n\nR = u² sin 2θ/g = (400 × sin 60°)/9.8 = (400 × 0.866)/9.8 ≈ **35.4 m**."
+    },
+    {
+      "question": "Distinguish between heat and temperature.",
+      "marks": 2,
+      "solution": "**Heat** is the energy in transit from a body at higher temperature to one at lower temperature; it is measured in joules and depends on the mass of the body.\n\n**Temperature** measures the average kinetic energy of the molecules of a body; it is independent of the size/mass of the body and is measured in kelvin (or °C)."
+    },
+    {
+      "question": "State Snell's law. A ray of light travelling in water (n = 4/3) is incident on glass (n = 3/2) at an angle of incidence 60°. Find the angle of refraction.",
+      "marks": 3,
+      "solution": "**Snell's law:** n₁ sin i = n₂ sin r.\n\n(4/3) sin 60° = (3/2) sin r\n\nsin r = (4/3)(0.866) × (2/3) = (8/9)(0.866) ≈ 0.770\n\nr = sin⁻¹(0.770) ≈ **50.3°**."
+    }
+  ]
+}

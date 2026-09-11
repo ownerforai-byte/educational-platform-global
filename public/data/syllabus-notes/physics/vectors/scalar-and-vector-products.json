@@ -1,0 +1,22 @@
+{
+  "title": "Unit Vector â€” Definition and Worked Example",
+  "notes": [
+    "A vector having magnitude 1 but retaining direction is a unit vector, denoted by a letter with a cap overhead ($\\hat{A}$). Numerically, $\\hat{A} = \\dfrac{\\vec{A}}{|\\vec{A}|}$.",
+    "**Example**: Find the unit vector of $\\vec{A}=3\\hat{i}+2\\hat{j}+5\\hat{k}$. Magnitude: $|\\vec{A}|=\\sqrt{3^2+2^2+5^2}=\\sqrt{9+4+25}=\\sqrt{38}$. Unit vector: $\\hat{A}=\\dfrac{\\vec{A}}{|\\vec{A}|}=\\dfrac{3\\hat{i}+2\\hat{j}+5\\hat{k}}{\\sqrt{38}} = \\dfrac{3}{\\sqrt{38}}\\hat{i}+\\dfrac{2}{\\sqrt{38}}\\hat{j}+\\dfrac{5}{\\sqrt{38}}\\hat{k}$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

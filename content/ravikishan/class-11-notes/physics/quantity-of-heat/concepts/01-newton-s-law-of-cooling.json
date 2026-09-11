@@ -1,0 +1,83 @@
+{
+  "title": "Newton's law of cooling",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "newton-s-law-of-cooling",
+  "topicTitle": "Newton's law of cooling",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Newton's law of cooling — Quantity of Heat, Physics (class-11-notes).",
+    "**Tested.** define it · list: newton's law of cooling · one worked example · one misconception each.",
+    "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
+    "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m).",
+    "**Fact.** 3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body).",
+    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt)."
+  ],
+  "confusion": [
+    "❌ treat \"Newton's law of cooling\" as one blob → ✅ split into: newton's law of cooling.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.."
+  ],
+  "bounds": [
+    "Covers only: newton's law of cooling (within Quantity of Heat).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
+  ],
+  "practice": [
+    "define + example each sub-idea: newton's law of cooling.",
+    "one worked example for \"Newton's law of cooling\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
+    "2nd law: net force = rate of change of momentum = m·a (for constant m).",
+    "3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Newton's law of cooling\" with one example.",
+    "compare \"Newton's law of cooling\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Newton's law of cooling\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "F = ma",
+    "J = F·Δt = m·Δv",
+    "p = mv"
+  ],
+  "numericals": [
+    "Use  F = ma  — pick reasonable values, solve, and check the units.",
+    "Use  J = F·Δt = m·Δv  — pick reasonable values, solve, and check the units.",
+    "Use  p = mv  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Newton's law of cooling"
+  ],
+  "summary": "Newton's law of cooling (Quantity of Heat, Physics, class-11-notes) covers Newton's law of cooling. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Newton's law of cooling\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Newton's law of cooling\"?",
+      "options": [
+        "F = ma",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "F = ma",
+      "explanation": "F = ma is the standard form used for this topic."
+    }
+  ]
+}

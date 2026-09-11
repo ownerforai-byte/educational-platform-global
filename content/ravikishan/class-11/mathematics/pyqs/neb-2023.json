@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Mathematics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "If n(A) = 3, find the number of subsets of A and the number of proper subsets.",
+      "marks": 2,
+      "solution": "Number of subsets = 2ⁿ = 2³ = **8**.\n\nNumber of proper subsets = 2ⁿ − 1 = **7**."
+    },
+    {
+      "question": "Prove that: tan A + cot A = sec A · cosec A.",
+      "marks": 3,
+      "solution": "LHS = (sin A/cos A) + (cos A/sin A)\n\n= [sin²A + cos²A]/(sin A · cos A)\n\n= 1/(sin A · cos A)\n\n= **sec A · cosec A = RHS**."
+    },
+    {
+      "question": "Find two positive numbers whose sum is 20 and product is maximum.",
+      "marks": 3,
+      "solution": "Let the numbers be x and 20 − x.\n\nProduct P = x(20 − x) = 20x − x².\n\ndP/dx = 20 − 2x = 0 ⇒ x = 10; d²P/dx² = −2 < 0 ⇒ maximum.\n\nThe numbers are **10 and 10**, with maximum product 100."
+    },
+    {
+      "question": "Evaluate ∫ dx/(1 + x²).",
+      "marks": 2,
+      "solution": "= **tan⁻¹(x) + C**."
+    }
+  ]
+}

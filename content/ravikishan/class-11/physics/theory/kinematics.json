@@ -1,0 +1,15 @@
+{
+  "title": "Kinematics & Projectile Motion",
+  "confusion": [
+    "❌ 'A projectile's horizontal velocity decreases during flight.' ✅ v_x = u cos θ is CONSTANT (no horizontal force in the ideal model).",
+    "❌ 'At the top of the trajectory the velocity is zero.' ✅ Only v_y = 0; the horizontal component u cos θ persists.",
+    "❌ 'Complementary angles give different ranges.' ✅ sin 2(90°−θ) = sin(180°−2θ) = sin 2θ — both give the same range.",
+    "❌ 'Acceleration is zero at the highest point.' ✅ Acceleration is still g downward. Only velocity's vertical component is zero."
+  ],
+  "notes": [
+    "**Equations of motion** (uniform acceleration a, initial velocity u, time t): v = u + at, s = ut + ½at², v² = u² + 2as.",
+    "**Relative velocity** of A with respect to B: v_AB = v_A − v_B.",
+    "**Free fall:** acceleration g ≈ 9.8 m s⁻² toward the Earth's centre, independent of mass (Galileo).",
+    "**Projectile motion:** u at angle θ — T = 2u sin θ / g, H = u² sin² θ / (2g), R = u² sin 2θ / g, max range at θ = 45°. Path is a parabola."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "title": "Biomolecules Mindmap",
+  "unitSlug": "biomolecules",
+  "topicSlug": "biomolecules-mindmap",
+  "topicTitle": "Biomolecules — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Biomolecules",
+    "children": [
+      {
+        "id": "carbohydrates-monosaccharides-",
+        "label": "Carbohydrates",
+        "children": [
+          {
+            "id": "carbohydrates-sub-0",
+            "label": "monosaccharides (glucose, fructose"
+          },
+          {
+            "id": "carbohydrates-sub-1",
+            "label": "disaccharides"
+          },
+          {
+            "id": "carbohydrates-sub-2",
+            "label": "polysaccharides"
+          }
+        ]
+      },
+      {
+        "id": "proteins-amino-acids-peptide-b",
+        "label": "Proteins",
+        "children": [
+          {
+            "id": "proteins-sub-0",
+            "label": "amino acids"
+          },
+          {
+            "id": "proteins-sub-1",
+            "label": "peptide bond"
+          },
+          {
+            "id": "proteins-sub-2",
+            "label": "primary to quaternary structure"
+          },
+          {
+            "id": "proteins-sub-3",
+            "label": "denaturation"
+          }
+        ]
+      },
+      {
+        "id": "enzymes-definition-classificat",
+        "label": "Enzymes",
+        "children": [
+          {
+            "id": "enzymes-sub-0",
+            "label": "definition"
+          },
+          {
+            "id": "enzymes-sub-1",
+            "label": "classification"
+          },
+          {
+            "id": "enzymes-sub-2",
+            "label": "enzyme action"
+          }
+        ]
+      },
+      {
+        "id": "vitamins-classification-and-fu",
+        "label": "Vitamins: classification",
+        "children": [
+          {
+            "id": "vitamins-classification-sub-0",
+            "label": "functions"
+          }
+        ]
+      },
+      {
+        "id": "hormones-definition-types-func",
+        "label": "Hormones",
+        "children": [
+          {
+            "id": "hormones-sub-0",
+            "label": "definition"
+          },
+          {
+            "id": "hormones-sub-1",
+            "label": "types"
+          },
+          {
+            "id": "hormones-sub-2",
+            "label": "functions"
+          }
+        ]
+      }
+    ]
+  }
+}

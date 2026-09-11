@@ -1,0 +1,25 @@
+{
+  "title": "Deviation in a Small-Angle Prism",
+  "notes": [
+    "**Small-angle approximation:** when the prism angle $A$ is small and angles are in radians, $\\sin\\theta \\approx \\theta$.",
+    "**Approximate deviation:** $\\delta \\approx (n - 1)A$. The deviation depends only on the refractive index and the prism angle, not on the angle of incidence.",
+    "**Why it simplifies:** for thin prisms used in spectrometers and binoculars, this formula gives sufficient accuracy without solving the full prism formula.",
+    "**Dispersion from thin prism:** $\\delta_v - \\delta_r = (n_v - n_r)A$. The angular separation between violet and red is proportional to the prism angle and the dispersion of the material.",
+    "**Practical consequence:** a thinner prism gives less deviation and less dispersion, which is why high-precision instruments use carefully chosen prism angles."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

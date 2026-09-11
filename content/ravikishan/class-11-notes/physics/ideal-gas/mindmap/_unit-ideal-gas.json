@@ -1,0 +1,64 @@
+{
+  "title": "Ideal Gas",
+  "unitSlug": "ideal-gas",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-ideal-gas",
+    "label": "Ideal Gas",
+    "children": [
+      {
+        "id": "unit-topic-ideal-gas-equation",
+        "label": "Ideal gas equation",
+        "children": []
+      },
+      {
+        "id": "unit-topic-molecular-properties-of-matter",
+        "label": "Molecular properties of matter",
+        "children": []
+      },
+      {
+        "id": "unit-topic-kinetic-molecular-model-of-an-ideal-gas",
+        "label": "Kinetic-molecular model of an ideal gas",
+        "children": []
+      },
+      {
+        "id": "unit-topic-derivation-of-pressure-exerted-by-gas",
+        "label": "Derivation of pressure exerted by gas",
+        "children": []
+      },
+      {
+        "id": "unit-topic-average-translational-kinetic-energy-of-gas-molecule",
+        "label": "Average translational kinetic energy of gas molecule",
+        "children": []
+      },
+      {
+        "id": "unit-topic-boltzmann-constant-root-mean-square-speed",
+        "label": "Boltzmann constant, root mean square speed",
+        "children": [
+          {
+            "id": "unit-ideal-gas-boltzmann-constant-root-mean-square-speed-0",
+            "label": "Root mean square speed"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-heat-capacities-of-gases-and-solids",
+        "label": "Heat capacities of gases and solids",
+        "children": [
+          {
+            "id": "unit-ideal-gas-heat-capacities-of-gases-and-solids-0",
+            "label": "Solids"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Ideal Gas\n  - Ideal gas equation\n  - Molecular properties of matter\n  - Kinetic-molecular model of an ideal gas\n  - Derivation of pressure exerted by gas\n  - Average translational kinetic energy of gas molecule\n  - Boltzmann constant, root mean square speed\n  - Heat capacities of gases and solids"
+  ]
+}

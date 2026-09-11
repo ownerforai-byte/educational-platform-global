@@ -1,0 +1,97 @@
+{
+  "title": "Relation between the angle of prism, minimum deviation an…",
+  "unitSlug": "refraction-through-prisms",
+  "topicSlug": "relation-between-the-angle-of-prism-minimum-deviation-and-refractive-index",
+  "topicTitle": "Relation between the angle of prism, minimum deviation and refractive index",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Relation between the angle of prism, minimum deviation an… — Refraction through Prisms, Physics (class-11-notes).",
+    "**Tested.** define it · list: relation between the angle of prism, minimum deviation, refractive index · one worked example · one misconception each.",
+    "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "**Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "**Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe).",
+    "**Minimum deviation.** one-line definition + one-line exam use.",
+    "**Refractive index.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Relation between the angle of prism\" as one blob → ✅ split into: relation between the angle of prism, minimum deviation, refractive index.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.."
+  ],
+  "bounds": [
+    "Covers only: relation between the angle of prism, minimum deviation, refractive index (within Refraction through Prisms).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "define + example each sub-idea: relation between the angle of prism, minimum deviation, refractive index.",
+    "one worked example for \"Relation between the angle of prism, minimum deviation an…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Relation between the angle of prism, minimum deviation an…\" with one example.",
+    "compare \"Relation between the angle of prism\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Relation between the angle of prism, minimum deviation an…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "Use  1/f = (μ−1)(1/R₁ − 1/R₂)  — pick reasonable values, solve, and check the units.",
+    "Use  P = 1/f  — pick reasonable values, solve, and check the units.",
+    "Use  n = sin((A+D)/2)/sin(A/2)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Relation between the angle of prism",
+    "• Minimum deviation",
+    "• Refractive index"
+  ],
+  "summary": "Relation between the angle of prism, minimum deviation an… (Refraction through Prisms, Physics, class-11-notes) covers Relation between the angle of prism, minimum deviation, refractive index. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Relation between the angle of prism, minimum deviation an…\"?",
+      "options": [
+        "Relation between the angle of prism",
+        "Minimum deviation",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Relation between the angle of prism",
+      "explanation": "Relation between the angle of prism is listed among the official sub-ideas of Relation between the angle of prism, minimum deviation an…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Relation between the angle of prism, minimum deviation an…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Relation between the angle of prism, minimum deviation an…\"?",
+      "options": [
+        "1/f = (μ−1)(1/R₁ − 1/R₂)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "1/f = (μ−1)(1/R₁ − 1/R₂)",
+      "explanation": "1/f = (μ−1)(1/R₁ − 1/R₂) is the standard form used for this topic."
+    }
+  ]
+}

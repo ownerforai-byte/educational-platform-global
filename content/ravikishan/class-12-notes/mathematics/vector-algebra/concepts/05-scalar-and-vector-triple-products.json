@@ -1,0 +1,84 @@
+{
+  "title": "Scalar and vector triple products",
+  "unitSlug": "vector-algebra",
+  "topicSlug": "scalar-and-vector-triple-products",
+  "topicTitle": "Scalar and vector triple products",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Scalar and vector triple products — Vector Algebra, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: scalar, vector triple products · one worked example · one misconception each.",
+    "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "**Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
+    "**Vector triple products.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Scalar\" as one blob → ✅ split into: scalar, vector triple products.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).."
+  ],
+  "bounds": [
+    "Covers only: scalar, vector triple products (within Vector Algebra).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)."
+  ],
+  "practice": [
+    "define + example each sub-idea: scalar, vector triple products.",
+    "one worked example for \"Scalar and vector triple products\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Scalar and vector triple products\" with one example.",
+    "compare \"Scalar\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Scalar and vector triple products\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "a·b = a₁b₁+a₂b₂+a₃b₃",
+    "|a×b| = |a||b|sinθ",
+    "|a| = √(a²+b²+c²)"
+  ],
+  "numericals": [
+    "Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.",
+    "Use  |a×b| = |a||b|sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  |a| = √(a²+b²+c²)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Scalar",
+    "• Vector triple products"
+  ],
+  "summary": "Scalar and vector triple products (Vector Algebra, Mathematics, class-12-notes) covers Scalar, vector triple products. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Scalar and vector triple products\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Scalar and vector triple products\"?",
+      "options": [
+        "a·b = a₁b₁+a₂b₂+a₃b₃",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "a·b = a₁b₁+a₂b₂+a₃b₃",
+      "explanation": "a·b = a₁b₁+a₂b₂+a₃b₃ is the standard form used for this topic."
+    }
+  ]
+}

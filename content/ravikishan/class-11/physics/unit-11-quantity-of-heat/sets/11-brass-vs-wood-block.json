@@ -1,0 +1,8 @@
+{
+  "title": "Q: Brass vs wooden block — which cools faster, and why does this matter for 'water equivalent'?",
+  "notes": [
+    "**Setup:** a brass block (100 g) and a wooden block (100 g) are both initially at 100°C and left in the same room",
+    "Wood has a much lower thermal conductivity and typically a lower specific heat capacity than brass, but under Newton's Law of Cooling the key factor is m·c: a lower m·c means a faster rate of temperature fall for the same rate of heat loss",
+    "This is exactly why 'water equivalent' is useful — instead of tracking each material's own c, every object can be converted to 'an equivalent mass of water' (W = mc/c_w), letting heat calculations for mixtures of different materials be done as if everything were water"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Vectors Mindmap",
+  "unitSlug": "vectors",
+  "topicSlug": "vectors-mindmap",
+  "topicTitle": "Vectors — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Vectors",
+    "children": [
+      {
+        "id": "triangle-parallelogram-and-pol",
+        "label": "Triangle, parallelogram",
+        "children": [
+          {
+            "id": "triangle-parallelogram-sub-0",
+            "label": "polygon laws of vectors"
+          }
+        ]
+      },
+      {
+        "id": "resolution-of-vectors-unit-vec",
+        "label": "Resolution of vectors",
+        "children": [
+          {
+            "id": "resolution-of-vectors-sub-0",
+            "label": "unit vectors"
+          }
+        ]
+      },
+      {
+        "id": "scalar-and-vector-products",
+        "label": "Scalar",
+        "children": [
+          {
+            "id": "scalar-sub-0",
+            "label": "vector products"
+          }
+        ]
+      }
+    ]
+  }
+}

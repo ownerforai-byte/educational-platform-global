@@ -1,0 +1,65 @@
+{
+  "title": "Probability Mindmap",
+  "unitSlug": "probability",
+  "topicSlug": "probability-mindmap",
+  "topicTitle": "Probability — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Probability",
+    "children": [
+      {
+        "id": "conditional-probability-and-mu",
+        "label": "Conditional probability",
+        "children": [
+          {
+            "id": "conditional-probability-sub-0",
+            "label": "multiplication theorem"
+          }
+        ]
+      },
+      {
+        "id": "independent-events",
+        "label": "Independent events"
+      },
+      {
+        "id": "bayes-theorem-and-its-applicat",
+        "label": "Bayes' theorem",
+        "children": [
+          {
+            "id": "bayes-theorem-sub-0",
+            "label": "its applications"
+          }
+        ]
+      },
+      {
+        "id": "random-variable-and-its-probab",
+        "label": "Random variable",
+        "children": [
+          {
+            "id": "random-variable-sub-0",
+            "label": "its probability distribution"
+          }
+        ]
+      },
+      {
+        "id": "mean-variance-and-standard-dev",
+        "label": "Mean, variance",
+        "children": [
+          {
+            "id": "mean-variance-sub-0",
+            "label": "standard deviation of a random variable"
+          }
+        ]
+      },
+      {
+        "id": "binomial-distribution-definition-mean-va",
+        "label": "Binomial distribution — definition, mean, variance"
+      },
+      {
+        "id": "poisson-distribution-definition-mean-var",
+        "label": "Poisson distribution — definition, mean, variance"
+      }
+    ]
+  }
+}

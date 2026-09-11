@@ -1,0 +1,79 @@
+{
+  "title": "Angle between two lines, two planes, and a line and a plane",
+  "unitSlug": "three-dimensional-geometry",
+  "topicSlug": "angle-between-two-lines-two-planes-and-a-line-and-a-plane",
+  "topicTitle": "Angle between two lines, two planes, and a line and a plane",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Angle between two lines, two planes, and a line and a plane — Three Dimensional Geometry, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: angle between two lines, two planes, a line, a plane · one worked example · one misconception each.",
+    "**Two planes.** one-line definition + one-line exam use.",
+    "**A line.** one-line definition + one-line exam use.",
+    "**A plane.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Angle between two lines\" as one blob → ✅ split into: angle between two lines, two planes, a line.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result."
+  ],
+  "bounds": [
+    "Covers only: angle between two lines, two planes, a line, a plane (within Three Dimensional Geometry).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "define + example each sub-idea: angle between two lines, two planes, a line, a plane.",
+    "one worked example for \"Angle between two lines, two planes, and a line and a plane\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Angle between two lines, two planes, and a line and a plane\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Angle between two lines, two planes, and a line and a plane\" with one example.",
+    "compare \"Angle between two lines\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Angle between two lines, two planes, and a line and a plane\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Standard result for \"Angle between two lines, two planes, and a line and a plane\" — state it and verify by substituting a simple case."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Angle between two lines, two planes, and a line and a plane\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Angle between two lines",
+    "• Two planes",
+    "• A line",
+    "• A plane"
+  ],
+  "summary": "Angle between two lines, two planes, and a line and a plane (Three Dimensional Geometry, Mathematics, class-12-notes) covers Angle between two lines, two planes, a line. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Angle between two lines, two planes, and a line and a plane\"?",
+      "options": [
+        "Angle between two lines",
+        "Two planes",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Angle between two lines",
+      "explanation": "Angle between two lines is listed among the official sub-ideas of Angle between two lines, two planes, and a line and a plane; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Angle between two lines, two planes, and a line and a plane\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

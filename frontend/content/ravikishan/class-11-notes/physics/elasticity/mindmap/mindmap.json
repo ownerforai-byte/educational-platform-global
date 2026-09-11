@@ -1,0 +1,57 @@
+{
+  "title": "Elasticity Mindmap",
+  "unitSlug": "elasticity",
+  "topicSlug": "elasticity-mindmap",
+  "topicTitle": "Elasticity — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Elasticity",
+    "children": [
+      {
+        "id": "hooke-s-law-force-constant",
+        "label": "Hooke's law: force constant"
+      },
+      {
+        "id": "stress-strain-elasticity-and-p",
+        "label": "Stress",
+        "children": [
+          {
+            "id": "stress-sub-0",
+            "label": "strain"
+          },
+          {
+            "id": "stress-sub-1",
+            "label": "elasticity and plasticity"
+          }
+        ]
+      },
+      {
+        "id": "elastic-modulus-young-modulus-",
+        "label": "Elastic modulus",
+        "children": [
+          {
+            "id": "elastic-modulus-sub-0",
+            "label": "Young modulus"
+          },
+          {
+            "id": "elastic-modulus-sub-1",
+            "label": "bulk modulus"
+          },
+          {
+            "id": "elastic-modulus-sub-2",
+            "label": "shear modulus"
+          }
+        ]
+      },
+      {
+        "id": "poisson-s-ratio",
+        "label": "Poisson's ratio"
+      },
+      {
+        "id": "elastic-potential-energy",
+        "label": "Elastic potential energy"
+      }
+    ]
+  }
+}

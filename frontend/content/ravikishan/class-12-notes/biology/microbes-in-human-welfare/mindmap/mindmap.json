@@ -1,0 +1,35 @@
+{
+  "title": "Microbes in Human Welfare Mindmap",
+  "unitSlug": "microbes-in-human-welfare",
+  "topicSlug": "microbes-in-human-welfare-mindmap",
+  "topicTitle": "Microbes in Human Welfare — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Microbes in Human Welfare",
+    "children": [
+      {
+        "id": "microorganisms-in-household-products",
+        "label": "Microorganisms in household products"
+      },
+      {
+        "id": "industrial-production-of-antibiotics-alc",
+        "label": "Industrial production of antibiotics, alcoholic beverages, citric acid"
+      },
+      {
+        "id": "microbes-as-biocontrol-agents-",
+        "label": "Microbes as biocontrol agents",
+        "children": [
+          {
+            "id": "microbes-as-biocontrol-agents-sub-0",
+            "label": "biofertilizers"
+          }
+        ]
+      },
+      {
+        "id": "bioremediation-biogas",
+        "label": "Bioremediation, biogas"
+      }
+    ]
+  }
+}

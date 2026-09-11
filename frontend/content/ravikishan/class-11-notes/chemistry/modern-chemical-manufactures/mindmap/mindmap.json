@@ -1,0 +1,63 @@
+{
+  "title": "Modern Chemical Manufactures Mindmap",
+  "unitSlug": "modern-chemical-manufactures",
+  "topicSlug": "modern-chemical-manufactures-mindmap",
+  "topicTitle": "Modern Chemical Manufactures — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Modern Chemical Manufactures",
+    "children": [
+      {
+        "id": "manufacture-of-ammonia-by-habe",
+        "label": "Manufacture of ammonia by Haber's process (principle",
+        "children": [
+          {
+            "id": "manufacture-of-ammonia-by-haber-s-process-principle-sub-0",
+            "label": "flow sheet diagram only)"
+          }
+        ]
+      },
+      {
+        "id": "manufacture-of-nitric-acid-by-ostwald-s-",
+        "label": "Manufacture of nitric acid by Ostwald's process"
+      },
+      {
+        "id": "manufacture-of-sulphuric-acid-by-contact",
+        "label": "Manufacture of sulphuric acid by contact process"
+      },
+      {
+        "id": "manufacture-of-sodium-hydroxide-by-diaph",
+        "label": "Manufacture of sodium hydroxide by Diaphragm Cell"
+      },
+      {
+        "id": "manufacture-of-sodium-carbonat",
+        "label": "Manufacture of sodium carbonate by ammonia soda",
+        "children": [
+          {
+            "id": "manufacture-of-sodium-carbonate-by-ammonia-soda-sub-0",
+            "label": "Solvay process"
+          }
+        ]
+      },
+      {
+        "id": "fertilizers-chemical-fertilize",
+        "label": "Fertilizers",
+        "children": [
+          {
+            "id": "fertilizers-sub-0",
+            "label": "chemical fertilizers"
+          },
+          {
+            "id": "fertilizers-sub-1",
+            "label": "types of chemical fertilizers"
+          },
+          {
+            "id": "fertilizers-sub-2",
+            "label": "production of urea with flow-sheet diagram"
+          }
+        ]
+      }
+    ]
+  }
+}

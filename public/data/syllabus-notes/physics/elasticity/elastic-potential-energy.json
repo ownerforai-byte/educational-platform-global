@@ -1,0 +1,24 @@
+{
+  "title": "Elastic Potential Energy",
+  "notes": [
+    "**Definition:** the energy stored in an elastic body when it is deformed. For a spring, $U = \\frac{1}{2}kx^2$.",
+    "**Derivation:** work done in stretching a spring from $x=0$ to $x=x$ against the restoring force $F=kx$ is $W = \\int_0^x kx \\, dx = \\frac{1}{2}kx^2$. This work is stored as elastic potential energy.",
+    "**Graphical interpretation:** on a force-extension graph, the area under the line $F=kx$ from 0 to $x$ is the triangle area $\\frac{1}{2}kx^2$.",
+    "**Energy density:** energy stored per unit volume: $U/V = \\frac{1}{2}Y\\epsilon^2$, where $\\epsilon$ is strain. This shows that strain energy depends on the material stiffness $Y$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

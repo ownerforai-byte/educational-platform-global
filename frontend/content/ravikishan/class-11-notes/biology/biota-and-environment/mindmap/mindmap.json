@@ -1,0 +1,83 @@
+{
+  "title": "Biota and Environment Mindmap",
+  "unitSlug": "biota-and-environment",
+  "topicSlug": "biota-and-environment-mindmap",
+  "topicTitle": "Biota and Environment — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Biota and Environment",
+    "children": [
+      {
+        "id": "animal-adaptation-aquatic-prim",
+        "label": "Animal adaptation",
+        "children": [
+          {
+            "id": "animal-adaptation-sub-0",
+            "label": "Aquatic (primary and secondary"
+          },
+          {
+            "id": "animal-adaptation-sub-1",
+            "label": "terrestrial (cursorial, fossorial and arboreal) and volant adaptation"
+          }
+        ]
+      },
+      {
+        "id": "animal-behavior-reflex-action-",
+        "label": "Animal behavior",
+        "children": [
+          {
+            "id": "animal-behavior-sub-0",
+            "label": "Reflex action"
+          },
+          {
+            "id": "animal-behavior-sub-1",
+            "label": "taxes"
+          },
+          {
+            "id": "animal-behavior-sub-2",
+            "label": "dominance and leadership"
+          }
+        ]
+      },
+      {
+        "id": "fish-and-bird-migration",
+        "label": "Fish",
+        "children": [
+          {
+            "id": "fish-sub-0",
+            "label": "bird migration"
+          }
+        ]
+      },
+      {
+        "id": "environmental-pollution-source",
+        "label": "Environmental pollution",
+        "children": [
+          {
+            "id": "environmental-pollution-sub-0",
+            "label": "Sources"
+          },
+          {
+            "id": "environmental-pollution-sub-1",
+            "label": "effects and control measures of air"
+          },
+          {
+            "id": "environmental-pollution-sub-2",
+            "label": "water and soil pollution"
+          }
+        ]
+      },
+      {
+        "id": "pesticides-and-their-effects",
+        "label": "Pesticides",
+        "children": [
+          {
+            "id": "pesticides-sub-0",
+            "label": "their effects"
+          }
+        ]
+      }
+    ]
+  }
+}

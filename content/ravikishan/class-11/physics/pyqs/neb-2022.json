@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "State Newton's three laws of motion with one example each.",
+      "marks": 3,
+      "solution": "**First law (law of inertia):** a body continues in its state of rest or uniform motion unless acted upon by a net external force. Example: a passenger lurches forward when a bus brakes suddenly.\n\n**Second law:** the rate of change of momentum is proportional to the applied force, F = ma. Example: it is easier to push an empty cart than a loaded one.\n\n**Third law:** to every action there is an equal and opposite reaction. Example: a rocket pushes exhaust gas downward and moves upward."
+    },
+    {
+      "question": "Show that the horizontal range of a projectile is the same for complementary angles of projection. Find the ratio of ranges for 30° and 60°.",
+      "marks": 3,
+      "solution": "R = u² sin 2θ/g.\n\nFor θ and (90° − θ): sin 2(90° − θ) = sin(180° − 2θ) = sin 2θ, hence ranges are equal.\n\nR(30°) ∝ sin 60° and R(60°) ∝ sin 120° = sin 60°. Ratio = **1 : 1**."
+    },
+    {
+      "question": "A Carnot engine operates between 500 K and 300 K. Calculate its efficiency.",
+      "marks": 2,
+      "solution": "η = 1 − T₂/T₁ = 1 − 300/500 = 1 − 0.6 = **0.4 = 40%**."
+    },
+    {
+      "question": "Define linear magnification. A concave mirror forms a real image three times the size of the object placed 30 cm in front of it. Find the focal length.",
+      "marks": 3,
+      "solution": "Linear magnification m = hᵢ/h₀ = −v/u.\n\nReal image with |m| = 3 ⇒ m = −3 ⇒ −v/u = −3 ⇒ v = 3u = 3 × 30 = 90 cm.\n\nMirror formula: 1/f = 1/u + 1/v = 1/30 + 1/90 = 4/90 ⇒ f = 90/4 = **22.5 cm**."
+    }
+  ]
+}

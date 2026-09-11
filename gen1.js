@@ -1,0 +1,23 @@
+const fs = require('fs');
+const p = 'frontend/components/lab/topic-visuals/';
+const T = (file, content) => { fs.writeFileSync(p + file, content); console.log('Wrote ' + file); };
+const mk = `function mkSprite(text, color, pos, scale = 1.0) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512; canvas.height = 96;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "rgba(15, 23, 42, 0.9)";
+  ctx.fillRect(4, 4, 504, 88);
+  ctx.strokeStyle = color; ctx.lineWidth = 2;
+  ctx.strokeRect(4, 4, 504, 88);
+  ctx.font = "bold 28px monospace";
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillStyle = color;
+  ctx.fillText(text, 256, 48);
+  const tex = new THREE.CanvasTexture(canvas);
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }));
+  s.position.copy(pos);
+  s.scale.set(3.2 * scale, 0.6 * scale, 1);
+  return s;
+}`;
+const imp = `"use client";\n\nimport { useRef, useEffect, useState } from "react";\nimport { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";\nimport { Label } from "@/components/ui/label";\nimport { Input } from "@/components/ui/input";\nimport { CollapsibleControls } from "@/components/lab/collapsible-controls";\nimport { isWebGLAvailable } from "@/lib/webgl";\nimport { WebGLFallback } from "@/components/lab/webgl-fallback";\nimport * as THREE from "three";\n\n`;
+console.log('gen1 ready');

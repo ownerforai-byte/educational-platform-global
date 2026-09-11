@@ -1,0 +1,84 @@
+{
+  "title": "Heisenberg's Uncertainty Principle and concept of probabi…",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
+  "topicTitle": "Heisenberg's Uncertainty Principle and concept of probability",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Heisenberg's Uncertainty Principle and concept of probabi… — Atomic Structure, Chemistry (class-11-notes).",
+    "**Tested.** define it · list: heisenberg's uncertainty principle, concept of probability · one worked example · one misconception each.",
+    "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ.",
+    "**Concept of probability.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Heisenberg's Uncertainty Principle\" as one blob → ✅ split into: heisenberg's uncertainty principle, concept of probability.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).."
+  ],
+  "bounds": [
+    "Covers only: heisenberg's uncertainty principle, concept of probability (within Atomic Structure).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
+  ],
+  "practice": [
+    "define + example each sub-idea: heisenberg's uncertainty principle, concept of probability.",
+    "one worked example for \"Heisenberg's Uncertainty Principle and concept of probabi…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Heisenberg's Uncertainty Principle and concept of probabi…\" with one example.",
+    "compare \"Heisenberg's Uncertainty Principle\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Heisenberg's Uncertainty Principle and concept of probabi…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "P(A∪B) = P(A)+P(B)−P(A∩B)",
+    "P(A∩B) = P(A)P(B|A)",
+    "P(A') = 1 − P(A)"
+  ],
+  "numericals": [
+    "Use  P(A∪B) = P(A)+P(B)−P(A∩B)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A∩B) = P(A)P(B|A)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A') = 1 − P(A)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Heisenberg's Uncertainty Principle",
+    "• Concept of probability"
+  ],
+  "summary": "Heisenberg's Uncertainty Principle and concept of probabi… (Atomic Structure, Chemistry, class-11-notes) covers Heisenberg's Uncertainty Principle, concept of probability. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Heisenberg's Uncertainty Principle and concept of probabi…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Heisenberg's Uncertainty Principle and concept of probabi…\"?",
+      "options": [
+        "P(A∪B) = P(A)+P(B)−P(A∩B)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "P(A∪B) = P(A)+P(B)−P(A∩B)",
+      "explanation": "P(A∪B) = P(A)+P(B)−P(A∩B) is the standard form used for this topic."
+    }
+  ]
+}

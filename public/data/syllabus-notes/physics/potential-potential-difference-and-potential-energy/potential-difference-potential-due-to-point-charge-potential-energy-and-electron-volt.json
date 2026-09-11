@@ -1,0 +1,25 @@
+{
+  "title": "Potential Difference, Potential Due to a Point Charge, Potential Energy and Electron Volt",
+  "notes": [
+    "**Potential difference:** work done per unit charge to move a test charge between two points: $\\Delta V = W/q$.",
+    "**Potential due to point charge:** $V = kQ/r$. It is a scalar, so contributions from multiple charges add algebraically.",
+    "**Potential energy of two charges:** $U = kq_1q_2/r$. Positive $U$ means repulsive configuration; negative $U$ means attractive configuration.",
+    "**Relation between field and potential:** $E = -dV/dr$. The electric field is the negative gradient of the potential.",
+    "**Electron volt (eV):** the kinetic energy gained by an electron when accelerated through 1 V potential difference. $1\\,\\text{eV} = 1.602 \\times 10^{-19}\\,\\text{J}$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

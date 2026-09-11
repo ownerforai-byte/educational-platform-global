@@ -1,0 +1,46 @@
+{
+  "title": "Nuclear fission and fusion",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nuclear-fission-and-fusion",
+  "topicTitle": "Nuclear fission and fusion",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "topic-nuclear-fission-and-fusion",
+    "label": "Nuclear fission and fusion",
+    "children": [
+      {
+        "id": "nuclear-fission-and-fusion-branch-0",
+        "label": "Nuclear fission",
+        "children": [
+          {
+            "id": "nuclear-fission-and-fusion-branch-0-def",
+            "label": "Definition"
+          },
+          {
+            "id": "nuclear-fission-and-fusion-branch-0-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "nuclear-fission-and-fusion-branch-1",
+        "label": "Fusion",
+        "children": [
+          {
+            "id": "nuclear-fission-and-fusion-branch-1-def",
+            "label": "Definition"
+          },
+          {
+            "id": "nuclear-fission-and-fusion-branch-1-use",
+            "label": "Exam use"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Nuclear fission and fusion\n  - Nuclear fission\n  - Fusion"
+  ]
+}

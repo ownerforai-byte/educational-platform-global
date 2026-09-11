@@ -1,0 +1,25 @@
+{
+  "title": "Percentage Composition from Molecular Formula",
+  "notes": [
+    "**Definition:** the mass percentage of each element in a compound, calculated from its molecular formula.",
+    "**Formula:** $\\%\\text{ of element} = \\frac{n \\times A_r}{M_r} \\times 100$, where $n$ is the number of atoms, $A_r$ is relative atomic mass, and $M_r$ is relative molecular mass.",
+    "**Example for water $H_2O$:** $M_r = 2(1) + 16 = 18$. $\\%H = \\frac{2}{18} \\times 100 = 11.1\\%$, $\\%O = \\frac{16}{18} \\times 100 = 88.9\\%$.",
+    "**Reverse calculation:** if percentage composition is known, assume 100 g of compound, convert percentages to masses, divide by atomic masses to get mole ratios, then find empirical formula.",
+    "**Molecular formula from empirical:** $n = M_r(actual)/M_r(empirical)$. Multiply empirical formula subscripts by $n$ to get the molecular formula."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

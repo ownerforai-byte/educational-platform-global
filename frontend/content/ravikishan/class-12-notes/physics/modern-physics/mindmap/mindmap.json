@@ -1,0 +1,67 @@
+{
+  "title": "Modern Physics Mindmap",
+  "unitSlug": "modern-physics",
+  "topicSlug": "modern-physics-mindmap",
+  "topicTitle": "Modern Physics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Modern Physics",
+    "children": [
+      {
+        "id": "photoelectric-effect-and-einst",
+        "label": "Photoelectric effect",
+        "children": [
+          {
+            "id": "photoelectric-effect-sub-0",
+            "label": "Einstein's photoelectric equation"
+          }
+        ]
+      },
+      {
+        "id": "de-broglie-wavelength-and-matt",
+        "label": "De Broglie wavelength",
+        "children": [
+          {
+            "id": "de-broglie-wavelength-sub-0",
+            "label": "matter waves"
+          }
+        ]
+      },
+      {
+        "id": "atom-bohr-s-model-and-hydrogen",
+        "label": "Atom — Bohr's model",
+        "children": [
+          {
+            "id": "atom-bohr-s-model-sub-0",
+            "label": "hydrogen spectrum"
+          }
+        ]
+      },
+      {
+        "id": "nucleus-binding-energy-nuclear",
+        "label": "Nucleus — binding energy, nuclear fission",
+        "children": [
+          {
+            "id": "nucleus-binding-energy-nuclear-fission-sub-0",
+            "label": "fusion"
+          }
+        ]
+      },
+      {
+        "id": "semiconductors-intrinsic-and-e",
+        "label": "Semiconductors — intrinsic",
+        "children": [
+          {
+            "id": "semiconductors-intrinsic-sub-0",
+            "label": "extrinsic, p-n junction, diode, transistor"
+          }
+        ]
+      },
+      {
+        "id": "logic-gates-and-or-not-nand-nor",
+        "label": "Logic gates — AND, OR, NOT, NAND, NOR"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Capacitor Mindmap",
+  "unitSlug": "capacitor",
+  "topicSlug": "capacitor-mindmap",
+  "topicTitle": "Capacitor — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Capacitor",
+    "children": [
+      {
+        "id": "capacitance-and-capacitor",
+        "label": "Capacitance",
+        "children": [
+          {
+            "id": "capacitance-sub-0",
+            "label": "capacitor"
+          }
+        ]
+      },
+      {
+        "id": "parallel-plate-capacitor",
+        "label": "Parallel plate capacitor"
+      },
+      {
+        "id": "combination-of-capacitors",
+        "label": "Combination of capacitors"
+      },
+      {
+        "id": "energy-of-charged-capacitor",
+        "label": "Energy of charged capacitor"
+      },
+      {
+        "id": "effect-of-a-dielectric-polariz",
+        "label": "Effect of a dielectric: polarization",
+        "children": [
+          {
+            "id": "effect-of-a-dielectric-polarization-sub-0",
+            "label": "displacement"
+          }
+        ]
+      }
+    ]
+  }
+}

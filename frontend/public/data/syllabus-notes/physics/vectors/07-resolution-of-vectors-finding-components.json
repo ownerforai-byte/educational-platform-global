@@ -1,0 +1,201 @@
+{
+  "title": "Resolution of Vectors — Finding Components",
+  "unitSlug": "vectors",
+  "topicSlug": "resolution-of-vectors-unit-vectors",
+  "topicTitle": "Resolution of vectors; unit vectors",
+  "relevance": 94,
+  "notes": [
+    "**Standard formulas**: for a vector $\\vec{F}$ of magnitude $F$ making angle $\\theta$ with the x-axis, the components are $F_x = F\\cos\\theta$ (along x-axis) and $F_y = F\\sin\\theta$ (along y-axis). The vector form is $\\vec{F} = F_x\\hat{i} + F_y\\hat{j}$.",
+    "**Angle measured from y-axis**: if the angle $\\phi$ is measured from the y-axis, the formulas become $F_y = F\\cos\\phi$ (adjacent to y) and $F_x = F\\sin\\phi$ (opposite to y). The component adjacent to the angle uses cosine; the opposite uses sine.",
+    "**Figure (i) — 10 N at 30° from y-axis**: $F_y = F\\cos30° = 10 \\cdot (\\sqrt{3}/2) = 5\\sqrt{3} \\approx 8.66\\,\\text{N}$, $F_x = F\\sin30° = 10 \\cdot 0.5 = 5\\,\\text{N}$. The y-component is larger because the angle is closer to the y-axis.",
+    "**Figure (ii) — 10 N at 45° from y-axis**: $F_x = F\\sin45° = 10 \\cdot (1/\\sqrt{2}) = 5\\sqrt{2} \\approx 7.07\\,\\text{N}$, $F_y = F\\cos45° = 5\\sqrt{2} \\approx 7.07\\,\\text{N}$. At 45° from y-axis (or from x-axis), both components are equal.",
+    "**Why the formulas change**: when the angle is from the x-axis, the x-component is 'adjacent' and uses cosine. When the angle is from the y-axis, the y-component is 'adjacent' and uses cosine. Always identify which axis the angle is measured from.",
+    "**SOH-CAH-TOA**: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent. Apply this to identify which trig function to use for each component.",
+    "**Special angle values to memorize**: $\\sin30° = \\cos60° = 1/2$, $\\cos30° = \\sin60° = \\sqrt{3}/2$, $\\sin45° = \\cos45° = 1/\\sqrt{2}$, $\\tan30° = 1/\\sqrt{3}$, $\\tan60° = \\sqrt{3}$.",
+    "**Components in 3D**: for a vector $\\vec{F}$ in 3D, $F_x = F\\cos\\alpha$, $F_y = F\\cos\\beta$, $F_z = F\\cos\\gamma$ where $\\alpha, \\beta, \\gamma$ are angles with x, y, z axes. The direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.",
+    "**Components for an inclined plane**: for a plane tilted at angle $\\theta$, the component of gravity along the plane is $g\\sin\\theta$ (down the slope) and perpendicular is $g\\cos\\theta$. This is a standard NEB problem.",
+    "**Sign convention for components**: components are positive in the direction of the positive axis. If a force points in the negative x direction, $F_x$ is negative. This is essential for solving equilibrium problems.",
+    "**Negative components**: if the angle $\\theta$ is between 90° and 180° (second quadrant), $\\cos\\theta < 0$, so $F_x$ is negative. Similarly, in the third and fourth quadrants, appropriate components become negative.",
+    "**Adding resolved components**: to find the resultant of multiple forces, resolve each into x and y components, then add: $R_x = \\sum F_{ix}$, $R_y = \\sum F_{iy}$, $R = \\sqrt{R_x^2 + R_y^2}$.",
+    "**Vector magnitude from components**: $F = \\sqrt{F_x^2 + F_y^2 + F_z^2}$. This is the 3D extension of the Pythagorean theorem.",
+    "**Example 1 (10 N at 60° from x-axis)**: $F_x = 10\\cos60° = 5\\,\\text{N}$, $F_y = 10\\sin60° = 5\\sqrt{3} \\approx 8.66\\,\\text{N}$. Compared to 30° from y-axis (which equals 60° from x-axis), the components are the same.",
+    "**Example 2 (15 N at 37° from x-axis, with $\\sin37°\\approx0.6$, $\\cos37°\\approx0.8$)**: $F_x = 15 \\cdot 0.8 = 12\\,\\text{N}$, $F_y = 15 \\cdot 0.6 = 9\\,\\text{N}$. The 3-4-5 triangle appears here, useful in physics problems.",
+    "**Component along an arbitrary direction**: to find the component of $\\vec{A}$ along a unit vector $\\hat{u}$ (any direction), use the dot product: $A_u = \\vec{A}\\cdot\\hat{u} = |\\vec{A}|\\cos\\alpha$, where $\\alpha$ is the angle between $\\vec{A}$ and $\\hat{u}$.",
+    "**Two key rules**: (1) Component along an axis = magnitude × cos(angle with axis). (2) If the angle is with the OTHER axis, use sine (since the two axes are perpendicular).",
+    "**Practical example — pulling a lawn roller**: pulling with force $F$ at angle $\\theta$ to the ground, the effective horizontal force is $F\\cos\\theta$ and the vertical lift is $F\\sin\\theta$. Pulling at an angle reduces ground reaction.",
+    "**Projectile launch at angle $\\theta$**: initial velocity $v_0$ resolves into $v_{0x} = v_0\\cos\\theta$ (horizontal) and $v_{0y} = v_0\\sin\\theta$ (vertical). These are the foundation of projectile motion analysis.",
+    "**Direction cosines in 3D**: for a vector $\\vec{A}$ making angles $\\alpha$, $\\beta$, $\\gamma$ with the x, y, z axes: $A_x = A\\cos\\alpha$, $A_y = A\\cos\\beta$, $A_z = A\\cos\\gamma$. The direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.",
+    "**Unit vector from components**: if $\\vec{A} = A_x\\hat{i} + A_y\\hat{j} + A_z\\hat{k}$, then $\\hat{A} = \\frac{\\vec{A}}{|\\vec{A}|} = \\frac{A_x}{A}\\hat{i} + \\frac{A_y}{A}\\hat{j} + \\frac{A_z}{A}\\hat{k} = \\cos\\alpha\\,\\hat{i} + \\cos\\beta\\,\\hat{j} + \\cos\\gamma\\,\\hat{k}$.",
+    "**Component along a line**: to find the component of $\\vec{A}$ along a line with direction cosines $(l, m, n)$, use $A_{\\text{line}} = A_x l + A_y m + A_z n = \\vec{A}\\cdot\\hat{u}$, where $\\hat{u}$ is the unit vector along the line.",
+    "**Vector resolution is unique for rectangular components**: for a given set of perpendicular axes, the rectangular components $R_x$ and $R_y$ are uniquely determined. However, oblique components (along non-perpendicular directions) are not unique without additional constraints."
+  ],
+  "confusion": [
+    "Component formula is always $F\\cos\\theta$ — The component along the axis the angle is measured from uses cosine. The component along the perpendicular axis uses sine. Both formulas change based on reference axis.",
+    "The angle 30° means the x-component is $F\\sin30°$ — It depends on which axis 30° is measured from. If 30° is from the x-axis, $F_x = F\\cos30°$ and $F_y = F\\sin30°$. If 30° is from the y-axis, the formulas swap.",
+    "Components are always positive — Components can be negative if the vector points in the negative direction of an axis. Sign indicates direction along that axis, not magnitude.",
+    "Angle is always from the x-axis — The angle can be from any reference axis. You must state which axis the angle is measured from, or use unambiguous notation (e.g., '30° above the horizontal').",
+    "$\\cos$ and $\\sin$ can be used interchangeably for components — No. The component ALONG the axis the angle is measured from uses $\\cos$. The component PERPENDICULAR to that axis uses $\\sin$. This is fixed.",
+    "A force at 30° above the horizontal has $F_y = F\\sin30°$ — Correct if 30° is from horizontal. If 30° is from vertical, $F_y = F\\cos30°$. Always verify the reference axis.",
+    "Components are independent of the choice of axes — Components DEPEND on the choice of axes. The same vector has different components in different coordinate systems, but the same magnitude and direction.",
+    "Resolving a vector into components changes the vector — No, it gives an EQUIVALENT representation. The vector is unchanged; we just describe it in a different way. $\\vec{F}$ and $(F_x, F_y)$ are two descriptions of the same vector.",
+    "The component along an axis is always $F\\cos\\theta$ — Only if $\\theta$ is measured from that axis. If $\\theta$ is measured from the perpendicular axis, the component along the first axis is $F\\sin\\theta$.",
+    "Components and the original vector have different physical dimensions — No. Components and the original vector always have the same dimensions. If $\\vec{F}$ is a force, both $F_x$ and $F_y$ are forces."
+  ],
+  "practice": [
+    "A force of 20 N acts at 60° above the horizontal. Find its horizontal and vertical components. [Solution: $F_x = 20\\cos60° = 10\\,\\text{N}$. $F_y = 20\\sin60° = 20\\cdot(\\sqrt{3}/2) = 10\\sqrt{3} \\approx 17.32\\,\\text{N}$.]",
+    "A force of 50 N acts at 30° to the vertical. Resolve it into horizontal and vertical components. [Solution: Vertical (along which 30° is measured): $F_y = 50\\cos30° = 50\\cdot(0.866) = 43.3\\,\\text{N}$. Horizontal: $F_x = 50\\sin30° = 50\\cdot0.5 = 25\\,\\text{N}$.]",
+    "Find the components of a 100 N force at 45° below the horizontal (third quadrant). [Solution: $F_x = 100\\cos45° = 70.7\\,\\text{N}$ (positive, along +x). $F_y = -100\\sin45° = -70.7\\,\\text{N}$ (negative, since below x-axis).]",
+    "A vector makes angles 60°, 45°, and 60° with the x, y, and z axes respectively. If its magnitude is 20, find its components. [Solution: $F_x = 20\\cos60° = 10$, $F_y = 20\\cos45° = 20/\\sqrt{2} = 10\\sqrt{2} \\approx 14.14$, $F_z = 20\\cos60° = 10$. Check: $100 + 200 + 100 = 400 = 20^2$ ✓]",
+    "A body of 5 kg is pushed with horizontal force 30 N. Find the normal reaction from the ground. [Solution: $W = mg = 5\\cdot9.8 = 49\\,\\text{N}$ (down). $N = W = 49\\,\\text{N}$ (up). The horizontal force doesn't affect the vertical equilibrium since there is no vertical component.]",
+    "Resolve a force of 40 N at 53° above the horizontal into components, using $\\sin53°=0.8$ and $\\cos53°=0.6$. [Solution: $F_x = 40\\cdot0.6 = 24\\,\\text{N}$, $F_y = 40\\cdot0.8 = 32\\,\\text{N}$. This is a 3-4-5 right triangle scaled by 8.]",
+    "A force of 60 N is applied at 30° to the horizontal. Find (a) the horizontal component, (b) the vertical component, and (c) verify that $F^2 = F_x^2 + F_y^2$. [Solution: (a) $F_x = 60\\cos30° = 60\\cdot(0.866) = 51.96\\,\\text{N}$. (b) $F_y = 60\\sin30° = 30\\,\\text{N}$. (c) $51.96^2 + 30^2 = 2700 + 900 = 3600 = 60^2$ ✓]",
+    "A 2 kg ball is thrown at 30° above the horizontal with speed 20 m/s. Find the initial horizontal and vertical velocity components. [Solution: $v_x = 20\\cos30° = 20\\cdot(0.866) = 17.32\\,\\text{m/s}$. $v_y = 20\\sin30° = 10\\,\\text{m/s}$.]",
+    "A vector $\\vec{A}$ has magnitude 10 and makes angles 60°, 60°, and 90° with the x, y, and z axes respectively. Find its components. [Solution: $A_x = 10\\cos60° = 5$, $A_y = 10\\cos60° = 5$, $A_z = 10\\cos90° = 0$. Check: $25+25+0 = 50 \\neq 100$. This is inconsistent — the given angles are impossible for a single vector. Valid angles must satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$.]",
+    "Find the components of the vector $\\vec{r} = 3\\hat{i} + 4\\hat{j} + 12\\hat{k}$ along the directions of the unit vectors $\\hat{u}_1 = \\frac{\\hat{i}+\\hat{j}}{\\sqrt{2}}$ and $\\hat{u}_2 = \\frac{\\hat{j}+\\hat{k}}{\\sqrt{2}}$. [Solution: Component along $\\hat{u}_1$: $\\vec{r}\\cdot\\hat{u}_1 = \\frac{3+4+0}{\\sqrt{2}} = \\frac{7}{\\sqrt{2}} \\approx 4.95$. Component along $\\hat{u}_2$: $\\vec{r}\\cdot\\hat{u}_2 = \\frac{0+4+12}{\\sqrt{2}} = \\frac{16}{\\sqrt{2}} = 8\\sqrt{2} \\approx 11.31$.]",
+    "A force of 100 N makes angles of 60° with the x-axis and 45° with the y-axis. Find the angle with the z-axis and the z-component. [Solution: $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. $\\cos^260° + \\cos^245° + \\cos^2\\gamma = 1$. $0.25 + 0.5 + \\cos^2\\gamma = 1$. $\\cos^2\\gamma = 0.25$, so $\\gamma = 60°$ or $120°$. Taking $\\gamma = 60°$: $F_z = 100\\cos60° = 50\\,\\text{N}$. The components are $F_x = 50\\,\\text{N}$, $F_y = 70.7\\,\\text{N}$, $F_z = 50\\,\\text{N}$. Check: $2500+5000+2500 = 10000 = 100^2$ ✓]"
+  ],
+  "universalFacts": [
+    "Resolution of vectors is the **backbone of mechanics**. Almost every NEB problem in vectors, statics, dynamics, and projectile motion requires resolving a vector into perpendicular components.",
+    "**NEB exam tip**: when a problem says 'a force of X N at angle $\\theta$ to the horizontal' or 'to the vertical', identify the reference axis first. Then use $\\cos$ for the axis the angle is from, and $\\sin$ for the perpendicular axis.",
+    "In engineering, the resolution of forces allows **stress analysis** in materials. Forces along structural members (axial) and perpendicular to them (shear) are determined by resolution.",
+    "The famous **3-4-5 right triangle** appears frequently: $\\sin37°\\approx0.6$, $\\cos37°\\approx0.8$, $\\sin53°\\approx0.8$, $\\cos53°\\approx0.6$. Memorize this to speed up problem-solving in NEB exams.",
+    "In **GPS navigation**, the velocity of a vehicle is resolved into north-south and east-west components to track position over time. Position updates are vector additions of resolved velocity components.",
+    "The choice of axes in resolution is **strategic**. For inclined plane problems, axes along and perpendicular to the plane minimize the number of forces that need to be considered in each direction.",
+    "Resolution and addition are **inverse operations**: resolution takes one vector and gives multiple, addition takes multiple and gives one. The formulas $R_x = R\\cos\\theta, R_y = R\\sin\\theta$ and $R = \\sqrt{R_x^2+R_y^2}$ are the two sides of the same coin.",
+    "**Rope-pulling problems** (like dragging a sled) are classic resolution applications. The pulling force at an angle is resolved into a useful component (horizontal motion) and a wasted component (lifting up).",
+    "Direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$ are the **components of the unit vector** along the given direction. They completely specify the direction of a vector in 3D space.",
+    "The **dot product** $\\vec{A}\\cdot\\hat{u}$ gives the component of $\\vec{A}$ along $\\hat{u}$ — this is the most general way to find a component along any direction, not just the coordinate axes."
+  ],
+  "animation3D": "vectors",
+  "motionGraphics": "vectors",
+  "examples": [
+    "Example 1: Real-world application of Resolution of vectors; unit vectors",
+    "Example 2: Practical demonstration of Resolution of vectors; unit vectors concepts",
+    "Example 3: Numerical problem on Resolution of vectors; unit vectors",
+    "Example 4: Diagram-based question on Resolution of vectors; unit vectors",
+    "Example 5: Application in daily life involving Resolution of vectors; unit vectors"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Resolution of vectors; unit vectors with suitable example.",
+    "Q2. Solve problems related to Resolution of vectors; unit vectors.",
+    "Q3. Differentiate between various aspects of Resolution of vectors; unit vectors.",
+    "Q4. Derive the key formula related to Resolution of vectors; unit vectors.",
+    "Q5. What are the applications of Resolution of vectors; unit vectors?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Resolution of vectors; unit vectors",
+    "Key Formula 2: Mathematical expression of Resolution of vectors; unit vectors",
+    "Key Formula 3: Application formula for Resolution of vectors; unit vectors",
+    "Key Formula 4: Derivation result for Resolution of vectors; unit vectors",
+    "Key Formula 5: Important relation in Resolution of vectors; unit vectors"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Resolution of vectors; unit vectors",
+    "Key Point 2: Essential theorem or principle related to Resolution of vectors; unit vectors",
+    "Key Point 3: Important condition or constraint for Resolution of vectors; unit vectors",
+    "Key Point 4: Common applications of Resolution of vectors; unit vectors",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Resolution of vectors; unit vectors is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Resolution of vectors; unit vectors applies",
+    "Note 2: Resolution of vectors; unit vectors connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Resolution of vectors; unit vectors",
+    "Note 4: Remember the units and dimensions involved in Resolution of vectors; unit vectors",
+    "Note 5: Resolution of vectors; unit vectors frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Resolution of vectors; unit vectors",
+    "Statement 2: Theorem related to Resolution of vectors; unit vectors",
+    "Statement 3: Condition for Resolution of vectors; unit vectors to be valid",
+    "Statement 4: Principle governing Resolution of vectors; unit vectors",
+    "Statement 5: Corollary or consequence of Resolution of vectors; unit vectors"
+  ],
+  "importantNotes": [
+    "Note 1: Resolution of vectors; unit vectors is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Resolution of vectors; unit vectors",
+    "Note 3: Resolution of vectors; unit vectors has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Resolution of vectors; unit vectors",
+    "Note 5: Cross-check your answers using alternative methods for Resolution of vectors; unit vectors"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Resolution of vectors; unit vectors formula",
+    "Trick 2: Elimination technique for Resolution of vectors; unit vectors MCQs",
+    "Trick 3: Dimensional analysis shortcut for Resolution of vectors; unit vectors",
+    "Trick 4: Memory aid for Resolution of vectors; unit vectors formulas",
+    "Trick 5: Time-saving approach for Resolution of vectors; unit vectors problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Resolution of vectors; unit vectors",
+    "Exam Tip 2: Practice previous year questions on Resolution of vectors; unit vectors",
+    "Exam Tip 3: Resolution of vectors; unit vectors carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Resolution of vectors; unit vectors thoroughly",
+    "Exam Tip 5: Review common mistakes related to Resolution of vectors; unit vectors"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Resolution of vectors; unit vectors?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Resolution of vectors; unit vectors is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Resolution of vectors; unit vectors, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Resolution of vectors; unit vectors?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Resolution of vectors; unit vectors is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Resolution of vectors; unit vectors",
+    "Concept 2: Key theorem or principle in Resolution of vectors; unit vectors",
+    "Concept 3: Important application area of Resolution of vectors; unit vectors",
+    "Concept 4: Fundamental relationship in Resolution of vectors; unit vectors",
+    "Concept 5: Connection between Resolution of vectors; unit vectors and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Resolution of vectors; unit vectors",
+    "Task 2: Derive the main formula for Resolution of vectors; unit vectors",
+    "Task 3: Create a concept map for Resolution of vectors; unit vectors",
+    "Task 4: Practice previous year exam questions on Resolution of vectors; unit vectors",
+    "Task 5: Explain Resolution of vectors; unit vectors to a peer or study group"
+  ]
+}

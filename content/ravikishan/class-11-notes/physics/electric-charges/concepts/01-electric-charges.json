@@ -1,0 +1,83 @@
+{
+  "title": "Electric charges",
+  "unitSlug": "electric-charges",
+  "topicSlug": "electric-charges",
+  "topicTitle": "Electric charges",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Electric charges — Electric Charges, Physics (class-11-notes).",
+    "**Tested.** define it · list: electric charges · one worked example · one misconception each.",
+    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
+    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
+    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+  ],
+  "confusion": [
+    "❌ treat \"Electric charges\" as one blob → ✅ split into: electric charges.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
+  ],
+  "bounds": [
+    "Covers only: electric charges (within Electric Charges).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
+  ],
+  "practice": [
+    "define + example each sub-idea: electric charges.",
+    "one worked example for \"Electric charges\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
+    "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
+    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Electric charges\" with one example.",
+    "compare \"Electric charges\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electric charges\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "F = k q₁q₂/r²",
+    "E = F/q",
+    "∮E·dA = Q/ε₀",
+    "V = kq/r"
+  ],
+  "numericals": [
+    "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
+    "Use  E = F/q  — pick reasonable values, solve, and check the units.",
+    "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Electric charges"
+  ],
+  "summary": "Electric charges (Electric Charges, Physics, class-11-notes) covers Electric charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Electric charges\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Electric charges\"?",
+      "options": [
+        "F = k q₁q₂/r²",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "F = k q₁q₂/r²",
+      "explanation": "F = k q₁q₂/r² is the standard form used for this topic."
+    }
+  ]
+}

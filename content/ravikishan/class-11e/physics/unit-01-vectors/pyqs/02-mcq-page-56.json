@@ -1,0 +1,13 @@
+{
+  "title": "Vector Physics MCQ — Page 56 (Q3–Q8)",
+  "notes": [
+    "**Q3. The unit vector in the direction of A is:**\n\n(a) $|A|$\n(b) $A \\cdot \\vec{A}$\n(c) $\\vec{A} / A$\n(d) $A / \\vec{A}$\n\n**Answer:** (c) $\\vec{A} / A$\n\n**Explanation:** A unit vector maintains an absolute magnitude of 1 while pointing purely along its parent vector's route. It is derived by normalising the true vector by its scalar absolute magnitude length.",
+    "**Q4. The angle between the vectors $(i + j)$ and $(j + k)$ is:**\n\n(a) 90°\n(b) 180°\n(c) 0°\n(d) 60°\n\n**Answer:** (d) 60°\n\n**Explanation:** Calculated via dot product formula $\\cos(\\theta) = (A \\cdot B) / (|A||B|)$. Here, $A \\cdot B = (1)(0) + (1)(1) + (0)(1) = 1$. Magnitudes $|A| = \\sqrt{2}$ and $|B| = \\sqrt{2}$. Hence $\\cos(\\theta) = 1 / (\\sqrt{2} \\cdot \\sqrt{2}) = 1/2$, solving to $\\theta = 60°$.",
+    "**Q5. The vector A in terms of its components is as shown in the figure (Magnitude 20, Angle 45°):**\n\n(a) $10i + 10j$\n(b) $20i + 20j$\n(c) $10\\sqrt{2}i + 10\\sqrt{2}j$\n(d) $20\\sqrt{2}i + 20\\sqrt{2}j$\n\n**Answer:** (c) $10\\sqrt{2}i + 10\\sqrt{2}j$\n\n**Explanation:** Resolving components: $A_x = A\\cos(45°) = 20(1/\\sqrt{2}) = 10\\sqrt{2}$. $A_y = A\\sin(45°) = 20(1/\\sqrt{2}) = 10\\sqrt{2}$. Combining gives vector form: $10\\sqrt{2}i + 10\\sqrt{2}j$.",
+    "**Q6. Two vectors A and B are such that $|A + B| = |A - B|$, then the angle between them is:**\n\n(a) 90°\n(b) 60°\n(c) 45°\n(d) 180°\n\n**Answer:** (a) 90°\n\n**Explanation:** Squaring both sides reveals: $A^2 + B^2 + 2AB\\cos(\\theta) = A^2 + B^2 - 2AB\\cos(\\theta)$. Simplifying leads directly to $4AB\\cos(\\theta) = 0$. Since A and B are non-zero, $\\cos(\\theta)$ must equal 0, yielding $\\theta = 90°$.",
+    "**Q7. A, B and C are three orthogonal vectors with magnitudes 3, 4 and 12 respectively. The value of $|A - B + C|$ is:**\n\n(a) 11\n(b) 19\n(c) 13\n(d) Can't be determined\n\n**Answer:** (c) 13\n\n**Explanation:** Because the three vectors are mutually perpendicular (orthogonal), all cross-product and directional cross-terms vanish to zero during extension. Net magnitude equals $\\sqrt{A^2 + B^2 + C^2} = \\sqrt{3^2 + (-4)^2 + 12^2} = \\sqrt{169} = 13$.",
+    "**Q8. If $a - b = 2i$ and $a + b = 4j$, then vector a is:**\n\n(a) $i - j$\n(b) $i - 2j$\n(c) $i + 2j$\n(d) $2i - j$\n\n**Answer:** (c) $i + 2j$\n\n**Explanation:** By clean system addition, $(a - b) + (a + b) = 2a = 2i + 4j$. Dividing the combined system results by scalar value 2 directly provides $a = i + 2j$."
+  ],
+  "type": "pyq",
+  "order": 2
+}

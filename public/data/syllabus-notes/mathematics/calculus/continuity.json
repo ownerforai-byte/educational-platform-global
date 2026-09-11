@@ -1,0 +1,33 @@
+{
+  "title": "Continuity of a Function",
+  "notes": [
+    "A function f is continuous at x = a if three conditions are met: (1) f(a) is defined, (2) lim(x→a) f(x) exists, (3) lim(x→a) f(x) = f(a).",
+    "Intuitive idea: the graph can be drawn without lifting the pencil — no breaks, holes, or jumps.",
+    "A function is continuous on an interval if it is continuous at every point in that interval.",
+    "Types of discontinuity:",
+    "  • Removable (hole): limit exists but f(a) is undefined or different — can be 'fixed' by redefining f(a).",
+    "  • Jump discontinuity: left-hand limit ≠ right-hand limit — graph has a sudden jump.",
+    "  • Infinite discontinuity: function approaches ±∞ — vertical asymptote.",
+    "  • Non/removable: limit does not exist and cannot be fixed.",
+    "Algebraic functions are continuous everywhere in their domain.",
+    "Trigonometric functions (sin, cos) are continuous everywhere; tan, sec have discontinuities at odd multiples of π/2.",
+    "Exponential (e^x) and logarithmic (ln x) functions are continuous on their domains.",
+    "Sum, difference, product, and quotient (where denominator ≠ 0) of continuous functions are continuous.",
+    "Composite of continuous functions is continuous."
+  ],
+  "confusion": [
+    "Continuity at a point requires the limit to exist — check both LHL and RHS separately.",
+    "A function can be continuous on an interval but discontinuous at a single point.",
+    "Differentiability implies continuity, but continuity does NOT imply differentiability (e.g., |x| at x=0)."
+  ],
+  "practice": [
+    "Determine where f(x) = 1/(x−2) is continuous.",
+    "Check continuity of f(x) = |x−1| at x = 1.",
+    "Find the value of k that makes f(x) continuous at x = 2, where f(x) = (x²−4)/(x−2) for x≠2 and f(2) = k."
+  ],
+  "universalFacts": [
+    "Continuity is a prerequisite for differentiability — you cannot differentiate a function at a point where it is discontinuous.",
+    "The Intermediate Value Theorem guarantees that a continuous function on [a,b] takes every value between f(a) and f(b).",
+    "Physical quantities that change continuously (position, temperature) can be modeled with continuous functions."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Radiation and Ideal Radiator",
+  "notes": [
+    "**Radiation:** heat transfer by electromagnetic waves, mainly infrared. It does not need a material medium and can travel through vacuum.",
+    "**Speed:** radiant heat travels at the speed of light, $c = 3 \\times 10^8\\,\\text{m/s}$.",
+    "**Ideal radiator (black body):** a perfect emitter and absorber of radiation. It absorbs all incident radiation and emits the maximum possible radiation at every wavelength for its temperature.",
+    "**Wien's displacement law:** $\\lambda_{max} T = b$, where $b \\approx 2.898 \\times 10^{-3}\\,\\text{m}\\cdot\\text{K}$. Hotter objects peak at shorter wavelengths: the Sun peaks in visible light, a hot iron glows red, a warm body peaks in infrared.",
+    "**Practical absorbers/emitters:** lamp-black and black paint are good approximations to ideal radiators; shiny polished surfaces are poor absorbers and poor emitters."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

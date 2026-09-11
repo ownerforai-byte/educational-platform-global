@@ -1,0 +1,84 @@
+{
+  "title": "Reflection at plane and curved surfaces — mirrors",
+  "unitSlug": "ray-optics",
+  "topicSlug": "reflection-at-plane-and-curved-surfaces-mirrors",
+  "topicTitle": "Reflection at plane and curved surfaces — mirrors",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Reflection at plane and curved surfaces — mirrors — Ray Optics, Physics (class-12-notes).",
+    "**Tested.** define it · list: reflection at plane, curved surfaces — mirrors · one worked example · one misconception each.",
+    "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "**Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "**Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe).",
+    "**Curved surfaces — mirrors.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Reflection at plane\" as one blob → ✅ split into: reflection at plane, curved surfaces — mirrors.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.."
+  ],
+  "bounds": [
+    "Covers only: reflection at plane, curved surfaces — mirrors (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "define + example each sub-idea: reflection at plane, curved surfaces — mirrors.",
+    "one worked example for \"Reflection at plane and curved surfaces — mirrors\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Reflection at plane and curved surfaces — mirrors\" with one example.",
+    "compare \"Reflection at plane\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Reflection at plane and curved surfaces — mirrors\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "Use  1/f = (μ−1)(1/R₁ − 1/R₂)  — pick reasonable values, solve, and check the units.",
+    "Use  P = 1/f  — pick reasonable values, solve, and check the units.",
+    "Use  n = sin((A+D)/2)/sin(A/2)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Reflection at plane",
+    "• Curved surfaces — mirrors"
+  ],
+  "summary": "Reflection at plane and curved surfaces — mirrors (Ray Optics, Physics, class-12-notes) covers Reflection at plane, curved surfaces — mirrors. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Reflection at plane and curved surfaces — mirrors\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Reflection at plane and curved surfaces — mirrors\"?",
+      "options": [
+        "1/f = (μ−1)(1/R₁ − 1/R₂)",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "1/f = (μ−1)(1/R₁ − 1/R₂)",
+      "explanation": "1/f = (μ−1)(1/R₁ − 1/R₂) is the standard form used for this topic."
+    }
+  ]
+}

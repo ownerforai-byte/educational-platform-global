@@ -1,0 +1,25 @@
+{
+  "title": "Gravitational Field Strength",
+  "notes": [
+    "**Definition:** gravitational field strength $g$ at a point is the gravitational force per unit mass placed at that point: $g = F/m$.",
+    "**Field of a point mass:** $g = G\\frac{M}{r^2}$, directed toward the mass $M$.",
+    "**Near Earth's surface:** $g \\approx 9.8\\,\\text{m/s}^2$. This value varies slightly with latitude and altitude.",
+    "**Superposition:** for multiple masses, the total field is the vector sum of the fields from each mass: $\\vec{g}_{total} = \\sum \\vec{g}_i$.",
+    "**Units:** N/kg or m/s$^2$. Both are equivalent because $1\\,\\text{N/kg} = 1\\,\\text{m/s}^2$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

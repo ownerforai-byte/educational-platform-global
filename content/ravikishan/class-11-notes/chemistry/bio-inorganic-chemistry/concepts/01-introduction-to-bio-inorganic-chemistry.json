@@ -1,0 +1,83 @@
+{
+  "title": "Introduction to Bio-inorganic Chemistry",
+  "unitSlug": "bio-inorganic-chemistry",
+  "topicSlug": "introduction-to-bio-inorganic-chemistry",
+  "topicTitle": "Introduction to Bio-inorganic Chemistry",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Introduction to Bio-inorganic Chemistry — Bio-inorganic Chemistry, Chemistry (class-11-notes).",
+    "**Tested.** define it · list: introduction to bio-inorganic chemistry · one worked example · one misconception each.",
+    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "confusion": [
+    "❌ treat \"Introduction to Bio-inorganic Chemistry\" as one blob → ✅ split into: introduction to bio-inorganic chemistry.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ.."
+  ],
+  "bounds": [
+    "Covers only: introduction to bio-inorganic chemistry (within Bio-inorganic Chemistry).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "define + example each sub-idea: introduction to bio-inorganic chemistry.",
+    "one worked example for \"Introduction to Bio-inorganic Chemistry\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Introduction to Bio-inorganic Chemistry\" with one example.",
+    "compare \"Introduction to Bio-inorganic Chemistry\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Introduction to Bio-inorganic Chemistry\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  ε = −N dΦ/dt  — pick reasonable values, solve, and check the units.",
+    "Use  F = BIL  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Introduction to Bio-inorganic Chemistry"
+  ],
+  "summary": "Introduction to Bio-inorganic Chemistry (Bio-inorganic Chemistry, Chemistry, class-11-notes) covers Introduction to Bio-inorganic Chemistry. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Introduction to Bio-inorganic Chemistry\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Introduction to Bio-inorganic Chemistry\"?",
+      "options": [
+        "F = qvB sinθ",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "F = qvB sinθ",
+      "explanation": "F = qvB sinθ is the standard form used for this topic."
+    }
+  ]
+}

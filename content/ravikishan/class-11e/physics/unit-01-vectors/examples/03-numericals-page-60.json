@@ -1,0 +1,12 @@
+{
+  "title": "Vector Physics Numerical Problems — Page 60 (Q13–Q17)",
+  "notes": [
+    "**Q13. One of the rectangular components of a vector of 100 units is 50 units. Find the other component.**\n\n**Answer:** $50\\sqrt{3}$ units\n\n**Solution:** Using the rectangular component relationship: $R^2 = R_x^2 + R_y^2$. Therefore, $100^2 = 50^2 + R_y^2 \\Rightarrow 10000 = 2500 + R_y^2 \\Rightarrow R_y^2 = 7500 \\Rightarrow R_y = \\sqrt{7500} = 50\\sqrt{3}$ units.",
+    "**Q14. A particle has a displacement of 8m. If one of its rectangular components is 4m, what is the other rectangular component?**\n\n**Answer:** 6.92 m\n\n**Solution:** Using $R^2 = R_x^2 + R_y^2$: $8^2 = 4^2 + R_y^2 \\Rightarrow 64 = 16 + R_y^2 \\Rightarrow R_y^2 = 48 \\Rightarrow R_y = \\sqrt{48} = 4\\sqrt{3} \\approx 6.928$ m.",
+    "**Q15. A force of 20N is inclined at 30° to the X-axis. Calculate its X and Y components.**\n\n**Answer:** $10\\sqrt{3}$ N, 10N\n\n**Solution:** X-component: $F_x = F \\cdot \\cos(30°) = 20 \\cdot (\\sqrt{3}/2) = 10\\sqrt{3}$ N. Y-component: $F_y = F \\cdot \\sin(30°) = 20 \\times 0.5 = 10$N.",
+    "**Q16. A vector $F = i + 2j - 3k$ is given. What is the magnitude of the y-component of the vector?**\n\n**Answer:** 2\n\n**Solution:** The y-component of a vector expressed in standard orthogonal base notation is simply the scalar coefficient of the unit vector j, which is 2.",
+    "**Q17. The x-component of a vector is -10 unit and its y-component is +3 unit. Find out the magnitude and direction of the vector.**\n\n**Answer:** 10.4 units, 17° above negative x-axis\n\n**Solution:** Magnitude $= \\sqrt{(-10)^2 + 3^2} = \\sqrt{100 + 9} = \\sqrt{109} \\approx 10.44$ units. Direction angle with the negative x-axis: $\\tan(\\theta) = |R_y| / |R_x| = 3 / 10 = 0.3 \\Rightarrow \\theta = \\tan^{-1}(0.3) \\approx 16.7°$ (rounded to 17° above the negative x-axis)."
+  ],
+  "type": "example",
+  "order": 3
+}

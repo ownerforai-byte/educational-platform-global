@@ -1,0 +1,77 @@
+{
+  "title": "Conservation Biology Mindmap",
+  "unitSlug": "conservation-biology",
+  "topicSlug": "conservation-biology-mindmap",
+  "topicTitle": "Conservation Biology — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Conservation Biology",
+    "children": [
+      {
+        "id": "conservation-biology-concept-o",
+        "label": "Conservation biology",
+        "children": [
+          {
+            "id": "conservation-biology-sub-0",
+            "label": "Concept of biodiversity"
+          },
+          {
+            "id": "conservation-biology-sub-1",
+            "label": "biodiversity conservation"
+          }
+        ]
+      },
+      {
+        "id": "national-parks-wildlife-reserv",
+        "label": "National parks, wildlife reserves, conservation areas, biodiversity hotspots, wetland",
+        "children": [
+          {
+            "id": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-sub-0",
+            "label": "Ramsar sites"
+          }
+        ]
+      },
+      {
+        "id": "wildlife-importance-causes-of-",
+        "label": "Wildlife",
+        "children": [
+          {
+            "id": "wildlife-sub-0",
+            "label": "Importance"
+          },
+          {
+            "id": "wildlife-sub-1",
+            "label": "causes of extinction and conservation strategies"
+          }
+        ]
+      },
+      {
+        "id": "iucn-categories-of-threatened-",
+        "label": "IUCN categories of threatened species",
+        "children": [
+          {
+            "id": "iucn-categories-of-threatened-species-sub-0",
+            "label": "meaning of extinct"
+          },
+          {
+            "id": "iucn-categories-of-threatened-species-sub-1",
+            "label": "endangered"
+          },
+          {
+            "id": "iucn-categories-of-threatened-species-sub-2",
+            "label": "vulnerable"
+          },
+          {
+            "id": "iucn-categories-of-threatened-species-sub-3",
+            "label": "rare and threatened species"
+          }
+        ]
+      },
+      {
+        "id": "endangered-species-in-nepal",
+        "label": "Endangered species in Nepal"
+      }
+    ]
+  }
+}

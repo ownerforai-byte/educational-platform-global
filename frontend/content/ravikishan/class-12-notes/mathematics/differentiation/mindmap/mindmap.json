@@ -1,0 +1,105 @@
+{
+  "title": "Differentiation Mindmap",
+  "unitSlug": "differentiation",
+  "topicSlug": "differentiation-mindmap",
+  "topicTitle": "Differentiation — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Differentiation",
+    "children": [
+      {
+        "id": "derivatives-of-algebraic-trigo",
+        "label": "Derivatives of algebraic, trigonometric, inverse trigonometric, exponential",
+        "children": [
+          {
+            "id": "derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-sub-0",
+            "label": "logarithmic functions"
+          }
+        ]
+      },
+      {
+        "id": "rules-of-differentiation-produ",
+        "label": "Rules of differentiation",
+        "children": [
+          {
+            "id": "rules-of-differentiation-sub-0",
+            "label": "product rule"
+          },
+          {
+            "id": "rules-of-differentiation-sub-1",
+            "label": "quotient rule"
+          },
+          {
+            "id": "rules-of-differentiation-sub-2",
+            "label": "chain rule"
+          }
+        ]
+      },
+      {
+        "id": "derivatives-of-parametric-and-",
+        "label": "Derivatives of parametric",
+        "children": [
+          {
+            "id": "derivatives-of-parametric-sub-0",
+            "label": "implicit functions"
+          }
+        ]
+      },
+      {
+        "id": "higher-order-derivatives",
+        "label": "Higher order derivatives"
+      },
+      {
+        "id": "logarithmic-differentiation",
+        "label": "Logarithmic differentiation"
+      },
+      {
+        "id": "leibniz-s-theorem-for-nth-derivative",
+        "label": "Leibniz's theorem for nth derivative"
+      },
+      {
+        "id": "geometric-interpretation-tange",
+        "label": "Geometric interpretation — tangent",
+        "children": [
+          {
+            "id": "geometric-interpretation-tangent-sub-0",
+            "label": "normal"
+          }
+        ]
+      },
+      {
+        "id": "monotonicity-maxima-and-minima",
+        "label": "Monotonicity, maxima",
+        "children": [
+          {
+            "id": "monotonicity-maxima-sub-0",
+            "label": "minima (first"
+          },
+          {
+            "id": "monotonicity-maxima-sub-1",
+            "label": "second derivative tests)"
+          }
+        ]
+      },
+      {
+        "id": "applications-rate-of-change-ap",
+        "label": "Applications",
+        "children": [
+          {
+            "id": "applications-sub-0",
+            "label": "rate of change"
+          },
+          {
+            "id": "applications-sub-1",
+            "label": "approximation"
+          },
+          {
+            "id": "applications-sub-2",
+            "label": "error estimation"
+          }
+        ]
+      }
+    ]
+  }
+}

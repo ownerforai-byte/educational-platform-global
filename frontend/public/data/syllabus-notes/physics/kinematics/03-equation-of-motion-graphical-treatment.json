@@ -1,0 +1,170 @@
+{
+  "title": "Equations of Motion — Graphical Treatment",
+  "unitSlug": "kinematics",
+  "topicSlug": "equation-of-motion-graphical-treatment",
+  "topicTitle": "Equation of motion (graphical treatment)",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "equation-of-motion-graphical",
+  "notes": [
+    "**Type 2 — alternate treatment:** this version derives all three equations of motion graphically (from the velocity–time graph) — the derivation style NEB asks for 'using a graphical method'.",
+    "**Setup:** a body starts with initial velocity $u$ and accelerates uniformly at $a$; after time $t$ its velocity is $v$. On a $v$–$t$ graph this is a straight line from $(0, u)$ to $(t, v)$ — the straightness is exactly the meaning of uniform acceleration.",
+    "**First equation (from the slope):** slope of the line = acceleration $a = \\frac{v - u}{t}$. Rearranging: $v = u + at$ — 'final velocity = initial velocity + rate of change of velocity × time'.",
+    "**Second equation (from the area):** displacement = area under the $v$–$t$ line = area of the trapezoid = area of rectangle $ut$ + area of triangle $\\frac{1}{2} \\times t \\times (v - u)$. Since $v - u = at$: $s = ut + \\tfrac{1}{2}at^2$.",
+    "**Second equation, alternate area view:** average velocity $\\times$ time: $s = \\left(\\frac{u + v}{2}\\right)t$ — the trapezoid's mean-height form. Both views give the same result and both are accepted in exams.",
+    "**Third equation (eliminating $t$):** from $t = \\frac{v-u}{a}$ substitute into $s = \\left(\\frac{u+v}{2}\\right)t$: $s = \\frac{(u+v)(v-u)}{2a} = \\frac{v^2 - u^2}{2a}$, giving $v^2 = u^2 + 2as$ — the time-free equation, ideal when $t$ is neither given nor asked.",
+    "**Reading the other graphs:** on an $x$–$t$ graph, constant $a$ appears as a parabola (curvature fixed); the tangent slope at any point is $v$. On an $a$–$t$ graph, constant $a$ is a horizontal line and the area under it ($a \\times t$) gives the change in velocity $v - u$.",
+    "**Displacement in the $n$-th second:** $s_n = u + \\tfrac{a}{2}(2n - 1)$ — obtained from areas: distance covered between $t = n-1$ and $t = n$. For free fall from rest this gives the odd-numbers rule 1 : 3 : 5 : 7 (Galileo).",
+    "**NEB exam focus:** derive $v = u + at$ and $s = ut + \\tfrac{1}{2}at^2$ with a labelled $v$–$t$ graph; derive $v^2 = u^2 + 2as$; state which equation to choose from what is given/asked; apply to braking, free fall and projected bodies."
+  ],
+  "confusion": [
+    "❌ 'The area under the $v$–$t$ graph gives acceleration.' ✅ Area gives DISPLACEMENT; the SLOPE gives acceleration. Swap-proof: slope of $v$–$t$ = $a$ (m/s²), area of $v$–$t$ = $s$ (m).",
+    "❌ Using $s = ut + \\tfrac{1}{2}at^2$ for the distance in the $n$-th second directly with $t = n$. ✅ That gives the total distance in $n$ seconds. The $n$-th SECOND distance is $s_n = u + \\tfrac{a}{2}(2n-1)$, i.e. $s(n) - s(n-1)$.",
+    "❌ Applying $v^2 = u^2 + 2as$ with sign errors during braking. ✅ Take one positive direction and keep it: braking at 20 m/s with $a = -5$ m/s² gives $0 = 400 + 2(-5)s \\Rightarrow s = 40$ m — the minus sign is essential.",
+    "❌ 'The equations work if acceleration changes gradually.' ✅ All three equations REQUIRE constant acceleration; if $a$ varies, use graphs/areas or calculus.",
+    "❌ Treating $u$ and $v$ as interchangeable. ✅ $u$ is the velocity at $t = 0$; $v$ is at time $t$. A body dropped from rest has $u = 0$; a body thrown up has $u = +20$ m/s while $a = -10$ m/s².",
+    "❌ Confusing distance with displacement when the body reverses. ✅ The equations give displacement (vector). For total path length through a reversal, split the motion at the $v = 0$ instant and add the two parts."
+  ],
+  "practice": [
+    "Derive $s = ut + \\tfrac{1}{2}at^2$ from the trapezoid area, stating every step and labelling the $v$–$t$ graph.",
+    "A car brakes from 30 m/s to rest in 6 s. Using a $v$–$t$ graph find the acceleration and stopping distance. — $a = -5$ m/s²; $s = \\frac{30 \\times 6}{2} = 90$ m (triangle area).",
+    "A body starting at 4 m/s accelerates at 2 m/s². Find (a) $v$ at 5 s, (b) $s$ in 5 s, (c) $s$ in the 5th second. — (a) 14 m/s; (b) 45 m; (c) $4 + 1(9) = 13$ m.",
+    "A stone dropped from a cliff hits the ground at 40 m/s ($g = 10$ m/s²). Find the cliff height using $v^2 = u^2 + 2as$ and the fall time. — $s = 80$ m; $t = 4$ s.",
+    "A train travelling at 72 km/h applies brakes producing $-0.5$ m/s². How far does it travel before stopping, and how long does it take? — $u = 20$ m/s; $s = 400$ m; $t = 40$ s."
+  ],
+  "universalFacts": [
+    "The velocity–time 'trapezoid' derivation appears in Galileo's reasoning (via inclined planes and odd-number distances) two centuries before formal calculus existed.",
+    "Air-force and driving-school 'stopping distance' charts are exactly the $v^2 = u^2 + 2as$ equation with $v = 0$ — doubling speed quadruples braking distance.",
+    "Crash investigators reconstruct vehicle speeds from skid marks using $u = \\sqrt{2\\mu g s}$ — the same third equation rearranged with friction as the deceleration.",
+    "Physics simulators (games, driving sims) integrate $v$–$t$ areas every frame — the trapezoid rule your textbook uses graphically is the numerical engine behind them."
+  ],
+  "animation3D": "kinematics",
+  "motionGraphics": "kinematics",
+  "examples": [
+    "Example 1 (slope): a cyclist's $v$–$t$ line rises from 2 m/s to 10 m/s in 4 s → $a = \\frac{10-2}{4} = 2$ m/s², read straight off the graph.",
+    "Example 2 (area): the same cyclist covers $s = \\frac{2+10}{2} \\times 4 = 24$ m — the trapezoid area, no equation needed.",
+    "Example 3 (third equation): a car at 25 m/s needs to stop within 50 m. Required deceleration: $0 = 25^2 + 2a(50) \\Rightarrow a = -6.25$ m/s² — time never enters, which is why this equation fits.",
+    "Example 4 (two-stage motion): a train accelerates at 1 m/s² for 20 s then brakes at 2 m/s² to stop. Draw the $v$–$t$ trapezoid; peak speed 20 m/s; total distance = area = 300 m.",
+    "Example 5 (drop with initial speed): a stone thrown down a well at 2 m/s strikes water 3 s later: $s = 2(3) + \\tfrac{1}{2}(10)(9) = 51$ m — the rectangle-plus-triangle areas directly."
+  ],
+  "practiceQuestions": [
+    "Q1. Derive the three equations of motion using a velocity–time graph (label the initial velocity, final velocity, time and area regions).",
+    "Q2. Show that the area under the $v$–$t$ graph equals $ut + \\tfrac{1}{2}at^2$ for uniformly accelerated motion.",
+    "Q3. A bus moving at 60 km/h decelerates uniformly at 2 m/s². Find the time and distance to stop.",
+    "Q4. Derive the distance covered in the $n$-th second, $s_n = u + \\tfrac{a}{2}(2n-1)$, using two areas.",
+    "Q5. State the condition of validity of the equations of motion and what replaces them when the condition fails."
+  ],
+  "formulas": [
+    "$v = u + at$  (slope of $v$–$t$ line)",
+    "$s = ut + \\tfrac{1}{2}at^2$  (rectangle + triangle area)",
+    "$s = \\left(\\frac{u+v}{2}\\right)t$  (trapezoid mean-height form)",
+    "$v^2 = u^2 + 2as$  (time eliminated)",
+    "$s_n = u + \\tfrac{a}{2}(2n - 1)$  (distance in the $n$-th second)"
+  ],
+  "keyPoints": [
+    "Slope of $v$–$t$ = acceleration; area under $v$–$t$ = displacement.",
+    "The three equations hold ONLY for constant acceleration.",
+    "$v^2 = u^2 + 2as$ is the equation of choice when time is unknown.",
+    "$s = \\left(\\frac{u+v}{2}\\right)t$ is the graphical 'average velocity × time' form.",
+    "Sign convention decides deceleration: keep one positive direction throughout the problem.",
+    "Distance in the $n$-th second ≠ distance in $n$ seconds — the classic NEB distinction."
+  ],
+  "summary": "All three equations of motion follow from the straight-line $v$–$t$ graph of uniform acceleration: the slope gives $v = u + at$; the area (rectangle + triangle, or the trapezoid mean-height $\\frac{u+v}{2}t$) gives $s = ut + \\tfrac{1}{2}at^2$; eliminating $t$ yields $v^2 = u^2 + 2as$. The $a$–$t$ graph (area = change in velocity) and the $x$–$t$ parabola complete the graphical picture. These derivations are standard NEB questions, and the equations themselves — with careful sign conventions — solve braking, free-fall and multi-stage motion numericals.",
+  "specialNotes": [
+    "Note 1: Always draw and label the $v$–$t$ graph in derivation questions — the diagram itself carries marks.",
+    "Note 2: For two-stage journeys (accelerate then brake), apply the equations to EACH stage and add the areas.",
+    "Note 3: Convert km/h to m/s before substituting (divide by 3.6) — the most common numerical slip.",
+    "Note 4: If the body reverses direction, compute each leg separately and add magnitudes for distance, not displacement."
+  ],
+  "importantStatements": [
+    "Statement 1: For uniformly accelerated motion, the velocity–time graph is a straight line whose slope equals the acceleration.",
+    "Statement 2: The displacement in uniformly accelerated motion equals the area of the trapezoid under the $v$–$t$ line.",
+    "Statement 3: The three equations of motion are valid only when acceleration is constant in magnitude and direction.",
+    "Statement 4: The area under an acceleration–time graph equals the change in velocity over that interval."
+  ],
+  "importantNotes": [
+    "Note 1: $v^2 = u^2 + 2as$ contains no time — use it whenever $t$ is unknown or irrelevant.",
+    "Note 2: The mean-velocity form $s = \\frac{u+v}{2}t$ is valid only for constant acceleration (it is the trapezoid's average height).",
+    "Note 3: Take downward as negative or positive consistently — free-fall and upward-throw problems share the same equations with different signs.",
+    "Note 4: For the $n$-th second distance, subtract $s(n-1)$ from $s(n)$ — never substitute $t = n$ alone."
+  ],
+  "examShortTricks": [
+    "Trick 1: Given/asked table — list u, v, a, t, s; the equation missing BOTH the unknown and the unwanted quantity is your equation.",
+    "Trick 2: Braking distance without time: $s = u^2/2|a|$ — memorise this special case of the third equation.",
+    "Trick 3: Odd-number rule for drop from rest: distances in successive seconds are 1:3:5:7 (× g/2).",
+    "Trick 4: In two-stage problems, the $v$–$t$ trapezoid area is usually faster than applying equations twice.",
+    "Trick 5: Sanity check: for braking, your $a$ must be negative and $s$ positive — if both come out negative, a sign slipped."
+  ],
+  "examNotes": [
+    "Exam Tip 1: The graphical derivation of $v = u + at$ and $s = ut + \\tfrac{1}{2}at^2$ is a repeating NEB theory question — practise the labelled figure.",
+    "Exam Tip 2: In numericals, write the chosen equation first, then substitute — method marks live in the equation selection.",
+    "Exam Tip 3: Convert all units to SI (km/h ÷ 3.6) before any substitution, and state the sign convention used.",
+    "Exam Tip 4: Multi-stage questions (lift, train, rocket) reward a quick $v$–$t$ sketch before any algebra."
+  ],
+  "mcs": [
+    {
+      "question": "The slope of a velocity–time graph gives:",
+      "options": [
+        "Displacement",
+        "Acceleration",
+        "Distance",
+        "Average velocity"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The area under a velocity–time graph gives:",
+      "options": [
+        "Acceleration",
+        "Change in acceleration",
+        "Displacement",
+        "Force"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A body starts from rest with a = 4 m/s². Its displacement in the 3rd second is:",
+      "options": [
+        "10 m",
+        "12 m",
+        "18 m",
+        "36 m"
+      ],
+      "answer": "A (s₃ = 0 + 2(5) = 10 m)"
+    },
+    {
+      "question": "Which equation is most direct for finding stopping distance when brakes give constant deceleration?",
+      "options": [
+        "v = u + at",
+        "s = ut + ½at²",
+        "v² = u² + 2as",
+        "s = (u+v)t"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The equations of motion are NOT valid for:",
+      "options": [
+        "Free fall",
+        "Braking with constant deceleration",
+        "Air resistance increasing with speed",
+        "A ball rolling down a fixed incline"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Graphical derivation — slope gives $v = u + at$; area gives $s = ut + \\tfrac{1}{2}at^2$.",
+    "Concept 2: Eliminating $t$ between equations yields the time-free form $v^2 = u^2 + 2as$.",
+    "Concept 3: Average-velocity form $s = \\frac{u+v}{2}t$ as the trapezoid mean height.",
+    "Concept 4: $n$-th second distance $s_n = u + \\frac{a}{2}(2n-1)$ and the odd-number pattern.",
+    "Concept 5: Validity condition — constant acceleration; otherwise graphical areas or calculus."
+  ],
+  "importantTasks": [
+    "Task 1: Perform all three graphical derivations with a single labelled figure, from memory.",
+    "Task 2: Solve ten numericals classifying them by which equation fits (u/v/a/t/s given-asked table).",
+    "Task 3: Verify $s_n = u + \\frac{a}{2}(2n-1)$ by computing $s(n) - s(n-1)$ explicitly.",
+    "Task 4: Solve a two-stage train problem (accelerate, cruise, brake) via the $v$–$t$ area method.",
+    "Task 5: Explain why doubling speed quadruples braking distance, using $v^2 = u^2 + 2as$ with $v = 0$."
+  ]
+}

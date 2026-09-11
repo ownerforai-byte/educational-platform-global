@@ -1,0 +1,27 @@
+{
+  "title": "Alkenes â€” Preparation and Chemical Properties",
+  "notes": [
+    "**Dehydration of alcohol:** $R-CH_2-CH_2-OH \\xrightarrow{conc. H_2SO_4, 170Â°C} R-CH=CH_2 + H_2O$. Follows Saytzeff rule: more substituted alkene is major product.",
+    "**Dehydrohalogenation:** $R-CH_2-CH_2-X \\xrightarrow{alc. KOH} R-CH=CH_2 + HX$. Removes HX from adjacent carbons.",
+    "**Catalytic hydrogenation of alkyne:** $R-C \\equiv C-R' + 2H_2 \\xrightarrow{Pd/BaSO_4, quinoline} R-CH=CH-R'$ (Lindlar catalyst gives cis-alkene).",
+    "**Addition of HX:** follows Markovnikov's rule: H adds to the carbon with more hydrogens. Example: $CH_3CH=CH_2 + HBr \\rightarrow CH_3CHBrCH_3$ (major). Peroxide effect (anti-Markovnikov): $CH_3CH=CH_2 + HBr \\xrightarrow{peroxide} CH_3CH_2CH_2Br$.",
+    "**Addition of $H_2O$:** acid-catalysed hydration: $CH_2=CH_2 + H_2O \\xrightarrow{H^+} CH_3CH_2OH$. Follows Markovnikov rule.",
+    "**Ozonolysis:** $R-CH=CH-R' + O_3 \\rightarrow R-CHO + R'-CHO$. Cleaves double bond to carbonyl compounds.",
+    "**Addition of $H_2SO_4$:** $CH_2=CH_2 + H_2SO_4 \\rightarrow CH_3CH_2OSO_3H$ (ethyl hydrogen sulphate)."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Dot product (scalar product) and its applications",
+  "unitSlug": "vector-algebra",
+  "topicSlug": "dot-product-scalar-product-and-its-applications",
+  "topicTitle": "Dot product (scalar product) and its applications",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Dot product (scalar product) and its applications — Vector Algebra, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: dot product, scalar product, its applications · one worked example · one misconception each.",
+    "**Scalar product.** one-line definition + one-line exam use.",
+    "**Its applications.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Dot product\" as one blob → ✅ split into: dot product, scalar product, its applications.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result."
+  ],
+  "bounds": [
+    "Covers only: dot product, scalar product, its applications (within Vector Algebra).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "define + example each sub-idea: dot product, scalar product, its applications.",
+    "one worked example for \"Dot product (scalar product) and its applications\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Dot product (scalar product) and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Dot product (scalar product) and its applications\" with one example.",
+    "compare \"Dot product\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Dot product (scalar product) and its applications\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Standard result for \"Dot product (scalar product) and its applications\" — state it and verify by substituting a simple case."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Dot product (scalar product) and its applications\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Dot product",
+    "• Scalar product",
+    "• Its applications"
+  ],
+  "summary": "Dot product (scalar product) and its applications (Vector Algebra, Mathematics, class-12-notes) covers Dot product, scalar product, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Dot product (scalar product) and its applications\"?",
+      "options": [
+        "Dot product",
+        "Scalar product",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Dot product",
+      "explanation": "Dot product is listed among the official sub-ideas of Dot product (scalar product) and its applications; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Dot product (scalar product) and its applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

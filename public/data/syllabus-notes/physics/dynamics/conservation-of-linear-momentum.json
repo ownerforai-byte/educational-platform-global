@@ -1,0 +1,25 @@
+{
+  "title": "Conservation of Linear Momentum",
+  "notes": [
+    "**Law:** in an isolated system with no external forces, the total linear momentum remains constant.",
+    "**Mathematical statement:** $\\sum\\vec{p}_{initial} = \\sum\\vec{p}_{final}$, or $m_1\\vec{u}_1 + m_2\\vec{u}_2 = m_1\\vec{v}_1 + m_2\\vec{v}_2$.",
+    "**Why it is conserved:** Newton's third law gives equal and opposite forces between two bodies. Since $\\vec{F}_{12} = -\\vec{F}_{21}$, the impulses are equal and opposite, so the total momentum change is zero.",
+    "**Collision applications:** in any collision, momentum is always conserved, but kinetic energy is conserved only in elastic collisions.",
+    "**Recoil example:** when a gun fires a bullet forward, the gun recoils backward. The momentum of bullet forward equals momentum of gun backward."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

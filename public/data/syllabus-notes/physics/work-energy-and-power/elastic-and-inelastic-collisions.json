@@ -1,0 +1,26 @@
+{
+  "title": "Elastic and Inelastic Collisions",
+  "notes": [
+    "**Elastic collision:** both momentum and kinetic energy are conserved. The bodies rebound without permanent deformation or heat loss.",
+    "**Inelastic collision:** momentum is conserved but kinetic energy is not. Some KE converts to heat, sound, or deformation energy.",
+    "**Perfectly inelastic collision:** the bodies stick together after collision. Momentum is conserved, but KE loss is maximum.",
+    "**One-dimensional elastic collision formulas:** for masses $m_1$ and $m_2$ with initial velocities $u_1$ and $u_2$: $v_1 = \\frac{(m_1-m_2)u_1 + 2m_2u_2}{m_1+m_2}$ and $v_2 = \\frac{(m_2-m_1)u_2 + 2m_1u_1}{m_1+m_2}$.",
+    "**Special case â€” equal masses:** when $m_1 = m_2$ in an elastic collision, the bodies exchange velocities: $v_1 = u_2$ and $v_2 = u_1$.",
+    "**Coefficient of restitution $e$:** $e = \\frac{\\text{relative speed after}}{\\text{relative speed before}} = \\frac{v_2 - v_1}{u_1 - u_2}$. For elastic collision $e=1$, perfectly inelastic $e=0$."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

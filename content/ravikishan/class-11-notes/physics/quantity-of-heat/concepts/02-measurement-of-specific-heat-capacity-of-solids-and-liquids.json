@@ -1,0 +1,84 @@
+{
+  "title": "Measurement of specific heat capacity of solids and liquids",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
+  "topicTitle": "Measurement of specific heat capacity of solids and liquids",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Measurement of specific heat capacity of solids and liquids — Quantity of Heat, Physics (class-11-notes).",
+    "**Tested.** define it · list: measurement of specific heat capacity of solids, liquids · one worked example · one misconception each.",
+    "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
+    "**Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
+    "**Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀).",
+    "**Liquids.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Measurement of specific heat capacity of solids\" as one blob → ✅ split into: measurement of specific heat capacity of solids, liquids.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.."
+  ],
+  "bounds": [
+    "Covers only: measurement of specific heat capacity of solids, liquids (within Quantity of Heat).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
+  ],
+  "practice": [
+    "define + example each sub-idea: measurement of specific heat capacity of solids, liquids.",
+    "one worked example for \"Measurement of specific heat capacity of solids and liquids\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
+    "Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
+    "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Measurement of specific heat capacity of solids and liquids\" with one example.",
+    "compare \"Measurement of specific heat capacity of solids\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Measurement of specific heat capacity of solids and liquids\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Q = mcΔT",
+    "Q = mL",
+    "cp = 1.5×cv + R (Mayer, for ideal gas)"
+  ],
+  "numericals": [
+    "Use  Q = mcΔT  — pick reasonable values, solve, and check the units.",
+    "Use  Q = mL  — pick reasonable values, solve, and check the units.",
+    "Use  cp = 1.5×cv + R (Mayer, for ideal gas)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Measurement of specific heat capacity of solids",
+    "• Liquids"
+  ],
+  "summary": "Measurement of specific heat capacity of solids and liquids (Quantity of Heat, Physics, class-11-notes) covers Measurement of specific heat capacity of solids, liquids. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Measurement of specific heat capacity of solids and liquids\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Measurement of specific heat capacity of solids and liquids\"?",
+      "options": [
+        "Q = mcΔT",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "Q = mcΔT",
+      "explanation": "Q = mcΔT is the standard form used for this topic."
+    }
+  ]
+}

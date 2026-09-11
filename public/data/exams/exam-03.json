@@ -1,0 +1,147 @@
+{
+  "slug": "exam-03",
+  "title": "NEB Class 11 Mock Exam 03 — Physics, Chemistry, Biology, Mathematics",
+  "durationMin": 60,
+  "questions": [
+    {
+      "id": "e3-q01",
+      "prompt": "Which organelle contains its own DNA and ribosomes, supporting the endosymbiotic theory?",
+      "options": ["Mitochondrion", "Lysosome", "Golgi apparatus", "Vacuole"],
+      "correctIndex": 0,
+      "explanation": "Mitochondria (and plastids) carry their own circular DNA and 70S ribosomes, evidence of prokaryotic ancestry."
+    },
+    {
+      "id": "e3-q02",
+      "prompt": "The significance of meiosis in sexually reproducing organisms is that it produces:",
+      "options": ["Two identical diploid cells", "Four haploid cells", "Eight haploid cells", "Two haploid cells"],
+      "correctIndex": 1,
+      "explanation": "One meiotic division cycle yields four haploid daughter cells with new gene combinations."
+    },
+    {
+      "id": "e3-q03",
+      "prompt": "Dryopteris, the fern commonly studied for its vascular tissue and sori, is an example of:",
+      "options": ["Bryophyta", "Pteridophyta", "Gymnosperm", "Thallophyta"],
+      "correctIndex": 1,
+      "explanation": "Ferns are seedless vascular plants — pteridophytes reproducing by spores in sori."
+    },
+    {
+      "id": "e3-q04",
+      "prompt": "Deuteromycetes are popularly called imperfect fungi because they:",
+      "options": ["Lack chitin in their walls", "Have no known sexual stage", "Cannot absorb nutrients", "Are always unicellular"],
+      "correctIndex": 1,
+      "explanation": "'Imperfect' refers only to the absence of an observed sexual reproductive phase."
+    },
+    {
+      "id": "e3-q05",
+      "prompt": "Yeast (Saccharomyces), an ascomycete, is economically important because it is used in:",
+      "options": ["Nitrogen fixation", "Antibiotic production", "Fermentation for baking and brewing", "Water purification"],
+      "correctIndex": 2,
+      "explanation": "Yeast ferments sugars into ethanol and CO₂, driving baking and brewing industries."
+    },
+    {
+      "id": "e3-q06",
+      "prompt": "In the reaction 2H₂ + O₂ → 2H₂O, if 4 mol H₂ react with 3 mol O₂, the limiting reactant is:",
+      "options": ["H₂", "O₂", "H₂O", "Neither; both are fully consumed"],
+      "correctIndex": 0,
+      "explanation": "4 mol H₂ requires exactly 2 mol O₂, and 3 mol O₂ is available; hydrogen is therefore consumed first and limits the water formed to 4 mol."
+    },
+    {
+      "id": "e3-q07",
+      "prompt": "The oxidation number of sulphur in H₂SO₄ is:",
+      "options": ["+2", "+4", "+6", "−2"],
+      "correctIndex": 2,
+      "explanation": "2(+1) + S + 4(−2) = 0 gives S = +6."
+    },
+    {
+      "id": "e3-q08",
+      "prompt": "For an electron with principal quantum number n = 3, the allowed values of l are:",
+      "options": ["0 only", "1 and 2", "0, 1 and 2", "1, 2 and 3"],
+      "correctIndex": 2,
+      "explanation": "l runs from 0 to n − 1, so n = 3 allows l = 0 (s), 1 (p) and 2 (d)."
+    },
+    {
+      "id": "e3-q09",
+      "prompt": "The chemical bond formed by complete transfer of electrons from sodium to chlorine in NaCl is:",
+      "options": ["Covalent bond", "Coordinate bond", "Metallic bond", "Ionic bond"],
+      "correctIndex": 3,
+      "explanation": "Na loses one electron and Cl gains it; electrostatic attraction between Na⁺ and Cl⁻ forms the ionic bond."
+    },
+    {
+      "id": "e3-q10",
+      "prompt": "By Graham's law of diffusion, the ratio of rates of diffusion of CH₄ (M = 16) and O₂ (M = 32) under identical conditions is approximately:",
+      "options": ["1 : 2", "1 : 1.41", "1.41 : 1", "2 : 1"],
+      "correctIndex": 2,
+      "explanation": "r(CH₄)/r(O₂) = √(32/16) = √2 ≈ 1.41 : 1; lighter methane diffuses faster."
+    },
+    {
+      "id": "e3-q11",
+      "prompt": "The derivative of f(x) = x³ with respect to x is:",
+      "options": ["3x", "x²", "3x²", "x⁴/4"],
+      "correctIndex": 2,
+      "explanation": "Power rule: d/dx xⁿ = n xⁿ⁻¹ gives 3x²."
+    },
+    {
+      "id": "e3-q12",
+      "prompt": "∫ 2x dx equals:",
+      "options": ["x² + C", "2x² + C", "2 + C", "x²/2 + C"],
+      "correctIndex": 0,
+      "explanation": "∫xⁿ dx = xⁿ⁺¹/(n+1) + C so ∫2x dx = 2·x²/2 + C = x² + C."
+    },
+    {
+      "id": "e3-q13",
+      "prompt": "A function satisfying f(−x) = f(x) for every x in its domain is called:",
+      "options": ["Odd", "Even", "Periodic", "Monotonic"],
+      "correctIndex": 1,
+      "explanation": "Even functions like x² or cos x are symmetric about the y-axis; odd ones satisfy f(−x) = −f(x)."
+    },
+    {
+      "id": "e3-q14",
+      "prompt": "The stationary points of f(x) = x³ − 3x² occur where f′(x) = 0, i.e. at:",
+      "options": ["x = 0 only", "x = 2 only", "x = 0 and x = 2", "x = −2 and x = 0"],
+      "correctIndex": 2,
+      "explanation": "f′ = 3x² − 6x = 3x(x − 2) vanishes at x = 0 and x = 2."
+    },
+    {
+      "id": "e3-q15",
+      "prompt": "The standard limit lim(x→0) sin x / x equals:",
+      "options": ["0", "1", "∞", "Does not exist"],
+      "correctIndex": 1,
+      "explanation": "This foundational trigonometric limit equals 1 when x is measured in radians."
+    },
+    {
+      "id": "e3-q16",
+      "prompt": "Neglecting air resistance, the horizontal range of a projectile launched with fixed speed is maximum at a projection angle of:",
+      "options": ["30°", "45°", "60°", "90°"],
+      "correctIndex": 1,
+      "explanation": "R = u² sin 2θ/g peaks when 2θ = 90°, i.e. θ = 45°."
+    },
+    {
+      "id": "e3-q17",
+      "prompt": "The work done by the centripetal force on a body completing one full circle is:",
+      "options": ["Maximum positive", "Zero", "Negative", "Equal to mv²"],
+      "correctIndex": 1,
+      "explanation": "Centripetal force stays perpendicular to displacement at every instant, so W = ∫F·ds = 0."
+    },
+    {
+      "id": "e3-q18",
+      "prompt": "The orbital velocity of a satellite orbiting just above the Earth's surface is approximately:",
+      "options": ["7.9 km/s", "9.8 km/s", "11.2 km/s", "3.0 km/s"],
+      "correctIndex": 0,
+      "explanation": "v_o = √(gR) ≈ 7.9 km/s near the surface; escape velocity is √2 times this."
+    },
+    {
+      "id": "e3-q19",
+      "prompt": "Young's modulus, the ratio of tensile stress to longitudinal strain, is expressed in SI units of:",
+      "options": ["N/m", "N/m²", "m/N²", "Dimensionless"],
+      "correctIndex": 1,
+      "explanation": "Stress (N/m²) divided by dimensionless strain leaves N/m², the pascal."
+    },
+    {
+      "id": "e3-q20",
+      "prompt": "According to the Stefan–Boltzmann law, the total energy radiated per second by a black body is proportional to:",
+      "options": ["T", "T²", "T³", "T⁴"],
+      "correctIndex": 3,
+      "explanation": "E = σAT⁴: radiated power grows with the fourth power of absolute temperature."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "title": "Electrolysis: qualitative aspect",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "electrolysis-qualitative-aspect",
+  "topicTitle": "Electrolysis: qualitative aspect",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Electrolysis: qualitative aspect — Oxidation and Reduction, Chemistry (class-11-notes).",
+    "**Tested.** define it · list: electrolysis, qualitative aspect · one worked example · one misconception each.",
+    "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
+    "**Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
+    "**Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion.",
+    "**Qualitative aspect.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Electrolysis\" as one blob → ✅ split into: electrolysis, qualitative aspect.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm.."
+  ],
+  "bounds": [
+    "Covers only: electrolysis, qualitative aspect (within Oxidation and Reduction).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
+  ],
+  "practice": [
+    "define + example each sub-idea: electrolysis, qualitative aspect.",
+    "one worked example for \"Electrolysis: qualitative aspect\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
+    "Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
+    "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Electrolysis: qualitative aspect\" with one example.",
+    "compare \"Electrolysis\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electrolysis: qualitative aspect\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "ΔG = −nFE",
+    "E = E° − (0.0592/n)log Q (25°C)",
+    "m = (M/F)Q"
+  ],
+  "numericals": [
+    "Use  ΔG = −nFE  — pick reasonable values, solve, and check the units.",
+    "Use  E = E° − (0.0592/n)log Q (25°C)  — pick reasonable values, solve, and check the units.",
+    "Use  m = (M/F)Q  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Electrolysis",
+    "• Qualitative aspect"
+  ],
+  "summary": "Electrolysis: qualitative aspect (Oxidation and Reduction, Chemistry, class-11-notes) covers Electrolysis, qualitative aspect. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Electrolysis: qualitative aspect\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Electrolysis: qualitative aspect\"?",
+      "options": [
+        "ΔG = −nFE",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "ΔG = −nFE",
+      "explanation": "ΔG = −nFE is the standard form used for this topic."
+    }
+  ]
+}

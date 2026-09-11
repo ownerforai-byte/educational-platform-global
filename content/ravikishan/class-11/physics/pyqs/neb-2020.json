@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "Explain the term 'moment of inertia' with its physical significance.",
+      "marks": 2,
+      "solution": "Moment of inertia I = Σmᵢrᵢ² is the rotational analogue of mass — it measures the resistance of a body to a change in its rotational state.\n\nIts value depends on the mass distribution about the axis and on the position/orientation of the axis. Torque τ = Iα is the rotational equivalent of F = ma."
+    },
+    {
+      "question": "State the law of conservation of energy and verify it for a freely falling body.",
+      "marks": 3,
+      "solution": "**Law:** energy can neither be created nor destroyed, only transformed from one form to another; the total energy of an isolated system remains constant.\n\nFor a body falling from height h: at the top, total E = mgh. After falling distance x, v² = 2gx so KE = ½mv² = mgx and PE = mg(h − x). Total = mgx + mg(h − x) = mgh — constant at every point."
+    },
+    {
+      "question": "Derive an expression for the work done during the isothermal expansion of an ideal gas.",
+      "marks": 3,
+      "solution": "For an ideal gas at constant temperature, P = nRT/V.\n\nW = ∫(V₁→V₂) P dV = nRT ∫(V₁→V₂) dV/V = **nRT ln(V₂/V₁)**."
+    },
+    {
+      "question": "A concave mirror of focal length 20 cm forms an image twice the size of the object. Find the object distance.",
+      "marks": 3,
+      "solution": "For a real, magnified image m = −v/u = −2 ⇒ v = 2u.\n\nMirror formula: 1/f = 1/v + 1/u ⇒ 1/20 = 1/(2u) + 1/u = 3/(2u) ⇒ 2u = 60 ⇒ u = **30 cm**."
+    }
+  ]
+}

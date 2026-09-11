@@ -1,0 +1,39 @@
+{
+  "title": "p-Orbital Geometry & the Four Quantum Numbers",
+  "notes": [
+    "**p-orbital dumb-bell axes:** each p-orbital is dumb-bell (figure-of-eight) shaped with two lobes on opposite sides of the nucleus, oriented along one of the three cartesian axes â€” pâ‚“, páµ§ and p_z â€” which are mutually perpendicular.",
+    "**Nodal plane zero points:** every p-orbital has a nodal plane through the nucleus where the probability of finding the electron is zero; for pâ‚“ the nodal plane is the yz-plane, and so on.",
+    "**Degenerate energy states:** in a given shell all three p-orbitals have the same energy (they are degenerate); in the absence of a magnetic field they are indistinguishable energetically.",
+    "**Complex d/f shapes:** d-orbitals (l = 2) mostly have four-lobed cloverleaf shapes (with one two-lobed d_zÂ² orbital plus a torus), while f-orbitals (l = 3) have even more complex multi-lobed geometries.",
+    "**Four quantum numbers categorical taxonomy:** every electron is uniquely specified by (1) the principal quantum number n (main energy level/shell), (2) the azimuthal quantum number l (subshell/shape), (3) the magnetic quantum number m (orbital orientation), and (4) the spin quantum number s (+Â½ or âˆ’Â½, direction of spin).",
+    "**Subshell maximum capacities:** s holds 2 electrons, p holds 6, d holds 10, f holds 14.",
+    "**SchrÃ¶dinger/Spin origins breakdown:** the principal (n), azimuthal (l) and magnetic (m) quantum numbers arise naturally as the three quantum conditions of SchrÃ¶dinger's wave equation; the spin quantum number (s) was added later from the Sternâ€“Gerlach and Goudsmitâ€“Uhlenbeck experiments.",
+    "**Principal quantum number (n):** fixes the main energy level and size of the orbital (shell). n = 1, 2, 3, â€¦; larger n means a larger, higher-energy orbital farther from the nucleus.",
+    "**Sommerfeld hyperfine line expansions:** Arnold Sommerfeld introduced the azimuthal (orbital) quantum number l to explain the hyperfine splitting of spectral lines observed under high resolution, which Bohr's model could not explain.",
+    "**Subsidiary (azimuthal) quantum number (l):** fixes the subshell and shape of the orbital; l takes integer values 0 to n âˆ’ 1 and is labelled by letters â€” s: 0, p: 1, d: 2, f: 3.",
+    "**Subshell orbital count:** each subshell contains 2l + 1 orbitals â€” for s (l=0): 1, p (l=1): 3, d (l=2): 5, f (l=3): 7.",
+    "**Subshell electron count:** each subshell holds a maximum of 2(2l + 1) electrons â€” for s: 2, p: 6, d: 10, f: 14.",
+    "**Tabular orbital designation matrix:** the complete set of orbitals for a given shell is catalogued by combining n, l and m. For n = 2: l = 0 gives the single 2s orbital (m = 0); l = 1 gives the three 2p orbitals (m = +1, 0, âˆ’1), designated 2pâ‚“, 2páµ§, 2p_z.",
+    "**Magnetic quantum number (m):** fixes the orientation of the orbital in space relative to an applied magnetic field; m takes 2l + 1 integer values from âˆ’l to +l.",
+    "**m value sets by subshell:** for l = 0: m = 0 (1 orbital); l = 1: m = +1, 0, âˆ’1 (3 orbitals); l = 2: m = +2, +1, 0, âˆ’1, âˆ’2 (5 orbitals); l = 3: m = +3, +2, +1, 0, âˆ’1, âˆ’2, âˆ’3 (7 orbitals).",
+    "**Total orbitals in a shell:** a shell of principal quantum number n contains exactly nÂ² orbitals, combining all subshells of that shell.",
+    "**LandÃ©â€“Zeeman magnetic orientations:** in an external magnetic field, the degenerate orbitals of a subshell split into distinct energy levels (Zeeman effect), each orbital having a different spatial orientation â€” one line splits into 2l + 1 components.",
+    "**Goudsmitâ€“Uhlenbeck electron axial rotation:** Goudsmit and Uhlenbeck proposed that the electron itself spins about its own axis, producing an intrinsic angular momentum and a tiny magnetic dipole.",
+    "**Clockwise vs anticlockwise spins:** the electron's spin can be clockwise or anticlockwise, giving two spin states; the spin quantum number s takes only two values: +Â½ and âˆ’Â½."
+  ],
+  "confusion": [
+    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
+    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
+    "Sign conventions matter. Define your coordinate system before applying equations."
+  ],
+  "practice": [
+    "Solve one basic problem using the key formula from this topic.",
+    "Try a numerical problem where you must choose the correct formula from two similar options.",
+    "Apply this concept to a real-world situation and explain each step."
+  ],
+  "universalFacts": [
+    "This concept is fundamental and appears in multiple contexts across the subject.",
+    "Understanding the derivation helps more than memorizing the final formula.",
+    "Always check units and dimensions when applying this concept."
+  ]
+}

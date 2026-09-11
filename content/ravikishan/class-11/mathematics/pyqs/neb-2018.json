@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Mathematics — 2018",
+  "year": 2018,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "If A = {1, 2, 3, 4} and B = {3, 4, 5}, verify De Morgan's law: (A ∪ B)′ = A′ ∪ B′ taking the universal set U = {1, 2, 3, 4, 5, 6}.",
+      "marks": 3,
+      "solution": "A ∪ B = {1, 2, 3, 4, 5} ⇒ (A ∪ B)′ = **{6}**.\n\nA′ = {5, 6}, B′ = {1, 2, 6} ⇒ A′ ∩ B′ = **{6}**.\n\nHence (A ∪ B)′ = A′ ∩ B′ — verified. (Note: the statement in the question is A′ ∩ B′.)"
+    },
+    {
+      "question": "Solve the triangle: if sin θ + cos θ = √2 and 0 ≤ θ ≤ π/2, find θ.",
+      "marks": 3,
+      "solution": "Square both sides: 1 + 2 sin θ cos θ = 2 ⇒ sin 2θ = 1.\n\nFor 0 ≤ 2θ ≤ π: 2θ = π/2 ⇒ θ = **π/4 (45°)**."
+    },
+    {
+      "question": "If a = 2i − j + k and b = i + j − 2k, find a·b and the angle between a and b.",
+      "marks": 3,
+      "solution": "a·b = (2)(1) + (−1)(1) + (1)(−2) = 2 − 1 − 2 = **−1**.\n\n|a| = √6, |b| = √6 ⇒ cos θ = −1/(√6 × √6) = −1/6\n\nθ = cos⁻¹(−1/6) ≈ **99.6°**."
+    },
+    {
+      "question": "Integrate: ∫(x³ + 3x² + 2x + 1)/x dx.",
+      "marks": 2,
+      "solution": "= ∫(x² + 3x + 2 + 1/x) dx\n\n= x³/3 + (3x²)/2 + 2x + ln|x| + C."
+    }
+  ]
+}

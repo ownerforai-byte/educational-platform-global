@@ -1,0 +1,57 @@
+{
+  "title": "Electromagnetic Induction Mindmap",
+  "unitSlug": "electromagnetic-induction",
+  "topicSlug": "electromagnetic-induction-mindmap",
+  "topicTitle": "Electromagnetic Induction — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Electromagnetic Induction",
+    "children": [
+      {
+        "id": "faraday-s-laws-of-electromagnetic-induct",
+        "label": "Faraday's laws of electromagnetic induction"
+      },
+      {
+        "id": "lenz-s-law-and-conservation-of",
+        "label": "Lenz's law",
+        "children": [
+          {
+            "id": "lenz-s-law-sub-0",
+            "label": "conservation of energy"
+          }
+        ]
+      },
+      {
+        "id": "self-induction-and-self-induct",
+        "label": "Self-induction",
+        "children": [
+          {
+            "id": "self-induction-sub-0",
+            "label": "self-inductance"
+          }
+        ]
+      },
+      {
+        "id": "mutual-induction-and-mutual-in",
+        "label": "Mutual induction",
+        "children": [
+          {
+            "id": "mutual-induction-sub-0",
+            "label": "mutual inductance"
+          }
+        ]
+      },
+      {
+        "id": "growing-and-decaying-current-i",
+        "label": "Growing",
+        "children": [
+          {
+            "id": "growing-sub-0",
+            "label": "decaying current in LR circuits"
+          }
+        ]
+      }
+    ]
+  }
+}

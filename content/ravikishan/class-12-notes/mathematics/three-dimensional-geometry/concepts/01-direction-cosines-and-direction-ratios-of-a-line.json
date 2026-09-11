@@ -1,0 +1,64 @@
+{
+  "title": "Direction cosines and direction ratios of a line",
+  "unitSlug": "three-dimensional-geometry",
+  "topicSlug": "direction-cosines-and-direction-ratios-of-a-line",
+  "topicTitle": "Direction cosines and direction ratios of a line",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Direction cosines and direction ratios of a line — Three Dimensional Geometry, Mathematics (class-12-notes).",
+    "**Tested.** define it · list: direction cosines, direction ratios of a line · one worked example · one misconception each.",
+    "**Direction ratios of a line.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Direction cosines\" as one blob → ✅ split into: direction cosines, direction ratios of a line.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ answer with no steps → ✅ show each step and box the result."
+  ],
+  "bounds": [
+    "Covers only: direction cosines, direction ratios of a line (within Three Dimensional Geometry).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "define + example each sub-idea: direction cosines, direction ratios of a line.",
+    "one worked example for \"Direction cosines and direction ratios of a line\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Direction cosines and direction ratios of a line\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Direction cosines and direction ratios of a line\" with one example.",
+    "compare \"Direction cosines\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Direction cosines and direction ratios of a line\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Standard result for \"Direction cosines and direction ratios of a line\" — state it and verify by substituting a simple case."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Direction cosines and direction ratios of a line\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Direction cosines",
+    "• Direction ratios of a line"
+  ],
+  "summary": "Direction cosines and direction ratios of a line (Three Dimensional Geometry, Mathematics, class-12-notes) covers Direction cosines, direction ratios of a line. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Direction cosines and direction ratios of a line\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}
