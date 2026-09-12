@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -72,7 +72,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           {/* Right: theme toggle + credit badge + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
             <ThemeToggle />
-            <CreditBadge />
+            <Suspense fallback={<div className="h-6 w-16 animate-pulse rounded-full bg-muted/40" />}>
+              <CreditBadge />
+            </Suspense>
 
             <Link
               href="/chat"
@@ -84,7 +86,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
 
             <div className="ml-1 h-4 w-px bg-border/60" />
-            <UserNav />
+            <Suspense fallback={<div className="h-8 w-8 animate-pulse rounded-full bg-muted/40" />}>
+              <UserNav />
+            </Suspense>
           </div>
         </div>
       </header>
@@ -125,7 +129,18 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               ))}
             </nav>
           )}
-          <div className="animate-fade-in">{children}</div>
+          <Suspense
+            fallback={
+              <div className="flex min-h-[400px] w-full items-center justify-center">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                  <span className="text-xs text-muted-foreground animate-pulse">Loading content...</span>
+                </div>
+              </div>
+            }
+          >
+            <div className="animate-fade-in">{children}</div>
+          </Suspense>
         </main>
       </div>
 
