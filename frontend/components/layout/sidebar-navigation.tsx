@@ -44,12 +44,13 @@ const aiItems: NavItem[] = [
 const curriculumItems: NavItem[] = [
   { href: "/class-11-notes", label: "Class 11 Notes", icon: BookOpen },
   { href: "/class-12-notes", label: "Class 12 Notes", icon: BookOpen },
+  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "CEE" },
   { href: "/subjects", label: "All Subjects", icon: Layers },
   { href: "/syllabus", label: "Official Syllabus", icon: GraduationCap },
 ];
 
 const labItems: NavItem[] = [
-  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "CEE" },
+  { href: "/periodic-table", label: "Periodic Table (118)", icon: Atom, badge: "118" },
   { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical },
   { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
   { href: "/theorems", label: "Theorems & Proofs", icon: Binary },

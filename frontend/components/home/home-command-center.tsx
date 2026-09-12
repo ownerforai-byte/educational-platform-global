@@ -27,6 +27,7 @@ interface HomeCommandCenterProps {
 }
 
 const QUICK_SEARCH_ITEMS = [
+  { label: "Modern Periodic Table (118 Elements & CEE MCQs)", href: "/periodic-table", category: "Chemistry Tool" },
   { label: "Physics 3D Mechanics Suite", href: "/lab/physics/physics-mechanics-suite-3d", category: "Physics Lab" },
   { label: "Chemistry Molecular Builder 3D", href: "/lab/chemistry/molecular-builder", category: "Chemistry Lab" },
   { label: "Biology 3D Cell Anatomy", href: "/lab/biology/cell-3d", category: "Biology Lab" },
@@ -137,6 +138,13 @@ export function HomeCommandCenter({
 
           {/* Quick Category Jump Navigation Dock */}
           <div className="flex flex-wrap justify-center gap-2 pt-2">
+            <Link
+              href="/periodic-table"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-teal-500/40 bg-teal-500/10 px-3.5 py-2 text-xs font-bold text-teal-600 dark:text-teal-400 hover:border-teal-500 hover:bg-teal-500/20 transition-all shadow-sm"
+            >
+              <Atom className="h-3.5 w-3.5 text-teal-500" />
+              <span>Periodic Table &amp; CEE</span>
+            </Link>
             {[
               { label: "Curriculum Tracks", id: "section-curriculum", icon: GraduationCap },
               { label: "3D Virtual Labs", id: "section-labs", icon: FlaskConical },

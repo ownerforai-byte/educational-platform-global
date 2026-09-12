@@ -70,7 +70,7 @@ export function proxy(request: NextRequest) {
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://rn01.onrender.com https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
       "frame-src 'none'",
       "worker-src 'self' blob:",
     ].join("; ") + ";",

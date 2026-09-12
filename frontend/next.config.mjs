@@ -39,7 +39,7 @@ const nextConfig = {
     return config;
   },
   async rewrites() {
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
     return [
       {
         source: "/api/:path*",

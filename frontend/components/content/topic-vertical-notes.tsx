@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useEffect, useState, useMemo } from "react";
+import Link from "next/link";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { get3DComponentForTopic } from "@/lib/topic-3d-map";
 import { SchematicDiagram } from "@/components/lab/schematic-diagram";
+import { TopicMindMap } from "@/components/lab/topic-mindmap";
 import {
   BookOpen,
   FlaskConical,
@@ -20,6 +22,9 @@ import {
   TrendingUp,
   Brain,
   Zap,
+  Atom,
+  ExternalLink,
+  Workflow,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -82,6 +87,7 @@ export function TopicVerticalNotes({
   const [supplementary, setSupplementary] = useState<RichTopicConcept | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeSourceIndex, setActiveSourceIndex] = useState(0);
+  const [visualTab, setVisualTab] = useState<"schematic" | "mindmap" | "3d">("schematic");
 
   // 1. Resolve 3D component if available
   const TopicVisual3D = useMemo(() => {
@@ -210,34 +216,109 @@ export function TopicVerticalNotes({
         </div>
       )}
 
-      {/* ── 1. CONCEPTUAL DIAGRAM & 3D INTERACTIVE VISUAL ───────────────── */}
+      {/* ── CHEMISTRY QUICK LAUNCH BANNER ── */}
+      {(subjectSlug.toLowerCase().includes("chem") || topicTitle.toLowerCase().includes("element") || topicTitle.toLowerCase().includes("atom")) && (
+        <div className="rounded-3xl border border-teal-500/30 bg-teal-500/10 p-5 flex flex-wrap items-center justify-between gap-4 shadow-sm">
+          <div className="flex items-center gap-3.5">
+            <div className="h-12 w-12 rounded-2xl bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold shrink-0">
+              <Atom className="h-6 w-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">
+                  Entrance &amp; NEB Essential
+                </span>
+                <h4 className="text-sm font-bold text-foreground">Interactive 118-Element Periodic Table &amp; CEE Questions</h4>
+              </div>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Explore electronic configurations, boiling/freezing points, past CEE entrance MCQs, speed formulas, and volatile/coinage metal filters.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/periodic-table"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold transition-all shadow-md shrink-0"
+          >
+            <span>Open Periodic Table</span>
+            <ExternalLink className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      )}
+
+      {/* ── 1. CONCEPTUAL DIAGRAM, CLEAR MINDMAP & 3D INTERACTIVE VISUAL ───────────────── */}
       <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-        <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex items-center justify-between">
+        <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <FlaskConical className="h-5 w-5 text-sky-400" />
             <h3 className="text-base font-bold text-foreground">
-              Conceptual Diagram &amp; 3D Interactive Simulation
+              Visual Workspace: Diagrams, Mindmaps &amp; 3D Simulations
             </h3>
           </div>
-          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-500">
-            Interactive Visual
-          </span>
+
+          {/* Visual Mode Switcher Tabs */}
+          <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs">
+            <button
+              onClick={() => setVisualTab("schematic")}
+              className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
+                visualTab === "schematic"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Schematic Diagram</span>
+            </button>
+            <button
+              onClick={() => setVisualTab("mindmap")}
+              className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
+                visualTab === "mindmap"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Workflow className="h-3.5 w-3.5" />
+              <span>Clear Mindmap (5 Branches)</span>
+            </button>
+            {TopicVisual3D && (
+              <button
+                onClick={() => setVisualTab("3d")}
+                className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
+                  visualTab === "3d"
+                    ? "bg-sky-600 text-white shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <FlaskConical className="h-3.5 w-3.5" />
+                <span>3D Visual</span>
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="p-6 space-y-6">
-          {TopicVisual3D && (
+          {visualTab === "schematic" && (
+            <SchematicDiagram
+              subjectSlug={subjectSlug}
+              topicSlug={topicSlug}
+              topicTitle={topicTitle}
+              unitId={unitId}
+            />
+          )}
+
+          {visualTab === "mindmap" && (
+            <TopicMindMap
+              subjectSlug={subjectSlug}
+              topicSlug={topicSlug}
+              topicTitle={topicTitle}
+              unitId={unitId}
+            />
+          )}
+
+          {visualTab === "3d" && TopicVisual3D && (
             <div className="rounded-2xl border border-border/60 bg-background/50 overflow-hidden min-h-[380px] flex flex-col justify-center">
               <TopicVisual3D />
             </div>
           )}
-
-          {/* High-Resolution Schematic Diagram with Long SVG Leader Lines for all subjects & topics */}
-          <SchematicDiagram
-            subjectSlug={subjectSlug}
-            topicSlug={topicSlug}
-            topicTitle={topicTitle}
-            unitId={unitId}
-          />
         </div>
       </section>
 
