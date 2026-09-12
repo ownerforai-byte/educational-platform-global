@@ -10,7 +10,7 @@ dotenv.config({ path: path.join(__dirname, "..", "..", ".env") });
 
 const { createApp } = await import("./app");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = createApp();
 
