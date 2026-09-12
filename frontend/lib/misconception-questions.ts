@@ -30,7 +30,10 @@ export type TopicMisconception = {
   questions: MisconceptionQuestion[];
 };
 
-export const MISCONCEPTION_QUESTIONS: TopicMisconception[] = [
+import { MISCONCEPTION_QUESTIONS as BIOLOGY_MISCONCEPTIONS } from "./misconception-questions-biology";
+import { MISCONCEPTION_QUESTIONS as CHEMISTRY_MISCONCEPTIONS } from "./misconception-questions-chemistry";
+
+export const PHYSICS_MISCONCEPTIONS: TopicMisconception[] = [
   {
     subject: "physics",
     classLevel: "class-11",
@@ -289,4 +292,10 @@ export const MISCONCEPTION_QUESTIONS: TopicMisconception[] = [
       },
     ],
   },
+];
+
+export const MISCONCEPTION_QUESTIONS: TopicMisconception[] = [
+  ...PHYSICS_MISCONCEPTIONS,
+  ...CHEMISTRY_MISCONCEPTIONS,
+  ...BIOLOGY_MISCONCEPTIONS,
 ];

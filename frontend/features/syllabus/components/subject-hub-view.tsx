@@ -7,12 +7,9 @@ import { getSubjectNav } from "../queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import {
-  BookOpen,
   Clock,
-  ChevronRight,
   ArrowRight,
   GraduationCap,
-  Sparkles,
   Layers,
 } from "lucide-react";
 
@@ -47,7 +44,6 @@ export async function SubjectHubView({
 
   const emoji = SUBJECT_EMOJI[subject.name] ?? "📘";
   const totalHours = units.reduce((acc, u) => acc + (u.hours || 0), 0);
-  const totalTopics = units.reduce((acc, u) => acc + u.topicEntries.length, 0);
 
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-8 md:py-14 px-4">

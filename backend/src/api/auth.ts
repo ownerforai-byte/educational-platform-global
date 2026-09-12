@@ -4,7 +4,6 @@ import { supabaseAdmin } from "../db/supabase";
 import {
   signInWithPassword,
   signUp,
-  getUserByToken,
   signOut,
 } from "../auth/supabase";
 import {
@@ -208,7 +207,6 @@ router.get("/me", async (req: Request, res: Response) => {
   const user = await getUserFromRequest(req);
 
   if (!user) {
-    const body: MeResponse = { user: null };
     res.status(401).json({ error: "Unauthorized" });
     return;
   }

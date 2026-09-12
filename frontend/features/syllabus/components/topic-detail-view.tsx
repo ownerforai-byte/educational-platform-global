@@ -7,12 +7,7 @@ import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicVerticalNotes } from "@/components/content/topic-vertical-notes";
-import type { NotesTrack } from "@/lib/imported-notes";
 import { ChevronRight, ArrowLeft } from "lucide-react";
-
-function isNotesTrack(value: string): value is NotesTrack {
-  return value === "class-11-notes" || value === "class-12-notes";
-}
 
 export async function TopicDetailView({
   classSlug,

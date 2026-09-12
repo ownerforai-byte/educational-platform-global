@@ -158,7 +158,7 @@ export const IMPORTED_NOTES_BY_SUBJECT: Record<string, ImportedNote[]> = {
 
 let importedNotesPromise: Promise<Record<string, ImportedNote[]>> | null = null;
 
-function getImportedNotesBySubject(): Promise<Record<string, ImportedNote[]>> {
+export function getImportedNotesBySubject(): Promise<Record<string, ImportedNote[]>> {
   if (!importedNotesPromise) {
     importedNotesPromise = (async () => {
       const [rav, rexp] = await Promise.all([

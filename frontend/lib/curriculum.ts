@@ -403,9 +403,9 @@ export async function getTopicDetail(
 }
 
 export async function getChapterDetail(
-  levelSlug: string,
-  classSlug: string,
-  subjectSlug: string,
+  _levelSlug: string,
+  _classSlug: string,
+  _subjectSlug: string,
   chapterSlug: string
 ): Promise<ChapterDetail | null> {
   try {

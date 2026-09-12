@@ -82,13 +82,11 @@ router.post(
       const aiService = getService();
 
       // Fetch syllabus context from Supabase with KEY TERMS extraction
-      let subjectContext = "";
-      let chapterContext = "";
       let availableTopics: string[] = [];
-      let keyTermsContext = ""; // New: Extract key vocabulary for each topic
+      let keyTermsContext = ""; // Extract key vocabulary for each topic
 
       try {
-        // Step 1: get subject to confirm it exists and get its name
+        // Step 1: get subject to confirm it exists
         const subjRes = await supabaseAdmin
           .from("subjects")
           .select("id, slug, name, description")
@@ -96,9 +94,6 @@ router.post(
           .eq("is_active", true)
           .single();
         const subj = subjRes.data as DbSubject | null;
-        if (subj) {
-          subjectContext = `Subject: ${subj.name}\nDescription: ${subj.description ?? "N/A"}`;
-        }
 
         // Step 2: get all chapters for this subject
         const chRes = await supabaseAdmin
@@ -108,13 +103,9 @@ router.post(
           .eq("is_active", true);
         const chaptersList = (chRes.data ?? []) as DbChapter[];
 
-        chapterContext = "Chapters and topics in this subject:\n";
         keyTermsContext = "Key terms and vocabulary by topic (for question generation):\n";
 
         for (const ch of chaptersList) {
-          chapterContext += `\n📖 ${ch.title}`;
-          if (ch.description) chapterContext += `\n   ${ch.description}`;
-
           const tpRes = await supabaseAdmin
             .from("topics")
             .select("id, slug, title, description")
@@ -122,8 +113,6 @@ router.post(
             .eq("is_active", true);
           const topicsList = (tpRes.data ?? []) as DbTopic[];
           for (const tp of topicsList) {
-            const termLine = `   • ${tp.title}${tp.description ? ` — ${tp.description}` : ""}`;
-            chapterContext += `\n${termLine}`;
             availableTopics.push(tp.title);
 
             // Build key terms context: combine topic title and description into searchable terms
@@ -156,7 +145,7 @@ router.post(
         };
         const fallback = nebFallback[subjectSlug];
         if (fallback) {
-          chapterContext = `Subject: ${subjectSlug}\nTopics to cover: ${fallback}`;
+          availableTopics = fallback.split(", ").map((t) => t.trim());
         }
       }
 

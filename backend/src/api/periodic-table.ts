@@ -6,7 +6,6 @@ import {
   PERIODIC_FILTERS,
   PERIODIC_ELEMENTS,
   getFilterById,
-  getElementsByFilter,
 } from "../data/periodicTableFilters";
 
 const router = Router();

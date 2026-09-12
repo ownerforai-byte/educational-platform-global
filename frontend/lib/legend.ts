@@ -13,7 +13,7 @@
 
 import { SYLLABUS } from "@/lib/syllabus";
 import type { SyllabusUnit, SubjectSyllabus } from "@/lib/syllabus";
-import { join, resolve, dirname } from "node:path";
+import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 // Resolve the project root from this module's location (frontend/lib/legend.ts → two levels up).

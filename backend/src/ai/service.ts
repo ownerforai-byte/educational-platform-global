@@ -1,8 +1,8 @@
-﻿import { supabaseAdmin } from "../db/supabase";
-import { getSearchService, type WebSearchService } from "./search-engine";
+import { supabaseAdmin } from "../db/supabase";
+import { getSearchService } from "./search-engine";
 
 export type SupportedProvider = "gemini" | "openrouter" | "internal" | "agnes";
-
+ 
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
   content: string;
@@ -20,13 +20,6 @@ export interface AISearchResponse {
   results: AISearchResult[];
   fallbackMessage?: string;
   syllabusHints?: Array<{ subject: string; unit: string; topics: string[] }>;
-}
-
-interface DbClass {
-  id: string;
-  slug: string;
-  name: string;
-  education_level_id: string;
 }
 
 interface DbSubject {
@@ -349,7 +342,7 @@ class InternalProvider implements AIProvider {
   }
 
   async chat(messages: AIChatMessage[]): Promise<string> {
-    const index = await this.loadIndex();
+    await this.loadIndex();
     const lastUser = [...messages].reverse().find((m) => m.role === "user");
     const query = lastUser?.content ?? "";
     const results = this.match(query, 5);
@@ -371,7 +364,7 @@ class InternalProvider implements AIProvider {
   }
 
   async search(query: string): Promise<AISearchResponse> {
-    const index = await this.loadIndex();
+    await this.loadIndex();
     const results = this.match(query, 8).map((item) => ({
       title: item.title,
       url: item.url,

@@ -6,6 +6,8 @@ import {
   makeTitleSprite,
   type MouseOrbitHandle,
 } from "@/components/lab/mouse-orbit-scene";
+import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
+import { ArrowLabel } from "@/components/lab/annotation/arrow-label";
 import React, { useEffect, useMemo, useRef } from "react";
 export type SceneRender = (h: MouseOrbitHandle) => () => void;
 export const SCENE_REGISTRY: Record<string, { scene: SceneRender; title: string; description: string }> = {};
@@ -762,12 +764,22 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
     };
   }, [resolved]);
 
+  const annotations =
+    LAB_ANNOTATIONS[topicSlug] ||
+    (unitSlug ? LAB_ANNOTATIONS[unitSlug] : undefined) ||
+    LAB_ANNOTATIONS[`ph-3d-${topicSlug}`];
+
   return (
     <div className="rounded-lg overflow-hidden border border-border bg-slate-950">
-      <div ref={containerRef} style={{ height }} className="w-full" />
+      <div ref={containerRef} style={{ height }} className="w-full relative">
+        {annotations &&
+          annotations.map((ann, idx) => (
+            <ArrowLabel key={`${topicSlug}-${idx}`} {...ann} />
+          ))}
+      </div>
       <div className="px-3 py-2 bg-slate-900 text-slate-200 text-xs flex items-center justify-between">
         <span className="font-medium">{resolved.title}</span>
-        <span className="opacity-70">??? Drag to rotate · scroll to zoom</span>
+        <span className="opacity-70">🖱️ Drag to rotate · scroll to zoom</span>
       </div>
     </div>
   );

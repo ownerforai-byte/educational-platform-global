@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { createAIService, type AIChatMessage } from "../ai/service";
-import { requireAuth, type AuthedRequest } from "../middleware/auth";
+import { requireAuth } from "../middleware/auth";
 import { requireCredit } from "../middleware/creditCheck";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 
@@ -24,7 +24,6 @@ router.get("/providers", (_req: Request, res: Response) => {
 
 router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res: Response) => {
   try {
-    const user = (req as AuthedRequest).user;
     const body = req.body;
     let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
     const provider: string = typeof body?.provider === "string" ? body.provider : "";

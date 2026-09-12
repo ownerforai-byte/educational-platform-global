@@ -11,7 +11,7 @@
  */
 
 import { SYLLABUS } from "@/lib/syllabus";
-import type { ClassSyllabus, SubjectSyllabus, SyllabusUnit } from "@/lib/syllabus";
+import type { SyllabusUnit } from "@/lib/syllabus";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 

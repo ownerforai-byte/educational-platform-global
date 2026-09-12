@@ -88,6 +88,7 @@ import { MendelsLawsVisual } from "@/components/lab/topic-visuals/mendels-laws";
 import { ImmuneSystemVisual } from "@/components/lab/topic-visuals/immune-system";
 import { PCRVisual } from "@/components/lab/topic-visuals/pcr";
 import { RestrictionEnzymeVisual } from "@/components/lab/topic-visuals/restriction-enzyme";
+import { NeuronVisual } from "@/components/lab/topic-visuals/neuron";
 import { LenzLawVisual } from "@/components/lab/topic-visuals/lenz-law-3d";
 import { PhotoelectricEffectVisual } from "@/components/lab/topic-visuals/photoelectric-effect-3d";
 import { BohrModelVisual } from "@/components/lab/topic-visuals/bohr-model-3d";
@@ -329,7 +330,7 @@ const CHEMISTRY_11: LabComponentMap = {
   "iupac-classification-of-elements": makeTopic(PeriodicTableVisual, "IUPAC Classification"),
   "nuclear-charge-and-effective-nuclear-charge": makeTopic(PeriodicTableVisual, "Nuclear Charge"),
   "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-electronegativity-metallic-characters-general-trend-and-explanation-only": makeTopic(PeriodicTableVisual, "Periodic Trends"),
-  "chemical-bonding-and-shapes-of-molecules": makeTopic(BondCharacteristicsVisual, "Chemical Bonding"),
+  "chemical-bonding-and-shapes-of-molecules": makeTopic(ChemicalBondingVisual, "Chemical Bonding"),
   "valence-shell-valence-electron-and-octet-theory": makeTopic(HybridizationVisual, "Octet Theory"),
   "ionic-bond-and-its-properties": makeTopic(IonicBondVisual, "Ionic Bond"),
   "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": makeTopic(CovalentBondVisual, "Covalent Bond"),
@@ -564,6 +565,10 @@ BIOLOGY_11_FAUNAL.forEach((slug, i) => {
 BIOLOGY_11_BIOTA.forEach((slug, i) => { BIOLOGY_11[slug] = make(i === 0 ? "biota" : "pollution", i === 0 ? "Biota & Environment" : "Biota Topic", "biota-and-environment", "biology"); });
 BIOLOGY_11_CONSERVATION.forEach((slug, i) => { BIOLOGY_11[slug] = make(i === 0 ? "conservation" : "iucn", i === 0 ? "Conservation Biology" : "Conservation Topic", "conservation-biology", "biology"); });
 
+BIOLOGY_11["nervous-tissue"] = makeTopic(NeuronVisual, "Neuron Structure & Synapse");
+BIOLOGY_11["nervous-system"] = makeTopic(NeuronVisual, "Nervous System & Synapse");
+BIOLOGY_11["neuron"] = makeTopic(NeuronVisual, "Neuron 3D");
+
 export { BIOLOGY_11 };
 
 const MATH_11: LabComponentMap = {
@@ -620,10 +625,10 @@ const PHYSICS_12: LabComponentMap = {
   "energy-stored-in-a-capacitor": make("capacit", "Energy in Capacitor", "electrostatics", "physics"),
   "current-electricity": make("circuit", "Current Electricity", "current-electricity", "physics"),
   "electric-current-drift-velocity-and-relaxation-time": make("drift velocity", "Drift Velocity", "current-electricity", "physics"),
-  "ohms-law-and-its-limitations": make("ohm", "Ohm's Law", "current-electricity", "physics"),
+  "ohms-law-and-its-limitations": makeTopic(OhmsLawVisual, "Ohm's Law"),
   "resistance-and-resistivity-temperature-dependence": make("resistivity", "Resistance & Resistivity", "current-electricity", "physics"),
   "series-and-parallel-combination-of-resistors": make("series and parallel", "Resistor Combination", "current-electricity", "physics"),
-  "kirchhoffs-laws-and-their-applications": make("kirchhoff", "Kirchhoff's Laws", "current-electricity", "physics"),
+  "kirchhoffs-laws-and-their-applications": makeTopic(KirchhoffsLawsVisual, "Kirchhoff's Laws"),
   "electromotive-force-emf-internal-resistance-and-cells-in-combination": make("emf", "EMF", "current-electricity", "physics"),
   "wheatstone-bridge-and-meter-bridge": make("wheatstone", "Wheatstone Bridge", "current-electricity", "physics"),
   "potentiometer-and-its-applications": make("potentiometer", "Potentiometer", "current-electricity", "physics"),
@@ -746,7 +751,7 @@ const CHEMISTRY_12: LabComponentMap = {
 };
 
 const MATH_12: LabComponentMap = {
-  "limits-and-continuity": makeTopic(LimitsConcept3D, "Limits & Continuity"),
+  "limits-and-continuity": makeTopic(LimitsContinuityVisual, "Limits & Continuity"),
   "concept-of-limit-geometric-and-physical-interpretation": makeTopic(LimitsConcept3D, "Concept of Limit"),
   "standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic": makeTopic(LimitsStandard3D, "Standard Limits"),
   "indeterminate-forms": makeTopic(LimitsIndeterminate3D, "Indeterminate Forms"),
@@ -775,9 +780,9 @@ const MATH_12: LabComponentMap = {
   "vector-algebra": makeTopic(VectorOperationsVisual, "Vector Algebra"),
   "scalar-and-vector-quantities-types-of-vectors": makeTopic(VectorOperationsVisual, "Scalar & Vector"),
   "addition-subtraction-and-scalar-multiplication-of-vectors": makeTopic(VectorOperationsVisual, "Vector Operations"),
-  "dot-product-scalar-product-and-its-applications": makeTopic(VectorOperationsVisual, "Dot Product"),
-  "cross-product-vector-product-and-its-applications": makeTopic(VectorOperationsVisual, "Cross Product"),
-  "scalar-and-vector-triple-products": makeTopic(VectorOperationsVisual, "Triple Products"),
+  "dot-product-scalar-product-and-its-applications": makeTopic(VectorDot3DVisual, "Dot Product"),
+  "cross-product-vector-product-and-its-applications": makeTopic(VectorCross3DVisual, "Cross Product"),
+  "scalar-and-vector-triple-products": makeTopic(VectorTriple3DVisual, "Triple Products"),
   "applications-work-torque-angular-momentum": makeTopic(VectorOperationsVisual, "Applications"),
   "three-dimensional-geometry": makeTopic(CoordinatesSpaceVisual, "3D Geometry"),
   "direction-cosines-and-direction-ratios-of-a-line": makeTopic(CoordinatesSpaceVisual, "Direction Cosines"),

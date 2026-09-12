@@ -5,20 +5,24 @@ import { Coins, ArrowUpRight, Sparkles } from "lucide-react";
 import { getUserCredits } from "@/lib/api/credits";
 import Link from "next/link";
 
-const POLL_INTERVAL = 5000; // Refresh every 5 seconds for real-time updates
+const POLL_INTERVAL = 30000; // Refresh every 30s for active users
 
 export function CreditBadge({ className = "" }: { className?: string }) {
   const [credits, setCredits] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [lastCredits, setLastCredits] = useState<number | null>(null);
   const [justChanged, setJustChanged] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const prevCreditsRef = useRef<number | null>(null);
 
   const fetchCredits = useCallback(async () => {
     try {
-      setError(null);
       const data = await getUserCredits();
+      if (!data || typeof data.credits !== "number") {
+        setIsAuthenticated(false);
+        return;
+      }
+      setIsAuthenticated(true);
       const newCredits = data.credits;
       
       if (prevCreditsRef.current !== null && newCredits !== prevCreditsRef.current) {
@@ -30,7 +34,7 @@ export function CreditBadge({ className = "" }: { className?: string }) {
       setLastCredits(credits);
       setCredits(newCredits);
     } catch {
-      setError("Failed to load credits");
+      setIsAuthenticated(false);
     } finally {
       setIsLoading(false);
     }
@@ -42,13 +46,8 @@ export function CreditBadge({ className = "" }: { className?: string }) {
     return () => clearInterval(interval);
   }, [fetchCredits]);
 
-  if (isLoading) {
-    return (
-      <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 ${className}`}>
-        <Coins className="h-3.5 w-3.5 text-amber-500 animate-pulse" />
-        <span className="text-xs font-medium text-amber-600 dark:text-amber-400">...</span>
-      </div>
-    );
+  if (isLoading || !isAuthenticated || credits === null) {
+    return null;
   }
 
   const hasChanged = lastCredits !== null && credits !== lastCredits;
@@ -58,17 +57,13 @@ export function CreditBadge({ className = "" }: { className?: string }) {
     <Link href="/credits" className={`group flex items-center gap-1.5 px-2.5 py-1 rounded-full border transition-all duration-300 ${
       justChanged
         ? "bg-green-500/10 border-green-400 dark:border-green-600 scale-105"
-        : error
-          ? "bg-red-500/10 border-red-300 dark:border-red-700"
-          : "bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600"
+        : "bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600"
     } ${className}`}>
       <Coins className={`h-3.5 w-3.5 transition-colors ${
-        justChanged ? "text-green-500 animate-bounce" :
-        error ? "text-red-500" : "text-amber-500"
+        justChanged ? "text-green-500 animate-bounce" : "text-amber-500"
       }`} />
       <span className={`text-xs font-bold transition-all ${
-        justChanged ? "text-green-700 dark:text-green-400" :
-        error ? "text-red-600 dark:text-red-400" : "text-amber-700 dark:text-amber-400"
+        justChanged ? "text-green-700 dark:text-green-400" : "text-amber-700 dark:text-amber-400"
       }`}>
         {credits?.toLocaleString() ?? 0}
       </span>
@@ -80,9 +75,6 @@ export function CreditBadge({ className = "" }: { className?: string }) {
       )}
       {!hasChanged && !justChanged && (
         <ArrowUpRight className="h-3 w-3 text-amber-500/60" />
-      )}
-      {error && (
-        <span className="text-[9px] text-red-500 ml-1">!</span>
       )}
     </Link>
   );

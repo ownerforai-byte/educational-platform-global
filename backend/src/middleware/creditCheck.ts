@@ -44,7 +44,6 @@ export function requireCredit(
       }
 
       const userId = authData.user.id;
-      const userEmail = authData.user.email ?? "";
 
       // Load role + profile in one pass
       const { data: profile } = await supabaseAdmin

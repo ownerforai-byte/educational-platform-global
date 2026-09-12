@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { loadData } from "@/lib/data-loader";
+import { SubjectSearch } from "@/components/layout/subject-search";
+import { getImportedNotesBySubject } from "@/lib/imported-notes";
 
 const SUBJECT_EMOJI: Record<string, string> = {
   "11/Biology": "🌿",
@@ -44,10 +46,21 @@ type RavikishanManifestItem = {
 const baseName = (p: string) => p.split(/[\\/]/).pop()?.replace(/\.json$/, "") ?? p;
 
 export default async function NotesPage() {
-  const [rManifest, rkManifest] = await Promise.all([
+  const [rManifest, rkManifest, importedMap] = await Promise.all([
     loadData<RExportManifestItem[]>("r-export/manifest.json"),
     loadData<RavikishanManifestItem[]>("ravikishan/manifest.json"),
+    getImportedNotesBySubject(),
   ]);
+
+  const searchSubjects = Object.keys(importedMap).map((slug) => ({
+    slug,
+    name: slug.charAt(0).toUpperCase() + slug.slice(1),
+  }));
+
+  const initialGroups = Object.entries(importedMap).map(([subject, notes]) => ({
+    subject,
+    notes,
+  }));
 
   const rBySubject: Record<string, Array<{ chapter: string; id: string; title: string; noteCount: number }>> = {};
   for (const item of rManifest) {
@@ -80,6 +93,14 @@ export default async function NotesPage() {
           Imported notes from Ravikishan&apos;s export, organized by class, subject, and chapter.
         </p>
       </div>
+
+      {/* Interactive Search & Subject Filter */}
+      <section className="rounded-2xl border border-border/80 bg-card/60 p-6 backdrop-blur-sm shadow-sm space-y-4">
+        <h2 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
+          <span>🔍 Quick Search & Filter Notes</span>
+        </h2>
+        <SubjectSearch subjects={searchSubjects} initialGroups={initialGroups} />
+      </section>
 
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold tracking-tight">📒 R Export Notes</h2>

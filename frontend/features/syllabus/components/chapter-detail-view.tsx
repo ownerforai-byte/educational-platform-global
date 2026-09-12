@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getUnit } from "../queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
@@ -8,9 +7,6 @@ import {
   BookOpen,
   ArrowRight,
   Clock,
-  Sparkles,
-  Layers,
-  ChevronRight,
   FlaskConical,
   Brain,
   Calculator,

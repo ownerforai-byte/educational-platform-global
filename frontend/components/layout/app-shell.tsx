@@ -10,6 +10,8 @@ import { BackButton } from "@/components/navigation/back-button";
 import { AIWidget } from "./ai-widget";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { GlobalSearch } from "./global-search";
+import { CreditBadge } from "./credit-badge";
+import { Footer } from "./footer";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -70,9 +72,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <GlobalSearch />
         </div>
 
-          {/* Right: theme toggle + auth links */}
+          {/* Right: theme toggle + credit badge + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
             <ThemeToggle />
+            <CreditBadge />
 
             <Link
               href="/chat"
@@ -141,7 +144,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </main>
       </div>
 
-      {/* ── Footer removed — only shows on home page via marketing layout ── */}
+      {/* ── Site Footer ── */}
+      <Footer />
 
       {/* ── Floating buttons (different positions) ─────────────────── */}
       {/* AI Widget — bottom-left */}
