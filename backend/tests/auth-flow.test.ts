@@ -6,8 +6,10 @@ vi.mock("../src/db/supabase", () => ({
   supabaseAdmin: {
     auth: {
       signInWithPassword: vi.fn(),
+      signUp: vi.fn(),
       getUser: vi.fn(),
       signOut: vi.fn(),
+      admin: { updateUserById: vi.fn() },
     },
     from: vi.fn(),
   },
@@ -31,13 +33,15 @@ vi.mock("../src/api/resources", async () => {
 
 import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
-import { requireAuth } from "../src/middleware/auth";
+import { requireAuth, requireRole, requireAdmin } from "../src/middleware/auth";
 
 const mocked = supabaseAdmin as unknown as {
   auth: {
     signInWithPassword: Mock;
+    signUp: Mock;
     getUser: Mock;
     signOut: Mock;
+    admin: { updateUserById: Mock };
   };
   from: Mock;
 };
@@ -46,7 +50,7 @@ const VALID_TOKEN = "valid-access-token";
 
 function makeQueryChain(result: { data: unknown; error: unknown }) {
   const chain: Record<string, unknown> = {};
-  for (const method of ["select", "eq", "order", "single", "limit", "upsert"]) {
+  for (const method of ["select", "eq", "order", "single", "maybeSingle", "limit", "upsert"]) {
     chain[method] = () => chain;
   }
   chain.then = (
@@ -91,6 +95,12 @@ async function startServers() {
   probeApp.use(cookieParser());
   probeApp.get("/api/progress", requireAuth, (_req, res) => {
     res.status(200).json([]);
+  });
+  probeApp.get("/api/guard-admin", requireAuth, requireAdmin, (_req, res) => {
+    res.status(200).json({ ok: "admin-or-owner" });
+  });
+  probeApp.get("/api/guard-owner", requireAuth, requireRole("OWNER"), (_req, res) => {
+    res.status(200).json({ ok: "owner" });
   });
 
   const probe = await listen(probeApp);
@@ -268,5 +278,158 @@ describe("auth flow", () => {
 
     expect(res.status).toBe(401);
     expect(await res.json()).toEqual({ error: "Unauthorized" });
+  });
+  test("POST /refresh with valid token returns 200, refreshed cookie, and extended user", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "student@example.com" } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", credits: 40, credits_limit: 100, premium_status: false });
+
+    const res = await fetch(`${baseUrl}/api/auth/refresh`, {
+      method: "POST",
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}`, "Content-Type": "application/json" },
+    });
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.accessToken).toBe(VALID_TOKEN);
+    expect(body.user).toMatchObject({
+      id: "user-1",
+      email: "student@example.com",
+      role: "STUDENT",
+      credits: 40,
+      creditsLimit: 100,
+      premiumStatus: false,
+    });
+    const cookies = setCookiesOf(res);
+    expect(cookies.find((c) => c.startsWith("sb-access-token="))).toBeDefined();
+  });
+
+  test("POST /refresh without any token returns 401", async () => {
+    const res = await fetch(`${baseUrl}/api/auth/refresh`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    expect(res.status).toBe(401);
+    expect(await res.json()).toEqual({ error: "No session to refresh" });
+  });
+
+  test("POST /refresh with an invalid token returns 401 (invalid/expired)", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: {},
+      error: { message: "Invalid JWT", status: 401 },
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/refresh`, {
+      method: "POST",
+      headers: { Cookie: "sb-access-token=bogus-token", "Content-Type": "application/json" },
+    });
+    expect(res.status).toBe(401);
+  });
+
+  test("POST /signup (confirmed) returns 200 with user, accessToken, and cookie", async () => {
+    mocked.auth.signUp.mockResolvedValue({
+      data: {
+        user: { id: "user-9", email: "new@example.com" },
+        session: { access_token: "fresh-token", expires_in: 3600 },
+      },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", credits: 0, credits_limit: 100, premium_status: false });
+
+    const res = await fetch(`${baseUrl}/api/auth/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "new@example.com", password: "password123", fullName: "New" }),
+    });
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.accessToken).toBe("fresh-token");
+    expect(body.user).toMatchObject({ id: "user-9", email: "new@example.com", role: "STUDENT" });
+    expect(setCookiesOf(res).some((c) => c.startsWith("sb-access-token="))).toBe(true);
+  });
+
+  test("POST /signup (needs email confirmation) returns 202 with a message", async () => {
+    mocked.auth.signUp.mockResolvedValue({
+      data: { user: { id: "user-9", email: "pending@example.com" }, session: null },
+      error: null,
+    });
+    mocked.auth.admin.updateUserById.mockResolvedValue({});
+    mocked.auth.signInWithPassword.mockResolvedValue({
+      data: { user: { id: "user-9", email: "pending@example.com" }, session: null },
+      error: null,
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "pending@example.com", password: "password123" }),
+    });
+
+    expect(res.status).toBe(202);
+    const body = await res.json();
+    expect(body.user).toBeNull();
+    expect(body.accessToken).toBeNull();
+    expect(body.message).toMatch(/Check your email/i);
+  });
+
+  test("POST /signup with a weak password returns 400", async () => {
+    const res = await fetch(`${baseUrl}/api/auth/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "bad@example.com", password: "short" }),
+    });
+    expect(res.status).toBe(400);
+  });
+
+  test("role guard: /api/guard-admin rejects STUDENT (403) and allows ADMIN/OWNER (200)", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "s@example.com" } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT" });
+    const denied = await fetch(`${probeUrl}/api/guard-admin`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+    expect(denied.status).toBe(403);
+
+    mockProfiles({ role: "ADMIN" });
+    const ok = await fetch(`${probeUrl}/api/guard-admin`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+    expect(ok.status).toBe(200);
+    expect(await ok.json()).toEqual({ ok: "admin-or-owner" });
+
+    mockProfiles({ role: "OWNER" });
+    const owner = await fetch(`${probeUrl}/api/guard-admin`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+    expect(owner.status).toBe(200);
+  });
+
+  test("role guard: /api/guard-owner rejects ADMIN (403) and allows OWNER (200)", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "a@example.com" } },
+      error: null,
+    });
+    mockProfiles({ role: "ADMIN" });
+    const denied = await fetch(`${probeUrl}/api/guard-owner`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+    expect(denied.status).toBe(403);
+
+    mockProfiles({ role: "OWNER" });
+    const ok = await fetch(`${probeUrl}/api/guard-owner`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+    expect(ok.status).toBe(200);
+    expect(await ok.json()).toEqual({ ok: "owner" });
+  });
+
+  test("role guard: unauthenticated requests to guarded routes return 401", async () => {
+    const res = await fetch(`${probeUrl}/api/guard-admin`);
+    expect(res.status).toBe(401);
   });
 });

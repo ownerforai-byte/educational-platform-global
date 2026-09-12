@@ -32,6 +32,11 @@ export interface AuthSignupResponse {
   accessToken?: string;
 }
 
+export interface AuthRefreshResponse {
+  user: SessionUser;
+  accessToken?: string;
+}
+
 export interface AuthLogoutResponse {
   ok: true;
 }

@@ -17,6 +17,8 @@ export interface SessionUser {
   creditsLimit?: number;
   /** True when the owner has approved this user for premium access. */
   premiumStatus?: boolean;
+  /** ISO timestamp of premium approval, when premiumStatus is true. */
+  premiumApprovedAt?: string | null;
 }
 
 export const ROLE_RANK: Record<UserRole, number> = {

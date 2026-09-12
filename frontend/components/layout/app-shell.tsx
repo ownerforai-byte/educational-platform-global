@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Footer } from "./footer";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isHome = pathname === "/home";
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="border-b border-border bg-card/80 backdrop-blur">
@@ -16,6 +23,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       <main className="flex-1">{children}</main>
+      {isHome && <Footer />}
     </div>
   );
 }
+
