@@ -6,25 +6,25 @@ import Link from "next/link";
 const practicals = [
   {
     label: "Titration Practical",
-    href: "/lab/chemistry/ch-calc-titration",
+    href: "/practical/chemistry",
     desc: "Acid-base endpoints, molarity & back-titration",
     icon: TestTubes,
   },
   {
     label: "pH & Acids-Base Practical",
-    href: "/lab/chemistry/ch-calc-ph",
+    href: "/practical/chemistry",
     desc: "Buffer calculations, indicators & pH curves",
     icon: Beaker,
   },
   {
     label: "Redox Practical",
-    href: "/lab/chemistry/ch-th-redox",
+    href: "/practical/chemistry",
     desc: "Oxidation states, cells & half reactions",
     icon: FlaskRound,
   },
   {
     label: "Stoichiometry Practical",
-    href: "/lab/chemistry/ch-calc-stoich",
+    href: "/practical/chemistry",
     desc: "Yield, limiting reagents & molar mass",
     icon: Atom,
   },

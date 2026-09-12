@@ -6,25 +6,25 @@ import Link from "next/link";
 const practicals = [
   {
     label: "Cell Biology Practical",
-    href: "/lab/biology/bio-th-cell",
+    href: "/practical/biology",
     desc: "Microscopy, organelles & tissue identification",
     icon: Microscope,
   },
   {
     label: "Genetics Practical",
-    href: "/lab/biology/bio-th-genetics",
+    href: "/practical/biology",
     desc: "Punnett squares, traits & inheritance patterns",
     icon: Dna,
   },
   {
     label: "Ecology Practical",
-    href: "/lab/biology/bio-th-ecology",
+    href: "/practical/biology",
     desc: "Ecosystem studies, food webs & field data",
     icon: Leaf,
   },
   {
     label: "Human Physiology Practical",
-    href: "/lab/biology/bio-th-human",
+    href: "/practical/biology",
     desc: "Dissection, organ models & system mapping",
     icon: Heart,
   },

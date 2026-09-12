@@ -6,25 +6,25 @@ import Link from "next/link";
 const practicals = [
   {
     label: "Mechanics Practical",
-    href: "/lab/physics/ph-calc-projectile",
+    href: "/practical/physics",
     desc: "Projectile, forces & motion experiments",
     icon: Atom,
   },
   {
     label: "Heat Determinations",
-    href: "/lab/physics/heat-determinations",
+    href: "/practical/physics",
     desc: "Lees disc, Searles bar & Newton cooling",
     icon: Thermometer,
   },
   {
     label: "Electricity Practical",
-    href: "/lab/physics/advanced-circuit",
+    href: "/practical/physics",
     desc: "Circuit builds, measurements & Ohm's law",
     icon: Zap,
   },
   {
     label: "Waves & Optics Practical",
-    href: "/lab/physics/ph-3d-wave",
+    href: "/practical/physics",
     desc: "Interference, diffraction & light rays",
     icon: Waves,
   },

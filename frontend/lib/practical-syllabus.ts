@@ -97,7 +97,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Avoid air bubbles under the cover slip.",
               "Start at low power (10├ù) before switching to 40├ù.",
             ],
-            labHref: "/lab/biology/bio-th-cell",
+            
           },
           {
             title: "Observation of Human Cheek Cells (Animal Cell)",
@@ -134,7 +134,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Do not press too hard with the cover slip.",
               "Keep the smear thin for clear focusing.",
             ],
-            labHref: "/lab/biology/bio-th-cell",
+            
           },
           {
             title: "Temporary Mount of a Pond Water Sample (Micro-organisms)",
@@ -168,7 +168,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a thin film to focus clearly at 40├ù.",
               "Label each identified species.",
             ],
-            labHref: "/lab/biology/bio-3d-cell",
+            
           },
         ],
       },
@@ -210,7 +210,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use the key in a specific sequence ΓÇö do not skip steps.",
               "Handle herbarium specimens with care.",
             ],
-            labHref: "/lab/biology/bio-th-plant",
+            
           },
         ],
       },
@@ -252,7 +252,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Label each trophic level clearly on the food web.",
               "Collect the sample from a clean, stable pond to avoid contamination bias.",
             ],
-            labHref: "/lab/biology/bio-th-ecology",
+            
           },
         ],
       },
@@ -295,7 +295,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Focus carefully at 40├ù to distinguish Cambium layers.",
               "Do not confuse monocot stem's scattered bundles with an artifact.",
             ],
-            labHref: "/lab/biology/bio-3d-cell",
+            
           },
           {
             title: "Temporary Mount of Onion Root Tip to Study Mitosis",
@@ -333,7 +333,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Avoid crushing the cells too hard; the chromosomes will become invisible.",
               "Use fresh, actively growing root tips (1ΓÇô2 cm from the tip).",
             ],
-            labHref: "/lab/biology/bio-3d-cell",
+            
           },
         ],
       },
@@ -372,7 +372,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Ensure no leaks at the corkΓÇôpotato interface.",
               "Use the same potato variety and the same time interval for all concentrations.",
             ],
-            labHref: "/lab/biology/bio-calc-photosynthesis",
+            
           },
           {
             title: "Study of Plasmolysis in Epidermal Peels (e.g. Rhoeo leaves)",
@@ -405,7 +405,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a thin epidermal peel to avoid overlapping cells.",
               "Avoid over-staining or using too strong a solution ΓÇö cells may die.",
             ],
-            labHref: "/lab/biology/bio-3d-cell",
+            
           },
           {
             title: "Study of the Rate of Respiration in Germinating Seeds",
@@ -438,7 +438,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Keep the two flasks identical in size and initial temperature.",
               "Use the same number of seeds in both flasks.",
             ],
-            labHref: "/lab/biology/bio-calc-photosynthesis",
+            
           },
         ],
       },
@@ -475,7 +475,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a large enough sample to reduce chance deviation from 3:1.",
               "Record both observed and expected values for comparison.",
             ],
-            labHref: "/lab/biology/bio-calc-punnett",
+            
           },
         ],
       },
@@ -513,7 +513,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Ensure the seeds are truly dry before the initial weighing.",
               "Blot the seeds lightly before the post-soak weighing to remove surface water.",
             ],
-            labHref: "/lab/biology/bio-3d-cell",
+            
           },
           {
             title: "Preparation of Bio-fertilizer (e.g. from Rhizobium) and a Note on Its Significance",
@@ -544,7 +544,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Handle the culture with care; wash hands after use.",
               "Store the bio-fertilizer in a cool, shaded place to keep the bacteria viable.",
             ],
-            labHref: "/lab/biology/bio-th-ecology",
+            
           },
         ],
       },
@@ -584,7 +584,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Label each structure before drawing ΓÇö it is easier to identify at 40├ù.",
               "Do not confuse RBCs with platelets (RBCs are much larger).",
             ],
-            labHref: "/lab/biology/bio-3d-human",
+            
           },
           {
             title: "Study of Mitosis in Grasshopper Testis (Permanent Slide)",
@@ -614,7 +614,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Look for metaphase cells first ΓÇö the chromosomes are most distinct.",
               "Label each stage clearly.",
             ],
-            labHref: "/lab/biology/bio-3d-cell",
+            
           },
           {
             title: "Study of Frog Developmental Stages (Fertilized Egg, Cleavage, Blastula, Gastrula)",
@@ -646,7 +646,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Memorise the order of the stages.",
               "Draw the gastrula with all three germ layers labelled.",
             ],
-            labHref: "/lab/biology/bio-3d-evolution",
+            
           },
         ],
       },
@@ -684,7 +684,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Add iodine drop by drop; too much may obscure the colour change.",
               "Always run a water-only control.",
             ],
-            labHref: "/lab/biology/bio-calc-photosynthesis",
+            
           },
           {
             title: "Detect the Presence of Protein in a Given Sample (Biuret Test)",
@@ -714,7 +714,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Dilute the sample (e.g. 1:10 egg white) to avoid a too-dark colour.",
               "Do not confuse the Biuret reagent with Benedict's reagent (different test).",
             ],
-            labHref: "/lab/biology/bio-calc-photosynthesis",
+            
           },
           {
             title: "Effect of Temperature and pH on the Activity of Salivary Amylase",
@@ -747,7 +747,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use the same amount of saliva and starch in each tube.",
               "Check each sample at the same time intervals.",
             ],
-            labHref: "/lab/biology/bio-calc-photosynthesis",
+            
           },
           {
             title: "Detect the Presence of Sugar in Human Blood (Benedict's Test)",
@@ -778,7 +778,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Do not boil directly ΓÇö use a water bath.",
               "Keep the sample concentration low enough to get a clear colour distinction.",
             ],
-            labHref: "/lab/biology/bio-3d-human",
+            
           },
           {
             title: "Study of the Human Skeleton and Different Types of Joints",
@@ -808,7 +808,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use the 3D model to visualise joint movement in three dimensions.",
               "Label each joint type clearly on the diagram.",
             ],
-            labHref: "/lab/biology/bio-3d-human",
+            
           },
         ],
       },
@@ -845,7 +845,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Keep the questionnaire short to get more responses.",
               "Record data honestly; do not make up results.",
             ],
-            labHref: "/lab/biology/bio-3d-ecology",
+            
           },
         ],
       },
@@ -904,7 +904,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Take readings at the same orientation for each measurement.",
               "Record all values to the least count of the instrument.",
             ],
-            labHref: "/lab/physics/ph-3d-advanced",
+            
           },
           {
             title: "Determination of g Using a Simple Pendulum",
@@ -944,7 +944,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Take the average of at least 20 oscillations to reduce stopwatch error.",
               "Ensure the bob is small and dense to minimize air resistance.",
             ],
-            labHref: "/lab/physics/ph-3d-pendulum",
+            
           },
           {
             title: "Verification of the Principle of Moments (Scales / Beam Balance)",
@@ -976,7 +976,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use small weights to reduce the risk of sudden imbalance.",
               "Record the distance from the pivot to the point of suspension, not to the weight's centre.",
             ],
-            labHref: "/lab/physics/ph-3d-classic",
+            
           },
         ],
       },
@@ -1021,7 +1021,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Ensure the apparatus is free from external vibrations.",
               "Allow the rod to cool before removing it from the apparatus.",
             ],
-            labHref: "/lab/physics/heat-determinations",
+            
           },
           {
             title: "Drawing a Heating Curve of a Substance",
@@ -1057,7 +1057,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a water-bath if the substance is organic to avoid scorching.",
               "Record readings at the same time interval throughout.",
             ],
-            labHref: "/lab/physics/ph-heat-determinations",
+            
           },
         ],
       },
@@ -1103,7 +1103,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "If the line curves at high currents, the resistor is heating ΓÇö stop before the resistance changes.",
               "Keep the temperature of the resistor constant (do not touch it with hands).",
             ],
-            labHref: "/lab/physics/advanced-circuit",
+            
           },
           {
             title: "Verification of Kirchhoff's First Law (Junction Law)",
@@ -1136,7 +1136,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Check that all connections are secure before closing the key.",
               "Keep the circuit open while taking the readings to avoid heating.",
             ],
-            labHref: "/lab/physics/advanced-circuit",
+            
           },
         ],
       },
@@ -1180,7 +1180,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a travelling microscope to read the meniscus height accurately.",
               "Keep the water temperature constant throughout the experiment.",
             ],
-            labHref: "/lab/physics/ph-calc-heat",
+            
           },
           {
             title: "Determination of the Coefficient of Viscosity of a Liquid by Stoke's Method",
@@ -1222,7 +1222,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Ensure the balls are released gently to avoid initial turbulence.",
               "Keep the liquid at a constant temperature ΓÇö viscosity is temperature-dependent.",
             ],
-            labHref: "/lab/physics/ph-calc-heat",
+            
           },
         ],
       },
@@ -1267,7 +1267,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Keep the grating perpendicular to the laser beam.",
               "Use a fixed distance D for all readings.",
             ],
-            labHref: "/lab/physics/ph-3d-optics",
+            
           },
           {
             title: "Determination of the Velocity of Sound in Air at NTP Using a Resonance Tube",
@@ -1305,7 +1305,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Measure the resonances carefully ΓÇö the first resonance is the faintest.",
               "Keep the room temperature constant during the experiment.",
             ],
-            labHref: "/lab/physics/ph-3d-wave",
+            
           },
           {
             title: "Determination of the Frequency of A.C. Mains Using a Sonometer (Stretched Wire)",
@@ -1340,7 +1340,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Keep the tension in the wire constant for all readings.",
               "Use the same harmonic for all forks.",
             ],
-            labHref: "/lab/physics/ph-3d-wave",
+            
           },
         ],
       },
@@ -1385,7 +1385,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use the jockey with a light contact to avoid damaging the wire.",
               "Keep the cell (driver) constant throughout the experiment.",
             ],
-            labHref: "/lab/physics/advanced-circuit",
+            
           },
           {
             title: "Use of a Potentiometer ΓÇö Determination of the Internal Resistance of a Cell",
@@ -1420,7 +1420,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Keep the resistance box at zero when finding lΓéü (open circuit).",
               "Use a high resistance value to avoid drawing too much current from the cell.",
             ],
-            labHref: "/lab/physics/advanced-circuit",
+            
           },
           {
             title: "Study of the Variation of Resistance of a Thermistor with Temperature",
@@ -1450,7 +1450,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Stir the water bath gently to keep the temperature uniform.",
               "Wait for the thermistor to reach thermal equilibrium before each reading.",
             ],
-            labHref: "/lab/physics/advanced-circuit",
+            
           },
           {
             title: "Determination of the Pole Strength and Magnetic Moment of a Bar Magnet Using a Deflection Magnetometer",
@@ -1488,7 +1488,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use the tangent position: the magnet axis is perpendicular to the magnetic meridian.",
               "Take readings at two symmetric positions to cancel zero error.",
             ],
-            labHref: "/lab/physics/ph-3d-magnetic",
+            
           },
           {
             title: "Study of IΓÇôV Characteristics of a Semiconductor Diode (Forward and Reverse Bias)",
@@ -1521,7 +1521,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a microammeter for the reverse current readings.",
               "Label the x and y axes clearly on the graph.",
             ],
-            labHref: "/lab/physics/ph-3d-quantum",
+            
           },
         ],
       },
@@ -1579,7 +1579,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use a clean evaporating dish for NaCl recovery.",
               "Wear safety goggles throughout.",
             ],
-            labHref: "/lab/chemistry/ch-3d-advanced",
+            
           },
           {
             title: "To Separate a Mixture of Two Soluble Solids by Fractional Crystallization (KNOΓéâ + NaCl)",
@@ -1613,7 +1613,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Cool slowly to get larger, purer KNOΓéâ crystals.",
               "Do not evaporate the mother liquor to dryness ΓÇö stop when NaCl crystals begin to form and filter.",
             ],
-            labHref: "/lab/chemistry/ch-3d-advanced",
+            
           },
           {
             title: "To Determine the Number of Water of Crystallization in a Hydrated Salt",
@@ -1657,7 +1657,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Cool in a desiccator, not in air, to prevent reabsorption of moisture.",
               "Use an analytical balance for accurate readings.",
             ],
-            labHref: "/lab/chemistry/ch-calc-molarmass",
+            
           },
           {
             title: "To Determine the Volume of 1 Mole of Hydrogen Gas at NTP",
@@ -1702,7 +1702,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Record the temperature and pressure immediately after collection.",
               "Use excess zinc to ensure all the acid is consumed.",
             ],
-            labHref: "/lab/chemistry/ch-calc-gas",
+            
           },
         ],
       },
@@ -1738,7 +1738,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use dilute HΓééSOΓéä to control the rate of precipitation.",
               "Do not use hot solutions ΓÇö BaSOΓéä may dissolve slightly at high temperature.",
             ],
-            labHref: "/lab/chemistry/ch-th-ionic",
+            
           },
           {
             title: "To Neutralize NaOH with HCl and Recover NaCl Crystals",
@@ -1771,7 +1771,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Do not evaporate to complete dryness ΓÇö stop when crystals form and air-dry the residue.",
               "Use phenolphthalein for the base titration (colourless in acid, pink in base).",
             ],
-            labHref: "/lab/chemistry/ch-calc-titration",
+            
           },
           {
             title: "To Test for Ferrous Ions and Oxidize Them to Ferric Ions",
@@ -1805,7 +1805,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use acidified KMnOΓéä ΓÇö the reaction will not proceed without HΓü║.",
               "Do not add too much KMnOΓéä at once ΓÇö add drop by drop.",
             ],
-            labHref: "/lab/chemistry/ch-th-ionic",
+            
           },
         ],
       },
@@ -1846,7 +1846,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "HΓéé is highly flammable ΓÇö keep the gas jar away from open flames until the 'pop' test.",
               "Do not collect large volumes of HΓéé without proper ventilation.",
             ],
-            labHref: "/lab/chemistry/ch-3d-advanced",
+            
           },
           {
             title: "To Prepare and Study the Properties of Ammonia Gas",
@@ -1879,7 +1879,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Work in a well-ventilated area ΓÇö NHΓéâ is a respiratory irritant.",
               "Keep the gas jar mouth slightly open when handling to prevent pressure build-up.",
             ],
-            labHref: "/lab/chemistry/ch-3d-advanced",
+            
           },
           {
             title: "To Prepare and Study the Properties of Carbon Dioxide Gas",
@@ -1912,7 +1912,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use dilute HCl ΓÇö concentrated HCl fumes and is too aggressive.",
               "Wear safety goggles when handling HCl.",
             ],
-            labHref: "/lab/chemistry/ch-3d-advanced",
+            
           },
         ],
       },
@@ -1961,7 +1961,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Make sure the carbonate is completely dissolved before diluting.",
               "Repeat until 3 concordant titres are obtained.",
             ],
-            labHref: "/lab/chemistry/ch-calc-stoich",
+            
           },
           {
             title: "To Determine the Solubility of a Given Solid",
@@ -1998,7 +1998,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Ensure the solution is truly saturated (undissolved solid remains at the bottom).",
               "Record the temperature at which the solution was saturated.",
             ],
-            labHref: "/lab/chemistry/ch-calc-ph",
+            
           },
           {
             title: "To Determine the Relative Surface Tension by the Drop Count Method",
@@ -2034,7 +2034,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use the same pipette for both liquids.",
               "Count drops carefully ΓÇö do not let drops merge.",
             ],
-            labHref: "/lab/chemistry/ch-calc-ph",
+            
           },
         ],
       },
@@ -2080,7 +2080,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Always acidify with dilute HNOΓéâ before the AgNOΓéâ test (to remove interfering anions).",
               "Run a blank test to confirm the reagents themselves do not give the observed result.",
             ],
-            labHref: "/lab/chemistry/ch-th-ionic",
+            
           },
         ],
       },
@@ -2122,7 +2122,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Cool slowly to get larger, purer blue vitriol crystals.",
               "Do not evaporate the mother liquor to dryness for NaCl.",
             ],
-            labHref: "/lab/chemistry/ch-calc-molarmass",
+            
           },
           {
             title: "To Recover CaCOΓéâ from a Mixture of Sodium Carbonate and Calcium Chloride",
@@ -2151,7 +2151,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use dilute solutions to get a fine precipitate that is easier to filter.",
               "Wash the precipitate thoroughly to remove NaCl before drying.",
             ],
-            labHref: "/lab/chemistry/ch-calc-stoich",
+            
           },
         ],
       },
@@ -2202,7 +2202,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Average at least 3 concordant titres (within 0.1 mL of each other).",
               "Rinse the burette with the HCl solution before filling it.",
             ],
-            labHref: "/lab/chemistry/ch-calc-titration",
+            
           },
           {
             title: "To Determine the Molar Mass of a Diprotic Organic Acid by Neutralisation",
@@ -2241,7 +2241,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use phenolphthalein for the endpoint (faint pink in a diprotic acid titration).",
               "Repeat until 3 concordant titres are obtained.",
             ],
-            labHref: "/lab/chemistry/ch-calc-stoich",
+            
           },
         ],
       },
@@ -2279,7 +2279,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Use saturated NaHCOΓéâ ΓÇö dilute solutions give weaker effervescence.",
               "Test a known alcohol alongside as a negative control.",
             ],
-            labHref: "/lab/chemistry/ch-th-organic",
+            
           },
           {
             title: "To Test for the Presence of an Aldehyde (Tollens' Reagent / 2,4-DNP Test)",
@@ -2312,7 +2312,7 @@ export const PRACTICAL_SYLLABUS: SubjectPracticalSyllabus[] = [
               "Prepare Tollens' reagent fresh ΓÇö do not store it (it can form explosive silver nitride).",
               "Do not use a flame to warm the Tollens' test ΓÇö use a water bath only.",
             ],
-            labHref: "/lab/chemistry/ch-th-organic",
+            
           },
         ],
       },
