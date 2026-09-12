@@ -1,4 +1,6 @@
 "use client";
+export const dynamic = "force-dynamic";
+
 import { getSyllabusHistory } from "@/lib/syllabus-history";
 import { DateBadge } from "@/components/content/date-badge";
 import Link from "next/link";
