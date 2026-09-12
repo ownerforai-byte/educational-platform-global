@@ -4,6 +4,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { get3DComponentForTopic } from "@/lib/topic-3d-map";
+import { SchematicDiagram } from "@/components/lab/schematic-diagram";
 import {
   BookOpen,
   FlaskConical,
@@ -223,24 +224,20 @@ export function TopicVerticalNotes({
           </span>
         </div>
 
-        <div className="p-6">
-          {TopicVisual3D ? (
+        <div className="p-6 space-y-6">
+          {TopicVisual3D && (
             <div className="rounded-2xl border border-border/60 bg-background/50 overflow-hidden min-h-[380px] flex flex-col justify-center">
               <TopicVisual3D />
             </div>
-          ) : (
-            <div className="rounded-2xl border border-dashed border-border/70 bg-muted/20 p-8 text-center space-y-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-500 mx-auto">
-                <Sparkles className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground text-sm">Interactive Topic Representation</h4>
-                <p className="text-xs text-muted-foreground mt-1 max-w-md mx-auto leading-relaxed">
-                  Visual architecture for {topicTitle}. Connect concepts with equations, diagrams, and physical intuition.
-                </p>
-              </div>
-            </div>
           )}
+
+          {/* High-Resolution Schematic Diagram with Long SVG Leader Lines for all subjects & topics */}
+          <SchematicDiagram
+            subjectSlug={subjectSlug}
+            topicSlug={topicSlug}
+            topicTitle={topicTitle}
+            unitId={unitId}
+          />
         </div>
       </section>
 

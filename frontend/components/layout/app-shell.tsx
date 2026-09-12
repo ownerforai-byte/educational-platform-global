@@ -7,9 +7,7 @@ import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
-import { AIWidget } from "./ai-widget";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { GlobalSearch } from "./global-search";
 import { CreditBadge } from "./credit-badge";
 import { Footer } from "./footer";
 
@@ -67,10 +65,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-        {/* Center: Global Search */}
-        <div className="flex-1 min-w-0 flex items-center justify-center px-4">
-          <GlobalSearch />
-        </div>
+        {/* Center spacer */}
+        <div className="flex-1" />
 
           {/* Right: theme toggle + credit badge + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
@@ -147,9 +143,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       {/* ── Site Footer ── */}
       <Footer />
 
-      {/* ── Floating buttons (different positions) ─────────────────── */}
-      {/* AI Widget — bottom-left */}
-      <AIWidget />
+      {/* ── Floating buttons ─────────────────── */}
       {/* Back Button — bottom-right (hidden on home) */}
       <BackButton />
     </div>

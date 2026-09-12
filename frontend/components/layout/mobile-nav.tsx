@@ -19,11 +19,16 @@ import { usePathname } from "next/navigation";
 
 const mobileItems = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/subjects", label: "Subjects", icon: Layers },
+  { href: "/class-11-notes", label: "Class 11 Notes", icon: BookOpen },
+  { href: "/class-12-notes", label: "Class 12 Notes", icon: BookOpen },
+  { href: "/periodic-table", label: "Periodic Table & CEE", icon: FlaskConical },
+  { href: "/subjects", label: "All Subjects", icon: Layers },
+  { href: "/syllabus", label: "Official Syllabus", icon: BookOpen },
+  { href: "/lab", label: "3D Labs", icon: FlaskConical },
+  { href: "/ai-quiz", label: "Practice Quiz", icon: BookOpen },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
-  { href: "/loksewa", label: "Loksewa", icon: Landmark },
+  { href: "/loksewa", label: "Loksewa GK", icon: Landmark },
   { href: "/world-knowledge", label: "World Knowledge", icon: Globe },
-  { href: "/lab", label: "Lab", icon: FlaskConical },
 ];
 
 export function MobileNav() {

@@ -26,7 +26,10 @@ export default function ChemistryLabPage() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Link href="/lab/3d" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-card hover:bg-muted text-sm transition-all">
+            <Link href="/periodic-table" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 text-xs font-semibold transition-all">
+              <span>Full 118 Elements &amp; CEE Bank</span>
+            </Link>
+            <Link href="/lab/3d" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-card hover:bg-muted text-xs transition-all">
               <Cuboid className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">All 3D</span>
             </Link>

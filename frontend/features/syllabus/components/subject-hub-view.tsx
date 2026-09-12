@@ -59,7 +59,7 @@ export async function SubjectHubView({
           </h1>
           <p className="mt-1 text-sm text-muted-foreground max-w-2xl">{subject.description}</p>
         </div>
-        <BackButton />
+        <BackButton variant="inline" />
       </div>
 
       <SubjectSectionNav basePath={basePath} active="hub" />
