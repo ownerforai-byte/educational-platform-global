@@ -6,7 +6,9 @@ import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
+import { TopicVerticalNotes } from "@/components/content/topic-vertical-notes";
 import type { NotesTrack } from "@/lib/imported-notes";
+import { ChevronRight, ArrowLeft } from "lucide-react";
 
 function isNotesTrack(value: string): value is NotesTrack {
   return value === "class-11-notes" || value === "class-12-notes";
@@ -61,58 +63,53 @@ export async function TopicDetailView({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <SubjectSectionNav basePath={basePath} active="chapters" />
 
+      {/* Complete Chapter/Unit Syllabus Above */}
       <OfficialSyllabusPanel
-        heading="Syllabus"
-        description="Official syllabus for this unit. Notes and mind maps below are attached only to the highlighted topic."
+        heading="Chapter Syllabus Context"
+        description={`Complete official syllabus for ${unit.title}. The highlighted topic below is currently active.`}
         units={[unit]}
         basePath={basePath}
         highlightUnitId={unit.id}
         highlightTopicSlug={topic.slug}
       />
 
+      {/* Breadcrumbs & Active Topic Title */}
       <div className="space-y-2">
-        <p className="text-sm text-muted-foreground">
-          Unit ·{" "}
-          <Link
-            href={`${basePath}/chapters/${unit.id}`}
-            className="text-primary hover:underline"
-          >
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <Link href={basePath} className="hover:text-foreground">Subject</Link>
+          <ChevronRight className="h-3 w-3" />
+          <Link href={`${basePath}/chapters/${unit.id}`} className="hover:text-foreground">
             {unit.title}
           </Link>
-        </p>
-        <h2 className="text-2xl font-semibold tracking-tight">{topic.title}</h2>
-      </div>
-
-      {/* Notes Availability Notice */}
-      <div className={`rounded-lg border p-4 ${
-        isNotesTrack(classSlug)
-          ? "border-blue-200 bg-blue-50 dark:bg-blue-950/20 dark:border-blue-800"
-          : "border-yellow-200 bg-yellow-50 dark:bg-yellow-950/20 dark:border-yellow-800"
-      }`}>
-        <div className="flex items-start gap-3">
-          <span className="text-2xl">{isNotesTrack(classSlug) ? "📚" : "⚠️"}</span>
-          <div>
-            <h3 className="font-semibold text-sm">
-              {isNotesTrack(classSlug) ? "Notes Available" : "Notes Not Available"}
-            </h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              {isNotesTrack(classSlug)
-                ? "Detailed notes for this topic are available below. These notes have been curated and organized according to the official NEB syllabus."
-                : "This class track does not have imported notes yet. Please check back later or contact the administrator for access to study materials."}
-            </p>
-          </div>
+          <ChevronRight className="h-3 w-3" />
+          <span className="font-semibold text-foreground truncate">{topic.title}</span>
         </div>
+        <h1 className="text-3xl font-extrabold tracking-tight text-foreground">{topic.title}</h1>
       </div>
 
-      <MindmapInterface
-        title={topic.title}
-        root={mindmap.root}
-        source={mindmap.source}
+      {/* All Added Notes in Vertical Scroll */}
+      <TopicVerticalNotes
+        classSlug={classSlug}
+        subjectSlug={subjectSlug}
+        unitId={unitId}
+        topicSlug={topic.slug}
+        topicTitle={topic.title}
       />
 
+      {/* Topic Mindmap Block */}
+      <section className="rounded-3xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
+        <h3 className="text-base font-bold text-foreground">Interactive Topic Mindmap</h3>
+        <MindmapInterface
+          title={topic.title}
+          root={mindmap.root}
+          source={mindmap.source}
+        />
+      </section>
+
+      {/* Additional Unit / Subject Tools & Resource Panels */}
       <ContentTabs
         classSlug={classSlug}
         subjectSlug={subjectSlug}
@@ -121,12 +118,15 @@ export async function TopicDetailView({
         unit={unit}
       />
 
-      <Link
-        href={`${basePath}/chapters/${unit.id}`}
-        className="inline-block text-sm text-muted-foreground hover:text-foreground hover:underline"
-      >
-        Back to unit syllabus
-      </Link>
+      <div className="pt-4 border-t border-border/60">
+        <Link
+          href={`${basePath}/chapters/${unit.id}`}
+          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span>Back to Unit Syllabus &amp; Topics</span>
+        </Link>
+      </div>
     </div>
   );
 }
