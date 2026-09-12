@@ -11,39 +11,53 @@ import {
   CheckCircle2,
   Network,
 } from "lucide-react";
-import { LABS, listLabs, type LabEntry } from "@/lib/lab-catalog";
+import { getLab, listLabs, type LabEntry } from "@/lib/lab-catalog";
+
+/** Build a full /lab/ href from an entry's route. */
+const hrefOf = (e: LabEntry) => `/lab/${e.route}`;
 
 /**
- * Shared renderer for /lab/ pages. Pass the entry for THIS page; it draws the
- * hub/sub-lab header, the Theory-or-Practical badge, the "what it's for"
- * blocks and (for sub-labs) links back to the hub and between siblings.
+ * Shared renderer for /lab/ pages. Pass the catalog entry for THIS page.
  *
- * Hubs additionally list their children as cards.
+ * Hierarchy handled:
+ *   - hub        → lists its units (or sub-labs) as cards
+ *   - unit (3L)  → lists its concepts as cards
+ *   - unit (2L)  or concept → leaf page with the full content sections
+ *
+ * Every page also gets: a Theory/Practical badge, "what it's for" blocks,
+ * back-to-parent navigation, sibling chips, and related links.
  */
-export function LabPageBody({ entry, children }: { entry: LabEntry; children?: React.ReactNode }) {
+export function LabPageBody({ entry }: { entry: LabEntry }) {
   const isTheory = entry.type === "theory";
   const Accent = isTheory ? "text-violet-500" : "text-blue-500";
 
-  // For sub-labs: hub + siblings
-  const hub = entry.parent ? LABS[entry.parent] : undefined;
-  const siblings = entry.parent ? listLabs(entry.parent).filter((e) => e.id !== entry.id) : [];
-  // For hubs: children
-  const childrenLabs = entry.hub ? listLabs(entry.id) : [];
+  const children = listLabs(entry.id); // units under a hub, or concepts under a unit
+  const parent = entry.parent ? getLab(entry.parent) : undefined;
+  const siblings =
+    entry.parent && entry.level !== "concept" ? [] : entry.parent ? listLabs(entry.parent) : [];
+
+  const badge = isTheory
+    ? { label: "Theory Lab", cls: "bg-violet-500/10 text-violet-500 ring-violet-500/30", Icon: Network }
+    : { label: "Practical Lab", cls: "bg-blue-500/10 text-blue-500 ring-blue-500/30", Icon: FlaskConical };
+  const HeaderIcon = isTheory ? Network : FlaskConical;
 
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-8 md:py-14 px-4">
-      {/* Back to hub / site */}
+      {/* Back to parent / home */}
       <div className="flex items-center gap-4">
-        {hub ? (
+        {parent ? (
           <Link
-            href={`/lab/${hub.id === "heat-determinations" ? "heat-determinations" : hub.id}`}
+            href={hrefOf(parent)}
             className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            {hub.title}
+            {parent.title}
           </Link>
         ) : (
-          <Link href="/" className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
             <ArrowLeft className="h-4 w-4" />
             Home
           </Link>
@@ -54,30 +68,20 @@ export function LabPageBody({ entry, children }: { entry: LabEntry; children?: R
       <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent-cyan/5 pointer-events-none" />
         <div className="relative">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <span
-                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ring-1 ring-inset ${
-                    isTheory
-                      ? "bg-violet-500/10 text-violet-500 ring-violet-500/30"
-                      : "bg-blue-500/10 text-blue-500 ring-blue-500/30"
-                  }`}
-                >
-                  {isTheory ? <Network className="h-3.5 w-3.5" /> : <FlaskConical className="h-3.5 w-3.5" />}
-                  {isTheory ? "Theory Lab" : "Practical Lab"}
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-                  <BookOpen className="h-3.5 w-3.5" />
-                  {entry.subject} · NEB (+2)
-                </span>
-              </div>
-              <h1 className="mt-4 text-2xl sm:text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-                {isTheory ? <Network className={`h-6 w-6 ${Accent}`} /> : <FlaskConical className={`h-6 w-6 ${Accent}`} />}
-                {entry.title}
-              </h1>
-            </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ring-1 ring-inset ${badge.cls}`}>
+              <badge.Icon className="h-3.5 w-3.5" />
+              {badge.label}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+              <BookOpen className="h-3.5 w-3.5" />
+              {entry.subject} · NEB (+2)
+            </span>
           </div>
+          <h1 className="mt-4 text-2xl sm:text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
+            <HeaderIcon className={`h-6 w-6 ${Accent}`} />
+            {entry.title}
+          </h1>
           <p className="mt-3 text-base text-foreground">{entry.tagline}</p>
         </div>
       </div>
@@ -148,39 +152,29 @@ export function LabPageBody({ entry, children }: { entry: LabEntry; children?: R
         </Section>
       )}
 
-      {/* Extra custom body */}
-      {children}
-
-      {/* Hub children */}
-      {childrenLabs.length > 0 && (
+      {/* Children (units under a hub, or concepts under a unit) */}
+      {children.length > 0 && (
         <div className="space-y-4">
           <h2 className="text-lg font-bold text-foreground">
-            {hub ? "" : "Labs in this hub"}
+            {entry.level === "hub" ? "Units in this hub" : "Experiments in this unit"}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {childrenLabs.map((child) => {
+            {children.map((child) => {
               const cTheory = child.type === "theory";
-              const path =
-                child.parent === "heat-determinations"
-                  ? `/lab/heat-determinations/${child.id}`
-                  : `/lab/${child.parent}/${child.id}`;
               return (
                 <Link
                   key={child.id}
-                  href={path}
+                  href={hrefOf(child)}
                   className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-primary/40 hover:shadow-md"
                 >
                   <div className="flex items-center gap-2">
                     <span
-                      className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                        cTheory
-                          ? "bg-violet-500/10 text-violet-500"
-                          : "bg-blue-500/10 text-blue-500"
+                      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                        cTheory ? "bg-violet-500/10 text-violet-500" : "bg-blue-500/10 text-blue-500"
                       }`}
                     >
                       {cTheory ? "Theory" : "Practical"}
                     </span>
-                    <span className="text-xs text-muted-foreground">{child.subject}</span>
                   </div>
                   <h3 className="mt-3 font-bold text-foreground group-hover:text-primary transition-colors">
                     {child.title}
@@ -189,7 +183,7 @@ export function LabPageBody({ entry, children }: { entry: LabEntry; children?: R
                     {child.tagline}
                   </p>
                   <div className="mt-3 flex items-center gap-1 text-xs font-semibold text-primary">
-                    Open lab <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    Open <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </Link>
               );
@@ -198,24 +192,22 @@ export function LabPageBody({ entry, children }: { entry: LabEntry; children?: R
         </div>
       )}
 
-      {/* Siblings (for sub-labs) */}
-      {siblings.length > 0 && (
+      {/* Siblings (leaf sub-labs & concepts only) */}
+      {siblings.length > 1 && (
         <div className="space-y-3">
-          <h2 className="text-sm font-semibold text-muted-foreground">Other labs in this hub</h2>
+          <h2 className="text-sm font-semibold text-muted-foreground">Other labs in this {entry.level === "concept" ? "unit" : "hub"}</h2>
           <div className="flex flex-wrap gap-2">
-            {siblings.map((s) => (
-              <Link
-                key={s.id}
-                href={
-                  s.parent === "heat-determinations"
-                    ? `/lab/heat-determinations/${s.id}`
-                    : `/lab/${s.parent}/${s.id}`
-                }
-                className="rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-foreground hover:border-primary/40 hover:text-primary transition-colors"
-              >
-                {s.title}
-              </Link>
-            ))}
+            {siblings
+              .filter((s) => s.id !== entry.id)
+              .map((s) => (
+                <Link
+                  key={s.id}
+                  href={hrefOf(s)}
+                  className="rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+                >
+                  {s.title}
+                </Link>
+              ))}
           </div>
         </div>
       )}
