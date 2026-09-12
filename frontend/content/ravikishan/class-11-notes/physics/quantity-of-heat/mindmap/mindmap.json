@@ -1,0 +1,55 @@
+{
+  "title": "Quantity of Heat Mindmap",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "quantity-of-heat-mindmap",
+  "topicTitle": "Quantity of Heat — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Quantity of Heat",
+    "children": [
+      {
+        "id": "newton-s-law-of-cooling",
+        "label": "Newton's law of cooling"
+      },
+      {
+        "id": "measurement-of-specific-heat-c",
+        "label": "Measurement of specific heat capacity of solids",
+        "children": [
+          {
+            "id": "measurement-of-specific-heat-capacity-of-solids-sub-0",
+            "label": "liquids"
+          }
+        ]
+      },
+      {
+        "id": "change-of-phases-latent-heat",
+        "label": "Change of phases: latent heat"
+      },
+      {
+        "id": "specific-latent-heat-of-fusion",
+        "label": "Specific latent heat of fusion",
+        "children": [
+          {
+            "id": "specific-latent-heat-of-fusion-sub-0",
+            "label": "vaporization"
+          }
+        ]
+      },
+      {
+        "id": "measurement-of-specific-latent",
+        "label": "Measurement of specific latent heat of fusion",
+        "children": [
+          {
+            "id": "measurement-of-specific-latent-heat-of-fusion-sub-0",
+            "label": "vaporization"
+          }
+        ]
+      },
+      {
+        "id": "triple-point",
+        "label": "Triple point"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Ideal Gas Mindmap",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "ideal-gas-mindmap",
+  "topicTitle": "Ideal Gas — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Ideal Gas",
+    "children": [
+      {
+        "id": "ideal-gas-equation",
+        "label": "Ideal gas equation"
+      },
+      {
+        "id": "molecular-properties-of-matter",
+        "label": "Molecular properties of matter"
+      },
+      {
+        "id": "kinetic-molecular-model-of-an-ideal-gas",
+        "label": "Kinetic-molecular model of an ideal gas"
+      },
+      {
+        "id": "derivation-of-pressure-exerted-by-gas",
+        "label": "Derivation of pressure exerted by gas"
+      },
+      {
+        "id": "average-translational-kinetic-energy-of-",
+        "label": "Average translational kinetic energy of gas molecule"
+      },
+      {
+        "id": "boltzmann-constant-root-mean-square-spee",
+        "label": "Boltzmann constant, root mean square speed"
+      },
+      {
+        "id": "heat-capacities-of-gases-and-s",
+        "label": "Heat capacities of gases",
+        "children": [
+          {
+            "id": "heat-capacities-of-gases-sub-0",
+            "label": "solids"
+          }
+        ]
+      }
+    ]
+  }
+}

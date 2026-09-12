@@ -1,0 +1,174 @@
+{
+  "title": "Elastic and Inelastic Collisions",
+  "unitSlug": "work-energy-and-power",
+  "topicSlug": "elastic-and-inelastic-collisions",
+  "topicTitle": "Elastic and inelastic collisions",
+  "relevance": 100,
+  "notes": [
+    "**Elastic collision:** A collision in which both total momentum AND total kinetic energy are conserved. The bodies rebound without permanent deformation, no sound/heat is produced. The relative velocity of approach equals the relative velocity of separation: v₂ - v₁ = u₁ - u₂.",
+    "**Inelastic collision:** A collision in which momentum is conserved but kinetic energy is NOT conserved. Some kinetic energy is converted to internal energy (heat, sound, deformation). The coefficient of restitution e < 1.",
+    "**Perfectly inelastic collision:** The extreme case where the colliding bodies stick together after collision and move with a common velocity. Momentum is conserved; KE loss is maximum (but not 100% because momentum must be conserved, so some KE remains as center-of-mass motion).",
+    "**One-dimensional elastic collision formulas:** For masses m₁, m₂ with initial velocities u₁, u₂: v₁ = (m₁-m₂)u₁/(m₁+m₂) + 2m₂u₂/(m₁+m₂), v₂ = (m₂-m₁)u₂/(m₁+m₂) + 2m₁u₁/(m₁+m₂). These come from conservation of momentum + conservation of KE.",
+    "**Special case — equal masses (m₁ = m₂) in elastic collision:** The masses exchange velocities! v₁ = u₂, v₂ = u₁. If m₂ was initially at rest (u₂ = 0), then v₁ = 0 (first mass stops) and v₂ = u₁ (second mass moves off with the first mass's original speed).",
+    "**Special case — very massive m₁, stationary m₂ (m₁ ≫ m₂, u₂ = 0):** m₁ barely slows: v₁ ≈ u₁. m₂ shoots forward at v₂ ≈ 2u₁ (twice the initial speed). This is how a golf club hits a ball, or a bat hits a baseball.",
+    "**Coefficient of restitution (e):** e = (relative speed of separation) / (relative speed of approach) = (v₂ - v₁)/(u₁ - u₂). For perfectly elastic: e = 1. For perfectly inelastic: e = 0. For inelastic: 0 < e < 1. e depends on the materials (e.g., tennis ball on concrete: e ≈ 0.75; steel on steel: e ≈ 0.9; putty: e ≈ 0).",
+    "**Energy loss in inelastic collisions:** ΔK = K_f - K_i = -½ μ v_rel² (1 - e²), where μ = m₁m₂/(m₁+m₂) is the reduced mass and v_rel = u₁ - u₂ is the relative velocity. The energy lost goes to heat, sound, and permanent deformation.",
+    "**Two-dimensional collisions:** Momentum is conserved as a vector: p_x and p_y separately. For elastic collisions, KE is also conserved. The scattering angles depend on the impact parameter. Center-of-mass frame analysis often simplifies 2D collisions.",
+    "**Center-of-mass frame:** In the CM frame, total momentum is zero. In an elastic collision, the speeds of particles don't change, only their directions change. The scattering is isotropic for identical particles in the CM frame.",
+    "**Real-world applications:** Car crash safety (crumple zones increase collision time, reduce force — KE is dissipated controllably). Billiards (nearly elastic). Newton's cradle (demonstrates momentum and energy transfer through elastic collisions). Sports (baseball, tennis, golf — coefficient of restitution of ball/racket/club matters).",
+    "**Explosion — reverse collision:** An object at rest splits into fragments with kinetic energy. Momentum is conserved (total momentum before = 0, after = 0). KE after > KE before — the energy comes from internal chemical/nuclear energy stored in the object. This is a 'reverse' inelastic collision."
+  ],
+  "confusion": [
+    "In a perfectly inelastic collision, the objects DO NOT lose ALL their kinetic energy. They lose the MAXIMUM possible KE consistent with momentum conservation. The center-of-mass kinetic energy (½Mv_cm²) MUST remain because momentum is conserved. Only the KE relative to the center of mass can be lost.",
+    "The coefficient of restitution e is NOT the ratio of final to initial KE. e = (v₂ - v₁)/(u₁ - u₂) is the ratio of relative speeds. The fraction of KE retained is e² (for equal masses) or a more complex formula for unequal masses. Many students confuse e with KE ratio.",
+    "Momentum is ALWAYS conserved in an isolated system (no external forces). Kinetic energy is ONLY conserved in perfectly elastic collisions. Students often think KE is always conserved in collisions — it is NOT. Real collisions are usually somewhat inelastic (0 < e < 1).",
+    "For a ball bouncing on the floor: The floor/earth is so massive it doesn't move. The ball's speed before and after impact relates by e = v_after/v_before. The ball loses (1-e²) of its KE each bounce. The floor provides the impulse to change momentum; the earth's recoil is negligible.",
+    "A collision where kinetic energy is 'gained' (superelastic) is possible if internal energy is released (explosion, chemical reaction, spring release). These are NOT standard collisions and require tracking internal energy changes."
+  ],
+  "practice": [
+    "A 5 kg ball moving at 4 m/s collides elastically with a 3 kg ball at rest. Find their velocities after collision. Solution: m₁=5, m₂=3, u₁=4, u₂=0. v₁ = (5-3)/(5+3)×4 = 2/8×4 = 1 m/s. v₂ = 2×5/(5+3)×4 = 10/8×4 = 5 m/s. Check: KE_i = ½×5×16 = 40 J. KE_f = ½×5×1 + ½×3×25 = 2.5 + 37.5 = 40 J. Momentum: 5×4 = 5×1 + 3×5 = 20.",
+    "A 1000 kg car moving at 20 m/s rear-ends a stationary 1500 kg car. They stick together. Find (a) final velocity, (b) KE lost. Solution: (a) m₁u₁ = (m₁+m₂)v → 1000×20 = 2500v → v = 8 m/s. (b) KE_i = ½×1000×400 = 200,000 J. KE_f = ½×2500×64 = 80,000 J. Lost = 120,000 J = 60% of initial KE. Heat/sound/crushing.",
+    "A ball of mass m is dropped from height h onto a massive floor with coefficient of restitution e. To what height does it rebound? How many bounces until height < h/10? Solution: Rebound height h₁ = e²h. After n bounces: h_n = e^(2n)h. For h_n < h/10: e^(2n) < 0.1 → 2n ln e < ln 0.1 → n > ln(0.1)/(2 ln e). If e = 0.8: n > -2.3/(-0.44) = 5.2 → 6 bounces.",
+    "Two particles of mass m approach each other with equal speeds u in a perfectly elastic collision. One is deflected by 60° from its original direction. Find the final speeds. Solution: In CM frame, total momentum = 0. Elastic collision: speeds unchanged, only directions change. Initial CM speed = u. After: each has speed u. Angle between final velocities = 180° in CM frame. In lab frame, the deflection angle depends on initial configuration.",
+    "A golf club (m = 0.2 kg) moving at 50 m/s strikes a ball (m = 0.046 kg) at rest. e = 0.8. Find ball speed after impact. Solution: u₁ = 50, u₂ = 0. v₂ = (1+e)m₁u₁/(m₁+m₂) = 1.8×0.2×50/0.246 = 18/0.246 = 73.2 m/s. The ball travels faster than the club! This is why golf balls go so fast. v₁ = m₁u₁/m₁+m₂ × (1 - e×m₂/m₁) ≈ 40 m/s."
+  ],
+  "universalFacts": [
+    "The coefficient of restitution e was introduced by Newton in the Principia. For elastic collisions, e = 1, and the relative velocity of separation equals the relative velocity of approach. This is a consequence of both momentum and kinetic energy conservation.",
+    "In any isolated system, total momentum is ALWAYS conserved (if no external forces). Kinetic energy is NOT always conserved. The only perfectly elastic collisions in nature are between fundamental particles (or at the atomic/molecular level where quantum mechanics makes collisions elastic).",
+    "In a perfectly inelastic collision, the maximum possible kinetic energy loss is ΔK_max = -½ μ v_rel², where μ = m₁m₂/(m₁+m₂) is the reduced mass. This is the kinetic energy in the center-of-mass frame, which is entirely lost as heat.",
+    "Newton's cradle works because the collisions between identical spheres are nearly elastic, and the equal-mass exchange property (v₁ = u₂, v₂ = u₁) transfers momentum and energy cleanly from one end to the other.",
+    "The classification of collisions (elastic, inelastic, perfectly inelastic) is an idealization. Real collisions have 0 < e < 1. The value of e depends on the materials: rubber on concrete e ≈ 0.8, steel on steel e ≈ 0.9, glass on glass e ≈ 0.6, putty e ≈ 0."
+  ],
+  "animation3D": "work-energy-and-power",
+  "motionGraphics": "work-energy-and-power",
+  "examples": [
+    "Equal mass elastic: A 2 kg ball at 6 m/s hits a stationary 2 kg ball. After collision: first ball stops, second ball moves at 6 m/s (velocities exchanged).",
+    "Perfectly inelastic: A 3 kg ball at 4 m/s hits a stationary 1 kg ball. They stick together. Common velocity = (3×4 + 0)/(3+1) = 3 m/s. KE lost = ½×3×16 − ½×4×9 = 24 − 18 = 6 J.",
+    "Coefficient of restitution: A ball dropped from 5 m rebounds to 3.2 m. e = √(3.2/5) = 0.8.",
+    "Golf club: A 0.2 kg club at 50 m/s hits a 0.046 kg ball at rest (e = 0.8). Ball speed = 73.2 m/s (faster than the club!).",
+    "Newton's cradle: Pull one ball, release — one ball flies out the other end at the same speed. Pull two balls, two fly out."
+  ],
+  "practiceQuestions": [
+    "A 4 kg ball moving at 5 m/s collides elastically with a 2 kg ball at rest. Find their velocities after collision.",
+    "A 5 kg ball moving at 6 m/s hits a stationary 3 kg ball in a perfectly inelastic collision. Find the common velocity and the KE lost.",
+    "A ball is dropped from 10 m and rebounds to 6.4 m. Find the coefficient of restitution and the fraction of energy lost.",
+    "A 1 kg ball moving at 8 m/s collides with a stationary 4 kg ball. If e = 0.6, find the final velocities.",
+    "Explain why the ball in a golf shot travels faster than the club head."
+  ],
+  "formulas": [
+    "Elastic collision (1D): v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂)",
+    "Perfectly inelastic: m₁u₁ + m₂u₂ = (m₁+m₂)v (common velocity v)",
+    "Coefficient of restitution: e = (v₂ − v₁)/(u₁ − u₂) = relative speed of separation / relative speed of approach",
+    "KE loss in inelastic collision: ΔK = ½μv_rel²(1 − e²), where μ = m₁m₂/(m₁+m₂)",
+    "Equal mass elastic (one at rest): v₁ = 0, v₂ = u₁ (velocities exchanged)"
+  ],
+  "keyPoints": [
+    "Elastic collision: both momentum AND kinetic energy are conserved.",
+    "Inelastic collision: momentum conserved, kinetic energy NOT conserved (some → heat/sound).",
+    "Perfectly inelastic: bodies stick together, KE loss is maximum.",
+    "Coefficient of restitution e = 1 (elastic), e = 0 (perfectly inelastic), 0 < e < 1 (inelastic).",
+    "Equal-mass elastic collision (one at rest): the masses exchange velocities."
+  ],
+  "summary": "In an elastic collision, both momentum and kinetic energy are conserved. In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound). In a perfectly inelastic collision, the bodies stick together and KE loss is maximum. The coefficient of restitution e measures the elasticity of the collision.",
+  "specialNotes": [
+    "In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.",
+    "The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.",
+    "In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.",
+    "Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.",
+    "NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation)."
+  ],
+  "importantStatements": [
+    "In an elastic collision, both total momentum and total kinetic energy are conserved.",
+    "In an inelastic collision, momentum is conserved but kinetic energy is not — some converts to internal energy.",
+    "In a perfectly inelastic collision, the colliding bodies stick together and move with a common velocity.",
+    "The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).",
+    "In the center-of-mass frame, total momentum is zero — this simplifies collision analysis."
+  ],
+  "importantNotes": [
+    "In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.",
+    "The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.",
+    "In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.",
+    "Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.",
+    "NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation)."
+  ],
+  "examShortTricks": [
+    "Equal mass shortcut: if m₁ = m₂ and the collision is elastic, the masses exchange velocities.",
+    "Perfectly inelastic shortcut: bodies stick together → use m₁u₁ + m₂u₂ = (m₁ + m₂)v to find the common velocity.",
+    "KE loss shortcut: ΔK = ½μv_rel²(1 − e²) — maximum when e = 0 (perfectly inelastic).",
+    "e = 1 → elastic (KE conserved); e = 0 → perfectly inelastic (maximum KE loss); 0 < e < 1 → inelastic.",
+    "CM frame shortcut: in the center-of-mass frame, total momentum is zero — simplifies 2D collision analysis."
+  ],
+  "examNotes": [
+    "One-dimensional elastic collision formulas are standard — know how to derive and apply them.",
+    "Equal-mass elastic collision (one at rest): the moving mass stops, the stationary one moves off at the original speed.",
+    "Perfectly inelastic collision: find the common velocity using momentum conservation, then compute KE loss.",
+    "Coefficient of restitution problems: e = (v₂ − v₁)/(u₁ − u₂) — just the ratio of relative speeds.",
+    "NEB asks both numerical problems and conceptual questions about energy loss in collisions."
+  ],
+  "mcs": [
+    {
+      "question": "A 2 kg ball moving at 6 m/s hits a stationary 2 kg ball in an elastic collision. The final velocity of the first ball is:",
+      "options": [
+        "0 m/s",
+        "6 m/s",
+        "3 m/s",
+        "12 m/s"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A 3 kg ball moving at 4 m/s hits a stationary 1 kg ball in a perfectly inelastic collision. Their common velocity is:",
+      "options": [
+        "3 m/s",
+        "4 m/s",
+        "1 m/s",
+        "12 m/s"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In an elastic collision, which quantity is conserved?",
+      "options": [
+        "Momentum only",
+        "Kinetic energy only",
+        "Both momentum and kinetic energy",
+        "Neither momentum nor kinetic energy"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The coefficient of restitution for a perfectly inelastic collision is:",
+      "options": [
+        "0",
+        "1",
+        "Between 0 and 1",
+        "Greater than 1"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A 1 kg ball moving at 10 m/s hits a stationary 9 kg ball elastically. The speed of the 9 kg ball after collision is:",
+      "options": [
+        "1 m/s",
+        "2 m/s",
+        "5 m/s",
+        "10 m/s"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "In an elastic collision, both momentum and kinetic energy are conserved.",
+    "In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound).",
+    "In a perfectly inelastic collision, the bodies stick together and KE loss is maximum.",
+    "The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).",
+    "In the center-of-mass frame, total momentum is zero — simplifies collision analysis."
+  ],
+  "importantTasks": [
+    "Solve 5 one-dimensional elastic collision problems using the standard formulas.",
+    "Solve 5 perfectly inelastic collision problems finding the common velocity and KE loss.",
+    "Solve 3 equal-mass elastic collision problems using the velocity-exchange shortcut.",
+    "Solve 3 coefficient of restitution problems computing e from given velocities.",
+    "Solve 2 two-dimensional elastic collision problems using vector momentum conservation."
+  ]
+}

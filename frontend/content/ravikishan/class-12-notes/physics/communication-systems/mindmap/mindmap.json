@@ -1,0 +1,37 @@
+{
+  "title": "Communication Systems Mindmap",
+  "unitSlug": "communication-systems",
+  "topicSlug": "communication-systems-mindmap",
+  "topicTitle": "Communication Systems — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Communication Systems",
+    "children": [
+      {
+        "id": "elements-of-a-communication-system",
+        "label": "Elements of a communication system"
+      },
+      {
+        "id": "modulation-amplitude-modulatio",
+        "label": "Modulation — amplitude modulation",
+        "children": [
+          {
+            "id": "modulation-amplitude-modulation-sub-0",
+            "label": "frequency modulation"
+          }
+        ]
+      },
+      {
+        "id": "bandwidth-and-propagation-of-e",
+        "label": "Bandwidth",
+        "children": [
+          {
+            "id": "bandwidth-sub-0",
+            "label": "propagation of electromagnetic waves"
+          }
+        ]
+      }
+    ]
+  }
+}

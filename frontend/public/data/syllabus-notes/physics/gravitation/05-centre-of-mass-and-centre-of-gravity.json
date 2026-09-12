@@ -1,0 +1,175 @@
+{
+  "title": "Centre of Mass and Centre of Gravity",
+  "unitSlug": "gravitation",
+  "topicSlug": "centre-of-mass-and-centre-of-gravity",
+  "topicTitle": "Centre of mass and centre of gravity",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "centre-mass-gravity",
+  "notes": [
+    "**Centre of mass (COM):** the point where the entire mass of a body (or system) may be considered to be concentrated for translational (linear) motion analysis. Position: R_cm = (Σ mᵢrᵢ)/(Σ mᵢ). For continuous bodies: R_cm = (∫r dm)/M.",
+    "**Centre of gravity (CG):** the point where the entire weight of a body may be considered to act. In a uniform gravitational field, the CG coincides exactly with the COM. If the field is non-uniform (very large bodies, varying g), the CG may shift slightly relative to the COM.",
+    "**Why CG equals COM in uniform g:** weight W = mg at each point, and since g is the same everywhere, the torque balance condition that defines the CG reduces to the same weighted average that defines the COM. The two centres coincide.",
+    "**Solved example — two masses:** masses 2 kg at x = 0 and 8 kg at x = 3 m. COM: x_cm = (2×0 + 8×3)/(2+8) = 24/10 = 2.4 m. The COM is closer to the heavier mass.",
+    "**Solved example — system of three:** 1 kg at (0,0), 2 kg at (2,0), 3 kg at (0,4). x_cm = (1×0 + 2×2 + 3×0)/6 = 4/6 = 0.67 m; y_cm = (1×0 + 2×0 + 3×4)/6 = 12/6 = 2 m. COM at (0.67, 2) m.",
+    "**Properties:** (1) The COM of a uniform, symmetric body lies at its geometric centre. (2) The COM of two bodies lies on the line joining them. (3) For irregular bodies the COM can lie OUTSIDE the material (e.g., a ring, a boomerang, a bent L-shape). (4) The total linear momentum of a system equals M·V_cm — external forces alone can change V_cm.",
+    "**Finding CG experimentally (NEB practical):** suspend the body from two different points; the two vertical lines through the suspension points intersect at the centre of gravity. Plumb lines are used — the intersection of the two suspension lines locates the CG.",
+    "**Applications:** designing stable structures (ships, cars, tables) keeps the CG low and inside the base; balancing acts use alignment of the CG above the support; in projectiles, the COM follows a smooth parabola even if the object rotates; spacecraft alignment uses the COM."
+  ],
+  "confusion": [
+    "❌ 'COM and CG are always at the material centre.' ✅ Only for uniform, symmetric bodies. A ring's COM is at its empty centre; an L-shaped body has its COM outside its material.",
+    "❌ 'COM and CG are always the same point.' ✅ They coincide in a UNIFORM gravitational field. For very large objects in a non-uniform field, they differ slightly.",
+    "❌ 'COM is a force point.' ✅ COM is a mass-weighted average position — a geometric point for translational dynamics, not a force.",
+    "❌ 'To find the COM, only the largest mass matters.' ✅ All masses contribute proportionally: R_cm = Σmᵢrᵢ/Σmᵢ.",
+    "❌ 'The COM moves when the body spins.' ✅ The COM of an isolated system moves uniformly (or stays still); spinning happens about the COM.",
+    "❌ 'The CG of an object must lie within the object.' ✅ It can lie outside the material — ring, hollow sphere, L-shape, boomerang."
+  ],
+  "practice": [
+    "Find the COM of masses 3 kg (at 0) and 7 kg (at 4 m).",
+    "Find the COM of three masses arranged in a right triangle.",
+    "Locate the COM of two identical rods joined in an L-shape.",
+    "Show CG = COM when g is uniform, using torque balance.",
+    "Explain how a circus performer keeps balance using CG.",
+    "Where is the COM of a uniform ring? Does it lie inside the material?"
+  ],
+  "universalFacts": [
+    "The centre of mass concept lets us treat multi-body problems as single-particle problems — the basis of all rigid-body and celestial mechanics.",
+    "For a system of only two masses, the COM divides the line joining them in the inverse ratio of the masses.",
+    "In projectile motion, the COM follows the ideal parabola even when the projectile tumbles.",
+    "A body rotating freely rotates about its COM — this is why juggling clubs spin about their balance point.",
+    "Satellites and spacecraft align around their COM for stable attitude control — even small COM shifts change flight behaviour."
+  ],
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation",
+  "examples": [
+    "Two masses: 2 kg at 0 and 8 kg at 3 → COM at 2.4 m (closer to the 8 kg).",
+    "Three masses: 1@(0,0), 2@(2,0), 3@(0,4) → COM at (0.67, 2).",
+    "Uniform rod: COM at length/2.",
+    "Uniform ring: COM at its centre (empty space).",
+    "L-shaped rod: COM lies outside the bend, inside the right angle area."
+  ],
+  "practiceQuestions": [
+    "Masses of 2 kg and 6 kg are placed at x = 0 and x = 4 m. Find their centre of mass.",
+    "Three point masses 1 kg, 2 kg, 3 kg lie at (0,0), (3,0), (0,4) m. Find the COM.",
+    "Two uniform rods, each 1 m long and 1 kg, are joined at right angles forming an L. Find the COM of the L.",
+    "Explain when the centre of gravity differs from the centre of mass.",
+    "A 50 cm ruler is pivoted 10 cm from its edge; where is its centre of gravity?",
+    "Describe how you would locate the CG of an irregular-shaped lamina in the laboratory."
+  ],
+  "formulas": [
+    "Centre of mass (discrete): R_cm = Σmᵢrᵢ / Σmᵢ",
+    "Centre of mass (continuous): R_cm = ∫r dm / ∫ dm",
+    "Two masses: x_cm = (m₁x₁ + m₂x₂)/(m₁ + m₂)",
+    "Velocity of COM: V_cm = Σmᵢvᵢ / M",
+    "Acceleration of COM: a_cm = Σmᵢaᵢ / M = F_ext / M"
+  ],
+  "keyPoints": [
+    "COM is a mass-weighted average position; CG is where the total weight acts.",
+    "In a uniform g, COM and CG coincide.",
+    "For uniform symmetric bodies, COM is at the geometric centre.",
+    "COM can lie outside the material (ring, L-shape, boomerang).",
+    "The motion of the COM is governed only by external forces."
+  ],
+  "summary": "The centre of mass is the mass-weighted average position of a body or system: R_cm = Σmᵢrᵢ/M; the centre of gravity is the point where total weight acts. They coincide in a uniform gravitational field. The COM may lie outside the material and its motion is controlled only by external forces — the key to rigid-body and stability analysis.",
+  "specialNotes": [
+    "In a uniform gravitational field the location of CG equals COM — that is almost always true in school problems.",
+    "For symmetric uniform bodies, COM = geometric centre (no calculation needed).",
+    "The COM of a system of two masses divides the connecting line inversely to the masses.",
+    "Suspend-and-plumb-line is the standard experiment to locate the CG.",
+    "NEB often asks to compute the COM of simple systems and to compare COM with CG."
+  ],
+  "importantStatements": [
+    "The centre of mass of a system is the mass-weighted average position: R_cm = Σmᵢrᵢ/Σmᵢ.",
+    "The centre of gravity is the point where the entire weight may be considered to act.",
+    "In a uniform gravitational field the centre of gravity coincides with the centre of mass.",
+    "For uniform symmetric bodies the COM is at the geometric centre.",
+    "External forces alone determine the motion of the centre of mass."
+  ],
+  "importantNotes": [
+    "COM is the mass-weighted average position — all masses contribute in proportion to their mass.",
+    "CG = COM in a uniform gravitational field.",
+    "COM of a uniform symmetric body is at its geometric centre.",
+    "The COM can lie outside the material — rings, L-shapes, hollow spheres.",
+    "The motion of the COM depends only on external forces."
+  ],
+  "examShortTricks": [
+    "For two masses: COM divides the join inversely to the masses (closer to the heavier).",
+    "Uniform rod → COM at L/2; uniform square → centre; ring → centre (empty).",
+    "Velocity of COM: V_cm = P_total/M — total momentum divided by total mass.",
+    "To locate CG experimentally: hang from two points and mark the verticals.",
+    "External forces only change V_cm — internal forces (collisions, explosions) cannot."
+  ],
+  "examNotes": [
+    "COM calculation for two/three point masses is a standard numerical.",
+    "Comparing COM and CG is a frequent short-answer question.",
+    "Locating CG by suspending a lamina is a common practical question.",
+    "COM of composite bodies (L-shape, rod + disk) appears in exams.",
+    "Know that the COM follows a parabola even for a spinning projectile."
+  ],
+  "mcs": [
+    {
+      "question": "The centre of mass of a uniform rod lies at its:",
+      "options": [
+        "one end",
+        "middle",
+        "quarter point",
+        "varies with length"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a uniform gravitational field, the centre of gravity:",
+      "options": [
+        "differs from COM",
+        "coincides with COM",
+        "is above the COM",
+        "is below the COM"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The centre of mass of a uniform ring lies:",
+      "options": [
+        "on the ring",
+        "at the centre (outside the material)",
+        "outside the ring",
+        "at a point dependent on radius"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Masses 2 kg at x = 0 and 4 kg at x = 6 m have their COM at:",
+      "options": [
+        "2 m",
+        "3 m",
+        "4 m",
+        "6 m"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Which quantity governs the motion of the centre of mass?",
+      "options": [
+        "internal forces",
+        "external forces",
+        "friction only",
+        "contact forces only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "COM = Σmᵢrᵢ/Σmᵢ; CG = point where total weight acts.",
+    "COM and CG coincide in uniform g.",
+    "Uniform symmetric bodies have COM at the geometric centre.",
+    "The COM can lie outside the material of the body.",
+    "External forces alone determine COM motion."
+  ],
+  "importantTasks": [
+    "Compute the COM for two and three point-mass systems.",
+    "Compute the COM of composite uniform bodies (L-shape, rod + mass).",
+    "Describe the experimental method to find the CG of a lamina.",
+    "Explain the COM = CG condition.",
+    "Show that internal forces cannot change the velocity of the COM."
+  ]
+}

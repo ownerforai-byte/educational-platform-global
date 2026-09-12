@@ -1,0 +1,61 @@
+{
+  "title": "Three Dimensional Geometry Mindmap",
+  "unitSlug": "three-dimensional-geometry",
+  "topicSlug": "three-dimensional-geometry-mindmap",
+  "topicTitle": "Three Dimensional Geometry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Three Dimensional Geometry",
+    "children": [
+      {
+        "id": "direction-cosines-and-directio",
+        "label": "Direction cosines",
+        "children": [
+          {
+            "id": "direction-cosines-sub-0",
+            "label": "direction ratios of a line"
+          }
+        ]
+      },
+      {
+        "id": "equation-of-a-line-in-space-st",
+        "label": "Equation of a line in space — standard",
+        "children": [
+          {
+            "id": "equation-of-a-line-in-space-standard-sub-0",
+            "label": "general form"
+          }
+        ]
+      },
+      {
+        "id": "equation-of-a-plane-normal-form-general-",
+        "label": "Equation of a plane — normal form, general form"
+      },
+      {
+        "id": "angle-between-two-lines-two-pl",
+        "label": "Angle between two lines, two planes,",
+        "children": [
+          {
+            "id": "angle-between-two-lines-two-planes--sub-0",
+            "label": "a line"
+          },
+          {
+            "id": "angle-between-two-lines-two-planes--sub-1",
+            "label": "a plane"
+          }
+        ]
+      },
+      {
+        "id": "distance-of-a-point-from-a-pla",
+        "label": "Distance of a point from a plane",
+        "children": [
+          {
+            "id": "distance-of-a-point-from-a-plane-sub-0",
+            "label": "line"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "title": "Rutherford's Atomic Model",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "rutherford-model",
+  "topicTitle": "Rutherford's Atomic Model",
+  "relevance": 55,
+  "notes": [
+    "**Alpha particle (α):** a di-positive helium ion (He²⁺) with charge +2e and mass 4 amu, denoted as ⁴₂He or He²⁺.",
+    "**Alpha particle mass & charge:** m_α = 6.64 × 10⁻²⁷ kg, q_α = +2(1.602 × 10⁻¹⁹ C) = +3.204 × 10⁻¹⁹ C.",
+    "**Source of α-particles:** naturally from radioactive decay of heavy elements (²²⁶Ra → ⁴₂He + ²²²₈₀Rn). In the lab, Po-210 or Am-241 sources are used.",
+    "**Thomson model (1898 — Plum Pudding):** 'The atom is imagined as a sphere of uniform positive charge, with negatively charged electrons embedded inside like seeds in a watermelon.'",
+    "**Rutherford's α-scattering experiment (1909–1911):** high-energy α-particles (E₀ ≈ 7.7 MeV from ²²⁶Ra) were directed at a thin gold foil (thickness 2000 atoms ≈ 0.00006 cm).",
+    "**Apparatus details:** Lead block with a slit collimates the α-beam; gold foil target; zinc sulphide (ZnS) fluorescent screen rotated in a circular arc. The scintillations (photon flashes) were counted under a microscope.",
+    "**Rutherford's key setup innovation:** the ZnS screen was movable to different angles — this was critical for measuring angular distribution of scattered α-particles.",
+    "**Observation 1 — Most pass through (~99%):** α-particles go straight through, revealing the atom is mostly empty space.",
+    "**Observation 2 — Small deflections (~some particles):** α-particles at small angles, consistent with small deflections by electric fields of loosely-distributed charges.",
+    "**Observation 3 — Large-angle deflections (~1 in 10,000):** α-particles scattered at angles > 90°, some even bouncing back (180° deflection — 'backward' scattering).",
+    "**Critical insight — probability and distance:** Rutherford realized large deflections occur only when α-particles pass very close to a concentrated positive mass (within ~1/r dependence). The probability of close encounter is ~ (r_nucleus / r_atom)² ≈ (10⁻¹³ / 10⁻⁸)² ≈ 10⁻¹⁰ — but since the actual observed rate was 1/8000 ≈ 1.25×10⁻⁴, a central concentration (nucleus) was needed.",
+    "**Rutherford's calculations — the math:** The distance of closest approach d of an α-particle of kinetic energy E₀ to a nucleus of charge Ze is: At closest approach, E₀ = k(2e)(Ze)/d → d = 2kZe²/E₀, where k = 8.99×10⁹ N·m²/C². For Au (Z=79), E₀ = 7.7 MeV:",
+    "**Distance of closest approach computation:** d = (2)(8.99×10⁹)(79)(1.602×10⁻¹⁹)² / (7.7 × 1.602×10⁻¹³ J) = (1.89×10⁻²⁶) / (1.23×10⁻¹²) = 1.5×10⁻¹⁴ m = 15 fm. This is far smaller than the atomic radius (~1.38×10⁻¹⁰ m), confirming the nucleus is a tiny, dense core.",
+    "**Rutherford's postulates (1911):** (1) **Nucleus:** An atom consists of a tiny, positively charged center called the nucleus (radius ≈ 10⁻¹⁵ m), containing essentially all the atom's mass. (2) **Electron cloud:** Electrons (mass ≈ 1/1836 of proton) revolve around the nucleus within a much larger radius (atom radius ≈ 10⁻¹⁰ m). (3) **Size ratio:** The nucleus is ~10⁵ times smaller in radius than the atom (volume ratio ~10⁻¹⁵). (4) **Electrostatic binding:** The Coulomb attraction between protons (+) and electrons (−) holds the atom together.",
+    "**The planetary analogy:** since electrons orbit the nucleus like planets orbit the sun (Kepler's laws apply), Rutherford called it the planetary model. The analogy is exact mathematically (1/r² force → Kepler orbits), but the analogy is incomplete (see stability defect).",
+    "**Stability defect — classical electrodynamics predicts collapse:** Maxwell's equations show accelerated charges radiate energy. An electron in circular orbit has centripetal acceleration a = v²/r, so it should radiate energy and spiral into the nucleus in ~10⁻¹⁶ seconds.",
+    "**Formula for radiation power — Larmor formula:** P = (e²a²)/(6πε₀c³). For an electron orbiting at v = 10⁶ m/s, r = 10⁻¹⁰ m: a = v²/r = 10¹⁶ m/s², P ≈ 2.6×10⁻²⁶ W. Over the orbital period T = 2πr/v ≈ 6×10⁻¹⁷ s, energy radiated ≈ 1.6×10⁻⁴² J per orbit — small, but continuous, leading to eventual collapse.",
+    "**Spectrum defect — why emission is discrete:** Rutherford's model predicts continuous radiation (as electrons spiral inward continuously), which should produce a continuous spectrum. But experiment shows line spectra (discrete wavelengths — Balmer series for H: 410, 434, 457, 486, 656 nm). The model cannot explain this without quantization.",
+    "**Electronic structure defect — no energy levels:** The model has no concept of quantized orbits or energy levels. It cannot explain why electrons don't radiate or why only specific frequencies are emitted.",
+    "**What Rutherford's model got right:** (1) The atom is mostly empty space. (2) The nucleus is dense, tiny, and positively charged. (3) Chemical properties depend on electron arrangements. (4) The number of protons (Z) defines the element.",
+    "**What Rutherford's model got wrong:** (1) Electrons should radiate and collapse (predicted instability). (2) Continuous spectrum predicted (vs observed line spectrum). (3) No explanation for how electrons occupy orbits without radiating.",
+    "**Real-world application — the Geiger-Marsden experiment:** the original experiment by Hans Geiger and Ernest Marsden (1909) under Rutherford's direction. Marsden (age 21, a student) noticed the backscattering against Rutherford's expectation. Rutherford said it was 'as if you fired a 15-inch shell at a piece of tissue paper and it bounced back.'",
+    "**Cross-section for large-angle scattering:** The differential cross-section dσ/dΩ = (kZe²)²/(4E₀²) × 1/sin⁴(θ/2). For 180° (backward), sin⁴(90°) = 1; for 90°, sin⁴(45°) = 0.25. The 1/sin⁴(θ/2) dependence means large angles are exponentially rarer — exactly as Rutherford derived theoretically.",
+    "**The nuclear radius — R = r₀A^(1/3):** later, Geiger and Marsden (1913) measured the nuclear radius via α-scattering, finding R ≈ 1.2 × 10⁻¹⁵ × A^(1/3) m, confirming nuclei are ~10⁻⁵ smaller than atoms.",
+    "**Connection to quantum mechanics:** Bohr (1913) saved the Rutherford model by postulating quantized orbits (n = 1, 2, 3...), then Schrödinger (1926) replaced orbits with orbitals. Rutherford's nuclear model was foundational but needed quantum mechanics for full validity."
+  ],
+  "confusion": [
+    "Misconception: The Rutherford model is just a 'mini solar system.' Correction — while it uses a planetary analogy, Rutherford's model has a critical difference: the nuclear force (not just gravity) is needed to hold the nucleus together. Also, electrons don't have circular orbits like planets — they exist in probability clouds (orbitals) described by the Schrödinger equation.",
+    "Misconception: Rutherford's model is completely wrong because electrons should collapse. Correction — the model correctly predicts the *structure* (nucleus + electron cloud) and *most observed phenomena*. The collapse problem was resolved by Bohr's quantization (1913), making the Rutherford-Bohr model successful until quantum mechanics. The flaw is in the lack of quantization, not the basic nuclear structure.",
+    "Misconception: All alpha particles bounce back in Rutherford's experiment. Correction — only about 1 in 8000 (0.01%) are deflected at angles > 90°. Most (99%+) pass through undeflected, and the vast majority of those that are deflected only deviate by small angles. This is why the experiment required counting thousands of scintillations to observe the backscattering.",
+    "Misconception: Rutherford discovered the model by shooting particles at the foil and watching where they landed. Correction — the key measurement was the *angular distribution* of scintillations. A movable detector tracked how many particles scattered at each angle θ, and the 1/sin⁴(θ/2) pattern was the critical signature that proved the concentrated nucleus."
+  ],
+  "practice": [
+    "Calculate the distance of closest approach for a 5.15 MeV α-particle scattered by a gold nucleus (Z = 79). Solution: E₀ = 5.15 MeV = 5.15 × 1.602×10⁻¹³ J = 8.25 × 10⁻¹³ J. d = 2kZe²/E₀ = 2(8.99×10⁹)(79)(1.602×10⁻¹⁹)²/(8.25×10⁻¹³) = 2(8.99×10⁹)(79)(2.566×10⁻³⁸)/(8.25×10⁻¹³) = 4.67×10⁻²⁶/8.25×10⁻¹³ = 5.66×10⁻¹⁴ m = 56.6 fm. The α-particle approaches to within 57 femtometers of the gold nucleus.",
+    "In the Geiger-Marsden experiment, a 7.7 MeV α-particle approaches a copper nucleus (Z = 29). (a) Compute the distance of closest approach. (b) If Cu atomic radius is 1.28×10⁻¹⁰ m, what fraction is this?",
+    "The differential cross-section for Rutherford scattering is dσ/dΩ = (kZe²)²/(4E₀²) × 1/sin⁴(θ/2). For 7.7 MeV α-particles on Au, compute the ratio of scattering into θ = 180° vs θ = 90°.",
+    "Show that the fraction of α-particles scattered backward (> 90°) is proportional to Z², and explain the physical reason."
+  ],
+  "universalFacts": [
+    "Rutherford's scattering experiment is considered one of the most important in physics history. It took just a few days of data collection (August–November 1909) under Geiger and Marsden to overturn the accepted atomic model.",
+    "The nuclear model was proposed in 1911 but was not widely accepted until the 1920s when the neutron was discovered. For a decade, 'Rutherfordian' nuclear physics was the cutting edge.",
+    "Ernest Rutherford (1871–1937), born in New Zealand, became the first chemist to win the Nobel Prize (1908, for radioactivity work) and was knighted in 1908. He died from a blood infection caused by a hernia (not atomic physics).",
+    "Rutherford's 1911 paper was only ~5 pages long. The complete Geiger-Marsden apparatus used a microscope with crosshairs to count individual scintillations — the technology was barely sufficient to detect single photons from ZnS."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure",
+  "examples": [
+    "Example 1: Real-world application of Rutherford's Atomic Model",
+    "Example 2: Practical demonstration of Rutherford's Atomic Model concepts",
+    "Example 3: Numerical problem on Rutherford's Atomic Model",
+    "Example 4: Diagram-based question on Rutherford's Atomic Model",
+    "Example 5: Application in daily life involving Rutherford's Atomic Model"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Rutherford's Atomic Model with suitable example.",
+    "Q2. Solve problems related to Rutherford's Atomic Model.",
+    "Q3. Differentiate between various aspects of Rutherford's Atomic Model.",
+    "Q4. Derive the key formula related to Rutherford's Atomic Model.",
+    "Q5. What are the applications of Rutherford's Atomic Model?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Rutherford's Atomic Model",
+    "Key Formula 2: Mathematical expression of Rutherford's Atomic Model",
+    "Key Formula 3: Application formula for Rutherford's Atomic Model",
+    "Key Formula 4: Derivation result for Rutherford's Atomic Model",
+    "Key Formula 5: Important relation in Rutherford's Atomic Model"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Rutherford's Atomic Model",
+    "Key Point 2: Essential theorem or principle related to Rutherford's Atomic Model",
+    "Key Point 3: Important condition or constraint for Rutherford's Atomic Model",
+    "Key Point 4: Common applications of Rutherford's Atomic Model",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Rutherford's Atomic Model is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Rutherford's Atomic Model applies",
+    "Note 2: Rutherford's Atomic Model connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Rutherford's Atomic Model",
+    "Note 4: Remember the units and dimensions involved in Rutherford's Atomic Model",
+    "Note 5: Rutherford's Atomic Model frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Rutherford's Atomic Model",
+    "Statement 2: Theorem related to Rutherford's Atomic Model",
+    "Statement 3: Condition for Rutherford's Atomic Model to be valid",
+    "Statement 4: Principle governing Rutherford's Atomic Model",
+    "Statement 5: Corollary or consequence of Rutherford's Atomic Model"
+  ],
+  "importantNotes": [
+    "Note 1: Rutherford's Atomic Model is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Rutherford's Atomic Model",
+    "Note 3: Rutherford's Atomic Model has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Rutherford's Atomic Model",
+    "Note 5: Cross-check your answers using alternative methods for Rutherford's Atomic Model"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Rutherford's Atomic Model formula",
+    "Trick 2: Elimination technique for Rutherford's Atomic Model MCQs",
+    "Trick 3: Dimensional analysis shortcut for Rutherford's Atomic Model",
+    "Trick 4: Memory aid for Rutherford's Atomic Model formulas",
+    "Trick 5: Time-saving approach for Rutherford's Atomic Model problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Rutherford's Atomic Model",
+    "Exam Tip 2: Practice previous year questions on Rutherford's Atomic Model",
+    "Exam Tip 3: Rutherford's Atomic Model carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Rutherford's Atomic Model thoroughly",
+    "Exam Tip 5: Review common mistakes related to Rutherford's Atomic Model"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Rutherford's Atomic Model?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Rutherford's Atomic Model is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Rutherford's Atomic Model, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Rutherford's Atomic Model?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Rutherford's Atomic Model is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Rutherford's Atomic Model",
+    "Concept 2: Key theorem or principle in Rutherford's Atomic Model",
+    "Concept 3: Important application area of Rutherford's Atomic Model",
+    "Concept 4: Fundamental relationship in Rutherford's Atomic Model",
+    "Concept 5: Connection between Rutherford's Atomic Model and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Rutherford's Atomic Model",
+    "Task 2: Derive the main formula for Rutherford's Atomic Model",
+    "Task 3: Create a concept map for Rutherford's Atomic Model",
+    "Task 4: Practice previous year exam questions on Rutherford's Atomic Model",
+    "Task 5: Explain Rutherford's Atomic Model to a peer or study group"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "rutherford-s-atomic-model"
+}

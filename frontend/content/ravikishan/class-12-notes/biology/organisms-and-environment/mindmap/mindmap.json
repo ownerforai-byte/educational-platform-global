@@ -1,0 +1,49 @@
+{
+  "title": "Organisms and Environment Mindmap",
+  "unitSlug": "organisms-and-environment",
+  "topicSlug": "organisms-and-environment-mindmap",
+  "topicTitle": "Organisms and Environment — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Organisms and Environment",
+    "children": [
+      {
+        "id": "adaptations-of-organisms-to-environmenta",
+        "label": "Adaptations of organisms to environmental conditions"
+      },
+      {
+        "id": "population-ecology-growth-regulation-int",
+        "label": "Population ecology — growth, regulation, interactions"
+      },
+      {
+        "id": "ecosystem-structure-and-functi",
+        "label": "Ecosystem structure",
+        "children": [
+          {
+            "id": "ecosystem-structure-sub-0",
+            "label": "function — productivity, decomposition"
+          }
+        ]
+      },
+      {
+        "id": "ecological-succession",
+        "label": "Ecological succession"
+      },
+      {
+        "id": "nutrient-cycling-carbon-nitrogen-phospho",
+        "label": "Nutrient cycling — carbon, nitrogen, phosphorus"
+      },
+      {
+        "id": "ecological-pyramids-and-energy",
+        "label": "Ecological pyramids",
+        "children": [
+          {
+            "id": "ecological-pyramids-sub-0",
+            "label": "energy flow"
+          }
+        ]
+      }
+    ]
+  }
+}

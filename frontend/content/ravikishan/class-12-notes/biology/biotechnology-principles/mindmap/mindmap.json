@@ -1,0 +1,61 @@
+{
+  "title": "Biotechnology — Principles and Processes Mindmap",
+  "unitSlug": "biotechnology-principles",
+  "topicSlug": "biotechnology-principles-mindmap",
+  "topicTitle": "Biotechnology — Principles and Processes — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Biotechnology — Principles and Processes",
+    "children": [
+      {
+        "id": "principles-of-biotechnology-recombinant-",
+        "label": "Principles of biotechnology — recombinant DNA technology"
+      },
+      {
+        "id": "tools-restriction-enzymes-vect",
+        "label": "Tools",
+        "children": [
+          {
+            "id": "tools-sub-0",
+            "label": "restriction enzymes"
+          },
+          {
+            "id": "tools-sub-1",
+            "label": "vectors"
+          },
+          {
+            "id": "tools-sub-2",
+            "label": "competent host"
+          }
+        ]
+      },
+      {
+        "id": "processes-dna-isolation-pcr-ge",
+        "label": "Processes",
+        "children": [
+          {
+            "id": "processes-sub-0",
+            "label": "DNA isolation"
+          },
+          {
+            "id": "processes-sub-1",
+            "label": "PCR"
+          },
+          {
+            "id": "processes-sub-2",
+            "label": "gel electrophoresis"
+          },
+          {
+            "id": "processes-sub-3",
+            "label": "gene transfer"
+          }
+        ]
+      },
+      {
+        "id": "applications-of-recombinant-dna-technolo",
+        "label": "Applications of recombinant DNA technology"
+      }
+    ]
+  }
+}

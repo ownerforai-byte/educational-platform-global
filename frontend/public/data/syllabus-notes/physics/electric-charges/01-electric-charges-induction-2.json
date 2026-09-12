@@ -1,0 +1,179 @@
+{
+  "title": "Electric Charges and Induction",
+  "unitSlug": "electric-charges",
+  "topicSlug": "electric-charges-induction",
+  "topicTitle": "Electric Charges and Induction",
+  "relevance": 100,
+  "notes": [
+    "**Electric charge:** a fundamental property of matter that causes it to experience a force when placed in an electric field. Charge is quantized in units of the elementary charge $e = 1.6 \\times 10^{-19}$ C.",
+    "**Conservation of charge:** the total electric charge in an isolated system remains constant. Charge can neither be created nor destroyed, only transferred from one object to another.",
+    "**Charging by friction:** when two different materials are rubbed together, electrons transfer from one to the other. The material that loses electrons becomes positively charged; the material that gains electrons becomes negatively charged. Example: rubbing a glass rod with silk gives the glass a positive charge.",
+    "**Charging by contact:** when a charged object touches a neutral conductor, charge flows between them until both have the same electric potential. If the objects are identical, charge distributes equally: each ends up with half the total charge.",
+    "**Charging by induction:** a charged object brought near a conductor (without touching) causes charge redistribution. Electrons in the conductor move in response to the nearby charge. If the conductor is grounded while the charged object is near, charge flows to or from the ground. When the ground connection is broken before removing the inducing charge, the conductor retains a net charge of opposite sign.",
+    "**Coulomb's law:** the force between two point charges is $F = k\\frac{q_1 q_2}{r^2}$, where $k = 1/(4\\pi\\epsilon_0) \\approx 9 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$, and $r$ is the separation distance.",
+    "**Permittivity of free space:** $\\epsilon_0 = 8.854 \\times 10^{-12}\\,\\text{F/m}$. The force can also be written as $F = \\frac{1}{4\\pi\\epsilon_0} \\cdot \\frac{q_1 q_2}{r^2}$.",
+    "**Superposition principle:** the net force on any charge is the vector sum of the forces due to all other charges. For $N$ charges, $\\vec{F}_{net} = \\sum_{i=1}^{N} \\frac{k q q_i}{r_i^2} \\hat{r}_i$.",
+    "**Electric field:** the force per unit charge at a point in space. $\\vec{E} = \\vec{F}/q_0$. For a point charge $q$, $\\vec{E} = \\frac{kq}{r^2}\\hat{r}$. Units: N/C or V/m.",
+    "**Electric field lines:** start on positive charges, end on negative charges. Their density indicates field strength. They never cross. The tangent at any point gives the field direction.",
+    "**Gauss's law:** the total electric flux through a closed surface is $\\Phi_E = \\oint \\vec{E} \\cdot d\\vec{A} = Q_{enc}/\\epsilon_0$. Useful for calculating fields of symmetric charge distributions (spherical, cylindrical, planar).",
+    "**Field of a uniformly charged sphere:** outside the sphere ($r > R$), the field is identical to that of a point charge at the centre: $E = kQ/r^2$. Inside a uniformly charged non-conducting sphere ($r < R$), $E = kQr/R^3$. For a conducting sphere, all charge resides on the surface and $E = 0$ inside.",
+    "**Millikan oil-drop experiment:** measured the elementary charge $e = 1.602 \\times 10^{-19}$ C by observing tiny charged oil droplets between capacitor plates. Confirmed charge quantization.",
+    "**Electric dipole:** two equal and opposite charges separated by a small distance. Dipole moment $\\vec{p} = q\\vec{d}$, where $\\vec{d}$ points from the negative to the positive charge. In a uniform electric field, a dipole experiences a torque $\\vec{\\tau} = \\vec{p} \\times \\vec{E}$ but no net force.",
+    "**Sign of force:** like charges repel, opposite charges attract. The force is along the line connecting the two charges. This is direct from Coulomb's law — the sign of $q_1 q_2$ determines attractive or repulsive."
+  ],
+  "confusion": [
+    "Charge is quantized in units of $e$, but charge quantization is only noticeable at the atomic/molecular level. At macroscopic scales, charge appears continuous because billions of elementary charges are involved.",
+    "Induction does not transfer charge by itself — it only redistributes existing charge. The conductor must be grounded for charge to flow to/from the earth, and the grounding connection must be broken before removing the inducing charge.",
+    "A charged object brought near a conductor always produces opposite charge on the near side, but the far side has the same sign as the inducing charge. The net charge of the conductor is zero unless it was grounded.",
+    "Coulomb's law gives the force between two point charges in vacuum (or air). In a medium with dielectric constant $\\kappa$, the force is reduced by a factor $\\kappa$: $F = k q_1 q_2/(\\kappa r^2)$. Many students forget the $\\kappa$ factor.",
+    "The electric field inside a conductor in electrostatic equilibrium is exactly zero. This is not true for a conductor carrying a steady current — in that case, there is a net electric field driving the current."
+  ],
+  "practice": [
+    "Two point charges $q_1 = +2\\,\\mu$C and $q_2 = -3\\,\\mu$C are separated by 0.5 m. Find the magnitude and direction of the force on each charge. Solution: $F = k q_1 q_2 / r^2 = (9 \\times 10^9) \\times (2 \\times 10^{-6}) \\times (3 \\times 10^{-6}) / 0.5^2 = 9 \\times 10^9 \\times 6 \\times 10^{-12} / 0.25 = 0.216$ N. The force is attractive (opposite charges).",
+    "Three identical metal spheres: A carries +6 \\,\\mu\\text{C}, B and C are neutral. A touches B, then B touches C. Find the final charge on each. Solution: A-B: each gets +3 \\,\\mu\\text{C}. B-C: total = 6 \\,\\mu\\text{C}, shared: B = +1.5 \\,\\mu\\text{C}, C = +1.5 \\,\\mu\\text{C}. Final: A = +3 \\,\\mu\\text{C}, B = +1.5 \\,\\mu\\text{C}, C = +1.5 \\,\\mu\\text{C}.",
+    "A point charge $q = +5\\,\\mu$C is at the centre of a spherical conducting shell with inner radius 3 cm and outer radius 5 cm. Find the electric field at (a) 2 cm, (b) 4 cm, (c) 7 cm from the centre. Solution: (a) Inside the cavity: $E = kq/r^2 = 9 \\times 10^9 \\times 5 \\times 10^{-6} / 0.02^2 = 1.125 \\times 10^8$ N/C. (b) Within the conducting material: $E = 0$ (electrostatic equilibrium). (c) Outside the shell: $E = kq/r^2 = (9 \\times 10^9) \\times (5 \\times 10^{-6}) / 0.07^2 = 9.18 \\times 10^6$ N/C.",
+    "Using Millikan's data, an oil drop of mass $1.6 \\times 10^{-15}$ kg has terminal velocities 0.5 mm/s downward and 0.3 mm/s upward in an electric field of $10^4$ V/m. Verify that the charge is quantized. Solution: From Stokes' law, the terminal velocity gives the radius. Then using the electric force balance: $qE = mg(v_{up} + v_{down})/(v_{down} - v_{up})$ gives the effective charge, which should be an integer multiple of $1.6 \\times 10^{-19}$ C.",
+    "Four point charges are placed at corners of a square of side 10 cm: $q_1 = +2\\,\\mu$C (top-left), $q_2 = +2\\,\\mu$C (top-right), $q_3 = -2\\,\\mu$C (bottom-right), $q_4 = -2\\,\\mu$C (bottom-left). Find the net force on a charge $q_5 = +1\\,\\mu$C at the centre. Solution: By symmetry, the diagonal pairs cancel. $F_{13}$ (top-left to bottom-right) and $F_{24}$ (top-right to bottom-left) are equal in magnitude and opposite in direction. The net force is zero."
+  ],
+  "universalFacts": [
+    "The total electric charge of the universe is exactly conserved — this is one of the fundamental symmetries of nature (Noether's theorem associated with time-translation invariance).",
+    "Charge is quantized: every measurable charge is an integer multiple of the elementary charge $e = 1.602 \\times 10^{-19}$ C. Millikan's oil-drop experiment first confirmed this.",
+    "The electric force between two protons at a distance of 1 fm ($10^{-15}$ m) is about 130 N — enormously stronger than gravity, which is about $1.86 \\times 10^{-34}$ N at the same distance. This is why electromagnetic forces dominate at small scales.",
+    "The human body can generate and detect electric fields. Nerve impulses use ionic charge flow, and some animals (e.g., electric eels) can produce voltages up to 600 V for hunting and defense.",
+    "Static charge buildup can be dangerous: a spark of just 1 mJ can ignite gasoline vapor, and a discharge of ~5 mJ is perceptible to humans. Lightning involves millions of joules of energy."
+  ],
+  "animation3D": "electric-charges",
+  "motionGraphics": "electric-charges",
+  "examples": [
+    "Example 1: Real-world application of Electric charges; charging by induction",
+    "Example 2: Practical demonstration of Electric charges; charging by induction concepts",
+    "Example 3: Numerical problem on Electric charges; charging by induction",
+    "Example 4: Diagram-based question on Electric charges; charging by induction",
+    "Example 5: Application in daily life involving Electric charges; charging by induction"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Electric charges; charging by induction with suitable example.",
+    "Q2. Solve problems related to Electric charges; charging by induction.",
+    "Q3. Differentiate between various aspects of Electric charges; charging by induction.",
+    "Q4. Derive the key formula related to Electric charges; charging by induction.",
+    "Q5. What are the applications of Electric charges; charging by induction?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Electric charges; charging by induction",
+    "Key Formula 2: Mathematical expression of Electric charges; charging by induction",
+    "Key Formula 3: Application formula for Electric charges; charging by induction",
+    "Key Formula 4: Derivation result for Electric charges; charging by induction",
+    "Key Formula 5: Important relation in Electric charges; charging by induction"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Electric charges; charging by induction",
+    "Key Point 2: Essential theorem or principle related to Electric charges; charging by induction",
+    "Key Point 3: Important condition or constraint for Electric charges; charging by induction",
+    "Key Point 4: Common applications of Electric charges; charging by induction",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Electric charges; charging by induction is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Electric charges; charging by induction applies",
+    "Note 2: Electric charges; charging by induction connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Electric charges; charging by induction",
+    "Note 4: Remember the units and dimensions involved in Electric charges; charging by induction",
+    "Note 5: Electric charges; charging by induction frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Electric charges; charging by induction",
+    "Statement 2: Theorem related to Electric charges; charging by induction",
+    "Statement 3: Condition for Electric charges; charging by induction to be valid",
+    "Statement 4: Principle governing Electric charges; charging by induction",
+    "Statement 5: Corollary or consequence of Electric charges; charging by induction"
+  ],
+  "importantNotes": [
+    "Note 1: Electric charges; charging by induction is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Electric charges; charging by induction",
+    "Note 3: Electric charges; charging by induction has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Electric charges; charging by induction",
+    "Note 5: Cross-check your answers using alternative methods for Electric charges; charging by induction"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Electric charges; charging by induction formula",
+    "Trick 2: Elimination technique for Electric charges; charging by induction MCQs",
+    "Trick 3: Dimensional analysis shortcut for Electric charges; charging by induction",
+    "Trick 4: Memory aid for Electric charges; charging by induction formulas",
+    "Trick 5: Time-saving approach for Electric charges; charging by induction problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Electric charges; charging by induction",
+    "Exam Tip 2: Practice previous year questions on Electric charges; charging by induction",
+    "Exam Tip 3: Electric charges; charging by induction carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Electric charges; charging by induction thoroughly",
+    "Exam Tip 5: Review common mistakes related to Electric charges; charging by induction"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Electric charges; charging by induction?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Electric charges; charging by induction is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Electric charges; charging by induction, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Electric charges; charging by induction?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Electric charges; charging by induction is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Electric charges; charging by induction",
+    "Concept 2: Key theorem or principle in Electric charges; charging by induction",
+    "Concept 3: Important application area of Electric charges; charging by induction",
+    "Concept 4: Fundamental relationship in Electric charges; charging by induction",
+    "Concept 5: Connection between Electric charges; charging by induction and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Electric charges; charging by induction",
+    "Task 2: Derive the main formula for Electric charges; charging by induction",
+    "Task 3: Create a concept map for Electric charges; charging by induction",
+    "Task 4: Practice previous year exam questions on Electric charges; charging by induction",
+    "Task 5: Explain Electric charges; charging by induction to a peer or study group"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "electric-charges-and-charging-by-induction"
+}

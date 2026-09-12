@@ -1,0 +1,169 @@
+{
+  "title": "Dimensions and Uses of Dimensional Analysis",
+  "unitSlug": "physical-quantities",
+  "topicSlug": "dimensions-and-uses-of-dimensional-analysis",
+  "topicTitle": "Dimensions and uses of dimensional analysis",
+  "relevance": 100,
+  "notes": [
+    "**Dimensional formula** expresses a physical quantity in terms of the seven base quantities using symbols M (mass), L (length), T (time), I (current), Θ (temperature), J (luminous intensity) and N (amount of substance). Examples: velocity $[M^0 L^1 T^{-1}]$, force $[M^1 L^1 T^{-2}]$, energy $[M^1 L^2 T^{-2}]$, pressure $[M^1 L^{-1} T^{-2}]$.",
+    "**Principle of homogeneity:** a physically correct equation must have identical dimensions in every term. You can add 3 apples to 4 apples but not 3 apples to 4 metres — likewise $v = u + at$ works because every term is a velocity $[LT^{-1}]$.",
+    "**Use 1 — checking equations:** replace every quantity by its dimensional formula and verify the two sides match. If they don't, the equation is certainly wrong. If they do match, the equation is *probably* right (never proof — a factor of ½ is dimensionless and invisible).",
+    "**Use 2 — deriving relations (converting between systems):** assume a product of powers form and solve for the exponents. Example: period of a simple pendulum $T$ may depend on mass $m$, length $l$ and gravity $g$. Write $T = k\\,m^a l^b g^c$; matching dimensions $[T] = [M]^a [L]^{b}[LT^{-2}]^c$ gives $a = 0$, $b + c = 0$, $-2c = 1$ → $c = -1/2$, $b = 1/2$ → $T = k\\sqrt{l/g}$ (experiment gives $k = 2\\pi$).",
+    "**Use 3 — converting units:** to convert a quantity from one system to another, use $n_1 u_1 = n_2 u_2$ with $n_2 = n_1 \\left(\\\frac{M_1}{M_2}\\\right)^a \\left(\\\frac{L_1}{L_2}\\\right)^b \\left(\\\frac{T_1}{T_2}\\\right)^c$ for a quantity of dimensions $[M^aL^bT^c]$. Example: 1 N in CGS: $[MLT^{-2}]$, $n_2 = 1 \\\times (1000/1)(100/1)(1/1) = 10^5$ dyn.",
+    "**Limitations of dimensional analysis:** (1) it cannot find dimensionless constants ($2\\pi$, ½, sin θ); (2) it fails for quantities related by addition/subtraction or trigonometric, exponential and logarithmic functions; (3) it cannot reveal whether a quantity is scalar or vector; (4) it cannot derive an equation involving more unknown powers than available base dimensions.",
+    "**Dimensionless quantities:** angles (radian), strain, refractive index, relative density, coefficient of friction, all pure ratios. They have $[M^0L^0T^0]$ and are unchanged on unit conversion — which is exactly why trigonometric arguments must be dimensionless.",
+    "**Dimensional variables commonly asked in NEB:** Planck's constant $[ML^2T^{-1}]$ (same as angular momentum), gravitational constant $[M^{-1}L^3T^{-2}]$, coefficient of viscosity $[ML^{-1}T^{-1}]$, surface tension $[MT^{-2}]$, power $[ML^2T^{-3}]$, pressure/energy density $[ML^{-1}T^{-2}]$.",
+    "**NEB exam focus:** write dimensional formulas of 8–10 standard quantities; check homogeneity of a given equation; derive a relation (pendulum, wave speed on string $v \\propto \\sqrt{T/\\mu}$, or time of flight) using powers method; convert a force/energy value between SI and CGS."
+  ],
+  "confusion": [
+    "❌ 'If an equation is dimensionally correct, it is physically correct.' ✅ Homogeneity is a necessary but not sufficient test — $T = \\sqrt{l/g}$ and $T = 3\\sqrt{l/g}$ are both dimensionally correct; only one is true (the constant $2\\pi$ is invisible to dimensions).",
+    "❌ 'Dimensional formula and dimensional equation are the same.' ✅ The formula is $[F] = [MLT^{-2}]$; the equation is $F = [MLT^{-2}]$ — the equation shows the quantity equated to its dimensions.",
+    "❌ 'Angle has units but no dimensions, so it is not a physical quantity.' ✅ Angle is a dimensionless $[M^0L^0T^0]$ SUPPLEMENTARY quantity — it has a unit (radian) but zero exponents in M, L, T.",
+    "❌ 'Trigonometric, exponential and log functions can be applied to dimensional quantities.' ✅ Their arguments MUST be dimensionless — $\\sin(\\omega t)$ is valid only because $\\omega t$ is an angle (dimensionless).",
+    "❌ '1 newton = 1 dyn.' ✅ $1\\,\\\text{N} = 10^5\\,\\\text{dyn}$ — dimensional conversion ($[MLT^{-2}]$: 1000 g × 100 cm) gives the factor $10^5$.",
+    "❌ 'Dimensional analysis can determine the scalar/vector nature of a quantity.' ✅ It cannot — work and torque have identical dimensions $[ML^2T^{-2}]$ yet work is scalar, torque is vector."
+  ],
+  "practice": [
+    "Write dimensional formulas: (a) momentum (b) work (c) power (d) pressure (e) coefficient of viscosity. — Answers: (a) $[MLT^{-1}]$, (b) $[ML^2T^{-2}]$, (c) $[ML^2T^{-3}]$, (d) $[ML^{-1}T^{-2}]$, (e) $[ML^{-1}T^{-1}]$.",
+    "Check by dimensions whether $v^2 = u^2 + 2as$ is correct. — Each term: $[L^2T^{-2}]$; RHS: $(LT^{-1})^2 + (LT^{-2})(L) = [L^2T^{-2}]$ ✓ homogeneous.",
+    "The speed $v$ of transverse waves on a stretched string depends on tension $F$ and mass per length $\\mu$. Derive $v = k\\sqrt{F/\\mu}$ dimensionally. — $[LT^{-1}] = [MLT^{-2}]^a[ML^{-1}]^b$ → $a+b=0$, $a+b=1$? No: mass: $a+b=0$, length: $a-b=1$, time: $-2a=-1$ → $a=1/2, b=-1/2$ → $v = k\\sqrt{F/\\mu}$, experiment: $k = 1$.",
+    "Convert 1 joule into ergs. — Energy $[ML^2T^{-2}]$: $1 \\\times (1000)^1(100)^2 = 10^7$ erg.",
+    "Show that Planck's constant $h$ and angular momentum $mvr$ have the same dimensions and state them. — $h = E/f = [ML^2T^{-2}][T] = [ML^2T^{-1}]$; $mvr = [M][LT^{-1}][L] = [ML^2T^{-1}]$ ✓"
+  ],
+  "universalFacts": [
+    "Dimensional analysis was pioneered by Fourier (1822) and developed into a systematic tool by Rayleigh; the Buckingham π theorem is its formal generalisation used throughout engineering.",
+    "The 2019 SI redefinition fixed $h$ (Planck constant), $c$, $e$, $k_B$, $N_A$ etc. exactly — every unit is now dimensionally anchored to fundamental constants.",
+    "Physicists testing new theories always run a 'dimensional audit' first; many wrong published equations have been caught because their terms failed to balance dimensionally.",
+    "Stefan's law ($E = \\sigma T^4$) was derived dimensionally by Stefan in 1879 from Tyndall's experimental data, five years before Boltzmann derived it theoretically."
+  ],
+  "animation3D": "physical-quantities",
+  "motionGraphics": "physical-quantities",
+  "examples": [
+    "Example 1: Check $s = ut + \\\tfrac{1}{2}at^2$: $[LT^{-1}][T] + [LT^{-2}][T^2] = [L] + [L] = [L]$ ✓ — both terms are lengths, matching the LHS.",
+    "Example 2: A sphere of radius $r$ moving slowly with speed $v$ through a fluid of viscosity $\\eta$ experiences drag $F = k\\,\\eta^a r^b v^c$ (Stokes' law). Matching $[MLT^{-2}] = [ML^{-1}T^{-1}]^a [L]^b [LT^{-1}]^c$ gives $a = 1$, $b = 1$, $c = 1$ → $F = 6\\pi\\eta r v$.",
+    "Example 3: Convert a pressure of 1 pascal into CGS units: $[ML^{-1}T^{-2}]$ → $1 \\\times 1000 \\\times 10^{-2} = 10$ dyn cm⁻² = 10 barye.",
+    "Example 4: The energy $E$ of a photon is $hf$; verify: $h[ML^2T^{-1}] \\\times f[T^{-1}] = [ML^2T^{-2}]$ = dimensions of energy ✓.",
+    "Example 5: Find dimensions of $\\\frac{a}{b}$ in $P = \\\frac{a - b t^2}{x}$, where P = pressure, x = distance, t = time. Numerator must be $[ML^{-1}T^{-2}][L] = [MT^{-2}]$; so $[a] = [MT^{-2}]$ and $[b] = [MT^{-4}]$ → $\\\frac{a}{b} = [T^2]$."
+  ],
+  "practiceQuestions": [
+    "Q1. Define dimensional formula and dimensional equation with one example each.",
+    "Q2. State the principle of homogeneity of dimensions and use it to test the equation $v = u - at$.",
+    "Q3. Assuming the period $T$ of a simple pendulum depends on its length $l$ and acceleration due to gravity $g$, derive the relation $T = k\\sqrt{l/g}$ dimensionally.",
+    "Q4. Convert 1 newton into dyne using dimensional analysis.",
+    "Q5. Write three limitations of dimensional analysis."
+  ],
+  "formulas": [
+    "Force: $[F] = [MLT^{-2}]$",
+    "Work/Energy/Torque: $[ML^2T^{-2}]$",
+    "Power: $[ML^2T^{-3}]$; Pressure/Stress/Energy density: $[ML^{-1}T^{-2}]$",
+    "Gravitational constant: $[G] = [M^{-1}L^3T^{-2}]$; Planck constant: $[h] = [ML^2T^{-1}]$",
+    "Unit conversion: $n_2 = n_1 \\left(\\\frac{M_1}{M_2}\\\right)^a\\left(\\\frac{L_1}{L_2}\\\right)^b\\left(\\\frac{T_1}{T_2}\\\right)^c$ for $[M^aL^bT^c]$"
+  ],
+  "keyPoints": [
+    "Dimensional homogeneity is a necessary test of correctness — it can reject an equation but can never fully prove one.",
+    "Dimensionless constants (½, 2π, e) are invisible to dimensional analysis.",
+    "Quantities with identical dimensions can still be physically different (work vs torque; energy vs moment).",
+    "The powers method can only solve for as many unknown exponents as there are independent base dimensions (usually 3: M, L, T).",
+    "Angle (radian) and steradian are supplementary, dimensionless $[M^0L^0T^0]$ units.",
+    "Any term inside sin, cos, exp, log must be dimensionless."
+  ],
+  "summary": "Dimensional analysis expresses every physical quantity as a product of powers of base dimensions (M, L, T, ...). The principle of homogeneity — every term of a valid equation must share the same dimensions — gives three practical tools: checking equations, deriving unknown relations by the method of powers (e.g. $T = k\\sqrt{l/g}$ for a pendulum), and converting numerical values between unit systems ($1\\,\\\text{N} = 10^5\\,\\\text{dyn}$, $1\\,\\\text{J} = 10^7\\,\\\text{erg}$). Its limits matter: dimensionless constants, scalar/vector character, and functional forms (trig/exp/log) lie beyond its reach.",
+  "specialNotes": [
+    "Note 1: Memorise the standard table — NEB asks dimensional formulas of force, momentum, power, pressure, G, h, viscosity and surface tension nearly every year.",
+    "Note 2: In derivation questions, ALWAYS begin by writing the assumed product-of-powers form and end by interpreting the exponents.",
+    "Note 3: When converting units, keep the dimensional exponents of the QUANTITY (not of the units) — the commonest source of sign errors.",
+    "Note 4: Dimensionless groups (Reynolds number, Mach number) are the basis of scale-model testing in engineering — same dimensions in, same physics out."
+  ],
+  "importantStatements": [
+    "Statement 1: The dimensions of every term in a physically valid equation must be identical (principle of dimensional homogeneity).",
+    "Statement 2: Dimensional methods can determine the FORM of a relation but never its dimensionless constants.",
+    "Statement 3: The numerical value of a physical quantity changes with the unit system, but the quantity itself ($n \\\times u$) is invariant."
+  ],
+  "importantNotes": [
+    "Note 1: Work and torque share dimensions $[ML^2T^{-2}]$ but differ physically (scalar vs vector) — dimensions do not define a quantity.",
+    "Note 2: The pendulum derivation gives $T = k\\sqrt{l/g}$; the constant $k = 2\\pi$ must come from experiment or full theory.",
+    "Note 3: Only three base dimensions (M, L, T) are usually available, so at most three unknown exponents can be determined.",
+    "Note 4: Dimensionless arguments are mandatory in trigonometric, exponential and logarithmic functions."
+  ],
+  "examShortTricks": [
+    "Trick 1: Build dimensional formulas from known definitions rather than memorising: force = ma, then chain (power = F·v, pressure = F/A, etc.).",
+    "Trick 2: 'Same dimensions' pairs frequently asked: work–torque–energy; Planck's constant–angular momentum; impulse–momentum; pressure–energy density; gravitational potential–velocity squared.",
+    "Trick 3: For 'find dimensions of a/b in equation' questions, apply homogeneity term-by-term first, then take the ratio.",
+    "Trick 4: For unit conversion, write the dimension of the quantity and multiply/divide by the length–mass–time scale factors in that order.",
+    "Trick 5: If an MCQ shows an equation mixing velocity and acceleration as separate added terms, reject it instantly — homogeneity fails."
+  ],
+  "examNotes": [
+    "Exam Tip 1: A 2-mark derivation by the powers method (pendulum, string wave, Stokes' law) appears in NEB almost every year — practise the full written format.",
+    "Exam Tip 2: Always state limitations when asked to 'derive and comment' — omitting them costs the last mark.",
+    "Exam Tip 3: For conversion numericals, show $n_1 u_1 = n_2 u_2$ explicitly; the final factor without working earns half marks only.",
+    "Exam Tip 4: Check answers dimensionally at the end of every long derivation — it takes 30 seconds and catches most slips."
+  ],
+  "mcs": [
+    {
+      "question": "The dimensional formula of coefficient of viscosity is:",
+      "options": [
+        "[ML⁻¹T⁻¹]",
+        "[MLT⁻²]",
+        "[ML⁻¹T⁻²]",
+        "[M⁰LT⁻¹]"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which pair has the SAME dimensions?",
+      "options": [
+        "Work and power",
+        "Torque and work",
+        "Force and momentum",
+        "Pressure and force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The dimensions of Planck's constant are the same as those of:",
+      "options": [
+        "Energy",
+        "Linear momentum",
+        "Angular momentum",
+        "Power"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "1 joule equals:",
+      "options": [
+        "10⁵ erg",
+        "10⁷ erg",
+        "10³ erg",
+        "10⁹ erg"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Dimensional analysis CANNOT be used to:",
+      "options": [
+        "Check an equation",
+        "Convert units",
+        "Find the value of the dimensionless constant 2π",
+        "Derive the form of a relation"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Base quantities (M, L, T, I, Θ, J, N) and derived quantities expressed as dimensional formulas.",
+    "Concept 2: Principle of homogeneity — the fundamental test of dimensional validity of any equation.",
+    "Concept 3: Method of powers for deriving relations: assume product form, equate exponents per base dimension.",
+    "Concept 4: Unit conversion via dimensional formula: n₂ = n₁ × (scale factors)^(exponents).",
+    "Concept 5: Dimensionless quantities (strain, angle, refractive index) and their special role in functional arguments."
+  ],
+  "importantTasks": [
+    "Task 1: Prepare a memorised table of 15 standard dimensional formulas (force → luminous flux).",
+    "Task 2: Derive $T = 2\\pi\\sqrt{l/g}$, $v = \\sqrt{F/\\mu}$ and $F = 6\\pi\\eta rv$ fully by the powers method.",
+    "Task 3: Convert 1 atmosphere (10⁵ Pa) into CGS units and verify with the definition 1 barye = 1 dyn/cm².",
+    "Task 4: Solve the NEB past question on finding the dimensions of a and b in a given equation, and the ratio a/b.",
+    "Task 5: Write three physics equations you know and verify each dimensionally — one where it passes, then invent one that fails."
+  ],
+  "duplicateType": 2,
+  "tabGroup": "dimensions-dimensional-analysis"
+}

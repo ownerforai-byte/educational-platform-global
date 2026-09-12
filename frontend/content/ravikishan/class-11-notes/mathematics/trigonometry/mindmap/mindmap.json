@@ -1,0 +1,27 @@
+{
+  "title": "Trigonometry Mindmap",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-mindmap",
+  "topicTitle": "Trigonometry — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Trigonometry",
+    "children": [
+      {
+        "id": "inverse-circular-functions",
+        "label": "Inverse circular functions"
+      },
+      {
+        "id": "trigonometric-equations-and-ge",
+        "label": "Trigonometric equations",
+        "children": [
+          {
+            "id": "trigonometric-equations-sub-0",
+            "label": "general values"
+          }
+        ]
+      }
+    ]
+  }
+}

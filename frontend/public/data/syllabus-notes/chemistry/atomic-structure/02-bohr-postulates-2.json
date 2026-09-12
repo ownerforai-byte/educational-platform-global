@@ -1,0 +1,169 @@
+{
+  "title": "Bohr's Postulates",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "bohr-postulates",
+  "topicTitle": "Bohr's Postulates",
+  "relevance": 87,
+  "notes": [
+    "**Postulate 1 — Stationary orbits (Quantization of orbits):** Electrons revolve only in certain specific, fixed circular paths (orbits) around the nucleus without radiating energy. These are called stationary states or allowed orbits. Each orbit corresponds to a definite energy level.",
+    "**Postulate 2 — Quantization of angular momentum:** The angular momentum of the electron in a stationary orbit is quantized and is an integral multiple of $h/2\\pi$: $m v r = n \\frac{h}{2\\pi}$, where $m$ = electron mass, $v$ = orbital velocity, $r$ = orbit radius, $n$ = principal quantum number ($1, 2, 3, \\dots$), and $h$ = Planck's constant.",
+    "**Postulate 3 — Energy quantization and photon emission/absorption:** Energy is emitted or absorbed only when an electron jumps from one stationary orbit to another. The energy difference between the two orbits is given by $\\Delta E = E_2 - E_1 = h\\nu$, where $\\nu$ is the frequency of the emitted or absorbed photon. This explains line spectra.",
+    "**Postulate 4 — Stationary state stability:** An electron in a stationary orbit does not radiate energy despite being in accelerated motion. This postulate directly contradicts classical electrodynamics but is essential for atomic stability.",
+    "**Derivation of orbit radius ($r_n$):** Equating Coulomb force to centripetal force: $\\frac{1}{4\\pi\\varepsilon_0} \\frac{Ze^2}{r_n^2} = \\frac{m v_n^2}{r_n}$. Combined with $m v_n r_n = n \\frac{h}{2\\pi}$, we get $r_n = n^2 a_0 / Z$, where $a_0 = \\frac{4\\pi\\varepsilon_0 \\hbar^2}{m e^2} \\approx 0.529 \\times 10^{-10}$ m is the **Bohr radius**.",
+    "**Derivation of electron velocity ($v_n$):** $v_n = \\frac{Z e^2}{4\\pi\\varepsilon_0 n \\hbar} = \\frac{Z \\alpha c}{n}$, where $\\alpha \\approx 1/137$ is the fine-structure constant. For hydrogen ground state ($n=1, Z=1$), $v_1 \\approx 2.19 \\times 10^6$ m/s (about $c/137$).",
+    "**Derivation of total energy ($E_n$):** $E_n = K + U = \\frac{1}{2} m v_n^2 - \\frac{1}{4\\pi\\varepsilon_0} \\frac{Ze^2}{r_n} = -\\frac{1}{4\\pi\\varepsilon_0} \\frac{Z^2 e^2}{2 r_n} = -\\frac{m Z^2 e^4}{32 \\pi^2 \\varepsilon_0^2 \\hbar^2 n^2} = -\\frac{13.6 \\text{ eV} \\cdot Z^2}{n^2}$. The negative sign indicates the electron is bound to the nucleus.",
+    "**Energy level spacing:** $E_n \\propto 1/n^2$, so energy levels get closer together as $n$ increases. The ionization energy of hydrogen is $13.6$ eV (energy needed to go from $n=1$ to $n=\\infty$)."
+  ],
+  "confusion": [
+    "Misconception: Bohr's postulates are derived from classical physics. — Correction: Bohr's postulates are *ad hoc* assumptions that deliberately break classical physics. They cannot be derived; they are justified only by their success in predicting hydrogen's spectrum.",
+    "Misconception: The electron in a stationary orbit is at rest. — Correction: The electron is moving at high speed ($\\sim 2 \\times 10^6$ m/s in ground state hydrogen). It just does not radiate energy while in that orbit.",
+    "Misconception: The angular momentum quantum number $n$ can be zero. — Correction: $n = 1, 2, 3, \\dots$. $n=0$ would give zero angular momentum, zero radius, and infinite energy — physically meaningless in Bohr's model.",
+    "Misconception: Bohr's model works for all atoms. — Correction: Bohr's model works exactly only for hydrogen-like (single-electron) systems: H, He$^+$, Li$^{2+}$, etc. It fails for multi-electron atoms due to electron-electron repulsion and non-circular orbits."
+  ],
+  "practice": [
+    "Calculate the radius of the third Bohr orbit of hydrogen. Solution: $r_3 = 3^2 a_0 = 9 \\times 0.529 \\times 10^{-10}$ m = $4.76 \\times 10^{-10}$ m.",
+    "Find the velocity of the electron in the second orbit of He$^+$ ($Z=2$). Solution: $v_2 = \\frac{Z \\alpha c}{n} = \\frac{2 \\times (1/137) \\times 3 \\times 10^8}{2} \\approx 2.19 \\times 10^6$ m/s (same as hydrogen $n=1$ due to $Z/n = 2/2 = 1$).",
+    "What is the energy of an electron in the $n=4$ orbit of Li$^{2+}$ ($Z=3$)? Solution: $E_4 = -\\frac{13.6 \\times 3^2}{4^2}$ eV = $-\\frac{122.4}{16}$ = $-7.65$ eV.",
+    "A hydrogen atom absorbs a photon and goes from $n=1$ to $n=3$. What is the wavelength of the absorbed photon? Solution: $\\Delta E = 13.6 \\times (1 - 1/9) = 13.6 \\times 8/9 = 12.09$ eV. $\\lambda = hc/\\Delta E = 1240/12.09 \\approx 102.6$ nm (Lyman series, UV)."
+  ],
+  "universalFacts": [
+    "Bohr's model was the first to successfully predict the hydrogen spectrum using quantum ideas, earning Bohr the Nobel Prize in 1922.",
+    "The Bohr radius $a_0 = 0.529 \\times 10^{-10}$ m is a fundamental atomic length scale. It appears in the Schrödinger equation solution for hydrogen and defines the scale of atomic orbitals.",
+    "The fine-structure constant $\\alpha = \\frac{e^2}{4\\pi\\varepsilon_0 \\hbar c} \\approx 1/137$ is a dimensionless number characterizing the strength of electromagnetic interaction. It appears naturally in Bohr's model as $v_n/c = Z\\alpha/n$.",
+    "Bohr's quantization condition $mvr = n\\hbar$ can be reinterpreted using de Broglie waves: a stable orbit must contain an integer number of electron wavelengths ($2\\pi r = n\\lambda$). This wave perspective anticipated quantum mechanics."
+  ],
+  "animation3D": "atomic-structure",
+  "motionGraphics": "atomic-structure",
+  "examples": [
+    "Example 1: Real-world application of Postulates of Bohr's atomic model and its application",
+    "Example 2: Practical demonstration of Postulates of Bohr's atomic model and its application concepts",
+    "Example 3: Numerical problem on Postulates of Bohr's atomic model and its application",
+    "Example 4: Diagram-based question on Postulates of Bohr's atomic model and its application",
+    "Example 5: Application in daily life involving Postulates of Bohr's atomic model and its application"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Postulates of Bohr's atomic model and its application with suitable example.",
+    "Q2. Solve problems related to Postulates of Bohr's atomic model and its application.",
+    "Q3. Differentiate between various aspects of Postulates of Bohr's atomic model and its application.",
+    "Q4. Derive the key formula related to Postulates of Bohr's atomic model and its application.",
+    "Q5. What are the applications of Postulates of Bohr's atomic model and its application?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Postulates of Bohr's atomic model and its application",
+    "Key Formula 2: Mathematical expression of Postulates of Bohr's atomic model and its application",
+    "Key Formula 3: Application formula for Postulates of Bohr's atomic model and its application",
+    "Key Formula 4: Derivation result for Postulates of Bohr's atomic model and its application",
+    "Key Formula 5: Important relation in Postulates of Bohr's atomic model and its application"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Postulates of Bohr's atomic model and its application",
+    "Key Point 2: Essential theorem or principle related to Postulates of Bohr's atomic model and its application",
+    "Key Point 3: Important condition or constraint for Postulates of Bohr's atomic model and its application",
+    "Key Point 4: Common applications of Postulates of Bohr's atomic model and its application",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Postulates of Bohr's atomic model and its application is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Postulates of Bohr's atomic model and its application applies",
+    "Note 2: Postulates of Bohr's atomic model and its application connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Postulates of Bohr's atomic model and its application",
+    "Note 4: Remember the units and dimensions involved in Postulates of Bohr's atomic model and its application",
+    "Note 5: Postulates of Bohr's atomic model and its application frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Postulates of Bohr's atomic model and its application",
+    "Statement 2: Theorem related to Postulates of Bohr's atomic model and its application",
+    "Statement 3: Condition for Postulates of Bohr's atomic model and its application to be valid",
+    "Statement 4: Principle governing Postulates of Bohr's atomic model and its application",
+    "Statement 5: Corollary or consequence of Postulates of Bohr's atomic model and its application"
+  ],
+  "importantNotes": [
+    "Note 1: Postulates of Bohr's atomic model and its application is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Postulates of Bohr's atomic model and its application",
+    "Note 3: Postulates of Bohr's atomic model and its application has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Postulates of Bohr's atomic model and its application",
+    "Note 5: Cross-check your answers using alternative methods for Postulates of Bohr's atomic model and its application"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Postulates of Bohr's atomic model and its application formula",
+    "Trick 2: Elimination technique for Postulates of Bohr's atomic model and its application MCQs",
+    "Trick 3: Dimensional analysis shortcut for Postulates of Bohr's atomic model and its application",
+    "Trick 4: Memory aid for Postulates of Bohr's atomic model and its application formulas",
+    "Trick 5: Time-saving approach for Postulates of Bohr's atomic model and its application problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Postulates of Bohr's atomic model and its application",
+    "Exam Tip 2: Practice previous year questions on Postulates of Bohr's atomic model and its application",
+    "Exam Tip 3: Postulates of Bohr's atomic model and its application carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Postulates of Bohr's atomic model and its application thoroughly",
+    "Exam Tip 5: Review common mistakes related to Postulates of Bohr's atomic model and its application"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Postulates of Bohr's atomic model and its application?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Postulates of Bohr's atomic model and its application is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Postulates of Bohr's atomic model and its application, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Postulates of Bohr's atomic model and its application?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Postulates of Bohr's atomic model and its application is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Postulates of Bohr's atomic model and its application",
+    "Concept 2: Key theorem or principle in Postulates of Bohr's atomic model and its application",
+    "Concept 3: Important application area of Postulates of Bohr's atomic model and its application",
+    "Concept 4: Fundamental relationship in Postulates of Bohr's atomic model and its application",
+    "Concept 5: Connection between Postulates of Bohr's atomic model and its application and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Postulates of Bohr's atomic model and its application",
+    "Task 2: Derive the main formula for Postulates of Bohr's atomic model and its application",
+    "Task 3: Create a concept map for Postulates of Bohr's atomic model and its application",
+    "Task 4: Practice previous year exam questions on Postulates of Bohr's atomic model and its application",
+    "Task 5: Explain Postulates of Bohr's atomic model and its application to a peer or study group"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "postulates-of-bohr-s-atomic-model-and-its-application"
+}

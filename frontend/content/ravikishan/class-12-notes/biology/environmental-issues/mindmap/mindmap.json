@@ -1,0 +1,59 @@
+{
+  "title": "Environmental Issues Mindmap",
+  "unitSlug": "environmental-issues",
+  "topicSlug": "environmental-issues-mindmap",
+  "topicTitle": "Environmental Issues — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Environmental Issues",
+    "children": [
+      {
+        "id": "air-pollution-causes-effects-a",
+        "label": "Air pollution — causes, effects,",
+        "children": [
+          {
+            "id": "air-pollution-causes-effects--sub-0",
+            "label": "control"
+          }
+        ]
+      },
+      {
+        "id": "water-pollution-causes-effects",
+        "label": "Water pollution — causes, effects,",
+        "children": [
+          {
+            "id": "water-pollution-causes-effects--sub-0",
+            "label": "control"
+          }
+        ]
+      },
+      {
+        "id": "solid-waste-management",
+        "label": "Solid waste management"
+      },
+      {
+        "id": "nuclear-radiation-hazards",
+        "label": "Nuclear radiation hazards"
+      },
+      {
+        "id": "greenhouse-effect-global-warming-climate",
+        "label": "Greenhouse effect, global warming, climate change"
+      },
+      {
+        "id": "ozone-layer-depletion",
+        "label": "Ozone layer depletion"
+      },
+      {
+        "id": "rainwater-harvesting-and-waste",
+        "label": "Rainwater harvesting",
+        "children": [
+          {
+            "id": "rainwater-harvesting-sub-0",
+            "label": "wasteland development"
+          }
+        ]
+      }
+    ]
+  }
+}

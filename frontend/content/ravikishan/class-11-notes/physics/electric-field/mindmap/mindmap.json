@@ -1,0 +1,45 @@
+{
+  "title": "Electric Field Mindmap",
+  "unitSlug": "electric-field",
+  "topicSlug": "electric-field-mindmap",
+  "topicTitle": "Electric Field — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Electric Field",
+    "children": [
+      {
+        "id": "electric-field-due-to-point-ch",
+        "label": "Electric field due to point charges",
+        "children": [
+          {
+            "id": "electric-field-due-to-point-charges-sub-0",
+            "label": "field lines"
+          }
+        ]
+      },
+      {
+        "id": "gauss-law-electric-flux",
+        "label": "Gauss law: electric flux"
+      },
+      {
+        "id": "application-of-gauss-law-field",
+        "label": "Application of Gauss law",
+        "children": [
+          {
+            "id": "application-of-gauss-law-sub-0",
+            "label": "field of a charge sphere"
+          },
+          {
+            "id": "application-of-gauss-law-sub-1",
+            "label": "line charge"
+          },
+          {
+            "id": "application-of-gauss-law-sub-2",
+            "label": "charged plane conductor"
+          }
+        ]
+      }
+    ]
+  }
+}

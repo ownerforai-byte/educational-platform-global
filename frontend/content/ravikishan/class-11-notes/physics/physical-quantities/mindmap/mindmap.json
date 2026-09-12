@@ -1,0 +1,33 @@
+{
+  "title": "Physical Quantities Mindmap",
+  "unitSlug": "physical-quantities",
+  "topicSlug": "physical-quantities-mindmap",
+  "topicTitle": "Physical Quantities — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Physical Quantities",
+    "children": [
+      {
+        "id": "precision-and-significant-figu",
+        "label": "Precision",
+        "children": [
+          {
+            "id": "precision-sub-0",
+            "label": "significant figures"
+          }
+        ]
+      },
+      {
+        "id": "dimensions-and-uses-of-dimensi",
+        "label": "Dimensions",
+        "children": [
+          {
+            "id": "dimensions-sub-0",
+            "label": "uses of dimensional analysis"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Wave Optics Mindmap",
+  "unitSlug": "wave-optics",
+  "topicSlug": "wave-optics-mindmap",
+  "topicTitle": "Wave Optics — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Wave Optics",
+    "children": [
+      {
+        "id": "wavefront-and-huygens-principl",
+        "label": "Wavefront",
+        "children": [
+          {
+            "id": "wavefront-sub-0",
+            "label": "Huygens' principle"
+          }
+        ]
+      },
+      {
+        "id": "interference-of-light-young-s-double-sli",
+        "label": "Interference of light — Young's double slit experiment"
+      },
+      {
+        "id": "diffraction-of-light-single-slit-diffrac",
+        "label": "Diffraction of light — single slit diffraction"
+      },
+      {
+        "id": "polarization-brewster-s-law-an",
+        "label": "Polarization — Brewster's law",
+        "children": [
+          {
+            "id": "polarization-brewster-s-law-sub-0",
+            "label": "polaroids"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "title": "Calculus Mindmap",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-mindmap",
+  "topicTitle": "Calculus — interactive concept map",
+  "relevance": 1,
+  "root": {
+    "id": "root",
+    "label": "Calculus",
+    "children": [
+      {
+        "id": "limits-and-continuity-limits-o",
+        "label": "Limits and continuity",
+        "children": [
+          {
+            "id": "limits-and-continuity-sub-0",
+            "label": "limits of a function"
+          },
+          {
+            "id": "limits-and-continuity-sub-1",
+            "label": "indeterminate forms"
+          },
+          {
+            "id": "limits-and-continuity-sub-2",
+            "label": "algebraic properties of limits (without proof"
+          },
+          {
+            "id": "limits-and-continuity-sub-3",
+            "label": "basic theorems on limits of algebraic"
+          },
+          {
+            "id": "limits-and-continuity-sub-4",
+            "label": "trigonometric"
+          },
+          {
+            "id": "limits-and-continuity-sub-5",
+            "label": "exponential and logarithmic functions"
+          }
+        ]
+      },
+      {
+        "id": "continuity-of-a-function-types-of-discon",
+        "label": "Continuity of a function, types of discontinuity, graphs of discontinuous function"
+      },
+      {
+        "id": "derivatives-derivative-of-a-fu",
+        "label": "Derivatives",
+        "children": [
+          {
+            "id": "derivatives-sub-0",
+            "label": "derivative of a function"
+          },
+          {
+            "id": "derivatives-sub-1",
+            "label": "derivatives of algebraic"
+          },
+          {
+            "id": "derivatives-sub-2",
+            "label": "trigonometric"
+          },
+          {
+            "id": "derivatives-sub-3",
+            "label": "inverse trigonometric"
+          },
+          {
+            "id": "derivatives-sub-4",
+            "label": "exponential and logarithmic functions by definition (simple forms"
+          }
+        ]
+      },
+      {
+        "id": "rules-of-differentiation-deriv",
+        "label": "Rules of differentiation",
+        "children": [
+          {
+            "id": "rules-of-differentiation-sub-0",
+            "label": "derivatives of parametric and implicit functions"
+          },
+          {
+            "id": "rules-of-differentiation-sub-1",
+            "label": "higher order derivatives"
+          }
+        ]
+      },
+      {
+        "id": "geometric-interpretation-of-de",
+        "label": "Geometric interpretation of derivative",
+        "children": [
+          {
+            "id": "geometric-interpretation-of-derivative-sub-0",
+            "label": "monotonicity of a function, interval of monotonicity, extreme values of a function, concavity, points of inflection"
+          }
+        ]
+      },
+      {
+        "id": "anti-derivatives-integration-u",
+        "label": "Anti-derivatives",
+        "children": [
+          {
+            "id": "anti-derivatives-sub-0",
+            "label": "integration using basic integrals"
+          },
+          {
+            "id": "anti-derivatives-sub-1",
+            "label": "integration by substitution and by parts methods"
+          }
+        ]
+      },
+      {
+        "id": "the-definite-integral-the-defi",
+        "label": "The definite integral",
+        "children": [
+          {
+            "id": "the-definite-integral-sub-0",
+            "label": "the definite integral as an area under the given curve"
+          },
+          {
+            "id": "the-definite-integral-sub-1",
+            "label": "area between two curves"
+          }
+        ]
+      }
+    ]
+  }
+}

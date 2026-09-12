@@ -1,0 +1,174 @@
+{
+  "title": "Resistances in Series and Parallel",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "resistances-in-series-and-parallel",
+  "topicTitle": "Resistances in series and parallel",
+  "relevance": 100,
+  "notes": [
+    "**Series:** same current through all resistors. $R_{eq} = R_1 + R_2 + \\ldots$. Voltage divides: $V_i = I R_i$.",
+    "**Parallel:** same voltage across all resistors. $1/R_{eq} = 1/R_1 + 1/R_2 + \\ldots$. Current divides: $I_i = V/R_i$.",
+    "**Why series increases resistance:** the current must pass through each resistor sequentially, so each adds its opposition to the total.",
+    "**Why parallel decreases resistance:** multiple paths allow more current for the same voltage, equivalent to increasing the cross-sectional area of a single conductor.",
+    "**Special case — two parallel resistors:** $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. This is always less than the smaller resistor.",
+    "**Series voltage divider:** in a series chain, each resistor gets a fraction of the total voltage proportional to its resistance: $V_i = V_{total} \\cdot R_i / R_{total}$.",
+    "**Parallel current divider:** in a parallel group, each resistor gets a fraction of the total current inversely proportional to its resistance: $I_i = I_{total} \\cdot R_{eq}/R_i$.",
+    "**Power in series:** $P = I^2 R$. Larger resistors dissipate more power in series because they carry the same current but have larger voltage drop.",
+    "**Power in parallel:** $P = V^2/R$. Smaller resistors dissipate more power in parallel because they draw more current at the same voltage.",
+    "**Identical resistors in parallel:** $n$ identical resistors of value $R$ in parallel give $R_{eq} = R/n$. This is useful for sharing current among multiple resistors.",
+    "**Kirchhoff's laws:** series resistors satisfy KVL (sum of voltages equals source). Parallel resistors satisfy KCL (sum of currents equals total).",
+    "**Mixed networks:** reduce step by step — find series or parallel groups, replace with equivalents, and repeat until one resistor remains."
+  ],
+  "confusion": [
+    "Resistors in series add (like capacitors in parallel). Resistors in parallel combine inversely (like capacitors in series). The rules for resistors and capacitors are always opposite.",
+    "The equivalent resistance of a parallel combination is always less than the smallest individual resistor. Do not think of it as simply 'dividing' — the math is $R_{eq} = (R_1 R_2)/(R_1 + R_2)$.",
+    "In series, the same current flows through all resistors, but the voltage drop across each is different (proportional to its resistance). In parallel, the same voltage is across each, but current differs.",
+    "When a resistor is added in parallel, the equivalent resistance decreases. When added in series, it increases. This is because parallel paths provide more conduction channels.",
+    "Two resistors of equal value $R$ in parallel give $R/2$. Two resistors of equal value in series give $2R$. These are the most common benchmark results in circuit analysis."
+  ],
+  "practice": [
+    "Three resistors $4\\,\\Omega$, $6\\,\\Omega$, and $12\\,\\Omega$ are in parallel. Find the equivalent resistance. Solution: $1/R_{eq} = 1/4 + 1/6 + 1/12 = 3/12 + 2/12 + 1/12 = 6/12 = 1/2$. $R_{eq} = 2\\,\\Omega$.",
+    "Resistors $3\\,\\Omega$ and $6\\,\\Omega$ are in parallel, and this combination is in series with a $2\\,\\Omega$ resistor. Find the total resistance. Solution: Parallel: $R_p = (3 \\times 6)/(3 + 6) = 2\\,\\Omega$. Total: $R = 2 + 2 = 4\\,\\Omega$.",
+    "A 24 V battery is connected across a series combination of $4\\,\\Omega$ and $8\\,\\Omega$. Find the current, voltage across each, and power dissipated by each. Solution: $R_{eq} = 12\\,\\Omega$. $I = 24/12 = 2$ A. $V_1 = 2 \\times 4 = 8$ V, $V_2 = 2 \\times 8 = 16$ V. $P_1 = I^2 R_1 = 4 \\times 4 = 16$ W. $P_2 = I^2 R_2 = 4 \\times 8 = 32$ W.",
+    "A 60 V battery is connected across a parallel combination of $10\\,\\Omega$ and $15\\,\\Omega$. Find the current through each and the total current. Solution: $I_1 = 60/10 = 6$ A. $I_2 = 60/15 = 4$ A. $I_{total} = 10$ A. $R_{eq} = 60/10 = 6\\,\\Omega$. Check: $1/R_{eq} = 1/10 + 1/15 = 1/6$.",
+    "Find the equivalent resistance between points A and B for a network of five $1\\,\\Omega$ resistors arranged in a pentagon, with one resistor across each diagonal. Solution: This is a complex network. Using symmetry and nodal analysis, the equivalent resistance between adjacent vertices is $7/12\\,\\Omega$."
+  ],
+  "universalFacts": [
+    "The equivalent resistance of resistors in series is always greater than the largest individual resistance. The equivalent resistance of resistors in parallel is always less than the smallest individual resistance.",
+    "In household wiring, all appliances are connected in parallel so each receives the full supply voltage and can be operated independently.",
+    "Fuse wires are connected in series with the load because they must carry the same current as the load to protect it from overcurrent.",
+    "The current divider rule for two parallel resistors: $I_1 = I_{total} \\cdot R_2/(R_1 + R_2)$. The current splits inversely with resistance — the smaller resistor gets more current.",
+    "For $n$ identical resistors of value $R$: series gives $nR$, parallel gives $R/n$. A resistance box achieves any resistance by switching resistors in series or parallel."
+  ],
+  "animation3D": "dc-circuits",
+  "motionGraphics": "dc-circuits",
+  "examples": [
+    "Example 1: Real-world application of Resistances in series and parallel",
+    "Example 2: Practical demonstration of Resistances in series and parallel concepts",
+    "Example 3: Numerical problem on Resistances in series and parallel",
+    "Example 4: Diagram-based question on Resistances in series and parallel",
+    "Example 5: Application in daily life involving Resistances in series and parallel"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Resistances in series and parallel with suitable example.",
+    "Q2. Solve problems related to Resistances in series and parallel.",
+    "Q3. Differentiate between various aspects of Resistances in series and parallel.",
+    "Q4. Derive the key formula related to Resistances in series and parallel.",
+    "Q5. What are the applications of Resistances in series and parallel?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Resistances in series and parallel",
+    "Key Formula 2: Mathematical expression of Resistances in series and parallel",
+    "Key Formula 3: Application formula for Resistances in series and parallel",
+    "Key Formula 4: Derivation result for Resistances in series and parallel",
+    "Key Formula 5: Important relation in Resistances in series and parallel"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Resistances in series and parallel",
+    "Key Point 2: Essential theorem or principle related to Resistances in series and parallel",
+    "Key Point 3: Important condition or constraint for Resistances in series and parallel",
+    "Key Point 4: Common applications of Resistances in series and parallel",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Resistances in series and parallel is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Resistances in series and parallel applies",
+    "Note 2: Resistances in series and parallel connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Resistances in series and parallel",
+    "Note 4: Remember the units and dimensions involved in Resistances in series and parallel",
+    "Note 5: Resistances in series and parallel frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Resistances in series and parallel",
+    "Statement 2: Theorem related to Resistances in series and parallel",
+    "Statement 3: Condition for Resistances in series and parallel to be valid",
+    "Statement 4: Principle governing Resistances in series and parallel",
+    "Statement 5: Corollary or consequence of Resistances in series and parallel"
+  ],
+  "importantNotes": [
+    "Note 1: Resistances in series and parallel is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Resistances in series and parallel",
+    "Note 3: Resistances in series and parallel has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Resistances in series and parallel",
+    "Note 5: Cross-check your answers using alternative methods for Resistances in series and parallel"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Resistances in series and parallel formula",
+    "Trick 2: Elimination technique for Resistances in series and parallel MCQs",
+    "Trick 3: Dimensional analysis shortcut for Resistances in series and parallel",
+    "Trick 4: Memory aid for Resistances in series and parallel formulas",
+    "Trick 5: Time-saving approach for Resistances in series and parallel problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Resistances in series and parallel",
+    "Exam Tip 2: Practice previous year questions on Resistances in series and parallel",
+    "Exam Tip 3: Resistances in series and parallel carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Resistances in series and parallel thoroughly",
+    "Exam Tip 5: Review common mistakes related to Resistances in series and parallel"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Resistances in series and parallel?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Resistances in series and parallel is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Resistances in series and parallel, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Resistances in series and parallel?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Resistances in series and parallel is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Resistances in series and parallel",
+    "Concept 2: Key theorem or principle in Resistances in series and parallel",
+    "Concept 3: Important application area of Resistances in series and parallel",
+    "Concept 4: Fundamental relationship in Resistances in series and parallel",
+    "Concept 5: Connection between Resistances in series and parallel and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Resistances in series and parallel",
+    "Task 2: Derive the main formula for Resistances in series and parallel",
+    "Task 3: Create a concept map for Resistances in series and parallel",
+    "Task 4: Practice previous year exam questions on Resistances in series and parallel",
+    "Task 5: Explain Resistances in series and parallel to a peer or study group"
+  ]
+}
