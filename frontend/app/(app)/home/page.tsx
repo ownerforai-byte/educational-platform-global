@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { SYLLABUS } from "@/lib/syllabus";
 import { StudyChat } from "@/components/chat/study-chat";
+import { ScienceLabSection } from "@/components/lab/science-lab-section";
+import { PhysicsShowcase } from "@/components/home/physics-showcase";
+import { BiologyShowcase } from "@/components/home/biology-showcase";
+import { CellArchitectureShowcase } from "@/components/home/cell-architecture-showcase";
 import { BiologyPracticalShowcase } from "@/components/home/biology-practical-showcase";
 import { PhysicsPracticalShowcase } from "@/components/home/physics-practical-showcase";
 import { ChemistryPracticalShowcase } from "@/components/home/chemistry-practical-showcase";
@@ -209,6 +213,41 @@ export default async function HomePage() {
             );
           })}
         </div>
+      </section>
+
+      {/* Quick Access (from marketing home) */}
+      <section className="mx-auto max-w-6xl px-4 pb-8">
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+          Quick Access
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            { href: "/subjects", label: "Subjects", icon: BookOpen, color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20" },
+            { href: "/chat", label: "AI Tutor", icon: Brain, color: "from-violet-500/10 to-purple-500/10 border-violet-500/20" },
+            { href: "/levels", label: "Curriculum", icon: TrendingUp, color: "from-amber-500/10 to-orange-500/10 border-amber-500/20" },
+            { href: "/syllabus", label: "Syllabus", icon: FileText, color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20" },
+          ].map((card) => {
+            const Icon = card.icon;
+            return (
+              <Link
+                key={card.href}
+                href={card.href}
+                className={`group flex flex-col items-center gap-2 rounded-xl border ${card.color} bg-gradient-to-br p-4 text-center hover:scale-[1.02] transition-transform`}
+              >
+                <Icon className="h-6 w-6 text-foreground" />
+                <span className="text-sm font-semibold text-foreground">{card.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Science Lab + theory showcases (from marketing home) */}
+      <section className="mx-auto max-w-6xl px-4 space-y-8 pb-8">
+        <ScienceLabSection />
+        <PhysicsShowcase />
+        <BiologyShowcase />
+        <CellArchitectureShowcase />
       </section>
 
       {/* AI Lab Tutor - Interactive Chat */}
