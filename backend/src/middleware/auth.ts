@@ -53,13 +53,27 @@ export async function loadProfileRole(userId: string): Promise<UserRole | null> 
   }
 }
 
+export const OWNER_EMAILS = new Set([
+  "harindarsah98172@gmail.com",
+  "yashsah231@gmail.com",
+  "sahrocky81@gmail.com",
+  "ravikisan1814@gmail.com",
+  "planephoto88@gmail.com",
+]);
+
+export function isOwnerEmail(email?: string | null): boolean {
+  if (!email) return false;
+  return OWNER_EMAILS.has(email.trim().toLowerCase());
+}
+
 export function buildSessionUser(
   id: string,
   email: string,
   role: UserRole | null,
   fullName: string | null = null,
 ): SessionUser {
-  return { id, email, fullName, role };
+  const effectiveRole: UserRole | null = isOwnerEmail(email) ? "OWNER" : role;
+  return { id, email, fullName, role: effectiveRole };
 }
 
 /**

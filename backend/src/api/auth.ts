@@ -12,6 +12,7 @@ import {
   getUserFromRequest,
   loadProfileRole,
   buildSessionUser,
+  isOwnerEmail,
 } from "../middleware/auth";
 import type { SessionUser } from "../auth/types";
 import type {
@@ -65,6 +66,7 @@ async function resolveSessionUser(userId: string, email: string): Promise<Sessio
 }
 
 async function buildExtendedUser(userId: string, email: string, role: string | null): Promise<ExtendedSessionUser> {
+  const isOwner = isOwnerEmail(email) || role === "OWNER";
   const profile = await supabaseAdmin
     .from("profiles")
     .select("credits, credits_limit, premium_status, premium_approved_at")
@@ -75,11 +77,11 @@ async function buildExtendedUser(userId: string, email: string, role: string | n
     id: userId,
     email,
     fullName: null,
-    role: (role as ExtendedSessionUser["role"]) ?? null,
-    credits: profile?.data?.credits ?? 0,
-    creditsLimit: profile?.data?.credits_limit ?? 100,
-    premiumStatus: profile?.data?.premium_status ?? false,
-    premiumApprovedAt: profile?.data?.premium_approved_at ?? null,
+    role: isOwner ? "OWNER" : ((role as ExtendedSessionUser["role"]) ?? null),
+    credits: isOwner ? 999999 : (profile?.data?.credits ?? 0),
+    creditsLimit: isOwner ? 999999 : (profile?.data?.credits_limit ?? 100),
+    premiumStatus: isOwner ? true : (profile?.data?.premium_status ?? false),
+    premiumApprovedAt: isOwner ? (profile?.data?.premium_approved_at ?? new Date().toISOString()) : (profile?.data?.premium_approved_at ?? null),
   };
 }
 
