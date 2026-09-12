@@ -33,10 +33,23 @@ export function isOriginAllowed(origin: string): boolean {
   if (allowed.includes(origin)) return true;
   try {
     const url = new URL(origin);
-    if (url.hostname === "localhost" || url.hostname === "127.0.0.1" || url.hostname === "0.0.0.0") {
+    if (
+      url.hostname === "localhost" ||
+      url.hostname === "127.0.0.1" ||
+      url.hostname === "0.0.0.0"
+    ) {
       return true;
     }
-    if (url.hostname.endsWith(".vercel.app") || url.hostname.endsWith(".google.com") || url.hostname.endsWith(".googleusercontent.com")) {
+    if (
+      url.hostname.endsWith(".vercel.app") ||
+      url.hostname.endsWith(".onrender.com") ||
+      url.hostname.endsWith(".google.com") ||
+      url.hostname.endsWith(".googleusercontent.com")
+    ) {
+      return true;
+    }
+    // In development or preview environments, allow cross-origin requests
+    if (process.env.NODE_ENV !== "production") {
       return true;
     }
   } catch {
@@ -47,18 +60,18 @@ export function isOriginAllowed(origin: string): boolean {
 
 export function corsMiddleware(req: Request, res: Response, next: NextFunction) {
   const origin = req.headers.origin;
-  if (origin) {
-    const allowed = getAllowedOrigins();
-    if (allowed.includes(origin)) {
-      res.setHeader("Access-Control-Allow-Origin", origin);
-      res.setHeader("Vary", "Origin");
-    }
+  if (origin && isOriginAllowed(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
   }
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
   );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, X-Requested-With, Accept"
+  );
   res.setHeader("Access-Control-Allow-Credentials", "true");
 
   if (req.method === "OPTIONS") {

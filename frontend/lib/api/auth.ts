@@ -1,4 +1,4 @@
-import { apiFetch } from "../api-client";
+import { apiFetch, setStoredToken, clearStoredToken } from "../api-client";
 import type {
   AuthLoginRequest,
   AuthLoginResponse,
@@ -16,10 +16,14 @@ import type {
 export async function login(
   data: AuthLoginRequest
 ): Promise<AuthLoginResponse> {
-  return apiFetch<AuthLoginResponse>("/api/auth/login", {
+  const res = await apiFetch<AuthLoginResponse>("/api/auth/login", {
     method: "POST",
     body: JSON.stringify(data),
   });
+  if (res?.accessToken) {
+    setStoredToken(res.accessToken);
+  }
+  return res;
 }
 
 /**
@@ -29,25 +33,34 @@ export async function login(
 export async function signup(
   data: AuthSignupRequest
 ): Promise<AuthSignupResponse> {
-  return apiFetch<AuthSignupResponse>("/api/auth/signup", {
+  const res = await apiFetch<AuthSignupResponse>("/api/auth/signup", {
     method: "POST",
     body: JSON.stringify(data),
   });
+  if (res?.accessToken) {
+    setStoredToken(res.accessToken);
+  }
+  return res;
 }
 
 /**
  * Refresh the current session (revalidates the active token).
  */
 export async function refreshSession(): Promise<AuthRefreshResponse> {
-  return apiFetch<AuthRefreshResponse>("/api/auth/refresh", {
+  const res = await apiFetch<AuthRefreshResponse>("/api/auth/refresh", {
     method: "POST",
   });
+  if (res?.accessToken) {
+    setStoredToken(res.accessToken);
+  }
+  return res;
 }
 
 /**
  * Log out the current user.
  */
 export async function logout(): Promise<AuthLogoutResponse> {
+  clearStoredToken();
   return apiFetch<AuthLogoutResponse>("/api/auth/logout", {
     method: "POST",
   });

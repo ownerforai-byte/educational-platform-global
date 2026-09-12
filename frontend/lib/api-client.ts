@@ -1,20 +1,33 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "";
+// In browser, route requests through Next.js proxy rewrite ("") to guarantee
+// same-origin cookies, zero CORS blocks, and zero SSL/mixed-content failures.
+// In SSR (server-side), call NEXT_PUBLIC_API_URL or localhost directly.
+const API_BASE =
+  typeof window === "undefined"
+    ? (process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001")
+    : "";
 
 /**
  * Auth model:
- *  - The backend sets an **httpOnly** `sb-access-token` cookie on
- *    login / signup / refresh. Because it is httpOnly, JS never reads it;
- *    the browser attaches it automatically on same-site requests
- *    (`credentials: "include"`).
- *  - A bearer header is added opportunistically when a readable token
- *    cookie is present, but it is not required for auth to work.
- *
- * 401 handling:
- *  - A 401 on a *resource* endpoint may mean the token expired → attempt a
- *    single `/api/auth/refresh`, then retry once.
- *  - A 401 on the auth endpoints themselves (`/api/auth/me`, `/login`, …)
- *    just means "logged out" → surface it immediately (no refresh loop).
+ *  - Both localStorage token and httpOnly `sb-access-token` cookie are supported.
+ *  - `Authorization: Bearer <token>` is sent automatically on every request.
  */
+
+export function getStoredToken(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("sb-access-token") || getBearerCookie();
+}
+
+export function setStoredToken(token: string): void {
+  if (typeof window !== "undefined") {
+    localStorage.setItem("sb-access-token", token);
+  }
+}
+
+export function clearStoredToken(): void {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("sb-access-token");
+  }
+}
 
 function getBearerCookie(): string | null {
   if (typeof document === "undefined") return null;
@@ -27,7 +40,7 @@ function buildHeaders(init?: RequestInit): Record<string, string> {
     "Content-Type": "application/json",
     ...(init?.headers as Record<string, string> | undefined),
   };
-  const token = getBearerCookie();
+  const token = getStoredToken();
   if (token) headers["Authorization"] = `Bearer ${token}`;
   return headers;
 }
@@ -46,11 +59,21 @@ function unauthorizedError(): Error {
 }
 
 async function request<T>(path: string, init?: RequestInit, isRetry = false): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`, {
-    ...init,
-    headers: buildHeaders(init),
-    credentials: "include",
-  });
+  let response: Response;
+  try {
+    response = await fetch(`${API_BASE}${path}`, {
+      ...init,
+      headers: buildHeaders(init),
+      credentials: "include",
+    });
+  } catch (err: any) {
+    if (err?.name === "TypeError" && err?.message?.includes("fetch")) {
+      throw new Error(
+        "Unable to connect to server. The backend may be spinning up (Render cold start) or offline. Please retry in 10-15 seconds."
+      );
+    }
+    throw err;
+  }
 
   // Refresh-and-retry only for resource endpoints, and only once.
   if (response.status === 401 && !isRetry && !isAuthPath(path)) {
