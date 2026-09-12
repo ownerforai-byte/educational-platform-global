@@ -78,3 +78,12 @@ export function proxy(request: NextRequest) {
 
   return response;
 }
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for static files:
+     */
+    "/((?!_next/static|_next/image|favicon.ico|icon-.*|data/|sw.js|all_elements.json).*)",
+  ],
+};
