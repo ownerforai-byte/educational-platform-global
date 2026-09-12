@@ -1,30 +1,155 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { Footer } from "./footer";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MobileNav } from "./mobile-nav";
+import { SidebarNavigation } from "./sidebar-navigation";
+import { BackButton } from "@/components/navigation/back-button";
+import { AIWidget } from "./ai-widget";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { GlobalSearch } from "./global-search";
 
-export function AppShell({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isHome = pathname === "/home";
+interface AppShellProps {
+  children: React.ReactNode;
+  breadcrumbs?: { label: string; href?: string }[];
+}
+
+export function AppShell({ children, breadcrumbs }: AppShellProps) {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("sidebar-collapsed");
+    if (saved !== null) {
+      setSidebarCollapsed(saved === "true");
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed));
+  }, [sidebarCollapsed]);
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="border-b border-border bg-card/80 backdrop-blur">
-        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="text-sm font-bold text-foreground">
-            Ravikisan&apos;s Platform
-          </Link>
-          <nav className="flex items-center gap-4 text-sm">
-            <Link href="/subjects" className="text-muted-foreground hover:text-foreground">Subjects</Link>
-            <Link href="/chat" className="text-muted-foreground hover:text-foreground">AI Tutor</Link>
-          </nav>
+    <div className="flex min-h-screen flex-col bg-background">
+      {/* ── Header ─────────────────────────────────────────────────── */}
+      <header className="sticky top-0 z-40 border-b border-border/40 bg-background">
+        <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
+          {/* Left: mobile hamburger + desktop collapse toggle + logo */}
+          <div className="flex items-center gap-2 min-w-0">
+            <MobileNav />
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden lg:flex h-8 w-8 rounded-xl shrink-0"
+              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+              aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            >
+              {sidebarCollapsed
+                ? <PanelLeftOpen className="h-4 w-4" />
+                : <PanelLeftClose className="h-4 w-4" />
+              }
+            </Button>
+
+            <Link
+              href="/"
+              className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
+            >
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
+                <span className="text-sm font-extrabold text-white">R</span>
+              </div>
+              <span className="hidden sm:block text-sm font-bold tracking-tight text-foreground whitespace-nowrap">
+                Ravikisan&apos;s Platform
+              </span>
+            </Link>
+          </div>
+
+        {/* Center: Global Search */}
+        <div className="flex-1 min-w-0 flex items-center justify-center px-4">
+          <GlobalSearch />
+        </div>
+
+          {/* Right: theme toggle + auth links */}
+          <div className="flex items-center gap-1.5 shrink-0">
+            <ThemeToggle />
+
+            <Link
+              href="/chat"
+              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap"
+              title="Ask the AI study assistant"
+            >
+              <span className="hidden xs:inline">AI Tutor</span>
+              <span className="xs:hidden">AI</span>
+            </Link>
+
+            <div className="ml-1 h-4 w-px bg-border/60" />
+
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl text-xs font-semibold hover:bg-muted transition-colors whitespace-nowrap"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/signup"
+              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              Sign up
+            </Link>
+          </div>
         </div>
       </header>
-      <main className="flex-1">{children}</main>
-      {isHome && <Footer />}
+
+      {/* ── Body: sidebar + main ───────────────────────────────────── */}
+      <div className="flex flex-1 relative">
+        {/* Mobile overlay */}
+        {/* Desktop sidebar */}
+        <aside
+          className={`
+            hidden lg:block
+            lg:sticky lg:top-16
+            lg:h-[calc(100vh-4rem)]
+            flex-shrink-0
+            border-r border-border/40 bg-background
+            transition-all duration-200 ease-in-out
+            ${sidebarCollapsed ? "w-16" : "w-64"}
+          `}
+        >
+          <SidebarNavigation collapsed={sidebarCollapsed} />
+        </aside>
+
+        {/* Main content — auto-fits, no max-width constraint */}
+        <main className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8">
+          {breadcrumbs && breadcrumbs.length > 0 && (
+            <nav className="mb-4 text-sm text-muted-foreground">
+              {breadcrumbs.map((crumb, i) => (
+                <span key={i}>
+                  {i > 0 && <span className="mx-2">/</span>}
+                  {crumb.href && crumb.href !== "#" ? (
+                    <Link href={crumb.href} className="hover:text-foreground">
+                      {crumb.label}
+                    </Link>
+                  ) : (
+                    <span className="hover:text-foreground">{crumb.label}</span>
+                  )}
+                </span>
+              ))}
+            </nav>
+          )}
+          <div className="animate-fade-in">{children}</div>
+        </main>
+      </div>
+
+      {/* ── Footer removed — only shows on home page via marketing layout ── */}
+
+      {/* ── Floating buttons (different positions) ─────────────────── */}
+      {/* AI Widget — bottom-left */}
+      <AIWidget />
+      {/* Back Button — bottom-right (hidden on home) */}
+      <BackButton />
     </div>
   );
 }
+
 
