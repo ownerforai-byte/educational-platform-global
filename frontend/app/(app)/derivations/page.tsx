@@ -1,13 +1,11 @@
-import Link from "next/link";
+import { DerivationsHubView } from "@/components/derivations/derivations-hub-view";
+
+export const metadata = {
+  title: "Derivations & Mathematical Theorems Hub | Rigorous Step-by-Step Proofs & Visuals",
+  description:
+    "Comprehensive educational repository of mathematical theorems with visuals first, rigorous proofs, and solved questions, alongside quality physics derivations, popular chemistry derivations, and biological mechanisms.",
+};
 
 export default function DerivationsPage() {
-  return (
-    <div className="mx-auto max-w-6xl py-8 px-4">
-      <h1 className="text-2xl font-bold text-foreground">Derivations</h1>
-      <p className="mt-2 text-sm text-muted-foreground">Derivations page coming soon.</p>
-      <Link href="/" className="mt-4 inline-block text-sm text-primary hover:underline">
-        ← Back to home
-      </Link>
-    </div>
-  );
+  return <DerivationsHubView />;
 }

@@ -29,6 +29,7 @@ import {
   Scale,
   ShieldAlert,
   Target,
+  RotateCcw,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -109,6 +110,16 @@ export function TopicVerticalNotes({
   // Interactive self-check quiz state
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizRevealed, setQuizRevealed] = useState<Record<number, boolean>>({});
+
+  // Visual Workspace Refresh & Animation Replay state
+  const [visualKey, setVisualKey] = useState(0);
+  const [isVisualRefreshing, setIsVisualRefreshing] = useState(false);
+
+  const handleRefreshVisualWorkspace = () => {
+    setIsVisualRefreshing(true);
+    setVisualKey((k) => k + 1);
+    setTimeout(() => setIsVisualRefreshing(false), 500);
+  };
 
   // 1. Resolve 3D component if available
   const TopicVisual3D = useMemo(() => {
@@ -320,49 +331,61 @@ export function TopicVerticalNotes({
             </h3>
           </div>
 
-          {/* Visual Mode Switcher Tabs */}
-          <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs">
+          {/* Visual Mode Switcher Tabs & Refresh Button */}
+          <div className="flex items-center gap-2 flex-wrap">
             <button
-              onClick={() => setVisualTab("schematic")}
-              className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
-                visualTab === "schematic"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              onClick={handleRefreshVisualWorkspace}
+              className="px-2.5 py-1 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
+              title="Refresh visual simulation, reset WebGL camera, and replay animations"
             >
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>Interactive Schematic</span>
+              <RotateCcw className={`h-3.5 w-3.5 ${isVisualRefreshing ? "animate-spin" : ""}`} />
+              <span>Refresh Visual</span>
             </button>
-            <button
-              onClick={() => setVisualTab("mindmap")}
-              className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
-                visualTab === "mindmap"
-                  ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Workflow className="h-3.5 w-3.5" />
-              <span>Clear Mindmap (5 Branches)</span>
-            </button>
-            {TopicVisual3D && (
+
+            <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs">
               <button
-                onClick={() => setVisualTab("3d")}
+                onClick={() => setVisualTab("schematic")}
                 className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
-                  visualTab === "3d"
-                    ? "bg-sky-600 text-white shadow-sm"
+                  visualTab === "schematic"
+                    ? "bg-primary text-primary-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                <FlaskConical className="h-3.5 w-3.5" />
-                <span>3D Visual</span>
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>Interactive Schematic</span>
               </button>
-            )}
+              <button
+                onClick={() => setVisualTab("mindmap")}
+                className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
+                  visualTab === "mindmap"
+                    ? "bg-indigo-600 text-white shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Workflow className="h-3.5 w-3.5" />
+                <span>Clear Mindmap (5 Branches)</span>
+              </button>
+              {TopicVisual3D && (
+                <button
+                  onClick={() => setVisualTab("3d")}
+                  className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
+                    visualTab === "3d"
+                      ? "bg-sky-600 text-white shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <FlaskConical className="h-3.5 w-3.5" />
+                  <span>3D Visual</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
         <div className="p-6 space-y-6">
           {visualTab === "schematic" && (
             <SchematicDiagram
+              key={`schem-${visualKey}`}
               subjectSlug={subjectSlug}
               topicSlug={topicSlug}
               topicTitle={topicTitle}
@@ -372,6 +395,7 @@ export function TopicVerticalNotes({
 
           {visualTab === "mindmap" && (
             <TopicMindMap
+              key={`mm-${visualKey}`}
               subjectSlug={subjectSlug}
               topicSlug={topicSlug}
               topicTitle={topicTitle}
@@ -380,7 +404,7 @@ export function TopicVerticalNotes({
           )}
 
           {visualTab === "3d" && TopicVisual3D && (
-            <div className="rounded-2xl border border-border/60 bg-background/50 overflow-hidden min-h-[380px] flex flex-col justify-center">
+            <div key={`3d-${visualKey}`} className="rounded-2xl border border-border/60 bg-background/50 overflow-hidden min-h-[380px] flex flex-col justify-center">
               <TopicVisual3D />
             </div>
           )}

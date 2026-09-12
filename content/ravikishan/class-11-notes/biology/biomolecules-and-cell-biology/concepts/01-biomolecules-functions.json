@@ -1,206 +1,75 @@
 {
-  "title": "Biomolecules: Functions",
+  "title": "Biomolecules: Classification, Structure & Physiological Functions",
   "unitSlug": "biomolecules-and-cell-biology",
   "topicSlug": "biomolecules-functions",
-  "topicTitle": "Biomolecules: Functions",
+  "topicTitle": "Biomolecules: Classification, Structure & Functions",
   "relevance": 100,
   "notes": [
-    "Carbohydrates: (CH₂O)n; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
-    "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
-    "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
-    "Nucleic acids: DNA (double helix, A=T, G≡C, deoxyribose) stores genetic info; RNA (single strand, A=U) for protein synthesis.",
-    "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
+    "**Carbohydrates (Hydrates of Carbon, (CH₂O)n):** Polyhydroxy aldehydes or ketones classified by hydrolysis into monosaccharides (triose, tetrose, pentose: ribose/deoxyribose, hexose: glucose/fructose/galactose), disaccharides linked by α/β-glycosidic bonds (maltose: α-1,4-glucose+glucose; sucrose: α-1,2-glucose+fructose [non-reducing]; lactose: β-1,4-galactose+glucose [reducing]), and polysaccharides (storage: starch with amylose α-1,4 and amylopectin α-1,6 branches in plants, glycogen in animal liver/muscle; structural: cellulose β-1,4-glucan [most abundant organic polymer on Earth], chitin in fungal cell walls and arthropod exoskeletons).",
+    "**Proteins (Polypeptides of L-α-Amino Acids):** 20 standard proteinogenic amino acids linked covalently via peptide bonds (-CO-NH-) formed by dehydration synthesis. Amino acids exist as dipolar zwitterions at their isoelectric point (pI). Four organizational hierarchies: Primary (linear amino acid sequence dictated by mRNA), Secondary (local folding into α-helix stabilized by intrachain H-bonds every 3.6 residues or β-pleated sheets), Tertiary (overall 3D globular conformation stabilized by hydrophobic interactions, ionic bridges, hydrogen bonds, and covalent disulfide -S-S- bonds), and Quaternary (assembly of multiple polypeptide subunits, e.g. adult hemoglobin α₂β₂ with heme Fe²⁺ prosthetic group).",
+    "**Lipids (Esters of Fatty Acids & Glycerol):** Hydrophobic water-insoluble biomolecules soluble in organic solvents. Simple lipids: Triglycerides (triacylglycerols stored in adipose tissue for insulation and metabolic energy yielding ~9.3 kcal/g). Compound lipids: Phospholipids (amphipathic molecules with hydrophilic choline-phosphate head and two hydrophobic fatty acid tails forming the lipid bilayer of cellular membranes), Glycolipids, and Sphingolipids. Derived lipids: Steroids (four fused carbon rings cyclopentanoperhydrophenanthrene, e.g. cholesterol regulating membrane fluidity, steroid hormones cortisol/testosterone/estrogen, and bile salts).",
+    "**Nucleic Acids (Polynucleotides of Genetic Information):** Linear polymers of nucleotides linked via 3'-to-5' phosphodiester linkages. Each nucleotide comprises a pentose sugar (ribose in RNA, 2'-deoxyribose in DNA), a purine (Adenine, Guanine) or pyrimidine (Cytosine, Thymine in DNA, Uracil in RNA) nitrogenous base, and 1 to 3 phosphate groups. DNA forms an antiparallel right-handed B-DNA double helix (Watson & Crick model: 2 nm diameter, 3.4 nm pitch with 10 base pairs per turn) governed by Chargaff's parity rules: [A] = [T] (2 hydrogen bonds) and [G] ≡ [C] (3 hydrogen bonds). RNA is predominantly single-stranded and functions in information transfer (mRNA), aminoacyl-tRNA decoding (cloverleaf tRNA), and peptidyl transferase catalysis (ribosomal 28S/23S rRNA).",
+    "**Enzymes & Biocatalysis:** Specialized globular protein catalysts that accelerate biochemical reaction rates by factors of 10⁶ to 10¹² by stabilizing the transition state and dramatically decreasing the activation energy barrier (E_a) without altering thermodynamic equilibrium constant (K_eq) or standard Gibbs free energy change (ΔG°). Catalytic cycle operates via the induced-fit model (Koshland). Many require non-protein cofactors: inorganic metal activators (Fe²⁺, Zn²⁺ in carbonic anhydrase, Mg²⁺ in kinases) or organic coenzymes derived from B-vitamins (NAD⁺ from niacin, FAD from riboflavin, TPP from thiamine).",
+    "**Water & Mineral Nutrients in Living Systems:** Water acts as the universal biological solvent owing to its high dielectric constant (~80), high specific heat capacity buffer against thermal fluctuations, and anomalous density maximum at 4°C protecting aquatic ecosystems. Essential macronutrients (C, H, O, N, P, K, Ca, Mg, S) and micronutrients (Fe, Mn, Zn, Cu, Mo, B, Cl) serve structural and catalytic roles in enzyme prosthetic groups, chlorophyll porphyrin rings (Mg²⁺), cytochromes (Fe²⁺/Fe³⁺), and cell wall middle lamella calcium pectate."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+    "❌ 'Sucrose is a reducing sugar because it is made of glucose and fructose.' ✅ Sucrose is NON-REDUCING because both anomeric carbons (C1 of glucose and C2 of fructose) are tied up in the α-1,2-glycosidic bond, leaving no free aldehyde or ketone group.",
+    "❌ 'All enzymes are proteins.' ✅ Ribozymes (such as 23S rRNA in prokaryotes and 28S rRNA in eukaryotes) are catalytic RNA molecules capable of peptide bond synthesis without protein assistance.",
+    "❌ 'Lipids are true macromolecules formed by polymer chains.' ✅ Lipids are NOT true polymers; they are relatively small hydrophobic monomers assembled into supramolecular non-covalent aggregates (bilayers and micelles).",
+    "❌ 'Cellulose can be digested by humans because it is made of glucose.' ✅ Humans lack the enzyme cellulase to cleave the β-1,4-glycosidic bonds of cellulose; it passes as dietary fiber (roughage).",
+    "❌ 'Disulfide bonds stabilize the primary structure of proteins.' ✅ Disulfide (-S-S-) bonds form between cysteine side chains and stabilize TERTIARY and QUATERNARY structure, not primary (which is held strictly by covalent peptide bonds).",
+    "❌ 'Chargaff's rules apply to both DNA and RNA.' ✅ Chargaff's rules ([A] = [T], [G] = [C], [A+G] = [T+C]) apply ONLY to double-stranded DNA; single-stranded RNA does not obey equimolar base ratios.",
+    "❌ 'Competitive inhibition decreases V_max of an enzyme.' ✅ Competitive inhibitors bind reversibly to the active site, increasing apparent K_m (lower affinity) while V_max remains UNCHANGED at high substrate saturation.",
+    "❌ 'Peptide bond formation consumes water.' ✅ Peptide bond formation is a CONDENSATION (dehydration synthesis) reaction that RELEASES one molecule of H₂O for every bond formed."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "Distinguish reducing from non-reducing sugars with Fehling's and Benedict's test mechanisms.",
+    "Calculate the percentage of Cytosine in a double-stranded DNA molecule containing 30% Adenine using Chargaff's rules.",
+    "Identify the structural hierarchy level affected during thermal denaturation of egg albumin (primary sequence remains intact).",
+    "Differentiate between competitive and non-competitive enzyme inhibition using Lineweaver-Burk reciprocal plots.",
+    "Categorize amino acids into acidic (Asp, Glu), basic (Lys, Arg, His), and aromatic (Phe, Tyr, Trp) groups.",
+    "Trace the structural difference between starch (amylose α-1,4 and amylopectin α-1,6) and glycogen (hyperbranched α-1,6 every 8-12 residues).",
+    "Explain why lipids release more than double the energy per gram (9.3 kcal/g) compared to carbohydrates (4.1 kcal/g) due to higher oxidation state."
   ],
   "universalFacts": [
-    "Universal scientific fact for 01 biomolecules functions."
+    "Cellulose is the most abundant biopolymer on Earth, constituting over 50% of all organic carbon in the biosphere.",
+    "Proteins contain exclusively L-stereoisomers of amino acids, whereas carbohydrates in biological systems are predominantly D-stereoisomers.",
+    "Double-stranded B-DNA has a helical pitch of 3.4 nm containing 10 base pairs, with an inter-base rise of 0.34 nm.",
+    "Phospholipids are amphipathic molecules whose spontaneous self-assembly into bilayers drives cellular compartmentalization.",
+    "Enzymes accelerate reaction rates by lowering activation energy (E_a) without changing standard free energy (ΔG°) or equilibrium constant (K_eq)."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
+  "animation3D": "biomolecules-3d",
+  "motionGraphics": "biomolecules-schematic",
   "examples": [
-    "Glucose → 38 ATP via cellular respiration",
-    "Insulin: 51 amino acids, protein hormone"
+    "Hemoglobin: Allosteric tetramer (α₂β₂) transporting 4 molecules of O₂ with sigmoidal cooperative binding curve.",
+    "Rubisco (Ribulose-1,5-bisphosphate carboxylase-oxygenase): The most abundant protein and enzyme on Earth, catalyzing carbon fixation.",
+    "Collagen: Triple-helical structural protein rich in glycine and proline, providing tensile strength to connective tissues and bones.",
+    "ATP (Adenosine Triphosphate): Universal bioenergetic currency containing two high-energy phosphoanhydride bonds releasing ~7.3 kcal/mol upon hydrolysis."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "If a double-stranded DNA sample has 24% Adenine, what is the percentage of Guanine? [Solution: By Chargaff's rule, A = T = 24%, so A + T = 48%. Remaining G + C = 100% - 48% = 52%. Hence G = C = 26%].",
+    "Which amino acid lacks a chiral alpha-carbon and why does it not exhibit optical isomerism? [Answer: Glycine, because its R-group is a single hydrogen atom].",
+    "What type of bond connects the nucleotide bases across the two antiparallel strands of a DNA double helix? [Answer: Hydrogen bonds; 2 between A and T, 3 between G and C].",
+    "Why does boiling an enzyme permanently destroy its catalytic activity while freezing only suspends it temporarily? [Answer: Heat disrupts non-covalent tertiary bonds causing denaturation, whereas cold slows kinetic collisions without unfolding the peptide chain].",
+    "Name the universal storage polysaccharide in fungi and animals, and identify its linkage types. [Answer: Glycogen, featuring α-1,4-glycosidic linkages with α-1,6-glycosidic branch points every 8–12 residues]."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 biomolecules functions)"
+    "General formula for carbohydrates: (CH₂O)_n",
+    "Chargaff's Equimolar Parity in dsDNA: [A] + [G] = [T] + [C] \\implies \\frac{[A] + [G]}{[T] + [C]} = 1.0",
+    "Michaelis-Menten Catalytic Velocity: v_0 = \\frac{V_{\\max}[S]}{K_m + [S]}",
+    "ATP Hydrolysis Free Energy: \\text{ATP} + \\text{H}_2\\text{O} \\longrightarrow \\text{ADP} + \\text{P}_i \\quad (\\Delta G^{\\circ\\prime} = -30.5 \\text{ kJ/mol} \\approx -7.3 \\text{ kcal/mol})"
   ],
   "keyPoints": [
-    "Core point for 01 biomolecules functions."
+    "Carbohydrates provide rapid metabolic fuel and structural cell walls; monosaccharides are building blocks linked by glycosidic bonds.",
+    "Proteins perform enzymatic catalysis, cellular transport, and structural defense; 20 amino acids linked by peptide bonds form 4 folding levels.",
+    "Lipids form cellular membranes and energy stores; fatty acid saturation dictates membrane fluidity and melting temperature.",
+    "Nucleic acids store (DNA) and transmit (RNA) genetic instructions; DNA double helix features antiparallel complementary strands.",
+    "Enzymes lower the activation energy barrier; K_m reflects substrate affinity, and inhibitors alter K_m (competitive) or V_max (non-competitive)."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.",
+  "summary": "Biomolecules are the organic building blocks of cellular life. Carbohydrates provide immediate metabolic energy and structural cellulose/chitin matrices. Proteins, composed of 20 L-amino acids folded into specific 3D tertiary conformations, execute enzymatic catalysis, signal transduction, and structural support. Lipids provide hydrophobic membrane barriers and high-density caloric storage. Nucleic acids (DNA and RNA) encode, replicate, and translate genetic information with complementary base pairing. Water and essential minerals provide the aqueous solvent and catalytic cofactors necessary for life's metabolic machinery.",
   "specialNotes": [
-    "Specialized insight for 01 biomolecules functions."
-  ],
-  "importantStatements": [
-    "Key statement for 01 biomolecules functions."
-  ],
-  "importantNotes": [
-    "Important note regarding 01 biomolecules functions."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Biomolecules: Functions."
-  ],
-  "examNotes": [
-    "Biomolecules: Functions is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 biomolecules functions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 biomolecules functions."
-  ],
-  "importantTasks": [
-    "Task for studying 01 biomolecules functions."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "01-biomolecules-functions",
-  "mcqs": [
-    {
-      "question": "Question about 01 biomolecules functions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Identify the bond linking amino acids",
-      "steps": [
-        "Amino acids are monomers",
-        "Link between -COOH and -NH₂",
-        "Peptide bond formed"
-      ],
-      "answer": "Peptide bond"
-    }
-  ],
-  "visualization": {
-    "type": "3d-model",
-    "component": "ProteinStructureViewer",
-    "desc": "Interactive 3D protein structure showing primary to quaternary levels"
-  }
+    "CEE High-Yield: Non-reducing disaccharide is Sucrose; reducing disaccharides are Maltose and Lactose.",
+    "CEE High-Yield: Most abundant protein in animal body is Collagen; in the whole biosphere it is Rubisco.",
+    "CEE High-Yield: Essential amino acids for humans: Valine, Leucine, Isoleucine, Phenylalanine, Tryptophan, Threonine, Methionine, Lysine (mnemonic: PVT TIM HALL)."
+  ]
 }

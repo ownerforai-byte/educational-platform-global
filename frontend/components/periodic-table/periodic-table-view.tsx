@@ -117,8 +117,8 @@ export function PeriodicTableView() {
     const calculateScale = () => {
       if (tableContainerRef.current) {
         const containerW = tableContainerRef.current.clientWidth;
-        // Base unscaled table ideal width is 1140px
-        const optimalScale = Math.max(0.62, Math.min(1.15, (containerW - 24) / 1140));
+        // Base unscaled table ideal width is 990px with reduced font sizes and compact tiles
+        const optimalScale = Math.min(1.0, Math.max(0.35, (containerW - 20) / 990));
         setZoom(optimalScale);
       }
     };
@@ -508,198 +508,208 @@ export function PeriodicTableView() {
       {/* ── 4. FULL PERIODIC TABLE GRID (Fit-in-Screen Scaling) ───────────── */}
       <div
         ref={tableContainerRef}
-        className="rounded-3xl border border-border/80 bg-card p-3 sm:p-5 shadow-sm overflow-hidden flex flex-col items-center"
+        className="rounded-3xl border border-border/80 bg-card p-2 sm:p-4 shadow-sm overflow-hidden flex flex-col items-center w-full"
       >
         <div
           style={{
-            transform: `scale(${zoom})`,
-            transformOrigin: "top center",
-            width: "1120px",
+            height: fitScreen ? `${Math.round(525 * zoom) + 10}px` : "auto",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            overflowX: fitScreen ? "hidden" : "auto",
           }}
-          className="transition-transform duration-200 select-none pb-4"
         >
-          {/* Group Numbers 1-18 Header with Roman Labels */}
-          <div className="grid grid-cols-18 gap-1.5 text-center text-[9px] font-bold text-muted-foreground mb-1.5">
-            {Array.from({ length: 18 }, (_, i) => (
-              <div key={i + 1} className="py-0.5 flex flex-col items-center">
-                <span className="text-[10px] text-foreground font-mono">{i + 1}</span>
-                <span className="text-[8px] text-muted-foreground font-normal">{GROUP_ROMAN_LABELS[i]}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Main 7 Periods */}
-          <div className="space-y-1.5">
-            {Array.from({ length: 7 }, (_, pIdx) => {
-              const period = pIdx + 1;
-              return (
-                <div key={period} className="grid grid-cols-18 gap-1.5">
-                  {Array.from({ length: 18 }, (_, gIdx) => {
-                    const group = gIdx + 1;
-
-                    // Lanthanide Placeholder in Period 6, Group 3
-                    if (period === 6 && group === 3) {
-                      return (
-                        <div
-                          key="lanth-placeholder"
-                          onClick={() => {
-                            setSelectedElement(lanthanides[0]);
-                            setIsDossierOpen(true);
-                          }}
-                          className="aspect-square rounded-xl border border-dashed border-purple-500/50 bg-purple-500/10 flex flex-col items-center justify-center text-[10px] font-bold text-purple-400 cursor-pointer hover:bg-purple-500/20 transition-all shadow-sm"
-                          title="Click to view Lanthanides (57-71)"
-                        >
-                          <span className="text-[9px]">57-71</span>
-                          <span className="text-[9px] font-black">La-Lu</span>
-                        </div>
-                      );
-                    }
-
-                    // Actinide Placeholder in Period 7, Group 3
-                    if (period === 7 && group === 3) {
-                      return (
-                        <div
-                          key="act-placeholder"
-                          onClick={() => {
-                            setSelectedElement(actinides[0]);
-                            setIsDossierOpen(true);
-                          }}
-                          className="aspect-square rounded-xl border border-dashed border-pink-500/50 bg-pink-500/10 flex flex-col items-center justify-center text-[10px] font-bold text-pink-400 cursor-pointer hover:bg-pink-500/20 transition-all shadow-sm"
-                          title="Click to view Actinides (89-103)"
-                        >
-                          <span className="text-[9px]">89-103</span>
-                          <span className="text-[9px] font-black">Ac-Lr</span>
-                        </div>
-                      );
-                    }
-
-                    const el = mainGrid[`${period}-${group}`];
-                    if (!el) {
-                      return <div key={`${period}-${group}`} className="aspect-square" />;
-                    }
-
-                    const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
-                    const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
-                    const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
-                    const catStyle = CATEGORY_COLORS[el.category] ?? CATEGORY_COLORS.metal;
-
-                    return (
-                      <button
-                        key={el.atomicNumber}
-                        onClick={() => {
-                          setSelectedElement(el);
-                          setIsDossierOpen(true);
-                        }}
-                        onMouseEnter={() => setHoveredElement(el)}
-                        onMouseLeave={() => setHoveredElement(null)}
-                        className={`aspect-square rounded-xl border p-1 sm:p-1.5 flex flex-col justify-between text-left transition-all ${
-                          catStyle.bg
-                        } ${catStyle.border} ${
-                          isHovered || isSelected
-                            ? "ring-2 ring-primary scale-110 z-30 shadow-lg bg-primary/20"
-                            : ""
-                        } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
-                        title={`${el.name} (${el.symbol}) · #${el.atomicNumber} · Click for CEE Questions`}
-                      >
-                        <div className="flex items-center justify-between text-[8px] leading-none text-muted-foreground font-mono">
-                          <span className="font-bold">{el.atomicNumber}</span>
-                          <span className="uppercase text-[7px] font-extrabold">{el.block}</span>
-                        </div>
-
-                        <div className={`text-sm sm:text-base font-black tracking-tight leading-none text-center ${catStyle.text}`}>
-                          {el.symbol}
-                        </div>
-
-                        <div className="text-[7px] truncate font-medium text-foreground/85 leading-none text-center">
-                          {el.name}
-                        </div>
-                      </button>
-                    );
-                  })}
+          <div
+            style={{
+              transform: `scale(${zoom})`,
+              transformOrigin: "top center",
+              width: "990px",
+            }}
+            className="transition-transform duration-200 select-none shrink-0 pb-2"
+          >
+            {/* Group Numbers 1-18 Header with Roman Labels */}
+            <div className="grid grid-cols-18 gap-1 text-center mb-1 select-none">
+              {Array.from({ length: 18 }, (_, i) => (
+                <div key={i + 1} className="py-0.5 flex flex-col items-center">
+                  <span className="text-[9px] text-foreground font-mono font-bold leading-none">{i + 1}</span>
+                  <span className="text-[7px] text-muted-foreground font-medium leading-none">{GROUP_ROMAN_LABELS[i]}</span>
                 </div>
-              );
-            })}
-          </div>
-
-          {/* Separated Lanthanides & Actinides (4f & 5f Series) */}
-          <div className="mt-5 pt-3 border-t border-border/60 space-y-1.5">
-            <div className="text-[10px] font-bold uppercase tracking-wider text-purple-400 px-1 flex items-center gap-2">
-              <Sparkles className="h-3 w-3" />
-              <span>f-Block Inner Transition Metals (Lanthanides &amp; Actinides):</span>
+              ))}
             </div>
 
-            {/* Lanthanides */}
-            <div className="grid grid-cols-18 gap-1.5">
-              <div className="col-span-3 flex items-center justify-end pr-3 text-[10px] font-bold text-purple-400">
-                Lanthanides (4f):
-              </div>
-              {lanthanides.map((el) => {
-                const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
-                const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
-                const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
-
+            {/* Main 7 Periods */}
+            <div className="space-y-1">
+              {Array.from({ length: 7 }, (_, pIdx) => {
+                const period = pIdx + 1;
                 return (
-                  <button
-                    key={el.atomicNumber}
-                    onClick={() => {
-                      setSelectedElement(el);
-                      setIsDossierOpen(true);
-                    }}
-                    onMouseEnter={() => setHoveredElement(el)}
-                    onMouseLeave={() => setHoveredElement(null)}
-                    className={`aspect-square rounded-xl border border-purple-500/30 bg-purple-500/10 p-1 sm:p-1.5 flex flex-col justify-between text-left transition-all hover:bg-purple-500/25 ${
-                      isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
-                    } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
-                  >
-                    <div className="text-[8px] font-mono leading-none text-muted-foreground font-bold">
-                      {el.atomicNumber}
-                    </div>
-                    <div className="text-sm font-black text-purple-400 leading-none text-center">
-                      {el.symbol}
-                    </div>
-                    <div className="text-[7px] truncate text-foreground/85 leading-none text-center">
-                      {el.name}
-                    </div>
-                  </button>
+                  <div key={period} className="grid grid-cols-18 gap-1">
+                    {Array.from({ length: 18 }, (_, gIdx) => {
+                      const group = gIdx + 1;
+
+                      // Lanthanide Placeholder in Period 6, Group 3
+                      if (period === 6 && group === 3) {
+                        return (
+                          <div
+                            key="lanth-placeholder"
+                            onClick={() => {
+                              setSelectedElement(lanthanides[0]);
+                              setIsDossierOpen(true);
+                            }}
+                            className="aspect-square rounded-lg border border-dashed border-purple-500/50 bg-purple-500/10 flex flex-col items-center justify-center text-[8px] font-bold text-purple-400 cursor-pointer hover:bg-purple-500/20 transition-all shadow-sm"
+                            title="Click to view Lanthanides (57-71)"
+                          >
+                            <span className="text-[7.5px] leading-none">57-71</span>
+                            <span className="text-[8px] font-black leading-none mt-0.5">La-Lu</span>
+                          </div>
+                        );
+                      }
+
+                      // Actinide Placeholder in Period 7, Group 3
+                      if (period === 7 && group === 3) {
+                        return (
+                          <div
+                            key="act-placeholder"
+                            onClick={() => {
+                              setSelectedElement(actinides[0]);
+                              setIsDossierOpen(true);
+                            }}
+                            className="aspect-square rounded-lg border border-dashed border-pink-500/50 bg-pink-500/10 flex flex-col items-center justify-center text-[8px] font-bold text-pink-400 cursor-pointer hover:bg-pink-500/20 transition-all shadow-sm"
+                            title="Click to view Actinides (89-103)"
+                          >
+                            <span className="text-[7.5px] leading-none">89-103</span>
+                            <span className="text-[8px] font-black leading-none mt-0.5">Ac-Lr</span>
+                          </div>
+                        );
+                      }
+
+                      const el = mainGrid[`${period}-${group}`];
+                      if (!el) {
+                        return <div key={`${period}-${group}`} className="aspect-square" />;
+                      }
+
+                      const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
+                      const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
+                      const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
+                      const catStyle = CATEGORY_COLORS[el.category] ?? CATEGORY_COLORS.metal;
+
+                      return (
+                        <button
+                          key={el.atomicNumber}
+                          onClick={() => {
+                            setSelectedElement(el);
+                            setIsDossierOpen(true);
+                          }}
+                          onMouseEnter={() => setHoveredElement(el)}
+                          onMouseLeave={() => setHoveredElement(null)}
+                          className={`aspect-square rounded-lg border p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all ${
+                            catStyle.bg
+                          } ${catStyle.border} ${
+                            isHovered || isSelected
+                              ? "ring-2 ring-primary scale-110 z-30 shadow-lg bg-primary/20"
+                              : ""
+                          } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                          title={`${el.name} (${el.symbol}) · #${el.atomicNumber} · Click for CEE Questions`}
+                        >
+                          <div className="flex items-center justify-between text-[7px] leading-none text-muted-foreground font-mono">
+                            <span className="font-bold">{el.atomicNumber}</span>
+                            <span className="uppercase text-[6px] font-extrabold">{el.block}</span>
+                          </div>
+
+                          <div className={`text-xs sm:text-[13px] font-black tracking-tight leading-none text-center ${catStyle.text}`}>
+                            {el.symbol}
+                          </div>
+
+                          <div className="text-[6.5px] truncate font-medium text-foreground/85 leading-none text-center">
+                            {el.name}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
                 );
               })}
             </div>
 
-            {/* Actinides */}
-            <div className="grid grid-cols-18 gap-1.5">
-              <div className="col-span-3 flex items-center justify-end pr-3 text-[10px] font-bold text-pink-400">
-                Actinides (5f):
+            {/* Separated Lanthanides & Actinides (4f & 5f Series) */}
+            <div className="mt-4 pt-2.5 border-t border-border/60 space-y-1">
+              <div className="text-[9px] font-bold uppercase tracking-wider text-purple-400 px-1 flex items-center gap-1.5">
+                <Sparkles className="h-3 w-3" />
+                <span>f-Block Inner Transition Metals (Lanthanides &amp; Actinides):</span>
               </div>
-              {actinides.map((el) => {
-                const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
-                const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
-                const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
 
-                return (
-                  <button
-                    key={el.atomicNumber}
-                    onClick={() => {
-                      setSelectedElement(el);
-                      setIsDossierOpen(true);
-                    }}
-                    onMouseEnter={() => setHoveredElement(el)}
-                    onMouseLeave={() => setHoveredElement(null)}
-                    className={`aspect-square rounded-xl border border-pink-500/30 bg-pink-500/10 p-1 sm:p-1.5 flex flex-col justify-between text-left transition-all hover:bg-pink-500/25 ${
-                      isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
-                    } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
-                  >
-                    <div className="text-[8px] font-mono leading-none text-muted-foreground font-bold">
-                      {el.atomicNumber}
-                    </div>
-                    <div className="text-sm font-black text-pink-400 leading-none text-center">
-                      {el.symbol}
-                    </div>
-                    <div className="text-[7px] truncate text-foreground/85 leading-none text-center">
-                      {el.name}
-                    </div>
-                  </button>
-                );
-              })}
+              {/* Lanthanides */}
+              <div className="grid grid-cols-18 gap-1">
+                <div className="col-span-3 flex items-center justify-end pr-2 text-[8.5px] font-bold text-purple-400 leading-none">
+                  Lanthanides (4f):
+                </div>
+                {lanthanides.map((el) => {
+                  const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
+                  const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
+                  const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
+
+                  return (
+                    <button
+                      key={el.atomicNumber}
+                      onClick={() => {
+                        setSelectedElement(el);
+                        setIsDossierOpen(true);
+                      }}
+                      onMouseEnter={() => setHoveredElement(el)}
+                      onMouseLeave={() => setHoveredElement(null)}
+                      className={`aspect-square rounded-lg border border-purple-500/30 bg-purple-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-purple-500/25 ${
+                        isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
+                      } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                    >
+                      <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
+                        {el.atomicNumber}
+                      </div>
+                      <div className="text-xs font-black text-purple-400 leading-none text-center">
+                        {el.symbol}
+                      </div>
+                      <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
+                        {el.name}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Actinides */}
+              <div className="grid grid-cols-18 gap-1">
+                <div className="col-span-3 flex items-center justify-end pr-2 text-[8.5px] font-bold text-pink-400 leading-none">
+                  Actinides (5f):
+                </div>
+                {actinides.map((el) => {
+                  const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
+                  const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
+                  const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
+
+                  return (
+                    <button
+                      key={el.atomicNumber}
+                      onClick={() => {
+                        setSelectedElement(el);
+                        setIsDossierOpen(true);
+                      }}
+                      onMouseEnter={() => setHoveredElement(el)}
+                      onMouseLeave={() => setHoveredElement(null)}
+                      className={`aspect-square rounded-lg border border-pink-500/30 bg-pink-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-pink-500/25 ${
+                        isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
+                      } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                    >
+                      <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
+                        {el.atomicNumber}
+                      </div>
+                      <div className="text-xs font-black text-pink-400 leading-none text-center">
+                        {el.symbol}
+                      </div>
+                      <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
+                        {el.name}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
