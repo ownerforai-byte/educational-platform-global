@@ -58,11 +58,11 @@
     "Explain why passengers feel pushed outward when a car takes a sharp turn, and identify the real forces involved."
   ],
   "formulas": [
-    "Centripetal acceleration: a_c = v²/r = rω² (directed toward the centre)",
-    "Centripetal force: F_c = mv²/r = mrω² (resultant of real forces toward centre)",
-    "Maximum speed (string): v_max = √(T_max × r/m) — when tension reaches breaking point",
-    "Maximum speed (flat curve): v_max = √(μ_s rg) — when friction reaches its maximum",
-    "Cyclist lean angle: tan θ = v²/(rg) — the angle needed to balance torque"
+    "Centripetal acceleration: $a_c = v^2/r = r\omega^2$ (directed toward the centre)",
+    "Centripetal force: $F_c = mv^2/r = mr\omega^2$ (resultant of real forces toward centre)",
+    "Maximum speed (string): $v_{max} = \sqrt{T_{max} \times r/m}$ — when tension reaches breaking point",
+    "Maximum speed (flat curve): $v_{max} = \sqrt{\mu_s rg}$ — when friction reaches its maximum",
+    "Cyclist lean angle: $\tan \theta = v^2/(rg)$ — the angle needed to balance torque"
   ],
   "keyPoints": [
     "Centripetal force is NOT a new force — it is the resultant of real forces (tension, gravity, friction).",

@@ -7,15 +7,15 @@
   "notes": [
     "**Conical pendulum:** a small bob of mass m attached to a string of length L, moving in a horizontal circle at constant speed such that the string traces out a cone. The string makes angle θ with the vertical and the bob moves in a circle of radius r = L sin θ.",
     "**Forces and geometry:** two forces act on the bob: tension T along the string, and weight mg downward. The tension has vertical component T cos θ (balances weight) and horizontal component T sin θ (provides centripetal force).",
-    "**Key equations:** T cos θ = mg (vertical equilibrium) ... (1); T sin θ = mω²r = mω²L sin θ (centripetal) ... (2). From (2): T = mω²L. Substituting into (1): mω²L cos θ = mg → cos θ = g/(ω²L). Also: ω = √(g/L cos θ) and T_period = 2π√(L cos θ/g).",
-    "**Key insight — period depends only on L cos θ:** the period T = 2π√(L cos θ/g) is independent of the mass of the bob. A taller cone (larger θ, smaller cos θ) has a shorter period (faster rotation). The minimum period is when θ → 0: T_min = 2π√(L/g) (same as a simple pendulum of length L).",
+    "**Key equations:** T cos θ = mg (vertical equilibrium) ... (1); T sin θ = mω²r = mω²L sin θ (centripetal) ... (2). From (2): T = mω²L. Substituting into (1): mω²L cos θ = mg → cos θ = g/(ω²L). Also: ω = √(g/L cos θ) and $T_{period} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$.",
+    "**Key insight — period depends only on L cos θ:** the period T = 2π√(L cos θ/g) is independent of the mass of the bob. A taller cone (larger θ, smaller cos θ) has a shorter period (faster rotation). The minimum period is when θ → 0: $T_{min} = 2\pi\sqrt{L/g}$ (same as a simple pendulum of length L).",
     "**Worked example:** a 0.2 kg bob on a 2 m string rotates with θ = 30°. cos 30° = 0.866. Angular speed: ω = √(9.8/(2 × 0.866)) = √5.66 = 2.38 rad/s. Period: T = 2π/2.38 = 2.64 s. Tension: T = mω²L = 0.2 × 5.66 × 2 = 2.26 N. Radius: r = 2 × sin 30° = 1 m.",
-    "**Comparison with simple pendulum:** both have period T = 2π√(L_eff/g). For a simple pendulum, L_eff = L. For a conical pendulum, L_eff = L cos θ (the vertical height of the cone). So a conical pendulum swings slower than a simple pendulum of the same string length.",
+    "**Comparison with simple pendulum:** both have period $T = 2\pi\sqrt{L_{\mathrm{eff}}/g}$. For a simple pendulum, $L_{\mathrm{eff}} = L$. For a conical pendulum, $L_{\mathrm{eff}} = L$ cos θ (the vertical height of the cone). So a conical pendulum swings slower than a simple pendulum of the same string length.",
     "**NEB exam focus:** deriving the relation cos θ = g/(ω²L); finding the period, angular speed, or tension; showing that the period is independent of mass; comparing conical and simple pendulums.",
     "**Practical examples:** a tethered aeroplane model, a ball on a string swung in a horizontal circle, vehicles banking on a curved road (same geometry — the road provides the 'tension' component).",
     "**Deriving the key result step by step:** from vertical equilibrium: T cos θ = mg → T = mg/cos θ. From horizontal force: T sin θ = mω²r = mω²L sin θ. Canceling sin θ (assuming θ ≠ 0): T = mω²L. Equating: mω²L = mg/cos θ → ω² = g/(L cos θ) → ω = √(g/L cos θ). This derivation is the standard NEB proof question.",
-    "**Period formula insight:** T_period = 2π/ω = 2π√(L cos θ/g). Note that L cos θ is the VERTICAL HEIGHT h of the cone. So T = 2π√(h/g) — the period depends only on the vertical height, not on the radius or the mass. A cone with height 1 m has the same period regardless of how wide it is.",
-    "**Relation to simple pendulum:** a simple pendulum of length L has period T = 2π√(L/g). A conical pendulum of string length L has period T = 2π√(L cos θ/g) = 2π√(h/g). Since cos θ < 1, the conical pendulum's period is LONGER than a simple pendulum of the same string length — it swings more slowly.",
+    "**Period formula insight:** $T_{period} = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$. Note that L cos θ is the VERTICAL HEIGHT h of the cone. So T = 2π√(h/g) — the period depends only on the vertical height, not on the radius or the mass. A cone with height 1 m has the same period regardless of how wide it is.",
+    "**Relation to simple pendulum:** a simple pendulum of length L has period $T = 2\pi\sqrt{L/g}$. A conical pendulum of string length L has period T = 2π√(L cos θ/g) = 2π√(h/g). Since cos θ < 1, the conical pendulum's period is LONGER than a simple pendulum of the same string length — it swings more slowly.",
     "**Connection to banking of roads:** the conical pendulum and a banked road share identical force geometry. In the pendulum, tension provides both vertical support and centripetal force. In a banked road, the normal force plays the same dual role. The equation tan θ = v²/(rg) for banking is equivalent to the conical pendulum's geometry.",
     "**Watt's governor:** the conical pendulum is the basis of the centrifugal governor used in steam engines. As the engine speeds up, the bobs rise (θ increases), which mechanically reduces the steam supply. This is a real-world application that NEB sometimes references."
   ],
@@ -61,7 +61,7 @@
     "Vertical equilibrium: T cos θ = mg",
     "Centripetal force: T sin θ = mω²L sin θ → T = mω²L",
     "Angular speed: ω = √(g/(L cos θ))",
-    "Period: T_period = 2π√(L cos θ/g) — independent of mass",
+    "Period: $T_{period} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$ — independent of mass",
     "Radius of circle: r = L sin θ"
   ],
   "keyPoints": [
@@ -71,7 +71,7 @@
     "The tension is always greater than mg: T = mg/cos θ.",
     "The centripetal force is the horizontal component of tension — no new force is added."
   ],
-  "summary": "A conical pendulum consists of a bob moving in a horizontal circle with the string tracing a cone. The key equations are T cos θ = mg and T sin θ = mω²L sin θ, giving ω = √(g/L cos θ) and T_period = 2π√(L cos θ/g). The period is independent of the bob's mass and depends only on the vertical height of the cone.",
+  "summary": "A conical pendulum consists of a bob moving in a horizontal circle with the string tracing a cone. The key equations are T cos θ = mg and T sin θ = mω²L sin θ, giving ω = √(g/L cos θ) and $T_{period} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$. The period is independent of the bob's mass and depends only on the vertical height of the cone.",
   "specialNotes": [
     "The period is independent of mass — this is a key result that NEB frequently tests.",
     "The faster the rotation, the larger the angle θ (the cone becomes flatter).",
@@ -105,7 +105,7 @@
     "Period problems: use T = 2π√(L cos θ/g) — know this formula.",
     "Tension problems: use T = mg/cos θ — remember T > mg.",
     "Mass independence: be prepared to show that the period is independent of mass.",
-    "Comparison with simple pendulum: both have T = 2π√(L_eff/g), but L_eff differs."
+    "Comparison with simple pendulum: both have $T = 2\pi\sqrt{L_{\mathrm{eff}}/g}$, but L_eff differs."
   ],
   "mcs": [
     {
@@ -208,10 +208,10 @@
     ],
     "outputs": [
       "θ = arccos(g/(ω²L)) — cone angle",
-      "T_period = 2π√(L cos θ/g) — period",
+      "$T_{period} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$ — period",
       "Tension = mω²L — string tension",
       "r = L sin θ — radius of circle",
-      "Compare: T_simple = 2π√(L/g) vs T_conical = 2π√(L cos θ/g)"
+      "Compare: $T_{simple} = 2\pi\sqrt{L/g}$ vs $T_{conical} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$"
     ],
     "visualElements": [
       "3D rotating bob with string tracing a cone",
@@ -246,7 +246,7 @@
         "topic": "Key Results",
         "details": [
           "ω = √(g/L cos θ)",
-          "T_period = 2π√(L cos θ/g)",
+          "$T_{period} = 2\pi\sqrt{\frac{L \cos\theta}{g}}$",
           "T = mg/cos θ (tension > mg)",
           "Independent of mass m"
         ]
@@ -254,7 +254,7 @@
       {
         "topic": "Comparison",
         "details": [
-          "Simple pendulum: T = 2π√(L/g)",
+          "Simple pendulum: $T = 2\pi\sqrt{L/g}$",
           "Conical pendulum: T = 2π√(L cos θ/g)",
           "Since cos θ < 1, conical period > simple period",
           "Same vertical height h: T = 2π√(h/g) for both"

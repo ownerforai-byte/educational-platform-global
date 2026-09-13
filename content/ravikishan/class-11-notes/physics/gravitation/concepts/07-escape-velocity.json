@@ -5,17 +5,18 @@
   "topicTitle": "Escape velocity",
   "relevance": 100,
   "notes": [
-    "**Escape Velocity:** Class 11 concept.",
+    "**Escape Velocity:** Class 11 concept.
+    **Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth.",
     "**Why:** connects to other topics.",
     "**Study:** learn definitions, formulas, practice."
   ],
   "confusion": [
     "Distinguish concepts in Escape Velocity.",
-    "Check formula conditions."
+    "Check formula conditions: $v_e = \\sqrt{\\frac{2GM}{R}}$ assumes no air resistance."
   ],
   "practice": [
     "Solve 5 problems on Escape Velocity.",
-    "Derive the key formula for Escape Velocity."
+    "Derive the key formula $v_e = \\sqrt{2gR}$ from energy conservation."
   ],
   "universalFacts": [
     "Escape Velocity appears in exams.",
@@ -24,41 +25,41 @@
   "animation3D": "gravitation",
   "motionGraphics": "gravitation",
   "examples": [
-    "Application of Escape Velocity",
-    "Numerical problem on Escape Velocity",
+    "Application of Escape Velocity: $v_e = \\sqrt{2gR}$",
+    "Numerical problem on Escape Velocity: calculate for Earth and Moon.",
     "Daily life use of Escape Velocity"
   ],
   "practiceQuestions": [
     "Q1. Define Escape Velocity.",
-    "Q2. Key formula for Escape Velocity.",
-    "Q3. Problem on Escape Velocity."
+    "Q2. Key formula: $v_e = \\sqrt{\\frac{2GM}{R}}$.",
+    "Q3. Problem on Escape Velocity: calculate for Earth."
   ],
   "formulas": [
-    "Formula for Escape Velocity: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$",
+    "Key relationship: $v_e = \\sqrt{2} \\cdot v_0$ (escape velocity = √2 × orbital velocity)"
   ],
   "keyPoints": [
-    "Core principle of Escape Velocity",
+    "Core principle: $v_e = \\sqrt{\\frac{2GM}{R}}$",
     "Application of Escape Velocity",
     "Connection of Escape Velocity to other topics"
   ],
-  "summary": "Escape Velocity covers essential principles and applications.",
+  "summary": "Escape Velocity is the minimum speed needed for an object to escape a gravitational field: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$.",
   "specialNotes": [
-    "Check conditions for Escape Velocity.",
-    "Escape Velocity connects to other topics."
+    "Check conditions for Escape Velocity: $v_e = \\sqrt{2gR}$ assumes no atmosphere.",
+    "Escape Velocity connects to other topics: $v_e = \\sqrt{2} \\cdot v_0$."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Escape velocity",
-    "Statement 2: Theorem related to Escape velocity",
-    "Statement 3: Condition for Escape velocity to be valid",
-    "Statement 4: Principle governing Escape velocity",
-    "Statement 5: Corollary or consequence of Escape velocity"
+    "Statement 1: Definition of Escape velocity: $v_e = \\sqrt{\\frac{2GM}{R}}$",
+    "Statement 2: Theorem related to Escape velocity: derived from energy conservation.",
+    "Statement 3: Condition for Escape velocity to be valid: no atmospheric resistance.",
+    "Statement 4: Principle governing Escape velocity: energy conservation.",
+    "Statement 5: Corollary or consequence of Escape velocity: $v_e = \\sqrt{2} \\cdot v_0$."
   ],
   "importantNotes": [
-    "Escape Velocity is based on fundamental principles."
+    "Escape Velocity is based on fundamental principles: $KE + PE = 0$ at infinity."
   ],
   "examShortTricks": [
-    "Recall the formula for Escape Velocity."
+    "Recall the formula: $v_e = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
   ],
   "examNotes": [
     "Focus on Escape Velocity problems - significant marks."
@@ -67,7 +68,7 @@
     {
       "question": "Which describes Escape Velocity?",
       "options": [
-        "Correct definition",
+        "Correct definition: $v_e = \\sqrt{\\frac{2GM}{R}}$",
         "Related concept",
         "Incorrect description",
         "Unrelated"
@@ -76,10 +77,9 @@
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Escape Velocity."
+    "Definition and significance of Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}}$."
   ],
   "importantTasks": [
-    "Solve 5 problems on Escape Velocity."
-  ],
-  "duplicateType": 1
+    "Solve 5 problems on Escape Velocity using $v_e = \\sqrt{\\frac{2GM}{R}}$."
+  ]
 }
