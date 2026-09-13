@@ -7,12 +7,12 @@
   "duplicateType": 2,
   "tabGroup": "centre-mass-gravity",
   "notes": [
-    "**Centre of mass (COM):** the point where the entire mass of a body (or system) may be considered to be concentrated for translational (linear) motion analysis. Position: R_cm = (Σ mᵢrᵢ)/(Σ mᵢ). For continuous bodies: R_cm = (∫r dm)/M.",
+    "**Centre of mass (COM):** the point where the entire mass of a body (or system) may be considered to be concentrated for translational (linear) motion analysis. Position: $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$. For continuous bodies: $R_{cm} = \\frac{\\int r dm}{M}$.",
     "**Centre of gravity (CG):** the point where the entire weight of a body may be considered to act. In a uniform gravitational field, the CG coincides exactly with the COM. If the field is non-uniform (very large bodies, varying g), the CG may shift slightly relative to the COM.",
-    "**Why CG equals COM in uniform g:** weight W = mg at each point, and since g is the same everywhere, the torque balance condition that defines the CG reduces to the same weighted average that defines the COM. The two centres coincide.",
-    "**Solved example — two masses:** masses 2 kg at x = 0 and 8 kg at x = 3 m. COM: x_cm = (2×0 + 8×3)/(2+8) = 24/10 = 2.4 m. The COM is closer to the heavier mass.",
-    "**Solved example — system of three:** 1 kg at (0,0), 2 kg at (2,0), 3 kg at (0,4). x_cm = (1×0 + 2×2 + 3×0)/6 = 4/6 = 0.67 m; y_cm = (1×0 + 2×0 + 3×4)/6 = 12/6 = 2 m. COM at (0.67, 2) m.",
-    "**Properties:** (1) The COM of a uniform, symmetric body lies at its geometric centre. (2) The COM of two bodies lies on the line joining them. (3) For irregular bodies the COM can lie OUTSIDE the material (e.g., a ring, a boomerang, a bent L-shape). (4) The total linear momentum of a system equals M·V_cm — external forces alone can change V_cm.",
+    "**Why CG equals COM in uniform g:** weight $W = mg$ at each point, and since $g$ is the same everywhere, the torque balance condition that defines the CG reduces to the same weighted average that defines the COM. The two centres coincide.",
+    "**Solved example — two masses:** masses 2 kg at x = 0 and 8 kg at x = 3 m. COM: $x_{cm} = \\frac{2 \\times 0 + 8 \\times 3}{2+8} = \\frac{24}{10} = 2.4 \\text{ m}$. The COM is closer to the heavier mass.",
+    "**Solved example — system of three:** 1 kg at (0,0), 2 kg at (2,0), 3 kg at (0,4). $x_{cm} = \\frac{1 \\times 0 + 2 \\times 2 + 3 \\times 0}{6} = \\frac{4}{6} = 0.67 \\text{ m}$; $y_{cm} = \\frac{1 \\times 0 + 2 \\times 0 + 3 \\times 4}{6} = \\frac{12}{6} = 2 \\text{ m}$. COM at (0.67, 2) m.",
+    "**Properties:** (1) The COM of a uniform, symmetric body lies at its geometric centre. (2) The COM of two bodies lies on the line joining them. (3) For irregular bodies the COM can lie OUTSIDE the material (e.g., a ring, a boomerang, a bent L-shape). (4) The total linear momentum of a system equals $M \\cdot V_{cm}$ — external forces alone can change $V_{cm}$.",
     "**Finding CG experimentally (NEB practical):** suspend the body from two different points; the two vertical lines through the suspension points intersect at the centre of gravity. Plumb lines are used — the intersection of the two suspension lines locates the CG.",
     "**Applications:** designing stable structures (ships, cars, tables) keeps the CG low and inside the base; balancing acts use alignment of the CG above the support; in projectiles, the COM follows a smooth parabola even if the object rotates; spacecraft alignment uses the COM."
   ],
@@ -20,7 +20,7 @@
     "❌ 'COM and CG are always at the material centre.' ✅ Only for uniform, symmetric bodies. A ring's COM is at its empty centre; an L-shaped body has its COM outside its material.",
     "❌ 'COM and CG are always the same point.' ✅ They coincide in a UNIFORM gravitational field. For very large objects in a non-uniform field, they differ slightly.",
     "❌ 'COM is a force point.' ✅ COM is a mass-weighted average position — a geometric point for translational dynamics, not a force.",
-    "❌ 'To find the COM, only the largest mass matters.' ✅ All masses contribute proportionally: R_cm = Σmᵢrᵢ/Σmᵢ.",
+    "❌ 'To find the COM, only the largest mass matters.' ✅ All masses contribute proportionally: $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$.",
     "❌ 'The COM moves when the body spins.' ✅ The COM of an isolated system moves uniformly (or stays still); spinning happens about the COM.",
     "❌ 'The CG of an object must lie within the object.' ✅ It can lie outside the material — ring, hollow sphere, L-shape, boomerang."
   ],
@@ -57,11 +57,11 @@
     "Describe how you would locate the CG of an irregular-shaped lamina in the laboratory."
   ],
   "formulas": [
-    "Centre of mass (discrete): R_cm = Σmᵢrᵢ / Σmᵢ",
-    "Centre of mass (continuous): R_cm = ∫r dm / ∫ dm",
-    "Two masses: x_cm = (m₁x₁ + m₂x₂)/(m₁ + m₂)",
-    "Velocity of COM: V_cm = Σmᵢvᵢ / M",
-    "Acceleration of COM: a_cm = Σmᵢaᵢ / M = F_ext / M"
+    "Centre of mass (discrete): $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$",
+    "Centre of mass (continuous): $R_{cm} = \\frac{\\int r dm}{\\int dm}$",
+    "Two masses: $x_{cm} = \\frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}$",
+    "Velocity of COM: $V_{cm} = \\frac{\\Sigma m_i v_i}{M}$",
+    "Acceleration of COM: $a_{cm} = \\frac{\\Sigma m_i a_i}{M} = \\frac{F_{ext}}{M}$"
   ],
   "keyPoints": [
     "COM is a mass-weighted average position; CG is where the total weight acts.",
@@ -70,7 +70,7 @@
     "COM can lie outside the material (ring, L-shape, boomerang).",
     "The motion of the COM is governed only by external forces."
   ],
-  "summary": "The centre of mass is the mass-weighted average position of a body or system: R_cm = Σmᵢrᵢ/M; the centre of gravity is the point where total weight acts. They coincide in a uniform gravitational field. The COM may lie outside the material and its motion is controlled only by external forces — the key to rigid-body and stability analysis.",
+  "summary": "The centre of mass is the mass-weighted average position of a body or system: $R_{cm} = \\frac{\\Sigma m_i r_i}{M}$; the centre of gravity is the point where total weight acts. They coincide in a uniform gravitational field. The COM may lie outside the material and its motion is controlled only by external forces — the key to rigid-body and stability analysis.",
   "specialNotes": [
     "In a uniform gravitational field the location of CG equals COM — that is almost always true in school problems.",
     "For symmetric uniform bodies, COM = geometric centre (no calculation needed).",
@@ -79,7 +79,7 @@
     "NEB often asks to compute the COM of simple systems and to compare COM with CG."
   ],
   "importantStatements": [
-    "The centre of mass of a system is the mass-weighted average position: R_cm = Σmᵢrᵢ/Σmᵢ.",
+    "The centre of mass of a system is the mass-weighted average position: $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$.",
     "The centre of gravity is the point where the entire weight may be considered to act.",
     "In a uniform gravitational field the centre of gravity coincides with the centre of mass.",
     "For uniform symmetric bodies the COM is at the geometric centre.",
@@ -95,9 +95,9 @@
   "examShortTricks": [
     "For two masses: COM divides the join inversely to the masses (closer to the heavier).",
     "Uniform rod → COM at L/2; uniform square → centre; ring → centre (empty).",
-    "Velocity of COM: V_cm = P_total/M — total momentum divided by total mass.",
+    "Velocity of COM: $V_{cm} = \\frac{P_{total}}{M}$ — total momentum divided by total mass.",
     "To locate CG experimentally: hang from two points and mark the verticals.",
-    "External forces only change V_cm — internal forces (collisions, explosions) cannot."
+    "External forces only change $V_{cm}$ — internal forces (collisions, explosions) cannot."
   ],
   "examNotes": [
     "COM calculation for two/three point masses is a standard numerical.",
@@ -159,7 +159,7 @@
     }
   ],
   "importantConcepts": [
-    "COM = Σmᵢrᵢ/Σmᵢ; CG = point where total weight acts.",
+    "$COM = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$; $CG = \\text{point where total weight acts}$.",
     "COM and CG coincide in uniform g.",
     "Uniform symmetric bodies have COM at the geometric centre.",
     "The COM can lie outside the material of the body.",

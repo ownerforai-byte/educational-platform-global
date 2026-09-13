@@ -18,7 +18,6 @@ import {
   ShieldCheck,
   Coins,
   Crown,
-  ChevronsDown,
   ChevronsUp,
   Sparkles,
   Atom,
@@ -82,6 +81,7 @@ function NavSection({
   pathname,
   collapsed,
   onToggle,
+  railCollapsed,
 }: {
   label: string;
   icon: React.ComponentType<{ className?: string }>;
@@ -89,12 +89,51 @@ function NavSection({
   pathname: string;
   collapsed: boolean;
   onToggle: () => void;
+  railCollapsed: boolean;
 }) {
   const Icon = LabelIcon;
   const activeCount = items.filter(
     (item) => pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
   ).length;
 
+  // ── Collapsed rail: icon-only, centered, with hover tooltips ──────────────
+  if (railCollapsed) {
+    return (
+      <div className="mb-2">
+        <div className="flex items-center justify-center py-2" title={label}>
+          <Icon className="h-3.5 w-3.5 text-muted-foreground/50" />
+        </div>
+        <div className="space-y-0.5">
+          {items.map((item) => {
+            const ItemIcon = item.icon;
+            const isActive =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href));
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.label}
+                className={cn(
+                  "group relative flex items-center justify-center rounded-lg p-2.5 transition-all",
+                  isActive
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                )}
+              >
+                <ItemIcon className={cn("h-4 w-4", isActive && "text-primary")} />
+                {item.badge && (
+                  <span className="absolute top-1 right-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  // ── Expanded: full labels + per-section collapse ──────────────────────────
   return (
     <div className="mb-2">
       <button
@@ -113,7 +152,7 @@ function NavSection({
                 {activeCount}
               </span>
             )}
-            {collapsed ? <ChevronsDown className="h-3 w-3 opacity-50" /> : <ChevronsUp className="h-3 w-3 opacity-50" />}
+            <ChevronsUp className="h-3 w-3 opacity-50" />
           </>
         )}
       </button>
@@ -210,6 +249,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
           pathname={pathname}
           collapsed={collapsedSections.ai}
           onToggle={() => toggleSection("ai")}
+          railCollapsed={collapsed}
         />
         <NavSection
           label="Notes & Syllabus"
@@ -218,6 +258,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
           pathname={pathname}
           collapsed={collapsedSections.curriculum}
           onToggle={() => toggleSection("curriculum")}
+          railCollapsed={collapsed}
         />
         <NavSection
           label="Labs & Interactive"
@@ -226,6 +267,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
           pathname={pathname}
           collapsed={collapsedSections.lab}
           onToggle={() => toggleSection("lab")}
+          railCollapsed={collapsed}
         />
         <NavSection
           label="Curriculum & GK"
@@ -234,6 +276,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
           pathname={pathname}
           collapsed={collapsedSections.general}
           onToggle={() => toggleSection("general")}
+          railCollapsed={collapsed}
         />
         {isLoggedIn && (
           <NavSection
@@ -243,6 +286,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             pathname={pathname}
             collapsed={collapsedSections.account}
             onToggle={() => toggleSection("account")}
+            railCollapsed={collapsed}
           />
         )}
         {(user?.role === "ADMIN" || user?.role === "OWNER") && (
@@ -253,6 +297,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             pathname={pathname}
             collapsed={collapsedSections.admin}
             onToggle={() => toggleSection("admin")}
+            railCollapsed={collapsed}
           />
         )}
       </div>
@@ -262,6 +307,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
         {isLoggedIn ? (
           <button
             onClick={handleLogout}
+            title={collapsed ? "Log out" : undefined}
             className={cn(
               "flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-all",
               collapsed && "justify-center"
@@ -273,6 +319,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
         ) : (
           <Link
             href="/login"
+            title={collapsed ? "Login" : undefined}
             className={cn(
               "flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted/60 hover:text-foreground transition-all",
               collapsed && "justify-center"

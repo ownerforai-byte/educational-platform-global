@@ -100,13 +100,12 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             <Link
               href="/"
               className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
+              aria-label="Ravikisan's Platform home"
+              title="Ravikisan's Platform"
             >
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
                 <span className="text-sm font-extrabold text-white">R</span>
               </div>
-              <span className="hidden sm:block text-sm font-bold tracking-tight text-foreground whitespace-nowrap">
-                Ravikisan&apos;s Platform
-              </span>
             </Link>
           </div>
 

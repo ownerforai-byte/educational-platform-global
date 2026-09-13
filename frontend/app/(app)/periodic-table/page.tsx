@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PeriodicTablePage() {
   return (
-    <div className="w-full max-w-[1780px] mx-auto py-2 sm:py-4 px-2 sm:px-4 lg:px-6">
+    <div className="w-full max-w-[1780px] mx-auto pb-4 px-1 sm:px-2 lg:px-4">
       <PeriodicTableView />
     </div>
   );

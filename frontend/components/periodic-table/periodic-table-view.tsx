@@ -87,8 +87,9 @@ export function PeriodicTableView() {
 
   // Responsive Zoom / Screen Fitting
   const [zoom, setZoom] = useState<number>(1);
-  const [fitScreen, setFitScreen] = useState<boolean>(true);
+  const [fitMode, setFitMode] = useState<"screen" | "width" | "custom">("screen");
   const [measuredHeight, setMeasuredHeight] = useState<number>(580);
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const tableContainerRef = useRef<HTMLDivElement>(null);
   const tableContentRef = useRef<HTMLDivElement>(null);
   const tableScrollRef = useRef<HTMLDivElement>(null);
@@ -114,7 +115,29 @@ export function PeriodicTableView() {
       });
   }, []);
 
-  // Screen Auto-Fit logic: automatically scale table so all 18 columns fit without overflow
+  // Listen to native fullscreen changes
+  useEffect(() => {
+    const handleFsChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    };
+    document.addEventListener("fullscreenchange", handleFsChange);
+    return () => document.removeEventListener("fullscreenchange", handleFsChange);
+  }, []);
+
+  const toggleFullscreen = async () => {
+    if (!tableContainerRef.current) return;
+    try {
+      if (!document.fullscreenElement) {
+        await tableContainerRef.current.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (err) {
+      console.error("Fullscreen toggle failed:", err);
+    }
+  };
+
+  // Screen Auto-Fit logic: automatically scale table so all 18 columns and 7 periods fit on screen
   useEffect(() => {
     const calculateLayout = () => {
       if (tableContentRef.current) {
@@ -122,23 +145,45 @@ export function PeriodicTableView() {
         if (h > 150) setMeasuredHeight(h);
       }
       const viewportW = tableScrollRef.current?.clientWidth || tableContainerRef.current?.clientWidth;
-      if (viewportW) {
-        if (fitScreen) {
-          const availableW = Math.max(280, viewportW);
-          const optimalScale = Math.min(1.0, Math.max(0.28, availableW / 990));
-          setZoom(optimalScale);
+      if (!viewportW) return;
+
+      if (fitMode === "screen" || fitMode === "width") {
+        const availableW = Math.max(260, viewportW - 8);
+        const scaleW = availableW / 990;
+
+        if (fitMode === "width") {
+          const optimal = Math.min(1.4, Math.max(0.28, scaleW));
+          setZoom(Number(optimal.toFixed(2)));
+        } else {
+          // "screen": Fit BOTH width & available viewport height so entire table is visible on-screen
+          let scaleH = scaleW;
+          if (typeof window !== "undefined" && tableContainerRef.current) {
+            const rect = tableContainerRef.current.getBoundingClientRect();
+            const topPos = rect.top > 0 ? rect.top : (isFullscreen ? 50 : 200);
+            // 24px safety buffer from the bottom of the viewport
+            const availableH = Math.max(160, window.innerHeight - topPos - 24);
+            const contentH = measuredHeight > 150 ? measuredHeight : 580;
+            scaleH = availableH / contentH;
+          }
+
+          const target = Math.min(scaleW, scaleH);
+          // Clamp: minimum 0.28 on tiny phones, maximum 1.25 on large monitors
+          const optimal = Math.min(1.25, Math.max(0.28, target));
+          setZoom(Number(optimal.toFixed(2)));
         }
       }
     };
 
     calculateLayout();
-    const timer = setTimeout(calculateLayout, 80);
+    const timer1 = setTimeout(calculateLayout, 80);
+    const timer2 = setTimeout(calculateLayout, 250);
     window.addEventListener("resize", calculateLayout);
     return () => {
-      clearTimeout(timer);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
       window.removeEventListener("resize", calculateLayout);
     };
-  }, [fitScreen, elements]);
+  }, [fitMode, measuredHeight, elements, isFullscreen]);
 
   const activeFilter = activeFilterId !== "all" ? PERIODIC_FILTERS[activeFilterId] : null;
 
@@ -224,35 +269,35 @@ export function PeriodicTableView() {
   const activeHoverCategory = hoveredFilter ?? activeFilter;
 
   return (
-    <div className="space-y-3 sm:space-y-4">
-      {/* ── 1. TOP HEADER & SEARCH ───────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-border/50">
+    <div className="space-y-2 sm:space-y-2.5">
+      {/* ── 1. TOP HEADER & TOOLBAR ──────────────────────────────────────── */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1.5 border-b border-border/50">
         <div>
           <div className="flex items-center gap-2">
-            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[11px] font-bold uppercase tracking-wider border border-teal-500/20">
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[10px] font-bold uppercase tracking-wider border border-teal-500/20">
               <Atom className="h-3 w-3" />
               <span>118 Elements</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black tracking-tight text-foreground">
+            <h1 className="text-base sm:text-lg lg:text-xl font-black tracking-tight text-foreground">
               Modern Periodic Table &amp; CEE Bank
             </h1>
           </div>
-          <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5">
+          <p className="text-[11px] text-muted-foreground mt-0.5">
             Hover or tap any element to preview constants. Click to open complete CEE past MCQs, hallmark equations &amp; ores.
           </p>
         </div>
 
         {/* Quick Search & Zoom Toolbar */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {/* Search */}
-          <div className="relative w-44 sm:w-56">
+          <div className="relative w-40 sm:w-48">
             <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search (e.g. Cu, Iron, 29)..."
+              placeholder="Search (Cu, 29, Iron)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-8 pl-8 pr-6 rounded-xl border border-border/80 bg-card text-xs font-medium focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
+              className="w-full h-7 pl-7 pr-6 rounded-xl border border-border/80 bg-card text-xs font-medium focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
             />
             {searchQuery && (
               <button
@@ -265,37 +310,47 @@ export function PeriodicTableView() {
           </div>
 
           {/* Screen Fit & Zoom Controls */}
-          <div className="flex items-center gap-1 bg-card border border-border/80 rounded-xl p-1 shadow-sm text-xs">
+          <div className="flex items-center gap-1 bg-card border border-border/80 rounded-xl p-0.5 shadow-sm text-xs">
             <button
-              onClick={() => {
-                setFitScreen(true);
-              }}
-              className={`px-2.5 py-1 rounded-lg font-bold text-[11px] transition-all ${
-                fitScreen
+              onClick={() => setFitMode("screen")}
+              className={`px-2 py-1 rounded-lg font-bold text-[10px] sm:text-[11px] transition-all ${
+                fitMode === "screen"
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
-              title="Scale table to automatically fit inside the screen without horizontal overflow"
+              title="Scale table so all 18 columns and 7 periods fit completely on screen"
             >
               Fit Screen
             </button>
             <button
+              onClick={() => setFitMode("width")}
+              className={`px-2 py-1 rounded-lg font-bold text-[10px] sm:text-[11px] transition-all ${
+                fitMode === "width"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+              title="Expand table to container width"
+            >
+              Fit Width
+            </button>
+            <div className="h-3.5 w-px bg-border/80 mx-0.5" />
+            <button
               onClick={() => {
-                setFitScreen(false);
-                setZoom((z) => Math.max(0.45, z - 0.1));
+                setFitMode("custom");
+                setZoom((z) => Math.max(0.28, Number((z - 0.08).toFixed(2))));
               }}
               className="p-1 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground"
               title="Zoom out"
             >
               <ZoomOut className="h-3.5 w-3.5" />
             </button>
-            <span className="text-[10px] font-mono font-bold px-1 text-muted-foreground">
+            <span className="text-[10px] font-mono font-bold px-1 text-muted-foreground min-w-[32px] text-center">
               {Math.round(zoom * 100)}%
             </span>
             <button
               onClick={() => {
-                setFitScreen(false);
-                setZoom((z) => Math.min(1.4, z + 0.1));
+                setFitMode("custom");
+                setZoom((z) => Math.min(1.5, Number((z + 0.08).toFixed(2))));
               }}
               className="p-1 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground"
               title="Zoom in"
@@ -304,22 +359,29 @@ export function PeriodicTableView() {
             </button>
             <button
               onClick={() => {
-                setFitScreen(false);
+                setFitMode("custom");
                 setZoom(1);
               }}
               className="p-1 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground"
-              title="Reset to 100%"
+              title="Reset zoom to 100%"
             >
               <RotateCcw className="h-3.5 w-3.5" />
+            </button>
+            <button
+              onClick={toggleFullscreen}
+              className="p-1 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground ml-0.5"
+              title={isFullscreen ? "Exit Fullscreen" : "Fullscreen Periodic Table"}
+            >
+              {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* ── 2. FILTER PILLS BAR ──────────────────────────────────────────── */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
             <Layers className="h-3 w-3" />
             <span>Classification Filters:</span>
           </span>
@@ -329,7 +391,7 @@ export function PeriodicTableView() {
                 setActiveFilterId("all");
                 setHoveredFilter(null);
               }}
-              className="text-xs text-primary font-semibold hover:underline"
+              className="text-[11px] text-primary font-semibold hover:underline"
             >
               Reset to All (118)
             </button>
@@ -340,7 +402,7 @@ export function PeriodicTableView() {
           <button
             onClick={() => setActiveFilterId("all")}
             onMouseEnter={() => setHoveredFilter(null)}
-            className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+            className={`px-2 py-0.5 rounded-lg text-[11px] font-bold transition-all ${
               activeFilterId === "all"
                 ? "bg-primary text-primary-foreground shadow-sm"
                 : "bg-card border border-border/70 text-muted-foreground hover:text-foreground hover:border-primary/50"
@@ -357,7 +419,7 @@ export function PeriodicTableView() {
                 onClick={() => setActiveFilterId(isSelected ? "all" : cat.id)}
                 onMouseEnter={() => setHoveredFilter(cat)}
                 onMouseLeave={() => setHoveredFilter(null)}
-                className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all relative ${
+                className={`px-2 py-0.5 rounded-lg text-[11px] font-bold transition-all relative ${
                   isSelected
                     ? "bg-foreground text-background shadow-sm ring-2 ring-primary"
                     : "bg-card border border-border/70 text-foreground/80 hover:text-foreground hover:border-primary/60"
@@ -371,8 +433,8 @@ export function PeriodicTableView() {
 
         {/* Compact Character Banner on Filter Hover/Select */}
         {activeHoverCategory && (
-          <div className="rounded-xl border border-primary/30 bg-primary/5 p-2.5 sm:p-3 space-y-1.5 transition-all animate-fade-in text-xs">
-            <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="rounded-xl border border-primary/30 bg-primary/5 p-2 sm:p-2.5 space-y-1 transition-all animate-fade-in text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-1.5">
               <div className="flex items-center gap-2">
                 <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground">
                   {activeHoverCategory.shortBadge}
@@ -381,13 +443,13 @@ export function PeriodicTableView() {
                   {activeHoverCategory.name} — {activeHoverCategory.oneLineSummary}
                 </h3>
               </div>
-              <div className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-muted text-foreground">
+              <div className="text-[10.5px] font-mono font-semibold px-2 py-0.5 rounded bg-muted text-foreground">
                 Config: {activeHoverCategory.generalElectronicConfig}
               </div>
             </div>
 
             {activeHoverCategory.examTrapsAndExceptions.length > 0 && (
-              <div className="text-[11px] text-amber-600 dark:text-amber-400 font-medium flex items-center gap-1.5 pt-1 border-t border-border/40">
+              <div className="text-[10.5px] text-amber-600 dark:text-amber-400 font-medium flex items-center gap-1.5 pt-1 border-t border-border/40">
                 <ShieldAlert className="h-3.5 w-3.5 shrink-0" />
                 <span>CEE Trap: {activeHoverCategory.examTrapsAndExceptions[0]}</span>
               </div>
@@ -398,56 +460,56 @@ export function PeriodicTableView() {
 
       {/* ── 3. LIVE ELEMENT INSPECTION DECK ─────────────────────────────── */}
       {inspectionElement && (
-        <div className="rounded-2xl border border-border/80 bg-gradient-to-r from-card via-card to-primary/5 p-3 sm:p-3.5 shadow-sm flex flex-wrap items-center justify-between gap-3 transition-all">
-          <div className="flex items-center gap-3 min-w-0">
+        <div className="rounded-xl border border-border/80 bg-gradient-to-r from-card via-card to-primary/5 px-2.5 sm:px-3 py-1.5 sm:py-2 shadow-sm flex flex-wrap items-center justify-between gap-2 transition-all">
+          <div className="flex items-center gap-2.5 min-w-0">
             {/* Element Tile */}
             <div
-              className={`h-14 w-14 sm:h-16 sm:w-16 rounded-xl border flex flex-col items-center justify-center shrink-0 shadow-sm ${
+              className={`h-11 w-11 sm:h-12 sm:w-12 rounded-lg border flex flex-col items-center justify-center shrink-0 shadow-sm ${
                 CATEGORY_COLORS[inspectionElement.category]?.border ?? "border-border"
               } ${CATEGORY_COLORS[inspectionElement.category]?.bg ?? "bg-card"}`}
             >
-              <div className="flex items-center justify-between w-full px-1.5 text-[9px] font-mono text-muted-foreground">
+              <div className="flex items-center justify-between w-full px-1 text-[8px] font-mono text-muted-foreground leading-none">
                 <span>#{inspectionElement.atomicNumber}</span>
                 <span className="uppercase font-bold">{inspectionElement.block}</span>
               </div>
-              <span className="text-xl sm:text-2xl font-black text-foreground tracking-tight leading-none my-0.5">
+              <span className="text-base sm:text-lg font-black text-foreground tracking-tight leading-none my-0.5">
                 {inspectionElement.symbol}
               </span>
-              <span className="text-[8.5px] font-semibold text-muted-foreground truncate px-1">
-                {inspectionElement.atomicMass} u
+              <span className="text-[7.5px] font-semibold text-muted-foreground truncate px-0.5 leading-none">
+                {inspectionElement.atomicMass}
               </span>
             </div>
 
             {/* Element Details */}
             <div className="min-w-0 space-y-0.5">
               <div className="flex items-center gap-2 flex-wrap">
-                <h2 className="text-base sm:text-lg font-extrabold text-foreground truncate">
+                <h2 className="text-sm font-extrabold text-foreground truncate">
                   {inspectionElement.name}
                 </h2>
                 <span
-                  className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full border ${
+                  className={`text-[8.5px] font-bold px-1.5 py-0.2 rounded-full border ${
                     CATEGORY_COLORS[inspectionElement.category]?.badge ?? ""
                   }`}
                 >
                   {inspectionElement.subCategory || inspectionElement.category}
                 </span>
-                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-semibold">
+                <span className="text-[8.5px] font-mono px-1.5 py-0.2 rounded bg-muted text-muted-foreground font-semibold">
                   P{inspectionElement.period}, G{inspectionElement.group} ({GROUP_ROMAN_LABELS[inspectionElement.group - 1]})
                 </span>
               </div>
 
               {/* Electron config & values */}
-              <div className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
+              <div className="flex items-center gap-2 text-[11px] text-muted-foreground flex-wrap">
                 <span className="font-mono text-primary font-bold">
                   {inspectionElement.electronConfig}
                 </span>
                 <span>•</span>
                 <span>
-                  Melting: <strong className="text-foreground">{inspectionElement.meltingPointC ?? "N/A"} °C</strong>
+                  MP: <strong className="text-foreground">{inspectionElement.meltingPointC ?? "N/A"}°C</strong>
                 </span>
                 <span>•</span>
                 <span>
-                  Boiling: <strong className="text-foreground">{inspectionElement.boilingPointC ?? "N/A"} °C</strong>
+                  BP: <strong className="text-foreground">{inspectionElement.boilingPointC ?? "N/A"}°C</strong>
                 </span>
                 {inspectionElement.electronegativity && (
                   <>
@@ -460,16 +522,16 @@ export function PeriodicTableView() {
               </div>
 
               {/* Counts Pills */}
-              <div className="flex items-center gap-1.5 pt-0.5 flex-wrap text-[10px]">
-                <span className="px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-500 font-semibold flex items-center gap-1">
+              <div className="flex items-center gap-1.5 pt-0.5 flex-wrap text-[9.5px]">
+                <span className="px-1.5 py-0.2 rounded bg-sky-500/10 text-sky-500 font-semibold flex items-center gap-1">
                   <GraduationCap className="h-3 w-3" />
                   {inspectionElement.ceePastMcqs?.length || 0} CEE MCQs
                 </span>
-                <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                <span className="px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
                   <FlaskConical className="h-3 w-3" />
                   {inspectionElement.hallmarkReactions?.length || 0} Reactions
                 </span>
-                <span className="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 font-semibold flex items-center gap-1">
+                <span className="px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-500 font-semibold flex items-center gap-1">
                   <Sparkles className="h-3 w-3" />
                   {inspectionElement.keyOresAndCompounds?.length || 0} Ores
                 </span>
@@ -483,7 +545,7 @@ export function PeriodicTableView() {
               setSelectedElement(inspectionElement);
               setIsDossierOpen(true);
             }}
-            className="px-3 py-2 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 shrink-0"
+            className="px-2.5 py-1.5 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 shrink-0"
           >
             <span>Open CEE Dossier</span>
             <ChevronRight className="h-3.5 w-3.5" />
@@ -494,13 +556,32 @@ export function PeriodicTableView() {
       {/* ── 4. FULL PERIODIC TABLE GRID (Fit-in-Screen Scaling) ───────────── */}
       <div
         ref={tableContainerRef}
-        className="rounded-2xl sm:rounded-3xl border border-border/80 bg-card p-2 sm:p-4 shadow-sm w-full overflow-hidden"
+        className={`rounded-2xl sm:rounded-3xl border border-border/80 bg-card p-2 sm:p-3 shadow-sm w-full overflow-hidden ${
+          isFullscreen ? "fixed inset-0 z-50 rounded-none p-3 sm:p-6 bg-background flex flex-col justify-center items-center overflow-auto" : ""
+        }`}
       >
+        {isFullscreen && (
+          <div className="w-full flex items-center justify-between pb-2 mb-2 border-b border-border/50 max-w-[1200px]">
+            <div className="flex items-center gap-2">
+              <Atom className="h-4 w-4 text-teal-500" />
+              <span className="text-sm font-black text-foreground">118 Elements — Fullscreen View</span>
+            </div>
+            <button
+              onClick={toggleFullscreen}
+              className="px-2.5 py-1 rounded-lg bg-muted hover:bg-muted/80 text-foreground text-xs font-semibold flex items-center gap-1.5"
+            >
+              <Minimize2 className="h-3.5 w-3.5" />
+              <span>Exit Fullscreen</span>
+            </button>
+          </div>
+        )}
+
         <div
           ref={tableScrollRef}
-          className={`w-full flex ${fitScreen ? "justify-center" : ""} overflow-y-auto ${fitScreen ? "overflow-x-hidden" : "overflow-x-auto"}`}
+          className={`w-full flex justify-center overflow-y-auto ${fitMode === "screen" ? "overflow-x-hidden" : "overflow-x-auto"}`}
           style={{
             height: `${Math.ceil(measuredHeight * zoom)}px`,
+            maxHeight: fitMode === "screen" && !isFullscreen ? "calc(100vh - 150px)" : undefined,
           }}
         >
           <div

@@ -11,7 +11,7 @@ import { KnowledgeLoksewaHub } from "@/components/home/knowledge-loksewa-hub";
 import { AIAssistantWorkspace } from "@/components/home/ai-assistant-workspace";
 
 export const metadata = {
-  title: "Global Educational Platform — 3D Labs, Notes & Exam Mastery",
+  title: "Ravikisan's Platform",
   description: "NEB Class 11 & 12 complete curriculum: interactive 3D science labs, computational solvers, step-by-step theorem proofs, derivations, AI quizzes, and curated notes.",
 };
 
