@@ -58,11 +58,11 @@
     "Compare the periods of a simple pendulum and a conical pendulum of the same string length L = 2 m, with the conical pendulum at θ = 30°."
   ],
   "formulas": [
-    "Vertical equilibrium: $T \cos \theta = mg$",
-    "Centripetal force: $T \sin \theta = m\omega^2 L \sin \theta \rightarrow T = m\omega^2 L$",
-    "Angular speed: $\omega = \sqrt{g/(L \cos \theta)}$",
-    "Period: $T_{period} = 2\pi\sqrt{L \cos \theta/g}$ — independent of mass",
-    "Radius of circle: $r = L \sin \theta$"
+    "Vertical equilibrium: $T \\cos \\theta = mg$",
+    "Centripetal force: $T \\sin \\theta = m\\omega^2 L \\sin \\theta \rightarrow T = m\\omega^2 L$",
+    "Angular speed: $\\omega = \\sqrt{g/(L \\cos \\theta)}$",
+    "Period: $T_{period} = 2\\pi\\sqrt{L \\cos \\theta/g}$ — independent of mass",
+    "Radius of circle: $r = L \\sin \\theta$"
   ],
   "keyPoints": [
     "The period of a conical pendulum depends only on L cos θ (the vertical height of the cone), not on mass.",

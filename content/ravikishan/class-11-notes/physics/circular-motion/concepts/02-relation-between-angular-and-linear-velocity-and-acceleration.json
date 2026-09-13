@@ -58,11 +58,11 @@
     "A wheel of radius 0.4 m rotates at 30 rad/s. Find the linear speed at the edge and the centripetal acceleration."
   ],
   "formulas": [
-    "Angular velocity: $\omega = d\theta/dt$ (instantaneous), $\omega = \Delta\theta/t$ (average)",
-    "Angular acceleration: $\alpha = d\omega/dt = d^2\theta/dt^2$",
-    "Kinematic equations (constant α): $\omega = \omega_0 + \alpha t$; $\theta = \omega_0t + \frac{1}{2}\alpha t^2$; $\omega^2 = \omega_0^2 + 2\alpha\theta$",
-    "Linear-angular links: $v = r\omega$; $a_t = r\alpha$; $a_c = v^2/r = r\omega^2$",
-    "rpm conversion: $\omega$ (rad/s) = rpm × 2$\pi$/60; revolutions = $\theta/(2\pi)$"
+    "Angular velocity: $\\omega = d\\theta/dt$ (instantaneous), $\\omega = \\Delta\\theta/t$ (average)",
+    "Angular acceleration: $\\alpha = d\\omega/dt = d^2\\theta/dt^2$",
+    "Kinematic equations (constant α): $\\omega = \\omega_0 + \\alpha t$; $\\theta = \\omega_0t + \\frac{1}{2}\\alpha t^2$; $\\omega^2 = \\omega_0^2 + 2\\alpha\\theta$",
+    "Linear-angular links: $v = r\\omega$; $a_t = r\\alpha$; $a_c = v^2/r = r\\omega^2$",
+    "rpm conversion: $\\omega$ (rad/s) = rpm × 2$\\pi$/60; revolutions = $\\theta/(2\\pi)$"
   ],
   "keyPoints": [
     "Angular displacement is measured in radians; 2π rad = 360° = 1 revolution.",

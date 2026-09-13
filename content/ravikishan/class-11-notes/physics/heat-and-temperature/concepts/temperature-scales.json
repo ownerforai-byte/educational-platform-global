@@ -1,4 +1,4 @@
-﻿{
+{
   "title": "Temperature Scales",
   "unitSlug": "heat-and-temperature",
   "topicSlug": "temperature-scales",
@@ -30,7 +30,8 @@
     "At what temperature do Celsius and Fahrenheit scales read the same? Solution: Set $C = F$ in the conversion $F = (9/5)C + 32$. $C = (9/5)C + 32 \\rightarrow C - (9/5)C = 32 \\rightarrow -(4/5)C = 32 \\rightarrow C = -40$. Both read âˆ’40Â° at âˆ’40Â° (the same temperature!).",
     "A faulty thermometer reads the freezing point of water as 5Â° (on its scale) and the boiling point as 95Â°. The temperature difference between these on the real Celsius scale is 100Â°C, and on the faulty scale is 90Â°. If the faulty thermometer reads 59Â°, what is the true Celsius temperature? Solution: Each faulty degree = $100/90 = 1.111^{\\circ}C$. Offset from freezing = $59 - 5 = 54$ faulty degrees. True temperature = $54 \\times (100/90) + 0 = 60^{\\circ}C$.",
     "An ideal gas at 0Â°C is heated at constant pressure until its volume doubles. Find the new temperature in Â°C and K. Solution: Charles's law: $V_1/T_1 = V_2/T_2$. $T_1 = 273.15 K$. $V_2/V_1 = 2 \\rightarrow T_2 = 2T_1 = 546.3 K$. In Â°C: $546.3 - 273.15 = 273.15^{\\circ}C$.",
-    "The Sun's core temperature is about $1.5 \\times 10^7 K$. Express this in (a) Â°C, (b) Â°F. Solution: (a) $T(^{\\circ}C) = 1.5\\times10^7 - 273.15 \\approx 1.497\\times10^7^{\\circ}C$. (b) $T(^{\\circ}F) = (9/5)(1.497\\times10^7) + 32 \\approx 2.695\\times10^7^{\\circ}F$.\"",
+    "The Sun's core temperature is about $1.5 \\times 10^7 K$. Express this in (a) Â°C, (b) Â°F. Solution: (a) $T(^{\\circ}C) = 1.5\\times10^7 - 273.15 \\approx 1.497\\times10^7^{\\circ}C$. (b) $T(^{\\circ}F) = (9/5)(1.497\\times10^7) + 32 \\approx 2.695\\times10^7^{\\circ}F$."
+  ],
   "universalFacts": [
     "Temperature is a measure of the average kinetic energy of particles: $\\langle KE \\rangle = (3/2)kT$, where $k = 1.38 \\times 10^{-23} J/K$ is Boltzmann's constant. This is why temperature must be in Kelvin - kinetic energy cannot be negative.",
     "There is no upper limit to temperature - particle speeds can increase without bound. The Planck temperature ($1.417 \\times 10^{32} K$) is a theoretical limit where quantum gravity effects become important, not a physical maximum.",
