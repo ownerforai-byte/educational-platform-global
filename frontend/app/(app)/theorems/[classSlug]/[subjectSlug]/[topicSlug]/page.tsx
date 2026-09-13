@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getTheoremIndex, filterTheorems, readTheoremContent } from "@/lib/theorems";
+import { SchematicDiagram } from "@/components/lab/schematic-diagram";
 import { ChevronRight, FileText, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
@@ -29,9 +30,40 @@ export default async function TheoremDetailPage({
   );
 
   if (!entry) {
+    const classLabel = classSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
     return (
-      <div className="mx-auto max-w-4xl py-10">
-        <EmptyState title="Theorem not found" description="This theorem page does not exist or the content has not been added yet." />
+      <div className="mx-auto max-w-4xl py-10 px-4 space-y-6">
+        <nav className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Link href="/theorems" className="hover:text-foreground">Theorems</Link>
+          <ChevronRight className="h-3 w-3" />
+          <Link href={`/theorems/${classSlug}`} className="hover:text-foreground capitalize">{classLabel}</Link>
+          <ChevronRight className="h-3 w-3" />
+          <Link href={`/theorems/${classSlug}/${subjectSlug}`} className="hover:text-foreground capitalize">{subjectSlug}</Link>
+        </nav>
+        <EmptyState
+          title="Theorem not found"
+          description="This specific theorem topic has not been indexed yet or the link may be outdated."
+          action={{
+            label: `Explore all ${subjectSlug} theorems`,
+            href: `/theorems/${classSlug}/${subjectSlug}`,
+          }}
+        >
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href={`/theorems/${classSlug}`}
+              className="text-xs font-semibold text-muted-foreground hover:text-foreground hover:underline"
+            >
+              ← View {classLabel} Theorems
+            </Link>
+            <span className="text-muted-foreground/40">&bull;</span>
+            <Link
+              href="/theorems"
+              className="text-xs font-semibold text-primary hover:underline"
+            >
+              All Theorems &amp; Proofs Index
+            </Link>
+          </div>
+        </EmptyState>
       </div>
     );
   }
@@ -80,6 +112,22 @@ export default async function TheoremDetailPage({
           </p>
         </div>
       </div>
+
+      {/* Schematic Diagram */}
+      <section className="space-y-3">
+        <h2 className="text-base font-semibold flex items-center gap-2">
+          <BookOpen className="h-4 w-4 text-primary" />
+          Visual Schematic
+        </h2>
+        <div className="rounded-xl border border-border overflow-hidden">
+          <SchematicDiagram
+            subjectSlug={subjectSlug}
+            topicSlug={entry.topicSlug}
+            topicTitle={title}
+            unitId={entry.unitId}
+          />
+        </div>
+      </section>
 
       {/* Theorem statement */}
       <section className="space-y-3">

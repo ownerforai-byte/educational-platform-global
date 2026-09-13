@@ -13,6 +13,10 @@ import {
   RotateCcw,
   Sliders,
   Zap,
+  ZoomIn,
+  ZoomOut,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 
 export interface DiagramAnnotation {
@@ -50,12 +54,19 @@ export function SchematicDiagram({
   const [activeAnnotationId, setActiveAnnotationId] = useState<string | null>(null);
   const [showFormulas, setShowFormulas] = useState(true);
   const [showExamNotes, setShowExamNotes] = useState(true);
+  const [zoom, setZoom] = useState(1);
+  const [showAnnotations, setShowAnnotations] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // Interactive controls state
   const [projectileAngle, setProjectileAngle] = useState<number>(45); // 30, 45, 60
   const [ydseWavelength, setYdseWavelength] = useState<"red" | "blue">("red");
   const [galvanicConnected, setGalvanicConnected] = useState<boolean>(true);
   const [tangentPos, setTangentPos] = useState<number>(430); // 350 to 510
+
+  const handleZoom = (delta: number) => {
+    setZoom((prev) => Math.min(Math.max(prev + delta, 0.5), 3));
+  };
 
   // Normalize subject
   const normalizedSubject = useMemo(() => {
@@ -1233,6 +1244,63 @@ export function SchematicDiagram({
             <span>CEE Traps</span>
           </button>
         </div>
+
+        {/* Zoom & Annotations Controls */}
+        <div className="px-6 py-3 border-y border-blue-900/30 bg-[#090e1f]/60 flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => handleZoom(-0.25)}
+              disabled={zoom <= 0.5}
+              className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              title="Zoom Out"
+            >
+              <ZoomOut className="h-4 w-4" />
+            </button>
+            <span className="text-xs text-slate-400 w-12 text-center">{Math.round(zoom * 100)}%</span>
+            <button
+              onClick={() => handleZoom(0.25)}
+              disabled={zoom >= 3}
+              className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              title="Zoom In"
+            >
+              <ZoomIn className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => setZoom(1)}
+              className="px-2.5 py-1 rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200 text-xs transition-colors flex items-center gap-1.5"
+              title="Reset Zoom"
+            >
+              <RotateCcw className="h-3 w-3" />
+              Reset
+            </button>
+          </div>
+
+          <div className="h-5 w-px bg-slate-700 mx-1" />
+
+          <button
+            onClick={() => setShowAnnotations(!showAnnotations)}
+            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
+              showAnnotations
+                ? "bg-primary/20 border-primary/40 text-primary"
+                : "bg-slate-800 border-slate-700 text-slate-400"
+            }`}
+          >
+            {showAnnotations ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
+            <span>Annotations</span>
+          </button>
+
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ml-auto ${
+              isExpanded
+                ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
+                : "bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700"
+            }`}
+          >
+            {isExpanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+            <span>{isExpanded ? "Collapse Details" : "Expand Details"}</span>
+          </button>
+        </div>
       </div>
 
       {/* Main SVG Canvas Area with LONG LEADER LINES */}
@@ -1250,7 +1318,7 @@ export function SchematicDiagram({
         <svg
           viewBox={diagramData.viewBox}
           className="w-full h-full"
-          style={{ overflow: "visible" }}
+          style={{ overflow: "visible", transform: `scale(${zoom})`, transformOrigin: "center" }}
         >
           <defs>
             <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
@@ -1327,7 +1395,7 @@ export function SchematicDiagram({
         </svg>
 
         {/* 3. HTML OVERLAY LABELS AT LONG ANCHORS (Non-overlapping) */}
-        {diagramData.annotations.map((ann) => {
+        {showAnnotations && diagramData.annotations.map((ann) => {
           const isHovered = activeAnnotationId === ann.id;
           const cColor = ann.color || "#38bdf8";
 
@@ -1374,6 +1442,28 @@ export function SchematicDiagram({
           );
         })}
       </div>
+
+      {/* Expandable Details Section */}
+      {isExpanded && (
+        <div className="px-6 py-4 bg-[#090e1f]/50 border-t border-blue-900/30 space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {diagramData.annotations.map((ann) => (
+              <div key={ann.id} className="p-3 rounded-xl bg-[#0f172a]/80 border border-slate-800">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: ann.color || "#38bdf8" }} />
+                  <h4 className="text-sm font-bold text-white">{ann.label}</h4>
+                </div>
+                {ann.formulaOrValue && (
+                  <p className="font-mono text-xs text-primary mb-1">{ann.formulaOrValue}</p>
+                )}
+                {ann.examNote && (
+                  <p className="text-xs text-slate-400 leading-relaxed">{ann.examNote}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Bottom active detail bar */}
       <div className="px-6 py-3 border-t border-blue-900/40 bg-[#090e1f]/80 flex items-center justify-between text-xs text-slate-400">
