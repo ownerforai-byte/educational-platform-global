@@ -1327,13 +1327,14 @@ export function SchematicDiagram({
 
         {/* Shared transformable layer: SVG + HTML annotation overlay scale
             together so labels and leader lines stay aligned at any zoom level.
-            overflow-auto on the parent canvas lets learners scroll/pan when
-            zoomed-in content exceeds the viewport instead of clipping it. */}
+            Scaling from top-left keeps zoomed-in content inside the scrollable
+            (positive) overflow region so the upper-left is reachable by scrolling,
+            and the parent canvas (overflow-auto) provides the pan. */}
         <div
-          className="relative w-full h-full origin-center"
+          className="relative w-full h-full origin-top-left"
           style={{
             transform: `scale(${zoom})`,
-            transformOrigin: "center",
+            transformOrigin: "top left",
           }}
         >
           <svg

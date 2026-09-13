@@ -185,9 +185,15 @@ beforeEach(() => {
 // resources.ts
 // ───────────────────────────────────────────────────────────────────────────
 describe("PATCH /api/resources/:id allowlist", () => {
+  // The PATCH handler enforces ownership before updating: it fetches the
+  // existing row (first "resources" queue item) and confirms the caller may
+  // manage it (the creator, or an ADMIN/OWNER). Each test enqueues that owned
+  // row; a separate queue item backs the actual update result where checked.
+
   it("rejects mass-assignment fields (created_by, role, id) with 400", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
     h.mockRole("TEACHER");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
 
     const res = await request("PATCH", "/api/resources/r1", {
       title: "ok",
@@ -207,6 +213,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
   it("rejects is_published from TEACHER but accepts it from ADMIN", async () => {
     const teacher = await mount(resourcesRouter, "/api/resources");
     h.mockRole("TEACHER");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
     const rejected = await teacher.request("PATCH", "/api/resources/r1", {
       is_published: true,
     });
@@ -214,6 +221,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
     const admin = await mount(resourcesRouter, "/api/resources");
     h.mockRole("ADMIN");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
     h.enqueue("resources", { data: [{ id: "r1", is_published: true }], error: null });
     const accepted = await admin.request("PATCH", "/api/resources/r1", {
       is_published: true,
@@ -227,6 +235,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
   it("accepts a clean title update and forwards only that field", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
     h.mockRole("TEACHER");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
     h.enqueue("resources", { data: [{ id: "r1", title: "Renamed" }], error: null });
 
     const res = await request("PATCH", "/api/resources/r1", { title: "Renamed" });
@@ -244,7 +253,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
   it("accepts a content object update from TEACHER and forwards it", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
     h.mockRole("TEACHER");
-    h.enqueue("resources", { data: [{ id: "r1" }], error: null });
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
 
     const content = { text: "Updated body", sections: ["a", "b"] };
     const res = await request("PATCH", "/api/resources/r1", { content });
@@ -258,7 +267,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
   it("accepts legacy plain-string content", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
     h.mockRole("TEACHER");
-    h.enqueue("resources", { data: [{ id: "r1" }], error: null });
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
 
     const res = await request("PATCH", "/api/resources/r1", {
       content: "legacy free-form body",
@@ -276,11 +285,35 @@ describe("PATCH /api/resources/:id allowlist", () => {
     for (const bad of [[1, 2, 3], 42, true]) {
       h.reset();
       h.mockRole("TEACHER");
+      h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
       const res = await request("PATCH", "/api/resources/r1", { content: bad });
       expect(res.status).toBe(400);
       expect(res.body.fields).toEqual(["content"]);
       expect(h.opsFor("resources").filter((c) => c.method === "update")).toHaveLength(0);
     }
+  });
+
+  it("403 when a TEACHER patches a resource they did not create", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("TEACHER");
+    h.enqueue("resources", {
+      data: [{ id: "r1", created_by: "another-teacher" }],
+      error: null,
+    });
+
+    const res = await request("PATCH", "/api/resources/r1", { title: "sneak" });
+
+    expect(res.status).toBe(403);
+    expect(h.opsFor("resources").filter((c) => c.method === "update")).toHaveLength(0);
+  });
+
+  it("404 when the resource does not exist on PATCH", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("TEACHER");
+
+    const res = await request("PATCH", "/api/resources/missing", { title: "x" });
+
+    expect(res.status).toBe(404);
   });
 });
 

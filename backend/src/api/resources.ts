@@ -39,6 +39,21 @@ async function requireTeacher(req: Request, res: Response) {
   return { user, profile };
 }
 
+// Ownership guard: with the service-role key RLS is inert, so the routes that
+// return or modify rows must enforce ownership explicitly. Privileged roles
+// (ADMIN/OWNER) manage everything; TEACHER may only manage resources they
+// created. Prevents one teacher from reading or overwriting another teacher's
+// unpublished drafts via the /edit and PATCH endpoints.
+function canManageResource(
+  user: { id: string },
+  profile: { role?: string | null },
+  row: { created_by: string | null }
+): boolean {
+  const role = String(profile?.role ?? "").toUpperCase();
+  if (role === "ADMIN" || role === "OWNER") return true;
+  return row.created_by != null && row.created_by === user.id;
+}
+
 router.get("/", async (_req: Request, res: Response) => {
   try {
     const topicId = typeof _req.query.topic_id === "string" ? _req.query.topic_id : undefined;
@@ -143,6 +158,11 @@ router.get("/:id/edit", async (req: Request, res: Response) => {
 
   if (error || !data) {
     res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  if (!canManageResource(auth.user, auth.profile, data)) {
+    res.status(403).json({ error: "Forbidden" });
     return;
   }
 
@@ -252,6 +272,24 @@ router.patch("/:id", async (req: Request, res: Response) => {
 
   const auth = await requireTeacher(req, res);
   if (!auth) return;
+
+  // Ownership check: only the creator (or an ADMIN/OWNER) may patch this
+  // resource. Mirrors the DELETE guard; stops cross-teacher overwrites of
+  // other teachers' drafts.
+  const { data: existing } = await supabaseAdmin
+    .from("resources")
+    .select("id, created_by")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (!existing) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+  if (!canManageResource(auth.user, auth.profile, existing)) {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
 
   const body =
     req.body && typeof req.body === "object" && !Array.isArray(req.body)
