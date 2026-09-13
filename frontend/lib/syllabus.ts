@@ -1583,7 +1583,19 @@ export function getTopicEntryBySlug(
   unit: SyllabusUnit,
   topicSlug: string,
 ): SyllabusTopicEntry | undefined {
-  return getUnitTopicEntries(unit).find((t) => t.slug === topicSlug);
+  // 1. Exact match first (fast path for full syllabus slugs).
+  const exact = getUnitTopicEntries(unit).find((t) => t.slug === topicSlug);
+  if (exact) return exact;
+
+  // 2. Fallback: match by checking that each slug-word appears in the title.
+  //    This bridges short manifest slugs (e.g. "biomolecules-functions") to
+  //    the full syllabus slugs derived from long topic titles.
+  const slugWords = topicSlug.toLowerCase().split(/[-]+/).filter(Boolean);
+  if (slugWords.length === 0) return undefined;
+  return getUnitTopicEntries(unit).find((t) => {
+    const lowerTitle = t.title.toLowerCase();
+    return slugWords.every((w) => lowerTitle.includes(w));
+  });
 }
 
 export function getSyllabusByClass(classSlug: string): ClassSyllabus | undefined {
