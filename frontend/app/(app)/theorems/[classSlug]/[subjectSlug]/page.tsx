@@ -54,8 +54,28 @@ export default async function TheoremsSubjectPage({
       {entries.length === 0 ? (
         <EmptyState
           title="No theorem content yet"
-          description="Theorem and proof notes for this subject will be added as we build out the library."
-        />
+          description={`Theorem and proof notes for ${subjectSlug} are currently being indexed.`}
+          action={{
+            label: `View ${subjectSlug} Theory Notes`,
+            href: `/${classSlug}/${subjectSlug}`,
+          }}
+        >
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href={`/theorems/${classSlug}`}
+              className="text-xs font-semibold text-muted-foreground hover:text-foreground hover:underline"
+            >
+              ← Back to {classSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} Theorems
+            </Link>
+            <span className="text-muted-foreground/40">&bull;</span>
+            <Link
+              href={`/syllabus/${subjectSlug}`}
+              className="text-xs font-semibold text-primary hover:underline"
+            >
+              Official CDC Syllabus
+            </Link>
+          </div>
+        </EmptyState>
       ) : (
         <div className="space-y-8">
           {[...grouped.entries()]

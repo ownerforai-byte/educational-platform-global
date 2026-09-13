@@ -41,7 +41,20 @@ export default async function LegendClassPage({
         <EmptyState
           title="No legend content yet"
           description="Concept notes for this class will be scanned and displayed here as they are added."
-        />
+          action={{
+            label: "Explore All Legend & Key Facts",
+            href: "/legend",
+          }}
+        >
+          <div className="flex items-center justify-center gap-2">
+            <Link
+              href={classSlug.includes("11") ? "/class-11" : "/class-12"}
+              className="text-xs font-semibold text-primary hover:underline"
+            >
+              Go to {classLabel} Portal →
+            </Link>
+          </div>
+        </EmptyState>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {subjects

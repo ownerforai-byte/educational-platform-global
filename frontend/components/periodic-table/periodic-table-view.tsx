@@ -88,7 +88,9 @@ export function PeriodicTableView() {
   // Responsive Zoom / Screen Fitting
   const [zoom, setZoom] = useState<number>(1);
   const [fitScreen, setFitScreen] = useState<boolean>(true);
+  const [measuredHeight, setMeasuredHeight] = useState<number>(580);
   const tableContainerRef = useRef<HTMLDivElement>(null);
+  const tableContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch("/all_elements.json")
@@ -113,20 +115,29 @@ export function PeriodicTableView() {
 
   // Screen Auto-Fit logic: automatically scale table so all 18 columns fit without overflow
   useEffect(() => {
-    if (!fitScreen) return;
-    const calculateScale = () => {
+    const calculateLayout = () => {
+      if (tableContentRef.current) {
+        const h = tableContentRef.current.scrollHeight;
+        if (h > 150) setMeasuredHeight(h);
+      }
       if (tableContainerRef.current) {
         const containerW = tableContainerRef.current.clientWidth;
-        // Base unscaled table ideal width is 990px with reduced font sizes and compact tiles
-        const optimalScale = Math.min(1.0, Math.max(0.35, (containerW - 20) / 990));
-        setZoom(optimalScale);
+        if (fitScreen) {
+          const availableW = Math.max(280, containerW - 20);
+          const optimalScale = Math.min(1.0, Math.max(0.28, availableW / 990));
+          setZoom(optimalScale);
+        }
       }
     };
 
-    calculateScale();
-    window.addEventListener("resize", calculateScale);
-    return () => window.removeEventListener("resize", calculateScale);
-  }, [fitScreen]);
+    calculateLayout();
+    const timer = setTimeout(calculateLayout, 80);
+    window.addEventListener("resize", calculateLayout);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", calculateLayout);
+    };
+  }, [fitScreen, elements]);
 
   const activeFilter = activeFilterId !== "all" ? PERIODIC_FILTERS[activeFilterId] : null;
 
@@ -212,38 +223,40 @@ export function PeriodicTableView() {
   const activeHoverCategory = hoveredFilter ?? activeFilter;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 sm:space-y-4">
       {/* ── 1. TOP HEADER & SEARCH ───────────────────────────────────────── */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-border/50">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider border border-teal-500/20">
-            <Atom className="h-3.5 w-3.5" />
-            <span>118 Elements · CEE &amp; NEB High-Yield Syllabus</span>
+          <div className="flex items-center gap-2">
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[11px] font-bold uppercase tracking-wider border border-teal-500/20">
+              <Atom className="h-3 w-3" />
+              <span>118 Elements</span>
+            </div>
+            <h1 className="text-xl sm:text-2xl font-black tracking-tight text-foreground">
+              Modern Periodic Table &amp; CEE Bank
+            </h1>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight mt-1 text-foreground">
-            Modern Periodic Table &amp; CEE Examination Bank
-          </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 max-w-3xl">
-            Hover any element to preview live electronic configurations and melting/boiling points. Click to access complete CEE past MCQs, hallmark chemical equations, and mineral ores.
+          <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5">
+            Hover or tap any element to preview constants. Click to open complete CEE past MCQs, hallmark equations &amp; ores.
           </p>
         </div>
 
         {/* Quick Search & Zoom Toolbar */}
         <div className="flex items-center gap-2 flex-wrap">
           {/* Search */}
-          <div className="relative w-full sm:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <div className="relative w-44 sm:w-56">
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search symbol, name, #..."
+              placeholder="Search (e.g. Cu, Iron, 29)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-9 pl-9 pr-7 rounded-xl border border-border/80 bg-card text-xs font-medium focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
+              className="w-full h-8 pl-8 pr-6 rounded-xl border border-border/80 bg-card text-xs font-medium focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
               >
                 <X className="h-3 w-3" />
               </button>
@@ -268,7 +281,7 @@ export function PeriodicTableView() {
             <button
               onClick={() => {
                 setFitScreen(false);
-                setZoom((z) => Math.max(0.55, z - 0.1));
+                setZoom((z) => Math.max(0.45, z - 0.1));
               }}
               className="p-1 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground"
               title="Zoom out"
@@ -303,11 +316,11 @@ export function PeriodicTableView() {
       </div>
 
       {/* ── 2. FILTER PILLS BAR ──────────────────────────────────────────── */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-            <Layers className="h-3.5 w-3.5" />
-            <span>Interactive Classification Filters:</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
+            <Layers className="h-3 w-3" />
+            <span>Classification Filters:</span>
           </span>
           {activeFilterId !== "all" && (
             <button
@@ -322,17 +335,17 @@ export function PeriodicTableView() {
           )}
         </div>
 
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1">
           <button
             onClick={() => setActiveFilterId("all")}
             onMouseEnter={() => setHoveredFilter(null)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
               activeFilterId === "all"
                 ? "bg-primary text-primary-foreground shadow-sm"
                 : "bg-card border border-border/70 text-muted-foreground hover:text-foreground hover:border-primary/50"
             }`}
           >
-            All Elements (118)
+            All (118)
           </button>
 
           {Object.values(PERIODIC_FILTERS).map((cat) => {
@@ -343,7 +356,7 @@ export function PeriodicTableView() {
                 onClick={() => setActiveFilterId(isSelected ? "all" : cat.id)}
                 onMouseEnter={() => setHoveredFilter(cat)}
                 onMouseLeave={() => setHoveredFilter(null)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all relative ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all relative ${
                   isSelected
                     ? "bg-foreground text-background shadow-sm ring-2 ring-primary"
                     : "bg-card border border-border/70 text-foreground/80 hover:text-foreground hover:border-primary/60"
@@ -355,105 +368,77 @@ export function PeriodicTableView() {
           })}
         </div>
 
-        {/* Character Box on Filter Hover/Select */}
+        {/* Compact Character Banner on Filter Hover/Select */}
         {activeHoverCategory && (
-          <div className="rounded-2xl border border-primary/30 bg-primary/5 p-4 space-y-3 transition-all animate-fade-in">
+          <div className="rounded-xl border border-primary/30 bg-primary/5 p-2.5 sm:p-3 space-y-1.5 transition-all animate-fade-in text-xs">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-primary text-primary-foreground">
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground">
                   {activeHoverCategory.shortBadge}
                 </span>
-                <h3 className="text-sm font-bold text-foreground">
-                  {activeHoverCategory.name} — Properties &amp; Examination Traps
+                <h3 className="text-xs font-bold text-foreground">
+                  {activeHoverCategory.name} — {activeHoverCategory.oneLineSummary}
                 </h3>
               </div>
-              <div className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-muted text-foreground">
+              <div className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-muted text-foreground">
                 Config: {activeHoverCategory.generalElectronicConfig}
               </div>
             </div>
 
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              {activeHoverCategory.oneLineSummary}
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 border-t border-border/50 text-xs">
-              <div>
-                <span className="font-bold text-foreground block mb-1">Key Characteristics:</span>
-                <ul className="space-y-1 text-muted-foreground">
-                  {activeHoverCategory.keyCharacteristics.slice(0, 3).map((kc, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="text-primary font-bold">•</span>
-                      <span>
-                        <strong className="text-foreground">{kc.title}:</strong> {kc.detail}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+            {activeHoverCategory.examTrapsAndExceptions.length > 0 && (
+              <div className="text-[11px] text-amber-600 dark:text-amber-400 font-medium flex items-center gap-1.5 pt-1 border-t border-border/40">
+                <ShieldAlert className="h-3.5 w-3.5 shrink-0" />
+                <span>CEE Trap: {activeHoverCategory.examTrapsAndExceptions[0]}</span>
               </div>
-
-              <div>
-                <span className="font-bold text-amber-500 dark:text-amber-400 block mb-1 flex items-center gap-1">
-                  <ShieldAlert className="h-3.5 w-3.5" />
-                  <span>NEB &amp; CEE Traps:</span>
-                </span>
-                <ul className="space-y-1 text-muted-foreground">
-                  {activeHoverCategory.examTrapsAndExceptions.slice(0, 3).map((trap, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="text-amber-500 font-bold">⚠</span>
-                      <span>{trap}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            )}
           </div>
         )}
       </div>
 
-      {/* ── 3. LIVE ELEMENT INSPECTION DECK (Hover & Click Live Banner) ───── */}
+      {/* ── 3. LIVE ELEMENT INSPECTION DECK ─────────────────────────────── */}
       {inspectionElement && (
-        <div className="rounded-3xl border border-border/80 bg-gradient-to-r from-card via-card to-primary/5 p-4 sm:p-5 shadow-sm flex flex-wrap items-center justify-between gap-4 transition-all">
-          <div className="flex items-center gap-4 min-w-0">
-            {/* Giant Element Badge */}
+        <div className="rounded-2xl border border-border/80 bg-gradient-to-r from-card via-card to-primary/5 p-3 sm:p-3.5 shadow-sm flex flex-wrap items-center justify-between gap-3 transition-all">
+          <div className="flex items-center gap-3 min-w-0">
+            {/* Element Tile */}
             <div
-              className={`h-16 w-16 sm:h-20 sm:w-20 rounded-2xl border flex flex-col items-center justify-center shrink-0 shadow-md ${
+              className={`h-14 w-14 sm:h-16 sm:w-16 rounded-xl border flex flex-col items-center justify-center shrink-0 shadow-sm ${
                 CATEGORY_COLORS[inspectionElement.category]?.border ?? "border-border"
               } ${CATEGORY_COLORS[inspectionElement.category]?.bg ?? "bg-card"}`}
             >
-              <div className="flex items-center justify-between w-full px-2 text-[10px] font-mono text-muted-foreground">
+              <div className="flex items-center justify-between w-full px-1.5 text-[9px] font-mono text-muted-foreground">
                 <span>#{inspectionElement.atomicNumber}</span>
                 <span className="uppercase font-bold">{inspectionElement.block}</span>
               </div>
-              <span className="text-2xl sm:text-3xl font-black text-foreground tracking-tight leading-none my-0.5">
+              <span className="text-xl sm:text-2xl font-black text-foreground tracking-tight leading-none my-0.5">
                 {inspectionElement.symbol}
               </span>
-              <span className="text-[9px] font-semibold text-muted-foreground truncate px-1">
+              <span className="text-[8.5px] font-semibold text-muted-foreground truncate px-1">
                 {inspectionElement.atomicMass} u
               </span>
             </div>
 
-            {/* Element Core Details */}
-            <div className="min-w-0 space-y-1">
+            {/* Element Details */}
+            <div className="min-w-0 space-y-0.5">
               <div className="flex items-center gap-2 flex-wrap">
-                <h2 className="text-lg sm:text-xl font-extrabold text-foreground truncate">
+                <h2 className="text-base sm:text-lg font-extrabold text-foreground truncate">
                   {inspectionElement.name}
                 </h2>
                 <span
-                  className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                  className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full border ${
                     CATEGORY_COLORS[inspectionElement.category]?.badge ?? ""
                   }`}
                 >
                   {inspectionElement.subCategory || inspectionElement.category}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-muted text-muted-foreground font-semibold">
-                  Period {inspectionElement.period}, Group {inspectionElement.group} ({GROUP_ROMAN_LABELS[inspectionElement.group - 1]})
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-semibold">
+                  P{inspectionElement.period}, G{inspectionElement.group} ({GROUP_ROMAN_LABELS[inspectionElement.group - 1]})
                 </span>
               </div>
 
-              {/* Electron config & physical values */}
-              <div className="flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
+              {/* Electron config & values */}
+              <div className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
                 <span className="font-mono text-primary font-bold">
-                  Config: {inspectionElement.electronConfig}
+                  {inspectionElement.electronConfig}
                 </span>
                 <span>•</span>
                 <span>
@@ -467,40 +452,40 @@ export function PeriodicTableView() {
                   <>
                     <span>•</span>
                     <span>
-                      Electronegativity: <strong className="text-foreground">{inspectionElement.electronegativity}</strong>
+                      EN: <strong className="text-foreground">{inspectionElement.electronegativity}</strong>
                     </span>
                   </>
                 )}
               </div>
 
               {/* Counts Pills */}
-              <div className="flex items-center gap-2 pt-1 flex-wrap text-[11px]">
-                <span className="px-2 py-0.5 rounded-md bg-sky-500/10 text-sky-500 font-semibold flex items-center gap-1">
+              <div className="flex items-center gap-1.5 pt-0.5 flex-wrap text-[10px]">
+                <span className="px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-500 font-semibold flex items-center gap-1">
                   <GraduationCap className="h-3 w-3" />
-                  {inspectionElement.ceePastMcqs?.length || 0} CEE Past MCQs
+                  {inspectionElement.ceePastMcqs?.length || 0} CEE MCQs
                 </span>
-                <span className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
                   <FlaskConical className="h-3 w-3" />
-                  {inspectionElement.hallmarkReactions?.length || 0} Hallmark Reactions
+                  {inspectionElement.hallmarkReactions?.length || 0} Reactions
                 </span>
-                <span className="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-500 font-semibold flex items-center gap-1">
+                <span className="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 font-semibold flex items-center gap-1">
                   <Sparkles className="h-3 w-3" />
-                  {inspectionElement.keyOresAndCompounds?.length || 0} Key Ores &amp; Compounds
+                  {inspectionElement.keyOresAndCompounds?.length || 0} Ores
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Action to open full CEE Dossier */}
+          {/* Action button */}
           <button
             onClick={() => {
               setSelectedElement(inspectionElement);
               setIsDossierOpen(true);
             }}
-            className="px-4 py-2.5 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold transition-all shadow-md flex items-center gap-2 shrink-0"
+            className="px-3 py-2 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 shrink-0"
           >
-            <span>Open Full CEE Dossier (PYQs, Reactions, Facts)</span>
-            <ChevronRight className="h-4 w-4" />
+            <span>Open CEE Dossier</span>
+            <ChevronRight className="h-3.5 w-3.5" />
           </button>
         </div>
       )}
@@ -508,207 +493,234 @@ export function PeriodicTableView() {
       {/* ── 4. FULL PERIODIC TABLE GRID (Fit-in-Screen Scaling) ───────────── */}
       <div
         ref={tableContainerRef}
-        className="rounded-3xl border border-border/80 bg-card p-2 sm:p-4 shadow-sm overflow-hidden flex flex-col items-center w-full"
+        className="rounded-2xl sm:rounded-3xl border border-border/80 bg-card p-2 sm:p-4 shadow-sm w-full overflow-hidden"
       >
         <div
+          className="w-full flex justify-center overflow-x-auto overflow-y-hidden"
           style={{
-            height: fitScreen ? `${Math.round(525 * zoom) + 10}px` : "auto",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            overflowX: fitScreen ? "hidden" : "auto",
+            minHeight: fitScreen ? `${Math.ceil(measuredHeight * zoom)}px` : "auto",
+            height: fitScreen ? `${Math.ceil(measuredHeight * zoom)}px` : "auto",
           }}
         >
           <div
             style={{
-              transform: `scale(${zoom})`,
-              transformOrigin: "top center",
-              width: "990px",
+              width: fitScreen ? `${Math.ceil(990 * zoom)}px` : "990px",
+              height: fitScreen ? `${Math.ceil(measuredHeight * zoom)}px` : "auto",
+              position: "relative",
+              flexShrink: 0,
             }}
-            className="transition-transform duration-200 select-none shrink-0 pb-2"
           >
-            {/* Group Numbers 1-18 Header with Roman Labels */}
-            <div className="grid grid-cols-18 gap-1 text-center mb-1 select-none">
-              {Array.from({ length: 18 }, (_, i) => (
-                <div key={i + 1} className="py-0.5 flex flex-col items-center">
-                  <span className="text-[9px] text-foreground font-mono font-bold leading-none">{i + 1}</span>
-                  <span className="text-[7px] text-muted-foreground font-medium leading-none">{GROUP_ROMAN_LABELS[i]}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Main 7 Periods */}
-            <div className="space-y-1">
-              {Array.from({ length: 7 }, (_, pIdx) => {
-                const period = pIdx + 1;
-                return (
-                  <div key={period} className="grid grid-cols-18 gap-1">
-                    {Array.from({ length: 18 }, (_, gIdx) => {
-                      const group = gIdx + 1;
-
-                      // Lanthanide Placeholder in Period 6, Group 3
-                      if (period === 6 && group === 3) {
-                        return (
-                          <div
-                            key="lanth-placeholder"
-                            onClick={() => {
-                              setSelectedElement(lanthanides[0]);
-                              setIsDossierOpen(true);
-                            }}
-                            className="aspect-square rounded-lg border border-dashed border-purple-500/50 bg-purple-500/10 flex flex-col items-center justify-center text-[8px] font-bold text-purple-400 cursor-pointer hover:bg-purple-500/20 transition-all shadow-sm"
-                            title="Click to view Lanthanides (57-71)"
-                          >
-                            <span className="text-[7.5px] leading-none">57-71</span>
-                            <span className="text-[8px] font-black leading-none mt-0.5">La-Lu</span>
-                          </div>
-                        );
-                      }
-
-                      // Actinide Placeholder in Period 7, Group 3
-                      if (period === 7 && group === 3) {
-                        return (
-                          <div
-                            key="act-placeholder"
-                            onClick={() => {
-                              setSelectedElement(actinides[0]);
-                              setIsDossierOpen(true);
-                            }}
-                            className="aspect-square rounded-lg border border-dashed border-pink-500/50 bg-pink-500/10 flex flex-col items-center justify-center text-[8px] font-bold text-pink-400 cursor-pointer hover:bg-pink-500/20 transition-all shadow-sm"
-                            title="Click to view Actinides (89-103)"
-                          >
-                            <span className="text-[7.5px] leading-none">89-103</span>
-                            <span className="text-[8px] font-black leading-none mt-0.5">Ac-Lr</span>
-                          </div>
-                        );
-                      }
-
-                      const el = mainGrid[`${period}-${group}`];
-                      if (!el) {
-                        return <div key={`${period}-${group}`} className="aspect-square" />;
-                      }
-
-                      const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
-                      const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
-                      const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
-                      const catStyle = CATEGORY_COLORS[el.category] ?? CATEGORY_COLORS.metal;
-
-                      return (
-                        <button
-                          key={el.atomicNumber}
-                          onClick={() => {
-                            setSelectedElement(el);
-                            setIsDossierOpen(true);
-                          }}
-                          onMouseEnter={() => setHoveredElement(el)}
-                          onMouseLeave={() => setHoveredElement(null)}
-                          className={`aspect-square rounded-lg border p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all ${
-                            catStyle.bg
-                          } ${catStyle.border} ${
-                            isHovered || isSelected
-                              ? "ring-2 ring-primary scale-110 z-30 shadow-lg bg-primary/20"
-                              : ""
-                          } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
-                          title={`${el.name} (${el.symbol}) · #${el.atomicNumber} · Click for CEE Questions`}
-                        >
-                          <div className="flex items-center justify-between text-[7px] leading-none text-muted-foreground font-mono">
-                            <span className="font-bold">{el.atomicNumber}</span>
-                            <span className="uppercase text-[6px] font-extrabold">{el.block}</span>
-                          </div>
-
-                          <div className={`text-xs sm:text-[13px] font-black tracking-tight leading-none text-center ${catStyle.text}`}>
-                            {el.symbol}
-                          </div>
-
-                          <div className="text-[6.5px] truncate font-medium text-foreground/85 leading-none text-center">
-                            {el.name}
-                          </div>
-                        </button>
-                      );
-                    })}
+            <div
+              ref={tableContentRef}
+              style={{
+                width: "990px",
+                transform: `scale(${zoom})`,
+                transformOrigin: "top left",
+              }}
+              className="transition-transform duration-150 select-none pb-2"
+            >
+              {/* Group Numbers 1-18 Header with Roman Labels */}
+              <div
+                className="grid grid-cols-18 gap-1 text-center mb-1 select-none"
+                style={{ display: "grid", gridTemplateColumns: "repeat(18, minmax(0, 1fr))" }}
+              >
+                {Array.from({ length: 18 }, (_, i) => (
+                  <div key={i + 1} className="py-0.5 flex flex-col items-center">
+                    <span className="text-[9px] text-foreground font-mono font-bold leading-none">{i + 1}</span>
+                    <span className="text-[7px] text-muted-foreground font-medium leading-none">{GROUP_ROMAN_LABELS[i]}</span>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Separated Lanthanides & Actinides (4f & 5f Series) */}
-            <div className="mt-4 pt-2.5 border-t border-border/60 space-y-1">
-              <div className="text-[9px] font-bold uppercase tracking-wider text-purple-400 px-1 flex items-center gap-1.5">
-                <Sparkles className="h-3 w-3" />
-                <span>f-Block Inner Transition Metals (Lanthanides &amp; Actinides):</span>
+                ))}
               </div>
 
-              {/* Lanthanides */}
-              <div className="grid grid-cols-18 gap-1">
-                <div className="col-span-3 flex items-center justify-end pr-2 text-[8.5px] font-bold text-purple-400 leading-none">
-                  Lanthanides (4f):
-                </div>
-                {lanthanides.map((el) => {
-                  const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
-                  const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
-                  const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
-
+              {/* Main 7 Periods */}
+              <div className="space-y-1">
+                {Array.from({ length: 7 }, (_, pIdx) => {
+                  const period = pIdx + 1;
                   return (
-                    <button
-                      key={el.atomicNumber}
-                      onClick={() => {
-                        setSelectedElement(el);
-                        setIsDossierOpen(true);
-                      }}
-                      onMouseEnter={() => setHoveredElement(el)}
-                      onMouseLeave={() => setHoveredElement(null)}
-                      className={`aspect-square rounded-lg border border-purple-500/30 bg-purple-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-purple-500/25 ${
-                        isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
-                      } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                    <div
+                      key={period}
+                      className="grid grid-cols-18 gap-1"
+                      style={{ display: "grid", gridTemplateColumns: "repeat(18, minmax(0, 1fr))" }}
                     >
-                      <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
-                        {el.atomicNumber}
-                      </div>
-                      <div className="text-xs font-black text-purple-400 leading-none text-center">
-                        {el.symbol}
-                      </div>
-                      <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
-                        {el.name}
-                      </div>
-                    </button>
+                      {Array.from({ length: 18 }, (_, gIdx) => {
+                        const group = gIdx + 1;
+
+                        // Lanthanide Placeholder in Period 6, Group 3
+                        if (period === 6 && group === 3) {
+                          return (
+                            <div
+                              key="lanth-placeholder"
+                              onClick={() => {
+                                setSelectedElement(lanthanides[0]);
+                                setIsDossierOpen(true);
+                              }}
+                              className="aspect-square rounded-lg border border-dashed border-purple-500/50 bg-purple-500/10 flex flex-col items-center justify-center text-[8px] font-bold text-purple-400 cursor-pointer hover:bg-purple-500/20 transition-all shadow-sm"
+                              title="Click to view Lanthanides (57-71)"
+                            >
+                              <span className="text-[7.5px] leading-none">57-71</span>
+                              <span className="text-[8px] font-black leading-none mt-0.5">La-Lu</span>
+                            </div>
+                          );
+                        }
+
+                        // Actinide Placeholder in Period 7, Group 3
+                        if (period === 7 && group === 3) {
+                          return (
+                            <div
+                              key="act-placeholder"
+                              onClick={() => {
+                                setSelectedElement(actinides[0]);
+                                setIsDossierOpen(true);
+                              }}
+                              className="aspect-square rounded-lg border border-dashed border-pink-500/50 bg-pink-500/10 flex flex-col items-center justify-center text-[8px] font-bold text-pink-400 cursor-pointer hover:bg-pink-500/20 transition-all shadow-sm"
+                              title="Click to view Actinides (89-103)"
+                            >
+                              <span className="text-[7.5px] leading-none">89-103</span>
+                              <span className="text-[8px] font-black leading-none mt-0.5">Ac-Lr</span>
+                            </div>
+                          );
+                        }
+
+                        const el = mainGrid[`${period}-${group}`];
+                        if (!el) {
+                          return <div key={`${period}-${group}`} className="aspect-square" />;
+                        }
+
+                        const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
+                        const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
+                        const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
+                        const catStyle = CATEGORY_COLORS[el.category] ?? CATEGORY_COLORS.metal;
+
+                        return (
+                          <button
+                            key={el.atomicNumber}
+                            onClick={() => {
+                              setSelectedElement(el);
+                              setIsDossierOpen(true);
+                            }}
+                            onMouseEnter={() => setHoveredElement(el)}
+                            onMouseLeave={() => setHoveredElement(null)}
+                            className={`aspect-square rounded-lg border p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all ${
+                              catStyle.bg
+                            } ${catStyle.border} ${
+                              isHovered || isSelected
+                                ? "ring-2 ring-primary scale-110 z-30 shadow-lg bg-primary/20"
+                                : ""
+                            } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                            title={`${el.name} (${el.symbol}) · #${el.atomicNumber} · Click for CEE Questions`}
+                          >
+                            <div className="flex items-center justify-between text-[7px] leading-none text-muted-foreground font-mono">
+                              <span className="font-bold">{el.atomicNumber}</span>
+                              <span className="uppercase text-[6px] font-extrabold">{el.block}</span>
+                            </div>
+
+                            <div className={`text-xs sm:text-[13px] font-black tracking-tight leading-none text-center ${catStyle.text}`}>
+                              {el.symbol}
+                            </div>
+
+                            <div className="text-[6.5px] truncate font-medium text-foreground/85 leading-none text-center">
+                              {el.name}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
                   );
                 })}
               </div>
 
-              {/* Actinides */}
-              <div className="grid grid-cols-18 gap-1">
-                <div className="col-span-3 flex items-center justify-end pr-2 text-[8.5px] font-bold text-pink-400 leading-none">
-                  Actinides (5f):
+              {/* Separated Lanthanides & Actinides (4f & 5f Series) */}
+              <div className="mt-4 pt-2.5 border-t border-border/60 space-y-1">
+                <div className="text-[9px] font-bold uppercase tracking-wider text-purple-400 px-1 flex items-center gap-1.5">
+                  <Sparkles className="h-3 w-3" />
+                  <span>f-Block Inner Transition Metals (Lanthanides &amp; Actinides):</span>
                 </div>
-                {actinides.map((el) => {
-                  const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
-                  const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
-                  const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
 
-                  return (
-                    <button
-                      key={el.atomicNumber}
-                      onClick={() => {
-                        setSelectedElement(el);
-                        setIsDossierOpen(true);
-                      }}
-                      onMouseEnter={() => setHoveredElement(el)}
-                      onMouseLeave={() => setHoveredElement(null)}
-                      className={`aspect-square rounded-lg border border-pink-500/30 bg-pink-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-pink-500/25 ${
-                        isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
-                      } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
-                    >
-                      <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
-                        {el.atomicNumber}
-                      </div>
-                      <div className="text-xs font-black text-pink-400 leading-none text-center">
-                        {el.symbol}
-                      </div>
-                      <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
-                        {el.name}
-                      </div>
-                    </button>
-                  );
-                })}
+                {/* Lanthanides */}
+                <div
+                  className="grid grid-cols-18 gap-1"
+                  style={{ display: "grid", gridTemplateColumns: "repeat(18, minmax(0, 1fr))" }}
+                >
+                  <div
+                    className="col-span-3 flex items-center justify-end pr-2 text-[8.5px] font-bold text-purple-400 leading-none"
+                    style={{ gridColumn: "span 3 / span 3" }}
+                  >
+                    Lanthanides (4f):
+                  </div>
+                  {lanthanides.map((el) => {
+                    const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
+                    const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
+                    const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
+
+                    return (
+                      <button
+                        key={el.atomicNumber}
+                        onClick={() => {
+                          setSelectedElement(el);
+                          setIsDossierOpen(true);
+                        }}
+                        onMouseEnter={() => setHoveredElement(el)}
+                        onMouseLeave={() => setHoveredElement(null)}
+                        className={`aspect-square rounded-lg border border-purple-500/30 bg-purple-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-purple-500/25 ${
+                          isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
+                        } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                      >
+                        <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
+                          {el.atomicNumber}
+                        </div>
+                        <div className="text-xs font-black text-purple-400 leading-none text-center">
+                          {el.symbol}
+                        </div>
+                        <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
+                          {el.name}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Actinides */}
+                <div
+                  className="grid grid-cols-18 gap-1"
+                  style={{ display: "grid", gridTemplateColumns: "repeat(18, minmax(0, 1fr))" }}
+                >
+                  <div
+                    className="col-span-3 flex items-center justify-end pr-2 text-[8.5px] font-bold text-pink-400 leading-none"
+                    style={{ gridColumn: "span 3 / span 3" }}
+                  >
+                    Actinides (5f):
+                  </div>
+                  {actinides.map((el) => {
+                    const isMatch = matchingAtomicNumbers.has(el.atomicNumber);
+                    const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
+                    const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
+
+                    return (
+                      <button
+                        key={el.atomicNumber}
+                        onClick={() => {
+                          setSelectedElement(el);
+                          setIsDossierOpen(true);
+                        }}
+                        onMouseEnter={() => setHoveredElement(el)}
+                        onMouseLeave={() => setHoveredElement(null)}
+                        className={`aspect-square rounded-lg border border-pink-500/30 bg-pink-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-pink-500/25 ${
+                          isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
+                        } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
+                      >
+                        <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
+                          {el.atomicNumber}
+                        </div>
+                        <div className="text-xs font-black text-pink-400 leading-none text-center">
+                          {el.symbol}
+                        </div>
+                        <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
+                          {el.name}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

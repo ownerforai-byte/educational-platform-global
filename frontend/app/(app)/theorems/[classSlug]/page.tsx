@@ -53,7 +53,20 @@ export default async function TheoremsClassPage({
         <EmptyState
           title="No theorem content yet"
           description="Theorem and proof notes for this class track will be added as we build out the library."
-        />
+          action={{
+            label: "Explore All Theorems & Proofs",
+            href: "/theorems",
+          }}
+        >
+          <div className="flex items-center justify-center gap-2">
+            <Link
+              href={classSlug.includes("11") ? "/class-11" : "/class-12"}
+              className="text-xs font-semibold text-primary hover:underline"
+            >
+              Go to {classSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} Portal →
+            </Link>
+          </div>
+        </EmptyState>
       ) : (
         <div className="grid gap-3 md:grid-cols-2">
           {subjectList.map(([subjectSlug, subjectEntries]) => {

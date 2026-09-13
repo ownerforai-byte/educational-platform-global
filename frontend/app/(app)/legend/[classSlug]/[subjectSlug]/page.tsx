@@ -70,8 +70,28 @@ export default async function LegendSubjectPage({
         </nav>
         <EmptyState
           title="No legend content for this subject"
-          description="Concept notes will appear here as they are added to this subject."
-        />
+          description={`Key facts, formulas, and clarifications for ${subjectLabel} are currently being indexed.`}
+          action={{
+            label: `View ${subjectLabel} Theory Notes`,
+            href: `/${classSlug}/${subjectSlug}`,
+          }}
+        >
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href={`/legend/${classSlug}`}
+              className="text-xs font-semibold text-muted-foreground hover:text-foreground hover:underline"
+            >
+              ← Back to {classLabel} Legend
+            </Link>
+            <span className="text-muted-foreground/40">&bull;</span>
+            <Link
+              href={`/syllabus/${subjectSlug}`}
+              className="text-xs font-semibold text-primary hover:underline"
+            >
+              CDC Syllabus
+            </Link>
+          </div>
+        </EmptyState>
       </div>
     );
   }
@@ -117,6 +137,10 @@ export default async function LegendSubjectPage({
           <EmptyState
             title="No units with content yet"
             description="Concept files will be organized by unit as they are created."
+            action={{
+              label: `View ${subjectLabel} Syllabus`,
+              href: `/syllabus/${subjectSlug}`,
+            }}
           />
         ) : (
           subject.units.map((unit, unitIdx) => (
