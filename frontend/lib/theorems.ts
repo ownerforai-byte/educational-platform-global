@@ -12,13 +12,19 @@
 
 import { SYLLABUS } from "@/lib/syllabus";
 import type { SyllabusUnit } from "@/lib/syllabus";
-import { join, resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
+import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
+import type { DerivationOrTheorem } from "@/lib/derivations-data";
 
-// Resolve the project root from this module's location (frontend/lib/theorems.ts → two levels up).
-// This avoids relying on process.cwd(), which differs between build and dev servers.
-const __filename = fileURLToPath(import.meta.url);
-const PROJECT_ROOT = resolve(dirname(__filename), "..", "..");
+// Dynamically resolve workspace root
+function getProjectRoot(): string {
+  const cwd = process.cwd();
+  if (cwd.endsWith("frontend") || cwd.endsWith("frontend\\") || cwd.endsWith("frontend/")) {
+    return resolve(cwd, "..");
+  }
+  return cwd;
+}
+const PROJECT_ROOT = getProjectRoot();
 
 export interface TheoremEntry {
   /** The class slug: "class-11-notes", "class-12-notes", etc. */
@@ -31,14 +37,18 @@ export interface TheoremEntry {
   /** Slugified from the concept filename */
   topicSlug: string;
   topicTitle: string;
-  /** Matching concept file path relative to project root */
+  /** Matching concept file path relative to project root or derivation ID */
   filePath: string;
   /** First 200 chars of the proof content (truncated preview) */
   preview: string;
-  /** Does this file contain an explicit `<h4>a) Proof</h4>`-style proof block? */
+  /** Does this file contain an explicit proof block? */
   hasProof: boolean;
   /** All theorem/proof snippets found in notes */
   snippets: string[];
+  /** Optional interactive visual identifier */
+  visualType?: string;
+  /** Optional full derivation model */
+  derivation?: DerivationOrTheorem;
 }
 
 const THEOREM_KEYWORDS = [
@@ -98,6 +108,33 @@ export async function readTheoremContent(filePath: string): Promise<any> {
   const cached = theoremJsonCache.get(filePath);
   if (cached !== undefined) return cached;
 
+  // Check if it's a curated derivation/theorem first
+  const curated = DERIVATIONS_AND_THEOREMS.find((d) => d.id === filePath || d.slug === filePath);
+  if (curated) {
+    const formatted = {
+      title: curated.title,
+      notes: [
+        `**Formal Statement:**\n\n${curated.statement}`,
+        `**Core Formulation:**\n\n$$${curated.coreFormula}$$`,
+        ...curated.proofSteps.map(
+          (s) => `### Step ${s.stepNumber}: ${s.title}\n\n$$${s.latex}$$\n\n${s.explanation}`
+        ),
+        `**Conclusion:**\n\n${curated.conclusion}`,
+      ],
+      confusion: curated.examTraps,
+      practice: curated.solvedProblems.map(
+        (p) =>
+          `**Exam Problem (${p.examBadge || "NEB Board / CEE"}):** ${p.question}\n\n**Given:** ${p.given}\n\n${p.stepByStep.join("\n\n")}\n\n**Final Result:** $${p.finalAnswer}$`
+      ),
+      universalFacts: curated.keyTakeaways,
+      type: "theorem",
+      derivation: curated,
+      visualType: curated.visualType,
+    };
+    theoremJsonCache.set(filePath, formatted);
+    return formatted;
+  }
+
   const { readFile } = await import("node:fs/promises");
   const abs = join(PROJECT_ROOT, filePath);
   let parsed: any = null;
@@ -115,8 +152,6 @@ const LEGACY_CLASS_SLUGS = new Set(["class-11", "class-12", "class-11e"]);
 
 /**
  * Heuristic to detect placeholder / auto-generated entries that are not real theorem content.
- * These come from generic template files whose notes contain boilerplate like
- * "Statement 2: Theorem related to X" or filenames like Matrix5.02, Limits5.1, N1.
  */
 function isPlaceholderEntry(topicTitle: string, topicSlug: string, raw: string): boolean {
   const titleLower = topicTitle.toLowerCase();
@@ -130,10 +165,9 @@ function isPlaceholderEntry(topicTitle: string, topicSlug: string, raw: string):
   if (/theorem related to/i.test(titleLower) && titleLower.length < 60) return true;
   if (/^generic theorem/i.test(titleLower)) return true;
 
-  // Content-level check: boilerplate practice/notes text
+  // Content-level check: only reject if it's literally a generic template without real notes
   const lower = raw.toLowerCase();
-  if (/statement \d+: theorem related to/i.test(lower)) return true;
-  if (/derive the key formula for/i.test(lower) && !lower.includes("derivation")) return true;
+  if (lower.includes("statement 2: theorem related to") && lower.includes("[insert from textbook]")) return true;
 
   return false;
 }
@@ -264,6 +298,29 @@ async function getSubjectsForClass(classSlug: string): Promise<string[]> {
 export async function getTheoremIndex(): Promise<TheoremEntry[]> {
   const all: TheoremEntry[] = [];
   const seen = new Set<string>();
+
+  // 1. Include all official curated NEB syllabus theorems and derivations with interactive visuals
+  for (const d of DERIVATIONS_AND_THEOREMS) {
+    const classSlug = d.gradeTrack === "grade-11" ? "class-11-notes" : "class-12-notes";
+    const key = `${classSlug}/${d.subject}/${d.unitId}/${d.slug}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      all.push({
+        classSlug,
+        subjectSlug: d.subject,
+        unitId: d.unitId,
+        unitTitle: d.unit,
+        topicSlug: d.slug,
+        topicTitle: d.title,
+        filePath: d.id,
+        preview: d.statement,
+        hasProof: d.proofSteps.length > 0,
+        snippets: d.proofSteps.map((s) => `${s.title}: ${s.latex}`),
+        visualType: d.visualType,
+        derivation: d,
+      });
+    }
+  }
 
   for (const cls of SYLLABUS) {
     // Scan subjects registered in SYLLABUS

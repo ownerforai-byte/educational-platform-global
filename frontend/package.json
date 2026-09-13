@@ -43,6 +43,9 @@
     "unified": "^11.0.5",
     "zod": "^3.25.0"
   },
+  "overrides": {
+    "katex": "$katex"
+  },
   "devDependencies": {
     "@opennextjs/cloudflare": "1.20.6",
     "@testing-library/dom": "^10.4.1",

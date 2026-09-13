@@ -11,6 +11,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   outputFileTracingRoot: path.resolve(__dirname, ".."),
+
   // Ensure serverless/Vercel/Cloudflare bundles the content/ directory
   // so server-side reads (theorems.ts, legend.ts, etc.) don't 404 at runtime.
   outputFileTracingIncludes: {

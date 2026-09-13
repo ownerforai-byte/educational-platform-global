@@ -8,7 +8,6 @@ import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { CreditBadge } from "./credit-badge";
 import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
 
@@ -131,9 +130,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Button>
 
             <ThemeToggle />
-            <Suspense fallback={<div className="h-6 w-16 animate-pulse rounded-full bg-muted/40" />}>
-              <CreditBadge />
-            </Suspense>
 
             <Link
               href="/periodic-table"
@@ -143,15 +139,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <Atom className="h-3.5 w-3.5 text-teal-500" />
               <span className="hidden sm:inline">Periodic Table</span>
               <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
-            </Link>
-
-            <Link
-              href="/chat"
-              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl bg-gradient-to-r from-primary to-primary/70 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap"
-              title="Ask the AI study assistant"
-            >
-              <span className="hidden xs:inline">AI Tutor</span>
-              <span className="xs:hidden">AI</span>
             </Link>
 
             <div className="ml-1 h-4 w-px bg-border/60" />

@@ -23,11 +23,17 @@ export async function ImportedNotesSection({
   topicTitle,
   target = "class-11-notes",
 }: ImportedNotesSectionProps) {
-  const notes = topicTitle && unitId
-    ? await getImportedNotesForTopic(subject, unitId, topicTitle, target)
-    : unitId
-      ? await getImportedNotesForUnit(subject, unitId, target)
-      : await getImportedNotesForSubject(subject, target);
+  let notes: import("@/lib/imported-notes").ImportedNote[] = [];
+  try {
+    notes = topicTitle && unitId
+      ? await getImportedNotesForTopic(subject, unitId, topicTitle, target)
+      : unitId
+        ? await getImportedNotesForUnit(subject, unitId, target)
+        : await getImportedNotesForSubject(subject, target);
+  } catch (err) {
+    console.warn(`[ImportedNotesSection] Failed to load notes for ${subject}:`, (err as Error)?.message);
+    notes = [];
+  }
 
   if (notes.length === 0) {
     return (

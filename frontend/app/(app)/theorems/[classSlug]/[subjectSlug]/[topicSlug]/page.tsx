@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTheoremIndex, filterTheorems, readTheoremContent } from "@/lib/theorems";
 import { SchematicDiagram } from "@/components/lab/schematic-diagram";
+import { DerivationVisual } from "@/components/derivations/derivation-visual";
 import { ChevronRight, FileText, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
@@ -113,19 +114,23 @@ export default async function TheoremDetailPage({
         </div>
       </div>
 
-      {/* Schematic Diagram */}
+      {/* Visual Schematic */}
       <section className="space-y-3">
         <h2 className="text-base font-semibold flex items-center gap-2">
           <BookOpen className="h-4 w-4 text-primary" />
-          Visual Schematic
+          Interactive Visual Schematic
         </h2>
         <div className="rounded-xl border border-border overflow-hidden">
-          <SchematicDiagram
-            subjectSlug={subjectSlug}
-            topicSlug={entry.topicSlug}
-            topicTitle={title}
-            unitId={entry.unitId}
-          />
+          {(rawJson as any)?.visualType ? (
+            <DerivationVisual type={(rawJson as any).visualType} />
+          ) : (
+            <SchematicDiagram
+              subjectSlug={subjectSlug}
+              topicSlug={entry.topicSlug}
+              topicTitle={title}
+              unitId={entry.unitId}
+            />
+          )}
         </div>
       </section>
 
