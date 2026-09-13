@@ -20,25 +20,25 @@
     "**Watt's governor:** the conical pendulum is the basis of the centrifugal governor used in steam engines. As the engine speeds up, the bobs rise (θ increases), which mechanically reduces the steam supply. This is a real-world application that NEB sometimes references."
   ],
   "confusion": [
-    "❌ 'The tension in the string equals mg.' ✅ The vertical component of tension equals mg. The total tension is greater: T = mg/cos θ (since cos θ < 1, T > mg).",
-    "❌ 'The bob is in equilibrium.' ✅ The bob is in vertical equilibrium (T cos θ = mg) but NOT horizontal equilibrium — it accelerates toward the centre (centripetal acceleration).",
-    "❌ 'The period depends on the mass of the bob.' ✅ The period T = 2π√(L cos θ/g) is independent of mass. A heavier bob rotates at the same period (for the same θ).",
-    "❌ 'A faster rotation gives a smaller θ.' ✅ A FASTER rotation gives a LARGER θ (the cone becomes flatter). From cos θ = g/(ω²L), as ω increases, cos θ decreases, so θ increases.",
-    "❌ 'The radius of the circle is L.' ✅ The radius is r = L sin θ, which is LESS than L. Only if θ = 90° would r = L (but then cos θ = 0 and the equations break down).",
-    "❌ 'The centripetal force is a new force to add to the FBD.' ✅ The centripetal force IS the horizontal component of tension: T sin θ = mω²r. No new force is added."
+    "❌ 'The tension in the string equals mg.' ✅ The vertical component of tension equals mg. The total tension is greater: $T = \frac{mg}{\cos\theta}$ (since $\cos\theta < 1$, $T > mg$).",
+    "❌ 'The bob is in equilibrium.' ✅ The bob is in vertical equilibrium ($T \cos\theta = mg$) but NOT horizontal equilibrium — it accelerates toward the centre (centripetal acceleration).",
+    "❌ 'The period depends on the mass of the bob.' ✅ The period $T = 2\pi\sqrt{\frac{L \cos\theta}{g}}$ is independent of mass. A heavier bob rotates at the same period (for the same $\theta$).",
+    "❌ 'A faster rotation gives a smaller θ.' ✅ A FASTER rotation gives a LARGER θ (the cone becomes flatter). From $\cos\theta = \frac{g}{\omega^2 L}$, as $\omega$ increases, $\cos\theta$ decreases, so $\theta$ increases.",
+    "❌ 'The radius of the circle is L.' ✅ The radius is $r = L \sin\theta$, which is LESS than $L$. Only if $\theta = 90^\circ$ would $r = L$ (but then $\cos\theta = 0$ and the equations break down).",
+    "❌ 'The centripetal force is a new force to add to the FBD.' ✅ The centripetal force IS the horizontal component of tension: $T \sin\theta = m\omega^2 r$. No new force is added."
   ],
   "practice": [
-    "Derive the key equations: T cos θ = mg and T sin θ = mω²L sin θ, leading to cos θ = g/(ω²L).",
-    "Solve 5 problems finding ω, T, r, or θ given the other quantities.",
+    "Derive the key equations: $T \cos\theta = mg$ and $T \sin\theta = m\omega^2 L \sin\theta$, leading to $\cos\theta = \frac{g}{\omega^2 L}$.",
+    "Solve 5 problems finding $\omega$, $T$, $r$, or $\theta$ given the other quantities.",
     "Solve 3 problems comparing the period of a conical pendulum with a simple pendulum of the same length.",
     "Solve 2 problems showing that the period is independent of the mass of the bob.",
-    "Solve 2 problems involving the maximum angular speed before the string breaks (T_max constraint)."
+    "Solve 2 problems involving the maximum angular speed before the string breaks ($T_{max}$ constraint)."
   ],
   "universalFacts": [
-    "The period of a conical pendulum (T = 2π√(L cos θ/g)) is independent of the mass of the bob.",
-    "A conical pendulum's period depends only on the vertical height of the cone (L cos θ), not on the radius of the circle.",
-    "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
-    "The minimum period of a conical pendulum (θ → 0) equals the period of a simple pendulum of the same length.",
+    "The period of a conical pendulum ($T = 2\pi\sqrt{\frac{L \cos\theta}{g}}$) is independent of the mass of the bob.",
+    "A conical pendulum's period depends only on the vertical height of the cone ($L \cos\theta$), not on the radius of the circle.",
+    "The faster the rotation, the larger the angle $\theta$ — the cone becomes flatter.",
+    "The minimum period of a conical pendulum ($\theta \to 0$) equals the period of a simple pendulum of the same length.",
     "The geometry of the conical pendulum is the same as a banking vehicle — the 'tension' is replaced by the normal reaction."
   ],
   "animation3D": "circular-motion",
