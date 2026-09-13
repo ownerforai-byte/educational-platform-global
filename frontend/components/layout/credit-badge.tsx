@@ -46,8 +46,24 @@ export function CreditBadge({ className = "" }: { className?: string }) {
     return () => clearInterval(interval);
   }, [fetchCredits]);
 
-  if (isLoading || !isAuthenticated || credits === null) {
-    return null;
+  if (isLoading) {
+    return (
+      <div className="h-6 w-16 animate-pulse rounded-full bg-amber-500/10 border border-amber-500/20" />
+    );
+  }
+
+  if (!isAuthenticated || credits === null) {
+    return (
+      <Link
+        href="/credits"
+        className={`group flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 transition-all ${className}`}
+        title="50 Free Guest Credits • Click to view credit balance & perks"
+      >
+        <Coins className="h-3.5 w-3.5 text-amber-500" />
+        <span className="text-xs font-bold text-amber-600 dark:text-amber-400">50</span>
+        <span className="text-[9px] font-semibold text-amber-600/80 dark:text-amber-400/80 uppercase px-1 rounded bg-amber-500/10">Guest</span>
+      </Link>
+    );
   }
 
   const hasChanged = lastCredits !== null && credits !== lastCredits;

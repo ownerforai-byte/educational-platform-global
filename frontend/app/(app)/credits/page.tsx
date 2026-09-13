@@ -46,7 +46,154 @@ export default function CreditsPage() {
     );
   }
 
-  if (!credits) return null;
+  if (!credits) {
+    return (
+      <div className="container max-w-4xl py-8 space-y-6">
+        <div className="space-y-1">
+          <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
+            <Coins className="h-6 w-6 text-amber-500" />
+            My Credits
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Guest Student Plan &bull; 50 free credits allocated daily for AI learning.
+          </p>
+        </div>
+
+        {/* 3 Metric Cards for Guests */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card className="border-amber-500/30 bg-amber-500/5">
+            <CardContent className="pt-6 flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+                <Coins className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Available Credits</p>
+                <p className="text-3xl font-black text-amber-600 dark:text-amber-400">50</p>
+                <p className="text-[11px] text-muted-foreground">Free Guest Balance</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="pt-6 flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                <TrendingUp className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Daily Reset</p>
+                <p className="text-2xl font-bold text-foreground">Every 24h</p>
+                <p className="text-[11px] text-muted-foreground">Automatic daily replenish</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="pt-6 flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                <Crown className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Account Status</p>
+                <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">Guest</p>
+                <p className="text-[11px] text-muted-foreground">Free Student Tier</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Feature Usage Table */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base flex items-center gap-2">
+              <ShieldCheck className="h-5 w-5 text-indigo-500" />
+              Feature Credit Cost &amp; Access
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="divide-y divide-border/60 text-sm">
+              <div className="flex items-center justify-between py-2.5">
+                <div>
+                  <p className="font-semibold text-foreground">Interactive Mindmaps &amp; KaTeX Formulas</p>
+                  <p className="text-xs text-muted-foreground">Explore isolated science branches, sub-branches &amp; exam traps</p>
+                </div>
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
+                  FREE / Unlimited
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between py-2.5">
+                <div>
+                  <p className="font-semibold text-foreground">118-Element CEE Periodic Table</p>
+                  <p className="text-xs text-muted-foreground">Atomic radii, electron affinities &amp; high-yield chemistry traps</p>
+                </div>
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
+                  FREE / Unlimited
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between py-2.5">
+                <div>
+                  <p className="font-semibold text-foreground">Visual Theorems &amp; Derivations</p>
+                  <p className="text-xs text-muted-foreground">Class 11 &amp; 12 NEB calculus proofs &amp; mechanics derivations</p>
+                </div>
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
+                  FREE / Unlimited
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between py-2.5">
+                <div>
+                  <p className="font-semibold text-foreground">AI Tutor Instant Explanations</p>
+                  <p className="text-xs text-muted-foreground">Step-by-step problem solver &amp; doubt clearing</p>
+                </div>
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  2 Credits / Query
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between py-2.5">
+                <div>
+                  <p className="font-semibold text-foreground">CEE / IOE Mock Test Generation</p>
+                  <p className="text-xs text-muted-foreground">Full timed test with negative marking analysis</p>
+                </div>
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  5 Credits / Test
+                </span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* CTA to Sign In or Unlock Premium */}
+        <Card className="border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 via-background to-purple-500/10">
+          <CardContent className="pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h3 className="font-bold text-foreground text-base">Want to sync credits across devices?</h3>
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  Sign in or create a free student account to save quiz progress, bookmark mindmaps, and earn credit bonuses.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href="/login"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+                >
+                  Sign In
+                </a>
+                <a
+                  href="/register"
+                  className="px-4 py-2 rounded-xl text-xs font-bold border border-border/80 bg-card hover:bg-muted/40 transition-colors"
+                >
+                  Register
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   const isPremium = hasFullAccess(
     isUserRole(credits.role) ? (credits.role as UserRole) : null,

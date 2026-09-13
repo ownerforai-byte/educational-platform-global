@@ -49,6 +49,120 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.55), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
 }
 
+/* ─── CYBERPUNK NEON THEME ─── */
+.cyberpunk {
+  --background: 270 50% 7%;
+  --foreground: 280 40% 98%;
+  --card: 270 45% 11%;
+  --card-foreground: 280 40% 98%;
+  --primary: 292 92% 64%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 270 30% 16%;
+  --muted-foreground: 270 20% 72%;
+  --border: 270 35% 22%;
+  --ai-blue: 292 92% 64%;
+  --surface-glass: rgba(22, 12, 38, 0.85);
+  --surface-glass-border: rgba(236, 72, 153, 0.25);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(168, 85, 247, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(236, 72, 153, 0.25);
+}
+
+/* ─── FOREST EMERALD THEME ─── */
+.emerald {
+  --background: 160 45% 6%;
+  --foreground: 150 40% 98%;
+  --card: 160 38% 10%;
+  --card-foreground: 150 40% 98%;
+  --primary: 158 84% 45%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 160 25% 15%;
+  --muted-foreground: 155 20% 70%;
+  --border: 160 25% 19%;
+  --ai-blue: 158 84% 45%;
+  --surface-glass: rgba(10, 28, 20, 0.85);
+  --surface-glass-border: rgba(16, 185, 129, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(16, 185, 129, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+}
+
+/* ─── WARM SEPIA READING BOOK THEME ─── */
+.sepia {
+  --background: 40 42% 96%;
+  --foreground: 30 42% 16%;
+  --card: 40 38% 98%;
+  --card-foreground: 30 42% 16%;
+  --primary: 28 85% 45%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 36 28% 90%;
+  --muted-foreground: 30 20% 45%;
+  --border: 36 25% 84%;
+  --ai-blue: 28 85% 45%;
+  --surface-glass: rgba(251, 247, 238, 0.88);
+  --surface-glass-border: rgba(180, 83, 9, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(80, 40, 10, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(80, 40, 10, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(80, 40, 10, 0.1);
+}
+
+/* ─── NORDIC FROST THEME ─── */
+.nord {
+  --background: 220 28% 13%;
+  --foreground: 218 28% 92%;
+  --card: 222 25% 18%;
+  --card-foreground: 218 28% 92%;
+  --primary: 193 45% 67%;
+  --primary-foreground: 220 28% 13%;
+  --muted: 220 20% 23%;
+  --muted-foreground: 218 15% 68%;
+  --border: 220 20% 26%;
+  --ai-blue: 193 45% 67%;
+  --surface-glass: rgba(24, 32, 44, 0.85);
+  --surface-glass-border: rgba(136, 192, 208, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+}
+
+/* ─── SUNSET AMBER THEME ─── */
+.amber {
+  --background: 24 40% 7%;
+  --foreground: 36 40% 98%;
+  --card: 24 35% 12%;
+  --card-foreground: 36 40% 98%;
+  --primary: 38 92% 50%;
+  --primary-foreground: 24 40% 7%;
+  --muted: 24 25% 18%;
+  --muted-foreground: 36 20% 70%;
+  --border: 24 25% 23%;
+  --ai-blue: 38 92% 50%;
+  --surface-glass: rgba(26, 16, 9, 0.85);
+  --surface-glass-border: rgba(245, 158, 11, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(245, 158, 11, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(245, 158, 11, 0.2);
+}
+
+/* ─── PURE OLED BLACK THEME (ZERO BATTERY DRAIN) ─── */
+.oled {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 98%;
+  --primary: 217 100% 60%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 68%;
+  --border: 0 0% 16%;
+  --ai-blue: 217 100% 60%;
+  --surface-glass: rgba(0, 0, 0, 0.95);
+  --surface-glass-border: rgba(255, 255, 255, 0.16);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8);
+}
+
 * {
   border-color: hsl(var(--border));
 }

@@ -5,10 +5,10 @@ import { TopicMindMap } from "@/components/lab/topic-mindmap";
 import { Workflow, BookOpen, Layers, Atom, Sparkles } from "lucide-react";
 
 const SUBJECTS = [
-  { slug: "physics", name: "Physics", topic: "Newtonian Mechanics, Work & Orbital Dynamics", unit: "Mechanics" },
-  { slug: "chemistry", name: "Chemistry", topic: "Atomic Structure, Bonding & Chemical Equilibrium", unit: "Physical Chemistry" },
-  { slug: "biology", name: "Biology", topic: "Cellular Ultrastructure, Metabolism & Genetics", unit: "Cell Biology" },
-  { slug: "mathematics", name: "Mathematics", topic: "Calculus, Differential Theorems & 3D Vectors", unit: "Calculus" },
+  { slug: "physics", name: "Physics", topic: "Class 11 & 12 Mechanics, Rotational Dynamics & Universal Gravitation", unit: "Mechanics & Dynamics", grade: "Grade 11 & 12 NEB" },
+  { slug: "chemistry", name: "Chemistry", topic: "Class 11 & 12 Atomic Orbitals, Chemical Bonding & Equilibrium", unit: "Physical Chemistry", grade: "Grade 11 & 12 NEB" },
+  { slug: "biology", name: "Biology", topic: "Class 11 & 12 Cytology, Cellular Bioenergetics & Molecular Genetics", unit: "Cell Biology & Genetics", grade: "Grade 11 & 12 NEB" },
+  { slug: "mathematics", name: "Mathematics", topic: "Class 11 & 12 Differential Theorems, 3D Vectors & Definite Integrals", unit: "Calculus & Geometry", grade: "Grade 11 & 12 NEB" },
 ];
 
 export default function MindMapHubPage() {

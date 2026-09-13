@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
@@ -19,11 +19,18 @@ interface AppShellProps {
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [navPinned, setNavPinned] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClickedOpen, setIsClickedOpen] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("sidebar-collapsed");
-    if (saved !== null) {
-      setSidebarCollapsed(saved === "true");
+    const savedSidebar = localStorage.getItem("sidebar-collapsed");
+    if (savedSidebar !== null) {
+      setSidebarCollapsed(savedSidebar === "true");
+    }
+    const savedPinned = localStorage.getItem("nav-pinned");
+    if (savedPinned !== null) {
+      setNavPinned(savedPinned === "true");
     }
   }, []);
 
@@ -31,10 +38,47 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed));
   }, [sidebarCollapsed]);
 
+  useEffect(() => {
+    localStorage.setItem("nav-pinned", String(navPinned));
+  }, [navPinned]);
+
+  const navVisible = navPinned || isHovered || isClickedOpen;
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      {/* ── Top Sensor & Reveal Tab for Auto-Hiding Navbar ── */}
+      {!navPinned && (
+        <>
+          <div
+            className="fixed top-0 inset-x-0 h-3 z-50 cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onClick={() => setIsClickedOpen((prev) => !prev)}
+            title="Hover or click to show navigation"
+          />
+          {!navVisible && (
+            <button
+              onClick={() => setIsClickedOpen(true)}
+              className="fixed top-0 left-1/2 -translate-x-1/2 z-50 px-3 py-0.5 rounded-b-md bg-primary/90 hover:bg-primary text-primary-foreground text-[10px] font-bold flex items-center gap-1 shadow-md transition-all backdrop-blur-sm animate-pulse hover:animate-none"
+              title="Click or hover to reveal navigation bar"
+            >
+              <ChevronDown className="h-3 w-3" />
+              <span>Nav</span>
+            </button>
+          )}
+        </>
+      )}
+
       {/* ── Header ─────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-40 border-b border-border/40 bg-background">
+      <header
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => {
+          setIsHovered(false);
+          setIsClickedOpen(false);
+        }}
+        className={`sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-md transition-transform duration-300 ease-in-out ${
+          navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
+        }`}
+      >
         <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
           {/* Left: mobile hamburger + desktop collapse toggle + logo */}
           <div className="flex items-center gap-2 min-w-0">
@@ -66,11 +110,27 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-        {/* Center spacer */}
-        <div className="flex-1" />
+          {/* Center spacer */}
+          <div className="flex-1" />
 
-          {/* Right: theme toggle + credit badge + auth links */}
+          {/* Right: pin toggle + theme studio + credit badge + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
+            {/* Pin / Unpin button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 rounded-xl shrink-0 text-muted-foreground hover:text-foreground"
+              onClick={() => setNavPinned(!navPinned)}
+              title={navPinned ? "Unpin navigation (auto-hides on hover to maximize screen)" : "Pin navigation bar permanently"}
+              aria-label={navPinned ? "Unpin navigation" : "Pin navigation"}
+            >
+              {navPinned ? (
+                <Pin className="h-4 w-4 text-primary fill-primary" />
+              ) : (
+                <PinOff className="h-4 w-4" />
+              )}
+            </Button>
+
             <ThemeToggle />
             <Suspense fallback={<div className="h-6 w-16 animate-pulse rounded-full bg-muted/40" />}>
               <CreditBadge />
