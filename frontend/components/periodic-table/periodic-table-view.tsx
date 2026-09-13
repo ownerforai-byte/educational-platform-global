@@ -91,6 +91,7 @@ export function PeriodicTableView() {
   const [measuredHeight, setMeasuredHeight] = useState<number>(580);
   const tableContainerRef = useRef<HTMLDivElement>(null);
   const tableContentRef = useRef<HTMLDivElement>(null);
+  const tableScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch("/all_elements.json")
@@ -120,10 +121,10 @@ export function PeriodicTableView() {
         const h = tableContentRef.current.scrollHeight;
         if (h > 150) setMeasuredHeight(h);
       }
-      if (tableContainerRef.current) {
-        const containerW = tableContainerRef.current.clientWidth;
+      const viewportW = tableScrollRef.current?.clientWidth || tableContainerRef.current?.clientWidth;
+      if (viewportW) {
         if (fitScreen) {
-          const availableW = Math.max(280, containerW - 20);
+          const availableW = Math.max(280, viewportW);
           const optimalScale = Math.min(1.0, Math.max(0.28, availableW / 990));
           setZoom(optimalScale);
         }
@@ -496,16 +497,16 @@ export function PeriodicTableView() {
         className="rounded-2xl sm:rounded-3xl border border-border/80 bg-card p-2 sm:p-4 shadow-sm w-full overflow-hidden"
       >
         <div
-          className="w-full flex justify-center overflow-x-auto overflow-y-hidden"
+          ref={tableScrollRef}
+          className={`w-full flex ${fitScreen ? "justify-center" : ""} overflow-y-auto ${fitScreen ? "overflow-x-hidden" : "overflow-x-auto"}`}
           style={{
-            minHeight: fitScreen ? `${Math.ceil(measuredHeight * zoom)}px` : "auto",
-            height: fitScreen ? `${Math.ceil(measuredHeight * zoom)}px` : "auto",
+            height: `${Math.ceil(measuredHeight * zoom)}px`,
           }}
         >
           <div
             style={{
-              width: fitScreen ? `${Math.ceil(990 * zoom)}px` : "990px",
-              height: fitScreen ? `${Math.ceil(measuredHeight * zoom)}px` : "auto",
+              width: `${Math.ceil(990 * zoom)}px`,
+              height: `${Math.ceil(measuredHeight * zoom)}px`,
               position: "relative",
               flexShrink: 0,
             }}

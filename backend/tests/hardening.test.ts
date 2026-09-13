@@ -240,6 +240,48 @@ describe("PATCH /api/resources/:id allowlist", () => {
       h.calls.some((c) => c.method === "eq" && c.args[0] === "id" && c.args[1] === "r1")
     ).toBe(true);
   });
+
+  it("accepts a content object update from TEACHER and forwards it", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("TEACHER");
+    h.enqueue("resources", { data: [{ id: "r1" }], error: null });
+
+    const content = { text: "Updated body", sections: ["a", "b"] };
+    const res = await request("PATCH", "/api/resources/r1", { content });
+
+    expect(res.status).toBe(200);
+    const updates = h.opsFor("resources").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toEqual({ content });
+  });
+
+  it("accepts legacy plain-string content", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("TEACHER");
+    h.enqueue("resources", { data: [{ id: "r1" }], error: null });
+
+    const res = await request("PATCH", "/api/resources/r1", {
+      content: "legacy free-form body",
+    });
+
+    expect(res.status).toBe(200);
+    const updates = h.opsFor("resources").filter((c) => c.method === "update");
+    expect(updates[0].args[0]).toEqual({ content: "legacy free-form body" });
+  });
+
+  it("rejects array and primitive content shapes with 400 and no update", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("TEACHER");
+
+    for (const bad of [[1, 2, 3], 42, true]) {
+      h.reset();
+      h.mockRole("TEACHER");
+      const res = await request("PATCH", "/api/resources/r1", { content: bad });
+      expect(res.status).toBe(400);
+      expect(res.body.fields).toEqual(["content"]);
+      expect(h.opsFor("resources").filter((c) => c.method === "update")).toHaveLength(0);
+    }
+  });
 });
 
 describe("DELETE /api/resources/:id ownership", () => {

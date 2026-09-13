@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { apiFetch } from "@/lib/api-client";
 
 const RESOURCE_TYPES = [
   "SYLLABUS",
@@ -64,14 +65,36 @@ export function ResourceForm({
       const parsedContent = JSON.parse(content);
       const parsedMetadata = JSON.parse(metadata);
 
+      // Mirror the backend PATCH contract: content/metadata must be JSON
+      // objects (or legacy string content) or the request is rejected.
+      if (
+        typeof parsedContent !== "string" &&
+        (typeof parsedContent !== "object" ||
+          parsedContent === null ||
+          Array.isArray(parsedContent))
+      ) {
+        throw new Error(
+          "Content must be a JSON object (e.g. {\"text\": \"...\"})"
+        );
+      }
+      if (
+        typeof parsedMetadata !== "object" ||
+        parsedMetadata === null ||
+        Array.isArray(parsedMetadata)
+      ) {
+        throw new Error("Metadata must be a JSON object");
+      }
+
       const url = isEdit
         ? `/api/resources/${resource!.id}`
         : "/api/resources";
       const method = isEdit ? "PATCH" : "POST";
 
-      const res = await fetch(url, {
+      // Use apiFetch so the stored bearer token is attached automatically
+      // (the previous raw fetch sent no Authorization header, which made the
+      // teacher-only PATCH/POST reject every save with a 401).
+      await apiFetch<Record<string, unknown>>(url, {
         method,
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...(isEdit ? {} : { topic_id: topicId }),
           title,
@@ -82,12 +105,9 @@ export function ResourceForm({
         }),
       });
 
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error ?? "Failed to save resource");
-      }
-
       onSuccess?.();
+      // Refresh on both create and edit so the server-rendered route
+      // reflects the new resource or updated fields.
       if (!isEdit) {
         router.refresh();
       }

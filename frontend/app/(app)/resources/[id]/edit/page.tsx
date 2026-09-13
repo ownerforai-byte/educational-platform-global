@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getResourceById } from "@/lib/curriculum";
+import { getResourceForEdit } from "@/lib/curriculum";
 import { ResourceForm } from "@/components/content/resource-form";
 import { BackButton } from "@/components/navigation/back-button";
 
@@ -11,7 +11,7 @@ export default async function EditResourcePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const resource = await getResourceById(id);
+  const resource = await getResourceForEdit(id);
   if (!resource) notFound();
 
   const formattedContent =

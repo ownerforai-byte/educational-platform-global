@@ -129,6 +129,26 @@ router.get("/:id", async (req: Request, res: Response) => {
   res.json(data);
 });
 
+router.get("/:id/edit", async (req: Request, res: Response) => {
+  const auth = await requireTeacher(req, res);
+  if (!auth) return;
+
+  const { id } = req.params;
+
+  const { data, error } = await supabaseAdmin
+    .from("resources")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  res.json(data);
+});
+
 router.get("/:id/linked", async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
@@ -159,6 +179,7 @@ const BASE_PATCH_FIELDS = [
   "description",
   "url",
   "type",
+  "content",
   "media_url",
   "topic_id",
   "metadata",
@@ -179,6 +200,19 @@ function isValidJsonMetadata(value: unknown): boolean {
   );
 }
 
+// `content` is stored as jsonb and is the payload of structured resources
+// (NOTES, QUIZ, MINDMAP, ...). Accept the shapes the rest of the app already
+// understands: JSON objects, and plain strings (legacy free-form content that
+// the edit page normalizes to { text }). Arrays and primitives have no
+// consumer, so they are rejected to keep rows in a known shape.
+function isValidResourceContent(value: unknown): boolean {
+  return (
+    value === null ||
+    typeof value === "string" ||
+    (typeof value === "object" && !Array.isArray(value) && !Buffer.isBuffer(value))
+  );
+}
+
 function buildResourcePatch(
   body: Record<string, unknown>,
   isAdmin: boolean
@@ -195,6 +229,10 @@ function buildResourcePatch(
       continue;
     }
     if (key === "metadata" && !isValidJsonMetadata(body[key])) {
+      rejected.push(key);
+      continue;
+    }
+    if (key === "content" && !isValidResourceContent(body[key])) {
       rejected.push(key);
     }
   }

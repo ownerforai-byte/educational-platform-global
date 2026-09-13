@@ -93,6 +93,7 @@ export function SchematicDiagram({
         return {
           title: `Nephron Ultrastructure & Filtration Schematic: ${topicTitle}`,
           subtitle: "Malpighian Body, Glomerular Ultrafiltration (NFP = 10 mmHg) & Countercurrent Multiplier",
+          specific: true,
           viewBox: "0 0 900 520",
           annotations: [
             {
@@ -215,6 +216,7 @@ export function SchematicDiagram({
         return {
           title: `Cellular Ultrastructure & Organelle Map: ${topicTitle}`,
           subtitle: "Eukaryotic Cell Architecture with Cytoplasmic Organelles & Metabolic Sites",
+          specific: true,
           viewBox: "0 0 900 520",
           annotations: [
             {
@@ -309,6 +311,7 @@ export function SchematicDiagram({
       return {
         title: `Physiological Synaptic Transmission: ${topicTitle}`,
         subtitle: "Synaptic Transmission, Signal Transduction & Neurochemical Architecture",
+        specific: false,
         viewBox: "0 0 900 520",
         annotations: [
           {
@@ -418,6 +421,7 @@ export function SchematicDiagram({
         return {
           title: `Electrochemical Daniell Galvanic Cell Schematic: ${topicTitle}`,
           subtitle: "Zn Anode (-), Cu Cathode (+), Salt Bridge & Standard EMF E° = +1.10 V",
+          specific: true,
           viewBox: "0 0 900 520",
           annotations: [
             {
@@ -548,6 +552,7 @@ export function SchematicDiagram({
       return {
         title: `Chemical & Molecular Architecture: ${topicTitle}`,
         subtitle: "Orbital Mechanics, Electron Probability Density & Reaction Energetics",
+        specific: false,
         viewBox: "0 0 900 520",
         annotations: [
           {
@@ -643,6 +648,7 @@ export function SchematicDiagram({
         return {
           title: `Analytical Conic Geometry (Parabola y² = 4ax): ${topicTitle}`,
           subtitle: "Focus S(a, 0), Directrix x = -a, Latus Rectum = 4a & SP = PM Geometric Invariant",
+          specific: true,
           viewBox: "0 0 900 520",
           annotations: [
             {
@@ -742,6 +748,7 @@ export function SchematicDiagram({
       return {
         title: `Analytical Mathematical Geometry: ${topicTitle}`,
         subtitle: "Vector Calculus, Coordinate Frames & Derivative Tangent Systems",
+        specific: false,
         viewBox: "0 0 900 520",
         annotations: [
           {
@@ -842,6 +849,7 @@ export function SchematicDiagram({
       return {
         title: `Kinematics & Two-Dimensional Projectile Motion: ${topicTitle}`,
         subtitle: `Launch Angle θ = ${projectileAngle}° | Parabolic Trajectory, Velocity Vector Components & Range`,
+        specific: true,
         viewBox: "0 0 900 520",
         annotations: [
           {
@@ -963,6 +971,7 @@ export function SchematicDiagram({
       return {
         title: `Wave Optics & Young's Double Slit Interference: ${topicTitle}`,
         subtitle: `Coherent Wavefront Division | ${fringeWidthText} | Fringe Width β = λ·D / d`,
+        specific: true,
         viewBox: "0 0 900 520",
         annotations: [
           {
@@ -1052,6 +1061,7 @@ export function SchematicDiagram({
     return {
       title: `Physical Vector & Dynamical Field Schematic: ${topicTitle}`,
       subtitle: "Force Resolution, Free-Body Diagram & Kinematic Vector System",
+      specific: false,
       viewBox: "0 0 900 520",
       annotations: [
         {
@@ -1278,7 +1288,7 @@ export function SchematicDiagram({
           <div className="h-5 w-px bg-slate-700 mx-1" />
 
           <button
-            onClick={() => setShowAnnotations(!showAnnotations)}
+            onClick={() => { const next = !showAnnotations; setShowAnnotations(next); if (!next) setActiveAnnotationId(null); }}
             className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
               showAnnotations
                 ? "bg-primary/20 border-primary/40 text-primary"
@@ -1304,7 +1314,7 @@ export function SchematicDiagram({
       </div>
 
       {/* Main SVG Canvas Area with LONG LEADER LINES */}
-      <div className="relative w-full aspect-[16/9] min-h-[440px] max-h-[580px] bg-[#070b16] p-2 select-none overflow-hidden">
+      <div className="relative w-full aspect-[16/9] min-h-[440px] max-h-[580px] bg-[#070b16] p-2 select-none overflow-auto">
         {/* Subtle engineering grid dot pattern */}
         <div
           className="absolute inset-0 pointer-events-none opacity-20"
@@ -1315,11 +1325,22 @@ export function SchematicDiagram({
           }}
         />
 
-        <svg
-          viewBox={diagramData.viewBox}
-          className="w-full h-full"
-          style={{ overflow: "visible", transform: `scale(${zoom})`, transformOrigin: "center" }}
+        {/* Shared transformable layer: SVG + HTML annotation overlay scale
+            together so labels and leader lines stay aligned at any zoom level.
+            overflow-auto on the parent canvas lets learners scroll/pan when
+            zoomed-in content exceeds the viewport instead of clipping it. */}
+        <div
+          className="relative w-full h-full origin-center"
+          style={{
+            transform: `scale(${zoom})`,
+            transformOrigin: "center",
+          }}
         >
+          <svg
+            viewBox={diagramData.viewBox}
+            className="w-full h-full"
+            style={{ overflow: "visible" }}
+          >
           <defs>
             <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
               <path d="M 0 0 L 8 4 L 0 8 Z" fill="#64748b" />
@@ -1341,8 +1362,9 @@ export function SchematicDiagram({
           {/* 1. Base Geometry */}
           {diagramData.renderSvg()}
 
-          {/* 2. LONG SVG LEADER LINES */}
-          {diagramData.annotations.map((ann) => {
+          {/* 2. LONG SVG LEADER LINES (gated so turning Annotations off hides
+              leaders + dots together with the HTML label cards) */}
+          {showAnnotations && diagramData.annotations.map((ann) => {
             const isHovered = activeAnnotationId === ann.id;
             const cColor = ann.color || "#38bdf8";
 
@@ -1441,6 +1463,7 @@ export function SchematicDiagram({
             </div>
           );
         })}
+        </div>
       </div>
 
       {/* Expandable Details Section */}
@@ -1471,9 +1494,15 @@ export function SchematicDiagram({
           <Info className="h-3.5 w-3.5 text-primary" />
           <span>Hover any label or long leader line to highlight the exact target feature.</span>
         </span>
-        <span className="text-[11px] font-semibold text-emerald-400">
-          NEB &amp; CEE Verified
-        </span>
+        {diagramData.specific ? (
+          <span className="text-[11px] font-semibold text-emerald-400">
+            NEB &amp; CEE Verified
+          </span>
+        ) : (
+          <span className="text-[11px] font-semibold text-slate-500" title="General schematic shown because this topic has no dedicated verified diagram yet.">
+            General schematic
+          </span>
+        )}
       </div>
     </div>
   );

@@ -366,6 +366,24 @@ export async function getResourceById(resourceId: string) {
   }
 }
 
+/**
+ * Authenticated lookup for the edit page. Returns both published and
+ * unpublished (draft) records when the requester has TEACHER/ADMIN/OWNER
+ * permissions, so the edit page can reach resources that are still in draft
+ * state (default for newly created resources).
+ */
+export async function getResourceForEdit(resourceId: string) {
+  try {
+    const data = await apiFetch<Resource>(
+      `/api/resources/${encodeURIComponent(resourceId)}/edit`
+    );
+    return data;
+  } catch (e) {
+    console.error(`[curriculum] API error: ${e instanceof Error ? e.message : String(e)}`);
+    return null;
+  }
+}
+
 export async function getLinkedResources(
   resourceId: string
 ): Promise<TopicDetail["linkedResources"]> {
