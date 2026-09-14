@@ -21,6 +21,28 @@ export function DerivationVisual({
 
   // Render specific SVG by visualType
   const renderVisualContent = () => {
+<defs>
+        <linearGradient id="grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0ea5e9"/>
+          <stop offset="100%" stopColor="#6366f1"/>
+        </linearGradient>
+        <linearGradient id="grad-success" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#10b981"/>
+          <stop offset="100%" stopColor="#14b8a6"/>
+        </linearGradient>
+        <linearGradient id="grad-warn" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#f59e0b"/>
+          <stop offset="100%" stopColor="#ef4444"/>
+        </linearGradient>
+        <marker id="arrow-end" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 Z" fill="#38bdf8"/>
+        </marker>
+        <marker id="arrow-end-gold" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b"/>
+        </marker>
+        <filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+
     switch (visualType) {
       // ─────────────────────────────────────────────────────────────
       // 1. MATHEMATICS VISUALS
@@ -2889,6 +2911,30 @@ export function DerivationVisual({
             <text x="350" y="270" fill="#a855f7" fontSize="11" textAnchor="middle">First-order linear ODE - standard method</text>
           </svg>
         );
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">T cos θ = mg  &amp;  T sin θ = mv²/r  ⟹  T = 2π√(l cos θ/g)</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+          <text x="350" y="365" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Top: v_min = √(gr) | Bottom: v_min = √(5gr)  |  ΔKE + ΔPE = const</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">tan θ = v²/(rg)  →  Friction independent! Safe for icy roads.</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+          <text x="350" y="365" fill="#ef4444" fontSize="12" fontWeight="bold" textAnchor="middle">Young's modulus Y = σ/ε (slope of linear region)</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Fourier's Law: Q/t = kA(ΔT/L)  |  Thermal conductivity k varies by material</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+          <text x="350" y="365" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P = εσAT⁴  |  Stefan-Boltzmann constant: σ = 5.67 × 10⁻⁸ W m⁻² K⁻⁴</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+          <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">∮ E⃗·dA⃗ = Q_enc/ε₀  →  Use symmetry for closed surfaces!</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Series: 1/C = 1/C₁ + 1/C₂  |  Parallel: C = C₁ + C₂</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+          <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Mirror Formula: 1/f = 1/v + 1/u  |  Sign convention: distances measured from pole</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Snell's Law: n₁ sin i = n₂ sin r  |  Refractive index n = c/v</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+          <text x="350" y="365" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Critical angle: sin θ_c = n₂/n₁ (light must go dense→rare)</text>
+<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+          <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Refractive index: n = sin((A+δ_m)/2) / sin(A/2)</text>
 
       default:
         return (
