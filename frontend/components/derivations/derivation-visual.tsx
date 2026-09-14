@@ -1300,6 +1300,374 @@ export function DerivationVisual({
           </svg>
         );
 
+
+      case "hooke-spring-force":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* F-x Graph: two slopes (stiff + soft spring) */}
+            <line x1="80" y1="300" x2="650" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="120" y1="320" x2="120" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="660" y="310" fill="#94a3b8" fontSize="11" fontWeight="bold">x (extension)</text>
+            <text x="110" y="22" fill="#94a3b8" fontSize="11" fontWeight="bold" textAnchor="middle">F (N)</text>
+            {/* Stiff spring (k₁=5 N/m) */}
+            <line x1="120" y1="300" x2="480" y2="60" stroke="#38bdf8" strokeWidth="3" />
+            <text x="490" y="55" fill="#38bdf8" fontSize="10" fontWeight="bold">Stiff: F = k₁·x (large k)</text>
+            {/* Soft spring (k₂=2 N/m) */}
+            <line x1="120" y1="300" x2="580" y2="180" stroke="#f59e0b" strokeWidth="3" />
+            <text x="590" y="175" fill="#f59e0b" fontSize="10" fontWeight="bold">Soft: F = k₂·x (small k)</text>
+            {/* Elastic limit */}
+            <line x1="440" y1="200" x2="440" y2="300" stroke="#ef4444" strokeWidth="2" strokeDasharray="5 3" />
+            <text x="445" y="195" fill="#ef4444" fontSize="10" fontWeight="bold">Elastic limit</text>
+            {/* Region */}
+            <rect x="440" y="60" width="200" height="240" fill="#ef4444" fillOpacity="0.05" stroke="#ef4444" strokeWidth="1" strokeDasharray="4 4" />
+            <text x="540" y="280" fill="#ef4444" fontSize="10" textAnchor="middle">Plastic region (permanent deformation)</text>
+            <text x="350" y="340" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">F = k·x  (Hooke's Law, linear region)</text>
+          </svg>
+        );
+
+      case "coulomb-law-electrostatic":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Two point charges */}
+            <circle cx="180" cy="180" r="30" fill="#ef4444" fillOpacity="0.25" stroke="#ef4444" strokeWidth="3" />
+            <text x="180" y="185" fill="#fff" fontSize="22" fontWeight="bold" textAnchor="middle">+</text>
+            <text x="180" y="225" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">q₁</text>
+            <circle cx="520" cy="180" r="30" fill="#38bdf8" fillOpacity="0.25" stroke="#38bdf8" strokeWidth="3" />
+            <text x="520" y="185" fill="#fff" fontSize="22" fontWeight="bold" textAnchor="middle">−</text>
+            <text x="520" y="225" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">q₂</text>
+            {/* Distance line */}
+            <line x1="210" y1="180" x2="490" y2="180" stroke="#fbbf24" strokeWidth="2" strokeDasharray="6 3" />
+            <text x="350" y="165" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">r</text>
+            {/* Force arrows */}
+            <line x1="215" y1="180" x2="485" y2="180" stroke="#10b981" strokeWidth="4" markerEnd="url(#arrow)" />
+            <text x="350" y="205" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">F = k·q₁·q₂ / r²</text>
+            {/* Field lines (conceptual) */}
+            <path d="M 210 150 C 300 100, 400 100, 490 150" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" />
+            <path d="M 210 210 C 300 260, 400 260, 490 210" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" />
+            {/* Formula box */}
+            <rect x="180" y="270" width="340" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="300" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">F = (1 / 4πε₀) · (q₁ · q₂) / r²</text>
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Inverse-square law: 2× distance → ¼ force</text>
+          </svg>
+        );
+
+      case "ohms-law-circuit":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* V-I Graph: two resistors */}
+            <line x1="80" y1="300" x2="650" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="120" y1="320" x2="120" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="660" y="310" fill="#94a3b8" fontSize="11" fontWeight="bold">V (Volts)</text>
+            <text x="110" y="22" fill="#94a3b8" fontSize="11" fontWeight="bold" textAnchor="middle">I (Amps)</text>
+            {/* R = 1 Ω (steep) */}
+            <line x1="120" y1="300" x2="600" y2="80" stroke="#38bdf8" strokeWidth="3" />
+            <text x="610" y="75" fill="#38bdf8" fontSize="10" fontWeight="bold">R₁ = 1 Ω</text>
+            {/* R = 4 Ω (shallow) */}
+            <line x1="120" y1="300" x2="600" y2="230" stroke="#f59e0b" strokeWidth="3" />
+            <text x="610" y="225" fill="#f59e0b" fontSize="10" fontWeight="bold">R₂ = 4 Ω</text>
+            {/* Slope label */}
+            <text x="350" y="340" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">V = I·R  →  R = V/I = 1/(slope)</text>
+            {/* Ohmic vs non-ohmic */}
+            <rect x="440" y="280" width="200" height="40" rx="6" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="1.5" />
+            <text x="540" y="305" fill="#ef4444" fontSize="10" fontWeight="bold" textAnchor="middle">Non-ohmic: curved V-I (diode, lamp)</text>
+          </svg>
+        );
+
+      case "parallel-plate-capacitor":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Plates */}
+            <rect x="200" y="140" width="16" height="180" rx="3" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="3" />
+            <text x="185" y="235" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="end">+</text>
+            <rect x="484" y="140" width="16" height="180" rx="3" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="3" />
+            <text x="515" y="235" fill="#ef4444" fontSize="13" fontWeight="bold" textAnchor="start">−</text>
+            {/* Field lines */}
+            {[0,1,2,3,4,5,6].map(i => (
+              <line key={i} x1={240} y1={160 + i*24} x2={460} y2={160 + i*24} stroke="#10b981" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#arrow)" />
+            ))}
+            <text x="350" y="130" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">E = V / d = Q / (ε₀·A)</text>
+            {/* Dielectric */}
+            <rect x="270" y="160" width="160" height="140" rx="6" fill="#a855f7" fillOpacity="0.12" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+            <text x="350" y="230" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">Dielectric κ</text>
+            {/* Formula */}
+            <rect x="160" y="310" width="380" height="40" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="335" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">C = ε₀·A / d  →  with dielectric: C' = κ·C</text>
+            {/* Dimension labels */}
+            <line x1="200" y1="330" x2="200" y2="345" stroke="#64748b" strokeWidth="1.5" />
+            <line x1="500" y1="330" x2="500" y2="345" stroke="#64748b" strokeWidth="1.5" />
+          </svg>
+        );
+
+      case "dot-product-vectors":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Origin */}
+            <circle cx="120" cy="300" r="4" fill="#64748b" />
+            <text x="110" y="315" fill="#94a3b8" fontSize="10">O</text>
+            {/* Vector A */}
+            <line x1="120" y1="300" x2="380" y2="100" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
+            <text x="395" y="95" fill="#38bdf8" fontSize="14" fontWeight="bold">A</text>
+            {/* Vector B */}
+            <line x1="120" y1="300" x2="500" y2="180" stroke="#f59e0b" strokeWidth="4" markerEnd="url(#arrow)" />
+            <text x="515" y="175" fill="#f59e0b" fontSize="14" fontWeight="bold">B</text>
+            {/* Angle θ */}
+            <path d="M 180 300 A 60 60 0 0 0 200 275" fill="none" stroke="#10b981" strokeWidth="2.5" />
+            <text x="195" y="295" fill="#10b981" fontSize="11" fontWeight="bold">θ</text>
+            {/* Projection */}
+            <line x1="380" y1="100" x2="380" y2="300" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="380" y1="300" x2="500" y2="300" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+            <rect x="380" y="290" width="120" height="10" fill="#a855f7" fillOpacity="0.2" />
+            <text x="440" y="320" fill="#a855f7" fontSize="10" fontWeight="bold" textAnchor="middle">|B|·cos θ</text>
+            {/* Formula */}
+            <rect x="140" y="335" width="420" height="30" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="355" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">A · B = |A||B| cos θ  =  AₓBₓ + AᵧBᵧ + A₂B₂</text>
+          </svg>
+        );
+
+      case "area-under-curve-integral":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Axes */}
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="670" y="305" fill="#94a3b8" fontSize="11">x</text>
+            <text x="95" y="20" fill="#94a3b8" fontSize="11" textAnchor="middle">y</text>
+            {/* Curve y = f(x) */}
+            <path d="M 150 280 C 250 100, 350 100, 450 180 C 550 260, 600 150, 640 120" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+            {/* Integration bounds */}
+            <line x1="200" y1="300" x2="200" y2="100" stroke="#ef4444" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="550" y1="300" x2="550" y2="180" stroke="#ef4444" strokeWidth="2" strokeDasharray="5 3" />
+            <text x="195" y="315" fill="#ef4444" fontSize="11" fontWeight="bold">a</text>
+            <text x="545" y="315" fill="#ef4444" fontSize="11" fontWeight="bold">b</text>
+            {/* Filled area */}
+            <path d="M 200 300 L 200 150 C 280 100, 380 110, 450 170 C 500 200, 530 190, 550 180 L 550 300 Z" fill="#a855f7" fillOpacity="0.15" />
+            {/* Riemann strip */}
+            <rect x="300" y="130" width="40" height="170" fill="#f59e0b" fillOpacity="0.3" stroke="#f59e0b" strokeWidth="1.5" />
+            <text x="320" y="120" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">Δx</text>
+            {/* Formula */}
+            <rect x="160" y="330" width="380" height="30" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="350" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">∫ₐᵇ f(x) dx = Area between curve and x-axis</text>
+          </svg>
+        );
+
+      case "mass-action-equilibrium":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Reaction: A + B ⇌ C + D */}
+            <rect x="80" y="80" width="120" height="60" rx="8" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="140" y="115" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">aA</text>
+            <rect x="220" y="80" width="120" height="60" rx="8" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="280" y="115" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">bB</text>
+            <text x="370" y="115" fill="#64748b" fontSize="20">⇌</text>
+            <rect x="400" y="80" width="120" height="60" rx="8" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2.5" />
+            <text x="460" y="115" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">cC</text>
+            <rect x="540" y="80" width="120" height="60" rx="8" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2.5" />
+            <text x="600" y="115" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">dD</text>
+            {/* Rate arrows */}
+            <line x1="140" y1="155" x2="140" y2="200" stroke="#38bdf8" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <text x="150" y="185" fill="#38bdf8" fontSize="10" fontWeight="bold">Forward rate r_f = k_f·[A]ᵃ[B]ᵇ</text>
+            <line x1="520" y1="200" x2="520" y2="155" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <text x="530" y="185" fill="#10b981" fontSize="10" fontWeight="bold">Reverse r_r = k_r·[C]ᶜ[D]ᵈ</text>
+            {/* Equilibrium condition */}
+            <rect x="100" y="220" width="500" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="250" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">At equilibrium: r_f = r_r  ⟹  K = k_f/k_r = [C]ᶜ[D]ᵈ / ([A]ᵃ[B]ᵇ)</text>
+            {/* Le Chatelier hint */}
+            <text x="350" y="310" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">K depends ONLY on T.  Le Chatelier: shift right if [reactants]↑ or T↑ (endothermic)</text>
+          </svg>
+        );
+
+      case "food-chain-energy":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Trophic levels (pyramid) */}
+            <polygon points="350,30 420,90 280,90" fill="#10b981" fillOpacity="0.3" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="75" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">T₄ Apex</text>
+            <text x="350" y="90" fill="#cbd5e1" fontSize="9" textAnchor="middle">~10 J</text>
+            <polygon points="280,100 420,100 480,180 220,180" fill="#f59e0b" fillOpacity="0.3" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="135" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">T₃ Carnivore</text>
+            <text x="350" y="155" fill="#cbd5e1" fontSize="9" textAnchor="middle">~100 J</text>
+            <polygon points="220,190 480,190 560,280 140,280" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="225" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">T₂ Herbivore</text>
+            <text x="350" y="245" fill="#cbd5e1" fontSize="9" textAnchor="middle">~1,000 J</text>
+            <polygon points="140,290 560,290 650,350 50,350" fill="#10b981" fillOpacity="0.25" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="320" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">T₁ Producers (Photosynthetic Autotrophs)</text>
+            <text x="350" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">~10,000 J</text>
+            {/* Energy loss arrows */}
+            <text x="580" y="110" fill="#ef4444" fontSize="10" fontWeight="bold">90% lost → heat</text>
+            <text x="580" y="200" fill="#ef4444" fontSize="10" fontWeight="bold">90% lost</text>
+            <text x="580" y="290" fill="#ef4444" fontSize="10" fontWeight="bold">90% lost</text>
+            {/* Efficiency label */}
+            <rect x="50" y="30" width="180" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="140" y="55" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">Trophic Efficiency ≈ 10%</text>
+            <text x="140" y="68" fill="#cbd5e1" fontSize="8" textAnchor="middle">(Lindeman's 10% Law)</text>
+          </svg>
+        );
+
+      case "newton-gravitation-field":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Central mass */}
+            <circle cx="350" cy="180" r="50" fill="#f59e0b" fillOpacity="0.25" stroke="#f59e0b" strokeWidth="3" />
+            <text x="350" y="185" fill="#fff" fontSize="16" fontWeight="bold" textAnchor="middle">M</text>
+            {/* Field lines (radial) */}
+            {[0,45,90,135,180,225,270,315].map(a => {
+              const rad = a * Math.PI / 180;
+              const x1 = 350 + 60 * Math.cos(rad), y1 = 180 + 60 * Math.sin(rad);
+              const x2 = 350 + 130 * Math.cos(rad), y2 = 180 + 130 * Math.sin(rad);
+              return <line key={a} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" />;
+            })}
+            {/* Orbit rings */}
+            <circle cx="350" cy="180" r="130" fill="none" stroke="#64748b" strokeWidth="1" strokeDasharray="4 4" />
+            <circle cx="350" cy="180" r="200" fill="none" stroke="#64748b" strokeWidth="1" strokeDasharray="4 4" />
+            {/* g = GM/r² formula */}
+            <rect x="160" y="320" width="380" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="343" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">F = G·M·m / r²  ⟹  g = G·M / r²  (inverse-square, radially inward)</text>
+            {/* Test mass */}
+            <circle cx="480" cy="180" r="12" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
+            <text x="498" y="175" fill="#10b981" fontSize="10" fontWeight="bold">m (test)</text>
+          </svg>
+        );
+
+      case "satellite-orbit":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Earth */}
+            <circle cx="200" cy="200" r="60" fill="#38bdf8" fillOpacity="0.25" stroke="#38bdf8" strokeWidth="3" />
+            <text x="200" y="205" fill="#fff" fontSize="14" fontWeight="bold" textAnchor="middle">Earth</text>
+            {/* Orbit ellipse */}
+            <ellipse cx="350" cy="200" rx="200" ry="100" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6 3" />
+            {/* Satellite at apogee */}
+            <circle cx="550" cy="200" r="10" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
+            <text x="560" y="185" fill="#ef4444" fontSize="10" fontWeight="bold">v_apogee (slow)</text>
+            {/* Satellite at perigee */}
+            <circle cx="150" cy="200" r="10" fill="#10b981" fillOpacity="0.5" stroke="#10b981" strokeWidth="2" />
+            <text x="100" y="230" fill="#10b981" fontSize="10" fontWeight="bold">v_perigee (fast)</text>
+            {/* Velocity vector at perigee */}
+            <line x1="150" y1="190" x2="150" y2="130" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+            {/* Velocity vector at apogee */}
+            <line x1="550" y1="190" x2="550" y2="150" stroke="#ef4444" strokeWidth="3" markerEnd="url(#arrow)" />
+            {/* Centripetal force */}
+            <line x1="550" y1="200" x2="480" y2="200" stroke="#a855f7" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <text x="490" y="190" fill="#a855f7" fontSize="10" fontWeight="bold">F_c = GmM/r²</text>
+            {/* Formula */}
+            <rect x="140" y="320" width="420" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="343" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">v_orbital = √(GM/r)  |  T = 2π√(r³/GM)  |  v_escape = √(2GM/r)</text>
+          </svg>
+        );
+
+      case "newtons-law-cooling":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Axes */}
+            <line x1="80" y1="300" x2="650" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="120" y1="320" x2="120" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="660" y="310" fill="#94a3b8" fontSize="11">t (time)</text>
+            <text x="110" y="22" fill="#94a3b8" fontSize="11" textAnchor="middle">T</text>
+            {/* Ambient line */}
+            <line x1="120" y1="240" x2="640" y2="240" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+            <text x="650" y="245" fill="#a855f7" fontSize="10" fontWeight="bold">T₀ (ambient)</text>
+            {/* Exponential cooling curve */}
+            <path d="M 140 80 C 200 100, 260 160, 340 200 C 420 230, 500 238, 620 240" fill="none" stroke="#ef4444" strokeWidth="3.5" />
+            {/* Initial point */}
+            <circle cx="140" cy="80" r="5" fill="#ef4444" />
+            <text x="150" y="70" fill="#ef4444" fontSize="10" fontWeight="bold">T(0) = T_initial</text>
+            {/* Half-life marker */}
+            <line x1="340" y1="200" x2="340" y2="300" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+            <text x="345" y="295" fill="#f59e0b" fontSize="10" fontWeight="bold">t₁/₂: T drops to ½(T₀−T_ambient)</text>
+            {/* Rate labels */}
+            <text x="200" y="95" fill="#cbd5e1" fontSize="9">fast cooling</text>
+            <text x="500" y="225" fill="#cbd5e1" fontSize="9">slow approach</text>
+            {/* Formula */}
+            <rect x="140" y="315" width="420" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="335" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">T(t) = T₀ + (T_i − T₀)·e^(−kt)</text>
+            <text x="350" y="350" fill="#cbd5e1" fontSize="9" textAnchor="middle">Newton's Law of Cooling: rate ∝ (T − T₀)</text>
+          </svg>
+        );
+
+      case "linear-expansion":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Rod: cold vs hot */}
+            <rect x="80" y="100" width="240" height="30" rx="4" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="200" y="85" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Cold: L₀</text>
+            <rect x="80" y="140" width="280" height="30" rx="4" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2.5" />
+            <text x="220" y="125" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">Hot: L₀ + ΔL</text>
+            {/* Expansion dimension */}
+            <line x1="320" y1="140" x2="360" y2="140" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+            <text x="340" y="170" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">ΔL</text>
+            {/* ΔL vs T graph */}
+            <line x1="450" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="470" y1="320" x2="470" y2="60" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="665" y="308" fill="#94a3b8" fontSize="10">ΔT</text>
+            <text x="465" y="50" fill="#94a3b8" fontSize="10" textAnchor="middle">ΔL</text>
+            <line x1="470" y1="300" x2="640" y2="90" stroke="#f59e0b" strokeWidth="3" />
+            <text x="560" y="80" fill="#f59e0b" fontSize="10" fontWeight="bold">Slope = α·L₀</text>
+            {/* Formula box */}
+            <rect x="140" y="220" width="360" height="60" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="320" y="245" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">ΔL = α · L₀ · ΔT</text>
+            <text x="320" y="268" fill="#cbd5e1" fontSize="10" textAnchor="middle">α = linear expansivity (per °C)  |  Steel α ≈ 11×10⁻⁶/°C</text>
+          </svg>
+        );
+
+      case "energy-bands-semiconductor":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Energy axis */}
+            <line x1="120" y1="320" x2="120" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="110" y="22" fill="#94a3b8" fontSize="11" textAnchor="middle">E</text>
+            {/* Conduction Band */}
+            <rect x="160" y="80" width="420" height="50" rx="6" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="370" y="110" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Conduction Band (EC)</text>
+            {/* Valence Band */}
+            <rect x="160" y="220" width="420" height="50" rx="6" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2.5" />
+            <text x="370" y="250" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Valence Band (EV)</text>
+            {/* Band Gap */}
+            <rect x="160" y="130" width="420" height="90" fill="#f59e0b" fillOpacity="0.05" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="5 3" />
+            <text x="370" y="175" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Band Gap  E_g</text>
+            <text x="370" y="195" fill="#cbd5e1" fontSize="10" textAnchor="middle">Si: 1.12 eV  |  Ge: 0.67 eV  |  GaAs: 1.43 eV</text>
+            {/* Excited electron + hole */}
+            <circle cx="420" cy="105" r="8" fill="#38bdf8" stroke="#fff" strokeWidth="2" />
+            <text x="435" y="110" fill="#38bdf8" fontSize="10">e⁻ (excited)</text>
+            <circle cx="350" cy="245" r="8" fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="3 2" />
+            <text x="365" y="250" fill="#10b981" fontSize="10">hole (h⁺)</text>
+            {/* Arrow for excitation */}
+            <line x1="380" y1="230" x2="400" y2="130" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <text x="410" y="185" fill="#f59e0b" fontSize="10" fontWeight="bold">hν ≥ E_g</text>
+            {/* Fermi level */}
+            <line x1="140" y1="175" x2="600" y2="175" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="6 3" />
+            <text x="610" y="180" fill="#a855f7" fontSize="10" fontWeight="bold">E_F</text>
+          </svg>
+        );
+
+      case "electrolysis-faraday":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            {/* Beaker with electrolyte */}
+            <rect x="180" y="100" width="340" height="200" rx="10" fill="#38bdf8" fillOpacity="0.08" stroke="#64748b" strokeWidth="3" />
+            <rect x="185" y="140" width="330" height="155" rx="6" fill="#38bdf8" fillOpacity="0.2" />
+            <text x="350" y="175" fill="#38bdf8" fontSize="10" textAnchor="middle">Electrolyte (molten / aq.)</text>
+            {/* Cathode (left, negative) */}
+            <rect x="220" y="120" width="14" height="150" rx="3" fill="#ef4444" stroke="#dc2626" strokeWidth="2" />
+            <text x="205" y="115" fill="#ef4444" fontSize="11" fontWeight="bold">Cathode (−)</text>
+            <text x="205" y="285" fill="#ef4444" fontSize="9">Reduction: M⁺ + e⁻ → M</text>
+            {/* Anode (right, positive) */}
+            <rect x="466" y="120" width="14" height="150" rx="3" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />
+            <text x="495" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold">Anode (+)</text>
+            <text x="495" y="285" fill="#38bdf8" fontSize="9">Oxidation: X⁻ → X + e⁻</text>
+            {/* DC supply */}
+            <rect x="310" y="30" width="80" height="40" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="55" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">DC Supply</text>
+            <line x1="320" y1="70" x2="227" y2="120" stroke="#f59e0b" strokeWidth="2" />
+            <line x1="380" y1="70" x2="473" y2="120" stroke="#f59e0b" strokeWidth="2" />
+            {/* Ion migration */}
+            <text x="310" y="220" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Cations → Cathode | Anions → Anode</text>
+            {/* Faraday's law */}
+            <rect x="140" y="315" width="420" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="335" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Faraday: m = (M / nF) · I · t  |  1 F = 96485 C/mol e⁻</text>
+            <text x="350" y="350" fill="#cbd5e1" fontSize="9" textAnchor="middle">M = molar mass, n = electrons, I = current, t = time</text>
+          </svg>
+        );
+
       default:
         return (
           <div className="flex flex-col items-center justify-center p-12 text-center text-muted-foreground">
