@@ -1927,1288 +1927,3268 @@ export function DerivationVisual({
           </svg>
         );
 
-
-      case "conical-pendulum":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <circle cx="350" cy="50" r="6" fill="#f59e0b" />
-            <line x1="350" y1="50" x2="250" y2="250" stroke="#38bdf8" strokeWidth="2.5" />
-            <line x1="350" y1="50" x2="450" y2="250" stroke="#38bdf8" strokeWidth="2.5" />
-            <circle cx="450" cy="250" r="18" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2.5" />
-            <text x="475" y="255" fill="#10b981" fontSize="11" fontWeight="bold">m</text>
-            <line x1="350" y1="50" x2="350" y2="250" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="5 3" />
-            <text x="355" y="160" fill="#a855f7" fontSize="10">l</text>
-            <path d="M 250 250 A 200 200 0 0 1 450 250" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="4 3" />
-            <text x="350" y="275" fill="#64748b" fontSize="9" textAnchor="middle">circular path (radius r = l sin θ)</text>
-            <rect x="130" y="310" width="440" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="332" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">T cos θ = mg &amp; T sin θ = mv²/r</text>
-            <text x="350" y="352" fill="#cbd5e1" fontSize="9" textAnchor="middle">Period: T = 2π√(l cos θ / g) — independent of mass!</text>
-          </svg>
-        );
-
-      case "vertical-circle":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <circle cx="350" cy="180" r="130" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
-            <circle cx="350" cy="50" r="10" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
-            <text x="365" y="45" fill="#ef4444" fontSize="10" fontWeight="bold">Top</text>
-            <line x1="350" y1="60" x2="350" y2="110" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <text x="360" y="88" fill="#ef4444" fontSize="9">mg + T</text>
-            <circle cx="350" cy="310" r="10" fill="#10b981" fillOpacity="0.5" stroke="#10b981" strokeWidth="2" />
-            <text x="365" y="315" fill="#10b981" fontSize="10" fontWeight="bold">Bottom</text>
-            <line x1="350" y1="300" x2="350" y2="250" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <text x="360" y="278" fill="#10b981" fontSize="9">T - mg</text>
-            <circle cx="480" cy="180" r="10" fill="#f59e0b" fillOpacity="0.4" stroke="#f59e0b" strokeWidth="2" />
-            <text x="495" y="185" fill="#f59e0b" fontSize="10">Side</text>
-            <rect x="120" y="325" width="460" height="35" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="348" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">Min speed at top: v ≥ √(gr) | Min at bottom: v = √(5gr)</text>
-          </svg>
-        );
-
-      case "banking-of-roads":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <polygon points="80,280 620,280 620,200 80,200" fill="#64748b" fillOpacity="0.15" stroke="#64748b" strokeWidth="3" />
-            <polygon points="80,200 620,200 620,170 80,170" fill="#3b82f6" fillOpacity="0.2" stroke="#3b82f6" strokeWidth="2.5" />
-            <rect x="280" y="130" width="140" height="70" rx="8" fill="#3b82f6" fillOpacity="0.3" stroke="#3b82f6" strokeWidth="2.5" />
-            <text x="350" y="170" fill="#fff" textAnchor="middle" fontSize="11" fontWeight="bold">Car m</text>
-            <line x1="350" y1="200" x2="350" y2="250" stroke="#a855f7" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="365" y="235" fill="#a855f7" fontSize="10">N</text>
-            <line x1="350" y1="195" x2="350" y2="140" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <text x="365" y="155" fill="#ef4444" fontSize="10">mg</text>
-            <path d="M 140 280 A 30 30 0 0 1 170 260" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
-            <text x="145" y="275" fill="#f59e0b" fontSize="11" fontWeight="bold">θ</text>
-            <rect x="140" y="305" width="420" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="328" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">tan θ = v²/(rg) → safe speed without friction</text>
-            <text x="350" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">No reliance on friction → safer turns!</text>
-          </svg>
-        );
-
-      case "centre-of-mass":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <line x1="80" y1="200" x2="620" y2="200" stroke="#64748b" strokeWidth="2" />
-            <circle cx="160" cy="200" r="16" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="2" />
-            <text x="160" y="255" fill="#38bdf8" fontSize="10" textAnchor="middle">m₁</text>
-            <circle cx="540" cy="200" r="12" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
-            <text x="540" y="255" fill="#10b981" fontSize="10" textAnchor="middle">m₂</text>
-            <circle cx="340" cy="200" r="8" fill="#f59e0b" />
-            <text x="340" y="220" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">COM</text>
-            <line x1="160" y1="200" x2="340" y2="200" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
-            <line x1="340" y1="200" x2="540" y2="200" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
-            <text x="250" y="188" fill="#f59e0b" fontSize="9">r₁</text>
-            <text x="440" y="188" fill="#f59e0b" fontSize="9">r₂</text>
-            <rect x="150" y="295" width="400" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="318" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">X_com = (m₁r₁ + m₂r₂)/(m₁ + m₂)</text>
-            <text x="350" y="338" fill="#cbd5e1" fontSize="9" textAnchor="middle">Internal forces cannot shift COM — only external forces can!</text>
-          </svg>
-        );
-
-      case "gps-principle":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <circle cx="350" cy="200" r="80" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
-            <text x="350" y="205" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Earth</text>
-            <circle cx="350" cy="50" r="10" fill="#f59e0b" />
-            <circle cx="150" cy="120" r="10" fill="#f59e0b" />
-            <circle cx="550" cy="120" r="10" fill="#f59e0b" />
-            <text x="350" y="35" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="middle">Sat 1</text>
-            <text x="120" y="115" fill="#f59e0b" fontSize="9" fontWeight="bold">Sat 2</text>
-            <text x="580" y="115" fill="#f59e0b" fontSize="9" fontWeight="bold">Sat 3</text>
-            <circle cx="350" cy="50" r="180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5" />
-            <circle cx="150" cy="120" r="180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5" />
-            <circle cx="550" cy="120" r="180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5" />
-            <circle cx="350" cy="280" r="6" fill="#ef4444" />
-            <text x="350" y="300" fill="#ef4444" fontSize="9" textAnchor="middle">User</text>
-            <rect x="140" y="335" width="420" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="352" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">Trilateration: 4 satellites give X,Y,Z,t position</text>
-          </svg>
-        );
-
-      case "stress-strain-curve":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <line x1="80" y1="310" x2="640" y2="310" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="330" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="645" y="315" fill="#94a3b8" fontSize="11">Strain ε</text>
-            <text x="90" y="22" fill="#94a3b8" fontSize="11" textAnchor="middle">Stress σ</text>
-            <path d="M 100 310 L 300 100 Q 350 40 380 35 L 420 30 L 450 32 L 520 60 L 600 280" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
-            <circle cx="150" cy="250" r="4" fill="#10b981" />
-            <text x="130" y="245" fill="#10b981" fontSize="9">A (proportional limit)</text>
-            <circle cx="300" cy="100" r="4" fill="#f59e0b" />
-            <text x="300" y="85" fill="#f59e0b" fontSize="9" textAnchor="middle">B (yield point)</text>
-            <circle cx="380" cy="35" r="4" fill="#ef4444" />
-            <text x="380" y="22" fill="#ef4444" fontSize="9" textAnchor="middle">C (ultimate strength)</text>
-            <circle cx="520" cy="60" r="4" fill="#a855f7" />
-            <text x="520" y="50" fill="#a855f7" fontSize="9" textAnchor="middle">D (fracture)</text>
-            <text x="520" y="295" fill="#cbd5e1" fontSize="9">Plastic region</text>
-            <rect x="150" y="310" width="400" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="333" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Young's modulus: Y = σ/ε (slope of AB)</text>
-          </svg>
-        );
-
-      case "elastic-moduli":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <rect x="80" y="40" width="540" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="75" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Y = Stress/Longitudinal strain = F·L₀/(A·ΔL) — rigidity</text>
-            <rect x="80" y="115" width="540" height="60" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="150" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">B = Volumetric stress / Volumetric strain = P/(-ΔV/V) — bulk</text>
-            <rect x="80" y="190" width="540" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">G (η) = Shear stress / Shear strain = (F/A)/tan θ — rigidity</text>
-            <rect x="80" y="265" width="540" height="60" rx="8" fill="#a855f7" fillOpacity="0.1" stroke="#a855f7" strokeWidth="2" />
-            <text x="350" y="300" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">ν = lateral strain / longitudinal strain (0 &lt; ν &lt; 0.5)</text>
-            <text x="350" y="335" fill="#cbd5e1" fontSize="9" textAnchor="middle">Typical values: Steel Y=200GPa, Copper Y=120GPa, Rubber ν≈0.49</text>
-          </svg>
-        );
-
-      case "elastic-potential-energy":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <line x1="100" y1="200" x2="620" y2="200" stroke="#64748b" strokeWidth="2" />
-            <circle cx="120" cy="200" r="6" fill="#64748b" />
-            <path d="M 120 200 L 200 195 L 220 205 L 240 195 L 260 205 L 280 195 L 300 200 L 320 195 L 340 205 L 360 195 L 380 200 L 420 200" fill="none" stroke="#f59e0b" strokeWidth="3" />
-            <line x1="420" y1="200" x2="560" y2="200" stroke="#64748b" strokeWidth="3" />
-            <circle cx="560" cy="200" r="6" fill="#64748b" />
-            <text x="340" y="175" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Spring stretched by x</text>
-            <line x1="120" y1="220" x2="560" y2="220" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
-            <text x="340" y="235" fill="#38bdf8" fontSize="10" textAnchor="middle">Extension = x</text>
-            <line x1="500" y1="200" x2="500" y2="120" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="510" y="140" fill="#10b981" fontSize="11">F = kx</text>
-            <rect x="150" y="280" width="400" height="65" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="305" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Elastic PE: U = ½kx²</text>
-            <text x="350" y="325" fill="#cbd5e1" fontSize="9" textAnchor="middle">Work done stretching spring stored as elastic potential energy</text>
-            <text x="350" y="342" fill="#cbd5e1" fontSize="9" textAnchor="middle">Area under F-x graph = ½·base·height = ½·x·kx = ½kx²</text>
-          </svg>
-        );
-
-      case "zeroth-law-thermal-equilibrium":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <rect x="100" y="80" width="180" height="100" rx="10" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
-            <text x="190" y="135" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Body A</text>
-            <text x="190" y="155" fill="#cbd5e1" fontSize="10" textAnchor="middle">T_A</text>
-            <rect x="420" y="80" width="180" height="100" rx="10" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="3" />
-            <text x="510" y="135" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Body B</text>
-            <text x="510" y="155" fill="#cbd5e1" fontSize="10" textAnchor="middle">T_B</text>
-            <circle cx="190" cy="220" r="50" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="3" />
-            <text x="190" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Thermometer</text>
-            <line x1="240" y1="220" x2="400" y2="220" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="320" y="210" fill="#64748b" fontSize="10">t = t_A</text>
-            <line x1="400" y1="180" x2="510" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="455" y="170" fill="#64748b" fontSize="10">t = t_B</text>
-            <text x="350" y="320" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Transitive property: if t_A = t and t_B = t, then T_A = T_B</text>
-          </svg>
-        );
-
-      case "principle-of-calorimetry":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <rect x="100" y="80" width="200" height="100" rx="10" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="3" />
-            <text x="200" y="135" fill="#ef4444" fontSize="12" fontWeight="bold" textAnchor="middle">Hot body</text>
-            <text x="200" y="155" fill="#ef4444" fontSize="10" textAnchor="middle">m₁c₁(T₁−T)</text>
-            <rect x="400" y="80" width="200" height="100" rx="10" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
-            <text x="500" y="135" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Cold body</text>
-            <text x="500" y="155" fill="#38bdf8" fontSize="10" textAnchor="middle">m₂c₂(T−T₂)</text>
-            <line x1="300" y1="130" x2="400" y2="130" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="350" y="120" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Heat</text>
-            <rect x="150" y="240" width="400" height="60" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="270" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Heat lost = Heat gained (isolated system)</text>
-            <text x="350" y="290" fill="#cbd5e1" fontSize="10" textAnchor="middle">m₁c₁(T₁−T) = m₂c₂(T−T₂)</text>
-            <text x="350" y="320" fill="#cbd5e1" fontSize="9" textAnchor="middle">No heat lost to surroundings ⇒ calorimeter equation valid</text>
-          </svg>
-        );
-
-      case "newtons-law-cooling-experiment":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <line x1="80" y1="300" x2="640" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="645" y="310" fill="#94a3b8" fontSize="10">t (time)</text>
-            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">θ</text>
-            <line x1="100" y1="240" x2="640" y2="240" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
-            <text x="645" y="235" fill="#a855f7" fontSize="9">θ₀ (ambient)</text>
-            <path d="M 120 60 C 200 80, 280 140, 380 200 C 480 240, 560 238, 640 240" fill="none" stroke="#ef4444" strokeWidth="3.5" />
-            <text x="200" y="90" fill="#cbd5e1" fontSize="9">fast cooling (large ΔT)</text>
-            <text x="520" y="220" fill="#cbd5e1" fontSize="9">slow approach to θ₀</text>
-            <rect x="150" y="300" width="400" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="323" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">dθ/dt = −k(θ − θ₀) → θ(t) = θ₀ + (θᵢ − θ₀)e^(-kt)</text>
-          </svg>
-        );
-
-      case "fourier-conduction":
-        return (
-          <svg viewBox="0 0 700 360" className="w是全 h-auto select-none">
-            <line x1="80" y1="200" x2="620" y2="200" stroke="#64748b" strokeWidth="2" />
-            <rect x="150" y="150" width="80" height="100" rx="4" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2" />
-            <text x="190" y="265" fill="#ef4444" fontSize="10" textAnchor="middle">T₁ (hot)</text>
-            <rect x="470" y="150" width="80" height="100" rx="4" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2" />
-            <text x="510" y="265" fill="#38bdf8" fontSize="10" textAnchor="middle">T₂ (cold)</text>
-            <line x1="230" y1="200" x2="470" y2="200" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="350" y="190" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Q/t = kAΔT/L</text>
-            <text x="350" y="285" fill="#cbd5e1" fontSize="9" textAnchor="middle">Fourier's Law: rate of heat flow ∝ area × temp gradient</text>
-          </svg>
-        );
-
-      case "stefan-boltzmann-law":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <circle cx="350" cy="180" r="100" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="3" />
-            <circle cx="350" cy="180" r="60" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2" />
-            <text x="350" y="185" fill="#fff" fontSize="16" fontWeight="bold" textAnchor="middle">Black body</text>
-            <line x1="450" y1="180" x2="580" y2="80" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
-            <line x1="450" y1="180" x2="580" y2="180" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
-            <line x1="450" y1="180" x2="580" y2="280" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
-            <text x="580" y="65" fill="#fbbf24" fontSize="9">Radiation</text>
-            <rect x="150" y="310" width="400" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="335" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P = εσAT⁴  |  Stefan-Boltzmann constant: σ = 5.67×10⁻⁸ W/m²K⁴</text>
-          </svg>
-        );
-
-      case "kinetic-theory-gas":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <rect x="100" y="80" width="500" height="200" rx="10" fill="#38bdf8" fillOpacity="0.05" stroke="#38bdf8" strokeWidth="3" />
-            {[0,1,2,3,4].map(i => [0,1,2,3,4].map(j => (
-              <circle key={i+j} cx={150+i*90} cy={120+j*45} r="8" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="1.5" />
-            )))}
-            <text x="350" y="305" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">N molecules: random motion, elastic collisions</text>
-            <rect x="120" y="200" width="460" height="90" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="225" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Postulates: (1) Point masses (2) Random motion (3) No intermolecular forces</text>
-            <text x="350" y="245" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">(4) Elastic collisions (5) KE ∝ T (absolute)</text>
-          </svg>
-        );
-
-      case "pressure-exerted-by-gas":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="100" width="500" height="180" rx="10" fill="#38bdf8" fillOpacity="0.05" stroke="#38bdf8" strokeWidth="3" />
-            <line x1="350" y1="100" x2="350" y2="280" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
-            <text x="350" y="90" fill="#64748b" fontSize="11" textAnchor="middle">Wall</text>
-            <line x1="280" y1="190" x2="350" y2="190" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="290" y="175" fill="#38bdf8" fontSize="10">mv before</text>
-            <line x1="350" y1="200" x2="420" y2="200" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="360" y="185" fill="#10b981" fontSize="10">−mv after</text>
-            <text x="350" y="295" fill="#f59e0b" fontSize="10" textAnchor="middle">Δp = 2mv</text>
-            <rect x="120" y="315" width="460" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="340" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">P = (1/3)ρc² = (1/3)(Nm/V)c_rms² = nRT/V</text>
-          </svg>
-        );
-
-      case "boltzmann-rms-speed":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <line x1="100" y1="280" x2="620" y2="280" stroke="#64748b" strokeWidth="2" />
-            <line x1="100" y1="300" x2="100" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="625" y="285" fill="#94a3b8" fontSize="10">v (speed)</text>
-            <text x="90" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">N(v)</text>
-            <path d="M 150 280 C 180 120, 300 40, 400 60 C 480 80, 540 200, 570 280" fill="none" stroke="#38bdf8" strokeWidth="3" />
-            <path d="M 180 280 C 200 160, 320 80, 410 100 C 480 120, 520 220, 540 280" fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="5 3" />
-            <text x="340" y="70" fill="#38bdf8" fontSize="10" fontWeight="bold">T₁ (higher T)</text>
-            <text x="370" y="130" fill="#10b981" fontSize="10" fontWeight="bold">T₂ (lower T)</text>
-            <rect x="120" y="300" width="460" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="322" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">c_rms = √(3k_BT/m) = √(3RT/M)</text>
-            <text x="350" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">Most probable: c_mp = √(2RT/M), Mean: c_mean = √(8RT/πM)</text>
-          </svg>
-        );
-
-      case "heat-capacities-gases":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="80" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">C_p: Heat capacity at constant pressure</text>
-            <text x="350" y="100" fill="#cbd5e1" fontSize="10" textAnchor="middle">All heat goes to internal energy + work done</text>
-            <rect x="80" y="135" width="540" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="165" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">C_v: Heat capacity at constant volume</text>
-            <text x="350" y="185" fill="#cbd5e1" fontSize="10" textAnchor="middle">All heat goes to internal energy only (no work)</text>
-            <rect x="80" y="220" width="540" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="250" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">γ = C_p/C_v (ratio of specific heats)</text>
-            <text x="350" y="270" fill="#cbd5e1" fontSize="10" textAnchor="middle">Monoatomic: γ = 5/3 ≈ 1.67 | Diatomic: γ = 7/5 = 1.4</text>
-            <rect x="150" y="295" width="400" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="318" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Mayer's relation: C_p − C_v = R</text>
-            <text x="350" y="336" fill="#cbd5e1" fontSize="10" textAnchor="middle">R = universal gas constant = 8.314 J/(mol·K)</text>
-          </svg>
-        );
 
-
-      case "mirror-formula":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <path d="M 350 80 C 250 80, 250 280, 350 280" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
-            <text x="350" y="300" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Concave Mirror</text>
-            <circle cx="350" cy="180" r="5" fill="#f59e0b" />
-            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">P (pole)</text>
-            <line x1="350" y1="80" x2="350" y2="280" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
-            <text x="350" y="70" fill="#a855f7" fontSize="10" textAnchor="middle">Principal axis</text>
-            <rect x="150" y="220" width="180" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="240" y="245" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">1/f = 1/v + 1/u</text>
-          </svg>
-        );
-
-      case "snells-law-refraction":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" />
-            <line x1="350" y1="60" x2="350" y2="300" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="350" y1="60" x2="350" y2="300" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
-            <path d="M 200 180 L 350 180 L 500 280" fill="none" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
-            <path d="M 350 180 L 350 280" fill="none" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <path d="M 230 150 A 30 30 0 0 1 245 168" fill="none" stroke="#f59e0b" strokeWidth="2" />
-            <text x="240" y="145" fill="#f59e0b" fontSize="11" fontWeight="bold">i</text>
-            <path d="M 350 210 A 30 30 0 0 1 335 225" fill="none" stroke="#ef4444" strokeWidth="2" />
-            <text x="325" y="245" fill="#ef4444" fontSize="11" fontWeight="bold">r</text>
-            <rect x="150" y="310" width="400" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="335" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">n₁ sin i = n₂ sin r  |  n = c/v</text>
-          </svg>
-        );
-
-      case "total-internal-reflection":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" />
-            <circle cx="350" cy="280" r="100" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2" />
-            <line x1="350" y1="280" x2="350" y2="80" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
-            <path d="M 250 180 L 350 280 L 450 180" fill="none" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
-            <path d="M 350 280 L 550 280" fill="none" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <text x="350" y="310" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Critical angle: sin θ_c = n₂/n₁</text>
-            <text x="350" y="330" fill="#cbd5e1" fontSize="9" textAnchor="middle">For water-air: θ_c ≈ 48.6°</text>
-          </svg>
-        );
-
-      case "prism-minimum-deviation":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <polygon points="350,60 200,300 500,300" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
-            <text x="350" y="200" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Prism</text>
-            <text x="350" y="80" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">A (apex)</text>
-            <path d="M 150 200 L 250 200 L 350 250 L 450 200 L 550 200" fill="none" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
-            <path d="M 350 250 L 350 300" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
-            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">δ_m (minimum deviation)</text>
-            <rect x="150" y="330" width="400" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="347" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">n = sin((A+δ_m)/2) / sin(A/2)</text>
-          </svg>
-        );
-
-      case "chromatic-aberration":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <ellipse cx="350" cy="180" rx="50" ry="120" fill="none" stroke="#38bdf8" strokeWidth="3" />
-            <path d="M 150 180 L 350 180" stroke="#ef4444" strokeWidth="2" />
-            <path d="M 150 170 L 350 170" stroke="#f59e0b" strokeWidth="2" />
-            <path d="M 150 190 L 350 190" stroke="#38bdf8" strokeWidth="2" />
-            <text x="360" y="170" fill="#f59e0b" fontSize="10">Red focus</text>
-            <text x="360" y="180" fill="#ffd700" fontSize="10">Yellow focus</text>
-            <text x="360" y="190" fill="#38bdf8" fontSize="10">Blue focus</text>
-            <text x="350" y="330" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">Chromatic aberration: different λ focus at different points</text>
-          </svg>
-        );
-
-      case "gauss-law-application":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <circle cx="350" cy="180" r="60" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
-            <text x="350" y="185" fill="#fff" fontSize="12" fontWeight="bold" textAnchor="middle">Charge Q</text>
-            <circle cx="350" cy="180" r="120" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="5 3" />
-            <circle cx="350" cy="180" r="180" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="350" y1="60" x2="350" y2="300" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="230" y1="180" x2="470" y2="180" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="350" y="330" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">∮E·dA = Q_enc/ε₀ → E = Q/(4πε₀r²) (spherical symmetry)</text>
-          </svg>
-        );
-
-      case "equipotential-surfaces":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <circle cx="350" cy="180" r="20" fill="#ef4444" fillOpacity="0.4" stroke="#ef4444" strokeWidth="2" />
-            <text x="350" y="185" fill="#fff" fontSize="10" fontWeight="bold" textAnchor="middle">+</text>
-            <circle cx="350" cy="180" r="80" fill="none" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="350" cy="180" r="140" fill="none" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="350" cy="180" r="200" fill="none" stroke="#38bdf8" strokeWidth="2" />
-            <line x1="350" y1="60" x2="350" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="230" y1="180" x2="470" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Equipotential surfaces ⊥ to electric field lines</text>
-          </svg>
-        );
-
-      case "potential-gradient":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="300" x2="620" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="625" y="305" fill="#94a3b8" fontSize="10">x (distance)</text>
-            <text x="90" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">V</text>
-            <line x1="100" y1="280" x2="600" y2="80" stroke="#38bdf8" strokeWidth="3.5" />
-            <path d="M 300 200 L 320 160 L 340 200 Z" fill="#ef4444" />
-            <text x="350" y="165" fill="#ef4444" fontSize="11" fontWeight="bold">E = -dV/dx</text>
-            <text x="350" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">Potential gradient = negative of electric field strength</text>
-          </svg>
-        );
-
-      case "capacitor-combination-series":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="100" y1="180" x2="200" y2="180" stroke="#64748b" strokeWidth="2" />
-            <line x1="200" y1="120" x2="200" y2="240" stroke="#38bdf8" strokeWidth="3" />
-            <line x1="220" y1="120" x2="220" y2="240" stroke="#38bdf8" strokeWidth="3" />
-            <text x="210" y="270" fill="#38bdf8" fontSize="10" textAnchor="middle">C₁</text>
-            <line x1="220" y1="180" x2="300" y2="180" stroke="#64748b" strokeWidth="2" />
-            <line x1="300" y1="120" x2="300" y2="240" stroke="#10b981" strokeWidth="3" />
-            <line x1="320" y1="120" x2="320" y2="240" stroke="#10b981" strokeWidth="3" />
-            <text x="310" y="270" fill="#10b981" fontSize="10" textAnchor="middle">C₂</text>
-            <line x1="320" y1="180" x2="420" y2="180" stroke="#64748b" strokeWidth="2" />
-            <text x="210" y="100" fill="#f59e0b" fontSize="10" textAnchor="middle">V₁</text>
-            <text x="310" y="100" fill="#f59e0b" fontSize="10" textAnchor="middle">V₂</text>
-            <text x="350" y="320" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">1/C = 1/C₁ + 1/C₂  |  Q same, V divides</text>
-          </svg>
-        );
-
-      case "energy-charged-capacitor":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="100" y1="180" x2="220" y2="180" stroke="#64748b" strokeWidth="2" />
-            <line x1="220" y1="100" x2="220" y2="260" stroke="#38bdf8" strokeWidth="3.5" />
-            <line x1="240" y1="100" x2="240" y2="260" stroke="#38bdf8" strokeWidth="3.5" />
-            <text x="230" y="280" fill="#38bdf8" fontSize="11" textAnchor="middle">C</text>
-            <line x1="340" y1="180" x2="460" y2="180" stroke="#64748b" strokeWidth="2" />
-            <line x1="500" y1="140" x2="500" y2="220" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="510" y="150" fill="#10b981" fontSize="11">dW = V dq</text>
-            <rect x="200" y="310" width="300" height="40" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="335" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">U = ∫Vdq = ½QV = ½CV² = Q²/(2C)</text>
-          </svg>
-        );
-
-      case "emf-internal-resistance":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="200" y="100" width="300" height="160" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="350" cy="150" r="30" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
-            <text x="350" y="155" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">E</text>
-            <text x="350" y="220" fill="#cbd5e1" fontSize="10" textAnchor="middle">E: EMF, r: internal resistance</text>
-            <line x1="500" y1="150" x2="600" y2="150" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
-            <rect x="600" y="130" width="80" height="40" rx="6" fill="#10b981" fillOpacity="0.3" stroke="#10b981" strokeWidth="2" />
-            <text x="640" y="155" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">R</text>
-            <text x="350" y="300" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">V = E - Ir  |  terminal voltage &lt; EMF</text>
-          </svg>
-        );
-
-      case "work-power-circuits":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <circle cx="200" cy="180" r="50" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2" />
-            <text x="200" y="185" fill="#38bdf8" fontSize="10" textAnchor="middle">Battery</text>
-            <line x1="250" y1="180" x2="400" y2="180" stroke="#64748b" strokeWidth="2" />
-            <rect x="400" y="150" width="80" height="60" rx="6" fill="#10b981" fillOpacity="0.3" stroke="#10b981" strokeWidth="2" />
-            <text x="440" y="185" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">R</text>
-            <line x1="480" y1="180" x2="600" y2="180" stroke="#64748b" strokeWidth="2" />
-            <line x1="600" y1="180" x2="600" y2="260" stroke="#64748b" strokeWidth="2" />
-            <line x1="200" y1="260" x2="600" y2="260" stroke="#64748b" strokeWidth="2" />
-            <line x1="200" y1="180" x2="200" y2="260" stroke="#64748b" strokeWidth="2" />
-            <rect x="180" y="300" width="340" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="322" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">W = VIt = I²Rt = V²t/R</text>
-            <text x="350" y="342" fill="#cbd5e1" fontSize="10" textAnchor="middle">P = VI = I²R = V²/R  (Joule's law)</text>
-          </svg>
-        );
-
-      case "mass-energy-equivalence":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <circle cx="250" cy="180" r="80" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="3" />
-            <text x="250" y="185" fill="#ef4444" fontSize="20" fontWeight="bold" textAnchor="middle">m₀</text>
-            <line x1="350" y1="180" x2="450" y2="180" stroke="#f59e0b" strokeWidth="4" markerEnd="url(#arrow)" />
-            <text x="400" y="165" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">→</text>
-            <circle cx="550" cy="180" r="60" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="3" />
-            <text x="550" y="185" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">E</text>
-            <rect x="180" y="300" width="340" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="330" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">E = mc²</text>
-            <text x="350" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">Mass-energy equivalence: m in kg, c = 3×10⁸ m/s</text>
-          </svg>
-        );
-
-      case "binding-energy-nucleus":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <circle cx="250" cy="180" r="50" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2" />
-            <text x="250" y="185" fill="#fff" fontSize="10" textAnchor="middle">Nucleus</text>
-            <circle cx="400" cy="100" r="15" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
-            <circle cx="420" cy="160" r="15" fill="#38bdf8" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="400" cy="220" r="15" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
-            <circle cx="380" cy="280" r="15" fill="#38bdf8" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
-            <line x1="250" y1="180" x2="400" y2="200" stroke="#64748b" strokeWidth="1.5" strokeDasharray="4 3" />
-            <rect x="150" y="310" width="400" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="332" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Δm = Zm_p + Nm_n - M_nucleus</text>
-            <text x="350" y="350" fill="#cbd5e1" fontSize="9" textAnchor="middle">B.E. = Δm·c²  |  B.E./nucleon = stability indicator</text>
-          </svg>
-        );
-
-      case "nuclear-fission-fusion":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <text x="180" y="50" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">FISSION</text>
-            <circle cx="180" cy="100" r="40" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2.5" />
-            <text x="180" y="105" fill="#fff" fontSize="10" textAnchor="middle">²³⁵U</text>
-            <line x1="230" y1="100" x2="280" y2="100" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#arrow)" />
-            <circle cx="320" cy="80" r="20" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="320" cy="120" r="20" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
-            <circle cx="400" cy="80" r="20" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="400" cy="120" r="20" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
-            <text x="550" y="100" fill="#cbd5e1" fontSize="10">+ 2-3 n + Energy</text>
-            <text x="520" y="200" fill="#f59e0b" fontSize="10" fontWeight="bold">E = Δm·c²</text>
-            <line x1="100" y1="240" x2="600" y2="240" stroke="#64748b" strokeWidth="2" />
-            <text x="180" y="270" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">FUSION</text>
-            <circle cx="150" cy="310" r="15" fill="#38bdf8" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
-            <circle cx="200" cy="310" r="15" fill="#10b981" fillOpacity="0.5" stroke="#10b981" strokeWidth="2" />
-            <text x="175" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">²H + ³H → ⁴He + n</text>
-            <text x="450" y="310" fill="#cbd5e1" fontSize="9">Releases more energy per unit mass</text>
-          </svg>
-        );
-
-      case "ideal-gas-pv-graph":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="300" x2="640" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="645" y="305" fill="#94a3b8" fontSize="10">V</text>
-            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">P</text>
-            <path d="M 150 250 C 250 250, 300 150, 550 150" fill="none" stroke="#38bdf8" strokeWidth="3" />
-            <path d="M 150 280 C 300 280, 350 200, 550 200" fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="5 3" />
-            <text x="560" y="140" fill="#38bdf8" fontSize="10">T₁ (hotter)</text>
-            <text x="560" y="200" fill="#10b981" fontSize="10">T₂ (cooler)</text>
-            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="343" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">PV = nRT  (isotherms are hyperbolas)</text>
-          </svg>
-        );
 
-
-      case "direction-cosines":
-        return (
-          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
-            <circle cx="150" cy="300" r="5" fill="#64748b" />
-            <line x1="150" y1="300" x2="450" y2="100" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
-            <text x="380" y="180" fill="#38bdf8" fontSize="14" fontWeight="bold">r</text>
-            <line x1="150" y1="300" x2="450" y2="300" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="450" y1="300" x2="450" y2="100" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
-            <path d="M 210 300 A 60 60 0 0 1 215 250" fill="none" stroke="#10b981" strokeWidth="2" />
-            <text x="220" y="265" fill="#10b981" fontSize="11" fontWeight="bold">α</text>
-            <path d="M 150 240 A 60 60 0 0 0 105 235" fill="none" stroke="#ef4444" strokeWidth="2" />
-            <text x="95" y="235" fill="#ef4444" fontSize="11" fontWeight="bold">β</text>
-            <line x1="150" y1="300" x2="150" y2="100" stroke="#64748b" strokeWidth="1.5" />
-            <line x1="150" y1="300" x2="500" y2="300" stroke="#64748b" strokeWidth="1.5" />
-            <line x1="450" y1="300" x2="450" y2="100" stroke="#64748b" strokeWidth="1.5" />
-            <rect x="180" y="330" width="340" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="347" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">l² + m² + n² = 1  (direction cosines)</text>
-          </svg>
-        );
-
-      case "lhospitals-rule":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="60" width="500" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Form: lim(x→a) f(x)/g(x) → 0/0 or ∞/∞</text>
-            <text x="350" y="125" fill="#cbd5e1" fontSize="11" textAnchor="middle">Apply L'Hôpital: replace with f'(x)/g'(x)</text>
-            <rect x="100" y="155" width="500" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="195" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Example: lim(x→0) sin x / x = lim(x→0) cos x / 1 = 1</text>
-            <text x="350" y="220" fill="#cbd5e1" fontSize="11" textAnchor="middle">Repeat if still indeterminate: second derivative, etc.</text>
-            <rect x="150" y="255" width="400" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="280" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">lim(x→a) f(x)/g(x) = lim(x→a) f'(x)/g'(x)</text>
-            <text x="350" y="298" fill="#cbd5e1" fontSize="9" textAnchor="middle">Apply repeatedly until determinate form obtained</text>
-          </svg>
-        );
-
-      case "tangent-normal-curve":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <path d="M 150 280 C 300 80, 400 80, 550 200" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
-            <circle cx="350" cy="130" r="6" fill="#ef4444" />
-            <line x1="250" y1="230" x2="450" y2="80" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
-            <text x="460" y="75" fill="#10b981" fontSize="11" fontWeight="bold">Tangent</text>
-            <line x1="350" y1="130" x2="430" y2="80" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <text x="440" y="70" fill="#f59e0b" fontSize="11" fontWeight="bold">Normal</text>
-            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Slope of tangent = dy/dx | Slope of normal = -dx/dy</text>
-          </svg>
-        );
-
-      case "monotonicity-extrema":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <path d="M 120 280 Q 250 50, 350 280 T 580 100" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
-            <circle cx="250" cy="80" r="6" fill="#10b981" />
-            <text x="250" y="65" fill="#10b981" fontSize="10" textAnchor="middle">Local max</text>
-            <circle cx="350" cy="280" r="6" fill="#ef4444" />
-            <text x="350" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Local min</text>
-            <rect x="150" y="325" width="400" height="35" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="348" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">f'(x) &gt; 0 increasing | f'(x) &lt; 0 decreasing | f'(c)=0 critical point</text>
-          </svg>
-        );
-
-      case "integration-by-parts":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="150" y="140" width="400" height="80" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="180" fill="#10b981" fontSize="18" fontWeight="bold" textAnchor="middle">∫u dv = uv - ∫v du</text>
-            <text x="350" y="210" fill="#cbd5e1" fontSize="11" textAnchor="middle">ILATE rule: Inverse &gt; Logarithmic &gt; Algebraic &gt; Trig &gt; Exponential</text>
-            <text x="350" y="260" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Example: ∫x·eˣ dx = x·eˣ - eˣ + C</text>
-            <text x="350" y="300" fill="#cbd5e1" fontSize="10" textAnchor="middle">Choose u=x (simplifies on differentiation), dv=eˣdx</text>
-          </svg>
-        );
-
-      case "area-between-curves":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="665" y="305" fill="#94a3b8" fontSize="10">x</text>
-            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">y</text>
-            <path d="M 150 250 C 250 100, 350 100, 450 200" fill="none" stroke="#38bdf8" strokeWidth="3" />
-            <path d="M 150 280 C 250 180, 350 180, 450 260" fill="none" stroke="#10b981" strokeWidth="3" />
-            <path d="M 150 250 L 150 280 L 450 260 L 450 200 Z" fill="#a855f7" fillOpacity="0.15" />
-            <text x="140" y="275" fill="#a855f7" fontSize="10">a</text>
-            <text x="455" y="255" fill="#a855f7" fontSize="10">b</text>
-            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="343" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Area = ∫ₐᵇ [f(x) - g(x)] dx</text>
-          </svg>
-        );
-
-      case "newton-raphson-method":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="280" x2="660" y2="280" stroke="#64748b" strokeWidth="2" />
-            <line x1="100" y1="300" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="665" y="285" fill="#94a3b8" fontSize="10">x</text>
-            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">f(x)</text>
-            <path d="M 120 250 C 250 320, 350 50, 500 200 C 580 280, 640 150, 660 180" fill="none" stroke="#38bdf8" strokeWidth="3" />
-            <circle cx="300" cy="180" r="6" fill="#ef4444" />
-            <line x1="300" y1="180" x2="200" y2="280" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
-            <circle cx="200" cy="280" r="5" fill="#10b981" />
-            <text x="200" y="300" fill="#10b981" fontSize="10" textAnchor="middle">Root</text>
-            <rect x="180" y="315" width="340" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="340" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)</text>
-          </svg>
-        );
-
-      case "pearson-skewness":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="80" y="60" width="540" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="100" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Pearson's First Coefficient: Sk = (Mean - Mode) / σ</text>
-            <text x="350" y="130" fill="#cbd5e1" fontSize="10" textAnchor="middle">Measures asymmetry of distribution</text>
-            <rect x="80" y="185" width="540" height="100" rx="10" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="225" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Pearson's Second Coefficient: Sk = 3(Mean - Median) / σ</text>
-            <text x="350" y="255" fill="#cbd5e1" fontSize="10" textAnchor="middle">Used when mode is not well-defined</text>
-            <rect x="80" y="305" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="335" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Sk &gt; 0 right skewed | Sk &lt; 0 left skewed | Sk = 0 symmetric</text>
-          </svg>
-        );
-
-      case "parallelogram-law-forces":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <polygon points="200,280 400,120 600,280 400,440" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="200" y1="280" x2="400" y2="120" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
-            <line x1="200" y1="280" x2="600" y2="280" stroke="#10b981" strokeWidth="4" markerEnd="url(#arrow)" />
-            <line x1="200" y1="280" x2="400" y2="120" stroke="#f59e0b" strokeWidth="3.5" markerEnd="url(#arrow)" />
-            <line x1="400" y1="120" x2="600" y2="280" stroke="#a855f7" strokeWidth="3.5" markerEnd="url(#arrow)" />
-            <text x="180" y="270" fill="#38bdf8" fontSize="12" fontWeight="bold">P</text>
-            <text x="610" y="280" fill="#10b981" fontSize="12" fontWeight="bold">Q</text>
-            <text x="400" y="105" fill="#a855f7" fontSize="12" fontWeight="bold">R (resultant)</text>
-            <rect x="200" y="340" width="300" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="365" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">R² = P² + Q² + 2PQ cos θ</text>
-          </svg>
-        );
-
-      case "amgm-relation":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="150" fill="#10b981" fontSize="18" fontWeight="bold" textAnchor="middle">AM ≥ GM ≥ HM</text>
-            <text x="350" y="190" fill="#f59e0b" fontSize="14" textAnchor="middle">(a+b)/2 ≥ √(ab) ≥ 2/(1/a + 1/b)</text>
-            <text x="350" y="230" fill="#cbd5e1" fontSize="11" textAnchor="middle">Equality holds when a = b</text>
-            <text x="350" y="270" fill="#38bdf8" fontSize="12" textAnchor="middle">For n numbers: arithmetic mean ≥ geometric mean</text>
-            <text x="350" y="300" fill="#cbd5e1" fontSize="10" textAnchor="middle">Useful for finding minimum/maximum values</text>
-          </svg>
-        );
-
-      case "quadratic-formula-proof":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="50" width="500" height="260" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="90" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Proof: Completing the Square</text>
-            <text x="130" y="125" fill="#cbd5e1" fontSize="12">ax² + bx + c = 0</text>
-            <text x="130" y="155" fill="#cbd5e1" fontSize="12">x² + (b/a)x = -c/a</text>
-            <text x="130" y="185" fill="#cbd5e1" fontSize="12">x² + (b/a)x + (b/2a)² = (b²-4ac)/4a²</text>
-            <text x="130" y="215" fill="#cbd5e1" fontSize="12">(x + b/2a)² = (b²-4ac)/4a²</text>
-            <text x="130" y="245" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">x = (-b ± √(b²-4ac))/2a</text>
-            <text x="350" y="290" fill="#f59e0b" fontSize="11" textAnchor="middle">Discriminant D = b²-4ac determines nature of roots</text>
-          </svg>
-        );
-
-      case "complex-number-properties":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="350" y1="320" x2="350" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="665" y="205" fill="#94a3b8" fontSize="10">Real</text>
-            <text x="345" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">Imag</text>
-            <circle cx="450" cy="160" r="8" fill="#38bdf8" />
-            <text x="465" y="155" fill="#38bdf8" fontSize="11">z = a+bi</text>
-            <line x1="350" y1="200" x2="450" y2="160" stroke="#f59e0b" strokeWidth="2" />
-            <text x="390" y="185" fill="#f59e0b" fontSize="10">|z| = √(a²+b²)</text>
-            <text x="350" y="300" fill="#10b981" fontSize="12" textAnchor="middle">Conjugate: z̄ = a-bi</text>
-            <rect x="200" y="310" width="300" height="45" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
-            <text x="350" y="330" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">z·z̄ = |z|² = a² + b²</text>
-            <text x="350" y="348" fill="#cbd5e1" fontSize="9" textAnchor="middle">|z₁·z₂| = |z₁|·|z₂|, arg(z₁/z₂) = arg z₁ - arg z₂</text>
-          </svg>
-        );
+      case "conical-pendulum":
 
-
-      case "curve-sketching-parabola":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <path d="M 150 280 Q 350 50, 550 280" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
-            <line x1="350" y1="50" x2="350" y2="280" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
-            <circle cx="350" cy="280" r="6" fill="#ef4444" />
-            <text x="350" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Vertex</text>
-            <text x="550" y="270" fill="#38bdf8" fontSize="11" fontWeight="bold">x-intercepts</text>
-            <rect x="180" y="325" width="340" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="348" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">x = (-b ± √(b²-4ac))/2a</text>
-          </svg>
-        );
-
-      case "logarithm-properties-proof":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="60" width="500" height="240" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Logarithm Properties</text>
-            <text x="140" y="140" fill="#cbd5e1" fontSize="12">logₐ(mn) = logₐm + logₐn</text>
-            <text x="140" y="175" fill="#cbd5e1" fontSize="12">logₐ(m/n) = logₐm - logₐn</text>
-            <text x="140" y="210" fill="#cbd5e1" fontSize="12">logₐ(mⁿ) = n·logₐm</text>
-            <text x="140" y="245" fill="#cbd5e1" fontSize="12">logₐm = log m / log a (change of base)</text>
-            <text x="140" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">Proof: Let logₐm = x, logₐn = y</text>
-          </svg>
-        );
-
-      case "arithmetic-geometric-mean":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="100" width="500" height="150" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="140" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">AM = (a + b)/2  |  GM = √(ab)</text>
-            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">AM ≥ GM (equality when a = b)</text>
-            <text x="350" y="210" fill="#f59e0b" fontSize="12" textAnchor="middle">Example: AM = 6, GM = 4 for {2, 8}</text>
-            <rect x="150" y="270" width="400" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="300" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">For n numbers: (a₁+...+aₙ)/n ≥ ∜(a₁...aₙ)</text>
-            <text x="350" y="330" fill="#cbd5e1" fontSize="10" textAnchor="middle">Used to find minimum/maximum values in optimization</text>
-          </svg>
-        );
-
-      case "permutation-combination":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="80" y="50" width="250" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2" />
-            <text x="205" y="90" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">PERMUTATION</text>
-            <text x="205" y="120" fill="#cbd5e1" fontSize="11" textAnchor="middle">Order matters!</text>
-            <text x="205" y="150" fill="#cbd5e1" fontSize="11" textAnchor="middle">nPr = n!/(n-r)!</text>
-            <rect x="370" y="50" width="250" height="120" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2" />
-            <text x="495" y="90" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">COMBINATION</text>
-            <text x="495" y="120" fill="#cbd5e1" fontSize="11" textAnchor="middle">Order does NOT matter</text>
-            <text x="495" y="150" fill="#cbd5e1" fontSize="11" textAnchor="middle">nCr = n!/(r!(n-r)!)</text>
-            <text x="350" y="210" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Example: 5 students, choose 3</text>
-            <text x="350" y="240" fill="#cbd5e1" fontSize="11" textAnchor="middle">P(5,3) = 60 ways (ordered)</text>
-            <text x="350" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">C(5,3) = 10 ways (unordered)</text>
-          </svg>
-        );
-
-      case "binomial-theorem":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="60" width="500" height="200" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="100" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">(a+b)ⁿ = Σ(nCk)·aⁿ⁻ᵏ·bᵏ</text>
-            <text x="350" y="140" fill="#cbd5e1" fontSize="11" textAnchor="middle">nCk = n!/(k!(n-k)!) = coefficients</text>
-            <text x="350" y="180" fill="#f59e0b" fontSize="12" textAnchor="middle">Pascal's triangle gives coefficients</text>
-            <text x="350" y="210" fill="#38bdf8" fontSize="11" textAnchor="middle">1: (a+b)¹ → 1 1</text>
-            <text x="350" y="235" fill="#38bdf8" fontSize="11" textAnchor="middle">2: (a+b)² → 1 2 1</text>
-            <text x="350" y="260" fill="#38bdf8" fontSize="11" textAnchor="middle">3: (a+b)³ → 1 3 3 1</text>
-          </svg>
-        );
-
-      case "complex-number-geometric":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="350" y1="320" x2="350" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="665" y="205" fill="#94a3b8" fontSize="10">Real axis</text>
-            <text x="350" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">Imaginary axis</text>
-            <circle cx="350" cy="200" r="120" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="350" y1="200" x2="470" y2="120" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
-            <circle cx="470" cy="120" r="6" fill="#38bdf8" />
-            <text x="485" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold">z = r(cos θ + i sin θ)</text>
-            <path d="M 420 200 A 70 70 0 0 0 470 120" fill="none" stroke="#10b981" strokeWidth="2" />
-            <text x="430" y="175" fill="#10b981" fontSize="11">θ</text>
-            <text x="350" y="290" fill="#cbd5e1" fontSize="10" textAnchor="middle">Argand diagram: complex plane</text>
-          </svg>
-        );
-
-      case "de-moivres-theorem":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="150" y="120" width="400" height="120" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="170" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">[r(cos θ + i sin θ)]ⁿ = rⁿ(cos nθ + i sin nθ)</text>
-            <text x="350" y="210" fill="#cbd5e1" fontSize="12" textAnchor="middle">De Moivre's Theorem: raises complex number to power n</text>
-            <rect x="100" y="260" width="500" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="295" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Applications: finding roots of unity</text>
-            <text x="350" y="320" fill="#cbd5e1" fontSize="11" textAnchor="middle">nth roots: z^(1/n) = r^(1/n)[cos((θ+2kπ)/n) + i sin((θ+2kπ)/n)]</text>
-          </svg>
-        );
-
-      case "quadratic-equation-nature-roots":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="80" y="50" width="540" height="80" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2" />
-            <text x="350" y="90" fill="#ef4444" fontSize="13" fontWeight="bold" textAnchor="middle">D > 0: Two distinct real roots (graph cuts x-axis twice)</text>
-            <rect x="80" y="145" width="540" height="80" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="185" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">D = 0: Equal real roots (graph touches x-axis at one point)</text>
-            <rect x="80" y="240" width="540" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="280" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">D < 0: Complex conjugate roots (graph does not cut x-axis)</text>
-            <rect x="180" y="335" width="340" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="352" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">D = b² - 4ac</text>
-          </svg>
-        );
-
-      case "sequence-series-ap-gp-hp":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="85" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Arithmetic Progression (AP): a, a+d, a+2d, ...</text>
-            <text x="350" y="110" fill="#cbd5e1" fontSize="10" textAnchor="middle">nth term: aₙ = a + (n-1)d | Sum: Sₙ = n/2[2a+(n-1)d]</text>
-            <rect x="80" y="135" width="540" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="170" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Geometric Progression (GP): a, ar, ar², ...</text>
-            <text x="350" y="195" fill="#cbd5e1" fontSize="10" textAnchor="middle">nth term: aₙ = arⁿ⁻¹ | Sum: Sₙ = a(1-rⁿ)/(1-r) | S∞ = a/(1-r) if |r| < 1</text>
-            <rect x="80" y="220" width="540" height="70" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="255" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Harmonic Progression (HP): reciprocals form AP</text>
-            <rect x="150" y="305" width="400" height="50" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
-            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">AM · GM = mean² | 1/a + 1/b = 2/AM (AM-GM-HM relation)</text>
-          </svg>
-        );
-
-      case "probability-basic-theorems":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="50" width="500" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="90" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Addition Theorem: P(A∪B) = P(A) + P(B) - P(A∩B)</text>
-            <text x="350" y="120" fill="#cbd5e1" fontSize="10" textAnchor="middle">For mutually exclusive events: P(A∪B) = P(A) + P(B)</text>
-            <rect x="100" y="170" width="500" height="100" rx="10" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="210" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Multiplication Theorem: P(A∩B) = P(A)·P(B|A)</text>
-            <text x="350" y="240" fill="#cbd5e1" fontSize="10" textAnchor="middle">For independent events: P(A∩B) = P(A)·P(B)</text>
-            <rect x="180" y="290" width="340" height="60" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
-            <text x="350" y="320" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P(not E) = 1 - P(E)</text>
-            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Total probability: ΣP(Eᵢ) = 1</text>
-          </svg>
-        );
+        return (
 
-
-      case "line-equation-forms":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="300" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="80" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Forms of a Line</text>
-            <text x="120" y="120" fill="#cbd5e1" fontSize="12">• Slope-intercept: y = mx + c</text>
-            <text x="120" y="150" fill="#cbd5e1" fontSize="12">• Point-slope: y - y₁ = m(x - x₁)</text>
-            <text x="120" y="180" fill="#cbd5e1" fontSize="12">• Two-point form: (y-y₁)/(x-x₁) = (y₂-y₁)/(x₂-x₁)</text>
-            <text x="120" y="210" fill="#cbd5e1" fontSize="12">• Intercept form: x/a + y/b = 1</text>
-            <text x="120" y="240" fill="#cbd5e1" fontSize="12">• Normal form: x cos α + y sin α = p</text>
-            <text x="120" y="270" fill="#cbd5e1" fontSize="12">• General form: ax + by + c = 0</text>
-            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">m = tan θ = slope, p = perpendicular from origin</text>
-          </svg>
-        );
-
-      case "angle-bisector-formula":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="140" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Angle Bisector Formula</text>
-            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">(a₁±a₂)x + (b₁±b₂)y + (c₁±c₂) = 0</text>
-            <text x="350" y="220" fill="#f59e0b" fontSize="11" textAnchor="middle">+ for obtuse, - for acute angle bisector</text>
-          </svg>
-        );
-
-      case "pair-of-lines-condition":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
-            <text x="350" y="140" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Pair of Straight Lines</text>
-            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">ax² + 2hxy + by² + 2gx + 2fy + c = 0</text>
-            <text x="350" y="220" fill="#f59e0b" fontSize="11" textAnchor="middle">Condition: abc + 2fgh - af² - bg² - ch² = 0</text>
-          </svg>
-        );
-
-      case "direction-cosines":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <line x1="100" y1="300" x2="600" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="300" x2="100" y2="50" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="100" y1="300" x2="300" y2="100" stroke="#38bdf8" strokeWidth="3.5" markerEnd="url(#arrow)" />
-            <circle cx="200" cy="200" r="3" fill="#ef4444" />
-            <path d="M 140 300 A 40 40 0 0 1 145 260" fill="none" stroke="#f59e0b" strokeWidth="2" />
-            <text x="150" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">α</text>
-            <path d="M 100 260 A 40 40 0 0 0 140 255" fill="none" stroke="#10b981" strokeWidth="2" />
-            <text x="115" y="250" fill="#10b981" fontSize="11" fontWeight="bold">β</text>
-            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="343" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">cos²α + cos²β + cos²γ = 1</text>
-          </svg>
-        );
-
-      case "bayes-theorem-proof":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="60" width="500" height="180" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Bayes' Theorem</text>
-            <text x="350" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">P(Aᵢ|B) = P(B|Aᵢ)·P(Aᵢ) / Σ P(B|Aⱼ)·P(Aⱼ)</text>
-            <text x="350" y="190" fill="#cbd5e1" fontSize="11" textAnchor="middle">Used to find conditional probability after evidence</text>
-            <text x="350" y="230" fill="#f59e0b" fontSize="11" textAnchor="middle">Also called inverse probability theorem</text>
-            <text x="350" y="270" fill="#cbd5e1" fontSize="10" textAnchor="middle">Applications: medical testing, machine learning, statistics</text>
-          </svg>
-        );
-
-      case "numerical-integration":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="100" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Numerical Integration Methods</text>
-            <text x="150" y="150" fill="#f59e0b" fontSize="12" fontWeight="bold">Trapezoidal Rule:</text>
-            <text x="150" y="175" fill="#cbd5e1" fontSize="11">∫ₐᵇ f(x)dx ≈ (h/2)[f₀ + 2(f₁+...+fₙ₋₁) + fₙ]</text>
-            <text x="150" y="210" fill="#38bdf8" fontSize="12" fontWeight="bold">Simpson's 1/3 Rule:</text>
-            <text x="150" y="235" fill="#cbd5e1" fontSize="11">∫ₐᵇ f(x)dx ≈ (h/3)[f₀ + 4(f₁+f₃+...) + 2(f₂+f₄+...) + fₙ]</text>
-            <text x="350" y="280" fill="#a855f7" fontSize="11" textAnchor="middle">Simpson's rule is more accurate (error ∝ h⁴)</text>
-          </svg>
-        );
-
-      case "separable-differential-equation":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="80" width="500" height="200" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-            <text x="350" y="120" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Separable Differential Equation</text>
-            <text x="350" y="170" fill="#10b981" fontSize="13" textAnchor="middle">dy/dx = g(x)·h(y)</text>
-            <text x="350" y="210" fill="#f59e0b" fontSize="12" textAnchor="middle">Separate: dy/h(y) = g(x)dx</text>
-            <text x="350" y="250" fill="#cbd5e1" fontSize="12" textAnchor="middle">Integrate: ∫dy/h(y) = ∫g(x)dx</text>
-            <text x="350" y="290" fill="#a855f7" fontSize="11" textAnchor="middle">Example: dy/dx = xy → ln|y| = x²/2 + C</text>
-          </svg>
-        );
-
-      case "linear-differential-equation":
-        return (
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-            <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-            <text x="350" y="100" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Linear Differential Equation</text>
-            <text x="350" y="150" fill="#38bdf8" fontSize="13" textAnchor="middle">dy/dx + P(x)y = Q(x)</text>
-            <text x="350" y="190" fill="#f59e0b" fontSize="12" textAnchor="middle">Integrating Factor: IF = e^∫P(x)dx</text>
-            <text x="350" y="230" fill="#cbd5e1" fontSize="12" textAnchor="middle">Solution: y·IF = ∫Q(x)·IF dx + C</text>
-            <text x="350" y="270" fill="#a855f7" fontSize="11" textAnchor="middle">First-order linear ODE - standard method</text>
-          </svg>
-        );
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">T cos θ = mg  &amp;  T sin θ = mv²/r  ⟹  T = 2π√(l cos θ/g)</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-          <text x="350" y="365" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Top: v_min = √(gr) | Bottom: v_min = √(5gr)  |  ΔKE + ΔPE = const</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">tan θ = v²/(rg)  →  Friction independent! Safe for icy roads.</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
-          <text x="350" y="365" fill="#ef4444" fontSize="12" fontWeight="bold" textAnchor="middle">Young's modulus Y = σ/ε (slope of linear region)</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Fourier's Law: Q/t = kA(ΔT/L)  |  Thermal conductivity k varies by material</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-          <text x="350" y="365" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P = εσAT⁴  |  Stefan-Boltzmann constant: σ = 5.67 × 10⁻⁸ W m⁻² K⁻⁴</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-          <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">∮ E⃗·dA⃗ = Q_enc/ε₀  →  Use symmetry for closed surfaces!</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Series: 1/C = 1/C₁ + 1/C₂  |  Parallel: C = C₁ + C₂</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-          <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Mirror Formula: 1/f = 1/v + 1/u  |  Sign convention: distances measured from pole</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-          <text x="350" y="365" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Snell's Law: n₁ sin i = n₂ sin r  |  Refractive index n = c/v</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-          <text x="350" y="365" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Critical angle: sin θ_c = n₂/n₁ (light must go dense→rare)</text>
-<rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-          <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Refractive index: n = sin((A+δ_m)/2) / sin(A/2)</text>
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
-
-      case "avogadros-law-deduction":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Avogadro's Law & Applications</text>
-            <rect x="100" y="110" width="240" height="120" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="220" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Molecular Mass</text>
-            <text x="220" y="175" fill="#cbd5e1" fontSize="12" textAnchor="middle">M = 2 × Vapor Density</text>
-            <text x="220" y="200" fill="#cbd5e1" fontSize="11" textAnchor="middle">or M = m/n where n = V/22.4</text>
-            <rect x="360" y="110" width="240" height="120" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
-            <text x="480" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Number of Particles</text>
-            <text x="480" y="175" fill="#cbd5e1" fontSize="12" textAnchor="middle">N = n × N_A = m/M × 6.022×10²³</text>
-            <text x="480" y="200" fill="#cbd5e1" fontSize="11" textAnchor="middle">At STP: 1 mole = 22.4 L</text>
-            <rect x="150" y="260" width="400" height="80" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="295" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Avogadro's Law: Equal volumes contain equal molecules</text>
-            <text x="350" y="320" fill="#cbd5e1" fontSize="11" textAnchor="middle">V₁/n₁ = V₂/n₂ at constant T and P</text>
-          </svg>
-        );
-      case "heisenberg-uncertainty":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="60" width="540" height="280" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="100" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Heisenberg's Uncertainty Principle</text>
-            <rect x="150" y="140" width="400" height="80" rx="8" fill="#a855f7" fillOpacity="0.2" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="175" fill="#c084fc" fontSize="18" fontWeight="bold" textAnchor="middle">Δx · Δp ≥ ℏ/2</text>
-            <text x="350" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">where ℏ = h/2π = 1.055 × 10⁻³⁴ J·s</text>
-            <rect x="120" y="250" width="460" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="285" fill="#38bdf8" fontSize="13" textAnchor="middle">Electron position and momentum cannot be measured simultaneously with arbitrary precision</text>
-            <text x="350" y="310" fill="#f59e0b" fontSize="11" textAnchor="middle">→ Replaced Bohr orbits with probability orbitals</text>
-          </svg>
-        );
-      case "quantum-numbers":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Quantum Numbers Table</text>
-            {[
-              {q:"n",name:"Principal",desc:"Energy level, shell size",val:"1,2,3...",color:"#38bdf8"},
-              {q:"l",name:"Azimuthal",desc:"Subshell shape (s,p,d,f)",val:"0 to n-1",color:"#10b981"},
-              {q:"m_l",name:"Magnetic",desc:"Orbital orientation in space",val:"-l to +l",color:"#f59e0b"},
-              {q:"m_s",name:"Spin",desc:"Electron spin direction",val:"+½ or -½",color:"#ef4444"}
-            ].map((qn,i) => (
-              <g key={i}>
-                <rect x="90+i*155" y="110" width="140" height="180" rx="8" fill={qn.color} fillOpacity="0.15" stroke={qn.color} strokeWidth="2"/>
-                <text x="160+i*155" y="145" fill={qn.color} fontSize="28" fontWeight="bold" textAnchor="middle">{qn.q}</text>
-                <text x="160+i*155" y="175" fill="#cbd5e1" fontSize="11" fontWeight="bold" textAnchor="middle">{qn.name}</text>
-                <text x="160+i*155" y="205" fill="#cbd5e1" fontSize="10" textAnchor="middle">{qn.desc}</text>
-                <text x="160+i*155" y="240" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">{qn.val}</text>
-              </g>
-            ))}
-          </svg>
-        );
-      case "vsepr-theory":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">VSEPR Molecular Shapes</text>
-            {[
-              {shape:"Linear",angle:"180°",bp:2,ex:"BeF₂",color:"#38bdf8"},
-              {shape:"Trigonal Planar",angle:"120°",bp:3,ex:"BF₃",color:"#10b981"},
-              {shape:"Tetrahedral",angle:"109.5°",bp:4,ex:"CH₄",color:"#f59e0b"},
-              {shape:"Trigonal Pyramidal",angle:"107°",bp:4,ex:"NH₃",color:"#a855f7"},
-              {shape:"Bent/V-shaped",angle:"104.5°",bp:4,ex:"H₂O",color:"#ef4444"}
-            ].map((m,i) => (
-              <g key={i}>
-                <rect x="80+i*125" y="110" width="110" height="150" rx="8" fill={m.color} fillOpacity="0.1" stroke={m.color} strokeWidth="2"/>
-                <text x="135+i*125" y="140" fill={m.color} fontSize="11" fontWeight="bold" textAnchor="middle">{m.shape}</text>
-                <circle cx="135+i*125" cy="180" r="12" fill={m.color} fillOpacity="0.3" stroke={m.color} strokeWidth="2"/>
-                <text x="135+i*125" y="220" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">{m.angle}</text>
-                <text x="135+i*125" y="240" fill="#cbd5e1" fontSize="9" textAnchor="middle">{m.ex}</text>
-              </g>
-            ))}
-            <rect x="150" y="280" width="400" height="60" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="315" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">VSEPR: Valence shell electron pair repulsion determines geometry</text>
-          </svg>
-        );
-      case "hybridization-spspsp2spp3":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Hybridization Types</text>
-            {[
-              {type:"sp",mix:"s + p",angle:"180°",geom:"Linear",ex:"BeCl₂",color:"#38bdf8"},
-              {type:"sp²",mix:"s + 2p",angle:"120°",geom:"Trigonal",ex:"BF₃",color:"#10b981"},
-              {type:"sp³",mix:"s + 3p",angle:"109.5°",geom:"Tetrahedral",ex:"CH₄",color:"#f59e0b"}
-            ].map((h,i) => (
-              <g key={i}>
-                <rect x="100+i*190" y="110" width="170" height="180" rx="8" fill={h.color} fillOpacity="0.15" stroke={h.color} strokeWidth="2"/>
-                <text x="185+i*190" y="145" fill={h.color} fontSize="20" fontWeight="bold" textAnchor="middle">{h.type}</text>
-                <text x="185+i*190" y="175" fill="#cbd5e1" fontSize="11" textAnchor="middle">{h.mix} hybridization</text>
-                <text x="185+i*190" y="210" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Angle: {h.angle}</text>
-                <text x="185+i*190" y="240" fill="#38bdf8" fontSize="11" textAnchor="middle">{h.geom}</text>
-                <text x="185+i*190" y="265" fill="#a855f7" fontSize="10" textAnchor="middle">Ex: {h.ex}</text>
-              </g>
-            ))}
-          </svg>
-        );
-      case "inductive-resonance-effect":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Inductive vs Resonance Effects</text>
-            <rect x="100" y="110" width="230" height="140" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="215" y="145" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">+I / -I Effect</text>
-            <text x="215" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Through σ-bonds</text>
-            <text x="215" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">Permanent effect</text>
-            <text x="215" y="230" fill="#cbd5e1" fontSize="11" textAnchor="middle">Distance dependent</text>
-            <rect x="370" y="110" width="230" height="140" rx="8" fill="#a855f7" fillOpacity="0.1" stroke="#a855f7" strokeWidth="2"/>
-            <text x="485" y="145" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">+R / -R Effect</text>
-            <text x="485" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Through π-system</text>
-            <text x="485" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">Resonance stabilization</text>
-            <rect x="150" y="270" width="400" height="80" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="305" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Key: Inductive=σ-electrons | Resonance=π-electrons delocalized</text>
-          </svg>
-        );
-      case "redox-balancing-half-reaction":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
-            <text x="350" y="80" fill="#ef4444" fontSize="16" fontWeight="bold" textAnchor="middle">Redox Balancing - Ion-Electron Method</text>
-            <rect x="120" y="110" width="200" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="220" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Oxidation Half</text>
-            <text x="220" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Loss of e⁻</text>
-            <text x="220" y="205" fill="#f59e0b" fontSize="12" textAnchor="middle">Fe²⁺ → Fe³⁺ + e⁻</text>
-            <rect x="380" y="110" width="200" height="120" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
-            <text x="480" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Reduction Half</text>
-            <text x="480" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Gain of e⁻</text>
-            <text x="480" y="205" fill="#f59e0b" fontSize="11" textAnchor="middle">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</text>
-            <rect x="150" y="260" width="400" height="90" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="290" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Steps:</text>
-            <text x="180" y="315" fill="#cbd5e1" fontSize="10">1. Separate half-reactions | 2. Balance atoms | 3. Balance charge with e⁻ | 4. Equalize electrons</text>
-          </svg>
-        );
-      case "kinetic-theory-gas-derive":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Kinetic Theory of Gases Derivation</text>
-            <rect x="120" y="110" width="460" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Postulates: Point masses, random motion, elastic collisions</text>
-            <rect x="120" y="190" width="460" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="225" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">PV = (1/3)Nm<c_rms²> derivation</text>
-            <text x="150" y="255" fill="#cbd5e1" fontSize="11">Force on wall = Δp/Δt = 2mv/t where t = 2L/v</text>
-            <text x="150" y="275" fill="#cbd5e1" fontSize="11">P = F/A = Nm<v²>/(3V)</text>
-            <rect x="150" y="310" width="400" height="40" rx="8" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="335" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">PV = nRT  →  c_rms = √(3RT/M)</text>
-          </svg>
-        );
-      case "combined-gas-law":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Gas Laws - Combined</text>
-            {[
-              {law:"Boyle's Law",cond:"T constant",eq:"P₁V₁ = P₂V₂",color:"#38bdf8"},
-              {law:"Charles' Law",cond:"P constant",eq:"V₁/T₁ = V₂/T₂",color:"#10b981"},
-              {law:"Gay-Lussac's",cond:"V constant",eq:"P₁/T₁ = P₂/T₂",color:"#f59e0b"}
-            ].map((g,i) => (
-              <g key={i}>
-                <rect x="100+i*190" y="110" width="170" height="100" rx="8" fill={g.color} fillOpacity="0.1" stroke={g.color} strokeWidth="2"/>
-                <text x="185+i*190" y="145" fill={g.color} fontSize="12" fontWeight="bold" textAnchor="middle">{g.law}</text>
-                <text x="185+i*190" y="170" fill="#cbd5e1" fontSize="10" textAnchor="middle">{g.cond}</text>
-                <text x="185+i*190" y="195" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">{g.eq}</text>
-              </g>
-            ))}
-            <rect x="150" y="240" width="400" height="140" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="280" fill="#a855f7" fontSize="15" fontWeight="bold" textAnchor="middle">Combined Gas Law</text>
-            <text x="350" y="315" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">PV/T = constant  →  PV = nRT</text>
-            <text x="350" y="350" fill="#cbd5e1" fontSize="11" textAnchor="middle">Universal gas constant R = 8.314 J mol⁻¹ K⁻¹</text>
-          </svg>
-        );
-      case "real-gas-compressibility":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Real Gas - Van der Waals Equation</text>
-            <rect x="120" y="110" width="460" height="100" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2"/>
-            <text x="350" y="150" fill="#ef4444" fontSize="16" fontWeight="bold" textAnchor="middle">(P + an²/V²)(V - nb) = nRT</text>
-            <text x="350" y="190" fill="#cbd5e1" fontSize="11" textAnchor="middle">a = correction for intermolecular forces</text>
-            <text x="350" y="210" fill="#cbd5e1" fontSize="11" textAnchor="middle">b = correction for molecular volume</text>
-            <rect x="120" y="230" width="210" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="225" y="265" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Compressibility Factor</text>
-            <text x="225" y="295" fill="#cbd5e1" fontSize="11" textAnchor="middle">Z = PV/nRT</text>
-            <text x="225" y="315" fill="#f59e0b" fontSize="10" textAnchor="middle">Z = 1 ideal, Z ≠ 1 real gas</text>
-            <rect x="370" y="230" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
-            <text x="475" y="265" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Critical Constants</text>
-            <text x="475" y="295" fill="#cbd5e1" fontSize="11" textAnchor="middle">T_c = 8a/27Rb</text>
-            <text x="475" y="315" fill="#cbd5e1" fontSize="11" textAnchor="middle">P_c = a/27b²</text>
-          </svg>
-        );
-      case "le-chateliers-principle":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="80" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Le Chatelier's Principle</text>
-            <rect x="120" y="110" width="460" height="70" rx="8" fill="#a855f7" fillOpacity="0.15" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="150" fill="#c084fc" fontSize="13" textAnchor="middle">If system at equilibrium is disturbed, it shifts to counteract change</text>
-            {[
-              {disturb:"Concentration",shift:"Shifts away from added substance",color:"#38bdf8"},
-              {disturb:"Temperature",shift:"Shifts in endothermic direction",color:"#ef4444"},
-              {disturb:"Pressure",shift:"Shifts to fewer moles side",color:"#10b981"}
-            ].map((l,i) => (
-              <rect key={i} x={100+i*190} y="200" width={170} height={120} rx={8} fill={l.color} fillOpacity={0.1} stroke={l.color} strokeWidth={2}/>
-            ))}
-            {["#38bdf8","#ef4444","#10b981"].map((c,i) => (
-              <text key={i} x={185+i*190} y={235} fill={c} fontSize={11} fontWeight={"bold"} textAnchor={"middle"}>{"
-"==="#38bdf8"?"Concentration":"#38bdf8"==="#ef4444"?"Temperature":"Pressure"}</text>
-            ))}
-            {[
-              {x:100,y:255,text:"Increases",color:"#38bdf8"},
-              {x:290,y:255,text:"Endo ↑ shifts",color:"#ef4444"},
-              {x:480,y:255,text:"Fewer moles",color:"#10b981"}
-            ].map((t,i) => <text key={i} x={t.x} y={t.y} fill={t.color} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
-          </svg>
-        );
-      case "haber-process-flow":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Haber's Process - Ammonia Manufacture</text>
-            <rect x="120" y="110" width="460" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="350" y="145" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">N₂ + 3H₂ ⇌ 2NH₃ (ΔH = -92 kJ/mol)</text>
-            <rect x="120" y="190" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
-            <text x="225" y="225" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Optimum Conditions</text>
-            <text x="225" y="255" fill="#cbd5e1" fontSize="11" textAnchor="middle">T = 450°C</text>
-            <text x="225" y="280" fill="#cbd5e1" fontSize="11" textAnchor="middle">P = 200 atm</text>
-            <rect x="370" y="190" width="210" height="100" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="475" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Catalyst</text>
-            <text x="475" y="255" fill="#cbd5e1" fontSize="11" textAnchor="middle">Finely divided Fe</text>
-            <text x="475" y="280" fill="#cbd5e1" fontSize="11" textAnchor="middle">Promoted with Mo</text>
-            <rect x="150" y="310" width="400" height="40" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Yield: ~15% per pass | Unreacted gases recycled</text>
-          </svg>
-        );
-      case "contact-process-h2so4":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Contact Process - H₂SO₄</text>
-            {[
-              {step:"1. SO₂ Production",eq:"S + O₂ → SO₂",color:"#ef4444"},
-              {step:"2. SO₂ → SO₃",eq:"2SO₂ + O₂ ⇌ 2SO₃",color:"#f59e0b"},
-              {step:"3. Absorption",eq:"SO₃ + H₂SO₄ → H₂S₂O₇",color:"#38bdf8"},
-              {step:"4. Dilution",eq:"H₂S₂O₇ + H₂O → 2H₂SO₄",color:"#10b981"}
-            ].map((st,i) => (
-              <rect key={i} x={100+i*140} y={110} width={120} height={180} rx={8} fill={st.color} fillOpacity={0.1} stroke={st.color} strokeWidth={2}/>
-            ))}
-            {[
-              {x:100,text:"Combustion"},
-              {x:240,text:"Oxidation (V₂O₅)"},
-              {x:380,text:"Absorption"},
-              {x:520,text:"Dilution"}
-            ].map((t,i) => <text key={i} x={t.x} y={310} fill={"#cbd5e1"} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
-          </svg>
-        );
-      case "solvay-process-na2co3":
-        return (
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Solvay Process - Na₂CO₃</text>
-            <rect x="120" y="110" width="460" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="145" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ ↓ + NH₄Cl</text>
-            <rect x="120" y="190" width="210" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
-            <text x="225" y="225" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Step 1: Brine sat. with NH₃</text>
-            <text x="225" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">NaCl + NH₃ + H₂O</text>
-            <rect x="370" y="190" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
-            <text x="475" y="225" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Step 2: CO₂ absorption</text>
-            <text x="475" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">NaHCO₃ precipitates</text>
-            <rect x="150" y="310" width="400" height="40" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
-            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Calcination: 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂</text>
-          </svg>
-        );
+            <circle cx="350" cy="50" r="6" fill="#f59e0b" />
+
+            <line x1="350" y1="50" x2="250" y2="250" stroke="#38bdf8" strokeWidth="2.5" />
+
+            <line x1="350" y1="50" x2="450" y2="250" stroke="#38bdf8" strokeWidth="2.5" />
+
+            <circle cx="450" cy="250" r="18" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2.5" />
+
+            <text x="475" y="255" fill="#10b981" fontSize="11" fontWeight="bold">m</text>
+
+            <line x1="350" y1="50" x2="350" y2="250" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="5 3" />
+
+            <text x="355" y="160" fill="#a855f7" fontSize="10">l</text>
+
+            <path d="M 250 250 A 200 200 0 0 1 450 250" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="4 3" />
+
+            <text x="350" y="275" fill="#64748b" fontSize="9" textAnchor="middle">circular path (radius r = l sin θ)</text>
+
+            <rect x="130" y="310" width="440" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="332" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">T cos θ = mg &amp; T sin θ = mv²/r</text>
+
+            <text x="350" y="352" fill="#cbd5e1" fontSize="9" textAnchor="middle">Period: T = 2π√(l cos θ / g) — independent of mass!</text>
+
+          </svg>
+
+        );
+
+
+
+      case "vertical-circle":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <circle cx="350" cy="180" r="130" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+
+            <circle cx="350" cy="50" r="10" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="365" y="45" fill="#ef4444" fontSize="10" fontWeight="bold">Top</text>
+
+            <line x1="350" y1="60" x2="350" y2="110" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            <text x="360" y="88" fill="#ef4444" fontSize="9">mg + T</text>
+
+            <circle cx="350" cy="310" r="10" fill="#10b981" fillOpacity="0.5" stroke="#10b981" strokeWidth="2" />
+
+            <text x="365" y="315" fill="#10b981" fontSize="10" fontWeight="bold">Bottom</text>
+
+            <line x1="350" y1="300" x2="350" y2="250" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            <text x="360" y="278" fill="#10b981" fontSize="9">T - mg</text>
+
+            <circle cx="480" cy="180" r="10" fill="#f59e0b" fillOpacity="0.4" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="495" y="185" fill="#f59e0b" fontSize="10">Side</text>
+
+            <rect x="120" y="325" width="460" height="35" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="348" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">Min speed at top: v ≥ √(gr) | Min at bottom: v = √(5gr)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "banking-of-roads":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <polygon points="80,280 620,280 620,200 80,200" fill="#64748b" fillOpacity="0.15" stroke="#64748b" strokeWidth="3" />
+
+            <polygon points="80,200 620,200 620,170 80,170" fill="#3b82f6" fillOpacity="0.2" stroke="#3b82f6" strokeWidth="2.5" />
+
+            <rect x="280" y="130" width="140" height="70" rx="8" fill="#3b82f6" fillOpacity="0.3" stroke="#3b82f6" strokeWidth="2.5" />
+
+            <text x="350" y="170" fill="#fff" textAnchor="middle" fontSize="11" fontWeight="bold">Car m</text>
+
+            <line x1="350" y1="200" x2="350" y2="250" stroke="#a855f7" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="365" y="235" fill="#a855f7" fontSize="10">N</text>
+
+            <line x1="350" y1="195" x2="350" y2="140" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            <text x="365" y="155" fill="#ef4444" fontSize="10">mg</text>
+
+            <path d="M 140 280 A 30 30 0 0 1 170 260" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+
+            <text x="145" y="275" fill="#f59e0b" fontSize="11" fontWeight="bold">θ</text>
+
+            <rect x="140" y="305" width="420" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="328" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">tan θ = v²/(rg) → safe speed without friction</text>
+
+            <text x="350" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">No reliance on friction → safer turns!</text>
+
+          </svg>
+
+        );
+
+
+
+      case "centre-of-mass":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <line x1="80" y1="200" x2="620" y2="200" stroke="#64748b" strokeWidth="2" />
+
+            <circle cx="160" cy="200" r="16" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="160" y="255" fill="#38bdf8" fontSize="10" textAnchor="middle">m₁</text>
+
+            <circle cx="540" cy="200" r="12" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
+
+            <text x="540" y="255" fill="#10b981" fontSize="10" textAnchor="middle">m₂</text>
+
+            <circle cx="340" cy="200" r="8" fill="#f59e0b" />
+
+            <text x="340" y="220" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">COM</text>
+
+            <line x1="160" y1="200" x2="340" y2="200" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+
+            <line x1="340" y1="200" x2="540" y2="200" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+
+            <text x="250" y="188" fill="#f59e0b" fontSize="9">r₁</text>
+
+            <text x="440" y="188" fill="#f59e0b" fontSize="9">r₂</text>
+
+            <rect x="150" y="295" width="400" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="318" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">X_com = (m₁r₁ + m₂r₂)/(m₁ + m₂)</text>
+
+            <text x="350" y="338" fill="#cbd5e1" fontSize="9" textAnchor="middle">Internal forces cannot shift COM — only external forces can!</text>
+
+          </svg>
+
+        );
+
+
+
+      case "gps-principle":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <circle cx="350" cy="200" r="80" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="350" y="205" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Earth</text>
+
+            <circle cx="350" cy="50" r="10" fill="#f59e0b" />
+
+            <circle cx="150" cy="120" r="10" fill="#f59e0b" />
+
+            <circle cx="550" cy="120" r="10" fill="#f59e0b" />
+
+            <text x="350" y="35" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="middle">Sat 1</text>
+
+            <text x="120" y="115" fill="#f59e0b" fontSize="9" fontWeight="bold">Sat 2</text>
+
+            <text x="580" y="115" fill="#f59e0b" fontSize="9" fontWeight="bold">Sat 3</text>
+
+            <circle cx="350" cy="50" r="180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5" />
+
+            <circle cx="150" cy="120" r="180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5" />
+
+            <circle cx="550" cy="120" r="180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5" />
+
+            <circle cx="350" cy="280" r="6" fill="#ef4444" />
+
+            <text x="350" y="300" fill="#ef4444" fontSize="9" textAnchor="middle">User</text>
+
+            <rect x="140" y="335" width="420" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="352" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">Trilateration: 4 satellites give X,Y,Z,t position</text>
+
+          </svg>
+
+        );
+
+
+
+      case "stress-strain-curve":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <line x1="80" y1="310" x2="640" y2="310" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="330" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="645" y="315" fill="#94a3b8" fontSize="11">Strain ε</text>
+
+            <text x="90" y="22" fill="#94a3b8" fontSize="11" textAnchor="middle">Stress σ</text>
+
+            <path d="M 100 310 L 300 100 Q 350 40 380 35 L 420 30 L 450 32 L 520 60 L 600 280" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <circle cx="150" cy="250" r="4" fill="#10b981" />
+
+            <text x="130" y="245" fill="#10b981" fontSize="9">A (proportional limit)</text>
+
+            <circle cx="300" cy="100" r="4" fill="#f59e0b" />
+
+            <text x="300" y="85" fill="#f59e0b" fontSize="9" textAnchor="middle">B (yield point)</text>
+
+            <circle cx="380" cy="35" r="4" fill="#ef4444" />
+
+            <text x="380" y="22" fill="#ef4444" fontSize="9" textAnchor="middle">C (ultimate strength)</text>
+
+            <circle cx="520" cy="60" r="4" fill="#a855f7" />
+
+            <text x="520" y="50" fill="#a855f7" fontSize="9" textAnchor="middle">D (fracture)</text>
+
+            <text x="520" y="295" fill="#cbd5e1" fontSize="9">Plastic region</text>
+
+            <rect x="150" y="310" width="400" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="333" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Young's modulus: Y = σ/ε (slope of AB)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "elastic-moduli":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="75" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Y = Stress/Longitudinal strain = F·L₀/(A·ΔL) — rigidity</text>
+
+            <rect x="80" y="115" width="540" height="60" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="150" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">B = Volumetric stress / Volumetric strain = P/(-ΔV/V) — bulk</text>
+
+            <rect x="80" y="190" width="540" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">G (η) = Shear stress / Shear strain = (F/A)/tan θ — rigidity</text>
+
+            <rect x="80" y="265" width="540" height="60" rx="8" fill="#a855f7" fillOpacity="0.1" stroke="#a855f7" strokeWidth="2" />
+
+            <text x="350" y="300" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">ν = lateral strain / longitudinal strain (0 &lt; ν &lt; 0.5)</text>
+
+            <text x="350" y="335" fill="#cbd5e1" fontSize="9" textAnchor="middle">Typical values: Steel Y=200GPa, Copper Y=120GPa, Rubber ν≈0.49</text>
+
+          </svg>
+
+        );
+
+
+
+      case "elastic-potential-energy":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <line x1="100" y1="200" x2="620" y2="200" stroke="#64748b" strokeWidth="2" />
+
+            <circle cx="120" cy="200" r="6" fill="#64748b" />
+
+            <path d="M 120 200 L 200 195 L 220 205 L 240 195 L 260 205 L 280 195 L 300 200 L 320 195 L 340 205 L 360 195 L 380 200 L 420 200" fill="none" stroke="#f59e0b" strokeWidth="3" />
+
+            <line x1="420" y1="200" x2="560" y2="200" stroke="#64748b" strokeWidth="3" />
+
+            <circle cx="560" cy="200" r="6" fill="#64748b" />
+
+            <text x="340" y="175" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Spring stretched by x</text>
+
+            <line x1="120" y1="220" x2="560" y2="220" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
+
+            <text x="340" y="235" fill="#38bdf8" fontSize="10" textAnchor="middle">Extension = x</text>
+
+            <line x1="500" y1="200" x2="500" y2="120" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="510" y="140" fill="#10b981" fontSize="11">F = kx</text>
+
+            <rect x="150" y="280" width="400" height="65" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="305" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Elastic PE: U = ½kx²</text>
+
+            <text x="350" y="325" fill="#cbd5e1" fontSize="9" textAnchor="middle">Work done stretching spring stored as elastic potential energy</text>
+
+            <text x="350" y="342" fill="#cbd5e1" fontSize="9" textAnchor="middle">Area under F-x graph = ½·base·height = ½·x·kx = ½kx²</text>
+
+          </svg>
+
+        );
+
+
+
+      case "zeroth-law-thermal-equilibrium":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <rect x="100" y="80" width="180" height="100" rx="10" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="190" y="135" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Body A</text>
+
+            <text x="190" y="155" fill="#cbd5e1" fontSize="10" textAnchor="middle">T_A</text>
+
+            <rect x="420" y="80" width="180" height="100" rx="10" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="3" />
+
+            <text x="510" y="135" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Body B</text>
+
+            <text x="510" y="155" fill="#cbd5e1" fontSize="10" textAnchor="middle">T_B</text>
+
+            <circle cx="190" cy="220" r="50" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="3" />
+
+            <text x="190" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Thermometer</text>
+
+            <line x1="240" y1="220" x2="400" y2="220" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="320" y="210" fill="#64748b" fontSize="10">t = t_A</text>
+
+            <line x1="400" y1="180" x2="510" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="455" y="170" fill="#64748b" fontSize="10">t = t_B</text>
+
+            <text x="350" y="320" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Transitive property: if t_A = t and t_B = t, then T_A = T_B</text>
+
+          </svg>
+
+        );
+
+
+
+      case "principle-of-calorimetry":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <rect x="100" y="80" width="200" height="100" rx="10" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="3" />
+
+            <text x="200" y="135" fill="#ef4444" fontSize="12" fontWeight="bold" textAnchor="middle">Hot body</text>
+
+            <text x="200" y="155" fill="#ef4444" fontSize="10" textAnchor="middle">m₁c₁(T₁−T)</text>
+
+            <rect x="400" y="80" width="200" height="100" rx="10" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="500" y="135" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Cold body</text>
+
+            <text x="500" y="155" fill="#38bdf8" fontSize="10" textAnchor="middle">m₂c₂(T−T₂)</text>
+
+            <line x1="300" y1="130" x2="400" y2="130" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="350" y="120" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Heat</text>
+
+            <rect x="150" y="240" width="400" height="60" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="270" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Heat lost = Heat gained (isolated system)</text>
+
+            <text x="350" y="290" fill="#cbd5e1" fontSize="10" textAnchor="middle">m₁c₁(T₁−T) = m₂c₂(T−T₂)</text>
+
+            <text x="350" y="320" fill="#cbd5e1" fontSize="9" textAnchor="middle">No heat lost to surroundings ⇒ calorimeter equation valid</text>
+
+          </svg>
+
+        );
+
+
+
+      case "newtons-law-cooling-experiment":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <line x1="80" y1="300" x2="640" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="645" y="310" fill="#94a3b8" fontSize="10">t (time)</text>
+
+            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">θ</text>
+
+            <line x1="100" y1="240" x2="640" y2="240" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+
+            <text x="645" y="235" fill="#a855f7" fontSize="9">θ₀ (ambient)</text>
+
+            <path d="M 120 60 C 200 80, 280 140, 380 200 C 480 240, 560 238, 640 240" fill="none" stroke="#ef4444" strokeWidth="3.5" />
+
+            <text x="200" y="90" fill="#cbd5e1" fontSize="9">fast cooling (large ΔT)</text>
+
+            <text x="520" y="220" fill="#cbd5e1" fontSize="9">slow approach to θ₀</text>
+
+            <rect x="150" y="300" width="400" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="323" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">dθ/dt = −k(θ − θ₀) → θ(t) = θ₀ + (θᵢ − θ₀)e^(-kt)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "fourier-conduction":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w是全 h-auto select-none">
+
+            <line x1="80" y1="200" x2="620" y2="200" stroke="#64748b" strokeWidth="2" />
+
+            <rect x="150" y="150" width="80" height="100" rx="4" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="190" y="265" fill="#ef4444" fontSize="10" textAnchor="middle">T₁ (hot)</text>
+
+            <rect x="470" y="150" width="80" height="100" rx="4" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="510" y="265" fill="#38bdf8" fontSize="10" textAnchor="middle">T₂ (cold)</text>
+
+            <line x1="230" y1="200" x2="470" y2="200" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="350" y="190" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Q/t = kAΔT/L</text>
+
+            <text x="350" y="285" fill="#cbd5e1" fontSize="9" textAnchor="middle">Fourier's Law: rate of heat flow ∝ area × temp gradient</text>
+
+          </svg>
+
+        );
+
+
+
+      case "stefan-boltzmann-law":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <circle cx="350" cy="180" r="100" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="3" />
+
+            <circle cx="350" cy="180" r="60" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="350" y="185" fill="#fff" fontSize="16" fontWeight="bold" textAnchor="middle">Black body</text>
+
+            <line x1="450" y1="180" x2="580" y2="80" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
+
+            <line x1="450" y1="180" x2="580" y2="180" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
+
+            <line x1="450" y1="180" x2="580" y2="280" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" strokeDasharray="5 3" />
+
+            <text x="580" y="65" fill="#fbbf24" fontSize="9">Radiation</text>
+
+            <rect x="150" y="310" width="400" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="335" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P = εσAT⁴  |  Stefan-Boltzmann constant: σ = 5.67×10⁻⁸ W/m²K⁴</text>
+
+          </svg>
+
+        );
+
+
+
+      case "kinetic-theory-gas":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <rect x="100" y="80" width="500" height="200" rx="10" fill="#38bdf8" fillOpacity="0.05" stroke="#38bdf8" strokeWidth="3" />
+
+            {[0,1,2,3,4].map(i => [0,1,2,3,4].map(j => (
+
+              <circle key={i+j} cx={150+i*90} cy={120+j*45} r="8" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="1.5" />
+
+            )))}
+
+            <text x="350" y="305" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">N molecules: random motion, elastic collisions</text>
+
+            <rect x="120" y="200" width="460" height="90" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="225" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Postulates: (1) Point masses (2) Random motion (3) No intermolecular forces</text>
+
+            <text x="350" y="245" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">(4) Elastic collisions (5) KE ∝ T (absolute)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "pressure-exerted-by-gas":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="100" width="500" height="180" rx="10" fill="#38bdf8" fillOpacity="0.05" stroke="#38bdf8" strokeWidth="3" />
+
+            <line x1="350" y1="100" x2="350" y2="280" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <text x="350" y="90" fill="#64748b" fontSize="11" textAnchor="middle">Wall</text>
+
+            <line x1="280" y1="190" x2="350" y2="190" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="290" y="175" fill="#38bdf8" fontSize="10">mv before</text>
+
+            <line x1="350" y1="200" x2="420" y2="200" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="360" y="185" fill="#10b981" fontSize="10">−mv after</text>
+
+            <text x="350" y="295" fill="#f59e0b" fontSize="10" textAnchor="middle">Δp = 2mv</text>
+
+            <rect x="120" y="315" width="460" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="340" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">P = (1/3)ρc² = (1/3)(Nm/V)c_rms² = nRT/V</text>
+
+          </svg>
+
+        );
+
+
+
+      case "boltzmann-rms-speed":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <line x1="100" y1="280" x2="620" y2="280" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="100" y1="300" x2="100" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="625" y="285" fill="#94a3b8" fontSize="10">v (speed)</text>
+
+            <text x="90" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">N(v)</text>
+
+            <path d="M 150 280 C 180 120, 300 40, 400 60 C 480 80, 540 200, 570 280" fill="none" stroke="#38bdf8" strokeWidth="3" />
+
+            <path d="M 180 280 C 200 160, 320 80, 410 100 C 480 120, 520 220, 540 280" fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="5 3" />
+
+            <text x="340" y="70" fill="#38bdf8" fontSize="10" fontWeight="bold">T₁ (higher T)</text>
+
+            <text x="370" y="130" fill="#10b981" fontSize="10" fontWeight="bold">T₂ (lower T)</text>
+
+            <rect x="120" y="300" width="460" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="322" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">c_rms = √(3k_BT/m) = √(3RT/M)</text>
+
+            <text x="350" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">Most probable: c_mp = √(2RT/M), Mean: c_mean = √(8RT/πM)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "heat-capacities-gases":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="80" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">C_p: Heat capacity at constant pressure</text>
+
+            <text x="350" y="100" fill="#cbd5e1" fontSize="10" textAnchor="middle">All heat goes to internal energy + work done</text>
+
+            <rect x="80" y="135" width="540" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="165" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">C_v: Heat capacity at constant volume</text>
+
+            <text x="350" y="185" fill="#cbd5e1" fontSize="10" textAnchor="middle">All heat goes to internal energy only (no work)</text>
+
+            <rect x="80" y="220" width="540" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="250" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">γ = C_p/C_v (ratio of specific heats)</text>
+
+            <text x="350" y="270" fill="#cbd5e1" fontSize="10" textAnchor="middle">Monoatomic: γ = 5/3 ≈ 1.67 | Diatomic: γ = 7/5 = 1.4</text>
+
+            <rect x="150" y="295" width="400" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="318" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Mayer's relation: C_p − C_v = R</text>
+
+            <text x="350" y="336" fill="#cbd5e1" fontSize="10" textAnchor="middle">R = universal gas constant = 8.314 J/(mol·K)</text>
+
+          </svg>
+
+        );
+
+
+
+
+      case "mirror-formula":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <path d="M 350 80 C 250 80, 250 280, 350 280" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="350" y="300" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Concave Mirror</text>
+
+            <circle cx="350" cy="180" r="5" fill="#f59e0b" />
+
+            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">P (pole)</text>
+
+            <line x1="350" y1="80" x2="350" y2="280" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+
+            <text x="350" y="70" fill="#a855f7" fontSize="10" textAnchor="middle">Principal axis</text>
+
+            <rect x="150" y="220" width="180" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="240" y="245" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">1/f = 1/v + 1/u</text>
+
+          </svg>
+
+        );
+
+
+
+      case "snells-law-refraction":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="350" y1="60" x2="350" y2="300" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <line x1="350" y1="60" x2="350" y2="300" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <path d="M 200 180 L 350 180 L 500 280" fill="none" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <path d="M 350 180 L 350 280" fill="none" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            <path d="M 230 150 A 30 30 0 0 1 245 168" fill="none" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="240" y="145" fill="#f59e0b" fontSize="11" fontWeight="bold">i</text>
+
+            <path d="M 350 210 A 30 30 0 0 1 335 225" fill="none" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="325" y="245" fill="#ef4444" fontSize="11" fontWeight="bold">r</text>
+
+            <rect x="150" y="310" width="400" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="335" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">n₁ sin i = n₂ sin r  |  n = c/v</text>
+
+          </svg>
+
+        );
+
+
+
+      case "total-internal-reflection":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <circle cx="350" cy="280" r="100" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2" />
+
+            <line x1="350" y1="280" x2="350" y2="80" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+
+            <path d="M 250 180 L 350 280 L 450 180" fill="none" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <path d="M 350 280 L 550 280" fill="none" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            <text x="350" y="310" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Critical angle: sin θ_c = n₂/n₁</text>
+
+            <text x="350" y="330" fill="#cbd5e1" fontSize="9" textAnchor="middle">For water-air: θ_c ≈ 48.6°</text>
+
+          </svg>
+
+        );
+
+
+
+      case "prism-minimum-deviation":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <polygon points="350,60 200,300 500,300" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="350" y="200" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Prism</text>
+
+            <text x="350" y="80" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">A (apex)</text>
+
+            <path d="M 150 200 L 250 200 L 350 250 L 450 200 L 550 200" fill="none" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <path d="M 350 250 L 350 300" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">δ_m (minimum deviation)</text>
+
+            <rect x="150" y="330" width="400" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="347" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">n = sin((A+δ_m)/2) / sin(A/2)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "chromatic-aberration":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <ellipse cx="350" cy="180" rx="50" ry="120" fill="none" stroke="#38bdf8" strokeWidth="3" />
+
+            <path d="M 150 180 L 350 180" stroke="#ef4444" strokeWidth="2" />
+
+            <path d="M 150 170 L 350 170" stroke="#f59e0b" strokeWidth="2" />
+
+            <path d="M 150 190 L 350 190" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="360" y="170" fill="#f59e0b" fontSize="10">Red focus</text>
+
+            <text x="360" y="180" fill="#ffd700" fontSize="10">Yellow focus</text>
+
+            <text x="360" y="190" fill="#38bdf8" fontSize="10">Blue focus</text>
+
+            <text x="350" y="330" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">Chromatic aberration: different λ focus at different points</text>
+
+          </svg>
+
+        );
+
+
+
+      case "gauss-law-application":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <circle cx="350" cy="180" r="60" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="350" y="185" fill="#fff" fontSize="12" fontWeight="bold" textAnchor="middle">Charge Q</text>
+
+            <circle cx="350" cy="180" r="120" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="5 3" />
+
+            <circle cx="350" cy="180" r="180" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="5 3" />
+
+            <line x1="350" y1="60" x2="350" y2="300" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="230" y1="180" x2="470" y2="180" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="350" y="330" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">∮E·dA = Q_enc/ε₀ → E = Q/(4πε₀r²) (spherical symmetry)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "equipotential-surfaces":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <circle cx="350" cy="180" r="20" fill="#ef4444" fillOpacity="0.4" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="350" y="185" fill="#fff" fontSize="10" fontWeight="bold" textAnchor="middle">+</text>
+
+            <circle cx="350" cy="180" r="80" fill="none" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="350" cy="180" r="140" fill="none" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="350" cy="180" r="200" fill="none" stroke="#38bdf8" strokeWidth="2" />
+
+            <line x1="350" y1="60" x2="350" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="230" y1="180" x2="470" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Equipotential surfaces ⊥ to electric field lines</text>
+
+          </svg>
+
+        );
+
+
+
+      case "potential-gradient":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="300" x2="620" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="625" y="305" fill="#94a3b8" fontSize="10">x (distance)</text>
+
+            <text x="90" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">V</text>
+
+            <line x1="100" y1="280" x2="600" y2="80" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <path d="M 300 200 L 320 160 L 340 200 Z" fill="#ef4444" />
+
+            <text x="350" y="165" fill="#ef4444" fontSize="11" fontWeight="bold">E = -dV/dx</text>
+
+            <text x="350" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">Potential gradient = negative of electric field strength</text>
+
+          </svg>
+
+        );
+
+
+
+      case "capacitor-combination-series":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="100" y1="180" x2="200" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="200" y1="120" x2="200" y2="240" stroke="#38bdf8" strokeWidth="3" />
+
+            <line x1="220" y1="120" x2="220" y2="240" stroke="#38bdf8" strokeWidth="3" />
+
+            <text x="210" y="270" fill="#38bdf8" fontSize="10" textAnchor="middle">C₁</text>
+
+            <line x1="220" y1="180" x2="300" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="300" y1="120" x2="300" y2="240" stroke="#10b981" strokeWidth="3" />
+
+            <line x1="320" y1="120" x2="320" y2="240" stroke="#10b981" strokeWidth="3" />
+
+            <text x="310" y="270" fill="#10b981" fontSize="10" textAnchor="middle">C₂</text>
+
+            <line x1="320" y1="180" x2="420" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <text x="210" y="100" fill="#f59e0b" fontSize="10" textAnchor="middle">V₁</text>
+
+            <text x="310" y="100" fill="#f59e0b" fontSize="10" textAnchor="middle">V₂</text>
+
+            <text x="350" y="320" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">1/C = 1/C₁ + 1/C₂  |  Q same, V divides</text>
+
+          </svg>
+
+        );
+
+
+
+      case "energy-charged-capacitor":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="100" y1="180" x2="220" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="220" y1="100" x2="220" y2="260" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <line x1="240" y1="100" x2="240" y2="260" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <text x="230" y="280" fill="#38bdf8" fontSize="11" textAnchor="middle">C</text>
+
+            <line x1="340" y1="180" x2="460" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="500" y1="140" x2="500" y2="220" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="510" y="150" fill="#10b981" fontSize="11">dW = V dq</text>
+
+            <rect x="200" y="310" width="300" height="40" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="335" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">U = ∫Vdq = ½QV = ½CV² = Q²/(2C)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "emf-internal-resistance":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="200" y="100" width="300" height="160" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="350" cy="150" r="30" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+
+            <text x="350" y="155" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">E</text>
+
+            <text x="350" y="220" fill="#cbd5e1" fontSize="10" textAnchor="middle">E: EMF, r: internal resistance</text>
+
+            <line x1="500" y1="150" x2="600" y2="150" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <rect x="600" y="130" width="80" height="40" rx="6" fill="#10b981" fillOpacity="0.3" stroke="#10b981" strokeWidth="2" />
+
+            <text x="640" y="155" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">R</text>
+
+            <text x="350" y="300" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">V = E - Ir  |  terminal voltage &lt; EMF</text>
+
+          </svg>
+
+        );
+
+
+
+      case "work-power-circuits":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <circle cx="200" cy="180" r="50" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="200" y="185" fill="#38bdf8" fontSize="10" textAnchor="middle">Battery</text>
+
+            <line x1="250" y1="180" x2="400" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <rect x="400" y="150" width="80" height="60" rx="6" fill="#10b981" fillOpacity="0.3" stroke="#10b981" strokeWidth="2" />
+
+            <text x="440" y="185" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">R</text>
+
+            <line x1="480" y1="180" x2="600" y2="180" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="600" y1="180" x2="600" y2="260" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="200" y1="260" x2="600" y2="260" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="200" y1="180" x2="200" y2="260" stroke="#64748b" strokeWidth="2" />
+
+            <rect x="180" y="300" width="340" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="322" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">W = VIt = I²Rt = V²t/R</text>
+
+            <text x="350" y="342" fill="#cbd5e1" fontSize="10" textAnchor="middle">P = VI = I²R = V²/R  (Joule's law)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "mass-energy-equivalence":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <circle cx="250" cy="180" r="80" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="3" />
+
+            <text x="250" y="185" fill="#ef4444" fontSize="20" fontWeight="bold" textAnchor="middle">m₀</text>
+
+            <line x1="350" y1="180" x2="450" y2="180" stroke="#f59e0b" strokeWidth="4" markerEnd="url(#arrow)" />
+
+            <text x="400" y="165" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">→</text>
+
+            <circle cx="550" cy="180" r="60" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="3" />
+
+            <text x="550" y="185" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">E</text>
+
+            <rect x="180" y="300" width="340" height="50" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="330" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">E = mc²</text>
+
+            <text x="350" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">Mass-energy equivalence: m in kg, c = 3×10⁸ m/s</text>
+
+          </svg>
+
+        );
+
+
+
+      case "binding-energy-nucleus":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <circle cx="250" cy="180" r="50" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="250" y="185" fill="#fff" fontSize="10" textAnchor="middle">Nucleus</text>
+
+            <circle cx="400" cy="100" r="15" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
+
+            <circle cx="420" cy="160" r="15" fill="#38bdf8" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="400" cy="220" r="15" fill="#ef4444" fillOpacity="0.5" stroke="#ef4444" strokeWidth="2" />
+
+            <circle cx="380" cy="280" r="15" fill="#38bdf8" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
+
+            <line x1="250" y1="180" x2="400" y2="200" stroke="#64748b" strokeWidth="1.5" strokeDasharray="4 3" />
+
+            <rect x="150" y="310" width="400" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="332" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Δm = Zm_p + Nm_n - M_nucleus</text>
+
+            <text x="350" y="350" fill="#cbd5e1" fontSize="9" textAnchor="middle">B.E. = Δm·c²  |  B.E./nucleon = stability indicator</text>
+
+          </svg>
+
+        );
+
+
+
+      case "nuclear-fission-fusion":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <text x="180" y="50" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">FISSION</text>
+
+            <circle cx="180" cy="100" r="40" fill="#ef4444" fillOpacity="0.3" stroke="#ef4444" strokeWidth="2.5" />
+
+            <text x="180" y="105" fill="#fff" fontSize="10" textAnchor="middle">²³⁵U</text>
+
+            <line x1="230" y1="100" x2="280" y2="100" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <circle cx="320" cy="80" r="20" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="320" cy="120" r="20" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
+
+            <circle cx="400" cy="80" r="20" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="400" cy="120" r="20" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="2" />
+
+            <text x="550" y="100" fill="#cbd5e1" fontSize="10">+ 2-3 n + Energy</text>
+
+            <text x="520" y="200" fill="#f59e0b" fontSize="10" fontWeight="bold">E = Δm·c²</text>
+
+            <line x1="100" y1="240" x2="600" y2="240" stroke="#64748b" strokeWidth="2" />
+
+            <text x="180" y="270" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">FUSION</text>
+
+            <circle cx="150" cy="310" r="15" fill="#38bdf8" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
+
+            <circle cx="200" cy="310" r="15" fill="#10b981" fillOpacity="0.5" stroke="#10b981" strokeWidth="2" />
+
+            <text x="175" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">²H + ³H → ⁴He + n</text>
+
+            <text x="450" y="310" fill="#cbd5e1" fontSize="9">Releases more energy per unit mass</text>
+
+          </svg>
+
+        );
+
+
+
+      case "ideal-gas-pv-graph":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="300" x2="640" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="645" y="305" fill="#94a3b8" fontSize="10">V</text>
+
+            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">P</text>
+
+            <path d="M 150 250 C 250 250, 300 150, 550 150" fill="none" stroke="#38bdf8" strokeWidth="3" />
+
+            <path d="M 150 280 C 300 280, 350 200, 550 200" fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="5 3" />
+
+            <text x="560" y="140" fill="#38bdf8" fontSize="10">T₁ (hotter)</text>
+
+            <text x="560" y="200" fill="#10b981" fontSize="10">T₂ (cooler)</text>
+
+            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="343" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">PV = nRT  (isotherms are hyperbolas)</text>
+
+          </svg>
+
+        );
+
+
+
+
+      case "direction-cosines":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+
+            <circle cx="150" cy="300" r="5" fill="#64748b" />
+
+            <line x1="150" y1="300" x2="450" y2="100" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
+
+            <text x="380" y="180" fill="#38bdf8" fontSize="14" fontWeight="bold">r</text>
+
+            <line x1="150" y1="300" x2="450" y2="300" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <line x1="450" y1="300" x2="450" y2="100" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+
+            <path d="M 210 300 A 60 60 0 0 1 215 250" fill="none" stroke="#10b981" strokeWidth="2" />
+
+            <text x="220" y="265" fill="#10b981" fontSize="11" fontWeight="bold">α</text>
+
+            <path d="M 150 240 A 60 60 0 0 0 105 235" fill="none" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="95" y="235" fill="#ef4444" fontSize="11" fontWeight="bold">β</text>
+
+            <line x1="150" y1="300" x2="150" y2="100" stroke="#64748b" strokeWidth="1.5" />
+
+            <line x1="150" y1="300" x2="500" y2="300" stroke="#64748b" strokeWidth="1.5" />
+
+            <line x1="450" y1="300" x2="450" y2="100" stroke="#64748b" strokeWidth="1.5" />
+
+            <rect x="180" y="330" width="340" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="347" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">l² + m² + n² = 1  (direction cosines)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "lhospitals-rule":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="60" width="500" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Form: lim(x→a) f(x)/g(x) → 0/0 or ∞/∞</text>
+
+            <text x="350" y="125" fill="#cbd5e1" fontSize="11" textAnchor="middle">Apply L'Hôpital: replace with f'(x)/g'(x)</text>
+
+            <rect x="100" y="155" width="500" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="195" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Example: lim(x→0) sin x / x = lim(x→0) cos x / 1 = 1</text>
+
+            <text x="350" y="220" fill="#cbd5e1" fontSize="11" textAnchor="middle">Repeat if still indeterminate: second derivative, etc.</text>
+
+            <rect x="150" y="255" width="400" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="280" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">lim(x→a) f(x)/g(x) = lim(x→a) f'(x)/g'(x)</text>
+
+            <text x="350" y="298" fill="#cbd5e1" fontSize="9" textAnchor="middle">Apply repeatedly until determinate form obtained</text>
+
+          </svg>
+
+        );
+
+
+
+      case "tangent-normal-curve":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <path d="M 150 280 C 300 80, 400 80, 550 200" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <circle cx="350" cy="130" r="6" fill="#ef4444" />
+
+            <line x1="250" y1="230" x2="450" y2="80" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <text x="460" y="75" fill="#10b981" fontSize="11" fontWeight="bold">Tangent</text>
+
+            <line x1="350" y1="130" x2="430" y2="80" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            <text x="440" y="70" fill="#f59e0b" fontSize="11" fontWeight="bold">Normal</text>
+
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Slope of tangent = dy/dx | Slope of normal = -dx/dy</text>
+
+          </svg>
+
+        );
+
+
+
+      case "monotonicity-extrema":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <path d="M 120 280 Q 250 50, 350 280 T 580 100" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <circle cx="250" cy="80" r="6" fill="#10b981" />
+
+            <text x="250" y="65" fill="#10b981" fontSize="10" textAnchor="middle">Local max</text>
+
+            <circle cx="350" cy="280" r="6" fill="#ef4444" />
+
+            <text x="350" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Local min</text>
+
+            <rect x="150" y="325" width="400" height="35" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="348" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">f'(x) &gt; 0 increasing | f'(x) &lt; 0 decreasing | f'(c)=0 critical point</text>
+
+          </svg>
+
+        );
+
+
+
+      case "integration-by-parts":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="150" y="140" width="400" height="80" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="180" fill="#10b981" fontSize="18" fontWeight="bold" textAnchor="middle">∫u dv = uv - ∫v du</text>
+
+            <text x="350" y="210" fill="#cbd5e1" fontSize="11" textAnchor="middle">ILATE rule: Inverse &gt; Logarithmic &gt; Algebraic &gt; Trig &gt; Exponential</text>
+
+            <text x="350" y="260" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Example: ∫x·eˣ dx = x·eˣ - eˣ + C</text>
+
+            <text x="350" y="300" fill="#cbd5e1" fontSize="10" textAnchor="middle">Choose u=x (simplifies on differentiation), dv=eˣdx</text>
+
+          </svg>
+
+        );
+
+
+
+      case "area-between-curves":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="665" y="305" fill="#94a3b8" fontSize="10">x</text>
+
+            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">y</text>
+
+            <path d="M 150 250 C 250 100, 350 100, 450 200" fill="none" stroke="#38bdf8" strokeWidth="3" />
+
+            <path d="M 150 280 C 250 180, 350 180, 450 260" fill="none" stroke="#10b981" strokeWidth="3" />
+
+            <path d="M 150 250 L 150 280 L 450 260 L 450 200 Z" fill="#a855f7" fillOpacity="0.15" />
+
+            <text x="140" y="275" fill="#a855f7" fontSize="10">a</text>
+
+            <text x="455" y="255" fill="#a855f7" fontSize="10">b</text>
+
+            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="343" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Area = ∫ₐᵇ [f(x) - g(x)] dx</text>
+
+          </svg>
+
+        );
+
+
+
+      case "newton-raphson-method":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="280" x2="660" y2="280" stroke="#64748b" strokeWidth="2" />
+
+            <line x1="100" y1="300" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="665" y="285" fill="#94a3b8" fontSize="10">x</text>
+
+            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">f(x)</text>
+
+            <path d="M 120 250 C 250 320, 350 50, 500 200 C 580 280, 640 150, 660 180" fill="none" stroke="#38bdf8" strokeWidth="3" />
+
+            <circle cx="300" cy="180" r="6" fill="#ef4444" />
+
+            <line x1="300" y1="180" x2="200" y2="280" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <circle cx="200" cy="280" r="5" fill="#10b981" />
+
+            <text x="200" y="300" fill="#10b981" fontSize="10" textAnchor="middle">Root</text>
+
+            <rect x="180" y="315" width="340" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="340" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "pearson-skewness":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="80" y="60" width="540" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Pearson's First Coefficient: Sk = (Mean - Mode) / σ</text>
+
+            <text x="350" y="130" fill="#cbd5e1" fontSize="10" textAnchor="middle">Measures asymmetry of distribution</text>
+
+            <rect x="80" y="185" width="540" height="100" rx="10" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="225" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Pearson's Second Coefficient: Sk = 3(Mean - Median) / σ</text>
+
+            <text x="350" y="255" fill="#cbd5e1" fontSize="10" textAnchor="middle">Used when mode is not well-defined</text>
+
+            <rect x="80" y="305" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="335" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Sk &gt; 0 right skewed | Sk &lt; 0 left skewed | Sk = 0 symmetric</text>
+
+          </svg>
+
+        );
+
+
+
+      case "parallelogram-law-forces":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <polygon points="200,280 400,120 600,280 400,440" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <line x1="200" y1="280" x2="400" y2="120" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
+
+            <line x1="200" y1="280" x2="600" y2="280" stroke="#10b981" strokeWidth="4" markerEnd="url(#arrow)" />
+
+            <line x1="200" y1="280" x2="400" y2="120" stroke="#f59e0b" strokeWidth="3.5" markerEnd="url(#arrow)" />
+
+            <line x1="400" y1="120" x2="600" y2="280" stroke="#a855f7" strokeWidth="3.5" markerEnd="url(#arrow)" />
+
+            <text x="180" y="270" fill="#38bdf8" fontSize="12" fontWeight="bold">P</text>
+
+            <text x="610" y="280" fill="#10b981" fontSize="12" fontWeight="bold">Q</text>
+
+            <text x="400" y="105" fill="#a855f7" fontSize="12" fontWeight="bold">R (resultant)</text>
+
+            <rect x="200" y="340" width="300" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="365" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">R² = P² + Q² + 2PQ cos θ</text>
+
+          </svg>
+
+        );
+
+
+
+      case "amgm-relation":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="150" fill="#10b981" fontSize="18" fontWeight="bold" textAnchor="middle">AM ≥ GM ≥ HM</text>
+
+            <text x="350" y="190" fill="#f59e0b" fontSize="14" textAnchor="middle">(a+b)/2 ≥ √(ab) ≥ 2/(1/a + 1/b)</text>
+
+            <text x="350" y="230" fill="#cbd5e1" fontSize="11" textAnchor="middle">Equality holds when a = b</text>
+
+            <text x="350" y="270" fill="#38bdf8" fontSize="12" textAnchor="middle">For n numbers: arithmetic mean ≥ geometric mean</text>
+
+            <text x="350" y="300" fill="#cbd5e1" fontSize="10" textAnchor="middle">Useful for finding minimum/maximum values</text>
+
+          </svg>
+
+        );
+
+
+
+      case "quadratic-formula-proof":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="50" width="500" height="260" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="90" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Proof: Completing the Square</text>
+
+            <text x="130" y="125" fill="#cbd5e1" fontSize="12">ax² + bx + c = 0</text>
+
+            <text x="130" y="155" fill="#cbd5e1" fontSize="12">x² + (b/a)x = -c/a</text>
+
+            <text x="130" y="185" fill="#cbd5e1" fontSize="12">x² + (b/a)x + (b/2a)² = (b²-4ac)/4a²</text>
+
+            <text x="130" y="215" fill="#cbd5e1" fontSize="12">(x + b/2a)² = (b²-4ac)/4a²</text>
+
+            <text x="130" y="245" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">x = (-b ± √(b²-4ac))/2a</text>
+
+            <text x="350" y="290" fill="#f59e0b" fontSize="11" textAnchor="middle">Discriminant D = b²-4ac determines nature of roots</text>
+
+          </svg>
+
+        );
+
+
+
+      case "complex-number-properties":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="350" y1="320" x2="350" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="665" y="205" fill="#94a3b8" fontSize="10">Real</text>
+
+            <text x="345" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">Imag</text>
+
+            <circle cx="450" cy="160" r="8" fill="#38bdf8" />
+
+            <text x="465" y="155" fill="#38bdf8" fontSize="11">z = a+bi</text>
+
+            <line x1="350" y1="200" x2="450" y2="160" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="390" y="185" fill="#f59e0b" fontSize="10">|z| = √(a²+b²)</text>
+
+            <text x="350" y="300" fill="#10b981" fontSize="12" textAnchor="middle">Conjugate: z̄ = a-bi</text>
+
+            <rect x="200" y="310" width="300" height="45" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+
+            <text x="350" y="330" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">z·z̄ = |z|² = a² + b²</text>
+
+            <text x="350" y="348" fill="#cbd5e1" fontSize="9" textAnchor="middle">|z₁·z₂| = |z₁|·|z₂|, arg(z₁/z₂) = arg z₁ - arg z₂</text>
+
+          </svg>
+
+        );
+
+
+
+
+      case "curve-sketching-parabola":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <path d="M 150 280 Q 350 50, 550 280" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+
+            <line x1="350" y1="50" x2="350" y2="280" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+
+            <circle cx="350" cy="280" r="6" fill="#ef4444" />
+
+            <text x="350" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Vertex</text>
+
+            <text x="550" y="270" fill="#38bdf8" fontSize="11" fontWeight="bold">x-intercepts</text>
+
+            <rect x="180" y="325" width="340" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="348" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">x = (-b ± √(b²-4ac))/2a</text>
+
+          </svg>
+
+        );
+
+
+
+      case "logarithm-properties-proof":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="60" width="500" height="240" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Logarithm Properties</text>
+
+            <text x="140" y="140" fill="#cbd5e1" fontSize="12">logₐ(mn) = logₐm + logₐn</text>
+
+            <text x="140" y="175" fill="#cbd5e1" fontSize="12">logₐ(m/n) = logₐm - logₐn</text>
+
+            <text x="140" y="210" fill="#cbd5e1" fontSize="12">logₐ(mⁿ) = n·logₐm</text>
+
+            <text x="140" y="245" fill="#cbd5e1" fontSize="12">logₐm = log m / log a (change of base)</text>
+
+            <text x="140" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">Proof: Let logₐm = x, logₐn = y</text>
+
+          </svg>
+
+        );
+
+
+
+      case "arithmetic-geometric-mean":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="100" width="500" height="150" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="140" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">AM = (a + b)/2  |  GM = √(ab)</text>
+
+            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">AM ≥ GM (equality when a = b)</text>
+
+            <text x="350" y="210" fill="#f59e0b" fontSize="12" textAnchor="middle">Example: AM = 6, GM = 4 for {"{2, 8}"}</text>
+
+            <rect x="150" y="270" width="400" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="300" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">For n numbers: (a₁+...+aₙ)/n ≥ ∜(a₁...aₙ)</text>
+
+            <text x="350" y="330" fill="#cbd5e1" fontSize="10" textAnchor="middle">Used to find minimum/maximum values in optimization</text>
+
+          </svg>
+
+        );
+
+
+
+      case "permutation-combination":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="80" y="50" width="250" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="205" y="90" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">PERMUTATION</text>
+
+            <text x="205" y="120" fill="#cbd5e1" fontSize="11" textAnchor="middle">Order matters!</text>
+
+            <text x="205" y="150" fill="#cbd5e1" fontSize="11" textAnchor="middle">nPr = n!/(n-r)!</text>
+
+            <rect x="370" y="50" width="250" height="120" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2" />
+
+            <text x="495" y="90" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">COMBINATION</text>
+
+            <text x="495" y="120" fill="#cbd5e1" fontSize="11" textAnchor="middle">Order does NOT matter</text>
+
+            <text x="495" y="150" fill="#cbd5e1" fontSize="11" textAnchor="middle">nCr = n!/(r!(n-r)!)</text>
+
+            <text x="350" y="210" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Example: 5 students, choose 3</text>
+
+            <text x="350" y="240" fill="#cbd5e1" fontSize="11" textAnchor="middle">P(5,3) = 60 ways (ordered)</text>
+
+            <text x="350" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">C(5,3) = 10 ways (unordered)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "binomial-theorem":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="60" width="500" height="200" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">(a+b)ⁿ = Σ(nCk)·aⁿ⁻ᵏ·bᵏ</text>
+
+            <text x="350" y="140" fill="#cbd5e1" fontSize="11" textAnchor="middle">nCk = n!/(k!(n-k)!) = coefficients</text>
+
+            <text x="350" y="180" fill="#f59e0b" fontSize="12" textAnchor="middle">Pascal's triangle gives coefficients</text>
+
+            <text x="350" y="210" fill="#38bdf8" fontSize="11" textAnchor="middle">1: (a+b)¹ → 1 1</text>
+
+            <text x="350" y="235" fill="#38bdf8" fontSize="11" textAnchor="middle">2: (a+b)² → 1 2 1</text>
+
+            <text x="350" y="260" fill="#38bdf8" fontSize="11" textAnchor="middle">3: (a+b)³ → 1 3 3 1</text>
+
+          </svg>
+
+        );
+
+
+
+      case "complex-number-geometric":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="350" y1="320" x2="350" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <text x="665" y="205" fill="#94a3b8" fontSize="10">Real axis</text>
+
+            <text x="350" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">Imaginary axis</text>
+
+            <circle cx="350" cy="200" r="120" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+
+            <line x1="350" y1="200" x2="470" y2="120" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+
+            <circle cx="470" cy="120" r="6" fill="#38bdf8" />
+
+            <text x="485" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold">z = r(cos θ + i sin θ)</text>
+
+            <path d="M 420 200 A 70 70 0 0 0 470 120" fill="none" stroke="#10b981" strokeWidth="2" />
+
+            <text x="430" y="175" fill="#10b981" fontSize="11">θ</text>
+
+            <text x="350" y="290" fill="#cbd5e1" fontSize="10" textAnchor="middle">Argand diagram: complex plane</text>
+
+          </svg>
+
+        );
+
+
+
+      case "de-moivres-theorem":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="150" y="120" width="400" height="120" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="170" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">[r(cos θ + i sin θ)]ⁿ = rⁿ(cos nθ + i sin nθ)</text>
+
+            <text x="350" y="210" fill="#cbd5e1" fontSize="12" textAnchor="middle">De Moivre's Theorem: raises complex number to power n</text>
+
+            <rect x="100" y="260" width="500" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="295" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Applications: finding roots of unity</text>
+
+            <text x="350" y="320" fill="#cbd5e1" fontSize="11" textAnchor="middle">nth roots: z^(1/n) = r^(1/n)[cos((θ+2kπ)/n) + i sin((θ+2kπ)/n)]</text>
+
+          </svg>
+
+        );
+
+
+
+      case "quadratic-equation-nature-roots":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="80" y="50" width="540" height="80" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2" />
+
+            <text x="350" y="90" fill="#ef4444" fontSize="13" fontWeight="bold" textAnchor="middle">D &gt; 0: Two distinct real roots (graph cuts x-axis twice)</text>
+
+            <rect x="80" y="145" width="540" height="80" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="185" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">D = 0: Equal real roots (graph touches x-axis at one point)</text>
+
+            <rect x="80" y="240" width="540" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="280" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">D &lt; 0: Complex conjugate roots (graph does not cut x-axis)</text>
+
+            <rect x="180" y="335" width="340" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="352" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">D = b² - 4ac</text>
+
+          </svg>
+
+        );
+
+
+
+      case "sequence-series-ap-gp-hp":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="85" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Arithmetic Progression (AP): a, a+d, a+2d, ...</text>
+
+            <text x="350" y="110" fill="#cbd5e1" fontSize="10" textAnchor="middle">nth term: aₙ = a + (n-1)d | Sum: Sₙ = n/2[2a+(n-1)d]</text>
+
+            <rect x="80" y="135" width="540" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="170" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Geometric Progression (GP): a, ar, ar², ...</text>
+
+            <text x="350" y="195" fill="#cbd5e1" fontSize="10" textAnchor="middle">nth term: aₙ = arⁿ⁻¹ | Sum: Sₙ = a(1-rⁿ)/(1-r) | S∞ = a/(1-r) if |r| &lt; 1</text>
+
+            <rect x="80" y="220" width="540" height="70" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="255" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Harmonic Progression (HP): reciprocals form AP</text>
+
+            <rect x="150" y="305" width="400" height="50" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+
+            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">AM · GM = mean² | 1/a + 1/b = 2/AM (AM-GM-HM relation)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "probability-basic-theorems":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="50" width="500" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="90" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Addition Theorem: P(A∪B) = P(A) + P(B) - P(A∩B)</text>
+
+            <text x="350" y="120" fill="#cbd5e1" fontSize="10" textAnchor="middle">For mutually exclusive events: P(A∪B) = P(A) + P(B)</text>
+
+            <rect x="100" y="170" width="500" height="100" rx="10" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="210" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Multiplication Theorem: P(A∩B) = P(A)·P(B|A)</text>
+
+            <text x="350" y="240" fill="#cbd5e1" fontSize="10" textAnchor="middle">For independent events: P(A∩B) = P(A)·P(B)</text>
+
+            <rect x="180" y="290" width="340" height="60" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="350" y="320" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P(not E) = 1 - P(E)</text>
+
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Total probability: ΣP(Eᵢ) = 1</text>
+
+          </svg>
+
+        );
+
+
+
+
+      case "line-equation-forms":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="300" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="80" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Forms of a Line</text>
+
+            <text x="120" y="120" fill="#cbd5e1" fontSize="12">• Slope-intercept: y = mx + c</text>
+
+            <text x="120" y="150" fill="#cbd5e1" fontSize="12">• Point-slope: y - y₁ = m(x - x₁)</text>
+
+            <text x="120" y="180" fill="#cbd5e1" fontSize="12">• Two-point form: (y-y₁)/(x-x₁) = (y₂-y₁)/(x₂-x₁)</text>
+
+            <text x="120" y="210" fill="#cbd5e1" fontSize="12">• Intercept form: x/a + y/b = 1</text>
+
+            <text x="120" y="240" fill="#cbd5e1" fontSize="12">• Normal form: x cos α + y sin α = p</text>
+
+            <text x="120" y="270" fill="#cbd5e1" fontSize="12">• General form: ax + by + c = 0</text>
+
+            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">m = tan θ = slope, p = perpendicular from origin</text>
+
+          </svg>
+
+        );
+
+
+
+      case "angle-bisector-formula":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="140" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Angle Bisector Formula</text>
+
+            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">(a₁±a₂)x + (b₁±b₂)y + (c₁±c₂) = 0</text>
+
+            <text x="350" y="220" fill="#f59e0b" fontSize="11" textAnchor="middle">+ for obtuse, - for acute angle bisector</text>
+
+          </svg>
+
+        );
+
+
+
+      case "pair-of-lines-condition":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+
+            <text x="350" y="140" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Pair of Straight Lines</text>
+
+            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">ax² + 2hxy + by² + 2gx + 2fy + c = 0</text>
+
+            <text x="350" y="220" fill="#f59e0b" fontSize="11" textAnchor="middle">Condition: abc + 2fgh - af² - bg² - ch² = 0</text>
+
+          </svg>
+
+        );
+
+
+
+      case "direction-cosines":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <line x1="100" y1="300" x2="600" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="300" x2="100" y2="50" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <line x1="100" y1="300" x2="300" y2="100" stroke="#38bdf8" strokeWidth="3.5" markerEnd="url(#arrow)" />
+
+            <circle cx="200" cy="200" r="3" fill="#ef4444" />
+
+            <path d="M 140 300 A 40 40 0 0 1 145 260" fill="none" stroke="#f59e0b" strokeWidth="2" />
+
+            <text x="150" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">α</text>
+
+            <path d="M 100 260 A 40 40 0 0 0 140 255" fill="none" stroke="#10b981" strokeWidth="2" />
+
+            <text x="115" y="250" fill="#10b981" fontSize="11" fontWeight="bold">β</text>
+
+            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="343" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">cos²α + cos²β + cos²γ = 1</text>
+
+          </svg>
+
+        );
+
+
+
+      case "bayes-theorem-proof":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="60" width="500" height="180" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Bayes' Theorem</text>
+
+            <text x="350" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">P(Aᵢ|B) = P(B|Aᵢ)·P(Aᵢ) / Σ P(B|Aⱼ)·P(Aⱼ)</text>
+
+            <text x="350" y="190" fill="#cbd5e1" fontSize="11" textAnchor="middle">Used to find conditional probability after evidence</text>
+
+            <text x="350" y="230" fill="#f59e0b" fontSize="11" textAnchor="middle">Also called inverse probability theorem</text>
+
+            <text x="350" y="270" fill="#cbd5e1" fontSize="10" textAnchor="middle">Applications: medical testing, machine learning, statistics</text>
+
+          </svg>
+
+        );
+
+
+
+      case "numerical-integration":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Numerical Integration Methods</text>
+
+            <text x="150" y="150" fill="#f59e0b" fontSize="12" fontWeight="bold">Trapezoidal Rule:</text>
+
+            <text x="150" y="175" fill="#cbd5e1" fontSize="11">∫ₐᵇ f(x)dx ≈ (h/2)[f₀ + 2(f₁+...+fₙ₋₁) + fₙ]</text>
+
+            <text x="150" y="210" fill="#38bdf8" fontSize="12" fontWeight="bold">Simpson's 1/3 Rule:</text>
+
+            <text x="150" y="235" fill="#cbd5e1" fontSize="11">∫ₐᵇ f(x)dx ≈ (h/3)[f₀ + 4(f₁+f₃+...) + 2(f₂+f₄+...) + fₙ]</text>
+
+            <text x="350" y="280" fill="#a855f7" fontSize="11" textAnchor="middle">Simpson's rule is more accurate (error ∝ h⁴)</text>
+
+          </svg>
+
+        );
+
+
+
+      case "separable-differential-equation":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="80" width="500" height="200" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+
+            <text x="350" y="120" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Separable Differential Equation</text>
+
+            <text x="350" y="170" fill="#10b981" fontSize="13" textAnchor="middle">dy/dx = g(x)·h(y)</text>
+
+            <text x="350" y="210" fill="#f59e0b" fontSize="12" textAnchor="middle">Separate: dy/h(y) = g(x)dx</text>
+
+            <text x="350" y="250" fill="#cbd5e1" fontSize="12" textAnchor="middle">Integrate: ∫dy/h(y) = ∫g(x)dx</text>
+
+            <text x="350" y="290" fill="#a855f7" fontSize="11" textAnchor="middle">Example: dy/dx = xy → ln|y| = x²/2 + C</text>
+
+          </svg>
+
+        );
+
+
+
+      case "linear-differential-equation":
+
+        return (
+
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+
+            <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+
+            <text x="350" y="100" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Linear Differential Equation</text>
+
+            <text x="350" y="150" fill="#38bdf8" fontSize="13" textAnchor="middle">dy/dx + P(x)y = Q(x)</text>
+
+            <text x="350" y="190" fill="#f59e0b" fontSize="12" textAnchor="middle">Integrating Factor: IF = e^∫P(x)dx</text>
+
+            <text x="350" y="230" fill="#cbd5e1" fontSize="12" textAnchor="middle">Solution: y·IF = ∫Q(x)·IF dx + C</text>
+
+            <text x="350" y="270" fill="#a855f7" fontSize="11" textAnchor="middle">First-order linear ODE - standard method</text>
+
+          </svg>
+
+        );
+
+
+case "avogadros-law-deduction":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Avogadro's Law & Applications</text>
+
+            <rect x="100" y="110" width="240" height="120" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="220" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Molecular Mass</text>
+
+            <text x="220" y="175" fill="#cbd5e1" fontSize="12" textAnchor="middle">M = 2 × Vapor Density</text>
+
+            <text x="220" y="200" fill="#cbd5e1" fontSize="11" textAnchor="middle">or M = m/n where n = V/22.4</text>
+
+            <rect x="360" y="110" width="240" height="120" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="480" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Number of Particles</text>
+
+            <text x="480" y="175" fill="#cbd5e1" fontSize="12" textAnchor="middle">N = n × N_A = m/M × 6.022×10²³</text>
+
+            <text x="480" y="200" fill="#cbd5e1" fontSize="11" textAnchor="middle">At STP: 1 mole = 22.4 L</text>
+
+            <rect x="150" y="260" width="400" height="80" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="295" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Avogadro's Law: Equal volumes contain equal molecules</text>
+
+            <text x="350" y="320" fill="#cbd5e1" fontSize="11" textAnchor="middle">V₁/n₁ = V₂/n₂ at constant T and P</text>
+
+          </svg>
+
+        );
+
+      case "heisenberg-uncertainty":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="60" width="540" height="280" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="100" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Heisenberg's Uncertainty Principle</text>
+
+            <rect x="150" y="140" width="400" height="80" rx="8" fill="#a855f7" fillOpacity="0.2" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="175" fill="#c084fc" fontSize="18" fontWeight="bold" textAnchor="middle">Δx · Δp ≥ ℏ/2</text>
+
+            <text x="350" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">where ℏ = h/2π = 1.055 × 10⁻³⁴ J·s</text>
+
+            <rect x="120" y="250" width="460" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="285" fill="#38bdf8" fontSize="13" textAnchor="middle">Electron position and momentum cannot be measured simultaneously with arbitrary precision</text>
+
+            <text x="350" y="310" fill="#f59e0b" fontSize="11" textAnchor="middle">→ Replaced Bohr orbits with probability orbitals</text>
+
+          </svg>
+
+        );
+
+      case "quantum-numbers":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Quantum Numbers Table</text>
+
+            {[
+
+              {q:"n",name:"Principal",desc:"Energy level, shell size",val:"1,2,3...",color:"#38bdf8"},
+
+              {q:"l",name:"Azimuthal",desc:"Subshell shape (s,p,d,f)",val:"0 to n-1",color:"#10b981"},
+
+              {q:"m_l",name:"Magnetic",desc:"Orbital orientation in space",val:"-l to +l",color:"#f59e0b"},
+
+              {q:"m_s",name:"Spin",desc:"Electron spin direction",val:"+½ or -½",color:"#ef4444"}
+
+            ].map((qn,i) => (
+
+              <g key={i}>
+
+                <rect x="90+i*155" y="110" width="140" height="180" rx="8" fill={qn.color} fillOpacity="0.15" stroke={qn.color} strokeWidth="2"/>
+
+                <text x="160+i*155" y="145" fill={qn.color} fontSize="28" fontWeight="bold" textAnchor="middle">{qn.q}</text>
+
+                <text x="160+i*155" y="175" fill="#cbd5e1" fontSize="11" fontWeight="bold" textAnchor="middle">{qn.name}</text>
+
+                <text x="160+i*155" y="205" fill="#cbd5e1" fontSize="10" textAnchor="middle">{qn.desc}</text>
+
+                <text x="160+i*155" y="240" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">{qn.val}</text>
+
+              </g>
+
+            ))}
+
+          </svg>
+
+        );
+
+      case "vsepr-theory":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">VSEPR Molecular Shapes</text>
+
+            {[
+
+              {shape:"Linear",angle:"180°",bp:2,ex:"BeF₂",color:"#38bdf8"},
+
+              {shape:"Trigonal Planar",angle:"120°",bp:3,ex:"BF₃",color:"#10b981"},
+
+              {shape:"Tetrahedral",angle:"109.5°",bp:4,ex:"CH₄",color:"#f59e0b"},
+
+              {shape:"Trigonal Pyramidal",angle:"107°",bp:4,ex:"NH₃",color:"#a855f7"},
+
+              {shape:"Bent/V-shaped",angle:"104.5°",bp:4,ex:"H₂O",color:"#ef4444"}
+
+            ].map((m,i) => (
+
+              <g key={i}>
+
+                <rect x="80+i*125" y="110" width="110" height="150" rx="8" fill={m.color} fillOpacity="0.1" stroke={m.color} strokeWidth="2"/>
+
+                <text x="135+i*125" y="140" fill={m.color} fontSize="11" fontWeight="bold" textAnchor="middle">{m.shape}</text>
+
+                <circle cx="135+i*125" cy="180" r="12" fill={m.color} fillOpacity="0.3" stroke={m.color} strokeWidth="2"/>
+
+                <text x="135+i*125" y="220" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">{m.angle}</text>
+
+                <text x="135+i*125" y="240" fill="#cbd5e1" fontSize="9" textAnchor="middle">{m.ex}</text>
+
+              </g>
+
+            ))}
+
+            <rect x="150" y="280" width="400" height="60" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="315" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">VSEPR: Valence shell electron pair repulsion determines geometry</text>
+
+          </svg>
+
+        );
+
+      case "hybridization-spspsp2spp3":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Hybridization Types</text>
+
+            {[
+
+              {type:"sp",mix:"s + p",angle:"180°",geom:"Linear",ex:"BeCl₂",color:"#38bdf8"},
+
+              {type:"sp²",mix:"s + 2p",angle:"120°",geom:"Trigonal",ex:"BF₃",color:"#10b981"},
+
+              {type:"sp³",mix:"s + 3p",angle:"109.5°",geom:"Tetrahedral",ex:"CH₄",color:"#f59e0b"}
+
+            ].map((h,i) => (
+
+              <g key={i}>
+
+                <rect x="100+i*190" y="110" width="170" height="180" rx="8" fill={h.color} fillOpacity="0.15" stroke={h.color} strokeWidth="2"/>
+
+                <text x="185+i*190" y="145" fill={h.color} fontSize="20" fontWeight="bold" textAnchor="middle">{h.type}</text>
+
+                <text x="185+i*190" y="175" fill="#cbd5e1" fontSize="11" textAnchor="middle">{h.mix} hybridization</text>
+
+                <text x="185+i*190" y="210" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Angle: {h.angle}</text>
+
+                <text x="185+i*190" y="240" fill="#38bdf8" fontSize="11" textAnchor="middle">{h.geom}</text>
+
+                <text x="185+i*190" y="265" fill="#a855f7" fontSize="10" textAnchor="middle">Ex: {h.ex}</text>
+
+              </g>
+
+            ))}
+
+          </svg>
+
+        );
+
+      case "inductive-resonance-effect":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Inductive vs Resonance Effects</text>
+
+            <rect x="100" y="110" width="230" height="140" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="215" y="145" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">+I / -I Effect</text>
+
+            <text x="215" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Through σ-bonds</text>
+
+            <text x="215" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">Permanent effect</text>
+
+            <text x="215" y="230" fill="#cbd5e1" fontSize="11" textAnchor="middle">Distance dependent</text>
+
+            <rect x="370" y="110" width="230" height="140" rx="8" fill="#a855f7" fillOpacity="0.1" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="485" y="145" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">+R / -R Effect</text>
+
+            <text x="485" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Through π-system</text>
+
+            <text x="485" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">Resonance stabilization</text>
+
+            <rect x="150" y="270" width="400" height="80" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="305" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Key: Inductive=σ-electrons | Resonance=π-electrons delocalized</text>
+
+          </svg>
+
+        );
+
+      case "redox-balancing-half-reaction":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#ef4444" fontSize="16" fontWeight="bold" textAnchor="middle">Redox Balancing - Ion-Electron Method</text>
+
+            <rect x="120" y="110" width="200" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="220" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Oxidation Half</text>
+
+            <text x="220" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Loss of e⁻</text>
+
+            <text x="220" y="205" fill="#f59e0b" fontSize="12" textAnchor="middle">Fe²⁺ → Fe³⁺ + e⁻</text>
+
+            <rect x="380" y="110" width="200" height="120" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="480" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Reduction Half</text>
+
+            <text x="480" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Gain of e⁻</text>
+
+            <text x="480" y="205" fill="#f59e0b" fontSize="11" textAnchor="middle">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</text>
+
+            <rect x="150" y="260" width="400" height="90" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="290" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Steps:</text>
+
+            <text x="180" y="315" fill="#cbd5e1" fontSize="10">1. Separate half-reactions | 2. Balance atoms | 3. Balance charge with e⁻ | 4. Equalize electrons</text>
+
+          </svg>
+
+        );
+
+      case "kinetic-theory-gas-derive":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Kinetic Theory of Gases Derivation</text>
+
+            <rect x="120" y="110" width="460" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Postulates: Point masses, random motion, elastic collisions</text>
+
+            <rect x="120" y="190" width="460" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="225" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">PV = (1/3)Nm&lt;c_rms²&gt; derivation</text>
+
+            <text x="150" y="255" fill="#cbd5e1" fontSize="11">Force on wall = Δp/Δt = 2mv/t where t = 2L/v</text>
+
+            <text x="150" y="275" fill="#cbd5e1" fontSize="11">P = F/A = Nm&lt;v²&gt;/(3V)</text>
+
+            <rect x="150" y="310" width="400" height="40" rx="8" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="335" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">PV = nRT  →  c_rms = √(3RT/M)</text>
+
+          </svg>
+
+        );
+
+      case "combined-gas-law":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Gas Laws - Combined</text>
+
+            {[
+
+              {law:"Boyle's Law",cond:"T constant",eq:"P₁V₁ = P₂V₂",color:"#38bdf8"},
+
+              {law:"Charles' Law",cond:"P constant",eq:"V₁/T₁ = V₂/T₂",color:"#10b981"},
+
+              {law:"Gay-Lussac's",cond:"V constant",eq:"P₁/T₁ = P₂/T₂",color:"#f59e0b"}
+
+            ].map((g,i) => (
+
+              <g key={i}>
+
+                <rect x="100+i*190" y="110" width="170" height="100" rx="8" fill={g.color} fillOpacity="0.1" stroke={g.color} strokeWidth="2"/>
+
+                <text x="185+i*190" y="145" fill={g.color} fontSize="12" fontWeight="bold" textAnchor="middle">{g.law}</text>
+
+                <text x="185+i*190" y="170" fill="#cbd5e1" fontSize="10" textAnchor="middle">{g.cond}</text>
+
+                <text x="185+i*190" y="195" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">{g.eq}</text>
+
+              </g>
+
+            ))}
+
+            <rect x="150" y="240" width="400" height="140" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="280" fill="#a855f7" fontSize="15" fontWeight="bold" textAnchor="middle">Combined Gas Law</text>
+
+            <text x="350" y="315" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">PV/T = constant  →  PV = nRT</text>
+
+            <text x="350" y="350" fill="#cbd5e1" fontSize="11" textAnchor="middle">Universal gas constant R = 8.314 J mol⁻¹ K⁻¹</text>
+
+          </svg>
+
+        );
+
+      case "real-gas-compressibility":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Real Gas - Van der Waals Equation</text>
+
+            <rect x="120" y="110" width="460" height="100" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2"/>
+
+            <text x="350" y="150" fill="#ef4444" fontSize="16" fontWeight="bold" textAnchor="middle">(P + an²/V²)(V - nb) = nRT</text>
+
+            <text x="350" y="190" fill="#cbd5e1" fontSize="11" textAnchor="middle">a = correction for intermolecular forces</text>
+
+            <text x="350" y="210" fill="#cbd5e1" fontSize="11" textAnchor="middle">b = correction for molecular volume</text>
+
+            <rect x="120" y="230" width="210" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="225" y="265" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Compressibility Factor</text>
+
+            <text x="225" y="295" fill="#cbd5e1" fontSize="11" textAnchor="middle">Z = PV/nRT</text>
+
+            <text x="225" y="315" fill="#f59e0b" fontSize="10" textAnchor="middle">Z = 1 ideal, Z ≠ 1 real gas</text>
+
+            <rect x="370" y="230" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="475" y="265" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Critical Constants</text>
+
+            <text x="475" y="295" fill="#cbd5e1" fontSize="11" textAnchor="middle">T_c = 8a/27Rb</text>
+
+            <text x="475" y="315" fill="#cbd5e1" fontSize="11" textAnchor="middle">P_c = a/27b²</text>
+
+          </svg>
+
+        );
+
+      case "le-chateliers-principle":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Le Chatelier's Principle</text>
+
+            <rect x="120" y="110" width="460" height="70" rx="8" fill="#a855f7" fillOpacity="0.15" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="150" fill="#c084fc" fontSize="13" textAnchor="middle">If system at equilibrium is disturbed, it shifts to counteract change</text>
+
+            {[
+
+              {disturb:"Concentration",shift:"Shifts away from added substance",color:"#38bdf8"},
+
+              {disturb:"Temperature",shift:"Shifts in endothermic direction",color:"#ef4444"},
+
+              {disturb:"Pressure",shift:"Shifts to fewer moles side",color:"#10b981"}
+
+            ].map((l,i) => (
+
+              <rect key={i} x={100+i*190} y="200" width={170} height={120} rx={8} fill={l.color} fillOpacity={0.1} stroke={l.color} strokeWidth={2}/>
+
+            ))}
+
+            {["#38bdf8","#ef4444","#10b981"].map((c,i) => (
+
+              <text key={i} x={185+i*190} y={235} fill={c} fontSize={11} fontWeight={"bold"} textAnchor={"middle"}>{c==="#38bdf8"?"Concentration":c==="#ef4444"?"Temperature":"Pressure"}</text>
+
+            ))}
+
+            {[
+
+              {x:100,y:255,text:"Increases",color:"#38bdf8"},
+
+              {x:290,y:255,text:"Endo ↑ shifts",color:"#ef4444"},
+
+              {x:480,y:255,text:"Fewer moles",color:"#10b981"}
+
+            ].map((t,i) => <text key={i} x={t.x} y={t.y} fill={t.color} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
+
+          </svg>
+
+        );
+
+      case "haber-process-flow":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Haber's Process - Ammonia Manufacture</text>
+
+            <rect x="120" y="110" width="460" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="350" y="145" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">N₂ + 3H₂ ⇌ 2NH₃ (ΔH = -92 kJ/mol)</text>
+
+            <rect x="120" y="190" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="225" y="225" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Optimum Conditions</text>
+
+            <text x="225" y="255" fill="#cbd5e1" fontSize="11" textAnchor="middle">T = 450°C</text>
+
+            <text x="225" y="280" fill="#cbd5e1" fontSize="11" textAnchor="middle">P = 200 atm</text>
+
+            <rect x="370" y="190" width="210" height="100" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="475" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Catalyst</text>
+
+            <text x="475" y="255" fill="#cbd5e1" fontSize="11" textAnchor="middle">Finely divided Fe</text>
+
+            <text x="475" y="280" fill="#cbd5e1" fontSize="11" textAnchor="middle">Promoted with Mo</text>
+
+            <rect x="150" y="310" width="400" height="40" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Yield: ~15% per pass | Unreacted gases recycled</text>
+
+          </svg>
+
+        );
+
+      case "contact-process-h2so4":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Contact Process - H₂SO₄</text>
+
+            {[
+
+              {step:"1. SO₂ Production",eq:"S + O₂ → SO₂",color:"#ef4444"},
+
+              {step:"2. SO₂ → SO₃",eq:"2SO₂ + O₂ ⇌ 2SO₃",color:"#f59e0b"},
+
+              {step:"3. Absorption",eq:"SO₃ + H₂SO₄ → H₂S₂O₇",color:"#38bdf8"},
+
+              {step:"4. Dilution",eq:"H₂S₂O₇ + H₂O → 2H₂SO₄",color:"#10b981"}
+
+            ].map((st,i) => (
+
+              <rect key={i} x={100+i*140} y={110} width={120} height={180} rx={8} fill={st.color} fillOpacity={0.1} stroke={st.color} strokeWidth={2}/>
+
+            ))}
+
+            {[
+
+              {x:100,text:"Combustion"},
+
+              {x:240,text:"Oxidation (V₂O₅)"},
+
+              {x:380,text:"Absorption"},
+
+              {x:520,text:"Dilution"}
+
+            ].map((t,i) => <text key={i} x={t.x} y={310} fill={"#cbd5e1"} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
+
+          </svg>
+
+        );
+
+      case "solvay-process-na2co3":
+
+        return (
+
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Solvay Process - Na₂CO₃</text>
+
+            <rect x="120" y="110" width="460" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+
+            <text x="350" y="145" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ ↓ + NH₄Cl</text>
+
+            <rect x="120" y="190" width="210" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+
+            <text x="225" y="225" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Step 1: Brine sat. with NH₃</text>
+
+            <text x="225" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">NaCl + NH₃ + H₂O</text>
+
+            <rect x="370" y="190" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+
+            <text x="475" y="225" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Step 2: CO₂ absorption</text>
+
+            <text x="475" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">NaHCO₃ precipitates</text>
+
+            <rect x="150" y="310" width="400" height="40" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+
+            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Calcination: 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂</text>
+
+          </svg>
+
+        );
+
+
+      case "biomolecule-types-diagram":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="60" y="40" width="580" height="340" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Four Major Biomolecule Classes</text>
+            {[
+              {name:"Carbohydrates",formula:"(CH₂O)_n",examples:"Glucose, Starch, Cellulose",color:"#38bdf8",y:110},
+              {name:"Proteins",formula:"Polypeptides (20 AA)",examples:"Enzymes, Collagen, Hb",color:"#10b981",y:200},
+              {name:"Lipids",formula:"Fatty acid esters",examples:"Triglycerides, Phospholipids",color:"#f59e0b",y:290}
+            ].map((bio,i) => (
+              <g key={i}>
+                <rect x={80+i*170} y={bio.y} width={150} height={85} rx="8" fill={bio.color} fillOpacity="0.12" stroke={bio.color} strokeWidth="2"/>
+                <text x={155+i*170} y={bio.y+25} fill={bio.color} fontSize="12" fontWeight="bold" textAnchor="middle">{bio.name}</text>
+                <text x={155+i*170} y={bio.y+45} fill="#cbd5e1" fontSize="10" textAnchor="middle">{bio.formula}</text>
+                <text x={155+i*170} y={bio.y+65} fill="#94a3b8" fontSize="9" textAnchor="middle">{bio.examples}</text>
+              </g>
+            ))}
+            <rect x="80" y="350" width="540" height="20" rx="4" fill="#0f172a" stroke="#a855f7" strokeWidth="1"/>
+            <text x="350" y="365" fill="#a855f7" fontSize="10" textAnchor="middle">DNA/RNA → Proteins → Cellular functions</text>
+          </svg>
+        );
+
+      case "animal-vs-plant-cell":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="300" height="340" rx="10" fill="#10b981" fillOpacity="0.08" stroke="#10b981" strokeWidth="2"/>
+            <text x="190" y="60" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Plant Cell</text>
+            <rect x="80" y="90" width="220" height="25" rx="4" fill="#10b981" fillOpacity="0.3"/>
+            <text x="190" y="107" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">Cell Wall (Cellulose)</text>
+            <circle cx="190" cy="180" r="45" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="185" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Nucleus</text>
+            {[100,160,220,280].map((y,i) => (
+              <ellipse key={i} cx={130+i*40} cy={y} rx="20" ry="12" fill="#10b981" fillOpacity="0.4" stroke="#10b981" strokeWidth="1"/>
+            ))}
+            <text x="190" y="330" fill="#cbd5e1" fontSize="9" textAnchor="middle">Chloroplasts · Large Vacuole · No Centrioles</text>
+            <rect x="360" y="30" width="300" height="340" rx="10" fill="#ef4444" fillOpacity="0.08" stroke="#ef4444" strokeWidth="2"/>
+            <text x="510" y="60" fill="#ef4444" fontSize="14" fontWeight="bold" textAnchor="middle">Animal Cell</text>
+            <circle cx="510" cy="180" r="45" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="510" y="185" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Nucleus</text>
+            <rect x="440" y="260" width="140" height="20" rx="4" fill="#ef4444" fillOpacity="0.3"/>
+            <text x="510" y="274" fill="#ef4444" fontSize="9" textAnchor="middle">Centrioles</text>
+            {[80,140,200,260].map((y,i) => (
+              <rect key={i} x={440+i*50} y={y} width="25" height="15" rx="3" fill="#f59e0b" fillOpacity="0.3" stroke="#f59e0b" strokeWidth="1"/>
+            ))}
+            <text x="510" y="330" fill="#cbd5e1" fontSize="9" textAnchor="middle">No Cell Wall · Small Vacuoles · Lysosomes</text>
+            <line x1="340" y1="200" x2="360" y2="200" stroke="#f59e0b" strokeWidth="2"/>
+          </svg>
+        );
+
+      case "prokaryotic-vs-eukaryotic-cell":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="300" height="340" rx="10" fill="#f59e0b" fillOpacity="0.08" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="190" y="60" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Prokaryotic Cell</text>
+            <circle cx="190" cy="180" r="80" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="190" y="170" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Nucleoid</text>
+            <text x="190" y="190" fill="#cbd5e1" fontSize="9" textAnchor="middle">(circular DNA)</text>
+            <rect x="80" y="280" width="220" height="70" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1"/>
+            <text x="190" y="305" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">Features:</text>
+            <text x="190" y="325" fill="#cbd5e1" fontSize="9" textAnchor="middle">No nucleus · 70S ribosomes</text>
+            <text x="190" y="340" fill="#cbd5e1" fontSize="9" textAnchor="middle">Peptidoglycan wall · Binary fission</text>
+            <rect x="360" y="30" width="300" height="340" rx="10" fill="#10b981" fillOpacity="0.08" stroke="#10b981" strokeWidth="2"/>
+            <text x="510" y="60" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Eukaryotic Cell</text>
+            <circle cx="510" cy="160" r="45" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="510" y="165" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Nucleus</text>
+            {[380,440,500,560,620].map((x,i) => (
+              <ellipse key={i} cx={x} cy={240} rx="25" ry="15" fill="#10b981" fillOpacity="0.25" stroke="#10b981" strokeWidth="1"/>
+            ))}
+            <text x="510" y="275" fill="#cbd5e1" fontSize="9" textAnchor="middle">Organelles: ER, Golgi, Mito</text>
+            <rect x="400" y="300" width="220" height="70" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1"/>
+            <text x="510" y="325" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">Features:</text>
+            <text x="510" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">True nucleus · 80S ribosomes</text>
+            <text x="510" y="360" fill="#cbd5e1" fontSize="9" textAnchor="middle">Mitosis/Meiosis · Complex</text>
+          </svg>
+        );
+
+      case "mitosis-vs-meiosis":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="30" y="30" width="320" height="340" rx="10" fill="#38bdf8" fillOpacity="0.08" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="65" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Mitosis</text>
+            <circle cx="190" cy="110" r="30" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="115" fill="#38bdf8" fontSize="10" textAnchor="middle">2n→2n</text>
+            <line x1="120" y1="110" x2="260" y2="110" stroke="#f59e0b" strokeWidth="2"/>
+            <circle cx="100" cy="170" r="25" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2"/>
+            <circle cx="280" cy="170" r="25" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2"/>
+            <text x="100" y="175" fill="#10b981" fontSize="8" textAnchor="middle">2n</text>
+            <text x="280" y="175" fill="#10b981" fontSize="8" textAnchor="middle">2n</text>
+            <rect x="60" y="220" width="260" height="130" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1"/>
+            <text x="190" y="245" fill="#cbd5e1" fontSize="10" textAnchor="middle">• One division</text>
+            <text x="190" y="265" fill="#cbd5e1" fontSize="10" textAnchor="middle">• Identical daughter cells</text>
+            <text x="190" y="285" fill="#cbd5e1" fontSize="10" textAnchor="middle">• Growth & repair</text>
+            <text x="190" y="305" fill="#cbd5e1" fontSize="10" textAnchor="middle">• No crossing over</text>
+            <text x="190" y="335" fill="#f59e0b" fontSize="9" textAnchor="middle">Somatic cells (skin, meristem)</text>
+            <rect x="350" y="30" width="320" height="340" rx="10" fill="#a855f7" fillOpacity="0.08" stroke="#a855f7" strokeWidth="2"/>
+            <text x="510" y="65" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Meiosis</text>
+            <circle cx="510" cy="110" r="30" fill="#a855f7" fillOpacity="0.2" stroke="#a855f7" strokeWidth="2"/>
+            <text x="510" y="115" fill="#a855f7" fontSize="10" textAnchor="middle">2n→n</text>
+            <line x1="440" y1="110" x2="580" y2="110" stroke="#f59e0b" strokeWidth="2"/>
+            {[460,500,540,580].map((x,i) => (
+              <circle key={i} cx={x} cy="170" r="20" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="1.5"/>
+            ))}
+            <rect x="380" y="220" width="260" height="130" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="1"/>
+            <text x="510" y="245" fill="#cbd5e1" fontSize="10" textAnchor="middle">• Two divisions</text>
+            <text x="510" y="265" fill="#cbd5e1" fontSize="10" textAnchor="middle">• 4 diverse haploid cells</text>
+            <text x="510" y="285" fill="#cbd5e1" fontSize="10" textAnchor="middle">• Crossing over (Prophase I)</text>
+            <text x="510" y="305" fill="#cbd5e1" fontSize="10" textAnchor="middle">• Genetic diversity</text>
+            <text x="510" y="335" fill="#f59e0b" fontSize="9" textAnchor="middle">Gametes (sperm, egg)</text>
+          </svg>
+        );
+
+      case "organelle-functions":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Eukaryotic Organelle Functions</text>
+            {[
+              {name:"Nucleus",func:"Genetic control center",color:"#38bdf8"},
+              {name:"Mitochondria",func:"ATP production (respiration)",color:"#ef4444"},
+              {name:"Rough ER",func:"Protein synthesis & folding",color:"#10b981"},
+              {name:"Smooth ER",func:"Lipid synthesis, detox",color:"#f59e0b"},
+              {name:"Golgi",func:"Package & ship proteins",color:"#a855f7"},
+              {name:"Lysosome",func:"Digestion & recycling",color:"#ec4899"},
+              {name:"Chloroplast",func:"Photosynthesis (plants)",color:"#22c55e"}
+            ].map((o,i) => (
+              <g key={i}>
+                <rect x={55+i%4*150} y={95+Math.floor(i/4)*110} width={140} height={95} rx="6" fill={o.color} fillOpacity="0.12" stroke={o.color} strokeWidth="1.5"/>
+                <text x={125+i%4*150} y={120} fill={o.color} fontSize="11" fontWeight="bold" textAnchor="middle">{o.name}</text>
+                <text x={125+i%4*150} y={145} fill="#cbd5e1" fontSize="9" textAnchor="middle">{o.func}</text>
+              </g>
+            ))}
+            <text x="350" y="360" fill="#94a3b8" fontSize="9" textAnchor="middle">Endosymbiotic theory: mitochondria & chloroplasts originated from prokaryotes</text>
+          </svg>
+        );
+
+      case "food-chain-web":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Food Chain & Food Web</text>
+            <rect x="60" y="90" width="130" height="70" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
+            <text x="125" y="120" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Producer</text>
+            <text x="125" y="145" fill="#cbd5e1" fontSize="10" textAnchor="middle">Grass / Phytoplankton</text>
+            <text x="125" y="155" fill="#94a3b8" fontSize="9" textAnchor="middle">Level 1: 10,000 kcal</text>
+            <line x1="190" y1="125" x2="250" y2="125" stroke="#f59e0b" strokeWidth="2"/>
+            <rect x="250" y="90" width="130" height="70" rx="8" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="315" y="120" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Primary Consumer</text>
+            <text x="315" y="145" fill="#cbd5e1" fontSize="10" textAnchor="middle">Rabbit / Zooplankton</text>
+            <text x="315" y="155" fill="#94a3b8" fontSize="9" textAnchor="middle">Level 2: ~1,000 kcal</text>
+            <line x1="380" y1="125" x2="440" y2="125" stroke="#f59e0b" strokeWidth="2"/>
+            <rect x="440" y="90" width="130" height="70" rx="8" fill="#ef4444" fillOpacity="0.15" stroke="#ef4444" strokeWidth="2"/>
+            <text x="505" y="120" fill="#ef4444" fontSize="12" fontWeight="bold" textAnchor="middle">Secondary Consumer</text>
+            <text x="505" y="145" fill="#cbd5e1" fontSize="10" textAnchor="middle">Fox / Small fish</text>
+            <text x="505" y="155" fill="#94a3b8" fontSize="9" textAnchor="middle">Level 3: ~100 kcal</text>
+            <line x1="505" y1="165" x2="505" y2="220" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="4 2"/>
+            <text x="505" y="240" fill="#ef4444" fontSize="9" textAnchor="middle">~90% lost as heat</text>
+            <rect x="60" y="270" width="580" height="80" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="300" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">10% Law (Lindeman): Only ~10% energy transfers between trophic levels</text>
+            <text x="350" y="325" fill="#cbd5e1" fontSize="10" textAnchor="middle">Rest lost as heat via respiration, movement, undigested waste</text>
+            <text x="350" y="340" fill="#94a3b8" fontSize="9" textAnchor="middle">Limits food chains to 4-5 levels; explains pyramid of energy shape</text>
+          </svg>
+        );
+
+      case "carbon-nitrogen-cycles":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="65" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Carbon & Nitrogen Cycles</text>
+            <circle cx="180" cy="160" r="60" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="180" y="155" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">CO₂</text>
+            <text x="180" y="175" fill="#cbd5e1" fontSize="9" textAnchor="middle">Atmosphere</text>
+            <circle cx="180" cy="280" r="50" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
+            <text x="180" y="275" fill="#10b981" fontSize="10" fontWeight="bold" textAnchor="middle">Plants</text>
+            <text x="180" y="295" fill="#cbd5e1" fontSize="9" textAnchor="middle">Photosynthesis</text>
+            <line x1="180" y1="220" x2="180" y2="225" stroke="#10b981" strokeWidth="2"/>
+            <text x="195" y="225" fill="#10b981" fontSize="8">Photosynthesis</text>
+            <circle cx="500" cy="160" r="60" fill="#a855f7" fillOpacity="0.1" stroke="#a855f7" strokeWidth="2"/>
+            <text x="500" y="155" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">N₂</text>
+            <text x="500" y="175" fill="#cbd5e1" fontSize="9" textAnchor="middle">Atmosphere 78%</text>
+            <circle cx="500" cy="280" r="50" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="500" y="275" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">Soil Bacteria</text>
+            <text x="500" y="295" fill="#cbd5e1" fontSize="9" textAnchor="middle">Fixation</text>
+            <rect x="60" y="340" width="580" height="25" rx="4" fill="#0f172a" stroke="#10b981" strokeWidth="1"/>
+            <text x="350" y="357" fill="#10b981" fontSize="10" textAnchor="middle">Key: Carbon cycles via atmosphere; Nitrogen requires bacterial fixation; Phosphorus is sedimentary (no atmosphere)</text>
+          </svg>
+        );
+
+      case "hydrophyte-xerophyte-adaptations":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Hydrophytes vs Xerophytes Adaptations</text>
+            <rect x="60" y="90" width="260" height="250" rx="8" fill="#38bdf8" fillOpacity="0.08" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="115" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Aquatic Plants (Hydrophytes)</text>
+            <text x="80" y="150" fill="#cbd5e1" fontSize="11">• Thin cuticle (no water loss risk)</text>
+            <text x="80" y="175" fill="#cbd5e1" fontSize="11">• Stomata on UPPER leaf surface only</text>
+            <text x="80" y="200" fill="#cbd5e1" fontSize="11">• Aerenchyma (air spaces) for buoyancy</text>
+            <text x="80" y="225" fill="#cbd5e1" fontSize="11">• Weak mechanical tissue (water supports)</text>
+            <text x="80" y="250" fill="#cbd5e1" fontSize="11">• Reduced root system</text>
+            <text x="80" y="275" fill="#cbd5e1" fontSize="11">• Example: Lotus, Duckweed, Hydrilla</text>
+            <rect x="380" y="90" width="260" height="250" rx="8" fill="#f59e0b" fillOpacity="0.08" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="510" y="115" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Arid Plants (Xerophytes)</text>
+            <text x="400" y="150" fill="#cbd5e1" fontSize="11">• Thick waxy cuticle (reduce water loss)</text>
+            <text x="400" y="175" fill="#cbd5e1" fontSize="11">• Sunken stomata (reduce transpiration)</text>
+            <text x="400" y="200" fill="#cbd5e1" fontSize="11">• CAM photosynthesis (open stomata at night)</text>
+            <text x="400" y="225" fill="#cbd5e1" fontSize="11">• Succulent stems (water storage)</text>
+            <text x="400" y="250" fill="#cbd5e1" fontSize="11">• Deep/extensive root systems</text>
+            <text x="400" y="275" fill="#cbd5e1" fontSize="11">• Example: Cactus, Agave, Opuntia</text>
+          </svg>
+        );
+
+      case "pollution-climate-change":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+            <text x="350" y="65" fill="#ef4444" fontSize="14" fontWeight="bold" textAnchor="middle">Ecological Imbalances: Pollution & Climate Change</text>
+            {[
+              {title:"Greenhouse Effect",cause:"CO₂, CH₄, N₂O from fossil fuels",effect:"Global temp +1.1°C since 1850",color:"#ef4444"},
+              {title:"Ozone Depletion",cause:"CFCs break down stratospheric O₃",effect:"Increased UV-B → skin cancer",color:"#a855f7"},
+              {title:"Acid Rain",cause:"SO₂ + NOₓ → H₂SO₄/HNO₃",effect:"pH<5.6 damages forests, lakes",color:"#f59e0b"},
+              {title:"Biological Invasion",cause:"Non-native species disrupt ecosystems",effect:"Water hyacinth, Lantana in Nepal",color:"#38bdf8"}
+            ].map((item,i) => (
+              <rect key={i} x={50+i*160} y="90" width="145" height="140" rx="8" fill={item.color} fillOpacity="0.1" stroke={item.color} strokeWidth="1.5"/>
+            ))}
+            {[
+              {x:122,y:115,title:"Greenhouse",desc:"Global warming"},
+              {x:282,y:115,title:"Ozone",desc:"UV increase"},
+              {x:442,y:115,title:"Acid Rain",desc:"Ecosystem damage"},
+              {x:602,y:115,title:"Invasive",desc:"Biodiversity loss"}
+            ].map((t,i) => (
+              <text key={i} x={t.x} y={t.y} fill="#cbd5e1" fontSize="10" textAnchor="middle">{t.title}</text>
+            ))}
+            <rect x="60" y="250" width="580" height="100" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="280" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Key Solutions</text>
+            <text x="350" y="305" fill="#cbd5e1" fontSize="10" textAnchor="middle">Montreal Protocol (CFCs phase-out) · Paris Agreement (GHG reduction)</text>
+            <text x="350" y="325" fill="#cbd5e1" fontSize="10" textAnchor="middle">Renewable energy · Reforestation · Integrated Pest Management</text>
+            <text x="350" y="345" fill="#f59e0b" fontSize="9" textAnchor="middle">Biomagnification: DDT concentrations amplify 10⁶-fold up food chain</text>
+          </svg>
+        );
+
+      case "origin-of-life-experiment":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Origin of Life: Oparin-Haldane & Miller-Urey</text>
+            <rect x="60" y="90" width="260" height="120" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="115" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Early Earth Conditions (~4.6 Ga)</text>
+            <text x="80" y="145" fill="#cbd5e1" fontSize="10">• Reducing atmosphere: CH₄, NH₃, H₂, H₂O</text>
+            <text x="80" y="165" fill="#cbd5e1" fontSize="10">• No free oxygen (anoxic)</text>
+            <text x="80" y="185" fill="#cbd5e1" fontSize="10">• Energy: lightning, UV radiation, volcanic</text>
+            <rect x="380" y="90" width="260" height="120" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="510" y="115" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Miller-Urey Experiment (1953)</text>
+            <text x="400" y="145" fill="#cbd5e1" fontSize="10">• Simulated early atmosphere + electric sparks</text>
+            <text x="400" y="165" fill="#cbd5e1" fontSize="10">• Result: 11 amino acids after 1 week</text>
+            <text x="400" y="185" fill="#cbd5e1" fontSize="10">• Supports chemical evolution hypothesis</text>
+            <rect x="60" y="230" width="580" height="120" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="255" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Timeline of Life's Origin</text>
+            <line x1="100" y1="290" x2="600" y2="290" stroke="#a855f7" strokeWidth="2"/>
+            {[
+              {x:120,label:"4.6 Ga",sub:"Earth forms"},
+              {x:250,label:"4.0 Ga",sub:"First organic molecules"},
+              {x:380,label:"3.5 Ga",sub:"Stromatolites (earliest fossils)"},
+              {x:510,label:"2.4 Ga",sub:"O₂ accumulates (Great Oxidation)"}
+            ].map((t,i) => (
+              <g key={i}>
+                <circle cx={t.x} cy="290" r="6" fill="#f59e0b"/>
+                <text x={t.x} y="310" fill="#cbd5e1" fontSize="9" textAnchor="middle">{t.label}</text>
+                <text x={t.x} y="325" fill="#94a3b8" fontSize="8" textAnchor="middle">{t.sub}</text>
+              </g>
+            ))}
+          </svg>
+        );
+
+      case "evidences-of-evolution":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Evidence for Evolution</text>
+            {[
+              {title:"Morphological",subtitle:"Homologous structures",desc:"Same origin, different function",color:"#38bdf8"},
+              {title:"Embryological",subtitle:"Developmental similarities",desc:"Pharyngeal pouches, tails",color:"#10b981"},
+              {title:"Paleontological",subtitle:"Fossil record",desc:"Transitional: Archaeopteryx",color:"#f59e0b"},
+              {title:"Biochemical",subtitle:"Universal genetic code",desc:"Cytochrome c comparisons",color:"#a855f7"},
+              {title:"Biogeographical",subtitle:"Species distribution",desc:"Galápagos finches",color:"#ef4444"}
+            ].map((e,i) => (
+              <rect key={i} x={50+i*125} y="90" width="115" height="130" rx="8" fill={e.color} fillOpacity="0.1" stroke={e.color} strokeWidth="1.5"/>
+            ))}
+            <rect x="60" y="240" width="580" height="110" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="270" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Homologous vs Analogous Structures</text>
+            <text x="200" y="300" fill="#38bdf8" fontSize="10" textAnchor="middle">Homologous: Common ancestry → Divergent evolution</text>
+            <text x="200" y="320" fill="#38bdf8" fontSize="10" textAnchor="middle">Example: Vertebrate forelimbs (arm, wing, flipper)</text>
+            <text x="500" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Analogous: Similar function, different origin</text>
+            <text x="500" y="320" fill="#ef4444" fontSize="10" textAnchor="middle">Example: Bird wing vs Insect wing (convergent evolution)</text>
+          </svg>
+        );
+
+      case "evolution-theories-comparison":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Evolution Theories Comparison</text>
+            <rect x="50" y="90" width="190" height="250" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="145" y="120" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Lamarckism</text>
+            <text x="145" y="150" fill="#cbd5e1" fontSize="10" fontWeight="bold" textAnchor="middle">Inheritance of Acquired Traits</text>
+            <text x="70" y="185" fill="#cbd5e1" fontSize="10">✗ Use/disuse → inherited</text>
+            <text x="70" y="210" fill="#cbd5e1" fontSize="10">✗ Giraffe neck stretching</text>
+            <text x="70" y="235" fill="#cbd5e1" fontSize="10">✗ Discredited mechanism</text>
+            <rect x="260" y="90" width="190" height="250" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="355" y="120" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Darwinism</text>
+            <text x="355" y="150" fill="#cbd5e1" fontSize="10" fontWeight="bold" textAnchor="middle">Natural Selection (1859)</text>
+            <text x="280" y="185" fill="#cbd5e1" fontSize="10">✓ Overproduction → variation</text>
+            <text x="280" y="210" fill="#cbd5e1" fontSize="10">✓ Survival of fitted</text>
+            <text x="280" y="235" fill="#cbd5e1" fontSize="10">✓ Heritable advantageous traits</text>
+            <rect x="470" y="90" width="190" height="250" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="565" y="120" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Neo-Darwinism</text>
+            <text x="565" y="150" fill="#cbd5e1" fontSize="10" fontWeight="bold" textAnchor="middle">Modern Synthesis</text>
+            <text x="490" y="185" fill="#cbd5e1" fontSize="10">✓ Natural selection + Genetics</text>
+            <text x="490" y="210" fill="#cbd5e1" fontSize="10">✓ Mutations = raw variation</text>
+            <text x="490" y="235" fill="#cbd5e1" fontSize="10">✓ Population allele frequency</text>
+          </svg>
+        );
+
+      case "human-evolution-tree":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="65" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Human Evolution Timeline</text>
+            {[
+              {name:"Ardipithecus",year:"~4.4 Ma",brain:"~350cc",feat:"Bipedal",color:"#94a3b8"},
+              {name:"Australopithecus",year:"~3.2 Ma",brain:"~450cc",feat:"Lucy, bipedal",color:"#f59e0b"},
+              {name:"Homo habilis",year:"~2.4 Ma",brain:"~650cc",feat:"Stone tools",color:"#38bdf8"},
+              {name:"Homo erectus",year:"~1.8 Ma",brain:"~900cc",feat:"Fire, migration",color:"#10b981"},
+              {name:"H. sapiens",year:"~300 ka",brain:"~1350cc",feat:"Language, culture",color:"#a855f7"}
+            ].map((h,i) => (
+              <g key={i}>
+                <circle cx={100+i*120} cy="120" r="35" fill={h.color} fillOpacity="0.2" stroke={h.color} strokeWidth="2"/>
+                <text x={100+i*120} y="115" fill={h.color} fontSize="9" fontWeight="bold" textAnchor="middle">{h.name}</text>
+                <text x={100+i*120} y="135" fill="#cbd5e1" fontSize="8" textAnchor="middle">{h.year}</text>
+                <text x={100+i*120} y="190" fill="#94a3b8" fontSize="9" textAnchor="middle">Brain: {h.brain}</text>
+                <text x={100+i*120} y="210" fill="#94a3b8" fontSize="9" textAnchor="middle">{h.feat}</text>
+                {i < 4 && <line x1={135+i*120} y1="120" x2={220+i*120} y2="120" stroke="#64748b" strokeWidth="2"/>}
+              </g>
+            ))}
+            <rect x="60" y="260" width="580" height="90" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="290" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Key Human Adaptations</text>
+            <text x="350" y="315" fill="#cbd5e1" fontSize="10" textAnchor="middle">Bipedalism → Freed hands for tool use</text>
+            <text x="350" y="335" fill="#cbd5e1" fontSize="10" textAnchor="middle">Brain expansion (400cc→1350cc) → Language, culture</text>
+            <text x="350" y="350" fill="#f59e0b" fontSize="9" textAnchor="middle">Shared 98.8% DNA with chimpanzees; common ancestor ~6-7 Ma</text>
+          </svg>
+        );
+
+      case "protist-diversity":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Protozoa Classification by Locomotion</text>
+            {[
+              {name:"Amoebozoa",locomotion:"Pseudopodia",example:"Amoeba, Entamoeba",disease:"Dysentery",color:"#38bdf8"},
+              {name:"Flagellata",locomotion:"Flagella",example:"Trypanosoma, Giardia",disease:"Sleeping sickness",color:"#10b981"},
+              {name:"Ciliophora",locomotion:"Cilia",example:"Paramecium",disease:"Balantidiasis",color:"#f59e0b"},
+              {name:"Sporozoa",locomotion:"None (parasitic)",example:"Plasmodium",disease:"Malaria",color:"#ef4444"}
+            ].map((p,i) => (
+              <rect key={i} x={55+i*150} y="90" width="140" height="200" rx="8" fill={p.color} fillOpacity="0.1" stroke={p.color} strokeWidth="2"/>
+            ))}
+            <rect x="60" y="310" width="580" height="50" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="1"/>
+            <text x="350" y="340" fill="#a855f7" fontSize="10" textAnchor="middle">Plasmodium life cycle: Human (asexual in RBCs) → Mosquito (sexual) → Sporozoites in salivary glands</text>
+          </svg>
+        );
+
+      case "animal-phyla-key-features":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Animal Phyla Key Features</text>
+            {[
+              {phylum:"Porifera",symmetry:"Asymmetrical",cavity:"None",example:"Sponge",color:"#94a3b8"},
+              {phylum:"Cnidaria",symmetry:"Radial",cavity:"Gastrovascular",example:"Jellyfish",color:"#38bdf8"},
+              {phylum:"Platyhelminthes",symmetry:"Bilateral",cavity:"Acoelomate",example:"Flatworm",color:"#10b981"},
+              {phylum:"Nematoda",symmetry:"Bilateral",cavity:"Pseudocoelomate",example:"Roundworm",color:"#f59e0b"},
+              {phylum:"Annelida",symmetry:"Bilateral",cavity:"Coelomate",example:"Earthworm",color:"#a855f7"},
+              {phylum:"Arthropoda",symmetry:"Bilateral",cavity:"Coelomate",example:"Insects (LARGEST)",color:"#ef4444"},
+              {phylum:"Chordata",symmetry:"Bilateral",cavity:"Coelomate",example:"Vertebrates",color:"#38bdf8"}
+            ].map((p,i) => (
+              <rect key={i} x={50+Math.floor(i/3)*210} y={90+(i%3)*80} width="200" height="70" rx="6" fill={p.color} fillOpacity="0.1" stroke={p.color} strokeWidth="1.5"/>
+            ))}
+            <text x="350" y="370" fill="#94a3b8" fontSize="10" textAnchor="middle">Complexity progression: Cellular → Tissue → Organ → Organ system levels</text>
+          </svg>
+        );
+
+      case "earthworm-external-anatomy":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="65" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Earthworm (Pheretima) External Anatomy</text>
+            <ellipse cx="350" cy="160" rx="250" ry="50" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="155" fill="#f59e0b" fontSize="11" textAnchor="middle">Pheretima posthuma — Segmented Body (100+ metameres)</text>
+            <line x1="120" y1="140" x2="80" y2="100" stroke="#38bdf8" strokeWidth="1.5"/>
+            <text x="60" y="95" fill="#38bdf8" fontSize="10" fontWeight="bold">Prostomium</text>
+            <line x1="200" y1="130" x2="160" y2="80" stroke="#10b981" strokeWidth="1.5"/>
+            <text x="120" y="75" fill="#10b981" fontSize="10" fontWeight="bold">Clitellum</text>
+            <line x1="500" y1="130" x2="560" y2="80" stroke="#a855f7" strokeWidth="1.5"/>
+            <text x="560" y="75" fill="#a855f7" fontSize="10" fontWeight="bold">Setae</text>
+            <line x1="550" y1="150" x2="600" y2="120" stroke="#ef4444" strokeWidth="1.5"/>
+            <text x="600" y="115" fill="#ef4444" fontSize="10" fontWeight="bold">Pygidium</text>
+            <rect x="60" y="230" width="580" height="120" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="260" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Key Features</text>
+            <text x="100" y="290" fill="#cbd5e1" fontSize="10">• Hermaphroditic (both sexes in one individual)</text>
+            <text x="100" y="310" fill="#cbd5e1" fontSize="10">• Cross-fertilization during mating</text>
+            <text x="350" y="290" fill="#cbd5e1" fontSize="10">• Cutaneous respiration (moist skin required)</text>
+            <text x="350" y="310" fill="#cbd5e1" fontSize="10">• Hydrostatic skeleton (fluid-filled coelom)</text>
+          </svg>
+        );
+
+      case "frog-anatomy-overview":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="65" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Rana tigrina (Frog) — Amphibian Overview</text>
+            <rect x="60" y="90" width="260" height="130" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="115" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Aquatic Larva (Tadpole)</text>
+            <text x="80" y="145" fill="#cbd5e1" fontSize="10">• Gills for breathing</text>
+            <text x="80" y="165" fill="#cbd5e1" fontSize="10">• Herbivorous (algae/detritus)</text>
+            <text x="80" y="185" fill="#cbd5e1" fontSize="10">• Long coiled intestine</text>
+            <text x="80" y="205" fill="#cbd5e1" fontSize="10">• Tail for swimming</text>
+            <rect x="380" y="90" width="260" height="130" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="510" y="115" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Terrestrial Adult</text>
+            <text x="400" y="145" fill="#cbd5e1" fontSize="10">• Lungs + skin breathing</text>
+            <text x="400" y="165" fill="#cbd5e1" fontSize="10">• Carnivorous (insects)</text>
+            <text x="400" y="185" fill="#cbd5e1" fontSize="10">• Short intestine</text>
+            <text x="400" y="205" fill="#cbd5e1" fontSize="10">• Strong hind legs for jumping</text>
+            <rect x="60" y="240" width="580" height="110" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="270" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Physiological Systems</text>
+            <text x="120" y="300" fill="#38bdf8" fontSize="10">Heart: 3 chambers (2 atria + 1 ventricle)</text>
+            <text x="120" y="320" fill="#38bdf8" fontSize="10">Excretion: Urea (ureotelic as adult)</text>
+            <text x="400" y="300" fill="#10b981" fontSize="10">Respiration: Skin + buccal + lungs</text>
+            <text x="400" y="320" fill="#10b981" fontSize="10">Metamorphosis: Thyroxine-triggered</text>
+          </svg>
+        );
+
+      case "fungi-life-cycles":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="65" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Fungal Kingdom Classification</text>
+            {[
+              {name:"Phycomycetes",desc:"Coenocytic hyphae, no septa",spores:"Zoospores/Oospores",ex:"Rhizopus, Mucor",color:"#38bdf8"},
+              {name:"Ascomycetes",desc:"Septate hyphae",spores:"Ascospores (8/ascus)",ex:"Yeast, Penicillium",color:"#10b981"},
+              {name:"Basidiomycetes",desc:"Septate hyphae",spores:"Basidiospores (4/basidium)",ex:"Mushroom, Rusts",color:"#f59e0b"},
+              {name:"Deuteromycetes",desc:"Imperfect fungi",spores:"Only asexual known",ex:"Alternaria, Trichoderma",color:"#ef4444"}
+            ].map((f,i) => (
+              <rect key={i} x={55+i*155} y="90" width="145" height="180" rx="8" fill={f.color} fillOpacity="0.1" stroke={f.color} strokeWidth="2"/>
+            ))}
+            <rect x="60" y="290" width="580" height="65" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="315" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Economic Importance</text>
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Decomposers · Mycorrhizal symbionts (90% plants) · Antibiotics (penicillin) · Food (mushrooms, yeast)</text>
+          </svg>
+        );
+
+      case "algae-types-diagram":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Algae Classification by Pigment</text>
+            {[
+              {name:"Chlorophyceae",nameCN:"Green Algae",pigments:"Chl a+b",storage:"Starch",ex:"Spirogyra, Chlamydomonas",color:"#10b981"},
+              {name:"Phaeophyceae",nameCN:"Brown Algae",pigments:"Chl a+c + fucoxanthin",storage:"Laminarin",ex:"Laminaria, Fucus",color:"#f59e0b"},
+              {name:"Rhodophyceae",nameCN:"Red Algae",pigments:"Chl a+d + phycoerythrin",storage:"Floridean starch",ex:"Porphyra, Gracilaria",color:"#ef4444"}
+            ].map((a,i) => (
+              <rect key={i} x={60+i*210} y="90" width="190" height="220" rx="8" fill={a.color} fillOpacity="0.1" stroke={a.color} strokeWidth="2"/>
+            ))}
+            <rect x="60" y="330" width="580" height="25" rx="4" fill="#0f172a" stroke="#38bdf8" strokeWidth="1"/>
+            <text x="350" y="347" fill="#38bdf8" fontSize="10" textAnchor="middle">Key: Red algae survive deep water (phycoerythrin absorbs blue light); Agar from red algae essential for microbiology</text>
+          </svg>
+        );
+
+      case "bryophyte-life-cycle":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Bryophyte Life Cycle — Gametophyte Dominant</text>
+            <circle cx="100" cy="130" r="25" fill="#f59e0b" fillOpacity="0.3" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="100" y="135" fill="#f59e0b" fontSize="10" textAnchor="middle">Spore</text>
+            <line x1="125" y1="130" x2="180" y2="130" stroke="#f59e0b" strokeWidth="2"/>
+            <rect x="180" y="105" width="100" height="50" rx="6" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2"/>
+            <text x="230" y="130" fill="#10b981" fontSize="10" textAnchor="middle">Protonema</text>
+            <line x1="280" y1="130" x2="340" y2="130" stroke="#10b981" strokeWidth="2"/>
+            <rect x="340" y="90" width="140" height="80" rx="8" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="410" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Gametophyte</text>
+            <text x="410" y="135" fill="#cbd5e1" fontSize="9" textAnchor="middle">(n) dominant phase</text>
+            <line x1="480" y1="130" x2="540" y2="130" stroke="#38bdf8" strokeWidth="2"/>
+            <circle cx="560" cy="130" r="20" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="2"/>
+            <text x="560" y="135" fill="#ef4444" fontSize="9" textAnchor="middle">Zygote</text>
+            <line x1="560" y1="150" x2="560" y2="200" stroke="#ef4444" strokeWidth="2"/>
+            <rect x="520" y="200" width="120" height="70" rx="8" fill="#a855f7" fillOpacity="0.2" stroke="#a855f7" strokeWidth="2"/>
+            <text x="580" y="225" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">Sporophyte</text>
+            <text x="580" y="245" fill="#cbd5e1" fontSize="9" textAnchor="middle">(2n) parasitic on gametophyte</text>
+            <rect x="60" y="300" width="440" height="50" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1"/>
+            <text x="280" y="330" fill="#10b981" fontSize="10" textAnchor="middle">Requirement: Water for fertilization (flagellated sperm swim to egg)</text>
+          </svg>
+        );
+
+      case "pteridophyte-life-cycle":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="65" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Pteridophyte Life Cycle — Sporophyte Dominant</text>
+            <rect x="60" y="90" width="260" height="140" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="190" y="120" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Sporophyte (2n) — Dominant</text>
+            <text x="80" y="155" fill="#cbd5e1" fontSize="10">• Fern fronds with sori (sporangia)</text>
+            <text x="80" y="175" fill="#cbd5e1" fontSize="10">• True vascular tissue (xylem + phloem)</text>
+            <text x="80" y="195" fill="#cbd5e1" fontSize="10">• Rhizome + adventitious roots</text>
+            <text x="80" y="215" fill="#cbd5e1" fontSize="10">• Examples: Dryopteris, Adiantum</text>
+            <line x1="320" y1="160" x2="380" y2="160" stroke="#f59e0b" strokeWidth="2"/>
+            <circle cx="410" cy="160" r="25" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="410" y="165" fill="#f59e0b" fontSize="10" textAnchor="middle">Spores</text>
+            <line x1="435" y1="160" x2="490" y2="160" stroke="#f59e0b" strokeWidth="2"/>
+            <rect x="490" y="130" width="170" height="60" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
+            <text x="575" y="155" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Prothallus (n)</text>
+            <text x="575" y="175" fill="#cbd5e1" fontSize="9" textAnchor="middle">Heart-shaped, independent</text>
+            <rect x="60" y="310" width="400" height="50" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1"/>
+            <text x="260" y="340" fill="#f59e0b" fontSize="10" textAnchor="middle">vs Bryophytes: Sporophyte dominant, not parasitic; true vascular tissue</text>
+          </svg>
+        );
+
+      case "gymnosperm-life-cycle":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="65" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Gymnosperm Life Cycle (Pinus)</text>
+            <rect x="60" y="90" width="200" height="100" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="160" y="115" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Male Cone (Strobilus)</text>
+            <text x="80" y="140" fill="#cbd5e1" fontSize="10">Microsporophylls → Microsporangia</text>
+            <text x="80" y="160" fill="#cbd5e1" fontSize="10">→ Pollen grains (2-winged)</text>
+            <rect x="440" y="90" width="200" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="540" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Female Cone (Strobilus)</text>
+            <text x="460" y="140" fill="#cbd5e1" fontSize="10">Megasporophylls → Ovules</text>
+            <text x="460" y="160" fill="#cbd5e1" fontSize="10">Nucellus + Integument + Micropyle</text>
+            <line x1="260" y1="140" x2="440" y2="140" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="130" fill="#a855f7" fontSize="9" textAnchor="middle">Pollen tube</text>
+            <rect x="60" y="220" width="580" height="100" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="250" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Key: NO double fertilization (unlike angiosperms)</text>
+            <text x="350" y="275" fill="#cbd5e1" fontSize="10" textAnchor="middle">One sperm fertilizes egg → zygote (2n); Other sperm degenerates</text>
+            <text x="350" y="295" fill="#f59e0b" fontSize="9" textAnchor="middle">Endosperm is HAPLOID (n, female gametophyte tissue)</text>
+          </svg>
+        );
+
+      case "flower-anatomy-diagram":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+            <text x="350" y="65" fill="#ef4444" fontSize="14" fontWeight="bold" textAnchor="middle">Flower Anatomy & Double Fertilization</text>
+            <rect x="60" y="90" width="130" height="80" rx="6" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
+            <text x="125" y="115" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Calyx</text>
+            <text x="125" y="140" fill="#cbd5e1" fontSize="10" textAnchor="middle">Sepals (protective)</text>
+            <rect x="210" y="90" width="130" height="80" rx="6" fill="#a855f7" fillOpacity="0.15" stroke="#a855f7" strokeWidth="2"/>
+            <text x="275" y="115" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">Corolla</text>
+            <text x="275" y="140" fill="#cbd5e1" fontSize="10" textAnchor="middle">Petals (attract pollinators)</text>
+            <rect x="360" y="90" width="130" height="80" rx="6" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="425" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Androecium</text>
+            <text x="425" y="140" fill="#cbd5e1" fontSize="10" textAnchor="middle">Stamens (male)</text>
+            <rect x="510" y="90" width="130" height="80" rx="6" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="575" y="115" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Gynoecium</text>
+            <text x="575" y="140" fill="#cbd5e1" fontSize="10" textAnchor="middle">Carpel (female)</text>
+            <rect x="60" y="195" width="580" height="140" rx="8" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+            <text x="350" y="225" fill="#ef4444" fontSize="13" fontWeight="bold" textAnchor="middle">Double Fertilization (Unique to Angiosperms)</text>
+            <text x="150" y="260" fill="#38bdf8" fontSize="11" fontWeight="bold">Sperm 1 + Egg → Zygote (2n) → Embryo</text>
+            <text x="150" y="285" fill="#10b981" fontSize="11" fontWeight="bold">Sperm 2 + 2 Polar nuclei → Primary Endosperm Nucleus (3n)</text>
+            <text x="150" y="310" fill="#f59e0b" fontSize="10" fontWeight="bold">→ Triploid Endosperm (nutritive tissue for embryo)</text>
+            <text x="350" y="340" fill="#94a3b8" fontSize="9" textAnchor="middle">After fertilization: Ovule → Seed; Ovary → Fruit</text>
+          </svg>
+        );
+
+      case "biology-scope-branches":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Biology: Scope & Major Branches</text>
+            {[
+              {name:"Morphology",sub:"Form & structure",color:"#38bdf8"},
+              {name:"Anatomy",sub:"Internal structure",color:"#10b981"},
+              {name:"Physiology",sub:"Function & processes",color:"#f59e0b"},
+              {name:"Genetics",sub:"Heredity & variation",color:"#a855f7"},
+              {name:"Ecology",sub:"Organism-environment",color:"#ef4444"},
+              {name:"Taxonomy",sub:"Classification",color:"#ec4899"},
+              {name:"Evolution",sub:"Descent with modification",color:"#38bdf8"},
+              {name:"Microbiology",sub:"Microorganisms",color:"#10b981"}
+            ].map((b,i) => (
+              <rect key={i} x={55+Math.floor(i/4)*155} y={90+(i%4)*75} width={145} height={65} rx="6" fill={b.color} fillOpacity="0.12" stroke={b.color} strokeWidth="1.5"/>
+            ))}
+            <rect x="60" y="310" width="580" height="45" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="337" fill="#f59e0b" fontSize="11" textAnchor="middle">Interdisciplinary: Biochemistry · Biophysics · Bioinformatics · Biostatistics · Environmental Science</text>
+          </svg>
+        );
+
+      case "biology-interdisciplinary":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="65" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Biology Interdisciplinary Connections</text>
+            {[
+              {field:"Chemistry",link:"Biochemistry",ex:"Metabolism, drug design",color:"#38bdf8"},
+              {field:"Physics",link:"Biophysics",ex:"MRI, biomechanics, vision",color:"#10b981"},
+              {field:"Mathematics",link:"Biostatistics",ex:"Population models, epidemiology",color:"#f59e0b"},
+              {field:"Computer Sci",link:"Bioinformatics",ex:"Genomics, sequence analysis",color:"#a855f7"},
+              {field:"Earth Science",link:"Ecology",ex:"Biogeochemical cycles",color:"#ef4444"}
+            ].map((c,i) => (
+              <rect key={i} x={60+i*120} y="90" width="105" height="140" rx="8" fill={c.color} fillOpacity="0.1" stroke={c.color} strokeWidth="2"/>
+            ))}
+            <rect x="60" y="250" width="580" height="100" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="280" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Critical Applications</text>
+            <text x="350" y="305" fill="#cbd5e1" fontSize="10" textAnchor="middle">CRISPR gene editing (derived from bacterial immunity) · mRNA vaccines · Epidemic SIR models</text>
+            <text x="350" y="325" fill="#cbd5e1" fontSize="10" textAnchor="middle">Human Genome Project (3 billion bases) · Climate modeling · Precision agriculture</text>
+          </svg>
+        );
+
+      case "bacterial-cell-structure":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="65" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Bacterial Cell Structure</text>
+            <ellipse cx="350" cy="180" rx="180" ry="100" fill="#f59e0b" fillOpacity="0.08" stroke="#f59e0b" strokeWidth="2"/>
+            <ellipse cx="350" cy="180" rx="195" ry="110" fill="none" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3"/>
+            <text x="350" y="75" fill="#a855f7" fontSize="10" textAnchor="middle">Capsule (slime layer)</text>
+            <ellipse cx="350" cy="180" rx="180" ry="100" fill="none" stroke="#ef4444" strokeWidth="3"/>
+            <text x="540" y="100" fill="#ef4444" fontSize="10">Cell Wall (peptidoglycan)</text>
+            <ellipse cx="350" cy="180" rx="165" ry="90" fill="none" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="540" y="160" fill="#38bdf8" fontSize="10">Cell Membrane</text>
+            <circle cx="320" cy="170" r="35" fill="#10b981" fillOpacity="0.2" stroke="#10b981" strokeWidth="2"/>
+            <text x="320" y="175" fill="#10b981" fontSize="10" textAnchor="middle">Nucleoid</text>
+            <text x="320" y="190" fill="#cbd5e1" fontSize="8" textAnchor="middle">(circular DNA)</text>
+            <rect x="60" y="300" width="270" height="55" rx="6" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2"/>
+            <text x="195" y="325" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">Gram-Positive</text>
+            <text x="195" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">Thick peptidoglycan → PURPLE</text>
+            <rect x="370" y="300" width="270" height="55" rx="6" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="505" y="325" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Gram-Negative</text>
+            <text x="505" y="345" fill="#cbd5e1" fontSize="9" textAnchor="middle">Thin peptidoglycan + outer membrane → PINK</text>
+          </svg>
+        );
+
+      case "virion-structure":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+            <text x="350" y="65" fill="#ef4444" fontSize="14" fontWeight="bold" textAnchor="middle">Virus Structure & Replication</text>
+            <circle cx="180" cy="150" r="60" fill="#ef4444" fillOpacity="0.15" stroke="#ef4444" strokeWidth="2"/>
+            <circle cx="180" cy="150" r="20" fill="#ef4444" fillOpacity="0.3"/>
+            <text x="180" y="155" fill="#ef4444" fontSize="9" textAnchor="middle">RNA/DNA</text>
+            <text x="180" y="230" fill="#cbd5e1" fontSize="10" textAnchor="middle">Capsid (protein coat)</text>
+            <rect x="350" y="80" width="120" height="120" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <circle cx="410" cy="120" r="30" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="410" y="115" fill="#38bdf8" fontSize="9" textAnchor="middle">Head</text>
+            <line x1="410" y1="150" x2="410" y2="190" stroke="#38bdf8" strokeWidth="3"/>
+            <text x="410" y="210" fill="#cbd5e1" fontSize="9" textAnchor="middle">Tail</text>
+            <rect x="500" y="80" width="160" height="170" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="580" y="105" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">Lytic Cycle</text>
+            <text x="520" y="135" fill="#cbd5e1" fontSize="9">1. Attachment</text>
+            <text x="520" y="155" fill="#cbd5e1" fontSize="9">2. Penetration</text>
+            <text x="520" y="175" fill="#cbd5e1" fontSize="9">3. Biosynthesis</text>
+            <text x="520" y="195" fill="#cbd5e1" fontSize="9">4. Maturation</text>
+            <text x="520" y="215" fill="#cbd5e1" fontSize="9">5. Lysis/Release</text>
+            <rect x="60" y="310" width="580" height="45" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="337" fill="#a855f7" fontSize="11" textAnchor="middle">Viruses are ACCELLULAR: no metabolism, obligate intracellular parasites, DNA OR RNA (never both)</text>
+          </svg>
+        );
+
+      case "biotech-microbe-applications":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Microbial Biotechnology Applications</text>
+            {[
+              {area:"Industry",ex:"Fermentation, antibiotics, enzymes",color:"#38bdf8"},
+              {area:"Medicine",ex:"Insulin, vaccines, monoclonal antibodies",color:"#10b981"},
+              {area:"Agriculture",ex:"Biofertilizers (Rhizobium), Bt crops",color:"#f59e0b"},
+              {area:"Environment",ex:"Bioremediation, wastewater treatment",color:"#a855f7"}
+            ].map((a,i) => (
+              <rect key={i} x={60+i*155} y="90" width="140" height="140" rx="8" fill={a.color} fillOpacity="0.1" stroke={a.color} strokeWidth="2"/>
+            ))}
+            <rect x="60" y="250" width="580" height="110" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="280" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Landmark Achievements</text>
+            <text x="120" y="310" fill="#38bdf8" fontSize="10">• Humulin (1982): First GMO drug — human insulin from E. coli</text>
+            <text x="120" y="330" fill="#10b981" fontSize="10">• Bt cotton: 50%+ pesticide reduction via bacterial crystal protein</text>
+            <text x="400" y="310" fill="#a855f7" fontSize="10">• Pseudomonas putida: Oil spill bioremediation (Exxon Valdez)</text>
+            <text x="400" y="330" fill="#ef4444" fontSize="10">• Gut microbiome: 10¹⁴ microbes essential for digestion & immunity</text>
+          </svg>
+        );
+
+      case "biodiversity-conservation":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Biodiversity & Conservation Strategies</text>
+            <rect x="60" y="90" width="180" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="150" y="120" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Genetic Diversity</text>
+            <text x="150" y="165" fill="#94a3b8" fontSize="9" textAnchor="middle">Nepal rice landraces (300+)</text>
+            <rect x="260" y="90" width="180" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="120" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Species Diversity</text>
+            <text x="350" y="165" fill="#94a3b8" fontSize="9" textAnchor="middle">Rhino, tiger, red panda</text>
+            <rect x="460" y="90" width="180" height="100" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="550" y="120" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Ecosystem Diversity</text>
+            <text x="550" y="165" fill="#94a3b8" fontSize="9" textAnchor="middle">Terai to nival zones</text>
+            <rect x="60" y="210" width="280" height="140" rx="8" fill="#ef4444" fillOpacity="0.08" stroke="#ef4444" strokeWidth="2"/>
+            <text x="200" y="240" fill="#ef4444" fontSize="12" fontWeight="bold" textAnchor="middle">Major Threats</text>
+            <text x="80" y="270" fill="#cbd5e1" fontSize="10">1. Habitat loss/degradation (PRIMARY)</text>
+            <text x="80" y="295" fill="#cbd5e1" fontSize="10">2. Overexploitation (poaching, logging)</text>
+            <text x="80" y="320" fill="#cbd5e1" fontSize="10">3. Invasive species</text>
+            <rect x="360" y="210" width="280" height="140" rx="8" fill="#10b981" fillOpacity="0.08" stroke="#10b981" strokeWidth="2"/>
+            <text x="500" y="240" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Conservation Strategies</text>
+            <text x="380" y="270" fill="#cbd5e1" fontSize="10">In-situ: National parks, wildlife reserves</text>
+            <text x="380" y="295" fill="#cbd5e1" fontSize="10">Ex-situ: Seed banks, zoos, cryopreservation</text>
+          </svg>
+        );
+
+      case "conservation-strategies-nepal":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Nepal Conservation: In-situ & Ex-situ</text>
+            <rect x="50" y="90" width="290" height="220" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="195" y="120" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">In-situ Conservation</text>
+            <text x="70" y="155" fill="#cbd5e1" fontSize="10">• National Parks (11): Chitwan, Sagarmatha</text>
+            <text x="70" y="180" fill="#cbd5e1" fontSize="10">• Wildlife Reserves (6): Bardia, Koshi Tappu</text>
+            <text x="70" y="205" fill="#cbd5e1" fontSize="10">• Conservation Areas (1): Annapurna (7,629 km²)</text>
+            <text x="70" y="265" fill="#f59e0b" fontSize="9">Coverage: ~21% of Nepal land area</text>
+            <rect x="360" y="90" width="290" height="220" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="505" y="120" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Ex-situ Conservation</text>
+            <text x="380" y="155" fill="#cbd5e1" fontSize="10">• Seed banks (NTNC × Millennium Seed Bank)</text>
+            <text x="380" y="180" fill="#cbd5e1" fontSize="10">• Botanical gardens (National, Bhaktapur)</text>
+            <text x="380" y="205" fill="#cbd5e1" fontSize="10">• Zoos & safari parks (Chitwan Safari Park)</text>
+            <text x="380" y="265" fill="#f59e0b" fontSize="9">Community forestry: 22,000 user groups</text>
+          </svg>
+        );
+
+      case "nepal-vegetation-zones":
+        return (
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
+            <rect x="40" y="30" width="620" height="340" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="65" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Nepal Vegetation Zones (Altitude-Based)</text>
+            {[
+              {zone:"Terai",alt:"100-600m",veg:"Tropical deciduous (sal)",color:"#10b981"},
+              {zone:"Siwalik",alt:"600-2000m",veg:"Moist subtropical (chirai)",color:"#38bdf8"},
+              {zone:"Middle Hills",alt:"2000-3000m",veg:"Temperate (oak, rhodo)",color:"#f59e0b"},
+              {zone:"High Hills",alt:"3000-4000m",veg:"Subalpine (birch, juniper)",color:"#a855f7"},
+              {zone:"Alpine",alt:"4000-4800m",veg:"Alpine meadows (herbs)",color:"#ef4444"},
+              {zone:"Nival",alt:"4800m+",veg:"Bare rock, snow only",color:"#94a3b8"}
+            ].map((z,i) => (
+              <rect key={i} x={50+i*105} y="90" width="95" height="180" rx="6" fill={z.color} fillOpacity="0.1" stroke={z.color} strokeWidth="2"/>
+            ))}
+            <rect x="60" y="290" width="580" height="65" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="315" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">Key Facts</text>
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">34+ rhododendron species (national flower: R. arboreum) · Community forestry managing 2.2M hectares</text>
+            <text x="350" y="355" fill="#94a3b8" fontSize="9" textAnchor="middle">Climate change shifting treeline upward ~30m/decade; alpine species face habitat compression</text>
+          </svg>
+        );
 
       default:
         return (

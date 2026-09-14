@@ -17,6 +17,9 @@ import {
   createThreeScene,
   bindResize,
 } from "@/components/lab/three-scene";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ValueChip } from "@/components/viz/value-chip";
+import { Hotspots } from "@/components/viz/hotspot";
 
 // Vector Basics 3D Component
 const VectorBasics3D: React.FC = () => {
@@ -29,6 +32,7 @@ const VectorBasics3D: React.FC = () => {
   const [vec2AngleX, setVec2AngleX] = useState(90);
   const [vec2AngleY, setVec2AngleY] = useState(0);
   const [showResultant, setShowResultant] = useState(true);
+  const vizTargetRef = useRef<VizTarget>({});
 
   // Calculate resultant
   const vec1X = vec1Mag * Math.cos(vec1AngleY * Math.PI / 180) * Math.cos(vec1AngleX * Math.PI / 180);
@@ -70,6 +74,7 @@ const VectorBasics3D: React.FC = () => {
     clearGroup(ts!.group);
 
 
+    vizTargetRef.current = { controls: ts!.controls, el: mountRef.current, canvasEl: ts!.renderer.domElement, render: () => { ts!.renderer.render(ts!.scene, ts!.camera); } };
     // Grid helper
     const gridHelper = new THREE.GridHelper(20, 20, 0x333333, 0x222222);
     ts!.group.add(gridHelper);
@@ -164,7 +169,19 @@ const VectorBasics3D: React.FC = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="aspect-[16/10] bg-black rounded-lg overflow-hidden" ref={mountRef} />
+        <div className="relative aspect-[16/10] bg-black rounded-lg overflow-hidden" ref={mountRef}>
+          <VizToolbar targetRef={vizTargetRef} />
+          <Hotspots
+            tourId="ph-vectors"
+            autoStart
+            steps={[
+              { x: 50, y: 82, title: "Origin", body: "All vectors start at the center. Drag to orbit; scroll to zoom." },
+              { x: 34, y: 42, title: "Vector 1 (red)", body: "Set its magnitude and X/Y angles with the sliders below the scene." },
+              { x: 62, y: 30, title: "Vector 2 (blue)", body: "Second vector; the resultant is their sum." },
+              { x: 50, y: 18, title: "Resultant (green)", body: "|R| = sqrt(Rx^2+Ry^2+Rz^2) — shown live on the readout chips." },
+            ]}
+          />
+        </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
           <div className="space-y-2">
@@ -193,6 +210,11 @@ const VectorBasics3D: React.FC = () => {
               {showResultant ? "Hide Resultant" : "Show Resultant"}
             </Button>
           </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-2 mt-4">
+          <ValueChip label="A" value={vec1Mag} accent />
+          <ValueChip label="B" value={vec2Mag} accent />
+          <ValueChip label="|R|" value={resultantMag} digits={2} accent />
         </div>
 
         <div className="grid grid-cols-2 gap-4 mt-4">
