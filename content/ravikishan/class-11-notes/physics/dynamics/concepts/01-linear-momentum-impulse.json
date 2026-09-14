@@ -104,27 +104,52 @@
   "mcs": [
     {
       "question": "The SI unit of impulse is:",
-      "options": ["N", "N/s", "N·s", "kg·m/s²"],
+      "options": [
+        "N",
+        "N/s",
+        "N·s",
+        "kg·m/s²"
+      ],
       "answer": "C"
     },
     {
       "question": "A 2 kg ball at 10 m/s bounces back at 10 m/s. The impulse magnitude is:",
-      "options": ["0", "20 N·s", "40 N·s", "10 N·s"],
+      "options": [
+        "0",
+        "20 N·s",
+        "40 N·s",
+        "10 N·s"
+      ],
       "answer": "C"
     },
     {
       "question": "Doubling the collision time for the same momentum change makes the average force:",
-      "options": ["Double", "Half", "Unchanged", "Four times"],
+      "options": [
+        "Double",
+        "Half",
+        "Unchanged",
+        "Four times"
+      ],
       "answer": "B"
     },
     {
       "question": "$F = dp/dt$ reduces to $F = ma$ when:",
-      "options": ["Velocity is high", "Mass is constant", "Force is constant", "Momentum is constant"],
+      "options": [
+        "Velocity is high",
+        "Mass is constant",
+        "Force is constant",
+        "Momentum is constant"
+      ],
       "answer": "B"
     },
     {
       "question": "A cricket player pulling hands back while catching reduces:",
-      "options": ["The impulse", "The momentum change", "The average force", "The ball's mass"],
+      "options": [
+        "The impulse",
+        "The momentum change",
+        "The average force",
+        "The ball's mass"
+      ],
       "answer": "C"
     }
   ],
@@ -141,5 +166,6 @@
     "Task 3: Explain airbags, crumple zones and helmet padding with one common argument and numbers.",
     "Task 4: Solve recoil problems: rifle–bullet, boat–passenger, and rocket thrust per second.",
     "Task 5: Derive $J = \\Delta p$ from $F = dp/dt$ by integration over a collision interval."
-  ]
+  ],
+  "visualType": "impulse-momentum"
 }

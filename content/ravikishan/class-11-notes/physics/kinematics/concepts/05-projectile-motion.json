@@ -105,27 +105,52 @@
   "mcs": [
     {
       "question": "The horizontal component of a projectile's velocity during ideal flight is:",
-      "options": ["Zero at the top", "Constant", "Equal to g", "Increasing"],
+      "options": [
+        "Zero at the top",
+        "Constant",
+        "Equal to g",
+        "Increasing"
+      ],
       "answer": "B"
     },
     {
       "question": "Maximum range for a given launch speed occurs at:",
-      "options": ["30°", "45°", "60°", "90°"],
+      "options": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
       "answer": "B"
     },
     {
       "question": "Two projectiles launched at 20° and 70° with the same speed have:",
-      "options": ["Different ranges", "The same range", "The same maximum height", "Different flight times but same height"],
+      "options": [
+        "Different ranges",
+        "The same range",
+        "The same maximum height",
+        "Different flight times but same height"
+      ],
       "answer": "B"
     },
     {
       "question": "At the highest point of the trajectory, the speed equals:",
-      "options": ["Zero", "u", "u cos θ", "u sin θ"],
+      "options": [
+        "Zero",
+        "u",
+        "u cos θ",
+        "u sin θ"
+      ],
       "answer": "C"
     },
     {
       "question": "A stone thrown horizontally from a cliff lands after 3 s. From twice the height it would land after:",
-      "options": ["6 s", "3√2 s", "1.5 s", "9 s"],
+      "options": [
+        "6 s",
+        "3√2 s",
+        "1.5 s",
+        "9 s"
+      ],
       "answer": "B (t ∝ √h)"
     }
   ],
@@ -142,5 +167,6 @@
     "Task 3: Verify the complementary-angle range equality numerically for 15°/75° with $u = 40$ m/s.",
     "Task 4: Trace the full trajectory table ($x, y, v_x, v_y$ each 0.5 s) for $u = 20$ m/s at 30° and plot it.",
     "Task 5: Explain in words why a horizontally thrown stone and a dropped stone hit the ground together."
-  ]
+  ],
+  "visualType": "free-falling-body"
 }
