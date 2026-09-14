@@ -122,7 +122,7 @@ export default async function TheoremDetailPage({
         </h2>
         <div className="rounded-xl border border-border overflow-hidden">
           {(rawJson as any)?.visualType ? (
-            <DerivationVisual type={(rawJson as any).visualType} />
+            <DerivationVisual visualType={(rawJson as any).visualType} />
           ) : (
             <SchematicDiagram
               subjectSlug={subjectSlug}

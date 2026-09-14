@@ -4,20 +4,20 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  // Vite 8 uses oxc instead of esbuild; @vitejs/plugin-react v4 still
-  // configures JSX through the deprecated esbuild options, which oxc
-  // ignores. Declare the automatic JSX runtime here so .tsx test files
-  // are transformed correctly.
-  oxc: {
-    jsx: {
-      runtime: "automatic",
-    },
+  // Declare the automatic JSX runtime here so .tsx test files are
+  // transformed correctly by Vite's esbuild pipeline.
+  esbuild: {
+    jsx: "automatic",
   },
   test: {
     environment: "jsdom",
     globals: true,
     setupFiles: ["./tests/setup.ts"],
     include: ["tests/**/*.{test,spec}.{ts,tsx}"],
+    // The forks pool times out waiting for workers on this machine;
+    // threads + single-file execution is the stable configuration.
+    pool: "threads",
+    fileParallelism: false,
   },
   resolve: {
     alias: {

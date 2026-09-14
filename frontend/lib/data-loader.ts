@@ -42,7 +42,7 @@ export function loadData<T>(relPath: string): Promise<T> {
         ];
         for (const p of candidatePaths) {
           try {
-            const raw = await readFile(p, "utf-8");
+            const raw = await readFile(/*turbopackIgnore: true*/ p, "utf-8");
             return JSON.parse(raw) as T;
           } catch {
             // try next candidate path

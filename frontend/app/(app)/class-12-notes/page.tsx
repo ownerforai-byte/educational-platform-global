@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { ClassSubjectsGrid } from "@/components/layout/class-subjects-grid";
 
 const CLASS_SLUG = "class-12-notes";

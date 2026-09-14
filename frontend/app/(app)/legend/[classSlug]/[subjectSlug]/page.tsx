@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { getSubjectLegend } from "@/lib/legend";
 import { ChevronRight, Lightbulb, BookOpen, FileText, Zap, AlertCircle, BookMarked, Target, Calculator } from "lucide-react";

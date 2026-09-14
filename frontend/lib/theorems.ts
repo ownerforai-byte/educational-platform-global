@@ -136,10 +136,10 @@ export async function readTheoremContent(filePath: string): Promise<any> {
   }
 
   const { readFile } = await import("node:fs/promises");
-  const abs = join(PROJECT_ROOT, filePath);
+  const abs = join(/*turbopackIgnore: true*/ PROJECT_ROOT, filePath);
   let parsed: any = null;
   try {
-    const raw = await readFile(abs, "utf-8");
+    const raw = await readFile(/*turbopackIgnore: true*/ abs, "utf-8");
     parsed = JSON.parse(raw);
   } catch {
     // Missing or invalid file - caller falls back to entry metadata
@@ -190,7 +190,7 @@ async function scanSubject(
   subjectSlug: string,
 ): Promise<TheoremEntry[]> {
   const { readdir, readFile } = await import("node:fs/promises");
-  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
+  const baseDir = join(/*turbopackIgnore: true*/ PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
   const entries: TheoremEntry[] = [];
 
   try {
@@ -209,7 +209,7 @@ async function scanSubject(
         for (const conceptFile of conceptFiles) {
           if (!conceptFile.name.endsWith(".json")) continue;
           const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", conceptFile.name);
-          const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
+          const raw = await readFile(/*turbopackIgnore: true*/ join(PROJECT_ROOT, filePath), "utf-8");
           if (!isTheoremNote(raw)) continue;
           if (LEGACY_CLASS_SLUGS.has(classSlug)) continue;
 
@@ -268,7 +268,7 @@ function findUnit(
  */
 async function getSubjectsForClass(classSlug: string): Promise<string[]> {
   const { readdir } = await import("node:fs/promises");
-  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug);
+  const baseDir = join(/*turbopackIgnore: true*/ PROJECT_ROOT, "content", "ravikishan", classSlug);
   try {
     const items = await readdir(baseDir, { withFileTypes: true });
     const syllabusSlugs = new Set(

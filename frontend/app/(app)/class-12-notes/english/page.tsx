@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { SubjectHubView } from "@/features/syllabus/components/subject-hub-view";
 
 const CLASS_SLUG = "class-12-notes";
