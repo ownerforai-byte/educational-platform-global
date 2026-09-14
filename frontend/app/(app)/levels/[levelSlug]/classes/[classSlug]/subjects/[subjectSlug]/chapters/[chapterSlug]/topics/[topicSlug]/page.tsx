@@ -1,19 +1,6 @@
-import { getTopicDetail } from "@/lib/curriculum";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { UnderDevelopment } from "@/components/content/under-development";
 import Link from "next/link";
-
-const RESOURCE_TYPE_LABELS: Record<string, string> = {
-  SYLLABUS: "Syllabus",
-  MINDMAP: "Mind Map",
-  NOTES: "Notes",
-  NUMERICAL: "Numericals",
-  FLASHCARD: "Flashcards",
-  QUIZ: "Quizzes",
-  VIDEO: "Videos",
-};
 
 export default async function TopicPage({
   params,
@@ -27,51 +14,40 @@ export default async function TopicPage({
   }>;
 }) {
   const { levelSlug, classSlug, subjectSlug, chapterSlug, topicSlug } = await params;
-  const detail = await getTopicDetail(levelSlug, classSlug, subjectSlug, chapterSlug, topicSlug);
 
-  if (!detail) {
-    return (
-      <div className="mx-auto max-w-5xl py-10">
-        <h1 className="text-2xl font-bold">Topic not found</h1>
-      </div>
-    );
+  // Find the syllabus data for this topic
+  let topicTitle = topicSlug;
+  let isFromSyllabus = false;
+
+  if (classSlug.includes("notes")) {
+    // Try to find topic in syllabus
+    const { getSubjectSyllabus } = await import("@/lib/syllabus");
+    const subject = getSubjectSyllabus(classSlug, subjectSlug);
+    if (subject) {
+      // Find the unit/chapter that contains this topic
+      const units = (subject as any).units || [];
+      for (const unit of units) {
+        const topics = (unit as any).topics || [];
+        const topicIndex = topics.findIndex((t: string) => 
+          t.toLowerCase().replace(/\s+/g, "-") === topicSlug ||
+          topicSlug === `topic-${topics.indexOf(t) + 1}`
+        );
+        if (topicIndex >= 0) {
+          topicTitle = topics[topicIndex] || topicSlug;
+          isFromSyllabus = true;
+          break;
+        }
+      }
+    }
   }
-
-  const { topic, resources, linkedResources } = detail;
-
-  const grouped = resources.reduce<Record<string, typeof resources>>(
-    (acc, r) => {
-      const key = r.type;
-      acc[key] = acc[key] ?? [];
-      acc[key].push(r);
-      return acc;
-    },
-    {}
-  );
-
-  const resourceTypes = Object.keys(grouped).sort();
-
-  // Fetch subject + chapter names for full breadcrumb chain
-  let subjectName = subjectSlug;
-  let chapterName = chapterSlug;
-  try {
-    const [subResp, chapResp] = await Promise.all([
-      fetch(`/api/subjects/${encodeURIComponent(subjectSlug)}`),
-      fetch(`/api/chapters/${encodeURIComponent(chapterSlug)}`),
-    ]);
-    const subJson = await subResp.json();
-    const chapJson = await chapResp.json();
-    subjectName = subJson.subject?.name ?? subjectSlug;
-    chapterName = chapJson.chapter?.name ?? chapterSlug;
-  } catch {}
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Levels", href: "/levels" },
-    { label: "Class 11 Notes", href: "/levels/library/classes/class-11-notes" },
-    { label: subjectName, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}` },
-    { label: chapterName, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapterSlug}` },
-    { label: topic.title },
+    { label: classSlug, href: `/levels/${levelSlug}/classes/${classSlug}` },
+    { label: subjectSlug, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}` },
+    { label: chapterSlug, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapterSlug}` },
+    { label: topicTitle },
   ];
 
   return (
@@ -82,77 +58,45 @@ export default async function TopicPage({
       </div>
 
       <div className="space-y-1">
-        <h1 className="text-3xl font-bold tracking-tight">{topic.title}</h1>
-        {topic.description && (
-          <p className="text-muted-foreground">{topic.description}</p>
-        )}
+        <h1 className="text-3xl font-bold tracking-tight">{topicTitle}</h1>
+        <p className="text-muted-foreground">
+          Topic content coming soon. For now, check out the notes pages.
+        </p>
       </div>
 
-      {resourceTypes.length === 0 && linkedResources.length === 0 ? (
-        <UnderDevelopment />
-      ) : (
-        <div className="space-y-6">
-          {resourceTypes.map((type) => (
-            <div key={type} className="space-y-3">
-              <h2 className="text-xl font-semibold">
-                {RESOURCE_TYPE_LABELS[type] ?? type}
-              </h2>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {(grouped[type] ?? []).map((resource) => (
-                  <Link
-                    key={resource.id}
-                    href={`/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapterSlug}/topics/${topicSlug}/resources/${resource.id}`}
-                  >
-                    <Card className="h-full transition-colors hover:border-primary">
-                      <CardHeader>
-                        <CardTitle className="text-base">
-                          {resource.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">
-                          {resource.content_type}
-                        </p>
-                        {resource.media_url && (
-                          <span className="text-sm text-primary">
-                            Has media
-                          </span>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-
-          {linkedResources.length > 0 && (
-            <div className="space-y-3">
-              <h2 className="text-xl font-semibold">Linked Resources</h2>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {linkedResources.map((link) => (
-                  <Link
-                    key={link.id}
-                    href={`/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapterSlug}/topics/${topicSlug}/resources/${link.referenced.id}`}
-                  >
-                    <Card className="h-full transition-colors hover:border-primary">
-                      <CardHeader>
-                        <CardTitle className="text-base">
-                          {link.referenced.title}
-                        </CardTitle>
-                        <CardDescription>
-                          {link.reference_type}
-                          {link.attribution ? ` — ${link.attribution}` : ""}
-                        </CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+      <div className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+        This topic will be available once we populate the database with study materials.
+        <br />
+        <Link 
+          href={`/${classSlug}/${subjectSlug}`} 
+          className="text-primary hover:underline mt-2 inline-block"
+        >
+          View all notes →
+        </Link>
+      </div>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  const params: Array<{ levelSlug: string; classSlug: string; subjectSlug: string; chapterSlug: string; topicSlug: string }> = [];
+  for (const cls of [
+    { slug: "class-11-notes", subjects: ["mathematics", "physics", "chemistry", "biology"] },
+    { slug: "class-12-notes", subjects: ["mathematics", "physics", "chemistry", "biology"] },
+  ]) {
+    for (const subjectSlug of cls.subjects) {
+      for (let unit = 1; unit <= 10; unit++) {
+        for (let topic = 1; topic <= 5; topic++) {
+          params.push({
+            levelSlug: "library",
+            classSlug: cls.slug,
+            subjectSlug,
+            chapterSlug: `unit-${unit}`,
+            topicSlug: `topic-${topic}`,
+          });
+        }
+      }
+    }
+  }
+  return params;
 }

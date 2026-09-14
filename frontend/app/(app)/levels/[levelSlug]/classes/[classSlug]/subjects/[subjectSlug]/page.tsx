@@ -1,8 +1,8 @@
-import { getSubjectDetail } from "@/lib/curriculum";
+import { getSubjectBySlug, getChaptersBySubject } from "@/lib/curriculum";
+import { SYLLABUS, getSubjectSyllabus } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { UnderDevelopment } from "@/components/content/under-development";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 export default async function SubjectPage({
@@ -11,9 +11,43 @@ export default async function SubjectPage({
   params: Promise<{ levelSlug: string; classSlug: string; subjectSlug: string }>;
 }) {
   const { levelSlug, classSlug, subjectSlug } = await params;
-  const detail = await getSubjectDetail(levelSlug, classSlug, subjectSlug);
 
-  if (!detail) {
+  // Try API first, fall back to syllabus
+  let subjectName = "";
+  let subjectDescription: string | null = null;
+  let chapters: Array<{ id: string; slug: string; title: string; description: string | null }> = [];
+
+  try {
+    const apiSubject = await getSubjectBySlug(levelSlug, classSlug, subjectSlug);
+    if (apiSubject) {
+      subjectName = apiSubject.name;
+      subjectDescription = apiSubject.description;
+      const apiChapters = await getChaptersBySubject(levelSlug, classSlug, subjectSlug);
+      chapters = apiChapters.map((c) => ({
+        id: c.id,
+        slug: c.slug,
+        title: c.title,
+        description: c.description,
+      }));
+    }
+  } catch {}
+
+  // Fall back to syllabus data
+  if (!chapters.length && classSlug.includes("notes")) {
+    const syllabusSubject = getSubjectSyllabus(classSlug, subjectSlug);
+    if (syllabusSubject) {
+      subjectName = syllabusSubject.name;
+      subjectDescription = syllabusSubject.description;
+      chapters = syllabusSubject.units.map((u, i) => ({
+        id: u.id,
+        slug: `unit-${i + 1}`,
+        title: u.title,
+        description: `${u.topics.length} topics`,
+      }));
+    }
+  }
+
+  if (!subjectName) {
     return (
       <div className="mx-auto max-w-5xl py-10">
         <h1 className="text-2xl font-bold">Subject not found</h1>
@@ -21,15 +55,11 @@ export default async function SubjectPage({
     );
   }
 
-  const { subject, chapters, chapterProgress } = detail;
-
-  const progressMap = new Map(chapterProgress.map((p) => [p.chapterId, p]));
-
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Levels", href: "/levels" },
-    { label: "Class 11 Notes", href: "/levels/library/classes/class-11-notes" },
-    { label: subject.name },
+    { label: classSlug, href: `/levels/${levelSlug}/classes/${classSlug}` },
+    { label: subjectName },
   ];
 
   return (
@@ -40,54 +70,47 @@ export default async function SubjectPage({
       </div>
 
       <div className="space-y-1">
-        <h1 className="text-3xl font-bold tracking-tight">{subject.name}</h1>
-        {subject.description && (
-          <p className="text-muted-foreground">{subject.description}</p>
+        <h1 className="text-3xl font-bold tracking-tight">{subjectName}</h1>
+        {subjectDescription && (
+          <p className="text-muted-foreground">{subjectDescription}</p>
         )}
       </div>
 
       {chapters.length === 0 ? (
-        <UnderDevelopment />
+        <div className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+          No chapters available for this subject yet.
+        </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {chapters.map((chapter) => {
-            const progress = progressMap.get(chapter.id);
-            const total = progress?.total ?? 0;
-            const completed = progress?.completed ?? 0;
-            const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-
-            return (
-              <Link
-                key={chapter.id}
-                href={`/levels/${levelSlug}/classes/${classSlug}/subjects/${subject.slug}/chapters/${chapter.slug}`}
-              >
-                <Card className="h-full transition-colors hover:border-primary">
-                  <CardHeader>
-                    <CardTitle>{chapter.title}</CardTitle>
-                    {chapter.description && (
-                      <CardDescription>{chapter.description}</CardDescription>
-                    )}
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-xs text-muted-foreground">
-                        <span>{total} topic{total !== 1 ? "s" : ""}</span>
-                        <span>{completed}/{total} completed</span>
-                      </div>
-                      <div className="h-2 w-full rounded-full bg-muted">
-                        <div
-                          className="h-2 rounded-full bg-primary transition-all"
-                          style={{ width: `${pct}%` }}
-                        />
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            );
-          })}
+          {chapters.map((chapter) => (
+            <Link
+              key={chapter.id}
+              href={`/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapter.slug}`}
+            >
+              <Card className="h-full transition-colors hover:border-primary">
+                <CardHeader>
+                  <CardTitle>{chapter.title}</CardTitle>
+                  {chapter.description && (
+                    <CardDescription>{chapter.description}</CardDescription>
+                  )}
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
         </div>
       )}
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return SYLLABUS.flatMap((cls) =>
+    ["library"].map((levelSlug) =>
+      cls.subjects.map((s) => ({
+        levelSlug,
+        classSlug: cls.slug,
+        subjectSlug: s.slug,
+      }))
+    )
+  ).flat();
 }
