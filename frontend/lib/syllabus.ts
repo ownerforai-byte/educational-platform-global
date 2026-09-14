@@ -56,6 +56,7 @@ export type SubjectSyllabus = {
 export type ClassSyllabus = {
   slug: string;
   name: string;
+  description?: string;
   subjects: SubjectSyllabus[];
   notesUrl?: string;
 };
