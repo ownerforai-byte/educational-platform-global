@@ -48,7 +48,7 @@
     "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
   ],
   "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
+    "Compound: 40% C, 6.7% H, 53.3% O; molar mass 180 g/mol → empirical CH₂O (30), n=6 → C₆H₁₂O₆"
   ],
   "formulas": [
     "n = m/M",
@@ -159,9 +159,6 @@
     "Specialized insight for 07 empirical molecular formula."
   ],
   "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "universalFacts": [
-    "Universal scientific fact for 07 empirical molecular formula."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "duplicateType": 2,
@@ -221,5 +218,5 @@
     "component": "MoleCalculator",
     "desc": "Interactive mole-mass-volume calculator"
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "empirical-molecular-formula"
 }

@@ -49,7 +49,7 @@
     "❌ Electrolytic cells produce electricity. ✅ Galvanic/voltaic cells produce electricity; electrolytic cells consume it."
   ],
   "examples": [
-    "Zn+Cu²⁺→Zn²⁺+Cu (electrochemical cell)"
+    "Zn + Cu²⁺ → Zn²⁺ + Cu: Zn oxidized (reducing agent); Cu²⁺ reduced (oxidizing agent)"
   ],
   "formulas": [
     "$F = m \\cdot a$ (relevant formula for 01 redox concepts)"
@@ -160,9 +160,6 @@
     "Specialized insight for 01 redox concepts."
   ],
   "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nOIL RIG mnemonic: Oxidation Is Loss, Reduction Is Gain.\n\nStandard hydrogen electrode is reference (E° = 0.00 V).",
-  "universalFacts": [
-    "Universal scientific fact for 01 redox concepts."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "duplicateType": 2,
@@ -191,5 +188,5 @@
     "component": "ElectrochemistrySim",
     "desc": "Electrochemical cell simulation"
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "redox-reactions"
 }

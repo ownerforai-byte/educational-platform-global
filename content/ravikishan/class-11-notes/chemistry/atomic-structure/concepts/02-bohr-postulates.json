@@ -82,12 +82,12 @@
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
   "universalFacts": [
-    "Universal scientific fact for 02 bohr postulates."
+    "Bohr model won him the 1922 Nobel Prize in Physics."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
+    "Calculate wavelength of photon emitted when electron jumps from n=3 to n=2 (Balmer series): λ = 656 nm (red light)"
   ],
   "practiceQuestions": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -209,5 +209,5 @@
     "component": "RutherfordScatteringSim",
     "description": "Interactive visualization of α-particle deflection by the nucleus."
   },
-  "visualType": "heisenberg-uncertainty"
+  "visualType": "bohr-hydrogen-atom"
 }

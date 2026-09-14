@@ -88,12 +88,12 @@
     "Practice calculating energy of photon from frequency and wavelength."
   ],
   "universalFacts": [
-    "Universal scientific fact for 24 atomic number."
+    "Nucleus contains 99.9% of atom mass but <0.01% of its volume."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
+    "If nucleus were the size of a marble, atom would be the size of a football stadium."
   ],
   "practiceQuestions": [
     "Practice drawing Lewis structures for ionic and covalent compounds.",
@@ -216,5 +216,5 @@
     "component": "RutherfordScatteringSim",
     "description": "Interactive visualization of α-particle deflection by the nucleus."
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "rutherford-alpha-scattering"
 }

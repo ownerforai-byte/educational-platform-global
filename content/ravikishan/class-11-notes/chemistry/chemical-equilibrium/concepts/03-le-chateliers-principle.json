@@ -82,13 +82,10 @@
     "Practice comparing in-situ and ex-situ conservation strategies.",
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 03 le chateliers principle."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+    "N₂ + 3H₂ ⇌ 2NH₃ (exothermic): high pressure, low temp favor NH₃ (Haber process)"
   ],
   "practiceQuestions": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -210,5 +207,5 @@
     "component": "EquilibriumShiftSim",
     "desc": "Le Chatelier principle interactive simulation"
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "le-chateliers-principle"
 }

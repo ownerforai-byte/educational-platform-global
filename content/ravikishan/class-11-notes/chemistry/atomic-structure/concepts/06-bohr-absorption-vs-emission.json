@@ -88,12 +88,12 @@
     "Practice calculating energy of photon from frequency and wavelength."
   ],
   "universalFacts": [
-    "Universal scientific fact for 06 bohr absorption vs emission."
+    "Bohr model won him the 1922 Nobel Prize in Physics."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
+    "Calculate wavelength of photon emitted when electron jumps from n=3 to n=2 (Balmer series): λ = 656 nm (red light)"
   ],
   "practiceQuestions": [
     "Practice drawing Lewis structures for ionic and covalent compounds.",
@@ -216,5 +216,5 @@
     "component": "RutherfordScatteringSim",
     "description": "Interactive visualization of α-particle deflection by the nucleus."
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "bohr-hydrogen-atom"
 }

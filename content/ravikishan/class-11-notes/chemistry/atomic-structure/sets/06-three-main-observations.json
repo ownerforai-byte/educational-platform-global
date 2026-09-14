@@ -5,16 +5,17 @@
   "topicTitle": "Orbitals and shape of s and p orbitals only",
   "relevance": 83,
   "notes": [
-    "Detailed notes on 06 three main observations within the atomic structure unit."
+    "s-orbitals are spherical; p-orbitals are dumbbell-shaped.",
+    "Each p-subshell has 3 orbitals (px, py, pz) oriented along axes.",
+    "d-orbitals have cloverleaf shapes (5 orbitals).",
+    "f-orbitals have complex shapes (7 orbitals)."
   ],
   "confusion": [
-    "❌ Misconception about 06 three main observations. ✅ Scientific explanation."
+    "? Orbit and orbital are same. ? Orbit = circular path (Bohr); Orbital = 3D region of electron probability.",
+    "? s-orbital has only 1 electron. ? s-orbital can hold 2 electrons (Pauli exclusion)."
   ],
   "practice": [
     "Practice exercise for 06 three main observations."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 06 three main observations."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
@@ -26,7 +27,7 @@
   ],
   "summary": "Summary of 06 three main observations.",
   "examples": [
-    "Real-world example of 06 three main observations."
+    "Carbon (1s² 2s² 2p²): two unpaired electrons in separate p-orbitals (Hund's rule)."
   ],
   "importantConcepts": [
     "Key concept 1 for 06 three main observations."
@@ -77,5 +78,6 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "orbital-shapes-s-p"
 }

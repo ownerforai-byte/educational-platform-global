@@ -81,13 +81,10 @@
     "Practice comparing in-situ and ex-situ conservation strategies.",
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 08 orbitals shapes."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
+    "Carbon (1s² 2s² 2p²): two unpaired electrons in separate p-orbitals (Hund's rule)."
   ],
   "practiceQuestions": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -209,5 +206,5 @@
     "component": "RutherfordScatteringSim",
     "description": "Interactive visualization of α-particle deflection by the nucleus."
   },
-  "visualType": "heisenberg-uncertainty"
+  "visualType": "orbital-shapes-s-p"
 }

@@ -81,13 +81,10 @@
     "Practice comparing in-situ and ex-situ conservation strategies.",
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 18 orbital designation matrix and magnetic spin."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
+    "For n=3: l=0,1,2; ml=-2,-1,0,+1,+2; total 9 orbitals, 18 electrons."
   ],
   "practiceQuestions": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -209,5 +206,5 @@
     "component": "RutherfordScatteringSim",
     "description": "Interactive visualization of α-particle deflection by the nucleus."
   },
-  "visualType": "heisenberg-uncertainty"
+  "visualType": "quantum-numbers"
 }

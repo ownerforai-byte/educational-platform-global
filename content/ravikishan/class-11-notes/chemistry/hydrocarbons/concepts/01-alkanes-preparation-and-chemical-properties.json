@@ -87,13 +87,10 @@
     "Practice writing reactions of alkanes, alkenes, and alkynes.",
     "Practice distinguishing alkanes from alkenes/alkynes using chemical tests."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 01 alkanes preparation and chemical properties."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Methane CH₄, Ethene C₂H₄, Ethyne C₂H₂"
+    "CH₄ + 2O₂ → CO₂ + 2H₂O (combustion); CH₄ + Cl₂ → CH₃Cl + HCl (UV light)"
   ],
   "practiceQuestions": [
     "Practice drawing Lewis structures for ionic and covalent compounds.",
@@ -192,5 +189,5 @@
     "component": "HydrocarbonViewer",
     "desc": "3D hydrocarbon structure viewer"
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "alkanes"
 }
