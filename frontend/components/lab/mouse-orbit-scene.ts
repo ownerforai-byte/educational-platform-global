@@ -33,6 +33,12 @@ export interface MouseOrbitHandle {
   dispose: () => void;
   /** Resize the canvas to the current container size. */
   resize: () => void;
+  /** Zoom the camera toward/away from the orbit target by a multiplicative factor. */
+  zoomBy: (factor: number) => void;
+  /** Restore the camera position + orbit target captured at creation time. */
+  resetView: () => void;
+  /** Render the current frame and return a PNG data URL (screenshot export). */
+  screenshot: () => string;
 }
 
 export function createMouseOrbitScene(
@@ -93,6 +99,9 @@ export function createMouseOrbitScene(
   fill.position.set(-10, -5, -8);
   scene.add(fill);
 
+  const initialPosition = camera.position.clone();
+  const initialTarget = controls.target.clone();
+
   if (showGrid) scene.add(new THREE.GridHelper(20, 40, 0x334155, 0x1e293b));
   if (showAxes) scene.add(new THREE.AxesHelper(5));
 
@@ -131,7 +140,25 @@ export function createMouseOrbitScene(
     });
   };
 
-  return { scene, camera, renderer, controls, group, container, dispose, resize };
+  return { scene, camera, renderer, controls, group, container, dispose, resize, zoomBy, resetView, screenshot };
+
+  function zoomBy(factor: number) {
+    const dist = camera.position.distanceTo(controls.target);
+    const next = THREE.MathUtils.clamp(dist * factor, controls.minDistance, controls.maxDistance);
+    camera.position.sub(controls.target).setLength(next).add(controls.target);
+    controls.update();
+  }
+
+  function resetView() {
+    camera.position.copy(initialPosition);
+    controls.target.copy(initialTarget);
+    controls.update();
+  }
+
+  function screenshot(): string {
+    renderer.render(scene, camera);
+    return renderer.domElement.toDataURL("image/png");
+  }
 }
 
 /** Create a labelled title sprite that floats above any 3D scene group. */

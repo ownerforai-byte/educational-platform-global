@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { VizToolbar, type VizTarget, type VizTargetRef } from "@/components/viz/viz-toolbar";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import {
   createThreeScene,
@@ -94,13 +95,23 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
 function useLabScene(
   build: (kit: Kit) => void | ((t: number) => void),
   deps: unknown[]
-): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean } {
+): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; vizTargetRef: VizTargetRef } {
+  const vizTargetRef = useRef<VizTarget>({});
   const mountRef = useRef<HTMLDivElement>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount || !webGL) return;
     const kit = setupKit(mount);
+    vizTargetRef.current = {
+      controls: kit.ts.controls,
+      el: mount,
+      canvasEl: kit.ts.renderer.domElement,
+      render: () => {
+        kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
+        kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+      },
+    };
     const tick = build(kit);
     const stop = runLoop(kit, tick ?? undefined);
     const offResize = bindResize(kit.ts);
@@ -111,16 +122,19 @@ function useLabScene(
       window.removeEventListener("resize", onResize);
       offResize();
       kit.labelRenderer.domElement.remove();
+    vizTargetRef.current = {};
       disposeThreeScene(kit.ts);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, ...deps]);
-  return { mountRef, webGL };
+  return { mountRef, webGL, vizTargetRef };
 }
 
-function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean }) {
+function CanvasMount({ mountRef, webGL, targetRef }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; targetRef: VizTargetRef }) {
   return webGL ? (
-    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md" />
+    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md">
+      <VizToolbar targetRef={targetRef} />
+    </div>
   ) : (
     <div className="flex w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
       WebGL is not available in this browser.
@@ -134,7 +148,7 @@ function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivEle
 
 const CellTab: React.FC = () => {
   const [plant, setPlant] = useState(true);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     g.add(new THREE.Mesh(new THREE.SphereGeometry(4, 48, 32),
       standardMaterial(0x38bdf8, { transparent: true, opacity: 0.14 })));
@@ -274,7 +288,7 @@ const CellTab: React.FC = () => {
         <Button size="sm" variant={plant ? "default" : "outline"} onClick={() => setPlant(true)}>Plant cell</Button>
         <Button size="sm" variant={!plant ? "default" : "outline"} onClick={() => setPlant(false)}>Animal cell</Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look={plant ? "A rigid green cell wall outside the membrane, green chloroplasts with grana stacks, one large blue central vacuole and a yellow starch grain — the signatures of a plant cell." : "No cell wall or chloroplasts; note the two pale centrioles (division poles) and the thin flagellum for locomotion."}
         vocabulary="Chromatin = uncoiled DNA + histones; cristae = inner-membrane folds of mitochondria; grana = thylakoid stacks inside chloroplasts."
@@ -307,7 +321,7 @@ function makeChromosome(color: number): THREE.Group {
 const DivisionTab: React.FC = () => {
   const [stage, setStage] = useState<Stage>(1);
   const [meiosis, setMeiosis] = useState(false);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     g.add(new THREE.Mesh(new THREE.TorusGeometry(4.4, 0.07, 10, 64),
       standardMaterial(0x38bdf8, { transparent: true, opacity: 0.5 })));
@@ -384,7 +398,7 @@ const DivisionTab: React.FC = () => {
           </Button>
         ))}
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="X-shaped chromosomes move: scattered (prophase) → single file at the equator (metaphase) → pulled to poles (anaphase) → two cells (telophase)."
         predict="Switch to Meiosis: the chromosome number halves. In telophase, four haploid cells (n) appear below the dividing cell."
@@ -405,7 +419,7 @@ const SEQUENCE = "ATGCCGTAAGCTTACGGATC";
 
 const DnaTab: React.FC = () => {
   const [speed, setSpeed] = useState(0.6);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const helix = new THREE.Group();
     kit.ts!.group.add(helix);
     const N = 60;
@@ -466,7 +480,7 @@ const DnaTab: React.FC = () => {
         <Slider value={[speed]} min={0} max={2} step={0.1} onValueChange={(v) => setSpeed(v[0])} className="max-w-xs" />
         <span className="text-xs text-muted-foreground">{speed.toFixed(1)}×</span>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Two grey sugar-phosphate backbones twist into a right-handed double helix; coloured rungs are A–T (red/blue) and G–C (green/yellow) base pairs, joined by the white hydrogen-bond dots — 2 dots for A=T, 3 for G≡C."
         principle="Complementary base pairing by hydrogen bonds: A = T (2 bonds) and G ≡ C (3 bonds), a purine always pairs with a pyrimidine. One full turn ≈ 3.4 nm containing ~10 base pairs — the basis of semi-conservative replication."
@@ -482,7 +496,7 @@ const DnaTab: React.FC = () => {
 
 const PhageTab: React.FC = () => {
   const [contracted, setContracted] = useState(false);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     // Capsid (head) — icosahedral
     const head = new THREE.Mesh(new THREE.IcosahedronGeometry(1.7, 0), standardMaterial(0x38bdf8, { transparent: true, opacity: 0.85 }));
@@ -564,7 +578,7 @@ const PhageTab: React.FC = () => {
           {contracted ? "Reset (attached)" : "Contract sheath & inject DNA"}
         </Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Capsid = protein coat; sheath = contractile tail; virulent phage reproduces by the lytic cycle only."
         look="The pink DNA coil sits inside the blue icosahedral capsid. Press the button: the yellow sheath shortens and a pink DNA tube is pushed through the base plate into the host bacterium."
@@ -581,7 +595,7 @@ const PhageTab: React.FC = () => {
 
 const EcosystemTab: React.FC = () => {
   const [mode, setMode] = useState<"chain" | "pyramid">("chain");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     if (mode === "chain") {
       const sun = new THREE.Mesh(new THREE.SphereGeometry(0.9, 24, 18), standardMaterial(0xfacc15, { emissive: 0xfacc15, emissiveIntensity: 0.9 }));
@@ -660,7 +674,7 @@ const EcosystemTab: React.FC = () => {
         <Button size="sm" variant={mode === "chain" ? "default" : "outline"} onClick={() => setMode("chain")}>Food chain</Button>
         <Button size="sm" variant={mode === "pyramid" ? "default" : "outline"} onClick={() => setMode("pyramid")}>Energy pyramid</Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Chain: yellow arrows trace energy from sunlight → grass → grasshopper → frog → snake → eagle. Pyramid: tiers shrink upward because energy is lost at every transfer."
         principle="Only ~10% of the energy at one trophic level reaches the next (Lindeman's 10% law); the rest is lost as heat via respiration. That is why food chains rarely exceed 4–5 levels and the pyramid of energy is always upright."

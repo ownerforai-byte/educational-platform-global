@@ -8,6 +8,7 @@ import {
 } from "@/components/lab/mouse-orbit-scene";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
 import { ArrowLabel } from "@/components/lab/annotation/arrow-label";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import React, { useEffect, useMemo, useRef } from "react";
 export type SceneRender = (h: MouseOrbitHandle) => () => void;
 export const SCENE_REGISTRY: Record<string, { scene: SceneRender; title: string; description: string }> = {};
@@ -729,6 +730,7 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<MouseOrbitHandle | null>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
+  const vizTargetRef = useRef<VizTarget>({});
 
   const resolved = useMemo(
     () => pickScene(`${unitSlug ?? ""} ${subjectSlug ?? ""} ${topicSlug}`, topicTitle),
@@ -747,6 +749,12 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
     });
     handleRef.current = h;
     cleanupRef.current = resolved.scene(h);
+    vizTargetRef.current = {
+      controls: h.controls,
+      el: containerRef.current,
+      canvasEl: h.renderer.domElement,
+      render: () => h.renderer.render(h.scene, h.camera),
+    };
 
     let raf = 0;
     const loop = () => {
@@ -761,6 +769,7 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
       cleanupRef.current?.();
       h.dispose();
       handleRef.current = null;
+      vizTargetRef.current = {};
     };
   }, [resolved]);
 
@@ -772,6 +781,7 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
   return (
     <div className="rounded-lg overflow-hidden border border-border bg-slate-950">
       <div ref={containerRef} style={{ height }} className="w-full relative">
+        <VizToolbar targetRef={vizTargetRef} />
         {annotations &&
           annotations.map((ann, idx) => (
             <ArrowLabel key={`${topicSlug}-${idx}`} {...ann} />
@@ -779,7 +789,7 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
       </div>
       <div className="px-3 py-2 bg-slate-900 text-slate-200 text-xs flex items-center justify-between">
         <span className="font-medium">{resolved.title}</span>
-        <span className="opacity-70">🖱️ Drag to rotate · scroll to zoom</span>
+        <span className="opacity-70">🖱️ Drag to rotate · scroll to zoom · toolbar for zoom/reset/fullscreen</span>
       </div>
     </div>
   );

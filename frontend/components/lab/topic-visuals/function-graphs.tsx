@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -42,6 +43,7 @@ type FuncType = "linear" | "quadratic" | "cubic" | "reciprocal" | "exponential" 
 
 export function FunctionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [funcType, setFuncType] = useState<FuncType>("quadratic");
   const [params, setParams] = useState({ a: 1, b: -2, c: -3, k: 1, h: 0 });
   const [showDomainRange, setShowDomainRange] = useState(true);
@@ -83,6 +85,7 @@ export function FunctionVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -221,7 +224,9 @@ export function FunctionVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>

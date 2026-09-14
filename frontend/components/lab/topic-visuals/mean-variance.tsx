@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -38,6 +39,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function MeanVarianceVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -72,6 +74,7 @@ export function MeanVarianceVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
@@ -182,7 +185,9 @@ export function MeanVarianceVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Formulas</p>

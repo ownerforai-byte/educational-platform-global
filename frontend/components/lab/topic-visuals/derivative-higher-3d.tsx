@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -31,6 +32,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function DerivativeHigher3D() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [funcChoice, setFuncChoice] = useState<"cubic" | "quartic">("cubic");
   const [isWebGL] = useState(() => isWebGLAvailable());
 
@@ -62,6 +64,7 @@ export function DerivativeHigher3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -177,7 +180,9 @@ export function DerivativeHigher3D() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-pink-500/30 bg-pink-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-400">Higher Order Derivatives</p>

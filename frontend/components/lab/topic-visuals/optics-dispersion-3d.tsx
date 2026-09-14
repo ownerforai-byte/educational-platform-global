@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -31,6 +32,7 @@ const rainbowLabels = ["R", "O", "Y", "G", "B", "I", "V"];
 
 export default function OpticsDispersion3d() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [prismAngle, setPrismAngle] = useState(60);
   const [incAngle, setIncAngle] = useState(50);
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -53,6 +55,7 @@ export default function OpticsDispersion3d() {
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.dampingFactor = 0.08;
     });
 
@@ -173,7 +176,9 @@ export default function OpticsDispersion3d() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4" />
+        <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
         <CollapsibleControls label="Prism Parameters">
           <div className="space-y-4">
             <div className="space-y-2">

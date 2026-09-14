@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 import { createAnimatedArrow } from "@/components/lab/animated-arrow-helper";
 
@@ -42,6 +43,7 @@ type DynMode = "straight" | "gravity" | "inclined";
 
 export function DynamicsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [mode, setMode] = useState<DynMode>("straight");
   const [u, setU] = useState(0);
   const [a, setA] = useState(2);
@@ -73,6 +75,7 @@ export function DynamicsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -277,7 +280,9 @@ export function DynamicsVisual() {
           </CollapsibleControls>
         )}
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Equations of Motion</p>

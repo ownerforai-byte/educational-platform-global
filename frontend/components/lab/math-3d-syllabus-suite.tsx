@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { VizToolbar, type VizTarget, type VizTargetRef } from "@/components/viz/viz-toolbar";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import {
   createThreeScene,
@@ -90,13 +91,23 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
 function useLabScene(
   build: (kit: Kit) => void | ((t: number) => void),
   deps: unknown[]
-): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean } {
+): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; vizTargetRef: VizTargetRef } {
+  const vizTargetRef = useRef<VizTarget>({});
   const mountRef = useRef<HTMLDivElement>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount || !webGL) return;
     const kit = setupKit(mount);
+    vizTargetRef.current = {
+      controls: kit.ts.controls,
+      el: mount,
+      canvasEl: kit.ts.renderer.domElement,
+      render: () => {
+        kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
+        kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+      },
+    };
     const tick = build(kit);
     const stop = runLoop(kit, tick ?? undefined);
     const offResize = bindResize(kit.ts);
@@ -107,16 +118,19 @@ function useLabScene(
       window.removeEventListener("resize", onResize);
       offResize();
       kit.labelRenderer.domElement.remove();
+    vizTargetRef.current = {};
       disposeThreeScene(kit.ts);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, ...deps]);
-  return { mountRef, webGL };
+  return { mountRef, webGL, vizTargetRef };
 }
 
-function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean }) {
+function CanvasMount({ mountRef, webGL, targetRef }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; targetRef: VizTargetRef }) {
   return webGL ? (
-    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md" />
+    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md">
+      <VizToolbar targetRef={targetRef} />
+    </div>
   ) : (
     <div className="flex w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
       WebGL is not available in this browser.
@@ -132,7 +146,7 @@ const ConicTab: React.FC = () => {
   const [m, setM] = useState(0.4); // plane slope: z = m·y + c
   const c = 1.4;
   const type = m < 0.98 ? "Ellipse" : m <= 1.02 ? "Parabola" : "Hyperbola";
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     // Double cone (slope 1: r = |z|), axis along z, apex at origin
     const coneMat = standardMaterial(0x38bdf8, { transparent: true, opacity: 0.14 });
@@ -177,7 +191,7 @@ const ConicTab: React.FC = () => {
         <span className="text-xs text-muted-foreground">m = {m.toFixed(2)}</span>
         <span className="text-xs font-semibold text-orange-500">→ {type}</span>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="A translucent double cone is sliced by a yellow plane. Drag the slope slider: m < 1 gives a closed ellipse, m = 1 (parallel to the cone side) gives a parabola, m > 1 opens both branches of a hyperbola."
         principle="Every conic is the intersection of a plane with a right circular double cone: circle (m = 0, horizontal) → ellipse → parabola → hyperbola, as the tilt grows."
@@ -194,7 +208,7 @@ const ConicTab: React.FC = () => {
 const StatsTab: React.FC = () => {
   const [mu, setMu] = useState(0);
   const [sigma, setSigma] = useState(1);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const pdf = (x: number) => Math.exp(-((x - mu) ** 2) / (2 * sigma * sigma));
     // Bars from z = −3.5 … 3.5 (σ units on x)
@@ -244,7 +258,7 @@ const StatsTab: React.FC = () => {
           <Slider value={[sigma]} min={0.4} max={2} step={0.05} onValueChange={(v) => setSigma(v[0])} className="w-36" />
         </div>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Blue bars trace the bell curve f(x) = (1/σ√2π)·e^−(x−μ)²/2σ². μ slides the whole curve along the x-axis; σ widens (more spread) or narrows (taller peak) it."
         principle="68–95–99.7 rule: about 68% of values lie within μ ± 1σ, 95% within μ ± 2σ, 99.7% within μ ± 3σ. Total area under the curve = 1."
@@ -268,7 +282,7 @@ const CalculusTab: React.FC = () => {
   const [key, setKey] = useState<keyof typeof SURFACES>("wave");
   const [x0, setX0] = useState(0.8);
   const [y0, setY0] = useState(0.6);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const S = SURFACES[key];
     // Surface: PlaneGeometry displaced; local (x, y) → world (x, z_local→y, −y_local→z)
@@ -327,7 +341,7 @@ const CalculusTab: React.FC = () => {
           <Slider value={[y0]} min={-2.4} max={2.4} step={0.1} onValueChange={(v) => setY0(v[0])} className="w-36" />
         </div>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Orange point P slides over the surface; the translucent orange plane touches the surface only at P — it is the tangent plane. The yellow arrow is the surface normal at P."
         principle="Tangent plane: z = f(x₀,y₀) + fₓ(x₀,y₀)(x−x₀) + f_y(x₀,y₀)(y−y₀), where fₓ = ∂f/∂x and f_y = ∂f/∂y are partial derivatives — slopes holding the other variable constant."

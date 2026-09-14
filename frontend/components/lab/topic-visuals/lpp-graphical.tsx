@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -39,6 +40,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function LPPGraphicalVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [a1, setA1] = useState(2);
   const [b1, setB1] = useState(1);
   const [c1, setC1] = useState(10);
@@ -78,6 +80,7 @@ export function LPPGraphicalVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -232,7 +235,9 @@ export function LPPGraphicalVisual() {
           <p className="text-xs font-mono text-primary mt-1">px + qy = {isoLevel}</p>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Corner Point Method</p>

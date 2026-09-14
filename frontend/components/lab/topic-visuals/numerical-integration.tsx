@@ -6,6 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -40,6 +41,7 @@ type IntMode = "trapezoidal" | "simpson";
 
 export function NumericalIntegrationVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [mode, setMode] = useState<IntMode>("trapezoidal");
   const [n, setN] = useState(6);
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -70,6 +72,7 @@ export function NumericalIntegrationVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -227,7 +230,9 @@ export function NumericalIntegrationVisual() {
           <p className="text-xs font-mono text-primary mt-1">{n} sub-intervals</p>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Formulas</p>

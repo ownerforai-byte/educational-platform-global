@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import {
   Workflow,
   Sparkles,
@@ -88,6 +88,14 @@ export function TopicMindMap({
   const [orderSort, setOrderSort] = useState<OrderSortType>("syllabus");
   const [searchQuery, setSearchQuery] = useState("");
   const [collapsedSubBranches, setCollapsedSubBranches] = useState<Record<string, boolean>>({});
+  const [isMindmapFullscreen, setIsMindmapFullscreen] = useState(false);
+  const mindmapRootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onFsChange = () => setIsMindmapFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", onFsChange);
+    return () => document.removeEventListener("fullscreenchange", onFsChange);
+  }, []);
 
   const toggleSubBranchCollapse = (subId: string) => {
     setCollapsedSubBranches((prev) => ({
@@ -1086,7 +1094,7 @@ export function TopicMindMap({
   const branchRadius = 240;
 
   return (
-    <div className={`rounded-3xl border border-border/80 bg-[#090d16] text-slate-100 shadow-2xl overflow-hidden ${className}`}>
+    <div ref={mindmapRootRef} className={`rounded-3xl border border-border/80 bg-[#090d16] text-slate-100 shadow-2xl overflow-hidden ${className}`}>
       {/* ── Top Header Toolbar ── */}
       <div className="px-5 py-3.5 border-b border-slate-800 bg-[#0d1322] flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -1158,6 +1166,16 @@ export function TopicMindMap({
             title="Reset Canvas View"
           >
             <RotateCcw className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => {
+              if (document.fullscreenElement) void document.exitFullscreen();
+              else void mindmapRootRef.current?.requestFullscreen?.();
+            }}
+            className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
+            title={isMindmapFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+          >
+            {isMindmapFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
           </button>
         </div>
       </div>

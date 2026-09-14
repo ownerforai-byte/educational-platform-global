@@ -2458,6 +2458,438 @@ export function DerivationVisual({
           </svg>
         );
 
+
+      case "direction-cosines":
+        return (
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
+            <circle cx="150" cy="300" r="5" fill="#64748b" />
+            <line x1="150" y1="300" x2="450" y2="100" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
+            <text x="380" y="180" fill="#38bdf8" fontSize="14" fontWeight="bold">r</text>
+            <line x1="150" y1="300" x2="450" y2="300" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="450" y1="300" x2="450" y2="100" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+            <path d="M 210 300 A 60 60 0 0 1 215 250" fill="none" stroke="#10b981" strokeWidth="2" />
+            <text x="220" y="265" fill="#10b981" fontSize="11" fontWeight="bold">α</text>
+            <path d="M 150 240 A 60 60 0 0 0 105 235" fill="none" stroke="#ef4444" strokeWidth="2" />
+            <text x="95" y="235" fill="#ef4444" fontSize="11" fontWeight="bold">β</text>
+            <line x1="150" y1="300" x2="150" y2="100" stroke="#64748b" strokeWidth="1.5" />
+            <line x1="150" y1="300" x2="500" y2="300" stroke="#64748b" strokeWidth="1.5" />
+            <line x1="450" y1="300" x2="450" y2="100" stroke="#64748b" strokeWidth="1.5" />
+            <rect x="180" y="330" width="340" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="347" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">l² + m² + n² = 1  (direction cosines)</text>
+          </svg>
+        );
+
+      case "lhospitals-rule":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="60" width="500" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Form: lim(x→a) f(x)/g(x) → 0/0 or ∞/∞</text>
+            <text x="350" y="125" fill="#cbd5e1" fontSize="11" textAnchor="middle">Apply L'Hôpital: replace with f'(x)/g'(x)</text>
+            <rect x="100" y="155" width="500" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="195" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Example: lim(x→0) sin x / x = lim(x→0) cos x / 1 = 1</text>
+            <text x="350" y="220" fill="#cbd5e1" fontSize="11" textAnchor="middle">Repeat if still indeterminate: second derivative, etc.</text>
+            <rect x="150" y="255" width="400" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="280" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">lim(x→a) f(x)/g(x) = lim(x→a) f'(x)/g'(x)</text>
+            <text x="350" y="298" fill="#cbd5e1" fontSize="9" textAnchor="middle">Apply repeatedly until determinate form obtained</text>
+          </svg>
+        );
+
+      case "tangent-normal-curve":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <path d="M 150 280 C 300 80, 400 80, 550 200" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+            <circle cx="350" cy="130" r="6" fill="#ef4444" />
+            <line x1="250" y1="230" x2="450" y2="80" stroke="#10b981" strokeWidth="3" markerEnd="url(#arrow)" />
+            <text x="460" y="75" fill="#10b981" fontSize="11" fontWeight="bold">Tangent</text>
+            <line x1="350" y1="130" x2="430" y2="80" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <text x="440" y="70" fill="#f59e0b" fontSize="11" fontWeight="bold">Normal</text>
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Slope of tangent = dy/dx | Slope of normal = -dx/dy</text>
+          </svg>
+        );
+
+      case "monotonicity-extrema":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <path d="M 120 280 Q 250 50, 350 280 T 580 100" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+            <circle cx="250" cy="80" r="6" fill="#10b981" />
+            <text x="250" y="65" fill="#10b981" fontSize="10" textAnchor="middle">Local max</text>
+            <circle cx="350" cy="280" r="6" fill="#ef4444" />
+            <text x="350" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Local min</text>
+            <rect x="150" y="325" width="400" height="35" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="348" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">f'(x) &gt; 0 increasing | f'(x) &lt; 0 decreasing | f'(c)=0 critical point</text>
+          </svg>
+        );
+
+      case "integration-by-parts":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="150" y="140" width="400" height="80" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="180" fill="#10b981" fontSize="18" fontWeight="bold" textAnchor="middle">∫u dv = uv - ∫v du</text>
+            <text x="350" y="210" fill="#cbd5e1" fontSize="11" textAnchor="middle">ILATE rule: Inverse &gt; Logarithmic &gt; Algebraic &gt; Trig &gt; Exponential</text>
+            <text x="350" y="260" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Example: ∫x·eˣ dx = x·eˣ - eˣ + C</text>
+            <text x="350" y="300" fill="#cbd5e1" fontSize="10" textAnchor="middle">Choose u=x (simplifies on differentiation), dv=eˣdx</text>
+          </svg>
+        );
+
+      case "area-between-curves":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="665" y="305" fill="#94a3b8" fontSize="10">x</text>
+            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">y</text>
+            <path d="M 150 250 C 250 100, 350 100, 450 200" fill="none" stroke="#38bdf8" strokeWidth="3" />
+            <path d="M 150 280 C 250 180, 350 180, 450 260" fill="none" stroke="#10b981" strokeWidth="3" />
+            <path d="M 150 250 L 150 280 L 450 260 L 450 200 Z" fill="#a855f7" fillOpacity="0.15" />
+            <text x="140" y="275" fill="#a855f7" fontSize="10">a</text>
+            <text x="455" y="255" fill="#a855f7" fontSize="10">b</text>
+            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="343" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Area = ∫ₐᵇ [f(x) - g(x)] dx</text>
+          </svg>
+        );
+
+      case "newton-raphson-method":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="280" x2="660" y2="280" stroke="#64748b" strokeWidth="2" />
+            <line x1="100" y1="300" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="665" y="285" fill="#94a3b8" fontSize="10">x</text>
+            <text x="90" y="20" fill="#94a3b8" fontSize="10" textAnchor="middle">f(x)</text>
+            <path d="M 120 250 C 250 320, 350 50, 500 200 C 580 280, 640 150, 660 180" fill="none" stroke="#38bdf8" strokeWidth="3" />
+            <circle cx="300" cy="180" r="6" fill="#ef4444" />
+            <line x1="300" y1="180" x2="200" y2="280" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+            <circle cx="200" cy="280" r="5" fill="#10b981" />
+            <text x="200" y="300" fill="#10b981" fontSize="10" textAnchor="middle">Root</text>
+            <rect x="180" y="315" width="340" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="340" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)</text>
+          </svg>
+        );
+
+      case "pearson-skewness":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="80" y="60" width="540" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="100" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Pearson's First Coefficient: Sk = (Mean - Mode) / σ</text>
+            <text x="350" y="130" fill="#cbd5e1" fontSize="10" textAnchor="middle">Measures asymmetry of distribution</text>
+            <rect x="80" y="185" width="540" height="100" rx="10" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="225" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Pearson's Second Coefficient: Sk = 3(Mean - Median) / σ</text>
+            <text x="350" y="255" fill="#cbd5e1" fontSize="10" textAnchor="middle">Used when mode is not well-defined</text>
+            <rect x="80" y="305" width="540" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="335" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">Sk &gt; 0 right skewed | Sk &lt; 0 left skewed | Sk = 0 symmetric</text>
+          </svg>
+        );
+
+      case "parallelogram-law-forces":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <polygon points="200,280 400,120 600,280 400,440" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="200" y1="280" x2="400" y2="120" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#arrow)" />
+            <line x1="200" y1="280" x2="600" y2="280" stroke="#10b981" strokeWidth="4" markerEnd="url(#arrow)" />
+            <line x1="200" y1="280" x2="400" y2="120" stroke="#f59e0b" strokeWidth="3.5" markerEnd="url(#arrow)" />
+            <line x1="400" y1="120" x2="600" y2="280" stroke="#a855f7" strokeWidth="3.5" markerEnd="url(#arrow)" />
+            <text x="180" y="270" fill="#38bdf8" fontSize="12" fontWeight="bold">P</text>
+            <text x="610" y="280" fill="#10b981" fontSize="12" fontWeight="bold">Q</text>
+            <text x="400" y="105" fill="#a855f7" fontSize="12" fontWeight="bold">R (resultant)</text>
+            <rect x="200" y="340" width="300" height="40" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="365" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">R² = P² + Q² + 2PQ cos θ</text>
+          </svg>
+        );
+
+      case "amgm-relation":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="150" fill="#10b981" fontSize="18" fontWeight="bold" textAnchor="middle">AM ≥ GM ≥ HM</text>
+            <text x="350" y="190" fill="#f59e0b" fontSize="14" textAnchor="middle">(a+b)/2 ≥ √(ab) ≥ 2/(1/a + 1/b)</text>
+            <text x="350" y="230" fill="#cbd5e1" fontSize="11" textAnchor="middle">Equality holds when a = b</text>
+            <text x="350" y="270" fill="#38bdf8" fontSize="12" textAnchor="middle">For n numbers: arithmetic mean ≥ geometric mean</text>
+            <text x="350" y="300" fill="#cbd5e1" fontSize="10" textAnchor="middle">Useful for finding minimum/maximum values</text>
+          </svg>
+        );
+
+      case "quadratic-formula-proof":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="50" width="500" height="260" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="90" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Proof: Completing the Square</text>
+            <text x="130" y="125" fill="#cbd5e1" fontSize="12">ax² + bx + c = 0</text>
+            <text x="130" y="155" fill="#cbd5e1" fontSize="12">x² + (b/a)x = -c/a</text>
+            <text x="130" y="185" fill="#cbd5e1" fontSize="12">x² + (b/a)x + (b/2a)² = (b²-4ac)/4a²</text>
+            <text x="130" y="215" fill="#cbd5e1" fontSize="12">(x + b/2a)² = (b²-4ac)/4a²</text>
+            <text x="130" y="245" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">x = (-b ± √(b²-4ac))/2a</text>
+            <text x="350" y="290" fill="#f59e0b" fontSize="11" textAnchor="middle">Discriminant D = b²-4ac determines nature of roots</text>
+          </svg>
+        );
+
+      case "complex-number-properties":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="350" y1="320" x2="350" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="665" y="205" fill="#94a3b8" fontSize="10">Real</text>
+            <text x="345" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">Imag</text>
+            <circle cx="450" cy="160" r="8" fill="#38bdf8" />
+            <text x="465" y="155" fill="#38bdf8" fontSize="11">z = a+bi</text>
+            <line x1="350" y1="200" x2="450" y2="160" stroke="#f59e0b" strokeWidth="2" />
+            <text x="390" y="185" fill="#f59e0b" fontSize="10">|z| = √(a²+b²)</text>
+            <text x="350" y="300" fill="#10b981" fontSize="12" textAnchor="middle">Conjugate: z̄ = a-bi</text>
+            <rect x="200" y="310" width="300" height="45" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+            <text x="350" y="330" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">z·z̄ = |z|² = a² + b²</text>
+            <text x="350" y="348" fill="#cbd5e1" fontSize="9" textAnchor="middle">|z₁·z₂| = |z₁|·|z₂|, arg(z₁/z₂) = arg z₁ - arg z₂</text>
+          </svg>
+        );
+
+
+      case "curve-sketching-parabola":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="320" x2="100" y2="30" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <path d="M 150 280 Q 350 50, 550 280" fill="none" stroke="#38bdf8" strokeWidth="3.5" />
+            <line x1="350" y1="50" x2="350" y2="280" stroke="#a855f7" strokeWidth="2" strokeDasharray="5 3" />
+            <circle cx="350" cy="280" r="6" fill="#ef4444" />
+            <text x="350" y="300" fill="#ef4444" fontSize="10" textAnchor="middle">Vertex</text>
+            <text x="550" y="270" fill="#38bdf8" fontSize="11" fontWeight="bold">x-intercepts</text>
+            <rect x="180" y="325" width="340" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="348" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">x = (-b ± √(b²-4ac))/2a</text>
+          </svg>
+        );
+
+      case "logarithm-properties-proof":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="60" width="500" height="240" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Logarithm Properties</text>
+            <text x="140" y="140" fill="#cbd5e1" fontSize="12">logₐ(mn) = logₐm + logₐn</text>
+            <text x="140" y="175" fill="#cbd5e1" fontSize="12">logₐ(m/n) = logₐm - logₐn</text>
+            <text x="140" y="210" fill="#cbd5e1" fontSize="12">logₐ(mⁿ) = n·logₐm</text>
+            <text x="140" y="245" fill="#cbd5e1" fontSize="12">logₐm = log m / log a (change of base)</text>
+            <text x="140" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">Proof: Let logₐm = x, logₐn = y</text>
+          </svg>
+        );
+
+      case "arithmetic-geometric-mean":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="100" width="500" height="150" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="140" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">AM = (a + b)/2  |  GM = √(ab)</text>
+            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">AM ≥ GM (equality when a = b)</text>
+            <text x="350" y="210" fill="#f59e0b" fontSize="12" textAnchor="middle">Example: AM = 6, GM = 4 for {2, 8}</text>
+            <rect x="150" y="270" width="400" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="300" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">For n numbers: (a₁+...+aₙ)/n ≥ ∜(a₁...aₙ)</text>
+            <text x="350" y="330" fill="#cbd5e1" fontSize="10" textAnchor="middle">Used to find minimum/maximum values in optimization</text>
+          </svg>
+        );
+
+      case "permutation-combination":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="80" y="50" width="250" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2" />
+            <text x="205" y="90" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">PERMUTATION</text>
+            <text x="205" y="120" fill="#cbd5e1" fontSize="11" textAnchor="middle">Order matters!</text>
+            <text x="205" y="150" fill="#cbd5e1" fontSize="11" textAnchor="middle">nPr = n!/(n-r)!</text>
+            <rect x="370" y="50" width="250" height="120" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2" />
+            <text x="495" y="90" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">COMBINATION</text>
+            <text x="495" y="120" fill="#cbd5e1" fontSize="11" textAnchor="middle">Order does NOT matter</text>
+            <text x="495" y="150" fill="#cbd5e1" fontSize="11" textAnchor="middle">nCr = n!/(r!(n-r)!)</text>
+            <text x="350" y="210" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Example: 5 students, choose 3</text>
+            <text x="350" y="240" fill="#cbd5e1" fontSize="11" textAnchor="middle">P(5,3) = 60 ways (ordered)</text>
+            <text x="350" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">C(5,3) = 10 ways (unordered)</text>
+          </svg>
+        );
+
+      case "binomial-theorem":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="60" width="500" height="200" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="100" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">(a+b)ⁿ = Σ(nCk)·aⁿ⁻ᵏ·bᵏ</text>
+            <text x="350" y="140" fill="#cbd5e1" fontSize="11" textAnchor="middle">nCk = n!/(k!(n-k)!) = coefficients</text>
+            <text x="350" y="180" fill="#f59e0b" fontSize="12" textAnchor="middle">Pascal's triangle gives coefficients</text>
+            <text x="350" y="210" fill="#38bdf8" fontSize="11" textAnchor="middle">1: (a+b)¹ → 1 1</text>
+            <text x="350" y="235" fill="#38bdf8" fontSize="11" textAnchor="middle">2: (a+b)² → 1 2 1</text>
+            <text x="350" y="260" fill="#38bdf8" fontSize="11" textAnchor="middle">3: (a+b)³ → 1 3 3 1</text>
+          </svg>
+        );
+
+      case "complex-number-geometric":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="350" y1="320" x2="350" y2="40" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="665" y="205" fill="#94a3b8" fontSize="10">Real axis</text>
+            <text x="350" y="30" fill="#94a3b8" fontSize="10" textAnchor="middle">Imaginary axis</text>
+            <circle cx="350" cy="200" r="120" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="350" y1="200" x2="470" y2="120" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+            <circle cx="470" cy="120" r="6" fill="#38bdf8" />
+            <text x="485" y="115" fill="#38bdf8" fontSize="11" fontWeight="bold">z = r(cos θ + i sin θ)</text>
+            <path d="M 420 200 A 70 70 0 0 0 470 120" fill="none" stroke="#10b981" strokeWidth="2" />
+            <text x="430" y="175" fill="#10b981" fontSize="11">θ</text>
+            <text x="350" y="290" fill="#cbd5e1" fontSize="10" textAnchor="middle">Argand diagram: complex plane</text>
+          </svg>
+        );
+
+      case "de-moivres-theorem":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="150" y="120" width="400" height="120" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="170" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">[r(cos θ + i sin θ)]ⁿ = rⁿ(cos nθ + i sin nθ)</text>
+            <text x="350" y="210" fill="#cbd5e1" fontSize="12" textAnchor="middle">De Moivre's Theorem: raises complex number to power n</text>
+            <rect x="100" y="260" width="500" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="295" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Applications: finding roots of unity</text>
+            <text x="350" y="320" fill="#cbd5e1" fontSize="11" textAnchor="middle">nth roots: z^(1/n) = r^(1/n)[cos((θ+2kπ)/n) + i sin((θ+2kπ)/n)]</text>
+          </svg>
+        );
+
+      case "quadratic-equation-nature-roots":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="80" y="50" width="540" height="80" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2" />
+            <text x="350" y="90" fill="#ef4444" fontSize="13" fontWeight="bold" textAnchor="middle">D > 0: Two distinct real roots (graph cuts x-axis twice)</text>
+            <rect x="80" y="145" width="540" height="80" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="185" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">D = 0: Equal real roots (graph touches x-axis at one point)</text>
+            <rect x="80" y="240" width="540" height="80" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="280" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">D < 0: Complex conjugate roots (graph does not cut x-axis)</text>
+            <rect x="180" y="335" width="340" height="25" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="352" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">D = b² - 4ac</text>
+          </svg>
+        );
+
+      case "sequence-series-ap-gp-hp":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="85" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Arithmetic Progression (AP): a, a+d, a+2d, ...</text>
+            <text x="350" y="110" fill="#cbd5e1" fontSize="10" textAnchor="middle">nth term: aₙ = a + (n-1)d | Sum: Sₙ = n/2[2a+(n-1)d]</text>
+            <rect x="80" y="135" width="540" height="70" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="170" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Geometric Progression (GP): a, ar, ar², ...</text>
+            <text x="350" y="195" fill="#cbd5e1" fontSize="10" textAnchor="middle">nth term: aₙ = arⁿ⁻¹ | Sum: Sₙ = a(1-rⁿ)/(1-r) | S∞ = a/(1-r) if |r| < 1</text>
+            <rect x="80" y="220" width="540" height="70" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="255" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Harmonic Progression (HP): reciprocals form AP</text>
+            <rect x="150" y="305" width="400" height="50" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">AM · GM = mean² | 1/a + 1/b = 2/AM (AM-GM-HM relation)</text>
+          </svg>
+        );
+
+      case "probability-basic-theorems":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="50" width="500" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="90" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Addition Theorem: P(A∪B) = P(A) + P(B) - P(A∩B)</text>
+            <text x="350" y="120" fill="#cbd5e1" fontSize="10" textAnchor="middle">For mutually exclusive events: P(A∪B) = P(A) + P(B)</text>
+            <rect x="100" y="170" width="500" height="100" rx="10" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="210" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Multiplication Theorem: P(A∩B) = P(A)·P(B|A)</text>
+            <text x="350" y="240" fill="#cbd5e1" fontSize="10" textAnchor="middle">For independent events: P(A∩B) = P(A)·P(B)</text>
+            <rect x="180" y="290" width="340" height="60" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="350" y="320" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">P(not E) = 1 - P(E)</text>
+            <text x="350" y="340" fill="#cbd5e1" fontSize="10" textAnchor="middle">Total probability: ΣP(Eᵢ) = 1</text>
+          </svg>
+        );
+
+
+      case "line-equation-forms":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="300" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="80" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Forms of a Line</text>
+            <text x="120" y="120" fill="#cbd5e1" fontSize="12">• Slope-intercept: y = mx + c</text>
+            <text x="120" y="150" fill="#cbd5e1" fontSize="12">• Point-slope: y - y₁ = m(x - x₁)</text>
+            <text x="120" y="180" fill="#cbd5e1" fontSize="12">• Two-point form: (y-y₁)/(x-x₁) = (y₂-y₁)/(x₂-x₁)</text>
+            <text x="120" y="210" fill="#cbd5e1" fontSize="12">• Intercept form: x/a + y/b = 1</text>
+            <text x="120" y="240" fill="#cbd5e1" fontSize="12">• Normal form: x cos α + y sin α = p</text>
+            <text x="120" y="270" fill="#cbd5e1" fontSize="12">• General form: ax + by + c = 0</text>
+            <text x="350" y="320" fill="#f59e0b" fontSize="10" textAnchor="middle">m = tan θ = slope, p = perpendicular from origin</text>
+          </svg>
+        );
+
+      case "angle-bisector-formula":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="140" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Angle Bisector Formula</text>
+            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">(a₁±a₂)x + (b₁±b₂)y + (c₁±c₂) = 0</text>
+            <text x="350" y="220" fill="#f59e0b" fontSize="11" textAnchor="middle">+ for obtuse, - for acute angle bisector</text>
+          </svg>
+        );
+
+      case "pair-of-lines-condition":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+            <text x="350" y="140" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">Pair of Straight Lines</text>
+            <text x="350" y="180" fill="#cbd5e1" fontSize="12" textAnchor="middle">ax² + 2hxy + by² + 2gx + 2fy + c = 0</text>
+            <text x="350" y="220" fill="#f59e0b" fontSize="11" textAnchor="middle">Condition: abc + 2fgh - af² - bg² - ch² = 0</text>
+          </svg>
+        );
+
+      case "direction-cosines":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <line x1="100" y1="300" x2="600" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="300" x2="100" y2="50" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="100" y1="300" x2="300" y2="100" stroke="#38bdf8" strokeWidth="3.5" markerEnd="url(#arrow)" />
+            <circle cx="200" cy="200" r="3" fill="#ef4444" />
+            <path d="M 140 300 A 40 40 0 0 1 145 260" fill="none" stroke="#f59e0b" strokeWidth="2" />
+            <text x="150" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">α</text>
+            <path d="M 100 260 A 40 40 0 0 0 140 255" fill="none" stroke="#10b981" strokeWidth="2" />
+            <text x="115" y="250" fill="#10b981" fontSize="11" fontWeight="bold">β</text>
+            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="343" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">cos²α + cos²β + cos²γ = 1</text>
+          </svg>
+        );
+
+      case "bayes-theorem-proof":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="60" width="500" height="180" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="100" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Bayes' Theorem</text>
+            <text x="350" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">P(Aᵢ|B) = P(B|Aᵢ)·P(Aᵢ) / Σ P(B|Aⱼ)·P(Aⱼ)</text>
+            <text x="350" y="190" fill="#cbd5e1" fontSize="11" textAnchor="middle">Used to find conditional probability after evidence</text>
+            <text x="350" y="230" fill="#f59e0b" fontSize="11" textAnchor="middle">Also called inverse probability theorem</text>
+            <text x="350" y="270" fill="#cbd5e1" fontSize="10" textAnchor="middle">Applications: medical testing, machine learning, statistics</text>
+          </svg>
+        );
+
+      case "numerical-integration":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="100" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Numerical Integration Methods</text>
+            <text x="150" y="150" fill="#f59e0b" fontSize="12" fontWeight="bold">Trapezoidal Rule:</text>
+            <text x="150" y="175" fill="#cbd5e1" fontSize="11">∫ₐᵇ f(x)dx ≈ (h/2)[f₀ + 2(f₁+...+fₙ₋₁) + fₙ]</text>
+            <text x="150" y="210" fill="#38bdf8" fontSize="12" fontWeight="bold">Simpson's 1/3 Rule:</text>
+            <text x="150" y="235" fill="#cbd5e1" fontSize="11">∫ₐᵇ f(x)dx ≈ (h/3)[f₀ + 4(f₁+f₃+...) + 2(f₂+f₄+...) + fₙ]</text>
+            <text x="350" y="280" fill="#a855f7" fontSize="11" textAnchor="middle">Simpson's rule is more accurate (error ∝ h⁴)</text>
+          </svg>
+        );
+
+      case "separable-differential-equation":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="80" width="500" height="200" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="120" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">Separable Differential Equation</text>
+            <text x="350" y="170" fill="#10b981" fontSize="13" textAnchor="middle">dy/dx = g(x)·h(y)</text>
+            <text x="350" y="210" fill="#f59e0b" fontSize="12" textAnchor="middle">Separate: dy/h(y) = g(x)dx</text>
+            <text x="350" y="250" fill="#cbd5e1" fontSize="12" textAnchor="middle">Integrate: ∫dy/h(y) = ∫g(x)dx</text>
+            <text x="350" y="290" fill="#a855f7" fontSize="11" textAnchor="middle">Example: dy/dx = xy → ln|y| = x²/2 + C</text>
+          </svg>
+        );
+
+      case "linear-differential-equation":
+        return (
+          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+            <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+            <text x="350" y="100" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">Linear Differential Equation</text>
+            <text x="350" y="150" fill="#38bdf8" fontSize="13" textAnchor="middle">dy/dx + P(x)y = Q(x)</text>
+            <text x="350" y="190" fill="#f59e0b" fontSize="12" textAnchor="middle">Integrating Factor: IF = e^∫P(x)dx</text>
+            <text x="350" y="230" fill="#cbd5e1" fontSize="12" textAnchor="middle">Solution: y·IF = ∫Q(x)·IF dx + C</text>
+            <text x="350" y="270" fill="#a855f7" fontSize="11" textAnchor="middle">First-order linear ODE - standard method</text>
+          </svg>
+        );
+
       default:
         return (
           <div className="flex flex-col items-center justify-center p-12 text-center text-muted-foreground">

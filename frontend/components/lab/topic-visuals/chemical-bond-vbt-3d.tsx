@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -33,6 +34,7 @@ type OverlapType = "sigma" | "pi";
 
 export function VBTVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [overlap, setOverlap] = useState<OverlapType>("sigma");
   const [isWebGL] = useState(() => isWebGLAvailable());
 
@@ -64,6 +66,7 @@ export function VBTVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 15;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -241,7 +244,9 @@ export function VBTVisual() {
             ))}
           </div>
         </CollapsibleControls>
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
         <div className="rounded-lg border border-pink-500/30 bg-pink-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

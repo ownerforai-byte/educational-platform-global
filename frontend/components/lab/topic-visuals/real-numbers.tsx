@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -41,6 +42,7 @@ type IntervalMode = "numberline" | "absolute" | "intervals";
 
 export function RealNumbersVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [mode, setMode] = useState<IntervalMode>("numberline");
   const [val, setVal] = useState(3);
   const [a, setA] = useState(1);
@@ -71,6 +73,7 @@ export function RealNumbersVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -250,7 +253,9 @@ export function RealNumbersVisual() {
           </CollapsibleControls>
         )}
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

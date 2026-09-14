@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
@@ -37,6 +38,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function ElectrolysisVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [electrolyte, setElectrolyte] = useState<"molten-nacl" | "aq-cuSO4" | "water">("aq-cuSO4");
   const [isOn, setIsOn] = useState(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -69,6 +71,7 @@ export function ElectrolysisVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -327,7 +330,9 @@ export function ElectrolysisVisual() {
           </button>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Key Concepts</p>

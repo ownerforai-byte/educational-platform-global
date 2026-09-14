@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { VizToolbar, type VizTarget, type VizTargetRef } from "@/components/viz/viz-toolbar";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import {
   createThreeScene,
@@ -89,13 +90,23 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
 function useLabScene(
   build: (kit: Kit) => void | ((t: number) => void),
   deps: unknown[]
-): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean } {
+): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; vizTargetRef: VizTargetRef } {
+  const vizTargetRef = useRef<VizTarget>({});
   const mountRef = useRef<HTMLDivElement>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount || !webGL) return;
     const kit = setupKit(mount);
+    vizTargetRef.current = {
+      controls: kit.ts.controls,
+      el: mount,
+      canvasEl: kit.ts.renderer.domElement,
+      render: () => {
+        kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
+        kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+      },
+    };
     const tick = build(kit);
     const stop = runLoop(kit, tick ?? undefined);
     const offResize = bindResize(kit.ts);
@@ -106,16 +117,19 @@ function useLabScene(
       window.removeEventListener("resize", onResize);
       offResize();
       kit.labelRenderer.domElement.remove();
+    vizTargetRef.current = {};
       disposeThreeScene(kit.ts);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, ...deps]);
-  return { mountRef, webGL };
+  return { mountRef, webGL, vizTargetRef };
 }
 
-function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean }) {
+function CanvasMount({ mountRef, webGL, targetRef }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; targetRef: VizTargetRef }) {
   return webGL ? (
-    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md" />
+    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md">
+      <VizToolbar targetRef={targetRef} />
+    </div>
   ) : (
     <div className="flex w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
       WebGL is not available in this browser.
@@ -143,7 +157,7 @@ const VERNIER_ZERO_ERRORS = { none: 0, positive: 0.01, negative: -0.01 } as cons
 const VernierTab: React.FC = () => {
   const [w, setW] = useState(2.34); // object width in cm
   const [zero, setZero] = useState<keyof typeof VERNIER_ZERO_ERRORS>("none");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const RAIL_Y = 0.7;
     const JAW_X = -4.1; // inner face of fixed jaw
@@ -213,7 +227,7 @@ const VernierTab: React.FC = () => {
           ))}
         </div>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="MSD = main-scale division (1 mm); VSD = vernier-scale division (0.9 mm); L.C. = least count = 1 MSD − 1 VSD = 0.1 mm."
         look="The green object is gripped between the two outside jaws. Its width sets where the orange vernier slider stops: the main-scale reading is the last division passed, and one vernier division coincides with a main division."
@@ -230,7 +244,7 @@ const VernierTab: React.FC = () => {
 
 const ScrewGaugeTab: React.FC = () => {
   const [d, setD] = useState(3.46); // object diameter in mm
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const U = 0.22; // scene units per mm
     const du = d * U; // gap in units
@@ -317,7 +331,7 @@ const ScrewGaugeTab: React.FC = () => {
           <span className="text-xs text-muted-foreground">{d.toFixed(2)} mm</span>
         </div>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Pitch = distance the spindle advances per complete turn (0.5 mm). Least count = pitch ÷ number of circular-scale divisions = 0.5/50 = 0.01 mm."
         look="The green sphere sits between the fixed anvil and the moving spindle. The slider rotates the orange thimble along the sleeve, closing the gap exactly like the real ratchet action."

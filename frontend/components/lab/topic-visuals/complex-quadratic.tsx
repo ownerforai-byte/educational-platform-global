@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -39,6 +40,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function ComplexQuadraticVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [a, setA] = useState(1);
   const [b, setB] = useState(-3);
   const [c, setC] = useState(2);
@@ -77,6 +79,7 @@ export function ComplexQuadraticVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -270,7 +273,9 @@ export function ComplexQuadraticVisual() {
           </CollapsibleControls>
         )}
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Formulas</p>

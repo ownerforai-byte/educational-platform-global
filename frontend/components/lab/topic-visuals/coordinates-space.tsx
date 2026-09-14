@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -38,6 +39,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function CoordinatesSpaceVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [p1, setP1] = useState({ x: 1, y: 2, z: 3 });
   const [p2, setP2] = useState({ x: 4, y: 1, z: 2 });
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -73,6 +75,7 @@ export function CoordinatesSpaceVisual() {
       controls.autoRotateSpeed = 0.4;
       controls.minDistance = 4;
       controls.maxDistance = 25;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -247,7 +250,9 @@ export function CoordinatesSpaceVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Formulas</p>
