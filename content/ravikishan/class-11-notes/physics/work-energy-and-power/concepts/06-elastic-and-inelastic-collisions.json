@@ -108,27 +108,52 @@
   "mcs": [
     {
       "question": "A 2 kg ball moving at 6 m/s hits a stationary 2 kg ball in an elastic collision. The final velocity of the first ball is:",
-      "options": ["0 m/s", "6 m/s", "3 m/s", "12 m/s"],
+      "options": [
+        "0 m/s",
+        "6 m/s",
+        "3 m/s",
+        "12 m/s"
+      ],
       "answer": "A"
     },
     {
       "question": "A 3 kg ball moving at 4 m/s hits a stationary 1 kg ball in a perfectly inelastic collision. Their common velocity is:",
-      "options": ["3 m/s", "4 m/s", "1 m/s", "12 m/s"],
+      "options": [
+        "3 m/s",
+        "4 m/s",
+        "1 m/s",
+        "12 m/s"
+      ],
       "answer": "A"
     },
     {
       "question": "In an elastic collision, which quantity is conserved?",
-      "options": ["Momentum only", "Kinetic energy only", "Both momentum and kinetic energy", "Neither momentum nor kinetic energy"],
+      "options": [
+        "Momentum only",
+        "Kinetic energy only",
+        "Both momentum and kinetic energy",
+        "Neither momentum nor kinetic energy"
+      ],
       "answer": "C"
     },
     {
       "question": "The coefficient of restitution for a perfectly inelastic collision is:",
-      "options": ["0", "1", "Between 0 and 1", "Greater than 1"],
+      "options": [
+        "0",
+        "1",
+        "Between 0 and 1",
+        "Greater than 1"
+      ],
       "answer": "A"
     },
     {
       "question": "A 1 kg ball moving at 10 m/s hits a stationary 9 kg ball elastically. The speed of the 9 kg ball after collision is:",
-      "options": ["1 m/s", "2 m/s", "5 m/s", "10 m/s"],
+      "options": [
+        "1 m/s",
+        "2 m/s",
+        "5 m/s",
+        "10 m/s"
+      ],
       "answer": "B"
     }
   ],
@@ -145,5 +170,6 @@
     "Solve 3 equal-mass elastic collision problems using the velocity-exchange shortcut.",
     "Solve 3 coefficient of restitution problems computing e from given velocities.",
     "Solve 2 two-dimensional elastic collision problems using vector momentum conservation."
-  ]
+  ],
+  "visualType": "elastic-collisions"
 }

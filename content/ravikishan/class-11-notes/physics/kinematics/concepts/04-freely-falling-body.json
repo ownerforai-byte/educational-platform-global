@@ -104,27 +104,52 @@
   "mcs": [
     {
       "question": "At the top of its flight, a ball thrown upward has:",
-      "options": ["v = 0, a = 0", "v = 0, a = g downward", "v ≠ 0, a = g downward", "v = 0, a upward"],
+      "options": [
+        "v = 0, a = 0",
+        "v = 0, a = g downward",
+        "v ≠ 0, a = g downward",
+        "v = 0, a upward"
+      ],
       "answer": "B"
     },
     {
       "question": "A body dropped from rest falls h in 2 s. In 4 s it falls:",
-      "options": ["2h", "3h", "4h", "16h"],
+      "options": [
+        "2h",
+        "3h",
+        "4h",
+        "16h"
+      ],
       "answer": "C (h ∝ t²)"
     },
     {
       "question": "A ball thrown up at 20 m/s (g = 10) returns to the thrower after:",
-      "options": ["2 s", "4 s", "20 s", "10 s"],
+      "options": [
+        "2 s",
+        "4 s",
+        "20 s",
+        "10 s"
+      ],
       "answer": "B (T = 2u/g)"
     },
     {
       "question": "Two stones of masses 1 kg and 5 kg are dropped together from a cliff. They land:",
-      "options": ["Heavy one first", "Light one first", "Together", "Depends on shape"],
+      "options": [
+        "Heavy one first",
+        "Light one first",
+        "Together",
+        "Depends on shape"
+      ],
       "answer": "C"
     },
     {
       "question": "A body thrown up returns with a speed that is (neglecting air resistance):",
-      "options": ["Less than launch speed", "Equal to launch speed", "Greater than launch speed", "Zero"],
+      "options": [
+        "Less than launch speed",
+        "Equal to launch speed",
+        "Greater than launch speed",
+        "Zero"
+      ],
       "answer": "B"
     }
   ],
@@ -141,5 +166,6 @@
     "Task 3: Solve a mixed case: thrown DOWN from a height with initial speed (find $t$ and $v$ at ground).",
     "Task 4: Solve a lift problem (coin dropped in an ascending/descending lift) in both frames.",
     "Task 5: Derive $h = \\tfrac{1}{2}gt^2$ from the $v$–$t$ area for a dropped body and verify the 1:3:5 pattern for $n = 1, 2, 3$."
-  ]
+  ],
+  "visualType": "free-fall"
 }

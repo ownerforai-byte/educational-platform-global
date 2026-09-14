@@ -39,5 +39,6 @@
     "The $I$-$V$ characteristic of a diode is exponential: $I = I_0(e^{eV/kT} - 1)$, where $I_0$ is the reverse saturation current, $k$ is Boltzmann's constant, and $T$ is temperature."
   ],
   "animation3D": "dc-circuits",
-  "motionGraphics": "dc-circuits"
+  "motionGraphics": "dc-circuits",
+  "visualType": "iv-characteristics"
 }
