@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "The centre of mass of a uniform rod lies at its:",
-      "options": ["one end", "middle", "quarter point", "varies with length"],
+      "options": [
+        "one end",
+        "middle",
+        "quarter point",
+        "varies with length"
+      ],
       "answer": "B"
     },
     {
       "question": "In a uniform gravitational field, the centre of gravity:",
-      "options": ["differs from COM", "coincides with COM", "is above the COM", "is below the COM"],
+      "options": [
+        "differs from COM",
+        "coincides with COM",
+        "is above the COM",
+        "is below the COM"
+      ],
       "answer": "B"
     },
     {
       "question": "The centre of mass of a uniform ring lies:",
-      "options": ["on the ring", "at the centre (outside the material)", "outside the ring", "at a point dependent on radius"],
+      "options": [
+        "on the ring",
+        "at the centre (outside the material)",
+        "outside the ring",
+        "at a point dependent on radius"
+      ],
       "answer": "B"
     },
     {
       "question": "Masses 2 kg at x = 0 and 4 kg at x = 6 m have their COM at:",
-      "options": ["2 m", "3 m", "4 m", "6 m"],
+      "options": [
+        "2 m",
+        "3 m",
+        "4 m",
+        "6 m"
+      ],
       "answer": "C"
     },
     {
       "question": "Which quantity governs the motion of the centre of mass?",
-      "options": ["internal forces", "external forces", "friction only", "contact forces only"],
+      "options": [
+        "internal forces",
+        "external forces",
+        "friction only",
+        "contact forces only"
+      ],
       "answer": "B"
     }
   ],
@@ -146,5 +171,6 @@
     "Describe the experimental method to find the CG of a lamina.",
     "Explain the COM = CG condition.",
     "Show that internal forces cannot change the velocity of the COM."
-  ]
+  ],
+  "visualType": "redox-balancing-half-reaction"
 }

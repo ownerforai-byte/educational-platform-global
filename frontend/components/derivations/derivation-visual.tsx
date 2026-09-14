@@ -2936,6 +2936,280 @@ export function DerivationVisual({
 <rect x="80" y="340" width="540" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
           <text x="350" y="365" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Refractive index: n = sin((A+δ_m)/2) / sin(A/2)</text>
 
+
+      case "avogadros-law-deduction":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Avogadro's Law & Applications</text>
+            <rect x="100" y="110" width="240" height="120" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="220" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Molecular Mass</text>
+            <text x="220" y="175" fill="#cbd5e1" fontSize="12" textAnchor="middle">M = 2 × Vapor Density</text>
+            <text x="220" y="200" fill="#cbd5e1" fontSize="11" textAnchor="middle">or M = m/n where n = V/22.4</text>
+            <rect x="360" y="110" width="240" height="120" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="480" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Number of Particles</text>
+            <text x="480" y="175" fill="#cbd5e1" fontSize="12" textAnchor="middle">N = n × N_A = m/M × 6.022×10²³</text>
+            <text x="480" y="200" fill="#cbd5e1" fontSize="11" textAnchor="middle">At STP: 1 mole = 22.4 L</text>
+            <rect x="150" y="260" width="400" height="80" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="295" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">Avogadro's Law: Equal volumes contain equal molecules</text>
+            <text x="350" y="320" fill="#cbd5e1" fontSize="11" textAnchor="middle">V₁/n₁ = V₂/n₂ at constant T and P</text>
+          </svg>
+        );
+      case "heisenberg-uncertainty":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="60" width="540" height="280" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="100" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Heisenberg's Uncertainty Principle</text>
+            <rect x="150" y="140" width="400" height="80" rx="8" fill="#a855f7" fillOpacity="0.2" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="175" fill="#c084fc" fontSize="18" fontWeight="bold" textAnchor="middle">Δx · Δp ≥ ℏ/2</text>
+            <text x="350" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">where ℏ = h/2π = 1.055 × 10⁻³⁴ J·s</text>
+            <rect x="120" y="250" width="460" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="285" fill="#38bdf8" fontSize="13" textAnchor="middle">Electron position and momentum cannot be measured simultaneously with arbitrary precision</text>
+            <text x="350" y="310" fill="#f59e0b" fontSize="11" textAnchor="middle">→ Replaced Bohr orbits with probability orbitals</text>
+          </svg>
+        );
+      case "quantum-numbers":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Quantum Numbers Table</text>
+            {[
+              {q:"n",name:"Principal",desc:"Energy level, shell size",val:"1,2,3...",color:"#38bdf8"},
+              {q:"l",name:"Azimuthal",desc:"Subshell shape (s,p,d,f)",val:"0 to n-1",color:"#10b981"},
+              {q:"m_l",name:"Magnetic",desc:"Orbital orientation in space",val:"-l to +l",color:"#f59e0b"},
+              {q:"m_s",name:"Spin",desc:"Electron spin direction",val:"+½ or -½",color:"#ef4444"}
+            ].map((qn,i) => (
+              <g key={i}>
+                <rect x="90+i*155" y="110" width="140" height="180" rx="8" fill={qn.color} fillOpacity="0.15" stroke={qn.color} strokeWidth="2"/>
+                <text x="160+i*155" y="145" fill={qn.color} fontSize="28" fontWeight="bold" textAnchor="middle">{qn.q}</text>
+                <text x="160+i*155" y="175" fill="#cbd5e1" fontSize="11" fontWeight="bold" textAnchor="middle">{qn.name}</text>
+                <text x="160+i*155" y="205" fill="#cbd5e1" fontSize="10" textAnchor="middle">{qn.desc}</text>
+                <text x="160+i*155" y="240" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">{qn.val}</text>
+              </g>
+            ))}
+          </svg>
+        );
+      case "vsepr-theory":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">VSEPR Molecular Shapes</text>
+            {[
+              {shape:"Linear",angle:"180°",bp:2,ex:"BeF₂",color:"#38bdf8"},
+              {shape:"Trigonal Planar",angle:"120°",bp:3,ex:"BF₃",color:"#10b981"},
+              {shape:"Tetrahedral",angle:"109.5°",bp:4,ex:"CH₄",color:"#f59e0b"},
+              {shape:"Trigonal Pyramidal",angle:"107°",bp:4,ex:"NH₃",color:"#a855f7"},
+              {shape:"Bent/V-shaped",angle:"104.5°",bp:4,ex:"H₂O",color:"#ef4444"}
+            ].map((m,i) => (
+              <g key={i}>
+                <rect x="80+i*125" y="110" width="110" height="150" rx="8" fill={m.color} fillOpacity="0.1" stroke={m.color} strokeWidth="2"/>
+                <text x="135+i*125" y="140" fill={m.color} fontSize="11" fontWeight="bold" textAnchor="middle">{m.shape}</text>
+                <circle cx="135+i*125" cy="180" r="12" fill={m.color} fillOpacity="0.3" stroke={m.color} strokeWidth="2"/>
+                <text x="135+i*125" y="220" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">{m.angle}</text>
+                <text x="135+i*125" y="240" fill="#cbd5e1" fontSize="9" textAnchor="middle">{m.ex}</text>
+              </g>
+            ))}
+            <rect x="150" y="280" width="400" height="60" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="315" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">VSEPR: Valence shell electron pair repulsion determines geometry</text>
+          </svg>
+        );
+      case "hybridization-spspsp2spp3":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Hybridization Types</text>
+            {[
+              {type:"sp",mix:"s + p",angle:"180°",geom:"Linear",ex:"BeCl₂",color:"#38bdf8"},
+              {type:"sp²",mix:"s + 2p",angle:"120°",geom:"Trigonal",ex:"BF₃",color:"#10b981"},
+              {type:"sp³",mix:"s + 3p",angle:"109.5°",geom:"Tetrahedral",ex:"CH₄",color:"#f59e0b"}
+            ].map((h,i) => (
+              <g key={i}>
+                <rect x="100+i*190" y="110" width="170" height="180" rx="8" fill={h.color} fillOpacity="0.15" stroke={h.color} strokeWidth="2"/>
+                <text x="185+i*190" y="145" fill={h.color} fontSize="20" fontWeight="bold" textAnchor="middle">{h.type}</text>
+                <text x="185+i*190" y="175" fill="#cbd5e1" fontSize="11" textAnchor="middle">{h.mix} hybridization</text>
+                <text x="185+i*190" y="210" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Angle: {h.angle}</text>
+                <text x="185+i*190" y="240" fill="#38bdf8" fontSize="11" textAnchor="middle">{h.geom}</text>
+                <text x="185+i*190" y="265" fill="#a855f7" fontSize="10" textAnchor="middle">Ex: {h.ex}</text>
+              </g>
+            ))}
+          </svg>
+        );
+      case "inductive-resonance-effect":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Inductive vs Resonance Effects</text>
+            <rect x="100" y="110" width="230" height="140" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="215" y="145" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">+I / -I Effect</text>
+            <text x="215" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Through σ-bonds</text>
+            <text x="215" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">Permanent effect</text>
+            <text x="215" y="230" fill="#cbd5e1" fontSize="11" textAnchor="middle">Distance dependent</text>
+            <rect x="370" y="110" width="230" height="140" rx="8" fill="#a855f7" fillOpacity="0.1" stroke="#a855f7" strokeWidth="2"/>
+            <text x="485" y="145" fill="#a855f7" fontSize="14" fontWeight="bold" textAnchor="middle">+R / -R Effect</text>
+            <text x="485" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Through π-system</text>
+            <text x="485" y="205" fill="#cbd5e1" fontSize="11" textAnchor="middle">Resonance stabilization</text>
+            <rect x="150" y="270" width="400" height="80" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="305" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Key: Inductive=σ-electrons | Resonance=π-electrons delocalized</text>
+          </svg>
+        );
+      case "redox-balancing-half-reaction":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
+            <text x="350" y="80" fill="#ef4444" fontSize="16" fontWeight="bold" textAnchor="middle">Redox Balancing - Ion-Electron Method</text>
+            <rect x="120" y="110" width="200" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="220" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Oxidation Half</text>
+            <text x="220" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Loss of e⁻</text>
+            <text x="220" y="205" fill="#f59e0b" fontSize="12" textAnchor="middle">Fe²⁺ → Fe³⁺ + e⁻</text>
+            <rect x="380" y="110" width="200" height="120" rx="8" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="2"/>
+            <text x="480" y="145" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">Reduction Half</text>
+            <text x="480" y="180" fill="#cbd5e1" fontSize="11" textAnchor="middle">Gain of e⁻</text>
+            <text x="480" y="205" fill="#f59e0b" fontSize="11" textAnchor="middle">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</text>
+            <rect x="150" y="260" width="400" height="90" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="290" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">Steps:</text>
+            <text x="180" y="315" fill="#cbd5e1" fontSize="10">1. Separate half-reactions | 2. Balance atoms | 3. Balance charge with e⁻ | 4. Equalize electrons</text>
+          </svg>
+        );
+      case "kinetic-theory-gas-derive":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Kinetic Theory of Gases Derivation</text>
+            <rect x="120" y="110" width="460" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="145" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">Postulates: Point masses, random motion, elastic collisions</text>
+            <rect x="120" y="190" width="460" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="225" fill="#10b981" fontSize="13" fontWeight="bold" textAnchor="middle">PV = (1/3)Nm<c_rms²> derivation</text>
+            <text x="150" y="255" fill="#cbd5e1" fontSize="11">Force on wall = Δp/Δt = 2mv/t where t = 2L/v</text>
+            <text x="150" y="275" fill="#cbd5e1" fontSize="11">P = F/A = Nm<v²>/(3V)</text>
+            <rect x="150" y="310" width="400" height="40" rx="8" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="335" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">PV = nRT  →  c_rms = √(3RT/M)</text>
+          </svg>
+        );
+      case "combined-gas-law":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Gas Laws - Combined</text>
+            {[
+              {law:"Boyle's Law",cond:"T constant",eq:"P₁V₁ = P₂V₂",color:"#38bdf8"},
+              {law:"Charles' Law",cond:"P constant",eq:"V₁/T₁ = V₂/T₂",color:"#10b981"},
+              {law:"Gay-Lussac's",cond:"V constant",eq:"P₁/T₁ = P₂/T₂",color:"#f59e0b"}
+            ].map((g,i) => (
+              <g key={i}>
+                <rect x="100+i*190" y="110" width="170" height="100" rx="8" fill={g.color} fillOpacity="0.1" stroke={g.color} strokeWidth="2"/>
+                <text x="185+i*190" y="145" fill={g.color} fontSize="12" fontWeight="bold" textAnchor="middle">{g.law}</text>
+                <text x="185+i*190" y="170" fill="#cbd5e1" fontSize="10" textAnchor="middle">{g.cond}</text>
+                <text x="185+i*190" y="195" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">{g.eq}</text>
+              </g>
+            ))}
+            <rect x="150" y="240" width="400" height="140" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="280" fill="#a855f7" fontSize="15" fontWeight="bold" textAnchor="middle">Combined Gas Law</text>
+            <text x="350" y="315" fill="#10b981" fontSize="14" fontWeight="bold" textAnchor="middle">PV/T = constant  →  PV = nRT</text>
+            <text x="350" y="350" fill="#cbd5e1" fontSize="11" textAnchor="middle">Universal gas constant R = 8.314 J mol⁻¹ K⁻¹</text>
+          </svg>
+        );
+      case "real-gas-compressibility":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Real Gas - Van der Waals Equation</text>
+            <rect x="120" y="110" width="460" height="100" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2"/>
+            <text x="350" y="150" fill="#ef4444" fontSize="16" fontWeight="bold" textAnchor="middle">(P + an²/V²)(V - nb) = nRT</text>
+            <text x="350" y="190" fill="#cbd5e1" fontSize="11" textAnchor="middle">a = correction for intermolecular forces</text>
+            <text x="350" y="210" fill="#cbd5e1" fontSize="11" textAnchor="middle">b = correction for molecular volume</text>
+            <rect x="120" y="230" width="210" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="225" y="265" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Compressibility Factor</text>
+            <text x="225" y="295" fill="#cbd5e1" fontSize="11" textAnchor="middle">Z = PV/nRT</text>
+            <text x="225" y="315" fill="#f59e0b" fontSize="10" textAnchor="middle">Z = 1 ideal, Z ≠ 1 real gas</text>
+            <rect x="370" y="230" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="475" y="265" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Critical Constants</text>
+            <text x="475" y="295" fill="#cbd5e1" fontSize="11" textAnchor="middle">T_c = 8a/27Rb</text>
+            <text x="475" y="315" fill="#cbd5e1" fontSize="11" textAnchor="middle">P_c = a/27b²</text>
+          </svg>
+        );
+      case "le-chateliers-principle":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="80" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Le Chatelier's Principle</text>
+            <rect x="120" y="110" width="460" height="70" rx="8" fill="#a855f7" fillOpacity="0.15" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="150" fill="#c084fc" fontSize="13" textAnchor="middle">If system at equilibrium is disturbed, it shifts to counteract change</text>
+            {[
+              {disturb:"Concentration",shift:"Shifts away from added substance",color:"#38bdf8"},
+              {disturb:"Temperature",shift:"Shifts in endothermic direction",color:"#ef4444"},
+              {disturb:"Pressure",shift:"Shifts to fewer moles side",color:"#10b981"}
+            ].map((l,i) => (
+              <rect key={i} x={100+i*190} y="200" width={170} height={120} rx={8} fill={l.color} fillOpacity={0.1} stroke={l.color} strokeWidth={2}/>
+            ))}
+            {["#38bdf8","#ef4444","#10b981"].map((c,i) => (
+              <text key={i} x={185+i*190} y={235} fill={c} fontSize={11} fontWeight={"bold"} textAnchor={"middle"}>{"
+"==="#38bdf8"?"Concentration":"#38bdf8"==="#ef4444"?"Temperature":"Pressure"}</text>
+            ))}
+            {[
+              {x:100,y:255,text:"Increases",color:"#38bdf8"},
+              {x:290,y:255,text:"Endo ↑ shifts",color:"#ef4444"},
+              {x:480,y:255,text:"Fewer moles",color:"#10b981"}
+            ].map((t,i) => <text key={i} x={t.x} y={t.y} fill={t.color} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
+          </svg>
+        );
+      case "haber-process-flow":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="80" fill="#38bdf8" fontSize="16" fontWeight="bold" textAnchor="middle">Haber's Process - Ammonia Manufacture</text>
+            <rect x="120" y="110" width="460" height="60" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="350" y="145" fill="#38bdf8" fontSize="14" fontWeight="bold" textAnchor="middle">N₂ + 3H₂ ⇌ 2NH₃ (ΔH = -92 kJ/mol)</text>
+            <rect x="120" y="190" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="225" y="225" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Optimum Conditions</text>
+            <text x="225" y="255" fill="#cbd5e1" fontSize="11" textAnchor="middle">T = 450°C</text>
+            <text x="225" y="280" fill="#cbd5e1" fontSize="11" textAnchor="middle">P = 200 atm</text>
+            <rect x="370" y="190" width="210" height="100" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="475" y="225" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">Catalyst</text>
+            <text x="475" y="255" fill="#cbd5e1" fontSize="11" textAnchor="middle">Finely divided Fe</text>
+            <text x="475" y="280" fill="#cbd5e1" fontSize="11" textAnchor="middle">Promoted with Mo</text>
+            <rect x="150" y="310" width="400" height="40" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Yield: ~15% per pass | Unreacted gases recycled</text>
+          </svg>
+        );
+      case "contact-process-h2so4":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
+            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Contact Process - H₂SO₄</text>
+            {[
+              {step:"1. SO₂ Production",eq:"S + O₂ → SO₂",color:"#ef4444"},
+              {step:"2. SO₂ → SO₃",eq:"2SO₂ + O₂ ⇌ 2SO₃",color:"#f59e0b"},
+              {step:"3. Absorption",eq:"SO₃ + H₂SO₄ → H₂S₂O₇",color:"#38bdf8"},
+              {step:"4. Dilution",eq:"H₂S₂O₇ + H₂O → 2H₂SO₄",color:"#10b981"}
+            ].map((st,i) => (
+              <rect key={i} x={100+i*140} y={110} width={120} height={180} rx={8} fill={st.color} fillOpacity={0.1} stroke={st.color} strokeWidth={2}/>
+            ))}
+            {[
+              {x:100,text:"Combustion"},
+              {x:240,text:"Oxidation (V₂O₅)"},
+              {x:380,text:"Absorption"},
+              {x:520,text:"Dilution"}
+            ].map((t,i) => <text key={i} x={t.x} y={310} fill={"#cbd5e1"} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
+          </svg>
+        );
+      case "solvay-process-na2co3":
+        return (
+          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="80" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">Solvay Process - Na₂CO₃</text>
+            <rect x="120" y="110" width="460" height="60" rx="8" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="2"/>
+            <text x="350" y="145" fill="#f59e0b" fontSize="13" fontWeight="bold" textAnchor="middle">NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ ↓ + NH₄Cl</text>
+            <rect x="120" y="190" width="210" height="100" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="225" y="225" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Step 1: Brine sat. with NH₃</text>
+            <text x="225" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">NaCl + NH₃ + H₂O</text>
+            <rect x="370" y="190" width="210" height="100" rx="8" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2"/>
+            <text x="475" y="225" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">Step 2: CO₂ absorption</text>
+            <text x="475" y="265" fill="#cbd5e1" fontSize="11" textAnchor="middle">NaHCO₃ precipitates</text>
+            <rect x="150" y="310" width="400" height="40" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
+            <text x="350" y="335" fill="#a855f7" fontSize="12" fontWeight="bold" textAnchor="middle">Calcination: 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂</text>
+          </svg>
+        );
+
       default:
         return (
           <div className="flex flex-col items-center justify-center p-12 text-center text-muted-foreground">
