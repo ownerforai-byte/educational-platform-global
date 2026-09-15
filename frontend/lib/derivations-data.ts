@@ -11,6 +11,10 @@
  * gradeTrack: "extra-grade-12", isExtra: true
  */
 
+import { BIOLOGY_THEOREMS } from "@/lib/derivations-data-biology";
+import { CHEMISTRY_THEOREMS } from "@/lib/derivations-data-chemistry";
+import { MATH_THEOREMS } from "@/lib/derivations-data-math";
+
 export interface SolvedProblem {
   id: string;
   question: string;
@@ -1394,4 +1398,7 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
       },
     ],
   },
+  ...BIOLOGY_THEOREMS,
+  ...CHEMISTRY_THEOREMS,
+  ...MATH_THEOREMS,
 ];

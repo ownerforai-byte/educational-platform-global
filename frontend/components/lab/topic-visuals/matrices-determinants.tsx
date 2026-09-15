@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
@@ -40,6 +41,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function MatricesDeterminantsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [matrix, setMatrix] = useState([[2, 1], [1, 3]]);
   const [showInverse, setShowInverse] = useState(false);
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -71,6 +73,7 @@ export function MatricesDeterminantsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.5;
 
@@ -210,7 +213,9 @@ export function MatricesDeterminantsVisual() {
           </label>
         </div>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Key Concepts</p>

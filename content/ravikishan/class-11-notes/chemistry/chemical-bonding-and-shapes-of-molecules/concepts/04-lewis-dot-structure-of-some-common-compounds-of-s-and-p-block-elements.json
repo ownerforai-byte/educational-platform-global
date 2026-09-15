@@ -83,9 +83,6 @@
     "Practice comparing in-situ and ex-situ conservation strategies.",
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 04 lewis dot structure of some common compounds of s and p block elements."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
@@ -187,5 +184,6 @@
     "type": "3d-model",
     "component": "VSEPRModeler",
     "desc": "3D molecular geometry predictor"
-  }
+  },
+  "visualType": "lewis-dot-structures"
 }

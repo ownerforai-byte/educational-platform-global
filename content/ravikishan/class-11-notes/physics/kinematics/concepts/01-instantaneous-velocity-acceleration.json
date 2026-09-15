@@ -104,27 +104,52 @@
   "mcs": [
     {
       "question": "The instantaneous velocity of a particle is given by:",
-      "options": ["Δx/Δt over a long interval", "dx/dt", "x/t", "Δv/Δt"],
+      "options": [
+        "Δx/Δt over a long interval",
+        "dx/dt",
+        "x/t",
+        "Δv/Δt"
+      ],
       "answer": "B"
     },
     {
       "question": "If x(t) = 5t² m, the instantaneous velocity at t = 3 s is:",
-      "options": ["15 m/s", "30 m/s", "45 m/s", "5 m/s"],
+      "options": [
+        "15 m/s",
+        "30 m/s",
+        "45 m/s",
+        "5 m/s"
+      ],
       "answer": "B"
     },
     {
       "question": "At the highest point of a ball thrown vertically upward:",
-      "options": ["v = 0 and a = 0", "v = 0 and a = g downward", "v ≠ 0 and a = 0", "v and a are both upward"],
+      "options": [
+        "v = 0 and a = 0",
+        "v = 0 and a = g downward",
+        "v ≠ 0 and a = 0",
+        "v and a are both upward"
+      ],
       "answer": "B"
     },
     {
       "question": "The displacement of a particle between two times equals:",
-      "options": ["The slope of the v–t graph", "The area under the v–t graph", "The area under the x–t graph", "The slope of the a–t graph"],
+      "options": [
+        "The slope of the v–t graph",
+        "The area under the v–t graph",
+        "The area under the x–t graph",
+        "The slope of the a–t graph"
+      ],
       "answer": "B"
     },
     {
       "question": "A particle is slowing down when:",
-      "options": ["a is negative", "v is negative", "v and a have opposite signs", "v and a have the same sign"],
+      "options": [
+        "a is negative",
+        "v is negative",
+        "v and a have opposite signs",
+        "v and a have the same sign"
+      ],
       "answer": "C"
     }
   ],
@@ -141,5 +166,6 @@
     "Task 3: Given $a(t) = 4t$ with $v(0) = 5$ m/s and $x(0) = 2$ m, find $v(t)$ and $x(t)$.",
     "Task 4: Solve the NEB past question: particle at rest — find times, positions and accelerations at those times.",
     "Task 5: Explain to a classmate why a speedometer shows instantaneous speed and why trip-average speed can differ, using the limit definition."
-  ]
+  ],
+  "visualType": "instantaneous-velocity"
 }

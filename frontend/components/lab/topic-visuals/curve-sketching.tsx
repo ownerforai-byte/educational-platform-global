@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -42,6 +43,7 @@ type CurveType = "quadratic" | "cubic" | "rational" | "trig-asin" | "trig-acos" 
 
 export function CurveSketchingVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [curveType, setCurveType] = useState<CurveType>("quadratic");
   const [params, setParams] = useState({ a: 1, b: 0, c: -2 });
   const [isWebGL] = useState(() => isWebGLAvailable());
@@ -81,6 +83,7 @@ export function CurveSketchingVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -249,7 +252,9 @@ export function CurveSketchingVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Sketching Properties</p>

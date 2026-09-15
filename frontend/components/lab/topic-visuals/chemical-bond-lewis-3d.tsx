@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
@@ -34,6 +35,7 @@ type Molecule = "h2" | "h2o" | "co2" | "nh3" | "ch4" | "nacl";
 
 export function LewisDotVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [molecule, setMolecule] = useState<Molecule>("h2o");
   const [isWebGL] = useState(() => isWebGLAvailable());
 
@@ -64,6 +66,7 @@ export function LewisDotVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 15;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.9));
       const dir = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -299,7 +302,9 @@ export function LewisDotVisual() {
             ))}
           </div>
         </CollapsibleControls>
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

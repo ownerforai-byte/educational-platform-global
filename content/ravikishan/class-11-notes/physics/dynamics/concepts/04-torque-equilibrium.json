@@ -105,27 +105,52 @@
   "mcs": [
     {
       "question": "A 40 N force is applied perpendicularly at the end of a 0.5 m spanner. The torque is:",
-      "options": ["20 Nm", "40 Nm", "80 Nm", "10 Nm"],
+      "options": [
+        "20 Nm",
+        "40 Nm",
+        "80 Nm",
+        "10 Nm"
+      ],
       "answer": "A"
     },
     {
       "question": "A uniform beam of length L and mass M is supported at both ends. Each support carries:",
-      "options": ["Mg/2", "Mg", "Mg/4", "2Mg"],
+      "options": [
+        "Mg/2",
+        "Mg",
+        "Mg/4",
+        "2Mg"
+      ],
       "answer": "A"
     },
     {
       "question": "A couple consists of two 10 N forces separated by 0.3 m. The torque is:",
-      "options": ["3 Nm", "30 Nm", "0.3 Nm", "300 Nm"],
+      "options": [
+        "3 Nm",
+        "30 Nm",
+        "0.3 Nm",
+        "300 Nm"
+      ],
       "answer": "A"
     },
     {
       "question": "A 2 m uniform rod is balanced at its centre. A 5 N weight is placed at one end. The support force at the other end to balance it is:",
-      "options": ["5 N upward", "5 N downward", "10 N upward", "2.5 N upward"],
+      "options": [
+        "5 N upward",
+        "5 N downward",
+        "10 N upward",
+        "2.5 N upward"
+      ],
       "answer": "A"
     },
     {
       "question": "Which condition is necessary for a rigid body to be in static equilibrium?",
-      "options": ["ΣF = 0 only", "Στ = 0 only", "Both ΣF = 0 and Στ = 0", "Either ΣF = 0 or Στ = 0"],
+      "options": [
+        "ΣF = 0 only",
+        "Στ = 0 only",
+        "Both ΣF = 0 and Στ = 0",
+        "Either ΣF = 0 or Στ = 0"
+      ],
       "answer": "C"
     }
   ],
@@ -142,5 +167,6 @@
     "Solve 3 ladder problems for reactions and the minimum angle before slipping.",
     "Find the centre of gravity of composite bodies by taking moments.",
     "Solve 3 couple problems showing that the torque is independent of the pivot."
-  ]
+  ],
+  "visualType": "torque-equilibrium"
 }

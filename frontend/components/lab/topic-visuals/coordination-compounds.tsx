@@ -6,6 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
@@ -40,6 +41,7 @@ type CoordType = "octahedral" | "tetrahedral" | "square-planar";
 
 export function CoordinationCompoundsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [geometry, setGeometry] = useState<CoordType>("octahedral");
   const [isWebGL] = useState(() => isWebGLAvailable());
 
@@ -71,6 +73,7 @@ export function CoordinationCompoundsVisual() {
       controls.autoRotateSpeed = 0.4;
       controls.minDistance = 3;
       controls.maxDistance = 20;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -335,7 +338,9 @@ export function CoordinationCompoundsVisual() {
           </Tabs>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Crystal Field Theory</p>

@@ -5,47 +5,18 @@
   "topicTitle": "Food Chain and Food Web",
   "relevance": 100,
   "notes": [
-    "Ecosystem: biotic + abiotic components.",
-    "Food chain: linear energy transfer (grass→rabbit→fox).",
-    "Food web: interconnected chains.",
-    "10% energy transfer rule.",
-    "Biogeochemical cycles: carbon, nitrogen."
+    "**Food Chain:** A linear sequence of organisms through which nutrients and energy are transferred as one organism eats another. Types: Grazing food chain (starts with living green plants → herbivores → carnivores) and Detritus food chain (starts with dead organic matter → decomposers → detritivores → carnivores).",
+    "**Food Web:** An interconnected network of multiple food chains within an ecosystem. Shows complex feeding relationships and energy flow pathways. Provides stability to ecosystems as organisms have alternative food sources.",
+    "**Trophic Levels:** Position an organism occupies in a food chain. Producers (autotrophs) are at level 1; primary consumers (herbivores) at level 2; secondary consumers (carnivores) at level 3; tertiary consumers at level 4. Decomposers operate across all levels.",
+    "**Ecological Pyramids:** Graphic representations of trophic structure. Pyramid of numbers (organisms per unit area), pyramid of biomass (total mass per unit area), pyramid of energy (energy flow per unit area per time). Energy pyramid is always upright because energy decreases at each level (~10% transfer efficiency).",
+    "**10% Law (Lindeman's Law):** Only about 10% of energy is transferred from one trophic level to the next. The remaining ~90% is lost as heat through metabolic processes (respiration, movement, reproduction) or undigested waste."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ 'Food chain shows all feeding relationships.' ✅ Food chain is linear; food web shows interconnected feeding relationships.",
+    "❌ '90% of energy is transferred to next trophic level.' ✅ Only ~10% energy transfers; ~90% lost as heat.",
+    "❌ 'Biomagnification decreases toxin concentration up the food chain.' ✅ Biomagnification increases toxin concentration at higher trophic levels.",
+    "❌ 'All food chains start with consumers.' ✅ All food chains start with producers (autotrophs).",
+    "❌ 'Energy flows in cycles in ecosystems.' ✅ Energy flows unidirectionally; only nutrients cycle."
   ],
   "practice": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -84,13 +55,18 @@
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
   "universalFacts": [
-    "Universal scientific fact for 02 food chain web."
+    "Only about 10% of energy transfers between trophic levels; the rest is lost as heat.",
+    "Food chains rarely exceed 4-5 trophic levels due to energy constraints.",
+    "Biomagnification causes toxin concentrations to increase 10-100x at each trophic level.",
+    "Detritus food chains often contribute more energy flow than grazing chains in forests."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Pond: phytoplankton→zooplankton→fish→birds",
-    "Nepal: terai→hills→mountains ecosystems"
+    "Grassland: Grass → Grasshopper → Frog → Snake → Hawk",
+    "Aquatic: Phytoplankton → Zooplankton → Small fish → Large fish → Human",
+    "Decomposer: Dead leaves → Earthworm → Bird → Fox",
+    "Parasitic: Tree → Aphid → Ladybug → Spider"
   ],
   "practiceQuestions": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -132,9 +108,11 @@
     "dN/dt=rN((K-N)/K) (logistic growth)"
   ],
   "keyPoints": [
-    "Core point for 02 food chain web."
+    "Key concept 1: Understand core principles",
+    "Key concept 2: Apply to problem-solving",
+    "Key concept 3: Connect to related topics"
   ],
-  "summary": "Ecology studies interactions between organisms and their environment.",
+  "summary": "Food chains represent linear energy transfer pathways from producers to top predators, while food webs depict the complex interconnected feeding relationships in ecosystems. The 10% law explains why energy decreases at successive trophic levels, limiting food chain length. Ecological pyramids visualize these relationships in terms of numbers, biomass, and energy flow.",
   "specialNotes": [
     "Specialized insight for 02 food chain web."
   ],
@@ -199,5 +177,6 @@
     "type": "simulation",
     "component": "EcosystemSim",
     "desc": "Interactive ecosystem energy flow simulation"
-  }
+  },
+  "visualType": "food-chain-web"
 }

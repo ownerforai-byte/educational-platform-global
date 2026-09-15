@@ -15,6 +15,7 @@ import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { VizToolbar, type VizTarget, type VizTargetRef } from "@/components/viz/viz-toolbar";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import {
   createThreeScene,
@@ -88,13 +89,23 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
 function useLabScene(
   build: (kit: Kit) => void | ((t: number) => void),
   deps: unknown[]
-): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean } {
+): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; vizTargetRef: VizTargetRef } {
+  const vizTargetRef = useRef<VizTarget>({});
   const mountRef = useRef<HTMLDivElement>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount || !webGL) return;
     const kit = setupKit(mount);
+    vizTargetRef.current = {
+      controls: kit.ts.controls,
+      el: mount,
+      canvasEl: kit.ts.renderer.domElement,
+      render: () => {
+        kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
+        kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+      },
+    };
     const tick = build(kit);
     const stop = runLoop(kit, tick ?? undefined);
     const offResize = bindResize(kit.ts);
@@ -105,16 +116,19 @@ function useLabScene(
       window.removeEventListener("resize", onResize);
       offResize();
       kit.labelRenderer.domElement.remove();
+    vizTargetRef.current = {};
       disposeThreeScene(kit.ts);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, ...deps]);
-  return { mountRef, webGL };
+  return { mountRef, webGL, vizTargetRef };
 }
 
-function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean }) {
+function CanvasMount({ mountRef, webGL, targetRef }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; targetRef: VizTargetRef }) {
   return webGL ? (
-    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md" />
+    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md">
+      <VizToolbar targetRef={targetRef} />
+    </div>
   ) : (
     <div className="flex w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
       WebGL is not available in this browser.
@@ -155,7 +169,7 @@ function shellConfig(z: number): number[] {
 
 const AtomicTab: React.FC = () => {
   const [z, setZ] = useState(11);
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const shells = shellConfig(z);
     const nucleus = new THREE.Mesh(new THREE.SphereGeometry(0.55, 24, 18), standardMaterial(0xf43f5e, { emissive: 0xf43f5e, emissiveIntensity: 0.5 }));
@@ -200,7 +214,7 @@ const AtomicTab: React.FC = () => {
           Configuration: {shellConfig(z).map((n, i) => `${SHELL_NAMES[i]}:${n}`).join("  ")}
         </p>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Electrons (blue) orbit the nucleus in shells K, L, M, N — inner shells spin faster. Pick any element from H to Ca and watch its shells fill by the 2, 8, 8, 2 rule."
         principle="Bohr–Bury scheme: shells fill in order of increasing energy, capacity 2n², outermost shell never more than 8 electrons. Valence electrons decide chemical properties."
@@ -241,7 +255,7 @@ const VSEPR_SHAPES: VseprShape[] = [
 const VseprTab: React.FC = () => {
   const [idx, setIdx] = useState(3);
   const shape = VSEPR_SHAPES[idx];
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const center = new THREE.Mesh(new THREE.SphereGeometry(0.55, 28, 20), standardMaterial(0xa78bfa));
     g.add(center);
@@ -279,7 +293,7 @@ const VseprTab: React.FC = () => {
           </Button>
         ))}
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Lone pair = non-bonding electron pair on the central atom (yellow translucent lobe)."
         look="Violet central atom, green bonded atoms, yellow lobes for lone pairs. Compare tetrahedral CH₄ (109.5°) with NH₃ (107°) and H₂O (104.5°) — each lone pair squeezes the angle smaller."
@@ -303,7 +317,7 @@ const TRENDS = {
 
 const PeriodicTab: React.FC = () => {
   const [metric, setMetric] = useState<keyof typeof TRENDS>("radius");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const t = TRENDS[metric];
     // Baseline axis
@@ -328,7 +342,7 @@ const PeriodicTab: React.FC = () => {
         <Button size="sm" variant={metric === "ie" ? "default" : "outline"} onClick={() => setMetric("ie")}>Ionization energy</Button>
         <Button size="sm" variant={metric === "en" ? "default" : "outline"} onClick={() => setMetric("en")}>Electronegativity</Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="3D bar chart of Period 3 (Na → Ar). Radius bars shrink left to right; ionization-energy and electronegativity bars generally grow (small dips at Al and S due to sub-shell stability)."
         principle="Across a period, nuclear charge rises while shielding stays nearly constant, so attraction on the outer electron increases → radius ↓, IE ↑, EN ↑. Down a group, new shells increase shielding → radius ↑, IE ↓."
@@ -364,7 +378,7 @@ function multiBond(a: THREE.Vector3, b: THREE.Vector3, n: number): THREE.Group {
 
 const OrganicTab: React.FC = () => {
   const [mol, setMol] = useState<"methane" | "ethane" | "ethene" | "ethyne" | "benzene">("benzene");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     if (mol === "methane") {
       g.add(atom(new THREE.Vector3(), C_COLOR, 0.5));
@@ -436,7 +450,7 @@ const OrganicTab: React.FC = () => {
           </Button>
         ))}
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Grey = carbon, white = hydrogen. Bond multiplicity is drawn literally: one stick (alkane), two sticks (alkene), three sticks (alkyne), and benzene's alternating bonds with the pink delocalized-π ring."
         principle="Carbon always forms 4 covalent bonds: sp³ (tetrahedral 109.5°), sp² (trigonal 120°), sp (linear 180°). Benzene is a resonance hybrid — all six C–C bonds equal (1.39 Å), between single and double."

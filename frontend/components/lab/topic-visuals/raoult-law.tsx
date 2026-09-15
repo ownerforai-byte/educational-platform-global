@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 import { LiveArrow } from "@/components/lab/animated-arrow-helper";
 
@@ -37,6 +38,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 export function RaoultLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [moleFraction, setMoleFraction] = useState(0.3);
   const [isWebGL] = useState(() => isWebGLAvailable());
 
@@ -67,6 +69,7 @@ export function RaoultLawVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
@@ -203,7 +206,9 @@ export function RaoultLawVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Raoult's Law</p>

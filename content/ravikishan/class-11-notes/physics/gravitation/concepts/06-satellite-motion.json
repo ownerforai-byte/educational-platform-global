@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "The orbital velocity of a satellite is given by:",
-      "options": ["√(2GM/r)", "√(GM/r)", "√(GM/2r)", "GM/r"],
+      "options": [
+        "√(2GM/r)",
+        "√(GM/r)",
+        "√(GM/2r)",
+        "GM/r"
+      ],
       "answer": "B"
     },
     {
       "question": "The period of a satellite in orbit is:",
-      "options": ["2π√(r/GM)", "2π√(r³/GM)", "2π√(GM/r)", "π√(r³/GM)"],
+      "options": [
+        "2π√(r/GM)",
+        "2π√(r³/GM)",
+        "2π√(GM/r)",
+        "π√(r³/GM)"
+      ],
       "answer": "B"
     },
     {
       "question": "As the orbital radius increases, the orbital speed:",
-      "options": ["increases", "decreases", "stays constant", "oscillates"],
+      "options": [
+        "increases",
+        "decreases",
+        "stays constant",
+        "oscillates"
+      ],
       "answer": "B"
     },
     {
       "question": "The total energy of a satellite in circular orbit is:",
-      "options": ["+GMm/2r", "−GMm/2r", "GMm/r", "zero"],
+      "options": [
+        "+GMm/2r",
+        "−GMm/2r",
+        "GMm/r",
+        "zero"
+      ],
       "answer": "B"
     },
     {
       "question": "Astronauts float in the ISS because:",
-      "options": ["gravity is zero there", "they are in continuous free fall", "the station is outside Earth's gravity", "they have no weight"],
+      "options": [
+        "gravity is zero there",
+        "they are in continuous free fall",
+        "the station is outside Earth's gravity",
+        "they have no weight"
+      ],
       "answer": "B"
     }
   ],
@@ -146,5 +171,6 @@
     "Compute K, U and E for a given orbit.",
     "Find the geostationary altitude from T = 24 h.",
     "Explain weightlessness in orbit in terms of free fall."
-  ]
+  ],
+  "visualType": "satellite-orbit"
 }

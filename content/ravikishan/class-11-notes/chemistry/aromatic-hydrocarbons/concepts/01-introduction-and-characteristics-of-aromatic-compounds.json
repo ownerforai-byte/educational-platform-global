@@ -83,9 +83,6 @@
     "Practice comparing in-situ and ex-situ conservation strategies.",
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 01 introduction and characteristics of aromatic compounds."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "formulas": [
@@ -187,5 +184,6 @@
     "type": "simulation",
     "component": "AromaticReactSim",
     "desc": "Aromatic reaction simulator"
-  }
+  },
+  "visualType": "benzene-aromatic"
 }

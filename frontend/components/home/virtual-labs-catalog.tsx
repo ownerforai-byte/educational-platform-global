@@ -60,6 +60,13 @@ const LABS_DATA: Record<LabDomain, LabCardData[]> = {
       badgeColor: "bg-sky-500/15 text-sky-500 border-sky-500/30",
     },
     {
+      title: "Vector Lab Classic 3D",
+      description: "Tabbed classic vector lab — basics, addition, and components with live arrows and magnitude readouts.",
+      href: "/lab/ph-3d-vectors-classic",
+      badge: "3D Suite",
+      badgeColor: "bg-sky-500/15 text-sky-500 border-sky-500/30",
+    },
+    {
       title: "Elasticity & Gas Suite 3D",
       description: "Stress-strain curves, Young's modulus, kinetic theory of gases & Maxwell distribution.",
       href: "/lab/physics/physics-elasticity-gas-suite-3d",
@@ -221,6 +228,13 @@ const LABS_DATA: Record<LabDomain, LabCardData[]> = {
       title: "Ecology & Biota Conservation 3D",
       description: "Explore Nepal's biodiversity, food web dynamics, ecological pyramids & conservation.",
       href: "/lab/biology/ecology-3d",
+      badge: "3D Suite",
+      badgeColor: "bg-emerald-500/15 text-emerald-500 border-emerald-500/30",
+    },
+    {
+      title: "Evolution & Classification 3D",
+      description: "Phylogenetic trees, taxonomy hierarchy and fossil record timeline in interactive 3D.",
+      href: "/lab/bio-3d-evolution",
       badge: "3D Suite",
       badgeColor: "bg-emerald-500/15 text-emerald-500 border-emerald-500/30",
     },

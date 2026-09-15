@@ -108,27 +108,52 @@
   "mcs": [
     {
       "question": "A spring stretches 4 cm under a 20 N load. Its spring constant is:",
-      "options": ["5 N/m", "80 N/m", "500 N/m", "0.2 N/m"],
+      "options": [
+        "5 N/m",
+        "80 N/m",
+        "500 N/m",
+        "0.2 N/m"
+      ],
       "answer": "C"
     },
     {
       "question": "Two identical springs (k each) in series have an effective constant of:",
-      "options": ["k/2", "2k", "k", "4k"],
+      "options": [
+        "k/2",
+        "2k",
+        "k",
+        "4k"
+      ],
       "answer": "A"
     },
     {
       "question": "Two springs k₁ = 200 N/m and k₂ = 300 N/m in parallel have:",
-      "options": ["120 N/m", "500 N/m", "250 N/m", "600 N/m"],
+      "options": [
+        "120 N/m",
+        "500 N/m",
+        "250 N/m",
+        "600 N/m"
+      ],
       "answer": "B"
     },
     {
       "question": "The energy stored in a spring (k) stretched by x is:",
-      "options": ["kx", "kx²", "½kx²", "½kx"],
+      "options": [
+        "kx",
+        "kx²",
+        "½kx²",
+        "½kx"
+      ],
       "answer": "C"
     },
     {
       "question": "If a spring is cut into two equal halves, the spring constant of each half:",
-      "options": ["halves", "doubles", "stays the same", "becomes zero"],
+      "options": [
+        "halves",
+        "doubles",
+        "stays the same",
+        "becomes zero"
+      ],
       "answer": "B"
     }
   ],
@@ -145,5 +170,6 @@
     "Solve 3 series and 3 parallel combination problems.",
     "Derive the energy stored ½kx² as the area under the F–x graph.",
     "Design a spring balance calibration table from F = kx and F = mg."
-  ]
+  ],
+  "visualType": "hooke-law"
 }

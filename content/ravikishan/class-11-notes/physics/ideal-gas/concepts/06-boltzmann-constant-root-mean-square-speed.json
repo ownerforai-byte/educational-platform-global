@@ -40,5 +40,6 @@
     "The ratio $\\gamma = C_P/C_V$ determines whether sound speed is faster in an adiabatic process: $v_{sound} = \\sqrt{\\gamma RT/M}$. For air ($\\gamma \\approx 1.4$), $v_{sound} \\approx 343$ m/s at 300 K. For helium ($\\gamma = 5/3 \\approx 1.67$), $v_{sound} \\approx 965$ m/s at 300 K."
   ],
   "animation3D": "ideal-gas",
-  "motionGraphics": "ideal-gas"
+  "motionGraphics": "ideal-gas",
+  "visualType": "rms-speed"
 }

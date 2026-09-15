@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -42,6 +43,7 @@ type SeqType = "arithmetic" | "geometric" | "harmonic";
 
 export function SequenceSeriesVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [seqType, setSeqType] = useState<SeqType>("geometric");
   const [a, setA] = useState(1);
   const [dOrR, setDOrR] = useState(2);
@@ -89,6 +91,7 @@ export function SequenceSeriesVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
@@ -209,7 +212,9 @@ export function SequenceSeriesVisual() {
           </div>
         </CollapsibleControls>
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">Formulas</p>

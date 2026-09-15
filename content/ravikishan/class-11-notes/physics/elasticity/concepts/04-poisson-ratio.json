@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "Poisson's ratio is the ratio of lateral strain to:",
-      "options": ["shear strain", "longitudinal strain", "volume strain", "stress"],
+      "options": [
+        "shear strain",
+        "longitudinal strain",
+        "volume strain",
+        "stress"
+      ],
       "answer": "B"
     },
     {
       "question": "Poisson's ratio for an incompressible material is:",
-      "options": ["0", "0.25", "0.5", "1"],
+      "options": [
+        "0",
+        "0.25",
+        "0.5",
+        "1"
+      ],
       "answer": "C"
     },
     {
       "question": "Poisson's ratio is dimensionless because it is:",
-      "options": ["a force ratio", "a strain ratio", "a modulus ratio", "an energy ratio"],
+      "options": [
+        "a force ratio",
+        "a strain ratio",
+        "a modulus ratio",
+        "an energy ratio"
+      ],
       "answer": "B"
     },
     {
       "question": "If E = 2×10¹¹ and G = 8×10¹⁰, Poisson's ratio is:",
-      "options": ["0.10", "0.25", "0.40", "0.50"],
+      "options": [
+        "0.10",
+        "0.25",
+        "0.40",
+        "0.50"
+      ],
       "answer": "B"
     },
     {
       "question": "The lateral strain on a bar (σ = 0.3) with longitudinal strain 10⁻³ is:",
-      "options": ["3×10⁻⁴", "10⁻³", "3×10³", "0.3×10³"],
+      "options": [
+        "3×10⁻⁴",
+        "10⁻³",
+        "3×10³",
+        "0.3×10³"
+      ],
       "answer": "A"
     }
   ],
@@ -146,5 +171,6 @@
     "Compute the lateral change for a stretched wire given σ and strain.",
     "Show that rubber (σ = 0.5) conserves volume.",
     "Compare the lateral behaviour of cork, steel and rubber."
-  ]
+  ],
+  "visualType": "elastic-moduli"
 }

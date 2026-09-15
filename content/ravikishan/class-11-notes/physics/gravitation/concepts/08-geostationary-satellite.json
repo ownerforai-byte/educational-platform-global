@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "A geostationary satellite has an orbital period of:",
-      "options": ["12 h", "24 h", "90 min", "27 days"],
+      "options": [
+        "12 h",
+        "24 h",
+        "90 min",
+        "27 days"
+      ],
       "answer": "B"
     },
     {
       "question": "The altitude of a geostationary satellite is approximately:",
-      "options": ["36,000 km", "6,400 km", "1,000 km", "4.22×10⁶ m"],
+      "options": [
+        "36,000 km",
+        "6,400 km",
+        "1,000 km",
+        "4.22×10⁶ m"
+      ],
       "answer": "A"
     },
     {
       "question": "A geostationary satellite must orbit:",
-      "options": ["in any plane", "in the equatorial plane west-to-east", "in polar orbit", "in any inclined plane"],
+      "options": [
+        "in any plane",
+        "in the equatorial plane west-to-east",
+        "in polar orbit",
+        "in any inclined plane"
+      ],
       "answer": "B"
     },
     {
       "question": "The orbital speed of a geostationary satellite is about:",
-      "options": ["7.9 km/s", "3.07 km/s", "11.2 km/s", "1 km/s"],
+      "options": [
+        "7.9 km/s",
+        "3.07 km/s",
+        "11.2 km/s",
+        "1 km/s"
+      ],
       "answer": "B"
     },
     {
       "question": "A satellite with a 24-h period but inclined orbit is called:",
-      "options": ["geostationary", "geosynchronous", "polar", "low Earth orbit"],
+      "options": [
+        "geostationary",
+        "geosynchronous",
+        "polar",
+        "low Earth orbit"
+      ],
       "answer": "B"
     }
   ],
@@ -146,5 +171,6 @@
     "Distinguish geosynchronous and geostationary with examples.",
     "Calculate K, U and E for a satellite at geostationary height.",
     "Explain why geostationary orbits suit communication satellites."
-  ]
+  ],
+  "visualType": "satellite-orbit"
 }

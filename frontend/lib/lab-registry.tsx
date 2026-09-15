@@ -12,11 +12,14 @@ import { ChemistryLab } from "@/components/lab/chemistry-lab";
 import { PhysicsLab } from "@/components/lab/physics-lab";
 import {
   BiologyAdvanced3D,
-  BiologyEvolution3D,
   BiologyPunnettCalculator,
   BiologyPopulationCalculator,
   BiologyPhotosynthesisCalculator,
 } from "@/components/lab/biology-3d";
+import { BiologyEvolution3D } from "@/components/lab/biology-evolution-3d";
+import { BiologyCell3D } from "@/components/lab/biology-cell-3d";
+import { BiologyEcology3D } from "@/components/lab/biology-ecology-3d";
+import { Physics3DVectors } from "@/components/lab/physics-3d-vectors";
 import {
   MathModern3D,
   MathAdvancedMotionLab,
@@ -591,7 +594,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "active",
     color: "#22c55e",
     unit: "Unit: Cell Biology",
-    component: BiologyAdvanced3D,
+    component: BiologyCell3D,
   },
   {
     id: "bio-3d-dna",
@@ -624,7 +627,7 @@ export const LAB_REGISTRY: LabMeta[] = [
     status: "new",
     color: "#22c55e",
     unit: "Unit: Ecology",
-    component: BiologyAdvanced3D,
+    component: BiologyEcology3D,
   },
   {
     id: "bio-3d-human",
@@ -1115,6 +1118,17 @@ export const LAB_REGISTRY: LabMeta[] = [
     color: "#3b82f6",
     unit: "Unit: Vectors",
     component: Physics3DVectorsComprehensive,
+  },
+  {
+    id: "ph-3d-vectors-classic",
+    title: "Vector Lab Classic 3D",
+    description: "Tabbed classic vector lab — basics, addition, and components with live arrows and magnitude readouts.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Vectors",
+    component: Physics3DVectors,
   },
 
   // ===== ADDED PHYSICS SIMULATIONS =====

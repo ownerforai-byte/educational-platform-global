@@ -4,6 +4,7 @@ import { useRef, useMemo, type ReactNode } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import { VizToolbar, VizControlsCapture, type VizTarget } from '@/components/viz/viz-toolbar';
 
 interface Shared3DSceneProps {
   particleColor: string;
@@ -128,8 +129,10 @@ export default function Shared3DScene({
   bgGradient,
   particleCount = 60,
 }: Shared3DSceneProps) {
+  const vizTargetRef = useRef<VizTarget>({});
   return (
-    <div className={`w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-xl overflow-hidden border border-primary/20 ${bgGradient}`}>
+    <div className={`relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-xl overflow-hidden border border-primary/20 ${bgGradient}`}>
+      <VizToolbar targetRef={vizTargetRef} />
       <Canvas
         camera={{ position: [0, 0, 5], fov: 55 }}
         gl={{ antialias: true, alpha: true }}
@@ -146,7 +149,8 @@ export default function Shared3DScene({
           orbitColors={orbitColors}
         />
         <FloatingParticles color={particleColor} count={particleCount} />
-        <OrbitControls enableDamping dampingFactor={0.08} minDistance={3} maxDistance={12} />
+        <OrbitControls enableDamping dampingFactor={0.08} minDistance={3} maxDistance={12} makeDefault />
+        <VizControlsCapture targetRef={vizTargetRef} />
       </Canvas>
     </div>
   );

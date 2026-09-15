@@ -105,17 +105,32 @@
   "mcs": [
     {
       "question": "A 10 kg block rests on a horizontal surface (μ_s = 0.5). The maximum static friction is: (g = 10 m/s²)",
-      "options": ["50 N", "5 N", "100 N", "25 N"],
+      "options": [
+        "50 N",
+        "5 N",
+        "100 N",
+        "25 N"
+      ],
       "answer": "A"
     },
     {
       "question": "A block slides down a 30° slope at constant speed. The coefficient of kinetic friction is:",
-      "options": ["0.577", "0.500", "0.866", "1.000"],
+      "options": [
+        "0.577",
+        "0.500",
+        "0.866",
+        "1.000"
+      ],
       "answer": "A"
     },
     {
       "question": "A 5 kg block is pulled by a 20 N force at 30° above horizontal (μ_k = 0.2). The normal force is: (g = 10 m/s²)",
-      "options": ["40 N", "45 N", "50 N", "35 N"],
+      "options": [
+        "40 N",
+        "45 N",
+        "50 N",
+        "35 N"
+      ],
       "answer": "A"
     },
     {
@@ -130,7 +145,12 @@
     },
     {
       "question": "The angle of repose for a surface with μ_s = 0.75 is:",
-      "options": ["37°", "45°", "53°", "30°"],
+      "options": [
+        "37°",
+        "45°",
+        "53°",
+        "30°"
+      ],
       "answer": "A"
     }
   ],
@@ -147,5 +167,6 @@
     "Solve 3 angle-of-repose problems showing θ_r = tan⁻¹μ_s.",
     "Solve 3 problems comparing static and kinetic friction.",
     "Solve 2 problems where friction acts in the direction of motion."
-  ]
+  ],
+  "visualType": "friction-forces"
 }

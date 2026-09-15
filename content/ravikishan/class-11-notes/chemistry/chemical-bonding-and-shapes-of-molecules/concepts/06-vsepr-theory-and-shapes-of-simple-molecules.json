@@ -85,9 +85,6 @@
     "Practice using Born-Haber cycles to calculate lattice energy.",
     "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 06 vsepr theory and shapes of simple molecules."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
@@ -189,5 +186,6 @@
     "type": "3d-model",
     "component": "VSEPRModeler",
     "desc": "3D molecular geometry predictor"
-  }
+  },
+  "visualType": "vsepr-geometry"
 }

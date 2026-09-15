@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "Young's modulus is the ratio of longitudinal stress to:",
-      "options": ["volume strain", "shear strain", "longitudinal strain", "force"],
+      "options": [
+        "volume strain",
+        "shear strain",
+        "longitudinal strain",
+        "force"
+      ],
       "answer": "C"
     },
     {
       "question": "A liquid has which elastic modulus?",
-      "options": ["Young's modulus only", "Shear modulus only", "Bulk modulus only", "All three"],
+      "options": [
+        "Young's modulus only",
+        "Shear modulus only",
+        "Bulk modulus only",
+        "All three"
+      ],
       "answer": "C"
     },
     {
       "question": "Bulk modulus B = −P/(ΔV/V). For pressure P = 10⁵ Pa and ΔV/V = 5×10⁻⁵, B is:",
-      "options": ["2×10⁹ Pa", "5×10⁹ Pa", "10¹⁵ Pa", "5×10⁻¹⁰ Pa"],
+      "options": [
+        "2×10⁹ Pa",
+        "5×10⁹ Pa",
+        "10¹⁵ Pa",
+        "5×10⁻¹⁰ Pa"
+      ],
       "answer": "A"
     },
     {
       "question": "Which material has the largest Young's modulus?",
-      "options": ["rubber", "steel", "diamond", "aluminium"],
+      "options": [
+        "rubber",
+        "steel",
+        "diamond",
+        "aluminium"
+      ],
       "answer": "C"
     },
     {
       "question": "The units of shear modulus are:",
-      "options": ["N/m", "N/m²", "N·m", "m/N"],
+      "options": [
+        "N/m",
+        "N/m²",
+        "N·m",
+        "m/N"
+      ],
       "answer": "B"
     }
   ],
@@ -146,5 +171,6 @@
     "Compute shear modulus from a tangential force and shear angle.",
     "Evaluate Poisson's ratio from given E and G.",
     "Compare the compressibility of steel, water, and air."
-  ]
+  ],
+  "visualType": "young-modulus"
 }

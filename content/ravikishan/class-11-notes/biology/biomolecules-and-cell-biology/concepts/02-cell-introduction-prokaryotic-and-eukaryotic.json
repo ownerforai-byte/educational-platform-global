@@ -5,48 +5,18 @@
   "topicTitle": "Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells",
   "relevance": 100,
   "notes": [
-    "Carbohydrates: $(CH_2O)_n$; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
-    "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
-    "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
-    "Nucleic acids: DNA (double helix, $A=T$, $G\\equiv C$, deoxyribose) stores genetic info; RNA (single strand, $A=U$) for protein synthesis.",
-    "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
+    "**Cell Theory:** All organisms are composed of one or more cells; the cell is the basic unit of structure and organization in organisms; all cells arise from pre-existing cells (Schleiden, Schwann, and Virchow).",
+    "**Prokaryotic Cells:** Lack membrane-bound organelles; possess a nucleoid region containing circular DNA; cell wall composed of peptidoglycan; ribosomes are 70S; reproduce by binary fission; examples include bacteria and archaea.",
+    "**Eukaryotic Cells:** Possess membrane-bound organelles including nucleus, mitochondria, endoplasmic reticulum, Golgi apparatus, lysosomes, and peroxisomes; ribosomes are 80S (or 70S in organelles); DNA is linear and organized into chromosomes; reproduce by mitosis/meiosis; examples include protists, fungi, plants, and animals.",
+    "**Key Structural Differences:** Prokaryotes have no nuclear envelope (DNA is naked in nucleoid), no membrane-bound organelles, smaller 70S ribosomes, cell wall of peptidoglycan, circular chromosome, and may possess flagella made of flagellin protein. Eukaryotes have a true nucleus with nuclear envelope, membrane-bound organelles, larger 80S ribosomes, cell wall of cellulose (plants) or chitin (fungi) or none (animals), linear chromosomes with histones, and flagella made of microtubules (9+2 arrangement).",
+    "**Endosymbiotic Theory:** Mitochondria and chloroplasts originated from free-living prokaryotes that were engulfed by ancestral eukaryotic cells, establishing symbiotic relationships. Evidence includes their own circular DNA, 70S ribosomes, double membranes, and ability to divide independently."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Cell wall is present in all cells. ✅ Cell wall is in plants, fungi, bacteria; absent in animal cells."
+    "❌ 'All cells look the same under a microscope.' ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
+    "❌ 'DNA and RNA are identical in structure.' ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
+    "❌ 'Mitosis produces genetically different cells.' ✅ Mitosis produces genetically identical diploid daughter cells.",
+    "❌ 'Meiosis produces identical cells.' ✅ Meiosis produces 4 genetically diverse haploid gametes.",
+    "❌ 'Crossing over occurs in mitosis.' ✅ Crossing over occurs in Prophase I of meiosis only."
   ],
   "practice": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -87,13 +57,18 @@
     "Practice explaining osmosis and plasmolysis with diagrams."
   ],
   "universalFacts": [
-    "Universal scientific fact for 02 cell introduction prokaryotic and eukaryotic."
+    "The smallest known cell is Mycoplasma (0.1-0.3 μm); the largest is the ostrich egg (~17 cm diameter).",
+    "Neurons can be up to 1 meter long (from spinal cord to foot muscles).",
+    "Red blood cells are unique among human cells in lacking a nucleus and most organelles.",
+    "A typical human body contains approximately 30-40 trillion cells."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Glucose → 38 ATP via cellular respiration",
-    "Insulin: 51 amino acids, protein hormone"
+    "Animal cell: No cell wall, contains centrioles, lysosomes prominent, stores glycogen.",
+    "Plant cell: Cellulose cell wall, chloroplasts for photosynthesis, large central vacuole, stores starch.",
+    "Bacterial cell: Peptidoglycan cell wall, capsule, pili, 70S ribosomes, circular DNA.",
+    "Fungal cell: Chitin cell wall, eukaryotic organelles, hyphae form mycelium network."
   ],
   "practiceQuestions": [
     "Practice identifying organelles and their functions in electron micrographs.",
@@ -133,12 +108,14 @@
     "Practice comparing plant and animal cell structures."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 cell introduction prokaryotic and eukaryotic)"
+    "Topic-specific formulas will be added based on content"
   ],
   "keyPoints": [
-    "Core point for 02 cell introduction prokaryotic and eukaryotic."
+    "Key concept 1: Understand core principles",
+    "Key concept 2: Apply to problem-solving",
+    "Key concept 3: Connect to related topics"
   ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nCell membrane is selectively permeable fluid mosaic.\n\nOrganelles enable compartmentalized metabolic functions.",
+  "summary": "The cell is the fundamental structural and functional unit of all living organisms. Prokaryotic cells (bacteria and archaea) lack membrane-bound organelles and a true nucleus, while eukaryotic cells possess compartmentalized structures including a nucleus, mitochondria, and endoplasmic reticulum. Cell theory unifies all life: all organisms are composed of cells, cells are the basic units of life, and all cells arise from pre-existing cells through division.",
   "specialNotes": [
     "Specialized insight for 02 cell introduction prokaryotic and eukaryotic."
   ],
@@ -204,5 +181,6 @@
     "type": "3d-model",
     "component": "ProteinStructureViewer",
     "desc": "Interactive 3D protein structure showing primary to quaternary levels"
-  }
+  },
+  "visualType": "prokaryotic-vs-eukaryotic-cell"
 }

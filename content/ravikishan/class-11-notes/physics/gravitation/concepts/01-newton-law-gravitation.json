@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "The gravitational force between two masses depends on:",
-      "options": ["their masses only", "their separation only", "product of masses and square of distance", "sum of masses and distance"],
+      "options": [
+        "their masses only",
+        "their separation only",
+        "product of masses and square of distance",
+        "sum of masses and distance"
+      ],
       "answer": "C"
     },
     {
       "question": "If the distance between two masses is doubled, the force becomes:",
-      "options": ["half", "double", "one quarter", "four times"],
+      "options": [
+        "half",
+        "double",
+        "one quarter",
+        "four times"
+      ],
       "answer": "C"
     },
     {
       "question": "The value of G was first measured by:",
-      "options": ["Newton", "Cavendish", "Kepler", "Galileo"],
+      "options": [
+        "Newton",
+        "Cavendish",
+        "Kepler",
+        "Galileo"
+      ],
       "answer": "B"
     },
     {
       "question": "The gravitational force between two protons is about how many times the electric force?",
-      "options": ["$10^{20}$", "$10^{-36}$", "$10^{36}$", "$10^{6}$"],
+      "options": [
+        "$10^{20}$",
+        "$10^{-36}$",
+        "$10^{36}$",
+        "$10^{6}$"
+      ],
       "answer": "B"
     },
     {
       "question": "At height equal to Earth's radius, the value of g is:",
-      "options": ["$g/2$", "$g/4$", "$g/8$", "$2g$"],
+      "options": [
+        "$g/2$",
+        "$g/4$",
+        "$g/8$",
+        "$2g$"
+      ],
       "answer": "B"
     }
   ],
@@ -146,5 +171,6 @@
     "Derive the orbital velocity and period formulas from the law.",
     "Compare gravitational and electric forces for the same particles.",
     "Explain the Cavendish experiment and its significance."
-  ]
+  ],
+  "visualType": "newton-gravitation"
 }

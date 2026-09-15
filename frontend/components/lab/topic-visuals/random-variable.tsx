@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
+import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
 
 /* ============================================================
@@ -40,6 +41,7 @@ type DistType = "discrete" | "continuous";
 
 export function RandomVariableVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vizTargetRef = useRef<VizTarget>({});
   const [distType, setDistType] = useState<DistType>("discrete");
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
@@ -75,6 +77,7 @@ export function RandomVariableVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
@@ -207,7 +210,9 @@ export function RandomVariableVisual() {
           </CollapsibleControls>
         )}
 
-        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900" />
+        <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
+          <VizToolbar targetRef={vizTargetRef} />
+        </div>
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>

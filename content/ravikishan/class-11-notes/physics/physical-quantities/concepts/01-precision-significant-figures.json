@@ -103,27 +103,52 @@
   "mcs": [
     {
       "question": "The number of significant figures in 0.00650 is:",
-      "options": ["2", "3", "5", "6"],
+      "options": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
       "answer": "B"
     },
     {
       "question": "The result of 12.5 × 3.0, reported correctly, is:",
-      "options": ["37.5", "38", "37", "37.50"],
+      "options": [
+        "37.5",
+        "38",
+        "37",
+        "37.50"
+      ],
       "answer": "B"
     },
     {
       "question": "Repeated readings that are close to each other but far from the true value indicate the measurements are:",
-      "options": ["Accurate but not precise", "Precise but not accurate", "Both accurate and precise", "Neither accurate nor precise"],
+      "options": [
+        "Accurate but not precise",
+        "Precise but not accurate",
+        "Both accurate and precise",
+        "Neither accurate nor precise"
+      ],
       "answer": "B"
     },
     {
       "question": "If Z = A³ and the percentage error in A is 2%, the percentage error in Z is:",
-      "options": ["2%", "4%", "6%", "8%"],
+      "options": [
+        "2%",
+        "4%",
+        "6%",
+        "8%"
+      ],
       "answer": "C"
     },
     {
       "question": "Which instrument is the MOST precise for measuring the diameter of a wire?",
-      "options": ["Metre rule (least count 0.1 cm)", "Vernier callipers (0.01 cm)", "Screw gauge (0.001 cm)", "Measuring tape (0.1 cm)"],
+      "options": [
+        "Metre rule (least count 0.1 cm)",
+        "Vernier callipers (0.01 cm)",
+        "Screw gauge (0.001 cm)",
+        "Measuring tape (0.1 cm)"
+      ],
       "answer": "C"
     }
   ],
@@ -140,5 +165,6 @@
     "Task 3: Convert the following to 3 significant figures in scientific notation: 0.004560, 123,456, 7,500.",
     "Task 4: Solve the past-year NEB question: 'The percentage errors in mass and velocity are 2% and 3%. Find the maximum percentage error in kinetic energy.' (Answer: 2% + 2×3% = 8%.)",
     "Task 5: Write a one-page summary comparing accuracy, precision, least count and resolution with one instrument example for each."
-  ]
+  ],
+  "visualType": "heisenberg-uncertainty"
 }

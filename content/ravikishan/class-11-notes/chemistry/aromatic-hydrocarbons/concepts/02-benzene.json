@@ -82,9 +82,6 @@
     "Practice comparing in-situ and ex-situ conservation strategies.",
     "Practice identifying vegetation zones in Nepal by altitude."
   ],
-  "universalFacts": [
-    "Universal scientific fact for 02 benzene."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
@@ -186,5 +183,6 @@
     "type": "simulation",
     "component": "AromaticReactSim",
     "desc": "Aromatic reaction simulator"
-  }
+  },
+  "visualType": "benzene-aromatic"
 }

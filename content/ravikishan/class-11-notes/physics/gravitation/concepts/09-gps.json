@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "GPS determines a receiver's position by measuring:",
-      "options": ["signal strength", "signal travel time", "satellite temperature", "Doppler frequency only"],
+      "options": [
+        "signal strength",
+        "signal travel time",
+        "satellite temperature",
+        "Doppler frequency only"
+      ],
       "answer": "B"
     },
     {
       "question": "A GPS receiver needs at least how many satellites for a full fix?",
-      "options": ["2", "3", "4", "6"],
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
       "answer": "C"
     },
     {
       "question": "The altitude of GPS satellites is approximately:",
-      "options": ["36,000 km", "20,200 km", "400 km", "6,400 km"],
+      "options": [
+        "36,000 km",
+        "20,200 km",
+        "400 km",
+        "6,400 km"
+      ],
       "answer": "B"
     },
     {
       "question": "The relativistic clock shift for GPS satellites is about:",
-      "options": ["38 µs/day", "38 ms/day", "0.38 s/day", "38 s/day"],
+      "options": [
+        "38 µs/day",
+        "38 ms/day",
+        "0.38 s/day",
+        "38 s/day"
+      ],
       "answer": "A"
     },
     {
       "question": "GPS satellites are in:",
-      "options": ["geostationary orbit", "inclined medium Earth orbit", "polar low orbit", "lunar orbit"],
+      "options": [
+        "geostationary orbit",
+        "inclined medium Earth orbit",
+        "polar low orbit",
+        "lunar orbit"
+      ],
       "answer": "B"
     }
   ],
@@ -146,5 +171,6 @@
     "Quantify the effect of a 1 µs clock error.",
     "Describe the special and general relativistic clock corrections.",
     "List GPS error sources and their fixes."
-  ]
+  ],
+  "visualType": "gps-principle"
 }

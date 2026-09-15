@@ -17,6 +17,7 @@ import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { VizToolbar, type VizTarget, type VizTargetRef } from "@/components/viz/viz-toolbar";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import {
   createThreeScene,
@@ -90,13 +91,23 @@ function runLoop(kit: Kit, onUpdate?: (t: number) => void): () => void {
 function useLabScene(
   build: (kit: Kit) => void | ((t: number) => void),
   deps: unknown[]
-): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean } {
+): { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; vizTargetRef: VizTargetRef } {
+  const vizTargetRef = useRef<VizTarget>({});
   const mountRef = useRef<HTMLDivElement>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount || !webGL) return;
     const kit = setupKit(mount);
+    vizTargetRef.current = {
+      controls: kit.ts.controls,
+      el: mount,
+      canvasEl: kit.ts.renderer.domElement,
+      render: () => {
+        kit.ts.renderer.render(kit.ts.scene, kit.ts.camera);
+        kit.labelRenderer.render(kit.ts.scene, kit.ts.camera);
+      },
+    };
     const tick = build(kit);
     const stop = runLoop(kit, tick ?? undefined);
     const offResize = bindResize(kit.ts);
@@ -107,16 +118,19 @@ function useLabScene(
       window.removeEventListener("resize", onResize);
       offResize();
       kit.labelRenderer.domElement.remove();
+    vizTargetRef.current = {};
       disposeThreeScene(kit.ts);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [webGL, ...deps]);
-  return { mountRef, webGL };
+  return { mountRef, webGL, vizTargetRef };
 }
 
-function CanvasMount({ mountRef, webGL }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean }) {
+function CanvasMount({ mountRef, webGL, targetRef }: { mountRef: React.RefObject<HTMLDivElement | null>; webGL: boolean; targetRef: VizTargetRef }) {
   return webGL ? (
-    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md" />
+    <div ref={mountRef} aria-label="3D scene" className="relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] overflow-hidden rounded-md">
+      <VizToolbar targetRef={targetRef} />
+    </div>
   ) : (
     <div className="flex w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] items-center justify-center rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
       WebGL is not available in this browser.
@@ -152,7 +166,7 @@ function glucoseRing(center: THREE.Vector3, color: number): THREE.Group {
 
 const BioMoleculesTab: React.FC = () => {
   const [mode, setMode] = useState<BioMode>("carb");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     if (mode === "carb") {
       g.add(glucoseRing(new THREE.Vector3(-2.6, 1.4, 0), 0x64748b));
@@ -285,7 +299,7 @@ const BioMoleculesTab: React.FC = () => {
         <Button size="sm" variant={mode === "lipid" ? "default" : "outline"} onClick={() => setMode("lipid")}>Lipids</Button>
         <Button size="sm" variant={mode === "enzyme" ? "default" : "outline"} onClick={() => setMode("enzyme")}>Enzyme action</Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Monomer = single unit (glucose, amino acid); polymer = chain of monomers (starch, protein)."
         look="Carbohydrates: glucose rings join by yellow glycosidic bonds into starch. Proteins: two amino acids join by a yellow peptide bond, releasing water. Lipids: the phospholipid bilayer — blue heads out, brown tails in. Enzyme: the green substrate approaches, binds the active site, and leaves as two orange products."
@@ -302,7 +316,7 @@ const BioMoleculesTab: React.FC = () => {
 
 const BacteriaTab: React.FC = () => {
   const [gram, setGram] = useState<"positive" | "negative">("positive");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     // Capsule (glycocalyx)
     g.add(new THREE.Mesh(new THREE.CapsuleGeometry(1.35, 2.7, 8, 32), standardMaterial(0x86efac, { transparent: true, opacity: 0.2 })));
@@ -377,7 +391,7 @@ const BacteriaTab: React.FC = () => {
         <Button size="sm" variant={gram === "positive" ? "default" : "outline"} onClick={() => setGram("positive")}>Gram-positive (thick wall)</Button>
         <Button size="sm" variant={gram === "negative" ? "default" : "outline"} onClick={() => setGram("negative")}>Gram-negative (thin wall)</Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         look="Cut-away rod bacterium: sticky capsule → cell wall → yellow plasma membrane → dark cytoplasm containing a pink knotted circular DNA (nucleoid), a small plasmid ring, and blue 70S ribosome dots. The grey flagellum spins at one end."
         principle="Prokaryotes ('before nucleus') have no nuclear membrane and no membrane-bound organelles. Gram-positive walls are thick peptidoglycan (violet stain); Gram-negative are thin with an outer LPS layer (pink stain). Nutrition: autotrophic (photo/chemo) or heterotrophic (saprophytic/parasitic)."
@@ -392,7 +406,7 @@ const BacteriaTab: React.FC = () => {
 /* ------------------------------------------------------------------ */
 
 const FlowerTab: React.FC = () => {
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     // Thalamus (receptacle)
     const thalamus = new THREE.Mesh(new THREE.SphereGeometry(0.55, 24, 16), standardMaterial(0x4d7c0f));
@@ -471,7 +485,7 @@ const FlowerTab: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Whorl = a ring of floral parts. Androecium = male whorl (stamens); gynoecium = female whorl (carpels)."
         look="From outside in: green sepals → pink petals → six yellow-tipped stamens → one central carpel. The translucent ovary contains yellow ovules; pollen dusts the anthers."
@@ -490,7 +504,7 @@ type Species = "spirogyra" | "mucor" | "yeast" | "mushroom" | "marchantia" | "pi
 
 const DiversityTab: React.FC = () => {
   const [sp, setSp] = useState<Species>("mushroom");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     if (sp === "spirogyra") {
       // Filament cylinder + spiral chloroplast ribbon
@@ -644,7 +658,7 @@ const DiversityTab: React.FC = () => {
           <Button key={k} size="sm" variant={sp === k ? "default" : "outline"} onClick={() => setSp(k)}>{name}</Button>
         ))}
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Coenocytic = many nuclei, no cross-walls; gemma = multicellular asexual propagule; basidiocarp = mushroom fruiting body."
         look="Six syllabus genera with diagnostic structures: Spirogyra's ribbon chloroplast, Mucor's black sporangia on coenocytic hyphae, budding yeast cells, the mushroom's gills/annulus/underground mycelium, Marchantia's gemma cups, and Pinus's male cone with needle leaves."
@@ -701,7 +715,7 @@ const CYCLES: Record<"carbon" | "nitrogen", { nodes: CycleNode[]; edges: CycleEd
 
 const CyclesTab: React.FC = () => {
   const [cycle, setCycle] = useState<"carbon" | "nitrogen">("nitrogen");
-  const { mountRef, webGL } = useLabScene((kit) => {
+  const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
     const spec = CYCLES[cycle];
     spec.nodes.forEach((n) => {
@@ -728,7 +742,7 @@ const CyclesTab: React.FC = () => {
         <Button size="sm" variant={cycle === "carbon" ? "default" : "outline"} onClick={() => setCycle("carbon")}>Carbon cycle</Button>
         <Button size="sm" variant={cycle === "nitrogen" ? "default" : "outline"} onClick={() => setCycle("nitrogen")}>Nitrogen cycle</Button>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} />
+      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
       <TheoryPanel
         vocabulary="Biogeochemical cycle = circulation of an element between organisms (bio) and the environment (geo)."
         look="Yellow arrows trace each process between labelled reservoirs. In the carbon cycle, photosynthesis pulls CO₂ down while respiration and combustion push it back. In the nitrogen cycle, bacteria perform every key step: fixation, nitrification, ammonification and denitrification."

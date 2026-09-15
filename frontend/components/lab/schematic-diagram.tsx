@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import {
   Sparkles,
   Info,
@@ -17,6 +17,7 @@ import {
   ZoomOut,
   Maximize2,
   Minimize2,
+  Download,
 } from "lucide-react";
 
 export interface DiagramAnnotation {
@@ -67,6 +68,38 @@ export function SchematicDiagram({
   const handleZoom = (delta: number) => {
     setZoom((prev) => Math.min(Math.max(prev + delta, 0.5), 3));
   };
+
+  // Fullscreen + SVG export (PhET/GeoGebra-style viewport affordances)
+  const rootRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  useEffect(() => {
+    const h = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", h);
+    return () => document.removeEventListener("fullscreenchange", h);
+  }, []);
+  const toggleFullscreen = useCallback(async () => {
+    if (!rootRef.current) return;
+    if (document.fullscreenElement) await document.exitFullscreen();
+    else await rootRef.current.requestFullscreen?.();
+  }, []);
+  const exportSvg = useCallback(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    try {
+      const serialized = new XMLSerializer().serializeToString(svg);
+      const blob = new Blob([serialized], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${(diagramData.title || "schematic").toLowerCase().replace(/[^a-z0-9]+/g, "-")}.svg`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      /* export unsupported — noop */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Normalize subject
   const normalizedSubject = useMemo(() => {
@@ -1158,7 +1191,7 @@ export function SchematicDiagram({
   ]);
 
   return (
-    <div className={`rounded-3xl border border-blue-900/40 bg-[#070b16] shadow-xl overflow-hidden ${className}`}>
+    <div ref={rootRef} className={`rounded-3xl border border-blue-900/40 bg-[#070b16] shadow-xl overflow-hidden ${className}`}>
       {/* Header bar */}
       <div className="px-6 py-4 border-b border-blue-900/40 bg-[#090e1f]/90 backdrop-blur-md flex flex-wrap items-center justify-between gap-3">
         <div>
@@ -1301,7 +1334,7 @@ export function SchematicDiagram({
 
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ml-auto ${
+            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
               isExpanded
                 ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
                 : "bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700"
@@ -1309,6 +1342,24 @@ export function SchematicDiagram({
           >
             {isExpanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
             <span>{isExpanded ? "Collapse Details" : "Expand Details"}</span>
+          </button>
+
+          <button
+            onClick={exportSvg}
+            className="px-2.5 py-1 rounded-xl border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200 text-xs transition-all flex items-center gap-1.5"
+            title="Export diagram as SVG"
+          >
+            <Download className="h-3.5 w-3.5" />
+            <span>Export</span>
+          </button>
+
+          <button
+            onClick={() => void toggleFullscreen()}
+            className="px-2.5 py-1 rounded-xl border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200 text-xs transition-all flex items-center gap-1.5"
+            title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
+          >
+            {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+            <span>{isFullscreen ? "Exit Full" : "Fullscreen"}</span>
           </button>
         </div>
       </div>
@@ -1338,6 +1389,7 @@ export function SchematicDiagram({
           }}
         >
           <svg
+            ref={svgRef}
             viewBox={diagramData.viewBox}
             className="w-full h-full"
             style={{ overflow: "visible" }}

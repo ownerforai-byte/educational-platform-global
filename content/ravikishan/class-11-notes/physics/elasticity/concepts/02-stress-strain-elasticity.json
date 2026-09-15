@@ -109,27 +109,52 @@
   "mcs": [
     {
       "question": "The SI unit of stress is:",
-      "options": ["newton", "N/m²", "N·m", "kg/m³"],
+      "options": [
+        "newton",
+        "N/m²",
+        "N·m",
+        "kg/m³"
+      ],
       "answer": "B"
     },
     {
       "question": "Strain is:",
-      "options": ["force per unit area", "dimensionless", "measured in m", "measured in Pa"],
+      "options": [
+        "force per unit area",
+        "dimensionless",
+        "measured in m",
+        "measured in Pa"
+      ],
       "answer": "B"
     },
     {
       "question": "Within the elastic limit, stress is proportional to:",
-      "options": ["force", "area", "strain", "length"],
+      "options": [
+        "force",
+        "area",
+        "strain",
+        "length"
+      ],
       "answer": "C"
     },
     {
       "question": "A material that deforms permanently before breaking is called:",
-      "options": ["brittle", "ductile", "rigid", "elastic"],
+      "options": [
+        "brittle",
+        "ductile",
+        "rigid",
+        "elastic"
+      ],
       "answer": "B"
     },
     {
       "question": "A steel wire (E = 2×10¹¹ N/m², A = 10⁻⁶ m²) carries 200 N. Its strain is:",
-      "options": ["10⁻³", "10⁻⁶", "10³", "10⁶"],
+      "options": [
+        "10⁻³",
+        "10⁻⁶",
+        "10³",
+        "10⁶"
+      ],
       "answer": "A"
     }
   ],
@@ -146,5 +171,6 @@
     "Solve 3 bulk-modulus and 3 shear-modulus problems.",
     "Compare ductile vs brittle behaviour with two real examples each.",
     "Compute the safe (working) load using a given safety factor."
-  ]
+  ],
+  "visualType": "stress-strain"
 }

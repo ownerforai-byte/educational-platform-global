@@ -105,27 +105,52 @@
   "mcs": [
     {
       "question": "A block of mass 5 kg rests on a smooth inclined plane at 30°. Its acceleration down the plane is: (g = 10 m/s²)",
-      "options": ["5 m/s²", "10 m/s²", "5√3 m/s²", "2.5 m/s²"],
+      "options": [
+        "5 m/s²",
+        "10 m/s²",
+        "5√3 m/s²",
+        "2.5 m/s²"
+      ],
       "answer": "A"
     },
     {
       "question": "A 60 kg person stands on a scale in an elevator moving downward at constant speed. The scale reads:",
-      "options": ["0 N", "600 N", "1200 N", "300 N"],
+      "options": [
+        "0 N",
+        "600 N",
+        "1200 N",
+        "300 N"
+      ],
       "answer": "B"
     },
     {
       "question": "Two masses 4 kg and 6 kg are connected by a string over a frictionless pulley. The acceleration is: (g = 10 m/s²)",
-      "options": ["2 m/s²", "4 m/s²", "6 m/s²", "10 m/s²"],
+      "options": [
+        "2 m/s²",
+        "4 m/s²",
+        "6 m/s²",
+        "10 m/s²"
+      ],
       "answer": "A"
     },
     {
       "question": "A 10 N force acts on a 2 kg body at rest on a smooth horizontal surface. After 3 s, the velocity is:",
-      "options": ["5 m/s", "10 m/s", "15 m/s", "30 m/s"],
+      "options": [
+        "5 m/s",
+        "10 m/s",
+        "15 m/s",
+        "30 m/s"
+      ],
       "answer": "C"
     },
     {
       "question": "A body slides down a rough inclined plane at constant speed. Which statement is true?",
-      "options": ["The net force is mg sin θ", "The net force is zero", "The friction is zero", "The acceleration is g sin θ"],
+      "options": [
+        "The net force is mg sin θ",
+        "The net force is zero",
+        "The friction is zero",
+        "The acceleration is g sin θ"
+      ],
       "answer": "B"
     }
   ],
@@ -142,5 +167,6 @@
     "Solve 5 Atwood's machine problems for acceleration and tension.",
     "Solve 5 inclined-plane problems (smooth and rough) for acceleration and critical angle.",
     "Solve 5 connected-body problems finding both acceleration and internal contact forces."
-  ]
+  ],
+  "visualType": "newtons-laws-application"
 }

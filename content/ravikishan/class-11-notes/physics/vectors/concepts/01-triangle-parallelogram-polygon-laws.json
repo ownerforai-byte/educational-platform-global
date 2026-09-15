@@ -104,27 +104,52 @@
   "mcs": [
     {
       "question": "Two equal vectors have a resultant equal to either vector. The angle between them is:",
-      "options": ["60°", "90°", "120°", "180°"],
+      "options": [
+        "60°",
+        "90°",
+        "120°",
+        "180°"
+      ],
       "answer": "C"
     },
     {
       "question": "The magnitude of the resultant of two forces P and Q is ALWAYS:",
-      "options": ["Greater than P + Q", "Between |P − Q| and P + Q", "Equal to P + Q", "Less than |P − Q|"],
+      "options": [
+        "Greater than P + Q",
+        "Between |P − Q| and P + Q",
+        "Equal to P + Q",
+        "Less than |P − Q|"
+      ],
       "answer": "B"
     },
     {
       "question": "If a number of vectors are represented head-to-tail by the sides of a polygon, the resultant is represented by:",
-      "options": ["The longest side", "Any diagonal", "The closing side taken in the opposite order", "The sum of all sides' lengths"],
+      "options": [
+        "The longest side",
+        "Any diagonal",
+        "The closing side taken in the opposite order",
+        "The sum of all sides' lengths"
+      ],
       "answer": "C"
     },
     {
       "question": "Three concurrent forces in equilibrium satisfy:",
-      "options": ["F₁ + F₂ = F₃ always", "Lami's theorem", "F₁F₂ = F₃", "The polygon law cannot apply"],
+      "options": [
+        "F₁ + F₂ = F₃ always",
+        "Lami's theorem",
+        "F₁F₂ = F₃",
+        "The polygon law cannot apply"
+      ],
       "answer": "B"
     },
     {
       "question": "The equilibrant of a force system has magnitude equal to the resultant and direction:",
-      "options": ["The same as the resultant", "Opposite to the resultant", "Perpendicular to the resultant", "Undetermined"],
+      "options": [
+        "The same as the resultant",
+        "Opposite to the resultant",
+        "Perpendicular to the resultant",
+        "Undetermined"
+      ],
       "answer": "B"
     }
   ],
@@ -141,5 +166,6 @@
     "Task 3: Prove that three equal forces at 120° are in equilibrium, graphically and by components.",
     "Task 4: Solve the classic two-string hanging-weight problem with Lami's theorem for angles 30°/60° and 45°/45°.",
     "Task 5: Draw scale polygons for a given set of five forces and verify the resultant against the component method."
-  ]
+  ],
+  "visualType": "vsepr-theory"
 }
