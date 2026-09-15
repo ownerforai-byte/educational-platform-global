@@ -30,11 +30,15 @@ from flask import Flask, request, jsonify
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-# Coordinates of the Agnes AI text input field. Calibrate with:
-#   python calibrate.py   (hover the Agnes AI input, read the printed x/y)
-# then paste the (x, y) below.
-AGNES_INPUT_X = 500
-AGNES_INPUT_Y = 500
+# Coordinates of the Agnes AI text input field.
+#
+# >>> VERIFY THESE <<<  They were captured from the live cursor at
+# calibrate-time; they are NOT guaranteed to be the Agnes AI input box.
+# To confirm/replace: run `python agnes-bridge/calibrate.py`, hover your
+# mouse exactly over the Agnes AI text input field, and update the two
+# values below with the printed x / y.
+AGNES_INPUT_X = 434
+AGNES_INPUT_Y = 667
 
 # How long to wait after pressing Enter before we snapshot the screen.
 # Tune to the typical Agnes AI execution time. 10s is the safe default.

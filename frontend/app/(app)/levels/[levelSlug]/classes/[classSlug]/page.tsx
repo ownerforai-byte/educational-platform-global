@@ -25,7 +25,7 @@ export default async function ClassPage({
   try {
     const apiClass = await getClassBySlug(levelSlug, classSlug);
     const apiSubjects = await getSubjectsByClass(levelSlug, classSlug);
-    
+
     if (apiClass) {
       clsName = apiClass.name;
       clsDescription = apiClass.description;
@@ -43,7 +43,7 @@ export default async function ClassPage({
     const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
     if (syllabusClass) {
       clsName = syllabusClass.name;
-      clsDescription = syllabusClass.description ?? null;
+      clsDescription = syllabusClass.description;
       subjects = syllabusClass.subjects.map((s) => ({
         id: s.slug,
         slug: s.slug,
