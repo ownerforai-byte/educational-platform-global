@@ -28,6 +28,7 @@ import adminRoutes from "./api/admin";
 import userRoutes from "./api/user";
 import biologyRoutes from "./api/biology";
 import periodicTableRoutes from "./api/periodic-table";
+import lessonsRoutes from "./api/lessons";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
 
@@ -102,6 +103,7 @@ export function createApp(): express.Express {
   app.use("/api/user", userRoutes);
   app.use("/api/biology", biologyRoutes);
   app.use("/api/periodic-table", periodicTableRoutes);
+  app.use("/api/lessons", lessonsRoutes);
 
   // Debug after API routes
   console.log("\n=== AFTER API REGISTRATION ===");

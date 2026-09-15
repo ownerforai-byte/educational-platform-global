@@ -6,6 +6,7 @@ import {
   BookOpen,
   Map,
   Scroll,
+  ScrollText,
   TreePine,
   Globe2,
   Newspaper,
@@ -98,6 +99,13 @@ export function KnowledgeLoksewaHub() {
                 desc: "Structured frameworks for formal letters, reports, summary writing, and critical reviews.",
                 icon: PenLine,
                 color: "text-teal-400 bg-teal-500/10 border-teal-500/20",
+              },
+              {
+                href: "/lessons",
+                title: "Classic Lessons Library",
+                desc: "Original full-chapter markdown lessons with math typesetting — Physics, Chem, Math & Biology theory.",
+                icon: ScrollText,
+                color: "text-fuchsia-400 bg-fuchsia-500/10 border-fuchsia-500/20",
               },
             ].map((card) => {
               const Icon = card.icon;

@@ -38,6 +38,7 @@ const QUICK_SEARCH_ITEMS = [
   { label: "Physics & Chemistry Derivations", href: "/derivations", category: "Rigor" },
   { label: "Numerical Physics Mastery", href: "/knowledge/numerical-physics", category: "Knowledge" },
   { label: "Numerical Chemistry Calculations", href: "/knowledge/numerical-chemistry", category: "Knowledge" },
+  { label: "Classic Lessons Library (Full Chapters)", href: "/lessons", category: "Knowledge" },
   { label: "Loksewa Aayog Preparation", href: "/loksewa", category: "Competitive" },
   { label: "World Knowledge & Current Affairs", href: "/world-knowledge", category: "General" },
   { label: "Class 11 Complete Notes", href: "/class-11-notes", category: "Curriculum" },
