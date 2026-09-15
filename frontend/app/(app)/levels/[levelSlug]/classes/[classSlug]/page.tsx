@@ -43,7 +43,7 @@ export default async function ClassPage({
     const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
     if (syllabusClass) {
       clsName = syllabusClass.name;
-      clsDescription = syllabusClass.description;
+      clsDescription = syllabusClass.description ?? null;
       subjects = syllabusClass.subjects.map((s) => ({
         id: s.slug,
         slug: s.slug,
