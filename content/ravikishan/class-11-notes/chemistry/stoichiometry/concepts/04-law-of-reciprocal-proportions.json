@@ -1,229 +1,254 @@
 {
-  "title": "Law of Reciprocal Proportions — Statement",
+  "title": "Law of Reciprocal Proportions",
   "unitSlug": "stoichiometry",
-  "topicSlug": "laws-of-stoichiometry",
-  "topicTitle": "Laws of stoichiometry",
-  "relevance": 80,
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Balanced equation gives mass ratios. ✅ Balanced equation gives mole ratios, not mass ratios directly.",
-    "❌ Volume ratio equals mole ratio for all states. ✅ Volume ratio equals mole ratio only for gases at same T and P."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving gas stoichiometry problems at STP and non-STP conditions.",
-    "Practice solving mixture analysis problems using stoichiometry."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 law of reciprocal proportions."
-  ],
+  "topicSlug": "law-of-reciprocal-proportions",
+  "topicTitle": "Law of Reciprocal Proportions",
+  "relevance": 100,
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving gas stoichiometry problems at STP and non-STP conditions."
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "keyPoints": [
-    "Core point for 04 law of reciprocal proportions."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "specialNotes": [
-    "Specialized insight for 04 law of reciprocal proportions."
-  ],
-  "importantStatements": [
-    "Key statement for 04 law of reciprocal proportions."
-  ],
-  "importantNotes": [
-    "Important note regarding 04 law of reciprocal proportions."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Law of Reciprocal Proportions — Statement."
-  ],
-  "examNotes": [
-    "Focus on Law of Reciprocal Proportions — Statement problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 law of reciprocal proportions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 law of reciprocal proportions."
-  ],
-  "importantTasks": [
-    "Task for studying 04 law of reciprocal proportions."
-  ],
   "duplicateType": 2,
-  "tabGroup": "04-law-of-reciprocal-proportions",
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
+  "tabGroup": "law-of-reciprocal-proportions",
+  "visualType": "stoichiometry",
+  "enrichedContent": {
+    "notes": [
+      "**Statement:** When two different elements (A and B) separately combine with a fixed mass of a third element (C), the ratio of their masses in compounds with C is either the same as or a simple multiple of the ratio of their masses when they combine directly with each other.",
+      "**Formulated by:** Jeremias Richter in 1792. Known as Richter's Law of Reciprocal Proportions, it was the first quantitative law relating three elements.",
+      "**Example:** Carbon combines with oxygen (CO₂: C:O = 12:32 = 3:8) and hydrogen combines with oxygen (H₂O: H:O = 2:16 = 1:8). In methane (CH₄), carbon and hydrogen combine in ratio 12:4 = 3:1. The ratio of C:H combining with O is 3:(1/8) = 24:1, which relates to the direct C:H ratio (3:1) by a simple factor.",
+      "**Mathematical Formulation:** If mass(A)/mass(C) = a and mass(B)/mass(C) = b in their respective compounds with C, then when A and B combine directly, mass(A)/mass(B) = (a/b) × n, where n is a small whole number.",
+      "**Significance:** This law complements the Laws of Definite and Multiple Proportions, providing empirical evidence for fixed combining capacities (valency) of elements.",
+      "**Scope Limitation:** Applies only to compounds containing exactly three elements—does not generalize to more complex systems.",
+      "**Verification Example:** In H₂O, H:O = 1:8. In H₂S, H:S = 1:16. In SO₂, S:O = 1:1. The ratio of S to O combining with H (16:8 = 2:1) relates to their direct combination in SO₂ (1:1) by the simple factor of 2."
+    ],
+    "confusion": [
+      "❌ 'This law applies to any number of elements.' ✅ It applies only to compounds containing exactly THREE elements.",
+      "❌ 'The ratio is always 1:1.' ✅ The ratio is a SIMPLE relationship, but not necessarily 1:1.",
+      "❌ 'This law proves atoms exist.' ✅ Like the other proportion laws, it is consistent with atomic theory but is an empirical observation.",
+      "❌ 'This law is the same as the Law of Multiple Proportions.' ✅ No — the Law of Multiple Proportions describes two elements forming multiple compounds; this law describes three elements where two combine with a third.",
+      "❌ 'This law is not important for NEB.' ✅ While less frequently tested, it is part of the stoichiometry syllabus."
+    ],
+    "practice": [
+      "Verify the Law of Reciprocal Proportions using H₂O, H₂S, and SO₂.",
+      "Calculate the mass ratios for C, H, and O in CH₄, H₂O, and CO₂.",
+      "State the law and illustrate it with three compounds.",
+      "Show that N₂O₃, NO₂, and NH₃ obey the law.",
+      "Compare this law with the Law of Multiple Proportions."
+    ],
+    "universalFacts": [
+      "The Law of Reciprocal Proportions was proposed by Jeremias Richter in 1792.",
+      "It is also called Richter's Law.",
+      "This law relates the proportions in which two elements combine with a third element.",
+      "It was later incorporated into Dalton's atomic theory.",
+      "The law is based on equivalent weights of elements."
+    ],
+    "examples": [
+      "Hydrogen combines with sulfur (H₂S: 2g H + 32g S) and oxygen (H₂O: 2g H + 16g O). Fixed H = 2g, S:O = 32:16 = 2:1. In SO₂, S:O = 32:32 = 1:1, which is a simple multiple of 2:1.",
+      "Carbon combines with hydrogen (CH₄: 12g C + 4g H) and oxygen (CO₂: 12g C + 32g O). Fixed C = 12g, H:O = 4:32 = 1:8. In CS₂, C:S = 12:64, showing simple proportion.",
+      "Nitrogen combines with hydrogen (NH₃: 14g N + 3g H) and oxygen (NO: 14g N + 16g O). Fixed N = 14g, H:O = 3:16."
+    ],
+    "practiceQuestions": [
+      "State and explain the Law of Reciprocal Proportions.",
+      "Verify the law using data for hydrogen, sulfur, and oxygen.",
+      "Explain the significance of this law in chemistry.",
+      "Calculate the reciprocal proportion for given data."
+    ],
+    "formulas": [
+      "If A combines with B in ratio a:b and A combines with C in ratio a:c, then",
+      "B and C should combine in ratio b:c or simple multiple thereof",
+      "Equivalent weight = Atomic weight / Valency",
+      "For H₂S: Eq. wt. of S = 32/2 = 16",
+      "For H₂O: Eq. wt. of O = 16/2 = 8"
+    ],
+    "keyPoints": [
+      "Two elements combining separately with a fixed mass of third element.",
+      "The ratio of their masses in the first compound is simple multiple of ratio in second compound.",
+      "Based on equivalent weights.",
+      "Connects the combining capacity of elements."
+    ],
+    "summary": "The Law of Reciprocal Proportions states that when two elements combine with a third, the ratio of their masses in compounds with the third element is related to their direct combining ratio. Formulated by Richter in 1792, it applies to three-element compounds and complements the other proportion laws.",
+    "specialNotes": [
+      "This law is less commonly tested than other stoichiometric laws.",
+      "It is primarily of historical significance.",
+      "The law introduces the concept of equivalent weight."
+    ],
+    "importantStatements": [
+      "When two elements combine separately with a fixed mass of a third element, the ratio of their masses is either the same or a simple multiple of the ratio of their masses when they combine with each other.",
+      "This law is based on the concept of equivalent weights."
+    ],
+    "importantNotes": [
+      "The law works because elements combine in fixed ratios of their equivalent weights.",
+      "Equivalent weight is the combining capacity relative to hydrogen.",
+      "Modern chemistry uses this concept in acid-base and redox reactions."
+    ],
+    "examShortTricks": [
+      "Step 1: Find mass ratio of A:B and A:C.",
+      "Step 2: Compare ratios of B and C.",
+      "Step 3: Check if ratio in B-C compound is simple multiple.",
+      "Example: H-S (32:2) and H-O (16:2), ratio S:O = 2:1. In SO₂, S:O = 32:32 = 1:1."
+    ],
+    "examNotes": [
+      "This law is less frequently tested but may appear as a short-answer question.",
+      "Be prepared to state the law and give one example.",
+      "Do not confuse it with the Law of Multiple Proportions.",
+      "Briefly mention the historical significance."
+    ],
+    "mcs": [
+      {
+        "question": "The Law of Reciprocal Proportions was proposed by:",
+        "options": [
+          "Dalton",
+          "Proust",
+          "Richter",
+          "Avogadro"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "If A combines with B in ratio 1:4 and A combines with C in ratio 1:8, the ratio of B to C in BC compound should be:",
+        "options": [
+          "1:2",
+          "2:1",
+          "1:8",
+          "4:1"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Law of Reciprocal Proportions: Three-element systems.",
+      "Direct vs. Indirect Combining Ratios.",
+      "Complementary Proportion Laws: Definite, Multiple, Reciprocal.",
+      "Valency Concept: Fixed combining capacities.",
+      "Historical Development: Richter's contribution to stoichiometry."
+    ],
+    "importantTasks": [
+      "State the Law of Reciprocal Proportions with an example.",
+      "Verify the law using H₂O, H₂S, and SO₂.",
+      "Compare this law with the Law of Multiple Proportions.",
+      "Explain why this law only applies to three-element compounds.",
+      "Solve 3 numerical problems verifying this law."
+    ],
+    "exercises": [],
+    "visualization": {}
   },
-  "visualType": "laws-of-stoichiometry"
+  "originalContent": {
+    "notes": [
+      "**Statement:** When two different elements (A and B) separately combine with a fixed mass of a third element (C), the ratio of their masses in compounds with C is either the same as or a simple multiple of the ratio of their masses when they combine directly with each other.",
+      "**Formulated by:** Jeremias Richter in 1792. Known as Richter's Law of Reciprocal Proportions, it was the first quantitative law relating three elements.",
+      "**Example:** Carbon combines with oxygen (CO₂: C:O = 12:32 = 3:8) and hydrogen combines with oxygen (H₂O: H:O = 2:16 = 1:8). In methane (CH₄), carbon and hydrogen combine in ratio 12:4 = 3:1. The ratio of C:H combining with O is 3:(1/8) = 24:1, which relates to the direct C:H ratio (3:1) by a simple factor.",
+      "**Mathematical Formulation:** If mass(A)/mass(C) = a and mass(B)/mass(C) = b in their respective compounds with C, then when A and B combine directly, mass(A)/mass(B) = (a/b) × n, where n is a small whole number.",
+      "**Significance:** This law complements the Laws of Definite and Multiple Proportions, providing empirical evidence for fixed combining capacities (valency) of elements.",
+      "**Scope Limitation:** Applies only to compounds containing exactly three elements—does not generalize to more complex systems.",
+      "**Verification Example:** In H₂O, H:O = 1:8. In H₂S, H:S = 1:16. In SO₂, S:O = 1:1. The ratio of S to O combining with H (16:8 = 2:1) relates to their direct combination in SO₂ (1:1) by the simple factor of 2."
+    ],
+    "confusion": [
+      "❌ 'This law applies to any number of elements.' ✅ It applies only to compounds containing exactly THREE elements.",
+      "❌ 'The ratio is always 1:1.' ✅ The ratio is a SIMPLE relationship, but not necessarily 1:1.",
+      "❌ 'This law proves atoms exist.' ✅ Like the other proportion laws, it is consistent with atomic theory but is an empirical observation.",
+      "❌ 'This law is the same as the Law of Multiple Proportions.' ✅ No — the Law of Multiple Proportions describes two elements forming multiple compounds; this law describes three elements where two combine with a third.",
+      "❌ 'This law is not important for NEB.' ✅ While less frequently tested, it is part of the stoichiometry syllabus."
+    ],
+    "practice": [
+      "Verify the Law of Reciprocal Proportions using H₂O, H₂S, and SO₂.",
+      "Calculate the mass ratios for C, H, and O in CH₄, H₂O, and CO₂.",
+      "State the law and illustrate it with three compounds.",
+      "Show that N₂O₃, NO₂, and NH₃ obey the law.",
+      "Compare this law with the Law of Multiple Proportions."
+    ],
+    "universalFacts": [
+      "The Law of Reciprocal Proportions was proposed by Jeremias Richter in 1792.",
+      "It is also called Richter's Law.",
+      "This law relates the proportions in which two elements combine with a third element.",
+      "It was later incorporated into Dalton's atomic theory.",
+      "The law is based on equivalent weights of elements."
+    ],
+    "examples": [
+      "Hydrogen combines with sulfur (H₂S: 2g H + 32g S) and oxygen (H₂O: 2g H + 16g O). Fixed H = 2g, S:O = 32:16 = 2:1. In SO₂, S:O = 32:32 = 1:1, which is a simple multiple of 2:1.",
+      "Carbon combines with hydrogen (CH₄: 12g C + 4g H) and oxygen (CO₂: 12g C + 32g O). Fixed C = 12g, H:O = 4:32 = 1:8. In CS₂, C:S = 12:64, showing simple proportion.",
+      "Nitrogen combines with hydrogen (NH₃: 14g N + 3g H) and oxygen (NO: 14g N + 16g O). Fixed N = 14g, H:O = 3:16."
+    ],
+    "practiceQuestions": [
+      "State and explain the Law of Reciprocal Proportions.",
+      "Verify the law using data for hydrogen, sulfur, and oxygen.",
+      "Explain the significance of this law in chemistry.",
+      "Calculate the reciprocal proportion for given data."
+    ],
+    "formulas": [
+      "If A combines with B in ratio a:b and A combines with C in ratio a:c, then",
+      "B and C should combine in ratio b:c or simple multiple thereof",
+      "Equivalent weight = Atomic weight / Valency",
+      "For H₂S: Eq. wt. of S = 32/2 = 16",
+      "For H₂O: Eq. wt. of O = 16/2 = 8"
+    ],
+    "keyPoints": [
+      "Two elements combining separately with a fixed mass of third element.",
+      "The ratio of their masses in the first compound is simple multiple of ratio in second compound.",
+      "Based on equivalent weights.",
+      "Connects the combining capacity of elements."
+    ],
+    "summary": "The Law of Reciprocal Proportions states that when two elements combine with a third, the ratio of their masses in compounds with the third element is related to their direct combining ratio. Formulated by Richter in 1792, it applies to three-element compounds and complements the other proportion laws.",
+    "specialNotes": [
+      "This law is less commonly tested than other stoichiometric laws.",
+      "It is primarily of historical significance.",
+      "The law introduces the concept of equivalent weight."
+    ],
+    "importantStatements": [
+      "When two elements combine separately with a fixed mass of a third element, the ratio of their masses is either the same or a simple multiple of the ratio of their masses when they combine with each other.",
+      "This law is based on the concept of equivalent weights."
+    ],
+    "importantNotes": [
+      "The law works because elements combine in fixed ratios of their equivalent weights.",
+      "Equivalent weight is the combining capacity relative to hydrogen.",
+      "Modern chemistry uses this concept in acid-base and redox reactions."
+    ],
+    "examShortTricks": [
+      "Step 1: Find mass ratio of A:B and A:C.",
+      "Step 2: Compare ratios of B and C.",
+      "Step 3: Check if ratio in B-C compound is simple multiple.",
+      "Example: H-S (32:2) and H-O (16:2), ratio S:O = 2:1. In SO₂, S:O = 32:32 = 1:1."
+    ],
+    "examNotes": [
+      "This law is less frequently tested but may appear as a short-answer question.",
+      "Be prepared to state the law and give one example.",
+      "Do not confuse it with the Law of Multiple Proportions.",
+      "Briefly mention the historical significance."
+    ],
+    "mcs": [
+      {
+        "question": "The Law of Reciprocal Proportions was proposed by:",
+        "options": [
+          "Dalton",
+          "Proust",
+          "Richter",
+          "Avogadro"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "If A combines with B in ratio 1:4 and A combines with C in ratio 1:8, the ratio of B to C in BC compound should be:",
+        "options": [
+          "1:2",
+          "2:1",
+          "1:8",
+          "4:1"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Law of Reciprocal Proportions: Three-element systems.",
+      "Direct vs. Indirect Combining Ratios.",
+      "Complementary Proportion Laws: Definite, Multiple, Reciprocal.",
+      "Valency Concept: Fixed combining capacities.",
+      "Historical Development: Richter's contribution to stoichiometry."
+    ],
+    "importantTasks": [
+      "State the Law of Reciprocal Proportions with an example.",
+      "Verify the law using H₂O, H₂S, and SO₂.",
+      "Compare this law with the Law of Multiple Proportions.",
+      "Explain why this law only applies to three-element compounds.",
+      "Solve 3 numerical problems verifying this law."
+    ],
+    "exercises": [],
+    "visualization": {}
+  }
 }

@@ -1,223 +1,320 @@
 {
-  "title": "03 AVOGADRO LAW",
+  "title": "Avogadro's Law",
   "unitSlug": "stoichiometry",
-  "topicSlug": "03-avogadro-law",
-  "topicTitle": "03 avogadro law",
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 avogadro law."
-  ],
-  "importantNotes": [
-    "Important note regarding 03 avogadro law."
-  ],
-  "importantStatements": [
-    "Key statement for 03 avogadro law."
-  ],
-  "importantTasks": [
-    "Task for studying 03 avogadro law."
-  ],
-  "keyPoints": [
-    "Core point for 03 avogadro law."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 avogadro law?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "specialNotes": [
-    "Specialized insight for 03 avogadro law."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "universalFacts": [
-    "Universal scientific fact for 03 avogadro law."
-  ],
+  "topicSlug": "avogadro-law",
+  "topicTitle": "Avogadro's Law",
+  "relevance": 100,
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "duplicateType": 2,
-  "tabGroup": "03-avogadro-law",
-  "examShortTricks": [
-    "Trick 1"
-  ],
-  "examNotes": [
-    "Exam note 1."
-  ],
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
+  "tabGroup": "avogadro-law",
+  "visualType": "stoichiometry",
+  "enrichedContent": {
+    "notes": [
+      "**Statement:** Equal volumes of all gases, at the same temperature and pressure, contain an equal number of molecules (or moles). V ∝ n (at constant T and P). This fundamental law establishes the relationship between gas volume and particle count.",
+      "**Formulated by:** Amedeo Avogadro in 1811. He proposed that elemental gases like O₂, H₂, N₂ exist as diatomic molecules, resolving inconsistencies in Gay-Lussac's observations.",
+      "**Avogadro's Number (N_A):** 6.022 × 10²³ particles/mol. This precise value represents the number of atoms in exactly 12 grams of Carbon-12 and defines the mole as an SI base unit.",
+      "**Molar Volume:** At STP (Standard Temperature and Pressure: 0°C/273.15 K, 1 atm/101.325 kPa), one mole of any ideal gas occupies exactly 22.414 L (commonly rounded to 22.4 L).",
+      "**Historical Context:** Avogadro's hypothesis was largely ignored for 50 years until Cannizzaro championed it at the 1860 Karlsruhe Congress, establishing atomic weights and molecular formulas.",
+      "**Key Insight:** Avogadro distinguished between atoms (elementary particles) and molecules (groups of atoms), resolving Dalton's confusion about gas volumes in reactions.",
+      "**Example:** 1 mol H₂ (2.016 g) and 1 mol O₂ (32.00 g) both occupy 22.4 L at STP, demonstrating that volume depends on particle count, not mass.",
+      "**Application — Gas Stoichiometry:** In H₂(g) + Cl₂(g) → 2HCl(g), the volume ratio 1:1:2 directly reflects the mole ratio from Avogadro's law.",
+      "**Significance:** This law bridges the macroscopic world (measurable volumes) and the microscopic world (molecular quantities), forming the foundation of the mole concept and gas calculations."
+    ],
+    "confusion": [
+      "❌ 'Avogadro's number is 6.022 × 10²³ for all substances.' ✅ Avogadro's number is the number of particles in ONE MOLE of any substance — the number is always the same, but the mass of one mole varies.",
+      "❌ 'Equal volumes of gases always contain equal numbers of molecules.' ✅ Only at the same temperature and pressure. If T or P differ, the volumes differ.",
+      "❌ 'The molar volume is always 22.4 L.' ✅ Only at STP (0°C, 1 atm). At other conditions, use PV = nRT.",
+      "❌ 'Avogadro's law applies to solids and liquids.' ✅ It applies only to gases — the intermolecular distances in solids and liquids are too variable.",
+      "❌ 'Avogadro's law was accepted immediately.' ✅ It was largely ignored for 50 years until Cannizzaro championed it in 1860."
+    ],
+    "practice": [
+      "Calculate the number of molecules in 5.6 L of N₂ at STP.",
+      "Find the volume occupied by 3.01 × 10²³ molecules of CO₂ at STP.",
+      "How many moles are in 11.2 L of O₂ at STP?",
+      "Calculate the mass of 22.4 L of SO₂ at STP.",
+      "Show that 28 g of N₂ and 32 g of O₂ occupy the same volume at STP."
+    ],
+    "universalFacts": [
+      "Avogadro's Law was proposed by Amedeo Avogadro in 1811.",
+      "It states that equal volumes of gases contain equal numbers of molecules under similar conditions.",
+      "This law is fundamental to understanding gas stoichiometry.",
+      "The law helps determine molecular formulas of gases.",
+      "One mole of any gas occupies 22.4 L at STP (Standard Temperature and Pressure)."
+    ],
+    "examples": [
+      "2L of H₂ and 2L of O₂ at same T,P contain same number of molecules.",
+      "1 mole of any gas at STP = 22.4 dm³ = 22400 cm³.",
+      "Decomposition: 2H₂O → 2H₂ + O₂ gives volume ratio 2:2:1.",
+      "Synthesis: N₂ + 3H₂ → 2NH₃ gives volume ratio 1:3:2."
+    ],
+    "practiceQuestions": [
+      "State Avogadro's Law and its significance.",
+      "Calculate the volume of 0.5 moles of gas at STP.",
+      "How is Avogadro's Law used to determine molecular formula?",
+      "Derive the relationship between molecular mass and vapor density."
+    ],
+    "formulas": [
+      "V/n = k (constant at constant T and P)",
+      "V₁/n₁ = V₂/n₂",
+      "1 mole of gas at STP = 22.4 dm³",
+      "Molecular mass = 2 × Vapor density",
+      "n = V/22.4 (at STP, V in dm³)"
+    ],
+    "keyPoints": [
+      "Equal volumes of gases contain equal number of molecules.",
+      "Applies only to gases under similar temperature and pressure.",
+      "STP: 0°C (273 K) and 1 atm pressure.",
+      "Used to find molecular formulas and molar masses."
+    ],
+    "summary": "Avogadro's law states that equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. One mole of any gas at STP occupies 22.4 L and contains 6.022 × 10²³ molecules. This law bridges the macroscopic (volume) and microscopic (molecules) worlds and is the foundation of gas stoichiometry.",
+    "specialNotes": [
+      "Avogadro's Law is also called Avogadro's hypothesis.",
+      "The law helped resolve confusion between atoms and molecules.",
+      "NEB frequently tests this law with numerical problems on gas volumes."
+    ],
+    "importantStatements": [
+      "Equal volumes of all gases at same temperature and pressure contain equal number of molecules.",
+      "The number of molecules in one mole is called Avogadro's number: N_A = 6.022 × 10²³."
+    ],
+    "importantNotes": [
+      "The value of Avogadro's number was determined experimentally by Perrin (1908).",
+      "This law is used in conjunction with Gay-Lussac's law for gas reactions.",
+      "It is fundamental to the concept of molar volume."
+    ],
+    "examShortTricks": [
+      "Remember: 1 mole gas at STP = 22.4 L.",
+      "For volume calculations: Use V = n × 22.4.",
+      "Molecular mass = 2 × V.D. (Vapor Density)."
+    ],
+    "examNotes": [
+      "Gas stoichiometry problems always use Avogadro's law — master the n = V/22.4 shortcut.",
+      "Be careful with STP — some problems use non-standard conditions.",
+      "Avogadro's law is the basis for the mole concept — explain this in your answer.",
+      "The distinction between atoms and molecules (Avogadro's contribution) is a frequent short-answer topic."
+    ],
+    "mcs": [
+      {
+        "question": "Who proposed Avogadro's Law?",
+        "options": [
+          "Dalton",
+          "Avogadro",
+          "Gay-Lussac",
+          "Lavoisier"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "What is the molar volume of a gas at STP?",
+        "options": [
+          "22.4 dm³",
+          "224 dm³",
+          "2.24 dm³",
+          "2240 dm³"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Avogadro's number is:",
+        "options": [
+          "6.022 × 10²³",
+          "6.022 × 10²²",
+          "6.022 × 10²⁴",
+          "6.022 × 10²⁰"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "If molecular mass of a gas is 64, its vapor density is:",
+        "options": [
+          "32",
+          "64",
+          "128",
+          "16"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Equal volumes of gases at same T and P contain equal number of:",
+        "options": [
+          "Atoms",
+          "Molecules",
+          "Grams",
+          "Liters"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Avogadro's Law: V ∝ n relationship.",
+      "Molar Volume: 22.4 L/mol at STP.",
+      "Avogadro's Number: N_A = 6.022 × 10²³.",
+      "Gas Stoichiometry: Volume-mole conversions.",
+      "Historical Development: Atoms vs. Molecules distinction.",
+      "STP Conditions: Standard Temperature and Pressure definitions."
+    ],
+    "importantTasks": [
+      "Calculate the number of molecules in various volumes of gases at STP.",
+      "Find the volume occupied by given moles of gas at STP.",
+      "Convert between mass, moles, and volume for gases at STP.",
+      "Explain the historical significance of Avogadro's law.",
+      "Solve 5 gas stoichiometry problems using Avogadro's law."
+    ],
+    "exercises": [],
+    "visualization": {}
   },
-  "visualType": "avogadros-law-deduction"
+  "originalContent": {
+    "notes": [
+      "**Statement:** Equal volumes of all gases, at the same temperature and pressure, contain an equal number of molecules (or moles). V ∝ n (at constant T and P). This fundamental law establishes the relationship between gas volume and particle count.",
+      "**Formulated by:** Amedeo Avogadro in 1811. He proposed that elemental gases like O₂, H₂, N₂ exist as diatomic molecules, resolving inconsistencies in Gay-Lussac's observations.",
+      "**Avogadro's Number (N_A):** 6.022 × 10²³ particles/mol. This precise value represents the number of atoms in exactly 12 grams of Carbon-12 and defines the mole as an SI base unit.",
+      "**Molar Volume:** At STP (Standard Temperature and Pressure: 0°C/273.15 K, 1 atm/101.325 kPa), one mole of any ideal gas occupies exactly 22.414 L (commonly rounded to 22.4 L).",
+      "**Historical Context:** Avogadro's hypothesis was largely ignored for 50 years until Cannizzaro championed it at the 1860 Karlsruhe Congress, establishing atomic weights and molecular formulas.",
+      "**Key Insight:** Avogadro distinguished between atoms (elementary particles) and molecules (groups of atoms), resolving Dalton's confusion about gas volumes in reactions.",
+      "**Example:** 1 mol H₂ (2.016 g) and 1 mol O₂ (32.00 g) both occupy 22.4 L at STP, demonstrating that volume depends on particle count, not mass.",
+      "**Application — Gas Stoichiometry:** In H₂(g) + Cl₂(g) → 2HCl(g), the volume ratio 1:1:2 directly reflects the mole ratio from Avogadro's law.",
+      "**Significance:** This law bridges the macroscopic world (measurable volumes) and the microscopic world (molecular quantities), forming the foundation of the mole concept and gas calculations."
+    ],
+    "confusion": [
+      "❌ 'Avogadro's number is 6.022 × 10²³ for all substances.' ✅ Avogadro's number is the number of particles in ONE MOLE of any substance — the number is always the same, but the mass of one mole varies.",
+      "❌ 'Equal volumes of gases always contain equal numbers of molecules.' ✅ Only at the same temperature and pressure. If T or P differ, the volumes differ.",
+      "❌ 'The molar volume is always 22.4 L.' ✅ Only at STP (0°C, 1 atm). At other conditions, use PV = nRT.",
+      "❌ 'Avogadro's law applies to solids and liquids.' ✅ It applies only to gases — the intermolecular distances in solids and liquids are too variable.",
+      "❌ 'Avogadro's law was accepted immediately.' ✅ It was largely ignored for 50 years until Cannizzaro championed it in 1860."
+    ],
+    "practice": [
+      "Calculate the number of molecules in 5.6 L of N₂ at STP.",
+      "Find the volume occupied by 3.01 × 10²³ molecules of CO₂ at STP.",
+      "How many moles are in 11.2 L of O₂ at STP?",
+      "Calculate the mass of 22.4 L of SO₂ at STP.",
+      "Show that 28 g of N₂ and 32 g of O₂ occupy the same volume at STP."
+    ],
+    "universalFacts": [
+      "Avogadro's Law was proposed by Amedeo Avogadro in 1811.",
+      "It states that equal volumes of gases contain equal numbers of molecules under similar conditions.",
+      "This law is fundamental to understanding gas stoichiometry.",
+      "The law helps determine molecular formulas of gases.",
+      "One mole of any gas occupies 22.4 L at STP (Standard Temperature and Pressure)."
+    ],
+    "examples": [
+      "2L of H₂ and 2L of O₂ at same T,P contain same number of molecules.",
+      "1 mole of any gas at STP = 22.4 dm³ = 22400 cm³.",
+      "Decomposition: 2H₂O → 2H₂ + O₂ gives volume ratio 2:2:1.",
+      "Synthesis: N₂ + 3H₂ → 2NH₃ gives volume ratio 1:3:2."
+    ],
+    "practiceQuestions": [
+      "State Avogadro's Law and its significance.",
+      "Calculate the volume of 0.5 moles of gas at STP.",
+      "How is Avogadro's Law used to determine molecular formula?",
+      "Derive the relationship between molecular mass and vapor density."
+    ],
+    "formulas": [
+      "V/n = k (constant at constant T and P)",
+      "V₁/n₁ = V₂/n₂",
+      "1 mole of gas at STP = 22.4 dm³",
+      "Molecular mass = 2 × Vapor density",
+      "n = V/22.4 (at STP, V in dm³)"
+    ],
+    "keyPoints": [
+      "Equal volumes of gases contain equal number of molecules.",
+      "Applies only to gases under similar temperature and pressure.",
+      "STP: 0°C (273 K) and 1 atm pressure.",
+      "Used to find molecular formulas and molar masses."
+    ],
+    "summary": "Avogadro's law states that equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. One mole of any gas at STP occupies 22.4 L and contains 6.022 × 10²³ molecules. This law bridges the macroscopic (volume) and microscopic (molecules) worlds and is the foundation of gas stoichiometry.",
+    "specialNotes": [
+      "Avogadro's Law is also called Avogadro's hypothesis.",
+      "The law helped resolve confusion between atoms and molecules.",
+      "NEB frequently tests this law with numerical problems on gas volumes."
+    ],
+    "importantStatements": [
+      "Equal volumes of all gases at same temperature and pressure contain equal number of molecules.",
+      "The number of molecules in one mole is called Avogadro's number: N_A = 6.022 × 10²³."
+    ],
+    "importantNotes": [
+      "The value of Avogadro's number was determined experimentally by Perrin (1908).",
+      "This law is used in conjunction with Gay-Lussac's law for gas reactions.",
+      "It is fundamental to the concept of molar volume."
+    ],
+    "examShortTricks": [
+      "Remember: 1 mole gas at STP = 22.4 L.",
+      "For volume calculations: Use V = n × 22.4.",
+      "Molecular mass = 2 × V.D. (Vapor Density)."
+    ],
+    "examNotes": [
+      "Gas stoichiometry problems always use Avogadro's law — master the n = V/22.4 shortcut.",
+      "Be careful with STP — some problems use non-standard conditions.",
+      "Avogadro's law is the basis for the mole concept — explain this in your answer.",
+      "The distinction between atoms and molecules (Avogadro's contribution) is a frequent short-answer topic."
+    ],
+    "mcs": [
+      {
+        "question": "Who proposed Avogadro's Law?",
+        "options": [
+          "Dalton",
+          "Avogadro",
+          "Gay-Lussac",
+          "Lavoisier"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "What is the molar volume of a gas at STP?",
+        "options": [
+          "22.4 dm³",
+          "224 dm³",
+          "2.24 dm³",
+          "2240 dm³"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Avogadro's number is:",
+        "options": [
+          "6.022 × 10²³",
+          "6.022 × 10²²",
+          "6.022 × 10²⁴",
+          "6.022 × 10²⁰"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "If molecular mass of a gas is 64, its vapor density is:",
+        "options": [
+          "32",
+          "64",
+          "128",
+          "16"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Equal volumes of gases at same T and P contain equal number of:",
+        "options": [
+          "Atoms",
+          "Molecules",
+          "Grams",
+          "Liters"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Avogadro's Law: V ∝ n relationship.",
+      "Molar Volume: 22.4 L/mol at STP.",
+      "Avogadro's Number: N_A = 6.022 × 10²³.",
+      "Gas Stoichiometry: Volume-mole conversions.",
+      "Historical Development: Atoms vs. Molecules distinction.",
+      "STP Conditions: Standard Temperature and Pressure definitions."
+    ],
+    "importantTasks": [
+      "Calculate the number of molecules in various volumes of gases at STP.",
+      "Find the volume occupied by given moles of gas at STP.",
+      "Convert between mass, moles, and volume for gases at STP.",
+      "Explain the historical significance of Avogadro's law.",
+      "Solve 5 gas stoichiometry problems using Avogadro's law."
+    ],
+    "exercises": [],
+    "visualization": {}
+  }
 }

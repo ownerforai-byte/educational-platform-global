@@ -165,8 +165,23 @@ export function AIChatInterface() {
     }
   };
 
-  const handleCopy = (content: string, index: number) => {
-    navigator.clipboard.writeText(content);
+  const handleCopy = async (content: string, index: number) => {
+    try {
+      await navigator.clipboard.writeText(content);
+    } catch {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = content;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch {
+        console.warn("Clipboard copy unavailable");
+      }
+    }
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
   };

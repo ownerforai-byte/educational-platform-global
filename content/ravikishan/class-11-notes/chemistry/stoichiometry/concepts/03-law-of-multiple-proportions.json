@@ -1,229 +1,272 @@
 {
-  "title": "Law of Multiple Proportions — Statement",
+  "title": "Law of Multiple Proportions",
   "unitSlug": "stoichiometry",
-  "topicSlug": "laws-of-stoichiometry",
-  "topicTitle": "Laws of stoichiometry",
-  "relevance": 80,
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Balanced equation gives mass ratios. ✅ Balanced equation gives mole ratios, not mass ratios directly.",
-    "❌ Volume ratio equals mole ratio for all states. ✅ Volume ratio equals mole ratio only for gases at same T and P."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving gas stoichiometry problems at STP and non-STP conditions.",
-    "Practice solving mixture analysis problems using stoichiometry."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 law of multiple proportions."
-  ],
+  "topicSlug": "law-of-multiple-proportions",
+  "topicTitle": "Law of Multiple Proportions",
+  "relevance": 100,
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving gas stoichiometry problems at STP and non-STP conditions."
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "keyPoints": [
-    "Core point for 03 law of multiple proportions."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "specialNotes": [
-    "Specialized insight for 03 law of multiple proportions."
-  ],
-  "importantStatements": [
-    "Key statement for 03 law of multiple proportions."
-  ],
-  "importantNotes": [
-    "Important note regarding 03 law of multiple proportions."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Law of Multiple Proportions — Statement."
-  ],
-  "examNotes": [
-    "Focus on Law of Multiple Proportions — Statement problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 law of multiple proportions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 law of multiple proportions."
-  ],
-  "importantTasks": [
-    "Task for studying 03 law of multiple proportions."
-  ],
   "duplicateType": 2,
-  "tabGroup": "03-law-of-multiple-proportions",
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
+  "tabGroup": "law-of-multiple-proportions",
+  "visualType": "stoichiometry",
+  "enrichedContent": {
+    "notes": [
+      "**Statement:** When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
+      "**Formulated by:** John Dalton (1803). This law provided crucial experimental evidence supporting his atomic theory, demonstrating that atoms combine in discrete, indivisible units.",
+      "**Classic Example — Carbon Oxides:** In carbon monoxide (CO), 12 g of carbon combines with 16 g of oxygen. In carbon dioxide (CO₂), 12 g of carbon combines with 32 g of oxygen. The oxygen masses (16:32) simplify to the whole-number ratio 1:2.",
+      "**Nitrogen Oxides Example:** NO (14g N : 16g O), NO₂ (14g N : 32g O), N₂O (28g N : 16g O), N₂O₃ (28g N : 48g O), N₂O₅ (28g N : 80g O). All show simple whole-number ratios when normalized to fixed nitrogen mass.",
+      "**Mathematical Expression:** For compounds AₐBᵦ and AₓBʸ, the mass ratio of B per fixed mass of A equals (ᵦ/ₐ) : (ʸ/ₓ), which reduces to a simple whole-number ratio.",
+      "**Verification Procedure:** (1) Calculate mass of element B per gram of element A in each compound. (2) Divide each value by the smallest result. (3) Check if the quotients are whole numbers or close to them.",
+      "**Theoretical Significance:** This law demonstrates that elements combine in discrete, indivisible units (atoms), providing empirical validation for atomic theory and explaining why compounds have fixed compositions."
+    ],
+    "confusion": [
+      "❌ 'This law applies to all types of compounds.' ✅ It applies specifically to two elements forming multiple compounds.",
+      "❌ 'The ratio of masses is always 1:1.' ✅ The ratio depends on the specific compounds — it is always a simple whole number, but not necessarily 1:1.",
+      "❌ 'This law proves atoms exist.' ✅ It is consistent with atomic theory but is an empirical observation — it does not independently prove atoms exist.",
+      "❌ 'Water and hydrogen peroxide violate this law.' ✅ No — H₂O (H:O = 1:8) and H₂O₂ (H:O = 1:16) give a ratio of 1:2, which is a whole number.",
+      "❌ 'The law of definite proportions and multiple proportions are contradictory.' ✅ They are complementary — definite proportions describe one compound; multiple proportions describe several compounds of the same elements."
+    ],
+    "practice": [
+      "Calculate the mass ratios of oxygen that combine with 1 g of carbon in CO and CO₂.",
+      "Show that SO₂ and SO₃ obey the Law of Multiple Proportions.",
+      "Two compounds of nitrogen and oxygen contain 63.6% and 46.4% oxygen respectively. Verify the law.",
+      "Calculate the ratio of masses of hydrogen that combine with 1 g of carbon in CH₄ and C₂H₆.",
+      "State the Law of Multiple Proportions and illustrate it with three oxides of iron."
+    ],
+    "universalFacts": [
+      "The Law of Multiple Proportions was proposed by John Dalton in 1803.",
+      "It is also called Dalton's Law of Multiple Proportions.",
+      "This law explains why elements form different compounds with each other.",
+      "It was the first evidence that atoms combine in whole number ratios.",
+      "The law is only applicable when two elements form more than one compound."
+    ],
+    "examples": [
+      "Carbon oxides: CO (C:O = 12:16) and CO₂ (C:O = 12:32). Fixed C = 12g, O ratios = 16:32 = 1:2.",
+      "Nitrogen oxides: N₂O, NO, NO₂ show oxygen ratios of 1:2:4 for fixed nitrogen.",
+      "Sulfur oxides: SO₂ (S:O = 32:32) and SO₃ (S:O = 32:48). Fixed S = 32g, O ratios = 32:48 = 2:3.",
+      "Phosphorus chlorides: PCl₃ and PCl₅."
+    ],
+    "practiceQuestions": [
+      "State and explain the Law of Multiple Proportions with examples.",
+      "Verify the law using data for nitrogen oxides.",
+      "Calculate the ratio of masses of oxygen in two compounds of carbon and oxygen.",
+      "How does this law support atomic theory?"
+    ],
+    "formulas": [
+      "For compounds AX and AY: m_Y(first)/m_Y(second) = small whole number",
+      "Ratio = (Mass of B in compound 1) / (Mass of B in compound 2) for fixed mass of A",
+      "If compound 1 has formula A_xB_y and compound 2 has A_xB_z, ratio = y:z"
+    ],
+    "keyPoints": [
+      "Two elements forming multiple compounds → Law applies.",
+      "Fix mass of one element, compare masses of other element.",
+      "Ratios are always small whole numbers.",
+      "Provides evidence for atomic theory."
+    ],
+    "summary": "The Law of Multiple Proportions states that when two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in simple whole-number ratios. Formulated by Dalton in 1803, it provides strong evidence for atomic theory.",
+    "specialNotes": [
+      "This law is only applicable when two elements form MORE THAN ONE compound.",
+      "If only one compound is formed, this law cannot be verified.",
+      "NEB tests this with numerical problems on oxide/chloride data."
+    ],
+    "importantStatements": [
+      "When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
+      "This law is direct evidence for the existence of atoms."
+    ],
+    "importantNotes": [
+      "The law works because atoms combine in discrete, whole-number ratios.",
+      "It is a consequence of the particulate nature of matter.",
+      "Dalton used this law to support his atomic theory."
+    ],
+    "examShortTricks": [
+      "Check: Do two elements form more than one compound? If yes, law applies.",
+      "Fix mass of element A, find masses of B in each compound.",
+      "Calculate ratio and simplify to whole numbers.",
+      "Example: CO and CO₂ → Fix C=12, O ratios = 16:32 = 1:2."
+    ],
+    "examNotes": [
+      "This law is a guaranteed short-answer question in NEB.",
+      "Be prepared to state the law, give examples, and verify it with data.",
+      "It is often confused with the Law of Definite Proportions — remember the difference.",
+      "This law supports Dalton's atomic theory — mention this in your answer."
+    ],
+    "mcs": [
+      {
+        "question": "The Law of Multiple Proportions was proposed by:",
+        "options": [
+          "Proust",
+          "Dalton",
+          "Lavoisier",
+          "Avogadro"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which pair of compounds can verify the Law of Multiple Proportions?",
+        "options": [
+          "H₂O and H₂O₂",
+          "NaCl and KCl",
+          "CO and NaCl",
+          "H₂O and CO₂"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "In CO and CO₂, the ratio of masses of oxygen combining with fixed mass of carbon is:",
+        "options": [
+          "1:2",
+          "2:1",
+          "1:1",
+          "1:3"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Law of Multiple Proportions: Whole-number mass ratios.",
+      "Atomic Theory Evidence: Discrete combining units.",
+      "Distinction from Definite Proportions: Multiple vs. single compounds.",
+      "Verification Methodology: Normalizing mass ratios.",
+      "Chemical Formula Implications: AₐBᵦ stoichiometry."
+    ],
+    "importantTasks": [
+      "Verify the Law of Multiple Proportions for CO and CO₂.",
+      "Calculate mass ratios for three oxides of nitrogen.",
+      "Explain how this law supports atomic theory.",
+      "Compare this law with the Law of Definite Proportions.",
+      "Solve 5 numerical problems verifying this law."
+    ],
+    "exercises": [],
+    "visualization": {}
   },
-  "visualType": "laws-of-stoichiometry"
+  "originalContent": {
+    "notes": [
+      "**Statement:** When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
+      "**Formulated by:** John Dalton (1803). This law provided crucial experimental evidence supporting his atomic theory, demonstrating that atoms combine in discrete, indivisible units.",
+      "**Classic Example — Carbon Oxides:** In carbon monoxide (CO), 12 g of carbon combines with 16 g of oxygen. In carbon dioxide (CO₂), 12 g of carbon combines with 32 g of oxygen. The oxygen masses (16:32) simplify to the whole-number ratio 1:2.",
+      "**Nitrogen Oxides Example:** NO (14g N : 16g O), NO₂ (14g N : 32g O), N₂O (28g N : 16g O), N₂O₃ (28g N : 48g O), N₂O₅ (28g N : 80g O). All show simple whole-number ratios when normalized to fixed nitrogen mass.",
+      "**Mathematical Expression:** For compounds AₐBᵦ and AₓBʸ, the mass ratio of B per fixed mass of A equals (ᵦ/ₐ) : (ʸ/ₓ), which reduces to a simple whole-number ratio.",
+      "**Verification Procedure:** (1) Calculate mass of element B per gram of element A in each compound. (2) Divide each value by the smallest result. (3) Check if the quotients are whole numbers or close to them.",
+      "**Theoretical Significance:** This law demonstrates that elements combine in discrete, indivisible units (atoms), providing empirical validation for atomic theory and explaining why compounds have fixed compositions."
+    ],
+    "confusion": [
+      "❌ 'This law applies to all types of compounds.' ✅ It applies specifically to two elements forming multiple compounds.",
+      "❌ 'The ratio of masses is always 1:1.' ✅ The ratio depends on the specific compounds — it is always a simple whole number, but not necessarily 1:1.",
+      "❌ 'This law proves atoms exist.' ✅ It is consistent with atomic theory but is an empirical observation — it does not independently prove atoms exist.",
+      "❌ 'Water and hydrogen peroxide violate this law.' ✅ No — H₂O (H:O = 1:8) and H₂O₂ (H:O = 1:16) give a ratio of 1:2, which is a whole number.",
+      "❌ 'The law of definite proportions and multiple proportions are contradictory.' ✅ They are complementary — definite proportions describe one compound; multiple proportions describe several compounds of the same elements."
+    ],
+    "practice": [
+      "Calculate the mass ratios of oxygen that combine with 1 g of carbon in CO and CO₂.",
+      "Show that SO₂ and SO₃ obey the Law of Multiple Proportions.",
+      "Two compounds of nitrogen and oxygen contain 63.6% and 46.4% oxygen respectively. Verify the law.",
+      "Calculate the ratio of masses of hydrogen that combine with 1 g of carbon in CH₄ and C₂H₆.",
+      "State the Law of Multiple Proportions and illustrate it with three oxides of iron."
+    ],
+    "universalFacts": [
+      "The Law of Multiple Proportions was proposed by John Dalton in 1803.",
+      "It is also called Dalton's Law of Multiple Proportions.",
+      "This law explains why elements form different compounds with each other.",
+      "It was the first evidence that atoms combine in whole number ratios.",
+      "The law is only applicable when two elements form more than one compound."
+    ],
+    "examples": [
+      "Carbon oxides: CO (C:O = 12:16) and CO₂ (C:O = 12:32). Fixed C = 12g, O ratios = 16:32 = 1:2.",
+      "Nitrogen oxides: N₂O, NO, NO₂ show oxygen ratios of 1:2:4 for fixed nitrogen.",
+      "Sulfur oxides: SO₂ (S:O = 32:32) and SO₃ (S:O = 32:48). Fixed S = 32g, O ratios = 32:48 = 2:3.",
+      "Phosphorus chlorides: PCl₃ and PCl₅."
+    ],
+    "practiceQuestions": [
+      "State and explain the Law of Multiple Proportions with examples.",
+      "Verify the law using data for nitrogen oxides.",
+      "Calculate the ratio of masses of oxygen in two compounds of carbon and oxygen.",
+      "How does this law support atomic theory?"
+    ],
+    "formulas": [
+      "For compounds AX and AY: m_Y(first)/m_Y(second) = small whole number",
+      "Ratio = (Mass of B in compound 1) / (Mass of B in compound 2) for fixed mass of A",
+      "If compound 1 has formula A_xB_y and compound 2 has A_xB_z, ratio = y:z"
+    ],
+    "keyPoints": [
+      "Two elements forming multiple compounds → Law applies.",
+      "Fix mass of one element, compare masses of other element.",
+      "Ratios are always small whole numbers.",
+      "Provides evidence for atomic theory."
+    ],
+    "summary": "The Law of Multiple Proportions states that when two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in simple whole-number ratios. Formulated by Dalton in 1803, it provides strong evidence for atomic theory.",
+    "specialNotes": [
+      "This law is only applicable when two elements form MORE THAN ONE compound.",
+      "If only one compound is formed, this law cannot be verified.",
+      "NEB tests this with numerical problems on oxide/chloride data."
+    ],
+    "importantStatements": [
+      "When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
+      "This law is direct evidence for the existence of atoms."
+    ],
+    "importantNotes": [
+      "The law works because atoms combine in discrete, whole-number ratios.",
+      "It is a consequence of the particulate nature of matter.",
+      "Dalton used this law to support his atomic theory."
+    ],
+    "examShortTricks": [
+      "Check: Do two elements form more than one compound? If yes, law applies.",
+      "Fix mass of element A, find masses of B in each compound.",
+      "Calculate ratio and simplify to whole numbers.",
+      "Example: CO and CO₂ → Fix C=12, O ratios = 16:32 = 1:2."
+    ],
+    "examNotes": [
+      "This law is a guaranteed short-answer question in NEB.",
+      "Be prepared to state the law, give examples, and verify it with data.",
+      "It is often confused with the Law of Definite Proportions — remember the difference.",
+      "This law supports Dalton's atomic theory — mention this in your answer."
+    ],
+    "mcs": [
+      {
+        "question": "The Law of Multiple Proportions was proposed by:",
+        "options": [
+          "Proust",
+          "Dalton",
+          "Lavoisier",
+          "Avogadro"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which pair of compounds can verify the Law of Multiple Proportions?",
+        "options": [
+          "H₂O and H₂O₂",
+          "NaCl and KCl",
+          "CO and NaCl",
+          "H₂O and CO₂"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "In CO and CO₂, the ratio of masses of oxygen combining with fixed mass of carbon is:",
+        "options": [
+          "1:2",
+          "2:1",
+          "1:1",
+          "1:3"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Law of Multiple Proportions: Whole-number mass ratios.",
+      "Atomic Theory Evidence: Discrete combining units.",
+      "Distinction from Definite Proportions: Multiple vs. single compounds.",
+      "Verification Methodology: Normalizing mass ratios.",
+      "Chemical Formula Implications: AₐBᵦ stoichiometry."
+    ],
+    "importantTasks": [
+      "Verify the Law of Multiple Proportions for CO and CO₂.",
+      "Calculate mass ratios for three oxides of nitrogen.",
+      "Explain how this law supports atomic theory.",
+      "Compare this law with the Law of Definite Proportions.",
+      "Solve 5 numerical problems verifying this law."
+    ],
+    "exercises": [],
+    "visualization": {}
+  }
 }

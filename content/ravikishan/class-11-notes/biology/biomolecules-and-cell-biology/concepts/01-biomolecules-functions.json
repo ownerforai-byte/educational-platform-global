@@ -4,68 +4,151 @@
   "topicSlug": "biomolecules-functions",
   "topicTitle": "Biomolecules: Classification, Structure & Functions",
   "relevance": 100,
-  "notes": [
-    "**Carbohydrates ($(CH_2O)_n$):** Polyhydroxy aldehydes or ketones classified into monosaccharides (triose: glyceraldehyde; pentose: ribose/deoxyribose; hexose: glucose/fructose/galactose), disaccharides linked by glycosidic bonds (maltose: α-1,4-glucose+glucose [reducing]; sucrose: α-1,2-glucose+fructose [NON-reducing]; lactose: β-1,4-galactose+glucose [reducing]), and polysaccharides (storage: starch with amylose α-1,4 and amylopectin α-1,6 branches in plants, glycogen in animal liver/muscle; structural: cellulose β-1,4-glucan [most abundant organic polymer on Earth], chitin in fungal cell walls and arthropod exoskeletons).",
-    "**Proteins (Polypeptides of L-α-Amino Acids):** 20 standard proteinogenic amino acids linked covalently via peptide bonds (-CO-NH-) formed by dehydration synthesis. Amino acids exist as dipolar zwitterions at their isoelectric point (pI). Four organizational hierarchies: Primary (linear sequence dictated by mRNA), Secondary (α-helix stabilized by intrachain H-bonds every 3.6 residues or β-pleated sheets), Tertiary (overall 3D globular conformation stabilized by hydrophobic interactions, ionic bridges, hydrogen bonds, and covalent disulfide -S-S- bonds), and Quaternary (assembly of multiple polypeptide subunits, e.g., adult hemoglobin α₂β₂ with heme Fe²⁺ prosthetic group).",
-    "**Lipids (Esters of Fatty Acids & Glycerol):** Hydrophobic water-insoluble biomolecules soluble in organic solvents. Simple lipids: Triglycerides (triacylglycerols stored in adipose tissue for insulation and metabolic energy yielding ~9.3 kcal/g). Compound lipids: Phospholipids (amphipathic molecules with hydrophilic choline-phosphate head and two hydrophobic fatty acid tails forming the lipid bilayer of cellular membranes), Glycolipids, and Sphingolipids. Derived lipids: Steroids (four fused carbon rings cyclopentanoperhydrophenanthrene, e.g., cholesterol regulating membrane fluidity, steroid hormones cortisol/testosterone/estrogen, and bile salts).",
-    "**Nucleic Acids (Polynucleotides of Genetic Information):** Linear polymers of nucleotides linked via 3'-to-5' phosphodiester linkages. Each nucleotide comprises a pentose sugar (ribose in RNA, 2'-deoxyribose in DNA), a purine (Adenine, Guanine) or pyrimidine (Cytosine, Thymine in DNA, Uracil in RNA) nitrogenous base, and 1 to 3 phosphate groups. DNA forms an antiparallel right-handed B-DNA double helix (Watson & Crick model: 2 nm diameter, 3.4 nm pitch with 10 base pairs per turn) governed by Chargaff's parity rules: [A] = [T] (2 hydrogen bonds) and [G]≡[C] (3 hydrogen bonds). RNA is predominantly single-stranded and functions in information transfer (mRNA), aminoacyl-tRNA decoding (cloverleaf tRNA), and peptidyl transferase catalysis (ribosomal 28S/23S rRNA).",
-    "**Enzymes & Biocatalysis:** Specialized globular protein catalysts that accelerate biochemical reaction rates by factors of 10⁶ to 10¹² by stabilizing the transition state and dramatically decreasing the activation energy barrier (Eₐ) without altering thermodynamic equilibrium constant (K_eq) or standard Gibbs free energy change (ΔG°). Catalytic cycle operates via the induced-fit model (Koshland). Many require non-protein cofactors: inorganic metal activators (Fe²⁺, Zn²⁺ in carbonic anhydrase, Mg²⁺ in kinases) or organic coenzymes derived from B-vitamins (NAD⁺ from niacin, FAD from riboflavin, TPP from thiamine)."
-  ],
-  "confusion": [
-    "❌ 'Sucrose is a reducing sugar because it is made of glucose and fructose.' ✅ Sucrose is NON-REDUCING because both anomeric carbons (C1 of glucose and C2 of fructose) are tied up in the α-1,2-glycosidic bond.",
-    "❌ 'All enzymes are proteins.' ✅ Ribozymes (such as 23S rRNA in prokaryotes) are catalytic RNA molecules capable of peptide bond synthesis.",
-    "❌ 'Lipids are true macromolecules formed by polymer chains.' ✅ Lipids are NOT true polymers; they are relatively small hydrophobic molecules assembled into supramolecular non-covalent aggregates (bilayers and micelles).",
-    "❌ 'Cellulose can be digested by humans because it is made of glucose.' ✅ Humans lack the enzyme cellulase to cleave the β-1,4-glycosidic bonds of cellulose; it passes as dietary fiber.",
-    "❌ 'Disulfide bonds stabilize the primary structure of proteins.' ✅ Disulfide (-S-S-) bonds form between cysteine side chains and stabilize TERTIARY and QUATERNARY structure, not primary."
-  ],
-  "practice": [
-    "Distinguish reducing from non-reducing sugars with Fehling's and Benedict's test mechanisms.",
-    "Calculate the percentage of Cytosine in a double-stranded DNA molecule containing 30% Adenine using Chargaff's rules.",
-    "Identify the structural hierarchy level affected during thermal denaturation of egg albumin (primary sequence remains intact).",
-    "Differentiate between competitive and non-competitive enzyme inhibition using Lineweaver-Burk reciprocal plots.",
-    "Categorize amino acids into acidic (Asp, Glu), basic (Lys, Arg, His), and aromatic (Phe, Tyr, Trp) groups.",
-    "Trace the structural difference between starch (amylose α-1,4 and amylopectin α-1,6) and glycogen (hyperbranched α-1,6 every 8-12 residues).",
-    "Explain why lipids release more than double the energy per gram (9.3 kcal/g) compared to carbohydrates (4.1 kcal/g) due to higher oxidation state."
-  ],
-  "universalFacts": [
-    "Cellulose is the most abundant biopolymer on Earth, constituting over 50% of all organic carbon in the biosphere.",
-    "Proteins contain exclusively L-stereoisomers of amino acids, whereas carbohydrates in biological systems are predominantly D-stereoisomers.",
-    "Double-stranded B-DNA has a helical pitch of 3.4 nm containing 10 base pairs, with an inter-base rise of 0.34 nm.",
-    "Phospholipids are amphipathic molecules whose spontaneous self-assembly into bilayers drives cellular compartmentalization."
-  ],
   "animation3D": "biomolecules-3d",
   "motionGraphics": "biomolecules-schematic",
-  "examples": [
-    "Hemoglobin: Allosteric tetramer (α₂β₂) transporting 4 molecules of O₂ with sigmoidal cooperative binding curve.",
-    "Rubisco (Ribulose-1,5-bisphosphate carboxylase-oxygenase): The most abundant protein and enzyme on Earth, catalyzing carbon fixation.",
-    "Collagen: Triple-helical structural protein rich in glycine and proline, providing tensile strength to connective tissues and bones.",
-    "ATP (Adenosine Triphosphate): Universal bioenergetic currency containing two high-energy phosphoanhydride bonds releasing ~7.3 kcal/mol upon hydrolysis."
-  ],
-  "practiceQuestions": [
-    "If a double-stranded DNA sample has 24% Adenine, what is the percentage of Guanine? [Solution: By Chargaff's rule, A = T = 24%, so A + T = 48%. Remaining G + C = 100% - 48% = 52%. Hence G = C = 26%].",
-    "Which amino acid lacks a chiral alpha-carbon and why does it not exhibit optical isomerism? [Answer: Glycine, because its R-group is a single hydrogen atom].",
-    "What type of bond connects the nucleotide bases across the two antiparallel strands of a DNA double helix? [Answer: Hydrogen bonds; 2 between A and T, 3 between G and C].",
-    "Why does boiling an enzyme permanently destroy its catalytic activity while freezing only suspends it temporarily? [Answer: Heat disrupts non-covalent tertiary bonds causing denaturation, whereas cold slows kinetic collisions without unfolding the peptide chain].",
-    "Name the universal storage polysaccharide in fungi and animals, and identify its linkage types. [Answer: Glycogen, featuring α-1,4-glycosidic linkages with α-1,6-glycosidic branch points every 8–12 residues]."
-  ],
-  "formulas": [
-    "General formula for carbohydrates: (CH₂O)_n",
-    "Chargaff's Equimolar Parity in dsDNA: [A] + [G] = [T] + [C] \\implies \\frac{[A] + [G]}{[T] + [C]} = 1.0",
-    "Michaelis-Menten Catalytic Velocity: v_0 = \\frac{V_{\\max}[S]}{K_m + [S]}",
-    "ATP Hydrolysis Free Energy: \\text{ATP} + \\text{H}_2\\text{O} \\longrightarrow \\text{ADP} + \\text{P}_i \\quad (\\Delta G^{\\circ\\prime} = -30.5 \\text{ kJ/mol} \\approx -7.3 \\text{ kcal/mol})"
-  ],
-  "keyPoints": [
-    "Carbohydrates provide rapid metabolic fuel and structural cell walls; monosaccharides are building blocks linked by glycosidic bonds.",
-    "Proteins perform enzymatic catalysis, cellular transport, and structural defense; 20 amino acids linked by peptide bonds form 4 folding levels.",
-    "Lipids form cellular membranes and energy stores; fatty acid saturation dictates membrane fluidity and melting temperature.",
-    "Nucleic acids store (DNA) and transmit (RNA) genetic instructions; DNA double helix features antiparallel complementary strands.",
-    "Enzymes lower the activation energy barrier; K_m reflects substrate affinity, and inhibitors alter K_m (competitive) or V_max (non-competitive)."
-  ],
-  "summary": "Biomolecules are the organic building blocks of cellular life. Carbohydrates provide immediate metabolic energy and structural cellulose/chitin matrices. Proteins, composed of 20 L-amino acids folded into specific 3D tertiary conformations, execute enzymatic catalysis, signal transduction, and structural support. Lipids provide hydrophobic membrane barriers and high-density caloric storage. Nucleic acids (DNA and RNA) encode, replicate, and translate genetic information with complementary base pairing. Water and essential minerals provide the aqueous solvent and catalytic cofactors necessary for life's metabolic machinery.",
-  "specialNotes": [
-    "CEE High-Yield: Non-reducing disaccharide is Sucrose; reducing disaccharides are Maltose and Lactose.",
-    "CEE High-Yield: Most abundant protein in animal body is Collagen; in the whole biosphere it is Rubisco.",
-    "CEE High-Yield: Essential amino acids for humans: Valine, Leucine, Isoleucine, Phenylalanine, Tryptophan, Threonine, Methionine, Lysine (mnemonic: PVT TIM HALL)."
-  ],
-  "visualType": "biomolecule-types-diagram"
+  "visualType": "biomolecule-types-diagram",
+  "enrichedContent": {
+    "notes": [
+      "**Carbohydrates ($(CH_2O)_n$):** Polyhydroxy aldehydes or ketones classified into monosaccharides (triose: glyceraldehyde; pentose: ribose/deoxyribose; hexose: glucose/fructose/galactose), disaccharides linked by glycosidic bonds (maltose: α-1,4-glucose+glucose [reducing]; sucrose: α-1,2-glucose+fructose [NON-reducing]; lactose: β-1,4-galactose+glucose [reducing]), and polysaccharides (storage: starch with amylose α-1,4 and amylopectin α-1,6 branches in plants, glycogen in animal liver/muscle; structural: cellulose β-1,4-glucan [most abundant organic polymer on Earth], chitin in fungal cell walls and arthropod exoskeletons).",
+      "**Proteins (Polypeptides of L-α-Amino Acids):** 20 standard proteinogenic amino acids linked covalently via peptide bonds (-CO-NH-) formed by dehydration synthesis. Amino acids exist as dipolar zwitterions at their isoelectric point (pI). Four organizational hierarchies: Primary (linear sequence dictated by mRNA), Secondary (α-helix stabilized by intrachain H-bonds every 3.6 residues or β-pleated sheets), Tertiary (overall 3D globular conformation stabilized by hydrophobic interactions, ionic bridges, hydrogen bonds, and covalent disulfide -S-S- bonds), and Quaternary (assembly of multiple polypeptide subunits, e.g., adult hemoglobin α₂β₂ with heme Fe²⁺ prosthetic group).",
+      "**Lipids (Esters of Fatty Acids & Glycerol):** Hydrophobic water-insoluble biomolecules soluble in organic solvents. Simple lipids: Triglycerides (triacylglycerols stored in adipose tissue for insulation and metabolic energy yielding ~9.3 kcal/g). Compound lipids: Phospholipids (amphipathic molecules with hydrophilic choline-phosphate head and two hydrophobic fatty acid tails forming the lipid bilayer of cellular membranes), Glycolipids, and Sphingolipids. Derived lipids: Steroids (four fused carbon rings cyclopentanoperhydrophenanthrene, e.g., cholesterol regulating membrane fluidity, steroid hormones cortisol/testosterone/estrogen, and bile salts).",
+      "**Nucleic Acids (Polynucleotides of Genetic Information):** Linear polymers of nucleotides linked via 3'-to-5' phosphodiester linkages. Each nucleotide comprises a pentose sugar (ribose in RNA, 2'-deoxyribose in DNA), a purine (Adenine, Guanine) or pyrimidine (Cytosine, Thymine in DNA, Uracil in RNA) nitrogenous base, and 1 to 3 phosphate groups. DNA forms an antiparallel right-handed B-DNA double helix (Watson & Crick model: 2 nm diameter, 3.4 nm pitch with 10 base pairs per turn) governed by Chargaff's parity rules: [A] = [T] (2 hydrogen bonds) and [G]≡[C] (3 hydrogen bonds). RNA is predominantly single-stranded and functions in information transfer (mRNA), aminoacyl-tRNA decoding (cloverleaf tRNA), and peptidyl transferase catalysis (ribosomal 28S/23S rRNA).",
+      "**Enzymes & Biocatalysis:** Specialized globular protein catalysts that accelerate biochemical reaction rates by factors of 10⁶ to 10¹² by stabilizing the transition state and dramatically decreasing the activation energy barrier (Eₐ) without altering thermodynamic equilibrium constant (K_eq) or standard Gibbs free energy change (ΔG°). Catalytic cycle operates via the induced-fit model (Koshland). Many require non-protein cofactors: inorganic metal activators (Fe²⁺, Zn²⁺ in carbonic anhydrase, Mg²⁺ in kinases) or organic coenzymes derived from B-vitamins (NAD⁺ from niacin, FAD from riboflavin, TPP from thiamine)."
+    ],
+    "confusion": [
+      "❌ 'Sucrose is a reducing sugar because it is made of glucose and fructose.' ✅ Sucrose is NON-REDUCING because both anomeric carbons (C1 of glucose and C2 of fructose) are tied up in the α-1,2-glycosidic bond.",
+      "❌ 'All enzymes are proteins.' ✅ Ribozymes (such as 23S rRNA in prokaryotes) are catalytic RNA molecules capable of peptide bond synthesis.",
+      "❌ 'Lipids are true macromolecules formed by polymer chains.' ✅ Lipids are NOT true polymers; they are relatively small hydrophobic molecules assembled into supramolecular non-covalent aggregates (bilayers and micelles).",
+      "❌ 'Cellulose can be digested by humans because it is made of glucose.' ✅ Humans lack the enzyme cellulase to cleave the β-1,4-glycosidic bonds of cellulose; it passes as dietary fiber.",
+      "❌ 'Disulfide bonds stabilize the primary structure of proteins.' ✅ Disulfide (-S-S-) bonds form between cysteine side chains and stabilize TERTIARY and QUATERNARY structure, not primary."
+    ],
+    "practice": [
+      "Distinguish reducing from non-reducing sugars with Fehling's and Benedict's test mechanisms.",
+      "Calculate the percentage of Cytosine in a double-stranded DNA molecule containing 30% Adenine using Chargaff's rules.",
+      "Identify the structural hierarchy level affected during thermal denaturation of egg albumin (primary sequence remains intact).",
+      "Differentiate between competitive and non-competitive enzyme inhibition using Lineweaver-Burk reciprocal plots.",
+      "Categorize amino acids into acidic (Asp, Glu), basic (Lys, Arg, His), and aromatic (Phe, Tyr, Trp) groups.",
+      "Trace the structural difference between starch (amylose α-1,4 and amylopectin α-1,6) and glycogen (hyperbranched α-1,6 every 8-12 residues).",
+      "Explain why lipids release more than double the energy per gram (9.3 kcal/g) compared to carbohydrates (4.1 kcal/g) due to higher oxidation state."
+    ],
+    "universalFacts": [
+      "Cellulose is the most abundant biopolymer on Earth, constituting over 50% of all organic carbon in the biosphere.",
+      "Proteins contain exclusively L-stereoisomers of amino acids, whereas carbohydrates in biological systems are predominantly D-stereoisomers.",
+      "Double-stranded B-DNA has a helical pitch of 3.4 nm containing 10 base pairs, with an inter-base rise of 0.34 nm.",
+      "Phospholipids are amphipathic molecules whose spontaneous self-assembly into bilayers drives cellular compartmentalization."
+    ],
+    "examples": [
+      "Hemoglobin: Allosteric tetramer (α₂β₂) transporting 4 molecules of O₂ with sigmoidal cooperative binding curve.",
+      "Rubisco (Ribulose-1,5-bisphosphate carboxylase-oxygenase): The most abundant protein and enzyme on Earth, catalyzing carbon fixation.",
+      "Collagen: Triple-helical structural protein rich in glycine and proline, providing tensile strength to connective tissues and bones.",
+      "ATP (Adenosine Triphosphate): Universal bioenergetic currency containing two high-energy phosphoanhydride bonds releasing ~7.3 kcal/mol upon hydrolysis."
+    ],
+    "practiceQuestions": [
+      "If a double-stranded DNA sample has 24% Adenine, what is the percentage of Guanine? [Solution: By Chargaff's rule, A = T = 24%, so A + T = 48%. Remaining G + C = 100% - 48% = 52%. Hence G = C = 26%].",
+      "Which amino acid lacks a chiral alpha-carbon and why does it not exhibit optical isomerism? [Answer: Glycine, because its R-group is a single hydrogen atom].",
+      "What type of bond connects the nucleotide bases across the two antiparallel strands of a DNA double helix? [Answer: Hydrogen bonds; 2 between A and T, 3 between G and C].",
+      "Why does boiling an enzyme permanently destroy its catalytic activity while freezing only suspends it temporarily? [Answer: Heat disrupts non-covalent tertiary bonds causing denaturation, whereas cold slows kinetic collisions without unfolding the peptide chain].",
+      "Name the universal storage polysaccharide in fungi and animals, and identify its linkage types. [Answer: Glycogen, featuring α-1,4-glycosidic linkages with α-1,6-glycosidic branch points every 8–12 residues]."
+    ],
+    "formulas": [
+      "General formula for carbohydrates: (CH₂O)_n",
+      "Chargaff's Equimolar Parity in dsDNA: [A] + [G] = [T] + [C] \\implies \\frac{[A] + [G]}{[T] + [C]} = 1.0",
+      "Michaelis-Menten Catalytic Velocity: v_0 = \\frac{V_{\\max}[S]}{K_m + [S]}",
+      "ATP Hydrolysis Free Energy: \\text{ATP} + \\text{H}_2\\text{O} \\longrightarrow \\text{ADP} + \\text{P}_i \\quad (\\Delta G^{\\circ\\prime} = -30.5 \\text{ kJ/mol} \\approx -7.3 \\text{ kcal/mol})"
+    ],
+    "keyPoints": [
+      "Carbohydrates provide rapid metabolic fuel and structural cell walls; monosaccharides are building blocks linked by glycosidic bonds.",
+      "Proteins perform enzymatic catalysis, cellular transport, and structural defense; 20 amino acids linked by peptide bonds form 4 folding levels.",
+      "Lipids form cellular membranes and energy stores; fatty acid saturation dictates membrane fluidity and melting temperature.",
+      "Nucleic acids store (DNA) and transmit (RNA) genetic instructions; DNA double helix features antiparallel complementary strands.",
+      "Enzymes lower the activation energy barrier; K_m reflects substrate affinity, and inhibitors alter K_m (competitive) or V_max (non-competitive)."
+    ],
+    "summary": "Biomolecules are the organic building blocks of cellular life. Carbohydrates provide immediate metabolic energy and structural cellulose/chitin matrices. Proteins, composed of 20 L-amino acids folded into specific 3D tertiary conformations, execute enzymatic catalysis, signal transduction, and structural support. Lipids provide hydrophobic membrane barriers and high-density caloric storage. Nucleic acids (DNA and RNA) encode, replicate, and translate genetic information with complementary base pairing. Water and essential minerals provide the aqueous solvent and catalytic cofactors necessary for life's metabolic machinery.",
+    "specialNotes": [
+      "CEE High-Yield: Non-reducing disaccharide is Sucrose; reducing disaccharides are Maltose and Lactose.",
+      "CEE High-Yield: Most abundant protein in animal body is Collagen; in the whole biosphere it is Rubisco.",
+      "CEE High-Yield: Essential amino acids for humans: Valine, Leucine, Isoleucine, Phenylalanine, Tryptophan, Threonine, Methionine, Lysine (mnemonic: PVT TIM HALL)."
+    ],
+    "importantStatements": [],
+    "importantNotes": [],
+    "examShortTricks": [],
+    "examNotes": [],
+    "mcs": [],
+    "importantConcepts": [],
+    "importantTasks": [],
+    "exercises": [],
+    "visualization": {}
+  },
+  "originalContent": {
+    "notes": [
+      "**Carbohydrates ($(CH_2O)_n$):** Polyhydroxy aldehydes or ketones classified into monosaccharides (triose: glyceraldehyde; pentose: ribose/deoxyribose; hexose: glucose/fructose/galactose), disaccharides linked by glycosidic bonds (maltose: α-1,4-glucose+glucose [reducing]; sucrose: α-1,2-glucose+fructose [NON-reducing]; lactose: β-1,4-galactose+glucose [reducing]), and polysaccharides (storage: starch with amylose α-1,4 and amylopectin α-1,6 branches in plants, glycogen in animal liver/muscle; structural: cellulose β-1,4-glucan [most abundant organic polymer on Earth], chitin in fungal cell walls and arthropod exoskeletons).",
+      "**Proteins (Polypeptides of L-α-Amino Acids):** 20 standard proteinogenic amino acids linked covalently via peptide bonds (-CO-NH-) formed by dehydration synthesis. Amino acids exist as dipolar zwitterions at their isoelectric point (pI). Four organizational hierarchies: Primary (linear sequence dictated by mRNA), Secondary (α-helix stabilized by intrachain H-bonds every 3.6 residues or β-pleated sheets), Tertiary (overall 3D globular conformation stabilized by hydrophobic interactions, ionic bridges, hydrogen bonds, and covalent disulfide -S-S- bonds), and Quaternary (assembly of multiple polypeptide subunits, e.g., adult hemoglobin α₂β₂ with heme Fe²⁺ prosthetic group).",
+      "**Lipids (Esters of Fatty Acids & Glycerol):** Hydrophobic water-insoluble biomolecules soluble in organic solvents. Simple lipids: Triglycerides (triacylglycerols stored in adipose tissue for insulation and metabolic energy yielding ~9.3 kcal/g). Compound lipids: Phospholipids (amphipathic molecules with hydrophilic choline-phosphate head and two hydrophobic fatty acid tails forming the lipid bilayer of cellular membranes), Glycolipids, and Sphingolipids. Derived lipids: Steroids (four fused carbon rings cyclopentanoperhydrophenanthrene, e.g., cholesterol regulating membrane fluidity, steroid hormones cortisol/testosterone/estrogen, and bile salts).",
+      "**Nucleic Acids (Polynucleotides of Genetic Information):** Linear polymers of nucleotides linked via 3'-to-5' phosphodiester linkages. Each nucleotide comprises a pentose sugar (ribose in RNA, 2'-deoxyribose in DNA), a purine (Adenine, Guanine) or pyrimidine (Cytosine, Thymine in DNA, Uracil in RNA) nitrogenous base, and 1 to 3 phosphate groups. DNA forms an antiparallel right-handed B-DNA double helix (Watson & Crick model: 2 nm diameter, 3.4 nm pitch with 10 base pairs per turn) governed by Chargaff's parity rules: [A] = [T] (2 hydrogen bonds) and [G]≡[C] (3 hydrogen bonds). RNA is predominantly single-stranded and functions in information transfer (mRNA), aminoacyl-tRNA decoding (cloverleaf tRNA), and peptidyl transferase catalysis (ribosomal 28S/23S rRNA).",
+      "**Enzymes & Biocatalysis:** Specialized globular protein catalysts that accelerate biochemical reaction rates by factors of 10⁶ to 10¹² by stabilizing the transition state and dramatically decreasing the activation energy barrier (Eₐ) without altering thermodynamic equilibrium constant (K_eq) or standard Gibbs free energy change (ΔG°). Catalytic cycle operates via the induced-fit model (Koshland). Many require non-protein cofactors: inorganic metal activators (Fe²⁺, Zn²⁺ in carbonic anhydrase, Mg²⁺ in kinases) or organic coenzymes derived from B-vitamins (NAD⁺ from niacin, FAD from riboflavin, TPP from thiamine)."
+    ],
+    "confusion": [
+      "❌ 'Sucrose is a reducing sugar because it is made of glucose and fructose.' ✅ Sucrose is NON-REDUCING because both anomeric carbons (C1 of glucose and C2 of fructose) are tied up in the α-1,2-glycosidic bond.",
+      "❌ 'All enzymes are proteins.' ✅ Ribozymes (such as 23S rRNA in prokaryotes) are catalytic RNA molecules capable of peptide bond synthesis.",
+      "❌ 'Lipids are true macromolecules formed by polymer chains.' ✅ Lipids are NOT true polymers; they are relatively small hydrophobic molecules assembled into supramolecular non-covalent aggregates (bilayers and micelles).",
+      "❌ 'Cellulose can be digested by humans because it is made of glucose.' ✅ Humans lack the enzyme cellulase to cleave the β-1,4-glycosidic bonds of cellulose; it passes as dietary fiber.",
+      "❌ 'Disulfide bonds stabilize the primary structure of proteins.' ✅ Disulfide (-S-S-) bonds form between cysteine side chains and stabilize TERTIARY and QUATERNARY structure, not primary."
+    ],
+    "practice": [
+      "Distinguish reducing from non-reducing sugars with Fehling's and Benedict's test mechanisms.",
+      "Calculate the percentage of Cytosine in a double-stranded DNA molecule containing 30% Adenine using Chargaff's rules.",
+      "Identify the structural hierarchy level affected during thermal denaturation of egg albumin (primary sequence remains intact).",
+      "Differentiate between competitive and non-competitive enzyme inhibition using Lineweaver-Burk reciprocal plots.",
+      "Categorize amino acids into acidic (Asp, Glu), basic (Lys, Arg, His), and aromatic (Phe, Tyr, Trp) groups.",
+      "Trace the structural difference between starch (amylose α-1,4 and amylopectin α-1,6) and glycogen (hyperbranched α-1,6 every 8-12 residues).",
+      "Explain why lipids release more than double the energy per gram (9.3 kcal/g) compared to carbohydrates (4.1 kcal/g) due to higher oxidation state."
+    ],
+    "universalFacts": [
+      "Cellulose is the most abundant biopolymer on Earth, constituting over 50% of all organic carbon in the biosphere.",
+      "Proteins contain exclusively L-stereoisomers of amino acids, whereas carbohydrates in biological systems are predominantly D-stereoisomers.",
+      "Double-stranded B-DNA has a helical pitch of 3.4 nm containing 10 base pairs, with an inter-base rise of 0.34 nm.",
+      "Phospholipids are amphipathic molecules whose spontaneous self-assembly into bilayers drives cellular compartmentalization."
+    ],
+    "examples": [
+      "Hemoglobin: Allosteric tetramer (α₂β₂) transporting 4 molecules of O₂ with sigmoidal cooperative binding curve.",
+      "Rubisco (Ribulose-1,5-bisphosphate carboxylase-oxygenase): The most abundant protein and enzyme on Earth, catalyzing carbon fixation.",
+      "Collagen: Triple-helical structural protein rich in glycine and proline, providing tensile strength to connective tissues and bones.",
+      "ATP (Adenosine Triphosphate): Universal bioenergetic currency containing two high-energy phosphoanhydride bonds releasing ~7.3 kcal/mol upon hydrolysis."
+    ],
+    "practiceQuestions": [
+      "If a double-stranded DNA sample has 24% Adenine, what is the percentage of Guanine? [Solution: By Chargaff's rule, A = T = 24%, so A + T = 48%. Remaining G + C = 100% - 48% = 52%. Hence G = C = 26%].",
+      "Which amino acid lacks a chiral alpha-carbon and why does it not exhibit optical isomerism? [Answer: Glycine, because its R-group is a single hydrogen atom].",
+      "What type of bond connects the nucleotide bases across the two antiparallel strands of a DNA double helix? [Answer: Hydrogen bonds; 2 between A and T, 3 between G and C].",
+      "Why does boiling an enzyme permanently destroy its catalytic activity while freezing only suspends it temporarily? [Answer: Heat disrupts non-covalent tertiary bonds causing denaturation, whereas cold slows kinetic collisions without unfolding the peptide chain].",
+      "Name the universal storage polysaccharide in fungi and animals, and identify its linkage types. [Answer: Glycogen, featuring α-1,4-glycosidic linkages with α-1,6-glycosidic branch points every 8–12 residues]."
+    ],
+    "formulas": [
+      "General formula for carbohydrates: (CH₂O)_n",
+      "Chargaff's Equimolar Parity in dsDNA: [A] + [G] = [T] + [C] \\implies \\frac{[A] + [G]}{[T] + [C]} = 1.0",
+      "Michaelis-Menten Catalytic Velocity: v_0 = \\frac{V_{\\max}[S]}{K_m + [S]}",
+      "ATP Hydrolysis Free Energy: \\text{ATP} + \\text{H}_2\\text{O} \\longrightarrow \\text{ADP} + \\text{P}_i \\quad (\\Delta G^{\\circ\\prime} = -30.5 \\text{ kJ/mol} \\approx -7.3 \\text{ kcal/mol})"
+    ],
+    "keyPoints": [
+      "Carbohydrates provide rapid metabolic fuel and structural cell walls; monosaccharides are building blocks linked by glycosidic bonds.",
+      "Proteins perform enzymatic catalysis, cellular transport, and structural defense; 20 amino acids linked by peptide bonds form 4 folding levels.",
+      "Lipids form cellular membranes and energy stores; fatty acid saturation dictates membrane fluidity and melting temperature.",
+      "Nucleic acids store (DNA) and transmit (RNA) genetic instructions; DNA double helix features antiparallel complementary strands.",
+      "Enzymes lower the activation energy barrier; K_m reflects substrate affinity, and inhibitors alter K_m (competitive) or V_max (non-competitive)."
+    ],
+    "summary": "Biomolecules are the organic building blocks of cellular life. Carbohydrates provide immediate metabolic energy and structural cellulose/chitin matrices. Proteins, composed of 20 L-amino acids folded into specific 3D tertiary conformations, execute enzymatic catalysis, signal transduction, and structural support. Lipids provide hydrophobic membrane barriers and high-density caloric storage. Nucleic acids (DNA and RNA) encode, replicate, and translate genetic information with complementary base pairing. Water and essential minerals provide the aqueous solvent and catalytic cofactors necessary for life's metabolic machinery.",
+    "specialNotes": [
+      "CEE High-Yield: Non-reducing disaccharide is Sucrose; reducing disaccharides are Maltose and Lactose.",
+      "CEE High-Yield: Most abundant protein in animal body is Collagen; in the whole biosphere it is Rubisco.",
+      "CEE High-Yield: Essential amino acids for humans: Valine, Leucine, Isoleucine, Phenylalanine, Tryptophan, Threonine, Methionine, Lysine (mnemonic: PVT TIM HALL)."
+    ],
+    "importantStatements": [],
+    "importantNotes": [],
+    "examShortTricks": [],
+    "examNotes": [],
+    "mcs": [],
+    "importantConcepts": [],
+    "importantTasks": [],
+    "exercises": [],
+    "visualization": {}
+  }
 }

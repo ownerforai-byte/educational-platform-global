@@ -4,150 +4,8 @@
   "topicSlug": "food-chain-web",
   "topicTitle": "Food Chain and Food Web",
   "relevance": 100,
-  "notes": [
-    "**Food Chain:** A linear sequence of organisms through which nutrients and energy are transferred as one organism eats another. Types: Grazing food chain (starts with living green plants → herbivores → carnivores) and Detritus food chain (starts with dead organic matter → decomposers → detritivores → carnivores).",
-    "**Food Web:** An interconnected network of multiple food chains within an ecosystem. Shows complex feeding relationships and energy flow pathways. Provides stability to ecosystems as organisms have alternative food sources.",
-    "**Trophic Levels:** Position an organism occupies in a food chain. Producers (autotrophs) are at level 1; primary consumers (herbivores) at level 2; secondary consumers (carnivores) at level 3; tertiary consumers at level 4. Decomposers operate across all levels.",
-    "**Ecological Pyramids:** Graphic representations of trophic structure. Pyramid of numbers (organisms per unit area), pyramid of biomass (total mass per unit area), pyramid of energy (energy flow per unit area per time). Energy pyramid is always upright because energy decreases at each level (~10% transfer efficiency).",
-    "**10% Law (Lindeman's Law):** Only about 10% of energy is transferred from one trophic level to the next. The remaining ~90% is lost as heat through metabolic processes (respiration, movement, reproduction) or undigested waste."
-  ],
-  "confusion": [
-    "❌ 'Food chain shows all feeding relationships.' ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ '90% of energy is transferred to next trophic level.' ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ 'Biomagnification decreases toxin concentration up the food chain.' ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ 'All food chains start with consumers.' ✅ All food chains start with producers (autotrophs).",
-    "❌ 'Energy flows in cycles in ecosystems.' ✅ Energy flows unidirectionally; only nutrients cycle."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Only about 10% of energy transfers between trophic levels; the rest is lost as heat.",
-    "Food chains rarely exceed 4-5 trophic levels due to energy constraints.",
-    "Biomagnification causes toxin concentrations to increase 10-100x at each trophic level.",
-    "Detritus food chains often contribute more energy flow than grazing chains in forests."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Grassland: Grass → Grasshopper → Frog → Snake → Hawk",
-    "Aquatic: Phytoplankton → Zooplankton → Small fish → Large fish → Human",
-    "Decomposer: Dead leaves → Earthworm → Bird → Fox",
-    "Parasitic: Tree → Aphid → Ladybug → Spider"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "formulas": [
-    "dN/dt=rN((K-N)/K) (logistic growth)"
-  ],
-  "keyPoints": [
-    "Key concept 1: Understand core principles",
-    "Key concept 2: Apply to problem-solving",
-    "Key concept 3: Connect to related topics"
-  ],
-  "summary": "Food chains represent linear energy transfer pathways from producers to top predators, while food webs depict the complex interconnected feeding relationships in ecosystems. The 10% law explains why energy decreases at successive trophic levels, limiting food chain length. Ecological pyramids visualize these relationships in terms of numbers, biomass, and energy flow.",
-  "specialNotes": [
-    "Specialized insight for 02 food chain web."
-  ],
-  "importantStatements": [
-    "Key statement for 02 food chain web."
-  ],
-  "importantNotes": [
-    "Important note regarding 02 food chain web."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Food Chain and Food Web."
-  ],
-  "examNotes": [
-    "Food Chain and Food Web is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 food chain web?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 food chain web."
-  ],
-  "importantTasks": [
-    "Task for studying 02 food chain web."
-  ],
   "duplicateType": 2,
   "tabGroup": "02-food-chain-web",
   "mcqs": [
@@ -172,11 +30,305 @@
       "answer": "C"
     }
   ],
-  "exercises": [],
-  "visualization": {
-    "type": "simulation",
-    "component": "EcosystemSim",
-    "desc": "Interactive ecosystem energy flow simulation"
+  "visualType": "food-chain-web",
+  "enrichedContent": {
+    "notes": [
+      "**Food Chain:** A linear sequence of organisms through which nutrients and energy are transferred as one organism eats another. Types: Grazing food chain (starts with living green plants → herbivores → carnivores) and Detritus food chain (starts with dead organic matter → decomposers → detritivores → carnivores).",
+      "**Food Web:** An interconnected network of multiple food chains within an ecosystem. Shows complex feeding relationships and energy flow pathways. Provides stability to ecosystems as organisms have alternative food sources.",
+      "**Trophic Levels:** Position an organism occupies in a food chain. Producers (autotrophs) are at level 1; primary consumers (herbivores) at level 2; secondary consumers (carnivores) at level 3; tertiary consumers at level 4. Decomposers operate across all levels.",
+      "**Ecological Pyramids:** Graphic representations of trophic structure. Pyramid of numbers (organisms per unit area), pyramid of biomass (total mass per unit area), pyramid of energy (energy flow per unit area per time). Energy pyramid is always upright because energy decreases at each level (~10% transfer efficiency).",
+      "**10% Law (Lindeman's Law):** Only about 10% of energy is transferred from one trophic level to the next. The remaining ~90% is lost as heat through metabolic processes (respiration, movement, reproduction) or undigested waste."
+    ],
+    "confusion": [
+      "❌ 'Food chain shows all feeding relationships.' ✅ Food chain is linear; food web shows interconnected feeding relationships.",
+      "❌ '90% of energy is transferred to next trophic level.' ✅ Only ~10% energy transfers; ~90% lost as heat.",
+      "❌ 'Biomagnification decreases toxin concentration up the food chain.' ✅ Biomagnification increases toxin concentration at higher trophic levels.",
+      "❌ 'All food chains start with consumers.' ✅ All food chains start with producers (autotrophs).",
+      "❌ 'Energy flows in cycles in ecosystems.' ✅ Energy flows unidirectionally; only nutrients cycle."
+    ],
+    "practice": [
+      "Practice identifying organelles and their functions in electron micrographs.",
+      "Practice distinguishing prokaryotic from eukaryotic cells.",
+      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
+      "Practice explaining the steps of mitosis with diagrams.",
+      "Practice explaining the stages of meiosis and comparing with mitosis.",
+      "Practice calculating chromosome numbers at different stages of cell division.",
+      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
+      "Practice explaining the central dogma: DNA → RNA → protein.",
+      "Practice writing complementary DNA and RNA strands.",
+      "Practice explaining the steps of transcription and translation.",
+      "Practice drawing food chains and food webs for different ecosystems.",
+      "Practice constructing ecological pyramids (energy, biomass, numbers).",
+      "Practice tracing carbon and nitrogen cycles with all major steps.",
+      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
+      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
+      "Practice classifying organisms into five kingdoms with diagnostic features.",
+      "Practice writing binomial names for common organisms.",
+      "Practice creating dichotomous keys for plant and animal identification.",
+      "Practice distinguishing homologous from analogous structures with examples.",
+      "Practice drawing and labeling the evolutionary tree of humans.",
+      "Practice identifying plant groups from specimen descriptions.",
+      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
+      "Practice explaining double fertilization with diagrams.",
+      "Practice identifying animal phyla from morphological features.",
+      "Practice describing the external and internal anatomy of earthworm and frog.",
+      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
+      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
+      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
+      "Practice listing sources and effects of air, water, and soil pollution.",
+      "Practice describing control measures for different types of pollution.",
+      "Practice mapping Nepal's national parks and protected areas.",
+      "Practice listing IUCN categories with examples of endangered species in Nepal.",
+      "Practice comparing in-situ and ex-situ conservation strategies.",
+      "Practice identifying vegetation zones in Nepal by altitude."
+    ],
+    "universalFacts": [
+      "Only about 10% of energy transfers between trophic levels; the rest is lost as heat.",
+      "Food chains rarely exceed 4-5 trophic levels due to energy constraints.",
+      "Biomagnification causes toxin concentrations to increase 10-100x at each trophic level.",
+      "Detritus food chains often contribute more energy flow than grazing chains in forests."
+    ],
+    "examples": [
+      "Grassland: Grass → Grasshopper → Frog → Snake → Hawk",
+      "Aquatic: Phytoplankton → Zooplankton → Small fish → Large fish → Human",
+      "Decomposer: Dead leaves → Earthworm → Bird → Fox",
+      "Parasitic: Tree → Aphid → Ladybug → Spider"
+    ],
+    "practiceQuestions": [
+      "Practice identifying organelles and their functions in electron micrographs.",
+      "Practice distinguishing prokaryotic from eukaryotic cells.",
+      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
+      "Practice explaining the steps of mitosis with diagrams.",
+      "Practice explaining the stages of meiosis and comparing with mitosis.",
+      "Practice calculating chromosome numbers at different stages of cell division.",
+      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
+      "Practice explaining the central dogma: DNA → RNA → protein.",
+      "Practice writing complementary DNA and RNA strands.",
+      "Practice explaining the steps of transcription and translation.",
+      "Practice drawing food chains and food webs for different ecosystems.",
+      "Practice constructing ecological pyramids (energy, biomass, numbers).",
+      "Practice tracing carbon and nitrogen cycles with all major steps.",
+      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
+      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
+      "Practice classifying organisms into five kingdoms with diagnostic features.",
+      "Practice writing binomial names for common organisms.",
+      "Practice creating dichotomous keys for plant and animal identification.",
+      "Practice distinguishing homologous from analogous structures with examples.",
+      "Practice drawing and labeling the evolutionary tree of humans.",
+      "Practice identifying plant groups from specimen descriptions.",
+      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
+      "Practice explaining double fertilization with diagrams.",
+      "Practice identifying animal phyla from morphological features.",
+      "Practice describing the external and internal anatomy of earthworm and frog.",
+      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
+      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
+      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
+      "Practice listing sources and effects of air, water, and soil pollution.",
+      "Practice describing control measures for different types of pollution.",
+      "Practice mapping Nepal's national parks and protected areas.",
+      "Practice listing IUCN categories with examples of endangered species in Nepal.",
+      "Practice comparing in-situ and ex-situ conservation strategies.",
+      "Practice identifying vegetation zones in Nepal by altitude."
+    ],
+    "formulas": [
+      "dN/dt=rN((K-N)/K) (logistic growth)"
+    ],
+    "keyPoints": [
+      "Key concept 1: Understand core principles",
+      "Key concept 2: Apply to problem-solving",
+      "Key concept 3: Connect to related topics"
+    ],
+    "summary": "Food chains represent linear energy transfer pathways from producers to top predators, while food webs depict the complex interconnected feeding relationships in ecosystems. The 10% law explains why energy decreases at successive trophic levels, limiting food chain length. Ecological pyramids visualize these relationships in terms of numbers, biomass, and energy flow.",
+    "specialNotes": [
+      "Specialized insight for 02 food chain web."
+    ],
+    "importantStatements": [
+      "Key statement for 02 food chain web."
+    ],
+    "importantNotes": [
+      "Important note regarding 02 food chain web."
+    ],
+    "examShortTricks": [
+      "Focus on definitions and classifications.",
+      "Use diagrams to understand Food Chain and Food Web."
+    ],
+    "examNotes": [
+      "Food Chain and Food Web is frequently tested.",
+      "Practice writing detailed answers."
+    ],
+    "mcs": [
+      {
+        "question": "Question about 02 food chain web?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Key concept 1 for 02 food chain web."
+    ],
+    "importantTasks": [
+      "Task for studying 02 food chain web."
+    ],
+    "exercises": [],
+    "visualization": {
+      "type": "simulation",
+      "component": "EcosystemSim",
+      "desc": "Interactive ecosystem energy flow simulation"
+    }
   },
-  "visualType": "food-chain-web"
+  "originalContent": {
+    "notes": [
+      "**Food Chain:** A linear sequence of organisms through which nutrients and energy are transferred as one organism eats another. Types: Grazing food chain (starts with living green plants → herbivores → carnivores) and Detritus food chain (starts with dead organic matter → decomposers → detritivores → carnivores).",
+      "**Food Web:** An interconnected network of multiple food chains within an ecosystem. Shows complex feeding relationships and energy flow pathways. Provides stability to ecosystems as organisms have alternative food sources.",
+      "**Trophic Levels:** Position an organism occupies in a food chain. Producers (autotrophs) are at level 1; primary consumers (herbivores) at level 2; secondary consumers (carnivores) at level 3; tertiary consumers at level 4. Decomposers operate across all levels.",
+      "**Ecological Pyramids:** Graphic representations of trophic structure. Pyramid of numbers (organisms per unit area), pyramid of biomass (total mass per unit area), pyramid of energy (energy flow per unit area per time). Energy pyramid is always upright because energy decreases at each level (~10% transfer efficiency).",
+      "**10% Law (Lindeman's Law):** Only about 10% of energy is transferred from one trophic level to the next. The remaining ~90% is lost as heat through metabolic processes (respiration, movement, reproduction) or undigested waste."
+    ],
+    "confusion": [
+      "❌ 'Food chain shows all feeding relationships.' ✅ Food chain is linear; food web shows interconnected feeding relationships.",
+      "❌ '90% of energy is transferred to next trophic level.' ✅ Only ~10% energy transfers; ~90% lost as heat.",
+      "❌ 'Biomagnification decreases toxin concentration up the food chain.' ✅ Biomagnification increases toxin concentration at higher trophic levels.",
+      "❌ 'All food chains start with consumers.' ✅ All food chains start with producers (autotrophs).",
+      "❌ 'Energy flows in cycles in ecosystems.' ✅ Energy flows unidirectionally; only nutrients cycle."
+    ],
+    "practice": [
+      "Practice identifying organelles and their functions in electron micrographs.",
+      "Practice distinguishing prokaryotic from eukaryotic cells.",
+      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
+      "Practice explaining the steps of mitosis with diagrams.",
+      "Practice explaining the stages of meiosis and comparing with mitosis.",
+      "Practice calculating chromosome numbers at different stages of cell division.",
+      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
+      "Practice explaining the central dogma: DNA → RNA → protein.",
+      "Practice writing complementary DNA and RNA strands.",
+      "Practice explaining the steps of transcription and translation.",
+      "Practice drawing food chains and food webs for different ecosystems.",
+      "Practice constructing ecological pyramids (energy, biomass, numbers).",
+      "Practice tracing carbon and nitrogen cycles with all major steps.",
+      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
+      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
+      "Practice classifying organisms into five kingdoms with diagnostic features.",
+      "Practice writing binomial names for common organisms.",
+      "Practice creating dichotomous keys for plant and animal identification.",
+      "Practice distinguishing homologous from analogous structures with examples.",
+      "Practice drawing and labeling the evolutionary tree of humans.",
+      "Practice identifying plant groups from specimen descriptions.",
+      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
+      "Practice explaining double fertilization with diagrams.",
+      "Practice identifying animal phyla from morphological features.",
+      "Practice describing the external and internal anatomy of earthworm and frog.",
+      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
+      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
+      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
+      "Practice listing sources and effects of air, water, and soil pollution.",
+      "Practice describing control measures for different types of pollution.",
+      "Practice mapping Nepal's national parks and protected areas.",
+      "Practice listing IUCN categories with examples of endangered species in Nepal.",
+      "Practice comparing in-situ and ex-situ conservation strategies.",
+      "Practice identifying vegetation zones in Nepal by altitude."
+    ],
+    "universalFacts": [
+      "Only about 10% of energy transfers between trophic levels; the rest is lost as heat.",
+      "Food chains rarely exceed 4-5 trophic levels due to energy constraints.",
+      "Biomagnification causes toxin concentrations to increase 10-100x at each trophic level.",
+      "Detritus food chains often contribute more energy flow than grazing chains in forests."
+    ],
+    "examples": [
+      "Grassland: Grass → Grasshopper → Frog → Snake → Hawk",
+      "Aquatic: Phytoplankton → Zooplankton → Small fish → Large fish → Human",
+      "Decomposer: Dead leaves → Earthworm → Bird → Fox",
+      "Parasitic: Tree → Aphid → Ladybug → Spider"
+    ],
+    "practiceQuestions": [
+      "Practice identifying organelles and their functions in electron micrographs.",
+      "Practice distinguishing prokaryotic from eukaryotic cells.",
+      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
+      "Practice explaining the steps of mitosis with diagrams.",
+      "Practice explaining the stages of meiosis and comparing with mitosis.",
+      "Practice calculating chromosome numbers at different stages of cell division.",
+      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
+      "Practice explaining the central dogma: DNA → RNA → protein.",
+      "Practice writing complementary DNA and RNA strands.",
+      "Practice explaining the steps of transcription and translation.",
+      "Practice drawing food chains and food webs for different ecosystems.",
+      "Practice constructing ecological pyramids (energy, biomass, numbers).",
+      "Practice tracing carbon and nitrogen cycles with all major steps.",
+      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
+      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
+      "Practice classifying organisms into five kingdoms with diagnostic features.",
+      "Practice writing binomial names for common organisms.",
+      "Practice creating dichotomous keys for plant and animal identification.",
+      "Practice distinguishing homologous from analogous structures with examples.",
+      "Practice drawing and labeling the evolutionary tree of humans.",
+      "Practice identifying plant groups from specimen descriptions.",
+      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
+      "Practice explaining double fertilization with diagrams.",
+      "Practice identifying animal phyla from morphological features.",
+      "Practice describing the external and internal anatomy of earthworm and frog.",
+      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
+      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
+      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
+      "Practice listing sources and effects of air, water, and soil pollution.",
+      "Practice describing control measures for different types of pollution.",
+      "Practice mapping Nepal's national parks and protected areas.",
+      "Practice listing IUCN categories with examples of endangered species in Nepal.",
+      "Practice comparing in-situ and ex-situ conservation strategies.",
+      "Practice identifying vegetation zones in Nepal by altitude."
+    ],
+    "formulas": [
+      "dN/dt=rN((K-N)/K) (logistic growth)"
+    ],
+    "keyPoints": [
+      "Key concept 1: Understand core principles",
+      "Key concept 2: Apply to problem-solving",
+      "Key concept 3: Connect to related topics"
+    ],
+    "summary": "Food chains represent linear energy transfer pathways from producers to top predators, while food webs depict the complex interconnected feeding relationships in ecosystems. The 10% law explains why energy decreases at successive trophic levels, limiting food chain length. Ecological pyramids visualize these relationships in terms of numbers, biomass, and energy flow.",
+    "specialNotes": [
+      "Specialized insight for 02 food chain web."
+    ],
+    "importantStatements": [
+      "Key statement for 02 food chain web."
+    ],
+    "importantNotes": [
+      "Important note regarding 02 food chain web."
+    ],
+    "examShortTricks": [
+      "Focus on definitions and classifications.",
+      "Use diagrams to understand Food Chain and Food Web."
+    ],
+    "examNotes": [
+      "Food Chain and Food Web is frequently tested.",
+      "Practice writing detailed answers."
+    ],
+    "mcs": [
+      {
+        "question": "Question about 02 food chain web?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Key concept 1 for 02 food chain web."
+    ],
+    "importantTasks": [
+      "Task for studying 02 food chain web."
+    ],
+    "exercises": [],
+    "visualization": {
+      "type": "simulation",
+      "component": "EcosystemSim",
+      "desc": "Interactive ecosystem energy flow simulation"
+    }
+  }
 }

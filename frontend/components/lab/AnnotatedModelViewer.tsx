@@ -832,7 +832,25 @@ export function AnnotatedModelViewer({
       explodedView,
     };
     const url = `${window.location.origin}${window.location.pathname}?data=${btoa(JSON.stringify(shareData))}`;
-    navigator.clipboard.writeText(url);
+    const safeCopy = async (text: string) => {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        } catch {
+          console.warn("Clipboard copy unavailable");
+        }
+      }
+    };
+    safeCopy(url);
   }, [currentPreset, annotations, theme, explodedView]);
 
   const isDark = theme === "dark";

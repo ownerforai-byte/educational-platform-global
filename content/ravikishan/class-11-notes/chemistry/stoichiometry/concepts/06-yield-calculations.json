@@ -1,223 +1,342 @@
 {
-  "title": "06 YIELD CALCULATIONS",
+  "title": "Yield Calculations (Theoretical, Actual, and Percent Yield)",
   "unitSlug": "stoichiometry",
-  "topicSlug": "06-yield-calculations",
-  "topicTitle": "06 yield calculations",
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 06 yield calculations."
-  ],
-  "importantNotes": [
-    "Important note regarding 06 yield calculations."
-  ],
-  "importantStatements": [
-    "Key statement for 06 yield calculations."
-  ],
-  "importantTasks": [
-    "Task for studying 06 yield calculations."
-  ],
-  "keyPoints": [
-    "Core point for 06 yield calculations."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 06 yield calculations?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
+  "topicSlug": "yield-calculations",
+  "topicTitle": "Yield Calculations",
+  "relevance": 100,
+  "animation3D": "chemistry-yield",
+  "motionGraphics": "chemistry-yield",
+  "visualType": "percent-yield",
+  "enrichedContent": {
+    "notes": [
+      "**Theoretical Yield:** The maximum amount of product that can be formed from a given amount of limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation. It represents the ideal, perfect-case scenario.",
+      "**Actual Yield:** The measured amount of product actually obtained from a chemical reaction in the laboratory or industrial setting. It is always less than or equal to the theoretical yield due to practical limitations.",
+      "**Percent Yield Formula:** Percent Yield = (Actual Yield / Theoretical Yield) × 100%. This metric quantifies the efficiency of a reaction and is crucial for process optimization.",
+      "**Factors Reducing Yield:** (1) Incomplete reactions—equilibrium limitations prevent 100% conversion. (2) Side reactions—competing pathways produce unwanted byproducts. (3) Physical losses during transfer, filtration, crystallization, or purification. (4) Experimental errors in measurement and technique.",
+      "**Yield Optimization:** Industrial processes employ excess reactants, catalysts, optimal temperature/pressure, and efficient separation techniques to maximize percent yield and minimize waste.",
+      "**Atom Economy:** A green chemistry metric calculating the percentage of reactant atoms incorporated into the desired product, calculated as (molar mass of product / sum of molar masses of all reactants) × 100%."
+    ],
+    "confusion": [
+      "❌ Percent yield can exceed 100%. ✅ Values >100% indicate impure product, incomplete drying (water adds mass), or measurement errors—not a violation of conservation laws.",
+      "❌ Theoretical yield is always achieved in practice. ✅ Theoretical yield is never fully achieved; typical laboratory yields range from 40-95% depending on reaction complexity.",
+      "❌ Percent yield and atom economy are the same. ✅ Percent yield measures actual vs. theoretical; atom economy measures inherent efficiency based on reaction stoichiometry.",
+      "❌ High percent yield means high purity. ✅ Percent yield measures quantity, not purity. A wet product may have high yield but low purity."
+    ],
+    "practice": [
+      "Calculate percent yield if theoretical yield is 10.0g but actual yield is 8.5g.",
+      "Determine theoretical yield of AgCl when 5.0g of NaCl reacts with excess AgNO₃.",
+      "If 15.0g of CaCO₃ produces 6.0g of CaO, calculate the percent yield.",
+      "Calculate atom economy for the reaction: 2Mg + O₂ → 2MgO.",
+      "A reaction with 80% yield produces 12.0g of product. What was the theoretical yield?"
+    ],
+    "universalFacts": [
+      "Theoretical yield is the maximum product calculated from stoichiometry.",
+      "Actual yield is the product actually obtained from experiment.",
+      "Percent yield = (Actual yield / Theoretical yield) × 100%.",
+      "Yield is always less than 100% due to side reactions, incomplete reactions, and losses.",
+      "High yield indicates efficient reaction conditions."
+    ],
+    "examples": [
+      "If theoretical yield of CaO from 50g CaCO₃ is 28g and actual yield is 25g, % yield = 89.3%.",
+      "Synthesis of NH₃: Theoretical = 34g, Actual = 28g, % yield = 82.4%.",
+      "Precipitation reactions often give high yields (>90%).",
+      "Organic synthesis may have yields of 50-80%."
+    ],
+    "practiceQuestions": [
+      "Calculate the percent yield if 25g of product is obtained from theoretical yield of 30g.",
+      "Find the actual yield when % yield is 75% and theoretical yield is 40g.",
+      "Calculate theoretical yield of AgCl from 10g NaCl and excess AgNO₃.",
+      "Determine % yield if 15g of product is obtained from 18g theoretical."
+    ],
+    "formulas": [
+      "% Yield = (Actual yield / Theoretical yield) × 100%",
+      "Theoretical yield = moles limiting reactant × stoichiometric ratio × Molar mass",
+      "Actual yield = (% Yield × Theoretical yield) / 100",
+      "Moles = Mass / Molar mass",
+      "Theoretical yield (mass) = n × M"
+    ],
+    "keyPoints": [
+      "Theoretical yield = calculated from stoichiometry.",
+      "Actual yield = measured experimentally.",
+      "% Yield indicates efficiency of reaction.",
+      "Yield < 100% is normal due to practical losses."
+    ],
+    "summary": "Yield calculations quantify reaction efficiency through theoretical yield (calculated from stoichiometry), actual yield (measured experimentally), and percent yield (their ratio). Factors such as incomplete reactions, side reactions, and physical losses reduce actual yield. Atom economy provides a green chemistry perspective on inherent reaction efficiency.",
+    "specialNotes": [
+      "Percent yield is a key concept in NEB examinations.",
+      "Always show units in yield calculations.",
+      "Yield calculations require balanced chemical equations."
+    ],
+    "importantStatements": [
+      "Percent yield measures the efficiency of a chemical reaction.",
+      "Theoretical yield is calculated assuming 100% conversion of limiting reactant.",
+      "Actual yield is always less than theoretical yield in practice."
+    ],
+    "importantNotes": [
+      "Factors affecting yield: side reactions, incomplete reactions, mechanical losses, evaporation.",
+      "Industrial processes aim for high yield to minimize waste.",
+      "Yield calculations are fundamental to stoichiometry."
+    ],
+    "examShortTricks": [
+      "Remember: % Yield = (Actual/Theoretical) × 100.",
+      "Find theoretical from limiting reactant first.",
+      "Then apply percentage formula.",
+      "Check: % Yield should be ≤ 100%."
+    ],
+    "examNotes": [
+      "Yield calculations are a guaranteed NEB topic — practice multiple problems.",
+      "Be prepared to identify the limiting reactant before calculating yield.",
+      "Distinguish between percent yield (efficiency) and atom economy (inherent design).",
+      "Show all steps: balanced equation → moles → theoretical yield → percent yield."
+    ],
+    "mcs": [
+      {
+        "question": "Percent yield is calculated as:",
+        "options": [
+          "(Theoretical/Actual) × 100",
+          "(Actual/Theoretical) × 100",
+          "(Actual - Theoretical) × 100",
+          "(Theoretical - Actual) × 100"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "If theoretical yield is 50g and actual yield is 40g, the percent yield is:",
+        "options": [
+          "80%",
+          "125%",
+          "50%",
+          "20%"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Why is percent yield usually less than 100%?",
+        "options": [
+          "Side reactions and losses",
+          "Reaction goes to completion",
+          "Limiting reactant is excess",
+          "Products are pure"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Theoretical Yield: Maximum possible product from stoichiometry.",
+      "Actual Yield: Experimentally measured product mass.",
+      "Percent Yield: Efficiency metric = (actual/theoretical) × 100%.",
+      "Atom Economy: Inherent efficiency based on reaction design.",
+      "Yield-Limiting Reactant Relationship: LR determines theoretical yield."
+    ],
+    "importantTasks": [
+      "Calculate theoretical yield from given reactant masses.",
+      "Determine percent yield from experimental data.",
+      "Identify factors affecting yield in practical scenarios.",
+      "Calculate atom economy for given reactions.",
+      "Solve multi-step yield problems involving limiting reactants."
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Mass of NaCl from 23g Na",
+        "steps": [
+          "n(Na)=23/23=1 mol",
+          "Na+Cl₂→NaCl (balanced: 2Na+Cl₂→2NaCl)",
+          "m(NaCl)=1×58.5=58.5 g"
+        ],
+        "answer": "58.5 g"
+      },
+      {
+        "id": "2",
+        "question": "Volume of CO₂ from 50g CaCO₃ at STP",
+        "steps": [
+          "n(CaCO₃)=50/100=0.5 mol",
+          "CaCO₃→CaO+CO₂",
+          "V(CO₂)=0.5×22.4=11.2 L"
+        ],
+        "answer": "11.2 L"
+      },
+      {
+        "id": "3",
+        "question": "Percent yield: 25g CaCO₃ → 10.5g CaO",
+        "steps": [
+          "n(CaCO₃)=25/100=0.25 mol",
+          "Theoretical CaO = 0.25×56=14.0g",
+          "Percent yield = (10.5/14.0)×100%=75%"
+        ],
+        "answer": "75%"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "MoleCalculator",
+      "desc": "Interactive mole-mass-volume calculator"
     }
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "specialNotes": [
-    "Specialized insight for 06 yield calculations."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "universalFacts": [
-    "Universal scientific fact for 06 yield calculations."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "06-yield-calculations",
-  "examShortTricks": [
-    "Trick 1"
-  ],
-  "examNotes": [
-    "Exam note 1."
-  ],
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
   },
-  "visualType": "percent-yield"
+  "originalContent": {
+    "notes": [
+      "**Theoretical Yield:** The maximum amount of product that can be formed from a given amount of limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation. It represents the ideal, perfect-case scenario.",
+      "**Actual Yield:** The measured amount of product actually obtained from a chemical reaction in the laboratory or industrial setting. It is always less than or equal to the theoretical yield due to practical limitations.",
+      "**Percent Yield Formula:** Percent Yield = (Actual Yield / Theoretical Yield) × 100%. This metric quantifies the efficiency of a reaction and is crucial for process optimization.",
+      "**Factors Reducing Yield:** (1) Incomplete reactions—equilibrium limitations prevent 100% conversion. (2) Side reactions—competing pathways produce unwanted byproducts. (3) Physical losses during transfer, filtration, crystallization, or purification. (4) Experimental errors in measurement and technique.",
+      "**Yield Optimization:** Industrial processes employ excess reactants, catalysts, optimal temperature/pressure, and efficient separation techniques to maximize percent yield and minimize waste.",
+      "**Atom Economy:** A green chemistry metric calculating the percentage of reactant atoms incorporated into the desired product, calculated as (molar mass of product / sum of molar masses of all reactants) × 100%."
+    ],
+    "confusion": [
+      "❌ Percent yield can exceed 100%. ✅ Values >100% indicate impure product, incomplete drying (water adds mass), or measurement errors—not a violation of conservation laws.",
+      "❌ Theoretical yield is always achieved in practice. ✅ Theoretical yield is never fully achieved; typical laboratory yields range from 40-95% depending on reaction complexity.",
+      "❌ Percent yield and atom economy are the same. ✅ Percent yield measures actual vs. theoretical; atom economy measures inherent efficiency based on reaction stoichiometry.",
+      "❌ High percent yield means high purity. ✅ Percent yield measures quantity, not purity. A wet product may have high yield but low purity."
+    ],
+    "practice": [
+      "Calculate percent yield if theoretical yield is 10.0g but actual yield is 8.5g.",
+      "Determine theoretical yield of AgCl when 5.0g of NaCl reacts with excess AgNO₃.",
+      "If 15.0g of CaCO₃ produces 6.0g of CaO, calculate the percent yield.",
+      "Calculate atom economy for the reaction: 2Mg + O₂ → 2MgO.",
+      "A reaction with 80% yield produces 12.0g of product. What was the theoretical yield?"
+    ],
+    "universalFacts": [
+      "Theoretical yield is the maximum product calculated from stoichiometry.",
+      "Actual yield is the product actually obtained from experiment.",
+      "Percent yield = (Actual yield / Theoretical yield) × 100%.",
+      "Yield is always less than 100% due to side reactions, incomplete reactions, and losses.",
+      "High yield indicates efficient reaction conditions."
+    ],
+    "examples": [
+      "If theoretical yield of CaO from 50g CaCO₃ is 28g and actual yield is 25g, % yield = 89.3%.",
+      "Synthesis of NH₃: Theoretical = 34g, Actual = 28g, % yield = 82.4%.",
+      "Precipitation reactions often give high yields (>90%).",
+      "Organic synthesis may have yields of 50-80%."
+    ],
+    "practiceQuestions": [
+      "Calculate the percent yield if 25g of product is obtained from theoretical yield of 30g.",
+      "Find the actual yield when % yield is 75% and theoretical yield is 40g.",
+      "Calculate theoretical yield of AgCl from 10g NaCl and excess AgNO₃.",
+      "Determine % yield if 15g of product is obtained from 18g theoretical."
+    ],
+    "formulas": [
+      "% Yield = (Actual yield / Theoretical yield) × 100%",
+      "Theoretical yield = moles limiting reactant × stoichiometric ratio × Molar mass",
+      "Actual yield = (% Yield × Theoretical yield) / 100",
+      "Moles = Mass / Molar mass",
+      "Theoretical yield (mass) = n × M"
+    ],
+    "keyPoints": [
+      "Theoretical yield = calculated from stoichiometry.",
+      "Actual yield = measured experimentally.",
+      "% Yield indicates efficiency of reaction.",
+      "Yield < 100% is normal due to practical losses."
+    ],
+    "summary": "Yield calculations quantify reaction efficiency through theoretical yield (calculated from stoichiometry), actual yield (measured experimentally), and percent yield (their ratio). Factors such as incomplete reactions, side reactions, and physical losses reduce actual yield. Atom economy provides a green chemistry perspective on inherent reaction efficiency.",
+    "specialNotes": [
+      "Percent yield is a key concept in NEB examinations.",
+      "Always show units in yield calculations.",
+      "Yield calculations require balanced chemical equations."
+    ],
+    "importantStatements": [
+      "Percent yield measures the efficiency of a chemical reaction.",
+      "Theoretical yield is calculated assuming 100% conversion of limiting reactant.",
+      "Actual yield is always less than theoretical yield in practice."
+    ],
+    "importantNotes": [
+      "Factors affecting yield: side reactions, incomplete reactions, mechanical losses, evaporation.",
+      "Industrial processes aim for high yield to minimize waste.",
+      "Yield calculations are fundamental to stoichiometry."
+    ],
+    "examShortTricks": [
+      "Remember: % Yield = (Actual/Theoretical) × 100.",
+      "Find theoretical from limiting reactant first.",
+      "Then apply percentage formula.",
+      "Check: % Yield should be ≤ 100%."
+    ],
+    "examNotes": [
+      "Yield calculations are a guaranteed NEB topic — practice multiple problems.",
+      "Be prepared to identify the limiting reactant before calculating yield.",
+      "Distinguish between percent yield (efficiency) and atom economy (inherent design).",
+      "Show all steps: balanced equation → moles → theoretical yield → percent yield."
+    ],
+    "mcs": [
+      {
+        "question": "Percent yield is calculated as:",
+        "options": [
+          "(Theoretical/Actual) × 100",
+          "(Actual/Theoretical) × 100",
+          "(Actual - Theoretical) × 100",
+          "(Theoretical - Actual) × 100"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "If theoretical yield is 50g and actual yield is 40g, the percent yield is:",
+        "options": [
+          "80%",
+          "125%",
+          "50%",
+          "20%"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Why is percent yield usually less than 100%?",
+        "options": [
+          "Side reactions and losses",
+          "Reaction goes to completion",
+          "Limiting reactant is excess",
+          "Products are pure"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Theoretical Yield: Maximum possible product from stoichiometry.",
+      "Actual Yield: Experimentally measured product mass.",
+      "Percent Yield: Efficiency metric = (actual/theoretical) × 100%.",
+      "Atom Economy: Inherent efficiency based on reaction design.",
+      "Yield-Limiting Reactant Relationship: LR determines theoretical yield."
+    ],
+    "importantTasks": [
+      "Calculate theoretical yield from given reactant masses.",
+      "Determine percent yield from experimental data.",
+      "Identify factors affecting yield in practical scenarios.",
+      "Calculate atom economy for given reactions.",
+      "Solve multi-step yield problems involving limiting reactants."
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Mass of NaCl from 23g Na",
+        "steps": [
+          "n(Na)=23/23=1 mol",
+          "Na+Cl₂→NaCl (balanced: 2Na+Cl₂→2NaCl)",
+          "m(NaCl)=1×58.5=58.5 g"
+        ],
+        "answer": "58.5 g"
+      },
+      {
+        "id": "2",
+        "question": "Volume of CO₂ from 50g CaCO₃ at STP",
+        "steps": [
+          "n(CaCO₃)=50/100=0.5 mol",
+          "CaCO₃→CaO+CO₂",
+          "V(CO₂)=0.5×22.4=11.2 L"
+        ],
+        "answer": "11.2 L"
+      },
+      {
+        "id": "3",
+        "question": "Percent yield: 25g CaCO₃ → 10.5g CaO",
+        "steps": [
+          "n(CaCO₃)=25/100=0.25 mol",
+          "Theoretical CaO = 0.25×56=14.0g",
+          "Percent yield = (10.5/14.0)×100%=75%"
+        ],
+        "answer": "75%"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "MoleCalculator",
+      "desc": "Interactive mole-mass-volume calculator"
+    }
+  }
 }

@@ -1,230 +1,260 @@
 {
-  "title": "01 DALTON ATOMIC THEORY",
+  "title": "Dalton's Atomic Theory",
   "unitSlug": "stoichiometry",
-  "topicSlug": "01-dalton-atomic-theory",
-  "topicTitle": "01 dalton atomic theory",
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-    "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
-  ],
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 dalton atomic theory."
-  ],
-  "importantNotes": [
-    "Important note regarding 01 dalton atomic theory."
-  ],
-  "importantStatements": [
-    "Key statement for 01 dalton atomic theory."
-  ],
-  "importantTasks": [
-    "Task for studying 01 dalton atomic theory."
-  ],
-  "keyPoints": [
-    "Core point for 01 dalton atomic theory."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 dalton atomic theory?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice calculating energy of photon from frequency and wavelength."
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
-  ],
-  "specialNotes": [
-    "Specialized insight for 01 dalton atomic theory."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "universalFacts": [
-    "Universal scientific fact for 01 dalton atomic theory."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "01-dalton-atomic-theory",
-  "examShortTricks": [
-    "Trick 1"
-  ],
-  "examNotes": [
-    "Exam note 1."
-  ],
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
+  "topicSlug": "dalton-atomic-theory",
+  "topicTitle": "Dalton's Atomic Theory",
+  "relevance": 100,
+  "tabGroup": "dalton-atomic-theory",
+  "visualType": "atomic-theory",
+  "enrichedContent": {
+    "notes": [
+      "**Dalton's Postulates (1803):** (1) Matter is composed of indivisible, indestructible atoms. (2) Atoms of a given element are identical in mass and chemical properties. (3) Atoms of different elements possess distinct masses and properties. (4) Compounds are formed by the combination of atoms in fixed, simple whole-number ratios (Law of Multiple Proportions). (5) Chemical reactions involve the rearrangement, separation, or combination of atoms; atoms are neither created nor destroyed (Law of Conservation of Mass).",
+      "**Limitations:** (1) Atoms are divisible into subatomic particles (protons, neutrons, electrons). (2) Isotopes: Atoms of the same element can have different masses due to varying neutron counts. (3) Isobars: Atoms of different elements can have the same mass. (4) Does not account for chemical bonding or the nature of interatomic forces. (5) Does not explain why atoms combine (valency).",
+      "**Significance:** Established the first scientific framework for atomic theory, providing a theoretical basis for the laws of chemical combination (Conservation of Mass, Definite Proportions, Multiple Proportions).",
+      "**Modern Perspective:** Atoms are the smallest unit of an element retaining its chemical identity. The concept of 'indivisibility' is redefined as 'chemical indivisibility'—atoms remain intact during chemical reactions, though they can be altered in nuclear processes.",
+      "**Extended Detail:** Dalton's model was the first to use the term 'atom' (from Greek 'atomos', meaning indivisible) in a scientific context, bridging the gap between philosophical speculation and empirical science."
+    ],
+    "confusion": [
+      "❌ 'Atoms are indivisible.' ✅ Atoms are composed of subatomic particles (protons, neutrons, electrons) and can be split in nuclear reactions.",
+      "❌ 'All atoms of an element are identical.' ✅ Isotopes of the same element have different numbers of neutrons and thus different masses.",
+      "❌ 'Dalton's theory is completely wrong.' ✅ It is a foundational model that correctly explains chemical combination laws, even if it lacks modern subatomic detail.",
+      "❌ 'Atoms are solid spheres.' ✅ Atoms are mostly empty space with a dense nucleus and electron clouds.",
+      "❌ 'Chemical reactions create new atoms.' ✅ Reactions only rearrange existing atoms; the total number and type of atoms remain constant (Law of Conservation of Mass)."
+    ],
+    "practice": [
+      "List the five main postulates of Dalton's atomic theory.",
+      "Explain why Dalton's theory failed to explain isotopes.",
+      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
+      "Compare Dalton's atom with the modern atomic model.",
+      "Identify which postulates of Dalton's theory are still considered valid today."
+    ],
+    "universalFacts": [
+      "Dalton's theory (1803) marked the transition from alchemy to modern chemistry.",
+      "The law of multiple proportions was specifically predicted by Dalton's theory.",
+      "Dalton's atomic theory is the basis for the modern concept of the mole.",
+      "Even though some postulates are outdated, the core idea that matter is composed of discrete atoms remains the cornerstone of chemistry.",
+      "Dalton was the first to assign relative atomic masses to elements."
+    ],
+    "examples": [
+      "Combination: Carbon + Oxygen → Carbon Monoxide (1:1 ratio) or Carbon Dioxide (1:2 ratio).",
+      "Isotope example: Carbon-12 and Carbon-14 are both Carbon atoms but have different masses.",
+      "Rearrangement: H₂ + O₂ → H₂O (atoms are rearranged, not created)."
+    ],
+    "practiceQuestions": [
+      "State the main postulates of Dalton's atomic theory.",
+      "Which of Dalton's postulates were proven incorrect by the discovery of isotopes?",
+      "How does Dalton's theory explain the Law of Definite Proportions?",
+      "Why is Dalton's theory considered a milestone in the history of chemistry?",
+      "What are the limitations of Dalton's atomic theory?"
+    ],
+    "formulas": [
+      "No direct mathematical formula, but it underpins: Law of Conservation of Mass (Σm_reactants = Σm_products)",
+      "Law of Definite Proportions (mass ratio = constant)"
+    ],
+    "keyPoints": [
+      "Matter is made of atoms.",
+      "Atoms of an element are identical (mostly).",
+      "Compounds are fixed ratios of atoms.",
+      "Chemical reactions rearrange atoms.",
+      "Dalton's theory explains chemical combination laws."
+    ],
+    "summary": "Dalton's atomic theory (1803) proposed that matter is composed of indivisible atoms, which combine in fixed ratios to form compounds. While some postulates (indivisibility, identical masses) were refined by modern discoveries like isotopes and subatomic particles, the theory remains the foundation of modern chemistry and explains the laws of chemical combination.",
+    "specialNotes": [
+      "Dalton's theory is a 'model' — it was useful for its time and still explains basic chemical behavior.",
+      "Always distinguish between 'chemical indivisibility' (atoms in reactions) and 'physical divisibility' (subatomic particles).",
+      "NEB questions often ask for the postulates and the limitations of the theory."
+    ],
+    "importantStatements": [
+      "Atoms are the smallest unit of an element that participates in chemical reactions.",
+      "Chemical reactions involve the rearrangement of atoms.",
+      "Compounds are formed by the combination of atoms in simple whole-number ratios.",
+      "Dalton's theory provided the first scientific explanation for the laws of chemical combination."
+    ],
+    "importantNotes": [
+      "Dalton's theory is the starting point for understanding stoichiometry.",
+      "Isotopes are the primary reason why Dalton's 'identical mass' postulate is not strictly true.",
+      "The theory is still valid for explaining chemical reactions at the macroscopic level."
+    ],
+    "examShortTricks": [
+      "Remember: Dalton = Atoms, Indivisible, Fixed Ratios, Rearrangement.",
+      "Limitations: Isotopes (mass), Subatomic particles (divisibility), Bonding (forces).",
+      "Significance: Laws of chemical combination (Mass, Definite, Multiple proportions)."
+    ],
+    "examNotes": [
+      "Dalton's theory is a frequent short-answer question.",
+      "Be prepared to list the postulates and explain why some are now considered incorrect.",
+      "Focus on how the theory explains the laws of chemical combination."
+    ],
+    "mcs": [
+      {
+        "question": "Which of the following is NOT a postulate of Dalton's atomic theory?",
+        "options": [
+          "Matter is made of atoms.",
+          "Atoms are indivisible.",
+          "Atoms of the same element are identical.",
+          "Atoms are composed of protons, neutrons, and electrons."
+        ],
+        "answer": "D"
+      },
+      {
+        "question": "Which discovery proved that atoms are divisible?",
+        "options": [
+          "Discovery of isotopes",
+          "Discovery of subatomic particles",
+          "Law of conservation of mass",
+          "Law of definite proportions"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Dalton's theory explains which of the following?",
+        "options": [
+          "Law of conservation of mass",
+          "Law of definite proportions",
+          "Law of multiple proportions",
+          "All of the above"
+        ],
+        "answer": "D"
+      }
+    ],
+    "importantConcepts": [
+      "Dalton's Atomic Theory: Postulates and foundational principles.",
+      "Limitations: Isotopes, subatomic particles, and chemical bonding.",
+      "Significance: Theoretical basis for laws of chemical combination.",
+      "Modern Atomic Model: Refinements and contemporary understanding.",
+      "Stoichiometric implications of Dalton's theory."
+    ],
+    "importantTasks": [
+      "List the five main postulates of Dalton's atomic theory.",
+      "Explain why Dalton's theory failed to explain isotopes.",
+      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
+      "Compare Dalton's atom with the modern atomic model.",
+      "Identify which postulates of Dalton's theory are still considered valid today."
+    ]
   },
-  "visualType": "avogadros-law-deduction"
+  "originalContent": {
+    "notes": [
+      "**Dalton's Postulates (1803):** (1) Matter is composed of indivisible, indestructible atoms. (2) Atoms of a given element are identical in mass and chemical properties. (3) Atoms of different elements possess distinct masses and properties. (4) Compounds are formed by the combination of atoms in fixed, simple whole-number ratios (Law of Multiple Proportions). (5) Chemical reactions involve the rearrangement, separation, or combination of atoms; atoms are neither created nor destroyed (Law of Conservation of Mass).",
+      "**Limitations:** (1) Atoms are divisible into subatomic particles (protons, neutrons, electrons). (2) Isotopes: Atoms of the same element can have different masses due to varying neutron counts. (3) Isobars: Atoms of different elements can have the same mass. (4) Does not account for chemical bonding or the nature of interatomic forces. (5) Does not explain why atoms combine (valency).",
+      "**Significance:** Established the first scientific framework for atomic theory, providing a theoretical basis for the laws of chemical combination (Conservation of Mass, Definite Proportions, Multiple Proportions).",
+      "**Modern Perspective:** Atoms are the smallest unit of an element retaining its chemical identity. The concept of 'indivisibility' is redefined as 'chemical indivisibility'—atoms remain intact during chemical reactions, though they can be altered in nuclear processes."
+    ],
+    "confusion": [
+      "❌ 'Atoms are indivisible.' ✅ Atoms are composed of subatomic particles (protons, neutrons, electrons) and can be split in nuclear reactions.",
+      "❌ 'All atoms of an element are identical.' ✅ Isotopes of the same element have different numbers of neutrons and thus different masses.",
+      "❌ 'Dalton's theory is completely wrong.' ✅ It is a foundational model that correctly explains chemical combination laws, even if it lacks modern subatomic detail.",
+      "❌ 'Atoms are solid spheres.' ✅ Atoms are mostly empty space with a dense nucleus and electron clouds.",
+      "❌ 'Chemical reactions create new atoms.' ✅ Reactions only rearrange existing atoms; the total number and type of atoms remain constant (Law of Conservation of Mass)."
+    ],
+    "practice": [
+      "List the five main postulates of Dalton's atomic theory.",
+      "Explain why Dalton's theory failed to explain isotopes.",
+      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
+      "Compare Dalton's atom with the modern atomic model.",
+      "Identify which postulates of Dalton's theory are still considered valid today."
+    ],
+    "universalFacts": [
+      "Dalton's theory (1803) marked the transition from alchemy to modern chemistry.",
+      "The law of multiple proportions was specifically predicted by Dalton's theory.",
+      "Dalton's atomic theory is the basis for the modern concept of the mole.",
+      "Even though some postulates are outdated, the core idea that matter is composed of discrete atoms remains the cornerstone of chemistry.",
+      "Dalton was the first to assign relative atomic masses to elements."
+    ],
+    "examples": [
+      "Combination: Carbon + Oxygen → Carbon Monoxide (1:1 ratio) or Carbon Dioxide (1:2 ratio).",
+      "Isotope example: Carbon-12 and Carbon-14 are both Carbon atoms but have different masses.",
+      "Rearrangement: H₂ + O₂ → H₂O (atoms are rearranged, not created)."
+    ],
+    "practiceQuestions": [
+      "State the main postulates of Dalton's atomic theory.",
+      "Which of Dalton's postulates were proven incorrect by the discovery of isotopes?",
+      "How does Dalton's theory explain the Law of Definite Proportions?",
+      "Why is Dalton's theory considered a milestone in the history of chemistry?",
+      "What are the limitations of Dalton's atomic theory?"
+    ],
+    "formulas": [
+      "No direct mathematical formula, but it underpins: Law of Conservation of Mass (Σm_reactants = Σm_products)",
+      "Law of Definite Proportions (mass ratio = constant)"
+    ],
+    "keyPoints": [
+      "Matter is made of atoms.",
+      "Atoms of an element are identical (mostly).",
+      "Compounds are fixed ratios of atoms.",
+      "Chemical reactions rearrange atoms.",
+      "Dalton's theory explains chemical combination laws."
+    ],
+    "summary": "Dalton's atomic theory (1803) proposed that matter is composed of indivisible atoms, which combine in fixed ratios to form compounds. While some postulates (indivisibility, identical masses) were refined by modern discoveries like isotopes and subatomic particles, the theory remains the foundation of modern chemistry and explains the laws of chemical combination.",
+    "specialNotes": [
+      "Dalton's theory is a 'model' — it was useful for its time and still explains basic chemical behavior.",
+      "Always distinguish between 'chemical indivisibility' (atoms in reactions) and 'physical divisibility' (subatomic particles).",
+      "NEB questions often ask for the postulates and the limitations of the theory."
+    ],
+    "importantStatements": [
+      "Atoms are the smallest unit of an element that participates in chemical reactions.",
+      "Chemical reactions involve the rearrangement of atoms.",
+      "Compounds are formed by the combination of atoms in simple whole-number ratios.",
+      "Dalton's theory provided the first scientific explanation for the laws of chemical combination."
+    ],
+    "importantNotes": [
+      "Dalton's theory is the starting point for understanding stoichiometry.",
+      "Isotopes are the primary reason why Dalton's 'identical mass' postulate is not strictly true.",
+      "The theory is still valid for explaining chemical reactions at the macroscopic level."
+    ],
+    "examShortTricks": [
+      "Remember: Dalton = Atoms, Indivisible, Fixed Ratios, Rearrangement.",
+      "Limitations: Isotopes (mass), Subatomic particles (divisibility), Bonding (forces).",
+      "Significance: Laws of chemical combination (Mass, Definite, Multiple proportions)."
+    ],
+    "examNotes": [
+      "Dalton's theory is a frequent short-answer question.",
+      "Be prepared to list the postulates and explain why some are now considered incorrect.",
+      "Focus on how the theory explains the laws of chemical combination."
+    ],
+    "mcs": [
+      {
+        "question": "Which of the following is NOT a postulate of Dalton's atomic theory?",
+        "options": [
+          "Matter is made of atoms.",
+          "Atoms are indivisible.",
+          "Atoms of the same element are identical.",
+          "Atoms are composed of protons, neutrons, and electrons."
+        ],
+        "answer": "D"
+      },
+      {
+        "question": "Which discovery proved that atoms are divisible?",
+        "options": [
+          "Discovery of isotopes",
+          "Discovery of subatomic particles",
+          "Law of conservation of mass",
+          "Law of definite proportions"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Dalton's theory explains which of the following?",
+        "options": [
+          "Law of conservation of mass",
+          "Law of definite proportions",
+          "Law of multiple proportions",
+          "All of the above"
+        ],
+        "answer": "D"
+      }
+    ],
+    "importantConcepts": [
+      "Dalton's Atomic Theory: Postulates and foundational principles.",
+      "Limitations: Isotopes, subatomic particles, and chemical bonding.",
+      "Significance: Theoretical basis for laws of chemical combination.",
+      "Modern Atomic Model: Refinements and contemporary understanding.",
+      "Stoichiometric implications of Dalton's theory."
+    ],
+    "importantTasks": [
+      "List the five main postulates of Dalton's atomic theory.",
+      "Explain why Dalton's theory failed to explain isotopes.",
+      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
+      "Compare Dalton's atom with the modern atomic model.",
+      "Identify which postulates of Dalton's theory are still considered valid today."
+    ]
+  }
 }

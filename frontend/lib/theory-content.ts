@@ -21,6 +21,8 @@ interface TopicData {
   keyPoints: string[];
   commonMistakes: string[];
   practiceQuestions: string[];
+  /** Optional enriched variant of the content; when present the panel offers a tab switch */
+  enrichedContent?: TopicData;
 }
 
 export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {

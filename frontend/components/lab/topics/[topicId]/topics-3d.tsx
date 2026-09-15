@@ -1,6 +1,6 @@
 "use client";
 
-import Shared3DScene from "@/components/lab/shared-3d-scene";
+import Shared3DScene from "@/components/lab/shared-3d-scene-legacy";
 
 export default function Topic3DComponent() {
   return (
