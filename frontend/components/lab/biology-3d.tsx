@@ -9,6 +9,7 @@ import {
   Network,
   ChevronDown,
 } from "lucide-react";
+import { BiologyCellScene, type BiologyCellSceneProps } from "@/components/lab/3d-rig/biology-cell-scene";
 
 const BIOLOGY_3D_TITLES: Record<string, { title: string; subtitle: string; color: string }> = {
   biomolecules: { title: "Biomolecules", subtitle: "Carbohydrates, proteins, lipids, nucleic acids", color: "#3b82f6" },
@@ -294,47 +295,16 @@ function FlowerIcon(props: any) {
   );
 }
 
-export function BiologyCell3D() {
-  const [activeOrganelle, setActiveOrganelle] = useState<string>("nucleus");
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-3 pb-3 border-b border-border">
-        <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center"><Microscope className="h-5 w-5 text-green-600" /></div>
-        <div><h2 className="font-semibold text-base">Cell Structure 3D</h2><p className="text-xs text-muted-foreground">Plant & animal cell ultrastructure</p></div>
-      </div>
-      <div className="flex gap-4 min-h-[clamp(320px,60vh,640px)]">
-        <div className="w-40 shrink-0 space-y-1.5 overflow-y-auto">
-          {["nucleus", "mitochondria", "chloroplast", "er", "golgi", "ribosome", "lysosome", "membrane", "wall"].map((o) => (
-            <button key={o} onClick={() => setActiveOrganelle(o)} className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-all ${activeOrganelle === o ? "bg-green-500/15 text-green-700 border border-green-500/30" : "hover:bg-muted/50 text-muted-foreground"}`}>
-              {o.charAt(0).toUpperCase() + o.slice(1)}
-            </button>
-          ))}
-        </div>
-        <div className="rounded-xl bg-muted/30 border border-border/50 dot-pattern flex items-center justify-center min-h-[clamp(320px,60vh,640px)]">
-          <div className="text-center space-y-2">
-            <div className="w-14 h-14 mx-auto rounded-full bg-green-500/10 border-2 border-green-500/30 flex items-center justify-center animate-pulse-subtle"><Microscope className="h-7 w-7 text-green-600" /></div>
-            <p className="font-semibold text-foreground text-sm capitalize">{activeOrganelle}</p>
-            <p className="text-xs text-muted-foreground max-w-xs">
-              {(() => {
-                const info: Record<string, string> = {
-                  nucleus: "Control center — houses DNA, nucleolus produces ribosomes",
-                  mitochondria: "Powerhouse — aerobic respiration generates ATP",
-                  chloroplast: "Photosynthesis — converts light to chemical energy",
-                  er: "Endoplasmic reticulum — protein (RER) & lipid (SER) synthesis",
-                  golgi: "Golgi bodies — modify, package, sort proteins",
-                  ribosome: "Protein synthesis — free or bound to RER",
-                  lysosome: "Intracellular digestion — contains hydrolytic enzymes",
-                  membrane: "Phospholipid bilayer — selectively permeable barrier",
-                  wall: "Cell wall (plants) — rigid cellulose structure",
-                };
-                return info[activeOrganelle] ?? "";
-              })()}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+/**
+ * Cell Structure 3D — upgraded in Task 4 to the shared 3D pipeline
+ * (`components/lab/3d-rig/biology-cell-scene.tsx`: Shared3DScene rig, PBR cell
+ * model, plant/animal toggle, 7 concept-JSON hotspots).
+ *
+ * Kept as a thin delegate so every existing importer of this module keeps
+ * working unchanged, and so `<BiologyCell3D />` no longer renders a 2D stub.
+ */
+export function BiologyCell3D(props: BiologyCellSceneProps = {}) {
+  return <BiologyCellScene {...props} />;
 }
 
 export function BiologyDNA3D() {

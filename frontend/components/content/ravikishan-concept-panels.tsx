@@ -63,6 +63,15 @@ type ManifestEntry = {
   data: ConceptData & { notes?: string[] };
 };
 
+/**
+ * Public alias of the 2D panel's concept shape, so showcase pages (Tasks 4–7)
+ * can pass the manifest entry straight into `ConceptKnowledgeGrid`.
+ */
+export type RavikishanConceptData = ConceptData;
+
+/** Public alias of a single manifest row. */
+export type RavikishanManifestEntry = ManifestEntry;
+
 type Props = {
   classSlug: string;
   subjectSlug: string;
@@ -344,7 +353,7 @@ function FieldCard({
   );
 }
 
-function ConceptKnowledgeGrid({ data }: { data: ConceptData }) {
+export function ConceptKnowledgeGrid({ data }: { data: ConceptData }) {
   const populatedCount = useMemo(() => {
     return KNOWLEDGE_FIELDS.filter((f) => {
       const v = data[f.key];

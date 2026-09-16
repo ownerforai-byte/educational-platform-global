@@ -1,65 +1,108 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft, Cuboid } from "lucide-react";
-import { BiologyCell3D } from "@/components/lab/biology-3d";
+import { Suspense, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { LabPageShell } from "@/components/lab/lab-page-shell";
+import { BiologyCellScene } from "@/components/lab/3d-rig/biology-cell-scene";
+import { SpotIndex } from "@/components/lab/3d-rig/spot-index";
+import { CELL_HOTSPOTS, resolveCellTopicRef } from "@/components/lab/3d-rig/biology-cell-hotspots";
+import { useTopicConceptData } from "@/components/lab/3d-rig/concept-lookup";
+import {
+  ConceptKnowledgeGrid,
+  type RavikishanConceptData,
+} from "@/components/content/ravikishan-concept-panels";
+
+/**
+ * Showcase 1 (Task 4) — /lab/biology/bio-3d-cell
+ *
+ * Deep link (resolves real concept JSON, not demo strings — AC-07):
+ *   /lab/biology/bio-3d-cell?class=class-11-notes&subject=biology
+ *     &unit=cell-biology&topic=detail-structure-of-eukaryotic-cells
+ *
+ * `classSlug`/`subjectSlug`/`unitId`/`topicSlug` are accepted as aliases, and
+ * `unit=cell-biology` is mapped onto the published unit directory by
+ * `resolveCellTopicRef`. Missing/unknown values fall back to the cell topic.
+ */
+function BiologyCell3DContent() {
+  const searchParams = useSearchParams();
+  const [activeHotspotId, setActiveHotspotId] = useState("");
+
+  const topicRef = useMemo(
+    () =>
+      resolveCellTopicRef({
+        classSlug: searchParams.get("class") ?? searchParams.get("classSlug"),
+        subjectSlug: searchParams.get("subject") ?? searchParams.get("subjectSlug"),
+        unitId: searchParams.get("unit") ?? searchParams.get("unitId"),
+        topicSlug: searchParams.get("topic") ?? searchParams.get("topicSlug"),
+      }),
+    [searchParams],
+  );
+
+  const { data, entry, loading } = useTopicConceptData(topicRef);
+  const activeHotspot = CELL_HOTSPOTS.find((hotspot) => hotspot.id === activeHotspotId) ?? null;
+
+  const topicTitle =
+    typeof entry?.data.topicTitle === "string" && entry.data.topicTitle.trim().length > 0
+      ? entry.data.topicTitle
+      : "Cell Ultrastructure";
+
+  // The manifest row is validated at runtime by `toConceptData` for the 3D
+  // panel; the 2D grid takes the published shape so both read the same object.
+  const gridData = useMemo(
+    () => (entry?.data ?? {}) as unknown as RavikishanConceptData,
+    [entry],
+  );
+
+  return (
+    <LabPageShell
+      subject="biology"
+      unit="Unit 1 · Cell Biology"
+      topic={topicTitle}
+      labId="bio-3d-cell"
+      title="Cell Structure 3D — Plant & Animal Cell Ultrastructure"
+      activeHotspot={
+        activeHotspot
+          ? { title: activeHotspot.label, summary: activeHotspot.summaryA11ySentence }
+          : null
+      }
+      sidebarContent={
+        <div className="space-y-4">
+          <SpotIndex
+            hotspots={CELL_HOTSPOTS}
+            activeId={activeHotspotId}
+            onFocus={setActiveHotspotId}
+          />
+          <div className="border-t border-border/50 pt-3">
+            <ConceptKnowledgeGrid data={gridData} />
+          </div>
+        </div>
+      }
+    >
+      <BiologyCellScene
+        classSlug={topicRef.classSlug}
+        subjectSlug={topicRef.subjectSlug}
+        unitId={topicRef.unitId}
+        topicSlug={topicRef.topicSlug}
+        activeHotspotId={activeHotspotId}
+        onOpenHotspot={setActiveHotspotId}
+        conceptData={data}
+        showSpotIndex={false}
+      />
+      <p className="mt-3 text-[11px] text-muted-foreground">
+        Concept JSON:{" "}
+        <code className="font-mono">
+          {topicRef.classSlug}/{topicRef.subjectSlug}/{topicRef.unitId}/{topicRef.topicSlug}
+        </code>
+        {loading ? " — resolving…" : entry ? "" : " — not published yet, showing field slots"}
+      </p>
+    </LabPageShell>
+  );
+}
 
 export default function BiologyCell3DPage() {
   return (
-    <div className="py-4 md:py-6">
-      <div className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Link href="/lab/biology" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">Back to Biology Lab</span>
-            </Link>
-            <div className="h-5 w-px bg-border" />
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#22c55e18" }}>
-                <Cuboid className="h-4 w-4" style={{ color: "#22c55e" }} />
-              </div>
-              <div>
-                <h1 className="text-sm font-semibold leading-none">Cell Structure 3D</h1>
-                <p className="text-[10px] text-muted-foreground mt-0.5">Unit 1 · Plant and animal cell ultrastructure.</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <Link href="/lab/3d" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-card hover:bg-muted text-sm transition-all">
-              <Cuboid className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">All 3D</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5">
-        <div className="elev-2 rounded-2xl border border-border overflow-hidden bg-card">
-          <div className="flex items-center gap-3 px-5 py-3 border-b border-border" style={{ background: "linear-gradient(to right, #22c55e08, transparent)" }}>
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: "#22c55e18" }}>
-              <Cuboid className="h-4 w-4" style={{ color: "#22c55e" }} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <h2 className="font-semibold text-base">Cell Structure 3D</h2>
-              <p className="text-xs text-muted-foreground truncate">Plant and animal cell ultrastructure.</p>
-            </div>
-            <span className={`shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-emerald-100 text-emerald-700 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800`}>Active</span>
-          </div>
-          <div className="p-5">
-            <BiologyCell3D />
-          </div>
-        </div>
-        <div className="mt-5">
-          <h3 className="font-semibold text-sm text-muted-foreground mb-3">Related Labs</h3>
-          <div className="flex flex-wrap gap-2">
-            {[{ id: 'bio-3d-dna', title: 'DNA & Genetics 3D' }, { id: 'bio-3d-advanced', title: 'Biology 3D Advanced' }, { id: 'bio-3d-ecology', title: 'Ecology & Ecosystem 3D' }, { id: 'bio-3d-human', title: 'Human Body Systems 3D' }, { id: 'bio-3d-evolution', title: 'Evolution & Classification 3D' }, { id: 'bio-calc-punnett', title: 'Punnett Square Solver' }].map((l) => (
-              <Link key={l.id} href={"/lab/" + l.id} className="stat-pill">
-                <span className="text-muted-foreground">{l.title}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Suspense fallback={<div className="p-6 text-sm text-muted-foreground">Loading 3D cell…</div>}>
+      <BiologyCell3DContent />
+    </Suspense>
   );
 }
