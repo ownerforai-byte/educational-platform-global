@@ -185,3 +185,98 @@ export const MathGridPlasticMaterial = forwardRef<StandardMaterialRef, MaterialP
     );
   },
 );
+/* ── Phase 1 additions — emissive hotspot-state presets ──────────────────────
+   Consumed only by the opt-in `<KnowledgeHotspot style="enhanced" />` /
+   `<RoundedHotspot />` path. Additive: the nine presets above are untouched, and
+   none of these are ever mounted unless `style="enhanced"` is passed.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+export type EmissiveHotspotMaterialProps = MaterialProps & {
+  emissive?: string;
+  emissiveIntensity?: number;
+  roughness?: number;
+  metalness?: number;
+};
+
+export const EmissiveLockedMaterial = forwardRef<StandardMaterialRef, EmissiveHotspotMaterialProps>(
+  function EmissiveLockedMaterial(
+    { color = "#64748b", emissive, emissiveIntensity = 0.35, children, ...rest },
+    ref,
+  ) {
+    return (
+      <meshStandardMaterial
+        {...baseMaterialProps}
+        ref={ref}
+        color={color}
+        emissive={emissive ?? color}
+        emissiveIntensity={emissiveIntensity}
+        roughness={0.5}
+        metalness={0.15}
+        {...rest}
+      >
+        {children}
+      </meshStandardMaterial>
+    );
+  },
+);
+
+export const EmissiveActiveMaterial = forwardRef<StandardMaterialRef, EmissiveHotspotMaterialProps>(
+  function EmissiveActiveMaterial(
+    { color = "#3b82f6", emissive, emissiveIntensity = 0.85, children, ...rest },
+    ref,
+  ) {
+    return (
+      <meshStandardMaterial
+        {...baseMaterialProps}
+        ref={ref}
+        color={color}
+        emissive={emissive ?? color}
+        emissiveIntensity={emissiveIntensity}
+        roughness={0.28}
+        metalness={0.25}
+        {...rest}
+      >
+        {children}
+      </meshStandardMaterial>
+    );
+  },
+);
+
+export const EmissiveCompleteMaterial = forwardRef<StandardMaterialRef, EmissiveHotspotMaterialProps>(
+  function EmissiveCompleteMaterial(
+    { color = "#22c55e", emissive, emissiveIntensity = 0.6, children, ...rest },
+    ref,
+  ) {
+    return (
+      <meshStandardMaterial
+        {...baseMaterialProps}
+        ref={ref}
+        color={color}
+        emissive={emissive ?? color}
+        emissiveIntensity={emissiveIntensity}
+        roughness={0.35}
+        metalness={0.2}
+        {...rest}
+      >
+        {children}
+      </meshStandardMaterial>
+    );
+  },
+);
+
+/**
+ * State → material lookup for the enhanced hotspot marker. Annotated with a
+ * single callable component type (rather than the inferred 3-way union) so
+ * `<StateMaterial />` is valid JSX at the render site.
+ */
+export const HOTSPOT_EMISSIVE_MATERIALS: Record<
+  "locked" | "active" | "complete",
+  React.ForwardRefExoticComponent<
+    EmissiveHotspotMaterialProps & React.RefAttributes<MeshStandardMaterial>
+  >
+> = {
+  locked: EmissiveLockedMaterial,
+  active: EmissiveActiveMaterial,
+  complete: EmissiveCompleteMaterial,
+};
+

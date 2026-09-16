@@ -2,14 +2,51 @@
 
 import React, { useRef, type KeyboardEvent } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { Html, RoundedBox } from "@react-three/drei";
 import type { Mesh } from "three";
 import { cn } from "@/lib/utils";
-import type { KnowledgeHotspotProps } from "./types";
+import { HOTSPOT_EMISSIVE_MATERIALS } from "./pbr-materials";
+import type { KnowledgeHotspotProps, SceneTier } from "./types";
 
-export function KnowledgeHotspot({ def, onOpen, isActive, reducedMotion = false }: KnowledgeHotspotProps) {
+/** Phase 1 — opt-in marker states (purely additive). */
+export type HotspotVisualState = "locked" | "active" | "complete";
+export type HotspotStyle = "classic" | "enhanced";
+
+/**
+ * `KnowledgeHotspotProps` widened with the additive Phase 1 props. Every new
+ * prop is optional and defaulted, so existing call sites are unaffected.
+ */
+export type KnowledgeHotspotEnhancedProps = KnowledgeHotspotProps & {
+  /** "classic" (default) = today's exact sphere marker. "enhanced" = rounded box + emissive state material. */
+  style?: HotspotStyle;
+  /** Explicit state; defaults to `isActive ? "active" : "locked"`. */
+  state?: HotspotVisualState;
+  /** "low" trims bevel/smoothness so mobile GPUs stay cheap. */
+  tier?: SceneTier;
+};
+
+export function KnowledgeHotspot({
+  def,
+  onOpen,
+  isActive,
+  reducedMotion = false,
+  style = "classic",
+  state,
+  tier,
+}: KnowledgeHotspotEnhancedProps) {
   const meshRef = useRef<Mesh>(null);
   const iconColor = def.iconColor ?? "#3b82f6";
+
+  // Phase 1: computed but never *used* while `style === "classic"`, so the
+  // default output stays identical to the pre-Phase-1 marker.
+  const enhanced = style === "enhanced";
+  const visualState: HotspotVisualState = state ?? (isActive ? "active" : "locked");
+  const StateMaterial = HOTSPOT_EMISSIVE_MATERIALS[visualState];
+  const roundedSmoothness = tier === "low" ? 1 : 4;
+  const roundedBevelSegments = tier === "low" ? 1 : 3;
+  const stateEmissiveOverride = reducedMotion
+    ? { emissiveIntensity: visualState === "active" ? 0.6 : 0.3 }
+    : {};
 
   useFrame(({ clock }) => {
     if (reducedMotion) return; // prefers-reduced-motion: no auto-animation
@@ -33,18 +70,37 @@ export function KnowledgeHotspot({ def, onOpen, isActive, reducedMotion = false 
 
   return (
     <group position={def.position}>
-      <mesh ref={meshRef}>
-        <sphereGeometry args={[0.08, 24, 24]} />
-        <meshStandardMaterial
-          color={iconColor}
-          emissive={iconColor}
-          emissiveIntensity={isActive ? 0.55 : 0.3}
-          transparent
-          opacity={0.85}
-          roughness={0.35}
-          metalness={0.15}
-        />
-      </mesh>
+      {enhanced ? (
+        <RoundedBox
+          ref={meshRef}
+          args={[0.15, 0.15, 0.15]}
+          radius={0.035}
+          smoothness={roundedSmoothness}
+          bevelSegments={roundedBevelSegments}
+        >
+          <StateMaterial
+            color={iconColor}
+            emissive={iconColor}
+            transparent
+            opacity={0.92}
+            {...stateEmissiveOverride}
+          />
+        </RoundedBox>
+      ) : (
+        /* ── classic path: identical to the pre-Phase-1 output ── */
+        <mesh ref={meshRef}>
+          <sphereGeometry args={[0.08, 24, 24]} />
+          <meshStandardMaterial
+            color={iconColor}
+            emissive={iconColor}
+            emissiveIntensity={isActive ? 0.55 : 0.3}
+            transparent
+            opacity={0.85}
+            roughness={0.35}
+            metalness={0.15}
+          />
+        </mesh>
+      )}
 
       <Html
         occlude
@@ -81,6 +137,14 @@ export function KnowledgeHotspot({ def, onOpen, isActive, reducedMotion = false 
       </Html>
     </group>
   );
+}
+
+/**
+ * Phase 1 — rounded-marker variant exported *alongside* `<KnowledgeHotspot>`.
+ * Purely additive sugar: it is exactly `style="enhanced"`.
+ */
+export function RoundedHotspot(props: Omit<KnowledgeHotspotEnhancedProps, "style">) {
+  return <KnowledgeHotspot {...props} style="enhanced" />;
 }
 
 export default KnowledgeHotspot;
