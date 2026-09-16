@@ -7,7 +7,7 @@ import { Refraction3D } from "@/components/lab/physics-vectors-optics-3d";
 export default function Refraction3DPage() {
   return (
     <div className="py-4 md:py-6">
-      <div className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <div className="sticky top-12 md:top-14 z-30 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Link href="/lab/physics" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
