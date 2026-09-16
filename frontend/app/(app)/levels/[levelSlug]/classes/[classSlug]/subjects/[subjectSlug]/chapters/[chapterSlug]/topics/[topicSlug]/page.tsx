@@ -1,3 +1,4 @@
+import { SYLLABUS } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import Link from "next/link";
@@ -15,26 +16,21 @@ export default async function TopicPage({
 }) {
   const { levelSlug, classSlug, subjectSlug, chapterSlug, topicSlug } = await params;
 
-  // Find the syllabus data for this topic
   let topicTitle = topicSlug;
-  let isFromSyllabus = false;
 
   if (classSlug.includes("notes")) {
-    // Try to find topic in syllabus
     const { getSubjectSyllabus } = await import("@/lib/syllabus");
     const subject = getSubjectSyllabus(classSlug, subjectSlug);
     if (subject) {
-      // Find the unit/chapter that contains this topic
       const units = (subject as any).units || [];
       for (const unit of units) {
         const topics = (unit as any).topics || [];
-        const topicIndex = topics.findIndex((t: string) => 
+        const topicIndex = topics.findIndex((t: string) =>
           t.toLowerCase().replace(/\s+/g, "-") === topicSlug ||
           topicSlug === `topic-${topics.indexOf(t) + 1}`
         );
         if (topicIndex >= 0) {
           topicTitle = topics[topicIndex] || topicSlug;
-          isFromSyllabus = true;
           break;
         }
       }
@@ -67,8 +63,8 @@ export default async function TopicPage({
       <div className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
         This topic will be available once we populate the database with study materials.
         <br />
-        <Link 
-          href={`/${classSlug}/${subjectSlug}`} 
+        <Link
+          href={`/${classSlug}/${subjectSlug}`}
           className="text-primary hover:underline mt-2 inline-block"
         >
           View all notes →
@@ -79,24 +75,17 @@ export default async function TopicPage({
 }
 
 export function generateStaticParams() {
-  const params: Array<{ levelSlug: string; classSlug: string; subjectSlug: string; chapterSlug: string; topicSlug: string }> = [];
-  for (const cls of [
-    { slug: "class-11-notes", subjects: ["mathematics", "physics", "chemistry", "biology"] },
-    { slug: "class-12-notes", subjects: ["mathematics", "physics", "chemistry", "biology"] },
-  ]) {
-    for (const subjectSlug of cls.subjects) {
-      for (let unit = 1; unit <= 10; unit++) {
-        for (let topic = 1; topic <= 5; topic++) {
-          params.push({
-            levelSlug: "library",
-            classSlug: cls.slug,
-            subjectSlug,
-            chapterSlug: `unit-${unit}`,
-            topicSlug: `topic-${topic}`,
-          });
-        }
-      }
-    }
-  }
-  return params;
+  return SYLLABUS.flatMap((cls) =>
+    cls.subjects.flatMap((subject) =>
+      subject.units.flatMap((unit, unitIndex) =>
+        Array.from({ length: unit.topics.length }, (_, topicIndex) => ({
+          levelSlug: "library",
+          classSlug: cls.slug,
+          subjectSlug: subject.slug,
+          chapterSlug: `unit-${unitIndex + 1}`,
+          topicSlug: `topic-${topicIndex + 1}`,
+        }))
+      )
+    )
+  );
 }
