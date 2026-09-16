@@ -149,7 +149,7 @@ All 9 files exist under `frontend/components/lab/3d-rig/` and `npm run typecheck
 ## Task 4: Showcase 1 — Biology Cell 3D
 
 **Priority**: HIGH
-**Status**: pending
+**Status**: ✅ **COMPLETED**
 **Covers**: AC-06, AC-07, AC-10, AC-12
 **Depends On**: Task 3
 
@@ -182,13 +182,39 @@ Upgrade `frontend/components/lab/biology-3d.tsx` (or `biology-cell-3d.tsx`) to u
 
 | TR-ID | Type | Requirement | Evidence |
 |---|---|---|---|
-| T4-TR1 | rule | 6+ hotspots render, clickable. | Count DOM marker HTML instances. |
-| T4-TR2 | rule | Plant/Animal toggle hides chloroplasts (animal) / adds them (plant) with <500 ms transition. | GSAP scale opacity animation visible. |
+| T4-TR1 | rule | 6+ hotspots render, clickable. | `tests/components/lab/biology-cell-dom.test.tsx` mounts `SpotIndex` in jsdom and counts real `<button>` instances: exactly `CELL_HOTSPOTS.length` (= **7** ≥ 6) buttons, one per hotspot label, each click invoking `onFocus(id)` + `onCameraFocus(position)` (AC-06). |
+| T4-TR2 | rule | Plant/Animal toggle hides chloroplasts (animal) / adds them (plant) with <500 ms transition. | DOM: `CellModeToggle` renders exactly 2 buttons inside `role="group"[aria-label="Cell type"]`, `aria-pressed` tracks the active mode, and clicks emit `"plant"` / `"animal"` (`biology-cell-dom.test.tsx`). Rules: `PLANT_ONLY_ORGANELLES` / `ANIMAL_ONLY_ORGANELLES` visibility per mode (`biology-cell-hotspots.test.ts`). Animation: `OrganelleGroup` gsap `scale` **0.34 s in / 0.26 s out** (both < 500 ms; instant when `prefers-reduced-motion`). |
 | T4-TR3 | rubric | Cell visual "reads" as high-quality educational schematic. | Score 0–4 (≥3): 4 = organelles distinct, lab-accurate; 3 = all present but simplified; 2 = ≥4 shapes only. |
 | T4-TR4 | rule | ≥60 FPS desktop / ≥45 FPS mobile (low tier). | FPS sample log 10 s. |
 
 ### Completion Evidence
-TBD.
+Machine-verified: **`npm run test:run` → 11 files / 136 tests pass**, `npm run typecheck` exits 0, `npm run build` prerenders **1,194/1,194** pages with no `useSearchParams`/CSR-bailout warnings, and the production server answers HTTP 200 on `/`, `/lab`, `/lab/3d`, `/notes`, `/subjects`, `/lab/biology/bio-3d-cell`.
+
+| Deliverable | Size | Notes |
+|---|---|---|
+| `frontend/components/lab/3d-rig/biology-cell-scene.tsx` | 23,048 B / 739 ln | Procedural GLTF-free PBR cell: noise-displaced icosahedron membrane, cytoplasm, nucleus + nucleolus + nuclear-pore tori, rough/smooth ER, Golgi stack, ×4 mitochondria with cristae helices, free ribosomes, lysosomes + centrioles (animal), cell wall + central vacuole + thylakoid chloroplasts (plant). `OrganelleGroup` gsap `scale` **0.34 s in / 0.26 s out** (line 168, both < 500 ms; instant under `prefers-reduced-motion`). Resolves its own concept JSON but accepts pre-resolved `conceptData`. |
+| `frontend/components/lab/3d-rig/biology-cell-hotspots.ts` | 6,087 B / 168 ln | **7 hotspots** (T4-TR1 needs ≥ 6) with scope-#3 `fieldKeys` mapping, `CELL_UNIT_ALIASES` + `resolveCellTopicRef`, `PLANT_ONLY_ORGANELLES`/`ANIMAL_ONLY_ORGANELLES` + `isOrganelleVisible`. |
+| `frontend/components/lab/3d-rig/concept-lookup.ts` | 5,530 B / 167 ln | `parseManifest` · `isConceptEntryForUnit` · `findConceptEntry` · `toConceptData` · `countPopulatedFields` · `useTopicConceptData`, reading the real `ravikishan/manifest.json` corpus (AC-07), never demo strings; unit lookup falls back to the first published concept. |
+| `frontend/app/(app)/lab/biology/bio-3d-cell/page.tsx` | 4,047 B / 108 ln (+100/−57) | Rewritten onto `LabPageShell` + `BiologyCellScene` + `SpotIndex` sidebar + `ConceptKnowledgeGrid`. Deep link `?class=&subject=&unit=&topic=` (aliases `classSlug`/`subjectSlug`/`unitId`/`topicSlug`); `useSearchParams` wrapped in `<Suspense fallback="Loading 3D cell…">`. |
+| `frontend/components/lab/biology-3d.tsx` | +11/−41 | Legacy inline `BiologyCell3D` sidebar/canvas replaced by a back-compat wrapper delegating to `BiologyCellScene`, so `biology-cell-3d.tsx` keeps working. |
+| `frontend/components/content/ravikishan-concept-panels.tsx` | +10/−1 | `ConceptKnowledgeGrid` reused by the sidebar; one object feeds both the 2D grid and the 3D panel. |
+| `frontend/tests/components/lab/biology-cell-hotspots.test.ts` | 9,393 B / 24 tests | Pure rules: hotspot inventory ≥ 6 + unique ids, `fieldKeys` ⊆ taxonomy, plant/animal visibility tables, manifest resolution + malformed-row tolerance (AC-07), `toConceptData` projection checked against the real corpus entry. |
+| `frontend/tests/components/lab/biology-cell-dom.test.tsx` | 8,467 B / 11 tests | jsdom render contract against production components (only drei/fiber/shared-scene stubbed): SpotIndex button inventory + `onFocus`/`onCameraFocus` wiring, `CellModeToggle` group/`aria-pressed`/emitted mode, `KnowledgeSpotPanelContent` field rendering (`.katex` emitted for math), AC-15 empty-slot placeholders, Esc/close, unresolved-JSON no-op. |
+
+**T4-TR1 / T4-TR2 / AC-06 / AC-07 / AC-15 — proven by tests incl. a mutation check** (mutants injected into production code, then reverted):
+
+| Mutant (production code) | Test that caught it |
+|---|---|
+| `spot-index.tsx`: `onFocus(hotspot.id)` → `onFocus(hotspot.label)` | SpotIndex … reports the clicked hotspot id and its camera target (AC-06 focus wiring) |
+| `biology-cell-scene.tsx`: `onChange(option.id)` → `onChange(mode)` | CellModeToggle … emits the selected mode so the scene can add/remove organelles (T4-TR2) |
+| `knowledge-spot-panel.tsx`: `!conceptData` guard removed | … renders nothing when the concept JSON could not be resolved |
+| `knowledge-spot-panel.tsx`: `Empty — populate {key}` → `Missing {key}` | … renders an explicit slot placeholder for empty fields (AC-15) |
+
+Mutated run → 4 targeted failures; restored run → 11/11 pass, sources byte-identical, no `.bak` leftovers.
+
+`bio-3d-cell` uses `useSearchParams`, so its SSR HTML carries the shell + `Loading 3D cell…` skeleton and the scene hydrates client-side — page strings are legitimately absent from server HTML (verified the Suspense fallback renders, not an error boundary).
+
+**Not machine-verified — stated honestly:** T4-TR3 (rubric 0–4) needs a human visual score ≥ 3; code-side support is that every listed organelle is a distinct mesh with its own PBR material (transmissive membrane, thylakoid stacks, cristae helices), not ≥ 4 generic shapes. T4-TR4 (FPS) needs a real GPU/WebGL context — jsdom cannot sample frames; tier gating (`useSceneTier` → cores/DPR/mobile) is wired and the 10 s sample must be taken in a browser as the TR requires.
 
 ---
 
@@ -507,14 +533,17 @@ npm run build  →  BUILD_EXIT: 0
 ```
 
 **T12-TR4 — Production smoke test (6 routes, `next start`)** ✅
+Re-run against the **post-Task-4 build** (the `bio-3d-cell` page was rewritten in Task 4, so its payload legitimately changed from 60,795 B → 54,905 B — it now ships the `LabPageShell` + Suspense skeleton and hydrates the scene client-side):
 | Route | Result |
 |---|---|
-| `/` | HTTP 200 (13,956 B) |
-| `/lab` | HTTP 200 (55,955 B) |
-| `/lab/3d` | HTTP 200 (106,057 B) — confirms the shell "All 3D" link target exists |
-| `/notes` | HTTP 200 (2,973,025 B) |
-| `/subjects` | HTTP 200 (185,735 B) |
-| `/lab/biology/bio-3d-cell` | HTTP 200 (60,795 B) |
+| `/` | HTTP 200 (14,026 B) |
+| `/lab` | HTTP 200 (56,594 B) |
+| `/lab/3d` | HTTP 200 (106,696 B) — confirms the shell "All 3D" link target exists |
+| `/notes` | HTTP 200 (2,973,095 B) |
+| `/subjects` | HTTP 200 (185,805 B) |
+| `/lab/biology/bio-3d-cell` | HTTP 200 (54,905 B) |
+
+Also verified this run: the build reports **no `useSearchParams`/CSR-bailout warnings** and prerenders 1,194/1,194 pages, and the `bio-3d-cell` server HTML contains the shell + `Loading 3D cell…` fallback (not an error boundary).
 
 **T12-TR3 — AC-15 field audit (grep per field name → file:line)** ✅
 All 18 spec fields (+ `practice`) have concrete render sites. `components/content/ravikishan-concept-panels.tsx` is the canonical `ConceptKnowledgeGrid` and covers 16 of them; empty fields render an explicit placeholder at line 299:
@@ -553,3 +582,40 @@ All 18 spec fields (+ `practice`) have concrete render sites. `components/conten
 4. `<color attach="background" args={["transparent"]} />` → THREE parses this as opaque black. Removed; `gl={{ alpha: true }}` handles transparency.
 
 Also completed in this pass: `scene-loader.tsx` now has a real `webglcontextlost` listener + 3 s timeout + first-frame `useFrame` gate (previously dead code); tier detection fixed for iPhone-SE-class devices (`mobile + ≤6 cores → low`); offline-safe Lightformer environment replaces the runtime CDN HDR fetch; `fogColor` is overridable instead of hardcoded `#0f172a`; `--card-viz` CSS var defined (light + dark); `reducedMotion` plumbed into the hotspot `useFrame` pulse; redundant `role="button"` removed; legacy `shared-3d-scene.tsx` renamed to `shared-3d-scene-legacy.tsx` with both importers updated; `DevContrastAudit` wired into `layout.tsx` (dev-only).
+
+---
+
+### Blocking fix (post-gate): `THREE.ArrowHelper` subclass class-field init-order crash
+
+**Status**: FIXED + regression-tested.
+
+**Symptom (browser runtime)**: lab pages fell through to `app/error.tsx` ("Something went wrong!"); console showed
+
+```
+TypeError: Cannot read properties of undefined (reading 'copy')
+```
+
+**Root cause**: `components/lab/animated-arrow-helper.ts` declares `class LiveArrow extends THREE.ArrowHelper`.
+`THREE.ArrowHelper`'s constructor calls `this.setDirection(dir)` **before it returns**
+(`three/build/three.core.js`). With `tsconfig.target = ES2022`, the subclass's own class fields
+(`baseDir`, `baseLength`, `baseHeadLength`, ...) are only installed *after* `super()` completes, so during that
+boot call `this.baseDir` is `undefined` and `this.baseDir.copy(dir)` throws -- taking down every topic visual
+built on `LiveArrow`.
+
+**Fix**: guard the baseline write in the `setDirection` override so the boot-time call is a no-op; the
+constructor seeds the baseline right after `super()`.
+
+**Regression test** (permanent, `tests/**` mirrors source):
+`frontend/tests/components/lab/animated-arrow-helper.test.ts`
+
+| Gate | Command | Result |
+|---|---|---|
+| New regression test | `npx vitest run tests/components/lab/animated-arrow-helper.test.ts` | 9 passed (9) |
+| Mutation check (guard stripped) | same file, `if (this.baseDir)` removed | 7 failed with the exact reported error at `animated-arrow-helper.ts:376:18`, via `new ArrowHelper` (`three.core.js`) -> `new LiveArrow` (`animated-arrow-helper.ts:259:5`) -- proves the test is a real guard, not a tautology |
+| Full suite | `npm run test:run -w frontend` | 9 files / 101 tests passed |
+| Typecheck | `npm run typecheck` | exit 0 |
+
+**Sibling audit**: only two `THREE.ArrowHelper` subclasses exist in the codebase -- `LiveArrow` (fixed) and
+`DynamicArrowHelper` (`components/lab/dynamic-arrow-helper.ts`), whose `setDirection` override was already
+null-guarded (`if (this.shaftMesh)`), so it is immune to the same trap. No other `extends THREE.*` subclasses
+exist.
