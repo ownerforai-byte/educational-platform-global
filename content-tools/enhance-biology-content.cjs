@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const physicsDir = path.join(__dirname, '../content/ravikishan/class-11-notes/physics');
+const bioDir = path.join(__dirname, '../content/ravikishan/class-11-notes/biology');
 
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);
@@ -20,7 +20,6 @@ function enhanceFile(filePath) {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     if (!data.enrichedContent) return;
 
-    // Add missing fields if empty
     const fields = [
       'universalFacts', 'formulas', 'keyPoints', 'specialNotes', 
       'importantStatements', 'examShortTricks', 'mcs', 'importantConcepts', 'importantTasks'
@@ -43,5 +42,5 @@ function enhanceFile(filePath) {
   }
 }
 
-processDirectory(physicsDir);
-console.log("All Physics files enhanced!");
+processDirectory(bioDir);
+console.log("All Biology files enhanced!");

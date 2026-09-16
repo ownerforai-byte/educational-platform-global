@@ -364,7 +364,19 @@ export class LiveArrow extends THREE.ArrowHelper {
 
   override setDirection(dir: THREE.Vector3): this {
     super.setDirection(dir);
-    this.baseDir.copy(dir).normalize();
+
+    // Class-field init-order trap: `THREE.ArrowHelper`'s constructor calls
+    // `this.setDirection( dir )` (see three/src/helpers/ArrowHelper.js) BEFORE
+    // this subclass's fields are installed. `tsconfig.target` is ES2022, so
+    // `baseDir` & friends are defined only after `super()` returns; during that
+    // boot call `this.baseDir` is `undefined` and touching it throws
+    // "Cannot read properties of undefined (reading 'copy')", taking the whole
+    // page down to the error boundary. The guard makes the boot call a no-op -
+    // the constructor seeds the baseline right afterwards.
+    if (this.baseDir) {
+      this.baseDir.copy(dir).normalize();
+    }
+
     return this;
   }
 

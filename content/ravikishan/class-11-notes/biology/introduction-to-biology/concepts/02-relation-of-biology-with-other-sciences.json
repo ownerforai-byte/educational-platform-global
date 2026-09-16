@@ -108,7 +108,20 @@
       "Provide examples of how other sciences aid biological research.",
       "Explain the importance of interdisciplinary approaches."
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "problem": "Define and explain the importance of the topic.",
+        "solution": "Provide a clear definition and explain why it matters in biological sciences."
+      },
+      {
+        "problem": "Give three examples of the concept discussed.",
+        "solution": "Example 1: ... Example 2: ... Example 3: ..."
+      },
+      {
+        "problem": "Compare and contrast two related concepts.",
+        "solution": "Similarities: ... Differences: ..."
+      }
+    ],
     "visualization": {
       "type": "interactive",
       "component": "BiologyInterdisciplinary",
