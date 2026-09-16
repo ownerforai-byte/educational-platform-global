@@ -6,7 +6,7 @@ export interface FilterCharacteristic {
 export interface PeriodicFilterCategory {
   id: string;
   name: string;
-  classificationType: "nature" | "block" | "special_group" | "family";
+  classificationType: "nature" | "block" | "special_group" | "family" | "property";
   shortBadge: string;
   accentColor: string;
   oneLineSummary: string;
@@ -345,5 +345,405 @@ export const PERIODIC_FILTERS: Record<string, PeriodicFilterCategory> = {
     ],
     elementSymbols: ["He", "Ne", "Ar", "Kr", "Xe", "Rn", "Og"],
     testCondition: (el) => el.group === 18
+  },
+
+  chalcogens: {
+    id: "chalcogens",
+    name: "Chalcogens (Group 16)",
+    classificationType: "family",
+    shortBadge: "Group 16 (O–Lv)",
+    accentColor: "#059669",
+    oneLineSummary: "",
+    generalElectronicConfig: "ns² np⁴",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["O", "S", "Se", "Te", "Po", "Lv"],
+    testCondition: (el) => el.group === 16
+  },
+
+  pnictogens: {
+    id: "pnictogens",
+    name: "Pnictogens (Group 15)",
+    classificationType: "family",
+    shortBadge: "Group 15 (N–Mc)",
+    accentColor: "#7c3aed",
+    oneLineSummary: "",
+    generalElectronicConfig: "ns² np³",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["N", "P", "As", "Sb", "Bi", "Mc"],
+    testCondition: (el) => el.group === 15
+  },
+
+  carbon_group: {
+    id: "carbon_group",
+    name: "Carbon / Tetrel Group (Group 14)",
+    classificationType: "family",
+    shortBadge: "Group 14 (C–Fl)",
+    accentColor: "#475569",
+    oneLineSummary: "",
+    generalElectronicConfig: "ns² np²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["C", "Si", "Ge", "Sn", "Pb", "Fl"],
+    testCondition: (el) => el.group === 14
+  },
+
+  boron_group: {
+    id: "boron_group",
+    name: "Boron / Icosagen Group (Group 13)",
+    classificationType: "family",
+    shortBadge: "Group 13 (B–Nh)",
+    accentColor: "#b45309",
+    oneLineSummary: "",
+    generalElectronicConfig: "ns² np¹",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["B", "Al", "Ga", "In", "Tl", "Nh"],
+    testCondition: (el) => el.group === 13
+  },
+
+  alkaline_metals_cee: {
+    id: "alkaline_metals_cee",
+    name: "CEE Alkaline + Alkali Combined Reference Block",
+    classificationType: "family",
+    shortBadge: "CEE s-Block Families",
+    accentColor: "#b91c1c",
+    oneLineSummary: "",
+    generalElectronicConfig: "ns¹ + ns²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Li", "Be", "Na", "Mg", "K", "Ca", "Rb", "Sr", "Cs", "Ba", "Fr", "Ra"],
+    testCondition: (el) =>
+      (el.group === 1 && el.atomicNumber !== 1) || el.group === 2
+  },
+
+  post_transition_metals: {
+    id: "post_transition_metals",
+    name: "Post-Transition / Poor Metals",
+    classificationType: "family",
+    shortBadge: "Lower p-block Metals",
+    accentColor: "#92400e",
+    oneLineSummary: "",
+    generalElectronicConfig: "ns² np¹⁻³ · (n-1)d¹⁰",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Al", "Ga", "In", "Sn", "Tl", "Pb", "Bi", "Nh", "Fl", "Mc", "Lv"],
+    testCondition: (el) =>
+      el.category === "metal" &&
+      el.block === "p" &&
+      [13, 14, 15, 16].includes(el.group)
+  },
+
+  reactive_nonmetals: {
+    id: "reactive_nonmetals",
+    name: "Reactive Non-Metals (Excluding Noble Gases)",
+    classificationType: "family",
+    shortBadge: "Reactive p + H",
+    accentColor: "#047857",
+    oneLineSummary: "",
+    generalElectronicConfig: "1s¹ / ns² np¹⁻⁵",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["H", "C", "N", "O", "F", "P", "S", "Cl", "Se", "Br", "I", "At", "Ts"],
+    testCondition: (el) =>
+      el.category === "nonmetal" && el.group !== 18
+  },
+
+  noble_gases_cee: {
+    id: "noble_gases_cee",
+    name: "CEE Noble / Aerogen Reference Block",
+    classificationType: "family",
+    shortBadge: "CEE Inert Gases",
+    accentColor: "#6d28d9",
+    oneLineSummary: "",
+    generalElectronicConfig: "1s² / ns² np⁶",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["He", "Ne", "Ar", "Kr", "Xe", "Rn", "Og"],
+    testCondition: (el) => el.group === 18
+  },
+
+  radioactive_elements: {
+    id: "radioactive_elements",
+    name: "Radioactive Element Block",
+    classificationType: "special_group",
+    shortBadge: "Radioactive Z ≥ 84 + Tc, Pm",
+    accentColor: "#dc2626",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Tc", "Pm", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"],
+    testCondition: (el) => {
+      const radioactiveZ = new Set([43, 61, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118]);
+      return radioactiveZ.has(el.atomicNumber);
+    }
+  },
+
+  lanthanide_block: {
+    id: "lanthanide_block",
+    name: "Lanthanide Series Block",
+    classificationType: "family",
+    shortBadge: "4f Series (Z 58–71)",
+    accentColor: "#db2777",
+    oneLineSummary: "",
+    generalElectronicConfig: "[Xe] 4f¹⁻¹⁴ 5d⁰⁻¹ 6s²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu"],
+    testCondition: (el) => el.atomicNumber >= 58 && el.atomicNumber <= 71
+  },
+
+  actinide_block: {
+    id: "actinide_block",
+    name: "Actinide Series Block",
+    classificationType: "family",
+    shortBadge: "5f Series (Z 90–103)",
+    accentColor: "#be123c",
+    oneLineSummary: "",
+    generalElectronicConfig: "[Rn] 5f¹⁻¹⁴ 6d⁰⁻¹ 7s²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr"],
+    testCondition: (el) => el.atomicNumber >= 90 && el.atomicNumber <= 103
+  },
+
+  transition_metals_3d: {
+    id: "transition_metals_3d",
+    name: "3d Transition Series (First Row)",
+    classificationType: "family",
+    shortBadge: "3d (Z 21–30)",
+    accentColor: "#ea580c",
+    oneLineSummary: "",
+    generalElectronicConfig: "[Ar] 3d¹⁻¹⁰ 4s¹⁻²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn"],
+    testCondition: (el) => el.atomicNumber >= 21 && el.atomicNumber <= 30
+  },
+
+  transition_metals_4d: {
+    id: "transition_metals_4d",
+    name: "4d Transition Series (Second Row)",
+    classificationType: "family",
+    shortBadge: "4d (Z 39–48)",
+    accentColor: "#c2410c",
+    oneLineSummary: "",
+    generalElectronicConfig: "[Kr] 4d¹⁻¹⁰ 5s⁰⁻²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd"],
+    testCondition: (el) => el.atomicNumber >= 39 && el.atomicNumber <= 48
+  },
+
+  transition_metals_5d: {
+    id: "transition_metals_5d",
+    name: "5d Transition Series (Third Row)",
+    classificationType: "family",
+    shortBadge: "5d (Z 72–80 + La)",
+    accentColor: "#9a3412",
+    oneLineSummary: "",
+    generalElectronicConfig: "[Xe] 4f¹⁴ 5d¹⁻¹⁰ 6s²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg"],
+    testCondition: (el) => el.atomicNumber === 57 || (el.atomicNumber >= 72 && el.atomicNumber <= 80)
+  },
+
+  platinum_group_metals: {
+    id: "platinum_group_metals",
+    name: "Platinum-Group Metals (PGMs)",
+    classificationType: "special_group",
+    shortBadge: "Ru, Rh, Pd, Os, Ir, Pt",
+    accentColor: "#64748b",
+    oneLineSummary: "",
+    generalElectronicConfig: "4d⁷⁻¹⁰ 5s⁰⁻¹ / 5d⁶⁻⁹ 6s¹⁻²",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Ru", "Rh", "Pd", "Os", "Ir", "Pt"],
+    testCondition: (el) => ["Ru", "Rh", "Pd", "Os", "Ir", "Pt"].includes(el.symbol)
+  },
+
+  precious_metals: {
+    id: "precious_metals",
+    name: "Precious / Noble Metal Block",
+    classificationType: "special_group",
+    shortBadge: "Au, Ag, PGMs",
+    accentColor: "#a16207",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Ru", "Rh", "Pd", "Ag", "Os", "Ir", "Pt", "Au"],
+    testCondition: (el) => ["Ru", "Rh", "Pd", "Ag", "Os", "Ir", "Pt", "Au"].includes(el.symbol)
+  },
+
+  refractory_metals: {
+    id: "refractory_metals",
+    name: "Refractory Metal Block",
+    classificationType: "special_group",
+    shortBadge: "Ti, Zr, Hf, V, Nb, Ta, Cr, Mo, W, Re",
+    accentColor: "#78716c",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Ti", "Zr", "Hf", "V", "Nb", "Ta", "Cr", "Mo", "W", "Re"],
+    testCondition: (el) => ["Ti", "Zr", "Hf", "V", "Nb", "Ta", "Cr", "Mo", "W", "Re"].includes(el.symbol)
+  },
+
+  ferromagnetics: {
+    id: "ferromagnetics",
+    name: "Ferromagnetic Metal Block",
+    classificationType: "special_group",
+    shortBadge: "Fe, Co, Ni, Gd, Dy",
+    accentColor: "#1f2937",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Fe", "Co", "Ni", "Gd", "Dy"],
+    testCondition: (el) => ["Fe", "Co", "Ni", "Gd", "Dy"].includes(el.symbol)
+  },
+
+  diamagnetic_metals: {
+    id: "diamagnetic_metals",
+    name: "Diamagnetic Element Block (Common Metallic)",
+    classificationType: "property",
+    shortBadge: "Zn, Cd, Hg, Cu, Ag, Au, Pb…",
+    accentColor: "#334155",
+    oneLineSummary: "",
+    generalElectronicConfig: "d¹⁰ / full valence shell",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Cu", "Ag", "Au", "Zn", "Cd", "Hg", "Pb"],
+    testCondition: (el) => ["Cu", "Ag", "Au", "Zn", "Cd", "Hg", "Pb"].includes(el.symbol)
+  },
+
+  liquid_at_stp: {
+    id: "liquid_at_stp",
+    name: "Liquid-State Block (STP)",
+    classificationType: "property",
+    shortBadge: "Hg, Br₂ (near-mp: Cs, Ga, Fr, Rb)",
+    accentColor: "#0369a1",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Hg", "Br"],
+    testCondition: (el) => el.stateAtSTP === "liquid"
+  },
+
+  gas_at_stp: {
+    id: "gas_at_stp",
+    name: "Gaseous-State Block (STP)",
+    classificationType: "property",
+    shortBadge: "H, N, O, F, Cl + Noble Gases",
+    accentColor: "#0891b2",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["H", "He", "N", "O", "F", "Ne", "Cl", "Ar", "Kr", "Xe", "Rn", "Og"],
+    testCondition: (el) => el.stateAtSTP === "gas"
+  },
+
+  solid_at_stp: {
+    id: "solid_at_stp",
+    name: "Solid-State Block (STP)",
+    classificationType: "property",
+    shortBadge: "Metals + Non-Metal Solids",
+    accentColor: "#3f6212",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: [],
+    testCondition: (el) => el.stateAtSTP === "solid"
+  },
+
+  diatomic_elements: {
+    id: "diatomic_elements",
+    name: "Diatomic Molecular Element Block",
+    classificationType: "property",
+    shortBadge: "H₂ N₂ O₂ F₂ Cl₂ Br₂ I₂ (At₂)",
+    accentColor: "#4338ca",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["H", "N", "O", "F", "Cl", "Br", "I"],
+    testCondition: (el) => ["H", "N", "O", "F", "Cl", "Br", "I"].includes(el.symbol)
+  },
+
+  allotropes_block: {
+    id: "allotropes_block",
+    name: "Allotrope-Rich Element Block",
+    classificationType: "property",
+    shortBadge: "C, P, S, O, Sn, As, Se, B, Sb, Bi",
+    accentColor: "#65a30d",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["C", "P", "S", "O", "Sn", "As", "Se", "B", "Sb", "Bi"],
+    testCondition: (el) => ["C", "P", "S", "O", "Sn", "As", "Se", "B", "Sb", "Bi"].includes(el.symbol)
+  },
+
+  amphoteric_block: {
+    id: "amphoteric_block",
+    name: "Amphoteric Oxide / Hydroxide Block",
+    classificationType: "property",
+    shortBadge: "Be, Al, Ga, Sn, Pb, Zn, As, Sb, Bi oxides/hydroxides",
+    accentColor: "#be185d",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Be", "Al", "Ga", "Sn", "Pb", "Zn", "As", "Sb", "Bi"],
+    testCondition: (el) => ["Be", "Al", "Ga", "Sn", "Pb", "Zn", "As", "Sb", "Bi"].includes(el.symbol)
+  },
+
+  cee_high_yield_block: {
+    id: "cee_high_yield_block",
+    name: "CEE High-Yield Core Reference Block",
+    classificationType: "special_group",
+    shortBadge: "CEE Must-Know (H–Rn)",
+    accentColor: "#d97706",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["H", "Li", "Be", "B", "C", "N", "O", "F", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "K", "Ca", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Br", "Ag", "Sn", "I", "Ba", "Au", "Hg", "Pb", "U"],
+    testCondition: (el) => ["H", "Li", "Be", "B", "C", "N", "O", "F", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "K", "Ca", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Br", "Ag", "Sn", "I", "Ba", "Au", "Hg", "Pb", "U"].includes(el.symbol)
+  },
+
+  cee_ore_and_industry_block: {
+    id: "cee_ore_and_industry_block",
+    name: "CEE Ore-Metallurgy / Industrial Metal Block",
+    classificationType: "special_group",
+    shortBadge: "Fe, Cu, Zn, Al, Ag, Au, Pb, Cr, Ni, Sn, Mg, Na, K, Ca, Ti, W, Pt, U",
+    accentColor: "#92400e",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Fe", "Cu", "Zn", "Al", "Ag", "Au", "Pb", "Cr", "Ni", "Sn", "Mg", "Na", "K", "Ca", "Ti", "W", "Pt", "U"],
+    testCondition: (el) => ["Fe", "Cu", "Zn", "Al", "Ag", "Au", "Pb", "Cr", "Ni", "Sn", "Mg", "Na", "K", "Ca", "Ti", "W", "Pt", "U"].includes(el.symbol)
+  },
+
+  cee_exam_exception_block: {
+    id: "cee_exam_exception_block",
+    name: "CEE Exam Exception / Trap Element Block",
+    classificationType: "special_group",
+    shortBadge: "Cr, Cu, Mo, Ag, Au, Hg, Zn, N, O, Cl, Br, Pb, Bi",
+    accentColor: "#7f1d1d",
+    oneLineSummary: "",
+    generalElectronicConfig: "",
+    keyCharacteristics: [],
+    examTrapsAndExceptions: [],
+    elementSymbols: ["Cr", "Cu", "Mo", "Ag", "Au", "Hg", "Zn", "N", "O", "Cl", "Br", "Pb", "Bi"],
+    testCondition: (el) => ["Cr", "Cu", "Mo", "Ag", "Au", "Hg", "Zn", "N", "O", "Cl", "Br", "Pb", "Bi"].includes(el.symbol)
   }
 };

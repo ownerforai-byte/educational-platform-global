@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 export interface DiagramAnnotation {
   id: string;
@@ -28,9 +28,14 @@ export function SchematicDiagram({
   subjectSlug,
   topicSlug,
   topicTitle,
-  unitId,
+  unitId = "",
   className = "",
 }: SchematicDiagramProps) {
+  const [expandedMap, setExpandedMap] = useState<Record<string, boolean>>({});
+
+  const toggleExpanded = useCallback((annId: string) => {
+    setExpandedMap((prev) => ({ ...prev, [annId]: !prev[annId] }));
+  }, []);
   const normalizedSubject = useMemo(() => {
     const s = subjectSlug.toLowerCase();
     if (s.includes("physic")) return "physics";
@@ -653,9 +658,12 @@ export function SchematicDiagram({
 
       {diagramData.annotations.map((ann) => {
         const cColor = ann.color || "#38bdf8";
+        const expanded = expandedMap[ann.id] ?? false;
 
         const cx = ann.controlX ?? (ann.labelX + ann.targetX) / 2;
-        const cy = ann.controlY ?? Math.min(ann.labelY, ann.targetY) - 30;
+        const cyBase = ann.controlY ?? Math.min(ann.labelY, ann.targetY) - 30;
+        const bendDelta = expanded ? 60 : 0;
+        const cy = cyBase - bendDelta;
 
         const pathD = `M ${ann.labelX} ${ann.labelY} Q ${cx} ${cy} ${ann.targetX} ${ann.targetY}`;
 
@@ -664,7 +672,9 @@ export function SchematicDiagram({
           2 * (ann.targetY - cy),
         ];
         const angle = Math.atan2(tTangent[1], tTangent[0]);
-        const headLen = 10;
+        const headLen = expanded ? 16 : 10;
+        const strokeW = expanded ? 3.8 : 2.4;
+        const opacity = expanded ? 1 : 0.92;
         const halfApex = 0.42;
         const a1x = ann.targetX - headLen * Math.cos(angle - halfApex);
         const a1y = ann.targetY - headLen * Math.sin(angle - halfApex);
@@ -672,14 +682,18 @@ export function SchematicDiagram({
         const a2y = ann.targetY - headLen * Math.sin(angle + halfApex);
         const headD = `M ${a1x} ${a1y} L ${ann.targetX} ${ann.targetY} L ${a2x} ${a2y}`;
 
+        const pinR = expanded ? 11 : 7;
+        const pinInnerR = expanded ? 4.2 : 2.8;
+        const glyphR = expanded ? 3.4 : 2.2;
+
         return (
-          <g key={ann.id}>
+          <g key={ann.id} data-ann-id={ann.id} data-expanded={expanded ? "1" : "0"}>
             <path
               d={pathD}
               fill="none"
               stroke={cColor}
-              strokeWidth="2.4"
-              strokeOpacity="0.92"
+              strokeWidth={strokeW}
+              strokeOpacity={opacity}
               strokeLinecap="round"
             />
 
@@ -688,11 +702,66 @@ export function SchematicDiagram({
             <circle
               cx={ann.targetX}
               cy={ann.targetY}
-              r="4.5"
+              r={expanded ? 5.8 : 4.5}
               fill={cColor}
               stroke="#ffffff"
-              strokeWidth="1.5"
+              strokeWidth={expanded ? 2 : 1.5}
             />
+
+            <circle
+              cx={cx}
+              cy={cy}
+              r={pinR}
+              fill="#ffffff"
+              stroke={cColor}
+              strokeWidth={expanded ? 2.8 : 2.2}
+              style={{ cursor: "pointer" }}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleExpanded(ann.id);
+              }}
+            />
+            <circle
+              cx={cx}
+              cy={cy}
+              r={pinInnerR}
+              fill={cColor}
+              stroke="none"
+              style={{ pointerEvents: "none" }}
+            />
+
+            {expanded ? (
+              <rect
+                x={cx - glyphR}
+                y={cy - 0.9}
+                width={glyphR * 2}
+                height={1.8}
+                fill={cColor}
+                rx={0.9}
+                style={{ pointerEvents: "none" }}
+              />
+            ) : (
+              <>
+                <rect
+                  x={cx - glyphR}
+                  y={cy - 0.9}
+                  width={glyphR * 2}
+                  height={1.8}
+                  fill={cColor}
+                  rx={0.9}
+                  style={{ pointerEvents: "none" }}
+                />
+                <rect
+                  x={cx - 0.9}
+                  y={cy - glyphR}
+                  width={1.8}
+                  height={glyphR * 2}
+                  fill={cColor}
+                  rx={0.9}
+                  style={{ pointerEvents: "none" }}
+                />
+              </>
+            )}
           </g>
         );
       })}
