@@ -59,7 +59,7 @@ export default function KnowledgePage() {
       <div>
         <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Knowledge Hub</h1>
         <p className="text-muted-foreground mt-1">
-          Practice numerical problems, study labeled diagrams, and master Nepali grammar — all in one place.
+          Practice numerical problems, study labeled diagrams, and master grammar &amp; writing — all in one place.
         </p>
       </div>
 

@@ -26,7 +26,7 @@ export function AIAssistantWorkspace() {
             <span>AI Study Assistant &amp; Workspace</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-1">
-            Agnes: Your Curriculum-Aligned AI Tutor
+            Your Curriculum-Aligned AI Tutor
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
             Ask any question on NEB Class 11 &amp; 12 concepts, solve numerical problems with step-by-step guidance, and manage your personal study workspace.

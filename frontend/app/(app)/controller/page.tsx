@@ -205,8 +205,6 @@ export default function ControllerPage() {
               <div className="flex flex-wrap gap-2">
                 <a
                   href="/api/controller/health"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
                 >
                   <Activity className="h-4 w-4" />
@@ -214,8 +212,6 @@ export default function ControllerPage() {
                 </a>
                 <a
                   href="/api/controller/content-stats"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
                 >
                   <Database className="h-4 w-4" />
@@ -223,8 +219,6 @@ export default function ControllerPage() {
                 </a>
                 <a
                   href="/api/subjects"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
                 >
                   <FileText className="h-4 w-4" />

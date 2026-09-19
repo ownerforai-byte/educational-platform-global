@@ -246,9 +246,9 @@ const container = mountRef.current!;
           addLbl("#38bdf8", "Steam Inlet", [-(chamR + 2.2), chamCenter + 0.9, 0], "from steam boiler", [-(chamR + 0.42), chamCenter + 0.42, 0]);
           addLbl("#94a3b8", "Vapour Outlet", [chamR + 1.9, chamCenter + 1.3, 0], "escaping steam", [outletTip.x, outletTip.y, 0]);
           addLbl(mat.color, `Sample Disc — ${mat.name}`, [-discR - 2.5, sampleY + thickU + 0.6, 0], `thickness d = ${sampleThick} mm`, [0, sampleY, 0]);
-          addLbl("#fb923c", "Lee's Disc (Copper)", [discR + 2.6, 0.4, 0], `m = ${(discMass * 1000).toFixed(0)} g, c = 385 J/kg·K`, [0, 0.44, 0]);
-          addLbl("#22c55e", "Thermometer T₂", [discR + 2.3, 1.3, 0.6], `θ₂ ≈ ${theta2} °C at junction`, [discR - 0.28, 0.44, 0]);
-          addLbl("#a3a3a3", "Clamping Weights", [0.55, pinY + 0.9, 0], "press faces together", [0.55, pinY, 0]);
+          addLbl("#fb923c", "Lee's Disc (Copper)", [discR + 2.7, 0.25, 0], `m = ${(discMass * 1000).toFixed(0)} g, c = 385 J/kg·K`, [0, 0.44, 0]);
+          addLbl("#22c55e", "Thermometer T₂", [discR + 2.4, 1.95, 0.6], `θ₂ ≈ ${theta2} °C at junction`, [discR - 0.28, 0.44, 0]);
+          addLbl("#a3a3a3", "Clamping Weights", [-2.6, pinY + 0.4, 0.5], "press faces together", [0.55, pinY, 0]);
           addLbl("#94a3b8", "Tripod Stand", [-(discR + 2.4), 0.4, 0], "insulated wooden top", [0, 0.07, 0.6]);
 
           /* ---------- ANIMATION LOOP ---------- */

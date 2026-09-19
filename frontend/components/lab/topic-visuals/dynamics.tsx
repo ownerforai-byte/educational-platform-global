@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { createAnimatedArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Dynamics — NEB Mechanics (Maths 11)
@@ -82,7 +82,7 @@ export function DynamicsVisual() {
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
 
-      const animatedArrows: ReturnType<typeof createAnimatedArrow>[] = [];
+      const animatedArrows: LiveLeaderLine[] = [];
 
       const update = () => {
         animatedArrows.forEach((a) => { scene.remove(a.group); a.dispose(); });
@@ -178,12 +178,12 @@ export function DynamicsVisual() {
           block.rotation.z = rad;
           // Force arrows (dynamic)
           const weight = new THREE.Vector3(0, -1.5, 0);
-          const weightArrow = createAnimatedArrow(blockPos.clone(), new THREE.Vector3(0, -1, 0).normalize(), 1.2, 0xef4444, { headLength: 0.15, headWidth: 0.1 });
+          const weightArrow = new LiveLeaderLine(new THREE.Vector3(0, -1, 0).normalize(), blockPos.clone(), 1.2, 0xef4444, 0.15, 0.1);
           scene.add(weightArrow.group);
           animatedArrows.push(weightArrow);
           push(mkSprite("mgâ†“", "#f87171", blockPos.clone().add(new THREE.Vector3(0, -1.8, 0)), 0.65));
           const normalDir = new THREE.Vector3(-Math.sin(rad), Math.cos(rad), 0);
-          const normalArrow = createAnimatedArrow(blockPos.clone(), normalDir, 1.2, 0x60a5fa, { headLength: 0.15, headWidth: 0.1 });
+          const normalArrow = new LiveLeaderLine(normalDir, blockPos.clone(), 1.2, 0x60a5fa, 0.15, 0.1);
           scene.add(normalArrow.group);
           animatedArrows.push(normalArrow);
           push(mkSprite("NâŠ¥", "#60a5fa", blockPos.clone().add(normalDir.clone().multiplyScalar(1.3)), 0.65));

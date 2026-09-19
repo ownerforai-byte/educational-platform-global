@@ -3,14 +3,17 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Bot, Loader2, ShieldCheck, Coins, MessageSquareText } from "lucide-react";
 import Link from "next/link";
-import { chat, guestChat } from "@/lib/api/ai";
+import { chat, guestChat, getChatHistory, saveChatHistory } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { MathMarkdown } from "@/components/content/math-markdown";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
 const MAX_GUEST_MESSAGES = 7;
 const STORAGE_KEY = "neb_ai_guest_count";
 const CREDITS_STORAGE_KEY = "neb_guest_credits";
+const GREETING =
+  "I am assistant of this platform, feel free to share your thoughts to get real experience 👋";
 
 function getGuestCount(): number {
   if (typeof window === "undefined") return 0;
@@ -42,6 +45,7 @@ export function AIWidget() {
   const [guestCredits, setGuestCredits] = useState<number | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const historyLoadedRef = useRef(false);
 
   const guestCount = getGuestCount();
   const isLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
@@ -59,7 +63,22 @@ export function AIWidget() {
   useEffect(() => {
     if (!isLoggedIn) {
       setGuestCredits(getGuestCredits());
+      return;
     }
+    // Signed in: restore the persisted conversation once per mount.
+    if (historyLoadedRef.current) return;
+    historyLoadedRef.current = true;
+    getChatHistory("default", 60)
+      .then(({ messages }) => {
+        if (!messages.length) return;
+        setMessages((prev) => [
+          ...prev,
+          ...messages.map((m) => ({ role: m.role, content: m.content }) as AIChatMessage),
+        ]);
+      })
+      .catch(() => {
+        // History unavailable (table not migrated yet / offline) — fresh chat is fine.
+      });
   }, [isLoggedIn]);
 
   const scrollToBottom = () => {
@@ -83,11 +102,15 @@ export function AIWidget() {
 
     try {
       if (isLoggedIn) {
-        const res = await chat([...messages, userMsg], "agnes");
+        const res = await chat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
+        saveChatHistory("default", [
+          { role: "user", content: text },
+          { role: "assistant", content: res.response },
+        ]).catch(() => {});
       } else {
-        const res = await guestChat([...messages, userMsg], "agnes");
+        const res = await guestChat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
         const newCredits = res.remaining ?? getGuestCredits() - 2;
@@ -171,14 +194,25 @@ export function AIWidget() {
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
+            {messages.filter(m => m.role !== "system").length === 0 && (
+              <div className="flex justify-start">
+                <div className="max-w-[90%] rounded-xl px-3 py-2 bg-muted text-foreground">
+                  <MathMarkdown content={GREETING} className="chat-prose" />
+                </div>
+              </div>
+            )}
             {messages.filter(m => m.role !== "system").map((m, i) => (
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-                <div className={`max-w-[85%] rounded-xl px-3 py-2 text-sm whitespace-pre-wrap ${
+                <div className={`max-w-[90%] rounded-xl px-3 py-2 text-sm ${
                   m.role === "user"
                     ? "bg-primary text-primary-foreground"
                     : "bg-muted text-foreground"
                 }`}>
-                  {m.content}
+                  {m.role === "user" ? (
+                    <p className="whitespace-pre-wrap">{m.content}</p>
+                  ) : (
+                    <MathMarkdown content={m.content} className="chat-prose" />
+                  )}
                 </div>
               </div>
             ))}

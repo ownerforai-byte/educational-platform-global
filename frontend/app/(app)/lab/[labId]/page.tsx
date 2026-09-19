@@ -1,12 +1,20 @@
 /**
  * Lab Page — Dynamic routing component
- * Renders the appropriate lab component based on the lab ID from the URL
+ * Renders the appropriate lab component based on the lab ID from the URL.
+ *
+ * Consolidation behaviour:
+ *  - Legacy slugs from the removed duplicate static route trees
+ *    (e.g. /lab/cell-division-3d, /lab/lees-disc, /lab/symbols-atomic,
+ *    /lab/physics-mechanics-suite-3d) are 301-style redirected to their
+ *    canonical registry entry.
+ *  - Unknown ids redirect to /lab/3d — the single ordered hub for all 3D
+ *    content — instead of showing a dead end.
  */
 "use client";
 
-import { useState, useEffect, useMemo, createElement, ComponentType } from "react";
+import { useState, useEffect, useMemo, createElement } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Cuboid, Loader2 } from "lucide-react";
 import { LAB_REGISTRY, getLabById } from "@/lib/lab-registry";
 import type { LabMeta } from "@/lib/types/lab";
@@ -14,30 +22,71 @@ import { LabLearningSection } from "@/components/lab/learning-section";
 import { AnimationFrame, ArrowLabel } from "@/components/lab/annotation/arrow-label";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
 
+/** Legacy route-tree slugs → canonical registry ids. */
+const LEGACY_ALIASES: Record<string, string> = {
+  // Biology catalog slugs (previous /lab/biology/* tree)
+  "cell-3d": "bio-3d-cell",
+  "biomolecules-3d": "bio-3d-biomolecules",
+  "biota-3d": "bio-3d-biota-conservation",
+  "micro-3d": "bio-3d-micro",
+  "cell-division-3d": "bio-3d-cell-division",
+  "ecology-3d": "bio-3d-ecology",
+  "evolution-3d": "bio-3d-evolution",
+  "floral-3d": "bio-3d-floral",
+  "faunal-3d": "bio-3d-faunal",
+  "conservation-3d": "bio-3d-biota-conservation",
+  // Heat determinations (previous /lab/physics/heat-* and /lab/heat-determinations/*)
+  "heat-determinations": "ph-3d-heat-determinations",
+  "ph-heat-determinations": "ph-3d-heat-determinations",
+  "lees-disc": "ph-3d-heat-determinations",
+  "searles-bar": "ph-3d-heat-determinations",
+  "linear-expansion": "ph-3d-heat-determinations",
+  "newton-cooling": "ph-3d-heat-determinations",
+  // Unit suites (previous /lab/physics/physics-*-suite-3d)
+  "physics-mechanics-suite-3d": "ph-3d-mechanics-i",
+  "physics-electricity-suite-3d": "ph-3d-electricity-i",
+  "physics-magnetism-emi-suite-3d": "ph-3d-magnetism-emi",
+  "physics-modern-suite-3d": "ph-3d-modern-suite",
+  "physics-elasticity-gas-suite-3d": "ph-3d-elasticity-gas",
+  "physics-wave-optics-suite-3d": "ph-3d-wave-suite",
+  "ph-calc-elasticity": "ph-3d-elasticity-gas",
+  "ph-calc-sound": "ph-3d-wave-suite",
+  // Symbols pages
+  "symbols-atomic": "ph-symbols-atomic",
+  "symbols-electricity": "ph-symbols-electricity",
+  "symbols-mechanics": "ph-symbols-mechanics",
+  "symbols-waves": "ph-symbols-waves",
+  "symbols-math": "math-symbols",
+};
+
 // Wrapper that renders a lab component as a proper React element (using createElement),
 // ensuring React creates a separate fiber and isolates its hooks from LabPage.
-// Without this, inline function calls would attribute the lab's hooks to LabPage,
-// causing Rules of Hooks violations when loading state changes.
 function LabComponent(props: { component: React.ComponentType | (() => React.ReactNode) }) {
   return createElement(props.component as React.ComponentType);
 }
 
 export default function LabPage() {
   const params = useParams();
+  const router = useRouter();
   const labId = params?.labId as string;
   const [lab, setLab] = useState<LabMeta | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [missing, setMissing] = useState(false);
 
   useEffect(() => {
+    const alias = LEGACY_ALIASES[labId];
+    if (alias) {
+      router.replace(`/lab/${alias}`);
+      return;
+    }
     const found = getLabById(labId);
     if (found) {
       setLab(found);
     } else {
-      setError(`Lab "${labId}" not found`);
+      // Unknown id → the single ordered 3D hub.
+      router.replace("/lab/3d");
+      setMissing(true);
     }
-    setLoading(false);
-  }, [labId]);
+  }, [labId, router]);
 
   const categoryConfig = useMemo(() => {
     const config: Record<string, { label: string; color: string }> = {
@@ -50,26 +99,11 @@ export default function LabPage() {
     return config[lab?.category ?? "physics"] ?? { label: "Lab", color: "#64748b" };
   }, [lab]);
 
-  if (loading) {
+  if (!lab) {
     return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        <span className="ml-2 text-muted-foreground">Loading lab...</span>
-      </div>
-    );
-  }
-
-  if (error || !lab) {
-    return (
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <Link href="/lab" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1 mb-4">
-          <ArrowLeft className="h-4 w-4" />
-          Back to Labs
-        </Link>
-        <div className="text-center py-16">
-          <h2 className="text-xl font-semibold text-destructive mb-2">Lab Not Found</h2>
-          <p className="text-muted-foreground">{error ?? `Lab "${labId}" does not exist`}</p>
-        </div>
+      <div className="flex items-center justify-center min-h-[400px] gap-2 text-muted-foreground">
+        <Loader2 className="h-6 w-6 animate-spin" />
+        <span className="text-sm">{missing ? "Redirecting to the 3D hub…" : "Loading lab…"}</span>
       </div>
     );
   }
@@ -80,9 +114,9 @@ export default function LabPage() {
       <div className="sticky top-12 md:top-14 z-30 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <Link href="/lab" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="/lab/3d" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <ArrowLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">Back to Labs</span>
+              <span className="hidden sm:inline">All 3D Labs</span>
             </Link>
             <div className="h-5 w-px bg-border" />
             <div className="flex items-center gap-2">

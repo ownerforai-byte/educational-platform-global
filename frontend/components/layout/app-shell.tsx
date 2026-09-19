@@ -74,7 +74,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           setIsHovered(false);
           setIsClickedOpen(false);
         }}
-        className={`sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-md transition-transform duration-300 ease-in-out ${
+        className={`sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-xl transition-transform duration-300 ease-in-out ${
           navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
         }`}
       >

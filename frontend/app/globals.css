@@ -855,6 +855,33 @@ code, kbd, samp, pre {
   }
   .prose .katex-display > .katex { font-size: 1.12em; }
   .prose .katex-error { color: hsl(var(--accent-rose)) !important; }
+
+  /* ─── CHAT PROSE — compact variant for AI reply bubbles ───────────────────
+     Same typography rules as .prose, but tighter rhythm so answers stay
+     bubble-sized. Apply as .prose.chat-prose on assistant message bodies. */
+  .prose.chat-prose { font-size: 0.875rem; line-height: 1.65; }
+  .prose.chat-prose p { margin: 0.5em 0; }
+  .prose.chat-prose h1,
+  .prose.chat-prose h2 { font-size: 1.05em; margin: 0.9em 0 0.4em; padding-bottom: 0; border-bottom: 0; }
+  .prose.chat-prose h2 { padding-left: 0; border-left: 0; }
+  .prose.chat-prose h3, .prose.chat-prose h4 { font-size: 1em; margin: 0.8em 0 0.35em; }
+  .prose.chat-prose ul, .prose.chat-prose ol { margin: 0.45em 0; padding-left: 1.25em; }
+  .prose.chat-prose li { margin: 0.2em 0; }
+  .prose.chat-prose blockquote {
+    margin: 0.6em 0;
+    padding: 0.5em 0.8em;
+    font-size: 0.92em;
+    border-radius: 0 0.6rem 0.6rem 0;
+  }
+  .prose.chat-prose code { font-size: 0.82em; }
+  .prose.chat-prose pre { margin: 0.6em 0; padding: 0.7em 0.9em; font-size: 0.82em; border-radius: 0.75rem; }
+  .prose.chat-prose hr { margin: 0.9em 0; }
+  .prose.chat-prose .katex { font-size: 1em; }
+  .prose.chat-prose .katex-display {
+    margin: 0.7em 0;
+    padding: 0.7em 0.9em;
+    font-size: 0.95em;
+  }
 }
 
 /* ─── EXAM CALLOUT BOXES ─────────────────────────────────────────────────── */

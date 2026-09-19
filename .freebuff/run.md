@@ -10,6 +10,12 @@ Next.js app lives in `frontend/`. Preview runs the frontend dev server from this
    - From `frontend/`: `npm install`
 3. Content JSON lives outside the app dir (`content/` at repo root); the dev server reads it via `fs` at runtime — no extra artifacts needed.
 
+## Backend (optional — the frontend proxies to the deployed backend by default)
+
+- `frontend/.env.local` sets `NEXT_PUBLIC_API_URL=https://rn01.onrender.com`; `next.config.mjs` rewrites same-origin `/api/*` to that host. The Render free tier sleeps: first request after idle may take ~30-60s or 503 once; retry.
+- To run the backend locally instead (Express, tsx watch): from `backend/` run `npm install` (already installed here) then `npm run dev` — listens on port 3000. It loads `backend/.env` then repo-root `.env`.
+- Local backend + frontend together: temporarily set `NEXT_PUBLIC_API_URL=http://localhost:3000` (or pass it on the dev command line) so the rewrite targets localhost; CORS already allows localhost origins.
+
 ## Run the dev server
 
 - From `frontend/`: `npm run dev`

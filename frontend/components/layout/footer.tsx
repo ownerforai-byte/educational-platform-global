@@ -32,8 +32,6 @@ export function Footer() {
                 <span>Made with curiosity by</span>
                 <Link
                   href="https://www.instagram.com/___unxknown___player"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="font-bold text-primary hover:underline inline-flex items-center gap-1 group transition-colors"
                 >
                   <span>Ravikisan</span>
@@ -44,8 +42,6 @@ export function Footer() {
                 <Instagram className="h-3 w-3 text-pink-500" />
                 <Link
                   href="https://www.instagram.com/___unxknown___player"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors underline decoration-border hover:decoration-foreground"
                 >
                   @___unxknown___player
@@ -152,8 +148,6 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <Link
               href="https://www.instagram.com/___unxknown___player"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-pink-500 transition-colors"
             >
               <Instagram className="h-3.5 w-3.5" />

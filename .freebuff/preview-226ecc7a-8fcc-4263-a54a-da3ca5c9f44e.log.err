@@ -1,16 +1,57 @@
 [browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
 [browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=emerald — 3/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
 [browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
 [browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=emerald — 3/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
 [browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
 [browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
-[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=emerald — 3/13 pair(s) below WCAG AA (lib/color-contrast.ts:251:17)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="chat/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <InnerLayoutRouter url="/chat" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+              <SegmentViewNode type="page" pagePath="(app)/chat...">
+                <SegmentTrieNode>
+                <ChatPage>
+                  <div className="mx-auto ma...">
+                    <AIChatInterface>
+                      <div className="flex flex-...">
+                        <div className="px-6 py-4 ...">
+                          <div>
+                          <div className="flex items...">
+                            <span className="text-xs te...">
+                              <span>
+                              <strong className="text-primary">
++                               4
+-                               0
+                                ...
+                        ...
+              ...
+            ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at strong (<anonymous>)
+    at AIChatInterface (components/ai/ai-chat-interface.tsx:279:15)
+    at ChatPage (app\(app)\chat\page.tsx:13:7)
+  277 |             <span className="text-xs text-muted-foreground hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-muted/60 border border-border/50">
+  278 |               <span>Guest messages:</span>
+> 279 |               <strong className="text-primary">{guestCount}/{MAX_GUEST_MESSAGES}</strong>
+      |               ^
+  280 |             </span>
+  281 |           )}
+  282 |

@@ -37,7 +37,6 @@ const LIQUIDS = [
 
 export const NewtonCoolingExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
@@ -56,8 +55,8 @@ export const NewtonCoolingExperiment: React.FC = () => {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, {
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(1.5, 4.6, 13.5),
           autoRotate: false,
           background: 0x0b1220,

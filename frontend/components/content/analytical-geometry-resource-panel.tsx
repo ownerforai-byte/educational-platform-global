@@ -48,7 +48,7 @@ export const AnalyticalGeometryResourcePanel: React.FC<AnalyticalGeometryResourc
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
             variant="default"
           >
-            <a href={resourceUrl} target="_blank" rel="noopener noreferrer">
+            <a href={resourceUrl}>
               <ExternalLink className="w-4 h-4 mr-2" />
               Open PDF
             </a>
@@ -59,7 +59,7 @@ export const AnalyticalGeometryResourcePanel: React.FC<AnalyticalGeometryResourc
             className="flex-1 bg-green-600 hover:bg-green-700 text-white"
             variant="outline"
           >
-            <a href="/lab/math-3d-geometry" target="_blank" rel="noopener noreferrer">
+            <a href="/lab/math-3d-geometry">
               <PlayCircle className="w-4 h-4 mr-2" />
               3D Geometry Lab
             </a>

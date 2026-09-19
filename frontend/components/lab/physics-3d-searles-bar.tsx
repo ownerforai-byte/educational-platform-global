@@ -41,7 +41,6 @@ const C_WATER = 4186; // J/(kg·K)
 
 export const SearlesBarExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
@@ -67,8 +66,8 @@ export const SearlesBarExperiment: React.FC = () => {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, {
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(2, 4.4, 14.5),
           autoRotate: false,
           background: 0x0b1220,
@@ -265,10 +264,10 @@ const container = mountRef.current!;
             }
           };
 
-          addLbl("#fb923c", "Steam Chest — hot end", [chest.position.x, rodY + 2.6, 0], "condensing steam ≈ 100 °C", [chest.position.x, rodY + 1.0, 0]);
-          addLbl("#fb923c", "Boiler Pipe", [chest.position.x + 2.5, rodY + 2.9, 0], "carries steam from boiler", [chest.position.x + 1.2, rodY + 2.0, 0]);
-          addLbl("#ef4444", "Thermojunction T₁", [p1, rodY + 2.6, 0], `${T1} °C`, [p1 + 0.45, rodY + 0.35, 0]);
-          addLbl("#f97316", "Thermojunction T₂", [p2, rodY + 2.6, 0], `${T2} °C`, [p2 + 0.45, rodY + 0.35, 0]);
+          addLbl("#fb923c", "Steam Chest — hot end", [chest.position.x, rodY + 2.7, 0], "condensing steam ≈ 100 °C", [chest.position.x, rodY + 1.0, 0]);
+          addLbl("#fb923c", "Boiler Pipe", [chest.position.x + 2.5, rodY + 3.6, 0], "carries steam from boiler", [chest.position.x + 1.2, rodY + 2.0, 0]);
+          addLbl("#ef4444", "Thermojunction T₁", [p1 - 0.4, rodY + 2.7, 0], `${T1} °C`, [p1 + 0.45, rodY + 0.35, 0]);
+          addLbl("#f97316", "Thermojunction T₂", [p2 + 0.4, rodY + 1.9, 0], `${T2} °C`, [p2 + 0.45, rodY + 0.35, 0]);
           addLbl("#c084fc", `Distance L = ${barLengthCm} cm`, [(p1 + p2) / 2, dimY + 0.32, 0], "measured along the bar axis", [p1 + 0.5, rodY + 0.05, 0]);
           addLbl("#60a5fa", "Cooling-Water Coil", [coilX, rodY + 2.0, 0], "removes heat at cold end", [coilX, rodY + 0.2, 0]);
           addLbl("#3b82f6", "Water IN — T₃", [coilX - 2.6, rodY - 0.6, 2.3], "cold water enters", [coilX - 0.5, rodY - 0.7, 1.1]);

@@ -8,6 +8,8 @@ import authRoutes from "./api/auth";
 import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
 import aiGenerateRoutes from "./api/ai-generate";
+import aiEnhanceRoutes from "./api/ai-enhance";
+import chatHistoryRoutes from "./api/chat-history";
 import bookmarksRoutes from "./api/bookmarks";
 import chaptersRoutes from "./api/chapters";
 import classesRoutes from "./api/classes";
@@ -82,6 +84,8 @@ export function createApp(): express.Express {
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);
+  app.use("/api/ai/enhance", aiEnhanceRoutes);
+  app.use("/api/chat-history", chatHistoryRoutes);
   app.use("/api/auth", authRoutes);
   app.use("/api/bookmarks", bookmarksRoutes);
   app.use("/api/chapters", chaptersRoutes);

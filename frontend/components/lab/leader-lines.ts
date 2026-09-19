@@ -47,6 +47,23 @@ function project2(cam: THREE.Camera, p: THREE.Vector3, w: number, h: number): [n
   return [(v.x + 1) * (w / 2), (1 - v.y) * (h / 2)];
 }
 
+/** Remembers each label's authored anchor so per-frame decluttering never drifts. */
+const basePositions = new WeakMap<THREE.Object3D, THREE.Vector3>();
+
+/**
+ * Reveal mode — when active, labels start hidden and are revealed ONE BY ONE
+ * (chip + leader line + pin together) via revealNext(); revealAll()/hideAll()
+ * manage the full set. Each layer instance tracks its own lines, so multiple
+ * scenes on one page stay independent.
+ */
+interface RevealState {
+  mode: boolean;
+  revealedCount: number;
+  order: THREE.Object3D[]; // reveal order = registration order
+}
+
+const REVEAL_EVENT = "leader-line-reveal"; // detail: { layerId, shown, total, mode }
+
 export function createLeaderLayer(mount: HTMLElement): {
   draw: (camera: THREE.Camera, lines: LeaderLine[]) => void;
   dispose: () => void;
@@ -61,6 +78,20 @@ export function createLeaderLayer(mount: HTMLElement): {
   svg.style.cssText =
     "position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9";
   mount.appendChild(svg);
+
+  // Responsive chip scale — on narrow mounts, shrink the CSS2D chips (inline
+  // transform on the styled inner div) so they can physically fit; the
+  // declutter pass measures the scaled size and packs accordingly.
+  const chipScale = () => {
+    const cw = mount.clientWidth;
+    return cw > 0 && cw < 420 ? Math.max(0.6, cw / 560) : 1;
+  };
+  const chipScaleRO = new ResizeObserver(() => {
+    // Trigger an immediate redraw at the new scale.
+    const ev = new CustomEvent("leader-line-resize");
+    window.dispatchEvent(ev);
+  });
+  chipScaleRO.observe(mount);
 
   // Per-line expansion state, keyed by stable line id.
   const stateStore = new Map<string, LeaderLineRuntimeState>();
@@ -156,6 +187,116 @@ export function createLeaderLayer(mount: HTMLElement): {
     const w = mount.clientWidth || 1;
     const h = mount.clientHeight || 1;
     const tmp = new THREE.Vector3();
+    const world = new THREE.Vector3();
+
+    // ── Screen-space declutter ──────────────────────────────────────
+    // CSS2D chips anchored at fixed 3D points can overlap once projected
+    // (narrow viewports, crowded apparatus). Reset every chip to its base
+    // anchor, measure the projected rectangles, relax the overlaps apart
+    // in pixel space, then write the offset back into 3D so the chip AND
+    // its SVG leader line stay glued together.
+    interface DeclItem {
+      l: LeaderLine; sx: number; sy: number; w: number; h: number;
+      ox: number; oy: number; nx: number; ny: number; nz: number;
+    }
+    const scale = chipScale();
+    const items: DeclItem[] = [];
+    lines.forEach((l) => {
+      if (!l.label.visible) return;
+      let base = basePositions.get(l.label);
+      if (!base) {
+        base = l.label.position.clone();
+        basePositions.set(l.label, base);
+      }
+      if (!l.label.position.equals(base)) l.label.position.copy(base);
+      l.label.updateMatrixWorld();
+      tmp.setFromMatrixPosition(l.label.matrixWorld);
+      const ndc = tmp.project(camera);
+      const el = (l.label as unknown as { element?: HTMLElement }).element;
+      // Scale the styled inner chip on narrow mounts and measure the VISUAL
+      // box so decluttering packs the true on-screen size.
+      const inner = (el?.firstElementChild as HTMLElement | null) ?? el;
+      if (inner && inner !== el) {
+        inner.style.transformOrigin = "center center";
+        inner.style.transform = scale < 1 ? `scale(${scale})` : "";
+      }
+      const box = inner?.getBoundingClientRect();
+      const vw = box?.width || el?.offsetWidth || 96;
+      const vh = box?.height || el?.offsetHeight || 44;
+      items.push({
+        l,
+        sx: (ndc.x + 1) * (w / 2),
+        sy: (1 - ndc.y) * (h / 2),
+        w: vw + 10,
+        h: vh + 10,
+        ox: 0,
+        oy: 0,
+        nx: ndc.x,
+        ny: ndc.y,
+        nz: ndc.z,
+      });
+    });
+    const PAD = 8;
+    // CSS2D chips are CENTERED on their anchor point, so every rect below
+    // is treated as [cx - w/2, cy - h/2, w, h]. Chips are also CONFINED to
+    // the canvas: each relaxation pass ends with a boundary clamp, then the
+    // next pass re-relaxes any collisions the clamp created (alternating
+    // relax ↔ clamp converges without pushing chips off-scene).
+    const clampInside = (it: DeclItem) => {
+      const minX = it.w / 2 + 4;
+      const maxX = w - it.w / 2 - 4;
+      const minY = it.h / 2 + 4;
+      const maxY = h - it.h / 2 - 4;
+      if (minX <= maxX) {
+        const cx = Math.max(minX, Math.min(maxX, it.sx + it.ox));
+        it.ox = cx - it.sx;
+      }
+      if (minY <= maxY) {
+        const cy = Math.max(minY, Math.min(maxY, it.sy + it.oy));
+        it.oy = cy - it.sy;
+      }
+    };
+    for (let iter = 0; iter < 80; iter++) {
+      let moved = false;
+      for (let i = 0; i < items.length; i++) {
+        for (let j = i + 1; j < items.length; j++) {
+          const a = items[i];
+          const b = items[j];
+          const ax = a.sx + a.ox;
+          const ay = a.sy + a.oy;
+          const bx = b.sx + b.ox;
+          const by = b.sy + b.oy;
+          const px = Math.min(ax + a.w / 2, bx + b.w / 2) - Math.max(ax - a.w / 2, bx - b.w / 2);
+          const py = Math.min(ay + a.h / 2, by + b.h / 2) - Math.max(ay - a.h / 2, by - b.h / 2);
+          if (px > 0 && py > 0) {
+            moved = true;
+            if (px <= py) {
+              const dir = ax <= bx ? -1 : 1;
+              const push = (px + PAD) / 2;
+              a.ox += dir * push;
+              b.ox -= dir * push;
+            } else {
+              const dir = ay <= by ? -1 : 1;
+              const push = (py + PAD) / 2;
+              a.oy += dir * push;
+              b.oy -= dir * push;
+            }
+          }
+        }
+      }
+      items.forEach(clampInside);
+      if (!moved) break;
+    }
+    items.forEach((it) => {
+      it.ox = Math.max(-260, Math.min(260, it.ox));
+      it.oy = Math.max(-260, Math.min(260, it.oy));
+      if (it.ox === 0 && it.oy === 0) return;
+      world.set(it.nx + (2 * it.ox) / w, it.ny - (2 * it.oy) / h, it.nz).unproject(camera);
+      const parent = it.l.label.parent;
+      if (!parent) return;
+      it.l.label.position.copy(parent.worldToLocal(world));
+      it.l.label.updateMatrixWorld();
+    });
 
     lines.forEach((l, i) => {
       if (!l.label.visible) return;
@@ -279,6 +420,7 @@ export function createLeaderLayer(mount: HTMLElement): {
 
   function dispose() {
     clearHold();
+    chipScaleRO.disconnect();
     if (svg.parentNode) svg.parentNode.removeChild(svg);
     stateStore.clear();
     knownIds.length = 0;

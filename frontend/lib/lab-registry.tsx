@@ -34,6 +34,7 @@ import { Class11Physics3DPlus } from "@/components/lab/class11/class11-physics-3
 import { Class11Chemistry3DPlus } from "@/components/lab/class11/class11-chemistry-3d-plus";
 import { Class11Biology3DPlus } from "@/components/lab/class11/class11-biology-3d-plus";
 import { TheoryPanel } from "@/components/lab/theory-panel";
+import { PeriodicTableView } from "@/components/periodic-table/periodic-table-view";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { AILabTutor } from "@/components/lab/ai-lab-tutor";
@@ -70,6 +71,19 @@ import { BiologyCellDivision3D } from "@/components/lab/biology-cell-division-3d
 import { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-diversity-3d";
 import { BiologyFloralDiversity3D } from "@/components/lab/biology-floral-diversity-3d";
 import { BiologyMicrobiology3D } from "@/components/lab/biology-microbiology-3d";
+// Unit suites + symbols + heat determinations (previously only reachable via
+// duplicate static routes — consolidated into the registry, see /lab/3d)
+import { MechanicsSuite3D } from "@/components/lab/physics-3d-mechanics-i";
+import { ElectricitySuite3D } from "@/components/lab/physics-3d-electricity-i";
+import { MagnetismEMISuite3D } from "@/components/lab/physics-3d-magnetism-emi";
+import { ModernPhysicsSuite3D } from "@/components/lab/physics-3d-modern";
+import { ElasticityGasSuite3D } from "@/components/lab/physics-3d-elasticity-gas";
+import { Physics3DHeatDeterminations } from "@/components/lab/physics-3d-heat-determinations";
+import AtomicSymbols from "@/components/lab/physics-3d-atomic-symbols";
+import ElectricitySymbols from "@/components/lab/physics-3d-electricity-symbols";
+import MechanicsSymbols from "@/components/lab/physics-3d-mechanics-symbols";
+import WavesSymbols from "@/components/lab/physics-3d-waves-symbols";
+import MathSymbols from "@/components/lab/math-3d-symbols";
 
 /**
  * Lab registry mapping lab IDs to their component implementations
@@ -399,14 +413,14 @@ export const LAB_REGISTRY: LabMeta[] = [
   // ===== CHEMISTRY LABS =====
   {
     id: "ch-3d-periodic",
-    title: "Periodic Table 3D",
-    description: "Interactive 3D periodic table with element details, categories, and search.",
+    title: "Periodic Table 3D — All Blocks (CEE)",
+    description: "The full 118-element all-blocks periodic table with CEE question bank, reactions, ores and element data — the canonical table for the whole platform.",
     category: "chemistry",
     type: "3d" as const,
     status: "active",
     color: "#10b981",
     unit: "Unit: Periodicity",
-    component: ChemistryLab,
+    component: PeriodicTableView,
   },
   {
     id: "ch-3d-advanced",
@@ -1348,6 +1362,145 @@ export const LAB_REGISTRY: LabMeta[] = [
     component: BiologyMicrobiology3D,
   },
 ];
+
+// ── Consolidated entries (unit suites, symbols, heat determinations) ─────────
+// These components previously lived only on duplicate static route trees.
+// They are registered here so the single /lab/3d hub routes ALL 3D content.
+LAB_REGISTRY.push(
+  {
+    id: "ph-3d-mechanics-i",
+    title: "Mechanics Unit Suite 3D",
+    description: "Complete Class 11 mechanics units — measurement, kinematics, laws of motion, work-energy, circular motion in one interactive suite.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Mechanics",
+    component: MechanicsSuite3D,
+  },
+  {
+    id: "ph-3d-electricity-i",
+    title: "Electricity Unit Suite 3D",
+    description: "Complete DC-circuits & electricity units — Ohm's law, resistivity, EMF, Kirchhoff's laws and the meter bridge in one suite.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Current Electricity",
+    component: ElectricitySuite3D,
+  },
+  {
+    id: "ph-3d-magnetism-emi",
+    title: "Magnetism & EMI Suite 3D",
+    description: "Magnetic effect of current and electromagnetic induction units — force on a conductor, Faraday's and Lenz's laws in one suite.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Magnetism & EMI",
+    component: MagnetismEMISuite3D,
+  },
+  {
+    id: "ph-3d-modern-suite",
+    title: "Modern Physics Unit Suite 3D",
+    description: "Modern physics units — photoelectric effect, atomic models and nuclear physics in one interactive suite.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Modern Physics",
+    component: ModernPhysicsSuite3D,
+  },
+  {
+    id: "ph-3d-elasticity-gas",
+    title: "Elasticity & Gas Unit Suite 3D",
+    description: "Elasticity and ideal-gas units — Hooke's law, Young's modulus and the gas laws in one suite.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Elasticity & Gas",
+    component: ElasticityGasSuite3D,
+  },
+  {
+    id: "ph-3d-heat-determinations",
+    title: "Heat Determinations 3D",
+    description: "Class 11 heat experiments in 3D — Lee's disc, Searle's bar, Newton's law of cooling and linear expansion.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Heat",
+    component: Physics3DHeatDeterminations,
+  },
+  {
+    id: "ph-symbols-atomic",
+    title: "Symbols — Atomic",
+    description: "Bohr model with fully labelled atomic symbols.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Symbols",
+    component: AtomicSymbols,
+  },
+  {
+    id: "ph-symbols-electricity",
+    title: "Symbols — Electricity",
+    description: "Labelled circuit and electricity symbols in 3D.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Symbols",
+    component: ElectricitySymbols,
+  },
+  {
+    id: "ph-symbols-mechanics",
+    title: "Symbols — Mechanics",
+    description: "Labelled mechanics symbols and quantities in 3D.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Symbols",
+    component: MechanicsSymbols,
+  },
+  {
+    id: "ph-symbols-waves",
+    title: "Symbols — Waves",
+    description: "Labelled wave and optics symbols in 3D.",
+    category: "physics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#3b82f6",
+    unit: "Unit: Symbols",
+    component: WavesSymbols,
+  },
+  {
+    id: "math-symbols",
+    title: "Mathematical Symbols 3D",
+    description: "Interactive 3D explorer of mathematical symbols and notation.",
+    category: "mathematics" as const,
+    type: "3d" as const,
+    status: "new" as const,
+    color: "#8b5cf6",
+    unit: "Unit: Symbols",
+    component: MathSymbols,
+  },
+  {
+    id: "math-th-theorems",
+    title: "Theorems Theory — Mathematics",
+    description: "All NEB Class 11 & 12 mathematics theorem proofs in one theory panel.",
+    category: "mathematics" as const,
+    type: "theory" as const,
+    status: "new" as const,
+    color: "#8b5cf6",
+    unit: "Unit: Algebra",
+    component: () => <TheoryPanel subject="mathematics" topic="theorems" />,
+  },
+);
+
 /**
  * Get a lab by its ID
  * @param id - The lab ID
