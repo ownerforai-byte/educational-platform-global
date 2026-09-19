@@ -1,13 +1,18 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { FormulaCard } from "@/components/content/formula-card";
 import { get3DComponentForTopic } from "@/lib/topic-3d-map";
 import { SchematicDiagram } from "@/components/lab/schematic-diagram";
 import { TopicMindMap } from "@/components/lab/topic-mindmap";
-import { getHighYieldTopicData } from "@/lib/high-yield-topic-facts";
+import {
+  emptyHighYieldTopicData,
+  getHighYieldTopicData,
+  hasHighYieldTopicData,
+} from "@/lib/high-yield-topic-facts";
 import {
   BookOpen,
   FlaskConical,
@@ -30,6 +35,8 @@ import {
   ShieldAlert,
   Target,
   RotateCcw,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -114,6 +121,8 @@ export function TopicVerticalNotes({
   // Visual Workspace Refresh & Animation Replay state
   const [visualKey, setVisualKey] = useState(0);
   const [isVisualRefreshing, setIsVisualRefreshing] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const visualPanelRef = useRef<HTMLDivElement>(null);
 
   const handleRefreshVisualWorkspace = () => {
     setIsVisualRefreshing(true);
@@ -121,15 +130,38 @@ export function TopicVerticalNotes({
     setTimeout(() => setIsVisualRefreshing(false), 500);
   };
 
+  // iOS Safari and some embedded browsers do not implement the Fullscreen API,
+  // so every call is fire-and-forget — the button simply does nothing there
+  // instead of throwing.
+  const handleToggleFullscreen = async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await visualPanelRef.current?.requestFullscreen?.();
+    } catch {
+      /* fullscreen unavailable */
+    }
+  };
+
+  useEffect(() => {
+    const sync = () => setIsFullscreen(Boolean(document.fullscreenElement));
+    document.addEventListener("fullscreenchange", sync);
+    return () => document.removeEventListener("fullscreenchange", sync);
+  }, []);
+
   // 1. Resolve 3D component if available
   const TopicVisual3D = useMemo(() => {
     return get3DComponentForTopic(topicSlug);
   }, [topicSlug]);
 
-  // 2. Resolve High-Yield Topic Engine Data
+  // 2. Resolve High-Yield Topic Engine Data (null when this topic has none yet)
   const highYield = useMemo(() => {
-    return getHighYieldTopicData(subjectSlug, topicSlug, topicTitle);
-  }, [subjectSlug, topicSlug, topicTitle]);
+    return getHighYieldTopicData(subjectSlug, topicSlug, topicTitle, unitId);
+  }, [subjectSlug, topicSlug, topicTitle, unitId]);
+  const hasHighYield = useMemo(() => hasHighYieldTopicData(highYield), [highYield]);
+  const factBank = useMemo(
+    () => highYield ?? emptyHighYieldTopicData(topicTitle, subjectSlug),
+    [highYield, topicTitle, subjectSlug]
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -218,28 +250,38 @@ export function TopicVerticalNotes({
   // Populate missing or boilerplate content using High-Yield Facts Engine
   const populatedFormulas = useMemo(() => {
     if (rawFormulas.length > 0) return rawFormulas;
-    return highYield.speedFormulas.map(
+    return factBank.speedFormulas.map(
       (sf) => `**${sf.name}**: $${sf.formula}$ — ${sf.description}${sf.dimensions ? ` [Dimension: $${sf.dimensions}$]` : ""}`
     );
-  }, [rawFormulas, highYield]);
+  }, [rawFormulas, factBank]);
+
+  /**
+   * Bank formulas keep their structure (name / unit / dimension) and render as
+   * dedicated revision cards. Markdown-provided formulas from the content JSON
+   * have no structure to show, so they keep the plain markdown list.
+   */
+  const structuredFormulas = useMemo(
+    () => (rawFormulas.length > 0 ? [] : factBank.speedFormulas),
+    [rawFormulas, factBank]
+  );
 
   const populatedExamples = useMemo(() => {
     if (rawExamples.length > 0) return rawExamples;
-    return highYield.workedNumericals.map(
+    return factBank.workedNumericals.map(
       (wn) => `**Problem:** ${wn.problem}\n\n**Given:** $${wn.given}$\n\n${wn.steps.join("\n\n")}\n\n**Result:** $${wn.answer}$`
     );
-  }, [rawExamples, highYield]);
+  }, [rawExamples, factBank]);
 
   const populatedKeyPoints = useMemo(() => {
     if (rawKeyPoints.length > 0) return rawKeyPoints;
-    return highYield.keyTermsAndDefinitions.map(
+    return factBank.keyTermsAndDefinitions.map(
       (kt) => `**${kt.term}**: ${kt.definition} *(Significance: ${kt.significance})*`
     );
-  }, [rawKeyPoints, highYield]);
+  }, [rawKeyPoints, factBank]);
 
   // Generate 3 concept check questions from entrance traps
   const conceptCheckQuiz = useMemo(() => {
-    return highYield.entranceTraps.slice(0, 3).map((trap, idx) => ({
+    return factBank.entranceTraps.slice(0, 3).map((trap, idx) => ({
       id: idx,
       question: `Entrance Concept Check: Which statement is scientifically accurate regarding "${trap.trap.slice(0, 40)}..."?`,
       options: [
@@ -249,7 +291,7 @@ export function TopicVerticalNotes({
       correctIndex: 1,
       explanation: `${trap.truth} (${trap.examRef})`,
     }));
-  }, [highYield]);
+  }, [factBank]);
 
   if (loading) {
     return (
@@ -342,6 +384,15 @@ export function TopicVerticalNotes({
               <span>Refresh Visual</span>
             </button>
 
+            <button
+              onClick={handleToggleFullscreen}
+              className="px-2.5 py-1 rounded-xl border border-border/60 bg-background/80 hover:bg-muted text-muted-foreground hover:text-foreground text-xs font-bold transition-all flex items-center gap-1.5"
+              title={isFullscreen ? "Exit full screen" : "Expand this visual to full screen"}
+            >
+              {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+              <span>{isFullscreen ? "Exit" : "Full Screen"}</span>
+            </button>
+
             <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs">
               <button
                 onClick={() => setVisualTab("schematic")}
@@ -382,7 +433,18 @@ export function TopicVerticalNotes({
           </div>
         </div>
 
-        <div className="p-6 space-y-6">
+        <div
+          ref={visualPanelRef}
+          className={`relative p-6 space-y-6 ${isFullscreen ? "bg-background overflow-auto" : ""}`}
+        >
+          <div className="pointer-events-none absolute bottom-3 right-4 z-10 rounded-full border border-border/60 bg-background/85 px-3 py-1 text-[10px] font-semibold text-muted-foreground backdrop-blur-sm">
+            {visualTab === "3d"
+              ? "Drag to rotate · Scroll to zoom · Pinch on touch"
+              : visualTab === "mindmap"
+                ? "Tap a branch to trace its connections"
+                : "Hover or tap a labelled hotspot for exam notes"}
+          </div>
+
           {visualTab === "schematic" && (
             <SchematicDiagram
               key={`schem-${visualKey}`}
@@ -412,6 +474,7 @@ export function TopicVerticalNotes({
       </section>
 
       {/* ── 2. CEE & NEB HIGH-YIELD FACT BANK & CONSTANTS ─────────────────────── */}
+      {hasHighYield && (
       <section className="rounded-3xl border border-emerald-500/40 bg-card overflow-hidden shadow-sm">
         <div className="px-6 py-4 border-b border-emerald-500/20 bg-emerald-500/10 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
@@ -431,14 +494,38 @@ export function TopicVerticalNotes({
         </div>
 
         <div className="p-6 space-y-6">
+          {/* At-a-glance revision counts */}
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: "Governing Laws", count: factBank.governingLaws.length, tone: "text-emerald-600 dark:text-emerald-400" },
+              { label: "Exam Constants", count: factBank.constantsAndValues.length, tone: "text-sky-600 dark:text-sky-400" },
+              { label: "Entrance Traps", count: factBank.entranceTraps.length, tone: "text-rose-600 dark:text-rose-400" },
+              {
+                label: "Speed Formulas",
+                count: structuredFormulas.length || populatedFormulas.length,
+                tone: "text-violet-600 dark:text-violet-400",
+              },
+            ]
+              .filter((chip) => chip.count > 0)
+              .map((chip) => (
+                <span
+                  key={chip.label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/30 px-3 py-1 text-[11px] font-semibold text-muted-foreground"
+                >
+                  <span className={`text-sm font-extrabold ${chip.tone}`}>{chip.count}</span>
+                  {chip.label}
+                </span>
+              ))}
+          </div>
+
           {/* Governing Laws */}
-          {highYield.governingLaws.length > 0 && (
+          {factBank.governingLaws.length > 0 && (
             <div className="space-y-3">
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">
                 Official Governing Laws &amp; Validity Conditions:
               </span>
               <div className="grid gap-3 sm:grid-cols-2">
-                {highYield.governingLaws.map((law, idx) => (
+                {factBank.governingLaws.map((law, idx) => (
                   <div key={idx} className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 space-y-2">
                     <div className="flex items-center justify-between">
                       <h4 className="text-xs font-bold text-foreground">{law.name}</h4>
@@ -456,13 +543,13 @@ export function TopicVerticalNotes({
           )}
 
           {/* Physical Constants & Values Table */}
-          {highYield.constantsAndValues.length > 0 && (
+          {factBank.constantsAndValues.length > 0 && (
             <div className="space-y-2 pt-2">
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
                 Standard Physical Values &amp; Metric Constants:
               </span>
               <div className="grid gap-2 grid-cols-2 sm:grid-cols-4">
-                {highYield.constantsAndValues.map((c, idx) => (
+                {factBank.constantsAndValues.map((c, idx) => (
                   <div key={idx} className="rounded-xl border border-border/60 bg-muted/20 p-3 text-center">
                     <div className="text-xs font-mono font-bold text-primary truncate">
                       <MathMarkdown content={`$${c.symbol}$`} />
@@ -476,7 +563,7 @@ export function TopicVerticalNotes({
           )}
 
           {/* High-Yield Entrance Traps */}
-          {highYield.entranceTraps.length > 0 && (
+          {factBank.entranceTraps.length > 0 && (
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-2">
                 <ShieldAlert className="h-4 w-4 text-amber-500" />
@@ -485,7 +572,7 @@ export function TopicVerticalNotes({
                 </span>
               </div>
               <div className="space-y-2.5">
-                {highYield.entranceTraps.map((tr, idx) => (
+                {factBank.entranceTraps.map((tr, idx) => (
                   <div key={idx} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 space-y-1.5">
                     <div className="flex items-start gap-2">
                       <span className="text-rose-500 font-bold text-xs shrink-0 mt-0.5">TRAP:</span>
@@ -507,6 +594,8 @@ export function TopicVerticalNotes({
           )}
         </div>
       </section>
+
+      )}
 
       {/* ── 3. CONCEPT BLOCK WITH WORKED NUMERICALS ──────────────────────── */}
       <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
@@ -535,7 +624,7 @@ export function TopicVerticalNotes({
           ) : (
             <div className="rounded-2xl border border-border/50 bg-muted/20 p-5 space-y-2">
               <p className="text-sm text-foreground leading-relaxed">
-                {highYield.title} covers essential fundamentals in {highYield.category}. Study the governing principles, speed formulas, and worked numericals populated below.
+                {factBank.title} covers essential fundamentals in {factBank.category}. Study the governing principles, speed formulas, and worked numericals populated below.
               </p>
             </div>
           )}
@@ -751,21 +840,29 @@ export function TopicVerticalNotes({
               <h3 className="text-base font-bold text-foreground">Formulas &amp; Calculation Shortcuts</h3>
             </div>
             <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-500">
-              Formula Bank
+              {structuredFormulas.length || populatedFormulas.length} Formulas
             </span>
           </div>
 
           <div className="p-6 space-y-4">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {populatedFormulas.map((f, idx) => (
-                <div key={idx} className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4 space-y-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500">
-                    Equation #{idx + 1}
-                  </span>
-                  <MathMarkdown content={f} className="text-sm font-semibold text-foreground font-mono" />
-                </div>
-              ))}
-            </div>
+            {structuredFormulas.length > 0 ? (
+              <div className="grid gap-3 sm:grid-cols-2">
+                {structuredFormulas.map((f, idx) => (
+                  <FormulaCard key={`${f.name}-${idx}`} formula={f} index={idx + 1} />
+                ))}
+              </div>
+            ) : (
+              <div className="grid gap-3 sm:grid-cols-2">
+                {populatedFormulas.map((f, idx) => (
+                  <div key={idx} className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4 space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500">
+                      Equation #{idx + 1}
+                    </span>
+                    <MathMarkdown content={f} className="text-sm font-semibold text-foreground font-mono" />
+                  </div>
+                ))}
+              </div>
+            )}
 
             {rawExamShortTricks.length > 0 && (
               <div className="space-y-2 pt-2">
@@ -773,9 +870,14 @@ export function TopicVerticalNotes({
                   Exam Memory Tricks &amp; Mnemonics:
                 </span>
                 {rawExamShortTricks.map((trick, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 rounded-xl border border-border/60 bg-muted/30 p-3 text-xs text-foreground">
-                    <span className="text-amber-500 font-bold shrink-0">💡</span>
-                    <span>{trick}</span>
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2.5 rounded-xl border border-amber-500/25 bg-amber-500/5 p-3 text-xs text-foreground"
+                  >
+                    <span className="shrink-0 rounded-md bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-extrabold text-amber-600 dark:text-amber-400">
+                      #{idx + 1}
+                    </span>
+                    <span className="leading-relaxed">{trick}</span>
                   </div>
                 ))}
               </div>

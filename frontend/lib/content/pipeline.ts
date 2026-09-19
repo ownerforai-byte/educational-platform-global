@@ -15,6 +15,7 @@ import "katex/contrib/mhchem";
 import "katex/dist/katex.min.css";
 import "highlight.js/styles/github-dark.css";
 import { KATEX_OPTIONS, normalizeMathDelimiters } from "@/lib/content/katex";
+import { normalizeCalloutBlocks, remarkEduCallouts } from "@/lib/content/callouts";
 
 /**
  * Universal note rendering pipeline — the single system every incoming note
@@ -26,6 +27,8 @@ import { KATEX_OPTIONS, normalizeMathDelimiters } from "@/lib/content/katex";
  *  - Math: `$...$`, `$$...$$`, `\(...\)`, `\[...\]` via KaTeX (+ mhchem `\ce`)
  *  - Raw HTML in notes: parsed then sanitized (scripts/iframes/handlers removed)
  *  - Code fences: syntax-highlighted server-side (` ```lang `), no client JS
+ *  - Exam callouts: `:::formula … :::` / `:::trick … :::` blocks and
+ *    `> [!TRAP] …` alerts → colour-coded revision boxes (see lib/content/callouts.ts)
  *
  * Trust order matters: sanitize runs FIRST on author-supplied markup; the
  * highlighter and KaTeX run afterwards and are trusted generators, so their
@@ -66,6 +69,7 @@ export const noteProcessor = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkMath, { singleDollarTextMath: true })
+  .use(remarkEduCallouts)
   .use(remarkRehype, { allowDangerousHtml: true })
   .use(rehypeRaw)
   .use(rehypeSanitize, sanitizeSchema)
@@ -76,6 +80,8 @@ export const noteProcessor = unified()
 /** Markdown/HTML note text → sanitized static HTML string (synchronous). */
 export function renderNoteHtml(noteText: string): string {
   return String(
-    noteProcessor.processSync(normalizeMathDelimiters(noteText)).value,
+    noteProcessor.processSync(
+      normalizeCalloutBlocks(normalizeMathDelimiters(noteText)),
+    ).value,
   );
 }

@@ -644,6 +644,291 @@ code, kbd, samp, pre {
 }
 
 /* ─── ANIMATIONS ─────────────────────────────────────────────────────────── */
+/* ─── NOTE TYPOGRAPHY (.prose) ───────────────────────────────────────────── */
+/* Tailwind Typography is not installed, so this is the platform's own prose
+   scale — one rhythm for every markdown surface (notes, PYQ solutions,
+   derivations, theory, AI chat). Sizes are em-based so a call site can still
+   set the base size with a Tailwind text-* utility on the wrapper. */
+@layer components {
+  .prose {
+    color: hsl(var(--foreground));
+    line-height: 1.7;
+    overflow-wrap: break-word;
+  }
+  .prose > :first-child { margin-top: 0; }
+  .prose > :last-child { margin-bottom: 0; }
+  .prose p { margin: 0.85em 0; }
+
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    scroll-margin-top: 5rem;
+  }
+  .prose h1 {
+    font-size: 1.7em;
+    margin: 1.4em 0 0.6em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+  .prose h2 {
+    font-size: 1.38em;
+    margin: 1.5em 0 0.55em;
+    padding-left: 0.6em;
+    border-left: 4px solid hsl(var(--primary));
+  }
+  .prose h3 { font-size: 1.16em; margin: 1.3em 0 0.5em; }
+  .prose h4 { font-size: 1.02em; margin: 1.15em 0 0.4em; }
+  .prose h5, .prose h6 {
+    font-size: 0.88em;
+    margin: 1em 0 0.35em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .prose strong { font-weight: 700; color: hsl(var(--foreground)); }
+  .prose em { font-style: italic; }
+  .prose a {
+    color: hsl(var(--primary));
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  .prose a:hover { color: hsl(var(--primary) / 0.78); }
+  .prose sub, .prose sup { font-size: 0.72em; }
+  .prose mark {
+    background: hsl(var(--accent-amber) / 0.3);
+    color: inherit;
+    padding: 0 0.2em;
+    border-radius: 0.25rem;
+  }
+  .prose kbd {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85em;
+    padding: 0.1em 0.4em;
+    border: 1px solid hsl(var(--border));
+    border-bottom-width: 2px;
+    border-radius: 0.375rem;
+    background: hsl(var(--muted));
+  }
+  .prose abbr { text-decoration: underline dotted; cursor: help; }
+
+  .prose ul, .prose ol { margin: 0.7em 0; padding-left: 1.5em; }
+  .prose ul { list-style: disc; }
+  .prose ol { list-style: decimal; }
+  .prose ul ul { list-style: circle; }
+  .prose li { margin: 0.35em 0; }
+  .prose li::marker { color: hsl(var(--primary)); font-weight: 600; }
+  .prose li > p { margin: 0.3em 0; }
+  .prose li input[type="checkbox"] { margin-right: 0.5em; accent-color: hsl(var(--primary)); }
+
+  .prose hr {
+    height: 1px;
+    border: 0;
+    margin: 1.6em 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--border)) 15%,
+      hsl(var(--primary) / 0.4) 50%,
+      hsl(var(--border)) 85%,
+      transparent
+    );
+  }
+
+  /* Tables — constants, comparisons, observation sheets */
+  .prose table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1.1em 0;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    border-collapse: collapse;
+    font-size: 0.92em;
+  }
+  .prose thead { background: hsl(var(--muted) / 0.6); }
+  .prose th {
+    padding: 0.6em 0.85em;
+    text-align: left;
+    vertical-align: bottom;
+    font-size: 0.88em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: hsl(var(--muted-foreground));
+    border-bottom: 1px solid hsl(var(--border));
+    white-space: nowrap;
+  }
+  .prose td {
+    padding: 0.55em 0.85em;
+    vertical-align: top;
+    border-top: 1px solid hsl(var(--border) / 0.7);
+  }
+  .prose tbody tr:nth-child(even) { background: hsl(var(--muted) / 0.25); }
+
+  .prose blockquote {
+    margin: 1.1em 0;
+    padding: 0.8em 1.1em;
+    border-left: 4px solid hsl(var(--primary) / 0.6);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: hsl(var(--muted) / 0.35);
+    color: hsl(var(--muted-foreground));
+    font-style: italic;
+  }
+  .prose blockquote > :first-child { margin-top: 0; }
+  .prose blockquote > :last-child { margin-bottom: 0; }
+
+  .prose code {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.88em;
+    padding: 0.15em 0.4em;
+    border: 1px solid hsl(var(--border) / 0.7);
+    border-radius: 0.375rem;
+    background: hsl(var(--muted) / 0.7);
+    color: hsl(var(--foreground));
+  }
+  .prose pre {
+    margin: 1.1em 0;
+    padding: 1em 1.15em;
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    background: #0d1117;
+    overflow-x: auto;
+    font-size: 0.88em;
+    line-height: 1.65;
+  }
+  .prose pre code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #e6edf3;
+    font-size: 1em;
+    white-space: pre;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+  }
+  .prose figure { margin: 1.2em 0; }
+  .prose figcaption {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 0.85em;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .prose details {
+    margin: 1em 0;
+    padding: 0.75em 1em;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.875rem;
+    background: hsl(var(--muted) / 0.25);
+  }
+  .prose summary { cursor: pointer; font-weight: 600; color: hsl(var(--primary)); }
+  .prose summary::marker { color: hsl(var(--primary)); }
+
+  /* Display math ($$…$$) becomes a formula card automatically, so every note
+     that already contains one gets a boxed equation without content edits. */
+  .prose .katex { font-size: 1.06em; }
+  .prose .katex-display {
+    margin: 1.1em 0;
+    padding: 1em 1.15em;
+    border: 1px solid hsl(var(--accent-cyan) / 0.3);
+    border-left: 4px solid hsl(var(--accent-cyan) / 0.75);
+    border-radius: 0.25rem 1rem 1rem 0.25rem;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent-cyan) / 0.09),
+      hsl(var(--accent-violet) / 0.045)
+    );
+    overflow-x: auto;
+  }
+  .prose .katex-display > .katex { font-size: 1.12em; }
+  .prose .katex-error { color: hsl(var(--accent-rose)) !important; }
+}
+
+/* ─── EXAM CALLOUT BOXES ─────────────────────────────────────────────────── */
+/* Authored as `:::formula Title … :::` or `> [!TRAP] …` in notes; rewritten to
+   these containers by lib/content/callouts.ts. Variants only swap --cal, so one
+   rule set covers every box type across all themes. */
+@layer components {
+  .edu-callout {
+    --cal: var(--primary);
+    position: relative;
+    margin: 1.2em 0;
+    padding: 0.9em 1.1em;
+    border: 1px solid hsl(var(--cal) / 0.28);
+    border-left: 4px solid hsl(var(--cal) / 0.85);
+    border-radius: 0.25rem 1rem 1rem 0.25rem;
+    background: linear-gradient(135deg, hsl(var(--cal) / 0.10), hsl(var(--cal) / 0.03));
+    color: hsl(var(--foreground));
+  }
+  .edu-callout > :first-child { margin-top: 0; }
+  .edu-callout > :last-child { margin-bottom: 0; }
+  .edu-callout p, .edu-callout li { margin-top: 0.5em; margin-bottom: 0.5em; }
+  .edu-callout ul, .edu-callout ol { margin: 0.5em 0; }
+  .edu-callout li::marker { color: hsl(var(--cal)); }
+
+  .edu-callout__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 0.6em;
+    margin-bottom: 0.6em;
+  }
+  .edu-callout__label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.22em 0.6em;
+    border: 1px solid hsl(var(--cal) / 0.35);
+    border-radius: 9999px;
+    background: hsl(var(--cal) / 0.16);
+    color: color-mix(in oklab, hsl(var(--cal)) 68%, hsl(var(--foreground)));
+    font-size: 0.6875em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .edu-callout__heading {
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: hsl(var(--foreground));
+  }
+  /* Equation inside a box: keep the card look but drop the doubled frame. */
+  .edu-callout .katex-display {
+    margin: 0.6em 0;
+    padding: 0.7em 0.9em;
+    border: 0;
+    border-radius: 0.75rem;
+    background: hsl(var(--cal) / 0.1);
+  }
+
+  .edu-callout--formula    { --cal: var(--accent-cyan); }
+  .edu-callout--definition { --cal: var(--accent-cyan); }
+  .edu-callout--fact       { --cal: var(--accent-emerald); }
+  .edu-callout--tip        { --cal: var(--accent-emerald); }
+  .edu-callout--trick      { --cal: var(--accent-violet); }
+  .edu-callout--remember   { --cal: var(--accent-violet); }
+  .edu-callout--shortcut   { --cal: var(--accent-amber); }
+  .edu-callout--warning    { --cal: var(--accent-amber); }
+  .edu-callout--trap       { --cal: var(--accent-rose); }
+  .edu-callout--exam       { --cal: var(--primary); }
+  .edu-callout--example    { --cal: var(--muted-foreground); }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0); }

@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { loadData } from "@/lib/data-loader";
 import { SubjectSearch } from "@/components/layout/subject-search";
 import { getImportedNotesBySubject } from "@/lib/imported-notes";
+import { noteRoute } from "@/lib/note-routes";
 
 const SUBJECT_EMOJI: Record<string, string> = {
   "11/Biology": "🌿",
@@ -39,7 +40,7 @@ type RExportManifestItem = {
 
 type RavikishanManifestItem = {
   path: string;
-  data: { title?: string };
+  data: { title?: string; unitSlug?: string };
   dupType?: number;
 };
 
@@ -73,7 +74,7 @@ export default async function NotesPage() {
     });
   }
 
-  const rkBySubject: Record<string, Array<{ path: string; title: string; dupType: number }>> = {};
+  const rkBySubject: Record<string, Array<{ path: string; title: string; unit?: string; dupType: number }>> = {};
   for (const item of rkManifest) {
     const [section, subject] = item.path.split("/");
     const key = `${section}/${subject}`;
@@ -81,6 +82,7 @@ export default async function NotesPage() {
     rkBySubject[key].push({
       path: item.path,
       title: item.data.title ?? baseName(item.path),
+      unit: item.data.unitSlug,
       dupType: item.dupType ?? 1,
     });
   }
@@ -115,7 +117,15 @@ export default async function NotesPage() {
                   {chapters.map((chapter) => (
                     <Link
                       key={chapter.id}
-                      href={`/r-notes/${encodeURIComponent(subject)}/${encodeURIComponent(chapter.chapter)}`}
+                      // Legacy /r-notes/{subject}/{chapter} was removed; send
+                      // readers to the subject hub that renders these notes.
+                      href={noteRoute({
+                        title: chapter.title,
+                        path: `${subject}/${chapter.chapter}/${chapter.id}`,
+                        subject,
+                        target: "class-11-notes",
+                        source: "r-export",
+                      })}
                       className="block rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
                     >
                       <span className="font-medium">{chapter.title}</span>
@@ -140,7 +150,17 @@ export default async function NotesPage() {
               <CardContent>
                 <div className="space-y-2">
                   {items.map((item) => {
-                    const href = `/ravikishan-notes/${encodeURIComponent(item.path)}`;
+                    // Legacy /ravikishan-notes/{path} was removed; route to the
+                    // matching curriculum chapter (or subject hub).
+                    const [section, subject] = item.path.split("/");
+                    const href = noteRoute({
+                      title: item.title,
+                      path: item.path,
+                      subject,
+                      unit: item.unit,
+                      target: section === "class-12" || section === "class-12-notes" ? "class-12-notes" : "class-11-notes",
+                      source: "ravikishan",
+                    });
                     const dupLabel = item.dupType > 1 ? ` (Type-${item.dupType})` : "";
                     return (
                       <Link
