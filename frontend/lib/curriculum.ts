@@ -1,4 +1,5 @@
 import { apiFetch } from "@/lib/api-client";
+import { SYLLABUS } from "@/lib/syllabus";
 
 export type EducationLevel = {
   id: string;
@@ -197,6 +198,21 @@ export async function getLevelBySlug(slug: string) {
 
 export async function getClassesByLevel(levelSlug: string) {
   if ((await getLevelBySlug(levelSlug)) === null) return [];
+
+  // The "library" level is a frontend-only concept populated from the local
+  // SYLLABUS constant — it does not exist in the backend database.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    return SYLLABUS.map((c) => ({
+      id: c.slug,
+      education_level_id: LIBRARY_LEVEL.id,
+      slug: c.slug,
+      name: c.name,
+      description: c.description ?? null,
+      order: 0,
+      is_active: true,
+    }));
+  }
+
   try {
     const data = await apiFetch<{ classes: GroupRow[] }>(
       `/api/levels/${encodeURIComponent(levelSlug)}`
@@ -210,6 +226,22 @@ export async function getClassesByLevel(levelSlug: string) {
 
 export async function getClassBySlug(levelSlug: string, classSlug: string) {
   if ((await getLevelBySlug(levelSlug)) === null) return null;
+
+  // Serve library-level classes from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
+    if (!syllabusClass) return null;
+    return {
+      id: syllabusClass.slug,
+      education_level_id: LIBRARY_LEVEL.id,
+      slug: syllabusClass.slug,
+      name: syllabusClass.name,
+      description: syllabusClass.description ?? null,
+      order: 0,
+      is_active: true,
+    };
+  }
+
   try {
     const data = await apiFetch<{ class: GroupRow }>(
       `/api/classes/${encodeURIComponent(classSlug)}`
@@ -225,6 +257,22 @@ export async function getSubjectsByClass(
   levelSlug: string,
   classSlug: string
 ) {
+  // Serve library-level subjects from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
+    if (!syllabusClass) return [];
+    return syllabusClass.subjects.map((s, i) => ({
+      id: s.slug,
+      class_id: classSlug,
+      slug: s.slug,
+      name: s.name,
+      description: s.description ?? null,
+      icon: null,
+      order: i,
+      is_active: true,
+    }));
+  }
+
   try {
     const cls = await getClassBySlug(levelSlug, classSlug);
     if (!cls) return [];
@@ -243,6 +291,24 @@ export async function getSubjectBySlug(
   classSlug: string,
   subjectSlug: string
 ) {
+  // Serve library-level subjects from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
+    if (!syllabusClass) return null;
+    const s = syllabusClass.subjects.find((sub) => sub.slug === subjectSlug);
+    if (!s) return null;
+    return {
+      id: s.slug,
+      class_id: classSlug,
+      slug: s.slug,
+      name: s.name,
+      description: s.description ?? null,
+      icon: null,
+      order: 0,
+      is_active: true,
+    };
+  }
+
   const cls = await getClassBySlug(levelSlug, classSlug);
   if (!cls) return null;
   try {
@@ -261,6 +327,23 @@ export async function getChaptersBySubject(
   classSlug: string,
   subjectSlug: string
 ) {
+  // Serve library-level chapters (syllabus units) from local data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
+    if (!syllabusClass) return [];
+    const s = syllabusClass.subjects.find((sub) => sub.slug === subjectSlug);
+    if (!s) return [];
+    return s.units.map((u, i) => ({
+      id: u.id,
+      subject_id: subjectSlug,
+      slug: u.id,
+      title: u.title,
+      description: `${u.topics.length} topic${u.topics.length !== 1 ? "s" : ""}`,
+      order: i,
+      is_active: true,
+    }));
+  }
+
   try {
     const subject = await getSubjectBySlug(levelSlug, classSlug, subjectSlug);
     if (!subject) return [];
@@ -280,6 +363,27 @@ export async function getChapterBySlug(
   subjectSlug: string,
   chapterSlug: string
 ) {
+  // Serve library-level chapters from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
+    if (!syllabusClass) return null;
+    const s = syllabusClass.subjects.find((sub) => sub.slug === subjectSlug);
+    if (!s) return null;
+    // chapterSlug is the unit id
+    const unitIndex = s.units.findIndex((u) => u.id === chapterSlug);
+    const unit = s.units[unitIndex];
+    if (!unit) return null;
+    return {
+      id: unit.id,
+      subject_id: subjectSlug,
+      slug: unit.id,
+      title: unit.title,
+      description: `${unit.topics.length} topic${unit.topics.length !== 1 ? "s" : ""}`,
+      order: unitIndex,
+      is_active: true,
+    };
+  }
+
   const subject = await getSubjectBySlug(levelSlug, classSlug, subjectSlug);
   if (!subject) return null;
   try {
@@ -299,6 +403,25 @@ export async function getTopicsByChapter(
   subjectSlug: string,
   chapterSlug: string
 ) {
+  // Serve library-level topics from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const syllabusClass = SYLLABUS.find((c) => c.slug === classSlug);
+    if (!syllabusClass) return [];
+    const s = syllabusClass.subjects.find((sub) => sub.slug === subjectSlug);
+    if (!s) return [];
+    const unit = s.units.find((u) => u.id === chapterSlug);
+    if (!unit) return [];
+    return unit.topics.map((t, i) => ({
+      id: `${unit.id}-${i}`,
+      chapter_id: unit.id,
+      slug: t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/,""),
+      title: t,
+      description: null,
+      order: i,
+      is_active: true,
+    }));
+  }
+
   try {
     const chapter = await getChapterBySlug(
       levelSlug,
@@ -324,6 +447,12 @@ export async function getTopicBySlug(
   chapterSlug: string,
   topicSlug: string
 ) {
+  // Serve library-level topics from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const topics = await getTopicsByChapter(levelSlug, classSlug, subjectSlug, chapterSlug);
+    return topics.find((t) => t.slug === topicSlug) ?? null;
+  }
+
   const chapter = await getChapterBySlug(
     levelSlug,
     classSlug,
@@ -421,11 +550,19 @@ export async function getTopicDetail(
 }
 
 export async function getChapterDetail(
-  _levelSlug: string,
-  _classSlug: string,
-  _subjectSlug: string,
+  levelSlug: string,
+  classSlug: string,
+  subjectSlug: string,
   chapterSlug: string
 ): Promise<ChapterDetail | null> {
+  // Serve library-level chapter detail from local SYLLABUS data.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const chapter = await getChapterBySlug(levelSlug, classSlug, subjectSlug, chapterSlug);
+    if (!chapter) return null;
+    const topics = await getTopicsByChapter(levelSlug, classSlug, subjectSlug, chapterSlug);
+    return { chapter, topics, progress: { completed: 0, total: topics.length } };
+  }
+
   try {
     const data = await apiFetch<{ chapter: ChapterRow; topics: TopicRow[]; progress: { completed: number; total: number } }>(
       `/api/chapters/${encodeURIComponent(chapterSlug)}`
@@ -454,6 +591,16 @@ export async function getSubjectDetail(
     classSlug,
     subjectSlug
   );
+
+  // For the library level, compute progress from local topic counts.
+  if (levelSlug === LIBRARY_LEVEL.slug) {
+    const chapterProgress = chapters.map((c) => ({
+      chapterId: c.id,
+      completed: 0,
+      total: parseInt(c.description?.split(" ")[0] ?? "0", 10) || 0,
+    }));
+    return { subject, chapters, chapterProgress };
+  }
 
   let progressData: { chapterId: string; completed: number; total: number }[] =
     [];
