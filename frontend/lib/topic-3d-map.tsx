@@ -370,65 +370,18 @@ const CHEMISTRY_11: LabComponentMap = {
 
 const CHEMISTRY_11_NONMETALS = [
   "chemistry-of-non-metals",
-  "hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-of-hydrogen-and-their-uses",
-  "application-of-hydrogen-as-fuel-heavy-water-and-its-applications",
-  "allotropes-of-oxygen-definition-of-allotropy-and-examples-oxygen-types-of-oxides-acidic-basic-neutral-amphoteric-peroxide-and-mixed-oxides",
-  "applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen",
-  "ozone-occurrence-preparation-of-ozone-from-oxygen-structure-of-ozone-test-for-ozone-uses-of-ozone",
-  "ozone-layer-depletion-causes-effects-and-control-measures",
-  "nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen",
-  "chemical-properties-of-ammonia-action-with-cuso4-solution-water-fecl3-solution-conc-hcl-mercurous-nitrate-paper-o2-applications-and-harmful-effects-of-ammonia",
-  "oxy-acids-of-nitrogen-name-and-formula",
-  "chemical-properties-of-nitric-acid-hno3-as-an-acid-and-oxidizing-agent-action-with-zinc-magnesium-iron-copper-sulphur-carbon-so2-and-h2s-ring-test-for-nitrate-ion",
-  "halogens-general-characteristics-of-halogens-comparative-study-on-preparation-chemical-properties-with-water-alkali-ammonia-oxidizing-character-bleaching-action-and-uses-of-cl2-br2-and-i2",
-  "test-for-cl2-br2-and-i2",
-  "haloacids-hcl-hbr-and-hi-comparative-study-on-preparation-properties-reducing-strength-acidic-nature-and-solubility-and-uses",
-  "carbon-allotropes-of-carbon-crystalline-and-amorphous-including-fullerenes-structure-general-properties-and-uses-only",
-  "properties-reducing-action-reaction-with-metals-and-nonmetals-and-uses-of-carbon-monoxide",
-  "phosphorus-allotropes-of-phosphorus-name-only",
-  "phosphine-preparation-properties-basic-nature-reducing-nature-action-with-halogens-and-oxygen-and-uses",
-  "sulphur-allotropes-of-sulphur-name-only-and-uses-of-sulphur",
-  "hydrogen-sulphide-preparation-from-kipps-apparatus-with-diagram-properties-acidic-nature-reducing-nature-analytical-reagent-and-uses",
-  "sulphur-dioxide-properties-acidic-nature-reducing-nature-oxidising-nature-and-bleaching-action-and-uses",
-  "sulphuric-acid-properties-acidic-nature-oxidising-nature-dehydrating-nature-and-uses",
-  "sodium-thiosulphate-formula-and-uses",
 ];
 const CHEMISTRY_11_METALS = [
   "chemistry-of-metals",
-  "metals-and-metallurgical-principles-definition-of-metallurgy-and-its-types-hydrometallurgy-pyrometallurgy-electrometallurgy",
-  "introduction-of-ores-gangue-or-matrix-flux-and-slag-alloy-and-amalgam",
-  "general-principles-of-extraction-of-metals-concentration-calcination-and-roasting-smelting-carbon-reduction-thermite-and-electrochemical-reduction",
-  "refining-of-metals-poling-and-electro-refinement",
-  "alkali-metals-general-characteristics-of-alkali-metals",
-  "sodium-extraction-from-downs-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses",
-  "sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses",
-  "sodium-carbonate-properties-action-with-co2o-so2-water-precipitation-reactions-and-uses",
-  "alkaline-earth-metals-general-characteristics-of-alkaline-earth-metals",
-  "molecular-formula-and-uses-of-quick-lime-bleaching-powder-magnesia-plaster-of-paris-and-epsom-salt",
-  "solubility-of-hydroxides-carbonates-and-sulphates-of-alkaline-earth-metals-general-trend-with-explanation",
-  "stability-of-carbonate-and-nitrate-of-alkaline-earth-metals-general-trend-with-explanation",
 ];
 const CHEMISTRY_11_BIO = [
-  "bio-inorganic-chemistry", "introduction-to-bio-inorganic-chemistry", "micro-and-macro-nutrients",
-  "importance-of-metal-ions-in-biological-systems-ions-of-na-k-mg-ca-fe-cu-zn-ni-co-cr",
-  "ion-pumps-sodium-potassium-and-sodium-glucose-pump", "metal-toxicity-toxicity-due-to-iron-arsenic-mercury-lead-and-cadmium",
+  "bio-inorganic-chemistry",
 ];
 const CHEMISTRY_11_ORGANIC = [
-  "basic-concept-of-organic-chemistry", "introduction-to-organic-chemistry-and-organic-compounds",
-  "reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds",
-  "tetra-covalency-and-catenation-properties-of-carbon", "classification-of-organic-compounds",
-  "alkyl-groups-functional-groups-and-homologous-series",
-  "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
-  "preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive",
+  "basic-concept-of-organic-chemistry",
 ];
 const CHEMISTRY_11_PRINCIPLES = [
-  "fundamental-principles-of-organic-chemistry", "iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
-  "qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassaignes-test",
-  "isomerism-in-organic-compounds-definition-and-classification-of-isomerism",
-  "structural-isomerism-and-its-types-chain-isomerism-position-isomerism-functional-isomerism-metamerism-and-tautomerism",
-  "concept-of-geometrical-isomerism-cis-and-trans-and-optical-isomerism-d-and-l-form",
-  "preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission",
-  "electrophiles-nucleophiles-and-free-radicals", "inductive-effect-i-and-i-effect", "resonance-effect-r-and-r-effect",
+  "fundamental-principles-of-organic-chemistry",
 ];
 const CHEMISTRY_11_HYDRO = [
   "hydrocarbons",
@@ -451,17 +404,10 @@ const CHEMISTRY_11_AROMATIC = [
   "combustion-of-benzene-free-combustion-only-and-uses",
 ];
 const CHEMISTRY_11_APPLIED = [
-  "fundamentals-of-applied-chemistry", "fundamentals-of-applied-chemistry-chemical-industry-and-its-importance",
-  "stages-in-producing-a-new-product", "economics-of-production-cash-flow-in-the-production-cycle",
-  "running-a-chemical-plant-designing-a-chemical-plant", "continuous-and-batch-processing",
-  "environmental-impact-of-the-chemical-industry",
+  "fundamentals-of-applied-chemistry",
 ];
 const CHEMISTRY_11_MANUFACTURE = [
-  "modern-chemical-manufactures", "manufacture-of-ammonia-by-habers-process-principle-and-flow-sheet-diagram-only",
-  "manufacture-of-nitric-acid-by-ostwalds-process", "manufacture-of-sulphuric-acid-by-contact-process",
-  "manufacture-of-sodium-hydroxide-by-diaphragm-cell",
-  "manufacture-of-sodium-carbonate-by-ammonia-soda-or-solvay-process",
-  "fertilizers-chemical-fertilizers-types-of-chemical-fertilizers-production-of-urea-with-flow-sheet-diagram",
+  "modern-chemical-manufactures",
 ];
 
 CHEMISTRY_11_NONMETALS.forEach((slug, i) => { CHEMISTRY_11[slug] = make(i === 0 ? "non-metal" : "hydrogen", i === 0 ? "Chemistry of Non-metals" : "Non-metals Topic", "chemistry-of-non-metals", "chemistry"); });
@@ -486,43 +432,35 @@ const BIOLOGY_11: LabComponentMap = {
   "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-significances": makeTopic(CellDivisionVisual, "Cell Division"),
   "floral-diversity": makeTopic(FiveKingdomVisual, "Floral Diversity"),
   "introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system-monera-protista-fungi-plae-and-animalia": makeTopic(FiveKingdomVisual, "Five Kingdom Classification"),
-  "status-of-flora-in-nepal-and-world-representation": make("floral diversity", "Flora in Nepal", "floral-diversity", "biology"),
+
   "fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycetes-and-deuteromycetes": makeTopic(FungiVisual, "Fungi"),
   "structure-and-reproduction-of-mucor-and-yeast": makeTopic(FungiVisual, "Mucor & Yeast"),
-  "introduction-of-mushrooms-poisonous-and-non-poisonous-mushrooms-economic-importance-of-fungi": make("mushroom", "Mushrooms", "floral-diversity", "biology"),
-  "lichen-general-introduction-characteristic-features-and-economic-importance-of-lichen": make("lichen", "Lichen", "floral-diversity", "biology"),
+
+
   "algae-general-introduction-and-characteristic-features-of-green-brown-and-red-algae-structure-and-reproduction-of-spirogyra-economic-importance-of-algae": makeTopic(AlgaeVisual, "Algae"),
   "bryophyta-general-introduction-characteristic-features-of-liverworts-hornworts-and-moss-morphological-structure-and-reproduction-of-marchantia-economic-importance-of-bryophytes": makeTopic(BryophytaVisual, "Bryophyta"),
   "pteridophyta-general-introduction-characteristic-features-of-pteridophytes-morphological-structure-and-reproduction-of-dryopteris-economic-importance-of-pteridophytes": makeTopic(PteridophytaVisual, "Pteridophyta"),
   "gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm": makeTopic(GymnospermVisual, "Gymnosperm"),
   "angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit": makeTopic(AngiospermVisual, "Angiosperm Morphology"),
-  "taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phylogenetic-of-angiosperms": make("taxonomic", "Taxonomic Study", "floral-diversity", "biology"),
-  "angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae": make("angiosperm families", "Angiosperm Families", "floral-diversity", "biology"),
+
+
   "introductory-microbiology": make("microbiology", "Introductory Microbiology", "introductory-microbiology", "biology"),
   "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-blue-green-algae": make("monera", "Monera", "introductory-microbiology", "biology"),
   "virus-general-introduction-structure-and-importance-of-virus-bacteriophage": make("virus", "Virus & Bacteriophage", "introductory-microbiology", "biology"),
-  "impacts-of-biotechnology-in-the-field-of-microbiology": make("biotechnology", "Biotechnology in Microbiology", "introductory-microbiology", "biology"),
+
   "ecology": makeTopic(EcosystemVisual, "Ecology"),
   "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions": makeTopic(EcosystemVisual, "Ecosystem Ecology"),
   "concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem": makeTopic(EcosystemVisual, "Pond & Forest Ecosystem"),
   "food-chain-food-web-trophic-level-ecological-pyramids-productivity": makeTopic(EcosystemVisual, "Food Chain & Web"),
   "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession": makeTopic(BiogeochemicalCyclesVisual, "Biogeochemical Cycles"),
-  "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes": make("hydrophyte", "Ecological Adaptation", "ecology", "biology"),
-  "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion": make("greenhouse", "Ecological Imbalances", "ecology", "biology"),
+
+
   "vegetation": make("vegetation", "Vegetation", "vegetation", "biology"),
-  "vegetation-introduction-types-of-vegetation-in-nepal": make("vegetation", "Vegetation in Nepal", "vegetation", "biology"),
-  "in-situ-protected-areas-and-ex-situ-botanical-garden-seed-bank-conservation": make("in-situ", "Conservation Methods", "vegetation", "biology"),
-  "natural-environment-vegetation-and-human-activities": make("vegetation", "Natural Environment", "vegetation", "biology"),
   "introduction-to-biology": make("cell", "Introduction to Biology", "introduction-to-biology", "biology"),
-  "introduction-to-biology-scope-and-fields-of-biology": make("cell", "Scope of Biology", "introduction-to-biology", "biology"),
-  "relation-of-biology-with-other-sciences": make("cell", "Biology and Other Sciences", "introduction-to-biology", "biology"),
   "evolutionary-biology": makeTopic(EvolutionVisual, "Evolutionary Biology"),
-  "life-and-its-origin-oparin-haldane-theory-miller-and-ureys-experiment": make("oparin", "Origin of Life", "evolutionary-biology", "biology"),
-  "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical": make("morphological", "Evidences of Evolution", "evolutionary-biology", "biology"),
-  "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism": make("darwinism", "Theories of Evolution", "evolutionary-biology", "biology"),
+
   "human-evolution-position-of-man-in-animal-kingdom": makeTopic(HumanEvolutionVisual, "Human Evolution"),
-  "differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man": make("apes", "Monkeys & Apes", "evolutionary-biology", "biology"),
-  "evolution-of-modern-man-starting-from-anthropoid-ancestor": make("anthropoid", "Modern Man", "evolutionary-biology", "biology"),
+
 };
 
 const BIOLOGY_11_FAUNAL = [
@@ -541,19 +479,9 @@ const BIOLOGY_11_FAUNAL = [
 ];
 const BIOLOGY_11_BIOTA = [
   "biota-and-environment",
-  "animal-adaptation-aquatic-primary-and-secondary-terrestrial-cursorial-fossorial-and-arboreal-and-volant-adaptation",
-  "animal-behavior-reflex-action-taxes-dominance-and-leadership",
-  "fish-and-bird-migration",
-  "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution",
-  "pesticides-and-their-effects",
 ];
 const BIOLOGY_11_CONSERVATION = [
   "conservation-biology",
-  "conservation-biology-concept-of-biodiversity-biodiversity-conservation",
-  "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites-wildlife-importance-causes-of-extinction-and-conservation-strategies-iucn-categories-of-threatened-species-endangered-species-in-nepal",
-  "wildlife-importance-causes-of-extinction-and-conservation-strategies",
-  "iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threatened-species",
-  "endangered-species-in-nepal",
 ];
 BIOLOGY_11_FAUNAL.forEach((slug, i) => {
   if (i === 0) BIOLOGY_11[slug] = makeTopic(FiveKingdomVisual, "Faunal Diversity");
@@ -617,39 +545,21 @@ export { MATH_11 };
 
 const PHYSICS_12: LabComponentMap = {
   "electrostatics": make("coulomb", "Electrostatics", "electrostatics", "physics"),
-  "coulombs-law-and-its-applications": make("coulomb", "Coulomb's Law", "electrostatics", "physics"),
-  "electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets": make("electric field", "Electric Field", "electrostatics", "physics"),
-  "electric-potential-and-potential-difference": make("potential", "Potential Difference", "electrostatics", "physics"),
-  "capacitance-and-capacitors-parallel-plate-series-and-parallel-combination": make("capacit", "Capacitance", "electrostatics", "physics"),
-  "dielectric-and-dielectric-constant": make("dielectric", "Dielectric", "electrostatics", "physics"),
-  "energy-stored-in-a-capacitor": make("capacit", "Energy in Capacitor", "electrostatics", "physics"),
   "current-electricity": make("circuit", "Current Electricity", "current-electricity", "physics"),
-  "electric-current-drift-velocity-and-relaxation-time": make("drift velocity", "Drift Velocity", "current-electricity", "physics"),
   "ohms-law-and-its-limitations": makeTopic(OhmsLawVisual, "Ohm's Law"),
-  "resistance-and-resistivity-temperature-dependence": make("resistivity", "Resistance & Resistivity", "current-electricity", "physics"),
-  "series-and-parallel-combination-of-resistors": make("series and parallel", "Resistor Combination", "current-electricity", "physics"),
+
   "kirchhoffs-laws-and-their-applications": makeTopic(KirchhoffsLawsVisual, "Kirchhoff's Laws"),
-  "electromotive-force-emf-internal-resistance-and-cells-in-combination": make("emf", "EMF", "current-electricity", "physics"),
-  "wheatstone-bridge-and-meter-bridge": make("wheatstone", "Wheatstone Bridge", "current-electricity", "physics"),
-  "potentiometer-and-its-applications": make("potentiometer", "Potentiometer", "current-electricity", "physics"),
+
   "magnetism-and-magnetic-effect-of-current": make("magnetic", "Magnetism", "magnetism-and-magnetic-effect", "physics"),
-  "magnetic-field-and-magnetic-force-on-moving-charges": make("magnetic field", "Magnetic Force", "magnetism-and-magnetic-effect", "physics"),
-  "lorentz-force-and-motion-of-charged-particles-in-magnetic-fields": make("lorentz", "Lorentz Force", "magnetism-and-magnetic-effect", "physics"),
   "biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid": makeTopic(BiotSavartVisual, "Biot-Savart Law"),
-  "amperes-circuital-law-and-its-applications": make("ampere", "Ampere's Law", "magnetism-and-magnetic-effect", "physics"),
-  "force-between-two-parallel-current-carrying-conductors": make("parallel current", "Force Between Conductors", "magnetism-and-magnetic-effect", "physics"),
-  "moving-coil-galvanometer-ammeter-and-voltmeter": make("galvanometer", "Galvanometer", "magnetism-and-magnetic-effect", "physics"),
+
   "electromagnetic-induction": makeTopic(EMIInductionVisual, "Electromagnetic Induction"),
   "faradays-laws-of-electromagnetic-induction": makeTopic(EMIInductionVisual, "Faraday's Laws"),
   "lenzs-law-and-conservation-of-energy": makeTopic(LenzLawVisual, "Lenz's Law"),
-  "self-induction-and-self-inductance": make("self-inductance", "Self Induction", "electromagnetic-induction", "physics"),
-  "mutual-induction-and-mutual-inductance": make("mutual", "Mutual Induction", "electromagnetic-induction", "physics"),
-  "growing-and-decaying-current-in-lr-circuits": make("lr circuit", "LR Circuits", "electromagnetic-induction", "physics"),
+
   "alternating-current": makeTopic(ACcircuitsVisual, "Alternating Current"),
   "ac-voltage-applied-to-resistor-inductor-and-capacitor": makeTopic(ACcircuitsVisual, "AC Voltage"),
-  "lc-oscillations-and-resonance": make("lc oscillation", "LC Oscillations", "alternating-current", "physics"),
-  "lcr-series-circuit-and-power-factor": make("lcr", "LCR Circuit", "alternating-current", "physics"),
-  "transformer-principle-types-and-losses": make("transformer", "Transformer", "alternating-current", "physics"),
+
   "ray-optics": makeTopic(OpticsVisual, "Ray Optics"),
   "reflection-at-plane-and-curved-surfaces-mirrors": makeTopic(OpticsReflection3d, "Reflection at Mirrors"),
   "laws-of-refraction-refractive-index": makeTopic(OpticsRefraction3d, "Laws of Refraction"),
@@ -669,38 +579,29 @@ const PHYSICS_12: LabComponentMap = {
   "wavefront-and-huygens-principle": makeTopic(WaveMotionVisual, "Huygens' Principle"),
   "interference-of-light-youngs-double-slit-experiment": makeTopic(WaveOpticsVisual, "Young's Double Slit"),
   "diffraction-of-light-single-slit-diffraction": makeTopic(WaveOpticsVisual, "Diffraction"),
-  "polarization-brewsters-law-and-polaroids": make("polarization", "Polarization", "wave-optics", "physics"),
+
   "modern-physics": make("photoelectric", "Modern Physics", "modern-physics", "physics"),
   "photoelectric-effect-and-einsteins-photoelectric-equation": makeTopic(PhotoelectricEffectVisual, "Photoelectric Effect"),
   "de-broglie-wavelength-and-matter-waves": makeTopic(WaveMotionVisual, "De Broglie Wavelength"),
   "atom-bohrs-model-and-hydrogen-spectrum": makeTopic(BohrModelVisual, "Bohr's Model"),
   "nucleus-binding-energy-nuclear-fission-and-fusion": make("binding energy", "Binding Energy", "modern-physics", "physics"),
-  "semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor": make("semiconductor", "Semiconductors", "modern-physics", "physics"),
-  "logic-gates-and-or-not-nand-nor": make("logic gate", "Logic Gates", "modern-physics", "physics"),
   "communication-systems": make("modulation", "Communication Systems", "communication-systems", "physics"),
-  "elements-of-a-communication-system": make("communication", "Communication Elements", "communication-systems", "physics"),
-  "modulation-amplitude-modulation-and-frequency-modulation": make("modulation", "Modulation", "communication-systems", "physics"),
-  "bandwidth-and-propagation-of-electromagnetic-waves": make("bandwidth", "Bandwidth", "communication-systems", "physics"),
-  "mass-defect-packing-fraction-binding-energy-per-nucleon": make("binding energy", "Mass Defect & Binding Energy", "modern-physics", "physics"),
+
   "difference-between-metals-insulators-and-semiconductors-using-band-theory": makeTopic(SemiconductorsVisual, "Band Theory"),
 };
 export { PHYSICS_12 };
 
 const CHEMISTRY_12: LabComponentMap = {
   "solutions": make("solution", "Solutions", "solutions", "chemistry"),
-  "types-of-solutions-and-expression-of-concentration": make("concentration", "Types of Solutions", "solutions", "chemistry"),
-  "solubility-of-gases-and-solids-in-liquids": make("solubility", "Solubility", "solutions", "chemistry"),
+
   "vapour-pressure-of-solutions-raoults-law": makeTopic(RaoultLawVisual, "Raoult's Law"),
   "colligative-properties-relative-lowering-of-vapour-pressure-elevation-of-boiling-point-depression-of-freezing-point-osmosis-and-osmotic-pressure": makeTopic(RaoultLawVisual, "Colligative Properties"),
   "vant-hoff-factor-and-abnormal-molar-masses": makeTopic(RaoultLawVisual, "Van't Hoff Factor"),
   "electro-chemistry": makeTopic(GalvanicCellVisual, "Electrochemistry"),
-  "oxidation-and-reduction-electrode-reactions": make("oxidation", "Electrode Reactions", "electro-chemistry", "chemistry"),
+
   "electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential": makeTopic(GalvanicCellVisual, "Galvanic Cell"),
   "nernst-equation-and-its-applications": makeTopic(GalvanicCellVisual, "Nernst Equation"),
-  "conductance-of-electrolytic-solutions": makeTopic(GalvanicCellVisual, "Conductance"),
   "electrolysis-and-faradays-laws": makeTopic(GalvanicCellVisual, "Electrolysis"),
-  "batteries-primary-and-secondary-cells": makeTopic(GalvanicCellVisual, "Batteries"),
-  "fuel-cells": makeTopic(GalvanicCellVisual, "Fuel Cells"),
   "chemical-kinetics": make("kinetics", "Chemical Kinetics", "chemical-kinetics", "chemistry"),
   "rate-of-reaction-average-and-instantaneous-rate": makeTopic(ReactionKineticsVisual, "Rate of Reaction"),
   "factors-affecting-rate-of-reaction": makeTopic(ReactionKineticsVisual, "Factors Affecting Rate"),
@@ -708,43 +609,19 @@ const CHEMISTRY_12: LabComponentMap = {
   "integrated-rate-equations-zero-order-and-first-order-reactions": makeTopic(ReactionKineticsVisual, "Integrated Rate"),
   "arrhenius-equation-and-activation-energy": makeTopic(ArrheniusEquationVisual, "Arrhenius Equation"),
   "general-and-organic-fundamentals": make("organic", "General & Organic Fundamentals", "general-and-organic-fundamentals", "chemistry"),
-  "purification-and-qualitative-quantitative-analysis-of-organic-compounds": make("qualitative analysis", "Organic Analysis", "general-and-organic-fundamentals", "chemistry"),
-  "inductive-effect-resonance-hyperconjugation": make("hyperconjugation", "Inductive & Resonance", "general-and-organic-fundamentals", "chemistry"),
-  "electrophilic-and-nucleophilic-substitution-reactions": make("electrophilic substitution", "Substitution Reactions", "general-and-organic-fundamentals", "chemistry"),
-  "free-radical-reactions": make("free radical", "Free Radical Reactions", "general-and-organic-fundamentals", "chemistry"),
-  "important-organic-reactions-oxidation-reduction-addition-elimination": make("oxidation", "Important Organic Reactions", "general-and-organic-fundamentals", "chemistry"),
   "hydrocarbons": makeTopic(OrganicMoleculesVisual, "Hydrocarbons"),
   "alkanes-conformations-combustion-free-radical-halogenation": makeTopic(OrganicMoleculesVisual, "Alkanes"),
   "alkenes-preparation-geometrical-isomerism-electrophilic-addition-markovnikov-anti-markovnikov-ozonolysis-polymerisation": makeTopic(OrganicMoleculesVisual, "Alkenes"),
   "alkynes-preparation-acidic-character-addition-reactions": makeTopic(OrganicMoleculesVisual, "Alkynes"),
   "aromatic-hydrocarbons-benzene-resonance-aromaticity-electrophilic-substitution-halogenation-nitration-sulphonation-friedel-crafts": makeTopic(BenzeneRingVisual, "Aromatic Hydrocarbons"),
   "alcohols-phenols-ethers": make("alcohol", "Alcohols, Phenols, Ethers", "alcohols-phenols-ethers", "chemistry"),
-  "alcohols-classification-preparation-physical-and-chemical-properties": make("alcohol", "Alcohols", "alcohols-phenols-ethers", "chemistry"),
-  "phenols-acidity-electrophilic-substitution-kolbes-reaction-reimer-tiemann-reaction": make("phenol", "Phenols", "alcohols-phenols-ethers", "chemistry"),
-  "ethers-preparation-and-chemical-reactions-cleavage-by-hi": make("ether", "Ethers", "alcohols-phenols-ethers", "chemistry"),
   "aldehydes-ketones-carboxylic-acids": make("aldehyde", "Aldehydes, Ketones, Carboxylic Acids", "aldehydes-ketones-carboxylic-acids", "chemistry"),
-  "aldehydes-and-ketones-preparation-physical-properties-nucleophilic-addition-reactions": make("aldehyde", "Aldehydes & Ketones", "aldehydes-ketones-carboxylic-acids", "chemistry"),
-  "carboxylic-acids-preparation-physical-properties-acidic-character-reactions": make("carboxylic acid", "Carboxylic Acids", "aldehydes-ketones-carboxylic-acids", "chemistry"),
-  "name-reactions-aldol-condensation-cannizzaro-reaction-hvz-reaction": make("aldol", "Name Reactions", "aldehydes-ketones-carboxylic-acids", "chemistry"),
   "amines": make("amine", "Amines", "amines", "chemistry"),
-  "classification-nomenclature-and-preparation": make("amine", "Classification of Amines", "amines", "chemistry"),
-  "physical-and-chemical-properties": make("amine", "Properties of Amines", "amines", "chemistry"),
-  "basic-character-of-amines": make("basic character", "Basic Character", "amines", "chemistry"),
-  "reactions-diazotisation-coupling-reactions-hinsberg-test": make("diazotisation", "Diazotisation", "amines", "chemistry"),
   "biomolecules": make("biomolecule", "Biomolecules", "biomolecules", "chemistry"),
-  "carbohydrates-monosaccharides-glucose-fructose-disaccharides-polysaccharides": make("carbohydrate", "Carbohydrates", "biomolecules", "chemistry"),
   "proteins-amino-acids-peptide-bond-primary-to-quaternary-structure-denaturation": makeTopic(ProteinStructureVisual, "Proteins"),
-  "enzymes-definition-classification-enzyme-action": make("enzyme", "Enzymes", "biomolecules", "chemistry"),
-  "vitamins-classification-and-functions": make("vitamin", "Vitamins", "biomolecules", "chemistry"),
-  "hormones-definition-types-functions": make("hormone", "Hormones", "biomolecules", "chemistry"),
+
   "chemistry-in-everyday-life": make("everyday", "Chemistry in Everyday Life", "chemistry-in-everyday-life", "chemistry"),
-  "medicinal-chemicals-analgesics-tranquilizers-antipyretics-antibiotics-antihistamines-antacids": make("analgesic", "Medicinal Chemicals", "chemistry-in-everyday-life", "chemistry"),
-  "chemical-cleansers-soaps-and-detergents": make("soap", "Soaps & Detergents", "chemistry-in-everyday-life", "chemistry"),
-  "food-additives-preservatives-and-artificial-sweetening-agents": make("preservative", "Food Additives", "chemistry-in-everyday-life", "chemistry"),
   "chemistry-of-element": make("p-block", "Chemistry of Elements", "chemistry-of-element", "chemistry"),
-  "p-block-elements-group-15-18-important-compounds-trends-in-properties": make("p-block", "p-block Elements", "chemistry-of-element", "chemistry"),
-  "d-block-elements-general-characteristics-important-compounds-kmno4-k2cr2o7": make("d-block", "d-block Elements", "chemistry-of-element", "chemistry"),
-  "f-block-elements-lanthanoids-and-actinoids": make("f-block", "f-block Elements", "chemistry-of-element", "chemistry"),
   "coordination-compounds-werners-theory-iupac-nomenclature-vbt-cft-qualitative-isomerism": makeTopic(CoordinationCompoundsVisual, "Coordination Compounds"),
   "van-t-hoff-factor-and-abnormal-molar-masses": makeTopic(RaoultLawVisual, "Van't Hoff Factor"),
   "p-block-elements-group-1518-important-compounds-trends-in-properties": make("p-block", "p-block Elements", "chemistry-of-element", "chemistry"),
@@ -809,60 +686,30 @@ export { CHEMISTRY_12, MATH_12 };
 const BIOLOGY_12: LabComponentMap = {
   "heredity-and-evolution": makeTopic(DNAStructureVisual, "Heredity & Evolution"),
   "mendels-laws-of-inheritance-monochromo-and-dihybrid-cross": makeTopic(MendelsLawsVisual, "Mendel's Laws"),
-  "incomplete-dominance-and-codominance": make("incomplete dominance", "Incomplete Dominance", "heredity-and-evolution", "biology"),
-  "linkage-and-crossing-over": make("linkage", "Linkage", "heredity-and-evolution", "biology"),
-  "sex-determination-and-sex-linked-disorders": make("sex determination", "Sex Determination", "heredity-and-evolution", "biology"),
-  "chromosome-theory-of-inheritance": make("chromosome theory", "Chromosome Theory", "heredity-and-evolution", "biology"),
+
   "molecular-basis-of-inheritance-dna-structure-replication-transcription-translation-gene-regulation": makeTopic(DNAStructureVisual, "Molecular Basis"),
-  "human-genome-project-objectives-and-significance": make("human genome", "Human Genome Project", "heredity-and-evolution", "biology"),
+
   "evolution-evidences-adaptive-radiation-hardy-weinberg-equilibrium-human-evolution": makeTopic(EvolutionVisual, "Evolution"),
   "human-health-and-diseases": makeTopic(ImmuneSystemVisual, "Health & Diseases"),
-  "pathogens-and-diseases-malaria-dengue-filariasis-ascariasis-pneumonia-typhoid-tuberculosis-common-cold-aids-ringworm": make("pathogen", "Pathogens", "human-health-and-diseases", "biology"),
+
   "immune-system-innate-and-adaptive-immunity": makeTopic(ImmuneSystemVisual, "Immune System"),
   "antigens-and-antibodies-immune-response": makeTopic(ImmuneSystemVisual, "Antigens & Antibodies"),
-  "vaccination-and-immunization": make("vaccination", "Vaccination", "human-health-and-diseases", "biology"),
-  "allergy-and-autoimmune-diseases": make("allergy", "Allergy", "human-health-and-diseases", "biology"),
-  "strategies-for-food-production": make("plant breeding", "Food Production", "strategies-for-food-production", "biology"),
-  "plant-breeding-methods-and-examples": make("plant breeding", "Plant Breeding", "strategies-for-food-production", "biology"),
-  "single-cell-protein-scp": make("scp", "Single Cell Protein", "strategies-for-food-production", "biology"),
-  "animal-husbandry-breeds-and-management": make("animal husbandry", "Animal Husbandry", "strategies-for-food-production", "biology"),
-  "biofertilizers-and-sustainable-agriculture": make("biofertilizer", "Biofertilizers", "strategies-for-food-production", "biology"),
-  "microbes-in-human-welfare": make("microbes", "Microbes in Welfare", "microbes-in-human-welfare", "biology"),
-  "microorganisms-in-household-products": make("microbes", "Household Microbes", "microbes-in-human-welfare", "biology"),
-  "industrial-production-of-antibiotics-alcoholic-beverages-citric-acid": make("antibiotics", "Industrial Production", "microbes-in-human-welfare", "biology"),
-  "microbes-as-biocontrol-agents-and-biofertilizers": make("biocontrol", "Biocontrol", "microbes-in-human-welfare", "biology"),
-  "bioremediation-biogas": make("bioremediation", "Bioremediation", "microbes-in-human-welfare", "biology"),
+
+
+
   "biotechnology-principles": makeTopic(RestrictionEnzymeVisual, "Biotechnology Principles"),
   "principles-of-biotechnology-recombinant-dna-technology": makeTopic(RestrictionEnzymeVisual, "Principles of Biotech"),
   "tools-restriction-enzymes-vectors-competent-host": makeTopic(RestrictionEnzymeVisual, "Restriction Enzymes & Vectors"),
   "processes-dna-isolation-pcr-gel-electrophoresis-gene-transfer": makeTopic(PCRVisual, "PCR & Gene Transfer"),
-  "applications-of-recombinant-dna-technology": make("recombinant", "Applications", "biotechnology-principles", "biology"),
-  "biotechnology-applications": make("biotechnology applications", "Biotechnology Applications", "biotechnology-applications", "biology"),
-  "biotechnological-applications-in-agriculture-bt-cotton-nematode-resistant-tobacco": make("bt cotton", "Agriculture Applications", "biotechnology-applications", "biology"),
-  "biotechnological-applications-in-medicine-insulin-gene-therapy-therapeutic-proteins": make("insulin", "Medicine Applications", "biotechnology-applications", "biology"),
-  "transgenic-animals": make("transgenic", "Transgenic Animals", "biotechnology-applications", "biology"),
-  "biopiracy-and-patent-issues": make("biopiracy", "Biopiracy", "biotechnology-applications", "biology"),
+
   "organisms-and-environment": makeTopic(BiogeochemicalCyclesVisual, "Organisms & Environment"),
-  "adaptations-of-organisms-to-environmental-conditions": make("adaptation", "Adaptations", "organisms-and-environment", "biology"),
-  "population-ecology-growth-regulation-interactions": make("population ecology", "Population Ecology", "organisms-and-environment", "biology"),
+
   "ecosystem-structure-and-function-productivity-decomposition": makeTopic(EcosystemVisual, "Ecosystem Structure"),
-  "ecological-succession": make("succession", "Ecological Succession", "organisms-and-environment", "biology"),
+
   "nutrient-cycling-carbon-nitrogen-phosphorus": makeTopic(BiogeochemicalCyclesVisual, "Nutrient Cycling"),
   "ecological-pyramids-and-energy-flow": makeTopic(EcosystemVisual, "Ecological Pyramids"),
-  "biodiversity-and-conservation": make("biodiversity", "Biodiversity & Conservation", "biodiversity-and-conservation", "biology"),
-  "biodiversity-genetic-species-and-ecosystem-levels": make("biodiversity", "Levels of Biodiversity", "biodiversity-and-conservation", "biology"),
-  "patterns-of-biodiversity-global-and-nepal": make("patterns of biodiversity", "Biodiversity Patterns", "biodiversity-and-conservation", "biology"),
-  "biodiversity-loss-causes-and-consequences": make("biodiversity loss", "Biodiversity Loss", "biodiversity-and-conservation", "biology"),
-  "conservation-strategies-in-situ-and-ex-situ": make("conservation", "Conservation Strategies", "biodiversity-and-conservation", "biology"),
-  "red-data-book-and-iucn-categories": make("red data book", "Red Data Book", "biodiversity-and-conservation", "biology"),
+
   "environmental-issues": make("environmental issues", "Environmental Issues", "environmental-issues", "biology"),
-  "air-pollution-causes-effects-and-control": make("air pollution", "Air Pollution", "environmental-issues", "biology"),
-  "water-pollution-causes-effects-and-control": make("water pollution", "Water Pollution", "environmental-issues", "biology"),
-  "solid-waste-management": make("solid waste", "Solid Waste", "environmental-issues", "biology"),
-  "nuclear-radiation-hazards": make("nuclear radiation", "Nuclear Hazards", "environmental-issues", "biology"),
-  "greenhouse-effect-global-warming-climate-change": make("greenhouse", "Greenhouse Effect", "environmental-issues", "biology"),
-  "ozone-layer-depletion": make("ozone", "Ozone Depletion", "environmental-issues", "biology"),
-  "rainwater-harvesting-and-wasteland-development": make("rainwater harvesting", "Rainwater Harvesting", "environmental-issues", "biology"),
 };
 
 export const TOPIC_3D_MAP: LabComponentMap = {
