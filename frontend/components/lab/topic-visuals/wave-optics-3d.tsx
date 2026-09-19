@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -167,20 +167,20 @@ export function WaveOpticsVisual() {
       const lambdaLabelPos = new THREE.Vector3(0, -4, 0);
       const lambdaTarget = new THREE.Vector3(0.5, 0, 0);
       const lambdaDir = lambdaTarget.clone().sub(lambdaLabelPos).normalize();
-      push(new LiveArrow(lambdaDir, lambdaLabelPos, lambdaLabelPos.distanceTo(lambdaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveLeaderLine(lambdaDir, lambdaLabelPos, lambdaLabelPos.distanceTo(lambdaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`λ = ${wavelength} μm (wavelength)`, "#a78bfa", lambdaLabelPos.clone().sub(lambdaDir.multiplyScalar(0.5)), 0.75));
 
       const dLabelPos = new THREE.Vector3(-3, mode === "double-slit" ? slitSep / 2 + 1 : 1, 0);
       const dTarget = new THREE.Vector3(-3, mode === "double-slit" ? -slitSep / 2 : 0, 0);
       const dDir = dTarget.clone().sub(dLabelPos).normalize();
-      push(new LiveArrow(dDir, dLabelPos, dLabelPos.distanceTo(dTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveLeaderLine(dDir, dLabelPos, dLabelPos.distanceTo(dTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`d = ${slitSep} (slit separation)`, "#34d399", dLabelPos.clone().sub(dDir.multiplyScalar(0.5)), 0.75));
 
       // Fringe pattern formula label
       const formulaLabelPos = new THREE.Vector3(2, 3.5, 0);
       const formulaTarget = new THREE.Vector3(0, 0, 0);
       const formulaDir = formulaTarget.clone().sub(formulaLabelPos).normalize();
-      push(new LiveArrow(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveLeaderLine(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite(
         mode === "double-slit" ? "β = λD/d (fringe width)" : "I = I₀(sinβ/β)² (diffraction)",
         "#ef4444", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.7

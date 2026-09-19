@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
@@ -195,7 +195,7 @@ export const Class11LawsOfMotion: React.FC = () => {
       // Show forces
       if (showForces) {
         // Force arrow on block 1
-        forceArrow = new LiveArrow(
+        forceArrow = new LiveLeaderLine(
           new THREE.Vector3(1, 0, 0),
           new THREE.Vector3(pos1 - 0.5, 1, 0),
           force * 0.1,
@@ -204,7 +204,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         ts!.group.add(forceArrow);
 
         // Friction arrow on block 1
-        frictionArrow = new LiveArrow(
+        frictionArrow = new LiveLeaderLine(
           new THREE.Vector3(-1, 0, 0),
           new THREE.Vector3(pos1 - 0.5, 1, 0),
           friction * mass1 * 9.8 * 0.1,
@@ -213,7 +213,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         ts!.group.add(frictionArrow);
 
         // Tension arrow
-        tensionArrow = new LiveArrow(
+        tensionArrow = new LiveLeaderLine(
           new THREE.Vector3(0, -1, 0),
           new THREE.Vector3(pos1, 10, 0),
           tension * 0.1,
@@ -222,7 +222,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         ts!.group.add(tensionArrow);
 
         // Normal force arrows
-        const normalArrow1 = new LiveArrow(
+        const normalArrow1 = new LiveLeaderLine(
           new THREE.Vector3(0, 1, 0),
           new THREE.Vector3(pos1, 0.5, 0),
           mass1 * 9.8 * 0.1,
@@ -231,7 +231,7 @@ export const Class11LawsOfMotion: React.FC = () => {
         ts!.group.add(normalArrow1);
         normalArrows.push(normalArrow1);
 
-        const normalArrow2 = new LiveArrow(
+        const normalArrow2 = new LiveLeaderLine(
           new THREE.Vector3(0, 1, 0),
           new THREE.Vector3(pos1, block2Group.position.y, 0),
           mass2 * 9.8 * 0.1,

@@ -10,392 +10,459 @@
   "tabGroup": "02-impacts-of-biotechnology-in-the-field-of-microbiology",
   "mcqs": [
     {
-      "question": "Question about 02 impacts of biotechnology in the field of microbiology?",
+      "question": "The enzyme used to join DNA fragments in rDNA is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Restriction enzyme",
+        "DNA ligase",
+        "Polymerase",
+        "Helicase"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plasmid vector must contain:",
+      "options": [
+        "An origin of replication (ori)",
+        "A capsid",
+        "A flagellum",
+        "A nucleoid"
       ],
       "answer": "A"
+    },
+    {
+      "question": "Human insulin is produced using which host organism?",
+      "options": [
+        "Yeast",
+        "E. coli",
+        "Mammalian cell only",
+        "Bread mould"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "CRISPR-Cas9 is:",
+      "options": [
+        "A restriction enzyme",
+        "A programmable gene-editing tool",
+        "A vector",
+        "A host cell"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "biotech-microbe-applications",
   "enrichedContent": {
     "notes": [
-      "Monera: prokaryotes (bacteria, cyanobacteria).",
-      "Bacteria: cell wall (peptidoglycan), 70S ribosomes, binary fission.",
-      "Virus: acellular, protein coat + nucleic acid, obligate parasite.",
-      "Gram stain: positive (purple) vs negative (pink).",
-      "Biotechnology: insulin, vaccines, GMOs."
+      "DETAILED RECOMBINANT DNA (rDNA) TECHNOLOGY AND ITS APPLICATIONS.",
+      "rDNA (gene cloning) — 7 steps:",
+      "Step 1 — Identification + isolation: the gene of interest (e.g., human insulin) is identified and isolated from the source DNA (or synthesised by PCR).",
+      "Step 2 — Cutting: restriction endonucleases (e.g., EcoRI, BamHI) cut both the source DNA and the vector (plasmid) at specific recognition sites, producing sticky (or blunt) ends.",
+      "Step 3 — Insertion (ligation): DNA ligase joins the gene into the vector (plasmid), forming recombinant DNA (rDNA).",
+      "Step 4 — Transformation: the rDNA is introduced into a competent host cell (E. coli) by heat shock, electroporation, or a calcium-chloride method.",
+      "Step 5 — Selection: the host is grown on a selective medium (e.g., ampicillin); only cells with the plasmid (carrying the antibiotic-resistance gene) survive; blue-white screening (lacZ) identifies recombinants.",
+      "Step 6 — Expression: the host cell transcribes + translates the inserted gene, producing the desired protein (e.g., insulin).",
+      "Step 7 — Harvest + purification: the protein is secreted into the culture medium (or inside the cell), harvested, purified (chromatography), and formulated.",
+      "Vectors: plasmids (most common), bacteriophages, cosmids, BACs, YACs; features: origin of replication (ori), selectable marker (antibiotic resistance), multiple cloning site (MCS), and a high copy number.",
+      "Host cells: E. coli (prokaryotic, fast, cheap), yeast (eukaryotic, for proteins needing glycosylation), mammalian cells (for complex human proteins).",
+      "Applications in medicine: recombinant insulin (E. coli, 1982), growth hormone, hepatitis B + HPV vaccines, monoclonal antibodies, gene therapy.",
+      "Applications in agriculture: Bt cotton (Cry toxin gene → insect resistance), herbicide-tolerant soybean, tissue culture (rapid propagation), biofertilisers (Rhizobium, Azotobacter), biopesticides.",
+      "Applications in industry: enzyme production (amylase, protease in detergents), bioremediation (oil degradation by Pseudomonas), biofuels (ethanol by yeast), biogas (methanogens).",
+      "Gene therapy: a functional copy of a defective gene is delivered to the patient's cells via a viral vector (e.g., adeno-associated virus); examples: SCID (1990), cystic fibrosis (trials).",
+      "Gene editing (CRISPR-Cas9): a programmable nuclease cuts DNA at a specific site; the cell's repair machinery introduces the desired change; derived from the bacterial immune system (2012 Nobel).",
+      "Ethical considerations: GMO food safety, gene patenting, genetic privacy, environmental release of transgenics, and the creation of \"designer babies.\"",
+      "NEB focus: detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-      "❌ All microorganisms cause disease. ✅ Most microbes are harmless or beneficial; only some are pathogenic."
+      "Restriction enzymes CUT DNA at specific sequences; DNA ligase JOINS DNA fragments; they are different tools.",
+      "A plasmid is a small circular DNA molecule used as a VECTOR; it is NOT the gene of interest itself.",
+      "Transformation (in rDNA) = introducing foreign DNA into a competent cell; it is DIFFERENT from transformation (natural DNA uptake in bacteria).",
+      "Gene therapy treats a disease by CORRECTING a faulty gene in the patient's cells; gene editing (CRISPR) is a TOOL to make that correction.",
+      "Bt toxin (from Bacillus thuringiensis) is harmless to humans but lethal to specific insect larvae; it is used in Bt crops.",
+      "Monoclonal antibodies are produced by a single B-cell clone; they are highly specific and used in diagnostics + therapy.",
+      "CRISPR-Cas9 is a programmable nuclease; it is NOT the same as a restriction enzyme (which cuts at a fixed, natural sequence).",
+      "A transgenic organism (GMO) carries a gene from a DIFFERENT species; it is created in the laboratory."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice performing Gram stain and interpreting results.",
-      "Practice describing bacterial growth curves."
+      "Explain the 7 steps of rDNA technology in detail.",
+      "Describe the structure of a plasmid vector (ori, selectable marker, MCS, copy number).",
+      "Explain the production of human insulin using E. coli.",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "Explain the use of Bt crops in pest management.",
+      "Discuss the ethical issues of GMOs (3 points).",
+      "Explain the role of restriction enzymes + ligase in rDNA."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "Recombinant human insulin was the first biotech drug approved for human use (1982).",
+      "The HPV vaccine, derived from recombinant virus-like particles, can prevent cervical cancer.",
+      "CRISPR-Cas9 gene editing, derived from bacterial immune systems, revolutionised genetics in 2012 (Nobel Prize 2020 to Doudna + Charpentier).",
+      "Bt cotton reduced pesticide use by ~50% in India after its introduction in 2002."
     ],
     "examples": [
-      "E. coli: model organism",
-      "T4 bacteriophage: lytic cycle in 20 min",
-      "Recombinant insulin from E. coli"
+      "rDNA steps: isolate → cut (EcoRI) → ligate → transform → select (ampicillin) → express → harvest (insulin).",
+      "Plasmid vector: pBR322 (ori, ampR, tetR, MCS); pUC19 (lacZ for blue-white screening).",
+      "Insulin production: human insulin gene → E. coli → fermentation → purification → insulin.",
+      "Hepatitis B vaccine: yeast expressing HBsAg protein → purified → vaccine.",
+      "Bt cotton: Bt toxin gene (Cry protein) → cotton plant → resistance to bollworm.",
+      "Gene therapy: healthy gene → viral vector (AAV) → patient cell → expression → treatment (SCID, 1990).",
+      "CRISPR-Cas9: guide RNA + Cas9 → cut DNA at a specific site → cell repair → desired change."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice performing Gram stain and interpreting results."
+      "Describe the 7 steps of rDNA technology in detail.",
+      "Explain the structure of a plasmid vector.",
+      "How is human insulin produced using rDNA?",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "What is the use of Bt crops in pest management?",
+      "Discuss the ethical issues of GMOs.",
+      "Explain the role of restriction enzymes and ligase in rDNA."
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 02 impacts of biotechnology in the field of microbiology)"
+      "rDNA: isolate → cut (restriction enzyme) → ligate (DNA ligase) → transform → select → express → harvest",
+      "Plasmid: ori + selectable marker + MCS + high copy number",
+      "Insulin: human gene → E. coli → fermentation → purification → insulin",
+      "CRISPR: guide RNA + Cas9 → cut DNA → repair → desired change"
     ],
     "keyPoints": [
-      "Core point for 02 impacts of biotechnology in the field of microbiology."
+      "rDNA: 7 steps (isolate, cut, ligate, transform, select, express, harvest).",
+      "Vectors: plasmids, phages, cosmids, BACs, YACs; features: ori, selectable marker, MCS.",
+      "Host cells: E. coli (prokaryotic), yeast (eukaryotic), mammalian cells.",
+      "Medical: insulin (1982), vaccines (HBV, HPV), monoclonal antibodies, gene therapy.",
+      "Agricultural: Bt crops, herbicide-tolerant crops, tissue culture, biofertilisers.",
+      "Industrial: enzymes, bioremediation, biofuels, biogas.",
+      "Gene therapy (correct a faulty gene) vs gene editing (CRISPR tool).",
+      "Ethical: GMO safety, patenting, privacy, environment, designer babies."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nBinary fission enables rapid bacterial population growth.\n\nViral replication strategies vary by nucleic acid type.",
+    "summary": "Recombinant DNA (rDNA) technology follows 7 detailed steps: isolate the gene, cut it with restriction enzymes, ligate it into a vector, transform a host cell, select the transformants, express the gene, and harvest the product. Plasmids are the most common vectors (ori, selectable marker, MCS). E. coli is the standard host for simple proteins; yeast and mammalian cells are used for complex, glycosylated proteins. Applications span medicine (insulin, vaccines, gene therapy), agriculture (Bt crops, tissue culture, biofertilisers), and industry (enzymes, bioremediation, biofuels). Gene therapy corrects faulty genes in the patient's cells; gene editing (CRISPR-Cas9) is the tool that makes the correction. Ethical issues (GMO safety, patenting, privacy, environment) are integral to the field. NEB focuses on the detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology.",
     "specialNotes": [
-      "Specialized insight for 02 impacts of biotechnology in the field of microbiology."
+      "NEB expects the 7 rDNA steps clearly, with the role of each tool (restriction enzyme, ligase, vector, host).",
+      "The plasmid vector structure (ori, selectable marker, MCS, copy number) is a common exam point.",
+      "The insulin production pathway (gene → E. coli → fermentation → purification) is a very frequent application question.",
+      "Gene therapy vs gene editing (CRISPR): know the distinction.",
+      "Bt crops: mechanism of insect resistance + one environmental concern.",
+      "Ethical issues of GMOs: environmental, health, and social dimensions.",
+      "Monoclonal antibodies: single B-cell clone; highly specific; diagnostics + therapy."
     ],
     "importantStatements": [
-      "Key statement for 02 impacts of biotechnology in the field of microbiology."
+      "Recombinant DNA technology is the cornerstone of modern biotechnology.",
+      "The rDNA process follows 7 detailed steps.",
+      "Human insulin produced by E. coli was the first biotech drug (1982).",
+      "CRISPR-Cas9 is a programmable gene-editing tool derived from the bacterial immune system."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise the 7 rDNA steps with the tools involved.",
+      "Learn the plasmid vector structure (ori, marker, MCS).",
+      "Know the host cells (E. coli, yeast, mammalian).",
+      "Explain the insulin production pathway.",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "List medical, agricultural, and industrial applications.",
+      "Discuss the ethical issues of GMOs."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Biotechnology in Microbiology."
+      "rDNA = 7 steps: Isolate, Cut, Ligate, Transform, Select, Express, Harvest.",
+      "Plasmid = ori + marker + MCS + copy number.",
+      "Insulin = E. coli = bacteria make human protein.",
+      "Gene therapy = give the gene; Gene editing = cut + paste the gene (CRISPR).",
+      "Bt = Bacillus thuringiensis = insect toxin = transgenic crop.",
+      "GMO = Gene from another organism → Modified."
     ],
     "examNotes": [
-      "Biotechnology in Microbiology is frequently tested.",
-      "Practice writing detailed answers."
+      "Describe the 7 steps of rDNA technology in detail.",
+      "Explain the structure of a plasmid vector.",
+      "Explain the production of human insulin using rDNA.",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "Explain the use of Bt crops in pest management.",
+      "Discuss the ethical issues of GMOs.",
+      "Explain the role of restriction enzymes and ligase in rDNA.",
+      "What are monoclonal antibodies and how are they produced?"
     ],
     "mcs": [
       {
-        "question": "Question about 02 impacts of biotechnology in the field of microbiology?",
+        "question": "The enzyme used to join DNA fragments in rDNA is:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Restriction enzyme",
+          "DNA ligase",
+          "Polymerase",
+          "Helicase"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "A plasmid vector must contain:",
+        "options": [
+          "An origin of replication (ori)",
+          "A capsid",
+          "A flagellum",
+          "A nucleoid"
         ],
         "answer": "A"
+      },
+      {
+        "question": "Human insulin is produced using which host organism?",
+        "options": [
+          "Yeast",
+          "E. coli",
+          "Mammalian cell only",
+          "Bread mould"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "CRISPR-Cas9 is:",
+        "options": [
+          "A restriction enzyme",
+          "A programmable gene-editing tool",
+          "A vector",
+          "A host cell"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 impacts of biotechnology in the field of microbiology."
+      "rDNA 7 steps",
+      "Restriction enzymes + ligase",
+      "Plasmid vectors (ori, marker, MCS)",
+      "Host cells (E. coli, yeast, mammalian)",
+      "Insulin production",
+      "Gene therapy",
+      "CRISPR-Cas9",
+      "Bt crops",
+      "Monoclonal antibodies",
+      "Ethical issues of GMOs"
     ],
     "importantTasks": [
-      "Task for studying 02 impacts of biotechnology in the field of microbiology."
+      "Describe rDNA 7 steps",
+      "Explain plasmid vector structure",
+      "Explain insulin production",
+      "Differentiate gene therapy vs CRISPR",
+      "Explain Bt crops",
+      "Discuss GMO ethics"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "A scientist wants to produce human insulin in E. coli. List the 7 rDNA steps with the specific tools used at each.",
+        "steps": [
+          "1. Isolate: human insulin gene (by PCR or cDNA synthesis)",
+          "2. Cut: EcoRI + BamHI cut the gene + the plasmid",
+          "3. Ligate: DNA ligase joins the gene into the plasmid",
+          "4. Transform: rDNA into competent E. coli (CaCl2 + heat shock)",
+          "5. Select: grow on ampicillin; only plasmid-bearing cells survive",
+          "6. Express: E. coli transcribes + translates the insulin gene",
+          "7. Harvest: purify insulin from the culture (chromatography)"
+        ],
+        "answer": "Isolate (PCR) → Cut (EcoRI/BamHI) → Ligate (DNA ligase) → Transform (CaCl2 + heat) → Select (ampicillin) → Express (E. coli) → Harvest (purification)"
       }
     ],
     "visualization": {
       "type": "simulation",
-      "component": "MicrobeViewer",
-      "desc": "Interactive microorganism explorer with Gram stain simulation"
+      "component": "BiotechDetailedSim",
+      "desc": "High-detail 3D rDNA pipeline: gene isolation, restriction cutting, ligation into a plasmid, transformation, selection, expression, and harvest; includes insulin, Bt crop, and CRISPR panels."
     }
   },
   "originalContent": {
     "notes": [
-      "Monera: prokaryotes (bacteria, cyanobacteria).",
-      "Bacteria: cell wall (peptidoglycan), 70S ribosomes, binary fission.",
-      "Virus: acellular, protein coat + nucleic acid, obligate parasite.",
-      "Gram stain: positive (purple) vs negative (pink).",
-      "Biotechnology: insulin, vaccines, GMOs."
+      "DETAILED RECOMBINANT DNA (rDNA) TECHNOLOGY AND ITS APPLICATIONS.",
+      "rDNA (gene cloning) — 7 steps:",
+      "Step 1 — Identification + isolation: the gene of interest (e.g., human insulin) is identified and isolated from the source DNA (or synthesised by PCR).",
+      "Step 2 — Cutting: restriction endonucleases (e.g., EcoRI, BamHI) cut both the source DNA and the vector (plasmid) at specific recognition sites, producing sticky (or blunt) ends.",
+      "Step 3 — Insertion (ligation): DNA ligase joins the gene into the vector (plasmid), forming recombinant DNA (rDNA).",
+      "Step 4 — Transformation: the rDNA is introduced into a competent host cell (E. coli) by heat shock, electroporation, or a calcium-chloride method.",
+      "Step 5 — Selection: the host is grown on a selective medium (e.g., ampicillin); only cells with the plasmid (carrying the antibiotic-resistance gene) survive; blue-white screening (lacZ) identifies recombinants.",
+      "Step 6 — Expression: the host cell transcribes + translates the inserted gene, producing the desired protein (e.g., insulin).",
+      "Step 7 — Harvest + purification: the protein is secreted into the culture medium (or inside the cell), harvested, purified (chromatography), and formulated.",
+      "Vectors: plasmids (most common), bacteriophages, cosmids, BACs, YACs; features: origin of replication (ori), selectable marker (antibiotic resistance), multiple cloning site (MCS), and a high copy number.",
+      "Host cells: E. coli (prokaryotic, fast, cheap), yeast (eukaryotic, for proteins needing glycosylation), mammalian cells (for complex human proteins).",
+      "Applications in medicine: recombinant insulin (E. coli, 1982), growth hormone, hepatitis B + HPV vaccines, monoclonal antibodies, gene therapy.",
+      "Applications in agriculture: Bt cotton (Cry toxin gene → insect resistance), herbicide-tolerant soybean, tissue culture (rapid propagation), biofertilisers (Rhizobium, Azotobacter), biopesticides.",
+      "Applications in industry: enzyme production (amylase, protease in detergents), bioremediation (oil degradation by Pseudomonas), biofuels (ethanol by yeast), biogas (methanogens).",
+      "Gene therapy: a functional copy of a defective gene is delivered to the patient's cells via a viral vector (e.g., adeno-associated virus); examples: SCID (1990), cystic fibrosis (trials).",
+      "Gene editing (CRISPR-Cas9): a programmable nuclease cuts DNA at a specific site; the cell's repair machinery introduces the desired change; derived from the bacterial immune system (2012 Nobel).",
+      "Ethical considerations: GMO food safety, gene patenting, genetic privacy, environmental release of transgenics, and the creation of \"designer babies.\"",
+      "NEB focus: detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-      "❌ All microorganisms cause disease. ✅ Most microbes are harmless or beneficial; only some are pathogenic."
+      "Restriction enzymes CUT DNA at specific sequences; DNA ligase JOINS DNA fragments; they are different tools.",
+      "A plasmid is a small circular DNA molecule used as a VECTOR; it is NOT the gene of interest itself.",
+      "Transformation (in rDNA) = introducing foreign DNA into a competent cell; it is DIFFERENT from transformation (natural DNA uptake in bacteria).",
+      "Gene therapy treats a disease by CORRECTING a faulty gene in the patient's cells; gene editing (CRISPR) is a TOOL to make that correction.",
+      "Bt toxin (from Bacillus thuringiensis) is harmless to humans but lethal to specific insect larvae; it is used in Bt crops.",
+      "Monoclonal antibodies are produced by a single B-cell clone; they are highly specific and used in diagnostics + therapy.",
+      "CRISPR-Cas9 is a programmable nuclease; it is NOT the same as a restriction enzyme (which cuts at a fixed, natural sequence).",
+      "A transgenic organism (GMO) carries a gene from a DIFFERENT species; it is created in the laboratory."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice performing Gram stain and interpreting results.",
-      "Practice describing bacterial growth curves."
+      "Explain the 7 steps of rDNA technology in detail.",
+      "Describe the structure of a plasmid vector (ori, selectable marker, MCS, copy number).",
+      "Explain the production of human insulin using E. coli.",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "Explain the use of Bt crops in pest management.",
+      "Discuss the ethical issues of GMOs (3 points).",
+      "Explain the role of restriction enzymes + ligase in rDNA."
     ],
     "universalFacts": [
-      "Universal scientific fact for 02 impacts of biotechnology in the field of microbiology."
+      "Recombinant human insulin was the first biotech drug approved for human use (1982).",
+      "The HPV vaccine, derived from recombinant virus-like particles, can prevent cervical cancer.",
+      "CRISPR-Cas9 gene editing, derived from bacterial immune systems, revolutionised genetics in 2012 (Nobel Prize 2020 to Doudna + Charpentier).",
+      "Bt cotton reduced pesticide use by ~50% in India after its introduction in 2002."
     ],
     "examples": [
-      "E. coli: model organism",
-      "T4 bacteriophage: lytic cycle in 20 min",
-      "Recombinant insulin from E. coli"
+      "rDNA steps: isolate → cut (EcoRI) → ligate → transform → select (ampicillin) → express → harvest (insulin).",
+      "Plasmid vector: pBR322 (ori, ampR, tetR, MCS); pUC19 (lacZ for blue-white screening).",
+      "Insulin production: human insulin gene → E. coli → fermentation → purification → insulin.",
+      "Hepatitis B vaccine: yeast expressing HBsAg protein → purified → vaccine.",
+      "Bt cotton: Bt toxin gene (Cry protein) → cotton plant → resistance to bollworm.",
+      "Gene therapy: healthy gene → viral vector (AAV) → patient cell → expression → treatment (SCID, 1990).",
+      "CRISPR-Cas9: guide RNA + Cas9 → cut DNA at a specific site → cell repair → desired change."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice performing Gram stain and interpreting results."
+      "Describe the 7 steps of rDNA technology in detail.",
+      "Explain the structure of a plasmid vector.",
+      "How is human insulin produced using rDNA?",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "What is the use of Bt crops in pest management?",
+      "Discuss the ethical issues of GMOs.",
+      "Explain the role of restriction enzymes and ligase in rDNA."
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 02 impacts of biotechnology in the field of microbiology)"
+      "rDNA: isolate → cut (restriction enzyme) → ligate (DNA ligase) → transform → select → express → harvest",
+      "Plasmid: ori + selectable marker + MCS + high copy number",
+      "Insulin: human gene → E. coli → fermentation → purification → insulin",
+      "CRISPR: guide RNA + Cas9 → cut DNA → repair → desired change"
     ],
     "keyPoints": [
-      "Core point for 02 impacts of biotechnology in the field of microbiology."
+      "rDNA: 7 steps (isolate, cut, ligate, transform, select, express, harvest).",
+      "Vectors: plasmids, phages, cosmids, BACs, YACs; features: ori, selectable marker, MCS.",
+      "Host cells: E. coli (prokaryotic), yeast (eukaryotic), mammalian cells.",
+      "Medical: insulin (1982), vaccines (HBV, HPV), monoclonal antibodies, gene therapy.",
+      "Agricultural: Bt crops, herbicide-tolerant crops, tissue culture, biofertilisers.",
+      "Industrial: enzymes, bioremediation, biofuels, biogas.",
+      "Gene therapy (correct a faulty gene) vs gene editing (CRISPR tool).",
+      "Ethical: GMO safety, patenting, privacy, environment, designer babies."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nBinary fission enables rapid bacterial population growth.\n\nViral replication strategies vary by nucleic acid type.",
+    "summary": "Recombinant DNA (rDNA) technology follows 7 detailed steps: isolate the gene, cut it with restriction enzymes, ligate it into a vector, transform a host cell, select the transformants, express the gene, and harvest the product. Plasmids are the most common vectors (ori, selectable marker, MCS). E. coli is the standard host for simple proteins; yeast and mammalian cells are used for complex, glycosylated proteins. Applications span medicine (insulin, vaccines, gene therapy), agriculture (Bt crops, tissue culture, biofertilisers), and industry (enzymes, bioremediation, biofuels). Gene therapy corrects faulty genes in the patient's cells; gene editing (CRISPR-Cas9) is the tool that makes the correction. Ethical issues (GMO safety, patenting, privacy, environment) are integral to the field. NEB focuses on the detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology.",
     "specialNotes": [
-      "Specialized insight for 02 impacts of biotechnology in the field of microbiology."
+      "NEB expects the 7 rDNA steps clearly, with the role of each tool (restriction enzyme, ligase, vector, host).",
+      "The plasmid vector structure (ori, selectable marker, MCS, copy number) is a common exam point.",
+      "The insulin production pathway (gene → E. coli → fermentation → purification) is a very frequent application question.",
+      "Gene therapy vs gene editing (CRISPR): know the distinction.",
+      "Bt crops: mechanism of insect resistance + one environmental concern.",
+      "Ethical issues of GMOs: environmental, health, and social dimensions.",
+      "Monoclonal antibodies: single B-cell clone; highly specific; diagnostics + therapy."
     ],
     "importantStatements": [
-      "Key statement for 02 impacts of biotechnology in the field of microbiology."
+      "Recombinant DNA technology is the cornerstone of modern biotechnology.",
+      "The rDNA process follows 7 detailed steps.",
+      "Human insulin produced by E. coli was the first biotech drug (1982).",
+      "CRISPR-Cas9 is a programmable gene-editing tool derived from the bacterial immune system."
     ],
     "importantNotes": [
-      "Important note regarding 02 impacts of biotechnology in the field of microbiology."
+      "Memorise the 7 rDNA steps with the tools involved.",
+      "Learn the plasmid vector structure (ori, marker, MCS).",
+      "Know the host cells (E. coli, yeast, mammalian).",
+      "Explain the insulin production pathway.",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "List medical, agricultural, and industrial applications.",
+      "Discuss the ethical issues of GMOs."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Biotechnology in Microbiology."
+      "rDNA = 7 steps: Isolate, Cut, Ligate, Transform, Select, Express, Harvest.",
+      "Plasmid = ori + marker + MCS + copy number.",
+      "Insulin = E. coli = bacteria make human protein.",
+      "Gene therapy = give the gene; Gene editing = cut + paste the gene (CRISPR).",
+      "Bt = Bacillus thuringiensis = insect toxin = transgenic crop.",
+      "GMO = Gene from another organism → Modified."
     ],
     "examNotes": [
-      "Biotechnology in Microbiology is frequently tested.",
-      "Practice writing detailed answers."
+      "Describe the 7 steps of rDNA technology in detail.",
+      "Explain the structure of a plasmid vector.",
+      "Explain the production of human insulin using rDNA.",
+      "Differentiate gene therapy from gene editing (CRISPR).",
+      "Explain the use of Bt crops in pest management.",
+      "Discuss the ethical issues of GMOs.",
+      "Explain the role of restriction enzymes and ligase in rDNA.",
+      "What are monoclonal antibodies and how are they produced?"
     ],
     "mcs": [
       {
-        "question": "Question about 02 impacts of biotechnology in the field of microbiology?",
+        "question": "The enzyme used to join DNA fragments in rDNA is:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Restriction enzyme",
+          "DNA ligase",
+          "Polymerase",
+          "Helicase"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "A plasmid vector must contain:",
+        "options": [
+          "An origin of replication (ori)",
+          "A capsid",
+          "A flagellum",
+          "A nucleoid"
         ],
         "answer": "A"
+      },
+      {
+        "question": "Human insulin is produced using which host organism?",
+        "options": [
+          "Yeast",
+          "E. coli",
+          "Mammalian cell only",
+          "Bread mould"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "CRISPR-Cas9 is:",
+        "options": [
+          "A restriction enzyme",
+          "A programmable gene-editing tool",
+          "A vector",
+          "A host cell"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 impacts of biotechnology in the field of microbiology."
+      "rDNA 7 steps",
+      "Restriction enzymes + ligase",
+      "Plasmid vectors (ori, marker, MCS)",
+      "Host cells (E. coli, yeast, mammalian)",
+      "Insulin production",
+      "Gene therapy",
+      "CRISPR-Cas9",
+      "Bt crops",
+      "Monoclonal antibodies",
+      "Ethical issues of GMOs"
     ],
     "importantTasks": [
-      "Task for studying 02 impacts of biotechnology in the field of microbiology."
+      "Describe rDNA 7 steps",
+      "Explain plasmid vector structure",
+      "Explain insulin production",
+      "Differentiate gene therapy vs CRISPR",
+      "Explain Bt crops",
+      "Discuss GMO ethics"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A scientist wants to produce human insulin in E. coli. List the 7 rDNA steps with the specific tools used at each.",
+        "steps": [
+          "1. Isolate: human insulin gene (by PCR or cDNA synthesis)",
+          "2. Cut: EcoRI + BamHI cut the gene + the plasmid",
+          "3. Ligate: DNA ligase joins the gene into the plasmid",
+          "4. Transform: rDNA into competent E. coli (CaCl2 + heat shock)",
+          "5. Select: grow on ampicillin; only plasmid-bearing cells survive",
+          "6. Express: E. coli transcribes + translates the insulin gene",
+          "7. Harvest: purify insulin from the culture (chromatography)"
+        ],
+        "answer": "Isolate (PCR) → Cut (EcoRI/BamHI) → Ligate (DNA ligase) → Transform (CaCl2 + heat) → Select (ampicillin) → Express (E. coli) → Harvest (purification)"
+      }
+    ],
     "visualization": {
       "type": "simulation",
-      "component": "MicrobeViewer",
-      "desc": "Interactive microorganism explorer with Gram stain simulation"
+      "component": "BiotechDetailedSim",
+      "desc": "High-detail 3D rDNA pipeline: gene isolation, restriction cutting, ligation into a plasmid, transformation, selection, expression, and harvest; includes insulin, Bt crop, and CRISPR panels."
     }
   }
 }

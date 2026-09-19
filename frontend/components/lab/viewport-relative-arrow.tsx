@@ -3,7 +3,7 @@
 import { useRef, useEffect, useMemo, useState, useCallback } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { LiveArrow } from "./animated-arrow-helper";
+import { LiveLeaderLine } from "./leader-lines-3d";
 
 /** viewport-relative configuration */
 export interface ViewportRelativeArrowConfig {
@@ -174,7 +174,7 @@ export function ViewportRelativeArrow({
 
   const arrowData = useMemo(() => {
     const origin = new THREE.Vector3(0, 0, 0);
-    const arrow = new LiveArrow(
+    const arrow = new LiveLeaderLine(
       direction.clone().normalize(),
       new THREE.Vector3(0, 0, 0),
       length,

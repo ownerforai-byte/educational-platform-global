@@ -10,380 +10,377 @@
   "tabGroup": "02-fungi-general-introduction-and-characteristic-features",
   "mcqs": [
     {
-      "question": "Question about 02 fungi general introduction and characteristic features?",
+      "question": "The cell wall of fungi is made of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Cellulose",
+        "Chitin",
+        "Peptidoglycan",
+        "Silica"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Penicillium belongs to which fungal group?",
+      "options": [
+        "Phycomycetes",
+        "Ascomycetes",
+        "Basidiomycetes",
+        "Deuteromycetes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The spore-bearing structure of Basidiomycetes is called:",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Conidium"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following is an example of Deuteromycetes?",
+      "options": [
+        "Saccharomyces",
+        "Agaricus",
+        "Aspergillus",
+        "Rhizopus"
+      ],
+      "answer": "C"
     }
   ],
   "visualType": "haber-process-flow",
   "enrichedContent": {
     "notes": [
-      "Five kingdom classification (Whittaker, 1969).",
-      "Binomial nomenclature: Genus species.",
-      "Plant evolution: algae→bryophytes→pteridophytes→gymnosperms→angiosperms.",
-      "Double fertilization: zygote + endosperm."
+      "Fungi: eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin, no chloroplasts; include moulds, yeasts, mushrooms.",
+      "Four major groups: Phycomycetes (lower fungi, e.g. Rhizopus, water moulds), Ascomycetes (sac fungi, e.g. Penicillium, yeast, morels), Basidiomycetes (club fungi, e.g. Agaricus, rusts, smuts), Deuteromycetes (imperfect fungi, no known sexual stage, e.g. Aspergillus, Candida).",
+      "Body: mycelium (mass of hyphae); hyphae may be septate (divided) or coenocytic (aseptate).",
+      "Reproduction: asexual (spores, budding, fragmentation) and sexual (karyogamy after plasmogamy).",
+      "Ascomycetes produce spores in sac-like asci; Basidiomycetes produce spores on basidia (club-shaped bodies).",
+      "Economic importance: decomposers, food (bread, cheese, mushrooms), medicine (antibiotics — penicillin), industry (enzymes, organic acids); harmful: mycoses, crop blights, aflatoxins."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "Fungi have a chitin cell wall (like arthropods), NOT cellulose (like plants).",
+      "Fungi are NOT plants: they are heterotrophic, lack chlorophyll, and are in a separate kingdom.",
+      "Deuteromycetes are \"imperfect\" fungi — they have lost the sexual stage; they are not a true phylogenetic group.",
+      "Yeast (Saccharomyces) is an Ascomycete; it reproduces by budding (asexual) but also by forming ascospores.",
+      "Rhizopus (bread mould) is a Phycomycete; it reproduces by sporangiospores, not by sexual spores in the lab.",
+      "Mushrooms (Agaricus) are Basidiomycetes; the visible mushroom is the fruiting body of the mycelium."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Tabulate the four fungal groups: name, characteristic spore, example.",
+      "Draw a diagram of a Penicillium conidiophore with labelled parts.",
+      "Explain the life cycle of yeast (Saccharomyces).",
+      "List three beneficial and three harmful uses of fungi.",
+      "Differentiate asexual and sexual reproduction in fungi."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "Penicillin, discovered by Alexander Fleming in 1928, is produced by the fungus Penicillium chrysogenum.",
+      "Mycorrhizal fungi form mutualistic associations with ~90% of land plants, aiding phosphorus uptake.",
+      "The largest known organism on Earth is an Armillaria ostoyae (honey fungus) colony in Oregon, covering ~9.6 km².",
+      "Fungi were once classified under plants; they are now in their own kingdom due to chitin cell walls and absorptive heterotrophy."
     ],
     "examples": [
-      "Rhododendron arboreum: Nepal national flower",
-      "Pinus: gymnosperm, timber industry"
+      "Penicillium notatum → antibiotic penicillin (Ascomycete).",
+      "Saccharomyces cerevisiae → yeast for bread, beer, wine (Ascomycete).",
+      "Agaricus bisporus → edible mushroom (Basidiomycete).",
+      "Rhizopus stolonifer → bread mould (Phycomycete).",
+      "Aspergillus niger → citric acid production, enzyme source (Deuteromycete)."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Why are fungi placed in a separate kingdom rather than with plants?",
+      "Differentiate Phycomycetes from Deuteromycetes (4 points).",
+      "Describe the structure of a Penicillium conidiophore.",
+      "Explain the role of fungi in the decomposition cycle.",
+      "What is the significance of the chitin cell wall in fungi?"
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 02 fungi general introduction and characteristic features)"
+      "Fungal cell wall: chitin (N-acetylglucosamine polymer)",
+      "Yeast budding: mother cell → bud → daughter cell (asexual)",
+      "Ascomycete spore: ascus (sac) containing ascospores (8 typically)",
+      "Basidiomycete spore: basidium (club) bearing basidiospores (4 typically)"
     ],
     "keyPoints": [
-      "Core point for 02 fungi general introduction and characteristic features."
+      "Fungi are eukaryotic, heterotrophic, chitin cell wall, no chloroplasts.",
+      "Four groups: Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes.",
+      "Body = mycelium (hyphae); reproduction = asexual (spores/budding) + sexual.",
+      "Ascomycetes → asci; Basidiomycetes → basidia.",
+      "Economic roles: decomposers, food, medicine, industry; harmful: diseases, crop blights.",
+      "Fungi ≠ plants: heterotrophic, chitin wall, absorptive nutrition."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+    "summary": "Fungi are a distinct kingdom of eukaryotic, heterotrophic organisms with chitin cell walls and absorptive nutrition. They are classified into four major groups — Phycomycetes (lower, aseptate), Ascomycetes (sac fungi), Basidiomycetes (club fungi), and Deuteromycetes (imperfect). Their roles as decomposers, food sources, medicine producers (antibiotics), and industrial agents make them ecologically and economically vital. NEB examinations focus on the four-group classification, structure of Penicillium, and economic importance.",
     "specialNotes": [
-      "Specialized insight for 02 fungi general introduction and characteristic features."
+      "NEB frequently asks for a labelled diagram of Penicillium (conidiophore, conidia, sterigmata).",
+      "Memorise the four fungal groups with one example each and their spore type.",
+      "The distinction between Ascomycetes (asci) and Basidiomycetes (basidia) is a common short-answer.",
+      "Economic importance questions: give 3 beneficial and 3 harmful examples."
     ],
     "importantStatements": [
-      "Key statement for 02 fungi general introduction and characteristic features."
+      "Fungi are the primary decomposers in most ecosystems, recycling organic matter.",
+      "The chitin cell wall distinguishes fungi from plants (cellulose) and animals (no wall).",
+      "Ascomycetes and Basidiomycetes are the two most evolutionarily advanced fungal groups.",
+      "Deuteromycetes are an artificial grouping; many have now been reclassified based on molecular data."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise the four fungal groups: name, spore type, example, one use.",
+      "Draw Penicillium and Rhizopus from memory.",
+      "Learn the asexual vs sexual reproduction modes in fungi.",
+      "List economic importance: food, medicine, industry, ecology, disease."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Three Domains and Classification."
+      "Fungi = F-H-C (Heterotrophic, Chitin wall) — remember \"Fungi Hates Cellulose\".",
+      "Asco = sac; Basidio = club; Deutero = imperfect.",
+      "Phyco = lower (water moulds, bread moulds).",
+      "Yeast = Ascomycete + budding."
     ],
     "examNotes": [
-      "Three Domains and Classification is frequently tested.",
-      "Practice writing detailed answers."
+      "Draw and label Penicillium (conidiophore, conidia, sterigmata) — very common.",
+      "Tabulate four fungal groups (spore, example, use).",
+      "Explain why fungi are not plants.",
+      "Describe the economic importance of fungi (5 points).",
+      "Differentiate asexual and sexual reproduction in fungi."
     ],
     "mcs": [
       {
-        "question": "Question about 02 fungi general introduction and characteristic features?",
+        "question": "The cell wall of fungi is made of:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Cellulose",
+          "Chitin",
+          "Peptidoglycan",
+          "Silica"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Penicillium belongs to which fungal group?",
+        "options": [
+          "Phycomycetes",
+          "Ascomycetes",
+          "Basidiomycetes",
+          "Deuteromycetes"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The spore-bearing structure of Basidiomycetes is called:",
+        "options": [
+          "Ascus",
+          "Basidium",
+          "Sporangium",
+          "Conidium"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is an example of Deuteromycetes?",
+        "options": [
+          "Saccharomyces",
+          "Agaricus",
+          "Aspergillus",
+          "Rhizopus"
+        ],
+        "answer": "C"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 fungi general introduction and characteristic features."
+      "Four fungal groups",
+      "Chitin cell wall",
+      "Mycelium & hyphae",
+      "Asci vs basidia",
+      "Asexual & sexual reproduction",
+      "Economic importance",
+      "Decomposer role"
     ],
     "importantTasks": [
-      "Task for studying 02 fungi general introduction and characteristic features."
+      "Draw Penicillium (labelled)",
+      "Tabulate 4 fungal groups",
+      "Explain why fungi ≠ plants",
+      "List economic importance (5)",
+      "Describe asexual vs sexual reproduction"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "A student observed a fungus that forms sac-like structures containing spores. Which group does it belong to and what is the spore type?",
+        "steps": [
+          "Sac-like structure = ascus",
+          "Spores inside ascus = ascospores",
+          "Therefore the fungus is an Ascomycete"
+        ],
+        "answer": "Ascomycetes; ascospores (typically 8 per ascus)"
       }
     ],
     "visualization": {
       "type": "3d-model",
-      "component": "PlantKingdomViewer",
-      "desc": "Interactive plant classification explorer"
+      "component": "FungalMyceliumViewer",
+      "desc": "3D interactive mycelium with rotatable Penicillium conidiophore and Rhizopus sporangium models."
     }
   },
   "originalContent": {
     "notes": [
-      "Five kingdom classification (Whittaker, 1969).",
-      "Binomial nomenclature: Genus species.",
-      "Plant evolution: algae→bryophytes→pteridophytes→gymnosperms→angiosperms.",
-      "Double fertilization: zygote + endosperm."
+      "Fungi: eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin, no chloroplasts; include moulds, yeasts, mushrooms.",
+      "Four major groups: Phycomycetes (lower fungi, e.g. Rhizopus, water moulds), Ascomycetes (sac fungi, e.g. Penicillium, yeast, morels), Basidiomycetes (club fungi, e.g. Agaricus, rusts, smuts), Deuteromycetes (imperfect fungi, no known sexual stage, e.g. Aspergillus, Candida).",
+      "Body: mycelium (mass of hyphae); hyphae may be septate (divided) or coenocytic (aseptate).",
+      "Reproduction: asexual (spores, budding, fragmentation) and sexual (karyogamy after plasmogamy).",
+      "Ascomycetes produce spores in sac-like asci; Basidiomycetes produce spores on basidia (club-shaped bodies).",
+      "Economic importance: decomposers, food (bread, cheese, mushrooms), medicine (antibiotics — penicillin), industry (enzymes, organic acids); harmful: mycoses, crop blights, aflatoxins."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "Fungi have a chitin cell wall (like arthropods), NOT cellulose (like plants).",
+      "Fungi are NOT plants: they are heterotrophic, lack chlorophyll, and are in a separate kingdom.",
+      "Deuteromycetes are \"imperfect\" fungi — they have lost the sexual stage; they are not a true phylogenetic group.",
+      "Yeast (Saccharomyces) is an Ascomycete; it reproduces by budding (asexual) but also by forming ascospores.",
+      "Rhizopus (bread mould) is a Phycomycete; it reproduces by sporangiospores, not by sexual spores in the lab.",
+      "Mushrooms (Agaricus) are Basidiomycetes; the visible mushroom is the fruiting body of the mycelium."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Tabulate the four fungal groups: name, characteristic spore, example.",
+      "Draw a diagram of a Penicillium conidiophore with labelled parts.",
+      "Explain the life cycle of yeast (Saccharomyces).",
+      "List three beneficial and three harmful uses of fungi.",
+      "Differentiate asexual and sexual reproduction in fungi."
     ],
     "universalFacts": [
-      "Universal scientific fact for 02 fungi general introduction and characteristic features."
+      "Penicillin, discovered by Alexander Fleming in 1928, is produced by the fungus Penicillium chrysogenum.",
+      "Mycorrhizal fungi form mutualistic associations with ~90% of land plants, aiding phosphorus uptake.",
+      "The largest known organism on Earth is an Armillaria ostoyae (honey fungus) colony in Oregon, covering ~9.6 km².",
+      "Fungi were once classified under plants; they are now in their own kingdom due to chitin cell walls and absorptive heterotrophy."
     ],
     "examples": [
-      "Rhododendron arboreum: Nepal national flower",
-      "Pinus: gymnosperm, timber industry"
+      "Penicillium notatum → antibiotic penicillin (Ascomycete).",
+      "Saccharomyces cerevisiae → yeast for bread, beer, wine (Ascomycete).",
+      "Agaricus bisporus → edible mushroom (Basidiomycete).",
+      "Rhizopus stolonifer → bread mould (Phycomycete).",
+      "Aspergillus niger → citric acid production, enzyme source (Deuteromycete)."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Why are fungi placed in a separate kingdom rather than with plants?",
+      "Differentiate Phycomycetes from Deuteromycetes (4 points).",
+      "Describe the structure of a Penicillium conidiophore.",
+      "Explain the role of fungi in the decomposition cycle.",
+      "What is the significance of the chitin cell wall in fungi?"
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 02 fungi general introduction and characteristic features)"
+      "Fungal cell wall: chitin (N-acetylglucosamine polymer)",
+      "Yeast budding: mother cell → bud → daughter cell (asexual)",
+      "Ascomycete spore: ascus (sac) containing ascospores (8 typically)",
+      "Basidiomycete spore: basidium (club) bearing basidiospores (4 typically)"
     ],
     "keyPoints": [
-      "Core point for 02 fungi general introduction and characteristic features."
+      "Fungi are eukaryotic, heterotrophic, chitin cell wall, no chloroplasts.",
+      "Four groups: Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes.",
+      "Body = mycelium (hyphae); reproduction = asexual (spores/budding) + sexual.",
+      "Ascomycetes → asci; Basidiomycetes → basidia.",
+      "Economic roles: decomposers, food, medicine, industry; harmful: diseases, crop blights.",
+      "Fungi ≠ plants: heterotrophic, chitin wall, absorptive nutrition."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+    "summary": "Fungi are a distinct kingdom of eukaryotic, heterotrophic organisms with chitin cell walls and absorptive nutrition. They are classified into four major groups — Phycomycetes (lower, aseptate), Ascomycetes (sac fungi), Basidiomycetes (club fungi), and Deuteromycetes (imperfect). Their roles as decomposers, food sources, medicine producers (antibiotics), and industrial agents make them ecologically and economically vital. NEB examinations focus on the four-group classification, structure of Penicillium, and economic importance.",
     "specialNotes": [
-      "Specialized insight for 02 fungi general introduction and characteristic features."
+      "NEB frequently asks for a labelled diagram of Penicillium (conidiophore, conidia, sterigmata).",
+      "Memorise the four fungal groups with one example each and their spore type.",
+      "The distinction between Ascomycetes (asci) and Basidiomycetes (basidia) is a common short-answer.",
+      "Economic importance questions: give 3 beneficial and 3 harmful examples."
     ],
     "importantStatements": [
-      "Key statement for 02 fungi general introduction and characteristic features."
+      "Fungi are the primary decomposers in most ecosystems, recycling organic matter.",
+      "The chitin cell wall distinguishes fungi from plants (cellulose) and animals (no wall).",
+      "Ascomycetes and Basidiomycetes are the two most evolutionarily advanced fungal groups.",
+      "Deuteromycetes are an artificial grouping; many have now been reclassified based on molecular data."
     ],
     "importantNotes": [
-      "Important note regarding 02 fungi general introduction and characteristic features."
+      "Memorise the four fungal groups: name, spore type, example, one use.",
+      "Draw Penicillium and Rhizopus from memory.",
+      "Learn the asexual vs sexual reproduction modes in fungi.",
+      "List economic importance: food, medicine, industry, ecology, disease."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Three Domains and Classification."
+      "Fungi = F-H-C (Heterotrophic, Chitin wall) — remember \"Fungi Hates Cellulose\".",
+      "Asco = sac; Basidio = club; Deutero = imperfect.",
+      "Phyco = lower (water moulds, bread moulds).",
+      "Yeast = Ascomycete + budding."
     ],
     "examNotes": [
-      "Three Domains and Classification is frequently tested.",
-      "Practice writing detailed answers."
+      "Draw and label Penicillium (conidiophore, conidia, sterigmata) — very common.",
+      "Tabulate four fungal groups (spore, example, use).",
+      "Explain why fungi are not plants.",
+      "Describe the economic importance of fungi (5 points).",
+      "Differentiate asexual and sexual reproduction in fungi."
     ],
     "mcs": [
       {
-        "question": "Question about 02 fungi general introduction and characteristic features?",
+        "question": "The cell wall of fungi is made of:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Cellulose",
+          "Chitin",
+          "Peptidoglycan",
+          "Silica"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Penicillium belongs to which fungal group?",
+        "options": [
+          "Phycomycetes",
+          "Ascomycetes",
+          "Basidiomycetes",
+          "Deuteromycetes"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The spore-bearing structure of Basidiomycetes is called:",
+        "options": [
+          "Ascus",
+          "Basidium",
+          "Sporangium",
+          "Conidium"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is an example of Deuteromycetes?",
+        "options": [
+          "Saccharomyces",
+          "Agaricus",
+          "Aspergillus",
+          "Rhizopus"
+        ],
+        "answer": "C"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 fungi general introduction and characteristic features."
+      "Four fungal groups",
+      "Chitin cell wall",
+      "Mycelium & hyphae",
+      "Asci vs basidia",
+      "Asexual & sexual reproduction",
+      "Economic importance",
+      "Decomposer role"
     ],
     "importantTasks": [
-      "Task for studying 02 fungi general introduction and characteristic features."
+      "Draw Penicillium (labelled)",
+      "Tabulate 4 fungal groups",
+      "Explain why fungi ≠ plants",
+      "List economic importance (5)",
+      "Describe asexual vs sexual reproduction"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A student observed a fungus that forms sac-like structures containing spores. Which group does it belong to and what is the spore type?",
+        "steps": [
+          "Sac-like structure = ascus",
+          "Spores inside ascus = ascospores",
+          "Therefore the fungus is an Ascomycete"
+        ],
+        "answer": "Ascomycetes; ascospores (typically 8 per ascus)"
+      }
+    ],
     "visualization": {
       "type": "3d-model",
-      "component": "PlantKingdomViewer",
-      "desc": "Interactive plant classification explorer"
+      "component": "FungalMyceliumViewer",
+      "desc": "3D interactive mycelium with rotatable Penicillium conidiophore and Rhizopus sporangium models."
     }
   }
 }

@@ -10,396 +10,405 @@
   "tabGroup": "05-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
   "mcqs": [
     {
-      "question": "How much energy is transferred between trophic levels?",
+      "question": "The main cause of ozone layer depletion is:",
       "options": [
-        "10%",
-        "50%",
-        "90%",
-        "1%"
+        "CO2",
+        "CFCs",
+        "SO2",
+        "NOx"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Acid rain has a pH of:",
+      "options": [
+        "< 5.6",
+        "> 7.0",
+        "7.0 exactly",
+        "< 2.0"
       ],
       "answer": "A"
     },
     {
-      "question": "Which is a biotic component?",
+      "question": "Water hyacinth in Nepal is an example of:",
       "options": [
-        "Sunlight",
-        "Water",
-        "Plants",
-        "Soil"
+        "A native species",
+        "A biological invasion",
+        "A climatic effect",
+        "An acid rain problem"
       ],
-      "answer": "C"
+      "answer": "B"
+    },
+    {
+      "question": "The natural greenhouse effect is:",
+      "options": [
+        "Harmful",
+        "Essential for life",
+        "Caused by CFCs",
+        "A result of deforestation"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "avogadros-law-deduction",
   "enrichedContent": {
     "notes": [
-      "Ecosystem: biotic + abiotic components.",
-      "Food chain: linear energy transfer (grass→rabbit→fox).",
-      "Food web: interconnected chains.",
-      "10% energy transfer rule.",
-      "Biogeochemical cycles: carbon, nitrogen."
+      "Ecological imbalances: human-induced disruptions of natural ecosystems.",
+      "Greenhouse effect and climate change: greenhouse gases (CO2, CH4, N2O, CFCs) trap heat → global warming; effects: melting ice, rising sea levels, extreme weather, habitat loss.",
+      "Ozone layer depletion: CFCs (chlorofluorocarbons) destroy stratospheric ozone (O3) → increased UV radiation → skin cancer, cataracts, crop damage.",
+      "Acid rain: SO2 and NOx from industry + vehicles → H2SO4, HNO3 in rain → acidic rain (pH < 5.6) → damage to forests, aquatic ecosystems, buildings.",
+      "Biological invasion: non-native species introduced to new environments → outcompete native species → biodiversity loss; e.g., water hyacinth in Nepal.",
+      "Causes: deforestation, industrialisation, urbanisation, agriculture, overpopulation, pollution.",
+      "Effects: loss of biodiversity, ecosystem degradation, climate change, health problems.",
+      "Control measures: reduce emissions, plant trees, sustainable agriculture, international agreements (Kyoto, Paris), conservation of protected areas.",
+      "Nepal: vulnerable to climate change (Himalayan glaciers melting, flooding in Terai); air pollution in Kathmandu Valley (PM2.5 exceeds WHO limits).",
+      "NEB focus: greenhouse effect and climate change, ozone layer depletion, acid rain, and biological invasion."
     ],
     "confusion": [
-      "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-      "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-      "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-      "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-      "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-      "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-      "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-      "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-      "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-      "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-      "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-      "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-      "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-      "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-      "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-      "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-      "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-      "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-      "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-      "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-      "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-      "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-      "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-      "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-      "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-      "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-      "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-      "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-      "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-      "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-      "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-      "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-      "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-      "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-      "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-      "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+      "The greenhouse effect is a NATURAL phenomenon (essential for life); the \"enhanced\" greenhouse effect (due to human emissions) causes climate change.",
+      "Ozone layer depletion (stratospheric O3 destroyed by CFCs) is different from the greenhouse effect (tropospheric gases trapping heat).",
+      "Acid rain is caused by SO2 and NOx (industry, vehicles), NOT by CO2 alone.",
+      "Biological invasion involves NON-NATIVE species; it is different from natural colonisation.",
+      "Climate change affects ecosystems at all scales (local to global).",
+      "Ozone (O3) is beneficial in the stratosphere (blocks UV) but harmful at ground level (air pollutant, smog)."
     ],
     "practice": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+      "Explain the greenhouse effect and its causes.",
+      "Describe the effects of climate change on ecosystems.",
+      "Explain ozone layer depletion (CFCs, UV radiation).",
+      "Describe acid rain (causes, effects, control).",
+      "Explain biological invasion with a Nepali example (water hyacinth).",
+      "List control measures for ecological imbalances."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "Atmospheric CO2 has risen from ~280 ppm (pre-industrial) to ~420 ppm (2023).",
+      "Global average temperature has risen ~1.1°C since pre-industrial times.",
+      "The ozone hole over Antarctica reached its maximum in 2006 (~28 million km²).",
+      "Water hyacinth (Eichhornia crassipes) is an invasive species in Nepal's lakes and rivers, smothering aquatic life."
     ],
     "examples": [
-      "Pond: phytoplankton→zooplankton→fish→birds",
-      "Nepal: terai→hills→mountains ecosystems"
+      "Greenhouse effect: CO2 + CH4 + CFCs trap infrared radiation → warming.",
+      "Ozone depletion: CFCs (from refrigerators, aerosols) release Cl atoms → destroy O3 → increased UV → skin cancer.",
+      "Acid rain: SO2 (coal plants) + NOx (vehicles) → H2SO4, HNO3 in rain → acidic rain → forest damage, lake acidification.",
+      "Biological invasion: water hyacinth in Phewa Lake, Pokhara → smothered native fish and plants → oxygen depletion.",
+      "Control: tree planting, renewable energy, emission reduction, international agreements (Kyoto, Paris)."
     ],
     "practiceQuestions": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+      "Explain the greenhouse effect and its causes.",
+      "Describe the effects of climate change on ecosystems.",
+      "Explain ozone layer depletion and its consequences.",
+      "Describe acid rain (causes, effects, control).",
+      "Explain biological invasion with a Nepali example.",
+      "List control measures for ecological imbalances."
     ],
     "formulas": [
-      "dN/dt=rN((K-N)/K) (logistic growth)"
+      "Greenhouse effect: GHG (CO2, CH4, N2O, CFCs) + IR radiation → warming",
+      "Ozone depletion: CFC → Cl atom → O3 → O2 (chain reaction)",
+      "Acid rain: SO2 + H2O → H2SO4; NOx + H2O → HNO3 (pH < 5.6)",
+      "Biological invasion: non-native species → outcompete natives → biodiversity loss"
     ],
     "keyPoints": [
-      "Core point for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Greenhouse effect: GHGs trap heat → climate change (natural + enhanced).",
+      "Ozone depletion: CFCs destroy stratospheric O3 → increased UV → skin cancer.",
+      "Acid rain: SO2 + NOx → H2SO4, HNO3 → pH < 5.6 → damage to forests, water, buildings.",
+      "Biological invasion: non-native species outcompete natives → biodiversity loss.",
+      "Causes: deforestation, industry, urbanisation, overpopulation, pollution.",
+      "Effects: biodiversity loss, ecosystem degradation, climate change, health problems.",
+      "Control: reduce emissions, plant trees, sustainable agriculture, international agreements."
     ],
-    "summary": "Ecology studies interactions between organisms and their environment.",
+    "summary": "Human activities cause ecological imbalances: the enhanced greenhouse effect (CO2, CH4, CFCs) drives climate change; CFCs deplete the ozone layer, increasing UV radiation; SO2 and NOx cause acid rain (pH < 5.6); and biological invasions (e.g., water hyacinth in Nepal) threaten native biodiversity. These imbalances cause biodiversity loss, ecosystem degradation, and health problems. Control measures include reducing emissions, planting trees, sustainable agriculture, and international agreements (Kyoto, Paris). Nepal is particularly vulnerable to climate change (melting glaciers, Terai flooding) and air pollution (Kathmandu Valley PM2.5).",
     "specialNotes": [
-      "Specialized insight for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "NEB expects clear explanations of the greenhouse effect, ozone depletion, acid rain, and biological invasion.",
+      "The natural vs enhanced greenhouse effect distinction is a common exam point.",
+      "Ozone depletion (CFCs) and the greenhouse effect are DIFFERENT processes — a frequent \"trick\" question.",
+      "Acid rain (SO2 + NOx) is not the same as CO2 pollution.",
+      "Biological invasion: give a Nepali example (water hyacinth in Phewa Lake).",
+      "Nepal's vulnerability to climate change (glaciers, Terai flooding, Kathmandu PM2.5) is a key application question."
     ],
     "importantStatements": [
-      "Key statement for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "The enhanced greenhouse effect (due to human emissions) causes climate change.",
+      "CFCs deplete the stratospheric ozone layer, increasing UV radiation.",
+      "Acid rain (pH < 5.6) is caused by SO2 and NOx, not CO2 alone.",
+      "Biological invasions threaten native biodiversity; water hyacinth is a Nepali example."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise the four ecological imbalances (greenhouse, ozone, acid rain, invasion).",
+      "Learn the causes and effects of each.",
+      "Differentiate the natural vs enhanced greenhouse effect.",
+      "Explain ozone depletion (CFCs → Cl → O3 destruction).",
+      "List control measures (emissions, trees, agriculture, agreements).",
+      "Give a Nepali example for each (climate change, PM2.5, water hyacinth)."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Food Chain and Food Web."
+      "Greenhouse = GHGs + IR → warming (natural + enhanced).",
+      "Ozone = CFCs → Cl → O3 destruction → UV → cancer.",
+      "Acid rain = SO2 + NOx → H2SO4/HNO3 → pH < 5.6.",
+      "Invasion = non-native species → outcompete natives → water hyacinth (Nepal)."
     ],
     "examNotes": [
-      "Food Chain and Food Web is frequently tested.",
-      "Practice writing detailed answers."
+      "Explain the greenhouse effect and climate change.",
+      "Explain ozone layer depletion (CFCs, UV).",
+      "Describe acid rain (causes, effects, control).",
+      "Explain biological invasion with a Nepali example.",
+      "List control measures for ecological imbalances.",
+      "Explain Nepal's vulnerability to climate change."
     ],
     "mcs": [
       {
-        "question": "Question about 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion?",
+        "question": "The main cause of ozone layer depletion is:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "CO2",
+          "CFCs",
+          "SO2",
+          "NOx"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Acid rain has a pH of:",
+        "options": [
+          "< 5.6",
+          "> 7.0",
+          "7.0 exactly",
+          "< 2.0"
         ],
         "answer": "A"
+      },
+      {
+        "question": "Water hyacinth in Nepal is an example of:",
+        "options": [
+          "A native species",
+          "A biological invasion",
+          "A climatic effect",
+          "An acid rain problem"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The natural greenhouse effect is:",
+        "options": [
+          "Harmful",
+          "Essential for life",
+          "Caused by CFCs",
+          "A result of deforestation"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Greenhouse effect (natural + enhanced)",
+      "Climate change",
+      "Ozone layer depletion (CFCs)",
+      "Acid rain (SO2, NOx)",
+      "Biological invasion",
+      "Causes and effects",
+      "Control measures",
+      "Nepal vulnerability"
     ],
     "importantTasks": [
-      "Task for studying 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Explain greenhouse effect",
+      "Explain ozone depletion",
+      "Describe acid rain",
+      "Explain biological invasion",
+      "List control measures"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "A Nepali lake is being invaded by water hyacinth. What are the ecological effects and what control measures can be applied?",
+        "steps": [
+          "Water hyacinth smotheres native plants and fish",
+          "Oxygen depletion as hyacinth decomposes",
+          "Loss of biodiversity",
+          "Control: mechanical removal, biological control (weevils), preventing introduction"
+        ],
+        "answer": "Ecological effects: smothering native life, oxygen depletion, biodiversity loss; Control: mechanical/biological removal, preventing introduction"
       }
     ],
     "visualization": {
       "type": "simulation",
-      "component": "EcosystemSim",
-      "desc": "Interactive ecosystem energy flow simulation"
+      "component": "EcologicalImbalanceSim",
+      "desc": "Interactive simulation of the greenhouse effect, ozone depletion, acid rain, and biological invasion with before/after ecosystem comparisons and Nepal-specific data."
     }
   },
   "originalContent": {
     "notes": [
-      "Ecosystem: biotic + abiotic components.",
-      "Food chain: linear energy transfer (grass→rabbit→fox).",
-      "Food web: interconnected chains.",
-      "10% energy transfer rule.",
-      "Biogeochemical cycles: carbon, nitrogen."
+      "Ecological imbalances: human-induced disruptions of natural ecosystems.",
+      "Greenhouse effect and climate change: greenhouse gases (CO2, CH4, N2O, CFCs) trap heat → global warming; effects: melting ice, rising sea levels, extreme weather, habitat loss.",
+      "Ozone layer depletion: CFCs (chlorofluorocarbons) destroy stratospheric ozone (O3) → increased UV radiation → skin cancer, cataracts, crop damage.",
+      "Acid rain: SO2 and NOx from industry + vehicles → H2SO4, HNO3 in rain → acidic rain (pH < 5.6) → damage to forests, aquatic ecosystems, buildings.",
+      "Biological invasion: non-native species introduced to new environments → outcompete native species → biodiversity loss; e.g., water hyacinth in Nepal.",
+      "Causes: deforestation, industrialisation, urbanisation, agriculture, overpopulation, pollution.",
+      "Effects: loss of biodiversity, ecosystem degradation, climate change, health problems.",
+      "Control measures: reduce emissions, plant trees, sustainable agriculture, international agreements (Kyoto, Paris), conservation of protected areas.",
+      "Nepal: vulnerable to climate change (Himalayan glaciers melting, flooding in Terai); air pollution in Kathmandu Valley (PM2.5 exceeds WHO limits).",
+      "NEB focus: greenhouse effect and climate change, ozone layer depletion, acid rain, and biological invasion."
     ],
     "confusion": [
-      "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-      "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-      "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-      "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-      "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-      "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-      "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-      "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-      "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-      "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-      "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-      "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-      "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-      "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-      "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-      "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-      "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-      "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-      "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-      "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-      "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-      "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-      "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-      "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-      "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-      "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-      "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-      "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-      "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-      "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-      "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-      "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-      "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-      "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-      "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-      "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+      "The greenhouse effect is a NATURAL phenomenon (essential for life); the \"enhanced\" greenhouse effect (due to human emissions) causes climate change.",
+      "Ozone layer depletion (stratospheric O3 destroyed by CFCs) is different from the greenhouse effect (tropospheric gases trapping heat).",
+      "Acid rain is caused by SO2 and NOx (industry, vehicles), NOT by CO2 alone.",
+      "Biological invasion involves NON-NATIVE species; it is different from natural colonisation.",
+      "Climate change affects ecosystems at all scales (local to global).",
+      "Ozone (O3) is beneficial in the stratosphere (blocks UV) but harmful at ground level (air pollutant, smog)."
     ],
     "practice": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+      "Explain the greenhouse effect and its causes.",
+      "Describe the effects of climate change on ecosystems.",
+      "Explain ozone layer depletion (CFCs, UV radiation).",
+      "Describe acid rain (causes, effects, control).",
+      "Explain biological invasion with a Nepali example (water hyacinth).",
+      "List control measures for ecological imbalances."
     ],
     "universalFacts": [
-      "Universal scientific fact for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Atmospheric CO2 has risen from ~280 ppm (pre-industrial) to ~420 ppm (2023).",
+      "Global average temperature has risen ~1.1°C since pre-industrial times.",
+      "The ozone hole over Antarctica reached its maximum in 2006 (~28 million km²).",
+      "Water hyacinth (Eichhornia crassipes) is an invasive species in Nepal's lakes and rivers, smothering aquatic life."
     ],
     "examples": [
-      "Pond: phytoplankton→zooplankton→fish→birds",
-      "Nepal: terai→hills→mountains ecosystems"
+      "Greenhouse effect: CO2 + CH4 + CFCs trap infrared radiation → warming.",
+      "Ozone depletion: CFCs (from refrigerators, aerosols) release Cl atoms → destroy O3 → increased UV → skin cancer.",
+      "Acid rain: SO2 (coal plants) + NOx (vehicles) → H2SO4, HNO3 in rain → acidic rain → forest damage, lake acidification.",
+      "Biological invasion: water hyacinth in Phewa Lake, Pokhara → smothered native fish and plants → oxygen depletion.",
+      "Control: tree planting, renewable energy, emission reduction, international agreements (Kyoto, Paris)."
     ],
     "practiceQuestions": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+      "Explain the greenhouse effect and its causes.",
+      "Describe the effects of climate change on ecosystems.",
+      "Explain ozone layer depletion and its consequences.",
+      "Describe acid rain (causes, effects, control).",
+      "Explain biological invasion with a Nepali example.",
+      "List control measures for ecological imbalances."
     ],
     "formulas": [
-      "dN/dt=rN((K-N)/K) (logistic growth)"
+      "Greenhouse effect: GHG (CO2, CH4, N2O, CFCs) + IR radiation → warming",
+      "Ozone depletion: CFC → Cl atom → O3 → O2 (chain reaction)",
+      "Acid rain: SO2 + H2O → H2SO4; NOx + H2O → HNO3 (pH < 5.6)",
+      "Biological invasion: non-native species → outcompete natives → biodiversity loss"
     ],
     "keyPoints": [
-      "Core point for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Greenhouse effect: GHGs trap heat → climate change (natural + enhanced).",
+      "Ozone depletion: CFCs destroy stratospheric O3 → increased UV → skin cancer.",
+      "Acid rain: SO2 + NOx → H2SO4, HNO3 → pH < 5.6 → damage to forests, water, buildings.",
+      "Biological invasion: non-native species outcompete natives → biodiversity loss.",
+      "Causes: deforestation, industry, urbanisation, overpopulation, pollution.",
+      "Effects: biodiversity loss, ecosystem degradation, climate change, health problems.",
+      "Control: reduce emissions, plant trees, sustainable agriculture, international agreements."
     ],
-    "summary": "Ecology studies interactions between organisms and their environment.",
+    "summary": "Human activities cause ecological imbalances: the enhanced greenhouse effect (CO2, CH4, CFCs) drives climate change; CFCs deplete the ozone layer, increasing UV radiation; SO2 and NOx cause acid rain (pH < 5.6); and biological invasions (e.g., water hyacinth in Nepal) threaten native biodiversity. These imbalances cause biodiversity loss, ecosystem degradation, and health problems. Control measures include reducing emissions, planting trees, sustainable agriculture, and international agreements (Kyoto, Paris). Nepal is particularly vulnerable to climate change (melting glaciers, Terai flooding) and air pollution (Kathmandu Valley PM2.5).",
     "specialNotes": [
-      "Specialized insight for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "NEB expects clear explanations of the greenhouse effect, ozone depletion, acid rain, and biological invasion.",
+      "The natural vs enhanced greenhouse effect distinction is a common exam point.",
+      "Ozone depletion (CFCs) and the greenhouse effect are DIFFERENT processes — a frequent \"trick\" question.",
+      "Acid rain (SO2 + NOx) is not the same as CO2 pollution.",
+      "Biological invasion: give a Nepali example (water hyacinth in Phewa Lake).",
+      "Nepal's vulnerability to climate change (glaciers, Terai flooding, Kathmandu PM2.5) is a key application question."
     ],
     "importantStatements": [
-      "Key statement for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "The enhanced greenhouse effect (due to human emissions) causes climate change.",
+      "CFCs deplete the stratospheric ozone layer, increasing UV radiation.",
+      "Acid rain (pH < 5.6) is caused by SO2 and NOx, not CO2 alone.",
+      "Biological invasions threaten native biodiversity; water hyacinth is a Nepali example."
     ],
     "importantNotes": [
-      "Important note regarding 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Memorise the four ecological imbalances (greenhouse, ozone, acid rain, invasion).",
+      "Learn the causes and effects of each.",
+      "Differentiate the natural vs enhanced greenhouse effect.",
+      "Explain ozone depletion (CFCs → Cl → O3 destruction).",
+      "List control measures (emissions, trees, agriculture, agreements).",
+      "Give a Nepali example for each (climate change, PM2.5, water hyacinth)."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Food Chain and Food Web."
+      "Greenhouse = GHGs + IR → warming (natural + enhanced).",
+      "Ozone = CFCs → Cl → O3 destruction → UV → cancer.",
+      "Acid rain = SO2 + NOx → H2SO4/HNO3 → pH < 5.6.",
+      "Invasion = non-native species → outcompete natives → water hyacinth (Nepal)."
     ],
     "examNotes": [
-      "Food Chain and Food Web is frequently tested.",
-      "Practice writing detailed answers."
+      "Explain the greenhouse effect and climate change.",
+      "Explain ozone layer depletion (CFCs, UV).",
+      "Describe acid rain (causes, effects, control).",
+      "Explain biological invasion with a Nepali example.",
+      "List control measures for ecological imbalances.",
+      "Explain Nepal's vulnerability to climate change."
     ],
     "mcs": [
       {
-        "question": "Question about 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion?",
+        "question": "The main cause of ozone layer depletion is:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "CO2",
+          "CFCs",
+          "SO2",
+          "NOx"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Acid rain has a pH of:",
+        "options": [
+          "< 5.6",
+          "> 7.0",
+          "7.0 exactly",
+          "< 2.0"
         ],
         "answer": "A"
+      },
+      {
+        "question": "Water hyacinth in Nepal is an example of:",
+        "options": [
+          "A native species",
+          "A biological invasion",
+          "A climatic effect",
+          "An acid rain problem"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The natural greenhouse effect is:",
+        "options": [
+          "Harmful",
+          "Essential for life",
+          "Caused by CFCs",
+          "A result of deforestation"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Greenhouse effect (natural + enhanced)",
+      "Climate change",
+      "Ozone layer depletion (CFCs)",
+      "Acid rain (SO2, NOx)",
+      "Biological invasion",
+      "Causes and effects",
+      "Control measures",
+      "Nepal vulnerability"
     ],
     "importantTasks": [
-      "Task for studying 05 ecological imbalances greenhouse effects and climate change depletion of ozone layer acid rain and biological invasion."
+      "Explain greenhouse effect",
+      "Explain ozone depletion",
+      "Describe acid rain",
+      "Explain biological invasion",
+      "List control measures"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A Nepali lake is being invaded by water hyacinth. What are the ecological effects and what control measures can be applied?",
+        "steps": [
+          "Water hyacinth smotheres native plants and fish",
+          "Oxygen depletion as hyacinth decomposes",
+          "Loss of biodiversity",
+          "Control: mechanical removal, biological control (weevils), preventing introduction"
+        ],
+        "answer": "Ecological effects: smothering native life, oxygen depletion, biodiversity loss; Control: mechanical/biological removal, preventing introduction"
+      }
+    ],
     "visualization": {
       "type": "simulation",
-      "component": "EcosystemSim",
-      "desc": "Interactive ecosystem energy flow simulation"
+      "component": "EcologicalImbalanceSim",
+      "desc": "Interactive simulation of the greenhouse effect, ozone depletion, acid rain, and biological invasion with before/after ecosystem comparisons and Nepal-specific data."
     }
   }
 }

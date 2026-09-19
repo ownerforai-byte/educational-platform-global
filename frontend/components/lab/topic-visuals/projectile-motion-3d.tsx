@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -109,11 +109,11 @@ export function ProjectileMotionVisual() {
 
       // Initial velocity arrow
       const vDir = new THREE.Vector3(Math.cos(angle * Math.PI / 180), Math.sin(angle * Math.PI / 180), 0).normalize();
-      push(new LiveArrow(vDir, new THREE.Vector3(0, 0, 0), 3, 0x22d3ee, 0.2, 0.1));
+      push(new LiveLeaderLine(vDir, new THREE.Vector3(0, 0, 0), 3, 0x22d3ee, 0.2, 0.1));
       push(mkSprite("v₀", "#22d3ee", new THREE.Vector3(1.8, 2.2, 0), 0.8));
 
       // g arrow (pointing down)
-      push(new LiveArrow(new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 0, 0), 2.5, 0xef4444, 0.2, 0.1));
+      push(new LiveLeaderLine(new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 0, 0), 2.5, 0xef4444, 0.2, 0.1));
       push(mkSprite("g (acceleration)", "#ef4444", new THREE.Vector3(-2.5, -1.0, 0), 0.7));
 
       // Max height label with long arrow
@@ -125,7 +125,7 @@ export function ProjectileMotionVisual() {
       );
       const hLabelPos = new THREE.Vector3(hPt.x + 3, hPt.y + 2, 0);
       const hDir = hPt.clone().sub(hLabelPos).normalize();
-      push(new LiveArrow(hDir, hLabelPos, hLabelPos.distanceTo(hPt) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveLeaderLine(hDir, hLabelPos, hLabelPos.distanceTo(hPt) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`H_max = ${hMax.toFixed(1)} m`, "#a78bfa", hLabelPos.clone().sub(hDir.multiplyScalar(0.5)), 0.75));
 
       // Range label with long arrow
@@ -133,7 +133,7 @@ export function ProjectileMotionVisual() {
       const rPt = new THREE.Vector3(R * 0.5, 0, 0);
       const rLabelPos = new THREE.Vector3(rPt.x, -1.5, 0);
       const rDir = rPt.clone().sub(rLabelPos).normalize();
-      push(new LiveArrow(rDir, rLabelPos, rLabelPos.distanceTo(rPt) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveLeaderLine(rDir, rLabelPos, rLabelPos.distanceTo(rPt) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`Range = ${R.toFixed(1)} m`, "#34d399", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.75));
 
       // Ball mesh

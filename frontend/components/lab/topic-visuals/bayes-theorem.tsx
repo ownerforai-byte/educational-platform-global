@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Bayes' Theorem — NEB Probability (Maths 12)
@@ -96,7 +96,7 @@ export function BayesTheoremVisual() {
 
       // Branch 1: A1
       const branch1End = new THREE.Vector3(-2, 3, 0);
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         branch1End.clone().sub(new THREE.Vector3(-8, 0, 0)).normalize(),
         new THREE.Vector3(-8, 0, 0),
         branch1End.distanceTo(new THREE.Vector3(-8, 0, 0)),
@@ -108,7 +108,7 @@ export function BayesTheoremVisual() {
 
       // Branch 2: A2
       const branch2End = new THREE.Vector3(-2, -3, 0);
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         branch2End.clone().sub(new THREE.Vector3(-8, 0, 0)).normalize(),
         new THREE.Vector3(-8, 0, 0),
         branch2End.distanceTo(new THREE.Vector3(-8, 0, 0)),
@@ -122,13 +122,13 @@ export function BayesTheoremVisual() {
       const level2X = 3;
       const b1End = new THREE.Vector3(level2X, 4.5, 0);
       const b2End = new THREE.Vector3(level2X, 1.5, 0);
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         b1End.clone().sub(branch1End).normalize(),
         branch1End,
         b1End.distanceTo(branch1End),
         0x22c55e, 0.12, 0.08
       ));
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         b2End.clone().sub(branch1End).normalize(),
         branch1End,
         b2End.distanceTo(branch1End),
@@ -138,13 +138,13 @@ export function BayesTheoremVisual() {
 
       const c1End = new THREE.Vector3(level2X, -1.5, 0);
       const c2End = new THREE.Vector3(level2X, -4.5, 0);
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         c1End.clone().sub(branch2End).normalize(),
         branch2End,
         c1End.distanceTo(branch2End),
         0x22c55e, 0.12, 0.08
       ));
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         c2End.clone().sub(branch2End).normalize(),
         branch2End,
         c2End.distanceTo(branch2End),

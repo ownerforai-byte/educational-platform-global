@@ -10,390 +10,391 @@
   "tabGroup": "01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation",
   "mcqs": [
     {
-      "question": "Question about 01 animal adaptation aquatic terrestrial and volant adaptation?",
+      "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Breathing",
+        "Reducing water resistance",
+        "Vision",
+        "Reproduction"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Whales and seals are examples of:",
+      "options": [
+        "Primary aquatic animals",
+        "Secondary aquatic animals",
+        "Terrestrial animals",
+        "Volant animals"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hollow bones in birds are an adaptation for:",
+      "options": [
+        "Breathing",
+        "Flight (weight reduction)",
+        "Vision",
+        "Reproduction"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Countercurrent exchange in fish gills allows:",
+      "options": [
+        "~50% O2 uptake",
+        "~80% O2 uptake",
+        "~100% O2 uptake",
+        "No O2 uptake"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "animal-adaptation-types",
   "enrichedContent": {
     "notes": [
-      "Aquatic adaptations: streamlined body, gills, lateral line.",
-      "Terrestrial adaptations: waterproof skin, lungs, internal fertilization.",
-      "Volant adaptations: wings, hollow bones, air sacs.",
-      "Reflex action: automatic response via spinal cord.",
-      "Pollution: air ($SO_2$, NOx, PM2.5), water, soil."
+      "Animal adaptation: structural, physiological, and behavioural features that allow an animal to survive in a particular environment.",
+      "Aquatic adaptation: primary aquatic (fishes, fully aquatic) and secondary aquatic (whales, seals — originally terrestrial).",
+      "Aquatic features: streamlined (fusiform) body, fins, gills (countercurrent exchange), lateral line (fish), webbed feet, dense bones, salt glands.",
+      "Terrestrial adaptation: cursorial (running — cheetah, horse), fossorial (burrowing — earthworm, mole), arboreal (tree-dwelling — monkey, sloth).",
+      "Terrestrial features: waterproof skin (fur, scales, feathers), lungs, internal fertilisation, nitrogenous waste (urea/ammonia), strong limbs.",
+      "Volant adaptation: flight; features: wings (feathers), hollow (pneumatic) bones, air sacs (double respiration), strong pectoral muscles, streamlined body, beak.",
+      "Adaptations increase survival and reproduction in a given habitat; they are the result of natural selection.",
+      "NEB focus: aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptations.",
+      "Nepal examples: fish (Terai), rhododendron forest birds (volant), snow leopard (terrestrial cursorial), pangolin (fossorial)."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-      "❌ Protists are all unicellular. ✅ Some protists (e.g., slime molds, kelp) are multicellular."
+      "Primary aquatic animals were ALWAYS aquatic (fishes); secondary aquatic animals (whales, seals) evolved FROM terrestrial ancestors.",
+      "A fusiform (streamlined) body REDUCES water resistance; it is an adaptation for fast swimming.",
+      "Countercurrent exchange in fish gills allows ~80% O2 uptake efficiency (blood and water flow in opposite directions).",
+      "Hollow bones in birds reduce weight for flight; they are still strong (internal struts).",
+      "Arboreal animals (monkeys) have grasping hands/feet, forward-facing eyes (stereoscopic vision), and a prehensile tail (New World monkeys).",
+      "Fossorial animals (moles, earthworms) have reduced eyes, strong forelimbs for digging, and cylindrical bodies."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice dissecting and identifying organs in earthworm and frog.",
-      "Practice classifying protozoa based on locomotion structures."
+      "List aquatic adaptations of a fish (5).",
+      "Differentiate primary from secondary aquatic animals.",
+      "List terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird (5).",
+      "Explain countercurrent exchange in fish gills."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "The fusiform body shape reduces drag by up to ~40% in fast swimmers.",
+      "Countercurrent exchange in fish gills allows ~80% O2 extraction; parallel flow would extract only ~50%.",
+      "Birds have a double respiration system (air sacs + lungs) that delivers fresh air through the lungs on BOTH in- and exhalation.",
+      "A hummingbird's wings beat ~50 times per second; some migrate thousands of km."
     ],
     "examples": [
-      "Fish gills: countercurrent exchange",
-      "Kathmandu Valley: PM2.5 exceeds WHO 10× in winter"
+      "Fish (primary aquatic): fusiform body, fins, gills, lateral line, scale-covered skin.",
+      "Whale (secondary aquatic): streamlined body, dense bones, blubber, baleen, modified limbs (flippers).",
+      "Cheetah (cursorial): long limbs, enlarged nostrils, non-retractable claws for grip, S-spine.",
+      "Mole (fossorial): reduced eyes, strong digging forelimbs, cylindrical body, no tail.",
+      "Orangutan (arboreal): long arms, grasping hands, stereoscopic vision, prehensile tail (New World).",
+      "Eagle (volant): feathers, hollow bones, air sacs, strong pectoral muscles, sharp beak and talons."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice dissecting and identifying organs in earthworm and frog."
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange improve O2 uptake in fish?"
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 01 animal adaptation aquatic terrestrial and volant adaptation)"
+      "Aquatic: fusiform body + fins + gills (countercurrent) + lateral line + webbed feet",
+      "Terrestrial: waterproof skin + lungs + internal fertilisation + strong limbs",
+      "Volant: wings + hollow bones + air sacs + strong pectoral muscles + streamlined body + beak"
     ],
     "keyPoints": [
-      "Core point for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Aquatic: fusiform body, gills (countercurrent), lateral line, webbed feet, fins.",
+      "Primary aquatic = always aquatic (fish); secondary = evolved from land (whales, seals).",
+      "Terrestrial: cursorial (run), fossorial (dig), arboreal (tree-dwell); waterproof skin, lungs.",
+      "Volant: wings, hollow bones, air sacs, strong pectoral muscles, beak.",
+      "Countercurrent exchange: ~80% O2 uptake in fish gills.",
+      "Adaptation is evolutionary (population-level), not individual.",
+      "Nepal examples: fish (Terai), snow leopard (cursorial), birds (volant)."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nBody plans reflect evolutionary history and ecological niche.\n\nSegmentation allows specialization of body regions.",
+    "summary": "Animal adaptations reflect their habitat. Aquatic animals (primary, e.g. fishes; secondary, e.g. whales) have streamlined bodies, gills with countercurrent exchange, lateral lines, and webbed feet. Terrestrial animals show cursorial (running), fossorial (burrowing), or arboreal (tree-dwelling) adaptations, with waterproof skin and lungs. Volant (flying) animals have wings, hollow bones, air sacs, and strong pectoral muscles. Countercurrent exchange in fish gills allows ~80% O2 uptake. These adaptations are evolutionary, not intentional. NEB focuses on aquatic, terrestrial, and volant adaptations with Nepali examples.",
     "specialNotes": [
-      "Specialized insight for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "NEB expects a clear aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptation list.",
+      "Countercurrent exchange in fish gills is a very common exam point.",
+      "Differentiate primary from secondary aquatic animals.",
+      "Hollow bones + air sacs + double respiration are key volant adaptations.",
+      "Give a Nepali example for each type (fish, snow leopard, eagle)."
     ],
     "importantStatements": [
-      "Key statement for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Aquatic animals have streamlined bodies and gills with countercurrent exchange.",
+      "Primary aquatic animals were always aquatic; secondary ones evolved from land.",
+      "Volant animals have wings, hollow bones, and air sacs for efficient flight.",
+      "Adaptations are evolutionary features, not individual adjustments."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise 5 aquatic, 5 terrestrial, and 5 volant adaptations.",
+      "Learn countercurrent exchange in fish gills.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List cursorial, fossorial, and arboreal adaptations with examples.",
+      "Give a Nepali example for each type."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Animal Adaptation."
+      "Aquatic = A-F-G-L (Adapted, Fusiform, Gills, Lateral line).",
+      "Primary = always water; Secondary = land → water (whales).",
+      "Volant = hollow bones + air sacs + wings + beak.",
+      "Cursorial = run; Fossorial = dig; Arboreal = tree."
     ],
     "examNotes": [
-      "Animal Adaptation is frequently tested.",
-      "Practice writing detailed answers."
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal).",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange work in fish gills?",
+      "Give a Nepali example for each adaptation type."
     ],
     "mcs": [
       {
-        "question": "Question about 01 animal adaptation aquatic terrestrial and volant adaptation?",
+        "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Breathing",
+          "Reducing water resistance",
+          "Vision",
+          "Reproduction"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Whales and seals are examples of:",
+        "options": [
+          "Primary aquatic animals",
+          "Secondary aquatic animals",
+          "Terrestrial animals",
+          "Volant animals"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Hollow bones in birds are an adaptation for:",
+        "options": [
+          "Breathing",
+          "Flight (weight reduction)",
+          "Vision",
+          "Reproduction"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Countercurrent exchange in fish gills allows:",
+        "options": [
+          "~50% O2 uptake",
+          "~80% O2 uptake",
+          "~100% O2 uptake",
+          "No O2 uptake"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Aquatic adaptations (fusiform, gills, lateral line)",
+      "Primary vs secondary aquatic",
+      "Terrestrial adaptations (cursorial, fossorial, arboreal)",
+      "Volant adaptations (wings, hollow bones, air sacs)",
+      "Countercurrent exchange",
+      "Evolutionary adaptation",
+      "Nepal examples"
     ],
     "importantTasks": [
-      "Task for studying 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "List aquatic adaptations",
+      "Differentiate primary vs secondary aquatic",
+      "List terrestrial adaptations",
+      "Explain volant adaptations",
+      "Explain countercurrent exchange"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "Why do birds have hollow bones, and how does this help in flight?",
+        "steps": [
+          "Hollow bones are lighter than solid bones",
+          "Reduced body mass = less energy to fly",
+          "Internal struts keep bones strong"
+        ],
+        "answer": "Hollow bones reduce body weight, making flight more efficient while remaining strong"
       }
     ],
     "visualization": {
-      "type": "simulation",
-      "component": "PollutionSim",
-      "desc": "Air quality monitor and pollution impact visualizer"
+      "type": "3d-model",
+      "component": "AnimalAdaptationViewer",
+      "desc": "Interactive 3D models of a fish, a cheetah, and an eagle with labelled adaptations (fusiform body, gills, hollow bones, wings) and a countercurrent exchange animation."
     }
   },
   "originalContent": {
     "notes": [
-      "Aquatic adaptations: streamlined body, gills, lateral line.",
-      "Terrestrial adaptations: waterproof skin, lungs, internal fertilization.",
-      "Volant adaptations: wings, hollow bones, air sacs.",
-      "Reflex action: automatic response via spinal cord.",
-      "Pollution: air ($SO_2$, NOx, PM2.5), water, soil."
+      "Animal adaptation: structural, physiological, and behavioural features that allow an animal to survive in a particular environment.",
+      "Aquatic adaptation: primary aquatic (fishes, fully aquatic) and secondary aquatic (whales, seals — originally terrestrial).",
+      "Aquatic features: streamlined (fusiform) body, fins, gills (countercurrent exchange), lateral line (fish), webbed feet, dense bones, salt glands.",
+      "Terrestrial adaptation: cursorial (running — cheetah, horse), fossorial (burrowing — earthworm, mole), arboreal (tree-dwelling — monkey, sloth).",
+      "Terrestrial features: waterproof skin (fur, scales, feathers), lungs, internal fertilisation, nitrogenous waste (urea/ammonia), strong limbs.",
+      "Volant adaptation: flight; features: wings (feathers), hollow (pneumatic) bones, air sacs (double respiration), strong pectoral muscles, streamlined body, beak.",
+      "Adaptations increase survival and reproduction in a given habitat; they are the result of natural selection.",
+      "NEB focus: aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptations.",
+      "Nepal examples: fish (Terai), rhododendron forest birds (volant), snow leopard (terrestrial cursorial), pangolin (fossorial)."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-      "❌ Protists are all unicellular. ✅ Some protists (e.g., slime molds, kelp) are multicellular."
+      "Primary aquatic animals were ALWAYS aquatic (fishes); secondary aquatic animals (whales, seals) evolved FROM terrestrial ancestors.",
+      "A fusiform (streamlined) body REDUCES water resistance; it is an adaptation for fast swimming.",
+      "Countercurrent exchange in fish gills allows ~80% O2 uptake efficiency (blood and water flow in opposite directions).",
+      "Hollow bones in birds reduce weight for flight; they are still strong (internal struts).",
+      "Arboreal animals (monkeys) have grasping hands/feet, forward-facing eyes (stereoscopic vision), and a prehensile tail (New World monkeys).",
+      "Fossorial animals (moles, earthworms) have reduced eyes, strong forelimbs for digging, and cylindrical bodies."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice dissecting and identifying organs in earthworm and frog.",
-      "Practice classifying protozoa based on locomotion structures."
+      "List aquatic adaptations of a fish (5).",
+      "Differentiate primary from secondary aquatic animals.",
+      "List terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird (5).",
+      "Explain countercurrent exchange in fish gills."
     ],
     "universalFacts": [
-      "Universal scientific fact for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "The fusiform body shape reduces drag by up to ~40% in fast swimmers.",
+      "Countercurrent exchange in fish gills allows ~80% O2 extraction; parallel flow would extract only ~50%.",
+      "Birds have a double respiration system (air sacs + lungs) that delivers fresh air through the lungs on BOTH in- and exhalation.",
+      "A hummingbird's wings beat ~50 times per second; some migrate thousands of km."
     ],
     "examples": [
-      "Fish gills: countercurrent exchange",
-      "Kathmandu Valley: PM2.5 exceeds WHO 10× in winter"
+      "Fish (primary aquatic): fusiform body, fins, gills, lateral line, scale-covered skin.",
+      "Whale (secondary aquatic): streamlined body, dense bones, blubber, baleen, modified limbs (flippers).",
+      "Cheetah (cursorial): long limbs, enlarged nostrils, non-retractable claws for grip, S-spine.",
+      "Mole (fossorial): reduced eyes, strong digging forelimbs, cylindrical body, no tail.",
+      "Orangutan (arboreal): long arms, grasping hands, stereoscopic vision, prehensile tail (New World).",
+      "Eagle (volant): feathers, hollow bones, air sacs, strong pectoral muscles, sharp beak and talons."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice dissecting and identifying organs in earthworm and frog."
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange improve O2 uptake in fish?"
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 01 animal adaptation aquatic terrestrial and volant adaptation)"
+      "Aquatic: fusiform body + fins + gills (countercurrent) + lateral line + webbed feet",
+      "Terrestrial: waterproof skin + lungs + internal fertilisation + strong limbs",
+      "Volant: wings + hollow bones + air sacs + strong pectoral muscles + streamlined body + beak"
     ],
     "keyPoints": [
-      "Core point for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Aquatic: fusiform body, gills (countercurrent), lateral line, webbed feet, fins.",
+      "Primary aquatic = always aquatic (fish); secondary = evolved from land (whales, seals).",
+      "Terrestrial: cursorial (run), fossorial (dig), arboreal (tree-dwell); waterproof skin, lungs.",
+      "Volant: wings, hollow bones, air sacs, strong pectoral muscles, beak.",
+      "Countercurrent exchange: ~80% O2 uptake in fish gills.",
+      "Adaptation is evolutionary (population-level), not individual.",
+      "Nepal examples: fish (Terai), snow leopard (cursorial), birds (volant)."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nBody plans reflect evolutionary history and ecological niche.\n\nSegmentation allows specialization of body regions.",
+    "summary": "Animal adaptations reflect their habitat. Aquatic animals (primary, e.g. fishes; secondary, e.g. whales) have streamlined bodies, gills with countercurrent exchange, lateral lines, and webbed feet. Terrestrial animals show cursorial (running), fossorial (burrowing), or arboreal (tree-dwelling) adaptations, with waterproof skin and lungs. Volant (flying) animals have wings, hollow bones, air sacs, and strong pectoral muscles. Countercurrent exchange in fish gills allows ~80% O2 uptake. These adaptations are evolutionary, not intentional. NEB focuses on aquatic, terrestrial, and volant adaptations with Nepali examples.",
     "specialNotes": [
-      "Specialized insight for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "NEB expects a clear aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptation list.",
+      "Countercurrent exchange in fish gills is a very common exam point.",
+      "Differentiate primary from secondary aquatic animals.",
+      "Hollow bones + air sacs + double respiration are key volant adaptations.",
+      "Give a Nepali example for each type (fish, snow leopard, eagle)."
     ],
     "importantStatements": [
-      "Key statement for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Aquatic animals have streamlined bodies and gills with countercurrent exchange.",
+      "Primary aquatic animals were always aquatic; secondary ones evolved from land.",
+      "Volant animals have wings, hollow bones, and air sacs for efficient flight.",
+      "Adaptations are evolutionary features, not individual adjustments."
     ],
     "importantNotes": [
-      "Important note regarding 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Memorise 5 aquatic, 5 terrestrial, and 5 volant adaptations.",
+      "Learn countercurrent exchange in fish gills.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List cursorial, fossorial, and arboreal adaptations with examples.",
+      "Give a Nepali example for each type."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Animal Adaptation."
+      "Aquatic = A-F-G-L (Adapted, Fusiform, Gills, Lateral line).",
+      "Primary = always water; Secondary = land → water (whales).",
+      "Volant = hollow bones + air sacs + wings + beak.",
+      "Cursorial = run; Fossorial = dig; Arboreal = tree."
     ],
     "examNotes": [
-      "Animal Adaptation is frequently tested.",
-      "Practice writing detailed answers."
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal).",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange work in fish gills?",
+      "Give a Nepali example for each adaptation type."
     ],
     "mcs": [
       {
-        "question": "Question about 01 animal adaptation aquatic terrestrial and volant adaptation?",
+        "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Breathing",
+          "Reducing water resistance",
+          "Vision",
+          "Reproduction"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Whales and seals are examples of:",
+        "options": [
+          "Primary aquatic animals",
+          "Secondary aquatic animals",
+          "Terrestrial animals",
+          "Volant animals"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Hollow bones in birds are an adaptation for:",
+        "options": [
+          "Breathing",
+          "Flight (weight reduction)",
+          "Vision",
+          "Reproduction"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Countercurrent exchange in fish gills allows:",
+        "options": [
+          "~50% O2 uptake",
+          "~80% O2 uptake",
+          "~100% O2 uptake",
+          "No O2 uptake"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "Aquatic adaptations (fusiform, gills, lateral line)",
+      "Primary vs secondary aquatic",
+      "Terrestrial adaptations (cursorial, fossorial, arboreal)",
+      "Volant adaptations (wings, hollow bones, air sacs)",
+      "Countercurrent exchange",
+      "Evolutionary adaptation",
+      "Nepal examples"
     ],
     "importantTasks": [
-      "Task for studying 01 animal adaptation aquatic terrestrial and volant adaptation."
+      "List aquatic adaptations",
+      "Differentiate primary vs secondary aquatic",
+      "List terrestrial adaptations",
+      "Explain volant adaptations",
+      "Explain countercurrent exchange"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why do birds have hollow bones, and how does this help in flight?",
+        "steps": [
+          "Hollow bones are lighter than solid bones",
+          "Reduced body mass = less energy to fly",
+          "Internal struts keep bones strong"
+        ],
+        "answer": "Hollow bones reduce body weight, making flight more efficient while remaining strong"
+      }
+    ],
     "visualization": {
-      "type": "simulation",
-      "component": "PollutionSim",
-      "desc": "Air quality monitor and pollution impact visualizer"
+      "type": "3d-model",
+      "component": "AnimalAdaptationViewer",
+      "desc": "Interactive 3D models of a fish, a cheetah, and an eagle with labelled adaptations (fusiform body, gills, hollow bones, wings) and a countercurrent exchange animation."
     }
   }
 }

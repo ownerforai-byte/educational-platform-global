@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Angiosperm Morphology — NEB Biology 11 (Floral Diversity)
@@ -39,7 +39,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveArrow(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
   meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
 }

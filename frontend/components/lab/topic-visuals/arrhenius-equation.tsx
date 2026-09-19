@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Arrhenius Equation — Activation Energy Profile
@@ -148,7 +148,7 @@ export function ArrheniusEquationVisual() {
         const eaTarget = new THREE.Vector3(ox + 3.5, reactY, 0);
         const eaDir = eaTarget.clone().sub(eaLabel).normalize();
         const eaLen = eaLabel.distanceTo(eaTarget);
-        push(new LiveArrow(eaDir, eaLabel, eaLen * 0.85, 0xf97316, 0.28, 0.12));
+        push(new LiveLeaderLine(eaDir, eaLabel, eaLen * 0.85, 0xf97316, 0.28, 0.12));
         push(mkSprite(`Ea = ${Ea} kJ/mol`, "#f97316", eaLabel.clone().sub(eaDir.multiplyScalar(0.5)), 0.7));
 
         // Ea(cat) arrow
@@ -158,7 +158,7 @@ export function ArrheniusEquationVisual() {
           const eacTarget = new THREE.Vector3(ox + 4.5, reactY, 0);
           const eacDir = eacTarget.clone().sub(eacLabel).normalize();
           const eacLen = eacLabel.distanceTo(eacTarget);
-          push(new LiveArrow(eacDir, eacLabel, eacLen * 0.85, 0x22c55e, 0.28, 0.12));
+          push(new LiveLeaderLine(eacDir, eacLabel, eacLen * 0.85, 0x22c55e, 0.28, 0.12));
           push(mkSprite(`Ea(cat) = ${EaCat.toFixed(0)} kJ/mol`, "#22c55e", eacLabel.clone().sub(eacDir.multiplyScalar(0.5)), 0.65));
         }
 
@@ -167,7 +167,7 @@ export function ArrheniusEquationVisual() {
         const dhTarget = new THREE.Vector3(ox + 8.5, reactY, 0);
         const dhDir = dhTarget.clone().sub(dhLabel).normalize();
         const dhLen = dhLabel.distanceTo(dhTarget);
-        push(new LiveArrow(dhDir, dhLabel, dhLen * 0.8, isEndothermic ? 0xef4444 : 0x22c55e, 0.25, 0.12));
+        push(new LiveLeaderLine(dhDir, dhLabel, dhLen * 0.8, isEndothermic ? 0xef4444 : 0x22c55e, 0.25, 0.12));
         const dhSign = isEndothermic ? "+" : "";
         push(mkSprite(`ΔH = ${dhSign}${deltaH} kJ/mol`, isEndothermic ? "#ef4444" : "#22c55e", dhLabel.clone().sub(dhDir.multiplyScalar(0.5)), 0.65));
 

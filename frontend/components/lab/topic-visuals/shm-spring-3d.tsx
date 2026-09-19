@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -110,21 +110,21 @@ export function SHMVisual() {
       const ampLabelPos = new THREE.Vector3(-3, 4, 0);
       const ampTarget = new THREE.Vector3(-3 + amplitude, 0.6, 0);
       const ampDir = ampTarget.clone().sub(ampLabelPos).normalize();
-      push(new LiveArrow(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveLeaderLine(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`Amp = ${amplitude} m`, "#fbbf24", ampLabelPos.clone().sub(ampDir.multiplyScalar(0.5)), 0.75));
 
       // Rest position label
       const restLabelPos = new THREE.Vector3(-3, -2, 0);
       const restTarget = new THREE.Vector3(-3, 0.6, 0);
       const restDir = restTarget.clone().sub(restLabelPos).normalize();
-      push(new LiveArrow(restDir, restLabelPos, restLabelPos.distanceTo(restTarget) * 0.9, 0x64748b, 0.15, 0.1));
+      push(new LiveLeaderLine(restDir, restLabelPos, restLabelPos.distanceTo(restTarget) * 0.9, 0x64748b, 0.15, 0.1));
       push(mkSprite("Rest position", "#64748b", restLabelPos.clone().sub(restDir.multiplyScalar(0.5)), 0.7));
 
       // Force label
       const forceLabelPos = new THREE.Vector3(5, 3, 0);
       const forceTarget = new THREE.Vector3(0, 0.6, 0);
       const forceDir = forceTarget.clone().sub(forceLabelPos).normalize();
-      push(new LiveArrow(forceDir, forceLabelPos, forceLabelPos.distanceTo(forceTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveLeaderLine(forceDir, forceLabelPos, forceLabelPos.distanceTo(forceTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite("F = −kx (restoring force)", "#ef4444", forceLabelPos.clone().sub(forceDir.multiplyScalar(0.5)), 0.7));
 
       // Graph area (right side)

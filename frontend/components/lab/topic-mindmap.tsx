@@ -91,6 +91,21 @@ export function TopicMindMap({
   const [isMindmapFullscreen, setIsMindmapFullscreen] = useState(false);
   const mindmapRootRef = useRef<HTMLDivElement>(null);
 
+  // ── Hold-to-expand hierarchy state ──
+  // Press-and-hold a branch capsule (or its tree row) to fan out its full
+  // sub-branch → leaf hierarchy on the canvas; hold again (or tap) to fold it back.
+  const [heldBranches, setHeldBranches] = useState<Record<string, boolean>>({});
+  const [expandedBranches, setExpandedBranches] = useState<Record<string, boolean>>({});
+
+  const setBranchExpanded = (id: string, next: boolean) => {
+    setHeldBranches((prev) => ({ ...prev, [id]: next }));
+    setExpandedBranches((prev) => ({ ...prev, [id]: next }));
+  };
+
+  const toggleBranchExpanded = (id: string) => {
+    setBranchExpanded(id, !expandedBranches[id]);
+  };
+
   useEffect(() => {
     const onFsChange = () => setIsMindmapFullscreen(!!document.fullscreenElement);
     document.addEventListener("fullscreenchange", onFsChange);
@@ -1899,6 +1914,53 @@ export function TopicMindMap({
   const centerY = 300;
   const branchRadius = 240;
 
+  // ── Hold-to-expand gesture plumbing (canvas capsules) ──
+  const HOLD_MS = 350;
+  const holdTimerRef = useRef<number | null>(null);
+  const holdFiredRef = useRef(false);
+
+  /**
+   * Compute the 3-level fan-out layout for a branch when it is held open:
+   * sub-branch capsules orbit the branch head, leaf capsules orbit each
+   * sub-branch, in deterministic syllabus order.
+   */
+  function computeFan(
+    b: MindMapBranch,
+    bx: number,
+    by: number,
+    rad: number,
+  ): {
+    subPos: { sub: MindMapSubBranch; x: number; y: number }[];
+    leafPos: { node: MindMapLeafNode; x: number; y: number; subId: string }[];
+  } {
+    const subs = b.subBranches.filter((s) => s.nodes.length > 0);
+    const subPos = subs.map((sub, i) => {
+      const spread = subs.length === 1 ? 0 : (i - (subs.length - 1) / 2) * 0.42;
+      const subRad = rad + spread;
+      const dist = 105;
+      return {
+        sub,
+        x: bx + Math.cos(subRad) * dist,
+        y: by + Math.sin(subRad) * dist,
+      };
+    });
+
+    const leafPos: { node: MindMapLeafNode; x: number; y: number; subId: string }[] = [];
+    subPos.forEach(({ sub, x: sxp, y: syp }) => {
+      const outward = Math.atan2(syp - by, sxp - bx);
+      const leaves = sub.nodes.slice(0, 4); // cap per-sub leaves for readability
+      leaves.forEach((node, li) => {
+        const perp = outward + Math.PI / 2;
+        const side = li % 2 === 0 ? -1 : 1;
+        const row = Math.floor(li / 2);
+        const lx = sxp + Math.cos(outward) * 68 + Math.cos(perp) * side * 30;
+        const ly = syp + Math.sin(outward) * 68 + Math.sin(perp) * side * 30 + row * 24;
+        leafPos.push({ node, x: lx, y: ly, subId: sub.id });
+      });
+    });
+    return { subPos, leafPos };
+  }
+
   return (
     <div ref={mindmapRootRef} className={`rounded-3xl border border-border/80 bg-[#090d16] text-slate-100 shadow-2xl overflow-hidden ${className}`}>
       {/* ── Top Header Toolbar ── */}
@@ -2094,11 +2156,33 @@ export function TopicMindMap({
                   >
                     {/* Branch Title Bar */}
                     <div
-                      onClick={() => {
-                        setActiveBranchId(isBranchActive ? null : b.id);
-                        setActiveNodeId(null);
+                      onPointerDown={() => {
+                        holdTimerRef.current = window.setTimeout(() => {
+                          holdFiredRef.current = true;
+                          setBranchExpanded(b.id, true);
+                        }, HOLD_MS);
                       }}
-                      className="p-2.5 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-colors"
+                      onPointerUp={() => {
+                        if (holdTimerRef.current !== null) {
+                          window.clearTimeout(holdTimerRef.current);
+                          holdTimerRef.current = null;
+                        }
+                        if (holdFiredRef.current) {
+                          holdFiredRef.current = false;
+                          setBranchExpanded(b.id, false);
+                        } else {
+                          setActiveBranchId(isBranchActive ? null : b.id);
+                          setActiveNodeId(null);
+                          toggleBranchExpanded(b.id);
+                        }
+                      }}
+                      onPointerLeave={() => {
+                        if (holdTimerRef.current !== null) {
+                          window.clearTimeout(holdTimerRef.current);
+                          holdTimerRef.current = null;
+                        }
+                      }}
+                      className="p-2.5 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-colors select-none touch-none"
                       style={{ borderLeft: `3px solid ${b.color}` }}
                     >
                       <div className="flex items-center gap-2 min-w-0">
@@ -2262,12 +2346,14 @@ export function TopicMindMap({
                 const by = centerY + branchRadius * Math.sin(rad);
 
                 const isBranchActive = activeBranchId === null || activeBranchId === b.id;
+                const isHeld = !!heldBranches[b.id];
 
                 // Quadratic bezier control point for elegant curved trunk
                 const cx = centerX + (branchRadius * 0.45) * Math.cos(rad + 0.15);
                 const cy = centerY + (branchRadius * 0.45) * Math.sin(rad + 0.15);
 
                 const trunkPath = `M ${centerX} ${centerY} Q ${cx} ${cy} ${bx} ${by}`;
+                const fan = computeFan(b, bx, by, rad);
 
                 return (
                   <g key={`trunk-${b.id}`} opacity={isBranchActive ? 1 : 0.2} className="transition-opacity duration-300">
@@ -2289,29 +2375,81 @@ export function TopicMindMap({
                       strokeLinecap="round"
                     />
 
-                    {/* Secondary leaves connected to Branch Trunk */}
-                    {b.nodes.map((node, nodeIdx) => {
-                      const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
-                      const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
-                      const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
-
-                      const leafPath = `M ${bx} ${by} Q ${(bx + nx) / 2} ${(by + ny) / 2 - 15} ${nx} ${ny}`;
-                      const isNodeActive = activeNodeId === node.id;
-
-                      return (
-                        <g key={`leaf-path-${node.id}`}>
+                    {/* Hierarchy fan-out: Branch → Sub-Branch leader lines (SVG, no arrowheads) */}
+                    {isHeld &&
+                      fan.subPos.map(({ sub, x: sxp, y: syp }) => {
+                        const midX = (bx + sxp) / 2;
+                        const midY = (by + syp) / 2 - 14;
+                        const subPath = `M ${bx} ${by} Q ${midX} ${midY} ${sxp} ${syp}`;
+                        return (
                           <path
-                            d={leafPath}
+                            key={`sub-path-${sub.id}`}
+                            d={subPath}
                             fill="none"
                             stroke={b.color}
-                            strokeWidth={isNodeActive ? "3" : "1.8"}
-                            strokeDasharray={isNodeActive ? "none" : "4 2"}
-                            strokeOpacity={isNodeActive ? 1 : 0.75}
+                            strokeWidth="2"
+                            strokeOpacity="0.8"
+                            strokeLinecap="round"
                           />
-                          <circle cx={nx} cy={ny} r={isNodeActive ? "6" : "4"} fill={b.color} />
-                        </g>
-                      );
-                    })}
+                        );
+                      })}
+
+                    {/* Hierarchy fan-out: Sub-Branch → Leaf leader lines with tip terminators */}
+                    {isHeld
+                      ? fan.leafPos.map(({ node, x: lxp, y: lyp, subId }) => {
+                          const sp = fan.subPos.find((s) => s.sub.id === subId);
+                          if (!sp) return null;
+                          const midX = (sp.x + lxp) / 2;
+                          const midY = (sp.y + lyp) / 2 - 8;
+                          const leafPath = `M ${sp.x} ${sp.y} Q ${midX} ${midY} ${lxp} ${lyp}`;
+                          const isNodeActive = activeNodeId === node.id;
+                          // Perpendicular tip terminator at the leaf (never an arrowhead)
+                          const ang = Math.atan2(lyp - midY, lxp - midX);
+                          const nx = Math.cos(ang);
+                          const ny = Math.sin(ang);
+                          const th = 4;
+                          return (
+                            <g key={`leaf-path-${node.id}`}>
+                              <path
+                                d={leafPath}
+                                fill="none"
+                                stroke={b.color}
+                                strokeWidth={isNodeActive ? "2.4" : "1.2"}
+                                strokeOpacity={isNodeActive ? 1 : 0.65}
+                                strokeLinecap="round"
+                              />
+                              <path
+                                d={`M ${lxp - ny * th} ${lyp + nx * th} L ${lxp} ${lyp} L ${lxp + ny * th} ${lyp - nx * th}`}
+                                fill="none"
+                                stroke={b.color}
+                                strokeWidth={isNodeActive ? "2.2" : "1.5"}
+                                strokeLinecap="round"
+                              />
+                            </g>
+                          );
+                        })
+                      : b.nodes.map((node, nodeIdx) => {
+                          const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
+                          const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
+                          const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
+
+                          const leafPath = `M ${bx} ${by} Q ${(bx + nx) / 2} ${(by + ny) / 2 - 15} ${nx} ${ny}`;
+                          const isNodeActive = activeNodeId === node.id;
+
+                          return (
+                            <g key={`leaf-path-${node.id}`}>
+                              <path
+                                d={leafPath}
+                                fill="none"
+                                stroke={b.color}
+                                strokeWidth={isNodeActive ? "3" : "1.8"}
+                                strokeDasharray={isNodeActive ? "none" : "4 2"}
+                                strokeOpacity={isNodeActive ? 1 : 0.75}
+                              />
+                              <circle cx={nx} cy={ny} r={isNodeActive ? "6" : "4"} fill={b.color} />
+                            </g>
+                          );
+                        })}
                   </g>
                 );
               })}
@@ -2343,10 +2481,12 @@ export function TopicMindMap({
               const by = centerY + branchRadius * Math.sin(rad);
 
               const isBranchActive = activeBranchId === null || activeBranchId === b.id;
+              const isHeld = !!heldBranches[b.id];
+              const fan = computeFan(b, bx, by, rad);
 
               return (
                 <React.Fragment key={`html-${b.id}`}>
-                  {/* Branch Head Capsule */}
+                  {/* Branch Head Capsule — hold to fan out full hierarchy */}
                   <div
                     style={{
                       left: `${(bx / 1000) * 100}%`,
@@ -2355,61 +2495,147 @@ export function TopicMindMap({
                       borderColor: b.color,
                       boxShadow: activeBranchId === b.id ? `0 0 25px ${b.color}50` : "none",
                     }}
-                    onClick={() => {
-                      setActiveBranchId(b.id);
-                      setActiveNodeId(null);
+                    onPointerDown={(e) => {
+                      e.stopPropagation();
+                      holdTimerRef.current = window.setTimeout(() => {
+                        holdFiredRef.current = true;
+                        setBranchExpanded(b.id, true);
+                      }, HOLD_MS);
                     }}
-                    className={`absolute z-20 cursor-pointer rounded-2xl border-2 px-3 py-1.5 backdrop-blur-md transition-all duration-200 ${
+                    onPointerUp={(e) => {
+                      e.stopPropagation();
+                      if (holdTimerRef.current !== null) {
+                        window.clearTimeout(holdTimerRef.current);
+                        holdTimerRef.current = null;
+                      }
+                      if (holdFiredRef.current) {
+                        // After a completed hold, tapping collapses on the next release.
+                        holdFiredRef.current = false;
+                        setBranchExpanded(b.id, false);
+                      } else {
+                        setActiveBranchId(b.id);
+                        setActiveNodeId(null);
+                        toggleBranchExpanded(b.id);
+                      }
+                    }}
+                    onPointerLeave={() => {
+                      if (holdTimerRef.current !== null) {
+                        window.clearTimeout(holdTimerRef.current);
+                        holdTimerRef.current = null;
+                      }
+                    }}
+                    className={`absolute z-20 cursor-pointer rounded-2xl border-2 px-3 py-1.5 backdrop-blur-md transition-all duration-200 select-none touch-none ${
                       isBranchActive ? "opacity-100 scale-105" : "opacity-30 scale-95"
                     } bg-[#0c1220]/95 hover:scale-110`}
                   >
                     <div className="flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full" style={{ backgroundColor: b.color }} />
                       <span className="text-xs font-bold text-white whitespace-nowrap">{b.category}</span>
+                      <span
+                        className="text-[9px] font-bold ml-0.5"
+                        style={{ color: b.color }}
+                      >
+                        {isHeld ? "−" : "+"}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Child Leaf Capsules */}
-                  {b.nodes.map((node, nodeIdx) => {
-                    const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
-                    const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
-                    const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
-
-                    const isNodeSelected = activeNodeId === node.id;
-
-                    return (
+                  {/* Held: Sub-Branch capsules fanned around the branch */}
+                  {isHeld &&
+                    fan.subPos.map(({ sub, x: sxp, y: syp }) => (
                       <div
-                        key={`child-${node.id}`}
+                        key={`held-sub-${sub.id}`}
                         style={{
-                          left: `${(nx / 1000) * 100}%`,
-                          top: `${(ny / 600) * 100}%`,
+                          left: `${(sxp / 1000) * 100}%`,
+                          top: `${(syp / 600) * 100}%`,
                           transform: "translate(-50%, -50%)",
-                          borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                          borderColor: b.color,
                         }}
                         onClick={() => {
                           setActiveBranchId(b.id);
-                          setActiveNodeId(node.id);
+                          setActiveNodeId(null);
                         }}
-                        className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${
-                          isNodeSelected
-                            ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
-                            : "bg-slate-950/90 hover:border-slate-500 hover:scale-102"
-                        }`}
+                        className="absolute z-25 cursor-pointer rounded-xl border px-2 py-1 backdrop-blur-md bg-[#0c1220]/95 transition-all duration-200 hover:scale-105 animate-fade-in"
                       >
-                        <h4 className="text-[11px] font-bold text-white leading-tight truncate">
-                          {node.title}
-                        </h4>
-                        {node.formula && (
-                          <div
-                            className="mt-1 font-mono text-[9px] font-semibold px-1 rounded truncate"
-                            style={{ backgroundColor: `${b.color}20`, color: b.color }}
-                          >
-                            {node.formula}
-                          </div>
-                        )}
+                        <div className="flex items-center gap-1">
+                          <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: b.color }} />
+                          <span className="text-[10px] font-bold text-white whitespace-nowrap max-w-[140px] truncate">
+                            {sub.title || sub.id}
+                          </span>
+                        </div>
                       </div>
-                    );
-                  })}
+                    ))}
+
+                  {/* Held: Leaf capsules under their sub-branch (full 3-level hierarchy) */}
+                  {isHeld &&
+                    fan.leafPos.map(({ node, x: lxp, y: lyp }) => {
+                      const isNodeSelected = activeNodeId === node.id;
+                      return (
+                        <div
+                          key={`held-leaf-${node.id}`}
+                          style={{
+                            left: `${(lxp / 1000) * 100}%`,
+                            top: `${(lyp / 600) * 100}%`,
+                            transform: "translate(-50%, -50%)",
+                            borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                          }}
+                          onClick={() => {
+                            setActiveBranchId(b.id);
+                            setActiveNodeId(node.id);
+                          }}
+                          className={`absolute z-30 cursor-pointer rounded-lg border p-1.5 max-w-[150px] backdrop-blur-md transition-all duration-200 animate-fade-in ${
+                            isNodeSelected
+                              ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
+                              : "bg-slate-950/90 hover:border-slate-500"
+                          }`}
+                        >
+                          <h4 className="text-[10px] font-bold text-white leading-tight truncate">{node.title}</h4>
+                        </div>
+                      );
+                    })}
+
+                  {/* Collapsed: Child Leaf Capsules (two attached directly to the trunk) */}
+                  {!isHeld &&
+                    b.nodes.slice(0, 2).map((node, nodeIdx) => {
+                      const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
+                      const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
+                      const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
+
+                      const isNodeSelected = activeNodeId === node.id;
+
+                      return (
+                        <div
+                          key={`child-${node.id}`}
+                          style={{
+                            left: `${(nx / 1000) * 100}%`,
+                            top: `${(ny / 600) * 100}%`,
+                            transform: "translate(-50%, -50%)",
+                            borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                          }}
+                          onClick={() => {
+                            setActiveBranchId(b.id);
+                            setActiveNodeId(node.id);
+                          }}
+                          className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${
+                            isNodeSelected
+                              ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
+                              : "bg-slate-950/90 hover:border-slate-500 hover:scale-102"
+                          }`}
+                        >
+                          <h4 className="text-[11px] font-bold text-white leading-tight truncate">
+                            {node.title}
+                          </h4>
+                          {node.formula && (
+                            <div
+                              className="mt-1 font-mono text-[9px] font-semibold px-1 rounded truncate"
+                              style={{ backgroundColor: `${b.color}20`, color: b.color }}
+                            >
+                              {node.formula}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                 </React.Fragment>
               );
             })}

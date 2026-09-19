@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -140,7 +140,7 @@ export function OpticsVisual() {
       // Object arrow
       const objH = 1.5;
       const objX = -u;
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         new THREE.Vector3(0, 1, 0),
         new THREE.Vector3(objX, 0, 0),
         objH,
@@ -168,7 +168,7 @@ export function OpticsVisual() {
       // Image arrow
       const imgX = isMirror ? v : -v;
       const imgColor = v < 0 ? 0x34d399 : 0xf97316;
-      push(new LiveArrow(
+      push(new LiveLeaderLine(
         new THREE.Vector3(0, 1, 0),
         new THREE.Vector3(imgX, 0, 0),
         imgH,
@@ -182,27 +182,27 @@ export function OpticsVisual() {
       const uLabelPos = new THREE.Vector3(objX / 2, -2, 0);
       const uTarget = new THREE.Vector3(objX, 0, 0);
       const uDir = uTarget.clone().sub(uLabelPos).normalize();
-      push(new LiveArrow(uDir, uLabelPos, uLabelPos.distanceTo(uTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      push(new LiveLeaderLine(uDir, uLabelPos, uLabelPos.distanceTo(uTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
       push(mkSprite(`u = ${u} (object distance)`, "#fbbf24", uLabelPos.clone().sub(uDir.multiplyScalar(0.5)), 0.7));
 
       const vLabelPos = new THREE.Vector3(imgX / 2, -2, 0);
       const vTarget = new THREE.Vector3(imgX, 0, 0);
       const vDir = vTarget.clone().sub(vLabelPos).normalize();
-      push(new LiveArrow(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveLeaderLine(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(`v = ${v.toFixed(1)} (image distance)`, "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.7));
 
       // Focal length label
       const fLabelPos = new THREE.Vector3(effectiveF / 2, 2.5, 0);
       const fTarget = new THREE.Vector3(effectiveF, 0, 0);
       const fDir = fTarget.clone().sub(fLabelPos).normalize();
-      push(new LiveArrow(fDir, fLabelPos, fLabelPos.distanceTo(fTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveLeaderLine(fDir, fLabelPos, fLabelPos.distanceTo(fTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite(`f = ${effectiveF} (focal length)`, "#ef4444", fLabelPos.clone().sub(fDir.multiplyScalar(0.5)), 0.7));
 
       // Magnification label
       const magLabelPos = new THREE.Vector3(-6, 3, 0);
       const magTarget = new THREE.Vector3(0, 0, 0);
       const magDir = magTarget.clone().sub(magLabelPos).normalize();
-      push(new LiveArrow(magDir, magLabelPos, magLabelPos.distanceTo(magTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveLeaderLine(magDir, magLabelPos, magLabelPos.distanceTo(magTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`m = ${mag.toFixed(2)}${v < 0 ? " (virtual)" : " (real)"}`, "#34d399", magLabelPos.clone().sub(magDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {

@@ -9,7 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Perpendicular Distance 3D — "Distance of perpendicular from
@@ -208,7 +208,7 @@ export function MathPerpendicular3D() {
       // ===== Normal vector arrow at F (plane mode) =====
       if (mode === "plane" && showNormal) {
         const nrm = normalWorld.clone().normalize();
-        push(new LiveArrow(nrm, F, 1.6, 0xa78bfa, 0.22, 0.14));
+        push(new LiveLeaderLine(nrm, F, 1.6, 0xa78bfa, 0.22, 0.14));
         push(mkSpriteLabel("n-hat", "#a78bfa", F.clone().add(nrm.clone().multiplyScalar(1.85)), 0.85));
       }
 
@@ -271,8 +271,8 @@ export function MathPerpendicular3D() {
             const sm = m.material;
             sm.map?.dispose?.();
             sm.dispose();
-          } else if (m instanceof THREE.ArrowHelper) {
-            m.dispose();
+          } else if (m instanceof THREE.ArrowHelper || (m as any).isLeaderLine) {
+            (m as any).dispose();
           }
         });
         renderer.dispose();

@@ -10,378 +10,383 @@
   "tabGroup": "01-scope-fields-biology",
   "mcqs": [
     {
-      "question": "Question about 01 scope fields biology?",
+      "question": "Biology is the study of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Rocks",
+        "Living organisms",
+        "Stars",
+        "Weather"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The branch of biology that studies plants is:",
+      "options": [
+        "Zoology",
+        "Botany",
+        "Microbiology",
+        "Genetics"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following is NOT a characteristic of life?",
+      "options": [
+        "Metabolism",
+        "Homeostasis",
+        "Photosynthesis",
+        "Reproduction"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The scientific method begins with:",
+      "options": [
+        "A conclusion",
+        "An observation",
+        "A hypothesis",
+        "An experiment"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "biology-scope-branches",
   "enrichedContent": {
     "notes": [
-      "Biology: study of life (Greek: bios + logos).",
-      "Branches: botany, zoology, microbiology, genetics, ecology.",
-      "Characteristics of life: organization, metabolism, homeostasis, growth, reproduction, response, evolution.",
-      "Scientific method: observation → hypothesis → experiment → conclusion."
+      "Biology: the study of living organisms (Greek: bios = life, logos = study).",
+      "Scope: from molecules (DNA, proteins) to cells, tissues, organs, organisms, populations, communities, ecosystems, and the biosphere.",
+      "Branches: Botany (plants), Zoology (animals), Microbiology (microorganisms), Genetics (heredity), Ecology (organism-environment), Physiology (function), Anatomy (structure), Taxonomy (classification), Biotechnology (application).",
+      "Characteristics of life: cellular organisation, metabolism, homeostasis, growth, reproduction, response to stimuli, evolution, and adaptation.",
+      "Scientific method: observation → question → hypothesis → experiment → data → conclusion → (publish/peer review).",
+      "Biology is an experimental science; it uses controlled experiments, measurement, and statistical analysis.",
+      "NEB focus: definition, scope, fields (branches), and characteristics of life."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "Biology is NOT the same as medicine or agriculture; it is the foundational science, and medicine/agriculture are applied fields.",
+      "Botany studies plants (including algae and fungi in some systems); Zoology studies animals.",
+      "Microbiology includes bacteria, viruses, fungi, protists; it overlaps with botany and zoology.",
+      "Physiology = function; Anatomy = structure; they are complementary, not the same.",
+      "A \"characteristic of life\" must be present in ALL living things (e.g., metabolism, reproduction); not all organisms reproduce sexually (some reproduce asexually).",
+      "The scientific method is iterative; a single experiment rarely proves a hypothesis."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Define biology and state its scope (from molecule to biosphere).",
+      "List 8 branches of biology with one focus each.",
+      "State the characteristics of life (7).",
+      "Explain the scientific method (steps).",
+      "Differentiate botany from zoology."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "There are approximately 8.7 million species on Earth (only ~15% described).",
+      "Biology is the fastest-growing science; over 200,000 biology research papers are published annually.",
+      "DNA (the genetic material) is the basis of modern genetics.",
+      "The term \"biology\" was first used by Goethe (1801) and popularised by Tiedemann (1830)."
     ],
     "examples": [
-      "Nepal: 10% world plants, 1% mammals in 0.1% Earth land"
+      "Botany: Oryza sativa (rice) — a monocot, angiosperm, Poaceae.",
+      "Zoology: Rana tigrina (tiger frog) — an amphibian, Chordata, Anura.",
+      "Microbiology: Escherichia coli — a Gram-negative, prokaryotic bacterium.",
+      "Genetics: Mendel's pea experiments — the foundation of modern genetics.",
+      "Ecology: a pond ecosystem — producers, consumers, decomposers, abiotic factors."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Define biology and state its scope.",
+      "List 8 branches of biology with one focus each.",
+      "State the characteristics of life (7).",
+      "Explain the scientific method (steps).",
+      "Differentiate botany from zoology (4 points)."
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 01 scope fields biology)"
+      "Biology = Bios (life) + Logos (study) = the study of living organisms",
+      "Scope: molecule → cell → tissue → organ → organism → population → community → ecosystem → biosphere",
+      "Scientific method: Observation → Question → Hypothesis → Experiment → Data → Conclusion"
     ],
     "keyPoints": [
-      "Core point for 01 scope fields biology."
+      "Biology: the study of living organisms.",
+      "Scope: from molecules to the biosphere (9 levels).",
+      "Branches: Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, Biotechnology.",
+      "Characteristics of life: cellular, metabolism, homeostasis, growth, reproduction, response, evolution.",
+      "Scientific method: observation → hypothesis → experiment → conclusion.",
+      "Biology is an experimental, evidence-based science.",
+      "~8.7 million species; only ~15% described."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+    "summary": "Biology is the scientific study of living organisms, from molecules (DNA, proteins) to the entire biosphere. It encompasses branches such as Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, and Biotechnology. Living things share seven characteristics: cellular organisation, metabolism, homeostasis, growth, reproduction, response to stimuli, and evolution. Biology uses the scientific method (observation, hypothesis, experiment, conclusion) to build testable knowledge about life.",
     "specialNotes": [
-      "Specialized insight for 01 scope fields biology."
+      "NEB expects the definition of biology, the 9-level scope, and the 7 characteristics of life.",
+      "The scientific method is a favourite exam question (6 steps).",
+      "Branches of biology: know at least 8 with their focus.",
+      "Differentiate botany from zoology (4 points)."
     ],
     "importantStatements": [
-      "Key statement for 01 scope fields biology."
+      "Biology is the scientific study of living organisms.",
+      "Life spans from molecules to the biosphere (9 organisational levels).",
+      "All living things share 7 fundamental characteristics.",
+      "The scientific method is the foundation of biological inquiry."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise the 9-level scope (molecule → biosphere).",
+      "Learn the 7 characteristics of life.",
+      "List 8 branches of biology with one focus each.",
+      "Explain the 6 steps of the scientific method.",
+      "Differentiate botany from zoology."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Scope and Fields of Biology."
+      "Biology = B-I-O (Basic, Investigative, Organic) = life study.",
+      "Scope: Molecule → Cell → Tissue → Organ → Organism → Population → Community → Ecosystem → Biosphere.",
+      "Characteristics: C-M-H-G-R-R-E (Cellular, Metabolism, Homeostasis, Growth, Reproduction, Response, Evolution).",
+      "Scientific method: O-H-E-C (Observe, Hypothesise, Experiment, Conclude)."
     ],
     "examNotes": [
-      "Scope and Fields of Biology is frequently tested.",
-      "Practice writing detailed answers."
+      "Define biology and state its scope (9 levels).",
+      "List 8 branches of biology with one focus each.",
+      "State the 7 characteristics of life.",
+      "Explain the scientific method (6 steps).",
+      "Differentiate botany from zoology."
     ],
     "mcs": [
       {
-        "question": "Question about 01 scope fields biology?",
+        "question": "Biology is the study of:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Rocks",
+          "Living organisms",
+          "Stars",
+          "Weather"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "The branch of biology that studies plants is:",
+        "options": [
+          "Zoology",
+          "Botany",
+          "Microbiology",
+          "Genetics"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is NOT a characteristic of life?",
+        "options": [
+          "Metabolism",
+          "Homeostasis",
+          "Photosynthesis",
+          "Reproduction"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The scientific method begins with:",
+        "options": [
+          "A conclusion",
+          "An observation",
+          "A hypothesis",
+          "An experiment"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 01 scope fields biology."
+      "Definition of biology",
+      "9-level scope",
+      "7 characteristics of life",
+      "Branches of biology",
+      "Scientific method",
+      "Botany vs zoology",
+      "Experimental science",
+      "Species diversity"
     ],
     "importantTasks": [
-      "Task for studying 01 scope fields biology."
+      "Define biology and state scope",
+      "List 8 branches",
+      "State 7 characteristics of life",
+      "Explain scientific method",
+      "Differentiate botany from zoology"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "A student observes that a plant grows toward light. Using the scientific method, state the next three steps.",
+        "steps": [
+          "Form a hypothesis (e.g., \"Plants grow toward light due to auxin distribution\")",
+          "Design an experiment (e.g., bend a coleoptile, observe growth)",
+          "Collect and analyse data; draw a conclusion"
+        ],
+        "answer": "Hypothesis → Experiment → Data/Conclusion"
       }
     ],
     "visualization": {
       "type": "interactive",
-      "component": "BiologyIntro",
-      "desc": "Biology branches explorer and scientific method simulator"
+      "component": "BiologyBranchesExplorer",
+      "desc": "Interactive map of biology branches (Botany, Zoology, Microbiology, Genetics, Ecology, etc.) with clickable details and a scientific-method flowchart."
     }
   },
   "originalContent": {
     "notes": [
-      "Biology: study of life (Greek: bios + logos).",
-      "Branches: botany, zoology, microbiology, genetics, ecology.",
-      "Characteristics of life: organization, metabolism, homeostasis, growth, reproduction, response, evolution.",
-      "Scientific method: observation → hypothesis → experiment → conclusion."
+      "Biology: the study of living organisms (Greek: bios = life, logos = study).",
+      "Scope: from molecules (DNA, proteins) to cells, tissues, organs, organisms, populations, communities, ecosystems, and the biosphere.",
+      "Branches: Botany (plants), Zoology (animals), Microbiology (microorganisms), Genetics (heredity), Ecology (organism-environment), Physiology (function), Anatomy (structure), Taxonomy (classification), Biotechnology (application).",
+      "Characteristics of life: cellular organisation, metabolism, homeostasis, growth, reproduction, response to stimuli, evolution, and adaptation.",
+      "Scientific method: observation → question → hypothesis → experiment → data → conclusion → (publish/peer review).",
+      "Biology is an experimental science; it uses controlled experiments, measurement, and statistical analysis.",
+      "NEB focus: definition, scope, fields (branches), and characteristics of life."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "Biology is NOT the same as medicine or agriculture; it is the foundational science, and medicine/agriculture are applied fields.",
+      "Botany studies plants (including algae and fungi in some systems); Zoology studies animals.",
+      "Microbiology includes bacteria, viruses, fungi, protists; it overlaps with botany and zoology.",
+      "Physiology = function; Anatomy = structure; they are complementary, not the same.",
+      "A \"characteristic of life\" must be present in ALL living things (e.g., metabolism, reproduction); not all organisms reproduce sexually (some reproduce asexually).",
+      "The scientific method is iterative; a single experiment rarely proves a hypothesis."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Define biology and state its scope (from molecule to biosphere).",
+      "List 8 branches of biology with one focus each.",
+      "State the characteristics of life (7).",
+      "Explain the scientific method (steps).",
+      "Differentiate botany from zoology."
     ],
     "universalFacts": [
-      "Universal scientific fact for 01 scope fields biology."
+      "There are approximately 8.7 million species on Earth (only ~15% described).",
+      "Biology is the fastest-growing science; over 200,000 biology research papers are published annually.",
+      "DNA (the genetic material) is the basis of modern genetics.",
+      "The term \"biology\" was first used by Goethe (1801) and popularised by Tiedemann (1830)."
     ],
     "examples": [
-      "Nepal: 10% world plants, 1% mammals in 0.1% Earth land"
+      "Botany: Oryza sativa (rice) — a monocot, angiosperm, Poaceae.",
+      "Zoology: Rana tigrina (tiger frog) — an amphibian, Chordata, Anura.",
+      "Microbiology: Escherichia coli — a Gram-negative, prokaryotic bacterium.",
+      "Genetics: Mendel's pea experiments — the foundation of modern genetics.",
+      "Ecology: a pond ecosystem — producers, consumers, decomposers, abiotic factors."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Define biology and state its scope.",
+      "List 8 branches of biology with one focus each.",
+      "State the characteristics of life (7).",
+      "Explain the scientific method (steps).",
+      "Differentiate botany from zoology (4 points)."
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 01 scope fields biology)"
+      "Biology = Bios (life) + Logos (study) = the study of living organisms",
+      "Scope: molecule → cell → tissue → organ → organism → population → community → ecosystem → biosphere",
+      "Scientific method: Observation → Question → Hypothesis → Experiment → Data → Conclusion"
     ],
     "keyPoints": [
-      "Core point for 01 scope fields biology."
+      "Biology: the study of living organisms.",
+      "Scope: from molecules to the biosphere (9 levels).",
+      "Branches: Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, Biotechnology.",
+      "Characteristics of life: cellular, metabolism, homeostasis, growth, reproduction, response, evolution.",
+      "Scientific method: observation → hypothesis → experiment → conclusion.",
+      "Biology is an experimental, evidence-based science.",
+      "~8.7 million species; only ~15% described."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+    "summary": "Biology is the scientific study of living organisms, from molecules (DNA, proteins) to the entire biosphere. It encompasses branches such as Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, and Biotechnology. Living things share seven characteristics: cellular organisation, metabolism, homeostasis, growth, reproduction, response to stimuli, and evolution. Biology uses the scientific method (observation, hypothesis, experiment, conclusion) to build testable knowledge about life.",
     "specialNotes": [
-      "Specialized insight for 01 scope fields biology."
+      "NEB expects the definition of biology, the 9-level scope, and the 7 characteristics of life.",
+      "The scientific method is a favourite exam question (6 steps).",
+      "Branches of biology: know at least 8 with their focus.",
+      "Differentiate botany from zoology (4 points)."
     ],
     "importantStatements": [
-      "Key statement for 01 scope fields biology."
+      "Biology is the scientific study of living organisms.",
+      "Life spans from molecules to the biosphere (9 organisational levels).",
+      "All living things share 7 fundamental characteristics.",
+      "The scientific method is the foundation of biological inquiry."
     ],
     "importantNotes": [
-      "Important note regarding 01 scope fields biology."
+      "Memorise the 9-level scope (molecule → biosphere).",
+      "Learn the 7 characteristics of life.",
+      "List 8 branches of biology with one focus each.",
+      "Explain the 6 steps of the scientific method.",
+      "Differentiate botany from zoology."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Scope and Fields of Biology."
+      "Biology = B-I-O (Basic, Investigative, Organic) = life study.",
+      "Scope: Molecule → Cell → Tissue → Organ → Organism → Population → Community → Ecosystem → Biosphere.",
+      "Characteristics: C-M-H-G-R-R-E (Cellular, Metabolism, Homeostasis, Growth, Reproduction, Response, Evolution).",
+      "Scientific method: O-H-E-C (Observe, Hypothesise, Experiment, Conclude)."
     ],
     "examNotes": [
-      "Scope and Fields of Biology is frequently tested.",
-      "Practice writing detailed answers."
+      "Define biology and state its scope (9 levels).",
+      "List 8 branches of biology with one focus each.",
+      "State the 7 characteristics of life.",
+      "Explain the scientific method (6 steps).",
+      "Differentiate botany from zoology."
     ],
     "mcs": [
       {
-        "question": "Question about 01 scope fields biology?",
+        "question": "Biology is the study of:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Rocks",
+          "Living organisms",
+          "Stars",
+          "Weather"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "The branch of biology that studies plants is:",
+        "options": [
+          "Zoology",
+          "Botany",
+          "Microbiology",
+          "Genetics"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is NOT a characteristic of life?",
+        "options": [
+          "Metabolism",
+          "Homeostasis",
+          "Photosynthesis",
+          "Reproduction"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The scientific method begins with:",
+        "options": [
+          "A conclusion",
+          "An observation",
+          "A hypothesis",
+          "An experiment"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 01 scope fields biology."
+      "Definition of biology",
+      "9-level scope",
+      "7 characteristics of life",
+      "Branches of biology",
+      "Scientific method",
+      "Botany vs zoology",
+      "Experimental science",
+      "Species diversity"
     ],
     "importantTasks": [
-      "Task for studying 01 scope fields biology."
+      "Define biology and state scope",
+      "List 8 branches",
+      "State 7 characteristics of life",
+      "Explain scientific method",
+      "Differentiate botany from zoology"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A student observes that a plant grows toward light. Using the scientific method, state the next three steps.",
+        "steps": [
+          "Form a hypothesis (e.g., \"Plants grow toward light due to auxin distribution\")",
+          "Design an experiment (e.g., bend a coleoptile, observe growth)",
+          "Collect and analyse data; draw a conclusion"
+        ],
+        "answer": "Hypothesis → Experiment → Data/Conclusion"
+      }
+    ],
     "visualization": {
       "type": "interactive",
-      "component": "BiologyIntro",
-      "desc": "Biology branches explorer and scientific method simulator"
+      "component": "BiologyBranchesExplorer",
+      "desc": "Interactive map of biology branches (Botany, Zoology, Microbiology, Genetics, Ecology, etc.) with clickable details and a scientific-method flowchart."
     }
   }
 }

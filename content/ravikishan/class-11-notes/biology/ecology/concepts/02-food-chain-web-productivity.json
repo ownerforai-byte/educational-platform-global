@@ -10,392 +10,387 @@
   "tabGroup": "02-food-chain-food-web-trophic-level-ecological-pyramids-productivity",
   "mcqs": [
     {
-      "question": "How much energy is transferred between trophic levels?",
+      "question": "Which ecological pyramid is ALWAYS upright?",
       "options": [
-        "10%",
-        "50%",
-        "90%",
-        "1%"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which is a biotic component?",
-      "options": [
-        "Sunlight",
-        "Water",
-        "Plants",
-        "Soil"
+        "Number",
+        "Biomass",
+        "Energy",
+        "All three"
       ],
       "answer": "C"
+    },
+    {
+      "question": "Approximately what percentage of energy transfers between trophic levels?",
+      "options": [
+        "1%",
+        "10%",
+        "50%",
+        "90%"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "NPP is calculated as:",
+      "options": [
+        "GPP + Respiration",
+        "GPP − Respiration",
+        "GPP × Respiration",
+        "GPP / Respiration"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An inverted pyramid of numbers occurs when:",
+      "options": [
+        "Producers are small",
+        "One large producer supports many small consumers",
+        "There are no producers",
+        "Energy is high"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "food-chain-energy",
   "enrichedContent": {
     "notes": [
-      "Ecosystem: biotic + abiotic components.",
-      "Food chain: linear energy transfer (grass→rabbit→fox).",
-      "Food web: interconnected chains.",
-      "10% energy transfer rule.",
-      "Biogeochemical cycles: carbon, nitrogen."
+      "Food chain: a linear sequence of organisms where each is eaten by the next; transfers energy and matter (sun → producer → primary consumer → secondary consumer → tertiary consumer).",
+      "Food web: a network of interconnected food chains; more realistic than a single chain; shows multiple feeding relationships.",
+      "Trophic levels: TL1 producers (autotrophs), TL2 primary consumers (herbivores), TL3 secondary consumers (carnivores), TL4+ tertiary consumers.",
+      "Ecological pyramids: number (pyramid of numbers), biomass (pyramid of biomass), energy (pyramid of energy).",
+      "Pyramid of energy: always upright; each level has less energy than the one below (10% rule).",
+      "Pyramid of numbers: usually upright; can be inverted (e.g., one tree supports many insects).",
+      "Pyramid of biomass: usually upright; can be inverted in aquatic ecosystems (phytoplankton turn over fast).",
+      "Productivity: gross primary productivity (GPP = total photosynthesis), net primary productivity (NPP = GPP − plant respiration).",
+      "Consumer productivity: energy assimilated by consumers per unit time.",
+      "NEB focus: food chain, food web, trophic levels, ecological pyramids, and productivity."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "A food chain is LINEAR; a food web is a NETWORK of chains (more realistic).",
+      "Producers (plants, phytoplankton) are at trophic level 1; herbivores at level 2; carnivores at level 3+.",
+      "The pyramid of ENERGY is always upright; the pyramids of numbers and biomass CAN be inverted.",
+      "An inverted pyramid of numbers occurs when one large organism supports many small ones (e.g., a tree with many insects).",
+      "An inverted pyramid of biomass occurs in aquatic ecosystems where phytoplankton (producers) have low standing biomass but high turnover.",
+      "The 10% rule: only ~10% of energy transfers from one trophic level to the next; ~90% is lost as heat."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Draw a food chain for a grassland ecosystem (4 trophic levels).",
+      "Draw a food web for a pond ecosystem.",
+      "Explain the three types of ecological pyramids.",
+      "Calculate NPP from GPP and plant respiration.",
+      "Explain why the pyramid of energy is always upright."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "The 10% rule (Lindeman, 1942) explains why food chains are usually 4–5 trophic levels long.",
+      "A pyramid of energy is ALWAYS upright because energy is lost at each transfer (heat, respiration).",
+      "Phytoplankton in the ocean produce ~50% of Earth's oxygen (GPP of aquatic ecosystems).",
+      "NPP is the energy available to consumers (herbivores) in an ecosystem."
     ],
     "examples": [
-      "Pond: phytoplankton→zooplankton→fish→birds",
-      "Nepal: terai→hills→mountains ecosystems"
+      "Grassland food chain: grass → rabbit → fox → eagle (4 trophic levels).",
+      "Pond food web: algae → mosquito larva → frog → snake → eagle; also algae → zooplankton → small fish → big fish.",
+      "Inverted pyramid of numbers: one oak tree (TL1) → many aphids (TL2) → a few ladybirds (TL3).",
+      "Inverted pyramid of biomass: phytoplankton (TL1) → zooplankton (TL2) → small fish (TL3) in the ocean.",
+      "Productivity: GPP = 1000 gC/m²/yr; plant respiration = 500 gC/m²/yr → NPP = 500 gC/m²/yr."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Differentiate a food chain from a food web.",
+      "Explain the three types of ecological pyramids.",
+      "Define trophic levels and give one example of each.",
+      "Explain why the pyramid of energy is always upright.",
+      "Calculate NPP from GPP and respiration (given values)."
     ],
     "formulas": [
-      "dN/dt=rN((K-N)/K) (logistic growth)"
+      "Food chain: Producer (TL1) → Primary consumer (TL2) → Secondary consumer (TL3) → Tertiary consumer (TL4)",
+      "10% rule: only ~10% of energy transfers between trophic levels",
+      "GPP = total photosynthesis; NPP = GPP − plant respiration (R)",
+      "Pyramid of energy: always upright; each level < the one below"
     ],
     "keyPoints": [
-      "Core point for 02 food chain food web trophic level ecological pyramids productivity."
+      "Food chain = linear; food web = network of chains.",
+      "Trophic levels: TL1 producers, TL2 herbivores, TL3 carnivores, TL4+ top carnivores.",
+      "Three pyramids: number, biomass, energy.",
+      "Pyramid of energy is ALWAYS upright; number and biomass can be inverted.",
+      "10% rule: ~10% energy transfers between levels.",
+      "Productivity: GPP (total), NPP (GPP − respiration).",
+      "NPP is the energy available to herbivores."
     ],
-    "summary": "Ecology studies interactions between organisms and their environment.",
+    "summary": "Energy and matter flow through ecosystems in food chains (linear) and food webs (networks). Trophic levels (producers → primary consumers → secondary → tertiary) structure these. Ecological pyramids (number, biomass, energy) visualise trophic structure; the pyramid of energy is always upright because ~90% of energy is lost at each transfer (10% rule). Productivity (GPP, NPP) measures the rate of energy capture and availability to consumers. NEB focuses on food chains, food webs, trophic levels, the three pyramids, and productivity calculations.",
     "specialNotes": [
-      "Specialized insight for 02 food chain food web trophic level ecological pyramids productivity."
+      "NEB expects the three ecological pyramids and when each can be inverted.",
+      "The 10% rule and the always-upright energy pyramid are very common exam points.",
+      "NPP = GPP − respiration is a calculation question.",
+      "Give a Nepali food chain (e.g., grass → deer → tiger) and a pond food web."
     ],
     "importantStatements": [
-      "Key statement for 02 food chain food web trophic level ecological pyramids productivity."
+      "A food web is a network of interconnected food chains.",
+      "The pyramid of energy is always upright.",
+      "Only ~10% of energy transfers between trophic levels (10% rule).",
+      "NPP is the energy available to consumers in an ecosystem."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise the three pyramids (number, biomass, energy).",
+      "Learn when each can be inverted (number, biomass).",
+      "Explain the 10% rule and its significance.",
+      "Calculate NPP from GPP and respiration.",
+      "Draw a Nepali food chain and a pond food web."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Food Chain and Food Web."
+      "Energy pyramid = always upright (E-up).",
+      "Number and biomass pyramids = CAN be inverted.",
+      "10% rule = 1 in 10 energy moves up.",
+      "NPP = GPP − R (Respiration)."
     ],
     "examNotes": [
-      "Food Chain and Food Web is frequently tested.",
-      "Practice writing detailed answers."
+      "Differentiate a food chain from a food web.",
+      "Explain the three ecological pyramids.",
+      "Explain why the pyramid of energy is always upright.",
+      "Define GPP and NPP; calculate NPP.",
+      "Draw a food chain and a food web with examples."
     ],
     "mcs": [
       {
-        "question": "Question about 02 food chain food web trophic level ecological pyramids productivity?",
+        "question": "Which ecological pyramid is ALWAYS upright?",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Number",
+          "Biomass",
+          "Energy",
+          "All three"
         ],
-        "answer": "A"
+        "answer": "C"
+      },
+      {
+        "question": "Approximately what percentage of energy transfers between trophic levels?",
+        "options": [
+          "1%",
+          "10%",
+          "50%",
+          "90%"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "NPP is calculated as:",
+        "options": [
+          "GPP + Respiration",
+          "GPP − Respiration",
+          "GPP × Respiration",
+          "GPP / Respiration"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "An inverted pyramid of numbers occurs when:",
+        "options": [
+          "Producers are small",
+          "One large producer supports many small consumers",
+          "There are no producers",
+          "Energy is high"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 food chain food web trophic level ecological pyramids productivity."
+      "Food chain vs food web",
+      "Trophic levels",
+      "Ecological pyramids (number, biomass, energy)",
+      "10% rule",
+      "GPP and NPP",
+      "Inverted pyramids",
+      "Productivity"
     ],
     "importantTasks": [
-      "Task for studying 02 food chain food web trophic level ecological pyramids productivity."
+      "Draw a food chain",
+      "Draw a food web",
+      "Explain 3 pyramids",
+      "Calculate NPP",
+      "Explain why energy pyramid is upright"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "If a grassland has GPP of 2000 gC/m²/yr and plant respiration of 800 gC/m²/yr, what is the NPP?",
+        "steps": [
+          "NPP = GPP − R",
+          "NPP = 2000 − 800"
+        ],
+        "answer": "NPP = 1200 gC/m²/yr"
       }
     ],
     "visualization": {
       "type": "simulation",
-      "component": "EcosystemSim",
-      "desc": "Interactive ecosystem energy flow simulation"
+      "component": "EcologicalPyramidSim",
+      "desc": "Interactive 3D ecological pyramids (number, biomass, energy) with a food-web editor and a 10% energy-transfer animation."
     }
   },
   "originalContent": {
     "notes": [
-      "Ecosystem: biotic + abiotic components.",
-      "Food chain: linear energy transfer (grass→rabbit→fox).",
-      "Food web: interconnected chains.",
-      "10% energy transfer rule.",
-      "Biogeochemical cycles: carbon, nitrogen."
+      "Food chain: a linear sequence of organisms where each is eaten by the next; transfers energy and matter (sun → producer → primary consumer → secondary consumer → tertiary consumer).",
+      "Food web: a network of interconnected food chains; more realistic than a single chain; shows multiple feeding relationships.",
+      "Trophic levels: TL1 producers (autotrophs), TL2 primary consumers (herbivores), TL3 secondary consumers (carnivores), TL4+ tertiary consumers.",
+      "Ecological pyramids: number (pyramid of numbers), biomass (pyramid of biomass), energy (pyramid of energy).",
+      "Pyramid of energy: always upright; each level has less energy than the one below (10% rule).",
+      "Pyramid of numbers: usually upright; can be inverted (e.g., one tree supports many insects).",
+      "Pyramid of biomass: usually upright; can be inverted in aquatic ecosystems (phytoplankton turn over fast).",
+      "Productivity: gross primary productivity (GPP = total photosynthesis), net primary productivity (NPP = GPP − plant respiration).",
+      "Consumer productivity: energy assimilated by consumers per unit time.",
+      "NEB focus: food chain, food web, trophic levels, ecological pyramids, and productivity."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "A food chain is LINEAR; a food web is a NETWORK of chains (more realistic).",
+      "Producers (plants, phytoplankton) are at trophic level 1; herbivores at level 2; carnivores at level 3+.",
+      "The pyramid of ENERGY is always upright; the pyramids of numbers and biomass CAN be inverted.",
+      "An inverted pyramid of numbers occurs when one large organism supports many small ones (e.g., a tree with many insects).",
+      "An inverted pyramid of biomass occurs in aquatic ecosystems where phytoplankton (producers) have low standing biomass but high turnover.",
+      "The 10% rule: only ~10% of energy transfers from one trophic level to the next; ~90% is lost as heat."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Draw a food chain for a grassland ecosystem (4 trophic levels).",
+      "Draw a food web for a pond ecosystem.",
+      "Explain the three types of ecological pyramids.",
+      "Calculate NPP from GPP and plant respiration.",
+      "Explain why the pyramid of energy is always upright."
     ],
     "universalFacts": [
-      "Universal scientific fact for 02 food chain food web trophic level ecological pyramids productivity."
+      "The 10% rule (Lindeman, 1942) explains why food chains are usually 4–5 trophic levels long.",
+      "A pyramid of energy is ALWAYS upright because energy is lost at each transfer (heat, respiration).",
+      "Phytoplankton in the ocean produce ~50% of Earth's oxygen (GPP of aquatic ecosystems).",
+      "NPP is the energy available to consumers (herbivores) in an ecosystem."
     ],
     "examples": [
-      "Pond: phytoplankton→zooplankton→fish→birds",
-      "Nepal: terai→hills→mountains ecosystems"
+      "Grassland food chain: grass → rabbit → fox → eagle (4 trophic levels).",
+      "Pond food web: algae → mosquito larva → frog → snake → eagle; also algae → zooplankton → small fish → big fish.",
+      "Inverted pyramid of numbers: one oak tree (TL1) → many aphids (TL2) → a few ladybirds (TL3).",
+      "Inverted pyramid of biomass: phytoplankton (TL1) → zooplankton (TL2) → small fish (TL3) in the ocean.",
+      "Productivity: GPP = 1000 gC/m²/yr; plant respiration = 500 gC/m²/yr → NPP = 500 gC/m²/yr."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Differentiate a food chain from a food web.",
+      "Explain the three types of ecological pyramids.",
+      "Define trophic levels and give one example of each.",
+      "Explain why the pyramid of energy is always upright.",
+      "Calculate NPP from GPP and respiration (given values)."
     ],
     "formulas": [
-      "dN/dt=rN((K-N)/K) (logistic growth)"
+      "Food chain: Producer (TL1) → Primary consumer (TL2) → Secondary consumer (TL3) → Tertiary consumer (TL4)",
+      "10% rule: only ~10% of energy transfers between trophic levels",
+      "GPP = total photosynthesis; NPP = GPP − plant respiration (R)",
+      "Pyramid of energy: always upright; each level < the one below"
     ],
     "keyPoints": [
-      "Core point for 02 food chain food web trophic level ecological pyramids productivity."
+      "Food chain = linear; food web = network of chains.",
+      "Trophic levels: TL1 producers, TL2 herbivores, TL3 carnivores, TL4+ top carnivores.",
+      "Three pyramids: number, biomass, energy.",
+      "Pyramid of energy is ALWAYS upright; number and biomass can be inverted.",
+      "10% rule: ~10% energy transfers between levels.",
+      "Productivity: GPP (total), NPP (GPP − respiration).",
+      "NPP is the energy available to herbivores."
     ],
-    "summary": "Ecology studies interactions between organisms and their environment.",
+    "summary": "Energy and matter flow through ecosystems in food chains (linear) and food webs (networks). Trophic levels (producers → primary consumers → secondary → tertiary) structure these. Ecological pyramids (number, biomass, energy) visualise trophic structure; the pyramid of energy is always upright because ~90% of energy is lost at each transfer (10% rule). Productivity (GPP, NPP) measures the rate of energy capture and availability to consumers. NEB focuses on food chains, food webs, trophic levels, the three pyramids, and productivity calculations.",
     "specialNotes": [
-      "Specialized insight for 02 food chain food web trophic level ecological pyramids productivity."
+      "NEB expects the three ecological pyramids and when each can be inverted.",
+      "The 10% rule and the always-upright energy pyramid are very common exam points.",
+      "NPP = GPP − respiration is a calculation question.",
+      "Give a Nepali food chain (e.g., grass → deer → tiger) and a pond food web."
     ],
     "importantStatements": [
-      "Key statement for 02 food chain food web trophic level ecological pyramids productivity."
+      "A food web is a network of interconnected food chains.",
+      "The pyramid of energy is always upright.",
+      "Only ~10% of energy transfers between trophic levels (10% rule).",
+      "NPP is the energy available to consumers in an ecosystem."
     ],
     "importantNotes": [
-      "Important note regarding 02 food chain food web trophic level ecological pyramids productivity."
+      "Memorise the three pyramids (number, biomass, energy).",
+      "Learn when each can be inverted (number, biomass).",
+      "Explain the 10% rule and its significance.",
+      "Calculate NPP from GPP and respiration.",
+      "Draw a Nepali food chain and a pond food web."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Food Chain and Food Web."
+      "Energy pyramid = always upright (E-up).",
+      "Number and biomass pyramids = CAN be inverted.",
+      "10% rule = 1 in 10 energy moves up.",
+      "NPP = GPP − R (Respiration)."
     ],
     "examNotes": [
-      "Food Chain and Food Web is frequently tested.",
-      "Practice writing detailed answers."
+      "Differentiate a food chain from a food web.",
+      "Explain the three ecological pyramids.",
+      "Explain why the pyramid of energy is always upright.",
+      "Define GPP and NPP; calculate NPP.",
+      "Draw a food chain and a food web with examples."
     ],
     "mcs": [
       {
-        "question": "Question about 02 food chain food web trophic level ecological pyramids productivity?",
+        "question": "Which ecological pyramid is ALWAYS upright?",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Number",
+          "Biomass",
+          "Energy",
+          "All three"
         ],
-        "answer": "A"
+        "answer": "C"
+      },
+      {
+        "question": "Approximately what percentage of energy transfers between trophic levels?",
+        "options": [
+          "1%",
+          "10%",
+          "50%",
+          "90%"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "NPP is calculated as:",
+        "options": [
+          "GPP + Respiration",
+          "GPP − Respiration",
+          "GPP × Respiration",
+          "GPP / Respiration"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "An inverted pyramid of numbers occurs when:",
+        "options": [
+          "Producers are small",
+          "One large producer supports many small consumers",
+          "There are no producers",
+          "Energy is high"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 food chain food web trophic level ecological pyramids productivity."
+      "Food chain vs food web",
+      "Trophic levels",
+      "Ecological pyramids (number, biomass, energy)",
+      "10% rule",
+      "GPP and NPP",
+      "Inverted pyramids",
+      "Productivity"
     ],
     "importantTasks": [
-      "Task for studying 02 food chain food web trophic level ecological pyramids productivity."
+      "Draw a food chain",
+      "Draw a food web",
+      "Explain 3 pyramids",
+      "Calculate NPP",
+      "Explain why energy pyramid is upright"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "If a grassland has GPP of 2000 gC/m²/yr and plant respiration of 800 gC/m²/yr, what is the NPP?",
+        "steps": [
+          "NPP = GPP − R",
+          "NPP = 2000 − 800"
+        ],
+        "answer": "NPP = 1200 gC/m²/yr"
+      }
+    ],
     "visualization": {
       "type": "simulation",
-      "component": "EcosystemSim",
-      "desc": "Interactive ecosystem energy flow simulation"
+      "component": "EcologicalPyramidSim",
+      "desc": "Interactive 3D ecological pyramids (number, biomass, energy) with a food-web editor and a 10% energy-transfer animation."
     }
   }
 }

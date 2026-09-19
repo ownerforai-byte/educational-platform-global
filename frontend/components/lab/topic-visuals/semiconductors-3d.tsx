@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -120,7 +120,7 @@ export function SemiconductorsVisual() {
         const gapLabelPos = new THREE.Vector3(-2.5, (vbY + cbY) / 2, 0);
         const gapTarget = new THREE.Vector3(-1.5, (vbY + cbY) / 2, 0);
         const gapDir = gapTarget.clone().sub(gapLabelPos).normalize();
-        push(new LiveArrow(gapDir, gapLabelPos, gapLabelPos.distanceTo(gapTarget) * 0.9, gapColor, 0.2, 0.12));
+        push(new LiveLeaderLine(gapDir, gapLabelPos, gapLabelPos.distanceTo(gapTarget) * 0.9, gapColor, 0.2, 0.12));
         push(mkSprite(`E_g = ${bandGap} eV (band gap)`, "#fbbf24", gapLabelPos.clone().sub(gapDir.multiplyScalar(0.5)), 0.8));
       } else {
         push(mkSprite("Bands overlap (no gap)", "#22c55e", new THREE.Vector3(0, vbY + 1, 0), 0.7));
@@ -155,14 +155,14 @@ export function SemiconductorsVisual() {
         const eLabelPos = new THREE.Vector3(0, cbY + 0.8, 0);
         const eTarget = new THREE.Vector3(0, cbY, 0);
         const eDir = eTarget.clone().sub(eLabelPos).normalize();
-        push(new LiveArrow(eDir, eLabelPos, eLabelPos.distanceTo(eTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+        push(new LiveLeaderLine(eDir, eLabelPos, eLabelPos.distanceTo(eTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
         push(mkSprite("e⁻ (electron)", "#22d3ee", eLabelPos.clone().sub(eDir.multiplyScalar(0.5)), 0.75));
 
         // Hole label
         const hLabelPos = new THREE.Vector3(0, vbY - 0.8, 0);
         const hTarget = new THREE.Vector3(0, vbY, 0);
         const hDir = hTarget.clone().sub(hLabelPos).normalize();
-        push(new LiveArrow(hDir, hLabelPos, hLabelPos.distanceTo(hTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+        push(new LiveLeaderLine(hDir, hLabelPos, hLabelPos.distanceTo(hTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
         push(mkSprite("h⁺ (hole)", "#fbbf24", hLabelPos.clone().sub(hDir.multiplyScalar(0.5)), 0.75));
       }
 
@@ -170,7 +170,7 @@ export function SemiconductorsVisual() {
       const tempLabelPos = new THREE.Vector3(-3, -4.5, 0);
       const tempTarget = new THREE.Vector3(0, 0, 0);
       const tempDir = tempTarget.clone().sub(tempLabelPos).normalize();
-      push(new LiveArrow(tempDir, tempLabelPos, tempLabelPos.distanceTo(tempTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      push(new LiveLeaderLine(tempDir, tempLabelPos, tempLabelPos.distanceTo(tempTarget) * 0.9, 0x34d399, 0.15, 0.1));
       push(mkSprite(`T = ${temp} K`, "#34d399", tempLabelPos.clone().sub(tempDir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {

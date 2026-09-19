@@ -8,7 +8,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Crystal Lattice — Unit Cells (SC, BCC, FCC)
@@ -162,7 +162,7 @@ export function CrystalLatticeVisual() {
           const labelPos = new THREE.Vector3(a/2 + 2, a/2 + 1.5, 0);
           const dir = fcPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(fcPos);
-          push(new LiveArrow(dir, labelPos, arrowLen * 0.85, 0x22c55e, 0.28, 0.12));
+          push(new LiveLeaderLine(dir, labelPos, arrowLen * 0.85, 0x22c55e, 0.28, 0.12));
           push(mkSprite("Face-centered atom (green)", "#22c55e", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
 
           // Corner atom label
@@ -170,7 +170,7 @@ export function CrystalLatticeVisual() {
           const cLabelPos = new THREE.Vector3(-2.5, -1.5, 0);
           const cDir = cornerPos.clone().sub(cLabelPos).normalize();
           const cArrowLen = cLabelPos.distanceTo(cornerPos);
-          push(new LiveArrow(cDir, cLabelPos, cArrowLen * 0.85, 0x3b82f6, 0.28, 0.12));
+          push(new LiveLeaderLine(cDir, cLabelPos, cArrowLen * 0.85, 0x3b82f6, 0.28, 0.12));
           push(mkSprite("Corner atom (blue)", "#3b82f6", cLabelPos.clone().sub(cDir.multiplyScalar(0.5)), 0.7));
         }
 
@@ -183,7 +183,7 @@ export function CrystalLatticeVisual() {
           const targetPos2 = new THREE.Vector3(a, a, a);
           const dir2 = targetPos2.clone().sub(labelPos2).normalize();
           const arrowLen2 = labelPos2.distanceTo(targetPos2);
-          push(new LiveArrow(dir2, labelPos2, arrowLen2 * 0.8, 0xf97316, 0.25, 0.12));
+          push(new LiveLeaderLine(dir2, labelPos2, arrowLen2 * 0.8, 0xf97316, 0.25, 0.12));
           push(mkSprite("Unit cell edge = a (lattice parameter)", "#f97316", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.65));
         }
       };

@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Organic Molecules — Ball-and-Stick with Functional Groups
@@ -150,7 +150,7 @@ export function OrganicMoleculesVisual() {
           const angleTarget = C.clone().add(new THREE.Vector3(0.4, 0.4, 0.4));
           const aDir = angleTarget.clone().sub(angleLabel).normalize();
           const aLen = angleLabel.distanceTo(angleTarget);
-          push(new LiveArrow(aDir, angleLabel, aLen * 0.7, 0xfbbf24, 0.25, 0.12));
+          push(new LiveLeaderLine(aDir, angleLabel, aLen * 0.7, 0xfbbf24, 0.25, 0.12));
           push(mkSprite("H-C-H = 109.5° (tetrahedral)", "#fbbf24", angleLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.65));
         }
         else if (mol === "ethene") {
@@ -173,7 +173,7 @@ export function OrganicMoleculesVisual() {
           const piTarget = new THREE.Vector3(0, 0, 0.3);
           const pDir = piTarget.clone().sub(piLabel).normalize();
           const pLen = piLabel.distanceTo(piTarget);
-          push(new LiveArrow(pDir, piLabel, pLen * 0.75, 0xf97316, 0.25, 0.12));
+          push(new LiveLeaderLine(pDir, piLabel, pLen * 0.75, 0xf97316, 0.25, 0.12));
           push(mkSprite("C=C: sigma + pi bond", "#f97316", piLabel.clone().sub(pDir.multiplyScalar(0.5)), 0.7));
         }
         else if (mol === "ethyne") {
@@ -194,7 +194,7 @@ export function OrganicMoleculesVisual() {
           const lTarget = new THREE.Vector3(0, 0, 0);
           const lDir = lTarget.clone().sub(lLabel).normalize();
           const lLen = lLabel.distanceTo(lTarget);
-          push(new LiveArrow(lDir, lLabel, lLen * 0.7, 0x22d3ee, 0.25, 0.12));
+          push(new LiveLeaderLine(lDir, lLabel, lLen * 0.7, 0x22d3ee, 0.25, 0.12));
           push(mkSprite("C≡C: 2 pi bonds, linear 180°", "#22d3ee", lLabel.clone().sub(lDir.multiplyScalar(0.5)), 0.7));
         }
         else if (mol === "ethanol") {
@@ -216,7 +216,7 @@ export function OrganicMoleculesVisual() {
           const fgTarget = O.clone();
           const fgDir = fgTarget.clone().sub(fgLabel).normalize();
           const fgLen = fgLabel.distanceTo(fgTarget);
-          push(new LiveArrow(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
+          push(new LiveLeaderLine(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
           push(mkSprite("Functional Group: -OH (hydroxyl)", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
         }
         else if (mol === "ethanal") {
@@ -239,7 +239,7 @@ export function OrganicMoleculesVisual() {
           const fgTarget = new THREE.Vector3(0.6, 0.5, 0);
           const fgDir = fgTarget.clone().sub(fgLabel).normalize();
           const fgLen = fgLabel.distanceTo(fgTarget);
-          push(new LiveArrow(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
+          push(new LiveLeaderLine(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
           push(mkSprite("Aldehyde group: -CHO (C=O at end)", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
         }
         else { // ethanoic acid
@@ -264,7 +264,7 @@ export function OrganicMoleculesVisual() {
           const fgTarget = new THREE.Vector3(1.5, 0.3, 0);
           const fgDir = fgTarget.clone().sub(fgLabel).normalize();
           const fgLen = fgLabel.distanceTo(fgTarget);
-          push(new LiveArrow(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
+          push(new LiveLeaderLine(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
           push(mkSprite("Carboxyl group: -COOH", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
         }
 

@@ -3,7 +3,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -280,7 +280,7 @@ const CoulombsLaw3D: React.FC = () => {
     ts!.group.add(charge2Mesh);
 
     // Force arrow
-    let forceArrow: THREE.ArrowHelper | null = null;
+    let forceArrow : LiveLeaderLine | null = null;
     
     function updateForceArrow() {
       if (forceArrow) ts!.group.remove(forceArrow);
@@ -296,7 +296,7 @@ const CoulombsLaw3D: React.FC = () => {
         dir.subVectors(charge1Mesh.position, charge2Mesh.position).normalize();
       }
       
-      forceArrow = new LiveArrow(
+      forceArrow = new LiveLeaderLine(
         dir,
         charge1Mesh.position,
         forceMagnitude * 0.002,

@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Inverse Circular Functions — NEB Trigonometry (Maths 11)
@@ -145,7 +145,7 @@ export function InverseTrigVisual() {
         pvDot.position.set(pvx, pvy, 0.06);
 
         // Arrow from angle to principal value
-        push(new LiveArrow(
+        push(new LiveLeaderLine(
           new THREE.Vector3(pvx - px, pvy - py, 0).normalize(),
           new THREE.Vector3(px, py, 0.05),
           Math.sqrt((pvx - px) ** 2 + (pvy - py) ** 2),

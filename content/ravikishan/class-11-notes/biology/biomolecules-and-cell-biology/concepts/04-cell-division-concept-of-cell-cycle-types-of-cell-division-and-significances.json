@@ -10,399 +10,409 @@
   "tabGroup": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances",
   "mcqs": [
     {
-      "question": "Question about 04 cell division concept of cell cycle types of cell division and significances?",
+      "question": "In Anaphase I of meiosis, what separates?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Sister chromatids",
+        "Homologous chromosomes",
+        "Centromeres",
+        "Nuclear envelopes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cytokinesis in animal cells occurs by:",
+      "options": [
+        "Cell plate",
+        "Cleavage furrow",
+        "Binary fission",
+        "Growth"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The two sources of meiotic variation are:",
+      "options": [
+        "Crossing over + independent assortment",
+        "Mutation + drift",
+        "G1 + S",
+        "Anaphase + telophase"
       ],
       "answer": "A"
+    },
+    {
+      "question": "Down syndrome is caused by:",
+      "options": [
+        "Mitotic error",
+        "Meiotic non-disjunction (trisomy 21)",
+        "A virus",
+        "Poor diet"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "mitosis-vs-meiosis",
   "enrichedContent": {
     "notes": [
-      "Carbohydrates: $(CH_2O)_n$; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
-      "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
-      "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
-      "Nucleic acids: DNA (double helix, $A=T$, $G\\equiv C$, deoxyribose) stores genetic info; RNA (single strand, $A=U$) for protein synthesis.",
-      "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
+      "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.",
+      "Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).",
+      "Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer.",
+      "Mitosis phases (PMAT): Prophase (chromatin → chromosomes, spindle forms, nuclear envelope breaks), Metaphase (chromosomes align at the equatorial plate, spindle fibres attached to centromeres), Anaphase (centromeres split, sister chromatids pulled to opposite poles), Telophase (chromosomes decondense, nuclear envelopes reform, cytokinesis).",
+      "Cytokinesis: animal cells — cleavage furrow (actin); plant cells — cell plate → new wall.",
+      "Meiosis: two divisions. Meiosis I (reductional): Prophase I (chromosomes pair = synapsis; crossing over between non-sister chromatids), Metaphase I (homologous pairs at the equator; independent assortment), Anaphase I (homologs separate), Telophase I. Meiosis II (equational): like mitosis but no DNA replication; sister chromatids separate.",
+      "Outcome: meiosis → 4 haploid (n) genetically distinct cells; mitosis → 2 diploid (2n) identical cells.",
+      "Crossing over (Prophase I) + independent assortment (Metaphase I) = the two sources of meiotic variation.",
+      "Amitosis (direct division): simple karyokinesis; rare (liver cells, some fungi, regenerating tissues).",
+      "Errors: mitotic errors → uncontrolled division = cancer; meiotic non-disjunction → aneuploidy (e.g., Down syndrome = trisomy 21).",
+      "Significance: mitosis = growth, repair, asexual reproduction; meiosis = gamete formation + genetic diversity.",
+      "NEB focus: the full cell cycle, all mitotic and meiotic phases, variation, and errors."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-      "❌ Cell wall is present in all cells. ✅ Cell wall is in plants, fungi, bacteria; absent in animal cells."
+      "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
+      "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
+      "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.",
+      "DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions.",
+      "G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.",
+      "Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice comparing plant and animal cell structures.",
-      "Practice explaining osmosis and plasmolysis with diagrams."
+      "Draw the four phases of mitosis with labelled chromosomes.",
+      "Draw a full meiosis diagram and mark crossing over + independent assortment.",
+      "Tabulate mitosis vs meiosis (6 differences).",
+      "Explain the role of each checkpoint in preventing cancer.",
+      "Calculate the chromosome/chromatid count at each meiotic stage (2n = 4 example)."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "Interphase occupies ~90% of the cell cycle; mitosis is brief.",
+      "A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis.",
+      "Crossing over can occur at multiple points per chromosome pair in Prophase I.",
+      "Cancer is fundamentally uncontrolled mitosis due to failed checkpoints (e.g., p53 mutations)."
     ],
     "examples": [
-      "Glucose → 38 ATP via cellular respiration",
-      "Insulin: 51 amino acids, protein hormone"
+      "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).",
+      "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.",
+      "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 ovum (n) + 3 polar bodies.",
+      "Down syndrome: trisomy 21 from meiotic non-disjunction.",
+      "Amitosis: liver-cell regeneration; some regenerating tissues."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice comparing plant and animal cell structures."
+      "How is Anaphase I of meiosis different from Anaphase of mitosis?",
+      "Explain why meiosis produces genetic variation (two mechanisms).",
+      "What would happen if the S phase did not occur?",
+      "Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.",
+      "Define non-disjunction and give a human disease example."
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 04 cell division concept of cell cycle types of cell division and significances)"
+      "Mitosis: 2n → 2 daughter cells of 2n",
+      "Meiosis: 2n → 4 gametes of n",
+      "Crossing over (Prophase I) + independent assortment (Metaphase I) → variation",
+      "Chromosome count: after S each chromosome = 2 chromatids"
     ],
     "keyPoints": [
-      "Core point for 04 cell division concept of cell cycle types of cell division and significances."
+      "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
+      "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
+      "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
+      "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
+      "Cytokinesis: animal (cleavage furrow) vs plant (cell plate).",
+      "Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome).",
+      "Significance: mitosis = growth/repair; meiosis = gametes + diversity."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nCell membrane is selectively permeable fluid mosaic.\n\nOrganelles enable compartmentalized metabolic functions.",
+    "summary": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells. Meiosis is a two-division process that halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Amitosis is a rare direct division. Mitotic errors lead to cancer; meiotic non-disjunction causes aneuploidies such as Down syndrome. NEB focuses on the full cell cycle, all mitotic and meiotic phases, the sources of variation, and the consequences of errors.",
     "specialNotes": [
-      "Specialized insight for 04 cell division concept of cell cycle types of cell division and significances."
+      "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.",
+      "The mitosis vs meiosis comparison table (6 points) is a very common question.",
+      "Explain the two sources of meiotic variation (crossing over + independent assortment).",
+      "Relate checkpoint failure to cancer and non-disjunction to Down syndrome.",
+      "Distinguish what separates in Anaphase I vs Anaphase (mitosis/II).",
+      "Note the cytokinesis difference (furrow vs cell plate)."
     ],
     "importantStatements": [
-      "Key statement for 04 cell division concept of cell cycle types of cell division and significances."
+      "Mitosis maintains a species' diploid chromosome number.",
+      "Meiosis halves the genome and shuffles alleles, creating variation.",
+      "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged.",
+      "Crossing over occurs only in Prophase I of meiosis."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Learn the PMAT sequence and draw each phase from memory.",
+      "Keep a mitosis vs meiosis comparison table (6 points).",
+      "Memorise that crossing over occurs in Prophase I.",
+      "Relate checkpoint failure to cancer and non-disjunction to aneuploidy.",
+      "Note the cytokinesis difference (animal furrow vs plant cell plate)."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Cell Division."
+      "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
+      "MITO = 2 identical (2n); MEI = 4 different (n).",
+      "Crossing over = Prophase I only.",
+      "Anaphase I = homologs separate; Anaphase (mitosis/II) = chromatids separate.",
+      "No S phase → no DNA duplication → division fails.",
+      "Animal = furrow; Plant = cell plate."
     ],
     "examNotes": [
-      "Cell Division is frequently tested.",
-      "Practice writing detailed answers."
+      "Draw and label all four mitotic phases.",
+      "Draw a full meiosis diagram (mark crossing over + independent assortment).",
+      "Tabulate mitosis vs meiosis (6 points).",
+      "Explain how meiosis creates variation (two mechanisms).",
+      "Describe cell-cycle checkpoints and the cause of cancer.",
+      "Define non-disjunction with a human example (Down syndrome)."
     ],
     "mcs": [
       {
-        "question": "Question about 04 cell division concept of cell cycle types of cell division and significances?",
+        "question": "In Anaphase I of meiosis, what separates?",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Sister chromatids",
+          "Homologous chromosomes",
+          "Centromeres",
+          "Nuclear envelopes"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Cytokinesis in animal cells occurs by:",
+        "options": [
+          "Cell plate",
+          "Cleavage furrow",
+          "Binary fission",
+          "Growth"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The two sources of meiotic variation are:",
+        "options": [
+          "Crossing over + independent assortment",
+          "Mutation + drift",
+          "G1 + S",
+          "Anaphase + telophase"
         ],
         "answer": "A"
+      },
+      {
+        "question": "Down syndrome is caused by:",
+        "options": [
+          "Mitotic error",
+          "Meiotic non-disjunction (trisomy 21)",
+          "A virus",
+          "Poor diet"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 04 cell division concept of cell cycle types of cell division and significances."
+      "Cell cycle (G1, S, G2, M)",
+      "Checkpoints",
+      "PMAT phases",
+      "Meiosis I & II",
+      "Crossing over",
+      "Independent assortment",
+      "Cytokinesis (furrow vs cell plate)",
+      "Non-disjunction",
+      "Cancer",
+      "Amitosis"
     ],
     "importantTasks": [
-      "Task for studying 04 cell division concept of cell cycle types of cell division and significances."
+      "Label the 4 mitotic phases",
+      "Draw full meiosis (mark crossing over)",
+      "Mitosis vs meiosis table",
+      "Explain checkpoints + cancer",
+      "Define non-disjunction with an example"
     ],
     "exercises": [
       {
         "id": "1",
-        "question": "Identify the bond linking amino acids",
+        "question": "A cell with 2n = 4 enters meiosis. How many chromosomes and chromatids are present at Metaphase I and at Metaphase II?",
         "steps": [
-          "Amino acids are monomers",
-          "Link between -COOH and -NH₂",
-          "Peptide bond formed"
+          "After S phase: 4 chromosomes, each with 2 chromatids = 8 chromatids",
+          "Metaphase I: 4 chromosomes (paired as 2 bivalents), 8 chromatids",
+          "Meiosis I separates homologs → Metaphase II: 2 chromosomes, 4 chromatids"
         ],
-        "answer": "Peptide bond"
+        "answer": "Metaphase I: 4 chromosomes, 8 chromatids; Metaphase II: 2 chromosomes, 4 chromatids"
       }
     ],
     "visualization": {
-      "type": "3d-model",
-      "component": "ProteinStructureViewer",
-      "desc": "Interactive 3D protein structure showing primary to quaternary levels"
+      "type": "simulation",
+      "component": "CellDivisionDeepSim",
+      "desc": "Step-by-step 3D mitosis and meiosis with draggable chromosomes, crossing-over animation, checkpoint controls, and a mitosis-vs-meiosis comparison view."
     }
   },
   "originalContent": {
     "notes": [
-      "Carbohydrates: $(CH_2O)_n$; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
-      "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
-      "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
-      "Nucleic acids: DNA (double helix, $A=T$, $G\\equiv C$, deoxyribose) stores genetic info; RNA (single strand, $A=U$) for protein synthesis.",
-      "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
+      "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.",
+      "Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).",
+      "Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer.",
+      "Mitosis phases (PMAT): Prophase (chromatin → chromosomes, spindle forms, nuclear envelope breaks), Metaphase (chromosomes align at the equatorial plate, spindle fibres attached to centromeres), Anaphase (centromeres split, sister chromatids pulled to opposite poles), Telophase (chromosomes decondense, nuclear envelopes reform, cytokinesis).",
+      "Cytokinesis: animal cells — cleavage furrow (actin); plant cells — cell plate → new wall.",
+      "Meiosis: two divisions. Meiosis I (reductional): Prophase I (chromosomes pair = synapsis; crossing over between non-sister chromatids), Metaphase I (homologous pairs at the equator; independent assortment), Anaphase I (homologs separate), Telophase I. Meiosis II (equational): like mitosis but no DNA replication; sister chromatids separate.",
+      "Outcome: meiosis → 4 haploid (n) genetically distinct cells; mitosis → 2 diploid (2n) identical cells.",
+      "Crossing over (Prophase I) + independent assortment (Metaphase I) = the two sources of meiotic variation.",
+      "Amitosis (direct division): simple karyokinesis; rare (liver cells, some fungi, regenerating tissues).",
+      "Errors: mitotic errors → uncontrolled division = cancer; meiotic non-disjunction → aneuploidy (e.g., Down syndrome = trisomy 21).",
+      "Significance: mitosis = growth, repair, asexual reproduction; meiosis = gamete formation + genetic diversity.",
+      "NEB focus: the full cell cycle, all mitotic and meiotic phases, variation, and errors."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-      "❌ Cell wall is present in all cells. ✅ Cell wall is in plants, fungi, bacteria; absent in animal cells."
+      "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
+      "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
+      "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.",
+      "DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions.",
+      "G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.",
+      "Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice comparing plant and animal cell structures.",
-      "Practice explaining osmosis and plasmolysis with diagrams."
+      "Draw the four phases of mitosis with labelled chromosomes.",
+      "Draw a full meiosis diagram and mark crossing over + independent assortment.",
+      "Tabulate mitosis vs meiosis (6 differences).",
+      "Explain the role of each checkpoint in preventing cancer.",
+      "Calculate the chromosome/chromatid count at each meiotic stage (2n = 4 example)."
     ],
     "universalFacts": [
-      "Universal scientific fact for 04 cell division concept of cell cycle types of cell division and significances."
+      "Interphase occupies ~90% of the cell cycle; mitosis is brief.",
+      "A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis.",
+      "Crossing over can occur at multiple points per chromosome pair in Prophase I.",
+      "Cancer is fundamentally uncontrolled mitosis due to failed checkpoints (e.g., p53 mutations)."
     ],
     "examples": [
-      "Glucose → 38 ATP via cellular respiration",
-      "Insulin: 51 amino acids, protein hormone"
+      "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).",
+      "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.",
+      "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 ovum (n) + 3 polar bodies.",
+      "Down syndrome: trisomy 21 from meiotic non-disjunction.",
+      "Amitosis: liver-cell regeneration; some regenerating tissues."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude.",
-      "Practice comparing plant and animal cell structures."
+      "How is Anaphase I of meiosis different from Anaphase of mitosis?",
+      "Explain why meiosis produces genetic variation (two mechanisms).",
+      "What would happen if the S phase did not occur?",
+      "Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.",
+      "Define non-disjunction and give a human disease example."
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 04 cell division concept of cell cycle types of cell division and significances)"
+      "Mitosis: 2n → 2 daughter cells of 2n",
+      "Meiosis: 2n → 4 gametes of n",
+      "Crossing over (Prophase I) + independent assortment (Metaphase I) → variation",
+      "Chromosome count: after S each chromosome = 2 chromatids"
     ],
     "keyPoints": [
-      "Core point for 04 cell division concept of cell cycle types of cell division and significances."
+      "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
+      "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
+      "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
+      "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
+      "Cytokinesis: animal (cleavage furrow) vs plant (cell plate).",
+      "Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome).",
+      "Significance: mitosis = growth/repair; meiosis = gametes + diversity."
     ],
-    "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nCell membrane is selectively permeable fluid mosaic.\n\nOrganelles enable compartmentalized metabolic functions.",
+    "summary": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells. Meiosis is a two-division process that halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Amitosis is a rare direct division. Mitotic errors lead to cancer; meiotic non-disjunction causes aneuploidies such as Down syndrome. NEB focuses on the full cell cycle, all mitotic and meiotic phases, the sources of variation, and the consequences of errors.",
     "specialNotes": [
-      "Specialized insight for 04 cell division concept of cell cycle types of cell division and significances."
+      "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.",
+      "The mitosis vs meiosis comparison table (6 points) is a very common question.",
+      "Explain the two sources of meiotic variation (crossing over + independent assortment).",
+      "Relate checkpoint failure to cancer and non-disjunction to Down syndrome.",
+      "Distinguish what separates in Anaphase I vs Anaphase (mitosis/II).",
+      "Note the cytokinesis difference (furrow vs cell plate)."
     ],
     "importantStatements": [
-      "Key statement for 04 cell division concept of cell cycle types of cell division and significances."
+      "Mitosis maintains a species' diploid chromosome number.",
+      "Meiosis halves the genome and shuffles alleles, creating variation.",
+      "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged.",
+      "Crossing over occurs only in Prophase I of meiosis."
     ],
     "importantNotes": [
-      "Important note regarding 04 cell division concept of cell cycle types of cell division and significances."
+      "Learn the PMAT sequence and draw each phase from memory.",
+      "Keep a mitosis vs meiosis comparison table (6 points).",
+      "Memorise that crossing over occurs in Prophase I.",
+      "Relate checkpoint failure to cancer and non-disjunction to aneuploidy.",
+      "Note the cytokinesis difference (animal furrow vs plant cell plate)."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Cell Division."
+      "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
+      "MITO = 2 identical (2n); MEI = 4 different (n).",
+      "Crossing over = Prophase I only.",
+      "Anaphase I = homologs separate; Anaphase (mitosis/II) = chromatids separate.",
+      "No S phase → no DNA duplication → division fails.",
+      "Animal = furrow; Plant = cell plate."
     ],
     "examNotes": [
-      "Cell Division is frequently tested.",
-      "Practice writing detailed answers."
+      "Draw and label all four mitotic phases.",
+      "Draw a full meiosis diagram (mark crossing over + independent assortment).",
+      "Tabulate mitosis vs meiosis (6 points).",
+      "Explain how meiosis creates variation (two mechanisms).",
+      "Describe cell-cycle checkpoints and the cause of cancer.",
+      "Define non-disjunction with a human example (Down syndrome)."
     ],
     "mcs": [
       {
-        "question": "Question about 04 cell division concept of cell cycle types of cell division and significances?",
+        "question": "In Anaphase I of meiosis, what separates?",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Sister chromatids",
+          "Homologous chromosomes",
+          "Centromeres",
+          "Nuclear envelopes"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Cytokinesis in animal cells occurs by:",
+        "options": [
+          "Cell plate",
+          "Cleavage furrow",
+          "Binary fission",
+          "Growth"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The two sources of meiotic variation are:",
+        "options": [
+          "Crossing over + independent assortment",
+          "Mutation + drift",
+          "G1 + S",
+          "Anaphase + telophase"
         ],
         "answer": "A"
+      },
+      {
+        "question": "Down syndrome is caused by:",
+        "options": [
+          "Mitotic error",
+          "Meiotic non-disjunction (trisomy 21)",
+          "A virus",
+          "Poor diet"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 04 cell division concept of cell cycle types of cell division and significances."
+      "Cell cycle (G1, S, G2, M)",
+      "Checkpoints",
+      "PMAT phases",
+      "Meiosis I & II",
+      "Crossing over",
+      "Independent assortment",
+      "Cytokinesis (furrow vs cell plate)",
+      "Non-disjunction",
+      "Cancer",
+      "Amitosis"
     ],
     "importantTasks": [
-      "Task for studying 04 cell division concept of cell cycle types of cell division and significances."
+      "Label the 4 mitotic phases",
+      "Draw full meiosis (mark crossing over)",
+      "Mitosis vs meiosis table",
+      "Explain checkpoints + cancer",
+      "Define non-disjunction with an example"
     ],
     "exercises": [
       {
         "id": "1",
-        "question": "Identify the bond linking amino acids",
+        "question": "A cell with 2n = 4 enters meiosis. How many chromosomes and chromatids are present at Metaphase I and at Metaphase II?",
         "steps": [
-          "Amino acids are monomers",
-          "Link between -COOH and -NH₂",
-          "Peptide bond formed"
+          "After S phase: 4 chromosomes, each with 2 chromatids = 8 chromatids",
+          "Metaphase I: 4 chromosomes (paired as 2 bivalents), 8 chromatids",
+          "Meiosis I separates homologs → Metaphase II: 2 chromosomes, 4 chromatids"
         ],
-        "answer": "Peptide bond"
+        "answer": "Metaphase I: 4 chromosomes, 8 chromatids; Metaphase II: 2 chromosomes, 4 chromatids"
       }
     ],
     "visualization": {
-      "type": "3d-model",
-      "component": "ProteinStructureViewer",
-      "desc": "Interactive 3D protein structure showing primary to quaternary levels"
+      "type": "simulation",
+      "component": "CellDivisionDeepSim",
+      "desc": "Step-by-step 3D mitosis and meiosis with draggable chromosomes, crossing-over animation, checkpoint controls, and a mitosis-vs-meiosis comparison view."
     }
   }
 }

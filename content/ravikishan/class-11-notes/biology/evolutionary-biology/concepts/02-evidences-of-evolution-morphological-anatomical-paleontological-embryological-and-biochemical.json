@@ -10,398 +10,387 @@
   "tabGroup": "02-evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
   "mcqs": [
     {
-      "question": "Question about 02 evidences of evolution morphological anatomical paleontological embryological and biochemical?",
+      "question": "The wings of a bat and the wings of a bird are:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Homologous",
+        "Analogous",
+        "Vestigial",
+        "Fossils"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Archaeopteryx is significant because it:",
+      "options": [
+        "Is a living fossil",
+        "Shows features of both reptiles and birds",
+        "Is a mammal",
+        "Has no feathers"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The appendix in humans is an example of a:",
+      "options": [
+        "Homologous organ",
+        "Analogous organ",
+        "Vestigial organ",
+        "Fossil"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The similarity of cytochrome c across species is:",
+      "options": [
+        "Morphological evidence",
+        "Molecular evidence",
+        "Fossil evidence",
+        "Embryological evidence"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "avogadros-law-deduction",
   "enrichedContent": {
     "notes": [
-      "Darwin: natural selection.",
-      "Miller-Urey experiment: amino acids from inorganic precursors.",
-      "Fossil evidence: progressive complexity.",
-      "Homologous organs: common ancestry (divergent).",
-      "Analogous organs: convergent evolution."
+      "Evidence of evolution: morphological, anatomical, paleontological (fossil), embryological, and biochemical/molecular.",
+      "Homologous organs (divergent evolution): similar structure, different function, common ancestry — e.g. forelimbs of whale, bat, human, horse.",
+      "Analogous organs (convergent evolution): similar function, different structure/origin — e.g. wings of bird vs insect; eyes of octopus vs vertebrate.",
+      "Vestigial organs: reduced, non-functional remnants of ancestral organs — e.g. appendix, coccyx, wings of flightless birds, pelvic bones in whales.",
+      "Fossil evidence: progressive increase in complexity over time; transitional fossils (e.g. Archaeopteryx: reptilian + bird features) link groups.",
+      "Embryological evidence: early embryos of different vertebrates are very similar (pharyngeal slits, tail), then diverge.",
+      "Biochemical evidence: universal genetic code, similar proteins (cytochrome c) across species; closer species share more similar DNA/proteins.",
+      "Molecular clock: rate of genetic mutation can estimate divergence time between species."
     ],
     "confusion": [
-      "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-      "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-      "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-      "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-      "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-      "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-      "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-      "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-      "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-      "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-      "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-      "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-      "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-      "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-      "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-      "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-      "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-      "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-      "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-      "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-      "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-      "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-      "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-      "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-      "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-      "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-      "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-      "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-      "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-      "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-      "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-      "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-      "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-      "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-      "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-      "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-      "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-      "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
+      "Homologous = same origin, different function (divergent); Analogous = different origin, same function (convergent).",
+      "Vestigial organs are evidence of common ancestry, not of \"uselessness\" in an absolute sense.",
+      "Fossils are not just \"old bones\"; they include traces (footprints, burrows), impressions, and molecular fossils.",
+      "Archaeopteryx shows both reptilian (teeth, long bony tail, claws) and avian (feathers, wing) features — a transitional form.",
+      "Embryological similarity reflects common ancestry; the differences develop later as embryos mature.",
+      "A \"universal genetic code\" (same codons → same amino acids) across all life is strong evidence of common descent."
     ],
     "practice": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-      "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-      "Practice calculating energy of photon from frequency and wavelength."
+      "Differentiate homologous and analogous organs with two examples each.",
+      "List three types of vestigial organs in humans.",
+      "Explain the significance of Archaeopteryx as a transitional fossil.",
+      "Describe the embryological evidence for evolution in vertebrates.",
+      "Explain how protein/DNA similarity (cytochrome c) supports evolution."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "Archaeopteryx lithographica (1861, Germany) is the classic bird-reptile transitional fossil.",
+      "Humans and chimpanzees share ~98.8% of their DNA.",
+      "The universal genetic code is nearly identical in all known organisms (a few exceptions exist).",
+      "Cytochrome c, a respiratory protein, is very similar in all aerobes, reflecting common ancestry."
     ],
     "examples": [
-      "Darwin's finches: beak adaptation",
-      "Archaeopteryx: reptile-bird link",
-      "Human: Australopithecus→H.erectus→H.sapiens"
+      "Homologous: forelimbs of human (arm), bat (wing), whale (flipper), horse (leg) — same bone pattern, different use.",
+      "Analogous: wings of bird (feather, bone) vs insect (chitin, no bone) — both fly, different origin.",
+      "Vestigial: human appendix, coccyx (tailbone), wisdom teeth; whale pelvic bones.",
+      "Transitional: Archaeopteryx; Tiktaalik (fish-amphibian link); Australopithecus (human ancestor).",
+      "Molecular: cytochrome c in horse vs human differs by only a few amino acids."
     ],
     "practiceQuestions": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-      "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
+      "How do homologous organs support evolution?",
+      "Differentiate homologous from analogous organs.",
+      "What are vestigial organs and why are they evidence of evolution?",
+      "Explain the significance of Archaeopteryx.",
+      "How does the molecular/cytoplasmic evidence (DNA, proteins) support evolution?"
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical)"
+      "Homologous: same structure, different function, common origin (divergent evolution)",
+      "Analogous: different structure, same function, different origin (convergent evolution)",
+      "Vestigial: reduced remnant of an ancestral organ",
+      "Molecular: DNA/protein similarity inversely related to evolutionary distance"
     ],
     "keyPoints": [
-      "Core point for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Five types of evidence: morphological, anatomical, fossil, embryological, biochemical.",
+      "Homologous (divergent) vs analogous (convergent) organs.",
+      "Vestigial organs = reduced ancestral remnants.",
+      "Fossils show progressive complexity; transitional forms link groups.",
+      "Embryos of vertebrates are similar early, diverge later.",
+      "Universal genetic code + similar proteins (cytochrome c) = molecular evidence.",
+      "Molecular clock estimates divergence time."
     ],
-    "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nQuantum numbers fully describe electron state; Aufbau, Pauli, and Hund guide electron configuration.\n\nHeisenberg uncertainty is a fundamental limit, not measurement error.",
+    "summary": "Evolution is supported by multiple independent lines of evidence. Homologous organs (common origin, divergent function), analogous organs (convergent evolution), and vestigial structures reveal common ancestry. Fossils document the progressive increase in complexity and transitional forms like Archaeopteryx. Embryological similarity among vertebrates and molecular evidence (universal genetic code, similar proteins such as cytochrome c) provide the strongest modern confirmation that all life shares a common origin.",
     "specialNotes": [
-      "Specialized insight for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "NEB frequently asks for homologous vs analogous organs with examples.",
+      "Vestigial organs in humans (appendix, coccyx) are a common short-answer.",
+      "Archaeopteryx as a transitional fossil is a very frequent exam topic.",
+      "Molecular evidence (DNA similarity, cytochrome c) is increasingly tested."
     ],
     "importantStatements": [
-      "Key statement for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Homologous structures indicate common descent with divergent evolution.",
+      "Analogous structures result from convergent evolution under similar selection pressures.",
+      "Vestigial organs are remnants of structures that were functional in ancestors.",
+      "The universal genetic code is powerful evidence for a single common ancestor of all life."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise 2 homologous and 2 analogous examples.",
+      "List 3 vestigial organs in humans.",
+      "Learn the features of Archaeopteryx (reptilian + avian).",
+      "Explain the embryological similarity of vertebrates.",
+      "Describe molecular evidence (cytochrome c, DNA similarity)."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Evidences of Evolution."
+      "Homo = same origin; Ana = same function.",
+      "Vestigial = \"Vest\" (a leftover vest of evolution).",
+      "Archaeopteryx = Archae (ancient) + pteryx (wing) = ancient bird.",
+      "DNA similarity: closer species = more similar DNA."
     ],
     "examNotes": [
-      "Evidences of Evolution is frequently tested.",
-      "Practice writing detailed answers."
+      "Differentiate homologous and analogous organs (with examples).",
+      "Explain vestigial organs as evidence of evolution.",
+      "Describe the significance of Archaeopteryx.",
+      "State the embryological evidence for evolution.",
+      "Explain the molecular/biochemical evidence (cytochrome c, DNA)."
     ],
     "mcs": [
       {
-        "question": "Question about 02 evidences of evolution morphological anatomical paleontological embryological and biochemical?",
+        "question": "The wings of a bat and the wings of a bird are:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Homologous",
+          "Analogous",
+          "Vestigial",
+          "Fossils"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Archaeopteryx is significant because it:",
+        "options": [
+          "Is a living fossil",
+          "Shows features of both reptiles and birds",
+          "Is a mammal",
+          "Has no feathers"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The appendix in humans is an example of a:",
+        "options": [
+          "Homologous organ",
+          "Analogous organ",
+          "Vestigial organ",
+          "Fossil"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The similarity of cytochrome c across species is:",
+        "options": [
+          "Morphological evidence",
+          "Molecular evidence",
+          "Fossil evidence",
+          "Embryological evidence"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Homologous vs analogous",
+      "Vestigial organs",
+      "Fossil evidence",
+      "Archaeopteryx",
+      "Embryological evidence",
+      "Molecular evidence",
+      "Universal genetic code",
+      "Molecular clock"
     ],
     "importantTasks": [
-      "Task for studying 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Differentiate homologous vs analogous",
+      "List 3 vestigial organs",
+      "Explain Archaeopteryx",
+      "Describe embryological evidence",
+      "Explain molecular evidence"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "Two species have very similar cytochrome c (differ by 0 amino acids). What does this suggest about their evolutionary relationship?",
+        "steps": [
+          "Cytochrome c is a conserved respiratory protein",
+          "0 differences = nearly identical sequence",
+          "Suggests very close (recent) common ancestry"
+        ],
+        "answer": "Very close evolutionary relationship (recent common ancestor)"
       }
     ],
     "visualization": {
-      "type": "simulation",
-      "component": "EvolutionSim",
-      "desc": "Evolutionary tree builder and natural selection simulator"
+      "type": "interactive",
+      "component": "EvolutionEvidenceViewer",
+      "desc": "Interactive panel comparing homologous, analogous, vestigial, fossil, and molecular evidence with clickable examples."
     }
   },
   "originalContent": {
     "notes": [
-      "Darwin: natural selection.",
-      "Miller-Urey experiment: amino acids from inorganic precursors.",
-      "Fossil evidence: progressive complexity.",
-      "Homologous organs: common ancestry (divergent).",
-      "Analogous organs: convergent evolution."
+      "Evidence of evolution: morphological, anatomical, paleontological (fossil), embryological, and biochemical/molecular.",
+      "Homologous organs (divergent evolution): similar structure, different function, common ancestry — e.g. forelimbs of whale, bat, human, horse.",
+      "Analogous organs (convergent evolution): similar function, different structure/origin — e.g. wings of bird vs insect; eyes of octopus vs vertebrate.",
+      "Vestigial organs: reduced, non-functional remnants of ancestral organs — e.g. appendix, coccyx, wings of flightless birds, pelvic bones in whales.",
+      "Fossil evidence: progressive increase in complexity over time; transitional fossils (e.g. Archaeopteryx: reptilian + bird features) link groups.",
+      "Embryological evidence: early embryos of different vertebrates are very similar (pharyngeal slits, tail), then diverge.",
+      "Biochemical evidence: universal genetic code, similar proteins (cytochrome c) across species; closer species share more similar DNA/proteins.",
+      "Molecular clock: rate of genetic mutation can estimate divergence time between species."
     ],
     "confusion": [
-      "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-      "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-      "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-      "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-      "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-      "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-      "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-      "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-      "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-      "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-      "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-      "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-      "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-      "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-      "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-      "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-      "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-      "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-      "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-      "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-      "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-      "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-      "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-      "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-      "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-      "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-      "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-      "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-      "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-      "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-      "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-      "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-      "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-      "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-      "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-      "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-      "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-      "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
+      "Homologous = same origin, different function (divergent); Analogous = different origin, same function (convergent).",
+      "Vestigial organs are evidence of common ancestry, not of \"uselessness\" in an absolute sense.",
+      "Fossils are not just \"old bones\"; they include traces (footprints, burrows), impressions, and molecular fossils.",
+      "Archaeopteryx shows both reptilian (teeth, long bony tail, claws) and avian (feathers, wing) features — a transitional form.",
+      "Embryological similarity reflects common ancestry; the differences develop later as embryos mature.",
+      "A \"universal genetic code\" (same codons → same amino acids) across all life is strong evidence of common descent."
     ],
     "practice": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-      "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-      "Practice calculating energy of photon from frequency and wavelength."
+      "Differentiate homologous and analogous organs with two examples each.",
+      "List three types of vestigial organs in humans.",
+      "Explain the significance of Archaeopteryx as a transitional fossil.",
+      "Describe the embryological evidence for evolution in vertebrates.",
+      "Explain how protein/DNA similarity (cytochrome c) supports evolution."
     ],
     "universalFacts": [
-      "Universal scientific fact for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Archaeopteryx lithographica (1861, Germany) is the classic bird-reptile transitional fossil.",
+      "Humans and chimpanzees share ~98.8% of their DNA.",
+      "The universal genetic code is nearly identical in all known organisms (a few exceptions exist).",
+      "Cytochrome c, a respiratory protein, is very similar in all aerobes, reflecting common ancestry."
     ],
     "examples": [
-      "Darwin's finches: beak adaptation",
-      "Archaeopteryx: reptile-bird link",
-      "Human: Australopithecus→H.erectus→H.sapiens"
+      "Homologous: forelimbs of human (arm), bat (wing), whale (flipper), horse (leg) — same bone pattern, different use.",
+      "Analogous: wings of bird (feather, bone) vs insect (chitin, no bone) — both fly, different origin.",
+      "Vestigial: human appendix, coccyx (tailbone), wisdom teeth; whale pelvic bones.",
+      "Transitional: Archaeopteryx; Tiktaalik (fish-amphibian link); Australopithecus (human ancestor).",
+      "Molecular: cytochrome c in horse vs human differs by only a few amino acids."
     ],
     "practiceQuestions": [
-      "Practice drawing Lewis structures for ionic and covalent compounds.",
-      "Practice using the mole concept to convert between mass, moles, and particles.",
-      "Practice identifying limiting reagents in stoichiometric calculations.",
-      "Practice calculating percent yield from experimental data.",
-      "Practice converting between molarity and molality.",
-      "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-      "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-      "Practice calculating pH of strong acid and strong base solutions.",
-      "Practice using pH, pOH, Ka, and Kb relationships.",
-      "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-      "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-      "Practice assigning oxidation numbers in compounds and ions.",
-      "Practice balancing redox reactions by ion-electron method.",
-      "Practice calculating cell potential using standard electrode potentials.",
-      "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-      "Practice applying ideal gas law to find P, V, T, or n.",
-      "Practice calculating rms speed and average kinetic energy of gases.",
-      "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-      "Practice calculating molarity and molality from given data.",
-      "Practice applying Raoult's law to ideal solutions.",
-      "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-      "Practice predicting molecular geometry using VSEPR theory.",
-      "Practice identifying hybridization from molecular geometry.",
-      "Practice drawing resonance structures for common molecules.",
-      "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-      "Practice identifying functional groups in organic molecules.",
-      "Practice writing mechanisms for free radical substitution of alkanes.",
-      "Practice writing mechanisms for electrophilic addition to alkenes.",
-      "Practice predicting products of electrophilic substitution on benzene.",
-      "Practice calculating empirical and molecular formulas from composition data.",
-      "Practice solving gas law problems combining multiple variables.",
-      "Practice calculating bond energy from reaction enthalpies.",
-      "Practice using Born-Haber cycles to calculate lattice energy.",
-      "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-      "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
+      "How do homologous organs support evolution?",
+      "Differentiate homologous from analogous organs.",
+      "What are vestigial organs and why are they evidence of evolution?",
+      "Explain the significance of Archaeopteryx.",
+      "How does the molecular/cytoplasmic evidence (DNA, proteins) support evolution?"
     ],
     "formulas": [
-      "$F = m \\cdot a$ (relevant formula for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical)"
+      "Homologous: same structure, different function, common origin (divergent evolution)",
+      "Analogous: different structure, same function, different origin (convergent evolution)",
+      "Vestigial: reduced remnant of an ancestral organ",
+      "Molecular: DNA/protein similarity inversely related to evolutionary distance"
     ],
     "keyPoints": [
-      "Core point for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Five types of evidence: morphological, anatomical, fossil, embryological, biochemical.",
+      "Homologous (divergent) vs analogous (convergent) organs.",
+      "Vestigial organs = reduced ancestral remnants.",
+      "Fossils show progressive complexity; transitional forms link groups.",
+      "Embryos of vertebrates are similar early, diverge later.",
+      "Universal genetic code + similar proteins (cytochrome c) = molecular evidence.",
+      "Molecular clock estimates divergence time."
     ],
-    "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nQuantum numbers fully describe electron state; Aufbau, Pauli, and Hund guide electron configuration.\n\nHeisenberg uncertainty is a fundamental limit, not measurement error.",
+    "summary": "Evolution is supported by multiple independent lines of evidence. Homologous organs (common origin, divergent function), analogous organs (convergent evolution), and vestigial structures reveal common ancestry. Fossils document the progressive increase in complexity and transitional forms like Archaeopteryx. Embryological similarity among vertebrates and molecular evidence (universal genetic code, similar proteins such as cytochrome c) provide the strongest modern confirmation that all life shares a common origin.",
     "specialNotes": [
-      "Specialized insight for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "NEB frequently asks for homologous vs analogous organs with examples.",
+      "Vestigial organs in humans (appendix, coccyx) are a common short-answer.",
+      "Archaeopteryx as a transitional fossil is a very frequent exam topic.",
+      "Molecular evidence (DNA similarity, cytochrome c) is increasingly tested."
     ],
     "importantStatements": [
-      "Key statement for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Homologous structures indicate common descent with divergent evolution.",
+      "Analogous structures result from convergent evolution under similar selection pressures.",
+      "Vestigial organs are remnants of structures that were functional in ancestors.",
+      "The universal genetic code is powerful evidence for a single common ancestor of all life."
     ],
     "importantNotes": [
-      "Important note regarding 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Memorise 2 homologous and 2 analogous examples.",
+      "List 3 vestigial organs in humans.",
+      "Learn the features of Archaeopteryx (reptilian + avian).",
+      "Explain the embryological similarity of vertebrates.",
+      "Describe molecular evidence (cytochrome c, DNA similarity)."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Evidences of Evolution."
+      "Homo = same origin; Ana = same function.",
+      "Vestigial = \"Vest\" (a leftover vest of evolution).",
+      "Archaeopteryx = Archae (ancient) + pteryx (wing) = ancient bird.",
+      "DNA similarity: closer species = more similar DNA."
     ],
     "examNotes": [
-      "Evidences of Evolution is frequently tested.",
-      "Practice writing detailed answers."
+      "Differentiate homologous and analogous organs (with examples).",
+      "Explain vestigial organs as evidence of evolution.",
+      "Describe the significance of Archaeopteryx.",
+      "State the embryological evidence for evolution.",
+      "Explain the molecular/biochemical evidence (cytochrome c, DNA)."
     ],
     "mcs": [
       {
-        "question": "Question about 02 evidences of evolution morphological anatomical paleontological embryological and biochemical?",
+        "question": "The wings of a bat and the wings of a bird are:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Homologous",
+          "Analogous",
+          "Vestigial",
+          "Fossils"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Archaeopteryx is significant because it:",
+        "options": [
+          "Is a living fossil",
+          "Shows features of both reptiles and birds",
+          "Is a mammal",
+          "Has no feathers"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The appendix in humans is an example of a:",
+        "options": [
+          "Homologous organ",
+          "Analogous organ",
+          "Vestigial organ",
+          "Fossil"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The similarity of cytochrome c across species is:",
+        "options": [
+          "Morphological evidence",
+          "Molecular evidence",
+          "Fossil evidence",
+          "Embryological evidence"
+        ],
+        "answer": "B"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Homologous vs analogous",
+      "Vestigial organs",
+      "Fossil evidence",
+      "Archaeopteryx",
+      "Embryological evidence",
+      "Molecular evidence",
+      "Universal genetic code",
+      "Molecular clock"
     ],
     "importantTasks": [
-      "Task for studying 02 evidences of evolution morphological anatomical paleontological embryological and biochemical."
+      "Differentiate homologous vs analogous",
+      "List 3 vestigial organs",
+      "Explain Archaeopteryx",
+      "Describe embryological evidence",
+      "Explain molecular evidence"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Two species have very similar cytochrome c (differ by 0 amino acids). What does this suggest about their evolutionary relationship?",
+        "steps": [
+          "Cytochrome c is a conserved respiratory protein",
+          "0 differences = nearly identical sequence",
+          "Suggests very close (recent) common ancestry"
+        ],
+        "answer": "Very close evolutionary relationship (recent common ancestor)"
+      }
+    ],
     "visualization": {
-      "type": "simulation",
-      "component": "EvolutionSim",
-      "desc": "Evolutionary tree builder and natural selection simulator"
+      "type": "interactive",
+      "component": "EvolutionEvidenceViewer",
+      "desc": "Interactive panel comparing homologous, analogous, vestigial, fossil, and molecular evidence with clickable examples."
     }
   }
 }

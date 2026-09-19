@@ -10,22 +10,42 @@
   "tabGroup": "03-biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
   "mcqs": [
     {
-      "question": "How much energy is transferred between trophic levels?",
+      "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
       "options": [
-        "10%",
-        "50%",
-        "90%",
-        "1%"
+        "Nitrosomonas",
+        "Rhizobium",
+        "Pseudomonas",
+        "Nitrobacter"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "Which is a biotic component?",
+      "question": "Which biogeochemical cycle has NO gaseous phase?",
       "options": [
-        "Sunlight",
-        "Water",
-        "Plants",
-        "Soil"
+        "Carbon",
+        "Nitrogen",
+        "Phosphorus",
+        "Oxygen"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Primary succession begins on:",
+      "options": [
+        "Existing soil",
+        "Bare rock",
+        "A forest",
+        "A pond"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Denitrification converts nitrate to:",
+      "options": [
+        "Ammonia",
+        "Nitrite",
+        "Nitrogen gas (N2)",
+        "Oxygen"
       ],
       "answer": "C"
     }
@@ -33,369 +53,354 @@
   "visualType": "haber-process-flow",
   "enrichedContent": {
     "notes": [
-      "Ecosystem: biotic + abiotic components.",
-      "Food chain: linear energy transfer (grass→rabbit→fox).",
-      "Food web: interconnected chains.",
-      "10% energy transfer rule.",
-      "Biogeochemical cycles: carbon, nitrogen."
+      "Biogeochemical cycles: the movement of elements (C, N, P, H, O) through biotic (living) and abiotic (non-living) compartments.",
+      "Carbon cycle: atmospheric CO2 → photosynthesis (plants) → respiration (animals + plants) → decomposition → soil → oceans; combustion (fossil fuels) releases CO2; carbonate rocks (limestone) store carbon long-term.",
+      "Nitrogen cycle: atmospheric N2 (78%) → nitrogen fixation (Rhizobium, Azotobacter, lightning) → ammonia (NH3) → nitrification (Nitrosomonas → nitrite; Nitrobacter → nitrate) → assimilation (plants) → ammonification (decomposers) → denitrification (Pseudomonas → N2).",
+      "Phosphorus cycle: rock (apatite) → weathering → soil → plants → animals → decomposition → sediment; no gaseous phase (unlike C, N).",
+      "Water cycle: evaporation → condensation → precipitation → runoff → oceans.",
+      "Succession: the process by which an ecosystem changes over time; primary (on bare rock, no soil) vs secondary (on existing soil).",
+      "Primary succession: bare rock → lichens/mosses → grasses → shrubs → forest (climax).",
+      "Secondary succession: after a disturbance (fire, flood, logging) → grasses → shrubs → forest (faster than primary).",
+      "Climax community: stable, mature community in equilibrium with the environment (e.g., mature oak-rhododendron forest in Nepal).",
+      "NEB focus: carbon and nitrogen cycles; concept of succession."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "Nitrogen fixation converts N2 to ammonia (NH3/NH4+); nitrification converts ammonia to nitrite then nitrate; denitrification converts nitrate back to N2.",
+      "Rhizobium (symbiotic, in legume root nodules) and Azotobacter (free-living, in soil) are both nitrogen-fixing bacteria.",
+      "The carbon cycle has a gaseous phase (CO2); the phosphorus cycle does NOT have a gaseous phase.",
+      "Primary succession starts on BARE ROCK (no soil); secondary succession starts on EXISTING SOIL (after disturbance).",
+      "Succession is a PREDICTABLE, directional process toward a stable climax community.",
+      "Decomposition releases nutrients (C, N, P) back into the soil; without it, cycles would stop."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Draw and explain the carbon cycle (all major steps).",
+      "Draw and explain the nitrogen cycle (all major steps).",
+      "Differentiate primary from secondary succession.",
+      "Define climax community and give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle."
     ],
     "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+      "Atmospheric nitrogen (N2) makes up ~78% of the air but is unusable by most organisms until fixed.",
+      "Carbon dioxide is the main gaseous form of carbon in the carbon cycle.",
+      "The phosphorus cycle has no gaseous phase; it is the slowest of the major biogeochemical cycles.",
+      "Climax forests in Nepal: mature oak-rhododendron (temperate) or sal (Terai) forests."
     ],
     "examples": [
-      "Pond: phytoplankton→zooplankton→fish→birds",
-      "Nepal: terai→hills→mountains ecosystems"
+      "Carbon cycle: forest (photosynthesis absorbs CO2) → animals (respiration releases CO2) → decomposers (release CO2) → atmosphere → ocean (dissolved CO2) → limestone (long-term storage).",
+      "Nitrogen cycle: Rhizobium in pea root nodules fixes N2 → plants assimilate nitrate → animals eat plants → decomposers ammonify → denitrifying bacteria release N2.",
+      "Primary succession: bare rock after a volcanic eruption → lichens → mosses → grasses → shrubs → forest.",
+      "Secondary succession: after a forest fire in Nepal → regrowth of grasses → shrubs → trees (faster than primary).",
+      "Climax community: a mature, stable oak-rhododendron forest on the Nepal hills."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Describe the carbon cycle with a labelled diagram.",
+      "Describe the nitrogen cycle with a labelled diagram.",
+      "Differentiate primary from secondary succession.",
+      "What is a climax community? Give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle (fixation, nitrification, denitrification)."
     ],
     "formulas": [
-      "dN/dt=rN((K-N)/K) (logistic growth)"
+      "Carbon cycle: CO2 ↔ organic C (photosynthesis/respiration/decomposition); fossil fuel combustion → CO2",
+      "Nitrogen cycle: N2 → (fixation) NH3 → (nitrification) NO2- → NO3- → (assimilation) plants → (ammonification) NH3 → (denitrification) N2",
+      "Succession: primary (bare rock) / secondary (existing soil) → climax community"
     ],
     "keyPoints": [
-      "Core point for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Biogeochemical cycles: C, N, P, H, O move through biotic + abiotic compartments.",
+      "Carbon cycle: gaseous (CO2); photosynthesis, respiration, decomposition, combustion.",
+      "Nitrogen cycle: N2 → NH3 → NO2- → NO3- → assimilation → ammonification → N2.",
+      "Bacteria: Rhizobium (fixation), Nitrosomonas (nitrification), Pseudomonas (denitrification).",
+      "Phosphorus cycle: no gaseous phase; slowest cycle.",
+      "Succession: primary (bare rock) vs secondary (existing soil); climax community is stable.",
+      "Climax: mature, stable community in equilibrium with the environment."
     ],
-    "summary": "Ecology studies interactions between organisms and their environment.",
+    "summary": "Biogeochemical cycles move essential elements through living and non-living compartments. The carbon cycle (gaseous CO2) and the nitrogen cycle (N2 → NH3 → NO2- → NO3- → N2) are the most important; bacteria (Rhizobium, Nitrosomonas, Pseudomonas) drive key steps. The phosphorus cycle has no gaseous phase and is the slowest. Succession is the directional change of an ecosystem toward a stable climax community: primary succession starts on bare rock, secondary on existing soil. NEB focuses on the carbon and nitrogen cycles and the concept of succession.",
     "specialNotes": [
-      "Specialized insight for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "NEB expects detailed, labelled diagrams of the carbon and nitrogen cycles.",
+      "The role of bacteria (Rhizobium, Nitrosomonas, Pseudomonas) in the nitrogen cycle is a very common exam point.",
+      "Primary vs secondary succession: key difference is the starting point (bare rock vs existing soil).",
+      "Climax community: give a Nepali example (mature oak-rhododendron forest).",
+      "Note that the phosphorus cycle has no gaseous phase."
     ],
     "importantStatements": [
-      "Key statement for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Biogeochemical cycles recycle essential elements through biotic and abiotic compartments.",
+      "Nitrogen fixation converts atmospheric N2 to usable ammonia.",
+      "Primary succession begins on bare rock; secondary succession on existing soil.",
+      "A climax community is a stable, mature ecosystem in equilibrium with its environment."
     ],
     "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
+      "Memorise the steps of the carbon and nitrogen cycles.",
+      "Learn the roles of Rhizobium, Nitrosomonas, and Pseudomonas.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Note that the phosphorus cycle has no gaseous phase."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Biogeochemical Cycles."
+      "Nitrogen cycle: N2 → NH3 → NO2 → NO3 → plants → NH3 → N2.",
+      "Rhizobium = fixation; Nitrosomonas = nitrification; Pseudomonas = denitrification.",
+      "Carbon cycle = gaseous (CO2); Phosphorus cycle = no gas, slowest.",
+      "Primary = bare rock; Secondary = existing soil; both → climax."
     ],
     "examNotes": [
-      "Biogeochemical Cycles is frequently tested.",
-      "Practice writing detailed answers."
+      "Draw and explain the carbon cycle.",
+      "Draw and explain the nitrogen cycle.",
+      "Explain the role of bacteria in the nitrogen cycle.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Why does the phosphorus cycle have no gaseous phase?"
     ],
     "mcs": [
       {
-        "question": "Question about 03 biogeochemical cycles carbon and nitrogen cycles concept of succession?",
+        "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Nitrosomonas",
+          "Rhizobium",
+          "Pseudomonas",
+          "Nitrobacter"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Which biogeochemical cycle has NO gaseous phase?",
+        "options": [
+          "Carbon",
+          "Nitrogen",
+          "Phosphorus",
+          "Oxygen"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Primary succession begins on:",
+        "options": [
+          "Existing soil",
+          "Bare rock",
+          "A forest",
+          "A pond"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Denitrification converts nitrate to:",
+        "options": [
+          "Ammonia",
+          "Nitrite",
+          "Nitrogen gas (N2)",
+          "Oxygen"
+        ],
+        "answer": "C"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Carbon cycle",
+      "Nitrogen cycle",
+      "Phosphorus cycle",
+      "Bacteria roles (fixation, nitrification, denitrification)",
+      "Succession (primary vs secondary)",
+      "Climax community",
+      "Biogeochemical cycles",
+      "Gaseous vs non-gaseous cycles"
     ],
     "importantTasks": [
-      "Task for studying 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Draw carbon cycle",
+      "Draw nitrogen cycle",
+      "Explain bacteria roles",
+      "Differentiate primary vs secondary succession",
+      "Define climax community"
     ],
     "exercises": [
       {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
+        "id": "1",
+        "question": "In the nitrogen cycle, a plant absorbs nitrate (NO3-). What does the plant use it for, and how does the nitrogen eventually return to the atmosphere?",
+        "steps": [
+          "Plant uses NO3- to make amino acids/proteins (assimilation)",
+          "Animal eats plant; N moves to animal proteins",
+          "Decomposers break down dead tissue → ammonia (ammonification)",
+          "Nitrosomonas → nitrite; Nitrobacter → nitrate",
+          "Pseudomonas (denitrifying bacteria) convert NO3- to N2 gas"
+        ],
+        "answer": "The plant uses nitrate to build proteins; nitrogen returns to the atmosphere via denitrifying bacteria (Pseudomonas) converting nitrate to N2"
       }
     ],
     "visualization": {
       "type": "simulation",
-      "component": "EcosystemSim",
-      "desc": "Interactive ecosystem energy flow simulation"
+      "component": "BiogeochemicalCycleSim",
+      "desc": "Animated carbon and nitrogen cycle diagrams with clickable bacteria (Rhizobium, Nitrosomonas, Pseudomonas) and a succession timeline from bare rock to climax forest."
     }
   },
   "originalContent": {
     "notes": [
-      "Ecosystem: biotic + abiotic components.",
-      "Food chain: linear energy transfer (grass→rabbit→fox).",
-      "Food web: interconnected chains.",
-      "10% energy transfer rule.",
-      "Biogeochemical cycles: carbon, nitrogen."
+      "Biogeochemical cycles: the movement of elements (C, N, P, H, O) through biotic (living) and abiotic (non-living) compartments.",
+      "Carbon cycle: atmospheric CO2 → photosynthesis (plants) → respiration (animals + plants) → decomposition → soil → oceans; combustion (fossil fuels) releases CO2; carbonate rocks (limestone) store carbon long-term.",
+      "Nitrogen cycle: atmospheric N2 (78%) → nitrogen fixation (Rhizobium, Azotobacter, lightning) → ammonia (NH3) → nitrification (Nitrosomonas → nitrite; Nitrobacter → nitrate) → assimilation (plants) → ammonification (decomposers) → denitrification (Pseudomonas → N2).",
+      "Phosphorus cycle: rock (apatite) → weathering → soil → plants → animals → decomposition → sediment; no gaseous phase (unlike C, N).",
+      "Water cycle: evaporation → condensation → precipitation → runoff → oceans.",
+      "Succession: the process by which an ecosystem changes over time; primary (on bare rock, no soil) vs secondary (on existing soil).",
+      "Primary succession: bare rock → lichens/mosses → grasses → shrubs → forest (climax).",
+      "Secondary succession: after a disturbance (fire, flood, logging) → grasses → shrubs → forest (faster than primary).",
+      "Climax community: stable, mature community in equilibrium with the environment (e.g., mature oak-rhododendron forest in Nepal).",
+      "NEB focus: carbon and nitrogen cycles; concept of succession."
     ],
     "confusion": [
-      "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-      "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-      "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-      "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-      "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-      "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-      "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-      "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-      "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-      "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-      "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-      "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-      "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-      "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-      "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-      "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-      "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-      "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-      "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-      "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-      "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-      "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-      "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-      "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-      "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-      "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-      "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-      "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-      "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-      "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-      "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-      "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-      "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-      "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+      "Nitrogen fixation converts N2 to ammonia (NH3/NH4+); nitrification converts ammonia to nitrite then nitrate; denitrification converts nitrate back to N2.",
+      "Rhizobium (symbiotic, in legume root nodules) and Azotobacter (free-living, in soil) are both nitrogen-fixing bacteria.",
+      "The carbon cycle has a gaseous phase (CO2); the phosphorus cycle does NOT have a gaseous phase.",
+      "Primary succession starts on BARE ROCK (no soil); secondary succession starts on EXISTING SOIL (after disturbance).",
+      "Succession is a PREDICTABLE, directional process toward a stable climax community.",
+      "Decomposition releases nutrients (C, N, P) back into the soil; without it, cycles would stop."
     ],
     "practice": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Draw and explain the carbon cycle (all major steps).",
+      "Draw and explain the nitrogen cycle (all major steps).",
+      "Differentiate primary from secondary succession.",
+      "Define climax community and give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle."
     ],
     "universalFacts": [
-      "Universal scientific fact for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Atmospheric nitrogen (N2) makes up ~78% of the air but is unusable by most organisms until fixed.",
+      "Carbon dioxide is the main gaseous form of carbon in the carbon cycle.",
+      "The phosphorus cycle has no gaseous phase; it is the slowest of the major biogeochemical cycles.",
+      "Climax forests in Nepal: mature oak-rhododendron (temperate) or sal (Terai) forests."
     ],
     "examples": [
-      "Pond: phytoplankton→zooplankton→fish→birds",
-      "Nepal: terai→hills→mountains ecosystems"
+      "Carbon cycle: forest (photosynthesis absorbs CO2) → animals (respiration releases CO2) → decomposers (release CO2) → atmosphere → ocean (dissolved CO2) → limestone (long-term storage).",
+      "Nitrogen cycle: Rhizobium in pea root nodules fixes N2 → plants assimilate nitrate → animals eat plants → decomposers ammonify → denitrifying bacteria release N2.",
+      "Primary succession: bare rock after a volcanic eruption → lichens → mosses → grasses → shrubs → forest.",
+      "Secondary succession: after a forest fire in Nepal → regrowth of grasses → shrubs → trees (faster than primary).",
+      "Climax community: a mature, stable oak-rhododendron forest on the Nepal hills."
     ],
     "practiceQuestions": [
-      "Practice identifying organelles and their functions in electron micrographs.",
-      "Practice distinguishing prokaryotic from eukaryotic cells.",
-      "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-      "Practice explaining the steps of mitosis with diagrams.",
-      "Practice explaining the stages of meiosis and comparing with mitosis.",
-      "Practice calculating chromosome numbers at different stages of cell division.",
-      "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-      "Practice explaining the central dogma: DNA → RNA → protein.",
-      "Practice writing complementary DNA and RNA strands.",
-      "Practice explaining the steps of transcription and translation.",
-      "Practice drawing food chains and food webs for different ecosystems.",
-      "Practice constructing ecological pyramids (energy, biomass, numbers).",
-      "Practice tracing carbon and nitrogen cycles with all major steps.",
-      "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-      "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-      "Practice classifying organisms into five kingdoms with diagnostic features.",
-      "Practice writing binomial names for common organisms.",
-      "Practice creating dichotomous keys for plant and animal identification.",
-      "Practice distinguishing homologous from analogous structures with examples.",
-      "Practice drawing and labeling the evolutionary tree of humans.",
-      "Practice identifying plant groups from specimen descriptions.",
-      "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-      "Practice explaining double fertilization with diagrams.",
-      "Practice identifying animal phyla from morphological features.",
-      "Practice describing the external and internal anatomy of earthworm and frog.",
-      "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-      "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-      "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-      "Practice listing sources and effects of air, water, and soil pollution.",
-      "Practice describing control measures for different types of pollution.",
-      "Practice mapping Nepal's national parks and protected areas.",
-      "Practice listing IUCN categories with examples of endangered species in Nepal.",
-      "Practice comparing in-situ and ex-situ conservation strategies.",
-      "Practice identifying vegetation zones in Nepal by altitude."
+      "Describe the carbon cycle with a labelled diagram.",
+      "Describe the nitrogen cycle with a labelled diagram.",
+      "Differentiate primary from secondary succession.",
+      "What is a climax community? Give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle (fixation, nitrification, denitrification)."
     ],
     "formulas": [
-      "dN/dt=rN((K-N)/K) (logistic growth)"
+      "Carbon cycle: CO2 ↔ organic C (photosynthesis/respiration/decomposition); fossil fuel combustion → CO2",
+      "Nitrogen cycle: N2 → (fixation) NH3 → (nitrification) NO2- → NO3- → (assimilation) plants → (ammonification) NH3 → (denitrification) N2",
+      "Succession: primary (bare rock) / secondary (existing soil) → climax community"
     ],
     "keyPoints": [
-      "Core point for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Biogeochemical cycles: C, N, P, H, O move through biotic + abiotic compartments.",
+      "Carbon cycle: gaseous (CO2); photosynthesis, respiration, decomposition, combustion.",
+      "Nitrogen cycle: N2 → NH3 → NO2- → NO3- → assimilation → ammonification → N2.",
+      "Bacteria: Rhizobium (fixation), Nitrosomonas (nitrification), Pseudomonas (denitrification).",
+      "Phosphorus cycle: no gaseous phase; slowest cycle.",
+      "Succession: primary (bare rock) vs secondary (existing soil); climax community is stable.",
+      "Climax: mature, stable community in equilibrium with the environment."
     ],
-    "summary": "Ecology studies interactions between organisms and their environment.",
+    "summary": "Biogeochemical cycles move essential elements through living and non-living compartments. The carbon cycle (gaseous CO2) and the nitrogen cycle (N2 → NH3 → NO2- → NO3- → N2) are the most important; bacteria (Rhizobium, Nitrosomonas, Pseudomonas) drive key steps. The phosphorus cycle has no gaseous phase and is the slowest. Succession is the directional change of an ecosystem toward a stable climax community: primary succession starts on bare rock, secondary on existing soil. NEB focuses on the carbon and nitrogen cycles and the concept of succession.",
     "specialNotes": [
-      "Specialized insight for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "NEB expects detailed, labelled diagrams of the carbon and nitrogen cycles.",
+      "The role of bacteria (Rhizobium, Nitrosomonas, Pseudomonas) in the nitrogen cycle is a very common exam point.",
+      "Primary vs secondary succession: key difference is the starting point (bare rock vs existing soil).",
+      "Climax community: give a Nepali example (mature oak-rhododendron forest).",
+      "Note that the phosphorus cycle has no gaseous phase."
     ],
     "importantStatements": [
-      "Key statement for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Biogeochemical cycles recycle essential elements through biotic and abiotic compartments.",
+      "Nitrogen fixation converts atmospheric N2 to usable ammonia.",
+      "Primary succession begins on bare rock; secondary succession on existing soil.",
+      "A climax community is a stable, mature ecosystem in equilibrium with its environment."
     ],
     "importantNotes": [
-      "Important note regarding 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Memorise the steps of the carbon and nitrogen cycles.",
+      "Learn the roles of Rhizobium, Nitrosomonas, and Pseudomonas.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Note that the phosphorus cycle has no gaseous phase."
     ],
     "examShortTricks": [
-      "Focus on definitions and classifications.",
-      "Use diagrams to understand Biogeochemical Cycles."
+      "Nitrogen cycle: N2 → NH3 → NO2 → NO3 → plants → NH3 → N2.",
+      "Rhizobium = fixation; Nitrosomonas = nitrification; Pseudomonas = denitrification.",
+      "Carbon cycle = gaseous (CO2); Phosphorus cycle = no gas, slowest.",
+      "Primary = bare rock; Secondary = existing soil; both → climax."
     ],
     "examNotes": [
-      "Biogeochemical Cycles is frequently tested.",
-      "Practice writing detailed answers."
+      "Draw and explain the carbon cycle.",
+      "Draw and explain the nitrogen cycle.",
+      "Explain the role of bacteria in the nitrogen cycle.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Why does the phosphorus cycle have no gaseous phase?"
     ],
     "mcs": [
       {
-        "question": "Question about 03 biogeochemical cycles carbon and nitrogen cycles concept of succession?",
+        "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "Nitrosomonas",
+          "Rhizobium",
+          "Pseudomonas",
+          "Nitrobacter"
         ],
-        "answer": "A"
+        "answer": "B"
+      },
+      {
+        "question": "Which biogeochemical cycle has NO gaseous phase?",
+        "options": [
+          "Carbon",
+          "Nitrogen",
+          "Phosphorus",
+          "Oxygen"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Primary succession begins on:",
+        "options": [
+          "Existing soil",
+          "Bare rock",
+          "A forest",
+          "A pond"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Denitrification converts nitrate to:",
+        "options": [
+          "Ammonia",
+          "Nitrite",
+          "Nitrogen gas (N2)",
+          "Oxygen"
+        ],
+        "answer": "C"
       }
     ],
     "importantConcepts": [
-      "Key concept 1 for 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Carbon cycle",
+      "Nitrogen cycle",
+      "Phosphorus cycle",
+      "Bacteria roles (fixation, nitrification, denitrification)",
+      "Succession (primary vs secondary)",
+      "Climax community",
+      "Biogeochemical cycles",
+      "Gaseous vs non-gaseous cycles"
     ],
     "importantTasks": [
-      "Task for studying 03 biogeochemical cycles carbon and nitrogen cycles concept of succession."
+      "Draw carbon cycle",
+      "Draw nitrogen cycle",
+      "Explain bacteria roles",
+      "Differentiate primary vs secondary succession",
+      "Define climax community"
     ],
-    "exercises": [],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "In the nitrogen cycle, a plant absorbs nitrate (NO3-). What does the plant use it for, and how does the nitrogen eventually return to the atmosphere?",
+        "steps": [
+          "Plant uses NO3- to make amino acids/proteins (assimilation)",
+          "Animal eats plant; N moves to animal proteins",
+          "Decomposers break down dead tissue → ammonia (ammonification)",
+          "Nitrosomonas → nitrite; Nitrobacter → nitrate",
+          "Pseudomonas (denitrifying bacteria) convert NO3- to N2 gas"
+        ],
+        "answer": "The plant uses nitrate to build proteins; nitrogen returns to the atmosphere via denitrifying bacteria (Pseudomonas) converting nitrate to N2"
+      }
+    ],
     "visualization": {
       "type": "simulation",
-      "component": "EcosystemSim",
-      "desc": "Interactive ecosystem energy flow simulation"
+      "component": "BiogeochemicalCycleSim",
+      "desc": "Animated carbon and nitrogen cycle diagrams with clickable bacteria (Rhizobium, Nitrosomonas, Pseudomonas) and a succession timeline from bare rock to climax forest."
     }
   }
 }
