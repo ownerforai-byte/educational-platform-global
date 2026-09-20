@@ -6,6 +6,7 @@ import {
   Atom,
   FlaskConical,
   Dna,
+  Sigma,
   ChevronRight,
   Construction,
   Sparkles,
@@ -24,6 +25,7 @@ const SUBJECT_META: Record<string, { label: string; icon: React.ReactNode; accen
   physics: { label: "Physics", icon: <Atom className="h-5 w-5" />, accent: "sky" },
   chemistry: { label: "Chemistry", icon: <FlaskConical className="h-5 w-5" />, accent: "amber" },
   biology: { label: "Biology", icon: <Dna className="h-5 w-5" />, accent: "emerald" },
+  mathematics: { label: "Mathematics", icon: <Sigma className="h-5 w-5" />, accent: "violet" },
 };
 
 export default async function DerivationsPage() {
@@ -41,11 +43,11 @@ export default async function DerivationsPage() {
     };
   });
 
-  // Filesystem-indexed derivations for other subjects (e.g. Mathematics)
+  // Filesystem-indexed derivations for other subjects (outside the ordered tracks)
   const allEntries = await getDerivationIndex();
   const otherByClass = new Map<string, Map<string, number>>();
   for (const e of allEntries) {
-    if ((["physics", "chemistry", "biology"] as string[]).includes(e.subjectSlug)) continue;
+    if ((["physics", "chemistry", "biology", "mathematics"] as string[]).includes(e.subjectSlug)) continue;
     const cls = otherByClass.get(e.classSlug) ?? new Map<string, number>();
     cls.set(e.subjectSlug, (cls.get(e.subjectSlug) ?? 0) + 1);
     otherByClass.set(e.classSlug, cls);

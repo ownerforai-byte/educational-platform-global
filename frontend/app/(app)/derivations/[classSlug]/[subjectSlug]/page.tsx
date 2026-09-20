@@ -21,7 +21,7 @@ export default async function DerivationsSubjectPage({
   const subjectData = getSubjectSyllabus(classSlug, subjectSlug);
 
   // ── Non-PCB subjects: legacy filesystem index ──
-  if (!["physics", "chemistry", "biology"].includes(subjectSlug)) {
+  if (!["physics", "chemistry", "biology", "mathematics"].includes(subjectSlug)) {
     const { getDerivationIndex } = await import("@/lib/derivations");
     const allEntries = await getDerivationIndex();
     const entries = allEntries.filter(

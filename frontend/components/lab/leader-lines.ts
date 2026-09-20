@@ -42,9 +42,12 @@ const NS = "http://www.w3.org/2000/svg";
 const TOGGLE_EVENT = "leader-line-toggle";
 
 /** Project a scene point to pixel coordinates. */
+const _projScratch = new THREE.Vector3();
 function project2(cam: THREE.Camera, p: THREE.Vector3, w: number, h: number): [number, number] {
-  const v = p.clone().project(cam);
-  return [(v.x + 1) * (w / 2), (1 - v.y) * (h / 2)];
+  // Shared scratch (never re-entrant: results are consumed immediately) —
+  // avoids allocating a Vector3 clone twice per line per frame.
+  _projScratch.copy(p).project(cam);
+  return [(_projScratch.x + 1) * (w / 2), (1 - _projScratch.y) * (h / 2)];
 }
 
 /** Remembers each label's authored anchor so per-frame decluttering never drifts. */
@@ -71,6 +74,13 @@ export function createLeaderLayer(mount: HTMLElement): {
   isExpanded: (id: string) => boolean;
   setExpanded: (id: string, expanded: boolean) => void;
   getPinIds: () => string[];
+  setRevealMode: (on: boolean) => void;
+  isRevealMode: () => boolean;
+  revealNext: () => void;
+  revealAllLabels: () => void;
+  hideAllLabels: () => void;
+  revealedCount: () => number;
+  totalCount: () => number;
 } {
   const svg = document.createElementNS(NS, "svg");
   svg.setAttribute("width", "100%");
@@ -87,11 +97,32 @@ export function createLeaderLayer(mount: HTMLElement): {
     return cw > 0 && cw < 420 ? Math.max(0.6, cw / 560) : 1;
   };
   const chipScaleRO = new ResizeObserver(() => {
+    // Invalidate cached chip boxes; next draw re-measures at the new size.
+    chipScaleVersion++;
     // Trigger an immediate redraw at the new scale.
     const ev = new CustomEvent("leader-line-resize");
     window.dispatchEvent(ev);
   });
   chipScaleRO.observe(mount);
+
+  let chipScaleVersion = 0;
+  // Cached chip measurement boxes (smoothness): chip sizes only change on
+  // mount resize / scale change, so avoid a per-frame getBoundingClientRect
+  // (a forced layout read inside rAF = layout thrashing). Cache is keyed by
+  // the chip element and invalidated on resize or scene rebuild.
+  const chipBoxCache = new WeakMap<HTMLElement, { v: number; w: number; h: number }>();
+  const measureChip = (inner: HTMLElement, el: HTMLElement | undefined): { w: number; h: number } => {
+    const cached = chipBoxCache.get(inner);
+    if (cached && cached.v === chipScaleVersion) return cached;
+    const box = inner.getBoundingClientRect();
+    const size = {
+      v: chipScaleVersion,
+      w: box?.width || el?.offsetWidth || 96,
+      h: box?.height || el?.offsetHeight || 44,
+    };
+    chipBoxCache.set(inner, size);
+    return size;
+  };
 
   // Per-line expansion state, keyed by stable line id.
   const stateStore = new Map<string, LeaderLineRuntimeState>();
@@ -105,6 +136,8 @@ export function createLeaderLayer(mount: HTMLElement): {
     }
     return k;
   }
+  // NOTE: keyFor's template string allocation only happens when lines lack
+  // stable ids; scenes that pass `id` in LeaderLine skip it entirely.
 
   function emit(id: string, expanded: boolean) {
     if (typeof window === "undefined") return;
@@ -135,6 +168,42 @@ export function createLeaderLayer(mount: HTMLElement): {
 
   function getPinIds(): string[] {
     return [...knownIds];
+  }
+
+  // ── Reveal mode (classroom reveal) ─────────────────────────────
+  // Labels can start hidden and be revealed ONE BY ONE (Next), all at
+  // once (Show all) or cleared (Hide all). UI lives in the floating
+  // reveal bar (createRevealBar). Outside reveal mode everything is
+  // always visible.
+  let revealMode = false;
+  let revealSeq = 0; // number of labels revealed so far
+
+  function setRevealMode(on: boolean): void {
+    revealMode = on;
+    revealSeq = 0; // entering reveal mode starts from a blank scene
+  }
+  function isRevealMode(): boolean {
+    return revealMode;
+  }
+  function isRevealed(id: string): boolean {
+    if (!revealMode) return true;
+    const idx = knownIds.indexOf(id);
+    return idx >= 0 && idx < revealSeq;
+  }
+  function revealNext(): void {
+    revealSeq = Math.min(revealSeq + 1, knownIds.length);
+  }
+  function revealAllLabels(): void {
+    revealSeq = knownIds.length;
+  }
+  function hideAllLabels(): void {
+    revealSeq = 0;
+  }
+  function revealedCount(): number {
+    return revealMode ? revealSeq : knownIds.length;
+  }
+  function totalCount(): number {
+    return knownIds.length;
   }
 
   // ── Hold-to-expand gesture handling ─────────────────────────────
@@ -183,11 +252,25 @@ export function createLeaderLayer(mount: HTMLElement): {
   }
 
   function draw(camera: THREE.Camera, lines: LeaderLine[]) {
-    svg.innerHTML = "";
+    // NOTE: no svg.innerHTML wipe — nodes live in a persistent pool and are
+    // swept individually (see the pool sweep below). Wiping here would detach
+    // the pooled groups every frame and defeat the pool entirely.
     const w = mount.clientWidth || 1;
     const h = mount.clientHeight || 1;
     const tmp = new THREE.Vector3();
     const world = new THREE.Vector3();
+
+    // ── Reveal sync ──────────────────────────────────────────────
+    // Keep each CSS2D chip's DOM visibility in step with the reveal
+    // state so "one by one" / "Hide all" hides the CHIP (and its
+    // leader line) — not just the SVG stroke.
+    lines.forEach((l, i) => {
+      const el = (l.label as unknown as { element?: HTMLElement }).element;
+      if (!el) return;
+      const show = l.label.visible && isRevealed(keyFor(i, l));
+      const next = show ? "" : "none";
+      if (el.style.display !== next) el.style.display = next;
+    });
 
     // ── Screen-space declutter ──────────────────────────────────────
     // CSS2D chips anchored at fixed 3D points can overlap once projected
@@ -201,8 +284,9 @@ export function createLeaderLayer(mount: HTMLElement): {
     }
     const scale = chipScale();
     const items: DeclItem[] = [];
-    lines.forEach((l) => {
+    lines.forEach((l, i) => {
       if (!l.label.visible) return;
+      if (!isRevealed(keyFor(i, l))) return;
       let base = basePositions.get(l.label);
       if (!base) {
         base = l.label.position.clone();
@@ -212,17 +296,23 @@ export function createLeaderLayer(mount: HTMLElement): {
       l.label.updateMatrixWorld();
       tmp.setFromMatrixPosition(l.label.matrixWorld);
       const ndc = tmp.project(camera);
+      // Self-heal: a torn-down tab can hand back NaN projections for one
+      // frame; reset the chip to its authored anchor instead of letting
+      // NaN cascade into the SVG ("M NaN NaN" console spam).
+      if (!Number.isFinite(ndc.x) || !Number.isFinite(ndc.y)) {
+        l.label.position.copy(base);
+        return;
+      }
       const el = (l.label as unknown as { element?: HTMLElement }).element;
-      // Scale the styled inner chip on narrow mounts and measure the VISUAL
-      // box so decluttering packs the true on-screen size.
+      // Scale the styled inner chip on narrow mounts; measure the VISUAL box
+      // (from cache) so decluttering packs the true on-screen size.
       const inner = (el?.firstElementChild as HTMLElement | null) ?? el;
       if (inner && inner !== el) {
         inner.style.transformOrigin = "center center";
-        inner.style.transform = scale < 1 ? `scale(${scale})` : "";
+        const wantT = scale < 1 ? `scale(${scale})` : "";
+        if (inner.style.transform !== wantT) inner.style.transform = wantT;
       }
-      const box = inner?.getBoundingClientRect();
-      const vw = box?.width || el?.offsetWidth || 96;
-      const vh = box?.height || el?.offsetHeight || 44;
+      const { w: vw, h: vh } = inner ? measureChip(inner, el) : { w: el?.offsetWidth || 96, h: el?.offsetHeight || 44 };
       items.push({
         l,
         sx: (ndc.x + 1) * (w / 2),
@@ -298,17 +388,99 @@ export function createLeaderLayer(mount: HTMLElement): {
       it.l.label.updateMatrixWorld();
     });
 
+    // ── Persistent node pool (smoothness) ────────────────────────
+    // One <g> per line, created ONCE and reused every frame. Attributes
+    // are written only when a value actually changes (fingerprint check),
+    // and pin listeners are attached once at creation. This replaces the
+    // old wipe-and-rebuild (svg.innerHTML = "" + recreate ~7 nodes and 4
+    // listeners per line per frame) which caused constant GC churn and
+    // visible jank on busy scenes.
+    interface PoolEntry {
+      g: SVGGElement;
+      line: SVGPathElement;
+      tick: SVGPathElement;
+      pin: SVGCircleElement;
+      pinInner: SVGCircleElement;
+      minus: SVGRectElement;
+      plusV: SVGRectElement;
+      lastKey: string;
+    }
+    if (!(draw as unknown as { pool?: Map<string, PoolEntry> }).pool) {
+      (draw as unknown as { pool?: Map<string, PoolEntry> }).pool = new Map();
+    }
+    const pool = (draw as unknown as { pool: Map<string, PoolEntry> }).pool;
+    const usedIds = new Set<string>();
+
+    const makeEntry = (id: string): PoolEntry => {
+      const g = document.createElementNS(NS, "g");
+      const line = document.createElementNS(NS, "path");
+      line.setAttribute("fill", "none");
+      line.setAttribute("stroke-linecap", "round");
+      line.style.pointerEvents = "none";
+      const tick = document.createElementNS(NS, "path");
+      tick.setAttribute("fill", "none");
+      tick.setAttribute("stroke-linecap", "round");
+      tick.style.pointerEvents = "none";
+      const pin = document.createElementNS(NS, "circle");
+      pin.setAttribute("fill", "#ffffff");
+      pin.setAttribute("data-pin-id", id);
+      pin.style.pointerEvents = "auto";
+      pin.style.cursor = "pointer";
+      pin.style.touchAction = "none";
+      // Listeners are bound ONCE per pooled pin — never per frame.
+      pin.addEventListener("pointerdown", (ev) => {
+        ev.stopPropagation();
+        startHold(id);
+      });
+      pin.addEventListener("pointerup", (ev) => {
+        ev.stopPropagation();
+        endHold();
+      });
+      pin.addEventListener("pointerleave", () => cancelHold());
+      pin.addEventListener("pointercancel", () => cancelHold());
+      const pinInner = document.createElementNS(NS, "circle");
+      pinInner.setAttribute("stroke", "none");
+      pinInner.style.pointerEvents = "none";
+      const minus = document.createElementNS(NS, "rect");
+      minus.setAttribute("height", "1.8");
+      minus.setAttribute("rx", "0.9");
+      minus.style.pointerEvents = "none";
+      const plusV = document.createElementNS(NS, "rect");
+      plusV.setAttribute("width", "1.8");
+      plusV.setAttribute("rx", "0.9");
+      plusV.style.pointerEvents = "none";
+      g.append(line, tick, pin, pinInner, minus, plusV);
+      svg.appendChild(g);
+      return { g, line, tick, pin, pinInner, minus, plusV, lastKey: "" };
+    };
+
+    const setAttr = (el: Element, name: string, val: string) => {
+      if (el.getAttribute(name) !== val) el.setAttribute(name, val);
+    };
+
     lines.forEach((l, i) => {
       if (!l.label.visible) return;
       const id = keyFor(i, l);
+      if (!isRevealed(id)) return;
       const expanded = stateStore.get(id)?.expanded ?? false;
 
       tmp.setFromMatrixPosition(l.label.matrixWorld);
       const [sx, sy] = project2(camera, tmp, w, h);
       const [tx, ty] = project2(camera, l.target, w, h);
       // Skip degenerate lines and off-screen labels
+      if (!Number.isFinite(sx) || !Number.isFinite(sy) || !Number.isFinite(tx) || !Number.isFinite(ty)) return;
       if (Math.abs(sx - tx) < 1 && Math.abs(sy - ty) < 1) return;
       if (sx < -80 || sy < -80 || sx > w + 80 || sy > h + 80) return;
+
+      const fp = `${sx.toFixed(1)}|${sy.toFixed(1)}|${tx.toFixed(1)}|${ty.toFixed(1)}|${l.color}|${expanded ? 1 : 0}`;
+      let e = pool.get(id);
+      if (!e) {
+        e = makeEntry(id);
+        pool.set(id, e);
+      }
+      usedIds.add(id);
+      if (e.lastKey === fp) return; // nothing changed this frame — skip all DOM writes
+      e.lastKey = fp;
 
       // Geometry varies with expanded state.
       const bend = expanded ? 48 : 26;
@@ -322,100 +494,53 @@ export function createLeaderLayer(mount: HTMLElement): {
       // Curved (quadratic) leader: bend above the two points.
       const mx = (sx + tx) / 2;
       const my = Math.min(sy, ty) - bend;
-      const path =
-        `M ${sx.toFixed(1)} ${sy.toFixed(1)}` +
-        ` Q ${mx.toFixed(1)} ${my.toFixed(1)}` +
-        ` ${tx.toFixed(1)} ${ty.toFixed(1)}`;
-
-      const line = document.createElementNS(NS, "path");
-      line.setAttribute("d", path);
-      line.setAttribute("fill", "none");
-      line.setAttribute("stroke", l.color);
-      line.setAttribute("stroke-width", String(strokeW));
-      line.setAttribute("stroke-opacity", expanded ? "1" : "0.95");
-      line.setAttribute("stroke-linecap", "round");
-      svg.appendChild(line);
+      setAttr(e.line, "d", `M ${sx.toFixed(1)} ${sy.toFixed(1)} Q ${mx.toFixed(1)} ${my.toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}`);
+      setAttr(e.line, "stroke", l.color);
+      setAttr(e.line, "stroke-width", String(strokeW));
+      setAttr(e.line, "stroke-opacity", expanded ? "1" : "0.95");
 
       // Tip terminator: perpendicular tick at the target (NOT an arrowhead).
-      // Its angle matches the curve's arrival direction so it reads as a
-      // precise marker of the named point.
       const angle = Math.atan2(ty - my, tx - mx);
       const nx = Math.cos(angle);
       const ny = Math.sin(angle);
-      const t1x = tx - ny * tickHalf;
-      const t1y = ty + nx * tickHalf;
-      const t2x = tx + ny * tickHalf;
-      const t2y = ty - nx * tickHalf;
-      const tick = document.createElementNS(NS, "path");
-      tick.setAttribute(
-        "d",
-        `M ${t1x.toFixed(1)} ${t1y.toFixed(1)} L ${tx.toFixed(1)} ${ty.toFixed(1)} L ${t2x.toFixed(1)} ${t2y.toFixed(1)}`,
-      );
-      tick.setAttribute("fill", "none");
-      tick.setAttribute("stroke", l.color);
-      tick.setAttribute("stroke-width", String(tickW));
-      tick.setAttribute("stroke-linecap", "round");
-      svg.appendChild(tick);
+      setAttr(e.tick, "d", `M ${(tx - ny * tickHalf).toFixed(1)} ${(ty + nx * tickHalf).toFixed(1)} L ${tx.toFixed(1)} ${ty.toFixed(1)} L ${(tx + ny * tickHalf).toFixed(1)} ${(ty - nx * tickHalf).toFixed(1)}`);
+      setAttr(e.tick, "stroke", l.color);
+      setAttr(e.tick, "stroke-width", String(tickW));
 
       // Clickable pin at the label anchor (hold-to-expand).
-      const pin = document.createElementNS(NS, "circle");
-      pin.setAttribute("cx", sx.toFixed(1));
-      pin.setAttribute("cy", sy.toFixed(1));
-      pin.setAttribute("r", String(pinR));
-      pin.setAttribute("fill", "#ffffff");
-      pin.setAttribute("stroke", l.color);
-      pin.setAttribute("stroke-width", expanded ? "2.8" : "2.2");
-      pin.setAttribute("data-pin-id", id);
-      pin.style.pointerEvents = "auto";
-      pin.style.cursor = "pointer";
-      pin.style.touchAction = "none";
-      pin.addEventListener("pointerdown", (ev) => {
-        ev.stopPropagation();
-        startHold(id);
-      });
-      pin.addEventListener("pointerup", (ev) => {
-        ev.stopPropagation();
-        endHold();
-      });
-      pin.addEventListener("pointerleave", () => cancelHold());
-      pin.addEventListener("pointercancel", () => cancelHold());
-      svg.appendChild(pin);
+      setAttr(e.pin, "cx", sx.toFixed(1));
+      setAttr(e.pin, "cy", sy.toFixed(1));
+      setAttr(e.pin, "r", String(pinR));
+      setAttr(e.pin, "stroke", l.color);
+      setAttr(e.pin, "stroke-width", expanded ? "2.8" : "2.2");
 
       // Inner dot (non-interactive).
-      const pinInner = document.createElementNS(NS, "circle");
-      pinInner.setAttribute("cx", sx.toFixed(1));
-      pinInner.setAttribute("cy", sy.toFixed(1));
-      pinInner.setAttribute("r", String(pinInnerR));
-      pinInner.setAttribute("fill", l.color);
-      pinInner.setAttribute("stroke", "none");
-      pinInner.style.pointerEvents = "none";
-      svg.appendChild(pinInner);
+      setAttr(e.pinInner, "cx", sx.toFixed(1));
+      setAttr(e.pinInner, "cy", sy.toFixed(1));
+      setAttr(e.pinInner, "r", String(pinInnerR));
+      setAttr(e.pinInner, "fill", l.color);
 
-      // Plus/minus glyph indicating the current state.
-      // Expanded => minus only; compact => plus (horizontal + vertical bars).
-      const glyphColor = l.color;
-      const minus = document.createElementNS(NS, "rect");
-      minus.setAttribute("x", (sx - glyphR).toFixed(1));
-      minus.setAttribute("y", (sy - 0.9).toFixed(1));
-      minus.setAttribute("width", String(glyphR * 2));
-      minus.setAttribute("height", "1.8");
-      minus.setAttribute("rx", "0.9");
-      minus.setAttribute("fill", glyphColor);
-      minus.style.pointerEvents = "none";
-      svg.appendChild(minus);
-
-      if (!expanded) {
-        const plusV = document.createElementNS(NS, "rect");
-        plusV.setAttribute("x", (sx - 0.9).toFixed(1));
-        plusV.setAttribute("y", (sy - glyphR).toFixed(1));
-        plusV.setAttribute("width", "1.8");
-        plusV.setAttribute("height", String(glyphR * 2));
-        plusV.setAttribute("rx", "0.9");
-        plusV.setAttribute("fill", glyphColor);
-        plusV.style.pointerEvents = "none";
-        svg.appendChild(plusV);
-      }
+      // Plus/minus glyph: expanded => minus only; compact => plus.
+      setAttr(e.minus, "x", (sx - glyphR).toFixed(1));
+      setAttr(e.minus, "y", (sy - 0.9).toFixed(1));
+      setAttr(e.minus, "width", String(glyphR * 2));
+      setAttr(e.minus, "fill", l.color);
+      setAttr(e.plusV, "x", (sx - 0.9).toFixed(1));
+      setAttr(e.plusV, "y", (sy - glyphR).toFixed(1));
+      setAttr(e.plusV, "height", String(glyphR * 2));
+      setAttr(e.plusV, "fill", l.color);
+      const pv = e.plusV.getAttribute("display") ?? "";
+      const wantPv = expanded ? "none" : "";
+      if (pv !== wantPv) e.plusV.setAttribute("display", wantPv);
     });
+
+    // Sweep pooled groups whose lines disappeared (tab switch, scene rebuild).
+    for (const [pid, pe] of pool) {
+      if (!usedIds.has(pid)) {
+        pe.g.remove();
+        pool.delete(pid);
+      }
+    }
   }
 
   function dispose() {
@@ -424,9 +549,123 @@ export function createLeaderLayer(mount: HTMLElement): {
     if (svg.parentNode) svg.parentNode.removeChild(svg);
     stateStore.clear();
     knownIds.length = 0;
+    (draw as unknown as { pool?: Map<string, unknown> }).pool?.clear();
   }
 
-  return { draw, dispose, toggle, isExpanded, setExpanded, getPinIds };
+  return {
+    draw,
+    dispose,
+    toggle,
+    isExpanded,
+    setExpanded,
+    getPinIds,
+    setRevealMode,
+    isRevealMode,
+    revealNext,
+    revealAllLabels,
+    hideAllLabels,
+    revealedCount,
+    totalCount,
+  };
 }
 
 export default createLeaderLayer;
+
+export type LeaderLayer = ReturnType<typeof createLeaderLayer>;
+
+/**
+ * Floating reveal control bar for a leader layer.
+ *
+ * Buttons: Reveal (toggle reveal mode) · Next (reveal labels one by one,
+ * with a live "n / total" counter) · Show all · Hide all.
+ *
+ * Place the returned element inside the scene mount (it positions itself
+ * absolute top-left, clear of the VizToolbar in the top-right). All
+ * drawing is picked up by the scene's own animation loop, so no extra
+ * redraw plumbing is needed.
+ */
+export function createRevealBar(
+  host: HTMLElement,
+  layer: LeaderLayer,
+): () => void {
+  // Idempotent per mount: a re-created scene on the same mount replaces
+  // the previous bar instead of stacking duplicates.
+  host
+    .querySelectorAll("[data-leader-reveal-bar]")
+    .forEach((el) => el.remove());
+
+  const bar = document.createElement("div");
+  bar.dataset.leaderRevealBar = "";
+  bar.style.cssText =
+    "position:absolute;top:8px;left:8px;z-index:30;display:flex;align-items:center;gap:6px;" +
+    "padding:4px 6px;border-radius:12px;background:rgba(2,6,23,0.82);" +
+    "border:1px solid rgba(148,163,184,0.35);backdrop-filter:blur(6px);" +
+    "font:600 11px/1 ui-sans-serif,system-ui;color:#e2e8f0;user-select:none;";
+
+  const mkBtn = (label: string, title: string, color: string) => {
+    const b = document.createElement("button");
+    b.textContent = label;
+    b.title = title;
+    b.style.cssText =
+      "padding:4px 8px;border-radius:8px;border:1px solid rgba(148,163,184,0.3);" +
+      "background:rgba(15,23,42,0.6);color:#e2e8f0;cursor:pointer;font:inherit;" +
+      "transition:background .15s,border-color .15s;";
+    b.addEventListener("pointerdown", (ev) => ev.stopPropagation());
+    b.addEventListener("click", (ev) => ev.stopPropagation());
+    b.dataset.color = color;
+    return b;
+  };
+
+  const revealToggle = mkBtn("◉ Reveal", "Reveal mode: labels start hidden", "#38bdf8");
+  const counter = document.createElement("span");
+  counter.style.cssText = "padding:0 2px;opacity:.85;min-width:34px;text-align:center;";
+  const nextBtn = mkBtn("Next +1", "Reveal the next label", "#38bdf8");
+  const allBtn = mkBtn("Show all", "Reveal every label at once", "#a3e635");
+  const hideBtn = mkBtn("Hide all", "Hide every label again", "#f87171");
+
+  bar.append(revealToggle, counter, nextBtn, allBtn, hideBtn);
+  host.appendChild(bar);
+
+  const sync = () => {
+    const on = layer.isRevealMode();
+    const total = layer.totalCount();
+    const shown = layer.revealedCount();
+    revealToggle.style.borderColor = on ? "#38bdf8" : "rgba(148,163,184,0.3)";
+    revealToggle.style.background = on ? "rgba(56,189,248,0.18)" : "rgba(15,23,42,0.6)";
+    revealToggle.style.color = on ? "#7dd3fc" : "#e2e8f0";
+    counter.textContent = `${shown}/${total}`;
+    const exhausted = !on || shown >= total;
+    nextBtn.style.opacity = exhausted ? "0.4" : "1";
+    nextBtn.style.pointerEvents = exhausted ? "none" : "auto";
+    hideBtn.style.opacity = on && shown === 0 ? "0.4" : "1";
+    hideBtn.style.pointerEvents = on && shown === 0 ? "none" : "auto";
+  };
+
+  revealToggle.addEventListener("click", () => {
+    layer.setRevealMode(!layer.isRevealMode());
+    sync();
+  });
+  nextBtn.addEventListener("click", () => {
+    layer.revealNext();
+    sync();
+  });
+  allBtn.addEventListener("click", () => {
+    layer.revealAllLabels();
+    sync();
+  });
+  hideBtn.addEventListener("click", () => {
+    layer.hideAllLabels();
+    sync();
+  });
+  sync();
+
+  // Refresh the counter when the scene's line set changes (tab switches
+  // rebuild scenes, but a live-updating scene may add lines mid-flight).
+  const ro = new ResizeObserver(sync);
+  ro.observe(host);
+
+  return () => {
+    ro.disconnect();
+    bar.remove();
+  };
+}

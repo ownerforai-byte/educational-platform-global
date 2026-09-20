@@ -21,7 +21,7 @@ export default async function TheoremsSubjectPage({
   const subjectData = getSubjectSyllabus(classSlug, subjectSlug);
 
   // ── Non-PCB subjects: legacy filesystem index ──
-  if (!["physics", "chemistry", "biology"].includes(subjectSlug)) {
+  if (!["physics", "chemistry", "biology", "mathematics"].includes(subjectSlug)) {
     const { getTheoremIndex, groupTheoremsByUnit } = await import("@/lib/theorems");
     const allEntries = await getTheoremIndex();
     const entries = allEntries.filter(

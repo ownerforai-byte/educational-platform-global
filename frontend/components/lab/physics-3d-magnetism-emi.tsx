@@ -18,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -81,7 +82,8 @@ const MagnetismTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -99,6 +101,7 @@ const MagnetismTab: React.FC = () => {
         labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
         mountRef.current!.appendChild(labelRenderer.domElement);
         try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
         const connections: any[] = [];
         const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
@@ -294,7 +297,8 @@ const EMITab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -306,6 +310,7 @@ const EMITab: React.FC = () => {
     labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
     mountRef.current!.appendChild(labelRenderer.domElement);
     try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
     const connections: any[] = [];
     const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {

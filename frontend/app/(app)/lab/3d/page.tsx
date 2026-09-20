@@ -14,7 +14,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, Cuboid } from "lucide-react";
+import { Search, Cuboid, BookOpen } from "lucide-react";
 import { LAB_REGISTRY, getLabsByCategory } from "@/lib/lab-registry";
 import { LAB_UNIT_ORDER, LAB_SUBJECTS } from "@/lib/lab-unit-order";
 import { getSubjectSyllabus } from "@/lib/syllabus";
@@ -45,7 +45,9 @@ export default function Lab3DPage() {
   const subjects = LAB_SUBJECTS.filter((s) => getLabsByCategory(s.key).length > 0);
 
   const grouped = useMemo(() => {
-    const labs = getLabsByCategory(subject);
+    // Strictly 3D: theory topics live in their own hub at /lab/theory,
+    // calculators in the /lab dashboard — no type mixing here.
+    const labs = getLabsByCategory(subject).filter((l) => l.type === "3d");
     const order = LAB_UNIT_ORDER[subject] ?? {};
 
     // Resolve syllabus units in official order for this subject
@@ -107,16 +109,26 @@ export default function Lab3DPage() {
             3D Labs — All in One
           </h1>
           <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
-            Every 3D simulation, unit suite and theory lab on one ordered route —
+            Every 3D simulation and unit suite on one ordered route —
             grouped by subject and official NEB syllabus unit, Class 11 → Class 12.
+            Theory topics live in <Link href="/lab/theory" className="text-primary hover:underline">Lab Theory</Link>.
           </p>
         </div>
-        <Link
-          href="/lab"
-          className="rounded-xl border border-border bg-card px-4 py-2 text-sm font-medium hover:border-primary/40 transition-colors"
-        >
-          Full lab dashboard →
-        </Link>
+        <div className="flex gap-2 flex-wrap">
+          <Link
+            href="/lab/theory"
+            className="rounded-xl border border-border bg-card px-4 py-2 text-sm font-medium hover:border-primary/40 transition-colors inline-flex items-center gap-2"
+          >
+            <BookOpen className="h-4 w-4" />
+            Lab Theory →
+          </Link>
+          <Link
+            href="/lab"
+            className="rounded-xl border border-border bg-card px-4 py-2 text-sm font-medium hover:border-primary/40 transition-colors"
+          >
+            Full lab dashboard →
+          </Link>
+        </div>
       </div>
 
       {/* Subject tabs */}

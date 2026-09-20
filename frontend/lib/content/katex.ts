@@ -63,6 +63,14 @@ export const KATEX_OPTIONS: KatexOptions & { macros: Record<string, string> } = 
 };
 
 /**
+ * Repairs export/JSON escaping where LaTeX commands arrive with repeated
+ * backslashes (for example `\\circ` instead of `\circ`).
+ */
+export function normalizeLatexExpression(expression: string): string {
+  return expression.replace(/\\{3,}(?=[A-Za-z])/g, "\\");
+}
+
+/**
  * Normalizes math delimiters that remark-math does not understand natively
  * into its `$` / `$$` forms. Code fences and inline code are left untouched
  * so snippets keep their literal backslashes.
@@ -73,10 +81,19 @@ export function normalizeMathDelimiters(text: string): string {
     .map((segment) => {
       if (!segment) return segment;
       if (segment.startsWith("`")) return segment;
-      return segment
+      const normalized = segment
         .replace(/\\\[((?:.|\n)*?)\\\]/g, (_m, body) => `$$${String(body).trim()}$$`)
         .replace(/\\\(((?:.|\n)*?)\\\)/g, (_m, body) => `$${String(body).trim()}$`)
         .replace(/\\\$(?:(?!\\\$)[\s\S])*?\\\$/g, (m) => `$$${m.slice(2, -2)}$$`);
+      return normalized.replace(
+        /(\$\$[\s\S]*?\$\$|\$(?:\\.|[^$\\])+\$)/g,
+        (math) => {
+          const offset = math.startsWith("$$") ? 2 : 1;
+          return `${math.slice(0, offset)}${normalizeLatexExpression(
+            math.slice(offset, -offset),
+          )}${math.slice(-offset)}`;
+        },
+      );
     })
     .join("");
 }

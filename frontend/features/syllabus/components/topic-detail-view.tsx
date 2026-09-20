@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
+import { TopicComingSoonBanner } from "@/components/content/topic-coming-soon-banner";
+import { hasTopicManifestNotes } from "@/lib/topic-content-index";
 import { MindmapInterface } from "@/features/mindmap/components/mindmap-interface";
 import { getTopicMindmap, buildSyllabusTopicMindmap } from "@/features/mindmap/queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
@@ -33,6 +35,7 @@ export async function TopicDetailView({
   }
 
   const { unit, topic } = data;
+  const hasNotes = await hasTopicManifestNotes(subjectSlug, unitId, topic.slug);
   let mindmap: Awaited<ReturnType<typeof getTopicMindmap>> | undefined;
   try {
     mindmap = await getTopicMindmap({
@@ -84,6 +87,15 @@ export async function TopicDetailView({
         </div>
         <h1 className="text-3xl font-extrabold tracking-tight text-foreground">{topic.title}</h1>
       </div>
+
+      {/* Explicit Coming Soon state when no authored notes exist yet */}
+      {!hasNotes && (
+        <TopicComingSoonBanner
+          topicTitle={topic.title}
+          backHref={`${basePath}/chapters/${unit.id}`}
+          backLabel="Unit topics"
+        />
+      )}
 
       {/* All Added Notes in Vertical Scroll */}
       <TopicVerticalNotes

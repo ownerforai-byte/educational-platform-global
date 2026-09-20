@@ -32,8 +32,8 @@ export default async function DerivationDetailPage({
     </nav>
   );
 
-  // ── 1. PCB syllabus-ordered items ──
-  if (["physics", "chemistry", "biology"].includes(subjectSlug)) {
+  // ── 1. Syllabus-ordered items (PCB + Mathematics) ──
+  if (["physics", "chemistry", "biology", "mathematics"].includes(subjectSlug)) {
     const item = findSyllabusTheoremItem(classSlug, subjectSlug, topicSlug);
     if (item) {
       if (item.hasCuratedContent && item.curated) {

@@ -14,6 +14,7 @@ import {
   createThreeScene,
   disposeThreeScene,
   bindResize,
+  makeVisibilityGate,
   type ThreeScene,
   clearGroup,
 } from "@/components/lab/three-scene";
@@ -65,8 +66,10 @@ function MagneticField3D() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -161,8 +164,10 @@ function WaveOptics3D() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -305,8 +310,10 @@ function SpacetimeCurvature() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -411,8 +418,10 @@ function QuantumOrbitals() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -512,8 +521,10 @@ function NuclearDecay() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -608,8 +619,10 @@ function FluidFlow() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -720,8 +733,10 @@ function NBodySystem() {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
@@ -833,8 +848,10 @@ function PVTSurface() {
     const ts = createThreeScene(containerRef.current, { cameraPosition: new THREE.Vector3(12, 9, 12), autoRotate: true, autoRotateSpeed: 0.4, axes: true });
     tsRef.current = ts;
     const unbind = bindResize(ts);
+    const isLive = makeVisibilityGate(containerRef.current!);
     function animate() {
       requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       ts!.controls.update();
       ts!.renderer.render(ts!.scene, ts!.camera);
     }

@@ -16,7 +16,7 @@ import { SYLLABUS, slugifySyllabusTopic, getSubjectSyllabus } from "@/lib/syllab
 import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
 import type { DerivationOrTheorem } from "@/lib/derivations-data";
 
-export const THEOREM_PROOF_SUBJECTS = ["physics", "chemistry", "biology"] as const;
+export const THEOREM_PROOF_SUBJECTS = ["physics", "chemistry", "biology", "mathematics"] as const;
 
 /** Topics whose title matches any of these become theorem/proof/derivation pages. */
 const TOPIC_KEYWORDS = [
@@ -145,7 +145,8 @@ export function getSyllabusTheoremItems(
     }
   }
 
-  // Merge curated derivations/theorems for this subject into their best-matching topic.
+  // Merge curated derivations/theorems for this subject into their best-matching
+  // topic. Subject slugs in the data files are identical to syllabus slugs.
   const curatedForSubject = DERIVATIONS_AND_THEOREMS.filter(
     (d) =>
       d.subject === subjectSlug &&

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
-import { KATEX_OPTIONS } from "@/lib/content/katex";
+import { KATEX_OPTIONS, normalizeLatexExpression } from "@/lib/content/katex";
 
 type KatexProps = {
   math: string;
@@ -17,7 +17,7 @@ export function Katex({ math, displayMode = false, className }: KatexProps) {
   useEffect(() => {
     if (!containerRef.current || !math) return;
     try {
-      katex.render(math, containerRef.current, {
+      katex.render(normalizeLatexExpression(math), containerRef.current, {
         ...KATEX_OPTIONS,
         displayMode,
       });

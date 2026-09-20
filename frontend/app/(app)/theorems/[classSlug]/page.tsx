@@ -40,7 +40,7 @@ export default async function TheoremsClassPage({
   const otherSubjects = new Map<string, number>();
   for (const e of allEntries) {
     if (e.classSlug !== classSlug) continue;
-    if ((["physics", "chemistry", "biology"] as string[]).includes(e.subjectSlug)) continue;
+    if ((["physics", "chemistry", "biology", "mathematics"] as string[]).includes(e.subjectSlug)) continue;
     otherSubjects.set(e.subjectSlug, (otherSubjects.get(e.subjectSlug) ?? 0) + 1);
   }
 

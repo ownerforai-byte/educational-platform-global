@@ -16,9 +16,9 @@ import {
   BiologyPopulationCalculator,
   BiologyPhotosynthesisCalculator,
 } from "@/components/lab/biology-3d";
-import { BiologyEvolution3D } from "@/components/lab/biology-evolution-3d";
-import { BiologyCell3D } from "@/components/lab/biology-cell-3d";
-import { BiologyEcology3D } from "@/components/lab/biology-ecology-3d";
+import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
+import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
+import { BiologySyllabusSuite3D } from "@/components/lab/biology-syllabus-suite-3d";
 import { Physics3DVectors } from "@/components/lab/physics-3d-vectors";
 import {
   MathModern3D,
@@ -32,7 +32,6 @@ import {
 } from "@/components/lab/math-perpendicular-3d";
 import { Class11Physics3DPlus } from "@/components/lab/class11/class11-physics-3d-plus";
 import { Class11Chemistry3DPlus } from "@/components/lab/class11/class11-chemistry-3d-plus";
-import { Class11Biology3DPlus } from "@/components/lab/class11/class11-biology-3d-plus";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { PeriodicTableView } from "@/components/periodic-table/periodic-table-view";
 import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver";
@@ -41,7 +40,6 @@ import { AILabTutor } from "@/components/lab/ai-lab-tutor";
 import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
 import { WaveOpticsSuite3D } from "@/components/lab/physics-3d-wave-optics";
 import { Vectors3D, Optics3D, Refraction3D } from "@/components/lab/physics-vectors-optics-3d";
-import { OpticsInterferenceLab } from "@/components/lab/optics-interference-lab";
 
 // Additional wired-in 3D visualizations + simulations (previously created but unused)
 import { Physics3DElectrostatics } from "@/components/lab/physics-3d-electrostatics";
@@ -63,17 +61,10 @@ import { Chemistry3DSyllabusSuite } from "@/components/lab/chemistry-3d-syllabus
 import { Math3DGeometryLabeled } from "@/components/lab/math-3d-geometry-labelledby";
 import { Math3DSyllabusSuite } from "@/components/lab/math-3d-syllabus-suite";
 import { MathAdvanced3D } from "@/components/lab/math-advanced-3d";
-import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
-import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
-import { BiologyBiomolecules3D } from "@/components/lab/biology-biomolecules-3d";
-import { BiologyBiotaConservation3D } from "@/components/lab/biology-biota-conservation-3d";
-import { BiologyCellDivision3D } from "@/components/lab/biology-cell-division-3d";
-import { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-diversity-3d";
-import { BiologyFloralDiversity3D } from "@/components/lab/biology-floral-diversity-3d";
-import { BiologyMicrobiology3D } from "@/components/lab/biology-microbiology-3d";
 // Unit suites + symbols + heat determinations (previously only reachable via
 // duplicate static routes — consolidated into the registry, see /lab/3d)
 import { MechanicsSuite3D } from "@/components/lab/physics-3d-mechanics-i";
+
 import { ElectricitySuite3D } from "@/components/lab/physics-3d-electricity-i";
 import { MagnetismEMISuite3D } from "@/components/lab/physics-3d-magnetism-emi";
 import { ModernPhysicsSuite3D } from "@/components/lab/physics-3d-modern";
@@ -84,6 +75,7 @@ import ElectricitySymbols from "@/components/lab/physics-3d-electricity-symbols"
 import MechanicsSymbols from "@/components/lab/physics-3d-mechanics-symbols";
 import WavesSymbols from "@/components/lab/physics-3d-waves-symbols";
 import MathSymbols from "@/components/lab/math-3d-symbols";
+import { Physics3DSyllabusSuite } from "@/components/lab/physics-3d-syllabus-suite";
 
 /**
  * Lab registry mapping lab IDs to their component implementations
@@ -212,17 +204,6 @@ export const LAB_REGISTRY: LabMeta[] = [
     color: "#3b82f6",
     unit: "Unit: Optics",
     component: WaveOpticsSuite3D,
-  },
-  {
-    id: "ph-3d-interference",
-    title: "Double-Slit Interference",
-    description: "Live wavefront interference with fringe spacing readout — adjust wavelength, slit gap and screen distance.",
-    category: "physics",
-    type: "3d" as const,
-    status: "new",
-    color: "#3b82f6",
-    unit: "Unit: Optics",
-    component: OpticsInterferenceLab,
   },
   {
     id: "ph-3d-classic",
@@ -602,13 +583,13 @@ export const LAB_REGISTRY: LabMeta[] = [
   {
     id: "bio-3d-cell",
     title: "Cell Structure 3D",
-    description: "Plant and animal cell ultrastructure — organelles, membranes, nucleus in 3D.",
+    description: "Real WebGL: eukaryotic cell ultrastructure + cell division tabs (from Biology 3D Suite).",
     category: "biology",
     type: "3d" as const,
     status: "active",
     color: "#22c55e",
     unit: "Unit: Cell Biology",
-    component: BiologyCell3D,
+    component: Biology3DSuite,
   },
   {
     id: "bio-3d-dna",
@@ -635,35 +616,35 @@ export const LAB_REGISTRY: LabMeta[] = [
   {
     id: "bio-3d-ecology",
     title: "Ecology & Ecosystem 3D",
-    description: "Food chains, food webs, biogeochemical cycles, population dynamics.",
+    description: "Real WebGL: biogeochemical C & N cycles tab (from Biology Diversity & Ecology Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Ecology",
-    component: BiologyEcology3D,
+    component: Biology3DDiversitySuite,
   },
   {
     id: "bio-3d-human",
     title: "Human Body Systems 3D",
-    description: "Circulatory, respiratory, nervous, and digestive systems with interactive labels.",
+    description: "Real WebGL: beating heart, breathing lungs, blood-path circulation tab (Human Physiology in the Biology Syllabus Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Human Physiology",
-    component: BiologyAdvanced3D,
+    component: BiologySyllabusSuite3D,
   },
   {
     id: "bio-3d-evolution",
     title: "Evolution & Classification 3D",
-    description: "Phylogenetic trees, taxonomy hierarchy, fossil record timeline.",
+    description: "Real WebGL: phylogenetic tree, fossil record layers, Darwin's finches tab (Evolution in the Biology Syllabus Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Evolution",
-    component: BiologyEvolution3D,
+    component: BiologySyllabusSuite3D,
   },
   {
     id: "bio-th-cell",
@@ -1035,13 +1016,13 @@ export const LAB_REGISTRY: LabMeta[] = [
   {
     id: "class11-biology",
     title: "Class 11 Biology 3D Plus",
-    description: "Extended 3D biology visualizations — cells, genetics, ecology.",
+    description: "Real WebGL: cells, division, DNA, bacteriophage & ecosystem tabs (from Biology 3D Suite).",
     category: "class11",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Class 11 Biology",
-    component: Class11Biology3DPlus,
+    component: Biology3DSuite,
   },
 
   // ===== ADDED PHYSICS 3D VISUALIZATIONS =====
@@ -1237,6 +1218,21 @@ export const LAB_REGISTRY: LabMeta[] = [
     component: Chemistry3DSyllabusSuite,
   },
 
+  // ===== PHYSICS SYLLABUS SUITE (consolidated, ordered by NEB unit) =====
+  {
+    id: "ph-3d-syllabus-suite",
+    title: "Physics Syllabus Suite 3D",
+    description:
+      "All 34 NEB Physics XI + XII units in official syllabus order — measurement, vectors, kinematics, dynamics, work-energy, circular motion, gravitation, elasticity, heat, waves, optics, electricity, magnetism, AC, EM induction, modern physics and recent trends. Expand a unit to mount its interactive 3D scene (CSS2D chips + arrow-free SVG leader lines); each has a reveal bar: ◉ Reveal → Next +1 → Show all / Hide all.",
+    category: "physics",
+    type: "3d" as const,
+    status: "new",
+    color: "#3b82f6",
+    unit: "Unit: Syllabus Suite",
+    component: Physics3DSyllabusSuite,
+  },
+
+
   // ===== ADDED MATH 3D =====
   {
     id: "math-3d-labeled",
@@ -1296,70 +1292,82 @@ export const LAB_REGISTRY: LabMeta[] = [
     component: Biology3DDiversitySuite,
   },
   {
+    id: "bio-3d-syllabus-suite",
+    title: "Biology Syllabus Suite 3D — Microbiology to Environment",
+    description:
+      "Real WebGL scenes for the nine previously-empty NEB units (microbiology, vegetation, food production, microbes in welfare, biotechnology, ecology, biodiversity, environmental issues) with one-by-one label reveal.",
+    category: "biology",
+    type: "3d" as const,
+    status: "new",
+    color: "#22c55e",
+    unit: "Unit: Biology",
+    component: BiologySyllabusSuite3D,
+  },
+  {
     id: "bio-3d-biomolecules",
     title: "Biomolecules 3D",
-    description: "3D structures of proteins, carbohydrates, lipids and nucleic acids.",
+    description: "Real WebGL: carbohydrates, proteins, lipids & enzyme action tab (from Biology Diversity & Ecology Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Cell Biology",
-    component: BiologyBiomolecules3D,
+    component: Biology3DDiversitySuite,
   },
   {
     id: "bio-3d-biota-conservation",
     title: "Biota & Conservation 3D",
-    description: "Biodiversity, biogeography and conservation strategies in 3D.",
+    description: "Real WebGL: species richness, in-situ/ex-situ conservation & red panda tab (Biodiversity in the Biology Syllabus Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Ecology",
-    component: BiologyBiotaConservation3D,
+    component: BiologySyllabusSuite3D,
   },
   {
     id: "bio-3d-cell-division",
     title: "Cell Division 3D",
-    description: "Mitosis and meiosis stages in interactive 3D.",
+    description: "Real WebGL: mitosis & meiosis chromosome-separation tab (from Biology 3D Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Genetics",
-    component: BiologyCellDivision3D,
+    component: Biology3DSuite,
   },
   {
     id: "bio-3d-faunal",
     title: "Faunal Diversity 3D",
-    description: "Animal kingdom diversity and taxonomy in 3D.",
+    description: "Real WebGL: animal-kingdom species bars & threatened-species scene (Biodiversity in the Biology Syllabus Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Diversity",
-    component: BiologyFaunalDiversity3D,
+    component: BiologySyllabusSuite3D,
   },
   {
     id: "bio-3d-floral",
     title: "Floral Diversity 3D",
-    description: "Plant kingdom diversity and life forms in 3D.",
+    description: "Real WebGL: plant-kingdom diversity tab (from Biology Diversity & Ecology Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Diversity",
-    component: BiologyFloralDiversity3D,
+    component: Biology3DDiversitySuite,
   },
   {
     id: "bio-3d-micro",
     title: "Microbiology 3D",
-    description: "Prokaryotes, viruses and microbial biology in 3D.",
+    description: "Real WebGL: bacterial cell & virus scene (Microbiology in the Biology Syllabus Suite).",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Cell Biology",
-    component: BiologyMicrobiology3D,
+    component: BiologySyllabusSuite3D,
   },
 ];
 

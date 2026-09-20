@@ -32,8 +32,8 @@ export default async function TheoremDetailPage({
     </nav>
   );
 
-  // ── 1. PCB syllabus-ordered items (physics, chemistry, biology) ──
-  if (["physics", "chemistry", "biology"].includes(subjectSlug)) {
+  // ── 1. Syllabus-ordered items (physics, chemistry, biology, mathematics) ──
+  if (["physics", "chemistry", "biology", "mathematics"].includes(subjectSlug)) {
     const item = findSyllabusTheoremItem(classSlug, subjectSlug, topicSlug);
     if (item) {
       if (item.hasCuratedContent && item.curated) {

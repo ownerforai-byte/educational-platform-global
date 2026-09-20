@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
+import { KATEX_OPTIONS, normalizeLatexExpression } from "@/lib/content/katex";
 
 interface MathRendererProps {
   expression: string;
@@ -22,11 +23,11 @@ export function MathRenderer({
 
   useEffect(() => {
     try {
-      const rendered = katex.renderToString(expression, {
+      const rendered = katex.renderToString(normalizeLatexExpression(expression), {
+        ...KATEX_OPTIONS,
         displayMode,
         throwOnError,
         output: "html",
-        trust: true,
       });
       setHtml(rendered);
       setError(null);

@@ -201,6 +201,31 @@ export function createThreeScene(container: HTMLElement, opts: ThreeSceneOptions
   return { scene, camera, renderer, controls, group, container, dispose };
 }
 
+/**
+ * Visibility gate for scene animation loops (smoothness).
+ *
+ * Returns a predicate that is true only while the container is on screen and
+ * the tab is foregrounded. Offscreen scenes skip their render work entirely —
+ * an invisible 60fps WebGL loop is pure GPU/CPU waste.
+ *
+ * Usage inside an animate loop:
+ *   const isLive = makeVisibilityGate(container);
+ *   const animate = () => {
+ *     raf = requestAnimationFrame(animate);
+ *     if (!isLive()) return;
+ *     ...render...
+ *   };
+ */
+export function makeVisibilityGate(container: HTMLElement): () => boolean {
+  let intersecting = true;
+  const io =
+    typeof IntersectionObserver !== "undefined"
+      ? new IntersectionObserver((entries) => { intersecting = entries[0]?.isIntersecting ?? true; }, { rootMargin: "120px" })
+      : null;
+  io?.observe(container);
+  return () => intersecting && !(typeof document !== "undefined" && document.hidden);
+}
+
 /** Remove and dispose everything added to the root scene group. */
 export function clearGroup(group: THREE.Group) {
   while (group.children.length > 0) {

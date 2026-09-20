@@ -22,6 +22,7 @@ const SUBJECT_LABELS: Record<string, string> = {
   physics: "Physics",
   chemistry: "Chemistry",
   biology: "Biology",
+  mathematics: "Mathematics",
 };
 
 export default async function TheoremsPage() {
@@ -42,7 +43,7 @@ export default async function TheoremsPage() {
   // Curated math/other entries remain visible under their class sections.
   const byClass = new Map<string, Map<string, typeof allEntries>>();
   for (const entry of allEntries) {
-    if ((["physics", "chemistry", "biology"] as string[]).includes(entry.subjectSlug)) continue;
+    if ((["physics", "chemistry", "biology", "mathematics"] as string[]).includes(entry.subjectSlug)) continue;
     const classMap = byClass.get(entry.classSlug) ?? new Map<string, typeof allEntries>();
     const subjArr = classMap.get(entry.subjectSlug) ?? [];
     subjArr.push(entry);

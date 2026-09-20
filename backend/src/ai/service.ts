@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "../db/supabase";
 import { getSearchService } from "./search-engine";
 
-export type SupportedProvider = "gemini" | "openrouter" | "internal" | "agnes";
+export type SupportedProvider = "openrouter" | "internal" | "agnes";
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -748,25 +748,21 @@ export class AIService {
   constructor() {
     this.providers.set("internal", new InternalProvider());
 
-    const geminiKey = process.env.GEMINI_API_KEY;
     const openrouterKey = process.env.OPENROUTER_API_KEY;
     const agnesKey = process.env.AGNES_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
-    if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
     if (openrouterKey) this.providers.set("openrouter", new OpenRouterProvider(openrouterKey));
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
-    } else if (geminiKey) {
-      this.defaultProvider = "gemini";
-    } else if (openrouterKey) {
-      this.defaultProvider = "openrouter";
     } else if (agnesKey) {
       this.defaultProvider = "agnes";
+    } else if (openrouterKey) {
+      this.defaultProvider = "openrouter";
     }
   }
 
@@ -787,7 +783,7 @@ export class AIService {
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const internal = this.providers.get("internal")!;
-    const llms = ["gemini", "openrouter", "agnes"]
+    const llms = ["agnes", "openrouter"]
       .filter((n) => this.providers.has(n))
       .map((n) => this.providers.get(n)!);
     if (llms.length === 0) return internal.chat(messages);
@@ -823,7 +819,7 @@ export class AIService {
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const internal = this.providers.get("internal")!;
-    const llms = ["gemini", "openrouter", "agnes"]
+    const llms = ["agnes", "openrouter"]
       .filter((n) => this.providers.has(n))
       .map((n) => this.providers.get(n)!);
     if (llms.length === 0) return internal.search(query);
@@ -845,6 +841,5 @@ export class AIService {
 export function createAIService(): AIService {
   return new AIService();
 }
-
 
 

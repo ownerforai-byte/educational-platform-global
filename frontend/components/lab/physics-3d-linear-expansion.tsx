@@ -16,12 +16,14 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   disposeThreeScene,
   type ThreeScene,
   clearGroup,
   createThreeScene,
   bindResize,
+  makeVisibilityGate,
   standardMaterial, titleText,
 } from "@/components/lab/three-scene";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
@@ -44,6 +46,8 @@ export const LinearExpansionExperiment: React.FC = () => {
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
+  const leaderLayerRef = useRef<any>(null);
+  const revealBarRef = useRef<(() => void) | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(2);
   const [rodLengthCm, setRodLengthCm] = useState(80); // cm between clamp A and screw B
@@ -71,15 +75,17 @@ export const LinearExpansionExperiment: React.FC = () => {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(mountRef.current);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
       ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
-    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+    return () => { cancelAnimationFrame(rafId); unbind(); try { leaderLayerRef.current?.dispose(); leaderLayerRef.current = null; } catch { /* noop */ } try { revealBarRef.current?.(); revealBarRef.current = null; } catch { /* noop */ } disposeThreeScene(ts); tsRef.current = null; };
   }, []);
 
   // Rebuild 3D content on state change
@@ -87,8 +93,6 @@ export const LinearExpansionExperiment: React.FC = () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
-
-let leaderLayer: any = null;
 let labelRenderer: any = null;
 const container = mountRef.current!;
         titleText(ts, "Linear Expansion Apparatus", new THREE.Vector3(0, 3.4, 0));
@@ -242,7 +246,9 @@ const container = mountRef.current!;
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(container); } catch { leaderLayer = null; }
+          try { leaderLayerRef.current?.dispose(); } catch { /* noop */ }
+          try { leaderLayerRef.current = createLeaderLayer(container); } catch { leaderLayerRef.current = null; }
+          try { revealBarRef.current = createRevealBar(container, leaderLayerRef.current); } catch { /* non-fatal */ }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -302,7 +308,7 @@ const container = mountRef.current!;
     });
 
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    leaderLayerRef.current?.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);
