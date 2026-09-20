@@ -400,5 +400,173 @@
       "component": "AnimalBehaviorSim",
       "desc": "Interactive simulation of a reflex arc, taxis vs kinesis, dominance hierarchies, and fish/bird migration with Nepali examples."
     }
-  }
+  },
+  "notes": [
+    "Animal behavior: the actions and responses of animals to stimuli; includes innate (fixed) and learned behaviours.",
+    "Reflex action: an automatic, involuntary response to a stimulus, mediated by a reflex arc (receptor → sensory neuron → CNS → motor neuron → effector).",
+    "Taxes: orientation responses (movement toward or away from a stimulus). Phototaxis (light), chemotaxis (chemical), thigmotaxis (touch), geotaxis (gravity).",
+    "Taxis vs Kinesis: taxis is DIRECTIONAL movement toward/away from a stimulus; kinesis is NON-directional (random) movement in response to a stimulus.",
+    "Dominance and leadership: social hierarchies in group-living animals (primates, wolves, fish); the dominant individual has priority access to food, mates, and territory.",
+    "Fish migration: seasonal movement to feeding or breeding grounds; e.g., salmon (upstream spawning), mackerel (Nepal Terai rivers).",
+    "Bird migration: long-distance seasonal movement (e.g., Himalayan birds migrate to lower altitudes in winter; storks migrate to the Terai).",
+    "NEB focus: reflex action, taxes, dominance and leadership, fish and bird migration.",
+    "Migration is a behavioural adaptation; it is seasonal and genetically programmed."
+  ],
+  "confusion": [
+    "A reflex arc is SHORT (spinal level); it does NOT involve the brain (faster response).",
+    "Taxis is DIRECTIONAL (toward/away from a stimulus); kinesis is NON-DIRECTIONAL (random movement).",
+    "Phototaxis: movement in response to light (positive = toward, negative = away).",
+    "Dominance hierarchies are ESTABLISHED through social interactions; they are not fixed by birth.",
+    "Fish migration is often seasonal (breeding, feeding); it is not random movement.",
+    "Bird migration is a BEHAVIOURAL adaptation; it is genetically programmed and often learned by first-year migrants."
+  ],
+  "practice": [
+    "Explain a reflex action with a reflex arc diagram.",
+    "Differentiate taxis from kinesis with examples.",
+    "List the types of taxes (phototaxis, chemotaxis, thigmotaxis, geotaxis).",
+    "Explain dominance and leadership in a social group.",
+    "Describe fish and bird migration with Nepali examples."
+  ],
+  "universalFacts": [
+    "The fastest reflex is the knee-jerk (patellar) reflex, with a latency of ~30–50 ms.",
+    "Some salmon (e.g., Atlantic salmon) migrate thousands of km upstream to spawn in the stream where they were born.",
+    "Honeybees use a \"waggle dance\" to communicate the direction and distance of a food source to nestmates.",
+    "Migration is one of the most spectacular animal behaviours; some birds fly >10,000 km per year."
+  ],
+  "examples": [
+    "Reflex: touching a hot object → hand withdraws (reflex arc: skin receptor → sensory neuron → spinal cord → motor neuron → muscle).",
+    "Phototaxis: earthworms move AWAY from light (negative phototaxis).",
+    "Chemotaxis: bacteria move toward a nutrient source (positive chemotaxis).",
+    "Dominance: a dominant male lion has priority access to females in the pride.",
+    "Fish migration: mackerel in the Kosi and Gandaki rivers migrate seasonally to feed and breed.",
+    "Bird migration: Himalayan birds (e.g., bar-headed goose) migrate to the Terai in winter; storks migrate to lowland lakes."
+  ],
+  "practiceQuestions": [
+    "Explain a reflex action with a reflex arc diagram.",
+    "Differentiate taxis from kinesis.",
+    "List the types of taxes with one example each.",
+    "Explain dominance and leadership in a social group.",
+    "Describe fish and bird migration with Nepali examples."
+  ],
+  "formulas": [
+    "Reflex arc: Receptor → Sensory neuron → CNS (spinal cord) → Motor neuron → Effector",
+    "Taxis: directional movement (positive = toward, negative = away)",
+    "Kinesis: non-directional (random) movement in response to a stimulus",
+    "Migration: seasonal, genetically programmed movement between habitats"
+  ],
+  "keyPoints": [
+    "Reflex action: automatic, involuntary; reflex arc (spinal level, no brain).",
+    "Taxis: directional movement (phototaxis, chemotaxis, thigmotaxis, geotaxis).",
+    "Kinesis: non-directional (random) movement; different from taxis.",
+    "Dominance and leadership: social hierarchies in group-living animals.",
+    "Fish migration: seasonal movement to feeding/breeding grounds.",
+    "Bird migration: long-distance seasonal movement (Himalaya → Terai).",
+    "Migration is a behavioural adaptation (genetically programmed)."
+  ],
+  "summary": "Animal behaviour includes reflex actions (automatic, spinal-level responses via a reflex arc), taxes (directional movements: photo-, chemo-, thigmo-, geotaxis), and kinesis (non-directional movement). Social animals form dominance hierarchies (leadership). Fish and birds migrate seasonally to feeding or breeding grounds — a behavioural adaptation. Nepali examples include mackerel migration in Terai rivers and Himalayan bird migration to the Terai. NEB focuses on reflex action, taxes, dominance, and migration.",
+  "specialNotes": [
+    "NEB expects a clear reflex arc diagram and the distinction between taxis and kinesis.",
+    "The four types of taxes (photo-, chemo-, thigmo-, geotaxis) are a common short-answer.",
+    "Dominance hierarchies: give a primate or wolf example.",
+    "Fish and bird migration: give a Nepali example (mackerel, stork, bar-headed goose).",
+    "Reflex arcs are spinal-level (no brain) — a key exam point."
+  ],
+  "importantStatements": [
+    "A reflex action is an automatic, involuntary response via a reflex arc.",
+    "Taxis is directional movement; kinesis is non-directional.",
+    "Social animals form dominance hierarchies.",
+    "Migration is a seasonal, genetically programmed behavioural adaptation."
+  ],
+  "importantNotes": [
+    "Memorise the reflex arc (5 parts).",
+    "Learn the 4 types of taxes with examples.",
+    "Differentiate taxis from kinesis.",
+    "Explain dominance and leadership with an example.",
+    "Describe fish and bird migration with Nepali examples."
+  ],
+  "examShortTricks": [
+    "Reflex = R-E-F-L-E-X (Receptor, Effector, Fast, Local, eXternal).",
+    "Taxis = directional (Toward/Away); Kinesis = random (K for \"kicking around\").",
+    "Dominance = social hierarchy; Migration = seasonal movement.",
+    "Fish migrate upstream (salmon) or to Terai (mackerel); Birds migrate Himalaya → Terai."
+  ],
+  "examNotes": [
+    "Explain a reflex action with a reflex arc diagram.",
+    "Differentiate taxis from kinesis.",
+    "List the 4 types of taxes with examples.",
+    "Explain dominance and leadership in a social group.",
+    "Describe fish and bird migration with Nepali examples.",
+    "Why are reflex arcs fast (no brain)?"
+  ],
+  "mcs": [
+    {
+      "question": "The reflex arc for a knee-jerk reflex involves:",
+      "options": [
+        "The brain",
+        "The spinal cord",
+        "The heart",
+        "The liver"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Movement AWAY from light is called:",
+      "options": [
+        "Positive phototaxis",
+        "Negative phototaxis",
+        "Positive chemotaxis",
+        "Kinesis"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Kinesis is:",
+      "options": [
+        "Directional movement",
+        "Non-directional (random) movement",
+        "A reflex",
+        "Migration"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Dominance hierarchies are found in:",
+      "options": [
+        "Solitary animals",
+        "Social group-living animals",
+        "All plants",
+        "Viruses"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Reflex action and reflex arc",
+    "Taxis (4 types)",
+    "Kinesis",
+    "Taxis vs kinesis",
+    "Dominance and leadership",
+    "Fish migration",
+    "Bird migration",
+    "Behavioural adaptation",
+    "Nepal examples"
+  ],
+  "importantTasks": [
+    "Explain reflex arc",
+    "List 4 types of taxes",
+    "Differentiate taxis from kinesis",
+    "Explain dominance",
+    "Describe fish/bird migration with Nepali examples"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "An earthworm moves away from light. What type of taxis is this and what is the stimulus?",
+      "steps": [
+        "Movement in response to light = phototaxis",
+        "Moving AWAY = negative"
+      ],
+      "answer": "Negative phototaxis; stimulus = light"
+    }
+  ]
 }

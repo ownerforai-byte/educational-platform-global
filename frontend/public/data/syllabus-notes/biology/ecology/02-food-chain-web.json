@@ -4,80 +4,557 @@
   "topicSlug": "food-chain-web",
   "topicTitle": "Food Chain and Food Web",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 02 food chain web within the ecology unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 02 food chain web. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 02 food chain web."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 food chain web."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 food chain web."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 food chain web."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 food chain web)"
-  ],
-  "keyPoints": [
-    "Core point for 02 food chain web."
-  ],
-  "summary": "Summary of 02 food chain web.",
-  "specialNotes": [
-    "Specialized insight for 02 food chain web."
-  ],
-  "importantStatements": [
-    "Key statement for 02 food chain web."
-  ],
-  "importantNotes": [
-    "Important note regarding 02 food chain web."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Food Chain and Food Web."
-  ],
-  "examNotes": [
-    "Food Chain and Food Web is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 food chain web?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 food chain web."
-  ],
-  "importantTasks": [
-    "Task for studying 02 food chain web."
-  ],
   "duplicateType": 2,
   "tabGroup": "02-food-chain-web",
   "mcqs": [
     {
-      "question": "Question about 02 food chain web?",
+      "question": "Which ecological pyramid is ALWAYS upright?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Number",
+        "Biomass",
+        "Energy",
+        "All three"
       ],
-      "answer": "A"
+      "answer": "C"
+    },
+    {
+      "question": "Approximately what percentage of energy transfers between trophic levels?",
+      "options": [
+        "1%",
+        "10%",
+        "50%",
+        "90%"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "NPP is calculated as:",
+      "options": [
+        "GPP + Respiration",
+        "GPP − Respiration",
+        "GPP × Respiration",
+        "GPP / Respiration"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An inverted pyramid of numbers occurs when:",
+      "options": [
+        "Producers are small",
+        "One large producer supports many small consumers",
+        "There are no producers",
+        "Energy is high"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "food-chain-web",
+  "enrichedContent": {
+    "notes": [
+      "Food chain: a linear sequence of organisms where each is eaten by the next; transfers energy and matter (sun → producer → primary consumer → secondary consumer → tertiary consumer).",
+      "Food web: a network of interconnected food chains; more realistic than a single chain; shows multiple feeding relationships.",
+      "Trophic levels: TL1 producers (autotrophs), TL2 primary consumers (herbivores), TL3 secondary consumers (carnivores), TL4+ tertiary consumers.",
+      "Ecological pyramids: number (pyramid of numbers), biomass (pyramid of biomass), energy (pyramid of energy).",
+      "Pyramid of energy: always upright; each level has less energy than the one below (10% rule).",
+      "Pyramid of numbers: usually upright; can be inverted (e.g., one tree supports many insects).",
+      "Pyramid of biomass: usually upright; can be inverted in aquatic ecosystems (phytoplankton turn over fast).",
+      "Productivity: gross primary productivity (GPP = total photosynthesis), net primary productivity (NPP = GPP − plant respiration).",
+      "Consumer productivity: energy assimilated by consumers per unit time.",
+      "NEB focus: food chain, food web, trophic levels, ecological pyramids, and productivity."
+    ],
+    "confusion": [
+      "A food chain is LINEAR; a food web is a NETWORK of chains (more realistic).",
+      "Producers (plants, phytoplankton) are at trophic level 1; herbivores at level 2; carnivores at level 3+.",
+      "The pyramid of ENERGY is always upright; the pyramids of numbers and biomass CAN be inverted.",
+      "An inverted pyramid of numbers occurs when one large organism supports many small ones (e.g., a tree with many insects).",
+      "An inverted pyramid of biomass occurs in aquatic ecosystems where phytoplankton (producers) have low standing biomass but high turnover.",
+      "The 10% rule: only ~10% of energy transfers from one trophic level to the next; ~90% is lost as heat."
+    ],
+    "practice": [
+      "Draw a food chain for a grassland ecosystem (4 trophic levels).",
+      "Draw a food web for a pond ecosystem.",
+      "Explain the three types of ecological pyramids.",
+      "Calculate NPP from GPP and plant respiration.",
+      "Explain why the pyramid of energy is always upright."
+    ],
+    "universalFacts": [
+      "The 10% rule (Lindeman, 1942) explains why food chains are usually 4–5 trophic levels long.",
+      "A pyramid of energy is ALWAYS upright because energy is lost at each transfer (heat, respiration).",
+      "Phytoplankton in the ocean produce ~50% of Earth's oxygen (GPP of aquatic ecosystems).",
+      "NPP is the energy available to consumers (herbivores) in an ecosystem."
+    ],
+    "examples": [
+      "Grassland food chain: grass → rabbit → fox → eagle (4 trophic levels).",
+      "Pond food web: algae → mosquito larva → frog → snake → eagle; also algae → zooplankton → small fish → big fish.",
+      "Inverted pyramid of numbers: one oak tree (TL1) → many aphids (TL2) → a few ladybirds (TL3).",
+      "Inverted pyramid of biomass: phytoplankton (TL1) → zooplankton (TL2) → small fish (TL3) in the ocean.",
+      "Productivity: GPP = 1000 gC/m²/yr; plant respiration = 500 gC/m²/yr → NPP = 500 gC/m²/yr."
+    ],
+    "practiceQuestions": [
+      "Differentiate a food chain from a food web.",
+      "Explain the three types of ecological pyramids.",
+      "Define trophic levels and give one example of each.",
+      "Explain why the pyramid of energy is always upright.",
+      "Calculate NPP from GPP and respiration (given values)."
+    ],
+    "formulas": [
+      "Food chain: Producer (TL1) → Primary consumer (TL2) → Secondary consumer (TL3) → Tertiary consumer (TL4)",
+      "10% rule: only ~10% of energy transfers between trophic levels",
+      "GPP = total photosynthesis; NPP = GPP − plant respiration (R)",
+      "Pyramid of energy: always upright; each level < the one below"
+    ],
+    "keyPoints": [
+      "Food chain = linear; food web = network of chains.",
+      "Trophic levels: TL1 producers, TL2 herbivores, TL3 carnivores, TL4+ top carnivores.",
+      "Three pyramids: number, biomass, energy.",
+      "Pyramid of energy is ALWAYS upright; number and biomass can be inverted.",
+      "10% rule: ~10% energy transfers between levels.",
+      "Productivity: GPP (total), NPP (GPP − respiration).",
+      "NPP is the energy available to herbivores."
+    ],
+    "summary": "Energy and matter flow through ecosystems in food chains (linear) and food webs (networks). Trophic levels (producers → primary consumers → secondary → tertiary) structure these. Ecological pyramids (number, biomass, energy) visualise trophic structure; the pyramid of energy is always upright because ~90% of energy is lost at each transfer (10% rule). Productivity (GPP, NPP) measures the rate of energy capture and availability to consumers. NEB focuses on food chains, food webs, trophic levels, the three pyramids, and productivity calculations.",
+    "specialNotes": [
+      "NEB expects the three ecological pyramids and when each can be inverted.",
+      "The 10% rule and the always-upright energy pyramid are very common exam points.",
+      "NPP = GPP − respiration is a calculation question.",
+      "Give a Nepali food chain (e.g., grass → deer → tiger) and a pond food web."
+    ],
+    "importantStatements": [
+      "A food web is a network of interconnected food chains.",
+      "The pyramid of energy is always upright.",
+      "Only ~10% of energy transfers between trophic levels (10% rule).",
+      "NPP is the energy available to consumers in an ecosystem."
+    ],
+    "importantNotes": [
+      "Memorise the three pyramids (number, biomass, energy).",
+      "Learn when each can be inverted (number, biomass).",
+      "Explain the 10% rule and its significance.",
+      "Calculate NPP from GPP and respiration.",
+      "Draw a Nepali food chain and a pond food web."
+    ],
+    "examShortTricks": [
+      "Energy pyramid = always upright (E-up).",
+      "Number and biomass pyramids = CAN be inverted.",
+      "10% rule = 1 in 10 energy moves up.",
+      "NPP = GPP − R (Respiration)."
+    ],
+    "examNotes": [
+      "Differentiate a food chain from a food web.",
+      "Explain the three ecological pyramids.",
+      "Explain why the pyramid of energy is always upright.",
+      "Define GPP and NPP; calculate NPP.",
+      "Draw a food chain and a food web with examples."
+    ],
+    "mcs": [
+      {
+        "question": "Which ecological pyramid is ALWAYS upright?",
+        "options": [
+          "Number",
+          "Biomass",
+          "Energy",
+          "All three"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Approximately what percentage of energy transfers between trophic levels?",
+        "options": [
+          "1%",
+          "10%",
+          "50%",
+          "90%"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "NPP is calculated as:",
+        "options": [
+          "GPP + Respiration",
+          "GPP − Respiration",
+          "GPP × Respiration",
+          "GPP / Respiration"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "An inverted pyramid of numbers occurs when:",
+        "options": [
+          "Producers are small",
+          "One large producer supports many small consumers",
+          "There are no producers",
+          "Energy is high"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Food chain vs food web",
+      "Trophic levels",
+      "Ecological pyramids (number, biomass, energy)",
+      "10% rule",
+      "GPP and NPP",
+      "Inverted pyramids",
+      "Productivity"
+    ],
+    "importantTasks": [
+      "Draw a food chain",
+      "Draw a food web",
+      "Explain 3 pyramids",
+      "Calculate NPP",
+      "Explain why energy pyramid is upright"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "If a grassland has GPP of 2000 gC/m²/yr and plant respiration of 800 gC/m²/yr, what is the NPP?",
+        "steps": [
+          "NPP = GPP − R",
+          "NPP = 2000 − 800"
+        ],
+        "answer": "NPP = 1200 gC/m²/yr"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "EcologicalPyramidSim",
+      "desc": "Interactive 3D ecological pyramids (number, biomass, energy) with a food-web editor and a 10% energy-transfer animation."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Food chain: a linear sequence of organisms where each is eaten by the next; transfers energy and matter (sun → producer → primary consumer → secondary consumer → tertiary consumer).",
+      "Food web: a network of interconnected food chains; more realistic than a single chain; shows multiple feeding relationships.",
+      "Trophic levels: TL1 producers (autotrophs), TL2 primary consumers (herbivores), TL3 secondary consumers (carnivores), TL4+ tertiary consumers.",
+      "Ecological pyramids: number (pyramid of numbers), biomass (pyramid of biomass), energy (pyramid of energy).",
+      "Pyramid of energy: always upright; each level has less energy than the one below (10% rule).",
+      "Pyramid of numbers: usually upright; can be inverted (e.g., one tree supports many insects).",
+      "Pyramid of biomass: usually upright; can be inverted in aquatic ecosystems (phytoplankton turn over fast).",
+      "Productivity: gross primary productivity (GPP = total photosynthesis), net primary productivity (NPP = GPP − plant respiration).",
+      "Consumer productivity: energy assimilated by consumers per unit time.",
+      "NEB focus: food chain, food web, trophic levels, ecological pyramids, and productivity."
+    ],
+    "confusion": [
+      "A food chain is LINEAR; a food web is a NETWORK of chains (more realistic).",
+      "Producers (plants, phytoplankton) are at trophic level 1; herbivores at level 2; carnivores at level 3+.",
+      "The pyramid of ENERGY is always upright; the pyramids of numbers and biomass CAN be inverted.",
+      "An inverted pyramid of numbers occurs when one large organism supports many small ones (e.g., a tree with many insects).",
+      "An inverted pyramid of biomass occurs in aquatic ecosystems where phytoplankton (producers) have low standing biomass but high turnover.",
+      "The 10% rule: only ~10% of energy transfers from one trophic level to the next; ~90% is lost as heat."
+    ],
+    "practice": [
+      "Draw a food chain for a grassland ecosystem (4 trophic levels).",
+      "Draw a food web for a pond ecosystem.",
+      "Explain the three types of ecological pyramids.",
+      "Calculate NPP from GPP and plant respiration.",
+      "Explain why the pyramid of energy is always upright."
+    ],
+    "universalFacts": [
+      "The 10% rule (Lindeman, 1942) explains why food chains are usually 4–5 trophic levels long.",
+      "A pyramid of energy is ALWAYS upright because energy is lost at each transfer (heat, respiration).",
+      "Phytoplankton in the ocean produce ~50% of Earth's oxygen (GPP of aquatic ecosystems).",
+      "NPP is the energy available to consumers (herbivores) in an ecosystem."
+    ],
+    "examples": [
+      "Grassland food chain: grass → rabbit → fox → eagle (4 trophic levels).",
+      "Pond food web: algae → mosquito larva → frog → snake → eagle; also algae → zooplankton → small fish → big fish.",
+      "Inverted pyramid of numbers: one oak tree (TL1) → many aphids (TL2) → a few ladybirds (TL3).",
+      "Inverted pyramid of biomass: phytoplankton (TL1) → zooplankton (TL2) → small fish (TL3) in the ocean.",
+      "Productivity: GPP = 1000 gC/m²/yr; plant respiration = 500 gC/m²/yr → NPP = 500 gC/m²/yr."
+    ],
+    "practiceQuestions": [
+      "Differentiate a food chain from a food web.",
+      "Explain the three types of ecological pyramids.",
+      "Define trophic levels and give one example of each.",
+      "Explain why the pyramid of energy is always upright.",
+      "Calculate NPP from GPP and respiration (given values)."
+    ],
+    "formulas": [
+      "Food chain: Producer (TL1) → Primary consumer (TL2) → Secondary consumer (TL3) → Tertiary consumer (TL4)",
+      "10% rule: only ~10% of energy transfers between trophic levels",
+      "GPP = total photosynthesis; NPP = GPP − plant respiration (R)",
+      "Pyramid of energy: always upright; each level < the one below"
+    ],
+    "keyPoints": [
+      "Food chain = linear; food web = network of chains.",
+      "Trophic levels: TL1 producers, TL2 herbivores, TL3 carnivores, TL4+ top carnivores.",
+      "Three pyramids: number, biomass, energy.",
+      "Pyramid of energy is ALWAYS upright; number and biomass can be inverted.",
+      "10% rule: ~10% energy transfers between levels.",
+      "Productivity: GPP (total), NPP (GPP − respiration).",
+      "NPP is the energy available to herbivores."
+    ],
+    "summary": "Energy and matter flow through ecosystems in food chains (linear) and food webs (networks). Trophic levels (producers → primary consumers → secondary → tertiary) structure these. Ecological pyramids (number, biomass, energy) visualise trophic structure; the pyramid of energy is always upright because ~90% of energy is lost at each transfer (10% rule). Productivity (GPP, NPP) measures the rate of energy capture and availability to consumers. NEB focuses on food chains, food webs, trophic levels, the three pyramids, and productivity calculations.",
+    "specialNotes": [
+      "NEB expects the three ecological pyramids and when each can be inverted.",
+      "The 10% rule and the always-upright energy pyramid are very common exam points.",
+      "NPP = GPP − respiration is a calculation question.",
+      "Give a Nepali food chain (e.g., grass → deer → tiger) and a pond food web."
+    ],
+    "importantStatements": [
+      "A food web is a network of interconnected food chains.",
+      "The pyramid of energy is always upright.",
+      "Only ~10% of energy transfers between trophic levels (10% rule).",
+      "NPP is the energy available to consumers in an ecosystem."
+    ],
+    "importantNotes": [
+      "Memorise the three pyramids (number, biomass, energy).",
+      "Learn when each can be inverted (number, biomass).",
+      "Explain the 10% rule and its significance.",
+      "Calculate NPP from GPP and respiration.",
+      "Draw a Nepali food chain and a pond food web."
+    ],
+    "examShortTricks": [
+      "Energy pyramid = always upright (E-up).",
+      "Number and biomass pyramids = CAN be inverted.",
+      "10% rule = 1 in 10 energy moves up.",
+      "NPP = GPP − R (Respiration)."
+    ],
+    "examNotes": [
+      "Differentiate a food chain from a food web.",
+      "Explain the three ecological pyramids.",
+      "Explain why the pyramid of energy is always upright.",
+      "Define GPP and NPP; calculate NPP.",
+      "Draw a food chain and a food web with examples."
+    ],
+    "mcs": [
+      {
+        "question": "Which ecological pyramid is ALWAYS upright?",
+        "options": [
+          "Number",
+          "Biomass",
+          "Energy",
+          "All three"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Approximately what percentage of energy transfers between trophic levels?",
+        "options": [
+          "1%",
+          "10%",
+          "50%",
+          "90%"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "NPP is calculated as:",
+        "options": [
+          "GPP + Respiration",
+          "GPP − Respiration",
+          "GPP × Respiration",
+          "GPP / Respiration"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "An inverted pyramid of numbers occurs when:",
+        "options": [
+          "Producers are small",
+          "One large producer supports many small consumers",
+          "There are no producers",
+          "Energy is high"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Food chain vs food web",
+      "Trophic levels",
+      "Ecological pyramids (number, biomass, energy)",
+      "10% rule",
+      "GPP and NPP",
+      "Inverted pyramids",
+      "Productivity"
+    ],
+    "importantTasks": [
+      "Draw a food chain",
+      "Draw a food web",
+      "Explain 3 pyramids",
+      "Calculate NPP",
+      "Explain why energy pyramid is upright"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "If a grassland has GPP of 2000 gC/m²/yr and plant respiration of 800 gC/m²/yr, what is the NPP?",
+        "steps": [
+          "NPP = GPP − R",
+          "NPP = 2000 − 800"
+        ],
+        "answer": "NPP = 1200 gC/m²/yr"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "EcologicalPyramidSim",
+      "desc": "Interactive 3D ecological pyramids (number, biomass, energy) with a food-web editor and a 10% energy-transfer animation."
+    }
+  },
+  "notes": [
+    "Food chain: a linear sequence of organisms where each is eaten by the next; transfers energy and matter (sun → producer → primary consumer → secondary consumer → tertiary consumer).",
+    "Food web: a network of interconnected food chains; more realistic than a single chain; shows multiple feeding relationships.",
+    "Trophic levels: TL1 producers (autotrophs), TL2 primary consumers (herbivores), TL3 secondary consumers (carnivores), TL4+ tertiary consumers.",
+    "Ecological pyramids: number (pyramid of numbers), biomass (pyramid of biomass), energy (pyramid of energy).",
+    "Pyramid of energy: always upright; each level has less energy than the one below (10% rule).",
+    "Pyramid of numbers: usually upright; can be inverted (e.g., one tree supports many insects).",
+    "Pyramid of biomass: usually upright; can be inverted in aquatic ecosystems (phytoplankton turn over fast).",
+    "Productivity: gross primary productivity (GPP = total photosynthesis), net primary productivity (NPP = GPP − plant respiration).",
+    "Consumer productivity: energy assimilated by consumers per unit time.",
+    "NEB focus: food chain, food web, trophic levels, ecological pyramids, and productivity."
+  ],
+  "confusion": [
+    "A food chain is LINEAR; a food web is a NETWORK of chains (more realistic).",
+    "Producers (plants, phytoplankton) are at trophic level 1; herbivores at level 2; carnivores at level 3+.",
+    "The pyramid of ENERGY is always upright; the pyramids of numbers and biomass CAN be inverted.",
+    "An inverted pyramid of numbers occurs when one large organism supports many small ones (e.g., a tree with many insects).",
+    "An inverted pyramid of biomass occurs in aquatic ecosystems where phytoplankton (producers) have low standing biomass but high turnover.",
+    "The 10% rule: only ~10% of energy transfers from one trophic level to the next; ~90% is lost as heat."
+  ],
+  "practice": [
+    "Draw a food chain for a grassland ecosystem (4 trophic levels).",
+    "Draw a food web for a pond ecosystem.",
+    "Explain the three types of ecological pyramids.",
+    "Calculate NPP from GPP and plant respiration.",
+    "Explain why the pyramid of energy is always upright."
+  ],
+  "universalFacts": [
+    "The 10% rule (Lindeman, 1942) explains why food chains are usually 4–5 trophic levels long.",
+    "A pyramid of energy is ALWAYS upright because energy is lost at each transfer (heat, respiration).",
+    "Phytoplankton in the ocean produce ~50% of Earth's oxygen (GPP of aquatic ecosystems).",
+    "NPP is the energy available to consumers (herbivores) in an ecosystem."
+  ],
+  "examples": [
+    "Grassland food chain: grass → rabbit → fox → eagle (4 trophic levels).",
+    "Pond food web: algae → mosquito larva → frog → snake → eagle; also algae → zooplankton → small fish → big fish.",
+    "Inverted pyramid of numbers: one oak tree (TL1) → many aphids (TL2) → a few ladybirds (TL3).",
+    "Inverted pyramid of biomass: phytoplankton (TL1) → zooplankton (TL2) → small fish (TL3) in the ocean.",
+    "Productivity: GPP = 1000 gC/m²/yr; plant respiration = 500 gC/m²/yr → NPP = 500 gC/m²/yr."
+  ],
+  "practiceQuestions": [
+    "Differentiate a food chain from a food web.",
+    "Explain the three types of ecological pyramids.",
+    "Define trophic levels and give one example of each.",
+    "Explain why the pyramid of energy is always upright.",
+    "Calculate NPP from GPP and respiration (given values)."
+  ],
+  "formulas": [
+    "Food chain: Producer (TL1) → Primary consumer (TL2) → Secondary consumer (TL3) → Tertiary consumer (TL4)",
+    "10% rule: only ~10% of energy transfers between trophic levels",
+    "GPP = total photosynthesis; NPP = GPP − plant respiration (R)",
+    "Pyramid of energy: always upright; each level < the one below"
+  ],
+  "keyPoints": [
+    "Food chain = linear; food web = network of chains.",
+    "Trophic levels: TL1 producers, TL2 herbivores, TL3 carnivores, TL4+ top carnivores.",
+    "Three pyramids: number, biomass, energy.",
+    "Pyramid of energy is ALWAYS upright; number and biomass can be inverted.",
+    "10% rule: ~10% energy transfers between levels.",
+    "Productivity: GPP (total), NPP (GPP − respiration).",
+    "NPP is the energy available to herbivores."
+  ],
+  "summary": "Energy and matter flow through ecosystems in food chains (linear) and food webs (networks). Trophic levels (producers → primary consumers → secondary → tertiary) structure these. Ecological pyramids (number, biomass, energy) visualise trophic structure; the pyramid of energy is always upright because ~90% of energy is lost at each transfer (10% rule). Productivity (GPP, NPP) measures the rate of energy capture and availability to consumers. NEB focuses on food chains, food webs, trophic levels, the three pyramids, and productivity calculations.",
+  "specialNotes": [
+    "NEB expects the three ecological pyramids and when each can be inverted.",
+    "The 10% rule and the always-upright energy pyramid are very common exam points.",
+    "NPP = GPP − respiration is a calculation question.",
+    "Give a Nepali food chain (e.g., grass → deer → tiger) and a pond food web."
+  ],
+  "importantStatements": [
+    "A food web is a network of interconnected food chains.",
+    "The pyramid of energy is always upright.",
+    "Only ~10% of energy transfers between trophic levels (10% rule).",
+    "NPP is the energy available to consumers in an ecosystem."
+  ],
+  "importantNotes": [
+    "Memorise the three pyramids (number, biomass, energy).",
+    "Learn when each can be inverted (number, biomass).",
+    "Explain the 10% rule and its significance.",
+    "Calculate NPP from GPP and respiration.",
+    "Draw a Nepali food chain and a pond food web."
+  ],
+  "examShortTricks": [
+    "Energy pyramid = always upright (E-up).",
+    "Number and biomass pyramids = CAN be inverted.",
+    "10% rule = 1 in 10 energy moves up.",
+    "NPP = GPP − R (Respiration)."
+  ],
+  "examNotes": [
+    "Differentiate a food chain from a food web.",
+    "Explain the three ecological pyramids.",
+    "Explain why the pyramid of energy is always upright.",
+    "Define GPP and NPP; calculate NPP.",
+    "Draw a food chain and a food web with examples."
+  ],
+  "mcs": [
+    {
+      "question": "Which ecological pyramid is ALWAYS upright?",
+      "options": [
+        "Number",
+        "Biomass",
+        "Energy",
+        "All three"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Approximately what percentage of energy transfers between trophic levels?",
+      "options": [
+        "1%",
+        "10%",
+        "50%",
+        "90%"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "NPP is calculated as:",
+      "options": [
+        "GPP + Respiration",
+        "GPP − Respiration",
+        "GPP × Respiration",
+        "GPP / Respiration"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An inverted pyramid of numbers occurs when:",
+      "options": [
+        "Producers are small",
+        "One large producer supports many small consumers",
+        "There are no producers",
+        "Energy is high"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Food chain vs food web",
+    "Trophic levels",
+    "Ecological pyramids (number, biomass, energy)",
+    "10% rule",
+    "GPP and NPP",
+    "Inverted pyramids",
+    "Productivity"
+  ],
+  "importantTasks": [
+    "Draw a food chain",
+    "Draw a food web",
+    "Explain 3 pyramids",
+    "Calculate NPP",
+    "Explain why energy pyramid is upright"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "If a grassland has GPP of 2000 gC/m²/yr and plant respiration of 800 gC/m²/yr, what is the NPP?",
+      "steps": [
+        "NPP = GPP − R",
+        "NPP = 2000 − 800"
+      ],
+      "answer": "NPP = 1200 gC/m²/yr"
     }
   ]
 }

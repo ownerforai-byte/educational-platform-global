@@ -396,5 +396,171 @@
       "component": "CellDivisionSim",
       "desc": "Step-by-step 3D mitosis and meiosis animation with draggable chromosomes, highlighting crossing over and chromosome reduction."
     }
-  }
+  },
+  "notes": [
+    "Cell cycle: interphase (G1 growth, S DNA replication, G2 preparation) + M phase (mitosis).",
+    "Amitosis (direct division): simple splitting of the nucleus; rare, seen in some fungi and liver cells.",
+    "Mitosis: one division producing two genetically identical diploid (2n) daughter cells; phases — prophase, metaphase, anaphase, telophase (PMAT).",
+    "Meiosis: two successive divisions producing four genetically diverse haploid (n) gametes; involves crossing over (Prophase I) and independent assortment.",
+    "Chromosome: chromatin condensed; the centromere joins sister chromatids.",
+    "Significance of mitosis: growth, asexual reproduction, tissue repair.",
+    "Significance of meiosis: gamete formation, reduction of chromosome number, genetic variation (crossing over, independent assortment).",
+    "Errors in mitosis → uncontrolled division = cancer; errors in meiosis → non-disjunction (e.g. Down syndrome, trisomy 21)."
+  ],
+  "confusion": [
+    "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
+    "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
+    "Sister chromatids separate in Anaphase of mitosis and in Anaphase II of meiosis; homologous chromosomes separate in Anaphase I.",
+    "Meiosis produces 4 haploid cells; mitosis produces 2 diploid cells.",
+    "G2 is not a resting phase; DNA has already doubled in S, cells grow in G1.",
+    "Non-disjunction means a pair fails to separate; it can happen in meiosis I or II."
+  ],
+  "practice": [
+    "Draw the four phases of mitosis with labelled chromosomes.",
+    "Tabulate mitosis vs meiosis (5 differences).",
+    "Draw a simple meiosis diagram and mark crossing over.",
+    "Explain why meiosis is important for sexual reproduction.",
+    "Describe the cell cycle and the role of the G1/S checkpoints."
+  ],
+  "universalFacts": [
+    "A human cell with 46 chromosomes yields two daughter cells with 46 chromosomes after mitosis and four with 23 after meiosis.",
+    "Cancer is essentially uncontrolled mitosis due to failed checkpoints.",
+    "Crossing over shuffles alleles between non-sister chromatids of homologous chromosomes."
+  ],
+  "examples": [
+    "Onion root-tip cells show classic mitotic figures.",
+    "Human spermatogenesis (1 primary → 4 sperm) and oogenesis (1 primary → 1 ovum + 3 polar bodies).",
+    "Down syndrome results from trisomy-21 non-disjunction."
+  ],
+  "practiceQuestions": [
+    "How is the anaphase of meiosis I different from that of mitosis?",
+    "Explain why meiosis produces genetic variation.",
+    "What would happen if the S phase did not occur?",
+    "Differentiate amitosis, mitosis and meiosis (3 points each).",
+    "Define non-disjunction and give one disease example."
+  ],
+  "formulas": [
+    "Mitosis: 2n parent → 2 daughter cells of 2n",
+    "Meiosis: 2n parent → 4 gametes of n",
+    "Crossing over adds to independent assortment → variation"
+  ],
+  "keyPoints": [
+    "Mitosis = growth, repair, asexual reproduction; meiosis = gametes + variation.",
+    "PMAT is the mnemonic for mitotic phases.",
+    "Crossing over (Prophase I) and independent assortment create variation.",
+    "S phase doubles DNA; G2 prepares; checkpoints control entry to M.",
+    "Meiosis has two divisions (I & II); mitosis one.",
+    "Mitotic errors → cancer; meiotic errors → aneuploidy (trisomy)."
+  ],
+  "summary": "Cells divide by amitosis, mitosis or meiosis. The cell cycle (G1, S, G2, M) is regulated by checkpoints. Mitosis produces two genetically identical diploid cells for growth, repair and asexual reproduction. Meiosis halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Errors lead to cancer (mitosis) or aneuploidies such as Down syndrome (meiosis).",
+  "specialNotes": [
+    "NEB often asks for labelled mitosis diagrams plus a mitosis/meiosis comparison table.",
+    "Mention the G1/S/G2/M checkpoints and their role in preventing cancer.",
+    "Define non-disjunction with a human example (trisomy 21)."
+  ],
+  "importantStatements": [
+    "Mitosis maintains a species' diploid chromosome number.",
+    "Meiosis is essential for sexual reproduction because it halves the genome.",
+    "Genetic recombination during meiosis increases biological variation.",
+    "The cell cycle is controlled by internal checkpoints that stop the M phase if DNA is damaged."
+  ],
+  "importantNotes": [
+    "Learn the PMAT sequence and draw each phase from memory.",
+    "Keep a mitosis vs meiosis comparison table.",
+    "Memorise that crossing over occurs in Prophase I of meiosis.",
+    "Relate checkpoint failure to cancer and non-disjunction to aneuploidy."
+  ],
+  "examShortTricks": [
+    "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
+    "MITO = two identical cells (2n); MEI = 4 different gametes (n).",
+    "Crossing over = Prophase I only.",
+    "No S phase → no DNA duplication → division fails."
+  ],
+  "examNotes": [
+    "Draw and label all four mitotic phases.",
+    "Tabulate mitosis vs meiosis (6 points).",
+    "Explain how meiosis creates variation (two mechanisms).",
+    "Describe cell-cycle checkpoints and the cause of cancer."
+  ],
+  "mcs": [
+    {
+      "question": "The number of daughter cells produced by meiosis is:",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Crossing over occurs during:",
+      "options": [
+        "Prophase of mitosis",
+        "Prophase I of meiosis",
+        "Metaphase II of meiosis",
+        "Telophase of mitosis"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If a species has 2n = 46, a sperm cell contains:",
+      "options": [
+        "46",
+        "23",
+        "92",
+        "48"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The \"direct division\" or amitosis is best observed in:",
+      "options": [
+        "Onion root tip",
+        "Human oocyte",
+        "Liver cells of some animals",
+        "Human sperm"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Cell cycle phases",
+    "PMAT",
+    "Crossing over",
+    "Independent assortment",
+    "Checkpoints",
+    "Non-disjunction",
+    "Cancer",
+    "Significance of meiosis"
+  ],
+  "importantTasks": [
+    "Label all 4 mitotic phases",
+    "Mitosis vs meiosis table",
+    "Draw crossing over in Prophase I",
+    "Explain S/G2/M checkpoints",
+    "Define non-disjunction with an example"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A cell with 2n = 10 enters mitosis. How many chromatids and how many chromosomes are present at metaphase?",
+      "steps": [
+        "After S phase each chromosome has 2 chromatids",
+        "10 chromosomes × 2 = 20 chromatids",
+        "Chromosome count stays 10 at metaphase"
+      ],
+      "answer": "10 chromosomes, 20 chromatids"
+    },
+    {
+      "id": "2",
+      "question": "Why does crossing over increase genetic variation?",
+      "steps": [
+        "In Prophase I, non-sister chromatids of homologous chromosomes align",
+        "Alleles are exchanged",
+        "The recombinant chromatids carry new allele combinations"
+      ],
+      "answer": "It shuffles alleles, producing recombination."
+    }
+  ]
 }

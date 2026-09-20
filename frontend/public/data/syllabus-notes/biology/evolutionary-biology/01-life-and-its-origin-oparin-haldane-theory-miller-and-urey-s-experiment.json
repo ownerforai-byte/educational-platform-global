@@ -4,80 +4,542 @@
   "topicSlug": "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
   "topicTitle": "Life and its origin: Oparin-Haldane theory, Miller and Urey's experiment",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 01 life and its origin oparin haldane theory miller and urey s experiment within the evolutionary biology unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 01 life and its origin oparin haldane theory miller and urey s experiment. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "practiceQuestions": [
-    "Practice question for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 life and its origin oparin haldane theory miller and urey s experiment)"
-  ],
-  "keyPoints": [
-    "Core point for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "summary": "Summary of 01 life and its origin oparin haldane theory miller and urey s experiment.",
-  "specialNotes": [
-    "Specialized insight for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "importantStatements": [
-    "Key statement for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "importantNotes": [
-    "Important note regarding 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Origin of Life."
-  ],
-  "examNotes": [
-    "Origin of Life is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 life and its origin oparin haldane theory miller and urey s experiment?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
-  "importantTasks": [
-    "Task for studying 01 life and its origin oparin haldane theory miller and urey s experiment."
-  ],
   "duplicateType": 2,
   "tabGroup": "01-life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
   "mcqs": [
     {
-      "question": "Question about 01 life and its origin oparin haldane theory miller and urey s experiment?",
+      "question": "The Miller-Urey experiment produced:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Proteins",
+        "Amino acids",
+        "DNA",
+        "Cells"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The Oparin-Haldane theory proposed that the early atmosphere was:",
+      "options": [
+        "Oxygen-rich",
+        "Reducing (no O2)",
+        "Nitrogen-rich",
+        "CO2-rich"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The \"RNA world\" hypothesis suggests that:",
+      "options": [
+        "RNA came after DNA",
+        "RNA could self-replicate and catalyse",
+        "RNA is a protein",
+        "RNA has no role in origin of life"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Abiogenesis refers to:",
+      "options": [
+        "Life from life",
+        "Life from non-living matter",
+        "Cell division",
+        "Spontaneous generation"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "origin-of-life-experiment",
+  "enrichedContent": {
+    "notes": [
+      "Origin of life: life arose from non-living matter by chemical evolution (abiogenesis) in a warm dilution (primordial ocean).",
+      "Oparin-Haldane theory (1924/29): the early reducing atmosphere (CH4, NH3, H2O, H2, no O2) allowed formation of organic molecules from inorganic ones.",
+      "Stages: (1) formation of simple organics (amino acids, nucleotides) → (2) polymers (proteins, nucleic acids) → (3) coacervates/microspheres (proto-cells) → (4) self-replicating systems.",
+      "Miller-Urey experiment (1953): simulated early Earth (electric sparks in CH4, NH3, H2, H2O vapour); produced amino acids (glycine, alanine) and other organics → supports chemical evolution.",
+      "RNA world hypothesis: self-replicating RNA (ribozymes) may have preceded DNA-protein life.",
+      "Evidence for chemical evolution: laboratory synthesis of organics; presence of organics in meteorites (Murchison); deep-sea hydrothermal vents as energy sources.",
+      "Significance: explains the transition from chemistry to biology; basis of origin-of-life studies."
+    ],
+    "confusion": [
+      "Abiogenesis ≠ spontaneous generation (spontaneous generation is the disproved idea that life arises from life daily; abiogenesis is the origin of life from non-life in primitive conditions).",
+      "Miller-Urey proved organics CAN form from inorganics under early-Earth-like conditions; it did NOT prove life formed.",
+      "The early atmosphere was reducing (no free O2); free oxygen came later from photosynthetic cyanobacteria.",
+      "Oparin (Russia) and Haldane (UK) independently proposed similar chemical-evolution theories.",
+      "Coacervates (Oparin) and proteinoid microspheres (Fox) are models of proto-cells, not proven living cells.",
+      "The RNA world is a hypothesis; it explains how self-replication and catalysis could coexist before DNA and proteins."
+    ],
+    "practice": [
+      "Describe the Oparin-Haldane theory of the origin of life.",
+      "Explain the Miller-Urey experiment (setup, conditions, results, significance).",
+      "List the stages of chemical evolution.",
+      "Explain the RNA world hypothesis.",
+      "Differentiate abiogenesis from spontaneous generation."
+    ],
+    "universalFacts": [
+      "Life on Earth is estimated to be ~3.5–4 billion years old.",
+      "The Miller-Urey apparatus produced amino acids in just one week.",
+      "The Murchison meteorite (1969, Australia) contained over 70 amino acids, some not found on Earth.",
+      "Deep-sea hydrothermal vents may have provided the energy and chemistry for early life."
+    ],
+    "examples": [
+      "Miller-Urey (1953): electric discharge in CH4/NH3/H2O/H2 → glycine, alanine, aspartic acid.",
+      "Oparin's coacervates: protein solutions form droplets that can take up substances from the environment.",
+      "RNA ribozymes (e.g., self-splicing introns) demonstrate RNA can catalyse its own replication.",
+      "Hydrothermal vent microbes (chemoautotrophs) suggest life's earliest energy source may have been chemical, not solar."
+    ],
+    "practiceQuestions": [
+      "Explain the Oparin-Haldane theory of the origin of life.",
+      "Describe the Miller-Urey experiment and its significance.",
+      "What is the RNA world hypothesis?",
+      "Differentiate abiogenesis from spontaneous generation.",
+      "List three lines of evidence supporting chemical evolution."
+    ],
+    "formulas": [
+      "Chemical evolution: Inorganic (CH4, NH3, H2O, H2) → Simple organics (amino acids, sugars, bases) → Polymers → Proto-cells → Life",
+      "Miller-Urey: electric sparks (lightning) + reducing atmosphere → amino acids"
+    ],
+    "keyPoints": [
+      "Oparin-Haldane: reducing early atmosphere allowed chemical evolution.",
+      "Stages: simple organics → polymers → coacervates → self-replicating systems.",
+      "Miller-Urey (1953): produced amino acids from inorganic precursors.",
+      "RNA world: self-replicating, catalytic RNA may predate DNA/protein life.",
+      "Abiogenesis (origin of life) ≠ spontaneous generation (disproved).",
+      "Evidence: lab synthesis, meteorites, hydrothermal vents."
+    ],
+    "summary": "The origin of life is explained by chemical evolution (abiogenesis). The Oparin-Haldane theory proposed that a reducing early atmosphere allowed inorganic molecules to form simple organics, then polymers, then proto-cells, then self-replicating life. The Miller-Urey experiment (1953) demonstrated that amino acids can form from inorganic precursors under early-Earth conditions. The RNA world hypothesis suggests self-replicating RNA preceded the DNA-protein world. Evidence from meteorites and hydrothermal vents supports chemical evolution.",
+    "specialNotes": [
+      "NEB expects the Miller-Urey experiment (setup + results + significance) as a standard question.",
+      "The Oparin-Haldane theory and its 4 stages are a frequent long-answer.",
+      "Differentiate abiogenesis from spontaneous generation — a common \"trick\" question.",
+      "Mention the RNA world as a modern hypothesis for early life."
+    ],
+    "importantStatements": [
+      "Life arose from non-living matter through gradual chemical evolution.",
+      "The Miller-Urey experiment provided experimental support for chemical evolution.",
+      "The early Earth atmosphere was reducing and oxygen-free.",
+      "Self-replicating molecules (likely RNA) were the key step toward life."
+    ],
+    "importantNotes": [
+      "Memorise the 4 stages of chemical evolution.",
+      "Learn the Miller-Urey experiment setup and results.",
+      "Explain the Oparin-Haldane theory.",
+      "Differentiate abiogenesis from spontaneous generation.",
+      "State the RNA world hypothesis with one example."
+    ],
+    "examShortTricks": [
+      "Oparin-Haldane = O-H (Organics from Heat).",
+      "Miller-Urey = M-U (Made Urea... no — Made amino acids from Urey's setup).",
+      "Reducing atmosphere = no O2 = CH4, NH3, H2, H2O.",
+      "RNA world = RNA did BOTH replication AND catalysis."
+    ],
+    "examNotes": [
+      "Explain the Oparin-Haldane theory with 4 stages.",
+      "Describe the Miller-Urey experiment (setup, conditions, results).",
+      "What is the RNA world hypothesis?",
+      "Differentiate abiogenesis from spontaneous generation.",
+      "List evidence supporting chemical evolution."
+    ],
+    "mcs": [
+      {
+        "question": "The Miller-Urey experiment produced:",
+        "options": [
+          "Proteins",
+          "Amino acids",
+          "DNA",
+          "Cells"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The Oparin-Haldane theory proposed that the early atmosphere was:",
+        "options": [
+          "Oxygen-rich",
+          "Reducing (no O2)",
+          "Nitrogen-rich",
+          "CO2-rich"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The \"RNA world\" hypothesis suggests that:",
+        "options": [
+          "RNA came after DNA",
+          "RNA could self-replicate and catalyse",
+          "RNA is a protein",
+          "RNA has no role in origin of life"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Abiogenesis refers to:",
+        "options": [
+          "Life from life",
+          "Life from non-living matter",
+          "Cell division",
+          "Spontaneous generation"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Chemical evolution",
+      "Oparin-Haldane theory",
+      "Miller-Urey experiment",
+      "Reducing atmosphere",
+      "RNA world",
+      "Abiogenesis vs spontaneous generation",
+      "Coacervates",
+      "Hydrothermal vents"
+    ],
+    "importantTasks": [
+      "Explain Oparin-Haldane theory",
+      "Describe Miller-Urey experiment",
+      "List 4 stages of chemical evolution",
+      "Explain RNA world",
+      "Differentiate abiogenesis from spontaneous generation"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why was a reducing (oxygen-free) atmosphere important for the formation of organic molecules?",
+        "steps": [
+          "Free O2 is a strong oxidiser",
+          "It would break down newly formed organics",
+          "Reducing conditions allow stable organics to form"
+        ],
+        "answer": "Oxygen would oxidise and destroy organic molecules; reducing conditions allowed them to accumulate"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "OriginOfLifeSim",
+      "desc": "Animated Miller-Urey apparatus with a step-by-step chemical-evolution timeline from inorganic to self-replicating systems."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Origin of life: life arose from non-living matter by chemical evolution (abiogenesis) in a warm dilution (primordial ocean).",
+      "Oparin-Haldane theory (1924/29): the early reducing atmosphere (CH4, NH3, H2O, H2, no O2) allowed formation of organic molecules from inorganic ones.",
+      "Stages: (1) formation of simple organics (amino acids, nucleotides) → (2) polymers (proteins, nucleic acids) → (3) coacervates/microspheres (proto-cells) → (4) self-replicating systems.",
+      "Miller-Urey experiment (1953): simulated early Earth (electric sparks in CH4, NH3, H2, H2O vapour); produced amino acids (glycine, alanine) and other organics → supports chemical evolution.",
+      "RNA world hypothesis: self-replicating RNA (ribozymes) may have preceded DNA-protein life.",
+      "Evidence for chemical evolution: laboratory synthesis of organics; presence of organics in meteorites (Murchison); deep-sea hydrothermal vents as energy sources.",
+      "Significance: explains the transition from chemistry to biology; basis of origin-of-life studies."
+    ],
+    "confusion": [
+      "Abiogenesis ≠ spontaneous generation (spontaneous generation is the disproved idea that life arises from life daily; abiogenesis is the origin of life from non-life in primitive conditions).",
+      "Miller-Urey proved organics CAN form from inorganics under early-Earth-like conditions; it did NOT prove life formed.",
+      "The early atmosphere was reducing (no free O2); free oxygen came later from photosynthetic cyanobacteria.",
+      "Oparin (Russia) and Haldane (UK) independently proposed similar chemical-evolution theories.",
+      "Coacervates (Oparin) and proteinoid microspheres (Fox) are models of proto-cells, not proven living cells.",
+      "The RNA world is a hypothesis; it explains how self-replication and catalysis could coexist before DNA and proteins."
+    ],
+    "practice": [
+      "Describe the Oparin-Haldane theory of the origin of life.",
+      "Explain the Miller-Urey experiment (setup, conditions, results, significance).",
+      "List the stages of chemical evolution.",
+      "Explain the RNA world hypothesis.",
+      "Differentiate abiogenesis from spontaneous generation."
+    ],
+    "universalFacts": [
+      "Life on Earth is estimated to be ~3.5–4 billion years old.",
+      "The Miller-Urey apparatus produced amino acids in just one week.",
+      "The Murchison meteorite (1969, Australia) contained over 70 amino acids, some not found on Earth.",
+      "Deep-sea hydrothermal vents may have provided the energy and chemistry for early life."
+    ],
+    "examples": [
+      "Miller-Urey (1953): electric discharge in CH4/NH3/H2O/H2 → glycine, alanine, aspartic acid.",
+      "Oparin's coacervates: protein solutions form droplets that can take up substances from the environment.",
+      "RNA ribozymes (e.g., self-splicing introns) demonstrate RNA can catalyse its own replication.",
+      "Hydrothermal vent microbes (chemoautotrophs) suggest life's earliest energy source may have been chemical, not solar."
+    ],
+    "practiceQuestions": [
+      "Explain the Oparin-Haldane theory of the origin of life.",
+      "Describe the Miller-Urey experiment and its significance.",
+      "What is the RNA world hypothesis?",
+      "Differentiate abiogenesis from spontaneous generation.",
+      "List three lines of evidence supporting chemical evolution."
+    ],
+    "formulas": [
+      "Chemical evolution: Inorganic (CH4, NH3, H2O, H2) → Simple organics (amino acids, sugars, bases) → Polymers → Proto-cells → Life",
+      "Miller-Urey: electric sparks (lightning) + reducing atmosphere → amino acids"
+    ],
+    "keyPoints": [
+      "Oparin-Haldane: reducing early atmosphere allowed chemical evolution.",
+      "Stages: simple organics → polymers → coacervates → self-replicating systems.",
+      "Miller-Urey (1953): produced amino acids from inorganic precursors.",
+      "RNA world: self-replicating, catalytic RNA may predate DNA/protein life.",
+      "Abiogenesis (origin of life) ≠ spontaneous generation (disproved).",
+      "Evidence: lab synthesis, meteorites, hydrothermal vents."
+    ],
+    "summary": "The origin of life is explained by chemical evolution (abiogenesis). The Oparin-Haldane theory proposed that a reducing early atmosphere allowed inorganic molecules to form simple organics, then polymers, then proto-cells, then self-replicating life. The Miller-Urey experiment (1953) demonstrated that amino acids can form from inorganic precursors under early-Earth conditions. The RNA world hypothesis suggests self-replicating RNA preceded the DNA-protein world. Evidence from meteorites and hydrothermal vents supports chemical evolution.",
+    "specialNotes": [
+      "NEB expects the Miller-Urey experiment (setup + results + significance) as a standard question.",
+      "The Oparin-Haldane theory and its 4 stages are a frequent long-answer.",
+      "Differentiate abiogenesis from spontaneous generation — a common \"trick\" question.",
+      "Mention the RNA world as a modern hypothesis for early life."
+    ],
+    "importantStatements": [
+      "Life arose from non-living matter through gradual chemical evolution.",
+      "The Miller-Urey experiment provided experimental support for chemical evolution.",
+      "The early Earth atmosphere was reducing and oxygen-free.",
+      "Self-replicating molecules (likely RNA) were the key step toward life."
+    ],
+    "importantNotes": [
+      "Memorise the 4 stages of chemical evolution.",
+      "Learn the Miller-Urey experiment setup and results.",
+      "Explain the Oparin-Haldane theory.",
+      "Differentiate abiogenesis from spontaneous generation.",
+      "State the RNA world hypothesis with one example."
+    ],
+    "examShortTricks": [
+      "Oparin-Haldane = O-H (Organics from Heat).",
+      "Miller-Urey = M-U (Made Urea... no — Made amino acids from Urey's setup).",
+      "Reducing atmosphere = no O2 = CH4, NH3, H2, H2O.",
+      "RNA world = RNA did BOTH replication AND catalysis."
+    ],
+    "examNotes": [
+      "Explain the Oparin-Haldane theory with 4 stages.",
+      "Describe the Miller-Urey experiment (setup, conditions, results).",
+      "What is the RNA world hypothesis?",
+      "Differentiate abiogenesis from spontaneous generation.",
+      "List evidence supporting chemical evolution."
+    ],
+    "mcs": [
+      {
+        "question": "The Miller-Urey experiment produced:",
+        "options": [
+          "Proteins",
+          "Amino acids",
+          "DNA",
+          "Cells"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The Oparin-Haldane theory proposed that the early atmosphere was:",
+        "options": [
+          "Oxygen-rich",
+          "Reducing (no O2)",
+          "Nitrogen-rich",
+          "CO2-rich"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The \"RNA world\" hypothesis suggests that:",
+        "options": [
+          "RNA came after DNA",
+          "RNA could self-replicate and catalyse",
+          "RNA is a protein",
+          "RNA has no role in origin of life"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Abiogenesis refers to:",
+        "options": [
+          "Life from life",
+          "Life from non-living matter",
+          "Cell division",
+          "Spontaneous generation"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Chemical evolution",
+      "Oparin-Haldane theory",
+      "Miller-Urey experiment",
+      "Reducing atmosphere",
+      "RNA world",
+      "Abiogenesis vs spontaneous generation",
+      "Coacervates",
+      "Hydrothermal vents"
+    ],
+    "importantTasks": [
+      "Explain Oparin-Haldane theory",
+      "Describe Miller-Urey experiment",
+      "List 4 stages of chemical evolution",
+      "Explain RNA world",
+      "Differentiate abiogenesis from spontaneous generation"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why was a reducing (oxygen-free) atmosphere important for the formation of organic molecules?",
+        "steps": [
+          "Free O2 is a strong oxidiser",
+          "It would break down newly formed organics",
+          "Reducing conditions allow stable organics to form"
+        ],
+        "answer": "Oxygen would oxidise and destroy organic molecules; reducing conditions allowed them to accumulate"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "OriginOfLifeSim",
+      "desc": "Animated Miller-Urey apparatus with a step-by-step chemical-evolution timeline from inorganic to self-replicating systems."
+    }
+  },
+  "notes": [
+    "Origin of life: life arose from non-living matter by chemical evolution (abiogenesis) in a warm dilution (primordial ocean).",
+    "Oparin-Haldane theory (1924/29): the early reducing atmosphere (CH4, NH3, H2O, H2, no O2) allowed formation of organic molecules from inorganic ones.",
+    "Stages: (1) formation of simple organics (amino acids, nucleotides) → (2) polymers (proteins, nucleic acids) → (3) coacervates/microspheres (proto-cells) → (4) self-replicating systems.",
+    "Miller-Urey experiment (1953): simulated early Earth (electric sparks in CH4, NH3, H2, H2O vapour); produced amino acids (glycine, alanine) and other organics → supports chemical evolution.",
+    "RNA world hypothesis: self-replicating RNA (ribozymes) may have preceded DNA-protein life.",
+    "Evidence for chemical evolution: laboratory synthesis of organics; presence of organics in meteorites (Murchison); deep-sea hydrothermal vents as energy sources.",
+    "Significance: explains the transition from chemistry to biology; basis of origin-of-life studies."
+  ],
+  "confusion": [
+    "Abiogenesis ≠ spontaneous generation (spontaneous generation is the disproved idea that life arises from life daily; abiogenesis is the origin of life from non-life in primitive conditions).",
+    "Miller-Urey proved organics CAN form from inorganics under early-Earth-like conditions; it did NOT prove life formed.",
+    "The early atmosphere was reducing (no free O2); free oxygen came later from photosynthetic cyanobacteria.",
+    "Oparin (Russia) and Haldane (UK) independently proposed similar chemical-evolution theories.",
+    "Coacervates (Oparin) and proteinoid microspheres (Fox) are models of proto-cells, not proven living cells.",
+    "The RNA world is a hypothesis; it explains how self-replication and catalysis could coexist before DNA and proteins."
+  ],
+  "practice": [
+    "Describe the Oparin-Haldane theory of the origin of life.",
+    "Explain the Miller-Urey experiment (setup, conditions, results, significance).",
+    "List the stages of chemical evolution.",
+    "Explain the RNA world hypothesis.",
+    "Differentiate abiogenesis from spontaneous generation."
+  ],
+  "universalFacts": [
+    "Life on Earth is estimated to be ~3.5–4 billion years old.",
+    "The Miller-Urey apparatus produced amino acids in just one week.",
+    "The Murchison meteorite (1969, Australia) contained over 70 amino acids, some not found on Earth.",
+    "Deep-sea hydrothermal vents may have provided the energy and chemistry for early life."
+  ],
+  "examples": [
+    "Miller-Urey (1953): electric discharge in CH4/NH3/H2O/H2 → glycine, alanine, aspartic acid.",
+    "Oparin's coacervates: protein solutions form droplets that can take up substances from the environment.",
+    "RNA ribozymes (e.g., self-splicing introns) demonstrate RNA can catalyse its own replication.",
+    "Hydrothermal vent microbes (chemoautotrophs) suggest life's earliest energy source may have been chemical, not solar."
+  ],
+  "practiceQuestions": [
+    "Explain the Oparin-Haldane theory of the origin of life.",
+    "Describe the Miller-Urey experiment and its significance.",
+    "What is the RNA world hypothesis?",
+    "Differentiate abiogenesis from spontaneous generation.",
+    "List three lines of evidence supporting chemical evolution."
+  ],
+  "formulas": [
+    "Chemical evolution: Inorganic (CH4, NH3, H2O, H2) → Simple organics (amino acids, sugars, bases) → Polymers → Proto-cells → Life",
+    "Miller-Urey: electric sparks (lightning) + reducing atmosphere → amino acids"
+  ],
+  "keyPoints": [
+    "Oparin-Haldane: reducing early atmosphere allowed chemical evolution.",
+    "Stages: simple organics → polymers → coacervates → self-replicating systems.",
+    "Miller-Urey (1953): produced amino acids from inorganic precursors.",
+    "RNA world: self-replicating, catalytic RNA may predate DNA/protein life.",
+    "Abiogenesis (origin of life) ≠ spontaneous generation (disproved).",
+    "Evidence: lab synthesis, meteorites, hydrothermal vents."
+  ],
+  "summary": "The origin of life is explained by chemical evolution (abiogenesis). The Oparin-Haldane theory proposed that a reducing early atmosphere allowed inorganic molecules to form simple organics, then polymers, then proto-cells, then self-replicating life. The Miller-Urey experiment (1953) demonstrated that amino acids can form from inorganic precursors under early-Earth conditions. The RNA world hypothesis suggests self-replicating RNA preceded the DNA-protein world. Evidence from meteorites and hydrothermal vents supports chemical evolution.",
+  "specialNotes": [
+    "NEB expects the Miller-Urey experiment (setup + results + significance) as a standard question.",
+    "The Oparin-Haldane theory and its 4 stages are a frequent long-answer.",
+    "Differentiate abiogenesis from spontaneous generation — a common \"trick\" question.",
+    "Mention the RNA world as a modern hypothesis for early life."
+  ],
+  "importantStatements": [
+    "Life arose from non-living matter through gradual chemical evolution.",
+    "The Miller-Urey experiment provided experimental support for chemical evolution.",
+    "The early Earth atmosphere was reducing and oxygen-free.",
+    "Self-replicating molecules (likely RNA) were the key step toward life."
+  ],
+  "importantNotes": [
+    "Memorise the 4 stages of chemical evolution.",
+    "Learn the Miller-Urey experiment setup and results.",
+    "Explain the Oparin-Haldane theory.",
+    "Differentiate abiogenesis from spontaneous generation.",
+    "State the RNA world hypothesis with one example."
+  ],
+  "examShortTricks": [
+    "Oparin-Haldane = O-H (Organics from Heat).",
+    "Miller-Urey = M-U (Made Urea... no — Made amino acids from Urey's setup).",
+    "Reducing atmosphere = no O2 = CH4, NH3, H2, H2O.",
+    "RNA world = RNA did BOTH replication AND catalysis."
+  ],
+  "examNotes": [
+    "Explain the Oparin-Haldane theory with 4 stages.",
+    "Describe the Miller-Urey experiment (setup, conditions, results).",
+    "What is the RNA world hypothesis?",
+    "Differentiate abiogenesis from spontaneous generation.",
+    "List evidence supporting chemical evolution."
+  ],
+  "mcs": [
+    {
+      "question": "The Miller-Urey experiment produced:",
+      "options": [
+        "Proteins",
+        "Amino acids",
+        "DNA",
+        "Cells"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Oparin-Haldane theory proposed that the early atmosphere was:",
+      "options": [
+        "Oxygen-rich",
+        "Reducing (no O2)",
+        "Nitrogen-rich",
+        "CO2-rich"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The \"RNA world\" hypothesis suggests that:",
+      "options": [
+        "RNA came after DNA",
+        "RNA could self-replicate and catalyse",
+        "RNA is a protein",
+        "RNA has no role in origin of life"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Abiogenesis refers to:",
+      "options": [
+        "Life from life",
+        "Life from non-living matter",
+        "Cell division",
+        "Spontaneous generation"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Chemical evolution",
+    "Oparin-Haldane theory",
+    "Miller-Urey experiment",
+    "Reducing atmosphere",
+    "RNA world",
+    "Abiogenesis vs spontaneous generation",
+    "Coacervates",
+    "Hydrothermal vents"
+  ],
+  "importantTasks": [
+    "Explain Oparin-Haldane theory",
+    "Describe Miller-Urey experiment",
+    "List 4 stages of chemical evolution",
+    "Explain RNA world",
+    "Differentiate abiogenesis from spontaneous generation"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Why was a reducing (oxygen-free) atmosphere important for the formation of organic molecules?",
+      "steps": [
+        "Free O2 is a strong oxidiser",
+        "It would break down newly formed organics",
+        "Reducing conditions allow stable organics to form"
+      ],
+      "answer": "Oxygen would oxidise and destroy organic molecules; reducing conditions allowed them to accumulate"
     }
   ]
 }

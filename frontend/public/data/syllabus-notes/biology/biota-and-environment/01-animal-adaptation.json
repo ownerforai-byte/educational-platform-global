@@ -4,80 +4,563 @@
   "topicSlug": "animal-adaptation",
   "topicTitle": "Animal Adaptation",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 01 animal adaptation within the biota and environment unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 01 animal adaptation. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 01 animal adaptation."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 animal adaptation."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 01 animal adaptation."
-  ],
-  "practiceQuestions": [
-    "Practice question for 01 animal adaptation."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 animal adaptation)"
-  ],
-  "keyPoints": [
-    "Core point for 01 animal adaptation."
-  ],
-  "summary": "Summary of 01 animal adaptation.",
-  "specialNotes": [
-    "Specialized insight for 01 animal adaptation."
-  ],
-  "importantStatements": [
-    "Key statement for 01 animal adaptation."
-  ],
-  "importantNotes": [
-    "Important note regarding 01 animal adaptation."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Animal Adaptation."
-  ],
-  "examNotes": [
-    "Animal Adaptation is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 animal adaptation?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 animal adaptation."
-  ],
-  "importantTasks": [
-    "Task for studying 01 animal adaptation."
-  ],
   "duplicateType": 2,
   "tabGroup": "01-animal-adaptation",
   "mcqs": [
     {
-      "question": "Question about 01 animal adaptation?",
+      "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Breathing",
+        "Reducing water resistance",
+        "Vision",
+        "Reproduction"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Whales and seals are examples of:",
+      "options": [
+        "Primary aquatic animals",
+        "Secondary aquatic animals",
+        "Terrestrial animals",
+        "Volant animals"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hollow bones in birds are an adaptation for:",
+      "options": [
+        "Breathing",
+        "Flight (weight reduction)",
+        "Vision",
+        "Reproduction"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Countercurrent exchange in fish gills allows:",
+      "options": [
+        "~50% O2 uptake",
+        "~80% O2 uptake",
+        "~100% O2 uptake",
+        "No O2 uptake"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "animal-adaptation-types",
+  "enrichedContent": {
+    "notes": [
+      "Animal adaptation: structural, physiological, and behavioural features that allow an animal to survive in a particular environment.",
+      "Aquatic adaptation: primary aquatic (fishes, fully aquatic) and secondary aquatic (whales, seals — originally terrestrial).",
+      "Aquatic features: streamlined (fusiform) body, fins, gills (countercurrent exchange), lateral line (fish), webbed feet, dense bones, salt glands.",
+      "Terrestrial adaptation: cursorial (running — cheetah, horse), fossorial (burrowing — earthworm, mole), arboreal (tree-dwelling — monkey, sloth).",
+      "Terrestrial features: waterproof skin (fur, scales, feathers), lungs, internal fertilisation, nitrogenous waste (urea/ammonia), strong limbs.",
+      "Volant adaptation: flight; features: wings (feathers), hollow (pneumatic) bones, air sacs (double respiration), strong pectoral muscles, streamlined body, beak.",
+      "Adaptations increase survival and reproduction in a given habitat; they are the result of natural selection.",
+      "NEB focus: aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptations.",
+      "Nepal examples: fish (Terai), rhododendron forest birds (volant), snow leopard (terrestrial cursorial), pangolin (fossorial)."
+    ],
+    "confusion": [
+      "Primary aquatic animals were ALWAYS aquatic (fishes); secondary aquatic animals (whales, seals) evolved FROM terrestrial ancestors.",
+      "A fusiform (streamlined) body REDUCES water resistance; it is an adaptation for fast swimming.",
+      "Countercurrent exchange in fish gills allows ~80% O2 uptake efficiency (blood and water flow in opposite directions).",
+      "Hollow bones in birds reduce weight for flight; they are still strong (internal struts).",
+      "Arboreal animals (monkeys) have grasping hands/feet, forward-facing eyes (stereoscopic vision), and a prehensile tail (New World monkeys).",
+      "Fossorial animals (moles, earthworms) have reduced eyes, strong forelimbs for digging, and cylindrical bodies."
+    ],
+    "practice": [
+      "List aquatic adaptations of a fish (5).",
+      "Differentiate primary from secondary aquatic animals.",
+      "List terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird (5).",
+      "Explain countercurrent exchange in fish gills."
+    ],
+    "universalFacts": [
+      "The fusiform body shape reduces drag by up to ~40% in fast swimmers.",
+      "Countercurrent exchange in fish gills allows ~80% O2 extraction; parallel flow would extract only ~50%.",
+      "Birds have a double respiration system (air sacs + lungs) that delivers fresh air through the lungs on BOTH in- and exhalation.",
+      "A hummingbird's wings beat ~50 times per second; some migrate thousands of km."
+    ],
+    "examples": [
+      "Fish (primary aquatic): fusiform body, fins, gills, lateral line, scale-covered skin.",
+      "Whale (secondary aquatic): streamlined body, dense bones, blubber, baleen, modified limbs (flippers).",
+      "Cheetah (cursorial): long limbs, enlarged nostrils, non-retractable claws for grip, S-spine.",
+      "Mole (fossorial): reduced eyes, strong digging forelimbs, cylindrical body, no tail.",
+      "Orangutan (arboreal): long arms, grasping hands, stereoscopic vision, prehensile tail (New World).",
+      "Eagle (volant): feathers, hollow bones, air sacs, strong pectoral muscles, sharp beak and talons."
+    ],
+    "practiceQuestions": [
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange improve O2 uptake in fish?"
+    ],
+    "formulas": [
+      "Aquatic: fusiform body + fins + gills (countercurrent) + lateral line + webbed feet",
+      "Terrestrial: waterproof skin + lungs + internal fertilisation + strong limbs",
+      "Volant: wings + hollow bones + air sacs + strong pectoral muscles + streamlined body + beak"
+    ],
+    "keyPoints": [
+      "Aquatic: fusiform body, gills (countercurrent), lateral line, webbed feet, fins.",
+      "Primary aquatic = always aquatic (fish); secondary = evolved from land (whales, seals).",
+      "Terrestrial: cursorial (run), fossorial (dig), arboreal (tree-dwell); waterproof skin, lungs.",
+      "Volant: wings, hollow bones, air sacs, strong pectoral muscles, beak.",
+      "Countercurrent exchange: ~80% O2 uptake in fish gills.",
+      "Adaptation is evolutionary (population-level), not individual.",
+      "Nepal examples: fish (Terai), snow leopard (cursorial), birds (volant)."
+    ],
+    "summary": "Animal adaptations reflect their habitat. Aquatic animals (primary, e.g. fishes; secondary, e.g. whales) have streamlined bodies, gills with countercurrent exchange, lateral lines, and webbed feet. Terrestrial animals show cursorial (running), fossorial (burrowing), or arboreal (tree-dwelling) adaptations, with waterproof skin and lungs. Volant (flying) animals have wings, hollow bones, air sacs, and strong pectoral muscles. Countercurrent exchange in fish gills allows ~80% O2 uptake. These adaptations are evolutionary, not intentional. NEB focuses on aquatic, terrestrial, and volant adaptations with Nepali examples.",
+    "specialNotes": [
+      "NEB expects a clear aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptation list.",
+      "Countercurrent exchange in fish gills is a very common exam point.",
+      "Differentiate primary from secondary aquatic animals.",
+      "Hollow bones + air sacs + double respiration are key volant adaptations.",
+      "Give a Nepali example for each type (fish, snow leopard, eagle)."
+    ],
+    "importantStatements": [
+      "Aquatic animals have streamlined bodies and gills with countercurrent exchange.",
+      "Primary aquatic animals were always aquatic; secondary ones evolved from land.",
+      "Volant animals have wings, hollow bones, and air sacs for efficient flight.",
+      "Adaptations are evolutionary features, not individual adjustments."
+    ],
+    "importantNotes": [
+      "Memorise 5 aquatic, 5 terrestrial, and 5 volant adaptations.",
+      "Learn countercurrent exchange in fish gills.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List cursorial, fossorial, and arboreal adaptations with examples.",
+      "Give a Nepali example for each type."
+    ],
+    "examShortTricks": [
+      "Aquatic = A-F-G-L (Adapted, Fusiform, Gills, Lateral line).",
+      "Primary = always water; Secondary = land → water (whales).",
+      "Volant = hollow bones + air sacs + wings + beak.",
+      "Cursorial = run; Fossorial = dig; Arboreal = tree."
+    ],
+    "examNotes": [
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal).",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange work in fish gills?",
+      "Give a Nepali example for each adaptation type."
+    ],
+    "mcs": [
+      {
+        "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
+        "options": [
+          "Breathing",
+          "Reducing water resistance",
+          "Vision",
+          "Reproduction"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Whales and seals are examples of:",
+        "options": [
+          "Primary aquatic animals",
+          "Secondary aquatic animals",
+          "Terrestrial animals",
+          "Volant animals"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Hollow bones in birds are an adaptation for:",
+        "options": [
+          "Breathing",
+          "Flight (weight reduction)",
+          "Vision",
+          "Reproduction"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Countercurrent exchange in fish gills allows:",
+        "options": [
+          "~50% O2 uptake",
+          "~80% O2 uptake",
+          "~100% O2 uptake",
+          "No O2 uptake"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Aquatic adaptations (fusiform, gills, lateral line)",
+      "Primary vs secondary aquatic",
+      "Terrestrial adaptations (cursorial, fossorial, arboreal)",
+      "Volant adaptations (wings, hollow bones, air sacs)",
+      "Countercurrent exchange",
+      "Evolutionary adaptation",
+      "Nepal examples"
+    ],
+    "importantTasks": [
+      "List aquatic adaptations",
+      "Differentiate primary vs secondary aquatic",
+      "List terrestrial adaptations",
+      "Explain volant adaptations",
+      "Explain countercurrent exchange"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why do birds have hollow bones, and how does this help in flight?",
+        "steps": [
+          "Hollow bones are lighter than solid bones",
+          "Reduced body mass = less energy to fly",
+          "Internal struts keep bones strong"
+        ],
+        "answer": "Hollow bones reduce body weight, making flight more efficient while remaining strong"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "AnimalAdaptationViewer",
+      "desc": "Interactive 3D models of a fish, a cheetah, and an eagle with labelled adaptations (fusiform body, gills, hollow bones, wings) and a countercurrent exchange animation."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Animal adaptation: structural, physiological, and behavioural features that allow an animal to survive in a particular environment.",
+      "Aquatic adaptation: primary aquatic (fishes, fully aquatic) and secondary aquatic (whales, seals — originally terrestrial).",
+      "Aquatic features: streamlined (fusiform) body, fins, gills (countercurrent exchange), lateral line (fish), webbed feet, dense bones, salt glands.",
+      "Terrestrial adaptation: cursorial (running — cheetah, horse), fossorial (burrowing — earthworm, mole), arboreal (tree-dwelling — monkey, sloth).",
+      "Terrestrial features: waterproof skin (fur, scales, feathers), lungs, internal fertilisation, nitrogenous waste (urea/ammonia), strong limbs.",
+      "Volant adaptation: flight; features: wings (feathers), hollow (pneumatic) bones, air sacs (double respiration), strong pectoral muscles, streamlined body, beak.",
+      "Adaptations increase survival and reproduction in a given habitat; they are the result of natural selection.",
+      "NEB focus: aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptations.",
+      "Nepal examples: fish (Terai), rhododendron forest birds (volant), snow leopard (terrestrial cursorial), pangolin (fossorial)."
+    ],
+    "confusion": [
+      "Primary aquatic animals were ALWAYS aquatic (fishes); secondary aquatic animals (whales, seals) evolved FROM terrestrial ancestors.",
+      "A fusiform (streamlined) body REDUCES water resistance; it is an adaptation for fast swimming.",
+      "Countercurrent exchange in fish gills allows ~80% O2 uptake efficiency (blood and water flow in opposite directions).",
+      "Hollow bones in birds reduce weight for flight; they are still strong (internal struts).",
+      "Arboreal animals (monkeys) have grasping hands/feet, forward-facing eyes (stereoscopic vision), and a prehensile tail (New World monkeys).",
+      "Fossorial animals (moles, earthworms) have reduced eyes, strong forelimbs for digging, and cylindrical bodies."
+    ],
+    "practice": [
+      "List aquatic adaptations of a fish (5).",
+      "Differentiate primary from secondary aquatic animals.",
+      "List terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird (5).",
+      "Explain countercurrent exchange in fish gills."
+    ],
+    "universalFacts": [
+      "The fusiform body shape reduces drag by up to ~40% in fast swimmers.",
+      "Countercurrent exchange in fish gills allows ~80% O2 extraction; parallel flow would extract only ~50%.",
+      "Birds have a double respiration system (air sacs + lungs) that delivers fresh air through the lungs on BOTH in- and exhalation.",
+      "A hummingbird's wings beat ~50 times per second; some migrate thousands of km."
+    ],
+    "examples": [
+      "Fish (primary aquatic): fusiform body, fins, gills, lateral line, scale-covered skin.",
+      "Whale (secondary aquatic): streamlined body, dense bones, blubber, baleen, modified limbs (flippers).",
+      "Cheetah (cursorial): long limbs, enlarged nostrils, non-retractable claws for grip, S-spine.",
+      "Mole (fossorial): reduced eyes, strong digging forelimbs, cylindrical body, no tail.",
+      "Orangutan (arboreal): long arms, grasping hands, stereoscopic vision, prehensile tail (New World).",
+      "Eagle (volant): feathers, hollow bones, air sacs, strong pectoral muscles, sharp beak and talons."
+    ],
+    "practiceQuestions": [
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange improve O2 uptake in fish?"
+    ],
+    "formulas": [
+      "Aquatic: fusiform body + fins + gills (countercurrent) + lateral line + webbed feet",
+      "Terrestrial: waterproof skin + lungs + internal fertilisation + strong limbs",
+      "Volant: wings + hollow bones + air sacs + strong pectoral muscles + streamlined body + beak"
+    ],
+    "keyPoints": [
+      "Aquatic: fusiform body, gills (countercurrent), lateral line, webbed feet, fins.",
+      "Primary aquatic = always aquatic (fish); secondary = evolved from land (whales, seals).",
+      "Terrestrial: cursorial (run), fossorial (dig), arboreal (tree-dwell); waterproof skin, lungs.",
+      "Volant: wings, hollow bones, air sacs, strong pectoral muscles, beak.",
+      "Countercurrent exchange: ~80% O2 uptake in fish gills.",
+      "Adaptation is evolutionary (population-level), not individual.",
+      "Nepal examples: fish (Terai), snow leopard (cursorial), birds (volant)."
+    ],
+    "summary": "Animal adaptations reflect their habitat. Aquatic animals (primary, e.g. fishes; secondary, e.g. whales) have streamlined bodies, gills with countercurrent exchange, lateral lines, and webbed feet. Terrestrial animals show cursorial (running), fossorial (burrowing), or arboreal (tree-dwelling) adaptations, with waterproof skin and lungs. Volant (flying) animals have wings, hollow bones, air sacs, and strong pectoral muscles. Countercurrent exchange in fish gills allows ~80% O2 uptake. These adaptations are evolutionary, not intentional. NEB focuses on aquatic, terrestrial, and volant adaptations with Nepali examples.",
+    "specialNotes": [
+      "NEB expects a clear aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptation list.",
+      "Countercurrent exchange in fish gills is a very common exam point.",
+      "Differentiate primary from secondary aquatic animals.",
+      "Hollow bones + air sacs + double respiration are key volant adaptations.",
+      "Give a Nepali example for each type (fish, snow leopard, eagle)."
+    ],
+    "importantStatements": [
+      "Aquatic animals have streamlined bodies and gills with countercurrent exchange.",
+      "Primary aquatic animals were always aquatic; secondary ones evolved from land.",
+      "Volant animals have wings, hollow bones, and air sacs for efficient flight.",
+      "Adaptations are evolutionary features, not individual adjustments."
+    ],
+    "importantNotes": [
+      "Memorise 5 aquatic, 5 terrestrial, and 5 volant adaptations.",
+      "Learn countercurrent exchange in fish gills.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List cursorial, fossorial, and arboreal adaptations with examples.",
+      "Give a Nepali example for each type."
+    ],
+    "examShortTricks": [
+      "Aquatic = A-F-G-L (Adapted, Fusiform, Gills, Lateral line).",
+      "Primary = always water; Secondary = land → water (whales).",
+      "Volant = hollow bones + air sacs + wings + beak.",
+      "Cursorial = run; Fossorial = dig; Arboreal = tree."
+    ],
+    "examNotes": [
+      "Explain the aquatic adaptations of a fish.",
+      "Differentiate primary from secondary aquatic animals.",
+      "List the terrestrial adaptations (cursorial, fossorial, arboreal).",
+      "Explain the volant adaptations of a bird.",
+      "How does countercurrent exchange work in fish gills?",
+      "Give a Nepali example for each adaptation type."
+    ],
+    "mcs": [
+      {
+        "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
+        "options": [
+          "Breathing",
+          "Reducing water resistance",
+          "Vision",
+          "Reproduction"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Whales and seals are examples of:",
+        "options": [
+          "Primary aquatic animals",
+          "Secondary aquatic animals",
+          "Terrestrial animals",
+          "Volant animals"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Hollow bones in birds are an adaptation for:",
+        "options": [
+          "Breathing",
+          "Flight (weight reduction)",
+          "Vision",
+          "Reproduction"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Countercurrent exchange in fish gills allows:",
+        "options": [
+          "~50% O2 uptake",
+          "~80% O2 uptake",
+          "~100% O2 uptake",
+          "No O2 uptake"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Aquatic adaptations (fusiform, gills, lateral line)",
+      "Primary vs secondary aquatic",
+      "Terrestrial adaptations (cursorial, fossorial, arboreal)",
+      "Volant adaptations (wings, hollow bones, air sacs)",
+      "Countercurrent exchange",
+      "Evolutionary adaptation",
+      "Nepal examples"
+    ],
+    "importantTasks": [
+      "List aquatic adaptations",
+      "Differentiate primary vs secondary aquatic",
+      "List terrestrial adaptations",
+      "Explain volant adaptations",
+      "Explain countercurrent exchange"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why do birds have hollow bones, and how does this help in flight?",
+        "steps": [
+          "Hollow bones are lighter than solid bones",
+          "Reduced body mass = less energy to fly",
+          "Internal struts keep bones strong"
+        ],
+        "answer": "Hollow bones reduce body weight, making flight more efficient while remaining strong"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "AnimalAdaptationViewer",
+      "desc": "Interactive 3D models of a fish, a cheetah, and an eagle with labelled adaptations (fusiform body, gills, hollow bones, wings) and a countercurrent exchange animation."
+    }
+  },
+  "notes": [
+    "Animal adaptation: structural, physiological, and behavioural features that allow an animal to survive in a particular environment.",
+    "Aquatic adaptation: primary aquatic (fishes, fully aquatic) and secondary aquatic (whales, seals — originally terrestrial).",
+    "Aquatic features: streamlined (fusiform) body, fins, gills (countercurrent exchange), lateral line (fish), webbed feet, dense bones, salt glands.",
+    "Terrestrial adaptation: cursorial (running — cheetah, horse), fossorial (burrowing — earthworm, mole), arboreal (tree-dwelling — monkey, sloth).",
+    "Terrestrial features: waterproof skin (fur, scales, feathers), lungs, internal fertilisation, nitrogenous waste (urea/ammonia), strong limbs.",
+    "Volant adaptation: flight; features: wings (feathers), hollow (pneumatic) bones, air sacs (double respiration), strong pectoral muscles, streamlined body, beak.",
+    "Adaptations increase survival and reproduction in a given habitat; they are the result of natural selection.",
+    "NEB focus: aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptations.",
+    "Nepal examples: fish (Terai), rhododendron forest birds (volant), snow leopard (terrestrial cursorial), pangolin (fossorial)."
+  ],
+  "confusion": [
+    "Primary aquatic animals were ALWAYS aquatic (fishes); secondary aquatic animals (whales, seals) evolved FROM terrestrial ancestors.",
+    "A fusiform (streamlined) body REDUCES water resistance; it is an adaptation for fast swimming.",
+    "Countercurrent exchange in fish gills allows ~80% O2 uptake efficiency (blood and water flow in opposite directions).",
+    "Hollow bones in birds reduce weight for flight; they are still strong (internal struts).",
+    "Arboreal animals (monkeys) have grasping hands/feet, forward-facing eyes (stereoscopic vision), and a prehensile tail (New World monkeys).",
+    "Fossorial animals (moles, earthworms) have reduced eyes, strong forelimbs for digging, and cylindrical bodies."
+  ],
+  "practice": [
+    "List aquatic adaptations of a fish (5).",
+    "Differentiate primary from secondary aquatic animals.",
+    "List terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+    "Explain the volant adaptations of a bird (5).",
+    "Explain countercurrent exchange in fish gills."
+  ],
+  "universalFacts": [
+    "The fusiform body shape reduces drag by up to ~40% in fast swimmers.",
+    "Countercurrent exchange in fish gills allows ~80% O2 extraction; parallel flow would extract only ~50%.",
+    "Birds have a double respiration system (air sacs + lungs) that delivers fresh air through the lungs on BOTH in- and exhalation.",
+    "A hummingbird's wings beat ~50 times per second; some migrate thousands of km."
+  ],
+  "examples": [
+    "Fish (primary aquatic): fusiform body, fins, gills, lateral line, scale-covered skin.",
+    "Whale (secondary aquatic): streamlined body, dense bones, blubber, baleen, modified limbs (flippers).",
+    "Cheetah (cursorial): long limbs, enlarged nostrils, non-retractable claws for grip, S-spine.",
+    "Mole (fossorial): reduced eyes, strong digging forelimbs, cylindrical body, no tail.",
+    "Orangutan (arboreal): long arms, grasping hands, stereoscopic vision, prehensile tail (New World).",
+    "Eagle (volant): feathers, hollow bones, air sacs, strong pectoral muscles, sharp beak and talons."
+  ],
+  "practiceQuestions": [
+    "Explain the aquatic adaptations of a fish.",
+    "Differentiate primary from secondary aquatic animals.",
+    "List the terrestrial adaptations (cursorial, fossorial, arboreal) with examples.",
+    "Explain the volant adaptations of a bird.",
+    "How does countercurrent exchange improve O2 uptake in fish?"
+  ],
+  "formulas": [
+    "Aquatic: fusiform body + fins + gills (countercurrent) + lateral line + webbed feet",
+    "Terrestrial: waterproof skin + lungs + internal fertilisation + strong limbs",
+    "Volant: wings + hollow bones + air sacs + strong pectoral muscles + streamlined body + beak"
+  ],
+  "keyPoints": [
+    "Aquatic: fusiform body, gills (countercurrent), lateral line, webbed feet, fins.",
+    "Primary aquatic = always aquatic (fish); secondary = evolved from land (whales, seals).",
+    "Terrestrial: cursorial (run), fossorial (dig), arboreal (tree-dwell); waterproof skin, lungs.",
+    "Volant: wings, hollow bones, air sacs, strong pectoral muscles, beak.",
+    "Countercurrent exchange: ~80% O2 uptake in fish gills.",
+    "Adaptation is evolutionary (population-level), not individual.",
+    "Nepal examples: fish (Terai), snow leopard (cursorial), birds (volant)."
+  ],
+  "summary": "Animal adaptations reflect their habitat. Aquatic animals (primary, e.g. fishes; secondary, e.g. whales) have streamlined bodies, gills with countercurrent exchange, lateral lines, and webbed feet. Terrestrial animals show cursorial (running), fossorial (burrowing), or arboreal (tree-dwelling) adaptations, with waterproof skin and lungs. Volant (flying) animals have wings, hollow bones, air sacs, and strong pectoral muscles. Countercurrent exchange in fish gills allows ~80% O2 uptake. These adaptations are evolutionary, not intentional. NEB focuses on aquatic, terrestrial, and volant adaptations with Nepali examples.",
+  "specialNotes": [
+    "NEB expects a clear aquatic (primary + secondary), terrestrial (cursorial, fossorial, arboreal), and volant adaptation list.",
+    "Countercurrent exchange in fish gills is a very common exam point.",
+    "Differentiate primary from secondary aquatic animals.",
+    "Hollow bones + air sacs + double respiration are key volant adaptations.",
+    "Give a Nepali example for each type (fish, snow leopard, eagle)."
+  ],
+  "importantStatements": [
+    "Aquatic animals have streamlined bodies and gills with countercurrent exchange.",
+    "Primary aquatic animals were always aquatic; secondary ones evolved from land.",
+    "Volant animals have wings, hollow bones, and air sacs for efficient flight.",
+    "Adaptations are evolutionary features, not individual adjustments."
+  ],
+  "importantNotes": [
+    "Memorise 5 aquatic, 5 terrestrial, and 5 volant adaptations.",
+    "Learn countercurrent exchange in fish gills.",
+    "Differentiate primary from secondary aquatic animals.",
+    "List cursorial, fossorial, and arboreal adaptations with examples.",
+    "Give a Nepali example for each type."
+  ],
+  "examShortTricks": [
+    "Aquatic = A-F-G-L (Adapted, Fusiform, Gills, Lateral line).",
+    "Primary = always water; Secondary = land → water (whales).",
+    "Volant = hollow bones + air sacs + wings + beak.",
+    "Cursorial = run; Fossorial = dig; Arboreal = tree."
+  ],
+  "examNotes": [
+    "Explain the aquatic adaptations of a fish.",
+    "Differentiate primary from secondary aquatic animals.",
+    "List the terrestrial adaptations (cursorial, fossorial, arboreal).",
+    "Explain the volant adaptations of a bird.",
+    "How does countercurrent exchange work in fish gills?",
+    "Give a Nepali example for each adaptation type."
+  ],
+  "mcs": [
+    {
+      "question": "The streamlined (fusiform) body of a fish is an adaptation for:",
+      "options": [
+        "Breathing",
+        "Reducing water resistance",
+        "Vision",
+        "Reproduction"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Whales and seals are examples of:",
+      "options": [
+        "Primary aquatic animals",
+        "Secondary aquatic animals",
+        "Terrestrial animals",
+        "Volant animals"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hollow bones in birds are an adaptation for:",
+      "options": [
+        "Breathing",
+        "Flight (weight reduction)",
+        "Vision",
+        "Reproduction"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Countercurrent exchange in fish gills allows:",
+      "options": [
+        "~50% O2 uptake",
+        "~80% O2 uptake",
+        "~100% O2 uptake",
+        "No O2 uptake"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Aquatic adaptations (fusiform, gills, lateral line)",
+    "Primary vs secondary aquatic",
+    "Terrestrial adaptations (cursorial, fossorial, arboreal)",
+    "Volant adaptations (wings, hollow bones, air sacs)",
+    "Countercurrent exchange",
+    "Evolutionary adaptation",
+    "Nepal examples"
+  ],
+  "importantTasks": [
+    "List aquatic adaptations",
+    "Differentiate primary vs secondary aquatic",
+    "List terrestrial adaptations",
+    "Explain volant adaptations",
+    "Explain countercurrent exchange"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Why do birds have hollow bones, and how does this help in flight?",
+      "steps": [
+        "Hollow bones are lighter than solid bones",
+        "Reduced body mass = less energy to fly",
+        "Internal struts keep bones strong"
+      ],
+      "answer": "Hollow bones reduce body weight, making flight more efficient while remaining strong"
     }
   ]
 }

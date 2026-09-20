@@ -402,5 +402,174 @@
       "component": "ProteinStructureViewer",
       "desc": "Rotatable protein showing primary→quaternary levels and the phospholipid bilayer alongside."
     }
-  }
+  },
+  "notes": [
+    "Biomolecules are organic molecules essential to life: carbohydrates, proteins, lipids, nucleic acids, plus minerals, enzymes and water.",
+    "Carbohydrates (CH2O)n: monosaccharides (glucose, fructose, ribose), disaccharides (sucrose=glucose+fructose, lactose, maltose), polysaccharides (starch, glycogen, cellulose). Provide energy (4 kcal/g) and structural support.",
+    "Proteins: polymers of 20 L-amino acids joined by peptide (-CO-NH-) bonds. Four structural levels (primary, secondary, tertiary, quaternary). Functions: enzymes, transport (haemoglobin), contraction, defence, structural.",
+    "Lipids: hydrophobic; triglycerides (fat storage, 9 kcal/g), phospholipids (membrane bilayer), steroids (cholesterol, hormones). Not true polymers.",
+    "Nucleic acids: DNA (double helix, deoxyribose, A=T 2 H-bonds, G=C 3 H-bonds) stores heredity; RNA (single strand, ribose, A=U) in protein synthesis (mRNA, tRNA, rRNA).",
+    "Enzymes: biological catalysts (mostly proteins); work by the lock-and-key / induced-fit model; denatured by high temperature or extreme pH; follow -S- (substrate) specificity.",
+    "Water (major solvent, ~70% of cell) and minerals (Ca, P, K, Na, Fe, I) act as structural, catalytic and osmotic regulators; deficiency causes deficiency diseases."
+  ],
+  "confusion": [
+    "Cellulose is a structural polymer in plant cell walls, not an energy reserve; glycogen (animal) and starch (plant) are the storage forms.",
+    "Starch is unbranched amylose + branched amylopectin; both yield maltose on hydrolysis.",
+    "Ribose and deoxyribose differ only by one oxygen atom on C-2; hence RNA vs DNA sugars.",
+    "Denaturation unfolds protein (loss of secondary/tertiary structure); it is often reversible at low temperature.",
+    "Lipids are not polymers; they do not have repeating monomers like the other three macromolecule classes.",
+    "A peptide bond forms between the -COOH of one amino acid and the -NH2 of the next, releasing one water (condensation)."
+  ],
+  "practice": [
+    "Match each biomolecule to a function: insulin (hormone), haemoglobin (transport), cellulose (structure), ATP (energy currency).",
+    "Draw a dipeptide from glycine + alanine and circle the peptide bond.",
+    "Differentiate DNA and RNA by sugar, bases, strands and function.",
+    "Explain why an enzyme is still present after catalysing a reaction.",
+    "Relate an enzyme deficiency (e.g. phenylalanine) to a disease (PKU)."
+  ],
+  "universalFacts": [
+    "A typical human body has roughly the same number of carbon atoms as grains of sand on Earth; carbon is the backbone of all life.",
+    "Hemoglobin carries about 1.4 g of oxygen per 100 mL of fully saturated blood.",
+    "Water has an anomalously high specific heat and acts as a biological thermostat.",
+    "Insulin (51 amino acids) was the first recombinant protein made for human medicine (1978)."
+  ],
+  "examples": [
+    "Starch in rice/potato is a storage polysaccharide; glycogen in liver/muscle is the animal reserve.",
+    "Cellulose (beta-glucose) forms the cell wall of green plants.",
+    "DNA replication and mRNA synthesis link nucleic acids to protein production.",
+    "Iodine deficiency enlarges the thyroid; iron deficiency causes anaemia."
+  ],
+  "practiceQuestions": [
+    "How is a triglyceride different from a phospholipid in structure and function?",
+    "List the four structural levels of a protein with one example of a quaternary protein.",
+    "Describe the induced-fit model of enzyme action and its significance.",
+    "Why are essential amino acids called \"essential\"?",
+    "Differentiate amylose and amylopectin and state the test for starch."
+  ],
+  "formulas": [
+    "General carbohydrate ratio: C : H : O = 1 : 2 : 1, i.e. (CH2O)n",
+    "Endergonic polymerisation (condensation): monomer + monomer → dimer + H2O",
+    "Peptide unit: -C(=O)-NH-",
+    "DNA base pairing: A=T (2 H-bonds), G≡C (3 H-bonds)"
+  ],
+  "keyPoints": [
+    "Functions: C=energy+structure, P=enzymes/transport/structure, L=storage+membrane, N=heredity+protein synthesis.",
+    "A hydrolysis breaks a bond + water; a condensation joins molecules - water.",
+    "Enzymes are specific, reversible regulators, not consumed in the reaction.",
+    "DNA is the gene; RNA is the messenger/scaffold in protein synthesis.",
+    "Essential amino acids (8 in adults, 9 in children) must come from food.",
+    "Deficiency of minerals leads to named diseases (Fe→anaemia, I→goitre, Ca→rickets)."
+  ],
+  "summary": "Biomolecules are the chemical basis of life. Carbohydrates supply and store energy and form structural fibres; proteins (from 20 amino acids) act as enzymes, transporters, contractile and defence molecules in four structural levels; lipids store energy and build membranes; nucleic acids (DNA/RNA) store and express genetic information; enzymes, water and minerals complete the set. Mastery of structure-function links and enzyme kinetics is a frequent NEB examination focus.",
+  "specialNotes": [
+    "In NEB written answers, pair every macromolecule with BOTH its monomer and its key function to earn full marks.",
+    "Protein denaturation is a favourite \"application\" question (cooking an egg, or fever denaturing enzymes).",
+    "Stress that enzymes lower activation energy; they do NOT supply energy."
+  ],
+  "importantStatements": [
+    "All cells share the same basic biochemical machinery of DNA→RNA→protein (central dogma).",
+    "The 20 naturally occurring L-amino acids differ only in their R-group (side chain).",
+    "Phospholipid bilayers form spontaneously because the head is hydrophilic and the tail is hydrophobic.",
+    "Enzyme specificity is explained by the induced-fit model.",
+    "Water is the universal biological solvent and a participant in hydrolysis and condensation."
+  ],
+  "importantNotes": [
+    "Memorise monomer → polymer: glucose→starch, amino acid→protein, fatty acid+glycerol→triglyceride, nucleotide→nucleic acid.",
+    "Learn base-pairing and hydrogen-bond counts (A=T=2, G=C=3).",
+    "Do 2–3 diagram questions: phospholipid bilayer, peptide bond, a DNA nucleotide ladder.",
+    "Link enzyme inhibitors (competitive vs non-competitive) to drug design."
+  ],
+  "examShortTricks": [
+    "Remember C-H-O-N: C=energy, P=work, L=lipid, N=genetic.",
+    "A-T two H-bonds (think \"A\" has 2 strokes), G-C three.",
+    "Enzymes are proteins that END in \"-ase\".",
+    "Starch test: iodine → blue-black; reducing sugar: Benedict's → brick-red."
+  ],
+  "examNotes": [
+    "High frequency: monomer/polymer matching tables, enzyme action and factors affecting enzymes.",
+    "Diagram-based marks: label a phospholipid bilayer and a DNA nucleotide.",
+    "Application: explain a disease caused by a biomolecule deficiency.",
+    "Do not confuse structural (cellulose) with storage (starch/glycogen) polysaccharides."
+  ],
+  "mcs": [
+    {
+      "question": "Which biomolecule is NOT a true polymer?",
+      "options": [
+        "Protein",
+        "Starch",
+        "Lipid",
+        "DNA"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "How many hydrogen bonds are present between G and C in DNA?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Insulin, haemoglobin and amylase all belong to which class of biomolecule?",
+      "options": [
+        "Carbohydrate",
+        "Lipid",
+        "Protein",
+        "Nucleic acid"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The primary structure of a protein is determined by which bond?",
+      "options": [
+        "Peptide bond",
+        "Hydrogen bond",
+        "Phosphodiester bond",
+        "Van der Waals force"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [
+    "Macromolecule monomers",
+    "Peptide bond",
+    "Denaturation",
+    "DNA vs RNA",
+    "Enzyme kinetics",
+    "Essential vs non-essential amino acids",
+    "Lipid types"
+  ],
+  "importantTasks": [
+    "Draw a phospholipid bilayer",
+    "Table of 4 macromolecules: monomer, bond, function",
+    "Explain induced-fit enzyme model",
+    "Compare DNA and RNA in 5 points",
+    "List three mineral-deficiency diseases"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A polypeptide contains 200 amino acids. How many peptide bonds and how many water molecules are involved?",
+      "steps": [
+        "n residues have (n-1) peptide bonds",
+        "200 - 1 = 199 bonds",
+        "Each peptide bond releases 1 water",
+        "Hence 199 water molecules released"
+      ],
+      "answer": "199 peptide bonds and 199 H2O"
+    },
+    {
+      "id": "2",
+      "question": "In a DNA sample, adenine is 20%. What percentage is guanine?",
+      "steps": [
+        "Chargaff: A = T → T = 20%",
+        "A + T + G + C = 100%",
+        "G + C = 60%; G = C → G = 30%"
+      ],
+      "answer": "Guanine = 30%"
+    }
+  ]
 }

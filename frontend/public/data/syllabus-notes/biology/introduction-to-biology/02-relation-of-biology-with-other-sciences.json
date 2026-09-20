@@ -4,80 +4,557 @@
   "topicSlug": "relation-of-biology-with-other-sciences",
   "topicTitle": "Relation of biology with other sciences",
   "relevance": 100,
+  "animation3D": "biology-interdisciplinary",
+  "motionGraphics": "biology-interdisciplinary",
+  "duplicateType": 2,
+  "tabGroup": "02-relation-of-biology-with-other-sciences",
+  "visualType": "biology-interdisciplinary",
+  "enrichedContent": {
+    "notes": [
+      "Biology is interconnected with other sciences: it relies on and contributes to Chemistry (biochemistry), Physics (biophysics), Mathematics (biostatistics), and Earth Science (geobiology).",
+      "Biochemistry: the chemistry of life — metabolism, enzymes, DNA/RNA/protein structures.",
+      "Biophysics: physics applied to biology — biophysics of the cell, nerve conduction, muscle mechanics, imaging (MRI, X-ray).",
+      "Biostatistics: mathematics used in biology — genetics (Punnett), population models, experimental design.",
+      "Geobiology: interaction of life with Earth — evolution (fossils, climate), ecology (biogeochemical cycles), palaeontology.",
+      "Interdisciplinary fields: medicine (biology + chemistry + physics), agriculture (biology + ecology), conservation biology (biology + policy), biotechnology (biology + engineering).",
+      "NEB focus: how biology connects with chemistry, physics, mathematics, and earth science.",
+      "Biology uses scientific tools from other disciplines: microscopes (physics), spectrometers (chemistry), statistical software (mathematics)."
+    ],
+    "confusion": [
+      "Biochemistry is NOT the same as organic chemistry; it focuses on the chemistry of living systems (metabolism, enzymes, macromolecules).",
+      "Biophysics applies physics to biological problems; it is not \"physics of life\" in a vague sense.",
+      "Biostatistics is a branch of statistics, not a branch of biology; it is used BY biologists.",
+      "Geobiology (biology + earth science) is different from ecology (biology + environment).",
+      "Interdisciplinary fields combine multiple sciences; they are NOT a new \"fourth\" science.",
+      "Biology uses tools from other sciences (microscopes, spectrometers) but has its own methods (experiments, observations, classifications)."
+    ],
+    "practice": [
+      "Explain how biology relates to chemistry (biochemistry).",
+      "Describe the role of physics in biology (biophysics).",
+      "Explain how mathematics is used in biology (biostatistics, genetics).",
+      "Describe the relationship between biology and earth science (geobiology).",
+      "List three interdisciplinary fields that combine biology with other sciences."
+    ],
+    "universalFacts": [
+      "The DNA double helix was discovered using X-ray crystallography (a physics technique) in 1953.",
+      "The electron microscope (physics) revealed cellular structures that light microscopes could not.",
+      "CRISPR-Cas9 (biology) is a gene-editing tool derived from a bacterial immune system.",
+      "Biology is the most data-rich science; a single human cell contains ~100,000 proteins."
+    ],
+    "examples": [
+      "Biochemistry: ATP (adenosine triphosphate) is the energy currency of the cell — a molecule studied by chemistry.",
+      "Biophysics: nerve conduction involves electrical signals (physics) across the neuron membrane.",
+      "Biostatistics: Mendel's 3:1 ratio (Punnett squares) is a mathematical model of inheritance.",
+      "Geobiology: fossil records (earth science) provide evidence for evolution (biology).",
+      "Interdisciplinary: medicine combines biology (anatomy, physiology) with chemistry (pharmacology) and physics (imaging)."
+    ],
+    "practiceQuestions": [
+      "Explain how biology relates to chemistry.",
+      "Describe the role of physics in biology.",
+      "Explain how mathematics is used in biology.",
+      "Describe the relationship between biology and earth science.",
+      "List three interdisciplinary fields that combine biology with other sciences."
+    ],
+    "formulas": [
+      "Biochemistry: metabolic pathways (glycolysis, Krebs, ETS) → energy (ATP)",
+      "Biophysics: nerve conduction (action potential), muscle mechanics, imaging (MRI)",
+      "Biostatistics: Punnett squares, Hardy-Weinberg, population models",
+      "Geobiology: fossil records, biogeochemical cycles, palaeoclimate"
+    ],
+    "keyPoints": [
+      "Biology is interconnected with Chemistry, Physics, Mathematics, and Earth Science.",
+      "Biochemistry: the chemistry of life (metabolism, enzymes, macromolecules).",
+      "Biophysics: physics applied to biology (nerve conduction, muscle, imaging).",
+      "Biostatistics: mathematics used in biology (genetics, populations, experiments).",
+      "Geobiology: interaction of life with Earth (fossils, climate, cycles).",
+      "Interdisciplinary fields: medicine, agriculture, conservation, biotechnology.",
+      "Biology uses tools from other sciences (microscopes, spectrometers)."
+    ],
+    "summary": "Biology is deeply interconnected with other sciences. Biochemistry studies the chemistry of life (metabolism, enzymes, macromolecules). Biophysics applies physics to biological problems (nerve conduction, muscle mechanics, imaging). Biostatistics uses mathematics in genetics, population models, and experimental design. Geobiology connects biology with earth science (fossils, climate, biogeochemical cycles). Interdisciplinary fields such as medicine, agriculture, conservation, and biotechnology combine biology with other sciences. NEB focuses on these connections and the tools biology borrows from other disciplines.",
+    "specialNotes": [
+      "NEB expects examples of how biology uses chemistry (biochemistry), physics (biophysics), and mathematics (biostatistics).",
+      "Interdisciplinary fields (medicine, agriculture, conservation) are a favourite application question.",
+      "Biology uses tools from other sciences (microscopes, spectrometers) — a key point.",
+      "Differentiate biochemistry from organic chemistry."
+    ],
+    "importantStatements": [
+      "Biology is an interdisciplinary science that relies on and contributes to other sciences.",
+      "Biochemistry studies the chemistry of living systems.",
+      "Biophysics applies physics to biological problems.",
+      "Interdisciplinary fields combine biology with other sciences for practical applications."
+    ],
+    "importantNotes": [
+      "Memorise the 4 related sciences (chemistry, physics, mathematics, earth science).",
+      "Learn one example of each (biochemistry, biophysics, biostatistics, geobiology).",
+      "List 3 interdisciplinary fields (medicine, agriculture, conservation).",
+      "Explain how biology uses tools from other sciences.",
+      "Differentiate biochemistry from organic chemistry."
+    ],
+    "examShortTricks": [
+      "Biology = B-I-O (Bio-Interconnected with Other sciences).",
+      "Biochem = chemistry of life; Biophys = physics of life; Biostats = math of life.",
+      "Geobiology = life + earth (fossils, climate, cycles).",
+      "Interdisciplinary = combine biology + other science = practical field."
+    ],
+    "examNotes": [
+      "Explain how biology relates to chemistry (biochemistry).",
+      "Describe the role of physics in biology (biophysics).",
+      "Explain how mathematics is used in biology (biostatistics).",
+      "Describe the relationship between biology and earth science.",
+      "List 3 interdisciplinary fields that combine biology with other sciences."
+    ],
+    "mcs": [
+      {
+        "question": "Biochemistry is the study of:",
+        "options": [
+          "Physics of life",
+          "Chemistry of life",
+          "Mathematics of life",
+          "Earth science"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The discovery of the DNA double helix used which technique?",
+        "options": [
+          "X-ray crystallography",
+          "Spectroscopy",
+          "MRI",
+          "Mass spectrometry"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Punnett squares are used in which field?",
+        "options": [
+          "Biophysics",
+          "Biostatistics",
+          "Geobiology",
+          "Biochemistry"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is an interdisciplinary field combining biology with other sciences?",
+        "options": [
+          "Medicine",
+          "Chemistry",
+          "Physics",
+          "Mathematics"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Biochemistry",
+      "Biophysics",
+      "Biostatistics",
+      "Geobiology",
+      "Interdisciplinary fields",
+      "Tools from other sciences",
+      "DNA double helix (X-ray)",
+      "Punnett squares"
+    ],
+    "importantTasks": [
+      "Explain biology + chemistry",
+      "Explain biology + physics",
+      "Explain biology + mathematics",
+      "Explain biology + earth science",
+      "List 3 interdisciplinary fields"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "How did the discovery of the DNA double helix involve physics?",
+        "steps": [
+          "X-ray crystallography (a physics technique) was used",
+          "Rosalind Franklin's X-ray diffraction pattern (Photo 51)",
+          "Watson and Crick used this to model the double helix"
+        ],
+        "answer": "X-ray crystallography (a physics technique) provided the key diffraction pattern that revealed the DNA structure"
+      }
+    ],
+    "visualization": {
+      "type": "interactive",
+      "component": "BiologyInterconnections",
+      "desc": "Interactive web map showing how biology connects with chemistry, physics, mathematics, and earth science, with clickable examples and tools."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Biology is interconnected with other sciences: it relies on and contributes to Chemistry (biochemistry), Physics (biophysics), Mathematics (biostatistics), and Earth Science (geobiology).",
+      "Biochemistry: the chemistry of life — metabolism, enzymes, DNA/RNA/protein structures.",
+      "Biophysics: physics applied to biology — biophysics of the cell, nerve conduction, muscle mechanics, imaging (MRI, X-ray).",
+      "Biostatistics: mathematics used in biology — genetics (Punnett), population models, experimental design.",
+      "Geobiology: interaction of life with Earth — evolution (fossils, climate), ecology (biogeochemical cycles), palaeontology.",
+      "Interdisciplinary fields: medicine (biology + chemistry + physics), agriculture (biology + ecology), conservation biology (biology + policy), biotechnology (biology + engineering).",
+      "NEB focus: how biology connects with chemistry, physics, mathematics, and earth science.",
+      "Biology uses scientific tools from other disciplines: microscopes (physics), spectrometers (chemistry), statistical software (mathematics)."
+    ],
+    "confusion": [
+      "Biochemistry is NOT the same as organic chemistry; it focuses on the chemistry of living systems (metabolism, enzymes, macromolecules).",
+      "Biophysics applies physics to biological problems; it is not \"physics of life\" in a vague sense.",
+      "Biostatistics is a branch of statistics, not a branch of biology; it is used BY biologists.",
+      "Geobiology (biology + earth science) is different from ecology (biology + environment).",
+      "Interdisciplinary fields combine multiple sciences; they are NOT a new \"fourth\" science.",
+      "Biology uses tools from other sciences (microscopes, spectrometers) but has its own methods (experiments, observations, classifications)."
+    ],
+    "practice": [
+      "Explain how biology relates to chemistry (biochemistry).",
+      "Describe the role of physics in biology (biophysics).",
+      "Explain how mathematics is used in biology (biostatistics, genetics).",
+      "Describe the relationship between biology and earth science (geobiology).",
+      "List three interdisciplinary fields that combine biology with other sciences."
+    ],
+    "universalFacts": [
+      "The DNA double helix was discovered using X-ray crystallography (a physics technique) in 1953.",
+      "The electron microscope (physics) revealed cellular structures that light microscopes could not.",
+      "CRISPR-Cas9 (biology) is a gene-editing tool derived from a bacterial immune system.",
+      "Biology is the most data-rich science; a single human cell contains ~100,000 proteins."
+    ],
+    "examples": [
+      "Biochemistry: ATP (adenosine triphosphate) is the energy currency of the cell — a molecule studied by chemistry.",
+      "Biophysics: nerve conduction involves electrical signals (physics) across the neuron membrane.",
+      "Biostatistics: Mendel's 3:1 ratio (Punnett squares) is a mathematical model of inheritance.",
+      "Geobiology: fossil records (earth science) provide evidence for evolution (biology).",
+      "Interdisciplinary: medicine combines biology (anatomy, physiology) with chemistry (pharmacology) and physics (imaging)."
+    ],
+    "practiceQuestions": [
+      "Explain how biology relates to chemistry.",
+      "Describe the role of physics in biology.",
+      "Explain how mathematics is used in biology.",
+      "Describe the relationship between biology and earth science.",
+      "List three interdisciplinary fields that combine biology with other sciences."
+    ],
+    "formulas": [
+      "Biochemistry: metabolic pathways (glycolysis, Krebs, ETS) → energy (ATP)",
+      "Biophysics: nerve conduction (action potential), muscle mechanics, imaging (MRI)",
+      "Biostatistics: Punnett squares, Hardy-Weinberg, population models",
+      "Geobiology: fossil records, biogeochemical cycles, palaeoclimate"
+    ],
+    "keyPoints": [
+      "Biology is interconnected with Chemistry, Physics, Mathematics, and Earth Science.",
+      "Biochemistry: the chemistry of life (metabolism, enzymes, macromolecules).",
+      "Biophysics: physics applied to biology (nerve conduction, muscle, imaging).",
+      "Biostatistics: mathematics used in biology (genetics, populations, experiments).",
+      "Geobiology: interaction of life with Earth (fossils, climate, cycles).",
+      "Interdisciplinary fields: medicine, agriculture, conservation, biotechnology.",
+      "Biology uses tools from other sciences (microscopes, spectrometers)."
+    ],
+    "summary": "Biology is deeply interconnected with other sciences. Biochemistry studies the chemistry of life (metabolism, enzymes, macromolecules). Biophysics applies physics to biological problems (nerve conduction, muscle mechanics, imaging). Biostatistics uses mathematics in genetics, population models, and experimental design. Geobiology connects biology with earth science (fossils, climate, biogeochemical cycles). Interdisciplinary fields such as medicine, agriculture, conservation, and biotechnology combine biology with other sciences. NEB focuses on these connections and the tools biology borrows from other disciplines.",
+    "specialNotes": [
+      "NEB expects examples of how biology uses chemistry (biochemistry), physics (biophysics), and mathematics (biostatistics).",
+      "Interdisciplinary fields (medicine, agriculture, conservation) are a favourite application question.",
+      "Biology uses tools from other sciences (microscopes, spectrometers) — a key point.",
+      "Differentiate biochemistry from organic chemistry."
+    ],
+    "importantStatements": [
+      "Biology is an interdisciplinary science that relies on and contributes to other sciences.",
+      "Biochemistry studies the chemistry of living systems.",
+      "Biophysics applies physics to biological problems.",
+      "Interdisciplinary fields combine biology with other sciences for practical applications."
+    ],
+    "importantNotes": [
+      "Memorise the 4 related sciences (chemistry, physics, mathematics, earth science).",
+      "Learn one example of each (biochemistry, biophysics, biostatistics, geobiology).",
+      "List 3 interdisciplinary fields (medicine, agriculture, conservation).",
+      "Explain how biology uses tools from other sciences.",
+      "Differentiate biochemistry from organic chemistry."
+    ],
+    "examShortTricks": [
+      "Biology = B-I-O (Bio-Interconnected with Other sciences).",
+      "Biochem = chemistry of life; Biophys = physics of life; Biostats = math of life.",
+      "Geobiology = life + earth (fossils, climate, cycles).",
+      "Interdisciplinary = combine biology + other science = practical field."
+    ],
+    "examNotes": [
+      "Explain how biology relates to chemistry (biochemistry).",
+      "Describe the role of physics in biology (biophysics).",
+      "Explain how mathematics is used in biology (biostatistics).",
+      "Describe the relationship between biology and earth science.",
+      "List 3 interdisciplinary fields that combine biology with other sciences."
+    ],
+    "mcs": [
+      {
+        "question": "Biochemistry is the study of:",
+        "options": [
+          "Physics of life",
+          "Chemistry of life",
+          "Mathematics of life",
+          "Earth science"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The discovery of the DNA double helix used which technique?",
+        "options": [
+          "X-ray crystallography",
+          "Spectroscopy",
+          "MRI",
+          "Mass spectrometry"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Punnett squares are used in which field?",
+        "options": [
+          "Biophysics",
+          "Biostatistics",
+          "Geobiology",
+          "Biochemistry"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is an interdisciplinary field combining biology with other sciences?",
+        "options": [
+          "Medicine",
+          "Chemistry",
+          "Physics",
+          "Mathematics"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Biochemistry",
+      "Biophysics",
+      "Biostatistics",
+      "Geobiology",
+      "Interdisciplinary fields",
+      "Tools from other sciences",
+      "DNA double helix (X-ray)",
+      "Punnett squares"
+    ],
+    "importantTasks": [
+      "Explain biology + chemistry",
+      "Explain biology + physics",
+      "Explain biology + mathematics",
+      "Explain biology + earth science",
+      "List 3 interdisciplinary fields"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "How did the discovery of the DNA double helix involve physics?",
+        "steps": [
+          "X-ray crystallography (a physics technique) was used",
+          "Rosalind Franklin's X-ray diffraction pattern (Photo 51)",
+          "Watson and Crick used this to model the double helix"
+        ],
+        "answer": "X-ray crystallography (a physics technique) provided the key diffraction pattern that revealed the DNA structure"
+      }
+    ],
+    "visualization": {
+      "type": "interactive",
+      "component": "BiologyInterconnections",
+      "desc": "Interactive web map showing how biology connects with chemistry, physics, mathematics, and earth science, with clickable examples and tools."
+    }
+  },
+  "mcqs": [
+    {
+      "question": "Biochemistry is the study of:",
+      "options": [
+        "Physics of life",
+        "Chemistry of life",
+        "Mathematics of life",
+        "Earth science"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The discovery of the DNA double helix used which technique?",
+      "options": [
+        "X-ray crystallography",
+        "Spectroscopy",
+        "MRI",
+        "Mass spectrometry"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Punnett squares are used in which field?",
+      "options": [
+        "Biophysics",
+        "Biostatistics",
+        "Geobiology",
+        "Biochemistry"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following is an interdisciplinary field combining biology with other sciences?",
+      "options": [
+        "Medicine",
+        "Chemistry",
+        "Physics",
+        "Mathematics"
+      ],
+      "answer": "A"
+    }
+  ],
   "notes": [
-    "Detailed notes on 02 relation of biology with other sciences within the introduction to biology unit."
+    "Biology is interconnected with other sciences: it relies on and contributes to Chemistry (biochemistry), Physics (biophysics), Mathematics (biostatistics), and Earth Science (geobiology).",
+    "Biochemistry: the chemistry of life — metabolism, enzymes, DNA/RNA/protein structures.",
+    "Biophysics: physics applied to biology — biophysics of the cell, nerve conduction, muscle mechanics, imaging (MRI, X-ray).",
+    "Biostatistics: mathematics used in biology — genetics (Punnett), population models, experimental design.",
+    "Geobiology: interaction of life with Earth — evolution (fossils, climate), ecology (biogeochemical cycles), palaeontology.",
+    "Interdisciplinary fields: medicine (biology + chemistry + physics), agriculture (biology + ecology), conservation biology (biology + policy), biotechnology (biology + engineering).",
+    "NEB focus: how biology connects with chemistry, physics, mathematics, and earth science.",
+    "Biology uses scientific tools from other disciplines: microscopes (physics), spectrometers (chemistry), statistical software (mathematics)."
   ],
   "confusion": [
-    "❌ Misconception about 02 relation of biology with other sciences. ✅ Scientific explanation."
+    "Biochemistry is NOT the same as organic chemistry; it focuses on the chemistry of living systems (metabolism, enzymes, macromolecules).",
+    "Biophysics applies physics to biological problems; it is not \"physics of life\" in a vague sense.",
+    "Biostatistics is a branch of statistics, not a branch of biology; it is used BY biologists.",
+    "Geobiology (biology + earth science) is different from ecology (biology + environment).",
+    "Interdisciplinary fields combine multiple sciences; they are NOT a new \"fourth\" science.",
+    "Biology uses tools from other sciences (microscopes, spectrometers) but has its own methods (experiments, observations, classifications)."
   ],
   "practice": [
-    "Practice exercise for 02 relation of biology with other sciences."
+    "Explain how biology relates to chemistry (biochemistry).",
+    "Describe the role of physics in biology (biophysics).",
+    "Explain how mathematics is used in biology (biostatistics, genetics).",
+    "Describe the relationship between biology and earth science (geobiology).",
+    "List three interdisciplinary fields that combine biology with other sciences."
   ],
   "universalFacts": [
-    "Universal scientific fact for 02 relation of biology with other sciences."
+    "The DNA double helix was discovered using X-ray crystallography (a physics technique) in 1953.",
+    "The electron microscope (physics) revealed cellular structures that light microscopes could not.",
+    "CRISPR-Cas9 (biology) is a gene-editing tool derived from a bacterial immune system.",
+    "Biology is the most data-rich science; a single human cell contains ~100,000 proteins."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
   "examples": [
-    "Real-world example of 02 relation of biology with other sciences."
+    "Biochemistry: ATP (adenosine triphosphate) is the energy currency of the cell — a molecule studied by chemistry.",
+    "Biophysics: nerve conduction involves electrical signals (physics) across the neuron membrane.",
+    "Biostatistics: Mendel's 3:1 ratio (Punnett squares) is a mathematical model of inheritance.",
+    "Geobiology: fossil records (earth science) provide evidence for evolution (biology).",
+    "Interdisciplinary: medicine combines biology (anatomy, physiology) with chemistry (pharmacology) and physics (imaging)."
   ],
   "practiceQuestions": [
-    "Practice question for 02 relation of biology with other sciences."
+    "Explain how biology relates to chemistry.",
+    "Describe the role of physics in biology.",
+    "Explain how mathematics is used in biology.",
+    "Describe the relationship between biology and earth science.",
+    "List three interdisciplinary fields that combine biology with other sciences."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 relation of biology with other sciences)"
+    "Biochemistry: metabolic pathways (glycolysis, Krebs, ETS) → energy (ATP)",
+    "Biophysics: nerve conduction (action potential), muscle mechanics, imaging (MRI)",
+    "Biostatistics: Punnett squares, Hardy-Weinberg, population models",
+    "Geobiology: fossil records, biogeochemical cycles, palaeoclimate"
   ],
   "keyPoints": [
-    "Core point for 02 relation of biology with other sciences."
+    "Biology is interconnected with Chemistry, Physics, Mathematics, and Earth Science.",
+    "Biochemistry: the chemistry of life (metabolism, enzymes, macromolecules).",
+    "Biophysics: physics applied to biology (nerve conduction, muscle, imaging).",
+    "Biostatistics: mathematics used in biology (genetics, populations, experiments).",
+    "Geobiology: interaction of life with Earth (fossils, climate, cycles).",
+    "Interdisciplinary fields: medicine, agriculture, conservation, biotechnology.",
+    "Biology uses tools from other sciences (microscopes, spectrometers)."
   ],
-  "summary": "Summary of 02 relation of biology with other sciences.",
+  "summary": "Biology is deeply interconnected with other sciences. Biochemistry studies the chemistry of life (metabolism, enzymes, macromolecules). Biophysics applies physics to biological problems (nerve conduction, muscle mechanics, imaging). Biostatistics uses mathematics in genetics, population models, and experimental design. Geobiology connects biology with earth science (fossils, climate, biogeochemical cycles). Interdisciplinary fields such as medicine, agriculture, conservation, and biotechnology combine biology with other sciences. NEB focuses on these connections and the tools biology borrows from other disciplines.",
   "specialNotes": [
-    "Specialized insight for 02 relation of biology with other sciences."
+    "NEB expects examples of how biology uses chemistry (biochemistry), physics (biophysics), and mathematics (biostatistics).",
+    "Interdisciplinary fields (medicine, agriculture, conservation) are a favourite application question.",
+    "Biology uses tools from other sciences (microscopes, spectrometers) — a key point.",
+    "Differentiate biochemistry from organic chemistry."
   ],
   "importantStatements": [
-    "Key statement for 02 relation of biology with other sciences."
+    "Biology is an interdisciplinary science that relies on and contributes to other sciences.",
+    "Biochemistry studies the chemistry of living systems.",
+    "Biophysics applies physics to biological problems.",
+    "Interdisciplinary fields combine biology with other sciences for practical applications."
   ],
   "importantNotes": [
-    "Important note regarding 02 relation of biology with other sciences."
+    "Memorise the 4 related sciences (chemistry, physics, mathematics, earth science).",
+    "Learn one example of each (biochemistry, biophysics, biostatistics, geobiology).",
+    "List 3 interdisciplinary fields (medicine, agriculture, conservation).",
+    "Explain how biology uses tools from other sciences.",
+    "Differentiate biochemistry from organic chemistry."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Relation with Other Sciences."
+    "Biology = B-I-O (Bio-Interconnected with Other sciences).",
+    "Biochem = chemistry of life; Biophys = physics of life; Biostats = math of life.",
+    "Geobiology = life + earth (fossils, climate, cycles).",
+    "Interdisciplinary = combine biology + other science = practical field."
   ],
   "examNotes": [
-    "Relation with Other Sciences is frequently tested.",
-    "Practice writing detailed answers."
+    "Explain how biology relates to chemistry (biochemistry).",
+    "Describe the role of physics in biology (biophysics).",
+    "Explain how mathematics is used in biology (biostatistics).",
+    "Describe the relationship between biology and earth science.",
+    "List 3 interdisciplinary fields that combine biology with other sciences."
   ],
   "mcs": [
     {
-      "question": "Question about 02 relation of biology with other sciences?",
+      "question": "Biochemistry is the study of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Physics of life",
+        "Chemistry of life",
+        "Mathematics of life",
+        "Earth science"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The discovery of the DNA double helix used which technique?",
+      "options": [
+        "X-ray crystallography",
+        "Spectroscopy",
+        "MRI",
+        "Mass spectrometry"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Punnett squares are used in which field?",
+      "options": [
+        "Biophysics",
+        "Biostatistics",
+        "Geobiology",
+        "Biochemistry"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following is an interdisciplinary field combining biology with other sciences?",
+      "options": [
+        "Medicine",
+        "Chemistry",
+        "Physics",
+        "Mathematics"
       ],
       "answer": "A"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 02 relation of biology with other sciences."
+    "Biochemistry",
+    "Biophysics",
+    "Biostatistics",
+    "Geobiology",
+    "Interdisciplinary fields",
+    "Tools from other sciences",
+    "DNA double helix (X-ray)",
+    "Punnett squares"
   ],
   "importantTasks": [
-    "Task for studying 02 relation of biology with other sciences."
+    "Explain biology + chemistry",
+    "Explain biology + physics",
+    "Explain biology + mathematics",
+    "Explain biology + earth science",
+    "List 3 interdisciplinary fields"
   ],
-  "duplicateType": 2,
-  "tabGroup": "02-relation-of-biology-with-other-sciences",
-  "mcqs": [
+  "exercises": [
     {
-      "question": "Question about 02 relation of biology with other sciences?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+      "id": "1",
+      "question": "How did the discovery of the DNA double helix involve physics?",
+      "steps": [
+        "X-ray crystallography (a physics technique) was used",
+        "Rosalind Franklin's X-ray diffraction pattern (Photo 51)",
+        "Watson and Crick used this to model the double helix"
       ],
-      "answer": "A"
+      "answer": "X-ray crystallography (a physics technique) provided the key diffraction pattern that revealed the DNA structure"
     }
   ]
 }

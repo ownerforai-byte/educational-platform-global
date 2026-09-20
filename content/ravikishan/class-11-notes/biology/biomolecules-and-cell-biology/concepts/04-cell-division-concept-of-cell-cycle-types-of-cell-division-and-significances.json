@@ -414,5 +414,180 @@
       "component": "CellDivisionDeepSim",
       "desc": "Step-by-step 3D mitosis and meiosis with draggable chromosomes, crossing-over animation, checkpoint controls, and a mitosis-vs-meiosis comparison view."
     }
-  }
+  },
+  "notes": [
+    "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.",
+    "Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).",
+    "Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer.",
+    "Mitosis phases (PMAT): Prophase (chromatin → chromosomes, spindle forms, nuclear envelope breaks), Metaphase (chromosomes align at the equatorial plate, spindle fibres attached to centromeres), Anaphase (centromeres split, sister chromatids pulled to opposite poles), Telophase (chromosomes decondense, nuclear envelopes reform, cytokinesis).",
+    "Cytokinesis: animal cells — cleavage furrow (actin); plant cells — cell plate → new wall.",
+    "Meiosis: two divisions. Meiosis I (reductional): Prophase I (chromosomes pair = synapsis; crossing over between non-sister chromatids), Metaphase I (homologous pairs at the equator; independent assortment), Anaphase I (homologs separate), Telophase I. Meiosis II (equational): like mitosis but no DNA replication; sister chromatids separate.",
+    "Outcome: meiosis → 4 haploid (n) genetically distinct cells; mitosis → 2 diploid (2n) identical cells.",
+    "Crossing over (Prophase I) + independent assortment (Metaphase I) = the two sources of meiotic variation.",
+    "Amitosis (direct division): simple karyokinesis; rare (liver cells, some fungi, regenerating tissues).",
+    "Errors: mitotic errors → uncontrolled division = cancer; meiotic non-disjunction → aneuploidy (e.g., Down syndrome = trisomy 21).",
+    "Significance: mitosis = growth, repair, asexual reproduction; meiosis = gamete formation + genetic diversity.",
+    "NEB focus: the full cell cycle, all mitotic and meiotic phases, variation, and errors."
+  ],
+  "confusion": [
+    "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
+    "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
+    "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.",
+    "DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions.",
+    "G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.",
+    "Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
+  ],
+  "practice": [
+    "Draw the four phases of mitosis with labelled chromosomes.",
+    "Draw a full meiosis diagram and mark crossing over + independent assortment.",
+    "Tabulate mitosis vs meiosis (6 differences).",
+    "Explain the role of each checkpoint in preventing cancer.",
+    "Calculate the chromosome/chromatid count at each meiotic stage (2n = 4 example)."
+  ],
+  "universalFacts": [
+    "Interphase occupies ~90% of the cell cycle; mitosis is brief.",
+    "A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis.",
+    "Crossing over can occur at multiple points per chromosome pair in Prophase I.",
+    "Cancer is fundamentally uncontrolled mitosis due to failed checkpoints (e.g., p53 mutations)."
+  ],
+  "examples": [
+    "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).",
+    "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.",
+    "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 ovum (n) + 3 polar bodies.",
+    "Down syndrome: trisomy 21 from meiotic non-disjunction.",
+    "Amitosis: liver-cell regeneration; some regenerating tissues."
+  ],
+  "practiceQuestions": [
+    "How is Anaphase I of meiosis different from Anaphase of mitosis?",
+    "Explain why meiosis produces genetic variation (two mechanisms).",
+    "What would happen if the S phase did not occur?",
+    "Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.",
+    "Define non-disjunction and give a human disease example."
+  ],
+  "formulas": [
+    "Mitosis: 2n → 2 daughter cells of 2n",
+    "Meiosis: 2n → 4 gametes of n",
+    "Crossing over (Prophase I) + independent assortment (Metaphase I) → variation",
+    "Chromosome count: after S each chromosome = 2 chromatids"
+  ],
+  "keyPoints": [
+    "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
+    "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
+    "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
+    "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
+    "Cytokinesis: animal (cleavage furrow) vs plant (cell plate).",
+    "Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome).",
+    "Significance: mitosis = growth/repair; meiosis = gametes + diversity."
+  ],
+  "summary": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells. Meiosis is a two-division process that halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Amitosis is a rare direct division. Mitotic errors lead to cancer; meiotic non-disjunction causes aneuploidies such as Down syndrome. NEB focuses on the full cell cycle, all mitotic and meiotic phases, the sources of variation, and the consequences of errors.",
+  "specialNotes": [
+    "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.",
+    "The mitosis vs meiosis comparison table (6 points) is a very common question.",
+    "Explain the two sources of meiotic variation (crossing over + independent assortment).",
+    "Relate checkpoint failure to cancer and non-disjunction to Down syndrome.",
+    "Distinguish what separates in Anaphase I vs Anaphase (mitosis/II).",
+    "Note the cytokinesis difference (furrow vs cell plate)."
+  ],
+  "importantStatements": [
+    "Mitosis maintains a species' diploid chromosome number.",
+    "Meiosis halves the genome and shuffles alleles, creating variation.",
+    "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged.",
+    "Crossing over occurs only in Prophase I of meiosis."
+  ],
+  "importantNotes": [
+    "Learn the PMAT sequence and draw each phase from memory.",
+    "Keep a mitosis vs meiosis comparison table (6 points).",
+    "Memorise that crossing over occurs in Prophase I.",
+    "Relate checkpoint failure to cancer and non-disjunction to aneuploidy.",
+    "Note the cytokinesis difference (animal furrow vs plant cell plate)."
+  ],
+  "examShortTricks": [
+    "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
+    "MITO = 2 identical (2n); MEI = 4 different (n).",
+    "Crossing over = Prophase I only.",
+    "Anaphase I = homologs separate; Anaphase (mitosis/II) = chromatids separate.",
+    "No S phase → no DNA duplication → division fails.",
+    "Animal = furrow; Plant = cell plate."
+  ],
+  "examNotes": [
+    "Draw and label all four mitotic phases.",
+    "Draw a full meiosis diagram (mark crossing over + independent assortment).",
+    "Tabulate mitosis vs meiosis (6 points).",
+    "Explain how meiosis creates variation (two mechanisms).",
+    "Describe cell-cycle checkpoints and the cause of cancer.",
+    "Define non-disjunction with a human example (Down syndrome)."
+  ],
+  "mcs": [
+    {
+      "question": "In Anaphase I of meiosis, what separates?",
+      "options": [
+        "Sister chromatids",
+        "Homologous chromosomes",
+        "Centromeres",
+        "Nuclear envelopes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cytokinesis in animal cells occurs by:",
+      "options": [
+        "Cell plate",
+        "Cleavage furrow",
+        "Binary fission",
+        "Growth"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The two sources of meiotic variation are:",
+      "options": [
+        "Crossing over + independent assortment",
+        "Mutation + drift",
+        "G1 + S",
+        "Anaphase + telophase"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Down syndrome is caused by:",
+      "options": [
+        "Mitotic error",
+        "Meiotic non-disjunction (trisomy 21)",
+        "A virus",
+        "Poor diet"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Cell cycle (G1, S, G2, M)",
+    "Checkpoints",
+    "PMAT phases",
+    "Meiosis I & II",
+    "Crossing over",
+    "Independent assortment",
+    "Cytokinesis (furrow vs cell plate)",
+    "Non-disjunction",
+    "Cancer",
+    "Amitosis"
+  ],
+  "importantTasks": [
+    "Label the 4 mitotic phases",
+    "Draw full meiosis (mark crossing over)",
+    "Mitosis vs meiosis table",
+    "Explain checkpoints + cancer",
+    "Define non-disjunction with an example"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A cell with 2n = 4 enters meiosis. How many chromosomes and chromatids are present at Metaphase I and at Metaphase II?",
+      "steps": [
+        "After S phase: 4 chromosomes, each with 2 chromatids = 8 chromatids",
+        "Metaphase I: 4 chromosomes (paired as 2 bivalents), 8 chromatids",
+        "Meiosis I separates homologs → Metaphase II: 2 chromosomes, 4 chromatids"
+      ],
+      "answer": "Metaphase I: 4 chromosomes, 8 chromatids; Metaphase II: 2 chromosomes, 4 chromatids"
+    }
+  ]
 }

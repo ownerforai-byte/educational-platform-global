@@ -382,5 +382,164 @@
       "component": "EukaryoticOrganelleViewer",
       "desc": "Cut-away 3D eukaryotic cell where each organelle can be isolated, labelled and rotated."
     }
-  }
+  },
+  "notes": [
+    "Cell wall (plant: cellulose; bacteria: peptidoglycan; fungi: chitin) — rigid, fully permeable outer support; in plants it can secondarily thicken (lignin).",
+    "Plasma membrane: phospholipid bilayer + integral/protein (fluid-mosaic model, Singer & Nicolson 1972); selectively permeable; controls transport (diffusion, osmosis, active transport).",
+    "Mitochondrion: site of aerobic respiration (Krebs + ETS → ATP); double membrane; cristae; \"powerhouse of the cell\".",
+    "Chloroplast (plastid): photosynthesis; double membrane; thylakoid grana + stroma; green pigment chlorophyll a & b.",
+    "Endoplasmic reticulum: rough (RER, ribosome-studded, protein synthesis) and smooth (SER, lipid synthesis, detoxification).",
+    "Golgi apparatus: modifies, packages and secretes proteins and forms lysosomes and cell plate.",
+    "Lysosome: hydrolytic \"digestive\" enzymes; self-digestion = autophagy.",
+    "Ribosome: 80S in eukaryotes (60S+40S subunits) — protein synthesis; free or attached to RER.",
+    "Nucleus: genetic control centre; nuclear envelope, nucleolus, chromatin/chromosomes.",
+    "Cilia and flagella: locomotion/transport; composed of 9+9 microtubules (axoneme).",
+    "Cell inclusions: storage granules, pigments (e.g. oil, glycogen, chromosomes when not nuclear)."
+  ],
+  "confusion": [
+    "The cell wall is fully permeable; the plasma membrane is selectively permeable.",
+    "RER is rough because of ribosomes; it makes PROTEINS. SER makes LIPIDS and detoxifies — it has no ribosomes.",
+    "The Golgi packages proteins and lipids; it does not synthesise them.",
+    "Lysosomes digest the cell's own material when damaged (autophagy); they are not plant cells' organelles (plants use vacuoles).",
+    "Cilia and flagella both have a 9+9 microtubule axoneme; flagella are longer; in prokaryotes the flagellum has a different (no microtubule) structure.",
+    "Chromatin (diffuse, interphase) and chromosomes (condensed, division) are the SAME genetic material in two forms."
+  ],
+  "practice": [
+    "Label all organelles on a plant cell diagram.",
+    "Match each organelle with its main function in a table.",
+    "Differentiate rough and smooth endoplasmic reticulum (4 points).",
+    "Draw and explain the fluid-mosaic model of the plasma membrane.",
+    "State the functions of the nucleus, nucleolus and chromatin."
+  ],
+  "universalFacts": [
+    "Mitochondria and chloroplasts have their own DNA and 70S ribosomes, suggesting an endosymbiotic origin.",
+    "A single human liver cell may contain over one million ribosomes.",
+    "The nuclear envelope is continuous with the outer membrane of the endoplasmic reticulum."
+  ],
+  "examples": [
+    "Oxidative phosphorylation in the mitochondrial cristae produces the bulk of ATP.",
+    "Secretory cells (e.g. pancreatic) have abundant RER and Golgi for protein export.",
+    "Central vacuole in a plant cell stores water, pigments and maintains turgor."
+  ],
+  "practiceQuestions": [
+    "Why are the mitochondria and chloroplast called \"semi-autonomous\" organelles?",
+    "Differentiate rough and smooth endoplasmic reticulum.",
+    "Describe the functions of the Golgi body in a plant cell.",
+    "What is the significance of cristae in mitochondria?",
+    "State the role of the nucleolus."
+  ],
+  "formulas": [
+    "Fluid-mosaic model: phospholipid bilayer + protein mosaic + cholesterol + glycocalyx",
+    "9+9 axonemal structure of cilia/flagella (9 doublets + central pair)"
+  ],
+  "keyPoints": [
+    "Each organelle has a distinct, frequently-examined function (mitochondrion→ATP, chloroplast→photosynthesis).",
+    "RER makes protein; SER makes lipid; Golgi packages; lysosome digests.",
+    "Plasma membrane is selectively permeable fluid mosaic.",
+    "Nucleus + nucleolus + chromatin = genetic control; chromatin condenses into chromosomes.",
+    "Plant-specific: cell wall, chloroplast, large central vacuole.",
+    "Mitochondria and chloroplast carry their own DNA (endosymbiosis evidence)."
+  ],
+  "summary": "The internal architecture of a eukaryotic cell is defined by membrane-bound organelles. Each has a specialised role: the plasma membrane controls transport; mitochondria and chloroplasts convert energy; RER/SER synthesise proteins and lipids; the Golgi, lysosomes and vacuoles process and store material; the nucleus controls inheritance; cilia, flagella and inclusions complete the picture. The endosymbiotic origin of the two double-membrane organelles is a common exam application.",
+  "specialNotes": [
+    "NEB written answers expect a labelled organelle diagram plus a one-line function per organelle.",
+    "The endosymbiotic theory (Mitochondria/chloroplast from engulfed prokaryotes) is a favourite 4-mark question.",
+    "Contrast plant vs animal cells (wall, chloroplast, large vacuole vs centrioles)."
+  ],
+  "importantStatements": [
+    "The plasma membrane is the selectively permeable boundary of every cell.",
+    "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+    "The Golgi apparatus modifies and packages proteins and lipids.",
+    "Cilia and flagella use a 9+9 microtubule arrangement for locomotion."
+  ],
+  "importantNotes": [
+    "Memorise organelle → function pairs (mitochondrion→ATP, ER→synthesis, Golgi→packaging, lysosome→digestion).",
+    "Draw a plant cell with all labels in one pass.",
+    "Learn the 9+9 axonemal structure of cilia and flagella.",
+    "Note plant-specific organelles (cell wall, chloroplast, central vacuole)."
+  ],
+  "examShortTricks": [
+    "POWER: P=power (mitochondrion), O=oil & lipid (SER), W=wall (plant), E=envelope, R=respiration, power house = mitochondrion.",
+    "MITOCHONDRIUM = MITOchondria make ENERGY (powerhouse).",
+    "Golgi = Golgi packages & SECREtes.",
+    "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles."
+  ],
+  "examNotes": [
+    "Organelle label-and-function questions are very common.",
+    "Draw the fluid-mosaic model with a labelled membrane.",
+    "Explain endosymbiotic theory with evidence (own DNA, 70S ribosomes, double membrane).",
+    "Compare plant and animal cells in a two-column table."
+  ],
+  "mcs": [
+    {
+      "question": "The \"powerhouse of the cell\" is:",
+      "options": [
+        "Golgi body",
+        "Mitochondrion",
+        "Lysosome",
+        "Ribosome"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The fluid-mosaic model of the membrane was proposed by:",
+      "options": [
+        "Gatenbly",
+        "Singer and Nicolson",
+        "Schleiden",
+        "Dalton"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which organelle synthesises lipids?",
+      "options": [
+        "Rough ER",
+        "Smooth ER",
+        "Ribosome",
+        "Nucleus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The internal 9+9 microtubule pattern is found in:",
+      "options": [
+        "Cilia and flagella",
+        "Lysosomes",
+        "Golgi",
+        "Chloroplast"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [
+    "Fluid-mosaic model",
+    "Rough vs smooth ER",
+    "Golgi functions",
+    "Lysosomes/autophagy",
+    "Nucleus & nucleolus",
+    "9+9 axoneme",
+    "Plant vs animal cells",
+    "Endosymbiotic theory"
+  ],
+  "importantTasks": [
+    "Label a plant cell (all organelles)",
+    "Draw the fluid-mosaic model",
+    "Differentiate RER and SER",
+    "Explain endosymbiotic theory",
+    "Table: plant vs animal cell"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Name the two double-membrane organelles of a eukaryotic cell and state the evidence for their endosymbiotic origin.",
+      "steps": [
+        "Both have a double membrane",
+        "Both carry their own circular DNA",
+        "Both have 70S ribosomes like prokaryotes",
+        "Both can divide independently (binary fission)"
+      ],
+      "answer": "Mitochondria and chloroplast; evidence: own DNA, 70S ribosomes, double membrane, independent division."
+    }
+  ]
 }
