@@ -27,7 +27,7 @@ function getClientKey(request: NextRequest) {
 
 function pruneExpired(now: number) {
   if (rateLimitMap.size < RATE_LIMIT_MAX_KEYS / 4) return;
-  for (const [key, entry] of rateLimitMap) {
+  for (const [key, entry] of rateLimitMap.entries()) {
     if (now > entry.resetAt) rateLimitMap.delete(key);
   }
 }
@@ -52,13 +52,7 @@ function isRateLimited(key: string) {
   return entry.count > RATE_LIMIT_MAX;
 }
 
-export function proxy(request: NextRequest) {
-  const response = NextResponse.next({ request });
-
-  if (isRateLimited(getClientKey(request))) {
-    return new NextResponse("Too many requests", { status: 429 });
-  }
-
+function setSecurityHeaders(response: NextResponse) {
   response.headers.set("x-frame-options", "DENY");
   response.headers.set("x-content-type-options", "nosniff");
   response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
@@ -78,6 +72,21 @@ export function proxy(request: NextRequest) {
       "worker-src 'self' blob:",
     ].join("; ") + ";",
   );
+}
+
+export function proxy(request: NextRequest) {
+  const response = NextResponse.next({ request });
+  setSecurityHeaders(response);
+
+  // AI chat is unlimited by design (2026-09-20): skip the generic per-IP cap
+  // for AI routes; abuse limits live upstream at the provider gateway.
+  if (request.nextUrl.pathname.startsWith("/api/ai")) {
+    return response;
+  }
+
+  if (isRateLimited(getClientKey(request))) {
+    return new NextResponse("Too many requests", { status: 429 });
+  }
 
   return response;
 }

@@ -72,7 +72,9 @@ const SUGGESTED_PROMPTS = [
   },
 ];
 
-const MAX_GUEST_MESSAGES = 7;
+// Unlimited guest chat — no per-visitor message cap (set to Infinity on 2026-09-20).
+// Re-enable a cap later by setting a finite number here.
+const MAX_GUEST_MESSAGES = Infinity;
 const STORAGE_KEY = "neb_ai_guest_count";
 const CREDITS_STORAGE_KEY = "neb_guest_credits";
 
@@ -276,7 +278,7 @@ export function AIChatInterface() {
           ) : (
             <span className="text-xs text-muted-foreground hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-muted/60 border border-border/50">
               <span>Guest messages:</span>
-              <strong className="text-primary">{guestCount}/{MAX_GUEST_MESSAGES}</strong>
+              <strong className="text-primary">Unlimited</strong>
             </span>
           )}
 

@@ -16,6 +16,15 @@ function getClientId(req: Request): string {
 }
 
 export function rateLimit(req: Request, res: Response, next: NextFunction) {
+  // AI endpoints are unlimited by design (2026-09-20): skip the per-IP cap for
+  // /api/ai/*. Use originalUrl (not req.path) so the check works both at the
+  // app level and when this middleware is reused inside a mounted router.
+  // Abuse limits for AI are enforced upstream at the provider gateway.
+  if (req.originalUrl?.startsWith("/api/ai")) {
+    next();
+    return;
+  }
+
   const id = getClientId(req);
   const now = Date.now();
   const entry = hits.get(id);
