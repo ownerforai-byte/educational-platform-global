@@ -17,17 +17,7 @@ const nextConfig = {
   // `lib/index.js` path, which the exports map forbids → "Module not found".
   // Alias the bare specifier (and the deep path) to the real entry so the
   // KaTeX note pipeline resolves identically in every route and layer.
-  webpack: (config) => {
-    const entry = path.resolve(
-      __dirname,
-      "node_modules/hast-util-from-html-isomorphic/index.js",
-    );
-    config.resolve.alias["hast-util-from-html-isomorphic"] = entry;
-    config.resolve.alias[
-      "hast-util-from-html-isomorphic/lib/index.js"
-    ] = entry;
-    return config;
-  },
+
   turbopack: {
     root: path.resolve(__dirname, ".."),
     resolveAlias: {
@@ -62,13 +52,15 @@ const nextConfig = {
       },
     ],
   },
-  webpack(config) {
+  webpack: (config) => {
+    const entry = path.resolve(
+      __dirname,
+      "node_modules/hast-util-from-html-isomorphic/index.js",
+    );
     config.resolve.alias = {
       ...config.resolve.alias,
-      "hast-util-from-html-isomorphic": path.resolve(
-        __dirname,
-        "lib/hast-util-from-html-isomorphic.js"
-      ),
+      "hast-util-from-html-isomorphic": entry,
+      "hast-util-from-html-isomorphic/lib/index.js": entry,
     };
     return config;
   },

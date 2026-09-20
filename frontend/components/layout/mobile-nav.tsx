@@ -23,10 +23,12 @@ import {
   Users,
   LineChart,
   Compass,
+  Search,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 interface MobileSection {
+  id: string;
   title: string;
   items: {
     href: string;
@@ -39,8 +41,10 @@ interface MobileSection {
 
 const mobileSections: MobileSection[] = [
   {
+    id: "curriculum",
     title: "Curriculum & Notes",
     items: [
+      { href: "/", label: "Home", icon: Home },
       { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
       { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
       { href: "/subjects", label: "All 6 Subjects", icon: Layers },
@@ -49,17 +53,20 @@ const mobileSections: MobileSection[] = [
     ],
   },
   {
+    id: "stem",
     title: "STEM Labs & Rigor",
     items: [
       { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, badge: "3D", badgeClass: "bg-violet-500/15 text-violet-500" },
+      { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, badge: "13 Org", badgeClass: "bg-emerald-500/15 text-emerald-500" },
       { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "118", badgeClass: "bg-cyan-500/15 text-cyan-500" },
       { href: "/theorems", label: "Theorems & Proofs", icon: Binary, badge: "Rigor", badgeClass: "bg-amber-500/15 text-amber-500" },
       { href: "/derivations", label: "Formula Derivations", icon: Layers, badge: "Steps", badgeClass: "bg-rose-500/15 text-rose-500" },
-      { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
       { href: "/graphs", label: "Graph Bank", icon: LineChart },
+      { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
     ],
   },
   {
+    id: "tools",
     title: "AI & Assessment",
     items: [
       { href: "/chat", label: "AI Study Assistant", icon: Sparkles, badge: "AI", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
@@ -68,6 +75,7 @@ const mobileSections: MobileSection[] = [
     ],
   },
   {
+    id: "extended",
     title: "Extended & GK",
     items: [
       { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },
@@ -79,7 +87,18 @@ const mobileSections: MobileSection[] = [
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
+
+  const filteredSections = mobileSections.map((sec) => ({
+    ...sec,
+    items: sec.items.filter((item) =>
+      searchQuery.trim() === ""
+        ? true
+        : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          sec.title.toLowerCase().includes(searchQuery.toLowerCase())
+    ),
+  })).filter((sec) => sec.items.length > 0);
 
   return (
     <>
@@ -132,9 +151,29 @@ export function MobileNav() {
               </Button>
             </div>
 
+            {/* Quick Filter Search Input */}
+            <div className="relative mb-3">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Quick jump to any subject or tool..."
+                className="w-full rounded-xl border border-border/80 bg-background/80 py-1.5 pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground hover:text-foreground px-1.5 py-0.5 rounded bg-muted"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+
             {/* Scrollable links */}
             <nav className="flex-1 overflow-y-auto pr-1 space-y-4">
-              {mobileSections.map((sec) => (
+              {filteredSections.map((sec) => (
                 <div key={sec.title} className="space-y-1">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 px-2.5 py-1">
                     {sec.title}

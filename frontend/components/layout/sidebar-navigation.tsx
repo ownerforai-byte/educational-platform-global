@@ -40,6 +40,10 @@ type NavItem = {
   badgeClass?: string;
 };
 
+const primaryItems: NavItem[] = [
+  { href: "/", label: "Home", icon: Home },
+];
+
 const curriculumItems: NavItem[] = [
   { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
   { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
@@ -50,11 +54,12 @@ const curriculumItems: NavItem[] = [
 
 const stemAndRigorItems: NavItem[] = [
   { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, badge: "3D", badgeClass: "bg-violet-500/15 text-violet-500" },
+  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, badge: "13 Org", badgeClass: "bg-emerald-500/15 text-emerald-500" },
   { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "118", badgeClass: "bg-cyan-500/15 text-cyan-500" },
   { href: "/theorems", label: "Theorems & Proofs", icon: Binary, badge: "Rigor", badgeClass: "bg-amber-500/15 text-amber-500" },
   { href: "/derivations", label: "Formula Derivations", icon: Layers, badge: "Steps", badgeClass: "bg-rose-500/15 text-rose-500" },
-  { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
   { href: "/graphs", label: "Graph Bank", icon: LineChart },
+  { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
 ];
 
 const toolsItems: NavItem[] = [
@@ -253,6 +258,34 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
 
       {/* Nav sections */}
       <div className="flex-1 overflow-y-auto px-2 py-3 space-y-1">
+        {/* Quick Home & Search shortcuts */}
+        <div className="mb-2 space-y-0.5">
+          {primaryItems.map((item) => {
+            const ItemIcon = item.icon;
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.label}
+                className={cn(
+                  "group flex items-center gap-3 rounded-xl px-3 py-2 text-xs font-semibold transition-all relative overflow-hidden",
+                  isActive
+                    ? "bg-primary/10 text-primary border border-primary/25 shadow-xs"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/60",
+                  collapsed && "justify-center px-2"
+                )}
+              >
+                {isActive && (
+                  <div className="absolute left-0 top-1 bottom-1 w-1 bg-primary rounded-r-full" />
+                )}
+                <ItemIcon className={cn("h-4 w-4 shrink-0 transition-transform group-hover:scale-110", isActive && "text-primary")} />
+                {!collapsed && <span className="flex-1 whitespace-nowrap">{item.label}</span>}
+              </Link>
+            );
+          })}
+        </div>
+
         <NavSection
           label="Curriculum & Notes"
           icon={BookOpen}

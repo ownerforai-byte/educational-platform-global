@@ -31,6 +31,8 @@ const SUBJECT_CONFIG: Record<
     glowColor: string;
     tagline: string;
     hasLabs?: boolean;
+    labHref?: string;
+    labLabel?: string;
   }
 > = {
   Physics: {
@@ -42,6 +44,8 @@ const SUBJECT_CONFIG: Record<
     glowColor: "bg-amber-500/10",
     tagline: "Mechanics, Heat, Waves, Electromagnetism & Modern Physics",
     hasLabs: true,
+    labHref: "/lab/ph-3d-mechanics-i",
+    labLabel: "3D Physics",
   },
   Chemistry: {
     icon: FlaskConical,
@@ -52,6 +56,8 @@ const SUBJECT_CONFIG: Record<
     glowColor: "bg-cyan-500/10",
     tagline: "Physical, Inorganic, Organic Chemistry & 118 Elements",
     hasLabs: true,
+    labHref: "/periodic-table",
+    labLabel: "118 Elements",
   },
   Biology: {
     icon: Dna,
@@ -62,6 +68,8 @@ const SUBJECT_CONFIG: Record<
     glowColor: "bg-emerald-500/10",
     tagline: "Botany, Zoology, Cell Biology, Genetics & Human Physiology",
     hasLabs: true,
+    labHref: "/lab/bio-3d-organelles",
+    labLabel: "Cell 3D Organelles",
   },
   Mathematics: {
     icon: Sigma,
@@ -71,7 +79,9 @@ const SUBJECT_CONFIG: Record<
     borderColor: "hover:border-violet-500/50 hover:shadow-violet-500/10",
     glowColor: "bg-violet-500/10",
     tagline: "Algebra, Trigonometry, Calculus, Vectors & Coordinate Geometry",
-    hasLabs: false,
+    hasLabs: true,
+    labHref: "/graphs",
+    labLabel: "Function Graphs",
   },
   English: {
     icon: BookOpen,
@@ -227,11 +237,11 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
                   </Link>
                   {conf.hasLabs && (
                     <Link
-                      href="/lab"
+                      href={conf.labHref || "/lab"}
                       className="inline-flex items-center gap-1 rounded-xl bg-background/80 hover:bg-violet-500/10 hover:text-violet-500 px-2.5 py-1 text-xs font-semibold text-foreground/90 border border-border/60 transition-colors"
                     >
                       <Atom className="h-3 w-3 text-violet-500" />
-                      <span>3D Labs</span>
+                      <span>{conf.labLabel || "3D Labs"}</span>
                     </Link>
                   )}
                 </div>

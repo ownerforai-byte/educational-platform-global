@@ -9,8 +9,8 @@
  * Add route patterns to SW_ROUTES to cache additional pages.
  */
 
-const CACHE_NAME = "neb-vault-v2";
-const DATA_CACHE = "neb-data-v2";
+const CACHE_NAME = "neb-vault-v3";
+const DATA_CACHE = "neb-data-v3";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -98,14 +98,16 @@ async function cacheFirst(request, cacheName) {
 }
 
 async function networkFirst(request) {
+  // Network-first means the SERVER's answer wins whenever the network is
+  // reachable — including error statuses (404/500/503 cold-start). Falling
+  // back to the synthetic "Offline" response must happen only when fetch
+  // itself throws, otherwise real server errors get masked as 503 Offline.
   try {
-    const response = await fetch(request);
-    if (response.ok) return response;
+    return await fetch(request);
   } catch {
-    // fall through to cache
+    const cached = await caches.match(request);
+    return cached ?? new Response("Offline", { status: 503, statusText: "Offline" });
   }
-  const cached = await caches.match(request);
-  return cached ?? new Response("Offline", { status: 503, statusText: "Offline" });
 }
 
 async function staleWhileRevalidate(request, cacheName, isNavigation = false) {
@@ -117,7 +119,7 @@ async function staleWhileRevalidate(request, cacheName, isNavigation = false) {
       cache.put(request, response.clone());
     }
     return response;
-  }).catch(() => cached);
+  }).catch(() => cached); // only network failure falls back to cache — real server statuses pass through
 
   if (cached) return cached;
 

@@ -6,31 +6,26 @@ import {
 } from "@/lib/theorem-topics";
 import {
   Trophy,
-  ChevronRight,
-  GraduationCap,
   ArrowRight,
-  Construction,
+  Sparkles,
+  Layers,
+  GraduationCap,
+  Atom,
 } from "lucide-react";
+import { TheoremsExplorer, type TheoremTrackCard, type TheoremEntryData } from "@/components/theorems/theorems-explorer";
 
 export const metadata = {
-  title: "Theorems & Proofs — NEB Class 11 & 12",
+  title: "Theorems & Formal Proofs Vault — NEB Class 11 & 12",
   description:
-    "Syllabus-ordered index of theorems, proofs and derivations for Physics, Chemistry and Biology across NEB Class 11 and 12.",
-};
-
-const SUBJECT_LABELS: Record<string, string> = {
-  physics: "Physics",
-  chemistry: "Chemistry",
-  biology: "Biology",
-  mathematics: "Mathematics",
+    "Syllabus-ordered index of theorems, formal mathematical proofs, and scientific laws for Physics, Chemistry, Biology, and Mathematics across NEB Class 11 and 12.",
 };
 
 export default async function TheoremsPage() {
   const allEntries = await getTheoremIndex();
 
-  // Build the syllabus-ordered PCB track cards.
+  // Build the syllabus-ordered track cards for all subjects (Physics, Chemistry, Biology, Mathematics)
   const routes = getTheoremProofRoutes();
-  const trackCards = routes.map(({ classSlug, subjectSlug }) => {
+  const trackCards: TheoremTrackCard[] = routes.map(({ classSlug, subjectSlug }) => {
     const items = getSyllabusTheoremItems(classSlug, subjectSlug);
     return {
       classSlug,
@@ -40,168 +35,82 @@ export default async function TheoremsPage() {
     };
   });
 
-  // Curated math/other entries remain visible under their class sections.
-  const byClass = new Map<string, Map<string, typeof allEntries>>();
-  for (const entry of allEntries) {
-    if ((["physics", "chemistry", "biology", "mathematics"] as string[]).includes(entry.subjectSlug)) continue;
-    const classMap = byClass.get(entry.classSlug) ?? new Map<string, typeof allEntries>();
-    const subjArr = classMap.get(entry.subjectSlug) ?? [];
-    subjArr.push(entry);
-    classMap.set(entry.subjectSlug, subjArr);
-    byClass.set(entry.classSlug, classMap);
-  }
+  const totalTheorems = trackCards.reduce((sum, c) => sum + c.total, 0);
+  const readyTheorems = trackCards.reduce((sum, c) => sum + c.available, 0);
 
-  const classLabel = (slug: string) =>
-    slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const mappedEntries: TheoremEntryData[] = allEntries.map((e) => ({
+    classSlug: e.classSlug,
+    subjectSlug: e.subjectSlug,
+    unitId: e.unitId,
+    unitTitle: e.unitTitle,
+    topicSlug: e.topicSlug,
+    topicTitle: e.topicTitle,
+    preview: e.preview,
+    hasProof: e.hasProof,
+  }));
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 space-y-10">
-      {/* Header */}
-      <div className="space-y-3">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/20">
-            <Trophy className="h-3.5 w-3.5" />
-            <span>Academic Rigor · Formal Proofs &amp; Principles</span>
-          </div>
-          <Link
-            href="/derivations"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span>Looking for formula steps?</span>
-            <span className="text-primary font-bold">Derivations Vault →</span>
-          </Link>
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
-          Theorems &amp; Proofs Vault
-        </h1>
-        <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
-          Step-by-step rigorous proofs, laws and principles across Physics, Chemistry, Biology, and Mathematics
-          organized strictly in NEB curriculum sequence. Each proof includes formal statements, assumptions, geometric visual steps, and board exam conclusions.
-        </p>
-      </div>
-
-      {/* PCB subject tracks (always routed, empty ones marked coming soon) */}
-      <div className="space-y-8">
-        {[...new Set(routes.map((r) => r.classSlug))].map((classSlug) => {
-          const cards = trackCards.filter((c) => c.classSlug === classSlug);
-          return (
-            <div key={classSlug} className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-              <div className="px-6 py-4 border-b border-border/60 bg-muted/30 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <GraduationCap className="h-5 w-5 text-amber-500" />
-                  <div>
-                    <h2 className="font-bold text-foreground text-base">{classLabel(classSlug)}</h2>
-                    <p className="text-xs text-muted-foreground">Syllabus-ordered theorem &amp; derivation tracks</p>
-                  </div>
-                </div>
-                <Link
-                  href={`/theorems/${classSlug}`}
-                  className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
-                >
-                  View Class Track <ChevronRight className="h-3.5 w-3.5" />
-                </Link>
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12 space-y-10">
+      {/* Hero Header Banner */}
+      <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-card via-card to-muted/30 p-6 sm:p-10 shadow-sm">
+        <div className="absolute top-0 right-0 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-3 max-w-3xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                <Trophy className="h-3.5 w-3.5" />
+                <span>Academic Rigor · Formal Proofs &amp; Laws</span>
               </div>
-
-              <div className="p-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {cards.map((card) => (
-                  <Link
-                    key={card.subjectSlug}
-                    href={`/theorems/${card.classSlug}/${card.subjectSlug}`}
-                    className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-muted/10 p-4 transition-all hover:border-amber-500/40 hover:bg-muted/30"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">
-                          {card.total} Topics
-                        </span>
-                        {card.available === 0 && (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20">
-                            <Construction className="h-2.5 w-2.5" /> Soon
-                          </span>
-                        )}
-                        <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                      </div>
-                      <h3 className="font-bold text-foreground text-base mt-3 group-hover:text-primary transition-colors">
-                        {SUBJECT_LABELS[card.subjectSlug] ?? card.subjectSlug}
-                      </h3>
-                      <p className="mt-2 text-[11px] text-muted-foreground">
-                        {card.available > 0
-                          ? `${card.available} with full proofs & visuals`
-                          : "All pages reserved — content coming soon"}
-                      </p>
-                    </div>
-                    <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-primary">
-                      <span>Study Track</span>
-                      <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Non-PCB subjects (e.g. Mathematics) — filesystem-indexed */}
-      {[...byClass.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([classSlug, subjectMap]) => (
-        <div key={classSlug} className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-border/60 bg-muted/30 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <GraduationCap className="h-5 w-5 text-violet-500" />
-              <div>
-                <h2 className="font-bold text-foreground text-base">
-                  {classLabel(classSlug)} — Other Subjects
-                </h2>
-                <p className="text-xs text-muted-foreground">
-                  {[...subjectMap.keys()].join(", ")} theorems &amp; proofs (indexed)
-                </p>
-              </div>
-            </div>
-            <Link
-              href={`/theorems/${classSlug}`}
-              className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
-            >
-              View Class Track <ChevronRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-
-          <div className="p-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[...subjectMap.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([subjectSlug, entries]) => (
               <Link
-                key={subjectSlug}
-                href={`/theorems/${classSlug}/${subjectSlug}`}
-                className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-muted/10 p-4 transition-all hover:border-violet-500/40 hover:bg-muted/30"
+                href="/derivations"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
               >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-600 dark:text-violet-400">
-                      {entries.length} Theorems
-                    </span>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <h3 className="font-bold text-foreground text-base mt-3 capitalize group-hover:text-primary transition-colors">
-                    {subjectSlug}
-                  </h3>
-                  <div className="mt-2 space-y-1">
-                    {entries.slice(0, 3).map((e) => (
-                      <p key={e.topicSlug} className="text-[11px] text-muted-foreground truncate">
-                        &bull; {e.topicTitle}
-                      </p>
-                    ))}
-                    {entries.length > 3 && (
-                      <p className="text-[10px] text-muted-foreground/70">+{entries.length - 3} more topics</p>
-                    )}
-                  </div>
-                </div>
-                <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-primary">
-                  <span>Study Proofs</span>
-                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </div>
+                <span>Looking for step-by-step formula steps?</span>
+                <span className="text-primary font-bold">Derivations Vault →</span>
               </Link>
-            ))}
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+              Theorems &amp; Formal Proofs Vault
+            </h1>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Step-by-step rigorous proofs, physical laws, and mathematical principles across Physics, Chemistry, Biology, and Mathematics
+              arranged strictly in official NEB syllabus sequence. Complete with formal theorem statements, geometric visual steps, and board exam mark allocation.
+            </p>
+          </div>
+
+          {/* Quick Stats Pill */}
+          <div className="flex flex-wrap sm:flex-nowrap gap-3 shrink-0">
+            <div className="rounded-2xl border border-border/70 bg-background/80 backdrop-blur-md px-4 py-3 min-w-[110px]">
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Layers className="h-3.5 w-3.5 text-amber-500" />
+                <span>Total Topics</span>
+              </div>
+              <p className="text-2xl font-black text-foreground mt-0.5">{totalTheorems}</p>
+              <p className="text-[10px] text-muted-foreground">Curriculum Mapped</p>
+            </div>
+            <div className="rounded-2xl border border-border/70 bg-background/80 backdrop-blur-md px-4 py-3 min-w-[110px]">
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
+                <span>Curated Proofs</span>
+              </div>
+              <p className="text-2xl font-black text-foreground mt-0.5">{readyTheorems}</p>
+              <p className="text-[10px] text-muted-foreground">Detailed Scaffolds</p>
+            </div>
+            <div className="rounded-2xl border border-border/70 bg-background/80 backdrop-blur-md px-4 py-3 min-w-[110px]">
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <GraduationCap className="h-3.5 w-3.5 text-violet-500" />
+                <span>Classes</span>
+              </div>
+              <p className="text-2xl font-black text-foreground mt-0.5">XI &amp; XII</p>
+              <p className="text-[10px] text-muted-foreground">NEB +2 Science</p>
+            </div>
           </div>
         </div>
-      ))}
+      </div>
+
+      {/* Interactive Explorer Client Component */}
+      <TheoremsExplorer trackCards={trackCards} allEntries={mappedEntries} />
     </div>
   );
 }

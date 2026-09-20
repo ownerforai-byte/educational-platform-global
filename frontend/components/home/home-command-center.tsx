@@ -37,7 +37,12 @@ const QUICK_SEARCH_ITEMS = [
   { label: "Loksewa Aayog Preparation", href: "/loksewa", category: "Competitive" },
   { label: "World Knowledge & Current Affairs", href: "/world-knowledge", category: "General" },
   { label: "Class 11 Complete Notes", href: "/class-11-notes", category: "Curriculum" },
-  { label: "Class 12 Complete Notes", href: "/class-12-notes", category: "Curriculum" },
+  { label: "Cell Organelles 3D Explorer (All 13 Organelles)", href: "/lab/bio-3d-organelles", category: "Biology 3D" },
+  { label: "Plant & Animal Eukaryotic Cell 3D Ultrastructure", href: "/lab/bio-3d-cell", category: "Biology 3D" },
+  { label: "Interactive Science Graph Bank", href: "/graphs", category: "STEM" },
+  { label: "Visual Mindmaps Library", href: "/mindmap", category: "STEM" },
+  { label: "Curriculum Levels & Class Tracks", href: "/levels", category: "Curriculum" },
+  { label: "Official NEB Subject Syllabus", href: "/syllabus", category: "Curriculum" },
 ];
 
 export function HomeCommandCenter({
@@ -45,7 +50,7 @@ export function HomeCommandCenter({
   totalDerivations,
 }: HomeCommandCenterProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState<"all" | "class11" | "class12" | "entrance">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "class11" | "class12" | "entrance" | "stem">("all");
   const inputRef = React.useRef<HTMLInputElement | null>(null);
 
   React.useEffect(() => {
@@ -150,11 +155,12 @@ export function HomeCommandCenter({
 
           {/* Academic Stream Switcher Tabs */}
           <div className="pt-2 flex items-center justify-center">
-            <div className="inline-flex items-center p-1 rounded-2xl bg-muted/60 border border-border/60 backdrop-blur-sm gap-1">
+            <div className="inline-flex flex-wrap items-center p-1 rounded-2xl bg-muted/60 border border-border/60 backdrop-blur-sm gap-1">
               {[
                 { id: "all", label: "All Portals" },
                 { id: "class11", label: "Grade 11 Focus" },
                 { id: "class12", label: "Grade 12 Focus" },
+                { id: "stem", label: "Interactive STEM & 3D" },
                 { id: "entrance", label: "CEE & Entrance" },
               ].map((tab) => (
                 <button
@@ -260,6 +266,52 @@ export function HomeCommandCenter({
                     {item.label}
                   </Link>
                 ))}
+              </>
+            )}
+
+            {activeTab === "stem" && (
+              <>
+                <Link
+                  href="/lab"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-violet-500/40 bg-violet-500/10 px-3.5 py-2 text-xs font-bold text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 transition-all shadow-sm"
+                >
+                  <FlaskConical className="h-3.5 w-3.5" />
+                  <span>3D Virtual Labs Hub</span>
+                </Link>
+                <Link
+                  href="/lab/bio-3d-organelles"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all shadow-sm"
+                >
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>13 Cell Organelles 3D</span>
+                </Link>
+                <Link
+                  href="/lab/bio-3d-cell"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-sky-500/40 bg-sky-500/10 px-3.5 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 hover:bg-sky-500/20 transition-all shadow-sm"
+                >
+                  <Atom className="h-3.5 w-3.5" />
+                  <span>Plant &amp; Animal Cell 3D</span>
+                </Link>
+                <Link
+                  href="/graphs"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-indigo-500/40 bg-indigo-500/10 px-3.5 py-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/20 transition-all shadow-sm"
+                >
+                  <Zap className="h-3.5 w-3.5" />
+                  <span>Interactive Graph Bank</span>
+                </Link>
+                <Link
+                  href="/periodic-table"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-3.5 py-2 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 transition-all shadow-sm"
+                >
+                  <Atom className="h-3.5 w-3.5" />
+                  <span>118 Elements Table</span>
+                </Link>
+                <Link
+                  href="/mindmap"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-medium text-foreground/80 hover:border-primary/40 hover:text-primary transition-all shadow-sm"
+                >
+                  <span>Visual Mindmaps</span>
+                </Link>
               </>
             )}
 

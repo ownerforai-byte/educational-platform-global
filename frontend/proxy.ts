@@ -67,9 +67,12 @@ export function proxy(request: NextRequest) {
     [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-      "style-src 'self' 'unsafe-inline'",
+      // fonts.googleapis.com: globals.css @imports Google Fonts — blocking it
+      // makes the stylesheet load reject with a raw Event, surfacing as the
+      // "[object Event]" unhandled rejection in devtools.
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
-      "font-src 'self' data:",
+      "font-src 'self' data: https://fonts.gstatic.com",
       `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://rn01.onrender.com https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
       "frame-src 'none'",
       "worker-src 'self' blob:",

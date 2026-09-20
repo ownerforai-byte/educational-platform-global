@@ -57,10 +57,10 @@ const PORTALS: Portal[] = [
     gradientClass: "from-violet-500/[0.08] via-card to-card",
     chipClass: "hover:border-violet-500/50 hover:shadow-violet-500/10",
     links: [
-      { label: "Physics Labs", href: "/lab/physics" },
-      { label: "Chemistry Labs", href: "/lab/chemistry" },
-      { label: "Biology Labs", href: "/lab/biology" },
-      { label: "Periodic Table", href: "/periodic-table" },
+      { label: "Cell Organelles 3D", href: "/lab/bio-3d-organelles" },
+      { label: "Physics 3D Suite", href: "/lab/ph-3d-mechanics-i" },
+      { label: "Science Graph Bank", href: "/graphs" },
+      { label: "Periodic Table & CEE", href: "/periodic-table" },
     ],
   },
   {
@@ -75,7 +75,7 @@ const PORTALS: Portal[] = [
     links: [
       { label: "Class 11 Proofs", href: "/theorems/class-11-notes" },
       { label: "Class 12 Proofs", href: "/theorems/class-12-notes" },
-      { label: "Practical Manuals", href: "/practical" },
+      { label: "Theorems Directory", href: "/theorems" },
     ],
   },
   {
@@ -90,7 +90,7 @@ const PORTALS: Portal[] = [
     links: [
       { label: "Class 11 Derivations", href: "/derivations/class-11-notes" },
       { label: "Class 12 Derivations", href: "/derivations/class-12-notes" },
-      { label: "Numerical Guides", href: "/knowledge/numerical-physics" },
+      { label: "All Subjects Derivations", href: "/derivations" },
     ],
   },
   {
