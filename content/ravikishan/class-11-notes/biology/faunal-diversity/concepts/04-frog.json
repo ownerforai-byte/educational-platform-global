@@ -4,190 +4,560 @@
   "topicSlug": "frog",
   "topicTitle": "Frog",
   "relevance": 100,
-  "notes": [
-    "Protista: single-celled eukaryotes (Amoeba, Paramecium, Plasmodium).",
-    "Animal phyla: Porifera→Cnidaria→Platyhelminthes→Annelida→Arthropoda→Mollusca→Chordata.",
-    "Earthworm: Pheretima posthuma, closed circulatory system.",
-    "Frog: Rana tigrina, 3-chambered heart, amphibian."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 frog."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Paramecium: cilia movement, contractile vacuole",
-    "Earthworm: nephridia excretion, clitellum reproduction"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 frog)"
-  ],
-  "keyPoints": [
-    "Core point for 04 frog."
-  ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
-  "specialNotes": [
-    "Specialized insight for 04 frog."
-  ],
-  "importantStatements": [
-    "Key statement for 04 frog."
-  ],
-  "importantNotes": [
-    "Important note regarding 04 frog."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Frog."
-  ],
-  "examNotes": [
-    "Frog is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 frog?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 frog."
-  ],
-  "importantTasks": [
-    "Task for studying 04 frog."
-  ],
   "duplicateType": 2,
   "tabGroup": "04-frog",
   "mcqs": [
     {
-      "question": "Question about 04 frog?",
+      "question": "The frog's hindlimbs have how many digits?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The external eardrum of a frog is called:",
+      "options": [
+        "Tympanum",
+        "Nictitating membrane",
+        "Webbed foot",
+        "Lateral line"
       ],
       "answer": "A"
+    },
+    {
+      "question": "The transparent third eyelid of a frog is the:",
+      "options": [
+        "Tympanum",
+        "Nictitating membrane",
+        "Web",
+        "Claw"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A frog tadpole has:",
+      "options": [
+        "Lungs and no tail",
+        "Gills and a tail",
+        "No tail and lungs",
+        "Gills and no tail"
+      ],
+      "answer": "B"
     }
   ],
-  "exercises": [],
-  "visualization": {
-    "type": "3d-model",
-    "component": "AnimalPhylaViewer",
-    "desc": "Interactive animal body plan explorer"
+  "visualType": "frog-anatomy-overview",
+  "enrichedContent": {
+    "notes": [
+      "Rana tigrina (tiger frog / Indian bullfrog): the model amphibian for NEB; ~5–8 cm long; found in ponds, streams, and wet grasslands.",
+      "Habit and habitat: semi-aquatic; lives near water but spends most of the day on land; returns to water to breed; buries in moist soil in dry season.",
+      "External features: moist, glandular, scaleless skin (mucus + colour glands); head with eyes, tympanum (eardrum), nostrils; distinct neck, trunk; 4-digit forelimbs, 5-digit webbed hindlimbs; nictitating membrane (third eyelid); tail absent in adults (present in tadpole).",
+      "Skin: mucus glands (keep skin moist for cutaneous respiration) and granular/colour (poison) glands; highly permeable to water and gases.",
+      "Body plan: vertebrate (internal skeleton), amphibian (dual life); metamorphosis from tadpole (gills + tail) to frog (lungs, no tail).",
+      "Taxonomy: Animalia > Chordata > Vertebrata > Amphibia > Anura > Rana.",
+      "NEB focus: general features, habit and habitat, and external anatomy of Rana tigrina as the entry topic for frog anatomy.",
+      "Importance: pest control (eats insects), water-quality bio-indicator, food in some regions; sensitive to environmental change.",
+      "Key adaptation summary: moist skin, webbed feet, tympanum, nictitating membrane, sticky pads — all for an amphibious (land + water) life."
+    ],
+    "confusion": [
+      "Frogs are amphibians (cold-blooded, moist skin, larval gills), NOT reptiles (dry scaly skin, lungs only).",
+      "Adult frogs have NO tail; the tadpole larva has a tail (metamorphosis removes it).",
+      "The forelimbs have 4 digits and the hindlimbs have 5 webbed digits — a key exam detail.",
+      "The tympanum is the external eardrum; the nictitating membrane is a transparent third eyelid for underwater vision.",
+      "Frogs breathe through lungs, moist skin (cutaneous), and the buccal cavity; tadpoles use gills.",
+      "Rana tigrina lives in moist habitats; its permeable skin makes it a sensitive bio-indicator of water pollution."
+    ],
+    "practice": [
+      "Describe the external anatomy of Rana tigrina.",
+      "Explain the habit and habitat of the frog.",
+      "Differentiate the forelimbs from the hindlimbs of the frog.",
+      "Explain the adaptations of the frog to an amphibious life.",
+      "State the taxonomic position of Rana tigrina."
+    ],
+    "universalFacts": [
+      "Rana tigrina (the \"tiger frog\") is one of the largest common freshwater frogs in South Asia.",
+      "The frog skin is so permeable that it can absorb both water and pollutants — the basis of its bio-indicator role.",
+      "The tadpole-to-frog metamorphosis takes 2–3 months in most species.",
+      "Frogs are ectothermic (cold-blooded); body temperature changes with the environment."
+    ],
+    "examples": [
+      "Habitat: a frog sitting on a pond bank by day, entering water at night to feed and breed.",
+      "External: webbed hind feet (swimming), sticky pads on forefeet (climbing), tympanum (hearing), nictitating membrane (eye protection).",
+      "Metamorphosis: tadpole (tail + gills) → froglet → adult frog (lungs, no tail).",
+      "Bio-indicator: frogs die off in polluted ponds, warning of water-quality decline."
+    ],
+    "practiceQuestions": [
+      "Describe the external anatomy of Rana tigrina.",
+      "Explain the habit and habitat of the frog.",
+      "Differentiate the forelimbs and hindlimbs of the frog.",
+      "State the adaptations of the frog to an amphibious life.",
+      "State the taxonomic position of Rana tigrina."
+    ],
+    "formulas": [
+      "External: head (eyes, tympanum, nostrils) + neck + trunk + 4 limbs (forelimb 4 digits, hindlimb 5 digits, webbed)",
+      "Adaptations: moist skin, webbed feet, sticky pads, tympanum, nictitating membrane",
+      "Metamorphosis: tadpole (tail + gills) → adult frog (no tail + lungs)"
+    ],
+    "keyPoints": [
+      "Rana tigrina: amphibian, ~5–8 cm, semi-aquatic; model organism for NEB.",
+      "External: moist glandular skin, tympanum, nictitating membrane.",
+      "Forelimbs 4 digits; hindlimbs 5 webbed digits.",
+      "No tail in adults; tadpole has a tail (metamorphosis).",
+      "Adaptations: webbed feet (swim), sticky pads (climb), moist skin (respiration).",
+      "Taxonomy: Amphibia > Anura > Rana.",
+      "Bio-indicator of water quality; pest controller."
+    ],
+    "summary": "Rana tigrina is the model amphibian for NEB. It is semi-aquatic, living near water but spending most of the time on land. Its external features — moist, glandular, scaleless skin; a tympanum; a nictitating membrane; 4-digit forelimbs and 5-digit webbed hindlimbs — reflect its amphibious life. The tadpole has a tail and gills; the adult loses the tail and gains lungs. These adaptations make frogs both efficient land-and-water animals and sensitive bio-indicators of environmental change.",
+    "specialNotes": [
+      "NEB expects a labelled external diagram of the frog as the entry topic for frog anatomy.",
+      "The digit count (4 forelimb, 5 hindlimb) is a very common exam detail.",
+      "Metamorphosis (tadpole → frog) is a frequent topic.",
+      "Stress that the moist skin allows cutaneous respiration — a key amphibian feature.",
+      "Note the frog as a water-quality bio-indicator (application question)."
+    ],
+    "importantStatements": [
+      "Rana tigrina is an amphibian with a semi-aquatic habit.",
+      "The frog has 4 forelimb digits and 5 webbed hindlimb digits.",
+      "Moist, glandular skin allows significant cutaneous respiration.",
+      "The tadpole has a tail and gills; the adult loses the tail."
+    ],
+    "importantNotes": [
+      "Memorise the digit count (4 fore, 5 hind).",
+      "Learn the external features (tympanum, nictitating membrane, skin).",
+      "Explain metamorphosis (tadpole → frog).",
+      "List adaptations to amphibious life.",
+      "State the taxonomic position of Rana tigrina."
+    ],
+    "examShortTricks": [
+      "Frog digits: 4 fore + 5 hind (webbed).",
+      "Amphibian = amphi (both) + bios (life) = land + water.",
+      "Tympanum = ear; Nictitating membrane = third eyelid.",
+      "Tadpole = tail + gills; Adult = no tail + lungs."
+    ],
+    "examNotes": [
+      "Draw and label the external anatomy of Rana tigrina.",
+      "Explain the habit and habitat of the frog.",
+      "Differentiate the forelimbs and hindlimbs.",
+      "State the adaptations to amphibious life.",
+      "Explain metamorphosis (tadpole → frog).",
+      "Why is the frog a good bio-indicator?"
+    ],
+    "mcs": [
+      {
+        "question": "The frog's hindlimbs have how many digits?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "3"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The external eardrum of a frog is called:",
+        "options": [
+          "Tympanum",
+          "Nictitating membrane",
+          "Webbed foot",
+          "Lateral line"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "The transparent third eyelid of a frog is the:",
+        "options": [
+          "Tympanum",
+          "Nictitating membrane",
+          "Web",
+          "Claw"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "A frog tadpole has:",
+        "options": [
+          "Lungs and no tail",
+          "Gills and a tail",
+          "No tail and lungs",
+          "Gills and no tail"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Amphibian body plan",
+      "External features (tympanum, nictitating membrane)",
+      "Digit count (4 + 5)",
+      "Moist glandular skin",
+      "Metamorphosis",
+      "Adaptations to amphibious life",
+      "Taxonomy (Anura)",
+      "Bio-indicator role"
+    ],
+    "importantTasks": [
+      "Label external frog",
+      "Explain habitat and habits",
+      "Differentiate fore/hind limbs",
+      "List adaptations",
+      "Explain metamorphosis"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why is the frog skin kept moist, and what function does this serve?",
+        "steps": [
+          "Frogs use cutaneous (skin) respiration",
+          "O2 must dissolve in a moist film on the skin",
+          "Moist skin = efficient gas exchange"
+        ],
+        "answer": "Moist skin allows cutaneous respiration; the frog breathes partly through its skin"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "FrogGeneralViewer",
+      "desc": "Rotatable 3D Rana tigrina with labelled external features (tympanum, nictitating membrane, webbed feet) and a tadpole-to-frog metamorphosis animation."
+    }
   },
-  "visualType": "frog-anatomy-overview"
+  "originalContent": {
+    "notes": [
+      "Rana tigrina (tiger frog / Indian bullfrog): the model amphibian for NEB; ~5–8 cm long; found in ponds, streams, and wet grasslands.",
+      "Habit and habitat: semi-aquatic; lives near water but spends most of the day on land; returns to water to breed; buries in moist soil in dry season.",
+      "External features: moist, glandular, scaleless skin (mucus + colour glands); head with eyes, tympanum (eardrum), nostrils; distinct neck, trunk; 4-digit forelimbs, 5-digit webbed hindlimbs; nictitating membrane (third eyelid); tail absent in adults (present in tadpole).",
+      "Skin: mucus glands (keep skin moist for cutaneous respiration) and granular/colour (poison) glands; highly permeable to water and gases.",
+      "Body plan: vertebrate (internal skeleton), amphibian (dual life); metamorphosis from tadpole (gills + tail) to frog (lungs, no tail).",
+      "Taxonomy: Animalia > Chordata > Vertebrata > Amphibia > Anura > Rana.",
+      "NEB focus: general features, habit and habitat, and external anatomy of Rana tigrina as the entry topic for frog anatomy.",
+      "Importance: pest control (eats insects), water-quality bio-indicator, food in some regions; sensitive to environmental change.",
+      "Key adaptation summary: moist skin, webbed feet, tympanum, nictitating membrane, sticky pads — all for an amphibious (land + water) life."
+    ],
+    "confusion": [
+      "Frogs are amphibians (cold-blooded, moist skin, larval gills), NOT reptiles (dry scaly skin, lungs only).",
+      "Adult frogs have NO tail; the tadpole larva has a tail (metamorphosis removes it).",
+      "The forelimbs have 4 digits and the hindlimbs have 5 webbed digits — a key exam detail.",
+      "The tympanum is the external eardrum; the nictitating membrane is a transparent third eyelid for underwater vision.",
+      "Frogs breathe through lungs, moist skin (cutaneous), and the buccal cavity; tadpoles use gills.",
+      "Rana tigrina lives in moist habitats; its permeable skin makes it a sensitive bio-indicator of water pollution."
+    ],
+    "practice": [
+      "Describe the external anatomy of Rana tigrina.",
+      "Explain the habit and habitat of the frog.",
+      "Differentiate the forelimbs from the hindlimbs of the frog.",
+      "Explain the adaptations of the frog to an amphibious life.",
+      "State the taxonomic position of Rana tigrina."
+    ],
+    "universalFacts": [
+      "Rana tigrina (the \"tiger frog\") is one of the largest common freshwater frogs in South Asia.",
+      "The frog skin is so permeable that it can absorb both water and pollutants — the basis of its bio-indicator role.",
+      "The tadpole-to-frog metamorphosis takes 2–3 months in most species.",
+      "Frogs are ectothermic (cold-blooded); body temperature changes with the environment."
+    ],
+    "examples": [
+      "Habitat: a frog sitting on a pond bank by day, entering water at night to feed and breed.",
+      "External: webbed hind feet (swimming), sticky pads on forefeet (climbing), tympanum (hearing), nictitating membrane (eye protection).",
+      "Metamorphosis: tadpole (tail + gills) → froglet → adult frog (lungs, no tail).",
+      "Bio-indicator: frogs die off in polluted ponds, warning of water-quality decline."
+    ],
+    "practiceQuestions": [
+      "Describe the external anatomy of Rana tigrina.",
+      "Explain the habit and habitat of the frog.",
+      "Differentiate the forelimbs and hindlimbs of the frog.",
+      "State the adaptations of the frog to an amphibious life.",
+      "State the taxonomic position of Rana tigrina."
+    ],
+    "formulas": [
+      "External: head (eyes, tympanum, nostrils) + neck + trunk + 4 limbs (forelimb 4 digits, hindlimb 5 digits, webbed)",
+      "Adaptations: moist skin, webbed feet, sticky pads, tympanum, nictitating membrane",
+      "Metamorphosis: tadpole (tail + gills) → adult frog (no tail + lungs)"
+    ],
+    "keyPoints": [
+      "Rana tigrina: amphibian, ~5–8 cm, semi-aquatic; model organism for NEB.",
+      "External: moist glandular skin, tympanum, nictitating membrane.",
+      "Forelimbs 4 digits; hindlimbs 5 webbed digits.",
+      "No tail in adults; tadpole has a tail (metamorphosis).",
+      "Adaptations: webbed feet (swim), sticky pads (climb), moist skin (respiration).",
+      "Taxonomy: Amphibia > Anura > Rana.",
+      "Bio-indicator of water quality; pest controller."
+    ],
+    "summary": "Rana tigrina is the model amphibian for NEB. It is semi-aquatic, living near water but spending most of the time on land. Its external features — moist, glandular, scaleless skin; a tympanum; a nictitating membrane; 4-digit forelimbs and 5-digit webbed hindlimbs — reflect its amphibious life. The tadpole has a tail and gills; the adult loses the tail and gains lungs. These adaptations make frogs both efficient land-and-water animals and sensitive bio-indicators of environmental change.",
+    "specialNotes": [
+      "NEB expects a labelled external diagram of the frog as the entry topic for frog anatomy.",
+      "The digit count (4 forelimb, 5 hindlimb) is a very common exam detail.",
+      "Metamorphosis (tadpole → frog) is a frequent topic.",
+      "Stress that the moist skin allows cutaneous respiration — a key amphibian feature.",
+      "Note the frog as a water-quality bio-indicator (application question)."
+    ],
+    "importantStatements": [
+      "Rana tigrina is an amphibian with a semi-aquatic habit.",
+      "The frog has 4 forelimb digits and 5 webbed hindlimb digits.",
+      "Moist, glandular skin allows significant cutaneous respiration.",
+      "The tadpole has a tail and gills; the adult loses the tail."
+    ],
+    "importantNotes": [
+      "Memorise the digit count (4 fore, 5 hind).",
+      "Learn the external features (tympanum, nictitating membrane, skin).",
+      "Explain metamorphosis (tadpole → frog).",
+      "List adaptations to amphibious life.",
+      "State the taxonomic position of Rana tigrina."
+    ],
+    "examShortTricks": [
+      "Frog digits: 4 fore + 5 hind (webbed).",
+      "Amphibian = amphi (both) + bios (life) = land + water.",
+      "Tympanum = ear; Nictitating membrane = third eyelid.",
+      "Tadpole = tail + gills; Adult = no tail + lungs."
+    ],
+    "examNotes": [
+      "Draw and label the external anatomy of Rana tigrina.",
+      "Explain the habit and habitat of the frog.",
+      "Differentiate the forelimbs and hindlimbs.",
+      "State the adaptations to amphibious life.",
+      "Explain metamorphosis (tadpole → frog).",
+      "Why is the frog a good bio-indicator?"
+    ],
+    "mcs": [
+      {
+        "question": "The frog's hindlimbs have how many digits?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "3"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The external eardrum of a frog is called:",
+        "options": [
+          "Tympanum",
+          "Nictitating membrane",
+          "Webbed foot",
+          "Lateral line"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "The transparent third eyelid of a frog is the:",
+        "options": [
+          "Tympanum",
+          "Nictitating membrane",
+          "Web",
+          "Claw"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "A frog tadpole has:",
+        "options": [
+          "Lungs and no tail",
+          "Gills and a tail",
+          "No tail and lungs",
+          "Gills and no tail"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Amphibian body plan",
+      "External features (tympanum, nictitating membrane)",
+      "Digit count (4 + 5)",
+      "Moist glandular skin",
+      "Metamorphosis",
+      "Adaptations to amphibious life",
+      "Taxonomy (Anura)",
+      "Bio-indicator role"
+    ],
+    "importantTasks": [
+      "Label external frog",
+      "Explain habitat and habits",
+      "Differentiate fore/hind limbs",
+      "List adaptations",
+      "Explain metamorphosis"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Why is the frog skin kept moist, and what function does this serve?",
+        "steps": [
+          "Frogs use cutaneous (skin) respiration",
+          "O2 must dissolve in a moist film on the skin",
+          "Moist skin = efficient gas exchange"
+        ],
+        "answer": "Moist skin allows cutaneous respiration; the frog breathes partly through its skin"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "FrogGeneralViewer",
+      "desc": "Rotatable 3D Rana tigrina with labelled external features (tympanum, nictitating membrane, webbed feet) and a tadpole-to-frog metamorphosis animation."
+    }
+  },
+  "notes": [
+    "Rana tigrina (tiger frog / Indian bullfrog): the model amphibian for NEB; ~5–8 cm long; found in ponds, streams, and wet grasslands.",
+    "Habit and habitat: semi-aquatic; lives near water but spends most of the day on land; returns to water to breed; buries in moist soil in dry season.",
+    "External features: moist, glandular, scaleless skin (mucus + colour glands); head with eyes, tympanum (eardrum), nostrils; distinct neck, trunk; 4-digit forelimbs, 5-digit webbed hindlimbs; nictitating membrane (third eyelid); tail absent in adults (present in tadpole).",
+    "Skin: mucus glands (keep skin moist for cutaneous respiration) and granular/colour (poison) glands; highly permeable to water and gases.",
+    "Body plan: vertebrate (internal skeleton), amphibian (dual life); metamorphosis from tadpole (gills + tail) to frog (lungs, no tail).",
+    "Taxonomy: Animalia > Chordata > Vertebrata > Amphibia > Anura > Rana.",
+    "NEB focus: general features, habit and habitat, and external anatomy of Rana tigrina as the entry topic for frog anatomy.",
+    "Importance: pest control (eats insects), water-quality bio-indicator, food in some regions; sensitive to environmental change.",
+    "Key adaptation summary: moist skin, webbed feet, tympanum, nictitating membrane, sticky pads — all for an amphibious (land + water) life."
+  ],
+  "confusion": [
+    "Frogs are amphibians (cold-blooded, moist skin, larval gills), NOT reptiles (dry scaly skin, lungs only).",
+    "Adult frogs have NO tail; the tadpole larva has a tail (metamorphosis removes it).",
+    "The forelimbs have 4 digits and the hindlimbs have 5 webbed digits — a key exam detail.",
+    "The tympanum is the external eardrum; the nictitating membrane is a transparent third eyelid for underwater vision.",
+    "Frogs breathe through lungs, moist skin (cutaneous), and the buccal cavity; tadpoles use gills.",
+    "Rana tigrina lives in moist habitats; its permeable skin makes it a sensitive bio-indicator of water pollution."
+  ],
+  "practice": [
+    "Describe the external anatomy of Rana tigrina.",
+    "Explain the habit and habitat of the frog.",
+    "Differentiate the forelimbs from the hindlimbs of the frog.",
+    "Explain the adaptations of the frog to an amphibious life.",
+    "State the taxonomic position of Rana tigrina."
+  ],
+  "universalFacts": [
+    "Rana tigrina (the \"tiger frog\") is one of the largest common freshwater frogs in South Asia.",
+    "The frog skin is so permeable that it can absorb both water and pollutants — the basis of its bio-indicator role.",
+    "The tadpole-to-frog metamorphosis takes 2–3 months in most species.",
+    "Frogs are ectothermic (cold-blooded); body temperature changes with the environment."
+  ],
+  "examples": [
+    "Habitat: a frog sitting on a pond bank by day, entering water at night to feed and breed.",
+    "External: webbed hind feet (swimming), sticky pads on forefeet (climbing), tympanum (hearing), nictitating membrane (eye protection).",
+    "Metamorphosis: tadpole (tail + gills) → froglet → adult frog (lungs, no tail).",
+    "Bio-indicator: frogs die off in polluted ponds, warning of water-quality decline."
+  ],
+  "practiceQuestions": [
+    "Describe the external anatomy of Rana tigrina.",
+    "Explain the habit and habitat of the frog.",
+    "Differentiate the forelimbs and hindlimbs of the frog.",
+    "State the adaptations of the frog to an amphibious life.",
+    "State the taxonomic position of Rana tigrina."
+  ],
+  "formulas": [
+    "External: head (eyes, tympanum, nostrils) + neck + trunk + 4 limbs (forelimb 4 digits, hindlimb 5 digits, webbed)",
+    "Adaptations: moist skin, webbed feet, sticky pads, tympanum, nictitating membrane",
+    "Metamorphosis: tadpole (tail + gills) → adult frog (no tail + lungs)"
+  ],
+  "keyPoints": [
+    "Rana tigrina: amphibian, ~5–8 cm, semi-aquatic; model organism for NEB.",
+    "External: moist glandular skin, tympanum, nictitating membrane.",
+    "Forelimbs 4 digits; hindlimbs 5 webbed digits.",
+    "No tail in adults; tadpole has a tail (metamorphosis).",
+    "Adaptations: webbed feet (swim), sticky pads (climb), moist skin (respiration).",
+    "Taxonomy: Amphibia > Anura > Rana.",
+    "Bio-indicator of water quality; pest controller."
+  ],
+  "summary": "Rana tigrina is the model amphibian for NEB. It is semi-aquatic, living near water but spending most of the time on land. Its external features — moist, glandular, scaleless skin; a tympanum; a nictitating membrane; 4-digit forelimbs and 5-digit webbed hindlimbs — reflect its amphibious life. The tadpole has a tail and gills; the adult loses the tail and gains lungs. These adaptations make frogs both efficient land-and-water animals and sensitive bio-indicators of environmental change.",
+  "specialNotes": [
+    "NEB expects a labelled external diagram of the frog as the entry topic for frog anatomy.",
+    "The digit count (4 forelimb, 5 hindlimb) is a very common exam detail.",
+    "Metamorphosis (tadpole → frog) is a frequent topic.",
+    "Stress that the moist skin allows cutaneous respiration — a key amphibian feature.",
+    "Note the frog as a water-quality bio-indicator (application question)."
+  ],
+  "importantStatements": [
+    "Rana tigrina is an amphibian with a semi-aquatic habit.",
+    "The frog has 4 forelimb digits and 5 webbed hindlimb digits.",
+    "Moist, glandular skin allows significant cutaneous respiration.",
+    "The tadpole has a tail and gills; the adult loses the tail."
+  ],
+  "importantNotes": [
+    "Memorise the digit count (4 fore, 5 hind).",
+    "Learn the external features (tympanum, nictitating membrane, skin).",
+    "Explain metamorphosis (tadpole → frog).",
+    "List adaptations to amphibious life.",
+    "State the taxonomic position of Rana tigrina."
+  ],
+  "examShortTricks": [
+    "Frog digits: 4 fore + 5 hind (webbed).",
+    "Amphibian = amphi (both) + bios (life) = land + water.",
+    "Tympanum = ear; Nictitating membrane = third eyelid.",
+    "Tadpole = tail + gills; Adult = no tail + lungs."
+  ],
+  "examNotes": [
+    "Draw and label the external anatomy of Rana tigrina.",
+    "Explain the habit and habitat of the frog.",
+    "Differentiate the forelimbs and hindlimbs.",
+    "State the adaptations to amphibious life.",
+    "Explain metamorphosis (tadpole → frog).",
+    "Why is the frog a good bio-indicator?"
+  ],
+  "mcs": [
+    {
+      "question": "The frog's hindlimbs have how many digits?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The external eardrum of a frog is called:",
+      "options": [
+        "Tympanum",
+        "Nictitating membrane",
+        "Webbed foot",
+        "Lateral line"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The transparent third eyelid of a frog is the:",
+      "options": [
+        "Tympanum",
+        "Nictitating membrane",
+        "Web",
+        "Claw"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A frog tadpole has:",
+      "options": [
+        "Lungs and no tail",
+        "Gills and a tail",
+        "No tail and lungs",
+        "Gills and no tail"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Amphibian body plan",
+    "External features (tympanum, nictitating membrane)",
+    "Digit count (4 + 5)",
+    "Moist glandular skin",
+    "Metamorphosis",
+    "Adaptations to amphibious life",
+    "Taxonomy (Anura)",
+    "Bio-indicator role"
+  ],
+  "importantTasks": [
+    "Label external frog",
+    "Explain habitat and habits",
+    "Differentiate fore/hind limbs",
+    "List adaptations",
+    "Explain metamorphosis"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "Why is the frog skin kept moist, and what function does this serve?",
+      "steps": [
+        "Frogs use cutaneous (skin) respiration",
+        "O2 must dissolve in a moist film on the skin",
+        "Moist skin = efficient gas exchange"
+      ],
+      "answer": "Moist skin allows cutaneous respiration; the frog breathes partly through its skin"
+    }
+  ]
 }

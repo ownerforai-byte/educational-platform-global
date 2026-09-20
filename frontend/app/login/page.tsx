@@ -1,15 +1,19 @@
+import type { Metadata } from "next";
 import { LoginForm } from "@/features/auth/components/login-form";
+import { AuthShell } from "@/features/auth/components/auth-shell";
+
+export const metadata: Metadata = {
+  title: "Sign In — Ravikisan's Platform",
+  description: "Sign in to your Ravikisan account to track progress, save bookmarks, and manage credits.",
+};
 
 export default function LoginPage() {
   return (
-    <div className="mx-auto max-w-md space-y-6 py-10">
-      <div className="text-center space-y-2">
-        <h1 className="text-2xl font-bold tracking-tight">Welcome back</h1>
-        <p className="text-sm text-muted-foreground">
-          Sign in to track progress, save bookmarks, and manage credits.
-        </p>
-      </div>
+    <AuthShell
+      title="Welcome back"
+      subtitle="Sign in to track progress, save bookmarks, and manage credits."
+    >
       <LoginForm />
-    </div>
+    </AuthShell>
   );
 }

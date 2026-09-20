@@ -1,5 +1,5 @@
 import { getChaptersBySubject } from "@/lib/curriculum";
-import { getSubjectSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, getSubjectSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -90,22 +90,14 @@ export default async function ChapterPage({
 }
 
 export function generateStaticParams() {
-  const params: Array<{ levelSlug: string; classSlug: string; subjectSlug: string; chapterSlug: string }> = [];
-  for (const cls of [
-    { slug: "class-11-notes", subjects: ["mathematics", "physics", "chemistry", "biology"] },
-    { slug: "class-12-notes", subjects: ["mathematics", "physics", "chemistry", "biology"] },
-  ]) {
-    for (const subjectSlug of cls.subjects) {
-      const units = 10; // Approximate
-      for (let i = 1; i <= units; i++) {
-        params.push({
-          levelSlug: "library",
-          classSlug: cls.slug,
-          subjectSlug,
-          chapterSlug: `unit-${i}`,
-        });
-      }
-    }
-  }
-  return params;
+  return SYLLABUS.flatMap((cls) =>
+    cls.subjects.flatMap((subject) =>
+      subject.units.map((_, unitIndex) => ({
+        levelSlug: "library",
+        classSlug: cls.slug,
+        subjectSlug: subject.slug,
+        chapterSlug: `unit-${unitIndex + 1}`,
+      }))
+    )
+  );
 }

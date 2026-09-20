@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Numerical Computation — NEB Computational Methods (Maths 11)
@@ -149,7 +149,7 @@ export function NumericalComputationVisual() {
             dot.position.set(x, fx, 0.05);
             push(mkSprite(`x${i}=${x.toFixed(3)}`, "#f87171", new THREE.Vector3(x + 0.5, fx + 0.8, 0), 0.65));
             // Arrow to next guess
-            const arrow = new LiveArrow(
+            const arrow = new LiveLeaderLine(
               new THREE.Vector3(xNext - x, -fx, 0).normalize(),
               new THREE.Vector3(x, fx, 0.05),
               Math.sqrt((xNext - x) ** 2 + fx * fx),

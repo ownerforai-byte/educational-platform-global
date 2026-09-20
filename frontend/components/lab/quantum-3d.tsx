@@ -11,7 +11,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 /* ============================================================
@@ -485,7 +485,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
         // Transition arrow
         const arrowGroup = new THREE.Group();
         scene.add(arrowGroup);
-        let arrow: THREE.ArrowHelper | null = null;
+        let arrow : LiveLeaderLine | null = null;
 
         function rebuildArrow() {
           if (arrow) {
@@ -497,7 +497,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           const dir = new THREE.Vector3(0, 0, -1).normalize();
           const origin = new THREE.Vector3(0, 0, endRadius);
           const length = endRadius - startRadius;
-          arrow = new LiveArrow(dir, origin, length, series.color, 0.4, 0.3);
+          arrow = new LiveLeaderLine(dir, origin, length, series.color, 0.4, 0.3);
           arrowGroup.add(arrow);
         }
         rebuildArrow();

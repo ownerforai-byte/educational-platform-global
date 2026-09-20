@@ -4,206 +4,596 @@
   "topicSlug": "detail-structure-of-eukaryotic-cells",
   "topicTitle": "Detail structure of eukaryotic cells: cell wall, cell membrane, mitochondria, plastids, endoplasmic reticulum, golgi bodies, lysosomes, ribosomes, nucleus, chromosomes, cilia, flagella and cell inclusions",
   "relevance": 100,
-  "notes": [
-    "Carbohydrates: $(CH_2O)_n$; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
-    "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
-    "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
-    "Nucleic acids: DNA (double helix, $A=T$, $G\\equiv C$, deoxyribose) stores genetic info; RNA (single strand, $A=U$) for protein synthesis.",
-    "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Cell wall is present in all cells. ✅ Cell wall is in plants, fungi, bacteria; absent in animal cells."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice comparing plant and animal cell structures.",
-    "Practice explaining osmosis and plasmolysis with diagrams."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 detail structure of eukaryotic cells."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Glucose → 38 ATP via cellular respiration",
-    "Insulin: 51 amino acids, protein hormone"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice comparing plant and animal cell structures."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 detail structure of eukaryotic cells)"
-  ],
-  "keyPoints": [
-    "Core point for 03 detail structure of eukaryotic cells."
-  ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nCell membrane is selectively permeable fluid mosaic.\n\nOrganelles enable compartmentalized metabolic functions.",
-  "specialNotes": [
-    "Specialized insight for 03 detail structure of eukaryotic cells."
-  ],
-  "importantStatements": [
-    "Key statement for 03 detail structure of eukaryotic cells."
-  ],
-  "importantNotes": [
-    "Important note regarding 03 detail structure of eukaryotic cells."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Eukaryotic Cell Structure."
-  ],
-  "examNotes": [
-    "Eukaryotic Cell Structure is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 detail structure of eukaryotic cells?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 detail structure of eukaryotic cells."
-  ],
-  "importantTasks": [
-    "Task for studying 03 detail structure of eukaryotic cells."
-  ],
   "duplicateType": 2,
   "tabGroup": "03-detail-structure-of-eukaryotic-cells",
   "mcqs": [
     {
-      "question": "Question about 03 detail structure of eukaryotic cells?",
+      "question": "Which organelle is the site of the Krebs cycle?",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "RER",
+        "Mitochondrial matrix",
+        "Golgi",
+        "Lysosome"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The endosymbiotic theory is supported by the fact that mitochondria and chloroplasts have:",
+      "options": [
+        "A single membrane",
+        "Their own DNA and 70S ribosomes",
+        "No DNA",
+        "Only microtubules"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A cell that secretes large amounts of protein will have abundant:",
+      "options": [
+        "SER",
+        "RER and Golgi",
+        "Lysosomes",
+        "Centrioles"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 9+0 microtubule arrangement is found in:",
+      "options": [
+        "Cilia",
+        "Centrioles",
+        "Chloroplasts",
+        "Lysosomes"
+      ],
+      "answer": "B"
     }
+  ],
+  "visualType": "organelle-functions",
+  "enrichedContent": {
+    "notes": [
+      "DETAILED ORGANELLE ANALYSIS (plant + animal cell).",
+      "Plasma membrane: phospholipid bilayer (heads out, tails in) + integral proteins (channels, pumps, receptors) + peripheral proteins + cholesterol + glycocalyx (cell recognition). Fluid-mosaic model (Singer & Nicolson, 1972).",
+      "Mitochondrion: double membrane; outer smooth, inner folded into cristae; matrix with Krebs enzymes; own DNA + 70S ribosomes (endosymbiosis); aerobic respiration: glycolysis (cytoplasm) → Krebs (matrix) → ETS (cristae) → ~34 ATP.",
+      "Chloroplast: double membrane; thylakoids stacked into grana; stroma with Calvin-cycle enzymes; chlorophyll a + b; own DNA + 70S ribosomes; light reactions (grana → ATP, NADPH, O2) + Calvin cycle (stroma → glucose).",
+      "Nucleus: nuclear envelope (4 nm, two membranes, pores); nucleoplasm; chromatin (DNA + histone proteins); nucleolus (rRNA + ribosome assembly).",
+      "Rough ER (RER): ribosomes on outer surface → protein synthesis (secretory + membrane proteins); continuous with nuclear envelope.",
+      "Smooth ER (SER): lipid synthesis, carbohydrate metabolism, detoxification (liver), Ca2+ storage (muscle — sarcoplasmic reticulum).",
+      "Golgi apparatus: cisternae + vesicles; modifies (glycosylation), packages, sorts, and secretes proteins; forms lysosomes + cell plate (plants).",
+      "Lysosomes: 8–12 nm vesicle, hydrolytic enzymes (acidic pH); digest food particles, worn organelles (autophagy); \"suicide bags\" when damaged.",
+      "Vacuole: plant — large central (turgor, storage); animal — small (excretion, osmoregulation, contractile in protozoa).",
+      "Cytoskeleton: microfilaments (actin), intermediate filaments, microtubules (tubulin); shape, movement, intracellular transport, division (spindle).",
+      "Centrioles (animal): microtubule rings; form the spindle during mitosis; absent in most plants.",
+      "Cell inclusions: storage granules (starch, fat, glycogen), pigments (leuco-, chro-, heterochromoplasts), crystalloids.",
+      "Cell wall (plant): cellulose microfibrils (primary wall) + pectin; secondary wall with lignin; fully permeable; provides rigidity + protection."
+    ],
+    "confusion": [
+      "RER makes PROTEIN; SER makes LIPID. A cell secreting lots of protein has abundant RER + Golgi (e.g., pancreatic acinar cell).",
+      "The Golgi does NOT synthesise proteins; it MODIFIES, SORTS, and PACKAGES what the RER made.",
+      "Mitochondria and chloroplasts have their OWN DNA + 70S ribosomes — the key endosymbiosis evidence.",
+      "Lysosomes are animal-cell organelles; plants use the large vacuole for hydrolytic digestion.",
+      "Cilia and flagella share the 9+9 axonemal microtubule structure; centrioles (9+0) are related but lack the central pair.",
+      "The nucleus is NOT the only place with DNA: mitochondria + chloroplasts carry their own genomes."
+    ],
+    "practice": [
+      "Draw a fully labelled plant cell (all organelles + wall + chloroplast + large vacuole).",
+      "Differentiate RER and SER (structure + function, 4 points).",
+      "Explain the endosymbiotic theory with the 4 lines of evidence.",
+      "Trace the pathway of a secreted protein (ribosome → RER → Golgi → vesicle → membrane).",
+      "State the functions of the nucleolus and the nuclear envelope pores."
+    ],
+    "universalFacts": [
+      "The liver cell contains over a million ribosomes.",
+      "Mitochondria and chloroplasts reproduce by binary fission, like bacteria.",
+      "The nuclear envelope is continuous with the outer membrane of the RER.",
+      "A typical human cell has ~500 mitochondria, varying by energy demand."
+    ],
+    "examples": [
+      "Secretory protein pathway: ribosome (free) → RER → Golgi → transport vesicle → plasma membrane (exocytosis).",
+      "Mitochondrial respiration: glucose → pyruvate (cytoplasm) → Krebs (matrix) → ETS (cristae) → ATP.",
+      "Chloroplast photosynthesis: light reactions in grana → ATP + NADPH; Calvin cycle in stroma → glucose.",
+      "Lysosome autophagy: damaged mitochondrion → autophagosome → lysosomal digestion → recycled."
+    ],
+    "practiceQuestions": [
+      "Why are mitochondria and chloroplasts called semi-autonomous organelles?",
+      "Differentiate RER and SER (4 points).",
+      "Describe the protein-secretion pathway in a cell.",
+      "Explain the endosymbiotic theory with evidence.",
+      "State the role of the nucleolus."
+    ],
+    "formulas": [
+      "Fluid-mosaic: phospholipid bilayer + integral/peripheral protein + cholesterol + glycocalyx",
+      "Protein secretion: ribosome → RER → Golgi → vesicle → exocytosis",
+      "Mitochondrial respiration: glycolysis → Krebs → ETS → ~34 ATP",
+      "9+9 axoneme (cilia/flagella); 9+0 centriole"
+    ],
+    "keyPoints": [
+      "Each organelle has a distinct, examinable function (mitochondrion→ATP, chloroplast→photosynthesis, RER→protein, SER→lipid, Golgi→packaging, lysosome→digestion, nucleus→inheritance).",
+      "RER = rough = ribosomes = protein; SER = smooth = no ribosomes = lipid.",
+      "Mitochondria + chloroplast: own DNA, 70S ribosomes, double membrane, binary fission (endosymbiosis).",
+      "Protein-secretion pathway: ribosome → RER → Golgi → vesicle → membrane.",
+      "Plant cell: wall + chloroplast + large central vacuole; animal cell: centrioles + lysosomes + small vacuoles.",
+      "Cytoskeleton: microfilaments, intermediate filaments, microtubules.",
+      "Nucleus: envelope + nucleolus + chromatin; chromatin condenses to chromosomes in division."
+    ],
+    "summary": "A detailed examination of the eukaryotic cell shows how each membrane-bound organelle specialises a metabolic function. The fluid-mosaic plasma membrane controls transport; mitochondria and chloroplasts convert energy (and carry their own DNA, evidence of endosymbiosis); RER makes protein while SER makes lipid; the Golgi modifies and packages; lysosomes digest; the nucleus and nucleolus control heredity; and the cytoskeleton (microfilaments, microtubules) maintains shape and drives division. The protein-secretion pathway (ribosome → RER → Golgi → vesicle → membrane) and the plant/animal cell contrast are core NEB written-answer topics.",
+    "specialNotes": [
+      "NEB written answers expect a labelled organelle diagram + a one-line function per organelle.",
+      "The endosymbiotic theory (4 evidence lines: own DNA, 70S ribosomes, double membrane, binary fission) is a favourite 4-mark question.",
+      "Trace the secreted-protein pathway step by step.",
+      "Contrast plant vs animal cell (wall, chloroplast, large vacuole vs centrioles, lysosomes).",
+      "RER/SER distinction is a very common short-answer."
+    ],
+    "importantStatements": [
+      "The plasma membrane is the selectively permeable boundary of every cell.",
+      "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+      "The Golgi apparatus modifies, sorts, and packages proteins and lipids.",
+      "Cilia, flagella, and centrioles are built from microtubules."
+    ],
+    "importantNotes": [
+      "Memorise organelle → function pairs.",
+      "Draw a plant cell with all labels in one pass.",
+      "Learn the 9+9 axonemal structure of cilia/flagella and the 9+0 centriole.",
+      "Note plant-specific organelles (wall, chloroplast, central vacuole).",
+      "Trace the protein-secretion pathway from ribosome to membrane."
+    ],
+    "examShortTricks": [
+      "RER = rough = protein; SER = smooth = lipid.",
+      "Mito + Chloro = own DNA + 70S ribosomes = endosymbiosis.",
+      "Golgi = G-O-L-G-I = packages + SECREtes.",
+      "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles.",
+      "Secretion: Ribosome → RER → Golgi → Vesicle → Membrane."
+    ],
+    "examNotes": [
+      "Draw a fully labelled plant cell (all organelles + wall).",
+      "Differentiate RER and SER.",
+      "Explain the endosymbiotic theory with 4 evidence lines.",
+      "Trace the protein-secretion pathway.",
+      "Contrast plant and animal cells (two-column table).",
+      "State the functions of the nucleolus and the Golgi."
+    ],
+    "mcs": [
+      {
+        "question": "Which organelle is the site of the Krebs cycle?",
+        "options": [
+          "RER",
+          "Mitochondrial matrix",
+          "Golgi",
+          "Lysosome"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The endosymbiotic theory is supported by the fact that mitochondria and chloroplasts have:",
+        "options": [
+          "A single membrane",
+          "Their own DNA and 70S ribosomes",
+          "No DNA",
+          "Only microtubules"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "A cell that secretes large amounts of protein will have abundant:",
+        "options": [
+          "SER",
+          "RER and Golgi",
+          "Lysosomes",
+          "Centrioles"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The 9+0 microtubule arrangement is found in:",
+        "options": [
+          "Cilia",
+          "Centrioles",
+          "Chloroplasts",
+          "Lysosomes"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Fluid-mosaic model",
+      "RER vs SER",
+      "Protein-secretion pathway",
+      "Endosymbiotic theory",
+      "Mitochondrial respiration",
+      "Chloroplast photosynthesis",
+      "Golgi functions",
+      "Lysosome autophagy",
+      "Cytoskeleton",
+      "Plant vs animal cell"
+    ],
+    "importantTasks": [
+      "Label a plant cell (all organelles)",
+      "Differentiate RER/SER",
+      "Explain endosymbiotic theory (4 evidence lines)",
+      "Trace protein secretion",
+      "Contrast plant vs animal cell"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Trace the pathway of a protein made by a ribosome that is to be secreted from the cell.",
+        "steps": [
+          "Ribosome on RER synthesises the protein",
+          "Protein enters the RER lumen and is folded",
+          "Transport vesicle carries it to the Golgi",
+          "Golgi modifies (glycosylates) and packages it",
+          "Secretory vesicle moves to the plasma membrane",
+          "Exocytosis releases the protein outside"
+        ],
+        "answer": "Ribosome (RER) → RER → Golgi → secretory vesicle → plasma membrane → exocytosis"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "CellOrganelleDeepViewer",
+      "desc": "Layered 3D cell where each organelle can be isolated, rotated, and labelled; includes the protein-secretion pathway animation and endosymbiosis evidence panels."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "DETAILED ORGANELLE ANALYSIS (plant + animal cell).",
+      "Plasma membrane: phospholipid bilayer (heads out, tails in) + integral proteins (channels, pumps, receptors) + peripheral proteins + cholesterol + glycocalyx (cell recognition). Fluid-mosaic model (Singer & Nicolson, 1972).",
+      "Mitochondrion: double membrane; outer smooth, inner folded into cristae; matrix with Krebs enzymes; own DNA + 70S ribosomes (endosymbiosis); aerobic respiration: glycolysis (cytoplasm) → Krebs (matrix) → ETS (cristae) → ~34 ATP.",
+      "Chloroplast: double membrane; thylakoids stacked into grana; stroma with Calvin-cycle enzymes; chlorophyll a + b; own DNA + 70S ribosomes; light reactions (grana → ATP, NADPH, O2) + Calvin cycle (stroma → glucose).",
+      "Nucleus: nuclear envelope (4 nm, two membranes, pores); nucleoplasm; chromatin (DNA + histone proteins); nucleolus (rRNA + ribosome assembly).",
+      "Rough ER (RER): ribosomes on outer surface → protein synthesis (secretory + membrane proteins); continuous with nuclear envelope.",
+      "Smooth ER (SER): lipid synthesis, carbohydrate metabolism, detoxification (liver), Ca2+ storage (muscle — sarcoplasmic reticulum).",
+      "Golgi apparatus: cisternae + vesicles; modifies (glycosylation), packages, sorts, and secretes proteins; forms lysosomes + cell plate (plants).",
+      "Lysosomes: 8–12 nm vesicle, hydrolytic enzymes (acidic pH); digest food particles, worn organelles (autophagy); \"suicide bags\" when damaged.",
+      "Vacuole: plant — large central (turgor, storage); animal — small (excretion, osmoregulation, contractile in protozoa).",
+      "Cytoskeleton: microfilaments (actin), intermediate filaments, microtubules (tubulin); shape, movement, intracellular transport, division (spindle).",
+      "Centrioles (animal): microtubule rings; form the spindle during mitosis; absent in most plants.",
+      "Cell inclusions: storage granules (starch, fat, glycogen), pigments (leuco-, chro-, heterochromoplasts), crystalloids.",
+      "Cell wall (plant): cellulose microfibrils (primary wall) + pectin; secondary wall with lignin; fully permeable; provides rigidity + protection."
+    ],
+    "confusion": [
+      "RER makes PROTEIN; SER makes LIPID. A cell secreting lots of protein has abundant RER + Golgi (e.g., pancreatic acinar cell).",
+      "The Golgi does NOT synthesise proteins; it MODIFIES, SORTS, and PACKAGES what the RER made.",
+      "Mitochondria and chloroplasts have their OWN DNA + 70S ribosomes — the key endosymbiosis evidence.",
+      "Lysosomes are animal-cell organelles; plants use the large vacuole for hydrolytic digestion.",
+      "Cilia and flagella share the 9+9 axonemal microtubule structure; centrioles (9+0) are related but lack the central pair.",
+      "The nucleus is NOT the only place with DNA: mitochondria + chloroplasts carry their own genomes."
+    ],
+    "practice": [
+      "Draw a fully labelled plant cell (all organelles + wall + chloroplast + large vacuole).",
+      "Differentiate RER and SER (structure + function, 4 points).",
+      "Explain the endosymbiotic theory with the 4 lines of evidence.",
+      "Trace the pathway of a secreted protein (ribosome → RER → Golgi → vesicle → membrane).",
+      "State the functions of the nucleolus and the nuclear envelope pores."
+    ],
+    "universalFacts": [
+      "The liver cell contains over a million ribosomes.",
+      "Mitochondria and chloroplasts reproduce by binary fission, like bacteria.",
+      "The nuclear envelope is continuous with the outer membrane of the RER.",
+      "A typical human cell has ~500 mitochondria, varying by energy demand."
+    ],
+    "examples": [
+      "Secretory protein pathway: ribosome (free) → RER → Golgi → transport vesicle → plasma membrane (exocytosis).",
+      "Mitochondrial respiration: glucose → pyruvate (cytoplasm) → Krebs (matrix) → ETS (cristae) → ATP.",
+      "Chloroplast photosynthesis: light reactions in grana → ATP + NADPH; Calvin cycle in stroma → glucose.",
+      "Lysosome autophagy: damaged mitochondrion → autophagosome → lysosomal digestion → recycled."
+    ],
+    "practiceQuestions": [
+      "Why are mitochondria and chloroplasts called semi-autonomous organelles?",
+      "Differentiate RER and SER (4 points).",
+      "Describe the protein-secretion pathway in a cell.",
+      "Explain the endosymbiotic theory with evidence.",
+      "State the role of the nucleolus."
+    ],
+    "formulas": [
+      "Fluid-mosaic: phospholipid bilayer + integral/peripheral protein + cholesterol + glycocalyx",
+      "Protein secretion: ribosome → RER → Golgi → vesicle → exocytosis",
+      "Mitochondrial respiration: glycolysis → Krebs → ETS → ~34 ATP",
+      "9+9 axoneme (cilia/flagella); 9+0 centriole"
+    ],
+    "keyPoints": [
+      "Each organelle has a distinct, examinable function (mitochondrion→ATP, chloroplast→photosynthesis, RER→protein, SER→lipid, Golgi→packaging, lysosome→digestion, nucleus→inheritance).",
+      "RER = rough = ribosomes = protein; SER = smooth = no ribosomes = lipid.",
+      "Mitochondria + chloroplast: own DNA, 70S ribosomes, double membrane, binary fission (endosymbiosis).",
+      "Protein-secretion pathway: ribosome → RER → Golgi → vesicle → membrane.",
+      "Plant cell: wall + chloroplast + large central vacuole; animal cell: centrioles + lysosomes + small vacuoles.",
+      "Cytoskeleton: microfilaments, intermediate filaments, microtubules.",
+      "Nucleus: envelope + nucleolus + chromatin; chromatin condenses to chromosomes in division."
+    ],
+    "summary": "A detailed examination of the eukaryotic cell shows how each membrane-bound organelle specialises a metabolic function. The fluid-mosaic plasma membrane controls transport; mitochondria and chloroplasts convert energy (and carry their own DNA, evidence of endosymbiosis); RER makes protein while SER makes lipid; the Golgi modifies and packages; lysosomes digest; the nucleus and nucleolus control heredity; and the cytoskeleton (microfilaments, microtubules) maintains shape and drives division. The protein-secretion pathway (ribosome → RER → Golgi → vesicle → membrane) and the plant/animal cell contrast are core NEB written-answer topics.",
+    "specialNotes": [
+      "NEB written answers expect a labelled organelle diagram + a one-line function per organelle.",
+      "The endosymbiotic theory (4 evidence lines: own DNA, 70S ribosomes, double membrane, binary fission) is a favourite 4-mark question.",
+      "Trace the secreted-protein pathway step by step.",
+      "Contrast plant vs animal cell (wall, chloroplast, large vacuole vs centrioles, lysosomes).",
+      "RER/SER distinction is a very common short-answer."
+    ],
+    "importantStatements": [
+      "The plasma membrane is the selectively permeable boundary of every cell.",
+      "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+      "The Golgi apparatus modifies, sorts, and packages proteins and lipids.",
+      "Cilia, flagella, and centrioles are built from microtubules."
+    ],
+    "importantNotes": [
+      "Memorise organelle → function pairs.",
+      "Draw a plant cell with all labels in one pass.",
+      "Learn the 9+9 axonemal structure of cilia/flagella and the 9+0 centriole.",
+      "Note plant-specific organelles (wall, chloroplast, central vacuole).",
+      "Trace the protein-secretion pathway from ribosome to membrane."
+    ],
+    "examShortTricks": [
+      "RER = rough = protein; SER = smooth = lipid.",
+      "Mito + Chloro = own DNA + 70S ribosomes = endosymbiosis.",
+      "Golgi = G-O-L-G-I = packages + SECREtes.",
+      "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles.",
+      "Secretion: Ribosome → RER → Golgi → Vesicle → Membrane."
+    ],
+    "examNotes": [
+      "Draw a fully labelled plant cell (all organelles + wall).",
+      "Differentiate RER and SER.",
+      "Explain the endosymbiotic theory with 4 evidence lines.",
+      "Trace the protein-secretion pathway.",
+      "Contrast plant and animal cells (two-column table).",
+      "State the functions of the nucleolus and the Golgi."
+    ],
+    "mcs": [
+      {
+        "question": "Which organelle is the site of the Krebs cycle?",
+        "options": [
+          "RER",
+          "Mitochondrial matrix",
+          "Golgi",
+          "Lysosome"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The endosymbiotic theory is supported by the fact that mitochondria and chloroplasts have:",
+        "options": [
+          "A single membrane",
+          "Their own DNA and 70S ribosomes",
+          "No DNA",
+          "Only microtubules"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "A cell that secretes large amounts of protein will have abundant:",
+        "options": [
+          "SER",
+          "RER and Golgi",
+          "Lysosomes",
+          "Centrioles"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The 9+0 microtubule arrangement is found in:",
+        "options": [
+          "Cilia",
+          "Centrioles",
+          "Chloroplasts",
+          "Lysosomes"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Fluid-mosaic model",
+      "RER vs SER",
+      "Protein-secretion pathway",
+      "Endosymbiotic theory",
+      "Mitochondrial respiration",
+      "Chloroplast photosynthesis",
+      "Golgi functions",
+      "Lysosome autophagy",
+      "Cytoskeleton",
+      "Plant vs animal cell"
+    ],
+    "importantTasks": [
+      "Label a plant cell (all organelles)",
+      "Differentiate RER/SER",
+      "Explain endosymbiotic theory (4 evidence lines)",
+      "Trace protein secretion",
+      "Contrast plant vs animal cell"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Trace the pathway of a protein made by a ribosome that is to be secreted from the cell.",
+        "steps": [
+          "Ribosome on RER synthesises the protein",
+          "Protein enters the RER lumen and is folded",
+          "Transport vesicle carries it to the Golgi",
+          "Golgi modifies (glycosylates) and packages it",
+          "Secretory vesicle moves to the plasma membrane",
+          "Exocytosis releases the protein outside"
+        ],
+        "answer": "Ribosome (RER) → RER → Golgi → secretory vesicle → plasma membrane → exocytosis"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "CellOrganelleDeepViewer",
+      "desc": "Layered 3D cell where each organelle can be isolated, rotated, and labelled; includes the protein-secretion pathway animation and endosymbiosis evidence panels."
+    }
+  },
+  "notes": [
+    "DETAILED ORGANELLE ANALYSIS (plant + animal cell).",
+    "Plasma membrane: phospholipid bilayer (heads out, tails in) + integral proteins (channels, pumps, receptors) + peripheral proteins + cholesterol + glycocalyx (cell recognition). Fluid-mosaic model (Singer & Nicolson, 1972).",
+    "Mitochondrion: double membrane; outer smooth, inner folded into cristae; matrix with Krebs enzymes; own DNA + 70S ribosomes (endosymbiosis); aerobic respiration: glycolysis (cytoplasm) → Krebs (matrix) → ETS (cristae) → ~34 ATP.",
+    "Chloroplast: double membrane; thylakoids stacked into grana; stroma with Calvin-cycle enzymes; chlorophyll a + b; own DNA + 70S ribosomes; light reactions (grana → ATP, NADPH, O2) + Calvin cycle (stroma → glucose).",
+    "Nucleus: nuclear envelope (4 nm, two membranes, pores); nucleoplasm; chromatin (DNA + histone proteins); nucleolus (rRNA + ribosome assembly).",
+    "Rough ER (RER): ribosomes on outer surface → protein synthesis (secretory + membrane proteins); continuous with nuclear envelope.",
+    "Smooth ER (SER): lipid synthesis, carbohydrate metabolism, detoxification (liver), Ca2+ storage (muscle — sarcoplasmic reticulum).",
+    "Golgi apparatus: cisternae + vesicles; modifies (glycosylation), packages, sorts, and secretes proteins; forms lysosomes + cell plate (plants).",
+    "Lysosomes: 8–12 nm vesicle, hydrolytic enzymes (acidic pH); digest food particles, worn organelles (autophagy); \"suicide bags\" when damaged.",
+    "Vacuole: plant — large central (turgor, storage); animal — small (excretion, osmoregulation, contractile in protozoa).",
+    "Cytoskeleton: microfilaments (actin), intermediate filaments, microtubules (tubulin); shape, movement, intracellular transport, division (spindle).",
+    "Centrioles (animal): microtubule rings; form the spindle during mitosis; absent in most plants.",
+    "Cell inclusions: storage granules (starch, fat, glycogen), pigments (leuco-, chro-, heterochromoplasts), crystalloids.",
+    "Cell wall (plant): cellulose microfibrils (primary wall) + pectin; secondary wall with lignin; fully permeable; provides rigidity + protection."
+  ],
+  "confusion": [
+    "RER makes PROTEIN; SER makes LIPID. A cell secreting lots of protein has abundant RER + Golgi (e.g., pancreatic acinar cell).",
+    "The Golgi does NOT synthesise proteins; it MODIFIES, SORTS, and PACKAGES what the RER made.",
+    "Mitochondria and chloroplasts have their OWN DNA + 70S ribosomes — the key endosymbiosis evidence.",
+    "Lysosomes are animal-cell organelles; plants use the large vacuole for hydrolytic digestion.",
+    "Cilia and flagella share the 9+9 axonemal microtubule structure; centrioles (9+0) are related but lack the central pair.",
+    "The nucleus is NOT the only place with DNA: mitochondria + chloroplasts carry their own genomes."
+  ],
+  "practice": [
+    "Draw a fully labelled plant cell (all organelles + wall + chloroplast + large vacuole).",
+    "Differentiate RER and SER (structure + function, 4 points).",
+    "Explain the endosymbiotic theory with the 4 lines of evidence.",
+    "Trace the pathway of a secreted protein (ribosome → RER → Golgi → vesicle → membrane).",
+    "State the functions of the nucleolus and the nuclear envelope pores."
+  ],
+  "universalFacts": [
+    "The liver cell contains over a million ribosomes.",
+    "Mitochondria and chloroplasts reproduce by binary fission, like bacteria.",
+    "The nuclear envelope is continuous with the outer membrane of the RER.",
+    "A typical human cell has ~500 mitochondria, varying by energy demand."
+  ],
+  "examples": [
+    "Secretory protein pathway: ribosome (free) → RER → Golgi → transport vesicle → plasma membrane (exocytosis).",
+    "Mitochondrial respiration: glucose → pyruvate (cytoplasm) → Krebs (matrix) → ETS (cristae) → ATP.",
+    "Chloroplast photosynthesis: light reactions in grana → ATP + NADPH; Calvin cycle in stroma → glucose.",
+    "Lysosome autophagy: damaged mitochondrion → autophagosome → lysosomal digestion → recycled."
+  ],
+  "practiceQuestions": [
+    "Why are mitochondria and chloroplasts called semi-autonomous organelles?",
+    "Differentiate RER and SER (4 points).",
+    "Describe the protein-secretion pathway in a cell.",
+    "Explain the endosymbiotic theory with evidence.",
+    "State the role of the nucleolus."
+  ],
+  "formulas": [
+    "Fluid-mosaic: phospholipid bilayer + integral/peripheral protein + cholesterol + glycocalyx",
+    "Protein secretion: ribosome → RER → Golgi → vesicle → exocytosis",
+    "Mitochondrial respiration: glycolysis → Krebs → ETS → ~34 ATP",
+    "9+9 axoneme (cilia/flagella); 9+0 centriole"
+  ],
+  "keyPoints": [
+    "Each organelle has a distinct, examinable function (mitochondrion→ATP, chloroplast→photosynthesis, RER→protein, SER→lipid, Golgi→packaging, lysosome→digestion, nucleus→inheritance).",
+    "RER = rough = ribosomes = protein; SER = smooth = no ribosomes = lipid.",
+    "Mitochondria + chloroplast: own DNA, 70S ribosomes, double membrane, binary fission (endosymbiosis).",
+    "Protein-secretion pathway: ribosome → RER → Golgi → vesicle → membrane.",
+    "Plant cell: wall + chloroplast + large central vacuole; animal cell: centrioles + lysosomes + small vacuoles.",
+    "Cytoskeleton: microfilaments, intermediate filaments, microtubules.",
+    "Nucleus: envelope + nucleolus + chromatin; chromatin condenses to chromosomes in division."
+  ],
+  "summary": "A detailed examination of the eukaryotic cell shows how each membrane-bound organelle specialises a metabolic function. The fluid-mosaic plasma membrane controls transport; mitochondria and chloroplasts convert energy (and carry their own DNA, evidence of endosymbiosis); RER makes protein while SER makes lipid; the Golgi modifies and packages; lysosomes digest; the nucleus and nucleolus control heredity; and the cytoskeleton (microfilaments, microtubules) maintains shape and drives division. The protein-secretion pathway (ribosome → RER → Golgi → vesicle → membrane) and the plant/animal cell contrast are core NEB written-answer topics.",
+  "specialNotes": [
+    "NEB written answers expect a labelled organelle diagram + a one-line function per organelle.",
+    "The endosymbiotic theory (4 evidence lines: own DNA, 70S ribosomes, double membrane, binary fission) is a favourite 4-mark question.",
+    "Trace the secreted-protein pathway step by step.",
+    "Contrast plant vs animal cell (wall, chloroplast, large vacuole vs centrioles, lysosomes).",
+    "RER/SER distinction is a very common short-answer."
+  ],
+  "importantStatements": [
+    "The plasma membrane is the selectively permeable boundary of every cell.",
+    "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+    "The Golgi apparatus modifies, sorts, and packages proteins and lipids.",
+    "Cilia, flagella, and centrioles are built from microtubules."
+  ],
+  "importantNotes": [
+    "Memorise organelle → function pairs.",
+    "Draw a plant cell with all labels in one pass.",
+    "Learn the 9+9 axonemal structure of cilia/flagella and the 9+0 centriole.",
+    "Note plant-specific organelles (wall, chloroplast, central vacuole).",
+    "Trace the protein-secretion pathway from ribosome to membrane."
+  ],
+  "examShortTricks": [
+    "RER = rough = protein; SER = smooth = lipid.",
+    "Mito + Chloro = own DNA + 70S ribosomes = endosymbiosis.",
+    "Golgi = G-O-L-G-I = packages + SECREtes.",
+    "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles.",
+    "Secretion: Ribosome → RER → Golgi → Vesicle → Membrane."
+  ],
+  "examNotes": [
+    "Draw a fully labelled plant cell (all organelles + wall).",
+    "Differentiate RER and SER.",
+    "Explain the endosymbiotic theory with 4 evidence lines.",
+    "Trace the protein-secretion pathway.",
+    "Contrast plant and animal cells (two-column table).",
+    "State the functions of the nucleolus and the Golgi."
+  ],
+  "mcs": [
+    {
+      "question": "Which organelle is the site of the Krebs cycle?",
+      "options": [
+        "RER",
+        "Mitochondrial matrix",
+        "Golgi",
+        "Lysosome"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The endosymbiotic theory is supported by the fact that mitochondria and chloroplasts have:",
+      "options": [
+        "A single membrane",
+        "Their own DNA and 70S ribosomes",
+        "No DNA",
+        "Only microtubules"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A cell that secretes large amounts of protein will have abundant:",
+      "options": [
+        "SER",
+        "RER and Golgi",
+        "Lysosomes",
+        "Centrioles"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 9+0 microtubule arrangement is found in:",
+      "options": [
+        "Cilia",
+        "Centrioles",
+        "Chloroplasts",
+        "Lysosomes"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Fluid-mosaic model",
+    "RER vs SER",
+    "Protein-secretion pathway",
+    "Endosymbiotic theory",
+    "Mitochondrial respiration",
+    "Chloroplast photosynthesis",
+    "Golgi functions",
+    "Lysosome autophagy",
+    "Cytoskeleton",
+    "Plant vs animal cell"
+  ],
+  "importantTasks": [
+    "Label a plant cell (all organelles)",
+    "Differentiate RER/SER",
+    "Explain endosymbiotic theory (4 evidence lines)",
+    "Trace protein secretion",
+    "Contrast plant vs animal cell"
   ],
   "exercises": [
     {
       "id": "1",
-      "question": "Identify the bond linking amino acids",
+      "question": "Trace the pathway of a protein made by a ribosome that is to be secreted from the cell.",
       "steps": [
-        "Amino acids are monomers",
-        "Link between -COOH and -NH₂",
-        "Peptide bond formed"
+        "Ribosome on RER synthesises the protein",
+        "Protein enters the RER lumen and is folded",
+        "Transport vesicle carries it to the Golgi",
+        "Golgi modifies (glycosylates) and packages it",
+        "Secretory vesicle moves to the plasma membrane",
+        "Exocytosis releases the protein outside"
       ],
-      "answer": "Peptide bond"
+      "answer": "Ribosome (RER) → RER → Golgi → secretory vesicle → plasma membrane → exocytosis"
     }
-  ],
-  "visualization": {
-    "type": "3d-model",
-    "component": "ProteinStructureViewer",
-    "desc": "Interactive 3D protein structure showing primary to quaternary levels"
-  },
-  "visualType": "organelle-functions"
+  ]
 }

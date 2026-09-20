@@ -14,6 +14,9 @@
 import { BIOLOGY_THEOREMS } from "@/lib/derivations-data-biology";
 import { CHEMISTRY_THEOREMS } from "@/lib/derivations-data-chemistry";
 import { MATH_THEOREMS } from "@/lib/derivations-data-math";
+import { PHYSICS_WAVE1_DERIVATIONS, type SpecialCase } from "@/lib/derivations-wave1-physics";
+
+export type { SpecialCase };
 
 export interface SolvedProblem {
   id: string;
@@ -61,6 +64,8 @@ export interface DerivationOrTheorem {
   examTraps: string[];
   visualType: string;
   solvedProblems: SolvedProblem[];
+  /** Limiting/edge cases the board and CEE ask — rendered under Special Cases. */
+  specialCases?: SpecialCase[];
 }
 
 export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
@@ -1401,4 +1406,5 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
   ...BIOLOGY_THEOREMS,
   ...CHEMISTRY_THEOREMS,
   ...MATH_THEOREMS,
+  ...PHYSICS_WAVE1_DERIVATIONS,
 ];

@@ -16,12 +16,14 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   disposeThreeScene,
   type ThreeScene,
   clearGroup,
   createThreeScene,
   bindResize,
+  makeVisibilityGate,
   standardMaterial, titleText,
 } from "@/components/lab/three-scene";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
@@ -41,10 +43,11 @@ const MICROMETER_BASE = 12.4; // mm baseline reading at T₁
 
 export const LinearExpansionExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
+  const leaderLayerRef = useRef<any>(null);
+  const revealBarRef = useRef<(() => void) | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(2);
   const [rodLengthCm, setRodLengthCm] = useState(80); // cm between clamp A and screw B
@@ -63,8 +66,8 @@ export const LinearExpansionExperiment: React.FC = () => {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, {
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(0.5, 4.4, 13.8),
           autoRotate: false,
           background: 0x0b1220,
@@ -72,15 +75,17 @@ export const LinearExpansionExperiment: React.FC = () => {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(mountRef.current);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
       ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
-    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+    return () => { cancelAnimationFrame(rafId); unbind(); try { leaderLayerRef.current?.dispose(); leaderLayerRef.current = null; } catch { /* noop */ } try { revealBarRef.current?.(); revealBarRef.current = null; } catch { /* noop */ } disposeThreeScene(ts); tsRef.current = null; };
   }, []);
 
   // Rebuild 3D content on state change
@@ -88,8 +93,6 @@ export const LinearExpansionExperiment: React.FC = () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
-
-let leaderLayer: any = null;
 let labelRenderer: any = null;
 const container = mountRef.current!;
         titleText(ts, "Linear Expansion Apparatus", new THREE.Vector3(0, 3.4, 0));
@@ -243,7 +246,9 @@ const container = mountRef.current!;
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(container); } catch { leaderLayer = null; }
+          try { leaderLayerRef.current?.dispose(); } catch { /* noop */ }
+          try { leaderLayerRef.current = createLeaderLayer(container); } catch { leaderLayerRef.current = null; }
+          try { revealBarRef.current = createRevealBar(container, leaderLayerRef.current); } catch { /* non-fatal */ }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -257,11 +262,11 @@ const container = mountRef.current!;
             }
           };
 
-          addLbl("#f87171", "Fixed Clamp A", [-4.9, 3.1, 0], "rod anchored here — no movement", [-4.9, 1.6, 0]);
-          addLbl("#38bdf8", "Steam Jacket", [jX, 3.5, 0], "steam condenses on rod ≈ 100 °C", [jX, rodY, 0]);
+          addLbl("#f87171", "Fixed Clamp A", [-6.6, 3.6, 0], "rod anchored here — no movement", [-4.9, 1.6, 0]);
+          addLbl("#38bdf8", "Steam Jacket", [jX, 4.3, 0], "steam condenses on rod ≈ 100 °C", [jX, rodY, 0]);
           addLbl(mat.color, `Test Rod — ${mat.name}`, [jX + jLen / 2 + 1.05, rodY - 1.6, 0], `α known = ${mat.alpha} ×10⁻⁶ K⁻¹`, [(rodEnd0 + freeEndX) / 2, rodY, 0]);
-          addLbl("#fb923c", "Steam Generator", [kettleG.position.x, 2.9, 0.9], "kettle boils water for steam", [kettleG.position.x, 1.0, 0.4]);
-          addLbl("#ef4444", "Thermometer T", [jX + 0.62, rodY + 3.2, 0], `T₁ ${T1} °C → T₂ ${T2} °C`, [jX + 0.62, rodY + 1.2, 0]);
+          addLbl("#fb923c", "Steam Generator", [kettleG.position.x - 0.4, 2.1, 1.3], "kettle boils water for steam", [kettleG.position.x, 1.0, 0.4]);
+          addLbl("#ef4444", "Thermometer T", [jX + 0.62, rodY + 4.4, 0], `T₁ ${T1} °C → T₂ ${T2} °C`, [jX + 0.62, rodY + 1.2, 0]);
           addLbl("#22c55e", "Micrometer Screw B", [gaugeX0 + 2.0, rodY + 1.45, 0], "measures expansion ΔL", [gaugeX0, rodY, 0]);
           const lblL0 = titleText(ts!, `L₀ = ${rodLengthCm} cm`, new THREE.Vector3((rodEnd0 + freeEndX) / 2, dimY + 0.45, 0));
           if (lblL0) lblL0.scale.set(3.4, 0.74, 1);
@@ -303,7 +308,7 @@ const container = mountRef.current!;
     });
 
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    leaderLayerRef.current?.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);

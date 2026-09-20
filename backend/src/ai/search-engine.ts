@@ -1,11 +1,10 @@
 /**
- * WebSearchService — Performs real-time internet searches via Google Custom Search JSON API.
+ * WebSearchService — Performs real-time internet searches for AI grounding.
  *
- * Free tier: 100 queries/day — https://developers.google.com/custom-search/v1/overview
+ * Tavily is preferred because its API is designed for LLM retrieval.
  *
  * Required env vars:
- *   GOOGLE_SEARCH_API_KEY      — from https://console.cloud.google.com/apis/credentials
- *   GOOGLE_SEARCH_ENGINE_ID    — from https://programmablesearchengine.google.com
+ *   TAVILY_API_KEY             — from https://app.tavily.com
  */
 
 export interface WebSearchResult {
@@ -24,19 +23,17 @@ export interface WebSearchResponse {
 }
 
 export class WebSearchService {
-  private apiKey: string;
-  private engineId: string;
+  private tavilyApiKey: string;
   private enabled: boolean;
 
   constructor() {
-    this.apiKey = process.env.GOOGLE_SEARCH_API_KEY ?? "";
-    this.engineId = process.env.GOOGLE_SEARCH_ENGINE_ID ?? "";
-    this.enabled = Boolean(this.apiKey && this.engineId);
+    this.tavilyApiKey = process.env.TAVILY_API_KEY ?? "";
+    this.enabled = Boolean(this.tavilyApiKey);
 
     if (!this.enabled) {
       console.warn(
-        "[SearchEngine] Google Custom Search not configured. " +
-        "Set GOOGLE_SEARCH_API_KEY and GOOGLE_SEARCH_ENGINE_ID in .env to enable real-time internet search.",
+        "[SearchEngine] Tavily not configured. " +
+        "Set TAVILY_API_KEY in backend/.env to enable real-time internet search.",
       );
     }
   }
@@ -53,35 +50,43 @@ export class WebSearchService {
    */
   async search(query: string, numResults: number = 5): Promise<WebSearchResult[]> {
     if (!this.enabled) {
-      throw new Error("Web search not configured. Missing GOOGLE_SEARCH_API_KEY or GOOGLE_SEARCH_ENGINE_ID.");
+      throw new Error("Web search not configured. Missing TAVILY_API_KEY.");
     }
 
-    const params = new URLSearchParams({
-      key: this.apiKey,
-      cx: this.engineId,
-      q: query,
-      num: Math.min(Math.max(numResults, 1), 10).toString(),
-    });
-
-    const url = `https://www.googleapis.com/customsearch/v1?${params.toString()}`;
-
     try {
-      const res = await fetch(url);
+      const res = await fetch("https://api.tavily.com/search", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          api_key: this.tavilyApiKey,
+          query: query.slice(0, 1000),
+          search_depth: "basic",
+          max_results: Math.min(Math.max(numResults, 1), 10),
+          include_answer: false,
+          include_raw_content: false,
+        }),
+        signal: AbortSignal.timeout(8000),
+      });
 
       if (!res.ok) {
         const text = await res.text();
-        console.error(`[SearchEngine] Google Custom Search error: ${res.status} ${text}`);
-        throw new Error(`Google Custom Search error: ${res.status}`);
+        console.error(`[SearchEngine] Tavily error: ${res.status} ${text}`);
+        throw new Error(`Tavily search error: ${res.status}`);
       }
 
-      const data = await res.json();
-      const items = data?.items ?? [];
+      const data = (await res.json()) as {
+        results?: Array<{
+          title?: string;
+          url?: string;
+          content?: string;
+        }>;
+      };
 
-      return items.map((item: any) => ({
+      return (data.results ?? []).map((item) => ({
         title: item.title ?? "",
-        link: item.link ?? "",
-        snippet: item.snippet ?? "",
-        displayLink: item.displayLink ?? "",
+        link: item.url ?? "",
+        snippet: item.content ?? "",
+        displayLink: item.url ? new URL(item.url).hostname : "",
       }));
     } catch (err: any) {
       console.error("[SearchEngine] Search failed:", err.message);

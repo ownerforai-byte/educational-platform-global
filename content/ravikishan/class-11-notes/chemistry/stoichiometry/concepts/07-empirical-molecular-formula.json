@@ -1,222 +1,346 @@
 {
-  "title": "07 EMPIRICAL MOLECULAR FORMULA",
+  "title": "Empirical and Molecular Formulas",
   "unitSlug": "stoichiometry",
-  "topicSlug": "07-empirical-molecular-formula",
-  "topicTitle": "07 empirical molecular formula",
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
-  ],
-  "examples": [
-    "Compound: 40% C, 6.7% H, 53.3% O; molar mass 180 g/mol → empirical CH₂O (30), n=6 → C₆H₁₂O₆"
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 07 empirical molecular formula."
-  ],
-  "importantNotes": [
-    "Important note regarding 07 empirical molecular formula."
-  ],
-  "importantStatements": [
-    "Key statement for 07 empirical molecular formula."
-  ],
-  "importantTasks": [
-    "Task for studying 07 empirical molecular formula."
-  ],
-  "keyPoints": [
-    "Core point for 07 empirical molecular formula."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 07 empirical molecular formula?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
-  ],
-  "specialNotes": [
-    "Specialized insight for 07 empirical molecular formula."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
+  "topicSlug": "empirical-molecular-formula",
+  "topicTitle": "Empirical and Molecular Formulas",
+  "relevance": 100,
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "07-empirical-molecular-formula",
-  "examShortTricks": [
-    "Trick 1"
-  ],
-  "examNotes": [
-    "Exam note 1."
-  ],
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
+  "visualType": "empirical-molecular-formula",
+  "enrichedContent": {
+    "notes": [
+      "**Empirical Formula:** The simplest whole-number ratio of atoms of each element in a compound. For example, glucose (C₆H₁₂O₆) has the empirical formula CH₂O, representing the 1:2:1 ratio of C:H:O atoms.",
+      "**Molecular Formula:** The actual number of atoms of each element in a molecule of the compound. It is always a whole-number multiple of the empirical formula: Molecular Formula = n × (Empirical Formula), where n is a positive integer.",
+      "**Relationship:** n = Molecular Mass / Empirical Formula Mass. When n = 1, empirical and molecular formulas are identical (e.g., H₂O, CO₂). When n > 1, they differ (e.g., empirical CH₂O, molecular C₆H₁₂O₆ for glucose).",
+      "**Determining Empirical Formula:** (1) Obtain mass or percentage composition of each element. (2) Convert masses to moles using atomic masses. (3) Divide all mole values by the smallest mole value. (4) If results are not whole numbers, multiply by appropriate factor (2, 3, 4) to obtain whole numbers.",
+      "**Determining Molecular Formula:** (1) Calculate empirical formula mass. (2) Divide molecular mass by empirical formula mass to find n. (3) Multiply subscripts in empirical formula by n.",
+      "**Common Examples:** (a) Benzene: Empirical CH, Molecular C₆H₆ (n=6). (b) Hydrogen peroxide: Empirical HO, Molecular H₂O₂ (n=2). (c) Ethane: Empirical CH₃, Molecular C₂H₆ (n=2)."
+    ],
+    "confusion": [
+      "❌ Empirical and molecular formulas are always identical. ✅ They are identical only when n = 1 (e.g., H₂O, NH₃). For most organic compounds, n > 1.",
+      "❌ Molecular formula can be determined from empirical formula alone. ✅ Molecular mass is essential to calculate n; without it, only the empirical formula can be determined.",
+      "❌ Non-whole number ratios mean the compound doesn't exist. ✅ Small deviations (e.g., 1.33, 1.5) indicate the need to multiply by 2, 3, etc. to get whole numbers.",
+      "❌ Empirical formula gives information about molecular structure. ✅ Empirical formula only gives the simplest ratio; molecular formula and structural formula provide more detail."
+    ],
+    "practice": [
+      "Find the empirical formula of a compound containing 46.7% nitrogen and 53.3% oxygen.",
+      "If the empirical formula is CH₂ and the molar mass is 28 g/mol, determine the molecular formula.",
+      "A compound has 40.0% C, 6.7% H, and 53.3% O with molar mass 180 g/mol. Find both empirical and molecular formulas.",
+      "Calculate the empirical formula of a compound containing 2.1g of hydrogen and 16.8g of oxygen.",
+      "An organic compound contains 52.2% carbon, 13.0% hydrogen, and 34.8% oxygen. Its molar mass is 46 g/mol. Determine its molecular formula."
+    ],
+    "universalFacts": [
+      "Empirical formula gives simplest whole number ratio of atoms.",
+      "Molecular formula gives actual number of atoms in molecule.",
+      "Molecular formula = (Empirical formula)_n where n = Molecular mass/Empirical mass.",
+      "For ionic compounds, empirical formula is the formula unit.",
+      "For covalent compounds, molecular formula may differ from empirical formula."
+    ],
+    "examples": [
+      "Glucose: Empirical = CH₂O, Molecular = C₆H₁₂O₆ (n=6).",
+      "Water: Empirical = H₂O, Molecular = H₂O (n=1).",
+      "Hydrogen peroxide: Empirical = HO, Molecular = H₂O₂ (n=2).",
+      "Benzene: Empirical = CH, Molecular = C₆H₆ (n=6)."
+    ],
+    "practiceQuestions": [
+      "Calculate empirical formula from % composition data.",
+      "Determine molecular formula if empirical formula is CH₂O and molecular mass is 180.",
+      "Find both empirical and molecular formulas for a compound with 40% C, 6.7% H, 53.3% O.",
+      "Calculate the molecular formula of a hydrocarbon with 85.7% C and molecular mass 84."
+    ],
+    "formulas": [
+      "Empirical formula: simplest whole number ratio",
+      "Molecular formula = (Empirical formula)_n",
+      "n = Molecular mass / Empirical formula mass",
+      "% Composition = (Mass of element / Total mass) × 100",
+      "Moles = Mass / Atomic mass"
+    ],
+    "keyPoints": [
+      "Empirical = simplest ratio, Molecular = actual count.",
+      "n = Molecular mass / Empirical mass.",
+      "Ionic compounds use empirical formula.",
+      "Covalent compounds may have different molecular formulas."
+    ],
+    "summary": "Empirical formulas represent the simplest whole-number ratio of atoms in a compound, while molecular formulas give the actual number of atoms. The relationship Molecular Formula = n × Empirical Formula, where n = Molecular Mass / Empirical Mass, connects these two representations. Determining these formulas from percentage composition data is a fundamental stoichiometric skill.",
+    "specialNotes": [
+      "This topic is frequently tested in NEB exams.",
+      "Practice converting % composition to empirical formula.",
+      "Always verify n is a whole number."
+    ],
+    "importantStatements": [
+      "The empirical formula represents the simplest whole-number ratio of atoms in a compound.",
+      "The molecular formula gives the actual number of atoms of each element in a molecule.",
+      "The relationship: Molecular formula = (Empirical formula) × n."
+    ],
+    "importantNotes": [
+      "To find empirical formula: Convert % to grams, grams to moles, divide by smallest.",
+      "To find molecular formula: Calculate n = M_molecular / M_empirical.",
+      "Common error: Forgetting to multiply subscripts by n."
+    ],
+    "examShortTricks": [
+      "Step 1: % → grams → moles → divide by smallest → whole numbers.",
+      "Step 2: Calculate empirical mass.",
+      "Step 3: n = Molecular mass / Empirical mass.",
+      "Step 4: Multiply subscripts by n.",
+      "Check: n should be a whole number."
+    ],
+    "examNotes": [
+      "Empirical and molecular formula problems are regular NEB exam questions—master the step-by-step method.",
+      "Be prepared to handle non-integer ratios by multiplying to obtain whole numbers.",
+      "Show all calculation steps clearly for full marks.",
+      "Common trap: forgetting to convert percentages to masses before finding moles."
+    ],
+    "mcs": [
+      {
+        "question": "The empirical formula of glucose (C₆H₁₂O₆) is:",
+        "options": [
+          "C₆H₁₂O₆",
+          "CH₂O",
+          "CHO",
+          "C₃H₆O₃"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "If empirical formula is CH₂O and molecular mass is 180, the molecular formula is:",
+        "options": [
+          "CH₂O",
+          "C₂H₄O₂",
+          "C₆H₁₂O₆",
+          "C₁₂H₂₄O₁₂"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The value of n in molecular formula = (empirical formula)_n is calculated as:",
+        "options": [
+          "Empirical mass/Molecular mass",
+          "Molecular mass/Empirical mass",
+          "Molecular mass + Empirical mass",
+          "Molecular mass - Empirical mass"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Empirical Formula: Simplest whole-number ratio of atoms.",
+      "Molecular Formula: Actual atom count in molecule.",
+      "Relationship: Molecular = n × Empirical.",
+      "Determination Method: Percentage → moles → ratio → whole numbers.",
+      "Common Compound Types: Ionic (empirical only) vs. Covalent (may differ)."
+    ],
+    "importantTasks": [
+      "Calculate empirical formulas from percentage composition data.",
+      "Determine molecular formulas from empirical formulas and molar masses.",
+      "Handle non-integer mole ratios by appropriate multiplication.",
+      "Distinguish between empirical, molecular, and structural formulas.",
+      "Solve 5 multi-step problems combining percentage composition and molar mass."
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Mass of NaCl from 23g Na",
+        "steps": [
+          "n(Na)=23/23=1 mol",
+          "Na+Cl₂→NaCl (balanced: 2Na+Cl₂→2NaCl)",
+          "m(NaCl)=1×58.5=58.5 g"
+        ],
+        "answer": "58.5 g"
+      },
+      {
+        "id": "2",
+        "question": "Volume of CO₂ from 50g CaCO₃ at STP",
+        "steps": [
+          "n=50/100=0.5 mol",
+          "CaCO₃→CaO+CO₂",
+          "V=0.5×22.4=11.2 L"
+        ],
+        "answer": "11.2 L"
+      },
+      {
+        "id": "3",
+        "question": "Empirical formula from 40% C, 6.7% H, 53.3% O",
+        "steps": [
+          "Assume 100g: C=40g, H=6.7g, O=53.3g",
+          "Moles: C=40/12=3.33, H=6.7/1=6.7, O=53.3/16=3.33",
+          "Divide by 3.33: C=1, H=2, O=1",
+          "Empirical formula: CH₂O"
+        ],
+        "answer": "CH₂O"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "MoleCalculator",
+      "desc": "Interactive mole-mass-volume calculator"
     }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
   },
-  "visualType": "empirical-molecular-formula"
+  "originalContent": {
+    "notes": [
+      "**Empirical Formula:** The simplest whole-number ratio of atoms of each element in a compound. For example, glucose (C₆H₁₂O₆) has the empirical formula CH₂O, representing the 1:2:1 ratio of C:H:O atoms.",
+      "**Molecular Formula:** The actual number of atoms of each element in a molecule of the compound. It is always a whole-number multiple of the empirical formula: Molecular Formula = n × (Empirical Formula), where n is a positive integer.",
+      "**Relationship:** n = Molecular Mass / Empirical Formula Mass. When n = 1, empirical and molecular formulas are identical (e.g., H₂O, CO₂). When n > 1, they differ (e.g., empirical CH₂O, molecular C₆H₁₂O₆ for glucose).",
+      "**Determining Empirical Formula:** (1) Obtain mass or percentage composition of each element. (2) Convert masses to moles using atomic masses. (3) Divide all mole values by the smallest mole value. (4) If results are not whole numbers, multiply by appropriate factor (2, 3, 4) to obtain whole numbers.",
+      "**Determining Molecular Formula:** (1) Calculate empirical formula mass. (2) Divide molecular mass by empirical formula mass to find n. (3) Multiply subscripts in empirical formula by n.",
+      "**Common Examples:** (a) Benzene: Empirical CH, Molecular C₆H₆ (n=6). (b) Hydrogen peroxide: Empirical HO, Molecular H₂O₂ (n=2). (c) Ethane: Empirical CH₃, Molecular C₂H₆ (n=2)."
+    ],
+    "confusion": [
+      "❌ Empirical and molecular formulas are always identical. ✅ They are identical only when n = 1 (e.g., H₂O, NH₃). For most organic compounds, n > 1.",
+      "❌ Molecular formula can be determined from empirical formula alone. ✅ Molecular mass is essential to calculate n; without it, only the empirical formula can be determined.",
+      "❌ Non-whole number ratios mean the compound doesn't exist. ✅ Small deviations (e.g., 1.33, 1.5) indicate the need to multiply by 2, 3, etc. to get whole numbers.",
+      "❌ Empirical formula gives information about molecular structure. ✅ Empirical formula only gives the simplest ratio; molecular formula and structural formula provide more detail."
+    ],
+    "practice": [
+      "Find the empirical formula of a compound containing 46.7% nitrogen and 53.3% oxygen.",
+      "If the empirical formula is CH₂ and the molar mass is 28 g/mol, determine the molecular formula.",
+      "A compound has 40.0% C, 6.7% H, and 53.3% O with molar mass 180 g/mol. Find both empirical and molecular formulas.",
+      "Calculate the empirical formula of a compound containing 2.1g of hydrogen and 16.8g of oxygen.",
+      "An organic compound contains 52.2% carbon, 13.0% hydrogen, and 34.8% oxygen. Its molar mass is 46 g/mol. Determine its molecular formula."
+    ],
+    "universalFacts": [
+      "Empirical formula gives simplest whole number ratio of atoms.",
+      "Molecular formula gives actual number of atoms in molecule.",
+      "Molecular formula = (Empirical formula)_n where n = Molecular mass/Empirical mass.",
+      "For ionic compounds, empirical formula is the formula unit.",
+      "For covalent compounds, molecular formula may differ from empirical formula."
+    ],
+    "examples": [
+      "Glucose: Empirical = CH₂O, Molecular = C₆H₁₂O₆ (n=6).",
+      "Water: Empirical = H₂O, Molecular = H₂O (n=1).",
+      "Hydrogen peroxide: Empirical = HO, Molecular = H₂O₂ (n=2).",
+      "Benzene: Empirical = CH, Molecular = C₆H₆ (n=6)."
+    ],
+    "practiceQuestions": [
+      "Calculate empirical formula from % composition data.",
+      "Determine molecular formula if empirical formula is CH₂O and molecular mass is 180.",
+      "Find both empirical and molecular formulas for a compound with 40% C, 6.7% H, 53.3% O.",
+      "Calculate the molecular formula of a hydrocarbon with 85.7% C and molecular mass 84."
+    ],
+    "formulas": [
+      "Empirical formula: simplest whole number ratio",
+      "Molecular formula = (Empirical formula)_n",
+      "n = Molecular mass / Empirical formula mass",
+      "% Composition = (Mass of element / Total mass) × 100",
+      "Moles = Mass / Atomic mass"
+    ],
+    "keyPoints": [
+      "Empirical = simplest ratio, Molecular = actual count.",
+      "n = Molecular mass / Empirical mass.",
+      "Ionic compounds use empirical formula.",
+      "Covalent compounds may have different molecular formulas."
+    ],
+    "summary": "Empirical formulas represent the simplest whole-number ratio of atoms in a compound, while molecular formulas give the actual number of atoms. The relationship Molecular Formula = n × Empirical Formula, where n = Molecular Mass / Empirical Mass, connects these two representations. Determining these formulas from percentage composition data is a fundamental stoichiometric skill.",
+    "specialNotes": [
+      "This topic is frequently tested in NEB exams.",
+      "Practice converting % composition to empirical formula.",
+      "Always verify n is a whole number."
+    ],
+    "importantStatements": [
+      "The empirical formula represents the simplest whole-number ratio of atoms in a compound.",
+      "The molecular formula gives the actual number of atoms of each element in a molecule.",
+      "The relationship: Molecular formula = (Empirical formula) × n."
+    ],
+    "importantNotes": [
+      "To find empirical formula: Convert % to grams, grams to moles, divide by smallest.",
+      "To find molecular formula: Calculate n = M_molecular / M_empirical.",
+      "Common error: Forgetting to multiply subscripts by n."
+    ],
+    "examShortTricks": [
+      "Step 1: % → grams → moles → divide by smallest → whole numbers.",
+      "Step 2: Calculate empirical mass.",
+      "Step 3: n = Molecular mass / Empirical mass.",
+      "Step 4: Multiply subscripts by n.",
+      "Check: n should be a whole number."
+    ],
+    "examNotes": [
+      "Empirical and molecular formula problems are regular NEB exam questions—master the step-by-step method.",
+      "Be prepared to handle non-integer ratios by multiplying to obtain whole numbers.",
+      "Show all calculation steps clearly for full marks.",
+      "Common trap: forgetting to convert percentages to masses before finding moles."
+    ],
+    "mcs": [
+      {
+        "question": "The empirical formula of glucose (C₆H₁₂O₆) is:",
+        "options": [
+          "C₆H₁₂O₆",
+          "CH₂O",
+          "CHO",
+          "C₃H₆O₃"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "If empirical formula is CH₂O and molecular mass is 180, the molecular formula is:",
+        "options": [
+          "CH₂O",
+          "C₂H₄O₂",
+          "C₆H₁₂O₆",
+          "C₁₂H₂₄O₁₂"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The value of n in molecular formula = (empirical formula)_n is calculated as:",
+        "options": [
+          "Empirical mass/Molecular mass",
+          "Molecular mass/Empirical mass",
+          "Molecular mass + Empirical mass",
+          "Molecular mass - Empirical mass"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Empirical Formula: Simplest whole-number ratio of atoms.",
+      "Molecular Formula: Actual atom count in molecule.",
+      "Relationship: Molecular = n × Empirical.",
+      "Determination Method: Percentage → moles → ratio → whole numbers.",
+      "Common Compound Types: Ionic (empirical only) vs. Covalent (may differ)."
+    ],
+    "importantTasks": [
+      "Calculate empirical formulas from percentage composition data.",
+      "Determine molecular formulas from empirical formulas and molar masses.",
+      "Handle non-integer mole ratios by appropriate multiplication.",
+      "Distinguish between empirical, molecular, and structural formulas.",
+      "Solve 5 multi-step problems combining percentage composition and molar mass."
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Mass of NaCl from 23g Na",
+        "steps": [
+          "n(Na)=23/23=1 mol",
+          "Na+Cl₂→NaCl (balanced: 2Na+Cl₂→2NaCl)",
+          "m(NaCl)=1×58.5=58.5 g"
+        ],
+        "answer": "58.5 g"
+      },
+      {
+        "id": "2",
+        "question": "Volume of CO₂ from 50g CaCO₃ at STP",
+        "steps": [
+          "n=50/100=0.5 mol",
+          "CaCO₃→CaO+CO₂",
+          "V=0.5×22.4=11.2 L"
+        ],
+        "answer": "11.2 L"
+      },
+      {
+        "id": "3",
+        "question": "Empirical formula from 40% C, 6.7% H, 53.3% O",
+        "steps": [
+          "Assume 100g: C=40g, H=6.7g, O=53.3g",
+          "Moles: C=40/12=3.33, H=6.7/1=6.7, O=53.3/16=3.33",
+          "Divide by 3.33: C=1, H=2, O=1",
+          "Empirical formula: CH₂O"
+        ],
+        "answer": "CH₂O"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "MoleCalculator",
+      "desc": "Interactive mole-mass-volume calculator"
+    }
+  }
 }

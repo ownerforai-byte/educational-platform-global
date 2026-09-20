@@ -152,3 +152,62 @@ export async function generateQuestions(
     body: JSON.stringify(payload),
   });
 }
+
+/**
+ * Enhance (rewrite) a rough student prompt into a sharper study question.
+ * Throws with status 402 when no LLM is available — callers fall back to the
+ * original prompt in that case.
+ */
+export async function enhancePrompt(prompt: string): Promise<{ prompt: string }> {
+  return apiFetch<{ prompt: string }>("/api/ai/enhance", {
+    method: "POST",
+    body: JSON.stringify({ prompt }),
+  });
+}
+
+export interface ChatHistoryMessage {
+  id?: string;
+  role: "user" | "assistant";
+  content: string;
+  created_at?: string;
+}
+
+/**
+ * Load the signed-in user's persisted chat history for a session.
+ * `migrated: false` means the chat_messages table has not been created yet —
+ * history is simply unavailable, not an error.
+ */
+export async function getChatHistory(
+  session = "default",
+  limit = 200
+): Promise<{ messages: ChatHistoryMessage[]; migrated: boolean }> {
+  const qs = new URLSearchParams({ session, limit: String(limit) });
+  return apiFetch<{ messages: ChatHistoryMessage[]; migrated: boolean }>(
+    `/api/chat-history?${qs.toString()}`
+  );
+}
+
+/**
+ * Persist messages to the user's chat history (bulk, append-only).
+ * Silently no-ops when the table has not been migrated yet.
+ */
+export async function saveChatHistory(
+  session: string,
+  messages: Array<{ role: "user" | "assistant"; content: string }>
+): Promise<{ saved: number; migrated: boolean }> {
+  return apiFetch<{ saved: number; migrated: boolean }>("/api/chat-history", {
+    method: "POST",
+    body: JSON.stringify({ session, messages }),
+  });
+}
+
+/** Clear the user's chat history for a session (or every session when omitted). */
+export async function clearChatHistory(
+  session?: string
+): Promise<{ cleared: boolean; migrated: boolean }> {
+  const qs = session ? `?session=${encodeURIComponent(session)}` : "";
+  return apiFetch<{ cleared: boolean; migrated: boolean }>(
+    `/api/chat-history${qs}`,
+    { method: "DELETE" }
+  );
+}

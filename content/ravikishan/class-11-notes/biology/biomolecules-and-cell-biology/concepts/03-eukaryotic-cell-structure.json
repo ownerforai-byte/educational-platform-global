@@ -4,206 +4,542 @@
   "topicSlug": "eukaryotic-cell-structure",
   "topicTitle": "Eukaryotic Cell Structure",
   "relevance": 100,
-  "notes": [
-    "Carbohydrates: (CH₂O)n; monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose).",
-    "Proteins: polymers of 20 amino acids linked by peptide bonds (-CO-NH-); 4 structural levels.",
-    "Lipids: hydrophobic; triglycerides, phospholipids (membrane bilayer), steroids.",
-    "Nucleic acids: DNA (double helix, A=T, G≡C, deoxyribose) stores genetic info; RNA (single strand, A=U) for protein synthesis.",
-    "Cell theory: all organisms made of cells; cell is basic unit; all cells from pre-existing cells."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Cell wall is present in all cells. ✅ Cell wall is in plants, fungi, bacteria; absent in animal cells."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice comparing plant and animal cell structures.",
-    "Practice explaining osmosis and plasmolysis with diagrams."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 eukaryotic cell structure."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
+  "duplicateType": 2,
+  "tabGroup": "03-eukaryotic-cell-structure",
+  "mcqs": [
+    {
+      "question": "The \"powerhouse of the cell\" is:",
+      "options": [
+        "Golgi body",
+        "Mitochondrion",
+        "Lysosome",
+        "Ribosome"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The fluid-mosaic model of the membrane was proposed by:",
+      "options": [
+        "Gatenbly",
+        "Singer and Nicolson",
+        "Schleiden",
+        "Dalton"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which organelle synthesises lipids?",
+      "options": [
+        "Rough ER",
+        "Smooth ER",
+        "Ribosome",
+        "Nucleus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The internal 9+9 microtubule pattern is found in:",
+      "options": [
+        "Cilia and flagella",
+        "Lysosomes",
+        "Golgi",
+        "Chloroplast"
+      ],
+      "answer": "A"
+    }
+  ],
+  "visualType": "organelle-functions",
+  "enrichedContent": {
+    "notes": [
+      "Cell wall (plant: cellulose; bacteria: peptidoglycan; fungi: chitin) — rigid, fully permeable outer support; in plants it can secondarily thicken (lignin).",
+      "Plasma membrane: phospholipid bilayer + integral/protein (fluid-mosaic model, Singer & Nicolson 1972); selectively permeable; controls transport (diffusion, osmosis, active transport).",
+      "Mitochondrion: site of aerobic respiration (Krebs + ETS → ATP); double membrane; cristae; \"powerhouse of the cell\".",
+      "Chloroplast (plastid): photosynthesis; double membrane; thylakoid grana + stroma; green pigment chlorophyll a & b.",
+      "Endoplasmic reticulum: rough (RER, ribosome-studded, protein synthesis) and smooth (SER, lipid synthesis, detoxification).",
+      "Golgi apparatus: modifies, packages and secretes proteins and forms lysosomes and cell plate.",
+      "Lysosome: hydrolytic \"digestive\" enzymes; self-digestion = autophagy.",
+      "Ribosome: 80S in eukaryotes (60S+40S subunits) — protein synthesis; free or attached to RER.",
+      "Nucleus: genetic control centre; nuclear envelope, nucleolus, chromatin/chromosomes.",
+      "Cilia and flagella: locomotion/transport; composed of 9+9 microtubules (axoneme).",
+      "Cell inclusions: storage granules, pigments (e.g. oil, glycogen, chromosomes when not nuclear)."
+    ],
+    "confusion": [
+      "The cell wall is fully permeable; the plasma membrane is selectively permeable.",
+      "RER is rough because of ribosomes; it makes PROTEINS. SER makes LIPIDS and detoxifies — it has no ribosomes.",
+      "The Golgi packages proteins and lipids; it does not synthesise them.",
+      "Lysosomes digest the cell's own material when damaged (autophagy); they are not plant cells' organelles (plants use vacuoles).",
+      "Cilia and flagella both have a 9+9 microtubule axoneme; flagella are longer; in prokaryotes the flagellum has a different (no microtubule) structure.",
+      "Chromatin (diffuse, interphase) and chromosomes (condensed, division) are the SAME genetic material in two forms."
+    ],
+    "practice": [
+      "Label all organelles on a plant cell diagram.",
+      "Match each organelle with its main function in a table.",
+      "Differentiate rough and smooth endoplasmic reticulum (4 points).",
+      "Draw and explain the fluid-mosaic model of the plasma membrane.",
+      "State the functions of the nucleus, nucleolus and chromatin."
+    ],
+    "universalFacts": [
+      "Mitochondria and chloroplasts have their own DNA and 70S ribosomes, suggesting an endosymbiotic origin.",
+      "A single human liver cell may contain over one million ribosomes.",
+      "The nuclear envelope is continuous with the outer membrane of the endoplasmic reticulum."
+    ],
+    "examples": [
+      "Oxidative phosphorylation in the mitochondrial cristae produces the bulk of ATP.",
+      "Secretory cells (e.g. pancreatic) have abundant RER and Golgi for protein export.",
+      "Central vacuole in a plant cell stores water, pigments and maintains turgor."
+    ],
+    "practiceQuestions": [
+      "Why are the mitochondria and chloroplast called \"semi-autonomous\" organelles?",
+      "Differentiate rough and smooth endoplasmic reticulum.",
+      "Describe the functions of the Golgi body in a plant cell.",
+      "What is the significance of cristae in mitochondria?",
+      "State the role of the nucleolus."
+    ],
+    "formulas": [
+      "Fluid-mosaic model: phospholipid bilayer + protein mosaic + cholesterol + glycocalyx",
+      "9+9 axonemal structure of cilia/flagella (9 doublets + central pair)"
+    ],
+    "keyPoints": [
+      "Each organelle has a distinct, frequently-examined function (mitochondrion→ATP, chloroplast→photosynthesis).",
+      "RER makes protein; SER makes lipid; Golgi packages; lysosome digests.",
+      "Plasma membrane is selectively permeable fluid mosaic.",
+      "Nucleus + nucleolus + chromatin = genetic control; chromatin condenses into chromosomes.",
+      "Plant-specific: cell wall, chloroplast, large central vacuole.",
+      "Mitochondria and chloroplast carry their own DNA (endosymbiosis evidence)."
+    ],
+    "summary": "The internal architecture of a eukaryotic cell is defined by membrane-bound organelles. Each has a specialised role: the plasma membrane controls transport; mitochondria and chloroplasts convert energy; RER/SER synthesise proteins and lipids; the Golgi, lysosomes and vacuoles process and store material; the nucleus controls inheritance; cilia, flagella and inclusions complete the picture. The endosymbiotic origin of the two double-membrane organelles is a common exam application.",
+    "specialNotes": [
+      "NEB written answers expect a labelled organelle diagram plus a one-line function per organelle.",
+      "The endosymbiotic theory (Mitochondria/chloroplast from engulfed prokaryotes) is a favourite 4-mark question.",
+      "Contrast plant vs animal cells (wall, chloroplast, large vacuole vs centrioles)."
+    ],
+    "importantStatements": [
+      "The plasma membrane is the selectively permeable boundary of every cell.",
+      "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+      "The Golgi apparatus modifies and packages proteins and lipids.",
+      "Cilia and flagella use a 9+9 microtubule arrangement for locomotion."
+    ],
+    "importantNotes": [
+      "Memorise organelle → function pairs (mitochondrion→ATP, ER→synthesis, Golgi→packaging, lysosome→digestion).",
+      "Draw a plant cell with all labels in one pass.",
+      "Learn the 9+9 axonemal structure of cilia and flagella.",
+      "Note plant-specific organelles (cell wall, chloroplast, central vacuole)."
+    ],
+    "examShortTricks": [
+      "POWER: P=power (mitochondrion), O=oil & lipid (SER), W=wall (plant), E=envelope, R=respiration, power house = mitochondrion.",
+      "MITOCHONDRIUM = MITOchondria make ENERGY (powerhouse).",
+      "Golgi = Golgi packages & SECREtes.",
+      "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles."
+    ],
+    "examNotes": [
+      "Organelle label-and-function questions are very common.",
+      "Draw the fluid-mosaic model with a labelled membrane.",
+      "Explain endosymbiotic theory with evidence (own DNA, 70S ribosomes, double membrane).",
+      "Compare plant and animal cells in a two-column table."
+    ],
+    "mcs": [
+      {
+        "question": "The \"powerhouse of the cell\" is:",
+        "options": [
+          "Golgi body",
+          "Mitochondrion",
+          "Lysosome",
+          "Ribosome"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The fluid-mosaic model of the membrane was proposed by:",
+        "options": [
+          "Gatenbly",
+          "Singer and Nicolson",
+          "Schleiden",
+          "Dalton"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which organelle synthesises lipids?",
+        "options": [
+          "Rough ER",
+          "Smooth ER",
+          "Ribosome",
+          "Nucleus"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The internal 9+9 microtubule pattern is found in:",
+        "options": [
+          "Cilia and flagella",
+          "Lysosomes",
+          "Golgi",
+          "Chloroplast"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Fluid-mosaic model",
+      "Rough vs smooth ER",
+      "Golgi functions",
+      "Lysosomes/autophagy",
+      "Nucleus & nucleolus",
+      "9+9 axoneme",
+      "Plant vs animal cells",
+      "Endosymbiotic theory"
+    ],
+    "importantTasks": [
+      "Label a plant cell (all organelles)",
+      "Draw the fluid-mosaic model",
+      "Differentiate RER and SER",
+      "Explain endosymbiotic theory",
+      "Table: plant vs animal cell"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Name the two double-membrane organelles of a eukaryotic cell and state the evidence for their endosymbiotic origin.",
+        "steps": [
+          "Both have a double membrane",
+          "Both carry their own circular DNA",
+          "Both have 70S ribosomes like prokaryotes",
+          "Both can divide independently (binary fission)"
+        ],
+        "answer": "Mitochondria and chloroplast; evidence: own DNA, 70S ribosomes, double membrane, independent division."
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "EukaryoticOrganelleViewer",
+      "desc": "Cut-away 3D eukaryotic cell where each organelle can be isolated, labelled and rotated."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Cell wall (plant: cellulose; bacteria: peptidoglycan; fungi: chitin) — rigid, fully permeable outer support; in plants it can secondarily thicken (lignin).",
+      "Plasma membrane: phospholipid bilayer + integral/protein (fluid-mosaic model, Singer & Nicolson 1972); selectively permeable; controls transport (diffusion, osmosis, active transport).",
+      "Mitochondrion: site of aerobic respiration (Krebs + ETS → ATP); double membrane; cristae; \"powerhouse of the cell\".",
+      "Chloroplast (plastid): photosynthesis; double membrane; thylakoid grana + stroma; green pigment chlorophyll a & b.",
+      "Endoplasmic reticulum: rough (RER, ribosome-studded, protein synthesis) and smooth (SER, lipid synthesis, detoxification).",
+      "Golgi apparatus: modifies, packages and secretes proteins and forms lysosomes and cell plate.",
+      "Lysosome: hydrolytic \"digestive\" enzymes; self-digestion = autophagy.",
+      "Ribosome: 80S in eukaryotes (60S+40S subunits) — protein synthesis; free or attached to RER.",
+      "Nucleus: genetic control centre; nuclear envelope, nucleolus, chromatin/chromosomes.",
+      "Cilia and flagella: locomotion/transport; composed of 9+9 microtubules (axoneme).",
+      "Cell inclusions: storage granules, pigments (e.g. oil, glycogen, chromosomes when not nuclear)."
+    ],
+    "confusion": [
+      "The cell wall is fully permeable; the plasma membrane is selectively permeable.",
+      "RER is rough because of ribosomes; it makes PROTEINS. SER makes LIPIDS and detoxifies — it has no ribosomes.",
+      "The Golgi packages proteins and lipids; it does not synthesise them.",
+      "Lysosomes digest the cell's own material when damaged (autophagy); they are not plant cells' organelles (plants use vacuoles).",
+      "Cilia and flagella both have a 9+9 microtubule axoneme; flagella are longer; in prokaryotes the flagellum has a different (no microtubule) structure.",
+      "Chromatin (diffuse, interphase) and chromosomes (condensed, division) are the SAME genetic material in two forms."
+    ],
+    "practice": [
+      "Label all organelles on a plant cell diagram.",
+      "Match each organelle with its main function in a table.",
+      "Differentiate rough and smooth endoplasmic reticulum (4 points).",
+      "Draw and explain the fluid-mosaic model of the plasma membrane.",
+      "State the functions of the nucleus, nucleolus and chromatin."
+    ],
+    "universalFacts": [
+      "Mitochondria and chloroplasts have their own DNA and 70S ribosomes, suggesting an endosymbiotic origin.",
+      "A single human liver cell may contain over one million ribosomes.",
+      "The nuclear envelope is continuous with the outer membrane of the endoplasmic reticulum."
+    ],
+    "examples": [
+      "Oxidative phosphorylation in the mitochondrial cristae produces the bulk of ATP.",
+      "Secretory cells (e.g. pancreatic) have abundant RER and Golgi for protein export.",
+      "Central vacuole in a plant cell stores water, pigments and maintains turgor."
+    ],
+    "practiceQuestions": [
+      "Why are the mitochondria and chloroplast called \"semi-autonomous\" organelles?",
+      "Differentiate rough and smooth endoplasmic reticulum.",
+      "Describe the functions of the Golgi body in a plant cell.",
+      "What is the significance of cristae in mitochondria?",
+      "State the role of the nucleolus."
+    ],
+    "formulas": [
+      "Fluid-mosaic model: phospholipid bilayer + protein mosaic + cholesterol + glycocalyx",
+      "9+9 axonemal structure of cilia/flagella (9 doublets + central pair)"
+    ],
+    "keyPoints": [
+      "Each organelle has a distinct, frequently-examined function (mitochondrion→ATP, chloroplast→photosynthesis).",
+      "RER makes protein; SER makes lipid; Golgi packages; lysosome digests.",
+      "Plasma membrane is selectively permeable fluid mosaic.",
+      "Nucleus + nucleolus + chromatin = genetic control; chromatin condenses into chromosomes.",
+      "Plant-specific: cell wall, chloroplast, large central vacuole.",
+      "Mitochondria and chloroplast carry their own DNA (endosymbiosis evidence)."
+    ],
+    "summary": "The internal architecture of a eukaryotic cell is defined by membrane-bound organelles. Each has a specialised role: the plasma membrane controls transport; mitochondria and chloroplasts convert energy; RER/SER synthesise proteins and lipids; the Golgi, lysosomes and vacuoles process and store material; the nucleus controls inheritance; cilia, flagella and inclusions complete the picture. The endosymbiotic origin of the two double-membrane organelles is a common exam application.",
+    "specialNotes": [
+      "NEB written answers expect a labelled organelle diagram plus a one-line function per organelle.",
+      "The endosymbiotic theory (Mitochondria/chloroplast from engulfed prokaryotes) is a favourite 4-mark question.",
+      "Contrast plant vs animal cells (wall, chloroplast, large vacuole vs centrioles)."
+    ],
+    "importantStatements": [
+      "The plasma membrane is the selectively permeable boundary of every cell.",
+      "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+      "The Golgi apparatus modifies and packages proteins and lipids.",
+      "Cilia and flagella use a 9+9 microtubule arrangement for locomotion."
+    ],
+    "importantNotes": [
+      "Memorise organelle → function pairs (mitochondrion→ATP, ER→synthesis, Golgi→packaging, lysosome→digestion).",
+      "Draw a plant cell with all labels in one pass.",
+      "Learn the 9+9 axonemal structure of cilia and flagella.",
+      "Note plant-specific organelles (cell wall, chloroplast, central vacuole)."
+    ],
+    "examShortTricks": [
+      "POWER: P=power (mitochondrion), O=oil & lipid (SER), W=wall (plant), E=envelope, R=respiration, power house = mitochondrion.",
+      "MITOCHONDRIUM = MITOchondria make ENERGY (powerhouse).",
+      "Golgi = Golgi packages & SECREtes.",
+      "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles."
+    ],
+    "examNotes": [
+      "Organelle label-and-function questions are very common.",
+      "Draw the fluid-mosaic model with a labelled membrane.",
+      "Explain endosymbiotic theory with evidence (own DNA, 70S ribosomes, double membrane).",
+      "Compare plant and animal cells in a two-column table."
+    ],
+    "mcs": [
+      {
+        "question": "The \"powerhouse of the cell\" is:",
+        "options": [
+          "Golgi body",
+          "Mitochondrion",
+          "Lysosome",
+          "Ribosome"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The fluid-mosaic model of the membrane was proposed by:",
+        "options": [
+          "Gatenbly",
+          "Singer and Nicolson",
+          "Schleiden",
+          "Dalton"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which organelle synthesises lipids?",
+        "options": [
+          "Rough ER",
+          "Smooth ER",
+          "Ribosome",
+          "Nucleus"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The internal 9+9 microtubule pattern is found in:",
+        "options": [
+          "Cilia and flagella",
+          "Lysosomes",
+          "Golgi",
+          "Chloroplast"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Fluid-mosaic model",
+      "Rough vs smooth ER",
+      "Golgi functions",
+      "Lysosomes/autophagy",
+      "Nucleus & nucleolus",
+      "9+9 axoneme",
+      "Plant vs animal cells",
+      "Endosymbiotic theory"
+    ],
+    "importantTasks": [
+      "Label a plant cell (all organelles)",
+      "Draw the fluid-mosaic model",
+      "Differentiate RER and SER",
+      "Explain endosymbiotic theory",
+      "Table: plant vs animal cell"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Name the two double-membrane organelles of a eukaryotic cell and state the evidence for their endosymbiotic origin.",
+        "steps": [
+          "Both have a double membrane",
+          "Both carry their own circular DNA",
+          "Both have 70S ribosomes like prokaryotes",
+          "Both can divide independently (binary fission)"
+        ],
+        "answer": "Mitochondria and chloroplast; evidence: own DNA, 70S ribosomes, double membrane, independent division."
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "EukaryoticOrganelleViewer",
+      "desc": "Cut-away 3D eukaryotic cell where each organelle can be isolated, labelled and rotated."
+    }
+  },
+  "notes": [
+    "Cell wall (plant: cellulose; bacteria: peptidoglycan; fungi: chitin) — rigid, fully permeable outer support; in plants it can secondarily thicken (lignin).",
+    "Plasma membrane: phospholipid bilayer + integral/protein (fluid-mosaic model, Singer & Nicolson 1972); selectively permeable; controls transport (diffusion, osmosis, active transport).",
+    "Mitochondrion: site of aerobic respiration (Krebs + ETS → ATP); double membrane; cristae; \"powerhouse of the cell\".",
+    "Chloroplast (plastid): photosynthesis; double membrane; thylakoid grana + stroma; green pigment chlorophyll a & b.",
+    "Endoplasmic reticulum: rough (RER, ribosome-studded, protein synthesis) and smooth (SER, lipid synthesis, detoxification).",
+    "Golgi apparatus: modifies, packages and secretes proteins and forms lysosomes and cell plate.",
+    "Lysosome: hydrolytic \"digestive\" enzymes; self-digestion = autophagy.",
+    "Ribosome: 80S in eukaryotes (60S+40S subunits) — protein synthesis; free or attached to RER.",
+    "Nucleus: genetic control centre; nuclear envelope, nucleolus, chromatin/chromosomes.",
+    "Cilia and flagella: locomotion/transport; composed of 9+9 microtubules (axoneme).",
+    "Cell inclusions: storage granules, pigments (e.g. oil, glycogen, chromosomes when not nuclear)."
+  ],
+  "confusion": [
+    "The cell wall is fully permeable; the plasma membrane is selectively permeable.",
+    "RER is rough because of ribosomes; it makes PROTEINS. SER makes LIPIDS and detoxifies — it has no ribosomes.",
+    "The Golgi packages proteins and lipids; it does not synthesise them.",
+    "Lysosomes digest the cell's own material when damaged (autophagy); they are not plant cells' organelles (plants use vacuoles).",
+    "Cilia and flagella both have a 9+9 microtubule axoneme; flagella are longer; in prokaryotes the flagellum has a different (no microtubule) structure.",
+    "Chromatin (diffuse, interphase) and chromosomes (condensed, division) are the SAME genetic material in two forms."
+  ],
+  "practice": [
+    "Label all organelles on a plant cell diagram.",
+    "Match each organelle with its main function in a table.",
+    "Differentiate rough and smooth endoplasmic reticulum (4 points).",
+    "Draw and explain the fluid-mosaic model of the plasma membrane.",
+    "State the functions of the nucleus, nucleolus and chromatin."
+  ],
+  "universalFacts": [
+    "Mitochondria and chloroplasts have their own DNA and 70S ribosomes, suggesting an endosymbiotic origin.",
+    "A single human liver cell may contain over one million ribosomes.",
+    "The nuclear envelope is continuous with the outer membrane of the endoplasmic reticulum."
+  ],
   "examples": [
-    "Glucose → 38 ATP via cellular respiration",
-    "Insulin: 51 amino acids, protein hormone"
+    "Oxidative phosphorylation in the mitochondrial cristae produces the bulk of ATP.",
+    "Secretory cells (e.g. pancreatic) have abundant RER and Golgi for protein export.",
+    "Central vacuole in a plant cell stores water, pigments and maintains turgor."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice comparing plant and animal cell structures."
+    "Why are the mitochondria and chloroplast called \"semi-autonomous\" organelles?",
+    "Differentiate rough and smooth endoplasmic reticulum.",
+    "Describe the functions of the Golgi body in a plant cell.",
+    "What is the significance of cristae in mitochondria?",
+    "State the role of the nucleolus."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 eukaryotic cell structure)"
+    "Fluid-mosaic model: phospholipid bilayer + protein mosaic + cholesterol + glycocalyx",
+    "9+9 axonemal structure of cilia/flagella (9 doublets + central pair)"
   ],
   "keyPoints": [
-    "Core point for 03 eukaryotic cell structure."
+    "Each organelle has a distinct, frequently-examined function (mitochondrion→ATP, chloroplast→photosynthesis).",
+    "RER makes protein; SER makes lipid; Golgi packages; lysosome digests.",
+    "Plasma membrane is selectively permeable fluid mosaic.",
+    "Nucleus + nucleolus + chromatin = genetic control; chromatin condenses into chromosomes.",
+    "Plant-specific: cell wall, chloroplast, large central vacuole.",
+    "Mitochondria and chloroplast carry their own DNA (endosymbiosis evidence)."
   ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nCell membrane is selectively permeable fluid mosaic.\n\nOrganelles enable compartmentalized metabolic functions.",
+  "summary": "The internal architecture of a eukaryotic cell is defined by membrane-bound organelles. Each has a specialised role: the plasma membrane controls transport; mitochondria and chloroplasts convert energy; RER/SER synthesise proteins and lipids; the Golgi, lysosomes and vacuoles process and store material; the nucleus controls inheritance; cilia, flagella and inclusions complete the picture. The endosymbiotic origin of the two double-membrane organelles is a common exam application.",
   "specialNotes": [
-    "Specialized insight for 03 eukaryotic cell structure."
+    "NEB written answers expect a labelled organelle diagram plus a one-line function per organelle.",
+    "The endosymbiotic theory (Mitochondria/chloroplast from engulfed prokaryotes) is a favourite 4-mark question.",
+    "Contrast plant vs animal cells (wall, chloroplast, large vacuole vs centrioles)."
   ],
   "importantStatements": [
-    "Key statement for 03 eukaryotic cell structure."
+    "The plasma membrane is the selectively permeable boundary of every cell.",
+    "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+    "The Golgi apparatus modifies and packages proteins and lipids.",
+    "Cilia and flagella use a 9+9 microtubule arrangement for locomotion."
   ],
   "importantNotes": [
-    "Important note regarding 03 eukaryotic cell structure."
+    "Memorise organelle → function pairs (mitochondrion→ATP, ER→synthesis, Golgi→packaging, lysosome→digestion).",
+    "Draw a plant cell with all labels in one pass.",
+    "Learn the 9+9 axonemal structure of cilia and flagella.",
+    "Note plant-specific organelles (cell wall, chloroplast, central vacuole)."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Eukaryotic Cell Structure."
+    "POWER: P=power (mitochondrion), O=oil & lipid (SER), W=wall (plant), E=envelope, R=respiration, power house = mitochondrion.",
+    "MITOCHONDRIUM = MITOchondria make ENERGY (powerhouse).",
+    "Golgi = Golgi packages & SECREtes.",
+    "Plant = Wall + Chloroplast + big Vacuole; Animal = Centrioles + Lysosomes + small vacuoles."
   ],
   "examNotes": [
-    "Eukaryotic Cell Structure is frequently tested.",
-    "Practice writing detailed answers."
+    "Organelle label-and-function questions are very common.",
+    "Draw the fluid-mosaic model with a labelled membrane.",
+    "Explain endosymbiotic theory with evidence (own DNA, 70S ribosomes, double membrane).",
+    "Compare plant and animal cells in a two-column table."
   ],
   "mcs": [
     {
-      "question": "Question about 03 eukaryotic cell structure?",
+      "question": "The \"powerhouse of the cell\" is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Golgi body",
+        "Mitochondrion",
+        "Lysosome",
+        "Ribosome"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The fluid-mosaic model of the membrane was proposed by:",
+      "options": [
+        "Gatenbly",
+        "Singer and Nicolson",
+        "Schleiden",
+        "Dalton"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which organelle synthesises lipids?",
+      "options": [
+        "Rough ER",
+        "Smooth ER",
+        "Ribosome",
+        "Nucleus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The internal 9+9 microtubule pattern is found in:",
+      "options": [
+        "Cilia and flagella",
+        "Lysosomes",
+        "Golgi",
+        "Chloroplast"
       ],
       "answer": "A"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 03 eukaryotic cell structure."
+    "Fluid-mosaic model",
+    "Rough vs smooth ER",
+    "Golgi functions",
+    "Lysosomes/autophagy",
+    "Nucleus & nucleolus",
+    "9+9 axoneme",
+    "Plant vs animal cells",
+    "Endosymbiotic theory"
   ],
   "importantTasks": [
-    "Task for studying 03 eukaryotic cell structure."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-eukaryotic-cell-structure",
-  "mcqs": [
-    {
-      "question": "Question about 03 eukaryotic cell structure?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
+    "Label a plant cell (all organelles)",
+    "Draw the fluid-mosaic model",
+    "Differentiate RER and SER",
+    "Explain endosymbiotic theory",
+    "Table: plant vs animal cell"
   ],
   "exercises": [
     {
       "id": "1",
-      "question": "Identify the bond linking amino acids",
+      "question": "Name the two double-membrane organelles of a eukaryotic cell and state the evidence for their endosymbiotic origin.",
       "steps": [
-        "Amino acids are monomers",
-        "Link between -COOH and -NH₂",
-        "Peptide bond formed"
+        "Both have a double membrane",
+        "Both carry their own circular DNA",
+        "Both have 70S ribosomes like prokaryotes",
+        "Both can divide independently (binary fission)"
       ],
-      "answer": "Peptide bond"
+      "answer": "Mitochondria and chloroplast; evidence: own DNA, 70S ribosomes, double membrane, independent division."
     }
-  ],
-  "visualization": {
-    "type": "3d-model",
-    "component": "ProteinStructureViewer",
-    "desc": "Interactive 3D protein structure showing primary to quaternary levels"
-  },
-  "visualType": "organelle-functions"
+  ]
 }

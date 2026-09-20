@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import Link from "next/link";
 import {
   Bot,
   Send,
@@ -11,72 +10,22 @@ import {
   FlaskConical,
   MessageSquareText,
   ArrowRight,
-  Settings2,
+  History,
+  Wand2,
 } from "lucide-react";
-import { chat, guestChat, streamChat, getProviders } from "@/lib/api/ai";
+import {
+  chat,
+  guestChat,
+  streamChat,
+  getChatHistory,
+  saveChatHistory,
+  clearChatHistory,
+  enhancePrompt,
+} from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { MathMarkdown } from "@/components/content/math-markdown";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
-
-// Renders AI replies as clean plain text. Markdown links ([Title](url)) are
-// harvested BEFORE scrubbing so they survive, then rendered as clickable chips
-// (internal links use next/link, external ones open in a new tab). Everything
-// else is stripped of symbol soup (LaTeX/markdown leftovers) for a pure look.
-function formatAiReply(raw: string): React.ReactNode {
-  const links: Array<{ title: string; url: string }> = [];
-  const guarded = raw.replace(
-    /\[([^\]\n]{1,80})\]\(([^)\s]{1,300})\)/g,
-    (_match: string, title: string, url: string) => {
-      links.push({ title: title.trim(), url: url.trim() });
-      return `RVKLINKREF${links.length - 1}RVKLINKREF`;
-    }
-  );
-
-  // Pure appearance: drop banned symbol chars (keeps unicode letters so
-  // Nepali text and emoji survive), then tidy spacing without killing lines.
-  // eslint-disable-next-line no-useless-escape -- [ and ] must stay escaped in the class
-  const cleaned = guarded
-    .replace(/[<>=+*#$^&\\|{}~`\[\]]/g, " ")
-    .replace(/[^\S\n]{2,}/g, " ")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-
-  const segments = cleaned.split(/(RVKLINKREF\d+RVKLINKREF)/g);
-  const chipClass =
-    "inline-flex items-center gap-1 mx-0.5 my-1 px-2 py-1 rounded-lg text-xs font-mono bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors align-baseline";
-  const linkIcon = (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-  );
-
-  const parts: React.ReactNode[] = [];
-  segments.forEach((seg, idx) => {
-    const token = /^RVKLINKREF(\d+)RVKLINKREF$/.exec(seg);
-    if (token) {
-      const l = links[Number(token[1])];
-      if (!l) return;
-      if (l.url.startsWith("/")) {
-        parts.push(
-          <Link key={`l${idx}`} href={l.url} className={chipClass}>
-            {linkIcon}
-            {l.title}
-          </Link>
-        );
-      } else {
-        parts.push(
-          <a key={`l${idx}`} href={l.url} target="_blank" rel="noopener noreferrer" className={chipClass}>
-            {linkIcon}
-            {l.title}
-          </a>
-        );
-      }
-      return;
-    }
-    if (seg.trim()) parts.push(<span key={`t${idx}`}>{seg}</span>);
-  });
-
-  if (!parts.length) return null;
-  return <div className="leading-relaxed whitespace-pre-line">{parts}</div>;
-}
 
 const SUGGESTIONS = [
   { icon: BookOpen, label: "Explain photosynthesis simply", text: "Explain photosynthesis simply, with why plants need it." },
@@ -93,29 +42,35 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     {
       role: "assistant",
       content:
-        "Hey! I'm your Ravikishan Study Assistant 👋\n\nAsk me anything about your NEB lessons, labs, past questions, or even life advice. I'll answer and point you to the right notes and tools on the platform.\n\nWhat are we studying today?",
+        "I am assistant of this platform, feel free to share your thoughts to get real experience 👋",
     },
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [enhancing, setEnhancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [providers, setProviders] = useState<string[]>([]);
-  const [defaultProvider, setDefaultProvider] = useState<string>("");
-  const [selectedProvider, setSelectedProvider] = useState<string>("");
-  const [showProviderSelector, setShowProviderSelector] = useState(false);
+  const [restoredCount, setRestoredCount] = useState<number | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const historyLoadedRef = useRef(false);
 
+  // Restore the signed-in user's persisted conversation once per mount.
   useEffect(() => {
-    // Load available providers
-    getProviders().then(({ providers: provs, defaultProvider: defProv }) => {
-      setProviders(provs);
-      setDefaultProvider(defProv);
-      setSelectedProvider(defProv);
-    }).catch(() => {
-      setProviders([]);
-    });
-  }, []);
+    if (!isLoggedIn || historyLoadedRef.current) return;
+    historyLoadedRef.current = true;
+    getChatHistory("default", 200)
+      .then(({ messages }) => {
+        if (!messages.length) return;
+        setMessages((prev) => [
+          ...prev,
+          ...messages.map((m) => ({ role: m.role, content: m.content }) as AIChatMessage),
+        ]);
+        setRestoredCount(messages.length);
+      })
+      .catch(() => {
+        // History unavailable (table not migrated yet / offline) — fresh chat is fine.
+      });
+  }, [isLoggedIn]);
 
   const visibleMessages = messages.filter((m) => m.role !== "system");
   const hasStarted = visibleMessages.length > 1;
@@ -136,7 +91,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
         let accumulated = "";
         setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
         
-        for await (const chunk of streamChat([...messages, userMsg], selectedProvider)) {
+        for await (const chunk of streamChat([...messages, userMsg])) {
           accumulated += chunk;
           setMessages((prev) => {
             const updated = [...prev];
@@ -144,8 +99,12 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             return updated;
           });
         }
+        saveChatHistory("default", [
+          { role: "user", content: text },
+          { role: "assistant", content: accumulated },
+        ]).catch(() => {});
       } else {
-        const res = await guestChat([...messages, userMsg], selectedProvider);
+        const res = await guestChat([...messages, userMsg]);
         setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
       }
     } catch (e: any) {
@@ -161,21 +120,42 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     }
   };
 
+  /** Rewrite the drafted prompt into a sharper study question before sending. */
+  const handleEnhance = async () => {
+    const text = input.trim();
+    if (!text || sending || enhancing) return;
+    setEnhancing(true);
+    setError(null);
+    try {
+      const { prompt } = await enhancePrompt(text);
+      if (prompt) setInput(prompt);
+    } catch {
+      setError("Could not enhance right now — your original prompt is kept.");
+    } finally {
+      setEnhancing(false);
+      inputRef.current?.focus();
+    }
+  };
+
+  const clearChat = () => {
+    setMessages([
+      { role: "system", content: PLATFORM_SYSTEM_PROMPT },
+      {
+        role: "assistant",
+        content:
+          "I am assistant of this platform, feel free to share your thoughts to get real experience 👋",
+      },
+    ]);
+    setError(null);
+    setRestoredCount(null);
+    if (isLoggedIn) clearChatHistory("default").catch(() => {});
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
-  };
-
-  const providerLabel = (name: string) => {
-    const labels: Record<string, string> = {
-      internal: "Internal",
-      gemini: "Gemini",
-      openrouter: "OpenRouter",
-      agnes: "Agnes",
-    };
-    return labels[name] || name;
   };
 
   return (
@@ -192,44 +172,16 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             Online · answers + points you to notes, labs &amp; PYQs
           </p>
         </div>
-        
-        {/* Provider selector */}
-        {providers.length > 0 && (
-          <div className="relative shrink-0">
-            <button
-              onClick={() => setShowProviderSelector(!showProviderSelector)}
-              className="flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-lg hover:bg-muted"
-            >
-              <Settings2 className="h-3.5 w-3.5" />
-              <span>{providerLabel(selectedProvider)}</span>
-            </button>
-            
-            {showProviderSelector && (
-              <>
-                <div 
-                  className="fixed inset-0 z-10" 
-                  onClick={() => setShowProviderSelector(false)}
-                />
-                <div className="absolute right-0 top-full mt-1 w-40 bg-popover border border-border rounded-lg shadow-lg z-20 py-1">
-                  {providers.map((p) => (
-                    <button
-                      key={p}
-                      onClick={() => {
-                        setSelectedProvider(p);
-                        setShowProviderSelector(false);
-                      }}
-                      className={`w-full text-left px-3 py-1.5 text-xs hover:bg-accent transition-colors ${
-                        p === selectedProvider ? "text-primary font-semibold" : ""
-                      }`}
-                    >
-                      {providerLabel(p)}
-                      {p === defaultProvider && <span className="ml-1 text-muted-foreground">(default)</span>}
-                    </button>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
+        {isLoggedIn && (
+          <button
+            onClick={clearChat}
+            disabled={sending || enhancing}
+            className="h-8 w-8 rounded-lg border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+            title="New chat — clears your saved history for this device session"
+            aria-label="New chat (clear history)"
+          >
+            <History className="h-3.5 w-3.5" />
+          </button>
         )}
       </div>
 
@@ -268,6 +220,13 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
         )}
 
         <div className="max-w-2xl mx-auto space-y-4">
+          {restoredCount !== null && restoredCount > 0 && (
+            <div className="flex justify-center">
+              <span className="rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground">
+                Restored {restoredCount} earlier message{restoredCount === 1 ? "" : "s"} from your history
+              </span>
+            </div>
+          )}
           {visibleMessages.map((m, i) => (
             <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
@@ -275,9 +234,11 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
                   m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
                 }`}
               >
-                {m.role === "user"
-                  ? m.content
-                  : formatAiReply(m.content)}
+                {m.role === "user" ? (
+                  <p className="whitespace-pre-wrap">{m.content}</p>
+                ) : (
+                  <MathMarkdown content={m.content} className="chat-prose" />
+                )}
               </div>
             </div>
           ))}
@@ -286,7 +247,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             <div className="flex justify-start">
               <div className="bg-muted rounded-2xl px-4 py-2.5 flex items-center gap-2 text-xs text-muted-foreground">
                 <Loader2 className="h-4 w-4 animate-spin" />
-                {selectedProvider ? `Streaming via ${providerLabel(selectedProvider)}…` : "Thinking…"}
+                Thinking…
               </div>
             </div>
           )}
@@ -313,6 +274,15 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             disabled={sending}
             className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-xs placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-50"
           />
+          <button
+            onClick={handleEnhance}
+            disabled={!input.trim() || sending || enhancing}
+            className="h-11 w-11 rounded-xl border border-primary/40 bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+            title="Enhance my prompt — rewrite it into a sharper study question"
+            aria-label="Enhance prompt"
+          >
+            {enhancing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
+          </button>
           <button
             onClick={() => sendMessage()}
             disabled={!input.trim() || sending}

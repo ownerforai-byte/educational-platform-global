@@ -315,7 +315,7 @@ export function AnalyticalGeometryResources() {
                 </div>
               </div>
               <Button asChild size="sm" variant="outline" className="shrink-0">
-                <a href={res.url} target="_blank" rel="noopener noreferrer">
+                <a href={res.url}>
                   <ExternalLink className="w-3.5 h-3.5 mr-1" />
                   Open
                 </a>
@@ -418,7 +418,7 @@ export function AnalyticalGeometryResources() {
                 = 0) → ellipse → parabola → hyperbola as tilt increases.
               </div>
               <Button asChild size="sm" variant="outline">
-                <a href="/lab/math-3d-geometry" target="_blank" rel="noopener noreferrer">
+                <a href="/lab/math-3d-geometry">
                   <Play className="w-3.5 h-3.5 mr-1" />
                   Open Full 3D Lab
                 </a>

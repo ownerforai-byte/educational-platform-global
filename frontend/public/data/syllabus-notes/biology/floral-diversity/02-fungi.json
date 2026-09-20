@@ -4,80 +4,542 @@
   "topicSlug": "fungi",
   "topicTitle": "Fungi",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 02 fungi within the floral diversity unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 02 fungi. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 02 fungi."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 fungi."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 fungi."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 fungi."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 fungi)"
-  ],
-  "keyPoints": [
-    "Core point for 02 fungi."
-  ],
-  "summary": "Summary of 02 fungi.",
-  "specialNotes": [
-    "Specialized insight for 02 fungi."
-  ],
-  "importantStatements": [
-    "Key statement for 02 fungi."
-  ],
-  "importantNotes": [
-    "Important note regarding 02 fungi."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Fungi."
-  ],
-  "examNotes": [
-    "Fungi is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 fungi?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 fungi."
-  ],
-  "importantTasks": [
-    "Task for studying 02 fungi."
-  ],
   "duplicateType": 2,
   "tabGroup": "02-fungi",
   "mcqs": [
     {
-      "question": "Question about 02 fungi?",
+      "question": "The cell wall of fungi is made of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Cellulose",
+        "Chitin",
+        "Peptidoglycan",
+        "Silica"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Penicillium belongs to which fungal group?",
+      "options": [
+        "Phycomycetes",
+        "Ascomycetes",
+        "Basidiomycetes",
+        "Deuteromycetes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The spore-bearing structure of Basidiomycetes is called:",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Conidium"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following is an example of Deuteromycetes?",
+      "options": [
+        "Saccharomyces",
+        "Agaricus",
+        "Aspergillus",
+        "Rhizopus"
+      ],
+      "answer": "C"
+    }
+  ],
+  "visualType": "fungi-life-cycles",
+  "enrichedContent": {
+    "notes": [
+      "Fungi: eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin, no chloroplasts; include moulds, yeasts, mushrooms.",
+      "Four major groups: Phycomycetes (lower fungi, e.g. Rhizopus, water moulds), Ascomycetes (sac fungi, e.g. Penicillium, yeast, morels), Basidiomycetes (club fungi, e.g. Agaricus, rusts, smuts), Deuteromycetes (imperfect fungi, no known sexual stage, e.g. Aspergillus, Candida).",
+      "Body: mycelium (mass of hyphae); hyphae may be septate (divided) or coenocytic (aseptate).",
+      "Reproduction: asexual (spores, budding, fragmentation) and sexual (karyogamy after plasmogamy).",
+      "Ascomycetes produce spores in sac-like asci; Basidiomycetes produce spores on basidia (club-shaped bodies).",
+      "Economic importance: decomposers, food (bread, cheese, mushrooms), medicine (antibiotics — penicillin), industry (enzymes, organic acids); harmful: mycoses, crop blights, aflatoxins."
+    ],
+    "confusion": [
+      "Fungi have a chitin cell wall (like arthropods), NOT cellulose (like plants).",
+      "Fungi are NOT plants: they are heterotrophic, lack chlorophyll, and are in a separate kingdom.",
+      "Deuteromycetes are \"imperfect\" fungi — they have lost the sexual stage; they are not a true phylogenetic group.",
+      "Yeast (Saccharomyces) is an Ascomycete; it reproduces by budding (asexual) but also by forming ascospores.",
+      "Rhizopus (bread mould) is a Phycomycete; it reproduces by sporangiospores, not by sexual spores in the lab.",
+      "Mushrooms (Agaricus) are Basidiomycetes; the visible mushroom is the fruiting body of the mycelium."
+    ],
+    "practice": [
+      "Tabulate the four fungal groups: name, characteristic spore, example.",
+      "Draw a diagram of a Penicillium conidiophore with labelled parts.",
+      "Explain the life cycle of yeast (Saccharomyces).",
+      "List three beneficial and three harmful uses of fungi.",
+      "Differentiate asexual and sexual reproduction in fungi."
+    ],
+    "universalFacts": [
+      "Penicillin, discovered by Alexander Fleming in 1928, is produced by the fungus Penicillium chrysogenum.",
+      "Mycorrhizal fungi form mutualistic associations with ~90% of land plants, aiding phosphorus uptake.",
+      "The largest known organism on Earth is an Armillaria ostoyae (honey fungus) colony in Oregon, covering ~9.6 km².",
+      "Fungi were once classified under plants; they are now in their own kingdom due to chitin cell walls and absorptive heterotrophy."
+    ],
+    "examples": [
+      "Penicillium notatum → antibiotic penicillin (Ascomycete).",
+      "Saccharomyces cerevisiae → yeast for bread, beer, wine (Ascomycete).",
+      "Agaricus bisporus → edible mushroom (Basidiomycete).",
+      "Rhizopus stolonifer → bread mould (Phycomycete).",
+      "Aspergillus niger → citric acid production, enzyme source (Deuteromycete)."
+    ],
+    "practiceQuestions": [
+      "Why are fungi placed in a separate kingdom rather than with plants?",
+      "Differentiate Phycomycetes from Deuteromycetes (4 points).",
+      "Describe the structure of a Penicillium conidiophore.",
+      "Explain the role of fungi in the decomposition cycle.",
+      "What is the significance of the chitin cell wall in fungi?"
+    ],
+    "formulas": [
+      "Fungal cell wall: chitin (N-acetylglucosamine polymer)",
+      "Yeast budding: mother cell → bud → daughter cell (asexual)",
+      "Ascomycete spore: ascus (sac) containing ascospores (8 typically)",
+      "Basidiomycete spore: basidium (club) bearing basidiospores (4 typically)"
+    ],
+    "keyPoints": [
+      "Fungi are eukaryotic, heterotrophic, chitin cell wall, no chloroplasts.",
+      "Four groups: Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes.",
+      "Body = mycelium (hyphae); reproduction = asexual (spores/budding) + sexual.",
+      "Ascomycetes → asci; Basidiomycetes → basidia.",
+      "Economic roles: decomposers, food, medicine, industry; harmful: diseases, crop blights.",
+      "Fungi ≠ plants: heterotrophic, chitin wall, absorptive nutrition."
+    ],
+    "summary": "Fungi are a distinct kingdom of eukaryotic, heterotrophic organisms with chitin cell walls and absorptive nutrition. They are classified into four major groups — Phycomycetes (lower, aseptate), Ascomycetes (sac fungi), Basidiomycetes (club fungi), and Deuteromycetes (imperfect). Their roles as decomposers, food sources, medicine producers (antibiotics), and industrial agents make them ecologically and economically vital. NEB examinations focus on the four-group classification, structure of Penicillium, and economic importance.",
+    "specialNotes": [
+      "NEB frequently asks for a labelled diagram of Penicillium (conidiophore, conidia, sterigmata).",
+      "Memorise the four fungal groups with one example each and their spore type.",
+      "The distinction between Ascomycetes (asci) and Basidiomycetes (basidia) is a common short-answer.",
+      "Economic importance questions: give 3 beneficial and 3 harmful examples."
+    ],
+    "importantStatements": [
+      "Fungi are the primary decomposers in most ecosystems, recycling organic matter.",
+      "The chitin cell wall distinguishes fungi from plants (cellulose) and animals (no wall).",
+      "Ascomycetes and Basidiomycetes are the two most evolutionarily advanced fungal groups.",
+      "Deuteromycetes are an artificial grouping; many have now been reclassified based on molecular data."
+    ],
+    "importantNotes": [
+      "Memorise the four fungal groups: name, spore type, example, one use.",
+      "Draw Penicillium and Rhizopus from memory.",
+      "Learn the asexual vs sexual reproduction modes in fungi.",
+      "List economic importance: food, medicine, industry, ecology, disease."
+    ],
+    "examShortTricks": [
+      "Fungi = F-H-C (Heterotrophic, Chitin wall) — remember \"Fungi Hates Cellulose\".",
+      "Asco = sac; Basidio = club; Deutero = imperfect.",
+      "Phyco = lower (water moulds, bread moulds).",
+      "Yeast = Ascomycete + budding."
+    ],
+    "examNotes": [
+      "Draw and label Penicillium (conidiophore, conidia, sterigmata) — very common.",
+      "Tabulate four fungal groups (spore, example, use).",
+      "Explain why fungi are not plants.",
+      "Describe the economic importance of fungi (5 points).",
+      "Differentiate asexual and sexual reproduction in fungi."
+    ],
+    "mcs": [
+      {
+        "question": "The cell wall of fungi is made of:",
+        "options": [
+          "Cellulose",
+          "Chitin",
+          "Peptidoglycan",
+          "Silica"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Penicillium belongs to which fungal group?",
+        "options": [
+          "Phycomycetes",
+          "Ascomycetes",
+          "Basidiomycetes",
+          "Deuteromycetes"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The spore-bearing structure of Basidiomycetes is called:",
+        "options": [
+          "Ascus",
+          "Basidium",
+          "Sporangium",
+          "Conidium"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is an example of Deuteromycetes?",
+        "options": [
+          "Saccharomyces",
+          "Agaricus",
+          "Aspergillus",
+          "Rhizopus"
+        ],
+        "answer": "C"
+      }
+    ],
+    "importantConcepts": [
+      "Four fungal groups",
+      "Chitin cell wall",
+      "Mycelium & hyphae",
+      "Asci vs basidia",
+      "Asexual & sexual reproduction",
+      "Economic importance",
+      "Decomposer role"
+    ],
+    "importantTasks": [
+      "Draw Penicillium (labelled)",
+      "Tabulate 4 fungal groups",
+      "Explain why fungi ≠ plants",
+      "List economic importance (5)",
+      "Describe asexual vs sexual reproduction"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A student observed a fungus that forms sac-like structures containing spores. Which group does it belong to and what is the spore type?",
+        "steps": [
+          "Sac-like structure = ascus",
+          "Spores inside ascus = ascospores",
+          "Therefore the fungus is an Ascomycete"
+        ],
+        "answer": "Ascomycetes; ascospores (typically 8 per ascus)"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "FungalMyceliumViewer",
+      "desc": "3D interactive mycelium with rotatable Penicillium conidiophore and Rhizopus sporangium models."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Fungi: eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin, no chloroplasts; include moulds, yeasts, mushrooms.",
+      "Four major groups: Phycomycetes (lower fungi, e.g. Rhizopus, water moulds), Ascomycetes (sac fungi, e.g. Penicillium, yeast, morels), Basidiomycetes (club fungi, e.g. Agaricus, rusts, smuts), Deuteromycetes (imperfect fungi, no known sexual stage, e.g. Aspergillus, Candida).",
+      "Body: mycelium (mass of hyphae); hyphae may be septate (divided) or coenocytic (aseptate).",
+      "Reproduction: asexual (spores, budding, fragmentation) and sexual (karyogamy after plasmogamy).",
+      "Ascomycetes produce spores in sac-like asci; Basidiomycetes produce spores on basidia (club-shaped bodies).",
+      "Economic importance: decomposers, food (bread, cheese, mushrooms), medicine (antibiotics — penicillin), industry (enzymes, organic acids); harmful: mycoses, crop blights, aflatoxins."
+    ],
+    "confusion": [
+      "Fungi have a chitin cell wall (like arthropods), NOT cellulose (like plants).",
+      "Fungi are NOT plants: they are heterotrophic, lack chlorophyll, and are in a separate kingdom.",
+      "Deuteromycetes are \"imperfect\" fungi — they have lost the sexual stage; they are not a true phylogenetic group.",
+      "Yeast (Saccharomyces) is an Ascomycete; it reproduces by budding (asexual) but also by forming ascospores.",
+      "Rhizopus (bread mould) is a Phycomycete; it reproduces by sporangiospores, not by sexual spores in the lab.",
+      "Mushrooms (Agaricus) are Basidiomycetes; the visible mushroom is the fruiting body of the mycelium."
+    ],
+    "practice": [
+      "Tabulate the four fungal groups: name, characteristic spore, example.",
+      "Draw a diagram of a Penicillium conidiophore with labelled parts.",
+      "Explain the life cycle of yeast (Saccharomyces).",
+      "List three beneficial and three harmful uses of fungi.",
+      "Differentiate asexual and sexual reproduction in fungi."
+    ],
+    "universalFacts": [
+      "Penicillin, discovered by Alexander Fleming in 1928, is produced by the fungus Penicillium chrysogenum.",
+      "Mycorrhizal fungi form mutualistic associations with ~90% of land plants, aiding phosphorus uptake.",
+      "The largest known organism on Earth is an Armillaria ostoyae (honey fungus) colony in Oregon, covering ~9.6 km².",
+      "Fungi were once classified under plants; they are now in their own kingdom due to chitin cell walls and absorptive heterotrophy."
+    ],
+    "examples": [
+      "Penicillium notatum → antibiotic penicillin (Ascomycete).",
+      "Saccharomyces cerevisiae → yeast for bread, beer, wine (Ascomycete).",
+      "Agaricus bisporus → edible mushroom (Basidiomycete).",
+      "Rhizopus stolonifer → bread mould (Phycomycete).",
+      "Aspergillus niger → citric acid production, enzyme source (Deuteromycete)."
+    ],
+    "practiceQuestions": [
+      "Why are fungi placed in a separate kingdom rather than with plants?",
+      "Differentiate Phycomycetes from Deuteromycetes (4 points).",
+      "Describe the structure of a Penicillium conidiophore.",
+      "Explain the role of fungi in the decomposition cycle.",
+      "What is the significance of the chitin cell wall in fungi?"
+    ],
+    "formulas": [
+      "Fungal cell wall: chitin (N-acetylglucosamine polymer)",
+      "Yeast budding: mother cell → bud → daughter cell (asexual)",
+      "Ascomycete spore: ascus (sac) containing ascospores (8 typically)",
+      "Basidiomycete spore: basidium (club) bearing basidiospores (4 typically)"
+    ],
+    "keyPoints": [
+      "Fungi are eukaryotic, heterotrophic, chitin cell wall, no chloroplasts.",
+      "Four groups: Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes.",
+      "Body = mycelium (hyphae); reproduction = asexual (spores/budding) + sexual.",
+      "Ascomycetes → asci; Basidiomycetes → basidia.",
+      "Economic roles: decomposers, food, medicine, industry; harmful: diseases, crop blights.",
+      "Fungi ≠ plants: heterotrophic, chitin wall, absorptive nutrition."
+    ],
+    "summary": "Fungi are a distinct kingdom of eukaryotic, heterotrophic organisms with chitin cell walls and absorptive nutrition. They are classified into four major groups — Phycomycetes (lower, aseptate), Ascomycetes (sac fungi), Basidiomycetes (club fungi), and Deuteromycetes (imperfect). Their roles as decomposers, food sources, medicine producers (antibiotics), and industrial agents make them ecologically and economically vital. NEB examinations focus on the four-group classification, structure of Penicillium, and economic importance.",
+    "specialNotes": [
+      "NEB frequently asks for a labelled diagram of Penicillium (conidiophore, conidia, sterigmata).",
+      "Memorise the four fungal groups with one example each and their spore type.",
+      "The distinction between Ascomycetes (asci) and Basidiomycetes (basidia) is a common short-answer.",
+      "Economic importance questions: give 3 beneficial and 3 harmful examples."
+    ],
+    "importantStatements": [
+      "Fungi are the primary decomposers in most ecosystems, recycling organic matter.",
+      "The chitin cell wall distinguishes fungi from plants (cellulose) and animals (no wall).",
+      "Ascomycetes and Basidiomycetes are the two most evolutionarily advanced fungal groups.",
+      "Deuteromycetes are an artificial grouping; many have now been reclassified based on molecular data."
+    ],
+    "importantNotes": [
+      "Memorise the four fungal groups: name, spore type, example, one use.",
+      "Draw Penicillium and Rhizopus from memory.",
+      "Learn the asexual vs sexual reproduction modes in fungi.",
+      "List economic importance: food, medicine, industry, ecology, disease."
+    ],
+    "examShortTricks": [
+      "Fungi = F-H-C (Heterotrophic, Chitin wall) — remember \"Fungi Hates Cellulose\".",
+      "Asco = sac; Basidio = club; Deutero = imperfect.",
+      "Phyco = lower (water moulds, bread moulds).",
+      "Yeast = Ascomycete + budding."
+    ],
+    "examNotes": [
+      "Draw and label Penicillium (conidiophore, conidia, sterigmata) — very common.",
+      "Tabulate four fungal groups (spore, example, use).",
+      "Explain why fungi are not plants.",
+      "Describe the economic importance of fungi (5 points).",
+      "Differentiate asexual and sexual reproduction in fungi."
+    ],
+    "mcs": [
+      {
+        "question": "The cell wall of fungi is made of:",
+        "options": [
+          "Cellulose",
+          "Chitin",
+          "Peptidoglycan",
+          "Silica"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Penicillium belongs to which fungal group?",
+        "options": [
+          "Phycomycetes",
+          "Ascomycetes",
+          "Basidiomycetes",
+          "Deuteromycetes"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The spore-bearing structure of Basidiomycetes is called:",
+        "options": [
+          "Ascus",
+          "Basidium",
+          "Sporangium",
+          "Conidium"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which of the following is an example of Deuteromycetes?",
+        "options": [
+          "Saccharomyces",
+          "Agaricus",
+          "Aspergillus",
+          "Rhizopus"
+        ],
+        "answer": "C"
+      }
+    ],
+    "importantConcepts": [
+      "Four fungal groups",
+      "Chitin cell wall",
+      "Mycelium & hyphae",
+      "Asci vs basidia",
+      "Asexual & sexual reproduction",
+      "Economic importance",
+      "Decomposer role"
+    ],
+    "importantTasks": [
+      "Draw Penicillium (labelled)",
+      "Tabulate 4 fungal groups",
+      "Explain why fungi ≠ plants",
+      "List economic importance (5)",
+      "Describe asexual vs sexual reproduction"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A student observed a fungus that forms sac-like structures containing spores. Which group does it belong to and what is the spore type?",
+        "steps": [
+          "Sac-like structure = ascus",
+          "Spores inside ascus = ascospores",
+          "Therefore the fungus is an Ascomycete"
+        ],
+        "answer": "Ascomycetes; ascospores (typically 8 per ascus)"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "FungalMyceliumViewer",
+      "desc": "3D interactive mycelium with rotatable Penicillium conidiophore and Rhizopus sporangium models."
+    }
+  },
+  "notes": [
+    "Fungi: eukaryotic, heterotrophic (absorptive nutrition), cell wall of chitin, no chloroplasts; include moulds, yeasts, mushrooms.",
+    "Four major groups: Phycomycetes (lower fungi, e.g. Rhizopus, water moulds), Ascomycetes (sac fungi, e.g. Penicillium, yeast, morels), Basidiomycetes (club fungi, e.g. Agaricus, rusts, smuts), Deuteromycetes (imperfect fungi, no known sexual stage, e.g. Aspergillus, Candida).",
+    "Body: mycelium (mass of hyphae); hyphae may be septate (divided) or coenocytic (aseptate).",
+    "Reproduction: asexual (spores, budding, fragmentation) and sexual (karyogamy after plasmogamy).",
+    "Ascomycetes produce spores in sac-like asci; Basidiomycetes produce spores on basidia (club-shaped bodies).",
+    "Economic importance: decomposers, food (bread, cheese, mushrooms), medicine (antibiotics — penicillin), industry (enzymes, organic acids); harmful: mycoses, crop blights, aflatoxins."
+  ],
+  "confusion": [
+    "Fungi have a chitin cell wall (like arthropods), NOT cellulose (like plants).",
+    "Fungi are NOT plants: they are heterotrophic, lack chlorophyll, and are in a separate kingdom.",
+    "Deuteromycetes are \"imperfect\" fungi — they have lost the sexual stage; they are not a true phylogenetic group.",
+    "Yeast (Saccharomyces) is an Ascomycete; it reproduces by budding (asexual) but also by forming ascospores.",
+    "Rhizopus (bread mould) is a Phycomycete; it reproduces by sporangiospores, not by sexual spores in the lab.",
+    "Mushrooms (Agaricus) are Basidiomycetes; the visible mushroom is the fruiting body of the mycelium."
+  ],
+  "practice": [
+    "Tabulate the four fungal groups: name, characteristic spore, example.",
+    "Draw a diagram of a Penicillium conidiophore with labelled parts.",
+    "Explain the life cycle of yeast (Saccharomyces).",
+    "List three beneficial and three harmful uses of fungi.",
+    "Differentiate asexual and sexual reproduction in fungi."
+  ],
+  "universalFacts": [
+    "Penicillin, discovered by Alexander Fleming in 1928, is produced by the fungus Penicillium chrysogenum.",
+    "Mycorrhizal fungi form mutualistic associations with ~90% of land plants, aiding phosphorus uptake.",
+    "The largest known organism on Earth is an Armillaria ostoyae (honey fungus) colony in Oregon, covering ~9.6 km².",
+    "Fungi were once classified under plants; they are now in their own kingdom due to chitin cell walls and absorptive heterotrophy."
+  ],
+  "examples": [
+    "Penicillium notatum → antibiotic penicillin (Ascomycete).",
+    "Saccharomyces cerevisiae → yeast for bread, beer, wine (Ascomycete).",
+    "Agaricus bisporus → edible mushroom (Basidiomycete).",
+    "Rhizopus stolonifer → bread mould (Phycomycete).",
+    "Aspergillus niger → citric acid production, enzyme source (Deuteromycete)."
+  ],
+  "practiceQuestions": [
+    "Why are fungi placed in a separate kingdom rather than with plants?",
+    "Differentiate Phycomycetes from Deuteromycetes (4 points).",
+    "Describe the structure of a Penicillium conidiophore.",
+    "Explain the role of fungi in the decomposition cycle.",
+    "What is the significance of the chitin cell wall in fungi?"
+  ],
+  "formulas": [
+    "Fungal cell wall: chitin (N-acetylglucosamine polymer)",
+    "Yeast budding: mother cell → bud → daughter cell (asexual)",
+    "Ascomycete spore: ascus (sac) containing ascospores (8 typically)",
+    "Basidiomycete spore: basidium (club) bearing basidiospores (4 typically)"
+  ],
+  "keyPoints": [
+    "Fungi are eukaryotic, heterotrophic, chitin cell wall, no chloroplasts.",
+    "Four groups: Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes.",
+    "Body = mycelium (hyphae); reproduction = asexual (spores/budding) + sexual.",
+    "Ascomycetes → asci; Basidiomycetes → basidia.",
+    "Economic roles: decomposers, food, medicine, industry; harmful: diseases, crop blights.",
+    "Fungi ≠ plants: heterotrophic, chitin wall, absorptive nutrition."
+  ],
+  "summary": "Fungi are a distinct kingdom of eukaryotic, heterotrophic organisms with chitin cell walls and absorptive nutrition. They are classified into four major groups — Phycomycetes (lower, aseptate), Ascomycetes (sac fungi), Basidiomycetes (club fungi), and Deuteromycetes (imperfect). Their roles as decomposers, food sources, medicine producers (antibiotics), and industrial agents make them ecologically and economically vital. NEB examinations focus on the four-group classification, structure of Penicillium, and economic importance.",
+  "specialNotes": [
+    "NEB frequently asks for a labelled diagram of Penicillium (conidiophore, conidia, sterigmata).",
+    "Memorise the four fungal groups with one example each and their spore type.",
+    "The distinction between Ascomycetes (asci) and Basidiomycetes (basidia) is a common short-answer.",
+    "Economic importance questions: give 3 beneficial and 3 harmful examples."
+  ],
+  "importantStatements": [
+    "Fungi are the primary decomposers in most ecosystems, recycling organic matter.",
+    "The chitin cell wall distinguishes fungi from plants (cellulose) and animals (no wall).",
+    "Ascomycetes and Basidiomycetes are the two most evolutionarily advanced fungal groups.",
+    "Deuteromycetes are an artificial grouping; many have now been reclassified based on molecular data."
+  ],
+  "importantNotes": [
+    "Memorise the four fungal groups: name, spore type, example, one use.",
+    "Draw Penicillium and Rhizopus from memory.",
+    "Learn the asexual vs sexual reproduction modes in fungi.",
+    "List economic importance: food, medicine, industry, ecology, disease."
+  ],
+  "examShortTricks": [
+    "Fungi = F-H-C (Heterotrophic, Chitin wall) — remember \"Fungi Hates Cellulose\".",
+    "Asco = sac; Basidio = club; Deutero = imperfect.",
+    "Phyco = lower (water moulds, bread moulds).",
+    "Yeast = Ascomycete + budding."
+  ],
+  "examNotes": [
+    "Draw and label Penicillium (conidiophore, conidia, sterigmata) — very common.",
+    "Tabulate four fungal groups (spore, example, use).",
+    "Explain why fungi are not plants.",
+    "Describe the economic importance of fungi (5 points).",
+    "Differentiate asexual and sexual reproduction in fungi."
+  ],
+  "mcs": [
+    {
+      "question": "The cell wall of fungi is made of:",
+      "options": [
+        "Cellulose",
+        "Chitin",
+        "Peptidoglycan",
+        "Silica"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Penicillium belongs to which fungal group?",
+      "options": [
+        "Phycomycetes",
+        "Ascomycetes",
+        "Basidiomycetes",
+        "Deuteromycetes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The spore-bearing structure of Basidiomycetes is called:",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Conidium"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following is an example of Deuteromycetes?",
+      "options": [
+        "Saccharomyces",
+        "Agaricus",
+        "Aspergillus",
+        "Rhizopus"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Four fungal groups",
+    "Chitin cell wall",
+    "Mycelium & hyphae",
+    "Asci vs basidia",
+    "Asexual & sexual reproduction",
+    "Economic importance",
+    "Decomposer role"
+  ],
+  "importantTasks": [
+    "Draw Penicillium (labelled)",
+    "Tabulate 4 fungal groups",
+    "Explain why fungi ≠ plants",
+    "List economic importance (5)",
+    "Describe asexual vs sexual reproduction"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A student observed a fungus that forms sac-like structures containing spores. Which group does it belong to and what is the spore type?",
+      "steps": [
+        "Sac-like structure = ascus",
+        "Spores inside ascus = ascospores",
+        "Therefore the fungus is an Ascomycete"
+      ],
+      "answer": "Ascomycetes; ascospores (typically 8 per ascus)"
     }
   ]
 }

@@ -4,80 +4,597 @@
   "topicSlug": "vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
   "topicTitle": "Vegetation: Introduction, types of vegetation in Nepal; in-situ (protected areas) and ex-situ (botanical garden, seed bank) conservation; natural environment-vegetation and human activities",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities within the vegetation unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
+  "mcqs": [
+    {
+      "question": "Vegetation is primarily determined by:",
+      "options": [
+        "Political boundaries",
+        "Climate, altitude, soil, and human activity",
+        "Only rainfall",
+        "Only temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Jhum agriculture is a major cause of:",
+      "options": [
+        "Soil fertility",
+        "Hill deforestation and landslides",
+        "Biodiversity increase",
+        "Water purification"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In-situ vegetation conservation protects plant cover:",
+      "options": [
+        "In botanical gardens",
+        "In its natural habitat",
+        "In seed banks",
+        "In laboratories"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Vegetation regulates the water cycle by:",
+      "options": [
+        "Increasing erosion",
+        "Promoting infiltration and reducing runoff",
+        "Raising temperatures",
+        "Depleting soil"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "nepal-vegetation-zones",
+  "enrichedContent": {
+    "notes": [
+      "Vegetation introduction: the natural plant cover of a region; determined by climate, altitude, soil, and human activity.",
+      "Types of vegetation in Nepal: Terai subtropical (sal, grasslands), sub-montane (mixed deciduous), temperate (oak, rhododendron, chestnut), sub-alpine (pine, fir, juniper), alpine (meadows, dwarf shrubs, lichens), nival (bare rock, snow).",
+      "In-situ conservation: protecting vegetation in its natural location — protected areas, community forests, sacred groves.",
+      "Ex-situ conservation: conserving plant material outside the natural habitat — botanical gardens, seed banks, tissue culture, herbaria.",
+      "Natural environment-vegetation: the interdependence of climate, soil, water, and plants; vegetation regulates the water cycle, prevents erosion, stabilises the climate, and supports biodiversity.",
+      "Human activities affecting vegetation: deforestation (firewood, jhum/shifting agriculture, grazing, over-exploitation, illegal logging), habitat loss, climate change, invasive species, pollution.",
+      "Jhum (shifting/slash-and-burn) agriculture on hillsides causes severe erosion, landslides, and forest loss.",
+      "Over-grazing degrades alpine meadows; firewood collection degrades riparian forests.",
+      "Conservation strategies: protected areas, community forestry, anti-logging laws, reforestation, awareness, international agreements.",
+      "NEB focus: introduction to vegetation, types in Nepal, in-situ and ex-situ conservation, and the natural environment-vegetation relationship with human activities.",
+      "Importance of vegetation: oxygen, climate regulation, soil conservation, water, biodiversity, food, medicine, culture, and livelihood.",
+      "Nepal: ~64% of the country is forested; community forestry (22,000+ groups) manages ~36% of forest land."
+    ],
+    "confusion": [
+      "Vegetation is the NATURAL plant cover; plantations and cultivated crops are human-made, not natural vegetation.",
+      "In-situ conservation protects vegetation IN its natural habitat; ex-situ conserves plant material OUTSIDE.",
+      "Jhum (shifting) agriculture is a major cause of hill deforestation; it is different from permanent agriculture.",
+      "Over-grazing degrades alpine meadows; it is a separate threat from jhum.",
+      "Deforestation disrupts the water cycle and causes erosion, landslides, and climate change — not just loss of trees.",
+      "Community forests (in-situ) are community-managed; national parks are government-managed."
+    ],
+    "practice": [
+      "Define vegetation and state its determinants (climate, altitude, soil, human activity).",
+      "List Nepal's vegetation types by altitude.",
+      "Explain in-situ and ex-situ vegetation conservation.",
+      "Describe the natural environment-vegetation relationship.",
+      "Discuss the impact of human activities on Nepali vegetation.",
+      "Explain the importance of vegetation."
+    ],
+    "universalFacts": [
+      "~64% of Nepal's area is under forest; ~35% is evergreen.",
+      "Community forest groups (22,000+) manage ~36% of Nepal's forest land.",
+      "Jhum (shifting) agriculture is one of the leading causes of hill-slope deforestation and landslides in Nepal.",
+      "Vegetation regulates the water cycle, prevents erosion, and stabilises the climate — essential ecological services."
+    ],
+    "examples": [
+      "Vegetation types: Terai (sal, grasslands), temperate (oak, rhododendron), sub-alpine (pine, fir), alpine (meadows, lichens), nival (bare rock).",
+      "In-situ: Chitwan, Sagarmatha, Annapurna national parks; community forests; sacred groves.",
+      "Ex-situ: Nepal National Herbarium, seed banks, botanical gardens, tissue-culture labs.",
+      "Human impact: jhum, over-grazing, firewood, illegal logging, climate change.",
+      "Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture."
+    ],
+    "practiceQuestions": [
+      "Define vegetation and state its determinants.",
+      "List Nepal's vegetation types by altitude.",
+      "Explain in-situ and ex-situ vegetation conservation.",
+      "Describe the natural environment-vegetation relationship.",
+      "Discuss the impact of human activities on Nepali vegetation.",
+      "Explain the importance of vegetation."
+    ],
+    "formulas": [
+      "Vegetation = natural plant cover; determined by climate + altitude + soil + human activity",
+      "Types in Nepal: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival",
+      "In-situ: protected areas + community forests + sacred groves",
+      "Ex-situ: botanical gardens + seed banks + tissue culture + herbaria",
+      "Human impact: jhum + grazing + firewood + logging + climate change + pollution"
+    ],
+    "keyPoints": [
+      "Vegetation: natural plant cover; set by climate, altitude, soil, human activity.",
+      "Nepal types: Terai, sub-montane, temperate, sub-alpine, alpine, nival.",
+      "In-situ: protected areas, community forests, sacred groves.",
+      "Ex-situ: botanical gardens, seed banks, tissue culture, herbaria.",
+      "Natural environment-vegetation: water cycle, soil, climate, biodiversity.",
+      "Human impact: jhum, grazing, firewood, logging, climate change.",
+      "Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture."
+    ],
+    "summary": "Vegetation is the natural plant cover of a region, determined by climate, altitude, soil, and human activity. Nepal's vegetation is zoned by altitude: Terai (sal, grasslands), sub-montane, temperate (oak, rhododendron), sub-alpine (pine, fir), alpine (meadows, lichens), and nival (bare rock). Conservation includes in-situ (protected areas, community forests, sacred groves) and ex-situ (botanical gardens, seed banks, tissue culture, herbaria) strategies. Vegetation is vital to the natural environment — it regulates the water cycle, prevents erosion, stabilises the climate, and supports biodiversity. Human activities (jhum, grazing, firewood, logging, climate change) threaten vegetation. NEB focuses on vegetation introduction, types in Nepal, in-situ and ex-situ conservation, and the natural environment-vegetation relationship with human activities.",
+    "specialNotes": [
+      "NEB expects the definition of vegetation and its determinants (climate, altitude, soil, human activity).",
+      "List Nepal's vegetation types by altitude.",
+      "Differentiate in-situ from ex-situ conservation with Nepali examples.",
+      "Explain the natural environment-vegetation relationship (water cycle, soil, climate, biodiversity).",
+      "Discuss human activities affecting vegetation (jhum, grazing, firewood, logging, climate change).",
+      "State the importance of vegetation (oxygen, climate, soil, water, biodiversity, food, medicine)."
+    ],
+    "importantStatements": [
+      "Vegetation is the natural plant cover of a region, set by climate, altitude, soil, and human activity.",
+      "In-situ conservation protects vegetation in its natural habitat.",
+      "Vegetation is vital to the natural environment: it regulates the water cycle, prevents erosion, and stabilises the climate.",
+      "Human activities (jhum, grazing, firewood, logging) threaten Nepali vegetation."
+    ],
+    "importantNotes": [
+      "Define vegetation and state its determinants.",
+      "List Nepal's vegetation types by altitude.",
+      "Differentiate in-situ from ex-situ conservation.",
+      "Explain the natural environment-vegetation relationship.",
+      "Discuss human activities affecting vegetation.",
+      "State the importance of vegetation."
+    ],
+    "examShortTricks": [
+      "Vegetation = natural plant cover (climate + altitude + soil + human activity).",
+      "Types: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival.",
+      "In-situ = IN habitat; Ex-situ = EX (outside) habitat.",
+      "Human impact = jhum + grazing + firewood + logging + climate change.",
+      "Importance = oxygen + climate + soil + water + biodiversity + food + medicine."
+    ],
+    "examNotes": [
+      "Define vegetation and state its determinants.",
+      "List Nepal's vegetation types by altitude.",
+      "Explain in-situ and ex-situ vegetation conservation.",
+      "Describe the natural environment-vegetation relationship.",
+      "Discuss the impact of human activities on Nepali vegetation.",
+      "Explain the importance of vegetation."
+    ],
+    "mcs": [
+      {
+        "question": "Vegetation is primarily determined by:",
+        "options": [
+          "Political boundaries",
+          "Climate, altitude, soil, and human activity",
+          "Only rainfall",
+          "Only temperature"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Jhum agriculture is a major cause of:",
+        "options": [
+          "Soil fertility",
+          "Hill deforestation and landslides",
+          "Biodiversity increase",
+          "Water purification"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "In-situ vegetation conservation protects plant cover:",
+        "options": [
+          "In botanical gardens",
+          "In its natural habitat",
+          "In seed banks",
+          "In laboratories"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Vegetation regulates the water cycle by:",
+        "options": [
+          "Increasing erosion",
+          "Promoting infiltration and reducing runoff",
+          "Raising temperatures",
+          "Depleting soil"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Vegetation definition and determinants",
+      "Nepal vegetation types (altitude)",
+      "In-situ vs ex-situ conservation",
+      "Natural environment-vegetation relationship",
+      "Human activities (jhum, grazing, logging)",
+      "Importance of vegetation",
+      "Water cycle and soil conservation",
+      "Community forestry"
+    ],
+    "importantTasks": [
+      "Define vegetation and state determinants",
+      "List Nepal vegetation types",
+      "Differentiate in-situ vs ex-situ",
+      "Explain natural environment-vegetation",
+      "Discuss human impact",
+      "State importance of vegetation"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Explain how vegetation influences the natural environment (water cycle, soil, climate, biodiversity).",
+        "steps": [
+          "Water cycle: roots promote infiltration; canopy reduces runoff; transpiration adds moisture to air",
+          "Soil: roots hold soil, prevent erosion; leaf litter adds organic matter",
+          "Climate: trees absorb CO2, release O2, moderate temperature",
+          "Biodiversity: vegetation provides habitat and food for animals"
+        ],
+        "answer": "Vegetation regulates the water cycle, conserves soil, moderates climate, and supports biodiversity — all essential ecological services"
+      }
+    ],
+    "visualization": {
+      "type": "map",
+      "component": "VegetationIntroductionMap",
+      "desc": "Interactive altitude profile of Nepal showing vegetation zones, in-situ/ex-situ conservation sites, and the natural environment-vegetation interdependence with human-impact overlays."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Vegetation introduction: the natural plant cover of a region; determined by climate, altitude, soil, and human activity.",
+      "Types of vegetation in Nepal: Terai subtropical (sal, grasslands), sub-montane (mixed deciduous), temperate (oak, rhododendron, chestnut), sub-alpine (pine, fir, juniper), alpine (meadows, dwarf shrubs, lichens), nival (bare rock, snow).",
+      "In-situ conservation: protecting vegetation in its natural location — protected areas, community forests, sacred groves.",
+      "Ex-situ conservation: conserving plant material outside the natural habitat — botanical gardens, seed banks, tissue culture, herbaria.",
+      "Natural environment-vegetation: the interdependence of climate, soil, water, and plants; vegetation regulates the water cycle, prevents erosion, stabilises the climate, and supports biodiversity.",
+      "Human activities affecting vegetation: deforestation (firewood, jhum/shifting agriculture, grazing, over-exploitation, illegal logging), habitat loss, climate change, invasive species, pollution.",
+      "Jhum (shifting/slash-and-burn) agriculture on hillsides causes severe erosion, landslides, and forest loss.",
+      "Over-grazing degrades alpine meadows; firewood collection degrades riparian forests.",
+      "Conservation strategies: protected areas, community forestry, anti-logging laws, reforestation, awareness, international agreements.",
+      "NEB focus: introduction to vegetation, types in Nepal, in-situ and ex-situ conservation, and the natural environment-vegetation relationship with human activities.",
+      "Importance of vegetation: oxygen, climate regulation, soil conservation, water, biodiversity, food, medicine, culture, and livelihood.",
+      "Nepal: ~64% of the country is forested; community forestry (22,000+ groups) manages ~36% of forest land."
+    ],
+    "confusion": [
+      "Vegetation is the NATURAL plant cover; plantations and cultivated crops are human-made, not natural vegetation.",
+      "In-situ conservation protects vegetation IN its natural habitat; ex-situ conserves plant material OUTSIDE.",
+      "Jhum (shifting) agriculture is a major cause of hill deforestation; it is different from permanent agriculture.",
+      "Over-grazing degrades alpine meadows; it is a separate threat from jhum.",
+      "Deforestation disrupts the water cycle and causes erosion, landslides, and climate change — not just loss of trees.",
+      "Community forests (in-situ) are community-managed; national parks are government-managed."
+    ],
+    "practice": [
+      "Define vegetation and state its determinants (climate, altitude, soil, human activity).",
+      "List Nepal's vegetation types by altitude.",
+      "Explain in-situ and ex-situ vegetation conservation.",
+      "Describe the natural environment-vegetation relationship.",
+      "Discuss the impact of human activities on Nepali vegetation.",
+      "Explain the importance of vegetation."
+    ],
+    "universalFacts": [
+      "~64% of Nepal's area is under forest; ~35% is evergreen.",
+      "Community forest groups (22,000+) manage ~36% of Nepal's forest land.",
+      "Jhum (shifting) agriculture is one of the leading causes of hill-slope deforestation and landslides in Nepal.",
+      "Vegetation regulates the water cycle, prevents erosion, and stabilises the climate — essential ecological services."
+    ],
+    "examples": [
+      "Vegetation types: Terai (sal, grasslands), temperate (oak, rhododendron), sub-alpine (pine, fir), alpine (meadows, lichens), nival (bare rock).",
+      "In-situ: Chitwan, Sagarmatha, Annapurna national parks; community forests; sacred groves.",
+      "Ex-situ: Nepal National Herbarium, seed banks, botanical gardens, tissue-culture labs.",
+      "Human impact: jhum, over-grazing, firewood, illegal logging, climate change.",
+      "Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture."
+    ],
+    "practiceQuestions": [
+      "Define vegetation and state its determinants.",
+      "List Nepal's vegetation types by altitude.",
+      "Explain in-situ and ex-situ vegetation conservation.",
+      "Describe the natural environment-vegetation relationship.",
+      "Discuss the impact of human activities on Nepali vegetation.",
+      "Explain the importance of vegetation."
+    ],
+    "formulas": [
+      "Vegetation = natural plant cover; determined by climate + altitude + soil + human activity",
+      "Types in Nepal: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival",
+      "In-situ: protected areas + community forests + sacred groves",
+      "Ex-situ: botanical gardens + seed banks + tissue culture + herbaria",
+      "Human impact: jhum + grazing + firewood + logging + climate change + pollution"
+    ],
+    "keyPoints": [
+      "Vegetation: natural plant cover; set by climate, altitude, soil, human activity.",
+      "Nepal types: Terai, sub-montane, temperate, sub-alpine, alpine, nival.",
+      "In-situ: protected areas, community forests, sacred groves.",
+      "Ex-situ: botanical gardens, seed banks, tissue culture, herbaria.",
+      "Natural environment-vegetation: water cycle, soil, climate, biodiversity.",
+      "Human impact: jhum, grazing, firewood, logging, climate change.",
+      "Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture."
+    ],
+    "summary": "Vegetation is the natural plant cover of a region, determined by climate, altitude, soil, and human activity. Nepal's vegetation is zoned by altitude: Terai (sal, grasslands), sub-montane, temperate (oak, rhododendron), sub-alpine (pine, fir), alpine (meadows, lichens), and nival (bare rock). Conservation includes in-situ (protected areas, community forests, sacred groves) and ex-situ (botanical gardens, seed banks, tissue culture, herbaria) strategies. Vegetation is vital to the natural environment — it regulates the water cycle, prevents erosion, stabilises the climate, and supports biodiversity. Human activities (jhum, grazing, firewood, logging, climate change) threaten vegetation. NEB focuses on vegetation introduction, types in Nepal, in-situ and ex-situ conservation, and the natural environment-vegetation relationship with human activities.",
+    "specialNotes": [
+      "NEB expects the definition of vegetation and its determinants (climate, altitude, soil, human activity).",
+      "List Nepal's vegetation types by altitude.",
+      "Differentiate in-situ from ex-situ conservation with Nepali examples.",
+      "Explain the natural environment-vegetation relationship (water cycle, soil, climate, biodiversity).",
+      "Discuss human activities affecting vegetation (jhum, grazing, firewood, logging, climate change).",
+      "State the importance of vegetation (oxygen, climate, soil, water, biodiversity, food, medicine)."
+    ],
+    "importantStatements": [
+      "Vegetation is the natural plant cover of a region, set by climate, altitude, soil, and human activity.",
+      "In-situ conservation protects vegetation in its natural habitat.",
+      "Vegetation is vital to the natural environment: it regulates the water cycle, prevents erosion, and stabilises the climate.",
+      "Human activities (jhum, grazing, firewood, logging) threaten Nepali vegetation."
+    ],
+    "importantNotes": [
+      "Define vegetation and state its determinants.",
+      "List Nepal's vegetation types by altitude.",
+      "Differentiate in-situ from ex-situ conservation.",
+      "Explain the natural environment-vegetation relationship.",
+      "Discuss human activities affecting vegetation.",
+      "State the importance of vegetation."
+    ],
+    "examShortTricks": [
+      "Vegetation = natural plant cover (climate + altitude + soil + human activity).",
+      "Types: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival.",
+      "In-situ = IN habitat; Ex-situ = EX (outside) habitat.",
+      "Human impact = jhum + grazing + firewood + logging + climate change.",
+      "Importance = oxygen + climate + soil + water + biodiversity + food + medicine."
+    ],
+    "examNotes": [
+      "Define vegetation and state its determinants.",
+      "List Nepal's vegetation types by altitude.",
+      "Explain in-situ and ex-situ vegetation conservation.",
+      "Describe the natural environment-vegetation relationship.",
+      "Discuss the impact of human activities on Nepali vegetation.",
+      "Explain the importance of vegetation."
+    ],
+    "mcs": [
+      {
+        "question": "Vegetation is primarily determined by:",
+        "options": [
+          "Political boundaries",
+          "Climate, altitude, soil, and human activity",
+          "Only rainfall",
+          "Only temperature"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Jhum agriculture is a major cause of:",
+        "options": [
+          "Soil fertility",
+          "Hill deforestation and landslides",
+          "Biodiversity increase",
+          "Water purification"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "In-situ vegetation conservation protects plant cover:",
+        "options": [
+          "In botanical gardens",
+          "In its natural habitat",
+          "In seed banks",
+          "In laboratories"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Vegetation regulates the water cycle by:",
+        "options": [
+          "Increasing erosion",
+          "Promoting infiltration and reducing runoff",
+          "Raising temperatures",
+          "Depleting soil"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Vegetation definition and determinants",
+      "Nepal vegetation types (altitude)",
+      "In-situ vs ex-situ conservation",
+      "Natural environment-vegetation relationship",
+      "Human activities (jhum, grazing, logging)",
+      "Importance of vegetation",
+      "Water cycle and soil conservation",
+      "Community forestry"
+    ],
+    "importantTasks": [
+      "Define vegetation and state determinants",
+      "List Nepal vegetation types",
+      "Differentiate in-situ vs ex-situ",
+      "Explain natural environment-vegetation",
+      "Discuss human impact",
+      "State importance of vegetation"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "Explain how vegetation influences the natural environment (water cycle, soil, climate, biodiversity).",
+        "steps": [
+          "Water cycle: roots promote infiltration; canopy reduces runoff; transpiration adds moisture to air",
+          "Soil: roots hold soil, prevent erosion; leaf litter adds organic matter",
+          "Climate: trees absorb CO2, release O2, moderate temperature",
+          "Biodiversity: vegetation provides habitat and food for animals"
+        ],
+        "answer": "Vegetation regulates the water cycle, conserves soil, moderates climate, and supports biodiversity — all essential ecological services"
+      }
+    ],
+    "visualization": {
+      "type": "map",
+      "component": "VegetationIntroductionMap",
+      "desc": "Interactive altitude profile of Nepal showing vegetation zones, in-situ/ex-situ conservation sites, and the natural environment-vegetation interdependence with human-impact overlays."
+    }
+  },
+  "notes": [
+    "Vegetation introduction: the natural plant cover of a region; determined by climate, altitude, soil, and human activity.",
+    "Types of vegetation in Nepal: Terai subtropical (sal, grasslands), sub-montane (mixed deciduous), temperate (oak, rhododendron, chestnut), sub-alpine (pine, fir, juniper), alpine (meadows, dwarf shrubs, lichens), nival (bare rock, snow).",
+    "In-situ conservation: protecting vegetation in its natural location — protected areas, community forests, sacred groves.",
+    "Ex-situ conservation: conserving plant material outside the natural habitat — botanical gardens, seed banks, tissue culture, herbaria.",
+    "Natural environment-vegetation: the interdependence of climate, soil, water, and plants; vegetation regulates the water cycle, prevents erosion, stabilises the climate, and supports biodiversity.",
+    "Human activities affecting vegetation: deforestation (firewood, jhum/shifting agriculture, grazing, over-exploitation, illegal logging), habitat loss, climate change, invasive species, pollution.",
+    "Jhum (shifting/slash-and-burn) agriculture on hillsides causes severe erosion, landslides, and forest loss.",
+    "Over-grazing degrades alpine meadows; firewood collection degrades riparian forests.",
+    "Conservation strategies: protected areas, community forestry, anti-logging laws, reforestation, awareness, international agreements.",
+    "NEB focus: introduction to vegetation, types in Nepal, in-situ and ex-situ conservation, and the natural environment-vegetation relationship with human activities.",
+    "Importance of vegetation: oxygen, climate regulation, soil conservation, water, biodiversity, food, medicine, culture, and livelihood.",
+    "Nepal: ~64% of the country is forested; community forestry (22,000+ groups) manages ~36% of forest land."
+  ],
+  "confusion": [
+    "Vegetation is the NATURAL plant cover; plantations and cultivated crops are human-made, not natural vegetation.",
+    "In-situ conservation protects vegetation IN its natural habitat; ex-situ conserves plant material OUTSIDE.",
+    "Jhum (shifting) agriculture is a major cause of hill deforestation; it is different from permanent agriculture.",
+    "Over-grazing degrades alpine meadows; it is a separate threat from jhum.",
+    "Deforestation disrupts the water cycle and causes erosion, landslides, and climate change — not just loss of trees.",
+    "Community forests (in-situ) are community-managed; national parks are government-managed."
+  ],
+  "practice": [
+    "Define vegetation and state its determinants (climate, altitude, soil, human activity).",
+    "List Nepal's vegetation types by altitude.",
+    "Explain in-situ and ex-situ vegetation conservation.",
+    "Describe the natural environment-vegetation relationship.",
+    "Discuss the impact of human activities on Nepali vegetation.",
+    "Explain the importance of vegetation."
+  ],
+  "universalFacts": [
+    "~64% of Nepal's area is under forest; ~35% is evergreen.",
+    "Community forest groups (22,000+) manage ~36% of Nepal's forest land.",
+    "Jhum (shifting) agriculture is one of the leading causes of hill-slope deforestation and landslides in Nepal.",
+    "Vegetation regulates the water cycle, prevents erosion, and stabilises the climate — essential ecological services."
+  ],
   "examples": [
-    "Real-world example of 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Vegetation types: Terai (sal, grasslands), temperate (oak, rhododendron), sub-alpine (pine, fir), alpine (meadows, lichens), nival (bare rock).",
+    "In-situ: Chitwan, Sagarmatha, Annapurna national parks; community forests; sacred groves.",
+    "Ex-situ: Nepal National Herbarium, seed banks, botanical gardens, tissue-culture labs.",
+    "Human impact: jhum, over-grazing, firewood, illegal logging, climate change.",
+    "Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture."
   ],
   "practiceQuestions": [
-    "Practice question for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Define vegetation and state its determinants.",
+    "List Nepal's vegetation types by altitude.",
+    "Explain in-situ and ex-situ vegetation conservation.",
+    "Describe the natural environment-vegetation relationship.",
+    "Discuss the impact of human activities on Nepali vegetation.",
+    "Explain the importance of vegetation."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities)"
+    "Vegetation = natural plant cover; determined by climate + altitude + soil + human activity",
+    "Types in Nepal: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival",
+    "In-situ: protected areas + community forests + sacred groves",
+    "Ex-situ: botanical gardens + seed banks + tissue culture + herbaria",
+    "Human impact: jhum + grazing + firewood + logging + climate change + pollution"
   ],
   "keyPoints": [
-    "Core point for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Vegetation: natural plant cover; set by climate, altitude, soil, human activity.",
+    "Nepal types: Terai, sub-montane, temperate, sub-alpine, alpine, nival.",
+    "In-situ: protected areas, community forests, sacred groves.",
+    "Ex-situ: botanical gardens, seed banks, tissue culture, herbaria.",
+    "Natural environment-vegetation: water cycle, soil, climate, biodiversity.",
+    "Human impact: jhum, grazing, firewood, logging, climate change.",
+    "Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture."
   ],
-  "summary": "Summary of 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities.",
+  "summary": "Vegetation is the natural plant cover of a region, determined by climate, altitude, soil, and human activity. Nepal's vegetation is zoned by altitude: Terai (sal, grasslands), sub-montane, temperate (oak, rhododendron), sub-alpine (pine, fir), alpine (meadows, lichens), and nival (bare rock). Conservation includes in-situ (protected areas, community forests, sacred groves) and ex-situ (botanical gardens, seed banks, tissue culture, herbaria) strategies. Vegetation is vital to the natural environment — it regulates the water cycle, prevents erosion, stabilises the climate, and supports biodiversity. Human activities (jhum, grazing, firewood, logging, climate change) threaten vegetation. NEB focuses on vegetation introduction, types in Nepal, in-situ and ex-situ conservation, and the natural environment-vegetation relationship with human activities.",
   "specialNotes": [
-    "Specialized insight for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "NEB expects the definition of vegetation and its determinants (climate, altitude, soil, human activity).",
+    "List Nepal's vegetation types by altitude.",
+    "Differentiate in-situ from ex-situ conservation with Nepali examples.",
+    "Explain the natural environment-vegetation relationship (water cycle, soil, climate, biodiversity).",
+    "Discuss human activities affecting vegetation (jhum, grazing, firewood, logging, climate change).",
+    "State the importance of vegetation (oxygen, climate, soil, water, biodiversity, food, medicine)."
   ],
   "importantStatements": [
-    "Key statement for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Vegetation is the natural plant cover of a region, set by climate, altitude, soil, and human activity.",
+    "In-situ conservation protects vegetation in its natural habitat.",
+    "Vegetation is vital to the natural environment: it regulates the water cycle, prevents erosion, and stabilises the climate.",
+    "Human activities (jhum, grazing, firewood, logging) threaten Nepali vegetation."
   ],
   "importantNotes": [
-    "Important note regarding 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Define vegetation and state its determinants.",
+    "List Nepal's vegetation types by altitude.",
+    "Differentiate in-situ from ex-situ conservation.",
+    "Explain the natural environment-vegetation relationship.",
+    "Discuss human activities affecting vegetation.",
+    "State the importance of vegetation."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand In-situ and Ex-situ Conservation."
+    "Vegetation = natural plant cover (climate + altitude + soil + human activity).",
+    "Types: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival.",
+    "In-situ = IN habitat; Ex-situ = EX (outside) habitat.",
+    "Human impact = jhum + grazing + firewood + logging + climate change.",
+    "Importance = oxygen + climate + soil + water + biodiversity + food + medicine."
   ],
   "examNotes": [
-    "In-situ and Ex-situ Conservation is frequently tested.",
-    "Practice writing detailed answers."
+    "Define vegetation and state its determinants.",
+    "List Nepal's vegetation types by altitude.",
+    "Explain in-situ and ex-situ vegetation conservation.",
+    "Describe the natural environment-vegetation relationship.",
+    "Discuss the impact of human activities on Nepali vegetation.",
+    "Explain the importance of vegetation."
   ],
   "mcs": [
     {
-      "question": "Question about 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities?",
+      "question": "Vegetation is primarily determined by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Political boundaries",
+        "Climate, altitude, soil, and human activity",
+        "Only rainfall",
+        "Only temperature"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Jhum agriculture is a major cause of:",
+      "options": [
+        "Soil fertility",
+        "Hill deforestation and landslides",
+        "Biodiversity increase",
+        "Water purification"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In-situ vegetation conservation protects plant cover:",
+      "options": [
+        "In botanical gardens",
+        "In its natural habitat",
+        "In seed banks",
+        "In laboratories"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Vegetation regulates the water cycle by:",
+      "options": [
+        "Increasing erosion",
+        "Promoting infiltration and reducing runoff",
+        "Raising temperatures",
+        "Depleting soil"
+      ],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Vegetation definition and determinants",
+    "Nepal vegetation types (altitude)",
+    "In-situ vs ex-situ conservation",
+    "Natural environment-vegetation relationship",
+    "Human activities (jhum, grazing, logging)",
+    "Importance of vegetation",
+    "Water cycle and soil conservation",
+    "Community forestry"
   ],
   "importantTasks": [
-    "Task for studying 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities."
+    "Define vegetation and state determinants",
+    "List Nepal vegetation types",
+    "Differentiate in-situ vs ex-situ",
+    "Explain natural environment-vegetation",
+    "Discuss human impact",
+    "State importance of vegetation"
   ],
-  "duplicateType": 2,
-  "tabGroup": "01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
-  "mcqs": [
+  "exercises": [
     {
-      "question": "Question about 01 vegetation introduction types of vegetation in nepal in situ and ex situ conservation natural environment vegetation and human activities?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+      "id": "1",
+      "question": "Explain how vegetation influences the natural environment (water cycle, soil, climate, biodiversity).",
+      "steps": [
+        "Water cycle: roots promote infiltration; canopy reduces runoff; transpiration adds moisture to air",
+        "Soil: roots hold soil, prevent erosion; leaf litter adds organic matter",
+        "Climate: trees absorb CO2, release O2, moderate temperature",
+        "Biodiversity: vegetation provides habitat and food for animals"
       ],
-      "answer": "A"
+      "answer": "Vegetation regulates the water cycle, conserves soil, moderates climate, and supports biodiversity — all essential ecological services"
     }
   ]
 }

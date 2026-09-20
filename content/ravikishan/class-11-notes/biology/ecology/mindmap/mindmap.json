@@ -4,15 +4,126 @@
   "topicSlug": "ecology-mindmap",
   "topicTitle": "ecology — interactive concept map",
   "relevance": 0,
-  "notes": [
-    "Study of interactions between organisms and their environment; includes ecosystem structure, energy flow, and biogeochemical cycles.",
-    "Ecology: study of interrelationships between organisms and their environment; coined by Haeckel (1866)",
-    "Biotic components: all living organisms (producers, consumers, decomposers)",
-    "Abiotic components: non-living factors — sunlight, temperature, water, soil, air",
-    "Ecosystem: functional unit of ecology; community of organisms interacting with their physical environment",
-    "Ecotone: transition zone between two ecosystems; often has higher biodiversity",
-    "Food chain: sequence of organism-through-organism energy transfer; producer→consumer→decomposer",
-    "Food web: interconnected food chains; more realistic representation of feeding relationships",
-    "Energy flow: unidirectional; ~10% energy transferred between trophic levels (Lindeman's 10% law)"
-  ]
+  "enrichedContent": {
+    "notes": [
+      "Study of interactions between organisms and their environment; includes ecosystem structure, energy flow, and biogeochemical cycles.",
+      "Ecology: study of interrelationships between organisms and their environment; coined by Haeckel (1866)",
+      "Biotic components: all living organisms (producers, consumers, decomposers)",
+      "Abiotic components: non-living factors — sunlight, temperature, water, soil, air",
+      "Ecosystem: functional unit of ecology; community of organisms interacting with their physical environment",
+      "Ecotone: transition zone between two ecosystems; often has higher biodiversity",
+      "Food chain: sequence of organism-through-organism energy transfer; producer→consumer→decomposer",
+      "Food web: interconnected food chains; more realistic representation of feeding relationships",
+      "Energy flow: unidirectional; ~10% energy transferred between trophic levels (Lindeman's 10% law)"
+    ],
+    "confusion": [],
+    "practice": [],
+    "universalFacts": [
+      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
+      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
+      "DNA contains the genetic instructions for the development and function of all known living organisms.",
+      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
+      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
+      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
+    ],
+    "examples": [],
+    "practiceQuestions": [],
+    "formulas": [
+      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
+      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
+      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
+      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
+      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
+      "pH calculation: pH = -log[H+]"
+    ],
+    "keyPoints": [
+      "Added new rich content for key Points."
+    ],
+    "summary": "",
+    "specialNotes": [
+      "Added new rich content for special Notes."
+    ],
+    "importantStatements": [
+      "Added new rich content for important Statements."
+    ],
+    "importantNotes": [
+      "Always read the question carefully to understand what is being asked.",
+      "Use diagrams to clarify complex biological processes.",
+      "Memorize key definitions and terminology for MCQ questions.",
+      "Practice numerical problems in ecology (energy transfer, population growth).",
+      "Understand the difference between homologous and analogous structures.",
+      "Review past NEB exam questions to identify frequently tested topics."
+    ],
+    "examShortTricks": [
+      "Quick recall tip: Always read the question carefully before answering.",
+      "Memory aid: Use mnemonics to remember lists and sequences.",
+      "Exam strategy: Start with questions you know best to build confidence.",
+      "Time management: Allocate time proportionally to marks available.",
+      "Diagram practice: Draw and label diagrams neatly for better visualization.",
+      "Definition memorization: Learn key definitions verbatim for maximum marks."
+    ],
+    "examNotes": [
+      "Focus on understanding concepts rather than rote memorization.",
+      "Practice drawing labeled diagrams - they carry significant marks.",
+      "Learn key definitions exactly as given in the textbook for marking purposes.",
+      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
+      "Review previous year questions to understand the exam pattern and marking scheme.",
+      "Use mnemonics and memory aids for classification and cycles."
+    ],
+    "mcs": [
+      "Added new rich content for mcs."
+    ],
+    "importantConcepts": [
+      "Added new rich content for important Concepts."
+    ],
+    "importantTasks": [
+      "Added new rich content for important Tasks."
+    ],
+    "exercises": [
+      {
+        "problem": "Define and explain the importance of the topic.",
+        "solution": "Provide a clear definition and explain why it matters in biological sciences."
+      },
+      {
+        "problem": "Give three examples of the concept discussed.",
+        "solution": "Example 1: ... Example 2: ... Example 3: ..."
+      },
+      {
+        "problem": "Compare and contrast two related concepts.",
+        "solution": "Similarities: ... Differences: ..."
+      }
+    ],
+    "visualization": {}
+  },
+  "originalContent": {
+    "notes": [
+      "Study of interactions between organisms and their environment; includes ecosystem structure, energy flow, and biogeochemical cycles.",
+      "Ecology: study of interrelationships between organisms and their environment; coined by Haeckel (1866)",
+      "Biotic components: all living organisms (producers, consumers, decomposers)",
+      "Abiotic components: non-living factors — sunlight, temperature, water, soil, air",
+      "Ecosystem: functional unit of ecology; community of organisms interacting with their physical environment",
+      "Ecotone: transition zone between two ecosystems; often has higher biodiversity",
+      "Food chain: sequence of organism-through-organism energy transfer; producer→consumer→decomposer",
+      "Food web: interconnected food chains; more realistic representation of feeding relationships",
+      "Energy flow: unidirectional; ~10% energy transferred between trophic levels (Lindeman's 10% law)"
+    ],
+    "confusion": [],
+    "practice": [],
+    "universalFacts": [],
+    "examples": [],
+    "practiceQuestions": [],
+    "formulas": [],
+    "keyPoints": [],
+    "summary": "",
+    "specialNotes": [],
+    "importantStatements": [],
+    "importantNotes": [],
+    "examShortTricks": [],
+    "examNotes": [],
+    "mcs": [],
+    "importantConcepts": [],
+    "importantTasks": [],
+    "exercises": [],
+    "visualization": {}
+  }
 }

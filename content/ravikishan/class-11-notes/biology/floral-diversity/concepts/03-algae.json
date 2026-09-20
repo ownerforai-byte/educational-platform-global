@@ -4,190 +4,536 @@
   "topicSlug": "algae",
   "topicTitle": "Algae",
   "relevance": 100,
-  "notes": [
-    "Five kingdom classification (Whittaker, 1969).",
-    "Binomial nomenclature: Genus species.",
-    "Plant evolution: algae→bryophytes→pteridophytes→gymnosperms→angiosperms.",
-    "Double fertilization: zygote + endosperm."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 algae."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Rhododendron arboreum: Nepal national flower",
-    "Pinus: gymnosperm, timber industry"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 algae)"
-  ],
-  "keyPoints": [
-    "Core point for 03 algae."
-  ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
-  "specialNotes": [
-    "Specialized insight for 03 algae."
-  ],
-  "importantStatements": [
-    "Key statement for 03 algae."
-  ],
-  "importantNotes": [
-    "Important note regarding 03 algae."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Algae."
-  ],
-  "examNotes": [
-    "Algae is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 algae?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 algae."
-  ],
-  "importantTasks": [
-    "Task for studying 03 algae."
-  ],
   "duplicateType": 2,
   "tabGroup": "03-algae",
   "mcqs": [
     {
-      "question": "Question about 03 algae?",
+      "question": "The cell wall of diatoms is made of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Cellulose",
+        "Chitin",
+        "Silica (SiO₂)",
+        "Calcium carbonate"
       ],
-      "answer": "A"
+      "answer": "C"
+    },
+    {
+      "question": "Which pigment is characteristic of brown algae?",
+      "options": [
+        "Chlorophyll b",
+        "Fucoxanthin",
+        "Phycobilin",
+        "Carotene only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Algae are estimated to produce what percentage of Earth's oxygen?",
+      "options": [
+        "~10%",
+        "~25%",
+        "~50%",
+        "~90%"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Cyanobacteria differ from true algae because they are:",
+      "options": [
+        "Eukaryotic",
+        "Prokaryotic",
+        "Non-photosynthetic",
+        "Terrestrial"
+      ],
+      "answer": "B"
     }
   ],
-  "exercises": [],
-  "visualization": {
-    "type": "3d-model",
-    "component": "PlantKingdomViewer",
-    "desc": "Interactive plant classification explorer"
+  "visualType": "algae-types-diagram",
+  "enrichedContent": {
+    "notes": [
+      "Algae: photosynthetic, eukaryotic (mostly), aquatic or damp-environment organisms; no true roots, stems, or leaves.",
+      "Major groups: Chrysophyceae (diatoms, golden algae — silica cell walls), Pyrrophyceae (dinoflagellates — bioluminescence, red tides), Chlorophyceae (green algae — Chlorophyll a + b, starch storage).",
+      "Reproduction: asexual (spores, fragmentation) and sexual (isogamous, anisogamous, oogamous).",
+      "Ecological importance: primary producers in aquatic ecosystems; produce ~50% of Earth's oxygen; base of marine food chains.",
+      "Economic importance: food (agar, carrageenan, spirulina), industry (alginates, pigments), agriculture (biofertilisers — cyanobacteria in rice paddies).",
+      "In NEB syllabus: algae are studied as non-vascular, photosynthetic organisms before bryophytes."
+    ],
+    "confusion": [
+      "Algae are NOT plants in the strict sense: they lack true tissues, roots, and seeds. They are placed in Protista (or Plantae in some systems) depending on the classification used.",
+      "Cyanobacteria (blue-green algae) are prokaryotes, not true algae; they are in the domain Bacteria.",
+      "Dinoflagellates (Pyrrophyceae) can cause harmful algal blooms (red tides); most algae are harmless.",
+      "Chlorophyll content determines the group: green algae have chlorophyll a + b; brown algae (Phaeophyceae) have a + c + fucoxanthin.",
+      "Algal \"stems\" and \"leaves\" are not true vascular tissues; they are structural modifications."
+    ],
+    "practice": [
+      "Tabulate the three algal groups: pigment, storage product, example.",
+      "Explain the ecological importance of algae (5 points).",
+      "Differentiate asexual and sexual reproduction in green algae.",
+      "Describe the structure of a diatom cell.",
+      "List three economic uses of algae."
+    ],
+    "universalFacts": [
+      "Algae contribute approximately 50% of global primary oxygen production via photosynthesis.",
+      "Diatoms form the base of the oceanic food web; their silica shells accumulate as diatomaceous earth.",
+      "Spirulina, a blue-green alga (cyanobacterium), is a high-protein food supplement used in space missions.",
+      "Algal blooms can deplete oxygen in water bodies, causing mass fish kills (hypoxic events)."
+    ],
+    "examples": [
+      "Chlorella pyrenoidosa — green alga, used in bioremediation and food supplements.",
+      "Laminaria (kelp) — brown alga, source of alginates and iodine.",
+      "Porifera-like: Ulva (sea lettuce) — green alga, food in some tropical regions.",
+      "Diatom: Navicula — silica-walled, forms diatomaceous earth used in filtration."
+    ],
+    "practiceQuestions": [
+      "Why are algae considered the primary producers of aquatic ecosystems?",
+      "Differentiate Chrysophyceae from Pyrrophyceae (3 points).",
+      "Explain the ecological problem of algal blooms.",
+      "What is the storage product in green, brown, and red algae?",
+      "Describe the structure and reproduction of a diatom."
+    ],
+    "formulas": [
+      "Green algae: Chlorophyll a + b, store starch",
+      "Brown algae: Chlorophyll a + c + fucoxanthin, store laminarin",
+      "Red algae: Chlorophyll a + d + phycobilins, store floridean starch",
+      "Diatom cell wall: SiO₂ (silica)"
+    ],
+    "keyPoints": [
+      "Algae are photosynthetic, mostly aquatic, lack true vascular tissues.",
+      "Three major groups: Chrysophyceae, Pyrrophyceae, Chlorophyceae.",
+      "Ecological role: ~50% of Earth's O₂; base of aquatic food chains.",
+      "Reproduction: asexual (spores, fragmentation) + sexual (isogamy, anisogamy, oogamy).",
+      "Economic uses: food, industry (agar, alginates), biofertilisers.",
+      "Cyanobacteria ≠ true algae (prokaryotic vs eukaryotic)."
+    ],
+    "summary": "Algae are photosynthetic, mostly aquatic organisms that lack true roots, stems, and leaves. They are classified into Chrysophyceae (diatoms, golden algae), Pyrrophyceae (dinoflagellates), and Chlorophyceae (green algae). As primary producers, algae generate about half of the world's oxygen and form the base of aquatic food webs. Their economic importance spans food, industry, and agriculture. NEB examinations focus on algal classification, ecological role, and economic uses.",
+    "specialNotes": [
+      "NEB asks for a tabulation of algal groups with pigments, storage products, and examples.",
+      "The ecological importance of algae (O₂ production, food web base) is a frequent long-answer topic.",
+      "Algal blooms (eutrophication) are an environmental application question.",
+      "Differentiate cyanobacteria (prokaryotic) from true algae (eukaryotic)."
+    ],
+    "importantStatements": [
+      "Algae are the primary producers of most aquatic ecosystems.",
+      "They contribute approximately 50% of global oxygen via photosynthesis.",
+      "Diatoms have silica cell walls and form the base of the marine food web.",
+      "Algal blooms, caused by nutrient pollution, can lead to hypoxic dead zones."
+    ],
+    "importantNotes": [
+      "Memorise pigments and storage products for green, brown, and red algae.",
+      "Learn the ecological role of algae (O₂, food web, biogeochemical cycles).",
+      "Draw a diatom cell and a green alga (Chlamydomonas or Ulothrix).",
+      "List 3 economic uses and 1 environmental problem of algae."
+    ],
+    "examShortTricks": [
+      "Algae = A-O-A (Aquatic, Oxygen, Aquatic food base).",
+      "Green algae = starch; Brown = laminarin; Red = floridean starch.",
+      "Diatom = silica shell (SiO₂).",
+      "Cyanobacteria = blue-green = prokaryotic, NOT true algae."
+    ],
+    "examNotes": [
+      "Tabulate algal groups (pigment, storage, example, reproduction).",
+      "Explain the ecological importance of algae (5 points).",
+      "Describe algal blooms and their environmental impact.",
+      "Differentiate asexual and sexual reproduction in algae.",
+      "List economic uses of algae (food, industry, agriculture)."
+    ],
+    "mcs": [
+      {
+        "question": "The cell wall of diatoms is made of:",
+        "options": [
+          "Cellulose",
+          "Chitin",
+          "Silica (SiO₂)",
+          "Calcium carbonate"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Which pigment is characteristic of brown algae?",
+        "options": [
+          "Chlorophyll b",
+          "Fucoxanthin",
+          "Phycobilin",
+          "Carotene only"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Algae are estimated to produce what percentage of Earth's oxygen?",
+        "options": [
+          "~10%",
+          "~25%",
+          "~50%",
+          "~90%"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Cyanobacteria differ from true algae because they are:",
+        "options": [
+          "Eukaryotic",
+          "Prokaryotic",
+          "Non-photosynthetic",
+          "Terrestrial"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Algal classification (3 groups)",
+      "Pigments & storage products",
+      "Ecological role (O₂, food web)",
+      "Algal blooms",
+      "Reproduction (asexual/sexual)",
+      "Economic uses"
+    ],
+    "importantTasks": [
+      "Tabulate 3 algal groups",
+      "Explain ecological importance of algae",
+      "Describe algal blooms",
+      "Differentiate cyanobacteria from algae",
+      "List economic uses"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A pond turns green and fish die. What is the likely cause and explain the mechanism.",
+        "steps": [
+          "Excess nutrients (N, P) from agriculture/sewage",
+          "Algal bloom (eutrophication)",
+          "Algae die → decomposers use O₂",
+          "O₂ depletion → fish die (hypoxia)"
+        ],
+        "answer": "Eutrophication: algal bloom → O₂ depletion → fish death"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "AlgaeViewer",
+      "desc": "Rotatable 3D models of diatoms, green algae (Ulothrix), and dinoflagellates with labelled structures."
+    }
   },
-  "visualType": "algae-types-diagram"
+  "originalContent": {
+    "notes": [
+      "Algae: photosynthetic, eukaryotic (mostly), aquatic or damp-environment organisms; no true roots, stems, or leaves.",
+      "Major groups: Chrysophyceae (diatoms, golden algae — silica cell walls), Pyrrophyceae (dinoflagellates — bioluminescence, red tides), Chlorophyceae (green algae — Chlorophyll a + b, starch storage).",
+      "Reproduction: asexual (spores, fragmentation) and sexual (isogamous, anisogamous, oogamous).",
+      "Ecological importance: primary producers in aquatic ecosystems; produce ~50% of Earth's oxygen; base of marine food chains.",
+      "Economic importance: food (agar, carrageenan, spirulina), industry (alginates, pigments), agriculture (biofertilisers — cyanobacteria in rice paddies).",
+      "In NEB syllabus: algae are studied as non-vascular, photosynthetic organisms before bryophytes."
+    ],
+    "confusion": [
+      "Algae are NOT plants in the strict sense: they lack true tissues, roots, and seeds. They are placed in Protista (or Plantae in some systems) depending on the classification used.",
+      "Cyanobacteria (blue-green algae) are prokaryotes, not true algae; they are in the domain Bacteria.",
+      "Dinoflagellates (Pyrrophyceae) can cause harmful algal blooms (red tides); most algae are harmless.",
+      "Chlorophyll content determines the group: green algae have chlorophyll a + b; brown algae (Phaeophyceae) have a + c + fucoxanthin.",
+      "Algal \"stems\" and \"leaves\" are not true vascular tissues; they are structural modifications."
+    ],
+    "practice": [
+      "Tabulate the three algal groups: pigment, storage product, example.",
+      "Explain the ecological importance of algae (5 points).",
+      "Differentiate asexual and sexual reproduction in green algae.",
+      "Describe the structure of a diatom cell.",
+      "List three economic uses of algae."
+    ],
+    "universalFacts": [
+      "Algae contribute approximately 50% of global primary oxygen production via photosynthesis.",
+      "Diatoms form the base of the oceanic food web; their silica shells accumulate as diatomaceous earth.",
+      "Spirulina, a blue-green alga (cyanobacterium), is a high-protein food supplement used in space missions.",
+      "Algal blooms can deplete oxygen in water bodies, causing mass fish kills (hypoxic events)."
+    ],
+    "examples": [
+      "Chlorella pyrenoidosa — green alga, used in bioremediation and food supplements.",
+      "Laminaria (kelp) — brown alga, source of alginates and iodine.",
+      "Porifera-like: Ulva (sea lettuce) — green alga, food in some tropical regions.",
+      "Diatom: Navicula — silica-walled, forms diatomaceous earth used in filtration."
+    ],
+    "practiceQuestions": [
+      "Why are algae considered the primary producers of aquatic ecosystems?",
+      "Differentiate Chrysophyceae from Pyrrophyceae (3 points).",
+      "Explain the ecological problem of algal blooms.",
+      "What is the storage product in green, brown, and red algae?",
+      "Describe the structure and reproduction of a diatom."
+    ],
+    "formulas": [
+      "Green algae: Chlorophyll a + b, store starch",
+      "Brown algae: Chlorophyll a + c + fucoxanthin, store laminarin",
+      "Red algae: Chlorophyll a + d + phycobilins, store floridean starch",
+      "Diatom cell wall: SiO₂ (silica)"
+    ],
+    "keyPoints": [
+      "Algae are photosynthetic, mostly aquatic, lack true vascular tissues.",
+      "Three major groups: Chrysophyceae, Pyrrophyceae, Chlorophyceae.",
+      "Ecological role: ~50% of Earth's O₂; base of aquatic food chains.",
+      "Reproduction: asexual (spores, fragmentation) + sexual (isogamy, anisogamy, oogamy).",
+      "Economic uses: food, industry (agar, alginates), biofertilisers.",
+      "Cyanobacteria ≠ true algae (prokaryotic vs eukaryotic)."
+    ],
+    "summary": "Algae are photosynthetic, mostly aquatic organisms that lack true roots, stems, and leaves. They are classified into Chrysophyceae (diatoms, golden algae), Pyrrophyceae (dinoflagellates), and Chlorophyceae (green algae). As primary producers, algae generate about half of the world's oxygen and form the base of aquatic food webs. Their economic importance spans food, industry, and agriculture. NEB examinations focus on algal classification, ecological role, and economic uses.",
+    "specialNotes": [
+      "NEB asks for a tabulation of algal groups with pigments, storage products, and examples.",
+      "The ecological importance of algae (O₂ production, food web base) is a frequent long-answer topic.",
+      "Algal blooms (eutrophication) are an environmental application question.",
+      "Differentiate cyanobacteria (prokaryotic) from true algae (eukaryotic)."
+    ],
+    "importantStatements": [
+      "Algae are the primary producers of most aquatic ecosystems.",
+      "They contribute approximately 50% of global oxygen via photosynthesis.",
+      "Diatoms have silica cell walls and form the base of the marine food web.",
+      "Algal blooms, caused by nutrient pollution, can lead to hypoxic dead zones."
+    ],
+    "importantNotes": [
+      "Memorise pigments and storage products for green, brown, and red algae.",
+      "Learn the ecological role of algae (O₂, food web, biogeochemical cycles).",
+      "Draw a diatom cell and a green alga (Chlamydomonas or Ulothrix).",
+      "List 3 economic uses and 1 environmental problem of algae."
+    ],
+    "examShortTricks": [
+      "Algae = A-O-A (Aquatic, Oxygen, Aquatic food base).",
+      "Green algae = starch; Brown = laminarin; Red = floridean starch.",
+      "Diatom = silica shell (SiO₂).",
+      "Cyanobacteria = blue-green = prokaryotic, NOT true algae."
+    ],
+    "examNotes": [
+      "Tabulate algal groups (pigment, storage, example, reproduction).",
+      "Explain the ecological importance of algae (5 points).",
+      "Describe algal blooms and their environmental impact.",
+      "Differentiate asexual and sexual reproduction in algae.",
+      "List economic uses of algae (food, industry, agriculture)."
+    ],
+    "mcs": [
+      {
+        "question": "The cell wall of diatoms is made of:",
+        "options": [
+          "Cellulose",
+          "Chitin",
+          "Silica (SiO₂)",
+          "Calcium carbonate"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Which pigment is characteristic of brown algae?",
+        "options": [
+          "Chlorophyll b",
+          "Fucoxanthin",
+          "Phycobilin",
+          "Carotene only"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Algae are estimated to produce what percentage of Earth's oxygen?",
+        "options": [
+          "~10%",
+          "~25%",
+          "~50%",
+          "~90%"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Cyanobacteria differ from true algae because they are:",
+        "options": [
+          "Eukaryotic",
+          "Prokaryotic",
+          "Non-photosynthetic",
+          "Terrestrial"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Algal classification (3 groups)",
+      "Pigments & storage products",
+      "Ecological role (O₂, food web)",
+      "Algal blooms",
+      "Reproduction (asexual/sexual)",
+      "Economic uses"
+    ],
+    "importantTasks": [
+      "Tabulate 3 algal groups",
+      "Explain ecological importance of algae",
+      "Describe algal blooms",
+      "Differentiate cyanobacteria from algae",
+      "List economic uses"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A pond turns green and fish die. What is the likely cause and explain the mechanism.",
+        "steps": [
+          "Excess nutrients (N, P) from agriculture/sewage",
+          "Algal bloom (eutrophication)",
+          "Algae die → decomposers use O₂",
+          "O₂ depletion → fish die (hypoxia)"
+        ],
+        "answer": "Eutrophication: algal bloom → O₂ depletion → fish death"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "AlgaeViewer",
+      "desc": "Rotatable 3D models of diatoms, green algae (Ulothrix), and dinoflagellates with labelled structures."
+    }
+  },
+  "notes": [
+    "Algae: photosynthetic, eukaryotic (mostly), aquatic or damp-environment organisms; no true roots, stems, or leaves.",
+    "Major groups: Chrysophyceae (diatoms, golden algae — silica cell walls), Pyrrophyceae (dinoflagellates — bioluminescence, red tides), Chlorophyceae (green algae — Chlorophyll a + b, starch storage).",
+    "Reproduction: asexual (spores, fragmentation) and sexual (isogamous, anisogamous, oogamous).",
+    "Ecological importance: primary producers in aquatic ecosystems; produce ~50% of Earth's oxygen; base of marine food chains.",
+    "Economic importance: food (agar, carrageenan, spirulina), industry (alginates, pigments), agriculture (biofertilisers — cyanobacteria in rice paddies).",
+    "In NEB syllabus: algae are studied as non-vascular, photosynthetic organisms before bryophytes."
+  ],
+  "confusion": [
+    "Algae are NOT plants in the strict sense: they lack true tissues, roots, and seeds. They are placed in Protista (or Plantae in some systems) depending on the classification used.",
+    "Cyanobacteria (blue-green algae) are prokaryotes, not true algae; they are in the domain Bacteria.",
+    "Dinoflagellates (Pyrrophyceae) can cause harmful algal blooms (red tides); most algae are harmless.",
+    "Chlorophyll content determines the group: green algae have chlorophyll a + b; brown algae (Phaeophyceae) have a + c + fucoxanthin.",
+    "Algal \"stems\" and \"leaves\" are not true vascular tissues; they are structural modifications."
+  ],
+  "practice": [
+    "Tabulate the three algal groups: pigment, storage product, example.",
+    "Explain the ecological importance of algae (5 points).",
+    "Differentiate asexual and sexual reproduction in green algae.",
+    "Describe the structure of a diatom cell.",
+    "List three economic uses of algae."
+  ],
+  "universalFacts": [
+    "Algae contribute approximately 50% of global primary oxygen production via photosynthesis.",
+    "Diatoms form the base of the oceanic food web; their silica shells accumulate as diatomaceous earth.",
+    "Spirulina, a blue-green alga (cyanobacterium), is a high-protein food supplement used in space missions.",
+    "Algal blooms can deplete oxygen in water bodies, causing mass fish kills (hypoxic events)."
+  ],
+  "examples": [
+    "Chlorella pyrenoidosa — green alga, used in bioremediation and food supplements.",
+    "Laminaria (kelp) — brown alga, source of alginates and iodine.",
+    "Porifera-like: Ulva (sea lettuce) — green alga, food in some tropical regions.",
+    "Diatom: Navicula — silica-walled, forms diatomaceous earth used in filtration."
+  ],
+  "practiceQuestions": [
+    "Why are algae considered the primary producers of aquatic ecosystems?",
+    "Differentiate Chrysophyceae from Pyrrophyceae (3 points).",
+    "Explain the ecological problem of algal blooms.",
+    "What is the storage product in green, brown, and red algae?",
+    "Describe the structure and reproduction of a diatom."
+  ],
+  "formulas": [
+    "Green algae: Chlorophyll a + b, store starch",
+    "Brown algae: Chlorophyll a + c + fucoxanthin, store laminarin",
+    "Red algae: Chlorophyll a + d + phycobilins, store floridean starch",
+    "Diatom cell wall: SiO₂ (silica)"
+  ],
+  "keyPoints": [
+    "Algae are photosynthetic, mostly aquatic, lack true vascular tissues.",
+    "Three major groups: Chrysophyceae, Pyrrophyceae, Chlorophyceae.",
+    "Ecological role: ~50% of Earth's O₂; base of aquatic food chains.",
+    "Reproduction: asexual (spores, fragmentation) + sexual (isogamy, anisogamy, oogamy).",
+    "Economic uses: food, industry (agar, alginates), biofertilisers.",
+    "Cyanobacteria ≠ true algae (prokaryotic vs eukaryotic)."
+  ],
+  "summary": "Algae are photosynthetic, mostly aquatic organisms that lack true roots, stems, and leaves. They are classified into Chrysophyceae (diatoms, golden algae), Pyrrophyceae (dinoflagellates), and Chlorophyceae (green algae). As primary producers, algae generate about half of the world's oxygen and form the base of aquatic food webs. Their economic importance spans food, industry, and agriculture. NEB examinations focus on algal classification, ecological role, and economic uses.",
+  "specialNotes": [
+    "NEB asks for a tabulation of algal groups with pigments, storage products, and examples.",
+    "The ecological importance of algae (O₂ production, food web base) is a frequent long-answer topic.",
+    "Algal blooms (eutrophication) are an environmental application question.",
+    "Differentiate cyanobacteria (prokaryotic) from true algae (eukaryotic)."
+  ],
+  "importantStatements": [
+    "Algae are the primary producers of most aquatic ecosystems.",
+    "They contribute approximately 50% of global oxygen via photosynthesis.",
+    "Diatoms have silica cell walls and form the base of the marine food web.",
+    "Algal blooms, caused by nutrient pollution, can lead to hypoxic dead zones."
+  ],
+  "importantNotes": [
+    "Memorise pigments and storage products for green, brown, and red algae.",
+    "Learn the ecological role of algae (O₂, food web, biogeochemical cycles).",
+    "Draw a diatom cell and a green alga (Chlamydomonas or Ulothrix).",
+    "List 3 economic uses and 1 environmental problem of algae."
+  ],
+  "examShortTricks": [
+    "Algae = A-O-A (Aquatic, Oxygen, Aquatic food base).",
+    "Green algae = starch; Brown = laminarin; Red = floridean starch.",
+    "Diatom = silica shell (SiO₂).",
+    "Cyanobacteria = blue-green = prokaryotic, NOT true algae."
+  ],
+  "examNotes": [
+    "Tabulate algal groups (pigment, storage, example, reproduction).",
+    "Explain the ecological importance of algae (5 points).",
+    "Describe algal blooms and their environmental impact.",
+    "Differentiate asexual and sexual reproduction in algae.",
+    "List economic uses of algae (food, industry, agriculture)."
+  ],
+  "mcs": [
+    {
+      "question": "The cell wall of diatoms is made of:",
+      "options": [
+        "Cellulose",
+        "Chitin",
+        "Silica (SiO₂)",
+        "Calcium carbonate"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Which pigment is characteristic of brown algae?",
+      "options": [
+        "Chlorophyll b",
+        "Fucoxanthin",
+        "Phycobilin",
+        "Carotene only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Algae are estimated to produce what percentage of Earth's oxygen?",
+      "options": [
+        "~10%",
+        "~25%",
+        "~50%",
+        "~90%"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Cyanobacteria differ from true algae because they are:",
+      "options": [
+        "Eukaryotic",
+        "Prokaryotic",
+        "Non-photosynthetic",
+        "Terrestrial"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Algal classification (3 groups)",
+    "Pigments & storage products",
+    "Ecological role (O₂, food web)",
+    "Algal blooms",
+    "Reproduction (asexual/sexual)",
+    "Economic uses"
+  ],
+  "importantTasks": [
+    "Tabulate 3 algal groups",
+    "Explain ecological importance of algae",
+    "Describe algal blooms",
+    "Differentiate cyanobacteria from algae",
+    "List economic uses"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A pond turns green and fish die. What is the likely cause and explain the mechanism.",
+      "steps": [
+        "Excess nutrients (N, P) from agriculture/sewage",
+        "Algal bloom (eutrophication)",
+        "Algae die → decomposers use O₂",
+        "O₂ depletion → fish die (hypoxia)"
+      ],
+      "answer": "Eutrophication: algal bloom → O₂ depletion → fish death"
+    }
+  ]
 }

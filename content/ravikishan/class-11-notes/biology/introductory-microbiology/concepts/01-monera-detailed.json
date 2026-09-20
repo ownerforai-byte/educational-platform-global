@@ -4,196 +4,624 @@
   "topicSlug": "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
   "topicTitle": "Monera: General introduction, structure of bacterial cell, mode of nutrition, bacterial growth; cyanobacteria (blue green algae); Virus: General introduction, structure and importance of virus, bacteriophage",
   "relevance": 100,
-  "notes": [
-    "Monera: prokaryotes (bacteria, cyanobacteria).",
-    "Bacteria: cell wall (peptidoglycan), 70S ribosomes, binary fission.",
-    "Virus: acellular, protein coat + nucleic acid, obligate parasite.",
-    "Gram stain: positive (purple) vs negative (pink).",
-    "Biotechnology: insulin, vaccines, GMOs."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Cell wall is present in all cells. ✅ Cell wall is in plants, fungi, bacteria; absent in animal cells."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice comparing plant and animal cell structures.",
-    "Practice explaining osmosis and plasmolysis with diagrams."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
+  "mcqs": [
+    {
+      "question": "The outer membrane of Gram-negative bacteria contains:",
+      "options": [
+        "Peptidoglycan only",
+        "LPS (lipopolysaccharide)",
+        "Chitin",
+        "Cellulose"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The smallest known living cell is:",
+      "options": [
+        "E. coli",
+        "Mycoplasma",
+        "Nostoc",
+        "Staphylococcus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An endospore is:",
+      "options": [
+        "A mode of reproduction",
+        "A survival structure",
+        "A flagellum",
+        "A plasmid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cyanobacteria fix atmospheric nitrogen mainly in which structure?",
+      "options": [
+        "Chloroplast",
+        "Heterocyst",
+        "Nucleoid",
+        "Capsule"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "haber-process-flow",
+  "enrichedContent": {
+    "notes": [
+      "DETAILED MONERA (bacterial + cyanobacterial) STRUCTURE AND PHYSIOLOGY.",
+      "Bacterial cell (Gram-negative example, E. coli): capsule (slime layer, polysaccharide, virulence) → cell wall (thin peptidoglycan + outer LPS membrane with porins) → plasma membrane (phospholipid + proteins, respiratory + metabolic enzymes) → cytoplasm (70S ribosomes, plasmids, nucleoid).",
+      "Bacterial cell (Gram-positive example, Staphylococcus): capsule → thick peptidoglycan cell wall (no outer membrane) → plasma membrane → cytoplasm; mesosomes (invaginations, respiration/secretion).",
+      "Pili (fimbriae): short, many; attachment + conjugation (sex pilus); flagella: 1–many; locomotion (peritrichous, polar, lophotrichous).",
+      "Nucleoid: naked, circular, double-stranded DNA; no histones; 1–10 plasmids (small circular DNA, carry antibiotic-resistance + virulence genes).",
+      "Shapes: cocci (diplococci, streptococci, staphylococci, tetrads, sarcinae), bacilli (diplobacilli, streptobacilli), spirilla (spiral, rigid), spirochaetes (spiral, flexible).",
+      "Nutrition: autotrophs (photoautotrophs — cyanobacteria; chemoautotrophs — nitrifiers) + heterotrophs (saprophytes, parasites).",
+      "Growth curve: lag (adaptation) → log (exponential, 2ⁿ) → stationary (nutrient depletion + waste) → death (lysis); generation time (E. coli ~20 min).",
+      "Reproduction: asexual (binary fission, budding in some) + genetic exchange (conjugation [F+ → F-], transformation [DNA uptake], transduction [phage-mediated]).",
+      "Endospores: dormant, resistant structures (Bacillus, Clostridium); survive heat, radiation, chemicals; germinate when conditions improve.",
+      "Cyanobacteria: photosynthetic (chlorophyll a + phycobilins); Nostoc (beaded filaments), Anabaena (heterocysts for N2 fixation), Oscillatoria (trichoid); important in rice paddies as biofertilisers.",
+      "Mycoplasma: no cell wall; smallest living cell; pleomorphic; causes atypical pneumonia.",
+      "Archaebacteria: extreme environments (halophiles, thermoacidophiles, methanogens); no peptidoglycan; membrane lipids (ether linkages).",
+      "NEB focus: detailed bacterial cell (Gram + and -), shapes, nutrition, growth curve, reproduction, cyanobacteria, mycoplasma, and archaebacteria."
+    ],
+    "confusion": [
+      "Gram-positive = THICK peptidoglycan (retains crystal violet, purple); Gram-negative = THIN peptidoglycan + outer LPS membrane (stains pink with safranin).",
+      "Mesosomes are invaginations of the plasma membrane; they are NOT true organelles (no membrane-bound structure).",
+      "Plasmids are small circular DNA; they are NOT the chromosome (nucleoid).",
+      "Endospores are NOT a mode of reproduction; they are survival structures (one endospore → one bacterium).",
+      "Cyanobacteria are PROKARYOTES (Bacteria domain), NOT true algae; they have no membrane-bound organelles.",
+      "Mycoplasma has NO cell wall; it is the smallest known living cell (0.1–0.3 µm).",
+      "Archaebacteria differ from eubacteria in cell wall (no peptidoglycan) and membrane lipids (ether linkages); they live in extreme environments.",
+      "Binary fission produces two genetically identical daughter cells; conjugation transfers DNA but does NOT increase cell number."
+    ],
+    "practice": [
+      "Draw and label a detailed Gram-negative bacterium (capsule, LPS, peptidoglycan, membrane, nucleoid, plasmid, ribosomes, flagella, pili).",
+      "Draw and label a Gram-positive bacterium (thick peptidoglycan, mesosomes).",
+      "Differentiate Gram +ve and -ve bacteria (4 points).",
+      "Describe the bacterial growth curve (4 phases) with a diagram.",
+      "Explain the three modes of bacterial genetic exchange (conjugation, transformation, transduction).",
+      "Describe cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role."
+    ],
+    "universalFacts": [
+      "Bacteria are the oldest and most abundant life form on Earth (~3.5 billion years).",
+      "A single E. coli cell can divide in ~20 minutes under optimal conditions.",
+      "More than 99% of the organisms on Earth are prokaryotes.",
+      "Mycoplasma (0.1–0.3 µm) is the smallest known living cell."
+    ],
+    "examples": [
+      "Gram-negative: E. coli (rod, peritrichous flagella, LPS outer membrane).",
+      "Gram-positive: Staphylococcus aureus (coccus, clusters, thick peptidoglycan, mesosomes).",
+      "Cyanobacteria: Nostoc (beaded filaments), Anabaena (heterocysts for N2 fixation), Oscillatoria (trichoid).",
+      "Mycoplasma pneumoniae: no wall, pleomorphic, atypical pneumonia.",
+      "Archaebacteria: Halobacterium (salt lakes), Thermoplasma (hot springs), Methanobacterium (anaerobic, methane).",
+      "Endospore formers: Bacillus (soil, aerobic), Clostridium (anaerobic, e.g., C. botulinum, C. tetani)."
+    ],
+    "practiceQuestions": [
+      "Describe the detailed structure of a Gram-negative bacterium.",
+      "Differentiate Gram +ve and -ve bacteria.",
+      "Explain the bacterial growth curve (4 phases).",
+      "Describe the three modes of bacterial genetic exchange.",
+      "Explain the role of cyanobacteria in nitrogen fixation.",
+      "What are endospores and why are they important?"
+    ],
+    "formulas": [
+      "Gram -ve: capsule + LPS + thin peptidoglycan + membrane + cytoplasm (70S ribosomes, plasmids, nucleoid)",
+      "Gram +ve: capsule + thick peptidoglycan + membrane + mesosomes + cytoplasm",
+      "Growth: lag → log (2ⁿ) → stationary → death",
+      "Genetic exchange: conjugation (F+ → F-), transformation (DNA uptake), transduction (phage)"
+    ],
+    "keyPoints": [
+      "Bacterial cell: capsule → wall (peptidoglycan) → membrane → cytoplasm (nucleoid, plasmids, 70S ribosomes).",
+      "Gram +ve: thick peptidoglycan (purple); Gram -ve: thin + LPS (pink).",
+      "Shapes: cocci, bacilli, spirilla, spirochaetes; arrangements: diplo-, strepto-, staphylo-.",
+      "Nutrition: autotrophs (photo/chemo) + heterotrophs (saprophytes, parasites).",
+      "Growth curve: lag, log, stationary, death; generation time (E. coli ~20 min).",
+      "Reproduction: binary fission (asexual) + conjugation/transformation/transduction (genetic exchange).",
+      "Endospores: dormant, resistant; survival, not reproduction.",
+      "Cyanobacteria: photosynthetic + nitrogen-fixing (Nostoc, Anabaena).",
+      "Mycoplasma: no wall, smallest living cell; Archaebacteria: extreme environments."
+    ],
+    "summary": "A detailed study of Monera reveals the bacterial cell in all its complexity: a capsule, peptidoglycan wall (thick in Gram +ve, thin + LPS in Gram -ve), plasma membrane (with mesosomes in Gram +ve), and cytoplasm containing the naked nucleoid, plasmids, and 70S ribosomes. Bacteria show diverse shapes (cocci, bacilli, spirilla) and arrangements, feed by autotrophy or heterotrophy, and grow through a 4-phase curve (lag, log, stationary, death). They reproduce asexually by binary fission and exchange genes by conjugation, transformation, and transduction. Endospores (Bacillus, Clostridium) are survival structures. Cyanobacteria (Nostoc, Anabaena) photosynthesise and fix nitrogen; Mycoplasma (no wall) is the smallest living cell; archaebacteria thrive in extreme environments. NEB focuses on the detailed bacterial cell, shapes, nutrition, growth, reproduction, cyanobacteria, and special groups.",
+    "specialNotes": [
+      "NEB expects detailed Gram + and - bacterium diagrams plus the growth curve.",
+      "Gram-staining differentiation (+ve vs -ve) is a very common short-answer.",
+      "The three modes of genetic exchange (conjugation, transformation, transduction) are a frequent question.",
+      "Cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role are frequently asked.",
+      "Endospores (Bacillus, Clostridium) are survival structures, NOT reproduction.",
+      "Mycoplasma (no wall) and archaebacteria (extreme environments) are special groups."
+    ],
+    "importantStatements": [
+      "The bacterial cell has a capsule, peptidoglycan wall, plasma membrane, and cytoplasm with a naked nucleoid.",
+      "Gram-positive bacteria have a thick peptidoglycan; Gram-negative have a thin one plus an outer LPS membrane.",
+      "Bacteria reproduce by binary fission and exchange genes by conjugation, transformation, and transduction.",
+      "Cyanobacteria are photosynthetic, nitrogen-fixing prokaryotes."
+    ],
+    "importantNotes": [
+      "Memorise the detailed Gram + and - cell structure.",
+      "Learn bacterial shapes and arrangements.",
+      "Draw the 4-phase growth curve.",
+      "Explain the three modes of genetic exchange.",
+      "Note the role of cyanobacteria in nitrogen fixation.",
+      "Distinguish endospores (survival) from binary fission (reproduction)."
+    ],
+    "examShortTricks": [
+      "Bacterial cell = C-W-M-C (Capsule, Wall, Membrane, Cytoplasm).",
+      "Gram +ve = thick wall = purple; Gram -ve = thin + LPS = pink.",
+      "Growth = lag, log, stationary, death (4 phases).",
+      "Genetic exchange = C-T-T (Conjugation, Transformation, Transduction).",
+      "Endospore = survival (not reproduction).",
+      "Mycoplasma = no wall = smallest living cell."
+    ],
+    "examNotes": [
+      "Draw and label a detailed Gram-negative bacterium.",
+      "Draw and label a Gram-positive bacterium.",
+      "Differentiate Gram +ve and -ve bacteria (4 points).",
+      "Describe the bacterial growth curve (4 phases).",
+      "Explain the three modes of genetic exchange.",
+      "Explain the role of cyanobacteria in nitrogen fixation.",
+      "What are endospores and why are they important?"
+    ],
+    "mcs": [
+      {
+        "question": "The outer membrane of Gram-negative bacteria contains:",
+        "options": [
+          "Peptidoglycan only",
+          "LPS (lipopolysaccharide)",
+          "Chitin",
+          "Cellulose"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The smallest known living cell is:",
+        "options": [
+          "E. coli",
+          "Mycoplasma",
+          "Nostoc",
+          "Staphylococcus"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "An endospore is:",
+        "options": [
+          "A mode of reproduction",
+          "A survival structure",
+          "A flagellum",
+          "A plasmid"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Cyanobacteria fix atmospheric nitrogen mainly in which structure?",
+        "options": [
+          "Chloroplast",
+          "Heterocyst",
+          "Nucleoid",
+          "Capsule"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Detailed bacterial cell (Gram + and -)",
+      "Shapes and arrangements",
+      "Nutrition modes",
+      "Growth curve (4 phases)",
+      "Binary fission",
+      "Genetic exchange (conjugation, transformation, transduction)",
+      "Endospores",
+      "Cyanobacteria (Nostoc, Anabaena)",
+      "Mycoplasma",
+      "Archaebacteria"
+    ],
+    "importantTasks": [
+      "Label detailed Gram - bacterium",
+      "Label Gram + bacterium",
+      "Differentiate Gram + and -",
+      "Draw the growth curve",
+      "Explain 3 genetic-exchange modes",
+      "Explain cyanobacteria N2 fixation"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A bacterial culture is grown in a nutrient broth. After 3 hours (generation time 30 min), how many generations have occurred and how many cells are there if it started with 100 cells?",
+        "steps": [
+          "3 hours = 180 min",
+          "180 / 30 = 6 generations",
+          "N = N0 × 2^n = 100 × 2^6 = 100 × 64"
+        ],
+        "answer": "6 generations; 6,400 cells"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "BacteriumDetailedViewer",
+      "desc": "High-detail 3D Gram-negative and Gram-positive bacteria with all layers (capsule, LPS, peptidoglycan, membrane, mesosomes, nucleoid, plasmids, flagella, pili); includes a 4-phase growth-curve animation and a genetic-exchange simulation."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "DETAILED MONERA (bacterial + cyanobacterial) STRUCTURE AND PHYSIOLOGY.",
+      "Bacterial cell (Gram-negative example, E. coli): capsule (slime layer, polysaccharide, virulence) → cell wall (thin peptidoglycan + outer LPS membrane with porins) → plasma membrane (phospholipid + proteins, respiratory + metabolic enzymes) → cytoplasm (70S ribosomes, plasmids, nucleoid).",
+      "Bacterial cell (Gram-positive example, Staphylococcus): capsule → thick peptidoglycan cell wall (no outer membrane) → plasma membrane → cytoplasm; mesosomes (invaginations, respiration/secretion).",
+      "Pili (fimbriae): short, many; attachment + conjugation (sex pilus); flagella: 1–many; locomotion (peritrichous, polar, lophotrichous).",
+      "Nucleoid: naked, circular, double-stranded DNA; no histones; 1–10 plasmids (small circular DNA, carry antibiotic-resistance + virulence genes).",
+      "Shapes: cocci (diplococci, streptococci, staphylococci, tetrads, sarcinae), bacilli (diplobacilli, streptobacilli), spirilla (spiral, rigid), spirochaetes (spiral, flexible).",
+      "Nutrition: autotrophs (photoautotrophs — cyanobacteria; chemoautotrophs — nitrifiers) + heterotrophs (saprophytes, parasites).",
+      "Growth curve: lag (adaptation) → log (exponential, 2ⁿ) → stationary (nutrient depletion + waste) → death (lysis); generation time (E. coli ~20 min).",
+      "Reproduction: asexual (binary fission, budding in some) + genetic exchange (conjugation [F+ → F-], transformation [DNA uptake], transduction [phage-mediated]).",
+      "Endospores: dormant, resistant structures (Bacillus, Clostridium); survive heat, radiation, chemicals; germinate when conditions improve.",
+      "Cyanobacteria: photosynthetic (chlorophyll a + phycobilins); Nostoc (beaded filaments), Anabaena (heterocysts for N2 fixation), Oscillatoria (trichoid); important in rice paddies as biofertilisers.",
+      "Mycoplasma: no cell wall; smallest living cell; pleomorphic; causes atypical pneumonia.",
+      "Archaebacteria: extreme environments (halophiles, thermoacidophiles, methanogens); no peptidoglycan; membrane lipids (ether linkages).",
+      "NEB focus: detailed bacterial cell (Gram + and -), shapes, nutrition, growth curve, reproduction, cyanobacteria, mycoplasma, and archaebacteria."
+    ],
+    "confusion": [
+      "Gram-positive = THICK peptidoglycan (retains crystal violet, purple); Gram-negative = THIN peptidoglycan + outer LPS membrane (stains pink with safranin).",
+      "Mesosomes are invaginations of the plasma membrane; they are NOT true organelles (no membrane-bound structure).",
+      "Plasmids are small circular DNA; they are NOT the chromosome (nucleoid).",
+      "Endospores are NOT a mode of reproduction; they are survival structures (one endospore → one bacterium).",
+      "Cyanobacteria are PROKARYOTES (Bacteria domain), NOT true algae; they have no membrane-bound organelles.",
+      "Mycoplasma has NO cell wall; it is the smallest known living cell (0.1–0.3 µm).",
+      "Archaebacteria differ from eubacteria in cell wall (no peptidoglycan) and membrane lipids (ether linkages); they live in extreme environments.",
+      "Binary fission produces two genetically identical daughter cells; conjugation transfers DNA but does NOT increase cell number."
+    ],
+    "practice": [
+      "Draw and label a detailed Gram-negative bacterium (capsule, LPS, peptidoglycan, membrane, nucleoid, plasmid, ribosomes, flagella, pili).",
+      "Draw and label a Gram-positive bacterium (thick peptidoglycan, mesosomes).",
+      "Differentiate Gram +ve and -ve bacteria (4 points).",
+      "Describe the bacterial growth curve (4 phases) with a diagram.",
+      "Explain the three modes of bacterial genetic exchange (conjugation, transformation, transduction).",
+      "Describe cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role."
+    ],
+    "universalFacts": [
+      "Bacteria are the oldest and most abundant life form on Earth (~3.5 billion years).",
+      "A single E. coli cell can divide in ~20 minutes under optimal conditions.",
+      "More than 99% of the organisms on Earth are prokaryotes.",
+      "Mycoplasma (0.1–0.3 µm) is the smallest known living cell."
+    ],
+    "examples": [
+      "Gram-negative: E. coli (rod, peritrichous flagella, LPS outer membrane).",
+      "Gram-positive: Staphylococcus aureus (coccus, clusters, thick peptidoglycan, mesosomes).",
+      "Cyanobacteria: Nostoc (beaded filaments), Anabaena (heterocysts for N2 fixation), Oscillatoria (trichoid).",
+      "Mycoplasma pneumoniae: no wall, pleomorphic, atypical pneumonia.",
+      "Archaebacteria: Halobacterium (salt lakes), Thermoplasma (hot springs), Methanobacterium (anaerobic, methane).",
+      "Endospore formers: Bacillus (soil, aerobic), Clostridium (anaerobic, e.g., C. botulinum, C. tetani)."
+    ],
+    "practiceQuestions": [
+      "Describe the detailed structure of a Gram-negative bacterium.",
+      "Differentiate Gram +ve and -ve bacteria.",
+      "Explain the bacterial growth curve (4 phases).",
+      "Describe the three modes of bacterial genetic exchange.",
+      "Explain the role of cyanobacteria in nitrogen fixation.",
+      "What are endospores and why are they important?"
+    ],
+    "formulas": [
+      "Gram -ve: capsule + LPS + thin peptidoglycan + membrane + cytoplasm (70S ribosomes, plasmids, nucleoid)",
+      "Gram +ve: capsule + thick peptidoglycan + membrane + mesosomes + cytoplasm",
+      "Growth: lag → log (2ⁿ) → stationary → death",
+      "Genetic exchange: conjugation (F+ → F-), transformation (DNA uptake), transduction (phage)"
+    ],
+    "keyPoints": [
+      "Bacterial cell: capsule → wall (peptidoglycan) → membrane → cytoplasm (nucleoid, plasmids, 70S ribosomes).",
+      "Gram +ve: thick peptidoglycan (purple); Gram -ve: thin + LPS (pink).",
+      "Shapes: cocci, bacilli, spirilla, spirochaetes; arrangements: diplo-, strepto-, staphylo-.",
+      "Nutrition: autotrophs (photo/chemo) + heterotrophs (saprophytes, parasites).",
+      "Growth curve: lag, log, stationary, death; generation time (E. coli ~20 min).",
+      "Reproduction: binary fission (asexual) + conjugation/transformation/transduction (genetic exchange).",
+      "Endospores: dormant, resistant; survival, not reproduction.",
+      "Cyanobacteria: photosynthetic + nitrogen-fixing (Nostoc, Anabaena).",
+      "Mycoplasma: no wall, smallest living cell; Archaebacteria: extreme environments."
+    ],
+    "summary": "A detailed study of Monera reveals the bacterial cell in all its complexity: a capsule, peptidoglycan wall (thick in Gram +ve, thin + LPS in Gram -ve), plasma membrane (with mesosomes in Gram +ve), and cytoplasm containing the naked nucleoid, plasmids, and 70S ribosomes. Bacteria show diverse shapes (cocci, bacilli, spirilla) and arrangements, feed by autotrophy or heterotrophy, and grow through a 4-phase curve (lag, log, stationary, death). They reproduce asexually by binary fission and exchange genes by conjugation, transformation, and transduction. Endospores (Bacillus, Clostridium) are survival structures. Cyanobacteria (Nostoc, Anabaena) photosynthesise and fix nitrogen; Mycoplasma (no wall) is the smallest living cell; archaebacteria thrive in extreme environments. NEB focuses on the detailed bacterial cell, shapes, nutrition, growth, reproduction, cyanobacteria, and special groups.",
+    "specialNotes": [
+      "NEB expects detailed Gram + and - bacterium diagrams plus the growth curve.",
+      "Gram-staining differentiation (+ve vs -ve) is a very common short-answer.",
+      "The three modes of genetic exchange (conjugation, transformation, transduction) are a frequent question.",
+      "Cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role are frequently asked.",
+      "Endospores (Bacillus, Clostridium) are survival structures, NOT reproduction.",
+      "Mycoplasma (no wall) and archaebacteria (extreme environments) are special groups."
+    ],
+    "importantStatements": [
+      "The bacterial cell has a capsule, peptidoglycan wall, plasma membrane, and cytoplasm with a naked nucleoid.",
+      "Gram-positive bacteria have a thick peptidoglycan; Gram-negative have a thin one plus an outer LPS membrane.",
+      "Bacteria reproduce by binary fission and exchange genes by conjugation, transformation, and transduction.",
+      "Cyanobacteria are photosynthetic, nitrogen-fixing prokaryotes."
+    ],
+    "importantNotes": [
+      "Memorise the detailed Gram + and - cell structure.",
+      "Learn bacterial shapes and arrangements.",
+      "Draw the 4-phase growth curve.",
+      "Explain the three modes of genetic exchange.",
+      "Note the role of cyanobacteria in nitrogen fixation.",
+      "Distinguish endospores (survival) from binary fission (reproduction)."
+    ],
+    "examShortTricks": [
+      "Bacterial cell = C-W-M-C (Capsule, Wall, Membrane, Cytoplasm).",
+      "Gram +ve = thick wall = purple; Gram -ve = thin + LPS = pink.",
+      "Growth = lag, log, stationary, death (4 phases).",
+      "Genetic exchange = C-T-T (Conjugation, Transformation, Transduction).",
+      "Endospore = survival (not reproduction).",
+      "Mycoplasma = no wall = smallest living cell."
+    ],
+    "examNotes": [
+      "Draw and label a detailed Gram-negative bacterium.",
+      "Draw and label a Gram-positive bacterium.",
+      "Differentiate Gram +ve and -ve bacteria (4 points).",
+      "Describe the bacterial growth curve (4 phases).",
+      "Explain the three modes of genetic exchange.",
+      "Explain the role of cyanobacteria in nitrogen fixation.",
+      "What are endospores and why are they important?"
+    ],
+    "mcs": [
+      {
+        "question": "The outer membrane of Gram-negative bacteria contains:",
+        "options": [
+          "Peptidoglycan only",
+          "LPS (lipopolysaccharide)",
+          "Chitin",
+          "Cellulose"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The smallest known living cell is:",
+        "options": [
+          "E. coli",
+          "Mycoplasma",
+          "Nostoc",
+          "Staphylococcus"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "An endospore is:",
+        "options": [
+          "A mode of reproduction",
+          "A survival structure",
+          "A flagellum",
+          "A plasmid"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Cyanobacteria fix atmospheric nitrogen mainly in which structure?",
+        "options": [
+          "Chloroplast",
+          "Heterocyst",
+          "Nucleoid",
+          "Capsule"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Detailed bacterial cell (Gram + and -)",
+      "Shapes and arrangements",
+      "Nutrition modes",
+      "Growth curve (4 phases)",
+      "Binary fission",
+      "Genetic exchange (conjugation, transformation, transduction)",
+      "Endospores",
+      "Cyanobacteria (Nostoc, Anabaena)",
+      "Mycoplasma",
+      "Archaebacteria"
+    ],
+    "importantTasks": [
+      "Label detailed Gram - bacterium",
+      "Label Gram + bacterium",
+      "Differentiate Gram + and -",
+      "Draw the growth curve",
+      "Explain 3 genetic-exchange modes",
+      "Explain cyanobacteria N2 fixation"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A bacterial culture is grown in a nutrient broth. After 3 hours (generation time 30 min), how many generations have occurred and how many cells are there if it started with 100 cells?",
+        "steps": [
+          "3 hours = 180 min",
+          "180 / 30 = 6 generations",
+          "N = N0 × 2^n = 100 × 2^6 = 100 × 64"
+        ],
+        "answer": "6 generations; 6,400 cells"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "BacteriumDetailedViewer",
+      "desc": "High-detail 3D Gram-negative and Gram-positive bacteria with all layers (capsule, LPS, peptidoglycan, membrane, mesosomes, nucleoid, plasmids, flagella, pili); includes a 4-phase growth-curve animation and a genetic-exchange simulation."
+    }
+  },
+  "notes": [
+    "DETAILED MONERA (bacterial + cyanobacterial) STRUCTURE AND PHYSIOLOGY.",
+    "Bacterial cell (Gram-negative example, E. coli): capsule (slime layer, polysaccharide, virulence) → cell wall (thin peptidoglycan + outer LPS membrane with porins) → plasma membrane (phospholipid + proteins, respiratory + metabolic enzymes) → cytoplasm (70S ribosomes, plasmids, nucleoid).",
+    "Bacterial cell (Gram-positive example, Staphylococcus): capsule → thick peptidoglycan cell wall (no outer membrane) → plasma membrane → cytoplasm; mesosomes (invaginations, respiration/secretion).",
+    "Pili (fimbriae): short, many; attachment + conjugation (sex pilus); flagella: 1–many; locomotion (peritrichous, polar, lophotrichous).",
+    "Nucleoid: naked, circular, double-stranded DNA; no histones; 1–10 plasmids (small circular DNA, carry antibiotic-resistance + virulence genes).",
+    "Shapes: cocci (diplococci, streptococci, staphylococci, tetrads, sarcinae), bacilli (diplobacilli, streptobacilli), spirilla (spiral, rigid), spirochaetes (spiral, flexible).",
+    "Nutrition: autotrophs (photoautotrophs — cyanobacteria; chemoautotrophs — nitrifiers) + heterotrophs (saprophytes, parasites).",
+    "Growth curve: lag (adaptation) → log (exponential, 2ⁿ) → stationary (nutrient depletion + waste) → death (lysis); generation time (E. coli ~20 min).",
+    "Reproduction: asexual (binary fission, budding in some) + genetic exchange (conjugation [F+ → F-], transformation [DNA uptake], transduction [phage-mediated]).",
+    "Endospores: dormant, resistant structures (Bacillus, Clostridium); survive heat, radiation, chemicals; germinate when conditions improve.",
+    "Cyanobacteria: photosynthetic (chlorophyll a + phycobilins); Nostoc (beaded filaments), Anabaena (heterocysts for N2 fixation), Oscillatoria (trichoid); important in rice paddies as biofertilisers.",
+    "Mycoplasma: no cell wall; smallest living cell; pleomorphic; causes atypical pneumonia.",
+    "Archaebacteria: extreme environments (halophiles, thermoacidophiles, methanogens); no peptidoglycan; membrane lipids (ether linkages).",
+    "NEB focus: detailed bacterial cell (Gram + and -), shapes, nutrition, growth curve, reproduction, cyanobacteria, mycoplasma, and archaebacteria."
+  ],
+  "confusion": [
+    "Gram-positive = THICK peptidoglycan (retains crystal violet, purple); Gram-negative = THIN peptidoglycan + outer LPS membrane (stains pink with safranin).",
+    "Mesosomes are invaginations of the plasma membrane; they are NOT true organelles (no membrane-bound structure).",
+    "Plasmids are small circular DNA; they are NOT the chromosome (nucleoid).",
+    "Endospores are NOT a mode of reproduction; they are survival structures (one endospore → one bacterium).",
+    "Cyanobacteria are PROKARYOTES (Bacteria domain), NOT true algae; they have no membrane-bound organelles.",
+    "Mycoplasma has NO cell wall; it is the smallest known living cell (0.1–0.3 µm).",
+    "Archaebacteria differ from eubacteria in cell wall (no peptidoglycan) and membrane lipids (ether linkages); they live in extreme environments.",
+    "Binary fission produces two genetically identical daughter cells; conjugation transfers DNA but does NOT increase cell number."
+  ],
+  "practice": [
+    "Draw and label a detailed Gram-negative bacterium (capsule, LPS, peptidoglycan, membrane, nucleoid, plasmid, ribosomes, flagella, pili).",
+    "Draw and label a Gram-positive bacterium (thick peptidoglycan, mesosomes).",
+    "Differentiate Gram +ve and -ve bacteria (4 points).",
+    "Describe the bacterial growth curve (4 phases) with a diagram.",
+    "Explain the three modes of bacterial genetic exchange (conjugation, transformation, transduction).",
+    "Describe cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role."
+  ],
+  "universalFacts": [
+    "Bacteria are the oldest and most abundant life form on Earth (~3.5 billion years).",
+    "A single E. coli cell can divide in ~20 minutes under optimal conditions.",
+    "More than 99% of the organisms on Earth are prokaryotes.",
+    "Mycoplasma (0.1–0.3 µm) is the smallest known living cell."
+  ],
   "examples": [
-    "E. coli: model organism",
-    "T4 bacteriophage: lytic cycle in 20 min",
-    "Recombinant insulin from E. coli"
+    "Gram-negative: E. coli (rod, peritrichous flagella, LPS outer membrane).",
+    "Gram-positive: Staphylococcus aureus (coccus, clusters, thick peptidoglycan, mesosomes).",
+    "Cyanobacteria: Nostoc (beaded filaments), Anabaena (heterocysts for N2 fixation), Oscillatoria (trichoid).",
+    "Mycoplasma pneumoniae: no wall, pleomorphic, atypical pneumonia.",
+    "Archaebacteria: Halobacterium (salt lakes), Thermoplasma (hot springs), Methanobacterium (anaerobic, methane).",
+    "Endospore formers: Bacillus (soil, aerobic), Clostridium (anaerobic, e.g., C. botulinum, C. tetani)."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice comparing plant and animal cell structures."
+    "Describe the detailed structure of a Gram-negative bacterium.",
+    "Differentiate Gram +ve and -ve bacteria.",
+    "Explain the bacterial growth curve (4 phases).",
+    "Describe the three modes of bacterial genetic exchange.",
+    "Explain the role of cyanobacteria in nitrogen fixation.",
+    "What are endospores and why are they important?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage)"
+    "Gram -ve: capsule + LPS + thin peptidoglycan + membrane + cytoplasm (70S ribosomes, plasmids, nucleoid)",
+    "Gram +ve: capsule + thick peptidoglycan + membrane + mesosomes + cytoplasm",
+    "Growth: lag → log (2ⁿ) → stationary → death",
+    "Genetic exchange: conjugation (F+ → F-), transformation (DNA uptake), transduction (phage)"
   ],
   "keyPoints": [
-    "Core point for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "Bacterial cell: capsule → wall (peptidoglycan) → membrane → cytoplasm (nucleoid, plasmids, 70S ribosomes).",
+    "Gram +ve: thick peptidoglycan (purple); Gram -ve: thin + LPS (pink).",
+    "Shapes: cocci, bacilli, spirilla, spirochaetes; arrangements: diplo-, strepto-, staphylo-.",
+    "Nutrition: autotrophs (photo/chemo) + heterotrophs (saprophytes, parasites).",
+    "Growth curve: lag, log, stationary, death; generation time (E. coli ~20 min).",
+    "Reproduction: binary fission (asexual) + conjugation/transformation/transduction (genetic exchange).",
+    "Endospores: dormant, resistant; survival, not reproduction.",
+    "Cyanobacteria: photosynthetic + nitrogen-fixing (Nostoc, Anabaena).",
+    "Mycoplasma: no wall, smallest living cell; Archaebacteria: extreme environments."
   ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nCell membrane is selectively permeable fluid mosaic.\n\nOrganelles enable compartmentalized metabolic functions.",
+  "summary": "A detailed study of Monera reveals the bacterial cell in all its complexity: a capsule, peptidoglycan wall (thick in Gram +ve, thin + LPS in Gram -ve), plasma membrane (with mesosomes in Gram +ve), and cytoplasm containing the naked nucleoid, plasmids, and 70S ribosomes. Bacteria show diverse shapes (cocci, bacilli, spirilla) and arrangements, feed by autotrophy or heterotrophy, and grow through a 4-phase curve (lag, log, stationary, death). They reproduce asexually by binary fission and exchange genes by conjugation, transformation, and transduction. Endospores (Bacillus, Clostridium) are survival structures. Cyanobacteria (Nostoc, Anabaena) photosynthesise and fix nitrogen; Mycoplasma (no wall) is the smallest living cell; archaebacteria thrive in extreme environments. NEB focuses on the detailed bacterial cell, shapes, nutrition, growth, reproduction, cyanobacteria, and special groups.",
   "specialNotes": [
-    "Specialized insight for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "NEB expects detailed Gram + and - bacterium diagrams plus the growth curve.",
+    "Gram-staining differentiation (+ve vs -ve) is a very common short-answer.",
+    "The three modes of genetic exchange (conjugation, transformation, transduction) are a frequent question.",
+    "Cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role are frequently asked.",
+    "Endospores (Bacillus, Clostridium) are survival structures, NOT reproduction.",
+    "Mycoplasma (no wall) and archaebacteria (extreme environments) are special groups."
   ],
   "importantStatements": [
-    "Key statement for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "The bacterial cell has a capsule, peptidoglycan wall, plasma membrane, and cytoplasm with a naked nucleoid.",
+    "Gram-positive bacteria have a thick peptidoglycan; Gram-negative have a thin one plus an outer LPS membrane.",
+    "Bacteria reproduce by binary fission and exchange genes by conjugation, transformation, and transduction.",
+    "Cyanobacteria are photosynthetic, nitrogen-fixing prokaryotes."
   ],
   "importantNotes": [
-    "Important note regarding 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "Memorise the detailed Gram + and - cell structure.",
+    "Learn bacterial shapes and arrangements.",
+    "Draw the 4-phase growth curve.",
+    "Explain the three modes of genetic exchange.",
+    "Note the role of cyanobacteria in nitrogen fixation.",
+    "Distinguish endospores (survival) from binary fission (reproduction)."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Monera and Bacteria."
+    "Bacterial cell = C-W-M-C (Capsule, Wall, Membrane, Cytoplasm).",
+    "Gram +ve = thick wall = purple; Gram -ve = thin + LPS = pink.",
+    "Growth = lag, log, stationary, death (4 phases).",
+    "Genetic exchange = C-T-T (Conjugation, Transformation, Transduction).",
+    "Endospore = survival (not reproduction).",
+    "Mycoplasma = no wall = smallest living cell."
   ],
   "examNotes": [
-    "Monera and Bacteria is frequently tested.",
-    "Practice writing detailed answers."
+    "Draw and label a detailed Gram-negative bacterium.",
+    "Draw and label a Gram-positive bacterium.",
+    "Differentiate Gram +ve and -ve bacteria (4 points).",
+    "Describe the bacterial growth curve (4 phases).",
+    "Explain the three modes of genetic exchange.",
+    "Explain the role of cyanobacteria in nitrogen fixation.",
+    "What are endospores and why are they important?"
   ],
   "mcs": [
     {
-      "question": "Question about 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage?",
+      "question": "The outer membrane of Gram-negative bacteria contains:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Peptidoglycan only",
+        "LPS (lipopolysaccharide)",
+        "Chitin",
+        "Cellulose"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The smallest known living cell is:",
+      "options": [
+        "E. coli",
+        "Mycoplasma",
+        "Nostoc",
+        "Staphylococcus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An endospore is:",
+      "options": [
+        "A mode of reproduction",
+        "A survival structure",
+        "A flagellum",
+        "A plasmid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cyanobacteria fix atmospheric nitrogen mainly in which structure?",
+      "options": [
+        "Chloroplast",
+        "Heterocyst",
+        "Nucleoid",
+        "Capsule"
+      ],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "Detailed bacterial cell (Gram + and -)",
+    "Shapes and arrangements",
+    "Nutrition modes",
+    "Growth curve (4 phases)",
+    "Binary fission",
+    "Genetic exchange (conjugation, transformation, transduction)",
+    "Endospores",
+    "Cyanobacteria (Nostoc, Anabaena)",
+    "Mycoplasma",
+    "Archaebacteria"
   ],
   "importantTasks": [
-    "Task for studying 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage."
+    "Label detailed Gram - bacterium",
+    "Label Gram + bacterium",
+    "Differentiate Gram + and -",
+    "Draw the growth curve",
+    "Explain 3 genetic-exchange modes",
+    "Explain cyanobacteria N2 fixation"
   ],
-  "duplicateType": 2,
-  "tabGroup": "01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
-  "mcqs": [
+  "exercises": [
     {
-      "question": "Question about 01 monera general introduction structure of bacterial cell mode of nutrition bacterial growth cyanobacteria virus general introduction structure and importance of virus bacteriophage?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+      "id": "1",
+      "question": "A bacterial culture is grown in a nutrient broth. After 3 hours (generation time 30 min), how many generations have occurred and how many cells are there if it started with 100 cells?",
+      "steps": [
+        "3 hours = 180 min",
+        "180 / 30 = 6 generations",
+        "N = N0 × 2^n = 100 × 2^6 = 100 × 64"
       ],
-      "answer": "A"
+      "answer": "6 generations; 6,400 cells"
     }
-  ],
-  "exercises": [],
-  "visualization": {
-    "type": "simulation",
-    "component": "MicrobeViewer",
-    "desc": "Interactive microorganism explorer with Gram stain simulation"
-  },
-  "visualType": "haber-process-flow"
+  ]
 }

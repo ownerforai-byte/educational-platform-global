@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -131,7 +131,7 @@ export function LenzLawVisual() {
       const fluxLabelPos = new THREE.Vector3(0, -3, 0);
       const fluxTarget = new THREE.Vector3(0, 0, 0);
       const fluxDir = fluxTarget.clone().sub(fluxLabelPos).normalize();
-      push(new LiveArrow(fluxDir, fluxLabelPos, fluxLabelPos.distanceTo(fluxTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      push(new LiveLeaderLine(fluxDir, fluxLabelPos, fluxLabelPos.distanceTo(fluxTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
       push(mkSprite(
         direction === "approaching" ? "Φ increasing → induced B opposes" : "Φ decreasing → induced B supports",
         "#a78bfa", fluxLabelPos.clone().sub(fluxDir.multiplyScalar(0.5)), 0.75
@@ -141,7 +141,7 @@ export function LenzLawVisual() {
       const indLabelPos = new THREE.Vector3(3.5, 1.5, 0);
       const indTarget = new THREE.Vector3(0, 0, 0);
       const indDir = indTarget.clone().sub(indLabelPos).normalize();
-      push(new LiveArrow(indDir, indLabelPos, indLabelPos.distanceTo(indTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveLeaderLine(indDir, indLabelPos, indLabelPos.distanceTo(indTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite(
         direction === "approaching" ? "Induced: N pole faces magnet (repel)" : "Induced: S pole faces magnet (attract)",
         "#22d3ee", indLabelPos.clone().sub(indDir.multiplyScalar(0.5)), 0.7
@@ -151,7 +151,7 @@ export function LenzLawVisual() {
       const lenzLabelPos = new THREE.Vector3(-3.5, 2.5, 0);
       const lenzTarget = new THREE.Vector3(0, 0, 0);
       const lenzDir = lenzTarget.clone().sub(lenzLabelPos).normalize();
-      push(new LiveArrow(lenzDir, lenzLabelPos, lenzLabelPos.distanceTo(lenzTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveLeaderLine(lenzDir, lenzLabelPos, lenzLabelPos.distanceTo(lenzTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite("ε = −N(dΦ/dt) (Lenz's Law)", "#ef4444", lenzLabelPos.clone().sub(lenzDir.multiplyScalar(0.5)), 0.8));
 
       const update = () => {

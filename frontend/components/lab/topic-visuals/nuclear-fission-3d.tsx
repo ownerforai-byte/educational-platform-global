@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -105,20 +105,20 @@ export function NuclearFissionVisual() {
       const nLabelPos = new THREE.Vector3(-5, 1.5, 0);
       const nTarget = new THREE.Vector3(-5, 0, 0);
       const nDir = nTarget.clone().sub(nLabelPos).normalize();
-      push(new LiveArrow(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0x94a3b8, 0.15, 0.1));
+      push(new LiveLeaderLine(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0x94a3b8, 0.15, 0.1));
       push(mkSprite("n (neutron)", "#94a3b8", nLabelPos.clone().sub(nDir.multiplyScalar(0.5)), 0.75));
 
       const uLabelPos = new THREE.Vector3(0, 2.5, 0);
       const uTarget = new THREE.Vector3(0, 0, 0);
       const uDir = uTarget.clone().sub(uLabelPos).normalize();
-      push(new LiveArrow(uDir, uLabelPos, uLabelPos.distanceTo(uTarget) * 0.9, 0xf97316, 0.2, 0.12));
+      push(new LiveLeaderLine(uDir, uLabelPos, uLabelPos.distanceTo(uTarget) * 0.9, 0xf97316, 0.2, 0.12));
       push(mkSprite("²³⁸U (uranium nucleus)", "#f97316", uLabelPos.clone().sub(uDir.multiplyScalar(0.5)), 0.8));
 
       // Energy release label
       const energyLabelPos = new THREE.Vector3(3, 3, 0);
       const energyTarget = new THREE.Vector3(0, 0, 0);
       const energyDir = energyTarget.clone().sub(energyLabelPos).normalize();
-      push(new LiveArrow(energyDir, energyLabelPos, energyLabelPos.distanceTo(energyTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      push(new LiveLeaderLine(energyDir, energyLabelPos, energyLabelPos.distanceTo(energyTarget) * 0.9, 0xef4444, 0.15, 0.1));
       push(mkSprite("Energy released ≈ 200 MeV", "#ef4444", energyLabelPos.clone().sub(energyDir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {

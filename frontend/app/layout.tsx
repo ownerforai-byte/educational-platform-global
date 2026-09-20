@@ -5,6 +5,7 @@ import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
+import { DevContrastAudit } from "@/lib/color-contrast";
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform — NEB (+2) Learning Platform",
@@ -32,19 +33,23 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#3b82f6" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="NEB Vault" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
-      </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NEB Vault" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+  </head>
       <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
             <AuthProvider>
               <ServiceWorkerRegistrar />
               <OfflineBanner />
+              {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
+              {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
               {children}
             </AuthProvider>
           </ThemeProvider>

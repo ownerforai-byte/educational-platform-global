@@ -1,20 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Lightbulb, CheckCircle, AlertCircle, XCircle, ChevronDown, Pencil } from "lucide-react";
+import {
+  BookOpen,
+  Lightbulb,
+  CheckCircle,
+  AlertCircle,
+  XCircle,
+  ChevronDown,
+  Pencil,
+  Calculator,
+  HelpCircle,
+  Sparkles,
+  Globe,
+  Link2,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Katex } from "@/components/content/katex";
-import { THEORY_CONTENT } from "@/lib/theory-content";
+import { THEORY_CONTENT, type TopicData } from "@/lib/theory-content";
 
 interface TheoryPanelProps {
-  // Old interface (used by existing labs)
   title?: string;
   vocabulary?: string;
   look?: string | React.ReactNode;
   predict?: string;
   principle?: string | React.ReactNode;
   why?: string;
-  // New interface (for theory lab pages)
   subject?: string;
   topic?: string;
 }
@@ -28,6 +39,8 @@ function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }
 
   const data = THEORY_CONTENT[subject]?.[topic];
 
+  const [activeTab, setActiveTab] = useState<"enriched" | "original">("enriched");
+
   if (!data) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -40,19 +53,40 @@ function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }
     );
   }
 
-  const currentSection = data.sections[activeSection];
+  const contentData: TopicData =
+    data.enrichedContent && activeTab === "enriched" ? data.enrichedContent : data;
+  const currentSection = contentData.sections[activeSection];
 
   return (
     <div className="space-y-5">
-      {/* Title banner */}
       <div className="bg-gradient-to-r from-primary/10 to-transparent p-4 rounded-lg border-l-4 border-primary">
         <h2 className="text-xl font-bold">{data.title}</h2>
         <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{data.overview}</p>
       </div>
 
-      {/* Section tabs */}
+      {data.enrichedContent && (
+        <div className="flex gap-2 mb-4">
+          <button
+            onClick={() => setActiveTab("enriched")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium ${
+              activeTab === "enriched" ? "bg-primary text-primary-foreground" : "bg-muted"
+            }`}
+          >
+            Enriched Content
+          </button>
+          <button
+            onClick={() => setActiveTab("original")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium ${
+              activeTab === "original" ? "bg-primary text-primary-foreground" : "bg-muted"
+            }`}
+          >
+            Original Content
+          </button>
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-1.5">
-        {data.sections.map((_, idx) => (
+        {contentData.sections.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setActiveSection(idx)}
@@ -62,12 +96,11 @@ function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }
                 : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
             }`}
           >
-            {idx + 1}. {data.sections[idx].heading.replace(/^\d+\.\s*/, "")}
+            {idx + 1}. {contentData.sections[idx].heading.replace(/^\d+\.\s*/, "")}
           </button>
         ))}
       </div>
 
-      {/* Current section card */}
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -95,95 +128,110 @@ function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }
                 <Lightbulb className="h-4 w-4" />
                 <span>Worked Example</span>
               </p>
-              <pre className="whitespace-pre-wrap text-sm font-mono text-foreground/90">{currentSection.example}</pre>
+              <pre className="whitespace-pre-wrap text-sm font-mono text-foreground/90">
+                {currentSection.example}
+              </pre>
             </div>
           )}
         </CardContent>
       </Card>
 
-      {/* Key Points */}
-      <Card className="bg-green-50/50 dark:bg-green-950/20 border-green-200 dark:border-green-800">
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg text-green-700 dark:text-green-400">
-            <CheckCircle className="h-5 w-5" />
-            Key Points to Remember
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            {data.keyPoints.map((point, idx) => (
-              <li key={idx} className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
-                <span className="text-sm">{point}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-
-      {/* Common Mistakes */}
-      <Card className="bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800">
-        <CardHeader
-          className="cursor-pointer pb-3"
-          onClick={() => setShowMistakes(!showMistakes)}
-        >
-          <CardTitle className="flex items-center gap-2 text-lg text-amber-700 dark:text-amber-400">
-            <AlertCircle className="h-5 w-5" />
-            Common Mistakes to Avoid
-            <ChevronDown
-              className={`h-4 w-4 ml-auto transition-transform ${showMistakes ? "rotate-180" : ""}`}
-            />
-          </CardTitle>
-        </CardHeader>
-        {showMistakes && (
+      {contentData.keyPoints && contentData.keyPoints.length > 0 && (
+        <Card className="bg-green-50/50 dark:bg-green-950/20 border-green-200 dark:border-green-800">
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-lg text-green-700 dark:text-green-400">
+              <CheckCircle className="h-5 w-5" />
+              Key Points to Remember
+            </CardTitle>
+          </CardHeader>
           <CardContent>
             <ul className="space-y-2">
-              {data.commonMistakes.map((mistake, idx) => (
+              {contentData.keyPoints.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <XCircle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
-                  <span className="text-sm">{mistake}</span>
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                  <span className="text-sm">{point}</span>
                 </li>
               ))}
             </ul>
           </CardContent>
-        )}
-      </Card>
+        </Card>
+      )}
 
-      {/* Practice Questions */}
-      <Card className="bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800">
-        <CardHeader
-          className="cursor-pointer pb-3"
-          onClick={() => setShowPractice(!showPractice)}
-        >
-          <CardTitle className="flex items-center gap-2 text-lg text-violet-700 dark:text-violet-400">
-            <Pencil className="h-5 w-5" />
-            Practice Questions ({data.practiceQuestions.length})
-            <ChevronDown
-              className={`h-4 w-4 ml-auto transition-transform ${showPractice ? "rotate-180" : ""}`}
-            />
-          </CardTitle>
-        </CardHeader>
-        {showPractice && (
-          <CardContent>
-            <ol className="space-y-3">
-              {data.practiceQuestions.map((q, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300">
-                    {idx + 1}
-                  </span>
-                  <span className="text-sm">{q}</span>
-                </li>
-              ))}
-            </ol>
-          </CardContent>
-        )}
-      </Card>
+      {contentData.commonMistakes && contentData.commonMistakes.length > 0 && (
+        <Card className="bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800">
+          <CardHeader
+            className="cursor-pointer pb-3"
+            onClick={() => setShowMistakes(!showMistakes)}
+          >
+            <CardTitle className="flex items-center gap-2 text-lg text-amber-700 dark:text-amber-400">
+              <AlertCircle className="h-5 w-5" />
+              Common Mistakes to Avoid
+              <ChevronDown
+                className={`h-4 w-4 ml-auto transition-transform ${
+                  showMistakes ? "rotate-180" : ""
+                }`}
+              />
+            </CardTitle>
+          </CardHeader>
+          {showMistakes && (
+            <CardContent>
+              <ul className="space-y-2">
+                {contentData.commonMistakes.map((mistake, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <XCircle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                    <span className="text-sm">{mistake}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          )}
+        </Card>
+      )}
+
+      {contentData.practiceQuestions && contentData.practiceQuestions.length > 0 && (
+        <Card className="bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800">
+          <CardHeader
+            className="cursor-pointer pb-3"
+            onClick={() => setShowPractice(!showPractice)}
+          >
+            <CardTitle className="flex items-center gap-2 text-lg text-violet-700 dark:text-violet-400">
+              <Pencil className="h-5 w-5" />
+              Practice Questions ({contentData.practiceQuestions.length})
+              <ChevronDown
+                className={`h-4 w-4 ml-auto transition-transform ${
+                  showPractice ? "rotate-180" : ""
+                }`}
+              />
+            </CardTitle>
+          </CardHeader>
+          {showPractice && (
+            <CardContent>
+              <ol className="space-y-3">
+                {contentData.practiceQuestions.map((q, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300">
+                      {idx + 1}
+                    </span>
+                    <span className="text-sm">{q}</span>
+                  </li>
+                ))}
+              </ol>
+            </CardContent>
+          )}
+        </Card>
+      )}
     </div>
   );
 }
 
-// Old TheoryPanel rendering (for existing labs)
-function OldTheoryPanel({ title, vocabulary, look, predict, principle, why }: {
+function OldTheoryPanel({
+  title,
+  vocabulary,
+  look,
+  predict,
+  principle,
+  why,
+}: {
   title?: string;
   vocabulary?: string;
   look?: string | React.ReactNode;
@@ -192,7 +240,7 @@ function OldTheoryPanel({ title, vocabulary, look, predict, principle, why }: {
   why?: string;
 }) {
   if (!title && !vocabulary) return null;
-  
+
   return (
     <div className="mt-4 space-y-3">
       {title && <h3 className="font-semibold text-sm text-primary">{title}</h3>}

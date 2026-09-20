@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "../db/supabase";
 import { getSearchService } from "./search-engine";
 
-export type SupportedProvider = "gemini" | "openrouter" | "internal" | "agnes";
+export type SupportedProvider = "openrouter" | "internal" | "agnes";
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -346,21 +346,79 @@ class InternalProvider implements AIProvider {
     const lastUser = [...messages].reverse().find((m) => m.role === "user");
     const query = lastUser?.content ?? "";
     const results = this.match(query, 5);
+    const SITE = "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app";
 
     if (!results.length) {
-      return `Hey — I don't have notes on that one in the vault just yet, but I'm here for you. A few things that might help:\n\n• Flip through the full subject list at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects — you might find something close that connects.\n• Try asking about biomolecules, gravitation, or algebra — those are solid starting points and I'll walk you straight to the right notes.\n\nKeep going. The fact that you're asking the right questions already puts you ahead.`;
+      // Answer-first shape: honest answer now, verified internet link at the end.
+      const web = await this.findWebAnswer(query);
+      const lines = [
+        `Hey — I couldn't find "${shorten(query, 80)}" in the platform vault yet, so here's the honest answer: this one lives outside my notes for now.`,
+        "",
+      ];
+      if (web) {
+        lines.push(`A safe, real source covering it: **${web.title}** — ${web.snippet}`);
+        lines.push("");
+      } else {
+        lines.push("I couldn't verify a trustworthy web source for it right now either — rather than guess, I'd point you to the closest subject area and we build from there.");
+        lines.push("");
+      }
+      lines.push("Explore further:");
+      lines.push(`- [All Subjects & PYQs](${SITE}/subjects)`);
+      if (web) lines.push(`- [${web.title}](${web.url}) (verified web source)`);
+      lines.push("- [Ask me again with more detail](/chat)");
+      return lines.join("\n");
     }
 
     const nudge = STUDY_NUDGES[hashQuery(query) % STUDY_NUDGES.length];
-    const lines = [buildQuickTake(results[0]), "", nudge, "", "Start here:"];
+    // ANSWER FIRST — quick take + study nudge, no links up top.
+    const lines = [buildQuickTake(results[0]), "", nudge, ""];
+    // LINKS LAST — one consolidated section at the very end.
+    lines.push("Explore further:");
     for (const item of results.slice(0, 3)) {
-      const fullUrl = `https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/${item.url}`;
-      lines.push(`- ${item.title} (${item.type}) — ${shorten(item.snippet)}`);
-      lines.push(`  ${fullUrl}`);
+      const fullUrl = `${SITE}${item.url}`;
+      lines.push(`- [${item.title}](${fullUrl}) — ${item.type}`);
     }
-    lines.push("");
-    lines.push("If you want more depth or external references, just ask — I'll point you to official sources too. Also, you can practice past papers at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects.");
+    lines.push(`- [Practice past papers](${SITE}/subjects)`);
     return lines.join("\n");
+  }
+
+  /**
+   * Best-effort real internet lookup for queries the vault cannot answer.
+   * Uses the DuckDuckGo Instant Answer API (no key needed) and only accepts
+   * results with an AbstractText from a named source — so whatever we link is
+   * real and attributable, never invented.
+   */
+  private async findWebAnswer(
+    query: string
+  ): Promise<{ title: string; url: string; snippet: string } | null> {
+    try {
+      const res = await fetch(
+        `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_html=1&skip_disambig=1`,
+        { signal: AbortSignal.timeout(6000) }
+      );
+      if (!res.ok) return null;
+      const data: {
+        AbstractText?: string;
+        AbstractURL?: string;
+        AbstractSource?: string;
+        Heading?: string;
+      } = await res.json();
+      if (
+        data.AbstractText &&
+        data.AbstractURL &&
+        data.AbstractURL.startsWith("http") &&
+        data.AbstractText.length > 40
+      ) {
+        return {
+          title: data.AbstractSource || data.Heading || "Web reference",
+          url: data.AbstractURL,
+          snippet: shorten(data.AbstractText, 180),
+        };
+      }
+      return null;
+    } catch {
+      return null;
+    }
   }
 
   async search(query: string): Promise<AISearchResponse> {
@@ -385,7 +443,15 @@ class InternalProvider implements AIProvider {
   }
 
   private match(query: string, limit: number): IndexItem[] {
-    const tokens = tokenize(query);
+    // Drop common stopwords so queries like "what is the capital of Australia"
+    // can't score on filler words and confidently match irrelevant content.
+    const STOP = new Set([
+      "the", "a", "an", "of", "and", "or", "to", "in", "on", "at", "is",
+      "are", "was", "were", "what", "who", "when", "where", "why", "how",
+      "for", "with", "by", "from", "that", "this", "it", "its", "as", "be",
+      "can", "will", "do", "does", "did", "my", "your", "i", "me", "we",
+    ]);
+    const tokens = tokenize(query).filter((t) => !STOP.has(t));
     if (!tokens.length || this.index.length === 0) return [];
 
     const scored = this.index
@@ -393,7 +459,7 @@ class InternalProvider implements AIProvider {
         const matched = tokens.filter((token) => item.haystack.includes(token)).length;
         return { item, score: matched / tokens.length };
       })
-      .filter((entry) => entry.score > 0)
+      .filter((entry) => entry.score >= 0.25)
       .sort((a, b) => b.score - a.score);
 
     return scored.slice(0, limit).map((entry) => entry.item);
@@ -411,7 +477,11 @@ class GeminiProvider implements AIProvider {
     this.apiKey = apiKey;
   }
 
-  private async callGemini(prompt: string, systemInstruction?: string): Promise<string> {
+  private async callGemini(
+    prompt: string,
+    systemInstruction?: string,
+    useWebSearch = false
+  ): Promise<string> {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent`;
     const body: any = {
       contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -420,6 +490,12 @@ class GeminiProvider implements AIProvider {
     if (systemInstruction) {
       body.systemInstruction = { parts: [{ text: systemInstruction }] };
     }
+    // Real internet access: Gemini's native Google Search grounding lets the
+    // model search the live web widely and cite fresh sources. Set
+    // GEMINI_SEARCH_GROUNDING=off to disable (e.g. to conserve quota).
+    if (useWebSearch && process.env.GEMINI_SEARCH_GROUNDING !== "off") {
+      body.tools = [{ google_search: {} }];
+    }
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -427,6 +503,8 @@ class GeminiProvider implements AIProvider {
         "x-goog-api-key": this.apiKey,
       },
       body: JSON.stringify(body),
+      // Fail fast so the provider chain can move on (web-grounded calls get more time).
+      signal: AbortSignal.timeout(useWebSearch ? 60000 : 30000),
     });
 
     if (!res.ok) {
@@ -459,7 +537,7 @@ class GeminiProvider implements AIProvider {
     });
 
     const prompt = `${enrichedHistory.map((h) => `${h.role === "user" ? "User" : "Assistant"}: ${h.parts[0].text}`).join("\n\n")}\n\nAssistant:`;
-    return this.callGemini(prompt, systemPrompt);
+    return this.callGemini(prompt, systemPrompt, true);
   }
 
   async search(query: string): Promise<AISearchResponse> {
@@ -475,7 +553,7 @@ class GeminiProvider implements AIProvider {
 ${searchContext ? searchContext + "\n" : ""}${syllabusContext}
 User query: ${query}`;
 
-    const reply = await this.callGemini(prompt);
+    const reply = await this.callGemini(prompt, undefined, true);
     return {
       results: [],
       fallbackMessage: reply,
@@ -512,6 +590,8 @@ class OpenRouterProvider implements AIProvider {
         messages: messages.map((m) => ({ role: m.role, content: m.content })),
         max_tokens: 2048,
       }),
+      // Free-tier models can queue; cap the wait so the chain stays responsive.
+      signal: AbortSignal.timeout(60000),
     });
 
     if (!res.ok) {
@@ -565,9 +645,11 @@ ${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
 
 class AgnesProvider implements AIProvider {
   name = "agnes";
+  // Official Agnes AI gateway (OpenAI-compatible). api.agnes.ai is a different,
+  // dead product — do not use it.
+  private apiUrl = "https://apihub.agnes-ai.com/v1/chat/completions";
+  private model = process.env.AGNES_MODEL || "agnes-3.0-flash";
   private apiKey: string;
-  private apiUrl = "https://api.agnes.ai/v1/chat/completions";
-  private model = "agnes-2.5-flash";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -583,9 +665,13 @@ class AgnesProvider implements AIProvider {
       body: JSON.stringify({
         model: this.model,
         messages: messages.map((m) => ({ role: m.role, content: m.content })),
-        max_tokens: 2048,
+        // 1600 tokens keeps full derivations intact while staying inside the
+        // chain's global budget (the Next dev proxy kills POSTs at ~30s).
+        max_tokens: 1600,
         temperature: 0.7,
       }),
+      // Agnes gateway can queue; cap the wait so the chain stays responsive.
+      signal: AbortSignal.timeout(29000),
     });
 
     if (!res.ok) {
@@ -595,7 +681,7 @@ class AgnesProvider implements AIProvider {
 
     const data = await res.json();
     const text = data?.choices?.[0]?.message?.content;
-    if (!text) throw new Error("Empty Agnes response");
+    if (!text || !text.trim()) throw new Error("Empty Agnes response");
     return text;
   }
 
@@ -662,25 +748,21 @@ export class AIService {
   constructor() {
     this.providers.set("internal", new InternalProvider());
 
-    const geminiKey = process.env.GEMINI_API_KEY;
     const openrouterKey = process.env.OPENROUTER_API_KEY;
     const agnesKey = process.env.AGNES_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
-    if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
     if (openrouterKey) this.providers.set("openrouter", new OpenRouterProvider(openrouterKey));
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
-    } else if (geminiKey) {
-      this.defaultProvider = "gemini";
-    } else if (openrouterKey) {
-      this.defaultProvider = "openrouter";
     } else if (agnesKey) {
       this.defaultProvider = "agnes";
+    } else if (openrouterKey) {
+      this.defaultProvider = "openrouter";
     }
   }
 
@@ -700,64 +782,64 @@ export class AIService {
   }
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
-    const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: gemini → openrouter → agnes → internal
-    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
-    const chain: AIProvider[] = [];
-    if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
-    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
-    if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
-    chain.push(this.providers.get("internal")!);
+    const internal = this.providers.get("internal")!;
+    const llms = ["agnes", "openrouter"]
+      .filter((n) => this.providers.has(n))
+      .map((n) => this.providers.get(n)!);
+    if (llms.length === 0) return internal.chat(messages);
 
-    const target = requested || chain[0];
-    if (target.name === "internal") return target.chat(messages);
-
-    // Try requested provider first, then fall through the chain
-    const tried = new Set<string>();
-    for (const p of [target, ...chain]) {
-      if (tried.has(p.name)) continue;
-      tried.add(p.name);
-      if (p.name === "internal") return p.chat(messages);
-      try {
-        return await p.chat(messages);
-      } catch {
-        // fall through to next provider
-      }
+    // Race all LLM providers in PARALLEL and take the first success.
+    // The Next.js dev proxy kills proxied POSTs at ~30s, so the total wait
+    // must stay under that: default 28s global budget, then internal fallback.
+    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 28000;
+    const started = Date.now();
+    const timer = new Promise<null>((resolve) =>
+      setTimeout(() => resolve(null), GLOBAL_BUDGET_MS)
+    );
+    const attempts = llms.map(async (p) => {
+      const text = await p.chat(messages);
+      if (!text || !text.trim()) throw new Error("empty");
+      return text;
+    });
+    const winner = await Promise.race([
+      Promise.any(attempts).catch(() => null),
+      timer,
+    ]);
+    if (winner) {
+      console.info(
+        `[AI] chat answered in ${Date.now() - started}ms (raced ${llms.map((p) => p.name).join(", ")})`
+      );
+      return winner;
     }
-    return this.providers.get("internal")!.chat(messages);
+    console.warn(
+      `[AI] no LLM answered within ${GLOBAL_BUDGET_MS}ms — using internal engine`
+    );
+    return internal.chat(messages);
   }
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {
-    const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: gemini → openrouter → agnes → internal
-    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
-    const chain: AIProvider[] = [];
-    if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
-    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
-    if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
-    chain.push(this.providers.get("internal")!);
+    const internal = this.providers.get("internal")!;
+    const llms = ["agnes", "openrouter"]
+      .filter((n) => this.providers.has(n))
+      .map((n) => this.providers.get(n)!);
+    if (llms.length === 0) return internal.search(query);
 
-    const target = requested || chain[0];
-    if (target.name === "internal") return target.search(query);
-
-    const tried = new Set<string>();
-    for (const p of [target, ...chain]) {
-      if (tried.has(p.name)) continue;
-      tried.add(p.name);
-      if (p.name === "internal") return p.search(query);
-      try {
-        return await p.search(query);
-      } catch {
-        // fall through to next provider
-      }
-    }
-    return this.providers.get("internal")!.search(query);
+    const GLOBAL_BUDGET_MS = 25000;
+    const timer = new Promise<null>((resolve) =>
+      setTimeout(() => resolve(null), GLOBAL_BUDGET_MS)
+    );
+    const attempts = llms.map((p) => p.search(query));
+    const winner = await Promise.race([
+      Promise.any(attempts).catch(() => null),
+      timer,
+    ]);
+    if (winner) return winner;
+    return internal.search(query);
   }
 }
 
 export function createAIService(): AIService {
   return new AIService();
 }
-
 
 

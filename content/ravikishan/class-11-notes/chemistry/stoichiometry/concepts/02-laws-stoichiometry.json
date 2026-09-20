@@ -3,227 +3,258 @@
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-stoichiometry",
   "topicTitle": "Laws of Stoichiometry",
-  "relevance": 80,
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Balanced equation gives mass ratios. ✅ Balanced equation gives mole ratios, not mass ratios directly.",
-    "❌ Volume ratio equals mole ratio for all states. ✅ Volume ratio equals mole ratio only for gases at same T and P."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving gas stoichiometry problems at STP and non-STP conditions.",
-    "Practice solving mixture analysis problems using stoichiometry."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 laws stoichiometry."
-  ],
+  "relevance": 100,
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving gas stoichiometry problems at STP and non-STP conditions."
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "keyPoints": [
-    "Core point for 02 laws stoichiometry."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "specialNotes": [
-    "Specialized insight for 02 laws stoichiometry."
-  ],
-  "importantStatements": [
-    "Key statement for 02 laws stoichiometry."
-  ],
-  "importantNotes": [
-    "Important note regarding 02 laws stoichiometry."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Laws of Stoichiometry."
-  ],
-  "examNotes": [
-    "Focus on Laws of Stoichiometry problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 laws stoichiometry?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 laws stoichiometry."
-  ],
-  "importantTasks": [
-    "Task for studying 02 laws stoichiometry."
-  ],
   "duplicateType": 2,
-  "tabGroup": "02-laws-stoichiometry",
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
+  "tabGroup": "laws-stoichiometry",
+  "visualType": "stoichiometry",
+  "enrichedContent": {
+    "notes": [
+      "**Law of Conservation of Mass (Lavoisier, 1789):** Mass is neither created nor destroyed in a chemical reaction. Total mass of reactants = total mass of products. In closed systems, mass remains constant throughout chemical processes.",
+      "**Law of Definite Proportions (Proust, 1799):** A pure compound always contains the same elements in exactly the same proportion by mass, regardless of source or method of preparation. Also called the Law of Constant Composition.",
+      "**Law of Multiple Proportions (Dalton, 1803):** When two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in ratios of small whole numbers.",
+      "**Law of Reciprocal Proportions (Richter, 1792):** When two different elements separately combine with the same mass of a third element, the ratio of their masses is either the same as or a simple multiple of the ratio of their masses when they combine with each other.",
+      "**Law of Gaseous Volumes (Gay-Lussac, 1808):** When gases react, they do so in volumes bearing a simple whole-number ratio to one another and to the volume of gaseous products, provided all measurements are at the same temperature and pressure.",
+      "**Avogadro's Law (1811):** Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. One mole of any ideal gas occupies 22.4 L at STP (0°C, 1 atm).",
+      "**Interconnections:** These laws form a logical hierarchy: Conservation of mass provides the foundation; definite proportions establishes fixed compositions; multiple proportions reveals atomic discreteness; Gay-Lussac's law describes gas behavior; Avogadro's law bridges volume and particle count.",
+      "**Stoichiometry:** The quantitative study of reactants and products in chemical reactions, derived from these fundamental laws and enabling precise mass-volume-mole calculations."
+    ],
+    "confusion": [
+      "❌ 'Balanced equation gives mass ratios.' ✅ Balanced equation gives MOLE ratios, not mass ratios directly. Convert using molar masses.",
+      "❌ 'Volume ratio equals mole ratio for all states.' ✅ Volume ratio equals mole ratio ONLY for gases at the same T and P.",
+      "❌ 'Conservation of mass means atoms are conserved.' ✅ In nuclear reactions, atoms can be converted — conservation of mass applies to chemical reactions.",
+      "❌ 'All proportion laws apply to any number of elements.' ✅ The Law of Reciprocal Proportions applies only to three-element compounds.",
+      "❌ 'The mole concept is separate from these laws.' ✅ The mole concept is a direct application of Avogadro's law and conservation of mass."
+    ],
+    "practice": [
+      "Balance 10 chemical equations and verify conservation of mass.",
+      "Calculate the percentage composition of 5 common compounds.",
+      "Verify the Law of Multiple Proportions for CO and CO₂.",
+      "Use Avogadro's law to convert between volume and moles for gases at STP.",
+      "Solve 5 stoichiometry problems involving mass-to-mass conversions."
+    ],
+    "universalFacts": [
+      "The five fundamental laws of stoichiometry form the basis of quantitative chemistry.",
+      "These laws were established between 1789 and 1803 by Lavoisier, Proust, Dalton, and Gay-Lussac.",
+      "Together, these laws led to the development of the atomic theory.",
+      "All stoichiometric calculations are based on these laws."
+    ],
+    "examples": [
+      "Law of Conservation of Mass: Burning 12g carbon in 32g oxygen gives exactly 44g CO₂.",
+      "Law of Definite Proportions: Water from Ganges river has same H:O ratio as water from Himalayas.",
+      "Law of Multiple Proportions: CO and CO₂ show mass ratio of oxygen as 1:2 for fixed carbon.",
+      "Law of Reciprocal Proportions: S and O combine with H₂ in ratio 16:1 and 8:1, their reciprocal is 2:1."
+    ],
+    "practiceQuestions": [
+      "List all five laws of stoichiometry with their statements.",
+      "Explain how each law is verified with suitable examples.",
+      "How do these laws collectively support atomic theory?",
+      "Calculate the mass of products when 5g of reactant A combines with excess B."
+    ],
+    "formulas": [
+      "Law of Conservation of Mass: Σm(reactants) = Σm(products)",
+      "Law of Definite Proportions: m₁/m₂ = constant for compound AB",
+      "Law of Multiple Proportions: m₁:m₂ = small whole numbers",
+      "Law of Reciprocal Proportions: (m_A/m_H) : (m_B/m_H) = (m_A/m_B) in compound",
+      "Gay-Lussac's Law of Gaseous Volumes: V₁:V₂ = small whole numbers"
+    ],
+    "keyPoints": [
+      "Five laws govern stoichiometry: Conservation, Definite, Multiple, Reciprocal, Gaseous Volumes.",
+      "Each law explains a different aspect of chemical combination.",
+      "All laws are experimental observations later explained by atomic theory.",
+      "These laws are essential for solving stoichiometric problems."
+    ],
+    "summary": "The laws of stoichiometry — Conservation of Mass, Definite Proportions, Multiple Proportions, Reciprocal Proportions, Gay-Lussac's Law, and Avogadro's Law — form the quantitative foundation of chemistry. They describe how matter combines in fixed ratios, how mass is conserved, and how gases react in simple volume ratios. The mole concept ties these laws together for practical calculations.",
+    "specialNotes": [
+      "NEB questions often ask students to verify these laws with numerical problems.",
+      "Understanding the relationship between these laws is important for exams.",
+      "Practice numerical problems on each law separately."
+    ],
+    "importantStatements": [
+      "Matter can neither be created nor destroyed in a chemical reaction.",
+      "Elements in a compound are always present in fixed mass ratios.",
+      "When two elements form more than one compound, the masses of one element combining with fixed mass of the other are in simple whole number ratios."
+    ],
+    "importantNotes": [
+      "These laws apply only to pure substances.",
+      "They are valid for chemical reactions, not nuclear reactions.",
+      "Modern science has provided theoretical basis for these empirical laws."
+    ],
+    "examShortTricks": [
+      "Remember: CLM-DP-LMP-LRP-LGV (Conservation, Definite, Multiple, Reciprocal, Gaseous Volumes).",
+      "For numerical problems: Always balance equation first.",
+      "Check if mass ratio is constant for Definite Proportions."
+    ],
+    "examNotes": [
+      "These laws are a guaranteed part of the NEB exam — master all of them.",
+      "Be prepared to state, explain, and verify each law.",
+      "Gas stoichiometry uses Gay-Lussac and Avogadro — practice these conversions.",
+      "The connection between these laws and Dalton's atomic theory is a frequent short-answer topic.",
+      "Always show your working in numerical problems."
+    ],
+    "mcs": [
+      {
+        "question": "Which law states that matter is neither created nor destroyed?",
+        "options": [
+          "Law of Definite Proportions",
+          "Law of Conservation of Mass",
+          "Law of Multiple Proportions",
+          "Law of Reciprocal Proportions"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The Law of Multiple Proportions is applicable to:",
+        "options": [
+          "Mixtures",
+          "All compounds",
+          "Compounds with same elements but different ratios",
+          "Only gaseous compounds"
+        ],
+        "answer": "C"
+      }
+    ],
+    "importantConcepts": [
+      "Conservation of Mass — mass in = mass out.",
+      "Definite Proportions — fixed composition of compounds.",
+      "Multiple Proportions — whole-number ratios for multiple compounds.",
+      "Gay-Lussac's Law — simple gas volume ratios.",
+      "Avogadro's Law — equal volumes = equal molecules.",
+      "The mole concept — connecting these laws for calculations."
+    ],
+    "importantTasks": [
+      "State and verify each of the six stoichiometry laws.",
+      "Solve 10 mass-to-mass stoichiometry problems.",
+      "Convert between moles, mass, and volume for gases at STP.",
+      "Explain how Dalton's atomic theory explains the proportion laws.",
+      "Practice gas stoichiometry using Gay-Lussac's and Avogadro's laws."
+    ],
+    "exercises": [],
+    "visualization": {}
   },
-  "visualType": "laws-of-stoichiometry"
+  "originalContent": {
+    "notes": [
+      "**Law of Conservation of Mass (Lavoisier, 1789):** Mass is neither created nor destroyed in a chemical reaction. Total mass of reactants = total mass of products. In closed systems, mass remains constant throughout chemical processes.",
+      "**Law of Definite Proportions (Proust, 1799):** A pure compound always contains the same elements in exactly the same proportion by mass, regardless of source or method of preparation. Also called the Law of Constant Composition.",
+      "**Law of Multiple Proportions (Dalton, 1803):** When two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in ratios of small whole numbers.",
+      "**Law of Reciprocal Proportions (Richter, 1792):** When two different elements separately combine with the same mass of a third element, the ratio of their masses is either the same as or a simple multiple of the ratio of their masses when they combine with each other.",
+      "**Law of Gaseous Volumes (Gay-Lussac, 1808):** When gases react, they do so in volumes bearing a simple whole-number ratio to one another and to the volume of gaseous products, provided all measurements are at the same temperature and pressure.",
+      "**Avogadro's Law (1811):** Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. One mole of any ideal gas occupies 22.4 L at STP (0°C, 1 atm).",
+      "**Interconnections:** These laws form a logical hierarchy: Conservation of mass provides the foundation; definite proportions establishes fixed compositions; multiple proportions reveals atomic discreteness; Gay-Lussac's law describes gas behavior; Avogadro's law bridges volume and particle count.",
+      "**Stoichiometry:** The quantitative study of reactants and products in chemical reactions, derived from these fundamental laws and enabling precise mass-volume-mole calculations."
+    ],
+    "confusion": [
+      "❌ 'Balanced equation gives mass ratios.' ✅ Balanced equation gives MOLE ratios, not mass ratios directly. Convert using molar masses.",
+      "❌ 'Volume ratio equals mole ratio for all states.' ✅ Volume ratio equals mole ratio ONLY for gases at the same T and P.",
+      "❌ 'Conservation of mass means atoms are conserved.' ✅ In nuclear reactions, atoms can be converted — conservation of mass applies to chemical reactions.",
+      "❌ 'All proportion laws apply to any number of elements.' ✅ The Law of Reciprocal Proportions applies only to three-element compounds.",
+      "❌ 'The mole concept is separate from these laws.' ✅ The mole concept is a direct application of Avogadro's law and conservation of mass."
+    ],
+    "practice": [
+      "Balance 10 chemical equations and verify conservation of mass.",
+      "Calculate the percentage composition of 5 common compounds.",
+      "Verify the Law of Multiple Proportions for CO and CO₂.",
+      "Use Avogadro's law to convert between volume and moles for gases at STP.",
+      "Solve 5 stoichiometry problems involving mass-to-mass conversions."
+    ],
+    "universalFacts": [
+      "The five fundamental laws of stoichiometry form the basis of quantitative chemistry.",
+      "These laws were established between 1789 and 1803 by Lavoisier, Proust, Dalton, and Gay-Lussac.",
+      "Together, these laws led to the development of the atomic theory.",
+      "All stoichiometric calculations are based on these laws."
+    ],
+    "examples": [
+      "Law of Conservation of Mass: Burning 12g carbon in 32g oxygen gives exactly 44g CO₂.",
+      "Law of Definite Proportions: Water from Ganges river has same H:O ratio as water from Himalayas.",
+      "Law of Multiple Proportions: CO and CO₂ show mass ratio of oxygen as 1:2 for fixed carbon.",
+      "Law of Reciprocal Proportions: S and O combine with H₂ in ratio 16:1 and 8:1, their reciprocal is 2:1."
+    ],
+    "practiceQuestions": [
+      "List all five laws of stoichiometry with their statements.",
+      "Explain how each law is verified with suitable examples.",
+      "How do these laws collectively support atomic theory?",
+      "Calculate the mass of products when 5g of reactant A combines with excess B."
+    ],
+    "formulas": [
+      "Law of Conservation of Mass: Σm(reactants) = Σm(products)",
+      "Law of Definite Proportions: m₁/m₂ = constant for compound AB",
+      "Law of Multiple Proportions: m₁:m₂ = small whole numbers",
+      "Law of Reciprocal Proportions: (m_A/m_H) : (m_B/m_H) = (m_A/m_B) in compound",
+      "Gay-Lussac's Law of Gaseous Volumes: V₁:V₂ = small whole numbers"
+    ],
+    "keyPoints": [
+      "Five laws govern stoichiometry: Conservation, Definite, Multiple, Reciprocal, Gaseous Volumes.",
+      "Each law explains a different aspect of chemical combination.",
+      "All laws are experimental observations later explained by atomic theory.",
+      "These laws are essential for solving stoichiometric problems."
+    ],
+    "summary": "The laws of stoichiometry — Conservation of Mass, Definite Proportions, Multiple Proportions, Reciprocal Proportions, Gay-Lussac's Law, and Avogadro's Law — form the quantitative foundation of chemistry. They describe how matter combines in fixed ratios, how mass is conserved, and how gases react in simple volume ratios. The mole concept ties these laws together for practical calculations.",
+    "specialNotes": [
+      "NEB questions often ask students to verify these laws with numerical problems.",
+      "Understanding the relationship between these laws is important for exams.",
+      "Practice numerical problems on each law separately."
+    ],
+    "importantStatements": [
+      "Matter can neither be created nor destroyed in a chemical reaction.",
+      "Elements in a compound are always present in fixed mass ratios.",
+      "When two elements form more than one compound, the masses of one element combining with fixed mass of the other are in simple whole number ratios."
+    ],
+    "importantNotes": [
+      "These laws apply only to pure substances.",
+      "They are valid for chemical reactions, not nuclear reactions.",
+      "Modern science has provided theoretical basis for these empirical laws."
+    ],
+    "examShortTricks": [
+      "Remember: CLM-DP-LMP-LRP-LGV (Conservation, Definite, Multiple, Reciprocal, Gaseous Volumes).",
+      "For numerical problems: Always balance equation first.",
+      "Check if mass ratio is constant for Definite Proportions."
+    ],
+    "examNotes": [
+      "These laws are a guaranteed part of the NEB exam — master all of them.",
+      "Be prepared to state, explain, and verify each law.",
+      "Gas stoichiometry uses Gay-Lussac and Avogadro — practice these conversions.",
+      "The connection between these laws and Dalton's atomic theory is a frequent short-answer topic.",
+      "Always show your working in numerical problems."
+    ],
+    "mcs": [
+      {
+        "question": "Which law states that matter is neither created nor destroyed?",
+        "options": [
+          "Law of Definite Proportions",
+          "Law of Conservation of Mass",
+          "Law of Multiple Proportions",
+          "Law of Reciprocal Proportions"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The Law of Multiple Proportions is applicable to:",
+        "options": [
+          "Mixtures",
+          "All compounds",
+          "Compounds with same elements but different ratios",
+          "Only gaseous compounds"
+        ],
+        "answer": "C"
+      }
+    ],
+    "importantConcepts": [
+      "Conservation of Mass — mass in = mass out.",
+      "Definite Proportions — fixed composition of compounds.",
+      "Multiple Proportions — whole-number ratios for multiple compounds.",
+      "Gay-Lussac's Law — simple gas volume ratios.",
+      "Avogadro's Law — equal volumes = equal molecules.",
+      "The mole concept — connecting these laws for calculations."
+    ],
+    "importantTasks": [
+      "State and verify each of the six stoichiometry laws.",
+      "Solve 10 mass-to-mass stoichiometry problems.",
+      "Convert between moles, mass, and volume for gases at STP.",
+      "Explain how Dalton's atomic theory explains the proportion laws.",
+      "Practice gas stoichiometry using Gay-Lussac's and Avogadro's laws."
+    ],
+    "exercises": [],
+    "visualization": {}
+  }
 }

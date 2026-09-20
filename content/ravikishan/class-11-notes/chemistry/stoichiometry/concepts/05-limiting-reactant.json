@@ -4,221 +4,265 @@
   "topicSlug": "limiting-reactant",
   "topicTitle": "Limiting Reactant",
   "relevance": 100,
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 limiting reactant."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "23g Na + excess Cl₂ → 58.5g NaCl"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "keyPoints": [
-    "Core point for 05 limiting reactant."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "specialNotes": [
-    "Specialized insight for 05 limiting reactant."
-  ],
-  "importantStatements": [
-    "Key statement for 05 limiting reactant."
-  ],
-  "importantNotes": [
-    "Important note regarding 05 limiting reactant."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Limiting Reactant."
-  ],
-  "examNotes": [
-    "Focus on Limiting Reactant problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 limiting reactant?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 limiting reactant."
-  ],
-  "importantTasks": [
-    "Task for studying 05 limiting reactant."
-  ],
-  "duplicateType": 2,
+  "animation3D": "chemistry-limiting",
+  "motionGraphics": "chemistry-limiting",
+  "duplicateType": 1,
   "tabGroup": "05-limiting-reactant",
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
+  "visualType": "limiting-reactant",
+  "enrichedContent": {
+    "notes": [
+      "**Limiting Reactant (LR):** The reactant that is entirely consumed first in a chemical reaction, thereby determining the maximum theoretical yield of product. Once the LR is exhausted, the reaction ceases regardless of remaining excess reactants.",
+      "**Excess Reactant:** Any reactant present in an amount greater than stoichiometrically required to react completely with the limiting reactant. The unreacted portion remains after the reaction reaches completion.",
+      "**Identification Method:** Convert all reactant amounts to moles, then divide by their respective stoichiometric coefficients from the balanced equation. The reactant with the smallest resulting value is the limiting reactant.",
+      "**Theoretical Yield:** The maximum amount of product that can be formed from the limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation.",
+      "**Practical Significance:** Industrial processes often use excess of cheaper reactants to ensure complete consumption of expensive limiting reactants, optimizing cost efficiency and maximizing yield."
+    ],
+    "confusion": [
+      "❌ The reactant with the smallest mass is always the limiting reactant. ✅ The limiting reactant is determined by the mole ratio from the balanced equation, not just the initial mass.",
+      "❌ The limiting reactant is always the one with the smallest stoichiometric coefficient. ✅ It depends on both the stoichiometric coefficient and the initial amount of each reactant."
+    ],
+    "practice": [
+      "Given 5 moles of $H_2$ and 2 moles of $O_2$, identify the LR for $2H_2 + O_2 \\rightarrow 2H_2O$.",
+      "Calculate the amount of excess reactant remaining after the reaction."
+    ],
+    "universalFacts": [
+      "The limiting reactant determines the maximum amount of product formed.",
+      "It is completely consumed in the reaction and limits the extent of reaction.",
+      "The concept is fundamental to yield calculations in industrial chemistry.",
+      "All reactants other than the limiting reactant are in excess.",
+      "Understanding limiting reactant is essential for optimizing chemical processes."
+    ],
+    "examples": [
+      "2H₂ + O₂ → 2H₂O: If 4g H₂ reacts with 32g O₂, H₂ is limiting (requires 32g O₂ but has excess).",
+      "N₂ + 3H₂ → 2NH₃: If 28g N₂ reacts with 6g H₂, H₂ is limiting (requires 84g N₂).",
+      "CaCO₃ → CaO + CO₂: If 50g CaCO₃ is heated, calculate yield.",
+      "Zn + 2HCl → ZnCl₂ + H₂: Limiting reactant determines H₂ volume."
+    ],
+    "practiceQuestions": [
+      "Define limiting reactant and explain its significance.",
+      "Identify the limiting reactant when 10g of A reacts with 15g of B.",
+      "Calculate the theoretical yield when 5g of CaCO₃ is heated.",
+      "Find the amount of excess reactant remaining after reaction."
+    ],
+    "formulas": [
+      "Moles = Mass / Molar mass",
+      "Limiting reactant = reactant giving minimum moles of product",
+      "Theoretical yield = moles of limiting reactant × stoichiometric ratio × molar mass of product",
+      "% Yield = (Actual yield / Theoretical yield) × 100",
+      "Excess reactant remaining = Initial - Consumed"
+    ],
+    "keyPoints": [
+      "Limiting reactant is completely consumed.",
+      "It determines the maximum product formed.",
+      "Other reactants are in excess.",
+      "Always convert to moles before comparing."
+    ],
+    "summary": "The limiting reactant is the reactant that is completely consumed in a chemical reaction, thus determining the maximum amount of product that can be formed. Identifying the limiting reactant is essential for accurate stoichiometric calculations.",
+    "specialNotes": [
+      "The limiting reactant concept is crucial for yield calculations.",
+      "In NEB exams, always show mole ratio comparison.",
+      "Industrial processes optimize by controlling limiting reactant."
+    ],
+    "importantStatements": [
+      "The limiting reactant is the reactant that is completely consumed first and determines the extent of reaction.",
+      "The amount of product formed depends on the limiting reactant.",
+      "Reactants in excess remain unconsumed after the reaction."
+    ],
+    "importantNotes": [
+      "To find limiting reactant: Convert all masses to moles.",
+      "Use mole ratio from balanced equation.",
+      "The reactant giving least product is limiting.",
+      "Calculate excess reactant remaining."
+    ],
+    "examShortTricks": [
+      "Step 1: Write balanced equation.",
+      "Step 2: Convert all masses to moles.",
+      "Step 3: Divide moles by coefficient.",
+      "Step 4: Smallest value = limiting reactant.",
+      "Step 5: Calculate product from limiting reactant."
+    ],
+    "examNotes": [
+      "Limiting reactant problems are a staple in stoichiometry exams.",
+      "Practice identifying the LR from different types of data (mass, volume, moles).",
+      "Be able to calculate the amount of excess reactant remaining."
+    ],
+    "mcs": [
+      {
+        "question": "The limiting reactant in a chemical reaction is the one that:",
+        "options": [
+          "Produces the maximum amount of product",
+          "Is completely consumed first",
+          "Is present in excess",
+          "Is a catalyst"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "In the reaction 2H₂ + O₂ → 2H₂O, if 4g H₂ reacts with 32g O₂, which is limiting?",
+        "options": [
+          "H₂",
+          "O₂",
+          "Both are limiting",
+          "Neither is limiting"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "The theoretical yield is calculated based on:",
+        "options": [
+          "Excess reactant",
+          "Limiting reactant",
+          "Catalyst",
+          "Solvent"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Limiting Reactant: Yield-determining reagent.",
+      "Excess Reactant: Unconsumed reagent after reaction.",
+      "Theoretical Yield: Maximum product from LR.",
+      "Stoichiometric Identification: Mole ratio comparison.",
+      "Industrial Applications: Cost optimization strategies."
+    ],
+    "importantTasks": [
+      "Identify the limiting reactant from given amounts.",
+      "Calculate the theoretical yield of a product.",
+      "Calculate the amount of excess reactant remaining."
+    ],
+    "exercises": [],
+    "visualization": {
+      "type": "simulation",
+      "component": "LimitingReactantSim",
+      "desc": "Interactive limiting reactant simulator"
     }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
   },
-  "visualType": "limiting-reactant"
+  "originalContent": {
+    "notes": [
+      "**Limiting Reactant (LR):** The reactant that is entirely consumed first in a chemical reaction, thereby determining the maximum theoretical yield of product. Once the LR is exhausted, the reaction ceases regardless of remaining excess reactants.",
+      "**Excess Reactant:** Any reactant present in an amount greater than stoichiometrically required to react completely with the limiting reactant. The unreacted portion remains after the reaction reaches completion.",
+      "**Identification Method:** Convert all reactant amounts to moles, then divide by their respective stoichiometric coefficients from the balanced equation. The reactant with the smallest resulting value is the limiting reactant.",
+      "**Theoretical Yield:** The maximum amount of product that can be formed from the limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation.",
+      "**Practical Significance:** Industrial processes often use excess of cheaper reactants to ensure complete consumption of expensive limiting reactants, optimizing cost efficiency and maximizing yield."
+    ],
+    "confusion": [
+      "❌ The reactant with the smallest mass is always the limiting reactant. ✅ The limiting reactant is determined by the mole ratio from the balanced equation, not just the initial mass.",
+      "❌ The limiting reactant is always the one with the smallest stoichiometric coefficient. ✅ It depends on both the stoichiometric coefficient and the initial amount of each reactant."
+    ],
+    "practice": [
+      "Given 5 moles of $H_2$ and 2 moles of $O_2$, identify the LR for $2H_2 + O_2 \\rightarrow 2H_2O$.",
+      "Calculate the amount of excess reactant remaining after the reaction."
+    ],
+    "universalFacts": [
+      "The limiting reactant determines the maximum amount of product formed.",
+      "It is completely consumed in the reaction and limits the extent of reaction.",
+      "The concept is fundamental to yield calculations in industrial chemistry.",
+      "All reactants other than the limiting reactant are in excess.",
+      "Understanding limiting reactant is essential for optimizing chemical processes."
+    ],
+    "examples": [
+      "2H₂ + O₂ → 2H₂O: If 4g H₂ reacts with 32g O₂, H₂ is limiting (requires 32g O₂ but has excess).",
+      "N₂ + 3H₂ → 2NH₃: If 28g N₂ reacts with 6g H₂, H₂ is limiting (requires 84g N₂).",
+      "CaCO₃ → CaO + CO₂: If 50g CaCO₃ is heated, calculate yield.",
+      "Zn + 2HCl → ZnCl₂ + H₂: Limiting reactant determines H₂ volume."
+    ],
+    "practiceQuestions": [
+      "Define limiting reactant and explain its significance.",
+      "Identify the limiting reactant when 10g of A reacts with 15g of B.",
+      "Calculate the theoretical yield when 5g of CaCO₃ is heated.",
+      "Find the amount of excess reactant remaining after reaction."
+    ],
+    "formulas": [
+      "Moles = Mass / Molar mass",
+      "Limiting reactant = reactant giving minimum moles of product",
+      "Theoretical yield = moles of limiting reactant × stoichiometric ratio × molar mass of product",
+      "% Yield = (Actual yield / Theoretical yield) × 100",
+      "Excess reactant remaining = Initial - Consumed"
+    ],
+    "keyPoints": [
+      "Limiting reactant is completely consumed.",
+      "It determines the maximum product formed.",
+      "Other reactants are in excess.",
+      "Always convert to moles before comparing."
+    ],
+    "summary": "The limiting reactant is the reactant that is completely consumed in a chemical reaction, thus determining the maximum amount of product that can be formed. Identifying the limiting reactant is essential for accurate stoichiometric calculations.",
+    "specialNotes": [
+      "The limiting reactant concept is crucial for yield calculations.",
+      "In NEB exams, always show mole ratio comparison.",
+      "Industrial processes optimize by controlling limiting reactant."
+    ],
+    "importantStatements": [
+      "The limiting reactant is the reactant that is completely consumed first and determines the extent of reaction.",
+      "The amount of product formed depends on the limiting reactant.",
+      "Reactants in excess remain unconsumed after the reaction."
+    ],
+    "importantNotes": [
+      "To find limiting reactant: Convert all masses to moles.",
+      "Use mole ratio from balanced equation.",
+      "The reactant giving least product is limiting.",
+      "Calculate excess reactant remaining."
+    ],
+    "examShortTricks": [
+      "Step 1: Write balanced equation.",
+      "Step 2: Convert all masses to moles.",
+      "Step 3: Divide moles by coefficient.",
+      "Step 4: Smallest value = limiting reactant.",
+      "Step 5: Calculate product from limiting reactant."
+    ],
+    "examNotes": [
+      "Limiting reactant problems are a staple in stoichiometry exams.",
+      "Practice identifying the LR from different types of data (mass, volume, moles).",
+      "Be able to calculate the amount of excess reactant remaining."
+    ],
+    "mcs": [
+      {
+        "question": "The limiting reactant in a chemical reaction is the one that:",
+        "options": [
+          "Produces the maximum amount of product",
+          "Is completely consumed first",
+          "Is present in excess",
+          "Is a catalyst"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "In the reaction 2H₂ + O₂ → 2H₂O, if 4g H₂ reacts with 32g O₂, which is limiting?",
+        "options": [
+          "H₂",
+          "O₂",
+          "Both are limiting",
+          "Neither is limiting"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "The theoretical yield is calculated based on:",
+        "options": [
+          "Excess reactant",
+          "Limiting reactant",
+          "Catalyst",
+          "Solvent"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Limiting Reactant: Yield-determining reagent.",
+      "Excess Reactant: Unconsumed reagent after reaction.",
+      "Theoretical Yield: Maximum product from LR.",
+      "Stoichiometric Identification: Mole ratio comparison.",
+      "Industrial Applications: Cost optimization strategies."
+    ],
+    "importantTasks": [
+      "Identify the limiting reactant from given amounts.",
+      "Calculate the theoretical yield of a product.",
+      "Calculate the amount of excess reactant remaining."
+    ],
+    "exercises": [],
+    "visualization": {
+      "type": "simulation",
+      "component": "LimitingReactantSim",
+      "desc": "Interactive limiting reactant simulator"
+    }
+  }
 }

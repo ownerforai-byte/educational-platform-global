@@ -91,6 +91,21 @@ export function TopicMindMap({
   const [isMindmapFullscreen, setIsMindmapFullscreen] = useState(false);
   const mindmapRootRef = useRef<HTMLDivElement>(null);
 
+  // ── Hold-to-expand hierarchy state ──
+  // Press-and-hold a branch capsule (or its tree row) to fan out its full
+  // sub-branch → leaf hierarchy on the canvas; hold again (or tap) to fold it back.
+  const [heldBranches, setHeldBranches] = useState<Record<string, boolean>>({});
+  const [expandedBranches, setExpandedBranches] = useState<Record<string, boolean>>({});
+
+  const setBranchExpanded = (id: string, next: boolean) => {
+    setHeldBranches((prev) => ({ ...prev, [id]: next }));
+    setExpandedBranches((prev) => ({ ...prev, [id]: next }));
+  };
+
+  const toggleBranchExpanded = (id: string) => {
+    setBranchExpanded(id, !expandedBranches[id]);
+  };
+
   useEffect(() => {
     const onFsChange = () => setIsMindmapFullscreen(!!document.fullscreenElement);
     document.addEventListener("fullscreenchange", onFsChange);
@@ -331,6 +346,401 @@ export function TopicMindMap({
           ],
           nodes: [],
         },
+        {
+          id: "branch-diversity",
+          category: "Taxonomy & Biodiversity Hierarchies",
+          color: "#059669",
+          bgColor: "rgba(5, 150, 105, 0.15)",
+          borderColor: "#059669",
+          angle: -120,
+          classLevel: "Class 11",
+          orderIndex: 6,
+          subBranches: [
+            {
+              id: "sub-bio-kingdoms",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-animalia",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-plantae",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 3,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-plant-physio",
+          category: "Plant Physiology & Transport",
+          color: "#65a30d",
+          bgColor: "rgba(101, 163, 13, 0.15)",
+          borderColor: "#65a30d",
+          angle: 180,
+          classLevel: "Class 11",
+          orderIndex: 7,
+          subBranches: [
+            {
+              id: "sub-bio-water",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-photosyn",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-respiration",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 3,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-growth",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 4,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-human-physio",
+          category: "Human Physiology Systems",
+          color: "#e11d48",
+          bgColor: "rgba(225, 29, 72, 0.15)",
+          borderColor: "#e11d48",
+          angle: 240,
+          classLevel: "Class 11",
+          orderIndex: 8,
+          subBranches: [
+            {
+              id: "sub-bio-digestive",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-breathing",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-circulatory",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 3,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-excretory",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 4,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-muscular",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 5,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-neural",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 6,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-endocrine",
+              title: "",
+              description: "",
+              classLevel: "Class 11",
+              orderIndex: 7,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-reprod",
+          category: "Reproduction & Developmental Biology",
+          color: "#db2777",
+          bgColor: "rgba(219, 39, 119, 0.15)",
+          borderColor: "#db2777",
+          angle: 300,
+          classLevel: "Class 12",
+          orderIndex: 9,
+          subBranches: [
+            {
+              id: "sub-bio-flower",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-human-reprod",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-embryo",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 3,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-contracept",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 4,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-evolution-heredity",
+          category: "Evolutionary Mechanisms & Heredity Expanded",
+          color: "#7c3aed",
+          bgColor: "rgba(124, 58, 237, 0.15)",
+          borderColor: "#7c3aed",
+          angle: 180,
+          classLevel: "Class 12",
+          orderIndex: 10,
+          subBranches: [
+            {
+              id: "sub-bio-mendel",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-chromosome",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-molecular-basis",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 3,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-hardy-weinberg",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 4,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-adaptive-radiation",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 5,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-ecology-conservation",
+          category: "Ecosystem Ecology & Conservation Expanded",
+          color: "#15803d",
+          bgColor: "rgba(21, 128, 61, 0.15)",
+          borderColor: "#15803d",
+          angle: 60,
+          classLevel: "Class 12",
+          orderIndex: 11,
+          subBranches: [
+            {
+              id: "sub-bio-organism-pop",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-ecosystem",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-biogeo",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 3,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-biodiversity",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 4,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-environ-pollut",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 5,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-food-prod",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 6,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-microbes",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 7,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-health-disease",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 8,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-biotech-princ",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 9,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-biotech-app",
+              title: "",
+              description: "",
+              classLevel: "Class 12",
+              orderIndex: 10,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-cee-bio-framework",
+          category: "CEE Biology Integrated Framework Block",
+          color: "#b45309",
+          bgColor: "rgba(180, 83, 9, 0.15)",
+          borderColor: "#b45309",
+          angle: -60,
+          classLevel: "CEE/IOE",
+          orderIndex: 12,
+          subBranches: [
+            {
+              id: "sub-bio-cee-cell-biomol",
+              title: "",
+              description: "",
+              classLevel: "CEE/IOE",
+              orderIndex: 1,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-cee-genetics-biotec",
+              title: "",
+              description: "",
+              classLevel: "CEE/IOE",
+              orderIndex: 2,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-cee-physio-systems",
+              title: "",
+              description: "",
+              classLevel: "CEE/IOE",
+              orderIndex: 3,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-cee-eco-evolution",
+              title: "",
+              description: "",
+              classLevel: "CEE/IOE",
+              orderIndex: 4,
+              nodes: [],
+            },
+            {
+              id: "sub-bio-cee-trap-library",
+              title: "",
+              description: "",
+              classLevel: "CEE/IOE",
+              orderIndex: 5,
+              nodes: [],
+            },
+          ],
+          nodes: [],
+        },
       ];
     }
 
@@ -554,6 +964,133 @@ export function TopicMindMap({
                 },
               ],
             },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-organic-framework",
+          category: "Organic Chemistry Expanded Families & Mechanisms",
+          color: "#a16207",
+          bgColor: "rgba(161, 98, 7, 0.15)",
+          borderColor: "#a16207",
+          angle: -120,
+          classLevel: "Class 12",
+          orderIndex: 6,
+          subBranches: [
+            {
+              id: "sub-ch-goc-iupac",
+              title: "GOC: Isomerism, Induction & IUPAC Nomenclature",
+              description: "Electronic effects (I, +I, -I, +M, -M), hyperconjugation, four isomerism types, and IUPAC priority for naming.",
+              classLevel: "Class 11",
+              orderIndex: 1,
+              nodes: [
+                {
+                  id: "ch-o1",
+                  title: "Inductive & Hyperconjugation Effects",
+                  description: "Permanent electron displacement through sigma bonds; hyperconjugation stabilizes carbocations/alkenes.",
+                  formula: "Effect strength: -NO2 > -F > -Cl > -CH3",
+                  formulaLatex: "$$\\text{Hyperconjugation: } \\ce{C-H} \\;\\sigma \\to p \\text{ (}n\\text{ alpha-H stabilize }+\\ce{C}^{-})$$",
+                  derivationSnippet: "Number of alpha-H sets carbocation stability: tert-butyl C+ (9 H) > isopropyl (6 H) > ethyl (3 H) > methyl (0 H). -I groups (NO2, F) push electron density away, +I groups (alkyl, NH2) push toward the reaction center.",
+                  examFact: "CEE TRAP: Stability order of C+ = 3-methyl-3-butyl > tertiary > secondary > primary > methyl; vinyl & aryl C+ are UNSTABLE (sp2, no hyperconjugation).",
+                  highYield: true,
+                  classLevel: "Class 11",
+                  orderIndex: 1,
+                },
+                {
+                  id: "ch-o2",
+                  title: "IUPAC Naming & Isomerism Hierarchy",
+                  description: "Select longest chain, number for lowest locant, name substituents; structural vs stereoisomerism.",
+                  formula: "Priority: -COOH > -CHO > >C=O > -OH > -NH2",
+                  formulaLatex: "$$\\text{Isomers} = \\text{Structural} + \\text{Geometrical (E/Z, cis/trans)} + \\text{Optical (R/S)}$$",
+                  derivationSnippet: "Functional group determines suffix; highest priority group is both principal chain endpoint and parent suffix. Chain numbering minimizes the set of locants, not the total count.",
+                  examFact: "NEB: Cis/trans requires same group on each double-bond carbon; E/Z (Cahn-Ingold-Prelog) ranks by atomic number. E = opposite sides of highest-priority group.",
+                  highYield: true,
+                  classLevel: "Class 11",
+                  orderIndex: 2,
+                },
+              ],
+            },
+            { id: "sub-ch-reaction-intermediates", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+            { id: "sub-ch-hydrocarbons-alk", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+            { id: "sub-ch-aromatic-electrophilic", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+            { id: "sub-ch-haloalk-haloar", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+            { id: "sub-ch-alc-phen-ether", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+            { id: "sub-ch-ald-ket-carbox", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+            { id: "sub-ch-amines-amides", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+            { id: "sub-ch-biomolecules-org", title: "", description: "", classLevel: "Class 12", orderIndex: 9, nodes: [] },
+            { id: "sub-ch-polymers-org", title: "", description: "", classLevel: "Class 12", orderIndex: 10, nodes: [] },
+            { id: "sub-ch-chem-everyday", title: "", description: "", classLevel: "Class 12", orderIndex: 11, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-inorganic-framework",
+          category: "Inorganic Chemistry Expanded — s/p/d/f + Qualitative",
+          color: "#1d4ed8",
+          bgColor: "rgba(29, 78, 216, 0.15)",
+          borderColor: "#1d4ed8",
+          angle: -180,
+          classLevel: "Class 11",
+          orderIndex: 7,
+          subBranches: [
+            { id: "sub-ch-sblock-family", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+            { id: "sub-ch-pblock-family", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+            { id: "sub-ch-pblock-gr13", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+            { id: "sub-ch-pblock-gr14", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+            { id: "sub-ch-pblock-gr15", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+            { id: "sub-ch-pblock-gr16", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+            { id: "sub-ch-pblock-gr17", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+            { id: "sub-ch-pblock-gr18", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+            { id: "sub-ch-dblock-tran", title: "", description: "", classLevel: "Class 12", orderIndex: 9, nodes: [] },
+            { id: "sub-ch-fblock-inner", title: "", description: "", classLevel: "Class 12", orderIndex: 10, nodes: [] },
+            { id: "sub-ch-coord-complex", title: "", description: "", classLevel: "Class 12", orderIndex: 11, nodes: [] },
+            { id: "sub-ch-qual-analysis", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 12, nodes: [] },
+            { id: "sub-ch-bioinorg", title: "", description: "", classLevel: "Class 11", orderIndex: 13, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-physical-chem-expanded",
+          category: "Physical Chemistry Expanded — Equilibrium, Thermo, Kinetics, Electro, States",
+          color: "#be123c",
+          bgColor: "rgba(190, 18, 60, 0.15)",
+          borderColor: "#be123c",
+          angle: 240,
+          classLevel: "Class 11",
+          orderIndex: 8,
+          subBranches: [
+            { id: "sub-ch-states-matter-gas", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+            { id: "sub-ch-states-solid", title: "", description: "", classLevel: "Class 12", orderIndex: 2, nodes: [] },
+            { id: "sub-ch-solutions-colloid", title: "", description: "", classLevel: "Class 12", orderIndex: 3, nodes: [] },
+            { id: "sub-ch-thermodynamics-i", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+            { id: "sub-ch-thermo-ii-spontan", title: "", description: "", classLevel: "Class 11", orderIndex: 5, nodes: [] },
+            { id: "sub-ch-equilibrium-chemi", title: "", description: "", classLevel: "Class 11", orderIndex: 6, nodes: [] },
+            { id: "sub-ch-equilibrium-ionic", title: "", description: "", classLevel: "Class 11", orderIndex: 7, nodes: [] },
+            { id: "sub-ch-redox-electrochem", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+            { id: "sub-ch-chemical-kinetics", title: "", description: "", classLevel: "Class 12", orderIndex: 9, nodes: [] },
+            { id: "sub-ch-surface-adsorp", title: "", description: "", classLevel: "Class 12", orderIndex: 10, nodes: [] },
+            { id: "sub-ch-nuclear-radio", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 11, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-cee-chemistry-framework",
+          category: "CEE Chemistry Integrated Framework Block",
+          color: "#78350f",
+          bgColor: "rgba(120, 53, 15, 0.15)",
+          borderColor: "#78350f",
+          angle: 300,
+          classLevel: "CEE/IOE",
+          orderIndex: 9,
+          subBranches: [
+            { id: "sub-ch-cee-periodic-trend", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 1, nodes: [] },
+            { id: "sub-ch-cee-bonding-vsepr", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 2, nodes: [] },
+            { id: "sub-ch-cee-equilibria-buffer", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 3, nodes: [] },
+            { id: "sub-ch-cee-electro-kinetics", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 4, nodes: [] },
+            { id: "sub-ch-cee-org-named-react", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 5, nodes: [] },
+            { id: "sub-ch-cee-inorg-salt-analysis", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 6, nodes: [] },
+            { id: "sub-ch-cee-metallurgy-ore", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 7, nodes: [] },
+            { id: "sub-ch-cee-exception-trap", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 8, nodes: [] },
           ],
           nodes: [],
         },
@@ -783,6 +1320,125 @@ export function TopicMindMap({
           ],
           nodes: [],
         },
+        {
+          id: "branch-algebra-structure",
+          category: "Algebraic Structures & Abstract Algebra",
+          color: "#4f46e5",
+          bgColor: "rgba(79, 70, 229, 0.15)",
+          borderColor: "#4f46e5",
+          angle: -120,
+          classLevel: "Class 11",
+          orderIndex: 6,
+          subBranches: [
+            { id: "sub-math-sets-logic", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+            { id: "sub-math-relations-func", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+            { id: "sub-math-sequence-series", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+            { id: "sub-math-complex-numbers", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+            { id: "sub-math-quadratics-poly", title: "", description: "", classLevel: "Class 11", orderIndex: 5, nodes: [] },
+            { id: "sub-math-perm-comb", title: "", description: "", classLevel: "Class 11", orderIndex: 6, nodes: [] },
+            { id: "sub-math-binomial", title: "", description: "", classLevel: "Class 11", orderIndex: 7, nodes: [] },
+            { id: "sub-math-matrices", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+            { id: "sub-math-determinants", title: "", description: "", classLevel: "Class 12", orderIndex: 9, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-geo-coordinate",
+          category: "Geometry Expanded — Coordinate, Vector, 3D & Analytic",
+          color: "#0891b2",
+          bgColor: "rgba(8, 145, 178, 0.15)",
+          borderColor: "#0891b2",
+          angle: -180,
+          classLevel: "Class 12",
+          orderIndex: 7,
+          subBranches: [
+            { id: "sub-math-straight-lines", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+            { id: "sub-math-circles-conics", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+            { id: "sub-math-parabola-family", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+            { id: "sub-math-ellipse-hyperbola", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+            { id: "sub-math-vectors-2d", title: "", description: "", classLevel: "Class 11", orderIndex: 5, nodes: [] },
+            { id: "sub-math-vectors-3d", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+            { id: "sub-math-planes-lines-3d", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+            { id: "sub-math-coord-transform", title: "", description: "", classLevel: "All", orderIndex: 8, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-trig-expansive",
+          category: "Trigonometry Expanded — Identities, Inverse & Triangle",
+          color: "#7c2d12",
+          bgColor: "rgba(124, 45, 18, 0.15)",
+          borderColor: "#7c2d12",
+          angle: 240,
+          classLevel: "Class 11",
+          orderIndex: 8,
+          subBranches: [
+            { id: "sub-math-trig-ratio-ident", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+            { id: "sub-math-trig-eqns", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+            { id: "sub-math-trig-sum-diff", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+            { id: "sub-math-trig-multiple-half", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+            { id: "sub-math-trig-inverse", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+            { id: "sub-math-triangle-solution", title: "", description: "", classLevel: "Class 11", orderIndex: 6, nodes: [] },
+            { id: "sub-math-height-distance", title: "", description: "", classLevel: "Class 11", orderIndex: 7, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-probability-stats",
+          category: "Probability & Statistics Expanded Hierarchies",
+          color: "#a16207",
+          bgColor: "rgba(161, 98, 7, 0.15)",
+          borderColor: "#a16207",
+          angle: 300,
+          classLevel: "Class 12",
+          orderIndex: 9,
+          subBranches: [
+            { id: "sub-math-prob-axioms", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+            { id: "sub-math-baye-cond", title: "", description: "", classLevel: "Class 12", orderIndex: 2, nodes: [] },
+            { id: "sub-math-random-var", title: "", description: "", classLevel: "Class 12", orderIndex: 3, nodes: [] },
+            { id: "sub-math-binomial-dist", title: "", description: "", classLevel: "Class 12", orderIndex: 4, nodes: [] },
+            { id: "sub-math-stats-central-tend", title: "", description: "", classLevel: "Class 11", orderIndex: 5, nodes: [] },
+            { id: "sub-math-stats-dispersion", title: "", description: "", classLevel: "Class 11", orderIndex: 6, nodes: [] },
+            { id: "sub-math-linear-regression", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 7, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-linear-prog-methods",
+          category: "Linear Programming & Computational Methods",
+          color: "#6b21a8",
+          bgColor: "rgba(107, 33, 168, 0.15)",
+          borderColor: "#6b21a8",
+          angle: 180,
+          classLevel: "Class 12",
+          orderIndex: 10,
+          subBranches: [
+            { id: "sub-math-lp-formulation", title: "", description: "", classLevel: "Class 12", orderIndex: 1, nodes: [] },
+            { id: "sub-math-lp-graphical", title: "", description: "", classLevel: "Class 12", orderIndex: 2, nodes: [] },
+            { id: "sub-math-lp-simplex", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 3, nodes: [] },
+            { id: "sub-math-computational-numerical", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 4, nodes: [] },
+            { id: "sub-math-newton-raphson-bisection", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 5, nodes: [] },
+          ],
+          nodes: [],
+        },
+        {
+          id: "branch-cee-math-framework",
+          category: "CEE / IOE Mathematics Integrated Framework Block",
+          color: "#9f1239",
+          bgColor: "rgba(159, 18, 57, 0.15)",
+          borderColor: "#9f1239",
+          angle: -60,
+          classLevel: "CEE/IOE",
+          orderIndex: 11,
+          subBranches: [
+            { id: "sub-math-cee-calc-trap", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 1, nodes: [] },
+            { id: "sub-math-cee-geo-vectors", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 2, nodes: [] },
+            { id: "sub-math-cee-alg-trig", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 3, nodes: [] },
+            { id: "sub-math-cee-prob-stat", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 4, nodes: [] },
+            { id: "sub-math-cee-short-hacks", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 5, nodes: [] },
+          ],
+          nodes: [],
+        },
       ];
     }
 
@@ -1008,6 +1664,171 @@ export function TopicMindMap({
         ],
         nodes: [],
       },
+      {
+        id: "branch-waves-osc",
+        category: "Waves, Oscillations & Acoustics Expanded",
+        color: "#0d9488",
+        bgColor: "rgba(13, 148, 136, 0.15)",
+        borderColor: "#0d9488",
+        angle: -120,
+        classLevel: "Class 11",
+        orderIndex: 6,
+        subBranches: [
+          { id: "sub-ph-shm-fundam", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-shm-energy-phase", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-wave-pulse-trav", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-sound-longitudinal", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-doppler-beats", title: "", description: "", classLevel: "Class 11", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-standing-harmonics", title: "", description: "", classLevel: "Class 11", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-interference-superpos", title: "", description: "", classLevel: "Class 11", orderIndex: 7, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-thermo-heat",
+        category: "Thermal Physics & Thermodynamics Expanded",
+        color: "#b45309",
+        bgColor: "rgba(180, 83, 9, 0.15)",
+        borderColor: "#b45309",
+        angle: -180,
+        classLevel: "Class 11",
+        orderIndex: 7,
+        subBranches: [
+          { id: "sub-ph-temp-thermal-exp", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-calorimetry", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-heat-transfer", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-kinetic-theory-gas", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-thermo-laws", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-carnot-cycle-eff", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-ideal-real-gas", title: "", description: "", classLevel: "Class 11", orderIndex: 7, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-ray-wave-optics",
+        category: "Optics — Ray & Wave Expanded Hierarchies",
+        color: "#7c3aed",
+        bgColor: "rgba(124, 58, 237, 0.15)",
+        borderColor: "#7c3aed",
+        angle: 240,
+        classLevel: "Class 12",
+        orderIndex: 8,
+        subBranches: [
+          { id: "sub-ph-reflection-curved", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-refraction-plane", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-prism-dispersion", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-lens-combinations", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-optical-instrum", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-wavefront-huygens", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-young-interfere", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+          { id: "sub-ph-diffraction-polar", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-electrostatics-current",
+        category: "Electrostatics & Current Electricity Expanded",
+        color: "#2563eb",
+        bgColor: "rgba(37, 99, 235, 0.15)",
+        borderColor: "#2563eb",
+        angle: 300,
+        classLevel: "Class 12",
+        orderIndex: 9,
+        subBranches: [
+          { id: "sub-ph-coulomb-field", title: "", description: "", classLevel: "Class 12", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-gauss-potential", title: "", description: "", classLevel: "Class 12", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-capacitor-dielectric", title: "", description: "", classLevel: "Class 12", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-ohm-kirchhoff", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-r-c-network", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-wheatstone-meter", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-potentiometer", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+          { id: "sub-ph-electric-cell-internal", title: "", description: "", classLevel: "Class 11", orderIndex: 8, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-mag-em-induction",
+        category: "Magnetism, EMI & Alternating Current Expanded",
+        color: "#be185d",
+        bgColor: "rgba(190, 24, 93, 0.15)",
+        borderColor: "#be185d",
+        angle: 120,
+        classLevel: "Class 12",
+        orderIndex: 10,
+        subBranches: [
+          { id: "sub-ph-biot-savart-ampere", title: "", description: "", classLevel: "Class 12", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-lorentz-cyclotron", title: "", description: "", classLevel: "Class 12", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-magnetic-dipole", title: "", description: "", classLevel: "Class 12", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-ferro-para-diamag", title: "", description: "", classLevel: "Class 12", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-faraday-lenz-emf", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-mutual-self-induct", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-ac-lcr-resonance", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+          { id: "sub-ph-transformer-power", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+          { id: "sub-ph-em-wave-spectrum", title: "", description: "", classLevel: "Class 12", orderIndex: 9, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-modern-physics",
+        category: "Modern Physics — Nuclear, Quantum, Solid & Electronic Expanded",
+        color: "#7f1d1d",
+        bgColor: "rgba(127, 29, 29, 0.15)",
+        borderColor: "#7f1d1d",
+        angle: -60,
+        classLevel: "Class 12",
+        orderIndex: 11,
+        subBranches: [
+          { id: "sub-ph-photoelectric", title: "", description: "", classLevel: "Class 12", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-bohr-hydrogen-spectra", title: "", description: "", classLevel: "Class 12", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-debroglie-wave", title: "", description: "", classLevel: "Class 12", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-atom-nucleus-model", title: "", description: "", classLevel: "Class 12", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-radioactivity-decay", title: "", description: "", classLevel: "Class 12", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-fission-fusion", title: "", description: "", classLevel: "Class 12", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-semiconductor-pn", title: "", description: "", classLevel: "Class 12", orderIndex: 7, nodes: [] },
+          { id: "sub-ph-transistor-logic", title: "", description: "", classLevel: "Class 12", orderIndex: 8, nodes: [] },
+          { id: "sub-ph-comm-systems", title: "", description: "", classLevel: "Class 12", orderIndex: 9, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-elastic-fluid-solid",
+        category: "Solid Mechanics & Fluid Statics/Dynamics Expanded",
+        color: "#4d7c0f",
+        bgColor: "rgba(77, 124, 15, 0.15)",
+        borderColor: "#4d7c0f",
+        angle: 60,
+        classLevel: "Class 11",
+        orderIndex: 12,
+        subBranches: [
+          { id: "sub-ph-elastic-moduli", title: "", description: "", classLevel: "Class 11", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-fluid-pressure", title: "", description: "", classLevel: "Class 11", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-buoyancy-archimedes", title: "", description: "", classLevel: "Class 11", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-viscosity-stokes", title: "", description: "", classLevel: "Class 11", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-bernoulli-streamline", title: "", description: "", classLevel: "Class 11", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-surface-tension", title: "", description: "", classLevel: "Class 11", orderIndex: 6, nodes: [] },
+        ],
+        nodes: [],
+      },
+      {
+        id: "branch-cee-physics-framework",
+        category: "CEE / IOE Physics Integrated Framework Block",
+        color: "#92400e",
+        bgColor: "rgba(146, 64, 14, 0.15)",
+        borderColor: "#92400e",
+        angle: 0,
+        classLevel: "CEE/IOE",
+        orderIndex: 13,
+        subBranches: [
+          { id: "sub-ph-cee-mech-trap", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 1, nodes: [] },
+          { id: "sub-ph-cee-electro-mag", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 2, nodes: [] },
+          { id: "sub-ph-cee-modern-nuclear", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 3, nodes: [] },
+          { id: "sub-ph-cee-optics-wave", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 4, nodes: [] },
+          { id: "sub-ph-cee-thermo-fluid", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 5, nodes: [] },
+          { id: "sub-ph-cee-short-hack", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 6, nodes: [] },
+          { id: "sub-ph-cee-exception-trap", title: "", description: "", classLevel: "CEE/IOE", orderIndex: 7, nodes: [] },
+        ],
+        nodes: [],
+      },
     ];
   }, [subjectSlug]);
 
@@ -1092,6 +1913,53 @@ export function TopicMindMap({
   const centerX = 500;
   const centerY = 300;
   const branchRadius = 240;
+
+  // ── Hold-to-expand gesture plumbing (canvas capsules) ──
+  const HOLD_MS = 350;
+  const holdTimerRef = useRef<number | null>(null);
+  const holdFiredRef = useRef(false);
+
+  /**
+   * Compute the 3-level fan-out layout for a branch when it is held open:
+   * sub-branch capsules orbit the branch head, leaf capsules orbit each
+   * sub-branch, in deterministic syllabus order.
+   */
+  function computeFan(
+    b: MindMapBranch,
+    bx: number,
+    by: number,
+    rad: number,
+  ): {
+    subPos: { sub: MindMapSubBranch; x: number; y: number }[];
+    leafPos: { node: MindMapLeafNode; x: number; y: number; subId: string }[];
+  } {
+    const subs = b.subBranches.filter((s) => s.nodes.length > 0);
+    const subPos = subs.map((sub, i) => {
+      const spread = subs.length === 1 ? 0 : (i - (subs.length - 1) / 2) * 0.42;
+      const subRad = rad + spread;
+      const dist = 105;
+      return {
+        sub,
+        x: bx + Math.cos(subRad) * dist,
+        y: by + Math.sin(subRad) * dist,
+      };
+    });
+
+    const leafPos: { node: MindMapLeafNode; x: number; y: number; subId: string }[] = [];
+    subPos.forEach(({ sub, x: sxp, y: syp }) => {
+      const outward = Math.atan2(syp - by, sxp - bx);
+      const leaves = sub.nodes.slice(0, 4); // cap per-sub leaves for readability
+      leaves.forEach((node, li) => {
+        const perp = outward + Math.PI / 2;
+        const side = li % 2 === 0 ? -1 : 1;
+        const row = Math.floor(li / 2);
+        const lx = sxp + Math.cos(outward) * 68 + Math.cos(perp) * side * 30;
+        const ly = syp + Math.sin(outward) * 68 + Math.sin(perp) * side * 30 + row * 24;
+        leafPos.push({ node, x: lx, y: ly, subId: sub.id });
+      });
+    });
+    return { subPos, leafPos };
+  }
 
   return (
     <div ref={mindmapRootRef} className={`rounded-3xl border border-border/80 bg-[#090d16] text-slate-100 shadow-2xl overflow-hidden ${className}`}>
@@ -1288,11 +2156,33 @@ export function TopicMindMap({
                   >
                     {/* Branch Title Bar */}
                     <div
-                      onClick={() => {
-                        setActiveBranchId(isBranchActive ? null : b.id);
-                        setActiveNodeId(null);
+                      onPointerDown={() => {
+                        holdTimerRef.current = window.setTimeout(() => {
+                          holdFiredRef.current = true;
+                          setBranchExpanded(b.id, true);
+                        }, HOLD_MS);
                       }}
-                      className="p-2.5 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-colors"
+                      onPointerUp={() => {
+                        if (holdTimerRef.current !== null) {
+                          window.clearTimeout(holdTimerRef.current);
+                          holdTimerRef.current = null;
+                        }
+                        if (holdFiredRef.current) {
+                          holdFiredRef.current = false;
+                          setBranchExpanded(b.id, false);
+                        } else {
+                          setActiveBranchId(isBranchActive ? null : b.id);
+                          setActiveNodeId(null);
+                          toggleBranchExpanded(b.id);
+                        }
+                      }}
+                      onPointerLeave={() => {
+                        if (holdTimerRef.current !== null) {
+                          window.clearTimeout(holdTimerRef.current);
+                          holdTimerRef.current = null;
+                        }
+                      }}
+                      className="p-2.5 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-colors select-none touch-none"
                       style={{ borderLeft: `3px solid ${b.color}` }}
                     >
                       <div className="flex items-center gap-2 min-w-0">
@@ -1456,12 +2346,14 @@ export function TopicMindMap({
                 const by = centerY + branchRadius * Math.sin(rad);
 
                 const isBranchActive = activeBranchId === null || activeBranchId === b.id;
+                const isHeld = !!heldBranches[b.id];
 
                 // Quadratic bezier control point for elegant curved trunk
                 const cx = centerX + (branchRadius * 0.45) * Math.cos(rad + 0.15);
                 const cy = centerY + (branchRadius * 0.45) * Math.sin(rad + 0.15);
 
                 const trunkPath = `M ${centerX} ${centerY} Q ${cx} ${cy} ${bx} ${by}`;
+                const fan = computeFan(b, bx, by, rad);
 
                 return (
                   <g key={`trunk-${b.id}`} opacity={isBranchActive ? 1 : 0.2} className="transition-opacity duration-300">
@@ -1483,29 +2375,81 @@ export function TopicMindMap({
                       strokeLinecap="round"
                     />
 
-                    {/* Secondary leaves connected to Branch Trunk */}
-                    {b.nodes.map((node, nodeIdx) => {
-                      const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
-                      const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
-                      const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
-
-                      const leafPath = `M ${bx} ${by} Q ${(bx + nx) / 2} ${(by + ny) / 2 - 15} ${nx} ${ny}`;
-                      const isNodeActive = activeNodeId === node.id;
-
-                      return (
-                        <g key={`leaf-path-${node.id}`}>
+                    {/* Hierarchy fan-out: Branch → Sub-Branch leader lines (SVG, no arrowheads) */}
+                    {isHeld &&
+                      fan.subPos.map(({ sub, x: sxp, y: syp }) => {
+                        const midX = (bx + sxp) / 2;
+                        const midY = (by + syp) / 2 - 14;
+                        const subPath = `M ${bx} ${by} Q ${midX} ${midY} ${sxp} ${syp}`;
+                        return (
                           <path
-                            d={leafPath}
+                            key={`sub-path-${sub.id}`}
+                            d={subPath}
                             fill="none"
                             stroke={b.color}
-                            strokeWidth={isNodeActive ? "3" : "1.8"}
-                            strokeDasharray={isNodeActive ? "none" : "4 2"}
-                            strokeOpacity={isNodeActive ? 1 : 0.75}
+                            strokeWidth="2"
+                            strokeOpacity="0.8"
+                            strokeLinecap="round"
                           />
-                          <circle cx={nx} cy={ny} r={isNodeActive ? "6" : "4"} fill={b.color} />
-                        </g>
-                      );
-                    })}
+                        );
+                      })}
+
+                    {/* Hierarchy fan-out: Sub-Branch → Leaf leader lines with tip terminators */}
+                    {isHeld
+                      ? fan.leafPos.map(({ node, x: lxp, y: lyp, subId }) => {
+                          const sp = fan.subPos.find((s) => s.sub.id === subId);
+                          if (!sp) return null;
+                          const midX = (sp.x + lxp) / 2;
+                          const midY = (sp.y + lyp) / 2 - 8;
+                          const leafPath = `M ${sp.x} ${sp.y} Q ${midX} ${midY} ${lxp} ${lyp}`;
+                          const isNodeActive = activeNodeId === node.id;
+                          // Perpendicular tip terminator at the leaf (never an arrowhead)
+                          const ang = Math.atan2(lyp - midY, lxp - midX);
+                          const nx = Math.cos(ang);
+                          const ny = Math.sin(ang);
+                          const th = 4;
+                          return (
+                            <g key={`leaf-path-${node.id}`}>
+                              <path
+                                d={leafPath}
+                                fill="none"
+                                stroke={b.color}
+                                strokeWidth={isNodeActive ? "2.4" : "1.2"}
+                                strokeOpacity={isNodeActive ? 1 : 0.65}
+                                strokeLinecap="round"
+                              />
+                              <path
+                                d={`M ${lxp - ny * th} ${lyp + nx * th} L ${lxp} ${lyp} L ${lxp + ny * th} ${lyp - nx * th}`}
+                                fill="none"
+                                stroke={b.color}
+                                strokeWidth={isNodeActive ? "2.2" : "1.5"}
+                                strokeLinecap="round"
+                              />
+                            </g>
+                          );
+                        })
+                      : b.nodes.map((node, nodeIdx) => {
+                          const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
+                          const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
+                          const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
+
+                          const leafPath = `M ${bx} ${by} Q ${(bx + nx) / 2} ${(by + ny) / 2 - 15} ${nx} ${ny}`;
+                          const isNodeActive = activeNodeId === node.id;
+
+                          return (
+                            <g key={`leaf-path-${node.id}`}>
+                              <path
+                                d={leafPath}
+                                fill="none"
+                                stroke={b.color}
+                                strokeWidth={isNodeActive ? "3" : "1.8"}
+                                strokeDasharray={isNodeActive ? "none" : "4 2"}
+                                strokeOpacity={isNodeActive ? 1 : 0.75}
+                              />
+                              <circle cx={nx} cy={ny} r={isNodeActive ? "6" : "4"} fill={b.color} />
+                            </g>
+                          );
+                        })}
                   </g>
                 );
               })}
@@ -1537,10 +2481,12 @@ export function TopicMindMap({
               const by = centerY + branchRadius * Math.sin(rad);
 
               const isBranchActive = activeBranchId === null || activeBranchId === b.id;
+              const isHeld = !!heldBranches[b.id];
+              const fan = computeFan(b, bx, by, rad);
 
               return (
                 <React.Fragment key={`html-${b.id}`}>
-                  {/* Branch Head Capsule */}
+                  {/* Branch Head Capsule — hold to fan out full hierarchy */}
                   <div
                     style={{
                       left: `${(bx / 1000) * 100}%`,
@@ -1549,61 +2495,147 @@ export function TopicMindMap({
                       borderColor: b.color,
                       boxShadow: activeBranchId === b.id ? `0 0 25px ${b.color}50` : "none",
                     }}
-                    onClick={() => {
-                      setActiveBranchId(b.id);
-                      setActiveNodeId(null);
+                    onPointerDown={(e) => {
+                      e.stopPropagation();
+                      holdTimerRef.current = window.setTimeout(() => {
+                        holdFiredRef.current = true;
+                        setBranchExpanded(b.id, true);
+                      }, HOLD_MS);
                     }}
-                    className={`absolute z-20 cursor-pointer rounded-2xl border-2 px-3 py-1.5 backdrop-blur-md transition-all duration-200 ${
+                    onPointerUp={(e) => {
+                      e.stopPropagation();
+                      if (holdTimerRef.current !== null) {
+                        window.clearTimeout(holdTimerRef.current);
+                        holdTimerRef.current = null;
+                      }
+                      if (holdFiredRef.current) {
+                        // After a completed hold, tapping collapses on the next release.
+                        holdFiredRef.current = false;
+                        setBranchExpanded(b.id, false);
+                      } else {
+                        setActiveBranchId(b.id);
+                        setActiveNodeId(null);
+                        toggleBranchExpanded(b.id);
+                      }
+                    }}
+                    onPointerLeave={() => {
+                      if (holdTimerRef.current !== null) {
+                        window.clearTimeout(holdTimerRef.current);
+                        holdTimerRef.current = null;
+                      }
+                    }}
+                    className={`absolute z-20 cursor-pointer rounded-2xl border-2 px-3 py-1.5 backdrop-blur-md transition-all duration-200 select-none touch-none ${
                       isBranchActive ? "opacity-100 scale-105" : "opacity-30 scale-95"
                     } bg-[#0c1220]/95 hover:scale-110`}
                   >
                     <div className="flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full" style={{ backgroundColor: b.color }} />
                       <span className="text-xs font-bold text-white whitespace-nowrap">{b.category}</span>
+                      <span
+                        className="text-[9px] font-bold ml-0.5"
+                        style={{ color: b.color }}
+                      >
+                        {isHeld ? "−" : "+"}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Child Leaf Capsules */}
-                  {b.nodes.map((node, nodeIdx) => {
-                    const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
-                    const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
-                    const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
-
-                    const isNodeSelected = activeNodeId === node.id;
-
-                    return (
+                  {/* Held: Sub-Branch capsules fanned around the branch */}
+                  {isHeld &&
+                    fan.subPos.map(({ sub, x: sxp, y: syp }) => (
                       <div
-                        key={`child-${node.id}`}
+                        key={`held-sub-${sub.id}`}
                         style={{
-                          left: `${(nx / 1000) * 100}%`,
-                          top: `${(ny / 600) * 100}%`,
+                          left: `${(sxp / 1000) * 100}%`,
+                          top: `${(syp / 600) * 100}%`,
                           transform: "translate(-50%, -50%)",
-                          borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                          borderColor: b.color,
                         }}
                         onClick={() => {
                           setActiveBranchId(b.id);
-                          setActiveNodeId(node.id);
+                          setActiveNodeId(null);
                         }}
-                        className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${
-                          isNodeSelected
-                            ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
-                            : "bg-slate-950/90 hover:border-slate-500 hover:scale-102"
-                        }`}
+                        className="absolute z-25 cursor-pointer rounded-xl border px-2 py-1 backdrop-blur-md bg-[#0c1220]/95 transition-all duration-200 hover:scale-105 animate-fade-in"
                       >
-                        <h4 className="text-[11px] font-bold text-white leading-tight truncate">
-                          {node.title}
-                        </h4>
-                        {node.formula && (
-                          <div
-                            className="mt-1 font-mono text-[9px] font-semibold px-1 rounded truncate"
-                            style={{ backgroundColor: `${b.color}20`, color: b.color }}
-                          >
-                            {node.formula}
-                          </div>
-                        )}
+                        <div className="flex items-center gap-1">
+                          <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: b.color }} />
+                          <span className="text-[10px] font-bold text-white whitespace-nowrap max-w-[140px] truncate">
+                            {sub.title || sub.id}
+                          </span>
+                        </div>
                       </div>
-                    );
-                  })}
+                    ))}
+
+                  {/* Held: Leaf capsules under their sub-branch (full 3-level hierarchy) */}
+                  {isHeld &&
+                    fan.leafPos.map(({ node, x: lxp, y: lyp }) => {
+                      const isNodeSelected = activeNodeId === node.id;
+                      return (
+                        <div
+                          key={`held-leaf-${node.id}`}
+                          style={{
+                            left: `${(lxp / 1000) * 100}%`,
+                            top: `${(lyp / 600) * 100}%`,
+                            transform: "translate(-50%, -50%)",
+                            borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                          }}
+                          onClick={() => {
+                            setActiveBranchId(b.id);
+                            setActiveNodeId(node.id);
+                          }}
+                          className={`absolute z-30 cursor-pointer rounded-lg border p-1.5 max-w-[150px] backdrop-blur-md transition-all duration-200 animate-fade-in ${
+                            isNodeSelected
+                              ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
+                              : "bg-slate-950/90 hover:border-slate-500"
+                          }`}
+                        >
+                          <h4 className="text-[10px] font-bold text-white leading-tight truncate">{node.title}</h4>
+                        </div>
+                      );
+                    })}
+
+                  {/* Collapsed: Child Leaf Capsules (two attached directly to the trunk) */}
+                  {!isHeld &&
+                    b.nodes.slice(0, 2).map((node, nodeIdx) => {
+                      const nodeSpread = (nodeIdx === 0 ? -1 : 1) * 38;
+                      const nx = bx + Math.cos(rad) * 90 + Math.sin(rad) * nodeSpread;
+                      const ny = by + Math.sin(rad) * 90 - Math.cos(rad) * nodeSpread;
+
+                      const isNodeSelected = activeNodeId === node.id;
+
+                      return (
+                        <div
+                          key={`child-${node.id}`}
+                          style={{
+                            left: `${(nx / 1000) * 100}%`,
+                            top: `${(ny / 600) * 100}%`,
+                            transform: "translate(-50%, -50%)",
+                            borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                          }}
+                          onClick={() => {
+                            setActiveBranchId(b.id);
+                            setActiveNodeId(node.id);
+                          }}
+                          className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${
+                            isNodeSelected
+                              ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
+                              : "bg-slate-950/90 hover:border-slate-500 hover:scale-102"
+                          }`}
+                        >
+                          <h4 className="text-[11px] font-bold text-white leading-tight truncate">
+                            {node.title}
+                          </h4>
+                          {node.formula && (
+                            <div
+                              className="mt-1 font-mono text-[9px] font-semibold px-1 rounded truncate"
+                              style={{ backgroundColor: `${b.color}20`, color: b.color }}
+                            >
+                              {node.formula}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                 </React.Fragment>
               );
             })}

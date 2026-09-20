@@ -80,7 +80,7 @@ const VISUAL_TYPE_MAP = {
   'work-power-circuits': 'electric-power',
   'current-voltage-relations': 'iv-characteristics',
   'resistances-in-series-and-parallel': 'resistor-network',
-  
+
   // Electrostatics
   'electric-charges-induction': 'charge-induction',
   'coulomb-law': 'coulomb-law',
@@ -90,16 +90,16 @@ const VISUAL_TYPE_MAP = {
   'potential-difference-point-charge': 'electric-potential',
   'equipotential-surfaces': 'equipotential',
   'potential-gradient': 'potential-gradient',
-  
+
   // Capacitance
   'capacitance-parallel-plate': 'capacitor',
   'combination-capacitors': 'capacitor-combination',
   'energy-charged-capacitor': 'capacitor-energy',
   'dielectric-effect': 'dielectric',
   'effect-of-a-dielectric': 'dielectric-effect',
-  
+
   // Magnetism (not fully covered in +2)
-  
+
   // Modern Physics
   'nucleus-discovery': 'nuclear-model',
   'atomic-mass-isotopes': 'isotopes',
@@ -109,7 +109,7 @@ const VISUAL_TYPE_MAP = {
   'particles-and-antiparticles-quarks-leptons': 'particle-physics',
   'big-bang-and-hubble-law': 'big-bang',
   'dark-matter-black-hole': 'dark-matter',
-  
+
   // Optics
   'mirror-formula': 'mirror-equation',
   'lens-maker-formula': 'lens-maker',
@@ -117,6 +117,10 @@ const VISUAL_TYPE_MAP = {
   'laws-refraction-refractive-index': 'snell-law',
   'total-internal-reflection': 'tir',
   'lateral-shift': 'lateral-shift',
+
+  // Mechanics
+  'mechanics-statics': 'statics',
+  'mechanics-dynamics': 'dynamics',
   'minimum-deviation': 'min-deviation',
   'prism-deviation-formula': 'prism-formula',
   'dispersive-power': 'dispersion',

@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Protein Structure — Primary to Quaternary with Peptide Bonds
@@ -123,7 +123,7 @@ export function ProteinStructureVisual() {
               const pbTarget = new THREE.Vector3(midX, 0, 0);
               const pbDir = pbTarget.clone().sub(pbLabel).normalize();
               const pbLen = pbLabel.distanceTo(pbTarget);
-              push(new LiveArrow(pbDir, pbLabel, pbLen * 0.7, 0xfbbf24, 0.25, 0.12));
+              push(new LiveLeaderLine(pbDir, pbLabel, pbLen * 0.7, 0xfbbf24, 0.25, 0.12));
               push(mkSprite("Peptide bond (—CO—NH—)", "#fbbf24", pbLabel.clone().sub(pbDir.multiplyScalar(0.5)), 0.6));
             }
           });
@@ -179,7 +179,7 @@ export function ProteinStructureVisual() {
           const hBondTarget = new THREE.Vector3(0.5, 0.5, 0);
           const hbDir = hBondTarget.clone().sub(hBondLabel).normalize();
           const hbLen = hBondLabel.distanceTo(hBondTarget);
-          push(new LiveArrow(hbDir, hBondLabel, hbLen * 0.7, 0x22c55e, 0.25, 0.12));
+          push(new LiveLeaderLine(hbDir, hBondLabel, hbLen * 0.7, 0x22c55e, 0.25, 0.12));
           push(mkSprite("H-bond: C=O···H-N (4 residues apart)", "#22c55e", hBondLabel.clone().sub(hbDir.multiplyScalar(0.5)), 0.65));
 
           push(mkSprite("α-helix: right-handed, 3.6 residues/turn", "#fbbf24", new THREE.Vector3(0, -2.8, 0), 0.65));
@@ -223,7 +223,7 @@ export function ProteinStructureVisual() {
           const disulfideTarget = new THREE.Vector3(-0.75, 0.0, 0.15);
           const dsDir = disulfideTarget.clone().sub(disulfideLabel).normalize();
           const dsLen = disulfideLabel.distanceTo(disulfideTarget);
-          push(new LiveArrow(dsDir, disulfideLabel, dsLen * 0.6, 0xfbbf24, 0.25, 0.12));
+          push(new LiveLeaderLine(dsDir, disulfideLabel, dsLen * 0.6, 0xfbbf24, 0.25, 0.12));
           push(mkSprite("Disulfide bridge (S-S) stabilizes tertiary structure", "#fbbf24", disulfideLabel.clone().sub(dsDir.multiplyScalar(0.5)), 0.6));
 
           push(mkSprite("Tertiary: 3D folding via H-bonds, ionic, hydrophobic, disulfide", "#7dd3fc", new THREE.Vector3(0, -2.8, 0), 0.6));
@@ -265,7 +265,7 @@ export function ProteinStructureVisual() {
           const qTarget = new THREE.Vector3(0, 0, 0);
           const qDir = qTarget.clone().sub(qLabel).normalize();
           const qLen = qLabel.distanceTo(qTarget);
-          push(new LiveArrow(qDir, qLabel, qLen * 0.7, 0xa855f7, 0.25, 0.12));
+          push(new LiveLeaderLine(qDir, qLabel, qLen * 0.7, 0xa855f7, 0.25, 0.12));
           push(mkSprite("Subunit interactions: H-bonds, ionic, hydrophobic", "#a855f7", qLabel.clone().sub(qDir.multiplyScalar(0.5)), 0.65));
         }
       };

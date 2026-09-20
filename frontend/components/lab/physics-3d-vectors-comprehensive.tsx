@@ -3,7 +3,7 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -132,7 +132,7 @@ const VectorComprehensive3D: React.FC = () => {
 
     // Create custom axis helpers with labels
     const createLabeledAxis = (direction: THREE.Vector3, color: number, label: string, length: number = 8) => {
-      const arrow = new LiveArrow(
+      const arrow = new LiveLeaderLine(
         direction.clone().normalize(),
         new THREE.Vector3(0, 0, 0),
         length,
@@ -171,10 +171,10 @@ const VectorComprehensive3D: React.FC = () => {
     ts!.group.add(zNegArrow);
 
     // Vector arrows
-    let vec1Arrow: THREE.ArrowHelper | null = null;
-    let vec2Arrow: THREE.ArrowHelper | null = null;
-    let resultantArrow: THREE.ArrowHelper | null = null;
-    const componentArrows: THREE.ArrowHelper[] = [];
+    let vec1Arrow : LiveLeaderLine | null = null;
+    let vec2Arrow : LiveLeaderLine | null = null;
+    let resultantArrow : LiveLeaderLine | null = null;
+    const componentArrows: LiveLeaderLine[] = [];
     const angleLines: THREE.Line[] = [];
 
     function updateScene() {
@@ -194,7 +194,7 @@ const VectorComprehensive3D: React.FC = () => {
                        showNegativeSigns && vec1Y < 0 && vec1X === 0 && vec1Z === 0 ? 0xff0000 :
                        showNegativeSigns && vec1Z < 0 && vec1X === 0 && vec1Y === 0 ? 0xff0000 : 0xff4444;
       
-      vec1Arrow = new LiveArrow(
+      vec1Arrow = new LiveLeaderLine(
         vec1Dir.clone().normalize(),
         new THREE.Vector3(0, 0, 0),
         vec1Mag,
@@ -211,7 +211,7 @@ const VectorComprehensive3D: React.FC = () => {
                        showNegativeSigns && vec2Y < 0 && vec2X === 0 && vec2Z === 0 ? 0x0000ff :
                        showNegativeSigns && vec2Z < 0 && vec2X === 0 && vec2Y === 0 ? 0x0000ff : 0x4444ff;
       
-      vec2Arrow = new LiveArrow(
+      vec2Arrow = new LiveLeaderLine(
         vec2Dir.clone().normalize(),
         new THREE.Vector3(0, 0, 0),
         vec2Mag,
@@ -225,7 +225,7 @@ const VectorComprehensive3D: React.FC = () => {
       // Resultant (Green)
       if (showResultant) {
         const resultantDir = new THREE.Vector3(resultantX, resultantY, resultantZ);
-        resultantArrow = new LiveArrow(
+        resultantArrow = new LiveLeaderLine(
           resultantDir.clone().normalize(),
           new THREE.Vector3(0, 0, 0),
           resultantMag,
@@ -244,7 +244,7 @@ const VectorComprehensive3D: React.FC = () => {
         const projDir = new THREE.Vector3(vec1X, vec1Y, vec1Z).normalize();
         const projVec = projDir.clone().multiplyScalar(projMag);
         
-        const compArrow = new LiveArrow(
+        const compArrow = new LiveLeaderLine(
           projDir.clone(),
           new THREE.Vector3(vec1X, vec1Y, vec1Z),
           projMag,
@@ -259,7 +259,7 @@ const VectorComprehensive3D: React.FC = () => {
         // Perpendicular component
         const perpVec = new THREE.Vector3(vec2X, vec2Y, vec2Z).sub(projVec);
         if (perpVec.length() > 0.01) {
-          const perpArrow = new LiveArrow(
+          const perpArrow = new LiveLeaderLine(
             perpVec.clone().normalize(),
             new THREE.Vector3(vec1X, vec1Y, vec1Z),
             perpVec.length(),

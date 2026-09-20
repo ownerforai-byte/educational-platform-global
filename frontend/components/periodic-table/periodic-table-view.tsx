@@ -93,6 +93,9 @@ export function PeriodicTableView() {
   const tableContainerRef = useRef<HTMLDivElement>(null);
   const tableContentRef = useRef<HTMLDivElement>(null);
   const tableScrollRef = useRef<HTMLDivElement>(null);
+  const layoutAttemptsRef = useRef<number>(0);
+  const lastMeasuredHeightRef = useRef<number>(580);
+  const lastZoomRef = useRef<number>(1);
 
   useEffect(() => {
     fetch("/all_elements.json")
@@ -139,10 +142,25 @@ export function PeriodicTableView() {
 
   // Screen Auto-Fit logic: automatically scale table so all 18 columns and 7 periods fit on screen
   useEffect(() => {
+    const MAX_ATTEMPTS = 10;
+    const HEIGHT_TOLERANCE_PX = 2;
+
     const calculateLayout = () => {
+      // Deadman switch: hard-stop layout attempts after MAX_ATTEMPTS to prevent infinite ping-pong
+      layoutAttemptsRef.current += 1;
+      if (layoutAttemptsRef.current > MAX_ATTEMPTS) return;
+
       if (tableContentRef.current) {
         const h = tableContentRef.current.scrollHeight;
-        if (h > 150) setMeasuredHeight(h);
+        // Only call setMeasuredHeight if height is above minimum AND differs from last set value by > tolerance.
+        // lastMeasuredHeightRef prevents React re-render loops when measuredHeight is in the dep array.
+        if (
+          h > 150 &&
+          Math.abs(h - lastMeasuredHeightRef.current) > HEIGHT_TOLERANCE_PX
+        ) {
+          lastMeasuredHeightRef.current = h;
+          setMeasuredHeight(h);
+        }
       }
       const viewportW = tableScrollRef.current?.clientWidth || tableContainerRef.current?.clientWidth;
       if (!viewportW) return;
@@ -152,8 +170,11 @@ export function PeriodicTableView() {
         const scaleW = availableW / 990;
 
         if (fitMode === "width") {
-          const optimal = Math.min(1.4, Math.max(0.28, scaleW));
-          setZoom(Number(optimal.toFixed(2)));
+          const optimal = Number(Math.min(1.4, Math.max(0.28, scaleW)).toFixed(2));
+          if (Math.abs(optimal - lastZoomRef.current) > 0.005) {
+            lastZoomRef.current = optimal;
+            setZoom(optimal);
+          }
         } else {
           // "screen": Fit BOTH width & available viewport height so entire table is visible on-screen
           let scaleH = scaleW;
@@ -162,14 +183,17 @@ export function PeriodicTableView() {
             const topPos = rect.top > 0 ? rect.top : (isFullscreen ? 50 : 200);
             // 24px safety buffer from the bottom of the viewport
             const availableH = Math.max(160, window.innerHeight - topPos - 24);
-            const contentH = measuredHeight > 150 ? measuredHeight : 580;
+            const contentH = lastMeasuredHeightRef.current > 150 ? lastMeasuredHeightRef.current : 580;
             scaleH = availableH / contentH;
           }
 
           const target = Math.min(scaleW, scaleH);
           // Clamp: minimum 0.28 on tiny phones, maximum 1.25 on large monitors
-          const optimal = Math.min(1.25, Math.max(0.28, target));
-          setZoom(Number(optimal.toFixed(2)));
+          const optimal = Number(Math.min(1.25, Math.max(0.28, target)).toFixed(2));
+          if (Math.abs(optimal - lastZoomRef.current) > 0.005) {
+            lastZoomRef.current = optimal;
+            setZoom(optimal);
+          }
         }
       }
     };

@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { KATEX_MACROS, normalizeMathDelimiters } from "@/lib/content/katex";
+import {
+  KATEX_MACROS,
+  normalizeLatexExpression,
+  normalizeMathDelimiters,
+} from "@/lib/content/katex";
 
 describe("normalizeMathDelimiters", () => {
   it("converts bracket display math to $$", () => {
@@ -34,6 +38,19 @@ describe("normalizeMathDelimiters", () => {
   it("passes plain dollar math through unchanged", () => {
     const input = "$\\frac{1}{2}$ and $$\\int_0^1 x\\,dx$$";
     expect(normalizeMathDelimiters(input)).toBe(input);
+  });
+
+  it("repairs repeated command escaping inside math", () => {
+    expect(normalizeMathDelimiters("$0^\\\\\\\\circ + \\\\theta$")).toBe(
+      "$0^\\circ + \\\\theta$",
+    );
+  });
+});
+
+describe("normalizeLatexExpression", () => {
+  it("preserves aligned row breaks", () => {
+    const input = "\\begin{aligned}a&=b\\\\c&=d\\end{aligned}";
+    expect(normalizeLatexExpression(input)).toBe(input);
   });
 });
 

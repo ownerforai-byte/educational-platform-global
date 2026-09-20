@@ -4,194 +4,569 @@
   "topicSlug": "animalia-phyla",
   "topicTitle": "Animalia: Phyla Classification",
   "relevance": 100,
-  "notes": [
-    "Protista: single-celled eukaryotes (Amoeba, Paramecium, Plasmodium).",
-    "Animal phyla: Porifera→Cnidaria→Platyhelminthes→Annelida→Arthropoda→Mollusca→Chordata.",
-    "Earthworm: Pheretima posthuma, closed circulatory system.",
-    "Frog: Rana tigrina, 3-chambered heart, amphibian."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Protists are all unicellular. ✅ Some protists (e.g., slime molds, kelp) are multicellular."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice dissecting and identifying organs in earthworm and frog.",
-    "Practice classifying protozoa based on locomotion structures."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 animalia phyla."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Paramecium: cilia movement, contractile vacuole",
-    "Earthworm: nephridia excretion, clitellum reproduction"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice dissecting and identifying organs in earthworm and frog."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 animalia phyla)"
-  ],
-  "keyPoints": [
-    "Core point for 02 animalia phyla."
-  ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.\n\nBody plans reflect evolutionary history and ecological niche.\n\nSegmentation allows specialization of body regions.",
-  "specialNotes": [
-    "Specialized insight for 02 animalia phyla."
-  ],
-  "importantStatements": [
-    "Key statement for 02 animalia phyla."
-  ],
-  "importantNotes": [
-    "Important note regarding 02 animalia phyla."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Animalia: Phyla Classification."
-  ],
-  "examNotes": [
-    "Animalia: Phyla Classification is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 animalia phyla?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 animalia phyla."
-  ],
-  "importantTasks": [
-    "Task for studying 02 animalia phyla."
-  ],
   "duplicateType": 2,
   "tabGroup": "02-animalia-phyla",
   "mcqs": [
     {
-      "question": "Question about 02 animalia phyla?",
+      "question": "The body cavity fully lined by mesoderm is called:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Acoelom",
+        "Pseudocoelom",
+        "Coelom",
+        "Exocoelom"
       ],
-      "answer": "A"
+      "answer": "C"
+    },
+    {
+      "question": "Cnidaria shows what type of symmetry?",
+      "options": [
+        "Bilateral",
+        "Radial",
+        "Asymmetry",
+        "Spherical"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The notochord is a feature of which phylum?",
+      "options": [
+        "Porifera",
+        "Cnidaria",
+        "Chordata",
+        "Mollusca"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Which phylum has the most species?",
+      "options": [
+        "Annelida",
+        "Arthropoda",
+        "Mollusca",
+        "Chordata"
+      ],
+      "answer": "B"
     }
   ],
-  "exercises": [],
-  "visualization": {
-    "type": "3d-model",
-    "component": "AnimalPhylaViewer",
-    "desc": "Interactive animal body plan explorer"
+  "visualType": "animal-phyla-key-features",
+  "enrichedContent": {
+    "notes": [
+      "Levels of organisation: cellular (sponges) → tissue → organ system (most animals).",
+      "Body symmetry: asymmetry (sponges), radial (cnidarians, echinoderms), bilateral (most animals).",
+      "Body cavity: acoelom (no cavity, flatworms), pseudocoelom (partly lined, nematodes), coelom (fully lined, most higher animals).",
+      "Segmentation: annelids, arthropods, chordates (metamerism).",
+      "Phylum classification (up to class): Porifera (sponges), Cnidaria (coelenterates — jellyfish, Hydra), Platyhelminthes (flatworms), Nematoda (roundworms), Annelida (earthworms, leeches), Arthropoda (insects, crustaceans, arachnids), Mollusca (snails, octopus, clams), Echinodermata (starfish), Chordata (vertebrates + tunicates).",
+      "Chordata diagnostic features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail (present at some stage).",
+      "Vertebrate classes: Pisces (fishes), Amphibia (frogs), Reptilia (reptiles), Aves (birds), Mammalia (mammals).",
+      "NEB focus: level of organisation, symmetry, body cavity, segmentation, and phylum classification up to class."
+    ],
+    "confusion": [
+      "Acoelomates have NO body cavity; pseudocoelomates have a cavity not fully lined by mesoderm; coelomates have a fully mesoderm-lined cavity.",
+      "Cnidaria are radial (adult) but their larvae may be bilateral; echinoderms are radial in adults but bilateral in larvae (secondary radial symmetry).",
+      "Segmentation (metamerism) is seen in annelids, arthropods, and chordates — NOT in sponges or cnidarians.",
+      "Porifera (sponges) have a cellular level of organisation (no true tissues); Cnidaria have tissue-level organisation.",
+      "Nematodes (roundworms) are pseudocoelomates; Annelida are coelomates.",
+      "All chordates have a notochord at some stage; in vertebrates it is replaced by the vertebral column."
+    ],
+    "practice": [
+      "Differentiate acoelom, pseudocoelom, and coelom with one phylum example each.",
+      "Explain radial vs bilateral symmetry with examples.",
+      "List the 9 animal phyla with one class each.",
+      "State the diagnostic features of Chordata.",
+      "Differentiate the vertebrate classes (fish, amphibian, reptile, bird, mammal)."
+    ],
+    "universalFacts": [
+      "Arthropoda is the most diverse animal phylum (insects, crustaceans, arachnids, myriapods).",
+      "Porifera are the simplest animals with a cellular (no tissue) level of organisation.",
+      "Echinoderms (starfish, sea urchins) have a water-vascular system and radial symmetry in adults.",
+      "Chordata includes all vertebrates plus tunicates (Urochordata) and lancelets (Cephalochordata)."
+    ],
+    "examples": [
+      "Porifera (sponges): Sycon, Spongaria — cellular organisation, radial/asymmetric.",
+      "Cnidaria: Hydra, Aurelia (jellyfish) — radial symmetry, tissue level, cnidocytes.",
+      "Platyhelminthes: Planaria (flatworm) — acoelomate, bilateral, dorso-ventrally flattened.",
+      "Nematoda: Ascaris (roundworm) — pseudocoelomate, cylindrical.",
+      "Annelida: Pheretima (earthworm) — coelomate, segmented.",
+      "Arthropoda: Insecta (cockroach), Crustacea (prawn), Arachnida (scorpion).",
+      "Mollusca: snail, octopus, clam — mantle + foot.",
+      "Echinodermata: starfish — radial symmetry (adult), water-vascular system.",
+      "Chordata: Pisces, Amphibia, Reptilia, Aves, Mammalia."
+    ],
+    "practiceQuestions": [
+      "Explain the three types of body cavity (acoelom, pseudocoelom, coelom).",
+      "Differentiate radial and bilateral symmetry.",
+      "List the animal phyla with diagnostic features.",
+      "State the four chordate features.",
+      "Differentiate the vertebrate classes."
+    ],
+    "formulas": [
+      "Body cavity: Acoelom (no cavity) / Pseudocoelom (partly lined) / Coelom (fully mesoderm-lined)",
+      "Symmetry: Asymmetry (Porifera) / Radial (Cnidaria, Echinodermata) / Bilateral (Platyhelminthes onward)",
+      "Chordate features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail"
+    ],
+    "keyPoints": [
+      "Levels: cellular (Porifera) → tissue (Cnidaria) → organ system (higher).",
+      "Body cavity: acoelom, pseudocoelom, coelom.",
+      "Symmetry: asymmetry, radial, bilateral.",
+      "Segmentation in Annelida, Arthropoda, Chordata.",
+      "9 phyla: Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata.",
+      "Chordate: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail.",
+      "Vertebrate classes: Pisces, Amphibia, Reptilia, Aves, Mammalia."
+    ],
+    "summary": "Animals are classified by level of organisation (cellular to organ system), body symmetry (asymmetry, radial, bilateral), body cavity (acoelom, pseudocoelom, coelom), and segmentation. The animal kingdom spans 9 major phyla from Porifera (cellular level) to Chordata (organ system level). Chordates are defined by a notochord, dorsal hollow nerve cord, pharyngeal slits, and a post-anal tail; they include the 5 vertebrate classes. NEB examinations focus on phylum classification up to class and the chordate diagnostic features.",
+    "specialNotes": [
+      "NEB expects the 9-phylum list with one class each and the body-cavity types.",
+      "The 4 chordate features are a very common short-answer.",
+      "Differentiate acoelom/pseudocoelom/coelom with phylum examples.",
+      "Radial vs bilateral symmetry with examples."
+    ],
+    "importantStatements": [
+      "Animal organisation progresses from cellular (Porifera) to organ-system (Chordata).",
+      "Body cavity type (acoelom/pseudocoelom/coelom) is a key evolutionary feature.",
+      "Chordates are defined by four shared features: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail.",
+      "Arthropoda is the most species-rich animal phylum."
+    ],
+    "importantNotes": [
+      "Memorise the 9 phyla with one class example each.",
+      "Learn the three body-cavity types and their phyla.",
+      "Differentiate radial and bilateral symmetry.",
+      "State the 4 chordate features.",
+      "Differentiate the 5 vertebrate classes."
+    ],
+    "examShortTricks": [
+      "9 phyla: P-C-P-N-A-A-M-E-C (Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata).",
+      "Chordate = C-D-P-P (Chordate, Dorsal nerve, Pharyngeal slits, post-anal tail).",
+      "Body cavity: A=none, P=part, C=complete.",
+      "Radial = jelly/star; Bilateral = flatworm onward."
+    ],
+    "examNotes": [
+      "List the 9 animal phyla with classes.",
+      "Differentiate acoelom, pseudocoelom, coelom.",
+      "Explain radial vs bilateral symmetry.",
+      "State the 4 chordate features.",
+      "Differentiate the vertebrate classes (5).",
+      "Explain the levels of organisation."
+    ],
+    "mcs": [
+      {
+        "question": "The body cavity fully lined by mesoderm is called:",
+        "options": [
+          "Acoelom",
+          "Pseudocoelom",
+          "Coelom",
+          "Exocoelom"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Cnidaria shows what type of symmetry?",
+        "options": [
+          "Bilateral",
+          "Radial",
+          "Asymmetry",
+          "Spherical"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The notochord is a feature of which phylum?",
+        "options": [
+          "Porifera",
+          "Cnidaria",
+          "Chordata",
+          "Mollusca"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Which phylum has the most species?",
+        "options": [
+          "Annelida",
+          "Arthropoda",
+          "Mollusca",
+          "Chordata"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Levels of organisation",
+      "Body symmetry",
+      "Body cavity types",
+      "Segmentation",
+      "9 animal phyla",
+      "Chordate features",
+      "Vertebrate classes",
+      "Diagnostic features"
+    ],
+    "importantTasks": [
+      "List 9 phyla with classes",
+      "Differentiate body cavities",
+      "Explain radial vs bilateral",
+      "State 4 chordate features",
+      "Differentiate vertebrate classes"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "An animal has a body cavity not fully lined by mesoderm and is cylindrical. Which phylum and which body-cavity type does it belong to?",
+        "steps": [
+          "Body cavity not fully lined → pseudocoelom",
+          "Cylindrical body → roundworm",
+          "Phylum: Nematoda"
+        ],
+        "answer": "Nematoda; pseudocoelomate"
+      }
+    ],
+    "visualization": {
+      "type": "interactive",
+      "component": "AnimalPhylaViewer",
+      "desc": "Interactive phylum explorer with 3D models of representatives (sponge, jellyfish, earthworm, insect, starfish, fish) and their organisation level."
+    }
   },
-  "visualType": "animal-phyla-key-features"
+  "originalContent": {
+    "notes": [
+      "Levels of organisation: cellular (sponges) → tissue → organ system (most animals).",
+      "Body symmetry: asymmetry (sponges), radial (cnidarians, echinoderms), bilateral (most animals).",
+      "Body cavity: acoelom (no cavity, flatworms), pseudocoelom (partly lined, nematodes), coelom (fully lined, most higher animals).",
+      "Segmentation: annelids, arthropods, chordates (metamerism).",
+      "Phylum classification (up to class): Porifera (sponges), Cnidaria (coelenterates — jellyfish, Hydra), Platyhelminthes (flatworms), Nematoda (roundworms), Annelida (earthworms, leeches), Arthropoda (insects, crustaceans, arachnids), Mollusca (snails, octopus, clams), Echinodermata (starfish), Chordata (vertebrates + tunicates).",
+      "Chordata diagnostic features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail (present at some stage).",
+      "Vertebrate classes: Pisces (fishes), Amphibia (frogs), Reptilia (reptiles), Aves (birds), Mammalia (mammals).",
+      "NEB focus: level of organisation, symmetry, body cavity, segmentation, and phylum classification up to class."
+    ],
+    "confusion": [
+      "Acoelomates have NO body cavity; pseudocoelomates have a cavity not fully lined by mesoderm; coelomates have a fully mesoderm-lined cavity.",
+      "Cnidaria are radial (adult) but their larvae may be bilateral; echinoderms are radial in adults but bilateral in larvae (secondary radial symmetry).",
+      "Segmentation (metamerism) is seen in annelids, arthropods, and chordates — NOT in sponges or cnidarians.",
+      "Porifera (sponges) have a cellular level of organisation (no true tissues); Cnidaria have tissue-level organisation.",
+      "Nematodes (roundworms) are pseudocoelomates; Annelida are coelomates.",
+      "All chordates have a notochord at some stage; in vertebrates it is replaced by the vertebral column."
+    ],
+    "practice": [
+      "Differentiate acoelom, pseudocoelom, and coelom with one phylum example each.",
+      "Explain radial vs bilateral symmetry with examples.",
+      "List the 9 animal phyla with one class each.",
+      "State the diagnostic features of Chordata.",
+      "Differentiate the vertebrate classes (fish, amphibian, reptile, bird, mammal)."
+    ],
+    "universalFacts": [
+      "Arthropoda is the most diverse animal phylum (insects, crustaceans, arachnids, myriapods).",
+      "Porifera are the simplest animals with a cellular (no tissue) level of organisation.",
+      "Echinoderms (starfish, sea urchins) have a water-vascular system and radial symmetry in adults.",
+      "Chordata includes all vertebrates plus tunicates (Urochordata) and lancelets (Cephalochordata)."
+    ],
+    "examples": [
+      "Porifera (sponges): Sycon, Spongaria — cellular organisation, radial/asymmetric.",
+      "Cnidaria: Hydra, Aurelia (jellyfish) — radial symmetry, tissue level, cnidocytes.",
+      "Platyhelminthes: Planaria (flatworm) — acoelomate, bilateral, dorso-ventrally flattened.",
+      "Nematoda: Ascaris (roundworm) — pseudocoelomate, cylindrical.",
+      "Annelida: Pheretima (earthworm) — coelomate, segmented.",
+      "Arthropoda: Insecta (cockroach), Crustacea (prawn), Arachnida (scorpion).",
+      "Mollusca: snail, octopus, clam — mantle + foot.",
+      "Echinodermata: starfish — radial symmetry (adult), water-vascular system.",
+      "Chordata: Pisces, Amphibia, Reptilia, Aves, Mammalia."
+    ],
+    "practiceQuestions": [
+      "Explain the three types of body cavity (acoelom, pseudocoelom, coelom).",
+      "Differentiate radial and bilateral symmetry.",
+      "List the animal phyla with diagnostic features.",
+      "State the four chordate features.",
+      "Differentiate the vertebrate classes."
+    ],
+    "formulas": [
+      "Body cavity: Acoelom (no cavity) / Pseudocoelom (partly lined) / Coelom (fully mesoderm-lined)",
+      "Symmetry: Asymmetry (Porifera) / Radial (Cnidaria, Echinodermata) / Bilateral (Platyhelminthes onward)",
+      "Chordate features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail"
+    ],
+    "keyPoints": [
+      "Levels: cellular (Porifera) → tissue (Cnidaria) → organ system (higher).",
+      "Body cavity: acoelom, pseudocoelom, coelom.",
+      "Symmetry: asymmetry, radial, bilateral.",
+      "Segmentation in Annelida, Arthropoda, Chordata.",
+      "9 phyla: Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata.",
+      "Chordate: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail.",
+      "Vertebrate classes: Pisces, Amphibia, Reptilia, Aves, Mammalia."
+    ],
+    "summary": "Animals are classified by level of organisation (cellular to organ system), body symmetry (asymmetry, radial, bilateral), body cavity (acoelom, pseudocoelom, coelom), and segmentation. The animal kingdom spans 9 major phyla from Porifera (cellular level) to Chordata (organ system level). Chordates are defined by a notochord, dorsal hollow nerve cord, pharyngeal slits, and a post-anal tail; they include the 5 vertebrate classes. NEB examinations focus on phylum classification up to class and the chordate diagnostic features.",
+    "specialNotes": [
+      "NEB expects the 9-phylum list with one class each and the body-cavity types.",
+      "The 4 chordate features are a very common short-answer.",
+      "Differentiate acoelom/pseudocoelom/coelom with phylum examples.",
+      "Radial vs bilateral symmetry with examples."
+    ],
+    "importantStatements": [
+      "Animal organisation progresses from cellular (Porifera) to organ-system (Chordata).",
+      "Body cavity type (acoelom/pseudocoelom/coelom) is a key evolutionary feature.",
+      "Chordates are defined by four shared features: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail.",
+      "Arthropoda is the most species-rich animal phylum."
+    ],
+    "importantNotes": [
+      "Memorise the 9 phyla with one class example each.",
+      "Learn the three body-cavity types and their phyla.",
+      "Differentiate radial and bilateral symmetry.",
+      "State the 4 chordate features.",
+      "Differentiate the 5 vertebrate classes."
+    ],
+    "examShortTricks": [
+      "9 phyla: P-C-P-N-A-A-M-E-C (Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata).",
+      "Chordate = C-D-P-P (Chordate, Dorsal nerve, Pharyngeal slits, post-anal tail).",
+      "Body cavity: A=none, P=part, C=complete.",
+      "Radial = jelly/star; Bilateral = flatworm onward."
+    ],
+    "examNotes": [
+      "List the 9 animal phyla with classes.",
+      "Differentiate acoelom, pseudocoelom, coelom.",
+      "Explain radial vs bilateral symmetry.",
+      "State the 4 chordate features.",
+      "Differentiate the vertebrate classes (5).",
+      "Explain the levels of organisation."
+    ],
+    "mcs": [
+      {
+        "question": "The body cavity fully lined by mesoderm is called:",
+        "options": [
+          "Acoelom",
+          "Pseudocoelom",
+          "Coelom",
+          "Exocoelom"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Cnidaria shows what type of symmetry?",
+        "options": [
+          "Bilateral",
+          "Radial",
+          "Asymmetry",
+          "Spherical"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The notochord is a feature of which phylum?",
+        "options": [
+          "Porifera",
+          "Cnidaria",
+          "Chordata",
+          "Mollusca"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Which phylum has the most species?",
+        "options": [
+          "Annelida",
+          "Arthropoda",
+          "Mollusca",
+          "Chordata"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Levels of organisation",
+      "Body symmetry",
+      "Body cavity types",
+      "Segmentation",
+      "9 animal phyla",
+      "Chordate features",
+      "Vertebrate classes",
+      "Diagnostic features"
+    ],
+    "importantTasks": [
+      "List 9 phyla with classes",
+      "Differentiate body cavities",
+      "Explain radial vs bilateral",
+      "State 4 chordate features",
+      "Differentiate vertebrate classes"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "An animal has a body cavity not fully lined by mesoderm and is cylindrical. Which phylum and which body-cavity type does it belong to?",
+        "steps": [
+          "Body cavity not fully lined → pseudocoelom",
+          "Cylindrical body → roundworm",
+          "Phylum: Nematoda"
+        ],
+        "answer": "Nematoda; pseudocoelomate"
+      }
+    ],
+    "visualization": {
+      "type": "interactive",
+      "component": "AnimalPhylaViewer",
+      "desc": "Interactive phylum explorer with 3D models of representatives (sponge, jellyfish, earthworm, insect, starfish, fish) and their organisation level."
+    }
+  },
+  "notes": [
+    "Levels of organisation: cellular (sponges) → tissue → organ system (most animals).",
+    "Body symmetry: asymmetry (sponges), radial (cnidarians, echinoderms), bilateral (most animals).",
+    "Body cavity: acoelom (no cavity, flatworms), pseudocoelom (partly lined, nematodes), coelom (fully lined, most higher animals).",
+    "Segmentation: annelids, arthropods, chordates (metamerism).",
+    "Phylum classification (up to class): Porifera (sponges), Cnidaria (coelenterates — jellyfish, Hydra), Platyhelminthes (flatworms), Nematoda (roundworms), Annelida (earthworms, leeches), Arthropoda (insects, crustaceans, arachnids), Mollusca (snails, octopus, clams), Echinodermata (starfish), Chordata (vertebrates + tunicates).",
+    "Chordata diagnostic features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail (present at some stage).",
+    "Vertebrate classes: Pisces (fishes), Amphibia (frogs), Reptilia (reptiles), Aves (birds), Mammalia (mammals).",
+    "NEB focus: level of organisation, symmetry, body cavity, segmentation, and phylum classification up to class."
+  ],
+  "confusion": [
+    "Acoelomates have NO body cavity; pseudocoelomates have a cavity not fully lined by mesoderm; coelomates have a fully mesoderm-lined cavity.",
+    "Cnidaria are radial (adult) but their larvae may be bilateral; echinoderms are radial in adults but bilateral in larvae (secondary radial symmetry).",
+    "Segmentation (metamerism) is seen in annelids, arthropods, and chordates — NOT in sponges or cnidarians.",
+    "Porifera (sponges) have a cellular level of organisation (no true tissues); Cnidaria have tissue-level organisation.",
+    "Nematodes (roundworms) are pseudocoelomates; Annelida are coelomates.",
+    "All chordates have a notochord at some stage; in vertebrates it is replaced by the vertebral column."
+  ],
+  "practice": [
+    "Differentiate acoelom, pseudocoelom, and coelom with one phylum example each.",
+    "Explain radial vs bilateral symmetry with examples.",
+    "List the 9 animal phyla with one class each.",
+    "State the diagnostic features of Chordata.",
+    "Differentiate the vertebrate classes (fish, amphibian, reptile, bird, mammal)."
+  ],
+  "universalFacts": [
+    "Arthropoda is the most diverse animal phylum (insects, crustaceans, arachnids, myriapods).",
+    "Porifera are the simplest animals with a cellular (no tissue) level of organisation.",
+    "Echinoderms (starfish, sea urchins) have a water-vascular system and radial symmetry in adults.",
+    "Chordata includes all vertebrates plus tunicates (Urochordata) and lancelets (Cephalochordata)."
+  ],
+  "examples": [
+    "Porifera (sponges): Sycon, Spongaria — cellular organisation, radial/asymmetric.",
+    "Cnidaria: Hydra, Aurelia (jellyfish) — radial symmetry, tissue level, cnidocytes.",
+    "Platyhelminthes: Planaria (flatworm) — acoelomate, bilateral, dorso-ventrally flattened.",
+    "Nematoda: Ascaris (roundworm) — pseudocoelomate, cylindrical.",
+    "Annelida: Pheretima (earthworm) — coelomate, segmented.",
+    "Arthropoda: Insecta (cockroach), Crustacea (prawn), Arachnida (scorpion).",
+    "Mollusca: snail, octopus, clam — mantle + foot.",
+    "Echinodermata: starfish — radial symmetry (adult), water-vascular system.",
+    "Chordata: Pisces, Amphibia, Reptilia, Aves, Mammalia."
+  ],
+  "practiceQuestions": [
+    "Explain the three types of body cavity (acoelom, pseudocoelom, coelom).",
+    "Differentiate radial and bilateral symmetry.",
+    "List the animal phyla with diagnostic features.",
+    "State the four chordate features.",
+    "Differentiate the vertebrate classes."
+  ],
+  "formulas": [
+    "Body cavity: Acoelom (no cavity) / Pseudocoelom (partly lined) / Coelom (fully mesoderm-lined)",
+    "Symmetry: Asymmetry (Porifera) / Radial (Cnidaria, Echinodermata) / Bilateral (Platyhelminthes onward)",
+    "Chordate features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail"
+  ],
+  "keyPoints": [
+    "Levels: cellular (Porifera) → tissue (Cnidaria) → organ system (higher).",
+    "Body cavity: acoelom, pseudocoelom, coelom.",
+    "Symmetry: asymmetry, radial, bilateral.",
+    "Segmentation in Annelida, Arthropoda, Chordata.",
+    "9 phyla: Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata.",
+    "Chordate: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail.",
+    "Vertebrate classes: Pisces, Amphibia, Reptilia, Aves, Mammalia."
+  ],
+  "summary": "Animals are classified by level of organisation (cellular to organ system), body symmetry (asymmetry, radial, bilateral), body cavity (acoelom, pseudocoelom, coelom), and segmentation. The animal kingdom spans 9 major phyla from Porifera (cellular level) to Chordata (organ system level). Chordates are defined by a notochord, dorsal hollow nerve cord, pharyngeal slits, and a post-anal tail; they include the 5 vertebrate classes. NEB examinations focus on phylum classification up to class and the chordate diagnostic features.",
+  "specialNotes": [
+    "NEB expects the 9-phylum list with one class each and the body-cavity types.",
+    "The 4 chordate features are a very common short-answer.",
+    "Differentiate acoelom/pseudocoelom/coelom with phylum examples.",
+    "Radial vs bilateral symmetry with examples."
+  ],
+  "importantStatements": [
+    "Animal organisation progresses from cellular (Porifera) to organ-system (Chordata).",
+    "Body cavity type (acoelom/pseudocoelom/coelom) is a key evolutionary feature.",
+    "Chordates are defined by four shared features: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail.",
+    "Arthropoda is the most species-rich animal phylum."
+  ],
+  "importantNotes": [
+    "Memorise the 9 phyla with one class example each.",
+    "Learn the three body-cavity types and their phyla.",
+    "Differentiate radial and bilateral symmetry.",
+    "State the 4 chordate features.",
+    "Differentiate the 5 vertebrate classes."
+  ],
+  "examShortTricks": [
+    "9 phyla: P-C-P-N-A-A-M-E-C (Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata).",
+    "Chordate = C-D-P-P (Chordate, Dorsal nerve, Pharyngeal slits, post-anal tail).",
+    "Body cavity: A=none, P=part, C=complete.",
+    "Radial = jelly/star; Bilateral = flatworm onward."
+  ],
+  "examNotes": [
+    "List the 9 animal phyla with classes.",
+    "Differentiate acoelom, pseudocoelom, coelom.",
+    "Explain radial vs bilateral symmetry.",
+    "State the 4 chordate features.",
+    "Differentiate the vertebrate classes (5).",
+    "Explain the levels of organisation."
+  ],
+  "mcs": [
+    {
+      "question": "The body cavity fully lined by mesoderm is called:",
+      "options": [
+        "Acoelom",
+        "Pseudocoelom",
+        "Coelom",
+        "Exocoelom"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Cnidaria shows what type of symmetry?",
+      "options": [
+        "Bilateral",
+        "Radial",
+        "Asymmetry",
+        "Spherical"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The notochord is a feature of which phylum?",
+      "options": [
+        "Porifera",
+        "Cnidaria",
+        "Chordata",
+        "Mollusca"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Which phylum has the most species?",
+      "options": [
+        "Annelida",
+        "Arthropoda",
+        "Mollusca",
+        "Chordata"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Levels of organisation",
+    "Body symmetry",
+    "Body cavity types",
+    "Segmentation",
+    "9 animal phyla",
+    "Chordate features",
+    "Vertebrate classes",
+    "Diagnostic features"
+  ],
+  "importantTasks": [
+    "List 9 phyla with classes",
+    "Differentiate body cavities",
+    "Explain radial vs bilateral",
+    "State 4 chordate features",
+    "Differentiate vertebrate classes"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "An animal has a body cavity not fully lined by mesoderm and is cylindrical. Which phylum and which body-cavity type does it belong to?",
+      "steps": [
+        "Body cavity not fully lined → pseudocoelom",
+        "Cylindrical body → roundworm",
+        "Phylum: Nematoda"
+      ],
+      "answer": "Nematoda; pseudocoelomate"
+    }
+  ]
 }

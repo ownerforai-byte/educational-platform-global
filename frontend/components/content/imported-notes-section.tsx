@@ -8,6 +8,7 @@ import {
   getImportedNotesForUnit,
   type NotesTrack,
 } from "@/lib/imported-notes";
+import { noteRoute } from "@/lib/note-routes";
 import { FileText } from "lucide-react";
 
 type ImportedNotesSectionProps = {
@@ -65,7 +66,7 @@ export async function ImportedNotesSection({
         {notes.map((note, idx) => (
           <Link
             key={note.path}
-            href={note.path}
+            href={noteRoute(note)}
             className="group flex items-center gap-3 rounded-lg border border-border bg-card/50 px-4 py-3 transition-colors hover:border-primary/30 hover:bg-accent/30"
             style={{ animationDelay: `${idx * 20}ms` }}
           >

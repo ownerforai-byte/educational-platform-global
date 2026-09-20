@@ -11,7 +11,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -19,6 +19,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -42,8 +43,8 @@ function mkLabel(color: string, title: string, sub?: string): HTMLDivElement {
   return el;
 }
 
-function arrow(dir: THREE.Vector3, origin: THREE.Vector3, len: number, color: number): THREE.ArrowHelper {
-  return new LiveArrow(dir.clone().normalize(), origin.clone(), len, color, len * 0.22, len * 0.12);
+function arrow(dir: THREE.Vector3, origin: THREE.Vector3, len: number, color: number): LiveLeaderLine {
+  return new LiveLeaderLine(dir.clone().normalize(), origin.clone(), len, color, len * 0.22, len * 0.12);
 }
 /* =====================================================================
  * TAB 1 — Projectile motion (Kinematics)
@@ -84,7 +85,8 @@ const ProjectilesTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -96,6 +98,7 @@ const ProjectilesTab: React.FC = () => {
         labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
         mountRef.current!.appendChild(labelRenderer.domElement);
         try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
         const connections: any[] = [];
         const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
@@ -237,7 +240,8 @@ const CircularMotionTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -249,6 +253,7 @@ const CircularMotionTab: React.FC = () => {
     labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
     mountRef.current!.appendChild(labelRenderer.domElement);
     try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
     const connections: any[] = [];
     const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
@@ -424,7 +429,8 @@ const CollisionsTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -436,6 +442,7 @@ const CollisionsTab: React.FC = () => {
     labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
     mountRef.current!.appendChild(labelRenderer.domElement);
     try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
     const connections: any[] = [];
     const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
@@ -572,7 +579,8 @@ const WorkEnergyTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -584,6 +592,7 @@ const WorkEnergyTab: React.FC = () => {
     labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
     mountRef.current!.appendChild(labelRenderer.domElement);
     try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
     const connections: any[] = [];
     const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
@@ -607,7 +616,7 @@ const WorkEnergyTab: React.FC = () => {
 
     const ball = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 16), standardMaterial(0xf97316, { emissive: 0xf59e0b, emissiveIntensity: 0.5 }));
     ts!.group.add(ball);
-    const keArrow = new LiveArrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
+    const keArrow = new LiveLeaderLine(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 0.01, 0x22d3ee, 0.3, 0.18);
     ts!.group.add(keArrow);
 
     addLbl("#f87171", `Start — h = ${heightM} m`, [-9.2, topY + 1.6, 0], `PE = mgh = ${E.toFixed(0)} J, KE = 0`, [-9.2, topY + 0.4, 0]);
@@ -631,7 +640,7 @@ const WorkEnergyTab: React.FC = () => {
     const ke = Math.max(0, E - pe * (frictionless ? 1 : 1.06));
     keArrow.position.copy(ball.position.clone().add(new THREE.Vector3(0, 0.8, 0)));
     keArrow.setLength(Math.max(0.01, (ke / Math.max(1, E)) * 3.6), 0.3, 0.18);
-    keArrow.setColor(new THREE.Color(frictionless ? 0x22d3ee : 0xf87171));
+    keArrow.setColor(frictionless ? 0x22d3ee : 0xf87171);
 
     if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);

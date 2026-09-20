@@ -4,80 +4,548 @@
   "topicSlug": "bryophytes",
   "topicTitle": "Bryophytes",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 04 bryophytes within the floral diversity unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 04 bryophytes. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 04 bryophytes."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 bryophytes."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
+  "duplicateType": 2,
+  "tabGroup": "04-bryophytes",
+  "mcqs": [
+    {
+      "question": "The dominant generation in bryophytes is:",
+      "options": [
+        "Sporophyte (2n)",
+        "Gametophyte (n)",
+        "Both equal",
+        "Aneuploid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bryophytes are called \"amphibians of the plant kingdom\" because they:",
+      "options": [
+        "Live in water",
+        "Need water for reproduction",
+        "Have a backbone",
+        "Are warm-blooded"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Gemma cups are found in:",
+      "options": [
+        "Mosses",
+        "Liverworts (Marchantia)",
+        "Pteridophytes",
+        "Gymnosperms"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The structure that replaces true roots in bryophytes is:",
+      "options": [
+        "Rhizoids",
+        "Adventitious roots",
+        "Taproots",
+        "Stolons"
+      ],
+      "answer": "A"
+    }
+  ],
+  "visualType": "bryophyte-life-cycle",
+  "enrichedContent": {
+    "notes": [
+      "Bryophytes: non-vascular land plants (no true xylem or phloem); include mosses, liverworts, and hornworts.",
+      "Life cycle: alternation of generations with the gametophyte (n) as the dominant, visible generation; the sporophyte (2n) is dependent on the gametophyte.",
+      "Mosses (Bryophyta): e.g., Polytrichum, Funaria; stem-like (cauloid), leaf-like (phylloid) structures; no true roots (rhizoids instead).",
+      "Liverworts (Marchantiophyta): thalloid (flat, ribbon-like) or leafy; Marchantia polymorpha is the model; gemmae cups for asexual reproduction.",
+      "Hornworts (Anthocerotophyta): thalloid; the sporophyte is horn-like and elongates from the base.",
+      "Reproduction: asexual (fragmentation, gemmae) and sexual (flagellated sperm swim to egg in the archegonium; fertilisation requires water).",
+      "Economic/ecological importance: pioneer species on bare rock, soil formation, moisture retention, indicators of air pollution (sensitive to SO₂), ornamental use.",
+      "NEB focus: Marchantia structure (thalus, rhizoids, gemma cups, antheridia, archegonia) and life cycle."
+    ],
+    "confusion": [
+      "Bryophytes lack TRUE roots, stems, and leaves; they have rhizoids, cauloids, and phylloids instead.",
+      "The gametophyte is the DOMINANT generation in bryophytes (unlike seed plants where the sporophyte dominates).",
+      "The sporophyte is dependent on the gametophyte for nutrition (it does not photosynthesise independently in most mosses).",
+      "Fertilisation in bryophytes requires WATER for sperm to swim to the egg; this limits bryophytes to moist habitats.",
+      "Gemmae are asexual propagules in gemma cups; they are NOT spores.",
+      "Liverworts are NOT mosses: liverworts are thalloid (Marchantia) or leafy; mosses are cauloid (stem + leaf)."
+    ],
+    "practice": [
+      "Draw and label a Marchantia thallus (rhizoids, gemma cups, antheridia, archegonia).",
+      "Describe the life cycle of a moss (e.g., Funaria) with a labelled diagram.",
+      "Differentiate bryophytes from pteridophytes (4 points).",
+      "Explain the ecological importance of bryophytes (5 points).",
+      "Draw a gemma cup and label the gemmae."
+    ],
+    "universalFacts": [
+      "Bryophytes were the first plants to colonise land (Devonian period, ~400 million years ago).",
+      "Marchantia polymorpha is the most commonly studied liverwort in school laboratories.",
+      "Mosses and liverworts are sensitive bio-indicators of air pollution, especially SO₂.",
+      "In bryophytes, the sporophyte (2n) is short-lived and nutritionally dependent on the gametophyte (n)."
+    ],
+    "examples": [
+      "Marchantia polymorpha — liverwort, thalloid, gemma cups for asexual reproduction.",
+      "Funaria hygrometrica — moss, cauloid, capsule opens with elaters in dry weather.",
+      "Polytrichum commune — moss, elongated capsule, common in temperate regions.",
+      "Anthoceros — hornwort, horn-like elongating sporophyte."
+    ],
+    "practiceQuestions": [
+      "Why are bryophytes called \"amphibians of the plant kingdom\"?",
+      "Differentiate the gametophyte and sporophyte generations in bryophytes.",
+      "Describe the structure of a Marchantia thallus with a labelled diagram.",
+      "Explain the role of water in bryophyte reproduction.",
+      "State the ecological importance of bryophytes (5 points)."
+    ],
+    "formulas": [
+      "Life cycle: Spore (n) → Gametophyte (n, dominant) → Gametes → Zygote (2n) → Sporophyte (2n, dependent) → Spores (n)",
+      "Gemmae: asexual, multicellular, in gemma cups",
+      "Fertilisation: Sperm (flagellated) + Egg (in archegonium) → Zygote"
+    ],
+    "keyPoints": [
+      "Bryophytes: non-vascular (no xylem/phloem), rhizoids instead of roots.",
+      "Gametophyte (n) is the dominant, visible generation.",
+      "Sporophyte (2n) is dependent on the gametophyte for nutrition.",
+      "Three groups: mosses (Bryophyta), liverworts (Marchantiophyta), hornworts (Anthocerotophyta).",
+      "Reproduction requires water (flagellated sperm); gemmae for asexual reproduction.",
+      "Ecological role: pioneers, soil formation, moisture, air pollution indicators."
+    ],
+    "summary": "Bryophytes are the simplest land plants: non-vascular, with the gametophyte as the dominant generation. They include mosses, liverworts, and hornworts. Marchantia (liverwort) and Funaria (moss) are the model organisms studied in NEB. Reproduction requires water for fertilisation; asexual reproduction occurs via gemmae and fragmentation. Bryophytes are ecologically important as pioneer species, soil builders, moisture retainers, and air-pollution indicators.",
+    "specialNotes": [
+      "NEB expects a labelled diagram of the Marchantia thallus (upper/lower epidermis, air chambers, rhizoids, gemma cups, antheridia, archegonia).",
+      "The \"amphibians of the plant kingdom\" analogy is a favourite exam phrase: bryophytes live on land but need water to reproduce.",
+      "Differentiate bryophytes from pteridophytes: bryophytes lack vascular tissue; pteridophytes have true xylem and phloem.",
+      "Gemmae ≠ spores: gemmae are asexual, multicellular, in gemma cups; spores are produced meiotically in the sporangium."
+    ],
+    "importantStatements": [
+      "Bryophytes are the first group of plants to colonise terrestrial habitats.",
+      "The gametophyte generation is dominant in bryophytes, unlike seed plants.",
+      "Water is essential for bryophyte fertilisation (sperm must swim to the egg).",
+      "Bryophytes are sensitive bio-indicators of air pollution, particularly SO₂."
+    ],
+    "importantNotes": [
+      "Memorise the Marchantia thallus structure (all labelled parts).",
+      "Learn the bryophyte life cycle (alternation of generations).",
+      "Differentiate gametophyte vs sporophyte in bryophytes.",
+      "List ecological and economic importance of bryophytes.",
+      "Know why bryophytes are called \"amphibians of the plant kingdom\"."
+    ],
+    "examShortTricks": [
+      "Bryophyte = no VASCULAR tissue = \"Bry\" (as in \"no BR\" in bryophyte).",
+      "Gametophyte DOMINANT in bryophytes; Sporophyte DOMINANT in seed plants.",
+      "Gemma cups = asexual; Archegonium = sexual.",
+      "Water needed for sperm to swim → bryophytes need moist habitat."
+    ],
+    "examNotes": [
+      "Draw and label Marchantia thallus — very common in NEB.",
+      "Describe the bryophyte life cycle with a labelled diagram.",
+      "Explain why bryophytes are \"amphibians of the plant kingdom\".",
+      "Differentiate bryophytes from pteridophytes (4 points).",
+      "State ecological importance of bryophytes (5 points)."
+    ],
+    "mcs": [
+      {
+        "question": "The dominant generation in bryophytes is:",
+        "options": [
+          "Sporophyte (2n)",
+          "Gametophyte (n)",
+          "Both equal",
+          "Aneuploid"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Bryophytes are called \"amphibians of the plant kingdom\" because they:",
+        "options": [
+          "Live in water",
+          "Need water for reproduction",
+          "Have a backbone",
+          "Are warm-blooded"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Gemma cups are found in:",
+        "options": [
+          "Mosses",
+          "Liverworts (Marchantia)",
+          "Pteridophytes",
+          "Gymnosperms"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The structure that replaces true roots in bryophytes is:",
+        "options": [
+          "Rhizoids",
+          "Adventitious roots",
+          "Taproots",
+          "Stolons"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Non-vascular plants",
+      "Gametophyte dominance",
+      "Marchantia structure",
+      "Gemma cups",
+      "Alternation of generations",
+      "Ecological importance",
+      "Bio-indicator role"
+    ],
+    "importantTasks": [
+      "Label Marchantia thallus",
+      "Draw bryophyte life cycle",
+      "Differentiate bryophytes vs pteridophytes",
+      "Explain \"amphibians of plant kingdom\"",
+      "List ecological importance"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A bryophyte is found growing on a damp rock face. Why does it need the damp environment?",
+        "steps": [
+          "Bryophytes lack vascular tissue",
+          "Cannot transport water efficiently",
+          "Need water for sperm to swim to egg",
+          "Also need moisture to prevent desiccation"
+        ],
+        "answer": "Needs water for fertilisation (flagellated sperm) and to prevent drying out"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "BryophyteViewer",
+      "desc": "Interactive 3D Marchantia thallus with rotatable gemma cups, antheridia, archegonia, and a life-cycle animation."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Bryophytes: non-vascular land plants (no true xylem or phloem); include mosses, liverworts, and hornworts.",
+      "Life cycle: alternation of generations with the gametophyte (n) as the dominant, visible generation; the sporophyte (2n) is dependent on the gametophyte.",
+      "Mosses (Bryophyta): e.g., Polytrichum, Funaria; stem-like (cauloid), leaf-like (phylloid) structures; no true roots (rhizoids instead).",
+      "Liverworts (Marchantiophyta): thalloid (flat, ribbon-like) or leafy; Marchantia polymorpha is the model; gemmae cups for asexual reproduction.",
+      "Hornworts (Anthocerotophyta): thalloid; the sporophyte is horn-like and elongates from the base.",
+      "Reproduction: asexual (fragmentation, gemmae) and sexual (flagellated sperm swim to egg in the archegonium; fertilisation requires water).",
+      "Economic/ecological importance: pioneer species on bare rock, soil formation, moisture retention, indicators of air pollution (sensitive to SO₂), ornamental use.",
+      "NEB focus: Marchantia structure (thalus, rhizoids, gemma cups, antheridia, archegonia) and life cycle."
+    ],
+    "confusion": [
+      "Bryophytes lack TRUE roots, stems, and leaves; they have rhizoids, cauloids, and phylloids instead.",
+      "The gametophyte is the DOMINANT generation in bryophytes (unlike seed plants where the sporophyte dominates).",
+      "The sporophyte is dependent on the gametophyte for nutrition (it does not photosynthesise independently in most mosses).",
+      "Fertilisation in bryophytes requires WATER for sperm to swim to the egg; this limits bryophytes to moist habitats.",
+      "Gemmae are asexual propagules in gemma cups; they are NOT spores.",
+      "Liverworts are NOT mosses: liverworts are thalloid (Marchantia) or leafy; mosses are cauloid (stem + leaf)."
+    ],
+    "practice": [
+      "Draw and label a Marchantia thallus (rhizoids, gemma cups, antheridia, archegonia).",
+      "Describe the life cycle of a moss (e.g., Funaria) with a labelled diagram.",
+      "Differentiate bryophytes from pteridophytes (4 points).",
+      "Explain the ecological importance of bryophytes (5 points).",
+      "Draw a gemma cup and label the gemmae."
+    ],
+    "universalFacts": [
+      "Bryophytes were the first plants to colonise land (Devonian period, ~400 million years ago).",
+      "Marchantia polymorpha is the most commonly studied liverwort in school laboratories.",
+      "Mosses and liverworts are sensitive bio-indicators of air pollution, especially SO₂.",
+      "In bryophytes, the sporophyte (2n) is short-lived and nutritionally dependent on the gametophyte (n)."
+    ],
+    "examples": [
+      "Marchantia polymorpha — liverwort, thalloid, gemma cups for asexual reproduction.",
+      "Funaria hygrometrica — moss, cauloid, capsule opens with elaters in dry weather.",
+      "Polytrichum commune — moss, elongated capsule, common in temperate regions.",
+      "Anthoceros — hornwort, horn-like elongating sporophyte."
+    ],
+    "practiceQuestions": [
+      "Why are bryophytes called \"amphibians of the plant kingdom\"?",
+      "Differentiate the gametophyte and sporophyte generations in bryophytes.",
+      "Describe the structure of a Marchantia thallus with a labelled diagram.",
+      "Explain the role of water in bryophyte reproduction.",
+      "State the ecological importance of bryophytes (5 points)."
+    ],
+    "formulas": [
+      "Life cycle: Spore (n) → Gametophyte (n, dominant) → Gametes → Zygote (2n) → Sporophyte (2n, dependent) → Spores (n)",
+      "Gemmae: asexual, multicellular, in gemma cups",
+      "Fertilisation: Sperm (flagellated) + Egg (in archegonium) → Zygote"
+    ],
+    "keyPoints": [
+      "Bryophytes: non-vascular (no xylem/phloem), rhizoids instead of roots.",
+      "Gametophyte (n) is the dominant, visible generation.",
+      "Sporophyte (2n) is dependent on the gametophyte for nutrition.",
+      "Three groups: mosses (Bryophyta), liverworts (Marchantiophyta), hornworts (Anthocerotophyta).",
+      "Reproduction requires water (flagellated sperm); gemmae for asexual reproduction.",
+      "Ecological role: pioneers, soil formation, moisture, air pollution indicators."
+    ],
+    "summary": "Bryophytes are the simplest land plants: non-vascular, with the gametophyte as the dominant generation. They include mosses, liverworts, and hornworts. Marchantia (liverwort) and Funaria (moss) are the model organisms studied in NEB. Reproduction requires water for fertilisation; asexual reproduction occurs via gemmae and fragmentation. Bryophytes are ecologically important as pioneer species, soil builders, moisture retainers, and air-pollution indicators.",
+    "specialNotes": [
+      "NEB expects a labelled diagram of the Marchantia thallus (upper/lower epidermis, air chambers, rhizoids, gemma cups, antheridia, archegonia).",
+      "The \"amphibians of the plant kingdom\" analogy is a favourite exam phrase: bryophytes live on land but need water to reproduce.",
+      "Differentiate bryophytes from pteridophytes: bryophytes lack vascular tissue; pteridophytes have true xylem and phloem.",
+      "Gemmae ≠ spores: gemmae are asexual, multicellular, in gemma cups; spores are produced meiotically in the sporangium."
+    ],
+    "importantStatements": [
+      "Bryophytes are the first group of plants to colonise terrestrial habitats.",
+      "The gametophyte generation is dominant in bryophytes, unlike seed plants.",
+      "Water is essential for bryophyte fertilisation (sperm must swim to the egg).",
+      "Bryophytes are sensitive bio-indicators of air pollution, particularly SO₂."
+    ],
+    "importantNotes": [
+      "Memorise the Marchantia thallus structure (all labelled parts).",
+      "Learn the bryophyte life cycle (alternation of generations).",
+      "Differentiate gametophyte vs sporophyte in bryophytes.",
+      "List ecological and economic importance of bryophytes.",
+      "Know why bryophytes are called \"amphibians of the plant kingdom\"."
+    ],
+    "examShortTricks": [
+      "Bryophyte = no VASCULAR tissue = \"Bry\" (as in \"no BR\" in bryophyte).",
+      "Gametophyte DOMINANT in bryophytes; Sporophyte DOMINANT in seed plants.",
+      "Gemma cups = asexual; Archegonium = sexual.",
+      "Water needed for sperm to swim → bryophytes need moist habitat."
+    ],
+    "examNotes": [
+      "Draw and label Marchantia thallus — very common in NEB.",
+      "Describe the bryophyte life cycle with a labelled diagram.",
+      "Explain why bryophytes are \"amphibians of the plant kingdom\".",
+      "Differentiate bryophytes from pteridophytes (4 points).",
+      "State ecological importance of bryophytes (5 points)."
+    ],
+    "mcs": [
+      {
+        "question": "The dominant generation in bryophytes is:",
+        "options": [
+          "Sporophyte (2n)",
+          "Gametophyte (n)",
+          "Both equal",
+          "Aneuploid"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Bryophytes are called \"amphibians of the plant kingdom\" because they:",
+        "options": [
+          "Live in water",
+          "Need water for reproduction",
+          "Have a backbone",
+          "Are warm-blooded"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Gemma cups are found in:",
+        "options": [
+          "Mosses",
+          "Liverworts (Marchantia)",
+          "Pteridophytes",
+          "Gymnosperms"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The structure that replaces true roots in bryophytes is:",
+        "options": [
+          "Rhizoids",
+          "Adventitious roots",
+          "Taproots",
+          "Stolons"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Non-vascular plants",
+      "Gametophyte dominance",
+      "Marchantia structure",
+      "Gemma cups",
+      "Alternation of generations",
+      "Ecological importance",
+      "Bio-indicator role"
+    ],
+    "importantTasks": [
+      "Label Marchantia thallus",
+      "Draw bryophyte life cycle",
+      "Differentiate bryophytes vs pteridophytes",
+      "Explain \"amphibians of plant kingdom\"",
+      "List ecological importance"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A bryophyte is found growing on a damp rock face. Why does it need the damp environment?",
+        "steps": [
+          "Bryophytes lack vascular tissue",
+          "Cannot transport water efficiently",
+          "Need water for sperm to swim to egg",
+          "Also need moisture to prevent desiccation"
+        ],
+        "answer": "Needs water for fertilisation (flagellated sperm) and to prevent drying out"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "BryophyteViewer",
+      "desc": "Interactive 3D Marchantia thallus with rotatable gemma cups, antheridia, archegonia, and a life-cycle animation."
+    }
+  },
+  "notes": [
+    "Bryophytes: non-vascular land plants (no true xylem or phloem); include mosses, liverworts, and hornworts.",
+    "Life cycle: alternation of generations with the gametophyte (n) as the dominant, visible generation; the sporophyte (2n) is dependent on the gametophyte.",
+    "Mosses (Bryophyta): e.g., Polytrichum, Funaria; stem-like (cauloid), leaf-like (phylloid) structures; no true roots (rhizoids instead).",
+    "Liverworts (Marchantiophyta): thalloid (flat, ribbon-like) or leafy; Marchantia polymorpha is the model; gemmae cups for asexual reproduction.",
+    "Hornworts (Anthocerotophyta): thalloid; the sporophyte is horn-like and elongates from the base.",
+    "Reproduction: asexual (fragmentation, gemmae) and sexual (flagellated sperm swim to egg in the archegonium; fertilisation requires water).",
+    "Economic/ecological importance: pioneer species on bare rock, soil formation, moisture retention, indicators of air pollution (sensitive to SO₂), ornamental use.",
+    "NEB focus: Marchantia structure (thalus, rhizoids, gemma cups, antheridia, archegonia) and life cycle."
+  ],
+  "confusion": [
+    "Bryophytes lack TRUE roots, stems, and leaves; they have rhizoids, cauloids, and phylloids instead.",
+    "The gametophyte is the DOMINANT generation in bryophytes (unlike seed plants where the sporophyte dominates).",
+    "The sporophyte is dependent on the gametophyte for nutrition (it does not photosynthesise independently in most mosses).",
+    "Fertilisation in bryophytes requires WATER for sperm to swim to the egg; this limits bryophytes to moist habitats.",
+    "Gemmae are asexual propagules in gemma cups; they are NOT spores.",
+    "Liverworts are NOT mosses: liverworts are thalloid (Marchantia) or leafy; mosses are cauloid (stem + leaf)."
+  ],
+  "practice": [
+    "Draw and label a Marchantia thallus (rhizoids, gemma cups, antheridia, archegonia).",
+    "Describe the life cycle of a moss (e.g., Funaria) with a labelled diagram.",
+    "Differentiate bryophytes from pteridophytes (4 points).",
+    "Explain the ecological importance of bryophytes (5 points).",
+    "Draw a gemma cup and label the gemmae."
+  ],
+  "universalFacts": [
+    "Bryophytes were the first plants to colonise land (Devonian period, ~400 million years ago).",
+    "Marchantia polymorpha is the most commonly studied liverwort in school laboratories.",
+    "Mosses and liverworts are sensitive bio-indicators of air pollution, especially SO₂.",
+    "In bryophytes, the sporophyte (2n) is short-lived and nutritionally dependent on the gametophyte (n)."
+  ],
   "examples": [
-    "Real-world example of 04 bryophytes."
+    "Marchantia polymorpha — liverwort, thalloid, gemma cups for asexual reproduction.",
+    "Funaria hygrometrica — moss, cauloid, capsule opens with elaters in dry weather.",
+    "Polytrichum commune — moss, elongated capsule, common in temperate regions.",
+    "Anthoceros — hornwort, horn-like elongating sporophyte."
   ],
   "practiceQuestions": [
-    "Practice question for 04 bryophytes."
+    "Why are bryophytes called \"amphibians of the plant kingdom\"?",
+    "Differentiate the gametophyte and sporophyte generations in bryophytes.",
+    "Describe the structure of a Marchantia thallus with a labelled diagram.",
+    "Explain the role of water in bryophyte reproduction.",
+    "State the ecological importance of bryophytes (5 points)."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 bryophytes)"
+    "Life cycle: Spore (n) → Gametophyte (n, dominant) → Gametes → Zygote (2n) → Sporophyte (2n, dependent) → Spores (n)",
+    "Gemmae: asexual, multicellular, in gemma cups",
+    "Fertilisation: Sperm (flagellated) + Egg (in archegonium) → Zygote"
   ],
   "keyPoints": [
-    "Core point for 04 bryophytes."
+    "Bryophytes: non-vascular (no xylem/phloem), rhizoids instead of roots.",
+    "Gametophyte (n) is the dominant, visible generation.",
+    "Sporophyte (2n) is dependent on the gametophyte for nutrition.",
+    "Three groups: mosses (Bryophyta), liverworts (Marchantiophyta), hornworts (Anthocerotophyta).",
+    "Reproduction requires water (flagellated sperm); gemmae for asexual reproduction.",
+    "Ecological role: pioneers, soil formation, moisture, air pollution indicators."
   ],
-  "summary": "Summary of 04 bryophytes.",
+  "summary": "Bryophytes are the simplest land plants: non-vascular, with the gametophyte as the dominant generation. They include mosses, liverworts, and hornworts. Marchantia (liverwort) and Funaria (moss) are the model organisms studied in NEB. Reproduction requires water for fertilisation; asexual reproduction occurs via gemmae and fragmentation. Bryophytes are ecologically important as pioneer species, soil builders, moisture retainers, and air-pollution indicators.",
   "specialNotes": [
-    "Specialized insight for 04 bryophytes."
+    "NEB expects a labelled diagram of the Marchantia thallus (upper/lower epidermis, air chambers, rhizoids, gemma cups, antheridia, archegonia).",
+    "The \"amphibians of the plant kingdom\" analogy is a favourite exam phrase: bryophytes live on land but need water to reproduce.",
+    "Differentiate bryophytes from pteridophytes: bryophytes lack vascular tissue; pteridophytes have true xylem and phloem.",
+    "Gemmae ≠ spores: gemmae are asexual, multicellular, in gemma cups; spores are produced meiotically in the sporangium."
   ],
   "importantStatements": [
-    "Key statement for 04 bryophytes."
+    "Bryophytes are the first group of plants to colonise terrestrial habitats.",
+    "The gametophyte generation is dominant in bryophytes, unlike seed plants.",
+    "Water is essential for bryophyte fertilisation (sperm must swim to the egg).",
+    "Bryophytes are sensitive bio-indicators of air pollution, particularly SO₂."
   ],
   "importantNotes": [
-    "Important note regarding 04 bryophytes."
+    "Memorise the Marchantia thallus structure (all labelled parts).",
+    "Learn the bryophyte life cycle (alternation of generations).",
+    "Differentiate gametophyte vs sporophyte in bryophytes.",
+    "List ecological and economic importance of bryophytes.",
+    "Know why bryophytes are called \"amphibians of the plant kingdom\"."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Bryophytes."
+    "Bryophyte = no VASCULAR tissue = \"Bry\" (as in \"no BR\" in bryophyte).",
+    "Gametophyte DOMINANT in bryophytes; Sporophyte DOMINANT in seed plants.",
+    "Gemma cups = asexual; Archegonium = sexual.",
+    "Water needed for sperm to swim → bryophytes need moist habitat."
   ],
   "examNotes": [
-    "Bryophytes is frequently tested.",
-    "Practice writing detailed answers."
+    "Draw and label Marchantia thallus — very common in NEB.",
+    "Describe the bryophyte life cycle with a labelled diagram.",
+    "Explain why bryophytes are \"amphibians of the plant kingdom\".",
+    "Differentiate bryophytes from pteridophytes (4 points).",
+    "State ecological importance of bryophytes (5 points)."
   ],
   "mcs": [
     {
-      "question": "Question about 04 bryophytes?",
+      "question": "The dominant generation in bryophytes is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Sporophyte (2n)",
+        "Gametophyte (n)",
+        "Both equal",
+        "Aneuploid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bryophytes are called \"amphibians of the plant kingdom\" because they:",
+      "options": [
+        "Live in water",
+        "Need water for reproduction",
+        "Have a backbone",
+        "Are warm-blooded"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Gemma cups are found in:",
+      "options": [
+        "Mosses",
+        "Liverworts (Marchantia)",
+        "Pteridophytes",
+        "Gymnosperms"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The structure that replaces true roots in bryophytes is:",
+      "options": [
+        "Rhizoids",
+        "Adventitious roots",
+        "Taproots",
+        "Stolons"
       ],
       "answer": "A"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 04 bryophytes."
+    "Non-vascular plants",
+    "Gametophyte dominance",
+    "Marchantia structure",
+    "Gemma cups",
+    "Alternation of generations",
+    "Ecological importance",
+    "Bio-indicator role"
   ],
   "importantTasks": [
-    "Task for studying 04 bryophytes."
+    "Label Marchantia thallus",
+    "Draw bryophyte life cycle",
+    "Differentiate bryophytes vs pteridophytes",
+    "Explain \"amphibians of plant kingdom\"",
+    "List ecological importance"
   ],
-  "duplicateType": 2,
-  "tabGroup": "04-bryophytes",
-  "mcqs": [
+  "exercises": [
     {
-      "question": "Question about 04 bryophytes?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+      "id": "1",
+      "question": "A bryophyte is found growing on a damp rock face. Why does it need the damp environment?",
+      "steps": [
+        "Bryophytes lack vascular tissue",
+        "Cannot transport water efficiently",
+        "Need water for sperm to swim to egg",
+        "Also need moisture to prevent desiccation"
       ],
-      "answer": "A"
+      "answer": "Needs water for fertilisation (flagellated sperm) and to prevent drying out"
     }
   ]
 }

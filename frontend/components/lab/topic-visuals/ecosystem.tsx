@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Ecosystem — Food Chain & Web — NEB Biology 11 (Ecology)
@@ -39,7 +39,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveArrow(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
   meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
 }
@@ -174,7 +174,7 @@ export function EcosystemVisual() {
           ));
           sun.position.set(-5, 2.5, 0);
           addLabel(meshes, "Sun (Energy Source)", 0xfbbf24, new THREE.Vector3(-4.5, 3.5, 2), sun.position);
-          const sunArrow = push(new LiveArrow(new THREE.Vector3(1, -0.6, 0), new THREE.Vector3(-4.5, 2.5, 0), 1.5, 0xfbbf24, 0.15, 0.08) as any);
+          const sunArrow = push(new LiveLeaderLine(new THREE.Vector3(1, -0.6, 0), new THREE.Vector3(-4.5, 2.5, 0), 1.5, 0xfbbf24, 0.15, 0.08) as any);
 
           // Decomposer arrow
           const decomp = push(new THREE.Mesh(

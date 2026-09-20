@@ -4,191 +4,576 @@
   "topicSlug": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
   "topicTitle": "Environmental pollution: Sources, effects and control measures of air, water and soil pollution; pesticides and their effects",
   "relevance": 100,
-  "notes": [
-    "Aquatic adaptations: streamlined body, gills, lateral line.",
-    "Terrestrial adaptations: waterproof skin, lungs, internal fertilization.",
-    "Volant adaptations: wings, hollow bones, air sacs.",
-    "Reflex action: automatic response via spinal cord.",
-    "Pollution: air ($SO_2$, $NO_x$, $PM_{2.5}$), water, soil."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
+  "mcqs": [
+    {
+      "question": "The main cause of acid rain is:",
+      "options": [
+        "CO2",
+        "SO2 and NOx",
+        "Methane",
+        "Oxygen"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Kathmandu Valley air pollution in winter is mainly due to:",
+      "options": [
+        "Ozone",
+        "PM2.5",
+        "Methane",
+        "CFCs"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Biomagnification means:",
+      "options": [
+        "Toxins decrease up the food chain",
+        "Toxins increase up the food chain",
+        "Toxins stay the same",
+        "Toxins disappear"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Eutrophication is caused by excess:",
+      "options": [
+        "Oxygen",
+        "Nitrogen and phosphorus",
+        "Carbon dioxide",
+        "Water"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "pollution-types-effects",
+  "enrichedContent": {
+    "notes": [
+      "Environmental pollution: the addition of substances or energy to the environment at a rate that exceeds its capacity to dilute, degrade, or absorb them.",
+      "Air pollution: SO2 (coal), NOx (vehicles), CO (incomplete combustion), PM2.5/PM10 (particulates), ozone (ground-level), CFCs; sources: industry, vehicles, power plants, biomass burning.",
+      "Effects of air pollution: respiratory diseases (asthma, bronchitis), acid rain, smog, global warming, ozone depletion.",
+      "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter (stove smoke, vehicles, dust).",
+      "Water pollution: domestic waste, industrial effluent, agricultural runoff (pesticides, fertilisers), oil spills, thermal pollution; effects: eutrophication, oxygen depletion, disease (cholera, typhoid).",
+      "Soil pollution: heavy metals, pesticides, plastics, industrial waste; effects: reduced fertility, contamination of food, leaching to groundwater.",
+      "Pesticides: chemicals to control pests; types: insecticides, herbicides, fungicides, rodenticides; effects: biomagnification, resistance, non-target species death, soil/water contamination.",
+      "Control measures: reduce emissions, renewable energy, tree planting, waste treatment, organic farming, international agreements (Montreal, Paris).",
+      "NEB focus: sources, effects, and control measures of air, water, and soil pollution; pesticides and their effects.",
+      "Nepal: vulnerable to air (Kathmandu), water (river pollution), and soil (pesticide) pollution; deforestation and urbanisation are major contributors."
+    ],
+    "confusion": [
+      "Acid rain (pH < 5.6) is caused by SO2 and NOx, NOT by CO2 alone.",
+      "Ozone is beneficial in the STRATOSPHERE (blocks UV) but harmful at ground level (smog, air pollutant).",
+      "Biomagnification: toxin concentration INCREASES at higher trophic levels (e.g., DDT in fish-eating birds).",
+      "Pesticide resistance: pests evolve resistance over time; higher doses are needed.",
+      "Eutrophication: excess nutrients (N, P) → algal bloom → O2 depletion → fish kill.",
+      "PM2.5 (fine particulates) are MORE harmful than PM10 because they penetrate deeper into the lungs."
+    ],
+    "practice": [
+      "List the sources, effects, and control measures of air pollution.",
+      "Explain the sources and effects of water pollution.",
+      "Describe the effects of soil pollution on the environment and health.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for all types of pollution."
+    ],
+    "universalFacts": [
+      "WHO guideline for PM2.5 is 10 µg/m³ (annual mean); Kathmandu Valley often exceeds 100 µg/m³ in winter.",
+      "DDT (banned in many countries) biomagnifies up food chains; it caused eggshell thinning in raptors (eagles, falcons).",
+      "Eutrophication is the #1 cause of \"dead zones\" (hypoxic zones) in lakes and coastal waters.",
+      "Nepal's community forestry program manages ~36% of the country's forest land."
+    ],
+    "examples": [
+      "Air pollution: SO2 from coal plants, NOx from vehicles, PM2.5 from biomass stoves and dust in Kathmandu.",
+      "Water pollution: domestic sewage in Bagmati and Karnali rivers; agricultural runoff (fertilisers, pesticides).",
+      "Soil pollution: heavy metals from industrial waste; pesticide residues in farmland.",
+      "Pesticides: DDT (insecticide) biomagnifies in the food chain; non-target species (bees, fish) die.",
+      "Control: tree planting, renewable energy, waste treatment, organic farming, international agreements."
+    ],
+    "practiceQuestions": [
+      "List the sources and effects of air pollution.",
+      "Explain water pollution (sources, effects, control).",
+      "Describe the effects of soil pollution.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for air, water, and soil pollution."
+    ],
+    "formulas": [
+      "Air pollutants: SO2, NOx, CO, PM2.5, O3, CFCs",
+      "Water pollutants: domestic waste, industrial effluent, agricultural runoff, oil",
+      "Soil pollutants: heavy metals, pesticides, plastics, industrial waste",
+      "Biomagnification: toxin concentration INCREASES up the food chain"
+    ],
+    "keyPoints": [
+      "Air pollution: SO2, NOx, CO, PM2.5, O3, CFCs; sources: industry, vehicles, biomass.",
+      "Effects: respiratory disease, acid rain, smog, global warming, ozone depletion.",
+      "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter.",
+      "Water pollution: domestic, industrial, agricultural; effects: eutrophication, O2 depletion, disease.",
+      "Soil pollution: heavy metals, pesticides, plastics; effects: reduced fertility, food contamination.",
+      "Pesticides: insecticides, herbicides, fungicides, rodenticides; biomagnification, resistance, non-target death.",
+      "Control: reduce emissions, renewable energy, tree planting, waste treatment, organic farming."
+    ],
+    "summary": "Environmental pollution — air, water, and soil — is a major human-induced threat. Air pollution (SO2, NOx, CO, PM2.5, O3, CFCs) causes respiratory disease, acid rain, smog, and global warming; Kathmandu Valley's PM2.5 exceeds WHO limits ~10× in winter. Water pollution (domestic, industrial, agricultural) leads to eutrophication, O2 depletion, and disease. Soil pollution (heavy metals, pesticides, plastics) reduces fertility and contaminates food. Pesticides biomagnify up food chains, cause resistance, and harm non-target species. Control measures include reducing emissions, renewable energy, tree planting, waste treatment, organic farming, and international agreements.",
+    "specialNotes": [
+      "NEB expects clear sources, effects, and control measures for air, water, and soil pollution.",
+      "Pesticides: types, effects, biomagnification, and resistance are a very common long-answer.",
+      "Kathmandu Valley air pollution (PM2.5) is a key Nepali application question.",
+      "Acid rain (SO2 + NOx) and ozone depletion (CFCs) are different processes.",
+      "Biomagnification: give a DDT example (raptor eggshell thinning).",
+      "Control measures: list 5+ for each pollution type."
+    ],
+    "importantStatements": [
+      "Air pollution causes respiratory disease, acid rain, and global warming.",
+      "Water pollution leads to eutrophication, O2 depletion, and disease.",
+      "Pesticides biomagnify up food chains and cause resistance.",
+      "Control measures include reducing emissions, renewable energy, and organic farming."
+    ],
+    "importantNotes": [
+      "Memorise the air, water, and soil pollutants with their sources.",
+      "Learn the effects of each pollution type.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for each pollution type.",
+      "Give a Nepali example (Kathmandu PM2.5, river pollution, pesticide use)."
+    ],
+    "examShortTricks": [
+      "Air = A-S-N-P (SO2, NOx, CO, PM2.5, O3, CFCs).",
+      "Water = domestic + industrial + agricultural.",
+      "Soil = heavy metals + pesticides + plastics.",
+      "Pesticides = biomagnify + resistance + non-target death.",
+      "Control = reduce + renewable + trees + treatment + organic."
+    ],
+    "examNotes": [
+      "List the sources and effects of air pollution.",
+      "Explain water pollution (sources, effects, control).",
+      "Describe the effects of soil pollution.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for air, water, and soil pollution.",
+      "Give a Nepali example for each pollution type."
+    ],
+    "mcs": [
+      {
+        "question": "The main cause of acid rain is:",
+        "options": [
+          "CO2",
+          "SO2 and NOx",
+          "Methane",
+          "Oxygen"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Kathmandu Valley air pollution in winter is mainly due to:",
+        "options": [
+          "Ozone",
+          "PM2.5",
+          "Methane",
+          "CFCs"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Biomagnification means:",
+        "options": [
+          "Toxins decrease up the food chain",
+          "Toxins increase up the food chain",
+          "Toxins stay the same",
+          "Toxins disappear"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Eutrophication is caused by excess:",
+        "options": [
+          "Oxygen",
+          "Nitrogen and phosphorus",
+          "Carbon dioxide",
+          "Water"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Air pollution (SO2, NOx, CO, PM2.5, O3, CFCs)",
+      "Water pollution (domestic, industrial, agricultural)",
+      "Soil pollution (heavy metals, pesticides, plastics)",
+      "Pesticides (types, effects, biomagnification, resistance)",
+      "Acid rain",
+      "Eutrophication",
+      "Kathmandu PM2.5",
+      "Control measures"
+    ],
+    "importantTasks": [
+      "List air pollutants and effects",
+      "Explain water pollution",
+      "Describe soil pollution effects",
+      "Explain pesticides (biomagnification, resistance)",
+      "List control measures"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A lake has an algal bloom followed by mass fish death. Explain the cause and mechanism.",
+        "steps": [
+          "Excess nutrients (N, P) from agriculture/sewage",
+          "Algal bloom (eutrophication)",
+          "Algae die → decomposers use O2",
+          "O2 depletion (hypoxia) → fish die"
+        ],
+        "answer": "Eutrophication: excess nutrients → algal bloom → O2 depletion → fish death"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "PollutionSim",
+      "desc": "Interactive simulation of air, water, and soil pollution with before/after ecosystem comparisons, biomagnification food chain, and Kathmandu PM2.5 data."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Environmental pollution: the addition of substances or energy to the environment at a rate that exceeds its capacity to dilute, degrade, or absorb them.",
+      "Air pollution: SO2 (coal), NOx (vehicles), CO (incomplete combustion), PM2.5/PM10 (particulates), ozone (ground-level), CFCs; sources: industry, vehicles, power plants, biomass burning.",
+      "Effects of air pollution: respiratory diseases (asthma, bronchitis), acid rain, smog, global warming, ozone depletion.",
+      "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter (stove smoke, vehicles, dust).",
+      "Water pollution: domestic waste, industrial effluent, agricultural runoff (pesticides, fertilisers), oil spills, thermal pollution; effects: eutrophication, oxygen depletion, disease (cholera, typhoid).",
+      "Soil pollution: heavy metals, pesticides, plastics, industrial waste; effects: reduced fertility, contamination of food, leaching to groundwater.",
+      "Pesticides: chemicals to control pests; types: insecticides, herbicides, fungicides, rodenticides; effects: biomagnification, resistance, non-target species death, soil/water contamination.",
+      "Control measures: reduce emissions, renewable energy, tree planting, waste treatment, organic farming, international agreements (Montreal, Paris).",
+      "NEB focus: sources, effects, and control measures of air, water, and soil pollution; pesticides and their effects.",
+      "Nepal: vulnerable to air (Kathmandu), water (river pollution), and soil (pesticide) pollution; deforestation and urbanisation are major contributors."
+    ],
+    "confusion": [
+      "Acid rain (pH < 5.6) is caused by SO2 and NOx, NOT by CO2 alone.",
+      "Ozone is beneficial in the STRATOSPHERE (blocks UV) but harmful at ground level (smog, air pollutant).",
+      "Biomagnification: toxin concentration INCREASES at higher trophic levels (e.g., DDT in fish-eating birds).",
+      "Pesticide resistance: pests evolve resistance over time; higher doses are needed.",
+      "Eutrophication: excess nutrients (N, P) → algal bloom → O2 depletion → fish kill.",
+      "PM2.5 (fine particulates) are MORE harmful than PM10 because they penetrate deeper into the lungs."
+    ],
+    "practice": [
+      "List the sources, effects, and control measures of air pollution.",
+      "Explain the sources and effects of water pollution.",
+      "Describe the effects of soil pollution on the environment and health.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for all types of pollution."
+    ],
+    "universalFacts": [
+      "WHO guideline for PM2.5 is 10 µg/m³ (annual mean); Kathmandu Valley often exceeds 100 µg/m³ in winter.",
+      "DDT (banned in many countries) biomagnifies up food chains; it caused eggshell thinning in raptors (eagles, falcons).",
+      "Eutrophication is the #1 cause of \"dead zones\" (hypoxic zones) in lakes and coastal waters.",
+      "Nepal's community forestry program manages ~36% of the country's forest land."
+    ],
+    "examples": [
+      "Air pollution: SO2 from coal plants, NOx from vehicles, PM2.5 from biomass stoves and dust in Kathmandu.",
+      "Water pollution: domestic sewage in Bagmati and Karnali rivers; agricultural runoff (fertilisers, pesticides).",
+      "Soil pollution: heavy metals from industrial waste; pesticide residues in farmland.",
+      "Pesticides: DDT (insecticide) biomagnifies in the food chain; non-target species (bees, fish) die.",
+      "Control: tree planting, renewable energy, waste treatment, organic farming, international agreements."
+    ],
+    "practiceQuestions": [
+      "List the sources and effects of air pollution.",
+      "Explain water pollution (sources, effects, control).",
+      "Describe the effects of soil pollution.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for air, water, and soil pollution."
+    ],
+    "formulas": [
+      "Air pollutants: SO2, NOx, CO, PM2.5, O3, CFCs",
+      "Water pollutants: domestic waste, industrial effluent, agricultural runoff, oil",
+      "Soil pollutants: heavy metals, pesticides, plastics, industrial waste",
+      "Biomagnification: toxin concentration INCREASES up the food chain"
+    ],
+    "keyPoints": [
+      "Air pollution: SO2, NOx, CO, PM2.5, O3, CFCs; sources: industry, vehicles, biomass.",
+      "Effects: respiratory disease, acid rain, smog, global warming, ozone depletion.",
+      "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter.",
+      "Water pollution: domestic, industrial, agricultural; effects: eutrophication, O2 depletion, disease.",
+      "Soil pollution: heavy metals, pesticides, plastics; effects: reduced fertility, food contamination.",
+      "Pesticides: insecticides, herbicides, fungicides, rodenticides; biomagnification, resistance, non-target death.",
+      "Control: reduce emissions, renewable energy, tree planting, waste treatment, organic farming."
+    ],
+    "summary": "Environmental pollution — air, water, and soil — is a major human-induced threat. Air pollution (SO2, NOx, CO, PM2.5, O3, CFCs) causes respiratory disease, acid rain, smog, and global warming; Kathmandu Valley's PM2.5 exceeds WHO limits ~10× in winter. Water pollution (domestic, industrial, agricultural) leads to eutrophication, O2 depletion, and disease. Soil pollution (heavy metals, pesticides, plastics) reduces fertility and contaminates food. Pesticides biomagnify up food chains, cause resistance, and harm non-target species. Control measures include reducing emissions, renewable energy, tree planting, waste treatment, organic farming, and international agreements.",
+    "specialNotes": [
+      "NEB expects clear sources, effects, and control measures for air, water, and soil pollution.",
+      "Pesticides: types, effects, biomagnification, and resistance are a very common long-answer.",
+      "Kathmandu Valley air pollution (PM2.5) is a key Nepali application question.",
+      "Acid rain (SO2 + NOx) and ozone depletion (CFCs) are different processes.",
+      "Biomagnification: give a DDT example (raptor eggshell thinning).",
+      "Control measures: list 5+ for each pollution type."
+    ],
+    "importantStatements": [
+      "Air pollution causes respiratory disease, acid rain, and global warming.",
+      "Water pollution leads to eutrophication, O2 depletion, and disease.",
+      "Pesticides biomagnify up food chains and cause resistance.",
+      "Control measures include reducing emissions, renewable energy, and organic farming."
+    ],
+    "importantNotes": [
+      "Memorise the air, water, and soil pollutants with their sources.",
+      "Learn the effects of each pollution type.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for each pollution type.",
+      "Give a Nepali example (Kathmandu PM2.5, river pollution, pesticide use)."
+    ],
+    "examShortTricks": [
+      "Air = A-S-N-P (SO2, NOx, CO, PM2.5, O3, CFCs).",
+      "Water = domestic + industrial + agricultural.",
+      "Soil = heavy metals + pesticides + plastics.",
+      "Pesticides = biomagnify + resistance + non-target death.",
+      "Control = reduce + renewable + trees + treatment + organic."
+    ],
+    "examNotes": [
+      "List the sources and effects of air pollution.",
+      "Explain water pollution (sources, effects, control).",
+      "Describe the effects of soil pollution.",
+      "Explain pesticides (types, effects, biomagnification, resistance).",
+      "List control measures for air, water, and soil pollution.",
+      "Give a Nepali example for each pollution type."
+    ],
+    "mcs": [
+      {
+        "question": "The main cause of acid rain is:",
+        "options": [
+          "CO2",
+          "SO2 and NOx",
+          "Methane",
+          "Oxygen"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Kathmandu Valley air pollution in winter is mainly due to:",
+        "options": [
+          "Ozone",
+          "PM2.5",
+          "Methane",
+          "CFCs"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Biomagnification means:",
+        "options": [
+          "Toxins decrease up the food chain",
+          "Toxins increase up the food chain",
+          "Toxins stay the same",
+          "Toxins disappear"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Eutrophication is caused by excess:",
+        "options": [
+          "Oxygen",
+          "Nitrogen and phosphorus",
+          "Carbon dioxide",
+          "Water"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Air pollution (SO2, NOx, CO, PM2.5, O3, CFCs)",
+      "Water pollution (domestic, industrial, agricultural)",
+      "Soil pollution (heavy metals, pesticides, plastics)",
+      "Pesticides (types, effects, biomagnification, resistance)",
+      "Acid rain",
+      "Eutrophication",
+      "Kathmandu PM2.5",
+      "Control measures"
+    ],
+    "importantTasks": [
+      "List air pollutants and effects",
+      "Explain water pollution",
+      "Describe soil pollution effects",
+      "Explain pesticides (biomagnification, resistance)",
+      "List control measures"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A lake has an algal bloom followed by mass fish death. Explain the cause and mechanism.",
+        "steps": [
+          "Excess nutrients (N, P) from agriculture/sewage",
+          "Algal bloom (eutrophication)",
+          "Algae die → decomposers use O2",
+          "O2 depletion (hypoxia) → fish die"
+        ],
+        "answer": "Eutrophication: excess nutrients → algal bloom → O2 depletion → fish death"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "PollutionSim",
+      "desc": "Interactive simulation of air, water, and soil pollution with before/after ecosystem comparisons, biomagnification food chain, and Kathmandu PM2.5 data."
+    }
+  },
+  "notes": [
+    "Environmental pollution: the addition of substances or energy to the environment at a rate that exceeds its capacity to dilute, degrade, or absorb them.",
+    "Air pollution: SO2 (coal), NOx (vehicles), CO (incomplete combustion), PM2.5/PM10 (particulates), ozone (ground-level), CFCs; sources: industry, vehicles, power plants, biomass burning.",
+    "Effects of air pollution: respiratory diseases (asthma, bronchitis), acid rain, smog, global warming, ozone depletion.",
+    "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter (stove smoke, vehicles, dust).",
+    "Water pollution: domestic waste, industrial effluent, agricultural runoff (pesticides, fertilisers), oil spills, thermal pollution; effects: eutrophication, oxygen depletion, disease (cholera, typhoid).",
+    "Soil pollution: heavy metals, pesticides, plastics, industrial waste; effects: reduced fertility, contamination of food, leaching to groundwater.",
+    "Pesticides: chemicals to control pests; types: insecticides, herbicides, fungicides, rodenticides; effects: biomagnification, resistance, non-target species death, soil/water contamination.",
+    "Control measures: reduce emissions, renewable energy, tree planting, waste treatment, organic farming, international agreements (Montreal, Paris).",
+    "NEB focus: sources, effects, and control measures of air, water, and soil pollution; pesticides and their effects.",
+    "Nepal: vulnerable to air (Kathmandu), water (river pollution), and soil (pesticide) pollution; deforestation and urbanisation are major contributors."
+  ],
+  "confusion": [
+    "Acid rain (pH < 5.6) is caused by SO2 and NOx, NOT by CO2 alone.",
+    "Ozone is beneficial in the STRATOSPHERE (blocks UV) but harmful at ground level (smog, air pollutant).",
+    "Biomagnification: toxin concentration INCREASES at higher trophic levels (e.g., DDT in fish-eating birds).",
+    "Pesticide resistance: pests evolve resistance over time; higher doses are needed.",
+    "Eutrophication: excess nutrients (N, P) → algal bloom → O2 depletion → fish kill.",
+    "PM2.5 (fine particulates) are MORE harmful than PM10 because they penetrate deeper into the lungs."
+  ],
+  "practice": [
+    "List the sources, effects, and control measures of air pollution.",
+    "Explain the sources and effects of water pollution.",
+    "Describe the effects of soil pollution on the environment and health.",
+    "Explain pesticides (types, effects, biomagnification, resistance).",
+    "List control measures for all types of pollution."
+  ],
+  "universalFacts": [
+    "WHO guideline for PM2.5 is 10 µg/m³ (annual mean); Kathmandu Valley often exceeds 100 µg/m³ in winter.",
+    "DDT (banned in many countries) biomagnifies up food chains; it caused eggshell thinning in raptors (eagles, falcons).",
+    "Eutrophication is the #1 cause of \"dead zones\" (hypoxic zones) in lakes and coastal waters.",
+    "Nepal's community forestry program manages ~36% of the country's forest land."
+  ],
   "examples": [
-    "Fish gills: countercurrent exchange",
-    "Kathmandu Valley: PM2.5 exceeds WHO 10× in winter"
+    "Air pollution: SO2 from coal plants, NOx from vehicles, PM2.5 from biomass stoves and dust in Kathmandu.",
+    "Water pollution: domestic sewage in Bagmati and Karnali rivers; agricultural runoff (fertilisers, pesticides).",
+    "Soil pollution: heavy metals from industrial waste; pesticide residues in farmland.",
+    "Pesticides: DDT (insecticide) biomagnifies in the food chain; non-target species (bees, fish) die.",
+    "Control: tree planting, renewable energy, waste treatment, organic farming, international agreements."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "List the sources and effects of air pollution.",
+    "Explain water pollution (sources, effects, control).",
+    "Describe the effects of soil pollution.",
+    "Explain pesticides (types, effects, biomagnification, resistance).",
+    "List control measures for air, water, and soil pollution."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects)"
+    "Air pollutants: SO2, NOx, CO, PM2.5, O3, CFCs",
+    "Water pollutants: domestic waste, industrial effluent, agricultural runoff, oil",
+    "Soil pollutants: heavy metals, pesticides, plastics, industrial waste",
+    "Biomagnification: toxin concentration INCREASES up the food chain"
   ],
   "keyPoints": [
-    "Core point for 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
+    "Air pollution: SO2, NOx, CO, PM2.5, O3, CFCs; sources: industry, vehicles, biomass.",
+    "Effects: respiratory disease, acid rain, smog, global warming, ozone depletion.",
+    "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter.",
+    "Water pollution: domestic, industrial, agricultural; effects: eutrophication, O2 depletion, disease.",
+    "Soil pollution: heavy metals, pesticides, plastics; effects: reduced fertility, food contamination.",
+    "Pesticides: insecticides, herbicides, fungicides, rodenticides; biomagnification, resistance, non-target death.",
+    "Control: reduce emissions, renewable energy, tree planting, waste treatment, organic farming."
   ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "summary": "Environmental pollution — air, water, and soil — is a major human-induced threat. Air pollution (SO2, NOx, CO, PM2.5, O3, CFCs) causes respiratory disease, acid rain, smog, and global warming; Kathmandu Valley's PM2.5 exceeds WHO limits ~10× in winter. Water pollution (domestic, industrial, agricultural) leads to eutrophication, O2 depletion, and disease. Soil pollution (heavy metals, pesticides, plastics) reduces fertility and contaminates food. Pesticides biomagnify up food chains, cause resistance, and harm non-target species. Control measures include reducing emissions, renewable energy, tree planting, waste treatment, organic farming, and international agreements.",
   "specialNotes": [
-    "Specialized insight for 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
+    "NEB expects clear sources, effects, and control measures for air, water, and soil pollution.",
+    "Pesticides: types, effects, biomagnification, and resistance are a very common long-answer.",
+    "Kathmandu Valley air pollution (PM2.5) is a key Nepali application question.",
+    "Acid rain (SO2 + NOx) and ozone depletion (CFCs) are different processes.",
+    "Biomagnification: give a DDT example (raptor eggshell thinning).",
+    "Control measures: list 5+ for each pollution type."
   ],
   "importantStatements": [
-    "Key statement for 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
+    "Air pollution causes respiratory disease, acid rain, and global warming.",
+    "Water pollution leads to eutrophication, O2 depletion, and disease.",
+    "Pesticides biomagnify up food chains and cause resistance.",
+    "Control measures include reducing emissions, renewable energy, and organic farming."
   ],
   "importantNotes": [
-    "Important note regarding 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
+    "Memorise the air, water, and soil pollutants with their sources.",
+    "Learn the effects of each pollution type.",
+    "Explain pesticides (types, effects, biomagnification, resistance).",
+    "List control measures for each pollution type.",
+    "Give a Nepali example (Kathmandu PM2.5, river pollution, pesticide use)."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Environmental Pollution."
+    "Air = A-S-N-P (SO2, NOx, CO, PM2.5, O3, CFCs).",
+    "Water = domestic + industrial + agricultural.",
+    "Soil = heavy metals + pesticides + plastics.",
+    "Pesticides = biomagnify + resistance + non-target death.",
+    "Control = reduce + renewable + trees + treatment + organic."
   ],
   "examNotes": [
-    "Environmental Pollution is frequently tested.",
-    "Practice writing detailed answers."
+    "List the sources and effects of air pollution.",
+    "Explain water pollution (sources, effects, control).",
+    "Describe the effects of soil pollution.",
+    "Explain pesticides (types, effects, biomagnification, resistance).",
+    "List control measures for air, water, and soil pollution.",
+    "Give a Nepali example for each pollution type."
   ],
   "mcs": [
     {
-      "question": "Question about 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects?",
+      "question": "The main cause of acid rain is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "CO2",
+        "SO2 and NOx",
+        "Methane",
+        "Oxygen"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Kathmandu Valley air pollution in winter is mainly due to:",
+      "options": [
+        "Ozone",
+        "PM2.5",
+        "Methane",
+        "CFCs"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Biomagnification means:",
+      "options": [
+        "Toxins decrease up the food chain",
+        "Toxins increase up the food chain",
+        "Toxins stay the same",
+        "Toxins disappear"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Eutrophication is caused by excess:",
+      "options": [
+        "Oxygen",
+        "Nitrogen and phosphorus",
+        "Carbon dioxide",
+        "Water"
+      ],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
+    "Air pollution (SO2, NOx, CO, PM2.5, O3, CFCs)",
+    "Water pollution (domestic, industrial, agricultural)",
+    "Soil pollution (heavy metals, pesticides, plastics)",
+    "Pesticides (types, effects, biomagnification, resistance)",
+    "Acid rain",
+    "Eutrophication",
+    "Kathmandu PM2.5",
+    "Control measures"
   ],
   "importantTasks": [
-    "Task for studying 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects."
+    "List air pollutants and effects",
+    "Explain water pollution",
+    "Describe soil pollution effects",
+    "Explain pesticides (biomagnification, resistance)",
+    "List control measures"
   ],
-  "duplicateType": 2,
-  "tabGroup": "03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
-  "mcqs": [
+  "exercises": [
     {
-      "question": "Question about 03 environmental pollution sources effects and control measures of air water and soil pollution pesticides and their effects?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+      "id": "1",
+      "question": "A lake has an algal bloom followed by mass fish death. Explain the cause and mechanism.",
+      "steps": [
+        "Excess nutrients (N, P) from agriculture/sewage",
+        "Algal bloom (eutrophication)",
+        "Algae die → decomposers use O2",
+        "O2 depletion (hypoxia) → fish die"
       ],
-      "answer": "A"
+      "answer": "Eutrophication: excess nutrients → algal bloom → O2 depletion → fish death"
     }
-  ],
-  "exercises": [],
-  "visualization": {
-    "type": "simulation",
-    "component": "PollutionSim",
-    "desc": "Air quality monitor and pollution impact visualizer"
-  },
-  "visualType": "pollution-types-effects"
+  ]
 }

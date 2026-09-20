@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -130,7 +130,7 @@ const container = mountRef.current!;
         // Object (arrow)
         const objectGroup = new THREE.Group();
         const objectHeight = 2;
-        const objectArrow = new LiveArrow(
+        const objectArrow = new LiveLeaderLine(
           new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -objectHeight/2, 0), objectHeight, 0xef4444, 0.4, 0.3
         );
         objectGroup.add(objectArrow);

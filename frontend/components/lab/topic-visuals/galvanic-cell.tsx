@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Galvanic Cell — Daniel Cell with Electron Flow
@@ -167,7 +167,7 @@ export function GalvanicCellVisual() {
         const anodeTarget = new THREE.Vector3(leftX, 0.8, 0);
         const aDir = anodeTarget.clone().sub(anodeLabel).normalize();
         const aLen = anodeLabel.distanceTo(anodeTarget);
-        push(new LiveArrow(aDir, anodeLabel, aLen * 0.8, 0xef4444, 0.28, 0.12));
+        push(new LiveLeaderLine(aDir, anodeLabel, aLen * 0.8, 0xef4444, 0.28, 0.12));
         push(mkSprite("ANODE: Zn → Zn²⁺ + 2e⁻ (oxidation)", "#ef4444", anodeLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.65));
 
         // Cathode label
@@ -175,7 +175,7 @@ export function GalvanicCellVisual() {
         const cathTarget = new THREE.Vector3(rightX, 0.8, 0);
         const cDir = cathTarget.clone().sub(cathLabel).normalize();
         const cLen = cathLabel.distanceTo(cathTarget);
-        push(new LiveArrow(cDir, cathLabel, cLen * 0.8, 0x22c55e, 0.28, 0.12));
+        push(new LiveLeaderLine(cDir, cathLabel, cLen * 0.8, 0x22c55e, 0.28, 0.12));
         push(mkSprite("CATHODE: Cu²⁺ + 2e⁻ → Cu (reduction)", "#22c55e", cathLabel.clone().sub(cDir.multiplyScalar(0.5)), 0.65));
 
         // Electron flow arrow
@@ -183,7 +183,7 @@ export function GalvanicCellVisual() {
         const eFlowTarget = new THREE.Vector3(leftX, 2.0, 0);
         const eDir = eFlowTarget.clone().sub(eFlowLabel).normalize();
         const eLen = eFlowLabel.distanceTo(eFlowTarget);
-        push(new LiveArrow(eDir, eFlowLabel, eLen * 0.7, 0xf97316, 0.25, 0.12));
+        push(new LiveLeaderLine(eDir, eFlowLabel, eLen * 0.7, 0xf97316, 0.25, 0.12));
         push(mkSprite("e⁻ flow: Zn → Cu (through wire)", "#f97316", eFlowLabel.clone().sub(eDir.multiplyScalar(0.5)), 0.65));
 
         // Ion flow in salt bridge
@@ -191,7 +191,7 @@ export function GalvanicCellVisual() {
         const ionFlowTarget = new THREE.Vector3(0, 1.3, 0);
         const iDir = ionFlowTarget.clone().sub(ionFlowLabel).normalize();
         const iLen = ionFlowLabel.distanceTo(ionFlowTarget);
-        push(new LiveArrow(iDir, ionFlowLabel, iLen * 0.7, 0xa855f7, 0.25, 0.12));
+        push(new LiveLeaderLine(iDir, ionFlowLabel, iLen * 0.7, 0xa855f7, 0.25, 0.12));
         push(mkSprite("Salt bridge: K⁺ → cathode, NO₃⁻ → anode", "#a855f7", ionFlowLabel.clone().sub(iDir.multiplyScalar(0.5)), 0.6));
 
         // Animated electrons along wire

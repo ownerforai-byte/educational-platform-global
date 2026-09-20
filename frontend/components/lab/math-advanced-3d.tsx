@@ -11,7 +11,7 @@ import { useWebGLCanvas, WebGLFallback } from "@/components/lab/webgl-fallback";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { evaluateMath, evaluateComplex } from "@/lib/math-expression";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 function ParametricCurvePlotter() {
@@ -217,7 +217,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
           while (group.children.length > 0) {
             const child = group.children[0];
             group.remove(child);
-            if (child instanceof THREE.ArrowHelper) {
+            if (child instanceof THREE.ArrowHelper || (child as any).isLeaderLine) {
               const helper = child as any;
               helper.line?.geometry?.dispose();
               if (helper.line?.material) (helper.line.material as THREE.Material).dispose();
@@ -238,7 +238,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
                 if (mag < 0.001) continue;
                 const len = Math.min(1.5, mag * 0.3);
                 const dir = v.clone().normalize();
-                const arrow = new LiveArrow(dir, new THREE.Vector3(x, y, z), len, 0x3b82f6, len * 0.3, len * 0.2);
+                const arrow = new LiveLeaderLine(dir, new THREE.Vector3(x, y, z), len, 0x3b82f6, len * 0.3, len * 0.2);
                 const arrowAny = arrow as any;
                 if (arrowAny.line?.material) { arrowAny.line.material.transparent = true; arrowAny.line.material.opacity = Math.min(1, mag * 0.05); }
                 group.add(arrow);

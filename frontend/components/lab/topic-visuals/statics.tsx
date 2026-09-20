@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Statics — NEB Mechanics (Maths 11)
@@ -80,7 +80,7 @@ export function StaticsVisual() {
       const drawArrow = (from: THREE.Vector3, to: THREE.Vector3, color: number, label: string) => {
         const dir = to.clone().sub(from).normalize();
         const len = to.distanceTo(from);
-        push(new LiveArrow(dir, from, len, color, 0.2, 0.12));
+        push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
         push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(dir.clone().multiplyScalar(len * 0.5)).add(new THREE.Vector3(0, 0.5, 0)), 0.75));
       };

@@ -1,0 +1,575 @@
+{
+  "title": "Biogeochemical Cycles and Ecological Succession",
+  "unitSlug": "ecology",
+  "topicSlug": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+  "topicTitle": "Biogeochemical cycles: carbon and nitrogen cycles; concept of succession",
+  "relevance": 100,
+  "animation3D": "chemistry",
+  "motionGraphics": "chemistry",
+  "duplicateType": 2,
+  "tabGroup": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+  "mcqs": [
+    {
+      "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
+      "options": [
+        "Nitrosomonas",
+        "Rhizobium",
+        "Pseudomonas",
+        "Nitrobacter"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which biogeochemical cycle has NO gaseous phase?",
+      "options": [
+        "Carbon",
+        "Nitrogen",
+        "Phosphorus",
+        "Oxygen"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Primary succession begins on:",
+      "options": [
+        "Existing soil",
+        "Bare rock",
+        "A forest",
+        "A pond"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Denitrification converts nitrate to:",
+      "options": [
+        "Ammonia",
+        "Nitrite",
+        "Nitrogen gas (N2)",
+        "Oxygen"
+      ],
+      "answer": "C"
+    }
+  ],
+  "visualType": "haber-process-flow",
+  "enrichedContent": {
+    "notes": [
+      "Biogeochemical cycles: the movement of elements (C, N, P, H, O) through biotic (living) and abiotic (non-living) compartments.",
+      "Carbon cycle: atmospheric CO2 → photosynthesis (plants) → respiration (animals + plants) → decomposition → soil → oceans; combustion (fossil fuels) releases CO2; carbonate rocks (limestone) store carbon long-term.",
+      "Nitrogen cycle: atmospheric N2 (78%) → nitrogen fixation (Rhizobium, Azotobacter, lightning) → ammonia (NH3) → nitrification (Nitrosomonas → nitrite; Nitrobacter → nitrate) → assimilation (plants) → ammonification (decomposers) → denitrification (Pseudomonas → N2).",
+      "Phosphorus cycle: rock (apatite) → weathering → soil → plants → animals → decomposition → sediment; no gaseous phase (unlike C, N).",
+      "Water cycle: evaporation → condensation → precipitation → runoff → oceans.",
+      "Succession: the process by which an ecosystem changes over time; primary (on bare rock, no soil) vs secondary (on existing soil).",
+      "Primary succession: bare rock → lichens/mosses → grasses → shrubs → forest (climax).",
+      "Secondary succession: after a disturbance (fire, flood, logging) → grasses → shrubs → forest (faster than primary).",
+      "Climax community: stable, mature community in equilibrium with the environment (e.g., mature oak-rhododendron forest in Nepal).",
+      "NEB focus: carbon and nitrogen cycles; concept of succession."
+    ],
+    "confusion": [
+      "Nitrogen fixation converts N2 to ammonia (NH3/NH4+); nitrification converts ammonia to nitrite then nitrate; denitrification converts nitrate back to N2.",
+      "Rhizobium (symbiotic, in legume root nodules) and Azotobacter (free-living, in soil) are both nitrogen-fixing bacteria.",
+      "The carbon cycle has a gaseous phase (CO2); the phosphorus cycle does NOT have a gaseous phase.",
+      "Primary succession starts on BARE ROCK (no soil); secondary succession starts on EXISTING SOIL (after disturbance).",
+      "Succession is a PREDICTABLE, directional process toward a stable climax community.",
+      "Decomposition releases nutrients (C, N, P) back into the soil; without it, cycles would stop."
+    ],
+    "practice": [
+      "Draw and explain the carbon cycle (all major steps).",
+      "Draw and explain the nitrogen cycle (all major steps).",
+      "Differentiate primary from secondary succession.",
+      "Define climax community and give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle."
+    ],
+    "universalFacts": [
+      "Atmospheric nitrogen (N2) makes up ~78% of the air but is unusable by most organisms until fixed.",
+      "Carbon dioxide is the main gaseous form of carbon in the carbon cycle.",
+      "The phosphorus cycle has no gaseous phase; it is the slowest of the major biogeochemical cycles.",
+      "Climax forests in Nepal: mature oak-rhododendron (temperate) or sal (Terai) forests."
+    ],
+    "examples": [
+      "Carbon cycle: forest (photosynthesis absorbs CO2) → animals (respiration releases CO2) → decomposers (release CO2) → atmosphere → ocean (dissolved CO2) → limestone (long-term storage).",
+      "Nitrogen cycle: Rhizobium in pea root nodules fixes N2 → plants assimilate nitrate → animals eat plants → decomposers ammonify → denitrifying bacteria release N2.",
+      "Primary succession: bare rock after a volcanic eruption → lichens → mosses → grasses → shrubs → forest.",
+      "Secondary succession: after a forest fire in Nepal → regrowth of grasses → shrubs → trees (faster than primary).",
+      "Climax community: a mature, stable oak-rhododendron forest on the Nepal hills."
+    ],
+    "practiceQuestions": [
+      "Describe the carbon cycle with a labelled diagram.",
+      "Describe the nitrogen cycle with a labelled diagram.",
+      "Differentiate primary from secondary succession.",
+      "What is a climax community? Give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle (fixation, nitrification, denitrification)."
+    ],
+    "formulas": [
+      "Carbon cycle: CO2 ↔ organic C (photosynthesis/respiration/decomposition); fossil fuel combustion → CO2",
+      "Nitrogen cycle: N2 → (fixation) NH3 → (nitrification) NO2- → NO3- → (assimilation) plants → (ammonification) NH3 → (denitrification) N2",
+      "Succession: primary (bare rock) / secondary (existing soil) → climax community"
+    ],
+    "keyPoints": [
+      "Biogeochemical cycles: C, N, P, H, O move through biotic + abiotic compartments.",
+      "Carbon cycle: gaseous (CO2); photosynthesis, respiration, decomposition, combustion.",
+      "Nitrogen cycle: N2 → NH3 → NO2- → NO3- → assimilation → ammonification → N2.",
+      "Bacteria: Rhizobium (fixation), Nitrosomonas (nitrification), Pseudomonas (denitrification).",
+      "Phosphorus cycle: no gaseous phase; slowest cycle.",
+      "Succession: primary (bare rock) vs secondary (existing soil); climax community is stable.",
+      "Climax: mature, stable community in equilibrium with the environment."
+    ],
+    "summary": "Biogeochemical cycles move essential elements through living and non-living compartments. The carbon cycle (gaseous CO2) and the nitrogen cycle (N2 → NH3 → NO2- → NO3- → N2) are the most important; bacteria (Rhizobium, Nitrosomonas, Pseudomonas) drive key steps. The phosphorus cycle has no gaseous phase and is the slowest. Succession is the directional change of an ecosystem toward a stable climax community: primary succession starts on bare rock, secondary on existing soil. NEB focuses on the carbon and nitrogen cycles and the concept of succession.",
+    "specialNotes": [
+      "NEB expects detailed, labelled diagrams of the carbon and nitrogen cycles.",
+      "The role of bacteria (Rhizobium, Nitrosomonas, Pseudomonas) in the nitrogen cycle is a very common exam point.",
+      "Primary vs secondary succession: key difference is the starting point (bare rock vs existing soil).",
+      "Climax community: give a Nepali example (mature oak-rhododendron forest).",
+      "Note that the phosphorus cycle has no gaseous phase."
+    ],
+    "importantStatements": [
+      "Biogeochemical cycles recycle essential elements through biotic and abiotic compartments.",
+      "Nitrogen fixation converts atmospheric N2 to usable ammonia.",
+      "Primary succession begins on bare rock; secondary succession on existing soil.",
+      "A climax community is a stable, mature ecosystem in equilibrium with its environment."
+    ],
+    "importantNotes": [
+      "Memorise the steps of the carbon and nitrogen cycles.",
+      "Learn the roles of Rhizobium, Nitrosomonas, and Pseudomonas.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Note that the phosphorus cycle has no gaseous phase."
+    ],
+    "examShortTricks": [
+      "Nitrogen cycle: N2 → NH3 → NO2 → NO3 → plants → NH3 → N2.",
+      "Rhizobium = fixation; Nitrosomonas = nitrification; Pseudomonas = denitrification.",
+      "Carbon cycle = gaseous (CO2); Phosphorus cycle = no gas, slowest.",
+      "Primary = bare rock; Secondary = existing soil; both → climax."
+    ],
+    "examNotes": [
+      "Draw and explain the carbon cycle.",
+      "Draw and explain the nitrogen cycle.",
+      "Explain the role of bacteria in the nitrogen cycle.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Why does the phosphorus cycle have no gaseous phase?"
+    ],
+    "mcs": [
+      {
+        "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
+        "options": [
+          "Nitrosomonas",
+          "Rhizobium",
+          "Pseudomonas",
+          "Nitrobacter"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which biogeochemical cycle has NO gaseous phase?",
+        "options": [
+          "Carbon",
+          "Nitrogen",
+          "Phosphorus",
+          "Oxygen"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Primary succession begins on:",
+        "options": [
+          "Existing soil",
+          "Bare rock",
+          "A forest",
+          "A pond"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Denitrification converts nitrate to:",
+        "options": [
+          "Ammonia",
+          "Nitrite",
+          "Nitrogen gas (N2)",
+          "Oxygen"
+        ],
+        "answer": "C"
+      }
+    ],
+    "importantConcepts": [
+      "Carbon cycle",
+      "Nitrogen cycle",
+      "Phosphorus cycle",
+      "Bacteria roles (fixation, nitrification, denitrification)",
+      "Succession (primary vs secondary)",
+      "Climax community",
+      "Biogeochemical cycles",
+      "Gaseous vs non-gaseous cycles"
+    ],
+    "importantTasks": [
+      "Draw carbon cycle",
+      "Draw nitrogen cycle",
+      "Explain bacteria roles",
+      "Differentiate primary vs secondary succession",
+      "Define climax community"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "In the nitrogen cycle, a plant absorbs nitrate (NO3-). What does the plant use it for, and how does the nitrogen eventually return to the atmosphere?",
+        "steps": [
+          "Plant uses NO3- to make amino acids/proteins (assimilation)",
+          "Animal eats plant; N moves to animal proteins",
+          "Decomposers break down dead tissue → ammonia (ammonification)",
+          "Nitrosomonas → nitrite; Nitrobacter → nitrate",
+          "Pseudomonas (denitrifying bacteria) convert NO3- to N2 gas"
+        ],
+        "answer": "The plant uses nitrate to build proteins; nitrogen returns to the atmosphere via denitrifying bacteria (Pseudomonas) converting nitrate to N2"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "BiogeochemicalCycleSim",
+      "desc": "Animated carbon and nitrogen cycle diagrams with clickable bacteria (Rhizobium, Nitrosomonas, Pseudomonas) and a succession timeline from bare rock to climax forest."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Biogeochemical cycles: the movement of elements (C, N, P, H, O) through biotic (living) and abiotic (non-living) compartments.",
+      "Carbon cycle: atmospheric CO2 → photosynthesis (plants) → respiration (animals + plants) → decomposition → soil → oceans; combustion (fossil fuels) releases CO2; carbonate rocks (limestone) store carbon long-term.",
+      "Nitrogen cycle: atmospheric N2 (78%) → nitrogen fixation (Rhizobium, Azotobacter, lightning) → ammonia (NH3) → nitrification (Nitrosomonas → nitrite; Nitrobacter → nitrate) → assimilation (plants) → ammonification (decomposers) → denitrification (Pseudomonas → N2).",
+      "Phosphorus cycle: rock (apatite) → weathering → soil → plants → animals → decomposition → sediment; no gaseous phase (unlike C, N).",
+      "Water cycle: evaporation → condensation → precipitation → runoff → oceans.",
+      "Succession: the process by which an ecosystem changes over time; primary (on bare rock, no soil) vs secondary (on existing soil).",
+      "Primary succession: bare rock → lichens/mosses → grasses → shrubs → forest (climax).",
+      "Secondary succession: after a disturbance (fire, flood, logging) → grasses → shrubs → forest (faster than primary).",
+      "Climax community: stable, mature community in equilibrium with the environment (e.g., mature oak-rhododendron forest in Nepal).",
+      "NEB focus: carbon and nitrogen cycles; concept of succession."
+    ],
+    "confusion": [
+      "Nitrogen fixation converts N2 to ammonia (NH3/NH4+); nitrification converts ammonia to nitrite then nitrate; denitrification converts nitrate back to N2.",
+      "Rhizobium (symbiotic, in legume root nodules) and Azotobacter (free-living, in soil) are both nitrogen-fixing bacteria.",
+      "The carbon cycle has a gaseous phase (CO2); the phosphorus cycle does NOT have a gaseous phase.",
+      "Primary succession starts on BARE ROCK (no soil); secondary succession starts on EXISTING SOIL (after disturbance).",
+      "Succession is a PREDICTABLE, directional process toward a stable climax community.",
+      "Decomposition releases nutrients (C, N, P) back into the soil; without it, cycles would stop."
+    ],
+    "practice": [
+      "Draw and explain the carbon cycle (all major steps).",
+      "Draw and explain the nitrogen cycle (all major steps).",
+      "Differentiate primary from secondary succession.",
+      "Define climax community and give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle."
+    ],
+    "universalFacts": [
+      "Atmospheric nitrogen (N2) makes up ~78% of the air but is unusable by most organisms until fixed.",
+      "Carbon dioxide is the main gaseous form of carbon in the carbon cycle.",
+      "The phosphorus cycle has no gaseous phase; it is the slowest of the major biogeochemical cycles.",
+      "Climax forests in Nepal: mature oak-rhododendron (temperate) or sal (Terai) forests."
+    ],
+    "examples": [
+      "Carbon cycle: forest (photosynthesis absorbs CO2) → animals (respiration releases CO2) → decomposers (release CO2) → atmosphere → ocean (dissolved CO2) → limestone (long-term storage).",
+      "Nitrogen cycle: Rhizobium in pea root nodules fixes N2 → plants assimilate nitrate → animals eat plants → decomposers ammonify → denitrifying bacteria release N2.",
+      "Primary succession: bare rock after a volcanic eruption → lichens → mosses → grasses → shrubs → forest.",
+      "Secondary succession: after a forest fire in Nepal → regrowth of grasses → shrubs → trees (faster than primary).",
+      "Climax community: a mature, stable oak-rhododendron forest on the Nepal hills."
+    ],
+    "practiceQuestions": [
+      "Describe the carbon cycle with a labelled diagram.",
+      "Describe the nitrogen cycle with a labelled diagram.",
+      "Differentiate primary from secondary succession.",
+      "What is a climax community? Give a Nepali example.",
+      "Explain the role of bacteria in the nitrogen cycle (fixation, nitrification, denitrification)."
+    ],
+    "formulas": [
+      "Carbon cycle: CO2 ↔ organic C (photosynthesis/respiration/decomposition); fossil fuel combustion → CO2",
+      "Nitrogen cycle: N2 → (fixation) NH3 → (nitrification) NO2- → NO3- → (assimilation) plants → (ammonification) NH3 → (denitrification) N2",
+      "Succession: primary (bare rock) / secondary (existing soil) → climax community"
+    ],
+    "keyPoints": [
+      "Biogeochemical cycles: C, N, P, H, O move through biotic + abiotic compartments.",
+      "Carbon cycle: gaseous (CO2); photosynthesis, respiration, decomposition, combustion.",
+      "Nitrogen cycle: N2 → NH3 → NO2- → NO3- → assimilation → ammonification → N2.",
+      "Bacteria: Rhizobium (fixation), Nitrosomonas (nitrification), Pseudomonas (denitrification).",
+      "Phosphorus cycle: no gaseous phase; slowest cycle.",
+      "Succession: primary (bare rock) vs secondary (existing soil); climax community is stable.",
+      "Climax: mature, stable community in equilibrium with the environment."
+    ],
+    "summary": "Biogeochemical cycles move essential elements through living and non-living compartments. The carbon cycle (gaseous CO2) and the nitrogen cycle (N2 → NH3 → NO2- → NO3- → N2) are the most important; bacteria (Rhizobium, Nitrosomonas, Pseudomonas) drive key steps. The phosphorus cycle has no gaseous phase and is the slowest. Succession is the directional change of an ecosystem toward a stable climax community: primary succession starts on bare rock, secondary on existing soil. NEB focuses on the carbon and nitrogen cycles and the concept of succession.",
+    "specialNotes": [
+      "NEB expects detailed, labelled diagrams of the carbon and nitrogen cycles.",
+      "The role of bacteria (Rhizobium, Nitrosomonas, Pseudomonas) in the nitrogen cycle is a very common exam point.",
+      "Primary vs secondary succession: key difference is the starting point (bare rock vs existing soil).",
+      "Climax community: give a Nepali example (mature oak-rhododendron forest).",
+      "Note that the phosphorus cycle has no gaseous phase."
+    ],
+    "importantStatements": [
+      "Biogeochemical cycles recycle essential elements through biotic and abiotic compartments.",
+      "Nitrogen fixation converts atmospheric N2 to usable ammonia.",
+      "Primary succession begins on bare rock; secondary succession on existing soil.",
+      "A climax community is a stable, mature ecosystem in equilibrium with its environment."
+    ],
+    "importantNotes": [
+      "Memorise the steps of the carbon and nitrogen cycles.",
+      "Learn the roles of Rhizobium, Nitrosomonas, and Pseudomonas.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Note that the phosphorus cycle has no gaseous phase."
+    ],
+    "examShortTricks": [
+      "Nitrogen cycle: N2 → NH3 → NO2 → NO3 → plants → NH3 → N2.",
+      "Rhizobium = fixation; Nitrosomonas = nitrification; Pseudomonas = denitrification.",
+      "Carbon cycle = gaseous (CO2); Phosphorus cycle = no gas, slowest.",
+      "Primary = bare rock; Secondary = existing soil; both → climax."
+    ],
+    "examNotes": [
+      "Draw and explain the carbon cycle.",
+      "Draw and explain the nitrogen cycle.",
+      "Explain the role of bacteria in the nitrogen cycle.",
+      "Differentiate primary from secondary succession.",
+      "Define climax community with a Nepali example.",
+      "Why does the phosphorus cycle have no gaseous phase?"
+    ],
+    "mcs": [
+      {
+        "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
+        "options": [
+          "Nitrosomonas",
+          "Rhizobium",
+          "Pseudomonas",
+          "Nitrobacter"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which biogeochemical cycle has NO gaseous phase?",
+        "options": [
+          "Carbon",
+          "Nitrogen",
+          "Phosphorus",
+          "Oxygen"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Primary succession begins on:",
+        "options": [
+          "Existing soil",
+          "Bare rock",
+          "A forest",
+          "A pond"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Denitrification converts nitrate to:",
+        "options": [
+          "Ammonia",
+          "Nitrite",
+          "Nitrogen gas (N2)",
+          "Oxygen"
+        ],
+        "answer": "C"
+      }
+    ],
+    "importantConcepts": [
+      "Carbon cycle",
+      "Nitrogen cycle",
+      "Phosphorus cycle",
+      "Bacteria roles (fixation, nitrification, denitrification)",
+      "Succession (primary vs secondary)",
+      "Climax community",
+      "Biogeochemical cycles",
+      "Gaseous vs non-gaseous cycles"
+    ],
+    "importantTasks": [
+      "Draw carbon cycle",
+      "Draw nitrogen cycle",
+      "Explain bacteria roles",
+      "Differentiate primary vs secondary succession",
+      "Define climax community"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "In the nitrogen cycle, a plant absorbs nitrate (NO3-). What does the plant use it for, and how does the nitrogen eventually return to the atmosphere?",
+        "steps": [
+          "Plant uses NO3- to make amino acids/proteins (assimilation)",
+          "Animal eats plant; N moves to animal proteins",
+          "Decomposers break down dead tissue → ammonia (ammonification)",
+          "Nitrosomonas → nitrite; Nitrobacter → nitrate",
+          "Pseudomonas (denitrifying bacteria) convert NO3- to N2 gas"
+        ],
+        "answer": "The plant uses nitrate to build proteins; nitrogen returns to the atmosphere via denitrifying bacteria (Pseudomonas) converting nitrate to N2"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "BiogeochemicalCycleSim",
+      "desc": "Animated carbon and nitrogen cycle diagrams with clickable bacteria (Rhizobium, Nitrosomonas, Pseudomonas) and a succession timeline from bare rock to climax forest."
+    }
+  },
+  "notes": [
+    "Biogeochemical cycles: the movement of elements (C, N, P, H, O) through biotic (living) and abiotic (non-living) compartments.",
+    "Carbon cycle: atmospheric CO2 → photosynthesis (plants) → respiration (animals + plants) → decomposition → soil → oceans; combustion (fossil fuels) releases CO2; carbonate rocks (limestone) store carbon long-term.",
+    "Nitrogen cycle: atmospheric N2 (78%) → nitrogen fixation (Rhizobium, Azotobacter, lightning) → ammonia (NH3) → nitrification (Nitrosomonas → nitrite; Nitrobacter → nitrate) → assimilation (plants) → ammonification (decomposers) → denitrification (Pseudomonas → N2).",
+    "Phosphorus cycle: rock (apatite) → weathering → soil → plants → animals → decomposition → sediment; no gaseous phase (unlike C, N).",
+    "Water cycle: evaporation → condensation → precipitation → runoff → oceans.",
+    "Succession: the process by which an ecosystem changes over time; primary (on bare rock, no soil) vs secondary (on existing soil).",
+    "Primary succession: bare rock → lichens/mosses → grasses → shrubs → forest (climax).",
+    "Secondary succession: after a disturbance (fire, flood, logging) → grasses → shrubs → forest (faster than primary).",
+    "Climax community: stable, mature community in equilibrium with the environment (e.g., mature oak-rhododendron forest in Nepal).",
+    "NEB focus: carbon and nitrogen cycles; concept of succession."
+  ],
+  "confusion": [
+    "Nitrogen fixation converts N2 to ammonia (NH3/NH4+); nitrification converts ammonia to nitrite then nitrate; denitrification converts nitrate back to N2.",
+    "Rhizobium (symbiotic, in legume root nodules) and Azotobacter (free-living, in soil) are both nitrogen-fixing bacteria.",
+    "The carbon cycle has a gaseous phase (CO2); the phosphorus cycle does NOT have a gaseous phase.",
+    "Primary succession starts on BARE ROCK (no soil); secondary succession starts on EXISTING SOIL (after disturbance).",
+    "Succession is a PREDICTABLE, directional process toward a stable climax community.",
+    "Decomposition releases nutrients (C, N, P) back into the soil; without it, cycles would stop."
+  ],
+  "practice": [
+    "Draw and explain the carbon cycle (all major steps).",
+    "Draw and explain the nitrogen cycle (all major steps).",
+    "Differentiate primary from secondary succession.",
+    "Define climax community and give a Nepali example.",
+    "Explain the role of bacteria in the nitrogen cycle."
+  ],
+  "universalFacts": [
+    "Atmospheric nitrogen (N2) makes up ~78% of the air but is unusable by most organisms until fixed.",
+    "Carbon dioxide is the main gaseous form of carbon in the carbon cycle.",
+    "The phosphorus cycle has no gaseous phase; it is the slowest of the major biogeochemical cycles.",
+    "Climax forests in Nepal: mature oak-rhododendron (temperate) or sal (Terai) forests."
+  ],
+  "examples": [
+    "Carbon cycle: forest (photosynthesis absorbs CO2) → animals (respiration releases CO2) → decomposers (release CO2) → atmosphere → ocean (dissolved CO2) → limestone (long-term storage).",
+    "Nitrogen cycle: Rhizobium in pea root nodules fixes N2 → plants assimilate nitrate → animals eat plants → decomposers ammonify → denitrifying bacteria release N2.",
+    "Primary succession: bare rock after a volcanic eruption → lichens → mosses → grasses → shrubs → forest.",
+    "Secondary succession: after a forest fire in Nepal → regrowth of grasses → shrubs → trees (faster than primary).",
+    "Climax community: a mature, stable oak-rhododendron forest on the Nepal hills."
+  ],
+  "practiceQuestions": [
+    "Describe the carbon cycle with a labelled diagram.",
+    "Describe the nitrogen cycle with a labelled diagram.",
+    "Differentiate primary from secondary succession.",
+    "What is a climax community? Give a Nepali example.",
+    "Explain the role of bacteria in the nitrogen cycle (fixation, nitrification, denitrification)."
+  ],
+  "formulas": [
+    "Carbon cycle: CO2 ↔ organic C (photosynthesis/respiration/decomposition); fossil fuel combustion → CO2",
+    "Nitrogen cycle: N2 → (fixation) NH3 → (nitrification) NO2- → NO3- → (assimilation) plants → (ammonification) NH3 → (denitrification) N2",
+    "Succession: primary (bare rock) / secondary (existing soil) → climax community"
+  ],
+  "keyPoints": [
+    "Biogeochemical cycles: C, N, P, H, O move through biotic + abiotic compartments.",
+    "Carbon cycle: gaseous (CO2); photosynthesis, respiration, decomposition, combustion.",
+    "Nitrogen cycle: N2 → NH3 → NO2- → NO3- → assimilation → ammonification → N2.",
+    "Bacteria: Rhizobium (fixation), Nitrosomonas (nitrification), Pseudomonas (denitrification).",
+    "Phosphorus cycle: no gaseous phase; slowest cycle.",
+    "Succession: primary (bare rock) vs secondary (existing soil); climax community is stable.",
+    "Climax: mature, stable community in equilibrium with the environment."
+  ],
+  "summary": "Biogeochemical cycles move essential elements through living and non-living compartments. The carbon cycle (gaseous CO2) and the nitrogen cycle (N2 → NH3 → NO2- → NO3- → N2) are the most important; bacteria (Rhizobium, Nitrosomonas, Pseudomonas) drive key steps. The phosphorus cycle has no gaseous phase and is the slowest. Succession is the directional change of an ecosystem toward a stable climax community: primary succession starts on bare rock, secondary on existing soil. NEB focuses on the carbon and nitrogen cycles and the concept of succession.",
+  "specialNotes": [
+    "NEB expects detailed, labelled diagrams of the carbon and nitrogen cycles.",
+    "The role of bacteria (Rhizobium, Nitrosomonas, Pseudomonas) in the nitrogen cycle is a very common exam point.",
+    "Primary vs secondary succession: key difference is the starting point (bare rock vs existing soil).",
+    "Climax community: give a Nepali example (mature oak-rhododendron forest).",
+    "Note that the phosphorus cycle has no gaseous phase."
+  ],
+  "importantStatements": [
+    "Biogeochemical cycles recycle essential elements through biotic and abiotic compartments.",
+    "Nitrogen fixation converts atmospheric N2 to usable ammonia.",
+    "Primary succession begins on bare rock; secondary succession on existing soil.",
+    "A climax community is a stable, mature ecosystem in equilibrium with its environment."
+  ],
+  "importantNotes": [
+    "Memorise the steps of the carbon and nitrogen cycles.",
+    "Learn the roles of Rhizobium, Nitrosomonas, and Pseudomonas.",
+    "Differentiate primary from secondary succession.",
+    "Define climax community with a Nepali example.",
+    "Note that the phosphorus cycle has no gaseous phase."
+  ],
+  "examShortTricks": [
+    "Nitrogen cycle: N2 → NH3 → NO2 → NO3 → plants → NH3 → N2.",
+    "Rhizobium = fixation; Nitrosomonas = nitrification; Pseudomonas = denitrification.",
+    "Carbon cycle = gaseous (CO2); Phosphorus cycle = no gas, slowest.",
+    "Primary = bare rock; Secondary = existing soil; both → climax."
+  ],
+  "examNotes": [
+    "Draw and explain the carbon cycle.",
+    "Draw and explain the nitrogen cycle.",
+    "Explain the role of bacteria in the nitrogen cycle.",
+    "Differentiate primary from secondary succession.",
+    "Define climax community with a Nepali example.",
+    "Why does the phosphorus cycle have no gaseous phase?"
+  ],
+  "mcs": [
+    {
+      "question": "The bacteria that fix atmospheric nitrogen in legume root nodules are:",
+      "options": [
+        "Nitrosomonas",
+        "Rhizobium",
+        "Pseudomonas",
+        "Nitrobacter"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which biogeochemical cycle has NO gaseous phase?",
+      "options": [
+        "Carbon",
+        "Nitrogen",
+        "Phosphorus",
+        "Oxygen"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Primary succession begins on:",
+      "options": [
+        "Existing soil",
+        "Bare rock",
+        "A forest",
+        "A pond"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Denitrification converts nitrate to:",
+      "options": [
+        "Ammonia",
+        "Nitrite",
+        "Nitrogen gas (N2)",
+        "Oxygen"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Carbon cycle",
+    "Nitrogen cycle",
+    "Phosphorus cycle",
+    "Bacteria roles (fixation, nitrification, denitrification)",
+    "Succession (primary vs secondary)",
+    "Climax community",
+    "Biogeochemical cycles",
+    "Gaseous vs non-gaseous cycles"
+  ],
+  "importantTasks": [
+    "Draw carbon cycle",
+    "Draw nitrogen cycle",
+    "Explain bacteria roles",
+    "Differentiate primary vs secondary succession",
+    "Define climax community"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "In the nitrogen cycle, a plant absorbs nitrate (NO3-). What does the plant use it for, and how does the nitrogen eventually return to the atmosphere?",
+      "steps": [
+        "Plant uses NO3- to make amino acids/proteins (assimilation)",
+        "Animal eats plant; N moves to animal proteins",
+        "Decomposers break down dead tissue → ammonia (ammonification)",
+        "Nitrosomonas → nitrite; Nitrobacter → nitrate",
+        "Pseudomonas (denitrifying bacteria) convert NO3- to N2 gas"
+      ],
+      "answer": "The plant uses nitrate to build proteins; nitrogen returns to the atmosphere via denitrifying bacteria (Pseudomonas) converting nitrate to N2"
+    }
+  ]
+}

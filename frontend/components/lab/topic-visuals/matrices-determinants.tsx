@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Matrices & Determinants — NEB Algebra (Maths 11)
@@ -106,7 +106,7 @@ export function MatricesDeterminantsVisual() {
         basisVectors.forEach(({ from, to, color, label }) => {
           const dir = to.clone().sub(from).normalize();
           const len = to.clone().sub(from).length();
-          push(new LiveArrow(dir, from, len, color, 0.2, 0.12));
+          push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
           const mid = from.clone().add(to).multiplyScalar(0.5);
           push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0.5, 0.5, 0)), 0.7));
         });

@@ -74,7 +74,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "biology",
         name: "Biology",
         description: "Official NEB Biology XI (Bio. 201) — Botany and Zoology in curriculum order.",
-        notesUrl: "/r-notes?subject=biology",
+        notesUrl: "/class-11-notes/biology",
         units: [
           {
             id: "biomolecules-and-cell-biology",
@@ -210,7 +210,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "chemistry",
         name: "Chemistry",
         description: "Official NEB Chemistry XI (Che. 201) — General/Physical, Inorganic, Organic and Applied chemistry in curriculum order.",
-        notesUrl: "/r-notes?subject=chemistry",
+        notesUrl: "/class-11-notes/chemistry",
         units: [
           {
             id: "foundation-and-fundamentals",
@@ -477,7 +477,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "english",
         name: "English",
         description: "English XI — language, literature, composition and critical thinking. Structured per platform conventions (official syllabus pending).",
-        notesUrl: "/r-notes?subject=english",
+        notesUrl: "/class-11-notes/english",
         units: [
           {
             id: "language-and-grammar",
@@ -520,7 +520,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "mathematics",
         name: "Mathematics",
         description: "Official NEB Mathematics XI (Mat. 007) in curriculum order.",
-        notesUrl: "/r-notes?subject=mathematics",
+        notesUrl: "/class-11-notes/mathematics",
         units: [
           {
             id: "algebra",
@@ -605,7 +605,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "nepali",
         name: "Nepali",
         description: "Nepali XI — भाषा, व्याकरण, साहित्य, लेखन र संस्कृति। Structured per platform conventions (official syllabus pending).",
-        notesUrl: "/r-notes?subject=nepali",
+        notesUrl: "/class-11-notes/nepali",
         units: [
           {
             id: "bhasha-ra-vyakarana",
@@ -633,7 +633,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "physics",
         name: "Physics",
         description: "Official NEB Physics XI (Phy. 101) — Mechanics, Heat, Waves/Optics, Electricity and Modern Physics in curriculum order.",
-        notesUrl: "/r-notes?subject=physics",
+        notesUrl: "/class-11-notes/physics",
         units: [
           {
             id: "physical-quantities",
@@ -946,7 +946,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "biology",
         name: "Biology",
         description: "Official NEB Biology XII (Bio. 202) — Genetics, Evolution, Biotechnology, Human Physiology.",
-        notesUrl: "/r-notes?subject=biology",
+        notesUrl: "/class-12-notes/biology",
         units: [
           {
             id: "heredity-and-evolution",
@@ -1064,7 +1064,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "chemistry",
         name: "Chemistry",
         description: "Official NEB Chemistry XII (Che. 202) — Physical, Inorganic, Organic chemistry.",
-        notesUrl: "/r-notes?subject=chemistry",
+        notesUrl: "/class-12-notes/chemistry",
         units: [
           {
             id: "solutions",
@@ -1197,7 +1197,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "english",
         name: "English",
         description: "Official NEB English XII — Literature, language skills, and critical analysis.",
-        notesUrl: "/r-notes?subject=english",
+        notesUrl: "/class-12-notes/english",
         units: [
           {
             id: "literary-analysis",
@@ -1257,7 +1257,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "mathematics",
         name: "Mathematics",
         description: "Official NEB Mathematics XII (Mat. 201) — Calculus, Vectors, Probability, Linear Programming.",
-        notesUrl: "/r-notes?subject=mathematics",
+        notesUrl: "/class-12-notes/mathematics",
         units: [
           {
             id: "limits-and-continuity",
@@ -1364,7 +1364,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "nepali",
         name: "Nepali",
         description: "Official NEB Nepali XII — भाषा, साहित्य, व्यङ्ग्य, र लेखन कौशल।",
-        notesUrl: "/r-notes?subject=nepali",
+        notesUrl: "/class-12-notes/nepali",
         units: [
           {
             id: "bhasha-tatha-vyakaran",
@@ -1418,7 +1418,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         slug: "physics",
         name: "Physics",
         description: "Official NEB Physics XII (Phy. 202) — Electrostatics, Current Electricity, Magnetism, EMI, AC, Optics, Modern Physics.",
-        notesUrl: "/r-notes?subject=physics",
+        notesUrl: "/class-12-notes/physics",
         units: [
           {
             id: "electrostatics",

@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Atomic Structure — Bohr Model with Electron Orbits & Quantum Numbers
@@ -130,7 +130,7 @@ export function AtomicStructureVisual() {
           const targetPos = new THREE.Vector3(Math.cos(labelAngle) * shell.r, 0, Math.sin(labelAngle) * shell.r);
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
-          push(new LiveArrow(dir, labelPos, arrowLen * 0.85, shell.color, 0.25, 0.12));
+          push(new LiveLeaderLine(dir, labelPos, arrowLen * 0.85, shell.color, 0.25, 0.12));
           push(mkSprite(shell.label, `#${shell.color.toString(16).padStart(6, "0")}`, labelPos.clone().sub(dir.multiplyScalar(0.4)), 0.65));
 
           // Electrons on shell

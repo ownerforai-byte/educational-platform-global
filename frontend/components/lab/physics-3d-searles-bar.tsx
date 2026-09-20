@@ -18,12 +18,14 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   disposeThreeScene,
   type ThreeScene,
   clearGroup,
   createThreeScene,
   bindResize,
+  makeVisibilityGate,
   standardMaterial,
 } from "@/components/lab/three-scene";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
@@ -41,10 +43,11 @@ const C_WATER = 4186; // J/(kg·K)
 
 export const SearlesBarExperiment: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
+  const leaderLayerRef = useRef<any>(null);
+  const revealBarRef = useRef<(() => void) | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(0);
   const [barLengthCm, setBarLengthCm] = useState(10); // between T1 & T2
@@ -67,8 +70,8 @@ export const SearlesBarExperiment: React.FC = () => {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
-    if (!containerRef.current || !isWebGLAvailable()) return;
-    const ts = createThreeScene(containerRef.current, {
+    if (!mountRef.current || !isWebGLAvailable()) return;
+    const ts = createThreeScene(mountRef.current, {
           cameraPosition: new THREE.Vector3(2, 4.4, 14.5),
           autoRotate: false,
           background: 0x0b1220,
@@ -76,15 +79,17 @@ export const SearlesBarExperiment: React.FC = () => {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(mountRef.current);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
       ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
-    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+    return () => { cancelAnimationFrame(rafId); unbind(); try { leaderLayerRef.current?.dispose(); leaderLayerRef.current = null; } catch { /* noop */ } try { revealBarRef.current?.(); revealBarRef.current = null; } catch { /* noop */ } disposeThreeScene(ts); tsRef.current = null; };
   }, []);
 
   // Rebuild 3D content on state change
@@ -92,8 +97,6 @@ export const SearlesBarExperiment: React.FC = () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
-
-let leaderLayer: any = null;
 let labelRenderer: any = null;
 const container = mountRef.current!;
 
@@ -251,7 +254,9 @@ const container = mountRef.current!;
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(container); } catch { leaderLayer = null; }
+          try { leaderLayerRef.current?.dispose(); } catch { /* noop */ }
+          try { leaderLayerRef.current = createLeaderLayer(container); } catch { leaderLayerRef.current = null; }
+          try { revealBarRef.current = createRevealBar(container, leaderLayerRef.current); } catch { /* non-fatal */ }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -265,10 +270,10 @@ const container = mountRef.current!;
             }
           };
 
-          addLbl("#fb923c", "Steam Chest — hot end", [chest.position.x, rodY + 2.6, 0], "condensing steam ≈ 100 °C", [chest.position.x, rodY + 1.0, 0]);
-          addLbl("#fb923c", "Boiler Pipe", [chest.position.x + 2.5, rodY + 2.9, 0], "carries steam from boiler", [chest.position.x + 1.2, rodY + 2.0, 0]);
-          addLbl("#ef4444", "Thermojunction T₁", [p1, rodY + 2.6, 0], `${T1} °C`, [p1 + 0.45, rodY + 0.35, 0]);
-          addLbl("#f97316", "Thermojunction T₂", [p2, rodY + 2.6, 0], `${T2} °C`, [p2 + 0.45, rodY + 0.35, 0]);
+          addLbl("#fb923c", "Steam Chest — hot end", [chest.position.x, rodY + 2.7, 0], "condensing steam ≈ 100 °C", [chest.position.x, rodY + 1.0, 0]);
+          addLbl("#fb923c", "Boiler Pipe", [chest.position.x + 2.5, rodY + 3.6, 0], "carries steam from boiler", [chest.position.x + 1.2, rodY + 2.0, 0]);
+          addLbl("#ef4444", "Thermojunction T₁", [p1 - 0.4, rodY + 2.7, 0], `${T1} °C`, [p1 + 0.45, rodY + 0.35, 0]);
+          addLbl("#f97316", "Thermojunction T₂", [p2 + 0.4, rodY + 1.9, 0], `${T2} °C`, [p2 + 0.45, rodY + 0.35, 0]);
           addLbl("#c084fc", `Distance L = ${barLengthCm} cm`, [(p1 + p2) / 2, dimY + 0.32, 0], "measured along the bar axis", [p1 + 0.5, rodY + 0.05, 0]);
           addLbl("#60a5fa", "Cooling-Water Coil", [coilX, rodY + 2.0, 0], "removes heat at cold end", [coilX, rodY + 0.2, 0]);
           addLbl("#3b82f6", "Water IN — T₃", [coilX - 2.6, rodY - 0.6, 2.3], "cold water enters", [coilX - 0.5, rodY - 0.7, 1.1]);
@@ -295,7 +300,7 @@ const container = mountRef.current!;
     s.jarWater.scale.y = Math.min(1.35, 1 + ((time * 0.55) % 30) * 0.004);
 
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    leaderLayerRef.current?.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, barLengthCm, rodRadiusMm, flowGramPerMin, deltaThetaW, T1, T2]);

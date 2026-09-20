@@ -4,192 +4,554 @@
   "topicSlug": "virus",
   "topicTitle": "Virus",
   "relevance": 100,
-  "notes": [
-    "Monera: prokaryotes (bacteria, cyanobacteria).",
-    "Bacteria: cell wall (peptidoglycan), 70S ribosomes, binary fission.",
-    "Virus: acellular, protein coat + nucleic acid, obligate parasite.",
-    "Gram stain: positive (purple) vs negative (pink).",
-    "Biotechnology: insulin, vaccines, GMOs."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 virus."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
+  "duplicateType": 2,
+  "tabGroup": "02-virus",
+  "mcqs": [
+    {
+      "question": "A virus contains:",
+      "options": [
+        "Both DNA and RNA",
+        "Either DNA or RNA",
+        "Protein only",
+        "Lipid only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The T4 bacteriophage infects:",
+      "options": [
+        "Animals",
+        "Plants",
+        "Bacteria",
+        "Fungi"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The protein coat of a virus is called:",
+      "options": [
+        "Envelope",
+        "Capsid",
+        "Nucleocapsid",
+        "Prion"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In the lytic cycle, the host cell is:",
+      "options": [
+        "Lysed",
+        "Intact",
+        "Converted to prophage",
+        "Killed slowly"
+      ],
+      "answer": "A"
+    }
+  ],
+  "visualType": "virion-structure",
+  "enrichedContent": {
+    "notes": [
+      "Viruses: acellular, obligate intracellular parasites; not classified in any kingdom; consist of a nucleic acid core (DNA or RNA) + protein coat (capsid); some have a lipid envelope.",
+      "Structure: capsomeres (protein subunits of capsid); bacteriophages have a head (icosahedral) + tail; animal viruses may have an envelope with glycoprotein spikes.",
+      "Types by nucleic acid: DNA viruses (e.g., T4 phage, smallpox) and RNA viruses (e.g., influenza, HIV, SARS-CoV-2).",
+      "Bacteriophage (T4): lytic life cycle — adsorption → injection → replication → assembly → release (lysogeny is the lysogenic cycle in lambda phage).",
+      "Replication: viruses hijack the host cell machinery; they cannot replicate independently.",
+      "Importance: many human and animal diseases (common cold, flu, HIV/AIDS, hepatitis, rabies, smallpox — eradicated in 1980).",
+      "Applications: viral vectors in gene therapy, bacteriophages in food safety testing, viruses in molecular biology tools.",
+      "NEB focus: virus structure, lytic cycle of T4 phage, and importance of viruses."
+    ],
+    "confusion": [
+      "Viruses are NOT living organisms: they lack metabolism, cannot reproduce outside a host, and are not made of cells.",
+      "A virus has EITHER DNA or RNA, never both (with rare exceptions like some retroviruses that convert RNA to DNA).",
+      "Bacteriophages infect BACTERIA; animal viruses infect animals; plant viruses infect plants.",
+      "The capsid is protein; the core is nucleic acid; the envelope (if present) is lipid + glycoproteins from the host membrane.",
+      "Lytic cycle destroys the host cell; lysogenic cycle integrates viral DNA into the host genome (prophage) without immediate lysis.",
+      "Viruses are NOT visible under a light microscope; they require an electron microscope (~20–300 nm size)."
+    ],
+    "practice": [
+      "Draw and label a T4 bacteriophage (head, collar, tail, baseplate, tail fibers).",
+      "Describe the lytic life cycle of a bacteriophage in 5 steps.",
+      "Differentiate a DNA virus from an RNA virus (3 points).",
+      "Explain why viruses are not considered living organisms.",
+      "List three human diseases caused by viruses and their viral agents."
+    ],
+    "universalFacts": [
+      "The largest virus (Pithovirus) is ~1.2 µm in diameter — visible only under a light microscope.",
+      "Smallpox was the first human disease eradicated by vaccination (1980).",
+      "Retroviruses (e.g., HIV) carry RNA but use reverse transcriptase to make DNA in the host.",
+      "Viruses are ~1/100th the size of a typical bacterium."
+    ],
+    "examples": [
+      "T4 bacteriophage — DNA virus, infects E. coli; lytic cycle model.",
+      "Influenza virus — RNA virus, causes seasonal flu.",
+      "HIV (Human Immunodeficiency Virus) — retrovirus, causes AIDS.",
+      "SARS-CoV-2 — RNA virus, causes COVID-19."
+    ],
+    "practiceQuestions": [
+      "Why are viruses called \"acellular\"?",
+      "Describe the structure of a T4 bacteriophage with a labelled diagram.",
+      "Explain the lytic life cycle of a bacteriophage (5 steps).",
+      "Differentiate a DNA virus from an RNA virus.",
+      "What is the significance of the viral envelope?"
+    ],
+    "formulas": [
+      "Virus = Nucleic acid (DNA or RNA) + Capsid (protein) [+ Envelope (lipid + glycoprotein)]",
+      "Lytic cycle: Adsorption → Penetration (injection) → Biosynthesis → Assembly → Release",
+      "Lysogenic cycle: Prophage integration → Replication with host → Induction → Lytic cycle"
+    ],
+    "keyPoints": [
+      "Viruses are acellular, obligate intracellular parasites.",
+      "Structure: nucleic acid + capsid (+ envelope in some).",
+      "DNA or RNA (not both); capsomeres form the capsid.",
+      "Bacteriophage: icosahedral head + tail + baseplate + tail fibers.",
+      "Lytic cycle: 5 steps, destroys host; Lysogenic: integrates, delays lysis.",
+      "Not living: no metabolism, no independent reproduction.",
+      "Importance: cause many diseases; used in gene therapy and research."
+    ],
+    "summary": "Viruses are acellular, obligate intracellular parasites that contain either DNA or RNA enclosed in a protein capsid (and sometimes a lipid envelope). They cannot replicate outside a host cell and hijack host machinery. The T4 bacteriophage lytic cycle (adsorption, injection, replication, assembly, release) is the NEB model. Viruses cause many important diseases but are also valuable tools in gene therapy and molecular biology. NEB examinations focus on virus structure, the lytic cycle, and the distinction between viruses and living organisms.",
+    "specialNotes": [
+      "NEB expects a detailed T4 phage diagram and the 5-step lytic cycle.",
+      "The \"are viruses alive?\" debate is a favourite exam discussion; present both arguments.",
+      "DNA vs RNA viruses: know the key difference and one example of each.",
+      "Mention the significance of the viral envelope (immune evasion, cell entry)."
+    ],
+    "importantStatements": [
+      "Viruses are the smallest infectious agents known.",
+      "They contain either DNA or RNA, but never both.",
+      "The lytic cycle destroys the host cell; the lysogenic cycle integrates into the host genome.",
+      "Viruses are not classified in any biological kingdom."
+    ],
+    "importantNotes": [
+      "Memorise the T4 phage structure (head, tail, baseplate, fibers).",
+      "Learn the 5 steps of the lytic cycle.",
+      "Differentiate DNA and RNA viruses with examples.",
+      "Explain why viruses are not considered living.",
+      "List 3 human viral diseases and their agents."
+    ],
+    "examShortTricks": [
+      "Virus = V-O-I (Very small, Obligate, Infectious).",
+      "T4 phage = icosahedral head + tail = \"phage = eater of bacteria\".",
+      "Lytic = L-Y-TIC (Lysis, Yields nothing, Terminates host).",
+      "RNA viruses: flu, HIV, SARS; DNA viruses: T4, smallpox, herpes."
+    ],
+    "examNotes": [
+      "Draw and label a T4 bacteriophage — very common.",
+      "Describe the lytic life cycle in 5 steps.",
+      "Differentiate DNA and RNA viruses.",
+      "Explain why viruses are not living organisms.",
+      "List the importance of viruses (diseases, gene therapy, research).",
+      "Differentiate lytic from lysogenic cycle."
+    ],
+    "mcs": [
+      {
+        "question": "A virus contains:",
+        "options": [
+          "Both DNA and RNA",
+          "Either DNA or RNA",
+          "Protein only",
+          "Lipid only"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The T4 bacteriophage infects:",
+        "options": [
+          "Animals",
+          "Plants",
+          "Bacteria",
+          "Fungi"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The protein coat of a virus is called:",
+        "options": [
+          "Envelope",
+          "Capsid",
+          "Nucleocapsid",
+          "Prion"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "In the lytic cycle, the host cell is:",
+        "options": [
+          "Lysed",
+          "Intact",
+          "Converted to prophage",
+          "Killed slowly"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Acellular nature",
+      "Capsid and envelope",
+      "DNA vs RNA viruses",
+      "T4 phage structure",
+      "Lytic cycle",
+      "Lysogenic cycle",
+      "Viral diseases",
+      "Gene therapy applications"
+    ],
+    "importantTasks": [
+      "Label T4 phage",
+      "Draw the lytic cycle (5 steps)",
+      "Differentiate DNA vs RNA viruses",
+      "Explain why viruses are not living",
+      "List 3 viral diseases"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A virus has an icosahedral head, a tail with baseplate, and tail fibers. What type of organism does it infect and what is its nucleic acid?",
+        "steps": [
+          "T4-type phage structure",
+          "Bacteriophage → infects bacteria",
+          "T4 phage → DNA virus"
+        ],
+        "answer": "Infects bacteria; DNA virus (T4 phage)"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "PhageLyticCycle",
+      "desc": "Animated 5-step T4 phage lytic cycle with rotatable 3D phage structure and step-by-step narration."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Viruses: acellular, obligate intracellular parasites; not classified in any kingdom; consist of a nucleic acid core (DNA or RNA) + protein coat (capsid); some have a lipid envelope.",
+      "Structure: capsomeres (protein subunits of capsid); bacteriophages have a head (icosahedral) + tail; animal viruses may have an envelope with glycoprotein spikes.",
+      "Types by nucleic acid: DNA viruses (e.g., T4 phage, smallpox) and RNA viruses (e.g., influenza, HIV, SARS-CoV-2).",
+      "Bacteriophage (T4): lytic life cycle — adsorption → injection → replication → assembly → release (lysogeny is the lysogenic cycle in lambda phage).",
+      "Replication: viruses hijack the host cell machinery; they cannot replicate independently.",
+      "Importance: many human and animal diseases (common cold, flu, HIV/AIDS, hepatitis, rabies, smallpox — eradicated in 1980).",
+      "Applications: viral vectors in gene therapy, bacteriophages in food safety testing, viruses in molecular biology tools.",
+      "NEB focus: virus structure, lytic cycle of T4 phage, and importance of viruses."
+    ],
+    "confusion": [
+      "Viruses are NOT living organisms: they lack metabolism, cannot reproduce outside a host, and are not made of cells.",
+      "A virus has EITHER DNA or RNA, never both (with rare exceptions like some retroviruses that convert RNA to DNA).",
+      "Bacteriophages infect BACTERIA; animal viruses infect animals; plant viruses infect plants.",
+      "The capsid is protein; the core is nucleic acid; the envelope (if present) is lipid + glycoproteins from the host membrane.",
+      "Lytic cycle destroys the host cell; lysogenic cycle integrates viral DNA into the host genome (prophage) without immediate lysis.",
+      "Viruses are NOT visible under a light microscope; they require an electron microscope (~20–300 nm size)."
+    ],
+    "practice": [
+      "Draw and label a T4 bacteriophage (head, collar, tail, baseplate, tail fibers).",
+      "Describe the lytic life cycle of a bacteriophage in 5 steps.",
+      "Differentiate a DNA virus from an RNA virus (3 points).",
+      "Explain why viruses are not considered living organisms.",
+      "List three human diseases caused by viruses and their viral agents."
+    ],
+    "universalFacts": [
+      "The largest virus (Pithovirus) is ~1.2 µm in diameter — visible only under a light microscope.",
+      "Smallpox was the first human disease eradicated by vaccination (1980).",
+      "Retroviruses (e.g., HIV) carry RNA but use reverse transcriptase to make DNA in the host.",
+      "Viruses are ~1/100th the size of a typical bacterium."
+    ],
+    "examples": [
+      "T4 bacteriophage — DNA virus, infects E. coli; lytic cycle model.",
+      "Influenza virus — RNA virus, causes seasonal flu.",
+      "HIV (Human Immunodeficiency Virus) — retrovirus, causes AIDS.",
+      "SARS-CoV-2 — RNA virus, causes COVID-19."
+    ],
+    "practiceQuestions": [
+      "Why are viruses called \"acellular\"?",
+      "Describe the structure of a T4 bacteriophage with a labelled diagram.",
+      "Explain the lytic life cycle of a bacteriophage (5 steps).",
+      "Differentiate a DNA virus from an RNA virus.",
+      "What is the significance of the viral envelope?"
+    ],
+    "formulas": [
+      "Virus = Nucleic acid (DNA or RNA) + Capsid (protein) [+ Envelope (lipid + glycoprotein)]",
+      "Lytic cycle: Adsorption → Penetration (injection) → Biosynthesis → Assembly → Release",
+      "Lysogenic cycle: Prophage integration → Replication with host → Induction → Lytic cycle"
+    ],
+    "keyPoints": [
+      "Viruses are acellular, obligate intracellular parasites.",
+      "Structure: nucleic acid + capsid (+ envelope in some).",
+      "DNA or RNA (not both); capsomeres form the capsid.",
+      "Bacteriophage: icosahedral head + tail + baseplate + tail fibers.",
+      "Lytic cycle: 5 steps, destroys host; Lysogenic: integrates, delays lysis.",
+      "Not living: no metabolism, no independent reproduction.",
+      "Importance: cause many diseases; used in gene therapy and research."
+    ],
+    "summary": "Viruses are acellular, obligate intracellular parasites that contain either DNA or RNA enclosed in a protein capsid (and sometimes a lipid envelope). They cannot replicate outside a host cell and hijack host machinery. The T4 bacteriophage lytic cycle (adsorption, injection, replication, assembly, release) is the NEB model. Viruses cause many important diseases but are also valuable tools in gene therapy and molecular biology. NEB examinations focus on virus structure, the lytic cycle, and the distinction between viruses and living organisms.",
+    "specialNotes": [
+      "NEB expects a detailed T4 phage diagram and the 5-step lytic cycle.",
+      "The \"are viruses alive?\" debate is a favourite exam discussion; present both arguments.",
+      "DNA vs RNA viruses: know the key difference and one example of each.",
+      "Mention the significance of the viral envelope (immune evasion, cell entry)."
+    ],
+    "importantStatements": [
+      "Viruses are the smallest infectious agents known.",
+      "They contain either DNA or RNA, but never both.",
+      "The lytic cycle destroys the host cell; the lysogenic cycle integrates into the host genome.",
+      "Viruses are not classified in any biological kingdom."
+    ],
+    "importantNotes": [
+      "Memorise the T4 phage structure (head, tail, baseplate, fibers).",
+      "Learn the 5 steps of the lytic cycle.",
+      "Differentiate DNA and RNA viruses with examples.",
+      "Explain why viruses are not considered living.",
+      "List 3 human viral diseases and their agents."
+    ],
+    "examShortTricks": [
+      "Virus = V-O-I (Very small, Obligate, Infectious).",
+      "T4 phage = icosahedral head + tail = \"phage = eater of bacteria\".",
+      "Lytic = L-Y-TIC (Lysis, Yields nothing, Terminates host).",
+      "RNA viruses: flu, HIV, SARS; DNA viruses: T4, smallpox, herpes."
+    ],
+    "examNotes": [
+      "Draw and label a T4 bacteriophage — very common.",
+      "Describe the lytic life cycle in 5 steps.",
+      "Differentiate DNA and RNA viruses.",
+      "Explain why viruses are not living organisms.",
+      "List the importance of viruses (diseases, gene therapy, research).",
+      "Differentiate lytic from lysogenic cycle."
+    ],
+    "mcs": [
+      {
+        "question": "A virus contains:",
+        "options": [
+          "Both DNA and RNA",
+          "Either DNA or RNA",
+          "Protein only",
+          "Lipid only"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The T4 bacteriophage infects:",
+        "options": [
+          "Animals",
+          "Plants",
+          "Bacteria",
+          "Fungi"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The protein coat of a virus is called:",
+        "options": [
+          "Envelope",
+          "Capsid",
+          "Nucleocapsid",
+          "Prion"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "In the lytic cycle, the host cell is:",
+        "options": [
+          "Lysed",
+          "Intact",
+          "Converted to prophage",
+          "Killed slowly"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Acellular nature",
+      "Capsid and envelope",
+      "DNA vs RNA viruses",
+      "T4 phage structure",
+      "Lytic cycle",
+      "Lysogenic cycle",
+      "Viral diseases",
+      "Gene therapy applications"
+    ],
+    "importantTasks": [
+      "Label T4 phage",
+      "Draw the lytic cycle (5 steps)",
+      "Differentiate DNA vs RNA viruses",
+      "Explain why viruses are not living",
+      "List 3 viral diseases"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A virus has an icosahedral head, a tail with baseplate, and tail fibers. What type of organism does it infect and what is its nucleic acid?",
+        "steps": [
+          "T4-type phage structure",
+          "Bacteriophage → infects bacteria",
+          "T4 phage → DNA virus"
+        ],
+        "answer": "Infects bacteria; DNA virus (T4 phage)"
+      }
+    ],
+    "visualization": {
+      "type": "simulation",
+      "component": "PhageLyticCycle",
+      "desc": "Animated 5-step T4 phage lytic cycle with rotatable 3D phage structure and step-by-step narration."
+    }
+  },
+  "notes": [
+    "Viruses: acellular, obligate intracellular parasites; not classified in any kingdom; consist of a nucleic acid core (DNA or RNA) + protein coat (capsid); some have a lipid envelope.",
+    "Structure: capsomeres (protein subunits of capsid); bacteriophages have a head (icosahedral) + tail; animal viruses may have an envelope with glycoprotein spikes.",
+    "Types by nucleic acid: DNA viruses (e.g., T4 phage, smallpox) and RNA viruses (e.g., influenza, HIV, SARS-CoV-2).",
+    "Bacteriophage (T4): lytic life cycle — adsorption → injection → replication → assembly → release (lysogeny is the lysogenic cycle in lambda phage).",
+    "Replication: viruses hijack the host cell machinery; they cannot replicate independently.",
+    "Importance: many human and animal diseases (common cold, flu, HIV/AIDS, hepatitis, rabies, smallpox — eradicated in 1980).",
+    "Applications: viral vectors in gene therapy, bacteriophages in food safety testing, viruses in molecular biology tools.",
+    "NEB focus: virus structure, lytic cycle of T4 phage, and importance of viruses."
+  ],
+  "confusion": [
+    "Viruses are NOT living organisms: they lack metabolism, cannot reproduce outside a host, and are not made of cells.",
+    "A virus has EITHER DNA or RNA, never both (with rare exceptions like some retroviruses that convert RNA to DNA).",
+    "Bacteriophages infect BACTERIA; animal viruses infect animals; plant viruses infect plants.",
+    "The capsid is protein; the core is nucleic acid; the envelope (if present) is lipid + glycoproteins from the host membrane.",
+    "Lytic cycle destroys the host cell; lysogenic cycle integrates viral DNA into the host genome (prophage) without immediate lysis.",
+    "Viruses are NOT visible under a light microscope; they require an electron microscope (~20–300 nm size)."
+  ],
+  "practice": [
+    "Draw and label a T4 bacteriophage (head, collar, tail, baseplate, tail fibers).",
+    "Describe the lytic life cycle of a bacteriophage in 5 steps.",
+    "Differentiate a DNA virus from an RNA virus (3 points).",
+    "Explain why viruses are not considered living organisms.",
+    "List three human diseases caused by viruses and their viral agents."
+  ],
+  "universalFacts": [
+    "The largest virus (Pithovirus) is ~1.2 µm in diameter — visible only under a light microscope.",
+    "Smallpox was the first human disease eradicated by vaccination (1980).",
+    "Retroviruses (e.g., HIV) carry RNA but use reverse transcriptase to make DNA in the host.",
+    "Viruses are ~1/100th the size of a typical bacterium."
+  ],
   "examples": [
-    "E. coli: model organism",
-    "T4 bacteriophage: lytic cycle in 20 min",
-    "Recombinant insulin from E. coli"
+    "T4 bacteriophage — DNA virus, infects E. coli; lytic cycle model.",
+    "Influenza virus — RNA virus, causes seasonal flu.",
+    "HIV (Human Immunodeficiency Virus) — retrovirus, causes AIDS.",
+    "SARS-CoV-2 — RNA virus, causes COVID-19."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Why are viruses called \"acellular\"?",
+    "Describe the structure of a T4 bacteriophage with a labelled diagram.",
+    "Explain the lytic life cycle of a bacteriophage (5 steps).",
+    "Differentiate a DNA virus from an RNA virus.",
+    "What is the significance of the viral envelope?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 virus)"
+    "Virus = Nucleic acid (DNA or RNA) + Capsid (protein) [+ Envelope (lipid + glycoprotein)]",
+    "Lytic cycle: Adsorption → Penetration (injection) → Biosynthesis → Assembly → Release",
+    "Lysogenic cycle: Prophage integration → Replication with host → Induction → Lytic cycle"
   ],
   "keyPoints": [
-    "Core point for 02 virus."
+    "Viruses are acellular, obligate intracellular parasites.",
+    "Structure: nucleic acid + capsid (+ envelope in some).",
+    "DNA or RNA (not both); capsomeres form the capsid.",
+    "Bacteriophage: icosahedral head + tail + baseplate + tail fibers.",
+    "Lytic cycle: 5 steps, destroys host; Lysogenic: integrates, delays lysis.",
+    "Not living: no metabolism, no independent reproduction.",
+    "Importance: cause many diseases; used in gene therapy and research."
   ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "summary": "Viruses are acellular, obligate intracellular parasites that contain either DNA or RNA enclosed in a protein capsid (and sometimes a lipid envelope). They cannot replicate outside a host cell and hijack host machinery. The T4 bacteriophage lytic cycle (adsorption, injection, replication, assembly, release) is the NEB model. Viruses cause many important diseases but are also valuable tools in gene therapy and molecular biology. NEB examinations focus on virus structure, the lytic cycle, and the distinction between viruses and living organisms.",
   "specialNotes": [
-    "Specialized insight for 02 virus."
+    "NEB expects a detailed T4 phage diagram and the 5-step lytic cycle.",
+    "The \"are viruses alive?\" debate is a favourite exam discussion; present both arguments.",
+    "DNA vs RNA viruses: know the key difference and one example of each.",
+    "Mention the significance of the viral envelope (immune evasion, cell entry)."
   ],
   "importantStatements": [
-    "Key statement for 02 virus."
+    "Viruses are the smallest infectious agents known.",
+    "They contain either DNA or RNA, but never both.",
+    "The lytic cycle destroys the host cell; the lysogenic cycle integrates into the host genome.",
+    "Viruses are not classified in any biological kingdom."
   ],
   "importantNotes": [
-    "Important note regarding 02 virus."
+    "Memorise the T4 phage structure (head, tail, baseplate, fibers).",
+    "Learn the 5 steps of the lytic cycle.",
+    "Differentiate DNA and RNA viruses with examples.",
+    "Explain why viruses are not considered living.",
+    "List 3 human viral diseases and their agents."
   ],
   "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Virus."
+    "Virus = V-O-I (Very small, Obligate, Infectious).",
+    "T4 phage = icosahedral head + tail = \"phage = eater of bacteria\".",
+    "Lytic = L-Y-TIC (Lysis, Yields nothing, Terminates host).",
+    "RNA viruses: flu, HIV, SARS; DNA viruses: T4, smallpox, herpes."
   ],
   "examNotes": [
-    "Virus is frequently tested.",
-    "Practice writing detailed answers."
+    "Draw and label a T4 bacteriophage — very common.",
+    "Describe the lytic life cycle in 5 steps.",
+    "Differentiate DNA and RNA viruses.",
+    "Explain why viruses are not living organisms.",
+    "List the importance of viruses (diseases, gene therapy, research).",
+    "Differentiate lytic from lysogenic cycle."
   ],
   "mcs": [
     {
-      "question": "Question about 02 virus?",
+      "question": "A virus contains:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Both DNA and RNA",
+        "Either DNA or RNA",
+        "Protein only",
+        "Lipid only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The T4 bacteriophage infects:",
+      "options": [
+        "Animals",
+        "Plants",
+        "Bacteria",
+        "Fungi"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The protein coat of a virus is called:",
+      "options": [
+        "Envelope",
+        "Capsid",
+        "Nucleocapsid",
+        "Prion"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In the lytic cycle, the host cell is:",
+      "options": [
+        "Lysed",
+        "Intact",
+        "Converted to prophage",
+        "Killed slowly"
       ],
       "answer": "A"
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 02 virus."
+    "Acellular nature",
+    "Capsid and envelope",
+    "DNA vs RNA viruses",
+    "T4 phage structure",
+    "Lytic cycle",
+    "Lysogenic cycle",
+    "Viral diseases",
+    "Gene therapy applications"
   ],
   "importantTasks": [
-    "Task for studying 02 virus."
+    "Label T4 phage",
+    "Draw the lytic cycle (5 steps)",
+    "Differentiate DNA vs RNA viruses",
+    "Explain why viruses are not living",
+    "List 3 viral diseases"
   ],
-  "duplicateType": 2,
-  "tabGroup": "02-virus",
-  "mcqs": [
+  "exercises": [
     {
-      "question": "Question about 02 virus?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+      "id": "1",
+      "question": "A virus has an icosahedral head, a tail with baseplate, and tail fibers. What type of organism does it infect and what is its nucleic acid?",
+      "steps": [
+        "T4-type phage structure",
+        "Bacteriophage → infects bacteria",
+        "T4 phage → DNA virus"
       ],
-      "answer": "A"
+      "answer": "Infects bacteria; DNA virus (T4 phage)"
     }
-  ],
-  "exercises": [],
-  "visualization": {
-    "type": "simulation",
-    "component": "MicrobeViewer",
-    "desc": "Interactive microorganism explorer with Gram stain simulation"
-  },
-  "visualType": "virion-structure"
+  ]
 }

@@ -4,190 +4,542 @@
   "topicSlug": "pteridophytes",
   "topicTitle": "Pteridophytes",
   "relevance": 100,
-  "notes": [
-    "Five kingdom classification (Whittaker, 1969).",
-    "Binomial nomenclature: Genus species.",
-    "Plant evolution: algae→bryophytes→pteridophytes→gymnosperms→angiosperms.",
-    "Double fertilization: zygote + endosperm."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 pteridophytes."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Rhododendron arboreum: Nepal national flower",
-    "Pinus: gymnosperm, timber industry"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 pteridophytes)"
-  ],
-  "keyPoints": [
-    "Core point for 05 pteridophytes."
-  ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
-  "specialNotes": [
-    "Specialized insight for 05 pteridophytes."
-  ],
-  "importantStatements": [
-    "Key statement for 05 pteridophytes."
-  ],
-  "importantNotes": [
-    "Important note regarding 05 pteridophytes."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Pteridophytes."
-  ],
-  "examNotes": [
-    "Pteridophytes is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 pteridophytes?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 pteridophytes."
-  ],
-  "importantTasks": [
-    "Task for studying 05 pteridophytes."
-  ],
   "duplicateType": 2,
   "tabGroup": "05-pteridophytes",
   "mcqs": [
     {
-      "question": "Question about 05 pteridophytes?",
+      "question": "The dominant generation in pteridophytes is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Gametophyte (n)",
+        "Sporophyte (2n)",
+        "Both equal",
+        "Aneuploid"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Sori in ferns contain:",
+      "options": [
+        "Seeds",
+        "Spores",
+        "Flowers",
+        "Fruits"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The key difference between bryophytes and pteridophytes is:",
+      "options": [
+        "Reproduction",
+        "Presence of vascular tissue",
+        "Cell wall type",
+        "Nutrition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The gametophyte of a fern is called:",
+      "options": [
+        "Sori",
+        "Prothallus",
+        "Stipe",
+        "Indusium"
+      ],
+      "answer": "B"
     }
   ],
-  "exercises": [],
-  "visualization": {
-    "type": "3d-model",
-    "component": "PlantKingdomViewer",
-    "desc": "Interactive plant classification explorer"
+  "visualType": "pteridophyte-life-cycle",
+  "enrichedContent": {
+    "notes": [
+      "Pteridophytes: seedless vascular plants (true xylem and phloem); include ferns, horsetails, clubmosses.",
+      "Life cycle: alternation of generations; the sporophyte (2n) is the dominant, visible generation; the gametophyte (n) is small, free-living, and short-lived.",
+      "Ferns: frond (leaf-like), rhizome (horizontal stem), stipe (leaf stalk), pinnae; spores in sori on the underside of fronds.",
+      "Dryopteris (model fern): rhizome, fronds, sori with sporangia; spores (n) germinate → prothallus (heart-shaped gametophyte) → antheridia and archegonia → fertilisation (requires water) → young sporophyte.",
+      "Reproduction: asexual (spores) and sexual (flagellated sperm + egg; requires water).",
+      "Economic/ecological importance: medicinal (Asteraceae ferns used in traditional medicine), ornamental (garden ferns), soil stabilisation, indicators of humidity; fossils of pteridophytes form coal deposits.",
+      "Key difference from bryophytes: pteridophytes have TRUE vascular tissue (xylem + phloem) and a dominant sporophyte generation."
+    ],
+    "confusion": [
+      "Pteridophytes have TRUE vascular tissue (xylem and phloem); bryophytes do NOT. This is the key distinction.",
+      "The SPOROPHYTE is the dominant generation in pteridophytes (unlike bryophytes where the gametophyte dominates).",
+      "The prothallus (gametophyte) of a fern is small, heart-shaped, and free-living — NOT the main plant body.",
+      "Sori are clusters of sporangia on the underside of fern fronds; they are NOT the frond itself.",
+      "Fertilisation still requires WATER in pteridophytes (flagellated sperm), even though the sporophyte is dominant.",
+      "Pteridophytes do NOT produce seeds; they reproduce by spores. Gymnosperms and angiosperms produce seeds."
+    ],
+    "practice": [
+      "Draw and label a Dryopteris frond (stipe, blade, pinnae, sori, sporangia).",
+      "Describe the life cycle of a fern (Dryopteris) with a labelled diagram.",
+      "Differentiate pteridophytes from bryophytes (4 points).",
+      "Explain the economic importance of pteridophytes (5 points).",
+      "Draw the prothallus of a fern and label the antheridia and archegonia."
+    ],
+    "universalFacts": [
+      "Ferns first appeared in the Carboniferous period (~300 million years ago); their fossils form coal deposits.",
+      "The largest fern is the tree fern (Cyathea), which can reach 20 m in height in tropical rainforests.",
+      "In pteridophytes, the sporophyte generation is dominant, marking the evolutionary transition toward seed plants.",
+      "Dryopteris is the standard model fern for NEB Class 11 Biology."
+    ],
+    "examples": [
+      "Dryopteris filix-medis — common fern, studied for NEB; fronds with sori on the underside.",
+      "Equisetum hyemale — horsetail, jointed stem with silica deposits, used in traditional medicine.",
+      "Lycopodium (clubmoss) — cone-like strobili, used as dusting powder in cosmetics.",
+      "Cyathea medullaris — tree fern, found in New Zealand; one of the largest ferns."
+    ],
+    "practiceQuestions": [
+      "Why is the sporophyte generation dominant in pteridophytes but not in bryophytes?",
+      "Describe the structure of a fern frond with a labelled diagram.",
+      "Explain the life cycle of Dryopteris (alternation of generations).",
+      "Differentiate pteridophytes from bryophytes (4 points).",
+      "What is the economic importance of pteridophytes?"
+    ],
+    "formulas": [
+      "Life cycle: Spore (n) → Prothallus (n, gametophyte) → Sperm + Egg → Zygote (2n) → Young sporophyte (2n, dominant) → Sori → Spores (n)",
+      "Sori: clusters of sporangia on the underside of fronds",
+      "Fertilisation: Sperm (flagellated) + Egg (in archegonium on prothallus) → Zygote (requires water)"
+    ],
+    "keyPoints": [
+      "Pteridophytes: seedless, VASCULAR plants (true xylem + phloem).",
+      "Sporophyte (2n) is the dominant, visible generation.",
+      "Prothallus (n) is the small, free-living gametophyte.",
+      "Reproduction: spores (asexual) + flagellated sperm (sexual, requires water).",
+      "Fern frond: stipe + blade; sori on underside with sporangia.",
+      "Economic: medicinal, ornamental, soil, fossil coal deposits."
+    ],
+    "summary": "Pteridophytes are seedless vascular plants that represent the evolutionary transition between non-vascular bryophytes and seed-bearing plants. The sporophyte (2n) is the dominant generation; the gametophyte (prothallus) is small and free-living. Ferns like Dryopteris have fronds with sori (spore clusters). Fertilisation still requires water. Pteridophytes are economically important as medicinal herbs, ornamentals, soil stabilisers, and the source of coal deposits.",
+    "specialNotes": [
+      "NEB expects a detailed diagram of the Dryopteris frond (stipe, blade, pinnae, sori, sporangia, indusium).",
+      "The life cycle of a fern (alternation of generations) is a very frequent long-answer question.",
+      "Differentiate pteridophytes from bryophytes: key difference is the presence of TRUE vascular tissue and dominant sporophyte.",
+      "Note that fertilisation still requires water in pteridophytes — a key exam point."
+    ],
+    "importantStatements": [
+      "Pteridophytes were the first plants to evolve true vascular tissue.",
+      "The dominant generation in pteridophytes is the sporophyte (2n).",
+      "Fern fossils from the Carboniferous period form the world's coal deposits.",
+      "The prothallus is the free-living gametophyte generation in ferns."
+    ],
+    "importantNotes": [
+      "Memorise the Dryopteris frond structure and the sori arrangement.",
+      "Learn the fern life cycle (alternation of generations) with a diagram.",
+      "Differentiate pteridophytes vs bryophytes (vascular tissue, dominant generation).",
+      "List economic importance of pteridophytes (5 points).",
+      "Note that fertilisation requires water even in pteridophytes."
+    ],
+    "examShortTricks": [
+      "Pteridophyte = P-V-S (Vascular, Sporophyte dominant, Seedless).",
+      "Sori = spore clusters on frond underside.",
+      "Prothallus = gametophyte = heart-shaped = small.",
+      "Fern = no SEED, has VASCULAR tissue."
+    ],
+    "examNotes": [
+      "Draw and label a Dryopteris frond (all parts) — very common.",
+      "Describe the life cycle of a fern with a labelled diagram.",
+      "Differentiate pteridophytes from bryophytes (4 points).",
+      "Explain the economic importance of pteridophytes.",
+      "Why does fertilisation require water in pteridophytes?"
+    ],
+    "mcs": [
+      {
+        "question": "The dominant generation in pteridophytes is:",
+        "options": [
+          "Gametophyte (n)",
+          "Sporophyte (2n)",
+          "Both equal",
+          "Aneuploid"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Sori in ferns contain:",
+        "options": [
+          "Seeds",
+          "Spores",
+          "Flowers",
+          "Fruits"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The key difference between bryophytes and pteridophytes is:",
+        "options": [
+          "Reproduction",
+          "Presence of vascular tissue",
+          "Cell wall type",
+          "Nutrition"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The gametophyte of a fern is called:",
+        "options": [
+          "Sori",
+          "Prothallus",
+          "Stipe",
+          "Indusium"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Seedless vascular plants",
+      "Sporophyte dominance",
+      "Dryopteris frond structure",
+      "Sori and sporangia",
+      "Prothallus (gametophyte)",
+      "Alternation of generations",
+      "Economic importance"
+    ],
+    "importantTasks": [
+      "Label Dryopteris frond",
+      "Draw fern life cycle",
+      "Differentiate pteridophytes vs bryophytes",
+      "List economic importance",
+      "Explain sori structure"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A student found a plant with true xylem and phloem but no seeds. Which group does it belong to?",
+        "steps": [
+          "True vascular tissue → pteridophyte or seed plant",
+          "No seeds → not gymnosperm or angiosperm",
+          "Therefore: pteridophyte (fern, horsetail, or clubmoss)"
+        ],
+        "answer": "Pteridophytes (seedless vascular plants)"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "FernLifeCycleViewer",
+      "desc": "Interactive 3D Dryopteris frond with rotatable sori, sporangia, and an animated alternation-of-generations cycle."
+    }
   },
-  "visualType": "pteridophyte-life-cycle"
+  "originalContent": {
+    "notes": [
+      "Pteridophytes: seedless vascular plants (true xylem and phloem); include ferns, horsetails, clubmosses.",
+      "Life cycle: alternation of generations; the sporophyte (2n) is the dominant, visible generation; the gametophyte (n) is small, free-living, and short-lived.",
+      "Ferns: frond (leaf-like), rhizome (horizontal stem), stipe (leaf stalk), pinnae; spores in sori on the underside of fronds.",
+      "Dryopteris (model fern): rhizome, fronds, sori with sporangia; spores (n) germinate → prothallus (heart-shaped gametophyte) → antheridia and archegonia → fertilisation (requires water) → young sporophyte.",
+      "Reproduction: asexual (spores) and sexual (flagellated sperm + egg; requires water).",
+      "Economic/ecological importance: medicinal (Asteraceae ferns used in traditional medicine), ornamental (garden ferns), soil stabilisation, indicators of humidity; fossils of pteridophytes form coal deposits.",
+      "Key difference from bryophytes: pteridophytes have TRUE vascular tissue (xylem + phloem) and a dominant sporophyte generation."
+    ],
+    "confusion": [
+      "Pteridophytes have TRUE vascular tissue (xylem and phloem); bryophytes do NOT. This is the key distinction.",
+      "The SPOROPHYTE is the dominant generation in pteridophytes (unlike bryophytes where the gametophyte dominates).",
+      "The prothallus (gametophyte) of a fern is small, heart-shaped, and free-living — NOT the main plant body.",
+      "Sori are clusters of sporangia on the underside of fern fronds; they are NOT the frond itself.",
+      "Fertilisation still requires WATER in pteridophytes (flagellated sperm), even though the sporophyte is dominant.",
+      "Pteridophytes do NOT produce seeds; they reproduce by spores. Gymnosperms and angiosperms produce seeds."
+    ],
+    "practice": [
+      "Draw and label a Dryopteris frond (stipe, blade, pinnae, sori, sporangia).",
+      "Describe the life cycle of a fern (Dryopteris) with a labelled diagram.",
+      "Differentiate pteridophytes from bryophytes (4 points).",
+      "Explain the economic importance of pteridophytes (5 points).",
+      "Draw the prothallus of a fern and label the antheridia and archegonia."
+    ],
+    "universalFacts": [
+      "Ferns first appeared in the Carboniferous period (~300 million years ago); their fossils form coal deposits.",
+      "The largest fern is the tree fern (Cyathea), which can reach 20 m in height in tropical rainforests.",
+      "In pteridophytes, the sporophyte generation is dominant, marking the evolutionary transition toward seed plants.",
+      "Dryopteris is the standard model fern for NEB Class 11 Biology."
+    ],
+    "examples": [
+      "Dryopteris filix-medis — common fern, studied for NEB; fronds with sori on the underside.",
+      "Equisetum hyemale — horsetail, jointed stem with silica deposits, used in traditional medicine.",
+      "Lycopodium (clubmoss) — cone-like strobili, used as dusting powder in cosmetics.",
+      "Cyathea medullaris — tree fern, found in New Zealand; one of the largest ferns."
+    ],
+    "practiceQuestions": [
+      "Why is the sporophyte generation dominant in pteridophytes but not in bryophytes?",
+      "Describe the structure of a fern frond with a labelled diagram.",
+      "Explain the life cycle of Dryopteris (alternation of generations).",
+      "Differentiate pteridophytes from bryophytes (4 points).",
+      "What is the economic importance of pteridophytes?"
+    ],
+    "formulas": [
+      "Life cycle: Spore (n) → Prothallus (n, gametophyte) → Sperm + Egg → Zygote (2n) → Young sporophyte (2n, dominant) → Sori → Spores (n)",
+      "Sori: clusters of sporangia on the underside of fronds",
+      "Fertilisation: Sperm (flagellated) + Egg (in archegonium on prothallus) → Zygote (requires water)"
+    ],
+    "keyPoints": [
+      "Pteridophytes: seedless, VASCULAR plants (true xylem + phloem).",
+      "Sporophyte (2n) is the dominant, visible generation.",
+      "Prothallus (n) is the small, free-living gametophyte.",
+      "Reproduction: spores (asexual) + flagellated sperm (sexual, requires water).",
+      "Fern frond: stipe + blade; sori on underside with sporangia.",
+      "Economic: medicinal, ornamental, soil, fossil coal deposits."
+    ],
+    "summary": "Pteridophytes are seedless vascular plants that represent the evolutionary transition between non-vascular bryophytes and seed-bearing plants. The sporophyte (2n) is the dominant generation; the gametophyte (prothallus) is small and free-living. Ferns like Dryopteris have fronds with sori (spore clusters). Fertilisation still requires water. Pteridophytes are economically important as medicinal herbs, ornamentals, soil stabilisers, and the source of coal deposits.",
+    "specialNotes": [
+      "NEB expects a detailed diagram of the Dryopteris frond (stipe, blade, pinnae, sori, sporangia, indusium).",
+      "The life cycle of a fern (alternation of generations) is a very frequent long-answer question.",
+      "Differentiate pteridophytes from bryophytes: key difference is the presence of TRUE vascular tissue and dominant sporophyte.",
+      "Note that fertilisation still requires water in pteridophytes — a key exam point."
+    ],
+    "importantStatements": [
+      "Pteridophytes were the first plants to evolve true vascular tissue.",
+      "The dominant generation in pteridophytes is the sporophyte (2n).",
+      "Fern fossils from the Carboniferous period form the world's coal deposits.",
+      "The prothallus is the free-living gametophyte generation in ferns."
+    ],
+    "importantNotes": [
+      "Memorise the Dryopteris frond structure and the sori arrangement.",
+      "Learn the fern life cycle (alternation of generations) with a diagram.",
+      "Differentiate pteridophytes vs bryophytes (vascular tissue, dominant generation).",
+      "List economic importance of pteridophytes (5 points).",
+      "Note that fertilisation requires water even in pteridophytes."
+    ],
+    "examShortTricks": [
+      "Pteridophyte = P-V-S (Vascular, Sporophyte dominant, Seedless).",
+      "Sori = spore clusters on frond underside.",
+      "Prothallus = gametophyte = heart-shaped = small.",
+      "Fern = no SEED, has VASCULAR tissue."
+    ],
+    "examNotes": [
+      "Draw and label a Dryopteris frond (all parts) — very common.",
+      "Describe the life cycle of a fern with a labelled diagram.",
+      "Differentiate pteridophytes from bryophytes (4 points).",
+      "Explain the economic importance of pteridophytes.",
+      "Why does fertilisation require water in pteridophytes?"
+    ],
+    "mcs": [
+      {
+        "question": "The dominant generation in pteridophytes is:",
+        "options": [
+          "Gametophyte (n)",
+          "Sporophyte (2n)",
+          "Both equal",
+          "Aneuploid"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Sori in ferns contain:",
+        "options": [
+          "Seeds",
+          "Spores",
+          "Flowers",
+          "Fruits"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The key difference between bryophytes and pteridophytes is:",
+        "options": [
+          "Reproduction",
+          "Presence of vascular tissue",
+          "Cell wall type",
+          "Nutrition"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The gametophyte of a fern is called:",
+        "options": [
+          "Sori",
+          "Prothallus",
+          "Stipe",
+          "Indusium"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Seedless vascular plants",
+      "Sporophyte dominance",
+      "Dryopteris frond structure",
+      "Sori and sporangia",
+      "Prothallus (gametophyte)",
+      "Alternation of generations",
+      "Economic importance"
+    ],
+    "importantTasks": [
+      "Label Dryopteris frond",
+      "Draw fern life cycle",
+      "Differentiate pteridophytes vs bryophytes",
+      "List economic importance",
+      "Explain sori structure"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A student found a plant with true xylem and phloem but no seeds. Which group does it belong to?",
+        "steps": [
+          "True vascular tissue → pteridophyte or seed plant",
+          "No seeds → not gymnosperm or angiosperm",
+          "Therefore: pteridophyte (fern, horsetail, or clubmoss)"
+        ],
+        "answer": "Pteridophytes (seedless vascular plants)"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "FernLifeCycleViewer",
+      "desc": "Interactive 3D Dryopteris frond with rotatable sori, sporangia, and an animated alternation-of-generations cycle."
+    }
+  },
+  "notes": [
+    "Pteridophytes: seedless vascular plants (true xylem and phloem); include ferns, horsetails, clubmosses.",
+    "Life cycle: alternation of generations; the sporophyte (2n) is the dominant, visible generation; the gametophyte (n) is small, free-living, and short-lived.",
+    "Ferns: frond (leaf-like), rhizome (horizontal stem), stipe (leaf stalk), pinnae; spores in sori on the underside of fronds.",
+    "Dryopteris (model fern): rhizome, fronds, sori with sporangia; spores (n) germinate → prothallus (heart-shaped gametophyte) → antheridia and archegonia → fertilisation (requires water) → young sporophyte.",
+    "Reproduction: asexual (spores) and sexual (flagellated sperm + egg; requires water).",
+    "Economic/ecological importance: medicinal (Asteraceae ferns used in traditional medicine), ornamental (garden ferns), soil stabilisation, indicators of humidity; fossils of pteridophytes form coal deposits.",
+    "Key difference from bryophytes: pteridophytes have TRUE vascular tissue (xylem + phloem) and a dominant sporophyte generation."
+  ],
+  "confusion": [
+    "Pteridophytes have TRUE vascular tissue (xylem and phloem); bryophytes do NOT. This is the key distinction.",
+    "The SPOROPHYTE is the dominant generation in pteridophytes (unlike bryophytes where the gametophyte dominates).",
+    "The prothallus (gametophyte) of a fern is small, heart-shaped, and free-living — NOT the main plant body.",
+    "Sori are clusters of sporangia on the underside of fern fronds; they are NOT the frond itself.",
+    "Fertilisation still requires WATER in pteridophytes (flagellated sperm), even though the sporophyte is dominant.",
+    "Pteridophytes do NOT produce seeds; they reproduce by spores. Gymnosperms and angiosperms produce seeds."
+  ],
+  "practice": [
+    "Draw and label a Dryopteris frond (stipe, blade, pinnae, sori, sporangia).",
+    "Describe the life cycle of a fern (Dryopteris) with a labelled diagram.",
+    "Differentiate pteridophytes from bryophytes (4 points).",
+    "Explain the economic importance of pteridophytes (5 points).",
+    "Draw the prothallus of a fern and label the antheridia and archegonia."
+  ],
+  "universalFacts": [
+    "Ferns first appeared in the Carboniferous period (~300 million years ago); their fossils form coal deposits.",
+    "The largest fern is the tree fern (Cyathea), which can reach 20 m in height in tropical rainforests.",
+    "In pteridophytes, the sporophyte generation is dominant, marking the evolutionary transition toward seed plants.",
+    "Dryopteris is the standard model fern for NEB Class 11 Biology."
+  ],
+  "examples": [
+    "Dryopteris filix-medis — common fern, studied for NEB; fronds with sori on the underside.",
+    "Equisetum hyemale — horsetail, jointed stem with silica deposits, used in traditional medicine.",
+    "Lycopodium (clubmoss) — cone-like strobili, used as dusting powder in cosmetics.",
+    "Cyathea medullaris — tree fern, found in New Zealand; one of the largest ferns."
+  ],
+  "practiceQuestions": [
+    "Why is the sporophyte generation dominant in pteridophytes but not in bryophytes?",
+    "Describe the structure of a fern frond with a labelled diagram.",
+    "Explain the life cycle of Dryopteris (alternation of generations).",
+    "Differentiate pteridophytes from bryophytes (4 points).",
+    "What is the economic importance of pteridophytes?"
+  ],
+  "formulas": [
+    "Life cycle: Spore (n) → Prothallus (n, gametophyte) → Sperm + Egg → Zygote (2n) → Young sporophyte (2n, dominant) → Sori → Spores (n)",
+    "Sori: clusters of sporangia on the underside of fronds",
+    "Fertilisation: Sperm (flagellated) + Egg (in archegonium on prothallus) → Zygote (requires water)"
+  ],
+  "keyPoints": [
+    "Pteridophytes: seedless, VASCULAR plants (true xylem + phloem).",
+    "Sporophyte (2n) is the dominant, visible generation.",
+    "Prothallus (n) is the small, free-living gametophyte.",
+    "Reproduction: spores (asexual) + flagellated sperm (sexual, requires water).",
+    "Fern frond: stipe + blade; sori on underside with sporangia.",
+    "Economic: medicinal, ornamental, soil, fossil coal deposits."
+  ],
+  "summary": "Pteridophytes are seedless vascular plants that represent the evolutionary transition between non-vascular bryophytes and seed-bearing plants. The sporophyte (2n) is the dominant generation; the gametophyte (prothallus) is small and free-living. Ferns like Dryopteris have fronds with sori (spore clusters). Fertilisation still requires water. Pteridophytes are economically important as medicinal herbs, ornamentals, soil stabilisers, and the source of coal deposits.",
+  "specialNotes": [
+    "NEB expects a detailed diagram of the Dryopteris frond (stipe, blade, pinnae, sori, sporangia, indusium).",
+    "The life cycle of a fern (alternation of generations) is a very frequent long-answer question.",
+    "Differentiate pteridophytes from bryophytes: key difference is the presence of TRUE vascular tissue and dominant sporophyte.",
+    "Note that fertilisation still requires water in pteridophytes — a key exam point."
+  ],
+  "importantStatements": [
+    "Pteridophytes were the first plants to evolve true vascular tissue.",
+    "The dominant generation in pteridophytes is the sporophyte (2n).",
+    "Fern fossils from the Carboniferous period form the world's coal deposits.",
+    "The prothallus is the free-living gametophyte generation in ferns."
+  ],
+  "importantNotes": [
+    "Memorise the Dryopteris frond structure and the sori arrangement.",
+    "Learn the fern life cycle (alternation of generations) with a diagram.",
+    "Differentiate pteridophytes vs bryophytes (vascular tissue, dominant generation).",
+    "List economic importance of pteridophytes (5 points).",
+    "Note that fertilisation requires water even in pteridophytes."
+  ],
+  "examShortTricks": [
+    "Pteridophyte = P-V-S (Vascular, Sporophyte dominant, Seedless).",
+    "Sori = spore clusters on frond underside.",
+    "Prothallus = gametophyte = heart-shaped = small.",
+    "Fern = no SEED, has VASCULAR tissue."
+  ],
+  "examNotes": [
+    "Draw and label a Dryopteris frond (all parts) — very common.",
+    "Describe the life cycle of a fern with a labelled diagram.",
+    "Differentiate pteridophytes from bryophytes (4 points).",
+    "Explain the economic importance of pteridophytes.",
+    "Why does fertilisation require water in pteridophytes?"
+  ],
+  "mcs": [
+    {
+      "question": "The dominant generation in pteridophytes is:",
+      "options": [
+        "Gametophyte (n)",
+        "Sporophyte (2n)",
+        "Both equal",
+        "Aneuploid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Sori in ferns contain:",
+      "options": [
+        "Seeds",
+        "Spores",
+        "Flowers",
+        "Fruits"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The key difference between bryophytes and pteridophytes is:",
+      "options": [
+        "Reproduction",
+        "Presence of vascular tissue",
+        "Cell wall type",
+        "Nutrition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The gametophyte of a fern is called:",
+      "options": [
+        "Sori",
+        "Prothallus",
+        "Stipe",
+        "Indusium"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Seedless vascular plants",
+    "Sporophyte dominance",
+    "Dryopteris frond structure",
+    "Sori and sporangia",
+    "Prothallus (gametophyte)",
+    "Alternation of generations",
+    "Economic importance"
+  ],
+  "importantTasks": [
+    "Label Dryopteris frond",
+    "Draw fern life cycle",
+    "Differentiate pteridophytes vs bryophytes",
+    "List economic importance",
+    "Explain sori structure"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A student found a plant with true xylem and phloem but no seeds. Which group does it belong to?",
+      "steps": [
+        "True vascular tissue → pteridophyte or seed plant",
+        "No seeds → not gymnosperm or angiosperm",
+        "Therefore: pteridophyte (fern, horsetail, or clubmoss)"
+      ],
+      "answer": "Pteridophytes (seedless vascular plants)"
+    }
+  ]
 }

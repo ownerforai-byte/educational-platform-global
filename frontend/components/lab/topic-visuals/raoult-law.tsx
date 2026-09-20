@@ -7,7 +7,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Raoult's Law — Vapor Pressure Lowering
@@ -118,14 +118,14 @@ export function RaoultLawVisual() {
         const p0Target = new THREE.Vector3(ox + sx * 1.1, oy + P0 * sy * 0.5, 0);
         const p0Dir = p0Target.clone().sub(p0Label).normalize();
         const p0Len = p0Label.distanceTo(p0Target);
-        push(new LiveArrow(p0Dir, p0Label, p0Len * 0.8, 0xfbbf24, 0.25, 0.12));
+        push(new LiveLeaderLine(p0Dir, p0Label, p0Len * 0.8, 0xfbbf24, 0.25, 0.12));
         push(mkSprite(`P°_solvent = ${P0} units`, "#fbbf24", p0Label.clone().sub(p0Dir.multiplyScalar(0.5)), 0.65));
 
         const psLabel = new THREE.Vector3(currX + 0.8, currY + 0.4, 0);
         const psTarget = new THREE.Vector3(currX, currY, 0);
         const psDir = psTarget.clone().sub(psLabel).normalize();
         const psLen = psLabel.distanceTo(psTarget);
-        push(new LiveArrow(psDir, psLabel, psLen * 0.8, 0x22c55e, 0.25, 0.12));
+        push(new LiveLeaderLine(psDir, psLabel, psLen * 0.8, 0x22c55e, 0.25, 0.12));
         push(mkSprite(`P_solution = ${Ps.toFixed(1)} units`, "#22c55e", psLabel.clone().sub(psDir.multiplyScalar(0.5)), 0.65));
 
         // Delta P (vapor pressure lowering)
@@ -135,7 +135,7 @@ export function RaoultLawVisual() {
         const dpMid = dpTarget1.clone().add(dpTarget2).multiplyScalar(0.5);
         const dpDir = dpMid.clone().sub(dpLabel).normalize();
         const dpLen = dpLabel.distanceTo(dpMid);
-        push(new LiveArrow(dpDir, dpLabel, dpLen * 0.7, 0xf97316, 0.25, 0.12));
+        push(new LiveLeaderLine(dpDir, dpLabel, dpLen * 0.7, 0xf97316, 0.25, 0.12));
         push(mkSprite(`ΔP = ${deltaP.toFixed(1)} (VP lowering)`, "#f97316", dpLabel.clone().sub(dpDir.multiplyScalar(0.5)), 0.65));
 
         // Formula

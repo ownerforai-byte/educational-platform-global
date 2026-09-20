@@ -4,192 +4,554 @@
   "topicSlug": "monera-bacteria",
   "topicTitle": "Monera and Bacteria",
   "relevance": 100,
-  "notes": [
-    "Monera: prokaryotes (bacteria, cyanobacteria).",
-    "Bacteria: cell wall (peptidoglycan), 70S ribosomes, binary fission.",
-    "Virus: acellular, protein coat + nucleic acid, obligate parasite.",
-    "Gram stain: positive (purple) vs negative (pink).",
-    "Biotechnology: insulin, vaccines, GMOs."
-  ],
-  "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
-  ],
-  "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 monera bacteria."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "E. coli: model organism",
-    "T4 bacteriophage: lytic cycle in 20 min",
-    "Recombinant insulin from E. coli"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 monera bacteria)"
-  ],
-  "keyPoints": [
-    "Core point for 01 monera bacteria."
-  ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
-  "specialNotes": [
-    "Specialized insight for 01 monera bacteria."
-  ],
-  "importantStatements": [
-    "Key statement for 01 monera bacteria."
-  ],
-  "importantNotes": [
-    "Important note regarding 01 monera bacteria."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Monera and Bacteria."
-  ],
-  "examNotes": [
-    "Monera and Bacteria is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 monera bacteria?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 monera bacteria."
-  ],
-  "importantTasks": [
-    "Task for studying 01 monera bacteria."
-  ],
   "duplicateType": 2,
   "tabGroup": "01-monera-bacteria",
   "mcqs": [
     {
-      "question": "Question about 01 monera bacteria?",
+      "question": "The smallest known living cell is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "E. coli",
+        "Mycoplasma",
+        "Nostoc",
+        "Lactobacillus"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The cell wall of most bacteria is made of:",
+      "options": [
+        "Cellulose",
+        "Chitin",
+        "Peptidoglycan",
+        "Silica"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Gram-positive bacteria appear what colour after Gram staining?",
+      "options": [
+        "Pink",
+        "Purple",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The primary asexual reproduction method in bacteria is:",
+      "options": [
+        "Conjugation",
+        "Binary fission",
+        "Transformation",
+        "Transduction"
+      ],
+      "answer": "B"
     }
   ],
-  "exercises": [],
-  "visualization": {
-    "type": "simulation",
-    "component": "MicrobeViewer",
-    "desc": "Interactive microorganism explorer with Gram stain simulation"
+  "visualType": "bacterial-cell-structure",
+  "enrichedContent": {
+    "notes": [
+      "Kingdom Monera: prokaryotic organisms (no membrane-bound nucleus); includes bacteria, cyanobacteria (blue-green algae), mycoplasma, and archaebacteria.",
+      "Bacterial cell: capsule (slime layer) → cell wall (peptidoglycan) → plasma membrane → cytoplasm; 70S ribosomes; naked circular DNA (nucleoid); may have pili, fimbriae, flagella, mesosomes.",
+      "Shapes: cocci (spherical), bacilli (rod), spirilla/spirochaetes (spiral). Arrangements: diplococci, streptococci, staphylococci.",
+      "Mode of nutrition: autotrophic (photoautotrophs, chemoautotrophs) and heterotrophic (saprophytes, parasites).",
+      "Bacterial growth: lag → log (exponential) → stationary → death phases; reproduction by binary fission (asexual) and by conjugation/transformation/transduction (genetic exchange).",
+      "Cyanobacteria: blue-green algae; photosynthetic; Nostoc, Anabaena (fix atmospheric nitrogen); important in rice paddies as biofertilisers.",
+      "Gram staining: Gram-positive (thick peptidoglycan, purple) vs Gram-negative (thin peptidoglycan + outer membrane, pink)."
+    ],
+    "confusion": [
+      "Bacteria are prokaryotic: they have no true nucleus and no membrane-bound organelles.",
+      "Cyanobacteria are bacteria (prokaryotes), NOT algae; they fix nitrogen but are not \"true\" algae.",
+      "Mycoplasma lacks a cell wall; it is the smallest known living cell.",
+      "Archaea differ from Bacteria in cell wall (no peptidoglycan) and membrane lipids; they live in extreme environments.",
+      "Binary fission produces two genetically identical daughter cells; conjugation transfers DNA but does not increase cell number.",
+      "Gram-positive bacteria have a THICK peptidoglycan layer; Gram-negative have a THIN layer plus an outer LPS membrane (more resistant to many antibiotics)."
+    ],
+    "practice": [
+      "Draw and label a typical bacterium (capsule, wall, membrane, cytoplasm, nucleoid, ribosomes, flagellum, pili).",
+      "Describe the bacterial growth curve (4 phases).",
+      "Explain the Gram-staining procedure and differentiate Gram +ve and -ve.",
+      "Tabulate the three modes of bacterial nutrition with examples.",
+      "State the economic and ecological importance of bacteria (5 points)."
+    ],
+    "universalFacts": [
+      "Bacteria are the oldest life form on Earth (~3.5 billion years).",
+      "A single bacterial cell can divide in ~20 minutes under optimal conditions (E. coli).",
+      "More than 99% of the organisms on Earth are prokaryotes.",
+      "Rhizobium in legume root nodules fixes atmospheric N₂ into usable ammonia (symbiotic nitrogen fixation)."
+    ],
+    "examples": [
+      "Escherichia coli — rod-shaped, Gram-negative, model organism for genetics.",
+      "Lactobacillus — rod, used in curd/cheese making (lactic acid fermentation).",
+      "Nostoc / Anabaena — cyanobacteria, filamentous, nitrogen-fixing in rice fields.",
+      "Mycoplasma pneumoniae — smallest living cell (no cell wall), causes atypical pneumonia."
+    ],
+    "practiceQuestions": [
+      "Why are bacteria called \"prokaryotes\"?",
+      "Differentiate the four phases of the bacterial growth curve.",
+      "Explain the Gram-staining test and its significance.",
+      "What are the different shapes of bacteria with one example each?",
+      "State the ecological importance of bacteria (decomposition, nitrogen cycle, symbiosis)."
+    ],
+    "formulas": [
+      "Binary fission: 1 cell → 2 identical daughter cells (asexual)",
+      "Growth curve: N(t) = N₀ × 2ⁿ (n = number of generations in log phase)",
+      "Lag → Log → Stationary → Death",
+      "Gram +ve: thick peptidoglycan → retains crystal violet (purple); Gram -ve: thin + LPS → pink (safranin)"
+    ],
+    "keyPoints": [
+      "Monera = prokaryotic: no true nucleus, 70S ribosomes, circular DNA.",
+      "Shapes: cocci, bacilli, spirilla; arrangements: diplo-, strepto-, staphylo-.",
+      "Nutrition: autotrophic (photo/chemo) + heterotrophic (saprophytes, parasites).",
+      "Growth curve: lag, log, stationary, death.",
+      "Binary fission = asexual reproduction; conjugation/transformation/transduction = genetic exchange.",
+      "Cyanobacteria: photosynthetic + nitrogen-fixing (Nostoc, Anabaena).",
+      "Gram stain: +ve (purple, thick wall) vs -ve (pink, thin wall + LPS)."
+    ],
+    "summary": "Kingdom Monera comprises prokaryotic organisms: bacteria, cyanobacteria, mycoplasma, and archaebacteria. Bacteria show diverse shapes, nutrition, and reproduction (binary fission + genetic exchange). The growth curve (lag, log, stationary, death) and Gram staining are fundamental microbiology tools. Cyanobacteria fix nitrogen and photosynthesise. Bacteria are ecologically indispensable as decomposers, nitrogen fixers, and symbionts, and economically vital in food, industry, and medicine.",
+    "specialNotes": [
+      "NEB expects a labelled bacterium diagram plus the growth curve.",
+      "Gram-staining differentiation (+ve vs -ve) is a very common short-answer.",
+      "Cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role are frequently asked.",
+      "Mention Mycoplasma as the smallest living cell and its lack of a cell wall."
+    ],
+    "importantStatements": [
+      "Bacteria are the oldest and most abundant life forms on Earth.",
+      "Binary fission is the primary mode of asexual reproduction in bacteria.",
+      "Cyanobacteria are photosynthetic prokaryotes that fix atmospheric nitrogen.",
+      "Gram staining differentiates bacteria into two major groups based on cell wall structure."
+    ],
+    "importantNotes": [
+      "Memorise bacterial shapes and arrangements with examples.",
+      "Learn the 4 phases of the bacterial growth curve.",
+      "Draw and label a bacterium from memory.",
+      "Explain Gram-staining and its clinical significance.",
+      "List ecological and economic importance of bacteria."
+    ],
+    "examShortTricks": [
+      "Monera = M-O-N (Micro, Osmotic, No nucleus).",
+      "Shapes: Cocci = round; Bacilli = rod; Spirilla = spiral.",
+      "Gram +ve = thick wall = purple; Gram -ve = thin + LPS = pink.",
+      "Mycoplasma = no wall = smallest living cell."
+    ],
+    "examNotes": [
+      "Draw and label a typical bacterium — very common.",
+      "Describe the bacterial growth curve (4 phases).",
+      "Explain Gram-staining and differentiate +ve and -ve.",
+      "Tabulate bacterial shapes and arrangements.",
+      "State ecological and economic importance of bacteria (5 points).",
+      "Explain the role of cyanobacteria in nitrogen fixation."
+    ],
+    "mcs": [
+      {
+        "question": "The smallest known living cell is:",
+        "options": [
+          "E. coli",
+          "Mycoplasma",
+          "Nostoc",
+          "Lactobacillus"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The cell wall of most bacteria is made of:",
+        "options": [
+          "Cellulose",
+          "Chitin",
+          "Peptidoglycan",
+          "Silica"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Gram-positive bacteria appear what colour after Gram staining?",
+        "options": [
+          "Pink",
+          "Purple",
+          "Green",
+          "Yellow"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The primary asexual reproduction method in bacteria is:",
+        "options": [
+          "Conjugation",
+          "Binary fission",
+          "Transformation",
+          "Transduction"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Prokaryotic cell structure",
+      "Bacterial shapes",
+      "Nutrition modes",
+      "Growth curve",
+      "Binary fission",
+      "Genetic exchange",
+      "Cyanobacteria",
+      "Gram staining"
+    ],
+    "importantTasks": [
+      "Label a bacterium",
+      "Draw the growth curve",
+      "Explain Gram staining",
+      "Tabulate shapes and arrangements",
+      "List ecological importance"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A bacterial culture starts with 100 cells. If each cell divides every 20 minutes, how many cells are there after 1 hour?",
+        "steps": [
+          "1 hour = 60 min = 3 divisions",
+          "N = N₀ × 2ⁿ",
+          "N = 100 × 2³ = 100 × 8"
+        ],
+        "answer": "800 cells"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "BacteriumViewer",
+      "desc": "Rotatable 3D bacterium with capsule, cell wall, plasma membrane, nucleoid, ribosomes, and flagellum; includes a Gram-stain animation."
+    }
   },
-  "visualType": "bacterial-cell-structure"
+  "originalContent": {
+    "notes": [
+      "Kingdom Monera: prokaryotic organisms (no membrane-bound nucleus); includes bacteria, cyanobacteria (blue-green algae), mycoplasma, and archaebacteria.",
+      "Bacterial cell: capsule (slime layer) → cell wall (peptidoglycan) → plasma membrane → cytoplasm; 70S ribosomes; naked circular DNA (nucleoid); may have pili, fimbriae, flagella, mesosomes.",
+      "Shapes: cocci (spherical), bacilli (rod), spirilla/spirochaetes (spiral). Arrangements: diplococci, streptococci, staphylococci.",
+      "Mode of nutrition: autotrophic (photoautotrophs, chemoautotrophs) and heterotrophic (saprophytes, parasites).",
+      "Bacterial growth: lag → log (exponential) → stationary → death phases; reproduction by binary fission (asexual) and by conjugation/transformation/transduction (genetic exchange).",
+      "Cyanobacteria: blue-green algae; photosynthetic; Nostoc, Anabaena (fix atmospheric nitrogen); important in rice paddies as biofertilisers.",
+      "Gram staining: Gram-positive (thick peptidoglycan, purple) vs Gram-negative (thin peptidoglycan + outer membrane, pink)."
+    ],
+    "confusion": [
+      "Bacteria are prokaryotic: they have no true nucleus and no membrane-bound organelles.",
+      "Cyanobacteria are bacteria (prokaryotes), NOT algae; they fix nitrogen but are not \"true\" algae.",
+      "Mycoplasma lacks a cell wall; it is the smallest known living cell.",
+      "Archaea differ from Bacteria in cell wall (no peptidoglycan) and membrane lipids; they live in extreme environments.",
+      "Binary fission produces two genetically identical daughter cells; conjugation transfers DNA but does not increase cell number.",
+      "Gram-positive bacteria have a THICK peptidoglycan layer; Gram-negative have a THIN layer plus an outer LPS membrane (more resistant to many antibiotics)."
+    ],
+    "practice": [
+      "Draw and label a typical bacterium (capsule, wall, membrane, cytoplasm, nucleoid, ribosomes, flagellum, pili).",
+      "Describe the bacterial growth curve (4 phases).",
+      "Explain the Gram-staining procedure and differentiate Gram +ve and -ve.",
+      "Tabulate the three modes of bacterial nutrition with examples.",
+      "State the economic and ecological importance of bacteria (5 points)."
+    ],
+    "universalFacts": [
+      "Bacteria are the oldest life form on Earth (~3.5 billion years).",
+      "A single bacterial cell can divide in ~20 minutes under optimal conditions (E. coli).",
+      "More than 99% of the organisms on Earth are prokaryotes.",
+      "Rhizobium in legume root nodules fixes atmospheric N₂ into usable ammonia (symbiotic nitrogen fixation)."
+    ],
+    "examples": [
+      "Escherichia coli — rod-shaped, Gram-negative, model organism for genetics.",
+      "Lactobacillus — rod, used in curd/cheese making (lactic acid fermentation).",
+      "Nostoc / Anabaena — cyanobacteria, filamentous, nitrogen-fixing in rice fields.",
+      "Mycoplasma pneumoniae — smallest living cell (no cell wall), causes atypical pneumonia."
+    ],
+    "practiceQuestions": [
+      "Why are bacteria called \"prokaryotes\"?",
+      "Differentiate the four phases of the bacterial growth curve.",
+      "Explain the Gram-staining test and its significance.",
+      "What are the different shapes of bacteria with one example each?",
+      "State the ecological importance of bacteria (decomposition, nitrogen cycle, symbiosis)."
+    ],
+    "formulas": [
+      "Binary fission: 1 cell → 2 identical daughter cells (asexual)",
+      "Growth curve: N(t) = N₀ × 2ⁿ (n = number of generations in log phase)",
+      "Lag → Log → Stationary → Death",
+      "Gram +ve: thick peptidoglycan → retains crystal violet (purple); Gram -ve: thin + LPS → pink (safranin)"
+    ],
+    "keyPoints": [
+      "Monera = prokaryotic: no true nucleus, 70S ribosomes, circular DNA.",
+      "Shapes: cocci, bacilli, spirilla; arrangements: diplo-, strepto-, staphylo-.",
+      "Nutrition: autotrophic (photo/chemo) + heterotrophic (saprophytes, parasites).",
+      "Growth curve: lag, log, stationary, death.",
+      "Binary fission = asexual reproduction; conjugation/transformation/transduction = genetic exchange.",
+      "Cyanobacteria: photosynthetic + nitrogen-fixing (Nostoc, Anabaena).",
+      "Gram stain: +ve (purple, thick wall) vs -ve (pink, thin wall + LPS)."
+    ],
+    "summary": "Kingdom Monera comprises prokaryotic organisms: bacteria, cyanobacteria, mycoplasma, and archaebacteria. Bacteria show diverse shapes, nutrition, and reproduction (binary fission + genetic exchange). The growth curve (lag, log, stationary, death) and Gram staining are fundamental microbiology tools. Cyanobacteria fix nitrogen and photosynthesise. Bacteria are ecologically indispensable as decomposers, nitrogen fixers, and symbionts, and economically vital in food, industry, and medicine.",
+    "specialNotes": [
+      "NEB expects a labelled bacterium diagram plus the growth curve.",
+      "Gram-staining differentiation (+ve vs -ve) is a very common short-answer.",
+      "Cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role are frequently asked.",
+      "Mention Mycoplasma as the smallest living cell and its lack of a cell wall."
+    ],
+    "importantStatements": [
+      "Bacteria are the oldest and most abundant life forms on Earth.",
+      "Binary fission is the primary mode of asexual reproduction in bacteria.",
+      "Cyanobacteria are photosynthetic prokaryotes that fix atmospheric nitrogen.",
+      "Gram staining differentiates bacteria into two major groups based on cell wall structure."
+    ],
+    "importantNotes": [
+      "Memorise bacterial shapes and arrangements with examples.",
+      "Learn the 4 phases of the bacterial growth curve.",
+      "Draw and label a bacterium from memory.",
+      "Explain Gram-staining and its clinical significance.",
+      "List ecological and economic importance of bacteria."
+    ],
+    "examShortTricks": [
+      "Monera = M-O-N (Micro, Osmotic, No nucleus).",
+      "Shapes: Cocci = round; Bacilli = rod; Spirilla = spiral.",
+      "Gram +ve = thick wall = purple; Gram -ve = thin + LPS = pink.",
+      "Mycoplasma = no wall = smallest living cell."
+    ],
+    "examNotes": [
+      "Draw and label a typical bacterium — very common.",
+      "Describe the bacterial growth curve (4 phases).",
+      "Explain Gram-staining and differentiate +ve and -ve.",
+      "Tabulate bacterial shapes and arrangements.",
+      "State ecological and economic importance of bacteria (5 points).",
+      "Explain the role of cyanobacteria in nitrogen fixation."
+    ],
+    "mcs": [
+      {
+        "question": "The smallest known living cell is:",
+        "options": [
+          "E. coli",
+          "Mycoplasma",
+          "Nostoc",
+          "Lactobacillus"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The cell wall of most bacteria is made of:",
+        "options": [
+          "Cellulose",
+          "Chitin",
+          "Peptidoglycan",
+          "Silica"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Gram-positive bacteria appear what colour after Gram staining?",
+        "options": [
+          "Pink",
+          "Purple",
+          "Green",
+          "Yellow"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The primary asexual reproduction method in bacteria is:",
+        "options": [
+          "Conjugation",
+          "Binary fission",
+          "Transformation",
+          "Transduction"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Prokaryotic cell structure",
+      "Bacterial shapes",
+      "Nutrition modes",
+      "Growth curve",
+      "Binary fission",
+      "Genetic exchange",
+      "Cyanobacteria",
+      "Gram staining"
+    ],
+    "importantTasks": [
+      "Label a bacterium",
+      "Draw the growth curve",
+      "Explain Gram staining",
+      "Tabulate shapes and arrangements",
+      "List ecological importance"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A bacterial culture starts with 100 cells. If each cell divides every 20 minutes, how many cells are there after 1 hour?",
+        "steps": [
+          "1 hour = 60 min = 3 divisions",
+          "N = N₀ × 2ⁿ",
+          "N = 100 × 2³ = 100 × 8"
+        ],
+        "answer": "800 cells"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "BacteriumViewer",
+      "desc": "Rotatable 3D bacterium with capsule, cell wall, plasma membrane, nucleoid, ribosomes, and flagellum; includes a Gram-stain animation."
+    }
+  },
+  "notes": [
+    "Kingdom Monera: prokaryotic organisms (no membrane-bound nucleus); includes bacteria, cyanobacteria (blue-green algae), mycoplasma, and archaebacteria.",
+    "Bacterial cell: capsule (slime layer) → cell wall (peptidoglycan) → plasma membrane → cytoplasm; 70S ribosomes; naked circular DNA (nucleoid); may have pili, fimbriae, flagella, mesosomes.",
+    "Shapes: cocci (spherical), bacilli (rod), spirilla/spirochaetes (spiral). Arrangements: diplococci, streptococci, staphylococci.",
+    "Mode of nutrition: autotrophic (photoautotrophs, chemoautotrophs) and heterotrophic (saprophytes, parasites).",
+    "Bacterial growth: lag → log (exponential) → stationary → death phases; reproduction by binary fission (asexual) and by conjugation/transformation/transduction (genetic exchange).",
+    "Cyanobacteria: blue-green algae; photosynthetic; Nostoc, Anabaena (fix atmospheric nitrogen); important in rice paddies as biofertilisers.",
+    "Gram staining: Gram-positive (thick peptidoglycan, purple) vs Gram-negative (thin peptidoglycan + outer membrane, pink)."
+  ],
+  "confusion": [
+    "Bacteria are prokaryotic: they have no true nucleus and no membrane-bound organelles.",
+    "Cyanobacteria are bacteria (prokaryotes), NOT algae; they fix nitrogen but are not \"true\" algae.",
+    "Mycoplasma lacks a cell wall; it is the smallest known living cell.",
+    "Archaea differ from Bacteria in cell wall (no peptidoglycan) and membrane lipids; they live in extreme environments.",
+    "Binary fission produces two genetically identical daughter cells; conjugation transfers DNA but does not increase cell number.",
+    "Gram-positive bacteria have a THICK peptidoglycan layer; Gram-negative have a THIN layer plus an outer LPS membrane (more resistant to many antibiotics)."
+  ],
+  "practice": [
+    "Draw and label a typical bacterium (capsule, wall, membrane, cytoplasm, nucleoid, ribosomes, flagellum, pili).",
+    "Describe the bacterial growth curve (4 phases).",
+    "Explain the Gram-staining procedure and differentiate Gram +ve and -ve.",
+    "Tabulate the three modes of bacterial nutrition with examples.",
+    "State the economic and ecological importance of bacteria (5 points)."
+  ],
+  "universalFacts": [
+    "Bacteria are the oldest life form on Earth (~3.5 billion years).",
+    "A single bacterial cell can divide in ~20 minutes under optimal conditions (E. coli).",
+    "More than 99% of the organisms on Earth are prokaryotes.",
+    "Rhizobium in legume root nodules fixes atmospheric N₂ into usable ammonia (symbiotic nitrogen fixation)."
+  ],
+  "examples": [
+    "Escherichia coli — rod-shaped, Gram-negative, model organism for genetics.",
+    "Lactobacillus — rod, used in curd/cheese making (lactic acid fermentation).",
+    "Nostoc / Anabaena — cyanobacteria, filamentous, nitrogen-fixing in rice fields.",
+    "Mycoplasma pneumoniae — smallest living cell (no cell wall), causes atypical pneumonia."
+  ],
+  "practiceQuestions": [
+    "Why are bacteria called \"prokaryotes\"?",
+    "Differentiate the four phases of the bacterial growth curve.",
+    "Explain the Gram-staining test and its significance.",
+    "What are the different shapes of bacteria with one example each?",
+    "State the ecological importance of bacteria (decomposition, nitrogen cycle, symbiosis)."
+  ],
+  "formulas": [
+    "Binary fission: 1 cell → 2 identical daughter cells (asexual)",
+    "Growth curve: N(t) = N₀ × 2ⁿ (n = number of generations in log phase)",
+    "Lag → Log → Stationary → Death",
+    "Gram +ve: thick peptidoglycan → retains crystal violet (purple); Gram -ve: thin + LPS → pink (safranin)"
+  ],
+  "keyPoints": [
+    "Monera = prokaryotic: no true nucleus, 70S ribosomes, circular DNA.",
+    "Shapes: cocci, bacilli, spirilla; arrangements: diplo-, strepto-, staphylo-.",
+    "Nutrition: autotrophic (photo/chemo) + heterotrophic (saprophytes, parasites).",
+    "Growth curve: lag, log, stationary, death.",
+    "Binary fission = asexual reproduction; conjugation/transformation/transduction = genetic exchange.",
+    "Cyanobacteria: photosynthetic + nitrogen-fixing (Nostoc, Anabaena).",
+    "Gram stain: +ve (purple, thick wall) vs -ve (pink, thin wall + LPS)."
+  ],
+  "summary": "Kingdom Monera comprises prokaryotic organisms: bacteria, cyanobacteria, mycoplasma, and archaebacteria. Bacteria show diverse shapes, nutrition, and reproduction (binary fission + genetic exchange). The growth curve (lag, log, stationary, death) and Gram staining are fundamental microbiology tools. Cyanobacteria fix nitrogen and photosynthesise. Bacteria are ecologically indispensable as decomposers, nitrogen fixers, and symbionts, and economically vital in food, industry, and medicine.",
+  "specialNotes": [
+    "NEB expects a labelled bacterium diagram plus the growth curve.",
+    "Gram-staining differentiation (+ve vs -ve) is a very common short-answer.",
+    "Cyanobacteria (Nostoc, Anabaena) and their nitrogen-fixing role are frequently asked.",
+    "Mention Mycoplasma as the smallest living cell and its lack of a cell wall."
+  ],
+  "importantStatements": [
+    "Bacteria are the oldest and most abundant life forms on Earth.",
+    "Binary fission is the primary mode of asexual reproduction in bacteria.",
+    "Cyanobacteria are photosynthetic prokaryotes that fix atmospheric nitrogen.",
+    "Gram staining differentiates bacteria into two major groups based on cell wall structure."
+  ],
+  "importantNotes": [
+    "Memorise bacterial shapes and arrangements with examples.",
+    "Learn the 4 phases of the bacterial growth curve.",
+    "Draw and label a bacterium from memory.",
+    "Explain Gram-staining and its clinical significance.",
+    "List ecological and economic importance of bacteria."
+  ],
+  "examShortTricks": [
+    "Monera = M-O-N (Micro, Osmotic, No nucleus).",
+    "Shapes: Cocci = round; Bacilli = rod; Spirilla = spiral.",
+    "Gram +ve = thick wall = purple; Gram -ve = thin + LPS = pink.",
+    "Mycoplasma = no wall = smallest living cell."
+  ],
+  "examNotes": [
+    "Draw and label a typical bacterium — very common.",
+    "Describe the bacterial growth curve (4 phases).",
+    "Explain Gram-staining and differentiate +ve and -ve.",
+    "Tabulate bacterial shapes and arrangements.",
+    "State ecological and economic importance of bacteria (5 points).",
+    "Explain the role of cyanobacteria in nitrogen fixation."
+  ],
+  "mcs": [
+    {
+      "question": "The smallest known living cell is:",
+      "options": [
+        "E. coli",
+        "Mycoplasma",
+        "Nostoc",
+        "Lactobacillus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The cell wall of most bacteria is made of:",
+      "options": [
+        "Cellulose",
+        "Chitin",
+        "Peptidoglycan",
+        "Silica"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Gram-positive bacteria appear what colour after Gram staining?",
+      "options": [
+        "Pink",
+        "Purple",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The primary asexual reproduction method in bacteria is:",
+      "options": [
+        "Conjugation",
+        "Binary fission",
+        "Transformation",
+        "Transduction"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Prokaryotic cell structure",
+    "Bacterial shapes",
+    "Nutrition modes",
+    "Growth curve",
+    "Binary fission",
+    "Genetic exchange",
+    "Cyanobacteria",
+    "Gram staining"
+  ],
+  "importantTasks": [
+    "Label a bacterium",
+    "Draw the growth curve",
+    "Explain Gram staining",
+    "Tabulate shapes and arrangements",
+    "List ecological importance"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A bacterial culture starts with 100 cells. If each cell divides every 20 minutes, how many cells are there after 1 hour?",
+      "steps": [
+        "1 hour = 60 min = 3 divisions",
+        "N = N₀ × 2ⁿ",
+        "N = 100 × 2³ = 100 × 8"
+      ],
+      "answer": "800 cells"
+    }
+  ]
 }

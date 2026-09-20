@@ -17,8 +17,17 @@ import {
   FlaskConical,
   Binary,
   RotateCcw,
+  Loader2,
 } from "lucide-react";
-import { chat, guestChat } from "@/lib/api/ai";
+import {
+  chat,
+  guestChat,
+  getChatHistory,
+  saveChatHistory,
+  clearChatHistory,
+  enhancePrompt,
+  type ChatHistoryMessage,
+} from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -96,6 +105,9 @@ export function AIChatInterface() {
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [guestCredits, setGuestCredits] = useState<number>(50);
+  const [restoredCount, setRestoredCount] = useState<number | null>(null);
+  const [enhancing, setEnhancing] = useState(false);
+  const historyLoadedRef = useRef(false);
 
   const chatBottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -106,7 +118,24 @@ export function AIChatInterface() {
   useEffect(() => {
     if (!isLoggedIn) {
       setGuestCredits(getGuestCredits());
+      return;
     }
+    // Signed in: restore the user's persisted conversation once per mount.
+    if (historyLoadedRef.current) return;
+    historyLoadedRef.current = true;
+    getChatHistory("default", 200)
+      .then(({ messages }) => {
+        if (!messages.length) return;
+        const restored: AIChatMessage[] = messages.map((m: ChatHistoryMessage) => ({
+          role: m.role,
+          content: m.content,
+        }));
+        setMessages((prev) => [...prev, ...restored]);
+        setRestoredCount(restored.length);
+      })
+      .catch(() => {
+        // history unavailable (not migrated / offline) — fresh chat is fine
+      });
   }, [isLoggedIn]);
 
   useEffect(() => {
@@ -130,11 +159,15 @@ export function AIChatInterface() {
 
     try {
       if (isLoggedIn) {
-        const res = await chat([...messages, userMsg], "agnes");
+        const res = await chat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
+        saveChatHistory("default", [
+          { role: "user", content: textToSend },
+          { role: "assistant", content: res.response },
+        ]).catch(() => {});
       } else {
-        const res = await guestChat([...messages, userMsg], "agnes");
+        const res = await guestChat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
         const newCredits = res.remaining ?? Math.max(0, getGuestCredits() - 2);
@@ -165,8 +198,23 @@ export function AIChatInterface() {
     }
   };
 
-  const handleCopy = (content: string, index: number) => {
-    navigator.clipboard.writeText(content);
+  const handleCopy = async (content: string, index: number) => {
+    try {
+      await navigator.clipboard.writeText(content);
+    } catch {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = content;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch {
+        console.warn("Clipboard copy unavailable");
+      }
+    }
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
   };
@@ -174,6 +222,25 @@ export function AIChatInterface() {
   const clearChat = () => {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
+    setRestoredCount(null);
+    if (isLoggedIn) clearChatHistory("default").catch(() => {});
+  };
+
+  /** Rewrite the drafted prompt into a sharper study question before sending. */
+  const handleEnhance = async () => {
+    const text = input.trim();
+    if (!text || sending || enhancing) return;
+    setEnhancing(true);
+    setError(null);
+    try {
+      const { prompt } = await enhancePrompt(text);
+      if (prompt) setInput(prompt);
+    } catch {
+      setError("Could not enhance right now — your original prompt is kept.");
+    } finally {
+      setEnhancing(false);
+      inputRef.current?.focus();
+    }
   };
 
   const displayMessages = messages.filter((m) => m.role !== "system");
@@ -353,6 +420,14 @@ export function AIChatInterface() {
           </div>
         )}
 
+        {restoredCount !== null && restoredCount > 0 && (
+          <div className="flex justify-center">
+            <span className="rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground">
+              Restored {restoredCount} earlier message{restoredCount === 1 ? "" : "s"} from your history
+            </span>
+          </div>
+        )}
+
         <div ref={chatBottomRef} />
       </div>
 
@@ -374,6 +449,19 @@ export function AIChatInterface() {
             className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
           />
 
+          <button
+            onClick={handleEnhance}
+            disabled={!input.trim() || sending || enhancing || isGuestLimited}
+            className="h-11 w-11 rounded-2xl border border-primary/40 bg-primary/10 text-primary font-semibold flex items-center justify-center hover:bg-primary/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+            title="Enhance my prompt — rewrite it into a sharper study question"
+            aria-label="Enhance prompt"
+          >
+            {enhancing ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Sparkles className="h-4 w-4" />
+            )}
+          </button>
           <button
             onClick={() => handleSend()}
             disabled={!input.trim() || sending || isGuestLimited}

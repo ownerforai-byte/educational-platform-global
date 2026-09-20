@@ -4,80 +4,560 @@
   "topicSlug": "angiosperms",
   "topicTitle": "Angiosperms",
   "relevance": 100,
-  "notes": [
-    "Detailed notes on 07 angiosperms within the floral diversity unit."
-  ],
-  "confusion": [
-    "❌ Misconception about 07 angiosperms. ✅ Scientific explanation."
-  ],
-  "practice": [
-    "Practice exercise for 07 angiosperms."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 07 angiosperms."
-  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 07 angiosperms."
-  ],
-  "practiceQuestions": [
-    "Practice question for 07 angiosperms."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 07 angiosperms)"
-  ],
-  "keyPoints": [
-    "Core point for 07 angiosperms."
-  ],
-  "summary": "Summary of 07 angiosperms.",
-  "specialNotes": [
-    "Specialized insight for 07 angiosperms."
-  ],
-  "importantStatements": [
-    "Key statement for 07 angiosperms."
-  ],
-  "importantNotes": [
-    "Important note regarding 07 angiosperms."
-  ],
-  "examShortTricks": [
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Angiosperms."
-  ],
-  "examNotes": [
-    "Angiosperms is frequently tested.",
-    "Practice writing detailed answers."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 07 angiosperms?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 07 angiosperms."
-  ],
-  "importantTasks": [
-    "Task for studying 07 angiosperms."
-  ],
   "duplicateType": 2,
   "tabGroup": "07-angiosperms",
   "mcqs": [
     {
-      "question": "Question about 07 angiosperms?",
+      "question": "The female reproductive part of an angiosperm flower is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Stamen",
+        "Carpel (pistil)",
+        "Petal",
+        "Sepal"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "Which family is characterised by a four-petaled, cross-shaped flower?",
+      "options": [
+        "Fabaceae",
+        "Solanaceae",
+        "Brassicaceae",
+        "Liliaceae"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Monocots have:",
+      "options": [
+        "Taproot",
+        "Net venation",
+        "Parallel venation",
+        "4-petaled flowers"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The zygomorphic (bilaterally symmetric) flower is characteristic of:",
+      "options": [
+        "Brassicaceae",
+        "Fabaceae",
+        "Solanaceae",
+        "Liliaceae"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "flower-anatomy-diagram",
+  "enrichedContent": {
+    "notes": [
+      "Angiosperms (flowering plants): seeds enclosed in a fruit; include ~90% of all plant species; the most diverse and successful plant group.",
+      "Flower structure: perianth (sepals + petals), androecium (stamens: anther + filament), gynoecium/pistil (carpel: ovary + style + stigma).",
+      "Root: taproot (dicots) or fibrous (monocots); functions: absorption, anchorage, storage.",
+      "Stem: herbaceous (soft) or woody (hard); functions: support, transport (xylem up, phloem down).",
+      "Leaf: blade + petiole; venation (pinnate, palmate, parallel); stomata for gas exchange.",
+      "Inflorescence: arrangement of flowers on a peduncle (raceme, corymb, umbel, spike, capitulum).",
+      "Fruit: mature ovary; types: simple (pea, apple), aggregate (raspberry), multiple (pineapple).",
+      "Taxonomic hierarchy: Division > Class > Order > Family > Genus > Species.",
+      "NEB families: Brassicaceae (mustard, cabbage — 4 petals, cross shape), Fabaceae (pea, bean — zygomorphic, pod), Solanaceae (tomato, potato — 5 petals, bell shape), Liliaceae (tulip, onion — 6 tepals, monocot).",
+      "Classification systems: Artificial (Linnaeus — based on few characters), Natural (De Candolle, Bentham & Hooker — based on many characters), Phylogenetic (Engler, Takhtajan — based on evolutionary relationships)."
+    ],
+    "confusion": [
+      "Angiosperms produce BOTH seeds AND fruits; gymnosperms produce seeds only (no fruit).",
+      "Monocots have parallel venation, fibrous roots, and 3-parted flowers; dicots have net venation, taproots, and 4-or-5-parted flowers.",
+      "The carpel (gynoecium) is the female part of the flower; the stamen is the male part.",
+      "Brassicaceae flowers have 4 petals in a cross shape (cruciform); Solanaceae have 5 petals (rotate-symmetric).",
+      "Fabaceae flowers are zygomorphic (bilaterally symmetric); most other angiosperm flowers are actinomorphic (radially symmetric).",
+      "An inflorescence is the arrangement of flowers; it is NOT a single flower."
+    ],
+    "practice": [
+      "Draw and label a complete angiosperm flower (all parts: sepal, petal, stamen, carpel, ovule).",
+      "Tabulate the four NEB families: common name, flower symmetry, petal number, fruit type, example.",
+      "Differentiate monocot from dicot (5 points).",
+      "Describe the taxonomic hierarchy of Oryza sativa (rice).",
+      "Explain the economic importance of Brassicaceae, Fabaceae, Solanaceae, and Liliaceae."
+    ],
+    "universalFacts": [
+      "Angiosperms are the most species-rich plant group: ~300,000 species worldwide.",
+      "Rice (Oryza sativa) is the most important food crop in Nepal; it belongs to family Poaceae.",
+      "The family Brassicaceae includes both edible vegetables (cabbage, broccoli) and oil crops (mustard).",
+      "Fabaceae (legumes) fix atmospheric nitrogen via root-nodule bacteria (Rhizobium), enriching soil fertility."
+    ],
+    "examples": [
+      "Oryza sativa — rice; monocot; family Poaceae; staple food of Nepal.",
+      "Brassica juncea — mustard; dicot; family Brassicaceae; oil and vegetable crop.",
+      "Pisum sativum — pea; dicot; family Fabaceae; nitrogen-fixing legume.",
+      "Solanum tuberosum — potato; dicot; family Solanaceae; tuber crop.",
+      "Lilium — tulip/lily; monocot; family Liliaceae; ornamental."
+    ],
+    "practiceQuestions": [
+      "Differentiate monocot and dicot plants (5 points).",
+      "Describe the structure of a complete angiosperm flower with a labelled diagram.",
+      "Tabulate the four NEB angiosperm families with their diagnostic features.",
+      "Explain the economic importance of each of the four NEB families.",
+      "Describe the taxonomic hierarchy of a Nepali plant (e.g., Oryza sativa or Brassica juncea)."
+    ],
+    "formulas": [
+      "Flower parts: Sepal (protection) + Petal (attraction) + Stamen (male: anther + filament) + Carpel (female: ovary + style + stigma)",
+      "Fruit types: Simple, Aggregate, Multiple",
+      "Monocot: fibrous root, parallel venation, 3-parted flower, one cotyledon",
+      "Dicot: taproot, net venation, 4/5-parted flower, two cotyledons"
+    ],
+    "keyPoints": [
+      "Angiosperms: seeds enclosed in fruit; ~300,000 species.",
+      "Flower: sepal + petal + stamen (male) + carpel (female).",
+      "Monocots vs dicots: root, venation, flower parts, cotyledon number.",
+      "NEB families: Brassicaceae (4 petals), Fabaceae (zygomorphic), Solanaceae (5 petals), Liliaceae (6 tepals).",
+      "Taxonomic hierarchy: Division > Class > Order > Family > Genus > Species.",
+      "Classification systems: Artificial, Natural, Phylogenetic."
+    ],
+    "summary": "Angiosperms are the most diverse and successful plant group, with seeds enclosed in fruits. The flower is the reproductive organ, consisting of sepals, petals, stamens (male), and carpels (female). Monocots and dicots differ in root type, leaf venation, flower structure, and cotyledon number. NEB focuses on four families — Brassicaceae, Fabaceae, Solanaceae, and Liliaceae — and their economic importance. The taxonomic hierarchy and classification systems (artificial, natural, phylogenetic) complete the angiosperm unit.",
+    "specialNotes": [
+      "NEB expects a detailed, labelled diagram of a complete angiosperm flower.",
+      "The four NEB families (Brassicaceae, Fabaceae, Solanaceae, Liliaceae) must be tabulated with diagnostic features.",
+      "Monocot vs dicot differentiation is a very frequent short-answer.",
+      "Economic importance of each family is a common application question.",
+      "Taxonomic hierarchy questions: know the ranks and give a plant example."
+    ],
+    "importantStatements": [
+      "Angiosperms are the most species-rich and ecologically dominant plant group.",
+      "The flower is the reproductive structure unique to angiosperms.",
+      "Monocots and dicots are the two major classes of angiosperms.",
+      "The family Brassicaceae is characterised by a four-petaled, cross-shaped (cruciform) flower."
+    ],
+    "importantNotes": [
+      "Memorise the structure of a complete flower (all 4 whorls).",
+      "Learn the diagnostic features of the 4 NEB families (petal number, symmetry, fruit type).",
+      "Differentiate monocot from dicot (5 points).",
+      "Practice writing the taxonomic hierarchy of Oryza sativa and Brassica juncea.",
+      "List economic importance of each NEB family."
+    ],
+    "examShortTricks": [
+      "Flower = S-P-S-C (Sepal, Petal, Stamen, Carpel).",
+      "Brassicaceae = 4 petals (cross); Fabaceae = pea-shape (zygomorphic); Solanaceae = 5 petals; Liliaceae = 6 tepals.",
+      "Monocot = 1 cotyledon + parallel veins + fibrous root.",
+      "Dicot = 2 cotyledons + net veins + taproot."
+    ],
+    "examNotes": [
+      "Draw and label a complete angiosperm flower — very common.",
+      "Tabulate 4 NEB families (symmetry, petal number, fruit type, example).",
+      "Differentiate monocot from dicot (5 points).",
+      "Describe the taxonomic hierarchy of a Nepali plant.",
+      "Explain the economic importance of each NEB family.",
+      "Describe the classification systems (artificial, natural, phylogenetic)."
+    ],
+    "mcs": [
+      {
+        "question": "The female reproductive part of an angiosperm flower is:",
+        "options": [
+          "Stamen",
+          "Carpel (pistil)",
+          "Petal",
+          "Sepal"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which family is characterised by a four-petaled, cross-shaped flower?",
+        "options": [
+          "Fabaceae",
+          "Solanaceae",
+          "Brassicaceae",
+          "Liliaceae"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Monocots have:",
+        "options": [
+          "Taproot",
+          "Net venation",
+          "Parallel venation",
+          "4-petaled flowers"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The zygomorphic (bilaterally symmetric) flower is characteristic of:",
+        "options": [
+          "Brassicaceae",
+          "Fabaceae",
+          "Solanaceae",
+          "Liliaceae"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Flower structure (4 whorls)",
+      "Monocot vs dicot",
+      "4 NEB families",
+      "Fruit types",
+      "Taxonomic hierarchy",
+      "Classification systems",
+      "Economic importance"
+    ],
+    "importantTasks": [
+      "Label a complete flower",
+      "Tabulate 4 NEB families",
+      "Differentiate monocot vs dicot",
+      "Write taxonomic hierarchy of Oryza sativa",
+      "List economic importance of each family"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A plant has 5-petaled, actinomorphic flowers, net-veined leaves, and a taproot. Which class and likely family does it belong to?",
+        "steps": [
+          "5-petaled + net venation + taproot → dicot",
+          "Actinomorphic + 5 petals → Solanaceae (or Rubiaceae)"
+        ],
+        "answer": "Dicotyledonae; likely family Solanaceae"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "AngiospermFlowerViewer",
+      "desc": "Rotatable 3D angiosperm flower with all 4 whorls (sepals, petals, stamens, carpel) and a fruit-development animation."
+    }
+  },
+  "originalContent": {
+    "notes": [
+      "Angiosperms (flowering plants): seeds enclosed in a fruit; include ~90% of all plant species; the most diverse and successful plant group.",
+      "Flower structure: perianth (sepals + petals), androecium (stamens: anther + filament), gynoecium/pistil (carpel: ovary + style + stigma).",
+      "Root: taproot (dicots) or fibrous (monocots); functions: absorption, anchorage, storage.",
+      "Stem: herbaceous (soft) or woody (hard); functions: support, transport (xylem up, phloem down).",
+      "Leaf: blade + petiole; venation (pinnate, palmate, parallel); stomata for gas exchange.",
+      "Inflorescence: arrangement of flowers on a peduncle (raceme, corymb, umbel, spike, capitulum).",
+      "Fruit: mature ovary; types: simple (pea, apple), aggregate (raspberry), multiple (pineapple).",
+      "Taxonomic hierarchy: Division > Class > Order > Family > Genus > Species.",
+      "NEB families: Brassicaceae (mustard, cabbage — 4 petals, cross shape), Fabaceae (pea, bean — zygomorphic, pod), Solanaceae (tomato, potato — 5 petals, bell shape), Liliaceae (tulip, onion — 6 tepals, monocot).",
+      "Classification systems: Artificial (Linnaeus — based on few characters), Natural (De Candolle, Bentham & Hooker — based on many characters), Phylogenetic (Engler, Takhtajan — based on evolutionary relationships)."
+    ],
+    "confusion": [
+      "Angiosperms produce BOTH seeds AND fruits; gymnosperms produce seeds only (no fruit).",
+      "Monocots have parallel venation, fibrous roots, and 3-parted flowers; dicots have net venation, taproots, and 4-or-5-parted flowers.",
+      "The carpel (gynoecium) is the female part of the flower; the stamen is the male part.",
+      "Brassicaceae flowers have 4 petals in a cross shape (cruciform); Solanaceae have 5 petals (rotate-symmetric).",
+      "Fabaceae flowers are zygomorphic (bilaterally symmetric); most other angiosperm flowers are actinomorphic (radially symmetric).",
+      "An inflorescence is the arrangement of flowers; it is NOT a single flower."
+    ],
+    "practice": [
+      "Draw and label a complete angiosperm flower (all parts: sepal, petal, stamen, carpel, ovule).",
+      "Tabulate the four NEB families: common name, flower symmetry, petal number, fruit type, example.",
+      "Differentiate monocot from dicot (5 points).",
+      "Describe the taxonomic hierarchy of Oryza sativa (rice).",
+      "Explain the economic importance of Brassicaceae, Fabaceae, Solanaceae, and Liliaceae."
+    ],
+    "universalFacts": [
+      "Angiosperms are the most species-rich plant group: ~300,000 species worldwide.",
+      "Rice (Oryza sativa) is the most important food crop in Nepal; it belongs to family Poaceae.",
+      "The family Brassicaceae includes both edible vegetables (cabbage, broccoli) and oil crops (mustard).",
+      "Fabaceae (legumes) fix atmospheric nitrogen via root-nodule bacteria (Rhizobium), enriching soil fertility."
+    ],
+    "examples": [
+      "Oryza sativa — rice; monocot; family Poaceae; staple food of Nepal.",
+      "Brassica juncea — mustard; dicot; family Brassicaceae; oil and vegetable crop.",
+      "Pisum sativum — pea; dicot; family Fabaceae; nitrogen-fixing legume.",
+      "Solanum tuberosum — potato; dicot; family Solanaceae; tuber crop.",
+      "Lilium — tulip/lily; monocot; family Liliaceae; ornamental."
+    ],
+    "practiceQuestions": [
+      "Differentiate monocot and dicot plants (5 points).",
+      "Describe the structure of a complete angiosperm flower with a labelled diagram.",
+      "Tabulate the four NEB angiosperm families with their diagnostic features.",
+      "Explain the economic importance of each of the four NEB families.",
+      "Describe the taxonomic hierarchy of a Nepali plant (e.g., Oryza sativa or Brassica juncea)."
+    ],
+    "formulas": [
+      "Flower parts: Sepal (protection) + Petal (attraction) + Stamen (male: anther + filament) + Carpel (female: ovary + style + stigma)",
+      "Fruit types: Simple, Aggregate, Multiple",
+      "Monocot: fibrous root, parallel venation, 3-parted flower, one cotyledon",
+      "Dicot: taproot, net venation, 4/5-parted flower, two cotyledons"
+    ],
+    "keyPoints": [
+      "Angiosperms: seeds enclosed in fruit; ~300,000 species.",
+      "Flower: sepal + petal + stamen (male) + carpel (female).",
+      "Monocots vs dicots: root, venation, flower parts, cotyledon number.",
+      "NEB families: Brassicaceae (4 petals), Fabaceae (zygomorphic), Solanaceae (5 petals), Liliaceae (6 tepals).",
+      "Taxonomic hierarchy: Division > Class > Order > Family > Genus > Species.",
+      "Classification systems: Artificial, Natural, Phylogenetic."
+    ],
+    "summary": "Angiosperms are the most diverse and successful plant group, with seeds enclosed in fruits. The flower is the reproductive organ, consisting of sepals, petals, stamens (male), and carpels (female). Monocots and dicots differ in root type, leaf venation, flower structure, and cotyledon number. NEB focuses on four families — Brassicaceae, Fabaceae, Solanaceae, and Liliaceae — and their economic importance. The taxonomic hierarchy and classification systems (artificial, natural, phylogenetic) complete the angiosperm unit.",
+    "specialNotes": [
+      "NEB expects a detailed, labelled diagram of a complete angiosperm flower.",
+      "The four NEB families (Brassicaceae, Fabaceae, Solanaceae, Liliaceae) must be tabulated with diagnostic features.",
+      "Monocot vs dicot differentiation is a very frequent short-answer.",
+      "Economic importance of each family is a common application question.",
+      "Taxonomic hierarchy questions: know the ranks and give a plant example."
+    ],
+    "importantStatements": [
+      "Angiosperms are the most species-rich and ecologically dominant plant group.",
+      "The flower is the reproductive structure unique to angiosperms.",
+      "Monocots and dicots are the two major classes of angiosperms.",
+      "The family Brassicaceae is characterised by a four-petaled, cross-shaped (cruciform) flower."
+    ],
+    "importantNotes": [
+      "Memorise the structure of a complete flower (all 4 whorls).",
+      "Learn the diagnostic features of the 4 NEB families (petal number, symmetry, fruit type).",
+      "Differentiate monocot from dicot (5 points).",
+      "Practice writing the taxonomic hierarchy of Oryza sativa and Brassica juncea.",
+      "List economic importance of each NEB family."
+    ],
+    "examShortTricks": [
+      "Flower = S-P-S-C (Sepal, Petal, Stamen, Carpel).",
+      "Brassicaceae = 4 petals (cross); Fabaceae = pea-shape (zygomorphic); Solanaceae = 5 petals; Liliaceae = 6 tepals.",
+      "Monocot = 1 cotyledon + parallel veins + fibrous root.",
+      "Dicot = 2 cotyledons + net veins + taproot."
+    ],
+    "examNotes": [
+      "Draw and label a complete angiosperm flower — very common.",
+      "Tabulate 4 NEB families (symmetry, petal number, fruit type, example).",
+      "Differentiate monocot from dicot (5 points).",
+      "Describe the taxonomic hierarchy of a Nepali plant.",
+      "Explain the economic importance of each NEB family.",
+      "Describe the classification systems (artificial, natural, phylogenetic)."
+    ],
+    "mcs": [
+      {
+        "question": "The female reproductive part of an angiosperm flower is:",
+        "options": [
+          "Stamen",
+          "Carpel (pistil)",
+          "Petal",
+          "Sepal"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Which family is characterised by a four-petaled, cross-shaped flower?",
+        "options": [
+          "Fabaceae",
+          "Solanaceae",
+          "Brassicaceae",
+          "Liliaceae"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "Monocots have:",
+        "options": [
+          "Taproot",
+          "Net venation",
+          "Parallel venation",
+          "4-petaled flowers"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "The zygomorphic (bilaterally symmetric) flower is characteristic of:",
+        "options": [
+          "Brassicaceae",
+          "Fabaceae",
+          "Solanaceae",
+          "Liliaceae"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Flower structure (4 whorls)",
+      "Monocot vs dicot",
+      "4 NEB families",
+      "Fruit types",
+      "Taxonomic hierarchy",
+      "Classification systems",
+      "Economic importance"
+    ],
+    "importantTasks": [
+      "Label a complete flower",
+      "Tabulate 4 NEB families",
+      "Differentiate monocot vs dicot",
+      "Write taxonomic hierarchy of Oryza sativa",
+      "List economic importance of each family"
+    ],
+    "exercises": [
+      {
+        "id": "1",
+        "question": "A plant has 5-petaled, actinomorphic flowers, net-veined leaves, and a taproot. Which class and likely family does it belong to?",
+        "steps": [
+          "5-petaled + net venation + taproot → dicot",
+          "Actinomorphic + 5 petals → Solanaceae (or Rubiaceae)"
+        ],
+        "answer": "Dicotyledonae; likely family Solanaceae"
+      }
+    ],
+    "visualization": {
+      "type": "3d-model",
+      "component": "AngiospermFlowerViewer",
+      "desc": "Rotatable 3D angiosperm flower with all 4 whorls (sepals, petals, stamens, carpel) and a fruit-development animation."
+    }
+  },
+  "notes": [
+    "Angiosperms (flowering plants): seeds enclosed in a fruit; include ~90% of all plant species; the most diverse and successful plant group.",
+    "Flower structure: perianth (sepals + petals), androecium (stamens: anther + filament), gynoecium/pistil (carpel: ovary + style + stigma).",
+    "Root: taproot (dicots) or fibrous (monocots); functions: absorption, anchorage, storage.",
+    "Stem: herbaceous (soft) or woody (hard); functions: support, transport (xylem up, phloem down).",
+    "Leaf: blade + petiole; venation (pinnate, palmate, parallel); stomata for gas exchange.",
+    "Inflorescence: arrangement of flowers on a peduncle (raceme, corymb, umbel, spike, capitulum).",
+    "Fruit: mature ovary; types: simple (pea, apple), aggregate (raspberry), multiple (pineapple).",
+    "Taxonomic hierarchy: Division > Class > Order > Family > Genus > Species.",
+    "NEB families: Brassicaceae (mustard, cabbage — 4 petals, cross shape), Fabaceae (pea, bean — zygomorphic, pod), Solanaceae (tomato, potato — 5 petals, bell shape), Liliaceae (tulip, onion — 6 tepals, monocot).",
+    "Classification systems: Artificial (Linnaeus — based on few characters), Natural (De Candolle, Bentham & Hooker — based on many characters), Phylogenetic (Engler, Takhtajan — based on evolutionary relationships)."
+  ],
+  "confusion": [
+    "Angiosperms produce BOTH seeds AND fruits; gymnosperms produce seeds only (no fruit).",
+    "Monocots have parallel venation, fibrous roots, and 3-parted flowers; dicots have net venation, taproots, and 4-or-5-parted flowers.",
+    "The carpel (gynoecium) is the female part of the flower; the stamen is the male part.",
+    "Brassicaceae flowers have 4 petals in a cross shape (cruciform); Solanaceae have 5 petals (rotate-symmetric).",
+    "Fabaceae flowers are zygomorphic (bilaterally symmetric); most other angiosperm flowers are actinomorphic (radially symmetric).",
+    "An inflorescence is the arrangement of flowers; it is NOT a single flower."
+  ],
+  "practice": [
+    "Draw and label a complete angiosperm flower (all parts: sepal, petal, stamen, carpel, ovule).",
+    "Tabulate the four NEB families: common name, flower symmetry, petal number, fruit type, example.",
+    "Differentiate monocot from dicot (5 points).",
+    "Describe the taxonomic hierarchy of Oryza sativa (rice).",
+    "Explain the economic importance of Brassicaceae, Fabaceae, Solanaceae, and Liliaceae."
+  ],
+  "universalFacts": [
+    "Angiosperms are the most species-rich plant group: ~300,000 species worldwide.",
+    "Rice (Oryza sativa) is the most important food crop in Nepal; it belongs to family Poaceae.",
+    "The family Brassicaceae includes both edible vegetables (cabbage, broccoli) and oil crops (mustard).",
+    "Fabaceae (legumes) fix atmospheric nitrogen via root-nodule bacteria (Rhizobium), enriching soil fertility."
+  ],
+  "examples": [
+    "Oryza sativa — rice; monocot; family Poaceae; staple food of Nepal.",
+    "Brassica juncea — mustard; dicot; family Brassicaceae; oil and vegetable crop.",
+    "Pisum sativum — pea; dicot; family Fabaceae; nitrogen-fixing legume.",
+    "Solanum tuberosum — potato; dicot; family Solanaceae; tuber crop.",
+    "Lilium — tulip/lily; monocot; family Liliaceae; ornamental."
+  ],
+  "practiceQuestions": [
+    "Differentiate monocot and dicot plants (5 points).",
+    "Describe the structure of a complete angiosperm flower with a labelled diagram.",
+    "Tabulate the four NEB angiosperm families with their diagnostic features.",
+    "Explain the economic importance of each of the four NEB families.",
+    "Describe the taxonomic hierarchy of a Nepali plant (e.g., Oryza sativa or Brassica juncea)."
+  ],
+  "formulas": [
+    "Flower parts: Sepal (protection) + Petal (attraction) + Stamen (male: anther + filament) + Carpel (female: ovary + style + stigma)",
+    "Fruit types: Simple, Aggregate, Multiple",
+    "Monocot: fibrous root, parallel venation, 3-parted flower, one cotyledon",
+    "Dicot: taproot, net venation, 4/5-parted flower, two cotyledons"
+  ],
+  "keyPoints": [
+    "Angiosperms: seeds enclosed in fruit; ~300,000 species.",
+    "Flower: sepal + petal + stamen (male) + carpel (female).",
+    "Monocots vs dicots: root, venation, flower parts, cotyledon number.",
+    "NEB families: Brassicaceae (4 petals), Fabaceae (zygomorphic), Solanaceae (5 petals), Liliaceae (6 tepals).",
+    "Taxonomic hierarchy: Division > Class > Order > Family > Genus > Species.",
+    "Classification systems: Artificial, Natural, Phylogenetic."
+  ],
+  "summary": "Angiosperms are the most diverse and successful plant group, with seeds enclosed in fruits. The flower is the reproductive organ, consisting of sepals, petals, stamens (male), and carpels (female). Monocots and dicots differ in root type, leaf venation, flower structure, and cotyledon number. NEB focuses on four families — Brassicaceae, Fabaceae, Solanaceae, and Liliaceae — and their economic importance. The taxonomic hierarchy and classification systems (artificial, natural, phylogenetic) complete the angiosperm unit.",
+  "specialNotes": [
+    "NEB expects a detailed, labelled diagram of a complete angiosperm flower.",
+    "The four NEB families (Brassicaceae, Fabaceae, Solanaceae, Liliaceae) must be tabulated with diagnostic features.",
+    "Monocot vs dicot differentiation is a very frequent short-answer.",
+    "Economic importance of each family is a common application question.",
+    "Taxonomic hierarchy questions: know the ranks and give a plant example."
+  ],
+  "importantStatements": [
+    "Angiosperms are the most species-rich and ecologically dominant plant group.",
+    "The flower is the reproductive structure unique to angiosperms.",
+    "Monocots and dicots are the two major classes of angiosperms.",
+    "The family Brassicaceae is characterised by a four-petaled, cross-shaped (cruciform) flower."
+  ],
+  "importantNotes": [
+    "Memorise the structure of a complete flower (all 4 whorls).",
+    "Learn the diagnostic features of the 4 NEB families (petal number, symmetry, fruit type).",
+    "Differentiate monocot from dicot (5 points).",
+    "Practice writing the taxonomic hierarchy of Oryza sativa and Brassica juncea.",
+    "List economic importance of each NEB family."
+  ],
+  "examShortTricks": [
+    "Flower = S-P-S-C (Sepal, Petal, Stamen, Carpel).",
+    "Brassicaceae = 4 petals (cross); Fabaceae = pea-shape (zygomorphic); Solanaceae = 5 petals; Liliaceae = 6 tepals.",
+    "Monocot = 1 cotyledon + parallel veins + fibrous root.",
+    "Dicot = 2 cotyledons + net veins + taproot."
+  ],
+  "examNotes": [
+    "Draw and label a complete angiosperm flower — very common.",
+    "Tabulate 4 NEB families (symmetry, petal number, fruit type, example).",
+    "Differentiate monocot from dicot (5 points).",
+    "Describe the taxonomic hierarchy of a Nepali plant.",
+    "Explain the economic importance of each NEB family.",
+    "Describe the classification systems (artificial, natural, phylogenetic)."
+  ],
+  "mcs": [
+    {
+      "question": "The female reproductive part of an angiosperm flower is:",
+      "options": [
+        "Stamen",
+        "Carpel (pistil)",
+        "Petal",
+        "Sepal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which family is characterised by a four-petaled, cross-shaped flower?",
+      "options": [
+        "Fabaceae",
+        "Solanaceae",
+        "Brassicaceae",
+        "Liliaceae"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Monocots have:",
+      "options": [
+        "Taproot",
+        "Net venation",
+        "Parallel venation",
+        "4-petaled flowers"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The zygomorphic (bilaterally symmetric) flower is characteristic of:",
+      "options": [
+        "Brassicaceae",
+        "Fabaceae",
+        "Solanaceae",
+        "Liliaceae"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Flower structure (4 whorls)",
+    "Monocot vs dicot",
+    "4 NEB families",
+    "Fruit types",
+    "Taxonomic hierarchy",
+    "Classification systems",
+    "Economic importance"
+  ],
+  "importantTasks": [
+    "Label a complete flower",
+    "Tabulate 4 NEB families",
+    "Differentiate monocot vs dicot",
+    "Write taxonomic hierarchy of Oryza sativa",
+    "List economic importance of each family"
+  ],
+  "exercises": [
+    {
+      "id": "1",
+      "question": "A plant has 5-petaled, actinomorphic flowers, net-veined leaves, and a taproot. Which class and likely family does it belong to?",
+      "steps": [
+        "5-petaled + net venation + taproot → dicot",
+        "Actinomorphic + 5 petals → Solanaceae (or Rubiaceae)"
+      ],
+      "answer": "Dicotyledonae; likely family Solanaceae"
     }
   ]
 }

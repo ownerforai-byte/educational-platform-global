@@ -18,12 +18,14 @@ import { Button } from "@/components/ui/button";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   disposeThreeScene,
   type ThreeScene,
   clearGroup,
   createThreeScene,
   bindResize,
+  makeVisibilityGate,
   standardMaterial, titleText,
 } from "@/components/lab/three-scene";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
@@ -45,6 +47,8 @@ export const LeesDiscExperiment: React.FC = () => {
   const storeRef = useRef<any>(null);
   const updateRef = useRef<((time: number) => void) | null>(null);
   const tsRef = useRef<ThreeScene | null>(null);
+  const leaderLayerRef = useRef<any>(null);
+  const revealBarRef = useRef<(() => void) | null>(null);
   const [webGL] = useState(() => typeof window !== "undefined" && isWebGLAvailable());
   const [matIdx, setMatIdx] = useState(0);
   const [discMass, setDiscMass] = useState(0.45); // kg of copper Lee's disc
@@ -76,15 +80,17 @@ export const LeesDiscExperiment: React.FC = () => {
     tsRef.current = ts;
     const unbind = bindResize(ts);
     let rafId = 0;
+    const isLive = makeVisibilityGate(mountRef.current);
     function animate() {
       rafId = requestAnimationFrame(animate);
+      if (!isLive()) return; // offscreen/hidden: skip the render work
       const time = performance.now() / 1000;
       updateRef.current?.(time);
       ts!.controls.update();
       ts!.renderer.render(ts!.scene, ts!.camera);
     }
     animate();
-    return () => { cancelAnimationFrame(rafId); unbind(); disposeThreeScene(ts); tsRef.current = null; };
+    return () => { cancelAnimationFrame(rafId); unbind(); try { leaderLayerRef.current?.dispose(); leaderLayerRef.current = null; } catch { /* noop */ } try { revealBarRef.current?.(); revealBarRef.current = null; } catch { /* noop */ } disposeThreeScene(ts); tsRef.current = null; };
   }, []);
 
   // Rebuild 3D content on state change
@@ -92,8 +98,6 @@ export const LeesDiscExperiment: React.FC = () => {
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
-
-let leaderLayer: any = null;
 let labelRenderer: any = null;
 const container = mountRef.current!;
         titleText(ts, "Lee's Disc Apparatus", new THREE.Vector3(0, 3.65, 0));
@@ -228,7 +232,10 @@ const container = mountRef.current!;
             return el;
           };
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
-          try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { leaderLayerRef.current?.dispose(); } catch { /* noop */ }
+          try { revealBarRef.current?.(); } catch { /* noop */ }
+          try { leaderLayerRef.current = createLeaderLayer(mountRef.current!); } catch { leaderLayerRef.current = null; }
+          try { revealBarRef.current = createRevealBar(mountRef.current!, leaderLayerRef.current); } catch { /* non-fatal */ }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));
             o.position.set(pos[0], pos[1], pos[2]);
@@ -246,9 +253,9 @@ const container = mountRef.current!;
           addLbl("#38bdf8", "Steam Inlet", [-(chamR + 2.2), chamCenter + 0.9, 0], "from steam boiler", [-(chamR + 0.42), chamCenter + 0.42, 0]);
           addLbl("#94a3b8", "Vapour Outlet", [chamR + 1.9, chamCenter + 1.3, 0], "escaping steam", [outletTip.x, outletTip.y, 0]);
           addLbl(mat.color, `Sample Disc — ${mat.name}`, [-discR - 2.5, sampleY + thickU + 0.6, 0], `thickness d = ${sampleThick} mm`, [0, sampleY, 0]);
-          addLbl("#fb923c", "Lee's Disc (Copper)", [discR + 2.6, 0.4, 0], `m = ${(discMass * 1000).toFixed(0)} g, c = 385 J/kg·K`, [0, 0.44, 0]);
-          addLbl("#22c55e", "Thermometer T₂", [discR + 2.3, 1.3, 0.6], `θ₂ ≈ ${theta2} °C at junction`, [discR - 0.28, 0.44, 0]);
-          addLbl("#a3a3a3", "Clamping Weights", [0.55, pinY + 0.9, 0], "press faces together", [0.55, pinY, 0]);
+          addLbl("#fb923c", "Lee's Disc (Copper)", [discR + 2.7, 0.25, 0], `m = ${(discMass * 1000).toFixed(0)} g, c = 385 J/kg·K`, [0, 0.44, 0]);
+          addLbl("#22c55e", "Thermometer T₂", [discR + 2.4, 1.95, 0.6], `θ₂ ≈ ${theta2} °C at junction`, [discR - 0.28, 0.44, 0]);
+          addLbl("#a3a3a3", "Clamping Weights", [-2.6, pinY + 0.4, 0.5], "press faces together", [0.55, pinY, 0]);
           addLbl("#94a3b8", "Tripod Stand", [-(discR + 2.4), 0.4, 0], "insulated wooden top", [0, 0.07, 0.6]);
 
           /* ---------- ANIMATION LOOP ---------- */
@@ -266,7 +273,7 @@ const container = mountRef.current!;
       (pf.mesh.material as THREE.MeshStandardMaterial).opacity = Math.max(0, 0.55 * (1 - u));
     });
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
-    if (leaderLayer) leaderLayer.draw(ts!.camera, connections);
+    leaderLayerRef.current?.draw(ts!.camera, connections);
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);

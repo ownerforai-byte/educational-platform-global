@@ -8,7 +8,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -16,6 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { TheoryPanel } from "@/components/lab/theory-panel";
 import { createLeaderLayer } from "./leader-lines";
+import { createRevealBar } from "@/components/lab/leader-lines";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -92,7 +93,8 @@ const CapacitorTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -103,6 +105,7 @@ labelRenderer = new CSS2DRenderer();
         labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
         mountRef.current!.appendChild(labelRenderer.domElement);
         try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
         const connections: any[] = [];
         const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
@@ -138,7 +141,7 @@ labelRenderer = new CSS2DRenderer();
         /* uniform field arrows between plates */
         for (let row = 0; row < 3; row++) {
           for (let col = 0; col < 3; col++) {
-            const a = new LiveArrow(
+            const a = new LiveLeaderLine(
               new THREE.Vector3(0, 0, -1),
               new THREE.Vector3(-1.1 + col * 1.1, 1.5 + row * 0.9, 0),
               Math.max(0.12, gap * 0.8),
@@ -256,7 +259,8 @@ const MeterBridgeTab: React.FC = () => {
   // Rebuild 3D content on state change
   useEffect(() => {
     let labelRenderer: any;
-    let leaderLayer: any;
+let leaderLayer: any;
+    let revealBarDispose: (() => void) | null = null;
     const ts = tsRef.current;
     if (!ts) return;
     clearGroup(ts!.group);
@@ -268,6 +272,7 @@ const MeterBridgeTab: React.FC = () => {
     labelRenderer.domElement.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;z-index:10";
     mountRef.current!.appendChild(labelRenderer.domElement);
     try { leaderLayer = createLeaderLayer(mountRef.current!); } catch { leaderLayer = null; }
+          try { revealBarDispose = createRevealBar(mountRef.current!, leaderLayer); } catch { /* non-fatal */ }
 
     const connections: any[] = [];
     const addLbl = (color: string, t: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {

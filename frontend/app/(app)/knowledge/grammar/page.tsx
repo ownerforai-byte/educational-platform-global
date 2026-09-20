@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { ArrowLeft, BookOpen, PenLine } from "lucide-react";
+import { WRITING_COUNTS, getWritingTypesByCategory } from "@/features/knowledge/writing";
 
 const TOPICS = [
   {
@@ -96,6 +97,9 @@ const EXAMPLES = [
 ];
 
 export default function GrammarPage() {
+  const writingGrammar = getWritingTypesByCategory("Grammar for Writing");
+  const writingCount = WRITING_COUNTS["Grammar for Writing"] ?? writingGrammar.length;
+
   return (
     <div className="mx-auto max-w-4xl space-y-6 py-6 md:py-10 px-4">
       <Link href="/knowledge" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -109,7 +113,7 @@ export default function GrammarPage() {
         </div>
         <div>
           <h1 className="text-xl md:text-2xl font-bold">English Grammar</h1>
-          <p className="text-xs text-muted-foreground">NEB Class 11 & 12 — Comprehensive grammar reference</p>
+          <p className="text-xs text-muted-foreground">NEB Class 11 &amp; 12 — Comprehensive grammar reference</p>
         </div>
       </div>
 
@@ -143,6 +147,54 @@ export default function GrammarPage() {
           </div>
         ))}
       </div>
+
+      {/* Grammar-for-Writing packs (absorbed from the writing section) */}
+      {writingGrammar.length > 0 && (
+        <section className="space-y-3">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+              <PenLine className="h-5 w-5 text-indigo-600" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold">Grammar for Writing</h2>
+              <p className="text-xs text-muted-foreground">
+                The {writingCount} writing-grammar packs, mirrored here so grammar stays in one place.
+              </p>
+            </div>
+          </div>
+          {writingGrammar.map((type) => (
+            <details key={type.id} className="rounded-xl border border-border bg-card overflow-hidden group">
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-muted/50 transition-colors list-none">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="text-xl shrink-0">{type.icon}</span>
+                  <h3 className="font-semibold text-sm truncate">{type.name}</h3>
+                </div>
+                <span className="text-muted-foreground text-xs shrink-0 group-open:hidden">▼</span>
+                <span className="text-muted-foreground text-xs shrink-0 group-open:block hidden">▲</span>
+              </summary>
+              <div className="border-t border-border px-5 py-4 space-y-4">
+                <p className="text-sm text-foreground leading-relaxed">{type.concept}</p>
+                <ul className="space-y-1.5">
+                  {type.grammar.map((g, gi) => (
+                    <li key={gi} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                      <span className="text-indigo-500 mt-0.5">◆</span>
+                      {g}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="space-y-1">
+                  {type.tips.map((t, ti) => (
+                    <li key={ti} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                      <span className="text-green-600 mt-0.5">✓</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </details>
+          ))}
+        </section>
+      )}
     </div>
   );
 }

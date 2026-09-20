@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
@@ -217,7 +217,7 @@ export const Class11KinematicsMotion: React.FC = () => {
         const accelValue = acceleration;
         
         const arrowScale = 0.5;
-        velocityArrow = new LiveArrow(
+        velocityArrow = new LiveLeaderLine(
           new THREE.Vector3(1, 0, 0),
           carGroup.position,
           velValue * arrowScale,
@@ -225,7 +225,7 @@ export const Class11KinematicsMotion: React.FC = () => {
         );
         ts!.group.add(velocityArrow);
 
-        accelerationArrow = new LiveArrow(
+        accelerationArrow = new LiveLeaderLine(
           new THREE.Vector3(1, 0, 0),
           carGroup.position,
           accelValue * arrowScale,

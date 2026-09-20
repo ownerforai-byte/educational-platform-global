@@ -1,222 +1,316 @@
 {
-  "title": "04 MOLE CONCEPT",
+  "title": "Mole Concept",
   "unitSlug": "stoichiometry",
-  "topicSlug": "04-mole-concept",
-  "topicTitle": "04 mole concept",
-  "notes": [
-    "Conservation of mass (Lavoisier): mass neither created nor destroyed.",
-    "Mole concept: n=m/M, 1 mol = 6.022×10²³ particles.",
-    "Limiting reagent determines max product.",
-    "Concentration: Molarity (M=n/V), Molality (m=n/kg)."
-  ],
-  "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
-  ],
-  "examples": [
-    "18g H₂O = 1 mol = 6.022×10²³ molecules = 2×6.022×10²³ H atoms + 6.022×10²³ O atoms"
-  ],
-  "formulas": [
-    "n = m/M",
-    "n = V/22.4 (at STP)",
-    "Molarity (M) = n/V(L)",
-    "Molality (m) = n/solvent(kg)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 mole concept."
-  ],
-  "importantNotes": [
-    "Important note regarding 04 mole concept."
-  ],
-  "importantStatements": [
-    "Key statement for 04 mole concept."
-  ],
-  "importantTasks": [
-    "Task for studying 04 mole concept."
-  ],
-  "keyPoints": [
-    "Core point for 04 mole concept."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 mole concept?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
-  ],
-  "specialNotes": [
-    "Specialized insight for 04 mole concept."
-  ],
-  "summary": "Stoichiometry deals with quantitative relationships between reactants and products in chemical reactions.",
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
+  "topicSlug": "mole-concept",
+  "topicTitle": "Mole Concept",
+  "relevance": 100,
+  "animation3D": "chemistry-mole",
+  "motionGraphics": "chemistry-mole",
   "duplicateType": 2,
   "tabGroup": "04-mole-concept",
-  "examShortTricks": [
-    "Trick 1"
-  ],
-  "examNotes": [
-    "Exam note 1."
-  ],
-  "mcqs": [
-    {
-      "question": "What is the molar mass of water?",
-      "options": [
-        "18 g/mol",
-        "32 g/mol",
-        "44 g/mol",
-        "16 g/mol"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "One mole of any gas occupies what volume at STP?",
-      "options": [
-        "22.4 L",
-        "2.24 L",
-        "224 L",
-        "2240 L"
-      ],
-      "answer": "A"
+  "visualType": "mole-concept",
+  "enrichedContent": {
+    "notes": [
+      "**Mole Definition:** The amount of substance containing as many elementary entities (atoms, molecules, ions, electrons) as there are atoms in exactly 0.012 kg (12 g) of Carbon-12. The mole is the SI base unit for amount of substance (symbol: mol).",
+      "**Avogadro Constant ($N_A$):** $6.02214076 \times 10^{23} \text{ mol}^{-1}$ (exact value since 2019 redefinition). This fundamental constant defines the number of particles in one mole of any substance.",
+      "**Molar Mass ($M$):** The mass of one mole of a substance expressed in grams per mole (g/mol). Numerically equal to the atomic/molecular mass in atomic mass units (amu or u). For example, water has M = 18.015 g/mol.",
+      "**Molar Volume ($V_m$):** At STP (Standard Temperature and Pressure: 0°C/273.15 K, 1 atm/101.325 kPa), one mole of any ideal gas occupies 22.414 L (commonly used as 22.4 L). This derives from Avogadro's Law.",
+      "**Concentration Units:** Molarity ($M$) = moles solute/L solution (temperature-dependent); Molality ($m$) = moles solute/kg solvent (temperature-independent); Mole Fraction ($χ_A$) = $n_A/(n_A+n_B)$ (dimensionless).",
+      "**Significance:** The mole concept serves as the critical bridge between the microscopic realm (atomic-scale particles) and the macroscopic world (measurable masses and volumes), enabling precise quantitative stoichiometric calculations in chemistry."
+    ],
+    "confusion": [
+      "❌ Molar mass and molecular mass are the same. ✅ Molecular mass is the mass of a single molecule in amu; molar mass is the mass of one mole of molecules in g/mol. They are numerically equal but have different units.",
+      "❌ Molarity and molality are interchangeable. ✅ Molarity ($M$) is volume-based and temperature-dependent (volume changes with T). Molality ($m$) is mass-based and temperature-independent (mass is constant).",
+      "❌ The mole is just a number like a dozen. ✅ A dozen is just a number (12). A mole is a specific quantity of matter ($6.022 \times 10^{23}$ particles) that links mass, volume, and particle count."
+    ],
+    "practice": [
+      "Calculate the number of atoms in 10g of Calcium (Atomic mass = 40).",
+      "Find the molarity of a solution prepared by dissolving 4g of NaOH (Molar mass = 40) in 500mL of water.",
+      "Determine the mole fraction of solute in a solution containing 1 mole of solute and 4 moles of solvent."
+    ],
+    "universalFacts": [
+      "The mole is the SI unit for amount of substance, defined in 1971.",
+      "One mole contains exactly 6.02214076 × 10²³ elementary entities (Avogadro's constant).",
+      "The concept was introduced by Wilhelm Ostwald in 1893.",
+      "One mole of any substance has a mass equal to its molecular/atomic mass in grams.",
+      "At STP, one mole of any ideal gas occupies 22.4 liters."
+    ],
+    "examples": [
+      "1 mole of H₂O = 18g = 6.022 × 10²³ molecules = 2 moles H atoms + 1 mole O atoms.",
+      "1 mole of NaCl = 58.5g = 6.022 × 10²³ formula units.",
+      "1 mole of any gas at STP = 22.4 dm³.",
+      "1 mole of electrons = 96485 coulombs (Faraday constant)."
+    ],
+    "practiceQuestions": [
+      "Define mole and calculate the number of molecules in 36g of water.",
+      "Calculate the mass of 0.5 moles of CO₂.",
+      "Find the volume occupied by 2 moles of gas at STP.",
+      "Calculate the number of atoms in 24g of carbon."
+    ],
+    "formulas": [
+      "n = m/M (moles = mass/molar mass)",
+      "n = N/N_A (moles = number of particles/Avogadro's number)",
+      "n = V/V_m (moles = volume/molar volume at STP)",
+      "N = n × N_A = n × 6.022 × 10²³",
+      "M = m/n (molar mass = mass/moles)"
+    ],
+    "keyPoints": [
+      "Mole is a bridge between atomic scale and macroscopic scale.",
+      "Molar mass = atomic/molecular mass in grams.",
+      "Molar volume at STP = 22.4 L/mol.",
+      "Avogadro's number = 6.022 × 10²³ particles/mol."
+    ],
+    "summary": "The mole concept provides a standardized way to count atoms and molecules, bridging microscopic and macroscopic scales. Molar mass, molar volume, and concentration units (molarity/molality/mole fraction) are essential for stoichiometric calculations.",
+    "specialNotes": [
+      "The mole concept is the most important tool in stoichiometry.",
+      "Always write units clearly in calculations.",
+      "NEB frequently tests mole concept with numerical problems."
+    ],
+    "importantStatements": [
+      "One mole of a substance contains Avogadro's number of particles.",
+      "The mass of one mole of a substance in grams is its molar mass.",
+      "At STP, one mole of any gas occupies 22.4 dm³."
+    ],
+    "importantNotes": [
+      "The mole is used for atoms, molecules, ions, electrons, or any elementary entity.",
+      "Remember: 1 mol = 6.022 × 10²³ particles.",
+      "Molar mass of elements = atomic mass (g/mol); for compounds = sum of atomic masses."
+    ],
+    "examShortTricks": [
+      "Remember: n = m/M = N/N_A = V/22.4",
+      "Quick calc: moles = given mass ÷ molecular mass.",
+      "For gases at STP: Volume = moles × 22.4.",
+      "Number of particles = moles × 6.022 × 10²³."
+    ],
+    "examNotes": [
+      "Stoichiometry problems are guaranteed in exams.",
+      "Master the conversion between mass, moles, and volume.",
+      "Understand the difference between Molarity and Molality.",
+      "Practice problems involving limiting reactants and percent yield."
+    ],
+    "mcs": [
+      {
+        "question": "One mole of any substance contains how many particles?",
+        "options": [
+          "6.022 × 10²³",
+          "6.022 × 10²²",
+          "6.022 × 10²⁴",
+          "6.022 × 10²⁰"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "What is the molar mass of water (H₂O)?",
+        "options": [
+          "18 g/mol",
+          "16 g/mol",
+          "20 g/mol",
+          "2 g/mol"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "What volume does 1 mole of gas occupy at STP?",
+        "options": [
+          "22.4 dm³",
+          "224 dm³",
+          "2.24 dm³",
+          "2240 dm³"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Number of moles in 36g of water is:",
+        "options": [
+          "2",
+          "1",
+          "18",
+          "36"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Avogadro's number is:",
+        "options": [
+          "6.022 × 10²³",
+          "6.022 × 10²²",
+          "6.022 × 10²⁴",
+          "6.022 × 10²⁰"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Mole Definition: SI unit and particle counting.",
+      "Avogadro Constant: $N_A = 6.022 \times 10^{23}$ mol⁻¹.",
+      "Molar Mass: Mass-volume-particle bridge.",
+      "Molarity vs Molality: Temperature dependence.",
+      "Mole Fraction: Dimensionless concentration.",
+      "STP Conditions: Standard temperature and pressure."
+    ],
+    "importantTasks": [
+      "Practice mass-mole-particle conversions.",
+      "Solve dilution problems using $M_1V_1 = M_2V_2$.",
+      "Calculate molarity and molality from given data.",
+      "Calculate mole fraction for multi-component solutions."
+    ],
+    "exercises": [],
+    "visualization": {
+      "type": "simulation",
+      "component": "MoleCalculator",
+      "desc": "Interactive mole-mass-volume calculator"
     }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Mass of NaCl from 23g Na",
-      "steps": [
-        "n(Na)=23/23=1 mol",
-        "Na+Cl₂→NaCl",
-        "m(NaCl)=1×58.5"
-      ],
-      "answer": "58.5 g"
-    },
-    {
-      "id": "2",
-      "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-      "steps": [
-        "n=50/100=0.5 mol",
-        "CaCO₃→CaO+CO₂",
-        "V=0.5×22.4"
-      ],
-      "answer": "11.2 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "MoleCalculator",
-    "desc": "Interactive mole-mass-volume calculator"
   },
-  "visualType": "mole-concept"
+  "originalContent": {
+    "notes": [
+      "**Mole Definition:** The amount of substance containing as many elementary entities (atoms, molecules, ions, electrons) as there are atoms in exactly 0.012 kg (12 g) of Carbon-12. The mole is the SI base unit for amount of substance (symbol: mol).",
+      "**Avogadro Constant ($N_A$):** $6.02214076 \times 10^{23} \text{ mol}^{-1}$ (exact value since 2019 redefinition). This fundamental constant defines the number of particles in one mole of any substance.",
+      "**Molar Mass ($M$):** The mass of one mole of a substance expressed in grams per mole (g/mol). Numerically equal to the atomic/molecular mass in atomic mass units (amu or u). For example, water has M = 18.015 g/mol.",
+      "**Molar Volume ($V_m$):** At STP (Standard Temperature and Pressure: 0°C/273.15 K, 1 atm/101.325 kPa), one mole of any ideal gas occupies 22.414 L (commonly used as 22.4 L). This derives from Avogadro's Law.",
+      "**Concentration Units:** Molarity ($M$) = moles solute/L solution (temperature-dependent); Molality ($m$) = moles solute/kg solvent (temperature-independent); Mole Fraction ($χ_A$) = $n_A/(n_A+n_B)$ (dimensionless).",
+      "**Significance:** The mole concept serves as the critical bridge between the microscopic realm (atomic-scale particles) and the macroscopic world (measurable masses and volumes), enabling precise quantitative stoichiometric calculations in chemistry."
+    ],
+    "confusion": [
+      "❌ Molar mass and molecular mass are the same. ✅ Molecular mass is the mass of a single molecule in amu; molar mass is the mass of one mole of molecules in g/mol. They are numerically equal but have different units.",
+      "❌ Molarity and molality are interchangeable. ✅ Molarity ($M$) is volume-based and temperature-dependent (volume changes with T). Molality ($m$) is mass-based and temperature-independent (mass is constant).",
+      "❌ The mole is just a number like a dozen. ✅ A dozen is just a number (12). A mole is a specific quantity of matter ($6.022 \times 10^{23}$ particles) that links mass, volume, and particle count."
+    ],
+    "practice": [
+      "Calculate the number of atoms in 10g of Calcium (Atomic mass = 40).",
+      "Find the molarity of a solution prepared by dissolving 4g of NaOH (Molar mass = 40) in 500mL of water.",
+      "Determine the mole fraction of solute in a solution containing 1 mole of solute and 4 moles of solvent."
+    ],
+    "universalFacts": [
+      "The mole is the SI unit for amount of substance, defined in 1971.",
+      "One mole contains exactly 6.02214076 × 10²³ elementary entities (Avogadro's constant).",
+      "The concept was introduced by Wilhelm Ostwald in 1893.",
+      "One mole of any substance has a mass equal to its molecular/atomic mass in grams.",
+      "At STP, one mole of any ideal gas occupies 22.4 liters."
+    ],
+    "examples": [
+      "1 mole of H₂O = 18g = 6.022 × 10²³ molecules = 2 moles H atoms + 1 mole O atoms.",
+      "1 mole of NaCl = 58.5g = 6.022 × 10²³ formula units.",
+      "1 mole of any gas at STP = 22.4 dm³.",
+      "1 mole of electrons = 96485 coulombs (Faraday constant)."
+    ],
+    "practiceQuestions": [
+      "Define mole and calculate the number of molecules in 36g of water.",
+      "Calculate the mass of 0.5 moles of CO₂.",
+      "Find the volume occupied by 2 moles of gas at STP.",
+      "Calculate the number of atoms in 24g of carbon."
+    ],
+    "formulas": [
+      "n = m/M (moles = mass/molar mass)",
+      "n = N/N_A (moles = number of particles/Avogadro's number)",
+      "n = V/V_m (moles = volume/molar volume at STP)",
+      "N = n × N_A = n × 6.022 × 10²³",
+      "M = m/n (molar mass = mass/moles)"
+    ],
+    "keyPoints": [
+      "Mole is a bridge between atomic scale and macroscopic scale.",
+      "Molar mass = atomic/molecular mass in grams.",
+      "Molar volume at STP = 22.4 L/mol.",
+      "Avogadro's number = 6.022 × 10²³ particles/mol."
+    ],
+    "summary": "The mole concept provides a standardized way to count atoms and molecules, bridging microscopic and macroscopic scales. Molar mass, molar volume, and concentration units (molarity/molality/mole fraction) are essential for stoichiometric calculations.",
+    "specialNotes": [
+      "The mole concept is the most important tool in stoichiometry.",
+      "Always write units clearly in calculations.",
+      "NEB frequently tests mole concept with numerical problems."
+    ],
+    "importantStatements": [
+      "One mole of a substance contains Avogadro's number of particles.",
+      "The mass of one mole of a substance in grams is its molar mass.",
+      "At STP, one mole of any gas occupies 22.4 dm³."
+    ],
+    "importantNotes": [
+      "The mole is used for atoms, molecules, ions, electrons, or any elementary entity.",
+      "Remember: 1 mol = 6.022 × 10²³ particles.",
+      "Molar mass of elements = atomic mass (g/mol); for compounds = sum of atomic masses."
+    ],
+    "examShortTricks": [
+      "Remember: n = m/M = N/N_A = V/22.4",
+      "Quick calc: moles = given mass ÷ molecular mass.",
+      "For gases at STP: Volume = moles × 22.4.",
+      "Number of particles = moles × 6.022 × 10²³."
+    ],
+    "examNotes": [
+      "Stoichiometry problems are guaranteed in exams.",
+      "Master the conversion between mass, moles, and volume.",
+      "Understand the difference between Molarity and Molality.",
+      "Practice problems involving limiting reactants and percent yield."
+    ],
+    "mcs": [
+      {
+        "question": "One mole of any substance contains how many particles?",
+        "options": [
+          "6.022 × 10²³",
+          "6.022 × 10²²",
+          "6.022 × 10²⁴",
+          "6.022 × 10²⁰"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "What is the molar mass of water (H₂O)?",
+        "options": [
+          "18 g/mol",
+          "16 g/mol",
+          "20 g/mol",
+          "2 g/mol"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "What volume does 1 mole of gas occupy at STP?",
+        "options": [
+          "22.4 dm³",
+          "224 dm³",
+          "2.24 dm³",
+          "2240 dm³"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Number of moles in 36g of water is:",
+        "options": [
+          "2",
+          "1",
+          "18",
+          "36"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "Avogadro's number is:",
+        "options": [
+          "6.022 × 10²³",
+          "6.022 × 10²²",
+          "6.022 × 10²⁴",
+          "6.022 × 10²⁰"
+        ],
+        "answer": "A"
+      }
+    ],
+    "importantConcepts": [
+      "Mole Definition: SI unit and particle counting.",
+      "Avogadro Constant: $N_A = 6.022 \times 10^{23}$ mol⁻¹.",
+      "Molar Mass: Mass-volume-particle bridge.",
+      "Molarity vs Molality: Temperature dependence.",
+      "Mole Fraction: Dimensionless concentration.",
+      "STP Conditions: Standard temperature and pressure."
+    ],
+    "importantTasks": [
+      "Practice mass-mole-particle conversions.",
+      "Solve dilution problems using $M_1V_1 = M_2V_2$.",
+      "Calculate molarity and molality from given data.",
+      "Calculate mole fraction for multi-component solutions."
+    ],
+    "exercises": [],
+    "visualization": {
+      "type": "simulation",
+      "component": "MoleCalculator",
+      "desc": "Interactive mole-mass-volume calculator"
+    }
+  }
 }

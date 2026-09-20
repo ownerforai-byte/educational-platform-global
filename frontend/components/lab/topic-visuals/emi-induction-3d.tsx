@@ -9,7 +9,7 @@ import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -130,20 +130,20 @@ export function EMIInductionVisual() {
       const nLabelPos = new THREE.Vector3(magnetX, 1.5, 0);
       const nTarget = new THREE.Vector3(magnetX + 0.5, 0, 0);
       const nDir = nTarget.clone().sub(nLabelPos).normalize();
-      push(new LiveArrow(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0xef4444, 0.2, 0.12));
+      push(new LiveLeaderLine(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0xef4444, 0.2, 0.12));
       push(mkSprite("N pole (North)", "#ef4444", nLabelPos.clone().sub(nDir.multiplyScalar(0.5)), 0.75));
 
       const sLabelPos = new THREE.Vector3(magnetX, -1.5, 0);
       const sTarget = new THREE.Vector3(magnetX - 0.5, 0, 0);
       const sDir = sTarget.clone().sub(sLabelPos).normalize();
-      push(new LiveArrow(sDir, sLabelPos, sLabelPos.distanceTo(sTarget) * 0.9, 0x3b82f6, 0.2, 0.12));
+      push(new LiveLeaderLine(sDir, sLabelPos, sLabelPos.distanceTo(sTarget) * 0.9, 0x3b82f6, 0.2, 0.12));
       push(mkSprite("S pole (South)", "#3b82f6", sLabelPos.clone().sub(sDir.multiplyScalar(0.5)), 0.75));
 
       // Induced current arrow
       const indLabelPos = new THREE.Vector3(0, -3, 0);
       const indTarget = new THREE.Vector3(0, 0, 0);
       const indDir = indTarget.clone().sub(indLabelPos).normalize();
-      push(new LiveArrow(indDir, indLabelPos, indLabelPos.distanceTo(indTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      push(new LiveLeaderLine(indDir, indLabelPos, indLabelPos.distanceTo(indTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
       push(mkSprite("Induced EMF & current", "#22d3ee", indLabelPos.clone().sub(indDir.multiplyScalar(0.5)), 0.75));
 
       // Galvanometer

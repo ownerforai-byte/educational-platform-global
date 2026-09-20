@@ -45,8 +45,6 @@ export default async function ResourcePage({
             <a
               href={resource.media_url}
               className="text-primary hover:underline"
-              target="_blank"
-              rel="noreferrer"
             >
               Open media
             </a>

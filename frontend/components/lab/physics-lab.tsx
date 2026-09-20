@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
 /* ============================================================
    Shared helpers
@@ -114,8 +114,8 @@ function ProjectileMotion3D() {
     let pathLine: THREE.Line | null = null;
     let peakMarker: THREE.Mesh | null = null;
     let landingMarker: THREE.Mesh | null = null;
-    let vxArrow: THREE.ArrowHelper | null = null;
-    let vyArrow: THREE.ArrowHelper | null = null;
+    let vxArrow : LiveLeaderLine | null = null;
+    let vyArrow : LiveLeaderLine | null = null;
 
     const init = async () => {
       const THREE = await import("three");
@@ -266,13 +266,13 @@ function ProjectileMotion3D() {
           const vx = velocity * Math.cos(rad);
           const vy = velocity * Math.sin(rad);
           const arrowScale = 0.05;
-          vxArrow = new LiveArrow(
+          vxArrow = new LiveLeaderLine(
             new THREE.Vector3(1, 0, 0),
             new THREE.Vector3(0, 0.5, 0),
             vx * arrowScale,
             0x3b82f6
           );
-          vyArrow = new LiveArrow(
+          vyArrow = new LiveLeaderLine(
             new THREE.Vector3(0, 1, 0),
             new THREE.Vector3(0, 0.5, 0),
             vy * arrowScale,
@@ -497,8 +497,8 @@ function CircularMotion3D() {
     let controls: any;
     let frameId: number;
     let ball: THREE.Mesh;
-    let velocityArrow: THREE.ArrowHelper | null = null;
-    let centripetalArrow: THREE.ArrowHelper | null = null;
+    let velocityArrow : LiveLeaderLine | null = null;
+    let centripetalArrow : LiveLeaderLine | null = null;
 
     const init = async () => {
       const THREE = await import("three");
@@ -577,7 +577,7 @@ function CircularMotion3D() {
           // Velocity is tangential
           const vx = -Math.sin(a);
           const vz = Math.cos(a);
-          velocityArrow = new LiveArrow(
+          velocityArrow = new LiveLeaderLine(
             new THREE.Vector3(vx, 0, vz),
             new THREE.Vector3(x, 0, z),
             1.5,
@@ -589,7 +589,7 @@ function CircularMotion3D() {
           // Centripetal acceleration points to center
           const cx = -x / radius;
           const cz = -z / radius;
-          centripetalArrow = new LiveArrow(
+          centripetalArrow = new LiveLeaderLine(
             new THREE.Vector3(cx, 0, cz),
             new THREE.Vector3(x, 0, z),
             1.5,

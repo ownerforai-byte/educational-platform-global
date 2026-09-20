@@ -4,9 +4,24 @@
  * physical constants, and board/entrance traps across Physics, Chemistry, Biology, and Math.
  */
 
+import { HIGH_YIELD_TOPIC_BANK_BIOLOGY } from "@/lib/high-yield-topic-facts-biology";
+import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY } from "@/lib/high-yield-topic-facts-chemistry";
+import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC } from "@/lib/high-yield-topic-facts-chemistry-organic";
+import { HIGH_YIELD_TOPIC_BANK_LANGUAGES } from "@/lib/high-yield-topic-facts-languages";
+import { HIGH_YIELD_TOPIC_BANK_MATHEMATICS } from "@/lib/high-yield-topic-facts-mathematics";
+import { HIGH_YIELD_TOPIC_BANK_PHYSICS } from "@/lib/high-yield-topic-facts-physics";
+import { HIGH_YIELD_TOPIC_BANK_PHYSICS_2 } from "@/lib/high-yield-topic-facts-physics-2";
+
 export interface HighYieldTopicData {
   topicKeywords: string[];
-  subject: "physics" | "chemistry" | "biology" | "mathematics" | "general";
+  /**
+   * Syllabus unit ids (see `frontend/lib/syllabus.ts`) this entry belongs to.
+   * Unit matching is exact and is tried BEFORE keyword matching, because topic
+   * titles are full sentences ("Centripetal acceleration and centripetal
+   * force") whose generic words otherwise pull in the wrong entry.
+   */
+  unitSlugs?: string[];
+  subject: "physics" | "chemistry" | "biology" | "mathematics" | "nepali" | "english" | "general";
   title: string;
   category: string;
   governingLaws: Array<{ name: string; statement: string; formula: string; conditions: string }>;
@@ -27,7 +42,8 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
   // 1. PHYSICS: VECTORS & RESOLUTION
   // ─────────────────────────────────────────────────────────────
   {
-    topicKeywords: ["vector", "scalar", "resolution", "addition", "cross-product", "dot-product"],
+    topicKeywords: ["vector", "cross-product", "dot-product", "scalar-product", "unit-vector"],
+    unitSlugs: ["vectors", "mechanics"],
     subject: "physics",
     title: "Vectors & Directional Field Mechanics",
     category: "Mechanics & Mathematical Physics",
@@ -155,7 +171,16 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
   // 2. PHYSICS: KINEMATICS & PROJECTILE MOTION
   // ─────────────────────────────────────────────────────────────
   {
-    topicKeywords: ["kinematics", "projectile", "motion", "velocity", "acceleration", "trajectory"],
+    topicKeywords: [
+      "kinematics",
+      "projectile",
+      "relative-velocity",
+      "freely-falling",
+      "equation-of-motion",
+      "graphical-treatment",
+      "instantaneous-velocity",
+    ],
+    unitSlugs: ["kinematics"],
     subject: "physics",
     title: "Kinematics & Two-Dimensional Projectile Motion",
     category: "Mechanics",
@@ -256,7 +281,13 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
   // 3. CHEMISTRY: PERIODIC TABLE & CHEMICAL BONDING
   // ─────────────────────────────────────────────────────────────
   {
-    topicKeywords: ["periodic", "element", "hybridization", "bonding", "vsepr", "atomic-structure", "classification"],
+    topicKeywords: ["periodic", "hybridization", "bonding", "vsepr", "atomic-structure", "classification"],
+    unitSlugs: [
+      "classification-of-elements-and-periodic-table",
+      "classification-of-elements",
+      "chemical-bonding-and-shapes-of-molecules",
+      "chemical-bonding",
+    ],
     subject: "chemistry",
     title: "Periodic Trends, Electronic Configuration & Chemical Bonding",
     category: "Inorganic & Physical Chemistry",
@@ -365,6 +396,7 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
   // ─────────────────────────────────────────────────────────────
   {
     topicKeywords: ["cell", "organelle", "nephron", "mitochondria", "dna", "circulatory", "cardiac", "kidney"],
+    unitSlugs: ["biomolecules-and-cell-biology"],
     subject: "biology",
     title: "Cellular Ultrastructure, Genetics & Organ Physiology",
     category: "Cell Biology & Physiology",
@@ -468,6 +500,7 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
   // ─────────────────────────────────────────────────────────────
   {
     topicKeywords: ["calculus", "derivative", "integral", "tangent", "parabola", "ellipse", "analytic-geometry"],
+    unitSlugs: ["calculus", "analytic-geometry"],
     subject: "mathematics",
     title: "Calculus, Tangent Geometry & Conic Sections",
     category: "Higher Mathematics",
@@ -564,32 +597,128 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
 ];
 
 /**
- * Helper to retrieve high-yield data for a given subject and topic slug/title
+ * Curated core entries first, then the unit-scoped subject banks. Order only
+ * breaks ties: a higher keyword score always wins, so the broad subject-wide
+ * core entries never mask a specific unit entry. Unit matches ignore order
+ * entirely, since `unitSlugs` must be unique per unit.
+ */
+/** Keywords shorter than this never decide a match on their own. */
+const MIN_KEYWORD_LENGTH = 5;
+
+const ALL_HIGH_YIELD_TOPICS: HighYieldTopicData[] = [
+  ...HIGH_YIELD_TOPIC_BANK,
+  ...HIGH_YIELD_TOPIC_BANK_PHYSICS,
+  ...HIGH_YIELD_TOPIC_BANK_PHYSICS_2,
+  ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY,
+  ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC,
+  ...HIGH_YIELD_TOPIC_BANK_MATHEMATICS,
+  ...HIGH_YIELD_TOPIC_BANK_BIOLOGY,
+  ...HIGH_YIELD_TOPIC_BANK_LANGUAGES,
+];
+
+/**
+ * Retrieves high-yield data for a subject + topic.
+ *
+ * Resolution order:
+ *  1. `unitSlug` — exact syllabus unit match. This is the reliable path, and
+ *     the reason the parameter exists: topic titles are full sentences, so
+ *     keyword-only matching pulled "Newton's law of gravitation" into the
+ *     Dynamics entry and "Centripetal acceleration" into Kinematics.
+ *  2. Keyword score across topic slug + title, used only when no `unitSlug` is
+ *     supplied. Entries are therefore reachable from unit-aware callers only
+ *     through their `unitSlugs` list.
+ *
+ * Returns `null` when nothing genuinely matches. It deliberately does NOT fall
+ * back to another topic: the old "first entry for this subject, else the very
+ * first entry overall" behaviour made an unmatched biology topic render the
+ * Physics/Vectors facts, and made most physics units (heat, optics, current
+ * electricity, …) show vectors too. Callers must treat `null` as "no curated
+ * facts for this topic yet" and hide the fact-bank sections.
  */
 export function getHighYieldTopicData(
   subjectSlug: string,
   topicSlug: string,
-  topicTitle: string
-): HighYieldTopicData {
+  topicTitle: string,
+  unitSlug?: string
+): HighYieldTopicData | null {
   const normSubject = subjectSlug.toLowerCase();
   const searchStr = `${topicSlug} ${topicTitle}`.toLowerCase();
 
-  // Try to find direct keyword match
-  const match = HIGH_YIELD_TOPIC_BANK.find((item) => {
-    const subjectMatches =
-      normSubject.includes(item.subject) || (item.subject === "general");
-    const keywordMatches = item.topicKeywords.some((kw) =>
-      searchStr.includes(kw)
+  const subjectMatches = (entry: HighYieldTopicData) =>
+    entry.subject === "general" || normSubject.includes(entry.subject);
+
+  /**
+   * Keyword score. Only keywords of at least 5 characters count, so short
+   * generic words ("work", "unit", "gas", "rms") cannot decide an entry on
+   * their own.
+   */
+  const keywordScore = (entry: HighYieldTopicData) =>
+    entry.topicKeywords.reduce(
+      (total, keyword) =>
+        keyword.length >= MIN_KEYWORD_LENGTH &&
+        searchStr.includes(keyword.toLowerCase())
+          ? total + 1
+          : total,
+      0
     );
-    return subjectMatches && keywordMatches;
-  });
 
-  if (match) return match;
+  const candidates = ALL_HIGH_YIELD_TOPICS.filter(subjectMatches);
 
-  // Fallback by subject
-  const subjectFallback = HIGH_YIELD_TOPIC_BANK.find((item) =>
-    normSubject.includes(item.subject)
+  if (unitSlug) {
+    const unitMatches = candidates.filter((entry) =>
+      entry.unitSlugs?.includes(unitSlug)
+    );
+    if (unitMatches.length === 1) return unitMatches[0];
+    if (unitMatches.length > 1) {
+      return unitMatches.reduce((best, entry) =>
+        keywordScore(entry) > keywordScore(best) ? entry : best
+      );
+    }
+    // The caller told us the exact unit and no entry claims it: answering with
+    // a keyword guess is how the wrong-topic facts got shown in the first
+    // place, so report "no facts" instead. Add `unitSlugs` to fix an entry.
+    return null;
+  }
+
+  let best: { entry: HighYieldTopicData; score: number } | null = null;
+  for (const entry of candidates) {
+    const score = keywordScore(entry);
+    if (score === 0) continue;
+    if (best === null || score > best.score) best = { entry, score };
+  }
+
+  return best?.entry ?? null;
+}
+
+/**
+ * Neutral placeholder with the same shape, so a component can keep one non-null
+ * code path while `hasHighYieldTopicData()` decides what is actually rendered.
+ */
+export function emptyHighYieldTopicData(
+  topicTitle: string,
+  subjectSlug: string
+): HighYieldTopicData {
+  return {
+    topicKeywords: [],
+    subject: "general",
+    title: topicTitle,
+    category: subjectSlug,
+    governingLaws: [],
+    speedFormulas: [],
+    constantsAndValues: [],
+    entranceTraps: [],
+    workedNumericals: [],
+    keyTermsAndDefinitions: [],
+  };
+}
+
+/** Convenience guard for callers that only check for the presence of facts. */
+export function hasHighYieldTopicData(data: HighYieldTopicData | null): boolean {
+  if (!data) return false;
+  return (
+    data.governingLaws.length > 0 ||
+    data.speedFormulas.length > 0 ||
+    data.constantsAndValues.length > 0 ||
+    data.entranceTraps.length > 0
   );
-
-  return subjectFallback || HIGH_YIELD_TOPIC_BANK[0];
 }

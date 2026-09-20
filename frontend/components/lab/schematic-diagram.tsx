@@ -1,37 +1,16 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect, useCallback } from "react";
-import {
-  Sparkles,
-  Info,
-  Layers,
-  HelpCircle,
-  Eye,
-  EyeOff,
-  GraduationCap,
-  Play,
-  RotateCcw,
-  Sliders,
-  Zap,
-  ZoomIn,
-  ZoomOut,
-  Maximize2,
-  Minimize2,
-  Download,
-} from "lucide-react";
+import React, { useCallback, useMemo, useState } from "react";
 
 export interface DiagramAnnotation {
   id: string;
   label: string;
   formulaOrValue?: string;
   examNote: string;
-  // Label anchor coordinate on screen/viewbox
   labelX: number;
   labelY: number;
-  // Target tip coordinate pointing to the feature
   targetX: number;
   targetY: number;
-  // Bezier control point for the long curved leader line
   controlX?: number;
   controlY?: number;
   color?: string;
@@ -49,59 +28,14 @@ export function SchematicDiagram({
   subjectSlug,
   topicSlug,
   topicTitle,
-  unitId,
+  unitId = "",
   className = "",
 }: SchematicDiagramProps) {
-  const [activeAnnotationId, setActiveAnnotationId] = useState<string | null>(null);
-  const [showFormulas, setShowFormulas] = useState(true);
-  const [showExamNotes, setShowExamNotes] = useState(true);
-  const [zoom, setZoom] = useState(1);
-  const [showAnnotations, setShowAnnotations] = useState(true);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [expandedMap, setExpandedMap] = useState<Record<string, boolean>>({});
 
-  // Interactive controls state
-  const [projectileAngle, setProjectileAngle] = useState<number>(45); // 30, 45, 60
-  const [ydseWavelength, setYdseWavelength] = useState<"red" | "blue">("red");
-  const [galvanicConnected, setGalvanicConnected] = useState<boolean>(true);
-  const [tangentPos, setTangentPos] = useState<number>(430); // 350 to 510
-
-  const handleZoom = (delta: number) => {
-    setZoom((prev) => Math.min(Math.max(prev + delta, 0.5), 3));
-  };
-
-  // Fullscreen + SVG export (PhET/GeoGebra-style viewport affordances)
-  const rootRef = useRef<HTMLDivElement>(null);
-  const svgRef = useRef<SVGSVGElement>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  useEffect(() => {
-    const h = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener("fullscreenchange", h);
-    return () => document.removeEventListener("fullscreenchange", h);
+  const toggleExpanded = useCallback((annId: string) => {
+    setExpandedMap((prev) => ({ ...prev, [annId]: !prev[annId] }));
   }, []);
-  const toggleFullscreen = useCallback(async () => {
-    if (!rootRef.current) return;
-    if (document.fullscreenElement) await document.exitFullscreen();
-    else await rootRef.current.requestFullscreen?.();
-  }, []);
-  const exportSvg = useCallback(() => {
-    const svg = svgRef.current;
-    if (!svg) return;
-    try {
-      const serialized = new XMLSerializer().serializeToString(svg);
-      const blob = new Blob([serialized], { type: "image/svg+xml;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${(diagramData.title || "schematic").toLowerCase().replace(/[^a-z0-9]+/g, "-")}.svg`;
-      a.click();
-      URL.revokeObjectURL(url);
-    } catch {
-      /* export unsupported — noop */
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Normalize subject
   const normalizedSubject = useMemo(() => {
     const s = subjectSlug.toLowerCase();
     if (s.includes("physic")) return "physics";
@@ -111,1022 +45,532 @@ export function SchematicDiagram({
     return "general";
   }, [subjectSlug]);
 
-  // Determine diagram schema based on subject and topic keywords
   const diagramData = useMemo(() => {
     const t = topicSlug.toLowerCase();
     const title = topicTitle.toLowerCase();
     const u = (unitId || "").toLowerCase();
 
-    // ─────────────────────────────────────────────────────────────
-    // 1. BIOLOGY
-    // ─────────────────────────────────────────────────────────────
-    if (normalizedSubject === "biology") {
-      // 1A. Nephron & Excretory Physiology
-      if (t.includes("nephron") || t.includes("kidney") || t.includes("excret") || title.includes("nephron")) {
-        return {
-          title: `Nephron Ultrastructure & Filtration Schematic: ${topicTitle}`,
-          subtitle: "Malpighian Body, Glomerular Ultrafiltration (NFP = 10 mmHg) & Countercurrent Multiplier",
-          specific: true,
-          viewBox: "0 0 900 520",
-          annotations: [
-            {
-              id: "glomerulus",
-              label: "Glomerulus & Bowman's Capsule",
-              formulaOrValue: "NFP = GHP - (BCOP + CHP) = 10 mmHg",
-              examNote: "CEE: Afferent arteriole is wider than efferent arteriole, creating high hydrostatic pressure for ultrafiltration.",
-              labelX: 130,
-              labelY: 70,
-              targetX: 380,
-              targetY: 150,
-              controlX: 250,
-              controlY: 90,
-              color: "#ef4444",
-            },
-            {
-              id: "pct",
-              label: "Proximal Convoluted Tubule (PCT)",
-              formulaOrValue: "70–80% Electrolyte & H₂O Reabsorption",
-              examNote: "CEE: 100% of glucose and amino acids reabsorbed here via Na⁺-cotransporters with brush border microvilli.",
-              labelX: 770,
-              labelY: 70,
-              targetX: 470,
-              targetY: 160,
-              controlX: 680,
-              controlY: 100,
-              color: "#38bdf8",
-            },
-            {
-              id: "loop_desc",
-              label: "Descending Limb of Loop of Henle",
-              formulaOrValue: "Permeable to H₂O, Impermeable to NaCl",
-              examNote: "NEB: Medullary osmolarity increases progressively from 300 to 1200 mOsm/L towards the hairpin turn.",
-              labelX: 130,
-              labelY: 310,
-              targetX: 410,
-              targetY: 340,
-              controlX: 240,
-              controlY: 320,
-              color: "#10b981",
-            },
-            {
-              id: "loop_asc",
-              label: "Ascending Limb of Loop of Henle",
-              formulaOrValue: "Active NaCl Pump (Impermeable to H₂O)",
-              examNote: "CEE: Dilutes tubular fluid while concentrating renal medulla (Countercurrent Multiplier).",
-              labelX: 770,
-              labelY: 310,
-              targetX: 460,
-              targetY: 320,
-              controlX: 670,
-              controlY: 320,
-              color: "#f59e0b",
-            },
-            {
-              id: "duct",
-              label: "Distal Tubule & Collecting Duct",
-              formulaOrValue: "Facultative H₂O Reabsorption (ADH / Vasopressin)",
-              examNote: "CEE TRAP: Aldosterone increases Na⁺ reabsorption and K⁺ excretion; ADH inserts aquaporin-2 channels.",
-              labelX: 770,
-              labelY: 460,
-              targetX: 520,
-              targetY: 400,
-              controlX: 690,
-              controlY: 440,
-              color: "#a855f7",
-            },
-          ] as DiagramAnnotation[],
-          renderSvg: () => (
-            <g>
-              {/* Bowman's Capsule Cup */}
-              <path
-                d="M 350 120 C 330 150, 330 180, 360 200 C 390 220, 410 190, 410 160 C 410 130, 380 110, 350 120"
-                fill="#fca5a5"
-                fillOpacity="0.2"
-                stroke="#ef4444"
-                strokeWidth="3"
-              />
-              {/* Glomerulus Capillary Tuft inside */}
-              <circle cx="375" cy="155" r="22" fill="#ef4444" fillOpacity="0.4" stroke="#dc2626" strokeWidth="2.5" />
-              <path d="M 365 145 Q 380 160 375 170 T 390 155" fill="none" stroke="#fee2e2" strokeWidth="2.5" />
-              {/* Afferent & Efferent vessels */}
-              <line x1="320" y1="135" x2="355" y2="148" stroke="#dc2626" strokeWidth="5" markerEnd="url(#arrow-red)" />
-              <line x1="365" y1="165" x2="330" y2="185" stroke="#ef4444" strokeWidth="3" />
+    const projectileAngle = 45;
+    const galvanicConnected = true;
 
-              {/* PCT Convolutions */}
-              <path
-                d="M 400 185 C 440 140, 470 210, 480 170 C 490 140, 450 120, 430 160"
-                fill="none"
-                stroke="#38bdf8"
-                strokeWidth="5"
-                strokeLinecap="round"
-              />
+    const specific = true;
+    const sharedViewBox = "0 0 900 520";
 
-              {/* Loop of Henle descending & ascending hairpin */}
-              <path
-                d="M 430 160 L 415 380 C 415 420, 455 420, 455 380 L 470 230"
-                fill="none"
-                stroke="#10b981"
-                strokeWidth="5"
-                strokeLinecap="round"
-              />
-              {/* Osmotic Gradient Flow arrows */}
-              <path d="M 405 280 L 385 280" stroke="#34d399" strokeWidth="2" strokeDasharray="3 3" markerEnd="url(#arrow-emerald)" />
-              <text x="360" y="284" fill="#34d399" fontSize="10" fontWeight="bold">H₂O</text>
-              <path d="M 465 310 L 490 310" stroke="#fbbf24" strokeWidth="2" strokeDasharray="3 3" markerEnd="url(#arrow-amber)" />
-              <text x="495" y="314" fill="#fbbf24" fontSize="10" fontWeight="bold">NaCl</text>
-
-              {/* Collecting Duct Vertical Trunk */}
-              <line x1="515" y1="180" x2="515" y2="440" stroke="#a855f7" strokeWidth="6" strokeLinecap="round" />
-              <path d="M 470 230 C 490 210, 500 240, 515 230" fill="none" stroke="#f59e0b" strokeWidth="4" />
-              <text x="525" y="435" fill="#c084fc" fontSize="11" fontWeight="bold">Urine to Bladder</text>
-            </g>
-          ),
-        };
-      }
-
-      // 1B. Cell Ultrastructure
-      if (t.includes("cell") || t.includes("organelle") || title.includes("cell")) {
-        return {
-          title: `Cellular Ultrastructure & Organelle Map: ${topicTitle}`,
-          subtitle: "Eukaryotic Cell Architecture with Cytoplasmic Organelles & Metabolic Sites",
-          specific: true,
-          viewBox: "0 0 900 520",
-          annotations: [
-            {
-              id: "nucleus",
-              label: "Nucleus & Chromatin",
-              formulaOrValue: "DNA-Histone Complex",
-              examNote: "NEB: Governs replication & transcription. Contains nucleolus (ribosomal RNA synthesis site).",
-              labelX: 130,
-              labelY: 70,
-              targetX: 420,
-              targetY: 230,
-              controlX: 250,
-              controlY: 100,
-              color: "#38bdf8",
-            },
-            {
-              id: "mito",
-              label: "Mitochondria (Cristae)",
-              formulaOrValue: "ATP Synthase F0-F1",
-              examNote: "CEE: Semi-autonomous organelle with 70S ribosomes & circular DNA. Powerhouse of the cell.",
-              labelX: 770,
-              labelY: 80,
-              targetX: 580,
-              targetY: 220,
-              controlX: 700,
-              controlY: 140,
-              color: "#f59e0b",
-            },
-            {
-              id: "er",
-              label: "Rough Endoplasmic Reticulum",
-              formulaOrValue: "Ribosome studded (80S)",
-              examNote: "NEB: Site of translation & protein processing; continuous with outer nuclear envelope.",
-              labelX: 110,
-              labelY: 300,
-              targetX: 330,
-              targetY: 260,
-              controlX: 200,
-              controlY: 280,
-              color: "#a855f7",
-            },
-            {
-              id: "golgi",
-              label: "Golgi Apparatus (Dictyosome)",
-              formulaOrValue: "Cis & Trans Faces",
-              examNote: "CEE: Modifies, sorts, and packages glycoproteins into secretory vesicles.",
-              labelX: 770,
-              labelY: 340,
-              targetX: 540,
-              targetY: 320,
-              controlX: 680,
-              controlY: 350,
-              color: "#ec4899",
-            },
-            {
-              id: "membrane",
-              label: "Plasma Membrane",
-              formulaOrValue: "Fluid Mosaic Bilayer (~7.5 nm)",
-              examNote: "Singer & Nicolson model: Phospholipid bilayer with integral and peripheral transport proteins.",
-              labelX: 130,
-              labelY: 460,
-              targetX: 270,
-              targetY: 380,
-              controlX: 180,
-              controlY: 420,
-              color: "#10b981",
-            },
-          ] as DiagramAnnotation[],
-          renderSvg: () => (
-            <g>
-              <ellipse cx="450" cy="270" rx="250" ry="170" fill="none" stroke="#10b981" strokeWidth="4" strokeDasharray="6 3" opacity="0.8" />
-              <ellipse cx="450" cy="270" rx="242" ry="162" fill="#10b981" fillOpacity="0.04" />
-              <ellipse cx="410" cy="240" rx="70" ry="60" fill="#0284c7" fillOpacity="0.18" stroke="#38bdf8" strokeWidth="3" />
-              <ellipse cx="425" cy="230" rx="24" ry="20" fill="#38bdf8" fillOpacity="0.4" />
-              <g transform="translate(560, 205) rotate(25)">
-                <ellipse cx="0" cy="0" rx="42" ry="22" fill="#d97706" fillOpacity="0.25" stroke="#f59e0b" strokeWidth="2.5" />
-                <path d="M -30 0 Q -20 -12 -10 0 T 10 0 T 30 0" fill="none" stroke="#fbbf24" strokeWidth="2" />
-              </g>
-              <path d="M 330 210 Q 300 240 320 280 T 340 310" fill="none" stroke="#a855f7" strokeWidth="3" />
-              <circle cx="315" cy="235" r="3" fill="#c084fc" />
-              <circle cx="310" cy="265" r="3" fill="#c084fc" />
-              <circle cx="330" cy="295" r="3" fill="#c084fc" />
-              <path d="M 520 300 Q 560 305 570 330" fill="none" stroke="#ec4899" strokeWidth="3.5" strokeLinecap="round" />
-              <path d="M 515 315 Q 555 320 565 345" fill="none" stroke="#ec4899" strokeWidth="3" strokeLinecap="round" />
-              <circle cx="585" cy="335" r="5" fill="#f472b6" />
-            </g>
-          ),
-        };
-      }
-
-      // 1C. Default Biology: Neuron Synapse
+    if (
+      normalizedSubject === "biology" &&
+      (t.includes("nephr") || t.includes("kidney") || t.includes("urin") || t.includes("excret") || title.includes("nephr"))
+    ) {
       return {
-        title: `Physiological Synaptic Transmission: ${topicTitle}`,
-        subtitle: "Synaptic Transmission, Signal Transduction & Neurochemical Architecture",
-        specific: false,
-        viewBox: "0 0 900 520",
+        viewBox: sharedViewBox,
+        specific,
         annotations: [
           {
-            id: "axon",
-            label: "Presynaptic Terminal (Axon Button)",
-            formulaOrValue: "Ca²⁺ Voltage Gated Influx",
-            examNote: "CEE: Action potential depolarizes terminal; Ca²⁺ triggers exocytosis of acetylcholine.",
+            id: "glomerulus",
+            label: "Glomerulus & Bowman's Capsule",
+            formulaOrValue: "NFP = GHP - (BCOP + CHP) = 10 mmHg",
+            examNote: "CEE: Afferent arteriole is wider than efferent arteriole, creating high hydrostatic pressure for ultrafiltration.",
             labelX: 130,
             labelY: 70,
-            targetX: 370,
-            targetY: 180,
-            controlX: 230,
-            controlY: 100,
-            color: "#38bdf8",
-          },
-          {
-            id: "vesicles",
-            label: "Synaptic Vesicles (ACh)",
-            formulaOrValue: "Quanta: ~10,000 ACh Molecules",
-            examNote: "NEB: Fuse with presynaptic membrane upon phosphorylation via synapsin proteins.",
-            labelX: 770,
-            labelY: 70,
-            targetX: 430,
-            targetY: 190,
-            controlX: 650,
-            controlY: 110,
-            color: "#ec4899",
-          },
-          {
-            id: "cleft",
-            label: "Synaptic Cleft",
-            formulaOrValue: "Width: 20–30 nm",
-            examNote: "CEE: Neurotransmitters diffuse across extracellular gap in <0.5 milliseconds (synaptic delay).",
-            labelX: 130,
-            labelY: 280,
-            targetX: 450,
-            targetY: 270,
-            controlX: 250,
-            controlY: 280,
-            color: "#10b981",
-          },
-          {
-            id: "receptors",
-            label: "Postsynaptic Ligand-Gated Receptors",
-            formulaOrValue: "Nicotinic AChR (Na⁺ influx)",
-            examNote: "NEB: Generates Excitatory Postsynaptic Potential (EPSP) driving threshold depolarization.",
-            labelX: 770,
-            labelY: 350,
-            targetX: 490,
-            targetY: 330,
-            controlX: 680,
-            controlY: 360,
-            color: "#f59e0b",
-          },
-          {
-            id: "enzyme",
-            label: "Acetylcholinesterase (AChE)",
-            formulaOrValue: "ACh → Acetate + Choline",
-            examNote: "CEE: Rapidly breaks down ACh preventing continuous tetanic muscular contraction.",
-            labelX: 140,
-            labelY: 450,
-            targetX: 390,
-            targetY: 310,
+            targetX: 380,
+            targetY: 120,
             controlX: 240,
-            controlY: 410,
-            color: "#8b5cf6",
-          },
-        ] as DiagramAnnotation[],
-        renderSvg: () => (
-          <g>
-            <path
-              d="M 330 60 L 330 140 C 330 230, 570 230, 570 140 L 570 60"
-              fill="#0284c7"
-              fillOpacity="0.12"
-              stroke="#38bdf8"
-              strokeWidth="3.5"
-            />
-            <circle cx="390" cy="170" r="12" fill="#ec4899" fillOpacity="0.7" stroke="#f472b6" strokeWidth="2" />
-            <circle cx="430" cy="185" r="10" fill="#ec4899" fillOpacity="0.7" stroke="#f472b6" strokeWidth="2" />
-            <circle cx="480" cy="175" r="11" fill="#ec4899" fillOpacity="0.7" stroke="#f472b6" strokeWidth="2" />
-            <circle cx="520" cy="160" r="12" fill="#ec4899" fillOpacity="0.7" stroke="#f472b6" strokeWidth="2" />
-            <circle cx="415" cy="255" r="4" fill="#10b981" />
-            <circle cx="445" cy="265" r="4" fill="#10b981" />
-            <circle cx="485" cy="260" r="4" fill="#10b981" />
-            <circle cx="510" cy="270" r="4" fill="#10b981" />
-            <path
-              d="M 300 310 C 400 330, 500 330, 600 310 L 600 420 L 300 420 Z"
-              fill="#10b981"
-              fillOpacity="0.1"
-              stroke="#10b981"
-              strokeWidth="3.5"
-            />
-            <rect x="380" y="308" width="18" height="12" rx="3" fill="#f59e0b" stroke="#fbbf24" strokeWidth="1.5" />
-            <rect x="440" y="318" width="18" height="12" rx="3" fill="#f59e0b" stroke="#fbbf24" strokeWidth="1.5" />
-            <rect x="500" y="312" width="18" height="12" rx="3" fill="#f59e0b" stroke="#fbbf24" strokeWidth="1.5" />
-          </g>
-        ),
-      };
-    }
-
-    // ─────────────────────────────────────────────────────────────
-    // 2. CHEMISTRY
-    // ─────────────────────────────────────────────────────────────
-    if (normalizedSubject === "chemistry") {
-      // 2A. Electrochemical Galvanic / Daniell Cell
-      if (t.includes("electro") || t.includes("cell") || t.includes("daniell") || t.includes("redox") || title.includes("cell")) {
-        return {
-          title: `Electrochemical Daniell Galvanic Cell Schematic: ${topicTitle}`,
-          subtitle: "Zn Anode (-), Cu Cathode (+), Salt Bridge & Standard EMF E° = +1.10 V",
-          specific: true,
-          viewBox: "0 0 900 520",
-          annotations: [
-            {
-              id: "anode",
-              label: "Zinc Anode (Oxidation)",
-              formulaOrValue: "Zn(s) → Zn²⁺(aq) + 2e⁻ (E° = -0.76 V)",
-              examNote: "CEE: Anode is negatively charged in galvanic cell. Zinc rod loses mass as Zn dissolves into ZnSO₄.",
-              labelX: 130,
-              labelY: 80,
-              targetX: 350,
-              targetY: 260,
-              controlX: 230,
-              controlY: 110,
-              color: "#ef4444",
-            },
-            {
-              id: "cathode",
-              label: "Copper Cathode (Reduction)",
-              formulaOrValue: "Cu²⁺(aq) + 2e⁻ → Cu(s) (E° = +0.34 V)",
-              examNote: "NEB: Cathode is positively charged. Cu²⁺ ions deposit onto the copper rod, increasing its thickness.",
-              labelX: 770,
-              labelY: 80,
-              targetX: 550,
-              targetY: 260,
-              controlX: 680,
-              controlY: 110,
-              color: "#38bdf8",
-            },
-            {
-              id: "bridge",
-              label: "Salt Bridge (KCl / KNO₃ in Agar)",
-              formulaOrValue: "Maintains Electrical Neutrality",
-              examNote: "CEE: Prevents accumulation of positive charge at anode and negative charge at cathode; eliminates liquid junction potential.",
-              labelX: 450,
-              labelY: 60,
-              targetX: 450,
-              targetY: 230,
-              controlX: 450,
-              controlY: 130,
-              color: "#a855f7",
-            },
-            {
-              id: "voltmeter",
-              label: "External Circuit & EMF Display",
-              formulaOrValue: "E°_cell = E°_cathode - E°_anode = +1.10 V",
-              examNote: "CEE TRAP: Electrons flow from Zn (anode) to Cu (cathode); conventional current flows from Cu to Zn!",
-              labelX: 130,
-              labelY: 440,
-              targetX: 450,
-              targetY: 120,
-              controlX: 250,
-              controlY: 360,
-              color: "#f59e0b",
-            },
-            {
-              id: "electrolyte",
-              label: "Electrolyte Solutions (1.0 M)",
-              formulaOrValue: "1M ZnSO₄(aq) || 1M CuSO₄(aq)",
-              examNote: "NEB: Standard state condition requires 1.0 M concentration at 298 K (25°C) and 1 atm pressure.",
-              labelX: 770,
-              labelY: 440,
-              targetX: 570,
-              targetY: 360,
-              controlX: 680,
-              controlY: 420,
-              color: "#10b981",
-            },
-          ] as DiagramAnnotation[],
-          renderSvg: () => (
-            <g>
-              {/* Left Beaker (ZnSO4) */}
-              <rect x="280" y="220" width="140" height="170" rx="8" fill="#38bdf8" fillOpacity="0.08" stroke="#64748b" strokeWidth="3" />
-              <rect x="284" y="260" width="132" height="126" rx="4" fill="#38bdf8" fillOpacity="0.2" />
-              <text x="350" y="375" fill="#38bdf8" textAnchor="middle" fontSize="11" fontWeight="bold">1M ZnSO₄</text>
-
-              {/* Right Beaker (CuSO4) */}
-              <rect x="480" y="220" width="140" height="170" rx="8" fill="#0284c7" fillOpacity="0.12" stroke="#64748b" strokeWidth="3" />
-              <rect x="484" y="260" width="132" height="126" rx="4" fill="#0284c7" fillOpacity="0.3" />
-              <text x="550" y="375" fill="#7dd3fc" textAnchor="middle" fontSize="11" fontWeight="bold">1M CuSO₄</text>
-
-              {/* Zinc Electrode (Grey) */}
-              <rect x="335" y="170" width="30" height="140" rx="3" fill="#94a3b8" stroke="#cbd5e1" strokeWidth="2.5" />
-              <text x="350" y="205" fill="#0f172a" textAnchor="middle" fontSize="11" fontWeight="bold">Zn (-)</text>
-
-              {/* Copper Electrode (Red-Brown) */}
-              <rect x="535" y="170" width="30" height="140" rx="3" fill="#d97706" stroke="#f59e0b" strokeWidth="2.5" />
-              <text x="550" y="205" fill="#ffffff" textAnchor="middle" fontSize="11" fontWeight="bold">Cu (+)</text>
-
-              {/* Inverted U-tube Salt Bridge */}
-              <path
-                d="M 390 280 L 390 200 C 390 170, 510 170, 510 200 L 510 280"
-                fill="none"
-                stroke="#a855f7"
-                strokeWidth="14"
-                strokeLinecap="round"
-                opacity="0.8"
-              />
-              <path
-                d="M 390 280 L 390 200 C 390 170, 510 170, 510 200 L 510 280"
-                fill="none"
-                stroke="#d8b4fe"
-                strokeWidth="6"
-                strokeLinecap="round"
-              />
-
-              {/* External Wire & Voltmeter */}
-              <path d="M 350 170 L 350 120 L 415 120" fill="none" stroke="#f59e0b" strokeWidth="3" />
-              <path d="M 485 120 L 550 120 L 550 170" fill="none" stroke="#f59e0b" strokeWidth="3" />
-              {/* Voltmeter Dial */}
-              <circle cx="450" cy="120" r="24" fill="#0f172a" stroke="#f59e0b" strokeWidth="3" />
-              <text x="450" y="125" fill="#fbbf24" textAnchor="middle" fontSize="12" fontWeight="bold">
-                {galvanicConnected ? "1.10V" : "0.00V"}
-              </text>
-
-              {/* Animated Electron Flow Arrow */}
-              {galvanicConnected && (
-                <g>
-                  <line x1="370" y1="110" x2="420" y2="110" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow-cyan)" />
-                  <text x="395" y="103" fill="#38bdf8" textAnchor="middle" fontSize="10" fontWeight="bold">2e⁻ flow →</text>
-                </g>
-              )}
-            </g>
-          ),
-        };
-      }
-
-      // 2B. Default Chemistry: Bohr Atom & Quantum Shells
-      return {
-        title: `Chemical & Molecular Architecture: ${topicTitle}`,
-        subtitle: "Orbital Mechanics, Electron Probability Density & Reaction Energetics",
-        specific: false,
-        viewBox: "0 0 900 520",
-        annotations: [
-          {
-            id: "nucleus",
-            label: "Dense Positively Charged Nucleus",
-            formulaOrValue: "Z·e (Protons + Neutrons)",
-            examNote: "NEB: Rutherford alpha-scattering confirmed nuclear radius ~10⁻¹⁵ m vs atomic radius ~10⁻¹⁰ m.",
-            labelX: 130,
-            labelY: 70,
-            targetX: 450,
-            targetY: 260,
-            controlX: 270,
-            controlY: 110,
+            controlY: 100,
             color: "#ef4444",
           },
           {
-            id: "k_shell",
-            label: "Principal Quantum Level n=1 (K Shell)",
-            formulaOrValue: "2n² = 2 Electrons Max",
-            examNote: "CEE: Most tightly bound electrons with maximum binding energy and lowest principal radius.",
-            labelX: 770,
-            labelY: 70,
-            targetX: 510,
-            targetY: 240,
-            controlX: 670,
-            controlY: 120,
-            color: "#3b82f6",
-          },
-          {
-            id: "valence",
-            label: "Valence Shell Orbitals (n=2 / n=3)",
-            formulaOrValue: "sp³ Hybridized / Octet",
-            examNote: "NEB: Dictates chemical reactivity, ionization potential, and electronegativity gradient.",
-            labelX: 130,
-            labelY: 330,
-            targetX: 300,
-            targetY: 260,
-            controlX: 200,
-            controlY: 310,
-            color: "#10b981",
-          },
-          {
-            id: "transitions",
-            label: "Electronic Transition & Emission",
-            formulaOrValue: "ΔE = h·ν = h·c / λ",
-            examNote: "CEE: Bohr frequency condition. Balmer series transitions fall in the visible spectrum.",
-            labelX: 770,
-            labelY: 340,
-            targetX: 580,
-            targetY: 200,
-            controlX: 700,
-            controlY: 270,
-            color: "#f59e0b",
-          },
-          {
-            id: "lattice",
-            label: "Bonding Overlap & Wavefunction",
-            formulaOrValue: "ψ_bonding = c₁ψ_A + c₂ψ_B",
-            examNote: "CEE: Linear Combination of Atomic Orbitals (LCAO) generates bonding and antibonding states.",
-            labelX: 140,
-            labelY: 460,
+            id: "pct",
+            label: "Proximal Convoluted Tubule (PCT)",
+            formulaOrValue: "Reabsorbs ~65% filtrate (glucose, Na⁺, H₂O, amino acids)",
+            examNote: "CEE: PCT has brush-border microvilli; maximum reabsorption; site of selective secretion (H⁺, NH₃).",
+            labelX: 620,
+            labelY: 60,
             targetX: 450,
-            targetY: 390,
-            controlX: 260,
-            controlY: 440,
-            color: "#a855f7",
-          },
-        ] as DiagramAnnotation[],
-        renderSvg: () => (
-          <g>
-            <circle cx="450" cy="260" r="50" fill="none" stroke="#3b82f6" strokeWidth="2" strokeDasharray="5 3" opacity="0.6" />
-            <circle cx="450" cy="260" r="100" fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="6 4" opacity="0.7" />
-            <circle cx="450" cy="260" r="155" fill="none" stroke="#f59e0b" strokeWidth="2" opacity="0.5" />
-            <circle cx="450" cy="260" r="22" fill="#ef4444" fillOpacity="0.3" />
-            <circle cx="450" cy="260" r="14" fill="#dc2626" stroke="#f87171" strokeWidth="2.5" />
-            <text x="450" y="264" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Z⁺</text>
-            <circle cx="500" cy="260" r="6" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="400" cy="260" r="6" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="350" cy="260" r="6" fill="#34d399" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="550" cy="260" r="6" fill="#34d399" stroke="#ffffff" strokeWidth="1.5" />
-            <path d="M 500 254 Q 540 210 580 200" fill="none" stroke="#fbbf24" strokeWidth="2" strokeDasharray="3 3" />
-          </g>
-        ),
-      };
-    }
-
-    // ─────────────────────────────────────────────────────────────
-    // 3. MATHEMATICS
-    // ─────────────────────────────────────────────────────────────
-    if (normalizedSubject === "mathematics") {
-      // 3A. Conic Section: Parabola & Focus-Directrix
-      if (t.includes("parabola") || t.includes("conic") || t.includes("ellipse") || title.includes("parabola")) {
-        return {
-          title: `Analytical Conic Geometry (Parabola y² = 4ax): ${topicTitle}`,
-          subtitle: "Focus S(a, 0), Directrix x = -a, Latus Rectum = 4a & SP = PM Geometric Invariant",
-          specific: true,
-          viewBox: "0 0 900 520",
-          annotations: [
-            {
-              id: "focus",
-              label: "Focus S(a, 0)",
-              formulaOrValue: "Coordinates: (a, 0)",
-              examNote: "NEB: All rays parallel to the axis of symmetry reflect precisely through the focus.",
-              labelX: 770,
-              labelY: 80,
-              targetX: 520,
-              targetY: 260,
-              controlX: 680,
-              controlY: 120,
-              color: "#f59e0b",
-            },
-            {
-              id: "directrix",
-              label: "Directrix Line",
-              formulaOrValue: "Equation: x = -a",
-              examNote: "CEE: Ratio of distance from focus to distance from directrix is the eccentricity: e = SP / PM = 1.0.",
-              labelX: 130,
-              labelY: 80,
-              targetX: 320,
-              targetY: 160,
-              controlX: 230,
-              controlY: 100,
-              color: "#ef4444",
-            },
-            {
-              id: "vertex",
-              label: "Vertex V(0, 0)",
-              formulaOrValue: "Midpoint of Focus & Directrix Foot",
-              examNote: "NEB: Tangent at vertex is the y-axis (x = 0).",
-              labelX: 130,
-              labelY: 310,
-              targetX: 420,
-              targetY: 260,
-              controlX: 240,
-              controlY: 300,
-              color: "#38bdf8",
-            },
-            {
-              id: "latus",
-              label: "Latus Rectum Chord",
-              formulaOrValue: "Length = 4a (Ends: (a, 2a) and (a, -2a))",
-              examNote: "CEE: Focal chord perpendicular to major axis; focal distance of any point P(x, y) is x + a.",
-              labelX: 770,
-              labelY: 350,
-              targetX: 520,
-              targetY: 180,
-              controlX: 680,
-              controlY: 300,
-              color: "#a855f7",
-            },
-          ] as DiagramAnnotation[],
-          renderSvg: () => (
-            <g>
-              {/* Axes */}
-              <line x1="260" y1="260" x2="680" y2="260" stroke="#64748b" strokeWidth="2.5" markerEnd="url(#arrow)" />
-              <line x1="420" y1="440" x2="420" y2="80" stroke="#64748b" strokeWidth="2.5" markerEnd="url(#arrow)" />
-              <text x="685" y="265" fill="#94a3b8" fontSize="12" fontWeight="bold">x</text>
-              <text x="420" y="70" fill="#94a3b8" fontSize="12" fontWeight="bold" textAnchor="middle">y</text>
-
-              {/* Directrix x = -a (x=320) */}
-              <line x1="320" y1="90" x2="320" y2="430" stroke="#ef4444" strokeWidth="3" strokeDasharray="6 3" />
-              <text x="310" y="105" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="end">Directrix x = -a</text>
-
-              {/* Parabola Curve y^2 = 4ax opening to the right from vertex (420, 260) */}
-              <path
-                d="M 640 100 Q 420 180 420 260 Q 420 340 640 420"
-                fill="none"
-                stroke="#38bdf8"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-
-              {/* Focus S(a, 0) at (520, 260) */}
-              <circle cx="520" cy="260" r="6" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
-              <text x="525" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">S(a, 0)</text>
-
-              {/* Latus Rectum Chord through Focus */}
-              <line x1="520" y1="160" x2="520" y2="360" stroke="#a855f7" strokeWidth="2.5" strokeDasharray="4 4" />
-              <circle cx="520" cy="160" r="5" fill="#c084fc" />
-              <circle cx="520" cy="360" r="5" fill="#c084fc" />
-
-              {/* Point P on parabola with SP = PM leader */}
-              <circle cx="570" cy="140" r="6" fill="#10b981" stroke="#ffffff" strokeWidth="2" />
-              <text x="580" y="135" fill="#10b981" fontSize="11" fontWeight="bold">P(x, y)</text>
-              <line x1="520" y1="260" x2="570" y2="140" stroke="#10b981" strokeWidth="2" />
-              <line x1="570" y1="140" x2="320" y2="140" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 3" />
-            </g>
-          ),
-        };
-      }
-
-      // 3B. Calculus: Tangent Slope & Integral Area
-      return {
-        title: `Analytical Mathematical Geometry: ${topicTitle}`,
-        subtitle: "Vector Calculus, Coordinate Frames & Derivative Tangent Systems",
-        specific: false,
-        viewBox: "0 0 900 520",
-        annotations: [
-          {
-            id: "tangent",
-            label: "Tangent Line at Point P(x₀, y₀)",
-            formulaOrValue: "Slope m = f'(x₀) = dy/dx",
-            examNote: "NEB: Geometric interpretation of the derivative. Represents instantaneous rate of change.",
-            labelX: 130,
-            labelY: 70,
-            targetX: tangentPos,
-            targetY: 200,
-            controlX: 250,
-            controlY: 100,
-            color: "#f59e0b",
-          },
-          {
-            id: "curve",
-            label: "Continuous Curve y = f(x)",
-            formulaOrValue: "Domain: [a, b], C¹ Smooth",
-            examNote: "CEE: Rolle's & Mean Value Theorem guarantee at least one c where f'(c) equals secant slope.",
-            labelX: 770,
-            labelY: 80,
-            targetX: 560,
             targetY: 180,
-            controlX: 680,
-            controlY: 120,
+            controlX: 560,
+            controlY: 100,
             color: "#38bdf8",
           },
           {
-            id: "integral",
-            label: "Definite Integral Area under Curve",
-            formulaOrValue: "A = ∫ₐᵇ f(x) dx = F(b) - F(a)",
-            examNote: "CEE: Fundamental Theorem of Calculus connects integration as antiderivative to area evaluation.",
-            labelX: 770,
-            labelY: 350,
-            targetX: 470,
-            targetY: 310,
-            controlX: 660,
-            controlY: 350,
+            id: "loop_desc",
+            label: "Descending Limb of Henle",
+            formulaOrValue: "Permeable to H₂O only; hypertonic filtrate at bend",
+            examNote: "NEB: Concentrating segment; ADH-independent water reabsorption via osmosis into medulla.",
+            labelX: 620,
+            labelY: 230,
+            targetX: 330,
+            targetY: 330,
+            controlX: 520,
+            controlY: 290,
             color: "#a855f7",
           },
           {
-            id: "axes",
-            label: "Orthogonal Coordinate Axes",
-            formulaOrValue: "Origin (0, 0), R² Plane",
-            examNote: "NEB: Sign convention in four quadrants determines trigonometric and derivative signs.",
-            labelX: 140,
-            labelY: 450,
-            targetX: 260,
-            targetY: 380,
-            controlX: 180,
+            id: "loop_asc",
+            label: "Ascending Limb of Henle",
+            formulaOrValue: "Permeable to salts only (diluting segment)",
+            examNote: "CEE: Impermeable to water; NaCl actively pumped out → filtrate becomes hypotonic.",
+            labelX: 120,
+            labelY: 230,
+            targetX: 470,
+            targetY: 330,
+            controlX: 280,
+            controlY: 290,
+            color: "#f59e0b",
+          },
+          {
+            id: "dct",
+            label: "Distal Convoluted Tubule (DCT)",
+            formulaOrValue: "Hormonally controlled (Aldosterone, ADH)",
+            examNote: "NEB: Aldosterone → Na⁺ reabsorption; ADH → water permeability; pH adjustment via H⁺ secretion.",
+            labelX: 130,
+            labelY: 380,
+            targetX: 500,
+            targetY: 230,
+            controlX: 280,
+            controlY: 320,
+            color: "#10b981",
+          },
+          {
+            id: "collecting",
+            label: "Collecting Duct",
+            formulaOrValue: "Final concentration; U/P ratio up to 4:1 in man",
+            examNote: "CEE: ADH inserts aquaporin-2 channels → ↑ H₂O permeability; passes through hypertonic medulla.",
+            labelX: 640,
+            labelY: 390,
+            targetX: 400,
+            targetY: 420,
+            controlX: 560,
             controlY: 430,
-            color: "#94a3b8",
+            color: "#6366f1",
           },
         ] as DiagramAnnotation[],
         renderSvg: () => (
           <g>
-            <line x1="240" y1="380" x2="680" y2="380" stroke="#64748b" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <line x1="270" y1="410" x2="270" y2="100" stroke="#64748b" strokeWidth="2.5" markerEnd="url(#arrow)" />
-            <text x="685" y="385" fill="#94a3b8" fontSize="12" fontWeight="bold">x</text>
-            <text x="270" y="88" fill="#94a3b8" fontSize="12" fontWeight="bold" textAnchor="middle">y</text>
-            <path d="M 350 380 L 350 290 Q 430 190 530 220 L 530 380 Z" fill="#a855f7" fillOpacity="0.12" />
-            <path d="M 290 350 Q 370 290 430 200 T 630 190" fill="none" stroke="#38bdf8" strokeWidth="4" strokeLinecap="round" />
-            {/* Dynamic Tangent line based on tangentPos */}
-            <line
-              x1={tangentPos - 100}
-              y1={200 + (tangentPos - 430) * 0.4 + 90}
-              x2={tangentPos + 100}
-              y2={200 + (tangentPos - 430) * 0.4 - 90}
-              stroke="#f59e0b"
-              strokeWidth="2.5"
-              strokeDasharray="6 3"
-            />
-            <circle cx={tangentPos} cy={200} r="6" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
-            <text x={tangentPos + 10} y="195" fill="#f59e0b" fontSize="11" fontWeight="bold">P(x₀, y₀)</text>
+            <circle cx="380" cy="120" r="38" fill="#ef4444" fillOpacity="0.15" stroke="#ef4444" strokeWidth="2.5" />
+            <g stroke="#ef4444" strokeWidth="1.2" fill="none" opacity="0.65">
+              <path d="M 358 118 Q 360 92 376 88" />
+              <path d="M 362 120 Q 365 96 378 95" />
+              <path d="M 366 120 Q 370 100 382 100" />
+            </g>
+            <path d="M 318 120 C 260 95 250 190 310 210 C 300 165 330 140 362 130 Z" fill="none" stroke="#64748b" strokeWidth="3" />
+            <path d="M 400 140 Q 420 160 450 170 Q 490 180 500 160 Q 500 195 450 205 Q 415 212 412 232 Q 390 255 362 230 Q 366 270 332 278 Q 318 300 320 330 Q 325 380 270 395 Q 220 380 235 350 Q 248 335 266 340 L 266 305 Q 272 270 296 258 L 310 230 Q 275 210 296 180 Q 315 170 345 170 Q 370 165 370 150 Q 380 148 380 150" fill="none" stroke="#64748b" strokeWidth="3.2" strokeLinejoin="round" />
+            <path d="M 450 170 Q 510 170 560 200 Q 605 225 580 278 Q 555 320 610 338 Q 665 350 650 400 Q 630 455 565 455 Q 490 455 470 405 Q 452 350 400 345 Q 350 340 360 295 Q 370 265 410 260 Q 455 258 466 225 Q 460 200 440 190" fill="none" stroke="#64748b" strokeWidth="3.2" strokeLinejoin="round" />
+            <path d="M 400 415 L 400 470 L 440 470 L 440 430" fill="none" stroke="#6366f1" strokeWidth="3" strokeDasharray="5 4" opacity="0.85" />
+            <g stroke="#64748b" strokeWidth="2" fill="none" opacity="0.5">
+              <path d="M 320 65 L 380 65 M 440 65 L 440 85 M 300 80 L 320 80" />
+            </g>
           </g>
         ),
       };
     }
 
-    // ─────────────────────────────────────────────────────────────
-    // 4. PHYSICS
-    // ─────────────────────────────────────────────────────────────
-
-    // 4A. Projectile Motion
-    if (t.includes("projectile") || t.includes("kinematic") || title.includes("projectile")) {
-      // Compute range and height based on angle
-      const rad = (projectileAngle * Math.PI) / 180;
-      const rScale = Math.sin(2 * rad); // max 1 at 45 deg
-      const hScale = Math.sin(rad) * Math.sin(rad); // max 0.75 at 60 deg
-
-      const startX = 280;
-      const startY = 380;
-      const apexX = startX + 180 * rScale;
-      const apexY = startY - 180 * hScale;
-      const endX = startX + 360 * rScale;
-
+    if (
+      normalizedSubject === "chemistry" &&
+      (t.includes("galvan") || t.includes("volta") || t.includes("electrochem") || t.includes("cell") || title.includes("galvan") || title.includes("volta"))
+    ) {
+      const anodeColor = "#ef4444";
+      const cathodeColor = "#3b82f6";
       return {
-        title: `Kinematics & Two-Dimensional Projectile Motion: ${topicTitle}`,
-        subtitle: `Launch Angle θ = ${projectileAngle}° | Parabolic Trajectory, Velocity Vector Components & Range`,
-        specific: true,
-        viewBox: "0 0 900 520",
+        viewBox: sharedViewBox,
+        specific,
         annotations: [
           {
-            id: "launch",
-            label: `Launch Velocity u (θ = ${projectileAngle}°)`,
-            formulaOrValue: "u_x = u·cos(θ), u_y = u·sin(θ)",
-            examNote: "CEE: Horizontal velocity u_x remains constant throughout flight; vertical velocity changes by g·t.",
-            labelX: 130,
+            id: "anode",
+            label: "Anode — Zinc (Oxidation)",
+            formulaOrValue: "Zn(s) → Zn²⁺ + 2e⁻ | E° = −0.76 V",
+            examNote: "CEE: Oxidation ALWAYS at anode; anions migrate toward anode; negative electrode in galvanic cell.",
+            labelX: 80,
             labelY: 70,
-            targetX: startX + 30,
-            targetY: startY - 40,
-            controlX: 200,
-            controlY: 90,
+            targetX: 220,
+            targetY: 300,
+            controlX: 160,
+            controlY: 160,
+            color: anodeColor,
+          },
+          {
+            id: "cathode",
+            label: "Cathode — Copper (Reduction)",
+            formulaOrValue: "Cu²⁺ + 2e⁻ → Cu(s) | E° = +0.34 V",
+            examNote: "CEE: Reduction ALWAYS at cathode; cations migrate toward cathode; positive electrode in galvanic cell.",
+            labelX: 700,
+            labelY: 70,
+            targetX: 680,
+            targetY: 300,
+            controlX: 720,
+            controlY: 160,
+            color: cathodeColor,
+          },
+          {
+            id: "salt",
+            label: "Salt Bridge (KCl / KNO₃ in Agar)",
+            formulaOrValue: "K⁺ → Cathode half | Cl⁻ → Anode half",
+            examNote: "NEB: Maintains electrical neutrality; completes inner circuit; prevents liquid junction potential.",
+            labelX: 395,
+            labelY: 90,
+            targetX: 450,
+            targetY: 260,
+            controlX: 450,
+            controlY: 170,
+            color: "#a855f7",
+          },
+          {
+            id: "wire",
+            label: galvanicConnected ? "External Wire — e⁻ flow (Zn → Cu)" : "External Wire — open circuit",
+            formulaOrValue: galvanicConnected ? "Direction: Anode → Voltmeter → Cathode" : "No e⁻ flow; measured Ecell = OCV 1.10 V",
+            examNote: "CEE: e⁻ flow opposite to conventional current; voltmeter reads +1.10 V when salt bridge present.",
+            labelX: 395,
+            labelY: 450,
+            targetX: 450,
+            targetY: 155,
+            controlX: 460,
+            controlY: 340,
             color: "#10b981",
           },
           {
-            id: "apex",
-            label: "Apex / Maximum Height H",
-            formulaOrValue: "H = (u²·sin²θ) / (2g)",
-            examNote: "NEB: At highest point, vertical velocity v_y = 0, but v_x = u·cos(θ) ≠ 0! Velocity and acceleration are strictly perpendicular.",
-            labelX: 450,
+            id: "porous",
+            label: "Porous Disk / Junction",
+            formulaOrValue: "Alternative to salt bridge; allows ion migration",
+            examNote: "NEB: Allows ion contact without extensive mixing; still requires balancing charge per half-cell.",
+            labelX: 80,
+            labelY: 430,
+            targetX: 380,
+            targetY: 380,
+            controlX: 210,
+            controlY: 430,
+            color: "#f59e0b",
+          },
+        ] as DiagramAnnotation[],
+        renderSvg: () => (
+          <g>
+            <path d="M 130 260 L 130 400 L 320 400 L 320 260 Z" fill="#ef4444" fillOpacity="0.08" stroke={anodeColor} strokeWidth="3" />
+            <path d="M 580 260 L 580 400 L 770 400 L 770 260 Z" fill="#3b82f6" fillOpacity="0.08" stroke={cathodeColor} strokeWidth="3" />
+            <text x="225" y="420" textAnchor="middle" fill={anodeColor} fontSize="11" fontWeight="bold">ZnSO₄(aq) Anolyte</text>
+            <text x="675" y="420" textAnchor="middle" fill={cathodeColor} fontSize="11" fontWeight="bold">CuSO₄(aq) Catholyte</text>
+            {Array.from({ length: 6 }).map((_, i) => (
+              <rect key={`zn-${i}`} x={170 + i * 22} y={295 + (i % 2) * 8} width="14" height="40" rx="2" fill={anodeColor} fillOpacity="0.2" stroke={anodeColor} strokeWidth="1.4" />
+            ))}
+            {Array.from({ length: 6 }).map((_, i) => (
+              <rect key={`cu-${i}`} x={620 + i * 22} y={295 + (i % 2) * 8} width="14" height="40" rx="2" fill={cathodeColor} fillOpacity="0.2" stroke={cathodeColor} strokeWidth="1.4" />
+            ))}
+            <rect x="218" y="180" width="14" height="120" rx="3" fill={anodeColor} fillOpacity="0.25" stroke={anodeColor} strokeWidth="2.2" />
+            <text x="225" y="320" textAnchor="middle" fill={anodeColor} fontSize="10" fontWeight="bold">Zn (-)</text>
+            <rect x="668" y="180" width="14" height="120" rx="3" fill={cathodeColor} fillOpacity="0.25" stroke={cathodeColor} strokeWidth="2.2" />
+            <text x="675" y="320" textAnchor="middle" fill={cathodeColor} fontSize="10" fontWeight="bold">Cu (+)</text>
+            <path d="M 225 180 L 225 155 Q 225 145 235 145 L 425 145" fill="none" stroke="#94a3b8" strokeWidth="2.4" />
+            <path d={`M 475 145 ${galvanicConnected ? "L 665 145 Q 675 145 675 155" : "L 495 145 M 645 145 L 665 145 Q 675 145 675 155"}`} fill="none" stroke="#94a3b8" strokeWidth="2.4" />
+            <path d="M 675 155 L 675 180" fill="none" stroke="#94a3b8" strokeWidth="2.4" />
+            {galvanicConnected && (
+              <g>
+                <circle cx="450" cy="145" r="22" fill="#0f172a" stroke="#94a3b8" strokeWidth="2" />
+                <text x="450" y="141" textAnchor="middle" fill="#f8fafc" fontSize="9" fontWeight="bold">V</text>
+                <text x="450" y="153" textAnchor="middle" fill="#10b981" fontSize="9" fontWeight="bold">1.10</text>
+                <g stroke="#10b981" strokeWidth="1.4" fill="none">
+                  <circle cx="290" cy="145" r="3.5" fill="#10b981" />
+                  <circle cx="335" cy="145" r="3.5" fill="#10b981" />
+                  <circle cx="560" cy="145" r="3.5" fill="#10b981" />
+                  <circle cx="610" cy="145" r="3.5" fill="#10b981" />
+                </g>
+              </g>
+            )}
+            {!galvanicConnected && (
+              <g>
+                <line x1="498" y1="125" x2="518" y2="165" stroke="#ef4444" strokeWidth="3" />
+                <circle cx="508" cy="145" r="16" fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="3 2" />
+              </g>
+            )}
+            <rect x="436" y="225" width="28" height="170" rx="6" fill="#a855f7" fillOpacity="0.12" stroke="#a855f7" strokeWidth="2.2" />
+            {Array.from({ length: 11 }).map((_, i) => (
+              <line key={`salt-${i}`} x1="440" y1={240 + i * 14} x2="460" y2={240 + i * 14} stroke="#a855f7" strokeWidth="1.2" opacity="0.6" />
+            ))}
+            <text x="450" y="215" textAnchor="middle" fill="#a855f7" fontSize="10" fontWeight="bold">Salt</text>
+            <text x="450" y="226" textAnchor="middle" fill="#a855f7" fontSize="10" fontWeight="bold">Bridge</text>
+            <line x1="350" y1="380" x2="550" y2="380" stroke="#f59e0b" strokeWidth="2.4" strokeDasharray="6 4" opacity="0.85" />
+            <g fill="#f59e0b" opacity="0.85">
+              <circle cx="370" cy="370" r="3.5" />
+              <circle cx="410" cy="390" r="3.5" />
+              <circle cx="490" cy="370" r="3.5" />
+              <circle cx="530" cy="390" r="3.5" />
+            </g>
+          </g>
+        ),
+      };
+    }
+
+    if (
+      normalizedSubject === "mathematics" &&
+      (t.includes("parabol") || t.includes("conic") || title.includes("parabol") || u.includes("conic") || u.includes("coordinate"))
+    ) {
+      const yAt = (x: number) => (x * x) / 240;
+      return {
+        viewBox: sharedViewBox,
+        specific,
+        annotations: [
+          {
+            id: "vertex",
+            label: "Vertex V (0, 0)",
+            formulaOrValue: "Mid-point of focus and foot of directrix",
+            examNote: "CEE: Vertex where axis meets parabola; tangent at vertex in standard form y-axis for y²=4a x.",
+            labelX: 415,
+            labelY: 110,
+            targetX: 450,
+            targetY: 260,
+            controlX: 430,
+            controlY: 180,
+            color: "#ef4444",
+          },
+          {
+            id: "focus",
+            label: "Focus S (a, 0)",
+            formulaOrValue: "If a = 60  ⇒  S(60, 0) on +ve x-axis",
+            examNote: "NEB: Every ray parallel to axis reflects through focus; basis of parabolic mirrors and reflectors.",
+            labelX: 560,
+            labelY: 220,
+            targetX: 510,
+            targetY: 260,
+            controlX: 540,
+            controlY: 240,
+            color: "#38bdf8",
+          },
+          {
+            id: "directrix",
+            label: "Directrix x = −a",
+            formulaOrValue: "PS = PM = distance to directrix (defining property)",
+            examNote: "CEE: e = PS/PM = 1 for parabola; tangent bisects angle between PS and perpendicular to directrix.",
+            labelX: 150,
+            labelY: 420,
+            targetX: 330,
+            targetY: 260,
+            controlX: 230,
+            controlY: 340,
+            color: "#a855f7",
+          },
+          {
+            id: "latus",
+            label: "Latus Rectum LL'",
+            formulaOrValue: "Length = 4a; endpoints (a, ±2a)",
+            examNote: "NEB: Latus rectum ⊥ axis through focus; y = 4a x gives latus rectum end at (a, 2a); slope of tangent at L = 1.",
+            labelX: 560,
+            labelY: 420,
+            targetX: 510,
+            targetY: 380,
+            controlX: 560,
+            controlY: 400,
+            color: "#10b981",
+          },
+          {
+            id: "axis",
+            label: "Axis of Parabola (x-axis)",
+            formulaOrValue: "y = 0; line through V and S",
+            examNote: "CEE: Parabola symmetric about axis; only one real axis (unlike ellipse/hyperbola two axes).",
+            labelX: 150,
+            labelY: 80,
+            targetX: 600,
+            targetY: 260,
+            controlX: 360,
+            controlY: 130,
+            color: "#f59e0b",
+          },
+        ] as DiagramAnnotation[],
+        renderSvg: () => {
+          const pts = [];
+          for (let x = -240; x <= 360; x += 6) {
+            const y = yAt(x + 240);
+            pts.push([x + 330, 260 - y]);
+          }
+          const bottom = [];
+          for (let x = 360; x >= -240; x -= 6) {
+            const y = yAt(x + 240);
+            bottom.push([x + 330, 260 + y]);
+          }
+          const dPath = "M " + [...pts, ...bottom].map(p => p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" L ") + " Z";
+          return (
+            <g>
+              <line x1="80" y1="260" x2="820" y2="260" stroke="#f59e0b" strokeWidth="1.6" strokeDasharray="6 4" opacity="0.75" />
+              <text x="825" y="255" fill="#f59e0b" fontSize="10" fontWeight="bold">axis x</text>
+              <line x1="450" y1="60" x2="450" y2="470" stroke="#94a3b8" strokeWidth="1.2" strokeDasharray="4 4" opacity="0.5" />
+              <text x="455" y="70" fill="#94a3b8" fontSize="9">y</text>
+              <line x1="330" y1="50" x2="330" y2="470" stroke="#a855f7" strokeWidth="2.2" />
+              <text x="310" y="50" fill="#a855f7" fontSize="10" fontWeight="bold">x = −a</text>
+              <path d={dPath} fill="none" stroke="#64748b" strokeWidth="2.6" />
+              <circle cx="450" cy="260" r="5" fill="#ef4444" stroke="#ffffff" strokeWidth="1.5" />
+              <text x="455" y="252" fill="#ef4444" fontSize="10" fontWeight="bold">V</text>
+              <circle cx="510" cy="260" r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
+              <text x="518" y="252" fill="#38bdf8" fontSize="10" fontWeight="bold">S(a, 0)</text>
+              <line x1="510" y1="140" x2="510" y2="380" stroke="#10b981" strokeWidth="2.2" />
+              <g fill="#10b981">
+                <circle cx="510" cy="140" r="4" />
+                <circle cx="510" cy="380" r="4" />
+              </g>
+              <text x="515" y="138" fill="#10b981" fontSize="10" fontWeight="bold">L</text>
+              <text x="515" y="396" fill="#10b981" fontSize="10" fontWeight="bold">L'</text>
+              <line x1="510" y1="260" x2="330" y2="260" stroke="#38bdf8" strokeWidth="1.4" strokeDasharray="3 3" opacity="0.7" />
+              <g stroke="#10b981" strokeWidth="1.4" fill="none" opacity="0.85">
+                <path d="M 620 200 Q 510 220 510 260" markerEnd="url(#arrow-emerald)" />
+                <path d="M 700 260 Q 550 250 510 260" markerEnd="url(#arrow-emerald)" />
+              </g>
+            </g>
+          );
+        },
+      };
+    }
+
+    if (
+      normalizedSubject === "physics" &&
+      (t.includes("projectil") || t.includes("kinemat") || title.includes("projectil") || u.includes("kinemat") || u.includes("mechanic"))
+    ) {
+      const rad = (projectileAngle * Math.PI) / 180;
+      const v = 185;
+      const g = 2.5;
+      const tMax = (2 * v * Math.sin(rad)) / g;
+      const origin: [number, number] = [140, 400];
+      const points = [];
+      for (let k = 0; k <= 40; k++) {
+        const tt = (tMax * k) / 40;
+        const x = v * Math.cos(rad) * tt;
+        const y = v * Math.sin(rad) * tt - 0.5 * g * tt * tt;
+        points.push([origin[0] + x * 1.15, origin[1] - y * 1.15]);
+      }
+      const traj = "M " + points.map(p => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" L ");
+      const peakX = origin[0] + v * Math.cos(rad) * (tMax / 2) * 1.15;
+      const peakY = origin[1] - ((v * v * Math.sin(rad) * Math.sin(rad)) / (2 * g)) * 1.15;
+      const rangeX = origin[0] + v * Math.cos(rad) * tMax * 1.15;
+      return {
+        viewBox: sharedViewBox,
+        specific,
+        annotations: [
+          {
+            id: "launch",
+            label: `Point of Projection O — angle θ = ${projectileAngle}°`,
+            formulaOrValue: "ux = v cos θ   ,   uy = v sin θ",
+            examNote: "NEB: Horizontal velocity component ux constant throughout (ax = 0); ay = −g downward always.",
+            labelX: 70,
+            labelY: 80,
+            targetX: 140,
+            targetY: 400,
+            controlX: 120,
+            controlY: 230,
+            color: "#ef4444",
+          },
+          {
+            id: "peak",
+            label: "Maximum Height Point (H)",
+            formulaOrValue: `vy = 0 only; H = (v² sin² ${projectileAngle}°)/(2g)`,
+            examNote: "CEE: Time to reach H = T/2; velocity at peak is purely horizontal (ux only); projectile not in equilibrium at H.",
+            labelX: 390,
             labelY: 60,
-            targetX: apexX,
-            targetY: apexY,
-            controlX: 450,
-            controlY: 110,
+            targetX: peakX,
+            targetY: peakY,
+            controlX: (peakX + 390) / 2,
+            controlY: 120,
             color: "#38bdf8",
           },
           {
             id: "range",
-            label: "Horizontal Range R",
-            formulaOrValue: "R = (u²·sin 2θ) / g",
-            examNote: "CEE TRAP: Maximum range occurs at θ = 45°. Complementary angles (θ and 90°-θ) produce identical horizontal ranges!",
-            labelX: 770,
-            labelY: 70,
-            targetX: endX,
-            targetY: startY,
-            controlX: 740,
-            controlY: 150,
-            color: "#f59e0b",
-          },
-          {
-            id: "gravity",
-            label: "Gravitational Acceleration (g)",
-            formulaOrValue: "a_y = -g = -9.8 m/s² (Constant)",
-            examNote: "NEB: The only force acting on the projectile in flight (ignoring air resistance) is downward gravity.",
-            labelX: 130,
-            labelY: 380,
-            targetX: apexX + 30,
-            targetY: apexY + 40,
-            controlX: 240,
-            controlY: 380,
-            color: "#ef4444",
-          },
-        ] as DiagramAnnotation[],
-        renderSvg: () => (
-          <g>
-            {/* Ground Line */}
-            <line x1="240" y1={startY} x2="720" y2={startY} stroke="#64748b" strokeWidth="3" />
-
-            {/* Parabolic Trajectory */}
-            <path
-              d={`M ${startX} ${startY} Q ${apexX} ${apexY - 30} ${endX} ${startY}`}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="4"
-              strokeLinecap="round"
-            />
-
-            {/* Launch velocity vector arrow */}
-            <line
-              x1={startX}
-              y1={startY}
-              x2={startX + 60 * Math.cos(rad)}
-              y2={startY - 60 * Math.sin(rad)}
-              stroke="#10b981"
-              strokeWidth="3.5"
-              markerEnd="url(#arrow-emerald)"
-            />
-
-            {/* Apex Velocity vector (purely horizontal) */}
-            <line
-              x1={apexX}
-              y1={apexY}
-              x2={apexX + 50}
-              y2={apexY}
-              stroke="#10b981"
-              strokeWidth="3"
-              markerEnd="url(#arrow-emerald)"
-            />
-            <circle cx={apexX} cy={apexY} r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
-
-            {/* Gravity vector at apex */}
-            <line
-              x1={apexX + 30}
-              y1={apexY + 10}
-              x2={apexX + 30}
-              y2={apexY + 60}
-              stroke="#ef4444"
-              strokeWidth="3"
-              markerEnd="url(#arrow-red)"
-            />
-
-            {/* Range dimension line */}
-            <line x1={startX} y1={startY + 20} x2={endX} y2={startY + 20} stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 4" />
-            <text x={(startX + endX) / 2} y={startY + 38} fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
-              Range R ({projectileAngle === 45 ? "MAXIMUM" : "Sub-optimal"})
-            </text>
-          </g>
-        ),
-      };
-    }
-
-    // 4B. Wave Optics / Young's Double Slit Experiment
-    if (t.includes("wave") || t.includes("optics") || t.includes("slit") || t.includes("interference")) {
-      const beamColor = ydseWavelength === "red" ? "#ef4444" : "#38bdf8";
-      const fringeWidthText = ydseWavelength === "red" ? "Wider Fringes (λ_red ~ 700 nm)" : "Narrower Fringes (λ_blue ~ 450 nm)";
-
-      return {
-        title: `Wave Optics & Young's Double Slit Interference: ${topicTitle}`,
-        subtitle: `Coherent Wavefront Division | ${fringeWidthText} | Fringe Width β = λ·D / d`,
-        specific: true,
-        viewBox: "0 0 900 520",
-        annotations: [
-          {
-            id: "slits",
-            label: "Coherent Double Slits (S₁, S₂)",
-            formulaOrValue: "Slit Separation: d",
-            examNote: "CEE: Division of wavefront produces mutually coherent sources with constant phase difference.",
-            labelX: 130,
-            labelY: 70,
-            targetX: 370,
-            targetY: 230,
-            controlX: 230,
-            controlY: 100,
-            color: "#38bdf8",
-          },
-          {
-            id: "central",
-            label: "Central Bright Fringe (Zero Order)",
-            formulaOrValue: "Path Difference Δx = 0",
-            examNote: "NEB: Central fringe is ALWAYS bright and achromatic (white if white light is used).",
-            labelX: 770,
-            labelY: 70,
-            targetX: 620,
-            targetY: 260,
-            controlX: 700,
-            controlY: 120,
+            label: "Horizontal Range (R) — landing point",
+            formulaOrValue: `R = (v² sin ${2 * projectileAngle}°)/g`,
+            examNote: "NEB: R for θ and (90−θ) are equal; R_max at θ = 45° is v²/g; landing speed same magnitude as launch if same elevation.",
+            labelX: 750,
+            labelY: 100,
+            targetX: Math.min(rangeX, 860),
+            targetY: origin[1],
+            controlX: 780,
+            controlY: 240,
             color: "#10b981",
           },
           {
-            id: "fringe",
-            label: "Fringe Width (β)",
-            formulaOrValue: "β = λ·D / d",
-            examNote: "CEE: Fringe width is directly proportional to wavelength (β_red > β_violet) and inversely proportional to slit separation d.",
-            labelX: 770,
-            labelY: 340,
-            targetX: 620,
-            targetY: 200,
-            controlX: 700,
-            controlY: 280,
-            color: "#f59e0b",
+            id: "time",
+            label: "Time of Flight (T)",
+            formulaOrValue: "T = 2v sin θ / g   (from launch to landing, same level)",
+            examNote: "CEE: T depends only on uy vertical component; horizontal range depends on ux × T product.",
+            labelX: 540,
+            labelY: 440,
+            targetX: (origin[0] + Math.min(rangeX, 860)) / 2,
+            targetY: origin[1] + 14,
+            controlX: 480,
+            controlY: 460,
+            color: "#a855f7",
           },
           {
-            id: "screen",
-            label: "Observation Screen",
-            formulaOrValue: "Distance from Slits: D",
-            examNote: "NEB: If entire apparatus is immersed in water (μ = 4/3), fringe width decreases by factor of μ: β' = β / μ.",
-            labelX: 130,
+            id: "gravity",
+            label: "Acceleration g = 9.8 m/s²",
+            formulaOrValue: "Acts vertically downward everywhere on path",
+            examNote: "NEB: g does NOT slow/speed horizontal motion; independence of x-y motions is KEY to all projectile problems.",
+            labelX: 80,
             labelY: 440,
-            targetX: 620,
-            targetY: 410,
-            controlX: 250,
-            controlY: 420,
-            color: "#a855f7",
+            targetX: 260,
+            targetY: 330,
+            controlX: 150,
+            controlY: 360,
+            color: "#f59e0b",
           },
         ] as DiagramAnnotation[],
         renderSvg: () => (
           <g>
-            {/* Slit Barrier */}
-            <line x1="370" y1="120" x2="370" y2="220" stroke="#64748b" strokeWidth="6" />
-            <line x1="370" y1="240" x2="370" y2="280" stroke="#64748b" strokeWidth="6" />
-            <line x1="370" y1="300" x2="370" y2="400" stroke="#64748b" strokeWidth="6" />
-            {/* Slit points */}
-            <circle cx="370" cy="230" r="4" fill={beamColor} />
-            <circle cx="370" cy="290" r="4" fill={beamColor} />
-            <text x="350" y="235" fill="#94a3b8" fontSize="10" fontWeight="bold">S₁</text>
-            <text x="350" y="295" fill="#94a3b8" fontSize="10" fontWeight="bold">S₂</text>
-
-            {/* Screen */}
-            <line x1="620" y1="100" x2="620" y2="420" stroke="#cbd5e1" strokeWidth="4" />
-
-            {/* Ray lines to screen */}
-            <line x1="370" y1="230" x2="620" y2="260" stroke={beamColor} strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="370" y1="290" x2="620" y2="260" stroke={beamColor} strokeWidth="2" strokeDasharray="5 3" />
-            <line x1="370" y1="230" x2="620" y2="190" stroke={beamColor} strokeWidth="2" opacity="0.6" />
-            <line x1="370" y1="290" x2="620" y2="190" stroke={beamColor} strokeWidth="2" opacity="0.6" />
-
-            {/* Interference Pattern on Screen */}
-            <rect x="622" y="250" width="16" height="20" fill={beamColor} opacity="0.9" />
-            <rect x="622" y="180" width="14" height="18" fill={beamColor} opacity="0.8" />
-            <rect x="622" y="320" width="14" height="18" fill={beamColor} opacity="0.8" />
+            <line x1="80" y1="400" x2="870" y2="400" stroke="#64748b" strokeWidth="2" />
+            {Array.from({ length: 40 }).map((_, i) => (
+              <line key={`ground-${i}`} x1={90 + i * 20} y1="400" x2={104 + i * 20} y2="412" stroke="#64748b" strokeWidth="1.4" />
+            ))}
+            <line x1="140" y1="100" x2="140" y2="400" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+            <path d={traj} fill="none" stroke="#64748b" strokeWidth="2.8" strokeLinecap="round" />
+            <line x1="140" y1="400" x2={peakX} y2={peakY} stroke="#ef4444" strokeWidth="1.8" strokeDasharray="4 3" opacity="0.6" />
+            <line x1={peakX} y1={peakY} x2={Math.min(rangeX, 860)} y2={origin[1]} stroke="#10b981" strokeWidth="1.8" strokeDasharray="4 3" opacity="0.6" />
+            <circle cx="140" cy="400" r="5" fill="#ef4444" stroke="#ffffff" strokeWidth="1.4" />
+            <circle cx={peakX} cy={peakY} r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.4" />
+            <circle cx={Math.min(rangeX, 860)} cy={origin[1]} r="5" fill="#10b981" stroke="#ffffff" strokeWidth="1.4" />
+            <path d={`M 140 400 L ${140 + Math.cos(rad) * 95} ${400 - Math.sin(rad) * 95}`} stroke="#ef4444" strokeWidth="3" markerEnd="url(#arrow-red)" />
+            <line x1={peakX} y1={peakY} x2={peakX} y2={origin[1]} stroke="#38bdf8" strokeWidth="2" strokeDasharray="5 3" />
+            <text x={peakX + 5} y={(peakY + origin[1]) / 2} fill="#38bdf8" fontSize="10" fontWeight="bold">H</text>
+            <line x1={origin[0]} y1={origin[1] + 22} x2={Math.min(rangeX, 860)} y2={origin[1] + 22} stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" markerStart="url(#arrow)" />
+            <text x={(origin[0] + Math.min(rangeX, 860)) / 2} y={origin[1] + 40} textAnchor="middle" fill="#a855f7" fontSize="10" fontWeight="bold">R (range)</text>
+            <path d={`M 220 260 Q 230 250 250 260`} fill="none" stroke="#ef4444" strokeWidth="1.8" />
+            <text x="255" y="265" fill="#ef4444" fontSize="11" fontWeight="bold">θ = {projectileAngle}°</text>
+            <g stroke="#f59e0b" strokeWidth="2" fill="none" markerEnd="url(#arrow-amber)">
+              <line x1="230" y1="230" x2="230" y2="280" />
+              <line x1="300" y1="210" x2="300" y2="260" />
+              <line x1="380" y1="185" x2="380" y2="235" />
+            </g>
+            <g stroke="#38bdf8" strokeWidth="2" fill="none" markerEnd="url(#arrow-cyan)" opacity="0.85">
+              <line x1="140" y1="400" x2="210" y2="400" />
+              <line x1="300" y1="300" x2="360" y2="300" />
+            </g>
           </g>
         ),
       };
     }
 
-    // 4C. Default Physics: Inclined Plane Vector Resolution
     return {
-      title: `Physical Vector & Dynamical Field Schematic: ${topicTitle}`,
-      subtitle: "Force Resolution, Free-Body Diagram & Kinematic Vector System",
+      viewBox: sharedViewBox,
       specific: false,
-      viewBox: "0 0 900 520",
       annotations: [
         {
           id: "normal",
-          label: "Normal Contact Reaction (N)",
-          formulaOrValue: "N = m·g·cos(θ)",
-          examNote: "NEB: Perpendicular to incline surface. Zero normal reaction defines loss of contact.",
+          label: "Normal Reaction (N)",
+          formulaOrValue: "N = mg · cos θ  (perpendicular to plane)",
+          examNote: "NEB: Normal acts perpendicular through contact surface; N = mg only on horizontal ground (θ = 0).",
           labelX: 130,
-          labelY: 70,
+          labelY: 160,
           targetX: 430,
-          targetY: 180,
-          controlX: 250,
-          controlY: 90,
-          color: "#38bdf8",
-        },
-        {
-          id: "driving",
-          label: "Applied Force / Velocity Vector (v)",
-          formulaOrValue: "v = u + a·t | F = m·a",
-          examNote: "CEE: Instantaneous velocity tangent to trajectory; acceleration directs along net force.",
-          labelX: 770,
-          labelY: 70,
-          targetX: 560,
-          targetY: 190,
-          controlX: 680,
-          controlY: 110,
+          targetY: 200,
+          controlX: 240,
+          controlY: 160,
           color: "#10b981",
         },
         {
-          id: "gravity",
-          label: "Gravitational Weight Vector (W)",
-          formulaOrValue: "W = m·g (Acting Downward)",
+          id: "weight",
+          label: "Weight of Block = mg ↓",
+          formulaOrValue: "Always acts vertically downward through CM",
+          examNote: "CEE: Resolve mg ALONG and PERPENDICULAR to incline; parallel component drives motion down the plane.",
+          labelX: 620,
+          labelY: 160,
+          targetX: 430,
+          targetY: 290,
+          controlX: 520,
+          controlY: 200,
+          color: "#ef4444",
+        },
+        {
+          id: "parallel",
+          label: "Down-plane Component (mg·sin θ)",
+          formulaOrValue: "Net force ⇒ a = g·sin θ − f/m  (down the plane)",
           examNote: "NEB: Resolves into mg·sin(θ) along incline and mg·cos(θ) perpendicular to incline.",
           labelX: 130,
           labelY: 340,
@@ -1134,7 +578,7 @@ export function SchematicDiagram({
           targetY: 330,
           controlX: 240,
           controlY: 340,
-          color: "#ef4444",
+          color: "#38bdf8",
         },
         {
           id: "friction",
@@ -1153,7 +597,7 @@ export function SchematicDiagram({
           id: "incline",
           label: "Inclined Plane Surface",
           formulaOrValue: "Inclination Angle θ",
-          examNote: "NEB: Acceleration down a smooth incline: a = g·sin(θ); on rough incline: a = g(sin θ - μ cos θ).",
+          examNote: "NEB: Acceleration down a smooth incline: a = g·sin θ; on rough incline: a = g(sin θ − μ cos θ).",
           labelX: 140,
           labelY: 460,
           targetX: 280,
@@ -1184,379 +628,145 @@ export function SchematicDiagram({
     topicSlug,
     topicTitle,
     unitId,
-    projectileAngle,
-    ydseWavelength,
-    galvanicConnected,
-    tangentPos,
   ]);
 
   return (
-    <div ref={rootRef} className={`rounded-3xl border border-blue-900/40 bg-[#070b16] shadow-xl overflow-hidden ${className}`}>
-      {/* Header bar */}
-      <div className="px-6 py-4 border-b border-blue-900/40 bg-[#090e1f]/90 backdrop-blur-md flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30">
-              Interactive Schematic
-            </span>
-            <h3 className="text-sm md:text-base font-bold text-white">
-              {diagramData.title}
-            </h3>
-          </div>
-          <p className="text-xs text-slate-400 mt-0.5">{diagramData.subtitle}</p>
-        </div>
+    <svg
+      viewBox={diagramData.viewBox}
+      className={`w-full h-full ${className}`}
+      style={{ overflow: "visible" }}
+    >
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M 0 0 L 8 4 L 0 8 Z" fill="#64748b" />
+        </marker>
+        <marker id="arrow-cyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M 0 0 L 8 4 L 0 8 Z" fill="#38bdf8" />
+        </marker>
+        <marker id="arrow-emerald" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10b981" />
+        </marker>
+        <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M 0 0 L 8 4 L 0 8 Z" fill="#ef4444" />
+        </marker>
+        <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M 0 0 L 8 4 L 0 8 Z" fill="#f59e0b" />
+        </marker>
+      </defs>
 
-        {/* Action Toggles & Controls */}
-        <div className="flex items-center gap-2 text-xs flex-wrap">
-          {/* Projectile angle slider toggle */}
-          {topicSlug.includes("projectile") && (
-            <div className="flex items-center gap-1.5 bg-slate-800/80 px-2.5 py-1 rounded-xl border border-slate-700/80 text-xs">
-              <span className="text-slate-400 text-[10px] font-bold">Angle:</span>
-              {[30, 45, 60].map((deg) => (
-                <button
-                  key={deg}
-                  onClick={() => setProjectileAngle(deg)}
-                  className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition-all ${
-                    projectileAngle === deg
-                      ? "bg-primary text-white shadow-sm"
-                      : "text-slate-400 hover:text-white"
-                  }`}
-                >
-                  {deg}°
-                </button>
-              ))}
-            </div>
-          )}
+      {diagramData.renderSvg()}
 
-          {/* YDSE wavelength toggle */}
-          {topicSlug.includes("wave") && (
-            <div className="flex items-center gap-1.5 bg-slate-800/80 px-2.5 py-1 rounded-xl border border-slate-700/80 text-xs">
-              <span className="text-slate-400 text-[10px] font-bold">Light:</span>
-              <button
-                onClick={() => setYdseWavelength("red")}
-                className={`px-2 py-0.5 rounded-lg text-[10px] font-bold ${
-                  ydseWavelength === "red" ? "bg-red-500 text-white" : "text-slate-400"
-                }`}
-              >
-                Red (700nm)
-              </button>
-              <button
-                onClick={() => setYdseWavelength("blue")}
-                className={`px-2 py-0.5 rounded-lg text-[10px] font-bold ${
-                  ydseWavelength === "blue" ? "bg-sky-500 text-white" : "text-slate-400"
-                }`}
-              >
-                Blue (450nm)
-              </button>
-            </div>
-          )}
+      {diagramData.annotations.map((ann) => {
+        const cColor = ann.color || "#38bdf8";
+        const expanded = expandedMap[ann.id] ?? false;
 
-          {/* Galvanic cell switch toggle */}
-          {(topicSlug.includes("cell") || topicSlug.includes("electro")) && (
-            <button
-              onClick={() => setGalvanicConnected(!galvanicConnected)}
-              className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                galvanicConnected
-                  ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
-                  : "bg-slate-800 border-slate-700 text-slate-400"
-              }`}
-            >
-              <Zap className="h-3 w-3" />
-              <span>{galvanicConnected ? "Circuit Closed (1.10V)" : "Circuit Open"}</span>
-            </button>
-          )}
+        const cx = ann.controlX ?? (ann.labelX + ann.targetX) / 2;
+        const cyBase = ann.controlY ?? Math.min(ann.labelY, ann.targetY) - 30;
+        const bendDelta = expanded ? 60 : 0;
+        const cy = cyBase - bendDelta;
 
-          <button
-            onClick={() => setShowFormulas(!showFormulas)}
-            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all ${
-              showFormulas
-                ? "bg-primary/20 border-primary/40 text-primary"
-                : "bg-slate-800 border-slate-700 text-slate-400"
-            }`}
-          >
-            <span>Formulas</span>
-          </button>
-          <button
-            onClick={() => setShowExamNotes(!showExamNotes)}
-            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all ${
-              showExamNotes
-                ? "bg-amber-500/20 border-amber-500/40 text-amber-300"
-                : "bg-slate-800 border-slate-700 text-slate-400"
-            }`}
-          >
-            <span>CEE Traps</span>
-          </button>
-        </div>
+        const pathD = `M ${ann.labelX} ${ann.labelY} Q ${cx} ${cy} ${ann.targetX} ${ann.targetY}`;
 
-        {/* Zoom & Annotations Controls */}
-        <div className="px-6 py-3 border-y border-blue-900/30 bg-[#090e1f]/60 flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => handleZoom(-0.25)}
-              disabled={zoom <= 0.5}
-              className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-              title="Zoom Out"
-            >
-              <ZoomOut className="h-4 w-4" />
-            </button>
-            <span className="text-xs text-slate-400 w-12 text-center">{Math.round(zoom * 100)}%</span>
-            <button
-              onClick={() => handleZoom(0.25)}
-              disabled={zoom >= 3}
-              className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-              title="Zoom In"
-            >
-              <ZoomIn className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => setZoom(1)}
-              className="px-2.5 py-1 rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200 text-xs transition-colors flex items-center gap-1.5"
-              title="Reset Zoom"
-            >
-              <RotateCcw className="h-3 w-3" />
-              Reset
-            </button>
-          </div>
+        const tTangent: [number, number] = [
+          2 * (ann.targetX - cx),
+          2 * (ann.targetY - cy),
+        ];
+        const angle = Math.atan2(tTangent[1], tTangent[0]);
+        const headLen = expanded ? 16 : 10;
+        const strokeW = expanded ? 3.8 : 2.4;
+        const opacity = expanded ? 1 : 0.92;
+        const halfApex = 0.42;
+        const a1x = ann.targetX - headLen * Math.cos(angle - halfApex);
+        const a1y = ann.targetY - headLen * Math.sin(angle - halfApex);
+        const a2x = ann.targetX - headLen * Math.cos(angle + halfApex);
+        const a2y = ann.targetY - headLen * Math.sin(angle + halfApex);
+        const headD = `M ${a1x} ${a1y} L ${ann.targetX} ${ann.targetY} L ${a2x} ${a2y}`;
 
-          <div className="h-5 w-px bg-slate-700 mx-1" />
+        const pinR = expanded ? 11 : 7;
+        const pinInnerR = expanded ? 4.2 : 2.8;
+        const glyphR = expanded ? 3.4 : 2.2;
 
-          <button
-            onClick={() => { const next = !showAnnotations; setShowAnnotations(next); if (!next) setActiveAnnotationId(null); }}
-            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
-              showAnnotations
-                ? "bg-primary/20 border-primary/40 text-primary"
-                : "bg-slate-800 border-slate-700 text-slate-400"
-            }`}
-          >
-            {showAnnotations ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
-            <span>Annotations</span>
-          </button>
+        return (
+          <g key={ann.id} data-ann-id={ann.id} data-expanded={expanded ? "1" : "0"}>
+            <path
+              d={pathD}
+              fill="none"
+              stroke={cColor}
+              strokeWidth={strokeW}
+              strokeOpacity={opacity}
+              strokeLinecap="round"
+            />
 
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className={`px-2.5 py-1 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
-              isExpanded
-                ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
-                : "bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700"
-            }`}
-          >
-            {isExpanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
-            <span>{isExpanded ? "Collapse Details" : "Expand Details"}</span>
-          </button>
+            <path d={headD} fill={cColor} stroke="none" />
 
-          <button
-            onClick={exportSvg}
-            className="px-2.5 py-1 rounded-xl border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200 text-xs transition-all flex items-center gap-1.5"
-            title="Export diagram as SVG"
-          >
-            <Download className="h-3.5 w-3.5" />
-            <span>Export</span>
-          </button>
+            <circle
+              cx={ann.targetX}
+              cy={ann.targetY}
+              r={expanded ? 5.8 : 4.5}
+              fill={cColor}
+              stroke="#ffffff"
+              strokeWidth={expanded ? 2 : 1.5}
+            />
 
-          <button
-            onClick={() => void toggleFullscreen()}
-            className="px-2.5 py-1 rounded-xl border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200 text-xs transition-all flex items-center gap-1.5"
-            title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
-          >
-            {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
-            <span>{isFullscreen ? "Exit Full" : "Fullscreen"}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Main SVG Canvas Area with LONG LEADER LINES */}
-      <div className="relative w-full aspect-[16/9] min-h-[440px] max-h-[580px] bg-[#070b16] p-2 select-none overflow-auto">
-        {/* Subtle engineering grid dot pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-20"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(255, 255, 255, 0.25) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-
-        {/* Shared transformable layer: SVG + HTML annotation overlay scale
-            together so labels and leader lines stay aligned at any zoom level.
-            Scaling from top-left keeps zoomed-in content inside the scrollable
-            (positive) overflow region so the upper-left is reachable by scrolling,
-            and the parent canvas (overflow-auto) provides the pan. */}
-        <div
-          className="relative w-full h-full origin-top-left"
-          style={{
-            transform: `scale(${zoom})`,
-            transformOrigin: "top left",
-          }}
-        >
-          <svg
-            ref={svgRef}
-            viewBox={diagramData.viewBox}
-            className="w-full h-full"
-            style={{ overflow: "visible" }}
-          >
-          <defs>
-            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M 0 0 L 8 4 L 0 8 Z" fill="#64748b" />
-            </marker>
-            <marker id="arrow-cyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M 0 0 L 8 4 L 0 8 Z" fill="#38bdf8" />
-            </marker>
-            <marker id="arrow-emerald" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10b981" />
-            </marker>
-            <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M 0 0 L 8 4 L 0 8 Z" fill="#ef4444" />
-            </marker>
-            <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M 0 0 L 8 4 L 0 8 Z" fill="#f59e0b" />
-            </marker>
-          </defs>
-
-          {/* 1. Base Geometry */}
-          {diagramData.renderSvg()}
-
-          {/* 2. LONG SVG LEADER LINES (gated so turning Annotations off hides
-              leaders + dots together with the HTML label cards) */}
-          {showAnnotations && diagramData.annotations.map((ann) => {
-            const isHovered = activeAnnotationId === ann.id;
-            const cColor = ann.color || "#38bdf8";
-
-            const cx = ann.controlX ?? (ann.labelX + ann.targetX) / 2;
-            const cy = ann.controlY ?? Math.min(ann.labelY, ann.targetY) - 30;
-
-            const pathD = `M ${ann.labelX} ${ann.labelY} Q ${cx} ${cy} ${ann.targetX} ${ann.targetY}`;
-
-            return (
-              <g
-                key={ann.id}
-                className="cursor-pointer transition-all duration-200"
-                onMouseEnter={() => setActiveAnnotationId(ann.id)}
-                onMouseLeave={() => setActiveAnnotationId(null)}
-              >
-                {/* Glow underlay */}
-                {isHovered && (
-                  <path
-                    d={pathD}
-                    fill="none"
-                    stroke={cColor}
-                    strokeWidth="7"
-                    strokeOpacity="0.3"
-                    strokeLinecap="round"
-                  />
-                )}
-
-                {/* Long curved SVG leader line */}
-                <path
-                  d={pathD}
-                  fill="none"
-                  stroke={cColor}
-                  strokeWidth={isHovered ? "3.2" : "2"}
-                  strokeOpacity={isHovered ? 1 : 0.85}
-                  strokeLinecap="round"
-                />
-
-                {/* Pinpoint Target Dot at Feature */}
-                <circle
-                  cx={ann.targetX}
-                  cy={ann.targetY}
-                  r={isHovered ? "6.5" : "4.5"}
-                  fill={cColor}
-                  stroke="#ffffff"
-                  strokeWidth="1.5"
-                />
-              </g>
-            );
-          })}
-        </svg>
-
-        {/* 3. HTML OVERLAY LABELS AT LONG ANCHORS (Non-overlapping) */}
-        {showAnnotations && diagramData.annotations.map((ann) => {
-          const isHovered = activeAnnotationId === ann.id;
-          const cColor = ann.color || "#38bdf8";
-
-          const leftPct = (ann.labelX / 900) * 100;
-          const topPct = (ann.labelY / 520) * 100;
-          const isRightSide = ann.labelX > 500;
-
-          return (
-            <div
-              key={ann.id}
-              style={{
-                left: `${leftPct}%`,
-                top: `${topPct}%`,
-                transform: isRightSide ? "translate(-10%, -50%)" : "translate(-90%, -50%)",
+            <circle
+              cx={cx}
+              cy={cy}
+              r={pinR}
+              fill="#ffffff"
+              stroke={cColor}
+              strokeWidth={expanded ? 2.8 : 2.2}
+              style={{ cursor: "pointer" }}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleExpanded(ann.id);
               }}
-              onMouseEnter={() => setActiveAnnotationId(ann.id)}
-              onMouseLeave={() => setActiveAnnotationId(null)}
-              className={`absolute z-20 max-w-[210px] md:max-w-[260px] p-2.5 rounded-2xl border backdrop-blur-md transition-all duration-200 cursor-pointer shadow-lg ${
-                isHovered
-                  ? "bg-[#0f172a] border-primary ring-2 ring-primary/40 scale-105"
-                  : "bg-[#090e1f]/90 border-slate-800 hover:border-primary/50"
-              }`}
-            >
-              <div className="flex items-center gap-1.5">
-                <span
-                  className="h-2 w-2 rounded-full shrink-0"
-                  style={{ backgroundColor: cColor }}
+            />
+            <circle
+              cx={cx}
+              cy={cy}
+              r={pinInnerR}
+              fill={cColor}
+              stroke="none"
+              style={{ pointerEvents: "none" }}
+            />
+
+            {expanded ? (
+              <rect
+                x={cx - glyphR}
+                y={cy - 0.9}
+                width={glyphR * 2}
+                height={1.8}
+                fill={cColor}
+                rx={0.9}
+                style={{ pointerEvents: "none" }}
+              />
+            ) : (
+              <>
+                <rect
+                  x={cx - glyphR}
+                  y={cy - 0.9}
+                  width={glyphR * 2}
+                  height={1.8}
+                  fill={cColor}
+                  rx={0.9}
+                  style={{ pointerEvents: "none" }}
                 />
-                <h4 className="text-xs font-bold text-white leading-tight">{ann.label}</h4>
-              </div>
-
-              {showFormulas && ann.formulaOrValue && (
-                <div className="mt-1 font-mono text-[10px] text-primary font-semibold px-1.5 py-0.5 rounded bg-primary/10 truncate">
-                  {ann.formulaOrValue}
-                </div>
-              )}
-
-              {showExamNotes && ann.examNote && (
-                <p className="mt-1 text-[10px] text-slate-300 leading-relaxed line-clamp-2">
-                  {ann.examNote}
-                </p>
-              )}
-            </div>
-          );
-        })}
-        </div>
-      </div>
-
-      {/* Expandable Details Section */}
-      {isExpanded && (
-        <div className="px-6 py-4 bg-[#090e1f]/50 border-t border-blue-900/30 space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {diagramData.annotations.map((ann) => (
-              <div key={ann.id} className="p-3 rounded-xl bg-[#0f172a]/80 border border-slate-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: ann.color || "#38bdf8" }} />
-                  <h4 className="text-sm font-bold text-white">{ann.label}</h4>
-                </div>
-                {ann.formulaOrValue && (
-                  <p className="font-mono text-xs text-primary mb-1">{ann.formulaOrValue}</p>
-                )}
-                {ann.examNote && (
-                  <p className="text-xs text-slate-400 leading-relaxed">{ann.examNote}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Bottom active detail bar */}
-      <div className="px-6 py-3 border-t border-blue-900/40 bg-[#090e1f]/80 flex items-center justify-between text-xs text-slate-400">
-        <span className="flex items-center gap-1.5">
-          <Info className="h-3.5 w-3.5 text-primary" />
-          <span>Hover any label or long leader line to highlight the exact target feature.</span>
-        </span>
-        {diagramData.specific ? (
-          <span className="text-[11px] font-semibold text-emerald-400">
-            NEB &amp; CEE Verified
-          </span>
-        ) : (
-          <span className="text-[11px] font-semibold text-slate-500" title="General schematic shown because this topic has no dedicated verified diagram yet.">
-            General schematic
-          </span>
-        )}
-      </div>
-    </div>
+                <rect
+                  x={cx - 0.9}
+                  y={cy - glyphR}
+                  width={1.8}
+                  height={glyphR * 2}
+                  fill={cColor}
+                  rx={0.9}
+                  style={{ pointerEvents: "none" }}
+                />
+              </>
+            )}
+          </g>
+        );
+      })}
+    </svg>
   );
 }
+
+export default SchematicDiagram;

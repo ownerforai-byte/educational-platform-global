@@ -7,7 +7,7 @@ export default function Page() {
     <div className="space-y-6">
       <div className="flex flex-wrap gap-2">
         <Link
-          href="/lab/math/math-th-theorems"
+          href="/lab/math-th-theorems"
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 transition-colors text-sm font-medium"
         >
           <BookOpen className="h-4 w-4" />

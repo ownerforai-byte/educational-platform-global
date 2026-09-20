@@ -1,13 +1,13 @@
 "use client";
 import * as THREE from "three";
-import { LiveArrow } from "@/components/lab/animated-arrow-helper";
+import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import {
   createMouseOrbitScene,
   makeTitleSprite,
   type MouseOrbitHandle,
 } from "@/components/lab/mouse-orbit-scene";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
-import { ArrowLabel } from "@/components/lab/annotation/arrow-label";
+import { ArrowLabel as LeaderLabel } from "@/components/lab/annotation/arrow-label";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import React, { useEffect, useMemo, useRef } from "react";
 export type SceneRender = (h: MouseOrbitHandle) => () => void;
@@ -25,7 +25,7 @@ const ProjectileScene: SceneRender = (h) => {
   const trailGeom = new THREE.BufferGeometry();
   trailGeom.setAttribute("position", new THREE.BufferAttribute(new Float32Array(300 * 3), 3));
   const trail = new THREE.Line(trailGeom, new THREE.LineBasicMaterial({ color: 0xfb923c })); h.group.add(trail);
-  const arrow = new LiveArrow(new THREE.Vector3(1, 1, 0).normalize(), new THREE.Vector3(0, 0.5, 0), 3, 0xef4444, 0.6, 0.4); h.group.add(arrow);
+  const arrow = new LiveLeaderLine(new THREE.Vector3(1, 1, 0).normalize(), new THREE.Vector3(0, 0.5, 0), 3, 0xef4444, 0.6, 0.4); h.group.add(arrow);
   let t = 0; const v0 = 14, angle = Math.PI / 4, g = 9.8;
   const points: THREE.Vector3[] = [];
   const id = setInterval(() => {
@@ -60,7 +60,7 @@ const CircularMotionScene: SceneRender = (h) => {
   const center = new THREE.Mesh(SPHERE, mat(0xfbbf24, 0xfbbf24));
   center.scale.setScalar(0.6); h.group.add(center);
   const ball = new THREE.Mesh(SPHERE, mat(0xef4444, 0xef4444)); h.group.add(ball);
-  const arrow = new LiveArrow(new THREE.Vector3(-1, 0, 0), new THREE.Vector3(), 2.5, 0x60a5fa, 0.5, 0.3);
+  const arrow = new LiveLeaderLine(new THREE.Vector3(-1, 0, 0), new THREE.Vector3(), 2.5, 0x60a5fa, 0.5, 0.3);
   h.group.add(arrow);
   const id = setInterval(() => {
     const t = performance.now() / 700;
@@ -110,9 +110,9 @@ const PendulumScene: SceneRender = (h) => {
 const VectorScene: SceneRender = (h) => {
   const origin = new THREE.Mesh(SPHERE, mat(0xfbbf24));
   origin.scale.setScalar(0.3); h.group.add(origin);
-  h.group.add(new LiveArrow(new THREE.Vector3(1, 0.5, 0).normalize(), new THREE.Vector3(), 4, 0xef4444, 0.4, 0.3));
-  h.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0.5).normalize(), new THREE.Vector3(), 4, 0x22c55e, 0.4, 0.3));
-  h.group.add(new LiveArrow(new THREE.Vector3(1, 1.5, 0.5).normalize(), new THREE.Vector3(), 6, 0x60a5fa, 0.5, 0.4));
+  h.group.add(new LiveLeaderLine(new THREE.Vector3(1, 0.5, 0).normalize(), new THREE.Vector3(), 4, 0xef4444, 0.4, 0.3));
+  h.group.add(new LiveLeaderLine(new THREE.Vector3(0, 1, 0.5).normalize(), new THREE.Vector3(), 4, 0x22c55e, 0.4, 0.3));
+  h.group.add(new LiveLeaderLine(new THREE.Vector3(1, 1.5, 0.5).normalize(), new THREE.Vector3(), 6, 0x60a5fa, 0.5, 0.4));
   h.group.add(makeTitleSprite("A + B = R", "#7dd3fc"));
   return () => {};
 };
@@ -124,7 +124,7 @@ const EMFieldScene: SceneRender = (h) => {
     const t = (i / 6) * Math.PI * 2;
     const e = new THREE.Mesh(SPHERE, mat(0xf97316, 0xf97316));
     e.scale.setScalar(0.18); e.position.set(Math.cos(t) * 1.5, 0, Math.sin(t) * 1.5); h.group.add(e);
-    h.group.add(new LiveArrow(new THREE.Vector3(Math.cos(t), 0, Math.sin(t)), e.position, 1.5, 0xf97316, 0.2, 0.15));
+    h.group.add(new LiveLeaderLine(new THREE.Vector3(Math.cos(t), 0, Math.sin(t)), e.position, 1.5, 0xf97316, 0.2, 0.15));
   }
   return () => {};
 };
@@ -180,7 +180,7 @@ const CapacitorScene: SceneRender = (h) => {
     e.position.set((Math.random() - 0.5) * 3.6, isTop ? 0.7 : -0.7, (Math.random() - 0.5) * 0.1);
     h.group.add(e);
   }
-  h.group.add(new LiveArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -0.7, 0), 2, 0x22d3ee, 0.4, 0.3));
+  h.group.add(new LiveLeaderLine(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -0.7, 0), 2, 0x22d3ee, 0.4, 0.3));
   return () => {};
 };
 
@@ -459,7 +459,7 @@ const EcosystemScene: SceneRender = (h) => {
   });
   for (let i = 0; i < 8; i++) {
     const angle = (i / 8) * Math.PI * 2;
-    h.group.add(new LiveArrow(
+    h.group.add(new LiveLeaderLine(
       new THREE.Vector3(Math.cos(angle), 0.3, Math.sin(angle)),
       new THREE.Vector3(Math.cos(angle) * 2, 1, Math.sin(angle) * 2), 2, 0xfbbf24, 0.3, 0.2,
     ));
@@ -516,13 +516,13 @@ const SurfaceScene: SceneRender = (h) => {
 const Vector3DScene: SceneRender = (h) => {
   const colors = [0xef4444, 0x10b981, 0x3b82f6];
   for (let i = 0; i < 3; i++) {
-    h.group.add(new LiveArrow(
+    h.group.add(new LiveLeaderLine(
       new THREE.Vector3(i === 0 ? 1 : 0, i === 1 ? 1 : 0, i === 2 ? 1 : 0),
       new THREE.Vector3(), 5, colors[i], 0.3, 0.2,
     ));
   }
   for (let i = 0; i < 6; i++) {
-    h.group.add(new LiveArrow(
+    h.group.add(new LiveLeaderLine(
       new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize(),
       new THREE.Vector3(), 4, 0xfbbf24, 0.3, 0.2,
     ));
@@ -707,7 +707,9 @@ function pickScene(slug: string, title: string, fallback?: SceneRender, fallback
     }
   }
   if (fallback) return { scene: fallback, title: fallbackTitle ?? "3D Animation", description: "" };
-  return { scene: SpiralScene, title: "Universal 3D Animation", description: "Drag with mouse to rotate." };
+  // No topical match → no 3D visual. Callers render the topic's own
+  // SVG schematic / Coming Soon state instead of a generic scene.
+  return null;
 }
 
 export function resolveChapterAnimation(slug: string, title: string, fallback?: SceneRender, fallbackTitle?: string) {
@@ -739,6 +741,7 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
 
   useEffect(() => {
     if (!containerRef.current) return;
+    if (!resolved) return; // no topical 3D scene — render nothing
     const h = createMouseOrbitScene(containerRef.current, {
       cameraPosition: new THREE.Vector3(8, 6, 12),
       autoRotate: true,
@@ -778,13 +781,28 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
     (unitSlug ? LAB_ANNOTATIONS[unitSlug] : undefined) ||
     LAB_ANNOTATIONS[`ph-3d-${topicSlug}`];
 
+  if (!resolved) {
+    return (
+      <div className="rounded-lg overflow-hidden border border-border bg-slate-950" style={{ minHeight: 120 }}>
+        <div className="h-full min-h-[120px] flex flex-col items-center justify-center gap-2 p-6 text-center">
+          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            3D Coming Soon
+          </span>
+          <p className="text-xs text-slate-400 max-w-sm">
+            A dedicated 3D visual for this topic is being built. The SVG schematic below represents it meanwhile.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="rounded-lg overflow-hidden border border-border bg-slate-950">
       <div ref={containerRef} style={{ height }} className="w-full relative">
         <VizToolbar targetRef={vizTargetRef} />
         {annotations &&
           annotations.map((ann, idx) => (
-            <ArrowLabel key={`${topicSlug}-${idx}`} {...ann} />
+            <LeaderLabel key={`${topicSlug}-${idx}`} {...ann} />
           ))}
       </div>
       <div className="px-3 py-2 bg-slate-900 text-slate-200 text-xs flex items-center justify-between">

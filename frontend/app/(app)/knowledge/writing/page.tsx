@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, PenLine, Layers, FileText, GitBranch, Lightbulb, CheckCircle2, ScrollText, Sparkles } from "lucide-react";
+import { ArrowLeft, PenLine, Layers, FileText, GitBranch, Lightbulb, CheckCircle2, ScrollText, Sparkles, BookOpen } from "lucide-react";
 import {
   ALL_WRITING_TYPES,
   WRITING_CATEGORIES,
@@ -19,6 +19,10 @@ const CATEGORY_ICONS: Record<string, typeof PenLine> = {
 };
 
 export default function WritingPage() {
+  // English Grammar lives on its own page (/knowledge/grammar) — routed
+  // separately from the writing formats per the platform IA.
+  const pageCategories = WRITING_CATEGORIES.filter((c) => c !== "Grammar for Writing");
+  const grammarCount = WRITING_COUNTS["Grammar for Writing"] ?? 0;
   return (
     <div className="mx-auto max-w-5xl space-y-8 py-6 md:py-10 px-4">
       <Link
@@ -43,9 +47,29 @@ export default function WritingPage() {
         </div>
       </div>
 
+      {/* Grammar — routed separately */}
+      <Link
+        href="/knowledge/grammar"
+        className="group flex items-center gap-4 rounded-2xl border border-blue-500/30 bg-blue-500/5 p-5 transition-all hover:-translate-y-0.5 hover:border-blue-500/60 hover:shadow-lg"
+      >
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 shrink-0">
+          <BookOpen className="h-5 w-5 text-blue-600" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-sm font-bold group-hover:text-blue-600 transition-colors">
+            English Grammar — full reference
+          </h3>
+          <p className="text-xs text-muted-foreground mt-0.5">
+            Tenses, voice &amp; narration, clauses, modals, punctuation and transformations —
+            routed separately from the writing formats, plus {grammarCount} grammar-for-writing packs.
+          </p>
+        </div>
+        <span className="text-blue-600 text-sm font-semibold shrink-0">Open →</span>
+      </Link>
+
       {/* Category quick-glance strip */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {WRITING_CATEGORIES.map((cat) => {
+        {pageCategories.map((cat) => {
           const Icon = CATEGORY_ICONS[cat] ?? FileText;
           return (
             <a
@@ -69,7 +93,7 @@ export default function WritingPage() {
 
       {/* Full content per category */}
       <div className="space-y-10">
-        {WRITING_CATEGORIES.map((cat) => {
+        {pageCategories.map((cat) => {
           const types = getWritingTypesByCategory(cat);
           if (types.length === 0) return null;
           const Icon = CATEGORY_ICONS[cat] ?? FileText;

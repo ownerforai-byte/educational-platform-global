@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { ImportedNote } from "@/lib/imported-notes";
+import { noteRoute } from "@/lib/note-routes";
 
 type NoteGroup = {
   subject: string;
@@ -110,10 +111,9 @@ export function SubjectSearch({ subjects, initialGroups }: SubjectSearchProps) {
               </div>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {group.notes.slice(0, 30).map((note) => {
-                  const href =
-                    note.source === "r-export"
-                      ? `/r-notes/${encodeURIComponent(note.subject)}/${encodeURIComponent(note.unit ?? "general")}`
-                      : `/ravikishan-notes/${encodeURIComponent(note.path)}`;
+                  // Deep-link into the real curriculum pages — the legacy
+                  // /r-notes and /ravikishan-notes routes were removed.
+                  const href = noteRoute(note);
 
                   return (
                     <a
