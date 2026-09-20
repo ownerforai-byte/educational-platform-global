@@ -34,12 +34,11 @@ function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }
   const [activeSection, setActiveSection] = useState(0);
   const [showMistakes, setShowMistakes] = useState(false);
   const [showPractice, setShowPractice] = useState(false);
+  const [activeTab, setActiveTab] = useState<"enriched" | "original">("enriched");
 
   if (!subject || !topic) return null;
 
   const data = THEORY_CONTENT[subject]?.[topic];
-
-  const [activeTab, setActiveTab] = useState<"enriched" | "original">("enriched");
 
   if (!data) {
     return (
