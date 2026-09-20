@@ -3,13 +3,14 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5173",
+    "dev": "next dev --webpack -p 5173",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "postinstall": "node scripts/patch-rehype-katex.cjs"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.24",

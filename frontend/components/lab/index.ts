@@ -82,3 +82,4 @@ export { BiologyCellDivision3D } from "@/components/lab/biology-cell-division-3d
 export { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-diversity-3d";
 export { BiologyFloralDiversity3D } from "@/components/lab/biology-floral-diversity-3d";
 export { BiologyMicrobiology3D } from "@/components/lab/biology-microbiology-3d";
+export { CellOrganellesExplorer3D } from "@/components/lab/cell-organelles-explorer-3d";

@@ -15,6 +15,11 @@ import { BIOLOGY_THEOREMS } from "@/lib/derivations-data-biology";
 import { CHEMISTRY_THEOREMS } from "@/lib/derivations-data-chemistry";
 import { MATH_THEOREMS } from "@/lib/derivations-data-math";
 import { PHYSICS_WAVE1_DERIVATIONS, type SpecialCase } from "@/lib/derivations-wave1-physics";
+import { PHYSICS_WAVE2A_DERIVATIONS } from "@/lib/derivations-wave2-physics-a";
+import { PHYSICS_WAVE2B_DERIVATIONS } from "@/lib/derivations-wave2-physics-b";
+import { PHYSICS_WAVE2C_DERIVATIONS } from "@/lib/derivations-wave2-physics-c";
+import { CHEM_BIO_WAVE2_DERIVATIONS } from "@/lib/derivations-wave2-chem-bio";
+import { MATH_WAVE2_DERIVATIONS } from "@/lib/derivations-wave2-math";
 
 export type { SpecialCase };
 
@@ -1407,4 +1412,9 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
   ...CHEMISTRY_THEOREMS,
   ...MATH_THEOREMS,
   ...PHYSICS_WAVE1_DERIVATIONS,
+  ...PHYSICS_WAVE2A_DERIVATIONS,
+  ...PHYSICS_WAVE2B_DERIVATIONS,
+  ...PHYSICS_WAVE2C_DERIVATIONS,
+  ...CHEM_BIO_WAVE2_DERIVATIONS,
+  ...MATH_WAVE2_DERIVATIONS,
 ];

@@ -60,17 +60,25 @@ export default async function DerivationsPage() {
     <div className="mx-auto max-w-6xl px-4 py-10 space-y-10">
       {/* Header */}
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider border border-primary/20">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>Official NEB Syllabus Order · Physics · Chemistry · Biology</span>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400 text-xs font-bold uppercase tracking-wider border border-rose-500/20">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Formula Derivations · Board Exam Step-by-Step</span>
+          </div>
+          <Link
+            href="/theorems"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
+          >
+            <span>Looking for formal proofs &amp; laws?</span>
+            <span className="text-primary font-bold">Theorems Vault →</span>
+          </Link>
         </div>
         <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
-          Derivations Hub
+          Formula Derivations Vault
         </h1>
         <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
-          Every derivation, law and principle from the official NEB Class 11 &amp; 12
-          syllabus for Physics, Chemistry and Biology — routed in curriculum order.
-          Topics without authored content yet are marked Coming Soon.
+          Every critical formula derivation from the official NEB Class 11 &amp; 12 syllabus for Physics, Chemistry, Biology, and Mathematics.
+          Complete with governing formulas, line-by-line algebraic steps, boundary conditions, and board examination marking breakdowns.
         </p>
       </div>
 

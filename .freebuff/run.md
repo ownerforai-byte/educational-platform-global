@@ -8,6 +8,7 @@ Next.js app lives in `frontend/`. Preview runs the frontend dev server from this
    - Copy `frontend/.env.local` from `C:\Users\ASUS\Desktop\rn\frontend\.env.local` into `frontend/.env.local`.
 2. Install frontend dependencies with npm (project uses `package-lock.json`):
    - From `frontend/`: `npm install`
+   - A `postinstall` hook (`scripts/patch-rehype-katex.cjs`) runs automatically and pins rehype-katex's `hast-util-from-html-isomorphic` import to an explicit relative path. Without it, every server page rendering math (graphs, legend, theorems) fails with "Module not found: .../hast-util-from-html-isomorphic/lib/index.js" when a workspace-root `node_modules` exists. Idempotent — never delete the hook.
 3. Content JSON lives outside the app dir (`content/` at repo root); the dev server reads it via `fs` at runtime — no extra artifacts needed.
 
 ## Backend (optional — the frontend proxies to the deployed backend by default)

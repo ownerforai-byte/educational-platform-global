@@ -26,6 +26,8 @@ import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
 const LEGACY_ALIASES: Record<string, string> = {
   // Biology catalog slugs (previous /lab/biology/* tree)
   "cell-3d": "bio-3d-cell",
+  "organelles-3d": "bio-3d-organelles",
+  "cell-organelles-3d": "bio-3d-organelles",
   "biomolecules-3d": "bio-3d-biomolecules",
   "biota-3d": "bio-3d-biota-conservation",
   "micro-3d": "bio-3d-micro",

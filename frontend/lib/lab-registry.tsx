@@ -17,6 +17,7 @@ import {
   BiologyPhotosynthesisCalculator,
 } from "@/components/lab/biology-3d";
 import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
+import { CellOrganellesExplorer3D } from "@/components/lab/cell-organelles-explorer-3d";
 import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
 import { BiologySyllabusSuite3D } from "@/components/lab/biology-syllabus-suite-3d";
 import { Physics3DVectors } from "@/components/lab/physics-3d-vectors";
@@ -590,6 +591,17 @@ export const LAB_REGISTRY: LabMeta[] = [
     color: "#22c55e",
     unit: "Unit: Cell Biology",
     component: Biology3DSuite,
+  },
+  {
+    id: "bio-3d-organelles",
+    title: "Cell Organelles 3D Explorer",
+    description: "Interactive 3D models, historical discovery chronicles, and functions of all 14 cell organelles.",
+    category: "biology",
+    type: "3d" as const,
+    status: "active",
+    color: "#10b981",
+    unit: "Unit: Cell Biology",
+    component: CellOrganellesExplorer3D,
   },
   {
     id: "bio-3d-dna",

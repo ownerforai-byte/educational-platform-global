@@ -57,18 +57,26 @@ export default async function TheoremsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 space-y-10">
       {/* Header */}
-      <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-500">
-          <Trophy className="h-4 w-4" />
-          <span>Academic Rigor &amp; Proofs</span>
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/20">
+            <Trophy className="h-3.5 w-3.5" />
+            <span>Academic Rigor · Formal Proofs &amp; Principles</span>
+          </div>
+          <Link
+            href="/derivations"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
+          >
+            <span>Looking for formula steps?</span>
+            <span className="text-primary font-bold">Derivations Vault →</span>
+          </Link>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-          Theorems, Proofs &amp; Derivations
+        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
+          Theorems &amp; Proofs Vault
         </h1>
-        <p className="text-sm text-muted-foreground max-w-2xl">
-          Every theorem, proof and derivation from the official NEB syllabus for
-          Physics, Chemistry and Biology — in curriculum order. Pages without
-          content yet are clearly marked Coming Soon.
+        <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
+          Step-by-step rigorous proofs, laws and principles across Physics, Chemistry, Biology, and Mathematics
+          organized strictly in NEB curriculum sequence. Each proof includes formal statements, assumptions, geometric visual steps, and board exam conclusions.
         </p>
       </div>
 

@@ -31,58 +31,76 @@ export default async function LevelsPage() {
       {/* Main Levels Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {/* NEB Class 11 */}
-        <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-card p-6 shadow-sm hover:border-primary/40 hover:shadow-lg transition-all">
+        <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b from-sky-500/[0.07] via-card to-card p-6 shadow-sm hover:border-sky-500/40 hover:shadow-xl transition-all duration-300">
           <div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-500">
-              <GraduationCap className="h-6 w-6" />
+            <div className="flex items-center justify-between">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-500 border border-sky-500/20 shadow-sm">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <span className="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-bold text-sky-600 dark:text-sky-400 border border-sky-500/20">
+                Grade XI Track
+              </span>
             </div>
-            <h2 className="text-xl font-bold text-foreground mt-4">NEB Class 11 (Grade XI)</h2>
+            <h2 className="text-xl font-extrabold text-foreground mt-4 tracking-tight">NEB Class 11 (Grade XI)</h2>
             <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-              Standard secondary +2 curriculum for Grade 11: Physics, Chemistry, Mathematics, Biology, English &amp; Nepali.
+              Foundational +2 curriculum covering core mechanics, general chemistry, cell biology, algebra, calculus, and national languages.
             </p>
             <div className="mt-4 pt-3 border-t border-border/50 flex flex-wrap gap-1.5">
               {SYLLABUS[0].subjects.map((s) => (
-                <span key={s.slug} className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-muted text-foreground/80">
+                <Link
+                  key={s.slug}
+                  href={`/class-11-notes/${s.slug}`}
+                  className="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-card border border-border/70 text-foreground/80 hover:border-sky-500/40 hover:text-sky-500 transition-colors"
+                >
                   {s.name}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
-          <div className="mt-6 pt-4 border-t border-border/50">
+          <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
             <Link
               href="/class-11-notes"
-              className="flex items-center justify-between text-xs font-bold text-primary hover:underline"
+              className="flex items-center gap-1.5 text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline"
             >
-              <span>Explore Grade 11 Curriculum</span>
+              <span>Explore Grade 11 Hub</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
         {/* NEB Class 12 */}
-        <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-card p-6 shadow-sm hover:border-primary/40 hover:shadow-lg transition-all">
+        <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b from-violet-500/[0.07] via-card to-card p-6 shadow-sm hover:border-violet-500/40 hover:shadow-xl transition-all duration-300">
           <div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-500">
-              <GraduationCap className="h-6 w-6" />
+            <div className="flex items-center justify-between">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-500 border border-violet-500/20 shadow-sm">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <span className="rounded-full bg-violet-500/10 px-3 py-1 text-[11px] font-bold text-violet-600 dark:text-violet-400 border border-violet-500/20">
+                Grade XII Board Track
+              </span>
             </div>
-            <h2 className="text-xl font-bold text-foreground mt-4">NEB Class 12 (Grade XII)</h2>
+            <h2 className="text-xl font-extrabold text-foreground mt-4 tracking-tight">NEB Class 12 (Grade XII)</h2>
             <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-              Advanced secondary +2 curriculum for Grade 12: complete board exam syllabus, numerical guides &amp; lab manuals.
+              Advanced board exam curriculum: wave optics, electromagnetism, organic chemistry, physiology, differential equations, and board question sets.
             </p>
             <div className="mt-4 pt-3 border-t border-border/50 flex flex-wrap gap-1.5">
               {SYLLABUS[1].subjects.map((s) => (
-                <span key={s.slug} className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-muted text-foreground/80">
+                <Link
+                  key={s.slug}
+                  href={`/class-12-notes/${s.slug}`}
+                  className="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-card border border-border/70 text-foreground/80 hover:border-violet-500/40 hover:text-violet-500 transition-colors"
+                >
                   {s.name}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
-          <div className="mt-6 pt-4 border-t border-border/50">
+          <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
             <Link
               href="/class-12-notes"
-              className="flex items-center justify-between text-xs font-bold text-primary hover:underline"
+              className="flex items-center gap-1.5 text-xs font-bold text-violet-600 dark:text-violet-400 hover:underline"
             >
-              <span>Explore Grade 12 Curriculum</span>
+              <span>Explore Grade 12 Hub</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

@@ -24,6 +24,10 @@ import {
   Binary,
   Workflow,
   HelpCircle,
+  LineChart,
+  Compass,
+  Globe,
+  Target,
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -33,40 +37,42 @@ type NavItem = {
   label: string;
   icon: React.ComponentType<{ className?: string }>;
   badge?: string;
+  badgeClass?: string;
 };
 
-const aiItems: NavItem[] = [
-  { href: "/chat", label: "AI Assistant", icon: Sparkles, badge: "AI" },
-  { href: "/ai-quiz", label: "Practice Quiz", icon: HelpCircle, badge: "NEB" },
-];
-
 const curriculumItems: NavItem[] = [
-  { href: "/class-11-notes", label: "Class 11 Notes", icon: BookOpen },
-  { href: "/class-12-notes", label: "Class 12 Notes", icon: BookOpen },
-  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "CEE" },
-  { href: "/subjects", label: "All Subjects", icon: Layers },
+  { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
+  { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
+  { href: "/subjects", label: "All 6 Subjects", icon: Layers },
   { href: "/syllabus", label: "Official Syllabus", icon: GraduationCap },
+  { href: "/levels", label: "Curriculum Levels", icon: Compass },
 ];
 
-const labItems: NavItem[] = [
-  { href: "/periodic-table", label: "Periodic Table (118)", icon: Atom, badge: "118" },
-  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical },
+const stemAndRigorItems: NavItem[] = [
+  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, badge: "3D", badgeClass: "bg-violet-500/15 text-violet-500" },
+  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "118", badgeClass: "bg-cyan-500/15 text-cyan-500" },
+  { href: "/theorems", label: "Theorems & Proofs", icon: Binary, badge: "Rigor", badgeClass: "bg-amber-500/15 text-amber-500" },
+  { href: "/derivations", label: "Formula Derivations", icon: Layers, badge: "Steps", badgeClass: "bg-rose-500/15 text-rose-500" },
   { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
-  { href: "/theorems", label: "Theorems & Proofs", icon: Binary },
-  { href: "/derivations", label: "Formula Derivations", icon: Layers },
+  { href: "/graphs", label: "Graph Bank", icon: LineChart },
 ];
 
-const generalItems: NavItem[] = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/levels", label: "Curriculum Levels", icon: BookOpen },
-  { href: "/loksewa", label: "Loksewa GK", icon: Users },
-  { href: "/world-knowledge", label: "World Knowledge", icon: GraduationCap },
+const toolsItems: NavItem[] = [
+  { href: "/chat", label: "AI Study Assistant", icon: Sparkles, badge: "AI", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
+  { href: "/ai-quiz", label: "Practice Quizzes", icon: HelpCircle, badge: "NEB", badgeClass: "bg-blue-500/15 text-blue-500" },
+  { href: "/exam-countdown", label: "Exam Countdown", icon: Target, badge: "NEB", badgeClass: "bg-amber-500/15 text-amber-500" },
+];
+
+const extendedItems: NavItem[] = [
+  { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },
+  { href: "/loksewa", label: "Loksewa GK", icon: Users, badge: "GK" },
+  { href: "/world-knowledge", label: "World Knowledge", icon: Globe },
 ];
 
 const accountItems: NavItem[] = [
-  { href: "/credits", label: "My Credits", icon: Coins },
   { href: "/progress", label: "My Progress", icon: UserCheck },
-  { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
+  { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark },
+  { href: "/credits", label: "Credits & Plan", icon: Coins },
 ];
 
 const adminItems: NavItem[] = [
@@ -185,7 +191,12 @@ function NavSection({
                 />
                 <span className="flex-1 whitespace-nowrap">{item.label}</span>
                 {item.badge && (
-                  <span className="shrink-0 text-[8px] font-extrabold px-1.5 py-0.2 rounded-md bg-primary/15 text-primary">
+                  <span
+                    className={cn(
+                      "shrink-0 text-[8.5px] font-extrabold px-1.5 py-0.5 rounded-md",
+                      item.badgeClass ?? "bg-primary/15 text-primary"
+                    )}
+                  >
                     {item.badge}
                   </span>
                 )}
@@ -208,10 +219,10 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   const isLoggedIn = !!user;
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
-    ai: false,
     curriculum: false,
-    lab: false,
-    general: false,
+    stem: false,
+    tools: false,
+    extended: false,
     account: false,
     admin: false,
   });
@@ -243,16 +254,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       {/* Nav sections */}
       <div className="flex-1 overflow-y-auto px-2 py-3 space-y-1">
         <NavSection
-          label="AI & Practice"
-          icon={Sparkles}
-          items={aiItems}
-          pathname={pathname}
-          collapsed={collapsedSections.ai}
-          onToggle={() => toggleSection("ai")}
-          railCollapsed={collapsed}
-        />
-        <NavSection
-          label="Notes & Syllabus"
+          label="Curriculum & Notes"
           icon={BookOpen}
           items={curriculumItems}
           pathname={pathname}
@@ -261,26 +263,35 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
           railCollapsed={collapsed}
         />
         <NavSection
-          label="Labs & Interactive"
+          label="STEM Labs & Rigor"
           icon={FlaskConical}
-          items={labItems}
+          items={stemAndRigorItems}
           pathname={pathname}
-          collapsed={collapsedSections.lab}
-          onToggle={() => toggleSection("lab")}
+          collapsed={collapsedSections.stem}
+          onToggle={() => toggleSection("stem")}
           railCollapsed={collapsed}
         />
         <NavSection
-          label="Curriculum & GK"
-          icon={Layers}
-          items={generalItems}
+          label="AI & Assessment"
+          icon={Sparkles}
+          items={toolsItems}
           pathname={pathname}
-          collapsed={collapsedSections.general}
-          onToggle={() => toggleSection("general")}
+          collapsed={collapsedSections.tools}
+          onToggle={() => toggleSection("tools")}
+          railCollapsed={collapsed}
+        />
+        <NavSection
+          label="Extended & GK"
+          icon={Globe}
+          items={extendedItems}
+          pathname={pathname}
+          collapsed={collapsedSections.extended}
+          onToggle={() => toggleSection("extended")}
           railCollapsed={collapsed}
         />
         {isLoggedIn && (
           <NavSection
-            label="Account"
+            label="Student Desk"
             icon={UserCheck}
             items={accountItems}
             pathname={pathname}

@@ -1,0 +1,198 @@
+/**
+ * Graph Bank — Physics 2: Electricity, Magnetism & AC, Modern, Waves.
+ */
+
+import type { GraphEntry } from "@/lib/graphs";
+
+export const PHYSICS_GRAPHS_2: GraphEntry[] = [
+  {
+    id: "phy-vi-ohmic-nonohmic", slug: "vi-characteristics-ohmic", name: "V–I Characteristics: Ohmic vs Non-Ohmic",
+    subject: "physics", category: "Electricity", classLevel: "both",
+    axes: { x: "Current I", y: "Potential difference V" },
+    basis: "Measured voltage across an element as current through it is varied.",
+    meaning: "Distinguishes ohmic conductors (straight line) from non-ohmic elements.",
+    equation: "V = IR",
+    series: [
+      { shape: "linearRise", label: "ohmic (metal at const T)" },
+      { shape: "expRise", variant: 4, label: "non-ohmic (filament/diode)", dashed: true },
+    ],
+    howToRead: { slope: "Resistance (constant slope = ohmic)" },
+    output: "Straight line through origin for metals; curving line for a filament (heating raises R) or diode (threshold). Steeper slope = larger resistance.",
+    specialCases: [
+      { name: "Filament bulb", condition: "self-heating", meaning: "Curve bends upward — R grows with I." },
+      { name: "pn diode", condition: "threshold voltage", meaning: "Nearly no current until ~0.7 V, then steep rise." },
+      { name: "Water/electrolyte", condition: "back EMF", meaning: "Line intercepts the V-axis." },
+    ],
+  },
+  {
+    id: "phy-resistivity-temperature", slug: "resistivity-vs-temperature", name: "Resistivity vs Temperature (Metal vs Semiconductor)",
+    subject: "physics", category: "Electricity", classLevel: "both",
+    axes: { x: "Temperature T", y: "Resistivity ρ" },
+    basis: "Resistivity measured while the sample temperature is raised steadily.",
+    meaning: "Metals: ρ rises (phonons scatter electrons). Semiconductors: ρ falls (more carriers freed).",
+    equation: "\\rho_{metal} \\approx \\rho_0(1+\\alpha T), \\qquad \\rho_{semi} \\propto e^{E_g/2kT}",
+    series: [
+      { shape: "linearRise", label: "metal" },
+      { shape: "expDecay", variant: 3.5, label: "semiconductor", dashed: true },
+    ],
+    output: "Metals: rising straight line (superconductors drop to 0 below T_c). Semiconductors: falling exponential — the two lines diverge immediately.",
+    specialCases: [
+      { name: "Alloy constantan", condition: "weak α", meaning: "Nearly flat line — used in resistors." },
+      { name: "Superconductor", condition: "T < T_c", meaning: "Resistivity plunges to zero." },
+      { name: "Thermistor", condition: "semiconductor sensor", meaning: "Steep negative slope makes a digital thermometer." },
+    ],
+  },
+  {
+    id: "phy-capacitor-charging", slug: "capacitor-charging-discharging", name: "Capacitor Charging & Discharging (q–t)",
+    subject: "physics", category: "Electricity", classLevel: "both",
+    axes: { x: "Time t", y: "Charge q / Voltage V" },
+    basis: "Charge on a capacitor through resistance R after the switch closes (and after it discharges).",
+    meaning: "Exponential rise to full charge, then exponential decay; time constant τ = RC sets the pace.",
+    equation: "q = Q_0(1-e^{-t/RC}), \\qquad q = Q_0e^{-t/RC}",
+    series: [
+      { shape: "expRise", variant: 3.5, label: "charging" },
+      { shape: "expDecay", variant: 3.5, label: "discharging", dashed: true },
+    ],
+    howToRead: { slope: "Charging/discharging current (largest at switch-on)" },
+    output: "Rise saturating at Q₀ (63% at t = τ); decay falling to zero (37% left at t = τ). Current behaves as the mirror image.",
+    specialCases: [
+      { name: "t = RC", condition: "one time constant", meaning: "63.2% charged or 36.8% remaining." },
+      { name: "t = 5RC", condition: "steady state", meaning: ">99% complete — fully charged." },
+      { name: "Initial current", condition: "t = 0", meaning: "I₀ = V/R — capacitor acts like a wire at first." },
+    ],
+  },
+  {
+    id: "phy-lr-circuit-graph", slug: "lr-current-growth-decay", name: "LR Circuit: Current Growth & Decay",
+    subject: "physics", category: "Electricity", classLevel: "class-12",
+    axes: { x: "Time t", y: "Current I" },
+    basis: "Current in an inductor-resistor loop after connecting (then removing) the source.",
+    meaning: "Inductance opposes change: current approaches ε/R exponentially with τ = L/R.",
+    equation: "I = I_0(1-e^{-Rt/L}), \\qquad I = I_0e^{-Rt/L}",
+    series: [
+      { shape: "expRise", variant: 3.5, label: "growth" },
+      { shape: "expDecay", variant: 3.5, label: "decay", dashed: true },
+    ],
+    output: "Same S-exponential family as the capacitor but for current; inductor resists sudden current change, so I starts at zero.",
+    specialCases: [
+      { name: "t = L/R", condition: "one τ", meaning: "63% of final current." },
+      { name: "Switch opened", condition: "forced decay", meaning: "Arc at switch — L fights the change with high induced EMF." },
+    ],
+  },
+  {
+    id: "phy-photoelectric-stopping-potential", slug: "stopping-potential-vs-frequency", name: "Photoelectric: Stopping Potential vs Frequency",
+    subject: "physics", category: "Modern Physics", classLevel: "class-12",
+    axes: { x: "Frequency ν", y: "Stopping potential V₀" },
+    basis: "Stopping potential measured for light of increasing frequency on one metal.",
+    meaning: "Straight line proving the photon picture: slope h/e, intercept −φ/e.",
+    equation: "eV_0 = h\\nu - \\phi",
+    series: [{ shape: "linear" }],
+    marks: [{ x: 0.3, label: "ν₀ (threshold)", type: "vline" }],
+    howToRead: { slope: "h/e — same for every metal", intercept: "−φ/e — metal's work function" },
+    output: "Straight line starting at threshold ν₀ (V₀ = 0); parallel lines for different metals shifted by work function.",
+    specialCases: [
+      { name: "Different metals", condition: "parallel lines", meaning: "Same slope h/e, different ν₀." },
+      { name: "ν < ν₀", condition: "below threshold", meaning: "No emission regardless of intensity." },
+      { name: "Millikan's plot", condition: "experiment", meaning: "Slope measured Planck's constant." },
+    ],
+  },
+  {
+    id: "phy-photoelectric-current-voltage", slug: "photocurrent-vs-voltage", name: "Photoelectric Current vs Collector Voltage",
+    subject: "physics", category: "Modern Physics", classLevel: "class-12",
+    axes: { x: "Collector potential V", y: "Photocurrent I" },
+    basis: "Photocurrent measured while the collector is swept from negative (retarding) to positive.",
+    meaning: "Shows saturation current (intensity) and stopping potential (frequency) in one plot.",
+    series: [
+      { shape: "saturate", variant: 9, label: "higher intensity" },
+      { shape: "saturate", variant: 6, label: "lower intensity", dashed: true },
+    ],
+    marks: [{ x: 0.18, label: "−V₀", type: "vline" }],
+    output: "Zero until −V₀, rising through the retarding region, then flat saturation for all V > 0. Brighter light lifts the plateau but does NOT move V₀.",
+    specialCases: [
+      { name: "Saturation current", condition: "V large positive", meaning: "All emitted electrons collected — ∝ intensity." },
+      { name: "Same V₀", condition: "different intensities", meaning: "K_max depends on ν, not intensity." },
+    ],
+  },
+  {
+    id: "phy-binding-energy-curve", slug: "binding-energy-per-nucleon", name: "Binding Energy per Nucleon vs Mass Number A",
+    subject: "physics", category: "Modern Physics", classLevel: "class-12",
+    axes: { x: "Mass number A", y: "BE/A (MeV)" },
+    basis: "Binding energy per nucleon computed from mass defects across the nuclide chart.",
+    meaning: "Nuclear stability landscape — the hill both fission and fusion climb.",
+    equation: "BE/A = \\Delta m c^2 / A",
+    series: [{ shape: "peak", variant: 6 }],
+    marks: [{ x: 0.42, label: "Fe (≈8.8 MeV)", type: "vline" }],
+    output: "Steep rise from light nuclei, broad plateau ≈ 8.5 MeV, gentle fall beyond A ≈ 170. Peak at iron — the most stable nucleus.",
+    specialCases: [
+      { name: "Fission region", condition: "A > 230", meaning: "Heavy nuclei gain by splitting toward the peak." },
+      { name: "Fusion region", condition: "A < 56", meaning: "Light nuclei gain by fusing — stellar energy." },
+      { name: "⁴He spike", condition: "A = 4", meaning: "Unusually tight alpha particle shows as a bump." },
+    ],
+  },
+  {
+    id: "phy-radioactive-decay-graph", slug: "radioactive-decay-nt", name: "Radioactive Decay: N vs t",
+    subject: "physics", category: "Modern Physics", classLevel: "class-12",
+    axes: { x: "Time t", y: "Undecayed nuclei N" },
+    basis: "Count of remaining radioactive nuclei as the sample ages.",
+    meaning: "Exponential decay with constant half-life independent of amount.",
+    equation: "N = N_0e^{-\\lambda t}, \\qquad t_{1/2} = \\frac{0.693}{\\lambda}",
+    series: [{ shape: "expDecay", variant: 2.5 }],
+    marks: [{ x: 0.28, y: 0.5, label: "t½", type: "vline" }],
+    output: "Smooth exponential fall: half the sample decays every half-life (100→50→25→12.5%). Activity A follows the identical curve.",
+    specialCases: [
+      { name: "Constant half-life", condition: "any N", meaning: "You can't deplete a sample faster by waiting — or by cooling." },
+      { name: "Mean life", condition: "τ = 1/λ", meaning: "τ = 1.44 × t½ — the average lifetime." },
+      { name: "Activity curve", condition: "A = λN", meaning: "Geiger-counter count rate mirrors the N–t graph." },
+    ],
+  },
+  {
+    id: "phy-resonance-curve", slug: "resonance-curve-lcr", name: "Series LCR Resonance Curve (I vs f)",
+    subject: "physics", category: "Magnetism & AC", classLevel: "class-12",
+    axes: { x: "Frequency f", y: "Current I" },
+    basis: "Circuit current measured as source frequency sweeps through the natural frequency.",
+    meaning: "Current peaks at resonance f₀ = 1/2π√(LC); sharpness set by Q-factor.",
+    equation: "I = \\frac{V}{\\sqrt{R^2 + (\\omega L - 1/\\omega C)^2}}",
+    series: [
+      { shape: "resonancePeak", variant: 10, label: "low R (sharp)" },
+      { shape: "resonancePeak", variant: 3, label: "high R (flat)", dashed: true },
+    ],
+    marks: [{ x: 0.45, label: "f₀", type: "vline" }],
+    output: "Symmetric peak centred at f₀ where X_L = X_C and I = V/R (maximum). Smaller R → taller, narrower peak (higher Q).",
+    specialCases: [
+      { name: "At f₀", condition: "X_L = X_C", meaning: "Power factor = 1; circuit is purely resistive." },
+      { name: "Q-factor", condition: "f₀/Δf", meaning: "Bandwidth narrows as Q rises — radio tuning." },
+      { name: "Below f₀", condition: "X_C > X_L", meaning: "Circuit behaves capacitively." },
+    ],
+  },
+  {
+    id: "phy-interference-fringes", slug: "interference-intensity", name: "Interference: Intensity vs Position (Young's Fringes)",
+    subject: "physics", category: "Waves & Optics", classLevel: "class-12",
+    axes: { x: "Position on screen y", y: "Intensity I" },
+    basis: "Screen intensity in Young's double-slit experiment as coherent waves superpose.",
+    meaning: "Equally spaced bright/dark fringes: energy redistributed, not lost.",
+    equation: "I = I_{max}\\cos^2\\left(\\frac{\\pi d y}{\\lambda D}\\right), \\quad \\beta = \\frac{\\lambda D}{d}",
+    series: [{ shape: "fringes", variant: 10 }],
+    output: "cos² fringes — equally spaced bright maxima (I = 4I₀) and dark minima (I = 0); fringe width β uniform across the screen.",
+    specialCases: [
+      { name: "Fringe width", condition: "β = λD/d", meaning: "Red light → wider fringes than blue." },
+      { name: "White light", condition: "multiple λ", meaning: "Central white fringe, coloured sides." },
+      { name: "Single slit envelope", condition: "diffraction × interference", meaning: "Fringe brightness fades outward under the envelope." },
+    ],
+  },
+  {
+    id: "phy-magnetic-field-wire", slug: "magnetic-field-vs-distance", name: "Magnetic Field of a Wire: B vs Distance",
+    subject: "physics", category: "Magnetism & AC", classLevel: "class-12",
+    axes: { x: "Distance r from wire", y: "Field B" },
+    basis: "Field measured outward from a long straight current-carrying conductor.",
+    meaning: "B falls as 1/r — the field of a line current.",
+    equation: "B = \\frac{\\mu_0 I}{2\\pi r}",
+    series: [{ shape: "hyperbola" }],
+    output: "Steep 1/r fall near the wire, long tail far away; inside a thick wire B rises linearly from the axis instead.",
+    specialCases: [
+      { name: "Doubling distance", condition: "r → 2r", meaning: "Field halves — inverse-one, not inverse-square." },
+      { name: "Inside thick wire", condition: "r < R", meaning: "B ∝ r (linear rise from zero at axis)." },
+      { name: "Solenoid interior", condition: "far from ends", meaning: "B ≈ μ₀nI — uniform, unlike the wire's fall." },
+    ],
+  },
+];
+
+export const PHYSICS_GRAPHS_ALL = PHYSICS_GRAPHS_2;

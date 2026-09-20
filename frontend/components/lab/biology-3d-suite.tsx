@@ -8,7 +8,7 @@
  *   • Ecology                       → Food chain & energy pyramid
  */
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
@@ -19,6 +19,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { VizToolbar, type VizTarget, type VizTargetRef } from "@/components/viz/viz-toolbar";
 import { TheoryPanel } from "@/components/lab/theory-panel";
+import { CellOrganellesEncyclopedia } from "@/components/lab/cell-organelles-encyclopedia";
+import { CellOrganellesExplorer3D } from "@/components/lab/cell-organelles-explorer-3d";
+import { CELL_ORGANELLES } from "@/lib/cell-organelles-data";
+import {
+  Leaf,
+  PawPrint,
+  Eye,
+  EyeOff,
+  Sparkles,
+  CheckCircle2,
+  Info,
+  Scissors,
+  Compass,
+  ArrowRight,
+  Layers,
+  ZoomIn,
+} from "lucide-react";
 import {
   createThreeScene,
   disposeThreeScene,
@@ -42,17 +59,21 @@ type Kit = {
     title: string,
     sub: string | undefined,
     pos: THREE.Vector3,
-    parent?: THREE.Object3D
+    parent?: THREE.Object3D,
+    onClick?: () => void
   ) => CSS2DObject;
 };
 
-function chipEl(color: string, title: string, sub?: string): HTMLDivElement {
+function chipEl(color: string, title: string, sub?: string, onClick?: () => void): HTMLDivElement {
   const el = document.createElement("div");
   el.style.cssText =
-    "pointer-events:auto;padding:3px 8px;border-radius:8px;background:rgba(2,6,23,0.82);" +
-    `border:1.5px solid ${color};color:#e2e8f0;font:600 11px/1.35 ui-sans-serif,system-ui;white-space:nowrap;`;
-  el.innerHTML = `<span style="color:${color};font-weight:800">${title}</span>` +
-    (sub ? `<br/><span style="opacity:.8;font-weight:500">${sub}</span>` : "");
+    "pointer-events:auto;cursor:pointer;padding:4px 9px;border-radius:10px;background:rgba(2,6,23,0.88);" +
+    `border:1.5px solid ${color};color:#e2e8f0;font:600 11px/1.35 ui-sans-serif,system-ui;white-space:nowrap;backdrop-filter:blur(4px);box-shadow:0 4px 12px rgba(0,0,0,0.5);transition:all 0.15s ease;`;
+  el.innerHTML = `<span style="color:${color};font-weight:800;display:inline-block">${title}</span>` +
+    (sub ? `<br/><span style="opacity:.8;font-size:9.5px;font-weight:500">${sub}</span>` : "");
+  if (onClick) {
+    el.addEventListener("click", onClick);
+  }
   return el;
 }
 
@@ -69,8 +90,8 @@ function setupKit(mount: HTMLElement, opts: ThreeSceneOptions = {}): Kit {
   return {
     ts,
     labelRenderer,
-    addLabel(color, title, sub, pos, parent = ts!.group) {
-      const o = new CSS2DObject(chipEl(color, title, sub));
+    addLabel(color, title, sub, pos, parent = ts!.group, onClick?: () => void) {
+      const o = new CSS2DObject(chipEl(color, title, sub, onClick));
       o.position.copy(pos);
       parent.add(o);
       return o;
@@ -146,155 +167,815 @@ function CanvasMount({ mountRef, webGL, targetRef }: { mountRef: React.RefObject
 /* TAB 1 — Eukaryotic cell (Biomolecules & Cell Biology)               */
 /* ------------------------------------------------------------------ */
 
-const CellTab: React.FC = () => {
+interface OrganellePin {
+  id: string;
+  name: string;
+  sub: string;
+  color: string;
+  colorHex: number;
+  target: THREE.Vector3;
+  labelPos: THREE.Vector3;
+  plantOnly?: boolean;
+  animalOnly?: boolean;
+}
+
+const CellTab: React.FC<{ onExploreOrganelle?: (id?: string) => void }> = ({ onExploreOrganelle }) => {
   const [plant, setPlant] = useState(true);
+  const [showLines, setShowLines] = useState(true);
+  const [cutaway, setCutaway] = useState(true);
+  const [activeOrganelle, setActiveOrganelle] = useState<string | null>(null);
+
   const { mountRef, webGL, vizTargetRef } = useLabScene((kit) => {
     const g = kit.ts!.group;
-    g.add(new THREE.Mesh(new THREE.SphereGeometry(4, 48, 32),
-      standardMaterial(0x38bdf8, { transparent: true, opacity: 0.14 })));
-    if (plant) {
-      g.add(new THREE.Mesh(new THREE.SphereGeometry(4.55, 48, 32),
-        standardMaterial(0x22c55e, { transparent: true, opacity: 0.22 })));
+
+    // Outer plasma membrane (spherical in animal, enclosed in faceted wall in plant)
+    if (!plant) {
+      // Animal Cell Membrane
+      if (cutaway) {
+        // Cutaway shell (3/4 hemisphere so interior is exposed)
+        const membraneMat = standardMaterial(0x38bdf8, {
+          transparent: true,
+          opacity: 0.28,
+          side: THREE.DoubleSide,
+          roughness: 0.25,
+        });
+        const membrane = new THREE.Mesh(
+          new THREE.SphereGeometry(3.95, 48, 32, 0, Math.PI * 1.45, 0, Math.PI),
+          membraneMat
+        );
+        // Cut edge border line
+        const cutBorderGeo = new THREE.RingGeometry(3.92, 3.96, 32);
+        const cutBorder = new THREE.Mesh(
+          cutBorderGeo,
+          standardMaterial(0x7dd3fc, { side: THREE.DoubleSide, emissive: 0x38bdf8, emissiveIntensity: 0.4 })
+        );
+        cutBorder.rotation.y = Math.PI / 2;
+        g.add(membrane, cutBorder);
+      } else {
+        const membraneMat = standardMaterial(0x38bdf8, { transparent: true, opacity: 0.2, roughness: 0.25 });
+        g.add(new THREE.Mesh(new THREE.SphereGeometry(3.95, 48, 32), membraneMat));
+      }
+
+      // Microvilli undulating surface folds on animal cell
+      for (let i = 0; i < 16; i++) {
+        const theta = (i / 16) * Math.PI * 2;
+        const mv = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.08, 0.08, 0.4, 8),
+          standardMaterial(0x38bdf8, { transparent: true, opacity: 0.45 })
+        );
+        mv.position.set(Math.cos(theta) * 3.95, Math.sin(theta) * 3.95, 0);
+        mv.rotation.z = theta + Math.PI / 2;
+        g.add(mv);
+      }
+    } else {
+      // Plant Cell Outer Boundaries (Cell Wall + Plasma Membrane)
+      if (cutaway) {
+        // Cutaway Faceted Plant Cell Wall
+        const wallMat = standardMaterial(0x22c55e, {
+          transparent: true,
+          opacity: 0.32,
+          side: THREE.DoubleSide,
+          roughness: 0.5,
+        });
+        const wall = new THREE.Mesh(
+          new THREE.SphereGeometry(4.55, 32, 24, 0, Math.PI * 1.42, 0, Math.PI),
+          wallMat
+        );
+        // Middle Lamella outer line frame
+        const wireMat = new THREE.MeshBasicMaterial({
+          color: 0xa3e635,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.3,
+        });
+        const wallWire = new THREE.Mesh(
+          new THREE.SphereGeometry(4.58, 16, 12, 0, Math.PI * 1.42, 0, Math.PI),
+          wireMat
+        );
+        // Inner Plasma Membrane
+        const membraneMat = standardMaterial(0x38bdf8, {
+          transparent: true,
+          opacity: 0.18,
+          side: THREE.DoubleSide,
+        });
+        const membrane = new THREE.Mesh(
+          new THREE.SphereGeometry(4.2, 32, 24, 0, Math.PI * 1.42, 0, Math.PI),
+          membraneMat
+        );
+        g.add(wall, wallWire, membrane);
+      } else {
+        const wallMat = standardMaterial(0x22c55e, { transparent: true, opacity: 0.26, roughness: 0.5 });
+        const wall = new THREE.Mesh(new THREE.IcosahedronGeometry(4.6, 2), wallMat);
+        const wireMat = new THREE.MeshBasicMaterial({ color: 0x4ade80, wireframe: true, transparent: true, opacity: 0.25 });
+        const wallWire = new THREE.Mesh(new THREE.IcosahedronGeometry(4.62, 2), wireMat);
+        const membraneMat = standardMaterial(0x38bdf8, { transparent: true, opacity: 0.15 });
+        const membrane = new THREE.Mesh(new THREE.SphereGeometry(4.2, 36, 28), membraneMat);
+        g.add(wall, wallWire, membrane);
+      }
+
+      // Plasmodesmata (trans-wall intercellular channels)
+      for (let i = 0; i < 6; i++) {
+        const a = (i / 6) * Math.PI * 2;
+        const pd = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.08, 0.08, 0.85, 8),
+          standardMaterial(0xfde047, { emissive: 0xeab308, emissiveIntensity: 0.3 })
+        );
+        pd.position.set(Math.cos(a) * 4.4, Math.sin(a) * 4.4, -0.2);
+        pd.rotation.z = a + Math.PI / 2;
+        g.add(pd);
+      }
     }
-    const nucleus = new THREE.Mesh(new THREE.SphereGeometry(1.4, 32, 24), standardMaterial(0xa78bfa));
-    nucleus.position.set(-1.3, 0.9, 0);
-    const nucleolus = new THREE.Mesh(new THREE.SphereGeometry(0.45, 20, 16), standardMaterial(0x7c3aed));
-    nucleolus.position.copy(nucleus.position);
-    g.add(nucleus, nucleolus);
-    // Chromatin threads (DNA + histone proteins) inside the nucleus
+
+    // ── Nucleus ──
+    // In plant cells, pushed to eccentric/peripheral position by central vacuole;
+    // in animal cells, centrally located.
+    const nucPos = plant ? new THREE.Vector3(-1.45, 1.25, 0) : new THREE.Vector3(0, 0, 0);
+    const nucleus = new THREE.Mesh(
+      new THREE.SphereGeometry(plant ? 1.25 : 1.45, 32, 24),
+      standardMaterial(0x8b5cf6, {
+        roughness: 0.35,
+        emissive: activeOrganelle === "nucleus" ? 0x8b5cf6 : 0x000000,
+        emissiveIntensity: activeOrganelle === "nucleus" ? 0.35 : 0,
+      })
+    );
+    nucleus.position.copy(nucPos);
+
+    // Nucleolus
+    const nucleolus = new THREE.Mesh(
+      new THREE.SphereGeometry(plant ? 0.38 : 0.44, 24, 18),
+      standardMaterial(0x6d28d9, {
+        emissive: activeOrganelle === "nucleolus" ? 0xa855f7 : 0x7c3aed,
+        emissiveIntensity: activeOrganelle === "nucleolus" ? 0.6 : 0.25,
+      })
+    );
+    nucleolus.position.set(nucPos.x + 0.15, nucPos.y + 0.1, nucPos.z + 0.1);
+
+    // Nuclear Pores (toruses on nuclear surface)
+    const poreMat = standardMaterial(0xc4b5fd, { roughness: 0.3 });
+    for (let i = 0; i < 8; i++) {
+      const pAngle = (i / 8) * Math.PI * 2;
+      const pore = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.02, 6, 12), poreMat);
+      pore.position.set(
+        nucPos.x + Math.cos(pAngle) * (plant ? 1.25 : 1.45),
+        nucPos.y + Math.sin(pAngle) * (plant ? 1.25 : 1.45),
+        nucPos.z
+      );
+      pore.lookAt(pore.position.x * 2, pore.position.y * 2, pore.position.z);
+      g.add(pore);
+    }
+
+    // Chromatin threads
     const chromPts: THREE.Vector3[] = [];
-    for (let i = 0; i <= 20; i++) {
-      const a = i * 1.1;
-      chromPts.push(new THREE.Vector3(
-        nucleus.position.x + Math.cos(a) * 0.75 * (0.4 + 0.6 * Math.sin(i * 0.9)),
-        nucleus.position.y + Math.sin(i * 1.7) * 0.5,
-        nucleus.position.z + Math.sin(a) * 0.75 * (0.4 + 0.6 * Math.cos(i * 0.8))
-      ));
+    for (let i = 0; i <= 28; i++) {
+      const a = i * 1.15;
+      chromPts.push(
+        new THREE.Vector3(
+          nucPos.x + Math.cos(a) * 0.72 * (0.4 + 0.6 * Math.sin(i * 0.9)),
+          nucPos.y + Math.sin(i * 1.6) * 0.5,
+          nucPos.z + Math.sin(a) * 0.72 * (0.4 + 0.6 * Math.cos(i * 0.8))
+        )
+      );
     }
-    g.add(new THREE.Mesh(
-      new THREE.TubeGeometry(new THREE.CatmullRomCurve3(chromPts), 80, 0.035, 6),
+    const chromatin = new THREE.Mesh(
+      new THREE.TubeGeometry(new THREE.CatmullRomCurve3(chromPts), 90, 0.035, 6),
       standardMaterial(0xc4b5fd)
-    ));
-    [[2.2, 1.6, -0.6, 0.5], [-2.4, -1.2, 1.1, -0.4], [0.6, -2.4, -1.4, 1.1]].forEach(([x, y, z, rot], mi) => {
-      const m = new THREE.Mesh(new THREE.CapsuleGeometry(0.28, 0.9, 6, 12),
-        standardMaterial(0xf97316, { emissive: 0xf97316, emissiveIntensity: 0.15 }));
+    );
+    g.add(nucleus, nucleolus, chromatin);
+
+    // ── Mitochondria (Powerhouses with Cristae) ──
+    const mitoPositions: [number, number, number, number][] = plant
+      ? [[2.2, 1.6, -0.6, 0.5], [-2.3, -1.3, 1.0, -0.4], [0.5, -2.4, -1.3, 1.1]]
+      : [[2.0, 1.8, -0.6, 0.5], [-2.4, -1.2, 1.1, -0.4], [1.2, -2.2, -1.4, 0.9], [-1.8, 2.0, 0.8, -0.6]];
+
+    mitoPositions.forEach(([x, y, z, rot]) => {
+      const m = new THREE.Mesh(
+        new THREE.CapsuleGeometry(0.28, 0.88, 8, 16),
+        standardMaterial(0xf97316, {
+          emissive: 0xf97316,
+          emissiveIntensity: activeOrganelle === "mitochondria" ? 0.45 : 0.18,
+        })
+      );
       m.position.set(x, y, z);
       m.rotation.z = rot;
       g.add(m);
-      if (mi === 0) {
-        // Cristae — folds of the inner mitochondrial membrane (cut-away zig-zag)
-        const crPts: THREE.Vector3[] = [];
-        for (let i = 0; i <= 6; i++) {
-          crPts.push(new THREE.Vector3(-0.42 + i * 0.14, i % 2 === 0 ? -0.16 : 0.16, 0.3));
-        }
-        m.add(new THREE.Line(
-          new THREE.BufferGeometry().setFromPoints(crPts),
-          new THREE.LineBasicMaterial({ color: 0xfed7aa })
-        ));
+
+      // Internal zig-zag cristae folds
+      const crPts: THREE.Vector3[] = [];
+      for (let i = 0; i <= 7; i++) {
+        crPts.push(new THREE.Vector3(-0.4 + i * 0.11, i % 2 === 0 ? -0.15 : 0.15, 0.28));
       }
+      m.add(
+        new THREE.Line(
+          new THREE.BufferGeometry().setFromPoints(crPts),
+          new THREE.LineBasicMaterial({ color: 0xfed7aa, linewidth: 2 })
+        )
+      );
     });
-    if (plant) {
-      [[1.8, -1.4, 1.2], [-0.6, 2.4, 1.5], [-2.6, 0.4, -1.3]].forEach(([x, y, z], ci) => {
-        const c = new THREE.Mesh(new THREE.SphereGeometry(0.5, 20, 14), standardMaterial(0x16a34a));
-        c.position.set(x, y, z);
-        c.scale.set(1, 0.55, 0.65);
-        c.rotation.z = 0.4;
-        g.add(c);
-        if (ci === 0) {
-          // Grana — stacks of thylakoid discs where the light reaction happens
-          for (let i = 0; i < 4; i++) {
-            const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.045, 18), standardMaterial(0x4ade80));
-            disc.position.set(0, -0.12 + i * 0.08, 0);
-            c.add(disc);
-          }
-        }
-      });
-      const vac = new THREE.Mesh(new THREE.SphereGeometry(1.15, 28, 20), standardMaterial(0x60a5fa, { transparent: true, opacity: 0.5 }));
-      vac.position.set(1.5, -0.7, 0.4);
-      g.add(vac);
-      // Cell inclusion — starch grain (stored food)
-      const starch = new THREE.Mesh(new THREE.SphereGeometry(0.2, 14, 10), standardMaterial(0xfde68a));
-      starch.position.set(-1.0, -2.6, 1.4);
-      g.add(starch);
-    } else {
-      [[2.6, -0.9, 0.9], [-1.9, -2.2, -0.8]].forEach(([x, y, z]) => {
-        const v = new THREE.Mesh(new THREE.SphereGeometry(0.35, 18, 14), standardMaterial(0x60a5fa, { transparent: true, opacity: 0.55 }));
-        v.position.set(x, y, z);
-        g.add(v);
-      });
-      const c1 = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.7, 12), standardMaterial(0xe2e8f0));
-      c1.position.set(2.4, 0.6, 0.6);
-      const c2 = c1.clone();
-      c2.rotation.z = Math.PI / 2;
-      c2.position.x += 0.45;
-      g.add(c1, c2);
-      // Flagellum (9+2 microtubule arrangement) — locomotion in motile cells
-      const flag = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.02, 2.2, 8), standardMaterial(0xcbd5e1));
-      flag.position.set(-3.6, -2.2, 0);
-      flag.rotation.z = Math.PI / 2.4;
-      g.add(flag);
-    }
-    const er = new THREE.Mesh(new THREE.TorusGeometry(2.15, 0.11, 10, 48), standardMaterial(0x0ea5e9));
-    er.position.copy(nucleus.position);
-    er.rotation.x = Math.PI / 2.6;
-    g.add(er);
+
+    // ── Endoplasmic Reticulum (RER & SER) ──
+    const rerMat = standardMaterial(0x0ea5e9, {
+      roughness: 0.3,
+      emissive: activeOrganelle === "rer" ? 0x0284c7 : 0x000000,
+      emissiveIntensity: activeOrganelle === "rer" ? 0.35 : 0,
+    });
+    const rer = new THREE.Mesh(new THREE.TorusGeometry(2.1, 0.14, 10, 48), rerMat);
+    rer.position.copy(nucPos);
+    rer.rotation.x = Math.PI / 2.5;
+
+    const serMat = standardMaterial(0x38bdf8, {
+      roughness: 0.4,
+      emissive: activeOrganelle === "ser" ? 0x0ea5e9 : 0x000000,
+      emissiveIntensity: activeOrganelle === "ser" ? 0.35 : 0,
+    });
+    const ser = new THREE.Mesh(new THREE.TorusGeometry(2.45, 0.09, 8, 36), serMat);
+    ser.position.copy(nucPos);
+    ser.rotation.y = Math.PI / 3;
+    g.add(rer, ser);
+
+    // ── Golgi Apparatus (Cisternae stacks with secretory vesicles) ──
+    const golgiPos = new THREE.Vector3(2.4, -2.1, 0.2);
+    const golgiMat = standardMaterial(0xfbbf24, {
+      roughness: 0.4,
+      emissive: activeOrganelle === "golgi" ? 0xf59e0b : 0x000000,
+      emissiveIntensity: activeOrganelle === "golgi" ? 0.4 : 0,
+    });
     for (let i = 0; i < 4; i++) {
-      const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.55 - i * 0.06, 0.55 - i * 0.06, 0.09, 20), standardMaterial(0xfbbf24));
-      disc.position.set(2.5 + i * 0.08, -2.3 + i * 0.16, 0.2);
+      const disc = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.58 - i * 0.06, 0.58 - i * 0.06, 0.085, 24),
+        golgiMat
+      );
+      disc.position.set(golgiPos.x + i * 0.08, golgiPos.y + i * 0.16, golgiPos.z);
       disc.rotation.z = 0.35;
       g.add(disc);
     }
-    [[-2.8, 1.9, 0.7], [1.1, 2.6, -1.0]].forEach(([x, y, z]) => {
-      const l = new THREE.Mesh(new THREE.SphereGeometry(0.26, 16, 12),
-        standardMaterial(0xef4444, { emissive: 0xef4444, emissiveIntensity: 0.2 }));
-      l.position.set(x, y, z);
-      g.add(l);
+    // Budding secretory vesicles
+    [[-0.2, 0.3, 0.2], [0.3, -0.2, -0.15], [-0.4, 0.45, 0.1]].forEach(([vx, vy, vz]) => {
+      const v = new THREE.Mesh(new THREE.SphereGeometry(0.12, 12, 10), standardMaterial(0xfde047));
+      v.position.set(golgiPos.x + vx, golgiPos.y + vy, golgiPos.z + vz);
+      g.add(v);
     });
+
+    // ── Ribosomes (70S & 80S) ──
     const rp: number[] = [];
-    for (let i = 0; i < 90; i++) {
-      const r = 3.4 * Math.cbrt(Math.random());
+    for (let i = 0; i < 110; i++) {
+      const r = 3.3 * Math.cbrt(Math.random());
       const th = Math.random() * Math.PI * 2;
       const ph = Math.acos(2 * Math.random() - 1);
       rp.push(r * Math.sin(ph) * Math.cos(th), r * Math.sin(ph) * Math.sin(th), r * Math.cos(ph));
     }
     const rGeo = new THREE.BufferGeometry();
     rGeo.setAttribute("position", new THREE.Float32BufferAttribute(rp, 3));
-    g.add(new THREE.Points(rGeo, new THREE.PointsMaterial({ color: 0xf472b6, size: 0.07 })));
-    titleText(kit.ts, plant ? "Plant Cell (eukaryotic)" : "Animal Cell (eukaryotic)", new THREE.Vector3(0, 5.4, 0));
-    kit.addLabel("#a78bfa", "Nucleus", "control centre — stores DNA", new THREE.Vector3(-1.3, 2.6, 0));
-    kit.addLabel("#c4b5fd", "Chromatin", "DNA + histone proteins → chromosomes", new THREE.Vector3(-2.7, 1.3, 1.5));
-    kit.addLabel("#7c3aed", "Nucleolus", "site of ribosome synthesis", new THREE.Vector3(-0.3, 0.3, 1.4));
-    kit.addLabel("#f97316", "Mitochondria", "ATP powerhouse — cristae hold enzymes", new THREE.Vector3(2.2, 2.9, -0.6));
-    kit.addLabel("#0ea5e9", "Rough ER", "transport channel, studded with ribosomes", new THREE.Vector3(-3.8, -0.2, 0));
-    kit.addLabel("#fbbf24", "Golgi body", "modifies, packs & secretes proteins", new THREE.Vector3(2.9, -3.4, 0.2));
-    kit.addLabel("#ef4444", "Lysosome", "suicide bag — digests waste & worn organelles", new THREE.Vector3(-2.8, 2.9, 0.7));
-    kit.addLabel("#f472b6", "Ribosomes (70S/80S)", "protein synthesis", new THREE.Vector3(3.4, 0.8, 1.6));
-    kit.addLabel("#38bdf8", "Cell membrane", "fluid-mosaic, selectively permeable", new THREE.Vector3(0.2, -4.4, 0));
-    kit.addLabel("#94a3b8", "Cytoplasm", "cytosol — medium for organelle reactions", new THREE.Vector3(-4.3, -1.7, 1.2));
+    g.add(new THREE.Points(rGeo, new THREE.PointsMaterial({ color: 0xf472b6, size: 0.08 })));
+
+    // ── Peroxisomes (Microbodies with catalase core) ──
+    const peroxPos = plant ? new THREE.Vector3(-0.8, -2.1, -0.5) : new THREE.Vector3(1.8, -1.2, -0.8);
+    const perox = new THREE.Mesh(
+      new THREE.SphereGeometry(0.26, 16, 14),
+      standardMaterial(0xa855f7, {
+        emissive: activeOrganelle === "peroxisome" ? 0x9333ea : 0x7e22ce,
+        emissiveIntensity: activeOrganelle === "peroxisome" ? 0.5 : 0.2,
+      })
+    );
+    perox.position.copy(peroxPos);
+    g.add(perox);
+
+    // ── Mode-Specific Structures ──
     if (plant) {
-      kit.addLabel("#22c55e", "Cell wall", "dead, rigid cellulose — fully permeable", new THREE.Vector3(-3.4, 3.9, 0));
-      kit.addLabel("#16a34a", "Chloroplast", "plastid — grana do the light reaction", new THREE.Vector3(2.9, -0.9, 1.2));
-      kit.addLabel("#60a5fa", "Central vacuole", "cell sap — turgor pressure", new THREE.Vector3(1.5, -2.3, 0.4));
-      kit.addLabel("#fde68a", "Starch grain", "cell inclusion — stored food", new THREE.Vector3(-1.0, -3.4, 1.4));
+      // 1. Chloroplasts with Grana Thylakoid Stacks
+      [[1.8, -1.4, 1.2], [-0.6, 2.4, 1.5], [-2.5, 0.4, -1.3]].forEach(([x, y, z], ci) => {
+        const c = new THREE.Mesh(
+          new THREE.SphereGeometry(0.58, 24, 18),
+          standardMaterial(0x15803d, {
+            emissive: activeOrganelle === "chloroplast" ? 0x16a34a : 0x000000,
+            emissiveIntensity: activeOrganelle === "chloroplast" ? 0.35 : 0,
+          })
+        );
+        c.position.set(x, y, z);
+        c.scale.set(1, 0.55, 0.7);
+        c.rotation.z = 0.4;
+        g.add(c);
+
+        // Grana stacks inside first chloroplast
+        if (ci === 0) {
+          for (let j = 0; j < 4; j++) {
+            const disc = new THREE.Mesh(
+              new THREE.CylinderGeometry(0.25, 0.25, 0.042, 18),
+              standardMaterial(0x4ade80, { emissive: 0x22c55e, emissiveIntensity: 0.25 })
+            );
+            disc.position.set(0, -0.12 + j * 0.08, 0);
+            c.add(disc);
+          }
+        }
+      });
+
+      // 2. Large Central Vacuole with Tonoplast
+      const vac = new THREE.Mesh(
+        new THREE.SphereGeometry(1.4, 32, 24),
+        standardMaterial(0x60a5fa, {
+          transparent: true,
+          opacity: 0.55,
+          roughness: 0.1,
+          emissive: activeOrganelle === "vacuole" ? 0x38bdf8 : 0x000000,
+          emissiveIntensity: activeOrganelle === "vacuole" ? 0.3 : 0,
+        })
+      );
+      vac.position.set(1.5, -0.6, 0.3);
+      g.add(vac);
+
+      // 3. Starch grains (stored photosynthetic carbohydrate)
+      const starch = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 12), standardMaterial(0xfde68a));
+      starch.position.set(-1.0, -2.5, 1.3);
+      g.add(starch);
     } else {
-      kit.addLabel("#e2e8f0", "Centrosome", "2 centrioles (9+0) — division poles", new THREE.Vector3(2.9, 1.5, 0.6));
-      kit.addLabel("#cbd5e1", "Flagellum", "9+2 microtubules — locomotion", new THREE.Vector3(-4.5, -3.3, 0));
+      // 1. Lysosomes (Suicide bags with hydrolytic enzymes)
+      [[-2.7, 1.8, 0.7], [1.1, 2.5, -1.0], [2.2, -0.8, 1.1]].forEach(([x, y, z]) => {
+        const l = new THREE.Mesh(
+          new THREE.SphereGeometry(0.3, 18, 14),
+          standardMaterial(0xef4444, {
+            emissive: 0xef4444,
+            emissiveIntensity: activeOrganelle === "lysosome" ? 0.5 : 0.25,
+          })
+        );
+        l.position.set(x, y, z);
+        g.add(l);
+      });
+
+      // 2. Centrosome (Pair of Perpendicular Centrioles 9+0 with radiating aster fibers)
+      const c1 = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.72, 14), standardMaterial(0xe2e8f0));
+      c1.position.set(2.3, 0.6, 0.6);
+      const c2 = c1.clone();
+      c2.rotation.z = Math.PI / 2;
+      c2.position.x += 0.42;
+      g.add(c1, c2);
+
+      // Aster rays
+      const asterMat = new THREE.LineBasicMaterial({ color: 0x94a3b8, transparent: true, opacity: 0.45 });
+      for (let k = 0; k < 12; k++) {
+        const rayAngle = (k / 12) * Math.PI * 2;
+        const lineGeo = new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(2.5, 0.6, 0.6),
+          new THREE.Vector3(2.5 + Math.cos(rayAngle) * 0.8, 0.6 + Math.sin(rayAngle) * 0.8, 0.6),
+        ]);
+        g.add(new THREE.Line(lineGeo, asterMat));
+      }
+
+      // 3. Flagellum / Cilia (9+2 Microtubule Core)
+      const flagPts = [
+        new THREE.Vector3(-3.5, -2.0, 0),
+        new THREE.Vector3(-4.2, -2.8, 0.2),
+        new THREE.Vector3(-5.1, -3.5, -0.2),
+        new THREE.Vector3(-6.2, -4.4, 0),
+      ];
+      const flagCurve = new THREE.CatmullRomCurve3(flagPts);
+      const flag = new THREE.Mesh(new THREE.TubeGeometry(flagCurve, 40, 0.065, 8), standardMaterial(0x94a3b8));
+      g.add(flag);
+
+      // 4. Cytoskeletal Microtubule Lattice
+      const cytoMat = new THREE.LineBasicMaterial({ color: 0xeab308, transparent: true, opacity: 0.35 });
+      [
+        [new THREE.Vector3(-2, 0, 0), new THREE.Vector3(2, 0, 0)],
+        [new THREE.Vector3(0, -2.2, 0), new THREE.Vector3(0, 2.2, 0)],
+        [new THREE.Vector3(-1.5, -1.5, 0.5), new THREE.Vector3(1.5, 1.5, -0.5)],
+      ].forEach(([p1, p2]) => {
+        g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([p1, p2]), cytoMat));
+      });
+
+      // 5. Small temporary vacuoles
+      [[-1.8, -2.2, -0.8], [0.8, -2.5, 0.9]].forEach(([x, y, z]) => {
+        const v = new THREE.Mesh(
+          new THREE.SphereGeometry(0.35, 18, 14),
+          standardMaterial(0x60a5fa, { transparent: true, opacity: 0.5 })
+        );
+        v.position.set(x, y, z);
+        g.add(v);
+      });
     }
-  }, [plant]);
+
+    // ── 3D Leader Lines & Labels Data ──
+    const pins: OrganellePin[] = [
+      {
+        id: "nucleus",
+        name: "Nucleus",
+        sub: "control center — stores genomic DNA",
+        color: "#a78bfa",
+        colorHex: 0xa78bfa,
+        target: nucPos,
+        labelPos: new THREE.Vector3(nucPos.x, nucPos.y + 1.8, nucPos.z),
+      },
+      {
+        id: "nucleolus",
+        name: "Nucleolus",
+        sub: "ribosome subunit biogenesis",
+        color: "#7c3aed",
+        colorHex: 0x7c3aed,
+        target: new THREE.Vector3(nucPos.x + 0.15, nucPos.y + 0.1, nucPos.z + 0.1),
+        labelPos: new THREE.Vector3(nucPos.x + 1.6, nucPos.y + 0.4, nucPos.z + 1.3),
+      },
+      {
+        id: "mitochondria",
+        name: "Mitochondria",
+        sub: "ATP powerhouse — cristae & ETC",
+        color: "#f97316",
+        colorHex: 0xf97316,
+        target: plant ? new THREE.Vector3(2.2, 1.6, -0.6) : new THREE.Vector3(2.0, 1.8, -0.6),
+        labelPos: new THREE.Vector3(2.4, 2.9, -0.6),
+      },
+      {
+        id: "rer",
+        name: "Rough ER",
+        sub: "protein folding & transport",
+        color: "#0ea5e9",
+        colorHex: 0x0ea5e9,
+        target: new THREE.Vector3(nucPos.x - 0.8, nucPos.y - 0.6, 0),
+        labelPos: new THREE.Vector3(-3.8, -0.3, 0),
+      },
+      {
+        id: "golgi",
+        name: "Golgi Body",
+        sub: "post-office — packaging & secretion",
+        color: "#fbbf24",
+        colorHex: 0xfbbf24,
+        target: golgiPos,
+        labelPos: new THREE.Vector3(3.2, -3.2, 0.2),
+      },
+      {
+        id: "ribosome",
+        name: "Ribosomes",
+        sub: "protein synthesis factories",
+        color: "#f472b6",
+        colorHex: 0xf472b6,
+        target: new THREE.Vector3(1.4, 0.5, 1.4),
+        labelPos: new THREE.Vector3(3.3, 0.7, 1.6),
+      },
+      {
+        id: "membrane",
+        name: "Cell Membrane",
+        sub: "fluid mosaic, selectively permeable",
+        color: "#38bdf8",
+        colorHex: 0x38bdf8,
+        target: new THREE.Vector3(0, -3.9, 0),
+        labelPos: new THREE.Vector3(0.3, -4.7, 0),
+      },
+      {
+        id: "peroxisome",
+        name: "Peroxisome",
+        sub: "catalase & H₂O₂ detoxification",
+        color: "#a855f7",
+        colorHex: 0xa855f7,
+        target: peroxPos,
+        labelPos: plant ? new THREE.Vector3(-1.8, -3.0, -0.5) : new THREE.Vector3(2.8, -1.8, -0.8),
+      },
+    ];
+
+    if (plant) {
+      pins.push(
+        {
+          id: "cell-wall",
+          name: "Cell Wall",
+          sub: "rigid cellulose & middle lamella",
+          color: "#22c55e",
+          colorHex: 0x22c55e,
+          target: new THREE.Vector3(-3.6, 2.9, 0),
+          labelPos: new THREE.Vector3(-4.3, 3.9, 0),
+          plantOnly: true,
+        },
+        {
+          id: "chloroplast",
+          name: "Chloroplast",
+          sub: "thylakoids & stroma for photosynthesis",
+          color: "#16a34a",
+          colorHex: 0x16a34a,
+          target: new THREE.Vector3(1.8, -1.4, 1.2),
+          labelPos: new THREE.Vector3(3.1, -1.0, 1.2),
+          plantOnly: true,
+        },
+        {
+          id: "vacuole",
+          name: "Central Vacuole",
+          sub: "cell sap & tonoplast turgor pressure",
+          color: "#60a5fa",
+          colorHex: 0x60a5fa,
+          target: new THREE.Vector3(1.5, -0.6, 0.3),
+          labelPos: new THREE.Vector3(1.7, -2.4, 0.4),
+          plantOnly: true,
+        },
+        {
+          id: "starch",
+          name: "Starch Grain",
+          sub: "stored photosynthetic food",
+          color: "#fde68a",
+          colorHex: 0xfde68a,
+          target: new THREE.Vector3(-1.0, -2.5, 1.3),
+          labelPos: new THREE.Vector3(-1.2, -3.6, 1.3),
+          plantOnly: true,
+        },
+        {
+          id: "plasmodesmata",
+          name: "Plasmodesmata",
+          sub: "trans-wall cytoplasmic bridge",
+          color: "#facc15",
+          colorHex: 0xfacc15,
+          target: new THREE.Vector3(3.1, 3.1, -0.2),
+          labelPos: new THREE.Vector3(4.0, 3.8, -0.2),
+          plantOnly: true,
+        }
+      );
+    } else {
+      pins.push(
+        {
+          id: "lysosome",
+          name: "Lysosome",
+          sub: "suicide bag — acidic hydrolases",
+          color: "#ef4444",
+          colorHex: 0xef4444,
+          target: new THREE.Vector3(-2.7, 1.8, 0.7),
+          labelPos: new THREE.Vector3(-3.4, 2.9, 0.7),
+          animalOnly: true,
+        },
+        {
+          id: "centrosome",
+          name: "Centrosome",
+          sub: "2 centrioles (9+0) division poles",
+          color: "#e2e8f0",
+          colorHex: 0xe2e8f0,
+          target: new THREE.Vector3(2.5, 0.6, 0.6),
+          labelPos: new THREE.Vector3(3.3, 1.6, 0.6),
+          animalOnly: true,
+        },
+        {
+          id: "flagellum",
+          name: "Flagellum",
+          sub: "9+2 microtubule motility apparatus",
+          color: "#cbd5e1",
+          colorHex: 0xcbd5e1,
+          target: new THREE.Vector3(-4.0, -2.5, 0),
+          labelPos: new THREE.Vector3(-5.2, -3.6, 0),
+          animalOnly: true,
+        },
+        {
+          id: "cytoskeleton",
+          name: "Cytoskeleton",
+          sub: "microtubule & microfilament lattice",
+          color: "#eab308",
+          colorHex: 0xeab308,
+          target: new THREE.Vector3(0, 1.8, 0),
+          labelPos: new THREE.Vector3(0, 2.7, 0),
+          animalOnly: true,
+        }
+      );
+    }
+
+    // Add 3D leader lines and CSS2D labels
+    pins.forEach((pin) => {
+      const isActive = activeOrganelle === pin.id;
+
+      if (showLines) {
+        const lineGeo = new THREE.BufferGeometry().setFromPoints([pin.target, pin.labelPos]);
+        const lineMat = new THREE.LineBasicMaterial({
+          color: pin.colorHex,
+          transparent: true,
+          opacity: isActive ? 1.0 : 0.65,
+          linewidth: isActive ? 3 : 1,
+        });
+        const leaderLine = new THREE.Line(lineGeo, lineMat);
+
+        // Glowing anchor dot on organelle surface
+        const dotGeo = new THREE.SphereGeometry(isActive ? 0.14 : 0.09, 14, 14);
+        const dotMat = new THREE.MeshBasicMaterial({ color: pin.colorHex });
+        const dot = new THREE.Mesh(dotGeo, dotMat);
+        dot.position.copy(pin.target);
+
+        // Anchor beacon ring
+        const ringGeo = new THREE.RingGeometry(0.12, 0.16, 16);
+        const ringMat = new THREE.MeshBasicMaterial({ color: pin.colorHex, side: THREE.DoubleSide });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.position.copy(pin.target);
+        ring.lookAt(pin.labelPos);
+
+        g.add(leaderLine, dot, ring);
+      }
+
+      // Add clickable label chip
+      kit.addLabel(pin.color, pin.name, pin.sub, pin.labelPos, g, () => {
+        setActiveOrganelle((curr) => (curr === pin.id ? null : pin.id));
+      });
+    });
+
+    titleText(
+      kit.ts,
+      plant
+        ? `Plant Cell Ultrastructure ${cutaway ? "· Sagittal Cutaway" : "· Full Shell"}`
+        : `Animal Cell Ultrastructure ${cutaway ? "· Sagittal Cutaway" : "· Full Shell"}`,
+      new THREE.Vector3(0, 5.5, 0)
+    );
+  }, [plant, showLines, cutaway, activeOrganelle]);
+
+  // Active organelle data lookup
+  const activePinData = useMemo(() => {
+    if (!activeOrganelle) return null;
+    return CELL_ORGANELLES.find((o) => o.id === activeOrganelle || o.id.includes(activeOrganelle)) || null;
+  }, [activeOrganelle]);
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3">
-        <Button size="sm" variant={plant ? "default" : "outline"} onClick={() => setPlant(true)}>Plant cell</Button>
-        <Button size="sm" variant={!plant ? "default" : "outline"} onClick={() => setPlant(false)}>Animal cell</Button>
+    <div className="space-y-6">
+      {/* Interactive Controls Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-2xl border border-border/70 bg-card shadow-sm">
+        {/* Cell Type Toggle */}
+        <div className="flex items-center gap-1.5">
+          <Button
+            size="sm"
+            variant={plant ? "default" : "outline"}
+            onClick={() => {
+              setPlant(true);
+              setActiveOrganelle(null);
+            }}
+            className="gap-1.5 rounded-xl font-bold text-xs"
+          >
+            <Leaf className="h-3.5 w-3.5" />
+            <span>Plant Cell</span>
+          </Button>
+          <Button
+            size="sm"
+            variant={!plant ? "default" : "outline"}
+            onClick={() => {
+              setPlant(false);
+              setActiveOrganelle(null);
+            }}
+            className="gap-1.5 rounded-xl font-bold text-xs"
+          >
+            <PawPrint className="h-3.5 w-3.5" />
+            <span>Animal Cell</span>
+          </Button>
+        </div>
+
+        {/* View Mode Controls: Cutaway vs Full Shell & 3D Lines */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => setCutaway(!cutaway)}
+            className={`gap-1.5 rounded-xl font-semibold text-xs border ${
+              cutaway ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" : "text-muted-foreground"
+            }`}
+            title="Toggle 3D sliced section cutaway to reveal internal organelles"
+          >
+            <Scissors className="h-3.5 w-3.5" />
+            <span>{cutaway ? "Cutaway View (Interior ON)" : "Closed Outer Shell"}</span>
+          </Button>
+
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => setShowLines(!showLines)}
+            className={`gap-1.5 rounded-xl font-semibold text-xs border ${
+              showLines ? "border-primary/40 bg-primary/10 text-primary" : "text-muted-foreground"
+            }`}
+            title="Toggle 3D pointer leader lines connecting labels to organelles"
+          >
+            {showLines ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
+            <span>3D Leader Lines ({showLines ? "ON" : "OFF"})</span>
+          </Button>
+        </div>
       </div>
-      <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
+
+      {/* Quick Organelle Selector Pill Ribbon */}
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+        <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider shrink-0 mr-1">
+          Inspect:
+        </span>
+        {(plant
+          ? [
+              { id: "nucleus", label: "Nucleus" },
+              { id: "mitochondria", label: "Mitochondria" },
+              { id: "chloroplast", label: "Chloroplast" },
+              { id: "vacuole", label: "Central Vacuole" },
+              { id: "cell-wall", label: "Cell Wall" },
+              { id: "golgi", label: "Dictyosome" },
+              { id: "rer", label: "Rough ER" },
+              { id: "plasmodesmata", label: "Plasmodesmata" },
+            ]
+          : [
+              { id: "nucleus", label: "Nucleus" },
+              { id: "mitochondria", label: "Mitochondria" },
+              { id: "centrosome", label: "Centrosome" },
+              { id: "lysosome", label: "Lysosomes" },
+              { id: "golgi", label: "Golgi Complex" },
+              { id: "rer", label: "Rough ER" },
+              { id: "flagellum", label: "Flagellum" },
+              { id: "cytoskeleton", label: "Cytoskeleton" },
+            ]
+        ).map((item) => {
+          const isSelected = activeOrganelle === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => setActiveOrganelle(isSelected ? null : item.id)}
+              className={`px-2.5 py-1 rounded-lg font-semibold shrink-0 transition-all border text-[11px] ${
+                isSelected
+                  ? "bg-primary text-primary-foreground border-primary shadow-xs"
+                  : "bg-muted/50 text-muted-foreground border-border/70 hover:border-primary/40 hover:text-foreground"
+              }`}
+            >
+              {item.label}
+            </button>
+          );
+        })}
+        {activeOrganelle && (
+          <button
+            onClick={() => setActiveOrganelle(null)}
+            className="text-[10px] text-muted-foreground hover:text-foreground px-2 py-0.5 rounded bg-muted shrink-0"
+          >
+            Clear selection
+          </button>
+        )}
+      </div>
+
+      {/* 3D WebGL Canvas with Floating Organelle Inspector HUD */}
+      <div className="relative rounded-2xl overflow-hidden border border-border/70">
+        <CanvasMount mountRef={mountRef} webGL={webGL} targetRef={vizTargetRef} />
+
+        {/* Floating Organelle Inspector HUD Mini-Card */}
+        {activePinData && (
+          <div className="absolute bottom-4 right-4 max-w-xs sm:max-w-sm rounded-2xl border border-primary/40 bg-slate-950/90 p-4 text-foreground shadow-2xl backdrop-blur-md space-y-2 z-20 animate-in fade-in zoom-in-95 duration-200">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
+                  Selected Organelle
+                </span>
+                <h4 className="text-base font-black text-white">{activePinData.name}</h4>
+                {activePinData.nicknames[0] && (
+                  <p className="text-[10.5px] font-semibold text-amber-400">
+                    ★ {activePinData.nicknames[0]}
+                  </p>
+                )}
+              </div>
+              <button
+                onClick={() => setActiveOrganelle(null)}
+                className="text-muted-foreground hover:text-white text-xs p-1"
+              >
+                ✕
+              </button>
+            </div>
+            <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">
+              {activePinData.functions.primary[0]}
+            </p>
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs">
+              <span className="text-[10px] text-slate-400">{activePinData.membraneType}</span>
+              {onExploreOrganelle && (
+                <button
+                  onClick={() => onExploreOrganelle(activePinData.id)}
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-primary hover:underline"
+                >
+                  <span>3D Deep Dive Dossier</span>
+                  <ArrowRight className="h-3 w-3" />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Dedicated Section Callout Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl border border-primary/30 bg-primary/[0.04]">
+        <div className="flex items-start gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <Sparkles className="h-5 w-5" />
+          </div>
+          <div>
+            <h4 className="text-sm font-bold text-foreground">
+              Dedicated 3D Cell Organelles Section Available
+            </h4>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              Inspect isolated 3D models of Mitochondria, Golgi Bodies, Nucleus, Chloroplasts, and more — with full historical chronicles and biochemical pathways.
+            </p>
+          </div>
+        </div>
+        {onExploreOrganelle && (
+          <Button
+            size="sm"
+            onClick={() => onExploreOrganelle()}
+            className="gap-1.5 rounded-xl font-bold text-xs shrink-0 self-start sm:self-auto"
+          >
+            <span>Open Organelle 3D Section</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Button>
+        )}
+      </div>
+
+      {/* Theory & Scientific Foundations */}
       <TheoryPanel
-        look={plant ? "A rigid green cell wall outside the membrane, green chloroplasts with grana stacks, one large blue central vacuole and a yellow starch grain — the signatures of a plant cell." : "No cell wall or chloroplasts; note the two pale centrioles (division poles) and the thin flagellum for locomotion."}
-        vocabulary="Chromatin = uncoiled DNA + histones; cristae = inner-membrane folds of mitochondria; grana = thylakoid stacks inside chloroplasts."
-        principle="Eukaryotic cells have membrane-bound organelles. The nucleus stores DNA (chromatin inside, nucleolus makes ribosomes); mitochondria release ATP on their cristae; chloroplasts capture light on their grana; the ER and Golgi make, transport and package proteins; lysosomes digest waste."
-        why="Organelle structure explains function — muscle cells are packed with mitochondria (many cristae), leaf cells with chloroplasts (many grana)."
+        look={
+          plant
+            ? "Rigid green cellulose cell wall outside the membrane, green chloroplasts with visible thylakoid grana discs, single expansive central vacuole pushing the nucleus to the side (eccentric), and yellow starch food grains."
+            : "No cell wall or chloroplasts; flexible rounded membrane, centrally located nucleus, paired perpendicular centrioles (9+0 cartwheel structure), prominent red hydrolytic lysosomes ('suicide bags'), and motile flagellum."
+        }
+        vocabulary="Chromatin = genomic DNA + histone octamers; cristae = folded inner membrane of mitochondria maximizing ATP synthesis; thylakoids & grana = light reaction photosynthetic discs; tonoplast = selectively permeable membrane of the central vacuole; dictyosome = plant Golgi apparatus."
+        principle="Eukaryotic cells are compartmentalized into membrane-bound organelles. Double-membrane organelles (Nucleus, Mitochondria, Chloroplasts) possess autonomous genetic features; single-membrane organelles (ER, Golgi, Lysosomes, Vacuole) form the coordinated Endomembrane System; non-membranous complexes (Ribosomes, Centrioles, Cytoskeleton) drive catalytic and structural dynamics."
+        why="Organelle distribution defines physiological capability: photosynthetic autotrophy in green plant cells vs. mobile phagocytic heterotrophy in animal cells."
       />
+
+      {/* Dedicated Cell Organelle Encyclopedia & Comparison Matrix */}
+      <CellOrganellesEncyclopedia />
     </div>
   );
 };
@@ -689,16 +1370,45 @@ const EcosystemTab: React.FC = () => {
 /* ------------------------------------------------------------------ */
 
 export const Biology3DSuite: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>("cell");
+  const [selectedOrganelleId, setSelectedOrganelleId] = useState<string>("mitochondria");
+
+  const handleExploreOrganelle = (organelleId?: string) => {
+    if (organelleId) {
+      // Normalize aliases to canonical IDs
+      const mappedId =
+        organelleId === "rer" || organelleId === "ser"
+          ? "er"
+          : organelleId === "membrane"
+          ? "cell-membrane"
+          : organelleId === "nucleolus"
+          ? "nucleus"
+          : organelleId;
+      setSelectedOrganelleId(mappedId);
+    }
+    setActiveTab("organelles");
+  };
+
   return (
-    <Tabs defaultValue="cell" className="w-full">
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
       <TabsList className="flex-wrap">
-        <TabsTrigger value="cell">Eukaryotic Cell</TabsTrigger>
+        <TabsTrigger value="cell" className="font-semibold">
+          Eukaryotic Cell (Plant &amp; Animal)
+        </TabsTrigger>
+        <TabsTrigger value="organelles" className="gap-1.5 font-bold text-emerald-600 dark:text-emerald-400">
+          🧬 Cell Organelles 3D
+        </TabsTrigger>
         <TabsTrigger value="division">Cell Division</TabsTrigger>
         <TabsTrigger value="dna">DNA Double Helix</TabsTrigger>
         <TabsTrigger value="phage">Bacteriophage</TabsTrigger>
         <TabsTrigger value="ecosystem">Ecosystem</TabsTrigger>
       </TabsList>
-      <TabsContent value="cell" className="mt-4"><CellTab /></TabsContent>
+      <TabsContent value="cell" className="mt-4">
+        <CellTab onExploreOrganelle={handleExploreOrganelle} />
+      </TabsContent>
+      <TabsContent value="organelles" className="mt-4">
+        <CellOrganellesExplorer3D initialOrganelleId={selectedOrganelleId} />
+      </TabsContent>
       <TabsContent value="division" className="mt-4"><DivisionTab /></TabsContent>
       <TabsContent value="dna" className="mt-4"><DnaTab /></TabsContent>
       <TabsContent value="phage" className="mt-4"><PhageTab /></TabsContent>

@@ -6,7 +6,7 @@ import { DerivationDetailView } from "@/components/derivations/derivation-detail
 import { DerivationVisual } from "@/components/derivations/derivation-visual";
 import { ChevronRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
-import { ComingSoon } from "@/components/content/coming-soon";
+import { DerivationScaffold } from "@/components/derivations/derivation-scaffold";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
 export const dynamic = "force-dynamic";
@@ -45,11 +45,13 @@ export default async function DerivationDetailPage({
         );
       }
       return (
-        <ComingSoon
-          title={item.topicTitle}
+        <DerivationScaffold
+          topicTitle={item.topicTitle}
           unitTitle={item.unitTitle}
+          unitId={item.unitId}
           subjectSlug={subjectSlug}
           classSlug={classSlug}
+          topicSlug={item.topicSlug}
           kind="Derivation"
           backHref={subjectHref}
           backLabel={`${subjectSlug} derivations`}

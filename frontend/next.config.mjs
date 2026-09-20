@@ -4,6 +4,39 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
+  // The KaTeX note pipeline (lib/content/pipeline.ts → rehype-katex) must be
+  // required natively in the RSC layer instead of bundled: with a workspace
+  // root node_modules present, the bundler rewrites rehype-katex's bare import
+  // of hast-util-from-html-isomorphic to a deep `lib/index.js` path that the
+  // package's exports map forbids → "Module not found" on every server page
+  // rendering math (graphs, legend, theorems). Client/SSR layers are unaffected.
+  serverExternalPackages: ["rehype-katex", "hast-util-from-html-isomorphic"],
+
+  // hast-util-from-html-isomorphic's exports map only exposes the package root,
+  // but Next's bundler can rewrite rehype-katex's bare import to the deep
+  // `lib/index.js` path, which the exports map forbids → "Module not found".
+  // Alias the bare specifier (and the deep path) to the real entry so the
+  // KaTeX note pipeline resolves identically in every route and layer.
+  webpack: (config) => {
+    const entry = path.resolve(
+      __dirname,
+      "node_modules/hast-util-from-html-isomorphic/index.js",
+    );
+    config.resolve.alias["hast-util-from-html-isomorphic"] = entry;
+    config.resolve.alias[
+      "hast-util-from-html-isomorphic/lib/index.js"
+    ] = entry;
+    return config;
+  },
+  turbopack: {
+    root: path.resolve(__dirname, ".."),
+    resolveAlias: {
+      "hast-util-from-html-isomorphic": path.resolve(
+        __dirname,
+        "node_modules/hast-util-from-html-isomorphic/index.js",
+      ),
+    },
+  },
   typescript: {
     // Pre-existing lab component TS errors (missing imports, null safety)
     // block deployment. Skip type-check at build time so auth fix ships;
@@ -106,9 +139,6 @@ const nextConfig = {
         permanent: false,
       },
     ];
-  },
-  turbopack: {
-    root: path.resolve(__dirname, ".."),
   },
 };
 

@@ -190,15 +190,42 @@ export function getSyllabusTheoremItems(
   return items;
 }
 
-/** Look up a single syllabus theorem item by its route slugs. */
+/**
+ * Look up a single syllabus theorem item by its route slugs.
+ * Falls back to ANY official syllabus topic (not just keyword candidates)
+ * so every routed syllabus topic renders the rich scaffold instead of a
+ * "not found" state.
+ */
 export function findSyllabusTheoremItem(
   classSlug: string,
   subjectSlug: string,
   topicSlug: string,
 ): SyllabusTheoremItem | undefined {
-  return getSyllabusTheoremItems(classSlug, subjectSlug).find(
+  const listed = getSyllabusTheoremItems(classSlug, subjectSlug).find(
     (i) => i.topicSlug === topicSlug,
   );
+  if (listed) return listed;
+
+  const subject = getSubjectSyllabus(classSlug, subjectSlug);
+  if (!subject) return undefined;
+  for (const unit of subject.units) {
+    for (const topic of unit.topics) {
+      const slug = slugifySyllabusTopic(topic);
+      if (slug === topicSlug) {
+        return {
+          key: `${classSlug}/${subjectSlug}/${slug}`,
+          classSlug,
+          subjectSlug,
+          unitId: unit.id,
+          unitTitle: unit.title,
+          topicSlug: slug,
+          topicTitle: topic,
+          hasCuratedContent: false,
+        };
+      }
+    }
+  }
+  return undefined;
 }
 
 /** All class tracks × PCB subjects that must always have routed pages. */
