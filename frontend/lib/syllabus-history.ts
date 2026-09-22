@@ -701,69 +701,50 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2082 BS",
       changes: {
         added: [
-          "Digital communication skills",
-          "Critical thinking through literature",
-          "Contemporary literature inclusion",
-          "Presentation and public speaking"
+          "No textbook unit changes — CDC English XI/XII lists stable since 2077/2078"
         ],
-        removed: [
-          "Outdated grammar exercises",
-          "Redundant literary analysis patterns"
-        ],
+        removed: [],
         modified: [
-          "Updated reading comprehension passages",
-          "Revised writing skills with modern formats",
-          "Added contemporary literature selections"
+          "Updated model question pattern (NEB specimen 2081/2082)",
+          "Grammar section confirmed at 10 marks; vocabulary 5 marks in Grade 12 exam spec"
         ],
-        notes: "Major update focusing on communicative competence"
+        notes: "Assessment-pattern revision; curriculum content unchanged"
       }
     },
     {
       year: 2081,
       bsYear: "2081 BS",
       changes: {
-        added: [
-          "Basic business English introduction"
-        ],
+        added: [],
         removed: [],
         modified: [
-          "Updated literature selections",
-          "Added new writing prompts"
+          "NEB specimen paper revision aligned with NCF 2076 outcomes"
         ],
-        notes: "Minor curriculum adjustment"
+        notes: "Curriculum stable — third cycle of the 2076 NCF English books"
       }
     },
     {
       year: 2080,
       bsYear: "2080 BS",
       changes: {
-        added: [
-          "Digital literacy in English",
-          "Online communication skills"
-        ],
-        removed: [
-          "Outdated correspondence formats"
-        ],
+        added: [],
+        removed: [],
         modified: [
-          "Revised grammar sections",
-          "Updated literature analysis approaches"
+          "Post-pandemic exam-time adjustment (COVID recovery years 2079-2080)"
         ],
-        notes: "Post-pandemic curriculum review"
+        notes: "No curriculum change; exam scheduling adaptations only"
       }
     },
     {
       year: 2079,
       bsYear: "2079 BS",
       changes: {
-        added: [
-          "Team communication skills"
-        ],
+        added: [],
         removed: [],
         modified: [
-          "Added more speaking activities",
-          "Updated listening comprehension materials"
+          "Grade 12 (Eng. 004) NCF-2076 textbook first examined — full new-course cohort"
         ],
-        notes: "Curriculum enhancement for practical skills"
+        notes: "First regular Grade 12 board exam on the new English XII book"
       }
     },
     {
@@ -771,17 +752,19 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2078 BS",
       changes: {
         added: [
-          "Introduction to academic writing",
-          "Basic research skills in English"
+          "English XII (Eng. 004) textbook introduced — Section I: 20 Language Development units (Critical Thinking → Power and Politics)",
+          "Section II literature: 7 short stories (Neighbours, A Respectable Woman, A Devoted Son, The Treasure in the Forest, My Old Home, The Half-closed Eyes of the Buddha and the Slowly Sinking Sun, A Very Old Man with Enormous Wings)",
+          "5 poems (A Day, Every Morning I Wake, I Was My Own Route, The Awakening Age, Soft Storm)",
+          "5 essays (On Libraries, Marriage as a Social Institution, Knowledge and Wisdom, Humility, Human Rights and the Age of Inequality)",
+          "3 one-act plays (A Matter of Husbands, Facing Death, The Bull)"
         ],
         removed: [
-          "Some redundant vocabulary exercises"
+          "Old pre-NCF Grade 12 literature list (Grand Mother, About Love, Purgatory, Hurried Trip to Avoid a Bad Star, The Boarding House, Women's Business, A Child is Born)"
         ],
         modified: [
-          "Restructured literature chapter",
-          "Updated all assessment criteria"
+          "Grade 12 course fully restructured into Language Development + Literature sections"
         ],
-        notes: "First year of new curriculum implementation"
+        notes: "CDC English Grade 12 textbook published 2078 BS (2021 AD) — written by Mohan Sing Saud et al., CDC Sanothimi"
       }
     },
     {
@@ -789,16 +772,19 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2077 BS",
       changes: {
         added: [
-          "Guided composition practice sets"
+          "English XI (Eng. 003) textbook introduced — Section I: 17 Language Development units (Education and Humanity → Globalization and Diaspora)",
+          "Section II literature: 7 short stories (The Selfish Giant, The Oval Portrait, God Sees the Truth but Waits, The Wish, Civil Peace, Two Little Soldiers, An Astrologer's Day)",
+          "5 poems (Corona Says, A Red Red Rose, All the World's a Stage, Who are you little i?, The Gift in Wartime)",
+          "5 essays (Sharing Tradition, How to Live Before You Die, What I Require From Life, What is Poverty?, Scientific Research is a Token of Humankind's Survival)",
+          "3 one-act plays (Trifles, A Sunny Morning, Refund)"
         ],
         removed: [
-          "Outdated formal letter templates"
+          "Old HSEB-era grammar-only units and unspecified literature pool"
         ],
         modified: [
-          "Revised grammar syllabus sequence",
-          "Updated comprehension passage themes"
+          "Grade 11 course restructured: two sections — Language Development (intensive reading) and Literature (genre-based)"
         ],
-        notes: "Final year of the old curriculum"
+        notes: "CDC English Grade 11 textbook published 2077 BS (2020 AD) under NCF 2076 and Secondary Level Curriculum 2076"
       }
     },
     {
@@ -806,14 +792,13 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2076 BS",
       changes: {
         added: [
-          "Media literacy reading tasks"
+          "National Curriculum Framework (NCF) 2076 and Secondary Level Curriculum 2076 approved — basis for the new English 11-12 courses"
         ],
         removed: [],
         modified: [
-          "Standardized essay assessment rubrics",
-          "Updated poetry annotation guides"
+          "Curriculum framework replaced the old HSEB syllabus structure"
         ],
-        notes: "Minor revision cycle"
+        notes: "Framework year — textbooks followed in 2077 (Grade 11) and 2078 (Grade 12)"
       }
     },
     {
@@ -869,69 +854,49 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2082 BS",
       changes: {
         added: [
-          "आधुनिक नेपाली साहित्य",
-          "डिजिटल युग र नेपाली भाषा",
-          "संचार कौशल विकास",
-          "सामाजिक जिम्मेवारी र साहित्य"
+          "पाठ्यपुस्तक पाठ सूची अपरिवर्तित — २०७७/२०७८ देखि स्थिर",
         ],
-        removed: [
-          "पुराना व्याकरण नियमहरू",
-          "अनावश्यक अभ्यासहरू"
-        ],
+        removed: [],
         modified: [
-          "साहित्यिक पाठहरू अपडेट",
-          "लेखन कौशल नयाँ रूपमा",
-          "व्याकरण अध्याय संरचना सुधार"
+          "नमुना प्रश्नपत्र अद्यावधिक (NEB specimen 2081/2082)",
         ],
-        notes: "नेपाली भाषा र साहित्यमा ठूलो परिवर्तन"
+        notes: "मूल्याङ्कन-ढाँचा संशोधन; पाठ्यक्रम सामग्री अपरिवर्तित"
       }
     },
     {
       year: 2081,
       bsYear: "2081 BS",
       changes: {
-        added: [
-          "सामाजिक संचार र नेपाली"
-        ],
+        added: [],
         removed: [],
         modified: [
-          "कविता र गीतको चयन अपडेट",
-          "नयाँ लेखन अभ्यासहरू"
+          "NCF 2076 आधारित नमुना प्रश्नपत्र संशोधन",
         ],
-        notes: "सानो परिवर्तन"
+        notes: "पाठ्यक्रम स्थिर — नयाँ नेपाली पुस्तकको तेस्रो चक्र"
       }
     },
     {
       year: 2080,
       bsYear: "2080 BS",
       changes: {
-        added: [
-          "डिजिटल नेपाली लेखन",
-          "सामाजिक साहित्यिक चर्चा"
-        ],
-        removed: [
-          "पुराना पत्र लेखन ढाँचाहरू"
-        ],
+        added: [],
+        removed: [],
         modified: [
-          "व्यायरन अध्याय अपडेट",
-          "साहित्यिक विश्लेषण नयाँ दृष्टिकोण"
+          "महामारीपछिको परीक्षा-समय व्यवस्थापन (२०७९–२०८०)",
         ],
-        notes: "पछि-महामारी पाठ्यक्रम समीक्षा"
+        notes: "पाठ्यक्रम परिवर्तन छैन; परीक्षा तालिका मात्र"
       }
     },
     {
       year: 2079,
       bsYear: "2079 BS",
       changes: {
-        added: [
-          "गroupediscussion कौशल"
-        ],
+        added: [],
         removed: [],
         modified: [
-          "नयाँ पाठहरूको थप",
-          "व्याकरण अभ्यास अपडेट"
+          "कक्षा १२ (Nep. 002) नयाँ पुस्तक पहिलो पूर्ण बोर्ड परीक्षा",
         ],
-        notes: "व्यावहारिक कौशल विकास"
+        notes: "नयाँ नेपाली XII पुस्तकमा पहिलो नियमित Grade 12 परीक्षा"
       }
     },
     {
@@ -939,17 +904,15 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2078 BS",
       changes: {
         added: [
-          "आधुनिक नेपाली भाषा विज्ञान",
-          "भाषा परिप्रेक्ष्य"
+          "नेपाली XII (Nep. 002) पाठ्यपुस्तक परिचय — १२ पाठ: आमाको सपना (कविता), विरहिणी दमयन्ती (कथा), घनघस्याको उकालो काट्दा (निबन्ध), व्यावसायिक पत्र, एक चिहान (उपन्यास), स्टिफन विलियम हकिङ (जीवनी), हामीलाई बोलाउँछन् हिमचुली (कविता), मातृत्व, गोर्खे, नेपाली पहिचान, सहकारी, जीवन मार्ग",
         ],
         removed: [
-          "केही पुराना व्याकरण नियमहरू"
+          "पुरानो HSEB-युगको नेपाली XII पाठ सूची",
         ],
         modified: [
-          "साहित्य अध्याय पुनर्निर्माण",
-          "मूल्याङ्कन मापदण्ड अपडेट"
+          "कक्षा १२ पाठ्यक्रम पूर्ण पुनर्संरचना — भाषा/व्याकरण, निर्धारित पाठ, लेखन कौशल र संस्कृति खण्ड",
         ],
-        notes: "नयाँ पाठ्यक्रम कार्यान्वयनको पहिलो वर्ष"
+        notes: "CDC नेपाली कक्षा १२ पाठ्यपुस्तक २०७८ वि.सं. (२०२१) — लेखन: डा. धनप्रसाद सुबेदी, डा. प्रेम चौलागाईं"
       }
     },
     {
@@ -957,16 +920,15 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2077 BS",
       changes: {
         added: [
-          "निबन्ध लेखन अभ्यास सामग्री"
+          "नेपाली XI (Nep. 001) पाठ्यपुस्तक परिचय — १२ पाठ: वीर पुर्खा (कविता), गाउँको माया (सामाजिक कथा), संस्कृतिको नयाँ यात्रा (आत्मपरक निबन्ध), योगमाया (राष्ट्रिय जीवनी), साथीलाई चिठी, त्यो फेरि फर्कला? (मनोवैज्ञानिक कथा), पर्यापर्यटनका सम्भावना र आयाम, लौ आयो ताजा खबर (लघु नाटक), सफलताको कथा (रिपोर्ताज), कृषिशालामा एक दिन (संवाद), रारा भ्रमण (दैनिकी), जलस्रोत र ऊर्जा (वक्तृता)",
         ],
         removed: [
-          "पुराना औपचारिक पत्र ढाँचा"
+          "पुरानो पाठ्यक्रमको अस्पष्ट साहित्य-सूची",
         ],
         modified: [
-          "व्याकरण पाठ्यक्रम क्रम पुनर्गठन",
-          "बोध प्रश्न विषयवस्तु अपडेट"
+          "कक्षा ११ पाठ्यक्रम पुनर्संरचना — भाषा र व्याकरण, निर्धारित पाठ, लेखन र रचना, साहित्यिक विधा खण्ड",
         ],
-        notes: "पुरानो पाठ्यक्रमको अन्तिम वर्ष"
+        notes: "CDC नेपाली कक्षा ११ पाठ्यपुस्तक २०७७ वि.सं. (२०२०), १९१ पृष्ठ — NCF 2076 र माध्यमिक शिक्षा पाठ्यक्रम २०७६ अनुसार"
       }
     },
     {
@@ -974,60 +936,13 @@ export const SYLLABUS_HISTORY: SubjectSyllabusHistory = {
       bsYear: "2076 BS",
       changes: {
         added: [
-          "सञ्चार माध्यम पढाइ कार्य"
+          "राष्ट्रिय पाठ्यक्रम ढाँचा (NCF) २०७६ र माध्यमिक शिक्षा पाठ्यक्रम २०७६ स्वीकृत — नयाँ नेपाली ११–१२ को आधार",
         ],
         removed: [],
         modified: [
-          "निबन्ध मूल्याङ्कन मापदण्ड",
-          "कविता टिप्पणी गाइड"
+          "पाठ्यक्रम ढाँचाले पुरानो HSEB पाठ्यक्रम संरचना प्रतिस्थापन गर्यो",
         ],
-        notes: "सानो संशोधन चक्र"
-      }
-    },
-    {
-      year: 2075,
-      bsYear: "2075 BS",
-      changes: {
-        added: [
-          "थप कथा रचना चयन"
-        ],
-        removed: [
-          "पुरालेखीय शब्दावली सूची"
-        ],
-        modified: [
-          "नाटक खण्ड क्रियाकलाप"
-        ],
-        notes: "साहित्यमा सामग्री ताजा गरिएको"
-      }
-    },
-    {
-      year: 2074,
-      bsYear: "2074 BS",
-      changes: {
-        added: [
-          "सांस्कृतिक अन्तर-सञ्चार उदाहरण"
-        ],
-        removed: [],
-        modified: [
-          "लेखन कार्य शब्द सीमा अपडेट",
-          "सुनाइ अभ्यास ढाँचा"
-        ],
-        notes: "क्रमिक अद्यावधिक"
-      }
-    },
-    {
-      year: 2073,
-      bsYear: "2073 BS",
-      changes: {
-        added: [],
-        removed: [
-          "दोहोरिएका व्याकरण अभ्यास"
-        ],
-        modified: [
-          "पुरानो पाठ्यक्रम युगको आधारभूत पाठ्यक्रम",
-          "रचनात्मक लेखनको एकीकृत मूल्याङ्कन"
-        ],
-        notes: "यो ऐतिहासिक रेकर्डको सबैभन्दा पुरानो वर्ष"
+        notes: "ढाँचा-वर्ष — पाठ्यपुस्तकहरू २०७७ (कक्षा ११) र २०७८ (कक्षा १२) मा आए"
       }
     }
   ]

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
 
 export interface DiagramAnnotation {
@@ -33,9 +33,24 @@ export function SchematicDiagram({
   className = "",
 }: SchematicDiagramProps) {
   const [expandedMap, setExpandedMap] = useState<Record<string, boolean>>({});
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const toggleExpanded = useCallback((annId: string) => {
     setExpandedMap((prev) => ({ ...prev, [annId]: !prev[annId] }));
+    setSelectedId((prev) => (prev === annId ? null : annId));
+  }, []);
+
+  const revealAll = useCallback(() => {
+    setExpandedMap((prev) => {
+      const next = { ...prev };
+      for (const a of conceptAnnotationsRef.current) next[a.id] = true;
+      return next;
+    });
+  }, []);
+
+  const collapseAll = useCallback(() => {
+    setExpandedMap({});
+    setSelectedId(null);
   }, []);
   const normalizedSubject = useMemo(() => {
     const s = subjectSlug.toLowerCase();
@@ -45,6 +60,10 @@ export function SchematicDiagram({
     if (s.includes("math")) return "mathematics";
     return "general";
   }, [subjectSlug]);
+
+  // The current annotation list, kept in a ref so Reveal-all can act on it
+  // without depending on render-scope memo ordering.
+  const conceptAnnotationsRef = useRef<DiagramAnnotation[]>([]);
 
   const diagramData = useMemo(() => {
     const t = topicSlug.toLowerCase();
@@ -643,12 +662,50 @@ export function SchematicDiagram({
     unitId,
   ]);
 
+  const selected = diagramData.annotations.find((a) => a.id === selectedId) ?? null;
+  conceptAnnotationsRef.current = diagramData.annotations;
+  const revealedCount = diagramData.annotations.filter((a) => expandedMap[a.id]).length;
+
   return (
-    <svg
-      viewBox={diagramData.viewBox}
-      className={`w-full h-full ${className}`}
-      style={{ overflow: "visible" }}
-    >
+    <div className={`space-y-3 ${className}`}>
+      {/* ── Toolbar: label reveal controls + status ── */}
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            {diagramData.annotations.length} labelled parts
+          </span>
+          <span aria-hidden>·</span>
+          <span>
+            {diagramData.specific
+              ? "Topic-specific schematic — matched to this concept"
+              : "General schematic — this topic has no dedicated drawing yet"}
+          </span>
+          <span aria-hidden>·</span>
+          <span>{revealedCount} revealed</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={revealAll}
+            className="rounded-lg border border-primary/30 bg-primary/10 px-2.5 py-1 text-[11px] font-bold text-primary transition-colors hover:bg-primary/20"
+          >
+            Reveal all labels
+          </button>
+          <button
+            type="button"
+            onClick={collapseAll}
+            className="rounded-lg border border-border px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            Collapse all
+          </button>
+        </div>
+      </div>
+
+      <svg
+        viewBox={diagramData.viewBox}
+        className="w-full h-auto"
+        style={{ overflow: "visible" }}
+      >
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
           <path d="M 0 0 L 8 4 L 0 8 Z" fill="#64748b" />
@@ -668,6 +725,49 @@ export function SchematicDiagram({
       </defs>
 
       {diagramData.renderSvg()}
+
+      {/* ── Label chips: always-visible, clickable ── */}
+      {diagramData.annotations.map((ann) => {
+        const cColor = ann.color || "#38bdf8";
+        const expanded = expandedMap[ann.id] ?? false;
+        const isSelected = selectedId === ann.id;
+        const chipLabel = ann.label.length > 36 ? `${ann.label.slice(0, 34)}…` : ann.label;
+        const chipW = chipLabel.length * 5.9 + 20;
+
+        return (
+          <g
+            key={`chip-${ann.id}`}
+            transform={`translate(${ann.labelX}, ${ann.labelY})`}
+            style={{ cursor: "pointer" }}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleExpanded(ann.id);
+            }}
+          >
+            <rect
+              x={-8}
+              y={-15}
+              width={chipW}
+              height={21}
+              rx={10}
+              className="fill-card"
+              stroke={cColor}
+              strokeWidth={isSelected ? 2.6 : expanded ? 2 : 1.4}
+            />
+            <circle cx={1} cy={-4.5} r={3.4} fill={cColor} />
+            <text
+              x={9}
+              y={-0.8}
+              fontSize={10.5}
+              fontWeight={700}
+              fill={cColor}
+              style={{ pointerEvents: "none", userSelect: "none" }}
+            >
+              {chipLabel}
+            </text>
+          </g>
+        );
+      })}
 
       {diagramData.annotations.map((ann) => {
         const cColor = ann.color || "#38bdf8";
@@ -778,7 +878,52 @@ export function SchematicDiagram({
           </g>
         );
       })}
-    </svg>
+      </svg>
+
+      {/* ── Detail drawer: the clicked label's formula + exam note ── */}
+      {selected ? (
+        <div
+          className="rounded-2xl border bg-card p-4 space-y-2 shadow-sm animate-in fade-in"
+          style={{ borderColor: `${selected.color || "#38bdf8"}66` }}
+        >
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <span
+                className="h-3 w-3 shrink-0 rounded-full"
+                style={{ backgroundColor: selected.color || "#38bdf8" }}
+              />
+              <h4 className="text-sm font-bold text-foreground truncate">{selected.label}</h4>
+            </div>
+            <button
+              type="button"
+              onClick={() => setSelectedId(null)}
+              className="text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Close
+            </button>
+          </div>
+          {selected.formulaOrValue && (
+            <p
+              className="rounded-lg px-3 py-2 font-mono text-xs font-semibold"
+              style={{
+                backgroundColor: `${selected.color || "#38bdf8"}14`,
+                color: selected.color || "#38bdf8",
+              }}
+            >
+              {selected.formulaOrValue}
+            </p>
+          )}
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            <span className="font-bold text-foreground">Exam pointer: </span>
+            {selected.examNote}
+          </p>
+        </div>
+      ) : (
+        <p className="rounded-xl border border-dashed border-border/70 px-4 py-2.5 text-center text-[11px] text-muted-foreground">
+          Click any labelled pin or chip on the diagram to reveal its value and exam pointer here.
+        </p>
+      )}
+    </div>
   );
 }
 

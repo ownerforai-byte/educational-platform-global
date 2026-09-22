@@ -70,6 +70,11 @@ export function ChaptersIndexView({
                         {unit.hours} teaching hours
                       </p>
                     )}
+                    {typeof unit.introducedIn === "number" && (
+                      <p className="text-xs font-medium text-sky-700 dark:text-sky-300">
+                        Added in {unit.introducedIn} BS
+                      </p>
+                    )}
                   </div>
                 </div>
                 <Link

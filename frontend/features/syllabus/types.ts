@@ -6,6 +6,8 @@ export type UnitVM = {
   topics: string[];
   topicEntries: SyllabusTopicEntry[];
   hours?: number;
+  /** Bikram Sambat year the unit first appeared in the official NEB curriculum. */
+  introducedIn?: number;
 };
 
 export type SubjectNavVM = {

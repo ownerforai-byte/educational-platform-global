@@ -35,6 +35,14 @@ export function SyllabusSection({ classSlug, subjectSlug }: SyllabusSectionProps
                     {unit.hours} hrs
                   </span>
                 )}
+                {unit.introducedIn !== undefined && (
+                  <span
+                    className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300"
+                    title="Bikram Sambat year this unit first appeared in the official NEB curriculum"
+                  >
+                    Added in {unit.introducedIn} BS
+                  </span>
+                )}
               </h3>
               <Link
                 href={`/${classSlug}/${subjectSlug}/${unit.id}`}

@@ -1919,6 +1919,34 @@ export function TopicMindMap({
   const holdTimerRef = useRef<number | null>(null);
   const holdFiredRef = useRef(false);
 
+  // ── Pan + deep zoom on the radial canvas ──
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const panStartRef = useRef<{ x: number; y: number } | null>(null);
+  const canvasPanRef = useRef<HTMLDivElement>(null);
+
+  const handleCanvasPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== 0) return;
+    panStartRef.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
+  };
+  const handleCanvasPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!panStartRef.current) return;
+    setPan({ x: e.clientX - panStartRef.current.x, y: e.clientY - panStartRef.current.y });
+  };
+  const handleCanvasPointerUp = () => {
+    panStartRef.current = null;
+  };
+  const handleCanvasWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setZoomLevel((z) => Math.max(0.35, Math.min(2.6, z * (e.deltaY > 0 ? 0.9 : 1.1))));
+  };
+
+  // Expand / collapse every branch's full hierarchy at once.
+  const setAllBranchesHeld = (held: boolean) => {
+    setHeldBranches(Object.fromEntries(filteredTreeBranches.map((b) => [b.id, held])));
+    setExpandedBranches(Object.fromEntries(filteredTreeBranches.map((b) => [b.id, held])));
+  };
+  const heldCount = filteredTreeBranches.filter((b) => heldBranches[b.id]).length;
+
   /**
    * Compute the 3-level fan-out layout for a branch when it is held open:
    * sub-branch capsules orbit the branch head, leaf capsules orbit each
@@ -2011,14 +2039,38 @@ export function TopicMindMap({
         {/* Toolbar Zoom & Reset Controls */}
         <div className="flex items-center gap-1.5 text-xs">
           <button
-            onClick={() => setZoomLevel((z) => Math.min(1.4, z + 0.1))}
+            onClick={() => setAllBranchesHeld(true)}
+            className={`rounded-lg border px-2 py-1.5 font-bold transition-colors ${
+              heldCount === filteredTreeBranches.length && heldCount > 0
+                ? "border-slate-700 bg-slate-800/50 text-slate-500"
+                : "border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20"
+            }`}
+            title="Fan out every branch's full hierarchy at once"
+          >
+            <span className="hidden sm:inline">Expand all</span>
+            <span className="sm:hidden">+</span>
+          </button>
+          <button
+            onClick={() => setAllBranchesHeld(false)}
+            className={`rounded-lg border px-2 py-1.5 font-bold transition-colors ${
+              heldCount === 0
+                ? "border-slate-700 bg-slate-800/50 text-slate-500"
+                : "border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20"
+            }`}
+            title="Fold all branches back to their trunks"
+          >
+            <span className="hidden sm:inline">Collapse all</span>
+            <span className="sm:hidden">−</span>
+          </button>
+          <button
+            onClick={() => setZoomLevel((z) => Math.min(2.6, z + 0.1))}
             className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
             title="Zoom In"
           >
             <ZoomIn className="h-4 w-4" />
           </button>
           <button
-            onClick={() => setZoomLevel((z) => Math.max(0.7, z - 0.1))}
+            onClick={() => setZoomLevel((z) => Math.max(0.35, z - 0.1))}
             className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
             title="Zoom Out"
           >
@@ -2027,6 +2079,7 @@ export function TopicMindMap({
           <button
             onClick={() => {
               setZoomLevel(1);
+              setPan({ x: 0, y: 0 });
               setActiveBranchId(null);
               setActiveNodeId(null);
             }}
@@ -2283,7 +2336,16 @@ export function TopicMindMap({
         )}
 
         {/* ── Main Canvas Area (Dark Blueprint Non-White Design) ── */}
-        <div className="relative flex-1 min-w-0 bg-[#070b14] overflow-hidden select-none">
+        <div
+          ref={canvasPanRef}
+          className="relative flex-1 min-w-0 bg-[#070b14] overflow-hidden select-none"
+          onPointerDown={handleCanvasPointerDown}
+          onPointerMove={handleCanvasPointerMove}
+          onPointerUp={handleCanvasPointerUp}
+          onPointerLeave={handleCanvasPointerUp}
+          onWheel={handleCanvasWheel}
+          style={{ cursor: panStartRef.current ? "grabbing" : "grab" }}
+        >
           {/* Category Legend Pill Bar */}
           <div className="px-4 py-2 border-b border-slate-800/80 bg-[#090e1a] flex items-center gap-2 overflow-x-auto text-xs">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mr-1 flex items-center gap-1 shrink-0">
@@ -2326,10 +2388,10 @@ export function TopicMindMap({
             }}
           />
 
-          {/* SVG Canvas Container */}
+          {/* SVG Canvas Container — pan (translate) + zoom (scale) */}
           <div
-            className="w-full aspect-[16/10] min-h-[460px] max-h-[640px] transition-transform duration-300 ease-out origin-center"
-            style={{ transform: `scale(${zoomLevel})` }}
+            className="w-full aspect-[16/10] min-h-[460px] max-h-[640px] transition-transform duration-150 ease-out"
+            style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})` }}
           >
             <svg viewBox="0 0 1000 600" className="w-full h-full" style={{ overflow: "visible" }}>
               <defs>

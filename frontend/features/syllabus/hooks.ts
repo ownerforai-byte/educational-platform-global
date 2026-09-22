@@ -47,6 +47,7 @@ export function useSubjectNav(
         topics: u.topics,
         topicEntries: getUnitTopicEntries(u),
         ...(typeof u.hours === "number" ? { hours: u.hours } : {}),
+        ...(typeof u.introducedIn === "number" ? { introducedIn: u.introducedIn } : {}),
       }));
       return {
         subject: {
@@ -80,6 +81,7 @@ export function useUnit(
         topics: unit.topics,
         topicEntries: getUnitTopicEntries(unit),
         ...(typeof unit.hours === "number" ? { hours: unit.hours } : {}),
+        ...(typeof unit.introducedIn === "number" ? { introducedIn: unit.introducedIn } : {}),
       } as UnitVM;
     },
     staleTime: 1000 * 60 * 10,
@@ -108,6 +110,7 @@ export function useUnitTopic(
           topics: unit.topics,
           topicEntries: getUnitTopicEntries(unit),
           ...(typeof unit.hours === "number" ? { hours: unit.hours } : {}),
+          ...(typeof unit.introducedIn === "number" ? { introducedIn: unit.introducedIn } : {}),
         },
         topic,
       };

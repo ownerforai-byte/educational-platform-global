@@ -43,6 +43,9 @@ export type SyllabusUnit = {
   topics: string[];
   /** Teaching hours allocated to this unit (optional). */
   hours?: number;
+  /** Bikram Sambat year this unit first appeared in the official NEB curriculum
+   *  (2077 BS = Grade 11 rollout of NCF 2076; 2078 BS = Grade 12 rollout). */
+  introducedIn?: number;
 };
 
 export type SubjectSyllabus = {
@@ -78,6 +81,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "biomolecules-and-cell-biology",
+            introducedIn: 2077,
             title: "Biomolecules and Cell Biology",
             hours: 15,
             topics: [
@@ -89,6 +93,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "floral-diversity",
+            introducedIn: 2077,
             title: "Floral Diversity",
             hours: 30,
             topics: [
@@ -109,6 +114,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "introductory-microbiology",
+            introducedIn: 2077,
             title: "Introductory Microbiology",
             hours: 5,
             topics: [
@@ -119,6 +125,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "ecology",
+            introducedIn: 2077,
             title: "Ecology",
             hours: 11,
             topics: [
@@ -132,6 +139,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "vegetation",
+            introducedIn: 2077,
             title: "Vegetation",
             hours: 3,
             topics: [
@@ -142,6 +150,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "introduction-to-biology",
+            introducedIn: 2077,
             title: "Introduction to Biology",
             hours: 2,
             topics: [
@@ -151,6 +160,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "evolutionary-biology",
+            introducedIn: 2077,
             title: "Evolutionary Biology",
             hours: 15,
             topics: [
@@ -164,6 +174,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "faunal-diversity",
+            introducedIn: 2077,
             title: "Faunal Diversity",
             hours: 34,
             topics: [
@@ -182,6 +193,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "biota-and-environment",
+            introducedIn: 2077,
             title: "Biota and Environment",
             hours: 10,
             topics: [
@@ -194,6 +206,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "conservation-biology",
+            introducedIn: 2077,
             title: "Conservation Biology",
             hours: 3,
             topics: [
@@ -214,6 +227,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "foundation-and-fundamentals",
+            introducedIn: 2077,
             title: "Foundation and Fundamentals",
             hours: 2,
             topics: [
@@ -225,6 +239,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "stoichiometry",
+            introducedIn: 2077,
             title: "Stoichiometry",
             hours: 8,
             topics: [
@@ -240,6 +255,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "atomic-structure",
+            introducedIn: 2077,
             title: "Atomic Structure",
             hours: 8,
             topics: [
@@ -256,6 +272,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "classification-of-elements-and-periodic-table",
+            introducedIn: 2077,
             title: "Classification of Elements and Periodic Table",
             hours: 5,
             topics: [
@@ -268,6 +285,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemical-bonding-and-shapes-of-molecules",
+            introducedIn: 2077,
             title: "Chemical Bonding and Shapes of Molecules",
             hours: 9,
             topics: [
@@ -286,6 +304,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "oxidation-and-reduction",
+            introducedIn: 2077,
             title: "Oxidation and Reduction",
             hours: 5,
             topics: [
@@ -298,6 +317,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "states-of-matter",
+            introducedIn: 2077,
             title: "States of Matter",
             hours: 8,
             topics: [
@@ -314,6 +334,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemical-equilibrium",
+            introducedIn: 2077,
             title: "Chemical Equilibrium",
             hours: 3,
             topics: [
@@ -326,6 +347,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemistry-of-non-metals",
+            introducedIn: 2077,
             title: "Chemistry of Non-metals",
             hours: 21,
             topics: [
@@ -355,6 +377,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemistry-of-metals",
+            introducedIn: 2077,
             title: "Chemistry of Metals",
             hours: 10,
             topics: [
@@ -374,6 +397,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "bio-inorganic-chemistry",
+            introducedIn: 2077,
             title: "Bio-inorganic Chemistry",
             hours: 3,
             topics: [
@@ -386,6 +410,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "basic-concept-of-organic-chemistry",
+            introducedIn: 2077,
             title: "Basic Concept of Organic Chemistry",
             hours: 6,
             topics: [
@@ -400,6 +425,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "fundamental-principles-of-organic-chemistry",
+            introducedIn: 2077,
             title: "Fundamental Principles of Organic Chemistry",
             hours: 10,
             topics: [
@@ -416,6 +442,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "hydrocarbons",
+            introducedIn: 2077,
             title: "Hydrocarbons",
             hours: 8,
             topics: [
@@ -432,6 +459,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "aromatic-hydrocarbons",
+            introducedIn: 2077,
             title: "Aromatic Hydrocarbons",
             hours: 6,
             topics: [
@@ -447,6 +475,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "fundamentals-of-applied-chemistry",
+            introducedIn: 2077,
             title: "Fundamentals of Applied Chemistry",
             hours: 4,
             topics: [
@@ -460,6 +489,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "modern-chemical-manufactures",
+            introducedIn: 2077,
             title: "Modern Chemical Manufactures",
             hours: 11,
             topics: [
@@ -476,21 +506,76 @@ export const SYLLABUS: ClassSyllabus[] = [
       {
         slug: "english",
         name: "English",
-        description: "English XI — language, literature, composition and critical thinking. Structured per platform conventions (official syllabus pending).",
+        description: "Official NEB English XI (Eng. 003) — Section I: Language Development (17 thematic units); Section II: Literature (7 short stories, 5 poems, 5 essays, 3 one-act plays). CDC textbook first used 2077 BS (2020 AD).",
         notesUrl: "/class-11-notes/english",
         units: [
           {
+            id: "language-development",
+            introducedIn: 2077,
+            title: "Section I — Language Development (Units 1–17)",
+            topics: [
+              "Unit 1 — Education and Humanity",
+              "Unit 2 — Communication",
+              "Unit 3 — Media and Society",
+              "Unit 4 — History and Culture",
+              "Unit 5 — Life and Love",
+              "Unit 6 — Health and Exercise",
+              "Unit 7 — Ecology and Development",
+              "Unit 8 — Humour and Satire",
+              "Unit 9 — Democracy and Human Rights",
+              "Unit 10 — Home Life and Family Relationship",
+              "Unit 11 — Arts and Creation",
+              "Unit 12 — Fantasy",
+              "Unit 13 — Career and Entrepreneurship",
+              "Unit 14 — Power and Politics",
+              "Unit 15 — War and Peace",
+              "Unit 16 — Critical Thinking",
+              "Unit 17 — Globalization and Diaspora",
+            ],
+          },
+          {
             id: "language-and-grammar",
-            title: "Language and Grammar",
+            introducedIn: 2077,
+            title: "Grammar & Vocabulary (integrated across Section I units)",
             topics: ["Grammar and Usage", "Vocabulary Building", "Communication Skills"],
           },
           {
             id: "reading-and-comprehension",
-            title: "Reading and Comprehension",
-            topics: ["Reading Comprehension", "Short Story and Poetry", "Drama and Novel"],
+            introducedIn: 2077,
+            title: "Section II — Literature · Short Stories & Poems",
+            topics: [
+              "Short Story 1 — The Selfish Giant (Oscar Wilde)",
+              "Short Story 2 — The Oval Portrait (Edgar Allan Poe)",
+              "Short Story 3 — God Sees the Truth but Waits (Leo Tolstoy)",
+              "Short Story 4 — The Wish (Roald Dahl)",
+              "Short Story 5 — Civil Peace (Chinua Achebe)",
+              "Short Story 6 — Two Little Soldiers (Guy de Maupassant)",
+              "Short Story 7 — An Astrologer's Day (R. K. Narayan)",
+              "Poem 1 — Corona Says (Vishnu S. Rai)",
+              "Poem 2 — A Red, Red Rose (Robert Burns)",
+              "Poem 3 — All the World's a Stage (William Shakespeare)",
+              "Poem 4 — Who are you, little i? (E. E. Cummings)",
+              "Poem 5 — The Gift in Wartime (Tran Mong Tu)",
+            ],
+          },
+          {
+            id: "literature-essays-plays",
+            introducedIn: 2077,
+            title: "Section II — Literature · Essays & One-Act Plays",
+            topics: [
+              "Essay 1 — Sharing Tradition (Frank LaPena)",
+              "Essay 2 — How to Live Before You Die (Steve Jobs)",
+              "Essay 3 — What I Require From Life (J.B.S. Haldane)",
+              "Essay 4 — What is Poverty? (Jo Goodwin Parker)",
+              "Essay 5 — Scientific Research is a Token of Humankind's Survival (Vladimir Keilis-Borok)",
+              "One-Act Play 1 — Trifles (Susan Glaspell)",
+              "One-Act Play 2 — A Sunny Morning (Serafín and Joaquín Álvarez Quintero)",
+              "One-Act Play 3 — Refund (Fritz Karinthy)",
+            ],
           },
           {
             id: "writing-and-composition",
+            introducedIn: 2077,
             title: "Writing and Composition",
             topics: [
               "Essay Writing — argumentative, descriptive, narrative, expository",
@@ -511,6 +596,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "critical-thinking",
+            introducedIn: 2077,
             title: "Critical Thinking",
             topics: ["Critical Thinking", "Literary Analysis and Interpretation"],
           },
@@ -524,6 +610,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "algebra",
+            introducedIn: 2077,
             title: "Algebra",
             hours: 44,
             topics: [
@@ -539,6 +626,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "trigonometry",
+            introducedIn: 2077,
             title: "Trigonometry",
             hours: 12,
             topics: [
@@ -548,6 +636,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "analytic-geometry",
+            introducedIn: 2077,
             title: "Analytic Geometry",
             hours: 20,
             topics: [
@@ -558,6 +647,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "vectors",
+            introducedIn: 2077,
             title: "Vectors",
             hours: 12,
             topics: [
@@ -567,6 +657,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "statistics-and-probability",
+            introducedIn: 2077,
             title: "Statistics and Probability",
             hours: 12,
             topics: [
@@ -576,6 +667,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "calculus",
+            introducedIn: 2077,
             title: "Calculus",
             hours: 48,
             topics: [
@@ -590,6 +682,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "computational-methods-or-mechanics",
+            introducedIn: 2077,
             title: "Computational Methods or Mechanics",
             hours: 12,
             topics: [
@@ -604,28 +697,62 @@ export const SYLLABUS: ClassSyllabus[] = [
       {
         slug: "nepali",
         name: "Nepali",
-        description: "Nepali XI — भाषा, व्याकरण, साहित्य, लेखन र संस्कृति। Structured per platform conventions (official syllabus pending).",
+        description: "Official NEB Nepali XI (Nep. 001) — भाषा र व्याकरण, निर्धारित १२ पाठ (कविता, कथा, निबन्ध, नाटक, जीवनी), लेखन र रचना। CDC पाठ्यपुस्तक पहिलो प्रयोग २०७७ वि.सं. (२०२०)।",
         notesUrl: "/class-11-notes/nepali",
         units: [
           {
             id: "bhasha-ra-vyakarana",
+            introducedIn: 2077,
             title: "भाषा र व्याकरण",
-            topics: ["व्याकरण र शब्द जगत", "लेखन कौशल"],
+            topics: [
+              "पदप्रकरण — लिङ्ग, पुरुष, वचन, कारक र विभक्ति",
+              "क्रियाप्रकरण — धातु, काल, वाच्य र सार्वनामिक क्रिया",
+              "समास — तत्पुरुष, कर्मधारय, द्वन्द्व र बहुव्रीहि",
+              "शब्द परिवर्तन — शब्द रूपान्तर, समानार्थक र विपरीतार्थक शब्द",
+              "राष्ट्रभाषा नेपाली — ऐतिहासिक विकास र भाषा नीति",
+            ],
           },
           {
             id: "sahitya-adhyayan",
-            title: "साहित्य अध्ययन",
-            topics: ["साहित्यिक रूप र शैली", "पाठ योगदान"],
+            introducedIn: 2077,
+            title: "निर्धारित पाठ — पाठ्यपुस्तक पाठ १–१२",
+            topics: [
+              "पाठ १ — वीर पुर्खा (कविता)",
+              "पाठ २ — गाउँको माया (सामाजिक कथा)",
+              "पाठ ३ — संस्कृतिको नयाँ यात्रा (आत्मपरक निबन्ध)",
+              "पाठ ४ — योगमाया (राष्ट्रिय जीवनी)",
+              "पाठ ५ — साथीलाई चिठी (चिठी)",
+              "पाठ ६ — त्यो फेरि फर्कला? (मनोवैज्ञानिक कथा)",
+              "पाठ ७ — पर्यापर्यटनका सम्भावना र आयाम (वस्तुपरक निबन्ध)",
+              "पाठ ८ — लौ आयो ताजा खबर (लघु नाटक)",
+              "पाठ ९ — सफलताको कथा (रिपोर्ताजमूलक रचना)",
+              "पाठ १० — कृषिशालामा एक दिन (संवाद)",
+              "पाठ ११ — रारा भ्रमण (दैनिकी)",
+              "पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता)",
+            ],
           },
           {
             id: "lekhan-ra-rachana",
+            introducedIn: 2077,
             title: "लेखन र रचना",
-            topics: ["निबन्ध लेखन", "कविता र गीति"],
+            topics: [
+              "निबन्ध लेखन — आत्मपरक र वस्तुपरक",
+              "चिठी लेखन — औपचारिक र अनौपचारिक",
+              "संवाद लेखन",
+              "दैनिकी लेखन",
+              "वक्तृता र रिपोर्ताजमूलक रचना",
+            ],
           },
           {
             id: "katha-natak-ra-sanskriti",
-            title: "कथा, नाटक र संस्कृति",
-            topics: ["कथासाहित्य", "नाटक र व्यंग्य", "सांस्कृतिक परिप्रेक्ष्य"],
+            introducedIn: 2077,
+            title: "साहित्यिक विधा र संस्कृति",
+            topics: [
+              "कथा, कविता र नाटकका विधागत विशेषता",
+              "व्यंग्य र हास्यव्यंग्य",
+              "नेपाली सांस्कृतिक विविधता, चाडपर्व र परम्परा",
+              "भाषा-साहित्यमा योगदान पुर्‍याउने साहित्यकार",
+            ],
           },
         ],
       },
@@ -637,6 +764,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "physical-quantities",
+            introducedIn: 2077,
             title: "Physical Quantities",
             hours: 3,
             topics: [
@@ -646,6 +774,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "vectors",
+            introducedIn: 2077,
             title: "Vectors",
             hours: 4,
             topics: [
@@ -656,6 +785,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "kinematics",
+            introducedIn: 2077,
             title: "Kinematics",
             hours: 5,
             topics: [
@@ -668,6 +798,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "dynamics",
+            introducedIn: 2077,
             title: "Dynamics",
             hours: 6,
             topics: [
@@ -680,6 +811,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "work-energy-and-power",
+            introducedIn: 2077,
             title: "Work, Energy and Power",
             hours: 6,
             topics: [
@@ -693,6 +825,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "circular-motion",
+            introducedIn: 2077,
             title: "Circular Motion",
             hours: 6,
             topics: [
@@ -706,6 +839,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "gravitation",
+            introducedIn: 2077,
             title: "Gravitation",
             hours: 10,
             topics: [
@@ -723,6 +857,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "elasticity",
+            introducedIn: 2077,
             title: "Elasticity",
             hours: 5,
             topics: [
@@ -735,6 +870,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "heat-and-temperature",
+            introducedIn: 2077,
             title: "Heat and Temperature",
             hours: 3,
             topics: [
@@ -745,6 +881,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "thermal-expansion",
+            introducedIn: 2077,
             title: "Thermal Expansion",
             hours: 4,
             topics: [
@@ -756,6 +893,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "quantity-of-heat",
+            introducedIn: 2077,
             title: "Quantity of Heat",
             hours: 6,
             topics: [
@@ -769,6 +907,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "rate-of-heat-flow",
+            introducedIn: 2077,
             title: "Rate of Heat Flow",
             hours: 5,
             topics: [
@@ -781,6 +920,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "ideal-gas",
+            introducedIn: 2077,
             title: "Ideal Gas",
             hours: 8,
             topics: [
@@ -795,6 +935,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "reflection-at-curved-mirror",
+            introducedIn: 2077,
             title: "Reflection at Curved Mirror",
             hours: 2,
             topics: [
@@ -804,6 +945,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "refraction-at-plane-surfaces",
+            introducedIn: 2077,
             title: "Refraction at Plane Surfaces",
             hours: 4,
             topics: [
@@ -815,6 +957,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "refraction-through-prisms",
+            introducedIn: 2077,
             title: "Refraction through Prisms",
             hours: 4,
             topics: [
@@ -825,6 +968,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "lenses",
+            introducedIn: 2077,
             title: "Lenses",
             hours: 3,
             topics: [
@@ -835,6 +979,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "dispersion",
+            introducedIn: 2077,
             title: "Dispersion",
             hours: 3,
             topics: [
@@ -845,6 +990,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "electric-charges",
+            introducedIn: 2077,
             title: "Electric Charges",
             hours: 3,
             topics: [
@@ -856,6 +1002,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "electric-field",
+            introducedIn: 2077,
             title: "Electric Field",
             hours: 3,
             topics: [
@@ -866,6 +1013,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "potential-potential-difference-and-potential-energy",
+            introducedIn: 2077,
             title: "Potential, Potential Difference and Potential Energy",
             hours: 4,
             topics: [
@@ -876,6 +1024,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "capacitor",
+            introducedIn: 2077,
             title: "Capacitor",
             hours: 5,
             topics: [
@@ -888,6 +1037,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "dc-circuits",
+            introducedIn: 2077,
             title: "DC Circuits",
             hours: 10,
             topics: [
@@ -902,6 +1052,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "nuclear-physics",
+            introducedIn: 2077,
             title: "Nuclear Physics",
             hours: 4,
             topics: [
@@ -916,6 +1067,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "solids",
+            introducedIn: 2077,
             title: "Solids",
             hours: 3,
             topics: [
@@ -926,6 +1078,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "recent-trends-in-physics",
+            introducedIn: 2077,
             title: "Recent Trends in Physics",
             hours: 6,
             topics: [
@@ -950,6 +1103,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "heredity-and-evolution",
+            introducedIn: 2078,
             title: "Heredity and Evolution",
             hours: 24,
             topics: [
@@ -965,6 +1119,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "human-health-and-diseases",
+            introducedIn: 2078,
             title: "Human Health and Diseases",
             hours: 10,
             topics: [
@@ -977,6 +1132,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "strategies-for-food-production",
+            introducedIn: 2078,
             title: "Strategies for Enhancement in Food Production",
             hours: 6,
             topics: [
@@ -988,6 +1144,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "microbes-in-human-welfare",
+            introducedIn: 2078,
             title: "Microbes in Human Welfare",
             hours: 5,
             topics: [
@@ -999,6 +1156,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "biotechnology-principles",
+            introducedIn: 2078,
             title: "Biotechnology — Principles and Processes",
             hours: 8,
             topics: [
@@ -1010,6 +1168,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "biotechnology-applications",
+            introducedIn: 2078,
             title: "Biotechnology and Its Applications",
             hours: 8,
             topics: [
@@ -1021,6 +1180,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "organisms-and-environment",
+            introducedIn: 2078,
             title: "Organisms and Environment",
             hours: 10,
             topics: [
@@ -1034,6 +1194,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "biodiversity-and-conservation",
+            introducedIn: 2078,
             title: "Biodiversity and Conservation",
             hours: 6,
             topics: [
@@ -1046,6 +1207,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "environmental-issues",
+            introducedIn: 2078,
             title: "Environmental Issues",
             hours: 8,
             topics: [
@@ -1068,6 +1230,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "solutions",
+            introducedIn: 2078,
             title: "Solutions",
             hours: 7,
             topics: [
@@ -1080,6 +1243,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "electro-chemistry",
+            introducedIn: 2078,
             title: "Electrochemistry",
             hours: 8,
             topics: [
@@ -1094,6 +1258,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemical-kinetics",
+            introducedIn: 2078,
             title: "Chemical Kinetics",
             hours: 6,
             topics: [
@@ -1106,6 +1271,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "general-and-organic-fundamentals",
+            introducedIn: 2078,
             title: "General and Fundamental Principles of Organic Chemistry",
             hours: 8,
             topics: [
@@ -1118,6 +1284,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "hydrocarbons",
+            introducedIn: 2078,
             title: "Hydrocarbons",
             hours: 7,
             topics: [
@@ -1129,6 +1296,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "alcohols-phenols-ethers",
+            introducedIn: 2078,
             title: "Alcohols, Phenols and Ethers",
             hours: 7,
             topics: [
@@ -1139,6 +1307,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "aldehydes-ketones-carboxylic-acids",
+            introducedIn: 2078,
             title: "Aldehydes, Ketones and Carboxylic Acids",
             hours: 10,
             topics: [
@@ -1149,6 +1318,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "amines",
+            introducedIn: 2078,
             title: "Amines",
             hours: 6,
             topics: [
@@ -1160,6 +1330,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "biomolecules",
+            introducedIn: 2078,
             title: "Biomolecules",
             hours: 5,
             topics: [
@@ -1172,6 +1343,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemistry-in-everyday-life",
+            introducedIn: 2078,
             title: "Chemistry in Everyday Life",
             hours: 4,
             topics: [
@@ -1182,6 +1354,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "chemistry-of-element",
+            introducedIn: 2078,
             title: "Chemistry of Element",
             hours: 8,
             topics: [
@@ -1196,22 +1369,66 @@ export const SYLLABUS: ClassSyllabus[] = [
       {
         slug: "english",
         name: "English",
-        description: "Official NEB English XII — Literature, language skills, and critical analysis.",
+        description: "Official NEB English XII (Eng. 004) — Section I: Language Development (20 thematic units); Section II: Literature (7 short stories, 5 poems, 5 essays, 3 one-act plays). CDC textbook first used 2078 BS (2021 AD).",
         notesUrl: "/class-12-notes/english",
         units: [
           {
-            id: "literary-analysis",
-            title: "Literary Analysis",
-            hours: 20,
+            id: "language-development",
+            introducedIn: 2078,
+            title: "Section I — Language Development (Units 1–20)",
             topics: [
-              "Prose: comprehension, analysis, and appreciation",
-              "Poetry: poetic devices, themes, and interpretation",
-              "Drama: structure, characters, and dramatic devices",
-              "Novel study: plot, characterisation, and narrative techniques",
+              "Unit 1 — Critical Thinking",
+              "Unit 2 — Family",
+              "Unit 3 — Sports",
+              "Unit 4 — Technology",
+              "Unit 5 — Education",
+              "Unit 6 — Money and Economy",
+              "Unit 7 — Humour",
+              "Unit 8 — Human Culture",
+              "Unit 9 — Ecology and Environment",
+              "Unit 10 — Career Opportunities",
+              "Unit 11 — Hobbies",
+              "Unit 12 — Animal World",
+              "Unit 13 — History",
+              "Unit 14 — Human Rights",
+              "Unit 15 — Leisure and Entertainment",
+              "Unit 16 — Fantasy",
+              "Unit 17 — War and Peace",
+              "Unit 18 — Music and Creation",
+              "Unit 19 — Migration and Diaspora",
+              "Unit 20 — Power and Politics",
+            ],
+          },
+          {
+            id: "literary-analysis",
+            introducedIn: 2078,
+            title: "Section II — Literature (Stories · Poems · Essays · One-Act Plays)",
+            topics: [
+              "Short Story 1 — Neighbours (Tim Winton)",
+              "Short Story 2 — A Respectable Woman (Kate Chopin)",
+              "Short Story 3 — A Devoted Son (Anita Desai)",
+              "Short Story 4 — The Treasure in the Forest (H. G. Wells)",
+              "Short Story 5 — My Old Home (Lu Xun)",
+              "Short Story 6 — The Half-closed Eyes of the Buddha and the Slowly Sinking Sun (Manjushree Thapa)",
+              "Short Story 7 — A Very Old Man with Enormous Wings (Gabriel García Márquez)",
+              "Poem 1 — A Day (Emily Dickinson)",
+              "Poem 2 — Every Morning I Wake (Dylan Thomas)",
+              "Poem 3 — I Was My Own Route (Julia de Burgos)",
+              "Poem 4 — The Awakening Age (Ben Okri)",
+              "Poem 5 — Soft Storm (Abhi Subedi)",
+              "Essay 1 — On Libraries (Oliver Sacks)",
+              "Essay 2 — Marriage as a Social Institution (Stephen L. Carter)",
+              "Essay 3 — Knowledge and Wisdom (Bertrand Russell)",
+              "Essay 4 — Humility (Yuval Noah Harari)",
+              "Essay 5 — Human Rights and the Age of Inequality (Samuel Moyn)",
+              "One-Act Play 1 — A Matter of Husbands (Ferenc Molnár)",
+              "One-Act Play 2 — Facing Death (August Strindberg)",
+              "One-Act Play 3 — The Bull (Bhimnidhi Tiwari)",
             ],
           },
           {
             id: "writing-skills",
+            introducedIn: 2078,
             title: "Writing Skills",
             hours: 16,
             topics: [
@@ -1230,6 +1447,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "oral-communication",
+            introducedIn: 2078,
             title: "Oral Communication",
             hours: 8,
             topics: [
@@ -1241,6 +1459,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "grammar",
+            introducedIn: 2078,
             title: "Grammar",
             hours: 12,
             topics: [
@@ -1261,6 +1480,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "limits-and-continuity",
+            introducedIn: 2078,
             title: "Limits and Continuity",
             hours: 8,
             topics: [
@@ -1273,6 +1493,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "differentiation",
+            introducedIn: 2078,
             title: "Differentiation",
             hours: 16,
             topics: [
@@ -1289,6 +1510,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "integration",
+            introducedIn: 2078,
             title: "Integration",
             hours: 14,
             topics: [
@@ -1301,6 +1523,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "differential-equations",
+            introducedIn: 2078,
             title: "Differential Equations",
             hours: 8,
             topics: [
@@ -1311,6 +1534,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "vector-algebra",
+            introducedIn: 2078,
             title: "Vector Algebra",
             hours: 8,
             topics: [
@@ -1324,6 +1548,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "three-dimensional-geometry",
+            introducedIn: 2078,
             title: "Three Dimensional Geometry",
             hours: 8,
             topics: [
@@ -1336,6 +1561,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "linear-programming",
+            introducedIn: 2078,
             title: "Linear Programming",
             hours: 6,
             topics: [
@@ -1346,6 +1572,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "probability",
+            introducedIn: 2078,
             title: "Probability",
             hours: 10,
             topics: [
@@ -1363,53 +1590,64 @@ export const SYLLABUS: ClassSyllabus[] = [
       {
         slug: "nepali",
         name: "Nepali",
-        description: "Official NEB Nepali XII — भाषा, साहित्य, व्यङ्ग्य, र लेखन कौशल।",
+        description: "Official NEB Nepali XII (Nep. 002) — निर्धारित १२ पाठ (कविता, कथा, निबन्ध, उपन्यास, जीवनी), व्याकरण र लेखन कौशल। CDC पाठ्यपुस्तक पहिलो प्रयोग २०७८ वि.सं. (२०२१)।",
         notesUrl: "/class-12-notes/nepali",
         units: [
           {
             id: "bhasha-tatha-vyakaran",
-            title: "भाषा र व्यायरन",
+            introducedIn: 2078,
+            title: "भाषा र व्याकरण",
             hours: 16,
             topics: [
-              "शब्द र उसको विभाग",
-              "पद विभक्त र तत्पुरुष समास",
-              "बहुव्रीहि, कर्मधारय, द्वन्द्व समास",
-              "क्रिया र तत्सम्बन्धी विषय",
-              "वाक्य र उसको विध",
-              "मुहावा र वाङ्मय प्रयोग",
+              "शब्द-वर्ग, पद-वर्ग र पदबन्ध",
+              "कारक, विभक्ति र समास (तत्पुरुष, कर्मधारय, द्वन्द्व, बहुव्रीहि)",
+              "क्रिया — काल, वाच्य र पदबन्ध",
+              "वाक्य रचना — सरल, मिश्रित र संयुक्त वाक्य; शुद्ध-अशुद्ध वाक्य",
+              "मुहावरा, लोकोक्ति र शब्द-सम्पदा",
             ],
           },
           {
             id: "sahitya-adhyayan",
-            title: "साहित्य अध्‍ययन",
+            introducedIn: 2078,
+            title: "निर्धारित पाठ — पाठ्यपुस्तक पाठ १–१२",
             hours: 24,
             topics: [
-              "कविता र गीत: रस, अलङ्कार, छन्द",
-              "निर्धारित पाठ: कथा, उपन्यास, नाटक",
-              "व्यङ्ग्य साहित्यको अध्‍ययन",
-              "आधुनिक नेपाली साहित्यको इतिहास",
-              "निबन्ध र लेखन कौशल",
+              "पाठ १ — आमाको सपना (कविता, गोपालप्रसाद रिमाल)",
+              "पाठ २ — विरहिणी दमयन्ती (कथा, मदनमणि दीक्षित)",
+              "पाठ ३ — घनघस्याको उकालो काट्दा (निबन्ध)",
+              "पाठ ४ — व्यावसायिक पत्र (पत्र लेखन)",
+              "पाठ ५ — एक चिहान (उपन्यास, पारिजात)",
+              "पाठ ६ — स्टिफन विलियम हकिङ (जीवनी)",
+              "पाठ ७ — हामीलाई बोलाउँछन् हिमचुली (कविता, भूपी शेरचन)",
+              "पाठ ८ — मातृत्व (निबन्ध)",
+              "पाठ ९ — गोर्खे (कथा)",
+              "पाठ १० — नेपाली पहिचान (निबन्ध)",
+              "पाठ ११ — सहकारी (कथा)",
+              "पाठ १२ — जीवन मार्ग (कविता)",
             ],
           },
           {
             id: "lekhan-koushal",
+            introducedIn: 2078,
             title: "लेखन कौशल",
             hours: 10,
             topics: [
-              "आवधिव निबन्ध लेखन",
-              "पत्र लेखन (आधिकारिक र अनौपचारिक)",
-              "प्रेषणात्मक लेखन",
-              "समावेशक लेखन",
+              "आवधिक निबन्ध लेखन",
+              "पत्र लेखन — आधिकारिक र अनौपचारिक (व्यावसायिक पत्र सहित)",
+              "प्रतिवेदन र सम्पादन लेखन",
+              "समीक्षा र सारांश लेखन",
+              "सृजनात्मक लेखन — कथा, कविता, संवाद",
             ],
           },
           {
             id: "sanskriti-tatha-samaj",
-            title: "संस्कृति र सामाज",
+            introducedIn: 2078,
+            title: "संस्कृति र समाज",
             hours: 6,
             topics: [
-              "नेपाली संस्कृति र परम्परा",
-              "भारतीय सांस्कृतिक प्रभाव",
-              "सामाजिक परिवर्तन र नेपाली साहित्य",
+              "नेपाली संस्कृति, रीतिरिवाज र सामाजिक संरचना",
+              "साहित्यमा सामाजिक वास्तविकताको प्रतिनिधित्व",
+              "भाषा र पहिचान — नेपाली पहिचानका पाठहरूसँग सम्बन्ध",
             ],
           },
         ],
@@ -1422,6 +1660,7 @@ export const SYLLABUS: ClassSyllabus[] = [
         units: [
           {
             id: "electrostatics",
+            introducedIn: 2078,
             title: "Electrostatics",
             hours: 10,
             topics: [
@@ -1435,6 +1674,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "current-electricity",
+            introducedIn: 2078,
             title: "Current Electricity",
             hours: 10,
             topics: [
@@ -1450,6 +1690,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "magnetism-and-magnetic-effect",
+            introducedIn: 2078,
             title: "Magnetism and Magnetic Effect of Current",
             hours: 12,
             topics: [
@@ -1463,6 +1704,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "electromagnetic-induction",
+            introducedIn: 2078,
             title: "Electromagnetic Induction",
             hours: 8,
             topics: [
@@ -1475,6 +1717,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "alternating-current",
+            introducedIn: 2078,
             title: "Alternating Current",
             hours: 8,
             topics: [
@@ -1486,6 +1729,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "ray-optics",
+            introducedIn: 2078,
             title: "Ray Optics",
             hours: 10,
             topics: [
@@ -1499,6 +1743,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "wave-optics",
+            introducedIn: 2078,
             title: "Wave Optics",
             hours: 8,
             topics: [
@@ -1510,6 +1755,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "modern-physics",
+            introducedIn: 2078,
             title: "Modern Physics",
             hours: 12,
             topics: [
@@ -1523,6 +1769,7 @@ export const SYLLABUS: ClassSyllabus[] = [
           },
           {
             id: "communication-systems",
+            introducedIn: 2078,
             title: "Communication Systems",
             hours: 4,
             topics: [

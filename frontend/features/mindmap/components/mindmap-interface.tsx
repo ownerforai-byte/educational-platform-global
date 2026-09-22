@@ -12,6 +12,8 @@ import {
   X,
   Workflow,
   Sparkles,
+  FoldVertical,
+  UnfoldVertical,
 } from "lucide-react";
 import type { MindmapNode, MindmapSource } from "../types";
 
@@ -227,6 +229,32 @@ export function MindmapInterface({
     setTreeRoot(raw);
   }, [root]);
 
+  // Branch isolation: clicking a legend chip fades other branches.
+  const [isolatedBranch, setIsolatedBranch] = useState<number | null>(null);
+
+  // Track how many root-branch subtrees are folded (for Expand/Collapse all).
+  const rootBranchIds = useMemo(
+    () => (treeRoot?.children ?? []).map((c) => c.id),
+    [treeRoot],
+  );
+  const collapsedRootCount = useMemo(() => {
+    if (!treeRoot) return 0;
+    return treeRoot.children.filter((c) => c.collapsed).length;
+  }, [treeRoot]);
+
+  const setAllRootBranches = useCallback(
+    (collapsed: boolean) => {
+      setTreeRoot((prev) => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          children: prev.children.map((c) => ({ ...c, collapsed })),
+        };
+      });
+    },
+    [],
+  );
+
   const handleZoomIn = useCallback(() => setScale((s) => Math.min(s * 1.25, 4)), []);
   const handleZoomOut = useCallback(() => setScale((s) => Math.max(s / 1.25, 0.2)), []);
   const handleFit = useCallback(() => {
@@ -373,6 +401,37 @@ export function MindmapInterface({
             <Maximize className="h-3.5 w-3.5" />
           </button>
           <button
+            onClick={() => setAllRootBranches(false)}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all",
+              collapsedRootCount === 0
+                ? "border-slate-700/60 bg-slate-800/50 text-slate-500"
+                : "border-emerald-500/50 bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25",
+            )}
+            title="Expand every root branch"
+          >
+            <UnfoldVertical className="h-3.5 w-3.5" />
+            <span className="hidden md:inline">Expand all</span>
+          </button>
+          <button
+            onClick={() => setAllRootBranches(true)}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all",
+              collapsedRootCount === rootBranchIds.length && rootBranchIds.length > 0
+                ? "border-slate-700/60 bg-slate-800/50 text-slate-500"
+                : "border-amber-500/50 bg-amber-500/15 text-amber-300 hover:bg-amber-500/25",
+            )}
+            title="Fold every root branch back to its trunk"
+          >
+            <FoldVertical className="h-3.5 w-3.5" />
+            <span className="hidden md:inline">Collapse all</span>
+            {collapsedRootCount > 0 && (
+              <span className="rounded bg-amber-500/25 px-1 text-[10px] font-extrabold">
+                {collapsedRootCount}
+              </span>
+            )}
+          </button>
+          <button
             onClick={handleExport}
             className="p-1.5 rounded-xl border border-slate-700/80 bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white transition-all text-xs"
             title="Export SVG"
@@ -462,6 +521,7 @@ export function MindmapInterface({
                 (searchMatches.has(node.id) || searchMatches.has(parent.id));
 
               const branchStyle = getBranchStyle(node.branchIndex);
+              const isolated = isolatedBranch !== null && node.branchIndex !== isolatedBranch && node.depth > 0;
               const edgeColor = isSearchMatch ? "#f59e0b" : branchStyle.edge;
               const edgeWidth = isSearchMatch ? 3.5 : node.depth === 1 ? 3 : 2;
 
@@ -471,7 +531,7 @@ export function MindmapInterface({
               const ny = node.y + node.h / 2;
 
               return (
-                <g key={`e-${node.id}`}>
+                <g key={`e-${node.id}`} opacity={isolated ? 0.12 : 1} className="transition-opacity duration-200">
                   {/* Glow layer for branch trunk */}
                   <path
                     d={`M ${parent.x + parent.w} ${my} C ${midX} ${my}, ${midX} ${ny}, ${nx} ${ny}`}
@@ -511,6 +571,7 @@ export function MindmapInterface({
               const isMatch = searchMatches.has(node.id);
               const hasChildren = node.children.length > 0;
               const isCollapsed = node.collapsed;
+              const isolated = isolatedBranch !== null && node.branchIndex !== isolatedBranch && !isRoot;
               const truncatedLabel =
                 node.label.length > 24 ? `${node.label.slice(0, 22)}…` : node.label;
 
@@ -519,9 +580,12 @@ export function MindmapInterface({
                   key={node.id}
                   transform={`translate(${node.x}, ${node.y})`}
                   className="cursor-pointer select-none transition-transform duration-200 hover:scale-[1.02]"
-                  style={{ opacity: isMatch || !searchQuery ? 1 : 0.25 }}
+                  style={{ opacity: isMatch || !searchQuery ? (isolated ? 0.18 : 1) : 0.25 }}
                   onClick={(e) => {
                     e.stopPropagation();
+                    if (node.depth === 1) {
+                      setIsolatedBranch((prev) => (prev === node.branchIndex ? null : node.branchIndex));
+                    }
                     if (hasChildren) toggleNode(node.id);
                   }}
                 >
@@ -659,27 +723,33 @@ export function MindmapInterface({
           </g>
         </svg>
 
-        {/* ── 4. NON-CONFUSABLE BRANCH LEGEND BAR ────────────────────────── */}
+        {/* ── 4. REAL BRANCH LEGEND with click-to-isolate ────────────────���─ */}
         <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-300 bg-[#090e1f]/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-blue-900/40 shadow-lg">
           <div className="flex items-center gap-2.5 flex-wrap">
             <span className="font-extrabold text-white text-xs">Branch Isolation:</span>
-            {BRANCH_PALETTES.slice(0, activeBranchCount || 5).map((b, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg border text-[10px] font-bold"
-                style={{
-                  backgroundColor: b.bg,
-                  borderColor: b.stroke,
-                  color: b.text,
-                }}
-              >
-                <span
-                  className="h-2 w-2 rounded-full shrink-0"
-                  style={{ backgroundColor: b.fill }}
-                />
-                <span>Branch {i + 1}</span>
-              </span>
-            ))}
+            {(treeRoot?.children ?? []).map((branch, i) => {
+              const style = getBranchStyle(i);
+              const active = isolatedBranch === null || isolatedBranch === i;
+              const label = branch.label.length > 26 ? `${branch.label.slice(0, 24)}…` : branch.label;
+              return (
+                <button
+                  key={branch.id}
+                  type="button"
+                  onClick={() => setIsolatedBranch((prev) => (prev === i ? null : i))}
+                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg border text-[10px] font-bold transition-all hover:scale-105"
+                  style={{
+                    backgroundColor: active ? style.bg : "rgba(15, 23, 42, 0.6)",
+                    borderColor: style.stroke,
+                    color: active ? style.text : "#64748b",
+                    opacity: active ? 1 : 0.65,
+                  }}
+                  title={`${branch.label} — click to isolate this branch`}
+                >
+                  <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: style.fill }} />
+                  <span>{label}</span>
+                </button>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-3 text-[10px] text-slate-400">

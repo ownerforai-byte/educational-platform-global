@@ -31,6 +31,7 @@ export function getSubjectNav(
         topics: u.topics,
         topicEntries: getUnitTopicEntries(u),
         ...(typeof u.hours === "number" ? { hours: u.hours } : {}),
+        ...(typeof u.introducedIn === "number" ? { introducedIn: u.introducedIn } : {}),
       }))
     : [];
   return { subject, units };

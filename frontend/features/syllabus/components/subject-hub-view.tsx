@@ -110,6 +110,14 @@ export async function SubjectHubView({
                       {unit.hours} hrs
                     </span>
                   )}
+                  {typeof unit.introducedIn === "number" && (
+                    <span
+                      className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[10px] font-semibold text-sky-700 dark:text-sky-300"
+                      title="Bikram Sambat year this unit first appeared in the official NEB curriculum"
+                    >
+                      {unit.introducedIn} BS
+                    </span>
+                  )}
                 </div>
 
                 <h3 className="text-base font-bold text-foreground mt-3 group-hover:text-primary transition-colors">
