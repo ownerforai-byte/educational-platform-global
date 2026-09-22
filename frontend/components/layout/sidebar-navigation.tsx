@@ -47,7 +47,7 @@ type NavItem = {
 
 const primaryItems: NavItem[] = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/index", label: "Everything Index", icon: ListTree, badge: "All", badgeClass: "bg-primary/15 text-primary" },
+  { href: "/site-index", label: "Everything Index", icon: ListTree, badge: "All", badgeClass: "bg-primary/15 text-primary" },
   { href: "/search", label: "Search Index", icon: Search, badge: "Ctrl+K", badgeClass: "bg-muted text-muted-foreground border border-border/80" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, badge: "Tracks", badgeClass: "bg-sky-500/15 text-sky-500" },
 ];

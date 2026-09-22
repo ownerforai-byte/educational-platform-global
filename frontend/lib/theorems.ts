@@ -208,8 +208,9 @@ async function scanSubject(
         const conceptFiles = await readdir(conceptsDir, { withFileTypes: true });
         for (const conceptFile of conceptFiles) {
           if (!conceptFile.name.endsWith(".json")) continue;
+          const fullPath = join(conceptsDir, conceptFile.name);
           const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", conceptFile.name);
-          const raw = await readFile(/*turbopackIgnore: true*/ join(PROJECT_ROOT, filePath), "utf-8");
+          const raw = await readFile(fullPath, "utf-8");
           if (!isTheoremNote(raw)) continue;
           if (LEGACY_CLASS_SLUGS.has(classSlug)) continue;
 

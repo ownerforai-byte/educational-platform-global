@@ -76,6 +76,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/index",
+        destination: "/site-index",
+        permanent: false,
+      },
+      {
+        source: "/everything-index",
+        destination: "/site-index",
+        permanent: false,
+      },
+      {
         source: "/lab/physics/optics",
         destination: "/lab/ph-3d-optics",
         permanent: false,

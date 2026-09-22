@@ -37,7 +37,7 @@ const PORTALS: Portal[] = [
     title: "Everything Index",
     badge: "ALL PAGES · ONE HEAD PAGE",
     desc: "Every page on the platform in one list — a short opening, the name, and its link printed directly below.",
-    href: "/index",
+    href: "/site-index",
     icon: ListTree,
     iconClass: "text-sky-500 bg-sky-500/10 border-sky-500/25",
     gradientClass: "from-sky-500/[0.08] via-card to-card",

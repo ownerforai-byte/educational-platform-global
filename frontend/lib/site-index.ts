@@ -1,5 +1,5 @@
 /**
- * Site index — the data behind the "Everything Index" head page (/index).
+ * Site index — the data behind the "Everything Index" head page (/site-index).
  *
  * Every routable destination on the platform, gathered from the registries
  * that actually drive the pages (labs, graphs, pro-knowledge chapters,
